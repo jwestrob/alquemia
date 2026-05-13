@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: "If you use this pipeline, please cite the following."
+type: software
+title: "DFT vertical-swap Ca²⁺/Ln³⁺ discriminator (alchemical_bvs)"
+abstract: >
+  A DFT cluster-level methodology pipeline for scoring whether a candidate
+  metal-binding pocket in a protein structure prefers Ca²⁺ or Ln³⁺ at the
+  coordination-chemistry level. For each candidate, the pipeline carves a
+  first-shell QM cluster (metal + ASP/GLU/ASN/GLN/SER/TYR sidechains + any
+  PQQ cofactor + backbone-O contacts), runs four r²SCAN-3c / CPCM(Water)
+  single points (La form, Ca form, apo, bulk water), and computes a single
+  ΔΔE score in kcal/mol against a fixed aquo reference. Production scale
+  at 1,453 candidates with the XoxF/MxaF gold-standard pair as the
+  31-kcal/mol-gap validation anchor.
+authors:
+  - family-names: West-Roberts
+    given-names: Jacob
+    affiliation: "Banfield Lab, University of California, Berkeley"
+    # orcid: TBD
+  # additional co-authors: TBD
+version: "0.1.0"
+date-released: "2026-05-12"
+license: "TBD"   # see LICENSE
+repository-code: "TBD"   # GitHub URL goes here once published
+keywords:
+  - lanthanide
+  - DFT
+  - r2SCAN-3c
+  - metalloprotein
+  - coordination chemistry
+  - ORCA
+  - QM cluster
+  - lanmodulin
+  - XoxF
+  - PQQ
+preferred-citation:
+  type: article
+  title: "A vertical-swap DFT discriminator for Ca²⁺ vs Ln³⁺ pocket preference in metalloproteins"
+  authors:
+    - family-names: West-Roberts
+      given-names: Jacob
+      affiliation: "Banfield Lab, University of California, Berkeley"
+    # additional co-authors: TBD
+  year: 2026
+  journal: "(in preparation)"
+  notes: "Target journal: Journal of Chemical Theory and Computation (JCTC)."

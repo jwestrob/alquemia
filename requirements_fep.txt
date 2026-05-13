@@ -1,0 +1,19 @@
+# Secondary env: PDBFixer + OpenMM
+#
+# This env is *only* used by scripts/protonate_cif.py (PDBFixer adds Hs at pH 7).
+# PDBFixer pins to a specific OpenMM ABI and is easier to install via conda
+# than pip, so we keep it separate from the primary `lanm_qmmm` env.
+#
+# Production env on the Banfield cluster:
+#   /home/jwestrob/miniconda3/envs/fep
+#
+# Recreate locally (conda recommended):
+#   conda create -n fep -c conda-forge python=3.10 pdbfixer openmm
+#
+# Then point process_inbox.sh's FEP_PYTHON to the resulting Python:
+#   FEP_PYTHON=/path/to/your/envs/fep/bin/python
+#
+# Versions in use at the time of pipeline lock:
+pdbfixer>=1.9
+openmm>=8.0
+python==3.10

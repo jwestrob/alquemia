@@ -1,0 +1,48 @@
+# Conda environment for the alchemical_bvs DFT discriminator pipeline.
+#
+# This file specifies the primary `lanm_qmmm` env that drives every script
+# except `scripts/protonate_cif.py`. PDBFixer + OpenMM live in a separate
+# `fep` env (see requirements_fep.txt) because they pin to a different
+# Python minor version. The split is historical and not worth merging.
+#
+# Production envs on the Banfield cluster:
+#   lanm_qmmm:  /groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/
+#   fep:        /home/jwestrob/miniconda3/envs/fep
+#
+# Recreate locally with:
+#   conda env create -f environment.yml
+# or, mamba:
+#   mamba env create -f environment.yml
+
+name: lanm_qmmm
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python>=3.11
+  - pip
+  # Structural / cheminformatics
+  - gemmi>=0.6                  # CIF/PDB I/O — the only required structural lib
+  - biopython>=1.81             # optional but used by some analysis scripts
+  # Numerics + tabular I/O
+  - numpy>=1.26
+  - pandas>=2.0
+  - scipy>=1.11
+  # Plotting (validation / panel figures)
+  - matplotlib>=3.8
+  - seaborn>=0.13
+  # JSON / CSV / TSV ergonomics
+  - jq                          # used in HOWTO snippets
+  # Optional: notebook for ad-hoc analysis of all_results.jsonl
+  - jupyterlab>=4.0
+  # Pip-only deps (none currently — keep this block for future)
+  - pip:
+      []
+
+# Out of scope here (lives in `fep` env):
+#   pdbfixer
+#   openmm
+#
+# Out of scope here (system-level, not conda):
+#   ORCA 6.1.1 (binary at /home/jwestrob/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/)
+#   SLURM scheduler

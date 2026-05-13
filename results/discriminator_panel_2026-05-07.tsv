@@ -1,0 +1,15 @@
+# DFT Ca²⁺/Ln³⁺ discriminator panel — r²SCAN-3c CPCM(Water)
+# E_aquo_Ca - E_aquo_La (CN8 idealized) = -646.064556 Ha
+# ΔΔE(Ca - La) = (E_holo_Ca - E_holo_La) - (E_aquo_Ca - E_aquo_La)
+# Class: Ln++ ≥ +5; Ln 0 to +5; ambiguous -5 to 0; Ca-class < -5 kcal/mol
+protein	E_La_Ha	E_Ca_Ha	ddE_Ha	ddE_kcal	class	notes
+LanM_EF1	(see lanm_qm)	(see lanm_qm)	0.07567	+47.49	Ln++	canonical Ln-binder; ground-truth positive
+XoxF	-2210.175744	-2856.201845	0.038454	+24.13	Ln++	Ce-MDH; with PQQ; gold-standard Ln paralog
+Tannase	-1290.089795	-1936.129355	0.024995	+15.68	Ln++	Bradyrhizobium tannase fold; novel candidate
+Calmodulin_1CLL	-1061.446942	-1707.482572	0.028926	+18.15	Ln++	canonical Ca-binder but Ln³⁺ binds tighter (Tb/Eu probe)
+vgv4_La3	-945.781490	-1591.825358	0.020687	+12.98	Ln++	Gemmatimonadaceae T9SS; novel candidate
+Calexcitin_EF3	-984.834752	-1630.882430	0.016878	+10.59	Ln++	convergent EF-hand; novel candidate
+Calbindin_1A75	-1061.423920	-1707.482565	0.005911	+3.71	Ln	weak EF-hand-like
+Fernperox	-604.177166	-1250.244192	-0.002471	-1.55	ambiguous	Class III peroxidase structural Ca site
+Rifoxy_SiteB	-1174.339804	-1820.409602	-0.005242	-3.29	ambiguous	Mn-class binuclear (per prior agent reclass)
+MxaF	-1752.873492	-2398.948376	-0.010329	-6.48	Ca-class	Ca-MDH paralog of XoxF; gold-standard Ca

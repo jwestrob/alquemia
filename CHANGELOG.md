@@ -11,6 +11,59 @@ For how to run the pipeline see [HOWTO.md](HOWTO.md).
 
 ---
 
+## [2026-07-16] — Handoff snapshot
+
+### Added
+- `scripts/add_cn_3A.py` — populates `cn_3A` field in `results/all_results.jsonl`
+  by counting N+O atoms within 3.0 Å of the metal in the La cluster XYZ.
+  Idempotent; safe to re-run any time.
+- `scripts/analyze_bidentate.py` — populates `n_bidentate_asp_glu` field by
+  detecting Asp/Glu κ²-O,O pairs (two first-shell O within 3.0 Å of metal
+  sharing a common carboxylate C ≤1.5 Å). Idempotent.
+- `scripts/rebuild_recarve_queue.py` — scans workspace for empty-carve entries
+  (E[La] ≈ −31.16 Ha) and writes `results/recarve_queue.tsv`, deduping against
+  prior `recarve_log_*.tsv` outcomes.
+- `scripts/recarve_watcher.sh` — long-running 60-min poll loop that rebuilds
+  the recarve queue and invokes the processor. PID lockfile at
+  `/tmp/recarve_watcher.lock`; safe to stop by deleting the lockfile.
+- `results/pqq_refold_queue.tsv` — hand-off queue for PQQ refold candidates
+  (fold_daemon consumer). Currently 1 entry: A0A840IK71_conexibacter.
+- `paper_methods/` — new subdirectory for the Colin's-paper handoff:
+  - `colin_methods_paragraph.md` — final DFT method paragraph wording +
+    what it deliberately omits + terminology bans
+  - `citations.bib` — 6 refs (ORCA, r²SCAN-3c, def2, CPCM, LnECP, PDBFixer)
+  - `paper2_pitch.md` — methodology paper outline / hooks / open questions
+- Two new fields in `results/all_results.jsonl` on every entry:
+  `cn_3A` (int) and `n_bidentate_asp_glu` (int)
+
+### Changed
+- `scripts/carve_generic.py` — added pre-DFT CN filter. Before writing ORCA
+  inputs, counts N+O within 3.0 Å of the metal; if CN < 4, writes a
+  `<stem>_SKIPPED_CN<N>.txt` marker and returns without producing
+  `.xyz`/`.inp`/`submit_*.sh`. Skips ~18% of raw candidates. Motivated by
+  the CN × bidentate cross-table (see CONTEXT.md 2026-07-16 section);
+  CN=3 candidates are structurally implausible Ln binders.
+
+### Retracted
+- All framing of the method as "alchemical free energy perturbation" —
+  method is single-point cluster DFT with an aquo reference, not FEP.
+  See CONTEXT.md 2026-07-16 "why-not-FEP" section for full rebuttal.
+  Any occurrence must be replaced with "quantum-chemical
+  metal-selectivity scoring" or "cluster-based DFT metal-selectivity
+  scoring". This includes the abstract and section headers of Colin's
+  paper — verify before submission.
+
+### Documented (in CONTEXT.md 2026-07-16 section)
+- A0A1S4ANT3 (tobacco PVA-DH) result: +13.3 kcal/mol Ln-preferring;
+  first plant-native candidate with defined substrate class
+- A0A840IK71 PQQ refold experiment: apo +17.7 flipped to −18.2 with PQQ;
+  interpretation open pending PQQ-in-pocket verification
+- ExaF (C5AXV8) calibration-boundary diagnosis: AF3 systematically places
+  8th donor at ~3.10 Å instead of ~2.7 Å; +10 kcal/mol reflects that
+  geometry, not real weak selectivity (Good et al. 2016 verified via
+  WebFetch as strict Ln-obligate)
+- CN cross-table + PQQ-signature-in-CN=9-with-2-bidentate observation
+
 ## [Unreleased]
 
 ### Added

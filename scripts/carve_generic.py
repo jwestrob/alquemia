@@ -208,6 +208,28 @@ def carve(structure_path: Path, out_dir: Path, stem: str,
     print(f"\n  QM region: {n_total} atoms ({n_carbox} carboxylates, {len(inner_w_O)} water, {len(link_hs)} link H)")
     print(f"  Net charge (La): {net_charge:+d}")
 
+    # ─── CN @3.0 Å filter (N+O donors) ─────────────────────────────────────
+    # Sites with too few first-shell donors are not credible Ln binders;
+    # running DFT on them wastes cluster time. Threshold: skip if CN ≤ 3.
+    # See VALIDATION.md / RESULTS.md for the cross-table that motivated this.
+    CN_MIN = 4
+    cn_3A = 0
+    for el, x, y, z in sidechain_atoms + water_atoms:
+        if el not in ("O", "N"):
+            continue
+        dx = x - la_pos.x; dy = y - la_pos.y; dz = z - la_pos.z
+        if (dx*dx + dy*dy + dz*dz) ** 0.5 <= 3.0:
+            cn_3A += 1
+    print(f"  CN @3Å (N+O): {cn_3A}")
+    if cn_3A < CN_MIN:
+        skip_marker = out_dir / f"{stem}_SKIPPED_CN{cn_3A}.txt"
+        with open(skip_marker, "w") as f:
+            f.write(f"# Skipped DFT pre-submit (CN @3Å = {cn_3A} < {CN_MIN})\n")
+            f.write(f"# stem={stem}\n# n_carbox={n_carbox}\n# n_total_qm={n_total}\n")
+        print(f"  ⏭️  Skipping ORCA writes — CN={cn_3A} < {CN_MIN}. Marker: {skip_marker.name}")
+        return  # exit before write_pair / submit script generation
+    # ───────────────────────────────────────────────────────────────────────
+
     def write_pair(suffix, charge, atoms, metal_basis_block):
         xyz_p = out_dir / f"{stem}_{suffix}_qm.xyz"
         with open(xyz_p, "w") as f:

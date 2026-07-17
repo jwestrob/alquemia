@@ -1,0 +1,27 @@
+# PQQ refold queue — candidates whose apo-cofactor AF model gave a Ln-preferring
+# signal but whose first-shell architecture (clustered Asp triad + nearby Tyr
+# aromatic face + LYS/MET reaching in) is consistent with a missing PQQ cofactor.
+#
+# Contract for fold_daemon:
+#   - Refold the protein sequence via AF3 WITH a PQQ ligand (SMILES below) at
+#     the indicated metal site. AF3 needs the PQQ as an explicit ligand input.
+#   - Output the refolded CIF (with LIG_PQQ + metal HETATMs) into the inbox.
+#   - PQQ-aware routing in process_inbox.sh will then handle the rest:
+#     normalize_af3_cif → protonate_cif → carve_with_pqq (24-atom PQQ at q=-2
+#     in QM region) → write_orca_inputs → sbatch.
+#
+# PQQ SMILES (pyrroloquinoline quinone, free acid, 24-atom QM region):
+#   O=C1C(=O)c2cc(C(=O)O)c3[nH]c(C(=O)O)c(C(=O)O)c3c2N1
+#   (charge state: −2 at physiological pH, two carboxylates deprotonated)
+#
+# Columns:
+#   stem            — UniProt accession + clade tag (matches *_qm/ stem)
+#   apo_ddE_kcal    — current ΔΔE without cofactor (apo-cofactor fold)
+#   apo_CN          — first-shell donor count (≤2.8 Å) in current carve
+#   architecture    — quick description of why we suspect PQQ
+#   priority        — high / medium / low (operator triage)
+#   added_by        — agent/operator who flagged the entry
+#   added_date      — ISO date stamp
+#   notes           — free-text rationale
+stem	apo_ddE_kcal	apo_CN	architecture	priority	added_by	added_date	notes
+A0A840IK71_conexibacter	+17.7	6	3×Asp triad (D547/D549/D554) + TYR552 backbone-O + non-coordinating TYR552/TYR556 aromatics + LYS38/MET32 from distant blades reaching in	high	claude (DFT discriminator agent)	2026-05-18	9-bladed β-propeller WD40 (atypical for PQQ-ADHs which are usually 8-bladed). Apo-cofactor ΔΔE = +17.7 kcal/mol (Ln-preferring, near +20 Ln-evolved threshold). Architecture is textbook PQQ binding: 3 clustered Asp at the floor of the pocket, 2 Tyr aromatics positioned as a stacking face but OH groups pointed away (consistent with π-stack against PQQ pyrroloquinoline ring), LYS38 + MET32 reaching across from distant blades = classic PQQ catalytic/proton-shuttle/redox-tuning machinery. Likely a soil-actinobacterial quinoprotein dehydrogenase orphan. Strong call for PQQ refold + recarve.

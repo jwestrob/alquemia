@@ -69,7 +69,7 @@ def main():
     prior = load_prior_outcomes()
     flagged = []
 
-    for d in sorted(ALCH.glob("*_qm")):
+    for d in sorted(ALCH.glob("workspaces/*_qm")):
         stem = d.name[:-3]  # strip "_qm"
         laf = d / f"sp_{stem}_La.out"
         e = parse_final_e(laf)

@@ -117,7 +117,7 @@ total_dirs_seen=0
 
 shopt -s nullglob
 
-for qm_dir in "$WORKSPACE"/*_qm; do
+for qm_dir in "$WORKSPACE"/workspaces/*_qm; do
   [[ -d "$qm_dir" ]] || continue
   base="$(basename "$qm_dir")"
 

@@ -35,7 +35,7 @@ for cif in "$INBOX"/*.cif; do
   # Sanitize: replace '.' and other special chars in stem
   stem=$(echo "$base" | tr -c '[:alnum:]_-' '_' | sed 's/__*/_/g' | sed 's/_$//')
 
-  out_dir="$ALCH/${stem}_qm"
+  out_dir="$ALCH/workspaces/${stem}_qm"
   if [ -f "$out_dir/sp_${stem}_La.out" ] && grep -q "FINAL SINGLE POINT ENERGY" "$out_dir/sp_${stem}_La.out" 2>/dev/null; then
     echo "[DONE] $stem already processed"
     mv "$cif" "$PROCESSED/"

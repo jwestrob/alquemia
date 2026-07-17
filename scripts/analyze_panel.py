@@ -63,7 +63,7 @@ def classify(ddE_kcal: float, n_atoms_str: str) -> str:
 
 def main():
     rows = []
-    for qm_dir in sorted(ROOT.glob("*_qm")):
+    for qm_dir in sorted(ROOT.glob("workspaces/*_qm")):
         if qm_dir.is_dir() and qm_dir.name not in ("qmmm",):
             # Find La/Ca/apo/water by glob (case-insensitive stem)
             la_outs = sorted(qm_dir.glob("sp_*_La.out"))

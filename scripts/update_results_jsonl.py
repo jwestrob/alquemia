@@ -460,7 +460,7 @@ def main(argv: list[str] | None = None) -> int:
     n_new = 0
     n_updated = 0
     n_skipped = 0
-    for qm_dir in sorted(workspace.glob("*_qm")):
+    for qm_dir in sorted(workspace.glob("workspaces/*_qm")):
         if not qm_dir.is_dir():
             continue
         if qm_dir.name in SKIP_DIRS:

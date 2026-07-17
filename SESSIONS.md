@@ -42,6 +42,15 @@
 
 **Long-lived processes it manages:** `recarve_watcher.log` shows one. Others as they come.
 
+**Latest published state (as of commit `d9c825d`, 2026-07-16):** 4017 candidates classified.
+- 34 Ln-evolved (ddE ≥ +20 kcal/mol; highest-confidence Ln-binders)
+- 594 Ln-preferring (+5 to +20)
+- 462 marginal / 408 ambiguous
+- 908 Ca-evolved / 222 OUTLIER (Ca, verify SCF)
+- 171 EXCLUDE-under-carved
+- 1218 pending
+- Notable: A0A840IK71 PQQ refold came back **-18.2 kcal/mol Ca-evolved** (was +17.7 Ln-preferring apo). Interpretation open — likely because protenix placed PQQ 12-47 Å from La (verified 2026-05-18 by upstream), so the DFT evaluated a *different* pocket. Not a definitive negative result for the queue's PQQ hypothesis.
+
 ### Fold pipeline — `on_density_scanner/fold_daemon/`
 
 **Owner:** fold-daemon agent (currently: Claude 4.7 sessions initiated 2026-05-09 through 2026-07-16; hands off cleanly to whichever model reads this next).

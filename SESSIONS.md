@@ -111,6 +111,61 @@ Separate task-scope, presumably a different agent's remit. Not currently in flig
 - Not rebuild the gate. If you have reason to change the threshold, do it in one place: the constants block near the top of `forward_to_dft.py`. All rationale is in the docstring there.
 - If biotite has restarted since this entry: `forward_to_dft` is dead, `_pids/forward_to_dft.pid` is stale, the recovery procedure is documented in `docs/upstream_fold_daemon.md`.
 
+### 2026-07-16 — DFT-discriminator agent (Claude 4.7)
+
+**Model + session:** Claude 4.7 (1M context), same session continuous since 2026-05-09 running the DFT discriminator side (`alchemical_bvs/`). Sister to the fold-daemon agent above; separate SessionUUID but same model and same date range.
+
+**Reason for log entry:** Handoff prep — user considering GPT-5.6-Sol-Pro for downstream work and asked to make the narrative context durable before any transition.
+
+**What changed on disk:**
+- 3 commits pushed to `origin/main`:
+  - `afe8ef3` — pipeline additions: `scripts/{add_cn_3A,analyze_bidentate,rebuild_recarve_queue}.py`, `scripts/recarve_watcher.sh`, `results/pqq_refold_queue.tsv`, `paper_methods/` (Colin's methods paragraph + citations.bib + paper2_pitch.md), CN≤3 pre-DFT filter added to `scripts/carve_generic.py`
+  - `d9c825d` — results snapshot: manifest with new `cn_3A` and `n_bidentate_asp_glu` fields
+  - `1823a79` — gitignore for `results/recarve_watcher.log`
+- 2 vault notes written at `~/obsidian-vault/projects/lanthanide-binding/`:
+  - `CONTEXT.md` — comprehensive 2026-07-16 handoff section (~250 lines) with methods paragraph, ExaF diagnosis, tobacco PVA-DH, PQQ refold, CN filter cross-table, why-not-FEP rebuttal
+  - `HANDOFF_2026-07-16.md` (new) — terse one-page cheat-sheet
+- **Repo is the primary source of truth per this SESSIONS.md's guidance;** the vault notes are supplementary reasoning trail, not authoritative state.
+
+**Cumulative work since 2026-05-09:**
+- 4017 candidates classified through the discriminator (per fold-daemon's count above; my earlier "3985" number was the manifest before density scanner's most recent forwards landed)
+- New sub-tallies with CN≥5 filter applied (structurally credible only): 19 Ln-evolved, 335 Ln-preferring
+- Consumed 586 forwarded folds from the fold_daemon agent + earlier direct-inbox drops
+- Added CN filter that skips ~18% of raw candidates as structurally implausible (CN≤3)
+- Managed the recarve queue (empty-carve → residue-whitelist retry) — currently drained
+- Ran the tobacco PVA-DH hit `A0A1S4ANT3` end-to-end (2026-07-07): +13.3 kcal/mol Ln-preferring, plant-native candidate with defined substrate class
+- Wrote and iterated on the Colin's-paper DFT-methods paragraph (final wording in `paper_methods/colin_methods_paragraph.md`)
+- Diagnosed the ExaF (C5AXV8) calibration-boundary case: +9.75/+11.37 kcal/mol on two independent PQQ+La cofolds, confirmed to be AF3 sub-Angstrom geometry artifact (8th donor at 3.10 Å rather than crystallographic ~2.7 Å), not real weak selectivity — Good et al. 2016 verified via WebFetch as strict Ln-obligate
+- Retracted "alchemical free energy perturbation" framing from all method descriptions — replaced with "quantum-chemical metal-selectivity scoring" (see `paper_methods/colin_methods_paragraph.md` for terminology bans)
+
+**Cross-references between this and the fold-daemon session:**
+- A0A840IK71 PQQ refold: fold-daemon agent confirmed Protenix placed PQQ 12–47 Å from La (their entry above); this closes the interpretation-open question I had in my vault CONTEXT before reading their log. **Ticket in `results/pqq_refold_queue.tsv` should NOT be re-tried via Protenix.** If someone wants a genuine PQQ+La cofold of IK71, use AF3 server or manual template transplant.
+- Geometry gate at forward_to_dft.py (n_total ≥ 4, mean_d ≤ 2.7 Å): pre-filters what reaches my inbox. Downstream `carve_generic.py` filter (CN < 4 skip) is a *second* gate on the same quantity. Two agents converged independently on ~the same threshold, which is a nice sanity check.
+
+**Current state (as of this log entry):**
+- `recarve_watcher.sh` — **ALIVE**, hourly poll loop, PID lockfile at `/tmp/recarve_watcher.lock`
+- No pending or running discriminator jobs; queue drained
+- No pending recarve queue entries
+- `results/pqq_refold_queue.tsv` — 1 open entry (A0A840IK71, now with density scanner's finding that Protenix refold placed PQQ off-site; needs AF3-server retry to actually test the hypothesis)
+
+**Known-open decisions I'm passing to future readers:**
+
+1. **AF3 geometry-bias for PQQ-Ln sites.** ExaF diagnosis strongly suggests AF3 systematically displaces one first-shell donor by ~0.3–0.5 Å in PQQ-8β Ln-cofold sites. Verification: compare 8 first-shell donor distances in PDB 6OC6 (XoxF crystal, La-bound) vs. `colinpqq_la_xoxf_pqq_la_model_qm/*_La_qm.xyz` (AF3 XoxF from Colin's set). Not done yet. If confirmed, this is a real methodological finding for Paper 2 (`paper_methods/paper2_pitch.md` Arc 4).
+
+2. **Colin's paper abstract wording.** Verify before submission that both the abstract and the section header at line 165 of `~/Euk-Lnbinders-paper.docx` no longer say "alchemical free energy perturbation" or "free-energy difference". Both should be replaced with the quantum-chemical framing. `paper_methods/colin_methods_paragraph.md` has the full retraction guidance.
+
+3. **PDBFixer citation.** Colin has been informed and will add `Eastman2013_PDBFixer` (from `paper_methods/citations.bib`) to the References section, since PDBFixer is used for protonation but wasn't cited previously.
+
+4. **Manifest field extension.** The two new fields I added (`cn_3A`, `n_bidentate_asp_glu`) are refreshable via `scripts/add_cn_3A.py` and `scripts/analyze_bidentate.py`. Both are idempotent. Re-run after any batch of new completions to keep the manifest current.
+
+5. **Same as fold-daemon agent's item 1:** A0A840IK71 PQQ refold — inconclusive, PQQ placement problem. Interpretation is genuinely open; do not treat -18.2 kcal/mol as a definitive negative.
+
+**Next agent picking up the discriminator side should:**
+- Read `HANDOFF_2026-07-16.md` in the vault first (terse), then this file, then `CONTEXT.md` 2026-07-16 section for the full reasoning trail
+- If venue for Colin's paper leans chem-adjacent, consider adding the r²SCAN-3c / ORCA parenthetical back into the methods paragraph (see `paper_methods/colin_methods_paragraph.md`)
+- Extend the CN filter to `carve_with_pqq.py` and `process_recarve_queue.py` (currently only in `carve_generic.py`) — no-op for the PQQ path but tidies the recarve path
+- Do the AF3 geometry-bias verification (item 1 above) — it's the highest-leverage open methodological question
+
 ---
 
 *Template for future entries:*

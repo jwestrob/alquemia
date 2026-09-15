@@ -8,10 +8,11 @@ rule, and pass/fail criteria before input preparation and execution.
 
 ## Question
 
-Can one chemically explicit, fixed PQQ-MDH active-site core distinguish the
-11 previously verified lanthanide-dependent PQQ-MDHs from the 14 previously
-verified calcium-dependent PQQ-MDHs, without changing the carve between
-proteins or choosing a cutoff after seeing the new energies?
+Can one chemically explicit, role-defined PQQ-MDH active-site core distinguish
+the 11 previously verified lanthanide-dependent PQQ-MDHs from the 14
+previously verified calcium-dependent PQQ-MDHs, without accidental
+distance-dependent fragment omission or choosing a cutoff after seeing the new
+energies?
 
 The experiment deliberately recalibrates before testing matched crystal
 structures. The original 25-member panel is calibration data, not new external
@@ -26,11 +27,17 @@ Use every entry in `testset_expansion/frozen_v0_ids.tsv`: 11 Ln-labeled and
 weighted. All 25 must produce one valid La/Ca pair.
 
 Use the preserved source CIF for each protein, normalize metal/PQQ identities,
-and protonate by the repository's current deterministic PQQ workflow. Retain
-the source geometry; do not refold, optimize, minimize, add a water, or select
-an alternative conformer. La and Ca calculations for a protein must have
-byte-identical nonmetal coordinates and differ only in metal identity, charge,
-and electron count. Both are closed-shell singlets.
+and protonate standard residues at pH 7.0 with Python 3.11.15, PDBFixer 1.12.0,
+OpenMM 8.5.1, and Gemmi 0.7.5 through `scripts/protonate_cif.py` at frozen
+SHA-256
+`9a1adf14e8736b032cf0ffc98367953a2fa2df130474278a352a74cfe0270f05`.
+PQQ hydrogens are supplied only by the separately pinned PQQ(3-) specification.
+Retain every source heavy-atom coordinate; do not refold, optimize, minimize,
+add a water, or select an alternative conformer. Preparation must record the
+protonated coordinate hash, package versions, every retained hydrogen and
+synthetic cap, and the charge ledger before ORCA. La and Ca calculations for a
+protein must have byte-identical nonmetal coordinates and differ only in metal
+identity, charge, and electron count. Both are closed-shell singlets.
 
 The source structures contain no resolved waters. The primary v3 state is
 therefore explicitly dry; synthetic waters are forbidden.
@@ -60,10 +67,21 @@ Distance-radius membership is not allowed to alter this core. The expected
 total La/Ca charges are -2/-3 for Ln controls and -1/-2 for Ca controls.
 Any mismatch is a preparation failure.
 
-For descriptive QC, geometric CN is the number of PQQ/protein O or N atoms
-within 3.1 A of the metal. Fixed-core inclusion does not itself count as
-coordination. Calibration admission requires source CN >= 6; the production
-prospecting gate remains CN >= 7 and is not changed by this experiment.
+This means the extra Asp, scaffold charge, and atom count are perfectly
+correlated with the existing labels: all 11 Ln controls have D+2 and all 14 Ca
+controls do not. The locked cheap motif-only baseline therefore already
+classifies 25/25. A successful v3 calibration establishes an operational
+energy scale for this chemically defined site family; it **cannot** establish
+that DFT adds predictive information beyond the W-D-x-D motif on this panel.
+That limitation and the motif-only baseline must be reported with the result.
+
+For descriptive QC, geometric CN uses the repository's chemically typed donor
+policy: schema-allowed PQQ donor atoms plus typed protein O/N donors within
+3.1 A. Untyped O/N atoms do not count. Fixed-core inclusion does not itself
+count as coordination. Preparation must freeze the ordered donor ledger and
+fail if a qualifying off-core donor supplies the admission CN. Calibration
+admission requires source CN >= 6; the production prospecting gate remains
+CN >= 7 and is not changed by this experiment.
 
 ## Frozen electronic model
 
@@ -107,7 +125,8 @@ The protocol is **CALIBRATABLE** only if all four conditions hold:
 3. the empty-class gap `G = L - U` is at least 5.0 kcal/mol; and
 4. leave-one-protein-out midpoint classification is correct for 25/25 proteins,
    with each omitted protein classified using the midpoint derived from the
-   other 24.
+   other 24. Each training subset must itself have strict separation; equality,
+   an unfit midpoint, or an omitted score equal to the midpoint is failure.
 
 The 5.0 kcal/mol floor was fixed before v3 energies from the pre-existing
 maximum cross-preparation movement of approximately 4.49 kcal/mol, rounded

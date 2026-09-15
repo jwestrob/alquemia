@@ -1,0 +1,332 @@
+{
+  "execution_policy": {
+    "runtime_renderer": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/render_orca_runtime_input.py",
+      "sha256": "4d75904eca4296abd892958df700063e272f5f029a0ce256bcf1b579768aeadb"
+    },
+    "task_runner": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/run_orca_task_manifest.py",
+      "sha256": "b9278e74e5317e859e8cb05541e1ec57cb335b26dcdf65a83b89675407343b9a"
+    }
+  },
+  "experiment": {
+    "git_commit": "fafd9f7",
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_balanced_embedding_20260914/EXPERIMENT.md",
+    "sha256": "c8265434acaa9a351bdb546b1cc16f8f848cddbd15581beb5210d445d7d2afcb"
+  },
+  "implementation": {
+    "execution_runner": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/run_orca_task_manifest.py",
+      "sha256": "b9278e74e5317e859e8cb05541e1ec57cb335b26dcdf65a83b89675407343b9a"
+    },
+    "forcefield": {
+      "path": "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/lib/python3.11/site-packages/openmm/app/data/amber19/protein.ff19SB.xml",
+      "sha256": "086bfdb1c05e7d5cb1d330e6c39fab5056a95e89492cdbd3044c746db13e9d09"
+    },
+    "openmm_version": "8.5.1",
+    "preparer": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_balanced_embedding_20260914/prepare_embedding.py",
+      "sha256": "093477f682cd38dd18f7a76980cc2d212bc6438d368f589530c4b5cd330d0e88"
+    },
+    "runtime_renderer": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/render_orca_runtime_input.py",
+      "sha256": "4d75904eca4296abd892958df700063e272f5f029a0ce256bcf1b579768aeadb"
+    }
+  },
+  "preparation_amendment": {
+    "git_commit": "be1e051",
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_balanced_embedding_20260914/PREPARATION_AMENDMENT.md",
+    "sha256": "e0b539aa180fa7074d34004821f60b4980d104cac633448b0a064c1284c1f013"
+  },
+  "schema_version": "pqq_balanced_embedding.tasks.v1",
+  "tasks": [
+    {
+      "input": {
+        "anchor": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_boundary_pair_20260914/mxaf_1H4I_qm33/sp_mxaf_1H4I_qm33_La.inp",
+          "sha256": "d23c233df34c8936e2ff6f7701397edc20b7200bd69974fee02c9ad52afd87b1"
+        },
+        "path": "prepared/mxaf/qm33/La.inp",
+        "sha256": "37afdc7234c82d5d8dca0915cb8d3d2e5a29cd99785d1393242079be15cbf28e"
+      },
+      "output_path": "prepared/mxaf/qm33/La.out",
+      "point_charges": {
+        "path": "prepared/mxaf/qm33/pointcharges.pc",
+        "sha256": "5103889fa827efa80a22ba7184027d973acfed6b646e2055e486ab84957791b9"
+      },
+      "task_id": "mxaf_qm33_La",
+      "xyz": {
+        "anchor": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_boundary_pair_20260914/mxaf_1H4I_qm33/mxaf_1H4I_qm33_La_qm.xyz",
+          "sha256": "fe6f2903cfe8ae362e8c11b6a8dd393d18edf0eaa3a9ac2c75cd26eaed57dfb0"
+        },
+        "path": "prepared/mxaf/qm33/La.xyz",
+        "sha256": "fe6f2903cfe8ae362e8c11b6a8dd393d18edf0eaa3a9ac2c75cd26eaed57dfb0"
+      }
+    },
+    {
+      "input": {
+        "anchor": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_boundary_pair_20260914/mxaf_1H4I_qm33/sp_mxaf_1H4I_qm33_Ca.inp",
+          "sha256": "06691e92f46aa729bf2819b504a36982d83cdf27112a3d46548c48fb907fd56d"
+        },
+        "path": "prepared/mxaf/qm33/Ca.inp",
+        "sha256": "79867281626caf7bd96bfb4e29289b89027cc691ff4431d483f71703ba8cb024"
+      },
+      "output_path": "prepared/mxaf/qm33/Ca.out",
+      "point_charges": {
+        "path": "prepared/mxaf/qm33/pointcharges.pc",
+        "sha256": "5103889fa827efa80a22ba7184027d973acfed6b646e2055e486ab84957791b9"
+      },
+      "task_id": "mxaf_qm33_Ca",
+      "xyz": {
+        "anchor": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_boundary_pair_20260914/mxaf_1H4I_qm33/mxaf_1H4I_qm33_Ca_qm.xyz",
+          "sha256": "701c99d98e63c662f40d79a3ddb8657406bc83001612c108703ad105de57010b"
+        },
+        "path": "prepared/mxaf/qm33/Ca.xyz",
+        "sha256": "701c99d98e63c662f40d79a3ddb8657406bc83001612c108703ad105de57010b"
+      }
+    },
+    {
+      "input": {
+        "anchor": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mxaf_1H4I_qm36_qm/sp_mxaf_1H4I_qm36_La.inp",
+          "sha256": "a649def49629aff27dee1fe8bfdb231ea4e581db839032cf6b18be1cf0063450"
+        },
+        "path": "prepared/mxaf/qm36/La.inp",
+        "sha256": "63245deb794ddd2546bee80e66b204df9c8d663d8a8feaf5e7511d3c01da0262"
+      },
+      "output_path": "prepared/mxaf/qm36/La.out",
+      "point_charges": {
+        "path": "prepared/mxaf/qm36/pointcharges.pc",
+        "sha256": "941b09d7dbb28cecad4d9d2e953d014c27e6a2cefc9737e3b8f34773114025c9"
+      },
+      "task_id": "mxaf_qm36_La",
+      "xyz": {
+        "anchor": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mxaf_1H4I_qm36_qm/mxaf_1H4I_qm36_La_qm.xyz",
+          "sha256": "5eec2957b18bce0cbb3ffe9e1929fd673f0e7edc23bb7896e15bb85bd82d11bc"
+        },
+        "path": "prepared/mxaf/qm36/La.xyz",
+        "sha256": "5eec2957b18bce0cbb3ffe9e1929fd673f0e7edc23bb7896e15bb85bd82d11bc"
+      }
+    },
+    {
+      "input": {
+        "anchor": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mxaf_1H4I_qm36_qm/sp_mxaf_1H4I_qm36_Ca.inp",
+          "sha256": "e18bc8416aaa875d0e90a36e713269d2095e9ca08fa1b6d2434c52fa5095b014"
+        },
+        "path": "prepared/mxaf/qm36/Ca.inp",
+        "sha256": "a23fb13b32ed62324f072868e97a9739f8c255af2e0e865896874cbfb0119e97"
+      },
+      "output_path": "prepared/mxaf/qm36/Ca.out",
+      "point_charges": {
+        "path": "prepared/mxaf/qm36/pointcharges.pc",
+        "sha256": "941b09d7dbb28cecad4d9d2e953d014c27e6a2cefc9737e3b8f34773114025c9"
+      },
+      "task_id": "mxaf_qm36_Ca",
+      "xyz": {
+        "anchor": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mxaf_1H4I_qm36_qm/mxaf_1H4I_qm36_Ca_qm.xyz",
+          "sha256": "ffbf369caf1af03df49b7ce03cb3ade4c85ad52ded33d6f53951e0c2730c9ee2"
+        },
+        "path": "prepared/mxaf/qm36/Ca.xyz",
+        "sha256": "ffbf369caf1af03df49b7ce03cb3ade4c85ad52ded33d6f53951e0c2730c9ee2"
+      }
+    },
+    {
+      "input": {
+        "anchor": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/tf_pqq_C5B120_pqq_la_monomer_v1_d7eb580a1486_rank0_sample_0_qm/sp_tf_pqq_C5B120_pqq_la_monomer_v1_d7eb580a1486_rank0_sample_0_La.inp",
+          "sha256": "1dd1e4cb089f0511f791f847af27c205fe0221e022021138dea97e627eb046a9"
+        },
+        "path": "prepared/c5_monomer/qm33/La.inp",
+        "sha256": "456a08568f2d03c02acaab94d8be3243ff30a67790c612b5d237082b47672ae9"
+      },
+      "output_path": "prepared/c5_monomer/qm33/La.out",
+      "point_charges": {
+        "path": "prepared/c5_monomer/qm33/pointcharges.pc",
+        "sha256": "c46fd2f058863d978f4a8a2e4ef5734f72b3c47b525d8b05ec910d2d0cc2060f"
+      },
+      "task_id": "c5_monomer_qm33_La",
+      "xyz": {
+        "anchor": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/tf_pqq_C5B120_pqq_la_monomer_v1_d7eb580a1486_rank0_sample_0_qm/tf_pqq_C5B120_pqq_la_monomer_v1_d7eb580a1486_rank0_sample_0_La_qm.xyz",
+          "sha256": "00de7adaee6cb3d6338b58a33e2e0cf35abacae100b50412f6de7655352aed4e"
+        },
+        "path": "prepared/c5_monomer/qm33/La.xyz",
+        "sha256": "00de7adaee6cb3d6338b58a33e2e0cf35abacae100b50412f6de7655352aed4e"
+      }
+    },
+    {
+      "input": {
+        "anchor": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/tf_pqq_C5B120_pqq_la_monomer_v1_d7eb580a1486_rank0_sample_0_qm/sp_tf_pqq_C5B120_pqq_la_monomer_v1_d7eb580a1486_rank0_sample_0_Ca.inp",
+          "sha256": "4ea5ccb20d3b752fefe34d3edb1aa5767cf9f3d68571ad2c9e280e093314d6d5"
+        },
+        "path": "prepared/c5_monomer/qm33/Ca.inp",
+        "sha256": "80a9bd64a7e891857ac27d620d503c8ae67e36642e5fe136e166657eb14f4282"
+      },
+      "output_path": "prepared/c5_monomer/qm33/Ca.out",
+      "point_charges": {
+        "path": "prepared/c5_monomer/qm33/pointcharges.pc",
+        "sha256": "c46fd2f058863d978f4a8a2e4ef5734f72b3c47b525d8b05ec910d2d0cc2060f"
+      },
+      "task_id": "c5_monomer_qm33_Ca",
+      "xyz": {
+        "anchor": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/tf_pqq_C5B120_pqq_la_monomer_v1_d7eb580a1486_rank0_sample_0_qm/tf_pqq_C5B120_pqq_la_monomer_v1_d7eb580a1486_rank0_sample_0_Ca_qm.xyz",
+          "sha256": "8b91846931cfde6828c33a88a6d0153a1663f4a10b6c49034472974de88b62a0"
+        },
+        "path": "prepared/c5_monomer/qm33/Ca.xyz",
+        "sha256": "8b91846931cfde6828c33a88a6d0153a1663f4a10b6c49034472974de88b62a0"
+      }
+    },
+    {
+      "input": {
+        "anchor": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_boundary_pair_20260914/C5B120_monomer_qm36/sp_C5B120_monomer_qm36_La.inp",
+          "sha256": "d83b37ed150b6f5c43e1634fd603378304ede76c42ff90d949d0888df8b9a1b3"
+        },
+        "path": "prepared/c5_monomer/qm36/La.inp",
+        "sha256": "809975efed2a35d8d9034572eb19dfd3822f854c33ca77d42e0a4c39943ba86e"
+      },
+      "output_path": "prepared/c5_monomer/qm36/La.out",
+      "point_charges": {
+        "path": "prepared/c5_monomer/qm36/pointcharges.pc",
+        "sha256": "b6f058d1457d8e009d2a7d93373b5d900163a400c9c1057276fc797bb0b76c50"
+      },
+      "task_id": "c5_monomer_qm36_La",
+      "xyz": {
+        "anchor": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_boundary_pair_20260914/C5B120_monomer_qm36/C5B120_monomer_qm36_La_qm.xyz",
+          "sha256": "3d9c269acfb84cbfa5b325bc5462550335c3ad1a7b1ffe7312973ed8869ba17d"
+        },
+        "path": "prepared/c5_monomer/qm36/La.xyz",
+        "sha256": "3d9c269acfb84cbfa5b325bc5462550335c3ad1a7b1ffe7312973ed8869ba17d"
+      }
+    },
+    {
+      "input": {
+        "anchor": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_boundary_pair_20260914/C5B120_monomer_qm36/sp_C5B120_monomer_qm36_Ca.inp",
+          "sha256": "f3dd224be38e6b2fa31ae61d436b4355c30ecbae4a9692c88ddcd42b3c10752a"
+        },
+        "path": "prepared/c5_monomer/qm36/Ca.inp",
+        "sha256": "9a7e03e5f9262097eb50d2e3822fc9296ff53d3d499ef6ef0a003b00497a6b4b"
+      },
+      "output_path": "prepared/c5_monomer/qm36/Ca.out",
+      "point_charges": {
+        "path": "prepared/c5_monomer/qm36/pointcharges.pc",
+        "sha256": "b6f058d1457d8e009d2a7d93373b5d900163a400c9c1057276fc797bb0b76c50"
+      },
+      "task_id": "c5_monomer_qm36_Ca",
+      "xyz": {
+        "anchor": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_boundary_pair_20260914/C5B120_monomer_qm36/C5B120_monomer_qm36_Ca_qm.xyz",
+          "sha256": "d63fbdaf770344705b22980d7464245ede4218f75a66ac76b7d7a99656e99ead"
+        },
+        "path": "prepared/c5_monomer/qm36/Ca.xyz",
+        "sha256": "d63fbdaf770344705b22980d7464245ede4218f75a66ac76b7d7a99656e99ead"
+      }
+    },
+    {
+      "input": {
+        "anchor": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/tf_pqq_C5B120_pqq_la_dimer_v1_cdf8e2570d6c_rank2_sample_2_qm/sp_tf_pqq_C5B120_pqq_la_dimer_v1_cdf8e2570d6c_rank2_sample_2_La.inp",
+          "sha256": "1d337848ec6bab205d2410df80d51e0f441ded0766bd1f9e96a1e649589d475c"
+        },
+        "path": "prepared/c5_dimer/qm33/La.inp",
+        "sha256": "8cdc008042a95b2db174a34eb0a3bdbb493643bf5a3d6c6a702f7c329747389b"
+      },
+      "output_path": "prepared/c5_dimer/qm33/La.out",
+      "point_charges": {
+        "path": "prepared/c5_dimer/qm33/pointcharges.pc",
+        "sha256": "26428301441e8e0d3d485cc3efe259840298ff1a4bccc9439de4de732783676e"
+      },
+      "task_id": "c5_dimer_qm33_La",
+      "xyz": {
+        "anchor": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/tf_pqq_C5B120_pqq_la_dimer_v1_cdf8e2570d6c_rank2_sample_2_qm/tf_pqq_C5B120_pqq_la_dimer_v1_cdf8e2570d6c_rank2_sample_2_La_qm.xyz",
+          "sha256": "2f6e1c02d0a8f11ccaddb420760f4083d08cc25f3e6f652f2beaf6787c8f99f5"
+        },
+        "path": "prepared/c5_dimer/qm33/La.xyz",
+        "sha256": "2f6e1c02d0a8f11ccaddb420760f4083d08cc25f3e6f652f2beaf6787c8f99f5"
+      }
+    },
+    {
+      "input": {
+        "anchor": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/tf_pqq_C5B120_pqq_la_dimer_v1_cdf8e2570d6c_rank2_sample_2_qm/sp_tf_pqq_C5B120_pqq_la_dimer_v1_cdf8e2570d6c_rank2_sample_2_Ca.inp",
+          "sha256": "c328d7e33fa71c297021b37fdeaad11594ab1a8d396f0a7afa42303245d7c15d"
+        },
+        "path": "prepared/c5_dimer/qm33/Ca.inp",
+        "sha256": "bde9a9b237171e3c791b860235ef3a9a87efe4c40895f73b6baf8d6891861728"
+      },
+      "output_path": "prepared/c5_dimer/qm33/Ca.out",
+      "point_charges": {
+        "path": "prepared/c5_dimer/qm33/pointcharges.pc",
+        "sha256": "26428301441e8e0d3d485cc3efe259840298ff1a4bccc9439de4de732783676e"
+      },
+      "task_id": "c5_dimer_qm33_Ca",
+      "xyz": {
+        "anchor": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/tf_pqq_C5B120_pqq_la_dimer_v1_cdf8e2570d6c_rank2_sample_2_qm/tf_pqq_C5B120_pqq_la_dimer_v1_cdf8e2570d6c_rank2_sample_2_Ca_qm.xyz",
+          "sha256": "4ce78db11f722d3e1626da560f1262ed71791d791b2613495aaddaeadda2e51a"
+        },
+        "path": "prepared/c5_dimer/qm33/Ca.xyz",
+        "sha256": "4ce78db11f722d3e1626da560f1262ed71791d791b2613495aaddaeadda2e51a"
+      }
+    },
+    {
+      "input": {
+        "anchor": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_boundary_pair_20260914/C5B120_dimer_qm36/sp_C5B120_dimer_qm36_La.inp",
+          "sha256": "84acfeb0da8f7d331986a2972da25d12444a6c69ad9850ce68f940a59e10e0cf"
+        },
+        "path": "prepared/c5_dimer/qm36/La.inp",
+        "sha256": "ca3a4298d39039647028db4bc580ec5cc66271ac343cbd617292ba67a299fe12"
+      },
+      "output_path": "prepared/c5_dimer/qm36/La.out",
+      "point_charges": {
+        "path": "prepared/c5_dimer/qm36/pointcharges.pc",
+        "sha256": "e0fa25ee29ddd51ee37d2921a2c0acf91e28abe86323867a901346fa2f4e5193"
+      },
+      "task_id": "c5_dimer_qm36_La",
+      "xyz": {
+        "anchor": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_boundary_pair_20260914/C5B120_dimer_qm36/C5B120_dimer_qm36_La_qm.xyz",
+          "sha256": "483e896d19dca932f6237e5f90e7d6d3f23ab7e1804a303bd3b0af5bd2f1502c"
+        },
+        "path": "prepared/c5_dimer/qm36/La.xyz",
+        "sha256": "483e896d19dca932f6237e5f90e7d6d3f23ab7e1804a303bd3b0af5bd2f1502c"
+      }
+    },
+    {
+      "input": {
+        "anchor": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_boundary_pair_20260914/C5B120_dimer_qm36/sp_C5B120_dimer_qm36_Ca.inp",
+          "sha256": "bbf9b5f46805cdbc9a413b69089ff09456b71ffa90c412a0e5d2a30843d9a9a7"
+        },
+        "path": "prepared/c5_dimer/qm36/Ca.inp",
+        "sha256": "a5fa92fba0acd494ef980e3aea708e753463a07cfd2fffca99120d22f5852153"
+      },
+      "output_path": "prepared/c5_dimer/qm36/Ca.out",
+      "point_charges": {
+        "path": "prepared/c5_dimer/qm36/pointcharges.pc",
+        "sha256": "e0fa25ee29ddd51ee37d2921a2c0acf91e28abe86323867a901346fa2f4e5193"
+      },
+      "task_id": "c5_dimer_qm36_Ca",
+      "xyz": {
+        "anchor": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_boundary_pair_20260914/C5B120_dimer_qm36/C5B120_dimer_qm36_Ca_qm.xyz",
+          "sha256": "4ff6ca36f0b6322e39318efc6f059004b5a0ed6c121084ac3f9ec210b7f60517"
+        },
+        "path": "prepared/c5_dimer/qm36/Ca.xyz",
+        "sha256": "4ff6ca36f0b6322e39318efc6f059004b5a0ed6c121084ac3f9ec210b7f60517"
+      }
+    }
+  ]
+}

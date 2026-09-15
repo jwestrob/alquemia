@@ -99,6 +99,32 @@ def main() -> None:
                 - bare["panels"][case]["radii"][radius]["score_kcal_mol"]
             )
 
+    boundary_embedding_jumps = {
+        case: (
+            panels[case]["R_PC_3p6_minus_3p3_kcal_mol"]
+            - bare["panels"][case]["R_3p6_minus_3p3_kcal_mol"]
+        )
+        for case in panels
+    }
+    raw_outputs = []
+    for task in manifest["tasks"]:
+        output_path = HERE / task["output_path"]
+        execution_path = Path(str(output_path) + ".execution.json")
+        raw_outputs.append(
+            {
+                "task_id": task["task_id"],
+                "output": {"path": str(output_path), "sha256": sha256(output_path)},
+                "execution_record": {
+                    "path": str(execution_path),
+                    "sha256": sha256(execution_path),
+                },
+                "point_charges": {
+                    "path": str(HERE / task["point_charges"]["path"]),
+                    "sha256": task["point_charges"]["sha256"],
+                },
+            }
+        )
+
     preparation_path = HERE / "preparation.json"
     result = {
         "schema_version": "pqq_balanced_embedding.result.v1",
@@ -111,7 +137,9 @@ def main() -> None:
         "R_PC_MxaF_kcal_mol": r_mxaf,
         "D_PC_monomer_kcal_mol": d_mono,
         "D_PC_dimer_kcal_mol": d_dimer,
+        "embedding_induced_boundary_jump_kcal_mol": boundary_embedding_jumps,
         "panels": panels,
+        "raw_outputs": raw_outputs,
         "task_manifest": {"path": str(manifest_path), "sha256": manifest_hash},
         "preparation": {"path": str(preparation_path), "sha256": sha256(preparation_path)},
         "bare_panel": {"path": str(bare_path), "sha256": sha256(bare_path)},
@@ -146,6 +174,21 @@ def main() -> None:
             "",
             f"D_PC monomer = {d_mono:+.3f}; D_PC dimer = {d_dimer:+.3f} kcal/mol.",
             f"Sensitivity branch triggered: {'yes' if sensitivity_triggered else 'no'}.",
+            "",
+            "Both selective-margin gates passed, but the generic MxaF gate failed",
+            "catastrophically. Relative to the bare calculation, embedding changed the",
+            "3.3-to-3.6 boundary response by "
+            + ", ".join(
+                f"{case} {value:+.3f}" for case, value in boundary_embedding_jumps.items()
+            )
+            + " kcal/mol.",
+            "The near-common jump despite exact total-charge closure shows that a static",
+            "embedded-QM energy is not continuous when Asp(-) changes representation from",
+            "fixed MM charges to an explicit QM fragment. This model is rejected for",
+            "production scoring; the non-triggered sensitivity map cannot rescue its gate.",
+            "",
+            "Machine-readable energies and raw-output hashes are in `result.json`; complete",
+            "charge, repair, and distance ledgers are in `preparation.json`.",
             "",
         ]
     )

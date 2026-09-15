@@ -237,9 +237,22 @@ class PilotIntegration(unittest.TestCase):
             q=mbis_charges(t['output_path'],t['xyz']['path'],t['charge'])
             self.assertLess(abs(q['sum_e']-t['charge']),1e-4)
 
-    def test_actual_apbs_identity_integration(self):
+    def test_actual_apbs_identity_result_or_explicit_failure(self):
         p=ROOT/'workspaces/affordable_challenger_20260915/solver_completion/identity/1h4i_qm33_La/result.json'
-        if not p.exists(): self.skipTest('scientific integration unrun: APBS identity result unavailable')
+        if not p.exists():
+            summary=p.parents[2]/'solver_result.json'
+            if not summary.exists(): self.skipTest('scientific integration unrun: APBS identity not attempted yet')
+            row=next(r for r in read_json(summary)['numerical_checks'] if r['label']=='identity/1h4i_qm33_La')
+            self.assertEqual(row['status'],'failed')
+            self.assertIsNone(row['result'])
+            # A real solver failure remains unavailable, never replaced with zero
+            # or described as an unrun scientific test after the job has finished.
+            from affordable_solver import collect_charging
+            for component in ('target_environment','homogeneous_environment'):
+                op=p.parent/'calculation'/f'{component}.out'
+                self.assertIn('-NAN',op.read_text())
+                with self.assertRaises(InvalidArtifact): collect_charging(op)
+            return
         r=read_json(p)
         self.assertLessEqual(abs(r['components']['delta_U_kcal_mol']),.01)
 

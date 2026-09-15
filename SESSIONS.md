@@ -219,3 +219,17 @@ all failed/old records. See `CONTINUATION_AGREEMENT.md` and `COMPLETION_PLAN.jso
 in `diagnostics/affordable_challenger_20260915/`. Do not launch extra DFT for
 this continuation. Finish and assess all physical checks without tuning their
 acceptance thresholds or treating poor allocation use as scientific failure.
+
+### 2026-09-15 — GPT-6 / Codex frozen environmental checks completed
+
+Job 1198968 finished in 171 s with 102 APBS workers. All 102 remaining charging
+solves ran: 100 finite, two -NAN zero-charge identity terms. With one cached
+state, 17/18 states complete; identity failed explicitly. Frozen model fails
+partition (10.2341 vs 2 kcal/mol), refinement and translation tolerances.
+No automatic rescore/promotion or parameter rescue. Six MBIS/ESP checks pass;
+23 software tests pass, with actual scientific failures retained as failures.
+Total all four jobs: 212,040 allocated core-seconds. Budgets/time limits remain
+disabled by Jacob; accounting retained. No task jobs remain running.
+Full result: `diagnostics/affordable_challenger_20260915/COMPLETED_PILOT.md`.
+Baseline remains default because this tested version fails physical checks.
+Peptide repair energy comparisons and validated curvature remain unperformed.

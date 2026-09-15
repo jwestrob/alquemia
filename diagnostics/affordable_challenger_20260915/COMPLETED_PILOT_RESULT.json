@@ -1,0 +1,348 @@
+{
+  "comparison": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/affordable_challenger_20260915/comparison_completed_checks/comparison.json",
+    "sha256": "c66a509aa65a2dde3b7ed69d8f9e0af9dd9af00b515ace1ec96c6657cb9b9a9e"
+  },
+  "complete_APBS_states_including_one_reused": 17,
+  "cost": {
+    "all_jobs_allocated_core_seconds": 212040,
+    "compute_budget": null,
+    "jobs": [
+      {
+        "allocated_core_seconds": 95424,
+        "job_id": "1198934",
+        "receipt": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/affordable_challenger_20260915/pilot/terminal_receipt.json",
+          "sha256": "2f626461de66728a65e5a558cdda386a3bd4b828d122858aa67f6da523c27e76"
+        }
+      },
+      {
+        "allocated_core_seconds": 688,
+        "job_id": "1198939",
+        "receipt": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/affordable_challenger_20260915/solver_terminal_receipt.json",
+          "sha256": "0cd44f24692c9bc227e9479f287a75f178c0d40b6b8153c21e299f065593fd28"
+        }
+      },
+      {
+        "allocated_core_seconds": 57104,
+        "job_id": "1198958",
+        "receipt": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/affordable_challenger_20260915/solver_recovery_terminal_receipt.json",
+          "sha256": "2d32a8ce2418d9996bf58874d32340f9e50290435b3f6c55f9c09eb1c83097f8"
+        }
+      },
+      {
+        "allocated_core_seconds": 58824,
+        "job_id": "1198968",
+        "receipt": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/affordable_challenger_20260915/solver_completion_terminal_receipt.json",
+          "sha256": "44133b601444d34cd8c2cb725c63a8d020d9be85507013aa7ef071439df2244c"
+        }
+      }
+    ],
+    "matched_production_cost_ratio": null,
+    "parallel_completion_allocated_core_seconds_sacct": 58824,
+    "parallel_completion_wall_seconds_sacct": 171,
+    "parallel_completion_workers": 102,
+    "parallel_process_measurements": {
+      "max_single_process_RSS_KiB": 7684672,
+      "summed_process_wall_seconds": 7612.5700175352395,
+      "system_seconds": 1196.9299999999996,
+      "user_seconds": 6381.919999999999
+    },
+    "wall_time_limit": null
+  },
+  "failed_APBS_states": 1,
+  "finite_new_charging_outputs": 100,
+  "identity_status": "APBS emitted -NAN for both all-zero-charge environment terms; failed remains unavailable, no replacement with zero",
+  "limitations": [
+    "one consumed protein, no independent predictive validation",
+    "fixed-core whole-chain environment unsupported at terminal Lys",
+    "repaired baseline preparations not energetically rescored",
+    "mechanical corrections disabled: response_model_not_validated"
+  ],
+  "new_DFT_endpoints_in_continuation": 0,
+  "new_charging_attempts": 102,
+  "nonfinite_new_charging_outputs": 2,
+  "passed_ESP_quality_checks": 6,
+  "physical_checks": {
+    "checks": {
+      "1h4i_qm33_Ca/extended": {
+        "absolute_change_kcal_mol": 0.016901670667266444,
+        "pass": true,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm33_Ca/extended/coulomb_discretization": {
+        "absolute_change_kcal_mol": 1.4261556857540612,
+        "pass": false,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm33_Ca/primary/coulomb_discretization": {
+        "absolute_change_kcal_mol": 1.412562755551214,
+        "pass": false,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm33_Ca/refined": {
+        "absolute_change_kcal_mol": 4.6473795434850445,
+        "pass": false,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm33_Ca/refined/coulomb_discretization": {
+        "absolute_change_kcal_mol": 0.8318106618875731,
+        "pass": false,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm33_Ca/rotated": {
+        "absolute_change_kcal_mol": 0.22743117114919187,
+        "pass": true,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm33_Ca/rotated/coulomb_discretization": {
+        "absolute_change_kcal_mol": 0.93112581963954,
+        "pass": false,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm33_Ca/translated": {
+        "absolute_change_kcal_mol": 4.279315614245888,
+        "pass": false,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm33_Ca/translated/coulomb_discretization": {
+        "absolute_change_kcal_mol": 1.3780578057341941,
+        "pass": false,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm33_La/extended": {
+        "absolute_change_kcal_mol": 0.014353903072503726,
+        "pass": true,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm33_La/extended/coulomb_discretization": {
+        "absolute_change_kcal_mol": 1.3502810183140959,
+        "pass": false,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm33_La/primary/coulomb_discretization": {
+        "absolute_change_kcal_mol": 1.3365592017929906,
+        "pass": false,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm33_La/refined": {
+        "absolute_change_kcal_mol": 3.9898213479125673,
+        "pass": false,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm33_La/refined/coulomb_discretization": {
+        "absolute_change_kcal_mol": 0.7845983796794975,
+        "pass": false,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm33_La/rotated": {
+        "absolute_change_kcal_mol": 0.060928757240787945,
+        "pass": true,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm33_La/rotated/coulomb_discretization": {
+        "absolute_change_kcal_mol": 0.9243949093251764,
+        "pass": false,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm33_La/translated": {
+        "absolute_change_kcal_mol": 3.365297937332059,
+        "pass": false,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm33_La/translated/coulomb_discretization": {
+        "absolute_change_kcal_mol": 1.3022035086995807,
+        "pass": false,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm36_Ca/extended": {
+        "absolute_change_kcal_mol": 0.01710060707341654,
+        "pass": true,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm36_Ca/extended/coulomb_discretization": {
+        "absolute_change_kcal_mol": 1.3001975376317425,
+        "pass": false,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm36_Ca/primary/coulomb_discretization": {
+        "absolute_change_kcal_mol": 1.2866039405840795,
+        "pass": false,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm36_Ca/refined": {
+        "absolute_change_kcal_mol": 3.7398518737646214,
+        "pass": false,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm36_Ca/refined/coulomb_discretization": {
+        "absolute_change_kcal_mol": 0.7556086202987373,
+        "pass": false,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm36_La/extended": {
+        "absolute_change_kcal_mol": 0.01451169933619667,
+        "pass": true,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm36_La/extended/coulomb_discretization": {
+        "absolute_change_kcal_mol": 1.2337448732396297,
+        "pass": false,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm36_La/primary/coulomb_discretization": {
+        "absolute_change_kcal_mol": 1.220043154804479,
+        "pass": false,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm36_La/refined": {
+        "absolute_change_kcal_mol": 2.8794981978424516,
+        "pass": false,
+        "tolerance_kcal_mol": 0.5
+      },
+      "1h4i_qm36_La/refined/coulomb_discretization": {
+        "absolute_change_kcal_mol": 0.7113198756597541,
+        "pass": false,
+        "tolerance_kcal_mol": 0.5
+      },
+      "baseline_reproduction_qm33": {
+        "absolute_change_kcal_mol": 2.8858474900417264e-05,
+        "pass": true,
+        "tolerance_kcal_mol": 0.5
+      },
+      "baseline_reproduction_qm36": {
+        "absolute_change_kcal_mol": 1.3223060793876584e-05,
+        "pass": true,
+        "tolerance_kcal_mol": 0.5
+      },
+      "common_partition_cavity": {
+        "hashes": [
+          "4c518676f0b57cd3d30b135734e226e49b98627f365908f668cd7e27c7ecb1c4",
+          "4c518676f0b57cd3d30b135734e226e49b98627f365908f668cd7e27c7ecb1c4",
+          "4c518676f0b57cd3d30b135734e226e49b98627f365908f668cd7e27c7ecb1c4",
+          "4c518676f0b57cd3d30b135734e226e49b98627f365908f668cd7e27c7ecb1c4"
+        ],
+        "pass": true
+      },
+      "identity/1h4i_qm33_La": {
+        "absolute_change_kcal_mol": null,
+        "pass": null,
+        "tolerance_kcal_mol": 0.01
+      },
+      "partition_score": {
+        "absolute_change_kcal_mol": 10.234117439642944,
+        "pass": false,
+        "tolerance_kcal_mol": 2.0
+      },
+      "repeat/1h4i_qm33_La": {
+        "absolute_change_kcal_mol": 1.8189894035458565e-12,
+        "pass": true,
+        "tolerance_kcal_mol": 0.5
+      },
+      "repeat/1h4i_qm33_La/coulomb_discretization": {
+        "absolute_change_kcal_mol": 1.3365592017950298,
+        "pass": false,
+        "tolerance_kcal_mol": 0.5
+      }
+    },
+    "development_boundary_scores_kcal_mol": {
+      "33": 23.539108210068036,
+      "36": 33.77322564971098
+    },
+    "predictive_validation": "not_established",
+    "score_allowed": false,
+    "status": "physical_checks_failed"
+  },
+  "recommendation": "retain_baseline; this frozen challenger fails physical acceptance, rather than merely awaiting numerical tests",
+  "score_components_and_variants": [
+    {
+      "baseline_S_gauge_kcal_mol": 6.175580805912709,
+      "correction_kcal_mol": 17.36352740415532,
+      "decision": "uncalibrated_descriptor_not_validated_score",
+      "delta_U_Ca_kcal_mol": 98.46310851319731,
+      "delta_U_La_kcal_mol": 81.09958110904199,
+      "environment_S_gauge_kcal_mol": 23.53910821006803,
+      "partition": "33",
+      "variant": "primary"
+    },
+    {
+      "baseline_S_gauge_kcal_mol": 8.379673501562706,
+      "correction_kcal_mol": 25.393552148148274,
+      "decision": "uncalibrated_descriptor_not_validated_score",
+      "delta_U_Ca_kcal_mol": 115.79391153378327,
+      "delta_U_La_kcal_mol": 90.400359385635,
+      "environment_S_gauge_kcal_mol": 33.77322564971098,
+      "partition": "36",
+      "variant": "primary"
+    },
+    {
+      "baseline_S_gauge_kcal_mol": 6.175580805912709,
+      "correction_kcal_mol": 16.705969208582843,
+      "decision": "uncalibrated_descriptor_not_validated_score",
+      "delta_U_Ca_kcal_mol": 93.81572896971227,
+      "delta_U_La_kcal_mol": 77.10975976112942,
+      "environment_S_gauge_kcal_mol": 22.881550014495552,
+      "partition": "33",
+      "variant": "refined"
+    },
+    {
+      "baseline_S_gauge_kcal_mol": 8.379673501562706,
+      "correction_kcal_mol": 24.533198472226104,
+      "decision": "uncalibrated_descriptor_not_validated_score",
+      "delta_U_Ca_kcal_mol": 112.05405966001865,
+      "delta_U_La_kcal_mol": 87.52086118779255,
+      "environment_S_gauge_kcal_mol": 32.91287197378881,
+      "partition": "36",
+      "variant": "refined"
+    },
+    {
+      "baseline_S_gauge_kcal_mol": 6.175580805912709,
+      "correction_kcal_mol": 17.366075171750083,
+      "decision": "uncalibrated_descriptor_not_validated_score",
+      "delta_U_Ca_kcal_mol": 98.48001018386458,
+      "delta_U_La_kcal_mol": 81.1139350121145,
+      "environment_S_gauge_kcal_mol": 23.541655977662792,
+      "partition": "33",
+      "variant": "extended"
+    },
+    {
+      "baseline_S_gauge_kcal_mol": 8.379673501562706,
+      "correction_kcal_mol": 25.396141055885494,
+      "decision": "uncalibrated_descriptor_not_validated_score",
+      "delta_U_Ca_kcal_mol": 115.81101214085669,
+      "delta_U_La_kcal_mol": 90.4148710849712,
+      "environment_S_gauge_kcal_mol": 33.7758145574482,
+      "partition": "36",
+      "variant": "extended"
+    },
+    {
+      "baseline_S_gauge_kcal_mol": 6.175580805912709,
+      "correction_kcal_mol": 16.44950972724149,
+      "decision": "uncalibrated_descriptor_not_validated_score",
+      "delta_U_Ca_kcal_mol": 94.18379289895142,
+      "delta_U_La_kcal_mol": 77.73428317170993,
+      "environment_S_gauge_kcal_mol": 22.6250905331542,
+      "partition": "33",
+      "variant": "translated"
+    },
+    {
+      "baseline_S_gauge_kcal_mol": 6.175580805912709,
+      "correction_kcal_mol": 17.530029818063724,
+      "decision": "uncalibrated_descriptor_not_validated_score",
+      "delta_U_Ca_kcal_mol": 98.6905396843465,
+      "delta_U_La_kcal_mol": 81.16050986628278,
+      "environment_S_gauge_kcal_mol": 23.705610623976433,
+      "partition": "33",
+      "variant": "rotated"
+    }
+  ],
+  "source_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/affordable_challenger_20260915/solver_completion/solver_result.json",
+    "sha256": "542d491159111114e54ba81df220b08f7bbf7d8db619e2a32b970dea3b0ee885"
+  },
+  "status": "specified_calculations_finished_physical_checks_failed",
+  "successful_high_level_endpoints_total": 6
+}

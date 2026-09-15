@@ -1,5 +1,40 @@
 # Runnable operations
 
+**Current continuation:** Jacob removed compute budgets and time limits; see
+[CONTINUATION_AGREEMENT.md](CONTINUATION_AGREEMENT.md). The original pilot and
+two serial solver attempts are complete historical executions. Job 1198968
+executes the remaining 102 independent charging solves concurrently and reuses
+the completed state. These are the same frozen 18 scientific states.
+
+```bash
+squeue -j 1198968
+/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python scripts/affordable_solver.py dry-run-completion \
+  --manifest workspaces/affordable_challenger_20260915/solver_completion/completion_manifest.json
+```
+
+The active script is [run_solver_completion.sbatch](run_solver_completion.sbatch).
+It invokes `execute-completion --manifest` inside Slurm. Repeating a successful
+charging task requires matching executable, input and output receipts before
+cache reuse; partial outputs are retained. Every remaining task executes
+regardless of accumulated cost. Concurrency is limited only by task count,
+allocated CPUs and available memory. Do not resubmit while the job is running.
+
+Upon completion, read `workspaces/affordable_challenger_20260915/solver_completion/REPORT.md`.
+To regenerate a comparison, pass the explicit result path:
+
+```bash
+/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python scripts/affordable_compare.py --root . \
+  --solver-result workspaces/affordable_challenger_20260915/solver_completion/solver_result.json \
+  --output diagnostics/affordable_challenger_20260915/comparison_completed_checks
+```
+
+## Historical initial-pilot operations
+
+The sections below describe the original manifests. Their budgets and endpoint
+caps are historical metadata and are no longer enforced. The original solver
+launch scripts require their preserved implementation snapshots; the current
+solver CLI uses `prepare-completion`, `dry-run-completion`, `execute-completion`.
+
 Run on biotite. All output operations create new files/directories and refuse
 overwrites. The two pilot jobs are **already submitted**; monitor them rather
 than submitting duplicate jobs. Existing production commands are unchanged.

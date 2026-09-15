@@ -1,4 +1,4 @@
-"""Bounded real ESP/APBS validation; never substitutes a baseline score on failure."""
+"""Real ESP/APBS validation with concurrent charging solves; never substitutes a baseline score on failure."""
 from __future__ import annotations
 
 import argparse
@@ -130,73 +130,14 @@ def prior_allocated_cost(receipts):
     return total,records
 
 
-def execute_checks(pilot_path,root,apbs,prior_receipts=()):
-    if not os.environ.get('SLURM_JOB_ID'): raise InvalidArtifact('solver execution requires SLURM')
-    m=read_json(pilot_path);root=Path(root).resolve();root.mkdir(parents=True,exist_ok=True)
-    campaign=Path(pilot_path).resolve().parent.parent
-    lock=(campaign/'solver_campaign.lock').open('a+')
-    fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
-    if (campaign/'solver/solver_result.json').exists() and not prior_receipts:
-        raise InvalidArtifact('solver recovery requires prior terminal accounting receipts')
-    prior_cost,prior_records=prior_allocated_cost(prior_receipts)
-    ledger=campaign/'solver_admissions.jsonl'
-    history=[json.loads(line) for line in ledger.read_text().splitlines()] if ledger.exists() else []
-    required_jobs={str(e['slurm_job_id']) for e in history}
-    required_jobs.update(str(j) for e in history for j in e.get('prior_job_ids',[]))
-    provided_jobs={r['job_id'] for r in prior_records}
-    if required_jobs-provided_jobs:
-        raise InvalidArtifact('terminal accounting required for every prior admitted solver job')
-    with ledger.open('a') as f:
-        f.write(json.dumps({'slurm_job_id':os.environ['SLURM_JOB_ID'],'prior_job_ids':sorted(provided_jobs),
-                            'output':str(root),'time_unix':time.time()})+'\n');f.flush();os.fsync(f.fileno())
-    cpus=int(os.environ['SLURM_CPUS_ON_NODE']); total_cap=m['budget']['solver_allocated_core_seconds'];cap=total_cap-prior_cost
-    started=time.monotonic(); outcomes=[]; states={}; numerical=[]
-    implementation=snapshot_implementation(root/'implementation')
-    from affordable_state import validate_skeleton_pair
-    paired_states=[]
-    for case in m['cases']:
-        paths=[Path(pilot_path).parent.parent/'environment'/f"{case['case']}_{metal}"/'skeleton.json' for metal in ('La','Ca')]
-        if all(p.exists() for p in paths):
-            paired_states.append({'case':case['case'],**validate_skeleton_pair(*[read_json(p) for p in paths])})
-        elif any(p.exists() for p in paths):
-            raise InvalidArtifact('unpaired prepared environment')
-    write_new(root/'paired_state_checks.json',paired_states)
-    def spent(): return (time.monotonic()-started)*cpus
-    def allowed(estimated_wall): return spent()+estimated_wall*cpus<=cap
-    # The first low-level batch is admitted conservatively using a 30 s estimate;
-    # subsequent solver batches use measured APBS time and recorded headroom.
-    if not allowed(30): raise InvalidArtifact('solver budget unavailable')
-    orca_dir=verify(m['orca']).parent
-    def quality_one(t):
-        try:
-            q,r=esp_check(t,orca_dir,m['environment_model']['radii_A'],root/'esp'/t['task_id'])
-            return t,q,r,None
-        except Exception as exc: return t,None,None,str(exc)
-    with ThreadPoolExecutor(max_workers=min(len(m['tasks']),cpus)) as pool:
-        quality_results=list(pool.map(quality_one,m['tasks']))
-    for task,quality,receipt,error in quality_results:
-        row={'task_id':task['task_id'],'ESP_status':quality['status'] if quality else 'unavailable','reason':error}
-        skeleton=Path(pilot_path).parent.parent/'environment'/task['task_id']/'skeleton.json'
-        if quality and quality['status']=='passed' and skeleton.exists():
-            s=read_json(skeleton)
-            for a,q in zip(s['core_atoms'],quality['charges']['charge_e']): a['charge_e']=q
-            s['charge_quality']={'status':'passed','receipt':receipt}
-            s['settings']=settings(s['physical_atoms'])
-            states[task['task_id']]=s;row['environment_status']='ready_for_physical_checks'
-        else:
-            row['environment_status']='unavailable';row['reason']=error or ('charge_quality_failed' if quality and quality['status']!='passed' else 'source_environment_preparation_unsupported')
-        outcomes.append(row)
-    write_new(root/'charge_quality_and_preparation.json',outcomes)
-    # Freeze all variants before looking at any APBS value. Fixed-core may be
-    # structurally unsupported, which remains a recorded denominator failure.
-    schedule=[]
-    for name in states: schedule.append((name+'/primary',states[name]))
+def frozen_schedule(states):
+    schedule=[(name+'/primary',s) for name,s in states.items()]
     for name,s in states.items():
         refined=copy.deepcopy(s);refined['settings']=settings(s['physical_atoms'],spacing=.4)
         extended=copy.deepcopy(s);extended['settings']=settings(s['physical_atoms'],padding=30.)
         schedule.extend([(name+'/refined',refined),(name+'/extended',extended)])
         if name.startswith('1h4i_qm33'):
-            theta=.37; rot=[[math.cos(theta),-math.sin(theta),0],[math.sin(theta),math.cos(theta),0],[0,0,1]]
+            theta=.37;rot=[[math.cos(theta),-math.sin(theta),0],[math.sin(theta),math.cos(theta),0],[0,0,1]]
             schedule.extend([(name+'/translated',transform(s,translation=[.173,.117,.231])),
                              (name+'/rotated',transform(s,rotation=rot))])
     anchor=states.get('1h4i_qm33_La')
@@ -204,45 +145,178 @@ def execute_checks(pilot_path,root,apbs,prior_receipts=()):
         identity=copy.deepcopy(anchor);identity['physical_atoms']=[dict(a,charge_e=0.) for a in identity['core_atoms']]
         identity['environment_atoms']=[];identity['expected_environment_charge_e']=0.
         schedule.extend([('identity/1h4i_qm33_La',identity),('repeat/1h4i_qm33_La',copy.deepcopy(anchor))])
-    write_new(root/'numerical_schedule.json',{'entries':[{'label':n,'state_cache_key':cache_key(s),'grid':s['settings']} for n,s in schedule],
-                                             'budget_core_seconds':cap,'state_count':len(schedule),'charging_solves_per_state':6})
-    estimate=60.0  # first real six-solve state admission estimate, not a timing result
-    stop_after_failure=False
-    for name,s in schedule:
-        if stop_after_failure:
-            numerical.append({'label':name,'status':'not_run_after_failure','result':None});continue
-        if not allowed(estimate):
-            numerical.append({'label':name,'status':'budget_exhausted','result':None});continue
-        before=time.monotonic()
+    return schedule
+
+
+def split_charging_input(text):
+    """Independent charging solves; each retains the exact read/grid/boundary block."""
+    import re
+    first=text.index('elec name ');read=text[:first]
+    blocks=re.findall(r'^elec name (\w+)\n(.*?)^end\s*$',text[first:],re.M|re.S)
+    if len(blocks)!=6: raise InvalidArtifact('expected six charging blocks')
+    return {name:read+f'elec name {name}\n'+body+'end\nprint elecEnergy 1 end\nquit\n' for name,body in blocks}
+
+
+def prepare_completion(pilot_path,previous,output,apbs,agreement):
+    from affordable_state import validate_skeleton_pair
+    started=time.monotonic();previous=Path(previous).resolve();output=Path(output).resolve()
+    m=read_json(pilot_path);old=read_json(previous/'solver_result.json')
+    if old['pilot']!=record(pilot_path) or old['apbs']!=record(apbs):
+        raise InvalidArtifact('previous result pilot or executable differs')
+    states={};quality_records=[]
+    for task in m['tasks']:
+        qp=previous/'esp'/task['task_id']/'quality.json';q=read_json(qp)
+        for key in ('actual_quantum_potential','points','gbw','density','utility','execution_receipt'): verify(q[key])
+        if q['charges']['source_output']!=record(task['output_path']) or q['charges']['source_xyz']!=task['xyz']:
+            raise InvalidArtifact('ESP source mismatch')
+        quality_records.append(record(qp))
+        sp=Path(pilot_path).resolve().parent.parent/'environment'/task['task_id']/'skeleton.json'
+        if q['status']!='passed' or not sp.exists(): continue
+        s=read_json(sp)
+        if len(s['core_atoms'])!=len(q['charges']['charge_e']): raise InvalidArtifact('charge atom count mismatch')
+        for a,charge in zip(s['core_atoms'],q['charges']['charge_e']): a['charge_e']=charge
+        s['charge_quality']={'status':'passed','receipt':record(qp)};s['settings']=settings(s['physical_atoms'])
+        states[task['task_id']]=s
+    for name in ('1h4i_qm33','1h4i_qm36'): validate_skeleton_pair(states[name+'_La'],states[name+'_Ca'])
+    scheduled={e['label']:e for e in read_json(previous/'numerical_schedule.json')['entries']}
+    schedule=frozen_schedule(states)
+    if set(scheduled)!=set(n for n,s in schedule): raise InvalidArtifact('scheduled state set changed')
+    for label,s in schedule:
+        if cache_key(s)!=scheduled[label]['state_cache_key']: raise InvalidArtifact('frozen state changed: '+label)
+    output.mkdir(parents=True,exist_ok=False);entries=[];tasks=[]
+    for label,s in schedule:
+        prior=next(r for r in old['numerical_checks'] if r['label']==label)
+        if prior['status']=='computed':
+            rp=previous/label/'result.json';result=read_json(rp)
+            prior_manifest=read_json(verify(result['source_manifest']))
+            if cache_key(read_json(verify(prior_manifest['state'])))!=cache_key(s): raise InvalidArtifact('cached state differs')
+            receipt=read_json(verify(result['execution_receipt']))
+            if receipt['returncode']!=0: raise InvalidArtifact('cached execution failed')
+            checked=collect(verify(result['source_manifest']),verify(result['output']))
+            if checked['components']!=result['components']: raise InvalidArtifact('cached result differs from raw output')
+            entries.append({'label':label,'state_cache_key':cache_key(s),'cached_result':record(rp)})
+            continue
+        directory=output/label;directory.mkdir(parents=True)
+        sp=directory/'state.json';write_new(sp,s);manifest=prepare(sp,directory/'calculation')
+        parts=split_charging_input(verify(manifest['input']).read_text())
+        task_ids=[]
+        for component,inp in parts.items():
+            path=directory/'calculation'/f'{component}.in';path.write_text(inp)
+            task_id=label+'/'+component;task_ids.append(task_id)
+            tasks.append({'task_id':task_id,'label':label,'component':component,'input':record(path),
+                          'output':str(path.with_suffix('.out')),'memory_estimate_bytes':math.prod(s['settings']['grid_dimensions'])*256})
+        entries.append({'label':label,'state_cache_key':cache_key(s),'source_manifest':record(directory/'calculation/apbs_manifest.json'),'task_ids':task_ids})
+    result={'schema_version':'alquemia.apbs_parallel_completion.v1','pilot':record(pilot_path),'previous_result':record(previous/'solver_result.json'),
+            'previous_schedule':record(previous/'numerical_schedule.json'),'apbs':record(apbs),'agreement':record(agreement),
+            'implementation':record(__file__),'environment_implementation':record(Path(__file__).with_name('affordable_environment.py')),
+            'quality_receipts':quality_records,'preparation':old['preparation'],'entries':entries,'tasks':tasks,
+            'limits':{'compute_budget':None,'wall_time_limit':None,'scheduling':'all manifested independent charging solves, limited concurrently only by CPUs and memory'},
+            'preparation_wall_seconds':time.monotonic()-started}
+    write_new(output/'completion_manifest.json',result)
+    return result
+
+
+def collect_charging(output):
+    import re
+    text=Path(output).read_text()
+    values=re.findall(r'Global net ELEC energy\s*=\s*([-+\d.eE]+)\s+kJ/mol',text)
+    if len(values)!=1 or 'Thanks for using APBS' not in text: raise InvalidArtifact('charging output incomplete')
+    value=float(values[0])
+    if not math.isfinite(value): raise InvalidArtifact('nonfinite charging energy')
+    return value
+
+
+def completion_preflight(path):
+    m=read_json(path)
+    for key in ('pilot','previous_result','previous_schedule','apbs','agreement','implementation','environment_implementation'): verify(m[key])
+    for rec in m['quality_receipts']: verify(rec)
+    if m['limits']['compute_budget'] is not None or m['limits']['wall_time_limit'] is not None:
+        raise InvalidArtifact('completion policy must not impose compute or time budgets')
+    for entry in m['entries']:
+        if 'cached_result' in entry: verify(entry['cached_result']);continue
+        p=read_json(verify(entry['source_manifest']));verify(p['state']);verify(p['input'])
+        for rec in p['pqr'].values(): verify(rec)
+    for t in m['tasks']: verify(t['input'])
+    return m
+
+
+def execute_completion(path):
+    from affordable_environment import transfer_components
+    from concurrent.futures import as_completed
+    if not os.environ.get('SLURM_JOB_ID'): raise InvalidArtifact('requires SLURM allocation')
+    m=completion_preflight(path);root=Path(path).resolve().parent
+    campaign=Path(m['pilot']['path']).parent.parent
+    lock=(campaign/'solver_campaign.lock').open('a+');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+    cpus=int(os.environ['SLURM_CPUS_ON_NODE']);started=time.monotonic()
+    available_kib=int(next(line.split()[1] for line in Path('/proc/meminfo').read_text().splitlines() if line.startswith('MemAvailable:')))
+    largest=max(t['memory_estimate_bytes'] for t in m['tasks'])
+    workers=min(len(m['tasks']),cpus,max(1,int(available_kib*1024*.75)//largest))
+    implementation=snapshot_implementation(root/f"implementation_{os.environ['SLURM_JOB_ID']}")
+    write_new(root/f"admission_{os.environ['SLURM_JOB_ID']}.json",{'tasks':len(m['tasks']),'workers':workers,'allocated_cpus':cpus,
+               'available_memory_bytes':available_kib*1024,'largest_task_memory_estimate_bytes':largest,
+               'compute_budget':None,'wall_time_limit':None,'implementation':implementation})
+    apbs=verify(m['apbs'])
+    def one(t):
+        inp=verify(t['input']);op=Path(t['output']);receipt_path=op.with_suffix('.execution.json')
         try:
-            result=run_state(s,root,name,apbs)
-            numerical.append({'label':name,'status':'computed','result':result})
-        except Exception as exc:
-            numerical.append({'label':name,'status':'failed','reason':str(exc),'result':None})
-        estimate=max(estimate,(time.monotonic()-before)*1.5)
-        # Infrastructure/syntax failure is not repeated across the entire panel.
-        if numerical[-1]['status']=='failed': stop_after_failure=True
-    summary={'schema_version':'alquemia.apbs_physical_pilot.v1','pilot':record(pilot_path),'apbs':record(apbs),
-             'actual_implementation':implementation,'preparation':outcomes,'numerical_checks':numerical,'elapsed_seconds':time.monotonic()-started,
-             'allocated_core_seconds':spent(),'allocated_cpus':cpus,'slurm_job_id':os.environ['SLURM_JOB_ID'],
-             'prior_execution_accounting':prior_records,'campaign_allocated_core_seconds':prior_cost+spent(),
-             'campaign_budget_core_seconds':total_cap,'remaining_budget_at_start_core_seconds':cap,
-             'budget_exceeded':spent()>cap,'predictive_claim':'none_development_only'}
+            if receipt_path.exists():
+                r=read_json(receipt_path)
+                if r.get('input')!=t['input'] or r.get('solver')!=m['apbs'] or r['returncode']!=0: raise InvalidArtifact('cached charging receipt mismatch')
+                verify(r['log']);value=collect_charging(op)
+                return {'task_id':t['task_id'],'status':'computed','value_kJ_mol':value,'execution_receipt':record(receipt_path),'cache_reused':True}
+            if op.exists(): raise InvalidArtifact('partial charging output retained; no overwrite')
+            r=run_command([str(apbs),inp.name],inp.parent,op,op.with_suffix('.resources.txt'))
+            r.update(input=t['input'],solver=m['apbs']);write_new(receipt_path,r)
+            if r['returncode']!=0: raise InvalidArtifact('APBS charging failed')
+            return {'task_id':t['task_id'],'status':'computed','value_kJ_mol':collect_charging(op),'execution_receipt':record(receipt_path),'cache_reused':False}
+        except Exception as exc: return {'task_id':t['task_id'],'status':'failed','reason':str(exc)}
+    results={};events=root/f"charging_events_{os.environ['SLURM_JOB_ID']}.jsonl"
+    with ThreadPoolExecutor(max_workers=workers) as pool,events.open('x') as log:
+        for future in as_completed([pool.submit(one,t) for t in m['tasks']]):
+            r=future.result();results[r['task_id']]=r;log.write(json.dumps(r)+'\n');log.flush()
+    numerical=[]
+    for entry in m['entries']:
+        if 'cached_result' in entry:
+            numerical.append({'label':entry['label'],'status':'computed','cache_reused':True,'result':read_json(verify(entry['cached_result']))});continue
+        rows=[results[t] for t in entry['task_ids']]
+        if any(r['status']!='computed' for r in rows):
+            numerical.append({'label':entry['label'],'status':'failed','reason':'one or more charging solves failed','charging_tasks':rows,'result':None});continue
+        prep=read_json(verify(entry['source_manifest']))
+        charging={t.rsplit('/',1)[1]:results[t]['value_kJ_mol'] for t in entry['task_ids']}
+        result={'protocol_id':prep['protocol_id'],'source_manifest':entry['source_manifest'],'charging_energies_kJ_mol':charging,
+                'components':transfer_components(charging,prep['direct_coulomb_kcal_mol']),
+                'physical_boundary_hash':prep['physical_boundary_hash'],'charging_tasks':rows,
+                'physical_validation_status':'not_yet_validated','decision':'uncalibrated_protocol'}
+        rp=root/entry['label']/'result.json';write_new(rp,result)
+        numerical.append({'label':entry['label'],'status':'computed','cache_reused':False,'result':result})
+    elapsed=time.monotonic()-started
+    summary={'schema_version':'alquemia.apbs_physical_pilot.v1','pilot':m['pilot'],'apbs':m['apbs'],'completion_manifest':record(path),
+             'preparation':m['preparation'],'numerical_checks':numerical,'slurm_job_id':os.environ['SLURM_JOB_ID'],
+             'allocated_core_seconds':elapsed*cpus,'allocated_cpus':cpus,'elapsed_seconds':elapsed,'workers':workers,
+             'budget_exceeded':False,'compute_budget':None,'wall_time_limit':None,'prior_costs_retained_in':m['previous_result'],
+             'predictive_claim':'none_development_only','actual_implementation':implementation}
     write_new(root/'solver_result.json',summary)
+    from affordable_compare import compare,report
+    data=compare(Path(__file__).resolve().parents[1],root/'solver_result.json')
+    write_new(root/'comparison.json',data)
+    with (root/'REPORT.md').open('x') as f:f.write(report(data))
     return summary
 
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--pilot-manifest',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--apbs',type=Path,required=True)
-    p.add_argument('--prior-receipt',type=Path,action='append',default=[])
-    a=p.parse_args();r=execute_checks(a.pilot_manifest,a.output,a.apbs.resolve(),a.prior_receipt)
-    from affordable_compare import compare,report
-    repo=Path(__file__).resolve().parents[1]
-    data=compare(repo,a.output/'solver_result.json')
-    write_new(a.output/'comparison.json',data)
-    with (a.output/'REPORT.md').open('x') as f: f.write(report(data))
-    print(json.dumps({'allocated_core_seconds':r['allocated_core_seconds'],'states':len(r['numerical_checks'])}))
+    p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='op',required=True)
+    q=sub.add_parser('prepare-completion')
+    for name in ('pilot-manifest','previous','output','apbs','agreement'):q.add_argument('--'+name,type=Path,required=True)
+    for name in ('dry-run-completion','execute-completion'):
+        q=sub.add_parser(name);q.add_argument('--manifest',type=Path,required=True)
+    a=p.parse_args()
+    if a.op=='prepare-completion':
+        r=prepare_completion(a.pilot_manifest,a.previous,a.output,a.apbs.resolve(),a.agreement)
+        print(f"{len(r['entries'])} states; {len(r['tasks'])} independent charging solves; no compute/time budget")
+    elif a.op=='dry-run-completion':
+        r=completion_preflight(a.manifest);print(f"verified {len(r['tasks'])} charging tasks")
+    else:
+        r=execute_completion(a.manifest);print(json.dumps({'states':len(r['numerical_checks']),'allocated_core_seconds':r['allocated_core_seconds']}))
 
 
 if __name__=='__main__':main()

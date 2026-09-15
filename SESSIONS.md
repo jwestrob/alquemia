@@ -204,3 +204,18 @@ step: inspect jobs 1198934 / 1198939 and actual receipts, then evaluate the froz
 physical gates. Do not launch extra endpoints or treat unrun checks as passed.
 Details, measured costs, exact hashes and commands:
 `diagnostics/affordable_challenger_20260915/AUDIT.md` and `OPERATIONS.md`.
+
+### 2026-09-15 — GPT-6 / Codex parallel completion; budgets removed
+
+Jacob explicitly instructed: “ok. no finite compute budgets. no time limits.
+proceed.” This supersedes prior cost/endpoint budget stopping rules; costs
+remain recorded. Existing scientific scope/settings stay fixed. Job 1198968
+executes 102 independent APBS charging solves with 102 workers on node-344-8t-1,
+reusing all six successful ESP checks and the completed qm33-La state. All 18
+state hashes match the frozen schedule. Output: task workspace
+`solver_completion/`; automatic comparison/report and terminal watcher active.
+Code removes budget stops, parallelizes independent charging blocks, preserves
+all failed/old records. See `CONTINUATION_AGREEMENT.md` and `COMPLETION_PLAN.json`
+in `diagnostics/affordable_challenger_20260915/`. Do not launch extra DFT for
+this continuation. Finish and assess all physical checks without tuning their
+acceptance thresholds or treating poor allocation use as scientific failure.

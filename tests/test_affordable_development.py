@@ -214,9 +214,9 @@ class PilotIntegration(unittest.TestCase):
         from affordable_workflow import dry_run
         r=dry_run(ROOT/'workspaces/affordable_challenger_20260915/pilot/pilot_manifest.json')
         self.assertEqual(r['tasks'],6)
-        self.assertEqual(r['budget']['max_endpoint_evaluations_including_retries'],8)
+        self.assertFalse(r['budget_enforced'])
 
-    def test_budget_rejects_corrupted_real_manifest(self):
+    def test_historical_budget_does_not_stop_agreed_tasks(self):
         from affordable_workflow import dry_run
         source=ROOT/'workspaces/affordable_challenger_20260915/pilot/pilot_manifest.json'
         # Keep the real coordinate/input records; only corrupt the budget.
@@ -224,7 +224,8 @@ class PilotIntegration(unittest.TestCase):
         p=source.parent/'explicitly_corrupted_budget_test.json'
         try:
             p.write_text(__import__('json').dumps(m))
-            with self.assertRaises(InvalidArtifact): dry_run(p)
+            self.assertEqual(dry_run(p)['tasks'],6)
+            self.assertFalse(dry_run(p)['budget_enforced'])
         finally: p.unlink(missing_ok=True)
 
     def test_actual_mbis_endpoint_integration(self):
@@ -237,10 +238,36 @@ class PilotIntegration(unittest.TestCase):
             self.assertLess(abs(q['sum_e']-t['charge']),1e-4)
 
     def test_actual_apbs_identity_integration(self):
-        p=ROOT/'workspaces/affordable_challenger_20260915/solver/identity/1h4i_qm33_La/result.json'
+        p=ROOT/'workspaces/affordable_challenger_20260915/solver_completion/identity/1h4i_qm33_La/result.json'
         if not p.exists(): self.skipTest('scientific integration unrun: APBS identity result unavailable')
         r=read_json(p)
         self.assertLessEqual(abs(r['components']['delta_U_kcal_mol']),.01)
+
+    def test_split_inputs_preserve_real_charging_blocks(self):
+        from affordable_solver import split_charging_input
+        import re
+        p=ROOT/'workspaces/affordable_challenger_20260915/solver_recovery/1h4i_qm33_La/primary/calculation/transfer.in'
+        original=p.read_text();parts=split_charging_input(original)
+        self.assertEqual(len(parts),6)
+        for name,text in parts.items():
+            block=re.search(r'^elec name '+name+r'\n(.*?)^end\s*$',original,re.M|re.S)[1]
+            self.assertIn('elec name '+name+'\n'+block+'end\n',text)
+            self.assertEqual(text.split('elec name ')[0],original.split('elec name ')[0])
+            self.assertEqual(text.count('print elecEnergy'),1)
+
+    def test_real_completion_states_match_frozen_schedule(self):
+        from affordable_solver import completion_preflight
+        p=ROOT/'workspaces/affordable_challenger_20260915/solver_completion/completion_manifest.json'
+        if not p.exists(): self.skipTest('completion preparation not yet available')
+        m=completion_preflight(p)
+        self.assertEqual(len(m['entries']),18);self.assertEqual(len(m['tasks']),102)
+        self.assertEqual(sum('cached_result' in e for e in m['entries']),1)
+        schedule=read_json(verify(m['previous_schedule']))
+        self.assertEqual({e['label']:e['state_cache_key'] for e in m['entries']},{e['label']:e['state_cache_key'] for e in schedule['entries']})
+        old=read_json(ROOT/'workspaces/affordable_challenger_20260915/solver_recovery/1h4i_qm33_La/primary/calculation/apbs_manifest.json')
+        repeated=read_json(p.parent/'repeat/1h4i_qm33_La/calculation/apbs_manifest.json')
+        self.assertAlmostEqual(old['direct_coulomb_kcal_mol'],repeated['direct_coulomb_kcal_mol'],places=10)
+        for name in old['pqr']: self.assertEqual(old['pqr'][name]['sha256'],repeated['pqr'][name]['sha256'])
 
 
 if __name__=='__main__': unittest.main()

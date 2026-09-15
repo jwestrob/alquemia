@@ -106,10 +106,11 @@ def validate_state(s):
     core={a['id'] for a in s['core_atoms']}; environment={a['id'] for a in s['environment_atoms']}
     if core & environment:
         raise InvalidArtifact('force-field charge on QM source atom')
-    for a in s['core_atoms']:
-        for b in s['environment_atoms']:
-            if np.linalg.norm(np.asarray(a['xyz_A'])-b['xyz_A'])<1.0:
-                raise InvalidArtifact('environment charge too close to core/cap')
+    if s['environment_atoms']:
+        from scipy.spatial import cKDTree
+        distances,_=cKDTree([a['xyz_A'] for a in s['environment_atoms']]).query([a['xyz_A'] for a in s['core_atoms']])
+        if np.any(distances<1.0):
+            raise InvalidArtifact('environment charge too close to core/cap')
     if s['charge_quality']['status']!='passed':
         raise InvalidArtifact('charge electrostatic quality is unvalidated')
     verify(s['charge_quality']['receipt'])
@@ -163,9 +164,10 @@ def prepare(state_path, output):
     blocks.extend(f'print elecEnergy {i+1} end' for i in range(6)); blocks.append('quit')
     inp=output/'transfer.in'; inp.write_text('\n'.join(blocks)+'\n')
     direct=0.0
-    for a in core:
-        for b in s['environment_atoms']:
-            direct+=COULOMB_KCAL_A*a['charge_e']*b['charge_e']/np.linalg.norm(np.asarray(a['xyz_A'])-b['xyz_A'])
+    if s['environment_atoms']:
+        ec=np.array([a['xyz_A'] for a in s['environment_atoms']]);eq=np.array([a['charge_e'] for a in s['environment_atoms']])
+        for a in core:
+            direct+=float(np.sum(COULOMB_KCAL_A*a['charge_e']*eq/np.linalg.norm(np.asarray(a['xyz_A'])-ec,axis=1)))
     manifest={'protocol_id':PROTOCOL,'state':record(state_path),'cache_key':cache_key({'state':s,'protocol':PROTOCOL,'implementation':record(__file__)}),
               'cache_scope':'preparation_only; executable identity required for result reuse',
               'implementation':record(__file__),'input':record(inp),'pqr':files,'labels':labels,

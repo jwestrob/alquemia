@@ -60,19 +60,15 @@ def prepare_pilot(root, output):
                       'baseline_protocol_id':m['protocol_id']})
     result={'schema_version':'alquemia.affordable_pilot.v1','protocol_id':'native_r2scan3c_cpcm_mbis_endpoints_v1',
             'status':'approved_prepared','cases':cases,'tasks':tasks,
-            'agreement':record(root/'diagnostics/affordable_challenger_20260915/AGREEMENT.md'),
+            'agreement':record(root/'diagnostics/affordable_challenger_20260915/CONTINUATION_AGREEMENT.md'),
             'execution_policy':{'task_runner':record(root/'scripts/run_orca_task_manifest.py'),
                                 'runtime_renderer':record(root/'scripts/render_orca_runtime_input.py')},
             'implementation':record(__file__),
             'orca':record('/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca'),
-            'budget':{'max_endpoint_evaluations_including_retries':8,
-                      'high_level_allocated_core_seconds':158928,'solver_allocated_core_seconds':52976,
-                      'aggregate_allocated_core_seconds':211904,
+            'cost_tracking':{'compute_budget':None,'wall_time_limit':None,
                       'baseline_cost_evidence':record(root/'diagnostics/affordable_challenger_20260915/live_audit.json'),
-                      'basis':'SLURM 1198050: 154 s x 344 CPUs = 52976 core-s for four endpoints; development ceilings 3x high-level + 1x solver',
-                      'endpoint_admission_wall_seconds':310,
-                      'runtime_policy':'finite tasks; reserve estimated cost before launch, stop further admission on overrun; no subprocess timeouts',
-                      'ordinary_score_feasibility_ceiling_ratio':2.0},
+                      'basis':'SLURM 1198050: 154 s x 344 CPUs = 52976 core-s for four endpoints; reference measurement only',
+                      'runtime_policy':'execute agreed task list; record costs; no compute-budget stopping rule or timeout'},
             'numerical_checks':{'identity_kcal_mol':.01,'grid_box_rotation_kcal_mol':.5,'partition_score_kcal_mol':2.0},
             'environment_model':{'dielectric_inside':1.0,'dielectric_outside':78.54,'salt_molar':0.0,'temperature_K':298.15,
                                  'radii_A':{'H':1.2,'C':1.7,'N':1.55,'O':1.52,'S':1.8,'Ca':1.8,'La':1.8},
@@ -92,9 +88,8 @@ def dry_run(manifest):
     for task in tasks:
         verify({'path':str(task['input']),'sha256':task['input_sha256']})
         verify({'path':str(task['xyz']),'sha256':task['xyz_sha256']})
-    if len(tasks)>m['budget']['max_endpoint_evaluations_including_retries']:
-        raise InvalidArtifact('endpoint count exceeds budget')
-    return {'status':'dry_run_pass','tasks':len(tasks),'budget':m['budget'],'manifest':record(manifest)}
+    return {'status':'dry_run_pass','tasks':len(tasks),'historical_budget':m.get('budget'),
+            'budget_enforced':False,'manifest':record(manifest)}
 
 
 def execute(manifest):
@@ -103,16 +98,13 @@ def execute(manifest):
     mp=Path(manifest).resolve(); m,tasks=load_manifest_tasks(mp)
     if not os.environ.get('SLURM_JOB_ID'): raise InvalidArtifact('execution requires SLURM')
     cpus=int(os.environ['SLURM_CPUS_ON_NODE'])
-    budget=m['budget']; events=mp.parent/'budget_events.jsonl'
+    events=mp.parent/'budget_events.jsonl'
     lock=(mp.parent/'execute.lock').open('a+')
     fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
     previous=[json.loads(l) for l in events.read_text().splitlines()] if events.exists() else []
     admitted_jobs={e['slurm_job_id'] for e in previous if e.get('admitted_endpoint_count')}
     accounted_jobs={e['slurm_job_id'] for e in previous if 'allocated_core_seconds' in e}
-    if admitted_jobs-accounted_jobs:
-        raise InvalidArtifact('prior interrupted execution has unknown cost; reconcile SLURM accounting before further admission')
-    attempted=sum(x.get('admitted_endpoint_count',0) for x in previous)
-    spent=sum(x.get('allocated_core_seconds',0) for x in previous)
+    unaccounted_jobs=sorted(admitted_jobs-accounted_jobs)
     unfinished=[]
     for t in tasks:
         op=t['output']; ep=Path(str(op)+'.execution.json')
@@ -123,16 +115,11 @@ def execute(manifest):
             raise InvalidArtifact(f"partial attempt retained: {t['task_id']}; prepare explicit fresh retry")
         unfinished.append(t['task_id'])
     if not unfinished: return {'status':'already_complete'}
-    if attempted+len(unfinished)>budget['max_endpoint_evaluations_including_retries']:
-        raise InvalidArtifact('endpoint budget exhausted')
     ranks=min(16,cpus); workers=min(len(unfinished),max(1,cpus//ranks))
-    reservation=((len(unfinished)+workers-1)//workers)*budget['endpoint_admission_wall_seconds']*cpus
-    if spent+reservation>budget['high_level_allocated_core_seconds']:
-        raise InvalidArtifact('allocated core-second budget exhausted before admission')
     def append(event):
         with events.open('a') as f: f.write(json.dumps(event)+'\n'); f.flush(); os.fsync(f.fileno())
     implementation=snapshot_implementation(mp.parent/f"implementation_{os.environ['SLURM_JOB_ID']}")
-    append({'admitted_endpoint_count':len(unfinished),'tasks':unfinished,'reserved_core_seconds':reservation,'actual_implementation':implementation,
+    append({'admitted_endpoint_count':len(unfinished),'tasks':unfinished,'compute_budget':None,'unaccounted_prior_jobs':unaccounted_jobs,'actual_implementation':implementation,
             'slurm_job_id':os.environ['SLURM_JOB_ID'],'manifest_sha256':digest(mp),'time_unix':time.time()})
     start=time.monotonic(); error=None
     try:
@@ -170,7 +157,7 @@ def collect(manifest):
 
 
 def prepare_retry(manifest, task_id):
-    """Fresh immutable attempt of exactly one failed endpoint; same budget ledger."""
+    """Fresh immutable attempt of exactly one failed endpoint; retain cost history."""
     mp=Path(manifest).resolve();m=read_json(mp)
     if m.get('retry_of'):
         raise InvalidArtifact('prepare retries from the primary pilot manifest')
@@ -183,8 +170,6 @@ def prepare_retry(manifest, task_id):
     else: raise InvalidArtifact('successful energy is not rerun as a retry')
     events=mp.parent/'budget_events.jsonl'
     used=sum(json.loads(l).get('admitted_endpoint_count',0) for l in events.read_text().splitlines())
-    if used>=m['budget']['max_endpoint_evaluations_including_retries']:
-        raise InvalidArtifact('endpoint budget exhausted')
     count=len(list(mp.parent.glob('retry_*_manifest.json')))+1
     d=mp.parent/'retries'/f'{count}_{task_id}';d.mkdir(parents=True,exist_ok=False)
     xp=d/'core.xyz';xp.write_bytes(verify(t['xyz']).read_bytes())

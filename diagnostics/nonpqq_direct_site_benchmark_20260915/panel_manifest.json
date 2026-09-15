@@ -1,0 +1,232 @@
+{
+  "schema_version": "nonpqq_direct_site_panel.v1",
+  "panel_id": "nonpqq_direct_site_benchmark_20260915",
+  "frozen_at": "2026-09-15T00:00:00-07:00",
+  "status": "preregistered_unexecuted",
+  "protocol": {
+    "protonation_protocol_id": "pdbfixer_standard_residue_protonation_v2",
+    "ph": 7.0,
+    "add_missing_residues": false,
+    "carve_protocol_id": "generic_vertical_exchange_native_r2scan3c_v2",
+    "qualification_cutoff_A": 3.1,
+    "qm_inclusion_cutoff_A": 3.3,
+    "minimum_typed_cn": 7,
+    "maximum_direct_nitrogen": 2,
+    "geometry": "deposited_Ca_conditioned_vertical_swap_no_relaxation",
+    "electronic_method_id": "orca_r2scan3c_cpcm_water_native_basis_v2",
+    "aquo_reference_id": "aquo_cn8_symmetric_vertical_native_r2scan3c_cpcm_v2",
+    "score_direction": "positive_is_La_favoring_relative_to_aquo_gauge",
+    "site_selection": "exact_selector_only",
+    "nonmetal_pair_requirement": "byte_identical_element_and_xyz_after_first_atom"
+  },
+  "software_sources": {
+    "protonate_cif.py": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/protonate_cif.py",
+      "sha256": "9a1adf14e8736b032cf0ffc98367953a2fa2df130474278a352a74cfe0270f05"
+    },
+    "carve_generic.py": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/carve_generic.py",
+      "sha256": "02967b26fe69097d71c6101f2a735921c22523dce808e1081df1d1fcb61a9554"
+    },
+    "coordination_policy.py": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/coordination_policy.py",
+      "sha256": "37b1d07cce8bbcf5984edb157640ddd1936bc56c7070db36f4461b119d4368bb"
+    },
+    "aquo_reference.json": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/reference_inputs/aquo_cn8_native_r2scan3c_v2/aquo_reference.json",
+      "sha256": "cf4f42ca1c768ed55dedbb2360f21eb1106ca77bada4347e8db9e3511836f0d2"
+    }
+  },
+  "proteins": [
+    {
+      "panel_key": "ggr_1glg",
+      "protein": "E. coli D-galactose/D-glucose receptor GGR/MglB",
+      "uniprot": "P0AEE5",
+      "pdb": "1GLG",
+      "source": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/protenix/mmcif/1glg.cif",
+        "sha256": "f987744affddd8a1f5115b1e65fbd73b7a7096735ce5e79bc52b5440d36874f6"
+      },
+      "evidence": {
+        "class": "gold_same_assay_direct_La_Ca_thermodynamics",
+        "source": "doi:10.1021/bi00468a021",
+        "Kd_Ca_uM": "25 +/- 11",
+        "Kd_La_uM": "729 +/- 4",
+        "fold_preference": "Ca_about_29x",
+        "site_mapping": "single_structural_site",
+        "preregistered_direction": "Ca"
+      },
+      "aggregation": {
+        "primary": "single_site_score",
+        "pass_rule": "score_kcal_mol < 0",
+        "threshold_training": false
+      },
+      "sites": [
+        {
+          "site_key": "GGR",
+          "functional_label": "single_Ca_site",
+          "metal_selector": {"chain": "A", "resname": "CA", "resnum": 312, "icode": "", "atom": "CA"},
+          "source_metal_xyz_A": [23.168, 41.519, 73.363],
+          "expected_typed_cn": 7,
+          "expected_donors": [
+            {"chain": "A", "resname": "ASP", "resnum": 134, "atom": "OD1", "distance_A": 2.300},
+            {"chain": "A", "resname": "ASN", "resnum": 136, "atom": "OD1", "distance_A": 2.304},
+            {"chain": "A", "resname": "ASP", "resnum": 138, "atom": "OD1", "distance_A": 2.252},
+            {"chain": "A", "resname": "GLN", "resnum": 140, "atom": "O", "distance_A": 2.277},
+            {"chain": "A", "resname": "GLN", "resnum": 142, "atom": "OE1", "distance_A": 2.359},
+            {"chain": "A", "resname": "GLU", "resnum": 205, "atom": "OE1", "distance_A": 2.558},
+            {"chain": "A", "resname": "GLU", "resnum": 205, "atom": "OE2", "distance_A": 2.458}
+          ],
+          "first_shell_waters": []
+        }
+      ]
+    },
+    {
+      "panel_key": "aequorin_1sl8",
+      "protein": "Aequorin",
+      "uniprot": "P07164",
+      "pdb": "1SL8",
+      "source": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/protenix/mmcif/1sl8.cif",
+        "sha256": "355098a898292091d3f368dcd5a4c8952f41dc892b2aba2be793ca205c7ab74a"
+      },
+      "evidence": {
+        "class": "direct_same_assay_protein_level_near_boundary_site_unresolved",
+        "source": "PMID:2153542",
+        "association_Ca_uM_inverse": 1.92,
+        "association_La_uM_inverse": 1.38,
+        "fold_preference": "Ca_about_1.39x",
+        "site_mapping": "not_assignable_among_three_structural_EF_hands",
+        "preregistered_direction": "protein_level_Ca_weak"
+      },
+      "aggregation": {
+        "primary": "ordered_vector_[EF1,EF3,EF4]",
+        "descriptive_only": ["median", "range", "count_score_below_zero"],
+        "pass_rule": null,
+        "best_site_selection_prohibited": true,
+        "threshold_training": false
+      },
+      "sites": [
+        {
+          "site_key": "EF1",
+          "functional_label": "N_terminal_EF_hand_1",
+          "metal_selector": {"chain": "A", "resname": "CA", "resnum": 670, "icode": "", "atom": "CA"},
+          "source_metal_xyz_A": [-15.785, 22.973, 61.276],
+          "expected_typed_cn": 7,
+          "expected_donors": [
+            {"chain": "A", "resname": "ASP", "resnum": 26, "atom": "OD1", "distance_A": 2.157},
+            {"chain": "A", "resname": "ASN", "resnum": 28, "atom": "OD1", "distance_A": 2.356},
+            {"chain": "A", "resname": "ASN", "resnum": 30, "atom": "OD1", "distance_A": 2.474},
+            {"chain": "A", "resname": "ARG", "resnum": 32, "atom": "O", "distance_A": 2.320},
+            {"chain": "A", "resname": "GLU", "resnum": 37, "atom": "OE1", "distance_A": 2.433},
+            {"chain": "A", "resname": "GLU", "resnum": 37, "atom": "OE2", "distance_A": 2.472},
+            {"chain": "A", "resname": "HOH", "resnum": 716, "atom": "O", "distance_A": 2.279}
+          ],
+          "first_shell_waters": [{"chain": "A", "resname": "HOH", "resnum": 716, "atom": "O"}]
+        },
+        {
+          "site_key": "EF3",
+          "functional_label": "EF_hand_3",
+          "metal_selector": {"chain": "A", "resname": "CA", "resnum": 671, "icode": "", "atom": "CA"},
+          "source_metal_xyz_A": [15.055, 37.706, 64.794],
+          "expected_typed_cn": 7,
+          "expected_donors": [
+            {"chain": "A", "resname": "ASP", "resnum": 119, "atom": "OD1", "distance_A": 2.236},
+            {"chain": "A", "resname": "ASP", "resnum": 121, "atom": "OD1", "distance_A": 2.272},
+            {"chain": "A", "resname": "ASN", "resnum": 123, "atom": "OD1", "distance_A": 2.490},
+            {"chain": "A", "resname": "ALA", "resnum": 125, "atom": "O", "distance_A": 2.327},
+            {"chain": "A", "resname": "GLU", "resnum": 130, "atom": "OE1", "distance_A": 2.422},
+            {"chain": "A", "resname": "GLU", "resnum": 130, "atom": "OE2", "distance_A": 2.605},
+            {"chain": "A", "resname": "HOH", "resnum": 698, "atom": "O", "distance_A": 2.602}
+          ],
+          "first_shell_waters": [{"chain": "A", "resname": "HOH", "resnum": 698, "atom": "O"}]
+        },
+        {
+          "site_key": "EF4",
+          "functional_label": "C_terminal_EF_hand_4",
+          "metal_selector": {"chain": "A", "resname": "CA", "resnum": 669, "icode": "", "atom": "CA"},
+          "source_metal_xyz_A": [21.016, 28.275, 61.763],
+          "expected_typed_cn": 7,
+          "expected_donors": [
+            {"chain": "A", "resname": "ASP", "resnum": 155, "atom": "OD1", "distance_A": 2.278},
+            {"chain": "A", "resname": "ASP", "resnum": 157, "atom": "OD1", "distance_A": 2.241},
+            {"chain": "A", "resname": "SER", "resnum": 159, "atom": "OG", "distance_A": 2.477},
+            {"chain": "A", "resname": "GLN", "resnum": 161, "atom": "O", "distance_A": 2.376},
+            {"chain": "A", "resname": "GLU", "resnum": 166, "atom": "OE1", "distance_A": 2.527},
+            {"chain": "A", "resname": "GLU", "resnum": 166, "atom": "OE2", "distance_A": 2.592},
+            {"chain": "A", "resname": "HOH", "resnum": 680, "atom": "O", "distance_A": 2.357}
+          ],
+          "first_shell_waters": [{"chain": "A", "resname": "HOH", "resnum": 680, "atom": "O"}]
+        }
+      ]
+    },
+    {
+      "panel_key": "carp_parvalbumin_4cpv",
+      "protein": "Carp parvalbumin pI 4.25",
+      "uniprot": "P02618",
+      "pdb": "4CPV",
+      "source": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/protenix/mmcif/4cpv.cif",
+        "sha256": "60950f11977f0ddf1693a719e80254149312ddf44dfa9cde5b6feda67ef0fb8c"
+      },
+      "evidence": {
+        "class": "site_resolved_La_affinity_supporting_cross_study_Ca_comparison",
+        "source": "doi:10.1021/bi00294a030",
+        "Kd_La_CD_pM": 20,
+        "Kd_La_EF_pM": 48,
+        "site_mapping": "resolved_CD_and_EF",
+        "preregistered_direction": "supporting_La_for_both_not_gold"
+      },
+      "aggregation": {
+        "primary": "ordered_vector_[CD,EF]",
+        "pass_rule": null,
+        "sub_kcal_site_ordering_is_target": false,
+        "threshold_training": false
+      },
+      "sites": [
+        {
+          "site_key": "CD",
+          "functional_label": "CD_EF_hand",
+          "metal_selector": {"chain": "A", "resname": "CA", "resnum": 110, "icode": "", "atom": "CA"},
+          "source_metal_xyz_A": [6.987, 18.768, 22.117],
+          "expected_typed_cn": 7,
+          "expected_donors": [
+            {"chain": "A", "resname": "ASP", "resnum": 51, "atom": "OD1", "distance_A": 2.215},
+            {"chain": "A", "resname": "ASP", "resnum": 53, "atom": "OD1", "distance_A": 2.339},
+            {"chain": "A", "resname": "SER", "resnum": 55, "atom": "OG", "distance_A": 2.614},
+            {"chain": "A", "resname": "PHE", "resnum": 57, "atom": "O", "distance_A": 2.369},
+            {"chain": "A", "resname": "GLU", "resnum": 59, "atom": "OE1", "distance_A": 2.345},
+            {"chain": "A", "resname": "GLU", "resnum": 62, "atom": "OE1", "distance_A": 2.617},
+            {"chain": "A", "resname": "GLU", "resnum": 62, "atom": "OE2", "distance_A": 2.398}
+          ],
+          "first_shell_waters": []
+        },
+        {
+          "site_key": "EF",
+          "functional_label": "EF_EF_hand",
+          "metal_selector": {"chain": "A", "resname": "CA", "resnum": 109, "icode": "", "atom": "CA"},
+          "source_metal_xyz_A": [15.272, 12.062, 16.920],
+          "expected_typed_cn": 7,
+          "expected_donors": [
+            {"chain": "A", "resname": "ASP", "resnum": 90, "atom": "OD2", "distance_A": 2.243},
+            {"chain": "A", "resname": "ASP", "resnum": 92, "atom": "OD1", "distance_A": 2.379},
+            {"chain": "A", "resname": "ASP", "resnum": 94, "atom": "OD1", "distance_A": 2.493},
+            {"chain": "A", "resname": "LYS", "resnum": 96, "atom": "O", "distance_A": 2.429},
+            {"chain": "A", "resname": "GLU", "resnum": 101, "atom": "OE1", "distance_A": 2.381},
+            {"chain": "A", "resname": "GLU", "resnum": 101, "atom": "OE2", "distance_A": 2.691},
+            {"chain": "A", "resname": "HOH", "resnum": 166, "atom": "O", "distance_A": 2.351, "occupancy": 0.96}
+          ],
+          "first_shell_waters": [{"chain": "A", "resname": "HOH", "resnum": 166, "atom": "O", "occupancy": 0.96}]
+        }
+      ]
+    }
+  ],
+  "global_site_order": [
+    "ggr_1glg/GGR",
+    "aequorin_1sl8/EF1",
+    "aequorin_1sl8/EF3",
+    "aequorin_1sl8/EF4",
+    "carp_parvalbumin_4cpv/CD",
+    "carp_parvalbumin_4cpv/EF"
+  ]
+}

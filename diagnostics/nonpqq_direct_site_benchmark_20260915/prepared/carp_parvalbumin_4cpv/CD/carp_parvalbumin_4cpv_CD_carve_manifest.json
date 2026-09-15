@@ -1,0 +1,679 @@
+{
+  "carver": {
+    "name": "carve_generic",
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/carve_generic.py",
+    "sha256": "02967b26fe69097d71c6101f2a735921c22523dce808e1081df1d1fcb61a9554",
+    "version": "2.0"
+  },
+  "charge_ledger": {
+    "clusters": {
+      "Ca": {
+        "all_electron_count_for_parity": 196,
+        "atom_count": 45,
+        "electron_parity": "even",
+        "metal_charge": 2,
+        "multiplicity": 1,
+        "total_charge": -2
+      },
+      "La": {
+        "all_electron_count_for_parity": 232,
+        "atom_count": 45,
+        "electron_parity": "even",
+        "metal_charge": 3,
+        "multiplicity": 1,
+        "total_charge": -1
+      },
+      "apo": {
+        "all_electron_count_for_parity": 178,
+        "atom_count": 44,
+        "electron_parity": "even",
+        "metal_charge": 0,
+        "multiplicity": 1,
+        "total_charge": -4
+      }
+    },
+    "fragment_formal_charge_sum": -4,
+    "fragments": [
+      {
+        "formal_charge": -1,
+        "fragment_id": "sidechain_001",
+        "protonation_state": "deprotonated_carboxylate"
+      },
+      {
+        "formal_charge": -1,
+        "fragment_id": "sidechain_002",
+        "protonation_state": "deprotonated_carboxylate"
+      },
+      {
+        "formal_charge": 0,
+        "fragment_id": "sidechain_003",
+        "protonation_state": "neutral_hydroxyl"
+      },
+      {
+        "formal_charge": -1,
+        "fragment_id": "sidechain_004",
+        "protonation_state": "deprotonated_carboxylate"
+      },
+      {
+        "formal_charge": -1,
+        "fragment_id": "sidechain_005",
+        "protonation_state": "deprotonated_carboxylate"
+      },
+      {
+        "formal_charge": 0,
+        "fragment_id": "backbone_001",
+        "protonation_state": "neutral_capped_backbone_carbonyl"
+      }
+    ],
+    "validation": "all generated multiplicity-1 clusters have even electron parity"
+  },
+  "coordination": {
+    "coordination_number": 7,
+    "nearby_sulfur": [],
+    "nearby_untyped_ON": [],
+    "nitrogen_count": 0,
+    "oxygen_count": 7,
+    "passes_geometry": true,
+    "typed_donors": [
+      {
+        "atom": "OD1",
+        "chain": "A",
+        "distance_A": 2.215,
+        "donor_type": "sidechain_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "ASP",
+        "resnum": 51
+      },
+      {
+        "atom": "OD1",
+        "chain": "A",
+        "distance_A": 2.339,
+        "donor_type": "sidechain_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "ASP",
+        "resnum": 53
+      },
+      {
+        "atom": "OE1",
+        "chain": "A",
+        "distance_A": 2.345,
+        "donor_type": "sidechain_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "GLU",
+        "resnum": 59
+      },
+      {
+        "atom": "O",
+        "chain": "A",
+        "distance_A": 2.369,
+        "donor_type": "backbone_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "PHE",
+        "resnum": 57
+      },
+      {
+        "atom": "OE2",
+        "chain": "A",
+        "distance_A": 2.398,
+        "donor_type": "sidechain_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "GLU",
+        "resnum": 62
+      },
+      {
+        "atom": "OG",
+        "chain": "A",
+        "distance_A": 2.614,
+        "donor_type": "sidechain_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "SER",
+        "resnum": 55
+      },
+      {
+        "atom": "OE1",
+        "chain": "A",
+        "distance_A": 2.617,
+        "donor_type": "sidechain_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "GLU",
+        "resnum": 62
+      }
+    ]
+  },
+  "coordination_policy": {
+    "alternate_conformer_policy": "residue_consistent_highest_occupancy_blank_then_A_v1",
+    "maximum_direct_nitrogen": 2,
+    "minimum_coordination_number": 7,
+    "nearby_sulfur_is_gate": false,
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/coordination_policy.py",
+    "policy_id": "typed_cn7_3p1A_maxN2_v2",
+    "qualification_cutoff_A": 3.1,
+    "sha256": "37b1d07cce8bbcf5984edb157640ddd1936bc56c7070db36f4461b119d4368bb"
+  },
+  "electronic_structure": {
+    "aquo_reference_id": "aquo_cn8_symmetric_vertical_native_r2scan3c_cpcm_v2",
+    "aquo_reference_required_before_scoring": true,
+    "aquo_reference_status": "pending_symmetric_cn8_v2",
+    "basis_policy": "native_r2scan3c_def2_mTZVPP_with_native_ECP",
+    "grid": "DefGrid3",
+    "method": "r2SCAN-3c",
+    "method_id": "orca_r2scan3c_cpcm_water_native_basis_v2",
+    "solvation": "CPCM(Water)"
+  },
+  "execution_policy": {
+    "heavy_leg_nprocs": "min(16, floor(SLURM_CPUS_ON_NODE / 3))",
+    "heavy_legs": [
+      "La",
+      "Ca",
+      "apo"
+    ],
+    "id": "allocation_aware_manifested_orca_mpi_v2",
+    "omp_threads_per_rank": 1,
+    "openmpi_binding": "none_for_concurrent_independent_legs",
+    "runtime_renderer": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/render_orca_runtime_input.py",
+      "sha256": "4d75904eca4296abd892958df700063e272f5f029a0ce256bcf1b579768aeadb"
+    },
+    "task_runner": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/run_orca_task_manifest.py",
+      "sha256": "b9278e74e5317e859e8cb05541e1ec57cb335b26dcdf65a83b89675407343b9a"
+    },
+    "water_nprocs": 1
+  },
+  "outputs": {
+    "Ca": {
+      "orca_input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/carp_parvalbumin_4cpv/CD/sp_carp_parvalbumin_4cpv_CD_Ca.inp",
+        "sha256": "a4edee0bf6fabc44ee9cb7a9e3c12f09dff6c5f37dc611290d9ade06184889a1"
+      },
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/carp_parvalbumin_4cpv/CD/carp_parvalbumin_4cpv_CD_Ca_qm.xyz",
+        "sha256": "8b1c360fdff18b9e7d04e4090d1c4162f33777c9a0ebc59b30517002d34086fd"
+      }
+    },
+    "La": {
+      "orca_input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/carp_parvalbumin_4cpv/CD/sp_carp_parvalbumin_4cpv_CD_La.inp",
+        "sha256": "790dba07515e71c19ea7d7ee7943b42fac5bfda4f02b0ab8e786519f050d32d0"
+      },
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/carp_parvalbumin_4cpv/CD/carp_parvalbumin_4cpv_CD_La_qm.xyz",
+        "sha256": "fcf82bbde7bf0af0682af5abb33e0db9493d07c8158321c58f019b604dedc0eb"
+      }
+    },
+    "apo": {
+      "orca_input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/carp_parvalbumin_4cpv/CD/sp_carp_parvalbumin_4cpv_CD_apo.inp",
+        "sha256": "e43d660ac463e712f54583a7590c06a72d14f56ee8801322bfad28e025e3b0b8"
+      },
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/carp_parvalbumin_4cpv/CD/carp_parvalbumin_4cpv_CD_apo_qm.xyz",
+        "sha256": "d319434fd50eec210045ac032359593045252cfdf1e71c618fdd9904e133d76a"
+      }
+    },
+    "submit_script": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/carp_parvalbumin_4cpv/CD/submit_carp_parvalbumin_4cpv_CD.sh",
+      "sha256": "3f6c26782f8d3183b7d0adda3a07778b6d05805461a6d205c6e34d8b149b9743"
+    },
+    "water": {
+      "orca_input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/carp_parvalbumin_4cpv/CD/sp_carp_parvalbumin_4cpv_CD_water.inp",
+        "sha256": "b76cc7ba418f637cac2c76116cb6adc4d39a08545782d1d874849faa6250dbc9"
+      },
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/carp_parvalbumin_4cpv/CD/bulk_water.xyz",
+        "sha256": "dc59dd46cf15231eee4cd344b1e163f5f40a7c1c9ec1a3e2dc56e21a20457b89"
+      }
+    }
+  },
+  "pqq": {
+    "microstate_id": null,
+    "present": false
+  },
+  "protocol_id": "generic_vertical_exchange_native_r2scan3c_v2",
+  "protonation_manifest": {
+    "output_sha256": "8236f02d08823ff62d77bc68f4264010cafb29a386aac3d47eccbebb38d3e80b",
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/carp_parvalbumin_4cpv/carp_parvalbumin_4cpv_protonation_manifest.json",
+    "ph": 7.0,
+    "protocol_id": "pdbfixer_standard_residue_protonation_v2",
+    "sha256": "4a3710618e3b1953a4e116b97cb336ee47afae5bded952997332b3098737f2ef"
+  },
+  "qm_fragments": [
+    {
+      "atom_count": 7,
+      "donor_atoms": [
+        {
+          "atom": "OD1",
+          "chain": "A",
+          "distance_A": 2.215,
+          "donor_type": "sidechain_O",
+          "element": "O",
+          "exclusion_reason": null,
+          "included_in_qm": true,
+          "insertion_code": "",
+          "qualifies": true,
+          "resname": "ASP",
+          "resnum": 51
+        }
+      ],
+      "electron_count": 32,
+      "formal_charge": -1,
+      "fragment_id": "sidechain_001",
+      "fragment_type": "sidechain",
+      "generated_link_hydrogens": 1,
+      "included_in": [
+        "La",
+        "Ca",
+        "apo"
+      ],
+      "input_atom_names": [
+        "CB",
+        "CG",
+        "OD1",
+        "OD2",
+        "HB2",
+        "HB3"
+      ],
+      "protonation_state": "deprotonated_carboxylate",
+      "source": {
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "ASP",
+        "resnum": 51
+      }
+    },
+    {
+      "atom_count": 7,
+      "donor_atoms": [
+        {
+          "atom": "OD1",
+          "chain": "A",
+          "distance_A": 2.339,
+          "donor_type": "sidechain_O",
+          "element": "O",
+          "exclusion_reason": null,
+          "included_in_qm": true,
+          "insertion_code": "",
+          "qualifies": true,
+          "resname": "ASP",
+          "resnum": 53
+        }
+      ],
+      "electron_count": 32,
+      "formal_charge": -1,
+      "fragment_id": "sidechain_002",
+      "fragment_type": "sidechain",
+      "generated_link_hydrogens": 1,
+      "included_in": [
+        "La",
+        "Ca",
+        "apo"
+      ],
+      "input_atom_names": [
+        "CB",
+        "CG",
+        "OD1",
+        "OD2",
+        "HB2",
+        "HB3"
+      ],
+      "protonation_state": "deprotonated_carboxylate",
+      "source": {
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "ASP",
+        "resnum": 53
+      }
+    },
+    {
+      "atom_count": 6,
+      "donor_atoms": [
+        {
+          "atom": "OG",
+          "chain": "A",
+          "distance_A": 2.614,
+          "donor_type": "sidechain_O",
+          "element": "O",
+          "exclusion_reason": null,
+          "included_in_qm": true,
+          "insertion_code": "",
+          "qualifies": true,
+          "resname": "SER",
+          "resnum": 55
+        }
+      ],
+      "electron_count": 18,
+      "formal_charge": 0,
+      "fragment_id": "sidechain_003",
+      "fragment_type": "sidechain",
+      "generated_link_hydrogens": 1,
+      "included_in": [
+        "La",
+        "Ca",
+        "apo"
+      ],
+      "input_atom_names": [
+        "CB",
+        "OG",
+        "HB2",
+        "HB3",
+        "HG"
+      ],
+      "protonation_state": "neutral_hydroxyl",
+      "source": {
+        "canonical_resname": "SER",
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "SER",
+        "resnum": 55
+      }
+    },
+    {
+      "atom_count": 10,
+      "donor_atoms": [
+        {
+          "atom": "OE1",
+          "chain": "A",
+          "distance_A": 2.345,
+          "donor_type": "sidechain_O",
+          "element": "O",
+          "exclusion_reason": null,
+          "included_in_qm": true,
+          "insertion_code": "",
+          "qualifies": true,
+          "resname": "GLU",
+          "resnum": 59
+        }
+      ],
+      "electron_count": 40,
+      "formal_charge": -1,
+      "fragment_id": "sidechain_004",
+      "fragment_type": "sidechain",
+      "generated_link_hydrogens": 1,
+      "included_in": [
+        "La",
+        "Ca",
+        "apo"
+      ],
+      "input_atom_names": [
+        "CB",
+        "CD",
+        "CG",
+        "OE1",
+        "OE2",
+        "HB2",
+        "HB3",
+        "HG2",
+        "HG3"
+      ],
+      "protonation_state": "deprotonated_carboxylate",
+      "source": {
+        "canonical_resname": "GLU",
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "GLU",
+        "resnum": 59
+      }
+    },
+    {
+      "atom_count": 10,
+      "donor_atoms": [
+        {
+          "atom": "OE2",
+          "chain": "A",
+          "distance_A": 2.398,
+          "donor_type": "sidechain_O",
+          "element": "O",
+          "exclusion_reason": null,
+          "included_in_qm": true,
+          "insertion_code": "",
+          "qualifies": true,
+          "resname": "GLU",
+          "resnum": 62
+        },
+        {
+          "atom": "OE1",
+          "chain": "A",
+          "distance_A": 2.617,
+          "donor_type": "sidechain_O",
+          "element": "O",
+          "exclusion_reason": null,
+          "included_in_qm": true,
+          "insertion_code": "",
+          "qualifies": true,
+          "resname": "GLU",
+          "resnum": 62
+        }
+      ],
+      "electron_count": 40,
+      "formal_charge": -1,
+      "fragment_id": "sidechain_005",
+      "fragment_type": "sidechain",
+      "generated_link_hydrogens": 1,
+      "included_in": [
+        "La",
+        "Ca",
+        "apo"
+      ],
+      "input_atom_names": [
+        "CB",
+        "CD",
+        "CG",
+        "OE1",
+        "OE2",
+        "HB2",
+        "HB3",
+        "HG2",
+        "HG3"
+      ],
+      "protonation_state": "deprotonated_carboxylate",
+      "source": {
+        "canonical_resname": "GLU",
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "GLU",
+        "resnum": 62
+      }
+    },
+    {
+      "atom_count": 4,
+      "donor_atoms": [
+        {
+          "atom": "O",
+          "chain": "A",
+          "distance_A": 2.369,
+          "donor_type": "backbone_O",
+          "element": "O",
+          "exclusion_reason": null,
+          "included_in_qm": true,
+          "insertion_code": "",
+          "qualifies": true,
+          "resname": "PHE",
+          "resnum": 57
+        }
+      ],
+      "electron_count": 16,
+      "formal_charge": 0,
+      "fragment_id": "backbone_001",
+      "fragment_type": "backbone_carbonyl",
+      "generated_link_hydrogens": 2,
+      "included_in": [
+        "La",
+        "Ca",
+        "apo"
+      ],
+      "input_atom_names": [
+        "C",
+        "O"
+      ],
+      "protonation_state": "neutral_capped_backbone_carbonyl",
+      "source": {
+        "canonical_resname": "PHE",
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "PHE",
+        "resnum": 57
+      }
+    }
+  ],
+  "qm_inclusion": {
+    "apo_atom_count": 44,
+    "buffer_beyond_qualification_A": 0.19999999999999973,
+    "cutoff_A": 3.3,
+    "holo_atom_count": 45,
+    "typed_contacts": [
+      {
+        "atom": "OD1",
+        "chain": "A",
+        "distance_A": 2.215,
+        "donor_type": "sidechain_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "ASP",
+        "resnum": 51
+      },
+      {
+        "atom": "OD1",
+        "chain": "A",
+        "distance_A": 2.339,
+        "donor_type": "sidechain_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "ASP",
+        "resnum": 53
+      },
+      {
+        "atom": "OE1",
+        "chain": "A",
+        "distance_A": 2.345,
+        "donor_type": "sidechain_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "GLU",
+        "resnum": 59
+      },
+      {
+        "atom": "O",
+        "chain": "A",
+        "distance_A": 2.369,
+        "donor_type": "backbone_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "PHE",
+        "resnum": 57
+      },
+      {
+        "atom": "OE2",
+        "chain": "A",
+        "distance_A": 2.398,
+        "donor_type": "sidechain_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "GLU",
+        "resnum": 62
+      },
+      {
+        "atom": "OG",
+        "chain": "A",
+        "distance_A": 2.614,
+        "donor_type": "sidechain_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "SER",
+        "resnum": 55
+      },
+      {
+        "atom": "OE1",
+        "chain": "A",
+        "distance_A": 2.617,
+        "donor_type": "sidechain_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "GLU",
+        "resnum": 62
+      }
+    ],
+    "unsupported_nearby_species": []
+  },
+  "schema_version": "alchemical_bvs.carve_manifest.v1",
+  "selected_site": {
+    "atom": "CA",
+    "canonical_resname": "CA",
+    "chain": "A",
+    "insertion_code": "",
+    "resname": "CA",
+    "resnum": 110,
+    "source_element": "Ca",
+    "xyz_A": [
+      6.987,
+      18.768,
+      22.117
+    ]
+  },
+  "site_selection": {
+    "mode": "exact_unique_selector",
+    "requested": {
+      "atom": "CA",
+      "chain": "A",
+      "icode": "",
+      "resnum": 110
+    }
+  },
+  "source_structure": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/carp_parvalbumin_4cpv/carp_parvalbumin_4cpv_protonated.pdb",
+    "sha256": "8236f02d08823ff62d77bc68f4264010cafb29a386aac3d47eccbebb38d3e80b"
+  },
+  "status": "ready_for_orca",
+  "stem": "carp_parvalbumin_4cpv_CD"
+}

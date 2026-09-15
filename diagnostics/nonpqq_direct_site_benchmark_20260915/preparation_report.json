@@ -1,0 +1,1082 @@
+{
+  "orca_task_count": 12,
+  "orca_tasks_submitted": 0,
+  "panel_id": "nonpqq_direct_site_benchmark_20260915",
+  "panel_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/panel_manifest.json",
+    "sha256": "619b70ce20173980231556a57dc7ce8789866312b3e46716d9a038a6475f8618"
+  },
+  "preregistration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/PREREGISTRATION.md",
+    "sha256": "f45180b2d12029a4a364b35d678bcb724dff7f673c2a9aeda080cad8cf58c95f"
+  },
+  "proteins": [
+    {
+      "panel_key": "ggr_1glg",
+      "protonation_manifest": {
+        "add_missing_residues": false,
+        "cofactor_protonation": "not_assigned",
+        "created_at": "2026-09-15T07:20:27.859622+00:00",
+        "detected_missing_residues": {},
+        "keep_chain_and_residue_ids": true,
+        "output": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/ggr_1glg/ggr_1glg_protonated.pdb",
+          "sha256": "66ff9f6972c3f4a9bb1ff6cb2c5b0c1ce07069e5c285bf6b093f9ee355ec7090"
+        },
+        "ph": 7.0,
+        "protocol_id": "pdbfixer_standard_residue_protonation_v2",
+        "repaired_missing_atom_count": 0,
+        "repaired_missing_terminal_atom_count": 1,
+        "schema_version": 1,
+        "software": {
+          "gemmi": "0.6.7",
+          "openmm": "8.5.0",
+          "pdbfixer": "1.12.0"
+        },
+        "source": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/protenix/mmcif/1glg.cif",
+          "sha256": "f987744affddd8a1f5115b1e65fbd73b7a7096735ce5e79bc52b5440d36874f6"
+        }
+      },
+      "sites": [
+        {
+          "carve_manifest": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/ggr_1glg/GGR/ggr_1glg_GGR_carve_manifest.json",
+            "sha256": "6d084ccebcf8e4eb4f42f567c234b6d303b6809d71d40dc2b8484080cfda3e62"
+          },
+          "donor_check": {
+            "coordination_number": 7,
+            "donor_keys": [
+              [
+                "A",
+                "ASN",
+                136,
+                "OD1"
+              ],
+              [
+                "A",
+                "ASP",
+                134,
+                "OD1"
+              ],
+              [
+                "A",
+                "ASP",
+                138,
+                "OD1"
+              ],
+              [
+                "A",
+                "GLN",
+                140,
+                "O"
+              ],
+              [
+                "A",
+                "GLN",
+                142,
+                "OE1"
+              ],
+              [
+                "A",
+                "GLU",
+                205,
+                "OE1"
+              ],
+              [
+                "A",
+                "GLU",
+                205,
+                "OE2"
+              ]
+            ],
+            "first_shell_water_keys": [],
+            "maximum_distance_delta_A": 0.0,
+            "status": "pass"
+          },
+          "ordered_key": "ggr_1glg/GGR",
+          "site_key": "GGR",
+          "vertical_pair_check": {
+            "Ca_xyz_sha256": "aa67bd42f71e11af5395d9a788712609e9f37565e1b8d48d46d23b71f2eafd7a",
+            "La_xyz_sha256": "d41ed84867b0077146609707d23beb135e95226b4f6f3b8794e4088bc75c5607",
+            "atom_count": 50,
+            "metal_xyz_tokens": [
+              "23.168000",
+              "41.519000",
+              "73.363000"
+            ],
+            "nonmetal_atom_count": 49,
+            "nonmetal_records_sha256": "187407c894273fd0862b7619553a3f647b1558b505d89b47ca16228357cf017a",
+            "status": "pass"
+          }
+        }
+      ],
+      "source_coordinate_check": {
+        "atoms": [
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "CA",
+              312,
+              "CA"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "ASP",
+              134,
+              "OD1"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "ASN",
+              136,
+              "OD1"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "ASP",
+              138,
+              "OD1"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "GLN",
+              140,
+              "O"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "GLN",
+              142,
+              "OE1"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "GLU",
+              205,
+              "OE1"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "GLU",
+              205,
+              "OE2"
+            ]
+          }
+        ],
+        "checked_atom_count": 8,
+        "coordinate_tolerance_A": 0.002,
+        "maximum_displacement_A": 0.0,
+        "status": "pass"
+      },
+      "source_path": "/groups/banfield/projects/environmental/sr/srvp2020/protenix/mmcif/1glg.cif",
+      "source_sha256": "f987744affddd8a1f5115b1e65fbd73b7a7096735ce5e79bc52b5440d36874f6"
+    },
+    {
+      "panel_key": "aequorin_1sl8",
+      "protonation_manifest": {
+        "add_missing_residues": false,
+        "cofactor_protonation": "not_assigned",
+        "created_at": "2026-09-15T07:21:09.845374+00:00",
+        "detected_missing_residues": {
+          "0:0": [
+            "MET",
+            "SER",
+            "VAL",
+            "LYS",
+            "LEU",
+            "THR",
+            "PRO",
+            "ASP",
+            "PHE",
+            "ASP"
+          ]
+        },
+        "keep_chain_and_residue_ids": true,
+        "output": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/aequorin_1sl8/aequorin_1sl8_protonated.pdb",
+          "sha256": "647950ba4ea6dd1aa261b7f15e7649bcfdca32f30b785b21b60f2b31c065643e"
+        },
+        "ph": 7.0,
+        "protocol_id": "pdbfixer_standard_residue_protonation_v2",
+        "repaired_missing_atom_count": 0,
+        "repaired_missing_terminal_atom_count": 0,
+        "schema_version": 1,
+        "software": {
+          "gemmi": "0.6.7",
+          "openmm": "8.5.0",
+          "pdbfixer": "1.12.0"
+        },
+        "source": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/protenix/mmcif/1sl8.cif",
+          "sha256": "355098a898292091d3f368dcd5a4c8952f41dc892b2aba2be793ca205c7ab74a"
+        }
+      },
+      "sites": [
+        {
+          "carve_manifest": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/aequorin_1sl8/EF1/aequorin_1sl8_EF1_carve_manifest.json",
+            "sha256": "6f20d85c64818d8b17c662e2dbb4c650f3fba96af393f47abc2165ba1e6f784e"
+          },
+          "donor_check": {
+            "coordination_number": 7,
+            "donor_keys": [
+              [
+                "A",
+                "ARG",
+                32,
+                "O"
+              ],
+              [
+                "A",
+                "ASN",
+                28,
+                "OD1"
+              ],
+              [
+                "A",
+                "ASN",
+                30,
+                "OD1"
+              ],
+              [
+                "A",
+                "ASP",
+                26,
+                "OD1"
+              ],
+              [
+                "A",
+                "GLU",
+                37,
+                "OE1"
+              ],
+              [
+                "A",
+                "GLU",
+                37,
+                "OE2"
+              ],
+              [
+                "A",
+                "HOH",
+                716,
+                "O"
+              ]
+            ],
+            "first_shell_water_keys": [
+              [
+                "A",
+                "HOH",
+                716,
+                "O"
+              ]
+            ],
+            "maximum_distance_delta_A": 0.0,
+            "status": "pass"
+          },
+          "ordered_key": "aequorin_1sl8/EF1",
+          "site_key": "EF1",
+          "vertical_pair_check": {
+            "Ca_xyz_sha256": "9449664726d03ecc22a54443dd7bce18ff14db4d2dd36caa57730e3ee48911eb",
+            "La_xyz_sha256": "57f04815ebccb314821a69371528093a06969586f7aa766be2e47e3197dc07be",
+            "atom_count": 43,
+            "metal_xyz_tokens": [
+              "-15.785000",
+              "22.973000",
+              "61.276000"
+            ],
+            "nonmetal_atom_count": 42,
+            "nonmetal_records_sha256": "3e2c592d3778bb89a270055abc6eea85eb93495f53cc8408c740ea394561c402",
+            "status": "pass"
+          }
+        },
+        {
+          "carve_manifest": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/aequorin_1sl8/EF3/aequorin_1sl8_EF3_carve_manifest.json",
+            "sha256": "b06b819b826334cd95071f117129738576899fce5bc3d212284168f01fc32b94"
+          },
+          "donor_check": {
+            "coordination_number": 7,
+            "donor_keys": [
+              [
+                "A",
+                "ALA",
+                125,
+                "O"
+              ],
+              [
+                "A",
+                "ASN",
+                123,
+                "OD1"
+              ],
+              [
+                "A",
+                "ASP",
+                119,
+                "OD1"
+              ],
+              [
+                "A",
+                "ASP",
+                121,
+                "OD1"
+              ],
+              [
+                "A",
+                "GLU",
+                130,
+                "OE1"
+              ],
+              [
+                "A",
+                "GLU",
+                130,
+                "OE2"
+              ],
+              [
+                "A",
+                "HOH",
+                698,
+                "O"
+              ]
+            ],
+            "first_shell_water_keys": [
+              [
+                "A",
+                "HOH",
+                698,
+                "O"
+              ]
+            ],
+            "maximum_distance_delta_A": 0.0,
+            "status": "pass"
+          },
+          "ordered_key": "aequorin_1sl8/EF3",
+          "site_key": "EF3",
+          "vertical_pair_check": {
+            "Ca_xyz_sha256": "c07b45b85d2b88306f31c101e059c144a565d40ce38882e152e4b599ea19ebaf",
+            "La_xyz_sha256": "c054634396118300cf7440af64eafa21d3ee381f43e22a6b559ae026f36f9ca3",
+            "atom_count": 41,
+            "metal_xyz_tokens": [
+              "15.055000",
+              "37.706000",
+              "64.794000"
+            ],
+            "nonmetal_atom_count": 40,
+            "nonmetal_records_sha256": "3971ad48759021a25dd569c6c0f497951a825710c9432fd99a8f7bee8705891e",
+            "status": "pass"
+          }
+        },
+        {
+          "carve_manifest": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/aequorin_1sl8/EF4/aequorin_1sl8_EF4_carve_manifest.json",
+            "sha256": "35deae63f21a7252988cab52a8fc0a5d668e77cecdb52be1140958aa8bee86ae"
+          },
+          "donor_check": {
+            "coordination_number": 7,
+            "donor_keys": [
+              [
+                "A",
+                "ASP",
+                155,
+                "OD1"
+              ],
+              [
+                "A",
+                "ASP",
+                157,
+                "OD1"
+              ],
+              [
+                "A",
+                "GLN",
+                161,
+                "O"
+              ],
+              [
+                "A",
+                "GLU",
+                166,
+                "OE1"
+              ],
+              [
+                "A",
+                "GLU",
+                166,
+                "OE2"
+              ],
+              [
+                "A",
+                "HOH",
+                680,
+                "O"
+              ],
+              [
+                "A",
+                "SER",
+                159,
+                "OG"
+              ]
+            ],
+            "first_shell_water_keys": [
+              [
+                "A",
+                "HOH",
+                680,
+                "O"
+              ]
+            ],
+            "maximum_distance_delta_A": 0.0,
+            "status": "pass"
+          },
+          "ordered_key": "aequorin_1sl8/EF4",
+          "site_key": "EF4",
+          "vertical_pair_check": {
+            "Ca_xyz_sha256": "ff34c7fa8a86f98e3f582e7e343d47e6b25b553e585ec3f5a952cddf0c1a434b",
+            "La_xyz_sha256": "2784347caece3174e1a70c6c0086f440af4a3ae26b9bcb8f11c1bb5687a3403d",
+            "atom_count": 38,
+            "metal_xyz_tokens": [
+              "21.016000",
+              "28.275000",
+              "61.763000"
+            ],
+            "nonmetal_atom_count": 37,
+            "nonmetal_records_sha256": "ba6c5196ec72daf140f637ddcc2d795f046ad36a12a344d76f985d98bf4fd825",
+            "status": "pass"
+          }
+        }
+      ],
+      "source_coordinate_check": {
+        "atoms": [
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "CA",
+              670,
+              "CA"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "ASP",
+              26,
+              "OD1"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "ASN",
+              28,
+              "OD1"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "ASN",
+              30,
+              "OD1"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "ARG",
+              32,
+              "O"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "GLU",
+              37,
+              "OE1"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "GLU",
+              37,
+              "OE2"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "HOH",
+              716,
+              "O"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "CA",
+              671,
+              "CA"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "ASP",
+              119,
+              "OD1"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "ASP",
+              121,
+              "OD1"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "ASN",
+              123,
+              "OD1"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "ALA",
+              125,
+              "O"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "GLU",
+              130,
+              "OE1"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "GLU",
+              130,
+              "OE2"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "HOH",
+              698,
+              "O"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "CA",
+              669,
+              "CA"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "ASP",
+              155,
+              "OD1"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "ASP",
+              157,
+              "OD1"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "SER",
+              159,
+              "OG"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "GLN",
+              161,
+              "O"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "GLU",
+              166,
+              "OE1"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "GLU",
+              166,
+              "OE2"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "HOH",
+              680,
+              "O"
+            ]
+          }
+        ],
+        "checked_atom_count": 24,
+        "coordinate_tolerance_A": 0.002,
+        "maximum_displacement_A": 0.0,
+        "status": "pass"
+      },
+      "source_path": "/groups/banfield/projects/environmental/sr/srvp2020/protenix/mmcif/1sl8.cif",
+      "source_sha256": "355098a898292091d3f368dcd5a4c8952f41dc892b2aba2be793ca205c7ab74a"
+    },
+    {
+      "panel_key": "carp_parvalbumin_4cpv",
+      "protonation_manifest": {
+        "add_missing_residues": false,
+        "cofactor_protonation": "not_assigned",
+        "created_at": "2026-09-15T07:21:14.770403+00:00",
+        "detected_missing_residues": {},
+        "keep_chain_and_residue_ids": true,
+        "output": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/carp_parvalbumin_4cpv/carp_parvalbumin_4cpv_protonated.pdb",
+          "sha256": "8236f02d08823ff62d77bc68f4264010cafb29a386aac3d47eccbebb38d3e80b"
+        },
+        "ph": 7.0,
+        "protocol_id": "pdbfixer_standard_residue_protonation_v2",
+        "repaired_missing_atom_count": 0,
+        "repaired_missing_terminal_atom_count": 0,
+        "schema_version": 1,
+        "software": {
+          "gemmi": "0.6.7",
+          "openmm": "8.5.0",
+          "pdbfixer": "1.12.0"
+        },
+        "source": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/protenix/mmcif/4cpv.cif",
+          "sha256": "60950f11977f0ddf1693a719e80254149312ddf44dfa9cde5b6feda67ef0fb8c"
+        }
+      },
+      "sites": [
+        {
+          "carve_manifest": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/carp_parvalbumin_4cpv/CD/carp_parvalbumin_4cpv_CD_carve_manifest.json",
+            "sha256": "be34f337a45145febc18ba2a79af57637b4a9fde0a46d7e5926d46954f1085bf"
+          },
+          "donor_check": {
+            "coordination_number": 7,
+            "donor_keys": [
+              [
+                "A",
+                "ASP",
+                51,
+                "OD1"
+              ],
+              [
+                "A",
+                "ASP",
+                53,
+                "OD1"
+              ],
+              [
+                "A",
+                "GLU",
+                59,
+                "OE1"
+              ],
+              [
+                "A",
+                "GLU",
+                62,
+                "OE1"
+              ],
+              [
+                "A",
+                "GLU",
+                62,
+                "OE2"
+              ],
+              [
+                "A",
+                "PHE",
+                57,
+                "O"
+              ],
+              [
+                "A",
+                "SER",
+                55,
+                "OG"
+              ]
+            ],
+            "first_shell_water_keys": [],
+            "maximum_distance_delta_A": 0.0,
+            "status": "pass"
+          },
+          "ordered_key": "carp_parvalbumin_4cpv/CD",
+          "site_key": "CD",
+          "vertical_pair_check": {
+            "Ca_xyz_sha256": "8b1c360fdff18b9e7d04e4090d1c4162f33777c9a0ebc59b30517002d34086fd",
+            "La_xyz_sha256": "fcf82bbde7bf0af0682af5abb33e0db9493d07c8158321c58f019b604dedc0eb",
+            "atom_count": 45,
+            "metal_xyz_tokens": [
+              "6.987000",
+              "18.768000",
+              "22.117000"
+            ],
+            "nonmetal_atom_count": 44,
+            "nonmetal_records_sha256": "efba078056d8c4a3237c50fe85a8728c7477378a4f43eb45258e66fe411fca7f",
+            "status": "pass"
+          }
+        },
+        {
+          "carve_manifest": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/carp_parvalbumin_4cpv/EF/carp_parvalbumin_4cpv_EF_carve_manifest.json",
+            "sha256": "9652222a694448109cd451cef0e649548272b31507c9cb70fa337681b6bfbfa0"
+          },
+          "donor_check": {
+            "coordination_number": 7,
+            "donor_keys": [
+              [
+                "A",
+                "ASP",
+                90,
+                "OD2"
+              ],
+              [
+                "A",
+                "ASP",
+                92,
+                "OD1"
+              ],
+              [
+                "A",
+                "ASP",
+                94,
+                "OD1"
+              ],
+              [
+                "A",
+                "GLU",
+                101,
+                "OE1"
+              ],
+              [
+                "A",
+                "GLU",
+                101,
+                "OE2"
+              ],
+              [
+                "A",
+                "HOH",
+                166,
+                "O"
+              ],
+              [
+                "A",
+                "LYS",
+                96,
+                "O"
+              ]
+            ],
+            "first_shell_water_keys": [
+              [
+                "A",
+                "HOH",
+                166,
+                "O"
+              ]
+            ],
+            "maximum_distance_delta_A": 0.0,
+            "status": "pass"
+          },
+          "ordered_key": "carp_parvalbumin_4cpv/EF",
+          "site_key": "EF",
+          "vertical_pair_check": {
+            "Ca_xyz_sha256": "280eda008eb5d0260df1cf09954c570d5a2077cf5437f068dec9fce52361ba37",
+            "La_xyz_sha256": "346bb5fb1decd274d31a0d487feac328042f6253be0de2189640b526706f02a8",
+            "atom_count": 39,
+            "metal_xyz_tokens": [
+              "15.272000",
+              "12.062000",
+              "16.920000"
+            ],
+            "nonmetal_atom_count": 38,
+            "nonmetal_records_sha256": "bfa11abebc5df193be1d80ec5236172c6f647f57d8791e5359797ae010d0f64f",
+            "status": "pass"
+          }
+        }
+      ],
+      "source_coordinate_check": {
+        "atoms": [
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "CA",
+              110,
+              "CA"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "ASP",
+              51,
+              "OD1"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "ASP",
+              53,
+              "OD1"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "SER",
+              55,
+              "OG"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "PHE",
+              57,
+              "O"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "GLU",
+              59,
+              "OE1"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "GLU",
+              62,
+              "OE1"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "GLU",
+              62,
+              "OE2"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "CA",
+              109,
+              "CA"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "ASP",
+              90,
+              "OD2"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "ASP",
+              92,
+              "OD1"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "ASP",
+              94,
+              "OD1"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "LYS",
+              96,
+              "O"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "GLU",
+              101,
+              "OE1"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "GLU",
+              101,
+              "OE2"
+            ]
+          },
+          {
+            "displacement_A": 0.0,
+            "selector": [
+              "A",
+              "HOH",
+              166,
+              "O"
+            ]
+          }
+        ],
+        "checked_atom_count": 16,
+        "coordinate_tolerance_A": 0.002,
+        "maximum_displacement_A": 0.0,
+        "status": "pass"
+      },
+      "source_path": "/groups/banfield/projects/environmental/sr/srvp2020/protenix/mmcif/4cpv.cif",
+      "source_sha256": "60950f11977f0ddf1693a719e80254149312ddf44dfa9cde5b6feda67ef0fb8c"
+    }
+  ],
+  "schema_version": "nonpqq_direct_site_preparation_report.v1",
+  "site_count": 6,
+  "site_order": [
+    "ggr_1glg/GGR",
+    "aequorin_1sl8/EF1",
+    "aequorin_1sl8/EF3",
+    "aequorin_1sl8/EF4",
+    "carp_parvalbumin_4cpv/CD",
+    "carp_parvalbumin_4cpv/EF"
+  ],
+  "static_hash_validation": {
+    "files": [
+      {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/protenix/mmcif/1glg.cif",
+        "sha256": "f987744affddd8a1f5115b1e65fbd73b7a7096735ce5e79bc52b5440d36874f6"
+      },
+      {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/protenix/mmcif/1sl8.cif",
+        "sha256": "355098a898292091d3f368dcd5a4c8952f41dc892b2aba2be793ca205c7ab74a"
+      },
+      {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/protenix/mmcif/4cpv.cif",
+        "sha256": "60950f11977f0ddf1693a719e80254149312ddf44dfa9cde5b6feda67ef0fb8c"
+      },
+      {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/protonate_cif.py",
+        "sha256": "9a1adf14e8736b032cf0ffc98367953a2fa2df130474278a352a74cfe0270f05"
+      },
+      {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/carve_generic.py",
+        "sha256": "02967b26fe69097d71c6101f2a735921c22523dce808e1081df1d1fcb61a9554"
+      },
+      {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/coordination_policy.py",
+        "sha256": "37b1d07cce8bbcf5984edb157640ddd1936bc56c7070db36f4461b119d4368bb"
+      },
+      {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/reference_inputs/aquo_cn8_native_r2scan3c_v2/aquo_reference.json",
+        "sha256": "cf4f42ca1c768ed55dedbb2360f21eb1106ca77bada4347e8db9e3511836f0d2"
+      }
+    ],
+    "status": "pass"
+  },
+  "status": "prepared_not_submitted",
+  "task_inventory": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared_task_inventory.json",
+    "sha256": "47933bbde59f90909a01ed3864f92b708f8d595c18e5dc06de98fa4b2fdaee1a"
+  }
+}

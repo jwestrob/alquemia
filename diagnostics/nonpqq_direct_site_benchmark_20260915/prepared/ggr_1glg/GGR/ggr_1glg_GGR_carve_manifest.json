@@ -1,0 +1,684 @@
+{
+  "carver": {
+    "name": "carve_generic",
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/carve_generic.py",
+    "sha256": "02967b26fe69097d71c6101f2a735921c22523dce808e1081df1d1fcb61a9554",
+    "version": "2.0"
+  },
+  "charge_ledger": {
+    "clusters": {
+      "Ca": {
+        "all_electron_count_for_parity": 210,
+        "atom_count": 50,
+        "electron_parity": "even",
+        "metal_charge": 2,
+        "multiplicity": 1,
+        "total_charge": -1
+      },
+      "La": {
+        "all_electron_count_for_parity": 246,
+        "atom_count": 50,
+        "electron_parity": "even",
+        "metal_charge": 3,
+        "multiplicity": 1,
+        "total_charge": 0
+      },
+      "apo": {
+        "all_electron_count_for_parity": 192,
+        "atom_count": 49,
+        "electron_parity": "even",
+        "metal_charge": 0,
+        "multiplicity": 1,
+        "total_charge": -3
+      }
+    },
+    "fragment_formal_charge_sum": -3,
+    "fragments": [
+      {
+        "formal_charge": -1,
+        "fragment_id": "sidechain_001",
+        "protonation_state": "deprotonated_carboxylate"
+      },
+      {
+        "formal_charge": 0,
+        "fragment_id": "sidechain_002",
+        "protonation_state": "neutral"
+      },
+      {
+        "formal_charge": -1,
+        "fragment_id": "sidechain_003",
+        "protonation_state": "deprotonated_carboxylate"
+      },
+      {
+        "formal_charge": 0,
+        "fragment_id": "sidechain_004",
+        "protonation_state": "neutral"
+      },
+      {
+        "formal_charge": -1,
+        "fragment_id": "sidechain_005",
+        "protonation_state": "deprotonated_carboxylate"
+      },
+      {
+        "formal_charge": 0,
+        "fragment_id": "backbone_001",
+        "protonation_state": "neutral_capped_backbone_carbonyl"
+      }
+    ],
+    "validation": "all generated multiplicity-1 clusters have even electron parity"
+  },
+  "coordination": {
+    "coordination_number": 7,
+    "nearby_sulfur": [],
+    "nearby_untyped_ON": [],
+    "nitrogen_count": 0,
+    "oxygen_count": 7,
+    "passes_geometry": true,
+    "typed_donors": [
+      {
+        "atom": "OD1",
+        "chain": "A",
+        "distance_A": 2.252,
+        "donor_type": "sidechain_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "ASP",
+        "resnum": 138
+      },
+      {
+        "atom": "O",
+        "chain": "A",
+        "distance_A": 2.277,
+        "donor_type": "backbone_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      {
+        "atom": "OD1",
+        "chain": "A",
+        "distance_A": 2.3,
+        "donor_type": "sidechain_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "ASP",
+        "resnum": 134
+      },
+      {
+        "atom": "OD1",
+        "chain": "A",
+        "distance_A": 2.304,
+        "donor_type": "sidechain_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "ASN",
+        "resnum": 136
+      },
+      {
+        "atom": "OE1",
+        "chain": "A",
+        "distance_A": 2.359,
+        "donor_type": "sidechain_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      {
+        "atom": "OE2",
+        "chain": "A",
+        "distance_A": 2.458,
+        "donor_type": "sidechain_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "GLU",
+        "resnum": 205
+      },
+      {
+        "atom": "OE1",
+        "chain": "A",
+        "distance_A": 2.558,
+        "donor_type": "sidechain_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "GLU",
+        "resnum": 205
+      }
+    ]
+  },
+  "coordination_policy": {
+    "alternate_conformer_policy": "residue_consistent_highest_occupancy_blank_then_A_v1",
+    "maximum_direct_nitrogen": 2,
+    "minimum_coordination_number": 7,
+    "nearby_sulfur_is_gate": false,
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/coordination_policy.py",
+    "policy_id": "typed_cn7_3p1A_maxN2_v2",
+    "qualification_cutoff_A": 3.1,
+    "sha256": "37b1d07cce8bbcf5984edb157640ddd1936bc56c7070db36f4461b119d4368bb"
+  },
+  "electronic_structure": {
+    "aquo_reference_id": "aquo_cn8_symmetric_vertical_native_r2scan3c_cpcm_v2",
+    "aquo_reference_required_before_scoring": true,
+    "aquo_reference_status": "pending_symmetric_cn8_v2",
+    "basis_policy": "native_r2scan3c_def2_mTZVPP_with_native_ECP",
+    "grid": "DefGrid3",
+    "method": "r2SCAN-3c",
+    "method_id": "orca_r2scan3c_cpcm_water_native_basis_v2",
+    "solvation": "CPCM(Water)"
+  },
+  "execution_policy": {
+    "heavy_leg_nprocs": "min(16, floor(SLURM_CPUS_ON_NODE / 3))",
+    "heavy_legs": [
+      "La",
+      "Ca",
+      "apo"
+    ],
+    "id": "allocation_aware_manifested_orca_mpi_v2",
+    "omp_threads_per_rank": 1,
+    "openmpi_binding": "none_for_concurrent_independent_legs",
+    "runtime_renderer": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/render_orca_runtime_input.py",
+      "sha256": "4d75904eca4296abd892958df700063e272f5f029a0ce256bcf1b579768aeadb"
+    },
+    "task_runner": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/run_orca_task_manifest.py",
+      "sha256": "b9278e74e5317e859e8cb05541e1ec57cb335b26dcdf65a83b89675407343b9a"
+    },
+    "water_nprocs": 1
+  },
+  "outputs": {
+    "Ca": {
+      "orca_input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/ggr_1glg/GGR/sp_ggr_1glg_GGR_Ca.inp",
+        "sha256": "1b3f41bec721487581a0123c0475748423054f5f7d911ab3f9040c00a0edc92b"
+      },
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/ggr_1glg/GGR/ggr_1glg_GGR_Ca_qm.xyz",
+        "sha256": "aa67bd42f71e11af5395d9a788712609e9f37565e1b8d48d46d23b71f2eafd7a"
+      }
+    },
+    "La": {
+      "orca_input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/ggr_1glg/GGR/sp_ggr_1glg_GGR_La.inp",
+        "sha256": "cbe0aaf14a49a3201b783f5ab6ca125277e28569c167b6fb8d5c19388a938b62"
+      },
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/ggr_1glg/GGR/ggr_1glg_GGR_La_qm.xyz",
+        "sha256": "d41ed84867b0077146609707d23beb135e95226b4f6f3b8794e4088bc75c5607"
+      }
+    },
+    "apo": {
+      "orca_input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/ggr_1glg/GGR/sp_ggr_1glg_GGR_apo.inp",
+        "sha256": "e52a7a91bccaba57ab68e86c48adc17dcaf6ef6d2f19a1916651d603ff29a50f"
+      },
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/ggr_1glg/GGR/ggr_1glg_GGR_apo_qm.xyz",
+        "sha256": "f7c80f63cba25ac85637ff1a46f07bb08e0e3c0a0233b0149164d4af0edb543c"
+      }
+    },
+    "submit_script": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/ggr_1glg/GGR/submit_ggr_1glg_GGR.sh",
+      "sha256": "28655ab8b274fef1633d4c03edb01fb07bdd32c13617a3717164b3d22eb4239d"
+    },
+    "water": {
+      "orca_input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/ggr_1glg/GGR/sp_ggr_1glg_GGR_water.inp",
+        "sha256": "a378cadddb4659c55e925a7b3e9db515b2aaf39ca5148afa15c03e2684fc335a"
+      },
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/ggr_1glg/GGR/bulk_water.xyz",
+        "sha256": "dc59dd46cf15231eee4cd344b1e163f5f40a7c1c9ec1a3e2dc56e21a20457b89"
+      }
+    }
+  },
+  "pqq": {
+    "microstate_id": null,
+    "present": false
+  },
+  "protocol_id": "generic_vertical_exchange_native_r2scan3c_v2",
+  "protonation_manifest": {
+    "output_sha256": "66ff9f6972c3f4a9bb1ff6cb2c5b0c1ce07069e5c285bf6b093f9ee355ec7090",
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/ggr_1glg/ggr_1glg_protonation_manifest.json",
+    "ph": 7.0,
+    "protocol_id": "pdbfixer_standard_residue_protonation_v2",
+    "sha256": "75a8eaa90c178a0fbdcdf8a82d665045c7ab0685814eb259bcf1204e601166af"
+  },
+  "qm_fragments": [
+    {
+      "atom_count": 7,
+      "donor_atoms": [
+        {
+          "atom": "OD1",
+          "chain": "A",
+          "distance_A": 2.3,
+          "donor_type": "sidechain_O",
+          "element": "O",
+          "exclusion_reason": null,
+          "included_in_qm": true,
+          "insertion_code": "",
+          "qualifies": true,
+          "resname": "ASP",
+          "resnum": 134
+        }
+      ],
+      "electron_count": 32,
+      "formal_charge": -1,
+      "fragment_id": "sidechain_001",
+      "fragment_type": "sidechain",
+      "generated_link_hydrogens": 1,
+      "included_in": [
+        "La",
+        "Ca",
+        "apo"
+      ],
+      "input_atom_names": [
+        "CB",
+        "CG",
+        "OD1",
+        "OD2",
+        "HB2",
+        "HB3"
+      ],
+      "protonation_state": "deprotonated_carboxylate",
+      "source": {
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "ASP",
+        "resnum": 134
+      }
+    },
+    {
+      "atom_count": 9,
+      "donor_atoms": [
+        {
+          "atom": "OD1",
+          "chain": "A",
+          "distance_A": 2.304,
+          "donor_type": "sidechain_O",
+          "element": "O",
+          "exclusion_reason": null,
+          "included_in_qm": true,
+          "insertion_code": "",
+          "qualifies": true,
+          "resname": "ASN",
+          "resnum": 136
+        }
+      ],
+      "electron_count": 32,
+      "formal_charge": 0,
+      "fragment_id": "sidechain_002",
+      "fragment_type": "sidechain",
+      "generated_link_hydrogens": 1,
+      "included_in": [
+        "La",
+        "Ca",
+        "apo"
+      ],
+      "input_atom_names": [
+        "CB",
+        "CG",
+        "ND2",
+        "OD1",
+        "HB2",
+        "HB3",
+        "HD21",
+        "HD22"
+      ],
+      "protonation_state": "neutral",
+      "source": {
+        "canonical_resname": "ASN",
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "ASN",
+        "resnum": 136
+      }
+    },
+    {
+      "atom_count": 7,
+      "donor_atoms": [
+        {
+          "atom": "OD1",
+          "chain": "A",
+          "distance_A": 2.252,
+          "donor_type": "sidechain_O",
+          "element": "O",
+          "exclusion_reason": null,
+          "included_in_qm": true,
+          "insertion_code": "",
+          "qualifies": true,
+          "resname": "ASP",
+          "resnum": 138
+        }
+      ],
+      "electron_count": 32,
+      "formal_charge": -1,
+      "fragment_id": "sidechain_003",
+      "fragment_type": "sidechain",
+      "generated_link_hydrogens": 1,
+      "included_in": [
+        "La",
+        "Ca",
+        "apo"
+      ],
+      "input_atom_names": [
+        "CB",
+        "CG",
+        "OD1",
+        "OD2",
+        "HB2",
+        "HB3"
+      ],
+      "protonation_state": "deprotonated_carboxylate",
+      "source": {
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "ASP",
+        "resnum": 138
+      }
+    },
+    {
+      "atom_count": 12,
+      "donor_atoms": [
+        {
+          "atom": "OE1",
+          "chain": "A",
+          "distance_A": 2.359,
+          "donor_type": "sidechain_O",
+          "element": "O",
+          "exclusion_reason": null,
+          "included_in_qm": true,
+          "insertion_code": "",
+          "qualifies": true,
+          "resname": "GLN",
+          "resnum": 142
+        }
+      ],
+      "electron_count": 40,
+      "formal_charge": 0,
+      "fragment_id": "sidechain_004",
+      "fragment_type": "sidechain",
+      "generated_link_hydrogens": 1,
+      "included_in": [
+        "La",
+        "Ca",
+        "apo"
+      ],
+      "input_atom_names": [
+        "CB",
+        "CD",
+        "CG",
+        "NE2",
+        "OE1",
+        "HB2",
+        "HB3",
+        "HG2",
+        "HG3",
+        "HE21",
+        "HE22"
+      ],
+      "protonation_state": "neutral",
+      "source": {
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "GLN",
+        "resnum": 142
+      }
+    },
+    {
+      "atom_count": 10,
+      "donor_atoms": [
+        {
+          "atom": "OE2",
+          "chain": "A",
+          "distance_A": 2.458,
+          "donor_type": "sidechain_O",
+          "element": "O",
+          "exclusion_reason": null,
+          "included_in_qm": true,
+          "insertion_code": "",
+          "qualifies": true,
+          "resname": "GLU",
+          "resnum": 205
+        },
+        {
+          "atom": "OE1",
+          "chain": "A",
+          "distance_A": 2.558,
+          "donor_type": "sidechain_O",
+          "element": "O",
+          "exclusion_reason": null,
+          "included_in_qm": true,
+          "insertion_code": "",
+          "qualifies": true,
+          "resname": "GLU",
+          "resnum": 205
+        }
+      ],
+      "electron_count": 40,
+      "formal_charge": -1,
+      "fragment_id": "sidechain_005",
+      "fragment_type": "sidechain",
+      "generated_link_hydrogens": 1,
+      "included_in": [
+        "La",
+        "Ca",
+        "apo"
+      ],
+      "input_atom_names": [
+        "CB",
+        "CD",
+        "CG",
+        "OE1",
+        "OE2",
+        "HB2",
+        "HB3",
+        "HG2",
+        "HG3"
+      ],
+      "protonation_state": "deprotonated_carboxylate",
+      "source": {
+        "canonical_resname": "GLU",
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "GLU",
+        "resnum": 205
+      }
+    },
+    {
+      "atom_count": 4,
+      "donor_atoms": [
+        {
+          "atom": "O",
+          "chain": "A",
+          "distance_A": 2.277,
+          "donor_type": "backbone_O",
+          "element": "O",
+          "exclusion_reason": null,
+          "included_in_qm": true,
+          "insertion_code": "",
+          "qualifies": true,
+          "resname": "GLN",
+          "resnum": 140
+        }
+      ],
+      "electron_count": 16,
+      "formal_charge": 0,
+      "fragment_id": "backbone_001",
+      "fragment_type": "backbone_carbonyl",
+      "generated_link_hydrogens": 2,
+      "included_in": [
+        "La",
+        "Ca",
+        "apo"
+      ],
+      "input_atom_names": [
+        "C",
+        "O"
+      ],
+      "protonation_state": "neutral_capped_backbone_carbonyl",
+      "source": {
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "GLN",
+        "resnum": 140
+      }
+    }
+  ],
+  "qm_inclusion": {
+    "apo_atom_count": 49,
+    "buffer_beyond_qualification_A": 0.19999999999999973,
+    "cutoff_A": 3.3,
+    "holo_atom_count": 50,
+    "typed_contacts": [
+      {
+        "atom": "OD1",
+        "chain": "A",
+        "distance_A": 2.252,
+        "donor_type": "sidechain_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "ASP",
+        "resnum": 138
+      },
+      {
+        "atom": "O",
+        "chain": "A",
+        "distance_A": 2.277,
+        "donor_type": "backbone_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      {
+        "atom": "OD1",
+        "chain": "A",
+        "distance_A": 2.3,
+        "donor_type": "sidechain_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "ASP",
+        "resnum": 134
+      },
+      {
+        "atom": "OD1",
+        "chain": "A",
+        "distance_A": 2.304,
+        "donor_type": "sidechain_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "ASN",
+        "resnum": 136
+      },
+      {
+        "atom": "OE1",
+        "chain": "A",
+        "distance_A": 2.359,
+        "donor_type": "sidechain_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      {
+        "atom": "OE2",
+        "chain": "A",
+        "distance_A": 2.458,
+        "donor_type": "sidechain_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "GLU",
+        "resnum": 205
+      },
+      {
+        "atom": "OE1",
+        "chain": "A",
+        "distance_A": 2.558,
+        "donor_type": "sidechain_O",
+        "element": "O",
+        "exclusion_reason": null,
+        "included_in_qm": true,
+        "insertion_code": "",
+        "qualifies": true,
+        "resname": "GLU",
+        "resnum": 205
+      }
+    ],
+    "unsupported_nearby_species": []
+  },
+  "schema_version": "alchemical_bvs.carve_manifest.v1",
+  "selected_site": {
+    "atom": "CA",
+    "canonical_resname": "CA",
+    "chain": "A",
+    "insertion_code": "",
+    "resname": "CA",
+    "resnum": 312,
+    "source_element": "Ca",
+    "xyz_A": [
+      23.168,
+      41.519,
+      73.363
+    ]
+  },
+  "site_selection": {
+    "mode": "exact_unique_selector",
+    "requested": {
+      "atom": "CA",
+      "chain": "A",
+      "icode": "",
+      "resnum": 312
+    }
+  },
+  "source_structure": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/ggr_1glg/ggr_1glg_protonated.pdb",
+    "sha256": "66ff9f6972c3f4a9bb1ff6cb2c5b0c1ce07069e5c285bf6b093f9ee355ec7090"
+  },
+  "status": "ready_for_orca",
+  "stem": "ggr_1glg_GGR"
+}

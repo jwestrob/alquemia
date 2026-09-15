@@ -1,0 +1,62 @@
+{
+  "add_missing_residues": false,
+  "canonical_protonator": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/protonate_cif.py",
+    "sha256": "9a1adf14e8736b032cf0ffc98367953a2fa2df130474278a352a74cfe0270f05"
+  },
+  "cofactor_protonation": "not_assigned",
+  "created_at": "2026-09-15T07:20:32.767739+00:00",
+  "detected_missing_residues": {},
+  "experiment_protonation_protocol_id": "pdbfixer_standard_only_rng20260914_openmm_cpu_threads1_v1",
+  "experiment_wrapper": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/protonate_standard_only.py",
+    "sha256": "5c0393c153b766984d1716124abf936a9fb822a6853a46138de5686c118de053"
+  },
+  "keep_chain_and_residue_ids": true,
+  "nonstandard_definition_policy": {
+    "La_hydrogen_policy": "none",
+    "PQQ_hydrogen_policy": "none_added_by_PDBFixer_all_supplied_by_pinned_carver",
+    "forcefield": null,
+    "observed_nonstandard_residue_counts": {
+      "LA": 1,
+      "PQQ": 1
+    },
+    "openmm_CPU_Threads": 1,
+    "openmm_CPU_default_threads_restored_after_call": true,
+    "openmm_platform": "CPU",
+    "output_nonstandard_hydrogen_counts": {
+      "LA": 0,
+      "PQQ": 0
+    },
+    "policy_id": "standard_residues_only_no_nonstandard_CCD_hydrogens_v1",
+    "python_random_seed": 20260914,
+    "python_random_state_restored_after_call": true,
+    "replacement_return_value": {},
+    "scientific_chemistry_changed": false,
+    "standard_OpenMM_hydrogen_definitions_loaded": true,
+    "suppressed_method": "PDBFixer._downloadNonstandardDefinitions",
+    "wrapper_call_ledger": {
+      "add_missing_hydrogens": 1,
+      "ccd_suppression": 1,
+      "constructor": 1
+    }
+  },
+  "output": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_q46444_1kb0_external_validation_20260915/prepared/01_1KB0/pmdh_fc_holdout_1kb0_protonated.pdb",
+    "sha256": "41677773738030852a48b9eae4b9ad693195788e42d7264720c53e90c38cd4d8"
+  },
+  "ph": 7.0,
+  "protocol_id": "pdbfixer_standard_residue_protonation_v2",
+  "repaired_missing_atom_count": 0,
+  "repaired_missing_terminal_atom_count": 0,
+  "schema_version": 1,
+  "software": {
+    "gemmi": "0.7.5",
+    "openmm": "8.5.1",
+    "pdbfixer": "1.12.0"
+  },
+  "source": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_q46444_1kb0_external_validation_20260915/prepared/01_1KB0/pmdh_fc_holdout_1kb0_selected_normalized.pdb",
+    "sha256": "a9651711e8fc20aa7c26180b77df1240a382021bf020e86510e07fe446512b4e"
+  }
+}

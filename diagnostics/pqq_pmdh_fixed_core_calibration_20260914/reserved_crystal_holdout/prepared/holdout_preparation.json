@@ -1,0 +1,149 @@
+{
+  "all_nonmetal_arm_coordinates_byte_identical": true,
+  "all_retained_source_heavy_coordinates_preserved": true,
+  "calibration_gate": {
+    "L_min_La_S_kcal_mol": 23.460061205609236,
+    "L_min_La_kcal_mol": -405396.32088671124,
+    "U_max_Ca_S_kcal_mol": 14.857129202922806,
+    "U_max_Ca_kcal_mol": -405404.9238187139,
+    "aquo_A_kcal_mol": -405419.78094791685,
+    "gap_kcal_mol": 8.60293200268643,
+    "gates": {
+      "all_25_valid": true,
+      "gap_at_least_5_kcal_mol": true,
+      "strict_LOO_midpoint_25_of_25": true,
+      "strict_separation": true
+    },
+    "individual_calibration_energies_consumed_by_holdout_preparation": false,
+    "result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+      "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+    },
+    "threshold_R_kcal_mol": -405400.62235271255,
+    "threshold_S_kcal_mol": 19.158595204295125,
+    "valid_pair_count": 25,
+    "verdict": "CALIBRATABLE"
+  },
+  "calibration_implementation_pins": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/implementation_pins.json",
+    "sha256": "cc3b51977293a5d3a00ee387091fc8cbb8a9938b9987f0620d12621c09b42bc5"
+  },
+  "created_at_utc": "2026-09-15T05:14:35.763260+00:00",
+  "holdout_pins": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout/holdout_implementation_pins.json",
+    "sha256": "a0492cdfe1e2ff7807f77c1c6fec330e7adec4147ee8f3955230e3c917b7ad10"
+  },
+  "noncore_heterogen_policy": "exclude_all_without_replacement_including_4MAE_15P",
+  "orca_executed": false,
+  "primary_holdouts": [
+    "1H4I",
+    "4MAE"
+  ],
+  "protocol_id": "pqq_vertical_swap_r2scan3c_native_cpcm_fixed_core_v3",
+  "release_runnable": true,
+  "release_scope": "atomic_primary_pair",
+  "schema_version": "alchemical_bvs.pqq_fixed_core_holdout_preparation.v1",
+  "secondary_holdout": "6OC6",
+  "secondary_included": false,
+  "secondary_omission_disposition": "secondary-not-run",
+  "selector_audit": {
+    "calibration_preparation_must_not_consume": true,
+    "git_commit": "18f2407baa571cd3e143ccf840b5ff370d1692e3",
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/HOLDOUT_SELECTOR_AUDIT.md",
+    "sha256": "dd04f7e24deb751bdf9654fcc36e864857796f686e76abac6d39a29624756853"
+  },
+  "selector_authority": {
+    "calibration_preparation_must_not_consume": true,
+    "git_commit": "18f2407baa571cd3e143ccf840b5ff370d1692e3",
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/holdout_spec.tsv",
+    "sha256": "4147fdd141ecf5b047b8ea959f3c923c32b10ea6d2cae034052e4622acbc443f"
+  },
+  "status": "ready_for_orca_after_passing_calibration_gate",
+  "target_count": 2,
+  "targets": [
+    {
+      "biological_class": "Ca/MxaF",
+      "charges": {
+        "Ca": -2,
+        "La": -1
+      },
+      "coordination_number": 6,
+      "heavy_coordinate_check": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout/prepared/01_1H4I/pmdh_fc_holdout_1h4i_heavy_coordinate_check.json",
+        "sha256": "953e995570205f9160ba41047ac7e74ed28312f41fa4ca346b391e4a3d711a51"
+      },
+      "holdout_index": 1,
+      "holdout_role": "primary",
+      "manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout/prepared/01_1H4I/pmdh_fc_holdout_1h4i_carve_manifest.json",
+        "sha256": "fab1cd480fa88d6e0d7ac98d2d2d46b23233e3258f53fa8d7fe2ecec3e607dc0"
+      },
+      "nonmetal_coordinates_byte_identical": true,
+      "normalization_manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout/prepared/01_1H4I/pmdh_fc_holdout_1h4i_normalization_manifest.json",
+        "sha256": "ee6f3952a6f3e6561168c111222b312a86e005f699bcdc0148044d86f58ba0a7"
+      },
+      "normalized": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout/prepared/01_1H4I/pmdh_fc_holdout_1h4i_selected_normalized.pdb",
+        "sha256": "df8dbb43b21eec70a3cb09c76036bdf76a07bfed097541a06e0bbddbcaded8be"
+      },
+      "orca_executed": false,
+      "pdb_id": "1H4I",
+      "protonated": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout/prepared/01_1H4I/pmdh_fc_holdout_1h4i_protonated.pdb",
+        "sha256": "93fa50044f1a3319cb6c40af6e144a28d80d9806de832c82782ab5659ab3b237"
+      },
+      "protonation_manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout/prepared/01_1H4I/pmdh_fc_holdout_1h4i_protonation_manifest.json",
+        "sha256": "c90f7689e90957eb74edfd47a84989011d4e2e2746c935b0eb8f84f42d914d50"
+      },
+      "raw_source": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mxaf_qm/1H4I.pdb",
+        "sha256": "385cf656e0f99409012463aeb2d77196cc45e99fc5baaa3347705e29a52a9217"
+      }
+    },
+    {
+      "biological_class": "Ln/XoxF",
+      "charges": {
+        "Ca": -3,
+        "La": -2
+      },
+      "coordination_number": 9,
+      "heavy_coordinate_check": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout/prepared/02_4MAE/pmdh_fc_holdout_4mae_heavy_coordinate_check.json",
+        "sha256": "653cf020aa193b2cd27b0eb7106ca603222b332d28cf7b5a2524d6879e0dd73b"
+      },
+      "holdout_index": 2,
+      "holdout_role": "primary",
+      "manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout/prepared/02_4MAE/pmdh_fc_holdout_4mae_carve_manifest.json",
+        "sha256": "54c21fa2464328221aa801c354cd6271989d3232598e3e5a5955121fd0f57d89"
+      },
+      "nonmetal_coordinates_byte_identical": true,
+      "normalization_manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout/prepared/02_4MAE/pmdh_fc_holdout_4mae_normalization_manifest.json",
+        "sha256": "4f241b3e2c3140db8238b273cc9abd5f3824dfda4b8f521aca0c071ea11462ee"
+      },
+      "normalized": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout/prepared/02_4MAE/pmdh_fc_holdout_4mae_selected_normalized.pdb",
+        "sha256": "560a4915b2b83b456c0cc9544f91e1dbe1e888b10ecd11681a271cc8fb585324"
+      },
+      "orca_executed": false,
+      "pdb_id": "4MAE",
+      "protonated": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout/prepared/02_4MAE/pmdh_fc_holdout_4mae_protonated.pdb",
+        "sha256": "92b0bc51200e5407cb78d5dfd7150e3f319cec60dca7785a336b97340e0c0d9c"
+      },
+      "protonation_manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout/prepared/02_4MAE/pmdh_fc_holdout_4mae_protonation_manifest.json",
+        "sha256": "98257741c50e73d8e36b71b59391e0b274b078afef317fe61e8f17420010866b"
+      },
+      "raw_source": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/xoxf_qm/4MAE.pdb",
+        "sha256": "3a87ed42b20fa5b1d967845d2a4c67e94c16ce0a88789ab6fa35f9fb404c2f5d"
+      }
+    }
+  ],
+  "task_count": 4,
+  "water_policy": "dry_exclude_all_source_and_synthetic_waters"
+}

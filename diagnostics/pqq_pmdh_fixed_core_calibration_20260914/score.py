@@ -278,6 +278,7 @@ def score(preparation_path: Path, pins_path: Path, output_dir: Path) -> tuple[Pa
     core_map_path = verify_file_record(pins.get("core_map"), "core map")
     verify_file_record(pins.get("reserved_holdout_spec"), "reserved holdout spec")
     verify_file_record(pins.get("reserved_holdout_audit"), "reserved holdout audit")
+    verify_file_record(pins.get("preparation_amendment"), "preparation amendment")
     aquo_path = verify_file_record(pins.get("aquo_reference"), "aquo reference")
     aquo_payload = read_object(aquo_path)
     if (
@@ -293,6 +294,8 @@ def score(preparation_path: Path, pins_path: Path, output_dir: Path) -> tuple[Pa
         or preparation.get("status") != "ready_for_orca"
         or preparation.get("target_count") != 25
         or preparation.get("task_count") != 50
+        or preparation.get("protonation_subprotocol", {}).get("id")
+        != "pdbfixer_standard_only_rng20260914_openmm_cpu_threads1_v1"
     ):
         raise ScoreError("preparation is not the complete frozen panel")
     expected_pin_record = preparation.get("implementation_pins")
@@ -331,6 +334,10 @@ def score(preparation_path: Path, pins_path: Path, output_dir: Path) -> tuple[Pa
             or manifest.get("fixed_core", {}).get("water_policy")
             != "dry_exclude_all_source_and_synthetic_waters"
             or manifest.get("fixed_core", {}).get("point_charge_embedding") is not False
+            or manifest.get("protonation_manifest", {}).get(
+                "experiment_protonation_protocol_id"
+            )
+            != "pdbfixer_standard_only_rng20260914_openmm_cpu_threads1_v1"
         ):
             raise ScoreError(f"frozen carve provenance/policy changed for {panel_id}")
         heavy_check_path = verify_file_record(

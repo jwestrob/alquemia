@@ -100,6 +100,7 @@ def load_and_verify_pins(path: Path) -> dict[str, Any]:
         "core_map_audit",
         "reserved_holdout_spec",
         "reserved_holdout_audit",
+        "preparation_amendment",
     ):
         verify_file_record(pins.get(key), f"frozen {key}")
     for group in ("canonical_helpers", "experiment_helpers"):
@@ -144,6 +145,21 @@ def load_and_verify_pins(path: Path) -> dict[str, Any]:
         raise PreparationError(
             f"package versions {observed_packages} differ from {expected_packages}"
         )
+    subprotocol = pins.get("protonation_subprotocol")
+    if (
+        not isinstance(subprotocol, dict)
+        or subprotocol.get("id")
+        != "pdbfixer_standard_only_rng20260914_openmm_cpu_threads1_v1"
+        or subprotocol.get("python_random_seed") != 20260914
+        or subprotocol.get("openmm_platform") != "CPU"
+        or subprotocol.get("openmm_cpu_threads") != 1
+        or subprotocol.get("forcefield") is not None
+        or subprotocol.get("allowed_nonstandard_residue_counts")
+        != {"LA": 1, "PQQ": 1}
+        or subprotocol.get("required_output_nonstandard_hydrogen_counts")
+        != {"LA": 0, "PQQ": 0}
+    ):
+        raise PreparationError("protonation subprotocol pins are incomplete or changed")
     return pins
 
 
@@ -377,6 +393,7 @@ def validate_prepared_pair(
 def prepare(out_root: Path, pins_path: Path) -> Path:
     pins_path = pins_path.resolve()
     pins = load_and_verify_pins(pins_path)
+    protonation_subprotocol = pins["protonation_subprotocol"]
     core_map_path = verify_file_record(pins["core_map"], "frozen core map")
     rows = load_core_map(core_map_path)
     out_root = out_root.resolve()
@@ -386,7 +403,8 @@ def prepare(out_root: Path, pins_path: Path) -> Path:
         pins["canonical_helpers"]["normalize_af3_cif"], "normalizer"
     ))
     protonator = str(verify_file_record(
-        pins["canonical_helpers"]["protonate_cif"], "protonator"
+        pins["experiment_helpers"]["protonate_standard_only"],
+        "standard-only protonation wrapper",
     ))
     carver = str(verify_file_record(
         pins["experiment_helpers"]["fixed_core_carver"], "fixed-core carver"
@@ -431,17 +449,52 @@ def prepare(out_root: Path, pins_path: Path) -> Path:
         }
         write_json_atomic(normalization_manifest, normalization_record)
 
-        run_checked([python, protonator, str(normalized), str(protonated), "--ph", "7.0"], label=f"protonate {target_id}")
+        run_checked(
+            [
+                python,
+                protonator,
+                str(normalized),
+                str(protonated),
+                "--ph", "7.0",
+                "--implementation-pins", str(pins_path),
+            ],
+            label=f"protonate {target_id}",
+        )
         protonation_manifest = target_dir / f"{stem}_protonation_manifest.json"
         protonation = read_object(protonation_manifest)
+        nonstandard_policy = protonation.get("nonstandard_definition_policy")
         if (
             protonation.get("protocol_id") != "pdbfixer_standard_residue_protonation_v2"
+            or protonation.get("experiment_protonation_protocol_id")
+            != protonation_subprotocol["id"]
+            or protonation.get("canonical_protonator")
+            != pins["canonical_helpers"]["protonate_cif"]
+            or protonation.get("experiment_wrapper")
+            != pins["experiment_helpers"]["protonate_standard_only"]
             or protonation.get("ph") != 7.0
             or protonation.get("add_missing_residues") is not False
             or protonation.get("repaired_missing_atom_count") != 0
             or protonation.get("repaired_missing_terminal_atom_count") != 0
             or protonation.get("cofactor_protonation") != "not_assigned"
             or protonation.get("software") != pins["preparation_runtime"]["packages"]
+            or not isinstance(nonstandard_policy, dict)
+            or nonstandard_policy.get("policy_id")
+            != protonation_subprotocol["nonstandard_definition_policy_id"]
+            or nonstandard_policy.get("observed_nonstandard_residue_counts")
+            != protonation_subprotocol["allowed_nonstandard_residue_counts"]
+            or nonstandard_policy.get("output_nonstandard_hydrogen_counts")
+            != protonation_subprotocol[
+                "required_output_nonstandard_hydrogen_counts"
+            ]
+            or nonstandard_policy.get("forcefield")
+            != protonation_subprotocol["forcefield"]
+            or nonstandard_policy.get("python_random_seed")
+            != protonation_subprotocol["python_random_seed"]
+            or nonstandard_policy.get("openmm_platform")
+            != protonation_subprotocol["openmm_platform"]
+            or nonstandard_policy.get("openmm_CPU_Threads")
+            != protonation_subprotocol["openmm_cpu_threads"]
+            or nonstandard_policy.get("scientific_chemistry_changed") is not False
         ):
             raise PreparationError(f"protonation contract failed for {target_id}")
         protonated_atoms = heavy_atom_map(protonated, row, normalize_source_names=False)
@@ -512,6 +565,11 @@ def prepare(out_root: Path, pins_path: Path) -> Path:
             "consumed": False,
         },
         "preparation_runtime": pins["preparation_runtime"],
+        "protonation_subprotocol": {
+            **protonation_subprotocol,
+            "wrapper": pins["experiment_helpers"]["protonate_standard_only"],
+            "amendment": pins["preparation_amendment"],
+        },
         "panel_counts": EXPECTED_COUNTS,
         "target_count": len(records),
         "task_count": 2 * len(records),

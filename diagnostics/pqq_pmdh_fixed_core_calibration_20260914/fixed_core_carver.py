@@ -139,6 +139,7 @@ def verify_pins(pins_path: Path) -> dict[str, Any]:
         "core_map_audit",
         "reserved_holdout_spec",
         "reserved_holdout_audit",
+        "preparation_amendment",
     ):
         record = pins.get(name)
         if not isinstance(record, dict):
@@ -181,6 +182,23 @@ def verify_pins(pins_path: Path) -> dict[str, Any]:
     expected_delta = aquo.get("delta_E_aquo_hartree")
     if observed_delta != expected_delta:
         raise FixedCoreError("pinned aquo energy difference mismatch")
+    subprotocol = pins.get("protonation_subprotocol")
+    if (
+        not isinstance(subprotocol, dict)
+        or subprotocol.get("id")
+        != "pdbfixer_standard_only_rng20260914_openmm_cpu_threads1_v1"
+        or subprotocol.get("nonstandard_definition_policy_id")
+        != "standard_residues_only_no_nonstandard_CCD_hydrogens_v1"
+        or subprotocol.get("python_random_seed") != 20260914
+        or subprotocol.get("openmm_platform") != "CPU"
+        or subprotocol.get("openmm_cpu_threads") != 1
+        or subprotocol.get("forcefield") is not None
+        or subprotocol.get("allowed_nonstandard_residue_counts")
+        != {"LA": 1, "PQQ": 1}
+        or subprotocol.get("required_output_nonstandard_hydrogen_counts")
+        != {"LA": 0, "PQQ": 0}
+    ):
+        raise FixedCoreError("protonation subprotocol pins are incomplete or changed")
     return pins
 
 
@@ -617,6 +635,7 @@ def carve(
     pins_path: Path,
 ) -> Path:
     pins = verify_pins(pins_path)
+    protonation_subprotocol = pins["protonation_subprotocol"]
     row = load_core_map_entry(core_map_path, target_id, pins)
     source_record = {
         "path": row["source_cif"],
@@ -634,13 +653,37 @@ def carve(
     protonation = read_object(protonation_path)
     if protonation.get("protocol_id") != "pdbfixer_standard_residue_protonation_v2":
         raise FixedCoreError("protonation manifest has the wrong protocol")
+    nonstandard_policy = protonation.get("nonstandard_definition_policy")
     if (
-        protonation.get("ph") != 7.0
+        protonation.get("experiment_protonation_protocol_id")
+        != protonation_subprotocol["id"]
+        or protonation.get("canonical_protonator")
+        != pins["canonical_helpers"]["protonate_cif"]
+        or protonation.get("experiment_wrapper")
+        != pins["experiment_helpers"]["protonate_standard_only"]
+        or protonation.get("ph") != 7.0
         or protonation.get("add_missing_residues") is not False
         or protonation.get("repaired_missing_atom_count") != 0
         or protonation.get("repaired_missing_terminal_atom_count") != 0
         or protonation.get("cofactor_protonation") != "not_assigned"
         or protonation.get("software") != pins["preparation_runtime"]["packages"]
+        or not isinstance(nonstandard_policy, dict)
+        or nonstandard_policy.get("policy_id")
+        != protonation_subprotocol["nonstandard_definition_policy_id"]
+        or nonstandard_policy.get("observed_nonstandard_residue_counts")
+        != protonation_subprotocol["allowed_nonstandard_residue_counts"]
+        or nonstandard_policy.get("output_nonstandard_hydrogen_counts")
+        != protonation_subprotocol[
+            "required_output_nonstandard_hydrogen_counts"
+        ]
+        or nonstandard_policy.get("forcefield")
+        != protonation_subprotocol["forcefield"]
+        or nonstandard_policy.get("python_random_seed")
+        != protonation_subprotocol["python_random_seed"]
+        or nonstandard_policy.get("openmm_platform")
+        != protonation_subprotocol["openmm_platform"]
+        or nonstandard_policy.get("openmm_CPU_Threads")
+        != protonation_subprotocol["openmm_cpu_threads"]
     ):
         raise FixedCoreError("protonation manifest violates the frozen preparation")
     normalization_path = out_dir / f"{stem}_normalization_manifest.json"
@@ -976,6 +1019,10 @@ def carve(
             "path": str(protonation_path.resolve()),
             "sha256": sha256_file(protonation_path),
             "protocol_id": protonation.get("protocol_id"),
+            "experiment_protonation_protocol_id": protonation.get(
+                "experiment_protonation_protocol_id"
+            ),
+            "experiment_wrapper": protonation.get("experiment_wrapper"),
         },
         "heavy_coordinate_check": {
             "path": str(heavy_check_path.resolve()),

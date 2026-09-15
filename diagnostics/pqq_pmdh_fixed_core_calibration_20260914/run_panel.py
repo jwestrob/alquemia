@@ -134,6 +134,8 @@ def run_panel(preparation_path: Path, pins_path: Path) -> Path:
         or preparation.get("status") != "ready_for_orca"
         or preparation.get("target_count") != 25
         or preparation.get("task_count") != 50
+        or preparation.get("protonation_subprotocol", {}).get("id")
+        != "pdbfixer_standard_only_rng20260914_openmm_cpu_threads1_v1"
     ):
         raise PanelRunError("preparation manifest is not the complete frozen panel")
     if pins.get("protocol_id") != PROTOCOL_ID:

@@ -22,7 +22,8 @@ HERE = Path(__file__).resolve().parent
 PROTOCOL_ID = holdout.PROTOCOL_ID
 RESULT_SCHEMA = "alchemical_bvs.pqq_fixed_core_holdout_result.v1"
 HA2KCAL = 627.509474
-EXPECTED_IDS = ("1H4I", "4MAE", "6OC6")
+PRIMARY_IDS = runner.PRIMARY_IDS
+FULL_IDS = runner.FULL_IDS
 
 
 class HoldoutScoreError(RuntimeError):
@@ -50,14 +51,20 @@ def verify_execution_receipt(
     pins_path: Path,
     pins: Mapping[str, Any],
     calibration_pins: Mapping[str, Any],
+    expected_ids: Sequence[str],
 ) -> dict[str, Any]:
     receipt_path = receipt_path.resolve()
     receipt = read_object(receipt_path)
+    expected_ids = tuple(expected_ids)
+    if expected_ids not in (PRIMARY_IDS, FULL_IDS):
+        raise HoldoutScoreError("scorer received an invalid expected target set")
+    target_count = len(expected_ids)
+    leg_count = 2 * target_count
     targets = receipt.get("targets")
     if (
         not isinstance(targets, list)
         or any(not isinstance(item, dict) for item in targets)
-        or [item.get("pdb_id") for item in targets] != list(EXPECTED_IDS)
+        or [item.get("pdb_id") for item in targets] != list(expected_ids)
         or any(item.get("status") not in {"complete", "failed"} for item in targets)
     ):
         raise HoldoutScoreError("execution receipt has an invalid target ledger")
@@ -65,6 +72,21 @@ def verify_execution_receipt(
         item["pdb_id"] for item in targets if item.get("status") == "failed"
     )
     expected_status = "failed" if failed_ids else "complete"
+    expected_secondary_included = expected_ids == FULL_IDS
+    parallelism = receipt.get("parallelism")
+    allocation = receipt.get("allocation")
+    if not isinstance(parallelism, dict) or not isinstance(allocation, dict):
+        raise HoldoutScoreError("execution receipt lacks allocation/parallelism ledgers")
+    total_cpus = allocation.get("slurm_cpus_on_node")
+    ranks_per_leg = parallelism.get("mpi_ranks_per_leg")
+    if (
+        isinstance(total_cpus, bool)
+        or not isinstance(total_cpus, int)
+        or isinstance(ranks_per_leg, bool)
+        or not isinstance(ranks_per_leg, int)
+    ):
+        raise HoldoutScoreError("execution receipt has malformed CPU/rank counts")
+    expected_ranks_per_leg = min(16, total_cpus // leg_count)
     if (
         receipt.get("schema_version") != runner.EXECUTION_SCHEMA
         or receipt.get("protocol_id") != PROTOCOL_ID
@@ -72,14 +94,29 @@ def verify_execution_receipt(
         or receipt.get("preparation") != holdout.file_record(preparation_path)
         or receipt.get("holdout_pins") != holdout.file_record(pins_path)
         or receipt.get("failed_targets") != failed_ids
-        or receipt.get("parallelism", {}).get("simultaneous_ORCA_legs") != 6
+        or receipt.get("target_ids") != list(expected_ids)
+        or receipt.get("target_count") != target_count
+        or receipt.get("task_count") != leg_count
+        or receipt.get("secondary_included") is not expected_secondary_included
+        or parallelism.get("simultaneous_targets") != target_count
+        or parallelism.get("simultaneous_legs_per_target") != 2
+        or parallelism.get("simultaneous_ORCA_legs") != leg_count
+        or ranks_per_leg != expected_ranks_per_leg
+        or not 1 <= ranks_per_leg <= 16
+        or parallelism.get("assigned_mpi_ranks") != leg_count * ranks_per_leg
+        or parallelism.get("unassigned_CPUs") != total_cpus - leg_count * ranks_per_leg
+        or parallelism.get("omp_threads_per_rank") != 1
+        or parallelism.get("aggregate_ORCA_maxcore_upper_bound_MB")
+        != leg_count * ranks_per_leg * 8000
         or receipt.get("runner") != pins["holdout_implementation"]["run_holdouts"]
         or receipt.get("manifested_orca_runner")
         != pins["inherited_helpers"]["run_orca_task_manifest"]
         or receipt.get("orca_executable")
         != calibration_pins["orca_runtime"]["executable"]
     ):
-        raise HoldoutScoreError("execution receipt is not a valid attempted six-leg holdout run")
+        raise HoldoutScoreError(
+            f"execution receipt is not a valid attempted {leg_count}-leg holdout run"
+        )
     return receipt
 
 
@@ -197,10 +234,15 @@ def render_markdown(result: Mapping[str, Any]) -> str:
             lines.append(
                 f"|  |  | reason |  | {'; '.join(row['unscorable_reasons'])} |  |"
             )
+    lines.append("")
+    if result["secondary_6OC6"]["status"] == "secondary-not-run":
+        lines.append(
+            "6OC6 was not run; it remains a nonindependent optional secondary geometry check."
+        )
+    else:
+        lines.append("6OC6 is a secondary geometry check only and did not affect the verdict.")
     lines.extend(
         [
-            "",
-            "6OC6 is a secondary geometry check only and did not affect the verdict.",
             "4MAE was evaluated after explicit removal of coordinating 15P603/OXT "
             "without replacement; it is a dry fixed-coordinate transfer test with a ligand vacancy.",
             "No threshold or band was fit, shifted, or widened using holdout results.",
@@ -233,14 +275,16 @@ def score_holdouts(
     manifests = runner.verify_preparation(
         preparation_path, pins_path, pins, calibration_pins
     )
-    if len(manifests) != 3:
-        raise HoldoutScoreError("scoring requires all three holdout pairs")
+    expected_ids = tuple(pdb_id for pdb_id, _ in manifests)
+    if expected_ids not in (PRIMARY_IDS, FULL_IDS):
+        raise HoldoutScoreError("scoring requires the atomic primary pair, optionally plus 6OC6")
     receipt = verify_execution_receipt(
         execution_receipt_path,
         preparation_path,
         pins_path,
         pins,
         calibration_pins,
+        expected_ids,
     )
     calibration_pins_path = Path(
         pins["calibration_implementation_pins"]["path"]
@@ -321,11 +365,32 @@ def score_holdouts(
                 "artifacts": artifacts,
             }
         )
-    scores.sort(key=lambda item: EXPECTED_IDS.index(item["pdb_id"]))
+    scores.sort(key=lambda item: FULL_IDS.index(item["pdb_id"]))
     primary = [item for item in scores if item["holdout_role"] == "primary"]
     if [item["pdb_id"] for item in primary] != ["1H4I", "4MAE"]:
         raise HoldoutScoreError("primary holdout identity/order changed")
     primary_pass = all(item["primary_pass"] is True for item in primary)
+    secondary_score = next(
+        (item for item in scores if item["pdb_id"] == runner.SECONDARY_ID),
+        None,
+    )
+    secondary_record = (
+        {
+            "status": "secondary-not-run",
+            "included_in_run": False,
+            "included_in_primary_verdict": False,
+            "sequence_already_represented_by": "C5B120",
+            "frozen_band_call": None,
+        }
+        if secondary_score is None
+        else {
+            "status": secondary_score["score_status"],
+            "included_in_run": True,
+            "included_in_primary_verdict": False,
+            "sequence_already_represented_by": "C5B120",
+            "frozen_band_call": secondary_score["frozen_band_call"],
+        }
+    )
     result = {
         "schema_version": RESULT_SCHEMA,
         "protocol_id": PROTOCOL_ID,
@@ -345,14 +410,9 @@ def score_holdouts(
         "execution_receipt": holdout.file_record(execution_receipt_path),
         "holdout_pins": holdout.file_record(pins_path),
         "calibration_implementation_pins": holdout.file_record(calibration_pins_path),
+        "executed_target_ids": list(expected_ids),
         "scores": scores,
-        "secondary_6OC6": {
-            "included_in_primary_verdict": False,
-            "sequence_already_represented_by": "C5B120",
-            "frozen_band_call": next(
-                item["frozen_band_call"] for item in scores if item["pdb_id"] == "6OC6"
-            ),
-        },
+        "secondary_6OC6": secondary_record,
         "interpretation_limits": {
             "4MAE_dry_15P_vacancy": True,
             "1H4I_mature_sequence_overlaps_P16027_calibration": True,

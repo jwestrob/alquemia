@@ -2,8 +2,20 @@
 
 Date: 2026-09-15
 Protocol: `pqq_vertical_swap_r2scan3c_native_cpcm_fixed_core_v3`
-Status: dormant implementation only; no holdout was prepared and no ORCA job
-was launched while this path was written.
+Status: pre-energy implementation amendment; no ORCA holdout energy has been
+launched.
+
+## Pre-energy release amendment
+
+The first full preparation attempt revealed **130 missing standard-residue
+heavy atoms in 6OC6**, while both primaries, 1H4I and 4MAE, had **zero**. The
+fatal heavy-atom-repair gate is unchanged: 6OC6 is not repaired, rescued, or
+silently accepted. Because 6OC6 is a nonindependent secondary geometry check
+(its sequence is already represented by C5B120), its preparation defect must
+not prevent the preregistered atomic primary pair from being tested. The
+release may therefore contain exactly 1H4I+4MAE (four La/Ca legs), or those two
+plus explicitly requested 6OC6 (six legs). The primary decision rule is
+identical in both cases, and omission is recorded as `secondary-not-run`.
 
 ## Purpose and isolation
 
@@ -30,11 +42,10 @@ from the frozen R scores. All four preregistered gates, a gap of at least 5
 kcal/mol, and internally identical released bands are required.
 
 The primary operation is atomic: it always prepares both 1H4I and 4MAE or
-leaves the whole tree incomplete. A primary-only preparation is explicitly
-marked non-runnable. 6OC6 is added only with the explicit
-`--include-secondary-6oc6` flag; only that complete six-leg preparation is
-release-runnable. 6OC6 is always marked as a nonindependent secondary geometry
-check and cannot replace either primary member.
+leaves the whole tree incomplete. That four-leg primary preparation is
+release-runnable. 6OC6 is added only with the explicit
+`--include-secondary-6oc6` flag and remains a nonindependent secondary geometry
+check that cannot replace either primary member.
 
 ## Raw-source selection and exclusions
 
@@ -117,45 +128,41 @@ Run with the pinned Python and a fresh output directory:
 /groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python \
   /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout/prepare_holdouts.py \
   --calibration-result /absolute/path/to/locked/result.json \
-  --output /absolute/path/to/fresh/holdout_prepared \
-  --include-secondary-6oc6
+  --output /absolute/path/to/fresh/holdout_prepared
 ```
 
-This command prepares templates only. Submission and transfer scoring remain
-separate reviewed actions.
+This prepares the primary release only. Add `--include-secondary-6oc6` solely
+to request the optional secondary. The command prepares templates only;
+submission and transfer scoring remain separate reviewed actions.
 
-## Six-leg execution and frozen scoring
+## Four- or six-leg execution and frozen scoring
 
 `run_holdouts.sbatch` requests one high-memory node, invokes
 `run_holdouts.py`, then invokes the frozen scorer against the receipt named with
 that SLURM job ID even when one or more ORCA legs failed. The scorer
-writes to the single fresh path `reserved_crystal_holdout/result`; the batch
-script refuses an existing path before ORCA begins, so neither compute nor an
-earlier interpretation is wasted or overwritten. The runner accepts only the
-complete three-target/six-leg
-preparation. It starts all six La/Ca legs concurrently through the unchanged
-hash-pinned manifested ORCA runner. Each leg uses at most 16 MPI ranks, matching
-the calibration cap: PAL37/PAL57 is syntactically legal but likely
-communication-dominated for these modest fixed-core single points. Six PAL16
-legs use 96 ranks and have a 768,000 MB aggregate `%maxcore 8000` upper bound;
-unused node CPUs are recorded explicitly. Per cluster policy, the script does
-not specify memory, CPU count, wall time, or `--exclusive`; the high-memory
-partition supplies its normal full-node allocation. The sbatch file contains
-no memory, CPU-count, node-count, wall-time, or exclusivity directives. The
-runner always writes its receipt before reporting per-target failure. The batch
-script deliberately captures that status and invokes the scorer whenever the
-receipt exists, so failed/unscorable primary arms still yield a durable FAIL
+writes to a fresh result path (the default is
+`reserved_crystal_holdout/result`); the batch script refuses an existing path
+before ORCA begins. The runner accepts exactly the two-primary/four-leg release
+or the same pair plus the optional secondary/six-leg release. It derives
+simultaneous target count, leg count, MPI ranks per leg, assigned ranks, and
+unused CPUs from that exact preparation and `$SLURM_CPUS_ON_NODE`. Each leg uses
+at most 16 MPI ranks, matching the calibration cap. Per cluster policy, the
+script specifies no memory, CPU count, wall time, or exclusivity. The runner
+always writes its receipt before reporting per-target failure. The batch script
+deliberately captures that status and invokes the scorer whenever the receipt
+exists, so failed/unscorable primary arms still yield a durable FAIL
 JSON/Markdown result. Catastrophic pre-receipt failures stop the job.
 
-`score_holdouts.py` requires a valid receipt for the complete six-leg attempt
-and independently validates every available task input, XYZ, ORCA output,
+`score_holdouts.py` requires a receipt whose exact two- or three-target ledger
+matches the preparation and independently validates every available task input, XYZ, ORCA output,
 normal termination, SCF convergence, runner, renderer, executable, and hash
 link. It derives the exact
 frozen S bands from the locked calibration result and verifies their algebraic
 identity to the frozen R bands and aquo gauge. It never fits a holdout cutoff.
 The primary rule is 1H4I `S <= U_S` and 4MAE `S >= L_S`; a gap score, wrong-band
 score, or unscorable arm fails and makes the scorer exit nonzero only after its
-result files are written. An unscorable 6OC6 is reported as secondary-only and
+result files are written. If omitted, 6OC6 is explicitly reported as
+`secondary-not-run`; if included but unscorable, it remains secondary-only and
 does not make an otherwise passing primary verdict fail.
 
 After reviewed preparation, the intended command is:

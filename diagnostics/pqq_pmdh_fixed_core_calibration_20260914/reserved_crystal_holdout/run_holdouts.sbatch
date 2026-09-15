@@ -9,9 +9,9 @@ set -euo pipefail
 HERE=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout
 PYTHON=/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python
 ORCA_DIR=/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg
-PREPARATION=${1:?usage: sbatch run_holdouts.sbatch /absolute/path/holdout_preparation.json}
+PREPARATION=${1:?usage: sbatch run_holdouts.sbatch /absolute/path/holdout_preparation.json [/fresh/result/dir]}
 RECEIPT="$(dirname -- "$PREPARATION")/holdout_execution_${SLURM_JOB_ID}.json"
-RESULT_DIR="$HERE/result"
+RESULT_DIR=${2:-"$HERE/result"}
 
 export ORCA_PATH="$ORCA_DIR"
 export PATH="$ORCA_DIR:$PATH"
@@ -31,6 +31,7 @@ set +e
   --holdout-pins "$HERE/holdout_implementation_pins.json"
 RUNNER_STATUS=$?
 set -e
+echo "holdout runner exit status: $RUNNER_STATUS"
 
 if [[ ! -f "$RECEIPT" ]]; then
   echo "ERROR: runner exited $RUNNER_STATUS without writing receipt: $RECEIPT" >&2

@@ -3,8 +3,8 @@
 
 This command is intentionally dormant until it is given the immutable JSON
 result from a successful 25-member v3 calibration.  It prepares La/Ca vertical
-pairs but never starts ORCA.  Primary targets are 1H4I and 4MAE; 6OC6 is only
-included with an explicit secondary-target flag.
+pairs but never starts ORCA.  The atomic primary release is 1H4I plus 4MAE;
+6OC6 is included only with an explicit secondary-target flag.
 """
 
 from __future__ import annotations
@@ -57,6 +57,7 @@ CORE_POLICY_ID = "pqq_pmdh_E_N_D_Dplus2acidic_Dnetwork_cation_v1"
 COORDINATION_POLICY_ID = "typed_cn6_3p1A_maxN2_crystal_transfer_v1"
 DRY_POLICY_ID = "dry_fixed_core_v3"
 METHOD_ID = "orca_r2scan3c_cpcm_water_native_basis_v2"
+EXECUTION_POLICY_ID = "atomic_primary_pair_optional_secondary_full_node_manifested_orca_v1"
 EXPECTED_ORCA_DIRECTIVE = "! r2SCAN-3c NoAutostart CPCM(Water) DefGrid3"
 COORDINATE_TOLERANCE_A = 0.001
 AUDIT_DISTANCE_TOLERANCE_A = 0.011
@@ -317,6 +318,7 @@ def verify_holdout_pins(pins_path: Path) -> tuple[dict[str, Any], dict[str, Any]
         "water_policy": "exclude_all_source_and_synthetic_waters",
         "noncore_heterogen_policy": "exclude_all_including_4MAE_A:15P603",
         "primary_pair_atomic": True,
+        "primary_pair_release_runnable": True,
         "secondary_6OC6_requires_explicit_flag": True,
     }:
         raise HoldoutPreparationError("holdout selection policy pins changed")
@@ -1829,7 +1831,7 @@ def write_holdout_pair(
             "single_point_only": True,
         },
         "execution_policy": {
-            "id": "six_leg_full_node_manifested_orca_v1",
+            "id": EXECUTION_POLICY_ID,
             "task_runner": calibration_pins["canonical_helpers"]["run_orca_task_manifest"],
             "runtime_renderer": calibration_pins["canonical_helpers"]["render_orca_runtime_input"],
             "orca_executable": calibration_pins["orca_runtime"]["executable"],
@@ -2024,11 +2026,13 @@ def prepare_holdouts(
         "schema_version": HOLDOUT_PREPARATION_SCHEMA,
         "protocol_id": PROTOCOL_ID,
         "created_at_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
-        "status": (
-            "ready_for_orca_after_passing_calibration_gate"
+        "status": "ready_for_orca_after_passing_calibration_gate",
+        "release_scope": (
+            "atomic_primary_pair_plus_nonindependent_secondary"
             if include_secondary
-            else "prepared_primary_pair_not_release_runnable"
+            else "atomic_primary_pair"
         ),
+        "release_runnable": True,
         "calibration_gate": gate,
         "holdout_pins": file_record(holdout_pins_path),
         "calibration_implementation_pins": file_record(calibration_pins_path),
@@ -2037,6 +2041,9 @@ def prepare_holdouts(
         "primary_holdouts": ["1H4I", "4MAE"],
         "secondary_holdout": "6OC6",
         "secondary_included": include_secondary,
+        "secondary_omission_disposition": (
+            None if include_secondary else "secondary-not-run"
+        ),
         "target_count": len(targets),
         "task_count": 2 * len(targets),
         "all_retained_source_heavy_coordinates_preserved": True,

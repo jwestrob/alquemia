@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run exactly six prepared PQQ-MDH holdout legs on one full SLURM node."""
+"""Run an atomic PQQ-MDH primary pair, with optional secondary, under SLURM."""
 
 from __future__ import annotations
 
@@ -20,11 +20,13 @@ import prepare_holdouts as holdout
 HERE = Path(__file__).resolve().parent
 PROTOCOL_ID = holdout.PROTOCOL_ID
 EXECUTION_SCHEMA = "alchemical_bvs.pqq_fixed_core_holdout_execution.v1"
-EXPECTED_IDS = ("1H4I", "4MAE", "6OC6")
+PRIMARY_IDS = ("1H4I", "4MAE")
+SECONDARY_ID = "6OC6"
+FULL_IDS = (*PRIMARY_IDS, SECONDARY_ID)
 
 
 class HoldoutRunError(RuntimeError):
-    """The prepared six-leg holdout set or SLURM allocation is invalid."""
+    """The prepared holdout set or SLURM allocation is invalid."""
 
 
 def read_object(path: Path) -> dict[str, Any]:
@@ -50,12 +52,12 @@ def allocation() -> dict[str, Any]:
     raw_nodes = os.environ.get("SLURM_JOB_NUM_NODES", "")
     if not job_id:
         raise HoldoutRunError("refusing ORCA execution outside SLURM")
-    if cpu_match is None or int(cpu_match.group(1)) < 6:
+    if cpu_match is None or int(cpu_match.group(1)) < 4:
         raise HoldoutRunError(f"invalid SLURM_CPUS_ON_NODE={raw_cpus!r}")
     if raw_nodes != "1":
-        raise HoldoutRunError(f"six-leg runner requires one node, not {raw_nodes!r}")
+        raise HoldoutRunError(f"holdout runner requires one node, not {raw_nodes!r}")
     if os.environ.get("SLURM_JOB_PARTITION") != "high-memory":
-        raise HoldoutRunError("six-leg release runner requires the high-memory partition")
+        raise HoldoutRunError("holdout release runner requires the high-memory partition")
     return {
         "slurm_job_id": job_id,
         "slurm_job_partition": os.environ["SLURM_JOB_PARTITION"],
@@ -73,20 +75,35 @@ def verify_preparation(
 ) -> list[tuple[str, Path]]:
     preparation_path = preparation_path.resolve()
     preparation = read_object(preparation_path)
+    secondary_included = preparation.get("secondary_included")
+    if secondary_included is True:
+        expected_ids = FULL_IDS
+        expected_scope = "atomic_primary_pair_plus_nonindependent_secondary"
+    elif secondary_included is False:
+        expected_ids = PRIMARY_IDS
+        expected_scope = "atomic_primary_pair"
+    else:
+        raise HoldoutRunError("preparation has an invalid secondary-inclusion flag")
+    expected_target_count = len(expected_ids)
+    expected_task_count = 2 * expected_target_count
     if (
         preparation.get("schema_version") != holdout.HOLDOUT_PREPARATION_SCHEMA
         or preparation.get("protocol_id") != PROTOCOL_ID
         or preparation.get("status") != "ready_for_orca_after_passing_calibration_gate"
+        or preparation.get("release_scope") != expected_scope
+        or preparation.get("release_runnable") is not True
         or preparation.get("primary_holdouts") != ["1H4I", "4MAE"]
         or preparation.get("secondary_holdout") != "6OC6"
-        or preparation.get("secondary_included") is not True
-        or preparation.get("target_count") != 3
-        or preparation.get("task_count") != 6
+        or "secondary_omission_disposition" not in preparation
+        or preparation.get("secondary_omission_disposition")
+        != (None if secondary_included else "secondary-not-run")
+        or preparation.get("target_count") != expected_target_count
+        or preparation.get("task_count") != expected_task_count
         or preparation.get("all_nonmetal_arm_coordinates_byte_identical") is not True
         or preparation.get("water_policy") != "dry_exclude_all_source_and_synthetic_waters"
         or preparation.get("orca_executed") is not False
     ):
-        raise HoldoutRunError("preparation is not the complete reviewed six-leg holdout set")
+        raise HoldoutRunError("preparation is not a reviewed atomic holdout release")
     if preparation.get("holdout_pins") != holdout.file_record(pins_path):
         raise HoldoutRunError("preparation is not bound to supplied holdout pins")
     calibration_pins_path = Path(
@@ -104,9 +121,11 @@ def verify_preparation(
     if (
         not isinstance(targets, list)
         or any(not isinstance(item, dict) for item in targets)
-        or [item.get("pdb_id") for item in targets] != list(EXPECTED_IDS)
+        or [item.get("pdb_id") for item in targets] != list(expected_ids)
     ):
-        raise HoldoutRunError("prepared target identity/order differs from 1H4I,4MAE,6OC6")
+        raise HoldoutRunError(
+            f"prepared target identity/order differs from {','.join(expected_ids)}"
+        )
     manifests: list[tuple[str, Path]] = []
     for target in targets:
         if not isinstance(target, dict):
@@ -160,7 +179,7 @@ def verify_preparation(
             or not isinstance(tasks, list)
             or [task.get("task_id") for task in tasks] != ["La", "Ca"]
         ):
-            raise HoldoutRunError(f"{pdb_id} manifest violates the six-leg contract")
+            raise HoldoutRunError(f"{pdb_id} manifest violates the holdout contract")
         if pdb_id == "4MAE":
             if (
                 not isinstance(noncore, list)
@@ -174,6 +193,7 @@ def verify_preparation(
         policy = manifest.get("execution_policy")
         if (
             not isinstance(policy, dict)
+            or policy.get("id") != holdout.EXECUTION_POLICY_ID
             or policy.get("task_runner") != pins["inherited_helpers"]["run_orca_task_manifest"]
             or policy.get("runtime_renderer")
             != pins["inherited_helpers"]["render_orca_runtime_input"]
@@ -240,16 +260,23 @@ def run_holdouts(preparation_path: Path, pins_path: Path) -> Path:
     orca_record = calibration_pins["orca_runtime"]["executable"]
     orca = holdout.verify_file_record(orca_record, "ORCA executable")
     total_cpus = int(allocation_record["slurm_cpus_on_node"])
+    target_ids = tuple(pdb_id for pdb_id, _ in manifests)
+    if target_ids not in (PRIMARY_IDS, FULL_IDS):
+        raise HoldoutRunError("verified preparation produced an invalid target set")
+    target_count = len(target_ids)
+    leg_count = 2 * target_count
     # Match the calibration runner's empirically chosen ceiling.  Arbitrary
     # larger %pal values are legal, but these modest fixed-core single points
     # are not expected to scale usefully to 37--57 MPI ranks per leg.
-    ranks_per_leg = min(16, total_cpus // 6)
+    ranks_per_leg = min(16, total_cpus // leg_count)
     if ranks_per_leg < 1:
-        raise HoldoutRunError("allocation cannot support six simultaneous ORCA legs")
+        raise HoldoutRunError(
+            f"allocation cannot support {leg_count} simultaneous ORCA legs"
+        )
 
     started = dt.datetime.now(dt.timezone.utc).isoformat()
     results: list[dict[str, Any]] = []
-    with ThreadPoolExecutor(max_workers=3) as executor:
+    with ThreadPoolExecutor(max_workers=target_count) as executor:
         futures = {
             executor.submit(
                 run_target,
@@ -294,22 +321,26 @@ def run_holdouts(preparation_path: Path, pins_path: Path) -> Path:
         "manifested_orca_runner": runner_record,
         "orca_executable": orca_record,
         "allocation": allocation_record,
+        "target_ids": list(target_ids),
+        "target_count": target_count,
+        "task_count": leg_count,
+        "secondary_included": SECONDARY_ID in target_ids,
         "parallelism": {
-            "simultaneous_targets": 3,
+            "simultaneous_targets": target_count,
             "simultaneous_legs_per_target": 2,
-            "simultaneous_ORCA_legs": 6,
+            "simultaneous_ORCA_legs": leg_count,
             "mpi_ranks_per_leg": ranks_per_leg,
-            "assigned_mpi_ranks": 6 * ranks_per_leg,
-            "unassigned_CPUs": total_cpus - 6 * ranks_per_leg,
+            "assigned_mpi_ranks": leg_count * ranks_per_leg,
+            "unassigned_CPUs": total_cpus - leg_count * ranks_per_leg,
             "omp_threads_per_rank": 1,
             "rank_cap_rationale": (
                 "match calibration cap16; avoid communication-dominated PAL37/PAL57 "
                 "for modest fixed-core r2SCAN-3c single points"
             ),
-            "aggregate_ORCA_maxcore_upper_bound_MB": 6 * ranks_per_leg * 8000,
+            "aggregate_ORCA_maxcore_upper_bound_MB": leg_count * ranks_per_leg * 8000,
         },
         "failed_targets": failures,
-        "targets": sorted(results, key=lambda item: EXPECTED_IDS.index(item["pdb_id"])),
+        "targets": sorted(results, key=lambda item: target_ids.index(item["pdb_id"])),
     }
     write_json_atomic(receipt_path, receipt)
     if failures:

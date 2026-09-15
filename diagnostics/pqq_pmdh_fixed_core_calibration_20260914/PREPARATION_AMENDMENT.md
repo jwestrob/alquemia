@@ -56,6 +56,28 @@ unwanted nonstandard-ligand protonation branch. It does not change the frozen
 QM atoms, charges, microstates, coordinates, electronic model, score, or
 calibration rule. The protocol ID therefore remains unchanged.
 
+## Second pre-energy fail-closed correction
+
+The next preparation attempt successfully completed deterministic protonation
+and the whole-heavy-atom preservation check for panel member 1, then stopped
+before writing any QM coordinate or ORCA input. Exact-site validation showed
+that the initial `core_map.tsv` used atom selector `B:LIG_B1:LA`, while every
+hashed source and normalized structure actually names that atom `LA1`.
+
+All 25 source structures were reread independently. Each has exactly one metal
+at `B:LIG_B1:LA1`; source hashes, coordinates, residue selectors, and chemistry
+are unchanged. The atom-name typo was corrected in all 25 rows and documented
+in `CORE_MAP_AUDIT.md` at commit
+`07d354d0a7b6c32a53a04e3ec3153dddbfd3454f`. This metadata correction also
+precedes every v3 QM input and energy, so the overall protocol ID remains
+unchanged.
+
+The second failed attempt is preserved at
+`/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/preparation_failed_metal_selector_20260915T035549Z/`.
+It contains normalization, protonation, heavy-coordinate QC, and a fail-closed
+carve-error record for panel member 1, but no QM XYZ, ORCA input, ORCA output,
+or electronic energy. It must not be reused as preparation input.
+
 The failed partial attempt is preserved at
 `/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/preparation_failed_pdbfixer_ccd_20260914T034403Z/`.
 It is not a valid preparation and must not be reused. The default `prepared/`

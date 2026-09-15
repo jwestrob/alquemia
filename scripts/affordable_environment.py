@@ -34,7 +34,12 @@ def mbis_charges(output, coordinates, total_charge):
     if 'MBIS ANALYSIS' not in text:
         raise InvalidArtifact('MBIS charges unavailable; no Mulliken/formal-charge fallback')
     section=text.rsplit('MBIS ANALYSIS',1)[1]
-    rows=re.findall(r'^\s*(\d+)\s+([A-Z][a-z]?)\s+([-+\d.]+)\s+([-+\d.]+)\s+([-+\d.]+)\s*$',section,re.M)
+    tables=re.findall(r'^[ \t]*ATOM[ \t]+CHARGE[ \t]+POPULATION[ \t]+SPIN[^\n]*\n(.*?)^[ \t]*TOTAL[ \t]+',section,re.M|re.S)
+    if len(tables)!=1:
+        raise InvalidArtifact('missing/ambiguous MBIS ATOM CHARGE POPULATION SPIN table')
+    # LARGEPRINT also emits indexed atomic dipoles with three numeric columns.
+    # Parse only the explicitly labelled net-charge table, never those rows.
+    rows=re.findall(r'^\s*(\d+)\s+([A-Z][a-z]?)\s+([-+\d.]+)\s+([-+\d.]+)\s+([-+\d.]+)\s*$',tables[0],re.M)
     atoms=xyz(coordinates)
     if len(rows)!=len(atoms) or [int(r[0]) for r in rows]!=list(range(len(atoms))):
         raise InvalidArtifact('incomplete/ambiguous MBIS charge table')

@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 from concurrent.futures import ThreadPoolExecutor
 import copy
+import fcntl
 import json
 import math
 import os
@@ -42,8 +43,8 @@ def run_command(command,cwd,log,cost):
     return result
 
 
-def esp_check(task,orca_dir,radii):
-    endpoint=Path(task['output_path']); d=endpoint.parent/'esp_check'
+def esp_check(task,orca_dir,radii,workdir=None):
+    endpoint=Path(task['output_path']); d=Path(workdir) if workdir else endpoint.parent/'esp_check'
     if (d/'quality.json').exists():
         raise InvalidArtifact('existing ESP attempt requires explicit collection, not overwrite')
     d.mkdir(parents=True,exist_ok=True)
@@ -113,10 +114,42 @@ def transform(state,rotation=None,translation=None):
     return s
 
 
-def execute_checks(pilot_path,root,apbs):
+def prior_allocated_cost(receipts):
+    total=0;seen=set();records=[]
+    for path in receipts:
+        data=read_json(path);job=str(data['job_id'])
+        if job in seen: raise InvalidArtifact('duplicate prior solver accounting job')
+        seen.add(job)
+        lines=data['sacct'].splitlines();header=lines[0].split('|')
+        rows=[dict(zip(header,line.split('|'))) for line in lines[1:] if line.startswith(job+'|')]
+        if len(rows)!=1 or rows[0]['State'] not in ('COMPLETED','FAILED','CANCELLED','TIMEOUT','OUT_OF_MEMORY','NODE_FAIL','PREEMPTED'):
+            raise InvalidArtifact('prior solver terminal accounting unavailable')
+        row=rows[0];cost=int(row['AllocCPUS'])*int(row['ElapsedRaw'])
+        if cost!=int(row['CPUTimeRAW']): raise InvalidArtifact('inconsistent allocated accounting')
+        total+=cost;records.append({'receipt':record(path),'job_id':job,'allocated_core_seconds':cost})
+    return total,records
+
+
+def execute_checks(pilot_path,root,apbs,prior_receipts=()):
     if not os.environ.get('SLURM_JOB_ID'): raise InvalidArtifact('solver execution requires SLURM')
     m=read_json(pilot_path);root=Path(root).resolve();root.mkdir(parents=True,exist_ok=True)
-    cpus=int(os.environ['SLURM_CPUS_ON_NODE']); cap=m['budget']['solver_allocated_core_seconds']
+    campaign=Path(pilot_path).resolve().parent.parent
+    lock=(campaign/'solver_campaign.lock').open('a+')
+    fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+    if (campaign/'solver/solver_result.json').exists() and not prior_receipts:
+        raise InvalidArtifact('solver recovery requires prior terminal accounting receipts')
+    prior_cost,prior_records=prior_allocated_cost(prior_receipts)
+    ledger=campaign/'solver_admissions.jsonl'
+    history=[json.loads(line) for line in ledger.read_text().splitlines()] if ledger.exists() else []
+    required_jobs={str(e['slurm_job_id']) for e in history}
+    required_jobs.update(str(j) for e in history for j in e.get('prior_job_ids',[]))
+    provided_jobs={r['job_id'] for r in prior_records}
+    if required_jobs-provided_jobs:
+        raise InvalidArtifact('terminal accounting required for every prior admitted solver job')
+    with ledger.open('a') as f:
+        f.write(json.dumps({'slurm_job_id':os.environ['SLURM_JOB_ID'],'prior_job_ids':sorted(provided_jobs),
+                            'output':str(root),'time_unix':time.time()})+'\n');f.flush();os.fsync(f.fileno())
+    cpus=int(os.environ['SLURM_CPUS_ON_NODE']); total_cap=m['budget']['solver_allocated_core_seconds'];cap=total_cap-prior_cost
     started=time.monotonic(); outcomes=[]; states={}; numerical=[]
     implementation=snapshot_implementation(root/'implementation')
     from affordable_state import validate_skeleton_pair
@@ -136,7 +169,7 @@ def execute_checks(pilot_path,root,apbs):
     orca_dir=verify(m['orca']).parent
     def quality_one(t):
         try:
-            q,r=esp_check(t,orca_dir,m['environment_model']['radii_A'])
+            q,r=esp_check(t,orca_dir,m['environment_model']['radii_A'],root/'esp'/t['task_id'])
             return t,q,r,None
         except Exception as exc: return t,None,None,str(exc)
     with ThreadPoolExecutor(max_workers=min(len(m['tasks']),cpus)) as pool:
@@ -192,6 +225,8 @@ def execute_checks(pilot_path,root,apbs):
     summary={'schema_version':'alquemia.apbs_physical_pilot.v1','pilot':record(pilot_path),'apbs':record(apbs),
              'actual_implementation':implementation,'preparation':outcomes,'numerical_checks':numerical,'elapsed_seconds':time.monotonic()-started,
              'allocated_core_seconds':spent(),'allocated_cpus':cpus,'slurm_job_id':os.environ['SLURM_JOB_ID'],
+             'prior_execution_accounting':prior_records,'campaign_allocated_core_seconds':prior_cost+spent(),
+             'campaign_budget_core_seconds':total_cap,'remaining_budget_at_start_core_seconds':cap,
              'budget_exceeded':spent()>cap,'predictive_claim':'none_development_only'}
     write_new(root/'solver_result.json',summary)
     return summary
@@ -200,10 +235,11 @@ def execute_checks(pilot_path,root,apbs):
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--pilot-manifest',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--apbs',type=Path,required=True)
-    a=p.parse_args();r=execute_checks(a.pilot_manifest,a.output,a.apbs.resolve())
+    p.add_argument('--prior-receipt',type=Path,action='append',default=[])
+    a=p.parse_args();r=execute_checks(a.pilot_manifest,a.output,a.apbs.resolve(),a.prior_receipt)
     from affordable_compare import compare,report
     repo=Path(__file__).resolve().parents[1]
-    data=compare(repo)
+    data=compare(repo,a.output/'solver_result.json')
     write_new(a.output/'comparison.json',data)
     with (a.output/'REPORT.md').open('x') as f: f.write(report(data))
     print(json.dumps({'allocated_core_seconds':r['allocated_core_seconds'],'states':len(r['numerical_checks'])}))

@@ -174,6 +174,25 @@ class RealPeptideGraph(unittest.TestCase):
 
 
 class PilotIntegration(unittest.TestCase):
+    def test_actual_solver_accounting_is_charged_to_recovery(self):
+        from affordable_solver import prior_allocated_cost
+        p=ROOT/'workspaces/affordable_challenger_20260915/solver_terminal_receipt.json'
+        if not p.exists(): self.skipTest('terminal solver accounting not yet available')
+        cost,rows=prior_allocated_cost([p])
+        self.assertEqual(cost,688)
+        with self.assertRaises(InvalidArtifact): prior_allocated_cost([p,p])
+
+    def test_missing_mbis_charge_table_in_corrupted_real_output(self):
+        from affordable_environment import mbis_charges
+        m=read_json(ROOT/'workspaces/affordable_challenger_20260915/pilot/pilot_manifest.json')
+        t=m['tasks'][0];source=Path(t['output_path'])
+        if not source.exists(): self.skipTest('real MBIS endpoint unavailable')
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d)/'corrupted_charge_header.out'
+            import re
+            p.write_text(re.sub(r'ATOM\s+CHARGE\s+POPULATION\s+SPIN','REMOVED_CHARGE_HEADER',source.read_text()))
+            with self.assertRaises(InvalidArtifact): mbis_charges(p,verify(t['xyz']),t['charge'])
+
     def test_single_point_is_not_an_analytic_gradient(self):
         from affordable_response import extract
         row=read_json(BASE/'reserved_crystal_holdout/result/holdout_result.json')['scores'][0]['artifacts']['La']

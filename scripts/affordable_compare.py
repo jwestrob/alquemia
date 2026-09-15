@@ -75,7 +75,7 @@ def physical_verdict(solver,baseline_boundary,endpoint_scores=None):
             'development_boundary_scores_kcal_mol':primary,'predictive_validation':'not_established'}
 
 
-def compare(root):
+def compare(root,solver_path=None):
     root=Path(root).resolve();diag=root/'diagnostics/affordable_challenger_20260915'
     audit=read_json(diag/'live_audit.json');rows=[]
     for r in audit['rows']:
@@ -108,7 +108,7 @@ def compare(root):
     workspace=root/'workspaces/affordable_challenger_20260915'
     events_path=workspace/'pilot/budget_events.jsonl'
     events=[__import__('json').loads(line) for line in events_path.read_text().splitlines()] if events_path.exists() else []
-    solver_path=workspace/'solver/solver_result.json';solver=read_json(solver_path) if solver_path.exists() else None
+    solver_path=Path(solver_path) if solver_path else workspace/'solver/solver_result.json';solver=read_json(solver_path) if solver_path.exists() else None
     boundary=read_json(root/'diagnostics/pqq_boundary_pair_20260914/result.json')['panels']['mxaf']
     pilot=read_json(workspace/'pilot/pilot_manifest.json')
     endpoint_scores={}
@@ -180,7 +180,8 @@ def report(data):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--root',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
-    a=p.parse_args();data=compare(a.root);a.output.mkdir(parents=True,exist_ok=False)
+    p.add_argument('--solver-result',type=Path)
+    a=p.parse_args();data=compare(a.root,a.solver_result);a.output.mkdir(parents=True,exist_ok=False)
     write_new(a.output/'comparison.json',data);(a.output/'REPORT.md').write_text(report(data))
     print(f"{len(data['archived_and_prepared_rows'])} records; {data['physical_checks']['status']}; retain baseline")
 

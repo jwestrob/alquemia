@@ -1,0 +1,81 @@
+{
+  "allocation": {
+    "host": "node-344-8t-1",
+    "slurm_cpus_on_node": 344,
+    "slurm_job_id": "1198050",
+    "slurm_job_num_nodes": 1,
+    "slurm_job_partition": "high-memory"
+  },
+  "failed_targets": [],
+  "finished_at_utc": "2026-09-15T05:22:33.101569+00:00",
+  "holdout_pins": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout/holdout_implementation_pins.json",
+    "sha256": "a0492cdfe1e2ff7807f77c1c6fec330e7adec4147ee8f3955230e3c917b7ad10"
+  },
+  "manifested_orca_runner": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/run_orca_task_manifest.py",
+    "sha256": "b9278e74e5317e859e8cb05541e1ec57cb335b26dcdf65a83b89675407343b9a"
+  },
+  "orca_executable": {
+    "path": "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+    "sha256": "38b5f057452fef275c0a1b98d270ad03d0411dab70453820d1c678bd732f6c83"
+  },
+  "parallelism": {
+    "aggregate_ORCA_maxcore_upper_bound_MB": 512000,
+    "assigned_mpi_ranks": 64,
+    "mpi_ranks_per_leg": 16,
+    "omp_threads_per_rank": 1,
+    "rank_cap_rationale": "match calibration cap16; avoid communication-dominated PAL37/PAL57 for modest fixed-core r2SCAN-3c single points",
+    "simultaneous_ORCA_legs": 4,
+    "simultaneous_legs_per_target": 2,
+    "simultaneous_targets": 2,
+    "unassigned_CPUs": 280
+  },
+  "preparation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout/prepared/holdout_preparation.json",
+    "sha256": "c7942ce190b1af50617798aa2ac6ca2aee40e26602c54b34217ee2885375470f"
+  },
+  "protocol_id": "pqq_vertical_swap_r2scan3c_native_cpcm_fixed_core_v3",
+  "runner": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout/run_holdouts.py",
+    "sha256": "787e017ff4cc6b2001d4e4d875a62902fd6d49781e2e295792d4d6bcb1d9a25b"
+  },
+  "schema_version": "alchemical_bvs.pqq_fixed_core_holdout_execution.v1",
+  "secondary_included": false,
+  "started_at_utc": "2026-09-15T05:20:00.167641+00:00",
+  "status": "complete",
+  "target_count": 2,
+  "target_ids": [
+    "1H4I",
+    "4MAE"
+  ],
+  "targets": [
+    {
+      "log": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout/prepared/01_1H4I/holdout_orca_runner.log",
+        "sha256": "39e6cc8a0487541ddcc9d225293c31db2c36175a7ae7eec00815cfb62aa37a38"
+      },
+      "manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout/prepared/01_1H4I/pmdh_fc_holdout_1h4i_carve_manifest.json",
+        "sha256": "fab1cd480fa88d6e0d7ac98d2d2d46b23233e3258f53fa8d7fe2ecec3e607dc0"
+      },
+      "pdb_id": "1H4I",
+      "returncode": 0,
+      "status": "complete"
+    },
+    {
+      "log": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout/prepared/02_4MAE/holdout_orca_runner.log",
+        "sha256": "2f362de824be81d1336c8bbdce41d13a361bb6c44458d3dab87027ea1898f80b"
+      },
+      "manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout/prepared/02_4MAE/pmdh_fc_holdout_4mae_carve_manifest.json",
+        "sha256": "54c21fa2464328221aa801c354cd6271989d3232598e3e5a5955121fd0f57d89"
+      },
+      "pdb_id": "4MAE",
+      "returncode": 0,
+      "status": "complete"
+    }
+  ],
+  "task_count": 4
+}

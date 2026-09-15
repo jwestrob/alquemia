@@ -146,6 +146,15 @@ Only after the calibration gate and threshold are locked, prepare and run:
 - PDB 1H4I MxaF as the Ca-dependent negative control; and
 - PDB 4MAE XoxF as the Ln-dependent positive control.
 
+Exact source hashes, model/chain/site/core selectors, donor ledgers, altlocs,
+and solvent inventories are frozen before calibration execution in
+`holdout_spec.tsv` and audited in `HOLDOUT_SELECTOR_AUDIT.md`. Both structures
+must use the same dry v3 policy: remove every water and noncore heterogen and
+add no replacement ligand. In particular, 4MAE's PEG-derived `A:15P603/OXT`
+coordinates Ce at 2.747 A but is explicitly excluded, leaving a fixed-coordinate
+vacancy. That limitation must be reported; an adduct-retaining or vacancy-filled
+calculation is a different protocol.
+
 Both must use exactly the frozen v3 selectors and electronic model. The
 transfer test passes only if both are valid, 1H4I has `R <= U`, and 4MAE has
 `R >= L`. A score in the calibration gap is indeterminate; a wrong-band or

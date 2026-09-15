@@ -233,3 +233,26 @@ disabled by Jacob; accounting retained. No task jobs remain running.
 Full result: `diagnostics/affordable_challenger_20260915/COMPLETED_PILOT.md`.
 Baseline remains default because this tested version fails physical checks.
 Peptide repair energy comparisons and validated curvature remain unperformed.
+
+### 2026-09-15 — GPT-6 / Codex whole-system investigation and native xTB pilot
+
+Jacob requested investigation of a global discriminator and then approved the
+explicit two-endpoint native GFN2-xTB/ALPB-water pilot by saying “please continue!
+ran out of usage”. See diagnostics/global_representation_20260915/AGREEMENT.md.
+No compute/time budget applies. Baseline/default and earlier experiments unchanged.
+
+Saved-output Asp303 decomposition reproduces both direct contrasts: its
+environment contribution is +61.890346 (qm33) versus -0.342428 (qm36) kcal/mol.
+Other charge/reference changes leave +8.030025 in the environmental correction.
+Prepared one cap-free 9,141-atom physical system, 9,274 bonds, paired charges
+-8/-9 and identical coordinates. Six real-artifact software tests pass.
+
+Job 1198999 runs the approved La/Ca pair on node-344-8t-1, 172 MPI ranks each;
+344 active workers observed. Native parameter export gives 23,259 orbitals and
+25,764 active electrons for both endpoints. Still in startup; no energies or
+converged results yet. Whole-protein runtime/affordability remain unestablished.
+Owned terminal watcher PID450588 writes workspaces/global_representation_20260915/
+terminal_1198999.json. Prepared_v1/global_manifest.json is the runner manifest;
+implementation snapshot is in that workspace. affordable_global_collect.py
+collects energy/population/receipt results; no new reference or threshold.
+Do not launch additional biological controls or change the Hamiltonian silently.

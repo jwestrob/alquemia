@@ -1,0 +1,16 @@
+{
+  "status": "approved",
+  "agreement": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/global_representation_20260915/AGREEMENT.md",
+  "manifest": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/global_representation_20260915/prepared_v1/global_manifest.json",
+  "tasks": [
+    "1h4i_global_La",
+    "1h4i_global_Ca"
+  ],
+  "method": "Native-GFN2-xTB ALPB(water) TightSCF; SmearTemp 300; frozen geometry",
+  "scientific_runs": 2,
+  "execution": "existing runner; two concurrent endpoints; allocation CPUs divided equally into MPI ranks, one thread per rank",
+  "reason_for_parallel_override": "The 16-rank default was for small carved DFT endpoints. This full-protein pilot is a new scale; check actual MPI utilization and preserve observed behavior. Only the 344-CPU node is currently idle.",
+  "compute_budget": null,
+  "wall_time_limit": null,
+  "other_jobs_untouched": true
+}

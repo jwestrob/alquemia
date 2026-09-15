@@ -1,0 +1,32 @@
+{
+  "status": "approved_before_solver_execution",
+  "pilot_manifest": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/affordable_challenger_20260915/pilot/pilot_manifest.json",
+  "max_ESP_evaluations": 6,
+  "max_APBS_states": 24,
+  "charging_solves_per_state": 6,
+  "max_charging_solves": 144,
+  "task_ids": [
+    "1h4i_fixed_core_La",
+    "1h4i_fixed_core_Ca",
+    "1h4i_qm33_La",
+    "1h4i_qm33_Ca",
+    "1h4i_qm36_La",
+    "1h4i_qm36_Ca"
+  ],
+  "variants": [
+    "primary",
+    "refined_0p4A",
+    "extended_box_30A",
+    "qm33_translation",
+    "qm33_rotation",
+    "qm33_La_identity",
+    "qm33_La_repeat"
+  ],
+  "budget_allocated_core_seconds": 52976,
+  "failure_policy": "unsupported cases stay in denominator; stop further solver attempts on syntax failure or budget exhaustion; no parameter rescue",
+  "code": {
+    "affordable_solver.py": "3de24d28214d13c72e061d0a0d290e1677ad847673f61568543a55c618291c0d",
+    "affordable_environment.py": "3fe775733227284e042d348030d7f1a5cb2ada22e9b5cc85f4f24ddca61ecf93",
+    "affordable_state.py": "e0f39135a4dc2c7dca9c2501fedfd42ef9b75ffb25d3995b4db9b98c53701194"
+  }
+}

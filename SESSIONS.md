@@ -25,6 +25,15 @@
 
 ## Ownership map
 
+### Affordable discriminator development — 2026-09-15
+
+**Owner:** GPT-6 / Codex implementation session. Scope: `scripts/affordable_*`,
+`tests/test_affordable_*`, `diagnostics/affordable_challenger_20260915/`, and
+its matching workspace. Baseline/default and other agents’ work remain untouched.
+See [audit and operations](diagnostics/affordable_challenger_20260915/AUDIT.md).
+Pilot jobs 1198934 (six MBIS endpoints) and 1198939 (dependent ESP/APBS checks)
+are queued; eight-endpoint cap including retries, no automatic promotion.
+
 ### DFT discriminator core — `alchemical_bvs/`
 
 **Owner:** DFT-discriminator agent (identity TBD).
@@ -177,3 +186,21 @@ Separate task-scope, presumably a different agent's remit. Not currently in flig
 **Current state:** ...
 **Open questions / next actions:** ...
 ```
+
+### 2026-09-15 — GPT-6 / Codex affordable challenger implementation
+
+Preserved production and frozen records; verified all 27 archived PQQ pairs.
+Implemented separate peptide-amide v3 preparation, tested six real non-PQQ
+sites plus proline/overlap/break cases. Added strict score/provenance, opt-in
+MBIS/APBS transfer and analytic-gradient physical mappings; mechanical scores
+remain disabled. 19 tests: 17 pass, two scientific integrations skipped pending
+jobs. Four environment skeletons reproduce; fixed-core terminal Lys remains
+unsupported. No new endpoint/solver results yet. Slurm estimates first start
+2026-09-17 00:51:50; no priority or existing watcher changes.
+
+Owned terminal-accounting watchers: PIDs 2279878 / 2354739, receipts in the task
+workspace. Solver writes its comparison/report upon completion. First next
+step: inspect jobs 1198934 / 1198939 and actual receipts, then evaluate the frozen
+physical gates. Do not launch extra endpoints or treat unrun checks as passed.
+Details, measured costs, exact hashes and commands:
+`diagnostics/affordable_challenger_20260915/AUDIT.md` and `OPERATIONS.md`.

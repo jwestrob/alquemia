@@ -1,5 +1,5 @@
 {
-  "status": "global_pilot_running",
+  "status": "native_retry_queued_after_MPI_memory_failure",
   "boundary_audit": {
     "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/global_representation_20260915/boundary_audit_v1.json",
     "sha256": "a94e280bb039ba08d6b33a5a8149feb3561c891ed84ca6dec427344c6205003a"
@@ -45,7 +45,7 @@
     "Ca": -9
   },
   "real_artifact_software_tests": {
-    "passed": 6,
+    "passed": 7,
     "failed": 0,
     "skipped": 0
   },
@@ -56,9 +56,26 @@
   "wall_time_limit": null,
   "preparation_wall_seconds": 5.248505963012576,
   "saved_output_audit_wall_seconds": 0.9908086005598307,
-  "job_id": "1198999",
+  "job_id": "1199004",
   "native_parameter_audit": {
     "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/global_representation_20260915/native_parameter_audit.json",
     "sha256": "c0f1adf5ab8b907ce530c3607331920f9dc815e32cd4c54dca4dd0c529cb6f56"
-  }
+  },
+  "first_attempt": {
+    "job_id": "1198999",
+    "status": "cancelled_during_startup_memory_pressure",
+    "top_level_elapsed_seconds": 866,
+    "top_level_allocated_core_seconds": 297904,
+    "batch_peak_RSS_KiB": 8053902056,
+    "converged_endpoints": 0,
+    "node_status": "IDLE+DRAIN Kill task failed; admin cleanup required; no node changes attempted",
+    "residual_process_cost": "not fully captured after Slurm lost containment"
+  },
+  "superseded_pending_retry": {
+    "job_id": "1199003",
+    "status": "cancelled_before_execution_to_correct_memory_policy"
+  },
+  "current_manifest": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/global_representation_20260915/retry_memory_v1/global_manifest.json",
+  "scientific_input_bytes_identical": true,
+  "scheduler_start_estimate_local": "2026-09-16T10:43:47"
 }

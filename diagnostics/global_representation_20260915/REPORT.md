@@ -1,4 +1,4 @@
-# Whole-system representation: investigation and active pilot
+# Whole-system representation: investigation and queued technical retry
 
 ## Finding
 
@@ -21,7 +21,7 @@ The refined-grid partition jump remains about 10.03 kcal/mol. Simply refining th
 
 ## Concrete alternative
 
-ORCA 6.1 documents native GFN2-xTB and native ALPB. This avoids needing an external otool_xtb installation. Jacob approved the concrete pilot by asking to continue. Job 1198999 is running both native endpoints. The installed ORCA binary is pinned in the manifest; actual parameter export supports both metals and gives 23,259 orbitals and 25,764 active electrons for each endpoint. Convergence and energies are still unavailable. [ORCA native xTB manual](https://www.faccts.de/docs/orca/6.1/manual/contents/modelchemistries/semiempirical.html#native-gfn-xtb-and-gfn2-xtb)
+ORCA 6.1 documents native GFN2-xTB and native ALPB. This avoids needing an external otool_xtb installation. Jacob approved the concrete pilot by asking to continue. Job 1198999 was cancelled during startup as its per-rank memory footprint approached node capacity; no energies were produced. Slurm failed to clear all processes and drained the node. The same pair is now queued as job 1199004 with memory-aware MPI sizing. The installed ORCA binary is pinned in the manifest; actual parameter export supports both metals and gives 23,259 orbitals and 25,764 active electrons for each endpoint. Convergence and energies are still unavailable. [ORCA native xTB manual](https://www.faccts.de/docs/orca/6.1/manual/contents/modelchemistries/semiempirical.html#native-gfn-xtb-and-gfn2-xtb)
 
 The proposed first model treats every physical atom with the same Hamiltonian. It has no capped QM region, no core/MM charge transfer and no isolated-core solvation subtraction:
 
@@ -45,10 +45,14 @@ New preparation protocol: `whole_chain_native_gfn2_alpb_water_vertical_proposed_
 - FF19SB is used only to audit original topology/protonation and integer charge. Its partial charges are not inputs to the global electronic model.
 - Coordinates, source mappings, settings, implementation/dependency hashes, executable hash and existing-runner policy are recorded. Native method parameters will be exported if run.
 
-Six real-artifact preparation/algebra/parser tests pass. These include reconstruction of saved direct terms, paired coordinates/charges, restored Asp303 CA-CB and peptide connectivity, PQQ completeness, rejection of an explicitly corrupted real pair and acceptance by the existing ORCA runner. Native parameter export and MPI startup are now observed; no converged xTB energy or successful scientific result is claimed.
+Seven real-artifact preparation/algebra/parser/hardware-layout tests pass. These include reconstruction of saved direct terms, paired coordinates/charges, restored Asp303 CA-CB and peptide connectivity, PQQ completeness, rejection of an explicitly corrupted real pair and acceptance by the existing ORCA runner. Native parameter export and MPI startup are now observed; no converged xTB energy or successful scientific result is claimed.
 
 ## Decision
 
-The global feasibility pilot is approved and running. Baseline remains unchanged. Numerical credibility, predictive usefulness and affordability of this new global route are all unestablished; runtime at this size must be measured. Whole-protein diagonalization may be the practical bottleneck. No compute or wall-time budget is imposed.
+The global feasibility pilot is approved; a memory-aware technical retry is queued. Baseline remains unchanged. Numerical credibility, predictive usefulness and affordability of this new global route are all unestablished; runtime at this size must be measured. Whole-protein diagonalization may be the practical bottleneck. No compute or wall-time budget is imposed.
 
 See OPERATIONS.md for exact preparation, test and execution commands. RESULT.json retains artifact hashes and preparation timings. Initial development-only preparation files without runner task IDs are superseded by `prepared_v1/`; no scientific outputs were overwritten.
+
+## Execution failure and recovery
+
+See TECHNICAL_RETRY.md. The initial MPI choice was an execution error: active workers did not establish useful scaling, and native startup replicated large per-rank arrays. Peak batch RSS was 8,053,902,056 KiB. The top-level allocation reports 866 seconds and 297,904 allocated core-seconds; orphan/cleanup activity after cancellation is not fully captured by that figure. No global energies or charge distribution were obtained. This has not tested the scientific discrimination of GFN2-xTB. Current job: 1199004, using retry_memory_v1. It sizes MPI from physical RAM, with a 16-rank-per-endpoint maximum and a 64-GiB-per-rank planning allowance based on measured startup memory. Native parameter export confirms the intended elements/valence accounting; full numerical feasibility and affordability remain unresolved.

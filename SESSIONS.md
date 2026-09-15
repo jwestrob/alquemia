@@ -256,3 +256,22 @@ terminal_1198999.json. Prepared_v1/global_manifest.json is the runner manifest;
 implementation snapshot is in that workspace. affordable_global_collect.py
 collects energy/population/receipt results; no new reference or threshold.
 Do not launch additional biological controls or change the Hamiltonian silently.
+
+### 2026-09-15 — GPT-6 / Codex native MPI memory recovery
+
+Initial whole-chain job1198999 was cancelled during startup after batch RSS
+approached physical node RAM (peak8,053,902,056 KiB; observed rank max32,055,664
+KiB). The 172-rank-per-endpoint choice was too aggressive. No energy/SCF result.
+Top-level allocation866s/297,904core-s; later cleanup/orphan activity incompletely
+accounted. Slurm could not clear all processes and drained node-344-8t-1 with
+Kill task failed. No node restart/undrain or other user job was attempted.
+Retain initial scratch while residual processes may still reference it.
+
+Fixed64-rank retry1199003 was cancelled pending (zero execution) because it
+would be unsafe on smaller nodes. Current approved technical retry1199004 uses
+the SAME scientific input/XYZ bytes in retry_memory_v1, with MPI sized from
+node RAM:64GiB per rank,75% RAM for planning,≤16ranks per endpoint. No cost/time
+budgets. Seven software tests pass. Current scheduler estimate2026-09-16
+10:43:47 local, not a guarantee. Terminal watcherPID774440; auto-collector
+PID774441 will write collection_1199004.json. No new analyses are scheduled.
+Current record:diagnostics/global_representation_20260915/MEMORY_EXECUTION_PLAN.json.

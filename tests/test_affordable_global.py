@@ -9,6 +9,7 @@ sys.path.insert(0, str(ROOT/'scripts'))
 from affordable_common import InvalidArtifact, read_json, verify, xyz
 from affordable_global import load_primary, direct_decomposition
 from affordable_global_collect import mulliken
+from affordable_global_execute import layout
 from run_orca_task_manifest import load_manifest_tasks, _verify_prepared_task
 
 RESULT = ROOT/'workspaces/affordable_challenger_20260915/solver_completion/solver_result.json'
@@ -75,6 +76,14 @@ class GlobalPreparation(unittest.TestCase):
             population = mulliken(task['output_path'], verify(task['xyz']), task['charge'])
             self.assertAlmostEqual(population['printed_sum_e'], task['charge'], places=6)
             self.assertEqual(len(population['charge_e']), len(xyz(verify(task['xyz']))))
+
+    def test_layout_fits_observed_cluster_hardware(self):
+        # Real sinfo hardware capacities; no chemical calculations are mocked.
+        for cpus, memory_MiB, expected in [(64,773914,4),(112,1546754,8),(344,8256990,16)]:
+            plan = layout(cpus, memory_MiB*1024**2)
+            self.assertEqual(plan['nprocs_per_endpoint'], expected)
+            self.assertLessEqual(2*expected*64*1024**3, memory_MiB*1024**2*.75)
+            self.assertLessEqual(2*expected, cpus)
 
 
 if __name__ == '__main__':

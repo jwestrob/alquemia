@@ -28,3 +28,13 @@ Collect completed/failed endpoint receipts without hiding partial failures:
 ```
 
 Owned terminal watcher PID 450588 writes `workspaces/global_representation_20260915/terminal_1198999.json`. It monitors only this job and launches no new analyses.
+
+## Current retry (supersedes launch instructions above)
+
+Job 1199004 is queued from `run_global_memory.sbatch`. Inputs: `workspaces/global_representation_20260915/retry_memory_v1/global_manifest.json`. MPI is calculated by `affordable_global_execute.py` from node RAM; it is no longer set from CPU count alone. The script snapshot is preserved in the workspace implementation directory. Watcher PID 774440; automatic collector PID 774441.
+
+```bash
+/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python scripts/affordable_global_collect.py --manifest workspaces/global_representation_20260915/retry_memory_v1/global_manifest.json --output workspaces/global_representation_20260915/manual_collection_1199004.json
+```
+
+The automatic path writes `collection_1199004.json` after the terminal receipt appears. No extra endpoints or model variants are launched by the watcher/collector. Original partial native scratch remains retained because residual processes may still reference it; do not delete it while node cleanup is unresolved.

@@ -5,6 +5,17 @@ Date: 2026-09-14
 Machine-readable selectors and source hashes are frozen in `core_map.tsv`.
 This audit prepared no QM inputs and launched no calculations.
 
+## Pre-energy selector correction
+
+Fail-closed metadata validation on 2026-09-14 exposed an atom-name typo in the
+initial map: all 25 `metal_selector_source` values ended in `:LA`, whereas the
+actual source atom name is `LA1`. Every source was independently reread before
+preparation; each contains exactly one La atom at `B:LIG_B1:LA1`, and all 25
+source SHA-256 values still match the frozen hashes. `core_map.tsv` was
+corrected to `B:LIG_B1:LA1` in all rows before any v3 QM input was prepared or
+energy calculated. No residue mapping, coordinate, source file, or chemistry
+was changed.
+
 ## Result
 
 All 25 frozen calibration-panel structures have an unambiguous common mapping for:

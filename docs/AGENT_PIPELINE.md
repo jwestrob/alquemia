@@ -14,7 +14,8 @@ has not been established.
 | Canonical PQQ benchmark | `pqq_vertical_swap_r2scan3c_native_cpcm_fixed_core_v3`; `diagnostics/pqq_pmdh_fixed_core_calibration_20260914/fixed_core_carver.py` | Exact homologous core, mapped catalytic partners, frozen PQQ state and no waters. Only compatible preparations inherit its released bands. It is not the inbox default. |
 | Repaired generic benchmark | `generic_peptide_amide_vertical_native_r2scan3c_v3`; `scripts/affordable_peptide.py` | Explicit opt-in source-graph peptide-amide repair. Preserves source heavy coordinates and actual bonded amide N; merges overlaps. No calibrated absolute bands. |
 | Global electrostatic research | `vacuum_r2scan3c_mbis_global_tabi_electrostatic_v1`; `scripts/global_electrostatic.py` | Completed physical pilot failed partition, mesh-refinement and rotation gates. Vacuum QM + direct protein Coulomb + whole-protein reaction field. No compatible aquo reference or calibrated decision; no default change. |
-| Density/field diagnostic | `native_r2scan3c_permanent_field_density_diagnostic_v1`; `scripts/density_embedding.py` | Separate follow-on under Jacob's autonomous-research authorization. Saved-density coupling and four permanent-field endpoints; no solvent score or calibrated class. [Scope/status](../diagnostics/density_embedding_20260916/REPORT.md). |
+| Density/field diagnostic | `native_r2scan3c_permanent_field_density_diagnostic_v1`; `scripts/density_embedding.py` | Complete: exact-density coupling reduces the partition discrepancy by 8.06 kcal/mol; core response changes it by another −0.97, leaving 9.67 without solvent. Uniform native CHELPG improves potential/coupling agreement on all four consumed states. No solvent score or calibrated class. [Results](../diagnostics/density_embedding_20260916/REPORT.md). |
+| Native interaction diagnostic | `native_r2scan3c_asp303_interaction_eda_v1`; `scripts/interaction_decomposition.py` | Native ghost-basis references already fail the frozen equivalence check. Retry 1199986 was running at checkpoint, with unstable Asp fragment SCFs; no complete decomposition claimed. An automatic collector writes its terminal result. [Status and completion location](../diagnostics/density_embedding_20260916/INTERACTION_STATUS.md). |
 | Gradient/response research | `scripts/affordable_response.py`, `scripts/ggr_sensitivity.py` | Analytic-gradient checks completed in the GGR study. Curvature/relaxation/entropy remain `response_model_not_validated`; unavailable numerical corrections stay null. |
 
 “Baseline” can refer to the electronic method or to a specific preparation.
@@ -25,7 +26,8 @@ deliberately uses vacuum endpoints under its separate protocol.
 
 The historical point-charge embedding, CPCM/PB transfer challenger, and
 whole-protein GFN2 attempt did not become production methods. Their archived
-failures do not decide the outcome of the current global electrostatic pilot.
+failures do not disprove global environmental models as a class. The completed
+global v1 pilot also failed its own physical gates.
 
 ## 2. Interpret scores on the correct scale
 
@@ -67,7 +69,7 @@ the common offset. The global challenger has neither an S nor an absolute class.
 | Baseline/repair benchmark | All 26 endpoints complete. Fixed-core 1KB0 passes the Ca band. Original GGR passes its frozen direction test; repaired GGR changes sign without demonstrating improved prediction. [Results](../diagnostics/baseline_benchmark_20260915/RESULTS.md). |
 | Hans-LanM / alpha-lactalbumin additions | All ten endpoints complete. Hans ranks above GGR; both alpha source geometries rank below GGR, conflicting with condition-qualified La-favoring evidence. [Results](../diagnostics/benchmark_set_20260915/SCORING_RESULTS_1199508.md). |
 | GGR mechanism study | All 38 endpoints and 12 directional gradient checks complete. Representation and source geometry materially change scores; no validated mechanical correction. [Report](../diagnostics/ggr_mechanism_plan_20260915/REPORT.md). |
-| Global electrostatic pilot | Four vacuum endpoints and four ESP checks complete. Primary partition shift is 18.08 kcal/mol against a 2 kcal/mol limit: failed. All 25 solver checks complete; surface/rotation tests also fail. The ten-endpoint accuracy stage did not run. A separate density/field diagnostic is underway under later user authorization. [Live experiment report](../diagnostics/global_electrostatic_20260916/REPORT.md). |
+| Global electrostatic pilot | Four vacuum endpoints and four ESP checks complete. Primary partition shift is 18.08 kcal/mol against a 2 kcal/mol limit: failed. All 25 solver checks complete; surface/rotation tests also fail. The ten-endpoint accuracy stage did not run. The separate density/field diagnostic is complete; see its row above. [Final experiment report](../diagnostics/global_electrostatic_20260916/REPORT.md). |
 
 These results are already consumed for development. Multiple chains, structures,
 homologs, mutants and sites are not automatically independent observations.

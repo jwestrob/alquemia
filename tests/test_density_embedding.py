@@ -6,8 +6,8 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from affordable_common import InvalidArtifact, read_json, verify
-from density_embedding import parse_potential, parse_chelpg
+from affordable_common import HA_TO_KCAL, InvalidArtifact, energy, read_json, verify
+from density_embedding import parse_potential, parse_chelpg, collect_embedded
 
 
 class RealDensityInputs(unittest.TestCase):
@@ -82,6 +82,28 @@ class RealDensityInputs(unittest.TestCase):
         self.assertIn('0.300000',text)
         with self.assertRaises(InvalidArtifact):
             parse_chelpg(text.replace('0.300000','0.600000'),[a['element'] for a in state['core_atoms']],state['core_total_charge_e'])
+
+    def test_completed_field_components_close_without_double_counting(self):
+        work = ROOT / 'workspaces/density_embedding_20260916'
+        saved = work / 'embedded_result_v1.json'
+        if not saved.exists(): self.skipTest('completed real field endpoints unavailable')
+        frozen = read_json(saved)
+        result = collect_embedded(verify(frozen['manifest']), verify(frozen['potentials']))
+        self.assertEqual(result['status'], 'complete')
+        self.assertIsNone(result['global_score'])
+        for row in result['rows']:
+            self.assertEqual(row['energy_hartree'], energy(verify(row['output'])))
+            self.assertAlmostEqual(
+                (row['energy_hartree'] - row['vacuum_energy_hartree']) * HA_TO_KCAL,
+                row['direct_density_kcal_mol'] + row['response_energy_kcal_mol'], places=9)
+            self.assertEqual(row['variational_diagnostic'], 'consistent')
+        for key in ('1h4i_qm33', '1h4i_qm36'):
+            p = result['paired'][key]
+            self.assertAlmostEqual(p['R_embedded_kcal_mol'], p['R_vacuum_kcal_mol'] +
+                                   p['direct_density_kcal_mol'] + p['response_energy_kcal_mol'], places=8)
+        d = result['partition_differences']
+        self.assertAlmostEqual(d['R_embedded_kcal_mol'], 9.673398467944935, places=8)
+        self.assertEqual(d, frozen['partition_differences'])
 
 
 if __name__ == '__main__': unittest.main()

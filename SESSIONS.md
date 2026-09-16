@@ -398,3 +398,36 @@ intact. Vault note and current agent guide updated. Continue collecting and
 interpreting the contained experiment; no production rescore or automatic
 promotion. Other agents' edits, including all existing unstaged session lines,
 are preserved.
+
+
+## 2026-09-16 — Density diagnostic complete; native EDA reference mismatch
+
+Continued the declared density/charge/interaction experiments in
+ diagnostics/density_embedding_20260916/. Four permanent-field endpoints
+1199980 completed: vacuum partition contrast 61.738603357, exact-density
+coupling −51.091194742 and electronic response −0.974010147 leave 9.673398468
+kcal/mol without solvent. CHELPG1199984 improves potential/coupling agreement
+on all four consumed states at 58.59–73.33s per utility; no predictive-accuracy
+or production-speedup claim. Completed phase allocation 80,988 CPU-s, zero GPU,
+including failed utility attempts. Baseline/default and prior gates unchanged.
+
+Native two-task Asp303 EDA 1199985 failed before SCF for input block ordering.
+Exact-science retry 1199986 runs two 16-rank workers on 32 CPUs. Native generated
+ghost basis references differ from archived core energies by −0.250408/−0.316793
+kcal/mol (La/Ca), failing frozen 0.01 equivalence. Adduct/core SCFs converged;
+Asp303 SCFs remain unstable and native AutoTRAH is active. No completed EDA
+components, new score or unique causal diagnosis claimed. No new thresholds,
+functional, basis substitution or stopping CPU/time budget.
+
+Added reproducible preparation/order recovery, strict real-output collection,
+partial-failure inventories and reporting. 13 real-artifact tests pass, 0 skips;
+full successful-EDA component parsing remains unvalidated. Read-only completion
+process PID 515894 watches only 1199986 through the existing affordable_watch.py,
+then records actual results/cost and appends the vault note. Frozen collector
+preflight passed on the actual failed attempt. Final outputs will appear in
+ workspaces/density_embedding_20260916/eda_completion_v1/; check completion.json
+rather than assuming this checkpoint means the job still runs.
+
+Current guide, runbook, reports and vault note updated. All 109 preexisting
+unstaged session lines and other agents' work are preserved. No push,
+production rescore, shared watcher change or default promotion.

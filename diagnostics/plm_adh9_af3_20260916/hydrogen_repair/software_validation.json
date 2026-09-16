@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "tests_run": 9,
+  "failures": 0,
+  "errors": 0,
+  "recorded_utc": "2026-09-16T20:31:00.429168+00:00",
+  "command": "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 /groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python diagnostics/plm_adh9_af3_20260916/hydrogen_repair/test_repair.py",
+  "test_script": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/plm_adh9_af3_20260916/hydrogen_repair/test_repair.py",
+    "sha256": "613e92baf1309113163c3f33d164a332f5408f6693b8f747540688951f03638b"
+  },
+  "validator": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/plm_adh9_af3_20260916/hydrogen_repair/validate_geometry.py",
+    "sha256": "cf4c025080dc6ef79445d3ad511f096f51eed3930d870eee772bd809459cdc1b"
+  },
+  "tests": [
+    "actual repaired core passes",
+    "original overlapping core rejected",
+    "heavy atom movement rejected",
+    "PQQ hydrogen movement rejected",
+    "link cap movement rejected",
+    "atom identity change rejected",
+    "fragment charge change rejected",
+    "unconverged minimizer rejected",
+    "nonfinite coordinates rejected"
+  ]
+}

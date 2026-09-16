@@ -210,6 +210,88 @@ def execute_embedded(manifest):
     return result
 
 
+def execute_chargefit(manifest):
+    if not os.environ.get('SLURM_JOB_ID'):
+        raise InvalidArtifact('charge fitting requires an allocation')
+    m = read_json(manifest); verify(m['plan']); utility = verify(m['utility'])
+    def one(task):
+        for item in task['files'].values(): verify(item)
+        d = Path(task['directory'])
+        receipt = run_command([str(utility),str(verify(task['files']['gbw']))],d,d/'utility.log',d/'resources.txt')
+        for item in task['files'].values(): verify(item)
+        receipt.update(task=task,utility=m['utility'],manifest=record(manifest),implementation=record(__file__))
+        write_new(d/'execution.json',receipt)
+        return {'task_id':task['task_id'],'returncode':receipt['returncode'],'execution_receipt':record(d/'execution.json')}
+    with Path(manifest).with_suffix('.lock').open('a') as lock:
+        fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+        with ThreadPoolExecutor(max_workers=min(int(os.environ['SLURM_CPUS_ON_NODE']),len(m['tasks']))) as pool:
+            rows=list(pool.map(one,m['tasks']))
+    return {'status':'utilities_completed' if all(r['returncode']==0 for r in rows) else 'failed_utilities',
+            'manifest':record(manifest),'rows':rows}
+
+
+def parse_chelpg(text, elements, charge):
+    controls = [(r'Grid spacing\s+\.{3}\s+([\d.]+)',.3),
+                (r'Point Cut-Off\s+\.{3}\s+([\d.]+)',2.8)]
+    for pattern, expected in controls:
+        match = re.search(pattern,text)
+        if not match or float(match[1]) != expected:
+            raise InvalidArtifact('CHELPG native sampling control differs')
+    if not re.search(r'Van-der-Waals Radii\s+\.{3}\s+COSMO',text) or not re.search(r'Dipole moment constraint\s+\.{3}\s+FALSE',text):
+        raise InvalidArtifact('CHELPG radii/dipole convention differs')
+    if 'CHELPG charges calculated...' not in text or text.count('CHELPG Charges')!=1:
+        raise InvalidArtifact('CHELPG charge calculation incomplete')
+    matches = re.findall(r'^\s*(\d+)\s+(\w+)\s+:\s+([-+\d.eE]+)\s*$',text,re.M)
+    if [(int(i),e) for i,e,q in matches] != list(enumerate(elements)):
+        raise InvalidArtifact('CHELPG atom order/count differs')
+    charges = np.array([float(q) for i,e,q in matches])
+    total = re.search(r'Total charge:\s+([-+\d.eE]+)',text)
+    if not np.isfinite(charges).all() or abs(float(np.sum(charges))-charge)>5e-5 or not total or abs(float(total[1])-charge)>1e-6:
+        raise InvalidArtifact('CHELPG formal/ECP charge mismatch')
+    return charges
+
+
+def collect_chargefit(manifest):
+    m = read_json(manifest); exact = read_json(verify(m['potential_result']))
+    ref = {r['task_id']:r for r in exact['rows']}; rows=[]
+    for task in m['tasks']:
+        row={'task_id':task['task_id'],'status':'unavailable'}
+        try:
+            receipt_path=Path(task['directory'])/'execution.json';receipt=read_json(receipt_path)
+            if receipt['task']!=task or receipt['returncode']!=0 or receipt['manifest']!=record(manifest):
+                raise InvalidArtifact('invalid charge-fit execution receipt')
+            for item in task['files'].values():verify(item)
+            state=read_json(verify(task['source_potential_task']['state']))
+            atoms=state['core_atoms'];coords=np.array([a['xyz_A'] for a in atoms])/BOHR_TO_A
+            charges=parse_chelpg(verify(receipt['log']).read_text(),[a['element'] for a in atoms],state['core_total_charge_e'])
+            quality=read_json(verify(task['source_potential_task']['source_quality']))
+            actual=read_json(verify(ref[task['task_id']]['execution_receipt']))
+            probes={'exterior':(quality['points'],quality['actual_quantum_potential']),
+                    'environment':(actual['task']['points'],actual['potential'])}
+            checks={}
+            for name,(points_record,potential_record) in probes.items():
+                points=np.loadtxt(verify(points_record),skiprows=1)
+                phi=parse_potential(verify(potential_record),points)
+                approximation=np.sum(charges[None,:]/np.linalg.norm(points[:,None,:]-coords[None,:,:],axis=2),axis=1)
+                rms=float(np.sqrt(np.mean((phi-approximation)**2)));norm=float(np.sqrt(np.mean(phi**2)))
+                checks[name]={'RMS_error_au':rms,'relative_RMS':rms/norm if norm else None,'point_count':len(points)}
+                if name=='exterior':checks[name]['historical_exterior_rule_passed']=bool(rms<=.005 or norm>0 and rms/norm<=.10)
+                else:
+                    direct=float(np.dot(np.array([a['charge_e'] for a in state['environment_atoms']]),approximation)*HA_TO_KCAL)
+            row.update(status='computed',charge_e=charges.tolist(),charge_sum_e=float(np.sum(charges)),
+                       checks=checks,direct_fit_kcal_mol=direct,
+                       fit_minus_density_kcal_mol=direct-ref[task['task_id']]['direct_density_kcal_mol'],
+                       mbis_minus_density_kcal_mol=-ref[task['task_id']]['density_minus_mbis_kcal_mol'],
+                       mbis_exterior_RMS_au=quality['RMS_potential_error_au'],
+                       mbis_exterior_relative_RMS=quality['relative_RMS'],
+                       utility_wall_seconds=receipt['wall_seconds'],execution_receipt=record(receipt_path))
+        except (ValueError,OSError,KeyError) as exc:row['reason']=str(exc)
+        rows.append(row)
+    return {'protocol_id':m['protocol_id'],'manifest':record(manifest),'rows':rows,
+            'status':'complete' if all(r['status']=='computed' for r in rows) else 'incomplete',
+            'claim':'Uniform charge-extraction diagnostic; no scheme selected per protein and no affinity score.'}
+
+
 def collect_embedded(manifest, potentials):
     from run_orca_task_manifest import load_manifest_tasks, _completed_attempt_is_valid
     m, normalized = load_manifest_tasks(Path(manifest)); pc = read_json(potentials)
@@ -279,7 +361,7 @@ def main():
     p = sub.add_parser('prepare')
     for name in ('states-manifest', 'endpoint-manifest', 'agreement', 'output'):
         p.add_argument('--'+name, type=Path, required=True)
-    for name in ('execute-potentials', 'collect-potentials', 'execute-embedded', 'dry-run'):
+    for name in ('execute-potentials', 'collect-potentials', 'execute-embedded', 'execute-chargefit', 'collect-chargefit', 'dry-run'):
         p = sub.add_parser(name); p.add_argument('--manifest', type=Path, required=True); p.add_argument('--output', type=Path, required=True)
     p = sub.add_parser('prepare-potential-retry');p.add_argument('--manifest',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
     p = sub.add_parser('collect-embedded')
@@ -294,7 +376,8 @@ def main():
         result = collect_embedded(args.manifest,args.potentials); write_new(args.output,result)
     else:
         fn = {'execute-potentials': execute_potentials, 'collect-potentials': collect_potentials,
-              'execute-embedded': execute_embedded, 'dry-run': dry_run}[args.operation]
+              'execute-embedded': execute_embedded, 'execute-chargefit':execute_chargefit,
+              'collect-chargefit':collect_chargefit,'dry-run': dry_run}[args.operation]
         result = fn(args.manifest); write_new(args.output, result)
     print(result.get('status', 'recorded') if isinstance(result, dict) else 'recorded')
 

@@ -7,7 +7,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from affordable_common import InvalidArtifact, read_json, verify
-from density_embedding import parse_potential
+from density_embedding import parse_potential, parse_chelpg
 
 
 class RealDensityInputs(unittest.TestCase):
@@ -61,6 +61,27 @@ class RealDensityInputs(unittest.TestCase):
                                    row['direct_density_kcal_mol'],places=9)
             self.assertAlmostEqual(sum(v['mbis_kcal_mol'] for v in row['per_residue'].values()),
                                    row['direct_mbis_atomic_units_kcal_mol'],places=9)
+
+    def test_real_chelpg_charge_order_closure_and_native_controls(self):
+        p=ROOT/'workspaces/density_embedding_20260916/chelpg_v1/manifest.json'
+        if not p.exists():self.skipTest('real CHELPG task manifest unavailable')
+        for task in read_json(p)['tasks']:
+            receipt_path=Path(task['directory'])/'execution.json'
+            if not receipt_path.exists():self.skipTest('actual CHELPG calculation unavailable')
+            receipt=read_json(receipt_path);state=read_json(verify(task['source_potential_task']['state']))
+            self.assertEqual(receipt['returncode'],0)
+            charge=parse_chelpg(verify(receipt['log']).read_text(),[a['element'] for a in state['core_atoms']],state['core_total_charge_e'])
+            self.assertLess(abs(sum(charge)-state['core_total_charge_e']),5e-5)
+
+    def test_corrupted_real_chelpg_settings_are_rejected(self):
+        p=ROOT/'workspaces/density_embedding_20260916/chelpg_v1/1h4i_qm33_La/execution.json'
+        if not p.exists():self.skipTest('real CHELPG output unavailable')
+        receipt=read_json(p);task=receipt['task'];state=read_json(verify(task['source_potential_task']['state']))
+        text=verify(receipt['log']).read_text()
+        # Corrupt the echoed setting of the real output, not a generated energy.
+        self.assertIn('0.300000',text)
+        with self.assertRaises(InvalidArtifact):
+            parse_chelpg(text.replace('0.300000','0.600000'),[a['element'] for a in state['core_atoms']],state['core_total_charge_e'])
 
 
 if __name__ == '__main__': unittest.main()

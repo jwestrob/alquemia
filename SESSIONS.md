@@ -568,3 +568,32 @@ the requested host share (81.017GiB peak RSS) and failed on GPU memory. Cancel
 was requested after live RSS observation, but it had already failed/watcher
 exited; correction receipt retained. RAM request is not claimed as an enforced
 process-RSS cap. See MEMORY_STATUS.md and BLOCKED_KERNEL.md for current commands.
+
+
+## 2026-09-16 — MACE whole-protein memory work completed on A5000
+
+Job 1200381 completed all 12 approved medium-model calls. The 9,141-atom
+La/Ca primary evaluations took 58.137043/58.324431 seconds; pair subprocess
+wall time 130.417239 seconds. All full calls used 9.546360 GiB peak CUDA
+allocation, at most 1.645744 GiB worker host RSS, native mode without offload.
+The exact blocked execution preserves original-core energies/forces/densities
+within ~1e-11; all 17 tests pass. No scientific input/model/default change.
+
+Repeat/translation/charge checks pass. Rotation fails: endpoint shifts
+-1.867694/-1.811157 kcal/mol, contrast +0.056536496 versus 0.01 tolerance,
+force maximum 0.059996344 eV/Angstrom versus 0.001. Hybrid partition shift
+-4.998674456 kcal/mol still fails 2 target. Finite displaced-dipole representation
+is a possible rotation-error source, not yet established. No accuracy claim,
+calibrated S or class. Large checkpoint has not run. No additional experiments
+were introduced after seeing these failures.
+
+Memory campaign including all failed attempts: 898 GPU-allocation seconds,
+14,368 allocated core-seconds, 1,000.692 reported actual CPU seconds. Successful
+12-call allocation: 564 seconds, 9,024 allocated core-seconds. CPU tests/preparation
+not fully profiled; prior interface/core campaign cost recorded separately.
+No memory-work job or H200 continuation remains active. Code commit 801111a;
+final report diagnostics/mace_hybrid_20260916/MEMORY_RESULTS.md, updated runbook,
+agent guide and vault note. Collection blocked_v6/collection_job_1200381.json
+SHA025b5ae120368354f0368e656646ccbc2386e33f398b724b6ddfd3dc3f5276bb.
+Keep the memory implementation; retain baseline predictions pending scientific
+validation. Next proposed work is rotation attribution / large core compatibility.

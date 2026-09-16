@@ -1,113 +1,98 @@
-# MACE stage A: execution checkpoint
+# MACE stage A: completed memory and capability pilot
 
-Approved stage A: four cores **completed** on A5000 in job1200308; eight
-remaining full-system calls **queued as1200309** on H200. See
-[core results](CORE_RESULTS.md):0.8–1.9s evaluation per core,1.1–1.2GiB GPU;
-hybrid partition shift−4.998674456kcal/mol misses the frozen2kcal/mol target.
-No calibrated MACE class or full-protein feasibility result yet.
+**Updated 2026-09-16.** All 12 approved medium-model calls completed on A5000
+in job 1200381. Full 9,141-atom evaluations take about 58 seconds each and
+9.55 GiB GPU allocation, with at most 1.65 GiB worker host RSS. Four original-core
+comparisons and all 17 tests pass. Repeats, translations and charge closure pass;
+rotation and the approximately -5 kcal/mol hybrid partition shift fail frozen
+physical tolerances. See [final results](MEMORY_RESULTS.md).
 
-Two startup failures were resolved by the [versioned interface adapter](REALSPACE_INTERFACE_REPAIR.md).
-Original software, checkpoint and scientific inputs are retained. Current campaign
-is `pilot_v3`, with exact original input bytes and fresh implementation/cache hashes.
-The previously queued1200207 was cancelled without allocation to replace the broken
-implementation. Current task-owned continuationPID3463060 monitors1200309.
+The baseline/default is unchanged. No calibrated MACE class, solution-phase
+reference or predictive improvement is established. Large-checkpoint execution
+has not run. There is no active memory-work job or H200 continuation.
 
-Jacob explicitly accepted200000MiB (~195GiB) for the initial H200 allocation:
-[resource amendment](RESOURCE_ACCEPTANCE.md). The [scheduler audit](SCHEDULER_MEMORY_AUDIT.md)
-records the unresolved rewrite mechanism and `CR_CPU` host-memory limitations.
-Twelve real-artifact/interface tests now pass; four actual GPU model calls completed.
+## Current campaign and pins
 
-## Current memory-work continuation
+- Campaign: `workspaces/mace_hybrid_20260916/blocked_v6`.
+- Manifest SHA256: `8d5fc630c11b50457cd30927f9bcb827f99bd1c67191b307ccb01bc0712c7189`.
+- Medium checkpoint SHA256: `fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a`.
+- Isolated Python 3.11.15, torch 2.8.0, mace-torch 0.3.16, graph-longrange 0.4.4,
+  e3nn 0.4.4; dependency lock and backend source inventory in `software_v1`.
+- GPU allocation: one RTX A5000, 16 CPUs, 64,474 MiB requested host RAM,
+  partition `gpu`, node `node-128-512g-8gpu-1`. Execution mode `native`.
+- Scientific protocol: `mace_polar_1m_vacuum_r2scan3c_subtractive_pilot_v1`.
+- Implementation: isolated interface adapter plus pair/edge/node memory blocking;
+  [design](BLOCKED_KERNEL.md), [agreement](MEMORY_AGREEMENT.md).
 
-The earlier H200 job1200309 was replaced during Jacob's approved memory work.
-Current A5000 job1200381 uses `blocked_v6`, with original pair physics and
-checkpointed neighbor/per-atom neural calculations. Follow
-[MEMORY_STATUS.md](MEMORY_STATUS.md) for current commands, gates and receipts.
-The original `pilot_v3` commands below reproduce the earlier core checkpoint;
-they do not inspect the newer execution campaign.
+Both full endpoints contain 9,141 atoms, PQQ 3-, no waters, singlet multiplicity,
+La total charge -8 and Ca -9. They use a common source geometry. The archived
+cores retain their exact source coordinates; caps do not enter the full protein.
+The source audit found only <=7.11e-15 Angstrom floating-point differences on
+five Asp303 coordinates between the original archived states. No geometry search
+or protonation change was introduced. Four archived vacuum DFT endpoints are
+reused; new DFT endpoints: zero.
 
-## Resources and pins
-
-- Current allocation request: one H200,28 CPUs,**200000 MiB** host RAM (195.3125 GiB).
-  Earlier proposed allocation: one H200, 28 CPUs, 257962 MiB (~251.916 GiB).
-  Requested fraction: 2063701/8 MiB, rounded down by the scheduler's integral-MiB
-  representation (0.625 MiB). This is one eighth to scheduler precision.
-- Initial submission1200196 unexpectedly recorded 200000 MiB and seven days.
-  Its pending memory edits did not persist. It was cancelled before allocation,
-  with zero inference, and replaced by1200197 using explicit command-line resource
-  arguments. The replacement initially recorded257962 MiB, then reverted too.
-  The current guard accepts the200000 MiB explicitly approved by Jacob.
-  `standard` QOS has a seven-day maximum: an unlimited-time request was pending
-  for `QOSMaxWallDurationPerJobLimit`, so its external seven-day limit was restored.
-  There is no project CPU/time stopping budget. No other jobs or priorities changed.
-- Isolated Python3.11.15 environment, torch2.8.0, mace-torch0.3.16,
-  graph-longrange0.4.4, e3nn0.4.4; complete dependency lock in the workspace.
-- Backend source commit `6a86de5e3ed35fd86a55fc046aa085fe48a72764`.
-- Official medium checkpoint SHA256
-  `fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a`.
-- Manifest SHA256
-  `eff0b6bbe28d045d7e4fcf904dfd302d72fda67d50148d45c0cf3b7ba8414dee`.
-
-Source-map audit: the archived full-system states differ only by binary floating
-point roundoff <=7.11e-15 A on five Asp303 coordinates. Full MACE uses one common
-copy; the frozen cores preserve their existing coordinates. No physical geometry
-change. Core caps never enter the physical protein. All full pairs have 9141
-atoms, La charge -8, Ca -9, closed-shell singlets. Installed source explicitly
-interprets the `spin=1` input as multiplicity (`total_spin - 1`).
-
-## Read-only status and collection
+## Read-only verification and collection
 
 ```bash
 cd /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs
 MACE_WORK="$PWD/workspaces/mace_hybrid_20260916"
 MACE_PY="$MACE_WORK/software_v1/venv/bin/python"
-MACE_MANIFEST="$MACE_WORK/pilot_v3/manifest.json"
-squeue -j 1200309
-"$MACE_PY" scripts/mace_hybrid.py dry-run --manifest "$MACE_MANIFEST"
-"$MACE_PY" scripts/mace_hybrid.py collect --manifest "$MACE_MANIFEST"
-"$MACE_PY" -m unittest discover -s tests -p test_mace_hybrid.py -v
+MACE_MANIFEST="$MACE_WORK/blocked_v6/manifest.json"
+MACE_RUNNER="$MACE_WORK/blocked_v6/implementation/mace_hybrid.py"
+"$MACE_PY" "$MACE_RUNNER" dry-run --manifest "$MACE_MANIFEST"
+"$MACE_PY" "$MACE_RUNNER" compare-cores --manifest "$MACE_MANIFEST"
+"$MACE_PY" "$MACE_RUNNER" collect --manifest "$MACE_MANIFEST"
 ```
 
-Raw task products, inputs, snapshots, timing, failed attempts and software are
-under `workspaces/mace_hybrid_20260916/`; no production scorer is modified.
-Batch exits collect `pilot_v3/collection_job_JOBID.json`. The separate task-owned
-continuation uses the existing `scripts/affordable_watch.py` accounting watcher
-and writes `pilot_v3/continuation/`. Its `completion.json` is the terminal record.
-It never changes inputs, model, precision, electrostatic boundary or scientific
-task list. Verified successful tasks are reused; the declared repeat tasks have
-distinct identities and execute independently.
+The terminal collection is `blocked_v6/collection_job_1200381.json`; its
+human-readable report is `blocked_v6/REPORT.md`. Exact resource accounting,
+including failures, is in `memory_cost_final.json` and `memory_sacct_final.tsv`.
+Per-task receipts retain forces, density coefficients, model/adapter metadata,
+GPU allocation/reservation, worker RSS and elapsed time. Accounting watcher
+receipt: `blocked_v6/job_1200381_accounting.json`.
 
-## Authorized technical recovery
+## Recovery of this exact manifest
 
-The continuation first tries host offload if native autograd runs out of GPU
-memory. Host OOM may request 2, 4, then 8 GPU shares with proportional CPUs/RAM.
-Each still executes one model task at a time on one GPU. GPU memory does not
-pool; GPU OOM after offload requires a kernel/implementation review, not more
-unused GPU reservations. Unknown failures also stop for technical inspection.
-All new launches and terminal resource receipts are retained. Do not start a
-second continuation or remove its flock while it is active.
-
-For explicit operator recovery **only after the owned job and continuation are
-terminal**, the same manifest can be resumed without rerunning valid tasks:
+No recovery is presently needed. The runner reuses valid tasks and preserves
+failed attempts; its four-core gate prevents unverified full-system execution.
+If recovering an interrupted copy of this approved campaign, first verify that
+its executor is terminal and its pinned inputs and implementation match. The
+original launch is recorded in `blocked_v6/full_launch.json`. With the variables
+above, the resource-equivalent command is:
 
 ```bash
-sbatch --cpus-per-task=28 --gres=gpu:1 --mem=200000M --time=7-00:00:00 \
-  --output="$MACE_WORK/pilot_%j.out" --error="$MACE_WORK/pilot_%j.err" \
+sbatch --partition=gpu --nodelist=node-128-512g-8gpu-1 \
+  --cpus-per-task=16 --gres=gpu:1 --mem=64474M --time=7-00:00:00 \
+  --export=ALL,MACE_MIN_MEMORY_MIB=64474 \
+  --output="$MACE_WORK/blocked_recovery_%j.out" \
+  --error="$MACE_WORK/blocked_recovery_%j.err" \
   diagnostics/mace_hybrid_20260916/run_pilot.sbatch \
   "$MACE_PY" "$MACE_MANIFEST" native
 ```
 
-Inspect the actual scheduler memory request. The first share accepts200000 MiB.
-A host-OOM recovery must actually receive more RAM than the failed attempt;
-reserving extra GPUs with the same RAM cap is not a successful resource increase.
-A different memory mode or allocation is an explicit launch argument and recorded
-in every task receipt.
+Seven days is the cluster QOS limit, not a project compute stopping budget.
+Do not automatically offload or reserve extra shares for a GPU OOM: inspect the
+specific tensor allocation. The successful implementation needs neither. The
+requested RAM is not claimed to be an enforced per-process RSS cap.
 
-## Interpretation
+## Historical campaigns and interpretation
 
-Energy is in eV; forces are negative energy gradients in eV/A. Reuse DFT in
-Hartree, subtract before conversion, and report components separately. The
-subtractive expression is in PLAN.md. There is no compatible reference or
-solution-phase calibration, so S and class stay unavailable. Direct MACE,
-hybrid partition behavior, runtime and physical checks answer different
-questions. Baseline remains unchanged regardless of this pilot's result.
+`pilot_v3` contains the original four successful core calls (job 1200308) and
+is the pinned numerical reference; [core result](CORE_RESULTS.md). Its queued
+H200 job 1200309 was cancelled without allocation after the first blocked-core
+validation. Its continuation was stopped. Earlier H200 resource negotiation is
+preserved in [acceptance](RESOURCE_ACCEPTANCE.md) and
+[scheduler audit](SCHEDULER_MEMORY_AUDIT.md); do not relaunch that obsolete queue
+entry. `blocked_v1` through `blocked_v5` retain every memory-debug failure.
+
+`E_hybrid = E_MACE(full) + E_DFT(core) - E_MACE(core)` is a vacuum diagnostic.
+Energy is in eV; forces are negative gradients in eV/Angstrom. Archived DFT
+energies are Hartree; subtract before conversion. The full term cancels in the
+partition contrast. No compatible aquo reference exists, so S and class remain
+null. Direct scoring, hybrid partition behavior, numerical consistency, runtime
+and biological accuracy are separate questions.
+
+Proposed follow-up: locate the rotation sensitivity and verify large-checkpoint
+compatibility on the same cores. Neither is an executed result or authorization
+for additional scientific variants. Agree consequential method changes with Jacob.

@@ -95,3 +95,7 @@ defines Ca-supported S≤14.8571292029, La-supported S≥23.4600612056 kcal/mol,
 with the intervening interval indeterminate. The parent will collect the
 endpoint results. These are protocol-specific scores rather than measured
 biological metal use, binding affinity or substrate specificity.
+
+## Parent execution — 16 September 2026
+
+Job1200300 is running on node-64-768g-16 with64 CPUs (four endpoints,16MPI ranks each). No new inputs or geometry changes. Parent preflight and independent executor review PASS. Manifest SHA a4dd2ad7e870be20ceec97b5931e7e89843fbf64d933869836032d6ea2657993; endpoint bundle `workspaces/plm_xoxf_fixed_core_20260916/execution/`. Same-session completion watcher3160464 is running. PLM execution/result root: `/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-09-11_PQQ_ADH/energetics_queue/xoxf_fixed_core`. Final exported scope names XoxF; legacy internal schemas are retained from the frozen executor.

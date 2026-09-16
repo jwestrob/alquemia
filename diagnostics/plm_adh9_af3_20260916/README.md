@@ -1,7 +1,9 @@
 # AF3 to fixed-core v3 preparation bridge
 
-**16 September 2026: implementation ready; AF3 prediction outputs pending.**
-No biological AF3 model has been prepared or scored by this bridge yet.
+**16 September 2026: executed, with one post-completion preparation failure.**
+The original pipeline completed two pairs, but 4380_6 has overlapping protein
+hydrogens and its score is invalid. 32301_3 S19.984118 remains indeterminate.
+Read the post-completion note below before using the raw execution PASS.
 
 The approved comparison uses the same two previously scored ADH9 proteins:
 `PQQSEQ_48f861015fad150af40a` (PLM2_30 scaffold_32301_3) and
@@ -99,3 +101,13 @@ biological preparation remains pending the AF3 completion/selection stage.
 ## Live comparison submission
 
 PLM GPU1199981 → CPU1199982 (afterany) submitted16September; watcherPID3885454 active. Exactly two same-protein comparisons, at most two selected fixed-core pairs; no new MSA searches. Live records are in PLM `energetics_queue/adh9/af3_comparison/`. Read launch_receipt.json/job_status.json and the vault ADH9_ENERGETICS note for current status.
+
+
+## AF3 comparison reviewed — 16 September 2026
+
+**One accepted energy comparison; one invalid preparation.** Jobs 1199981/1199982 completed, but post-completion review supersedes the automated two-target PASS. Rokubacteriales `32301_3`: Protenix S15.503190 → AF3 S19.984118 kcal/mol (+4.480928), still indeterminate. Hydrogenophilalia `4380_6`: AF3 energy score withheld because protein hydrogens overlap (13 H–H pairs <0.5 Å; closest 0.058626 Å). Its raw S17.134098 is invalid, not an accepted indeterminate result. An exact pinned preparation retry reproduced the failed XYZ byte-for-byte; no retry quantum job was submitted.
+
+Raw prediction metrics remain valid: global iPTM ~0.989 →0.970 for both; protein–PQQ ~0.989 →0.970, with predictor-specific confidence scales. CNs 8→8 and 8→7; both retain all three PQQ donors. The latter loses the counted Glu201 contact at the 3.1 Å boundary (closest oxygen 3.233 Å), without losing the residue or its inclusion in the fixed core. Selected Asp–Lys distances shorten to 2.820/2.706 Å. The hydrogen-placement defect arises after AF3 prediction. Any changed hydrogen-minimization method and compatibility with the frozen preparation need discussion before further scoring.
+
+Detailed report and download: `/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-09-11_PQQ_ADH/energetics_queue/adh9/af3_comparison/README.md`. Use `reviewed_score_comparison.tsv` and `terminal_review.json`; original raw results remain unchanged. Recovery evidence is in Alquemia `workspaces/plm_adh9_af3_20260916/hydrogen_retry_01/geometry_validation.json`. Four other ADH9 refolds remain a separate proposal; no old-queue restart.
+

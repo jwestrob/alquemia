@@ -457,3 +457,40 @@ experimentally characterized La-positive control is proposed, not searched/run.
 Vault note2026-09-16_laca-mace-hybrid-plan-and-plm-baseline-review.md records
 agreement, plan, evidence and limitations. Concurrent PLM files and all existing
 unstaged work preserved.
+
+
+## 2026-09-16 — MACE stage A approved and implemented; scheduler RAM mismatch
+
+Jacob approved the proposed12-call MACE-POLAR1-medium vacuum capability/partition
+pilot, with one eighth of H200-node host RAM per reservedGPU share and additional
+shares allowed if memory recovery requires them. Exact scope/quote/numerics:
+diagnostics/mace_hybrid_20260916/AGREEMENT.md. No stageB/C, newDFT, solvent model,
+training, relaxation or production change. Source1H4I chainA/PQQ3-/dry state is
+pinned; full9141 atoms, La-8/Ca-9 singlets, qm33/qm36 cores47/54 atoms. Four
+archived vacuum native r2SCAN3c endpoints verified/reused. Source roundoff only
+7.11e-15A; caps absent from full protein. Baseline/defaults/old references intact.
+
+Implemented scripts/mace_hybrid.py prepare/dry-run/execute/collect/report with
+immutable attempts, verified caches, endpoint forces/densities and matched
+contrast/partition/repeat/rigid-transform reporting. Isolated software under
+workspaces/mace_hybrid_20260916/software_v1:torch2.8.0,mace-torch0.3.16,
+graph-longrange0.4.4, exact checkpoint/source hashes and dependency lock.
+Pilot manifestSHA2fa2c928a3ecf5b7a8bcda76bf2c42014f81626983b118dcf1b72e70c8dab01c.
+Eight real-artifact integrity/algebra tests PASS; no MACE inference has run.
+
+First queued1200196 requested28CPUs/oneGPU/257962MiB (1/8 at scheduler precision),
+but memory repeatedly reverted to200000MiB. Own pending job cancelled without
+compute; explicit-CLI replacement1200197 initially had257962MiB then reverted too.
+Cause unknown; no visibleQOS memory ceiling. Its standardQOS enforces7dayMaxWall,
+retained as external cluster limit; no project stopping budget. A batch guard
+refuses inference with the wrong RAM share. Asked Jacob whether to accept the
+cluster-assigned share or keep exact1/8; answer pending at this checkpoint.
+
+Task-owned continuationPID2405406 monitors only1200197 using existing
+affordable_watch.py. It collects terminal output and can retry exact tasks with
+host offload for nativeGPUOOM, or proportional2/4/8 shares for hostOOM; unknown
+failures and GPUOOM after offload require inspection. No unapproved model/physics
+change or opportunistic new case. Current state/commands/receipts in RUNBOOK.md
+and pilot_v1/; continuation/completion.json is terminal record when present.
+Prior watcher2350130/child2350132 were stopped with cancelled own pending job.
+No unrelated watchers/jobs/edits touched. Vault plan note updated.

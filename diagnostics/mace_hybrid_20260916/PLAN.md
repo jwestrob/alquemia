@@ -2,6 +2,12 @@
 
 Date: 2026-09-16. **Direction approved; planning recorded; no new calculations launched.**
 
+Execution update, later 2026-09-16: Jacob approved stage A after the resource
+discussion. [AGREEMENT.md](AGREEMENT.md) records the exact scope and memory-share
+recovery authorization; [RUNBOOK.md](RUNBOOK.md) records the submitted job.
+The original proposal below remains the planning history. Stages B/C remain
+proposed, and no baseline/default change is authorized by the stage-A pilot.
+
 Jacob: “i like it. i want to try it out. write down the plan, then real quick
 i just want to make sure our baseline results are as good as I want them to be
 before I go blasting using it on everything, since I've used it on several

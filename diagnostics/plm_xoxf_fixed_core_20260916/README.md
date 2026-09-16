@@ -1,5 +1,23 @@
 # Two existing PLM XoxF AF3 sites — fixed-core preparation
 
+## Completed results — 16 September 2026
+
+**Job1200300 completed/PASS: two pairs, four endpoints, zero failures/unsupported cases; 5m22s on64 CPUs.** Every endpoint has normal ORCA termination and converged SCF. Source/input/output/receipt hashes, core coordinates and the full preparation preflight pass after execution; contrasts and exact released band assignments were independently recomputed by the parent. The watcher delivered terminal status and exited.
+
+| Protein | CN including PQQ | S (kcal/mol) | Fixed-core band |
+| --- | ---: | ---: | --- |
+| AG41 / Gemmatimonadota XoxF 38_54 | 7 | **17.21776065297137** | Indeterminate |
+| Rokubacteriales XoxF 2928_2 | 8 | **29.971263921125484** | La-supported |
+
+Rokubacteriales XoxF is **9.98714607833281 kcal/mol higher** than the AF3 ADH9 32301_3 from the same genome (19.984117842792674, indeterminate). This is a descriptive comparison of the existing fixed-core scores, not a measured affinity difference or a functional substrate assignment. No new ADH9 calculation was performed. Hydrogenophilalia ADH9 4380_6 remains model/preparation-sensitive (Protenix21.450083 versus AF3/repaired-H9.720464); its biological metal preference is unresolved.
+
+AG41 is **not evidence of Ca dependence**: it lies between the supported bands. The two current XoxFs share the E/N/D/D/Arg core composition and charge; their 12.753503268154114 kcal/mol score separation therefore does not arise from different retained core composition/charge. Geometry and generated-H differences remain coupled, and no causal decomposition was attempted. Both inputs are predicted structures of phylogenetically curated PLM proteins, not experimentally verified positives. The original50-step H preparation is retained and not force-converged, although both actual core geometries pass; do not omit that limitation when interpreting transfer.
+
+Raw energy pairs (Hartree): AG41 La−2536.085939966249, Ca−3182.136047549587; Rokubacteriales La−2536.103825453389, Ca−3182.133609035582. Reporting gauge A−646.0775458314704; factor627.509474. Exact fixed-core bands remain Ca-supported S≤14.857129202922806, La-supported S≥23.460061205609236. No calibration/default changes or further calculations launched.
+
+Authoritative results: `results.json`, `results.tsv`, `completion.json`, `post_completion_review.json` in the PLM execution directory. All preparation and execution records remain unchanged.
+
+
 Jacob approved this two-protein comparison with “Go for it”. The exact approval
 is at `EastRiver_PLM/revision_analysis/2026-09-11_PQQ_ADH/energetics_queue/xoxf_fixed_core/authorization.json`.
 Only the existing AF3 models listed below were considered. No folding, MSA

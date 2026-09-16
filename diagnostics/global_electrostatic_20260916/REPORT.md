@@ -40,14 +40,25 @@ integrity/algebra tests passed. These tests are not solver validation.
 
 ## Surface checks in progress
 
-Job **1199956** runs the initial two primary solves on two shared CPUs. Job
-**1199959** runs the remaining 23 disjoint tasks on 23 shared CPUs, requesting
-48 GB. The master scientific manifest remains the same 25 tasks; separate
-execution slices and task locks prevent overlapping work.
+Job **1199956** completed the initial two primary solves. Job **1199959** completed
+both isolated controls, but its 21 full-protein solves ran on a socket reporting
+about 0.9 GHz under full utilization. The healthy initial pair was preserved;
+only the affected owned batch was stopped for same-input technical recovery.
+Array **1199964**, indices0–8, restarts nine exact tasks, one solver per allocation.
+Its twelve remaining elements were cancelled while still pending, with zero
+execution, and grouped into the existing twelve-worker runner as **1199974**.
+Both request no SMT sharing and exclude that node. Initial observations on the
+replacement nodes show distinct physical cores at about 2.8–3.2 GHz. Existing
+queue limits remain unchanged. All interrupted attempts and cost are retained.
+The master scientific manifest remains the same 25 tasks.
+
+[Measured execution evidence](PERFORMANCE_OBSERVATION.md) distinguishes the
+observed low frequency from its unresolved cause; no overheating was detected.
+These runtime observations must not be attributed to the electrostatic model.
 
 The first two surfaces built in about four seconds each and have identical
-actual mesh hashes. The two isolated-core controls completed; **the 23
-whole-protein results and the complete physical gate remain pending**.
+actual mesh hashes. Both primary endpoints and both isolated-core controls
+completed; **the other 21 results and the complete physical gate remain pending**.
 Meshing or isolated-control success alone does not pass that gate.
 
 The combined [software checks](TESTS.md) ran 37 tests: 36 passed and one was
@@ -65,10 +76,15 @@ baseline-derived boundary-test cores, distinct from canonical PQQ calibration.
 |---|---:|---:|---:|---:|---:|
 | Four QM + MBIS endpoints | 1199949 | 932 | 64 | 59,648 | 8,010,252 |
 | Four ESP checks | 1199952 | 16 | 4 | 64 | Not captured |
+| Interrupted surface batch, including two completed isolated controls | 1199959 | 1,364 | 23 | 31,372 | 2,017,012 |
+| Initial primary whole-protein pair | 1199956 | 2,643 | 2 | 5,286 | 158,968 |
 
 Accounting records: `workspaces/global_electrostatic_20260916/{quantum,esp}_accounting.json`.
 ESP accounting reports zero RSS; that is not treated as zero memory use.
 Preparation and unfinished solver costs are not included in these totals.
+Slurm CPU-time units count allocated logical CPUs on the observed SMT nodes;
+they are not physical-core counts. The two initial solvers share one physical
+core. The recovery requests one solver per core and records actual placement.
 
 The [same-core cost audit](COST_REFERENCE_AUDIT.md) recovers real no-MBIS and
 old CPCM+MBIS receipts. Population analysis takes 574.688–747.686 s per current

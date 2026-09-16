@@ -33,7 +33,9 @@ therefore identify the filesystem bytes present **at finish**, rather than
 the Python code already loaded into that process. For these two jobs, use the
 preserved manifest implementation above as the executing adapter identity;
 retain the finish-time record as historical filesystem provenance. Existing
-receipts are not rewritten, and jobs are not restarted.
+receipts are not rewritten, and jobs are not restarted for this parser fix.
+The later same-input hardware recovery of1199959 is documented separately in
+PERFORMANCE_OBSERVATION.md and the experiment report.
 
 Future imports capture `LOADED_IMPLEMENTATION` immediately and use that record
 for the executor field. Future receipts explicitly mark the identity semantics

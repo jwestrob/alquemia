@@ -2,8 +2,10 @@
 
 These commands refer to the frozen approved artifacts. They do not add cases,
 change parameters or authorize Stage 2 from partial results. Current quantum
-and ESP work is complete. Surface jobs 1199956 and 1199959 are running; do not
-submit duplicate jobs while either corresponding slice is active.
+and ESP work and initial surface pair1199956 are complete. Recovery array1199964
+indices0–8 and group1199974 are active. Original batch1199959 was stopped after a documented persistent
+low-clock observation; its completed isolated controls and partial attempts
+remain. Do not submit duplicate work while corresponding tasks are active.
 
 ## Paths and executables
 
@@ -25,6 +27,8 @@ export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
 - Quantum inputs: `partition_tasks_v1/manifest.json`.
 - Authoritative solver schedule: `surfaces_v1/campaign_manifest.json`.
 - Remaining-task execution slice: `surfaces_remaining_execution_v1/campaign_manifest.json`.
+- Current recovery: array indices0–8 in `surface_recovery_array_v1/array_manifest.json`,
+  plus `surface_recovery_group_v1/campaign_manifest.json` for the other12 tasks.
 
 Output names below are explicit and new. Writers refuse an existing output;
 retain earlier versions and use a new recorded version for another collection.
@@ -64,14 +68,20 @@ The old CPCM charge/ESP records cannot satisfy these tasks.
 ## Monitor and recover the existing surface work
 
 ```bash
-squeue -j 1199956,1199959
-sacct -j 1199949,1199952,1199956,1199959 --parsable2 \
+squeue -j 1199964,1199974
+sacct -j 1199949,1199952,1199956,1199959,1199964,1199974 --parsable2 \
   --format=JobID,State,ElapsedRaw,AllocCPUS,CPUTimeRAW,TotalCPU,MaxRSS,NodeList
 ```
 
 The initial job owns only `1h4i_qm33_La/primary` and
-`1h4i_qm33_Ca/primary`. The second slice owns the other 23 tasks. Every solver
-uses one CPU; independent tasks fill the requested shared CPU allocation.
+`1h4i_qm33_Ca/primary`. Recovery array1199964 indices0–8 own nine full-protein
+tasks; its explicit slices are in `surface_recovery_array_v1/array_manifest.json`.
+The other twelve pending array elements were cancelled without execution and
+replaced by group1199974. Its wrapper verifies that the allocation spans at
+least twelve distinct physical cores before launching the twelve workers.
+The two isolated controls from1199959 are reused. Every solver uses one thread;
+actual affinity/topology are retained for the recovery. No frequency, affinity,
+queue-priority or node-administration setting was mutated.
 
 **Recovery only, after the corresponding job has ended:** the same exact
 commands below can resume those approved slices after a technical interruption.
@@ -88,11 +98,17 @@ sbatch --ntasks=2 --mem=16G \
   "$FIELD_WORK/surfaces_v1/campaign_manifest.json" \
   1h4i_qm33_La/primary 1h4i_qm33_Ca/primary
 
-sbatch --ntasks=23 --mem=48G \
-  --output="$FIELD_WORK/surface_recovery_%j.out" \
-  --error="$FIELD_WORK/surface_recovery_%j.err" \
-  diagnostics/global_electrostatic_20260916/run_surfaces.sbatch \
-  "$FIELD_WORK/surfaces_remaining_execution_v1/campaign_manifest.json"
+sbatch --array=0-8 --exclude=node-48-256g-13 \
+  --output="$FIELD_WORK/surface_array_recovery_%A_%a.out" \
+  --error="$FIELD_WORK/surface_array_recovery_%A_%a.err" \
+  diagnostics/global_electrostatic_20260916/run_surface_array.sbatch \
+  "$FIELD_WORK/surface_recovery_array_v1/array_manifest.json"
+
+sbatch --exclude=node-48-256g-13 \
+  --output="$FIELD_WORK/surface_group_recovery_%j.out" \
+  --error="$FIELD_WORK/surface_group_recovery_%j.err" \
+  diagnostics/global_electrostatic_20260916/run_surface_group.sbatch \
+  "$FIELD_WORK/surface_recovery_group_v1/campaign_manifest.json"
 ```
 
 No CPU-time or project wall-time stopping budget is imposed. The native GMRES

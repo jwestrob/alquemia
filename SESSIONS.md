@@ -431,3 +431,29 @@ rather than assuming this checkpoint means the job still runs.
 Current guide, runbook, reports and vault note updated. All 109 preexisting
 unstaged session lines and other agents' work are preserved. No push,
 production rescore, shared watcher change or default promotion.
+
+
+## 2026-09-16 — MACE hybrid plan and PLM baseline readiness review
+
+Jacob approved the hybrid direction and requested a written plan, prioritizing
+review of baseline performance before wider PLM use. Recorded proposed stages
+in diagnostics/mace_hybrid_20260916/PLAN.md; no MACE/DFT runs, installations,
+folds or new preparation. Solvent/coupling and detailed execution choices remain
+explicitly unresolved. Direct MACE is the built-in comparator; structural
+response is complementary. Earlier MACE grant notes are linked, not activated.
+
+BASELINE_REVIEW.md / BASELINE_CHECKS.json replay existing calibration/transfer/
+PLM records:58 converged archived endpoints,226 endpoint-related hashes verified.
+25/25 PQQ calibration controls and two crystal transfers reproduce; existing
+1KB0 result remains Ca-supported. ADH9 Protenix32301_3 S15.503190 and4380_6
+S21.450083 remain indeterminate; reviewed AF332301_3 S19.984118 remains so;
+AF34380_6 remains invalid due to hydrogen overlaps. Four other original selected
+models are unsupported. No scores, thresholds or default behavior changed.
+
+Coverage finding:both scored PLM proteins have extra Asp plus Lys partner;
+all11 La calibration controls have Arg, with Lys represented only by two Ca
+controls. This is a coverage gap, not a demonstrated Lys effect. A matching
+experimentally characterized La-positive control is proposed, not searched/run.
+Vault note2026-09-16_laca-mace-hybrid-plan-and-plm-baseline-review.md records
+agreement, plan, evidence and limitations. Concurrent PLM files and all existing
+unstaged work preserved.

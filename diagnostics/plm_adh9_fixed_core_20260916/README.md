@@ -1,5 +1,25 @@
 # PLM ADH9 fixed-core preparation — 16 September 2026
 
+
+## Completed result — 16 September 2026
+
+Slurm1199976 completed successfully in10m55s: all four endpoints validated.
+Both compatible sites are **indeterminate** under the frozen fixed-core bands:
+
+- PLM2_30 `32301_3` / PQQSEQ_48f861015fad150af40a: S=15.503189972320033 kcal/mol.
+- PLM0_60 `4380_6` / PQQSEQ_13d74836d4b7a3e02140: S=21.45008326919374 kcal/mol.
+
+Ca-supported≤14.857129202922806; La-supported≥23.460061205609236.
+The other four selected models remain unscored. No inference of metal dependence
+or substrate specificity follows from these two indeterminate scores.
+
+Detailed result/validation records:
+`/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-09-11_PQQ_ADH/energetics_queue/adh9/execution/`
+(`results.tsv`, `results.json`, `completion.json`, `terminal_review.json`).
+The watcher delivered completion and stopped. The four-protein AF3 proposal
+remains pending; no new calculations were launched by this completion review.
+
+
 Preparation completed: **two La/Ca pairs ready; four selected models unsupported**.
 No ORCA calculation, new fold, control rerun, alternate-model selection, or job
 submission occurred in this preparation step.

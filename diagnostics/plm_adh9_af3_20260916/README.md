@@ -94,3 +94,8 @@ the native null-diagonal convention; no reference calculation was repeated.
 previous review authority, calibration pins/release and Python executable.
 `bridge_validation.json` records the pre-output code/format checks. Actual
 biological preparation remains pending the AF3 completion/selection stage.
+
+
+## Live comparison submission
+
+PLM GPU1199981 → CPU1199982 (afterany) submitted16September; watcherPID3885454 active. Exactly two same-protein comparisons, at most two selected fixed-core pairs; no new MSA searches. Live records are in PLM `energetics_queue/adh9/af3_comparison/`. Read launch_receipt.json/job_status.json and the vault ADH9_ENERGETICS note for current status.

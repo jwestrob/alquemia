@@ -1,22 +1,24 @@
 # MACE stage A: execution checkpoint
 
-Approved 2026-09-16; active job **1200197**, queued on `gpu_h200` at this checkpoint.
+Approved 2026-09-16; active job **1200207**, queued on `gpu_h200` at this checkpoint.
 No measured inference result yet. Eight real-artifact integrity/algebra tests
 passed; these are not successful MACE integration tests.
 
-**Resource mismatch unresolved:** both submissions initially recorded the requested
-257962 MiB, then repeatedly reverted to200000 MiB. No visible standard-QOS
-memory limit explains this; its exact cause is unknown. The allocation guard
-prevents inference with the smaller memory share. Jacob has been asked whether
-to accept the cluster-assigned share or retain his exact one-eighth requirement.
-Do not silently accept the smaller value or claim the memory issue is fixed.
+**Execution unblocked:** Jacob explicitly accepted200000 MiB (~195 GiB):
+“that's fine. let it run with the195GB.” [Resource amendment](RESOURCE_ACCEPTANCE.md).
+The exact-share guard was replaced;1200197 was cancelled while still pending,
+and1200207 requests the accepted allocation. Its task-owned continuationPID2628149
+is active. The twelve scientific tasks and pinned implementation are unchanged.
+The server-side rewrite mechanism remains unidentified; it no longer blocks this
+approved initial allocation.
 The [scheduler audit](SCHEDULER_MEMORY_AUDIT.md) also records that `CR_CPU`
 does not track host-RAM reservation, and that controller logs are inaccessible.
 That is a separate finding; it does not identify the cause of the200000MiB rewrite.
 
 ## Resources and pins
 
-- Initial allocation: one H200, 28 CPUs, 257962 MiB host RAM (~251.916 GiB).
+- Current allocation request: one H200,28 CPUs,**200000 MiB** host RAM (195.3125 GiB).
+  Earlier proposed allocation: one H200, 28 CPUs, 257962 MiB (~251.916 GiB).
   Requested fraction: 2063701/8 MiB, rounded down by the scheduler's integral-MiB
   representation (0.625 MiB). This is one eighth to scheduler precision.
 - Initial submission1200196 unexpectedly recorded 200000 MiB and seven days.
@@ -49,7 +51,7 @@ cd /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/
 MACE_WORK="$PWD/workspaces/mace_hybrid_20260916"
 MACE_PY="$MACE_WORK/software_v1/venv/bin/python"
 MACE_MANIFEST="$MACE_WORK/pilot_v1/manifest.json"
-squeue -j 1200197
+squeue -j 1200207
 "$MACE_PY" scripts/mace_hybrid.py dry-run --manifest "$MACE_MANIFEST"
 "$MACE_PY" scripts/mace_hybrid.py collect --manifest "$MACE_MANIFEST"
 "$MACE_PY" -m unittest discover -s tests -p test_mace_hybrid.py -v
@@ -78,15 +80,17 @@ For explicit operator recovery **only after the owned job and continuation are
 terminal**, the same manifest can be resumed without rerunning valid tasks:
 
 ```bash
-sbatch --cpus-per-task=28 --gres=gpu:1 --mem=257962M --time=7-00:00:00 \
+sbatch --cpus-per-task=28 --gres=gpu:1 --mem=200000M --time=7-00:00:00 \
   --output="$MACE_WORK/pilot_%j.out" --error="$MACE_WORK/pilot_%j.err" \
   diagnostics/mace_hybrid_20260916/run_pilot.sbatch \
   "$MACE_PY" "$MACE_MANIFEST" native
 ```
 
-Inspect the resulting actual scheduler memory request. Match one eighth per
-GPU share, with only integral-MiB rounding. A different memory mode or allocation
-is an explicit launch argument and recorded in every task receipt.
+Inspect the actual scheduler memory request. The first share accepts200000 MiB.
+A host-OOM recovery must actually receive more RAM than the failed attempt;
+reserving extra GPUs with the same RAM cap is not a successful resource increase.
+A different memory mode or allocation is an explicit launch argument and recorded
+in every task receipt.
 
 ## Interpretation
 

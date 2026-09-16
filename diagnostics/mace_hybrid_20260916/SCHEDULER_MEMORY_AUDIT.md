@@ -1,5 +1,10 @@
 # Scheduler memory-request investigation, 2026-09-16
 
+Later execution amendment: Jacob accepted200000 MiB and explicitly instructed
+the pilot to proceed. See [RESOURCE_ACCEPTANCE.md](RESOURCE_ACCEPTANCE.md).
+The investigation below records the earlier observations; its pending user
+question is now resolved, and the initial exact-share guard has been removed.
+
 Observed, before any MACE inference:
 
 1. Job1200196 requested one H200/28 CPUs and2063701/8 MiB of host memory.

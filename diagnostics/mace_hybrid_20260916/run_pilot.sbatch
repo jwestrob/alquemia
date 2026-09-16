@@ -5,7 +5,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=28
 #SBATCH --gres=gpu:1
-#SBATCH --mem=257962M
+#SBATCH --mem=200000M
 #SBATCH --time=7-00:00:00
 set -euo pipefail
 if [[ $# -lt 3 ]]; then
@@ -17,10 +17,9 @@ MACE_MANIFEST=$2
 MACE_MEMORY_MODE=$3
 shift 3
 : "${SLURM_JOB_ID:?}" "${SLURM_CPUS_PER_TASK:?}"
-MACE_SHARES=${MACE_GPU_SHARES:-1}
-MACE_EXPECTED_MEMORY=$((2063701 * MACE_SHARES / 8))
-if [[ "${SLURM_MEM_PER_NODE:-0}" -ne "$MACE_EXPECTED_MEMORY" ]]; then
-  echo "Allocation mismatch: expected ${MACE_EXPECTED_MEMORY} MiB, received ${SLURM_MEM_PER_NODE:-missing}; no inference started." >&2
+MACE_MINIMUM_MEMORY=${MACE_MIN_MEMORY_MIB:-200000}
+if [[ "${SLURM_MEM_PER_NODE:-0}" -lt "$MACE_MINIMUM_MEMORY" ]]; then
+  echo "Allocation insufficient: need at least ${MACE_MINIMUM_MEMORY} MiB, received ${SLURM_MEM_PER_NODE:-missing}; no inference started." >&2
   exit 3
 fi
 export OMP_NUM_THREADS="$SLURM_CPUS_PER_TASK"

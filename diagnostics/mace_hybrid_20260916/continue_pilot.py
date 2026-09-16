@@ -67,10 +67,26 @@ def run(root, manifest, first_job):
                 return
             generation += 1
             cpus = 28 * next_shares
-            memory_mib = 2063701 * next_shares // 8
+            memory_mib = 200000 * next_shares
+            actual_memories = [int(r['allocated_host_mem_MiB']) for r in collection['rows'].values()
+                               if r.get('slurm_job_id') == job and r.get('allocated_host_mem_MiB')]
+            # A killed host-OOM attempt may have no worker result; use the
+            # scheduler request in accounting as the minimum known allocation.
+            if not actual_memories:
+                detail = subprocess.check_output(['sacct', '-j', job, '-n', '-P', '--format=JobID,ReqMem'], text=True)
+                for line in detail.splitlines():
+                    fields = line.split('|')
+                    if fields[0] == job:
+                        value = fields[1].rstrip('nc')
+                        if value.endswith('M'):
+                            actual_memories.append(int(value[:-1]))
+                        elif value.endswith('G'):
+                            actual_memories.append(int(float(value[:-1])*1024))
+            minimum_memory = max(actual_memories or [200000]) + 1 if failure == 'host_memory' else 200000
             work = manifest.parent.parent
             cmd = ['sbatch', '--parsable', f'--cpus-per-task={cpus}', f'--gres=gpu:{next_shares}',
-                   f'--mem={memory_mib}M', '--time=7-00:00:00', f'--export=ALL,MACE_GPU_SHARES={next_shares}',
+                   f'--mem={memory_mib}M', '--time=7-00:00:00',
+                   f'--export=ALL,MACE_GPU_SHARES={next_shares},MACE_MIN_MEMORY_MIB={minimum_memory}',
                    f'--output={work}/pilot_%j.out', f'--error={work}/pilot_%j.err',
                    str(root/'diagnostics/mace_hybrid_20260916/run_pilot.sbatch'), python,
                    str(manifest), next_mode]
@@ -78,6 +94,7 @@ def run(root, manifest, first_job):
             receipt = {'command': cmd, 'returncode': result.returncode, 'stdout': result.stdout,
                        'stderr': result.stderr, 'previous_job': job, 'failure': failure,
                        'gpu_shares': next_shares, 'cpus': cpus, 'host_memory_MiB': memory_mib,
+                       'minimum_host_memory_MiB': minimum_memory,
                        'memory_mode': next_mode, 'submitted_unix': time.time(),
                        'time_limit_source': 'cluster standard QOS MaxWall=7 days; no project stopping budget'}
             if result.returncode == 0:

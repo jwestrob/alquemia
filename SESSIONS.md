@@ -494,3 +494,18 @@ change or opportunistic new case. Current state/commands/receipts in RUNBOOK.md
 and pilot_v1/; continuation/completion.json is terminal record when present.
 Prior watcher2350130/child2350132 were stopped with cancelled own pending job.
 No unrelated watchers/jobs/edits touched. Vault plan note updated.
+
+
+## 2026-09-16 — MACE resource amendment accepted; pilot requeued
+
+Jacob: “then that's an enforced cap. that's fine. let it run with the195GB.”
+Recorded RESOURCE_ACCEPTANCE.md; initial allocation now200000MiB/28CPUs/oneH200.
+The exact-one-eighth guard was removed from the launcher. Own still-pending
+1200197 was cancelled with zero compute, along with its task-owned watcher;
+replacement1200207 is queued with the accepted memory request. Verified Slurm's
+actual saved script accepts200000MiB. ContinuationPID2628149 monitors this job
+and retains approved memory-only recovery. A host-OOM retry must actually receive
+more RAM before inference; extraGPU reservations cannot imply extra availableRAM.
+Scientific manifest/source hashes and all12 tasks unchanged; no newDFT, model,
+geometry, calibration or baseline/default change. No inference yet at checkpoint.
+Runbook, current agent guide and vault note updated.

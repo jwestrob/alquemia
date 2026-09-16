@@ -131,6 +131,7 @@ def collect(manifest):
     for group in ('aequorin','parvalbumin'):
         for lane in ('baseline','repaired'):
             members=[row for row in rows if row['biological_group']==group and row['lane']==lane]
+            if not members:continue
             values=[None if row['score'] is None else row['score']['S_kcal_mol'] for row in members]
             summary={'biological_group':group,'lane':lane,'ordered_sites':[row['case'] for row in members],
                      'S_vector_kcal_mol':values,'independent_site_labels':False}
@@ -138,6 +139,12 @@ def collect(manifest):
                 summary.update(median=statistics.median(values),minimum=min(values),maximum=max(values),
                                negative_count=sum(value<0 for value in values),positive_count=sum(value>0 for value in values))
             vectors.append(summary)
+    for group,lane in dict.fromkeys((r['observation_group'],r['lane']) for r in rows if 'observation_group' in r):
+        members=[row for row in rows if row.get('observation_group')==group and row['lane']==lane]
+        vectors.append({'observation_group':group,'biological_group':members[0]['biological_group'],'lane':lane,
+                        'ordered_sites':[row['case'] for row in members],
+                        'S_vector_kcal_mol':[None if row['score'] is None else row['score']['S_kcal_mol'] for row in members],
+                        'independent_site_labels':False})
     events=manifest.parent/'budget_events.jsonl'
     cost_events=[json.loads(line) for line in events.read_text().splitlines()] if events.exists() else []
     costs=[event for event in cost_events if 'allocated_core_seconds' in event]

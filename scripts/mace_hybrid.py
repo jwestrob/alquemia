@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import contextlib
+import copy
 import fcntl
 import importlib.metadata
 import json
@@ -108,7 +109,7 @@ def prepare(root, software, output, agreement):
     write_new(output / 'atom_mappings.json', mapping)
     impl = output / 'implementation'; impl.mkdir()
     pins = {}
-    for name in ('mace_hybrid.py', 'affordable_common.py'):
+    for name in ('mace_hybrid.py', 'affordable_common.py', 'mace_realspace_compat.py'):
         p = Path(__file__).with_name(name); q = impl / name
         shutil.copyfile(p, q); pins[name] = record(q)
     tasks = []
@@ -139,6 +140,8 @@ def prepare(root, software, output, agreement):
              'solvent': None, 'assembly': 'deposited_catalytic_chain_A', 'microstate': states[TASK_IDS[0]]['microstate'],
              'explicit_waters': [], 'spin_input_convention': 'multiplicity_1_closed_shell',
              'backend_source_inventory': sm['backend_source_inventory']}
+    from mace_realspace_compat import ADAPTER_ID
+    model['execution_adapter'] = ADAPTER_ID
     for t in tasks:
         t['cache_key'] = cache_key({'task': t, 'model': model, 'software': record(software), 'implementation': pins})
     result = {'schema_version': 'alquemia.mace_pilot.v1', 'protocol_id': PROTOCOL,
@@ -174,6 +177,29 @@ def dry_run(manifest):
     return {'status': 'pass', 'tasks': 12, 'new_DFT_endpoints': 0, 'manifest': record(manifest)}
 
 
+def repair_interface(manifest, output):
+    """Version only the execution adapter; reuse every exact pinned input byte."""
+    from mace_realspace_compat import ADAPTER_ID
+    dry_run(manifest)
+    m = copy.deepcopy(read_json(manifest))
+    out = Path(output).resolve(); out.mkdir(parents=True, exist_ok=False)
+    impl = out/'implementation'; impl.mkdir()
+    pins = {}
+    for name in ('mace_hybrid.py', 'affordable_common.py', 'mace_realspace_compat.py'):
+        destination = impl/name
+        shutil.copyfile(Path(__file__).with_name(name), destination)
+        pins[name] = record(destination)
+    m['implementation'] = pins
+    m['model']['execution_adapter'] = ADAPTER_ID
+    m['technical_revision_of'] = record(manifest)
+    for task in m['tasks']:
+        task.pop('cache_key')
+        task['cache_key'] = cache_key({'task': task, 'model': m['model'],
+                                      'software': m['software'], 'implementation': pins})
+    write_new(out/'manifest.json', m)
+    return dry_run(out/'manifest.json')
+
+
 def worker(manifest, task_id, output, memory_mode):
     import torch
     from ase import Atoms
@@ -194,6 +220,11 @@ def worker(manifest, task_id, output, memory_mode):
         print(json.dumps({'event': 'model_load_start', 'task': task_id, 'device': result['device']}), flush=True)
         calc = mace_polar(model=str(verify(m['model']['checkpoint'])), device='cuda',
                           default_dtype='float64', pbc_handling='realspace')
+        if m['model'].get('execution_adapter'):
+            from mace_realspace_compat import ADAPTER_ID, configure
+            if m['model']['execution_adapter'] != ADAPTER_ID:
+                raise InvalidArtifact('unsupported execution adapter')
+            result['execution_adapter'] = configure(calc)
         result['model_load_seconds'] = time.monotonic() - start
         rows = xyz(verify(t['xyz']))
         atoms = Atoms([a[0] for a in rows], positions=[a[1:] for a in rows], pbc=False)
@@ -304,11 +335,29 @@ def collect(manifest):
                 valid.append(result)
         rows[t['task_id']] = valid[-1] if valid else {'status': 'unavailable', 'energy_eV': None}
     complete = all(r['status'] == 'computed' for r in rows.values())
-    result = {'protocol_id': PROTOCOL, 'manifest': record(mp), 'status': 'complete' if complete else 'incomplete',
+    result = {'protocol_id': PROTOCOL, 'manifest': record(mp), 'collection_implementation': record(__file__),
+              'status': 'complete' if complete else 'incomplete',
               'rows': rows, 'attempts': attempts, 'reference': None, 'S_kcal_mol': None,
-              'decision': 'uncalibrated_vacuum_diagnostic', 'direct': None, 'hybrid': None, 'checks': None}
+              'decision': 'uncalibrated_vacuum_diagnostic', 'direct': None, 'hybrid': None, 'checks': None,
+              'core_partition': None}
+    if all(rows[name]['status'] == 'computed' for name in TASK_IDS):
+        archive = {r['task_id']: r for r in read_json(verify(m['archived_endpoints']))['rows']}
+        components = {}
+        for size in (33, 36):
+            ca, la = f'1h4i_qm{size}_Ca', f'1h4i_qm{size}_La'
+            dft = (archive[ca]['energy_hartree']-archive[la]['energy_hartree'])*HA_TO_KCAL
+            mace = (rows[ca]['energy_eV']-rows[la]['energy_eV'])*EV_TO_KCAL
+            components[f'qm{size}'] = {'DFT_core_R_kcal_mol': dft, 'MACE_core_R_kcal_mol': mace,
+                                      'DFT_minus_MACE_R_kcal_mol': dft-mace}
+        delta = components['qm36']['DFT_minus_MACE_R_kcal_mol'] - components['qm33']['DFT_minus_MACE_R_kcal_mol']
+        result['core_partition'] = {'components': components, 'hybrid_partition_shift_kcal_mol': delta,
+                                    'partition_check': abs(delta) <= m['tolerances']['partition_kcal_mol'],
+                                    'identity': 'common full-system MACE term cancels exactly in the partition difference',
+                                    'full_system_evaluated': False}
     full = {metal: rows[f'1h4i_full_{metal}_primary'] for metal in ('La', 'Ca')}
     if all(r['status'] == 'computed' for r in full.values()):
+        if result['core_partition'] is not None:
+            result['core_partition']['full_system_evaluated'] = True
         direct_ev = full['Ca']['energy_eV'] - full['La']['energy_eV']
         result['direct'] = {'R_eV': direct_ev, 'R_kcal_mol': direct_ev * EV_TO_KCAL}
         archive = {r['task_id']: r for r in read_json(verify(m['archived_endpoints']))['rows']}
@@ -368,6 +417,14 @@ def report(collection, output):
     lines.extend(['', f"Attempts recorded: {len(c['attempts'])}; successful tasks: "
                   f"{sum(r['status']=='computed' for r in c['rows'].values())}/12.",
                   'New DFT endpoints: 0. Four archived converged vacuum endpoints reused.', ''])
+    if c.get('core_partition'):
+        cp = c['core_partition']
+        lines.extend(['## Core-only partition identity', '',
+                      'The common full-protein MACE term cancels in the partition difference.',
+                      f"Hybrid partition shift: {cp['hybrid_partition_shift_kcal_mol']:.9f} kcal/mol.",
+                      f"Frozen 2 kcal/mol diagnostic: {'PASS' if cp['partition_check'] else 'FAIL'}.",
+                      f"Full-system pair evaluated: {cp['full_system_evaluated']}.",
+                      'This identity does not measure full-system runtime or validate a biological prediction.', ''])
     if c.get('hybrid'):
         lines.extend(['## Paired components', '',
                       '| Partition | DFT core R | MACE core R | MACE full-minus-core R | Hybrid R |',
@@ -405,11 +462,13 @@ def main():
     for key in ('manifest', 'task-id', 'output'): q.add_argument('--'+key, required=True)
     q.add_argument('--memory-mode', choices=('native', 'host_offload'), required=True)
     q = sp.add_parser('report'); q.add_argument('--collection', required=True); q.add_argument('--output', required=True)
+    q = sp.add_parser('repair-interface'); q.add_argument('--manifest', required=True); q.add_argument('--output', required=True)
     a = p.parse_args()
     if a.command == 'prepare': r = prepare(a.root, a.software, a.output, a.agreement)
     elif a.command == 'worker': r = worker(a.manifest, a.task_id, a.output, a.memory_mode)
     elif a.command == 'execute': r = execute(a.manifest, a.memory_mode, a.task_id)
     elif a.command == 'report': r = report(a.collection, a.output)
+    elif a.command == 'repair-interface': r = repair_interface(a.manifest, a.output)
     else:
         r = dry_run(a.manifest) if a.command == 'dry-run' else collect(a.manifest)
         if a.output: write_new(a.output, r)

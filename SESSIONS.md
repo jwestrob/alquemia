@@ -509,3 +509,33 @@ more RAM before inference; extraGPU reservations cannot imply extra availableRAM
 Scientific manifest/source hashes and all12 tasks unchanged; no newDFT, model,
 geometry, calibration or baseline/default change. No inference yet at checkpoint.
 Runbook, current agent guide and vault note updated.
+
+
+## 2026-09-16 — MACE core checks complete; isolated interface repaired
+
+Jacob explicitly requested the approved core checks on the available standard GPU
+partition. Four original47/54atom1H4I La/Ca cores completed as1200308 on oneRTX
+A5000/16CPUs/64474MiB in35s; inference0.8–1.9s each,1.1–1.2GiB GPU. Charge sums
+pass. Exact core-only algebra gives hybrid partition shift−4.998674456kcal/mol
+versus archivedDFT61.738603357: improved cancellation, FAIL frozen2kcal/mol gate.
+No biological accuracy, S/class or full-protein feasibility result claimed.
+
+Initial1200302 failed on unused reciprocal-grid allocation(23s);1200306 failed
+on missing checkpoint metadata(11s). Versioned adapter fixes MACE0.3.16/backend
+0.4.4 signature/shape/dispatch incompatibilities and restores derived dimensions;
+weights, buffers, scientific inputs, precision and realspace kernels unchanged.
+All failures preserved. Twelve tests PASS, including checkpoint bitwise identity
+and original-kernel feature/energy/gradient equality on allfour actual densities.
+Total development allocations69GPU-s/1104allocatedCPU-s including both failures.
+
+Current manifest pilot_v3 SHAeff0b6bbe28d045d7e4fcf904dfd302d72fda67d50148d45c0cf3b7ba8414dee
+reuses every original input byte; protocol unchanged, adapterID
+polar0316_graph044_isolated_interface_v2. Core collection/results/receipts pinned.
+Own pending1200207 was held/cancelled without allocation; only its owned watcher
+2628149/2628154 stopped. Replacement1200309 queued onH200/28CPU/200000MiB with
+the repaired implementation; continuation3463060/3463063 monitors and retains
+only previously approved memory recovery. It reuses fourcores and runs remaining
+eight approved calls. No other jobs/watchers/edits or baseline/default touched.
+CORE_RESULTS.md, REALSPACE_INTERFACE_REPAIR.md, runbook, agent guide and vault
+note updated. Root code adds exact-input technical revision and core-only
+partition collection. No push.

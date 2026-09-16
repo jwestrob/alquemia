@@ -1,19 +1,21 @@
 # MACE stage A: execution checkpoint
 
-Approved 2026-09-16; active job **1200207**, queued on `gpu_h200` at this checkpoint.
-No measured inference result yet. Eight real-artifact integrity/algebra tests
-passed; these are not successful MACE integration tests.
+Approved stage A: four cores **completed** on A5000 in job1200308; eight
+remaining full-system calls **queued as1200309** on H200. See
+[core results](CORE_RESULTS.md):0.8–1.9s evaluation per core,1.1–1.2GiB GPU;
+hybrid partition shift−4.998674456kcal/mol misses the frozen2kcal/mol target.
+No calibrated MACE class or full-protein feasibility result yet.
 
-**Execution unblocked:** Jacob explicitly accepted200000 MiB (~195 GiB):
-“that's fine. let it run with the195GB.” [Resource amendment](RESOURCE_ACCEPTANCE.md).
-The exact-share guard was replaced;1200197 was cancelled while still pending,
-and1200207 requests the accepted allocation. Its task-owned continuationPID2628149
-is active. The twelve scientific tasks and pinned implementation are unchanged.
-The server-side rewrite mechanism remains unidentified; it no longer blocks this
-approved initial allocation.
-The [scheduler audit](SCHEDULER_MEMORY_AUDIT.md) also records that `CR_CPU`
-does not track host-RAM reservation, and that controller logs are inaccessible.
-That is a separate finding; it does not identify the cause of the200000MiB rewrite.
+Two startup failures were resolved by the [versioned interface adapter](REALSPACE_INTERFACE_REPAIR.md).
+Original software, checkpoint and scientific inputs are retained. Current campaign
+is `pilot_v3`, with exact original input bytes and fresh implementation/cache hashes.
+The previously queued1200207 was cancelled without allocation to replace the broken
+implementation. Current task-owned continuationPID3463060 monitors1200309.
+
+Jacob explicitly accepted200000MiB (~195GiB) for the initial H200 allocation:
+[resource amendment](RESOURCE_ACCEPTANCE.md). The [scheduler audit](SCHEDULER_MEMORY_AUDIT.md)
+records the unresolved rewrite mechanism and `CR_CPU` host-memory limitations.
+Twelve real-artifact/interface tests now pass; four actual GPU model calls completed.
 
 ## Resources and pins
 
@@ -24,8 +26,8 @@ That is a separate finding; it does not identify the cause of the200000MiB rewri
 - Initial submission1200196 unexpectedly recorded 200000 MiB and seven days.
   Its pending memory edits did not persist. It was cancelled before allocation,
   with zero inference, and replaced by1200197 using explicit command-line resource
-  arguments. The replacement recorded257962 MiB. A batch guard refuses inference
-  if allocated memory differs from the prescribed share.
+  arguments. The replacement initially recorded257962 MiB, then reverted too.
+  The current guard accepts the200000 MiB explicitly approved by Jacob.
   `standard` QOS has a seven-day maximum: an unlimited-time request was pending
   for `QOSMaxWallDurationPerJobLimit`, so its external seven-day limit was restored.
   There is no project CPU/time stopping budget. No other jobs or priorities changed.
@@ -35,7 +37,7 @@ That is a separate finding; it does not identify the cause of the200000MiB rewri
 - Official medium checkpoint SHA256
   `fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a`.
 - Manifest SHA256
-  `2fa2c928a3ecf5b7a8bcda76bf2c42014f81626983b118dcf1b72e70c8dab01c`.
+  `eff0b6bbe28d045d7e4fcf904dfd302d72fda67d50148d45c0cf3b7ba8414dee`.
 
 Source-map audit: the archived full-system states differ only by binary floating
 point roundoff <=7.11e-15 A on five Asp303 coordinates. Full MACE uses one common
@@ -50,8 +52,8 @@ interprets the `spin=1` input as multiplicity (`total_spin - 1`).
 cd /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs
 MACE_WORK="$PWD/workspaces/mace_hybrid_20260916"
 MACE_PY="$MACE_WORK/software_v1/venv/bin/python"
-MACE_MANIFEST="$MACE_WORK/pilot_v1/manifest.json"
-squeue -j 1200207
+MACE_MANIFEST="$MACE_WORK/pilot_v3/manifest.json"
+squeue -j 1200309
 "$MACE_PY" scripts/mace_hybrid.py dry-run --manifest "$MACE_MANIFEST"
 "$MACE_PY" scripts/mace_hybrid.py collect --manifest "$MACE_MANIFEST"
 "$MACE_PY" -m unittest discover -s tests -p test_mace_hybrid.py -v
@@ -59,9 +61,9 @@ squeue -j 1200207
 
 Raw task products, inputs, snapshots, timing, failed attempts and software are
 under `workspaces/mace_hybrid_20260916/`; no production scorer is modified.
-Batch exits collect `pilot_v1/collection_job_JOBID.json`. The separate task-owned
+Batch exits collect `pilot_v3/collection_job_JOBID.json`. The separate task-owned
 continuation uses the existing `scripts/affordable_watch.py` accounting watcher
-and writes `pilot_v1/continuation/`. Its `completion.json` is the terminal record.
+and writes `pilot_v3/continuation/`. Its `completion.json` is the terminal record.
 It never changes inputs, model, precision, electrostatic boundary or scientific
 task list. Verified successful tasks are reused; the declared repeat tasks have
 distinct identities and execute independently.

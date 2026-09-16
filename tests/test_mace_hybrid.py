@@ -1,6 +1,7 @@
 """Integrity/algebra tests on pinned real 1H4I artifacts, not model-output mocks."""
 import copy
 import json
+import importlib.util
 from pathlib import Path
 import sys
 import tempfile
@@ -87,6 +88,106 @@ class RealPilotTests(unittest.TestCase):
                              ('explicit_waters', ['corrupted_inventory'])]:
             changed = copy.deepcopy(base); changed[field] = value
             self.assertNotEqual(cache_key(changed), original)
+
+    @unittest.skipUnless((ROOT/'workspaces/mace_hybrid_20260916/pilot_v2/manifest.json').exists(),
+                         'requires real versioned interface-repair preparation')
+    def test_interface_repair_preserves_scientific_inputs(self):
+        mp = ROOT/'workspaces/mace_hybrid_20260916/pilot_v2/manifest.json'
+        newer = read_json(mp)
+        self.assertEqual(mh.dry_run(mp)['tasks'], 12)
+        for field in ('protocol_id', 'software', 'agreement', 'source_states', 'tolerances', 'run_inventory'):
+            self.assertEqual(newer[field], self.m[field])
+        model = dict(newer['model']); model.pop('execution_adapter')
+        self.assertEqual(model, self.m['model'])
+        for before, after in zip(self.m['tasks'], newer['tasks']):
+            if before['variant'] == 'rotate':
+                # Independently prepared rotations across NumPy environments can
+                # differ at binary roundoff; the physical-source tolerance is 1e-12 A.
+                old = xyz(verify(before['xyz'])); new = xyz(verify(after['xyz']))
+                self.assertEqual([r[0] for r in old], [r[0] for r in new])
+                np.testing.assert_allclose([r[1:] for r in old], [r[1:] for r in new], atol=1e-12, rtol=0)
+            else:
+                self.assertEqual(before['xyz']['sha256'], after['xyz']['sha256'])
+            np.testing.assert_allclose(before['rotation_matrix'], after['rotation_matrix'], atol=1e-15, rtol=0)
+            exclude = ('xyz', 'cache_key', 'rotation_matrix')
+            self.assertEqual({k:v for k,v in before.items() if k not in exclude},
+                             {k:v for k,v in after.items() if k not in exclude})
+            self.assertNotEqual(before['cache_key'], after['cache_key'])
+
+    @unittest.skipUnless((ROOT/'workspaces/mace_hybrid_20260916/pilot_v3/manifest.json').exists(),
+                         'requires exact-byte technical retry manifest')
+    def test_revised_manifest_reuses_every_input_byte(self):
+        mp = ROOT/'workspaces/mace_hybrid_20260916/pilot_v3/manifest.json'
+        newer = read_json(mp)
+        self.assertEqual(mh.dry_run(mp)['tasks'], 12)
+        for old, new in zip(self.m['tasks'], newer['tasks']):
+            self.assertEqual({k:v for k,v in old.items() if k != 'cache_key'},
+                             {k:v for k,v in new.items() if k != 'cache_key'})
+            self.assertNotEqual(old['cache_key'], new['cache_key'])
+
+    @unittest.skipUnless(importlib.util.find_spec('mace'), 'requires isolated MACE installation')
+    def test_real_checkpoint_adapter_preserves_all_parameters_and_buffers(self):
+        import torch
+        from mace.calculators import mace_polar
+        from mace_realspace_compat import configure, require_isolated
+        torch.set_num_threads(1)
+        c = mace_polar(model=str(verify(self.m['model']['checkpoint'])), device='cpu', default_dtype='float64')
+        before = {k:v.clone() for k,v in c.models[0].state_dict().items()}
+        metadata = configure(c)
+        after = c.models[0].state_dict()
+        self.assertEqual(before.keys(), after.keys())
+        self.assertTrue(all(torch.equal(before[k], after[k]) for k in before))
+        self.assertEqual(len(metadata['restored_dimension_metadata']), 4)
+        self.assertEqual(metadata['features'], 'realspace')
+        self.assertEqual(metadata['energy'], 'realspace')
+        require_isolated(torch.tensor([[False, False, False]]))
+        with self.assertRaises(ValueError):
+            require_isolated(torch.tensor([[True, False, False]]))
+        with self.assertRaises(ValueError):
+            require_isolated(torch.tensor([[False, False, False]]), True)
+
+    @unittest.skipUnless(importlib.util.find_spec('mace'), 'requires isolated MACE installation')
+    def test_adapter_matches_original_kernels_on_real_computed_density(self):
+        mp = ROOT/'workspaces/mace_hybrid_20260916/pilot_v3/manifest.json'
+        if not mp.exists():
+            self.skipTest('real interface-repair campaign unavailable')
+        c = mh.collect(mp)
+        if not c['core_partition']:
+            self.skipTest('four real MACE core results have not completed')
+        import torch
+        from mace.calculators import mace_polar
+        from mace_realspace_compat import configure
+        torch.set_num_threads(1)
+        calc = mace_polar(model=str(verify(self.m['model']['checkpoint'])), device='cpu', default_dtype='float64')
+        configure(calc)
+        features = calc.models[0].electric_potential_descriptor
+        energy_module = calc.models[0].coulomb_energy
+        for name in mh.TASK_IDS:
+            coords = [a[1:] for a in xyz(verify(self.tasks[name]['xyz']))]
+            positions = torch.tensor(coords, dtype=torch.float64, requires_grad=True)
+            density = torch.tensor(np.load(verify(c['rows'][name]['density_coefficients'])), dtype=torch.float64)
+            batch = torch.zeros(len(coords), dtype=torch.long)
+            pbc = torch.zeros((1,3), dtype=torch.bool)
+            kwargs = dict(k_vectors=torch.empty((0,3), dtype=torch.float64),
+                          k_norm2=torch.empty(0, dtype=torch.float64), k_vector_batch=torch.empty(0, dtype=torch.long),
+                          k0_mask=torch.empty(0, dtype=torch.float64), node_positions=positions,
+                          batch=batch, volume=torch.ones(1, dtype=torch.float64), pbc=pbc)
+            cache = features.precompute_geometry(**kwargs, force_pbc_evaluator=False)
+            wrapped_features = features.forward_dynamic(cache=cache, source_feats=density[:,None,:], pbc=pbc)
+            original_features = features.realspace_features(source_feats=density, node_positions=positions, batch=batch)[0]
+            torch.testing.assert_close(wrapped_features, original_features, rtol=0, atol=0)
+            wrapped_energy = energy_module(source_feats=density, **kwargs, force_pbc_evaluator=False)
+            original_energy = energy_module.realspace_energy(source_feats=density, positions=positions, batch=batch)
+            torch.testing.assert_close(wrapped_energy, original_energy, rtol=0, atol=0)
+            grad_wrapped = torch.autograd.grad(wrapped_energy.sum(), positions, retain_graph=True)[0]
+            grad_original = torch.autograd.grad(original_energy.sum(), positions)[0]
+            torch.testing.assert_close(grad_wrapped, grad_original, rtol=0, atol=0)
+        cp = c['core_partition']
+        archive = {r['task_id']:r for r in read_json(verify(self.m['archived_endpoints']))['rows']}
+        delta = lambda values, size, key: values[f'1h4i_qm{size}_Ca'][key]-values[f'1h4i_qm{size}_La'][key]
+        expected = ((delta(archive,36,'energy_hartree')-delta(archive,33,'energy_hartree'))*mh.HA_TO_KCAL
+                    -(delta(c['rows'],36,'energy_eV')-delta(c['rows'],33,'energy_eV'))*mh.EV_TO_KCAL)
+        self.assertAlmostEqual(cp['hybrid_partition_shift_kcal_mol'], expected, places=8)
 
 
 if __name__ == '__main__':

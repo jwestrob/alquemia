@@ -1,5 +1,11 @@
 # Runnable operations
 
+**Current status, 2026-09-16:** job1199299 completed all26 endpoints with no
+failures/retries. [RESULTS.md](RESULTS.md) and [RESULT.json](RESULT.json) are the
+completed records. The submission below is an archived execution/recovery
+recipe; it is not a pending job or a new-analysis instruction. Current
+protocol/default guidance: [agent operating guide](../../docs/AGENT_PIPELINE.md).
+
 Run from the repository root. Existing preparation is immutable; use a new workspace path only for an explicitly intended new preparation. These commands submit no environmental/global work.
 
 ```bash
@@ -9,7 +15,7 @@ export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
 # Existing prepared manifest: input hashes, agreement, executable and runner checks.
 "$PYTHON" scripts/affordable_workflow.py dry-run --manifest workspaces/baseline_benchmark_20260915/run_v1/manifest.json
 
-# Execution was submitted as 1199299. Do not submit a duplicate while it runs.
+# Execution completed as 1199299. Resubmission is unnecessary for recollection.
 # The batch file runs affordable_workflow execute, then affordable_benchmark collect.
 sbatch diagnostics/baseline_benchmark_20260915/run.sbatch
 

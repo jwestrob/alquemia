@@ -1,5 +1,14 @@
 # Runnable operations
 
+**Current status, 2026-09-16:** scoring completed as job1199508: ten of ten
+endpoints, no failures/retries. Read [SCORING_RESULTS_1199508.md](SCORING_RESULTS_1199508.md)
+and the scored ledger at
+`workspaces/benchmark_set_20260915/scored_release_1199508/benchmark_manifest.json`.
+The construction and subsequent-scoring sections below preserve the original
+handoff sequence; that scoring campaign is no longer pending. Reassembling the
+construction ledger does not recreate the later scored release. Current
+protocol/default guidance: [agent operating guide](../../docs/AGENT_PIPELINE.md).
+
 Run from the repository root on biotite. All input paths are explicit. Frozen output names cannot be overwritten; use a new output path for a further revision.
 
 ```bash
@@ -40,6 +49,9 @@ Omitting `--protonation-report` performs the existing PDBFixer preparation anew;
 ```
 
 ## Subsequent scoring
+
+This launch step has already completed. Retain it as an execution/recovery
+recipe, not a request to submit another benchmark run.
 
 The current construction phase performed **zero new endpoint evaluations**. The prepared finite campaign is ten native r2SCAN-3c/CPCM endpoints under the existing runner, without a compute budget or walltime stopping rule. Its interpretations/conditions are frozen in RESULTS.md and the task manifest; no generic threshold is assigned. This command launches that subsequent scoring campaign, so it is separate from the verification commands above:
 

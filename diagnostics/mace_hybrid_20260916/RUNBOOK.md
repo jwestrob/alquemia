@@ -10,6 +10,9 @@ memory limit explains this; its exact cause is unknown. The allocation guard
 prevents inference with the smaller memory share. Jacob has been asked whether
 to accept the cluster-assigned share or retain his exact one-eighth requirement.
 Do not silently accept the smaller value or claim the memory issue is fixed.
+The [scheduler audit](SCHEDULER_MEMORY_AUDIT.md) also records that `CR_CPU`
+does not track host-RAM reservation, and that controller logs are inaccessible.
+That is a separate finding; it does not identify the cause of the200000MiB rewrite.
 
 ## Resources and pins
 

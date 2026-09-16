@@ -358,6 +358,25 @@ def mesh_bridge(manifest_path, attempt):
     return result
 
 
+def validate_native_controls(values, settings, charged_atom_count):
+    """Check controls echoed by the real binary, not just its input keywords."""
+    expected = {
+        "mesh_density": settings["grid_scale_inverse_A"],
+        "mesh_probe_radius": settings["probe_radius_A"],
+        "tree_degree": settings["tree_degree"],
+        "tree_theta": settings["tree_theta"],
+        "tree_max_per_leaf": settings["tree_max_per_leaf"],
+        "precondition": float(settings["precondition"]),
+        "num_atoms": charged_atom_count,
+    }
+    actual = values["native_csv_values"]
+    for key, wanted in expected.items():
+        got = actual.get(key)
+        if got is None or not math.isfinite(got) or abs(got - wanted) > 1e-12:
+            raise InvalidArtifact(f"native solver control differs from manifest: {key}")
+    return {"status": "passed", "native_echoed_controls": expected}
+
+
 def collect(manifest_path, receipt_path):
     manifest, _ = _verified_manifest(manifest_path)
     receipt = read_json(receipt_path)
@@ -403,6 +422,9 @@ def collect(manifest_path, receipt_path):
             raise InvalidArtifact("mesh face index outside vertex inventory")
     values = parse_output(verify(receipt["artifacts"]["output"]), verify(receipt["artifacts"]["csv"]),
                           verify(receipt["artifacts"]["headers"]))
+    charged_atom_count = sum(line.startswith(("ATOM ", "HETATM "))
+                             for line in verify(manifest["charges"]).read_text().splitlines())
+    controls = validate_native_controls(values, manifest["settings"], charged_atom_count)
     if values["native_csv_values"].get("num_particles") != vertex_count:
         raise InvalidArtifact("retained mesh differs from native solver particle count")
     return {"protocol_id": PROTOCOL, "status": "computed_unvalidated_reaction_field", **values,
@@ -410,6 +432,7 @@ def collect(manifest_path, receipt_path):
             "mesh": bridge["mesh"], "physical_boundary_hash": manifest["physical_boundary_hash"],
             "mesh_geometry_sha256": cache_key(mesh_geometry),
             "mesh_vertex_count": vertex_count, "mesh_face_count": face_count,
+            "executed_controls": controls,
             "physical_xyzr_sha256": manifest["physical_xyzr"]["sha256"],
             "collector": record(__file__), "decision": "uncalibrated_protocol", "correction": None}
 

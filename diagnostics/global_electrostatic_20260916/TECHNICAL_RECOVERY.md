@@ -45,3 +45,13 @@ Collection verifies immutable task implementation snapshots and execution
 artifacts. It deliberately does not require the current parser source hash to
 equal the executing adapter source hash. A new collector can therefore parse
 the original saved outputs, and its own parser identity is recorded separately.
+
+## Native numerical controls
+
+The collector additionally compares the binary's own CSV fields with the
+manifest: surface scale and probe radius, tree degree/theta/leaf size,
+preconditioner flag and charged-atom count. This verifies that a refinement
+actually used its declared controls. Missing or different native echoes fail
+explicitly. Three tests passed against completed real output and labelled
+corrupted copies. No numerical parameter or scientific output was changed;
+all attempts remain collectable from their preserved inputs and receipts.

@@ -66,7 +66,7 @@ the common offset. The global challenger has neither an S nor an absolute class.
 | Baseline/repair benchmark | All 26 endpoints complete. Fixed-core 1KB0 passes the Ca band. Original GGR passes its frozen direction test; repaired GGR changes sign without demonstrating improved prediction. [Results](../diagnostics/baseline_benchmark_20260915/RESULTS.md). |
 | Hans-LanM / alpha-lactalbumin additions | All ten endpoints complete. Hans ranks above GGR; both alpha source geometries rank below GGR, conflicting with condition-qualified La-favoring evidence. [Results](../diagnostics/benchmark_set_20260915/SCORING_RESULTS_1199508.md). |
 | GGR mechanism study | All 38 endpoints and 12 directional gradient checks complete. Representation and source geometry materially change scores; no validated mechanical correction. [Report](../diagnostics/ggr_mechanism_plan_20260915/REPORT.md). |
-| Global electrostatic pilot | Four vacuum endpoints and four ESP checks complete; full physical gate remains in progress at this documentation checkpoint. The ten-endpoint accuracy stage is conditional and has not run. [Live experiment report](../diagnostics/global_electrostatic_20260916/REPORT.md). |
+| Global electrostatic pilot | Four vacuum endpoints and four ESP checks complete. Primary partition shift is 18.08 kcal/mol against a 2 kcal/mol limit: failed. Remaining numerical/component checks are running; the ten-endpoint accuracy stage has not run. [Live experiment report](../diagnostics/global_electrostatic_20260916/REPORT.md). |
 
 These results are already consumed for development. Multiple chains, structures,
 homologs, mutants and sites are not automatically independent observations.

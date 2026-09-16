@@ -1,0 +1,54 @@
+{
+  "status": "primary_partition_gate_failed_remaining_checks_running",
+  "assessment": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/global_electrostatic_20260916/surfaces_v1/assessment_primary_v1.json",
+    "sha256": "011a12959b1f8e58c38ce014c4d1a92c1a8532d6114662c92c0b4cb157432a3b"
+  },
+  "protocol_id": "vacuum_r2scan3c_mbis_global_tabi_electrostatic_v1",
+  "primary_pairs": {
+    "1h4i_qm33/primary": {
+      "R_direct_kcal_mol": 52.1513558640938,
+      "R_global_kcal_mol": -405406.156079815,
+      "R_quantum_kcal_mol": -405349.0793037981,
+      "R_reaction_kcal_mol": -109.22813188097498,
+      "S_global_kcal_mol": null,
+      "decision": "uncalibrated_protocol",
+      "reference_status": "unavailable",
+      "status": "computed_uncalibrated_descriptor",
+      "task_ids": [
+        "1h4i_qm33_Ca/primary",
+        "1h4i_qm33_La/primary"
+      ]
+    },
+    "1h4i_qm36/primary": {
+      "R_direct_kcal_mol": 9.119796758494807,
+      "R_global_kcal_mol": -405388.08031549165,
+      "R_quantum_kcal_mol": -405287.34070044087,
+      "R_reaction_kcal_mol": -109.85941180927357,
+      "S_global_kcal_mol": null,
+      "decision": "uncalibrated_protocol",
+      "reference_status": "unavailable",
+      "status": "computed_uncalibrated_descriptor",
+      "task_ids": [
+        "1h4i_qm36_Ca/primary",
+        "1h4i_qm36_La/primary"
+      ]
+    }
+  },
+  "primary_partition": {
+    "absolute_difference_kcal_mol": 18.075764323351905,
+    "name": "partition/primary",
+    "signed_difference_kcal_mol": 18.075764323351905,
+    "status": "failed",
+    "tolerance_kcal_mol": 2.0
+  },
+  "stage2_eligible": false,
+  "accuracy_stage_executed": false,
+  "baseline_default_changed": false,
+  "counts_at_checkpoint": {
+    "computed": 6,
+    "failed": 0,
+    "unavailable": 19
+  },
+  "interpretation": "Primary partition discrepancy disqualifies automatic Stage2 under frozen rule. Numerical refinement and fullcomponent accounting remain pending; no unique physical cause assigned."
+}

@@ -58,12 +58,15 @@ def prepare(states_manifest, endpoint_manifest, agreement, output):
         p = d / 'vacuum_potential'; p.mkdir()
         for field, filename in [('gbw', 'endpoint.runtime.gbw'), ('density', 'endpoint.runtime.densities')]:
             shutil.copyfile(verify(quality[field]), p / filename)
+        info = verify(quality['gbw']).with_suffix('.densitiesinfo')
+        shutil.copyfile(info, p / 'endpoint.runtime.densitiesinfo')
         points = p / 'points_bohr.xyz'
         coords = np.array([a['xyz_A'] for a in env]) / BOHR_TO_A
         points.write_text(str(len(coords)) + '\n' + ''.join(' '.join(f'{v:.12f}' for v in row) + '\n' for row in coords))
         potentials.append({'task_id': key, 'state': state_record, 'points': record(points),
                            'gbw': record(p / 'endpoint.runtime.gbw'),
                            'density': record(p / 'endpoint.runtime.densities'),
+                           'density_info': record(p / 'endpoint.runtime.densitiesinfo'),
                            'source_quality': state['charge_quality']['receipt'],
                            'utility': quality['utility'], 'directory': str(p)})
     for case in CASES:
@@ -85,6 +88,25 @@ def prepare(states_manifest, endpoint_manifest, agreement, output):
     return {'status': 'prepared', 'quantum_tasks': len(tasks), 'potential_tasks': len(potentials)}
 
 
+def prepare_potential_retry(manifest, output):
+    """Restore the native density index in a new attempt; no scientific change."""
+    m = read_json(manifest); output = Path(output).resolve(); output.mkdir(parents=True, exist_ok=False)
+    tasks = []
+    for old in m['tasks']:
+        task = copy.deepcopy(old); p = output / task['task_id']; p.mkdir()
+        quality = read_json(verify(task['source_quality']))
+        for field, name in [('gbw','endpoint.runtime.gbw'), ('density','endpoint.runtime.densities'), ('points','points_bohr.xyz')]:
+            shutil.copyfile(verify(task[field]), p / name); task[field] = record(p / name)
+        info = verify(quality['gbw']).with_suffix('.densitiesinfo')
+        shutil.copyfile(info,p/'endpoint.runtime.densitiesinfo')
+        task.update(density_info=record(p/'endpoint.runtime.densitiesinfo'), source_density_info=record(info),directory=str(p))
+        tasks.append(task)
+    result = {**m, 'tasks':tasks, 'implementation':record(__file__), 'retry_of':record(manifest),
+              'reason':'Copy the required native densitiesinfo index omitted from the first utility attempt; identical density and probe coordinates.'}
+    write_new(output/'potential_manifest.json',result)
+    return {'status':'prepared_technical_retry','tasks':len(tasks)}
+
+
 def parse_potential(path, points):
     values = np.loadtxt(path, skiprows=1)
     if values.shape != (len(points), 4) or not np.isfinite(values).all():
@@ -97,7 +119,7 @@ def parse_potential(path, points):
 
 
 def potential_task(task):
-    for key in ('state', 'points', 'gbw', 'density', 'source_quality', 'utility'):
+    for key in ('state', 'points', 'gbw', 'density', 'density_info', 'source_quality', 'utility'):
         verify(task[key])
     directory = Path(task['directory'])
     if (directory / 'execution.json').exists():
@@ -106,7 +128,7 @@ def potential_task(task):
                           'endpoint.runtime.scfp', str(verify(task['points'])), str(directory / 'potential.out')],
                          directory, directory / 'utility.log', directory / 'resources.txt')
     result.update(task=task, implementation=record(__file__))
-    for key in ('gbw', 'density', 'points'):
+    for key in ('gbw', 'density', 'density_info', 'points'):
         verify(task[key])
     if (directory / 'potential.out').exists():
         result['potential'] = record(directory / 'potential.out')
@@ -130,7 +152,7 @@ def collect_potentials(manifest):
     for task in m['tasks']:
         row = {'task_id': task['task_id'], 'status': 'unavailable'}
         try:
-            for key in ('state', 'points', 'gbw', 'density', 'source_quality', 'utility'):
+            for key in ('state', 'points', 'gbw', 'density', 'density_info', 'source_quality', 'utility'):
                 verify(task[key])
             path = Path(task['directory']) / 'execution.json'; receipt = read_json(path)
             if receipt['task'] != task or receipt['returncode'] != 0 or not receipt['slurm_job_id']:
@@ -259,12 +281,15 @@ def main():
         p.add_argument('--'+name, type=Path, required=True)
     for name in ('execute-potentials', 'collect-potentials', 'execute-embedded', 'dry-run'):
         p = sub.add_parser(name); p.add_argument('--manifest', type=Path, required=True); p.add_argument('--output', type=Path, required=True)
+    p = sub.add_parser('prepare-potential-retry');p.add_argument('--manifest',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
     p = sub.add_parser('collect-embedded')
     for name in ('manifest','potentials','output'):
         p.add_argument('--'+name, type=Path, required=True)
     args = parser.parse_args()
     if args.operation == 'prepare':
         result = prepare(args.states_manifest, args.endpoint_manifest, args.agreement, args.output)
+    elif args.operation == 'prepare-potential-retry':
+        result = prepare_potential_retry(args.manifest,args.output)
     elif args.operation == 'collect-embedded':
         result = collect_embedded(args.manifest,args.potentials); write_new(args.output,result)
     else:

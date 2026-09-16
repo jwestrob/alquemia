@@ -15,12 +15,24 @@ The code also preserves the existing field exclusions and native basis/ECP.
 - Job **1199980**: four native vacuum r2SCAN-3c/MBIS calculations in those same
   permanent fields; four 16-rank workers on 64 CPUs.
 
-No density-coupling or embedded result is reported yet. The [energy accounting](ACCOUNTING.md)
+All four recovered potential evaluations are complete. In a common atomic-unit
+convention, exact density versus MBIS changes the paired interaction by
++8.858740778 kcal/mol (qm33) and +0.798083137 (qm36): a **−8.060657641 kcal/mol**
+change in the partition contrast. This is a representation-error diagnostic,
+not an updated validated global score. The four embedded endpoints are running.
+
+The first utility job1199979 failed all four calls before computing potentials:
+the isolated copies lacked ORCA's native `.densitiesinfo` index. A separate
+retry manifest copied that index and retained identical wavefunctions, density
+containers and probe coordinates. Job1199983 completed all four. Both attempts
+and their costs are retained. Four real-artifact tests now pass, including
+actual utility-output and per-residue accounting checks. The [energy accounting](ACCOUNTING.md)
 distinguishes exact-density coupling, monopole approximation, and electronic
 response. Neither operation produces a calibrated affinity score.
 
 Workspace: `workspaces/density_embedding_20260916/`. Explicit manifests:
-`prepared_v1/{manifest,potential_manifest}.json`. Execution commands and actual
+`prepared_v1/{manifest,potential_manifest}.json`; the corrected utility manifest is
+`potential_retry_v1/potential_manifest.json`. Execution commands and actual
 Slurm job IDs are retained in `{embedded,potentials}_submission.json`.
 Implementation snapshots: `prepared_v1/implementation/`.
 
@@ -32,7 +44,7 @@ Run from the repository root after the corresponding jobs finish:
 DENSITY_PY=/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python
 DENSITY_WORK=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/density_embedding_20260916
 "$DENSITY_PY" scripts/density_embedding.py collect-potentials \
-  --manifest "$DENSITY_WORK/prepared_v1/potential_manifest.json" \
+  --manifest "$DENSITY_WORK/potential_retry_v1/potential_manifest.json" \
   --output "$DENSITY_WORK/potentials_operator_v1.json"
 "$DENSITY_PY" scripts/density_embedding.py collect-embedded \
   --manifest "$DENSITY_WORK/prepared_v1/manifest.json" \

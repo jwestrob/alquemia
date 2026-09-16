@@ -371,3 +371,30 @@ Global pilot update: first full-protein La/Ca pair1199956 completed; remaining
 checks run via nine tasks of1199964 and12-task group1199974. Interrupted batch
 1199959 and its costs are retained; settings/scientific tasks unchanged.
 See diagnostics/global_electrostatic_20260916/REPORT.md and RUNBOOK.md.
+
+
+## 2026-09-16 — Global v1 completed; autonomous density follow-on running
+
+All four quantum endpoints, four ESP checks and25 distinct TABI tasks completed.
+The global v1 gate failed:18.075764/18.039362/18.075764 kcal/mol partition shifts
+at primary/refined/tree; surface and rotation checks also fail. Accounting,
+state/mesh identity, repeat, translation and tree refinement pass.40 tests pass,
+zero skips. Recorded allocation191938 CPU-s, zeroGPU, including21 interrupted
+attempts; initial preparation partly unmeasured. Baseline/default unchanged;
+conditional ten-endpoint accuracy stage did not run. Final records in
+ diagnostics/global_electrostatic_20260916/{REPORT.md,RESULT.json,TESTS.md}.
+
+Jacob then explicitly authorized contained autonomous improvement experiments
+and confirmed full permissions. Agreement and named first scope are recorded in
+ diagnostics/density_embedding_20260916/AGREEMENT.md. New protocol
+native_r2scan3c_permanent_field_density_diagnostic_v1 separates exact-density
+coupling from self-consistent electronic response on the same four1H4I states.
+Four utility attempts1199979 failed for a missing copied densitiesinfo index;
+identical-density/probe recovery1199983 completed. Exact-density versus MBIS
+coupling shifts the partition contrast by-8.060658 kcal/mol. Four fixed-field
+native r2SCAN-3c/MBIS endpoints1199980 run on64CPUs/four16-rank workers; no
+solvent or new affinity score is claimed. All histories and default paths stay
+intact. Vault note and current agent guide updated. Continue collecting and
+interpreting the contained experiment; no production rescore or automatic
+promotion. Other agents' edits, including all existing unstaged session lines,
+are preserved.

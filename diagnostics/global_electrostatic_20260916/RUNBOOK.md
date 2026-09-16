@@ -1,11 +1,13 @@
 # Approved global electrostatic experiment: operations
 
-These commands refer to the frozen approved artifacts. They do not add cases,
-change parameters or authorize Stage 2 from partial results. Current quantum
-and ESP work and initial surface pair1199956 are complete. Recovery array1199964
-indices0–8 and group1199974 are active. Original batch1199959 was stopped after a documented persistent
-low-clock observation; its completed isolated controls and partial attempts
-remain. Do not submit duplicate work while corresponding tasks are active.
+All approved v1 calculations are complete. The final physical gate failed;
+the conditional accuracy stage did not run. Final records are
+`surfaces_v1/collection_final_v1.json`, `assessment_final_v1.json`,
+`physical_report_final_v1.md`, and workspace `cost_final_v1.json`.
+Commands below retain reproducibility and recovery history; **no v1 job is
+pending and no recovery submission is needed**. Do not rerun the failed physical
+model in an attempt to select favorable settings. New density diagnostics have
+[a separate authorization and protocol](../density_embedding_20260916/AGREEMENT.md).
 
 ## Paths and executables
 
@@ -65,7 +67,7 @@ outputs and execution receipts; it does not rerun ORCA:
 Keep new MBIS charges paired with their own gas-phase ESP receipts in `esp_v1`.
 The old CPCM charge/ESP records cannot satisfy these tasks.
 
-## Monitor and recover the existing surface work
+## Historical execution and technical recovery
 
 ```bash
 squeue -j 1199964,1199974

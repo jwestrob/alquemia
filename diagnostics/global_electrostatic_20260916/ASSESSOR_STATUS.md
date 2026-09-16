@@ -1,4 +1,8 @@
-# Assessor implementation and preliminary checks
+# Assessor implementation and historical preliminary checks
+
+**Final update:** all 25 outputs collected; all 40 tests passed with no skips.
+The physical gate failed. See [REPORT.md](REPORT.md) and [RESULT.json](RESULT.json).
+The preliminary records below remain historical.
 
 2026-09-16. `scripts/global_electrostatic_assess.py` collects the frozen
 25-task campaign, assesses its physical gates, and writes a short report.

@@ -1,9 +1,25 @@
-# Executed checks
+# Executed checks — final
 
-2026-09-16 software checkpoint: **37 tests run, 36 passed, one explicitly skipped**, 73.180 s in unittest (74.068638 s including process startup). The skipped test requires all 25 actual surface outputs; it will be run after collection. No scientific executable was launched by this suite.
+**40 tests passed; zero failed or skipped.** All 25 actual solver tasks were
+available, so the previously skipped scientific-output integration test ran.
+Unittest time: 115.233 s. No scientific executable was launched by the test suite.
+The four quantum endpoints, four ESP utilities and 25 TABI tasks are separately
+reported scientific calculations, with their own receipts and failures.
 
-The four modules cover real archived baseline arithmetic and signs, paired coordinates/charges, boundary ownership, gas-phase ORCA parsing, native TABI parsing, actual frozen surface preparation, cache invalidation, preserved implementation compatibility, and explicit malformed-input/failure handling. Corrupt-input fixtures are labelled copies of real artifacts. They are not scientific results.
+Modules: `test_global_electrostatic_preparation.py`,
+`test_global_electrostatic_accounting.py`, `test_affordable_tabi.py`,
+`test_global_electrostatic_assess.py`, `test_global_tabi_controls.py`.
 
-Exact command, stdout/stderr, return code and tested source hashes: `workspaces/global_electrostatic_20260916/software_tests_v1/`.
+Tests use real archived/current coordinates, energies, native control echoes,
+meshes and execution receipts. Explicitly corrupted copies test malformed-input
+handling. Tests cover charge/coordinate ownership, score algebra, cache changes,
+missing/duplicate/partial artifacts, native controls, actual component accounting
+and source compatibility. A valid scientific rejection passes software tests;
+the suite does not require the challenger to win.
 
-Actual calculations are separate: four ORCA vacuum endpoints and four ESP checks completed; two isolated TABI controls completed; the 23 whole-protein surface checks are still running. Their scientific gates are not inferred from software-test success.
+Exact command, output, return code, process timing and tested source hashes:
+`workspaces/global_electrostatic_20260916/software_tests_final_v1/`.
+
+Historical checkpoint `software_tests_v1/`: 37 tests, 36 passed and one skipped
+while actual solver work was pending. Three later native-control tests passed
+separately and are included in the final 40-test suite. Prior receipts remain.

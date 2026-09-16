@@ -47,5 +47,20 @@ class RealDensityInputs(unittest.TestCase):
             hashes = {t['pointcharges']['sha256'] for t in tasks if t['case']==case}
             self.assertEqual(len(hashes),1)
 
+    def test_actual_recovered_density_couplings_close_by_residue(self):
+        p = ROOT / 'workspaces/density_embedding_20260916/potential_retry_v1/potentials_1199983.json'
+        if not p.exists(): self.skipTest('actual recovered vpot results unavailable')
+        result = read_json(p)
+        self.assertEqual(result['status'],'complete')
+        self.assertEqual(len(result['rows']),4)
+        for row in result['rows']:
+            receipt = read_json(verify(row['execution_receipt']))
+            verify(receipt['task']['density_info'])
+            self.assertEqual(receipt['returncode'],0)
+            self.assertAlmostEqual(sum(v['density_kcal_mol'] for v in row['per_residue'].values()),
+                                   row['direct_density_kcal_mol'],places=9)
+            self.assertAlmostEqual(sum(v['mbis_kcal_mol'] for v in row['per_residue'].values()),
+                                   row['direct_mbis_atomic_units_kcal_mol'],places=9)
+
 
 if __name__ == '__main__': unittest.main()

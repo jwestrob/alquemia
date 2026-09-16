@@ -1,161 +1,142 @@
-# Global electrostatic challenger: progress report
+# Global electrostatic challenger: completed, not promoted
 
-**2026-09-16 — partition and rotation checks failed; eight refinement/tree
-checks running.** Moving Asp303's representation changes the Ca-minus-La
-contrast by **+18.075764323 kcal/mol**, exceeding the frozen 2 kcal/mol limit.
-The baseline/default remains unchanged. The conditional accuracy stage will
-not launch under this gate; no predictive-accuracy result is claimed.
+**All four quantum endpoints, four ESP checks and 25 distinct TABI tasks
+completed. The frozen model fails both partition consistency and numerical
+acceptance. Baseline/default remains unchanged; the conditional ten-endpoint
+accuracy trial did not run.** [Compact machine-readable result](RESULT.json).
 
-## First partition result
+## Main result
 
-Both representations' primary La/Ca pairs converged and collected with valid
-receipts. The qm36-minus-qm33 change decomposes as follows:
+Moving Asp303 between the classical and quantum representations changes the
+Ca-minus-La descriptor by approximately 18 kcal/mol at every frozen level:
 
-| Contribution to partition change | kcal/mol |
-|---|---:|
-| Vacuum quantum contrast | +61.738603357 |
-| Direct core/environment Coulomb contrast | -43.031559106 |
-| Whole-protein reaction-field contrast | -0.631279928 |
-| Total global contrast | **+18.075764323** |
-| Archived matched CPCM baseline contrast | +2.204092696 |
+| Numerical setting | qm36 minus qm33, kcal/mol | Frozen limit | Result |
+|---|---:|---:|---|
+| Primary | +18.075764323 | 2 | Fail |
+| Refined surface | +18.039361675 | 2 | Fail |
+| Refined tree evaluation | +18.075763683 | 2 | Fail |
 
-The large change is in the incomplete cancellation of quantum and direct-field
-terms. This component accounting does not uniquely identify a cap, charge
-boundary, density-response or other physical cause. Refinement/rigid/component
-checks are still needed to establish numerical behavior. Their settings and
-tolerances remain unchanged; all running checks will be retained.
+The matched archived CPCM boundary-core comparison shifts by +2.204092696
+kcal/mol. That is a separate baseline-derived protocol, not canonical fixed-core
+PQQ calibration or an inherited challenger threshold. [Archive audit](MATCHED_BASELINE_COMPARISON.md).
 
-Primary checkpoint: `workspaces/global_electrostatic_20260916/surfaces_v1/assessment_primary_v1.json`
-(six computed solver tasks, zero failed collections, nineteen unavailable at
-collection). The matched baseline is a separate protocol, not an inherited
-threshold or calibration for the challenger.
+At primary settings, the partition change decomposes into vacuum QM
+**+61.738603357**, direct core/environment coupling **−43.031559106**, and
+whole-protein reaction field **−0.631279928** kcal/mol. The global cavity did
+not remove the incomplete cancellation of quantum and direct-field terms.
+This does not uniquely identify caps, charge representation or density response.
 
-## Completed component and rigid-transform controls
+## Numerical and state checks
 
-The second checkpoint collected **17/25 solver tasks**, zero failed collections,
-eight refinement/tree tasks still running. Four independent Coulomb cross-term
-checks agree with the analytic core/environment interaction within
-**9.763e-9 kcal/mol**. This validates the implemented direct-energy arithmetic;
-it does not validate the physical charge/boundary approximation.
+| Prescribed check | Observed change/error, kcal/mol | Limit | Result |
+|---|---:|---:|---|
+| Surface refinement, qm33 paired contrast | −1.396760397 | 0.5 | Fail |
+| Surface refinement, qm36 paired contrast | −1.433163045 | 0.5 | Fail |
+| Rigid rotation, qm33 paired contrast | +1.713579558 | 0.5 | Fail |
+| Tree refinement, largest paired change | 0.000002804 | 0.5 | Pass |
+| Translation, absolute paired change | 0.000000093 | 0.5 | Pass |
+| Exact repeat | 0 | 0.01 | Pass |
+| Native versus independent Coulomb cross accounting, largest error | 0.000000010 | 0.01 | Pass |
+| Both isolated algebraic reductions | 0 | 0.01 | Pass |
 
-Exact repetition gives zero difference. Translation changes the paired contrast
-by -9.319e-8 kcal/mol, but rotation changes it by **+1.713579558 kcal/mol**,
-exceeding the frozen **0.5 kcal/mol** tolerance. Both rotated endpoints used the
-same actual rotated mesh. Thus the primary implementation also fails the
-rigid-rotation check; the current evidence does not uniquely separate surface,
-tree-approximation or convergence errors. The two isolated reductions passed.
+All five required common-mesh groups have identical actual mesh and source
+hashes within their groups. Paired coordinates, protonation, charge ownership,
+water inventory, source geometry and full physical cavity checks pass. All
+25 solver outputs converged and passed strict native-control/receipt parsing.
+These execution successes do not turn the scientific gate into a pass.
 
-Full component values and checkpoint provenance: [CONTROLS_RESULT.json](CONTROLS_RESULT.json).
-The final report will retain this checkpoint and the unchanged refinement checks.
+Individual reaction-field energies change by 56.34–57.79 kcal/mol on surface
+refinement, with partial cancellation in the La/Ca contrast. Rotation changes
+individual energies by 5.90/7.62 kcal/mol. The much smaller tree-setting effect
+helps locate the numerical problem, but does not uniquely separate surface
+discretization from solver convergence. No settings were tuned after inspection.
 
-## What this tests
+Full components, endpoint shifts and all 51 checks are in the final assessment.
+The two isolated controls check reduction to gas QM plus isolated reaction
+energy; they are not a zero-solvation or zero-transfer claim.
 
-Protocol `vacuum_r2scan3c_mbis_global_tabi_electrostatic_v1` combines native
-vacuum r2SCAN-3c core energy, endpoint MBIS charges interacting with fixed
-protein charges, and one whole-protein TABI reaction-field energy. It uses the
-same frozen nuclear states and a common source-atom cavity. It is a static
-electrostatic descriptor, not a complete binding free energy.
+## Model and scope
 
-The approved first gate is 1H4I qm33/qm36 × La/Ca: four quantum endpoints and
-the [frozen 25-task solver schedule](NUMERICS.md). The conditional five-pair
-accuracy trial has **not run**. [Approval](AGREEMENT.md).
+Protocol: `vacuum_r2scan3c_mbis_global_tabi_electrostatic_v1`.
 
-## Completed evidence
+`Etilde_M = E_QM,vac,M + C(q_M,Q) + G_RF,D(q_M+Q)`;
+`R_global = Etilde_Ca − Etilde_La`.
 
-All four endpoints converged with the intended gas-phase Hamiltonian and
-native ECP convention. All four new MBIS electrostatic-potential checks passed.
+Native ORCA 6.1.1 r2SCAN-3c/DefGrid3 gas endpoints, MBIS, fixed ff19SB permanent
+protein charges, source-only shared SES cavity; dielectric 1/78.54, zero salt,
+298.15 K, 1.4 Å probe, common 1.8 Å metal radius. No CPCM, old isolated-PB
+counterterm, extra full Coulomb energy, aquo offset, universal zero or calibrated
+classification. This is a frozen-density electrostatic descriptor.
 
-| Endpoint | QM energy, Hartree | MBIS total charge, e | ESP relative RMS |
-|---|---:|---:|---:|
-| qm33 La | −1754.987616371759 | −0.999981 | 0.053225 |
-| qm33 Ca | −2400.952491961507 | −1.999989 | 0.028505 |
-| qm36 La | −1983.471978518628 | −1.999979 | 0.036323 |
-| qm36 Ca | −2629.338467381298 | −2.999984 | 0.018564 |
+All four new MBIS exterior-potential checks pass (relative RMS 0.01856–0.05323).
+That limited quality test does not validate every core/environment interaction.
+[Boundary audit](BOUNDARY_AUDIT.md), [frozen numerical protocol](NUMERICS.md),
+[approved scope](AGREEMENT.md), [technical recovery](TECHNICAL_RECOVERY.md).
 
-Unrounded values and endpoint receipt/output hashes are in
-`workspaces/global_electrostatic_20260916/partition_tasks_v1/collection_verified_v1.json`;
-individual ESP receipts are under `esp_v1/<endpoint>/quality.json` in that
-workspace. The original collection falsely matched the SMD author-credit text;
-parser correction and recollection resolved it without any QM rerun.
+## Execution, failures and measured cost
 
-The [boundary audit](BOUNDARY_AUDIT.md) verifies common physical coordinates,
-charge ownership and the declared cap approximation; its nine real-artifact
-integrity/algebra tests passed. These tests are not solver validation.
+25 final solver results came from 46 attempts: 25 completed plus 21 preserved
+partial attempts interrupted during a persistent low-clock hardware observation.
+No quantum retry was needed. Twelve array elements cancelled while pending ran
+no calculation. No node settings, queue priority or shared permissions changed.
+The original parser rejection of the ORCA SMD credit was fixed by recollection.
+[Execution evidence](PERFORMANCE_OBSERVATION.md).
 
-## Surface checks in progress
+| Allocation | Terminal state | Wall seconds | Allocated CPUs | Allocated CPU-seconds |
+|---|---|---:|---:|---:|
+| 1199949 | COMPLETED | 932 | 64 | 59,648 |
+| 1199952 | COMPLETED | 16 | 4 | 64 |
+| 1199956 | COMPLETED | 2643 | 2 | 5,286 |
+| 1199959 | CANCELLED by 601 | 1364 | 23 | 31,372 |
+| 1199974 | COMPLETED | 4832 | 12 | 57,984 |
+| 1199964, executed indices 0–8 | COMPLETED | Per-task receipts | 1 each | 37,584 |
 
-Job **1199956** completed the initial two primary solves. Job **1199959** completed
-both isolated controls, but its 21 full-protein solves ran on a socket reporting
-about 0.9 GHz under full utilization. The healthy initial pair was preserved;
-only the affected owned batch was stopped for same-input technical recovery.
-Array **1199964**, indices0–8, restarts nine exact tasks, one solver per allocation.
-Its twelve remaining elements were cancelled while still pending, with zero
-execution, and grouped into the existing twelve-worker runner as **1199974**.
-Both request no SMT sharing and exclude that node. Initial observations on the
-replacement nodes show distinct physical cores at about 2.8–3.2 GHz. Existing
-queue limits remain unchanged. All interrupted attempts and cost are retained.
-The master scientific manifest remains the same 25 tasks.
+**Total recorded development allocation: 191,938 CPU-seconds
+(53.316111 CPU-hours); zero GPU use.** This includes the
+interrupted batch and idle portions of multiworker allocations. Sum only unique
+parent jobs, never add batch/extern steps again. Slurm counts logical CPUs;
+recovery placement verified distinct physical cores.
 
-[Measured execution evidence](PERFORMANCE_OBSERVATION.md) distinguishes the
-observed low frequency from its unresolved cause; no overheating was detected.
-These runtime observations must not be attributed to the electrostatic model.
+The primary qm36 pair took 1,713.032 and 1,734.551 seconds on one CPU each
+(3,447.583 summed solver wall-seconds). The initial qm33 pair shared a physical
+core and took 2,636.471/2,641.909 seconds. Four quantum/MBIS endpoints used
+59,648 allocated CPU-seconds. Population analysis itself took 574.688–747.686
+seconds per endpoint. These hardware/scheduling differences prohibit a controlled
+production overhead ratio. Initial/cached environment preparation and software
+validation are not fully included; their absence is explicit, not zero cost.
+[Baseline cost audit](COST_REFERENCE_AUDIT.md).
 
-The first two surfaces built in about four seconds each and have identical
-actual mesh hashes. All four primary endpoints and both isolated-core controls
-completed. The later component checkpoint collected **17 results; eight remain running**.
-Meshing or isolated-control success alone does not pass that gate.
+## Tests and judgment
 
-The combined [software checks](TESTS.md) ran 37 tests: 36 passed and one was
-explicitly skipped pending all 25 solver outputs. These tests launch no
-scientific executable. The [technical recovery record](TECHNICAL_RECOVERY.md)
-distinguishes parser/provenance repairs from scientific reruns.
+**40 software/real-output integration tests passed, zero skipped, zero failed**
+(115.233 s unittest; 115.872317 s process). Scientific calculations are
+listed separately above; no fake solver output stands in for a calculation.
+[Tests and exact receipts](TESTS.md).
 
-The [matched baseline archive](MATCHED_BASELINE_COMPARISON.md) has a
-qm36-minus-qm33 contrast difference of +2.204092696 kcal/mol. These are
-baseline-derived boundary-test cores, distinct from canonical PQQ calibration.
+- **Numerically credible at the declared precision? No.** Surface/rotation gates
+  fail, although arithmetic, tree refinement and deterministic replay pass.
+- **Useful for prediction? Not established.** Physical rejection prevented the
+  conditional accuracy trial. No new biological accuracy result follows.
+- **Affordable? Partly measured, not demonstrated against a matched baseline.**
+  Primary surface solves are modest in CPU count but take roughly half an hour
+  each; charge extraction is substantial. The failed model does not earn rollout.
 
-## Measured cost so far
+**Recommendation: retain baseline and reject this frozen challenger for
+promotion.** This does not reject every global environmental representation.
+Jacob subsequently authorized contained new ideas; the separately versioned
+[density/field diagnostic](../density_embedding_20260916/REPORT.md) investigates
+specific approximation errors without changing this result.
 
-| Completed work | Job | Wall s | Allocated CPUs | Allocated core-s | Batch peak RSS KiB |
-|---|---:|---:|---:|---:|---:|
-| Four QM + MBIS endpoints | 1199949 | 932 | 64 | 59,648 | 8,010,252 |
-| Four ESP checks | 1199952 | 16 | 4 | 64 | Not captured |
-| Interrupted surface batch, including two completed isolated controls | 1199959 | 1,364 | 23 | 31,372 | 2,017,012 |
-| Initial primary whole-protein pair | 1199956 | 2,643 | 2 | 5,286 | 158,968 |
+## Reproduce the report
 
-Accounting records: `workspaces/global_electrostatic_20260916/{quantum,esp}_accounting.json`.
-ESP accounting reports zero RSS; that is not treated as zero memory use.
-Preparation and unfinished solver costs are not included in these totals.
-Slurm CPU-time units count allocated logical CPUs on the observed SMT nodes;
-they are not physical-core counts. The two initial solvers share one physical
-core. The recovery requests one solver per core and records actual placement.
+All final artifacts are under `workspaces/global_electrostatic_20260916/`:
+`surfaces_v1/{collection_final_v1,assessment_final_v1}.json`,
+`surfaces_v1/physical_report_final_v1.md`, `cost_final_v1.json`, and
+`software_tests_final_v1/`. Earlier primary/control checkpoints remain intact.
+The [runbook](RUNBOOK.md) contains collection commands. A next read-only operation:
 
-The [same-core cost audit](COST_REFERENCE_AUDIT.md) recovers real no-MBIS and
-old CPCM+MBIS receipts. Population analysis takes 574.688–747.686 s per current
-endpoint, a substantial part of the quantum wall time. Different hardware,
-MPI sizes and schedules prevent a controlled overhead or production-cost ratio.
-
-## Three separate judgments
-
-| Question | Current answer |
-|---|---|
-| Is the model numerically credible? | **Numerical checks pending; primary partition consistency failed.** Quantum/ESP, input and primary solver checks passed; the 18.08 kcal/mol partition shift exceeds the frozen tolerance. |
-| Does it improve La/Ca accuracy? | **Untested.** Stage 2 has not run; this partition experiment supplies no new biological validation. |
-| Is it affordable? | **Pending.** Quantum/ESP costs are measured; complete solvent/preparation cost and a controlled baseline comparison are unavailable. |
-
-The [accuracy-input audit](ACCURACY_INPUTS.md) recovered all five frozen core
-pairs. Exact canonical 1H4I/4MAE environments currently fail terminal templates;
-GGR/alpha require peptide/water mapping and explicit environment-state handling.
-No missing atom, alternative source or guessed heterogen charge was substituted.
-
-## Final gate and next action
-
-**Gate: failed at primary level; Stage 2 remains unexecuted.** Collect all 25
-solver tasks from the master manifest, preserve failures, then assess the
-predeclared 0.5 kcal/mol numerical/rigid, 2 kcal/mol partition and 0.01 kcal/mol
-accounting tolerances. Review full-environment preparation before any Stage 2
-quantum execution. Partial successes cannot trigger it.
-
-Exact collection, assessment and reporting commands are in [RUNBOOK.md](RUNBOOK.md).
-The parent executor will replace this checkpoint with the completed gate,
-component results, total measured cost and resulting recommendation.
+```bash
+/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python scripts/global_electrostatic_assess.py report \
+  --assessment workspaces/global_electrostatic_20260916/surfaces_v1/assessment_final_v1.json \
+  --output workspaces/global_electrostatic_20260916/surfaces_v1/physical_report_operator_v1.md
+```

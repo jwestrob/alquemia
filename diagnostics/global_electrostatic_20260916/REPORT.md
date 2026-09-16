@@ -1,6 +1,6 @@
 # Global electrostatic challenger: progress report
 
-**2026-09-16 — primary partition gate failed; remaining numerical/component
+**2026-09-16 — partition and rotation checks failed; eight refinement/tree
 checks running.** Moving Asp303's representation changes the Ca-minus-La
 contrast by **+18.075764323 kcal/mol**, exceeding the frozen 2 kcal/mol limit.
 The baseline/default remains unchanged. The conditional accuracy stage will
@@ -29,6 +29,24 @@ Primary checkpoint: `workspaces/global_electrostatic_20260916/surfaces_v1/assess
 (six computed solver tasks, zero failed collections, nineteen unavailable at
 collection). The matched baseline is a separate protocol, not an inherited
 threshold or calibration for the challenger.
+
+## Completed component and rigid-transform controls
+
+The second checkpoint collected **17/25 solver tasks**, zero failed collections,
+eight refinement/tree tasks still running. Four independent Coulomb cross-term
+checks agree with the analytic core/environment interaction within
+**9.763e-9 kcal/mol**. This validates the implemented direct-energy arithmetic;
+it does not validate the physical charge/boundary approximation.
+
+Exact repetition gives zero difference. Translation changes the paired contrast
+by -9.319e-8 kcal/mol, but rotation changes it by **+1.713579558 kcal/mol**,
+exceeding the frozen **0.5 kcal/mol** tolerance. Both rotated endpoints used the
+same actual rotated mesh. Thus the primary implementation also fails the
+rigid-rotation check; the current evidence does not uniquely separate surface,
+tree-approximation or convergence errors. The two isolated reductions passed.
+
+Full component values and checkpoint provenance: [CONTROLS_RESULT.json](CONTROLS_RESULT.json).
+The final report will retain this checkpoint and the unchanged refinement checks.
 
 ## What this tests
 
@@ -84,7 +102,7 @@ These runtime observations must not be attributed to the electrostatic model.
 
 The first two surfaces built in about four seconds each and have identical
 actual mesh hashes. All four primary endpoints and both isolated-core controls
-completed; **the other nineteen results remain pending at this checkpoint**.
+completed. The later component checkpoint collected **17 results; eight remain running**.
 Meshing or isolated-control success alone does not pass that gate.
 
 The combined [software checks](TESTS.md) ran 37 tests: 36 passed and one was

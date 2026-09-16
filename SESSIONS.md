@@ -311,3 +311,28 @@ Completed report/result/accounting: diagnostics/benchmark_set_20260915/SCORING_R
 Jacob approved the detailed plan with “Fully agreed. Proceed apace.” Frozen plan/approval: diagnostics/ggr_mechanism_plan_20260915/{PLAN.md,AGREEMENT.md}. Approved38 main endpoints across representation, crystal-conformation and physical-gradient checks; the prescribed half-step branch adds0–16. No CPU/time/spending budgets. Baseline/default and labels unchanged; no global retry, response correction or threshold fitting.
 
 Stage A source-graph preparations complete: four NMA-like extended-amide pairs (GGR,aequorinEF3,bothalpha geometries) plus connectedGGR111-atom pair. Actual counts58/49/52/55/111; coordinates, charges and waters preserved. Eight preparation tests and two runner-packaging tests pass on real artifacts. StageAjob1199770 submitted for10endpoints,64CPUs,four16-rank workers; manifests under workspaces/ggr_mechanism_20260915/stage_a_tasks_v1/. No results yet at this log entry. B sources2FW0/2FVY pass initial frozen donor/water audit; B preparation and C implementation continue independently. Full approved workflow must continue through comparison/report, including unsupported cases, without asking per-command permission.
+
+
+## 2026-09-15 — Completed approved GGR mechanism investigation
+
+Jacob's “Fully agreed. Proceed apace.” approved the frozen plan in
+`diagnostics/ggr_mechanism_plan_20260915/AGREEMENT.md`. All 38 endpoints completed
+(jobs 1199770, 1199802, 1199805), no failures/retries; all 12 directional
+energy/gradient checks and both normal/TightSCF bridges passed. No half-step
+branch triggered. Max consistency residual 0.00058656 kcal/mol. Production
+baseline, PQQ inputs/bands and historical labels/results remain unchanged.
+
+Extended→connected GGR shifts R by −7.343499 kcal/mol; source ranges are
+10.268814 (formamide) and 9.971030 (extended). The matched alpha−GGR ordering
+conflict persists. New models remain uncalibrated; response_model_not_validated
+with null relaxation/entropy terms. Retain baseline; four connected endpoints
+on 2FW0/2FVY are proposed next, not approved/prepared/submitted.
+
+45 distinct real-artifact tests passed. Actual quantum allocation was 194,048
+core-seconds (53.902222 core-hours), no GPU. Full reproducible report/figures and
+68-record derived ledger: `workspaces/ggr_mechanism_20260915/report_v1/`. Compact
+status and exact commands: `diagnostics/ggr_mechanism_plan_20260915/RESULT.json`,
+`REPORT.md`, `COMMANDS.md`. Both existing GGR/benchmark vault notes updated.
+Scoped implementation checkpoints: 57ac675, b21e0fd; final completion commit
+follows this entry. Preexisting unrelated work and 77 unstaged session lines
+were preserved. No push, default change, rescore or global-model retry.

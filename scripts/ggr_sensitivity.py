@@ -499,6 +499,7 @@ def collect(manifest_path, normal_manifest=None):
     for direction in m['directions']:
         row = {'representation': direction['representation'], 'coordinate': direction['coordinate'],
                'phase': m['phase'], 'amplitude': direction['amplitude'], 'units': direction['units'],
+               'gradient_units': direction['units'], 'amplitude_units': direction['physical_coordinate']['units'],
                'status': direction['status'], 'half_step_eligible': False, **UNAVAILABLE}
         if direction['status'] != 'prepared':
             row['reason'] = direction.get('reason')
@@ -625,7 +626,13 @@ def main():
         write_new(args.output, result)
     else:
         result = prepare_half(args.manifest, args.comparison, args.output_dir)
-    print(f'{args.operation}: {len(result.get("tasks", []))} prepared tasks; {result.get("status", "collected")}; response_model_not_validated')
+    if args.operation == 'collect':
+        completed = sum(e['status'] == 'complete' for e in result['energies'].values())
+        passed = sum(r['status'] == 'pass' for r in result['comparisons'])
+        print(f'collect: {completed}/{len(result["energies"])} endpoints complete; '
+              f'{passed}/{len(result["comparisons"])} directional checks pass; response_model_not_validated')
+    else:
+        print(f'{args.operation}: {len(result.get("tasks", []))} prepared tasks; {result.get("status", "prepared")}; response_model_not_validated')
 
 
 if __name__ == '__main__':

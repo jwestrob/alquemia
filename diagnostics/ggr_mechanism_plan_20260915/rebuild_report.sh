@@ -34,6 +34,6 @@ fi
 "$GGR_PY" scripts/ggr_workflow.py compare "${GGR_COLLECTIONS[@]}" "${GGR_HISTORY[@]}" --output "$GGR_REPORT/comparison.json"
 "$GGR_PY" scripts/ggr_component_audit.py "${GGR_COLLECTIONS[@]}" "${GGR_HISTORY[@]}" --output "$GGR_REPORT/components.json"
 "$GGR_PY" scripts/ggr_execution_audit.py "${GGR_MANIFESTS[@]}" --output "$GGR_REPORT/execution_cost.json"
-"$GGR_PY" scripts/ggr_benchmark_export.py --parent-release "$GGR_ROOT/workspaces/benchmark_set_20260915/scored_release_1199508/benchmark_manifest.json" "${GGR_COLLECTIONS[@]}" "${GGR_SENSITIVITY[@]}" --output "$GGR_REPORT/benchmark"
+"$GGR_PY" scripts/ggr_benchmark_export.py --parent-release "$GGR_ROOT/workspaces/benchmark_set_20260915/scored_release_1199508/benchmark_manifest.json" "${GGR_COLLECTIONS[@]}" "${GGR_SENSITIVITY[@]}" --execution-audit "$GGR_REPORT/execution_cost.json" --output "$GGR_REPORT/benchmark"
 "$GGR_PY" scripts/ggr_mechanism_plot.py "${GGR_COLLECTIONS[@]}" "${GGR_HISTORY[@]}" "${GGR_SENSITIVITY[@]}" --comparison "$GGR_REPORT/comparison.json" --output-dir "$GGR_REPORT/plots"
 echo "$GGR_REPORT"

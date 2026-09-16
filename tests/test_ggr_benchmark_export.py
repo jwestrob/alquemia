@@ -89,6 +89,31 @@ class BenchmarkDevelopmentExport(unittest.TestCase):
         with self.assertRaisesRegex(InvalidArtifact, "differs from its task manifest"):
             export_ledger(self.parent, [path], self.directory / "bad_target")
 
+    def test_removed_real_endpoint_preserves_unavailable_pair(self):
+        corrupted = read_json(self.collections[0])
+        # Explicitly remove a measured endpoint in a COPY for missing-data handling.
+        # This software fixture is never written into the scientific release.
+        row = corrupted["rows"][0]
+        row["endpoints"]["Ca"] = {"status": "unavailable", "energy_hartree": None,
+                                   "reason": "endpoint deliberately removed from this corrupted test copy"}
+        row.update(status="unavailable", score=None, decision="unavailable")
+        corrupted["completed_endpoints"] -= 1
+        corrupted["status"] = "incomplete"
+        path = self.corrupted_copy("removed_endpoint", corrupted)
+        result = export_ledger(self.parent, [path], self.directory / "partial")
+        ggr = next(item for item in result["rows"] if item["target_id"] == "GGR_1GLG")
+        missing = next(item for item in ggr["development_scores"] if item["case"] == row["case"])
+        self.assertIsNone(missing["score"])
+        self.assertEqual(missing["endpoints"]["La"], row["endpoints"]["La"])
+        self.assertEqual(missing["decision"], "unavailable")
+        self.assertEqual(result["development_export"]["completed_endpoints"], 9)
+        self.assertEqual(result["development_export"]["total_endpoints"], 10)
+        self.assertEqual(result["development_export"]["status"], "incomplete")
+        corrupted["status"] = "complete"
+        path = self.corrupted_copy("false_complete_header", corrupted)
+        with self.assertRaisesRegex(InvalidArtifact, "completeness status"):
+            export_ledger(self.parent, [path], self.directory / "false_complete")
+
     def test_real_available_sensitivity_artifacts_stay_separate(self):
         manifest = ROOT / "workspaces/ggr_mechanism_20260915/stage_c_tasks_v1/manifest.json"
         if not manifest.exists():

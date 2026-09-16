@@ -22,6 +22,9 @@ The option can be repeated for an actually executed conditional half-step
 collection; nominal and half-step values remain separate. The figure shows
 analytic `h × gradient`, actual `[E(+h) − E(−h)] / 2`, and the declared numerical
 acceptance intervals. Those intervals are not statistical uncertainty.
+In the exported gradient table, `units` and `gradient_units` describe the
+projected derivative; `amplitude_units` separately describes the displacement
+amplitude in Å or radians.
 
 The comparison input is optional. When provided, its pinned current collections
 must match the supplied collections and its alpha–GGR contrasts must agree with

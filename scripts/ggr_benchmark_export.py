@@ -94,6 +94,8 @@ def checked_collection(path):
             raise InvalidArtifact("incomplete pair must retain unavailable score/decision")
     if result["completed_endpoints"] != completed or result["total_endpoints"] != len(tasks):
         raise InvalidArtifact("collection endpoint denominator mismatch")
+    if result["status"] != ("complete" if completed == len(tasks) else "incomplete"):
+        raise InvalidArtifact("collection completeness status disagrees with its endpoints")
     return result, manifest, tasks
 
 
@@ -186,6 +188,9 @@ def response_record(path):
             if (receipt["manifest"] != result["manifest"] or receipt["task_id"] != key or
                     energy(verify(endpoint["output"])) != endpoint["energy_hartree"]):
                 raise InvalidArtifact("sensitivity endpoint/receipt mismatch")
+            if (not receipt["normal_termination"] or not receipt["scf_converged"] or
+                    receipt["returncode"] != 0 or receipt["orca_executable"] != manifest["orca"]):
+                raise InvalidArtifact("unsuccessful sensitivity receipt presented as complete")
     for gradient in result["gradients"].values():
         for artifact in gradient["artifacts"].values():
             verify(artifact)
@@ -209,7 +214,7 @@ def response_record(path):
     }
 
 
-def export_ledger(parent_release, collections, output, sensitivities=()):
+def export_ledger(parent_release, collections, output, sensitivities=(), execution_audit=None):
     """Write a new directory; every original row field remains exactly intact."""
     parent_release, output = Path(parent_release).resolve(), Path(output).resolve()
     if output.exists() or not output.is_relative_to(ROOT / "workspaces"):
@@ -250,6 +255,20 @@ def export_ledger(parent_release, collections, output, sensitivities=()):
             if (manifest["plan"]["sha256"], manifest["agreement"]["sha256"]) not in plans:
                 raise InvalidArtifact("sensitivity and A/B collections have different approved scopes")
         targets["GGR_1GLG"]["development_response_records"] = response_records
+    execution_accounting = None
+    if execution_audit is not None:
+        audit_path = Path(execution_audit).resolve()
+        audit = read_json(audit_path)
+        if audit.get("schema_version") != "alquemia.ggr_execution_audit.v1":
+            raise InvalidArtifact("unsupported execution audit schema")
+        selected = [source["task_manifest"] for source in sources] + [item["manifest"] for item in response_records]
+        expected = {(pin["path"], pin["sha256"]) for pin in selected}
+        audited = {(pin["path"], pin["sha256"]) for pin in audit["manifests"]}
+        if audited != expected or len(audit["manifests"]) != len(audited):
+            raise InvalidArtifact("execution audit manifests must exactly match the selected collections")
+        for pin in audit["manifests"]:
+            verify(pin)
+        execution_accounting = {"artifact": record(audit_path), "record": audit}
     for row, old in zip(result["rows"], parent["rows"]):
         if {key: row[key] for key in old} != old:
             raise InvalidArtifact("an inherited benchmark row was changed")
@@ -294,6 +313,8 @@ def export_ledger(parent_release, collections, output, sensitivities=()):
             "A/B status and sensitivity endpoint/check statuses are reported separately."
         ),
     }
+    if execution_accounting is not None:
+        result["development_export"]["execution_accounting"] = execution_accounting
     write_new(output / "benchmark_manifest.json", result)
     return result
 
@@ -304,9 +325,12 @@ def main():
     parser.add_argument("--collection", type=Path, action="append", required=True)
     parser.add_argument("--sensitivity", type=Path, action="append", default=[],
                         help="optional nominal or half-step Stage C collection; retained separately")
+    parser.add_argument("--execution-audit", type=Path,
+                        help="optional actual execution audit covering exactly the selected task manifests")
     parser.add_argument("--output", type=Path, required=True, help="new directory under workspaces")
     args = parser.parse_args()
-    result = export_ledger(args.parent_release, args.collection, args.output, args.sensitivity)["development_export"]
+    result = export_ledger(args.parent_release, args.collection, args.output, args.sensitivity,
+                           args.execution_audit)["development_export"]
     print(json.dumps({key: result[key] for key in (
         "status", "record_count_preserved", "development_pair_count", "completed_endpoints", "total_endpoints")}))
 

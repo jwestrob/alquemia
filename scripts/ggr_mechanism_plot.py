@@ -220,7 +220,8 @@ def gradient_checks(paths, output, records):
             plotted, labels = 0, []
             for row in active:
                 if 'checks' not in row:
-                    values.append({k: row.get(k) for k in ('representation', 'coordinate', 'phase', 'status', 'reason')})
+                    values.append({k: row.get(k) for k in ('representation', 'coordinate', 'phase', 'status',
+                                                          'reason', 'units', 'gradient_units', 'amplitude_units')})
                     continue
                 for metal in ('La', 'Ca', 'R'):
                     check = row['checks'][metal]
@@ -234,7 +235,11 @@ def gradient_checks(paths, output, records):
                     ax.scatter(odd, plotted, color=COLORS['pass'] if check['pass'] else COLORS['failed'],
                                marker='o' if check['pass'] else 'x', s=38, zorder=3)
                     values.append({'representation': representation, 'coordinate': coordinate, 'phase': row['phase'],
-                                   'endpoint_or_contrast': metal, 'status': row['status'], 'units': row['units'], **check})
+                                   'endpoint_or_contrast': metal, 'status': row['status'], 'units': row['units'],
+                                   'gradient_units': row.get('gradient_units', row['units']),
+                                   'amplitude_units': row.get('amplitude_units',
+                                                             {'metal': 'A', 'peptide': 'radian'}[coordinate]),
+                                   **check})
                     labels.append(label)
                     plotted += 1
             if not plotted:
@@ -294,7 +299,8 @@ def plot(collections, historical, comparison_path, sensitivity, output):
               'sensitivity_collections': [record(p) for p in sensitivity],
               'scientific_evaluations_executed': 0,
               'unsupported_preparations': unsupported,
-              'gradient_units': 'projected_gradient is kcal/mol per stated coordinate unit; amplitude uses that coordinate unit',
+              'gradient_units': 'units and gradient_units describe projected_gradient (kcal/mol/A or kcal/mol/radian); '
+                                'amplitude_units separately describes amplitude (A or radian)',
               'interpretation': 'All cases are method development; no decision cutoff, fitted model or new scientific comparison.'}
     result['representation_ladder'] = ladder(rows, output, artifacts)
     result['source_by_representation'] = source_comparison(rows, output, artifacts)
@@ -311,7 +317,8 @@ def plot(collections, historical, comparison_path, sensitivity, output):
         writer.writeheader()
         writer.writerows(table_rows)
     with (output / 'physical_gradient_values.tsv').open('x', newline='') as stream:
-        fields = ['representation', 'coordinate', 'phase', 'endpoint_or_contrast', 'status', 'units', 'amplitude',
+        fields = ['representation', 'coordinate', 'phase', 'endpoint_or_contrast', 'status', 'units',
+                  'gradient_units', 'amplitude_units', 'amplitude',
                   'projected_gradient', 'predicted_odd_energy_kcal_mol', 'odd_energy_kcal_mol', 'residual_kcal_mol',
                   'residual_per_coordinate_unit', 'tolerance_kcal_mol', 'pass', 'reason']
         writer = csv.DictWriter(stream, fieldnames=fields, delimiter='\t', extrasaction='ignore')

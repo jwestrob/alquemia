@@ -1,3 +1,5 @@
+> **Archived:** see [ARCHIVE.md](ARCHIVE.md) for final failure, cancellation and cost records. The queued status below is historical.
+
 # Whole-system representation: investigation and queued technical retry
 
 ## Finding

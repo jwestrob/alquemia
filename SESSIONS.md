@@ -275,3 +275,12 @@ budgets. Seven software tests pass. Current scheduler estimate2026-09-16
 10:43:47 local, not a guarantee. Terminal watcherPID774440; auto-collector
 PID774441 will write collection_1199004.json. No new analyses are scheduled.
 Current record:diagnostics/global_representation_20260915/MEMORY_EXECUTION_PLAN.json.
+
+
+## 2026-09-15 — Baseline benchmark completed (Codex)
+
+Jacob authorized: “Alright. Baseline for benchmarking. Proceed. Full discretionary permissions.” Scope and reference/decision policy: diagnostics/baseline_benchmark_20260915/AGREEMENT.md. Ran 26 native r2SCAN-3c/CPCM endpoints: six original generic v2 pairs, their six existing peptide-amide v3 repairs, and the frozen 1KB0 PQQ pair. Inputs copied byte for byte; no water, protonation, geometry, label or threshold changes. Existing four aquo endpoints and 27 released controls reused.
+
+Job 1199299 completed all 26 endpoints, zero failures/retries: 807 s, 64 CPUs, 51,648 allocated core-s, 8,280,788 KiB peak batch RSS, no GPU. All 27 software/real-artifact tests passed. GGR original S=-1.183146 passes its frozen Ca-direction test; repaired S=+3.057473 changes sign and establishes no predictive improvement. 1KB0 S=13.254600 passes the exact fixed-core Ca band. Other sites remain ordered vectors/supporting evidence, not independent labeled accuracy counts. Defaults unchanged; retain baseline. Results and receipts: diagnostics/baseline_benchmark_20260915/RESULTS.md and RESULT.json; scientific outputs under workspaces/baseline_benchmark_20260915/run_v1/.
+
+Archived failed global feasibility work at diagnostics/global_representation_20260915/ARCHIVE.md and FINAL.json; no global jobs remain. Four attempted endpoints, zero converged global energies. Recorded top-level allocated cost 392,096 core-s excludes incompletely captured residual cleanup; no administrative node changes. Existing APBS/global corrections excluded. All preexisting dirty files and frozen experiment outputs preserved.

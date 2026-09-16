@@ -1,0 +1,12 @@
+# Baseline benchmark execution agreement
+
+Jacob: “Alright. Baseline for benchmarking. Proceed. Full discretionary permissions.”
+Prior direction removes finite compute budgets and time limits. Global representation is shelved.
+
+Execute the six frozen non-PQQ sites in both the original generic v2 and already prepared peptide-amide v3 representations (24 native r2SCAN-3c/CPCM endpoint single points), and the frozen external 1KB0 fixed-core PQQ pair (2 endpoints). Preserve source geometries, waters, protonation, labels and site order. No geometry optimization, environmental correction, new biological panel, or threshold fitting. Existing original inputs and repairs are hash verified and copied byte for byte to workspaces. Existing aquo calculations are reused after output/input/receipt verification. No aquo recomputation required.
+
+Purpose: measure baseline performance and isolate the chemistry-repair effect. GGR is the sole direct same-assay direction control; aequorin EF1/EF3/EF4 remains an ordered vector with protein-level evidence; carp parvalbumin CD/EF remains supporting cross-study evidence. 1KB0 is a frozen PQQ class-transfer control, not direct La/Ca affinity evidence. Six-site repaired protocol is development, not a new blind confirmatory test. No scores for these new tasks were present in their prepared directories at inventory. Earlier canonical 25+2 scores were inspected and are reused, not new validation.
+
+Reporting: R=E_Ca-E_La; S=(R-reference_gap)*627.509474. The existing CN8 reference is a ranking gauge, not an absolute hydration free energy. Its Hamiltonian matches the repaired inputs, permitting an explicitly documented common gauge comparison; v3 inherits no decision threshold or universal zero. Frozen original GGR sign test remains reported under its own preregistration. Released PQQ bands apply only to exact fixed-core v3. Report repair delta R independently of the aquo offset. No environmental fields substituted with zero.
+
+Execution uses the existing manifested runner, maximum 16 MPI ranks per small endpoint and concurrent endpoints filling available CPUs. Standard/memory allocation; no new walltime or cost stopping rule. Existing recent four-endpoint receipt is 154 s on 344 CPUs (52,976 allocated core-s), useful only as a historical scale estimate, not a matched prediction. Record measured batch and endpoint costs. Preserve failures and use fresh task directories for technical retries. Default scorer stays unchanged.

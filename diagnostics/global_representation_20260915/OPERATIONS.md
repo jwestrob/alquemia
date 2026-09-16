@@ -38,3 +38,7 @@ Job 1199004 is queued from `run_global_memory.sbatch`. Inputs: `workspaces/globa
 ```
 
 The automatic path writes `collection_1199004.json` after the terminal receipt appears. No extra endpoints or model variants are launched by the watcher/collector. Original partial native scratch remains retained because residual processes may still reference it; do not delete it while node cleanup is unresolved.
+
+## Progress-reporting preference (Jacob, 2026-09-15)
+
+“ha don't report the slurm estimates man.” Report observed runtime, stage, iteration rate when available, CPU activity and memory. Do not report scheduler start forecasts. Job1199004 has now started on node-112-1500g-1 with eight MPI ranks per endpoint. At 4m36s, both remained in native startup; 16 worker processes showed about1539% aggregate process CPU, about550GiB total ORCA RSS, and about945GiB node memory available. No SCF iteration/convergence rate was yet available.

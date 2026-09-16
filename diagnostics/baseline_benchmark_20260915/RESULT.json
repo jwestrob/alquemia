@@ -1,0 +1,835 @@
+{
+  "accounting": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/baseline_benchmark_20260915/ACCOUNTING.txt",
+    "sha256": "9573fbcd26fa844db5a4c6a4c2f4c3477f15ed09a23a37d5c3dca9f755a66f69"
+  },
+  "agreement": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/baseline_benchmark_20260915/AGREEMENT.md",
+    "sha256": "7ad1747593754a5f52428edc581c85d3949eb6068b5e416f0fc887edcb4214a1"
+  },
+  "baseline_default_changed": false,
+  "collection": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/collection_1199299.json",
+    "sha256": "2d2efa84013b0a11a0f7127b0ba986ab0182e33fb9bd2977630b91388bc28b73"
+  },
+  "completed_endpoint_count": 26,
+  "environmental_physics": {
+    "affordable": "global_native_backend_failed_feasibility; APBS rejected on physical checks",
+    "included_in_scores": false,
+    "numerically_credible": false,
+    "predictive_added_value": "not_established"
+  },
+  "existing_repair_protocol_id": "generic_peptide_amide_vertical_native_r2scan3c_v3",
+  "failed_endpoint_count": 0,
+  "job_id": "1199299",
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/manifest.json",
+    "sha256": "d67467c7fdc29bc1e6eef80ea09c4d69524a3e1db1786da806c9e336645f86af"
+  },
+  "new_protocol_ids_this_phase": [],
+  "next_operation": "read completed RESULTS.md; existing dry-run is read-only and verifies all prepared task inputs",
+  "ordered_vectors": [
+    {
+      "S_vector_kcal_mol": [
+        -12.584211872582483,
+        -1.99853239852875,
+        5.273523915708737
+      ],
+      "biological_group": "aequorin",
+      "independent_site_labels": false,
+      "lane": "baseline",
+      "maximum": 5.273523915708737,
+      "median": -1.99853239852875,
+      "minimum": -12.584211872582483,
+      "negative_count": 2,
+      "ordered_sites": [
+        "aequorin_1sl8_EF1",
+        "aequorin_1sl8_EF3",
+        "aequorin_1sl8_EF4"
+      ],
+      "positive_count": 1
+    },
+    {
+      "S_vector_kcal_mol": [
+        -9.219111393904239,
+        2.241351901261519,
+        8.569449073947723
+      ],
+      "biological_group": "aequorin",
+      "independent_site_labels": false,
+      "lane": "repaired",
+      "maximum": 8.569449073947723,
+      "median": 2.241351901261519,
+      "minimum": -9.219111393904239,
+      "negative_count": 1,
+      "ordered_sites": [
+        "aequorin_1sl8_EF1",
+        "aequorin_1sl8_EF3",
+        "aequorin_1sl8_EF4"
+      ],
+      "positive_count": 2
+    },
+    {
+      "S_vector_kcal_mol": [
+        -11.590215632056182,
+        14.419732624599838
+      ],
+      "biological_group": "parvalbumin",
+      "independent_site_labels": false,
+      "lane": "baseline",
+      "ordered_sites": [
+        "carp_parvalbumin_4cpv_CD",
+        "carp_parvalbumin_4cpv_EF"
+      ]
+    },
+    {
+      "S_vector_kcal_mol": [
+        -8.774664089130578,
+        18.334090118375606
+      ],
+      "biological_group": "parvalbumin",
+      "independent_site_labels": false,
+      "lane": "repaired",
+      "ordered_sites": [
+        "carp_parvalbumin_4cpv_CD",
+        "carp_parvalbumin_4cpv_EF"
+      ]
+    }
+  ],
+  "recommendation": "retain_baseline",
+  "repair_differences": [
+    {
+      "case": "aequorin_1sl8_EF1",
+      "repair_delta_R_kcal_mol": 3.36510047869524,
+      "repair_to_original_assigned_rank_seconds_ratio": 1.0592540064180391
+    },
+    {
+      "case": "aequorin_1sl8_EF3",
+      "repair_delta_R_kcal_mol": 4.239884299808182,
+      "repair_to_original_assigned_rank_seconds_ratio": 1.0583627390150228
+    },
+    {
+      "case": "aequorin_1sl8_EF4",
+      "repair_delta_R_kcal_mol": 3.2959251581924036,
+      "repair_to_original_assigned_rank_seconds_ratio": 1.1378048075538532
+    },
+    {
+      "case": "carp_parvalbumin_4cpv_CD",
+      "repair_delta_R_kcal_mol": 2.815551542909816,
+      "repair_to_original_assigned_rank_seconds_ratio": 1.0613575719184292
+    },
+    {
+      "case": "carp_parvalbumin_4cpv_EF",
+      "repair_delta_R_kcal_mol": 3.914357493747957,
+      "repair_to_original_assigned_rank_seconds_ratio": 1.056059936850756
+    },
+    {
+      "case": "ggr_1glg_GGR",
+      "repair_delta_R_kcal_mol": 4.240618237992749,
+      "repair_to_original_assigned_rank_seconds_ratio": 1.1038045708198896
+    }
+  ],
+  "response_correction_status": "response_model_not_validated",
+  "scheduler_cost": {
+    "GPU_seconds": 0,
+    "allocated_core_seconds": 51648,
+    "allocated_cpus": 64,
+    "peak_batch_RSS_KiB": 8280788,
+    "total_cpu_seconds": 40778,
+    "wall_seconds": 807
+  },
+  "scores": [
+    {
+      "biological_group": "aequorin",
+      "case": "aequorin_1sl8_EF1",
+      "decision": "uncalibrated_protocol",
+      "endpoints": {
+        "Ca": {
+          "assigned_rank_seconds": 1540.743472,
+          "energy_hartree": -1782.856072772219,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/aequorin_1sl8_EF1/baseline/Ca/sp_aequorin_1sl8_EF1_Ca.out",
+            "sha256": "841c90d41d1d016683c87480b91ba8375cb7d917066d20f07431bd787f8a1f17"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/aequorin_1sl8_EF1/baseline/Ca/sp_aequorin_1sl8_EF1_Ca.out.execution.json",
+            "sha256": "23f5de11565641f057d156ce60e9306685362be698a52a1a98e0f2e8a3203b4b"
+          },
+          "status": "complete",
+          "wall_seconds": 96.296467
+        },
+        "La": {
+          "assigned_rank_seconds": 1696.107968,
+          "energy_hartree": -1136.758472722615,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/aequorin_1sl8_EF1/baseline/La/sp_aequorin_1sl8_EF1_La.out",
+            "sha256": "693cd79a1bcdbfa005873396905ef9bb3443265b4e25eadee3d12b265e475a58"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/aequorin_1sl8_EF1/baseline/La/sp_aequorin_1sl8_EF1_La.out.execution.json",
+            "sha256": "dc4d8b9a9851b950f2e0daf9b4288916fbbb5cd59d3940c92099c11e0e16d435"
+          },
+          "status": "complete",
+          "wall_seconds": 106.006748
+        }
+      },
+      "evaluation_role": "frozen_original_evaluation",
+      "evidence_stratum": "protein_level_apparent_affinity",
+      "lane": "baseline",
+      "protocol_id": "generic_vertical_exchange_native_r2scan3c_v2",
+      "score": {
+        "R_hartree": -646.0976000496041,
+        "R_kcal_mol": -405432.36515978945,
+        "S_kcal_mol": -12.584211872582483,
+        "reference_status": "explicit_reporting_gauge"
+      },
+      "source_manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/aequorin_1sl8/EF1/aequorin_1sl8_EF1_carve_manifest.json",
+        "sha256": "6f20d85c64818d8b17c662e2dbb4c650f3fba96af393f47abc2165ba1e6f784e"
+      },
+      "status": "complete"
+    },
+    {
+      "biological_group": "aequorin",
+      "case": "aequorin_1sl8_EF1",
+      "decision": "uncalibrated_protocol",
+      "endpoints": {
+        "Ca": {
+          "assigned_rank_seconds": 1695.69816,
+          "energy_hartree": -1838.234103646484,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/aequorin_1sl8_EF1/repaired/Ca/aequorin_1sl8_EF1_amide_v3_Ca.out",
+            "sha256": "0010425a6a92172b1753d5ffb9561d5869cf138d321c697370e59a1db5561ff2"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/aequorin_1sl8_EF1/repaired/Ca/aequorin_1sl8_EF1_amide_v3_Ca.out.execution.json",
+            "sha256": "a288a446ddc62072e672bc6717c32e3516a3efe1bd36a3c1dfe7064e6d5bd159"
+          },
+          "status": "complete",
+          "wall_seconds": 105.981135
+        },
+        "La": {
+          "assigned_rank_seconds": 1732.949696,
+          "energy_hartree": -1192.141866225841,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/aequorin_1sl8_EF1/repaired/La/aequorin_1sl8_EF1_amide_v3_La.out",
+            "sha256": "5405aeb5e0fddcfa6266359b97db32e466fce8a2e34d599b7afcd53e91169d0d"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/aequorin_1sl8_EF1/repaired/La/aequorin_1sl8_EF1_amide_v3_La.out.execution.json",
+            "sha256": "9812d4d7814339e0d6278f80c2d8c2d3ba6c2a9451e6133885b1b9965941a9c0"
+          },
+          "status": "complete",
+          "wall_seconds": 108.309356
+        }
+      },
+      "evaluation_role": "chemistry_repair_development",
+      "evidence_stratum": "protein_level_apparent_affinity",
+      "lane": "repaired",
+      "protocol_id": "generic_peptide_amide_vertical_native_r2scan3c_v3",
+      "score": {
+        "R_hartree": -646.092237420643,
+        "R_kcal_mol": -405429.00005931075,
+        "S_kcal_mol": -9.219111393904239,
+        "reference_status": "explicit_reporting_gauge"
+      },
+      "source_manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/affordable_challenger_20260915/verified_repairs/aequorin_1sl8_EF1/repair_manifest.json",
+        "sha256": "0d7654f9105fb1d58f44200cd1dae7f89f6f98e2c2f18e9966f668ea4ecc8120"
+      },
+      "status": "complete"
+    },
+    {
+      "biological_group": "aequorin",
+      "case": "aequorin_1sl8_EF3",
+      "decision": "uncalibrated_protocol",
+      "endpoints": {
+        "Ca": {
+          "assigned_rank_seconds": 1441.462832,
+          "energy_hartree": -1802.470061698357,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/aequorin_1sl8_EF3/baseline/Ca/sp_aequorin_1sl8_EF3_Ca.out",
+            "sha256": "8b71ea2aee1b141cf8ae7e39aeec32591996067ee302ccd34f75bfad92c9b2cc"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/aequorin_1sl8_EF3/baseline/Ca/sp_aequorin_1sl8_EF3_Ca.out.execution.json",
+            "sha256": "e7e1bdc0ca76c1c169cbf55232f24a847264bcdf49ce23eac29a8e7e8d30c6dc"
+          },
+          "status": "complete",
+          "wall_seconds": 90.091427
+        },
+        "La": {
+          "assigned_rank_seconds": 1538.89544,
+          "energy_hartree": -1156.389331002783,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/aequorin_1sl8_EF3/baseline/La/sp_aequorin_1sl8_EF3_La.out",
+            "sha256": "e14d26bb72efad868b2b85c2144270dc0a65745204b35405b2d15d75be228561"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/aequorin_1sl8_EF3/baseline/La/sp_aequorin_1sl8_EF3_La.out.execution.json",
+            "sha256": "ba066e8a231efd37fc18bab7a1bf545748d11a67fb7f6655b39e3f83c4891e69"
+          },
+          "status": "complete",
+          "wall_seconds": 96.180965
+        }
+      },
+      "evaluation_role": "frozen_original_evaluation",
+      "evidence_stratum": "protein_level_apparent_affinity",
+      "lane": "baseline",
+      "protocol_id": "generic_vertical_exchange_native_r2scan3c_v2",
+      "score": {
+        "R_hartree": -646.0807306955742,
+        "R_kcal_mol": -405421.7794803154,
+        "S_kcal_mol": -1.99853239852875,
+        "reference_status": "explicit_reporting_gauge"
+      },
+      "source_manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/aequorin_1sl8/EF3/aequorin_1sl8_EF3_carve_manifest.json",
+        "sha256": "b06b819b826334cd95071f117129738576899fce5bc3d212284168f01fc32b94"
+      },
+      "status": "complete"
+    },
+    {
+      "biological_group": "aequorin",
+      "case": "aequorin_1sl8_EF3",
+      "decision": "uncalibrated_protocol",
+      "endpoints": {
+        "Ca": {
+          "assigned_rank_seconds": 1529.543168,
+          "energy_hartree": -1857.839402172594,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/aequorin_1sl8_EF3/repaired/Ca/aequorin_1sl8_EF3_amide_v3_Ca.out",
+            "sha256": "7538344eccac671017586297c630f1f099e8e13c2028079d965a3ad139bbe353"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/aequorin_1sl8_EF3/repaired/Ca/aequorin_1sl8_EF3_amide_v3_Ca.out.execution.json",
+            "sha256": "0aedb44d51526e6af1955b0c61f6bb7c1ff510f5bf598cec000381598e72141b"
+          },
+          "status": "complete",
+          "wall_seconds": 95.596448
+        },
+        "La": {
+          "assigned_rank_seconds": 1624.756976,
+          "energy_hartree": -1211.765428162736,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/aequorin_1sl8_EF3/repaired/La/aequorin_1sl8_EF3_amide_v3_La.out",
+            "sha256": "f48b6183f8bd782dd54f98b683bdeeb29d7f2e2a43996a8335f473ed39b2058b"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/aequorin_1sl8_EF3/repaired/La/aequorin_1sl8_EF3_amide_v3_La.out.execution.json",
+            "sha256": "82ebea6438db065f9a46d319bd54ec4fd7ac79b951ef9b94331a7f1646ca48ae"
+          },
+          "status": "complete",
+          "wall_seconds": 101.547311
+        }
+      },
+      "evaluation_role": "chemistry_repair_development",
+      "evidence_stratum": "protein_level_apparent_affinity",
+      "lane": "repaired",
+      "protocol_id": "generic_peptide_amide_vertical_native_r2scan3c_v3",
+      "score": {
+        "R_hartree": -646.0739740098579,
+        "R_kcal_mol": -405417.5395960156,
+        "S_kcal_mol": 2.241351901261519,
+        "reference_status": "explicit_reporting_gauge"
+      },
+      "source_manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/affordable_challenger_20260915/verified_repairs/aequorin_1sl8_EF3/repair_manifest.json",
+        "sha256": "9041c33c073f5aa86aba20129931db7714c06d6d7d770140b3b6599c3ad6344e"
+      },
+      "status": "complete"
+    },
+    {
+      "biological_group": "aequorin",
+      "case": "aequorin_1sl8_EF4",
+      "decision": "uncalibrated_protocol",
+      "endpoints": {
+        "Ca": {
+          "assigned_rank_seconds": 1170.549152,
+          "energy_hartree": -1709.020875741939,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/aequorin_1sl8_EF4/baseline/Ca/sp_aequorin_1sl8_EF4_Ca.out",
+            "sha256": "1db002fc544a18488df9017332456abdaac455d182dd8e0b80ca2a19f6570089"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/aequorin_1sl8_EF4/baseline/Ca/sp_aequorin_1sl8_EF4_Ca.out.execution.json",
+            "sha256": "6fb8d3081cb422f001f72a717cc59a36c566054d0c6e6f4e2c39b1be72ad1ec7"
+          },
+          "status": "complete",
+          "wall_seconds": 73.159322
+        },
+        "La": {
+          "assigned_rank_seconds": 1357.915088,
+          "energy_hartree": -1062.951733805763,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/aequorin_1sl8_EF4/baseline/La/sp_aequorin_1sl8_EF4_La.out",
+            "sha256": "4cd18ad77de31134378e2dfcadd65524d80b36c73eab41e000002c94e0360dab"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/aequorin_1sl8_EF4/baseline/La/sp_aequorin_1sl8_EF4_La.out.execution.json",
+            "sha256": "e8303107018ed476f419eafc6b9d58aad29dd1d3d6380063bd57da48c897e04c"
+          },
+          "status": "complete",
+          "wall_seconds": 84.869693
+        }
+      },
+      "evaluation_role": "frozen_original_evaluation",
+      "evidence_stratum": "protein_level_apparent_affinity",
+      "lane": "baseline",
+      "protocol_id": "generic_vertical_exchange_native_r2scan3c_v2",
+      "score": {
+        "R_hartree": -646.069141936176,
+        "R_kcal_mol": -405414.5074240011,
+        "S_kcal_mol": 5.273523915708737,
+        "reference_status": "explicit_reporting_gauge"
+      },
+      "source_manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/aequorin_1sl8/EF4/aequorin_1sl8_EF4_carve_manifest.json",
+        "sha256": "35deae63f21a7252988cab52a8fc0a5d668e77cecdb52be1140958aa8bee86ae"
+      },
+      "status": "complete"
+    },
+    {
+      "biological_group": "aequorin",
+      "case": "aequorin_1sl8_EF4",
+      "decision": "uncalibrated_protocol",
+      "endpoints": {
+        "Ca": {
+          "assigned_rank_seconds": 1327.953248,
+          "energy_hartree": -1764.405516335719,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/aequorin_1sl8_EF4/repaired/Ca/aequorin_1sl8_EF4_amide_v3_Ca.out",
+            "sha256": "8c2a336d8b4262fba6b5cc65694171096dab45a606d715ae31140f3151023487"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/aequorin_1sl8_EF4/repaired/Ca/aequorin_1sl8_EF4_amide_v3_Ca.out.execution.json",
+            "sha256": "baef44c00c1c11e350d2372eafacc7f77bd50994144e088699e053f853a2b475"
+          },
+          "status": "complete",
+          "wall_seconds": 82.997078
+        },
+        "La": {
+          "assigned_rank_seconds": 1548.94552,
+          "energy_hartree": -1118.341626790614,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/aequorin_1sl8_EF4/repaired/La/aequorin_1sl8_EF4_amide_v3_La.out",
+            "sha256": "b91cfb09e7e1e6a4e1276ba8f86eb1ffeb15cdd9cb0a961bca2f9ecc16be0588"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/aequorin_1sl8_EF4/repaired/La/aequorin_1sl8_EF4_amide_v3_La.out.execution.json",
+            "sha256": "c1606bf6dc54cb9bdb05ade096b85c23d62cc72c1f9ef99784bcb1a7b5dce102"
+          },
+          "status": "complete",
+          "wall_seconds": 96.809095
+        }
+      },
+      "evaluation_role": "chemistry_repair_development",
+      "evidence_stratum": "protein_level_apparent_affinity",
+      "lane": "repaired",
+      "protocol_id": "generic_peptide_amide_vertical_native_r2scan3c_v3",
+      "score": {
+        "R_hartree": -646.063889545105,
+        "R_kcal_mol": -405411.2114988429,
+        "S_kcal_mol": 8.569449073947723,
+        "reference_status": "explicit_reporting_gauge"
+      },
+      "source_manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/affordable_challenger_20260915/verified_repairs/aequorin_1sl8_EF4/repair_manifest.json",
+        "sha256": "b7f65903c204e0b13e056fb622d267a2abfa005f5f21c0662dee0eb1b8ba4d27"
+      },
+      "status": "complete"
+    },
+    {
+      "biological_group": "parvalbumin",
+      "case": "carp_parvalbumin_4cpv_CD",
+      "decision": "uncalibrated_protocol",
+      "endpoints": {
+        "Ca": {
+          "assigned_rank_seconds": 1661.272688,
+          "energy_hartree": -1900.517595365334,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/carp_parvalbumin_4cpv_CD/baseline/Ca/sp_carp_parvalbumin_4cpv_CD_Ca.out",
+            "sha256": "2c9d4e1b1a57d6afaf580c0f13fccc3c625e43542c1e1719e77b685cc55db2f1"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/carp_parvalbumin_4cpv_CD/baseline/Ca/sp_carp_parvalbumin_4cpv_CD_Ca.out.execution.json",
+            "sha256": "5c537fd17145a3d27ea20c770f410a99c5d43a0355d450ecef4cc0ce4d6a838d"
+          },
+          "status": "complete",
+          "wall_seconds": 103.829543
+        },
+        "La": {
+          "assigned_rank_seconds": 1787.574608,
+          "energy_hartree": -1254.421579349568,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/carp_parvalbumin_4cpv_CD/baseline/La/sp_carp_parvalbumin_4cpv_CD_La.out",
+            "sha256": "15b2c6ac864dcded91a55195491c1afff1b9ce14d72c00bd373a0cd4b2c8c69b"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/carp_parvalbumin_4cpv_CD/baseline/La/sp_carp_parvalbumin_4cpv_CD_La.out.execution.json",
+            "sha256": "6dc28749c25df4ad5040667c16de5a726e7a36647453563cc43c4e5a42e9f9ad"
+          },
+          "status": "complete",
+          "wall_seconds": 111.723413
+        }
+      },
+      "evaluation_role": "frozen_original_evaluation",
+      "evidence_stratum": "supporting_cross_study",
+      "lane": "baseline",
+      "protocol_id": "generic_vertical_exchange_native_r2scan3c_v2",
+      "score": {
+        "R_hartree": -646.096016015766,
+        "R_kcal_mol": -405431.3711635489,
+        "S_kcal_mol": -11.590215632056182,
+        "reference_status": "explicit_reporting_gauge"
+      },
+      "source_manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/carp_parvalbumin_4cpv/CD/carp_parvalbumin_4cpv_CD_carve_manifest.json",
+        "sha256": "be34f337a45145febc18ba2a79af57637b4a9fde0a46d7e5926d46954f1085bf"
+      },
+      "status": "complete"
+    },
+    {
+      "biological_group": "parvalbumin",
+      "case": "carp_parvalbumin_4cpv_CD",
+      "decision": "uncalibrated_protocol",
+      "endpoints": {
+        "Ca": {
+          "assigned_rank_seconds": 1624.120272,
+          "energy_hartree": -1955.888511553644,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/carp_parvalbumin_4cpv_CD/repaired/Ca/carp_parvalbumin_4cpv_CD_amide_v3_Ca.out",
+            "sha256": "7ef0e6b7a7f86c37202790e4aaab2e5e23b136579c10425467cc2ea3e577f710"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/carp_parvalbumin_4cpv_CD/repaired/Ca/carp_parvalbumin_4cpv_CD_amide_v3_Ca.out.execution.json",
+            "sha256": "53d091eae6d577409906ad621e68a5f8c1ddad9ec457d2d81d7212cce8030577"
+          },
+          "status": "complete",
+          "wall_seconds": 101.507517
+        },
+        "La": {
+          "assigned_rank_seconds": 2036.33992,
+          "energy_hartree": -1309.796982404865,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/carp_parvalbumin_4cpv_CD/repaired/La/carp_parvalbumin_4cpv_CD_amide_v3_La.out",
+            "sha256": "d64c63b84b191479634e8889111667fdc5c6c62940e57677a771b3b25c321f68"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/carp_parvalbumin_4cpv_CD/repaired/La/carp_parvalbumin_4cpv_CD_amide_v3_La.out.execution.json",
+            "sha256": "60f558307ae76c93cb0ef43a972c22c94c5107b2443bf258f5781bad94bffa7e"
+          },
+          "status": "complete",
+          "wall_seconds": 127.271245
+        }
+      },
+      "evaluation_role": "chemistry_repair_development",
+      "evidence_stratum": "supporting_cross_study",
+      "lane": "repaired",
+      "protocol_id": "generic_peptide_amide_vertical_native_r2scan3c_v3",
+      "score": {
+        "R_hartree": -646.091529148779,
+        "R_kcal_mol": -405428.555612006,
+        "S_kcal_mol": -8.774664089130578,
+        "reference_status": "explicit_reporting_gauge"
+      },
+      "source_manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/affordable_challenger_20260915/verified_repairs/carp_parvalbumin_4cpv_CD/repair_manifest.json",
+        "sha256": "928747471351eded4c1d712f957850018f62adad472d25c818fe94946dde4a8c"
+      },
+      "status": "complete"
+    },
+    {
+      "biological_group": "parvalbumin",
+      "case": "carp_parvalbumin_4cpv_EF",
+      "decision": "uncalibrated_protocol",
+      "endpoints": {
+        "Ca": {
+          "assigned_rank_seconds": 1377.157824,
+          "energy_hartree": -1821.885243647418,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/carp_parvalbumin_4cpv_EF/baseline/Ca/sp_carp_parvalbumin_4cpv_EF_Ca.out",
+            "sha256": "41c5b03681d5ec1735928852625bfbbb6765795c447458346038a1beeb3c82fd"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/carp_parvalbumin_4cpv_EF/baseline/Ca/sp_carp_parvalbumin_4cpv_EF_Ca.out.execution.json",
+            "sha256": "8de3b88db25b1cd925703d71c692287ff43e7afa7465cfaf27c92de12f5cabf2"
+          },
+          "status": "complete",
+          "wall_seconds": 86.072364
+        },
+        "La": {
+          "assigned_rank_seconds": 1470.63304,
+          "energy_hartree": -1175.830677122591,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/carp_parvalbumin_4cpv_EF/baseline/La/sp_carp_parvalbumin_4cpv_EF_La.out",
+            "sha256": "ac12f822a6cdd072e6a092d034c6acc751024e4206ac6f698bb5058cb9268c84"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/carp_parvalbumin_4cpv_EF/baseline/La/sp_carp_parvalbumin_4cpv_EF_La.out.execution.json",
+            "sha256": "6c9ebf03885d4f63d82dcca115bc54c2ae46489ee3e8d2e2c64a5bc072963d21"
+          },
+          "status": "complete",
+          "wall_seconds": 91.914565
+        }
+      },
+      "evaluation_role": "frozen_original_evaluation",
+      "evidence_stratum": "supporting_cross_study",
+      "lane": "baseline",
+      "protocol_id": "generic_vertical_exchange_native_r2scan3c_v2",
+      "score": {
+        "R_hartree": -646.0545665248271,
+        "R_kcal_mol": -405405.36121529224,
+        "S_kcal_mol": 14.419732624599838,
+        "reference_status": "explicit_reporting_gauge"
+      },
+      "source_manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/carp_parvalbumin_4cpv/EF/carp_parvalbumin_4cpv_EF_carve_manifest.json",
+        "sha256": "9652222a694448109cd451cef0e649548272b31507c9cb70fa337681b6bfbfa0"
+      },
+      "status": "complete"
+    },
+    {
+      "biological_group": "parvalbumin",
+      "case": "carp_parvalbumin_4cpv_EF",
+      "decision": "uncalibrated_protocol",
+      "endpoints": {
+        "Ca": {
+          "assigned_rank_seconds": 1413.264448,
+          "energy_hartree": -1877.263970774381,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/carp_parvalbumin_4cpv_EF/repaired/Ca/carp_parvalbumin_4cpv_EF_amide_v3_Ca.out",
+            "sha256": "32d6cb46a5c405557b85e42bd612e8949e2fc01e5f9f310d114f20635b82b584"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/carp_parvalbumin_4cpv_EF/repaired/Ca/carp_parvalbumin_4cpv_EF_amide_v3_Ca.out.execution.json",
+            "sha256": "14941d35fc699f83ae09b2b6a311b564c3cf414892f32019eec192ef1c07c979"
+          },
+          "status": "complete",
+          "wall_seconds": 88.329028
+        },
+        "La": {
+          "assigned_rank_seconds": 1594.173392,
+          "energy_hartree": -1231.215642175284,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/carp_parvalbumin_4cpv_EF/repaired/La/carp_parvalbumin_4cpv_EF_amide_v3_La.out",
+            "sha256": "602bd5a3a9f6e1c55f169f575847cd3ef6e03a32cd8eb85b96e1881b9b17c774"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/carp_parvalbumin_4cpv_EF/repaired/La/carp_parvalbumin_4cpv_EF_amide_v3_La.out.execution.json",
+            "sha256": "7dfcd60ebbdd4ebec0ef7a26652cfe4d700e84cfaddf06a609d977bfb3c1c198"
+          },
+          "status": "complete",
+          "wall_seconds": 99.635837
+        }
+      },
+      "evaluation_role": "chemistry_repair_development",
+      "evidence_stratum": "supporting_cross_study",
+      "lane": "repaired",
+      "protocol_id": "generic_peptide_amide_vertical_native_r2scan3c_v3",
+      "score": {
+        "R_hartree": -646.048328599097,
+        "R_kcal_mol": -405401.4468577985,
+        "S_kcal_mol": 18.334090118375606,
+        "reference_status": "explicit_reporting_gauge"
+      },
+      "source_manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/affordable_challenger_20260915/verified_repairs/carp_parvalbumin_4cpv_EF/repair_manifest.json",
+        "sha256": "7c5581ecf43e44177312de60e391f66d9a6a829ab3410ce5f87284a83a5bb7b9"
+      },
+      "status": "complete"
+    },
+    {
+      "biological_group": "ggr",
+      "case": "ggr_1glg_GGR",
+      "decision": "uncalibrated_protocol",
+      "endpoints": {
+        "Ca": {
+          "assigned_rank_seconds": 1753.08464,
+          "energy_hartree": -1974.40971452158,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/ggr_1glg_GGR/baseline/Ca/sp_ggr_1glg_GGR_Ca.out",
+            "sha256": "65e0131cb8a46267c54ddbc8f36b4317c667ba17a475b6ea8c2a00ea826a4347"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/ggr_1glg_GGR/baseline/Ca/sp_ggr_1glg_GGR_Ca.out.execution.json",
+            "sha256": "69b8b8906391f45d668ed517fbf5a8fc1822e83b0a4266990cb17e4f7a247348"
+          },
+          "status": "complete",
+          "wall_seconds": 109.56779
+        },
+        "La": {
+          "assigned_rank_seconds": 2077.866048,
+          "energy_hartree": -1328.330283227471,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/ggr_1glg_GGR/baseline/La/sp_ggr_1glg_GGR_La.out",
+            "sha256": "f659052cc672542f9462f96b61cf8549d52f2e92d8b82e561101efe51f65cdfc"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/ggr_1glg_GGR/baseline/La/sp_ggr_1glg_GGR_La.out.execution.json",
+            "sha256": "b0de89bc77df68e84ae01326a99be7ca06a8e4da8241420056cb8ad25fe58f8c"
+          },
+          "status": "complete",
+          "wall_seconds": 129.866628
+        }
+      },
+      "evaluation_role": "frozen_original_evaluation",
+      "evidence_stratum": "direct_same_assay_direction",
+      "lane": "baseline",
+      "protocol_id": "generic_vertical_exchange_native_r2scan3c_v2",
+      "score": {
+        "R_hartree": -646.0794312941091,
+        "R_kcal_mol": -405420.9640935855,
+        "S_kcal_mol": -1.1831456686642121,
+        "reference_status": "explicit_reporting_gauge"
+      },
+      "source_manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/ggr_1glg/GGR/ggr_1glg_GGR_carve_manifest.json",
+        "sha256": "6d084ccebcf8e4eb4f42f567c234b6d303b6809d71d40dc2b8484080cfda3e62"
+      },
+      "status": "complete"
+    },
+    {
+      "biological_group": "ggr",
+      "case": "ggr_1glg_GGR",
+      "decision": "uncalibrated_protocol",
+      "endpoints": {
+        "Ca": {
+          "assigned_rank_seconds": 2067.046592,
+          "energy_hartree": -2029.791073563135,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/ggr_1glg_GGR/repaired/Ca/ggr_1glg_GGR_amide_v3_Ca.out",
+            "sha256": "a7a529051dac21ca214a4c37b8ad2d557f75edbc9aa89d111e8f6eb6fa48b1e3"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/ggr_1glg_GGR/repaired/Ca/ggr_1glg_GGR_amide_v3_Ca.out.execution.json",
+            "sha256": "40a26a15e600001f17c07631da136fa7e8cf1171db140737163ea0680f441736"
+          },
+          "status": "complete",
+          "wall_seconds": 129.190412
+        },
+        "La": {
+          "assigned_rank_seconds": 2161.574288,
+          "energy_hartree": -1383.718400124347,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/ggr_1glg_GGR/repaired/La/ggr_1glg_GGR_amide_v3_La.out",
+            "sha256": "49bce050a549bafcfa3a330ab25ba998ee56091d6d26447dac93d0d6198e8445"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/ggr_1glg_GGR/repaired/La/ggr_1glg_GGR_amide_v3_La.out.execution.json",
+            "sha256": "cc62da3bb9a8c13eea93c53bfbc2b3c2b667b13cc56a6524ef09a5833f20f39b"
+          },
+          "status": "complete",
+          "wall_seconds": 135.098393
+        }
+      },
+      "evaluation_role": "chemistry_repair_development",
+      "evidence_stratum": "direct_same_assay_direction",
+      "lane": "repaired",
+      "protocol_id": "generic_peptide_amide_vertical_native_r2scan3c_v3",
+      "score": {
+        "R_hartree": -646.0726734387879,
+        "R_kcal_mol": -405416.7234753475,
+        "S_kcal_mol": 3.0574725693173397,
+        "reference_status": "explicit_reporting_gauge"
+      },
+      "source_manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/affordable_challenger_20260915/verified_repairs/ggr_1glg_GGR/repair_manifest.json",
+        "sha256": "91147d0e56093ff03fa0b37680dc1443a1264fcac29f43aea49a9788570eea07"
+      },
+      "status": "complete"
+    },
+    {
+      "biological_group": "pqq_1kb0",
+      "case": "pqq_1kb0",
+      "decision": "Ca-supported",
+      "endpoints": {
+        "Ca": {
+          "assigned_rank_seconds": 2872.630848,
+          "energy_hartree": -2844.09521589621,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/pqq_1kb0/fixed_core/Ca/sp_pmdh_fc_holdout_1kb0_Ca.out",
+            "sha256": "b3f5f019272f2d5b8e0182666f86393faf960a59de22385450ce06a861b56c78"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/pqq_1kb0/fixed_core/Ca/sp_pmdh_fc_holdout_1kb0_Ca.out.execution.json",
+            "sha256": "59358296485694ed439bcdd53a6e8d00dbbd5121eca7fa2167f99392a64fc5f3"
+          },
+          "status": "complete",
+          "wall_seconds": 179.539428
+        },
+        "La": {
+          "assigned_rank_seconds": 3535.79648,
+          "energy_hartree": -2198.038792613901,
+          "mpi_ranks": 16,
+          "output": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/pqq_1kb0/fixed_core/La/sp_pmdh_fc_holdout_1kb0_La.out",
+            "sha256": "1a2c8f5ec56cd0c069b24b6275ae21bb1af01dff601c6f6362414a9d6c545ff0"
+          },
+          "receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/pqq_1kb0/fixed_core/La/sp_pmdh_fc_holdout_1kb0_La.out.execution.json",
+            "sha256": "f458e20421ebff3f3761a795fad926f9a070c6b855327dcd834c57d2145b8fc3"
+          },
+          "status": "complete",
+          "wall_seconds": 220.98728
+        }
+      },
+      "evaluation_role": "frozen_original_evaluation",
+      "evidence_stratum": "canonical_PQQ_class_transfer",
+      "lane": "fixed_core",
+      "protocol_id": "pqq_vertical_swap_r2scan3c_native_cpcm_fixed_core_v3",
+      "score": {
+        "R_hartree": -646.056423282309,
+        "R_kcal_mol": -405406.526348203,
+        "S_kcal_mol": 13.254599713820955,
+        "reference_status": "explicit_reporting_gauge"
+      },
+      "source_manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_q46444_1kb0_external_validation_20260915/prepared/01_1KB0/pmdh_fc_holdout_1kb0_carve_manifest.json",
+        "sha256": "9ecc4229ffa077f8756a0a9f5a99cc3329a2d47f0416e2beb5e4989d28460114"
+      },
+      "status": "complete"
+    }
+  ],
+  "software_tests": {
+    "failed": 0,
+    "passed": 27,
+    "skipped": 0
+  },
+  "status": "completed",
+  "workflow_cost": [
+    {
+      "allocated_core_seconds": 51510.95922803879,
+      "allocated_cpus": 64,
+      "elapsed_seconds": 804.8587379381061,
+      "error": null,
+      "slurm_job_id": "1199299",
+      "time_unix": 1789519907.5029416
+    }
+  ]
+}

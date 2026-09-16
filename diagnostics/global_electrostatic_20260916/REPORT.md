@@ -1,0 +1,101 @@
+# Global electrostatic challenger: progress report
+
+**2026-09-16 — quantum and charge checks complete; surface checks running.**
+The baseline/default remains unchanged. No accuracy result, physical-feasibility
+pass or promotion/rejection decision is available yet.
+
+## What this tests
+
+Protocol `vacuum_r2scan3c_mbis_global_tabi_electrostatic_v1` combines native
+vacuum r2SCAN-3c core energy, endpoint MBIS charges interacting with fixed
+protein charges, and one whole-protein TABI reaction-field energy. It uses the
+same frozen nuclear states and a common source-atom cavity. It is a static
+electrostatic descriptor, not a complete binding free energy.
+
+The approved first gate is 1H4I qm33/qm36 × La/Ca: four quantum endpoints and
+the [frozen 25-task solver schedule](NUMERICS.md). The conditional five-pair
+accuracy trial has **not run**. [Approval](AGREEMENT.md).
+
+## Completed evidence
+
+All four endpoints converged with the intended gas-phase Hamiltonian and
+native ECP convention. All four new MBIS electrostatic-potential checks passed.
+
+| Endpoint | QM energy, Hartree | MBIS total charge, e | ESP relative RMS |
+|---|---:|---:|---:|
+| qm33 La | −1754.987616371759 | −0.999981 | 0.053225 |
+| qm33 Ca | −2400.952491961507 | −1.999989 | 0.028505 |
+| qm36 La | −1983.471978518628 | −1.999979 | 0.036323 |
+| qm36 Ca | −2629.338467381298 | −2.999984 | 0.018564 |
+
+Unrounded values and endpoint receipt/output hashes are in
+`workspaces/global_electrostatic_20260916/partition_tasks_v1/collection_verified_v1.json`;
+individual ESP receipts are under `esp_v1/<endpoint>/quality.json` in that
+workspace. The original collection falsely matched the SMD author-credit text;
+parser correction and recollection resolved it without any QM rerun.
+
+The [boundary audit](BOUNDARY_AUDIT.md) verifies common physical coordinates,
+charge ownership and the declared cap approximation; its nine real-artifact
+integrity/algebra tests passed. These tests are not solver validation.
+
+## Surface checks in progress
+
+Job **1199956** runs the initial two primary solves on two shared CPUs. Job
+**1199959** runs the remaining 23 disjoint tasks on 23 shared CPUs, requesting
+48 GB. The master scientific manifest remains the same 25 tasks; separate
+execution slices and task locks prevent overlapping work.
+
+The first two surfaces built in about four seconds each and have identical
+actual mesh hashes. The two isolated-core controls completed; **the 23
+whole-protein results and the complete physical gate remain pending**.
+Meshing or isolated-control success alone does not pass that gate.
+
+The combined [software checks](TESTS.md) ran 37 tests: 36 passed and one was
+explicitly skipped pending all 25 solver outputs. These tests launch no
+scientific executable. The [technical recovery record](TECHNICAL_RECOVERY.md)
+distinguishes parser/provenance repairs from scientific reruns.
+
+The [matched baseline archive](MATCHED_BASELINE_COMPARISON.md) has a
+qm36-minus-qm33 contrast difference of +2.204092696 kcal/mol. These are
+baseline-derived boundary-test cores, distinct from canonical PQQ calibration.
+
+## Measured cost so far
+
+| Completed work | Job | Wall s | Allocated CPUs | Allocated core-s | Batch peak RSS KiB |
+|---|---:|---:|---:|---:|---:|
+| Four QM + MBIS endpoints | 1199949 | 932 | 64 | 59,648 | 8,010,252 |
+| Four ESP checks | 1199952 | 16 | 4 | 64 | Not captured |
+
+Accounting records: `workspaces/global_electrostatic_20260916/{quantum,esp}_accounting.json`.
+ESP accounting reports zero RSS; that is not treated as zero memory use.
+Preparation and unfinished solver costs are not included in these totals.
+
+The [same-core cost audit](COST_REFERENCE_AUDIT.md) recovers real no-MBIS and
+old CPCM+MBIS receipts. Population analysis takes 574.688–747.686 s per current
+endpoint, a substantial part of the quantum wall time. Different hardware,
+MPI sizes and schedules prevent a controlled overhead or production-cost ratio.
+
+## Three separate judgments
+
+| Question | Current answer |
+|---|---|
+| Is the model numerically credible? | **Pending.** Quantum/ESP and input checks passed; solvent and partition gates have not. |
+| Does it improve La/Ca accuracy? | **Untested.** Stage 2 has not run; this partition experiment supplies no new biological validation. |
+| Is it affordable? | **Pending.** Quantum/ESP costs are measured; complete solvent/preparation cost and a controlled baseline comparison are unavailable. |
+
+The [accuracy-input audit](ACCURACY_INPUTS.md) recovered all five frozen core
+pairs. Exact canonical 1H4I/4MAE environments currently fail terminal templates;
+GGR/alpha require peptide/water mapping and explicit environment-state handling.
+No missing atom, alternative source or guessed heterogen charge was substituted.
+
+## Final gate and next action
+
+**Gate: pending; Stage 2 remains conditional and unexecuted.** Collect all 25
+solver tasks from the master manifest, preserve failures, then assess the
+predeclared 0.5 kcal/mol numerical/rigid, 2 kcal/mol partition and 0.01 kcal/mol
+accounting tolerances. Review full-environment preparation before any Stage 2
+quantum execution. Partial successes cannot trigger it.
+
+Exact collection, assessment and reporting commands are in [RUNBOOK.md](RUNBOOK.md).
+The parent executor will replace this checkpoint with the completed gate,
+component results, total measured cost and resulting recommendation.

@@ -336,3 +336,21 @@ status and exact commands: `diagnostics/ggr_mechanism_plan_20260915/RESULT.json`
 Scoped implementation checkpoints: 57ac675, b21e0fd; final completion commit
 follows this entry. Preexisting unrelated work and 77 unstaged session lines
 were preserved. No push, default change, rescore or global-model retry.
+
+
+## 2026-09-16 — Global electrostatic model approved; partition endpoints running
+
+Jacob approved the explicit proposal with “Approved.” Scope/authorization:
+`diagnostics/global_electrostatic_20260916/AGREEMENT.md`. Four vacuum native
+r2SCAN-3c/MBIS endpoints reuse exact archived 1H4I qm33/qm36 coordinates,
+charges and source mappings. Job1199949 runs four16-rank workers on64CPUs.
+Two real-input preparation tests and runner dry-run passed. Baseline/default
+and previous experiments remain unchanged;77 preexisting unstaged session
+lines and all other concurrent work are preserved. No CPU/time stop budgets.
+
+TABI/NanoShaper adapter and predeclared surface/refinement/component checks
+are being implemented separately; no solver results yet. The ten-endpoint
+GGR/alpha/PQQ accuracy stage is conditional on physical feasibility. Frozen
+source completeness and heterogen inventories remain explicit; no silent
+atom, water, protonation or assembly changes. Workspace:
+`workspaces/global_electrostatic_20260916/`.

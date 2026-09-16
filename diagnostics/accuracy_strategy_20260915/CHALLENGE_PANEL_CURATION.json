@@ -1,0 +1,981 @@
+{
+  "schema_version": "alquemia.challenge_panel_curation.v1",
+  "date": "2026-09-15",
+  "status": "curation_complete_future_calculations_not_authorized",
+  "scope": "Read existing records and primary literature only; no new structures, preparations, energies, thresholds, fits or analyses.",
+  "parent_68row_ledger": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/scored_release_1199508/benchmark_manifest.json",
+    "sha256": "bc987f9dd3e2bb55d692d7ddb58036c64757369813a10eae77bbcd3ea19e080d"
+  },
+  "primary_capture": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/accuracy_strategy_20260915/PRIMARY_WEB_CAPTURES.json",
+    "sha256": "18c46f70c3102edc0a122658bb34ee4e443c61ede0a0f6d23d6af5ebb87dd911"
+  },
+  "comparisons": [
+    {
+      "comparison_id": "development_GGR_vs_bovine_alpha",
+      "priority": "retain_now_as_consumed_development_challenge",
+      "members": [
+        {
+          "target_id": "GGR_1GLG",
+          "biological_group": "GGR_MglB",
+          "label_type": "direct_same_assay_affinity_direction",
+          "direction": "Ca",
+          "construct": "E. coli receptor, single native Ca site; not an EF-hand graft",
+          "conditions": {
+            "assay": "Tb phosphorescence competition",
+            "buffer": "10 mM PIPES, 100 mM KCl (primary Reagents section)",
+            "conditions_status": "temperature not reverified in this curation",
+            "pH": 6.0,
+            "temperature_C": null
+          },
+          "measurements": [
+            {
+              "metal": "Ca",
+              "quantity": "Kd",
+              "uncertainty": 11,
+              "unit": "uM",
+              "value": 25
+            },
+            {
+              "metal": "La",
+              "quantity": "Kd",
+              "uncertainty": 4,
+              "unit": "uM",
+              "value": 729
+            }
+          ],
+          "structure_ids": [
+            "1GLG"
+          ],
+          "mapping_status": "Existing frozen mapping: A:CA312/CA, P0AEE5; geometry already scored",
+          "score_exposure": "original_v2_and_repaired_v3_scores_previously_inspected",
+          "primary_sources": [
+            {
+              "doi": "10.1021/bi00468a021",
+              "local_capture": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/evidence/nonpqq/ggr_search.json",
+              "pmid": "2162201",
+              "support_locator": "Abstract; values retained from frozen panel_manifest.json",
+              "support_paraphrase": "Competitive displacement of protein-bound Tb measures different metals at the single Ca site. Frozen project record reports Ca Kd 25\u00b111 and La Kd 729\u00b14 micromolar.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/2162201/"
+            }
+          ]
+        },
+        {
+          "target_id": "ALACTA_BOVINE_STRONG_SITE",
+          "biological_group": "bovine_alpha_lactalbumin",
+          "label_type": "direct_qualitative_affinity_order_with_conditions_pending",
+          "direction": "La",
+          "construct": "Bovine alpha-lactalbumin; 2019 Sigma apo material used without further purification",
+          "conditions": {
+            "1996_NMR": {
+              "buffer": null,
+              "pH": null,
+              "status": "full conditions not retrieved",
+              "temperature_C": null
+            },
+            "2019_ITC": {
+              "buffer": "10 mM Tris-HCl",
+              "metal": "La perchlorate",
+              "pH": 7.4,
+              "protein_uM": 70,
+              "temperature_C": 25
+            }
+          },
+          "measurements": [
+            {
+              "metal": "La",
+              "quantity": "affinity_order",
+              "source_pmid": "8652630",
+              "uncertainty": null,
+              "unit": null,
+              "value": "La>Ca"
+            },
+            {
+              "comparison_status": "single_metal_only",
+              "metal": "La",
+              "quantity": "Ka",
+              "source_pmid": "30741951",
+              "uncertainty": 18000,
+              "unit": "M^-1",
+              "value": 73000
+            }
+          ],
+          "structure_ids": [
+            "6IP9",
+            "1F6S"
+          ],
+          "mapping_status": "Primary2019 maps both geometries to Lys79/Asp82/Asp84/Asp87/Asp88 strong-site cleft; Ca and La have different water/coordination inventories",
+          "score_exposure": "inspected_in_approved_followup_1199508",
+          "primary_sources": [
+            {
+              "doi": "10.1016/0167-4838(95)00223-5",
+              "local_capture": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/evidence/nonpqq/pubmed_8652630.json",
+              "pmid": "8652630",
+              "support_locator": "Abstract, NMR competition affinity series",
+              "support_paraphrase": "NMR competition at the strong bovine Ca site places La and Lu above Ca. The paper also examines goat/human dissociation kinetics; those are not the bovine equilibrium label.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/8652630/"
+            },
+            {
+              "doi": "10.1038/s41598-018-38024-1",
+              "local_capture": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/evidence/nonpqq/alacta_primary_fulltext.xml",
+              "pmid": "30741951",
+              "support_locator": "Results Fig1d; Methods ITC; structure Fig3",
+              "support_paraphrase": "2019 measures La alone, Ka7.3\u00b11.8e4 M^-1 at25\u00b0C in10mM Tris pH7.4, and places La at the native Ca cleft in6IP9. No matched Ca constant is provided.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/30741951/"
+            }
+          ]
+        }
+      ],
+      "question": "Can the method recover opposing experimentally supported directions despite equal existing core charge?",
+      "evidence_stratum": "direct_same_assay_GGR_direction_plus_condition_qualified_qualitative_alpha_competition",
+      "labels": {
+        "GGR_1GLG": "Ca",
+        "ALACTA_BOVINE_STRONG_SITE": "La_qualitative_conditions_pending"
+      },
+      "composition_challenge": {
+        "status": "gross_core_charge_matched_only",
+        "known": "Existing repaired and extended cores have ligand formal charge -3; paired core charges La=0/Ca=-1.",
+        "not_matched": "Backbone/sidechain donor classes, denticity, water inventory, fold and assay conditions differ. No equal-composition claim."
+      },
+      "existing_structure_mapping": {
+        "GGR": [
+          "1GLG chain A Ca312",
+          "2FW0 chain A Ca310",
+          "2FVY chain A Ca311"
+        ],
+        "alpha": [
+          "1F6S strong Ca cleft",
+          "6IP9 homologous strong La cleft"
+        ]
+      },
+      "grouping": "GGR sources are one observation; alpha sources are one observation. Different folds and assays; no pooled quantitative affinity ratio.",
+      "consumed_status": "All listed structures and representation scores already inspected in development; not blind.",
+      "gaps": [
+        "Alpha 1996 full assay conditions and numeric common-assay ratio remain unavailable.",
+        "GGR assay was sugar-depleted; crystal sugar/solution conditions differ.",
+        "Equal charge does not remove composition confounding."
+      ],
+      "next_curation_step": "Keep this anchor explicitly in the development stratum; recover alpha 1996 complete Methods before any quantitative calibration claim.",
+      "extra_source_pins": [
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/evidence/nonpqq/ggr_followup_20260915/verification.json",
+          "sha256": "a641db2ed83e95c17e72de20565c24c27f4f82f660d523914de75c985a0c3eae"
+        },
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/evidence/nonpqq/alpha_lactalbumin_label_audit.md",
+          "sha256": "c0d1d017bf6ee34db464427df6d4f363217d4a98f6815299f0bf058b5ddd7b3b"
+        },
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_a_tasks_v1/manifest.json",
+          "sha256": "e4686eccd484f543f61480f0cbc5c46d6a6112ef70232cacfe61e6752bf0f12e"
+        },
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_b_tasks_v1/manifest.json",
+          "sha256": "c0c2b1759ba73806cd64097eb564ee1ada3fd2f989fa1e0cf9b4a20c168afa18"
+        }
+      ],
+      "updated_GGR_primary_verification": {
+        "primary_source": {
+          "title": "Calcium(II) Site Specificity: Effect of Size and Charge on Metal Ion Binding to an EF-Hand-like Site",
+          "doi": "10.1021/bi00468a021",
+          "pmid": "2162201",
+          "pmcid": "PMC2899690",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2899690/"
+        },
+        "affinity": {
+          "assay": "Competition against protein-bound Tb(III), monitored through Trp-to-Tb energy transfer; corrected using Eq. 4 and independent Tb reference Kd.",
+          "Ca": {
+            "Kd_M": 2.5e-05,
+            "SE_M": 1.1e-05,
+            "source": "Table I; capture lines 171 and 222"
+          },
+          "La": {
+            "Kd_M": 0.000729,
+            "SE_M": 4e-06,
+            "source": "Table I; capture line 177"
+          },
+          "direction": "Ca higher affinity than La under reported conditions",
+          "evidence_stratum": "direct same-assay relative affinity; one metal-binding site",
+          "not_equivalent_to": [
+            "physiological metal occupancy",
+            "functional metal use",
+            "general preference over every lanthanide"
+          ]
+        },
+        "construct": {
+          "description": "E. coli GGR expressed from pSF3, containing the GGR gene and its natural promoter. A source plasmid's missing three C-terminal codons were restored with a synthetic linker before cloning into pEMBL19.",
+          "host": "E. coli NM303, lacking endogenous GGR",
+          "metal_site_mutant_reported": false,
+          "final_reported_purity": ">=80% by SDS-PAGE",
+          "source": "Methods Purified E. coli GGR; capture lines 110-115"
+        },
+        "assay_conditions": {
+          "pH": 6,
+          "KCl_mM": 100,
+          "PIPES_mM": 10,
+          "protein_uM": 2.5,
+          "TbCl3_uM": 25,
+          "fluorescence_temperature_C": 25,
+          "Tb_preloading_temperature_C": 23,
+          "Tb_preloading_time": ">=6 h",
+          "competitor_equilibration_time": "approximately 30 min after each addition",
+          "source": "Methods lines 123-126; Table I footnote a line 196; Fig. 4 line 230"
+        },
+        "sugar_state": {
+          "preparation": "Authors explicitly remove bound sugar and Ca using guanidine/EDTA unfolding dialysis, followed by removal of denaturant/ligands and final PIPES/KCl buffer exchange.",
+          "assay_recipe_added_sugar": false,
+          "supported_interpretation": "nominally sugar-depleted preparation",
+          "independently_measured_zero_occupancy": false,
+          "limitation": "No residual sugar-occupancy measurement was identified in the cited preparation or metal-assay description.",
+          "source": "Methods lines 114-115 and 123-126"
+        },
+        "Tb_reference": {
+          "Kd_M": 9e-06,
+          "SE_M": 4e-06,
+          "sites_per_protein": 1,
+          "sites_per_protein_error": 0.2,
+          "method": "equilibrium dialysis",
+          "reported_method_temperature_C": 23,
+          "reported_figure3_temperature_C": 22,
+          "temperature_status": "unresolved internal source discrepancy; retain both",
+          "table_I_footnote_a_general_temperature_C": 25,
+          "table_I_footnote_caveat": "The blanket Table I conditions do not resolve the explicit dialysis Methods/Figure 3 discrepancy.",
+          "source": "Methods line 117, Fig. 3 line 155, Results lines 157-158, Table I footnotes lines 196 and 208"
+        }
+      },
+      "inherited_member_record_note": "Member entries copy the older release verbatim; updated GGR primary verification supersedes its earlier temperature/table-retrieval gaps without changing the immutable parent."
+    },
+    {
+      "comparison_id": "Mex_LanM_WT_vs_4P2A",
+      "priority": "first_charge_preserving_mutant_curation_priority",
+      "members": [
+        {
+          "target_id": "mex_lanm_wt",
+          "biological_group": "lanmodulin_family",
+          "label_type": "apparent_binding_coupled_folding",
+          "direction": "La",
+          "construct": {
+            "assay": "M. extorquens AM1 mature LanM; primary article compares tag constructs; quantitative construct/table extraction incomplete",
+            "structure_6MI5": "117aa with C-terminal His6; Y-bound 12-model NMR ensemble",
+            "structure_8FNS": "C5B164 residues 29\u2013133, 105 aa, unmutated; Nd-bound crystal"
+          },
+          "conditions": {
+            "assay_numeric_conditions_status": "primary full table and SI not captured; do not use exact 5.3 pM/710 \u00b5M numbers for quantitative fitting from secondary reproduction",
+            "structure_8FNS": "pH 7 crystal"
+          },
+          "measurements": [
+            {
+              "metal": "La",
+              "qualitative_value": "picomolar",
+              "quantity": "apparent conformational response concentration",
+              "status": "qualitative_primary_verified",
+              "units": "M",
+              "value": null
+            },
+            {
+              "metal": "Ca",
+              "qualitative_value": "near millimolar",
+              "quantity": "apparent conformational response concentration",
+              "status": "qualitative_primary_verified",
+              "units": "M",
+              "value": null
+            }
+          ],
+          "structure_ids": [
+            "8FNS",
+            "6MI5"
+          ],
+          "mapping_status": "protein_identity_and_EF1_EF2_EF3_EF4_mapping_verified_cross_metal_geometry",
+          "score_exposure": "Previous LanM research exists locally; do not label pristine blind validation.",
+          "primary_sources": [
+            {
+              "capture": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/evidence/lanthanide/mex_web_capture_v2.json",
+                "sha256": "73adfa9d2cf2eca67868fb47bef4f7f97120f36161403e138d4cfc50bdb26080",
+                "size_bytes": 33192
+              },
+              "doi": "10.1021/jacs.8b09842",
+              "location": "Primary discovery abstract verifies La included in picomolar response; Ca response near millimolar.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/30351021/"
+            },
+            {
+              "doi": "10.1021/acs.biochem.8b01019",
+              "url": "https://www.rcsb.org/structure/6MI5"
+            },
+            {
+              "capture": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/evidence/lanthanide/hans_primary.xml",
+                "sha256": "fa21a0334872f753015fc235d40c571c0f1d70e57256fc10a0035c0a22f3b5c4",
+                "size_bytes": 194845
+              },
+              "doi": "10.1038/s41586-023-05945-5",
+              "location": "Mex crystal structure and linked three-site interpretation.",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10232371/"
+            }
+          ]
+        },
+        {
+          "target_id": "mex_lanm_4p2a",
+          "biological_group": "lanmodulin_family",
+          "label_type": "apparent_binding_coupled_folding",
+          "direction": "La",
+          "construct": {
+            "mutations": "Four loop-position-2 prolines to alanine; exact construct primary tablepending"
+          },
+          "conditions": {
+            "status": "numeric primary conditions not captured"
+          },
+          "measurements": [
+            {
+              "metal": "La",
+              "qualitative_value": "picomolar retained",
+              "quantity": "apparent_response",
+              "units": "M",
+              "value": null
+            },
+            {
+              "metal": "Ca",
+              "qualitative_value": "micromolar aftermutation",
+              "quantity": "apparent_response",
+              "units": "M",
+              "value": null
+            }
+          ],
+          "structure_ids": [],
+          "mapping_status": "no_experimental_mutant_structure_verified",
+          "score_exposure": "Published mutant label inspected; no new energies.",
+          "primary_sources": [
+            {
+              "capture": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/evidence/lanthanide/mex_web_capture_v2.json",
+                "sha256": "73adfa9d2cf2eca67868fb47bef4f7f97120f36161403e138d4cfc50bdb26080",
+                "size_bytes": 33192
+              },
+              "doi": "10.1021/jacs.8b09842",
+              "location": "Abstract reports retained picomolar Ln response and micromolar Ca response.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/30351021/"
+            }
+          ]
+        }
+      ],
+      "question": "Does a neutral non-donor substitution change La/Ca responsiveness beyond gross charge and donor identity?",
+      "evidence_stratum": "same_study_binding_coupled_folding_response_not_microscopic_site_affinity",
+      "labels": {
+        "WT": "La_favoring_response",
+        "4P2A": "La_favoring_response_with_strengthened_Ca_response",
+        "comparative_claim": "Ca response shifts from near-millimolar to micromolar while picomolar Ln response including La is retained; no binary label reversal"
+      },
+      "composition_challenge": {
+        "status": "charge_and_nominal_direct_donor_identity_preserved_by_sequence",
+        "known": "Four Pro-to-Ala substitutions at loop position 2 are neutral and not replacements of the direct oxygen-donor residues.",
+        "not_matched": "Geometry, hydrogen bonding, water occupancy and unfolded/folded populations can change; actual prepared donor inventory unknown."
+      },
+      "existing_structure_mapping": {
+        "WT": [
+          "8FNS Nd-bound crystal, EF1-4",
+          "6MI5 Y-bound NMR, EF1-3 occupied; tagged construct"
+        ],
+        "4P2A": []
+      },
+      "grouping": "WT and mutant one LanM family; EF sites and NMR models are not independent affinity labels. Hans-LanM is related, not an independent held-out family.",
+      "consumed_status": "Published labels and prior LanM research already inspected; no exact mutant new endpoint result established in the ledger.",
+      "gaps": [
+        "Exact WT/mutant La and Ca numeric CD constants, errors, free-metal buffering and tags need original full table/Methods verification.",
+        "No exact experimental 4P2A coordinates verified. The 2021 primary spectroscopy paper explicitly used a PyMOL-generated mutant for simulations.",
+        "Calcium response amplitude differs; a shared microscopic binding interpretation is unjustified."
+      ],
+      "next_curation_step": "Recover 2018 SI and complete construct/assay table; inventory existing mutant coordinate provenance. Any new mutant modeling or scoring needs its own agreed plan.",
+      "primary_links": [
+        {
+          "doi": "10.1021/jacs.8b09842",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30351021/",
+          "location": "primary abstract"
+        },
+        {
+          "doi": "10.1039/d1cp03628a",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8963139/",
+          "location": "Introduction; Fig1C; Computational methods"
+        }
+      ],
+      "extra_source_pins": [
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/accuracy_strategy_20260915/PRIMARY_WEB_CAPTURES.json",
+          "sha256": "18c46f70c3102edc0a122658bb34ee4e443c61ede0a0f6d23d6af5ebb87dd911"
+        },
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/evidence/lanthanide/lanm_site_mapping.json",
+          "sha256": "611606b4da683caa39e853572bcb3b073a431f2b8f9b76d7c78bd01fcc0c151b"
+        }
+      ]
+    },
+    {
+      "comparison_id": "PqqT_WT_K142A_K142D",
+      "priority": "best_numeric_same_assay_family_but_not_charge_control",
+      "members": [
+        {
+          "target_id": "PQQT_WT",
+          "biological_group": "PqqT_B7KXB5_WT_and_variants",
+          "label_type": "direct_same_assay_relative_affinity",
+          "direction": "La",
+          "construct": {
+            "crystal_sequence_mapping": [
+              {
+                "db_accession": "B7KXB5",
+                "db_align_beg": "28",
+                "db_align_end": "331",
+                "ref_id": "1",
+                "seq_align_beg": "1",
+                "seq_align_end": "304"
+              }
+            ],
+            "description": "Tag-free PqqT variant loaded with PQQ; >98% of PQQ bound; experimental K142 numbering",
+            "native_accession": "B7KXB5",
+            "variant_structure_available": true
+          },
+          "conditions": {
+            "HEPES_mM": 30,
+            "NaCl_mM": 100,
+            "assay": "ITC independent binding sites plus linear nonspecific background",
+            "independent_preparations": 3,
+            "pH": 7.0,
+            "temperature_K": 298
+          },
+          "measurements": [
+            {
+              "metal": "Ca",
+              "quantity": "Kd",
+              "reported_uncertainty": 5,
+              "units": "uM",
+              "value": 64
+            },
+            {
+              "metal": "La",
+              "quantity": "Kd",
+              "reported_uncertainty": 1,
+              "units": "uM",
+              "value": 6
+            }
+          ],
+          "structure_ids": [
+            "9B1U",
+            "9B1V"
+          ],
+          "mapping_status": "Protein identity mapped by PDB; experimental affinity to unique coordination site unresolved",
+          "score_exposure": "unscored_candidate",
+          "primary_sources": [
+            {
+              "doi": "10.1073/pnas.2405836121",
+              "local_captures": [
+                {
+                  "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/evidence/pqq/sources/primary_web_capture_2.json",
+                  "sha256": "bb83e8d98545dc60879cd2178f5203161ed86261f8651094b2a00db7a28c71f3"
+                },
+                {
+                  "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/evidence/pqq/sources/primary_web_capture_3.json",
+                  "sha256": "83bee4c9d70caf04fc86e22ddd8ead7a503aab725ef480c049eafb7169791388"
+                },
+                {
+                  "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/evidence/pqq/sources/primary_web_capture_8.json",
+                  "sha256": "cdc7eb8c79673c27ac20a443022c02540a963de39c5a11589cd1439ffaedc1a2"
+                }
+              ],
+              "location": "Table1 and ITC Methods; crystal structures9B1U/9B1V",
+              "url": "https://static1.squarespace.com/static/62d177e56ae5fc09237e1f6a/t/66bbb0de3273af7a8f8e6c05/1723576542757/PqqT.pdf",
+              "verified_date": "2026-09-15"
+            }
+          ]
+        },
+        {
+          "target_id": "PQQT_K142A",
+          "biological_group": "PqqT_B7KXB5_WT_and_variants",
+          "label_type": "direct_same_assay_relative_affinity",
+          "direction": "La",
+          "construct": {
+            "crystal_sequence_mapping": [
+              {
+                "db_accession": "B7KXB5",
+                "db_align_beg": "28",
+                "db_align_end": "331",
+                "ref_id": "1",
+                "seq_align_beg": "1",
+                "seq_align_end": "304"
+              }
+            ],
+            "description": "Tag-free PqqT variant loaded with PQQ; >98% of PQQ bound; experimental K142 numbering",
+            "native_accession": "B7KXB5",
+            "variant_structure_available": false
+          },
+          "conditions": {
+            "HEPES_mM": 30,
+            "NaCl_mM": 100,
+            "assay": "ITC independent binding sites plus linear nonspecific background",
+            "independent_preparations": 3,
+            "pH": 7.0,
+            "temperature_K": 298
+          },
+          "measurements": [
+            {
+              "metal": "Ca",
+              "quantity": "Kd",
+              "reported_uncertainty": 10,
+              "units": "uM",
+              "value": 60
+            },
+            {
+              "metal": "La",
+              "quantity": "Kd",
+              "reported_uncertainty": 5,
+              "units": "uM",
+              "value": 7
+            }
+          ],
+          "structure_ids": [
+            "9B1U",
+            "9B1V"
+          ],
+          "mapping_status": "Protein identity mapped by PDB; experimental affinity to unique coordination site unresolved",
+          "score_exposure": "unscored_candidate",
+          "primary_sources": [
+            {
+              "doi": "10.1073/pnas.2405836121",
+              "local_captures": [
+                {
+                  "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/evidence/pqq/sources/primary_web_capture_2.json",
+                  "sha256": "bb83e8d98545dc60879cd2178f5203161ed86261f8651094b2a00db7a28c71f3"
+                },
+                {
+                  "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/evidence/pqq/sources/primary_web_capture_3.json",
+                  "sha256": "83bee4c9d70caf04fc86e22ddd8ead7a503aab725ef480c049eafb7169791388"
+                },
+                {
+                  "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/evidence/pqq/sources/primary_web_capture_8.json",
+                  "sha256": "cdc7eb8c79673c27ac20a443022c02540a963de39c5a11589cd1439ffaedc1a2"
+                }
+              ],
+              "location": "Table1 and ITC Methods; crystal structures9B1U/9B1V",
+              "url": "https://static1.squarespace.com/static/62d177e56ae5fc09237e1f6a/t/66bbb0de3273af7a8f8e6c05/1723576542757/PqqT.pdf",
+              "verified_date": "2026-09-15"
+            }
+          ]
+        },
+        {
+          "target_id": "PQQT_K142D",
+          "biological_group": "PqqT_B7KXB5_WT_and_variants",
+          "label_type": "direct_same_assay_relative_affinity",
+          "direction": "La",
+          "construct": {
+            "crystal_sequence_mapping": [
+              {
+                "db_accession": "B7KXB5",
+                "db_align_beg": "28",
+                "db_align_end": "331",
+                "ref_id": "1",
+                "seq_align_beg": "1",
+                "seq_align_end": "304"
+              }
+            ],
+            "description": "Tag-free PqqT variant loaded with PQQ; >98% of PQQ bound; experimental K142 numbering",
+            "native_accession": "B7KXB5",
+            "variant_structure_available": false
+          },
+          "conditions": {
+            "HEPES_mM": 30,
+            "NaCl_mM": 100,
+            "assay": "ITC independent binding sites plus linear nonspecific background",
+            "independent_preparations": 3,
+            "pH": 7.0,
+            "temperature_K": 298
+          },
+          "measurements": [
+            {
+              "metal": "Ca",
+              "quantity": "Kd",
+              "reported_uncertainty": 30,
+              "units": "uM",
+              "value": 150
+            },
+            {
+              "metal": "La",
+              "quantity": "Kd",
+              "reported_uncertainty": 0.2,
+              "units": "uM",
+              "value": 0.6
+            }
+          ],
+          "structure_ids": [
+            "9B1U",
+            "9B1V"
+          ],
+          "mapping_status": "Protein identity mapped by PDB; experimental affinity to unique coordination site unresolved",
+          "score_exposure": "unscored_candidate",
+          "primary_sources": [
+            {
+              "doi": "10.1073/pnas.2405836121",
+              "local_captures": [
+                {
+                  "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/evidence/pqq/sources/primary_web_capture_2.json",
+                  "sha256": "bb83e8d98545dc60879cd2178f5203161ed86261f8651094b2a00db7a28c71f3"
+                },
+                {
+                  "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/evidence/pqq/sources/primary_web_capture_3.json",
+                  "sha256": "83bee4c9d70caf04fc86e22ddd8ead7a503aab725ef480c049eafb7169791388"
+                },
+                {
+                  "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/evidence/pqq/sources/primary_web_capture_8.json",
+                  "sha256": "cdc7eb8c79673c27ac20a443022c02540a963de39c5a11589cd1439ffaedc1a2"
+                }
+              ],
+              "location": "Table1 and ITC Methods; crystal structures9B1U/9B1V",
+              "url": "https://static1.squarespace.com/static/62d177e56ae5fc09237e1f6a/t/66bbb0de3273af7a8f8e6c05/1723576542757/PqqT.pdf",
+              "verified_date": "2026-09-15"
+            }
+          ]
+        }
+      ],
+      "question": "Can a proposed representation preserve the measured within-family La/Ca selectivity changes?",
+      "evidence_stratum": "direct_same_assay_ITC_relative_affinity_PQQ_loaded",
+      "labels": {
+        "WT": "La",
+        "K142A": "La",
+        "K142D": "La",
+        "comparative_claim": "K142D has lower La Kd and higher Ca Kd than WT/K142A; WT versus K142A is a near-null response control with broad La uncertainty."
+      },
+      "composition_challenge": {
+        "status": "known_charge_and_donor_confounded",
+        "known": "Under ordinary ionization K->A removes a +1 side chain; K->D replaces it with a -1 side chain.",
+        "not_matched": "Metal position/site identity differs or is unresolved; do not interpret this as a clean electrostatic-independent challenge."
+      },
+      "existing_structure_mapping": {
+        "WT": [
+          "9B1U PQQ-bound without Ca/La",
+          "9B1V Gd soak with potentially nonspecific sites"
+        ],
+        "K142A": [],
+        "K142D": []
+      },
+      "grouping": "Three constructs in PqqT_B7KXB5_WT_and_variants; no three-family accuracy denominator.",
+      "consumed_status": "Labels and WT structures already curated; candidate endpoint scores uninspected/unrun in frozen ledger.",
+      "gaps": [
+        "No experimental mutant Ca/La structure verified.",
+        "WT Lys occupies analogous canonical PQQ metal position; metal insertion there would change chemistry.",
+        "Do not assign WT and mutants the same binding site solely from protein-level ITC."
+      ],
+      "next_curation_step": "Retain the numeric same-assay table and WT/A near-null comparison; find an experimental metal-site assignment before proposing a placement/preparation protocol.",
+      "extra_source_pins": [
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/evidence/pqq/evidence_rows.json",
+          "sha256": "ddb0418d69a5d5c6bcd5a4c52015fff59c5c26d6aef351176ca6df55a604fe23"
+        },
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/evidence/pqq/structure_inventory.json",
+          "sha256": "0c8d1783de6a9e03327d19ba5e27da30479f7279102318b129ab5f1d6debc0fb"
+        },
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/accuracy_strategy_20260915/PRIMARY_WEB_CAPTURES.json",
+          "sha256": "18c46f70c3102edc0a122658bb34ee4e443c61ede0a0f6d23d6af5ebb87dd911"
+        }
+      ]
+    },
+    {
+      "comparison_id": "GGR_Q142_neutral_gateway_candidates",
+      "priority": "focused_primary_table_retrieval_hold",
+      "members": [
+        {
+          "target_id": "GGR_1GLG",
+          "construct": "WT Q142"
+        },
+        {
+          "target_id": null,
+          "construct": "Q142N candidate; Q142S only if its different donor class is explicitly accepted"
+        }
+      ],
+      "question": "Is there a directly measured La/Ca change among neutral gateway substitutions in one scaffold?",
+      "evidence_stratum": "primary_mutagenesis_series_but_La_specific_numeric_labels_unverified",
+      "labels": {
+        "WT_vs_mutants": "unresolved_no_LaCa_mutant_direction_assigned"
+      },
+      "composition_challenge": {
+        "status": "potential_not_verified",
+        "known": "Q->N preserves neutral sidechain-amide oxygen donor class by sequence; Q->S preserves charge but changes donor chemistry.",
+        "not_matched": "Actual coordination, solvent replacement and La/Ca constants unavailable."
+      },
+      "existing_structure_mapping": {
+        "WT": [
+          "1GLG",
+          "2FW0",
+          "2FVY"
+        ],
+        "Q142N": [],
+        "Q142S": []
+      },
+      "grouping": "Same GGR biological family and scaffold; cannot add independent family observations.",
+      "consumed_status": "WT is heavily consumed; mutant scores not present in current curated ledger; abstract previously inspected.",
+      "gaps": [
+        "1996 full Ca/La table and exact ligand/buffer/sugar conditions not obtained.",
+        "No matching experimental Q142 mutant structures verified.",
+        "Acidic Q142D/E variants are charge confounds, not replacements for the neutral challenge.",
+        "Later paper repeats a WT La value different from the 1990 source; do not merge values across studies without primary conditions."
+      ],
+      "next_curation_step": "Retrieve DOI10.1021/bi952430l full Table/Methods first; only nominate a specific neutral pair after both actual La and Ca measurements are verified.",
+      "primary_links": [
+        {
+          "doi": "10.1021/bi952430l",
+          "url": "https://pubs.acs.org/doi/10.1021/bi952430l",
+          "location": "abstract only verified"
+        }
+      ],
+      "extra_source_pins": [
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/accuracy_strategy_20260915/PRIMARY_WEB_CAPTURES.json",
+          "sha256": "18c46f70c3102edc0a122658bb34ee4e443c61ede0a0f6d23d6af5ebb87dd911"
+        }
+      ]
+    },
+    {
+      "comparison_id": "aqualysin_low_affinity_Ca_site",
+      "priority": "direct_Ca_label_structure_assignment_hold",
+      "members": [
+        {
+          "target_id": "AQUALYSIN_LOW_CA",
+          "biological_group": "aqualysin_P08594",
+          "label_type": "direct_same_assay_affinity_direction",
+          "direction": "Ca",
+          "construct": "Recombinant aqualysin I expressed in E. coli from precursor lacking C-terminal prosequence; matured at 70\u00b0C; holo preparation retains one high-affinity Ca",
+          "conditions": {
+            "assay": "23Na NMR linewidth competition",
+            "background_Na_mM": 6.53,
+            "buffer": "20 mM MES-NaOH, 10% D2O",
+            "conditional_state": "high-affinity Ca site occupied",
+            "pH": 6.0,
+            "protein_mM": 0.1,
+            "temperature_C": 22
+          },
+          "measurements": [
+            {
+              "metal": "Ca",
+              "quantity": "Ka",
+              "uncertainty": null,
+              "unit": "M^-1",
+              "value": 6200
+            },
+            {
+              "metal": "La",
+              "quantity": "Ka",
+              "uncertainty": null,
+              "unit": "M^-1",
+              "value": 1100
+            }
+          ],
+          "structure_ids": [
+            "4DZT"
+          ],
+          "mapping_status": "UNRESOLVED: 4DZT contains A:CA302 and A:CA303; neither is experimentally assigned to the low-affinity assay by the retrieved primary evidence",
+          "score_exposure": "prior_exposure_not_established",
+          "primary_sources": [
+            {
+              "doi": "10.1271/bbb.66.1281",
+              "local_capture": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/evidence/nonpqq/aqualysin.pdf",
+              "pmid": "12162550",
+              "support_locator": "Table 1, p1285; Methods p1281\u20131282; Results p1284\u20131286",
+              "support_paraphrase": "Na competition gives Ca Ka 6.2e3 and La Ka 1.1e3 M^-1 at the low-affinity Ca site. A separate La-binding site X must not replace this comparator.",
+              "url": "https://www.jstage.jst.go.jp/article/bbb/66/6/66_6_1281/_pdf"
+            }
+          ]
+        }
+      ],
+      "question": "Can an independently measured Ca-favoring site extend negative controls?",
+      "evidence_stratum": "direct_same_assay_affinity_direction_site_identity_unmapped",
+      "labels": {
+        "low_affinity_Ca_site": "Ca",
+        "other_La_site_X": "not_this_target"
+      },
+      "composition_challenge": {
+        "status": "unknown_until_site_assignment",
+        "known": "Published Ca Ka6200 and La Ka1100 M^-1 concern the low-affinity Ca site.",
+        "not_matched": "Cannot infer composition from whichever deposited Ca site looks attractive."
+      },
+      "existing_structure_mapping": {
+        "4DZT": [
+          "Ca A302",
+          "Ca A303"
+        ],
+        "assigned_assayed_site": null
+      },
+      "grouping": "One aqualysin observation, not two independently labelled Ca sites.",
+      "consumed_status": "Literature and source structure already inspected; no endpoint score for a defensibly assigned low-affinity site.",
+      "gaps": [
+        "Primary site-to-structure mapping unresolved.",
+        "4DZT is PMS-inhibited; the deposited citation is unpublished.",
+        "Separate Ca-insensitive La site X cannot substitute for the assayed site."
+      ],
+      "next_curation_step": "Recover experimental mutation or spectroscopic assignment connecting the 2002 low-affinity site to a named 4DZT site; otherwise retain unscorable.",
+      "extra_source_pins": [
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/evidence/nonpqq/aqualysin_mapping_audit.md",
+          "sha256": "c777367f38de09c5bd0bb5cbef15d5ad5cb187c53f9d81becd7ff79763893c78"
+        },
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/evidence/nonpqq/aqualysin.pdf",
+          "sha256": "894e41c887b64b86016512194456035a1ca07c1454e56e4456dffda5ba2c3afc"
+        }
+      ]
+    },
+    {
+      "comparison_id": "CaMLBT_single_active_site_2026",
+      "priority": "new_literature_candidate_not_added_to_ledger",
+      "members": [
+        {
+          "target_id": null,
+          "proposed_identifier": "CaMLBT_SITE1_2026",
+          "construct": "Arabidopsis CaM N-terminal domain bearing DTNNDGYIEGDE site1 and inactivated site2; purified after His-tag cleavage",
+          "site": "single functional engineered site1"
+        }
+      ],
+      "question": "Can a single-active-site construct supply a cleaner La-positive comparator than a cooperative multi-site LanM label?",
+      "evidence_stratum": "same_paper_direct_La_and_Ca_fluorescence_conditions_qualified",
+      "labels": {
+        "CaMLBT": "reported_La_favoring_conditional_comparison"
+      },
+      "measurements": [
+        {
+          "metal": "Ca",
+          "quantity": "Kd",
+          "value": 33.2,
+          "uncertainty": 4.5,
+          "units": "uM",
+          "location": "section2.2.1/SupFig2"
+        },
+        {
+          "metal": "La",
+          "quantity": "Kd",
+          "value": 437,
+          "uncertainty": 259,
+          "units": "pM",
+          "location": "Table1; mean of five experiments"
+        },
+        {
+          "metal": "La",
+          "quantity": "Kd",
+          "value": 456,
+          "uncertainty": 217,
+          "units": "pM",
+          "location": "section2.2.2 prose differs from Table1; not reconciled"
+        }
+      ],
+      "conditions": {
+        "La_fluorescence": "10uM protein,20mM MES pH6,100mM KCl,100-400uM NTA; competition/speciation model",
+        "Ca_fluorescence": "Ca-specific SupFig2 conditions not retrieved; no exact matched-buffer quantitative ratio promoted",
+        "temperature": "NTA constants referenced to25C; actual fluorescence temperature not independently stated in retrieved method"
+      },
+      "composition_challenge": {
+        "status": "unknown_against_a_matched_Ca_favoring_construct",
+        "known": "Single engineered metal-active site avoids assigning one cooperative protein label to multiple sites.",
+        "not_matched": "This is a distinct engineered CaM construct, not native CaM or LBT3 7CCO/7CCN; no charge-matched opposing partner verified."
+      },
+      "existing_structure_mapping": {
+        "exact_experimental_CaMLBT_structure": [],
+        "do_not_substitute": [
+          "1EXR WT Paramecium calmodulin",
+          "7CCO/7CCN LBT3",
+          "isolated Tb-LBT structure"
+        ]
+      },
+      "grouping": "One CaMLBT construct; five La fluorescence replicates are assay replicates, not biological targets.",
+      "consumed_status": "New primary source inspected during this curation; no new coordinates, preparations or scores; not inserted in existing68rowledger.",
+      "gaps": [
+        "No exact experimental bound coordinates verified; paper calls for X-ray data for early-Ln coordination.",
+        "Ca-specific SI retrieval returned403.",
+        "La Table1 and prose central values differ; retain both with provenance.",
+        "A matched Ca-preferring construct with the same gross donor composition remains unidentified."
+      ],
+      "next_curation_step": "Recover Ca SupFig2 and exact deposited construct coordinates if any; otherwise keep as an evidence-rich input-gated candidate, not a scored success.",
+      "primary_links": [
+        {
+          "doi": "10.1002/ejic.202500468",
+          "url": "https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/ejic.202500468",
+          "location": "sections2.1,2.2.1,Table1,4.2,4.4; publishedonline2025-12-08,2026issue"
+        }
+      ],
+      "extra_source_pins": [
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/accuracy_strategy_20260915/PRIMARY_WEB_CAPTURES.json",
+          "sha256": "18c46f70c3102edc0a122658bb34ee4e443c61ede0a0f6d23d6af5ebb87dd911"
+        },
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/accuracy_strategy_20260915/CAMLBT_CONSTRUCT_CAPTURE.json",
+          "sha256": "262f9ed6400913f418e3a6936be5bed2db1cfceadaf8936cd965bee11ea58bf8"
+        }
+      ]
+    }
+  ],
+  "excluded_from_primary_challenge": [
+    {
+      "targets": [
+        "AEQUORIN_1SL8_VECTOR"
+      ],
+      "reason": "Retain ordered EF1/EF3/EF4 vector only; protein-level Mn-competing site not mapped to individual crystal sites."
+    },
+    {
+      "targets": [
+        "CALBINDIN_N",
+        "CALBINDIN_C"
+      ],
+      "reason": "Opposing La/Ca labels unverified; cooperative occupancy paths and WT/N56A/P43M constructs must not be mixed."
+    },
+    {
+      "targets": [
+        "CARP_PV_CD",
+        "CARP_PV_EF"
+      ],
+      "reason": "La site constants plus cross-study Ca support do not form a same-assay La/Ca truth pair."
+    },
+    {
+      "targets": [
+        "CD2_CAM_GRAFT_I",
+        "CD2_CAM_GRAFT_II",
+        "CD2_CAM_GRAFT_III",
+        "CD2_CAM_GRAFT_IV"
+      ],
+      "reason": "Real constants exist, but Ca/La pH and assay differences and unverified exact graft structures block clean direction labels."
+    },
+    {
+      "targets": [
+        "CONA_S2",
+        "HRPC"
+      ],
+      "reason": "ConA qualitative exclusion is conditional on Mn/dimer state and assay limit; HRP La-specific direction/site unresolved. Neither is a clean numeric challenge."
+    },
+    {
+      "targets": [
+        "lanpepsy_mfla0908"
+      ],
+      "reason": "Strong protein-level La/Ca evidence and9VY7, but five coupled La sites lack mapped per-site constants; do not count five positives."
+    },
+    {
+      "targets": [
+        "lbt3_7cco",
+        "landiscernin_mex_lutd"
+      ],
+      "reason": "Verified La structures/within-Ln preferences are not verified La/Ca labels."
+    },
+    {
+      "targets": [
+        "SIXB_B2",
+        "SIXB_C5"
+      ],
+      "reason": "Competitive metal retention preprint is protein-level occupancy, not microscopic affinity; superstoichiometric La and holo-model/construct gaps remain."
+    },
+    {
+      "targets": [
+        "historical_PQQ_calibration_and_transfer",
+        "P13650",
+        "A8P0V4",
+        "H19_and_MxaF_XoxF_functional_rows"
+      ],
+      "reason": "Keep functional/cofactor association separate from solution-affinity challenge; canonical composition/motif separation cannot demonstrate incremental information."
+    }
+  ],
+  "recommendation": "Use GGR/alpha as the consumed development anchor; prioritize the neutral LanM perturbation for evidence/input completion, with PqqT as a numeric same-assay but charge-confounded family. No fresh fully mapped matched-composition binary panel was verified.",
+  "future_execution_requires_explicit_scientific_plan_agreement": true
+}

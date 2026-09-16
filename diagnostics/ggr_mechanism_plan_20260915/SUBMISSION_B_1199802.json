@@ -1,0 +1,36 @@
+{
+  "agreement": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/ggr_mechanism_plan_20260915/AGREEMENT.md",
+    "sha256": "cbe8a8b6cd7ec1a785cd4db71ef29f088d0e389d0959387519bc1e2e38f90ddd"
+  },
+  "allocated_cpus_requested": 64,
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_b_tasks_v1/slurm_%j.out",
+    "--error",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_b_tasks_v1/slurm_%j.err",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/ggr_mechanism_plan_20260915/run_stage.sbatch",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_b_tasks_v1/manifest.json",
+    "energy"
+  ],
+  "compute_budget": null,
+  "expected_new_endpoints": 8,
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_b_tasks_v1/manifest.json",
+    "sha256": "c0c2b1759ba73806cd64097eb564ee1ada3fd2f989fa1e0cf9b4a20c168afa18"
+  },
+  "ranks_per_endpoint": 16,
+  "sbatch": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/ggr_mechanism_plan_20260915/run_stage.sbatch",
+    "sha256": "cdf84dcac0d649b53e560cf059e4faf75a9af20fd374ba8228e78befd094160d"
+  },
+  "slurm_job_id": "1199802",
+  "stage": "B",
+  "status": "accepted",
+  "stderr": "",
+  "submission_utc": "2026-09-16T05:44:18.665332+00:00",
+  "time_limit_requested": false,
+  "workers": 4
+}

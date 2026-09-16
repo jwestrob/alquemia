@@ -1,0 +1,518 @@
+{
+  "batch_inventory": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_a_prepared_v1/inventory.json",
+    "sha256": "844d19315338047826944b1e768dc50fe7dc0fd04a2ac5882e0e7f7925e24d37"
+  },
+  "execution_or_mutations": {
+    "changed_geometries": 0,
+    "changed_labels": 0,
+    "changed_preparations": 0,
+    "new_endpoint_evaluations": 0
+  },
+  "findings": [
+    "Four NMA extensions add only C/H source atoms and no typed donor atoms.",
+    "Connected GGR adds six typed donor O atoms; all lie beyond the frozen 3.3 A inclusion radius, with nearest at 5.604942 A.",
+    "Nearest eligible cap contacts span 2.238837 to 2.486517 A; no obvious cap overlap identified.",
+    "Source mapping, merged graph connectivity, unchanged charge/water inventory and paired coordinates remain consistent.",
+    "The actual Stage A task packaging preserves the intended native method, endpoint state, pinned inputs and traceable implementation."
+  ],
+  "limits": [
+    "This is an input-integrity audit, not a force-field clash score or validation of fragment energetics.",
+    "No endpoint output energies were inspected for this audit.",
+    "Geometric absence of an obvious cap overlap does not validate cap forces, protein response, affinity prediction or physical convergence.",
+    "Added atoms change local interactions and the CPCM cavity despite unchanged direct coordination."
+  ],
+  "methods": {
+    "atom_index_convention": "Zero-based full XYZ index including metal at index 0. These correspond to ligand mapping qm_index for all nonmetal atoms.",
+    "cap_contact_definition": "For every sigma_link_H, Euclidean distance to every other QM atom including the metal; list five shortest eligible contacts.",
+    "cap_contact_exclusions": "Exclude cap itself and all atoms at graph distance 1 or 2 from it: bonded 1-2 and angle-neighbor 1-3 contacts. No 1-4 exclusion. No inferred metal-coordination edges.",
+    "covalent_graph": "SourceGraph retained heavy-heavy edges, source H-parent edges, and each link H to its retained source parent.",
+    "distance_report_precision_A": 1e-06,
+    "donor_typing": "Existing coordination_policy.donor_type(resname,atom,element); Euclidean metal-to-source distance in angstrom.",
+    "inclusion_radius_A": 3.3,
+    "qualification_radius_A": 3.1,
+    "source_addition_definition": "Source atom keys (chain_index,residue_index,atom) absent from the pinned parent v3 source_to_qm map."
+  },
+  "observation_provenance": "Transcription of the completed read-only source/graph/distance audit in this session; no scientific run or geometry change. Manifest hashes reverified while recording.",
+  "preparations": [
+    {
+      "Ca_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_a_prepared_v1/ggr_1glg_nma/ggr_1glg_nma_Ca.xyz",
+        "sha256": "6d4af0605fb2ab24a0a49da0eeb016c5029e39ef199a5a564bc96667d6174728"
+      },
+      "La_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_a_prepared_v1/ggr_1glg_nma/ggr_1glg_nma_La.xyz",
+        "sha256": "2530d4c998acc7b6e30ba1ea2234eb6bb4feb958b2eab2ad217bf489c45dd023"
+      },
+      "added_typed_donor_atoms": [],
+      "atom_count": 58,
+      "five_shortest_nonbonded_cap_contacts": [
+        {
+          "cap_full_xyz_index_zero_based": 57,
+          "distance_A": 2.471388,
+          "other_element": "H",
+          "other_full_xyz_index_zero_based": 45
+        },
+        {
+          "cap_full_xyz_index_zero_based": 49,
+          "distance_A": 2.531292,
+          "other_element": "O",
+          "other_full_xyz_index_zero_based": 5
+        },
+        {
+          "cap_full_xyz_index_zero_based": 54,
+          "distance_A": 2.547493,
+          "other_element": "H",
+          "other_full_xyz_index_zero_based": 26
+        },
+        {
+          "cap_full_xyz_index_zero_based": 50,
+          "distance_A": 2.563241,
+          "other_element": "O",
+          "other_full_xyz_index_zero_based": 14
+        },
+        {
+          "cap_full_xyz_index_zero_based": 57,
+          "distance_A": 2.63404,
+          "other_element": "H",
+          "other_full_xyz_index_zero_based": 46
+        }
+      ],
+      "five_shortest_parent_nonbonded_cap_contacts": [
+        {
+          "cap_full_xyz_index_zero_based": 48,
+          "distance_A": 2.396957,
+          "other_element": "H",
+          "other_full_xyz_index_zero_based": 23
+        },
+        {
+          "cap_full_xyz_index_zero_based": 51,
+          "distance_A": 2.471388,
+          "other_element": "H",
+          "other_full_xyz_index_zero_based": 41
+        },
+        {
+          "cap_full_xyz_index_zero_based": 49,
+          "distance_A": 2.510396,
+          "other_element": "O",
+          "other_full_xyz_index_zero_based": 22
+        },
+        {
+          "cap_full_xyz_index_zero_based": 45,
+          "distance_A": 2.531292,
+          "other_element": "O",
+          "other_full_xyz_index_zero_based": 5
+        },
+        {
+          "cap_full_xyz_index_zero_based": 46,
+          "distance_A": 2.563241,
+          "other_element": "O",
+          "other_full_xyz_index_zero_based": 14
+        }
+      ],
+      "ligand_formal_charge": -3,
+      "name": "ggr_1glg_nma",
+      "parent_preparation": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/affordable_challenger_20260915/verified_repairs/ggr_1glg_GGR/repair_manifest.json",
+        "sha256": "91147d0e56093ff03fa0b37680dc1443a1264fcac29f43aea49a9788570eea07"
+      },
+      "preparation_manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_a_prepared_v1/ggr_1glg_nma/preparation_manifest.json",
+        "sha256": "208e7868c0bd594c4d014130d0bf135e1a5946981988bba3c6efff219ec9a46a"
+      },
+      "source_coordinate_max_displacement_A": 0.0
+    },
+    {
+      "Ca_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_a_prepared_v1/aequorin_1sl8_EF3_nma/aequorin_1sl8_EF3_nma_Ca.xyz",
+        "sha256": "8a87d9a11a6ed96b636f6ffadb5b928f7e12df58ab7a08dddc6f399bf4491a8e"
+      },
+      "La_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_a_prepared_v1/aequorin_1sl8_EF3_nma/aequorin_1sl8_EF3_nma_La.xyz",
+        "sha256": "4f68a72ece6874f5d56ac721046a0b77e21b041023199660c7576f2b9450a05b"
+      },
+      "added_typed_donor_atoms": [],
+      "atom_count": 49,
+      "five_shortest_nonbonded_cap_contacts": [
+        {
+          "cap_full_xyz_index_zero_based": 41,
+          "distance_A": 2.486517,
+          "other_element": "H",
+          "other_full_xyz_index_zero_based": 26
+        },
+        {
+          "cap_full_xyz_index_zero_based": 42,
+          "distance_A": 2.518527,
+          "other_element": "O",
+          "other_full_xyz_index_zero_based": 24
+        },
+        {
+          "cap_full_xyz_index_zero_based": 45,
+          "distance_A": 2.57506,
+          "other_element": "H",
+          "other_full_xyz_index_zero_based": 34
+        },
+        {
+          "cap_full_xyz_index_zero_based": 38,
+          "distance_A": 2.61198,
+          "other_element": "O",
+          "other_full_xyz_index_zero_based": 5
+        },
+        {
+          "cap_full_xyz_index_zero_based": 39,
+          "distance_A": 2.626767,
+          "other_element": "O",
+          "other_full_xyz_index_zero_based": 11
+        }
+      ],
+      "five_shortest_parent_nonbonded_cap_contacts": [
+        {
+          "cap_full_xyz_index_zero_based": 37,
+          "distance_A": 2.096599,
+          "other_element": "H",
+          "other_full_xyz_index_zero_based": 23
+        },
+        {
+          "cap_full_xyz_index_zero_based": 38,
+          "distance_A": 2.486618,
+          "other_element": "O",
+          "other_full_xyz_index_zero_based": 22
+        },
+        {
+          "cap_full_xyz_index_zero_based": 39,
+          "distance_A": 2.57506,
+          "other_element": "H",
+          "other_full_xyz_index_zero_based": 30
+        },
+        {
+          "cap_full_xyz_index_zero_based": 34,
+          "distance_A": 2.61198,
+          "other_element": "O",
+          "other_full_xyz_index_zero_based": 5
+        },
+        {
+          "cap_full_xyz_index_zero_based": 35,
+          "distance_A": 2.626767,
+          "other_element": "O",
+          "other_full_xyz_index_zero_based": 11
+        }
+      ],
+      "ligand_formal_charge": -3,
+      "name": "aequorin_1sl8_EF3_nma",
+      "parent_preparation": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/affordable_challenger_20260915/verified_repairs/aequorin_1sl8_EF3/repair_manifest.json",
+        "sha256": "9041c33c073f5aa86aba20129931db7714c06d6d7d770140b3b6599c3ad6344e"
+      },
+      "preparation_manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_a_prepared_v1/aequorin_1sl8_EF3_nma/preparation_manifest.json",
+        "sha256": "945cd02bcb7e89aea4cf0381fbf2a9f72bb1308027dbaa4bd8ffd566b048ebb4"
+      },
+      "source_coordinate_max_displacement_A": 0.0
+    },
+    {
+      "Ca_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_a_prepared_v1/alacta_1f6s_nma/alacta_1f6s_nma_Ca.xyz",
+        "sha256": "f6f1acb26e9cb8efd66040794a27579018b9808c2cc6233cddae2e93f3acfc3a"
+      },
+      "La_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_a_prepared_v1/alacta_1f6s_nma/alacta_1f6s_nma_La.xyz",
+        "sha256": "234b2a943cc5ef89be54d2a619d8c7294c7dc01424e5b0acf664d0aa0a616eaa"
+      },
+      "added_typed_donor_atoms": [],
+      "atom_count": 52,
+      "five_shortest_nonbonded_cap_contacts": [
+        {
+          "cap_full_xyz_index_zero_based": 36,
+          "distance_A": 2.238837,
+          "other_element": "H",
+          "other_full_xyz_index_zero_based": 6
+        },
+        {
+          "cap_full_xyz_index_zero_based": 38,
+          "distance_A": 2.40141,
+          "other_element": "H",
+          "other_full_xyz_index_zero_based": 6
+        },
+        {
+          "cap_full_xyz_index_zero_based": 43,
+          "distance_A": 2.489902,
+          "other_element": "H",
+          "other_full_xyz_index_zero_based": 20
+        },
+        {
+          "cap_full_xyz_index_zero_based": 36,
+          "distance_A": 2.52713,
+          "other_element": "N",
+          "other_full_xyz_index_zero_based": 8
+        },
+        {
+          "cap_full_xyz_index_zero_based": 44,
+          "distance_A": 2.576184,
+          "other_element": "O",
+          "other_full_xyz_index_zero_based": 27
+        }
+      ],
+      "five_shortest_parent_nonbonded_cap_contacts": [
+        {
+          "cap_full_xyz_index_zero_based": 30,
+          "distance_A": 2.08829,
+          "other_element": "H",
+          "other_full_xyz_index_zero_based": 13
+        },
+        {
+          "cap_full_xyz_index_zero_based": 27,
+          "distance_A": 2.408978,
+          "other_element": "H",
+          "other_full_xyz_index_zero_based": 3
+        },
+        {
+          "cap_full_xyz_index_zero_based": 28,
+          "distance_A": 2.539575,
+          "other_element": "O",
+          "other_full_xyz_index_zero_based": 2
+        },
+        {
+          "cap_full_xyz_index_zero_based": 31,
+          "distance_A": 2.557309,
+          "other_element": "O",
+          "other_full_xyz_index_zero_based": 12
+        },
+        {
+          "cap_full_xyz_index_zero_based": 32,
+          "distance_A": 2.576184,
+          "other_element": "O",
+          "other_full_xyz_index_zero_based": 19
+        }
+      ],
+      "ligand_formal_charge": -3,
+      "name": "alacta_1f6s_nma",
+      "parent_preparation": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/prepared/alacta_1f6s_v2/strong_site/amide_v3/repair_manifest.json",
+        "sha256": "ed1067b7114884454ea00d6647c5e08d6e01e9f82087eeec3332bd26ef8965f0"
+      },
+      "preparation_manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_a_prepared_v1/alacta_1f6s_nma/preparation_manifest.json",
+        "sha256": "f7cf1344cfefe364632ff0de6014c72141e9860e8bed0e42de73e4fa43f4e652"
+      },
+      "source_coordinate_max_displacement_A": 0.0
+    },
+    {
+      "Ca_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_a_prepared_v1/alacta_6ip9_nma/alacta_6ip9_nma_Ca.xyz",
+        "sha256": "c544ba774f6ed8cfc9b2964a2957d77d9e32f978064317ed4e0b2b0664074376"
+      },
+      "La_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_a_prepared_v1/alacta_6ip9_nma/alacta_6ip9_nma_La.xyz",
+        "sha256": "b196018a7e1bcfffbf78672d26e270effc31df8928b3660bb2727a61a090a168"
+      },
+      "added_typed_donor_atoms": [],
+      "atom_count": 55,
+      "five_shortest_nonbonded_cap_contacts": [
+        {
+          "cap_full_xyz_index_zero_based": 38,
+          "distance_A": 2.307033,
+          "other_element": "H",
+          "other_full_xyz_index_zero_based": 6
+        },
+        {
+          "cap_full_xyz_index_zero_based": 36,
+          "distance_A": 2.567909,
+          "other_element": "H",
+          "other_full_xyz_index_zero_based": 6
+        },
+        {
+          "cap_full_xyz_index_zero_based": 36,
+          "distance_A": 2.588688,
+          "other_element": "N",
+          "other_full_xyz_index_zero_based": 8
+        },
+        {
+          "cap_full_xyz_index_zero_based": 44,
+          "distance_A": 2.615763,
+          "other_element": "O",
+          "other_full_xyz_index_zero_based": 27
+        },
+        {
+          "cap_full_xyz_index_zero_based": 41,
+          "distance_A": 2.644516,
+          "other_element": "O",
+          "other_full_xyz_index_zero_based": 18
+        }
+      ],
+      "five_shortest_parent_nonbonded_cap_contacts": [
+        {
+          "cap_full_xyz_index_zero_based": 30,
+          "distance_A": 2.358765,
+          "other_element": "H",
+          "other_full_xyz_index_zero_based": 13
+        },
+        {
+          "cap_full_xyz_index_zero_based": 27,
+          "distance_A": 2.396695,
+          "other_element": "H",
+          "other_full_xyz_index_zero_based": 3
+        },
+        {
+          "cap_full_xyz_index_zero_based": 31,
+          "distance_A": 2.583223,
+          "other_element": "O",
+          "other_full_xyz_index_zero_based": 12
+        },
+        {
+          "cap_full_xyz_index_zero_based": 28,
+          "distance_A": 2.592024,
+          "other_element": "O",
+          "other_full_xyz_index_zero_based": 2
+        },
+        {
+          "cap_full_xyz_index_zero_based": 32,
+          "distance_A": 2.615763,
+          "other_element": "O",
+          "other_full_xyz_index_zero_based": 19
+        }
+      ],
+      "ligand_formal_charge": -3,
+      "name": "alacta_6ip9_nma",
+      "parent_preparation": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/prepared/alacta_6ip9_v2/strong_site/amide_v3/repair_manifest.json",
+        "sha256": "70012176aa6e7b7c5282b6fea54a21f2464ae8d7c960bfc9a00cb58ad10082f5"
+      },
+      "preparation_manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_a_prepared_v1/alacta_6ip9_nma/preparation_manifest.json",
+        "sha256": "72cdda2befeac1376bd711ffa6febc30faa7d8ae91e466d564c2b22871e6c944"
+      },
+      "source_coordinate_max_displacement_A": 0.0
+    },
+    {
+      "Ca_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_a_prepared_v1/ggr_1glg_connected/ggr_1glg_connected_Ca.xyz",
+        "sha256": "ce066a986233134bf993d6dc72fa7e4c8737555050a5ec1501abeace863807ad"
+      },
+      "La_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_a_prepared_v1/ggr_1glg_connected/ggr_1glg_connected_La.xyz",
+        "sha256": "c9ef206c5753cb02b11b01a74f5c5def19124ecc88314c62446e5a02a338deb1"
+      },
+      "added_typed_donor_atoms": [
+        {
+          "donor_type": "backbone_O",
+          "metal_distance_A": 6.376739,
+          "source_chain": "A",
+          "source_residue_atom": "LYS137:O"
+        },
+        {
+          "donor_type": "backbone_O",
+          "metal_distance_A": 5.604942,
+          "source_chain": "A",
+          "source_residue_atom": "ASP138:O"
+        },
+        {
+          "donor_type": "backbone_O",
+          "metal_distance_A": 6.020902,
+          "source_chain": "A",
+          "source_residue_atom": "GLY139:O"
+        },
+        {
+          "donor_type": "sidechain_O",
+          "metal_distance_A": 7.815366,
+          "source_chain": "A",
+          "source_residue_atom": "GLN140:OE1"
+        },
+        {
+          "donor_type": "backbone_O",
+          "metal_distance_A": 5.899066,
+          "source_chain": "A",
+          "source_residue_atom": "ILE141:O"
+        },
+        {
+          "donor_type": "backbone_O",
+          "metal_distance_A": 6.332113,
+          "source_chain": "A",
+          "source_residue_atom": "GLN142:O"
+        }
+      ],
+      "atom_count": 111,
+      "five_shortest_nonbonded_cap_contacts": [
+        {
+          "cap_full_xyz_index_zero_based": 108,
+          "distance_A": 2.332224,
+          "other_element": "H",
+          "other_full_xyz_index_zero_based": 92
+        },
+        {
+          "cap_full_xyz_index_zero_based": 110,
+          "distance_A": 2.471388,
+          "other_element": "H",
+          "other_full_xyz_index_zero_based": 100
+        },
+        {
+          "cap_full_xyz_index_zero_based": 106,
+          "distance_A": 2.487323,
+          "other_element": "O",
+          "other_full_xyz_index_zero_based": 18
+        },
+        {
+          "cap_full_xyz_index_zero_based": 104,
+          "distance_A": 2.531292,
+          "other_element": "O",
+          "other_full_xyz_index_zero_based": 5
+        },
+        {
+          "cap_full_xyz_index_zero_based": 107,
+          "distance_A": 2.554866,
+          "other_element": "H",
+          "other_full_xyz_index_zero_based": 23
+        }
+      ],
+      "five_shortest_parent_nonbonded_cap_contacts": [
+        {
+          "cap_full_xyz_index_zero_based": 48,
+          "distance_A": 2.396957,
+          "other_element": "H",
+          "other_full_xyz_index_zero_based": 23
+        },
+        {
+          "cap_full_xyz_index_zero_based": 51,
+          "distance_A": 2.471388,
+          "other_element": "H",
+          "other_full_xyz_index_zero_based": 41
+        },
+        {
+          "cap_full_xyz_index_zero_based": 49,
+          "distance_A": 2.510396,
+          "other_element": "O",
+          "other_full_xyz_index_zero_based": 22
+        },
+        {
+          "cap_full_xyz_index_zero_based": 45,
+          "distance_A": 2.531292,
+          "other_element": "O",
+          "other_full_xyz_index_zero_based": 5
+        },
+        {
+          "cap_full_xyz_index_zero_based": 46,
+          "distance_A": 2.563241,
+          "other_element": "O",
+          "other_full_xyz_index_zero_based": 14
+        }
+      ],
+      "ligand_formal_charge": -3,
+      "name": "ggr_1glg_connected",
+      "parent_preparation": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/affordable_challenger_20260915/verified_repairs/ggr_1glg_GGR/repair_manifest.json",
+        "sha256": "91147d0e56093ff03fa0b37680dc1443a1264fcac29f43aea49a9788570eea07"
+      },
+      "preparation_manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_a_prepared_v1/ggr_1glg_connected/preparation_manifest.json",
+        "sha256": "4811d444990f7e32d3273257df91a780d4bd97e5bf83f583c06bcb5e50943948"
+      },
+      "source_coordinate_max_displacement_A": 0.0
+    }
+  ],
+  "recorded_at_utc": "2026-09-16T05:43:28.032147+00:00",
+  "reviewed_packager": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/ggr_workflow.py",
+    "sha256": "5768a1c3021b59855cd8e6bb09925da6cfe3bdcae3d3255a5d02d9855467743e"
+  },
+  "schema_version": "alquemia.ggr_final_input_integrity_audit.v1",
+  "status": "no_material_issue_identified"
+}

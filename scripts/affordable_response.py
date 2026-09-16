@@ -8,7 +8,35 @@ import numpy as np
 
 from affordable_common import (InvalidArtifact, BOHR_TO_A, HA_TO_KCAL, verify, read_json,
                                record, write_new, energy, xyz)
-from site_mechanics import read_engrad
+
+
+def read_engrad(path):
+    """Read ORCA's scalar gradient and either row/scalar coordinate layout.
+
+    Tokenization accommodates the actual four-column Z/x/y/z coordinate tail;
+    it does not infer atomic numbers from ECP effective electron counts.
+    """
+    path = Path(path)
+    if not path.is_file():
+        raise InvalidArtifact(f'missing analytic gradient: {path}')
+    tokens = [token for line in path.read_text().splitlines()
+              if line.strip() and not line.lstrip().startswith('#')
+              for token in line.split()]
+    try:
+        n = int(tokens[0])
+        values = np.asarray([float(t.replace('D', 'E').replace('d', 'e'))
+                             for t in tokens[1:]], dtype=float)
+    except (IndexError, ValueError) as exc:
+        raise InvalidArtifact(f'malformed analytic gradient: {path}') from exc
+    if n < 1 or len(values) != 1 + 7*n or not np.isfinite(values).all():
+        raise InvalidArtifact('analytic gradient atom count, layout or finite-value failure')
+    tail = values[1 + 3*n:].reshape(n, 4)
+    numbers = tail[:, 0]
+    if not np.equal(numbers, np.floor(numbers)).all() or np.any((numbers < 1) | (numbers > 118)):
+        raise InvalidArtifact('invalid gradient atomic numbers')
+    return {'atom_count': n, 'energy_Ha': float(values[0]),
+            'gradient_Ha_per_bohr': values[1:1 + 3*n].reshape(n, 3),
+            'atomic_numbers': numbers.astype(int), 'coordinates_bohr': tail[:, 1:]}
 
 
 def cap_jacobians(retained_xyz, omitted_xyz, length_A):
@@ -101,6 +129,13 @@ def paired_sensitivity(la_path,ca_path):
     if len(a)!=len(b) or a[0][0]!='La' or b[0][0]!='Ca' or a[0][1:]!=b[0][1:] or a[1:]!=b[1:]:
         raise InvalidArtifact('gradient endpoint coordinates/order differ')
     inputs=[verify(r['artifacts']['input']).read_text() for r in (la,ca)]
+    declarations = [re.findall(r'^\s*\*\s+xyzfile\s+(-?\d+)\s+(\d+)\s+\S+\s*$',
+                               t, flags=re.M|re.I) for t in inputs]
+    if any(len(d) != 1 for d in declarations):
+        raise InvalidArtifact('gradient endpoint charge/multiplicity declaration missing')
+    (qla, mla), (qca, mca) = [tuple(map(int, d[0])) for d in declarations]
+    if qla - qca != 1 or mla != 1 or mca != 1:
+        raise InvalidArtifact('gradient endpoint charge/multiplicity invariant failed')
     stripped=[re.sub(r'^\s*\*\s+xyzfile.*$', '',t,flags=re.M|re.I) for t in inputs]
     if stripped[0]!=stripped[1]: raise InvalidArtifact('gradient endpoint input methods differ')
     mapped='mapped_source_gradient_kcal_mol_per_A'

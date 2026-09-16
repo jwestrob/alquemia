@@ -1,0 +1,61 @@
+{
+  "status": "PASS_NO_CURRENT_BLOCKER",
+  "recorded_utc": "2026-09-16T22:10:43.845064+00:00",
+  "mode": "independent read-only source, manifest and live partition review; no submissions",
+  "files": {
+    "run.py": {
+      "path": "/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-09-11_PQQ_ADH/energetics_queue/xoxf_fixed_core/run.py",
+      "sha256": "4ce24318531fff612cc0fc1e6ae4bfb8d6a99dede92481ce31aacb27789ba756"
+    },
+    "run.sbatch": {
+      "path": "/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-09-11_PQQ_ADH/energetics_queue/xoxf_fixed_core/run.sbatch",
+      "sha256": "04d0bcdc9da5d6f5f8864caa6fd879e8357b834f1a0369e9e3f65a2ded338df0"
+    },
+    "watch.py": {
+      "path": "/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-09-11_PQQ_ADH/energetics_queue/xoxf_fixed_core/watch.py",
+      "sha256": "fc93824ef63a2d120df006a563d61fda507e57ed8f70b28604fe28d21ac5a113"
+    },
+    "vendor/notify_agent.py": {
+      "path": "/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-09-11_PQQ_ADH/energetics_queue/xoxf_fixed_core/vendor/notify_agent.py",
+      "sha256": "8e5763559474e3306c13c0bafdec265b29ef2016a2ab71a8ee0e928d7b8702ee"
+    },
+    "authorization.json": {
+      "path": "/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-09-11_PQQ_ADH/energetics_queue/xoxf_fixed_core/authorization.json",
+      "sha256": "9bb1cbb22baa8776eae598897915af5c0711ce04a4b7917c0f4e07873b47768a"
+    },
+    "parent_role_review.json": {
+      "path": "/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-09-11_PQQ_ADH/energetics_queue/xoxf_fixed_core/parent_role_review.json",
+      "sha256": "2a7cf42808cc420756192a5dcf37b6191c86c657a67f86b80bd6d9fa94f66bfd"
+    }
+  },
+  "prepared_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/plm_xoxf_fixed_core_20260916/execution/manifest.json",
+    "sha256": "9da6bb58c63c70b7cba84ccb43eefe5e1c8bc2bb0cda71fd69169890d62d2604"
+  },
+  "scope": {
+    "targets": 2,
+    "selected_samples": [
+      0,
+      0
+    ],
+    "pairs": 2,
+    "endpoints": 4,
+    "new_folds": 0
+  },
+  "checks": [
+    "Two approved exact source SHA values and role maps checked by preflight",
+    "80 atoms; C27H31N6O15 plus metal; La/Ca charges -2/-3",
+    "Paired coordinates and actual H-parent/atom separation checks",
+    "Frozen original endpoint executor SHA003fbc005b42a6afaa4f2debe510690c6666f4989ed5dccaafad137bfd56c632",
+    "Runtime CPU count from SLURM_CPUS_ON_NODE; no prohibited SBATCH resource flags; standard OverSubscribe=EXCLUSIVE confirmed",
+    "Four endpoints split across complete CPU allocation, OMP/BLAS one thread",
+    "Watcher manifest/results/table hash checks and completion status/count validation",
+    "Terminal delivery/dedup paths consistent; target thread matches existing session",
+    "run.py/watch.py syntax parsed successfully"
+  ],
+  "nonblocking_notes": [
+    "Global geometry_validation PASS requirement would stop a hypothetical mixed ready/unsupported batch; actual two cases both PASS",
+    "Inherited endpoint schemas and descriptive scope retain ADH9 naming; actual targets, events and file paths are XoxF"
+  ],
+  "scientific_limitation": "Original50-step H preparation retained; actual core geometry passes, full-protein H force convergence not claimed."
+}

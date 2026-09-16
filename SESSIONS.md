@@ -354,3 +354,20 @@ GGR/alpha/PQQ accuracy stage is conditional on physical feasibility. Frozen
 source completeness and heterogen inventories remain explicit; no silent
 atom, water, protonation or assembly changes. Workspace:
 `workspaces/global_electrostatic_20260916/`.
+
+
+## 2026-09-16 — Agent pipeline documentation refreshed during global pilot
+
+Jacob requested current documentation for other agents while the approved
+calculations continue. Added docs/AGENT_PIPELINE.md covering protocol selection,
+released PQQ bands/reference rules, existing v2 inbox defaults, separate peptide
+v3 repair, completed benchmark/GGR results, real preparation/collection commands,
+MPI runtime policy and opt-in research status. Ten main documentation entry
+points now point to this guide; all preexisting text and dirty changes remain.
+Validated local links, three shell blocks and six live CLI help interfaces;
+no new scientific calculation was launched for documentation.
+
+Global pilot update: first full-protein La/Ca pair1199956 completed; remaining
+checks run via nine tasks of1199964 and12-task group1199974. Interrupted batch
+1199959 and its costs are retained; settings/scientific tasks unchanged.
+See diagnostics/global_electrostatic_20260916/REPORT.md and RUNBOOK.md.

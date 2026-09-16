@@ -1,5 +1,9 @@
 # Methods — theory and chemistry of the vertical-swap Ca²⁺/Ln³⁺ discriminator
 
+> **Current agent guide — 2026-09-16:** [Alquemia operations and protocol status](docs/AGENT_PIPELINE.md).
+> Use the current protocol table and score/reference rules before applying this earlier methods text. The amide repair and global electrostatic experiment do not silently replace the baseline Hamiltonian or its preparation.
+> This guide supersedes conflicting operational/status prose below; dated scientific records remain historical.
+
 This document explains what the discriminator does, why each design choice was
 made, and which assumptions are baked into the numbers. For pipeline mechanics
 see [PIPELINE.md](PIPELINE.md); for classification labels see

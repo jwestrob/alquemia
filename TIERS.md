@@ -1,5 +1,9 @@
 # Tiers — classification reference
 
+> **Current agent guide — 2026-09-16:** [Alquemia operations and protocol status](docs/AGENT_PIPELINE.md).
+> Only exact compatible fixed-core PQQ preparations inherit the released Ca/La bands. Generic v2, repaired v3 and the global challenger do not inherit those bands or a universal zero. Older tier names below remain historical heuristics.
+> This guide supersedes conflicting operational/status prose below; dated scientific records remain historical.
+
 Every candidate scored by `update_results_jsonl.py` gets a `class` label
 based on ΔΔE(Ca − La) in kcal/mol and the QM-cluster atom count. This file
 explains what each label means. The thresholds are locked by the

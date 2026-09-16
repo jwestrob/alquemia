@@ -1,5 +1,9 @@
 # alchemical_bvs — vertical-swap DFT discriminator for Ca²⁺ vs Ln³⁺ pocket preference
 
+> **Current agent guide — 2026-09-16:** [Alquemia operations and protocol status](docs/AGENT_PIPELINE.md).
+> The baseline remains the default. Canonical fixed-core PQQ, buffered inbox PQQ, repaired generic cores, and the global research pilot are separate protocols; their scores and bands are not interchangeable.
+> This guide supersedes conflicting operational/status prose below; dated scientific records remain historical.
+
 ![Python](https://img.shields.io/badge/python-3.11%2B-blue)
 ![ORCA](https://img.shields.io/badge/ORCA-6.1.1-orange)
 ![License](https://img.shields.io/badge/license-TBD-lightgrey)

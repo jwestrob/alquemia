@@ -1,5 +1,9 @@
 # Results — current findings
 
+> **Current agent guide — 2026-09-16:** [Alquemia operations and protocol status](docs/AGENT_PIPELINE.md).
+> Current completed evidence and its limitations are indexed in the guide. Historical catalogue counts and scores below are not a current benchmark denominator or a broad affinity-validation result.
+> This guide supersedes conflicting operational/status prose below; dated scientific records remain historical.
+
 **Snapshot date:** 2026-05-12 (aggregator run at the time this doc was written).
 **Source:** `results/all_results.jsonl` (deduped by stem, latest row wins),
 `results/colin_euk_pqq_adh_results.tsv`, `results/confirmed_ln_binders.tsv`.

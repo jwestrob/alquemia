@@ -1,5 +1,11 @@
 # Alchemical BVS — project context
 
+> **Current agent guide — 2026-09-16:** [Alquemia operations and protocol status](docs/AGENT_PIPELINE.md).
+> The September baseline benchmarks and GGR study are complete. The global electrostatic physical pilot is running; its conditional accuracy stage has not run. See the current guide and linked experiment report for handoff state.
+> This guide supersedes conflicting operational/status prose below; dated scientific records remain historical.
+
+## Archived context through 2026-08-30
+
 **Status as of 2026-05-12:** DFT cluster-level Ca²⁺/Ln³⁺ discriminator at production scale. **1,453 candidates scored** across 5 distinct candidate sources. **17 Ln-evolved + 277 Ln-preferring hits** in the live tracker.
 
 This file is the project-state pointer. For *how to run the pipeline* see [HOWTO.md](HOWTO.md). For the validation panel and methods see the vault notes.

@@ -1,5 +1,9 @@
 # Pipeline — runtime architecture
 
+> **Current agent guide — 2026-09-16:** [Alquemia operations and protocol status](docs/AGENT_PIPELINE.md).
+> The automatic inbox retains the existing v2 routes. Fixed-core PQQ and peptide-amide v3 are explicit separate paths. Manifested ORCA jobs use the current MPI runner with one OpenMP thread per rank.
+> This guide supersedes conflicting operational/status prose below; dated scientific records remain historical.
+
 This document is the engineering reference for the discriminator pipeline:
 what every script does, in what order, with what state, and how to debug it.
 For the chemistry see [METHODS.md](METHODS.md); for class labels see

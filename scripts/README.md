@@ -1,5 +1,9 @@
 # `scripts/` — per-script reference
 
+> **Current agent guide — 2026-09-16:** [Alquemia operations and protocol status](../docs/AGENT_PIPELINE.md).
+> Current baseline/repair benchmark, comparison, MPI runner, gradient and global-electrostatic entry points are indexed in the guide. The existing v2 carvers remain the inbox defaults.
+> This guide supersedes conflicting operational/status prose below; dated scientific records remain historical.
+
 Compact reference for every script in this directory. For deeper write-ups
 (failure modes, idempotency, data flow), see
 [PIPELINE.md](../PIPELINE.md) at the repo root.

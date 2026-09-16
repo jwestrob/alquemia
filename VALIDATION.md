@@ -1,5 +1,9 @@
 # Validation — panel, reproducibility, and known limits
 
+> **Current agent guide — 2026-09-16:** [Alquemia operations and protocol status](docs/AGENT_PIPELINE.md).
+> The fixed-core PQQ release, crystal transfer, 26-endpoint baseline/repair benchmark, ten-endpoint additions and 38-endpoint GGR study are completed and linked in the current guide. Broad La/Ca affinity discrimination remains unvalidated.
+> This guide supersedes conflicting operational/status prose below; dated scientific records remain historical.
+
 This document is the validation evidence for the DFT vertical-swap
 Ca²⁺/Ln³⁺ discriminator. It is the answer to "does this work?" written for
 a reviewer / second-opinion reader. For methodology see

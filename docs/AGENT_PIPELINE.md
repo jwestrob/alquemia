@@ -1,0 +1,199 @@
+# Alquemia: current operating guide for agents
+
+**Updated 2026-09-16.** Start here for new work. This guide supersedes older
+operational/status prose; dated experiments and their numerical records remain
+immutable. The baseline remains the default. Broad La/Ca affinity discrimination
+has not been established.
+
+## 1. Select the actual protocol
+
+| Path | Protocol / implementation | Current use and interpretation |
+|---|---|---|
+| Existing automatic generic inbox | `generic_vertical_exchange_native_r2scan3c_v2`; `scripts/carve_generic.py` | Retained production/reference behavior. Its coordinating-backbone fragment defect is documented; it is not silently repaired in place. |
+| Existing automatic PQQ inbox | `pqq_vertical_swap_r2scan3c_native_cpcm_typed31_v2`; `scripts/carve_with_pqq.py` | Buffered distance-selected PQQ core. This is a different protocol from the fixed-core calibration below. |
+| Canonical PQQ benchmark | `pqq_vertical_swap_r2scan3c_native_cpcm_fixed_core_v3`; `diagnostics/pqq_pmdh_fixed_core_calibration_20260914/fixed_core_carver.py` | Exact homologous core, mapped catalytic partners, frozen PQQ state and no waters. Only compatible preparations inherit its released bands. It is not the inbox default. |
+| Repaired generic benchmark | `generic_peptide_amide_vertical_native_r2scan3c_v3`; `scripts/affordable_peptide.py` | Explicit opt-in source-graph peptide-amide repair. Preserves source heavy coordinates and actual bonded amide N; merges overlaps. No calibrated absolute bands. |
+| Global electrostatic research | `vacuum_r2scan3c_mbis_global_tabi_electrostatic_v1`; `scripts/global_electrostatic.py` | Approved physical pilot in progress. Vacuum QM + direct protein Coulomb + whole-protein reaction field. No compatible aquo reference or calibrated decision; no default change. |
+| Gradient/response research | `scripts/affordable_response.py`, `scripts/ggr_sensitivity.py` | Analytic-gradient checks completed in the GGR study. Curvature/relaxation/entropy remain `response_model_not_validated`; unavailable numerical corrections stay null. |
+
+“Baseline” can refer to the electronic method or to a specific preparation.
+Always name both. The baseline method is ORCA 6.1.1 native r2SCAN-3c,
+CPCM(Water), DefGrid3, NoAutostart, using its native basis/ECP and composite
+corrections. There is no custom La basis override. The new global experiment
+deliberately uses vacuum endpoints under its separate protocol.
+
+The historical point-charge embedding, CPCM/PB transfer challenger, and
+whole-protein GFN2 attempt did not become production methods. Their archived
+failures do not decide the outcome of the current global electrostatic pilot.
+
+## 2. Interpret scores on the correct scale
+
+With endpoint energies in Hartree:
+
+```text
+R_Ha = E_Ca - E_La
+R_kcal = R_Ha * 627.509474
+S_kcal = (R_Ha - A_Ha) * 627.509474
+```
+
+Convert once. Larger values are more La-like on the named protocol's scale.
+A positive value alone is not a general affinity, occupancy, functional-use,
+or biological “Ln-evolved” classification.
+
+The exact fixed-core PQQ release defines Ca-supported S <=
+**14.857129202922806**, La-supported S >= **23.460061205609236** kcal/mol,
+and an indeterminate open interval between them. Read the authoritative
+numbers from [result.json](../diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json),
+`calibration.released_supported_bands`; do not refit or round before classifying.
+Its primary released contrast is R; S uses the recorded additive reporting gauge.
+That gauge's `registry_compatibility_claimed` is false: it is not a blanket
+reference-registry compatibility claim for new preparations.
+
+The finalized symmetric CN8 record is
+`reference_inputs/aquo_cn8_native_r2scan3c_v2/aquo_reference.json`.
+Its reporting value is A = -646.0775458314704 Hartree. Use it only through the
+recorded compatible protocol or explicit reporting-gauge policy. Repaired v3
+benchmarks use a shared gauge without inheriting the old zero or PQQ bands.
+Matched differences between sites can be calculated directly from R, cancelling
+the common offset. The global challenger has neither an S nor an absolute class.
+
+## 3. What has actually completed
+
+| Evidence | Actual outcome / authoritative record |
+|---|---|
+| Fixed-core PQQ calibration | 25/25 separated; gap 8.602932 kcal/mol. Motif, charge and composition already separate this panel, so it does not prove incremental DFT information. [Release](../diagnostics/pqq_pmdh_fixed_core_calibration_20260914/RESULT.md). |
+| Frozen crystal transfer | 1H4I and 4MAE passed their released bands. [Result](../diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout/result/HOLDOUT_RESULT.md). |
+| Baseline/repair benchmark | All 26 endpoints complete. Fixed-core 1KB0 passes the Ca band. Original GGR passes its frozen direction test; repaired GGR changes sign without demonstrating improved prediction. [Results](../diagnostics/baseline_benchmark_20260915/RESULTS.md). |
+| Hans-LanM / alpha-lactalbumin additions | All ten endpoints complete. Hans ranks above GGR; both alpha source geometries rank below GGR, conflicting with condition-qualified La-favoring evidence. [Results](../diagnostics/benchmark_set_20260915/SCORING_RESULTS_1199508.md). |
+| GGR mechanism study | All 38 endpoints and 12 directional gradient checks complete. Representation and source geometry materially change scores; no validated mechanical correction. [Report](../diagnostics/ggr_mechanism_plan_20260915/REPORT.md). |
+| Global electrostatic pilot | Four vacuum endpoints and four ESP checks complete; full physical gate remains in progress at this documentation checkpoint. The ten-endpoint accuracy stage is conditional and has not run. [Live experiment report](../diagnostics/global_electrostatic_20260916/REPORT.md). |
+
+These results are already consumed for development. Multiple chains, structures,
+homologs, mutants and sites are not automatically independent observations.
+Aequorin and Hans sites remain ordered vectors; parvalbumin evidence remains
+supporting/cross-study. Keep canonical PQQ class transfer separate from direct
+La/Ca affinity evidence. Do not pool all rows into one accuracy percentage.
+
+The scored benchmark ledger is
+`workspaces/benchmark_set_20260915/scored_release_1199508/benchmark_manifest.json`.
+The GGR study exports a later derived ledger under
+`workspaces/ggr_mechanism_20260915/report_v1/`; consult its report for the
+named artifact. Construction-time `prepared_unscored` records are historical
+snapshots, not the latest execution status. The newer
+[challenge curation](../diagnostics/accuracy_strategy_20260915/CHALLENGE_PANEL_CURATION.md)
+records additional evidence/construct constraints and proposals, not new scores.
+
+## 4. Environment and safe read-only entry points
+
+On biotite:
+
+```bash
+cd /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs
+ALQUEMIA_ROOT=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs
+ALQUEMIA_PY=/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python
+export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
+
+git status --short
+tail -n 80 SESSIONS.md
+squeue -u jwestrob
+
+"$ALQUEMIA_PY" scripts/affordable_workflow.py dry-run \
+  --manifest workspaces/baseline_benchmark_20260915/run_v1/manifest.json
+"$ALQUEMIA_PY" scripts/affordable_workflow.py dry-run \
+  --manifest workspaces/benchmark_set_20260915/ready_tasks_v4/manifest.json
+```
+
+ORCA is pinned at
+`/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca`.
+Use the manifest's executable and implementation pins, rather than an arbitrary
+PATH executable. The older PDBFixer entry point is
+`/home/jwestrob/miniconda3/envs/fep/bin/python`; exact benchmark reproduction
+should replay the archived protonated coordinates instead of regenerating H atoms.
+
+Recollect completed baseline results without rerunning quantum calculations:
+
+```bash
+"$ALQUEMIA_PY" scripts/affordable_benchmark.py collect \
+  --manifest workspaces/benchmark_set_20260915/ready_tasks_v4/manifest.json \
+  --output workspaces/benchmark_set_20260915/collection_agent_recheck_01.json
+"$ALQUEMIA_PY" scripts/affordable_benchmark.py report \
+  --collection workspaces/benchmark_set_20260915/collection_agent_recheck_01.json \
+  --output workspaces/benchmark_set_20260915/report_agent_recheck_01.md
+```
+
+Writers reject existing output paths. Preserve prior versions; choose a new
+explicit output filename for another recollection. Collectors verify normal
+termination, convergence, input/coordinate/receipt hashes and protocol grouping.
+Missing or invalid results remain visible and unscored.
+
+## 5. Preparation and execution
+
+For an approved generic benchmark preparation, this real example replays the
+exact alpha-lactalbumin source preparation and writes a fresh workspace:
+
+```bash
+"$ALQUEMIA_PY" scripts/affordable_benchmark_set.py prepare-generic \
+  --root "$ALQUEMIA_ROOT" \
+  --config diagnostics/benchmark_set_20260915/preparation_configs/1F6S.json \
+  --protonation-report workspaces/benchmark_set_20260915/prepared/alacta_1f6s_v1/preparation_report.json \
+  --output workspaces/benchmark_set_20260915/prepared/alacta_1f6s_agent_replay_01
+```
+
+This prepares inputs; it submits nothing. For other targets, use an explicit
+reviewed configuration, exact metal/chain/site and source-state inventory.
+[Benchmark commands](../diagnostics/benchmark_set_20260915/COMMANDS.md) document
+task packaging. The generic repair's lower-level CLI requires the original
+v2 manifest **and** a pinned molecular topology; residue-number arithmetic is
+not a replacement for connectivity. Unsupported chemistry must remain explicit.
+
+The existing inbox driver is an automatic **submission** path, not a dry-run.
+It resolves one exact metal site, validates PQQ routing before and after
+protonation, then runs the existing v2 carver. Fold-catalogue qualification is
+CN >= 6 at 3.1 A; automatic ORCA/carver qualification is CN >= 7, with <= 2
+direct N donors. Its separate 3.3-A inclusion buffer does not widen that gate.
+It does not invoke fixed-core PQQ or peptide v3 automatically. Do not feed new
+work into `inbox/`, run `process_inbox.sh`, restart watchers, or resubmit a
+completed historical batch as a documentation verification step.
+
+Approved manifested quantum jobs use `affordable_workflow.py execute` and the
+existing `run_orca_task_manifest.py` / `render_orca_runtime_input.py` machinery.
+The recent 64-CPU batches use four concurrent 16-rank ORCA endpoints, one
+OpenMP thread per rank. Runtime `%pal` insertion and MPI launch fixes are
+intentional; the old “NEVER MPI” instruction is obsolete. Retain the recorded
+runtime inputs and receipts. Valid completions are cached; partial quantum
+attempts require an explicit fresh retry directory. Never remove another
+executor's lock or overwrite an attempt.
+
+Use the batch script associated with the approved manifest. Jobs1199299 and
+1199508 are complete; their launch commands are historical/recovery recipes,
+not pending tasks. The general inbox produces auxiliary apo/water inputs;
+the recent benchmark manifests use only the required La/Ca endpoint pair.
+
+## 6. Current research jobs and handoff discipline
+
+The current global experiment has its own [agreement](../diagnostics/global_electrostatic_20260916/AGREEMENT.md),
+[frozen settings](../diagnostics/global_electrostatic_20260916/NUMERICS.md),
+[report](../diagnostics/global_electrostatic_20260916/REPORT.md), and
+[exact runbook](../diagnostics/global_electrostatic_20260916/RUNBOOK.md).
+Read them before touching its tasks. Collect the original 25-task master
+manifest even though execution is split across jobs. A subset success cannot
+trigger Stage 2. Do not use an old baseline cache entry as a challenger result.
+
+Candidate products belong under `workspaces/`; compact plans/inventories/results
+belong under `diagnostics/`. Preserve unrelated dirty changes and immutable
+experiments. Record the agreed scientific scope in project notes and follow
+the user's AGENTS.md analysis policy: routine implementation/recovery proceeds
+within that scope, while materially new analyses need agreement. The user has
+removed project CPU/time stopping budgets; record actual costs and task counts
+without inventing new spending limits. Existing scheduler policies still apply.
+
+For cost reports, distinguish allocated Slurm CPU-seconds, measured CPU use,
+rank-times, wall time and physical-core topology. Shared allocations can expose
+SMT siblings; CPU utilization alone does not establish clock rate or throughput.
+Current [resource observations](../diagnostics/global_electrostatic_20260916/PERFORMANCE_OBSERVATION.md)
+document one same-input recovery, with all interrupted cost retained.
+
+Update SESSIONS.md and the relevant experiment report at handoff. Commit only
+your own scoped files/hunks; do not push, change defaults, or launch a production
+rescore through this guide. The [August campaign record](../CANONICAL_METHOD_OPERATIONS_RESULTS_2026-08-30.md)
+and older reports remain provenance for those campaigns.

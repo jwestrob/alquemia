@@ -1,5 +1,9 @@
 # Contributing
 
+> **Current agent guide — 2026-09-16:** [Alquemia operations and protocol status](docs/AGENT_PIPELINE.md).
+> Read the current guide, SESSIONS.md and the applicable user AGENTS.md before execution. Preserve protocol identities, active jobs, immutable results and unrelated dirty edits; keep compute products under workspaces/.
+> This guide supersedes conflicting operational/status prose below; dated scientific records remain historical.
+
 This document is for collaborators who want to submit candidates from a
 different cluster account, extend the carve dictionary, or otherwise modify
 the methodology. For day-to-day operation see [HOWTO.md](HOWTO.md).

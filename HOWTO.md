@@ -1,5 +1,9 @@
 # DFT Ca²⁺/Ln³⁺ Discriminator — How-To
 
+> **Current agent guide — 2026-09-16:** [Alquemia operations and protocol status](docs/AGENT_PIPELINE.md).
+> Use the current guide for preparation, dry-run, execution and collection commands. Completed benchmark batches are not pending jobs. Larger scores are more La-like on a named protocol scale; zero is not a universal affinity threshold.
+> This guide supersedes conflicting operational/status prose below; dated scientific records remain historical.
+
 **Purpose:** Quantitatively decide whether a predicted/known La³⁺-binding pocket actually
 prefers a lanthanide over Ca²⁺, using a vertical metal-swap DFT cycle.
 

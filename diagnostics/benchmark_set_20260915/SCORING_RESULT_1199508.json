@@ -1,0 +1,168 @@
+{
+  "accounting": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/benchmark_set_20260915/ACCOUNTING_1199508.txt",
+    "sha256": "a9286bf6540adcea0108b83c06a4e5def1a82620ad173a38eefae023ace0b809"
+  },
+  "collection": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/ready_tasks_v4/collection_1199508.json",
+    "sha256": "8ab72d4a683fcdc79b534f2f03f9bbeb9454ae6263f1eebf0aae91189eb21924"
+  },
+  "completed_endpoints": 10,
+  "cost": {
+    "GPU_seconds": 0,
+    "allocated_cpus": 64,
+    "peak_batch_RSS_KiB": 7275896,
+    "scheduler_allocated_core_seconds": 20544,
+    "scheduler_elapsed_seconds": 321,
+    "scheduler_total_CPU_seconds": 16579,
+    "workflow": [
+      {
+        "allocated_core_seconds": 20495.211280822754,
+        "allocated_cpus": 64,
+        "elapsed_seconds": 320.23767626285553,
+        "error": null,
+        "slurm_job_id": "1199508",
+        "time_unix": 1789530717.2542367
+      }
+    ]
+  },
+  "decision_status": "uncalibrated_protocol; no universal zero or PQQ bands",
+  "default_baseline": "unchanged",
+  "direct_energy_algebra_audit": [
+    {
+      "E_Ca_hartree": -2049.040166967069,
+      "E_La_hartree": -1403.03640235924,
+      "R_hartree": -646.0037646078292,
+      "S_kcal_mol": 46.29841683814243,
+      "case": "hans_lanm_v1_EF1"
+    },
+    {
+      "E_Ca_hartree": -2049.086721300673,
+      "E_La_hartree": -1403.081288890536,
+      "R_hartree": -646.0054324101372,
+      "S_kcal_mol": 45.25185508910061,
+      "case": "hans_lanm_v1_EF2"
+    },
+    {
+      "E_Ca_hartree": -2049.148120845403,
+      "E_La_hartree": -1403.151726848548,
+      "R_hartree": -645.996393996855,
+      "S_kcal_mol": 50.92354505365195,
+      "case": "hans_lanm_v1_EF3"
+    },
+    {
+      "E_Ca_hartree": -1855.665311848009,
+      "E_La_hartree": -1209.569436774805,
+      "R_hartree": -646.0958750732041,
+      "S_kcal_mol": -11.50177283912136,
+      "case": "alacta_1f6s_v2_strong_site"
+    },
+    {
+      "E_Ca_hartree": -1931.9884182716,
+      "E_La_hartree": -1285.887788752898,
+      "R_hartree": -646.1006295187021,
+      "S_kcal_mol": -14.485232432773955,
+      "case": "alacta_6ip9_v2_strong_site"
+    }
+  ],
+  "execution": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/ready_tasks_v4/execution_1199508.json",
+    "sha256": "d3cac6c1021fcfddfbcc8371e9e988bb1837e8349878759cbfafe27ee2798baf"
+  },
+  "execution_agreement": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/benchmark_set_20260915/EXECUTION_AGREEMENT.md",
+    "sha256": "c62f3ec6e71dabd7774160b5ff216e2ed3ef3135c0f9fc97f86c51cfa89c434b"
+  },
+  "failures": 0,
+  "gauge_independent_ordering_vs_prior_GGR_v3": [
+    {
+      "case": "hans_lanm_v1_EF1",
+      "delta_R_kcal_mol": 43.24094426882509,
+      "interpretation": "reporting-gauge-independent score ordering, not a new fitted classification threshold",
+      "reference_case": "ggr_1glg_GGR",
+      "reference_lane": "repaired"
+    },
+    {
+      "case": "hans_lanm_v1_EF2",
+      "delta_R_kcal_mol": 42.19438251978327,
+      "interpretation": "reporting-gauge-independent score ordering, not a new fitted classification threshold",
+      "reference_case": "ggr_1glg_GGR",
+      "reference_lane": "repaired"
+    },
+    {
+      "case": "hans_lanm_v1_EF3",
+      "delta_R_kcal_mol": 47.86607248433461,
+      "interpretation": "reporting-gauge-independent score ordering, not a new fitted classification threshold",
+      "reference_case": "ggr_1glg_GGR",
+      "reference_lane": "repaired"
+    },
+    {
+      "case": "alacta_1f6s_v2_strong_site",
+      "delta_R_kcal_mol": -14.5592454084387,
+      "interpretation": "reporting-gauge-independent score ordering, not a new fitted classification threshold",
+      "reference_case": "ggr_1glg_GGR",
+      "reference_lane": "repaired"
+    },
+    {
+      "case": "alacta_6ip9_v2_strong_site",
+      "delta_R_kcal_mol": -17.542705002091296,
+      "interpretation": "reporting-gauge-independent score ordering, not a new fitted classification threshold",
+      "reference_case": "ggr_1glg_GGR",
+      "reference_lane": "repaired"
+    }
+  ],
+  "hartree_to_kcal_mol": 627.509474,
+  "interpretation": "Hans scores rank above the previously scored Ca-favoring GGR; both condition-qualified La-favoring alpha-lactalbumin geometries rank below GGR on the same protocol. Mixed supporting evidence; no broad discrimination claim or post-result rescue.",
+  "job_id": "1199508",
+  "new_biological_observations": 2,
+  "new_site_states": 5,
+  "orca_versions": [
+    "6.1.1"
+  ],
+  "ordered_vectors": [
+    {
+      "S_vector_kcal_mol": [
+        46.29841683814243,
+        45.25185508910061,
+        50.92354505365195
+      ],
+      "biological_group": "lanmodulin_family",
+      "independent_site_labels": false,
+      "lane": "amide_v3",
+      "observation_group": "hans_lanm_wt",
+      "ordered_sites": [
+        "hans_lanm_v1_EF1",
+        "hans_lanm_v1_EF2",
+        "hans_lanm_v1_EF3"
+      ]
+    },
+    {
+      "S_vector_kcal_mol": [
+        -11.50177283912136,
+        -14.485232432773955
+      ],
+      "biological_group": "bovine_alpha_lactalbumin",
+      "independent_site_labels": false,
+      "lane": "amide_v3",
+      "observation_group": "ALACTA_BOVINE_STRONG_SITE",
+      "ordered_sites": [
+        "alacta_1f6s_v2_strong_site",
+        "alacta_6ip9_v2_strong_site"
+      ]
+    }
+  ],
+  "prior_GGR_S_kcal_mol": 3.0574725693173397,
+  "prior_GGR_release": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/baseline_benchmark_20260915/RESULT.json",
+    "sha256": "838260790a32f007e0cef3e9eaae2486957da7712f665481bcb5c00bd2b0e2a6"
+  },
+  "protocol_id": "generic_peptide_amide_vertical_native_r2scan3c_v3",
+  "reference_delta_hartree": -646.0775458314704,
+  "retries": 0,
+  "scored_benchmark_ledger": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/scored_release_1199508/benchmark_manifest.json",
+    "sha256": "bc987f9dd3e2bb55d692d7ddb58036c64757369813a10eae77bbcd3ea19e080d"
+  },
+  "software_receipts_verified": 10,
+  "status": "complete"
+}

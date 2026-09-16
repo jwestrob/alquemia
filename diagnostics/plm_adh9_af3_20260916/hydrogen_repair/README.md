@@ -1,5 +1,19 @@
 # ADH9 protein-hydrogen recovery — 16 September 2026
 
+## Completed result: metal assignment is sensitive to model/preparation — 16 September 2026
+
+**Job1200182 completed/PASS in4m59s; the repaired preparation and both ORCA endpoints pass independent checks.** The same Hydrogenophilalia `4380_6` sequence scores **21.450083 kcal/mol with Protenix versus9.720464 with AF3 plus repaired protein hydrogens**, a **−11.729619 kcal/mol** difference. The latter lies in the existing Ca-supported band, but this is **not a robust calcium assignment**: the structural preparation changes the classification. Biological metal preference remains unresolved. Predictor geometry and hydrogen preparation have not been isolated as separate causes; no new controlled comparison was launched.
+
+| Protein | Protenix S | Accepted AF3 S | Existing-band position of AF3 result | Biological interpretation |
+|---|---:|---:|---|---|
+| Rokubacteriales `32301_3` | 15.503190 | 19.984118 | Indeterminate | Unresolved |
+| Hydrogenophilalia `4380_6` | 21.450083 | 9.720464, repaired H | Ca-supported band | Unresolved; model/preparation-sensitive |
+
+The invalid earlier AF3 value17.134098 remains excluded. The repaired run preserves the same selected AF3 sample1 and all its heavy coordinates, PQQ hydrogens/caps, core membership and charges; only23 protein H coordinates changed relative to the failed AF3 preparation. **Protenix and AF3 have different predicted heavy coordinates**—the heavy-coordinate preservation statement refers to the AF3 hydrogen repair, not to equivalence between predictors. Independent review verified63 pinned files and both normal/converged ORCA outputs, plus core geometry, atom identities, charges and paired coordinates. No remaining gross overlap was found. The numerical hydrogen-method change and absence of independent recalibration are explicit.
+
+Repaired energies: E(La)=−2426.60502454349 Hartree; E(Ca)=−3072.667079829895 Hartree; R=−646.0620552864052 Hartree. Post-completion review: PLM `energetics_queue/adh9/af3_comparison/hydrogen_repair/post_completion_review.json`. Current two-protein table: `energetics_queue/adh9/af3_comparison/reviewed_score_comparison.tsv`. Original execution results, initial failure review and preparation snapshots remain immutable. The watcher delivered completion; no further calculations are running for this repair.
+
+
 The same selected Hydrogenophilalia ADH9 AF3 model is now prepared with valid
 protein-hydrogen geometry. This repairs a preparation failure after folding.
 It does not change the AF3 model, MSA, heavy coordinates, PQQ state, conserved

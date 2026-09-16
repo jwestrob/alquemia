@@ -539,3 +539,32 @@ eight approved calls. No other jobs/watchers/edits or baseline/default touched.
 CORE_RESULTS.md, REALSPACE_INTERFACE_REPAIR.md, runbook, agent guide and vault
 note updated. Root code adds exact-input technical revision and core-only
 partition collection. No push.
+
+
+## 2026-09-16 — Approved MACE memory rewrite, full A5000 validation active
+
+Jacob approved memory work: preserve physics, validate on four completed cores,
+then run the same full protein on A5000. Added blocked realspace pair sums with
+analytic charge/coordinate backward; checkpointed local neighbor messages and
+per-atom symmetric/sparse products; indices-only edge accumulation. No learned
+weights/buffers, float64, physical atom inventories, offsets, widths or cutoffs
+changed. Saved pair tensors are linear in atom count. Higher derivatives/training
+remain unsupported. All 17 tests pass on pinned real artifacts; no dummy science.
+
+Current blocked_v6 manifest SHA8d5fc630c11b50457cd30927f9bcb827f99bd1c67191b307ccb01bc0712c7189.
+Job1200381 is running on one A5000/16CPU/64474MiB. Its four complete core checks
+pass original energies/forces/densities within ~1e-11; the runner gates full
+inference on those checks. Full9141atom La evaluation is now advancing beyond
+prior allocation failures, about11GiB live GPU use; no completed full endpoint
+yet at checkpoint. Accounting watcher4159484; batch exit collects. No automatic
+offload recovery is active. Baseline/default unchanged.
+
+All prior memory-debug attempts are preserved under blocked_v1...v5. Failures
+identified huge per-edge weights, source-message retention, per-atom symmetric
+products and sparse field products. TorchScript checkpoint early-stop required
+complete-block recomputation. Own pendingH2001200309/watcher replaced after
+core verification; no unrelated jobs/watchers modified. Offload1200372 exceeded
+the requested host share (81.017GiB peak RSS) and failed on GPU memory. Cancel
+was requested after live RSS observation, but it had already failed/watcher
+exited; correction receipt retained. RAM request is not claimed as an enforced
+process-RSS cap. See MEMORY_STATUS.md and BLOCKED_KERNEL.md for current commands.

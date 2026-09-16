@@ -109,7 +109,7 @@ def prepare(root, software, output, agreement):
     write_new(output / 'atom_mappings.json', mapping)
     impl = output / 'implementation'; impl.mkdir()
     pins = {}
-    for name in ('mace_hybrid.py', 'affordable_common.py', 'mace_realspace_compat.py'):
+    for name in ('mace_hybrid.py', 'affordable_common.py', 'mace_realspace_compat.py', 'mace_blocked.py', 'mace_local_memory.py'):
         p = Path(__file__).with_name(name); q = impl / name
         shutil.copyfile(p, q); pins[name] = record(q)
     tasks = []
@@ -166,6 +166,9 @@ def dry_run(manifest):
     inventory = read_json(verify(sm['backend_source_inventory']))
     for ref in inventory['files']:
         verify(ref)
+    for key in ('memory_agreement', 'kernel_validation_reference'):
+        if m.get(key):
+            verify(m[key])
     if len(m['tasks']) != 12 or len({t['task_id'] for t in m['tasks']}) != 12:
         raise InvalidArtifact('approved task set changed')
     for t in m['tasks']:
@@ -177,7 +180,7 @@ def dry_run(manifest):
     return {'status': 'pass', 'tasks': 12, 'new_DFT_endpoints': 0, 'manifest': record(manifest)}
 
 
-def repair_interface(manifest, output):
+def repair_interface(manifest, output, pair_tile=None, memory_agreement=None, reference_collection=None, edge_tile=None, node_tile=None):
     """Version only the execution adapter; reuse every exact pinned input byte."""
     from mace_realspace_compat import ADAPTER_ID
     dry_run(manifest)
@@ -185,13 +188,28 @@ def repair_interface(manifest, output):
     out = Path(output).resolve(); out.mkdir(parents=True, exist_ok=False)
     impl = out/'implementation'; impl.mkdir()
     pins = {}
-    for name in ('mace_hybrid.py', 'affordable_common.py', 'mace_realspace_compat.py'):
+    for name in ('mace_hybrid.py', 'affordable_common.py', 'mace_realspace_compat.py', 'mace_blocked.py', 'mace_local_memory.py'):
         destination = impl/name
         shutil.copyfile(Path(__file__).with_name(name), destination)
         pins[name] = record(destination)
     m['implementation'] = pins
     m['model']['execution_adapter'] = ADAPTER_ID
     m['technical_revision_of'] = record(manifest)
+    if pair_tile is not None:
+        if pair_tile < 1 or not memory_agreement or not reference_collection:
+            raise InvalidArtifact('blocked revision requires positive tile, agreement and actual reference collection')
+        m['model']['pair_kernel'] = {'kernel_id': 'graph044_blocked_analytic_backward_v1', 'tile_sites': pair_tile}
+        if edge_tile is not None:
+            if edge_tile < 1: raise InvalidArtifact('positive edge tile required')
+            m['model']['pair_kernel']['edge_tile'] = edge_tile
+            m['model']['pair_kernel']['core_edge_tile'] = min(edge_tile,128)
+        if node_tile is not None:
+            if node_tile < 1 or edge_tile is None: raise InvalidArtifact('node tile requires edge checkpointing')
+            m['model']['pair_kernel']['node_tile'] = node_tile
+            m['model']['pair_kernel']['core_node_tile'] = min(node_tile,17)
+        m['memory_agreement'] = record(memory_agreement)
+        m['kernel_validation_reference'] = record(reference_collection)
+        m['kernel_validation_tolerances'] = {'energy_eV': 1e-6, 'force_eV_A': 1e-6, 'density': 1e-8}
     for task in m['tasks']:
         task.pop('cache_key')
         task['cache_key'] = cache_key({'task': task, 'model': m['model'],
@@ -225,6 +243,14 @@ def worker(manifest, task_id, output, memory_mode):
             if m['model']['execution_adapter'] != ADAPTER_ID:
                 raise InvalidArtifact('unsupported execution adapter')
             result['execution_adapter'] = configure(calc)
+        if m['model'].get('pair_kernel'):
+            from mace_blocked import KERNEL_ID, configure as configure_blocked
+            settings = m['model']['pair_kernel']
+            if settings['kernel_id'] != KERNEL_ID:
+                raise InvalidArtifact('unsupported blocked pair kernel')
+            edge_tile = settings.get('core_edge_tile', settings.get('edge_tile')) if t['kind'] == 'core' else settings.get('edge_tile')
+            node_tile = settings.get('core_node_tile', settings.get('node_tile')) if t['kind'] == 'core' else settings.get('node_tile')
+            result['pair_kernel'] = configure_blocked(calc, settings['tile_sites'], edge_tile, node_tile)
         result['model_load_seconds'] = time.monotonic() - start
         rows = xyz(verify(t['xyz']))
         atoms = Atoms([a[0] for a in rows], positions=[a[1:] for a in rows], pbc=False)
@@ -292,6 +318,10 @@ def execute(manifest, memory_mode, selected=None):
         for t in m['tasks']:
             if t['task_id'] not in selected:
                 continue
+            if t['kind'] == 'full' and m['model'].get('pair_kernel'):
+                validation = compare_cores(mp)
+                if validation['status'] != 'pass':
+                    raise InvalidArtifact('blocked full-system execution requires successful original-vs-blocked core validation')
             td = root/t['task_id']; td.mkdir(exist_ok=True)
             previous = sorted(td.glob('attempt_*'))
             if any(accepted_attempt(a, t, mp) is not None for a in previous):
@@ -320,6 +350,36 @@ def execute(manifest, memory_mode, selected=None):
             if valid is None:
                 return {'status': 'partial_failure', 'failed_task': t['task_id'], 'attempt': str(attempt)}
     return {'status': 'selected_tasks_complete'}
+
+
+def compare_cores(manifest):
+    m = read_json(manifest)
+    reference = read_json(verify(m['kernel_validation_reference']))
+    reference_m = read_json(verify(reference['manifest']))
+    if reference_m['model']['checkpoint'] != m['model']['checkpoint']:
+        raise InvalidArtifact('core-validation checkpoint mismatch')
+    current = collect(manifest)
+    tolerances = m['kernel_validation_tolerances']
+    rows = []
+    for name in TASK_IDS:
+        task = next(t for t in m['tasks'] if t['task_id'] == name)
+        old_task = next(t for t in reference_m['tasks'] if t['task_id'] == name)
+        for field in ('xyz', 'charge', 'spin_multiplicity'):
+            if task[field] != old_task[field]:
+                raise InvalidArtifact('core-validation input mismatch')
+        old, new = reference['rows'][name], current['rows'][name]
+        if old['status'] != 'computed' or new['status'] != 'computed':
+            rows.append({'task_id': name, 'status': 'unavailable', 'pass': False})
+            continue
+        de = new['energy_eV'] - old['energy_eV']
+        df = float(np.max(np.abs(np.load(verify(new['forces']))-np.load(verify(old['forces'])))))
+        dd = float(np.max(np.abs(np.load(verify(new['density_coefficients']))-np.load(verify(old['density_coefficients'])))))
+        rows.append({'task_id': name, 'energy_delta_eV': de, 'force_max_delta_eV_A': df,
+                     'density_max_delta': dd, 'pass': abs(de) <= tolerances['energy_eV'] and
+                     df <= tolerances['force_eV_A'] and dd <= tolerances['density']})
+    return {'status': 'pass' if all(r['pass'] for r in rows) else 'failed',
+            'manifest': record(manifest), 'reference': m['kernel_validation_reference'],
+            'tolerances': tolerances, 'rows': rows}
 
 
 def collect(manifest):
@@ -454,7 +514,7 @@ def main():
     p = argparse.ArgumentParser(description=__doc__); sp = p.add_subparsers(dest='command', required=True)
     q = sp.add_parser('prepare')
     for key in ('root', 'software', 'output', 'agreement'): q.add_argument('--'+key, required=True)
-    for command in ('dry-run', 'collect'):
+    for command in ('dry-run', 'collect', 'compare-cores'):
         q = sp.add_parser(command); q.add_argument('--manifest', required=True); q.add_argument('--output')
     q = sp.add_parser('execute'); q.add_argument('--manifest', required=True)
     q.add_argument('--memory-mode', choices=('native', 'host_offload'), default='native'); q.add_argument('--task-id', action='append')
@@ -463,14 +523,19 @@ def main():
     q.add_argument('--memory-mode', choices=('native', 'host_offload'), required=True)
     q = sp.add_parser('report'); q.add_argument('--collection', required=True); q.add_argument('--output', required=True)
     q = sp.add_parser('repair-interface'); q.add_argument('--manifest', required=True); q.add_argument('--output', required=True)
+    q.add_argument('--pair-tile', type=int); q.add_argument('--memory-agreement'); q.add_argument('--reference-collection')
+    q.add_argument('--edge-tile', type=int)
+    q.add_argument('--node-tile', type=int)
     a = p.parse_args()
     if a.command == 'prepare': r = prepare(a.root, a.software, a.output, a.agreement)
     elif a.command == 'worker': r = worker(a.manifest, a.task_id, a.output, a.memory_mode)
     elif a.command == 'execute': r = execute(a.manifest, a.memory_mode, a.task_id)
     elif a.command == 'report': r = report(a.collection, a.output)
-    elif a.command == 'repair-interface': r = repair_interface(a.manifest, a.output)
+    elif a.command == 'repair-interface': r = repair_interface(a.manifest, a.output, a.pair_tile, a.memory_agreement, a.reference_collection, a.edge_tile, a.node_tile)
     else:
-        r = dry_run(a.manifest) if a.command == 'dry-run' else collect(a.manifest)
+        if a.command == 'dry-run': r = dry_run(a.manifest)
+        elif a.command == 'compare-cores': r = compare_cores(a.manifest)
+        else: r = collect(a.manifest)
         if a.output: write_new(a.output, r)
     print(json.dumps({k: r[k] for k in ('status', 'tasks', 'manifest', 'failed_task') if k in r}, indent=2))
     if r.get('status') in ('failed', 'partial_failure'): sys.exit(1)

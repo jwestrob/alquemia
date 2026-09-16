@@ -17,6 +17,15 @@ Jacob explicitly accepted200000MiB (~195GiB) for the initial H200 allocation:
 records the unresolved rewrite mechanism and `CR_CPU` host-memory limitations.
 Twelve real-artifact/interface tests now pass; four actual GPU model calls completed.
 
+## Current memory-work continuation
+
+The earlier H200 job1200309 was replaced during Jacob's approved memory work.
+Current A5000 job1200381 uses `blocked_v6`, with original pair physics and
+checkpointed neighbor/per-atom neural calculations. Follow
+[MEMORY_STATUS.md](MEMORY_STATUS.md) for current commands, gates and receipts.
+The original `pilot_v3` commands below reproduce the earlier core checkpoint;
+they do not inspect the newer execution campaign.
+
 ## Resources and pins
 
 - Current allocation request: one H200,28 CPUs,**200000 MiB** host RAM (195.3125 GiB).

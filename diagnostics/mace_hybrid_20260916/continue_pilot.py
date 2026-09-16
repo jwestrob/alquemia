@@ -30,7 +30,8 @@ def classify_failure(collection, accounting):
     return 'other_failure_requires_inspection'
 
 
-def run(root, manifest, first_job):
+def run(root, manifest, first_job, partition='gpu_h200', cpus_per_share=28,
+        memory_per_share=200000., nodelist=None):
     root, manifest = Path(root).resolve(), Path(manifest).resolve()
     data = json.loads(manifest.read_text())
     software = json.loads(Path(data['software']['path']).read_text())
@@ -66,8 +67,8 @@ def run(root, manifest, first_job):
                     'reason': 'GPU memory is not pooled by reserving more GPUs; no model/physics change or unknown-failure retry.'})
                 return
             generation += 1
-            cpus = 28 * next_shares
-            memory_mib = 200000 * next_shares
+            cpus = cpus_per_share * next_shares
+            memory_mib = int(memory_per_share * next_shares)
             actual_memories = [int(r['allocated_host_mem_MiB']) for r in collection['rows'].values()
                                if r.get('slurm_job_id') == job and r.get('allocated_host_mem_MiB')]
             # A killed host-OOM attempt may have no worker result; use the
@@ -82,12 +83,13 @@ def run(root, manifest, first_job):
                             actual_memories.append(int(value[:-1]))
                         elif value.endswith('G'):
                             actual_memories.append(int(float(value[:-1])*1024))
-            minimum_memory = max(actual_memories or [200000]) + 1 if failure == 'host_memory' else 200000
+            minimum_memory = max(actual_memories or [int(memory_per_share)]) + 1 if failure == 'host_memory' else int(memory_per_share)
             work = manifest.parent.parent
-            cmd = ['sbatch', '--parsable', f'--cpus-per-task={cpus}', f'--gres=gpu:{next_shares}',
+            cmd = ['sbatch', '--parsable', f'--partition={partition}', f'--cpus-per-task={cpus}', f'--gres=gpu:{next_shares}',
                    f'--mem={memory_mib}M', '--time=7-00:00:00',
                    f'--export=ALL,MACE_GPU_SHARES={next_shares},MACE_MIN_MEMORY_MIB={minimum_memory}',
                    f'--output={work}/pilot_%j.out', f'--error={work}/pilot_%j.err',
+                   *([f'--nodelist={nodelist}'] if nodelist else []),
                    str(root/'diagnostics/mace_hybrid_20260916/run_pilot.sbatch'), python,
                    str(manifest), next_mode]
             result = subprocess.run(cmd, capture_output=True, text=True)
@@ -110,5 +112,8 @@ def run(root, manifest, first_job):
 if __name__ == '__main__':
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--root', required=True); p.add_argument('--manifest', required=True); p.add_argument('--first-job', required=True)
+    p.add_argument('--partition', default='gpu_h200'); p.add_argument('--cpus-per-share', type=int, default=28)
+    p.add_argument('--memory-per-share', type=float, default=200000.); p.add_argument('--nodelist')
     args = p.parse_args()
-    run(args.root, args.manifest, args.first_job)
+    run(args.root, args.manifest, args.first_job, args.partition, args.cpus_per_share,
+        args.memory_per_share, args.nodelist)

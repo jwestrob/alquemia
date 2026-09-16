@@ -1,0 +1,181 @@
+{
+  "Ca_charge": -3,
+  "La_charge": -2,
+  "atom_count_per_endpoint": 80,
+  "calibration_release": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+    "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+  },
+  "completion": {
+    "path": "/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-09-11_PQQ_ADH/energetics_queue/xoxf_fixed_core/completion.json",
+    "sha256": "0e618191fbad2d45752961ed5c276cbe7d4ccc16ec6312d7d0cafaa575a2e236"
+  },
+  "endpoints": [
+    {
+      "energy_hartree": -2536.085939966249,
+      "host": "node-64-768g-16",
+      "minimum_atom_distance_A": 1.0099998590623667,
+      "mpi_ranks": 16,
+      "normal_termination": true,
+      "scf_converged": true,
+      "status": "PASS",
+      "task_id": "PQQSEQ_242fa05e3ffc20087d42_AF3_sample0_La"
+    },
+    {
+      "energy_hartree": -3182.136047549587,
+      "host": "node-64-768g-16",
+      "minimum_atom_distance_A": 1.0099998590623667,
+      "mpi_ranks": 16,
+      "normal_termination": true,
+      "scf_converged": true,
+      "status": "PASS",
+      "task_id": "PQQSEQ_242fa05e3ffc20087d42_AF3_sample0_Ca"
+    },
+    {
+      "energy_hartree": -2536.103825453389,
+      "host": "node-64-768g-16",
+      "minimum_atom_distance_A": 1.0099995715652557,
+      "mpi_ranks": 16,
+      "normal_termination": true,
+      "scf_converged": true,
+      "status": "PASS",
+      "task_id": "PQQSEQ_faa97386262eec4316fc_AF3_sample0_La"
+    },
+    {
+      "energy_hartree": -3182.133609035582,
+      "host": "node-64-768g-16",
+      "minimum_atom_distance_A": 1.0099995715652557,
+      "mpi_ranks": 16,
+      "normal_termination": true,
+      "scf_converged": true,
+      "status": "PASS",
+      "task_id": "PQQSEQ_faa97386262eec4316fc_AF3_sample0_Ca"
+    }
+  ],
+  "final_manifest_digest": "a4dd2ad7e870be20ceec97b5931e7e89843fbf64d933869836032d6ea2657993",
+  "formula_excluding_metal": {
+    "C": 27,
+    "H": 31,
+    "N": 6,
+    "O": 15
+  },
+  "hash_failures": [],
+  "job_id": "1200300",
+  "limits": [
+    "Original calibrated50-step H preparation retained; actual core geometry passes but full-protein hydrogen force convergence was not achieved",
+    "Tree-curated XoxF membership is not experimental validation of these PLM proteins",
+    "Scores are protocol-specific computational classifications, not measured metal use, affinity or substrate specificity"
+  ],
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/plm_xoxf_fixed_core_20260916/execution/manifest.json",
+    "sha256": "a4dd2ad7e870be20ceec97b5931e7e89843fbf64d933869836032d6ea2657993"
+  },
+  "no_artifacts_modified": true,
+  "no_jobs_submitted": true,
+  "prelaunch_code_change": {
+    "frozen_endpoint_executor_unchanged": true,
+    "inserted_line": "result['scope'] = 'Two approved existing AF3 tree-curated PLM XoxFs; fixed-core La/Ca pairs only.'",
+    "new_run_script": {
+      "path": "/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-09-11_PQQ_ADH/energetics_queue/xoxf_fixed_core/run.py",
+      "sha256": "304f33b058c3a3958f515d2752235aed0c6acade90473b9c9e195f3bd7383c3c"
+    },
+    "prior_run_script_sha256": "4ce24318531fff612cc0fc1e6ae4bfb8d6a99dede92481ce31aacb27789ba756",
+    "status": "VERIFIED_SCOPE_ONLY"
+  },
+  "prior_executor_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/plm_xoxf_fixed_core_20260916/executor_review.json",
+    "sha256": "b35ec68482e760a68c2380cbfc5ab309fdcf985254738a479d8ba48dc3b3388b"
+  },
+  "prior_manifest_digest": "9da6bb58c63c70b7cba84ccb43eefe5e1c8bc2bb0cda71fd69169890d62d2604",
+  "protocol_id": "pqq_vertical_swap_r2scan3c_native_cpcm_fixed_core_v3",
+  "recorded_utc": "2026-09-16T22:19:24.123892+00:00",
+  "reporting_gauge": {
+    "A_kcal_mol": -405419.78094791685,
+    "classification_use": false,
+    "delta_E_aquo_hartree": -646.0775458314704,
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/reference_inputs/aquo_cn8_native_r2scan3c_v2/aquo_reference.json",
+    "reference_id": "aquo_cn8_symmetric_vertical_native_r2scan3c_cpcm_v2",
+    "registry_compatibility_claimed": false,
+    "role": "optional_additive_reporting_gauge_only",
+    "sha256": "cf4f42ca1c768ed55dedbb2360f21eb1106ca77bada4347e8db9e3511836f0d2"
+  },
+  "results": {
+    "path": "/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-09-11_PQQ_ADH/energetics_queue/xoxf_fixed_core/results.json",
+    "sha256": "416c2ca4f43ea292d3a0166fc8861c35f02eef5fe87dc2cf01e6aee7432a07f9"
+  },
+  "rows": [
+    {
+      "E_Ca_hartree": -3182.136047549587,
+      "E_La_hartree": -2536.085939966249,
+      "R_hartree": -646.0501075833381,
+      "S_kcal_mol": 17.21776065297137,
+      "decision": "indeterminate",
+      "hydrogen_recovery": false,
+      "minimum_HH_A": 1.7101991025813335,
+      "original_full_protein_H_force_RMS_kJ_mol_nm": 40.23249531596525,
+      "protein_H_parent_range_A": [
+        1.1722977437494284,
+        1.1957181942247097
+      ],
+      "sample": 0,
+      "source_cif": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/plm_xoxf_fixed_core_20260916/adapter_inputs/PQQSEQ_242fa05e3ffc20087d42_AF3_sample0.cif",
+        "sha256": "74cc2a3af559cc24664fc530f5b8f69e8fb589130e06c32484951fd578b41cf7"
+      },
+      "status": "PASS",
+      "target_id": "PQQSEQ_242fa05e3ffc20087d42"
+    },
+    {
+      "E_Ca_hartree": -3182.133609035582,
+      "E_La_hartree": -2536.103825453389,
+      "R_hartree": -646.029783582193,
+      "S_kcal_mol": 29.971263921125484,
+      "decision": "La-supported",
+      "hydrogen_recovery": false,
+      "minimum_HH_A": 1.6658588225957212,
+      "original_full_protein_H_force_RMS_kJ_mol_nm": 42.230630027593214,
+      "protein_H_parent_range_A": [
+        1.1810254019283428,
+        1.2020915106596515
+      ],
+      "sample": 0,
+      "source_cif": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/plm_xoxf_fixed_core_20260916/adapter_inputs/PQQSEQ_faa97386262eec4316fc_AF3_sample0.cif",
+        "sha256": "cdaab49f97f41c54c557d0ea86cab015e848f32bb68bfec84d4793eb8da7e4da"
+      },
+      "status": "PASS",
+      "target_id": "PQQSEQ_faa97386262eec4316fc"
+    }
+  ],
+  "scope": {
+    "endpoints": 4,
+    "pairs": 2,
+    "selected_samples": [
+      0,
+      0
+    ],
+    "targets": 2
+  },
+  "score_bands": {
+    "Ca": {
+      "R_kcal_mol_max": -405404.9238187139,
+      "S_kcal_mol_max": 14.857129202922806
+    },
+    "La": {
+      "R_kcal_mol_min": -405396.32088671124,
+      "S_kcal_mol_min": 23.460061205609236
+    },
+    "indeterminate": {
+      "R_kcal_mol_open_interval": [
+        -405404.9238187139,
+        -405396.32088671124
+      ],
+      "S_kcal_mol_open_interval": [
+        14.857129202922806,
+        23.460061205609236
+      ]
+    }
+  },
+  "status": "PASS",
+  "unique_pinned_files_checked": 106
+}

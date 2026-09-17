@@ -18,7 +18,7 @@ has not been established. The [active MACE goal](../diagnostics/mace_discriminat
 | Global electrostatic research | `vacuum_r2scan3c_mbis_global_tabi_electrostatic_v1`; `scripts/global_electrostatic.py` | Completed physical pilot failed partition, mesh-refinement and rotation gates. Vacuum QM + direct protein Coulomb + whole-protein reaction field. No compatible aquo reference or calibrated decision; no default change. |
 | Density/field diagnostic | `native_r2scan3c_permanent_field_density_diagnostic_v1`; `scripts/density_embedding.py` | Complete: exact-density coupling reduces the partition discrepancy by 8.06 kcal/mol; core response changes it by another −0.97, leaving 9.67 without solvent. Uniform native CHELPG improves potential/coupling agreement on all four consumed states. No solvent score or calibrated class. [Results](../diagnostics/density_embedding_20260916/REPORT.md). |
 | Native interaction diagnostic | `native_r2scan3c_asp303_interaction_eda_v1`; `scripts/interaction_decomposition.py` | Native ghost-basis references already fail the frozen equivalence check. Retry 1199986 was running at checkpoint, with unstable Asp fragment SCFs; no complete decomposition claimed. An automatic collector writes its terminal result. [Status and completion location](../diagnostics/density_embedding_20260916/INTERACTION_STATUS.md). |
-| Gradient/response research | `scripts/affordable_response.py`, `scripts/ggr_sensitivity.py`, `scripts/mace_output_audit.py` | GGR analytic-gradient checks completed. Saved full-protein MACE outputs now export source-mapped direct grad(E_Ca−E_La), charges and checkpoint comparisons. These are not hybrid gradients. The [MACE curvature screen](../diagnostics/mace_curvature_20260916/REPORT.md) passes on both checkpoints for the two archived GGR motions in two representations: DFT-anchored displacement errors below0.0045kcal/mol,40MACE+40GB calls,zero newDFT. This validates a narrow directional approximation; negative peptide curvature remains. A coupled scaffold model is now under test; no stable response score has been validated. Relaxation/entropy remain `response_model_not_validated`; unavailable numerical corrections stay null. [Saved-output scope](../diagnostics/mace_large_20260916/OUTPUT_AUDIT_PLAN.md). |
+| Gradient/response research | `scripts/affordable_response.py`, `scripts/ggr_sensitivity.py`, `scripts/mace_output_audit.py` | GGR analytic-gradient checks completed. Saved full-protein MACE outputs now export source-mapped direct grad(E_Ca−E_La), charges and checkpoint comparisons. These are not hybrid gradients. The [MACE curvature screen](../diagnostics/mace_curvature_20260916/REPORT.md) passes on both checkpoints for the two archived GGR motions in two representations: DFT-anchored displacement errors below0.0045kcal/mol,40MACE+40GB calls,zero newDFT. This validates a narrow directional approximation; negative peptide curvature remains. The coupled scaffold test now passes local curvature and three Ca energy-change checks, but no paired La/Ca response score is supported. Relaxation/entropy remain `response_model_not_validated`; unavailable numerical corrections stay null. [Saved-output scope](../diagnostics/mace_large_20260916/OUTPUT_AUDIT_PLAN.md). |
 | MACE hybrid research | `scripts/mace_hybrid.py`; distinct finite-medium, analytic-medium and analytic-large protocols in linked reports | Full 9,141-atom inference works on one A5000: analytic medium ~58 s/endpoint, 9.55 GiB allocated GPU; large ~121 s, 14.98 GiB allocated / 20.89 GiB reserved. Analytic dipoles fix the tested rotation defect; both checkpoints pass core/full rotation and charge checks. Hybrid partition shifts remain −5.023/−4.511 kcal/mol, failing the frozen 2 target. Large full raw contrast differs by +671.31 kcal/mol from medium, primarily in the recorded electrostatic component, with broad force/charge changes. No calibrated class or accuracy gain claimed; baseline unchanged. All 12 large calls completed (1200525). Read-only charge tracing (1200676/1200677) reproduces both models; no near-singular normalization denominator found. A uniform protein-H bond repair completed (1200681/1200682); global model disagreement increases to 923.917 kcal/mol, so the response problem persists. Frozen-monopole OBC-II solvent checks now pass (1200700): medium/large raw-contrast disagreement drops from 923.917 to 106.383 kcal/mol. Warm full-protein solvent evaluation takes about 0.09 s; no calibrated decision or combined gradient. [Solvent report](../diagnostics/mace_gb_20260916/REPORT.md). The five-structure whole-protein panel completed (24 MACE + 24 GB calls): both solvent models reverse all three predeclared relative-order tests. Numerical checks pass, but direct predictive utility fails; 1,370 allocated GPU seconds total. [Panel result](../diagnostics/mace_global_benchmark_20260916/REPORT.md). Local decomposition completed (20 MACE + 20 GB calls): the local PQQ ordering is correct and the full-system contribution reverses it; alpha is already misordered locally and worsens globally. [Decomposition](../diagnostics/mace_local_correction_20260916/REPORT.md). The saved short-range component gets PQQ right but misses both alpha/GGR comparisons in both checkpoints; no fitted rescue or calibrated decision. [Short component](../diagnostics/mace_short_range_20260916/REPORT.md). A separate [curvature pilot](../diagnostics/mace_curvature_20260916/REPORT.md) passes its declared local deformation-energy gates in both checkpoints; no production promotion. [Charge traces](../diagnostics/mace_response_trace_20260916/REPORT.md), [H preparation](../diagnostics/mace_hydrogen_20260916/REPORT.md). [Large results](../diagnostics/mace_large_20260916/REPORT.md), [runbook](../diagnostics/mace_large_20260916/RUNBOOK.md), [analytic medium](../diagnostics/mace_analytic_20260916/REPORT.md), [rotation audit](../diagnostics/mace_rotation_20260916/REPORT.md), [memory implementation](../diagnostics/mace_hybrid_20260916/MEMORY_RESULTS.md). |
 
 
@@ -28,16 +28,23 @@ preserving their preceding learned local scalar exactly. This provides a tested
 mechanical building block, not a successful standalone classifier; the earlier
 alpha/GGR failures remain. [Engine report](../diagnostics/mace_short_engine_20260916/REPORT.md).
 
-The [coupled response pilot](../diagnostics/mace_mechanics_20260916/PLAN.md)
-combines native DFT core gradients, validated cheap core curvature and the
-whole-minus-core short contribution, including its linear force term. It tests
-GGR in two representations and both alpha structures, with source H atoms
-matching the archived DFT, unchanged waters, two physical motions, mixed
-curvature and fixed trust limits. Exact inputs, finite task counts, current
-job IDs and collection/assessment commands are in its
-[runbook](../diagnostics/mace_mechanics_20260916/COMMANDS.md). Production is
-unchanged. Conditional minima must pass independent DFT validation; unstable,
-outside-trust or unsupported models retain null corrections.
+The [coupled response experiment](../diagnostics/mace_mechanics_20260916/REPORT.md)
+is complete: local curvature, grid, analytic-gradient and SCF-bridge checks pass
+for GGR in two representations and both alpha structures. Three eligible Ca
+predictions agree with independent DFT+scaffold energy changes within0.001kcal/mol.
+Every La endpoint is unstable in this quadratic model or outside its frozen
+trust region, so all paired corrections remain null.39newDFT,116MACE-core,
+112short-component and116GB calls cost2,560GPU-s and197,248allocatedcore-s.
+This validates a narrow mechanical construction, not a discriminator improvement.
+The [runbook](../diagnostics/mace_mechanics_20260916/COMMANDS.md) supplies exact
+replay/collection commands; no mechanics job remains live. Production is unchanged.
+
+The next [canonical MACE scorer plan](../diagnostics/mace_canonical_20260916/PLAN.md)
+tests direct MACE+GB on the25 frozen PQQ calibration cores and three consumed
+crystal-transfer cases, using its own bands. Medium is primary; large is a
+predeclared sensitivity check. Preparation is pending at this documentation
+checkpoint. This is PQQ functional-class evidence, not broad affinity validation;
+no old reference/band or mechanical correction is inherited.
 
 “Baseline” can refer to the electronic method or to a specific preparation.
 Always name both. The baseline method is ORCA 6.1.1 native r2SCAN-3c,

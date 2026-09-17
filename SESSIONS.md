@@ -923,3 +923,44 @@ Scientific GPU checks and parser/algebra tests are reported separately.
 Updated docs/AGENT_PIPELINE.md and appended the running milestone to the vault
 capture2026-09-16_laca-mace-hybrid-plan-and-plm-baseline-review.md. Email remains
 blocked by the previously reported Postfix relay-DNS failure; no duplicate sent.
+
+
+## Coupled response completed; canonical direct MACE candidate declared
+
+All mechanics jobs complete:1200743/1200749/1200750/1200767 plus conditional
+1200771/1200772. Local curvature, mixed-direction, grid, short-gradient and SCF
+checks pass in all four representation rows (three structures,two biological
+groups). Three fixed Ca predictions pass actual DFT+J energy checks with errors
+below0.001kcal/mol. GGR La is nonpositive in the quadratic model; alpha La optima
+exceed frozen trust limits. All paired corrections and the paired partition test
+remain unavailable. No threshold/zero/entropy substitution or baseline change.
+No gradient at the predicted minima was calculated, so energy-change validation
+does not establish exact stationary minima. This is useful mechanical support,
+not improved classification accuracy or goal completion.
+
+New scripts/mace_mechanics_minimum.py selects only eligible frozen predictions,
+prepares exact physical minimum inputs and uses the existing runners. Four real
+fixture tests pass0.614s, including corrupted actual prediction rejection and
+preventing successful Ca validation from filling missing La. Reports and source
+pins: diagnostics/mace_mechanics_20260916/{REPORT.md,grid_result.json,
+minimum_result.json,costs.json,minimum_costs.json,COMMANDS.md}.
+
+Total incremental mechanics work39DFT,116MACE-core,112short,116GB;20GGR points
+reused per core method. Cost2,560allocatedGPU-s,197,248allocatedcore-s,
+133,513.419reportedactualCPU-s; earlier engine/cached work retain separate costs.
+No scientific attempt failed. Original preparation filename collision remains
+preserved/unprofiled; successful preparation57.513wall/55.865CPU-s. Slurm allocated
+64CPU to conditional quantum despite48tasks requested; actual allocation reported.
+
+Next declared candidate: diagnostics/mace_canonical_20260916/PLAN.md. Exact25
+canonical PQQ calibration cores + consumed1H4I/4MAE/1KB0 transfer structures,
+directMACE+frozenOBC-II. Medium primary; large separate sensitivity. Own raw-R
+bands from fixed maxCa/minLa rule; no old gauge/threshold, score sign reversal,
+response term or fitted weights. Expected108newMACE+108GB with4medium crystal
+endpoint reuses, zeroDFT. No canonical calculation launched at this checkpoint.
+Input audit/code/preparation is next. PQQ functional class, motif/charge
+confounding, sequence overlap and retrospective status remain explicit; this
+candidate cannot fix or validate broad affinity by declaration.
+
+Agent guide and vault capture updated. Baseline and others' work remain untouched.
+Goal stays ACTIVE. No mechanics job live and no email notification sent.

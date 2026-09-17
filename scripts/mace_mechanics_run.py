@@ -188,7 +188,7 @@ def collect_mechanics(manifest):
                              'receipt':record(a/'receipt.json') if (a/'receipt.json').exists() else None})
         rows[t['task_id']]=valid[-1] if valid else {'status':'unavailable','energy_eV':None}
     reuse={}
-    if m['schema_version']!=SHORT:
+    if m['schema_version'] not in (SHORT,'alquemia.mace_mechanics_minimum_short.v1'):
         p=preparation(verify(m['preparation']));source_key='reference_gb' if m['schema_version']==GB else 'reference_mace'
         c,_=actual_collection(verify(m[source_key]))
         reuse={key:{'source_collection':m[source_key],'source_task_id':r['source_task_id'],'result':c['rows'][r['source_task_id']]}

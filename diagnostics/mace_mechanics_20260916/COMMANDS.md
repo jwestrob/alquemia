@@ -71,3 +71,22 @@ curvature, grid refinement, normal/tight SCF bridges, eigenvalues and trust
 limits. It reports predicted minima and all failures. It does not turn a
 predicted minimum into a validated relaxation score. Only eligible fixed minima
 can advance to the already planned independent DFT validation (up to8 tasks).
+
+
+## Fixed-minimum validation (three actual eligible Ca endpoints)
+
+The initial assessment is assessment_v1/result.json. All prerequisites pass,
+but only alpha1F6S Ca and both GGR Ca representations are eligible. Preparation
+selects every eligible endpoint and rejects status-only promotion of an
+unsupported one. Actual jobs1200771 (3DFT) and1200772 (6short calls) completed.
+Their submission records contain the exact commands and prediction hashes.
+
+```bash
+python scripts/mace_mechanics_minimum.py prepare --assessment workspaces/mace_mechanics_20260916/assessment_v1/result.json --output workspaces/mace_mechanics_20260916/minimum_replay_v1
+python scripts/mace_mechanics_minimum.py report --prepared workspaces/mace_mechanics_20260916/minimum_v1/preparation.json --dft workspaces/mace_mechanics_20260916/minimum_v1/quantum/collection_job_1200771.json --short workspaces/mace_mechanics_20260916/minimum_v1/short/collection_job_1200772.json --output workspaces/mace_mechanics_20260916/minimum_report_replay_v1
+python -m unittest discover -s tests -p test_mace_mechanics_minimum.py -v
+```
+
+No DFT gradient was calculated at the predicted minimum: the validation concerns
+its actual energy change, not proof that the point is an exact DFT stationary
+minimum. All three energy checks pass; missing La corrections remain null.

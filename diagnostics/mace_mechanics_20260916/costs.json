@@ -1,0 +1,172 @@
+{
+  "DFT_wall_seconds": 2025,
+  "actual_CPU_seconds_as_reported": 122419.295,
+  "allocated_GPU_seconds": 2465,
+  "allocated_core_seconds": 169040,
+  "collections": {
+    "DFT": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_mechanics_20260916/prepared_v2/quantum/collection_job_1200743.json",
+      "sha256": "2f9b4c0a28ac4ac57dc665fd0d95aa81d9d3550ee660d5b9f534acb27924f68b"
+    },
+    "GB": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_mechanics_20260916/gb_v1/collection_job_1200767.json",
+      "sha256": "7309670f0948bc357cdeeeb9cd5ce6e3478afa0ef7e3882ab290fe2b44a8c266"
+    },
+    "MACE_core": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_mechanics_20260916/core_v1/collection_job_1200749.json",
+      "sha256": "29b4e2d90a146afdb2824ded53c7a5d7992c211b8b3f5f75108f2bb2c4bf84bb"
+    },
+    "short": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_mechanics_20260916/short_v1/collection_job_1200750.json",
+      "sha256": "1a5dc3a7b3c5dec98a6cf5e8252ae6f5e7afbc1628928296a9a227a26bff6eda"
+    }
+  },
+  "components": [
+    {
+      "component": "MACE_core",
+      "inference_seconds": 135.0528144352138,
+      "maximum_peak_cuda_allocated_bytes": 495767552,
+      "maximum_peak_cuda_reserved_bytes": 601882624,
+      "maximum_peak_host_RSS_KiB": 1648068,
+      "new_calls": 116,
+      "reused_calls": 20,
+      "unaccepted_attempts": 0
+    },
+    {
+      "component": "short",
+      "inference_seconds": 846.2750043384731,
+      "maximum_peak_cuda_allocated_bytes": 6124037120,
+      "maximum_peak_cuda_reserved_bytes": 6920601600,
+      "maximum_peak_host_RSS_KiB": 1552888,
+      "new_calls": 106,
+      "reused_calls": 0,
+      "unaccepted_attempts": 0
+    },
+    {
+      "component": "GB",
+      "inference_seconds": 1.1093069948256016,
+      "maximum_peak_cuda_allocated_bytes": null,
+      "maximum_peak_cuda_reserved_bytes": null,
+      "maximum_peak_host_RSS_KiB": 291640,
+      "new_calls": 116,
+      "reused_calls": 20,
+      "unaccepted_attempts": 0
+    },
+    {
+      "analytic_gradient_calls": 4,
+      "component": "DFT",
+      "new_calls": 36,
+      "reuse_source": "prepared_v2 manifest reused_GGR, backed by the archived Stage C DFT collection",
+      "reused_calls": 20
+    }
+  ],
+  "failed_preparation_v1_cost": "not_independently_profiled; filename collision before inference or DFT",
+  "jobs": [
+    {
+      "AllocCPUS": "64",
+      "ElapsedRaw": "2025",
+      "JobID": "1200743",
+      "MaxRSS": "",
+      "State": "COMPLETED",
+      "TotalCPU": "1-09:07:38"
+    },
+    {
+      "AllocCPUS": "64",
+      "ElapsedRaw": "2025",
+      "JobID": "1200743.batch",
+      "MaxRSS": "21382356K",
+      "State": "COMPLETED",
+      "TotalCPU": "1-09:07:38"
+    },
+    {
+      "AllocCPUS": "64",
+      "ElapsedRaw": "2025",
+      "JobID": "1200743.extern",
+      "MaxRSS": "72K",
+      "State": "COMPLETED",
+      "TotalCPU": "00:00.001"
+    },
+    {
+      "AllocCPUS": "16",
+      "ElapsedRaw": "855",
+      "JobID": "1200749",
+      "MaxRSS": "",
+      "State": "COMPLETED",
+      "TotalCPU": "19:17.460"
+    },
+    {
+      "AllocCPUS": "16",
+      "ElapsedRaw": "855",
+      "JobID": "1200749.batch",
+      "MaxRSS": "1154492K",
+      "State": "COMPLETED",
+      "TotalCPU": "19:17.457"
+    },
+    {
+      "AllocCPUS": "16",
+      "ElapsedRaw": "855",
+      "JobID": "1200749.extern",
+      "MaxRSS": "0",
+      "State": "COMPLETED",
+      "TotalCPU": "00:00.002"
+    },
+    {
+      "AllocCPUS": "16",
+      "ElapsedRaw": "1499",
+      "JobID": "1200750",
+      "MaxRSS": "",
+      "State": "COMPLETED",
+      "TotalCPU": "31:47.886"
+    },
+    {
+      "AllocCPUS": "16",
+      "ElapsedRaw": "1499",
+      "JobID": "1200750.batch",
+      "MaxRSS": "1100988K",
+      "State": "COMPLETED",
+      "TotalCPU": "31:47.883"
+    },
+    {
+      "AllocCPUS": "16",
+      "ElapsedRaw": "1499",
+      "JobID": "1200750.extern",
+      "MaxRSS": "0",
+      "State": "COMPLETED",
+      "TotalCPU": "00:00.002"
+    },
+    {
+      "AllocCPUS": "16",
+      "ElapsedRaw": "111",
+      "JobID": "1200767",
+      "MaxRSS": "",
+      "State": "COMPLETED",
+      "TotalCPU": "01:35.949"
+    },
+    {
+      "AllocCPUS": "16",
+      "ElapsedRaw": "111",
+      "JobID": "1200767.batch",
+      "MaxRSS": "117168K",
+      "State": "COMPLETED",
+      "TotalCPU": "01:35.947"
+    },
+    {
+      "AllocCPUS": "16",
+      "ElapsedRaw": "111",
+      "JobID": "1200767.extern",
+      "MaxRSS": "0",
+      "State": "COMPLETED",
+      "TotalCPU": "00:00.002"
+    }
+  ],
+  "preparation_CPU_seconds": 55.865309526,
+  "preparation_wall_seconds": 57.51336849294603,
+  "production_cost_claim": "not_established; full finite grids are development validation, not an accepted routine score",
+  "raw_accounting": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_mechanics_20260916/accounting_completed.txt",
+    "sha256": "be8d47e14c2a0e4d73a4b878068ca054bb32007af6dc2df7c95ce824f6e65e4d"
+  },
+  "scope": "incremental coupled mechanics development; previous engine and reused GGR calculations have separately recorded costs",
+  "status": "complete",
+  "unaccepted_cheap_attempts": 0
+}

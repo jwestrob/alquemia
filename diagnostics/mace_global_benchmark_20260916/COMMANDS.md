@@ -42,3 +42,19 @@ This is deterministic geometry/charge/topology preparation, not optimization.
 It keeps every source heavy atom, completes only approved missing terminalOXT,
 fixes declared protein/water H lengths and records every excluded source residue.
 PQQ microstate and coordinates remain frozen. Unsupported inputs remain explicit.
+
+## Completed collections and paired report
+
+Both solvent jobs completed: medium1200711, large1200712. The direct model
+failed all three expected-order checks for both checkpoints; see REPORT.md.
+No production score was changed.
+
+```bash
+workspaces/mace_gb_20260916/software_v2/venv/bin/python scripts/mace_global_benchmark.py compare --medium-gb workspaces/mace_global_benchmark_20260916/gb_v1/medium/collection_job_1200711.json --large-gb workspaces/mace_global_benchmark_20260916/gb_v1/large/collection_job_1200712.json --output workspaces/mace_global_benchmark_20260916/comparison_recheck
+```
+
+The stored XYZ comment inherited from the original1H4I pilot incorrectly names
+1H4I for every case; the actual identity/geometry is correctly pinned in each
+manifest. Those immutable bytes are preserved. The writer now uses a generic
+comment for future artifacts; coordinates are unaffected. The completed exact
+preparation replay used the original writer and matched all XYZ hashes.

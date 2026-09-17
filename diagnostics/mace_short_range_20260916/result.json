@@ -1,0 +1,487 @@
+{
+  "MACE_energy_implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_hybrid_20260916/software_v1/venv/lib/python3.11/site-packages/mace/modules/extensions.py",
+    "sha256": "5ce5372251097f9d6fd17f69f6c63738a6d32278683586522fc70be4d9010e06"
+  },
+  "S_kcal_mol": null,
+  "calibrated_class": null,
+  "charge_and_spin_dependence": "no_explicit_charge_or_spin_input_in_this_component; atomic_geometry/species_only",
+  "checks": [
+    {
+      "error_kcal_mol": 4.275960918675992e-09,
+      "name": "medium_GGR_1GLG_short_rotation",
+      "pass": true
+    },
+    {
+      "error_kcal_mol": 2.2153201939545397e-08,
+      "name": "medium_PQQ_4MAE_short_rotation",
+      "pass": true
+    },
+    {
+      "name": "medium_constant_atomic_reference",
+      "pass": true,
+      "span_kcal_mol": 3.14321368932724e-08
+    },
+    {
+      "name": "large_constant_atomic_reference",
+      "pass": true,
+      "span_kcal_mol": 2.3457687348127365e-08
+    }
+  ],
+  "contrasts": {
+    "large": [
+      {
+        "difference_kcal_mol": 27.486929798259155,
+        "expected_order": true,
+        "higher_expected": "PQQ_4MAE",
+        "lower_expected": "PQQ_1H4I"
+      },
+      {
+        "difference_kcal_mol": -6.831209433130182,
+        "expected_order": false,
+        "higher_expected": "ALPHA_1F6S",
+        "lower_expected": "GGR_1GLG"
+      },
+      {
+        "difference_kcal_mol": -11.95671053889261,
+        "expected_order": false,
+        "higher_expected": "ALPHA_6IP9",
+        "lower_expected": "GGR_1GLG"
+      }
+    ],
+    "local_archived": [
+      {
+        "difference_kcal_mol": 25.11112641752549,
+        "expected_order": true,
+        "higher_expected": "PQQ_4MAE",
+        "lower_expected": "PQQ_1H4I"
+      },
+      {
+        "difference_kcal_mol": -11.548778021839649,
+        "expected_order": false,
+        "higher_expected": "ALPHA_1F6S",
+        "lower_expected": "GGR_1GLG"
+      },
+      {
+        "difference_kcal_mol": -14.40267696467927,
+        "expected_order": false,
+        "higher_expected": "ALPHA_6IP9",
+        "lower_expected": "GGR_1GLG"
+      }
+    ],
+    "local_global_H": [
+      {
+        "difference_kcal_mol": 25.241219184440887,
+        "expected_order": true,
+        "higher_expected": "PQQ_4MAE",
+        "lower_expected": "PQQ_1H4I"
+      },
+      {
+        "difference_kcal_mol": -8.075126535817585,
+        "expected_order": false,
+        "higher_expected": "ALPHA_1F6S",
+        "lower_expected": "GGR_1GLG"
+      },
+      {
+        "difference_kcal_mol": -14.223267216419757,
+        "expected_order": false,
+        "higher_expected": "ALPHA_6IP9",
+        "lower_expected": "GGR_1GLG"
+      }
+    ],
+    "medium": [
+      {
+        "difference_kcal_mol": 23.596533612614323,
+        "expected_order": true,
+        "higher_expected": "PQQ_4MAE",
+        "lower_expected": "PQQ_1H4I"
+      },
+      {
+        "difference_kcal_mol": -5.118421436893101,
+        "expected_order": false,
+        "higher_expected": "ALPHA_1F6S",
+        "lower_expected": "GGR_1GLG"
+      },
+      {
+        "difference_kcal_mol": -10.802760683115597,
+        "expected_order": false,
+        "higher_expected": "ALPHA_6IP9",
+        "lower_expected": "GGR_1GLG"
+      }
+    ]
+  },
+  "evidence_use": "consumed_method_development",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/mace_short_range.py",
+    "sha256": "2a71a8ca680dcada0a9e79d155435e13df39e2c49f0d179801dbfe9c9f5e7df7"
+  },
+  "new_DFT_calls": 0,
+  "new_GB_calls": 0,
+  "new_MACE_calls": 0,
+  "physical_energy_claim": "partial_learned_component_only; not_a_binding_energy",
+  "plan": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/mace_short_range_20260916/PLAN.md",
+    "sha256": "bde219ea427ac46d83747ca9d4e26af74c3873028b0a26257268eff59a228631"
+  },
+  "primary_development_ordering_screen_pass": false,
+  "protocol_id": "mace_polar_interaction_energy_descriptor_v1",
+  "reference": null,
+  "rows": {
+    "ALPHA_1F6S": {
+      "evidence": {
+        "direction": "La",
+        "evidence_stratum": "qualified_qualitative_strong_site_affinity",
+        "group": "bovine_alpha"
+      },
+      "full": {
+        "large": {
+          "R_short_kcal_mol": -21.823952448237915,
+          "R_total_vacuum_kcal_mol": -405368.62854673085,
+          "S_kcal_mol": null,
+          "calibrated_class": null,
+          "components_kcal_mol": {
+            "electron_energy": -31.86942633516361,
+            "electrostatic_energy": 103.1850796058202,
+            "interaction_energy": -21.823952448237915
+          },
+          "constant_atomic_reference_contrast_kcal_mol": -405418.1202475533,
+          "reference": null,
+          "short_component_gradient": null
+        },
+        "medium": {
+          "R_short_kcal_mol": -22.689013522486068,
+          "R_total_vacuum_kcal_mol": -405365.4401851076,
+          "S_kcal_mol": null,
+          "calibrated_class": null,
+          "components_kcal_mol": {
+            "electron_energy": -30.80562528156317,
+            "electrostatic_energy": 106.17470125140935,
+            "interaction_energy": -22.689013522486068
+          },
+          "constant_atomic_reference_contrast_kcal_mol": -405418.12024755497,
+          "reference": null,
+          "short_component_gradient": null
+        }
+      },
+      "local_medium": {
+        "archived": {
+          "R_short_kcal_mol": -19.801338022412427,
+          "R_total_vacuum_kcal_mol": -405445.9144209019,
+          "S_kcal_mol": null,
+          "calibrated_class": null,
+          "components_kcal_mol": {
+            "electron_energy": -42.34063159871595,
+            "electrostatic_energy": 34.347796267958415,
+            "interaction_energy": -19.801338022412427
+          },
+          "constant_atomic_reference_contrast_kcal_mol": -405418.12024754874,
+          "reference": null,
+          "short_component_gradient": null
+        },
+        "global_H": {
+          "R_short_kcal_mol": -17.16524980024519,
+          "R_total_vacuum_kcal_mol": -405441.109209154,
+          "S_kcal_mol": null,
+          "calibrated_class": null,
+          "components_kcal_mol": {
+            "electron_energy": -39.88118896775354,
+            "electrostatic_energy": 34.05747716289792,
+            "interaction_energy": -17.16524980024519
+          },
+          "constant_atomic_reference_contrast_kcal_mol": -405418.12024754885,
+          "reference": null,
+          "short_component_gradient": null
+        }
+      },
+      "short_full_minus_core_global_H_kcal_mol": -5.523763722240879
+    },
+    "ALPHA_6IP9": {
+      "evidence": {
+        "direction": "La",
+        "evidence_stratum": "qualified_qualitative_strong_site_affinity",
+        "group": "bovine_alpha"
+      },
+      "full": {
+        "large": {
+          "R_short_kcal_mol": -26.949453554000343,
+          "R_total_vacuum_kcal_mol": -405376.17124053516,
+          "S_kcal_mol": null,
+          "calibrated_class": null,
+          "components_kcal_mol": {
+            "electron_energy": -33.07671646648465,
+            "electrostatic_energy": 101.9751770309954,
+            "interaction_energy": -26.949453554000343
+          },
+          "constant_atomic_reference_contrast_kcal_mol": -405418.12024754565,
+          "reference": null,
+          "short_component_gradient": null
+        },
+        "medium": {
+          "R_short_kcal_mol": -28.373352768708564,
+          "R_total_vacuum_kcal_mol": -405376.03018226183,
+          "S_kcal_mol": null,
+          "calibrated_class": null,
+          "components_kcal_mol": {
+            "electron_energy": -32.80941508677161,
+            "electrostatic_energy": 103.27283313957636,
+            "interaction_energy": -28.373352768708564
+          },
+          "constant_atomic_reference_contrast_kcal_mol": -405418.12024754594,
+          "reference": null,
+          "short_component_gradient": null
+        }
+      },
+      "local_medium": {
+        "archived": {
+          "R_short_kcal_mol": -22.655236965252048,
+          "R_total_vacuum_kcal_mol": -405448.52478844987,
+          "S_kcal_mol": null,
+          "calibrated_class": null,
+          "components_kcal_mol": {
+            "electron_energy": -43.135644508959736,
+            "electrostatic_energy": 35.38634057305262,
+            "interaction_energy": -22.655236965252048
+          },
+          "constant_atomic_reference_contrast_kcal_mol": -405418.12024754874,
+          "reference": null,
+          "short_component_gradient": null
+        },
+        "global_H": {
+          "R_short_kcal_mol": -23.31339048084736,
+          "R_total_vacuum_kcal_mol": -405445.17675670504,
+          "S_kcal_mol": null,
+          "calibrated_class": null,
+          "components_kcal_mol": {
+            "electron_energy": -39.12935110298696,
+            "electrostatic_energy": 35.386232427586606,
+            "interaction_energy": -23.31339048084736
+          },
+          "constant_atomic_reference_contrast_kcal_mol": -405418.1202475488,
+          "reference": null,
+          "short_component_gradient": null
+        }
+      },
+      "short_full_minus_core_global_H_kcal_mol": -5.059962287861204
+    },
+    "GGR_1GLG": {
+      "evidence": {
+        "direction": "Ca",
+        "evidence_stratum": "direct_same_assay_affinity",
+        "group": "GGR"
+      },
+      "full": {
+        "large": {
+          "R_short_kcal_mol": -14.992743015107733,
+          "R_total_vacuum_kcal_mol": -405405.6857403535,
+          "S_kcal_mol": null,
+          "calibrated_class": null,
+          "components_kcal_mol": {
+            "electron_energy": -30.9556962178572,
+            "electrostatic_energy": 58.382946428592945,
+            "interaction_energy": -14.992743015107733
+          },
+          "constant_atomic_reference_contrast_kcal_mol": -405418.1202475491,
+          "reference": null,
+          "short_component_gradient": null
+        },
+        "medium": {
+          "R_short_kcal_mol": -17.570592085592967,
+          "R_total_vacuum_kcal_mol": -405441.55570487294,
+          "S_kcal_mol": null,
+          "calibrated_class": null,
+          "components_kcal_mol": {
+            "electron_energy": -42.7101096877614,
+            "electrostatic_energy": 36.84524445511453,
+            "interaction_energy": -17.570592085592967
+          },
+          "constant_atomic_reference_contrast_kcal_mol": -405418.1202475547,
+          "reference": null,
+          "short_component_gradient": null
+        }
+      },
+      "local_medium": {
+        "archived": {
+          "R_short_kcal_mol": -8.252560000572778,
+          "R_total_vacuum_kcal_mol": -405425.91038770013,
+          "S_kcal_mol": null,
+          "calibrated_class": null,
+          "components_kcal_mol": {
+            "electron_energy": -36.23537518922898,
+            "electrostatic_energy": 36.69779503819225,
+            "interaction_energy": -8.252560000572778
+          },
+          "constant_atomic_reference_contrast_kcal_mol": -405418.1202475485,
+          "reference": null,
+          "short_component_gradient": null
+        },
+        "global_H": {
+          "R_short_kcal_mol": -9.090123264427604,
+          "R_total_vacuum_kcal_mol": -405425.4837361973,
+          "S_kcal_mol": null,
+          "calibrated_class": null,
+          "components_kcal_mol": {
+            "electron_energy": -35.648018865052975,
+            "electrostatic_energy": 37.374653480751405,
+            "interaction_energy": -9.090123264427604
+          },
+          "constant_atomic_reference_contrast_kcal_mol": -405418.12024754856,
+          "reference": null,
+          "short_component_gradient": null
+        }
+      },
+      "short_full_minus_core_global_H_kcal_mol": -8.480468821165363
+    },
+    "PQQ_1H4I": {
+      "evidence": {
+        "direction": "Ca",
+        "evidence_stratum": "canonical_PQQ_functional_metal_association",
+        "group": "MxaF"
+      },
+      "full": {
+        "large": {
+          "R_short_kcal_mol": -6.267153320625437,
+          "R_total_vacuum_kcal_mol": -404227.33484103426,
+          "S_kcal_mol": null,
+          "calibrated_class": null,
+          "components_kcal_mol": {
+            "electron_energy": 24.840697390196095,
+            "electrostatic_energy": 1172.2118624516231,
+            "interaction_energy": -6.267153320625437
+          },
+          "constant_atomic_reference_contrast_kcal_mol": -405418.12024755543,
+          "reference": null,
+          "short_component_gradient": null
+        },
+        "medium": {
+          "R_short_kcal_mol": -9.153792516756274,
+          "R_total_vacuum_kcal_mol": -405328.594042823,
+          "S_kcal_mol": null,
+          "calibrated_class": null,
+          "components_kcal_mol": {
+            "electron_energy": -7.591960406761824,
+            "electrostatic_energy": 106.27195764375529,
+            "interaction_energy": -9.153792516756274
+          },
+          "constant_atomic_reference_contrast_kcal_mol": -405418.12024754327,
+          "reference": null,
+          "short_component_gradient": null
+        }
+      },
+      "local_medium": {
+        "archived": {
+          "R_short_kcal_mol": -3.5701138790261484,
+          "R_total_vacuum_kcal_mol": -405404.13563231006,
+          "S_kcal_mol": null,
+          "calibrated_class": null,
+          "components_kcal_mol": {
+            "electron_energy": -45.94469364385241,
+            "electrostatic_energy": 63.499422761177584,
+            "interaction_energy": -3.5701138790261484
+          },
+          "constant_atomic_reference_contrast_kcal_mol": -405418.1202475484,
+          "reference": null,
+          "short_component_gradient": null
+        },
+        "global_H": {
+          "R_short_kcal_mol": -3.7909322222754316,
+          "R_total_vacuum_kcal_mol": -405402.6182563135,
+          "S_kcal_mol": null,
+          "calibrated_class": null,
+          "components_kcal_mol": {
+            "electron_energy": -45.18130762496295,
+            "electrostatic_energy": 64.47423108245866,
+            "interaction_energy": -3.7909322222754316
+          },
+          "constant_atomic_reference_contrast_kcal_mol": -405418.12024754874,
+          "reference": null,
+          "short_component_gradient": null
+        }
+      },
+      "short_full_minus_core_global_H_kcal_mol": -5.362860294480843
+    },
+    "PQQ_4MAE": {
+      "evidence": {
+        "direction": "La",
+        "evidence_stratum": "canonical_PQQ_functional_metal_association",
+        "group": "XoxF"
+      },
+      "full": {
+        "large": {
+          "R_short_kcal_mol": 21.21977647763372,
+          "R_total_vacuum_kcal_mol": -405025.26116602286,
+          "S_kcal_mol": null,
+          "calibrated_class": null,
+          "components_kcal_mol": {
+            "electron_energy": -13.668160944760901,
+            "electrostatic_energy": 385.30746597626666,
+            "interaction_energy": 21.21977647763372
+          },
+          "constant_atomic_reference_contrast_kcal_mol": -405418.120247532,
+          "reference": null,
+          "short_component_gradient": null
+        },
+        "medium": {
+          "R_short_kcal_mol": 14.442741095858048,
+          "R_total_vacuum_kcal_mol": -405363.21563630435,
+          "S_kcal_mol": null,
+          "calibrated_class": null,
+          "components_kcal_mol": {
+            "electron_energy": -12.277935352763906,
+            "electrostatic_energy": 52.7398055272279,
+            "interaction_energy": 14.442741095858048
+          },
+          "constant_atomic_reference_contrast_kcal_mol": -405418.1202475747,
+          "reference": null,
+          "short_component_gradient": null
+        }
+      },
+      "local_medium": {
+        "archived": {
+          "R_short_kcal_mol": 21.54101253849934,
+          "R_total_vacuum_kcal_mol": -405308.3528833193,
+          "S_kcal_mol": null,
+          "calibrated_class": null,
+          "components_kcal_mol": {
+            "electron_energy": -31.470735464399763,
+            "electrostatic_energy": 119.69708715522343,
+            "interaction_energy": 21.54101253849934
+          },
+          "constant_atomic_reference_contrast_kcal_mol": -405418.1202475486,
+          "reference": null,
+          "short_component_gradient": null
+        },
+        "global_H": {
+          "R_short_kcal_mol": 21.450286962165453,
+          "R_total_vacuum_kcal_mol": -405306.4886782413,
+          "S_kcal_mol": null,
+          "calibrated_class": null,
+          "components_kcal_mol": {
+            "electron_energy": -30.847367466895246,
+            "electrostatic_energy": 121.02864981199787,
+            "interaction_energy": 21.450286962165453
+          },
+          "constant_atomic_reference_contrast_kcal_mol": -405418.12024754856,
+          "reference": null,
+          "short_component_gradient": null
+        }
+      },
+      "short_full_minus_core_global_H_kcal_mol": -7.007545866307405
+    }
+  },
+  "saved_sources": {
+    "large": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_global_benchmark_20260916/mace_v1/large/collection_job_1200702.json",
+      "sha256": "18ec72139b96d1f4eeb15bbf34f2de40e9a2e96fce20572b735a58316a4399a5"
+    },
+    "local": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_local_correction_20260916/mace_v2/collection_job_1200717.json",
+      "sha256": "5f9880ba15a1c09b868431c658a02a26a2431420db179d626c65a1acfd867f34"
+    },
+    "medium": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_global_benchmark_20260916/mace_v1/medium/collection_job_1200701.json",
+      "sha256": "052d8ab03d8d012e1153beba526511b7960464eaa08803513edab82888a5cd38"
+    }
+  },
+  "status": "complete",
+  "wall_seconds": 0.27141229063272476
+}

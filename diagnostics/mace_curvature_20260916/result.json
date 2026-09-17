@@ -1,0 +1,1614 @@
+{
+  "calibrated_class": null,
+  "entropy_correction_kcal_mol": null,
+  "gates": {
+    "large": {
+      "anchored_prediction_pass": true,
+      "curvature_pass": true,
+      "vacuum_gradient_pass": true
+    },
+    "medium": {
+      "anchored_prediction_pass": true,
+      "curvature_pass": true,
+      "vacuum_gradient_pass": true
+    }
+  },
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/mace_curvature.py",
+    "sha256": "3bd4ce6e4559460fb3ce9fb908a742e7b2e7f4862de79cb36a8672e82c138921"
+  },
+  "interpretation": "directional_curvature_approximation_screen_only",
+  "new_DFT_calls": 0,
+  "relaxation_correction_kcal_mol": null,
+  "response_status": "response_model_not_validated",
+  "rows": {
+    "large": [
+      {
+        "amplitude": 0.02,
+        "checks": {
+          "Ca": {
+            "anchored_prediction_error_kcal_mol": {
+              "minus": 0.0005664669508231648,
+              "plus": 0.000598783803257355
+            },
+            "anchored_prediction_pass": true,
+            "anchored_tolerance_kcal_mol": 0.02,
+            "curvature_even_error_kcal_mol": 0.0005826253770402565,
+            "curvature_even_tolerance_kcal_mol": 0.012454672152002053,
+            "curvature_pass": true,
+            "vacuum_gradient_pass": true,
+            "vacuum_gradient_residual_kcal_mol": 0.0001906075768340343,
+            "vacuum_gradient_tolerance_kcal_mol": 0.02
+          },
+          "La": {
+            "anchored_prediction_error_kcal_mol": {
+              "minus": -8.170271819216146e-05,
+              "plus": -0.000930232723508161
+            },
+            "anchored_prediction_pass": true,
+            "anchored_tolerance_kcal_mol": 0.02822588105423537,
+            "curvature_even_error_kcal_mol": -0.0005059677208501673,
+            "curvature_even_tolerance_kcal_mol": 0.02822588105423537,
+            "curvature_pass": true,
+            "vacuum_gradient_pass": true,
+            "vacuum_gradient_residual_kcal_mol": 0.00038283577309242145,
+            "vacuum_gradient_tolerance_kcal_mol": 0.02
+          },
+          "R": {
+            "anchored_prediction_error_kcal_mol": {
+              "minus": 0.0006481696690153194,
+              "plus": 0.0015290165267655143
+            },
+            "anchored_prediction_pass": true,
+            "anchored_tolerance_kcal_mol": 0.02,
+            "curvature_even_error_kcal_mol": 0.0010885930978904237,
+            "curvature_even_tolerance_kcal_mol": 0.015771208902233318,
+            "curvature_pass": true,
+            "vacuum_gradient_pass": true,
+            "vacuum_gradient_residual_kcal_mol": -0.00019222819625836982,
+            "vacuum_gradient_tolerance_kcal_mol": 0.02
+          }
+        },
+        "coordinate": "metal",
+        "coordinate_units": "angstrom",
+        "energy_units": "kcal_mol",
+        "projected_gradients": {
+          "Ca": {
+            "DFT_CPCM": 1.6334838489376997,
+            "MACE_vacuum": 7.042931930242772
+          },
+          "La": {
+            "DFT_CPCM": -6.1478102730898225,
+            "MACE_vacuum": 5.747387010002875
+          },
+          "R": {
+            "DFT_CPCM": 7.781294122027522,
+            "MACE_vacuum": 1.2955449202398972
+          }
+        },
+        "representation": "extended",
+        "terms": {
+          "Ca": {
+            "DFT_CPCM": {
+              "even_kcal_mol": 0.04981868860800821,
+              "minus_change_kcal_mol": 0.01716517005547131,
+              "odd_kcal_mol": 0.0326535185525369,
+              "plus_change_kcal_mol": 0.08247220716054511,
+              "secant_curvature": 249.09344304004105,
+              "secant_gradient": 1.6326759276268448
+            },
+            "GB_reaction": {
+              "even_kcal_mol": -0.007923986830654428,
+              "minus_change_kcal_mol": 0.13955895303270438,
+              "odd_kcal_mol": -0.1474829398633588,
+              "plus_change_kcal_mol": -0.15540692669401324,
+              "secant_curvature": -39.61993415327214,
+              "secant_gradient": -7.37414699316794
+            },
+            "MACE_plus_GB": {
+              "even_kcal_mol": 0.05040131398504847,
+              "minus_change_kcal_mol": 0.0568350076667178,
+              "odd_kcal_mol": -0.006433693681669329,
+              "plus_change_kcal_mol": 0.04396762030337914,
+              "secant_curvature": 252.00656992524233,
+              "secant_gradient": -0.32168468408346645
+            },
+            "MACE_short": {
+              "even_kcal_mol": 0.049317243546716606,
+              "minus_change_kcal_mol": -0.02066644845854618,
+              "odd_kcal_mol": 0.06998369200526279,
+              "plus_change_kcal_mol": 0.11930093555197939,
+              "secant_curvature": 246.58621773358303,
+              "secant_gradient": 3.4991846002631393
+            },
+            "MACE_vacuum": {
+              "even_kcal_mol": 0.0583253008157029,
+              "minus_change_kcal_mol": -0.08272394536598658,
+              "odd_kcal_mol": 0.14104924618168949,
+              "plus_change_kcal_mol": 0.19937454699739238,
+              "secant_curvature": 291.6265040785145,
+              "secant_gradient": 7.052462309084474
+            }
+          },
+          "La": {
+            "DFT_CPCM": {
+              "even_kcal_mol": 0.11290352421694148,
+              "minus_change_kcal_mol": 0.23543546467607993,
+              "odd_kcal_mol": -0.12253194045913844,
+              "plus_change_kcal_mol": -0.00962841624219697,
+              "secant_curvature": 564.5176210847073,
+              "secant_gradient": -6.126597022956922
+            },
+            "GB_reaction": {
+              "even_kcal_mol": -0.014164653712558817,
+              "minus_change_kcal_mol": 0.2070694444865211,
+              "odd_kcal_mol": -0.2212340981990799,
+              "plus_change_kcal_mol": -0.23539875191163873,
+              "secant_curvature": -70.82326856279408,
+              "secant_gradient": -11.061704909953995
+            },
+            "MACE_plus_GB": {
+              "even_kcal_mol": 0.11239755649609132,
+              "minus_change_kcal_mol": 0.2183010787220213,
+              "odd_kcal_mol": -0.10590352222593,
+              "plus_change_kcal_mol": 0.00649403427016132,
+              "secant_curvature": 561.9877824804565,
+              "secant_gradient": -5.2951761112965
+            },
+            "MACE_short": {
+              "even_kcal_mol": 0.10332152058289791,
+              "minus_change_kcal_mol": 0.05839752525863892,
+              "odd_kcal_mol": 0.04492399532425899,
+              "plus_change_kcal_mol": 0.1482455159071569,
+              "secant_curvature": 516.6076029144896,
+              "secant_gradient": 2.2461997662129494
+            },
+            "MACE_vacuum": {
+              "even_kcal_mol": 0.12656221020865013,
+              "minus_change_kcal_mol": 0.011231634235500212,
+              "odd_kcal_mol": 0.11533057597314991,
+              "plus_change_kcal_mol": 0.24189278618180005,
+              "secant_curvature": 632.8110510432506,
+              "secant_gradient": 5.766528798657496
+            }
+          },
+          "R": {
+            "DFT_CPCM": {
+              "even_kcal_mol": -0.06308483560893327,
+              "minus_change_kcal_mol": -0.21827029462060862,
+              "odd_kcal_mol": 0.15518545901167535,
+              "plus_change_kcal_mol": 0.09210062340274208,
+              "secant_curvature": -315.4241780446663,
+              "secant_gradient": 7.7592729505837665
+            },
+            "GB_reaction": {
+              "even_kcal_mol": 0.006240666881904389,
+              "minus_change_kcal_mol": -0.06751049145381671,
+              "odd_kcal_mol": 0.0737511583357211,
+              "plus_change_kcal_mol": 0.07999182521762549,
+              "secant_curvature": 31.203334409521943,
+              "secant_gradient": 3.687557916786055
+            },
+            "MACE_plus_GB": {
+              "even_kcal_mol": -0.06199624251104285,
+              "minus_change_kcal_mol": -0.16146607105530353,
+              "odd_kcal_mol": 0.09946982854426067,
+              "plus_change_kcal_mol": 0.03747358603321782,
+              "secant_curvature": -309.9812125552142,
+              "secant_gradient": 4.973491427213033
+            },
+            "MACE_short": {
+              "even_kcal_mol": -0.054004277036181304,
+              "minus_change_kcal_mol": -0.0790639737171851,
+              "odd_kcal_mol": 0.0250596966810038,
+              "plus_change_kcal_mol": -0.02894458035517751,
+              "secant_curvature": -270.0213851809066,
+              "secant_gradient": 1.25298483405019
+            },
+            "MACE_vacuum": {
+              "even_kcal_mol": -0.06823690939294724,
+              "minus_change_kcal_mol": -0.09395557960148679,
+              "odd_kcal_mol": 0.025718670208539574,
+              "plus_change_kcal_mol": -0.04251823918440767,
+              "secant_curvature": -341.1845469647361,
+              "secant_gradient": 1.285933510426978
+            }
+          }
+        }
+      },
+      {
+        "amplitude": 0.017453292519943295,
+        "checks": {
+          "Ca": {
+            "anchored_prediction_error_kcal_mol": {
+              "minus": -0.0015683702744832273,
+              "plus": -0.0017321927936155557
+            },
+            "anchored_prediction_pass": true,
+            "anchored_tolerance_kcal_mol": 0.02,
+            "curvature_even_error_kcal_mol": -0.0016502815340493915,
+            "curvature_even_tolerance_kcal_mol": 0.005,
+            "curvature_pass": true,
+            "vacuum_gradient_pass": true,
+            "vacuum_gradient_residual_kcal_mol": 0.0001690403048958712,
+            "vacuum_gradient_tolerance_kcal_mol": 0.02
+          },
+          "La": {
+            "anchored_prediction_error_kcal_mol": {
+              "minus": -7.775367588003235e-05,
+              "plus": -0.0009776628067320048
+            },
+            "anchored_prediction_pass": true,
+            "anchored_tolerance_kcal_mol": 0.02,
+            "curvature_even_error_kcal_mol": -0.0005277082413060186,
+            "curvature_even_tolerance_kcal_mol": 0.005,
+            "curvature_pass": true,
+            "vacuum_gradient_pass": true,
+            "vacuum_gradient_residual_kcal_mol": 0.0005388281579555287,
+            "vacuum_gradient_tolerance_kcal_mol": 0.02
+          },
+          "R": {
+            "anchored_prediction_error_kcal_mol": {
+              "minus": -0.0014906165986032088,
+              "plus": -0.0007545299868835231
+            },
+            "anchored_prediction_pass": true,
+            "anchored_tolerance_kcal_mol": 0.02,
+            "curvature_even_error_kcal_mol": -0.001122573292743373,
+            "curvature_even_tolerance_kcal_mol": 0.005,
+            "curvature_pass": true,
+            "vacuum_gradient_pass": true,
+            "vacuum_gradient_residual_kcal_mol": -0.000369787853059661,
+            "vacuum_gradient_tolerance_kcal_mol": 0.02
+          }
+        },
+        "coordinate": "peptide",
+        "coordinate_units": "radian",
+        "energy_units": "kcal_mol",
+        "projected_gradients": {
+          "Ca": {
+            "DFT_CPCM": -2.194076433042575,
+            "MACE_vacuum": 1.4732006737199979
+          },
+          "La": {
+            "DFT_CPCM": -8.8855947026982,
+            "MACE_vacuum": -6.001435869132465
+          },
+          "R": {
+            "DFT_CPCM": 6.691518269655624,
+            "MACE_vacuum": 7.474636542852464
+          }
+        },
+        "representation": "extended",
+        "terms": {
+          "Ca": {
+            "DFT_CPCM": {
+              "even_kcal_mol": 0.00609288476472318,
+              "minus_change_kcal_mol": 0.04430483130216286,
+              "odd_kcal_mol": -0.03821194653743968,
+              "plus_change_kcal_mol": -0.0321190617727165,
+              "secant_curvature": 40.00352159104614,
+              "secant_gradient": -2.1893832635748334
+            },
+            "GB_reaction": {
+              "even_kcal_mol": 0.00041312931754333704,
+              "minus_change_kcal_mol": 0.004166262825776812,
+              "odd_kcal_mol": -0.003753133508233475,
+              "plus_change_kcal_mol": -0.003340004190690138,
+              "secant_curvature": 2.71244709401457,
+              "secant_gradient": -0.21503870997090632
+            },
+            "MACE_plus_GB": {
+              "even_kcal_mol": 0.004442603230673789,
+              "minus_change_kcal_mol": -0.01768550586500127,
+              "odd_kcal_mol": 0.022128109095675058,
+              "plus_change_kcal_mol": 0.026570712326348847,
+              "secant_curvature": 29.168412192477206,
+              "secant_gradient": 1.2678472597872297
+            },
+            "MACE_short": {
+              "even_kcal_mol": 0.005813619509563862,
+              "minus_change_kcal_mol": 0.05194714925412684,
+              "odd_kcal_mol": -0.04613352974456298,
+              "plus_change_kcal_mol": -0.04031991023499912,
+              "secant_curvature": 38.16997408509682,
+              "secant_gradient": -2.6432565484047057
+            },
+            "MACE_vacuum": {
+              "even_kcal_mol": 0.004029473913130452,
+              "minus_change_kcal_mol": -0.02185176869077808,
+              "odd_kcal_mol": 0.025881242603908533,
+              "plus_change_kcal_mol": 0.029910716517038985,
+              "secant_curvature": 26.455965098462638,
+              "secant_gradient": 1.4828859697581358
+            }
+          },
+          "La": {
+            "DFT_CPCM": {
+              "even_kcal_mol": -0.010722028558943109,
+              "minus_change_kcal_mol": 0.14391090043548116,
+              "odd_kcal_mol": -0.15463292899442427,
+              "plus_change_kcal_mol": -0.16535495755336738,
+              "secant_curvature": -70.39668687661141,
+              "secant_gradient": -8.859814205126648
+            },
+            "GB_reaction": {
+              "even_kcal_mol": -0.0005527210743245803,
+              "minus_change_kcal_mol": 0.010160265689819425,
+              "odd_kcal_mol": -0.010712986764144006,
+              "plus_change_kcal_mol": -0.011265707838468586,
+              "secant_curvature": -3.6289525051560907,
+              "secant_gradient": -0.6138089275649642
+            },
+            "MACE_plus_GB": {
+              "even_kcal_mol": -0.011249736800249127,
+              "minus_change_kcal_mol": 0.1036692375695884,
+              "odd_kcal_mol": -0.11491897436983753,
+              "plus_change_kcal_mol": -0.12616871117008666,
+              "secant_curvature": -73.86141480763727,
+              "secant_gradient": -6.58437221736377
+            },
+            "MACE_short": {
+              "even_kcal_mol": -0.008109373908724182,
+              "minus_change_kcal_mol": 0.14069878891904128,
+              "odd_kcal_mol": -0.14880816282776546,
+              "plus_change_kcal_mol": -0.15691753673648964,
+              "secant_curvature": -53.243008324358605,
+              "secant_gradient": -8.526079687126503
+            },
+            "MACE_vacuum": {
+              "even_kcal_mol": -0.01069701572592454,
+              "minus_change_kcal_mol": 0.09350897187976898,
+              "odd_kcal_mol": -0.10420598760569352,
+              "plus_change_kcal_mol": -0.11490300333161806,
+              "secant_curvature": -70.23246230248114,
+              "secant_gradient": -5.970563289798806
+            }
+          },
+          "R": {
+            "DFT_CPCM": {
+              "even_kcal_mol": 0.01681491332366629,
+              "minus_change_kcal_mol": -0.09960606913331829,
+              "odd_kcal_mol": 0.1164209824569846,
+              "plus_change_kcal_mol": 0.13323589578065087,
+              "secant_curvature": 110.40020846765755,
+              "secant_gradient": 6.670430941551815
+            },
+            "GB_reaction": {
+              "even_kcal_mol": 0.0009658503918679173,
+              "minus_change_kcal_mol": -0.0059940028640426135,
+              "odd_kcal_mol": 0.006959853255910531,
+              "plus_change_kcal_mol": 0.007925703647778448,
+              "secant_curvature": 6.341399599170661,
+              "secant_gradient": 0.39877021759405784
+            },
+            "MACE_plus_GB": {
+              "even_kcal_mol": 0.015692340030922916,
+              "minus_change_kcal_mol": -0.12135474343458967,
+              "odd_kcal_mol": 0.1370470834655126,
+              "plus_change_kcal_mol": 0.1527394234964355,
+              "secant_curvature": 103.02982700011448,
+              "secant_gradient": 7.852219477150999
+            },
+            "MACE_short": {
+              "even_kcal_mol": 0.013922993418288045,
+              "minus_change_kcal_mol": -0.08875163966491444,
+              "odd_kcal_mol": 0.10267463308320249,
+              "plus_change_kcal_mol": 0.11659762650149053,
+              "secant_curvature": 91.41298240945542,
+              "secant_gradient": 5.882823138721797
+            },
+            "MACE_vacuum": {
+              "even_kcal_mol": 0.014726489639054992,
+              "minus_change_kcal_mol": -0.11536074057054706,
+              "odd_kcal_mol": 0.13008723020960206,
+              "plus_change_kcal_mol": 0.14481371984865704,
+              "secant_curvature": 96.68842740094378,
+              "secant_gradient": 7.453449259556941
+            }
+          }
+        }
+      },
+      {
+        "amplitude": 0.02,
+        "checks": {
+          "Ca": {
+            "anchored_prediction_error_kcal_mol": {
+              "minus": 0.001487139226869369,
+              "plus": 0.0014283932799202537
+            },
+            "anchored_prediction_pass": true,
+            "anchored_tolerance_kcal_mol": 0.02,
+            "curvature_even_error_kcal_mol": 0.0014577662533948113,
+            "curvature_even_tolerance_kcal_mol": 0.012715983031777624,
+            "curvature_pass": true,
+            "vacuum_gradient_pass": true,
+            "vacuum_gradient_residual_kcal_mol": 0.0001827095880178875,
+            "vacuum_gradient_tolerance_kcal_mol": 0.02
+          },
+          "La": {
+            "anchored_prediction_error_kcal_mol": {
+              "minus": -0.0018603057627672032,
+              "plus": -0.0030334192824148787
+            },
+            "anchored_prediction_pass": true,
+            "anchored_tolerance_kcal_mol": 0.028985229133269806,
+            "curvature_even_error_kcal_mol": -0.002446862522591048,
+            "curvature_even_tolerance_kcal_mol": 0.028985229133269806,
+            "curvature_pass": true,
+            "vacuum_gradient_pass": true,
+            "vacuum_gradient_residual_kcal_mol": 0.00034446392668689707,
+            "vacuum_gradient_tolerance_kcal_mol": 0.02
+          },
+          "R": {
+            "anchored_prediction_error_kcal_mol": {
+              "minus": 0.0033474449896366,
+              "plus": 0.0044618125623351185
+            },
+            "anchored_prediction_pass": true,
+            "anchored_tolerance_kcal_mol": 0.02,
+            "curvature_even_error_kcal_mol": 0.003904628775985866,
+            "curvature_even_tolerance_kcal_mol": 0.016269246101492184,
+            "curvature_pass": true,
+            "vacuum_gradient_pass": true,
+            "vacuum_gradient_residual_kcal_mol": -0.00016175433866902345,
+            "vacuum_gradient_tolerance_kcal_mol": 0.02
+          }
+        },
+        "coordinate": "metal",
+        "coordinate_units": "angstrom",
+        "energy_units": "kcal_mol",
+        "projected_gradients": {
+          "Ca": {
+            "DFT_CPCM": 4.759926105567418,
+            "MACE_vacuum": 6.751692513415874
+          },
+          "La": {
+            "DFT_CPCM": 1.2863903067117028,
+            "MACE_vacuum": 2.9957607148345544
+          },
+          "R": {
+            "DFT_CPCM": 3.473535798855715,
+            "MACE_vacuum": 3.755931798581319
+          }
+        },
+        "representation": "connected",
+        "terms": {
+          "Ca": {
+            "DFT_CPCM": {
+              "even_kcal_mol": 0.050863932127110496,
+              "minus_change_kcal_mol": -0.04436396295771243,
+              "odd_kcal_mol": 0.09522789508482293,
+              "plus_change_kcal_mol": 0.14609182721193342,
+              "secant_curvature": 254.31966063555248,
+              "secant_gradient": 4.761394754241147
+            },
+            "GB_reaction": {
+              "even_kcal_mol": -0.0056801100164349805,
+              "minus_change_kcal_mol": 0.07722138401086909,
+              "odd_kcal_mol": -0.08290149402730407,
+              "plus_change_kcal_mol": -0.08858160404373905,
+              "secant_curvature": -28.400550082174902,
+              "secant_gradient": -4.145074701365203
+            },
+            "MACE_plus_GB": {
+              "even_kcal_mol": 0.05232169838050531,
+              "minus_change_kcal_mol": 6.632551474039516e-06,
+              "odd_kcal_mol": 0.05231506582903127,
+              "plus_change_kcal_mol": 0.10463676420953658,
+              "secant_curvature": 261.6084919025265,
+              "secant_gradient": 2.6157532914515635
+            },
+            "MACE_short": {
+              "even_kcal_mol": 0.05017139533114256,
+              "minus_change_kcal_mol": -0.07651756412862055,
+              "odd_kcal_mol": 0.1266889594597631,
+              "plus_change_kcal_mol": 0.17686035479090567,
+              "secant_curvature": 250.85697665571277,
+              "secant_gradient": 6.334447972988155
+            },
+            "MACE_vacuum": {
+              "even_kcal_mol": 0.05800180839694029,
+              "minus_change_kcal_mol": -0.07721475145939505,
+              "odd_kcal_mol": 0.13521655985633535,
+              "plus_change_kcal_mol": 0.19321836825327562,
+              "secant_curvature": 290.0090419847014,
+              "secant_gradient": 6.760827992816767
+            }
+          },
+          "La": {
+            "DFT_CPCM": {
+              "even_kcal_mol": 0.11594091653307922,
+              "minus_change_kcal_mol": 0.08962655363902132,
+              "odd_kcal_mol": 0.026314362894057898,
+              "plus_change_kcal_mol": 0.14225527942713712,
+              "secant_curvature": 579.7045826653961,
+              "secant_gradient": 1.315718144702895
+            },
+            "GB_reaction": {
+              "even_kcal_mol": -0.010431254673781254,
+              "minus_change_kcal_mol": 0.057886365482428204,
+              "odd_kcal_mol": -0.06831762015620946,
+              "plus_change_kcal_mol": -0.07874887482999071,
+              "secant_curvature": -52.15627336890627,
+              "secant_gradient": -3.415881007810473
+            },
+            "MACE_plus_GB": {
+              "even_kcal_mol": 0.11349405401048818,
+              "minus_change_kcal_mol": 0.12155199594331965,
+              "odd_kcal_mol": -0.00805794193283147,
+              "plus_change_kcal_mol": 0.10543611207765671,
+              "secant_curvature": 567.4702700524408,
+              "secant_gradient": -0.4028970966415735
+            },
+            "MACE_short": {
+              "even_kcal_mol": 0.10323083204214167,
+              "minus_change_kcal_mol": -0.020115831337023864,
+              "odd_kcal_mol": 0.12334666337916553,
+              "plus_change_kcal_mol": 0.2265774954213072,
+              "secant_curvature": 516.1541602107084,
+              "secant_gradient": 6.167333168958276
+            },
+            "MACE_vacuum": {
+              "even_kcal_mol": 0.12392530868426943,
+              "minus_change_kcal_mol": 0.06366563046089145,
+              "odd_kcal_mol": 0.06025967822337799,
+              "plus_change_kcal_mol": 0.18418498690764742,
+              "secant_curvature": 619.6265434213472,
+              "secant_gradient": 3.012983911168899
+            }
+          },
+          "R": {
+            "DFT_CPCM": {
+              "even_kcal_mol": -0.06507698440596874,
+              "minus_change_kcal_mol": -0.13399051659673375,
+              "odd_kcal_mol": 0.06891353219076504,
+              "plus_change_kcal_mol": 0.003836547784796307,
+              "secant_curvature": -325.38492202984355,
+              "secant_gradient": 3.445676609538252
+            },
+            "GB_reaction": {
+              "even_kcal_mol": 0.0047511446573462734,
+              "minus_change_kcal_mol": 0.019335018528440884,
+              "odd_kcal_mol": -0.01458387387109461,
+              "plus_change_kcal_mol": -0.009832729213748337,
+              "secant_curvature": 23.755723286731367,
+              "secant_gradient": -0.7291936935547305
+            },
+            "MACE_plus_GB": {
+              "even_kcal_mol": -0.06117235562998287,
+              "minus_change_kcal_mol": -0.12154536339184561,
+              "odd_kcal_mol": 0.06037300776186274,
+              "plus_change_kcal_mol": -0.0007993478681201371,
+              "secant_curvature": -305.8617781499143,
+              "secant_gradient": 3.0186503880931372
+            },
+            "MACE_short": {
+              "even_kcal_mol": -0.053059436710999115,
+              "minus_change_kcal_mol": -0.05640173279159669,
+              "odd_kcal_mol": 0.0033422960805975788,
+              "plus_change_kcal_mol": -0.04971714063040153,
+              "secant_curvature": -265.2971835549956,
+              "secant_gradient": 0.16711480402987888
+            },
+            "MACE_vacuum": {
+              "even_kcal_mol": -0.06592350028732914,
+              "minus_change_kcal_mol": -0.1408803819202865,
+              "odd_kcal_mol": 0.07495688163295736,
+              "plus_change_kcal_mol": 0.0090333813456282,
+              "secant_curvature": -329.61750143664574,
+              "secant_gradient": 3.747844081647868
+            }
+          }
+        }
+      },
+      {
+        "amplitude": 0.017453292519943295,
+        "checks": {
+          "Ca": {
+            "anchored_prediction_error_kcal_mol": {
+              "minus": -0.0011343707993082541,
+              "plus": -0.001521620271146773
+            },
+            "anchored_prediction_pass": true,
+            "anchored_tolerance_kcal_mol": 0.02,
+            "curvature_even_error_kcal_mol": -0.0013279955352275274,
+            "curvature_even_tolerance_kcal_mol": 0.005,
+            "curvature_pass": true,
+            "vacuum_gradient_pass": true,
+            "vacuum_gradient_residual_kcal_mol": 0.0001722805172728048,
+            "vacuum_gradient_tolerance_kcal_mol": 0.02
+          },
+          "La": {
+            "anchored_prediction_error_kcal_mol": {
+              "minus": 0.0008158453023278667,
+              "plus": -9.074908199346865e-07
+            },
+            "anchored_prediction_pass": true,
+            "anchored_tolerance_kcal_mol": 0.02,
+            "curvature_even_error_kcal_mol": 0.00040746890575393824,
+            "curvature_even_tolerance_kcal_mol": 0.005,
+            "curvature_pass": true,
+            "vacuum_gradient_pass": true,
+            "vacuum_gradient_residual_kcal_mol": 0.00052793781068039,
+            "vacuum_gradient_tolerance_kcal_mol": 0.02
+          },
+          "R": {
+            "anchored_prediction_error_kcal_mol": {
+              "minus": -0.001950216101636093,
+              "plus": -0.0015207127803268383
+            },
+            "anchored_prediction_pass": true,
+            "anchored_tolerance_kcal_mol": 0.02,
+            "curvature_even_error_kcal_mol": -0.0017354644409814657,
+            "curvature_even_tolerance_kcal_mol": 0.005,
+            "curvature_pass": true,
+            "vacuum_gradient_pass": true,
+            "vacuum_gradient_residual_kcal_mol": -0.0003556572934075575,
+            "vacuum_gradient_tolerance_kcal_mol": 0.02
+          }
+        },
+        "coordinate": "peptide",
+        "coordinate_units": "radian",
+        "energy_units": "kcal_mol",
+        "projected_gradients": {
+          "Ca": {
+            "DFT_CPCM": -9.148245434470994,
+            "MACE_vacuum": -7.518055822623466
+          },
+          "La": {
+            "DFT_CPCM": -15.086492491487132,
+            "MACE_vacuum": -14.63960103595472
+          },
+          "R": {
+            "DFT_CPCM": 5.938247057016138,
+            "MACE_vacuum": 7.121545213331255
+          }
+        },
+        "representation": "connected",
+        "terms": {
+          "Ca": {
+            "DFT_CPCM": {
+              "even_kcal_mol": 0.009256304348456715,
+              "minus_change_kcal_mol": 0.16872968322459544,
+              "odd_kcal_mol": -0.15947337887613872,
+              "plus_change_kcal_mol": -0.15021707452768202,
+              "secant_curvature": 60.773309385510046,
+              "secant_gradient": -9.137151554293483
+            },
+            "GB_reaction": {
+              "even_kcal_mol": 0.00028238585904816205,
+              "minus_change_kcal_mol": 0.006728949488071123,
+              "odd_kcal_mol": -0.006446563629022961,
+              "plus_change_kcal_mol": -0.006164177769974799,
+              "secant_curvature": 1.8540361824736553,
+              "secant_gradient": -0.3693608883055554
+            },
+            "MACE_plus_GB": {
+              "even_kcal_mol": 0.007928308813229187,
+              "minus_change_kcal_mol": 0.14541741937848962,
+              "odd_kcal_mol": -0.13748911056526042,
+              "plus_change_kcal_mol": -0.12956080175203125,
+              "secant_curvature": 52.054205033845705,
+              "secant_gradient": -7.877545764396958
+            },
+            "MACE_short": {
+              "even_kcal_mol": 0.008208866100577444,
+              "minus_change_kcal_mol": 0.17421549158946392,
+              "odd_kcal_mol": -0.16600662548888648,
+              "plus_change_kcal_mol": -0.15779775938830903,
+              "secant_curvature": 53.89623552274356,
+              "secant_gradient": -9.511479011722072
+            },
+            "MACE_vacuum": {
+              "even_kcal_mol": 0.007645922954181025,
+              "minus_change_kcal_mol": 0.1386884698904185,
+              "odd_kcal_mol": -0.13104254693623746,
+              "plus_change_kcal_mol": -0.12339662398205645,
+              "secant_curvature": 50.20016885137205,
+              "secant_gradient": -7.508184876091403
+            }
+          },
+          "La": {
+            "DFT_CPCM": {
+              "even_kcal_mol": -0.007299417772340472,
+              "minus_change_kcal_mol": 0.2556011723849387,
+              "odd_kcal_mol": -0.2629005901572792,
+              "plus_change_kcal_mol": -0.2702000079296196,
+              "secant_curvature": -47.92515002885576,
+              "secant_gradient": -15.063094247510689
+            },
+            "GB_reaction": {
+              "even_kcal_mol": -0.0008303266389528829,
+              "minus_change_kcal_mol": 0.01153009205476252,
+              "odd_kcal_mol": -0.012360418693715403,
+              "plus_change_kcal_mol": -0.013190745332668286,
+              "secant_curvature": -5.451603125876866,
+              "secant_gradient": -0.7081998241644987
+            },
+            "MACE_plus_GB": {
+              "even_kcal_mol": -0.006891948866586534,
+              "minus_change_kcal_mol": 0.2604497712722311,
+              "odd_kcal_mol": -0.26734172013881763,
+              "plus_change_kcal_mol": -0.2742336690054042,
+              "secant_curvature": -45.24986700637303,
+              "secant_gradient": -15.317552251721855
+            },
+            "MACE_short": {
+              "even_kcal_mol": -0.006113794891914326,
+              "minus_change_kcal_mol": 0.25266470927564355,
+              "odd_kcal_mol": -0.2587785041675579,
+              "plus_change_kcal_mol": -0.2648922990594722,
+              "secant_curvature": -40.14080938769143,
+              "secant_gradient": -14.82691611750965
+            },
+            "MACE_vacuum": {
+              "even_kcal_mol": -0.006061622227633637,
+              "minus_change_kcal_mol": 0.24891967921746863,
+              "odd_kcal_mol": -0.2549813014451023,
+              "plus_change_kcal_mol": -0.2610429236727359,
+              "secant_curvature": -39.79826388049607,
+              "secant_gradient": -14.60935242755736
+            }
+          },
+          "R": {
+            "DFT_CPCM": {
+              "even_kcal_mol": 0.016555722120797187,
+              "minus_change_kcal_mol": -0.08687148916034323,
+              "odd_kcal_mol": 0.10342721128114046,
+              "plus_change_kcal_mol": 0.11998293340193761,
+              "secant_curvature": 108.6984594143658,
+              "secant_gradient": 5.9259426932172055
+            },
+            "GB_reaction": {
+              "even_kcal_mol": 0.001112712498001045,
+              "minus_change_kcal_mol": -0.0048011425666913965,
+              "odd_kcal_mol": 0.0059138550646924415,
+              "plus_change_kcal_mol": 0.0070265675626934865,
+              "secant_curvature": 7.305639308350521,
+              "secant_gradient": 0.33883893585894326
+            },
+            "MACE_plus_GB": {
+              "even_kcal_mol": 0.014820257679815721,
+              "minus_change_kcal_mol": -0.1150323518937415,
+              "odd_kcal_mol": 0.1298526095735572,
+              "plus_change_kcal_mol": 0.14467286725337294,
+              "secant_curvature": 97.30407204021873,
+              "secant_gradient": 7.440006487324897
+            },
+            "MACE_short": {
+              "even_kcal_mol": 0.01432266099249177,
+              "minus_change_kcal_mol": -0.07844921768617963,
+              "odd_kcal_mol": 0.0927718786786714,
+              "plus_change_kcal_mol": 0.10709453967116317,
+              "secant_curvature": 94.03704491043499,
+              "secant_gradient": 5.315437105787579
+            },
+            "MACE_vacuum": {
+              "even_kcal_mol": 0.013707545181814662,
+              "minus_change_kcal_mol": -0.11023120932705013,
+              "odd_kcal_mol": 0.12393875450886482,
+              "plus_change_kcal_mol": 0.13764629969067946,
+              "secant_curvature": 89.99843273186812,
+              "secant_gradient": 7.101167551465957
+            }
+          }
+        }
+      }
+    ],
+    "medium": [
+      {
+        "amplitude": 0.02,
+        "checks": {
+          "Ca": {
+            "anchored_prediction_error_kcal_mol": {
+              "minus": 0.00043707184461987125,
+              "plus": 0.0004693886970540545
+            },
+            "anchored_prediction_pass": true,
+            "anchored_tolerance_kcal_mol": 0.02,
+            "curvature_even_error_kcal_mol": 0.0004532302708369629,
+            "curvature_even_tolerance_kcal_mol": 0.012454672152002053,
+            "curvature_pass": true,
+            "vacuum_gradient_pass": true,
+            "vacuum_gradient_residual_kcal_mol": 0.00017827826681596215,
+            "vacuum_gradient_tolerance_kcal_mol": 0.02
+          },
+          "La": {
+            "anchored_prediction_error_kcal_mol": {
+              "minus": -0.0010244445454934137,
+              "plus": -0.0018729745508093993
+            },
+            "anchored_prediction_pass": true,
+            "anchored_tolerance_kcal_mol": 0.02822588105423537,
+            "curvature_even_error_kcal_mol": -0.0014487095481514056,
+            "curvature_even_tolerance_kcal_mol": 0.02822588105423537,
+            "curvature_pass": true,
+            "vacuum_gradient_pass": true,
+            "vacuum_gradient_residual_kcal_mol": 0.0003135447382535683,
+            "vacuum_gradient_tolerance_kcal_mol": 0.02
+          },
+          "R": {
+            "anchored_prediction_error_kcal_mol": {
+              "minus": 0.001461516390113271,
+              "plus": 0.002342363247863466
+            },
+            "anchored_prediction_pass": true,
+            "anchored_tolerance_kcal_mol": 0.02,
+            "curvature_even_error_kcal_mol": 0.0019019398189883685,
+            "curvature_even_tolerance_kcal_mol": 0.015771208902233318,
+            "curvature_pass": true,
+            "vacuum_gradient_pass": true,
+            "vacuum_gradient_residual_kcal_mol": -0.0001352664714376105,
+            "vacuum_gradient_tolerance_kcal_mol": 0.02
+          }
+        },
+        "coordinate": "metal",
+        "coordinate_units": "angstrom",
+        "energy_units": "kcal_mol",
+        "projected_gradients": {
+          "Ca": {
+            "DFT_CPCM": 1.6334838489376997,
+            "MACE_vacuum": 7.269530586639415
+          },
+          "La": {
+            "DFT_CPCM": -6.1478102730898225,
+            "MACE_vacuum": 7.44324913991337
+          },
+          "R": {
+            "DFT_CPCM": 7.781294122027522,
+            "MACE_vacuum": -0.1737185532739547
+          }
+        },
+        "representation": "extended",
+        "terms": {
+          "Ca": {
+            "DFT_CPCM": {
+              "even_kcal_mol": 0.04981868860800821,
+              "minus_change_kcal_mol": 0.01716517005547131,
+              "odd_kcal_mol": 0.0326535185525369,
+              "plus_change_kcal_mol": 0.08247220716054511,
+              "secant_curvature": 249.09344304004105,
+              "secant_gradient": 1.6326759276268448
+            },
+            "GB_reaction": {
+              "even_kcal_mol": -0.008246533197130645,
+              "minus_change_kcal_mol": 0.15623076934103608,
+              "odd_kcal_mol": -0.16447730253816673,
+              "plus_change_kcal_mol": -0.17272383573529737,
+              "secant_curvature": -41.23266598565323,
+              "secant_gradient": -8.223865126908336
+            },
+            "MACE_plus_GB": {
+              "even_kcal_mol": 0.050271918878845176,
+              "minus_change_kcal_mol": 0.06918033141740762,
+              "odd_kcal_mol": -0.018908412538562444,
+              "plus_change_kcal_mol": 0.03136350634028273,
+              "secant_curvature": 251.35959439422587,
+              "secant_gradient": -0.9454206269281222
+            },
+            "MACE_short": {
+              "even_kcal_mol": 0.0426836998893911,
+              "minus_change_kcal_mol": -0.030747576889328627,
+              "odd_kcal_mol": 0.07343127677871973,
+              "plus_change_kcal_mol": 0.11611497666811083,
+              "secant_curvature": 213.4184994469555,
+              "secant_gradient": 3.6715638389359864
+            },
+            "MACE_vacuum": {
+              "even_kcal_mol": 0.05851845207597582,
+              "minus_change_kcal_mol": -0.08705043792362846,
+              "odd_kcal_mol": 0.14556888999960427,
+              "plus_change_kcal_mol": 0.2040873420755801,
+              "secant_curvature": 292.5922603798791,
+              "secant_gradient": 7.278444499980213
+            }
+          },
+          "La": {
+            "DFT_CPCM": {
+              "even_kcal_mol": 0.11290352421694148,
+              "minus_change_kcal_mol": 0.23543546467607993,
+              "odd_kcal_mol": -0.12253194045913844,
+              "plus_change_kcal_mol": -0.00962841624219697,
+              "secant_curvature": 564.5176210847073,
+              "secant_gradient": -6.126597022956922
+            },
+            "GB_reaction": {
+              "even_kcal_mol": -0.01684683978328394,
+              "minus_change_kcal_mol": 0.24038996982122995,
+              "odd_kcal_mol": -0.2572368096045139,
+              "plus_change_kcal_mol": -0.27408364938779783,
+              "secant_curvature": -84.2341989164197,
+              "secant_gradient": -12.861840480225695
+            },
+            "MACE_plus_GB": {
+              "even_kcal_mol": 0.11145481466879008,
+              "minus_change_kcal_mol": 0.21951309673678301,
+              "odd_kcal_mol": -0.10805828206799294,
+              "plus_change_kcal_mol": 0.003396532600797142,
+              "secant_curvature": 557.2740733439504,
+              "secant_gradient": -5.402914103399647
+            },
+            "MACE_short": {
+              "even_kcal_mol": 0.09038888728704278,
+              "minus_change_kcal_mol": 0.05296903265580634,
+              "odd_kcal_mol": 0.037419854631236434,
+              "plus_change_kcal_mol": 0.1278087419182792,
+              "secant_curvature": 451.9444364352139,
+              "secant_gradient": 1.8709927315618216
+            },
+            "MACE_vacuum": {
+              "even_kcal_mol": 0.128301654452074,
+              "minus_change_kcal_mol": -0.020876873084446943,
+              "odd_kcal_mol": 0.14917852753652097,
+              "plus_change_kcal_mol": 0.277480181988595,
+              "secant_curvature": 641.50827226037,
+              "secant_gradient": 7.4589263768260485
+            }
+          },
+          "R": {
+            "DFT_CPCM": {
+              "even_kcal_mol": -0.06308483560893327,
+              "minus_change_kcal_mol": -0.21827029462060862,
+              "odd_kcal_mol": 0.15518545901167535,
+              "plus_change_kcal_mol": 0.09210062340274208,
+              "secant_curvature": -315.4241780446663,
+              "secant_gradient": 7.7592729505837665
+            },
+            "GB_reaction": {
+              "even_kcal_mol": 0.008600306586153295,
+              "minus_change_kcal_mol": -0.08415920048019387,
+              "odd_kcal_mol": 0.09275950706634717,
+              "plus_change_kcal_mol": 0.10135981365250046,
+              "secant_curvature": 43.00153293076647,
+              "secant_gradient": 4.637975353317358
+            },
+            "MACE_plus_GB": {
+              "even_kcal_mol": -0.0611828957899449,
+              "minus_change_kcal_mol": -0.1503327653193754,
+              "odd_kcal_mol": 0.08914986952943049,
+              "plus_change_kcal_mol": 0.02796697373948559,
+              "secant_curvature": -305.9144789497245,
+              "secant_gradient": 4.457493476471525
+            },
+            "MACE_short": {
+              "even_kcal_mol": -0.04770518739765168,
+              "minus_change_kcal_mol": -0.08371660954513496,
+              "odd_kcal_mol": 0.0360114221474833,
+              "plus_change_kcal_mol": -0.01169376525016838,
+              "secant_curvature": -238.5259369882584,
+              "secant_gradient": 1.8005711073741648
+            },
+            "MACE_vacuum": {
+              "even_kcal_mol": -0.06978320237609818,
+              "minus_change_kcal_mol": -0.06617356483918152,
+              "odd_kcal_mol": -0.0036096375369167044,
+              "plus_change_kcal_mol": -0.07339283991301487,
+              "secant_curvature": -348.9160118804908,
+              "secant_gradient": -0.1804818768458354
+            }
+          }
+        }
+      },
+      {
+        "amplitude": 0.017453292519943295,
+        "checks": {
+          "Ca": {
+            "anchored_prediction_error_kcal_mol": {
+              "minus": -0.0019409625251755602,
+              "plus": -0.0021047850443078886
+            },
+            "anchored_prediction_pass": true,
+            "anchored_tolerance_kcal_mol": 0.02,
+            "curvature_even_error_kcal_mol": -0.0020228737847417244,
+            "curvature_even_tolerance_kcal_mol": 0.005,
+            "curvature_pass": true,
+            "vacuum_gradient_pass": true,
+            "vacuum_gradient_residual_kcal_mol": 0.0001735194666050953,
+            "vacuum_gradient_tolerance_kcal_mol": 0.02
+          },
+          "La": {
+            "anchored_prediction_error_kcal_mol": {
+              "minus": -0.0001758154021593572,
+              "plus": -0.0010757245330113296
+            },
+            "anchored_prediction_pass": true,
+            "anchored_tolerance_kcal_mol": 0.02,
+            "curvature_even_error_kcal_mol": -0.0006257699675853504,
+            "curvature_even_tolerance_kcal_mol": 0.005,
+            "curvature_pass": true,
+            "vacuum_gradient_pass": true,
+            "vacuum_gradient_residual_kcal_mol": 0.0005507740232469222,
+            "vacuum_gradient_tolerance_kcal_mol": 0.02
+          },
+          "R": {
+            "anchored_prediction_error_kcal_mol": {
+              "minus": -0.001765147123016203,
+              "plus": -0.0010290605112965312
+            },
+            "anchored_prediction_pass": true,
+            "anchored_tolerance_kcal_mol": 0.02,
+            "curvature_even_error_kcal_mol": -0.001397103817156374,
+            "curvature_even_tolerance_kcal_mol": 0.005,
+            "curvature_pass": true,
+            "vacuum_gradient_pass": true,
+            "vacuum_gradient_residual_kcal_mol": -0.0003772545566418234,
+            "vacuum_gradient_tolerance_kcal_mol": 0.02
+          }
+        },
+        "coordinate": "peptide",
+        "coordinate_units": "radian",
+        "energy_units": "kcal_mol",
+        "projected_gradients": {
+          "Ca": {
+            "DFT_CPCM": -2.194076433042575,
+            "MACE_vacuum": 1.5951907960051332
+          },
+          "La": {
+            "DFT_CPCM": -8.8855947026982,
+            "MACE_vacuum": -5.5082576003203645
+          },
+          "R": {
+            "DFT_CPCM": 6.691518269655624,
+            "MACE_vacuum": 7.103448396325498
+          }
+        },
+        "representation": "extended",
+        "terms": {
+          "Ca": {
+            "DFT_CPCM": {
+              "even_kcal_mol": 0.00609288476472318,
+              "minus_change_kcal_mol": 0.04430483130216286,
+              "odd_kcal_mol": -0.03821194653743968,
+              "plus_change_kcal_mol": -0.0321190617727165,
+              "secant_curvature": 40.00352159104614,
+              "secant_gradient": -2.1893832635748334
+            },
+            "GB_reaction": {
+              "even_kcal_mol": 0.0003210702471747595,
+              "minus_change_kcal_mol": 0.016270050711554518,
+              "odd_kcal_mol": -0.01594898046437976,
+              "plus_change_kcal_mol": -0.015627910217205,
+              "secant_curvature": 2.1080228924502817,
+              "secant_gradient": -0.91380926814556
+            },
+            "MACE_plus_GB": {
+              "even_kcal_mol": 0.004070010979981456,
+              "minus_change_kcal_mol": -0.007995859610042663,
+              "odd_kcal_mol": 0.01206587059002412,
+              "plus_change_kcal_mol": 0.016135881570005575,
+              "secant_curvature": 26.722115779401292,
+              "secant_gradient": 0.6913234609594064
+            },
+            "MACE_short": {
+              "even_kcal_mol": 0.005601968281537285,
+              "minus_change_kcal_mol": 0.027871993163417236,
+              "odd_kcal_mol": -0.02227002488187995,
+              "plus_change_kcal_mol": -0.016668056600342665,
+              "secant_curvature": 36.780354094389956,
+              "secant_gradient": -1.2759784353830508
+            },
+            "MACE_vacuum": {
+              "even_kcal_mol": 0.0037489407328066965,
+              "minus_change_kcal_mol": -0.02426591032159718,
+              "odd_kcal_mol": 0.028014851054403878,
+              "plus_change_kcal_mol": 0.031763791787210574,
+              "secant_curvature": 24.61409288695101,
+              "secant_gradient": 1.6051327291049664
+            }
+          },
+          "La": {
+            "DFT_CPCM": {
+              "even_kcal_mol": -0.010722028558943109,
+              "minus_change_kcal_mol": 0.14391090043548116,
+              "odd_kcal_mol": -0.15463292899442427,
+              "plus_change_kcal_mol": -0.16535495755336738,
+              "secant_curvature": -70.39668687661141,
+              "secant_gradient": -8.859814205126648
+            },
+            "GB_reaction": {
+              "even_kcal_mol": -0.0008028136064019975,
+              "minus_change_kcal_mol": 0.024094406947256175,
+              "odd_kcal_mol": -0.024897220553658173,
+              "plus_change_kcal_mol": -0.02570003416006017,
+              "secant_curvature": -5.270963209944613,
+              "secant_gradient": -1.42650565933098
+            },
+            "MACE_plus_GB": {
+              "even_kcal_mol": -0.011347798526528459,
+              "minus_change_kcal_mol": 0.10913587917747501,
+              "odd_kcal_mol": -0.12048367770400348,
+              "plus_change_kcal_mol": -0.13183147623053193,
+              "secant_curvature": -74.50525012308307,
+              "secant_gradient": -6.903206232653856
+            },
+            "MACE_short": {
+              "even_kcal_mol": -0.006411569582632025,
+              "minus_change_kcal_mol": 0.11550972418504236,
+              "odd_kcal_mol": -0.12192129376767438,
+              "plus_change_kcal_mol": -0.12833286335030641,
+              "secant_curvature": -42.09588267881312,
+              "secant_gradient": -6.985575565662409
+            },
+            "MACE_vacuum": {
+              "even_kcal_mol": -0.010544984920126461,
+              "minus_change_kcal_mol": 0.08504147223021884,
+              "odd_kcal_mol": -0.0955864571503453,
+              "plus_change_kcal_mol": -0.10613144207047176,
+              "secant_curvature": -69.23428691313846,
+              "secant_gradient": -5.4767005733228755
+            }
+          },
+          "R": {
+            "DFT_CPCM": {
+              "even_kcal_mol": 0.01681491332366629,
+              "minus_change_kcal_mol": -0.09960606913331829,
+              "odd_kcal_mol": 0.1164209824569846,
+              "plus_change_kcal_mol": 0.13323589578065087,
+              "secant_curvature": 110.40020846765755,
+              "secant_gradient": 6.670430941551815
+            },
+            "GB_reaction": {
+              "even_kcal_mol": 0.001123883853576757,
+              "minus_change_kcal_mol": -0.007824356235701657,
+              "odd_kcal_mol": 0.008948240089278414,
+              "plus_change_kcal_mol": 0.010072123942855171,
+              "secant_curvature": 7.378986102394895,
+              "secant_gradient": 0.51269639118542
+            },
+            "MACE_plus_GB": {
+              "even_kcal_mol": 0.015417809506509915,
+              "minus_change_kcal_mol": -0.11713173878751768,
+              "odd_kcal_mol": 0.1325495482940276,
+              "plus_change_kcal_mol": 0.1479673578005375,
+              "secant_curvature": 101.22736590248437,
+              "secant_gradient": 7.5945296936132625
+            },
+            "MACE_short": {
+              "even_kcal_mol": 0.01201353786416931,
+              "minus_change_kcal_mol": -0.08763773102162513,
+              "odd_kcal_mol": 0.09965126888579443,
+              "plus_change_kcal_mol": 0.11166480674996375,
+              "secant_curvature": 78.87623677320308,
+              "secant_gradient": 5.7095971302793584
+            },
+            "MACE_vacuum": {
+              "even_kcal_mol": 0.014293925652933158,
+              "minus_change_kcal_mol": -0.10930738255181602,
+              "odd_kcal_mol": 0.12360130820474918,
+              "plus_change_kcal_mol": 0.13789523385768232,
+              "secant_curvature": 93.84837980008948,
+              "secant_gradient": 7.081833302427842
+            }
+          }
+        }
+      },
+      {
+        "amplitude": 0.02,
+        "checks": {
+          "Ca": {
+            "anchored_prediction_error_kcal_mol": {
+              "minus": 0.0011070984366307532,
+              "plus": 0.001048352489681631
+            },
+            "anchored_prediction_pass": true,
+            "anchored_tolerance_kcal_mol": 0.02,
+            "curvature_even_error_kcal_mol": 0.0010777254631561956,
+            "curvature_even_tolerance_kcal_mol": 0.012715983031777624,
+            "curvature_pass": true,
+            "vacuum_gradient_pass": true,
+            "vacuum_gradient_residual_kcal_mol": 0.00017176135335233988,
+            "vacuum_gradient_tolerance_kcal_mol": 0.02
+          },
+          "La": {
+            "anchored_prediction_error_kcal_mol": {
+              "minus": -0.0015446118574699297,
+              "plus": -0.002717725377117619
+            },
+            "anchored_prediction_pass": true,
+            "anchored_tolerance_kcal_mol": 0.028985229133269806,
+            "curvature_even_error_kcal_mol": -0.0021311686172937744,
+            "curvature_even_tolerance_kcal_mol": 0.028985229133269806,
+            "curvature_pass": true,
+            "vacuum_gradient_pass": true,
+            "vacuum_gradient_residual_kcal_mol": 0.0002583880643197284,
+            "vacuum_gradient_tolerance_kcal_mol": 0.02
+          },
+          "R": {
+            "anchored_prediction_error_kcal_mol": {
+              "minus": 0.00265171029410069,
+              "plus": 0.0037660778667992292
+            },
+            "anchored_prediction_pass": true,
+            "anchored_tolerance_kcal_mol": 0.02,
+            "curvature_even_error_kcal_mol": 0.003208894080449977,
+            "curvature_even_tolerance_kcal_mol": 0.016269246101492184,
+            "curvature_pass": true,
+            "vacuum_gradient_pass": true,
+            "vacuum_gradient_residual_kcal_mol": -8.66267109673885e-05,
+            "vacuum_gradient_tolerance_kcal_mol": 0.02
+          }
+        },
+        "coordinate": "metal",
+        "coordinate_units": "angstrom",
+        "energy_units": "kcal_mol",
+        "projected_gradients": {
+          "Ca": {
+            "DFT_CPCM": 4.759926105567418,
+            "MACE_vacuum": 6.389598765576918
+          },
+          "La": {
+            "DFT_CPCM": 1.2863903067117028,
+            "MACE_vacuum": 2.9352084632841198
+          },
+          "R": {
+            "DFT_CPCM": 3.473535798855715,
+            "MACE_vacuum": 3.454390302292798
+          }
+        },
+        "representation": "connected",
+        "terms": {
+          "Ca": {
+            "DFT_CPCM": {
+              "even_kcal_mol": 0.050863932127110496,
+              "minus_change_kcal_mol": -0.04436396295771243,
+              "odd_kcal_mol": 0.09522789508482293,
+              "plus_change_kcal_mol": 0.14609182721193342,
+              "secant_curvature": 254.31966063555248,
+              "secant_gradient": 4.761394754241147
+            },
+            "GB_reaction": {
+              "even_kcal_mol": -0.005830687044703353,
+              "minus_change_kcal_mol": 0.09035388879205897,
+              "odd_kcal_mol": -0.09618457583676232,
+              "plus_change_kcal_mol": -0.10201526288146567,
+              "secant_curvature": -29.153435223516766,
+              "secant_gradient": -4.809228791838116
+            },
+            "MACE_plus_GB": {
+              "even_kcal_mol": 0.05194165759026669,
+              "minus_change_kcal_mol": 0.020162496762138313,
+              "odd_kcal_mol": 0.03177916082812838,
+              "plus_change_kcal_mol": 0.08372081841839507,
+              "secant_curvature": 259.70828795133343,
+              "secant_gradient": 1.5889580414064188
+            },
+            "MACE_short": {
+              "even_kcal_mol": 0.04270206015356835,
+              "minus_change_kcal_mol": -0.061772923181588744,
+              "odd_kcal_mol": 0.1044749833351571,
+              "plus_change_kcal_mol": 0.14717704348872546,
+              "secant_curvature": 213.51030076784176,
+              "secant_gradient": 5.223749166757855
+            },
+            "MACE_vacuum": {
+              "even_kcal_mol": 0.057772344634970045,
+              "minus_change_kcal_mol": -0.07019139202992065,
+              "odd_kcal_mol": 0.1279637366648907,
+              "plus_change_kcal_mol": 0.18573608129986074,
+              "secant_curvature": 288.8617231748502,
+              "secant_gradient": 6.398186833244535
+            }
+          },
+          "La": {
+            "DFT_CPCM": {
+              "even_kcal_mol": 0.11594091653307922,
+              "minus_change_kcal_mol": 0.08962655363902132,
+              "odd_kcal_mol": 0.026314362894057898,
+              "plus_change_kcal_mol": 0.14225527942713712,
+              "secant_curvature": 579.7045826653961,
+              "secant_gradient": 1.315718144702895
+            },
+            "GB_reaction": {
+              "even_kcal_mol": -0.011730608902547957,
+              "minus_change_kcal_mol": 0.06492218293765717,
+              "odd_kcal_mol": -0.07665279184020513,
+              "plus_change_kcal_mol": -0.08838340074275308,
+              "secant_curvature": -58.65304451273978,
+              "secant_gradient": -3.8326395920102563
+            },
+            "MACE_plus_GB": {
+              "even_kcal_mol": 0.11380974791578545,
+              "minus_change_kcal_mol": 0.13149998242598845,
+              "odd_kcal_mol": -0.017690234510203004,
+              "plus_change_kcal_mol": 0.09611951340558245,
+              "secant_curvature": 569.0487395789272,
+              "secant_gradient": -0.8845117255101502
+            },
+            "MACE_short": {
+              "even_kcal_mol": 0.09053631259768043,
+              "minus_change_kcal_mol": 0.014034189276959486,
+              "odd_kcal_mol": 0.07650212332072094,
+              "plus_change_kcal_mol": 0.16703843591840137,
+              "secant_curvature": 452.6815629884021,
+              "secant_gradient": 3.825106166036047
+            },
+            "MACE_vacuum": {
+              "even_kcal_mol": 0.12554035681833342,
+              "minus_change_kcal_mol": 0.06657779948833129,
+              "odd_kcal_mol": 0.05896255733000212,
+              "plus_change_kcal_mol": 0.18450291414833553,
+              "secant_curvature": 627.701784091667,
+              "secant_gradient": 2.948127866500106
+            }
+          },
+          "R": {
+            "DFT_CPCM": {
+              "even_kcal_mol": -0.06507698440596874,
+              "minus_change_kcal_mol": -0.13399051659673375,
+              "odd_kcal_mol": 0.06891353219076504,
+              "plus_change_kcal_mol": 0.003836547784796307,
+              "secant_curvature": -325.38492202984355,
+              "secant_gradient": 3.445676609538252
+            },
+            "GB_reaction": {
+              "even_kcal_mol": 0.005899921857844603,
+              "minus_change_kcal_mol": 0.025431705854401798,
+              "odd_kcal_mol": -0.019531783996557195,
+              "plus_change_kcal_mol": -0.013631862138712592,
+              "secant_curvature": 29.499609289223017,
+              "secant_gradient": -0.9765891998278597
+            },
+            "MACE_plus_GB": {
+              "even_kcal_mol": -0.06186809032551876,
+              "minus_change_kcal_mol": -0.11133748566385014,
+              "odd_kcal_mol": 0.04946939533833138,
+              "plus_change_kcal_mol": -0.012398694987187375,
+              "secant_curvature": -309.3404516275938,
+              "secant_gradient": 2.473469766916569
+            },
+            "MACE_short": {
+              "even_kcal_mol": -0.047834252444112074,
+              "minus_change_kcal_mol": -0.07580711245854824,
+              "odd_kcal_mol": 0.027972860014436163,
+              "plus_change_kcal_mol": -0.01986139242967591,
+              "secant_curvature": -239.17126222056035,
+              "secant_gradient": 1.3986430007218082
+            },
+            "MACE_vacuum": {
+              "even_kcal_mol": -0.06776801218336337,
+              "minus_change_kcal_mol": -0.13676919151825195,
+              "odd_kcal_mol": 0.06900117933488857,
+              "plus_change_kcal_mol": 0.0012331671515252163,
+              "secant_curvature": -338.8400609168168,
+              "secant_gradient": 3.450058966744429
+            }
+          }
+        }
+      },
+      {
+        "amplitude": 0.017453292519943295,
+        "checks": {
+          "Ca": {
+            "anchored_prediction_error_kcal_mol": {
+              "minus": -0.0012800325182308059,
+              "plus": -0.0016672819900693248
+            },
+            "anchored_prediction_pass": true,
+            "anchored_tolerance_kcal_mol": 0.02,
+            "curvature_even_error_kcal_mol": -0.0014736572541500653,
+            "curvature_even_tolerance_kcal_mol": 0.005,
+            "curvature_pass": true,
+            "vacuum_gradient_pass": true,
+            "vacuum_gradient_residual_kcal_mol": 0.00017018775881660897,
+            "vacuum_gradient_tolerance_kcal_mol": 0.02
+          },
+          "La": {
+            "anchored_prediction_error_kcal_mol": {
+              "minus": 0.0010942503098724243,
+              "plus": 0.00027749751672462297
+            },
+            "anchored_prediction_pass": true,
+            "anchored_tolerance_kcal_mol": 0.02,
+            "curvature_even_error_kcal_mol": 0.0006858739132985237,
+            "curvature_even_tolerance_kcal_mol": 0.005,
+            "curvature_pass": true,
+            "vacuum_gradient_pass": true,
+            "vacuum_gradient_residual_kcal_mol": 0.0005180045691841884,
+            "vacuum_gradient_tolerance_kcal_mol": 0.02
+          },
+          "R": {
+            "anchored_prediction_error_kcal_mol": {
+              "minus": -0.0023742828281032163,
+              "plus": -0.0019447795067939616
+            },
+            "anchored_prediction_pass": true,
+            "anchored_tolerance_kcal_mol": 0.02,
+            "curvature_even_error_kcal_mol": -0.002159531167448589,
+            "curvature_even_tolerance_kcal_mol": 0.005,
+            "curvature_pass": true,
+            "vacuum_gradient_pass": true,
+            "vacuum_gradient_residual_kcal_mol": -0.00034781681036755163,
+            "vacuum_gradient_tolerance_kcal_mol": 0.02
+          }
+        },
+        "coordinate": "peptide",
+        "coordinate_units": "radian",
+        "energy_units": "kcal_mol",
+        "projected_gradients": {
+          "Ca": {
+            "DFT_CPCM": -9.148245434470994,
+            "MACE_vacuum": -7.540930022707624
+          },
+          "La": {
+            "DFT_CPCM": -15.086492491487132,
+            "MACE_vacuum": -14.206442751143133
+          },
+          "R": {
+            "DFT_CPCM": 5.938247057016138,
+            "MACE_vacuum": 6.665512728435509
+          }
+        },
+        "representation": "connected",
+        "terms": {
+          "Ca": {
+            "DFT_CPCM": {
+              "even_kcal_mol": 0.009256304348456715,
+              "minus_change_kcal_mol": 0.16872968322459544,
+              "odd_kcal_mol": -0.15947337887613872,
+              "plus_change_kcal_mol": -0.15021707452768202,
+              "secant_curvature": 60.773309385510046,
+              "secant_gradient": -9.137151554293483
+            },
+            "GB_reaction": {
+              "even_kcal_mol": 8.197186853564631e-05,
+              "minus_change_kcal_mol": 0.014297883029719571,
+              "odd_kcal_mol": -0.014215911161183925,
+              "plus_change_kcal_mol": -0.014133939292648279,
+              "secant_curvature": 0.5381955411022952,
+              "secant_gradient": -0.8145117114687602
+            },
+            "MACE_plus_GB": {
+              "even_kcal_mol": 0.0077826470943066495,
+              "minus_change_kcal_mol": 0.15344242805541275,
+              "odd_kcal_mol": -0.1456597809611061,
+              "plus_change_kcal_mol": -0.13787713386679945,
+              "secant_curvature": 51.09784660218064,
+              "secant_gradient": -8.3456906938714
+            },
+            "MACE_short": {
+              "even_kcal_mol": 0.007518162156180841,
+              "minus_change_kcal_mol": 0.14446824364886868,
+              "odd_kcal_mol": -0.13695008149268784,
+              "plus_change_kcal_mol": -0.129431919336507,
+              "secant_curvature": 49.3613409334569,
+              "secant_gradient": -7.846661673503698
+            },
+            "MACE_vacuum": {
+              "even_kcal_mol": 0.007700675225770996,
+              "minus_change_kcal_mol": 0.13914454502569318,
+              "odd_kcal_mol": -0.13144386979992218,
+              "plus_change_kcal_mol": -0.12374319457415119,
+              "secant_curvature": 50.5596510610783,
+              "secant_gradient": -7.531178982402641
+            }
+          },
+          "La": {
+            "DFT_CPCM": {
+              "even_kcal_mol": -0.007299417772340472,
+              "minus_change_kcal_mol": 0.2556011723849387,
+              "odd_kcal_mol": -0.2629005901572792,
+              "plus_change_kcal_mol": -0.2702000079296196,
+              "secant_curvature": -47.92515002885576,
+              "secant_gradient": -15.063094247510689
+            },
+            "GB_reaction": {
+              "even_kcal_mol": -0.0012582489050370071,
+              "minus_change_kcal_mol": 0.015935024475560056,
+              "odd_kcal_mol": -0.017193273380597063,
+              "plus_change_kcal_mol": -0.01845152228563407,
+              "secant_curvature": -8.261174990701623,
+              "secant_gradient": -0.9851020007228368
+            },
+            "MACE_plus_GB": {
+              "even_kcal_mol": -0.006613543859041948,
+              "minus_change_kcal_mol": 0.25801092595590003,
+              "odd_kcal_mol": -0.264624469814942,
+              "plus_change_kcal_mol": -0.2712380136739839,
+              "secant_curvature": -43.421967553088166,
+              "secant_gradient": -15.161865276283224
+            },
+            "MACE_short": {
+              "even_kcal_mol": -0.004367505266680297,
+              "minus_change_kcal_mol": 0.22671323547346806,
+              "odd_kcal_mol": -0.23108074074014834,
+              "plus_change_kcal_mol": -0.23544824600682865,
+              "secant_curvature": -28.67534804633563,
+              "secant_gradient": -13.239951171167279
+            },
+            "MACE_vacuum": {
+              "even_kcal_mol": -0.005355294954004941,
+              "minus_change_kcal_mol": 0.24207590148033997,
+              "odd_kcal_mol": -0.2474311964343449,
+              "plus_change_kcal_mol": -0.25278649138834985,
+              "secant_curvature": -35.16079256238654,
+              "secant_gradient": -14.176763275560386
+            }
+          },
+          "R": {
+            "DFT_CPCM": {
+              "even_kcal_mol": 0.016555722120797187,
+              "minus_change_kcal_mol": -0.08687148916034323,
+              "odd_kcal_mol": 0.10342721128114046,
+              "plus_change_kcal_mol": 0.11998293340193761,
+              "secant_curvature": 108.6984594143658,
+              "secant_gradient": 5.9259426932172055
+            },
+            "GB_reaction": {
+              "even_kcal_mol": 0.0013402207735726535,
+              "minus_change_kcal_mol": -0.0016371414458404843,
+              "odd_kcal_mol": 0.0029773622194131377,
+              "plus_change_kcal_mol": 0.004317582992985791,
+              "secant_curvature": 8.799370531803918,
+              "secant_gradient": 0.1705902892540766
+            },
+            "MACE_plus_GB": {
+              "even_kcal_mol": 0.014396190953348598,
+              "minus_change_kcal_mol": -0.10456849790048728,
+              "odd_kcal_mol": 0.11896468885383588,
+              "plus_change_kcal_mol": 0.13336087980718447,
+              "secant_curvature": 94.5198141552688,
+              "secant_gradient": 6.816174582411824
+            },
+            "MACE_short": {
+              "even_kcal_mol": 0.011885667422861138,
+              "minus_change_kcal_mol": -0.08224499182459938,
+              "odd_kcal_mol": 0.0941306592474605,
+              "plus_change_kcal_mol": 0.10601632667032165,
+              "secant_curvature": 78.03668897979253,
+              "secant_gradient": 5.393289497663581
+            },
+            "MACE_vacuum": {
+              "even_kcal_mol": 0.013055970179775937,
+              "minus_change_kcal_mol": -0.1029313564546468,
+              "odd_kcal_mol": 0.11598732663442274,
+              "plus_change_kcal_mol": 0.12904329681419868,
+              "secant_curvature": 85.72044362346483,
+              "secant_gradient": 6.645584293157746
+            }
+          }
+        }
+      }
+    ]
+  },
+  "sources": {
+    "large": {
+      "DFT": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/report_v1/collection_c.json",
+        "sha256": "fc368b349175b46dabdbceec4e31a2fbb67255a4a1cd142c72d0d422863a234c"
+      },
+      "gb": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_curvature_20260916/gb_v1/large/collection_job_1200734.json",
+        "sha256": "be138c18fdc2c835b816ea02610f0354865320dafb2788725a2f121b7b1e065a"
+      },
+      "mace": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_curvature_20260916/mace_v1/large/collection_job_1200732.json",
+        "sha256": "58333820615f132fb8baa542214ff36b427bdc363f6904ee040b3a88f18b8de1"
+      }
+    },
+    "medium": {
+      "DFT": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/report_v1/collection_c.json",
+        "sha256": "fc368b349175b46dabdbceec4e31a2fbb67255a4a1cd142c72d0d422863a234c"
+      },
+      "gb": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_curvature_20260916/gb_v1/medium/collection_job_1200733.json",
+        "sha256": "149eb83861669bd6d7a20e9f66728debbc95f52afb4167af29ed3b14d168b706"
+      },
+      "mace": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_curvature_20260916/mace_v1/medium/collection_job_1200731.json",
+        "sha256": "e0a766b9f7177661b5057e02f80bb680115935508994e8ec5d49a553e8513746"
+      }
+    }
+  },
+  "status": "complete",
+  "tolerances": {
+    "anchored_absolute_kcal_mol": 0.02,
+    "anchored_relative_to_even": 0.25,
+    "curvature_even_absolute_kcal_mol": 0.005,
+    "curvature_even_relative": 0.25,
+    "total_charge_e": 1e-05,
+    "vacuum_odd_absolute_kcal_mol": 0.02,
+    "vacuum_odd_relative": 0.05
+  }
+}

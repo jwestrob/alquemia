@@ -823,3 +823,63 @@ Email remains an infrastructure issue: shell DNS resolves SMTP, but Postfix's
 queued test has DNS failure. Its configured credentials are not readable by
 this user. No credentials accessed, shared mail configuration altered, or
 repeat email submitted. Important notices cannot yet be claimed delivered.
+
+## 2026-09-16 — Global MACE fails ordering; DFT-anchored local curvature passes
+
+Active discriminator goal continues under Jacob's discretionary pilot approval.
+Baseline/default and all old references remain unchanged. No goal-completion
+claim or production promotion. All jobs in this entry are completed.
+
+Five-case whole-protein panel: 24 MACE + 24 GB calls (1200701/1200702,
+1200711/1200712). Both models reverse all three predeclared contrasts. Medium
+4MAE−1H4I and alpha1F6S/6IP9−GGR differences: −17.628168,−21.259552,−35.012731
+kcal/mol; large −62.449558,−57.155170,−72.726689. Numerical checks pass, predictive
+screen fails. Cost 1370 GPU-allocation s,21920 core-s,1475.483 actual CPU s.
+Canonical PQQ functional class and qualified cross-protein affinity directions
+remain distinct strata. Alpha structures are one biological group.
+
+Local decomposition: jobs1200717/1200719 completed20MACE+20GB,179GPU s,2864core-s,
+224.144actualCPU s. Archived vs global-H core mapping preserves all heavy atoms
+and artificial caps, uses identical paired coordinates. All10archivedDFT outputs
+verified. No matchingDFT at new H coordinates, hence no valid hybrid. Local PQQ
+ordering is correct; full−core contribution reverses it. Alpha is wrong locally
+and worsens with the full contribution. Scripts mace_local_correction.py and
+corresponding diagnostic folder contain exact mappings and results.
+
+Saved-only short-range descriptor: interaction_energy(Ca)−interaction_energy(La),
+verified against pinned MACE implementation and actual successful outputs. PQQ
+ordering passes both checkpoints, both alpha/GGR comparisons fail. No sign/weight
+fitting or threshold rescue; no new inference. Code mace_short_range.py and
+diagnostics/mace_short_range_20260916 preserve the failure.
+
+New declared structural-role test: reuse exact20 executed GGR StageC geometries
+and analyticDFT gradients; medium/large MACE+OBC-II as cheap directional curvature.
+Charges reevaluated at each displaced point; no claim that frozen-qGB forces are
+the combined gradient.40MACE+40GB calls,0newDFT, jobs1200731–1200734 all completed.
+Both checkpoints pass all frozen curvature/DFT-anchored-energy gates. Largest
+anchored error0.003766078/0.004461813kcal; largest even-term error0.003208894/
+0.003904629. NegativeLa peptide curvatures retained; 0.005kcal floor allows some
+relative errors >25%. One source/two representations/two directions is narrow
+mechanical evidence, not independent biological validation or a stable Hessian.
+First derivatives can disagree in sign, supporting the DFT anchor requirement.
+Relaxation/entropy remain null, response_model_not_validated.
+
+Curvature costs:377allocatedGPU s,6032core-s,473.063actualCPU s. Medium/large
+actual inference totals26.613082/45.962509s; startup dominates small-core runs.
+No failed inference. One premature collection read failed before preparation
+and was repeated after completion. Preparation/engineering time not fully timed.
+Code scripts/mace_curvature.py; plans, exact commands, receipts/results and costs
+in diagnostics/mace_curvature_20260916 and its workspace.
+
+Verification: global6tests pass19.203s; local4pass4.299s; saved-component1pass
+0.167s; curvature5pass3.145s, all using real pinned artifacts. Python compile and
+git diff whitespace checks pass. XYZ comment now generic; old mislabeled
+comments remain immutable and manifests/actual physical identities were correct.
+Agent guide and vault updated. Mail notification remains blocked by Postfix
+SMTP DNS failure; no delivery claimed or shared configuration modified.
+
+Next under active goal: finalize a concrete coupled-coordinate and alpha-transfer
+curvature experiment, then validate a bounded response prediction before enabling
+a correction. No new DFT/next-stage manifest launched at this checkpoint. Do not
+stop at this promising intermediate result or reinterpret direct-score failures
+as successes. Preserve all baseline/other-agent changes.

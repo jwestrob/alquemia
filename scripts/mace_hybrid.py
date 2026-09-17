@@ -38,7 +38,7 @@ def rotation():
 
 def write_xyz(path, atoms):
     with Path(path).open('x') as f:
-        f.write(f'{len(atoms)}\nPinned real 1H4I geometry; opt-in MACE pilot\n')
+        f.write(f'{len(atoms)}\nPinned real geometry; identity recorded in the MACE manifest\n')
         for a in atoms:
             f.write(a[0] + ' ' + ' '.join(format(v, '.17g') for v in a[1:]) + '\n')
 
@@ -159,6 +159,12 @@ def prepare(root, software, output, agreement):
 
 
 def dry_run(manifest):
+    if read_json(manifest).get('schema_version') in ('alquemia.mace_curvature.v1', 'alquemia.mace_curvature_gb.v1'):
+        from mace_curvature import validate
+        return validate(manifest)
+    if read_json(manifest).get('schema_version') in ('alquemia.mace_local_correction.v1', 'alquemia.mace_local_gb.v1'):
+        from mace_local_correction import validate
+        return validate(manifest)
     if read_json(manifest).get('schema_version') in ('alquemia.mace_global_benchmark.v1', 'alquemia.mace_global_gb.v1'):
         from mace_global_benchmark import validate
         return validate(manifest)
@@ -237,7 +243,7 @@ def repair_interface(manifest, output, pair_tile=None, memory_agreement=None, re
 
 
 def worker(manifest, task_id, output, memory_mode):
-    if read_json(manifest).get('schema_version') in ('alquemia.mace_gb.v1', 'alquemia.mace_global_gb.v1'):
+    if read_json(manifest).get('schema_version') in ('alquemia.mace_gb.v1', 'alquemia.mace_global_gb.v1', 'alquemia.mace_local_gb.v1', 'alquemia.mace_curvature_gb.v1'):
         from mace_gb import worker as gb_worker
         return gb_worker(manifest, task_id, output, memory_mode)
     import torch
@@ -312,7 +318,7 @@ def worker(manifest, task_id, output, memory_mode):
         if m.get('schema_version') == 'alquemia.mace_rotation.v1':
             from mace_rotation import probe
             result['rotation_probe'] = probe(calc, m, t, output)
-        if m.get('schema_version') in ('alquemia.mace_rotation.v1', 'alquemia.mace_analytic.v1', 'alquemia.mace_response_trace.v1', 'alquemia.mace_hydrogen.v1', 'alquemia.mace_global_benchmark.v1'):
+        if m.get('schema_version') in ('alquemia.mace_rotation.v1', 'alquemia.mace_analytic.v1', 'alquemia.mace_response_trace.v1', 'alquemia.mace_hydrogen.v1', 'alquemia.mace_global_benchmark.v1', 'alquemia.mace_local_correction.v1', 'alquemia.mace_curvature.v1'):
             result['energy_components_eV'] = {key: float(calc.results[key]) for key in
                 ('interaction_energy', 'electrostatic_energy', 'electron_energy')}
     except Exception as exc:
@@ -442,6 +448,12 @@ def compare_cores(manifest):
 
 
 def collect(manifest):
+    if read_json(manifest).get('schema_version') in ('alquemia.mace_curvature.v1', 'alquemia.mace_curvature_gb.v1'):
+        from mace_curvature import collect_curvature
+        return collect_curvature(manifest)
+    if read_json(manifest).get('schema_version') in ('alquemia.mace_local_correction.v1', 'alquemia.mace_local_gb.v1'):
+        from mace_local_correction import collect_local
+        return collect_local(manifest)
     if read_json(manifest).get('schema_version') in ('alquemia.mace_global_benchmark.v1', 'alquemia.mace_global_gb.v1'):
         from mace_global_benchmark import collect_global
         return collect_global(manifest)

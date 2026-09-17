@@ -9,7 +9,7 @@ import numpy as np
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 from affordable_common import InvalidArtifact,read_json,verify,xyz
 from mace_global_prepare import CASES,terminal_position
-from mace_global_benchmark import physical_preparations,validate,collect_global
+from mace_global_benchmark import physical_preparations,validate,collect_global,compare_report
 from mace_hybrid import rotation
 PREP=ROOT/'workspaces/mace_global_benchmark_20260916/prepared_v1/preparation_manifest.json'
 MANIFEST=ROOT/'workspaces/mace_global_benchmark_20260916/mace_v1/medium/manifest.json'
@@ -88,6 +88,20 @@ class GlobalPreparationTests(unittest.TestCase):
             self.assertTrue(all(s['R_kcal_mol'] is None for s in c['scores'].values()))
             altered=copy.deepcopy(m);altered['tasks'][0]['charge']+=1;p.write_text(json.dumps(altered))
             with self.assertRaises(InvalidArtifact):validate(p)
+
+    def test_actual_completed_failure_cannot_become_success_in_reporting(self):
+        medium=ROOT/'workspaces/mace_global_benchmark_20260916/gb_v1/medium/collection_job_1200711.json'
+        large=ROOT/'workspaces/mace_global_benchmark_20260916/gb_v1/large/collection_job_1200712.json'
+        if not medium.exists() or not large.exists():self.skipTest('requires actually completed global GB panel')
+        with tempfile.TemporaryDirectory() as folder:
+            r=compare_report(medium,large,Path(folder)/'report')
+            d=read_json(verify(r['comparison']))
+            self.assertFalse(d['primary_candidate_ordering_screen_pass'])
+            self.assertEqual(d['numerical_checks'],{'medium':True,'large':True})
+            self.assertAlmostEqual(d['contrasts']['medium'][0]['difference_kcal_mol'],-17.628167761780787,places=8)
+            self.assertTrue(all(c['expected_order'] is False for cs in d['contrasts'].values() for c in cs))
+            self.assertIsNone(d['calibrated_class']);self.assertFalse(d['goal_completion_claimed'])
+            with self.assertRaises(InvalidArtifact):compare_report(large,medium,Path(folder)/'swapped')
 
 
 if __name__=='__main__':unittest.main()

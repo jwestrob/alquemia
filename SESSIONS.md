@@ -768,3 +768,58 @@ MACE/DFT. Generic metal cavity assumption explicitly unvalidated, no automatic
 class/ref or corrected gradient. Not yet implemented/submitted at this entry.
 Baseline unchanged. No live MACE jobs at this checkpoint. Continue goal;
 these intermediate outcomes do not complete it. Vault and agent guide updated.
+
+## 2026-09-16 — Frozen-solvent descriptor works numerically; five-protein MACE panel running
+
+Active goal continues under Jacob's full discretionary pilot authorization.
+Baseline/default unchanged. New frozen-monopole OBC-II descriptor uses saved
+MACE densities and only the solvent reaction energy, with no duplicate vacuum
+Coulomb or CPCM. Code: scripts/mace_gb.py, existing mace_hybrid runner dispatch.
+Protocol mace_frozen_monopole_obc2_v1; S/class/combined gradient remain null.
+
+Job1200695 completed four real native/custom Reference core checks, then
+failed at the first CUDA context before an energy: installed Conda OpenMM8.5.1
+links CUDA13.2 against the node's570.195.03 driver. Isolated workspace venv
+uses the same OpenMM8.5.1 official wheels with CUDA12.8; shared env unchanged.
+Job1200700 completed19/19 checks. Identity zero; rigid/CPU-GPU/native-custom
+checks pass. Disagreement medium vs large falls923.916846→106.383026kcal/mol.
+Medium correction−84.055059, large−901.588879kcal/mol. Residual remains large;
+no predictive claim yet. Warm full GB≈0.09s; Reference4.903s. Total both jobs:
+54GPU-allocation seconds,864allocated core-seconds,64.419actual CPU seconds;
+23completed solvent calls,onefailed context,zeroMACE/DFT endpoint calls.
+Install/preparation time not fully profiled; solver-worker GPU memory unavailable.
+Records: diagnostics/mace_gb_20260916/{PLAN,CUDA_REPAIR,REPORT,COMMANDS}.md.
+
+Declared next panel before its outputs: five full-chain preparations from the
+pinned accuracy inventory (GGR1GLG,alpha1F6S/6IP9,canonical1H4I/4MAE). Whole
+chainA plus frozen PQQ and only existing site waters. No caps. Preserve source
+heavy coordinates; complete missing terminalOXT only on1H4I/4MAE with declared
+ff19SB geometry,54.95/42.46A from metal. Radial protein-H projection as before.
+Read-only water audit found retained alpha O-H1.163–1.190A; pre-scoring scope
+amendment fixes them radially to TIP3P0.9572A, preserving O, direction, angle,
+identity/count and protonation. No original baseline coordinates modified.
+
+All5 preparations pass topology/parity/paired-source checks. Atom counts
+4698/1932/1898/9088/8854 for GGR/1F6S/6IP9/1H4I/4MAE; totalLa charges
+−3/−4/−4/−9/−3, Ca one lower. Preparation15.033wall/14.967CPU seconds.
+Implementation and all old source hashes preserved under prepared_v1.
+New scripts mace_global_prepare.py / mace_global_benchmark.py reuse the runner.
+Medium14calls includes GGR/4MAE rotations; large10primary calls. Jobs1200701
+and1200702 are currently running concurrently on separate A5000 allocations,
+16CPU/64474MiB each. No DFT. Finish and collect them, then prepare/run declared
+14+10GB calls using the passed solver build. Exact commands/scientific criteria
+in diagnostics/mace_global_benchmark_20260916/{PLAN,COMMANDS}.md. Compare
+4MAE−1H4I and each alpha−GGR; all are consumed development, alpha one biological
+group. Medium+GB is predeclared primary; large is model sensitivity. No fitted
+threshold, aquo gauge or absolute class. Passing this screen is not goal completion.
+
+55-test MACE regression:54passed,1OpenMM-dependent skip,70.578s. The skipped
+force-group test passed in the solver environment; its expanded five-test
+suite includes actual archived GB signs/units/results and passes4.122s.
+Five real whole-protein preparation tests pass11.434s. New compare reporting
+code will be exercised when complete solvent collections exist.
+
+Email remains an infrastructure issue: shell DNS resolves SMTP, but Postfix's
+queued test has DNS failure. Its configured credentials are not readable by
+this user. No credentials accessed, shared mail configuration altered, or
+repeat email submitted. Important notices cannot yet be claimed delivered.

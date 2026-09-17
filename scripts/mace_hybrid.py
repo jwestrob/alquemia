@@ -159,6 +159,12 @@ def prepare(root, software, output, agreement):
 
 
 def dry_run(manifest):
+    if read_json(manifest).get('schema_version') in ('alquemia.mace_global_benchmark.v1', 'alquemia.mace_global_gb.v1'):
+        from mace_global_benchmark import validate
+        return validate(manifest)
+    if read_json(manifest).get('schema_version') == 'alquemia.mace_gb.v1':
+        from mace_gb import validate
+        return validate(manifest)
     m = read_json(manifest); sm = read_json(verify(m['software']))
     for ref in [m['agreement'], m['archived_endpoints'], m['atom_mappings'], *m['source_states'],
                 *m['implementation'].values(), sm['checkpoint'], sm['python'], sm['requirements'], sm['backend_source_inventory']]:
@@ -231,6 +237,9 @@ def repair_interface(manifest, output, pair_tile=None, memory_agreement=None, re
 
 
 def worker(manifest, task_id, output, memory_mode):
+    if read_json(manifest).get('schema_version') in ('alquemia.mace_gb.v1', 'alquemia.mace_global_gb.v1'):
+        from mace_gb import worker as gb_worker
+        return gb_worker(manifest, task_id, output, memory_mode)
     import torch
     from ase import Atoms
     from mace.calculators import mace_polar
@@ -303,7 +312,7 @@ def worker(manifest, task_id, output, memory_mode):
         if m.get('schema_version') == 'alquemia.mace_rotation.v1':
             from mace_rotation import probe
             result['rotation_probe'] = probe(calc, m, t, output)
-        if m.get('schema_version') in ('alquemia.mace_rotation.v1', 'alquemia.mace_analytic.v1', 'alquemia.mace_response_trace.v1', 'alquemia.mace_hydrogen.v1'):
+        if m.get('schema_version') in ('alquemia.mace_rotation.v1', 'alquemia.mace_analytic.v1', 'alquemia.mace_response_trace.v1', 'alquemia.mace_hydrogen.v1', 'alquemia.mace_global_benchmark.v1'):
             result['energy_components_eV'] = {key: float(calc.results[key]) for key in
                 ('interaction_energy', 'electrostatic_energy', 'electron_energy')}
     except Exception as exc:
@@ -351,8 +360,15 @@ def execute(manifest, memory_mode, selected=None):
         for t in m['tasks']:
             if t['task_id'] not in selected:
                 continue
+            if t['kind'] == 'full' and m.get('schema_version') == 'alquemia.mace_gb.v1':
+                from mace_gb import core_gate
+                if core_gate(mp)['status'] != 'pass':
+                    raise InvalidArtifact('full GB execution requires native/custom core agreement')
             if t['kind'] == 'full' and m['model'].get('pair_kernel'):
-                if m.get('schema_version') == 'alquemia.mace_hydrogen.v1':
+                if m.get('schema_version') == 'alquemia.mace_global_benchmark.v1':
+                    from mace_global_benchmark import numerical_parent_gate
+                    validation = numerical_parent_gate(m)
+                elif m.get('schema_version') == 'alquemia.mace_hydrogen.v1':
                     from mace_hydrogen import validate
                     validation = validate(m)
                 elif m.get('schema_version') == 'alquemia.mace_response_trace.v1':
@@ -426,6 +442,12 @@ def compare_cores(manifest):
 
 
 def collect(manifest):
+    if read_json(manifest).get('schema_version') in ('alquemia.mace_global_benchmark.v1', 'alquemia.mace_global_gb.v1'):
+        from mace_global_benchmark import collect_global
+        return collect_global(manifest)
+    if read_json(manifest).get('schema_version') == 'alquemia.mace_gb.v1':
+        from mace_gb import collect_gb
+        return collect_gb(manifest)
     dry_run(manifest); mp = Path(manifest).resolve(); m = read_json(mp)
     if m.get('schema_version') == 'alquemia.mace_hydrogen.v1':
         from mace_hydrogen import collect_hydrogen
@@ -516,6 +538,9 @@ def collect(manifest):
 
 def report(collection, output):
     c = read_json(collection)
+    if c.get('protocol_id') == 'mace_frozen_monopole_obc2_v1':
+        from mace_gb import report_gb
+        return report_gb(collection, output)
     if c.get('protocol_id') == 'mace_polar_1m_realspace_rotation_attribution_v1':
         from mace_rotation import report_rotation
         return report_rotation(collection, output)

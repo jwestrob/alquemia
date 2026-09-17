@@ -1243,3 +1243,53 @@ with --collection workspaces/mace_omol_20260917/intact_benchmark_v1/collection_j
 are frozen in the adjacent inventory. Do not edit reporting source during run.
 Report all three relative comparisons, missing endpoints and actual costs; no
 score-dependent changes or production promotion. Goal ACTIVE.
+
+
+## Intact OMOL passes the three development comparisons — 2026-09-17
+
+Benchmark1200815 completed eight endpoints then PQQ OOM; unchanged-manifest
+allocator recovery1200816 completed the other eight, preserving/reusing all
+prior attempts. All16 accounting checks pass (max2.15e-8kcal/mol). Frozen-source
+final report completed and independently reverified actual receipts: all three
+predeclared relative criteria pass. R_coord: GGR62.714844813, alpha1F6S99.868407432,
+alpha6IP990.803132693, MxaF101.614125678, XoxF110.647960039kcal/mol. Margins are
++37.153562619/+28.088287880 for alpha−GGR and+9.033834361 for XoxF−MxaF.
+This improves both failed primary core alpha/GGR directions. All cases consumed;
+alpha forms are one qualified biological comparison, PQQ functional class is
+separate. No absolute bands, broad validation, solvent/entropy or promotion.
+Baseline and prior outputs unchanged; physical cause not isolated because
+whole context and total-charge conditioning changed together.
+
+Report diagnostics/mace_omol_20260917/INTACT_REPORT.md; unrounded/full records
+workspaces/mace_omol_20260917/intact_report_v1. Benchmark jobs cost1387GPU-s,
+22192allocatedcore-s,986.322actualCPU-s including oneOOM. PQQ inference ~26s
+per endpoint/21.72GB peak. Final report verification803.92wall/485.49CPU seconds:
+recursive provenance overhead still needs improvement for routine use.
+
+New exact native product-block atom batching adapter:8realcorecalls1200817,
+20checks pass exactly at32/1024atom batches. Full14-call qualification1200818
+RUNNING; manifestSHA6ece3a194ab1e88cbefab44d62c3fee39cde7bdf98e6594caf4fcc5952f4f2eb.
+It retains the qualified1024edge adapter and every original atom/weight/state.
+Full native comparison must pass before scientific use. Use the already frozen
+product_reporting_source_v1 implementation and command in INTACT_COMMANDS.md.
+Native H2001200809 remains queued; no interference/cancellation.
+
+Cumulative completed engineering+benchmark+product-core checkpoint:68successes,
+2OOMs,2007GPU-s,95344allocatedcore-s,19534.325actualCPU-s. Local preparation/
+report receipts separate, other local work not fully profiled. Zero newDFT/
+solver/training/forces. Seven edge/product tests pass42.487s; six original
+OMOL tests pass17.975s. Actual tests use real pinned receipts, no synthetic data.
+
+Canonical readiness inventory:28sources,27 matched protein templates,1KB0
+missing terminalOXT explicitly unsupported by old helper. Four of25calibration
+protein charges outside reported training range; retain actualcharges andflag
+extrapolation. New INTACT_CANONICAL_PLAN.md declares all25calibration+3consumed
+transfers,26newwholepreparations,at most104newcalls and8explicitendpointreuses,
+only after product memory qualification. No new canonical inference yet.
+Next implement the declared general terminal connectivity policy/new preparation
+and canonical runner; do not invent neutralized charges or exclude bad scores.
+
+Current pipeline guide also had a residual per-analysis approval sentence; it
+now matches home/project AGENTS and Jacob's explicit blanket authority. Vault
+updated. Local mailer accepted20260917T111254Z_intact_development_pass notification.
+Goal ACTIVE; this promising development candidate is not broad goal completion.

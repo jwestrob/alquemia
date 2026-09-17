@@ -22,7 +22,7 @@ def compare(native_collection,edge_collection):
         native,nm=native_qualified(native_collection,'intact_qualification');native_inputs=native['manifest']
     saved=read_json(edge_collection);mp=verify(saved['manifest']);m=read_json(mp)
     validate(mp);edge=collect(mp)
-    if saved!=edge or m['stage']!='edge_intact' or not edge['numerical_gate_pass']:
+    if saved!=edge or m['stage'] not in ('edge_intact','product_intact') or not edge['numerical_gate_pass']:
         raise InvalidArtifact('actual passing batched intact qualification required')
     if m['intact_manifest']!=native_inputs or set(edge['rows'])!=set(native['rows']):
         raise InvalidArtifact('native/adapter inputs do not match')

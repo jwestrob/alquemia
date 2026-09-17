@@ -1,0 +1,158 @@
+{
+  "agreement": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/mace_omol_20260917/INTACT_BATCHED_CONTINUATION.md",
+    "sha256": "9a5d7cafcc7680abf5a09f3ea3daef6a2b557c305f468fda42b0bd261d568499"
+  },
+  "baseline_changed": false,
+  "binding_free_energy_kcal_mol": null,
+  "broad_affinity_validated": false,
+  "calibration": null,
+  "collection": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/intact_benchmark_v1/collection_job_1200816.json",
+    "sha256": "e3d227c5826d110ef152788e68b6145684787b1e47edd52b3aa5108c1ecbb718"
+  },
+  "contrasts": [
+    {
+      "delta_R_kcal_mol": 9.033834361324935,
+      "evidence_stratum": "PQQ_functional_class",
+      "negative_case": "PQQ_1H4I",
+      "pass": true,
+      "positive_case": "PQQ_4MAE",
+      "required_min_kcal_mol": 0.02
+    },
+    {
+      "delta_R_kcal_mol": 37.15356261938154,
+      "evidence_stratum": "qualified_affinity_order",
+      "negative_case": "GGR_1GLG",
+      "pass": true,
+      "positive_case": "ALPHA_1F6S",
+      "required_min_kcal_mol": 0.02
+    },
+    {
+      "delta_R_kcal_mol": 28.088287879827995,
+      "evidence_stratum": "qualified_affinity_order",
+      "negative_case": "GGR_1GLG",
+      "pass": true,
+      "positive_case": "ALPHA_6IP9",
+      "required_min_kcal_mol": 0.02
+    }
+  ],
+  "energy_evaluation": {
+    "compute_force": false,
+    "detached_offset_A": 30.0,
+    "farther_offset_A": 10.0,
+    "forces_status": "not_requested",
+    "forward": "native_ScaleShiftMACE",
+    "native_atomic_reference": "single_omol_head",
+    "precision": "float64",
+    "torch_gradient_mode": "no_grad"
+  },
+  "evidence_use": "consumed_retrospective_development",
+  "force_validation_status": "not_requested_energy_only",
+  "formula": "(E_bound_Ca-E_detached_Ca)-(E_bound_La-E_detached_La)",
+  "independent_affinity_pairs": 1,
+  "numerical_gate_pass": true,
+  "physical_preparation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_global_benchmark_20260916/prepared_v1/preparation_manifest.json",
+    "sha256": "63d6a44fbef3a1dc888696bba5d122ac3531fe12ceee4ee03a85194f768b0552"
+  },
+  "predictive_development_gate_pass": true,
+  "protocol_id": "mace_omol_intact_chain_matched_coordination_v1",
+  "reference": null,
+  "report_implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/intact_report_v1/mace_omol_intact_report.py",
+    "sha256": "1584d7074ff88af2eddf4a058cf0154f1e6544520e274cd6463d2280ea615585"
+  },
+  "solvent_correction_kcal_mol": null,
+  "status": "complete",
+  "unavailable_score_count": 0,
+  "full_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/intact_report_v1/result.json",
+    "sha256": "7fdf787ccd81eeea798ad96f77d0febedb3d253b99b968dc8fa0c661b37ded82"
+  },
+  "scores": {
+    "ALPHA_1F6S": {
+      "case_id": "ALPHA_1F6S",
+      "status": "computed",
+      "R_coord_kcal_mol": 99.86840743209439,
+      "atoms": 1932,
+      "evidence": {
+        "direction": "La",
+        "evidence_stratum": "qualified_qualitative_strong_site_affinity",
+        "group": "bovine_alpha"
+      },
+      "assembly": "deposited_chain_A_with_declared_cofactor_and_site_waters",
+      "biological_group": "ALPHA",
+      "calibrated_class": null,
+      "decision_status": "no_absolute_calibration"
+    },
+    "ALPHA_6IP9": {
+      "case_id": "ALPHA_6IP9",
+      "status": "computed",
+      "R_coord_kcal_mol": 90.80313269254084,
+      "atoms": 1898,
+      "evidence": {
+        "direction": "La",
+        "evidence_stratum": "qualified_qualitative_strong_site_affinity",
+        "group": "bovine_alpha"
+      },
+      "assembly": "deposited_chain_A_with_declared_cofactor_and_site_waters",
+      "biological_group": "ALPHA",
+      "calibrated_class": null,
+      "decision_status": "no_absolute_calibration"
+    },
+    "GGR_1GLG": {
+      "case_id": "GGR_1GLG",
+      "status": "computed",
+      "R_coord_kcal_mol": 62.71484481271285,
+      "atoms": 4698,
+      "evidence": {
+        "direction": "Ca",
+        "evidence_stratum": "direct_same_assay_affinity",
+        "group": "GGR"
+      },
+      "assembly": "deposited_chain_A_with_declared_cofactor_and_site_waters",
+      "biological_group": "GGR_1GLG",
+      "calibrated_class": null,
+      "decision_status": "no_absolute_calibration"
+    },
+    "PQQ_1H4I": {
+      "case_id": "PQQ_1H4I",
+      "status": "computed",
+      "R_coord_kcal_mol": 101.61412567754543,
+      "atoms": 9088,
+      "evidence": {
+        "direction": "Ca",
+        "evidence_stratum": "canonical_PQQ_functional_metal_association",
+        "group": "MxaF"
+      },
+      "assembly": "deposited_chain_A_with_declared_cofactor_and_site_waters",
+      "biological_group": "PQQ_1H4I",
+      "calibrated_class": null,
+      "decision_status": "no_absolute_calibration"
+    },
+    "PQQ_4MAE": {
+      "case_id": "PQQ_4MAE",
+      "status": "computed",
+      "R_coord_kcal_mol": 110.64796003887037,
+      "atoms": 8854,
+      "evidence": {
+        "direction": "La",
+        "evidence_stratum": "canonical_PQQ_functional_metal_association",
+        "group": "XoxF"
+      },
+      "assembly": "deposited_chain_A_with_declared_cofactor_and_site_waters",
+      "biological_group": "PQQ_4MAE",
+      "calibrated_class": null,
+      "decision_status": "no_absolute_calibration"
+    }
+  },
+  "checkpoint": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/software_v1/MACE-omol-0-extra-large-1024.model",
+    "sha256": "9b64b4fd5153ca578c694abc57806d8111050de6ff652e695c9b525bc4d36469"
+  },
+  "cost_checkpoint": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/intact_engineering_status_v3.json",
+    "sha256": "69ce13fb86c84d4a97cc7d05dd5dcce0ce0a632dc6351adba0193c5244f1971d"
+  }
+}

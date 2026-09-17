@@ -229,7 +229,7 @@ def collect(manifest):
         for case in ('1H4I','4MAE'):
             error=errors[case+'_Ca']-errors[case+'_La']
             checks.append({'name':case+'_paired_R_bridge','error_kcal_mol':error,'pass':abs(error)<=TOL['energy_kcal_mol']})
-    if complete and m['stage'] in ('intact_qualification','edge_intact','cpu_intact'):
+    if complete and m['stage'] in ('intact_qualification','edge_intact','cpu_intact','product_intact'):
         def value(metal,position,variant):return rows[f'ALPHA_1F6S_{metal}_{position}_{variant}']['energy_eV']
         errors={}
         for variant in ('repeat','rotate','farther'):

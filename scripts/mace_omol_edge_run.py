@@ -7,6 +7,7 @@ from pathlib import Path
 from affordable_common import InvalidArtifact,cache_key,read_json,record,verify
 from mace_hybrid import EV_TO_KCAL
 from mace_omol_edges import ADAPTER
+from mace_omol_products import ADAPTER as PRODUCT_ADAPTER
 from mace_omol_intact import qualified as native_qualified,validate as native_validate,collect as native_collect
 from mace_file_checks import cached_file_checks
 
@@ -14,11 +15,22 @@ PROTOCOL='mace_omol_exact_edge_qualification_v1'
 CONFIG={'id':ADAPTER,'edge_order':'original','allowed_chunk_sizes':[1024,2048],'gradients':False}
 CPU_PROTOCOL='mace_omol_native_cpu_qualification_v1'
 CPU_CONFIG={'id':'native_ScaleShiftMACE_CPU_float64','execution_adapter':None,'gradients':False}
+PRODUCT_PROTOCOL='mace_omol_exact_product_qualification_v1'
+PRODUCT_CONFIG={'id':PRODUCT_ADAPTER,'edge_order':'original','edge_chunk_size':1024,
+                'atom_order':'original','allowed_product_chunk_sizes':[32,1024],'gradients':False}
+CONFIGS={'edge':CONFIG,'cpu':CPU_CONFIG,'product':PRODUCT_CONFIG}
+PROTOCOLS={'edge':PROTOCOL,'cpu':CPU_PROTOCOL,'product':PRODUCT_PROTOCOL}
+
+
+def chunk_sizes(stage):
+    if stage.startswith('cpu_'):return (None,)
+    if not stage.endswith('_core'):return (1024,)
+    return (32,1024) if stage.startswith('product_') else (1024,2048)
 
 
 def qualified(path):
     c=read_json(path);mp=verify(c['manifest']);m=read_json(mp)
-    if m['stage'] not in ('edge_core','cpu_core'):raise InvalidArtifact('exact core qualification required')
+    if m['stage'] not in ('edge_core','cpu_core','product_core'):raise InvalidArtifact('exact core qualification required')
     validate(mp);actual=collect(mp)
     if c!=actual or not c['numerical_gate_pass']:raise InvalidArtifact('edge core equivalence did not pass')
     return c,m
@@ -26,14 +38,15 @@ def qualified(path):
 
 def tasks(native,stage):
     result=[]
-    cpu=stage.startswith('cpu_')
-    for chunk in ((None,) if cpu else (1024,2048) if stage=='edge_core' else (1024,)):
+    cpu=stage.startswith('cpu_');product=stage.startswith('product_')
+    for chunk in chunk_sizes(stage):
         for old in native['tasks']:
             t=copy.deepcopy(old);t.pop('cache_key',None)
             t['reference_task_id']=old['task_id']
             if cpu:t['execution_device']='cpu'
+            elif product:t['edge_adapter']={'id':PRODUCT_ADAPTER,'chunk_size':1024,'product_chunk_size':chunk}
             else:t['edge_adapter']={'id':ADAPTER,'chunk_size':chunk}
-            if stage.endswith('_core'):t['task_id']=old['task_id']+('_cpu' if cpu else '_chunk_'+str(chunk))
+            if stage.endswith('_core'):t['task_id']=old['task_id']+('_cpu' if cpu else ('_product_' if product else '_chunk_')+str(chunk))
             result.append(t)
     return result
 
@@ -44,13 +57,13 @@ def prepare(native_core_collection,intact_manifest,agreement,output,edge_qualifi
     _,core=native_qualified(native_core_collection,'intact_core')
     native_validate(intact_manifest);full=read_json(intact_manifest)
     if full['core_qualification']!=record(native_core_collection):raise InvalidArtifact('intact source used another native bridge')
-    if backend not in ('edge','cpu'):raise InvalidArtifact('unsupported engineering backend')
+    if backend not in CONFIGS:raise InvalidArtifact('unsupported engineering backend')
     stage=backend+('_intact' if edge_qualification else '_core');cpu=backend=='cpu'
     _,out,m=common(verify(core['inventory']),verify(core['software']),agreement,output,stage)
-    m.update(protocol_id=CPU_PROTOCOL if cpu else PROTOCOL,adapter=CPU_CONFIG if cpu else CONFIG,native_core_collection=record(native_core_collection),
+    m.update(protocol_id=PROTOCOLS[backend],adapter=CONFIGS[backend],native_core_collection=record(native_core_collection),
              intact_manifest=record(intact_manifest),edge_qualification=record(edge_qualification) if edge_qualification else None)
     if cpu:m['model']['execution_device']='cpu'
-    else:m['model']['execution_adapter']=CONFIG
+    else:m['model']['execution_adapter']=CONFIGS[backend]
     if edge_qualification:
         _,parent=qualified(edge_qualification)
         if (parent['native_core_collection']!=m['native_core_collection'] or parent['intact_manifest']!=m['intact_manifest']
@@ -64,9 +77,9 @@ def prepare(native_core_collection,intact_manifest,agreement,output,edge_qualifi
 def validate(manifest):
     from mace_omol import SCHEMA,TOL,model
     m=read_json(manifest)
-    cpu=m['stage'].startswith('cpu_');config=CPU_CONFIG if cpu else CONFIG
-    if (m['schema_version']!=SCHEMA or m['protocol_id']!=(CPU_PROTOCOL if cpu else PROTOCOL) or m['adapter']!=config
-            or m['stage'] not in ('edge_core','edge_intact','cpu_core','cpu_intact') or m['tolerances']!=TOL or m['reused']):
+    backend=m['stage'].split('_')[0];cpu=backend=='cpu';config=CONFIGS.get(backend)
+    if (m['schema_version']!=SCHEMA or m['protocol_id']!=PROTOCOLS.get(backend) or m['adapter']!=config
+            or m['stage'] not in ('edge_core','edge_intact','cpu_core','cpu_intact','product_core','product_intact') or m['tolerances']!=TOL or m['reused']):
         raise InvalidArtifact('edge engineering definition changed')
     _,core=native_qualified(verify(m['native_core_collection']),'intact_core')
     fullpath=verify(m['intact_manifest']);native_validate(fullpath);full=read_json(fullpath)
@@ -74,7 +87,7 @@ def validate(manifest):
         raise InvalidArtifact('wrong native intact source')
     expected_model=model(verify(core['software']))
     if cpu:expected_model['execution_device']='cpu'
-    else:expected_model['execution_adapter']=CONFIG
+    else:expected_model['execution_adapter']=config
     if m['model']!=expected_model or m['software']!=core['software'] or m['inventory']!=core['inventory']:
         raise InvalidArtifact('edge adapter changed native scientific model/source')
     verify(m['agreement'])
@@ -82,7 +95,7 @@ def validate(manifest):
     if m['stage'].endswith('_intact'):
         _,parent=qualified(verify(m['edge_qualification']))
         if (parent['native_core_collection']!=m['native_core_collection'] or parent['intact_manifest']!=m['intact_manifest']
-                or parent['stage']!=('cpu_core' if cpu else 'edge_core')):
+                or parent['stage']!=backend+'_core'):
             raise InvalidArtifact('edge parent belongs to other sources')
     elif m['edge_qualification'] is not None:raise InvalidArtifact('unexpected edge parent')
     is_core=m['stage'].endswith('_core');expected=tasks(core if is_core else full,m['stage'])
@@ -106,11 +119,12 @@ def collect(manifest):
         errors={}
         for t in m['tasks']:
             error=(c['rows'][t['task_id']]['energy_eV']-original['rows'][t['reference_task_id']]['energy_eV'])*EV_TO_KCAL
-            errors[(t['case_id'],t['metal'],t.get('edge_adapter',{}).get('chunk_size'))]=error
+            adapter=t.get('edge_adapter',{})
+            errors[(t['case_id'],t['metal'],adapter.get('product_chunk_size',adapter.get('chunk_size')))]=error
             c['checks'].append({'name':t['task_id']+'_native_equivalence','error_kcal_mol':error,
                                 'pass':abs(error)<=TOL['energy_kcal_mol']})
         for case in ('1H4I','4MAE'):
-            for chunk in ((None,) if m['stage']=='cpu_core' else (1024,2048)):
+            for chunk in chunk_sizes(m['stage']):
                 error=errors[(case,'Ca',chunk)]-errors[(case,'La',chunk)]
                 c['checks'].append({'name':case+'_paired_native_equivalence_'+str(chunk),
                                     'error_kcal_mol':error,'pass':abs(error)<=TOL['energy_kcal_mol']})
@@ -123,5 +137,5 @@ if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
     for key in ('native-core-collection','intact-manifest','agreement','output'):p.add_argument('--'+key,required=True)
     p.add_argument('--edge-qualification','--backend-qualification',dest='edge_qualification')
-    p.add_argument('--backend',choices=('edge','cpu'),default='edge')
+    p.add_argument('--backend',choices=tuple(CONFIGS),default='edge')
     print(json.dumps(prepare(**vars(p.parse_args())),indent=2))

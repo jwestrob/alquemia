@@ -4,6 +4,32 @@ Read INTACT_CHAIN_PLAN.md for the fixed inputs and interpretation. Production
 is unchanged. Energy-only output explicitly has no forces. All task manifests
 use the existing immutable runner, receipts and typed cache validation.
 
+## Current checkpoint — 2026-09-17
+
+The five-chain benchmark completed in jobs1200815/1200816; all three relative
+criteria pass. Read INTACT_REPORT.md and INTACT_RESULT.json. The original
+intact_report_v1 is immutable. A fresh report replay (no new inference) is:
+
+```bash
+workspaces/mace_hybrid_20260916/software_v1/venv/bin/python workspaces/mace_omol_20260917/intact_reporting_source_v1/implementation/mace_omol_intact_report.py --collection workspaces/mace_omol_20260917/intact_benchmark_v1/collection_job_1200816.json --output workspaces/mace_omol_20260917/intact_report_replay_v1
+```
+
+Product batching core1200817 passed20checks exactly. Full qualification1200818
+runs14 declared calls; its manifestSHA is
+`6ece3a194ab1e88cbefab44d62c3fee39cde7bdf98e6594caf4fcc5952f4f2eb`.
+Only after its collection exists and passes, compare using frozen source:
+
+```bash
+workspaces/mace_hybrid_20260916/software_v1/venv/bin/python workspaces/mace_omol_20260917/product_reporting_source_v1/implementation/mace_omol_edge_report.py --native-collection workspaces/mace_omol_20260917/cpu_intact_v1/collection_job_1200814.json --edge-collection workspaces/mace_omol_20260917/product_intact_v1/collection_job_1200818.json --output workspaces/mace_omol_20260917/product_equivalence_v1
+```
+
+The next canonical experiment is declared in INTACT_CANONICAL_PLAN.md. No new
+canonical scores have been calculated. INTACT_PANEL_READINESS.md and the actual
+readiness result under intact_panel_inventory_v1 record28 sources,27 matched
+protein templates,one missing terminalOXT andfour charges outside training range.
+Do not rerun the historical preparation/submission commands below into existing
+outputs, or launch duplicate jobs. They document how the earlier stages ran.
+
 ## Core equivalence bridge
 
 The four-task manifest was prepared and passed the copied runner dry-run.

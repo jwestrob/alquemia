@@ -63,7 +63,8 @@ def common(source_inventory, software, agreement, output, stage):
     names = ('mace_omol.py', 'mace_canonical_run.py', 'mace_canonical.py', 'mace_curvature.py',
              'affordable_response.py', 'mace_mechanics_run.py', 'mace_short_engine.py',
              'mace_omol_readout.py', 'mace_omol_coordination.py', 'mace_omol_intact.py',
-             'mace_omol_edges.py', 'mace_omol_edge_run.py', 'mace_omol_edge_report.py', 'mace_file_checks.py')
+             'mace_omol_edges.py', 'mace_omol_edge_run.py', 'mace_omol_edge_report.py', 'mace_file_checks.py',
+             'mace_omol_products.py')
     pins = snapshot(out, names)
     m = {'schema_version': SCHEMA, 'protocol_id': PROTOCOL, 'stage': stage,
          'inventory': record(source_inventory), 'software': record(software), 'agreement': record(agreement),
@@ -140,7 +141,7 @@ def prepare_benchmark(qualification, mechanics, agreement, output):
 
 def validate(manifest):
     m = read_json(manifest)
-    if m.get('stage','').startswith(('edge_','cpu_')):
+    if m.get('stage','').startswith(('edge_','cpu_','product_')):
         from mace_omol_edge_run import validate as validate_edge
         return validate_edge(manifest)
     if m.get('stage','').startswith('intact_'):
@@ -260,10 +261,15 @@ def worker(manifest, task_id, output, memory_mode):
         versions = {name:p._version for name,p in model_obj.named_parameters()}
         buffer_versions={name:(id(b),b._version) for name,b in model_obj.named_buffers()}
         if t.get('edge_adapter'):
-            from mace_omol_edges import install
+            from mace_omol_edges import install, ADAPTER
+            from mace_omol_products import install as install_products, ADAPTER as PRODUCT_ADAPTER
             if not t.get('energy_only'):
                 raise InvalidArtifact('edge adapter supports energy only')
-            install(model_obj,t['edge_adapter']['chunk_size'])
+            if t['edge_adapter']['id']==ADAPTER:
+                install(model_obj,t['edge_adapter']['chunk_size'])
+            elif t['edge_adapter']['id']==PRODUCT_ADAPTER:
+                install_products(model_obj,t['edge_adapter']['chunk_size'],t['edge_adapter']['product_chunk_size'])
+            else:raise InvalidArtifact('unsupported exact execution adapter')
         capture = None
         if t.get('capture_native_readout'):
             from mace_omol_readout import NativeCapture
@@ -294,8 +300,12 @@ def worker(manifest, task_id, output, memory_mode):
         if not result['parameter_versions_unchanged']:
             raise InvalidArtifact('model parameters mutated during inference')
         if t.get('edge_adapter'):
-            from mace_omol_edges import receipt
-            result['execution_adapter']=receipt(model_obj,t['edge_adapter']['chunk_size'])
+            from mace_omol_edges import receipt, ADAPTER
+            if t['edge_adapter']['id']==ADAPTER:
+                result['execution_adapter']=receipt(model_obj,t['edge_adapter']['chunk_size'])
+            else:
+                from mace_omol_products import receipt as product_receipt
+                result['execution_adapter']=product_receipt(model_obj,t['edge_adapter']['chunk_size'],t['edge_adapter']['product_chunk_size'])
             result['buffer_versions_unchanged']=buffer_versions=={name:(id(b),b._version) for name,b in model_obj.named_buffers()}
             if not result['buffer_versions_unchanged']:
                 raise InvalidArtifact('model buffers mutated during edge inference')
@@ -334,6 +344,15 @@ def accepted_state(result, task):
                 or len(adapter.get('layers',[]))!=3):return False
         if any(layer['atoms']!=state.get('atoms') or layer['edges']!=layer['processed_edges']
                or layer['chunk_size']!=wanted['chunk_size'] for layer in adapter['layers']):return False
+        if 'product_chunk_size' in wanted:
+            from mace_omol_products import ADAPTER as PRODUCT_ADAPTER
+            layers=adapter.get('product_layers',[])
+            if wanted['id']!=PRODUCT_ADAPTER or len(layers)!=3:return False
+            if any(layer['atoms']!=state.get('atoms') or layer['atoms']!=layer['processed_atoms']
+                   or layer['chunk_size']!=wanted['product_chunk_size']
+                   or layer['batches']!=(layer['atoms']+layer['chunk_size']-1)//layer['chunk_size']
+                   for layer in layers):return False
+        elif adapter.get('product_layers') is not None:return False
     elif adapter is not None:return False
     if state.get('selected_metal_index',0)!=task.get('metal_index',0):
         return False
@@ -357,7 +376,7 @@ def accepted_state(result, task):
 
 
 def collect(manifest):
-    if read_json(manifest).get('stage','').startswith(('edge_','cpu_')):
+    if read_json(manifest).get('stage','').startswith(('edge_','cpu_','product_')):
         from mace_omol_edge_run import collect as collect_edge
         return collect_edge(manifest)
     if read_json(manifest).get('stage','').startswith('intact_'):

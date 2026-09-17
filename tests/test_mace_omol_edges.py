@@ -37,6 +37,31 @@ class EdgeTests(unittest.TestCase):
             for key in ('xyz','charge','spin_multiplicity','state','metal_index'):self.assertEqual(t[key],s[key])
             self.assertFalse(accepted_state(c['rows'][t['reference_task_id']],t))
 
+    def test_product_tasks_preserve_native_inputs_and_reject_edge_only_receipts(self):
+        native=read_json(N);source={t['task_id']:t for t in native['tasks']}
+        original=read_json(W/'intact_core_v1/collection_job_1200807.json')
+        edge=read_json(W/'edge_core_v1/collection_job_1200810.json')
+        requested=tasks(native,'product_core');self.assertEqual(len(requested),8)
+        for t in requested:
+            self.assertIn(t['edge_adapter']['product_chunk_size'],(32,1024))
+            for key in ('xyz','source_xyz','charge','state','spin_multiplicity','metal_index','energy_component'):
+                self.assertEqual(t[key],source[t['reference_task_id']][key])
+            self.assertFalse(accepted_state(original['rows'][t['reference_task_id']],t))
+            self.assertFalse(accepted_state(edge['rows'][t['reference_task_id']+'_chunk_1024'],t))
+
+    def test_executed_product_core_equivalence_and_corrupted_atom_receipt(self):
+        files=sorted((W/'product_core_v1').glob('collection_job_*.json'))
+        if not files:self.skipTest('actual product-batched scientific execution not yet available')
+        c=read_json(files[-1]);m=read_json(verify(c['manifest']))
+        self.assertEqual(c,collect(verify(c['manifest'])));self.assertTrue(c['numerical_gate_pass'])
+        self.assertEqual(len(c['checks']),20)
+        for t in m['tasks']:
+            r=c['rows'][t['task_id']];self.assertTrue(accepted_state(r,t))
+            changed=copy.deepcopy(r);changed['execution_adapter']['product_layers'][0]['processed_atoms']-=1
+            self.assertFalse(accepted_state(changed,t))
+            if t['edge_adapter']['product_chunk_size']==32:
+                self.assertGreater(r['execution_adapter']['product_layers'][0]['batches'],1)
+
     def test_executed_core_equivalence_and_complete_edge_inventory(self):
         files=sorted((W/'edge_core_v1').glob('collection_job_*.json'))
         if not files:self.skipTest('actual edge-batched scientific execution not yet available')

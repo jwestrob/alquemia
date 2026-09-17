@@ -90,17 +90,22 @@ large. Do not promote this refinement or inherit another scorer's bands.
 median summed four-endpoint inference2.881s,excluding startup. The original
 OMOL PQQ research candidate and production baseline remain unchanged.
 
-The [intact-chain OMOL engineering path](../diagnostics/mace_omol_20260917/INTACT_ENGINEERING_REPORT.md)
-fits the1,932-atom alpha-lactalbumin model onA5000: about5GB peak GPU and
-5.3seconds inference per endpoint. Native execution first failed GPU memory.
-Exact interaction batching passes20 core and31 intact checks; the14 native CPU
-full-reference energies match exactly (24 additional comparisons). The remaining
-four-protein comparison is RUNNING as1200815, with16new endpoints/fourreuses.
-H2001200809 remains queued.44successful calls/oneOOM so far cost497GPU-s and
-71,184allocatedcore-s; CPU reference validation is one-time engineering work.
-No predictive improvement, force support or production promotion is claimed.
-[Continuation](../diagnostics/mace_omol_20260917/INTACT_BATCHED_CONTINUATION.md),
-[commands](../diagnostics/mace_omol_20260917/INTACT_COMMANDS.md).
+The [intact-chain OMOL candidate](../diagnostics/mace_omol_20260917/INTACT_REPORT.md)
+passes all three frozen development orderings: XoxF−MxaF +9.03 kcal/mol and
+alpha−GGR +37.15/+28.09 on the two alpha structures. The primary core model
+failed both alpha/GGR comparisons. This is one consumed biological affinity
+comparison plus a separate PQQ functional-class comparison, with no absolute
+bands or broad validation. Production remains unchanged.
+Exact edge batching and allocator recovery fit the 9088-atom protein on A5000:
+about 21.72 GB peak and 26 seconds per endpoint. Jobs 1200815/1200816 complete;
+their 16 new successes and one OOM cost 1387 GPU-seconds / 22,192 allocated
+core-seconds. Four qualified alpha endpoints are reused. Native CPU equivalence
+and rigid/repeat checks pass. Reporting overhead remains substantial.
+The [product batching qualification](../diagnostics/mace_omol_20260917/EXACT_PRODUCT_PLAN.md)
+passes its eight-call core stage; the full stage precedes the
+[28-reference extension](../diagnostics/mace_omol_20260917/INTACT_CANONICAL_PLAN.md).
+Four reference charges exceed the training range and remain explicitly flagged.
+H2001200809 remains queued. [Commands](../diagnostics/mace_omol_20260917/INTACT_COMMANDS.md).
 
 Jacob reconfirmed blanket analysis/resource authorization on2026-09-17 and
 explicitly requested removal of the old per-analysis check-in rule. Both project
@@ -273,9 +278,11 @@ trigger Stage 2. Do not use an old baseline cache entry as a challenger result.
 
 Candidate products belong under `workspaces/`; compact plans/inventories/results
 belong under `diagnostics/`. Preserve unrelated dirty changes and immutable
-experiments. Record the agreed scientific scope in project notes and follow
-the user's AGENTS.md analysis policy: routine implementation/recovery proceeds
-within that scope, while materially new analyses need agreement. The user has
+experiments. Record scientific scope and consequential settings in project notes.
+For the active MACE discriminator goal, Jacob explicitly authorized autonomous
+analyses and method development and removed the per-analysis approval gate;
+see [AGENTS.md](../AGENTS.md) and the durable goal authorization. Do not restore
+that gate after compaction. The user has
 removed project CPU/time stopping budgets; record actual costs and task counts
 without inventing new spending limits. Existing scheduler policies still apply.
 

@@ -45,3 +45,21 @@ energies. Broad La/Ca affinity and production promotion remain unestablished.
 The live report-source snapshot timing issue is documented in INTACT_REPORT_SOURCE_NOTE.md. Independent recomputation verified every saved comparison; inference always used frozen source snapshots. Further reporting uses an immutable implementation directory.
 
 Nested checksum verification now has an opt-in operation-local cache. Four corruption/restoration tests pass, including same-size rewrites with restored mtime. Fresh files bypass reuse to handle coarse timestamp resolution. The complete comparison still agrees: replay took258.88wall/156.06CPU seconds versus370.45wall/311.72CPU seconds before caching. The scientific computation is unchanged; other validation overhead remains.
+
+## Partial benchmark checkpoint, 2026-09-17
+
+Job1200815 produced eight new accepted endpoints, then exhausted GPU memory at
+the first PQQ endpoint. With the four qualified alpha1F6S reuses, intact-chain
+R_coord values are GGR62.7148448127, alpha1F6S99.8684074321 and
+alpha6IP990.8031326925kcal/mol. Both frozen alpha-minus-GGR criteria pass:
++37.1535626194 and+28.0882878798. This is one consumed, qualified biological
+comparison on two alpha structural forms; no absolute calibrated class or broad
+affinity validation follows. Unlike the primary core model, this representation
+gets both relative directions right. Representation and total-charge conditioning
+changed together, so this result does not isolate the physical cause.
+
+The PQQ comparison remains unavailable. Unchanged-manifest allocator recovery
+1200816 is running on the same A5000, reusing all eight valid tasks and retaining
+the OOM attempt. Only the documented PyTorch expandable-segments allocator
+setting changed; see ALLOCATOR_RECOVERY.md. No scientific protocol/criteria edits.
+Final reporting will use the completed recovery collection and frozen reporter.

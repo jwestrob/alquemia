@@ -437,3 +437,11 @@ gradient exists for this candidate. Eightshort/eightpotential calls cost63GPU-s
 and1240allocatedcore-s, reusing quantum/whole/GB sources.
 The next [responsive-field plan](../diagnostics/mace_omol_20260917/RESPONSIVE_FIELD_PLAN.md)
 is declared, not yet implemented or run. Recover CURRENT.md before launch.
+
+The [responsive-field follow-up](../diagnostics/mace_omol_20260917/RESPONSIVE_FIELD_REPORT.md)
+now completes8nativeDFT,16charge/potential utilities and44GB solves. All component
+checks pass; updated density/solvent improves ordering to3/4, but GGR boundary
+shift-4.438kcal still fails.21distinct tests pass. No reference/class/combined
+gradient or production change. Cost45529core-s/66GPU-s includes recovery.
+Next is the declared [AMOEBA capability/accounting investigation](../diagnostics/mace_omol_20260917/AMOEBA_CAPABILITY_PLAN.md),
+with3real parameterization preps and no energy/force evaluation in that stage.

@@ -1877,3 +1877,34 @@ RecoverCURRENT.md andplan,verifyinstalledenergyaccounting,reusepinnedrunner.
 Goalactive. Home/projectanalysisapprovalgateremoved;fullautonomypersists.
 Vaultandagentguideupdated. No push/promotion; preserveunrelatededitsand
 PLM1200794/95/96,pendingnativeH2001200809,jobs/locks.
+
+## 2026-09-17: responsive quantum density/solvent comparison completed
+
+NativeDFT1200983(8), charge/potential1200986(16), GB1200989(44) complete;
+zeroMACE/training, reusedshort8core/6full and4environment-onlyGB. All8variational,
+5near-boundary and50solver/componentcheckspass. Orderingimproves1/4->3/4;
+alpha1F6SminusGGRext/conn+2.795344719/+7.233492066;alpha6IP9-2.107829947/
++2.330317400. GGRpartition-4.438147347fails2. No favorablecore/waterselection,
+reference/class/combinedgradient orproductionpromotion. Defaultbaselineunchanged.
+Transferable:pairedcoreelectronicresponse<.18kcal butupdatedGB shiftsalphaR+2.15/
++2.44 andGGRR-3.18/-3.27. Mustrecomputesolventafterdensitychange;notbroadvalidation.
+
+Newmace_responsive_field/charges/solvent modulesreuseexistingrunners/solvers.
+Initialcollectorconditionalwarningfalsepositivefixedagainstactualanalytic
+outputs;noDFTrerun. Utilitypreflight1200984failedbeforecalculations;read-only
+1200985proved1.11e-16capreplayroundoff. Exactphysicalids/recordedweightsunchanged;
+1e-12numericreplayallowancepreservesscientificgates. All21distincttestspass.
+Costs45529allocatedcore-s,37362.387actualCPU-s,66GPU-s inclfailedpreflight/replay.
+Nativeoutputs/wavefunctions/recoveryandlocalresourcesretained. Fullproduction
+costunmeasured;cachedsourcecostsadditional. Scopedreport/plan/commands/compact
+resultdiagnostics/mace_omol_20260917/RESPONSIVE_FIELD_*. WorkspacequantumV2,
+quantumresultV2,chargesV3,chargereportV2,GBV1,GBresultV1,responsive_cost_v1.json.
+Currentcheckpoint,agentguideandvaultupdated. No push/promotion.
+
+NEXTAMOEBA_CAPABILITY_PLAN.mddeclared:inspectmaintainedAPI/primaryparameter
+evidenceand3realnormalizedproteinparameterizationpreps only;NOenergy/force/
+DFT/ML/optimization. Needcoherentpermanent/induced/GK/core-subtractionand
+boundary/exclusion/damping/doublecountaccounting beforedeclaringenergytest.
+InstalledOpenMM8.5.1AMOEBA2018/GKpresent;Laparams/coverageUNVERIFIED. AMOEBA
+previouslyproposedbyJacob,notnewinvention. Broadergoalactive;preservebaseline,
+unrelateddirtyfiles,PLM1200794/95/96andpendingH2001200809;inspectlivejobs.

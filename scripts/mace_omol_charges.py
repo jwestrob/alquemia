@@ -100,6 +100,9 @@ def prepare(quantum,plan,output):
 
 
 def validate(manifest):
+    if read_json(manifest).get('protocol_id')=='embedded_CHELPG_source_projection_diagnostic_v1':
+        from mace_responsive_charges import validate
+        return validate(manifest)
     m=read_json(manifest)
     if m['protocol_id']!=PROTOCOL or m['model']!=MODEL or m['tolerances']!=TOL or len(m['tasks'])!=8 or m['quantum']['sha256']!=QUANTUM_SHA:
         raise InvalidArtifact('charge protocol/source/settings differ')

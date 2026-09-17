@@ -163,6 +163,9 @@ def prepare(root, software, output, agreement):
 
 
 def dry_run(manifest):
+    if read_json(manifest).get('schema_version') == 'alquemia.mace_responsive_GB.v1':
+        from mace_responsive_solvent import validate
+        return validate(manifest)
     if read_json(manifest).get('schema_version') == 'alquemia.mace_explicit_field_short.v1':
         from mace_explicit_field_short import validate
         return validate(manifest)
@@ -268,7 +271,7 @@ def repair_interface(manifest, output, pair_tile=None, memory_agreement=None, re
 
 
 def worker(manifest, task_id, output, memory_mode):
-    if read_json(manifest).get('schema_version') == 'alquemia.mace_QMFF_gb.v1':
+    if read_json(manifest).get('schema_version') in ('alquemia.mace_QMFF_gb.v1', 'alquemia.mace_responsive_GB.v1'):
         from mace_omol_solvent import worker as solvent_worker
         return solvent_worker(manifest, task_id, output, memory_mode)
     if read_json(manifest).get('schema_version') == 'alquemia.mace_omol.v1':
@@ -523,6 +526,9 @@ def compare_cores(manifest):
 
 
 def collect(manifest):
+    if read_json(manifest).get('schema_version') == 'alquemia.mace_responsive_GB.v1':
+        from mace_responsive_solvent import collect
+        return collect(manifest)
     if read_json(manifest).get('schema_version') == 'alquemia.mace_explicit_field_short.v1':
         from mace_explicit_field_short import collect
         return collect(manifest)

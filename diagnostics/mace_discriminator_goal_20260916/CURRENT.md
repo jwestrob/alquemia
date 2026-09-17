@@ -6,6 +6,48 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
+## Latest: responsive density/solvent candidate complete;3/4 ordering, boundary fails
+
+NativeDFT1200983 (8),utilities1200986 (8CHELPG+8vpot),GB1200989 (44) complete.
+All8variational,5near-boundary representation and50solver/componentchecks pass.
+Orderingimprovesfromfrozen1/4to3/4: alpha1F6SminusGGRext/conn +2.795344719/
++7.233492066; alpha6IP9 -2.107829947/+2.330317400. GGRpartition-4.438147347
+failsunchanged2. No favorablecore/structureselection orproductionpromotion.
+Responsepaired<.18kcal;updatedGB shiftsalphaR+2.15/+2.44 andGGRR-3.18/-3.27.
+Thus solventupdateddensitymatters despitealmostcancelledelectronicresponse.
+Notbroadvalidation:2consumedbiologicalgroups,qualifiedcross-studyalpha evidence.
+
+Artifactsunderworkspaces/mace_omol_20260917:
+responsive_quantum_v2/manifest.json SHA
+c50a571b0945e89f239194d1d8311c607a39a76dc16b550683e0c406fc4e2c78;
+responsive_quantum_result_v2.json andpreservedcollectorresponsive_quantum_collection_v2;
+responsive_charges_v3/manifest.json SHA
+b20e5c45abfbe895da1d5776ed79c6db7ea24ab696b6ad0ecbdf9f6704e4e46b;
+responsive_charge_report_v2/result.json;
+responsive_GB_v1/manifest.json SHA
+4c89ed5c9af1b64c80eaace9d5cfff466c3144686b9bfb7bf69d574c16caae7c;
+responsive_GB_result_v1.json, responsive_cost_v1.json. Compactreport/results/
+commandsRESPONSIVE_FIELD_*. Nativeoutputs/wavefunctions/failedattemptsretained.
+
+Recovery:initialcollectorwronglymatchedconditionalnumerical-gradientwarning;
+preciserepairtestedagainstactualanalyticoutputs+corruptedrealheader,noDFTrerun.
+Firstchargepreplocalvariable-shadowingfailurebeforemanifest;initialutility
+preflight1200984failedbeforecalculationsdueexactcaplambdaequality. Same-node
+read-only1200985proved1.11e-16floatingdifference;V3permits1e-12replay withrecorded
+weightsunchanged. Scientificgatesunchanged. All21distincttests pass. Costs45529
+allocatedcore-s,37362.387actualCPU-s,66GPU-s inclfailedpreflight/replay. Cached
+sourcecostsadditional;fullproductionpaircostunmeasured. NoMACE/trainingcalls.
+
+NEXT AMOEBA_CAPABILITY_PLAN.md declared: readmaintainedsolver/source+primary
+parameters, atmost3realproteinparameterizationpreps (samephysicalfullGGR/alpha),
+NOenergies/forces/DFT/ML/fit/optimization. Determine coherentpermanent/induced/GK
+andcore-subtraction/boundaryaccounting beforedeclaring any energypilot. Notnew
+method:JacobrequestedAMOEBAandoldMACEplanlinksLa-parameterpaper. Installed
+read-onlyinventoryamoeba_installed_inventory_v1.json:OpenMM8.5.1 AMOEBA2018/GK
+files/APIs available;La/modelcoverageUNVERIFIED. No score/backendpromotion.
+Researchgoalactive;thiscandidatefailedrobustnessbutproducedusefulinformation.
+Preservebaseline andconcurrentPLM1200794/95/96,pendingH2001200809;inspectlivejobs.
+
 ## Latest completed: explicit electrostatics + MACE short component
 
 Jobs1200980/1200981 complete:8vpot+8shortcore calls,0newDFT/GB/chargefit/

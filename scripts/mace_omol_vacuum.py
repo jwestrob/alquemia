@@ -121,13 +121,28 @@ def validate(manifest):
     return dry_run(manifest)
 
 
-def parse_endpoint(task,output,engrad):
-    if verify(task['input']).read_text()!=scientific_input(task['charge']):raise InvalidArtifact('exact vacuum EnGrad input required')
+def embedded_input(charge):
+    return (f'! {METHOD}\n%method\n DoEQ false\nend\n'
+            '%pointcharges "environment.pc"\n'+f'* xyzfile {charge} 1 core.xyz\n')
+
+
+def parse_endpoint(task,output,engrad,*,permanent_field=False):
+    expected=embedded_input(task['charge']) if permanent_field else scientific_input(task['charge'])
+    if verify(task['input']).read_text()!=expected:raise InvalidArtifact('exact embedded EnGrad input required' if permanent_field else 'exact vacuum EnGrad input required')
     text=Path(output).read_text();e=energy(output)
     if not re.search(r'Program Version\s+6\.1\.1\b',text):raise InvalidArtifact('ORCA version differs')
     if re.search(r'^\s*(?:CPCM SOLVATION MODEL|SMD SOLVATION(?: MODEL)?|COSMO SOLVATION(?: MODEL)?)\s*$',text,re.M|re.I):
         raise InvalidArtifact('vacuum endpoint contains solvent model')
-    if re.search(r'numerical (?:gradient|differentiation)',text,re.I):raise InvalidArtifact('numerical gradients unsupported')
+    gradient_evidence=text
+    if permanent_field:
+        # ORCA prints this conditional warning even for the analytic EnGrad route.
+        gradient_evidence=re.sub(r'(?m)^  ===> : Will NOT make the numerical gradients translationally invariant,\n         in case numerical gradients are calculated!\n','',text)
+    if re.search(r'numerical (?:gradient|differentiation)',gradient_evidence,re.I):raise InvalidArtifact('numerical gradients unsupported')
+    if permanent_field:
+        pc=verify(task['pointcharges']);count=int(pc.read_text().splitlines()[0])
+        counts=re.findall(r'Reading point charge file\s+\.{2,}\s+ok\s+\((\d+) point charges\)',text)
+        if not counts or any(int(n)!=count for n in counts) or 'environment.pc' not in text:
+            raise InvalidArtifact('native external-charge inventory not confirmed')
     atoms=xyz(verify(task['xyz']));numbers=[NUMBERS[a[0]] for a in atoms]
     electrons=sum(numbers)-task['charge']-(46 if task['metal']=='La' else 0)
     ecp=re.findall(r'Type\s+(\w+)\s+ECP\s+(\S+)\s+\(replacing\s+(\d+)\s+core electrons',text)
@@ -148,9 +163,10 @@ def parse_endpoint(task,output,engrad):
     if not np.allclose(raw['coordinates_bohr']*BOHR_TO_A,[a[1:] for a in atoms],atol=1e-6,rtol=0):
         raise InvalidArtifact('gradient coordinates differ from frozen input')
     return {'energy_hartree':e,'gradient_kcal_mol_per_A':(raw['gradient_Ha_per_bohr']*HA_TO_KCAL/BOHR_TO_A).tolist(),
-            'quantity':'gradient_not_force','energy_scope':'isolated_vacuum_endpoint','explicit_electrons':electrons,
+            'quantity':'gradient_not_force','energy_scope':'embedded_permanent_field_endpoint' if permanent_field else 'isolated_vacuum_endpoint','explicit_electrons':electrons,
             'ecp_core_electrons':46 if ecp else 0,'native_components':components,
-            'engrad':record(engrad),'environment_gradient_included':False}
+            'engrad':record(engrad),'environment_gradient_included':False,
+            **({'core_gradient_includes_permanent_field':True,'combined_gradient':None} if permanent_field else {})}
 
 
 def collect(manifest):

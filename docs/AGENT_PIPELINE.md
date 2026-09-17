@@ -409,3 +409,11 @@ The accuracy gate remains false. Five new tests plus six native regressions pass
 Heavy atoms/caps/chemical inventories stay fixed; no aqueous score or relaxation.
 [Commands](../diagnostics/mace_omol_20260917/MATCHED_H_COMMANDS.md). Prior failures remain immutable.
 [Vacuum replay commands](../diagnostics/mace_omol_20260917/MATCHED_VACUUM_COMMANDS.md).
+
+The [normalized charge check](../diagnostics/mace_omol_20260917/NORMALIZED_CHARGE_REPORT.md)
+completed eight native CHELPG/eight exact-potential utilities. Endpoint and paired
+quality gates pass; projected Ca/La field errors remain below0.6%relativeRMS.
+This does not establish solvent-energy accuracy. Four real-fixture tests pass.
+The [full-boundary solvent plan](../diagnostics/mace_omol_20260917/FULL_BOUNDARY_GB_PLAN.md)
+is declared but not yet implemented or submitted. It preserves all physical
+atoms and uses a local charge ledger, no coreCPCM or added bare Coulomb term.

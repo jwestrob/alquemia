@@ -1793,3 +1793,32 @@ Vault/guide/current updated; goal active; no push/default promotion. New solvent
 extension under investigation, not declared/scored at this commit. Saved native
 wavefunctions survive; no recomputation needed for an endpoint-charge utility.
 Preserve concurrent jobs/edits. Per-analysis permission gate remains removed.
+
+
+## Normalized QM charges qualify for full-boundary solvent test — 2026-09-17
+
+Eight native CHELPG/eight exactvpot calls1200970 complete, nofailures. Source
+wavefunctions copied/pinned unchanged. All endpoint/paired fit and geometriccap
+projection gates pass: pairedfitrelativeRMS0.3493–0.5532%,projected0.3715–0.5852%.
+One projectedneutralLa endpoint10.0724%relative passes the declared absolute
+branch; all endpoint/projection errors retained. No renormalization, forcefield
+environment, GBenergy or affinityscalar. Charge/dipoleconservation passes.
+Newmace_omol_charges.py uses existing utilityrun_command, exclusive lock,
+immutable attempts and explicitfailedretry. No oldworker/defaultchange.
+Four realfixturetests pass:3preparation5.094s, actual0.027s afterinitialskip.
+Cost242wall-s/8CPU,1936allocatedcore-s,897.082CPU-s,1523816KiBpeakRSS.
+Utilities891.622784summedwall-s. NoDFT/MACE/GB/GPU/training. Costsadditionalto
+prior model/DFTsubtotals. Manifestnormalized_charge_v1, fullreportnormalized_charge_report_v1,
+compactNORMALIZED_CHARGE_REPORT/RESULT andcommandspreserved. Vault/current/guide
+updated. Localrelay accepted findingsemail20260917T193923Z; no deliveryclaim.
+Matched-H report clarifies alpha source comparison also changes frozen water
+inventory2versus3, so doesnotisolategeometry. Prior result/gates unchanged.
+
+NEXT FULL_BOUNDARY_GB_PLAN.md declaredbeforefullchargeassembly/solverenergies:
+projectedQMplusidenticalff19SBexterior, zerosonprojectionsupport, perresidueformal
+ledger andlocalbondneighborchargeclosure; OBC2reactionfieldONLYaddedtovacuum
+hybrid. Full physicalboundarystaysfixed;no bareCoulomb/coreCPCM.48solvercalls,
+noneimplemented/prepared/submittedyet. Same2partition/allfourorderinggates;
+identity/rigid/component/ReferenceCUDAchecksdeclared. No newDFT/MACEneeded.
+Continueautonomously;goalactive, baseline/defaultunchanged,nopush. Inspectlive
+concurrentjobsandpreserveotheredits/locks. Per-analysis gate remainsremoved.

@@ -6,6 +6,43 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
+## Latest: normalized charges complete; next full-boundary solvent test declared
+
+Job1200970 COMPLETED eight CHELPG+eight vpot utilities, zero failures. All
+endpoint and paired fit/projection quality gates pass. Differential field
+relativeRMS0.3493–0.5532%; after geometric cap projection0.3715–0.5852%.
+Absolute endpoint potential errors are larger; alpha1F6SLa projected10.0724%
+passes the predeclared absolute branch. This is NOT a solvent-energy/accuracy
+pass. No full environment charge model or GB scalar exists yet.
+
+Report ../mace_omol_20260917/NORMALIZED_CHARGE_REPORT.md and compactRESULT;
+fullnormalized_charge_report_v1/result.json SHA
+2689bcdfa9b3f2d0358c5e21fa8b5b38533b36502c7e5c3f9826ee7487041d10.
+Manifestnormalized_charge_v1 SHA
+31caf15249cbfab1ff381f1185c7243e77c69a003c735f52ca80e5ad63bc3fc6.
+Four distinct real-fixture tests pass;3preparation5.094s,actual0.027s after
+initialskip. Cost242wall-s/8CPU,1936allocatedcore-s,897.082CPU-s,1523816KiB
+peakRSS. Utilities891.622784summedwall-s. No newDFT/MACE/GB/GPU/training.
+Cost normalized_charge_cost_v1; utility cost additional to prior subtotals.
+All source copies/receipts/matrices/potentials preserved, sourceGBWunchanged.
+
+NEXT: FULL_BOUNDARY_GB_PLAN.md declared AFTER charge results and BEFORE full
+charge assembly/solver energies. New protocol
+normalized_QM_projected_ff19SB_full_OBC2_vacuum_hybrid_v1. Assemble Pq_QM plus
+identical ff19SB exterior, no FFcharge on projection support, exact residue
+formal-charge ledger and local bond-neighbor redistribution. Preserve full
+physical boundary, all waters, assembly, H coordinates. Add ONLY reaction-field
+G to vacuum hybrid; no bare Coulomb or coreCPCM. Fixed existingOBC2parameters.
+48specified solver calls, no newDFT/MACE; see fullplan for identity,rigid,
+component,Reference-CUDA and same partition/ordering gates. Not implemented,
+prepared or submitted yet. Do not execute unmanifested solver work. Next actions:
+implement minimal source/boundary adapter and existingrunner dispatch; prepare,
+realfixturetests/dryrun; submit documented A5000 allocation; collect/compare.
+No new permission required. No project CPU/time budget or defaultpromotion.
+
+Matched-H phase c63055a. Charge phase commit recover fromgitlog. Allournewjobs
+terminal. Inspect concurrentPLM/H200 state before acting; do not cancel/duplicate.
+
 ## Latest result: matched H complete; consistency improves, accuracy fails
 
 Jobs1200950/1200951 COMPLETED eightDFT/eightMACE, zero failures; six whole reuses.

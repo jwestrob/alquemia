@@ -27,9 +27,10 @@ connected-minus-extended hybrid shift falls from **1.829806242 to
 This improves consistency between these two representations. It does not
 establish general partition invariance or aqueous affinity accuracy.
 
-The two alpha structures still differ by 5.134730793 kcal-scale. A source
-structure effect now exceeds the tested GGR partition sensitivity. Neither
-structure is discarded. Normalization improves one alpha/GGR comparison and
+The two fixed alpha preparations still differ by 5.134730793 kcal-scale,
+exceeding the tested GGR partition sensitivity. Their frozen water inventories
+differ (two versus three), so this comparison does not isolate geometry alone.
+Neither preparation is discarded. Normalization improves one alpha/GGR comparison and
 worsens the other; favorable classifications were not used to choose H geometry.
 
 Protocol: `masked_omol_matched_normalized_H_vacuum_hybrid_v1`.

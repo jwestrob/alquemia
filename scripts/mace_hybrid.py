@@ -43,10 +43,14 @@ def write_xyz(path, atoms):
             f.write(a[0] + ' ' + ' '.join(format(v, '.17g') for v in a[1:]) + '\n')
 
 
-def check_atoms(atoms, charge):
+def check_atoms(atoms, charge, *, background_calcium_indices=()):
     if any(a[0] not in Z for a in atoms):
         raise InvalidArtifact('unsupported element')
-    if sum(a[0] in ('Ca', 'La') for a in atoms) != 1:
+    background = set(background_calcium_indices)
+    if (len(background) != len(background_calcium_indices)
+            or any(not isinstance(i, int) or not 0 <= i < len(atoms) or atoms[i][0] != 'Ca' for i in background)):
+        raise InvalidArtifact('invalid explicitly mapped background calcium')
+    if sum(a[0] in ('Ca', 'La') for i,a in enumerate(atoms) if i not in background) != 1:
         raise InvalidArtifact('exactly one selected metal required')
     electrons = sum(Z[a[0]] for a in atoms) - charge
     if electrons % 2:

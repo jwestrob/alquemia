@@ -1598,3 +1598,41 @@ Next MULTISITE_PANEL_PLAN.md declaredbefore newprep/inference:4CPV[CD,EF],
 1SL8[EF1,EF3,EF4], allbackgroundCa, fixedsitewaterunion, actual4CPVACE0cap.
 Tenforwardsplanned; multisiteimplementationstillpending. Goalactive;baseline
 remainsdefault,no push. NativeH2001200809pendingunchanged;preserveotherjobs.
+
+
+## Masked-MACE multisite implementation and completed five-site test — 2026-09-17
+
+Implemented source-backed multisitepreparation with all backgroundCa, fixed
+sitewaterunion and actual4CPVACE0acetyl chemistry. Newpolicy
+omol_intact_multisite_fixed_background_Ca_source_acetyl_ff19sb_v1. Rawheavy
+mapping/covalentbonds,ff19SBtemplates,pairedcoordinates/charge/electronsreplay.
+Added optionalexplicitbackgroundCaindices tosharedatomvalidator; default
+single-metalbehaviorunchanged. Existingpreparedrunner/workerused.
+InitialV1prepsfailedatoldsinglemetalguardbeforeinference;V2retainedsame
+scientificinputsandfixedsupport. All attemptsremainunderworkspaces.
+
+Jobs1200851–1200855COMPLETE10/10forwards,no retries. Numericalchecks andall-Ca
+permutationchecks pass(exactreportedenergyagreement). Parvalbumin[CD,EF]=
+[27.431183345093064,64.34764681174364]modelkcal. Supportingcross-study
+contrastsagainstthreeGGRstructurespass4/6;all-casegateFALSE. Aequorin
+[EF1,EF3,EF4]=[13.04767291865186,33.17334887989371,51.5641437611785];
+siteunresolvedevidence,nobinarydirectionclaim. NoPQQbandoruniversalzero.
+
+Actualcost216GPUallocation-s,3456allocatedcore-s,221.486reportedCPU-s;
+63.758972summedmodel-s,3936891392bytespeakGPU. CostV2correctsoneauxiliarytest
+resourcehashcapturedinflight;scientificscores/costsunchanged. CumulativeV11
+362successfulforwards,2OOMs,11612GPU-s,249024allocatedcore-s,29760.909CPU-s.
+Localpreparation/reports/testsseparatelyreceipted. Twelveuniquereal-fixture
+testspass(7in14.973s,4legacyin28.313s,1actualreportin9.923s),noneskipped.
+NoDFT/solver/training/gradients/relaxation. Pipelineguide/vaultupdated.
+
+CompactMULTISITE_REPORT.md/RESULT.jsonandfrozenplanunderdiagnostics/
+mace_omol_20260917;fullmultisite_comparison_v1/result.json,physicalpreparedV2,
+scoringV1andallreceiptsunderworkspaces/mace_omol_20260917. Productionbaseline
+andoldreferencesunchanged;general-affinityusefulnessstillnotestablished.
+
+NextMASKED_GRADIENT_PLAN.mddeclared: separatelyversionedanalyticcheckpointed
+adapter,same maskedscore. StageA10real1H4Icoreforwards,conditionalStageB6
+GGRwholechainforwards;fixednumericthresholds, noautomaticmechanicalcorrection.
+Noimplementation/inferenceyet. Goalactive;H2001200809pendingunchanged.
+AllnewA5000jobscomplete;preserveotheragents'PLMjobs/dirtyfiles/locks.No push.

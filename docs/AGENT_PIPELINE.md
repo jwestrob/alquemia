@@ -356,3 +356,25 @@ MACE environment. [Calibration](../diagnostics/mace_omol_20260917/MASKED_CALIBRA
 [commands](../diagnostics/mace_omol_20260917/PREPARED_INPUT_COMMANDS.md).
 Production/default and all old references remain unchanged. Recover CURRENT.md
 for actual integration test status and outstanding research.
+
+
+### Expanded GGR robustness and multisite development (2026-09-17)
+
+The masked model's five-case development pass does not survive all existing
+GGR structures: only2/6alpha-minus-GGR structural comparisons pass. All four
+new forwards passed numerical accounting; this is a predictive robustness
+failure. The PQQ calibration remains unchanged.
+[GGR result](../diagnostics/mace_omol_20260917/GGR_STRUCTURE_ROBUSTNESS_REPORT.md).
+
+New source-backed preparation paths check raw chemistry before filtering.
+Multisite support retains other calcium ions, the fixed union of site waters
+and actual N-terminal acetyl chemistry where present. It is a separate policy;
+old single-metal inputs are unchanged. Recover CURRENT.md for the five-site
+4CPV/1SL8 experiment and live jobs; do not borrow PQQ bands for these proteins.
+
+The five-site multisite trial is now complete:10/10calls and all-Ca permutation
+checks pass; the parvalbumin supporting direction gate fails4/6contrasts.
+Aequorin remains an ordered vector with unresolved site labels.
+[Multisite report](../diagnostics/mace_omol_20260917/MULTISITE_REPORT.md).
+Exact descriptor gradients are the next declared development task, not an
+existing physical relaxation correction. Production remains unchanged.

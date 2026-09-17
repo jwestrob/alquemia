@@ -41,21 +41,34 @@ def terminal_position(carbon, alpha, oxygen, length=1.25):
     return c+length*reflected/np.linalg.norm(reflected)
 
 
-def protein(row, allow_terminal_completion=False, check_peptide_connectivity=False):
+def protein(row, allow_terminal_completion=False, check_peptide_connectivity=False,
+            retain_source_acetyl=False):
     import openmm as mm
     from openmm import app,unit
     pdb=app.PDBFile(str(verify(row['source_structure'])))
     model=app.Modeller(pdb.topology,pdb.positions)
+    supported = STANDARD | ({'ACE'} if retain_source_acetyl else set())
     inventory=[{'chain':r.chain.id,'resid':r.id,'icode':r.insertionCode.strip(),'resname':r.name,
-                'atoms':len(list(r.atoms())),'selected_protein':r.chain.id=='A' and r.name in STANDARD}
+                'atoms':len(list(r.atoms())),'selected_protein':r.chain.id=='A' and r.name in supported}
                 for r in model.topology.residues()]
-    model.delete([a for a in model.topology.atoms() if a.residue.chain.id!='A' or a.residue.name not in STANDARD])
+    model.delete([a for a in model.topology.atoms() if a.residue.chain.id!='A' or a.residue.name not in supported])
     residues=list(model.topology.residues())
     if not residues or len(list(model.topology.chains()))!=1:
         raise InvalidArtifact('exactly one standard protein chain A required')
     original=np.array(model.positions.value_in_unit(unit.angstrom))
     atoms=list(model.topology.atoms());original_ids=[atom_id(a) for a in atoms]
     if len(set(original_ids))!=len(atoms):raise InvalidArtifact('duplicate protein source identity')
+    if retain_source_acetyl:
+        acetyl = [r for r in residues if r.name == 'ACE']
+        if acetyl != residues[:1] or len(residues) < 2:
+            raise InvalidArtifact('exactly one actual N-terminal ACE residue required')
+        if {a.name for a in acetyl[0].atoms()} != {'C','O','CH3','H1','H2','H3'}:
+            raise InvalidArtifact('unsupported source acetyl atom inventory')
+        links = [(a,b) for a,b in model.topology.bonds()
+                 if a.residue != b.residue and acetyl[0] in (a.residue,b.residue)]
+        if len(links) != 1 or {(a.residue.index,a.name) for a in links[0]} != {
+                (residues[0].index,'C'), (residues[1].index,'N')}:
+            raise InvalidArtifact('source acetyl must retain its real C--N peptide connection')
     if check_peptide_connectivity:
         for a,b in model.topology.bonds():
             if a.residue!=b.residue and {a.name,b.name}=={'C','N'}:

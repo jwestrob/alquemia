@@ -163,14 +163,57 @@ coordinate discrepancy. Full result ggr_structure_report_v1/result.json.
 Saved readout diagnosis places changes across metal and several donor residues,
 not a unique causal term. Same donor identities; several distance shifts0.1–0.2A.
 
-## Next declared experiment: multisite family coverage
+## Multisite family coverage: complete, supporting gate fails
 
-MULTISITE_PANEL_PLAN.md declared before preparation/inference. Add source-backed
-multisite policy for4CPVordered[CD,EF]and1SL8[EF1,EF3,EF4], retaining all background
-Ca and a fixed union of archivedsitewaters. Preserve actual4CPVACE0covalentcap.
-Ten new boundforwards planned under existing maskedmodel/factorization.
-Parvalbumin is supportingcross-study,aequorinprotein-levelsite-unresolved;
-no PQQbands or affinityzero. Newpreparation/code not implemented yet.
-NativeH2001200809 remains pending unchanged; inspect live state before action.
-Other agents' PLM jobs/dirtyfiles must be preserved. Activegoal continues;
-no automatic defaultpromotion, pushes or per-analysis permission gate.
+PlanMULTISITE_PANEL_PLAN.md; resultMULTISITE_REPORT.md/MULTISITE_RESULT.json.
+Jobs1200851–1200855 COMPLETE tenforwards, allnumericchecks pass. Identical
+all-Caenergies acrossselectedsiteatomorderings (reportederror0).
+Orderedparvalbumin[CD,EF]=[27.431183345093064,64.34764681174364]modelkcal.
+CDexceedsonly1GLG;EFexceedsallthreeGGR. Supportingcross-studycontrasts4/6pass,
+all-casegateFALSE. No sub-kcalaffinitysiteorderclaim. Aequorin[EF1,EF3,EF4]=
+[13.04767291865186,33.17334887989371,51.5641437611785]. Siteunresolvedassay,
+no bestsiteselection,physicalzero,PQQband orbinaryassayreproductionclaim.
+
+New scripts/mace_omol_multisite.py, multisite_report.py. Policy
+omol_intact_multisite_fixed_background_Ca_source_acetyl_ff19sb_v1.
+Rawsourceheavyatoms/covalentlinksreplay;4CPVactualACE0cap,H,bondretained.
+4CPV1611atoms,1backgroundCa,1water,QCa−3/QLa−2.1SL82866atoms,
+2backgroundCa,3waters,QCa−4/QLa−3;its10missingN-terminalresiduesexplicit.
+Onlyselectedmetalchanges.Background-Caindicesmustbeexplicit;default
+single-metalcheckandallpreviouspreparationpathsremainunchanged.
+V1prepfailedbeforeinferenceatoldsingle-metalguard;V2fixedthespecifictechnical
+limitation.Noalteredscientificselection.Unknownrawchemistry/gapsstillfail.
+
+Artifactsunderworkspaces/mace_omol_20260917/:
+- multisite_recipes_v1/{PARV_4CPV,AEQ_1SL8}.json
+- multisite_prepared_v2/CASE/preparation.json (all5prepared)
+- multisite_scoring_v1/CASE/manifest.json and actualcollections/receipts
+- multisite_reports_v1/CASE/result.json; multisite_comparison_v1/result.json
+- multisite_cost_v2.json, multisite_sacct_v1.tsv. CostV1hadoneauxiliarytest
+  resourcehashcapturedinflight;V2correctsit,scores/allocationcostunchanged.
+- Sevennew/source/resulttestspass14.973s,fourlegacyPQQ/GGRtestspass28.313s,
+  onenewactualmultisitereporttestpasses9.923s;12distincttests,noneskipped.
+
+Actualmultisitecost216GPUallocation-s,3456allocatedcore-s,221.486reported
+actualCPU-s;63.758972model-s,80.695251workerwall-s;3936891392bytespeakGPU.
+Localpreparation/dryrun/report/testreceiptsseparate. CumulativeV11through1200855:
+362successfulforwards,2OOMs,11612GPU-s,249024allocatedcore-s,29760.909CPU-s.
+NoDFT/solver/training/forces/relaxationcalls. Goalactive;productionunchanged.
+
+## Next declared work: analytic descriptor gradients
+
+MASKED_GRADIENT_PLAN.md declaredbeforeimplementation/inference. Add a separate
+exactbackward-capableedge/productadapterwithcheckpointing;currentqualified
+energy-onlyadaptersmuststayunchanged. Sameweights,mask,spin,float64andalgebra.
+StageA10forwards onreal73-atom1H4Icores from ablationdevelopmentV2:2nativegrad,
+2batchedgrad,2rotatedgrad,4signedmetaldisplacements. StageBconditional6forwards
+onreal4698-atomGGR1GLG:2gradcenters,4signedmetaldisplacements. Frozen numerical
+criteria and exactsources inplan. No gradientimplementation/callsdone yet.
+Outputsarederivativesofmaskeddescriptor,notvalidatedphysicalforces. Do not
+addrelaxation/entropy merelybecauseagradientorcurvaturematrixcanbecomputed.
+
+GGRcommit1038b55;nextownscopedcommitcoversmultisitecode/result,nextplan.
+Vaultandagentguideupdated. LatestemailacceptedrelaynotifiedGGRfailure;do not
+spamrepeats. NativeH2001200809stillpendingunchanged;inspectlivejobs. Allnew
+A5000jobsabovearecomplete.Noautomaticpromotion/push/per-analysispermissiongate.
+Preserveotheragents'PLMjobs,watchers,dirtyfilesandlocks.

@@ -25,6 +25,9 @@ ASSEMBLY='deposited_chain_A_with_declared_cofactor_and_site_waters'
 def audit_preparation(path):
     """Replay only the established preparation arithmetic; no energy calculation."""
     p=read_json(path)
+    from mace_omol_multisite import POLICY as MULTISITE_POLICY, audit as audit_multisite
+    if p.get('policy_id')==MULTISITE_POLICY:
+        return audit_multisite(path)
     if p.get('status')!='prepared' or p.get('policy_id') not in (POLICY,ACTIVE_POLICY,LEGACY_CANONICAL_POLICY,SOURCE_POLICY):
         raise InvalidArtifact('unsupported whole-chain preparation protocol')
     if p['policy_id']==SOURCE_POLICY:validate_bridge(p)

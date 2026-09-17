@@ -159,6 +159,12 @@ def prepare(root, software, output, agreement):
 
 
 def dry_run(manifest):
+    if read_json(manifest).get('schema_version') in ('alquemia.mace_mechanics_core.v1', 'alquemia.mace_mechanics_gb.v1', 'alquemia.mace_mechanics_short.v1'):
+        from mace_mechanics_run import validate
+        return validate(manifest)
+    if read_json(manifest).get('schema_version') == 'alquemia.mace_short_engine.v1':
+        from mace_short_engine import validate
+        return validate(manifest)
     if read_json(manifest).get('schema_version') in ('alquemia.mace_curvature.v1', 'alquemia.mace_curvature_gb.v1'):
         from mace_curvature import validate
         return validate(manifest)
@@ -243,7 +249,7 @@ def repair_interface(manifest, output, pair_tile=None, memory_agreement=None, re
 
 
 def worker(manifest, task_id, output, memory_mode):
-    if read_json(manifest).get('schema_version') in ('alquemia.mace_gb.v1', 'alquemia.mace_global_gb.v1', 'alquemia.mace_local_gb.v1', 'alquemia.mace_curvature_gb.v1'):
+    if read_json(manifest).get('schema_version') in ('alquemia.mace_gb.v1', 'alquemia.mace_global_gb.v1', 'alquemia.mace_local_gb.v1', 'alquemia.mace_curvature_gb.v1', 'alquemia.mace_mechanics_gb.v1'):
         from mace_gb import worker as gb_worker
         return gb_worker(manifest, task_id, output, memory_mode)
     import torch
@@ -298,27 +304,41 @@ def worker(manifest, task_id, output, memory_mode):
         torch.cuda.synchronize(); evaluation_start = time.monotonic()
         cm = torch.autograd.graph.save_on_cpu(pin_memory=True) if memory_mode == 'host_offload' else contextlib.nullcontext()
         with cm:
-            value = float(atoms.get_potential_energy())
-            forces = np.asarray(atoms.get_forces(), dtype=np.float64)
+            if m['model'].get('short_adapter'):
+                from mace_short_engine import ADAPTER, evaluate
+                if m['model']['short_adapter'] != ADAPTER or t.get('energy_component') != 'interaction_energy':
+                    raise InvalidArtifact('unsupported short component adapter')
+                value, forces = evaluate(calc, atoms)
+            else:
+                value = float(atoms.get_potential_energy())
+                forces = np.asarray(atoms.get_forces(), dtype=np.float64)
         torch.cuda.synchronize()
         result['evaluation_seconds'] = time.monotonic() - evaluation_start
         if not math.isfinite(value) or forces.shape != (len(atoms), 3) or not np.isfinite(forces).all():
             raise InvalidArtifact('invalid MACE energy/forces')
-        density = np.asarray(calc.results['density_coefficients'])
-        if density.shape != (len(atoms), 4) or not np.isfinite(density).all():
-            raise InvalidArtifact(f'unexpected density shape {density.shape}')
         fp = output / 'forces_eV_A.npy'; np.save(fp, forces)
-        dp = output / 'density_coefficients.npy'; np.save(dp, density)
-        total_charge = float(density[:, 0].sum())
-        result.update(status='computed', energy_eV=value, forces=record(fp), density_coefficients=record(dp),
-                      density_total_charge_e=total_charge, total_charge_error_e=total_charge-t['charge'],
-                      charge_check=abs(total_charge-t['charge']) <= m['tolerances']['total_charge_e'])
-        if charge_observer is not None:
-            result['charge_trace'] = charge_observer.finish(output, t['charge'], density)
+        if m['model'].get('short_adapter'):
+            result.update(status='computed', energy_eV=value, forces=record(fp),
+                          energy_component='interaction_energy', density_coefficients=None,
+                          charge_check=None, charge_response_status='not_part_of_this_component',
+                          energy_definition='trained_local_interaction_energy_only',
+                          force_definition='negative_Cartesian_gradient_of_interaction_energy',
+                          input_state_check=check_atoms(rows,t['charge']))
+        else:
+            density = np.asarray(calc.results['density_coefficients'])
+            if density.shape != (len(atoms), 4) or not np.isfinite(density).all():
+                raise InvalidArtifact(f'unexpected density shape {density.shape}')
+            dp = output / 'density_coefficients.npy'; np.save(dp, density)
+            total_charge = float(density[:, 0].sum())
+            result.update(status='computed', energy_eV=value, forces=record(fp), density_coefficients=record(dp),
+                          density_total_charge_e=total_charge, total_charge_error_e=total_charge-t['charge'],
+                          charge_check=abs(total_charge-t['charge']) <= m['tolerances']['total_charge_e'])
+            if charge_observer is not None:
+                result['charge_trace'] = charge_observer.finish(output, t['charge'], density)
         if m.get('schema_version') == 'alquemia.mace_rotation.v1':
             from mace_rotation import probe
             result['rotation_probe'] = probe(calc, m, t, output)
-        if m.get('schema_version') in ('alquemia.mace_rotation.v1', 'alquemia.mace_analytic.v1', 'alquemia.mace_response_trace.v1', 'alquemia.mace_hydrogen.v1', 'alquemia.mace_global_benchmark.v1', 'alquemia.mace_local_correction.v1', 'alquemia.mace_curvature.v1'):
+        if m.get('schema_version') in ('alquemia.mace_rotation.v1', 'alquemia.mace_analytic.v1', 'alquemia.mace_response_trace.v1', 'alquemia.mace_hydrogen.v1', 'alquemia.mace_global_benchmark.v1', 'alquemia.mace_local_correction.v1', 'alquemia.mace_curvature.v1', 'alquemia.mace_mechanics_core.v1'):
             result['energy_components_eV'] = {key: float(calc.results[key]) for key in
                 ('interaction_energy', 'electrostatic_energy', 'electron_energy')}
     except Exception as exc:
@@ -340,10 +360,17 @@ def accepted_attempt(attempt, task, manifest):
     try:
         r = read_json(attempt/'receipt.json'); result = read_json(verify(r['result']))
         if (r['returncode'] != 0 or r['manifest'] != record(manifest) or r['task_id'] != task['task_id']
-                or result['status'] != 'computed' or not result.get('charge_check') or result['cache_key'] != task['cache_key']):
+                or result['status'] != 'computed' or result['cache_key'] != task['cache_key']):
             return None
-        for key in ('forces', 'density_coefficients'):
-            verify(result[key])
+        verify(result['forces'])
+        if task.get('energy_component') == 'interaction_energy':
+            if (result.get('energy_component') != 'interaction_energy' or result.get('density_coefficients') is not None
+                    or not result.get('input_state_check') or not math.isfinite(result['energy_eV'])):
+                return None
+        elif not result.get('charge_check'):
+            return None
+        else:
+            verify(result['density_coefficients'])
         if result.get('charge_trace'):
             trace = read_json(verify(result['charge_trace']))
             verify(trace['arrays'])
@@ -371,7 +398,7 @@ def execute(manifest, memory_mode, selected=None):
                 if core_gate(mp)['status'] != 'pass':
                     raise InvalidArtifact('full GB execution requires native/custom core agreement')
             if t['kind'] == 'full' and m['model'].get('pair_kernel'):
-                if m.get('schema_version') == 'alquemia.mace_global_benchmark.v1':
+                if m.get('schema_version') in ('alquemia.mace_global_benchmark.v1', 'alquemia.mace_short_engine.v1', 'alquemia.mace_mechanics_short.v1'):
                     from mace_global_benchmark import numerical_parent_gate
                     validation = numerical_parent_gate(m)
                 elif m.get('schema_version') == 'alquemia.mace_hydrogen.v1':
@@ -448,6 +475,12 @@ def compare_cores(manifest):
 
 
 def collect(manifest):
+    if read_json(manifest).get('schema_version') in ('alquemia.mace_mechanics_core.v1', 'alquemia.mace_mechanics_gb.v1', 'alquemia.mace_mechanics_short.v1'):
+        from mace_mechanics_run import collect_mechanics
+        return collect_mechanics(manifest)
+    if read_json(manifest).get('schema_version') == 'alquemia.mace_short_engine.v1':
+        from mace_short_engine import collect_short
+        return collect_short(manifest)
     if read_json(manifest).get('schema_version') in ('alquemia.mace_curvature.v1', 'alquemia.mace_curvature_gb.v1'):
         from mace_curvature import collect_curvature
         return collect_curvature(manifest)

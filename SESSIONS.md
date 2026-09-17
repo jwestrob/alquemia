@@ -883,3 +883,43 @@ curvature experiment, then validate a bounded response prediction before enablin
 a correction. No new DFT/next-stage manifest launched at this checkpoint. Do not
 stop at this promising intermediate result or reinterpret direct-score failures
 as successes. Preserve all baseline/other-agent changes.
+
+
+## MACE short engine and coupled mechanics — 2026-09-16
+
+Jacob's active discretionary MACE-discriminator goal continues; production
+baseline/default and immutable results are unchanged. Implemented the exact
+short-component early-exit engine, analytic component forces, typed receipts
+and existing-runner dispatch. Actual job1200736 completed34calls and passed all50
+energy/rigid/physical-gradient checks. Maxenergy error4.55e-12eV; cost481GPU-s,
+7696allocatedcore-s,583.343actualCPU-s. Three actual-artifact engine tests pass.
+No direct classification gain or relaxation score is claimed.
+
+Added source-mapped two-coordinate mechanics preparation, existing-runner task
+packaging/reuse, component/gradient accounting and gated matrix assessment.
+Frozen PLAN/NUMERICAL_CONVENTION precede outputs: original-source H, unchanged
+waters/charges, metal displacement and complete peptide crankshaft, coupling,
+half-step refinement, no negative-mode clipping or trust-region expansion.
+Four representations: GGR extended/connected and both alpha structures; three
+physical proteins. DFT energy/gradient anchors plus MACE+GB core curvature and
+short_full−short_core scaffold changes/gradient. Exterior coordinates are fixed.
+
+Live at this checkpoint: DFT1200743 (36new,30normal ends); short1200750
+(106new,87complete). Core1200749 complete116new+20reused,855GPU-s;
+GB1200767 complete116new+20reused,111GPU-s. Source inventories, submissions,
+receipts and caches are under workspaces/mace_mechanics_20260916/{prepared_v2,
+core_v1,short_v1,gb_v1}. First prepared_v1 failed on a filename collision before
+compute and remains preserved; v2 changes the output layout only.
+
+Next: collect final jobs, run scripts/mace_mechanics_assess.py using the exact
+commands in diagnostics/mace_mechanics_20260916/COMMANDS.md. Only eligible stable
+in-range predicted minima advance to the declared conditional independent DFT
+validation (at most8). Relaxation/classification remain null until all gates pass.
+No numerical correction has yet been validated. Do not resubmit these live jobs.
+
+Tests: seven physical preparation/runner/algebra tests passed30.406s; baseline
+MACE-runner regression10passed,2explicit isolated-environment skips,8.050s.
+Scientific GPU checks and parser/algebra tests are reported separately.
+Updated docs/AGENT_PIPELINE.md and appended the running milestone to the vault
+capture2026-09-16_laca-mace-hybrid-plan-and-plm-baseline-review.md. Email remains
+blocked by the previously reported Postfix relay-DNS failure; no duplicate sent.

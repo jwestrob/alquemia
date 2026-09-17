@@ -725,3 +725,46 @@ analysis used 4.08 s wall, 3.59 s CPU. DNS/download, failed pre-load inspection,
 and preparation-v1 metadata failure preserved; initial preparation not fully
 profiled. Agent guide, runnable commands and vault note updated. Protocol
 mace_polar_1l_analytic_multipole_vacuum_r2scan3c_pilot_v1 remains research only.
+
+
+## 2026-09-16 — Active MACE discriminator goal; tracing and protein-H experiment complete
+
+Jacob approved the goal “build a working, affordable MACE-based La/Ca
+discriminator,” full discretionary execution, and continued work through failed
+pilots. Goal is active with no token/CPU/time budget; diagnostics/
+mace_discriminator_goal_20260916/GOAL.md records scope. No default promotion,
+production rescore, push/deploy or interference with other work. Notification
+email test was accepted by local sendmail but remains deferred by Gmail DNS
+lookup failure. Address/receipt are private under the goal workspace; user was
+informed. Shared mail/DNS configuration unchanged.
+
+Read-only MACE charge tracing: medium 1200676 and large 1200677 completed all
+12 calls, no DFT. Energies exactly reproduce; force differences <=4.90e-11 eV/A.
+Denominators well conditioned (minimum full weight cancellation ratios .929
+medium, .773 large). Large final update amplifies Ca/La atomic-charge L1 response
+from 1.166 initially to 11.940 e. Report under mace_response_trace_20260916.
+465 GPU-allocation s /7440 allocated core-s, actual CPU 501.695 s.
+
+Real whole-protein bond audit found 4467 systematically stretched H bonds:
+mean excess C-H .103309 A, N-H .176687, O-H .224716 against existing ff19SB.
+Implemented independently specified radial H projection preserving heavy/PQQ
+atoms, source mapping, orientation, all chemical states. Four real geometry
+checks plus complete 46-test suite pass (58.579 s). Pilot-v1 preflight demanded
+bitwise cross-CPU replay, failed before inference (1200679,3 s); its blocked
+own dependency1200680 cancelled. Pilot-v2 uses existing1e-12 A geometry tolerance
+with byte-identical XYZs, jobs1200681/1200682 both completed. No inference failures.
+
+H-corrected direct R: medium -405338.274741 kcal/mol; large -404414.357895.
+Difference923.916846 grows from671.310348; gradient norm9.654 vs152.938 eV/A.
+H correction does not fix global response. No matching DFT core endpoints,
+so hybrid/S/class remain null. Protocols mace_polar_1m/1l_analytic_vacuum_protein_H_v1.
+Pair times117.324/243.858 s;410 GPU-allocation s incl preflight,6560 allocated
+core-s,426.892 actual CPU s. Full records in diagnostics/mace_hydrogen_20260916.
+
+Next under active goal: implement frozen MACE-monopole OBC-II solvent descriptor
+on saved corrected densities, with explicit energy accounting and numerical
+checks. PLAN in diagnostics/mace_gb_20260916 declares19 solver calls, zero new
+MACE/DFT. Generic metal cavity assumption explicitly unvalidated, no automatic
+class/ref or corrected gradient. Not yet implemented/submitted at this entry.
+Baseline unchanged. No live MACE jobs at this checkpoint. Continue goal;
+these intermediate outcomes do not complete it. Vault and agent guide updated.

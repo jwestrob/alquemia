@@ -169,7 +169,13 @@ def dry_run(manifest):
     for key in ('memory_agreement', 'kernel_validation_reference'):
         if m.get(key):
             verify(m[key])
-    if m.get('schema_version') == 'alquemia.mace_analytic.v1':
+    if m.get('schema_version') == 'alquemia.mace_hydrogen.v1':
+        from mace_hydrogen import validate
+        validate(m)
+    elif m.get('schema_version') == 'alquemia.mace_response_trace.v1':
+        from mace_response_trace import validate
+        validate(m)
+    elif m.get('schema_version') == 'alquemia.mace_analytic.v1':
         from mace_analytic_pilot import validate
         validate(m)
     elif m.get('schema_version') == 'alquemia.mace_rotation.v1':
@@ -262,6 +268,12 @@ def worker(manifest, task_id, output, memory_mode):
                     raise InvalidArtifact('unsupported blocked pair kernel')
                 result['pair_kernel'] = configure_blocked(calc, settings['tile_sites'], edge_tile, node_tile)
         result['model_load_seconds'] = time.monotonic() - start
+        charge_observer = None
+        if m['model'].get('response_trace'):
+            from mace_response_trace import ChargeTrace, TRACE_ID
+            if m['model']['response_trace'] != TRACE_ID:
+                raise InvalidArtifact('unsupported response observer')
+            charge_observer = ChargeTrace(calc.models[0])
         rows = xyz(verify(t['xyz']))
         atoms = Atoms([a[0] for a in rows], positions=[a[1:] for a in rows], pbc=False)
         atoms.info.update(charge=t['charge'], spin=t['spin_multiplicity'], external_field=[0., 0., 0.])
@@ -286,10 +298,12 @@ def worker(manifest, task_id, output, memory_mode):
         result.update(status='computed', energy_eV=value, forces=record(fp), density_coefficients=record(dp),
                       density_total_charge_e=total_charge, total_charge_error_e=total_charge-t['charge'],
                       charge_check=abs(total_charge-t['charge']) <= m['tolerances']['total_charge_e'])
+        if charge_observer is not None:
+            result['charge_trace'] = charge_observer.finish(output, t['charge'], density)
         if m.get('schema_version') == 'alquemia.mace_rotation.v1':
             from mace_rotation import probe
             result['rotation_probe'] = probe(calc, m, t, output)
-        if m.get('schema_version') in ('alquemia.mace_rotation.v1', 'alquemia.mace_analytic.v1'):
+        if m.get('schema_version') in ('alquemia.mace_rotation.v1', 'alquemia.mace_analytic.v1', 'alquemia.mace_response_trace.v1', 'alquemia.mace_hydrogen.v1'):
             result['energy_components_eV'] = {key: float(calc.results[key]) for key in
                 ('interaction_energy', 'electrostatic_energy', 'electron_energy')}
     except Exception as exc:
@@ -315,6 +329,9 @@ def accepted_attempt(attempt, task, manifest):
             return None
         for key in ('forces', 'density_coefficients'):
             verify(result[key])
+        if result.get('charge_trace'):
+            trace = read_json(verify(result['charge_trace']))
+            verify(trace['arrays'])
         return result
     except (OSError, ValueError, KeyError, TypeError):
         return None
@@ -335,7 +352,13 @@ def execute(manifest, memory_mode, selected=None):
             if t['task_id'] not in selected:
                 continue
             if t['kind'] == 'full' and m['model'].get('pair_kernel'):
-                if m.get('schema_version') == 'alquemia.mace_analytic.v1':
+                if m.get('schema_version') == 'alquemia.mace_hydrogen.v1':
+                    from mace_hydrogen import validate
+                    validation = validate(m)
+                elif m.get('schema_version') == 'alquemia.mace_response_trace.v1':
+                    from mace_response_trace import core_gate
+                    validation = core_gate(mp)
+                elif m.get('schema_version') == 'alquemia.mace_analytic.v1':
                     from mace_analytic_pilot import core_gate
                     validation = core_gate(mp)
                 else:
@@ -404,6 +427,9 @@ def compare_cores(manifest):
 
 def collect(manifest):
     dry_run(manifest); mp = Path(manifest).resolve(); m = read_json(mp)
+    if m.get('schema_version') == 'alquemia.mace_hydrogen.v1':
+        from mace_hydrogen import collect_hydrogen
+        return collect_hydrogen(mp)
     if m.get('schema_version') == 'alquemia.mace_rotation.v1':
         from mace_rotation import collect_rotation
         return collect_rotation(mp)
@@ -482,6 +508,9 @@ def collect(manifest):
     if m.get('schema_version') == 'alquemia.mace_analytic.v1':
         from mace_analytic_pilot import add_analysis
         add_analysis(result, m)
+    if m.get('schema_version') == 'alquemia.mace_response_trace.v1':
+        from mace_response_trace import add_analysis
+        add_analysis(result, m)
     return result
 
 
@@ -504,8 +533,12 @@ def report(collection, output):
                   'unavailable' if memory is None else f'{memory/2**30:.6f}']
         lines.append('| ' + ' | '.join(fields) + ' |')
     lines.extend(['', f"Attempts recorded: {len(c['attempts'])}; successful tasks: "
-                  f"{sum(r['status']=='computed' for r in c['rows'].values())}/12.",
-                  'New DFT endpoints: 0. Four archived converged vacuum endpoints reused.', ''])
+                  f"{sum(r['status']=='computed' for r in c['rows'].values())}/{len(m['tasks'])}.",
+                  'New DFT endpoints: 0. '+('No matched DFT core reference available for changed geometry.' if c.get('geometry_only_pilot') else 'Four archived converged vacuum endpoints reused.'), ''])
+    if c.get('geometry_changes'):
+        lines.extend(['## Hydrogen preparation effects', '', '```json',
+                      json.dumps({'direct': c['direct'], 'endpoint_changes': c['geometry_changes'],
+                                  'hybrid_unavailable_reason': c['hybrid_unavailable_reason']}, indent=2), '```', ''])
     if c.get('core_partition'):
         cp = c['core_partition']
         lines.extend(['## Core-only partition identity', '',
@@ -531,6 +564,9 @@ def report(collection, output):
     if c.get('analytic_comparison'):
         lines.extend(['## Analytic-kernel core checks and method changes', '', '```json',
                       json.dumps(c['analytic_comparison'], indent=2), '```', ''])
+    if c.get('trace_equivalence'):
+        lines.extend(['## Read-only response trace equivalence', '', '```json',
+                      json.dumps(c['trace_equivalence'], indent=2), '```', ''])
     lines.extend(['## Interpretation', '',
                   '- Numerical credibility: inspect charge, rigid-transform and partition checks separately.',
                   '- Scientific informativeness: this single consumed vacuum system cannot establish accuracy.',

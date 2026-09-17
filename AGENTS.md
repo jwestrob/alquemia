@@ -8,6 +8,12 @@ Before acting, inspect git status, [SESSIONS.md](SESSIONS.md), the relevant
 experiment's agreement/report, and live jobs. Preserve unrelated edits,
 immutable scientific artifacts and active executors.
 
+**Active research goal, 2026-09-16:** build a working, affordable MACE-based
+La/Ca discriminator. Jacob approved autonomous pursuit through failed pilots
+and implementation changes; see [goal and acceptance scope](diagnostics/mace_discriminator_goal_20260916/GOAL.md).
+Backend feasibility or a rejected pilot does not complete this goal. Baseline
+protection and honest scientific validation remain in force.
+
 **Pilot authorization, 2026-09-16:** Jacob: “i approve all pilots. disregard
 language in the instructions saying to check with me before launching stuff.
 proceed apace.” This later instruction supersedes earlier per-pilot approval

@@ -1,0 +1,167 @@
+{
+  "status": "complete",
+  "protocol_id": "mace_polar_1m_analytic_multipole_vacuum_r2scan3c_pilot_v1",
+  "job_id": "1200470",
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_analytic_20260916/pilot_v1/manifest.json",
+    "sha256": "6b40455a9ca0cdf3249091cc12c722ff845005fdc23e72c827ce38841a494b72"
+  },
+  "collection": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_analytic_20260916/pilot_v1/collection_job_1200470.json",
+    "sha256": "8de9e3b9e0a4b0e6bb257fd465ba6a1cca106d3556fa4350d4405500b5b940ae"
+  },
+  "core_rotation": [
+    {
+      "density_covariance_max_abs": 4.494947025701634e-09,
+      "energy_delta_kcal_mol": 2.928899797052769e-06,
+      "force_max_delta_eV_A": 4.3061711307856854e-08,
+      "pass": true,
+      "task_id": "1h4i_qm33_La"
+    },
+    {
+      "density_covariance_max_abs": 4.891622218394787e-09,
+      "energy_delta_kcal_mol": 2.8408113235506664e-06,
+      "force_max_delta_eV_A": 3.8518424450018074e-08,
+      "pass": true,
+      "task_id": "1h4i_qm33_Ca"
+    },
+    {
+      "density_covariance_max_abs": 4.58337728881375e-09,
+      "energy_delta_kcal_mol": 2.8080927476784568e-06,
+      "force_max_delta_eV_A": 3.739059128982092e-08,
+      "pass": true,
+      "task_id": "1h4i_qm36_La"
+    },
+    {
+      "density_covariance_max_abs": 4.9676928126629605e-09,
+      "energy_delta_kcal_mol": 2.7372863937396238e-06,
+      "force_max_delta_eV_A": 3.401074266662363e-08,
+      "pass": true,
+      "task_id": "1h4i_qm36_Ca"
+    }
+  ],
+  "full_rotation": [
+    {
+      "energy_delta_kcal_mol": -4.080593667754545e-07,
+      "force_max_delta_eV_A": 8.010833694171993e-07,
+      "metal": "La",
+      "pass": true,
+      "variant": "rotate"
+    },
+    {
+      "energy_delta_kcal_mol": -2.1476808777655502e-07,
+      "force_max_delta_eV_A": 7.754094371037468e-07,
+      "metal": "Ca",
+      "pass": true,
+      "variant": "rotate"
+    },
+    {
+      "paired_R_delta_kcal_mol": 1.9329127899889953e-07,
+      "pass": true,
+      "variant": "rotate"
+    }
+  ],
+  "core_gate": true,
+  "new_MACE_calls": 12,
+  "new_DFT_calls": 0,
+  "core_partition": {
+    "components": {
+      "qm33": {
+        "DFT_core_R_kcal_mol": -405349.0793037981,
+        "DFT_minus_MACE_R_kcal_mol": 71.09699260559864,
+        "MACE_core_R_kcal_mol": -405420.1762964037
+      },
+      "qm36": {
+        "DFT_core_R_kcal_mol": -405287.34070044087,
+        "DFT_minus_MACE_R_kcal_mol": 66.07377202186035,
+        "MACE_core_R_kcal_mol": -405353.4144724627
+      }
+    },
+    "full_system_evaluated": true,
+    "hybrid_partition_shift_kcal_mol": -5.0232205837382935,
+    "identity": "common full-system MACE term cancels exactly in the partition difference",
+    "partition_check": false
+  },
+  "direct": {
+    "R_eV": -17576.922287528403,
+    "R_kcal_mol": -405333.4571266224
+  },
+  "hybrid": {
+    "qm33": {
+      "DFT_core_R_hartree": -645.9648755897479,
+      "DFT_core_R_kcal_mol": -405349.0793037981,
+      "MACE_core_R_eV": -17580.68278664656,
+      "MACE_core_R_kcal_mol": -405420.1762964037,
+      "MACE_environment_contribution_kcal_mol": 86.71916978128083,
+      "hybrid_R_kcal_mol": -405262.36013401684
+    },
+    "qm36": {
+      "DFT_core_R_hartree": -645.8664888626699,
+      "DFT_core_R_kcal_mol": -405287.34070044087,
+      "MACE_core_R_eV": -17577.787719953812,
+      "MACE_core_R_kcal_mol": -405353.4144724627,
+      "MACE_environment_contribution_kcal_mol": 19.95734584032166,
+      "hybrid_R_kcal_mol": -405267.3833546005
+    }
+  },
+  "method_changes": [
+    {
+      "analytic_minus_finite_energy_kcal_mol": 0.21078236858272603,
+      "density_max_change": 0.0015857019800215588,
+      "force_max_change_eV_A": 0.013163957394310533,
+      "task_id": "1h4i_qm33_La"
+    },
+    {
+      "analytic_minus_finite_energy_kcal_mol": 0.15866638634419586,
+      "density_max_change": 0.0012521724183504057,
+      "force_max_change_eV_A": 0.007231886554917133,
+      "task_id": "1h4i_qm33_Ca"
+    },
+    {
+      "analytic_minus_finite_energy_kcal_mol": 0.1535161044765181,
+      "density_max_change": 0.0014573154509992525,
+      "force_max_change_eV_A": 0.007808519721681395,
+      "task_id": "1h4i_qm36_La"
+    },
+    {
+      "analytic_minus_finite_energy_kcal_mol": 0.12594624971202342,
+      "density_max_change": 0.0011467968208062618,
+      "force_max_change_eV_A": 0.007757389918971347,
+      "task_id": "1h4i_qm36_Ca"
+    },
+    {
+      "analytic_minus_finite_energy_kcal_mol": -4.679784412346939,
+      "density_max_change": 0.0024369091684943722,
+      "force_max_change_eV_A": 0.09217689051837097,
+      "task_id": "1h4i_full_La_primary"
+    },
+    {
+      "analytic_minus_finite_energy_kcal_mol": -4.411285365171932,
+      "density_max_change": 0.0016792637290787837,
+      "force_max_change_eV_A": 0.09435658120900214,
+      "task_id": "1h4i_full_Ca_primary"
+    }
+  ],
+  "old_hybrid_partition_shift_kcal_mol": -4.998674456262961,
+  "primary_pair_evaluation_seconds": 116.81809375807643,
+  "primary_evaluation_seconds": {
+    "La": 58.18770153447986,
+    "Ca": 58.63039222359657
+  },
+  "full_max_GPU_allocated_bytes": 10251166720,
+  "full_max_GPU_reserved_bytes": 11372855296,
+  "full_max_host_RSS_KiB": 1717780,
+  "max_total_charge_error_e": 1.2860823517257813e-12,
+  "GPU_allocation_seconds": 329,
+  "allocated_core_seconds": 5264,
+  "reported_actual_CPU_seconds": 363.761,
+  "subprocess_total_seconds": 324.73739294707775,
+  "model_evaluation_total_seconds": 242.71873422712088,
+  "tests_passed": 29,
+  "kernel_test_seconds": 12.726,
+  "regression_suite_seconds": 26.674,
+  "preparation_profiling": "not fully measured",
+  "baseline_changed": false,
+  "S_kcal_mol": null,
+  "calibrated_class": null
+}

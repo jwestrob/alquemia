@@ -635,3 +635,44 @@ Next analytic-dipole method and 12-call core/full pilot are explicitly proposed,
 not executed or approved: NEXT_ANALYTIC_PLAN.md. New module reuses the existing
 MACE manifest/worker/executor and preserves snapshot code for old experiments.
 Vault note and agent guide updated.
+
+
+## 2026-09-16 — All contained pilots approved; analytic MACE pilot prepared
+
+Jacob: “i approve all pilots. disregard language in the instructions saying
+to check with me before launching stuff. proceed apace.” AGENTS.md now records
+this standing authorization for contained discriminator pilots, superseding
+earlier per-pilot approval language. Baseline and immutable experiments remain
+preserved; no default promotion, production rescore, push or interference.
+
+Analytic dipole pilot: same four 1H4I cores primary/rotated, then full La/Ca
+primary/rotated if core gates pass (12 new MACE calls, zero DFT). Direct radial
+derivatives remove the fixed-axis displacement approximation, retaining
+regularization, widths, normalization/self terms and all weights. Independent
+autograd-reference tests on four real densities pass (4 tests,12.726s).
+Manifest workspaces/mace_analytic_20260916/pilot_v1/manifest.json SHA
+6b40455a9ca0cdf3249091cc12c722ff845005fdc23e72c827ce38841a494b72.
+Existing runner and memory checkpointing reused; new research protocol
+mace_polar_1m_analytic_multipole_vacuum_r2scan3c_pilot_v1. Whole-model tests next.
+
+
+## 2026-09-16 — Analytic MACE medium pilot complete; rotation fixed
+
+All12 calls completed in job1200470. Core/full rotations and charge closure
+pass with unchanged frozen tolerances. Full La/Ca contrast rotation error
+1.9329e-7 kcal/mol (old0.0565365); maximum full force error8.0108e-7 eV/A.
+Full primary evaluations58.187702/58.630392s, ~9.55GiB GPU, <=1.64GiB host.
+Hybrid partition shift -5.023220584 kcal/mol still fails2 (old -4.998674456).
+New research protocol only; baseline/default and old results untouched.
+
+Job329GPU-allocation seconds,5264allocated core-seconds,363.761actual CPU
+seconds. Twelve model calls; zero DFT, no failed inference/retries. All29tests
+pass; first independent kernel tests12.726s, complete suite26.674s. Analytical
+radial derivatives verified against independent Cartesian autograd on actual
+archived densities; widths, self terms, normalization and weights retained.
+
+REPORT.md/result.json/RUNBOOK.md in diagnostics/mace_analytic_20260916 retain
+results, limitations, exact artifacts and commands. No medium-pilot job remains
+active. Next large-checkpoint comparison is now in preparation under standing
+authorization; initial download encountered DNS failure, with per-command
+resolution recovery in progress. Shared resolver/installed environment untouched.

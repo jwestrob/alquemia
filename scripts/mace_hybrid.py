@@ -169,7 +169,10 @@ def dry_run(manifest):
     for key in ('memory_agreement', 'kernel_validation_reference'):
         if m.get(key):
             verify(m[key])
-    if m.get('schema_version') == 'alquemia.mace_rotation.v1':
+    if m.get('schema_version') == 'alquemia.mace_analytic.v1':
+        from mace_analytic_pilot import validate
+        validate(m)
+    elif m.get('schema_version') == 'alquemia.mace_rotation.v1':
         from mace_rotation import validate
         validate(m)
     elif len(m['tasks']) != 12 or len({t['task_id'] for t in m['tasks']}) != 12:
@@ -247,13 +250,17 @@ def worker(manifest, task_id, output, memory_mode):
                 raise InvalidArtifact('unsupported execution adapter')
             result['execution_adapter'] = configure(calc)
         if m['model'].get('pair_kernel'):
-            from mace_blocked import KERNEL_ID, configure as configure_blocked
             settings = m['model']['pair_kernel']
-            if settings['kernel_id'] != KERNEL_ID:
-                raise InvalidArtifact('unsupported blocked pair kernel')
             edge_tile = settings.get('core_edge_tile', settings.get('edge_tile')) if t['kind'] == 'core' else settings.get('edge_tile')
             node_tile = settings.get('core_node_tile', settings.get('node_tile')) if t['kind'] == 'core' else settings.get('node_tile')
-            result['pair_kernel'] = configure_blocked(calc, settings['tile_sites'], edge_tile, node_tile)
+            if settings['kernel_id'] == 'graph044_analytic_multipoles_blocked_v1':
+                from mace_analytic import configure as configure_analytic
+                result['pair_kernel'] = configure_analytic(calc, settings['tile_atoms'], edge_tile, node_tile)
+            else:
+                from mace_blocked import KERNEL_ID, configure as configure_blocked
+                if settings['kernel_id'] != KERNEL_ID:
+                    raise InvalidArtifact('unsupported blocked pair kernel')
+                result['pair_kernel'] = configure_blocked(calc, settings['tile_sites'], edge_tile, node_tile)
         result['model_load_seconds'] = time.monotonic() - start
         rows = xyz(verify(t['xyz']))
         atoms = Atoms([a[0] for a in rows], positions=[a[1:] for a in rows], pbc=False)
@@ -282,6 +289,7 @@ def worker(manifest, task_id, output, memory_mode):
         if m.get('schema_version') == 'alquemia.mace_rotation.v1':
             from mace_rotation import probe
             result['rotation_probe'] = probe(calc, m, t, output)
+        if m.get('schema_version') in ('alquemia.mace_rotation.v1', 'alquemia.mace_analytic.v1'):
             result['energy_components_eV'] = {key: float(calc.results[key]) for key in
                 ('interaction_energy', 'electrostatic_energy', 'electron_energy')}
     except Exception as exc:
@@ -327,9 +335,13 @@ def execute(manifest, memory_mode, selected=None):
             if t['task_id'] not in selected:
                 continue
             if t['kind'] == 'full' and m['model'].get('pair_kernel'):
-                validation = compare_cores(mp)
+                if m.get('schema_version') == 'alquemia.mace_analytic.v1':
+                    from mace_analytic_pilot import core_gate
+                    validation = core_gate(mp)
+                else:
+                    validation = compare_cores(mp)
                 if validation['status'] != 'pass':
-                    raise InvalidArtifact('blocked full-system execution requires successful original-vs-blocked core validation')
+                    raise InvalidArtifact('full-system execution requires its declared core validation gate')
             td = root/t['task_id']; td.mkdir(exist_ok=True)
             previous = sorted(td.glob('attempt_*'))
             if any(accepted_attempt(a, t, mp) is not None for a in previous):
@@ -406,7 +418,7 @@ def collect(manifest):
                 valid.append(result)
         rows[t['task_id']] = valid[-1] if valid else {'status': 'unavailable', 'energy_eV': None}
     complete = all(r['status'] == 'computed' for r in rows.values())
-    result = {'protocol_id': PROTOCOL, 'manifest': record(mp), 'collection_implementation': record(__file__),
+    result = {'protocol_id': m['protocol_id'], 'manifest': record(mp), 'collection_implementation': record(__file__),
               'status': 'complete' if complete else 'incomplete',
               'rows': rows, 'attempts': attempts, 'reference': None, 'S_kcal_mol': None,
               'decision': 'uncalibrated_vacuum_diagnostic', 'direct': None, 'hybrid': None, 'checks': None,
@@ -451,7 +463,7 @@ def collect(manifest):
         for variant in ('repeat', 'translate', 'rotate'):
             pair = {}
             for metal in ('La', 'Ca'):
-                name = f'1h4i_full_{metal}_{variant}'; r = rows[name]
+                name = f'1h4i_full_{metal}_{variant}'; r = rows.get(name, {'status': 'unavailable'})
                 if r['status'] != 'computed':
                     continue
                 t = next(t for t in m['tasks'] if t['task_id'] == name)
@@ -467,6 +479,9 @@ def collect(manifest):
                 checks.append({'variant': variant, 'paired_R_delta_kcal_mol': delta,
                                'pass': abs(delta) <= m['tolerances']['energy_kcal_mol']})
         result['checks'] = checks
+    if m.get('schema_version') == 'alquemia.mace_analytic.v1':
+        from mace_analytic_pilot import add_analysis
+        add_analysis(result, m)
     return result
 
 
@@ -513,6 +528,9 @@ def report(collection, output):
     if c.get('checks'):
         lines.extend(['## Repeat and rigid-transform checks', '', '```json',
                       json.dumps(c['checks'], indent=2), '```', ''])
+    if c.get('analytic_comparison'):
+        lines.extend(['## Analytic-kernel core checks and method changes', '', '```json',
+                      json.dumps(c['analytic_comparison'], indent=2), '```', ''])
     lines.extend(['## Interpretation', '',
                   '- Numerical credibility: inspect charge, rigid-transform and partition checks separately.',
                   '- Scientific informativeness: this single consumed vacuum system cannot establish accuracy.',

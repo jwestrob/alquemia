@@ -426,3 +426,14 @@ Do not promote or add arbitrary bare Coulomb to that model. A distinct
 [explicit-field/short-readout plan](../diagnostics/mace_omol_20260917/EXPLICIT_FIELD_SHORT_PLAN.md)
 is declared, not yet implemented:8short-core+8nativepotential calls, existing
 DFT/GB/whole-short reuse. Earlier short-component failures remain recorded.
+
+## Latest MACE hybrid development: explicit field result
+
+The [explicit field + short MACE candidate](../diagnostics/mace_omol_20260917/EXPLICIT_FIELD_SHORT_REPORT.md)
+completes with all near-boundary charge-representation checks passing, but
+fails the partition gate (-4.139kcal) and passes only1/4 consumed alpha/GGR
+ordering comparisons. Baseline remains default; no class/reference or combined
+gradient exists for this candidate. Eightshort/eightpotential calls cost63GPU-s
+and1240allocatedcore-s, reusing quantum/whole/GB sources.
+The next [responsive-field plan](../diagnostics/mace_omol_20260917/RESPONSIVE_FIELD_PLAN.md)
+is declared, not yet implemented or run. Recover CURRENT.md before launch.

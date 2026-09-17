@@ -6,6 +6,35 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
+## Latest completed: explicit electrostatics + MACE short component
+
+Jobs1200980/1200981 complete:8vpot+8shortcore calls,0newDFT/GB/chargefit/
+wholeMACE. All4algebra and5near-boundary charge-quality checks pass. Projected
+Ca/La coupling errors[-.099381,-.541941,-.455469,-.686763]kcal; GGRpartition
+error-.442560. NearestQM/cap probe1.167–1.202A. Charge-fit refinement alone
+is not supported as the principal fix. CandidateFAILS: partition-4.139186004
+vs2; alpha-minus-GGR[-2.523559,+1.615627,-7.739381,-3.600195],1/4pass.
+
+Sources manifestexplicit_field_short_v1 SHA
+90d553d2480a1efb3911fdc9169774610c9b124d40db7e17e6b4ad45af32d439;
+result explicit_field_short_result_v1.json, cost explicit_field_short_cost_v1.json.
+All underworkspaces/mace_omol_20260917. CompactEXPLICIT_FIELD_SHORT_REPORT.md,
+RESULT.json,COMMANDS.md. Eightdistincttestspass (4prep10.525s,3legacy1.138s,
+1actual.031s afterinitialskip). Frozenenvdrypass. Costs63GPU-s,1240core-s,
+177.707actualCPU-s;7.561124short-model-s;peakGPU480389120bytes. Utility88.160987
+summedwall-s. AllcachedDFT/whole/fit/GB costs separate. No productionpromotion.
+
+NEXT RESPONSIVE_FIELD_PLAN.md declared BEFORE newembeddedoutputs. Use same
+permanentcharges/corestates and nativeDFT method, letcoreelectrons respond;
+recomputeCHELPG/GB fromnewdensity, preserve shortfull/core reuses. This is an
+explicit approximate one-way fixed-field+reaction model, notselfconsistentGB.
+PriorPQQpermanentresponse helpedonly~.974partition, notnewmethod/expectedwin.
+8newnativeDFT,8CHELPG,8vpot(combinedexterior+actualenvironmentprobes),44GB;
+4environment-onlyGB reuses,0MACE. Oldgatesunchanged +variationalresponsecheck.
+NOTIMPLEMENTED/PREPARED/SUBMITTEDYET. Verifyinstallednativeenergyaccounting,
+reuseexistingrunner/helpers, no newworkflow oradaptiverefitting. Fullplanhas
+exactcostevidence/inventory. Goalactive, baselineprotected, continuedauthorized.
+
 ## Latest: full-boundary GB and direct-coupling audit completed
 
 Job1200975 COMPLETED48solvercalls,46/46 numericalchecks pass. CandidateFAILS:

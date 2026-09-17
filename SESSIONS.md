@@ -1853,3 +1853,27 @@ error<=1kcal, same2partition andfour>0.02orderinggates. Notimplemented/prepared/
 submittedyet. No fieldweights/checkpointselectionbyoutcome; no combinedgradient.
 Goalactive,continuationauthorized. Vault/currentguideupdated,nopush/promotion.
 Preserveotheragents'PLM1200794–96,pendingnativeH2001200809,jobs/locks/edits.
+
+## 2026-09-17: exact field + local MACE candidate completed
+
+Implemented scripts/mace_explicit_field_short.py and two scoped existing-runner
+dispatches. Plan EXPLICIT_FIELD_SHORT_PLAN.md declared before outputs.
+Jobs1200980/81 complete8nativevpot+8shortcore calls;0newDFT/fit/GB/wholeMACE.
+Near-boundary projected-vs-exact differential coupling errors<.7kcal;all5gates
+pass. Candidatefails partition-4.139186004 vs2 and3/4orderingtests. Baseline
+unchanged; no reference/class/combinedgradient/relaxation. Exactresult
+workspaces/mace_omol_20260917/explicit_field_short_result_v1.json;manifest
+explicit_field_short_v1 SHA90d553d2480a1efb3911fdc9169774610c9b124d40db7e17e6b4ad45af32d439.
+8distincttestspass:4prep,3legacy,1actual;actualinitiallyskippeduntilnativeoutput.
+Frozenenvdrypass. Incrementalcost63GPU-s/1240core-s/177.707actualCPU-s;
+7.561124short-model-s,peakGPU480389120bytes;allreusedsourcecostsadditional.
+Fullreport/compactresult/runbook EXPLICIT_FIELD_SHORT_*;costreceiptsretained.
+
+NEXT RESPONSIVE_FIELD_PLAN.md declared before newoutputs:8nativeembeddedDFT,
+8CHELPG,8vpot,44GB,0MACE withsamegeometry/permanentfield/shortcaches;recompute
+reactiontermfromnewdensity. PriorPQQresponse~.974partitionimprovementremains
+limitingevidence;notnewmethod/assumedwin. NOTimplemented/prepared/launchedyet.
+RecoverCURRENT.md andplan,verifyinstalledenergyaccounting,reusepinnedrunner.
+Goalactive. Home/projectanalysisapprovalgateremoved;fullautonomypersists.
+Vaultandagentguideupdated. No push/promotion; preserveunrelatededitsand
+PLM1200794/95/96,pendingnativeH2001200809,jobs/locks.

@@ -163,6 +163,9 @@ def prepare(root, software, output, agreement):
 
 
 def dry_run(manifest):
+    if read_json(manifest).get('schema_version') == 'alquemia.mace_explicit_field_short.v1':
+        from mace_explicit_field_short import validate
+        return validate(manifest)
     if read_json(manifest).get('schema_version') == 'alquemia.mace_QMFF_gb.v1':
         from mace_omol_solvent import validate
         return validate(manifest)
@@ -520,6 +523,9 @@ def compare_cores(manifest):
 
 
 def collect(manifest):
+    if read_json(manifest).get('schema_version') == 'alquemia.mace_explicit_field_short.v1':
+        from mace_explicit_field_short import collect
+        return collect(manifest)
     if read_json(manifest).get('schema_version') == 'alquemia.mace_QMFF_gb.v1':
         from mace_omol_solvent import collect as collect_solvent
         return collect_solvent(manifest)

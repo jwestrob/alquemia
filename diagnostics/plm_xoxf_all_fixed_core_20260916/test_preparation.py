@@ -1,6 +1,7 @@
 """No new folds, protonation or quantum calculations: immutable fixture tests."""
 import copy
 import os
+import subprocess
 from pathlib import Path
 import tempfile
 import unittest
@@ -97,5 +98,27 @@ class Tests(unittest.TestCase):
             self.assertEqual(result['cases'],[]);self.assertEqual(result['reused_count'],2)
             self.assertEqual(result['unsupported_count'],174);self.assertEqual(len(outcomes['per_target']),176)
             self.assertFalse(any((out/'original_preparation').iterdir()))
+
+    def test_native_worker_crash_retained_without_retry(self):
+        target=prep.read(OLD/'candidate_manifest.json')['targets'][0]
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);(root/'worker_dispatch').mkdir();(root/'worker_results').mkdir()
+            with patch('prepare_batch.subprocess.run',return_value=subprocess.CompletedProcess([], -11)) as run:
+                result=prep.dispatch_worker((target,'unused_fixture_pins',str(root),'unused_fixture_approval'))
+            self.assertEqual(run.call_count,1);self.assertIsNone(result['case'])
+            self.assertEqual(result['outcome']['status'],'preparation_failed')
+            self.assertIn('-11',result['outcome']['reason'])
+            receipt=prep.read(result['outcome']['dispatch_receipt']['path'])
+            self.assertEqual(receipt['retry_count'],0);self.assertEqual(receipt['returncode'],-11)
+
+    def test_recorded_worker_failure_retained_without_retry(self):
+        target=prep.read(OLD/'candidate_manifest.json')['targets'][0]
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);(root/'worker_dispatch').mkdir();(root/'worker_results').mkdir()
+            expected={'case':None,'outcome':{'target_id':target['target_id'],'status':'preparation_failed','reason':'synthetic retained preparation error'},'geometry':{'status':'UNSUPPORTED'}}
+            prep.write(root/'worker_results'/f'{target["target_id"]}.json',expected)
+            with patch('prepare_batch.subprocess.run',return_value=subprocess.CompletedProcess([],0)) as run:
+                result=prep.dispatch_worker((target,'unused_fixture_pins',str(root),'unused_fixture_approval'))
+            self.assertEqual(run.call_count,1);self.assertEqual(result['outcome']['reason'],expected['outcome']['reason'])
 
 if __name__=='__main__':unittest.main(verbosity=2)

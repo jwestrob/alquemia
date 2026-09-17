@@ -3,15 +3,16 @@
 from __future__ import annotations
 import argparse
 import collections
+import concurrent.futures
 import copy
 import hashlib
 import importlib.util
 import json
 import math
-import multiprocessing
 import os
 from pathlib import Path
 import shutil
+import subprocess
 import sys
 import traceback
 
@@ -195,6 +196,39 @@ def prepare_worker(payload):
     write(Path(output)/'worker_results'/f'{target["target_id"]}.json',result)
     return result
 
+def dispatch_worker(payload):
+    """A native child crash is a target failure, never a lost Pool result/retry."""
+    target,pins_path,output,approval=payload;uid=target['target_id'];root=Path(output)
+    envelope=root/'worker_dispatch'/f'{uid}.json';write(envelope,{'payload':payload})
+    stdout=envelope.with_suffix('.stdout.log');stderr=envelope.with_suffix('.stderr.log')
+    producer=root/'worker_results'/f'{uid}.json';returncode=None;failure=None
+    try:
+        with stdout.open('x') as out,stderr.open('x') as err:
+            child=subprocess.run([sys.executable,'-B',str(Path(__file__).resolve()),'--worker-payload',str(envelope),
+                                  '--worker-sha256',record(envelope)['sha256']],stdout=out,stderr=err,check=False)
+        returncode=child.returncode
+        if returncode!=0:raise RuntimeError(f'Isolated preparation process exit {returncode}; no retry')
+        result=read(producer)
+        if result['outcome']['target_id']!=uid:raise ValueError('Child target identity mismatch')
+    except Exception as exc:
+        failure=f'{type(exc).__name__}: {exc}'
+        result={'case':None,'outcome':{'target_id':uid,'status':'preparation_failed','reason':failure,'case_id':target['case_id']},
+                'geometry':{'status':'UNSUPPORTED','target_id':uid,'reason':failure}}
+    dispatch={'target_id':uid,'payload':record(envelope),'returncode':returncode,'error':failure,
+              'stdout':record(stdout) if stdout.exists() else None,'stderr':record(stderr) if stderr.exists() else None,
+              'producer_result':record(producer) if producer.exists() else None,'retry_count':0,'result':result}
+    receipt=envelope.with_suffix('.dispatch.json');write(receipt,dispatch)
+    result['outcome']['dispatch_receipt']=record(receipt)
+    return result
+
+def worker_cli(argv):
+    parser=argparse.ArgumentParser(description='Internal immutable one-target preparation worker')
+    parser.add_argument('--worker-payload',required=True);parser.add_argument('--worker-sha256',required=True)
+    args=parser.parse_args(argv)
+    if not os.environ.get('SLURM_JOB_ID'):raise ValueError('Production worker requires allocated Slurm job')
+    source=verify({'path':str(Path(args.worker_payload).resolve()),'sha256':args.worker_sha256})
+    prepare_worker(read(source)['payload'])
+
 def worker_count(request,target_count):
     cpus=int(os.environ.get('SLURM_CPUS_ON_NODE','1').split('(')[0])
     # Conservative8GiB/worker, retaining20% of physical/allocation RAM; OpenMM workers each use one CPU.
@@ -206,6 +240,8 @@ def worker_count(request,target_count):
     return cap,{'allocated_cpus':cpus,'available_memory_bytes':available,'memory_reserve_fraction':.2,'per_worker_budget_GiB':8,'worker_count':cap,'threads_per_worker':1,'fresh_process_per_target':True}
 
 def main(argv=None):
+    argv=sys.argv[1:] if argv is None else argv
+    if argv and argv[0]=='--worker-payload':return worker_cli(argv)
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ('inventory','inventory-sha256','fold-input-manifest','fold-input-sha256','fold-results','approval','approval-sha256','output'):
         parser.add_argument('--'+name,required=True)
@@ -243,7 +279,7 @@ def main(argv=None):
     if set(reused_rows)!=REUSE_IDS or any(r['status']!='complete' for r in reused_rows.values()):
         raise ValueError('Completed reuse source does not contain the two approved complete pairs')
     root.mkdir(parents=True,exist_ok=False)
-    for name in ('selection','adapter_inputs','original_preparation','prepared','worker_results'):(root/name).mkdir()
+    for name in ('selection','adapter_inputs','original_preparation','prepared','worker_results','worker_dispatch'):(root/name).mkdir()
     w=wrapper();cp=CAL/'implementation_pins.json';w.fixed.verify_pins(cp)
     cases=[];outcomes=[];reused=[];candidates=[]
     for uid,target in sorted(targets.items()):
@@ -265,9 +301,10 @@ def main(argv=None):
     payloads=[(target,str(pins_path),str(root),str(Path(args.approval).resolve())) for target in candidates]
     results=[]
     if payloads:
-        context=multiprocessing.get_context('spawn')
-        with context.Pool(processes=nworkers,maxtasksperchild=1) as pool:
-            for result in pool.imap_unordered(prepare_worker,payloads,chunksize=1):
+        with concurrent.futures.ThreadPoolExecutor(max_workers=nworkers) as dispatcher:
+            pending=[dispatcher.submit(dispatch_worker,payload) for payload in payloads]
+            for future in concurrent.futures.as_completed(pending):
+                result=future.result()
                 results.append(result);print(result['outcome']['target_id'],result['outcome']['status'],flush=True)
     for result in results:
         outcomes.append(result['outcome'])

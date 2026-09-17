@@ -38,6 +38,8 @@ Outputs at the output root:
   metrics, mapped residues and candidate Arg/Lys partners.
 - `worker_results/<protein>.json`: one durable result per preparation attempt;
   raw preparation, minimizer observations, and any recovery remain separate.
+- `worker_dispatch/<protein>.dispatch.json`: isolated process exit, stdout/stderr
+  and retained per-target outcome, including native crashes. No retries/timeouts.
 
 `reused_results` and `unsupported_targets` never enter the quantum task list.
 An empty ready list remains a valid completed preparation inventory; the parent
@@ -74,7 +76,10 @@ recovery functions from the completed two-XoxF adapter, with new workspace and
 approval injection. The original helpers remain unchanged and independently
 pinned. Each target runs in a fresh process, with OpenMM/BLAS/OpenMP threads set
 to one; up to 80% of available allocation memory at a conservative 8 GiB per
-worker limits parallelism.
+worker limits parallelism. A lightweight thread dispatcher launches one explicit
+subprocess per target; native child crashes become recorded per-target failures
+without losing results or blocking sibling targets. This replaces the initial
+process-pool controller only; preparation and selection are unchanged.
 
 The original 50-step minimization is observed without changing its objective,
 seed or iteration ceiling. Its residual H forces are recorded. **Clean core
@@ -94,11 +99,12 @@ phylogenetically curated XoxFs, not experimentally characterized validation cont
 
 ## Checks completed before launch
 
-Twelve lightweight tests passed in 2.886 seconds. They inspect the six existing
+Fourteen lightweight tests pass. They inspect the six existing
 AF3 model metrics and two exact role mappings, test selected-model rejection
 without replacement, reject the retained original malformed ADH9 H geometry and
 changed frozen atoms, and test a synthetic zero-ready batch with complete
-176-target accounting. **No new production protonation, folding or ORCA was run.**
+176-target accounting, plus native-crash and recorded-worker-failure receipts
+without retry. **No new production protonation, folding or ORCA was run.**
 
 The parent `run_quantum.py` independently accepted the two existing immutable
 prepared cores using a temporary compatible outcome fixture. A first direct call

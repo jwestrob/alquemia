@@ -1995,3 +1995,19 @@ declares one constrained charge/dipole fit and separate spatial validation, no
 new high-level endpoints. No fit/preparation/execution of that next model yet.
 Current checkpoint and vault updated. Email update225256UTC accepted by local
 mailer; receipt saved privately. Goal active, baseline/default unchanged.
+
+
+## 2026-09-17 — Distributed quantum source fits completed; native accounting next
+
+Autonomous MACE goal continues. Both eight-state charge/dipole fit experiments
+completed (1201022,1201026): full endpoint field gates fail6/8 and4/8. All native
+numerical and potential checks pass. Denser sampling still misses alpha; stop
+this declared fit trial. No biological score or newSCF/MACE/FF energy. Sixteen
+fits/native utilities total3904allocatedcore-s,1623.268actualCPU-s,zeroGPU.
+Eleven tests pass11.623s. One failed V2preparation retained, no scientific calls;
+fixed function shadowing without changing scientific settings. Reports and
+runbook DISTRIBUTED_SOURCE_* under diagnostics/mace_omol_20260917; full products
+under workspaces. Current checkpoint and vault updated. Next declared plan
+NATIVE_FIELD_ACCOUNTING_PLAN uses12native field queries plus6no-response energies
+and12old mutual controls to verify actual d/p/GK energy algebra; no new source
+model or numerical score yet. Baseline/concurrentPLM/H200 jobs untouched.

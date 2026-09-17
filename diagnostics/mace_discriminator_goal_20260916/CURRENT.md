@@ -6,6 +6,38 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
+## Latest: distributed source trials closed; direct-field accounting next
+
+Both declared fits completed on the eight real normalized vacuum endpoints.
+Job1201022 (V1) failed6/8endpoint field screens; job1201026 (two-center V2)
+failed4/8, all alpha, and the alpha6IP9 paired bare-U0 flag (−1.231046kcal).
+All potential, numerical and differential-vector screens pass. These are
+spatial density-representation tests, not biological predictions; U0 is not
+an environmental correction. V1/V2 validation locations differ. Neither
+source is qualified; stop this bounded fit trial, no parameter/order sweep.
+See DISTRIBUTED_SOURCE_{REPORT,RESULT,COMMANDS} and
+DISTRIBUTED_SOURCE_SAMPLING_{PLAN,REPORT,RESULT} in diagnostics/mace_omol_20260917.
+
+Actual16fits+16native saved-density potential utilities, zero newSCF/MACE/FF
+energies. Combined3904allocatedcore-s,1623.268actualjobCPU-s,zeroGPU. Eleven
+real parser/algebra/integration tests pass11.623s. InitialV2preparation failed
+before scientific calls due to shadowed function; retained failure and recovery
+with identical scientific settings. Its timing is unavailable, not zero.
+Workspaces distributed_source_v1 and distributed_source_v2_recovery_v1 under
+workspaces/mace_omol_20260917 retain frozen code, native outputs and receipts.
+Manifest hashes98820483e24705f632a993400f01aaabbd55ffe6551005c8a7db998040e67282
+andf07f44bd2c41d3887a8ebeb6894a1eed9d438dc216b64cf73e55a35552a1108a.
+
+NEXT NATIVE_FIELD_ACCOUNTING_PLAN.md:12native direct-field queries and6actual
+no-response energies on the already consumed ion-excluded framework controls.
+Reuse12old mutual energies/dipoles. Test vacuum/GK contractions against actual
+native component differences at frozen1e−7kcal tolerance before per-site quantum
+field injection. No new fitted source, DFT, MACE, gradients or hybrid score.
+This is an energy-accounting prerequisite, not full model validation. Plan
+exists; implementation/preparation/execution not yet begun at this checkpoint.
+Goal active; baseline/default unchanged. Live1200796PLM running and1200809H200
+pending untouched. Per-analysis permission rule already durably removed.
+
 ## Latest: fast native polarization; saved-density fields expose a source weakness
 
 Goal active. Commit72481f1 implements/tests the native solver and field runner.

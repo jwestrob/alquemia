@@ -997,3 +997,29 @@ submitted successfully; private receipts/body in goal notifications workspace.
 Agent guide and vault updated. No MACE job live. Retain baseline; abandon this
 frozen direct classifier and continue coherent hybrid research under the active
 authorization. No default promotion, push, rescore or concurrent-work changes.
+
+
+## Saved-output fixed-field DFT/MACE screen — completed
+
+Declared diagnostics/mace_fixed_field_20260916/PLAN.md before combining existing
+components. Native vacuum DFT + uniform CHELPG/permanent-field coupling + exact
+MACE short(full)-short(core). Medium primary,large sensitivity,no fitted weights.
+Both frozen partition tests fail:6.601967536/5.559487282kcal/mol versus2 target,
+down from10.239937573withoutMACE. Exact-density diagnostic7.009438579/5.966958325.
+No newDFT,MACE,chargefit or solvent calls. All38source/accounting/rigid checks
+pass;4realfixture tests pass10.354s. Successful local analysis10.084510429wall/
+9.741181755CPU-s. Three initial preflight invocations rejected floating replay
+and charge-sum roundoff; no candidate result created before the fix, unchanged
+scientific tolerances. Failed preflight/testing costs unprofiled,notzero.
+
+This is the inherited capped Asp303 sidechain boundary,not complete peptide
+residue transfer. No solvent score,calibration,class,relaxation or entropy.
+Baseline unchanged; no accuracy trial from this failed screen. Scoped code
+scripts/mace_fixed_field.py and real tests; REPORT.md/result.json preserve
+components/source pins/costs. Agent guide and vault updated. No job live.
+
+Active goal continues. Read-only backend investigation found installed
+mace_omol support and the official MACE-OMOL-0 release (89-element molecular
+training with charge/spin embedding in installed metadata). It is distinct
+from POLAR and uses ASL; no new model downloaded or calculation launched yet. Next work may scope a separate candidate after
+checking actual checkpoint element/state support and its energy definition.

@@ -50,6 +50,14 @@ retrospective PQQ functional-class evidence, not broad affinity validation.
 live. The [runbook](../diagnostics/mace_canonical_20260916/COMMANDS.md) and pinned
 receipts support replay. No old reference, threshold or response term is inherited.
 
+A subsequent [saved-output fixed-field screen](../diagnostics/mace_fixed_field_20260916/REPORT.md)
+combines vacuum DFT + uniform CHELPG coupling + full-minus-core MACE local energy.
+It reduces the consumed Asp303 partition jump from 10.24 to 6.60/5.56 kcal/mol
+(medium/large), still failing the 2 target. All 38 accounting checks pass; zero
+new quantum/model/solvent calls. This inherited sidechain test is not a complete
+peptide-residue test. No solvent or affinity score is available and no expansion
+of this frozen mixture is justified. The active goal continues.
+
 “Baseline” can refer to the electronic method or to a specific preparation.
 Always name both. The baseline method is ORCA 6.1.1 native r2SCAN-3c,
 CPCM(Water), DefGrid3, NoAutostart, using its native basis/ECP and composite

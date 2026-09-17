@@ -72,7 +72,7 @@ def common(source_inventory, software, agreement, output, stage):
              'mace_omol_source_prepare.py', 'mace_omol_multisite.py',
              'mace_omol_gradients.py', 'mace_omol_gradient_run.py', 'mace_omol_gradient_worker.py', 'mace_omol_response.py',
              'mace_omol_neutral.py', 'mace_omol_neutral_worker.py', 'mace_omol_neutral_run.py',
-             'mace_omol_vacuum_hybrid.py')
+             'mace_omol_vacuum_hybrid.py', 'mace_omol_vacuum.py', 'mace_omol_matched_h.py')
     pins = snapshot(out, names)
     m = {'schema_version': SCHEMA, 'protocol_id': PROTOCOL, 'stage': stage,
          'inventory': record(source_inventory), 'software': record(software), 'agreement': record(agreement),
@@ -148,6 +148,9 @@ def prepare_benchmark(qualification, mechanics, agreement, output):
 
 
 def validate(manifest):
+    if read_json(manifest).get('stage')=='matched_H_core':
+        from mace_omol_matched_h import validate_mace
+        return validate_mace(manifest)
     if read_json(manifest).get('stage')=='vacuum_context':
         from mace_omol_vacuum_hybrid import validate as validate_vacuum_context
         return validate_vacuum_context(manifest)
@@ -456,6 +459,9 @@ def accepted_state(result, task):
 
 
 def collect(manifest):
+    if read_json(manifest).get('stage')=='matched_H_core':
+        from mace_omol_matched_h import collect_mace
+        return collect_mace(manifest)
     if read_json(manifest).get('stage')=='vacuum_context':
         from mace_omol_vacuum_hybrid import collect as collect_vacuum_context
         return collect_vacuum_context(manifest)

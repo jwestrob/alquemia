@@ -1771,3 +1771,25 @@ changedcoreHcounts21/47/16/18. Plan8vacuumDFTanalytic+8MACEcorecalls,6wholereuse
 unchangedpartition/orderinggates. NOTimplemented/launched yet. Do notcombineold
 original-HDFTwithnormalizedfull. Otheragents'PLM1200794–96 andpendingnativeH200
 1200809 preserved. Continueautonomously afterrecoveringthischeckpoint.
+
+
+## Matched source-H hybrid closes with consistency improvement — 2026-09-17
+
+Eight vacuum DFT centers1200950 and eight masked MACE cores1200951 completed,
+zero failures; six exact normalized whole energies reused. The established H
+rule transfers through source graphs; all heavy atoms, caps and chemical states
+unchanged. GGR partition+0.118496483 passes2 versus old-H+1.829806242. All13
+numerical checks pass; only2/4 affinity-order comparisons pass. Alpha1F6S
++4.329631810/+4.211135326;6IP9 -0.805098984/-0.923595467. No selected structure,
+changed threshold, aqueous score or broad accuracy claim. Baseline unchanged.
+Newmace_omol_matched_h.py, minimal shared dispatch, frozen implementations and
+existing runners/locks. Five new real-fixture tests plus six native regressions
+pass; actual integration3.973s following initial explicit skip. DFT751s×64CPU,
+48064allocatedcore-s/43768CPU-s; MACE67GPU-s,1072core-s/83.861CPU-s.
+Model3.856576160s,802472448GPUbytespeak. Model subtotalV16:451success/4failed,
+12589GPU-s/264656core-s/30942.989CPU-s; DFT phases additional and separate.
+Reports MATCHED_H_REPORT/RESULT, fullmatched_H_report_v1, costs/receipts retained.
+Vault/guide/current updated; goal active; no push/default promotion. New solvent
+extension under investigation, not declared/scored at this commit. Saved native
+wavefunctions survive; no recomputation needed for an endpoint-charge utility.
+Preserve concurrent jobs/edits. Per-analysis permission gate remains removed.

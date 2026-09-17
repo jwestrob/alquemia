@@ -6,6 +6,30 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
+## Latest result: matched H complete; consistency improves, accuracy fails
+
+Jobs1200950/1200951 COMPLETED eightDFT/eightMACE, zero failures; six whole reuses.
+13/13 numerical checks pass. GGR partition+0.118496483 (old-H+1.829806242)
+passes2. Alpha1F6S minus GGRextended/connected +4.329631810/+4.211135326 passes;
+alpha6IP9 -0.805098984/-0.923595467 fails. Fixedall-fourgateFAIL2/4. No aqueous
+score, inherited threshold, relaxation or broad accuracy claim. Baseline unchanged.
+[Report](../mace_omol_20260917/MATCHED_H_REPORT.md), MATCHED_H_RESULT.json.
+
+Source-H normalization is the pre-existing ff19SB/water rule; all heavy atoms,
+caps, protonation and inventories unchanged. Exact prepared/quantum/MACE pins
+remain below. Full result matched_H_report_v1/result.json; cost matched_H_cost_v1.
+Five distinct new tests and six native regressions pass; actual integration3.973s
+following initial explicit skip. No new whole inference/solver/training.
+
+DFT751wall-s/64CPU,48064allocatedcore-s,43768reportedCPU-s. MACE67GPU-s,
+1072core-s,83.861CPU-s;model3.856576160s,802472448GPUbytespeak. Model subtotalV16
+451success/4failedcalls,12589GPU-s,264656core-s,30942.989CPU-s. Both recent DFT
+phases are additional/separate. Do not repeat completed jobs/tests. Goalactive.
+Next scientific step not yet declared at this checkpoint; investigate a coherent
+solvent extension rather than claiming this vacuum candidate is validated.
+
+Earlier submitted/pending notes below are historical and superseded here.
+
 ## Latest execution checkpoint — intact gradients qualified
 
 This supersedes the earlier active-gradient notes. Full job1200886 COMPLETED;
@@ -131,15 +155,37 @@ Model engineering subtotalV15:443success,4failedmodelcalls,12522GPU-s,
 is ADDITIONAL and separately recorded. No double count or zero substitution.
 Newmace_omol_vacuum_hybrid.py, smallmace_omol dispatch; existingworkersunchanged.
 
-Next MATCHED_H_NORMALIZATION_PLAN.md is declared, not yet implemented/launched.
-It transfers the already established normalized source-H coordinates to all
-four cores, keeping heavy atoms/caps/protonation/waters fixed. Old original-H
-hybrid remainsfailed. Eight newvacuumDFTanalyticcenters and eightMACEcorecalls;
-reuse six exact normalizedwholeoutputs. Read-onlynormalized_H_reuse_audit_v1:
-all6haveactualcachematches(alpha1F6Sduplicates must agree within0.01, choose
-lexicaltaskID); changedsourceHcounts21/47/16/18. No newcoordinates/scores yet.
-Do not useold original-HDFT withnormalizedwhole. Same fixedpartition/ordering
-gates, no fittedrescue, noaqueous/broadaccuracyclaim. Goalremainsactive.
+## Matched H normalization: implemented, jobs submitted
+
+The declared MATCHED_H_NORMALIZATION_PLAN.md is now implemented in
+scripts/mace_omol_matched_h.py, with small existing MACE dispatch. Four real
+preparation tests pass5.157s; actual integration explicitly pending. Frozen
+quantum and MACE dry-runs pass. Both reuse existing executors, locks and workers.
+
+Prepared: matched_H_prepared_v1/preparation.json SHA
+72952416d3394b2a23a2663a29e78ff244d17f55a505b6e861577c46a4f5cd3c.
+Quantum: matched_H_quantum_v1/manifest.json SHA
+d63801217ed7b6092cf67f4224b34b28574199aefc1ca291abde34c07fee6275;
+job1200950,64CPU/four16-rank tasks, largest cores first for utilization.
+MACE: matched_H_mace_v1/manifest.json SHA
+5db20a83f79a332e63c3e399bc8c33e3ffc8de823cb4f945c6b5c7cef8fc96d2;
+job1200951,A5000/16CPU/64474MiB,eight energy-only core evaluations.
+Inspect live state; do not infer termination from this checkpoint.
+
+Every source H comes from the previously frozen ff19SB/water normalization.
+Heavy coordinates and sigma caps remain exactly unchanged; charge, donor,
+protonation, water and element inventories match. Source-H changes21/47/16/18.
+Full normalization arithmetic replays within1e-12A; derived max-error summaries
+may vary within that same tolerance between hosts, not change scientific inputs.
+Six actual normalized whole energies reused. Alpha duplicates agree within0.01;
+lexically first task selected, all alternatives retained. No new whole inference.
+
+After both jobs finish, use frozen matched_H_quantum_v1/implementation/
+mace_omol_matched_h.py report --quantum[quantum manifest] --mace[MACE manifest]
+--output workspaces/mace_omol_20260917/matched_H_report_v1. Then actual integration
+and native regression, costs/report/vault and scoped commit. Old original-H
+failure remains immutable. Same fixed2kcal partition and four>0.02 ordering
+criteria; no aqueous/broad accuracy/response claim. Goal active.
 
 Vacuum DFTphasecommitted28a86e0. Initialfindingemail18:24UTC acceptedlocalrelay;
 wholehybridfollow-up accepted localrelay;failedaccuracyresult reported. Allnewjobsabove

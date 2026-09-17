@@ -401,5 +401,11 @@ within the declared2 target. Shared-neutral residual still fails. Four tests
 pass. No aqueous score or baseline change. The separate six-call whole-protein
 [vacuum hybrid](../diagnostics/mace_omol_20260917/VACUUM_HYBRID_REPORT.md) now
 passes11/11 numerical and partition checks, but only1/4 ordering comparisons.
-It has not earned an accuracy claim. A [matched H-preparation test](../diagnostics/mace_omol_20260917/MATCHED_H_NORMALIZATION_PLAN.md)
-is declared next; the prior failed result remains immutable. [Vacuum replay commands](../diagnostics/mace_omol_20260917/MATCHED_VACUUM_COMMANDS.md).
+It has not earned an accuracy claim. The [matched H-preparation result](../diagnostics/mace_omol_20260917/MATCHED_H_REPORT.md)
+now passes13/13 numerical checks and reduces GGR partition sensitivity to0.1185kcal.
+Eight DFT and eight small MACE cores completed; six whole results reused.
+Only2/4 ordering comparisons pass: both1F6S comparisons succeed, both6IP9 fail.
+The accuracy gate remains false. Five new tests plus six native regressions pass.
+Heavy atoms/caps/chemical inventories stay fixed; no aqueous score or relaxation.
+[Commands](../diagnostics/mace_omol_20260917/MATCHED_H_COMMANDS.md). Prior failures remain immutable.
+[Vacuum replay commands](../diagnostics/mace_omol_20260917/MATCHED_VACUUM_COMMANDS.md).

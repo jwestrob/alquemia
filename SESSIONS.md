@@ -1143,3 +1143,28 @@ Vault updated and email submitted(20260917T083739Z private receipt);localmailer
 accepted,deliverynotindependentlyconfirmed. Both global/projectAGENTS nowretain
 Jacob'sreconfirmedblanketauthorization. No newpermissioncheckneeded. GoalACTIVE;
 next useful work is implementing/qualifying nativeenergy-only intact-chain path.
+
+
+## Intact-chain OMOL implementation and core bridge — 2026-09-17
+
+Implemented native no-grad energy-only forward with captured node/embedding
+readouts and explicit unavailable forces. Four real1H4I/4MAEcore endpoints in
+job1200807 match archived force-producing energies exactly;all10accounting/
+endpoint/paired checks pass. PeakGPU1,196,969,472bytes;55GPU-s,880allocatedcore-s,
+55.399actualCPU-s. Whole-chain preparation uses mapped metal indices(1931etc),
+not coreatom0. No source geometry/state/charge/water changes and no newcaps.
+
+Frozen INTACT_CHAIN_PLAN now implemented in mace_omol_intact.py, with existing
+runner/snapshot/cache and new protocol mace_omol_intact_chain_matched_coordination_v1.
+Intact ALPHA_1F6S14task qualification1200808 submitted onA5000/16CPU/64474MiB;
+firstnativecall failedCUDA OOM beforeenergy. Failedattempt retained;H200recovery1200809
+uses same14-task manifest/28CPU/200000MiBhost. Fullnumericalresult pending. CoreSHA11847ff4a23260d289c63e65e53bb52e341d6e2562d81ac03dd12f79acfae807;
+qualificationSHAb1609f0b81c73592881102ca123bce39f78d529ba23b64373d26d9e83d491488.
+Only after actual passing full qualification prepare remaining16calls, retaining
+fourprimaryendpoint reuses and all three frozen relative comparisons.
+
+Softwaretests:OMOL6pass19.075s;readout4pass18.949s;legacyrunner10pass/2isolatedenv
+skips8.168s;newintact3pass/1pendingactualfullgate skip5.418s. Production unchanged.
+Reporter implemented but no whole-chain scores yet. GoalACTIVE and blanket
+authorization remains;no per-analysis permission gate. Next collect1200809 and
+continue conditional benchmark or same-method memory recovery if necessary.

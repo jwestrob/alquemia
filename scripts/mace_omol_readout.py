@@ -108,16 +108,22 @@ class NativeCapture:
         self.embedding.append(self.array(output))
 
     def save(self, calc, total, output):
+        node=self.outputs[0]['node_energy'].reshape(-1) if len(self.outputs)==1 else None
+        if node is None or not np.allclose(np.asarray(calc.results['energies']),node,rtol=0,atol=1e-10):
+            raise InvalidArtifact('native/ASE readout units or values differ')
+        e0=np.asarray(calc.results['energies'])-np.asarray(calc.results['node_energy'])
+        return self.save_native(total,output,e0)
+
+    def save_native(self, total, output, atomic_reference_eV):
         from mace_omol import TOL
         for h in self.handles: h.remove()
         if len(self.outputs) != 1 or len(self.embedding) != int(self.has_embedding):
             raise InvalidArtifact('unexpected number of native or embedding forwards')
         native = self.outputs[0]; node = native['node_energy'].reshape(-1)
         embedding = self.embedding[0].reshape(-1) if self.has_embedding else np.zeros(len(node))
-        ase_node = np.asarray(calc.results['energies'])
-        e0 = ase_node - np.asarray(calc.results['node_energy'])
+        e0 = np.asarray(atomic_reference_eV)
         if (embedding.shape != node.shape or not np.isfinite(node).all() or not np.isfinite(embedding).all()
-                or not np.isfinite(e0).all() or not np.allclose(ase_node,node,rtol=0,atol=1e-10)):
+                or e0.shape != node.shape or not np.isfinite(e0).all()):
             raise InvalidArtifact('unsupported native node/embedding shape, units or values')
         error = (float(node.sum()+embedding.sum())-total)*EV_TO_KCAL
         native_error = (float(native['energy'].item())-total)*EV_TO_KCAL

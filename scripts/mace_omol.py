@@ -62,7 +62,7 @@ def common(source_inventory, software, agreement, output, stage):
     # Reuse the canonical package's audited dependency closure, plus this worker.
     names = ('mace_omol.py', 'mace_canonical_run.py', 'mace_canonical.py', 'mace_curvature.py',
              'affordable_response.py', 'mace_mechanics_run.py', 'mace_short_engine.py',
-             'mace_omol_readout.py', 'mace_omol_coordination.py')
+             'mace_omol_readout.py', 'mace_omol_coordination.py', 'mace_omol_intact.py')
     pins = snapshot(out, names)
     m = {'schema_version': SCHEMA, 'protocol_id': PROTOCOL, 'stage': stage,
          'inventory': record(source_inventory), 'software': record(software), 'agreement': record(agreement),
@@ -139,6 +139,9 @@ def prepare_benchmark(qualification, mechanics, agreement, output):
 
 def validate(manifest):
     m = read_json(manifest)
+    if m.get('stage','').startswith('intact_'):
+        from mace_omol_intact import validate as validate_intact
+        return validate_intact(manifest)
     if m.get('stage','').startswith('coordination_'):
         from mace_omol_coordination import validate as validate_coordination
         return validate_coordination(manifest)
@@ -193,8 +196,8 @@ def validate(manifest):
     return {'status':'pass', 'tasks':len(m['tasks']), 'manifest':record(manifest)}
 
 
-def input_batch(calc, atoms, charge, multiplicity):
-    batch = calc._atoms_to_batch(atoms)
+def input_batch(calc, atoms, charge, multiplicity, batch=None, metal_index=0):
+    batch = calc._atoms_to_batch(atoms) if batch is None else batch
     q = float(batch['total_charge'].item()); spin = float(batch['total_spin'].item())
     if q != charge or spin != multiplicity or calc.head != 'omol':
         raise InvalidArtifact('actual OMOL batch charge/multiplicity/head differs')
@@ -204,7 +207,8 @@ def input_batch(calc, atoms, charge, multiplicity):
             raise InvalidArtifact('state outside checkpoint categorical embedding')
     edges=batch['edge_index']
     return {'charge':q, 'spin_multiplicity':spin, 'head':calc.head,
-            'metal_neighbor_edge_count':int(((edges[0]==0)|(edges[1]==0)).sum().item()),
+            'selected_metal_index':metal_index,
+            'metal_neighbor_edge_count':int(((edges[0]==metal_index)|(edges[1]==metal_index)).sum().item()),
             'atoms':len(atoms), 'graph_count':int(batch['ptr'].numel()-1), 'charge_prediction_claimed':False}
 
 
@@ -232,7 +236,11 @@ def worker(manifest, task_id, output, memory_mode):
             raise InvalidArtifact('checkpoint lacks a required element')
         atoms = Atoms([a[0] for a in rows], positions=[a[1:] for a in rows], pbc=False)
         atoms.info.update(charge=t['charge'], spin=t['spin_multiplicity']); atoms.calc = calc
-        result['input_state_check'] = input_batch(calc, atoms, t['charge'], t['spin_multiplicity'])
+        native_batch=calc._atoms_to_batch(atoms) if t.get('energy_only') else None
+        metal_index=t.get('metal_index',0)
+        if rows[metal_index][0]!=t['metal']:
+            raise InvalidArtifact('selected metal source index has the wrong element')
+        result['input_state_check'] = input_batch(calc, atoms, t['charge'], t['spin_multiplicity'],native_batch,metal_index)
         if result['input_state_check']['graph_count'] != 1:
             raise InvalidArtifact('unexpected graph batching')
         if t.get('require_isolated_metal') and result['input_state_check']['metal_neighbor_edge_count'] != 0:
@@ -244,17 +252,36 @@ def worker(manifest, task_id, output, memory_mode):
             capture = NativeCapture(model_obj)
         result['model_load_seconds'] = time.monotonic()-start
         torch.cuda.synchronize(); evaluation = time.monotonic()
-        value = float(atoms.get_potential_energy()); forces = np.asarray(atoms.get_forces(), dtype=np.float64)
+        if t.get('energy_only'):
+            if capture is None or list(model_obj.heads)!=['omol'] or calc.energy_units_to_eV!=1.:
+                raise InvalidArtifact('energy-only path requires captured native single-head eV output')
+            with torch.no_grad():
+                result['gradient_computation_enabled']=torch.is_grad_enabled()
+                native=model_obj(native_batch.to_dict(),training=False,compute_force=False,
+                                 compute_virials=False,compute_stress=False,compute_displacement=False,
+                                 compute_hessian=False,compute_edge_forces=False,compute_atomic_stresses=False)
+                value=float(native['energy'].item())
+                e0=model_obj.atomic_energies_fn(native_batch['node_attrs'])[:,0].detach().cpu().numpy()
+            if native['forces'] is not None:
+                raise InvalidArtifact('energy-only native call unexpectedly returned forces')
+            forces=None
+        else:
+            value = float(atoms.get_potential_energy()); forces = np.asarray(atoms.get_forces(), dtype=np.float64)
         torch.cuda.synchronize(); result['evaluation_seconds'] = time.monotonic()-evaluation
-        if not math.isfinite(value) or forces.shape != (len(atoms),3) or not np.isfinite(forces).all():
+        if not math.isfinite(value) or (forces is not None and (forces.shape != (len(atoms),3) or not np.isfinite(forces).all())):
             raise InvalidArtifact('invalid OMOL energy/analytic forces')
         result['parameter_versions_unchanged'] = versions == {name:p._version for name,p in model_obj.named_parameters()}
         if not result['parameter_versions_unchanged']:
             raise InvalidArtifact('model parameters mutated during inference')
-        fp = out/'forces_eV_A.npy'; np.save(fp, forces)
-        result.update(status='computed', energy_eV=value, forces=record(fp), charge_check=None,
-                      force_definition='negative_Cartesian_gradient_of_total_vacuum_OMOL_energy')
-        if capture is not None:
+        if t.get('energy_only'):
+            result.update(status='computed',energy_eV=value,forces=None,charge_check=None,force_definition=None,
+                          energy_only=True,analytic_gradient_status='not_requested',
+                          native_readout=capture.save_native(value,out,e0))
+        else:
+            fp = out/'forces_eV_A.npy'; np.save(fp, forces)
+            result.update(status='computed', energy_eV=value, forces=record(fp), charge_check=None,
+                          force_definition='negative_Cartesian_gradient_of_total_vacuum_OMOL_energy')
+        if capture is not None and not t.get('energy_only'):
             result['native_readout'] = capture.save(calc, value, out)
     except Exception as exc:
         result.update(status='failed', reason=str(exc), exception_type=type(exc).__name__); traceback.print_exc()
@@ -272,6 +299,15 @@ def worker(manifest, task_id, output, memory_mode):
 
 def accepted_state(result, task):
     state = result.get('input_state_check', {})
+    if state.get('selected_metal_index',0)!=task.get('metal_index',0):
+        return False
+    if task.get('energy_only'):
+        if (result.get('energy_only') is not True or result.get('forces') is not None
+                or result.get('force_definition') is not None or result.get('analytic_gradient_status')!='not_requested'
+                or result.get('gradient_computation_enabled') is not False):
+            return False
+    elif result.get('energy_only'):
+        return False
     if task.get('require_isolated_metal') and state.get('metal_neighbor_edge_count') != 0:
         return False
     if task.get('capture_native_readout'):
@@ -285,6 +321,9 @@ def accepted_state(result, task):
 
 
 def collect(manifest):
+    if read_json(manifest).get('stage','').startswith('intact_'):
+        from mace_omol_intact import collect as collect_intact
+        return collect_intact(manifest)
     if read_json(manifest).get('stage','').startswith('coordination_'):
         from mace_omol_coordination import collect as collect_coordination
         return collect_coordination(manifest)

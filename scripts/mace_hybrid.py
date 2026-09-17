@@ -159,6 +159,9 @@ def prepare(root, software, output, agreement):
 
 
 def dry_run(manifest):
+    if read_json(manifest).get('schema_version') == 'alquemia.mace_omol.v1':
+        from mace_omol import validate
+        return validate(manifest)
     if read_json(manifest).get('schema_version') in ('alquemia.mace_canonical.v1', 'alquemia.mace_canonical_gb.v1'):
         from mace_canonical_run import validate
         return validate(manifest)
@@ -255,6 +258,9 @@ def repair_interface(manifest, output, pair_tile=None, memory_agreement=None, re
 
 
 def worker(manifest, task_id, output, memory_mode):
+    if read_json(manifest).get('schema_version') == 'alquemia.mace_omol.v1':
+        from mace_omol import worker as omol_worker
+        return omol_worker(manifest, task_id, output, memory_mode)
     if read_json(manifest).get('schema_version') in ('alquemia.mace_gb.v1', 'alquemia.mace_global_gb.v1', 'alquemia.mace_local_gb.v1', 'alquemia.mace_curvature_gb.v1', 'alquemia.mace_mechanics_gb.v1', 'alquemia.mace_canonical_gb.v1'):
         from mace_gb import worker as gb_worker
         return gb_worker(manifest, task_id, output, memory_mode)
@@ -369,7 +375,11 @@ def accepted_attempt(attempt, task, manifest):
                 or result['status'] != 'computed' or result['cache_key'] != task['cache_key']):
             return None
         verify(result['forces'])
-        if task.get('energy_component') == 'interaction_energy':
+        if task.get('energy_component') == 'MACE_OMOL_total_vacuum_energy':
+            from mace_omol import accepted_state
+            if not accepted_state(result, task):
+                return None
+        elif task.get('energy_component') == 'interaction_energy':
             if (result.get('energy_component') != 'interaction_energy' or result.get('density_coefficients') is not None
                     or not result.get('input_state_check') or not math.isfinite(result['energy_eV'])):
                 return None
@@ -481,6 +491,9 @@ def compare_cores(manifest):
 
 
 def collect(manifest):
+    if read_json(manifest).get('schema_version') == 'alquemia.mace_omol.v1':
+        from mace_omol import collect as collect_omol
+        return collect_omol(manifest)
     if read_json(manifest).get('schema_version') in ('alquemia.mace_canonical.v1', 'alquemia.mace_canonical_gb.v1'):
         from mace_canonical_run import collect as collect_canonical
         return collect_canonical(manifest)

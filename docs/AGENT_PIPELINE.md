@@ -1,6 +1,6 @@
 # Alquemia: current operating guide for agents
 
-**Updated 2026-09-16.** Start here for new work. Jacob has approved contained
+**Updated 2026-09-17.** Start here for new work. Jacob has approved contained
 pilots autonomously; see root AGENTS.md for the instruction superseding older
 per-pilot approval language. This guide supersedes older
 operational/status prose; dated experiments and their numerical records remain
@@ -57,6 +57,19 @@ It reduces the consumed Asp303 partition jump from 10.24 to 6.60/5.56 kcal/mol
 new quantum/model/solvent calls. This inherited sidechain test is not a complete
 peptide-residue test. No solvent or affinity score is available and no expansion
 of this frozen mixture is justified. The active goal continues.
+
+The separate [MACE-OMOL trial](../diagnostics/mace_omol_20260917/REPORT.md)
+passes all nine numerical checks and canonical PQQ transfer: 25 calibration
+cases separate and all three consumed transfer structures classify correctly
+with its own vacuum-descriptor bands. Broader affinity robustness fails:
+alpha-minus-GGR is negative with the primary extended core and positive with
+the connected core; GGR shifts by -26.19 kcal/mol. Do not select the favorable
+representation or apply PQQ bands to generic sites. Protocol
+`mace_omol_0_100m_vacuum_descriptor_v1` uses native MACE0.3.16, a pinned83-element
+checkpoint, explicit charge/multiplicity and no density/solvent correction.
+70 actual calls cost670GPU-s/10720allocatedcore-s; median pair inference1.454s.
+Jobs1200797/1200799 are complete. [Commands](../diagnostics/mace_omol_20260917/COMMANDS.md).
+Baseline remains default and broad-affinity validation remains incomplete.
 
 “Baseline” can refer to the electronic method or to a specific preparation.
 Always name both. The baseline method is ORCA 6.1.1 native r2SCAN-3c,

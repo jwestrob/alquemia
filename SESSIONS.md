@@ -1023,3 +1023,44 @@ mace_omol support and the official MACE-OMOL-0 release (89-element molecular
 training with charge/spin embedding in installed metadata). It is distinct
 from POLAR and uses ASL; no new model downloaded or calculation launched yet. Next work may scope a separate candidate after
 checking actual checkpoint element/state support and its energy definition.
+
+
+## MACE-OMOL candidate completed — 2026-09-17
+
+Progress toward active goal: a distinct pretrained molecular backend now passes
+the retrospective canonical PQQ criterion. Frozen PLAN in diagnostics/
+mace_omol_20260917/ precedes checkpoint acquisition/inference; Jacob's existing
+discretionary pilot authorization applies. NativeMACE0.3.16/torch2.8 reused read
+only, official100M checkpoint SHA9b64b4fd5153ca578c694abc57806d8111050de6ff652e695c9b525bc4d36469.
+Actual83elements includeCa/La,52,365,482parameters,explicit charge/multiplicity1,
+no POLAR adapter or predicted density. No solvent/reference/relaxation term.
+
+Qualification1200797:10calls,all9repeat/rotation/translation checks pass.
+Benchmark1200799:60newcalls plus4exact qualified reuses,allcomplete,no scientific
+failure. Canonical25 separate,gap79.03060796106001kcal/mol; own bands classify
+1H4I Ca,4MAE La,1KB0 Ca correctly. This is consumed functional-class evidence,
+confounded with motif/charge; two crystal accessions overlap calibration. No
+broad-affinity,training-overlap absence or improved-accuracy-from-gap claim.
+
+Non-PQQ primary alpha-minus-GGRextended contrasts -18.471538477/-19.428069552
+kcal/mol fail. With GGRconnected they become+7.720422072/+6.763890998,so the
+representation-robustness criterion also fails. GGR itself shifts-26.191960550.
+Both alpha geometries form one biological group; both GGR cores one structure.
+No favorable-representation selection or application of PQQ bands to these sites.
+
+Protocol mace_omol_0_100m_vacuum_descriptor_v1; scripts/mace_omol.py adds typed
+worker/preparation/qualification/exact-cache support through existing runner;
+scripts/mace_omol_report.py preserves baseline and evidence strata. Six real
+OMOL tests pass17.700s; baseline-runner10pass/2explicit isolated-env skips8.137s.
+70actualGPUcalls,zeroDFT/solvent. Cost670GPU-s,10720allocatedcore-s,753.691actual
+CPU-s;medianpairinference1.454s,peakGPU3.171GBallocated/4.163GBreserved. Full
+startup/validation overhead included in jobs. Setup/preparation not fully timed.
+
+Reports,result.json,costs.json,qualificationchecks and explicit operations in
+diagnostics/mace_omol_20260917/. Both jobs complete. Baseline/default unchanged;
+retain OMOL as a promising fast PQQ research candidate,not a robust-affinity
+replacement. Goal remains ACTIVE. Agent guide and requested vault note updated.
+An important-result email is being submitted to Jacob's authorized address;
+private delivery receipts stay in the goal workspace. Next research should
+resolve the large representation dependence before broader use; no further
+scientific task manifest has been launched at this checkpoint.

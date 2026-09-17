@@ -71,7 +71,8 @@ def common(source_inventory, software, agreement, output, stage):
              'mace_omol_prepared.py', 'mace_omol_factorization.py', 'mace_omol_mask_calibration.py',
              'mace_omol_source_prepare.py', 'mace_omol_multisite.py',
              'mace_omol_gradients.py', 'mace_omol_gradient_run.py', 'mace_omol_gradient_worker.py', 'mace_omol_response.py',
-             'mace_omol_neutral.py', 'mace_omol_neutral_worker.py', 'mace_omol_neutral_run.py')
+             'mace_omol_neutral.py', 'mace_omol_neutral_worker.py', 'mace_omol_neutral_run.py',
+             'mace_omol_vacuum_hybrid.py')
     pins = snapshot(out, names)
     m = {'schema_version': SCHEMA, 'protocol_id': PROTOCOL, 'stage': stage,
          'inventory': record(source_inventory), 'software': record(software), 'agreement': record(agreement),
@@ -147,6 +148,9 @@ def prepare_benchmark(qualification, mechanics, agreement, output):
 
 
 def validate(manifest):
+    if read_json(manifest).get('stage')=='vacuum_context':
+        from mace_omol_vacuum_hybrid import validate as validate_vacuum_context
+        return validate_vacuum_context(manifest)
     if read_json(manifest).get('stage')=='shared_neutral_core':
         from mace_omol_neutral_run import validate as neutral_validate
         return neutral_validate(manifest)
@@ -452,6 +456,9 @@ def accepted_state(result, task):
 
 
 def collect(manifest):
+    if read_json(manifest).get('stage')=='vacuum_context':
+        from mace_omol_vacuum_hybrid import collect as collect_vacuum_context
+        return collect_vacuum_context(manifest)
     if read_json(manifest).get('stage')=='shared_neutral_core':
         from mace_omol_neutral_run import collect as neutral_collect
         return neutral_collect(manifest)

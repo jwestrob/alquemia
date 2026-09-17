@@ -1744,3 +1744,30 @@ updated;email acceptedrelay18:24UTC. Goalactive;baseline/defaultunchanged.
 VACUUM_HYBRID_PLAN.md declares a separate six-call original-H whole-context
 candidate;notimplemented/launched at thiscommit. No revivalofpriorCPCMstage.
 Preserve concurrentPLM1200794–96,pendingnativeH2001200809,edits andlocks.
+
+
+## Vacuum whole-context candidate closes with ordering failure — 2026-09-17
+
+Six original-H whole MACEcalls1200924 complete,11/11 numericalchecks pass.
+Partition+1.829806242kcal-scale passes2;ordering1/4failsall-fourgate:
+alpha1F6S versus GGRextended/connected +0.558714448/-1.271091793;
+alpha6IP9 -0.265848708/-2.095654950. No changedthreshold/core/label oraqueousscore.
+Newmace_omol_vacuum_hybrid.py andminimalshared dispatch;oldworkersunchanged.
+Three newrealfixturetests plus sixnativeregressions pass;actualintegration
+3.895s afterinitial explicitskip. Frozen source/pairedmapping andallreceipts retained.
+Cost98GPUallocation-s,1568allocatedcore-s,117.848CPU-s;47.057306305model-s,
+6186040832bytespeakGPU. No newDFT/solver/training/gradient/optimization.
+Model subtotalV15:443successfulcalls,4failedcalls,12522GPU-s,263584core-s,
+30859.128CPU-s;matchedvacuumDFT39552core-s/35369CPU-s isadditional/separate.
+CostV2 adds finalnative regressionresources without changing any allocationcost.
+CompactVACUUM_HYBRID_REPORT/RESULT, fullvacuum_hybrid_report_v1. Baselineunchanged.
+Vault/current/guide updated. Initialsolventfinding and failedaccuracyfollow-up
+acceptedlocalmailrelay;goalactive,no push. Allournewjobs terminal.
+
+Next MATCHED_H_NORMALIZATION_PLAN.md declares fixedpre-existingH normalization
+transferredtobothcore/full,allheavycoords/caps/protonation/watersfixed;oldfailure
+preserved. Read-onlynormalized_H_reuse_audit_v1 confirms6wholecachematches;
+changedcoreHcounts21/47/16/18. Plan8vacuumDFTanalytic+8MACEcorecalls,6wholereuses,
+unchangedpartition/orderinggates. NOTimplemented/launched yet. Do notcombineold
+original-HDFTwithnormalizedfull. Otheragents'PLM1200794–96 andpendingnativeH200
+1200809 preserved. Continueautonomously afterrecoveringthischeckpoint.

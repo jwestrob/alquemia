@@ -111,13 +111,39 @@ New script mace_omol_vacuum.py, frozen source and existing ORCA runner/locks.
 Bounded archiveaudit:165inputs/25geometrymatches/zero vacuum counterparts.
 Baseline/default unchanged. No aqueous score or force/curvature accuracy claim.
 
-Next declared candidate: VACUUM_HYBRID_PLAN.md. Six whole-protein energy calls
-on exact original-H GGR1GLG/alpha1F6S/alpha6IP9;reuse eight actual vacuumDFT and
-masked core centers. H=DFT_vac(core)+masked(full)-masked(core);all four fixed
-alpha-minus-GGR development contrasts must exceed0.02. No solvent, newDFT,
-optimization, parameter/category sweep or inherited calibration. Separate new
-protocol;prior CPCM conditional stages remain unexecuted. Not implemented or
-launched at this checkpoint. Email18:24UTC accepted by local relay with result.
+## Whole vacuum hybrid complete: consistency passes, ordering fails
+
+Job1200924 completed6/6 original-H whole calls.11/11numerical checks pass;
+partition+1.829806242 passes2. Ordering only1/4passes:alpha1F6S versus
+GGR[extended,connected]=[+0.558714448,-1.271091793];alpha6IP9=
+[-0.265848708,-2.095654950]. Fixedall-fourgateFAIL. No threshold/label/geometry
+change or aqueous score. Report ../mace_omol_20260917/VACUUM_HYBRID_REPORT.md.
+Manifest vacuum_hybrid_v1 SHA
+8d054667b104384a49f3cbaa7b97ddd712b8c620c4660f2907f79afa4bc72d7e;
+fullvacuum_hybrid_report_v1/result.json. Three new and six native tests pass;native regression12.283s. Actual
+integration3.895s afterinitialskip. CostV2 adds final regression resource pins. Initialdry-run rejected execute-only CLI
+argument beforecompute; corrected frozen dryrunpassedwithout sourcechanges.
+
+Cost98GPUallocation-s,1568allocatedcore-s,117.848CPU-s;47.057306305model-s,
+6186040832bytespeakGPU. No newDFT/solver/training/gradient/optimization.
+Model engineering subtotalV15:443success,4failedmodelcalls,12522GPU-s,
+263584allocatedcore-s,30859.128CPU-s. MatchedvacuumDFT39552core-s/35369CPU-s
+is ADDITIONAL and separately recorded. No double count or zero substitution.
+Newmace_omol_vacuum_hybrid.py, smallmace_omol dispatch; existingworkersunchanged.
+
+Next MATCHED_H_NORMALIZATION_PLAN.md is declared, not yet implemented/launched.
+It transfers the already established normalized source-H coordinates to all
+four cores, keeping heavy atoms/caps/protonation/waters fixed. Old original-H
+hybrid remainsfailed. Eight newvacuumDFTanalyticcenters and eightMACEcorecalls;
+reuse six exact normalizedwholeoutputs. Read-onlynormalized_H_reuse_audit_v1:
+all6haveactualcachematches(alpha1F6Sduplicates must agree within0.01, choose
+lexicaltaskID); changedsourceHcounts21/47/16/18. No newcoordinates/scores yet.
+Do not useold original-HDFT withnormalizedwhole. Same fixedpartition/ordering
+gates, no fittedrescue, noaqueous/broadaccuracyclaim. Goalremainsactive.
+
+Vacuum DFTphasecommitted28a86e0. Initialfindingemail18:24UTC acceptedlocalrelay;
+wholehybridfollow-up accepted localrelay;failedaccuracyresult reported. Allnewjobsabove
+terminal. PendingnativeH2001200809 and otheragents'PLM1200794–96 untouched.
 
 Shared-neutral commit296f809;response/context215c794;gradientc22a881. Do not repeat passed
 engineering gates. Other agents'PLM1200794–1200796 and pendingnativeH2001200809

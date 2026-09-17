@@ -398,6 +398,8 @@ The [matched vacuum diagnostic](../diagnostics/mace_omol_20260917/MATCHED_VACUUM
 completed eight native-ORCA centers. Solvent mismatch accounts for18.33 of the
 20.16kcal GGR discrepancy; vacuum DFT minus masked-core residual is1.83kcal,
 within the declared2 target. Shared-neutral residual still fails. Four tests
-pass. No aqueous score or baseline change. A separate six-call whole-protein
-vacuum hybrid is [declared next](../diagnostics/mace_omol_20260917/VACUUM_HYBRID_PLAN.md),
-not yet implemented/launched. [Vacuum replay commands](../diagnostics/mace_omol_20260917/MATCHED_VACUUM_COMMANDS.md).
+pass. No aqueous score or baseline change. The separate six-call whole-protein
+[vacuum hybrid](../diagnostics/mace_omol_20260917/VACUUM_HYBRID_REPORT.md) now
+passes11/11 numerical and partition checks, but only1/4 ordering comparisons.
+It has not earned an accuracy claim. A [matched H-preparation test](../diagnostics/mace_omol_20260917/MATCHED_H_NORMALIZATION_PLAN.md)
+is declared next; the prior failed result remains immutable. [Vacuum replay commands](../diagnostics/mace_omol_20260917/MATCHED_VACUUM_COMMANDS.md).

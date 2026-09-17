@@ -70,7 +70,7 @@ def common(source_inventory, software, agreement, output, stage):
              'mace_omol_ablation_run.py', 'mace_omol_ablation_panel.py', 'mace_omol_panel_report.py',
              'mace_omol_prepared.py', 'mace_omol_factorization.py', 'mace_omol_mask_calibration.py',
              'mace_omol_source_prepare.py', 'mace_omol_multisite.py',
-             'mace_omol_gradients.py', 'mace_omol_gradient_run.py', 'mace_omol_gradient_worker.py')
+             'mace_omol_gradients.py', 'mace_omol_gradient_run.py', 'mace_omol_gradient_worker.py', 'mace_omol_response.py')
     pins = snapshot(out, names)
     m = {'schema_version': SCHEMA, 'protocol_id': PROTOCOL, 'stage': stage,
          'inventory': record(source_inventory), 'software': record(software), 'agreement': record(agreement),
@@ -146,6 +146,9 @@ def prepare_benchmark(qualification, mechanics, agreement, output):
 
 
 def validate(manifest):
+    if read_json(manifest).get('stage')=='masked_core_response':
+        from mace_omol_response import validate as validate_response
+        return validate_response(manifest)
     if read_json(manifest).get('stage') in ('masked_gradient_core','masked_gradient_full'):
         from mace_omol_gradient_run import validate as validate_gradients
         return validate_gradients(manifest)
@@ -242,7 +245,7 @@ def input_batch(calc, atoms, charge, multiplicity, batch=None, metal_index=0):
 
 
 def worker(manifest, task_id, output, memory_mode):
-    if read_json(manifest).get('stage') in ('masked_gradient_core','masked_gradient_full'):
+    if read_json(manifest).get('stage') in ('masked_gradient_core','masked_gradient_full','masked_core_response'):
         from mace_omol_gradient_worker import worker as gradient_worker
         return gradient_worker(manifest,task_id,output,memory_mode)
     import torch
@@ -439,6 +442,9 @@ def accepted_state(result, task):
 
 
 def collect(manifest):
+    if read_json(manifest).get('stage')=='masked_core_response':
+        from mace_omol_response import collect as collect_response
+        return collect_response(manifest)
     if read_json(manifest).get('stage') in ('masked_gradient_core','masked_gradient_full'):
         from mace_omol_gradient_run import collect as collect_gradients
         return collect_gradients(manifest)

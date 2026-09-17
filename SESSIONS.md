@@ -1670,3 +1670,37 @@ Next MASKED_RESPONSE_SCREEN_PLAN.md declares40masked corecalls on exact
 archived GGR/alpha deformation inputs, reusingDFT energies/gradients. Separate
 direct-response andDFT-anchored curvature criteria; no optimization/correction.
 Not implemented or launched at this commit. Continue autonomously.
+
+
+## Masked response and static context failures retained — 2026-09-17
+
+Response1200888 completed40/40 exact archived-core calls (8analyticcenters,
+32signed energies), zero failures/newDFT/solver/training. Own derivative24/24,
+direct DFTresponse6/24, curvature19/24, DFT-gradient anchored24/24. Maximum
+direct error0.320106, anchored0.019487kcal-scale. Anchored pass under0.02floor
+does not override failed curvature. No relaxation/entropy/classification or
+baseline change. Three distinct real-fixture tests pass after actual-output
+integration; that integration was explicitly skipped until results existed.
+
+Cost320GPUallocation-s,5120allocatedcore-s,416.572reportedCPU-s;20.148532
+model-s,1,031,137,792bytespeakGPU. CumulativeengineeringV13:429successes,
+4failedcalls,12342GPU-s,260704allocatedcore-s,30648.036CPU-s. Local resource
+receipts separate. Source-pinned outputs in masked_response_report_v1;
+compact MASKED_RESPONSE_REPORT.md/RESULT.json. Existing runner/worker reused.
+
+Declared static DFT/CPCMcore + masked(full-core) then FAILED cached partition
+prerequisite: connected-minus-extended GGR DFT−7.343500873, maskedcore−27.503809106,
+hybrid+20.160308232 versus2kcal-scale limit. All shared source/cap mappings pass
+(max4.99e-11A). Zero new model calls. DO NOT launch its six conditional full
+calls. Two actual-fixture tests pass4.384s. Full masked_context_partition_v1;
+compact MASKED_SUBTRACTIVE_CONTEXT_REPORT.md/RESULT.json. No fitted rescue.
+
+New files mace_omol_response.py and mace_omol_context.py; minimal dispatch in
+mace_omol.py; corresponding tests. Pipeline guide/current checkpoint/vault updated.
+Next SHARED_NEUTRAL_FEATURE_PLAN.md declares one fixed learned-neutral embedding
+control, actual physical charge/spin retained. Eight initial core calls; exact
+native charge0 reference audit and same2kcal partition prerequisite before any
+conditional six whole calls. No charge-category sweep/optimization/newDFT.
+NOT implemented or launched yet. Goal active, baseline unchanged, no push.
+All new research GPU jobs terminal. H2001200809stillpending; other agents'PLM
+1200794running and1200795/96dependencies preserved. Recheck live before resuming.

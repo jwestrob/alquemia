@@ -42,18 +42,50 @@ commands and immutable attempt details. Source files: mace_omol_gradients.py,
 mace_omol_gradient_worker.py, mace_omol_gradient_run.py; minimal dispatch in
 mace_omol.py. No production score/energy-only adapter changes.
 
-**Next runnable development:** implement the declared
-[MASKED_RESPONSE_SCREEN_PLAN.md](../mace_omol_20260917/MASKED_RESPONSE_SCREEN_PLAN.md).
-Forty core calls:4representations x2metals x5archived points, eight analytic
-centers plus32signed energy displacements. Reuse exact mechanics preparedV2,
-old DFT energies/gradients and physical Jacobians. Screen direct response and
-DFT-anchored curvature separately under frozen criteria. No new DFT, whole-chain
-subtraction with mismatched H, minimization or numerical relaxation correction.
-This next screen is DECLARED, NOT IMPLEMENTED OR LAUNCHED at this checkpoint.
+## Latest scientific results after the gradient milestone
 
-All gradient jobs terminal. Native H2001200809 still pending at last check;
-preserve other agents'PLM1200794–1200796 and recheck live state. Goal active,
-full autonomy remains; no permission gate, push or default promotion.
+Response job1200888 COMPLETED40/40calls, zero failures. Exact archived DFT inputs
+and physical Jacobians were used. Own analytic derivatives pass24/24; direct
+DFT deformation-energy comparisons pass6/24; curvature passes19/24; DFT-gradient
+anchored predictions pass24/24 under their separate0.02 absolute floor. The
+anchored pass does not override five curvature failures. Maximum direct error
+0.320106; anchored0.019487kcal-scale. No relaxed score is supported. Report:
+`masked_response_report_v1/result.json`; compact MASKED_RESPONSE_REPORT.md.
+
+Cost320GPUallocation-s,5120allocatedcore-s,416.572reportedCPU-s;20.148532summed
+model-s,1,031,137,792bytespeakGPU. Three distinct real-fixture tests pass; actual
+integration was explicitly skipped before outputs then passed after completion.
+CumulativeengineeringV13:429successful calls,4failedcalls,12342GPU-s,
+260704allocatedcore-s,30648.036reportedCPU-s. No newDFT/solver/training.
+
+A separate static candidate was then declared: DFT/CPCMcore + masked(full-core).
+Its cached partition prerequisite FAILS: connected-minus-extended GGR shifts
+DFT−7.343500873, maskedcore−27.503809106, hybrid+20.160308232 versus2kcal gate.
+All original-H shared source/cap mappings pass (max4.99e-11A). Zero new inference;
+DO NOT run its conditional six whole-chain calls. Full result:
+`masked_context_partition_v1/result.json`; compact
+MASKED_SUBTRACTIVE_CONTEXT_REPORT.md. Two actual-fixture tests pass4.384s.
+No adaptive change, learned multiplier or omitted failure. Baseline unchanged.
+
+**Next declared development:** [SHARED_NEUTRAL_FEATURE_PLAN.md](../mace_omol_20260917/SHARED_NEUTRAL_FEATURE_PLAN.md).
+One fixed alternative to the raw-zero vector: use the checkpoint's learned
+charge-zero feature for both endpoints/all atoms, preserving actual physical
+charges and spin. This remains an empirical descriptor, not physical
+neutralization. No charge-category sweep. First eight real core-center
+energy/gradient calls on the same GGR/alpha set; verify four actual La charge0
+states against exact native archived results where compatible. Require native
+numerical agreement and the same2kcal cached partition target before any
+conditional six whole-system calls. No optimization or newDFT. Plan declared;
+new adapter/reference audit/manifest NOT IMPLEMENTED OR LAUNCHED yet.
+
+Source scripts for completed work: mace_omol_response.py, mace_omol_context.py,
+minimal mace_omol.py dispatch, real-fixture tests. Gradient milestone committed
+c22a881; response/context work is the next scoped commit. Do not repeat passed
+qualifications or rerun the failed fixed context candidate.
+
+All new research GPU jobs are terminal. Native H2001200809 remains pending at
+last check; preserve other agents'PLM1200794–1200796 and inspect live state.
+Goal active. Full autonomy, baseline/reference protection and no push remain.
 
 ## Actual result: masked MACE candidate works on the supported PQQ panel
 

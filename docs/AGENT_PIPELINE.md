@@ -382,6 +382,11 @@ Exact masked-descriptor gradients now work on intact GGR:23/23 core checks and
 versioned checkpoint/scatter adapter preserves the scalar; production energy-only
 adapters remain unchanged. This is numerical derivative qualification, not a
 physical relaxation correction. [Gradient report and commands](../diagnostics/mace_omol_20260917/MASKED_GRADIENT_REPORT.md).
-The next [response screen](../diagnostics/mace_omol_20260917/MASKED_RESPONSE_SCREEN_PLAN.md)
-uses40 real-core evaluations against archived DFT; no new DFT or optimization.
-No predictive improvement from gradients is claimed; baseline remains default.
+The completed [response screen](../diagnostics/mace_omol_20260917/MASKED_RESPONSE_REPORT.md)
+used40 real-core evaluations and zero new DFT. Numerical derivatives pass24/24;
+direct responses pass6/24 and curvature19/24. No mechanical correction is
+supported. The separate static DFT+masked(full-core) candidate fails its cached
+partition test by20.16kcal versus the2kcal target; its six conditional full calls
+must not be launched. [Partition result](../diagnostics/mace_omol_20260917/MASKED_SUBTRACTIVE_CONTEXT_REPORT.md).
+The next shared learned-neutral feature is a distinct declared research control,
+not implemented at this checkpoint. Baseline/default remains unchanged.

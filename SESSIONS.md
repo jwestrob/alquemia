@@ -597,3 +597,41 @@ agent guide and vault note. Collection blocked_v6/collection_job_1200381.json
 SHA025b5ae120368354f0368e656646ccbc2386e33f398b724b6ddfd3dc3f5276bb.
 Keep the memory implementation; retain baseline predictions pending scientific
 validation. Next proposed work is rotation attribution / large core compatibility.
+
+
+## 2026-09-16 — Approved MACE rotation attribution investigation
+
+Jacob: “Proceed and investigate!”, following the recommendation to locate the
+rotation sensitivity. Scope: the same four consumed cores, same 37-degree
+rotation, original versus memory-blocked medium-model inference (eight new
+core calls), plus frozen archived-density field/energy and co-rotated auxiliary
+stencil checks. No new DFT/full-protein/large-model calls or changed offsets.
+Existing tolerances retained. Agreement and source audit are under
+diagnostics/mace_rotation_20260916/. Reuses the existing manifested MACE runner,
+with a separate rotation protocol and receipts; baseline unchanged.
+
+
+## 2026-09-16 — MACE rotation source isolated; memory rewrite cleared
+
+Completed job1200396: eight real rotated core energy/force calls and 48
+frozen-density component calls on A5000, with original and blocked execution.
+Original/blocked match to 7.276e-12 eV, 3.932e-12 eV/Angstrom and 1.004e-13
+density coefficients. Both have the same rotation error. Fixed lab-axis
+displaced dipoles break covariance; co-rotating their axes reduces frozen
+energy/feature errors to <=1.103e-11. This isolates a representation-level
+error, not an additive decomposition of the whole model's error.
+
+Core contrast rotation changes are +0.010754118/+0.017921198 kcal/mol for
+qm33/qm36. These do not explain away the ~5 kcal/mol partition residual.
+Baseline unchanged; no new DFT, full protein, large model, offset changes or
+new biological cases. Twenty-one pre-submission tests passed. Allocation
+62 GPU-seconds, 992 allocated core-seconds; actual CPU87.961s. Eight model
+evaluations7.267436s; total subprocess59.380493s including probes and imports.
+No failures/retries; no live continuation. Results and exact pins in
+diagnostics/mace_rotation_20260916/REPORT.md and result.json. Comparison hash
+185608b291a68287cb8ffdf4c08bdc311419a31009418a3891209c610da636a6.
+
+Next analytic-dipole method and 12-call core/full pilot are explicitly proposed,
+not executed or approved: NEXT_ANALYTIC_PLAN.md. New module reuses the existing
+MACE manifest/worker/executor and preserves snapshot code for old experiments.
+Vault note and agent guide updated.

@@ -169,7 +169,10 @@ def dry_run(manifest):
     for key in ('memory_agreement', 'kernel_validation_reference'):
         if m.get(key):
             verify(m[key])
-    if len(m['tasks']) != 12 or len({t['task_id'] for t in m['tasks']}) != 12:
+    if m.get('schema_version') == 'alquemia.mace_rotation.v1':
+        from mace_rotation import validate
+        validate(m)
+    elif len(m['tasks']) != 12 or len({t['task_id'] for t in m['tasks']}) != 12:
         raise InvalidArtifact('approved task set changed')
     for t in m['tasks']:
         check_atoms(xyz(verify(t['xyz'])), t['charge'])
@@ -177,7 +180,7 @@ def dry_run(manifest):
         expected = cache_key({'task': base, 'model': m['model'], 'software': m['software'], 'implementation': m['implementation']})
         if t['cache_key'] != expected:
             raise InvalidArtifact('task scientific cache key mismatch')
-    return {'status': 'pass', 'tasks': 12, 'new_DFT_endpoints': 0, 'manifest': record(manifest)}
+    return {'status': 'pass', 'tasks': len(m['tasks']), 'new_DFT_endpoints': 0, 'manifest': record(manifest)}
 
 
 def repair_interface(manifest, output, pair_tile=None, memory_agreement=None, reference_collection=None, edge_tile=None, node_tile=None):
@@ -276,6 +279,11 @@ def worker(manifest, task_id, output, memory_mode):
         result.update(status='computed', energy_eV=value, forces=record(fp), density_coefficients=record(dp),
                       density_total_charge_e=total_charge, total_charge_error_e=total_charge-t['charge'],
                       charge_check=abs(total_charge-t['charge']) <= m['tolerances']['total_charge_e'])
+        if m.get('schema_version') == 'alquemia.mace_rotation.v1':
+            from mace_rotation import probe
+            result['rotation_probe'] = probe(calc, m, t, output)
+            result['energy_components_eV'] = {key: float(calc.results[key]) for key in
+                ('interaction_energy', 'electrostatic_energy', 'electron_energy')}
     except Exception as exc:
         result.update(status='failed', reason=str(exc), exception_type=type(exc).__name__)
         traceback.print_exc()
@@ -384,6 +392,9 @@ def compare_cores(manifest):
 
 def collect(manifest):
     dry_run(manifest); mp = Path(manifest).resolve(); m = read_json(mp)
+    if m.get('schema_version') == 'alquemia.mace_rotation.v1':
+        from mace_rotation import collect_rotation
+        return collect_rotation(mp)
     rows = {}; attempts = []
     for t in m['tasks']:
         valid = []
@@ -461,6 +472,9 @@ def collect(manifest):
 
 def report(collection, output):
     c = read_json(collection)
+    if c.get('protocol_id') == 'mace_polar_1m_realspace_rotation_attribution_v1':
+        from mace_rotation import report_rotation
+        return report_rotation(collection, output)
     m = read_json(verify(c['manifest']))
     lines = ['# MACE / DFT vacuum capability pilot', '', f"Status: **{c['status']}**.", '',
              f"Protocol: `{c['protocol_id']}`. Baseline/default unchanged.", '',

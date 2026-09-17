@@ -1,0 +1,213 @@
+{
+  "protocol_id": "mace_polar_1m_realspace_rotation_attribution_v1",
+  "job_id": "1200396",
+  "status": "complete",
+  "comparison_sha256": "185608b291a68287cb8ffdf4c08bdc311419a31009418a3891209c610da636a6",
+  "manifest_pins": {
+    "original": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_rotation_20260916/audit_v1/original/manifest.json",
+      "sha256": "4cb77cf90b5574133a9464a227df530e8f4ec52b5d1e5e650c8e61432175f1cd"
+    },
+    "blocked": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_rotation_20260916/audit_v1/blocked/manifest.json",
+      "sha256": "4267a6c17ca517d47207ef9fd81f95873410b19480e208a61e162ec93fa2fe8f"
+    }
+  },
+  "new_core_calls": 8,
+  "new_DFT_calls": 0,
+  "full_calls": 0,
+  "original_blocked_checks": [
+    {
+      "density_max_delta": 9.414691248821327e-14,
+      "energy_delta_eV": 0.0,
+      "force_max_delta_eV_A": 3.2419761319957274e-12,
+      "pass": true,
+      "task_id": "1h4i_qm33_La"
+    },
+    {
+      "density_max_delta": 6.572520305780927e-14,
+      "energy_delta_eV": -7.275957614183426e-12,
+      "force_max_delta_eV_A": 1.9984014443252818e-12,
+      "pass": true,
+      "task_id": "1h4i_qm33_Ca"
+    },
+    {
+      "density_max_delta": 1.0036416142611415e-13,
+      "energy_delta_eV": 7.275957614183426e-12,
+      "force_max_delta_eV_A": 3.931521774802604e-12,
+      "pass": true,
+      "task_id": "1h4i_qm36_La"
+    },
+    {
+      "density_max_delta": 6.261657858885883e-14,
+      "energy_delta_eV": 0.0,
+      "force_max_delta_eV_A": 3.697486761211621e-12,
+      "pass": true,
+      "task_id": "1h4i_qm36_Ca"
+    }
+  ],
+  "original_rotation_checks": [
+    {
+      "density_covariance_max_abs": 0.0006293503208698314,
+      "energy_delta_kcal_mol": 0.02298446884092955,
+      "force_max_delta_eV_A": 0.004146875229329605,
+      "pass": false,
+      "task_id": "1h4i_qm33_La"
+    },
+    {
+      "density_covariance_max_abs": 0.0005748907724716229,
+      "energy_delta_kcal_mol": 0.03373858703891709,
+      "force_max_delta_eV_A": 0.003593137418694603,
+      "pass": false,
+      "task_id": "1h4i_qm33_Ca"
+    },
+    {
+      "density_covariance_max_abs": 0.0005179946697234927,
+      "energy_delta_kcal_mol": 0.035177043455107346,
+      "force_max_delta_eV_A": 0.003066917474615405,
+      "pass": false,
+      "task_id": "1h4i_qm36_La"
+    },
+    {
+      "density_covariance_max_abs": 0.000554469384630836,
+      "energy_delta_kcal_mol": 0.05309824120230825,
+      "force_max_delta_eV_A": 0.0039527250236867095,
+      "pass": false,
+      "task_id": "1h4i_qm36_Ca"
+    }
+  ],
+  "original_pair_checks": [
+    {
+      "paired_R_delta_kcal_mol": 0.010754118197987547,
+      "partition": "qm33",
+      "pass": false
+    },
+    {
+      "paired_R_delta_kcal_mol": 0.01792119774720091,
+      "partition": "qm36",
+      "pass": false
+    }
+  ],
+  "frozen_density_original": {
+    "1h4i_qm33_Ca": {
+      "arrays": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_rotation_20260916/audit_v1/original/execution/1h4i_qm33_Ca/attempt_001/rotation_probe_arrays.npz",
+        "sha256": "f5d258637aa7987937853eb878a04f95ebbd7ad32b35a6539a454a7b95164e82"
+      },
+      "density_source": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_hybrid_20260916/pilot_v3/execution/1h4i_qm33_Ca/attempt_001/density_coefficients.npy",
+        "sha256": "49640428d1e7783c3d2d4063bf2cd5b3fccf560d2505bc8271f2e5142fe0ae33"
+      },
+      "energy": {
+        "base_eV": 6.059810533092772,
+        "corotated_frame_max_abs": 2.289723965986923e-12,
+        "corotated_frame_pass": true,
+        "lab_covariance_max_abs": 7.711394739651212e-05,
+        "lab_rotation_delta_kcal_mol": 0.0017782898723451073
+      },
+      "energy_offset_A": 0.02,
+      "feature_offset_A": 0.1,
+      "features": {
+        "corotated_frame_max_abs": 4.613476267678607e-12,
+        "corotated_frame_pass": true,
+        "lab_covariance_max_abs": 0.07365224297103401,
+        "scalar_lab_max_abs": 0.029170187052606877,
+        "vector_lab_max_abs": 0.07365224297103401
+      }
+    },
+    "1h4i_qm33_La": {
+      "arrays": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_rotation_20260916/audit_v1/original/execution/1h4i_qm33_La/attempt_001/rotation_probe_arrays.npz",
+        "sha256": "af0b0e9caa6e8e697a3798061c0f71be74373fa656b6b48dd2c9762c1825c6c7"
+      },
+      "density_source": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_hybrid_20260916/pilot_v3/execution/1h4i_qm33_La/attempt_001/density_coefficients.npy",
+        "sha256": "155efe73d5c5b001e5fbf6bed3ed30c9cc13813b5a7f6df6cad2ecfd325b3b90"
+      },
+      "energy": {
+        "base_eV": 3.6449624637876212,
+        "corotated_frame_max_abs": 2.8759217229890055e-12,
+        "corotated_frame_pass": true,
+        "lab_covariance_max_abs": 0.00027843718431341813,
+        "lab_rotation_delta_kcal_mol": -0.006420914006682465
+      },
+      "energy_offset_A": 0.02,
+      "feature_offset_A": 0.1,
+      "features": {
+        "corotated_frame_max_abs": 4.498179606571284e-12,
+        "corotated_frame_pass": true,
+        "lab_covariance_max_abs": 0.07060211862299728,
+        "scalar_lab_max_abs": 0.03345216795682404,
+        "vector_lab_max_abs": 0.07060211862299728
+      }
+    },
+    "1h4i_qm36_Ca": {
+      "arrays": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_rotation_20260916/audit_v1/original/execution/1h4i_qm36_Ca/attempt_001/rotation_probe_arrays.npz",
+        "sha256": "b31db83111d1272c86d0e020b3889ff79524e916ccd107cf726b3035145e456f"
+      },
+      "density_source": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_hybrid_20260916/pilot_v3/execution/1h4i_qm36_Ca/attempt_001/density_coefficients.npy",
+        "sha256": "d1369ec0e96d7d6104090d6cc7002718e4e2463b7b27c4d0630ee4b57933ffc7"
+      },
+      "energy": {
+        "base_eV": 10.853554628935468,
+        "corotated_frame_max_abs": 2.021494083237485e-12,
+        "corotated_frame_pass": true,
+        "lab_covariance_max_abs": 0.0007213922907531867,
+        "lab_rotation_delta_kcal_mol": 0.016635701425553692
+      },
+      "energy_offset_A": 0.02,
+      "feature_offset_A": 0.1,
+      "features": {
+        "corotated_frame_max_abs": 6.56119603092975e-12,
+        "corotated_frame_pass": true,
+        "lab_covariance_max_abs": 0.07348404826271787,
+        "scalar_lab_max_abs": 0.024933172679176607,
+        "vector_lab_max_abs": 0.07348404826271787
+      }
+    },
+    "1h4i_qm36_La": {
+      "arrays": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_rotation_20260916/audit_v1/original/execution/1h4i_qm36_La/attempt_001/rotation_probe_arrays.npz",
+        "sha256": "13eada0b6a72cd0c6ec9cb7e786d451e763f33fa2b1d7ca9e9e3d8b6e45f2410"
+      },
+      "density_source": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_hybrid_20260916/pilot_v3/execution/1h4i_qm36_La/attempt_001/density_coefficients.npy",
+        "sha256": "5329ac71a8e59ff2d38ae6e2926c55996e1f726ad1b88570d01854c13e877bae"
+      },
+      "energy": {
+        "base_eV": 6.03976700755042,
+        "corotated_frame_max_abs": 1.0544454198679887e-11,
+        "corotated_frame_pass": true,
+        "lab_covariance_max_abs": 0.0001829146366212342,
+        "lab_rotation_delta_kcal_mol": 0.00421811172672427
+      },
+      "energy_offset_A": 0.02,
+      "feature_offset_A": 0.1,
+      "features": {
+        "corotated_frame_max_abs": 1.1021072943151466e-11,
+        "corotated_frame_pass": true,
+        "lab_covariance_max_abs": 0.07064865173669971,
+        "scalar_lab_max_abs": 0.02712109054912304,
+        "vector_lab_max_abs": 0.07064865173669971
+      }
+    }
+  },
+  "all_corotated_frame_checks_pass": true,
+  "max_corotated_energy_error_eV": 1.0544454198679887e-11,
+  "max_corotated_feature_error": 1.1021072943151466e-11,
+  "max_host_RSS_KiB": 1614984,
+  "max_GPU_allocated_bytes": 1283105280,
+  "sum_evaluation_seconds": 7.267436020076275,
+  "sum_subprocess_wall_seconds": 59.38049294799566,
+  "allocated_GPU_seconds": 62,
+  "allocated_core_seconds": 992,
+  "reported_actual_CPU_seconds": 87.961,
+  "CPU_test_wall_seconds": 42.88,
+  "preparation_profiling": "not fully measured",
+  "tests_pass": 21,
+  "baseline_default_changed": false,
+  "score": null,
+  "decision": null
+}

@@ -115,11 +115,22 @@ def reuse(collection,wanted,parent):
     return refs,values
 
 
+def scoring_tasks(preparation,factorization,parent):
+    wanted=tasks(preparation)
+    if factorization is not None:
+        from mace_omol_factorization import verified
+        ref=verified(factorization)
+        if ref['model']!=parent['model'] or ref['software']!=parent['software']:
+            raise InvalidArtifact('factorization reference belongs to another descriptor model/software')
+        wanted=[t for t in wanted if t['position']=='bound']
+    return wanted
+
+
 @cached_file_checks
-def prepare(preparation,development_collection,agreement,output,reuse_collection=None):
+def prepare(preparation,development_collection,agreement,output,reuse_collection=None,factorization=None):
     from mace_omol import common,seal
     audit=audit_preparation(preparation);_,parent=qualification(development_collection)
-    wanted=tasks(preparation);refs,_=reuse(reuse_collection,wanted,parent)
+    wanted=scoring_tasks(preparation,factorization,parent);refs,_=reuse(reuse_collection,wanted,parent)
     _,out,m=common(verify(parent['inventory']),verify(parent['software']),agreement,output,'ablation_prepared')
     for name in ('mace_omol_ablation.py','mace_omol_products.py','mace_omol_edges.py','mace_omol_readout.py'):
         if m['implementation'][name]['sha256']!=parent['implementation'][name]['sha256']:
@@ -127,6 +138,7 @@ def prepare(preparation,development_collection,agreement,output,reuse_collection
     m.update(protocol_id=PROTOCOL,model=descriptor_model(verify(parent['software'])),preparation=record(preparation),
              preparation_audit=audit,development_collection=record(development_collection),reused=refs,
              reuse_collection=record(reuse_collection) if reuse_collection else None,
+             factorization=record(factorization) if factorization else None,
              energy_evaluation=EVALUATION,output_semantics=SEMANTICS,
              evidence_use=read_json(preparation).get('evidence_use','unrecorded'),
              driver_python=record(sys.executable),
@@ -146,7 +158,8 @@ def validate(manifest):
     if (m['driver_python']!=record(sys.executable) or
             m['driver_versions']!={k:importlib.metadata.version(k) for k in ('openmm','numpy')}):
         raise InvalidArtifact('use the recorded preparation driver environment; MACE workers use their separate pinned environment')
-    wanted=tasks(verify(m['preparation']));refs,_=reuse(verify(m['reuse_collection']) if m['reuse_collection'] else None,wanted,parent)
+    wanted=scoring_tasks(verify(m['preparation']),verify(m['factorization']) if m.get('factorization') else None,parent)
+    refs,_=reuse(verify(m['reuse_collection']) if m['reuse_collection'] else None,wanted,parent)
     if (m['schema_version']!=SCHEMA or m['protocol_id']!=PROTOCOL or m['stage']!='ablation_prepared'
             or m['model']!=descriptor_model(verify(m['software'])) or m['software']!=parent['software']
             or m['inventory']!=parent['inventory'] or m['tolerances']!=TOL or m['energy_evaluation']!=EVALUATION
@@ -157,7 +170,8 @@ def validate(manifest):
         if m['implementation'][name]['sha256']!=parent['implementation'][name]['sha256']:
             raise InvalidArtifact('prepared descriptor adapter changed')
     selected=[t for t in wanted if t['task_id'] not in refs]
-    if len(selected)!=len(m['tasks']) or len(selected)+len(refs)!=4:raise InvalidArtifact('four-state inventory changed')
+    if len(selected)!=len(m['tasks']) or len(selected)+len(refs)!=(2 if m.get('factorization') else 4):
+        raise InvalidArtifact('declared scoring state inventory changed')
     for t,e in zip(m['tasks'],selected):
         payload={k:v for k,v in t.items() if k not in ('xyz','cache_key')}
         if payload!=e or xyz(verify(t['xyz']))!=geometry(t):raise InvalidArtifact('prepared scoring state differs')
@@ -171,19 +185,32 @@ def validate(manifest):
 def collect(manifest):
     m=read_json(manifest);result=collect_endpoints(manifest)
     _,parent=qualification(verify(m['development_collection']))
-    refs,values=reuse(verify(m['reuse_collection']) if m['reuse_collection'] else None,tasks(verify(m['preparation'])),parent)
+    wanted=scoring_tasks(verify(m['preparation']),verify(m['factorization']) if m.get('factorization') else None,parent)
+    refs,values=reuse(verify(m['reuse_collection']) if m['reuse_collection'] else None,wanted,parent)
     result['reused_rows']={k:{**ref,'result':values[k]} for k,ref in refs.items()}
     rows={**result['rows'],**values};terms={}
-    for metal in ('La','Ca'):
-        pair={p:rows[f'{metal}_{p}_primary'] for p in ('bound','detached')}
-        terms[metal]=pair['bound']['energy_eV']-pair['detached']['energy_eV'] if all(r['status']=='computed' for r in pair.values()) else None
-    complete=all(v is not None for v in terms.values())
+    if m.get('factorization'):
+        from mace_omol_factorization import verified,FACTORIZATION
+        ref=verified(verify(m['factorization']));bound={metal:rows[metal+'_bound_primary'] for metal in ('La','Ca')}
+        complete=all(r['status']=='computed' for r in bound.values())
+        value=(bound['Ca']['energy_eV']-bound['La']['energy_eV']-ref['Ca_minus_La_disconnected_atom_model_eV'])*EV_TO_KCAL if complete else None
+        terms=None
+        result.update(score_evaluation=FACTORIZATION,factorization_reference=m['factorization'],
+                      bound_model_eV={metal:r['energy_eV'] for metal,r in bound.items()},
+                      disconnected_atom_model_eV=ref['disconnected_atom_model_eV'])
+    else:
+        for metal in ('La','Ca'):
+            pair={p:rows[f'{metal}_{p}_primary'] for p in ('bound','detached')}
+            terms[metal]=pair['bound']['energy_eV']-pair['detached']['energy_eV'] if all(r['status']=='computed' for r in pair.values()) else None
+        complete=all(v is not None for v in terms.values())
+        value=(terms['Ca']-terms['La'])*EV_TO_KCAL if complete else None
+        result['score_evaluation']='four_full_bound_detached_states_v1'
     checks=[{'name':key+'_accounting','error_model_kcal':r['native_readout']['component_sum_error_kcal_mol'],
              'pass':abs(r['native_readout']['component_sum_error_kcal_mol'])<=.01}
             for key,r in rows.items() if r['status']=='computed']
     result.update(status='complete' if complete else 'incomplete',protocol_id=PROTOCOL,output_semantics=SEMANTICS,
                   score_unit='kcal_equivalent_model_units',bound_minus_detached_model_eV=terms,
-                  R_mask_model_kcal=(terms['Ca']-terms['La'])*EV_TO_KCAL if complete else None,
+                  R_mask_model_kcal=value,
                   numerical_gate_pass=complete and all(c['pass'] for c in checks),checks=checks,
                   decision_status='compatible_calibration_not_supplied',calibrated_class=None,
                   baseline_changed=False,production_promotion=False)
@@ -209,7 +236,7 @@ if __name__=='__main__':
     a=sub.add_parser('audit');a.add_argument('--preparation',required=True)
     a=sub.add_parser('prepare')
     for key in ('preparation','development-collection','agreement','output'):a.add_argument('--'+key,required=True)
-    a.add_argument('--reuse-collection')
+    a.add_argument('--reuse-collection');a.add_argument('--factorization')
     a=sub.add_parser('report')
     for key in ('manifest','output'):a.add_argument('--'+key,required=True)
     args=vars(p.parse_args());command=args.pop('command')

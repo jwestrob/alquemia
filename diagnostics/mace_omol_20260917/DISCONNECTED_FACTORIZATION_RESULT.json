@@ -1,0 +1,56 @@
+{
+  "status": "pass",
+  "factorization_id": "omol_charge_mask_disconnected_factorization_v1",
+  "protocol_id": "mace_omol_intact_charge_feature_ablation_descriptor_v1",
+  "output_semantics": "energy_like_descriptor_not_quantum_endpoint",
+  "anchor_case": "PQQ_1H4I",
+  "disconnected_atom_model_eV": {
+    "Ca": -18430.794927644074,
+    "La": -850.2720512362149
+  },
+  "Ca_minus_La_disconnected_atom_model_eV": -17580.52287640786,
+  "formula": "(T_bound_Ca-T_bound_La-(C_Ca-C_La))*eV_to_model_kcal",
+  "conversion": 23.06054783061903,
+  "tolerance_model_kcal": 0.01,
+  "component_summation": "math.fsum_cross_driver_v1",
+  "scores": {
+    "ALPHA_1F6S": {
+      "difference_model_kcal": 3.271857451636606e-09,
+      "four_forward_model_kcal": 36.72910930646981,
+      "two_forward_model_kcal": 36.729109309741666
+    },
+    "ALPHA_6IP9": {
+      "difference_model_kcal": 3.271857451636606e-09,
+      "four_forward_model_kcal": 28.099819820085944,
+      "two_forward_model_kcal": 28.0998198233578
+    },
+    "GGR_1GLG": {
+      "difference_model_kcal": -2.0973445202798757e-09,
+      "four_forward_model_kcal": 23.987421457626294,
+      "two_forward_model_kcal": 23.98742145552895
+    },
+    "PQQ_1H4I": {
+      "difference_model_kcal": 1.9379463367386052e-08,
+      "four_forward_model_kcal": 17.579955566129197,
+      "two_forward_model_kcal": 17.57995558550866
+    },
+    "PQQ_4MAE": {
+      "difference_model_kcal": -2.3574152407945803e-08,
+      "four_forward_model_kcal": 61.9091345031223,
+      "two_forward_model_kcal": 61.90913447954815
+    }
+  },
+  "sodium_score": {
+    "difference_model_kcal": 8.641059423553088e-09,
+    "two_forward_model_kcal": 23.98742145552895
+  },
+  "new_model_forwards": 0,
+  "calibration_changed": false,
+  "baseline_changed": false,
+  "check_count": 60,
+  "max_error_model_kcal": 2.3574152407945803e-08,
+  "full_report": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/factorization_report_v2/result.json",
+    "sha256": "35ba8bb53b209f650b8392ff03f0c426d0f95455b39b18c082e25aabb5434fbe"
+  }
+}

@@ -31,7 +31,7 @@ Eight real-fixture/actual-forward guard tests pass57.308s.
 ## Live execution: conditional canonical test
 
 **Job1200830 running** after all development gates passed; inspect live state.
-Recent check36/100completed, no failures; do not infer final calibration yet.
+Recent check74/100completed, no failures; do not infer final calibration yet.
 100 new forwards for all25canonical calibration proteins,8exact modified
 crystal reuses, all28evidence rows retained. 1KB0 remains unsupported.
 OneA5000/16CPUs/64474MiB, existing runner, no project compute/time budget.
@@ -138,3 +138,28 @@ Current interface deliberately has no classification/reference backend until
 the running canonical test supplies a compatible passing calibration. Finishing
 that conditional integration and evaluating broader evidence remain ahead.
 Latest completed own commit287d3d0; this interface work is scoped separately.
+
+
+## Latest factorization work (no new inference)
+
+[Proof](../mace_omol_20260917/DISCONNECTED_FACTORIZATION_REPORT.md) passes60checks
+with maxerror2.36e-8model kcal. The exact masked descriptor can use two bound
+forwards and fixed disconnected-metal node+embedding terms. Optional
+--factorization is implemented in the prepared-input interface; four-call path
+retained. Authoritative factorization_report_v2/result.json SHA
+35ba8bb53b209f650b8392ff03f0c426d0f95455b39b18c082e25aabb5434fbe.
+V1had only cross-NumPy auxiliary sum discrepancies; v2uses math.fsum. Constants,
+scores and criteria unchanged. Original records/failure timing retained.
+
+prepared_interface_pqq_two_call_v2 reuses two actual bound receipts; its report
+is complete. Three factorization tests pass44.009s. No new model call. Use the
+OpenMM driver for prepared-input operations; MACE workers remain separately
+pinned. DO NOT infer detached components that the two-call path does not compute.
+
+Canonical1200830 still runs the original100tasks. Before its final calibration
+was read, FACTORIZATION_NUMERICAL_BANDS_ADDENDUM.md declared separate numeric
+band records for two/four-call evaluation, using the same25calibration cases,
+only after full-panel equivalence. No changed labels, coefficient or epsilon.
+Next implement/execute that full-panel proof and compatible reference integration
+once its actual collection/report is complete. No calibration integration exists
+yet. Latest own committed interface work30cb9b4; factorization changes separate.

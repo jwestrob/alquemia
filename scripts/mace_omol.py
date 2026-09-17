@@ -68,7 +68,7 @@ def common(source_inventory, software, agreement, output, stage):
              'mace_omol_intact_inventory.py', 'mace_omol_backbone_audit.py',
              'mace_omol_locality.py', 'mace_omol_spectator.py', 'mace_omol_ablation.py',
              'mace_omol_ablation_run.py', 'mace_omol_ablation_panel.py', 'mace_omol_panel_report.py',
-             'mace_omol_prepared.py')
+             'mace_omol_prepared.py', 'mace_omol_factorization.py')
     pins = snapshot(out, names)
     m = {'schema_version': SCHEMA, 'protocol_id': PROTOCOL, 'stage': stage,
          'inventory': record(source_inventory), 'software': record(software), 'agreement': record(agreement),

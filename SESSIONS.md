@@ -1477,3 +1477,43 @@ zero failures. Full-panel decision is pending. The new generic interface has
 no classification backend yet; add only a compatible passing canonical reference
 if the declared test earns it. Goal active, baseline/default unchanged.
 Read PREPARED_INPUT_INTERFACE_REPORT.md / PREPARED_INPUT_COMMANDS.md.
+
+
+## Exact two-call factorization for the masked descriptor — 2026-09-17
+
+Declared DISCONNECTED_FACTORIZATION_PLAN.md before auditing saved outputs.
+60checks pass on all five development cases, all detached variants and GGR
+sodium; maxerror2.3574152407945803e-8 model kcal vs fixed0.01 tolerance.
+With fixed spin and masked global charge, disconnected protein readouts cancel;
+R_mask=(T_bound,Ca-T_bound,La-(C_Ca-C_La))*23.06054783061903.
+Fixed anchor1H4I detached node+embedding terms: Ca-18430.794927644074,
+La-850.2720512362149 model eV. No quantum-ion, aquo, fitted-intercept or physical
+binding-zero claim. No new model/DFT/solver/training/gradient call.
+
+V1proof passed but exact replay in the OpenMM driver differed in six auxiliary
+NumPy reductions at <=2.14768e-8 model kcal. Its constants/scores/decisions were
+unchanged. V2uses math.fsum, and exact replay passes across both environments.
+Original v1report, difference record and failed interface-preparation timing
+are preserved. Authoritative proof: factorization_report_v2/result.json under
+workspaces/mace_omol_20260917; SHA
+35ba8bb53b209f650b8392ff03f0c426d0f95455b39b18c082e25aabb5434fbe.
+
+Prepared interface now offers explicit --factorization, retaining the four-state
+path. The real1H4I two-call manifest reuses exactly two actual bound receipts,
+zero new tasks, SHA27f99f9ff94b8cfcd952b13e7007795fa987a7c6eafc7b0ab511f885e15846cc.
+Its report is complete under prepared_interface_pqq_two_call_report_v2,
+SHA1297576a8de5732df50776ff8eaa340a792608275b7f43afed0b0df38cd4bcee.
+Three real-artifact factorization tests pass44.009s. Missing detached components
+remain null; the same score is reconstructed with explicit model terms.
+
+Before inspecting final canonical calibration, declared execution-specific band
+handling in FACTORIZATION_NUMERICAL_BANDS_ADDENDUM.md: keep four-call bands and
+produce a separate two-call numeric record from the same25calibration cases and
+fixed model terms only if panel-wide equivalence passes. This avoids class
+changes at inclusive boundaries from floating-point order without tuning epsilon
+or choosing new labels. No reference/classifier integration is done yet.
+
+Canonical1200830 continues unchanged; latest count74/100, zero failures.
+Next complete its report, extend factorization proof across all27valid scores,
+and add a compatible research calibration only if the fixed rule passes.
+Goal active, baseline/default unchanged. No duplicate inference or job interference.

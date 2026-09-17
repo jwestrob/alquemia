@@ -43,3 +43,22 @@ to overwrite it. Select a new output directory when preparing genuinely new
 inputs. No source edits are necessary to choose an input. After real execution,
 the report operation takes explicit `--manifest` and `--output` paths and a
 new output directory; unavailable endpoints remain unavailable.
+
+
+## Optional exact two-call evaluation
+
+The qualified factorization reference is:
+`workspaces/mace_omol_20260917/factorization_report_v2/result.json`.
+Supply it with `--factorization` during preparation to create only the two bound
+states. The interface verifies actual saved readouts and the exact model identity;
+it does not use a fitted or arbitrary offset. This reference is not a biological
+calibration, aquo reference or physical ion energy. Four-state evaluation remains
+available when the argument is omitted.
+
+An executed interface check already exists at
+`prepared_interface_pqq_two_call_v2/`, with two actual bound endpoint reuses and
+zero new inference. Its complete report is
+`prepared_interface_pqq_two_call_report_v2/result.json`. The optional path passed
+three real-artifact tests; full-panel equivalence is pending the unchanged
+canonical job. Any classification must use its own compatible numeric evaluation
+record, as declared in FACTORIZATION_NUMERICAL_BANDS_ADDENDUM.md.

@@ -1567,3 +1567,34 @@ rendered and visuallychecked, no newfit. Emailacceptedbylocalrelay at
 20260917T145316Z_masked_canonical_pass;deliverynotclaimed. NativeH2001200809still
 pendingunchanged;do notduplicate/interfere. Goalremainsactive. Baseline/default,
 oldreferencesandimmutableexperimentspreserved;no push orproductionpromotion.
+
+
+## Expanded masked-MACE GGR test and source bridge — 2026-09-17
+
+Jobs1200845/1200846 COMPLETE four new real bound forwards. GGR ordered
+[1GLG,2FW0,2FVY] scores23.987421458,44.884127357,45.975500410modelkcal.
+Both newstructures reverse bothalpha-minus-GGR directions:2/6pass, frozen
+all-case robustnessFALSE. Numerical accounting passes, no input/label/band
+rescue. SeparatePQQcalibration25/25 and2/3valid/correcttransfersunchanged.
+No broad affinity improvement. All threeGGRstructures onebiologicalobservation.
+
+Added scripts/mace_omol_source_prepare.py with explicit rawpolymer/heterogen/
+metal/exclusion checks, exact archivedphysicalreplay and frozenhelperclosure.
+Policyomol_source_backed_chain_A_ff19sb_H_explicit_exclusions_v1 reproduces
+1GLGcoordinatesexactly and rejectsraw1KB0TRO512beforefiltering. Scoreadapters
+andproductionbaselineunchanged. Added actualresultcomparison/readoutreporter.
+Fourreal-artifacttests pass6.713s,none skipped. Full result under
+workspaces/mace_omol_20260917/ggr_structure_report_v1/result.json; compact
+GGR_STRUCTURE_ROBUSTNESS_REPORT.md/RESULT.json in diagnostics/mace_omol_20260917.
+
+Actual114GPUallocation-s,1824allocatedcore-s,118.469reportedCPU-s;52.124891
+model-s,6108277248bytespeakGPU. CumulativeengineeringV9:352successfulforwards,
+2OOMs,11396GPU-s,245568allocatedcore-s,29539.423CPU-s;localcosts separate.
+NoDFT/solver/training/forces. Savedreadoutdiagnosisfindsmulti-residue changes;
+not a uniquephysicalcause. Initialsourcebridgecomment-onlyassertionfailure
+andallimmutableattemptsretained. Vaultupdated, failureemailacceptedbyrelay.
+
+Next MULTISITE_PANEL_PLAN.md declaredbefore newprep/inference:4CPV[CD,EF],
+1SL8[EF1,EF3,EF4], allbackgroundCa, fixedsitewaterunion, actual4CPVACE0cap.
+Tenforwardsplanned; multisiteimplementationstillpending. Goalactive;baseline
+remainsdefault,no push. NativeH2001200809pendingunchanged;preserveotherjobs.

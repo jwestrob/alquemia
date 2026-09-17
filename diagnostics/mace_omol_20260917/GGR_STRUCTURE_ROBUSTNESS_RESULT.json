@@ -1,0 +1,463 @@
+{
+  "GGR_order": [
+    "GGR_1GLG",
+    "GGR_2FW0",
+    "GGR_2FVY"
+  ],
+  "GGR_range_model_kcal": 21.988078952339475,
+  "agreement": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/mace_omol_20260917/GGR_STRUCTURE_ROBUSTNESS_PLAN.md",
+    "sha256": "3ad1f2b2708e938ec39e15f921551129f088d6d3ef9e05ac4eadb9156348ee2a"
+  },
+  "alpha_order": [
+    "ALPHA_1F6S",
+    "ALPHA_6IP9"
+  ],
+  "baseline_changed": false,
+  "biological_groups": 2,
+  "broad_affinity_validated": false,
+  "checks": [
+    {
+      "error_model_kcal": -3.269029491548281e-09,
+      "name": "GGR_1GLG_readout_closure",
+      "pass": true
+    },
+    {
+      "error_model_kcal": -2.0973445202798757e-09,
+      "name": "GGR_1GLG_published_score",
+      "pass": true
+    },
+    {
+      "error_model_kcal": -1.7232650861842558e-09,
+      "name": "ALPHA_1F6S_readout_closure",
+      "pass": true
+    },
+    {
+      "error_model_kcal": 3.271857451636606e-09,
+      "name": "ALPHA_1F6S_published_score",
+      "pass": true
+    },
+    {
+      "error_model_kcal": 1.0022205287896213e-09,
+      "name": "ALPHA_6IP9_readout_closure",
+      "pass": true
+    },
+    {
+      "error_model_kcal": 3.271857451636606e-09,
+      "name": "ALPHA_6IP9_published_score",
+      "pass": true
+    },
+    {
+      "error_model_kcal": 7.14313586058779e-09,
+      "name": "GGR_2FW0_readout_closure",
+      "pass": true
+    },
+    {
+      "error_model_kcal": 0.0,
+      "name": "GGR_2FW0_published_score",
+      "pass": true
+    },
+    {
+      "error_model_kcal": 5.089340504582651e-09,
+      "name": "GGR_2FVY_readout_closure",
+      "pass": true
+    },
+    {
+      "error_model_kcal": 0.0,
+      "name": "GGR_2FVY_published_score",
+      "pass": true
+    }
+  ],
+  "cost": {
+    "GPU_allocation_seconds": 114,
+    "allocated_core_seconds": 1824,
+    "failed_forward_attempts": 0,
+    "new_successful_forwards": 4,
+    "peak_cuda_allocated_bytes": 6108277248,
+    "peak_worker_host_RSS_KiB": 1427088,
+    "reported_actual_CPU_seconds": 118.469,
+    "scope": "two inference allocations only; local preparation, tests and reports separately receipted",
+    "summed_model_evaluation_seconds": 52.12489064782858,
+    "summed_worker_wall_seconds": 58.934064365923405
+  },
+  "diagnosis_plan": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/mace_omol_20260917/GGR_SAVED_READOUT_PLAN.md",
+    "sha256": "b29bc9c34ab7a4c26f238f685973a89a47b4e7dc3f53762c64640aba9d0869c0"
+  },
+  "independent_assay_conditions": false,
+  "margins": [
+    {
+      "margin_model_kcal": 12.741687848843515,
+      "negative_case": "GGR_1GLG",
+      "pass": true,
+      "positive_case": "ALPHA_1F6S",
+      "required_min_model_kcal": 0.02
+    },
+    {
+      "margin_model_kcal": -8.155018050290735,
+      "negative_case": "GGR_2FW0",
+      "pass": false,
+      "positive_case": "ALPHA_1F6S",
+      "required_min_model_kcal": 0.02
+    },
+    {
+      "margin_model_kcal": -9.24639110349596,
+      "negative_case": "GGR_2FVY",
+      "pass": false,
+      "positive_case": "ALPHA_1F6S",
+      "required_min_model_kcal": 0.02
+    },
+    {
+      "margin_model_kcal": 4.1123983624596505,
+      "negative_case": "GGR_1GLG",
+      "pass": true,
+      "positive_case": "ALPHA_6IP9",
+      "required_min_model_kcal": 0.02
+    },
+    {
+      "margin_model_kcal": -16.7843075366746,
+      "negative_case": "GGR_2FW0",
+      "pass": false,
+      "positive_case": "ALPHA_6IP9",
+      "required_min_model_kcal": 0.02
+    },
+    {
+      "margin_model_kcal": -17.875680589879824,
+      "negative_case": "GGR_2FVY",
+      "pass": false,
+      "positive_case": "ALPHA_6IP9",
+      "required_min_model_kcal": 0.02
+    }
+  ],
+  "new_report_model_calls": 0,
+  "numerical_gate_pass": true,
+  "passed_margins": 2,
+  "production_promotion": false,
+  "protocol_id": "mace_omol_intact_charge_feature_ablation_descriptor_v1",
+  "readout_units": "kcal_equivalent_model_units; inherited helper kcal_mol keys are model bookkeeping",
+  "report_implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/ggr_structure_report_v1/mace_omol_ggr_robustness.py",
+    "sha256": "dca8905d61ae27bb244ae22bacd83951890c59a04055ca8d563eba56021c0cc3"
+  },
+  "robustness_gate_pass": false,
+  "sacct": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/ggr_structure_sacct_v1.tsv",
+    "sha256": "3e0c44feae75ac5280de32d18afd2d32658720931fe896db68a1fa0d17ba535a"
+  },
+  "source_reports": [
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_report_v1/result.json",
+      "sha256": "0d7b7f325bf8032b1f11c1811c994684f028d76e0810fa335069bd830659a947"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/ggr_masked_2fw0_report_v1/result.json",
+      "sha256": "3dfc8256781c87da8b0e1508fde70bc9f9ee3d4251d732635d36e30ee0ec762d"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/ggr_masked_2fvy_report_v1/result.json",
+      "sha256": "cd6e7f2d4b013a2340f84a3cab1eca4fa558a2d4f8d2426fc6177abe5c130c34"
+    }
+  ],
+  "status": "complete",
+  "total_margins": 6,
+  "unique_physical_cause_established": false,
+  "full_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/ggr_structure_report_v1/result.json",
+    "sha256": "390124e5156a67424dd4db53f9b02a7a1b95ba42b4252d4e6fc1ea424508efce"
+  },
+  "scores": {
+    "ALPHA_1F6S": {
+      "explicit_water_count": 2,
+      "nearby_heteroatoms_3p5_A": [
+        {
+          "distance_A": 2.3422480654277513,
+          "element": "O",
+          "id": "A/79//O",
+          "resname": "LYS"
+        },
+        {
+          "distance_A": 2.380440505452725,
+          "element": "O",
+          "id": "A/82//OD1",
+          "resname": "ASP"
+        },
+        {
+          "distance_A": 2.329008802044327,
+          "element": "O",
+          "id": "A/84//O",
+          "resname": "ASP"
+        },
+        {
+          "distance_A": 2.377540956534705,
+          "element": "O",
+          "id": "A/87//OD1",
+          "resname": "ASP"
+        },
+        {
+          "distance_A": 3.4757058275981927,
+          "element": "O",
+          "id": "A/87//OD2",
+          "resname": "ASP"
+        },
+        {
+          "distance_A": 2.423504899933153,
+          "element": "O",
+          "id": "A/88//OD1",
+          "resname": "ASP"
+        },
+        {
+          "distance_A": 2.5770364762649396,
+          "element": "O",
+          "id": "A/211//O",
+          "resname": null
+        },
+        {
+          "distance_A": 2.5814557908281226,
+          "element": "O",
+          "id": "A/212//O",
+          "resname": null
+        }
+      ],
+      "physical_atom_count": 1932,
+      "preparation": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_global_benchmark_20260916/prepared_v1/ALPHA_1F6S/preparation.json",
+        "sha256": "6948e025bd637c70a2601133356f3d399e55b6b7ca89ae719c8a63f5a7acd72b"
+      },
+      "protein_charge_e": -7,
+      "reported_R_mask_model_kcal": 36.72910930646981,
+      "two_call_replay_model_kcal": 36.729109309741666
+    },
+    "ALPHA_6IP9": {
+      "explicit_water_count": 3,
+      "nearby_heteroatoms_3p5_A": [
+        {
+          "distance_A": 2.4231584760390725,
+          "element": "O",
+          "id": "A/79//O",
+          "resname": "LYS"
+        },
+        {
+          "distance_A": 2.0781308909690934,
+          "element": "O",
+          "id": "A/82//OD1",
+          "resname": "ASP"
+        },
+        {
+          "distance_A": 2.885112476143695,
+          "element": "O",
+          "id": "A/82//OD2",
+          "resname": "ASP"
+        },
+        {
+          "distance_A": 2.409022415835935,
+          "element": "O",
+          "id": "A/84//O",
+          "resname": "ASP"
+        },
+        {
+          "distance_A": 2.4821303350146615,
+          "element": "O",
+          "id": "A/87//OD1",
+          "resname": "ASP"
+        },
+        {
+          "distance_A": 2.6321762858896816,
+          "element": "O",
+          "id": "A/88//OD1",
+          "resname": "ASP"
+        },
+        {
+          "distance_A": 2.5557474444866406,
+          "element": "O",
+          "id": "A/310//O",
+          "resname": null
+        },
+        {
+          "distance_A": 2.7015930485548707,
+          "element": "O",
+          "id": "A/322//O",
+          "resname": null
+        },
+        {
+          "distance_A": 2.4831725675031127,
+          "element": "O",
+          "id": "A/326//O",
+          "resname": null
+        }
+      ],
+      "physical_atom_count": 1898,
+      "preparation": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_global_benchmark_20260916/prepared_v1/ALPHA_6IP9/preparation.json",
+        "sha256": "5efbe7b979c473760281b74d2cb7d6075537d6c4a2aa15f6766ef1ff40d527d6"
+      },
+      "protein_charge_e": -7,
+      "reported_R_mask_model_kcal": 28.099819820085944,
+      "two_call_replay_model_kcal": 28.0998198233578
+    },
+    "GGR_1GLG": {
+      "explicit_water_count": 0,
+      "nearby_heteroatoms_3p5_A": [
+        {
+          "distance_A": 2.299556696409111,
+          "element": "O",
+          "id": "A/134//OD1",
+          "resname": "ASP"
+        },
+        {
+          "distance_A": 2.3040134548218294,
+          "element": "O",
+          "id": "A/136//OD1",
+          "resname": "ASN"
+        },
+        {
+          "distance_A": 2.2517177887115447,
+          "element": "O",
+          "id": "A/138//OD1",
+          "resname": "ASP"
+        },
+        {
+          "distance_A": 2.2765862601711286,
+          "element": "O",
+          "id": "A/140//O",
+          "resname": "GLN"
+        },
+        {
+          "distance_A": 2.3586491896846447,
+          "element": "O",
+          "id": "A/142//OE1",
+          "resname": "GLN"
+        },
+        {
+          "distance_A": 2.558179430767123,
+          "element": "O",
+          "id": "A/205//OE1",
+          "resname": "GLU"
+        },
+        {
+          "distance_A": 2.457563224008691,
+          "element": "O",
+          "id": "A/205//OE2",
+          "resname": "GLU"
+        }
+      ],
+      "physical_atom_count": 4698,
+      "preparation": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_global_benchmark_20260916/prepared_v1/GGR_1GLG/preparation.json",
+        "sha256": "8d077571a9249e894f8fbdd85a83be6f1abd5b5cbd6b798c70cfab025b3e3d65"
+      },
+      "protein_charge_e": -6,
+      "reported_R_mask_model_kcal": 23.987421457626294,
+      "two_call_replay_model_kcal": 23.98742145552895
+    },
+    "GGR_2FVY": {
+      "explicit_water_count": 0,
+      "nearby_heteroatoms_3p5_A": [
+        {
+          "distance_A": 2.2842445140571077,
+          "element": "O",
+          "id": "A/134//OD1",
+          "resname": "ASP"
+        },
+        {
+          "distance_A": 2.383811024389312,
+          "element": "O",
+          "id": "A/136//OD1",
+          "resname": "ASN"
+        },
+        {
+          "distance_A": 2.3970308717244335,
+          "element": "O",
+          "id": "A/138//OD2",
+          "resname": "ASP"
+        },
+        {
+          "distance_A": 2.348112859297863,
+          "element": "O",
+          "id": "A/140//O",
+          "resname": "GLN"
+        },
+        {
+          "distance_A": 2.309497347909283,
+          "element": "O",
+          "id": "A/142//OE1",
+          "resname": "GLN"
+        },
+        {
+          "distance_A": 2.4799907257891083,
+          "element": "O",
+          "id": "A/205//OE1",
+          "resname": "GLU"
+        },
+        {
+          "distance_A": 2.484761759203486,
+          "element": "O",
+          "id": "A/205//OE2",
+          "resname": "GLU"
+        }
+      ],
+      "physical_atom_count": 4633,
+      "preparation": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/ggr_source_bridge_2fvy_v1/source_preparation.json",
+        "sha256": "9d9f9f1f77d4159e070143a6638811839fae2fc78f5e568901d13c7ffffc3847"
+      },
+      "protein_charge_e": -8,
+      "reported_R_mask_model_kcal": 45.97550040996577,
+      "two_call_replay_model_kcal": 45.97550040996577
+    },
+    "GGR_2FW0": {
+      "explicit_water_count": 0,
+      "nearby_heteroatoms_3p5_A": [
+        {
+          "distance_A": 2.294288778685019,
+          "element": "O",
+          "id": "A/134//OD1",
+          "resname": "ASP"
+        },
+        {
+          "distance_A": 2.417142321006358,
+          "element": "O",
+          "id": "A/136//OD1",
+          "resname": "ASN"
+        },
+        {
+          "distance_A": 2.4292467968487745,
+          "element": "O",
+          "id": "A/138//OD2",
+          "resname": "ASP"
+        },
+        {
+          "distance_A": 2.3542852418515516,
+          "element": "O",
+          "id": "A/140//O",
+          "resname": "GLN"
+        },
+        {
+          "distance_A": 2.3417100589099378,
+          "element": "O",
+          "id": "A/142//OE1",
+          "resname": "GLN"
+        },
+        {
+          "distance_A": 2.559203000936034,
+          "element": "O",
+          "id": "A/205//OE1",
+          "resname": "GLU"
+        },
+        {
+          "distance_A": 2.459140093609962,
+          "element": "O",
+          "id": "A/205//OE2",
+          "resname": "GLU"
+        }
+      ],
+      "physical_atom_count": 4633,
+      "preparation": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/ggr_source_bridge_2fw0_v1/source_preparation.json",
+        "sha256": "f74965d2122bd2398852dad0934f2e8b0559bbe084ee195a3cf07093237e00f5"
+      },
+      "protein_charge_e": -8,
+      "reported_R_mask_model_kcal": 44.884127356760544,
+      "two_call_replay_model_kcal": 44.884127356760544
+    }
+  }
+}

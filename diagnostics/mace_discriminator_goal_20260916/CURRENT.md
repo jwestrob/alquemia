@@ -135,3 +135,42 @@ structural analogy, not direct assay-site mapping. No new label/preparation/scor
 Do not spend effort merely recounting provenance: prioritize chemically sound
 new inputs and tests that can reveal predictive weaknesses. No new user approval
 is needed within this goal. No automatic production/default promotion.
+
+
+## Expanded GGR robustness: completed failure, 2026-09-17
+
+Jobs1200845/1200846 COMPLETE four forwards, all numerical checks pass.
+GGR ordered [1GLG,2FW0,2FVY] = [23.987421458,44.884127357,45.975500410]
+model kcal. Both new structures reverse both alpha-minus-GGR comparisons:
+only2/6margins pass; all-case robustness FALSE. No label/threshold/input rescue.
+The separate PQQ result stands; broad affinity improvement is unestablished.
+See ../mace_omol_20260917/GGR_STRUCTURE_ROBUSTNESS_REPORT.md.
+
+Actual cost114GPUallocation-s,1824allocatedcore-s,118.469reportedCPU-s,
+52.124891summed model-s,6108277248bytespeakGPU. Cumulative engineeringV9:
+352successfulforwards,2OOMs,11396GPU-s,245568allocatedcore-s,29539.423CPU-s.
+All costs include prior failures; local work separate. Four source/actual-result
+regressions pass6.713s,none skipped. No newDFT/solver/training/forces.
+
+Source bridge: scripts/mace_omol_source_prepare.py with explicit raw inventory,
+exclusions, source metal/paired-coordinate and peptide checks; original1GLG
+physical coordinates exactly reproduced, raw1KB0TRO512 explicitly rejected.
+Policy omol_source_backed_chain_A_ff19sb_H_explicit_exclusions_v1.
+New actualpreps ggr_source_bridge_{2fw0,2fvy}_v1/source_preparation.json;
+source-row/evidence/exclusions JSONs in ggr_structure_sources_v1/.
+Source tests and initial failed comment-byte assertion preserved; no scientific
+coordinate discrepancy. Full result ggr_structure_report_v1/result.json.
+Saved readout diagnosis places changes across metal and several donor residues,
+not a unique causal term. Same donor identities; several distance shifts0.1–0.2A.
+
+## Next declared experiment: multisite family coverage
+
+MULTISITE_PANEL_PLAN.md declared before preparation/inference. Add source-backed
+multisite policy for4CPVordered[CD,EF]and1SL8[EF1,EF3,EF4], retaining all background
+Ca and a fixed union of archivedsitewaters. Preserve actual4CPVACE0covalentcap.
+Ten new boundforwards planned under existing maskedmodel/factorization.
+Parvalbumin is supportingcross-study,aequorinprotein-levelsite-unresolved;
+no PQQbands or affinityzero. Newpreparation/code not implemented yet.
+NativeH2001200809 remains pending unchanged; inspect live state before action.
+Other agents' PLM jobs/dirtyfiles must be preserved. Activegoal continues;
+no automatic defaultpromotion, pushes or per-analysis permission gate.

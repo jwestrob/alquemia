@@ -16,6 +16,7 @@ from mace_omol_ablation import ADAPTER,COMPONENT
 from mace_omol_ablation_run import PROTOCOL,SEMANTICS,descriptor_model,validate as development_validate,collect as development_collect
 from mace_omol_intact import EVALUATION,energy_task,geometry,collect as collect_endpoints
 from mace_omol_panel import ADAPTER_TASK
+from mace_omol_source_prepare import POLICY as SOURCE_POLICY, validate_bridge
 
 ASSEMBLY='deposited_chain_A_with_declared_cofactor_and_site_waters'
 
@@ -24,8 +25,9 @@ ASSEMBLY='deposited_chain_A_with_declared_cofactor_and_site_waters'
 def audit_preparation(path):
     """Replay only the established preparation arithmetic; no energy calculation."""
     p=read_json(path)
-    if p.get('status')!='prepared' or p.get('policy_id') not in (POLICY,ACTIVE_POLICY,LEGACY_CANONICAL_POLICY):
+    if p.get('status')!='prepared' or p.get('policy_id') not in (POLICY,ACTIVE_POLICY,LEGACY_CANONICAL_POLICY,SOURCE_POLICY):
         raise InvalidArtifact('unsupported whole-chain preparation protocol')
+    if p['policy_id']==SOURCE_POLICY:validate_bridge(p)
     if p.get('assembly')!=ASSEMBLY or p.get('forcefield')!=record(FF) or p.get('water_forcefield')!=record(WATER_FF):
         raise InvalidArtifact('unsupported assembly or changed preparation forcefield')
     for key in ('source','source_preparation','forcefield','water_forcefield'):verify(p[key])

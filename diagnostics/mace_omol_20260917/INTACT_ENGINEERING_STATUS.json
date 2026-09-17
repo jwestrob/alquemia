@@ -288,6 +288,34 @@
       "actual_CPU_seconds": 612.926,
       "GPU_allocation_seconds": 667,
       "scheduler_state": "COMPLETED"
+    },
+    {
+      "job_id": "1200828",
+      "source_accounting": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_sacct_1200828.tsv",
+        "sha256": "61d4821789da5db4bb75f82fef22921df859ec143a706a88bcc53c27810f05fa"
+      },
+      "collection": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_development_v2/collection_job_1200828.json",
+        "sha256": "413791fe7e09bab0046925d48a4d058bcd53fa2a7b507373c39a280f1633a82c"
+      },
+      "new_forward_count": 42,
+      "failures": 0,
+      "GPU_allocation_seconds": 798,
+      "allocated_cpus": 16,
+      "allocated_core_seconds": 12768,
+      "reported_actual_CPU_seconds": 894.358,
+      "sum_inference_seconds": 409.63256069645286,
+      "peak_cuda_allocated_bytes": 11536478720,
+      "peak_host_RSS_KiB": 2876296,
+      "production_default_changed": false,
+      "one_time_qualification_calls": 22,
+      "primary_descriptor_calls": 16,
+      "spectator_calls": 4,
+      "note": "Four alpha primary states are reused within the 14 numerical calls; production-style descriptor uses four states per protein. Local preparation/reports/tests accounted separately.",
+      "scientific_component": "modified_charge_feature_descriptor",
+      "numerical_gate_pass": true,
+      "predictive_development_gate_pass": true
     }
   ],
   "local_preparation_receipts": [
@@ -404,13 +432,13 @@
     "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/intact_engineering_sacct_v2.tsv",
     "sha256": "b608e8ef3bf7e23e6d3a5a9b8889ef2407830caaa2f46b788bcfae3b2c86fee6"
   },
-  "status": "canonical_calibration_and_spectator_consistency_failed",
+  "status": "native_intact_rejected; charge_ablation_development_passed; conditional_canonical_prepared",
   "totals": {
-    "GPU_allocation_seconds": 6938,
-    "actual_CPU_seconds": 24601.596,
-    "allocated_core_seconds": 174240,
+    "GPU_allocation_seconds": 7736,
+    "actual_CPU_seconds": 25495.954,
+    "allocated_core_seconds": 187008,
     "failed_calls": 2,
-    "successful_calls": 206
+    "successful_calls": 248
   },
   "product_equivalence": {
     "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/product_equivalence_v1/result.json",
@@ -445,5 +473,78 @@
     "sha256": "05a16ce0e3f41cb992ef5918af67d4e3de0604598af76a2dab46e2074c018782"
   },
   "canonical_calibration_pass": false,
-  "canonical_operational_gate_pass": false
+  "canonical_operational_gate_pass": false,
+  "charge_ablation_development_report": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_report_v1/result.json",
+    "sha256": "0d7b7f325bf8032b1f11c1811c994684f028d76e0810fa335069bd830659a947"
+  },
+  "charge_ablation_component": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_component_v3/result.json",
+    "sha256": "7f665c728abbd8108cbb476e7e86639f5376ea5cb378e353f2b45bc97f913bc9"
+  },
+  "charge_ablation_canonical_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_canonical_v1/manifest.json",
+    "sha256": "2415b4dacd755530dec888017d76afe8895708213a36ef09497c7264e341476f"
+  },
+  "charge_ablation_local_receipts": [
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_actual_forward_tests_v1.resources.txt",
+      "sha256": "eb6b3803f2eed3f6639ddaaeddd84a95df886e0d096b7867719229e9d451d65c"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_canonical_prepare_v1.resources.txt",
+      "sha256": "43efbf01ea898ea288e44a95e5eaa1be2a941009169e0b4b6d47ad226c28a1b9"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_dry_run_v1.resources.txt",
+      "sha256": "116b9e3fb9f665c2cbca762f16548153e045d57ceccce169f1ac00d4ff0841ee"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_dry_run_v2.resources.txt",
+      "sha256": "497a0ea48905336e45ff8f2151b4d6b6e1cf7660bac4983282847c9793ef77d6"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_native_regression_v1.resources.txt",
+      "sha256": "5cd6a421caba20e1d2a682216d83846676a7cd4b6a38250f43ebc4f5d2e93a99"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_panel_guard_tests_v1.resources.txt",
+      "sha256": "b2cb5a0639fa51953ada8e78aa6a00098ad369bbc0f449b782662cd6cf4abdbb"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_prepare_v1.resources.txt",
+      "sha256": "7ea107fe45c49f8412fe5cf742bccdb11359106ba2cc1f0594a4fb834dd8c42d"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_prepare_v2.resources.txt",
+      "sha256": "f88850ef57675b9be6e2be47f7f87731df9bb120d9861d344808057907e96f5b"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_report_v1.resources.txt",
+      "sha256": "84bdcf92dfbaca2924188cea4a2e61ab333e0811222866b3698a2cc030cfb158"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_tests_v1.resources.txt",
+      "sha256": "ea32b554aad6ff7382549acdaecc018f436f2f18445c9365e57d3c4cc0448334"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_tests_v2.resources.txt",
+      "sha256": "8451c19101982c341021601d5980afdeec01ca7e0ac7c1a9addc67f6dbd035e4"
+    }
+  ],
+  "charge_ablation_component_attempt_receipts": [
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_component_v1/resources.txt",
+      "sha256": "cf0f79c60310e0d0bf48d66405c7a0c831dbdddb4fb631690d15251cd81df767"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_component_v2/resources.txt",
+      "sha256": "f0e9d10dbc7024ee835f393949198e12d215125fea72dae81e5dfa33c757f762"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_component_v3/resources.txt",
+      "sha256": "2769f9ff1fb98b1c240603feb67bf57b0de79033c7d40ec0914df563cd504e88"
+    }
+  ],
+  "cost_scope_note": "Totals cover completed intact engineering plus ablation; future canonical job is not counted. Local work is separate and other local work is not fully profiled. Four native canonical forwards are invalid-preparation diagnostics."
 }

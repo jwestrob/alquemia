@@ -322,3 +322,18 @@ Update SESSIONS.md and the relevant experiment report at handoff. Commit only
 your own scoped files/hunks; do not push, change defaults, or launch a production
 rescore through this guide. The [August campaign record](../CANONICAL_METHOD_OPERATIONS_RESULTS_2026-08-30.md)
 and older reports remain provenance for those campaigns.
+
+
+### Charge-feature ablation development result (2026-09-17)
+
+The separate whole-chain MACE descriptor passes its five-case relative-order
+and numerical tests after masking only the raw global charge feature. All
+physical inputs and learned parameters are retained. Its outputs are explicitly
+model units, not quantum energies or binding free energies. Native whole-chain
+canonical/spectator failures remain recorded. No default changes.
+
+Job1200828 completed42calls in798GPU-allocation seconds. The conditional
+25-reference calibration is submitted as1200830 (100newcalls,8exactreuses);
+1KB0 remains unsupported. Recover [CURRENT.md](../diagnostics/mace_discriminator_goal_20260916/CURRENT.md)
+and use the [frozen commands](../diagnostics/mace_omol_20260917/CHARGE_ABLATION_COMMANDS.md).
+Do not issue candidate bands before the declared full-panel criterion passes.

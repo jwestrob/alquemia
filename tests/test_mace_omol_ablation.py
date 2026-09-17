@@ -43,6 +43,21 @@ class AblationTests(unittest.TestCase):
             self.assertFalse(accepted_state(old,t))
 
     @cached_file_checks
+    def test_actual_masked_forward_requires_complete_adapter_receipt(self):
+        t=self.m['tasks'][0]
+        path=MANIFEST.parent/'execution'/t['task_id']/'attempt_001/result.json'
+        if not path.exists():self.skipTest('masked scientific forward has not run')
+        result=read_json(path)
+        self.assertTrue(accepted_state(result,t))
+        self.assertEqual(result['charge_feature_adapter']['rows'],result['input_state_check']['atoms'])
+        wrong=copy.deepcopy(result);wrong['charge_feature_adapter']['rows']-=1
+        self.assertFalse(accepted_state(wrong,t))
+        missing=copy.deepcopy(result);missing.pop('charge_feature_adapter')
+        self.assertFalse(accepted_state(missing,t))
+        wrong_component=copy.deepcopy(result);wrong_component['energy_component']='MACE_OMOL_total_vacuum_energy'
+        self.assertFalse(accepted_state(wrong_component,t))
+
+    @cached_file_checks
     def test_missing_jobs_remain_unavailable_and_block_execution(self):
         # Move this real finite manifest to an empty execution directory. No output is fabricated.
         with tempfile.TemporaryDirectory() as td:

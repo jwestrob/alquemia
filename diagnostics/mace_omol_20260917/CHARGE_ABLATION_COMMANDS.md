@@ -67,3 +67,46 @@ regressions pass (14.587 s). No fabricated successful model output is used.
 Scientific numerical and prediction checks belong to job 1200828 and must be
 reported separately from these parser/state/cache tests. Do not infer physical
 validity from feature invariance: it is imposed by the ablation architecture.
+
+
+## Conditional canonical extension
+
+Implementation is available as `scripts/mace_omol_ablation_panel.py`. It rejects
+an incomplete, failed, changed or native-model development qualification, and
+pins the strict v2 preparation (27 supported, 1KB0 unsupported). The planned
+extension contains 100 new calibration forwards and eight exact descriptor
+crystal reuses, with all 28 evidence rows retained.
+
+Only after job 1200828 finishes and its full development gate passes:
+
+```bash
+"$MACE_PY" scripts/mace_omol_ablation_panel.py prepare \
+  --preparation "$PWD/workspaces/mace_omol_20260917/intact_panel_prepared_v2/preparation_manifest.json" \
+  --development-collection "$MACE_RUN/collection_job_1200828.json" \
+  --agreement "$PWD/diagnostics/mace_omol_20260917/CHARGE_ABLATION_PLAN.md" \
+  --output "$PWD/workspaces/mace_omol_20260917/charge_ablation_canonical_v1"
+```
+
+Preparation verifies the gate itself before creating a new manifest. Do not
+supply a partial progress collection or change the declared criteria. The
+canonical runner reuses the same executor and GPU allocation convention. A
+new model only receives bands if all 25 calibration cases separate under the
+frozen rule; the unavailable 1KB0 never becomes an implicit successful transfer.
+Eight combined real-fixture/actual-forward guard tests pass (57.308 s), including
+rejection of a native qualification and incomplete ablation collection.
+
+
+Job **1200830 submitted** after the gate passed; both preparation and frozen
+dry-run passed. Manifest SHA:
+`2415b4dacd755530dec888017d76afe8895708213a36ef09497c7264e341476f`.
+After its completed collection is present:
+
+```bash
+MACE_CAN="$PWD/workspaces/mace_omol_20260917/charge_ablation_canonical_v1"
+"$MACE_PY" "$MACE_CAN/implementation/mace_omol_ablation_panel.py" report \
+  --collection "$MACE_CAN/collection_job_1200830.json" \
+  --output "$PWD/workspaces/mace_omol_20260917/charge_ablation_canonical_report_v1"
+```
+
+Use the frozen implementation so later code changes cannot silently change this
+experiment. A previously created report directory is never overwritten.

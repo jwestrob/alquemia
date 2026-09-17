@@ -1,116 +1,110 @@
-# Active MACE discriminator work — 2026-09-17
+# Active MACE discriminator checkpoint — 2026-09-17
 
-**Goal active.** Jacob authorized autonomous analyses and available resources;
-the old per-analysis permission gate has been removed from home/project AGENTS.
-Preserve the production baseline, existing results and other agents' jobs.
+**Goal active.** Jacob authorized autonomous analyses and available resources.
+The per-analysis permission gate has been removed from home/project AGENTS.
+Preserve baseline/default, immutable results and other agents' jobs. No automatic
+promotion or push. Recover the active goal and this checkpoint after compaction.
 
-## Completed whole-chain candidate: rejected for promotion
+## Current candidate: charge-feature ablation descriptor
 
-`mace_omol_intact_chain_matched_coordination_v1`: pinned OMOL100M, whole prepared
-chain, fixed geometry/microstate/waters, native vacuum energies, no forces.
-R_coord=(E_bound,Ca−E_detached,Ca)−(E_bound,La−E_detached,La). Larger values
-are relatively more La-like; zero and old ORCA bands have no authority here.
-
-The five-case development panel passes all three declared relative comparisons:
-XoxF−MxaF+9.03kcal/mol; alpha−GGR+37.15/+28.09 for two alpha structures.
-One qualified affinity comparison and a separate PQQ functional-class test;
-all consumed. It subsequently failed the full canonical calibration and the
-disconnected-spectator consistency test. No default promotion. See
-[result](../mace_omol_20260917/INTACT_REPORT.md).
-
-All25canonical cases computed, with a negative separation gap−306.006296kcal/mol.
-No classification bands were issued; two transfer raw scores are present and
-1KB0 is unsupported. See [canonical report](../mace_omol_20260917/INTACT_CANONICAL_REPORT.md).
-The sodium test shifts four scores4–15kcal/mol and reverses XoxF/MxaF. Exact
-checkpoint inspection finds identical features for all charges−100..−6,
-explaining MxaF's apparent invariance. See [spectator report](../mace_omol_20260917/INTACT_SPECTATOR_REPORT.md)
-and [embedding audit](../mace_omol_20260917/CHARGE_EMBEDDING_AUDIT_REPORT.md).
-
-Exact edge/product batching is qualified against native CPU energies. The
-whole-chain model fits one A5000; recent PQQ endpoints take roughly36 seconds
-including model loading. This is a local learned model with global charge
-conditioning, not a demonstrated full electrostatic description. The
-[locality audit](../mace_omol_20260917/INTACT_LOCALITY_REPORT.md) establishes
-cancellation of distant and additive embedding terms.
-
-## Execution state
-
-| Job | Purpose | Inventory |
-|---|---|---|
-|1200819|Completed; calibration failed|104new endpoints+8exact reuses|
-|1200823|Completed; consistency failed|20new endpoints+20source references|
-|1200828|Charge-feature ablation submitted|42new descriptor forwards|
-|1200809|Original native H200 numerical reference|Earlier unchanged14-task manifest; pending|
-
-Do not duplicate or alter these jobs/manifests. Check live state before acting.
-Their workspaces are under `workspaces/mace_omol_20260917/`:
-`intact_panel_run_v1`, `intact_spectator_v1`, `intact_qualification_v1`.
-
-**1KB0 whole-chain preparation is invalid:** two false peptide connections
-cross missing structure. Its raw endpoints are diagnostic-only. The mandatory
-audited canonical reporter is frozen under
-`intact_panel_reporting_source_v2/implementation/`. Follow the exact
-[commands](../mace_omol_20260917/INTACT_COMMANDS.md), retaining1KB0 as unavailable
-in the three-transfer denominator. Old fixed-core baseline1KB0 is unchanged.
-New strict preparation v2 gives27supported/1unsupported; original run inputs
-remain immutable. All five earlier development preparations separately pass
-the same1718-bond audit (`intact_five_integrity_v1/result.json`).
-
-A single bounded local waiter completed:
-`workspaces/mace_omol_20260917/intact_panel_report_after_1200819.py`.
-It invoked the exact audited v2 reporter once, with timing receipts. The report
-is complete under `intact_panel_report_v1/`; no waiter remains active.
-
-The spectator construction adds one explicitly constructed distant Na+ while
-retaining every original coordinate and protein formal charge. Native MACE
-only sees the total charge; it cannot certify that fragment charge assignment.
-Read its [frozen scope](../mace_omol_20260917/INTACT_SPECTATOR_PLAN.md). The
-existing runner collects numerical and consistency gates separately. A failed
-consistency gate is not a failed execution or a biological misclassification.
-
-## Active next model
-
-[CHARGE_ABLATION_PLAN.md](../mace_omol_20260917/CHARGE_ABLATION_PLAN.md) declares
-one fixed representation change: mask the raw global charge embedding with
-zeros before the native joint projection, preserving spin, weights, physical
-charges and every coordinate. Its outputs are explicitly energy-like learned
-descriptors, not quantum energies for the recorded electronic state.
 Protocol `mace_omol_intact_charge_feature_ablation_descriptor_v1`.
+Same pinned OMOL100M weights, whole-chain coordinates, protonation, spin,
+physical charges and water inventory; raw total-charge embedding is zeroed
+before the native joint projection. This is explicitly a **learned descriptor,
+not a quantum energy for those physical charges**. No baseline band or affinity
+zero applies. See [plan](../mace_omol_20260917/CHARGE_ABLATION_PLAN.md).
 
-Initial42forwards:8core native/batched qualification,14alpha numerical checks,
-16other whole-chain primaries,4GGR sodium checks. Only a passing numerical and
-three-direction gate permits100canonical forwards with8qualified crystal reuses.
-No molecular ablation endpoint has run yet. The adapter is implemented and a
-CPU component check passed under `charge_ablation_component_v3/`:201charge
-categories give identical joint features, matching the explicit zero-charge plus
-original-spin projection exactly; no parameters changed and no molecular call ran.
-Cost17.27wall/21.53CPU seconds,1616720KiB peakRSS. V1failed from an import-name
-collision; V2test incorrectly assumed feature concatenation order. V3uses the
-checkpoint's actual spin-then-charge order. All attempts remain; no model setting changed.
+Job **1200828 completed**, 42/42 forwards, no failures. All numerical and
+three-direction development gates pass. XoxF−MxaF +44.329179 model kcal;
+alpha1F6S−GGR +12.741688; alpha6IP9−GGR +4.112398. GGR sodium perturbation
+changes its score by -1.07384e-8 (tolerance0.1). The latter invariance is imposed
+by the architecture; it does not demonstrate physical electrostatics.
+All cases consumed; two alpha structures are one qualified affinity comparison,
+and PQQ functional class is a separate stratum. Broad validation remains open.
+[Report](../mace_omol_20260917/CHARGE_ABLATION_REPORT.md).
 
-Component qualification and runner integration are complete. The exact42-task
-manifest is submitted as1200828 under `charge_ablation_development_v2/`, SHA
-78c781671295658656111f94f9b7cd6625b5bb696ab85e726fe70ea5de2d30c5.
-Four preflight tests and six native regressions passed. V1never ran; v2fixes
-receipt validation for the actual atom-expanded charge-feature row count.
-The runner requires core qualification before whole-chain calls and alpha
-numerical qualification before the remaining primary/spectator tasks. Do not compare these
-outputs to native OMOL as if the model were unchanged. Earlier physics failures
-must remain visible even if this new descriptor predicts well.
+Actual job cost798 GPU/wall seconds,12768 allocated core-seconds,894.358
+reported CPU-seconds;409.63256 summed evaluation seconds;11536478720bytes
+peak GPU allocation,2876296KiB peak processRSS. Local receipts separate.
+Eight real-fixture/actual-forward guard tests pass57.308s.
 
-## Evidence and remaining work
+## Live execution: conditional canonical test
 
-Both reports retain actual receipts, denominators and measured costs.
-Do not change criteria after inspection. Preserve numerical credibility,
-predictive usefulness and affordability as separate judgments. Earlier failed
-POLAR, mechanical-response and core descriptor experiments remain recorded;
-neither their failure nor this five-case success completes the goal.
+**Job1200830 submitted** after all development gates passed; inspect live state.
+100 new forwards for all25canonical calibration proteins,8exact modified
+crystal reuses, all28evidence rows retained. 1KB0 remains unsupported.
+OneA5000/16CPUs/64474MiB, existing runner, no project compute/time budget.
 
-Canonical calibration tests breadth within PQQ. It cannot prove added value
-beyond composition or general affinity discrimination. The evidence gap for
-new independent non-PQQ directions remains in the existing challenge curation;
-do not turn protein-level measurements into independent site labels.
+Workspace: `workspaces/mace_omol_20260917/charge_ablation_canonical_v1/`
+ManifestSHA:2415b4dacd755530dec888017d76afe8895708213a36ef09497c7264e341476f.
+Preparation and frozen dry-run pass. Exact submission argv in submission.json.
+The frozen wrapper will collect into collection_job_1200830.json.
+Do not duplicate the job, modify its manifest or delete executor locks.
 
-Own implementation commits through canonical preparation:19cede4,ed2e65c.
-Later locality/spectator changes and the declared ablation are scoped separately. Many other
-repository edits belong to concurrent/historical work; never blanket-stage.
+Use [commands](../mace_omol_20260917/CHARGE_ABLATION_COMMANDS.md).
+After collection, use its frozen implementation's mace_omol_ablation_panel.py
+report command with --collection and a new --output directory. The report
+retains all denominators and model units. All25calibration cases must be valid
+and min(La)−max(Ca)>0.02 before new candidate-specific bands. Unsupported1KB0
+cannot count as a correct transfer. Do not retune on inconvenient outputs.
+
+Source development workspace: charge_ablation_development_v2/;
+manifestSHA78c781671295658656111f94f9b7cd6625b5bb696ab85e726fe70ea5de2d30c5.
+Full report: charge_ablation_report_v1/result.json (SHA
+0d7b7f325bf8032b1f11c1811c994684f028d76e0810fa335069bd830659a947).
+The unexecuted development_v1 was superseded to fix receipt row counting:
+MACE expands graph charge to atom rows before embedding. No scientific change.
+Component_v3 checks201charge categories and exact zero-charge/original-spin
+projection; no learned parameter changed. V1import collision/V2wrong reference
+feature order remain recorded technical failures, without molecular calls.
+
+## Earlier native whole-chain candidate: rejected for promotion
+
+`mace_omol_intact_chain_matched_coordination_v1` passed the original five-case
+three-direction development panel, then failed the larger calibration and
+charged-spectator consistency test. Original results remain immutable.
+
+- Job1200819:104newforwards+8reuses, all25calibration scores, separation gap
+  -306.006296kcal/mol. No bands. Two crystal raw scores, unsupported1KB0.
+  [Report](../mace_omol_20260917/INTACT_CANONICAL_REPORT.md).
+- Job1200823:20forwards, four scores shift4–15kcal/mol under a disconnected
+  Na+; XoxF/MxaF reverses. [Report](../mace_omol_20260917/INTACT_SPECTATOR_REPORT.md).
+- Actual100Mcheckpoint has identical charge features for -100..-6 and another
+  group +11..+100. MxaF's invariance reflects that aliasing. This is observed
+  checkpoint behavior, not an inferred training history. [Audit](../mace_omol_20260917/CHARGE_EMBEDDING_AUDIT_REPORT.md).
+- Saved-output locality audit:18closure checks pass; beyond18Å changes are
+  <=3.66e-11kcal/mol. Native matched subtraction cancels distant additive terms,
+  but not nonlinear global charge conditioning. [Audit](../mace_omol_20260917/INTACT_LOCALITY_REPORT.md).
+- A common separately evaluated ionic reference cannot fix the raw bound
+  XoxF−MxaF contrast (-623.299274kcal/mol). No new reference energy was computed.
+  [Screen](../mace_omol_20260917/SEPARATED_REFERENCE_SCREEN_REPORT.md).
+
+## Preparation and resource safeguards
+
+1KB0 whole-chain input has false peptide connections at4.750089Å and18.969263Å.
+Its original four native outputs are diagnostics only. Mandatory native report
+is intact_panel_reporting_source_v2, with its geometry audit. Original frozen
+reporterV1is superseded by REPORTING_SUPERSEDED.json; do not use it to classify1KB0.
+Strict new policy `omol_canonical_chain_A_ff19sb_H_peptide_connectivity_v2` gives
+27supported/1unsupported; all1718bonds in the original five-case preparations
+pass independently. Old fixed-core baseline1KB0 remains unchanged.
+
+Exact1024edge/product batching is qualified against native CPU energies.
+Original native H200 job1200809 remains pending on its unchanged14-task manifest;
+no cancellation/duplicate. Completed engineering summaryV7 totals248successful
+forwards,2OOMs,7736GPU-s,187008allocated core-s,25495.954reported actual CPU-s.
+This includes4invalid-preparation diagnostic forwards; local receipts separate.
+New canonical job cost is not yet included. No newDFT/solver/training/forces.
+
+## Recovery and remaining work
+
+Read the actual canonical result next. Numerical credibility, usefulness and
+cost are separate judgments. Canonical composition alone already separates
+classes, and independent non-PQQ labels remain scarce; consult the existing
+challenge curation without inventing new site labels. Earlier POLAR/hybrid/
+mechanical failures remain recorded; a failed pilot does not complete the goal.
+
+Email accepted by local mailer20260917T134908Z_charge_ablation_pass; vault note
+updated with actual results and current job. Prior own commits19cede4,ed2e65c,
+2fcf2f3. Conditional canonical support/report changes are scoped separately.
+Many other repository edits are concurrent/historical; never blanket-stage.

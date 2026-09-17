@@ -1,0 +1,160 @@
+{
+  "status": "complete",
+  "protocol_id": "mace_omol_intact_charge_feature_ablation_descriptor_v1",
+  "output_semantics": "energy_like_descriptor_not_quantum_endpoint",
+  "score_unit": "kcal_equivalent_model_units",
+  "numerical_gate_pass": true,
+  "predictive_development_gate_pass": true,
+  "canonical_extension_permitted": true,
+  "contrasts": [
+    {
+      "delta_model_kcal": 44.3291789369931,
+      "negative_case": "PQQ_1H4I",
+      "original_delta_R_kcal_mol": 9.033834361324935,
+      "pass": true,
+      "positive_case": "PQQ_4MAE"
+    },
+    {
+      "delta_model_kcal": 12.741687848843515,
+      "negative_case": "GGR_1GLG",
+      "original_delta_R_kcal_mol": 37.15356261938154,
+      "pass": true,
+      "positive_case": "ALPHA_1F6S"
+    },
+    {
+      "delta_model_kcal": 4.1123983624596505,
+      "negative_case": "GGR_1GLG",
+      "original_delta_R_kcal_mol": 28.088287879827995,
+      "pass": true,
+      "positive_case": "ALPHA_6IP9"
+    }
+  ],
+  "spectator": {
+    "R_mask_model_kcal": 23.98742144688789,
+    "change_model_kcal": -1.0738403943832964e-08,
+    "pass": true
+  },
+  "baseline_changed": false,
+  "production_promotion": false,
+  "broad_affinity_validated": false,
+  "scores": {
+    "ALPHA_1F6S": {
+      "R_mask_model_kcal": 36.72910930646981,
+      "original_R_coord_kcal_mol": 99.86840743209439,
+      "bound_minus_detached_model_eV": {
+        "Ca": -19.710672962479293,
+        "La": -21.30339788715355
+      },
+      "evidence": {
+        "direction": "La",
+        "evidence_stratum": "qualified_qualitative_strong_site_affinity",
+        "group": "bovine_alpha"
+      },
+      "preparation": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_global_benchmark_20260916/prepared_v1/ALPHA_1F6S/preparation.json",
+        "sha256": "6948e025bd637c70a2601133356f3d399e55b6b7ca89ae719c8a63f5a7acd72b"
+      }
+    },
+    "ALPHA_6IP9": {
+      "R_mask_model_kcal": 28.099819820085944,
+      "original_R_coord_kcal_mol": 90.80313269254084,
+      "bound_minus_detached_model_eV": {
+        "Ca": -18.714321265462786,
+        "La": -19.932844781316817
+      },
+      "evidence": {
+        "direction": "La",
+        "evidence_stratum": "qualified_qualitative_strong_site_affinity",
+        "group": "bovine_alpha"
+      },
+      "preparation": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_global_benchmark_20260916/prepared_v1/ALPHA_6IP9/preparation.json",
+        "sha256": "5efbe7b979c473760281b74d2cb7d6075537d6c4a2aa15f6766ef1ff40d527d6"
+      }
+    },
+    "GGR_1GLG": {
+      "R_mask_model_kcal": 23.987421457626294,
+      "original_R_coord_kcal_mol": 62.71484481271285,
+      "bound_minus_detached_model_eV": {
+        "Ca": -19.418601925950497,
+        "La": -20.458794970531017
+      },
+      "evidence": {
+        "direction": "Ca",
+        "evidence_stratum": "direct_same_assay_affinity",
+        "group": "GGR"
+      },
+      "preparation": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_global_benchmark_20260916/prepared_v1/GGR_1GLG/preparation.json",
+        "sha256": "8d077571a9249e894f8fbdd85a83be6f1abd5b5cbd6b798c70cfab025b3e3d65"
+      }
+    },
+    "PQQ_1H4I": {
+      "R_mask_model_kcal": 17.579955566129197,
+      "original_R_coord_kcal_mol": 101.61412567754543,
+      "bound_minus_detached_model_eV": {
+        "Ca": -15.899212279357016,
+        "La": -16.66155130509287
+      },
+      "evidence": {
+        "direction": "Ca",
+        "evidence_stratum": "canonical_PQQ_functional_metal_association",
+        "group": "MxaF"
+      },
+      "preparation": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_global_benchmark_20260916/prepared_v1/PQQ_1H4I/preparation.json",
+        "sha256": "b0fd6460cdb5b78633ccb4e254be05de8fa605b2d63cec35a332a971a60c9e95"
+      }
+    },
+    "PQQ_4MAE": {
+      "R_mask_model_kcal": 61.9091345031223,
+      "original_R_coord_kcal_mol": 110.64796003887037,
+      "bound_minus_detached_model_eV": {
+        "Ca": -19.54119536653161,
+        "La": -22.22582952864468
+      },
+      "evidence": {
+        "direction": "La",
+        "evidence_stratum": "canonical_PQQ_functional_metal_association",
+        "group": "XoxF"
+      },
+      "preparation": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_global_benchmark_20260916/prepared_v1/PQQ_4MAE/preparation.json",
+        "sha256": "46ca3cae8404783d5a9db38712f8b75bf0433757a042fe632a24f1c97626be85"
+      }
+    }
+  },
+  "full_report": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_report_v1/result.json",
+    "sha256": "0d7b7f325bf8032b1f11c1811c994684f028d76e0810fa335069bd830659a947"
+  },
+  "cost": {
+    "job_id": "1200828",
+    "source_accounting": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_sacct_1200828.tsv",
+      "sha256": "61d4821789da5db4bb75f82fef22921df859ec143a706a88bcc53c27810f05fa"
+    },
+    "collection": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_development_v2/collection_job_1200828.json",
+      "sha256": "413791fe7e09bab0046925d48a4d058bcd53fa2a7b507373c39a280f1633a82c"
+    },
+    "new_forward_count": 42,
+    "failures": 0,
+    "GPU_allocation_seconds": 798,
+    "allocated_cpus": 16,
+    "allocated_core_seconds": 12768,
+    "reported_actual_CPU_seconds": 894.358,
+    "sum_inference_seconds": 409.63256069645286,
+    "peak_cuda_allocated_bytes": 11536478720,
+    "peak_host_RSS_KiB": 2876296,
+    "production_default_changed": false,
+    "one_time_qualification_calls": 22,
+    "primary_descriptor_calls": 16,
+    "spectator_calls": 4,
+    "note": "Four alpha primary states are reused within the 14 numerical calls; production-style descriptor uses four states per protein. Local preparation/reports/tests accounted separately."
+  },
+  "numerical_check_counts": {
+    "core": 14,
+    "numerical": 31
+  }
+}

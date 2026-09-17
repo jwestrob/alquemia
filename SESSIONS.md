@@ -1395,3 +1395,47 @@ Submitted job 1200828 on one A5000, 16 CPUs, 64474 MiB, existing runner.
 Manifest SHA 78c781671295658656111f94f9b7cd6625b5bb696ab85e726fe70ea5de2d30c5.
 Source: workspaces/mace_omol_20260917/charge_ablation_development_v2/.
 No native cache entry can satisfy this descriptor. No new molecular result yet.
+
+
+## Charge-feature ablation passes development; canonical extension submitted — 2026-09-17
+
+Job 1200828 completed 42/42 modified descriptor forwards with no failures.
+Core equivalence (14 checks), alpha repeat/rotation/detachment (31 checks),
+all three fixed relative directions and the GGR sodium test pass. Scores in
+kcal-equivalent model units: GGR 23.987421457626294; alpha1F6S
+36.72910930646981; alpha6IP9 28.099819820085944; MxaF1H4I
+17.579955566129197; XoxF4MAE 61.9091345031223. Three margins are
+44.32917893699311, 12.741687848843515, and 4.1123983624596505.
+The sodium shift is -1.0738403943832964e-08, within the fixed 0.1 tolerance.
+This invariance is imposed by masking, not independent validation of physics.
+No old band, universal zero, quantum-energy or broad affinity claim is attached.
+The original native canonical/spectator failures remain immutable.
+
+Job cost: 798 GPU/allocation seconds, 12768 allocated core-seconds,
+894.358 reported actual CPU-seconds, 409.63256069645286 summed inference s,
+11536478720 peak allocated GPU bytes and 2876296 KiB peak process RSS.
+Full result: workspaces/mace_omol_20260917/charge_ablation_report_v1/result.json,
+SHA 0d7b7f325bf8032b1f11c1811c994684f028d76e0810fa335069bd830659a947.
+Compact report/result and exact commands in diagnostics/mace_omol_20260917/.
+Eight real-fixture/actual-forward tests pass 57.308 s, including strict refusal
+of native or incomplete qualification for extending the changed descriptor.
+
+Conditional canonical preparation and frozen dry-run pass. Job 1200830 is
+submitted: 100 new forwards for all 25 calibration proteins, eight exact
+qualified crystal reuses, all 28 evidence rows retained, 1KB0 unsupported.
+Manifest under charge_ablation_canonical_v1/, SHA
+2415b4dacd755530dec888017d76afe8895708213a36ef09497c7264e341476f.
+One A5000 / 16 CPUs / 64474 MiB, existing executor. Same feature mask, weights,
+physical inputs and predeclared calibration rule. No rescue threshold.
+All development gates were verified from actual completed receipts before
+creating this manifest. Original H200 native job 1200809 remains pending.
+
+Engineering summary v7 covers only completed jobs: 248 successful forwards,
+2 OOMs, 7736 GPU-s, 187008 allocated core-s, 25495.954 reported actual CPU-s.
+Four original native canonical calls remain invalid-preparation diagnostics.
+Local preparation/tests/reports/component attempts are separate receipts.
+Future canonical cost is not counted as incurred. Zero new DFT/solver/training.
+
+Local mailer accepted the 20260917T134908Z_charge_ablation_pass email to Jacob.
+Goal ACTIVE, baseline/default unchanged, no push or production promotion.
+Continue through the declared canonical test and use its actual outcome.

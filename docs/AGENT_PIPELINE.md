@@ -90,6 +90,16 @@ large. Do not promote this refinement or inherit another scorer's bands.
 median summed four-endpoint inference2.881s,excluding startup. The original
 OMOL PQQ research candidate and production baseline remain unchanged.
 
+The [intact-chain OMOL engineering path](../diagnostics/mace_omol_20260917/INTACT_ENGINEERING_REPORT.md)
+now fits the1,932-atom alpha-lactalbumin model onA5000: about5GB peak GPU and
+5.3seconds inference per endpoint. Native execution first failed GPU memory.
+Exact interaction batching passes20 core and31 intact numerical checks; native
+CPU core energies also match GPU exactly. Full native intact equivalence and
+the remaining four-protein comparison are still pending.30successful calls,
+oneOOM cost497GPU-s/20,496allocatedcore-s. No predictive improvement or force
+support is claimed. H2001200809 remains queued; native CPU intact reference1200814 is submitted. [Frozen continuation](../diagnostics/mace_omol_20260917/INTACT_BATCHED_CONTINUATION.md),
+[commands](../diagnostics/mace_omol_20260917/INTACT_COMMANDS.md). Production is unchanged.
+
 Jacob reconfirmed blanket analysis/resource authorization on2026-09-17 and
 explicitly requested removal of the old per-analysis check-in rule. Both project
 AGENTS.md and `/home/jwestrob/.codex/AGENTS.md` now record this. Continue contained

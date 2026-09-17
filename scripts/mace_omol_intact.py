@@ -80,6 +80,12 @@ def geometry(task):
 
 def qualified(path,stage):
     c=read_json(path);mp=verify(c['manifest']);m=read_json(mp)
+    if stage=='intact_qualification' and m['stage']=='cpu_intact':
+        from mace_omol_edge_run import validate as cpu_validate,collect as cpu_collect
+        cpu_validate(mp);actual=cpu_collect(mp)
+        if c!=actual or not c['numerical_gate_pass']:raise InvalidArtifact('native CPU intact qualification did not pass')
+        original=read_json(verify(m['intact_manifest']))
+        return c,{**original,'tasks':m['tasks'],'cpu_execution_manifest':record(mp)}
     if m['stage']!=stage:raise InvalidArtifact('wrong intact qualification stage')
     validate(mp);actual=collect(mp)
     if c!=actual or not c['numerical_gate_pass']:
@@ -87,7 +93,7 @@ def qualified(path,stage):
     return c,m
 
 
-def prepare(collection,preparation,agreement,output,core_qualification=None,full_qualification=None):
+def prepare(collection,preparation,agreement,output,core_qualification=None,full_qualification=None,edge_equivalence=None):
     from mace_omol import common,seal
     if full_qualification and not core_qualification:raise InvalidArtifact('full qualification requires its core bridge')
     _,parent,bt,_=bound_source(collection);physical=preparations(preparation)
@@ -106,8 +112,23 @@ def prepare(collection,preparation,agreement,output,core_qualification=None,full
             raise InvalidArtifact('full qualification used another core bridge')
         m['reused']={t['task_id']:{'source_collection':record(full_qualification),'source_task_id':t['task_id']}
                      for t in qm['tasks'] if t['variant']=='primary'}
+    if edge_equivalence:
+        from mace_omol_edge_report import verified
+        from mace_omol_edge_run import CONFIG
+        if not full_qualification:raise InvalidArtifact('adapter requires completed native intact qualification')
+        eq=verified(edge_equivalence)
+        if eq['native_collection']!=m['full_qualification']:raise InvalidArtifact('adapter equivalence uses another native reference')
+        em=read_json(verify(read_json(verify(eq['edge_collection']))['manifest']))
+        for name in ('mace_omol_edges.py','mace_omol_readout.py'):
+            if m['implementation'][name]['sha256']!=em['implementation'][name]['sha256']:
+                raise InvalidArtifact('adapter/readout implementation differs from full qualification')
+        m['edge_equivalence']=record(edge_equivalence);m['model']['execution_adapter']=CONFIG
+        for ref in m['reused'].values():ref['source_collection']=eq['edge_collection']
     wanted=[t for t in expected_tasks(stage,bt,physical) if t['task_id'] not in m['reused']]
     for t in wanted:
+        if edge_equivalence:
+            from mace_omol_edges import ADAPTER
+            t['edge_adapter']={'id':ADAPTER,'chunk_size':1024}
         if t['position']=='bound' and t['variant'] in ('primary','repeat'):
             t['xyz']=t['source_xyz']
         else:
@@ -127,8 +148,19 @@ def validate(manifest):
             or m['energy_evaluation']!=EVALUATION or m['tolerances']!=TOL):
         raise InvalidArtifact('intact energy-only model/acceptance changed')
     _,parent,bt,_=bound_source(verify(m['source_collection']));physical=preparations(verify(m['physical_preparation']))
-    if (m['model']!=parent['model'] or m['software']!=parent['software'] or m['inventory']!=parent['inventory']
-            or m['model']!=model(verify(m['software']))):
+    expected_model=model(verify(m['software']));eq=None
+    if m.get('edge_equivalence'):
+        from mace_omol_edge_report import verified
+        from mace_omol_edge_run import CONFIG
+        if m['stage']!='intact_benchmark':raise InvalidArtifact('adapter only permitted after intact qualification')
+        eq=verified(verify(m['edge_equivalence']));expected_model['execution_adapter']=CONFIG
+        if eq['native_collection']!=m['full_qualification']:raise InvalidArtifact('edge equivalence source mismatch')
+        em=read_json(verify(read_json(verify(eq['edge_collection']))['manifest']))
+        for name in ('mace_omol_edges.py','mace_omol_readout.py'):
+            if m['implementation'][name]['sha256']!=em['implementation'][name]['sha256']:
+                raise InvalidArtifact('adapter/readout differs from qualified implementation')
+    if (parent['model']!=model(verify(parent['software'])) or m['software']!=parent['software']
+            or m['inventory']!=parent['inventory'] or m['model']!=expected_model):
         raise InvalidArtifact('intact Hamiltonian differs from qualified OMOL')
     s=read_json(verify(m['software']))
     for pin in [m['agreement'],*m['implementation'].values(),s['python'],s['requirements'],s['checkpoint'],s['inspection'],
@@ -136,20 +168,24 @@ def validate(manifest):
     if m['stage']!='intact_core':
         qc,qm=qualified(verify(m['core_qualification']),'intact_core')
         if (qm['source_collection']!=m['source_collection'] or qm['physical_preparation']!=m['physical_preparation']
-                or qm['model']!=m['model'] or qm['software']!=m['software']):
+                or qm['model']!=parent['model'] or qm['software']!=m['software']):
             raise InvalidArtifact('core bridge source or method differs')
     if m['stage']=='intact_benchmark':
         qc,qm=qualified(verify(m['full_qualification']),'intact_qualification')
         if qm['core_qualification']!=m['core_qualification']:raise InvalidArtifact('full bridge source differs')
-        reuse={t['task_id']:{'source_collection':m['full_qualification'],'source_task_id':t['task_id']}
+        reuse={t['task_id']:{'source_collection':eq['edge_collection'] if eq else m['full_qualification'],'source_task_id':t['task_id']}
                for t in qm['tasks'] if t['variant']=='primary'}
         if m['reused']!=reuse or len(reuse)!=4:raise InvalidArtifact('qualified intact reuse differs')
     elif m['reused']:raise InvalidArtifact('unexpected intact cache reuse')
     expected=[t for t in expected_tasks(m['stage'],bt,physical) if t['task_id'] not in m['reused']]
+    if eq:
+        from mace_omol_edges import ADAPTER
+        for t in expected:t['edge_adapter']={'id':ADAPTER,'chunk_size':1024}
     if len(expected)!={'intact_core':4,'intact_qualification':14,'intact_benchmark':16}[m['stage']] or len(expected)!=len(m['tasks']):
         raise InvalidArtifact('finite intact task count changed')
     for t,e in zip(m['tasks'],expected):
-        if any(t.get(k)!=v for k,v in e.items() if k!='xyz'):raise InvalidArtifact('intact task differs from declared source')
+        if {k:v for k,v in t.items() if k not in ('xyz','cache_key')}!={k:v for k,v in e.items() if k!='xyz'}:
+            raise InvalidArtifact('intact task differs from declared source')
         actual=xyz(verify(t['xyz']));wanted=geometry(t)
         if [r[0] for r in actual]!=[r[0] for r in wanted] or np.max(np.abs(np.array([r[1:] for r in actual])-np.array([r[1:] for r in wanted])))>1e-12:
             raise InvalidArtifact('intact coordinates differ from physical inventory/declared transform')
@@ -189,7 +225,7 @@ def collect(manifest):
         for case in ('1H4I','4MAE'):
             error=errors[case+'_Ca']-errors[case+'_La']
             checks.append({'name':case+'_paired_R_bridge','error_kcal_mol':error,'pass':abs(error)<=TOL['energy_kcal_mol']})
-    if complete and m['stage']=='intact_qualification':
+    if complete and m['stage'] in ('intact_qualification','edge_intact','cpu_intact'):
         def value(metal,position,variant):return rows[f'ALPHA_1F6S_{metal}_{position}_{variant}']['energy_eV']
         errors={}
         for variant in ('repeat','rotate','farther'):
@@ -206,6 +242,9 @@ def collect(manifest):
                 checks.append({'name':'R_coord_'+variant,'error_kcal_mol':error,'pass':abs(error)<=TOL['energy_kcal_mol']})
     if m['stage']=='intact_benchmark':
         qc,_=qualified(verify(m['full_qualification']),'intact_qualification')
+        if m.get('edge_equivalence'):
+            from mace_omol_edge_report import verified
+            eq=verified(verify(m['edge_equivalence']));qc=read_json(verify(eq['edge_collection']))
         for key,ref in m['reused'].items():reused[key]={**ref,'result':qc['rows'][ref['source_task_id']]}
     return {'status':'complete' if complete else 'incomplete','manifest':record(mp),'rows':rows,'attempts':attempts,
             'reused_rows':reused,'checks':checks,'numerical_gate_pass':complete and bool(checks) and all(c['pass'] for c in checks),
@@ -215,5 +254,5 @@ def collect(manifest):
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
     for key in ('collection','preparation','agreement','output'):p.add_argument('--'+key,required=True)
-    p.add_argument('--core-qualification');p.add_argument('--full-qualification')
+    p.add_argument('--core-qualification');p.add_argument('--full-qualification');p.add_argument('--edge-equivalence')
     print(json.dumps(prepare(**vars(p.parse_args())),indent=2))

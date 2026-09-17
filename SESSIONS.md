@@ -1168,3 +1168,39 @@ skips8.168s;newintact3pass/1pendingactualfullgate skip5.418s. Production unchang
 Reporter implemented but no whole-chain scores yet. GoalACTIVE and blanket
 authorization remains;no per-analysis permission gate. Next collect1200809 and
 continue conditional benchmark or same-method memory recovery if necessary.
+
+
+## Exact OMOL memory batching; native CPU reference underway — 2026-09-17
+
+Exact nonlinear interaction batching retains all atoms/edges and accumulates both
+messages and learned density before the original nonlinear layer. Energy-only
+adapter omol_nonlinear_exact_edge_batches_v1; no parameter/buffer changes,
+new force support, physical model or default change. Core1200810: eight actual
+calls at1024/2048edges, all20native-equivalence/accounting checks pass exactly.
+Intact ALPHA_1F6S1200811: fourteen calls, all31numerical checks pass; max error
+2.126204069e-6kcal/mol. PeakGPU4,957,639,680bytes and approximately5.3s inference.
+This fixes the observed A5000 memory failure for this1932atom case.
+
+Native CPU core1200812: four calls, all10checks pass exactly. Native CPU intact
+reference1200814 RUNNING on64CPUs/128GiB, with14declared calls and unchanged
+physical inputs. FirstfullCPUenergy exactly matches batched GPU; remaining
+checks pending. Native H2001200809 stillqueued; no cancellation/interference.
+Full native/adapter equivalence is mandatory before the16remaining benchmark
+endpoints. INTACT_BATCHED_CONTINUATION.md freezes that execution route and
+retains the original three relative criteria. Four batched alpha primaries
+will be reused explicitly. No whole-panel predictive result exists yet.
+
+At completed-job checkpoint1200812:30successful calls,oneOOM,zeroDFT/solver/
+training;497GPU-s,20,496allocatedcore-s,897.933actualCPU-s. Local prep has
+separate timing receipts; otherlocalwork notfullyprofiled. TypedCPU/GPU/adapter
+cache guards and real failed-OOM regression added. OMOL6tests pass18.846s;
+intact5pass/1pendingnativefullskip30.159s;edge/CPU4pass21.586s.
+
+Code reuses existing executor; run_cpu.sbatch is its standard-allocation wrapper.
+Native full comparison/report supports CPU or H200 references. Scoped pipeline
+continuation implementation is present but its16-call execution remains gated
+on actual full equivalence; no invented success. Current commands and status
+in diagnostics/mace_omol_20260917/INTACT_COMMANDS.md and engineeringreport.
+Vault/email updated; localmailer accepted20260917T093422Z notification. Goal
+ACTIVE. Next collect1200814, run mace_omol_edge_report.py, then prepare/execute
+intact_benchmark_v1 with --edge-equivalence if all checks pass.

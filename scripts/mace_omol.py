@@ -62,7 +62,8 @@ def common(source_inventory, software, agreement, output, stage):
     # Reuse the canonical package's audited dependency closure, plus this worker.
     names = ('mace_omol.py', 'mace_canonical_run.py', 'mace_canonical.py', 'mace_curvature.py',
              'affordable_response.py', 'mace_mechanics_run.py', 'mace_short_engine.py',
-             'mace_omol_readout.py', 'mace_omol_coordination.py', 'mace_omol_intact.py')
+             'mace_omol_readout.py', 'mace_omol_coordination.py', 'mace_omol_intact.py',
+             'mace_omol_edges.py', 'mace_omol_edge_run.py', 'mace_omol_edge_report.py')
     pins = snapshot(out, names)
     m = {'schema_version': SCHEMA, 'protocol_id': PROTOCOL, 'stage': stage,
          'inventory': record(source_inventory), 'software': record(software), 'agreement': record(agreement),
@@ -139,6 +140,9 @@ def prepare_benchmark(qualification, mechanics, agreement, output):
 
 def validate(manifest):
     m = read_json(manifest)
+    if m.get('stage','').startswith(('edge_','cpu_')):
+        from mace_omol_edge_run import validate as validate_edge
+        return validate_edge(manifest)
     if m.get('stage','').startswith('intact_'):
         from mace_omol_intact import validate as validate_intact
         return validate_intact(manifest)
@@ -217,17 +221,25 @@ def worker(manifest, task_id, output, memory_mode):
     from ase import Atoms
     from mace.calculators import mace_omol
     m = read_json(manifest); t = next(t for t in m['tasks'] if t['task_id']==task_id)
+    device=t.get('execution_device','cuda')
     out = Path(output); start = time.monotonic()
     result = {'task_id':task_id, 'cache_key':t['cache_key'], 'manifest':record(manifest),
               'status':'unavailable', 'memory_mode':memory_mode, 'energy_component':COMPONENT, **UNAVAILABLE}
     try:
-        if not os.environ.get('SLURM_JOB_ID') or not torch.cuda.is_available() or memory_mode!='native':
-            raise InvalidArtifact('native OMOL requires allocated CUDA')
+        if (not os.environ.get('SLURM_JOB_ID') or memory_mode!='native' or device not in ('cuda','cpu')
+                or (device=='cuda' and not torch.cuda.is_available())):
+            raise InvalidArtifact('OMOL requires its declared allocated device')
         torch.set_num_threads(int(os.environ['SLURM_CPUS_PER_TASK'])); torch.set_default_dtype(torch.float64)
-        torch.cuda.reset_peak_memory_stats(); props = torch.cuda.get_device_properties(0)
-        result['device'] = {'name':props.name, 'total_memory_bytes':props.total_memory,
-                            'CUDA_VISIBLE_DEVICES':os.environ.get('CUDA_VISIBLE_DEVICES')}
-        calc = mace_omol(model=str(verify(m['model']['checkpoint'])), device='cuda', default_dtype='float64')
+        result['execution_device']=device
+        if device=='cuda':
+            torch.cuda.reset_peak_memory_stats(); props = torch.cuda.get_device_properties(0)
+            result['device'] = {'name':props.name, 'total_memory_bytes':props.total_memory,
+                                'CUDA_VISIBLE_DEVICES':os.environ.get('CUDA_VISIBLE_DEVICES')}
+        else:
+            import platform
+            result['device']={'name':platform.processor(),'kind':'CPU','threads':torch.get_num_threads(),
+                              'node':platform.node(),'cpuinfo':Path('/proc/cpuinfo').read_text().split('\n\n')[0]}
+        calc = mace_omol(model=str(verify(m['model']['checkpoint'])), device=device, default_dtype='float64')
         model_obj = calc.models[0]
         if type(model_obj).__name__ != 'ScaleShiftMACE' or dict(model_obj.embedding_specs) != m['model']['embedding_specs']:
             raise InvalidArtifact('loaded model type/state embedding mismatch')
@@ -246,12 +258,19 @@ def worker(manifest, task_id, output, memory_mode):
         if t.get('require_isolated_metal') and result['input_state_check']['metal_neighbor_edge_count'] != 0:
             raise InvalidArtifact('detached metal still has graph neighbor edges')
         versions = {name:p._version for name,p in model_obj.named_parameters()}
+        buffer_versions={name:(id(b),b._version) for name,b in model_obj.named_buffers()}
+        if t.get('edge_adapter'):
+            from mace_omol_edges import install
+            if not t.get('energy_only'):
+                raise InvalidArtifact('edge adapter supports energy only')
+            install(model_obj,t['edge_adapter']['chunk_size'])
         capture = None
         if t.get('capture_native_readout'):
             from mace_omol_readout import NativeCapture
             capture = NativeCapture(model_obj)
         result['model_load_seconds'] = time.monotonic()-start
-        torch.cuda.synchronize(); evaluation = time.monotonic()
+        if device=='cuda':torch.cuda.synchronize()
+        evaluation = time.monotonic()
         if t.get('energy_only'):
             if capture is None or list(model_obj.heads)!=['omol'] or calc.energy_units_to_eV!=1.:
                 raise InvalidArtifact('energy-only path requires captured native single-head eV output')
@@ -267,12 +286,19 @@ def worker(manifest, task_id, output, memory_mode):
             forces=None
         else:
             value = float(atoms.get_potential_energy()); forces = np.asarray(atoms.get_forces(), dtype=np.float64)
-        torch.cuda.synchronize(); result['evaluation_seconds'] = time.monotonic()-evaluation
+        if device=='cuda':torch.cuda.synchronize()
+        result['evaluation_seconds'] = time.monotonic()-evaluation
         if not math.isfinite(value) or (forces is not None and (forces.shape != (len(atoms),3) or not np.isfinite(forces).all())):
             raise InvalidArtifact('invalid OMOL energy/analytic forces')
         result['parameter_versions_unchanged'] = versions == {name:p._version for name,p in model_obj.named_parameters()}
         if not result['parameter_versions_unchanged']:
             raise InvalidArtifact('model parameters mutated during inference')
+        if t.get('edge_adapter'):
+            from mace_omol_edges import receipt
+            result['execution_adapter']=receipt(model_obj,t['edge_adapter']['chunk_size'])
+            result['buffer_versions_unchanged']=buffer_versions=={name:(id(b),b._version) for name,b in model_obj.named_buffers()}
+            if not result['buffer_versions_unchanged']:
+                raise InvalidArtifact('model buffers mutated during edge inference')
         if t.get('energy_only'):
             result.update(status='computed',energy_eV=value,forces=None,charge_check=None,force_definition=None,
                           energy_only=True,analytic_gradient_status='not_requested',
@@ -287,8 +313,8 @@ def worker(manifest, task_id, output, memory_mode):
         result.update(status='failed', reason=str(exc), exception_type=type(exc).__name__); traceback.print_exc()
     finally:
         result.update(wall_seconds=time.monotonic()-start, peak_host_RSS_KiB=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
-                      peak_cuda_allocated_bytes=torch.cuda.max_memory_allocated() if torch.cuda.is_available() else None,
-                      peak_cuda_reserved_bytes=torch.cuda.max_memory_reserved() if torch.cuda.is_available() else None,
+                      peak_cuda_allocated_bytes=torch.cuda.max_memory_allocated() if device=='cuda' and torch.cuda.is_available() else None,
+                      peak_cuda_reserved_bytes=torch.cuda.max_memory_reserved() if device=='cuda' and torch.cuda.is_available() else None,
                       slurm_job_id=os.environ.get('SLURM_JOB_ID'), allocated_cpus=os.environ.get('SLURM_CPUS_PER_TASK'),
                       allocated_host_mem_MiB=os.environ.get('SLURM_MEM_PER_NODE'),
                       versions={n:importlib.metadata.version(n) for n in ('torch','mace-torch','ase','e3nn')})
@@ -299,6 +325,16 @@ def worker(manifest, task_id, output, memory_mode):
 
 def accepted_state(result, task):
     state = result.get('input_state_check', {})
+    if result.get('execution_device','cuda')!=task.get('execution_device','cuda'):return False
+    adapter=result.get('execution_adapter')
+    if task.get('edge_adapter'):
+        wanted=task['edge_adapter']
+        if (not adapter or any(adapter.get(k)!=v for k,v in wanted.items())
+                or result.get('buffer_versions_unchanged') is not True or adapter.get('gradient_support') is not False
+                or len(adapter.get('layers',[]))!=3):return False
+        if any(layer['atoms']!=state.get('atoms') or layer['edges']!=layer['processed_edges']
+               or layer['chunk_size']!=wanted['chunk_size'] for layer in adapter['layers']):return False
+    elif adapter is not None:return False
     if state.get('selected_metal_index',0)!=task.get('metal_index',0):
         return False
     if task.get('energy_only'):
@@ -321,6 +357,9 @@ def accepted_state(result, task):
 
 
 def collect(manifest):
+    if read_json(manifest).get('stage','').startswith(('edge_','cpu_')):
+        from mace_omol_edge_run import collect as collect_edge
+        return collect_edge(manifest)
     if read_json(manifest).get('stage','').startswith('intact_'):
         from mace_omol_intact import collect as collect_intact
         return collect_intact(manifest)

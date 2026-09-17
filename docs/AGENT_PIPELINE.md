@@ -104,7 +104,9 @@ and rigid/repeat checks pass. Reporting overhead remains substantial.
 The [product batching qualification](../diagnostics/mace_omol_20260917/EXACT_PRODUCT_PLAN.md)
 passes its core and full stages; all24 native CPU/product GPU comparisons agree
 exactly. The [28-reference extension](../diagnostics/mace_omol_20260917/INTACT_CANONICAL_PLAN.md)
-is running as1200819 with104 new endpoints and8 qualified reuses.
+completed as1200819 with104 new endpoints and8 qualified reuses, but its
+[calibration fails](../diagnostics/mace_omol_20260917/INTACT_CANONICAL_REPORT.md):
+min(La)−max(Ca)=−306.006296kcal/mol. No new classification bands were issued.
 Four reference charges exceed the training range and remain explicitly flagged.
 An independent [connectivity audit](../diagnostics/mace_omol_20260917/INTACT_CANONICAL_INTEGRITY_ADDENDUM.md)
 found two false peptide bonds across missing 1KB0 structure before its endpoints
@@ -114,6 +116,22 @@ the denominator. The new preparation policy rejects it before template matching;
 below; the original reporter frozen with the run is superseded. Fixed-core
 baseline1KB0 remains unchanged. Eight real-fixture tests pass.
 H2001200809 remains queued. [Commands](../diagnostics/mace_omol_20260917/INTACT_COMMANDS.md).
+
+The [saved-output locality audit](../diagnostics/mace_omol_20260917/INTACT_LOCALITY_REPORT.md)
+reproduces all five scores and three contrasts; geometry-independent terms
+cancel exactly and changes beyond18A are below4e-11kcal/mol per endpoint.
+This supports intact local context, not full long-range electrostatics. Global
+charge still conditions local nonlinear features. The separately declared
+[disconnected sodium check](../diagnostics/mace_omol_20260917/INTACT_SPECTATOR_PLAN.md)
+tested that ambiguity on20 new endpoints without changing the existing scores.
+It [fails](../diagnostics/mace_omol_20260917/INTACT_SPECTATOR_REPORT.md): four
+scores shift4–15kcal/mol and XoxF/MxaF reverses. The actual checkpoint has
+identical charge features for−100..−6. This whole-chain version is rejected
+for promotion; baseline and the original five-case observation remain intact.
+The next [charge-feature ablation](../diagnostics/mace_omol_20260917/CHARGE_ABLATION_PLAN.md)
+is a separately declared learned descriptor, with no molecular energy claim.
+Recover the [active checkpoint](../diagnostics/mace_discriminator_goal_20260916/CURRENT.md)
+before resuming implementation or execution.
 
 Jacob reconfirmed blanket analysis/resource authorization on2026-09-17 and
 explicitly requested removal of the old per-analysis check-in rule. Both project

@@ -13,6 +13,8 @@ La/Ca discriminator. Jacob approved autonomous pursuit through failed pilots
 and implementation changes; see [goal and acceptance scope](diagnostics/mace_discriminator_goal_20260916/GOAL.md).
 Backend feasibility or a rejected pilot does not complete this goal. Baseline
 protection and honest scientific validation remain in force.
+Recover [current research checkpoint](diagnostics/mace_discriminator_goal_20260916/CURRENT.md)
+and inspect its live jobs before continuing after a handoff.
 
 **Pilot authorization, 2026-09-16:** Jacob: “i approve all pilots. disregard
 language in the instructions saying to check with me before launching stuff.

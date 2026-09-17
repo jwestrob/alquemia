@@ -65,7 +65,9 @@ def common(source_inventory, software, agreement, output, stage):
              'mace_omol_readout.py', 'mace_omol_coordination.py', 'mace_omol_intact.py',
              'mace_omol_edges.py', 'mace_omol_edge_run.py', 'mace_omol_edge_report.py', 'mace_file_checks.py',
              'mace_omol_products.py', 'mace_omol_panel.py', 'mace_omol_panel_prepare.py',
-             'mace_omol_intact_inventory.py', 'mace_omol_backbone_audit.py')
+             'mace_omol_intact_inventory.py', 'mace_omol_backbone_audit.py',
+             'mace_omol_locality.py', 'mace_omol_spectator.py', 'mace_omol_ablation.py',
+             'mace_omol_ablation_run.py')
     pins = snapshot(out, names)
     m = {'schema_version': SCHEMA, 'protocol_id': PROTOCOL, 'stage': stage,
          'inventory': record(source_inventory), 'software': record(software), 'agreement': record(agreement),
@@ -142,6 +144,12 @@ def prepare_benchmark(qualification, mechanics, agreement, output):
 
 def validate(manifest):
     m = read_json(manifest)
+    if m.get('stage')=='ablation_development':
+        from mace_omol_ablation_run import validate as validate_ablation
+        return validate_ablation(manifest)
+    if m.get('stage')=='spectator_intact':
+        from mace_omol_spectator import validate as validate_spectator
+        return validate_spectator(manifest)
     if m.get('stage','').startswith('panel_'):
         from mace_omol_panel import validate as validate_panel
         return validate_panel(manifest)
@@ -229,7 +237,7 @@ def worker(manifest, task_id, output, memory_mode):
     device=t.get('execution_device','cuda')
     out = Path(output); start = time.monotonic()
     result = {'task_id':task_id, 'cache_key':t['cache_key'], 'manifest':record(manifest),
-              'status':'unavailable', 'memory_mode':memory_mode, 'energy_component':COMPONENT, **UNAVAILABLE}
+              'status':'unavailable', 'memory_mode':memory_mode, 'energy_component':t['energy_component'], **UNAVAILABLE}
     try:
         if (not os.environ.get('SLURM_JOB_ID') or memory_mode!='native' or device not in ('cuda','cpu')
                 or (device=='cuda' and not torch.cuda.is_available())):
@@ -262,8 +270,20 @@ def worker(manifest, task_id, output, memory_mode):
             raise InvalidArtifact('unexpected graph batching')
         if t.get('require_isolated_metal') and result['input_state_check']['metal_neighbor_edge_count'] != 0:
             raise InvalidArtifact('detached metal still has graph neighbor edges')
+        if 'spectator_index' in t:
+            i=t['spectator_index'];edges=native_batch['edge_index']
+            count=int(((edges[0]==i)|(edges[1]==i)).sum().item())
+            result['input_state_check'].update(spectator_index=i,spectator_neighbor_edge_count=count)
+            if rows[i][0]!='Na' or count:
+                raise InvalidArtifact('declared sodium spectator has graph interactions or wrong identity')
         versions = {name:p._version for name,p in model_obj.named_parameters()}
         buffer_versions={name:(id(b),b._version) for name,b in model_obj.named_buffers()}
+        if t.get('charge_feature_adapter'):
+            from mace_omol_ablation import install as install_ablation, ADAPTER as ABLATION, COMPONENT as DESCRIPTOR
+            if (t['charge_feature_adapter']!=ABLATION or t['energy_component']!=DESCRIPTOR
+                    or not t.get('energy_only') or m['model'].get('charge_feature_adapter')!=ABLATION):
+                raise InvalidArtifact('unsupported descriptor feature adapter')
+            install_ablation(model_obj)
         if t.get('edge_adapter'):
             from mace_omol_edges import install, ADAPTER
             from mace_omol_products import install as install_products, ADAPTER as PRODUCT_ADAPTER
@@ -303,6 +323,11 @@ def worker(manifest, task_id, output, memory_mode):
         result['parameter_versions_unchanged'] = versions == {name:p._version for name,p in model_obj.named_parameters()}
         if not result['parameter_versions_unchanged']:
             raise InvalidArtifact('model parameters mutated during inference')
+        if t.get('charge_feature_adapter'):
+            from mace_omol_ablation import receipt as ablation_receipt
+            result['charge_feature_adapter']=ablation_receipt(model_obj)
+            result['output_semantics']='energy_like_descriptor_not_quantum_endpoint'
+            result['output_unit']='eV_equivalent_model_units'
         if t.get('edge_adapter'):
             from mace_omol_edges import receipt, ADAPTER
             if t['edge_adapter']['id']==ADAPTER:
@@ -339,6 +364,19 @@ def worker(manifest, task_id, output, memory_mode):
 
 def accepted_state(result, task):
     state = result.get('input_state_check', {})
+    expected_component=COMPONENT
+    if task.get('charge_feature_adapter'):
+        from mace_omol_ablation import ADAPTER as ABLATION, COMPONENT as DESCRIPTOR
+        expected_component=DESCRIPTOR
+        if (task['charge_feature_adapter']!=ABLATION or not task.get('energy_only')
+                or result.get('charge_feature_adapter')!={'id':ABLATION,'calls':1,'rows':state.get('atoms'),
+                    'output_max_abs':0.,'physical_charge_input_preserved':True,'spin_embedding_modified':False,
+                    'output_semantics':'energy_like_descriptor_not_quantum_endpoint'}
+                or result.get('output_semantics')!='energy_like_descriptor_not_quantum_endpoint'
+                or result.get('output_unit')!='eV_equivalent_model_units'):
+            return False
+    elif result.get('charge_feature_adapter') is not None:return False
+    if task.get('energy_component')!=expected_component:return False
     if result.get('execution_device','cuda')!=task.get('execution_device','cuda'):return False
     adapter=result.get('execution_adapter')
     if task.get('edge_adapter'):
@@ -369,10 +407,13 @@ def accepted_state(result, task):
         return False
     if task.get('require_isolated_metal') and state.get('metal_neighbor_edge_count') != 0:
         return False
+    if 'spectator_index' in task and (state.get('spectator_index')!=task['spectator_index']
+                                    or state.get('spectator_neighbor_edge_count')!=0):
+        return False
     if task.get('capture_native_readout'):
         from mace_omol_readout import checked_arrays
         checked_arrays(result, task)
-    return (result.get('energy_component')==COMPONENT and result.get('density_coefficients') is None
+    return (result.get('energy_component')==expected_component and result.get('density_coefficients') is None
             and result.get('parameter_versions_unchanged') is True and state.get('charge')==task['charge']
             and state.get('spin_multiplicity')==task['spin_multiplicity'] and state.get('head')=='omol'
             and state.get('graph_count')==1 and state.get('charge_prediction_claimed') is False
@@ -380,6 +421,12 @@ def accepted_state(result, task):
 
 
 def collect(manifest):
+    if read_json(manifest).get('stage')=='ablation_development':
+        from mace_omol_ablation_run import collect as collect_ablation
+        return collect_ablation(manifest)
+    if read_json(manifest).get('stage')=='spectator_intact':
+        from mace_omol_spectator import collect as collect_spectator
+        return collect_spectator(manifest)
     if read_json(manifest).get('stage','').startswith('panel_'):
         from mace_omol_panel import collect as collect_panel
         return collect_panel(manifest)

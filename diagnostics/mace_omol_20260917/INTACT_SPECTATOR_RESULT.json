@@ -1,0 +1,357 @@
+{
+  "agreement": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/mace_omol_20260917/INTACT_SPECTATOR_PLAN.md",
+    "sha256": "34c497a7793a62cb5ef6c12cc7a06c0dc1ef5157d41ffc4617f601ee2a8f85e5"
+  },
+  "baseline_changed": false,
+  "broad_affinity_validated": false,
+  "calibrated_class": null,
+  "collection": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/intact_spectator_v1/collection_job_1200823.json",
+    "sha256": "a5cb255530a270a3077adbb68627b3532f644984665dc8f5ddfb828645d58cbc"
+  },
+  "computed_endpoints": 20,
+  "consistency_checks": [
+    {
+      "change_kcal_mol": -4.081315911356931,
+      "name": "GGR_1GLG",
+      "pass": false
+    },
+    {
+      "change_kcal_mol": -14.765301599677144,
+      "name": "ALPHA_1F6S",
+      "pass": false
+    },
+    {
+      "change_kcal_mol": -14.203464786703051,
+      "name": "ALPHA_6IP9",
+      "pass": false
+    },
+    {
+      "change_kcal_mol": 4.295362998618657e-08,
+      "name": "PQQ_1H4I",
+      "pass": true
+    },
+    {
+      "change_kcal_mol": -9.458874495821291,
+      "name": "PQQ_4MAE",
+      "pass": false
+    },
+    {
+      "change_kcal_mol": -9.458874538774921,
+      "name": "PQQ_4MAE_minus_PQQ_1H4I",
+      "pass": false
+    },
+    {
+      "change_kcal_mol": -10.683985688320213,
+      "name": "ALPHA_1F6S_minus_GGR_1GLG",
+      "pass": false
+    },
+    {
+      "change_kcal_mol": -10.12214887534612,
+      "name": "ALPHA_6IP9_minus_GGR_1GLG",
+      "pass": false
+    }
+  ],
+  "contrasts": [
+    {
+      "change_kcal_mol": -9.458874538774921,
+      "consistency_pass": false,
+      "delta_R_kcal_mol": 9.033834361324935,
+      "evidence_stratum": "PQQ_functional_class",
+      "modified_delta_R_kcal_mol": -0.42504017744998634,
+      "modified_direction_pass": false,
+      "negative_case": "PQQ_1H4I",
+      "original_direction_pass": true,
+      "positive_case": "PQQ_4MAE",
+      "required_min_kcal_mol": 0.02
+    },
+    {
+      "change_kcal_mol": -10.683985688320213,
+      "consistency_pass": false,
+      "delta_R_kcal_mol": 37.15356261938154,
+      "evidence_stratum": "qualified_affinity_order",
+      "modified_delta_R_kcal_mol": 26.469576931061326,
+      "modified_direction_pass": true,
+      "negative_case": "GGR_1GLG",
+      "original_direction_pass": true,
+      "positive_case": "ALPHA_1F6S",
+      "required_min_kcal_mol": 0.02
+    },
+    {
+      "change_kcal_mol": -10.12214887534612,
+      "consistency_pass": false,
+      "delta_R_kcal_mol": 28.088287879827995,
+      "evidence_stratum": "qualified_affinity_order",
+      "modified_delta_R_kcal_mol": 17.966139004481875,
+      "modified_direction_pass": true,
+      "negative_case": "GGR_1GLG",
+      "original_direction_pass": true,
+      "positive_case": "ALPHA_6IP9",
+      "required_min_kcal_mol": 0.02
+    }
+  ],
+  "evaluation_seconds": 301.92037719115615,
+  "failed_attempts": 0,
+  "fragment_charge_status": "intended_formal_fragment_state_not_constrained_or_predicted_by_checkpoint",
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/intact_spectator_v1/manifest.json",
+    "sha256": "22c7cf2e96480523fe5eb0abb4891121f58703b8286cef80d50d621705da0eba"
+  },
+  "maximum_direct_Coulomb_bound_kcal_mol": 0.00021846075434313458,
+  "mechanistic_interpretation": "disconnected spectator changes global charge conditioning; not measured sodium affinity",
+  "modified_development_directions_pass": false,
+  "numerical_checks": [
+    {
+      "error_kcal_mol": -1.0738404388827751e-08,
+      "name": "GGR_1GLG_La_bound_sodium_native_energy_accounting",
+      "pass": true
+    },
+    {
+      "error_kcal_mol": 0.0,
+      "name": "GGR_1GLG_La_detached_sodium_native_energy_accounting",
+      "pass": true
+    },
+    {
+      "error_kcal_mol": 1.0738404388827751e-08,
+      "name": "GGR_1GLG_Ca_bound_sodium_native_energy_accounting",
+      "pass": true
+    },
+    {
+      "error_kcal_mol": 0.0,
+      "name": "GGR_1GLG_Ca_detached_sodium_native_energy_accounting",
+      "pass": true
+    },
+    {
+      "error_kcal_mol": 0.0,
+      "name": "ALPHA_1F6S_La_bound_sodium_native_energy_accounting",
+      "pass": true
+    },
+    {
+      "error_kcal_mol": -5.3692021944138755e-09,
+      "name": "ALPHA_1F6S_La_detached_sodium_native_energy_accounting",
+      "pass": true
+    },
+    {
+      "error_kcal_mol": 0.0,
+      "name": "ALPHA_1F6S_Ca_bound_sodium_native_energy_accounting",
+      "pass": true
+    },
+    {
+      "error_kcal_mol": 0.0,
+      "name": "ALPHA_1F6S_Ca_detached_sodium_native_energy_accounting",
+      "pass": true
+    },
+    {
+      "error_kcal_mol": 0.0,
+      "name": "ALPHA_6IP9_La_bound_sodium_native_energy_accounting",
+      "pass": true
+    },
+    {
+      "error_kcal_mol": 0.0,
+      "name": "ALPHA_6IP9_La_detached_sodium_native_energy_accounting",
+      "pass": true
+    },
+    {
+      "error_kcal_mol": 0.0,
+      "name": "ALPHA_6IP9_Ca_bound_sodium_native_energy_accounting",
+      "pass": true
+    },
+    {
+      "error_kcal_mol": 0.0,
+      "name": "ALPHA_6IP9_Ca_detached_sodium_native_energy_accounting",
+      "pass": true
+    },
+    {
+      "error_kcal_mol": 0.0,
+      "name": "PQQ_1H4I_La_bound_sodium_native_energy_accounting",
+      "pass": true
+    },
+    {
+      "error_kcal_mol": -2.1476808777655502e-08,
+      "name": "PQQ_1H4I_La_detached_sodium_native_energy_accounting",
+      "pass": true
+    },
+    {
+      "error_kcal_mol": 0.0,
+      "name": "PQQ_1H4I_Ca_bound_sodium_native_energy_accounting",
+      "pass": true
+    },
+    {
+      "error_kcal_mol": 0.0,
+      "name": "PQQ_1H4I_Ca_detached_sodium_native_energy_accounting",
+      "pass": true
+    },
+    {
+      "error_kcal_mol": 0.0,
+      "name": "PQQ_4MAE_La_bound_sodium_native_energy_accounting",
+      "pass": true
+    },
+    {
+      "error_kcal_mol": 0.0,
+      "name": "PQQ_4MAE_La_detached_sodium_native_energy_accounting",
+      "pass": true
+    },
+    {
+      "error_kcal_mol": 0.0,
+      "name": "PQQ_4MAE_Ca_bound_sodium_native_energy_accounting",
+      "pass": true
+    },
+    {
+      "error_kcal_mol": 0.0,
+      "name": "PQQ_4MAE_Ca_detached_sodium_native_energy_accounting",
+      "pass": true
+    }
+  ],
+  "numerical_gate_pass": true,
+  "planned_endpoints": 20,
+  "production_promotion": false,
+  "protocol_id": "mace_omol_intact_disconnected_sodium_check_v1",
+  "report_implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/intact_spectator_report_v1/mace_omol_spectator_report.py",
+    "sha256": "348cd3161dfe2c5253c3527a2238c2e18a48ce988c0050e8afe62bbf3cf49560"
+  },
+  "scores": {
+    "ALPHA_1F6S": {
+      "R_coord_kcal_mol": 85.10310583241724,
+      "bound_minus_detached_eV": {
+        "Ca": -16.488861488644034,
+        "La": -20.179281441261992
+      },
+      "change_kcal_mol": -14.765301599677144,
+      "components_eV": {
+        "Ca": {
+          "atomic_reference_eV": 0.0,
+          "embedding_energy_eV": 0.0,
+          "node_energy_eV": -16.48886148857126
+        },
+        "La": {
+          "atomic_reference_eV": 0.0,
+          "embedding_energy_eV": 0.0,
+          "node_energy_eV": -20.179281441218514
+        }
+      },
+      "original_R_coord_kcal_mol": 99.86840743209439,
+      "pass": false
+    },
+    "ALPHA_6IP9": {
+      "R_coord_kcal_mol": 76.59966790583779,
+      "bound_minus_detached_eV": {
+        "Ca": -15.557156172348186,
+        "La": -18.87883215630427
+      },
+      "change_kcal_mol": -14.203464786703051,
+      "components_eV": {
+        "Ca": {
+          "atomic_reference_eV": 0.0,
+          "embedding_energy_eV": 0.0,
+          "node_energy_eV": -15.557156172511084
+        },
+        "La": {
+          "atomic_reference_eV": 0.0,
+          "embedding_energy_eV": 0.0,
+          "node_energy_eV": -18.87883215629769
+        }
+      },
+      "original_R_coord_kcal_mol": 90.80313269254084,
+      "pass": false
+    },
+    "GGR_1GLG": {
+      "R_coord_kcal_mol": 58.633528901355916,
+      "bound_minus_detached_eV": {
+        "Ca": -15.414071440696716,
+        "La": -17.956661900039762
+      },
+      "change_kcal_mol": -4.081315911356931,
+      "components_eV": {
+        "Ca": {
+          "atomic_reference_eV": 0.0,
+          "embedding_energy_eV": 0.0,
+          "node_energy_eV": -15.41407144070709
+        },
+        "La": {
+          "atomic_reference_eV": 0.0,
+          "embedding_energy_eV": 0.0,
+          "node_energy_eV": -17.956661900028816
+        }
+      },
+      "original_R_coord_kcal_mol": 62.71484481271285,
+      "pass": false
+    },
+    "PQQ_1H4I": {
+      "R_coord_kcal_mol": 101.61412572049906,
+      "bound_minus_detached_eV": {
+        "Ca": -12.391067581251264,
+        "La": -16.79747312143445
+      },
+      "change_kcal_mol": 4.295362998618657e-08,
+      "components_eV": {
+        "Ca": {
+          "atomic_reference_eV": 0.0,
+          "embedding_energy_eV": 0.0,
+          "node_energy_eV": -12.391067581803032
+        },
+        "La": {
+          "atomic_reference_eV": 0.0,
+          "embedding_energy_eV": 0.0,
+          "node_energy_eV": -16.797473120964714
+        }
+      },
+      "original_R_coord_kcal_mol": 101.61412567754543,
+      "pass": true
+    },
+    "PQQ_4MAE": {
+      "R_coord_kcal_mol": 101.18908554304907,
+      "bound_minus_detached_eV": {
+        "Ca": -16.42657019663602,
+        "La": -20.814544250257313
+      },
+      "change_kcal_mol": -9.458874495821291,
+      "components_eV": {
+        "Ca": {
+          "atomic_reference_eV": 0.0,
+          "embedding_energy_eV": 0.0,
+          "node_energy_eV": -16.426570196831115
+        },
+        "La": {
+          "atomic_reference_eV": 0.0,
+          "embedding_energy_eV": 0.0,
+          "node_energy_eV": -20.814544250067925
+        }
+      },
+      "original_R_coord_kcal_mol": 110.64796003887037,
+      "pass": false
+    }
+  },
+  "settings": {
+    "Coulomb_kcal_A_per_mol_e2": 332.063713299,
+    "charge_increment": 1,
+    "maximum_direct_Coulomb_difference_kcal_mol": 0.001,
+    "offset_from_maximum_x_A": 10000.0,
+    "score_tolerance_kcal_mol": 0.1,
+    "spectator": "Na+"
+  },
+  "source_report": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/intact_report_v1/result.json",
+    "sha256": "7fdf787ccd81eeea798ad96f77d0febedb3d253b99b968dc8fa0c661b37ded82"
+  },
+  "spectator_consistency_pass": false,
+  "status": "complete",
+  "successful_attempts": 20,
+  "full_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/intact_spectator_report_v1/result.json",
+    "sha256": "074fc7dab31e3ca0592bd17d96efda3aac1a0e2f6602cbb45e4b31091d8fe2b5"
+  },
+  "execution_cost": {
+    "wall_seconds": 667,
+    "allocated_core_seconds": 10672,
+    "actual_CPU_seconds": 612.926,
+    "GPU_allocation_seconds": 667,
+    "peak_GPU_allocated_bytes": 11537681408,
+    "evaluation_seconds": 301.92037719115615,
+    "source_sacct": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/intact_canonical_spectator_sacct_final.tsv",
+      "sha256": "a8e1972a581b89890fb03b7aa809688cbb5dff0c48c6ad95628e6fcf1fb59da4"
+    }
+  }
+}

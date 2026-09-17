@@ -25,7 +25,7 @@ from affordable_common import (HA_TO_KCAL, InvalidArtifact, cache_key, digest,
 PROTOCOL = 'mace_polar_1m_vacuum_r2scan3c_subtractive_pilot_v1'
 EV_TO_KCAL = 23.06054783061903  # eV * exact SI elementary charge * exact Avogadro / 4184
 TASK_IDS = [f'1h4i_qm{size}_{metal}' for size in (33, 36) for metal in ('La', 'Ca')]
-Z = {'H': 1, 'C': 6, 'N': 7, 'O': 8, 'S': 16, 'Ca': 20, 'La': 57}
+Z = {'H': 1, 'C': 6, 'N': 7, 'O': 8, 'Na': 11, 'S': 16, 'Ca': 20, 'La': 57}
 
 
 def rotation():
@@ -374,9 +374,10 @@ def accepted_attempt(attempt, task, manifest):
         if (r['returncode'] != 0 or r['manifest'] != record(manifest) or r['task_id'] != task['task_id']
                 or result['status'] != 'computed' or result['cache_key'] != task['cache_key']):
             return None
-        if not (task.get('energy_only') is True and task.get('energy_component')=='MACE_OMOL_total_vacuum_energy'):
+        omol_components=('MACE_OMOL_total_vacuum_energy','MACE_OMOL_charge_feature_ablated_descriptor')
+        if not (task.get('energy_only') is True and task.get('energy_component') in omol_components):
             verify(result['forces'])
-        if task.get('energy_component') == 'MACE_OMOL_total_vacuum_energy':
+        if task.get('energy_component') in omol_components:
             from mace_omol import accepted_state
             if not accepted_state(result, task):
                 return None
@@ -407,9 +408,17 @@ def execute(manifest, memory_mode, selected=None):
         selected = set(selected or [t['task_id'] for t in m['tasks']])
         if selected - {t['task_id'] for t in m['tasks']}:
             raise InvalidArtifact('unknown task selection')
+        passed_ablation_gates=set()
         for t in m['tasks']:
             if t['task_id'] not in selected:
                 continue
+            if m.get('stage')=='ablation_development' and t['kind']=='full':
+                from mace_omol_ablation_run import execution_gate
+                gate='core' if t['ablation_group']=='numerical' else 'numerical'
+                if gate not in passed_ablation_gates:
+                    if not execution_gate(mp,gate):
+                        raise InvalidArtifact('descriptor execution blocked by incomplete/failed '+gate+' gate')
+                    passed_ablation_gates.add(gate)
             if t['kind'] == 'full' and m.get('schema_version') == 'alquemia.mace_gb.v1':
                 from mace_gb import core_gate
                 if core_gate(mp)['status'] != 'pass':

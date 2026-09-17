@@ -24,11 +24,17 @@ The completed comparison used this frozen source (output already exists):
 workspaces/mace_hybrid_20260916/software_v1/venv/bin/python workspaces/mace_omol_20260917/product_reporting_source_v1/implementation/mace_omol_edge_report.py --native-collection workspaces/mace_omol_20260917/cpu_intact_v1/collection_job_1200814.json --edge-collection workspaces/mace_omol_20260917/product_intact_v1/collection_job_1200818.json --output workspaces/mace_omol_20260917/product_equivalence_v1
 ```
 
-The canonical experiment declared in INTACT_CANONICAL_PLAN.md is running as
+The canonical experiment declared in INTACT_CANONICAL_PLAN.md completed as
 job1200819:104 new endpoints and8 exact earlier crystal reuses. Its immutable
 manifest is `intact_panel_run_v1/manifest.json`, SHA256
 `642d9717d69a8ee236e1fbdc280fa9fbed2d169e2c073c29efac7f63a72cca62`.
 Four calibration charges exceed the reported training range.
+
+The audited report is complete: INTACT_CANONICAL_REPORT.md records a failed
+calibration gap−306.006296kcal/mol, with no decision bands. The workspace output
+below already exists; do not overwrite or relaunch it. For a report replay use
+a fresh explicitly named output directory. The single job-specific local waiter
+has completed and submits no further work.
 
 **Mandatory preparation audit:** 1KB0 contains two false peptide connections
 across missing structure. Its four raw endpoints are invalid preparation

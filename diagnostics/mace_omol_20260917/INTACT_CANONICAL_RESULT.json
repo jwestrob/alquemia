@@ -1,0 +1,848 @@
+{
+  "agreement": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/mace_omol_20260917/INTACT_CANONICAL_PLAN.md",
+    "sha256": "0f546d5a11ca1aeabc09c1cc265fe6094d961d67758b743fb91ec9ebc3f199bc"
+  },
+  "bands": null,
+  "baseline_changed": false,
+  "binding_free_energy_kcal_mol": null,
+  "broad_affinity_validated": false,
+  "calibration_gap_kcal_mol": -306.0062963404898,
+  "calibration_total_count": 25,
+  "calibration_valid_count": 25,
+  "canonical_decision_gate_pass": false,
+  "canonical_operational_gate_pass": false,
+  "collection": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/intact_panel_run_v1/collection_job_1200819.json",
+    "sha256": "9651a8bcbfc9095c1055692e06260c723813eaa57cd91535aba833e2235c292a"
+  },
+  "decision_policy": {
+    "Ca_band": "R_coord<=maximum_Ca_calibration",
+    "La_band": "R_coord>=minimum_La_calibration",
+    "calibration_count": 25,
+    "charge_range_exclusions": false,
+    "inside_gap": "inconclusive",
+    "minimum_gap_kcal_mol": 0.02,
+    "transfer_count": 3
+  },
+  "eV_to_kcal_mol": 23.06054783061903,
+  "energy_units": "eV",
+  "evidence_use": "consumed_retrospective_development",
+  "execution_status": "complete",
+  "force_validation_status": "not_requested_energy_only",
+  "formula": "(E_bound_Ca-E_detached_Ca)-(E_bound_La-E_detached_La)",
+  "model": {
+    "checkpoint": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/software_v1/MACE-omol-0-extra-large-1024.model",
+      "sha256": "9b64b4fd5153ca578c694abc57806d8111050de6ff652e695c9b525bc4d36469"
+    },
+    "dtype": "float64",
+    "embedding_specs": {
+      "total_charge": {
+        "emb_dim": 1024,
+        "in_dim": 1,
+        "num_classes": 201,
+        "offset": 100,
+        "per": "graph",
+        "type": "categorical"
+      },
+      "total_spin": {
+        "emb_dim": 1024,
+        "in_dim": 1,
+        "num_classes": 101,
+        "offset": 0,
+        "per": "graph",
+        "type": "categorical"
+      }
+    },
+    "energy_component": "MACE_OMOL_total_vacuum_energy",
+    "execution_adapter": {
+      "allowed_product_chunk_sizes": [
+        32,
+        1024
+      ],
+      "atom_order": "original",
+      "edge_chunk_size": 1024,
+      "edge_order": "original",
+      "gradients": false,
+      "id": "omol_exact_edge_and_product_batches_v1"
+    },
+    "extra_dispersion": false,
+    "family": "MACE_OMOL",
+    "head": "omol",
+    "periodic": false,
+    "r_max_A": 6.0,
+    "solvent": null,
+    "spin_input_convention": "multiplicity"
+  },
+  "numerical_gate_pass": true,
+  "outside_training_charge_cases": [
+    "a0a3f2yly8-pqq-la_model",
+    "q92wy9-pqq-la_model",
+    "o24759-pqq-la_model",
+    "p12293-pqq-la_model"
+  ],
+  "outside_training_size_cases": [
+    "a0a3f2yly8-pqq-la_model",
+    "a0acd6b9f2-pqq-la_model",
+    "c5atj3-pqq-la_model",
+    "c5axv8-pqq-la_model",
+    "c5b120-pqq-la_model",
+    "i0jwn7-pqq-la_model",
+    "mmol_1770-pqq-la_model",
+    "mmol_2048-pqq-la_model",
+    "q88jh0-pqq-la_model",
+    "q89gy2-pqq-la_model",
+    "q92wy9-pqq-la_model",
+    "a8r3s4-pqq-la_model",
+    "atq70401.1-pqq-la_model",
+    "bbl57595.1-pqq-la_model",
+    "o24759-pqq-la_model",
+    "p12293-pqq-la_model",
+    "p15279-pqq-la_model",
+    "p16027-pqq-la_model",
+    "p38539-pqq-la_model",
+    "q4w6g0-pqq-la_model",
+    "q60ar6-pqq-la_model",
+    "q88jh5-pqq-la_model",
+    "q8gr64-pqq-la_model",
+    "q9l935-pqq-la_model",
+    "q9z4j7-pqq-la_model",
+    "1H4I",
+    "4MAE",
+    "1KB0"
+  ],
+  "preparation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/intact_panel_prepared_v1/preparation_manifest.json",
+    "sha256": "4a3d3f8c6414c045afe7ad67dde45f71befa7e6f6d354d09f8aaed7d6d86be5e"
+  },
+  "preparation_audit": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/intact_panel_integrity_v1/result.json",
+    "sha256": "75524dfba4f73a432e1421c996e04435af4d6e4201d09a9204fdffc8d3e9f9bb"
+  },
+  "preparation_integrity_pass": false,
+  "product_equivalence": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/product_equivalence_v1/result.json",
+    "sha256": "6ac3cdda334806f425e8e9ce3082322e3902e143201814288c8e551547bfe1aa"
+  },
+  "production_promotion": false,
+  "protocol_id": "mace_omol_intact_canonical_class_v1",
+  "reference": null,
+  "relaxation_correction_kcal_mol": null,
+  "report_implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/intact_panel_report_v1/mace_omol_panel_report.py",
+    "sha256": "8a3274005c5cc1e9db98b51fca1c8206795d92e51d3fb39bf615a54d84f49a20"
+  },
+  "score_units": "kcal/mol",
+  "solvent_correction_kcal_mol": null,
+  "status": "incomplete_preparation",
+  "transfer_correct_count": 0,
+  "transfer_total_count": 3,
+  "transfer_valid_count": 2,
+  "unavailable_score_count": 1,
+  "full_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/intact_panel_report_v1/result.json",
+    "sha256": "05a16ce0e3f41cb992ef5918af67d4e3de0604598af76a2dab46e2074c018782"
+  },
+  "scores": [
+    {
+      "case_id": "a0a3f2yly8-pqq-la_model",
+      "evaluation_role": "calibration",
+      "expected_class": "La",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 142.48813743882704,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": -13,
+        "La": -12
+      },
+      "outside_reported_training_charge_range": true,
+      "baseline": {
+        "class": "La",
+        "published_R_kcal_mol": -405396.32088671124,
+        "published_S_kcal_mol": 23.46006120562667,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+          "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+        }
+      }
+    },
+    {
+      "case_id": "a0acd6b9f2-pqq-la_model",
+      "evaluation_role": "calibration",
+      "expected_class": "La",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 95.24794182062287,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": -1,
+        "La": 0
+      },
+      "outside_reported_training_charge_range": false,
+      "baseline": {
+        "class": "La",
+        "published_R_kcal_mol": -405380.5861412588,
+        "published_S_kcal_mol": 39.19480665803002,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+          "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+        }
+      }
+    },
+    {
+      "case_id": "c5atj3-pqq-la_model",
+      "evaluation_role": "calibration",
+      "expected_class": "La",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 110.08812393560237,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": -4,
+        "La": -3
+      },
+      "outside_reported_training_charge_range": false,
+      "baseline": {
+        "class": "La",
+        "published_R_kcal_mol": -405381.7694984838,
+        "published_S_kcal_mol": 38.01144943301911,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+          "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+        }
+      }
+    },
+    {
+      "case_id": "c5axv8-pqq-la_model",
+      "evaluation_role": "calibration",
+      "expected_class": "La",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 35.78484217579975,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": -2,
+        "La": -1
+      },
+      "outside_reported_training_charge_range": false,
+      "baseline": {
+        "class": "La",
+        "published_R_kcal_mol": -405389.5539659617,
+        "published_S_kcal_mol": 30.226981955141696,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+          "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+        }
+      }
+    },
+    {
+      "case_id": "c5b120-pqq-la_model",
+      "evaluation_role": "calibration",
+      "expected_class": "La",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 112.08470846217746,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": -4,
+        "La": -3
+      },
+      "outside_reported_training_charge_range": false,
+      "baseline": {
+        "class": "La",
+        "published_R_kcal_mol": -405387.0533872544,
+        "published_S_kcal_mol": 32.72756066242504,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+          "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+        }
+      }
+    },
+    {
+      "case_id": "i0jwn7-pqq-la_model",
+      "evaluation_role": "calibration",
+      "expected_class": "La",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 607.9990016739919,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": 3,
+        "La": 4
+      },
+      "outside_reported_training_charge_range": false,
+      "baseline": {
+        "class": "La",
+        "published_R_kcal_mol": -405381.5242254683,
+        "published_S_kcal_mol": 38.25672244859111,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+          "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+        }
+      }
+    },
+    {
+      "case_id": "mmol_1770-pqq-la_model",
+      "evaluation_role": "calibration",
+      "expected_class": "La",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 259.1599682352977,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": 6,
+        "La": 7
+      },
+      "outside_reported_training_charge_range": false,
+      "baseline": {
+        "class": "La",
+        "published_R_kcal_mol": -405387.94326451514,
+        "published_S_kcal_mol": 31.837683401696598,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+          "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+        }
+      }
+    },
+    {
+      "case_id": "mmol_2048-pqq-la_model",
+      "evaluation_role": "calibration",
+      "expected_class": "La",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 609.423541626826,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": 3,
+        "La": 4
+      },
+      "outside_reported_training_charge_range": false,
+      "baseline": {
+        "class": "La",
+        "published_R_kcal_mol": -405385.32379668095,
+        "published_S_kcal_mol": 34.45715123587883,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+          "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+        }
+      }
+    },
+    {
+      "case_id": "q88jh0-pqq-la_model",
+      "evaluation_role": "calibration",
+      "expected_class": "La",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 427.81578317399817,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": 4,
+        "La": 5
+      },
+      "outside_reported_training_charge_range": false,
+      "baseline": {
+        "class": "La",
+        "published_R_kcal_mol": -405387.839536825,
+        "published_S_kcal_mol": 31.941411091812757,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+          "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+        }
+      }
+    },
+    {
+      "case_id": "q89gy2-pqq-la_model",
+      "evaluation_role": "calibration",
+      "expected_class": "La",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 142.4406350116958,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": -6,
+        "La": -5
+      },
+      "outside_reported_training_charge_range": false,
+      "baseline": {
+        "class": "La",
+        "published_R_kcal_mol": -405385.64150429954,
+        "published_S_kcal_mol": 34.13944361731164,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+          "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+        }
+      }
+    },
+    {
+      "case_id": "q92wy9-pqq-la_model",
+      "evaluation_role": "calibration",
+      "expected_class": "La",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 158.36154111901624,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": -17,
+        "La": -16
+      },
+      "outside_reported_training_charge_range": true,
+      "baseline": {
+        "class": "La",
+        "published_R_kcal_mol": -405384.9187889132,
+        "published_S_kcal_mol": 34.862159003664544,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+          "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+        }
+      }
+    },
+    {
+      "case_id": "a8r3s4-pqq-la_model",
+      "evaluation_role": "calibration",
+      "expected_class": "Ca",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 101.59175998660609,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": -5,
+        "La": -4
+      },
+      "outside_reported_training_charge_range": false,
+      "baseline": {
+        "class": "Ca",
+        "published_R_kcal_mol": -405413.329564258,
+        "published_S_kcal_mol": 6.451383658840861,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+          "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+        }
+      }
+    },
+    {
+      "case_id": "atq70401.1-pqq-la_model",
+      "evaluation_role": "calibration",
+      "expected_class": "Ca",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 114.98638062684299,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": -8,
+        "La": -7
+      },
+      "outside_reported_training_charge_range": false,
+      "baseline": {
+        "class": "Ca",
+        "published_R_kcal_mol": -405416.54897224996,
+        "published_S_kcal_mol": 3.2319756668799533,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+          "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+        }
+      }
+    },
+    {
+      "case_id": "bbl57595.1-pqq-la_model",
+      "evaluation_role": "calibration",
+      "expected_class": "Ca",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 100.25054601418911,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": -6,
+        "La": -5
+      },
+      "outside_reported_training_charge_range": false,
+      "baseline": {
+        "class": "Ca",
+        "published_R_kcal_mol": -405412.93263052474,
+        "published_S_kcal_mol": 6.848317392128031,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+          "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+        }
+      }
+    },
+    {
+      "case_id": "o24759-pqq-la_model",
+      "evaluation_role": "calibration",
+      "expected_class": "Ca",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 113.74375633170239,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": -14,
+        "La": -13
+      },
+      "outside_reported_training_charge_range": true,
+      "baseline": {
+        "class": "Ca",
+        "published_R_kcal_mol": -405417.06689514185,
+        "published_S_kcal_mol": 2.7140527749922434,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+          "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+        }
+      }
+    },
+    {
+      "case_id": "p12293-pqq-la_model",
+      "evaluation_role": "calibration",
+      "expected_class": "Ca",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 117.1571145608128,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": -23,
+        "La": -22
+      },
+      "outside_reported_training_charge_range": true,
+      "baseline": {
+        "class": "Ca",
+        "published_R_kcal_mol": -405414.68430233066,
+        "published_S_kcal_mol": 5.096645586214565,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+          "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+        }
+      }
+    },
+    {
+      "case_id": "p15279-pqq-la_model",
+      "evaluation_role": "calibration",
+      "expected_class": "Ca",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 111.92493795007383,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": -7,
+        "La": -6
+      },
+      "outside_reported_training_charge_range": false,
+      "baseline": {
+        "class": "Ca",
+        "published_R_kcal_mol": -405416.12592627504,
+        "published_S_kcal_mol": 3.6550216418003543,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+          "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+        }
+      }
+    },
+    {
+      "case_id": "p16027-pqq-la_model",
+      "evaluation_role": "calibration",
+      "expected_class": "Ca",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 112.89069162388512,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": -8,
+        "La": -7
+      },
+      "outside_reported_training_charge_range": false,
+      "baseline": {
+        "class": "Ca",
+        "published_R_kcal_mol": -405415.22631523624,
+        "published_S_kcal_mol": 4.554632680606625,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+          "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+        }
+      }
+    },
+    {
+      "case_id": "p38539-pqq-la_model",
+      "evaluation_role": "calibration",
+      "expected_class": "Ca",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 341.7911385162896,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": 1,
+        "La": 2
+      },
+      "outside_reported_training_charge_range": false,
+      "baseline": {
+        "class": "Ca",
+        "published_R_kcal_mol": -405405.7404101266,
+        "published_S_kcal_mol": 14.040537790294643,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+          "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+        }
+      }
+    },
+    {
+      "case_id": "q4w6g0-pqq-la_model",
+      "evaluation_role": "calibration",
+      "expected_class": "Ca",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 134.6296776856215,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": -10,
+        "La": -9
+      },
+      "outside_reported_training_charge_range": false,
+      "baseline": {
+        "class": "Ca",
+        "published_R_kcal_mol": -405404.9238187139,
+        "published_S_kcal_mol": 14.857129202903769,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+          "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+        }
+      }
+    },
+    {
+      "case_id": "q60ar6-pqq-la_model",
+      "evaluation_role": "calibration",
+      "expected_class": "Ca",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 116.9592881959188,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": -8,
+        "La": -7
+      },
+      "outside_reported_training_charge_range": false,
+      "baseline": {
+        "class": "Ca",
+        "published_R_kcal_mol": -405410.4267811543,
+        "published_S_kcal_mol": 9.354166762556343,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+          "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+        }
+      }
+    },
+    {
+      "case_id": "q88jh5-pqq-la_model",
+      "evaluation_role": "calibration",
+      "expected_class": "Ca",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 88.65213363708074,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": -4,
+        "La": -3
+      },
+      "outside_reported_training_charge_range": false,
+      "baseline": {
+        "class": "Ca",
+        "published_R_kcal_mol": -405408.2842404246,
+        "published_S_kcal_mol": 11.496707492251101,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+          "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+        }
+      }
+    },
+    {
+      "case_id": "q8gr64-pqq-la_model",
+      "evaluation_role": "calibration",
+      "expected_class": "Ca",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 29.766734676881345,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": -1,
+        "La": 0
+      },
+      "outside_reported_training_charge_range": false,
+      "baseline": {
+        "class": "Ca",
+        "published_R_kcal_mol": -405419.3011346205,
+        "published_S_kcal_mol": 0.47981329637078507,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+          "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+        }
+      }
+    },
+    {
+      "case_id": "q9l935-pqq-la_model",
+      "evaluation_role": "calibration",
+      "expected_class": "Ca",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 74.58801300052859,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": -3,
+        "La": -2
+      },
+      "outside_reported_training_charge_range": false,
+      "baseline": {
+        "class": "Ca",
+        "published_R_kcal_mol": -405410.13112725364,
+        "published_S_kcal_mol": 9.6498206631937,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+          "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+        }
+      }
+    },
+    {
+      "case_id": "q9z4j7-pqq-la_model",
+      "evaluation_role": "calibration",
+      "expected_class": "Ca",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 91.22675261936476,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": -4,
+        "La": -3
+      },
+      "outside_reported_training_charge_range": false,
+      "baseline": {
+        "class": "Ca",
+        "published_R_kcal_mol": -405411.6177719516,
+        "published_S_kcal_mol": 8.1631759652378,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/result.json",
+          "sha256": "6dfbaf6a694906520bbc51ba8e98891f02df807299b933c2ec7beed34ba2f930"
+        }
+      }
+    },
+    {
+      "case_id": "1H4I",
+      "evaluation_role": "retrospective_structural_transfer",
+      "expected_class": "Ca",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 101.61412567754543,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": -10,
+        "La": -9
+      },
+      "outside_reported_training_charge_range": false,
+      "baseline": {
+        "class": "Ca-supported",
+        "published_R_kcal_mol": -405412.2631043506,
+        "published_S_kcal_mol": 7.51784356625285,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout/result/holdout_result.json",
+          "sha256": "04488352e4723bfb9cb04ca43806ebed6f918209411b1b0426475e8a10c2f7ab"
+        }
+      }
+    },
+    {
+      "case_id": "4MAE",
+      "evaluation_role": "retrospective_structural_transfer",
+      "expected_class": "La",
+      "status": "computed",
+      "preparation_status": "prepared",
+      "R_coord_kcal_mol": 110.64796003887037,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": -4,
+        "La": -3
+      },
+      "outside_reported_training_charge_range": false,
+      "baseline": {
+        "class": "Ln-supported",
+        "published_R_kcal_mol": -405381.6912148747,
+        "published_S_kcal_mol": 38.089733042172156,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout/result/holdout_result.json",
+          "sha256": "04488352e4723bfb9cb04ca43806ebed6f918209411b1b0426475e8a10c2f7ab"
+        }
+      }
+    },
+    {
+      "case_id": "1KB0",
+      "evaluation_role": "retrospective_external_class_transfer",
+      "expected_class": "Ca",
+      "status": "unavailable",
+      "preparation_status": "unsupported_geometry",
+      "R_coord_kcal_mol": null,
+      "calibrated_class": null,
+      "decision_status": "calibration_unavailable",
+      "endpoint_charges": {
+        "Ca": 4,
+        "La": 5
+      },
+      "outside_reported_training_charge_range": false,
+      "baseline": {
+        "class": "Ca-supported",
+        "published_R_kcal_mol": -405406.526348203,
+        "published_S_kcal_mol": 13.254599713820955,
+        "release": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/baseline_benchmark_20260915/run_v1/collection_1199299.json",
+          "sha256": "2d2efa84013b0a11a0f7127b0ba986ab0182e33fb9bd2977630b91388bc28b73"
+        }
+      }
+    }
+  ],
+  "decision_interpretation": "No bands were produced because calibration fails; zero classified transfers is not three observed misclassifications.",
+  "execution_cost": {
+    "name": "intact_panel_run_v1",
+    "job_id": "1200819",
+    "collection": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/intact_panel_run_v1/collection_job_1200819.json",
+      "sha256": "9651a8bcbfc9095c1055692e06260c723813eaa57cd91535aba833e2235c292a"
+    },
+    "complete": true,
+    "numerical_gate_pass": true,
+    "check_count": 104,
+    "max_error_kcal_mol": 4.2953617555311004e-08,
+    "successful_calls": 104,
+    "failed_calls": 0,
+    "evaluation_seconds": 2772.6369340643287,
+    "peak_GPU_allocated_bytes": 13751386112,
+    "peak_host_RSS_KiB": 1761260,
+    "wall_seconds": 3982,
+    "allocated_cpus": 16,
+    "allocated_core_seconds": 63712,
+    "actual_CPU_seconds": 4179.0,
+    "GPU_allocation_seconds": 3982,
+    "scheduler_state": "COMPLETED",
+    "invalid_preparation_forward_calls": 4,
+    "unavailable_scientific_case": "1KB0",
+    "CPU_precision_note": "parent TotalCPU reported to integer seconds"
+  }
+}

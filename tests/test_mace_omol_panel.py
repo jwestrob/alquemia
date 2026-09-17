@@ -64,6 +64,25 @@ class PanelTests(unittest.TestCase):
         self.assertEqual(len(row['invalid_bonds']),2)
         self.assertTrue(all(b['distance_A']>4 for b in row['invalid_bonds']))
 
+    @unittest.skipUnless((W/'intact_panel_run_v1/collection_job_1200819.json').exists(),
+                         'requires actually executed full canonical panel')
+    def test_computed_real_gapped_case_never_acquires_score(self):
+        from mace_omol_panel_report import summarize
+        p=validate(P)
+        c=read_json(W/'intact_panel_run_v1/collection_job_1200819.json')
+        values={**c['rows'],**{k:r['result'] for k,r in c['reused_rows'].items()}}
+        result=summarize(p,values,inspect_backbone(p))
+        row=next(s for s in result['scores'] if s['case_id']=='1KB0')
+        self.assertTrue(all(row['endpoints'][m][pos]['status']=='computed'
+                            for m in ('La','Ca') for pos in ('bound','detached')))
+        self.assertEqual(row['endpoint_use'],'invalid_preparation_diagnostic_only')
+        self.assertIsNone(row['R_coord_kcal_mol'])
+        self.assertIsNone(row['calibrated_class'])
+        self.assertEqual(result['calibration_valid_count'],25)
+        self.assertEqual(result['transfer_valid_count'],2)
+        self.assertEqual(result['transfer_total_count'],3)
+        self.assertFalse(result['canonical_decision_gate_pass'])
+
     @unittest.skipUnless(importlib.util.find_spec('openmm'),'requires existing OpenMM preparation environment')
     def test_new_guard_rejects_real_gapped_input_before_template_matching(self):
         p=read_json(P);row=next(r for r in p['rows'] if r['case_id']=='1KB0')

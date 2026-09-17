@@ -1331,3 +1331,67 @@ Next zero-inference locality audit declared in INTACT_LOCALITY_PLAN.md uses
 all20saved five-case endpoint readouts. It explains spatial/model contributions
 without changing scores or criteria. Jacob's removed approval gate remains
 removed in home/project AGENTS and current guide; autonomous work continues.
+
+
+## Whole-chain MACE failure diagnosis and next ablation — 2026-09-17
+
+Completed canonical job 1200819 (104 new forwards, 8 reuses) fails the frozen
+25-case separation criterion: gap -306.0062963404898 kcal/mol. No bands issued.
+Two transfer raw scores are available; invalid 1KB0 remains unscorable, not a
+wrong classification. Canonical job cost 3982 GPU/wall seconds and 63712
+allocated core-seconds. Audited report: intact_panel_report_v1/result.json.
+
+Completed spectator job 1200823 (20 forwards) passes numerical accounting but
+fails the fixed consistency test. Four scores shift 4–15 kcal/mol; XoxF−MxaF
+reverses from +9.033834 to -0.425040 kcal/mol. Cost 667 GPU/wall seconds,
+10672 allocated core-seconds. Actual checkpoint embeddings are identical for
+charges -100 through -6 and for +11 through +100; MxaF's invariance reflects
+the former group. This is an observed checkpoint property, not inferred
+training history. Existing protein formal charges were passed correctly.
+
+Saved-node locality audit: all 18 closure checks pass; beyond 18 Å changes
+are <=3.66e-11 kcal/mol. The original five-case result reflects local chemical
+information with global charge conditioning, not demonstrated full electrostatics.
+A separate-reference algebra check shows that a common ionic reference cannot
+repair the raw bound XoxF−MxaF contrast (-623.299274 kcal/mol). No new reference
+energy, DFT, forces, solver or training was run for either audit.
+
+Cumulative intact engineering through these jobs: 206 successful forwards,
+2 OOMs, 6938 GPU allocation-seconds, 174240 allocated core-seconds, 24601.596
+reported actual CPU-seconds. Four forwards are invalid-preparation diagnostics.
+Local work measured separately; see INTACT_ENGINEERING_STATUS.json (v6).
+Tests: three spectator tests pass 9.876 s; six OMOL regressions pass 14.266 s;
+actual computed-but-invalid 1KB0 quarantine test passes 20.787 s. Earlier
+incorrect test field assertion is recorded, not a scientific input change.
+
+Next declared protocol: mace_omol_intact_charge_feature_ablation_descriptor_v1.
+Exactly zero the raw charge embedding before native projection while preserving
+spin, learned parameters and all physical inputs. Outputs explicitly remain
+modified model descriptors, not quantum endpoint energies. Frozen initial plan:
+8 core qualification +14 alpha numerical +16 other primary +4 GGR spectator
+forwards; canonical extension only after all declared gates pass. No new molecular
+ablation output inspected yet. Component check v3 passed all 201 charges and
+explicit reference projection exactly, with no parameter changes or molecular
+forwards; 17.27 wall/21.53 CPU seconds, 1616720 KiB peak RSS. V1 import-name
+collision and V2 wrong reference concatenation order are preserved; v3 uses
+actual checkpoint spin-then-charge order without changing the adapter.
+
+New 42-task preparation passes; manifest SHA
+0f2eebbd34b903deeaf17070843ed5158b63a92b60901b9e04b63185f2ef1886,
+under workspaces/mace_omol_20260917/charge_ablation_development_v1/.
+Preflight tests ongoing before submission. Only known native H200 job 1200809
+remains pending. All previous jobs, frozen sources and production baseline
+remain unchanged. CURRENT.md is the current recovery entry point.
+
+Jacob's explicit removal of per-analysis permission checks is durable in home
+and project AGENTS.md. Goal ACTIVE; no promotion, push or broad validation claim.
+
+
+Ablation preflight update: v1 was never executed; v2 fixes acceptance of the
+actual atom-expanded embedding row count (rows=atoms). Same scientific model,
+inputs and criteria. Four real-fixture tests pass 13.062 s; six native OMOL
+regressions pass 14.587 s. Frozen v2 dry-run passes all 42 tasks.
+Submitted job 1200828 on one A5000, 16 CPUs, 64474 MiB, existing runner.
+Manifest SHA 78c781671295658656111f94f9b7cd6625b5bb696ab85e726fe70ea5de2d30c5.
+Source: workspaces/mace_omol_20260917/charge_ablation_development_v2/.
+No native cache entry can satisfy this descriptor. No new molecular result yet.

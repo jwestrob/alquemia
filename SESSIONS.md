@@ -1908,3 +1908,27 @@ boundary/exclusion/damping/doublecountaccounting beforedeclaringenergytest.
 InstalledOpenMM8.5.1AMOEBA2018/GKpresent;Laparams/coverageUNVERIFIED. AMOEBA
 previouslyproposedbyJacob,notnewinvention. Broadergoalactive;preservebaseline,
 unrelateddirtyfiles,PLM1200794/95/96andpendingH2001200809;inspectlivejobs.
+
+### 2026-09-17 21:42 UTC — Codex: AMOEBA framework capability and source accounting
+
+Completed declared AMOEBA capability stage: exactly three real unchanged
+GGR1GLG/alpha1F6S/alpha6IP9 protein+water frameworks parameterized, 4697/1931/
+1897 atoms, source charge/protonation/disulfides preserved. Each metal retained
+in ledger but explicitly unparameterized. No scientific energy/force/DFT/ML/
+GPU calls. Tool scripts/mace_amoeba_capability.py and six passing real-artifact/
+corrupted-fixture tests. All source/FF/code pins and serialized systems under
+workspaces/mace_omol_20260917/amoeba_capability_v1; manifest SHA256
+4bf2e37dad96c9eba1fb9be45bffae2f45aad318a0e8efa8678d5c6e838c9339.
+Preparations 69.9076944924891 wall-s,69.65033699600001 process CPU-s, peak
+RSS480652KiB; no scheduler reservation. No production/default change.
+
+AMOEBA_CAPABILITY_REPORT/RESULT/COMMANDS and AMOEBA_ACCOUNTING documents:
+OpenMM8.5.1 GK is coupled inside multipole kernel; standalone GK group is not
+its solvent energy. Installed per-atom minimum Thole rule lacks published La
+POLPAIR overrides. Frozen QM source requires separate damping/field/boundary
+validation. This is a precise backend gap, not failure of all polarization.
+Vault/current updated; active goal continues. TINKER_CAPABILITY_PLAN declares
+source/primary-parameter inventory, isolated CPU build if needed and <=3real
+format exports, no energies. No Tinker build/run begun. Recover that plan first.
+Unrelated PLM1200794/95/96 and pendingH2001200809 untouched; inspect live queue.
+AGENTS autonomy changes verified already durable; no additional permission gate.

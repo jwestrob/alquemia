@@ -6,6 +6,48 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
+## Latest: AMOEBA framework preparations pass; source-damping backend gap isolated
+
+Completed `AMOEBA_CAPABILITY_PLAN.md` with exactly three real preparations:
+GGR1GLG 4697 framework atoms, alpha1F6S 1931, alpha6IP9 1897. All protein and
+retained-water coordinates, identities, hydrogens and disulfides unchanged;
+each metal remains explicitly unparameterized in the full physical ledger.
+Framework charges −6/−7/−7; waters 0/2/3. No energy, force, DFT, ML, optimization
+or GPU calls. Installed AMOEBA2018/GK, OpenMM8.5.1. Six tests pass (3.659s),
+manifest pins/dry-run pass. Preparations 69.9076944924891 wall-s,
+69.65033699600001 process CPU-s, peak RSS480652KiB, no Slurm allocation.
+
+New opt-in tool `scripts/mace_amoeba_capability.py`, tests of same name;
+workspace `workspaces/mace_omol_20260917/amoeba_capability_v1/` with serialized
+frameworks, all physical mappings/multipoles/covalent maps and receipts.
+Manifest SHA4bf2e37dad96c9eba1fb9be45bffae2f45aad318a0e8efa8678d5c6e838c9339.
+Compact `AMOEBA_CAPABILITY_REPORT.md`, `_RESULT.json`, `_COMMANDS.md` and
+`AMOEBA_ACCOUNTING.md` under diagnostics/mace_omol_20260917.
+
+Installed API/header plus matching upstream8.5.1 source verified: GK induction
+is coupled and evaluated inside multipole kernel; separate GK force-group
+energy returns zero in Reference. Do not build an additive scalar from it.
+OpenMM exposes per-atom Thole minimum, not published La POLPAIR. Paper Table1
+amide pair .349/.299 exceeds La default .250; can't implement with unchanged
+default/min rule. La09/La22 are not AMOEBA2018. Frozen distributed QM source
+also is not the paper's formal +3 polarizable ion. No complete hybrid qualified.
+Source pins/verification `amoeba_sources_v1/`; installed/upstream headers byte
+identical. Downloaded PMC file is CAPTCHA; paper was read through web tool.
+
+NEXT `TINKER_CAPABILITY_PLAN.md` declared: inspect/pin maintained Tinker and
+Tinker9 support for POLPAIR, frozen induced variables and GK; retrieve exact
+primary parameters; one isolated CPU/reference build if needed; at most3real
+topology exports, NO scientific energies/forces/DFT/MACE/optimization. Do not
+run an energy analyzer as a format check. Resolve boundary/source damping and
+accounting before declaring an energy pilot. PATH/selected bin directories
+have no Tinker executable (only tinker_to_amber converter); broader installation
+inventory not done. No installation or Tinker run has started. Goal active.
+Latest live jobs still unrelated PLM1200794 running, 1200795/96 dependent,
+H2001200809 pending; recheck. Baseline/default unchanged; no new approvals.
+
+The sections below are historical checkpoints; their NEXT entries are superseded
+by this top entry.
+
 ## Latest: responsive density/solvent candidate complete;3/4 ordering, boundary fails
 
 NativeDFT1200983 (8),utilities1200986 (8CHELPG+8vpot),GB1200989 (44) complete.

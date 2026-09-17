@@ -6,6 +6,55 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
+## Latest execution checkpoint — intact gradients qualified
+
+This supersedes the earlier active-gradient notes. Full job1200886 COMPLETED;
+all six calls and11/11 numerical checks pass. WholeGGR has4698 mapped atoms;
+Ca/La gradient evaluations take40.699184/40.789196seconds and12,011,144,704bytes
+peak GPU (11.19GiB). Both center energies equal the archived scalar. Along the
+fixed metal-to-GLN140/O direction, grad(R)=+8.836946204modelkcal/A; actual odd
+0.01A change0.088339618 versus predicted0.088369462. No physical-force,
+relaxation, entropy or biological-improvement claim. Production unchanged.
+
+Final adapter `omol_exact_checkpointed_edge_product_autograd_v3` requalified
+on the exact73-atom1H4I core (job1200885,23/23checks). The actual fullV2 CUDA
+OOM was resolved by replacing index_add with equivalent scatter_add: saved
+edge-message tensors no longer consume GPU memory outside checkpoints.
+Core/native max gradient error9.02e-14eV/A. Earlier coordinate/report roundoff,
+TorchScript early-stop, collector-serialization and OOM attempts remain visible.
+No coordinates, scientific tolerances or criteria changed during recovery.
+
+Authoritative artifacts under workspaces/mace_omol_20260917:
+- core: masked_gradient_core_v4/manifest.json, core_report_v5 is named in full:
+  `masked_gradient_core_report_v5/result.json` (all checks pass).
+- whole: `masked_gradient_full_v3/manifest.json`,
+  `masked_gradient_full_report_v1/result.json`, plus all-atom TSV/paired array.
+- costs: `masked_gradient_cost_v1.json`, seven terminal jobs1200863/64/65,
+  1200878/84/85/86.27successful calls,2failed model calls,410GPUallocation-s,
+  6560allocatedcore-s,470.555reportedCPU-s. Two preflight failures made0calls.
+- cumulative: `intact_engineering_status_v12.json`:389successes,4failedcalls,
+  12022GPU-s,255584allocatedcore-s,30231.464reportedCPU-s.
+- seven final real-fixture tests pass:6in12.883s plus mapped-export test1.531s;
+  none skipped. Earlier native regressions and all resource receipts retained.
+
+[Gradient report](../mace_omol_20260917/MASKED_GRADIENT_REPORT.md) includes replay
+commands and immutable attempt details. Source files: mace_omol_gradients.py,
+mace_omol_gradient_worker.py, mace_omol_gradient_run.py; minimal dispatch in
+mace_omol.py. No production score/energy-only adapter changes.
+
+**Next runnable development:** implement the declared
+[MASKED_RESPONSE_SCREEN_PLAN.md](../mace_omol_20260917/MASKED_RESPONSE_SCREEN_PLAN.md).
+Forty core calls:4representations x2metals x5archived points, eight analytic
+centers plus32signed energy displacements. Reuse exact mechanics preparedV2,
+old DFT energies/gradients and physical Jacobians. Screen direct response and
+DFT-anchored curvature separately under frozen criteria. No new DFT, whole-chain
+subtraction with mismatched H, minimization or numerical relaxation correction.
+This next screen is DECLARED, NOT IMPLEMENTED OR LAUNCHED at this checkpoint.
+
+All gradient jobs terminal. Native H2001200809 still pending at last check;
+preserve other agents'PLM1200794–1200796 and recheck live state. Goal active,
+full autonomy remains; no permission gate, push or default promotion.
+
 ## Actual result: masked MACE candidate works on the supported PQQ panel
 
 Protocol `mace_omol_intact_charge_feature_ablation_descriptor_v1`.
@@ -217,3 +266,11 @@ Vaultandagentguideupdated. LatestemailacceptedrelaynotifiedGGRfailure;do not
 spamrepeats. NativeH2001200809stillpendingunchanged;inspectlivejobs. Allnew
 A5000jobsabovearecomplete.Noautomaticpromotion/push/per-analysispermissiongate.
 Preserveotheragents'PLMjobs,watchers,dirtyfilesandlocks.
+
+
+## Gradient implementation history
+
+The original in-flight notes are superseded by the latest checkpoint above.
+All recovery versions and failure receipts remain under workspaces; see the
+completed gradient report for the full sequence. The next scientific task is
+the declared response screen, not another rerun of passed engineering checks.

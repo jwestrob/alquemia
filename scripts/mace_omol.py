@@ -69,7 +69,8 @@ def common(source_inventory, software, agreement, output, stage):
              'mace_omol_locality.py', 'mace_omol_spectator.py', 'mace_omol_ablation.py',
              'mace_omol_ablation_run.py', 'mace_omol_ablation_panel.py', 'mace_omol_panel_report.py',
              'mace_omol_prepared.py', 'mace_omol_factorization.py', 'mace_omol_mask_calibration.py',
-             'mace_omol_source_prepare.py', 'mace_omol_multisite.py')
+             'mace_omol_source_prepare.py', 'mace_omol_multisite.py',
+             'mace_omol_gradients.py', 'mace_omol_gradient_run.py', 'mace_omol_gradient_worker.py')
     pins = snapshot(out, names)
     m = {'schema_version': SCHEMA, 'protocol_id': PROTOCOL, 'stage': stage,
          'inventory': record(source_inventory), 'software': record(software), 'agreement': record(agreement),
@@ -145,6 +146,9 @@ def prepare_benchmark(qualification, mechanics, agreement, output):
 
 
 def validate(manifest):
+    if read_json(manifest).get('stage') in ('masked_gradient_core','masked_gradient_full'):
+        from mace_omol_gradient_run import validate as validate_gradients
+        return validate_gradients(manifest)
     m = read_json(manifest)
     if m.get('stage')=='ablation_prepared':
         from mace_omol_prepared import validate as validate_prepared
@@ -238,6 +242,9 @@ def input_batch(calc, atoms, charge, multiplicity, batch=None, metal_index=0):
 
 
 def worker(manifest, task_id, output, memory_mode):
+    if read_json(manifest).get('stage') in ('masked_gradient_core','masked_gradient_full'):
+        from mace_omol_gradient_worker import worker as gradient_worker
+        return gradient_worker(manifest,task_id,output,memory_mode)
     import torch
     from ase import Atoms
     from mace.calculators import mace_omol
@@ -371,6 +378,9 @@ def worker(manifest, task_id, output, memory_mode):
 
 
 def accepted_state(result, task):
+    if task.get('descriptor_gradient_experiment'):
+        from mace_omol_gradient_worker import accepted
+        return accepted(result,task)
     state = result.get('input_state_check', {})
     expected_component=COMPONENT
     if task.get('charge_feature_adapter'):
@@ -429,6 +439,9 @@ def accepted_state(result, task):
 
 
 def collect(manifest):
+    if read_json(manifest).get('stage') in ('masked_gradient_core','masked_gradient_full'):
+        from mace_omol_gradient_run import collect as collect_gradients
+        return collect_gradients(manifest)
     if read_json(manifest).get('stage')=='ablation_prepared':
         from mace_omol_prepared import collect as collect_prepared
         return collect_prepared(manifest)

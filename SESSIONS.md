@@ -1636,3 +1636,37 @@ adapter,same maskedscore. StageA10real1H4Icoreforwards,conditionalStageB6
 GGRwholechainforwards;fixednumericthresholds, noautomaticmechanicalcorrection.
 Noimplementation/inferenceyet. Goalactive;H2001200809pendingunchanged.
 AllnewA5000jobscomplete;preserveotheragents'PLMjobs/dirtyfiles/locks.No push.
+
+
+## Intact masked-OMOL gradients qualified — 2026-09-17
+
+Added independently versioned analytic checkpoint/scatter adapter v3, worker,
+finite core/full gradient manifests, source-mapped export and existing-runner
+integration. Scalar model and production energy-only adapters are unchanged.
+Final core job1200885 passes23/23 checks; full GGR1200886 passes11/11 across
+4698atoms. Native/adapted core gradient error<=9.02e-14eV/A. Full endpoint
+inference40.699184/40.789196seconds,12,011,144,704bytes peakGPU. Actual signed
+metal movement confirms grad(R)=8.836946204modelkcal/A. Both center energies
+match archived scalar exactly. Derivatives are of the descriptor; no physical
+force/relaxation/entropy/accuracy claim or new calibration.
+
+Retained all startup/roundoff, TorchScript checkpoint, JSON serialization and
+OOM failures. Replacing index_add (retains edge messages) with scatter_add
+(index-only saved state) resolved whole-gradient OOM; requalified all10core
+calls before full retry. Scientific inputs/tolerances unchanged. Seven final
+real-fixture tests pass (6/12.883s plus mapping1/1.531s), none skipped; earlier
+native regressions and recovery checks retained.
+
+Seven jobs1200863/64/65,1200878/84/85/86:27successful calls,2failed modelcalls,
+410GPUallocation-s,6560allocatedcore-s,470.555reportedCPU-s. ZeroDFT/solver/
+training calls. Full report/TSV in masked_gradient_full_report_v1; core report
+masked_gradient_core_report_v5. CostV1 and cumulativeengineeringV12 under
+workspaces/mace_omol_20260917. Compact MASKED_GRADIENT_REPORT.md/RESULT.json,
+pipelineguide/currentcheckpoint/vault updated. Baseline and old references
+unchanged. Goal active, no push/promotion. H2001200809 stillpending; preserve
+other agents'PLM1200794–1200796, edits and locks.
+
+Next MASKED_RESPONSE_SCREEN_PLAN.md declares40masked corecalls on exact
+archived GGR/alpha deformation inputs, reusingDFT energies/gradients. Separate
+direct-response andDFT-anchored curvature criteria; no optimization/correction.
+Not implemented or launched at this commit. Continue autonomously.

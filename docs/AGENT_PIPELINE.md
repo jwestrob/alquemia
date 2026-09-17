@@ -376,5 +376,12 @@ The five-site multisite trial is now complete:10/10calls and all-Ca permutation
 checks pass; the parvalbumin supporting direction gate fails4/6contrasts.
 Aequorin remains an ordered vector with unresolved site labels.
 [Multisite report](../diagnostics/mace_omol_20260917/MULTISITE_REPORT.md).
-Exact descriptor gradients are the next declared development task, not an
-existing physical relaxation correction. Production remains unchanged.
+Exact masked-descriptor gradients now work on intact GGR:23/23 core checks and
+11/11 whole-protein checks pass. The source-mapped4698-atom gradient costs about
+41seconds per endpoint and12.0GB peak GPU memory on oneA5000. A separately
+versioned checkpoint/scatter adapter preserves the scalar; production energy-only
+adapters remain unchanged. This is numerical derivative qualification, not a
+physical relaxation correction. [Gradient report and commands](../diagnostics/mace_omol_20260917/MASKED_GRADIENT_REPORT.md).
+The next [response screen](../diagnostics/mace_omol_20260917/MASKED_RESPONSE_SCREEN_PLAN.md)
+uses40 real-core evaluations against archived DFT; no new DFT or optimization.
+No predictive improvement from gradients is claimed; baseline remains default.

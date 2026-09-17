@@ -1,0 +1,99 @@
+{
+  "baseline_changed": false,
+  "core": {
+    "checks": 23,
+    "pass": true,
+    "report": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/masked_gradient_core_report_v5/result.json",
+      "sha256": "fd69247a3b6eecf51d3c404670d59705aecea2b37094dbb446a4e158ef8003cb"
+    }
+  },
+  "cost": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/masked_gradient_cost_v1.json",
+    "sha256": "97bb784190ca366e6b4546be78e9b9bc21471e0f291ee86b511b8a591ca5f49e"
+  },
+  "cost_totals": {
+    "GPU_allocation_seconds": 410,
+    "actual_CPU_seconds": 470.55500000000006,
+    "allocated_core_seconds": 6560,
+    "failed_calls": 2,
+    "successful_calls": 27
+  },
+  "cumulative_engineering": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/intact_engineering_status_v12.json",
+    "sha256": "a43d60d3ca2eab664c125ac79953a60381733c182734375689e2c900029fb3d7"
+  },
+  "derivative_adapter": "omol_exact_checkpointed_edge_product_autograd_v3",
+  "full": {
+    "checks": 11,
+    "endpoint_gradient_evaluation_seconds": [
+      40.6991838850081,
+      40.78919592499733
+    ],
+    "pass": true,
+    "peak_gradient_GPU_bytes": 12011144704,
+    "projections": {
+      "Ca": {
+        "gradient_eV_equivalent_per_A": 0.011736007742089986,
+        "max_atom_gradient_norm_eV_A": 6.6717649481223145,
+        "odd_model_kcal": 0.0027252405886164562,
+        "predicted_odd_model_kcal": 0.0027063876787698136
+      },
+      "La": {
+        "gradient_eV_equivalent_per_A": -0.3714702486198286,
+        "max_atom_gradient_norm_eV_A": 6.671770177296537,
+        "odd_model_kcal": -0.0856143773461299,
+        "predicted_odd_model_kcal": -0.085663074359495
+      },
+      "R": {
+        "gradient_model_kcal_per_A": 8.83694620382648,
+        "odd_model_kcal": 0.08833961793474635,
+        "predicted_odd_model_kcal": 0.0883694620382648
+      }
+    },
+    "report": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/masked_gradient_full_report_v1/result.json",
+      "sha256": "6f1bb0440bdb6361b146516b1f98a8adb3aadc079353c296b22c12b514e45307"
+    },
+    "source_mapped_gradients": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/masked_gradient_full_report_v1/source_mapped_descriptor_gradients.tsv",
+      "sha256": "72ce8b3332c54b75ee2d7ad22d7f1c05825887fe7e0f028db51c1693246ec92b"
+    }
+  },
+  "next_plan": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/mace_omol_20260917/MASKED_RESPONSE_SCREEN_PLAN.md",
+    "sha256": "9c34a2396463fa89843607ecad68c43fb7055c84f878a58432768314c13782db"
+  },
+  "physical_force_validation_claimed": false,
+  "predictive_improvement_claimed": false,
+  "protocol_id": "mace_omol_intact_charge_feature_ablation_descriptor_v1",
+  "relaxation_correction_kcal_mol": null,
+  "response_status": "response_model_not_validated",
+  "status": "complete",
+  "tests": [
+    {
+      "log": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/masked_gradient_tests_v4.log",
+        "sha256": "14978cb1aaed3875649a34d6ee21e4f2363088e7e8a5ea89256dcf486358f212"
+      },
+      "passed": 6,
+      "resources": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/masked_gradient_tests_v4.resources.txt",
+        "sha256": "d4f0099d4549351149a3a1c2d784dbe4ae34a0d19ce5f2ee923cd0c4eabc948e"
+      },
+      "skipped": 0
+    },
+    {
+      "log": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/masked_gradient_source_map_test_v1.log",
+        "sha256": "1969e5e56e80f009b97e1b788fc621ef6659788086137ff5b9f238178217dc84"
+      },
+      "passed": 1,
+      "resources": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/masked_gradient_source_map_test_v1.resources.txt",
+        "sha256": "a3c40f87ab0f340b86ad1d97cf6ef8a416ebc05783bcffecb2ddb4a89ce58409"
+      },
+      "skipped": 0
+    }
+  ]
+}

@@ -71,6 +71,24 @@ checkpoint, explicit charge/multiplicity and no density/solvent correction.
 Jobs1200797/1200799 are complete. [Commands](../diagnostics/mace_omol_20260917/COMMANDS.md).
 Baseline remains default and broad-affinity validation remains incomplete.
 
+The [GGR OMOL readout replay](../diagnostics/mace_omol_20260917/READOUT_REPORT.md)
+is complete: four unchanged endpoints reproduce all energies/forces, with seven
+replay/accounting checks passing. A geometry-independent linear charge/spin
+readout contributes -36.188 kcal/mol to the -26.192 representation shift; the
+remaining terms contribute +9.996. This identifies an extensive model term,
+not an independently validated score correction. Cost: 50 GPU-seconds,
+800 allocated core-seconds; zero DFT. A separate
+[matched coordination candidate](../diagnostics/mace_omol_20260917/COORDINATION_PLAN.md)
+compares bound and separated-metal geometries with identical atoms and charge.
+Qualification job1200803 completed and passed all19 numerical checks; the full
+60-reference benchmark1200804 is running. It has its own protocol and cannot
+inherit either scorer's bands. Results remain pending at this checkpoint.
+
+Jacob reconfirmed blanket analysis/resource authorization on2026-09-17 and
+explicitly requested removal of the old per-analysis check-in rule. Both project
+AGENTS.md and `/home/jwestrob/.codex/AGENTS.md` now record this. Continue contained
+experiments autonomously toward the active goal; baseline protection remains.
+
 “Baseline” can refer to the electronic method or to a specific preparation.
 Always name both. The baseline method is ORCA 6.1.1 native r2SCAN-3c,
 CPCM(Water), DefGrid3, NoAutostart, using its native basis/ECP and composite

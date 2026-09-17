@@ -1064,3 +1064,46 @@ An important-result email is being submitted to Jacob's authorized address;
 private delivery receipts stay in the goal workspace. Next research should
 resolve the large representation dependence before broader use; no further
 scientific task manifest has been launched at this checkpoint.
+
+
+## OMOL readout cause and matched coordination pilot — 2026-09-17
+
+Jacob explicitly renewed blanket analysis/resource authorization toward the
+active goal and requested removal of the standing per-analysis approval rule.
+Updated global /home/jwestrob/.codex/AGENTS.md and project AGENTS.md; preserved
+private before/after hashes and backup under the goal workspace. No permission
+gate should be reintroduced after compaction. Baseline/default/concurrency and
+scientific-integrity constraints remain.
+
+Readout1200802 complete: four unchanged GGR endpoints, seven replay/accounting
+checks pass. Native optional linear embedding readout contributes-36.187906218
+kcal/mol to the observed-26.191960550 representation shift. Its explicit form
+sum(a_element)+N*b(Q,spin) gives-0.682790683351kcal/mol per added atom for this
+Ca/La charge pair;53additional atoms reproduce that contribution to roundoff.
+Other readouts contribute+9.995945668. This is a transferable architectural
+finding, not proof that simply deleting a term fixes affinity. All old scores
+remain.50GPU-s/800allocatedcore-s/52.341actualCPU-s;four newOMOL,zeroDFT.
+
+Matched coordination candidate declared before reference evaluation in
+COORDINATION_PLAN.md: each endpoint's bound energy minus the same atoms/charge/
+spin with only the metal moved beyond native interaction range; thenCa-minus-La.
+This cancels geometry-independent terms without a fitted weight. It is a model
+coordination descriptor, not certified ionic dissociation energy. Protocol
+mace_omol_matched_coordination_descriptor_v1, same100Mcheckpoint/nativefloat64.
+Qualification1200803 complete:10calls,all19repeat/rotation/farther-distance/
+isolated-metal-force checks pass;maxenergyerror2.6611e-7kcal/mol,maxforceerror
+1.2590e-7eV/A. Benchmark1200804 RUNNING60newreferencecalls plus4qualification
+reuses,with64existingboundendpoints reused. No classification inspected/claimed
+yet for this candidate. Same25cal/3transfer/4nonPQQ representations and frozen
+acceptance rules; no newbiologicalcontrols,noDFT,nopromotion.
+
+Code scripts/mace_omol_readout.py and mace_omol_coordination.py integrates with
+existing typed runner,immutable snapshots,caches,receipts and partial recovery.
+OMOLtests6pass18.091s;readout4pass17.383s;coordination4pass/1explicitreport-not-
+yet-available skip23.486s;legacyrunner10pass/2isolated-envskips8.090s. Actual
+GPU numerical checks are separate from software tests. Current reports and
+exactcommands in diagnostics/mace_omol_20260917/. Vault updated. Goal ACTIVE.
+
+Next: collect1200804,report against originalOMOLreport_v1 with the frozen own
+calibration rule,retain nonPQQ/representation failures,and record full actual
+costs. Do not modify scientific parameters based on intermediate signs.

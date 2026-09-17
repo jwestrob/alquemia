@@ -23,6 +23,15 @@ It does not authorize default promotion, production rescores, pushes/deploys,
 or interference with another agent's jobs. Durable source:
 [analytic pilot agreement](diagnostics/mace_analytic_20260916/AGREEMENT.md).
 
+**Reconfirmed 2026-09-17:** Jacob explicitly removed the per-analysis check-in
+requirement and renewed full blanket permissions toward this goal, including
+use of his available resources. The corresponding obsolete section in
+`/home/jwestrob/.codex/AGENTS.md` has been replaced at his request. Do not
+reintroduce that permission gate after compaction. Declare and record new
+experiments, execute them autonomously, and report substantive findings.
+Production/default protection and all scientific-integrity and concurrency
+constraints still apply; see the active goal for the durable authorization.
+
 Keep the existing baseline/default accessible. Buffered inbox PQQ, canonical
 fixed-core PQQ, generic v2, repaired peptide v3 and environmental challengers
 are distinct protocols. Use only a protocol's own reference/decision policy;

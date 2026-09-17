@@ -1,0 +1,4813 @@
+{
+  "R_kcal_mol": {
+    "GGR_connected": -405452.08335419995,
+    "GGR_extended": -405425.89139365026
+  },
+  "all_checks_pass": true,
+  "baseline_changed": false,
+  "checks": [
+    {
+      "energy_error_kcal_mol": 0.0,
+      "force_error_eV_A": 5.329070518200751e-15,
+      "name": "GGR_extended_La_unchanged_endpoint",
+      "pass": true
+    },
+    {
+      "energy_error_kcal_mol": 0.0,
+      "force_error_eV_A": 6.217248937900877e-15,
+      "name": "GGR_extended_Ca_unchanged_endpoint",
+      "pass": true
+    },
+    {
+      "energy_error_kcal_mol": 0.0,
+      "force_error_eV_A": 6.328271240363392e-15,
+      "name": "GGR_connected_La_unchanged_endpoint",
+      "pass": true
+    },
+    {
+      "energy_error_kcal_mol": 0.0,
+      "force_error_eV_A": 1.0658141036401503e-14,
+      "name": "GGR_connected_Ca_unchanged_endpoint",
+      "pass": true
+    },
+    {
+      "error_kcal_mol": 0.0,
+      "name": "GGR_extended_contrast_sum",
+      "pass": true
+    },
+    {
+      "error_kcal_mol": 5.820766091346741e-11,
+      "name": "GGR_connected_contrast_sum",
+      "pass": true
+    },
+    {
+      "error_kcal_mol": 7.314326921914471e-11,
+      "name": "representation_shift_sum",
+      "pass": true
+    }
+  ],
+  "definition": "native_node_energy_plus_optional_embedding_readout_v1",
+  "embedding_algebra": {
+    "atom_count_difference": 53,
+    "corrected_score_produced": false,
+    "definition": "E_embedding=sum_i(a_element_i)+N*b(total_charge,multiplicity)",
+    "fitted_parameters": false,
+    "metal_embedding_contrast_difference_kcal_mol": -3.552713678800501e-15,
+    "nonmetal_contrast_range_kcal_mol": [
+      -0.6827906833512606,
+      -0.6827906833512597
+    ],
+    "observed_minus_predicted_kcal_mol": -7.105427357601002e-15,
+    "per_atom_charge_state_contrast_kcal_mol": -0.6827906833512598,
+    "predicted_embedding_shift_kcal_mol": -36.18790621761677
+  },
+  "endpoint_terms": {
+    "GGR_connected_Ca": {
+      "atomic_reference_sum_eV": -96616.03764724731,
+      "capture": {
+        "arrays": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/readout_v1/execution/GGR_connected_Ca/attempt_001/native_readout_eV.npz",
+          "sha256": "65603d9143452542f210894946b0fd9b580755bad6b720e82cec6cdc26b18544"
+        },
+        "component_sum_error_kcal_mol": 0.0,
+        "definition": "native_node_energy_plus_optional_embedding_readout_v1",
+        "embedding_absence_means": "architecturally_absent_term_not_missing_correction",
+        "embedding_readout_present": true,
+        "forward_count": 1,
+        "interaction_energy_eV": -1.0465076540109826,
+        "native_total_energy_eV": -96616.60477013353,
+        "native_total_error_kcal_mol": 0.0
+      },
+      "embedding_sum_eV": 0.47938476779229455,
+      "energy_eV": -96616.60477013353,
+      "node_sum_eV": -96617.08415490133
+    },
+    "GGR_connected_La": {
+      "atomic_reference_sum_eV": -79028.992603302,
+      "capture": {
+        "arrays": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/readout_v1/execution/GGR_connected_La/attempt_001/native_readout_eV.npz",
+          "sha256": "8b9ddd3887d5390ac152928f32cccc3d89825de879c31dea757933b8f99f04cf"
+        },
+        "component_sum_error_kcal_mol": 0.0,
+        "definition": "native_node_energy_plus_optional_embedding_readout_v1",
+        "embedding_absence_means": "architecturally_absent_term_not_missing_correction",
+        "embedding_readout_present": true,
+        "forward_count": 1,
+        "interaction_energy_eV": -8.077648666683086,
+        "native_total_energy_eV": -79034.53836250665,
+        "native_total_error_kcal_mol": 0.0
+      },
+      "embedding_sum_eV": 2.5318894620365384,
+      "energy_eV": -79034.53836250665,
+      "node_sum_eV": -79037.07025196869
+    },
+    "GGR_extended_Ca": {
+      "atomic_reference_sum_eV": -57372.712619781494,
+      "capture": {
+        "arrays": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/readout_v1/execution/GGR_extended_Ca/attempt_001/native_readout_eV.npz",
+          "sha256": "5775888e6b86655c741fb38bbb12cb36684c22047bf29f52dce9cde7b61eb64c"
+        },
+        "component_sum_error_kcal_mol": 1.677875685754336e-10,
+        "definition": "native_node_energy_plus_optional_embedding_readout_v1",
+        "embedding_absence_means": "architecturally_absent_term_not_missing_correction",
+        "embedding_readout_present": true,
+        "forward_count": 1,
+        "interaction_energy_eV": -3.7386744074887623,
+        "native_total_energy_eV": -57376.119081108125,
+        "native_total_error_kcal_mol": 0.0
+      },
+      "embedding_sum_eV": 0.3322130808605057,
+      "energy_eV": -57376.119081108125,
+      "node_sum_eV": -57376.45129418898
+    },
+    "GGR_extended_La": {
+      "atomic_reference_sum_eV": -39785.66757583618,
+      "capture": {
+        "arrays": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/readout_v1/execution/GGR_extended_La/attempt_001/native_readout_eV.npz",
+          "sha256": "e0095ae6844e4cf795da9df02d3c4e491596826c3021c7cee6bb37d641985620"
+        },
+        "component_sum_error_kcal_mol": 1.677875685754336e-10,
+        "definition": "native_node_energy_plus_optional_embedding_readout_v1",
+        "embedding_absence_means": "architecturally_absent_term_not_missing_correction",
+        "embedding_readout_present": true,
+        "forward_count": 1,
+        "interaction_energy_eV": -10.336350190217964,
+        "native_total_energy_eV": -39795.18846438881,
+        "native_total_error_kcal_mol": 0.0
+      },
+      "embedding_sum_eV": 0.8154616375914979,
+      "energy_eV": -39795.18846438881,
+      "node_sum_eV": -39796.003926026395
+    }
+  },
+  "grouped_R_kcal_mol": {
+    "GGR_connected": {
+      "embedding_graph_term": -47.33188267418944,
+      "metal": -405438.794685744,
+      "shared_source_atoms": 24.246435687261776,
+      "synthetic_caps": 2.832504832933193,
+      "unique_source_atoms": 6.964273698097922
+    },
+    "GGR_extended": {
+      "embedding_graph_term": -11.143976456572661,
+      "metal": -405436.5190911786,
+      "shared_source_atoms": 18.605936994810786,
+      "synthetic_caps": 3.165736990095595,
+      "unique_source_atoms": 0.0
+    }
+  },
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/readout_report_v2/mace_omol_readout.py",
+    "sha256": "43773379ab04d6f0fcb52cf46e075850a811722832401908fe97fc88728f3394"
+  },
+  "interpretation": "model energy bookkeeping; atomic terms are not unique physical energies or a new score",
+  "per_atom": [
+    {
+      "R_node_kcal_mol": -405436.5190911786,
+      "case_id": "GGR_extended",
+      "category": "metal",
+      "element": "M",
+      "id": "metal",
+      "kind": "metal",
+      "qm_index": 0,
+      "source": {
+        "atom": "CA",
+        "canonical_resname": "CA",
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "CA",
+        "resnum": 312,
+        "source_element": "Ca",
+        "xyz_A": [
+          23.168,
+          41.519,
+          73.363
+        ]
+      },
+      "xyz_A": [
+        23.168,
+        41.519,
+        73.363
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.3253606688977875,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/133/CB",
+      "kind": "source",
+      "qm_index": 1,
+      "source": {
+        "altloc": "",
+        "atom": "CB",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 133,
+        "resname": "ASP",
+        "resnum": 134
+      },
+      "xyz_A": [
+        20.968,
+        37.884,
+        74.607
+      ]
+    },
+    {
+      "R_node_kcal_mol": -0.808066977414439,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/133/CG",
+      "kind": "source",
+      "qm_index": 2,
+      "source": {
+        "altloc": "",
+        "atom": "CG",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 133,
+        "resname": "ASP",
+        "resnum": 134
+      },
+      "xyz_A": [
+        20.697,
+        39.356,
+        74.399
+      ]
+    },
+    {
+      "R_node_kcal_mol": -0.06854401063729476,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/133/HB2",
+      "kind": "source",
+      "qm_index": 3,
+      "source": {
+        "altloc": "",
+        "atom": "HB2",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 133,
+        "resname": "ASP",
+        "resnum": 134
+      },
+      "xyz_A": [
+        19.779,
+        37.869,
+        74.79
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.16624469250287832,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/133/HB3",
+      "kind": "source",
+      "qm_index": 4,
+      "source": {
+        "altloc": "",
+        "atom": "HB3",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 133,
+        "resname": "ASP",
+        "resnum": 134
+      },
+      "xyz_A": [
+        20.799,
+        36.797,
+        74.129
+      ]
+    },
+    {
+      "R_node_kcal_mol": 1.4578368429422603,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "O",
+      "id": "0/133/OD1",
+      "kind": "source",
+      "qm_index": 5,
+      "source": {
+        "altloc": "",
+        "atom": "OD1",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "O",
+        "insertion_code": "",
+        "residue_index": 133,
+        "resname": "ASP",
+        "resnum": 134
+      },
+      "xyz_A": [
+        21.662,
+        40.102,
+        74.369
+      ]
+    },
+    {
+      "R_node_kcal_mol": -1.8425638243557358,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "O",
+      "id": "0/133/OD2",
+      "kind": "source",
+      "qm_index": 6,
+      "source": {
+        "altloc": "",
+        "atom": "OD2",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "O",
+        "insertion_code": "",
+        "residue_index": 133,
+        "resname": "ASP",
+        "resnum": 134
+      },
+      "xyz_A": [
+        19.51,
+        39.723,
+        74.256
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.5441069609828201,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/135/CB",
+      "kind": "source",
+      "qm_index": 7,
+      "source": {
+        "altloc": "",
+        "atom": "CB",
+        "canonical_resname": "ASN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 135,
+        "resname": "ASN",
+        "resnum": 136
+      },
+      "xyz_A": [
+        24.261,
+        43.136,
+        77.561
+      ]
+    },
+    {
+      "R_node_kcal_mol": -1.0451378088150283,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/135/CG",
+      "kind": "source",
+      "qm_index": 8,
+      "source": {
+        "altloc": "",
+        "atom": "CG",
+        "canonical_resname": "ASN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 135,
+        "resname": "ASN",
+        "resnum": 136
+      },
+      "xyz_A": [
+        23.79,
+        43.314,
+        76.126
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.48841863128966656,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/135/HB2",
+      "kind": "source",
+      "qm_index": 9,
+      "source": {
+        "altloc": "",
+        "atom": "HB2",
+        "canonical_resname": "ASN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 135,
+        "resname": "ASN",
+        "resnum": 136
+      },
+      "xyz_A": [
+        25.372,
+        43.34,
+        77.954
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.3738463756189291,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/135/HB3",
+      "kind": "source",
+      "qm_index": 10,
+      "source": {
+        "altloc": "",
+        "atom": "HB3",
+        "canonical_resname": "ASN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 135,
+        "resname": "ASN",
+        "resnum": 136
+      },
+      "xyz_A": [
+        23.826,
+        44.084,
+        78.155
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.39026524244978283,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/135/HD21",
+      "kind": "source",
+      "qm_index": 11,
+      "source": {
+        "altloc": "",
+        "atom": "HD21",
+        "canonical_resname": "ASN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 135,
+        "resname": "ASN",
+        "resnum": 136
+      },
+      "xyz_A": [
+        23.391,
+        45.457,
+        76.121
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.22744615097090343,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/135/HD22",
+      "kind": "source",
+      "qm_index": 12,
+      "source": {
+        "altloc": "",
+        "atom": "HD22",
+        "canonical_resname": "ASN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 135,
+        "resname": "ASN",
+        "resnum": 136
+      },
+      "xyz_A": [
+        24.866,
+        44.845,
+        74.972
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.6621574768521536,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "N",
+      "id": "0/135/ND2",
+      "kind": "source",
+      "qm_index": 13,
+      "source": {
+        "altloc": "",
+        "atom": "ND2",
+        "canonical_resname": "ASN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "N",
+        "insertion_code": "",
+        "residue_index": 135,
+        "resname": "ASN",
+        "resnum": 136
+      },
+      "xyz_A": [
+        23.933,
+        44.523,
+        75.62
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.883376098017407,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "O",
+      "id": "0/135/OD1",
+      "kind": "source",
+      "qm_index": 14,
+      "source": {
+        "altloc": "",
+        "atom": "OD1",
+        "canonical_resname": "ASN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "O",
+        "insertion_code": "",
+        "residue_index": 135,
+        "resname": "ASN",
+        "resnum": 136
+      },
+      "xyz_A": [
+        23.321,
+        42.364,
+        75.501
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.5044720873631583,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/137/CB",
+      "kind": "source",
+      "qm_index": 15,
+      "source": {
+        "altloc": "",
+        "atom": "CB",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 137,
+        "resname": "ASP",
+        "resnum": 138
+      },
+      "xyz_A": [
+        20.426,
+        44.846,
+        74.631
+      ]
+    },
+    {
+      "R_node_kcal_mol": -0.11068588292752114,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/137/CG",
+      "kind": "source",
+      "qm_index": 16,
+      "source": {
+        "altloc": "",
+        "atom": "CG",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 137,
+        "resname": "ASP",
+        "resnum": 138
+      },
+      "xyz_A": [
+        21.52,
+        44.374,
+        73.684
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.2701455964205583,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/137/HB2",
+      "kind": "source",
+      "qm_index": 17,
+      "source": {
+        "altloc": "",
+        "atom": "HB2",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 137,
+        "resname": "ASP",
+        "resnum": 138
+      },
+      "xyz_A": [
+        20.007,
+        45.814,
+        74.068
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.3008530615644118,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/137/HB3",
+      "kind": "source",
+      "qm_index": 18,
+      "source": {
+        "altloc": "",
+        "atom": "HB3",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 137,
+        "resname": "ASP",
+        "resnum": 138
+      },
+      "xyz_A": [
+        20.72,
+        45.335,
+        75.683
+      ]
+    },
+    {
+      "R_node_kcal_mol": 2.007999133300928,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "O",
+      "id": "0/137/OD1",
+      "kind": "source",
+      "qm_index": 19,
+      "source": {
+        "altloc": "",
+        "atom": "OD1",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "O",
+        "insertion_code": "",
+        "residue_index": 137,
+        "resname": "ASP",
+        "resnum": 138
+      },
+      "xyz_A": [
+        21.661,
+        43.191,
+        73.303
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.10135748351575191,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "O",
+      "id": "0/137/OD2",
+      "kind": "source",
+      "qm_index": 20,
+      "source": {
+        "altloc": "",
+        "atom": "OD2",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "O",
+        "insertion_code": "",
+        "residue_index": 137,
+        "resname": "ASP",
+        "resnum": 138
+      },
+      "xyz_A": [
+        22.354,
+        45.231,
+        73.255
+      ]
+    },
+    {
+      "R_node_kcal_mol": -0.12338255094131294,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/139/C",
+      "kind": "source",
+      "qm_index": 21,
+      "source": {
+        "altloc": "",
+        "atom": "C",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 139,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      "xyz_A": [
+        22.005,
+        41.641,
+        70.111
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.5112006847808079,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/139/CA",
+      "kind": "source",
+      "qm_index": 22,
+      "source": {
+        "altloc": "",
+        "atom": "CA",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 139,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      "xyz_A": [
+        20.763,
+        42.509,
+        70.141
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.40912519179286166,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/139/HA",
+      "kind": "source",
+      "qm_index": 23,
+      "source": {
+        "altloc": "",
+        "atom": "HA",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 139,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      "xyz_A": [
+        20.159,
+        42.213,
+        69.162
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.7716956935761495,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "O",
+      "id": "0/139/O",
+      "kind": "source",
+      "qm_index": 24,
+      "source": {
+        "altloc": "",
+        "atom": "O",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "O",
+        "insertion_code": "",
+        "residue_index": 139,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      "xyz_A": [
+        22.597,
+        41.359,
+        71.165
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.7830083649391755,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/140/CA",
+      "kind": "source",
+      "qm_index": 25,
+      "source": {
+        "altloc": "",
+        "atom": "CA",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "xyz_A": [
+        23.643,
+        40.447,
+        68.801
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.4924435799264799,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/140/H",
+      "kind": "source",
+      "qm_index": 26,
+      "source": {
+        "altloc": "",
+        "atom": "H",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "xyz_A": [
+        22.226,
+        42.025,
+        68.024
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.31391542264675215,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/140/HA",
+      "kind": "source",
+      "qm_index": 27,
+      "source": {
+        "altloc": "",
+        "atom": "HA",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "xyz_A": [
+        23.517,
+        39.71,
+        69.723
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.8778276821831658,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "N",
+      "id": "0/140/N",
+      "kind": "source",
+      "qm_index": 28,
+      "source": {
+        "altloc": "",
+        "atom": "N",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "N",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "xyz_A": [
+        22.42,
+        41.266,
+        68.902
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.5528933567046961,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/141/CB",
+      "kind": "source",
+      "qm_index": 29,
+      "source": {
+        "altloc": "",
+        "atom": "CB",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        27.305,
+        42.401,
+        71.386
+      ]
+    },
+    {
+      "R_node_kcal_mol": -0.935103507155363,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/141/CD",
+      "kind": "source",
+      "qm_index": 30,
+      "source": {
+        "altloc": "",
+        "atom": "CD",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        25.454,
+        43.881,
+        72.094
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.6314813391240148,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/141/CG",
+      "kind": "source",
+      "qm_index": 31,
+      "source": {
+        "altloc": "",
+        "atom": "CG",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        26.942,
+        43.829,
+        71.826
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.23685330440541782,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/141/HB2",
+      "kind": "source",
+      "qm_index": 32,
+      "source": {
+        "altloc": "",
+        "atom": "HB2",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        26.804,
+        41.729,
+        72.226
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.39024672060743665,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/141/HB3",
+      "kind": "source",
+      "qm_index": 33,
+      "source": {
+        "altloc": "",
+        "atom": "HB3",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        28.481,
+        42.261,
+        71.465
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.33879425449874606,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/141/HE21",
+      "kind": "source",
+      "qm_index": 34,
+      "source": {
+        "altloc": "",
+        "atom": "HE21",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        24.092,
+        44.994,
+        70.752
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.2970314729884554,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/141/HE22",
+      "kind": "source",
+      "qm_index": 35,
+      "source": {
+        "altloc": "",
+        "atom": "HE22",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        24.697,
+        45.902,
+        72.401
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.46329766045410364,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/141/HG2",
+      "kind": "source",
+      "qm_index": 36,
+      "source": {
+        "altloc": "",
+        "atom": "HG2",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        27.308,
+        44.772,
+        71.205
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.3637607684812569,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/141/HG3",
+      "kind": "source",
+      "qm_index": 37,
+      "source": {
+        "altloc": "",
+        "atom": "HG3",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        27.399,
+        43.903,
+        72.922
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.3991355001189108,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "N",
+      "id": "0/141/NE2",
+      "kind": "source",
+      "qm_index": 38,
+      "source": {
+        "altloc": "",
+        "atom": "NE2",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "N",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        24.752,
+        44.923,
+        71.731
+      ]
+    },
+    {
+      "R_node_kcal_mol": 1.1626336470031755,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "O",
+      "id": "0/141/OE1",
+      "kind": "source",
+      "qm_index": 39,
+      "source": {
+        "altloc": "",
+        "atom": "OE1",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "O",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        24.949,
+        42.887,
+        72.642
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.39905759512911804,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/204/CB",
+      "kind": "source",
+      "qm_index": 40,
+      "source": {
+        "altloc": "",
+        "atom": "CB",
+        "canonical_resname": "GLU",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 204,
+        "resname": "GLU",
+        "resnum": 205
+      },
+      "xyz_A": [
+        27.043,
+        38.162,
+        72.309
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.43110316603994636,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/204/CD",
+      "kind": "source",
+      "qm_index": 41,
+      "source": {
+        "altloc": "",
+        "atom": "CD",
+        "canonical_resname": "GLU",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 204,
+        "resname": "GLU",
+        "resnum": 205
+      },
+      "xyz_A": [
+        25.437,
+        39.749,
+        73.482
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.7634079413616027,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/204/CG",
+      "kind": "source",
+      "qm_index": 42,
+      "source": {
+        "altloc": "",
+        "atom": "CG",
+        "canonical_resname": "GLU",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 204,
+        "resname": "GLU",
+        "resnum": 205
+      },
+      "xyz_A": [
+        26.748,
+        38.985,
+        73.559
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.29119948489935227,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/204/HB2",
+      "kind": "source",
+      "qm_index": 43,
+      "source": {
+        "altloc": "",
+        "atom": "HB2",
+        "canonical_resname": "GLU",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 204,
+        "resname": "GLU",
+        "resnum": 205
+      },
+      "xyz_A": [
+        26.257,
+        37.266,
+        72.233
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.2893419444600973,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/204/HB3",
+      "kind": "source",
+      "qm_index": 44,
+      "source": {
+        "altloc": "",
+        "atom": "HB3",
+        "canonical_resname": "GLU",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 204,
+        "resname": "GLU",
+        "resnum": 205
+      },
+      "xyz_A": [
+        26.708,
+        38.724,
+        71.315
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.32693472420923453,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/204/HG2",
+      "kind": "source",
+      "qm_index": 45,
+      "source": {
+        "altloc": "",
+        "atom": "HG2",
+        "canonical_resname": "GLU",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 204,
+        "resname": "GLU",
+        "resnum": 205
+      },
+      "xyz_A": [
+        26.974,
+        38.29,
+        74.491
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.3357725100037967,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/204/HG3",
+      "kind": "source",
+      "qm_index": 46,
+      "source": {
+        "altloc": "",
+        "atom": "HG3",
+        "canonical_resname": "GLU",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 204,
+        "resname": "GLU",
+        "resnum": 205
+      },
+      "xyz_A": [
+        27.466,
+        39.927,
+        73.681
+      ]
+    },
+    {
+      "R_node_kcal_mol": 1.4799823579428169,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "O",
+      "id": "0/204/OE1",
+      "kind": "source",
+      "qm_index": 47,
+      "source": {
+        "altloc": "",
+        "atom": "OE1",
+        "canonical_resname": "GLU",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "O",
+        "insertion_code": "",
+        "residue_index": 204,
+        "resname": "GLU",
+        "resnum": 205
+      },
+      "xyz_A": [
+        24.797,
+        39.779,
+        72.434
+      ]
+    },
+    {
+      "R_node_kcal_mol": 1.5233906860905142,
+      "case_id": "GGR_extended",
+      "category": "shared_source_atoms",
+      "element": "O",
+      "id": "0/204/OE2",
+      "kind": "source",
+      "qm_index": 48,
+      "source": {
+        "altloc": "",
+        "atom": "OE2",
+        "canonical_resname": "GLU",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "O",
+        "insertion_code": "",
+        "residue_index": 204,
+        "resname": "GLU",
+        "resnum": 205
+      },
+      "xyz_A": [
+        25.008,
+        40.335,
+        74.482
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.11195434253485903,
+      "case_id": "GGR_extended",
+      "category": "synthetic_caps",
+      "element": "H",
+      "id": "cap:0/133/CB->0/133/CA",
+      "kind": "sigma_link_H",
+      "length_A": 1.09,
+      "omitted": {
+        "altloc": "",
+        "atom": "CA",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 133,
+        "resname": "ASP",
+        "resnum": 134
+      },
+      "qm_index": 49,
+      "retained": {
+        "altloc": "",
+        "atom": "CB",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 133,
+        "resname": "ASP",
+        "resnum": 134
+      },
+      "source_bond_length_A": 1.4968506939571493,
+      "xyz_A": [
+        22.012960600489105,
+        37.629859756396726,
+        74.78467971186016
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.4431841041857943,
+      "case_id": "GGR_extended",
+      "category": "synthetic_caps",
+      "element": "H",
+      "id": "cap:0/135/CB->0/135/CA",
+      "kind": "sigma_link_H",
+      "length_A": 1.09,
+      "omitted": {
+        "altloc": "",
+        "atom": "CA",
+        "canonical_resname": "ASN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 135,
+        "resname": "ASN",
+        "resnum": 136
+      },
+      "qm_index": 50,
+      "retained": {
+        "altloc": "",
+        "atom": "CB",
+        "canonical_resname": "ASN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 135,
+        "resname": "ASN",
+        "resnum": 136
+      },
+      "source_bond_length_A": 1.5301196031683217,
+      "xyz_A": [
+        23.74738655542174,
+        42.29541211566943,
+        78.02759751206486
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.22247859781609433,
+      "case_id": "GGR_extended",
+      "category": "synthetic_caps",
+      "element": "H",
+      "id": "cap:0/137/CB->0/137/CA",
+      "kind": "sigma_link_H",
+      "length_A": 1.09,
+      "omitted": {
+        "altloc": "",
+        "atom": "CA",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 137,
+        "resname": "ASP",
+        "resnum": 138
+      },
+      "qm_index": 51,
+      "retained": {
+        "altloc": "",
+        "atom": "CB",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 137,
+        "resname": "ASP",
+        "resnum": 138
+      },
+      "source_bond_length_A": 1.5231418187417685,
+      "xyz_A": [
+        19.657417596447416,
+        44.12608016948427,
+        74.91224104711003
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.3547306559786927,
+      "case_id": "GGR_extended",
+      "category": "synthetic_caps",
+      "element": "H",
+      "id": "cap:0/139/CA->0/139/CB",
+      "kind": "sigma_link_H",
+      "length_A": 1.09,
+      "omitted": {
+        "altloc": "",
+        "atom": "CB",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 139,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      "qm_index": 52,
+      "retained": {
+        "altloc": "",
+        "atom": "CA",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 139,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      "source_bond_length_A": 1.549729331205935,
+      "xyz_A": [
+        21.09076046098627,
+        43.54714257599943,
+        70.1951578444119
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.2391017390277769,
+      "case_id": "GGR_extended",
+      "category": "synthetic_caps",
+      "element": "H",
+      "id": "cap:0/139/CA->0/139/N",
+      "kind": "sigma_link_H",
+      "length_A": 1.09,
+      "omitted": {
+        "altloc": "",
+        "atom": "N",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "N",
+        "insertion_code": "",
+        "residue_index": 139,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      "qm_index": 53,
+      "retained": {
+        "altloc": "",
+        "atom": "CA",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 139,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      "source_bond_length_A": 1.4586819392862787,
+      "xyz_A": [
+        20.084497049257866,
+        42.303506264918404,
+        70.96895293989239
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.4323052750114744,
+      "case_id": "GGR_extended",
+      "category": "synthetic_caps",
+      "element": "H",
+      "id": "cap:0/140/CA->0/140/C",
+      "kind": "sigma_link_H",
+      "length_A": 1.09,
+      "omitted": {
+        "altloc": "",
+        "atom": "C",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "qm_index": 54,
+      "retained": {
+        "altloc": "",
+        "atom": "CA",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "source_bond_length_A": 1.5506156841719323,
+      "xyz_A": [
+        24.492159474807686,
+        41.12956113413764,
+        68.76725856391492
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.5347228787596007,
+      "case_id": "GGR_extended",
+      "category": "synthetic_caps",
+      "element": "H",
+      "id": "cap:0/140/CA->0/140/CB",
+      "kind": "sigma_link_H",
+      "length_A": 1.09,
+      "omitted": {
+        "altloc": "",
+        "atom": "CB",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "qm_index": 55,
+      "retained": {
+        "altloc": "",
+        "atom": "CA",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "source_bond_length_A": 1.547302491434695,
+      "xyz_A": [
+        23.70640066053215,
+        39.74395711987683,
+        67.97045134702884
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.38496956103267904,
+      "case_id": "GGR_extended",
+      "category": "synthetic_caps",
+      "element": "H",
+      "id": "cap:0/141/CB->0/141/CA",
+      "kind": "sigma_link_H",
+      "length_A": 1.09,
+      "omitted": {
+        "altloc": "",
+        "atom": "CA",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "qm_index": 56,
+      "retained": {
+        "altloc": "",
+        "atom": "CB",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "source_bond_length_A": 1.5093654295762773,
+      "xyz_A": [
+        27.04502319629769,
+        42.16846519224405,
+        70.35331436307139
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.44228983574862396,
+      "case_id": "GGR_extended",
+      "category": "synthetic_caps",
+      "element": "H",
+      "id": "cap:0/204/CB->0/204/CA",
+      "kind": "sigma_link_H",
+      "length_A": 1.09,
+      "omitted": {
+        "altloc": "",
+        "atom": "CA",
+        "canonical_resname": "GLU",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 204,
+        "resname": "GLU",
+        "resnum": 205
+      },
+      "qm_index": 57,
+      "retained": {
+        "altloc": "",
+        "atom": "CB",
+        "canonical_resname": "GLU",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 204,
+        "resname": "GLU",
+        "resnum": 205
+      },
+      "source_bond_length_A": 1.5214890732437083,
+      "xyz_A": [
+        28.047397617356545,
+        37.739321972724426,
+        72.3340741202621
+      ]
+    },
+    {
+      "R_node_kcal_mol": -405438.794685744,
+      "case_id": "GGR_connected",
+      "category": "metal",
+      "element": "M",
+      "id": "metal",
+      "kind": "metal",
+      "qm_index": 0,
+      "source": {
+        "atom": "CA",
+        "canonical_resname": "CA",
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "CA",
+        "resnum": 312,
+        "source_element": "Ca",
+        "xyz_A": [
+          23.168,
+          41.519,
+          73.363
+        ]
+      },
+      "xyz_A": [
+        23.168,
+        41.519,
+        73.363
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.627887483853586,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/133/CB",
+      "kind": "source",
+      "qm_index": 1,
+      "source": {
+        "altloc": "",
+        "atom": "CB",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 133,
+        "resname": "ASP",
+        "resnum": 134
+      },
+      "xyz_A": [
+        20.968,
+        37.884,
+        74.607
+      ]
+    },
+    {
+      "R_node_kcal_mol": -0.31772715854808464,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/133/CG",
+      "kind": "source",
+      "qm_index": 2,
+      "source": {
+        "altloc": "",
+        "atom": "CG",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 133,
+        "resname": "ASP",
+        "resnum": 134
+      },
+      "xyz_A": [
+        20.697,
+        39.356,
+        74.399
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.07840437589514421,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/133/HB2",
+      "kind": "source",
+      "qm_index": 3,
+      "source": {
+        "altloc": "",
+        "atom": "HB2",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 133,
+        "resname": "ASP",
+        "resnum": 134
+      },
+      "xyz_A": [
+        19.779,
+        37.869,
+        74.79
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.26371795235147644,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/133/HB3",
+      "kind": "source",
+      "qm_index": 4,
+      "source": {
+        "altloc": "",
+        "atom": "HB3",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 133,
+        "resname": "ASP",
+        "resnum": 134
+      },
+      "xyz_A": [
+        20.799,
+        36.797,
+        74.129
+      ]
+    },
+    {
+      "R_node_kcal_mol": 2.4347492480036044,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "O",
+      "id": "0/133/OD1",
+      "kind": "source",
+      "qm_index": 5,
+      "source": {
+        "altloc": "",
+        "atom": "OD1",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "O",
+        "insertion_code": "",
+        "residue_index": 133,
+        "resname": "ASP",
+        "resnum": 134
+      },
+      "xyz_A": [
+        21.662,
+        40.102,
+        74.369
+      ]
+    },
+    {
+      "R_node_kcal_mol": -0.13044775791171714,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "O",
+      "id": "0/133/OD2",
+      "kind": "source",
+      "qm_index": 6,
+      "source": {
+        "altloc": "",
+        "atom": "OD2",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "O",
+        "insertion_code": "",
+        "residue_index": 133,
+        "resname": "ASP",
+        "resnum": 134
+      },
+      "xyz_A": [
+        19.51,
+        39.723,
+        74.256
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.5490769207325854,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/135/CB",
+      "kind": "source",
+      "qm_index": 7,
+      "source": {
+        "altloc": "",
+        "atom": "CB",
+        "canonical_resname": "ASN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 135,
+        "resname": "ASN",
+        "resnum": 136
+      },
+      "xyz_A": [
+        24.261,
+        43.136,
+        77.561
+      ]
+    },
+    {
+      "R_node_kcal_mol": -1.4290995475381336,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/135/CG",
+      "kind": "source",
+      "qm_index": 8,
+      "source": {
+        "altloc": "",
+        "atom": "CG",
+        "canonical_resname": "ASN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 135,
+        "resname": "ASN",
+        "resnum": 136
+      },
+      "xyz_A": [
+        23.79,
+        43.314,
+        76.126
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.4650091889450325,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/135/HB2",
+      "kind": "source",
+      "qm_index": 9,
+      "source": {
+        "altloc": "",
+        "atom": "HB2",
+        "canonical_resname": "ASN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 135,
+        "resname": "ASN",
+        "resnum": 136
+      },
+      "xyz_A": [
+        25.372,
+        43.34,
+        77.954
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.371056136768573,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/135/HB3",
+      "kind": "source",
+      "qm_index": 10,
+      "source": {
+        "altloc": "",
+        "atom": "HB3",
+        "canonical_resname": "ASN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 135,
+        "resname": "ASN",
+        "resnum": 136
+      },
+      "xyz_A": [
+        23.826,
+        44.084,
+        78.155
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.32477839777050727,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/135/HD21",
+      "kind": "source",
+      "qm_index": 11,
+      "source": {
+        "altloc": "",
+        "atom": "HD21",
+        "canonical_resname": "ASN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 135,
+        "resname": "ASN",
+        "resnum": 136
+      },
+      "xyz_A": [
+        23.391,
+        45.457,
+        76.121
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.1709543918157947,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/135/HD22",
+      "kind": "source",
+      "qm_index": 12,
+      "source": {
+        "altloc": "",
+        "atom": "HD22",
+        "canonical_resname": "ASN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 135,
+        "resname": "ASN",
+        "resnum": 136
+      },
+      "xyz_A": [
+        24.866,
+        44.845,
+        74.972
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.6858535727625299,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "N",
+      "id": "0/135/ND2",
+      "kind": "source",
+      "qm_index": 13,
+      "source": {
+        "altloc": "",
+        "atom": "ND2",
+        "canonical_resname": "ASN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "N",
+        "insertion_code": "",
+        "residue_index": 135,
+        "resname": "ASN",
+        "resnum": 136
+      },
+      "xyz_A": [
+        23.933,
+        44.523,
+        75.62
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.9395177231122179,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "O",
+      "id": "0/135/OD1",
+      "kind": "source",
+      "qm_index": 14,
+      "source": {
+        "altloc": "",
+        "atom": "OD1",
+        "canonical_resname": "ASN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "O",
+        "insertion_code": "",
+        "residue_index": 135,
+        "resname": "ASN",
+        "resnum": 136
+      },
+      "xyz_A": [
+        23.321,
+        42.364,
+        75.501
+      ]
+    },
+    {
+      "R_node_kcal_mol": -0.23499815780033384,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "C",
+      "id": "0/136/C",
+      "kind": "source",
+      "qm_index": 15,
+      "source": {
+        "altloc": "",
+        "atom": "C",
+        "canonical_resname": "LYS",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 136,
+        "resname": "LYS",
+        "resnum": 137
+      },
+      "xyz_A": [
+        19.314,
+        42.142,
+        76.811
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.3263065191599145,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "C",
+      "id": "0/136/CA",
+      "kind": "source",
+      "qm_index": 16,
+      "source": {
+        "altloc": "",
+        "atom": "CA",
+        "canonical_resname": "LYS",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 136,
+        "resname": "LYS",
+        "resnum": 137
+      },
+      "xyz_A": [
+        19.928,
+        40.951,
+        77.508
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.21455182504145975,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/136/HA",
+      "kind": "source",
+      "qm_index": 17,
+      "source": {
+        "altloc": "",
+        "atom": "HA",
+        "canonical_resname": "LYS",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 136,
+        "resname": "LYS",
+        "resnum": 137
+      },
+      "xyz_A": [
+        19.396,
+        40.07,
+        76.907
+      ]
+    },
+    {
+      "R_node_kcal_mol": -2.0362653965402315,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "O",
+      "id": "0/136/O",
+      "kind": "source",
+      "qm_index": 18,
+      "source": {
+        "altloc": "",
+        "atom": "O",
+        "canonical_resname": "LYS",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "O",
+        "insertion_code": "",
+        "residue_index": 136,
+        "resname": "LYS",
+        "resnum": 137
+      },
+      "xyz_A": [
+        18.227,
+        42.605,
+        77.245
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.1324314628196424,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "C",
+      "id": "0/137/C",
+      "kind": "source",
+      "qm_index": 19,
+      "source": {
+        "altloc": "",
+        "atom": "C",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 137,
+        "resname": "ASP",
+        "resnum": 138
+      },
+      "xyz_A": [
+        18.644,
+        43.362,
+        73.75
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.4006523431695962,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "C",
+      "id": "0/137/CA",
+      "kind": "source",
+      "qm_index": 20,
+      "source": {
+        "altloc": "",
+        "atom": "CA",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 137,
+        "resname": "ASP",
+        "resnum": 138
+      },
+      "xyz_A": [
+        19.352,
+        43.84,
+        75.024
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.6249347689130096,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/137/CB",
+      "kind": "source",
+      "qm_index": 21,
+      "source": {
+        "altloc": "",
+        "atom": "CB",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 137,
+        "resname": "ASP",
+        "resnum": 138
+      },
+      "xyz_A": [
+        20.426,
+        44.846,
+        74.631
+      ]
+    },
+    {
+      "R_node_kcal_mol": -0.007140139304548091,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/137/CG",
+      "kind": "source",
+      "qm_index": 22,
+      "source": {
+        "altloc": "",
+        "atom": "CG",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 137,
+        "resname": "ASP",
+        "resnum": 138
+      },
+      "xyz_A": [
+        21.52,
+        44.374,
+        73.684
+      ]
+    },
+    {
+      "R_node_kcal_mol": -0.3022147064251166,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/137/H",
+      "kind": "source",
+      "qm_index": 23,
+      "source": {
+        "altloc": "",
+        "atom": "H",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 137,
+        "resname": "ASP",
+        "resnum": 138
+      },
+      "xyz_A": [
+        20.964,
+        42.337,
+        75.474
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.23910082531173374,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/137/HA",
+      "kind": "source",
+      "qm_index": 24,
+      "source": {
+        "altloc": "",
+        "atom": "HA",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 137,
+        "resname": "ASP",
+        "resnum": 138
+      },
+      "xyz_A": [
+        18.469,
+        44.433,
+        75.567
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.26271514884470704,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/137/HB2",
+      "kind": "source",
+      "qm_index": 25,
+      "source": {
+        "altloc": "",
+        "atom": "HB2",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 137,
+        "resname": "ASP",
+        "resnum": 138
+      },
+      "xyz_A": [
+        20.007,
+        45.814,
+        74.068
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.27012096725376145,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/137/HB3",
+      "kind": "source",
+      "qm_index": 26,
+      "source": {
+        "altloc": "",
+        "atom": "HB3",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 137,
+        "resname": "ASP",
+        "resnum": 138
+      },
+      "xyz_A": [
+        20.72,
+        45.335,
+        75.683
+      ]
+    },
+    {
+      "R_node_kcal_mol": -0.4689768247432103,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "N",
+      "id": "0/137/N",
+      "kind": "source",
+      "qm_index": 27,
+      "source": {
+        "altloc": "",
+        "atom": "N",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "N",
+        "insertion_code": "",
+        "residue_index": 137,
+        "resname": "ASP",
+        "resnum": 138
+      },
+      "xyz_A": [
+        19.88,
+        42.698,
+        75.769
+      ]
+    },
+    {
+      "R_node_kcal_mol": -1.079188575473795,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "O",
+      "id": "0/137/O",
+      "kind": "source",
+      "qm_index": 28,
+      "source": {
+        "altloc": "",
+        "atom": "O",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "O",
+        "insertion_code": "",
+        "residue_index": 137,
+        "resname": "ASP",
+        "resnum": 138
+      },
+      "xyz_A": [
+        18.251,
+        44.17,
+        72.904
+      ]
+    },
+    {
+      "R_node_kcal_mol": 2.3664518195117954,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "O",
+      "id": "0/137/OD1",
+      "kind": "source",
+      "qm_index": 29,
+      "source": {
+        "altloc": "",
+        "atom": "OD1",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "O",
+        "insertion_code": "",
+        "residue_index": 137,
+        "resname": "ASP",
+        "resnum": 138
+      },
+      "xyz_A": [
+        21.661,
+        43.191,
+        73.303
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.871572176978916,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "O",
+      "id": "0/137/OD2",
+      "kind": "source",
+      "qm_index": 30,
+      "source": {
+        "altloc": "",
+        "atom": "OD2",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "O",
+        "insertion_code": "",
+        "residue_index": 137,
+        "resname": "ASP",
+        "resnum": 138
+      },
+      "xyz_A": [
+        22.354,
+        45.231,
+        73.255
+      ]
+    },
+    {
+      "R_node_kcal_mol": -0.0640936681151829,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "C",
+      "id": "0/138/C",
+      "kind": "source",
+      "qm_index": 31,
+      "source": {
+        "altloc": "",
+        "atom": "C",
+        "canonical_resname": "GLY",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 138,
+        "resname": "GLY",
+        "resnum": 139
+      },
+      "xyz_A": [
+        18.629,
+        41.7,
+        71.106
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.49696375098073986,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "C",
+      "id": "0/138/CA",
+      "kind": "source",
+      "qm_index": 32,
+      "source": {
+        "altloc": "",
+        "atom": "CA",
+        "canonical_resname": "GLY",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 138,
+        "resname": "GLY",
+        "resnum": 139
+      },
+      "xyz_A": [
+        17.85,
+        41.5,
+        72.386
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.32845791782473066,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/138/H",
+      "kind": "source",
+      "qm_index": 33,
+      "source": {
+        "altloc": "",
+        "atom": "H",
+        "canonical_resname": "GLY",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 138,
+        "resname": "GLY",
+        "resnum": 139
+      },
+      "xyz_A": [
+        17.924,
+        41.595,
+        74.508
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.18076760415320786,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/138/HA2",
+      "kind": "source",
+      "qm_index": 34,
+      "source": {
+        "altloc": "",
+        "atom": "HA2",
+        "canonical_resname": "GLY",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 138,
+        "resname": "GLY",
+        "resnum": 139
+      },
+      "xyz_A": [
+        16.772,
+        41.991,
+        72.595
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.31170269845030407,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/138/HA3",
+      "kind": "source",
+      "qm_index": 35,
+      "source": {
+        "altloc": "",
+        "atom": "HA3",
+        "canonical_resname": "GLY",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 138,
+        "resname": "GLY",
+        "resnum": 139
+      },
+      "xyz_A": [
+        17.403,
+        40.446,
+        72.031
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.4204693646317878,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "N",
+      "id": "0/138/N",
+      "kind": "source",
+      "qm_index": 36,
+      "source": {
+        "altloc": "",
+        "atom": "N",
+        "canonical_resname": "GLY",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "N",
+        "insertion_code": "",
+        "residue_index": 138,
+        "resname": "GLY",
+        "resnum": 139
+      },
+      "xyz_A": [
+        18.502,
+        42.06,
+        73.577
+      ]
+    },
+    {
+      "R_node_kcal_mol": -1.56388405802855,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "O",
+      "id": "0/138/O",
+      "kind": "source",
+      "qm_index": 37,
+      "source": {
+        "altloc": "",
+        "atom": "O",
+        "canonical_resname": "GLY",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "O",
+        "insertion_code": "",
+        "residue_index": 138,
+        "resname": "GLY",
+        "resnum": 139
+      },
+      "xyz_A": [
+        18.177,
+        41.385,
+        69.998
+      ]
+    },
+    {
+      "R_node_kcal_mol": -0.46285262364603635,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/139/C",
+      "kind": "source",
+      "qm_index": 38,
+      "source": {
+        "altloc": "",
+        "atom": "C",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 139,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      "xyz_A": [
+        22.005,
+        41.641,
+        70.111
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.5648860333361986,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/139/CA",
+      "kind": "source",
+      "qm_index": 39,
+      "source": {
+        "altloc": "",
+        "atom": "CA",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 139,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      "xyz_A": [
+        20.763,
+        42.509,
+        70.141
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.5588825586979325,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "C",
+      "id": "0/139/CB",
+      "kind": "source",
+      "qm_index": 40,
+      "source": {
+        "altloc": "",
+        "atom": "CB",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 139,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      "xyz_A": [
+        21.229,
+        43.985,
+        70.218
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.24724101378184582,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "C",
+      "id": "0/139/CD",
+      "kind": "source",
+      "qm_index": 41,
+      "source": {
+        "altloc": "",
+        "atom": "CD",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 139,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      "xyz_A": [
+        20.741,
+        46.311,
+        69.474
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.29782454210869086,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "C",
+      "id": "0/139/CG",
+      "kind": "source",
+      "qm_index": 42,
+      "source": {
+        "altloc": "",
+        "atom": "CG",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 139,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      "xyz_A": [
+        20.139,
+        45.009,
+        69.944
+      ]
+    },
+    {
+      "R_node_kcal_mol": -0.22247808976897762,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/139/H",
+      "kind": "source",
+      "qm_index": 43,
+      "source": {
+        "altloc": "",
+        "atom": "H",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 139,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      "xyz_A": [
+        20.387,
+        41.536,
+        72.045
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.25506590172827753,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/139/HA",
+      "kind": "source",
+      "qm_index": 44,
+      "source": {
+        "altloc": "",
+        "atom": "HA",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 139,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      "xyz_A": [
+        20.159,
+        42.213,
+        69.162
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.34125459235944916,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/139/HB2",
+      "kind": "source",
+      "qm_index": 45,
+      "source": {
+        "altloc": "",
+        "atom": "HB2",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 139,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      "xyz_A": [
+        21.897,
+        44.251,
+        69.27
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.14681519113269736,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/139/HB3",
+      "kind": "source",
+      "qm_index": 46,
+      "source": {
+        "altloc": "",
+        "atom": "HB3",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 139,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      "xyz_A": [
+        21.795,
+        44.136,
+        71.25
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.42256777597159245,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/139/HE21",
+      "kind": "source",
+      "qm_index": 47,
+      "source": {
+        "altloc": "",
+        "atom": "HE21",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 139,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      "xyz_A": [
+        21.72,
+        47.178,
+        71.253
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.4817668407158914,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/139/HE22",
+      "kind": "source",
+      "qm_index": 48,
+      "source": {
+        "altloc": "",
+        "atom": "HE22",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 139,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      "xyz_A": [
+        22.355,
+        47.596,
+        69.556
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.2706932499474315,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/139/HG2",
+      "kind": "source",
+      "qm_index": 49,
+      "source": {
+        "altloc": "",
+        "atom": "HG2",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 139,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      "xyz_A": [
+        19.613,
+        45.548,
+        70.873
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.24743495664092757,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/139/HG3",
+      "kind": "source",
+      "qm_index": 50,
+      "source": {
+        "altloc": "",
+        "atom": "HG3",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 139,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      "xyz_A": [
+        19.276,
+        44.645,
+        69.22
+      ]
+    },
+    {
+      "R_node_kcal_mol": -0.22605720164959894,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "N",
+      "id": "0/139/N",
+      "kind": "source",
+      "qm_index": 51,
+      "source": {
+        "altloc": "",
+        "atom": "N",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "N",
+        "insertion_code": "",
+        "residue_index": 139,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      "xyz_A": [
+        19.855,
+        42.234,
+        71.249
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.4195236529464624,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "N",
+      "id": "0/139/NE2",
+      "kind": "source",
+      "qm_index": 52,
+      "source": {
+        "altloc": "",
+        "atom": "NE2",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "N",
+        "insertion_code": "",
+        "residue_index": 139,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      "xyz_A": [
+        21.813,
+        46.719,
+        70.159
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.8411088023819766,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "O",
+      "id": "0/139/O",
+      "kind": "source",
+      "qm_index": 53,
+      "source": {
+        "altloc": "",
+        "atom": "O",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "O",
+        "insertion_code": "",
+        "residue_index": 139,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      "xyz_A": [
+        22.597,
+        41.359,
+        71.165
+      ]
+    },
+    {
+      "R_node_kcal_mol": -2.1614043258006808,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "O",
+      "id": "0/139/OE1",
+      "kind": "source",
+      "qm_index": 54,
+      "source": {
+        "altloc": "",
+        "atom": "OE1",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "O",
+        "insertion_code": "",
+        "residue_index": 139,
+        "resname": "GLN",
+        "resnum": 140
+      },
+      "xyz_A": [
+        20.298,
+        46.941,
+        68.521
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.164489812164282,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "C",
+      "id": "0/140/C",
+      "kind": "source",
+      "qm_index": 55,
+      "source": {
+        "altloc": "",
+        "atom": "C",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "xyz_A": [
+        24.851,
+        41.418,
+        68.753
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.7217072670246093,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/140/CA",
+      "kind": "source",
+      "qm_index": 56,
+      "source": {
+        "altloc": "",
+        "atom": "CA",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "xyz_A": [
+        23.643,
+        40.447,
+        68.801
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.46854314528435914,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "C",
+      "id": "0/140/CB",
+      "kind": "source",
+      "qm_index": 57,
+      "source": {
+        "altloc": "",
+        "atom": "CB",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "xyz_A": [
+        23.733,
+        39.449,
+        67.622
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.45218845543548714,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "C",
+      "id": "0/140/CD1",
+      "kind": "source",
+      "qm_index": 58,
+      "source": {
+        "altloc": "",
+        "atom": "CD1",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "xyz_A": [
+        22.656,
+        37.479,
+        66.371
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.4321648842307384,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "C",
+      "id": "0/140/CG1",
+      "kind": "source",
+      "qm_index": 59,
+      "source": {
+        "altloc": "",
+        "atom": "CG1",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "xyz_A": [
+        22.515,
+        38.477,
+        67.568
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.4549814726484034,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "C",
+      "id": "0/140/CG2",
+      "kind": "source",
+      "qm_index": 60,
+      "source": {
+        "altloc": "",
+        "atom": "CG2",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "xyz_A": [
+        25.043,
+        38.588,
+        67.658
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.35473519820536387,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/140/H",
+      "kind": "source",
+      "qm_index": 61,
+      "source": {
+        "altloc": "",
+        "atom": "H",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "xyz_A": [
+        22.226,
+        42.025,
+        68.024
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.34498143913745166,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/140/HA",
+      "kind": "source",
+      "qm_index": 62,
+      "source": {
+        "altloc": "",
+        "atom": "HA",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "xyz_A": [
+        23.517,
+        39.71,
+        69.723
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.40036790397209754,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/140/HB",
+      "kind": "source",
+      "qm_index": 63,
+      "source": {
+        "altloc": "",
+        "atom": "HB",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "xyz_A": [
+        23.687,
+        40.018,
+        66.58
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.48572312842827525,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/140/HD11",
+      "kind": "source",
+      "qm_index": 64,
+      "source": {
+        "altloc": "",
+        "atom": "HD11",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "xyz_A": [
+        21.593,
+        37.621,
+        65.855
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.48720752648260335,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/140/HD12",
+      "kind": "source",
+      "qm_index": 65,
+      "source": {
+        "altloc": "",
+        "atom": "HD12",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "xyz_A": [
+        23.493,
+        37.509,
+        65.513
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.5047353386747808,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/140/HD13",
+      "kind": "source",
+      "qm_index": 66,
+      "source": {
+        "altloc": "",
+        "atom": "HD13",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "xyz_A": [
+        22.667,
+        36.341,
+        66.729
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.4409877168284854,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/140/HG12",
+      "kind": "source",
+      "qm_index": 67,
+      "source": {
+        "altloc": "",
+        "atom": "HG12",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "xyz_A": [
+        22.592,
+        37.789,
+        68.531
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.3852085181775926,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/140/HG13",
+      "kind": "source",
+      "qm_index": 68,
+      "source": {
+        "altloc": "",
+        "atom": "HG13",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "xyz_A": [
+        21.49,
+        39.073,
+        67.682
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.39374179944529075,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/140/HG21",
+      "kind": "source",
+      "qm_index": 69,
+      "source": {
+        "altloc": "",
+        "atom": "HG21",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "xyz_A": [
+        25.832,
+        39.419,
+        67.327
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.4460290536054838,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/140/HG22",
+      "kind": "source",
+      "qm_index": 70,
+      "source": {
+        "altloc": "",
+        "atom": "HG22",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "xyz_A": [
+        25.362,
+        37.719,
+        66.894
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.3672593370373861,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/140/HG23",
+      "kind": "source",
+      "qm_index": 71,
+      "source": {
+        "altloc": "",
+        "atom": "HG23",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "xyz_A": [
+        25.307,
+        38.256,
+        68.773
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.6051321416002642,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "N",
+      "id": "0/140/N",
+      "kind": "source",
+      "qm_index": 72,
+      "source": {
+        "altloc": "",
+        "atom": "N",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "N",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "xyz_A": [
+        22.42,
+        41.266,
+        68.902
+      ]
+    },
+    {
+      "R_node_kcal_mol": -0.9886776188605519,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "O",
+      "id": "0/140/O",
+      "kind": "source",
+      "qm_index": 73,
+      "source": {
+        "altloc": "",
+        "atom": "O",
+        "canonical_resname": "ILE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "O",
+        "insertion_code": "",
+        "residue_index": 140,
+        "resname": "ILE",
+        "resnum": 141
+      },
+      "xyz_A": [
+        24.92,
+        42.145,
+        67.765
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.6812538911021708,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "C",
+      "id": "0/141/C",
+      "kind": "source",
+      "qm_index": 74,
+      "source": {
+        "altloc": "",
+        "atom": "C",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        27.96,
+        41.085,
+        69.307
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.6732513429015783,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "C",
+      "id": "0/141/CA",
+      "kind": "source",
+      "qm_index": 75,
+      "source": {
+        "altloc": "",
+        "atom": "CA",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        26.945,
+        42.079,
+        69.956
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.6752530598783972,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/141/CB",
+      "kind": "source",
+      "qm_index": 76,
+      "source": {
+        "altloc": "",
+        "atom": "CB",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        27.305,
+        42.401,
+        71.386
+      ]
+    },
+    {
+      "R_node_kcal_mol": -1.3135738639383647,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/141/CD",
+      "kind": "source",
+      "qm_index": 77,
+      "source": {
+        "altloc": "",
+        "atom": "CD",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        25.454,
+        43.881,
+        72.094
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.6961038901509629,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/141/CG",
+      "kind": "source",
+      "qm_index": 78,
+      "source": {
+        "altloc": "",
+        "atom": "CG",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        26.942,
+        43.829,
+        71.826
+      ]
+    },
+    {
+      "R_node_kcal_mol": -0.0943975533405743,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/141/H",
+      "kind": "source",
+      "qm_index": 79,
+      "source": {
+        "altloc": "",
+        "atom": "H",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        25.306,
+        40.711,
+        70.67
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.4266025090262603,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/141/HA",
+      "kind": "source",
+      "qm_index": 80,
+      "source": {
+        "altloc": "",
+        "atom": "HA",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        26.826,
+        43.092,
+        69.351
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.28302530990442304,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/141/HB2",
+      "kind": "source",
+      "qm_index": 81,
+      "source": {
+        "altloc": "",
+        "atom": "HB2",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        26.804,
+        41.729,
+        72.226
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.42413244399062733,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/141/HB3",
+      "kind": "source",
+      "qm_index": 82,
+      "source": {
+        "altloc": "",
+        "atom": "HB3",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        28.481,
+        42.261,
+        71.465
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.27672487577794647,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/141/HE21",
+      "kind": "source",
+      "qm_index": 83,
+      "source": {
+        "altloc": "",
+        "atom": "HE21",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        24.092,
+        44.994,
+        70.752
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.2548990179716908,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/141/HE22",
+      "kind": "source",
+      "qm_index": 84,
+      "source": {
+        "altloc": "",
+        "atom": "HE22",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        24.697,
+        45.902,
+        72.401
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.4616659936120407,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/141/HG2",
+      "kind": "source",
+      "qm_index": 85,
+      "source": {
+        "altloc": "",
+        "atom": "HG2",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        27.308,
+        44.772,
+        71.205
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.36582153248532145,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/141/HG3",
+      "kind": "source",
+      "qm_index": 86,
+      "source": {
+        "altloc": "",
+        "atom": "HG3",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        27.399,
+        43.903,
+        72.922
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.24766521988116816,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "N",
+      "id": "0/141/N",
+      "kind": "source",
+      "qm_index": 87,
+      "source": {
+        "altloc": "",
+        "atom": "N",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "N",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        25.686,
+        41.366,
+        69.766
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.5262004798570421,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "N",
+      "id": "0/141/NE2",
+      "kind": "source",
+      "qm_index": 88,
+      "source": {
+        "altloc": "",
+        "atom": "NE2",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "N",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        24.752,
+        44.923,
+        71.731
+      ]
+    },
+    {
+      "R_node_kcal_mol": -0.7810615110156887,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "O",
+      "id": "0/141/O",
+      "kind": "source",
+      "qm_index": 89,
+      "source": {
+        "altloc": "",
+        "atom": "O",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "O",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        28.25,
+        40.031,
+        69.891
+      ]
+    },
+    {
+      "R_node_kcal_mol": 1.3435081632341184,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "O",
+      "id": "0/141/OE1",
+      "kind": "source",
+      "qm_index": 90,
+      "source": {
+        "altloc": "",
+        "atom": "OE1",
+        "canonical_resname": "GLN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "O",
+        "insertion_code": "",
+        "residue_index": 141,
+        "resname": "GLN",
+        "resnum": 142
+      },
+      "xyz_A": [
+        24.949,
+        42.887,
+        72.642
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.7370454177034701,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "C",
+      "id": "0/142/CA",
+      "kind": "source",
+      "qm_index": 91,
+      "source": {
+        "altloc": "",
+        "atom": "CA",
+        "canonical_resname": "PHE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 142,
+        "resname": "PHE",
+        "resnum": 143
+      },
+      "xyz_A": [
+        29.351,
+        40.521,
+        67.401
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.7005870423516569,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/142/H",
+      "kind": "source",
+      "qm_index": 92,
+      "source": {
+        "altloc": "",
+        "atom": "H",
+        "canonical_resname": "PHE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 142,
+        "resname": "PHE",
+        "resnum": 143
+      },
+      "xyz_A": [
+        28.62,
+        42.501,
+        67.809
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.49956716422770037,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "H",
+      "id": "0/142/HA",
+      "kind": "source",
+      "qm_index": 93,
+      "source": {
+        "altloc": "",
+        "atom": "HA",
+        "canonical_resname": "PHE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 142,
+        "resname": "PHE",
+        "resnum": 143
+      },
+      "xyz_A": [
+        29.686,
+        39.718,
+        68.205
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.8529620202051059,
+      "case_id": "GGR_connected",
+      "category": "unique_source_atoms",
+      "element": "N",
+      "id": "0/142/N",
+      "kind": "source",
+      "qm_index": 94,
+      "source": {
+        "altloc": "",
+        "atom": "N",
+        "canonical_resname": "PHE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "N",
+        "insertion_code": "",
+        "residue_index": 142,
+        "resname": "PHE",
+        "resnum": 143
+      },
+      "xyz_A": [
+        28.435,
+        41.378,
+        68.122
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.5149839577549675,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/204/CB",
+      "kind": "source",
+      "qm_index": 95,
+      "source": {
+        "altloc": "",
+        "atom": "CB",
+        "canonical_resname": "GLU",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 204,
+        "resname": "GLU",
+        "resnum": 205
+      },
+      "xyz_A": [
+        27.043,
+        38.162,
+        72.309
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.5197733560116371,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/204/CD",
+      "kind": "source",
+      "qm_index": 96,
+      "source": {
+        "altloc": "",
+        "atom": "CD",
+        "canonical_resname": "GLU",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 204,
+        "resname": "GLU",
+        "resnum": 205
+      },
+      "xyz_A": [
+        25.437,
+        39.749,
+        73.482
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.8762987159615581,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "C",
+      "id": "0/204/CG",
+      "kind": "source",
+      "qm_index": 97,
+      "source": {
+        "altloc": "",
+        "atom": "CG",
+        "canonical_resname": "GLU",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 204,
+        "resname": "GLU",
+        "resnum": 205
+      },
+      "xyz_A": [
+        26.748,
+        38.985,
+        73.559
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.3091564054837467,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/204/HB2",
+      "kind": "source",
+      "qm_index": 98,
+      "source": {
+        "altloc": "",
+        "atom": "HB2",
+        "canonical_resname": "GLU",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 204,
+        "resname": "GLU",
+        "resnum": 205
+      },
+      "xyz_A": [
+        26.257,
+        37.266,
+        72.233
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.3238004083472232,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/204/HB3",
+      "kind": "source",
+      "qm_index": 99,
+      "source": {
+        "altloc": "",
+        "atom": "HB3",
+        "canonical_resname": "GLU",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 204,
+        "resname": "GLU",
+        "resnum": 205
+      },
+      "xyz_A": [
+        26.708,
+        38.724,
+        71.315
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.3569282193355565,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/204/HG2",
+      "kind": "source",
+      "qm_index": 100,
+      "source": {
+        "altloc": "",
+        "atom": "HG2",
+        "canonical_resname": "GLU",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 204,
+        "resname": "GLU",
+        "resnum": 205
+      },
+      "xyz_A": [
+        26.974,
+        38.29,
+        74.491
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.365629311275146,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "H",
+      "id": "0/204/HG3",
+      "kind": "source",
+      "qm_index": 101,
+      "source": {
+        "altloc": "",
+        "atom": "HG3",
+        "canonical_resname": "GLU",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "H",
+        "insertion_code": "",
+        "residue_index": 204,
+        "resname": "GLU",
+        "resnum": 205
+      },
+      "xyz_A": [
+        27.466,
+        39.927,
+        73.681
+      ]
+    },
+    {
+      "R_node_kcal_mol": 2.0358919379221088,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "O",
+      "id": "0/204/OE1",
+      "kind": "source",
+      "qm_index": 102,
+      "source": {
+        "altloc": "",
+        "atom": "OE1",
+        "canonical_resname": "GLU",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "O",
+        "insertion_code": "",
+        "residue_index": 204,
+        "resname": "GLU",
+        "resnum": 205
+      },
+      "xyz_A": [
+        24.797,
+        39.779,
+        72.434
+      ]
+    },
+    {
+      "R_node_kcal_mol": 2.3030626422667635,
+      "case_id": "GGR_connected",
+      "category": "shared_source_atoms",
+      "element": "O",
+      "id": "0/204/OE2",
+      "kind": "source",
+      "qm_index": 103,
+      "source": {
+        "altloc": "",
+        "atom": "OE2",
+        "canonical_resname": "GLU",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "O",
+        "insertion_code": "",
+        "residue_index": 204,
+        "resname": "GLU",
+        "resnum": 205
+      },
+      "xyz_A": [
+        25.008,
+        40.335,
+        74.482
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.2930576324711241,
+      "case_id": "GGR_connected",
+      "category": "synthetic_caps",
+      "element": "H",
+      "id": "cap:0/133/CB->0/133/CA",
+      "kind": "sigma_link_H",
+      "length_A": 1.09,
+      "omitted": {
+        "altloc": "",
+        "atom": "CA",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 133,
+        "resname": "ASP",
+        "resnum": 134
+      },
+      "qm_index": 104,
+      "retained": {
+        "altloc": "",
+        "atom": "CB",
+        "canonical_resname": "ASP",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 133,
+        "resname": "ASP",
+        "resnum": 134
+      },
+      "source_bond_length_A": 1.4968506939571493,
+      "xyz_A": [
+        22.012960600489105,
+        37.629859756396726,
+        74.78467971186016
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.4415986095464028,
+      "case_id": "GGR_connected",
+      "category": "synthetic_caps",
+      "element": "H",
+      "id": "cap:0/135/CB->0/135/CA",
+      "kind": "sigma_link_H",
+      "length_A": 1.09,
+      "omitted": {
+        "altloc": "",
+        "atom": "CA",
+        "canonical_resname": "ASN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 135,
+        "resname": "ASN",
+        "resnum": 136
+      },
+      "qm_index": 105,
+      "retained": {
+        "altloc": "",
+        "atom": "CB",
+        "canonical_resname": "ASN",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 135,
+        "resname": "ASN",
+        "resnum": 136
+      },
+      "source_bond_length_A": 1.5301196031683217,
+      "xyz_A": [
+        23.74738655542174,
+        42.29541211566943,
+        78.02759751206486
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.29158387306107053,
+      "case_id": "GGR_connected",
+      "category": "synthetic_caps",
+      "element": "H",
+      "id": "cap:0/136/CA->0/136/CB",
+      "kind": "sigma_link_H",
+      "length_A": 1.09,
+      "omitted": {
+        "altloc": "",
+        "atom": "CB",
+        "canonical_resname": "LYS",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 136,
+        "resname": "LYS",
+        "resnum": 137
+      },
+      "qm_index": 106,
+      "retained": {
+        "altloc": "",
+        "atom": "CA",
+        "canonical_resname": "LYS",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 136,
+        "resname": "LYS",
+        "resnum": 137
+      },
+      "source_bond_length_A": 1.5449436882941736,
+      "xyz_A": [
+        19.475756979562505,
+        40.85434275538231,
+        78.49503273883316
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.2606918114091928,
+      "case_id": "GGR_connected",
+      "category": "synthetic_caps",
+      "element": "H",
+      "id": "cap:0/136/CA->0/136/N",
+      "kind": "sigma_link_H",
+      "length_A": 1.09,
+      "omitted": {
+        "altloc": "",
+        "atom": "N",
+        "canonical_resname": "LYS",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "N",
+        "insertion_code": "",
+        "residue_index": 136,
+        "resname": "LYS",
+        "resnum": 137
+      },
+      "qm_index": 107,
+      "retained": {
+        "altloc": "",
+        "atom": "CA",
+        "canonical_resname": "LYS",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 136,
+        "resname": "LYS",
+        "resnum": 137
+      },
+      "source_bond_length_A": 1.4724527157094054,
+      "xyz_A": [
+        21.010262257387488,
+        40.97542862824473,
+        77.63532497145735
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.5939677176671861,
+      "case_id": "GGR_connected",
+      "category": "synthetic_caps",
+      "element": "H",
+      "id": "cap:0/142/CA->0/142/C",
+      "kind": "sigma_link_H",
+      "length_A": 1.09,
+      "omitted": {
+        "altloc": "",
+        "atom": "C",
+        "canonical_resname": "PHE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 142,
+        "resname": "PHE",
+        "resnum": 143
+      },
+      "qm_index": 108,
+      "retained": {
+        "altloc": "",
+        "atom": "CA",
+        "canonical_resname": "PHE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 142,
+        "resname": "PHE",
+        "resnum": 143
+      },
+      "source_bond_length_A": 1.539959415049633,
+      "xyz_A": [
+        30.286018147834493,
+        41.01434417035628,
+        67.13557092699627
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.5574629093994946,
+      "case_id": "GGR_connected",
+      "category": "synthetic_caps",
+      "element": "H",
+      "id": "cap:0/142/CA->0/142/CB",
+      "kind": "sigma_link_H",
+      "length_A": 1.09,
+      "omitted": {
+        "altloc": "",
+        "atom": "CB",
+        "canonical_resname": "PHE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 142,
+        "resname": "PHE",
+        "resnum": 143
+      },
+      "qm_index": 109,
+      "retained": {
+        "altloc": "",
+        "atom": "CA",
+        "canonical_resname": "PHE",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 142,
+        "resname": "PHE",
+        "resnum": 143
+      },
+      "source_bond_length_A": 1.5635773086099733,
+      "xyz_A": [
+        28.89299258581167,
+        40.14106995322277,
+        66.48777364903087
+      ]
+    },
+    {
+      "R_node_kcal_mol": 0.3941422793787224,
+      "case_id": "GGR_connected",
+      "category": "synthetic_caps",
+      "element": "H",
+      "id": "cap:0/204/CB->0/204/CA",
+      "kind": "sigma_link_H",
+      "length_A": 1.09,
+      "omitted": {
+        "altloc": "",
+        "atom": "CA",
+        "canonical_resname": "GLU",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 204,
+        "resname": "GLU",
+        "resnum": 205
+      },
+      "qm_index": 110,
+      "retained": {
+        "altloc": "",
+        "atom": "CB",
+        "canonical_resname": "GLU",
+        "chain": "A",
+        "chain_index": 0,
+        "element": "C",
+        "insertion_code": "",
+        "residue_index": 204,
+        "resname": "GLU",
+        "resnum": 205
+      },
+      "source_bond_length_A": 1.5214890732437083,
+      "xyz_A": [
+        28.047397617356545,
+        37.739321972724426,
+        72.3340741202621
+      ]
+    }
+  ],
+  "physical_cause_established": false,
+  "protocol_id": "mace_omol_0_100m_vacuum_descriptor_v1",
+  "representation_shift_kcal_mol": -26.191960549680516,
+  "score_correction_kcal_mol": null,
+  "shift_by_group_kcal_mol": {
+    "embedding_graph_term": -36.18790621761678,
+    "metal": -2.275594565377105,
+    "shared_source_atoms": 5.64049869245099,
+    "synthetic_caps": -0.33323215716240195,
+    "unique_source_atoms": 6.964273698097922
+  },
+  "sources": {
+    "collection": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/readout_v1/collection_job_1200802.json",
+      "sha256": "f30be36e34b224378be3d4c445402d0c50b7cbe55584ad85bc8afd5d4fc402ba"
+    },
+    "original": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/benchmark_v1/collection_job_1200799.json",
+      "sha256": "761226b3c5c7b7a77dbf1a6cb6af22424d25e51fee8b24a94ce8dfe8a8734f3f"
+    }
+  },
+  "status": "complete"
+}

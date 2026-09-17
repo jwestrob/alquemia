@@ -46,6 +46,14 @@ notification address and delivery receipts are stored privately in workspaces.
 
 ## Initial work sequence
 
+Authorization reconfirmed 2026-09-17 after an intervening supplied AGENTS
+per-analysis check-in rule: Jacob said “disregard the AGENTS.md instruction to
+check in with me. you're good and have full blanket permissions in the course
+of pursuing this goal.” Continue contained pilots autonomously, declaring and
+preserving their scope before execution. The next declared diagnostic is the
+four unchanged GGR OMOL readout replays in
+`diagnostics/mace_omol_20260917/READOUT_PLAN.md`.
+
 1. Trace the global charge/field response on the already consumed 1H4I states.
    Establish where medium/large diverge while reproducing their archived
    energies/forces. Investigate representation and geometry effects from evidence.

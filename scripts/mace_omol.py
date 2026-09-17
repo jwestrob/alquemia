@@ -61,7 +61,8 @@ def common(source_inventory, software, agreement, output, stage):
     data = inventory(source_inventory); out = Path(output).resolve(); out.mkdir(parents=True, exist_ok=False)
     # Reuse the canonical package's audited dependency closure, plus this worker.
     names = ('mace_omol.py', 'mace_canonical_run.py', 'mace_canonical.py', 'mace_curvature.py',
-             'affordable_response.py', 'mace_mechanics_run.py', 'mace_short_engine.py')
+             'affordable_response.py', 'mace_mechanics_run.py', 'mace_short_engine.py',
+             'mace_omol_readout.py', 'mace_omol_coordination.py')
     pins = snapshot(out, names)
     m = {'schema_version': SCHEMA, 'protocol_id': PROTOCOL, 'stage': stage,
          'inventory': record(source_inventory), 'software': record(software), 'agreement': record(agreement),
@@ -138,6 +139,9 @@ def prepare_benchmark(qualification, mechanics, agreement, output):
 
 def validate(manifest):
     m = read_json(manifest)
+    if m.get('stage','').startswith('coordination_'):
+        from mace_omol_coordination import validate as validate_coordination
+        return validate_coordination(manifest)
     if m['schema_version'] != SCHEMA or m['protocol_id'] != PROTOCOL or m['tolerances'] != TOL:
         raise InvalidArtifact('OMOL protocol/acceptance changed')
     software = verify(m['software']); s = read_json(software)
@@ -159,6 +163,13 @@ def validate(manifest):
         expected = [t for t in benchmark_tasks(data, verify(m['mechanics'])) if t['task_id'] not in reused]
         if len(m['tasks']) != 60 or len(reused) != 4:
             raise InvalidArtifact('finite60-task benchmark inventory changed')
+    elif m['stage']=='readout':
+        from mace_omol_readout import source, tasks
+        _, parent = source(verify(m['source_collection']))
+        expected = tasks(parent)
+        if (m['reused'] or m['model'] != parent['model'] or m['software'] != parent['software']
+                or m['inventory'] != parent['inventory']):
+            raise InvalidArtifact('readout replay changed the source method or inventory')
     else:
         raise InvalidArtifact('unsupported OMOL stage')
     if len(expected) != len(m['tasks']):
@@ -191,7 +202,9 @@ def input_batch(calc, atoms, charge, multiplicity):
         spec = calc.models[0].embedding_specs[name]; index = value+spec.get('offset', 0)
         if spec['type'] != 'categorical' or value != int(value) or not 0 <= index < spec['num_classes']:
             raise InvalidArtifact('state outside checkpoint categorical embedding')
+    edges=batch['edge_index']
     return {'charge':q, 'spin_multiplicity':spin, 'head':calc.head,
+            'metal_neighbor_edge_count':int(((edges[0]==0)|(edges[1]==0)).sum().item()),
             'atoms':len(atoms), 'graph_count':int(batch['ptr'].numel()-1), 'charge_prediction_claimed':False}
 
 
@@ -222,7 +235,13 @@ def worker(manifest, task_id, output, memory_mode):
         result['input_state_check'] = input_batch(calc, atoms, t['charge'], t['spin_multiplicity'])
         if result['input_state_check']['graph_count'] != 1:
             raise InvalidArtifact('unexpected graph batching')
+        if t.get('require_isolated_metal') and result['input_state_check']['metal_neighbor_edge_count'] != 0:
+            raise InvalidArtifact('detached metal still has graph neighbor edges')
         versions = {name:p._version for name,p in model_obj.named_parameters()}
+        capture = None
+        if t.get('capture_native_readout'):
+            from mace_omol_readout import NativeCapture
+            capture = NativeCapture(model_obj)
         result['model_load_seconds'] = time.monotonic()-start
         torch.cuda.synchronize(); evaluation = time.monotonic()
         value = float(atoms.get_potential_energy()); forces = np.asarray(atoms.get_forces(), dtype=np.float64)
@@ -235,6 +254,8 @@ def worker(manifest, task_id, output, memory_mode):
         fp = out/'forces_eV_A.npy'; np.save(fp, forces)
         result.update(status='computed', energy_eV=value, forces=record(fp), charge_check=None,
                       force_definition='negative_Cartesian_gradient_of_total_vacuum_OMOL_energy')
+        if capture is not None:
+            result['native_readout'] = capture.save(calc, value, out)
     except Exception as exc:
         result.update(status='failed', reason=str(exc), exception_type=type(exc).__name__); traceback.print_exc()
     finally:
@@ -251,6 +272,11 @@ def worker(manifest, task_id, output, memory_mode):
 
 def accepted_state(result, task):
     state = result.get('input_state_check', {})
+    if task.get('require_isolated_metal') and state.get('metal_neighbor_edge_count') != 0:
+        return False
+    if task.get('capture_native_readout'):
+        from mace_omol_readout import checked_arrays
+        checked_arrays(result, task)
     return (result.get('energy_component')==COMPONENT and result.get('density_coefficients') is None
             and result.get('parameter_versions_unchanged') is True and state.get('charge')==task['charge']
             and state.get('spin_multiplicity')==task['spin_multiplicity'] and state.get('head')=='omol'
@@ -259,6 +285,9 @@ def accepted_state(result, task):
 
 
 def collect(manifest):
+    if read_json(manifest).get('stage','').startswith('coordination_'):
+        from mace_omol_coordination import collect as collect_coordination
+        return collect_coordination(manifest)
     mp = Path(manifest).resolve(); m = read_json(mp); rows = {}; attempts = []
     for t in m['tasks']:
         found = []
@@ -303,5 +332,9 @@ if __name__=='__main__':
     for k in ('source-inventory','software','agreement','output'):a.add_argument('--'+k,required=True)
     a = sub.add_parser('prepare-benchmark')
     for k in ('qualification','mechanics','agreement','output'):a.add_argument('--'+k,required=True)
+    a = sub.add_parser('prepare-readout')
+    for k in ('collection','agreement','output'):a.add_argument('--'+k,required=True)
     args = vars(p.parse_args()); command = args.pop('command')
-    print(json.dumps({'prepare-qualification':prepare_qualification, 'prepare-benchmark':prepare_benchmark}[command](**args),indent=2))
+    from mace_omol_readout import prepare as prepare_readout
+    print(json.dumps({'prepare-qualification':prepare_qualification, 'prepare-benchmark':prepare_benchmark,
+                      'prepare-readout':prepare_readout}[command](**args),indent=2))

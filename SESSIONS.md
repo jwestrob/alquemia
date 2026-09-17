@@ -1932,3 +1932,30 @@ source/primary-parameter inventory, isolated CPU build if needed and <=3real
 format exports, no energies. No Tinker build/run begun. Recover that plan first.
 Unrelated PLM1200794/95/96 and pendingH2001200809 untouched; inspect live queue.
 AGENTS autonomy changes verified already durable; no additional permission gate.
+
+### 2026-09-17 — Codex: native Tinker adapter and primary parameter capability
+
+Built isolated pinned Tinker26.2 CPU (87050685eff8840d312e2a332cc82c33f63c7c3d)
+and executed three real parameter-only protein/water initializations. Zero
+energy/force/DFT/MACE/GPU calls. Coordinates, bonds, charges and axes preserved;
+native POLARIZABLE keyword reenabled all57/51/54 intended frozen sources.
+Our post-mechanic adapter restores flags with damping/polarity unchanged.
+Induced SCF behavior is explicitly not yet tested. Four tests pass in2.501s.
+New scripts mace_tinker_capability.py/mace_tinker_probe.f90 and matching tests.
+
+Build1201010 failed on upstream CMake's omitted existing uatom.f; include-based
+technical fix leaves scientific source pristine;1201011 completes. Total2560
+allocated core-s,285.312actual CPU-s. Export4.314806wall/4.063931CPU-s; native
+reads3.220401wall/2.049645CPU-s. All pinned code/parameters/receipts/native logs
+under workspaces/mace_omol_20260917/tinker_{sources,software,capability}_v1.
+Manifestf992467d4cb9ab69b24112df268fe93b38a82123a80238f5b722305c7e4aedaf.
+
+Tinker-GPU source has POLPAIR but no GK dispatcher and doesn't copy douind.
+No GPU build. Primary La TXT/PDF supplements retrieved with exact parameters;
+SI09 amide differs from paperTable1; SI reports~49kcal monodentate-acetate error.
+Reports/commands/result TINKER_CAPABILITY_*; vault/current updated. Goal active.
+NEXT TINKER_FRAMEWORK_SOLVER_PLAN.md declares12CPU framework-only numerical
+checks of actual freezing/convergence/rigid invariance and cost. Not prepared
+or submitted; no biological score from ion-excluded controls. Complete model
+still needs boundary/field/accounting qualification. Baseline/default and
+unrelated PLM/H200 jobs unchanged. Continue autonomously from the current note.

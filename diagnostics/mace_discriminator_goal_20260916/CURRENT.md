@@ -6,6 +6,56 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
+## Latest: native Tinker backend built; three parameter round-trips complete
+
+Current goal turn made progress: pinned CPU/GPU source, retrieved both primary
+La supplements, built CPU library/parameter adapter and executed3real native
+framework initializations. NO scientific energy/force/DFT/MACE/GPU calls yet.
+Commit for preceding AMOEBA milestone is d76b93e; this section supersedes it.
+
+CPU Tinker26.2 commit87050685eff8840d312e2a332cc82c33f63c7c3d; source pristine.
+Build1201010 failed because upstream CMake omitted existing uatom.f; one
+deferred target_sources include repairs build integration, not scientific
+source. Recovery1201011 completes, same64CPU node. Total2560allocated core-s,
+285.312actualCPU-s,zeroGPU. Isolated workspace tinker_software_v1 has manifest_v2,
+driver, compat include, failed/successful receipts and executable SHA
+aee994b1b15e5bf5d093d80c3106f6b767d72d68f46115caafdf46700356c738.
+
+New scripts mace_tinker_capability.py, mace_tinker_probe.f90 and4passing tests
+(2.501s). Exactly3framework exports/native parses: GGR4697/alpha1931/1897 atoms;
+coords,bonds,charges,axes exact; local multipole difference max1.071e-10 MD units,
+polarizability/damping roundoff2.22e-16. Explicit metal remains unparameterized.
+Source masks57/51/54 from existing projection support. Native POLARIZABLE is
+actually overwritten later in kpolar: all57/51/54 became allowed again. Adapter
+restores douind after mechanic and preserves damping/polarity. Subsequent SCF
+mask behavior is NOT YET tested. No claim of a working complete hybrid.
+
+Workspace tinker_capability_v1 manifest SHA
+f992467d4cb9ab69b24112df268fe93b38a82123a80238f5b722305c7e4aedaf.
+Native logs/results and mappings all saved. Export4.314806wall/4.063931CPU-s;
+native parses3.220401wall/2.049645CPU-s. Reports TINKER_CAPABILITY_{REPORT,RESULT,
+COMMANDS}; source/parameter acquisition pinned under tinker_sources_v1.
+Supplement s001 TXT SHAeaa7da82c749c482d2c0b5110aa3cf1f1098e59600b016ed8e155471a32e06cd;
+s002 PDF SHA5f112c7aa4976e1c365d77711678b762ab672c368e2cf6e6b0b6ae8e118f2100.
+Actual La09 SI amide parameters differ from paperTable1; keep distinct. SI
+TableS3 reports~49kcal monodentate-acetate error, so no universal accuracyclaim.
+
+GPU now tinker-gpu commit44bcd7c898e68f6827c112df79b8361e443730d2, pins separate
+Fortran33dcaf084a3e85730559d4e3a3188d9dd87a0f10. Inspected dispatch has no GK
+calculation; SOLV enum/comments are not support. GPU copies polarity/pdamp but
+not douind. No GPU build. CPU coupled GK is the next affordable candidate.
+
+NEXT TINKER_FRAMEWORK_SOLVER_PLAN.md declared BEFORE energies:12framework-only
+CPU energy evaluations (3structures×all-polarizable/frozen/frozen-tight/rigid
+frozen-tight), native electrostatics+GK, exact same atoms/charges. No La/Ca
+score from ion-excluded framework controls. Verify frozen induced dipoles,
+convergence,0.01kcal numerical/rigid gates and cost before full-source hybrid.
+Need implement native energy frontend/runner using existing pinned library,
+record all actual radii/flags; source current energy/prmkey/induce examined.
+induce0c already zeroes all vacuum/solvent dipoles at each solve, and uses
+douind throughout. Pin solver settings before output. No solver tasks prepared
+or submitted yet. Active goal continues; baseline and all unrelated jobs intact.
+
 ## Latest: AMOEBA framework preparations pass; source-damping backend gap isolated
 
 Completed `AMOEBA_CAPABILITY_PLAN.md` with exactly three real preparations:

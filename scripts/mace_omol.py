@@ -67,7 +67,8 @@ def common(source_inventory, software, agreement, output, stage):
              'mace_omol_products.py', 'mace_omol_panel.py', 'mace_omol_panel_prepare.py',
              'mace_omol_intact_inventory.py', 'mace_omol_backbone_audit.py',
              'mace_omol_locality.py', 'mace_omol_spectator.py', 'mace_omol_ablation.py',
-             'mace_omol_ablation_run.py', 'mace_omol_ablation_panel.py', 'mace_omol_panel_report.py')
+             'mace_omol_ablation_run.py', 'mace_omol_ablation_panel.py', 'mace_omol_panel_report.py',
+             'mace_omol_prepared.py')
     pins = snapshot(out, names)
     m = {'schema_version': SCHEMA, 'protocol_id': PROTOCOL, 'stage': stage,
          'inventory': record(source_inventory), 'software': record(software), 'agreement': record(agreement),
@@ -144,6 +145,9 @@ def prepare_benchmark(qualification, mechanics, agreement, output):
 
 def validate(manifest):
     m = read_json(manifest)
+    if m.get('stage')=='ablation_prepared':
+        from mace_omol_prepared import validate as validate_prepared
+        return validate_prepared(manifest)
     if m.get('stage')=='ablation_canonical':
         from mace_omol_ablation_panel import validate as validate_ablation_panel
         return validate_ablation_panel(manifest)
@@ -424,6 +428,9 @@ def accepted_state(result, task):
 
 
 def collect(manifest):
+    if read_json(manifest).get('stage')=='ablation_prepared':
+        from mace_omol_prepared import collect as collect_prepared
+        return collect_prepared(manifest)
     if read_json(manifest).get('stage')=='ablation_canonical':
         from mace_omol_ablation_panel import collect as collect_ablation_panel
         return collect_ablation_panel(manifest)

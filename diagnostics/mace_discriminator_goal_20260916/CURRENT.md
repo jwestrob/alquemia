@@ -30,7 +30,8 @@ Eight real-fixture/actual-forward guard tests pass57.308s.
 
 ## Live execution: conditional canonical test
 
-**Job1200830 submitted** after all development gates passed; inspect live state.
+**Job1200830 running** after all development gates passed; inspect live state.
+Recent check36/100completed, no failures; do not infer final calibration yet.
 100 new forwards for all25canonical calibration proteins,8exact modified
 crystal reuses, all28evidence rows retained. 1KB0 remains unsupported.
 OneA5000/16CPUs/64474MiB, existing runner, no project compute/time budget.
@@ -108,3 +109,32 @@ Email accepted by local mailer20260917T134908Z_charge_ablation_pass; vault note
 updated with actual results and current job. Prior own commits19cede4,ed2e65c,
 2fcf2f3. Conditional canonical support/report changes are scoped separately.
 Many other repository edits are concurrent/historical; never blanket-stage.
+
+
+## Prepared-input interface now works
+
+New scripts/mace_omol_prepared.py audits source-backed whole-chain preparations,
+creates four descriptor tasks or explicit actual reuses, and reports raw values.
+Exact protein/cofactor/water replay and peptide connectivity required. Single
+metal-bearing chainA only; recorded source omissions remain visible. No new
+protonation/model/inference was used to validate this interface.
+
+IMPORTANT driver is the existing OpenMM environment:
+/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python.
+Its executable/versions are pinned. The existing executor launches actual MACE
+workers in the separate software-recorded MACE venv. Do not install OpenMM into
+that working venv; a failed first audit/import is preserved and recovered with
+the correct existing driver.
+
+Under workspaces/mace_omol_20260917/: prepared_interface_pqq_v1 has zero new
+tasks and four actual reuses; prepared_interface_pqq_report_v1 returns the exact
+17.579955566129197 descriptor with classification unavailable. Four real tests
+pass28.325s, including actual1KB0 rejection and corrupted-coordinate rejection.
+prepared_interface_ggr_fresh_v1 contains four unexecuted tasks; frozen dry-run
+passes. DO NOT submit duplicate GGR calculations; this is only an interface
+example. See [commands](../mace_omol_20260917/PREPARED_INPUT_COMMANDS.md).
+
+Current interface deliberately has no classification/reference backend until
+the running canonical test supplies a compatible passing calibration. Finishing
+that conditional integration and evaluating broader evidence remain ahead.
+Latest completed own commit287d3d0; this interface work is scoped separately.

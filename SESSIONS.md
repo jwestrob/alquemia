@@ -1439,3 +1439,41 @@ Future canonical cost is not counted as incurred. Zero new DFT/solver/training.
 Local mailer accepted the 20260917T134908Z_charge_ablation_pass email to Jacob.
 Goal ACTIVE, baseline/default unchanged, no push or production promotion.
 Continue through the declared canonical test and use its actual outcome.
+
+
+## Reusable prepared-input MACE interface — 2026-09-17
+
+Added scripts/mace_omol_prepared.py: audit/prepare/report with existing task
+executor dry-run/execute/collect. Explicit source-backed whole-chain preparation,
+exact replay of protein/cofactor/water processing, charge/atom mapping, strict
+peptide connectivity and singleton chain-A support. Retain source exclusions;
+no arbitrary XYZ, fabricated protonation, multisite reduction or baseline band.
+Actual model remains the same qualified charge-feature ablation descriptor.
+
+Use existing OpenMM driver /groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python;
+its exact executable and OpenMM/NumPy versions are recorded in new manifests.
+The executor still launches GPU workers in the separately pinned MACE venv.
+An initial audit in the MACE venv failed at missing OpenMM before any preparation/
+inference; v1 empty output/timing retained. Existing driver then succeeded,
+without installing or changing an environment.
+
+PQQ1H4I exact replay succeeds (9088 atoms); the zero-new-task interface manifest
+explicitly reuses four actual job1200828 endpoints. Its complete report returns
+17.579955566129197 model kcal exactly, classification unavailable. ManifestSHA
+ a5ea319b6b29cc66dbd17eedbb135ee7176b34522ed7734057d2d06429198b4d;
+reportSHA01898b5875697ef03d865204ceaf83f76b55c895a422118ddab42e30d6d92894.
+GGR fresh manifest has four unexecuted tasks, no reuses; frozen dry-run passes.
+SHA a070eaf8045209669c6393809794e2b8fe3d635484ee65b2b0bf55768a0ac398.
+It is an interface example, NOT a duplicate submission. No new model forwards.
+
+Four real-fixture tests pass28.325s: exact PQQ/GGR replay and four-state reuse,
+actual broken1KB0 rejection, corrupted-coordinate rejection, and exact reusable
+PQQ score with unavailable classification. PQQ audit4.50wall/4.29CPU s;
+prepare21.22wall/19.28CPU s; report16.83wall/15.00CPU s. Other local receipts
+and the failed first audit are retained. No model inference is implied.
+
+Canonical job1200830 continues independently; most recent check36/100completed,
+zero failures. Full-panel decision is pending. The new generic interface has
+no classification backend yet; add only a compatible passing canonical reference
+if the declared test earns it. Goal active, baseline/default unchanged.
+Read PREPARED_INPUT_INTERFACE_REPORT.md / PREPARED_INPUT_COMMANDS.md.

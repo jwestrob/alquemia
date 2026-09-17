@@ -1822,3 +1822,34 @@ noneimplemented/prepared/submittedyet. Same2partition/allfourorderinggates;
 identity/rigid/component/ReferenceCUDAchecksdeclared. No newDFT/MACEneeded.
 Continueautonomously;goalactive, baseline/defaultunchanged,nopush. Inspectlive
 concurrentjobsandpreserveotheredits/locks. Per-analysis gate remainsremoved.
+
+
+## Full-boundary GB fails; explicit electrostatic accounting advances — 2026-09-17
+
+Job1200975 completed48GBcalls,46/46 numericalchecks pass. Partition+4.482882260
+fails2, andallfouralpha-minus-GGRcontrasts -120to-126failordering. Source mapped
+QM/ff19SBcharges/localboundaryclosure, fixedfullcavity andall48tasksrecorded.
+No labels/parameters/coordinates changed. Baseline/defaultunchanged. Newsolvent
+adapter withminimalsharedrunnerdispatch;oldworkersunchanged. Fournewtests plus
+sixnative andtwolegacyGB tests pass;actualintegration0.004s afterinitialskip.
+Cost57GPUallocation-s/912allocatedcore-s/117.953CPU-s,4.379188012solver-s,
+167908KiBpeakRSS;GPUmemoryunmeasured.0newDFT/MACE/chargefit/training.
+ReportFULL_BOUNDARY_GB_REPORT/RESULT; fullfull_boundary_GB_report_v1,cost_v1.
+
+Newdeclaredsaved-statecouplingaudit passes20checks withno newsolver/modelcalls:
+alpha direct+132.19/+123.94 vsGBcross-135.46/-128.19, giving-3.28/-4.26.
+OMOLcontextentanglesinteractions; noverifiedmatchingdirectterm. Beyond36A
+alpha hasnoatoms,GGRdirecttail~-13.2, insufficienttofix~120failure. No newscore
+or arbitrarybareCaddition. Initialauditpreflightrejectedidenticalcodeatdifferent
+live/frozenpaths;V2checksidenticalhashesandallscientificfields, priorattemptkept.
+Audit QMFF_coupling_audit_v2, sources/results/localresourcesretained.
+
+NEXT EXPLICIT_FIELD_SHORT_PLAN.md declaredbeforeoutputs: exactsaved-density
+Ccross +fullGB +DFTvaccore +qualifiedMEDIUMPOLARshort(full-core). The prior
+short-alonealpha andPQQfixedfieldboundaryfailuresremain. Eightshortcore/eight
+vpotcalls,0newDFT/GB/wholeMACE/chargefit. Sixactualwholecachesmatch;536archived
+coregeometrycomparisonsfound0exactnormalizedmatches. Point/exactpairedcoupling
+error<=1kcal, same2partition andfour>0.02orderinggates. Notimplemented/prepared/
+submittedyet. No fieldweights/checkpointselectionbyoutcome; no combinedgradient.
+Goalactive,continuationauthorized. Vault/currentguideupdated,nopush/promotion.
+Preserveotheragents'PLM1200794–96,pendingnativeH2001200809,jobs/locks/edits.

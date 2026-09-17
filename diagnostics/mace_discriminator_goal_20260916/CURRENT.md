@@ -6,6 +6,45 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
+## Latest: full-boundary GB and direct-coupling audit completed
+
+Job1200975 COMPLETED48solvercalls,46/46 numericalchecks pass. CandidateFAILS:
+GGRpartition+4.482882260 vs2; allfouralpha-minus-GGR differences -120to-126kcal.
+No parameter/label/geometry rescue. Report FULL_BOUNDARY_GB_REPORT.md/RESULT.
+Fullreportfull_boundary_GB_report_v1/result.json; manifestfull_boundary_GB_v1 SHA
+69f88af3655ea6d9784d682e528f7cf3a780410b93dda999671f7446e425e446.
+Cost57GPU-s/912core-s/117.953CPU-s;4.379188012solver-s,167908KiBpeakRSS.
+GPUmemoryunmeasured. Four newtests+sixnative+twolegacyGB pass;actualintegration
+0.004s afterinitialskip. No newDFT/MACE/chargefit/training. Oldbaselineunchanged.
+
+Separate saved-state auditQMFF_coupling_audit_v2 passes20checks; no newscientific
+calls. Alpha directR+132.187/+123.936 nearlycancelsGBcross -135.462/-128.192;
+GGRextended direct-0.233/cross-10.058,connected+9.656/-15.357. OMOLcontext is
+entangled and hasnoverifiedmatchingdirectterm. Do notjustaddC toOMOL:possible
+doublecount. Beyond36Aalpha noatoms,GGRtail~-13.2 cannotrepair~120kcalfailure.
+AuditV1preflight comparedlive/frozenimplementationpaths despiteidenticalhash;
+V2verifieshashesandallscientificfields, no physics/gate change. Resources retained.
+
+NEXT EXPLICIT_FIELD_SHORT_PLAN.md declared BEFOREnewpotential/shortoutputs.
+Reuse earlier qualified MEDIUM MACE-POLAR shortcomponent (notnew); its old
+PQQfixedfield andalpha-only failuresremain. Candidate expression:
+DFTvaccore + EXACTsaved-density directcoupling + unchangedfullGB + short(full-core).
+No OMOLtotal, MACEelectrostatic/electronterm orcoreCPCM. Eightnewcore shortcalls
++eightnativevpotcalls atactualnonzeroFFsites;0newDFT/GB/wholeMACE/chargefit.
+Existingcouplingpointapproximation isdiagnostic; uniformexactdirect chosenbefore
+outputs. Fixedpairedpoint-vs-exacterror<=1kcalpercase/partition, same2partition
+andfour>0.02orderingcriteria. Forcespartialonly; no relaxation/entropy/threshold.
+
+field_short_reuse_audit_v1.json verifies6exactwhole mediumshortreuses from
+mace_global_benchmark_20260916/mace_v1/medium/collection_job_1200701.json;
+536taskgeometrycomparisonsin3namedarchives found0exactnormalizedcorematches.
+Qualifiedshortadapter polar_scale_shift_exact_readout_v1;
+workspaces/mace_short_engine_20260916/pilot_v1/collection_job_1200736.json.
+New16lowlevelcalls NOTimplemented/prepared/submittedyet. Implementminimalexisting
+runnerdispatch/sourceadapter, finitepreps/tests/dryrun, then launchdocumented
+GPU/CPUallocations autonomously. Allournewjobs terminal; preserveconcurrentjobs.
+No productionpromotion,push,permissiongate orprojectcompute/timebudget. Goalactive.
+
 ## Latest: normalized charges complete; next full-boundary solvent test declared
 
 Job1200970 COMPLETED eight CHELPG+eight vpot utilities, zero failures. All

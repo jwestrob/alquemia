@@ -417,3 +417,12 @@ This does not establish solvent-energy accuracy. Four real-fixture tests pass.
 The [full-boundary solvent plan](../diagnostics/mace_omol_20260917/FULL_BOUNDARY_GB_PLAN.md)
 is declared but not yet implemented or submitted. It preserves all physical
 atoms and uses a local charge ledger, no coreCPCM or added bare Coulomb term.
+
+The [full-boundary GB test](../diagnostics/mace_omol_20260917/FULL_BOUNDARY_GB_REPORT.md)
+completed48calls:46numerical checks pass, partition4.48kcal fails2 and all four
+ordering contrasts reverse. Saved-state coupling shows a large direct/solvent
+cancellation that the entangled OMOL context cannot be assumed to reproduce.
+Do not promote or add arbitrary bare Coulomb to that model. A distinct
+[explicit-field/short-readout plan](../diagnostics/mace_omol_20260917/EXPLICIT_FIELD_SHORT_PLAN.md)
+is declared, not yet implemented:8short-core+8nativepotential calls, existing
+DFT/GB/whole-short reuse. Earlier short-component failures remain recorded.

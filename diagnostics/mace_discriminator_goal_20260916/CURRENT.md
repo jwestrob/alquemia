@@ -89,14 +89,37 @@ Costs shared_neutral_cost_v1 and cumulativeintact_engineering_status_v14:
 437successfulcalls,4failedmodelcalls,12424GPU-s,262016core-s,30741.280CPU-s.
 Local resources and preflight failures retained. Baseline unchanged;goal active.
 
-Next: audit archived vacuum DFT before declaring a matched solvent-mismatch
-diagnostic. The failed expressions mix CPCM core with vacuum learned terms;
-changing core changes the CPCM cavity. This is a hypothesis, not an established
-cause or permission to relabel the old candidate successful. Existing fixed-field
-vacuum archive is PQQ/Asp303, not these exact GGR/alpha geometries. No new
-vacuum experiment has been launched at this checkpoint.
+## Matched vacuum complete: solvent explains most of the discrepancy
 
-Completed response/context commit215c794,gradientc22a881. Do not repeat passed
+Eight endpoints completed1200905, no failures. Connected-minus-extended GGR
+R_vacuum=-25.674002864 versus R_CPCM=-7.343500873. Their solvent difference
+is+18.330501991kcal/mol. Raw-zero learned core shift=-27.503809106, leaving
+vacuum hybrid+1.829806242, PASS at fixed2 tolerance. Shared-neutral residual
+is-7.418218065, FAIL. Component identities close; no old candidate is relabeled.
+Report ../mace_omol_20260917/MATCHED_VACUUM_REPORT.md.
+
+All eight actual gradients pass native-state/ECP/component and coordinate checks.
+Four distinct real-fixture tests pass; integration initially skipped then passed
+1.812s. No new MACE/solver/training, optimization or numerical DFT gradients.
+Job cost618s wall/64CPU,39552allocatedcore-s,35369reportedCPU-s. Separate cost
+record preserves MACE forward counts rather than counting DFT as model calls.
+
+Manifest matched_vacuum_v1 SHA
+f43b66d7dd708082e643ef42f9ed939424787afabdcbd85f319cf7b237a98960;
+matched_vacuum_report_v1/result.json,matched_vacuum_cost_v1.json.
+New script mace_omol_vacuum.py, frozen source and existing ORCA runner/locks.
+Bounded archiveaudit:165inputs/25geometrymatches/zero vacuum counterparts.
+Baseline/default unchanged. No aqueous score or force/curvature accuracy claim.
+
+Next declared candidate: VACUUM_HYBRID_PLAN.md. Six whole-protein energy calls
+on exact original-H GGR1GLG/alpha1F6S/alpha6IP9;reuse eight actual vacuumDFT and
+masked core centers. H=DFT_vac(core)+masked(full)-masked(core);all four fixed
+alpha-minus-GGR development contrasts must exceed0.02. No solvent, newDFT,
+optimization, parameter/category sweep or inherited calibration. Separate new
+protocol;prior CPCM conditional stages remain unexecuted. Not implemented or
+launched at this checkpoint. Email18:24UTC accepted by local relay with result.
+
+Shared-neutral commit296f809;response/context215c794;gradientc22a881. Do not repeat passed
 engineering gates. Other agents'PLM1200794–1200796 and pendingnativeH2001200809
 preserved;recheck live state. No push/default promotion.
 

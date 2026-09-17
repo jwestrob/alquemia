@@ -1723,3 +1723,24 @@ manifestshared_neutral_core_v2. Vault/currentcheckpoint/agentguide updated.
 Next inspect compatible archivedvacuumDFT to disentangle solvent mismatch;
 no newvacuumexperimentdeclared/launched at this commit. Goalactive;no push.
 Preserve concurrentPLM1200794–96 and pendingnativeH2001200809, edits andlocks.
+
+
+## Matched vacuum identifies CPCM/MACE confound — 2026-09-17
+
+Eight real native r2SCAN-3c vacuum analytic-gradient centers completed1200905.
+OnlyCPCM removed from exact frozen GGRextended/connected andalpha1F6S/6IP9
+Ca/La inputs. Source/physical states unchanged. GGRpartitionDFTvac−25.674002864,
+CPCM−7.343500873:solventdifference+18.330501991kcal/mol. Raw-zeroMACEvacuum
+residual+1.829806242 passes fixed2diagnostic;shared-neutral−7.418218065 fails.
+Both previous CPCM candidates remainfailed;no aqueousscore/accuracyclaim.
+Actualnativegradients/ECP/components validated.4realfixturetests pass;actual
+integration initiallyexplicitlyskipped then executed(1.812s). No newMACE,
+solver,training,optimization or numericalDFTgradients. EightDFTcalls,nofailures.
+Job618s/64CPU,39552allocatedcore-s,35369CPU-s. Newmace_omol_vacuum.py reuses
+existingORCArunner/locks/MPI;frozenmanifest matched_vacuum_v1. Boundedarchive
+165inputs,25exactgeometrymatches,zero matchingvacuumstates. Rawreceipts,costs,
+fullreport andcompactMATCHED_VACUUM_REPORT/RESULT retained. Currentguide/vault
+updated;email acceptedrelay18:24UTC. Goalactive;baseline/defaultunchanged.
+VACUUM_HYBRID_PLAN.md declares a separate six-call original-H whole-context
+candidate;notimplemented/launched at thiscommit. No revivalofpriorCPCMstage.
+Preserve concurrentPLM1200794–96,pendingnativeH2001200809,edits andlocks.

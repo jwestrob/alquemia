@@ -392,3 +392,12 @@ The shared learned-neutral feature now passes16/16 numerical checks on eight
 real cores, but its subtractive partition shift is10.91kcal versus the2kcal limit.
 Its conditional six whole calculations must not be launched. No charge-category
 sweep or production change. [Result and replay](../diagnostics/mace_omol_20260917/SHARED_NEUTRAL_FEATURE_REPORT.md).
+
+
+The [matched vacuum diagnostic](../diagnostics/mace_omol_20260917/MATCHED_VACUUM_REPORT.md)
+completed eight native-ORCA centers. Solvent mismatch accounts for18.33 of the
+20.16kcal GGR discrepancy; vacuum DFT minus masked-core residual is1.83kcal,
+within the declared2 target. Shared-neutral residual still fails. Four tests
+pass. No aqueous score or baseline change. A separate six-call whole-protein
+vacuum hybrid is [declared next](../diagnostics/mace_omol_20260917/VACUUM_HYBRID_PLAN.md),
+not yet implemented/launched. [Vacuum replay commands](../diagnostics/mace_omol_20260917/MATCHED_VACUUM_COMMANDS.md).

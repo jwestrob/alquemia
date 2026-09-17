@@ -98,3 +98,20 @@ python scripts/mace_omol_intact.py --collection workspaces/mace_omol_20260917/be
 The continuation reuses four verified batched ALPHA_1F6S endpoints. Its other
 16tasks retain every frozen physical state and the original three relative
 criteria. No predictive result or calibrated class is available yet.
+
+
+Full native equivalence passed all24 comparisons exactly. Native CPU1200814 is
+complete; benchmark1200815 is running16newcalls/four qualified batched reuses.
+Manifest SHA256:
+`2451a00c17b27b0ba9e850312fd7684d38fd255f64e605b3402422a22864efb4`.
+Exact submission argv is in `intact_benchmark_v1/submission.json`.
+After collection, use the frozen reporting source (do not edit it while running):
+
+```bash
+workspaces/mace_hybrid_20260916/software_v1/venv/bin/python workspaces/mace_omol_20260917/intact_reporting_source_v1/implementation/mace_omol_intact_report.py --collection workspaces/mace_omol_20260917/intact_benchmark_v1/collection_job_1200815.json --output workspaces/mace_omol_20260917/intact_report_v1
+python -m unittest discover -s tests -p test_mace_file_checks.py -v
+python -m unittest discover -s tests -p test_mace_omol_edges.py -v
+```
+
+The earlier live report-source pin limitation and independent exact replay are
+recorded in INTACT_REPORT_SOURCE_NOTE.md. No inference result changed.

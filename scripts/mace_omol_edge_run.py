@@ -8,6 +8,7 @@ from affordable_common import InvalidArtifact,cache_key,read_json,record,verify
 from mace_hybrid import EV_TO_KCAL
 from mace_omol_edges import ADAPTER
 from mace_omol_intact import qualified as native_qualified,validate as native_validate,collect as native_collect
+from mace_file_checks import cached_file_checks
 
 PROTOCOL='mace_omol_exact_edge_qualification_v1'
 CONFIG={'id':ADAPTER,'edge_order':'original','allowed_chunk_sizes':[1024,2048],'gradients':False}
@@ -37,6 +38,7 @@ def tasks(native,stage):
     return result
 
 
+@cached_file_checks
 def prepare(native_core_collection,intact_manifest,agreement,output,edge_qualification=None,backend='edge'):
     from mace_omol import common,seal
     _,core=native_qualified(native_core_collection,'intact_core')
@@ -58,6 +60,7 @@ def prepare(native_core_collection,intact_manifest,agreement,output,edge_qualifi
     return seal(out,m)
 
 
+@cached_file_checks
 def validate(manifest):
     from mace_omol import SCHEMA,TOL,model
     m=read_json(manifest)
@@ -93,6 +96,7 @@ def validate(manifest):
     return {'status':'pass','tasks':len(expected),'manifest':record(manifest)}
 
 
+@cached_file_checks
 def collect(manifest):
     from mace_omol import TOL
     m=read_json(manifest);c=native_collect(manifest)

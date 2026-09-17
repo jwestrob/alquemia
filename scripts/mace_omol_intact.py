@@ -10,6 +10,7 @@ from mace_hybrid import EV_TO_KCAL, rotation, accepted_attempt, check_atoms
 from mace_omol_coordination import bound_source
 from mace_global_benchmark import physical_preparations
 from mace_global_prepare import CASES
+from mace_file_checks import cached_file_checks
 
 PROTOCOL='mace_omol_intact_chain_matched_coordination_v1'
 PREPARATION_SHA='63d6a44fbef3a1dc888696bba5d122ac3531fe12ceee4ee03a85194f768b0552'
@@ -93,6 +94,7 @@ def qualified(path,stage):
     return c,m
 
 
+@cached_file_checks
 def prepare(collection,preparation,agreement,output,core_qualification=None,full_qualification=None,edge_equivalence=None):
     from mace_omol import common,seal
     if full_qualification and not core_qualification:raise InvalidArtifact('full qualification requires its core bridge')
@@ -141,6 +143,7 @@ def prepare(collection,preparation,agreement,output,core_qualification=None,full
     return seal(out,m)
 
 
+@cached_file_checks
 def validate(manifest):
     from mace_omol import SCHEMA,TOL,model
     m=read_json(manifest)
@@ -198,6 +201,7 @@ def validate(manifest):
     return {'status':'pass','tasks':len(m['tasks']),'manifest':record(manifest)}
 
 
+@cached_file_checks
 def collect(manifest):
     from mace_omol import TOL,UNAVAILABLE
     mp=Path(manifest).resolve();m=read_json(mp);rows={};attempts=[];checks=[];reused={}

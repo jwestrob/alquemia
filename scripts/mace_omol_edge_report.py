@@ -8,8 +8,10 @@ from mace_hybrid import EV_TO_KCAL
 from mace_omol_intact import qualified as native_qualified
 from mace_omol_edge_run import validate,collect
 from mace_omol import TOL
+from mace_file_checks import cached_file_checks
 
 
+@cached_file_checks
 def compare(native_collection,edge_collection):
     ns=read_json(native_collection);np=verify(ns['manifest']);nm=read_json(np)
     if nm['stage']=='cpu_intact':
@@ -49,6 +51,7 @@ def compare(native_collection,edge_collection):
     return result
 
 
+@cached_file_checks
 def verified(path):
     saved=read_json(path);verify(saved['implementation'])
     result=compare(verify(saved['native_collection']),verify(saved['edge_collection']))
@@ -64,7 +67,8 @@ def report(native_collection,edge_collection,output):
     (out/'REPORT.md').write_text('# Exact OMOL interaction batching\n\n'
         f'Native intact equivalence: {result["native_equivalence_pass"]};{len(checks)}actual energy/paired checks.\n\n'
         f'Maximum error: {max(abs(c["error_kcal_mol"]) for c in checks):.12g}kcal/mol.\n\n'
-        f'Peak allocated GPU bytes: native{result["native_peak_cuda_allocated_bytes"]};batched{result["edge_peak_cuda_allocated_bytes"]}.\n\n'
+        f'Native reference device: {result["native_device"]["name"]}; peak host RSS: {result["native_peak_host_RSS_KiB"]} KiB.\n\n'
+        f'Batched GPU peak allocation: {result["edge_peak_cuda_allocated_bytes"]} bytes. Native GPU allocation: {result["native_peak_cuda_allocated_bytes"] if result["native_peak_cuda_allocated_bytes"] is not None else "not applicable (CPU reference)"}.\n\n'
         'The physical graph, weights, charge/spin, precision and energy expression are unchanged. No force, prediction or production promotion is claimed. Devices differ; timings do not establish a matched-hardware speedup.\n')
     return result
 

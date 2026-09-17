@@ -49,5 +49,18 @@ class EdgeTests(unittest.TestCase):
             changed=copy.deepcopy(r);changed['execution_adapter']['layers'][0]['processed_edges']-=1
             self.assertFalse(accepted_state(changed,t))
 
+    def test_actual_full_native_CPU_and_batched_GPU_equivalence(self):
+        paths=[W/'cpu_intact_v1/collection_job_1200814.json',W/'edge_intact_v1/collection_job_1200811.json']
+        if not all(p.exists() for p in paths):self.skipTest('requires both actual full-system campaigns')
+        from mace_hybrid import EV_TO_KCAL
+        from mace_omol import TOL
+        a,b=[read_json(p) for p in paths]
+        for c in (a,b):
+            self.assertEqual(c,collect(verify(c['manifest'])));self.assertTrue(c['numerical_gate_pass'])
+            self.assertEqual(len(c['rows']),14);self.assertEqual(len(c['checks']),31)
+        for key in a['rows']:
+            error=(a['rows'][key]['energy_eV']-b['rows'][key]['energy_eV'])*EV_TO_KCAL
+            self.assertLessEqual(abs(error),TOL['energy_kcal_mol'])
+
 
 if __name__=='__main__':unittest.main()

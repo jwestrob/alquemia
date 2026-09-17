@@ -1204,3 +1204,42 @@ in diagnostics/mace_omol_20260917/INTACT_COMMANDS.md and engineeringreport.
 Vault/email updated; localmailer accepted20260917T093422Z notification. Goal
 ACTIVE. Next collect1200814, run mace_omol_edge_report.py, then prepare/execute
 intact_benchmark_v1 with --edge-equivalence if all checks pass.
+
+
+## Native intact equivalence passes; five-protein benchmark launched — 2026-09-17
+
+CPU1200814 complete:14native calls,31numerical checks pass. All24nativeCPU/
+batchedGPU endpoint and paired comparisons agree exactly. Full equivalence
+report workspaces/mace_omol_20260917/edge_equivalence_v1/result.json; cached
+independent replay verified the entire result unchanged. The original reporter
+copied live source at write time after a reporting-code edit; this is explicitly
+documented in REPORT_SOURCE_NOTE.md, not claimed as a start-time runtime pin.
+Underlying inference always used immutable implementation snapshots.
+
+Intact benchmark1200815 RUNNING:16new endpoints plus4batchedAlpha1F6S reuses.
+ManifestSHA2451a00c17b27b0ba9e850312fd7684d38fd255f64e605b3402422a22864efb4.
+All scientific gates passed before submission; adapter/readout source hashes
+match the full qualification. Samefivecases,threefrozenrelativecriteria,no
+absolute bands,production unchanged. H200native1200809 remainsqueued.
+
+Completed engineering totals before benchmark:44successes,oneOOM;497GPU-s,
+71,184allocatedcore-s,18,440.933actualCPU-s. FullCPUreferencecost792wallseconds
+and50,688allocatedcore-s is one-time validation, not routine CPU affordability.
+No newDFT,solver,training or force calculation. Five real edge/CPU tests pass
+23.458s. Full predictor results remain unavailable until1200815 finishes.
+
+Operation-local file-digest reuse implemented only for opt-in MACE verification;
+no shared default/common source changed. Fresh files bypass caching (coarse
+ctime resolution caught by an initially failing corruption test). After repair,
+all4fresh/aged/corruption/replacement/restore tests pass2.128s. Independently
+verified the same24checks with maxerror0; replay258.88wall/156.06CPU seconds
+versus370.45wall/311.72CPU seconds. Other recursive validation remains costly.
+Benchmarkpreparation813.68wall/503.03CPU seconds; actual resources preserved.
+
+Next: collect1200815 and run the already-frozen reporting implementation at
+workspaces/mace_omol_20260917/intact_reporting_source_v1/implementation/mace_omol_intact_report.py
+with --collection workspaces/mace_omol_20260917/intact_benchmark_v1/collection_job_1200815.json
+--output workspaces/mace_omol_20260917/intact_report_v1. Its source/dependencies
+are frozen in the adjacent inventory. Do not edit reporting source during run.
+Report all three relative comparisons, missing endpoints and actual costs; no
+score-dependent changes or production promotion. Goal ACTIVE.

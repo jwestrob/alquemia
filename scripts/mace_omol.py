@@ -63,7 +63,7 @@ def common(source_inventory, software, agreement, output, stage):
     names = ('mace_omol.py', 'mace_canonical_run.py', 'mace_canonical.py', 'mace_curvature.py',
              'affordable_response.py', 'mace_mechanics_run.py', 'mace_short_engine.py',
              'mace_omol_readout.py', 'mace_omol_coordination.py', 'mace_omol_intact.py',
-             'mace_omol_edges.py', 'mace_omol_edge_run.py', 'mace_omol_edge_report.py')
+             'mace_omol_edges.py', 'mace_omol_edge_run.py', 'mace_omol_edge_report.py', 'mace_file_checks.py')
     pins = snapshot(out, names)
     m = {'schema_version': SCHEMA, 'protocol_id': PROTOCOL, 'stage': stage,
          'inventory': record(source_inventory), 'software': record(software), 'agreement': record(agreement),

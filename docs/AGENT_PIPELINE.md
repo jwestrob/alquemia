@@ -102,9 +102,17 @@ their 16 new successes and one OOM cost 1387 GPU-seconds / 22,192 allocated
 core-seconds. Four qualified alpha endpoints are reused. Native CPU equivalence
 and rigid/repeat checks pass. Reporting overhead remains substantial.
 The [product batching qualification](../diagnostics/mace_omol_20260917/EXACT_PRODUCT_PLAN.md)
-passes its eight-call core stage; the full stage precedes the
-[28-reference extension](../diagnostics/mace_omol_20260917/INTACT_CANONICAL_PLAN.md).
+passes its core and full stages; all24 native CPU/product GPU comparisons agree
+exactly. The [28-reference extension](../diagnostics/mace_omol_20260917/INTACT_CANONICAL_PLAN.md)
+is running as1200819 with104 new endpoints and8 qualified reuses.
 Four reference charges exceed the training range and remain explicitly flagged.
+An independent [connectivity audit](../diagnostics/mace_omol_20260917/INTACT_CANONICAL_INTEGRITY_ADDENDUM.md)
+found two false peptide bonds across missing 1KB0 structure before its endpoints
+ran. Its whole-chain score must remain unavailable, with the case retained in
+the denominator. The new preparation policy rejects it before template matching;
+27 other cases pass. Use the mandatory audited v2 reporter in the commands
+below; the original reporter frozen with the run is superseded. Fixed-core
+baseline1KB0 remains unchanged. Eight real-fixture tests pass.
 H2001200809 remains queued. [Commands](../diagnostics/mace_omol_20260917/INTACT_COMMANDS.md).
 
 Jacob reconfirmed blanket analysis/resource authorization on2026-09-17 and

@@ -15,22 +15,43 @@ workspaces/mace_hybrid_20260916/software_v1/venv/bin/python workspaces/mace_omol
 ```
 
 Product batching core1200817 passed20checks exactly. Full qualification1200818
-runs14 declared calls; its manifestSHA is
+completed14 calls and31 checks; all24 native CPU/product GPU comparisons agree
+exactly. Its manifestSHA is
 `6ece3a194ab1e88cbefab44d62c3fee39cde7bdf98e6594caf4fcc5952f4f2eb`.
-Only after its collection exists and passes, compare using frozen source:
+The completed comparison used this frozen source (output already exists):
 
 ```bash
 workspaces/mace_hybrid_20260916/software_v1/venv/bin/python workspaces/mace_omol_20260917/product_reporting_source_v1/implementation/mace_omol_edge_report.py --native-collection workspaces/mace_omol_20260917/cpu_intact_v1/collection_job_1200814.json --edge-collection workspaces/mace_omol_20260917/product_intact_v1/collection_job_1200818.json --output workspaces/mace_omol_20260917/product_equivalence_v1
 ```
 
-The next canonical experiment is declared in INTACT_CANONICAL_PLAN.md. No new
-canonical scores have been calculated. INTACT_PANEL_READINESS.md and the actual
-readiness result under intact_panel_inventory_v1 record28 sources,27 matched
-protein templates,one missing terminalOXT andfour charges outside training range.
+The canonical experiment declared in INTACT_CANONICAL_PLAN.md is running as
+job1200819:104 new endpoints and8 exact earlier crystal reuses. Its immutable
+manifest is `intact_panel_run_v1/manifest.json`, SHA256
+`642d9717d69a8ee236e1fbdc280fa9fbed2d169e2c073c29efac7f63a72cca62`.
+Four calibration charges exceed the reported training range.
+
+**Mandatory preparation audit:** 1KB0 contains two false peptide connections
+across missing structure. Its four raw endpoints are invalid preparation
+diagnostics, even if inference succeeds. Read
+INTACT_CANONICAL_INTEGRITY_ADDENDUM.md. Retain the unavailable case in the
+three-transfer denominator. Use the new audited reporter, never the original
+reporter frozen with the running manifest:
+
+```bash
+workspaces/mace_hybrid_20260916/software_v1/venv/bin/python workspaces/mace_omol_20260917/intact_panel_reporting_source_v2/implementation/mace_omol_panel_report.py --collection workspaces/mace_omol_20260917/intact_panel_run_v1/collection_job_1200819.json --preparation-audit workspaces/mace_omol_20260917/intact_panel_integrity_v1/result.json --output workspaces/mace_omol_20260917/intact_panel_report_v1
+```
+
+Run after the collection exists; this computes no new endpoints. The v2
+preparation under `intact_panel_prepared_v2/` rejects 1KB0 before template
+matching and retains27 supported cases. It does not replace the running job's
+immutable v1 inputs. Root preparation commands also reject the invalid legacy
+preparation when building a new run. Eight real-fixture tests passed.
+
+Earlier readiness/template success was insufficient to detect these gaps.
 Do not rerun the historical preparation/submission commands below into existing
 outputs, or launch duplicate jobs. They document how the earlier stages ran.
 
-## Core equivalence bridge
+## Historical core equivalence bridge
 
 The four-task manifest was prepared and passed the copied runner dry-run.
 Job1200807 uses `intact_core_v1`; its exact sbatch argv is saved in

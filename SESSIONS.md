@@ -1293,3 +1293,41 @@ Current pipeline guide also had a residual per-analysis approval sentence; it
 now matches home/project AGENTS and Jacob's explicit blanket authority. Vault
 updated. Local mailer accepted20260917T111254Z_intact_development_pass notification.
 Goal ACTIVE; this promising development candidate is not broad goal completion.
+
+
+## Canonical whole-chain MACE run and preparation guard — 2026-09-17
+
+Exact product batching completed1200818:14 calls/31checks and24 native CPU
+comparisons pass. Through this stage82successful forwards/twoOOMs cost
+2289GPU-s,99856allocatedcore-s,19809.670actualCPU-s; local receipts separate.
+Canonical1200819 RUNNING104newcalls plus8exactcrystalreuses, manifestSHA
+642d9717d69a8ee236e1fbdc280fa9fbed2d169e2c073c29efac7f63a72cca62.
+Same frozen25calibration/3transfer inventory; four charge-range extrapolations.
+H200 native1200809 remains pending; no duplicate submissions.
+
+Before any1KB0 endpoint, independent geometry audit identified false peptide
+bonds C511–N5134.750089A and C573–N57918.969263A. Template matching and the
+archived empty missing-residue report had missed these gaps. V1terminalOXT
+completion did not fix them. Immutable job/input records remain intact; its
+1KB0 outputs are diagnostic-only and cannot supply a score/class. All25calibration
+and1H4I/4MAE pass the same audit. Retain1KB0 in the denominator; the full
+three-transfer gate cannot pass. Baseline fixed-core1KB0 unchanged.
+
+New policy omol_canonical_chain_A_ff19sb_H_peptide_connectivity_v2 rejects
+the bad topology before force-field template matching. Actual v2 preparation
+completed27supported/1unsupported in159.89wall/155.47CPU seconds,380400KiB
+peakRSS. Eight real-fixture tests pass118.737s, including exact oldGGR/PQQ
+atom-coordinate replay, real archived algebra and corrupted result rejection.
+No invented data and no new quantum, solver, force or training work.
+
+MANDATORY final reporter: intact_panel_reporting_source_v2/implementation/
+mace_omol_panel_report.py with --preparation-audit intact_panel_integrity_v1/
+result.json, all under workspaces/mace_omol_20260917. Run after1200819collection
+using exact INTACT_COMMANDS.md command. Original frozen reporter is superseded
+by REPORTING_SUPERSEDED.json. It must not classify the invalid1KB0preparation.
+Read INTACT_CANONICAL_INTEGRITY_ADDENDUM.md. Goal ACTIVE; production unchanged.
+
+Next zero-inference locality audit declared in INTACT_LOCALITY_PLAN.md uses
+all20saved five-case endpoint readouts. It explains spatial/model contributions
+without changing scores or criteria. Jacob's removed approval gate remains
+removed in home/project AGENTS and current guide; autonomous work continues.

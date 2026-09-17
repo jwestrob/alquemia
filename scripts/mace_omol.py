@@ -64,7 +64,8 @@ def common(source_inventory, software, agreement, output, stage):
              'affordable_response.py', 'mace_mechanics_run.py', 'mace_short_engine.py',
              'mace_omol_readout.py', 'mace_omol_coordination.py', 'mace_omol_intact.py',
              'mace_omol_edges.py', 'mace_omol_edge_run.py', 'mace_omol_edge_report.py', 'mace_file_checks.py',
-             'mace_omol_products.py')
+             'mace_omol_products.py', 'mace_omol_panel.py', 'mace_omol_panel_prepare.py',
+             'mace_omol_intact_inventory.py', 'mace_omol_backbone_audit.py')
     pins = snapshot(out, names)
     m = {'schema_version': SCHEMA, 'protocol_id': PROTOCOL, 'stage': stage,
          'inventory': record(source_inventory), 'software': record(software), 'agreement': record(agreement),
@@ -141,6 +142,9 @@ def prepare_benchmark(qualification, mechanics, agreement, output):
 
 def validate(manifest):
     m = read_json(manifest)
+    if m.get('stage','').startswith('panel_'):
+        from mace_omol_panel import validate as validate_panel
+        return validate_panel(manifest)
     if m.get('stage','').startswith(('edge_','cpu_','product_')):
         from mace_omol_edge_run import validate as validate_edge
         return validate_edge(manifest)
@@ -376,6 +380,9 @@ def accepted_state(result, task):
 
 
 def collect(manifest):
+    if read_json(manifest).get('stage','').startswith('panel_'):
+        from mace_omol_panel import collect as collect_panel
+        return collect_panel(manifest)
     if read_json(manifest).get('stage','').startswith(('edge_','cpu_','product_')):
         from mace_omol_edge_run import collect as collect_edge
         return collect_edge(manifest)

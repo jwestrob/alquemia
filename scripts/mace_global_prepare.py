@@ -41,7 +41,7 @@ def terminal_position(carbon, alpha, oxygen, length=1.25):
     return c+length*reflected/np.linalg.norm(reflected)
 
 
-def protein(row):
+def protein(row, allow_terminal_completion=False, check_peptide_connectivity=False):
     import openmm as mm
     from openmm import app,unit
     pdb=app.PDBFile(str(verify(row['source_structure'])))
@@ -56,10 +56,16 @@ def protein(row):
     original=np.array(model.positions.value_in_unit(unit.angstrom))
     atoms=list(model.topology.atoms());original_ids=[atom_id(a) for a in atoms]
     if len(set(original_ids))!=len(atoms):raise InvalidArtifact('duplicate protein source identity')
+    if check_peptide_connectivity:
+        for a,b in model.topology.bonds():
+            if a.residue!=b.residue and {a.name,b.name}=={'C','N'}:
+                distance=float(np.linalg.norm(original[a.index]-original[b.index]))
+                if not 1.0<=distance<=1.8:
+                    raise InvalidArtifact(f'unsupported peptide connection {atom_id(a)}--{atom_id(b)}: {distance:.6f} Angstrom; missing/malformed source geometry')
     pos=original.copy();additions=[]
     last=residues[-1];named={a.name:a for a in last.atoms()}
     if 'OXT' not in named:
-        if row['case_id'] not in ('PQQ_1H4I','PQQ_4MAE') or not {'C','CA','O'}<=named.keys():
+        if (not allow_terminal_completion and row['case_id'] not in ('PQQ_1H4I','PQQ_4MAE')) or not {'C','CA','O'}<=named.keys():
             raise InvalidArtifact('unapproved missing terminal chemistry')
         carbon=named['C']
         neighbors=[b if a==carbon else a for a,b in model.topology.bonds() if carbon in (a,b)]
@@ -106,7 +112,7 @@ def protein(row):
                'source_heavy_coordinates_preserved':True}
 
 
-def cofactor_and_waters(row,manifest):
+def cofactor_and_waters(row,manifest,expected_water_count=None):
     core=xyz(verify(row['endpoints']['La']['xyz'])); result=[];water_moves=[]
     cofactor_charge=0
     if row['case_id'].startswith('PQQ'):
@@ -128,7 +134,9 @@ def cofactor_and_waters(row,manifest):
         if found!=1:raise InvalidArtifact('missing/duplicate PQQ')
         cofactor_charge=-3
     water_inventory=manifest.get('explicit_water_inventory',[])
-    if len(water_inventory)!={'GGR_1GLG':0,'ALPHA_1F6S':2,'ALPHA_6IP9':3,'PQQ_1H4I':0,'PQQ_4MAE':0}[row['case_id']]:
+    if expected_water_count is None:
+        expected_water_count={'GGR_1GLG':0,'ALPHA_1F6S':2,'ALPHA_6IP9':3,'PQQ_1H4I':0,'PQQ_4MAE':0}[row['case_id']]
+    if len(water_inventory)!=expected_water_count:
         raise InvalidArtifact('frozen water count mismatch')
     for w in water_inventory:
         selected=[a for a in manifest['atom_graph']['source_to_qm'] if a['kind']=='source' and
@@ -152,10 +160,12 @@ def cofactor_and_waters(row,manifest):
     return result,cofactor_charge,water_inventory,water_moves
 
 
-def prepare_case(row,output):
+def prepare_case(row,output,*,allow_terminal_completion=False,expected_water_count=None,
+                 evidence=None,policy_id=POLICY,check_peptide_connectivity=False):
     original_manifest=read_json(verify(row['preparation_manifest']))
-    p,q,details=protein(row)
-    extra,cofactor_q,waters,water_moves=cofactor_and_waters(row,original_manifest)
+    p,q,details=protein(row,allow_terminal_completion=allow_terminal_completion,
+                      check_peptide_connectivity=check_peptide_connectivity)
+    extra,cofactor_q,waters,water_moves=cofactor_and_waters(row,original_manifest,expected_water_count)
     metal=xyz(verify(row['endpoints']['La']['xyz']))[0]
     if metal[0]!='La' or not np.allclose(metal[1:],row['selected_site']['xyz_A'],atol=1e-6,rtol=0):
         raise InvalidArtifact('selected metal coordinate mismatch')
@@ -168,13 +178,13 @@ def prepare_case(row,output):
         charge=q+cofactor_q+(3 if element=='La' else 2)
         state=check_atoms(rows,charge);path=out/(element+'.xyz');write_xyz(path,rows)
         endpoints[element]={'xyz':record(path),'charge':charge,'spin_multiplicity':1,'state':state}
-    result={'status':'prepared','case_id':row['case_id'],'policy_id':POLICY,'source':row['source_structure'],
+    result={'status':'prepared','case_id':row['case_id'],'policy_id':policy_id,'source':row['source_structure'],
             'source_preparation':row['preparation_manifest'],'source_audit_row':row,
             'physical_atoms':physical,'assembly':'deposited_chain_A_with_declared_cofactor_and_site_waters',
             'explicit_waters':waters,'water_H_moves':water_moves,'protein_charge_e':q,'cofactor_charge_e':cofactor_q,
             'forcefield':record(FF),'water_forcefield':record(WATER_FF),'preparation_details':details,
             'endpoints':endpoints,'microstate':'archived_explicit_protonation_and_disulfides; PQQ3minus_where_present; neutral_waters',
-            'evidence':LABELS[row['case_id']],'evidence_use':'consumed_method_development',
+            'evidence':LABELS[row['case_id']] if evidence is None else evidence,'evidence_use':'consumed_method_development',
             'reference':None,'baseline_coordinates_modified':False}
     write_new(out/'preparation.json',result)
     return record(out/'preparation.json')

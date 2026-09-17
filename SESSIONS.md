@@ -676,3 +676,52 @@ results, limitations, exact artifacts and commands. No medium-pilot job remains
 active. Next large-checkpoint comparison is now in preparation under standing
 authorization; initial download encountered DNS failure, with per-command
 resolution recovery in progress. Shared resolver/installed environment untouched.
+
+
+## 2026-09-16 — Large analytic MACE pilot prepared under standing approval
+
+Medium analytic rotation repair completed (7ecc885). Large checkpoint downloaded
+from its official release, SHA9f65f8dc6ddaff1d631e299cb531376a7da5e68d1bef04f34a2d5073d5ef114b.
+Initial DNS failure recovered through per-command HTTPS resolution with TLS
+verification, no shared resolver changes. First static inspection failed before
+model load because the download was missing; preserved. Large has3 local layers,
+25,718,949 parameters, l<=1 electrostatics, includesCa/La, and supports our memory
+wrappers. Isolated installed environment unchanged.
+
+All4 independent large kernel tests passed (13.217s); full36-test suite passed
+(34.213s). Frozen same12-call pilot:8cores then4full if numerical gate passes,
+zeroDFT. Large-vs-analytic-medium label separates model-size from stencil repair.
+OneA5000/16CPU/64474MiB,256pair/2048edge/128node blocks (core128/17).
+Manifest workspaces/mace_large_20260916/pilot_v2/manifest.json SHA
+fab9f9bcb96cbd06e1f268d595e18391c3c914ff3452ae52a582ed1ea0324fe6.
+Preparedv1 failed metadata admission (versions vs actual package_pins key), no
+inference; corrected in a preserved newv2. No scientific settings changed.
+
+
+## 2026-09-16 — Large analytic MACE completed; global memory bottleneck resolved on 1H4I
+
+Job 1200525 completed all 12 calls, no retries, no new DFT. Core/full rotation
+and charge checks pass; hybrid partition −4.510729577 kcal/mol still fails the
+frozen 2 target (medium −5.023220584). Large full primary La/Ca evaluations
+121.583986 / 121.234315 s on one A5000; peak allocated 14.982 GiB / reserved
+20.889 GiB GPU, 1.891 GiB host RSS. Allocation 586 s, 9376 allocated core-seconds,
+620.184 actual CPU seconds. Whole model evaluation sum 497.039049 s. No H200,
+extra GPU, offload, software update or baseline change. No MACE pilot remains
+running. Results: diagnostics/mace_large_20260916/REPORT.md and result.json.
+
+Large-vs-medium raw full contrast differs +671.310348 kcal/mol; recorded
+component audit assigns +684.974140 to electrostatics, −16.673271 to local
+electron energy, +3.009479 to interaction energy, negligible reference offset.
+This does not establish a unique cause. Same-source saved-output audit under
+standing approval exported every atom's direct grad(E_Ca−E_La)=F_La−F_Ca and
+charges with physical mappings, no new model calls. Large broad charge response
+and far-from-metal force sensitivity make global scoring reliability unresolved.
+No hybrid gradient/relaxation/entropy/uncertainty score claimed. Keep baseline.
+
+39 tests pass: 36 model/runner tests + 3 saved-output tests. The first saved
+algebra test's inappropriate bitwise subtract/add equality failed on float64
+roundoff; fixed to a machine-epsilon check, failed log retained. Saved-output
+analysis used 4.08 s wall, 3.59 s CPU. DNS/download, failed pre-load inspection,
+and preparation-v1 metadata failure preserved; initial preparation not fully
+profiled. Agent guide, runnable commands and vault note updated. Protocol
+mace_polar_1l_analytic_multipole_vacuum_r2scan3c_pilot_v1 remains research only.

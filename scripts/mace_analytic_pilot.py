@@ -11,9 +11,10 @@ from mace_rotation import rotate_vectors
 
 SCHEMA='alquemia.mace_analytic.v1'
 PROTOCOL='mace_polar_1m_analytic_multipole_vacuum_r2scan3c_pilot_v1'
+LARGE_PROTOCOL='mace_polar_1l_analytic_multipole_vacuum_r2scan3c_pilot_v1'
 
 
-def prepare(source_collection,rotation_manifest,kernel_tests,agreement,output):
+def prepare(source_collection,rotation_manifest,kernel_tests,agreement,output,target_software=None,model_variant='medium'):
     from mace_hybrid import dry_run
     source=read_json(source_collection);sm=read_json(verify(source['manifest']))
     rotated=read_json(rotation_manifest)
@@ -30,12 +31,23 @@ def prepare(source_collection,rotation_manifest,kernel_tests,agreement,output):
         t['task_id']=name+'_rotate';tasks.append(t)
     for variant in ('primary','rotate'):
         tasks.extend(copy.deepcopy(t) for t in sm['tasks'] if t['kind']=='full' and t['variant']==variant)
-    m.update(schema_version=SCHEMA,protocol_id=PROTOCOL,implementation=pins,tasks=tasks,
+    if model_variant not in ('medium','large'):
+        raise InvalidArtifact('unknown checkpoint variant')
+    if model_variant=='large':
+        if not target_software or source['protocol_id']!=PROTOCOL:
+            raise InvalidArtifact('large comparison requires analytic medium reference and pinned target software')
+        target=read_json(target_software)
+        m['software']=record(target_software);m['model']['checkpoint']=target['checkpoint']
+    elif target_software:
+        raise InvalidArtifact('unexpected checkpoint override for medium pilot')
+    m.update(schema_version=SCHEMA,protocol_id=LARGE_PROTOCOL if model_variant=='large' else PROTOCOL,
+             model_variant=model_variant,implementation=pins,tasks=tasks,
              agreement=record(agreement),finite_reference=record(source_collection),rotation_manifest=record(rotation_manifest),
              kernel_test_receipt=record(kernel_tests),run_inventory={'distinct_mace_energy_force_calls':12,'new_DFT_endpoints':0})
     m.pop('kernel_validation_reference',None);m.pop('kernel_validation_tolerances',None)
     m['model']['pair_kernel']={'kernel_id':'graph044_analytic_multipoles_blocked_v1','tile_atoms':256,
-                              'edge_tile':4096,'node_tile':256,'core_edge_tile':128,'core_node_tile':17}
+                              'edge_tile':2048 if model_variant=='large' else 4096,
+                              'node_tile':128 if model_variant=='large' else 256,'core_edge_tile':128,'core_node_tile':17}
     for t in tasks:
         t.pop('cache_key');t['cache_key']=cache_key({'task':t,'model':m['model'],'software':m['software'],'implementation':pins})
     write_new(out/'manifest.json',m);return dry_run(out/'manifest.json')
@@ -46,13 +58,24 @@ def validate(m):
     rotated=read_json(verify(m['rotation_manifest']))
     tests=read_json(verify(m['kernel_test_receipt']))
     for key in ('kernel','test_source','log','checkpoint','source_collection'):verify(tests[key])
+    if tests.get('base_test_source'):verify(tests['base_test_source'])
     if tests['status']!='pass' or tests['kernel']['sha256']!=m['implementation']['mace_analytic.py']['sha256']:
         raise InvalidArtifact('kernel verification is missing or stale')
-    if tests['checkpoint']!=m['model']['checkpoint'] or m['protocol_id']!=PROTOCOL:
+    variant=m.get('model_variant','medium')
+    protocol={'medium':PROTOCOL,'large':LARGE_PROTOCOL}.get(variant)
+    if tests['checkpoint']!=m['model']['checkpoint'] or m['protocol_id']!=protocol:
         raise InvalidArtifact('kernel test/checkpoint or protocol mismatch')
     old=copy.deepcopy(sm['model']);new=copy.deepcopy(m['model'])
     old.pop('pair_kernel');new.pop('pair_kernel')
-    if old!=new or m['software']!=sm['software'] or m['tolerances']!=sm['tolerances']:
+    if variant=='large':
+        if source['protocol_id']!=PROTOCOL:raise InvalidArtifact('large requires analytic medium comparator')
+        old.pop('checkpoint');new.pop('checkpoint')
+        a,b=read_json(verify(sm['software'])),read_json(verify(m['software']))
+        if any(a[k]!=b[k] for k in ('python','requirements','backend_source_inventory','package_pins','graph_git_commit')) or b['checkpoint']!=m['model']['checkpoint']:
+            raise InvalidArtifact('large pilot changes software beyond checkpoint')
+    elif m['software']!=sm['software']:
+        raise InvalidArtifact('medium pilot changes software')
+    if old!=new or m['tolerances']!=sm['tolerances']:
         raise InvalidArtifact('unapproved physical model/software/tolerance change')
     settings=m['model']['pair_kernel']
     if settings['kernel_id']!='graph044_analytic_multipoles_blocked_v1' or settings['tile_atoms']<1:
@@ -88,14 +111,19 @@ def add_analysis(c,m):
     for name in TASK_IDS+['1h4i_full_La_primary','1h4i_full_Ca_primary']:
         a,b=old['rows'][name],rows[name]
         if b['status']!='computed':continue
-        changes.append({'task_id':name,'analytic_minus_finite_energy_kcal_mol':(b['energy_eV']-a['energy_eV'])*EV_TO_KCAL,
+        energy_key='large_minus_medium_energy_kcal_mol' if m.get('model_variant')=='large' else 'analytic_minus_finite_energy_kcal_mol'
+        changes.append({'task_id':name,energy_key:(b['energy_eV']-a['energy_eV'])*EV_TO_KCAL,
                         'force_max_change_eV_A':float(np.max(np.abs(np.load(verify(b['forces']))-np.load(verify(a['forces']))))),
                         'density_max_change':float(np.max(np.abs(np.load(verify(b['density_coefficients']))-np.load(verify(a['density_coefficients'])))))})
     c['analytic_comparison']={'core_rotation_checks':core_checks,'core_paired_rotation_checks':pairs,
        'core_gate':len(core_checks)==4 and len(pairs)==2 and all(r['pass'] for r in core_checks+pairs),
        'method_changes':changes,'finite_reference':m['finite_reference']}
+    if m.get('model_variant')=='large':
+        c['analytic_comparison']['comparison_label']='analytic_large_minus_analytic_medium'
+        c['analytic_comparison']['reference_field_note']='finite_reference is the legacy schema key; this pinned reference uses analytic medium'
     if c.get('core_partition'):
-        c['analytic_comparison']['partition_change_vs_finite_kcal_mol']=c['core_partition']['hybrid_partition_shift_kcal_mol']-old['core_partition']['hybrid_partition_shift_kcal_mol']
+        key='partition_change_vs_medium_kcal_mol' if m.get('model_variant')=='large' else 'partition_change_vs_finite_kcal_mol'
+        c['analytic_comparison'][key]=c['core_partition']['hybrid_partition_shift_kcal_mol']-old['core_partition']['hybrid_partition_shift_kcal_mol']
 
 
 def core_gate(manifest):
@@ -109,9 +137,10 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='command',required=True)
     q=sub.add_parser('prepare')
     for key in ('source-collection','rotation-manifest','kernel-tests','agreement','output'):q.add_argument('--'+key,required=True)
+    q.add_argument('--target-software');q.add_argument('--model-variant',choices=('medium','large'),default='medium')
     q=sub.add_parser('core-gate');q.add_argument('--manifest',required=True);q.add_argument('--output')
     a=p.parse_args()
-    if a.command=='prepare':r=prepare(a.source_collection,a.rotation_manifest,a.kernel_tests,a.agreement,a.output)
+    if a.command=='prepare':r=prepare(a.source_collection,a.rotation_manifest,a.kernel_tests,a.agreement,a.output,a.target_software,a.model_variant)
     else:
         r=core_gate(a.manifest)
         if a.output:write_new(a.output,r)

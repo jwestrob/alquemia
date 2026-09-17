@@ -1,0 +1,213 @@
+{
+  "status": "complete",
+  "protocol_id": "mace_polar_1l_analytic_multipole_vacuum_r2scan3c_pilot_v1",
+  "job_id": "1200525",
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_large_20260916/pilot_v2/manifest.json",
+    "sha256": "fab9f9bcb96cbd06e1f268d595e18391c3c914ff3452ae52a582ed1ea0324fe6"
+  },
+  "collection": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_large_20260916/pilot_v2/collection_job_1200525.json",
+    "sha256": "d97335ebfb9d8af682c70982bbaef5425c9c5e7c4ea0dee44c6346f2edd53aa2"
+  },
+  "core_rotation": [
+    {
+      "density_covariance_max_abs": 5.874071562494976e-09,
+      "energy_delta_kcal_mol": -1.0688068118255121e-07,
+      "force_max_delta_eV_A": 1.00785515419477e-07,
+      "pass": true,
+      "task_id": "1h4i_qm33_La"
+    },
+    {
+      "density_covariance_max_abs": 5.759175303321484e-09,
+      "energy_delta_kcal_mol": -9.563891408799716e-08,
+      "force_max_delta_eV_A": 9.152051100302927e-08,
+      "pass": true,
+      "task_id": "1h4i_qm33_Ca"
+    },
+    {
+      "density_covariance_max_abs": 5.79531428401836e-09,
+      "energy_delta_kcal_mol": -6.29203382157876e-08,
+      "force_max_delta_eV_A": 1.0119660794061236e-07,
+      "pass": true,
+      "task_id": "1h4i_qm36_La"
+    },
+    {
+      "density_covariance_max_abs": 5.714843820392446e-09,
+      "energy_delta_kcal_mol": -7.315537989888905e-08,
+      "force_max_delta_eV_A": 9.067811079788157e-08,
+      "pass": true,
+      "task_id": "1h4i_qm36_Ca"
+    }
+  ],
+  "full_rotation": [
+    {
+      "energy_delta_kcal_mol": -7.0229164702933495e-06,
+      "force_max_delta_eV_A": 1.999544151587429e-06,
+      "metal": "La",
+      "pass": true,
+      "variant": "rotate"
+    },
+    {
+      "energy_delta_kcal_mol": 2.8349387586505263e-06,
+      "force_max_delta_eV_A": 9.128517312717577e-06,
+      "metal": "Ca",
+      "pass": true,
+      "variant": "rotate"
+    },
+    {
+      "paired_R_delta_kcal_mol": 9.857855228943876e-06,
+      "pass": true,
+      "variant": "rotate"
+    }
+  ],
+  "core_gate": true,
+  "new_MACE_calls": 12,
+  "new_DFT_calls": 0,
+  "core_partition": {
+    "components": {
+      "qm33": {
+        "DFT_core_R_kcal_mol": -405349.0793037981,
+        "DFT_minus_MACE_R_kcal_mol": 71.00235976086697,
+        "MACE_core_R_kcal_mol": -405420.08166355896
+      },
+      "qm36": {
+        "DFT_core_R_kcal_mol": -405287.34070044087,
+        "DFT_minus_MACE_R_kcal_mol": 66.49163018347463,
+        "MACE_core_R_kcal_mol": -405353.83233062434
+      }
+    },
+    "full_system_evaluated": true,
+    "hybrid_partition_shift_kcal_mol": -4.51072957739234,
+    "identity": "common full-system MACE term cancels exactly in the partition difference",
+    "partition_check": false
+  },
+  "direct": {
+    "R_eV": -17547.811515633017,
+    "R_kcal_mol": -404662.1467789426
+  },
+  "hybrid": {
+    "qm33": {
+      "DFT_core_R_hartree": -645.9648755897479,
+      "DFT_core_R_kcal_mol": -405349.0793037981,
+      "MACE_core_R_eV": -17580.678682978018,
+      "MACE_core_R_kcal_mol": -405420.08166355896,
+      "MACE_environment_contribution_kcal_mol": 757.9348846163504,
+      "hybrid_R_kcal_mol": -404591.14441918174
+    },
+    "qm36": {
+      "DFT_core_R_hartree": -645.8664888626699,
+      "DFT_core_R_kcal_mol": -405287.34070044087,
+      "MACE_core_R_eV": -17577.80583999869,
+      "MACE_core_R_kcal_mol": -405353.83233062434,
+      "MACE_environment_contribution_kcal_mol": 691.6855516817363,
+      "hybrid_R_kcal_mol": -404595.65514875914
+    }
+  },
+  "method_changes": [
+    {
+      "density_max_change": 0.1517242903820597,
+      "force_max_change_eV_A": 0.19601875208896136,
+      "large_minus_medium_energy_kcal_mol": 2.383190097476849,
+      "task_id": "1h4i_qm33_La"
+    },
+    {
+      "density_max_change": 0.1453897533354917,
+      "force_max_change_eV_A": 0.14460574616970745,
+      "large_minus_medium_energy_kcal_mol": 2.477822942202787,
+      "task_id": "1h4i_qm33_Ca"
+    },
+    {
+      "density_max_change": 0.15927726922789628,
+      "force_max_change_eV_A": 0.23830598517824808,
+      "large_minus_medium_energy_kcal_mol": 2.983270240345494,
+      "task_id": "1h4i_qm36_La"
+    },
+    {
+      "density_max_change": 0.15549854851310674,
+      "force_max_change_eV_A": 0.19074654946475178,
+      "large_minus_medium_energy_kcal_mol": 2.565412078726296,
+      "task_id": "1h4i_qm36_Ca"
+    },
+    {
+      "density_max_change": 0.7565028953529196,
+      "force_max_change_eV_A": 26.05912235915965,
+      "large_minus_medium_energy_kcal_mol": 2251.877128140511,
+      "task_id": "1h4i_full_La_primary"
+    },
+    {
+      "density_max_change": 1.1362932667491163,
+      "force_max_change_eV_A": 39.22916186587709,
+      "large_minus_medium_energy_kcal_mol": 2923.1874758203066,
+      "task_id": "1h4i_full_Ca_primary"
+    }
+  ],
+  "partition_change_vs_medium_kcal_mol": 0.5124910063459538,
+  "primary_evaluation_seconds": {
+    "La": 121.58398582413793,
+    "Ca": 121.23431536182761
+  },
+  "primary_pair_evaluation_seconds": 242.81830118596554,
+  "full_max_GPU_allocated_bytes": 16086801920,
+  "full_max_GPU_reserved_bytes": 22429040640,
+  "full_max_host_RSS_KiB": 1982840,
+  "max_total_charge_error_e": 5.4578563890572696e-12,
+  "GPU_allocation_seconds": 586,
+  "allocated_core_seconds": 9376,
+  "reported_actual_CPU_seconds": 620.184,
+  "accounting": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_large_20260916/pilot_v2/sacct_final.tsv",
+    "sha256": "14fa8fef7114824a670f4d61109e9f35cecc53f91b53abba4be62396b18cd794"
+  },
+  "model_evaluation_total_seconds": 497.0390491709113,
+  "subprocess_total_seconds": 580.2556479088962,
+  "tests_passed": 39,
+  "kernel_test_seconds": 13.217,
+  "regression_suite_seconds": 34.213,
+  "output_audit_tests_seconds": 1.877,
+  "output_audit": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_large_20260916/output_audit_v1/result.json",
+    "sha256": "c4c058f2e72075f53ea1f7a80a02a2bf75f1dc5b8fe24eb9cfecd734ff57d977"
+  },
+  "large_minus_medium_R_kcal_mol": 671.3103476797696,
+  "large_minus_medium_R_components_kcal_mol": {
+    "electron_energy": -16.673271468237363,
+    "electrostatic_energy": 684.974139934177,
+    "interaction_energy": 3.009479222972728,
+    "remaining_reference_term": -9.138602763414383e-09
+  },
+  "output_audit_elapsed_seconds": 4.08,
+  "output_audit_user_CPU_seconds": 3.31,
+  "output_audit_system_CPU_seconds": 0.28,
+  "output_audit_peak_RSS_KiB": 104812,
+  "preparation_profiling": "not fully measured; download/inspection and failed attempts separately preserved",
+  "baseline_changed": false,
+  "S_kcal_mol": null,
+  "calibrated_class": null,
+  "test_records": {
+    "kernel": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_large_20260916/kernel_test_receipt_v1.json",
+      "sha256": "e4159650872120fe8273df77cc793bcd05ed1218bff5891aae9800c9cab358a6"
+    },
+    "regression_log": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_large_20260916/all_tests_v2.log",
+      "sha256": "8515ce0cdc0cc63bf3eefa7fdc80471197c3da24d5f51a3e95600aad8a0a3228"
+    },
+    "output_audit_log": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_large_20260916/output_audit_tests_v2.log",
+      "sha256": "cf960d74706375e45bf2b15ce91ab7f46c34dfb5949c48947f785ec7c7aed904"
+    },
+    "output_audit_initial_roundoff_failure": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_large_20260916/output_audit_tests_v1.log",
+      "sha256": "c3f94fc7501aadf0532cbaf5fd853cd6d7d1494041261ea21997141655b3c900"
+    },
+    "output_audit_test_source": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/tests/test_mace_output_audit.py",
+      "sha256": "c2bfb7eaaae79419eb7ec6fb33ebc39f5dd0ee470911f0993b9d656ea79c370b"
+    },
+    "software": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_large_20260916/software_v1/software_manifest.json",
+      "sha256": "3245e8b7d661c4eaaa9202cffc5fa2be2cd84b58ed6ba8f52a092d91e8226773"
+    }
+  }
+}

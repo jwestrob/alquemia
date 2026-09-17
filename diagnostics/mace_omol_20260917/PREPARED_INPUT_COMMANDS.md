@@ -62,3 +62,27 @@ zero new inference. Its complete report is
 three real-artifact tests; full-panel equivalence is pending the unchanged
 canonical job. Any classification must use its own compatible numeric evaluation
 record, as declared in FACTORIZATION_NUMERICAL_BANDS_ADDENDUM.md.
+
+
+## Optional matching research calibration (2026-09-17)
+
+The completed canonical test and189factorization checks now support an explicit
+PQQ-only calibration. Read MASKED_CALIBRATION_REPORT.md. Production remains
+unchanged;1KB0 remains unscorable and no generic affinity band is implied.
+The following reports an already computed1H4I pair; it launches no model call:
+
+```bash
+cd /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs
+MACE_DRIVER=/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python
+MACE_WORK="$PWD/workspaces/mace_omol_20260917"
+"$MACE_DRIVER" "$MACE_WORK/masked_calibration_source_v1/implementation/mace_omol_prepared.py" report \
+  --manifest "$MACE_WORK/prepared_interface_pqq_two_call_v2/manifest.json" \
+  --calibration "$MACE_WORK/masked_calibration_v1/reference.json" \
+  --output "$MACE_WORK/prepared_interface_pqq_calibrated_review_v2"
+```
+
+The output path must be new; completed reports are never overwritten. The
+calibration argument is optional. Without it, the interface returns only its
+raw descriptor. Supplying this calibration for GGR returns the raw score and
+an explicit out-of-scope decision, not an inherited PQQ label. Source input
+must be an auditable whole-chain preparation, not arbitrary unprotonated XYZ.

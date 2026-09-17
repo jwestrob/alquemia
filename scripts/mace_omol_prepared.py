@@ -218,8 +218,11 @@ def collect(manifest):
 
 
 @cached_file_checks
-def report(manifest,output):
+def report(manifest,output,calibration=None):
     validate(manifest);result=collect(manifest);m=read_json(manifest)
+    if calibration is not None:
+        from mace_omol_mask_calibration import decision
+        result.update(decision(result,m,calibration))
     out=Path(output).resolve();out.mkdir(parents=True,exist_ok=False)
     result.update(preparation=m['preparation'],preparation_audit=m['preparation_audit'],
                   report_implementation=record(__file__))
@@ -227,7 +230,7 @@ def report(manifest,output):
     (out/'REPORT.md').write_text('# Prepared whole-chain MACE descriptor\n\n'
         f"Status: {result['status']}. Score: {result['R_mask_model_kcal']} kcal-equivalent model units.\n\n"
         'Modified learned descriptor, not a quantum energy or binding free energy.\n'
-        'No compatible calibration supplied; classification unavailable. Baseline unchanged.\n')
+        f"Decision: {result['calibrated_class']}; status: {result['decision_status']}. Baseline unchanged.\n")
     return {'status':result['status'],'result':record(out/'result.json')}
 
 
@@ -239,6 +242,7 @@ if __name__=='__main__':
     a.add_argument('--reuse-collection');a.add_argument('--factorization')
     a=sub.add_parser('report')
     for key in ('manifest','output'):a.add_argument('--'+key,required=True)
+    a.add_argument('--calibration')
     args=vars(p.parse_args());command=args.pop('command')
     result=audit_preparation(args['preparation']) if command=='audit' else {'prepare':prepare,'report':report}[command](**args)
     print(json.dumps(result,indent=2))

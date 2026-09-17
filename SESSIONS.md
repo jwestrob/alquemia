@@ -1517,3 +1517,53 @@ Canonical1200830 continues unchanged; latest count74/100, zero failures.
 Next complete its report, extend factorization proof across all27valid scores,
 and add a compatible research calibration only if the fixed rule passes.
 Goal active, baseline/default unchanged. No duplicate inference or job interference.
+
+
+## Masked MACE canonical separation and opt-in classifier — 2026-09-17
+
+Canonical job1200830 completed100/100newforwards, zero failures, plus8exact
+modified-model crystal reuses. All25designated PQQ calibration cases separate
+under the frozen rule: gap9.108591009132667modelkcal. Four-call bands Ca<=
+42.34666378194103,La>=51.4552547910737. Both valid crystal transfers classify
+correctly:1H4I17.579955566129197Ca,4MAE61.9091345031223La.1KB0remainsunsupported;
+retain2/3valid/correct and the false all-three transfer gate. Consumed PQQ
+functional class, already separated by composition; no broad affinity claim.
+
+Actual cost3546GPU/allocation-s(oneA5000),56736allocatedcore-s,3925reportedCPU-s
+(seconds precision),2657.5787702687085summed evaluation-s,13751386112bytespeakGPU,
+1769204KiBpeakRSS. Local work has separate receipts. Cumulative engineeringV8:
+348successfulforwards,2OOMs,11282GPU-s,243744allocatedcore-s,29420.954reportedCPU-s.
+Includes old invalid native1KB0diagnostics; not a per-site production cost.
+
+New scripts/mace_omol_mask_calibration.py verifies full-panel disconnected
+factorization:189checks pass,maxerror2.357415596e-8modelkcal vs0.01tolerance.
+Two-call bands are separately typed using the same25calibration cases and fixed
+1H4Idetached model terms:Ca<=42.346663801320496,La>=51.455254788976355.
+No transfer sets bands, no fitted epsilon, no changed original four-call result.
+Reference masked_calibration_v1/reference.json SHA
+217a127f7ba8f6cccb59d1c63b2d389e9022449a5feb09f58eba2e3b04cba54d.
+Canonical report charge_ablation_canonical_report_v1/result.json SHA
+9c12a55ac09aab4c68f2399a1ff784ebd078d6f6a8ea020b85fccb577d017f25.
+All these products under workspaces/mace_omol_20260917/.
+
+Prepared-input report now offers explicit --calibration with model/software,
+numericrecipe,factorization and physicalPQQscope matching. Exact actual1H4I
+report yields17.57995558550866,Ca. GGR gives23.98742145552895,no class and an
+explicit out-of-PQQ-scope status. No new modelcall. All5actual-artifact tests
+pass675.322s,none skipped, including corrupt-reference, native-model, wrong
+numericrecipe and unsupported-case guards. Existing OpenMMdriver retained;
+workers use the separate pinnedMACEenvironment. No installed environment changed.
+
+Read-only1KB0raw-source diagnosis finds more than a loop problem:TRO512is
+present but omitted by core-orientednormalization;HEC802has covalentCYS604/607
+attachments andHIS608/MET647ironligands;574–578is a separatemissingloop. Do not
+patchonlycaps or omitthesechemistries to manufacture a globalpass. Frozen
+fixed-corebaselineunchanged. Aqualysin primaryNMRpaper recovered at PDF/-char/en;
+subsequent weakCa-1assignment remains an inference, not verified assaymapping.
+No new label/preparation/score was issued by that follow-up.
+
+Docs/currentcheckpoint/vaultupdated; standalonePDF/SVG/PNGfromactualscores
+rendered and visuallychecked, no newfit. Emailacceptedbylocalrelay at
+20260917T145316Z_masked_canonical_pass;deliverynotclaimed. NativeH2001200809still
+pendingunchanged;do notduplicate/interfere. Goalremainsactive. Baseline/default,
+oldreferencesandimmutableexperimentspreserved;no push orproductionpromotion.

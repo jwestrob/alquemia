@@ -337,3 +337,22 @@ Job1200828 completed42calls in798GPU-allocation seconds. The conditional
 1KB0 remains unsupported. Recover [CURRENT.md](../diagnostics/mace_discriminator_goal_20260916/CURRENT.md)
 and use the [frozen commands](../diagnostics/mace_omol_20260917/CHARGE_ABLATION_COMMANDS.md).
 Do not issue candidate bands before the declared full-panel criterion passes.
+
+
+### Masked MACE canonical milestone (2026-09-17)
+
+Job1200830 completed100/100newforwards on oneA5000 in59m06s. The masked
+whole-chain descriptor separates all25designated PQQ calibration proteins
+(gap9.108591modelkcal), and correctly transfers to1H4I/4MAE.1KB0 remains
+unsupported; retain the full3-transfer denominator and false all-three gate.
+These consumed classes do not establish broad affinity or incremental value
+beyond composition. [Canonical result](../diagnostics/mace_omol_20260917/CHARGE_ABLATION_CANONICAL_REPORT.md).
+
+All189panel factorization checks pass. Optional two-call research calibration
+is implemented in mace_omol_prepared.py report --calibration, with strict
+numeric/model/preparation compatibility and no PQQ-band transfer to non-PQQ
+sites. Use the existing OpenMM driver; workers use their separately pinned
+MACE environment. [Calibration](../diagnostics/mace_omol_20260917/MASKED_CALIBRATION_REPORT.md),
+[commands](../diagnostics/mace_omol_20260917/PREPARED_INPUT_COMMANDS.md).
+Production/default and all old references remain unchanged. Recover CURRENT.md
+for actual integration test status and outstanding research.

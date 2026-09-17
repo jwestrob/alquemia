@@ -316,6 +316,43 @@
       "scientific_component": "modified_charge_feature_descriptor",
       "numerical_gate_pass": true,
       "predictive_development_gate_pass": true
+    },
+    {
+      "GPU_allocation_seconds": 3546,
+      "actual_CPU_precision_note": "sacct rendered seconds without fractional digits",
+      "actual_CPU_seconds": 3925.0,
+      "allocated_core_seconds": 56736,
+      "allocated_cpus": 16,
+      "collection": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_canonical_v1/collection_job_1200830.json",
+        "sha256": "144d7e312716672345358b319823da8cd4b61a02782a849ea1b013c921b660de"
+      },
+      "complete": true,
+      "evaluation_seconds": 2657.5787702687085,
+      "failed_calls": 0,
+      "job_id": "1200830",
+      "local_preparation_and_reporting": "separate resources receipts; not included in allocation cost",
+      "name": "charge_ablation_canonical_v1",
+      "numerical_gate_pass": true,
+      "peak_GPU_allocated_bytes": 13751386112,
+      "peak_host_RSS_KiB": 1769204,
+      "reused_calls": 8,
+      "sacct": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_canonical_sacct_1200830.tsv",
+        "sha256": "d039edf0d2a5e3fd98648060d9d94d8b5b12cef60cb2a17b75d56c6e6ed98484"
+      },
+      "sacct_argv": [
+        "sacct",
+        "-j",
+        "1200830",
+        "--parsable2",
+        "--units=K",
+        "--format=JobID,JobName,State,ElapsedRaw,AllocCPUS,CPUTimeRAW,TotalCPU,MaxRSS,ReqMem,AllocTRES,NodeList"
+      ],
+      "scheduler_state": "COMPLETED",
+      "successful_calls": 100,
+      "wall_seconds": 3546,
+      "worker_wall_seconds": 2871.2304404377937
     }
   ],
   "local_preparation_receipts": [
@@ -432,13 +469,13 @@
     "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/intact_engineering_sacct_v2.tsv",
     "sha256": "b608e8ef3bf7e23e6d3a5a9b8889ef2407830caaa2f46b788bcfae3b2c86fee6"
   },
-  "status": "native_intact_rejected; charge_ablation_development_passed; conditional_canonical_prepared",
+  "status": "native_intact_rejected; charge_ablation_calibration_and_two_valid_transfers_pass; one_transfer_unsupported",
   "totals": {
-    "GPU_allocation_seconds": 7736,
-    "actual_CPU_seconds": 25495.954,
-    "allocated_core_seconds": 187008,
+    "GPU_allocation_seconds": 11282,
+    "actual_CPU_seconds": 29420.954,
+    "allocated_core_seconds": 243744,
     "failed_calls": 2,
-    "successful_calls": 248
+    "successful_calls": 348
   },
   "product_equivalence": {
     "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/product_equivalence_v1/result.json",
@@ -546,5 +583,17 @@
       "sha256": "2769f9ff1fb98b1c240603feb67bf57b0de79033c7d40ec0914df563cd504e88"
     }
   ],
-  "cost_scope_note": "Totals cover completed intact engineering plus ablation; future canonical job is not counted. Local work is separate and other local work is not fully profiled. Four native canonical forwards are invalid-preparation diagnostics."
+  "cost_scope_note": "Completed engineering through1200830, including failed/OOM/invalid-input attempts. Local preparation, reports and tests separate; other local work not fully profiled. No reserved or future GPU time counted.",
+  "charge_ablation_canonical_report": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/charge_ablation_canonical_report_v1/result.json",
+    "sha256": "9c12a55ac09aab4c68f2399a1ff784ebd078d6f6a8ea020b85fccb577d017f25"
+  },
+  "charge_ablation_two_call_reference": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/masked_calibration_v1/reference.json",
+    "sha256": "217a127f7ba8f6cccb59d1c63b2d389e9022449a5feb09f58eba2e3b04cba54d"
+  },
+  "charge_ablation_canonical_calibration_pass": true,
+  "charge_ablation_all_three_transfer_gate_pass": false,
+  "charge_ablation_valid_transfer_correct_count": 2,
+  "charge_ablation_transfer_total_count": 3
 }

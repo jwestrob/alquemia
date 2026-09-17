@@ -1,0 +1,90 @@
+{
+  "status": "unsupported_existing_preparation",
+  "source": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/protenix/mmcif/1kb0.cif",
+    "sha256": "2b26ccaecd3ed6c89af5e6d8404e39ee09787d79d1904c7c99c48658685aa916"
+  },
+  "normalization": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_q46444_1kb0_external_validation_20260915/prepared/01_1KB0/pmdh_fc_holdout_1kb0_normalization_manifest.json",
+    "sha256": "21e40a710afc2b1efeec184f1f8c9c4905f133c87c33c820222e9ab3418084a2"
+  },
+  "raw_selected_residues": [
+    {
+      "chain": "A",
+      "resname": "TRO",
+      "resid": "512",
+      "entity": "Polymer",
+      "atoms": 15
+    },
+    {
+      "chain": "A",
+      "resname": "HEC",
+      "resid": "802",
+      "entity": "NonPolymer",
+      "atoms": 43
+    }
+  ],
+  "source_connections": [
+    {
+      "id": "covale1",
+      "kind": "Covale",
+      "a": "A/LEU 511/C",
+      "b": "A/TRO 512/N",
+      "deposited_distance_A": 1.337
+    },
+    {
+      "id": "covale2",
+      "kind": "Covale",
+      "a": "A/TRO 512/C",
+      "b": "A/GLU 513/N",
+      "deposited_distance_A": 1.339
+    },
+    {
+      "id": "covale3",
+      "kind": "Covale",
+      "a": "A/CYS 604/SG",
+      "b": "A/HEC 802/CAB",
+      "deposited_distance_A": 1.857
+    },
+    {
+      "id": "covale4",
+      "kind": "Covale",
+      "a": "A/CYS 607/SG",
+      "b": "A/HEC 802/CAC",
+      "deposited_distance_A": 1.813
+    },
+    {
+      "id": "metalc5",
+      "kind": "MetalC",
+      "a": "A/HIS 608/NE2",
+      "b": "A/HEC 802/FE",
+      "deposited_distance_A": 2.067
+    },
+    {
+      "id": "metalc6",
+      "kind": "MetalC",
+      "a": "A/MET 647/SD",
+      "b": "A/HEC 802/FE",
+      "deposited_distance_A": 2.292
+    }
+  ],
+  "findings": [
+    "A:TRO512 is an experimentally present modified polymer residue, removed by normalized standard-residue selection; the resulting C511--N513 connection is false. It is not simply a missing crystallographic residue.",
+    "A:574--578 are absent in the archived chain; the normalized C573--N579 connection spans18.969263Angstrom.",
+    "HEC802 has covalent attachments to CYS604/CYS607 and iron ligands HIS608/MET647; it is excluded in the fixed-core-oriented normalized source. A full physical preparation needs explicit heme chemistry."
+  ],
+  "next_preparation_requirements": [
+    "support the actual modified TRO residue without substituting TRP",
+    "represent the missing loop explicitly as unsupported or implement a separately versioned justified chain-break model",
+    "retain and parameterize source-mapped covalent heme, including iron oxidation/spin and attached cysteine states",
+    "keep existing unsupported canonical entry and all frozen scores unchanged"
+  ],
+  "new_preparations": 0,
+  "new_energy_evaluations": 0,
+  "baseline_changed": false,
+  "primary_structure_url": "https://www.rcsb.org/structure/1KB0",
+  "primary_paper_doi": "10.1074/jbc.M109403200",
+  "software": {
+    "gemmi": "0.7.5"
+  }
+}

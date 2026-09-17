@@ -39,12 +39,16 @@ This validates a narrow mechanical construction, not a discriminator improvement
 The [runbook](../diagnostics/mace_mechanics_20260916/COMMANDS.md) supplies exact
 replay/collection commands; no mechanics job remains live. Production is unchanged.
 
-The next [canonical MACE scorer plan](../diagnostics/mace_canonical_20260916/PLAN.md)
-tests direct MACE+GB on the25 frozen PQQ calibration cores and three consumed
-crystal-transfer cases, using its own bands. Medium is primary; large is a
-predeclared sensitivity check. Preparation is pending at this documentation
-checkpoint. This is PQQ functional-class evidence, not broad affinity validation;
-no old reference/band or mechanical correction is inherited.
+The [canonical direct MACE trial](../diagnostics/mace_canonical_20260916/REPORT.md)
+is complete and rejected: calibration classes overlap by 5.817 kcal/mol for
+primary medium and 1.609 for large. All 25 calibration and three transfer scores
+were computed, but no bands or transfer classifications can be released under
+the frozen rule. Both crystal cases share calibration accessions. This is
+retrospective PQQ functional-class evidence, not broad affinity validation.
+108 new MACE + 108 GB calls, four endpoint reuses per method, zero DFT;
+1,212 GPU-seconds and 19,392 allocated core-seconds. No canonical job remains
+live. The [runbook](../diagnostics/mace_canonical_20260916/COMMANDS.md) and pinned
+receipts support replay. No old reference, threshold or response term is inherited.
 
 “Baseline” can refer to the electronic method or to a specific preparation.
 Always name both. The baseline method is ORCA 6.1.1 native r2SCAN-3c,

@@ -964,3 +964,36 @@ candidate cannot fix or validate broad affinity by declaration.
 
 Agent guide and vault capture updated. Baseline and others' work remain untouched.
 Goal stays ACTIVE. No mechanics job live and no email notification sent.
+
+
+## Canonical direct MACE candidate completed — 2026-09-16
+
+Exact 25 calibration cores plus consumed 1H4I/4MAE/1KB0 audited and scored.
+Primary medium and sensitivity large both fail fixed calibration separation:
+gaps -5.816631373832934 / -1.6092710972880013 kcal/mol. All 28 scores available
+per checkpoint; no bands released, all three transfer classes unavailable from
+failed calibration, not reported as three wrong calls. Baseline unchanged.
+DBREF maps both crystal controls to calibration accessions (P16027/I0JWN7);
+retrospective structural transfer only, not independent protein validation.
+
+MACE jobs1200776/1200779 and GB1200781/1200782 all complete.108newMACE+108GB,
+4exact medium endpoint reuses per method,zeroDFT,no failed scientific attempts.
+Cost1212GPU-s,19392allocatedcore-s,1236.464reportedactualCPU-s. Median MACE pair
+inference2.179/3.563s; production end-to-end speedup not established. Preparation
+and failed preflight costs unprofiled, explicit. Original v1 packaging omitted
+receipt-parser helpers and failed before submission; v2 preserved task inputs.
+
+New source audit, canonical existing-runner dispatch/preparation/cache handling,
+fixed calibration/report code and tests in scripts/mace_canonical*.py and
+tests/test_mace_canonical.py. Seven real-fixture tests pass5.416s; existing runner
+10pass/2explicit isolated-environment skips8.173s. Complete records in diagnostics/
+mace_canonical_20260916/{REPORT.md,result.json,costs.json,AUDIT.md,COMMANDS.md};
+workspace report_v2 adds unavailable-calibration display counts only. No fit
+or scientific acceptance criterion changed after results. Goal remains ACTIVE.
+
+Jacob confirmed receiving the original notification email; earlier relay failure
+was temporary, not final delivery failure. His requested progress email was
+submitted successfully; private receipts/body in goal notifications workspace.
+Agent guide and vault updated. No MACE job live. Retain baseline; abandon this
+frozen direct classifier and continue coherent hybrid research under the active
+authorization. No default promotion, push, rescore or concurrent-work changes.

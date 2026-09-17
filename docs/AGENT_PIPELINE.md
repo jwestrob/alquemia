@@ -388,5 +388,7 @@ direct responses pass6/24 and curvature19/24. No mechanical correction is
 supported. The separate static DFT+masked(full-core) candidate fails its cached
 partition test by20.16kcal versus the2kcal target; its six conditional full calls
 must not be launched. [Partition result](../diagnostics/mace_omol_20260917/MASKED_SUBTRACTIVE_CONTEXT_REPORT.md).
-The next shared learned-neutral feature is a distinct declared research control,
-not implemented at this checkpoint. Baseline/default remains unchanged.
+The shared learned-neutral feature now passes16/16 numerical checks on eight
+real cores, but its subtractive partition shift is10.91kcal versus the2kcal limit.
+Its conditional six whole calculations must not be launched. No charge-category
+sweep or production change. [Result and replay](../diagnostics/mace_omol_20260917/SHARED_NEUTRAL_FEATURE_REPORT.md).

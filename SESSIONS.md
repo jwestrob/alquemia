@@ -1704,3 +1704,22 @@ conditional six whole calls. No charge-category sweep/optimization/newDFT.
 NOT implemented or launched yet. Goal active, baseline unchanged, no push.
 All new research GPU jobs terminal. H2001200809stillpending; other agents'PLM
 1200794running and1200795/96dependencies preserved. Recheck live before resuming.
+
+
+## Shared-neutral feature: implemented and rejected at partition gate — 2026-09-17
+
+Eight analytic core calls1200901 complete;16/16 native/readout numerical checks
+pass. Learned charge0feature shared without changing actual physical state.
+GGRhybridpartition+10.912283925kcal-scale fails2;conditional6wholecallsNOTrun.
+No category sweep, newDFT,solver,training,relaxation or productionchange.
+New neutral adapter/worker/runner, minimal shared dispatch,3newtests+6nativepass.
+V1preflight1200893 failed before model call due to host-derived summaryroundoff;
+V2 retains exact raw pins/receipts/arrays, all thresholds and gate decisions.
+All scientific task records unchanged;recovery audited. Both attempts retained.
+Cost82GPUallocation-s/1312allocatedcore-s/93.244CPU-s;model6.595379632s/1.031GBpeak.
+CumulativeV14:437success,4failedmodelcalls,12424GPU-s,262016core-s,30741.280CPU-s.
+Report SHARED_NEUTRAL_FEATURE_REPORT.md,fullshared_neutral_core_report_v1;
+manifestshared_neutral_core_v2. Vault/currentcheckpoint/agentguide updated.
+Next inspect compatible archivedvacuumDFT to disentangle solvent mismatch;
+no newvacuumexperimentdeclared/launched at this commit. Goalactive;no push.
+Preserve concurrentPLM1200794–96 and pendingnativeH2001200809, edits andlocks.

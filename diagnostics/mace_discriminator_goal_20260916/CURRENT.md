@@ -67,25 +67,38 @@ DO NOT run its conditional six whole-chain calls. Full result:
 MASKED_SUBTRACTIVE_CONTEXT_REPORT.md. Two actual-fixture tests pass4.384s.
 No adaptive change, learned multiplier or omitted failure. Baseline unchanged.
 
-**Next declared development:** [SHARED_NEUTRAL_FEATURE_PLAN.md](../mace_omol_20260917/SHARED_NEUTRAL_FEATURE_PLAN.md).
-One fixed alternative to the raw-zero vector: use the checkpoint's learned
-charge-zero feature for both endpoints/all atoms, preserving actual physical
-charges and spin. This remains an empirical descriptor, not physical
-neutralization. No charge-category sweep. First eight real core-center
-energy/gradient calls on the same GGR/alpha set; verify four actual La charge0
-states against exact native archived results where compatible. Require native
-numerical agreement and the same2kcal cached partition target before any
-conditional six whole-system calls. No optimization or newDFT. Plan declared;
-new adapter/reference audit/manifest NOT IMPLEMENTED OR LAUNCHED yet.
+## Shared learned-neutral feature complete: partition failure
 
-Source scripts for completed work: mace_omol_response.py, mace_omol_context.py,
-minimal mace_omol.py dispatch, real-fixture tests. Gradient milestone committed
-c22a881; response/context work is the next scoped commit. Do not repeat passed
-qualifications or rerun the failed fixed context candidate.
+Eight real center gradient calls completed1200901;16/16 numerical checks pass.
+All four charge0La native energies agree exactly;maxgradienterror9.77e-15eV/A.
+Connected-minus-extended GGR:DFT/CPCM−7.343500873,learned−18.255784798,
+hybrid+10.912283925kcal-scale;declared2gateFAIL. DO NOT run conditional six
+whole calls or sweep charge categories. Physical charge/spin/coordinates unchanged.
+Report ../mace_omol_20260917/SHARED_NEUTRAL_FEATURE_REPORT.md.
 
-All new research GPU jobs are terminal. Native H2001200809 remains pending at
-last check; preserve other agents'PLM1200794–1200796 and inspect live state.
-Goal active. Full autonomy, baseline/reference protection and no push remain.
+Manifest shared_neutral_core_v2 SHA4b3420ef72fc742b25cc407b1992073e3a55da2d28f25f15c9055781bb7db814;
+result shared_neutral_core_report_v1/result.json. Eight scientific tasks unchanged
+fromV1, which failed before inference at auxiliary native report host roundoff.
+V2 retains exact raw receipts/arrays and all original thresholds/decisions.
+Recovery shared_neutral_reference_recovery_v2.json. Three new tests and six
+native regressions pass;actual integration executed after initial explicit skip.
+
+Both jobs1200893/1200901:82GPUallocation-s,1312allocatedcore-s,93.244CPU-s;
+modelsum6.595379632s,peakGPU1,031,137,792bytes. NoDFT/solver/training/optimization.
+Costs shared_neutral_cost_v1 and cumulativeintact_engineering_status_v14:
+437successfulcalls,4failedmodelcalls,12424GPU-s,262016core-s,30741.280CPU-s.
+Local resources and preflight failures retained. Baseline unchanged;goal active.
+
+Next: audit archived vacuum DFT before declaring a matched solvent-mismatch
+diagnostic. The failed expressions mix CPCM core with vacuum learned terms;
+changing core changes the CPCM cavity. This is a hypothesis, not an established
+cause or permission to relabel the old candidate successful. Existing fixed-field
+vacuum archive is PQQ/Asp303, not these exact GGR/alpha geometries. No new
+vacuum experiment has been launched at this checkpoint.
+
+Completed response/context commit215c794,gradientc22a881. Do not repeat passed
+engineering gates. Other agents'PLM1200794–1200796 and pendingnativeH2001200809
+preserved;recheck live state. No push/default promotion.
 
 ## Actual result: masked MACE candidate works on the supported PQQ panel
 

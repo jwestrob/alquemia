@@ -378,7 +378,8 @@ def accepted_attempt(attempt, task, manifest):
         if (r['returncode'] != 0 or r['manifest'] != record(manifest) or r['task_id'] != task['task_id']
                 or result['status'] != 'computed' or result['cache_key'] != task['cache_key']):
             return None
-        omol_components=('MACE_OMOL_total_vacuum_energy','MACE_OMOL_charge_feature_ablated_descriptor')
+        omol_components=('MACE_OMOL_total_vacuum_energy','MACE_OMOL_charge_feature_ablated_descriptor',
+                         'MACE_OMOL_shared_neutral_charge_feature_descriptor')
         if not (task.get('energy_only') is True and task.get('energy_component') in omol_components):
             verify(result['forces'])
         if task.get('energy_component') in omol_components:

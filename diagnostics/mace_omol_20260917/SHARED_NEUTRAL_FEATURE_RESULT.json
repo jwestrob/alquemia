@@ -1,0 +1,310 @@
+{
+  "baseline_changed": false,
+  "calibrated_class": null,
+  "cases": {
+    "ALPHA_1F6S": {
+      "DFT_R_kcal_mol": -405430.43011288816,
+      "core_anchor_R_kcal_scale": -59.15657979634125,
+      "evidence": {
+        "direction": "La",
+        "evidence_stratum": "qualified_qualitative_strong_site_affinity",
+        "group": "bovine_alpha"
+      },
+      "learned_R_model_kcal": -405371.2735330918,
+      "projections": {
+        "Ca": {
+          "DFT": [
+            -2.7282602564520575,
+            -0.1381510458107158
+          ],
+          "learned": [
+            -7.353340816255397,
+            -2.3709774068543688
+          ],
+          "units": [
+            "kcal_scale_per_A",
+            "kcal_scale_per_radian"
+          ]
+        },
+        "La": {
+          "DFT": [
+            2.446402029919243,
+            13.361551943535027
+          ],
+          "learned": [
+            -5.295319955538579,
+            12.864471955068904
+          ],
+          "units": [
+            "kcal_scale_per_A",
+            "kcal_scale_per_radian"
+          ]
+        }
+      }
+    },
+    "ALPHA_6IP9": {
+      "DFT_R_kcal_mol": -405432.82056518225,
+      "core_anchor_R_kcal_scale": -58.561630738549866,
+      "evidence": {
+        "direction": "La",
+        "evidence_stratum": "qualified_qualitative_strong_site_affinity",
+        "group": "bovine_alpha"
+      },
+      "learned_R_model_kcal": -405374.2589344437,
+      "projections": {
+        "Ca": {
+          "DFT": [
+            -22.17631316067347,
+            -10.98214033724275
+          ],
+          "learned": [
+            -10.13531123515143,
+            -6.9059759347747995
+          ],
+          "units": [
+            "kcal_scale_per_A",
+            "kcal_scale_per_radian"
+          ]
+        },
+        "La": {
+          "DFT": [
+            -59.74703153783966,
+            -12.615500426864985
+          ],
+          "learned": [
+            -41.23442198210827,
+            -8.429564364993453
+          ],
+          "units": [
+            "kcal_scale_per_A",
+            "kcal_scale_per_radian"
+          ]
+        }
+      }
+    },
+    "GGR_connected": {
+      "DFT_R_kcal_mol": -405422.8549215469,
+      "core_anchor_R_kcal_scale": -51.59650036157109,
+      "evidence": {
+        "direction": "Ca",
+        "evidence_stratum": "direct_same_assay_affinity",
+        "group": "GGR"
+      },
+      "learned_R_model_kcal": -405371.2584211853,
+      "projections": {
+        "Ca": {
+          "DFT": [
+            4.759926105567418,
+            -9.148245434470994
+          ],
+          "learned": [
+            7.265753880940536,
+            -7.509217909813332
+          ],
+          "units": [
+            "kcal_scale_per_A",
+            "kcal_scale_per_radian"
+          ]
+        },
+        "La": {
+          "DFT": [
+            1.2863903067117028,
+            -15.086492491487132
+          ],
+          "learned": [
+            3.382035485476691,
+            -15.669752288467574
+          ],
+          "units": [
+            "kcal_scale_per_A",
+            "kcal_scale_per_radian"
+          ]
+        }
+      }
+    },
+    "GGR_extended": {
+      "DFT_R_kcal_mol": -405415.51142067363,
+      "core_anchor_R_kcal_scale": -62.50878428661963,
+      "evidence": {
+        "direction": "Ca",
+        "evidence_stratum": "direct_same_assay_affinity",
+        "group": "GGR"
+      },
+      "learned_R_model_kcal": -405353.002636387,
+      "projections": {
+        "Ca": {
+          "DFT": [
+            1.6334838489376997,
+            -2.194076433042575
+          ],
+          "learned": [
+            5.369332053845257,
+            1.3936373339777006
+          ],
+          "units": [
+            "kcal_scale_per_A",
+            "kcal_scale_per_radian"
+          ]
+        },
+        "La": {
+          "DFT": [
+            -6.1478102730898225,
+            -8.8855947026982
+          ],
+          "learned": [
+            6.230288254531567,
+            -6.287867729755831
+          ],
+          "units": [
+            "kcal_scale_per_A",
+            "kcal_scale_per_radian"
+          ]
+        }
+      }
+    }
+  },
+  "checks": [
+    {
+      "error": 1.677875685754336e-10,
+      "name": "GGR_extended_center_Ca_readout",
+      "pass": true,
+      "tolerance": 0.01
+    },
+    {
+      "error": 1.677875685754336e-10,
+      "name": "GGR_extended_center_La_readout",
+      "pass": true,
+      "tolerance": 0.01
+    },
+    {
+      "error": -3.355751371508672e-10,
+      "name": "GGR_connected_center_Ca_readout",
+      "pass": true,
+      "tolerance": 0.01
+    },
+    {
+      "error": 0.0,
+      "name": "GGR_connected_center_La_readout",
+      "pass": true,
+      "tolerance": 0.01
+    },
+    {
+      "error": 1.677875685754336e-10,
+      "name": "ALPHA_1F6S_center_Ca_readout",
+      "pass": true,
+      "tolerance": 0.01
+    },
+    {
+      "error": -1.677875685754336e-10,
+      "name": "ALPHA_1F6S_center_La_readout",
+      "pass": true,
+      "tolerance": 0.01
+    },
+    {
+      "error": 0.0,
+      "name": "ALPHA_6IP9_center_Ca_readout",
+      "pass": true,
+      "tolerance": 0.01
+    },
+    {
+      "error": 0.0,
+      "name": "ALPHA_6IP9_center_La_readout",
+      "pass": true,
+      "tolerance": 0.01
+    },
+    {
+      "error": 0.0,
+      "name": "GGR_extended_native_La_energy",
+      "pass": true,
+      "tolerance": 0.01
+    },
+    {
+      "error": 6.439293542825908e-15,
+      "name": "GGR_extended_native_La_gradient",
+      "pass": true,
+      "tolerance": 0.001
+    },
+    {
+      "error": 0.0,
+      "name": "GGR_connected_native_La_energy",
+      "pass": true,
+      "tolerance": 0.01
+    },
+    {
+      "error": 7.105427357601002e-15,
+      "name": "GGR_connected_native_La_gradient",
+      "pass": true,
+      "tolerance": 0.001
+    },
+    {
+      "error": 0.0,
+      "name": "ALPHA_1F6S_native_La_energy",
+      "pass": true,
+      "tolerance": 0.01
+    },
+    {
+      "error": 9.769962616701378e-15,
+      "name": "ALPHA_1F6S_native_La_gradient",
+      "pass": true,
+      "tolerance": 0.001
+    },
+    {
+      "error": 0.0,
+      "name": "ALPHA_6IP9_native_La_energy",
+      "pass": true,
+      "tolerance": 0.01
+    },
+    {
+      "error": 7.105427357601002e-15,
+      "name": "ALPHA_6IP9_native_La_gradient",
+      "pass": true,
+      "tolerance": 0.001
+    }
+  ],
+  "cost": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/shared_neutral_cost_v1.json",
+    "sha256": "26c5dcee7dea05c3ea9c9433b3828ebffb87aaf02abbdfb7d8d2a9067f417906"
+  },
+  "full_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/shared_neutral_core_report_v1/result.json",
+    "sha256": "d2eff7a7efd1e036ce85ff4f0ccc5e9f7fd899454ed28b7f0290fd201107b1e8"
+  },
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/shared_neutral_core_v2/manifest.json",
+    "sha256": "4b3420ef72fc742b25cc407b1992073e3a55da2d28f25f15c9055781bb7db814"
+  },
+  "numerical_gate_pass": true,
+  "partition": {
+    "DFT_shift_kcal_mol": -7.3435008732485585,
+    "convention": "connected_minus_extended",
+    "hybrid_shift_kcal_scale": 10.912283925048541,
+    "learned_shift_model_kcal": -18.2557847982971,
+    "pass": false,
+    "tolerance": 2.0
+  },
+  "physical_charge_modified": false,
+  "predictive_improvement_claimed": false,
+  "protocol_id": "omol_shared_neutral_charge_feature_descriptor_v1",
+  "relaxation_correction_kcal_mol": null,
+  "report_implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/shared_neutral_core_v2/implementation/mace_omol_neutral_run.py",
+    "sha256": "44333160dd7d488a96293ddac57b48c21fefdd21cf82f8e76104e56a0b4cbb7f"
+  },
+  "response_status": "response_model_not_validated",
+  "status": "complete",
+  "tests": [
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/shared_neutral_contract_tests_v2.log",
+      "sha256": "a261b4996f6d3d364acef02f60df7859b3bf33fbd70a13e9c6578938670dddbe"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/shared_neutral_native_regression_v1.log",
+      "sha256": "e5538e604ea5d34a9b50943b67cde5b89cb650bdd574d2ae5a059195e6f9d74a"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/shared_neutral_actual_test_v1.log",
+      "sha256": "78c36172f66c8cc20a261430529423ca6402ceea36306c8e6c9bc11773edc6ec"
+    }
+  ],
+  "whole_inference_eligible": false
+}

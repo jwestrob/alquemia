@@ -6,34 +6,56 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
-## Latest: native coupled GK solver passes; real QM electric-field check running
+## Latest: fast native polarization; saved-density fields expose a source weakness
 
-Tinker job1201015 completed12native energies on3real frameworks: all30checks
-PASS, source-frozen dipoles exactlyzero,11standard/16tightiterations. Refinement
-max0.001325844498kcal,rigidmax6.99547e-8kcal. Kernel17.122408376summedwall-s;
-allocation37s×64=2368core-s,actual467.119CPU-s,zeroGPU. Fiveactualtests pass8.005s.
-Metal explicitly absent fromthese frameworkcontrols; NOaffinity/wholemodelclaim.
-Manifesttinker_framework_solver_v1 SHA
- ee7cadb5d9be64a70b0faf920f4f48213d4a9830982431e686afc3962347e2ed.
-ReportsTINKER_FRAMEWORK_SOLVER_REPORT/RESULT/COMMANDS; code
-mace_tinker_framework_solver.py,mace_tinker_solver.f90. Pinnedlibrary/sourceunchanged.
-Bulkdielectricnativehardcoded78.3;nativeesincludesnonpolar,notpureRF.
+Goal active. Commit72481f1 implements/tests the native solver and field runner.
+Tinker1201015 completed12framework energies: all30checks pass, frozen induced
+variables exactlyzero, standard11/tight16iterations. Refinement max.0013258445
+kcal, rigid max6.99547e-8kcal. Kernel17.122408376wall-s. Allocation37s×64=
+2368core-s, actual467.119CPU-s, zeroGPU. Five tests pass8.005s. This is an
+ion-excluded framework control, NOT a La/Ca score or full-system validation.
+See TINKER_FRAMEWORK_SOLVER_REPORT/RESULT/COMMANDS and workspace
+workspaces/mace_omol_20260917/tinker_framework_solver_v1 (manifestSHA
+ ee7cadb5d9be64a70b0faf920f4f48213d4a9830982431e686afc3962347e2ed).
+Native GK bulk78.3hardcoded, internal1; esincludesnonpolar, notpureRF.
 
-Next declaredQM_ELECTRIC_FIELD_PLAN beforeoutputs; running1201017shared8CPU16GB.
-Eightorca_vpotcalls onSAVEDnormalizedVACUUMdensities, noSCF/fit/MACE/FFenergy.
-Alloutside-QM-support realatomprobes (GGRext4640/conn4587,alpha1880/1843),
-12offsetpoints/site forcentraldifferences0.001/0.0005bohr. This is observation-point
-potential differentiation, NOTnumericalDFTnucleargradients. CompareoriginalCHELPG
-andphysicalcapprojection fields; all-site andfixed>=3A strata; alphaweightedRMS
-screen1e-4au OR10%, pairedbare-diagonalU0errorflag1kcal. U0isNOTenvironmentcorrection.
-Numericalmaxfielddelta1e-6au/pairedU0delta.01kcal. GGR/alphaalreadyconsumedgroups.
-Manifestqm_electric_field_v1SHA
+Electric-field job1201017 COMPLETE:8orca_vpot calls on saved normalized VACUUM
+r2SCAN3c densities, zero newSCF/fit/MACE/FF energy. Alloutside-QM-support atoms
+probed (GGRext4640/conn4587,alpha1880/1843),12offsetpoints/site for two central
+spacings. These are observation-point derivatives, NOT nuclear gradients.
+Numerical pass: max1.45403e-8au vector change, pairedU0 change1.13235e-6kcal.
+Four actual tests pass5.788s (previously explicitintegration skip).
+All8endpoint field screens FAIL: fittedweightedrelative errors21.4–33.5%,
+projected27.9–40.7%. All4Ca-La vector screens pass3.28–5.83%, but quadratic
+response also uses common endpoint fields. Paired projected−exact bare U0
+errors: GGRext−1.792883744,conn−.852195257,alpha1F6S−3.141361990,
+alpha6IP9−2.728425113kcal. 3/4fail1kcal flag. >=3A stratumfields2–8%, U0errors
+<.088kcal; this is predeclared diagnostic, NOT rescue/omissionofnear sites.
+U0=-.5sum(alpha E²) is diagonal undamped diagnostic, NOT environmental energy.
+It omits native covalent scaling/damping/mutual/GK/protein permanent fields.
+No unique claim that these errors cause prior scorer failures.
+
+Job203s×8=1624core-s, actual711.484CPU-s,0GPU; utility summedwall702.264582902s,
+699.04CPU-s,maxindividualRSS318076KiB. Preservedreport qm_electric_field_v1/
+report_job_1201017/result.json, cost.json. ManifestSHA
 0b639b8502fdade3b8dd7727563908cbdf1d2237ae4008b8cfe329ce872d0673.
-Threeprep/algebratests passed3.085s;actualintegrationexplicitlyskippeduntilcomplete.
-Code/methodsnapshotfrozen, nativeinput/densitypins verified; nochargefitrefitting.
-Next collectactualfields, quantifyfitversusprojectionerror, updatecost/report/vault.
-No fullAMOEBA source/damping/covalentboundaryorhybridscore yet; goalcontinues.
-No newapprovalneeded. Baseline/concurrentPLM/H200jobs untouched.
+Compact QM_ELECTRIC_FIELD_REPORT/RESULT/COMMANDS underdiagnostics/mace_omol_20260917.
+
+NEXT DISTRIBUTED_SOURCE_PLAN.md declared BEFOREfits/validation: ONE uniform
+charge+dipole density representation on existing physical support;8fits using
+savedactual centerpotential+fields, chargeconstrained, fixedSVDregularization.
+8newnativevpot calls at separate fixedtranslated spatial probes for validation;
+no newSCF/MACE/FF energies. Exactfitformula,steps,gates,resourcesinplan. No code,
+preparation, fits, validationoutputs or submissions for this next step yet.
+Reuse/pin original explicit_field_short_v1 potentials only after verifying
+wavefunctions/physicalIDs/order with fieldsource; both are normalizedVACUUM.
+Do not refit/tune on heldout probe outputs or biological labels. Historical
+MBIS monopoles already tried; native extraction575–748s/endpoint and some
+worsepotential/coupling errors. Multipole-capabilitydocs are not efficacyproof.
+Full source damping, covalent boundary charges, subtraction and predictive
+partition checks remain unresolved. Do not launch a complete hybrid scoreyet.
+Baseline/concurrentPLM1200794/95/96 and pendingH2001200809 untouched; recheckjobs.
+No approvalneeded within goal; no production promotion/push. Continueautonomously.
 
 ## Latest: native Tinker backend built; three parameter round-trips complete
 

@@ -1978,3 +1978,20 @@ Reports separate fit/projection errors and a clearly non-scoring diagonal U0
 diagnostic. Three preparation/algebra tests pass, scientific integration unrun
 until outputs. See QM_ELECTRIC_FIELD_PLAN/COMMANDS and CURRENT checkpoint.
 Goal remains active; no per-analysis approval gate, no production promotion.
+
+## 2026-09-17 — Saved-density electric fields completed; next source model declared
+
+Job1201017 completed8real native potential evaluations: numerical field checks
+pass, but original/projected monopoles fail all8endpoint field screens (21–41%
+weighted relative error). Four Ca−La vector screens pass;3/4paired bare diagonal
+U0 errors exceed1kcal. U0 is not an environmental energy; close-site damping and
+covalent scaling remain unresolved. Far>=3A stratum passes, not used to rescue
+all-site result. No newSCF,fit,MACE,FF energy or biological classification.
+203job seconds×8CPUs=1624core-s;711.484actualCPU-s;0GPU. Four real field tests
+pass5.788s. See QM_ELECTRIC_FIELD_REPORT/RESULT and full immutable workspace.
+
+Native solver/field implementation committed72481f1. Next DISTRIBUTED_SOURCE_PLAN
+declares one constrained charge/dipole fit and separate spatial validation, no
+new high-level endpoints. No fit/preparation/execution of that next model yet.
+Current checkpoint and vault updated. Email update225256UTC accepted by local
+mailer; receipt saved privately. Goal active, baseline/default unchanged.

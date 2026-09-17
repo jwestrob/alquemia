@@ -14,3 +14,8 @@ Frozen execution manifest:
 SHA256: `0a75367893d9dcc1251e403da111661aa69fc586bc2a8fd623fe7092c3139d02`.
 
 The original all-XoxF preparation accounting and failed attempt remain immutable. On completion, incorporate the validated recovery alongside the main cohort exactly once, preserving original failure provenance. Current new work is134main+1recovered pairs, plus two prior pairs reused;37other preparations failed fixed eligibility and two source-UNK cases remain unavailable. Interpret scores only on the unchanged fixed-core scale.
+
+
+## Completion reviewed — 17 September 2026
+
+Job1201021 completed/PASS in4m10s. One pair/two endpoints; both SCF converged and ORCA terminated normally. E_La=−2536.093971037946Ha; E_Ca=−3182.128350357449Ha; R=−646.0343793195029Ha; S=27.087395219113173kcal/mol, La-supported in the unchanged fixed-core bands. Parent independently recomputed raw-energy arithmetic, verified retained output/receipt hashes and reran the complete prepared-data preflight after execution: all PASS. PLM hydrogen_repair/post_completion_review.json is the compact audit. Geometry repair is explicit; serialized-H force convergence is not claimed. Main134-pair job1200796 continues. This recovered target must be counted once in the eventual combined176-protein report, preserving its initial failure provenance.

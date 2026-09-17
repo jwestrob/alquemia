@@ -1107,3 +1107,39 @@ exactcommands in diagnostics/mace_omol_20260917/. Vault updated. Goal ACTIVE.
 Next: collect1200804,report against originalOMOLreport_v1 with the frozen own
 calibration rule,retain nonPQQ/representation failures,and record full actual
 costs. Do not modify scientific parameters based on intermediate signs.
+
+
+## Matched coordination descriptor completed; next intact-chain scope — 2026-09-17
+
+Jobs1200803/1200804 complete.70newnativeOMOL references,64original bound caches,
+four qualified reference reuses;zeroDFT/solver/training. All19+60numerical checks
+pass. All32scores available. Calibration25/25 separates(gap85.737976kcal/mol),
+but transfer2/3:1H4I Ca,4MAE La,1KB0 inconclusive. Both primaryalpha-minus-
+GGRextended contrasts remain wrong(-13.255730/-16.182338);only1/4overallnonPQQ
+contrasts passes. GGRrepresentation shift-13.565049. Candidate rejected as a
+replacement;no threshold/core/reference adjustment. OriginalOMOLPQQcandidate
+and baseline remain unchanged. This result does not complete the broader goal.
+
+Actual costs695GPUallocation-s/11120allocatedcore-s/769.676actualCPU-s;peakGPU
+allocated3099778560bytes. Median sum of four actual/archived endpoint inference
+times2.880806s,not end-to-end throughput. Report generation95.96wall/84.70CPU-s;
+other preparation/tests partially unprofiled. Five real coordinationtests pass
+23.960s,noskips. Complete raw workspace collection/report/costs and compact
+COORDINATION_REPORT.md,coordination_result.json,coordination_costs.json committed.
+Primary-source interpretation notes distinguish mathematical term cancellation
+from physical ionic fragment states and distinguish the later checkpoint from
+the dataset paper's original neutral-only MACE baseline.
+
+INTACT_CHAIN_PLAN.md freezes the next candidate before implementation/inference:
+reuse exact fivewhole-chainAphysicalpreparations,withoutsyntheticcaps;native
+energy-onlyforward under no_grad with unchanged model to reduce memory. First
+fourcoreequivalencecalls;thenALPHA_1F6S14primary/repeat/rotation/farthercalls;
+conditionalremaining16fullchaincalls.34planned,newfinite-rangecoordination
+protocol,threefrozenrelativecomparisons,nocalibratedabsolutebands. No whole-chain
+OMOL calls or submissions yet. StandardA5000first;existingauthorizedH200memory
+recovery allowed with actualcosts. Preserve assembly/water/cofactor/Hstates.
+
+Vault updated and email submitted(20260917T083739Z private receipt);localmailer
+accepted,deliverynotindependentlyconfirmed. Both global/projectAGENTS nowretain
+Jacob'sreconfirmedblanketauthorization. No newpermissioncheckneeded. GoalACTIVE;
+next useful work is implementing/qualifying nativeenergy-only intact-chain path.

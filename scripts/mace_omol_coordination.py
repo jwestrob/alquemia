@@ -206,13 +206,19 @@ def report(collection, original_report, output):
     g0,g1=(scores[name]['R_kcal_mol'] for name in CASES)
     result={'status':saved['status'],'protocol_id':PROTOCOL,'definition':DEFINITION,
             'sources':{'collection':record(collection),'original_report':record(original_report),'agreement':m['agreement']},
+            'model':m['model'],'software':m['software'],
             'numerical_gate_pass':saved['numerical_gate_pass'],'calibration':bands,'canonical_rows':canonical,
+            'canonical_transfer_count':len(transfer),
+            'supported_transfer_count':sum(r['calibrated_class']==r['expected_class']+'-supported' for r in transfer),
+            'unavailable_calibration_transfer_count':sum(r['calibrated_class']=='unavailable_calibration' for r in transfer),
+            'unavailable_score_count':sum(r['status']!='computed' for r in scores.values()),
             'canonical_gate_pass':saved['numerical_gate_pass'] and bands['status']=='calibratable' and all(r['calibrated_class']==r['expected_class']+'-supported' for r in transfer),
             'nonPQQ_rows':{name:r for name,r in scores.items() if name not in calibration_names},'nonPQQ_contrasts':contrasts,
             'nonPQQ_primary_gate_pass':all(r['pass'] for r in contrasts if r['role']=='primary'),
             'nonPQQ_robustness_gate_pass':all(r['pass'] for r in contrasts),
             'GGR_representation_shift_kcal_mol':None if g0 is None or g1 is None else g1-g0,
-            'broad_affinity_validated':False,'baseline_changed':False,'binding_free_energy_kcal_mol':None}
+            'broad_affinity_validated':False,'baseline_changed':False,'binding_free_energy_kcal_mol':None,
+            'aquo_reference':None,'solvation_correction_kcal_mol':None,'relaxation_correction_kcal_mol':None}
     out=Path(output).resolve();out.mkdir(parents=True,exist_ok=False);shutil.copyfile(__file__,out/Path(__file__).name)
     result['implementation']=record(out/Path(__file__).name);write_new(out/'result.json',result)
     lines=['# Matched OMOL coordination descriptor','',f'Numerical gate: {result["numerical_gate_pass"]}. Canonical gate: {result["canonical_gate_pass"]}. Non-PQQ primary/robustness: {result["nonPQQ_primary_gate_pass"]}/{result["nonPQQ_robustness_gate_pass"]}.',

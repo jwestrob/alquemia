@@ -80,9 +80,15 @@ not an independently validated score correction. Cost: 50 GPU-seconds,
 800 allocated core-seconds; zero DFT. A separate
 [matched coordination candidate](../diagnostics/mace_omol_20260917/COORDINATION_PLAN.md)
 compares bound and separated-metal geometries with identical atoms and charge.
-Qualification job1200803 completed and passed all19 numerical checks; the full
-60-reference benchmark1200804 is running. It has its own protocol and cannot
-inherit either scorer's bands. Results remain pending at this checkpoint.
+Qualification1200803 and benchmark1200804 completed: all19+60 numerical checks
+pass, but the [candidate fails its predictive gates](../diagnostics/mace_omol_20260917/COORDINATION_REPORT.md).
+Calibration25/25 separates;1H4I/4MAE transfer correctly,1KB0 is inconclusive.
+Both primary alpha-minus-GGRextended directions remain wrong; only1/4 total
+non-PQQ comparisons passes. GGR sensitivity shrinks to-13.565kcal/mol but remains
+large. Do not promote this refinement or inherit another scorer's bands.
+70newcalls,64boundendpoint reuses,zeroDFT cost695GPU-s/11120allocatedcore-s;
+median summed four-endpoint inference2.881s,excluding startup. The original
+OMOL PQQ research candidate and production baseline remain unchanged.
 
 Jacob reconfirmed blanket analysis/resource authorization on2026-09-17 and
 explicitly requested removal of the old per-analysis check-in rule. Both project

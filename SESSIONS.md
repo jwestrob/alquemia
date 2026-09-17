@@ -1959,3 +1959,22 @@ checks of actual freezing/convergence/rigid invariance and cost. Not prepared
 or submitted; no biological score from ion-excluded controls. Complete model
 still needs boundary/field/accounting qualification. Baseline/default and
 unrelated PLM/H200 jobs unchanged. Continue autonomously from the current note.
+
+## 2026-09-17 — MACE goal: native coupled polarization solver verified
+
+Scoped autonomous work toward active goal; production/default unchanged. Pinned
+Tinker framework frontend/runner completes12real energies as1201015: all30checks
+pass, frozen source dipoles zero, refinement max0.001326kcal, rigid max7e-8kcal.
+Kernel17.122408376wall-s; allocation37s×64=2368core-s, actual467.119CPU-s,0GPU.
+Five tests pass8.005s. Metal absent explicitly from framework-only controls;
+no full-hybrid or predictive claim. Full artifacts/costs TINKER_FRAMEWORK_SOLVER_*
+under diagnostics/mace_omol_20260917, workspace tinker_framework_solver_v1.
+
+Next electric-field plan declared before outputs, implemented with saved actual
+8normalized vacuum densities and unchanged CHELPG/cap mapping. Job1201017 running
+8native potential calls on shared8CPU/16GB; no DFT/MACE/fit/FF energy. All real
+environmental atoms probed at2central-difference spacings; no nuclear motion.
+Reports separate fit/projection errors and a clearly non-scoring diagonal U0
+diagnostic. Three preparation/algebra tests pass, scientific integration unrun
+until outputs. See QM_ELECTRIC_FIELD_PLAN/COMMANDS and CURRENT checkpoint.
+Goal remains active; no per-analysis approval gate, no production promotion.

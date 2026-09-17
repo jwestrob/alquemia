@@ -6,6 +6,35 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
+## Latest: native coupled GK solver passes; real QM electric-field check running
+
+Tinker job1201015 completed12native energies on3real frameworks: all30checks
+PASS, source-frozen dipoles exactlyzero,11standard/16tightiterations. Refinement
+max0.001325844498kcal,rigidmax6.99547e-8kcal. Kernel17.122408376summedwall-s;
+allocation37s×64=2368core-s,actual467.119CPU-s,zeroGPU. Fiveactualtests pass8.005s.
+Metal explicitly absent fromthese frameworkcontrols; NOaffinity/wholemodelclaim.
+Manifesttinker_framework_solver_v1 SHA
+ ee7cadb5d9be64a70b0faf920f4f48213d4a9830982431e686afc3962347e2ed.
+ReportsTINKER_FRAMEWORK_SOLVER_REPORT/RESULT/COMMANDS; code
+mace_tinker_framework_solver.py,mace_tinker_solver.f90. Pinnedlibrary/sourceunchanged.
+Bulkdielectricnativehardcoded78.3;nativeesincludesnonpolar,notpureRF.
+
+Next declaredQM_ELECTRIC_FIELD_PLAN beforeoutputs; running1201017shared8CPU16GB.
+Eightorca_vpotcalls onSAVEDnormalizedVACUUMdensities, noSCF/fit/MACE/FFenergy.
+Alloutside-QM-support realatomprobes (GGRext4640/conn4587,alpha1880/1843),
+12offsetpoints/site forcentraldifferences0.001/0.0005bohr. This is observation-point
+potential differentiation, NOTnumericalDFTnucleargradients. CompareoriginalCHELPG
+andphysicalcapprojection fields; all-site andfixed>=3A strata; alphaweightedRMS
+screen1e-4au OR10%, pairedbare-diagonalU0errorflag1kcal. U0isNOTenvironmentcorrection.
+Numericalmaxfielddelta1e-6au/pairedU0delta.01kcal. GGR/alphaalreadyconsumedgroups.
+Manifestqm_electric_field_v1SHA
+0b639b8502fdade3b8dd7727563908cbdf1d2237ae4008b8cfe329ce872d0673.
+Threeprep/algebratests passed3.085s;actualintegrationexplicitlyskippeduntilcomplete.
+Code/methodsnapshotfrozen, nativeinput/densitypins verified; nochargefitrefitting.
+Next collectactualfields, quantifyfitversusprojectionerror, updatecost/report/vault.
+No fullAMOEBA source/damping/covalentboundaryorhybridscore yet; goalcontinues.
+No newapprovalneeded. Baseline/concurrentPLM/H200jobs untouched.
+
 ## Latest: native Tinker backend built; three parameter round-trips complete
 
 Current goal turn made progress: pinned CPU/GPU source, retrieved both primary

@@ -31,7 +31,9 @@ For each of the three frameworks evaluate four predetermined states:
 
 Use the native CPU GK-coupled solver, no periodic boundary, no spatial cutoff
 (native isolated-system1e12Å sentinel), no added ionic screening. Set internal
-dielectric1 and solvent78.3 explicitly. GK uses the native AMOEBA2018 SOLUTE
+dielectric1 explicitly; native GK source hardcodes solvent78.3 in both field
+and energy routines, which will be verified/pinned instead of using an ignored
+input keyword. GK uses the native AMOEBA2018 SOLUTE
 radius inventory and pinned defaults (GKC2.455, descreen offset0.30Å, neck/tanh
 and hydrogen-descreening flags from the native initializer). Export actual
 per-atom radii/scales and global flags before evaluating; fail on unexpected

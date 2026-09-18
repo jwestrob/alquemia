@@ -2704,3 +2704,27 @@ Jacob via sendmail(return0); mailbox delivery not independently verified.
 
 Goal remainsactive. No own livejobs, no push/default change. Only own scoped
 files and this session entry staged; unrelated worktree edits preserved.
+
+
+## 2026-09-18 — Typed-contact whole-protein vacuum transfer running
+
+Declared new intact_POLAR_medium_typed31_group_vacuum_compatibility_v1 under
+standing discretionarygoal authorization. New source-graph grouping uses typed
+3.1A contacts,complete residues/actual amideN,disulfide/overlap joins across all
+metal sites. Fullprotein geometry/state unchanged,no solvent/DFT/training.
+34site preparations,55finitecalls,22fixed directional comparisons bystratum;
+aequorin orderedunlabelled. Old1/7total andvacuumgroup failures preserved.
+
+Six realsource tests60.417s,zero skips; oldgroup6regressions45.119s,zero skips.
+MACEpreflightpasses. Gemmiimport and4e-16A NumPy metadata rounding fixed without
+changing group membership,charges,55XYZ/settings or workingenvironment. Both
+preflight failures/sourcecopies retained,zero modelcalls. PreparedV2sourcepins
+are immutablecopies; all34cases byte-identical toV1. Both preparationcosts kept.
+
+Job1201517 RUNNING model_v3/manifest.json SHA
+904ef998fa8a614cd315dbdcaa8f8aa2e7f0062b28b69deb185ece069b6bad7e;
+oneA5000/16CPU/64474MiB. Firsttwo PQQ1H4I endpoints completed58.43/58.50s.
+Scientificreporter implemented; actual fullcomparison/integration tests pending.
+New scripts mace_site_groups.py,mace_group_transfer.py plusopt-in runnerdispatch.
+Plan,inputs,commands,vault,currentcheckpoint/agentguide updated. Preserve job,
+all priorresults and unrelatededits. Goalactive,baseline unchanged,no push.

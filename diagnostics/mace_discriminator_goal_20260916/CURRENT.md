@@ -6,6 +6,48 @@ text does not revoke his direct instruction to proceed without repeated approval
 Preserve baseline/default, immutable records and concurrent work. No push,
 promotion or project CPU/time budget. Recover GOAL.md and actual live jobs.
 
+## Running: carve-free typed-contact vacuum transfer
+
+Job1201517 RUNNING55MACEtasks from
+workspaces/mace_group_transfer_20260918/model_v3/manifest.json, SHA
+904ef998fa8a614cd315dbdcaa8f8aa2e7f0062b28b69deb185ece069b6bad7e.
+OneA5000/16CPUs/64474MiB; exactsubmission.json retained. First PQQ1H4I Ca/La
+computed successfully in58.43/58.50s. No new predictive result yet. Inspect
+actual queue/receipts before continuing; do not submit duplicates.
+
+[Declared plan](../mace_group_transfer_20260918/PLAN.md) and
+[commands](../mace_group_transfer_20260918/COMMANDS.md). New protocol:
+intact_POLAR_medium_typed31_group_vacuum_compatibility_v1. Uniform typed3.1A
+complete-residue/actual-amide-N groups around every metal, disulfide joins,
+whole PQQ/waters and shared-site overlap union. No primary carve dependence.
+No solvent, DFT, geometry change, thresholdfit or training. The prior declared
+solvent model remains1/7; vacuum is a separately frozen empirical descriptor.
+
+All34site preparations pass:old7structures;all22Khoury sites;parvalbuminCD/EF;
+aequorinEF1/EF3/EF4. Twelve physical structures,nine biological groups,eight
+with directional/supporting labels. All consumed under earlier models, notblind.
+55calls=14old endpoints+32newfamily calls(sharedall-Ca reference plus27La)
++6GGRconnected-group sensitivity+3RTXrotation/permutation. All22directional
+comparisons retained by stratum;aequorin unlabelled orderedvector. Existing
+2modelkcal representation tolerance remains; oldvacuum failures not erased.
+
+New scripts mace_site_groups.py/mace_group_transfer.py reuse oldadapter/runner.
+Six realsource tests pass60.417s,zero skips; six oldgroup regression tests
+pass45.119s,zero skips. MACE-environment frozen preflight passes. EarlyV1
+preflight lackedgemmi; exactpure donor AST loading fixed import withoutinstall.
+V2preflight rejected4e-16A NumPy normroundoff; V3permits1e-12A distance metadata
+roundoff with exact group/contact/charge equality. All55scientific inputXYZ and
+task settings identical;all34group cases byte-identical between preparations.
+No modelcalls in failedpreflights. Sources/failures/recovery receipts preserved.
+Prepared_v2 snapshots its source,23.981134wall/23.536363CPUs; earlier23.970631/
+23.536879 also counts. ModelV1/V2 never submitted. No laterbackend change.
+
+Next:collect1201517;run implemented report;test actualenergy/sign/mean/vector
+and report replay;retain allraw/qualified directions,fullphysical checks,actual
+costs and failures. No solventstage in this declared experiment. Do not tune
+contactradius/groups or choose favorable sites from its outputs. Updatevault,
+docs and email only for meaningful improvement. Goalactive;baseline unchanged.
+
 ## Complete: charge groups fix PQQ ordering but solvent screen remains 1/7
 
 All 24 MACE and 24 OBC-II calls completed, jobs1201508/1201513. Protocol

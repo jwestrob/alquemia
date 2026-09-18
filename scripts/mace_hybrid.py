@@ -163,6 +163,9 @@ def prepare(root, software, output, agreement):
 
 
 def dry_run(manifest):
+    if read_json(manifest).get('schema_version') == 'alquemia.mace_group_transfer.v1':
+        from mace_group_transfer import validate
+        return validate(manifest)
     if read_json(manifest).get('schema_version') in ('alquemia.mace_charge_groups.v1', 'alquemia.mace_charge_groups_gb.v1'):
         from mace_charge_groups import validate
         return validate(manifest)
@@ -393,7 +396,7 @@ def worker(manifest, task_id, output, memory_mode):
         if m.get('schema_version') == 'alquemia.mace_rotation.v1':
             from mace_rotation import probe
             result['rotation_probe'] = probe(calc, m, t, output)
-        if m.get('schema_version') in ('alquemia.mace_rotation.v1', 'alquemia.mace_analytic.v1', 'alquemia.mace_response_trace.v1', 'alquemia.mace_hydrogen.v1', 'alquemia.mace_global_benchmark.v1', 'alquemia.mace_local_correction.v1', 'alquemia.mace_curvature.v1', 'alquemia.mace_mechanics_core.v1', 'alquemia.mace_canonical.v1', 'alquemia.mace_metal_response_core.v1', 'alquemia.mace_charge_groups.v1'):
+        if m.get('schema_version') in ('alquemia.mace_rotation.v1', 'alquemia.mace_analytic.v1', 'alquemia.mace_response_trace.v1', 'alquemia.mace_hydrogen.v1', 'alquemia.mace_global_benchmark.v1', 'alquemia.mace_local_correction.v1', 'alquemia.mace_curvature.v1', 'alquemia.mace_mechanics_core.v1', 'alquemia.mace_canonical.v1', 'alquemia.mace_metal_response_core.v1', 'alquemia.mace_charge_groups.v1', 'alquemia.mace_group_transfer.v1'):
             result['energy_components_eV'] = {key: float(calc.results[key]) for key in
                 ('interaction_energy', 'electrostatic_energy', 'electron_energy')}
     except Exception as exc:
@@ -483,7 +486,7 @@ def execute(manifest, memory_mode, selected=None):
                 if core_gate(mp)['status'] != 'pass':
                     raise InvalidArtifact('full GB execution requires native/custom core agreement')
             if t['kind'] == 'full' and m['model'].get('pair_kernel'):
-                if m.get('schema_version') == 'alquemia.mace_charge_groups.v1':
+                if m.get('schema_version') in ('alquemia.mace_charge_groups.v1', 'alquemia.mace_group_transfer.v1'):
                     from mace_charge_groups import kernel_parent_gate
                     validation = kernel_parent_gate(m)
                 elif m.get('schema_version') in ('alquemia.mace_global_benchmark.v1', 'alquemia.mace_short_engine.v1', 'alquemia.mace_mechanics_short.v1', 'alquemia.mace_mechanics_minimum_short.v1', 'alquemia.mace_density_short.v1', 'alquemia.mace_metal_response_short.v1', 'alquemia.mace_metal_minimum_short.v1', 'alquemia.mace_bounded_response_short.v1'):
@@ -563,6 +566,9 @@ def compare_cores(manifest):
 
 
 def collect(manifest):
+    if read_json(manifest).get('schema_version') == 'alquemia.mace_group_transfer.v1':
+        from mace_group_transfer import collect as collect_transfer
+        return collect_transfer(manifest)
     if read_json(manifest).get('schema_version') in ('alquemia.mace_charge_groups.v1', 'alquemia.mace_charge_groups_gb.v1'):
         from mace_charge_groups import collect as collect_groups
         return collect_groups(manifest)

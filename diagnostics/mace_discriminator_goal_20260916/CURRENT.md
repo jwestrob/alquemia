@@ -6,7 +6,65 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
-## Latest: native energy identity and supplied-field response both pass
+## Latest: full density/GK/MACE candidate complete; accuracy gate fails
+
+Job1201074 completed all51static energies,48field queries and60response solves,
+no retries. All32numerical/identity/rigid/radius checks pass. Ordering2/4fails
+all-case gate; GGRconnected-minus-extended=-3.783707453869283kcal failsabs<=2.
+Alpha1F6S minusGGRextended/connected=-0.4377995353/+3.3459079186;
+alpha6IP9=-3.5462673929/+0.2374400610. Do not select favorable core/structure.
+These remain two consumed biological groups, not four independent observations.
+Maximum convergence correction2.264684e-7kcal; rigid2.842171e-12;
++/-5%commonmetal-radius relative effect<=0.000197334; vacuumidentity0.
+Primarymaxatomicmu0.208933--0.336394eA, no large-response flag.
+
+Native solver cost570wall x64CPUs=36480allocatedcore-s,3659.722079actualCPU-s,
+zeroGPU; nativekernels124.133763s, children210.915941wall/3316.199736CPU.
+Preparation41.400926wall/38.763210CPU; build1.775239wall/1.713074CPU.
+All6distinct hybrid tests nowpass (4before,5aftercalls,remaining1aftercollection).
+Fullsource/assumptions/results/operations in DENSITY_GK_HYBRID_REPORT.md,
+DENSITY_GK_HYBRID_RESULT.json,DENSITY_GK_COMMANDS.md. Actual products under
+workspaces/mace_omol_20260917/density_gk_hybrid_v1; frozen software_v1.
+No newDFT/MACE in this pilot; reused upstream costs additional. Numerical
+implementation credible, partition/predictive gatefail, nativecomponentcheap,
+complete matchedproduction costunmeasured. Baseline/default unchanged.
+
+Prerequisites complete: density_multipole_coupling_v1 job1201063 ran8saved-density
+orca_vpot utilities, allnumericchecks pass.37points/site; maxQrefinement
+0.000206909396kcal; no nuclearHessian/newDFT.3native moment exports; actual
+roundedQtensortrace retained, not zeroed. Five tests pass10.237s. Cost846wall
+x8=6768core-s,2951.569CPU-s,zeroGPU. DENSITY_MULTIPOLE_COUPLING_REPORT/RESULT.
+density_gk_boundary_v1 ran16native initialization-only preparations,12paired
+reference/cavity checks pass. Realmetal retained in nativeindex; fullphysical
+atoms4698/1932/1898, correct AMOEBAresiduecharge ledger/source mask, common
+Ca2018GKmetalradius1.82485A (not LaFF). Three tests pass39.789s; nativewall
+16.248823s/CPU16.064919s. DENSITY_GK_BOUNDARY_REPORT/RESULT. Allinputsimmutable.
+
+NEXT: TRIAL_DENSITY_GK_PLAN.md declared before new responsive-density query or
+fullmodelscore. Reuse eight1200983protein-field responsive quantum densities in
+exactly the same current functional, removing their old generating-field energy
+once and recomputing every density-dependent term. No newDFT/MACE/fit needed.
+Explicit trialdensity, not currentAMOEBA/GKselfconsistency; no endpointdensity
+selection, changedthreshold or oldtotalGBreuse. Declared8utilities49points/site,
+16nativeinitializations, same51static/48field/60response logicalinventory;
+compatible unchanged environment outputs may be reused with exactreceipts.
+Newprotocol saved_responsive_trial_density_AMOEBA2018_GK_proxy_POLAR_short_hybrid_v1.
+
+Source audit implemented scripts/mace_trial_density.py audit and completed:
+trial_density_gk_source_audit_v1.json. All8actualwavefunctions available, exact
+geometry/microstate/source mapping; old-field subtraction reproduces intrinsic
+core energies within1.165e-10kcal. Actual intrinsic polarizationcost37.355376--
+41.323737kcal, allnonnegative. Audit15.358869wall/14.253791CPU, no newsciencecalls.
+Initial audit wrongly treated validator status dict as manifest; fixedAPIread,
+no scientific rerun. Next implement49point density observation preparation using
+existing utility runner, then responsiveboundary/currentfunctional execution.
+No new responsiveutilities/nativecalls submitted yet. Do not restartvacuumjob.
+
+Goal remainsactive; preserve all unrelated dirtyfiles. Reports/current/vault/
+SESSIONS being updated with scopedcommit. PLM1200796andH2001200809untouched;
+rechecklivejobs. No per-analysis approval gate, projectbudget or promotion.
+
+## Previous: native energy identity and supplied-field response both pass
 
 Goal remains active. Two completed component experiments; no new metal score.
 Job1201055:12native direct-field queries+6no-response energies, combined with

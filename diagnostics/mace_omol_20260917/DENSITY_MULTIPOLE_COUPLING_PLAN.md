@@ -30,6 +30,17 @@ eÅ² into atomic units, then convert the final energy once. Verify this convent
 against pinned native source and real exported moments before interpreting
 the component. Do not use an unverified XML tensor convention or invent moments.
 
+Pre-implementation source check: the already archived native parameter exports
+have small nonzero quadrupole traces from printed parameter precision (maximum
+9.334284005318993e−7eÅ²). Preserve those actual tensors; the trace check means
+preservation under rotation, not an invented exact-zero requirement. Report
+the isotropic-trace contribution `Tr(Q)*Tr(Hessian(phi))/3` separately. Native
+point-multipole kernels assume traceless moments; for rounded input, their
+charge–quadrupole formula differs from full Hessian contraction by the known
+trace term. The direct-density extension here is explicitly the full tensor
+formula above, with that rounding limitation visible; do not silently project
+or renormalize moments or claim bitwise native cross-energy equivalence.
+
 ## Exact inventory and numerical choices
 
 Use the same eight normalized vacuum r2SCAN-3c states: GGR extended/connected

@@ -2033,3 +2033,26 @@ not nuclear Hessians. No next preparation/execution yet. It gives a concrete
 mixed exact-direct/proxy-GK hybrid expression; source/cavity/charge boundary
 still needs explicit preparation before metal scoring. Baseline unchanged;
 PLM1200796/H2001200809 untouched. No per-analysis approval gate or promotion.
+
+
+## 2026-09-18 — Full frozen-density/GK/MACE pilot complete; failed accuracy gate
+
+Job1201063 completed8saved-density potential utilities; allmultipole refinement/
+rotation checks pass,5tests pass. Cost6768allocatedcore-s/2951.569CPU-s/0GPU.
+Sixteen fullphysical AMOEBA/GK boundary initializations passall12pairedchecks;
+sourceindex/chargeledger/commonmetalcavity verified,3tests pass. Job1201074
+completed51static energies+48field queries+60responses, all32numerical/identity/
+radiuschecks pass,no retries. Accuracy2/4directions andGGRpartition-3.783707454
+failfrozengates.6hybridtests pass. Cost36480allocatedcore-s/3659.722079CPU-s/0GPU;
+reusedDFT/charge/MACEcosts additional. Newmodel is numericallystable but does
+notearncalibration/promotion. Baseline/default andotheragents'jobs unchanged.
+
+Reports/results/plans/commands DENSITY_MULTIPOLE_COUPLING_*,DENSITY_GK_BOUNDARY_*,
+DENSITY_GK_HYBRID_*,DENSITY_GK_COMMANDS.md; productsundermatchingworkspaces.
+Current/vaultupdated; email20260918T013950Zacceptedrelay. Nextdeclared
+TRIAL_DENSITY_GK_PLAN reuses8savedfield-responsive densities, removesoldfield
+energy once and recomputeseverydensity-dependent term inthesamefunctional.
+Sourceaudit scripts/mace_trial_density.py completedall8exactstate/wavefunction/
+subtractionchecks,2tests pass. No newDFT/fit/MACE ornewresponsiveutility/native
+calls yet. Implement49point densityquerypreparationnext. Goalactive;
+no scientificclaim fromcomponenttests orfavorablecoreselection.

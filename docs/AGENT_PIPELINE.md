@@ -472,3 +472,18 @@ and [current goal checkpoint](../diagnostics/mace_discriminator_goal_20260916/CU
 Compact charge/dipole source fits failed their full spatial field screens;
 they were not promoted. The next declared step supplies exact density coupling
 to permanent protein multipoles before a full hybrid score.
+
+### Same-density charge sampling completed
+
+Forty native NoIter property replays and40density queries pass all electronic
+identity/ESP-quality checks. All8finer-to-finest source-self sensitivity checks
+pass, but5/8fitting-extent checks fail the frozen0.5kcal criterion. The GGR
+source-self discrepancy remains14.97–18.13kcal across settings: sampling matters
+but does not explain most of it. No default change or full hybrid rescore.
+[Result and costs](../diagnostics/mace_omol_20260917/CHELPG_SAMPLING_STABILITY_REPORT.md).
+
+An isolated ddX0.9.0 build now imports successfully; it has run no scientific
+calculation. A resolved protein-boundary diagnostic is next, with physical
+settings/tests to be frozen before execution. Exact-density coupling needs
+both surface potentials and a density integral; see the
+[interface assessment](../diagnostics/mace_omol_20260917/DDX_CAPABILITY_NOTE.md).

@@ -1,66 +1,78 @@
 # Active MACE discriminator checkpoint — 2026-09-17
 
-**Goal active; candidate milestone reached.** Jacob authorized autonomous
+**Goal active; no broadly validated MACE replacement.** Jacob authorized autonomous
 analyses and available resources. Home/project AGENTS now remove the old
 per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
-## ACTIVE: failed multisite transfer; charge-representation sensitivity identified
+## ACTIVE: charge sampling complete; isolated ddX build ready
 
-The five-site hybrid extension is complete (1201164/65/67/68): 10 DFT endpoints,
-20 MACE forwards, 10 CHELPG fits + 10 density queries, 20 boundary initializations,
-63 static / 60 field / 75 response calculations. All 39 numerical checks pass;
-all six supporting parvalbumin CD/EF-minus-GGR comparisons fail. Aequorin remains
-an ordered EF1/EF3/EF4 vector without site labels. No calibration/default change.
-Full report/results: MULTISITE_DENSITY_HYBRID_REPORT/RESULT in mace_omol_20260917.
-Total allocation 65,328 core-s / 208 GPU-s; summed job wall 1462 s. Quantum CPU
-is recorded only to whole seconds. All 13 new tests and 13 legacy regressions
-pass; no final integration skip. No DFT retry. All new science below is diagnostic.
+The sampling experiment completed 40 native NoIter high-level property replays
+and 40 actual saved-density potential queries. No SCF optimization or scientific
+retry. All energy, default-charge, density, fit and projection gates pass.
+All eight finer-to-finest sensitivity checks pass, but five of eight fitting-
+extent checks fail the frozen 0.5 kcal screen: overall sensitivity gate FAIL.
+GGR 2FW0 minus 2FVY source-self differences (kcal): default 18.12902095,
+finer 16.38528087, finest 16.15398128, extent 14.96728109. Sampling contributes
+up to 3.16174 kcal sensitivity; the large discrepancy persists. No setting was
+selected per case, no full hybrid rescore, calibration or baseline change.
 
-GGR saved-output localization: 1,072 checks pass (max1.5e-13 kcal), two tests pass.
-Only1.3996 of the13.4218 direct-field difference belongs to source-touching
-residues; remaining effect is distributed. Analytical source-self GK difference
-+18.129021 and source/environment cross -5.528812 sum to+12.600209.
-Native source-only verification COMPLETED1201172: 15 static calculations,
-all checks pass within6.324e-13kcal. 49wall / 3136core-s /141.559CPU, noGPU,
-noDFT/MACE/response/field. All3real-fixture tests pass35.054s. gk_source_native_v2
-was executed; v1 parser-prefix issue caught before calls, no scientific retry.
-Report GK_SOURCE_NATIVE_VALIDATION_REPORT/RESULT. No native job remains live.
+Reports: CHELPG_SAMPLING_STABILITY_REPORT/RESULT and QUALIFICATION_REPORT in
+mace_omol_20260917. Full output: chelpg_sampling_report_v1/result.json.
+Population: chelpg_sampling_panel_v1/population_job_1201177.json.
+Density queries: chelpg_sampling_panel_identity_v1/collection_job_1201211.json.
+Reporter snapshot: chelpg_sampling_reporting_source_v1. Read-only collection
+chelpg_sampling_panel_recollection_v1 reproduces all rows without new calls.
 
-Source factorization now COMPLETE: projected-charge changes contribute+18.452793,
-source-distance changes-0.372800, effective-radius changes+0.049028 kcal to the
-18.129021 source-self shift. All8 mixed combinations and6 marginal orderings
-are explicit algebraic counterfactuals, not new QM states. Exact source IDs,
-charge sums and native endpoint closure pass. Products gk_source_factorization_v1;
-report GK_SOURCE_FACTORIZATION_REPORT/RESULT. The common30A native/OpenMM tanh
-bound is verified but changes in radii are not the main contribution here.
-Do not claim charge fit instability until it is actually tested.
+Jobs 1201173/74/77/1211 used 1030 summed job-wall seconds, 65920 allocated
+core-seconds, 53718.534 reported CPU seconds, zero GPU. The largest job reports
+CPU only to whole seconds. Local report: 18.373 s. All 11 actual-fixture tests
+pass in 9.732 s, no final skip. Maximum density identity error 1.03001e-13 au;
+energy error 3.23739e-8 Hartree. The explicit NoIter contract retains raw generic
+SCF failure flags: 1201173 Slurm FAILED, but native property calls terminated
+normally. The shared scorer/runner/default parser remain unchanged.
 
-NEXT: investigate/document native CHELPG numerical sampling refinement on the
-SAME saved densities, before choosing a new solvation model. Installed
-orca_chelpg accepts onlyGBW/optional density (help receipt chelpg_sampling_help_v1),
-so alternate sampling is not a supported extra CLI flag. Main ORCA CHELPG with
-MORead/NoIter may allow this; verify manual and actual unchanged density before
-calling any scientific result a same-density comparison. No refinement pilot
-has yet been declared or run. Existing parse_chelpg is intentionally hardcoded
-to .3A/2.8A/COSMO/no dipole; preserve default and snapshots. Earlier distributed
-charge/dipole fitting trials failed field screens; do not rediscover them.
+### Next question and available backend
 
-Read-only ORCA multiscale manual fetched to cpcm_transfer_reference_audit_v1
-(recorded successful HTML fetch, local bs4 parse failed; standard HTMLParser
-subsequently wrote manual_text.txt). C-PCM/B documented for QM/QM2, passes
-large low-level surface charges to small high/low calculations; no demonstrated
-cheap MM-only full-protein CPCM route. No integrated backend has been chosen.
-Native/OpenMM formula source pinned in gk_formula_source_v1; no env install.
+Does a resolved PCM protein boundary show the same source-self discrepancy as
+GK on identical physical cavities and fixed default charges? Declare the exact
+physical setup, convergence checks and solve inventory before the next pilot.
+No ddX scientific calculation has run yet. This question tests the solvent
+approximation; agreement with GK or a desired biological direction is not a gate.
 
-This checkpoint records scoped changes since dc94cc8; continue with charge-sampling investigation.
-Includes multisite adapters/comparisons, three GK diagnostic scripts and
-localization, tests, plans/reports. docs/AGENT_PIPELINE and vault updated through
-five-site failure; native/factor findings appended. Email multisite_hybrid_email_v1
-accepted relay with five-site failure and ongoing diagnosis. Preserve unrelated
-working edits/SESSIONS. Goal remains active with no resource/time budget.
-PLM1200796, H2001200809, MopB1201160 are other active/pending jobs; do not disturb.
+DDX_CAPABILITY_NOTE records the source audit. Exact-density coupling requires
+both surface potential phi and a density integral psi; exact phi plus fitted-
+charge psi would mix representations. Upstream Psi4 uses Becke quadrature.
+An ORCA density bridge remains unvalidated. Projected-charge source-only tests
+can examine the GK approximation first, with their limitations explicit.
+
+The isolated ddX 0.9.0 build/import passed in job 1201203:
+`ddx_software_v2/attempt_0001/receipt.json`. Interpreter:
+`ddx_software_v2/attempt_0001/venv/bin/python` (under the common workspace root).
+Python 3.11.15, NumPy 1.26.4, SciPy 1.17.1, pybind11 3.0.1,
+setuptools 82.0.1, wheel 0.45.1, packaging 25.0, CMake 3.31.6.
+No existing environment changed. Build: 89 wall seconds, 5696 core-seconds,
+76.595 CPU seconds. Initial job 1201202 failed the CMake executable hash check
+before installing or compiling (1 wall second, 64 core-seconds, 0.474 CPU s).
+The new build uses a pinned CMake wheel; both attempts remain intact.
+Plans: DDX_BUILD_PLAN/RECOVERY. Source archive in ddx_capability_source_v1,
+SHA256 1f8faf41d61483f063d29934ea969747ea5e060442eed188adbf629e2a945561.
+
+No study/build job remains live. Inspect the queue before continuing and
+preserve other agents' work, PLM 1200796 and pending H200 1200809.
+No project compute/time budget or per-pilot permission gate.
+
+### Preceding findings remain frozen (commit 2bbc8a1)
+
+The five-site full hybrid passed 39 numerical checks but failed all six supporting
+parvalbumin-minus-GGR comparisons. GGR localization passed 1072 checks.
+Native source-only/empty job 1201172 matched analytical source-self energies
+within 6.324e-13 kcal. Symmetric attribution of the 18.129021 kcal shift:
+charges +18.452793, distances -0.372800, Born radii +0.049028. The common 30 A
+Born bound is verified in native/OpenMM code; that alone does not establish a
+bug. No broadly validated hybrid predictor or absolute reference exists yet.
+The goal remains active. Production baseline is unchanged.
 
 ## Latest: frozen hybrid fails GGR structural transfer; multisite preparation works
 

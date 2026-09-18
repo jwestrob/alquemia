@@ -2180,3 +2180,38 @@ utility acceptsGBW/optional density only; main ORCA NoIter route not yet tested.
 No new refinement pilot declared/launched. No new study job remains live.
 Preserve PLM1200796,H2001200809,MopB1201160 and unrelateddirtyfiles/SESSIONS.
 Activegoal incomplete; no promotion, push, productionrescore or resourcebudget.
+
+## 2026-09-17 — Same-density CHELPG sampling and isolated ddX build
+
+Autonomous MACE discriminator goal remains active. Preserved baseline/default
+and immutable experiments. Forty actual native NoIter high-level property
+evaluations and forty saved-density queries completed (1201173/74/77/1211),
+including exact reuse of the initial two. No SCF optimization or scientific
+retry. All state/energy/density/potential-quality gates pass. All eight finer-
+to-finest source-self sensitivity screens pass; five of eight fitting-extent
+screens fail the frozen 0.5 kcal criterion. GGR 2FW0-minus-2FVY source-self:
+18.1290 default,16.3853 finer,16.1540 finest,14.9673 extended fitting region.
+Charge sampling matters but does not explain most of this discrepancy. No
+per-case scheme selection, full hybrid rescore, calibration or accuracy claim.
+
+All11 actual-fixture tests pass9.732s, no final skip. New read-only collection
+exactly reproduces all38 extension rows. Raw generic missing-SCF-convergence
+failures remain intact beside the verified NoIter contract;1201173SlurmFAILED
+does not imply a native property failure. Cluster total1030summedwallseconds,
+65920allocatedcore-s,53718.534reportedCPU-s,zeroGPU;largestjobCPUwhole-second
+precision. Local report18.373s; other local preparation timings incomplete.
+
+Source inspection identifies ddX0.9.0 as a possible resolved-boundary backend;
+exact-density coupling needs BOTH surface potential and density integral psi.
+No scientific ddX solve yet. Isolated build1201203 imports/version/bannerpass:
+89wall/5696core-s/76.595CPU-s. Prior1201202failedCMakepinpreflight beforeany
+installation/compilation:1wall/64core-s/.474CPU-s. NewportableCMakewheel fixes
+login/worker mismatch; both build attempts retained. No existing environment
+changed. Build/source/dependency pins and linked-library listing retained.
+
+Reports/plans/results/commands under diagnostics/mace_omol_20260917/CHELPG_*
+and DDX_*. Candidate artifacts under workspaces/mace_omol_20260917. Current
+checkpoint, agent guide and vault updated. Next declare source-only PCM/GK
+comparison on identical physical cavities and fixed default charges, including
+convergence/rigid checks, before any solver run. No study/build job remains
+live. Preserve unrelated working changes and other jobs. No push/promotion.

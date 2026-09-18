@@ -6,6 +6,89 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
+## Latest: full3D pilot complete; next bounded descriptor declared
+
+All four native GGR validation endpoints pass energy decrease, prediction error
+and metal-gradient checks. Actual corrections: extended +1.18985906045 kcal/mol;
+connected +1.36583559959; partition difference0.17597653913 passes2kcal gate.
+Alpha1F6S/6IP9 remain unavailable: all four predicted free minima exceed the
+original0.20A limit. No new alpha DFT calculation or discrimination gain yet.
+Final result:workspaces/mace_metal_response_20260918/minimum_report_v2/result.json
+with a locally pinned reporter. Earlier partial/final reports and reporter
+copies are preserved. Report:METAL_RESPONSE_REPORT.md. Five actual-fixture/
+partial-result/corrupted-status tests pass0.880s; initial four tests also passed.
+
+All jobs complete, no remaining own allocation:1201370 used557wall seconds on
+64CPU;1201371 used113GPU seconds. Entire response pilot:5730GPU-allocation-s,
+127328allocatedcore-s,31251.232reportedCPU-s. Counts:288coreMACE,224short,288GB,
+4nativeDFT. Prep/read-only time unmeasured, not zero; no production cost claim.
+
+NEXT:implement BOUNDED_METAL_RESPONSE_PLAN.md. New protocol
+DFT_anchored_MACE_GB_bounded_metal_response_v1, same0.20A sphere and all original
+states. Solve positive quadratic exactly inside sphere; for active boundary,
+(K+lambda I)u=-g with ||u||=0.20A,lambda>=0. Reuse existing GGR interior points
+and their actual native results; only4newalphaDFT +8short calls. No new core/GB
+grids, threshold, water, protonation, radius or negative-mode adjustment.
+Predict with g·u+0.5uKu (not the unconstrained formula). New native validation
+checks energy and boundary tangent-gradient/radial-sign conditions; do not call
+an active-boundary state an unconstrained minimum. Report actual margins and
+qualification separately. All cases are consumed development. Plan is frozen;
+NO bounded-protocol code or calculation exists yet. Existing pipeline/runners
+and source mappings can be reused. Do not modify old frozen experiments.
+
+Paper benchmark committed6178634; first response/conductor work2f34da5. Parent
+now commits native validation, reports, next plan, figure links and this update.
+Vault notes complete. One email(paper_update_email_v1) accepted relay with paper
+outcome and then-running response status; no second email yet. Preserve baseline,
+other edits, jobs and index. Goal remains active; no broad replacement claim.
+
+## Full3D response: complete cheap grid; four native DFT checks running
+
+All792 cheap calls complete with zero failures:288coreMACE,216whole-short,
+288GB. Cost5617GPU-allocation-s,89872allocatedcore-s,7156.755reportedCPU-s;
+preparation/read-onlycost not separately measured (notzero). Result:
+workspaces/mace_metal_response_20260918/assessment_v1/result.json.
+All8matricesstable/converged. Alpha1Ca/La predicted displacement0.284/0.244A;
+alpha6Ca/La0.349/0.284A:alloutsidefrozen0.20A,thuspairedscoresunavailable.
+GGRconnectedCa/La0.0488/0.0846A;extended0.0574/0.0816A. Predicted GGRdeltaR
++1.340886/+1.153075kcal respectively,stillunvalidated.
+
+Native validation prepared only4eligibleGGR endpoints:minimum_v2. Job1201370
+runs4nativeDFTanalyticgradients on64CPU;1201371completed8shortcalls. Extended
+GGR quantum pair finished; connectedpair stillrunning atcheckpoint. NoalphaDFT
+run. minimum_v1unexecutedretained: exactmetadataequalityfailed acrossCPU/GPU
+NumPy eigensolverroundoff(max1.14e-13);V2uses1e-10floatcomparison,preserving
+coordinates/statuses/physicaltolerances. Threeactualgrid/input/corrupted-status
+tests pass0.852s and frozenGPUpreflightpasses. Bounded review found/fixed
+partitionqualificationreporting: finalvalidatedscorefields requirepartition
+pass;endpoint-validatedandexploratoryactualfieldsremainseparate.
+
+Parent newminimumvalidator/runnerdispatch/runbook/latestnotesnotcommittedyet.
+Paper work committed6178634 (priorparent2f34da5). FigurePDF/SVG/PNG at
+workspaces/mace_omol_20260917/khoury_benchmark_figure_v1 withscript/sourcehash.
+PaperreportnowexplicitlynotespH6domainsvsretainedGGR2FW0/2FVYpH7preparations;
+nomatchedpHrerun,resultunchanged. No new scientific follow-up declared/launched
+beyondcurrentresponseplan. Goalactive;baselineunchanged.
+
+## Paper benchmark complete; response pilot running (latest)
+
+Khoury author domains COMPLETE:44/44endpoints,22/22sites,allaccountingchecks
+pass and repeatedall-Caenergyspread0.0. Fixedmeans A0A7=49.234436,
+HEW5=70.120351,RTX=2.777993 modelkcal.6/9 declaredcomparisons pass,2/3domain
+groups;RTXall8sitesbelowall3GGR. Qualified ITC/CDcross-readout evidence,
+not directsame-assayLa/CaKd;MPVPconstructscaromissionexplicit. Report+vault
+complete,job1201351complete;cost799GPU-s,12784core-s,852.837CPU-s.
+Agentfilesreadyforparentcommit; no additionalbenchmarkpilot. Emailrelayaccepted
+paper_update_email_v1 withthisoutcome andresponseprogress.
+
+Fullmetalresponse:all288corecallscompletejobs1201352–1201355,zero failures.
+Whole-shortjobs1201356–1201358 run;four72-callGBmanifests submitted1201360,
+1201361,1201363,1201364. AllcontinueusingA5000/16CPU/64474MiB. No newDFT yet.
+NativeDFTfixed-minimum energy/gradient validator implemented in
+scripts/mace_metal_minimum.py (unrunpendingcompletecurvatureassessment).
+Use explicitcommandsinMETAL_RESPONSE_COMMANDS.md. Parentcommit2f34da5;
+minimumvalidator,agentpaperfilesandlatestnotesawaitnextscopedcommit.
+
 ## Latest checkpoint, 2026-09-18: conductor closed; parallel new tests
 
 Conductor discrimination COMPLETE:56/56 solves,105/105 new functional/refinement

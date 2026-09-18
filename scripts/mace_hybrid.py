@@ -163,6 +163,9 @@ def prepare(root, software, output, agreement):
 
 
 def dry_run(manifest):
+    if read_json(manifest).get("schema_version") == "alquemia.mace_metal_minimum_short.v1":
+        from mace_metal_minimum import validate
+        return validate(manifest)
     if read_json(manifest).get('schema_version', '').startswith('alquemia.mace_metal_response_'):
         from mace_metal_response import validate
         return validate(manifest)
@@ -455,7 +458,7 @@ def execute(manifest, memory_mode, selected=None):
                 if core_gate(mp)['status'] != 'pass':
                     raise InvalidArtifact('full GB execution requires native/custom core agreement')
             if t['kind'] == 'full' and m['model'].get('pair_kernel'):
-                if m.get('schema_version') in ('alquemia.mace_global_benchmark.v1', 'alquemia.mace_short_engine.v1', 'alquemia.mace_mechanics_short.v1', 'alquemia.mace_mechanics_minimum_short.v1', 'alquemia.mace_density_short.v1', 'alquemia.mace_metal_response_short.v1'):
+                if m.get('schema_version') in ('alquemia.mace_global_benchmark.v1', 'alquemia.mace_short_engine.v1', 'alquemia.mace_mechanics_short.v1', 'alquemia.mace_mechanics_minimum_short.v1', 'alquemia.mace_density_short.v1', 'alquemia.mace_metal_response_short.v1', 'alquemia.mace_metal_minimum_short.v1'):
                     from mace_global_benchmark import numerical_parent_gate
                     validation = numerical_parent_gate(m)
                 elif m.get('schema_version') == 'alquemia.mace_hydrogen.v1':
@@ -532,6 +535,9 @@ def compare_cores(manifest):
 
 
 def collect(manifest):
+    if read_json(manifest).get("schema_version") == "alquemia.mace_metal_minimum_short.v1":
+        from mace_metal_response import collect as collect_response
+        return collect_response(manifest)
     if read_json(manifest).get('schema_version', '').startswith('alquemia.mace_metal_response_'):
         from mace_metal_response import collect as collect_response
         return collect_response(manifest)

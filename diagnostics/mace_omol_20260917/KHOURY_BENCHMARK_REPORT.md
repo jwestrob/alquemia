@@ -60,6 +60,10 @@ through metal-chain normalization. Native pH6 hydrogen preparation adds no
 water or missing heavy atoms; all three sources already contain OXT. HEW5 has
 one HIP and RTX five HIP under the fixed native rule. Ca/La share each recorded
 protonation/H geometry. No score-conditioned preparation rescue occurred.
+The retained GGR2FW0/2FVY comparators use archived pH7 protonation, whereas
+these new domains use pH6. Thus this pilot also retains that preparation
+difference; no matched-pH control was run, and no unique cause is assigned
+to RTX's failure. This does not change the predeclared result.
 
 ## Validation, cost and reproducibility
 
@@ -100,3 +104,13 @@ ledger and retain the production baseline. The new evidence broadens what the
 existing MACE descriptor handles, while RTX supplies a useful independent
 development failure. It does not establish a broadly reliable replacement or
 validate the unchanged DFT baseline on these new domains.
+
+## Figure export
+
+A plot of all22 ordered site scores, the three fixed domain means, and all three
+GGR structures is available as [PDF](../../workspaces/mace_omol_20260917/khoury_benchmark_figure_v1/benchmark.pdf),
+[SVG](../../workspaces/mace_omol_20260917/khoury_benchmark_figure_v1/benchmark.svg), and
+[PNG](../../workspaces/mace_omol_20260917/khoury_benchmark_figure_v1/benchmark.png).
+The shaded interval is the observed GGR structure range, not a classification
+band. The plotting script and source hash sit beside the exports; no new
+selection, model calculation or statistical comparison was added.

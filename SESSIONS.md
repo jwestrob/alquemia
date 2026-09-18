@@ -2345,3 +2345,36 @@ KHOURY_BENCHMARK_{PLAN,REPORT,COMMANDS}.md; workspace khoury_author_domains_*;
 full report SHA e409364d66a7571ad51f167ae4ae82652c0dbf8aed6a4e2c2f532f33ee5b3339.
 Dedicated vault capture written. No remaining benchmark job, follow-up pilot,
 email, push or default promotion. Parent continues discriminator improvements.
+
+
+## 2026-09-18 — Full3D metal response qualified on GGR; next descriptor declared
+
+Completed288core MACE,216whole-short and288GB grid calls; all eight combined
+matrices stable/converged. Alpha optima0.244–0.349A exceed the frozen0.20A
+limit, so no alpha DFT or score. Four eligible GGR native analyticDFT endpoints
+and8matching short calls completed in jobs1201370/1201371. All energy/gradient
+checks pass; actual Ca−La response corrections1.189859extended/1.365836connected
+kcal, partition difference0.175977 passes2kcal. No discrimination gain claimed.
+Baseline/default and earlier experiments unchanged. Full report and exact
+commands:METAL_RESPONSE_REPORT.md and METAL_RESPONSE_COMMANDS.md.
+
+Total pilot5730GPU-allocation-s,127328allocatedcore-s,31251.232reportedCPU-s;
+prep/read-only costs unmeasured, notzero. Four preparation tests passed17.195s;
+five real-grid/native-output/partial-qualification/corrupted-status tests now
+pass0.880s, no skips. CPU/GPU preflight equality exposed1.14e-13 NumPy roundoff;
+minimum_v1unexecuted, V2 preserves coordinates/physical criteria with1e-10 float
+metadata comparison. Final minimum_report_v2 pins its reporter; original
+partial/final reports and reporter sources preserved. Partition gate now
+controls final qualified scores, with endpoint/exploratory fields separate.
+
+Declared BOUNDED_METAL_RESPONSE_PLAN.md: same0.20A sphere, solve positive
+quadratic subject to radius, reuse GGR interior/native outputs, evaluate only
+4newalphaDFT plus8short points. Exact energy and boundary-gradient criteria
+frozen. No new bounded implementation/calculation yet; goal remains active.
+No radius/label/threshold/microstate rescue, no entropy or conductor combination.
+
+Khoury report now links PDF/SVG/PNG of all22sites and fixed means/GGR replicas;
+plot adds no statistic or scientific calculation. Documented pH6domain versus
+retainedpH7GGR2FW0/2FVY preparations. Paper result remains6/9 comparisons,2/3
+domain groups; RTX all-site failure. Vault notes and agent guide updated.
+Paper/progress email accepted relay. No push/promotion or remaining own job.

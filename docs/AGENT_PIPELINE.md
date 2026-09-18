@@ -1,23 +1,31 @@
 # Alquemia: current operating guide for agents
 
-**Updated 2026-09-17.** Start here for new work. Jacob has approved contained
+**Updated 2026-09-18.** Start here for new work. Jacob has approved contained
 pilots autonomously; see root AGENTS.md for the instruction superseding older
 per-pilot approval language. This guide supersedes older
 operational/status prose; dated experiments and their numerical records remain
 immutable. The baseline remains the default. Broad La/Ca affinity discrimination
 has not been established. The [active MACE goal](../diagnostics/mace_discriminator_goal_20260916/GOAL.md) continues through intermediate failed pilots; production remains unchanged.
 
-**Latest research result:** the frozen responsive-density/AMOEBA-GK/MACE
-candidate fails broader transfer. Both parvalbumin sites fall below all three
-GGR structures: all six supporting ordering tests fail, while all39 numerical
-checks pass. Aequorin is retained as an ordered three-site vector without
-invented per-site classifications. Ten quantum endpoints,20MACE forwards and
-all density/native components completed. Baseline stays default; no absolute
-calibration or promotion. [Five-site result and runnable replay](../diagnostics/mace_omol_20260917/MULTISITE_DENSITY_HYBRID_REPORT.md).
-The [earlier alpha/2FW0 failure](../diagnostics/mace_omol_20260917/TRIAL_DENSITY_GK_EXPANSION_REPORT.md)
-remains. Saved-output localization now identifies distributed field contributions
-and a consequential source self-solvation term; native component verification
-is the next contained diagnostic, not a new accepted score.
+**Latest research result:** the complete frozen-response conductor correction
+provides no overall improvement over the preceding GK hybrid:4/12 directional
+comparisons remain correct. Parvalbumin EF improves, alpha-lactalbumin regresses.
+All56 new solves complete and paired grid changes are small; earlier endpoint
+and rotation qualification failures remain. Close this challenger without wider
+panel expansion. [Results and replay](../diagnostics/mace_omol_20260917/CONDUCTOR_DISCRIMINATION_REPORT.md).
+
+The paper challenge is complete: A0A7 and HEW5 agree with the qualified
+experimental direction; RTX fails all three GGR comparisons (6/9 comparisons,
+2/3 new domain groups). All22sites/44endpoints passed numerical checks.
+[Paper results, caveats and figure](../diagnostics/mace_omol_20260917/KHOURY_BENCHMARK_REPORT.md).
+
+The full3D metal-response pilot also completed: all four native GGR energy and
+gradient checks pass, with0.176kcal/mol partition sensitivity. All alpha optima
+exceed the frozen0.20A domain, so no alpha correction or discrimination gain is
+released. [Response result](../diagnostics/mace_omol_20260917/METAL_RESPONSE_REPORT.md)
+and [operations](../diagnostics/mace_omol_20260917/METAL_RESPONSE_COMMANDS.md).
+The next [bounded-response test](../diagnostics/mace_omol_20260917/BOUNDED_METAL_RESPONSE_PLAN.md)
+is declared but not implemented or executed. Baseline remains default.
 Recover the [live checkpoint](../diagnostics/mace_discriminator_goal_20260916/CURRENT.md)
 and inspect actual jobs before submitting research work.
 

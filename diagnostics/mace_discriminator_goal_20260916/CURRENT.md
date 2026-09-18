@@ -6,6 +6,41 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
+## Latest: bounded response complete; margins improve, directions still fail
+
+All28 energy/gradient checks pass for the fixed0.20A descriptor:16new alpha
+checks and12exactly reused GGR checks. Both alpha-minus-extended-GGR margins
+improve:1F6S −14.918692→−8.300315 (+6.618377kcal/mol),6IP9 −17.309145→−6.073599
+(+11.235545). Both directions remain wrong:0/2, one alpha biological group.
+Actual corrections are7.80823649314/12.42540410768alpha and1.18985906045extendedGGR;
+GGRconnected1.36583559959, partition difference0.17597653913 passes. No broad
+accuracy gain, free-minimum, entropy or binding-free-energy claim. Native DFT
+supports the differential local response; the fixed exterior still omits terms.
+
+Primary report:diagnostics/mace_omol_20260917/BOUNDED_METAL_RESPONSE_REPORT.md;
+runbook:BOUNDED_METAL_RESPONSE_COMMANDS.md. Full result:
+workspaces/mace_bounded_response_20260918/report_v1/result.json, pinned reporter.
+Actual preparation prepared_v3; V1/V2 were unexecuted dependency recovery.
+All source donors/waters/charges/scaffold coordinates retained. Frozen GPU
+preflight passed. Four real-fixture tests pass3.124s, zero skips; no scientific
+execution failure. New scripts/mace_bounded_response.py and focused runner dispatch.
+
+Jobs1201383/1201384 completed:4nativeDFT +8short MACE, reusing4GGRDFT/8short and
+all curvature grids. New cost15184allocatedcore-s,11930.002reportedCPU-s,
+81GPU-allocation-s. Quantum217wall-s/64CPU; short81wall-s/16CPU/oneA5000.
+All3preparations11.708221wall/10.754155CPU-s; report2.016501wall/1.606895CPU-s.
+Other local housekeeping not fully timed. Parent grid/GGR costs remain separate;
+production affordability is unestablished. No own jobs remain.
+
+Recommendation: retain baseline; preserve this useful response component and
+address remaining physical omissions under a separately declared follow-up.
+Do not enlarge the radius or fit a threshold to these outcomes. No additional
+scientific pilot has been declared/launched in this step. The research goal is
+unfinished. Paper benchmark remains2/3newdomain groups; RTX failure unresolved.
+Vault capture2026-09-18_laca-bounded-metal-response.md written. Update email
+accepted by relay; message/receipt in update_email_v1 (delivery not independently
+confirmed). Scoped commit follows this checkpoint. Earlier entries are historical.
+
 ## Latest: full3D pilot complete; next bounded descriptor declared
 
 All four native GGR validation endpoints pass energy decrease, prediction error

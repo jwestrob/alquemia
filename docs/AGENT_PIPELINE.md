@@ -24,8 +24,14 @@ gradient checks pass, with0.176kcal/mol partition sensitivity. All alpha optima
 exceed the frozen0.20A domain, so no alpha correction or discrimination gain is
 released. [Response result](../diagnostics/mace_omol_20260917/METAL_RESPONSE_REPORT.md)
 and [operations](../diagnostics/mace_omol_20260917/METAL_RESPONSE_COMMANDS.md).
-The next [bounded-response test](../diagnostics/mace_omol_20260917/BOUNDED_METAL_RESPONSE_PLAN.md)
-is declared but not implemented or executed. Baseline remains default.
+The [bounded-response test](../diagnostics/mace_omol_20260917/BOUNDED_METAL_RESPONSE_REPORT.md)
+completed: all28 energy/gradient checks pass. Both alpha-minus-GGR margins improve
+(−14.92→−8.30 and−17.31→−6.07kcal/mol), but both directions still fail. This
+supports a conditional response component, not broader classification accuracy.
+Four new analytic DFT and eight short MACE calls took217CPU-allocation wall seconds
+and81GPU seconds; GGR/native grids were reused. No free-minimum or entropy claim.
+[Commands](../diagnostics/mace_omol_20260917/BOUNDED_METAL_RESPONSE_COMMANDS.md).
+Baseline remains default; no additional pilot is running.
 Recover the [live checkpoint](../diagnostics/mace_discriminator_goal_20260916/CURRENT.md)
 and inspect actual jobs before submitting research work.
 

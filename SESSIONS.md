@@ -2378,3 +2378,34 @@ plot adds no statistic or scientific calculation. Documented pH6domain versus
 retainedpH7GGR2FW0/2FVY preparations. Paper result remains6/9 comparisons,2/3
 domain groups; RTX all-site failure. Vault notes and agent guide updated.
 Paper/progress email accepted relay. No push/promotion or remaining own job.
+
+
+## 2026-09-18 — Bounded metal response improves margins, not classification
+
+Implemented DFT_anchored_MACE_GB_bounded_metal_response_v1 in new
+scripts/mace_bounded_response.py and focused existing runner dispatch. Same
+0.20A sphere, positive3x3 curvature, exact archived GGR interior points. Four
+new alpha native analyticDFT plus8short MACE completed1201383/1201384; all28
+energy/gradient checks pass. No donor/water/protonation/charge/scaffold changes.
+Actual alpha-minus-extended-GGR margins:1F6S−14.918692→−8.300315,
+6IP9−17.309145→−6.073599kcal/mol. Both directional failures persist0/2;
+structural replicas are one biological group. GGR correction partition change
+0.17597653913 passes2kcal gate. No new absolute reference or class threshold.
+
+Primary report BOUNDED_METAL_RESPONSE_REPORT.md, commands beside it; workspace
+mace_bounded_response_20260918/report_v1 pins result/reporter. All4real fixture,
+KKT/reuse/input/cache/actualgradient and sign tests pass3.124s, no skips. Frozen
+GPU preflight passed. V1/V2 unexecuted preparation-only import failure preserved;
+V3 dependencies fixed without changed physical inputs or any scientific retry.
+
+New cost15184allocatedcore-s,11930.002reportedCPU-s,81GPU-allocation-s.
+Quantum217wall-s/64CPU; short81wall-s/A5000/16CPU. Threepreparations measured
+11.708221wall/10.754155CPU-s; report2.016501wall/1.606895CPU-s. Initial grids and
+GGR validation separately accounted; no established production cost claim.
+No own jobs remain. Baseline/default and earlier experiments unchanged.
+
+Agent guide/current checkpoint and dedicated vault note updated; authorized
+progress email accepted relay(update_email_v1). Paper track remains2/3domain
+means supported, RTX failure unresolved. Research goal unfinished. No additional
+pilot, push, production rescore or default promotion. Preserve other agents'
+shared edits/index/jobs; only scoped files and this session entry committed.

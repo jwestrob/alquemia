@@ -33,13 +33,72 @@ energy error 3.23739e-8 Hartree. The explicit NoIter contract retains raw generi
 SCF failure flags: 1201173 Slurm FAILED, but native property calls terminated
 normally. The shared scorer/runner/default parser remain unchanged.
 
-### Next question and available backend
+### RUNNING: resolved-boundary PCM and numerical recovery — 2026-09-18
 
-Does a resolved PCM protein boundary show the same source-self discrepancy as
-GK on identical physical cavities and fixed default charges? Declare the exact
-physical setup, convergence checks and solve inventory before the next pilot.
-No ddX scientific calculation has run yet. This question tests the solvent
-approximation; agreement with GK or a desired biological direction is not a gate.
+DDX_SOURCE_SELF_PLAN.md freezes eight groups /20 roles on real GGR2FW0/2FVY:
+three basis/grid resolutions (6/194,9/302,12/590), archived rigid transforms,
+zero-source and repeats. Same full cavity/default charges; PCM epsilon78.3,
+intrinsic rsolv/common metal radius, eta.1/shift0, FMM12/12, tolerance1e-10.
+64threads; no DFT/MACE/force/full-hybrid score or baseline change.
+
+Initial ddx_source_self_v1 job1201278 fails source-potential precision before
+18 nonzero forward solves; only two zero-source solves ran. Native FMM phi
+error~1e-7au exceeds1e-8 gate. Cost164wall/10496allocatedcore-s/1572.849CPU-s.
+The actual read-only report ddx_source_self_report_v1/result.json retains these
+failures and missing energies (7.893seconds); no fabricated zero contrast.
+
+Direct-source v2 job1201279 COMPLETE but numerically incomplete:9forward
+starts,1success,8iteration failures,11later states not started because the native
+Model retained its error flag. No job changed or stopped. All actual attempted
+source-potential/integral checks pass. The analytical Coulomb/fsum phi uses the
+same projected q as psi; physical sources and operator remain unchanged.
+Manifest f43074cee00c8e03516a02e63dfdf5fd5bcdd3509f3e48bedb8fa22493382a8f.
+2FW0Ca coarse: -83.9353788189kcal,214.4703solve-seconds. Slurm2533wall,
+162112allocatedcore-s,151473reportedCPU-s (whole-second precision),1769068KiB
+sampledRSS. Original read-only report ddx_source_self_report_v2/result.json
+completeFalse/checksFalse;8.7494seconds. All missing contrasts remain null.
+
+Logged unchanged La replay1201280 COMPLETE, ddx_convergence_v1:
+337 first-system iterations,79 final single-layer iterations; strict1e-10
+iterate-change tolerance,264.1826solve/267.6094driver seconds. Energy
+-40.85096540267961kcal; potential error2.71e-16au,psi1.78e-15,contraction0.
+This recovers slow convergence for one state, not overall numerical acceptance.
+Slurm280wall/17920allocatedcore-s/16842reportedCPU-s,330096KiB sampledRSS;
+driver peak376568KiB. Log reports iterate change, not independent residual.
+Manifest38a3368bed372eda419918ab6a610a8bcda1384809cb396a26fedaac3ea98020.
+
+### RUNNING: independent iteration recovery1201286–1201292
+
+DDX_ITERATION_RECOVERY_PLAN.md completes the same20roles:2actual reuses and
+18new solve roles. Fresh Model for every new state, maxiter1200/logging, all
+physical settings and acceptance tolerances unchanged. Seven independently
+allocated64CPU/128GiB groups are running, one serial solver each. Jobmapping:
+1201286 2FW0primary;1287 2FW0refined;1288 2FW0rigid;1289 2FVYcoarse;
+1290 2FVYprimary(withzero/repeats);1291 2FVYrefined;1292 2FVYrigid.
+Full IDs all prefix120. No automatic retries or project resource budget.
+
+Manifest ddx_source_recovery_v1/manifest.json SHA
+bac125e5580cf3af1c84c102876007be20d27d501a4a0e0e97059a1ce74c24aa.
+Config ddx_source_recovery_config_v1/config.json; immutable implementation and
+submission receipts inworkspace. Frozen dry-run passes. Collect fully reused
+2FW0coarse group locally:0nativecalls,7.8412wall/7.7653CPU seconds. Its actual
+cross-contraction reciprocity error0.1228021411kcal FAILS frozen0.05 gate.
+Do not hide this coarse failure if finer representations improve.
+
+Scripts mace_ddx_source_self.py,source_report.py,convergence.py,recovery.py;
+DDX_COMMANDS.md gives next collect/report commands. Tests:all5source tests pass;
+all3recovery tests now pass50.216s, no remaining skip. Earlier combined run
+6pass/2explicitpending skips35.997s is retained as intermediate history.
+The root reporter supports original and independently recovered states and
+checks reuse coefficients/receipts; use the frozen recovery reporter for new
+outputs. The separate six-call DDX_MATRIX_STORAGE_PLAN is UNEXECUTED.
+
+DENSITY_IMPORT_CAPABILITY_NOTE records read-only ORCA/PySCF/MOKIT/IOData source
+inspection. No density-import dependency/install/export/pilot was performed.
+Exact-density coupling needs both surfacephi andintegralpsi; cap positions and
+La ECP conventions require validation. Do not mix exactphi with fittedpsi.
+Latest preceding own commit325ed72; other agent's238d32a completes PLM audit.
+Preserve unrelated dirtyfiles, index entries and jobs.
 
 DDX_CAPABILITY_NOTE records the source audit. Exact-density coupling requires
 both surface potential phi and a density integral psi; exact phi plus fitted-
@@ -59,7 +118,7 @@ The new build uses a pinned CMake wheel; both attempts remain intact.
 Plans: DDX_BUILD_PLAN/RECOVERY. Source archive in ddx_capability_source_v1,
 SHA256 1f8faf41d61483f063d29934ea969747ea5e060442eed188adbf629e2a945561.
 
-No study/build job remains live. Inspect the queue before continuing and
+The independent recovery is submitted. Inspect the queue before continuing and
 preserve other agents' work, PLM 1200796 and pending H200 1200809.
 No project compute/time budget or per-pilot permission gate.
 

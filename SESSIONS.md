@@ -2215,3 +2215,36 @@ checkpoint, agent guide and vault updated. Next declare source-only PCM/GK
 comparison on identical physical cavities and fixed default charges, including
 convergence/rigid checks, before any solver run. No study/build job remains
 live. Preserve unrelated working changes and other jobs. No push/promotion.
+
+## 2026-09-18 — Resolved-boundary PCM and independent numerical recovery
+
+Preserved production/default and all prior studies. Native ddX source-FMM
+pilot1201278 stopped18nonzero roles before solves (source potential error~1e-7au
+exceeds1e-8);2zero solves executed. New direct-source v2 preserves all physical
+source hashes and uses exact Coulomb/fsum phi with matching monopole psi.
+Job1201279 completed9forward attempts:1success,8iteration failures;11later states
+were never attempted because native Model retains an error flag. Raw incomplete
+results and null contrasts remain intact; read-only report8.7494seconds.
+Cost2533wall/162112allocatedcore-s/151473reportedCPU-s,zeroGPU.
+
+Logged unchanged2FW0La replay1201280 converges with337+79iterations at the same
+1e-10criterion, using maxiter1200. Energy -40.85096540267961kcal;264.1826solve
+seconds. Slurm280wall/17920allocatedcore-s/16842reportedCPU-s. This demonstrates
+recoverable slow convergence for one state, not overall numerical credibility.
+Frozen coarse2FW0 paired reciprocity already fails0.05kcal:0.1228021411kcal.
+
+Independent recovery now RUNNING1201286–1201292:18new roles,2exact reuses,
+fresh Model per new state; same20-role inventory, grids, sources and tolerances.
+Manifest ddx_source_recovery_v1 SHA
+bac125e5580cf3af1c84c102876007be20d27d501a4a0e0e97059a1ce74c24aa.
+Two reuses assembled locally with0native calls. No DFT/MACE/force/newaffinity
+score or threshold. Three new recovery tests pass50.216s, five source tests
+previously pass; no final skip. Fresh frozen dry-run passes. DDX_COMMANDS.md
+supplies next collection/report commands. Separate matrix-storage proposal
+remains unexecuted. Density-import source assessment performed read-only;
+no dependency install/export/import pilot or mixed exactphi/fittedpsi coupling.
+
+Current checkpoint, agent guide and vault updated. Goal remains active; no
+broadly validated MACE replacement. No push/default promotion/productionrescore
+or project CPU/time budget. Other agent238d32a and unrelatedworking changes,
+SESSIONS lines, jobs and index entries preserved. New results remain opt-in.

@@ -482,8 +482,25 @@ source-self discrepancy remains14.97–18.13kcal across settings: sampling matte
 but does not explain most of it. No default change or full hybrid rescore.
 [Result and costs](../diagnostics/mace_omol_20260917/CHELPG_SAMPLING_STABILITY_REPORT.md).
 
-An isolated ddX0.9.0 build now imports successfully; it has run no scientific
-calculation. A resolved protein-boundary diagnostic is next, with physical
-settings/tests to be frozen before execution. Exact-density coupling needs
+An isolated ddX0.9.0 build imports successfully. The subsequent real solver
+pilot is described below. Exact-density coupling needs
 both surface potentials and a density integral; see the
 [interface assessment](../diagnostics/mace_omol_20260917/DDX_CAPABILITY_NOTE.md).
+
+
+### Resolved protein-boundary solver development, 2026-09-18
+
+The isolated ddX backend now executes real source-only protein PCM calculations.
+The initial native-source FMM precision gate failed; a separately versioned
+exact Coulomb source evaluation preserves the physical inputs and passes that
+check. The full grid/rotation pilot1201279 is running. One unchanged La state
+needed337 dielectric iterations, exceeding the original300; logged replay1201280
+converges at the same1e-10 tolerance in264.183solve seconds. Numerical credibility
+across the inventory and predictive value remain unestablished.
+
+The Python native Model retains an error after nonconvergence. The new recovery
+runner creates fresh Model objects, preserves failed attempts, and reuses actual
+successful coefficients. [Recovery scope](../diagnostics/mace_omol_20260917/DDX_ITERATION_RECOVERY_PLAN.md).
+This is a frozen projected-charge solvent-component diagnostic: no complete
+hybrid rescore, exact-density claim or production/default change. Recover
+CURRENT.md for current job and manifest status before executing anything.

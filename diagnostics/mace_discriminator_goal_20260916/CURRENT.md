@@ -6,6 +6,31 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
+## Running: matched vacuum hybrid response
+
+The previous bounded pilot was progress, but still0/2directions. New declared
+MATCHED_H_RESPONSE_PLAN.md tests response on the earlier normalized-H vacuum
+hybrid with its OWN gradient:DFTvac+Tfull−Tcore. Cheap curvature is Hessian(Tfull),
+so replacing DFTcore curvature with learnedcore curvature cancels the subtractive
+core. No reuse of incompatible CPCM response values. Same0.20A sphere, all four
+representations, both metals; allfour final alpha/GGR margins must exceed0.02
+and both final/response GGR partition shifts must be<=2. No threshold tuning.
+
+Initial prepared_v1 under workspaces/mace_omol_hybrid_response_20260918. New
+center job1201385completed12analytic MACE calls; all scalar energies exactly
+match archives. Two original normalized GGR whole gradients reused by actual
+input/receipt identity. Whole grids1201386/1201387/1201388 are running (72calls
+each); no new DFT yet. Explicit collections_v1.json and commands in
+MATCHED_H_RESPONSE_COMMANDS.md. Native conditional module is implemented but
+unexecuted until positive, converged predictions and unchanged donors pass.
+It permits atmost8newDFT/16matchingMACEgradient calls, with every point frozen.
+
+Three initial source/grid/corrupted-input tests pass29.414s; frozen GPU preflight
+passes. Five existing matched-H regressions pass9.147s. New modules mace_omol_hybrid_response.py,mace_omol_hybrid_minimum.py;
+small existing OMOL/matched-H stage dispatch, no worker/Hamiltonian changes.
+Scoped commit follows this checkpoint. Preserve baseline/default,
+other work and all frozen snapshots; inspect actual jobs before any resubmission.
+
 ## Latest: bounded response complete; margins improve, directions still fail
 
 All28 energy/gradient checks pass for the fixed0.20A descriptor:16new alpha

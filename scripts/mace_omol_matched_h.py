@@ -204,6 +204,9 @@ def prepare_quantum(preparation,output):
 
 @cached_file_checks
 def validate_quantum(manifest):
+    if read_json(manifest).get('stage')=='matched_hybrid_response_validation':
+        from mace_omol_hybrid_minimum import validate_quantum as validate_response
+        return validate_response(manifest)
     from affordable_workflow import dry_run
     m=read_json(manifest);validate_prepared(verify(m['preparation']));p=read_json(verify(m['preparation']))
     if m['protocol_id']!=PROTOCOL or m['stage']!='normalized_vacuum_DFT' or m['method']!=METHOD or len(m['tasks'])!=8:
@@ -221,6 +224,9 @@ def validate_quantum(manifest):
 
 
 def collect_quantum(manifest):
+    if read_json(manifest).get('stage')=='matched_hybrid_response_validation':
+        from mace_omol_hybrid_minimum import collect_quantum as collect_response
+        return collect_response(manifest)
     from ggr_sensitivity import executed
     validate_quantum(manifest);m,rows=executed(manifest)
     for t in m['tasks']:

@@ -2409,3 +2409,36 @@ progress email accepted relay(update_email_v1). Paper track remains2/3domain
 means supported, RTX failure unresolved. Research goal unfinished. No additional
 pilot, push, production rescore or default promotion. Preserve other agents'
 shared edits/index/jobs; only scoped files and this session entry committed.
+
+
+## 2026-09-18 — Matched vacuum hybrid response running
+
+Previous turn made progress: bounded CPCM response passed28checks and improved
+both alpha margins but corrected neither direction. Declared separate
+MATCHED_H_RESPONSE_PLAN.md: same normalized-H vacuum hybrid H=DFTcore+Tfull−Tcore,
+matching analytic gradient, cheap Hessian(Tfull), same0.20A sphere. No incompatible
+CPCM correction, solvent, entropy, threshold fit or source-chemistry change.
+All four alpha/GGR comparisons and final/response partition gates remain fixed.
+
+Implemented mace_omol_hybrid_response.py (prepare/validate/collect/assess) and
+mace_omol_hybrid_minimum.py (conditional native preparation/collection/report).
+Focused existing OMOL/matched-H dispatch; workers and default baseline unchanged.
+Initial prepared_v1 contains228calls:12new center gradients+216whole grid points.
+Job1201385 completed all12centers with exactly matching archived scalar energies.
+Two normalized whole GGR gradients reused with exact source/receipt agreement.
+Jobs1201386–1201388 run72calls each foralpha1F6S,alpha6IP9,GGR1GLG; last verified
+alllive,33/33/20completed respectively, zero failures. No new nativeDFT yet.
+
+Three real source/grid/corrupted-state tests pass29.414s and frozen GPU preflight
+passes. Five existing matched-H tests pass9.147s. Conditional native module is
+implemented but awaits real complete grids/predictions for preparation/testing;
+do not call it scientifically executed. Atmost8newnativeDFT and16matching learned
+gradients, only at eligible fixed points with unchanged donors. Existing runners,
+locks, receipt/caching policies preserved. Commands and explicit collection index
+are recorded; no duplicate executors or scheduler estimates.
+
+Current guide/checkpoint and vault note updated. No new email after the prior
+bounded-result update. Baseline/default unchanged, goal unfinished, no push or
+production rescore. Continue collecting the specific live jobs, then assess
+and execute only their predeclared eligible native checks. Preserve unrelated
+shared edits and other agents' work.

@@ -31,7 +31,11 @@ supports a conditional response component, not broader classification accuracy.
 Four new analytic DFT and eight short MACE calls took217CPU-allocation wall seconds
 and81GPU seconds; GGR/native grids were reused. No free-minimum or entropy claim.
 [Commands](../diagnostics/mace_omol_20260917/BOUNDED_METAL_RESPONSE_COMMANDS.md).
-Baseline remains default; no additional pilot is running.
+Baseline remains default. A separate [matched vacuum hybrid response pilot](../diagnostics/mace_omol_20260917/MATCHED_H_RESPONSE_PLAN.md)
+is now running:12new center gradients reproduce the archived energies exactly;
+216whole-protein grid calls are in progress. Its gradient and energy both belong
+to the existing normalized-H vacuum hybrid. The CPCM correction is not reused.
+[Operations](../diagnostics/mace_omol_20260917/MATCHED_H_RESPONSE_COMMANDS.md).
 Recover the [live checkpoint](../diagnostics/mace_discriminator_goal_20260916/CURRENT.md)
 and inspect actual jobs before submitting research work.
 

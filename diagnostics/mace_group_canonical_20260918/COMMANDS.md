@@ -56,3 +56,17 @@ No broad or production-qualified classification is emitted.
 Tests distinguish archived algebra and actual source/receipt checks from new
 molecular integration. Historical baseline and failed OMOL energies exercise
 calibration logic only; they are never reported as new typed-group predictions.
+
+## Figure and actual cost
+
+After the report is available, export the figure and terminal job accounting:
+
+```bash
+/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python diagnostics/mace_group_canonical_20260918/plot_results.py --report workspaces/mace_group_canonical_20260918/report_review_v1/result.json --output workspaces/mace_group_canonical_20260918/figure_review_v1
+/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python diagnostics/mace_group_canonical_20260918/collect_cost.py --manifest workspaces/mace_group_canonical_20260918/model_v2/manifest.json --submission workspaces/mace_group_canonical_20260918/model_v2/submission.json --preparation workspaces/mace_group_canonical_20260918/prepared_v1/preparation.json --output workspaces/mace_group_canonical_20260918/cost_review_v1
+```
+
+The cost operation refuses a live job unless `--allow-running` is explicit;
+then CPU accounting remains unavailable, allocation/inference figures are
+marked partial, and every failed/incomplete attempt is retained. Figure axes
+use raw protocol-specific values without an invented aquo or plotting offset.

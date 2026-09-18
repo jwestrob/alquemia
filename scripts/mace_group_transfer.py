@@ -219,9 +219,15 @@ def collect(manifest):
 
 
 def report(manifest, output):
-    start = time.monotonic(); c = collect(manifest); m = read_json(manifest)
-    p, cfg, cases = prepared(verify(m['preparation'])); families = family_cases(cfg)
-    rows = c['rows']; scores = {}; checks = []; group_checks = []; comparisons = []
+    c = collect(manifest); m = read_json(manifest)
+    p, cfg, cases = prepared(verify(m['preparation']))
+    return report_collection(c, m, cfg, cases, output)
+
+
+def report_collection(c, m, cfg, cases, output, extra_checks=()):
+    """Shared fixed comparisons; checkpoint-specific qualification stays explicit."""
+    start = time.monotonic(); families = family_cases(cfg)
+    rows = c['rows']; scores = {}; checks = list(extra_checks); group_checks = []; comparisons = []
     def check(name, error, tolerance):
         checks.append({'name': name, 'error': error, 'tolerance': tolerance,
                        'pass': error is not None and abs(error) <= tolerance})
@@ -276,7 +282,7 @@ def report(manifest, output):
             add(name, g, get(name), get(g), 'parvalbumin_cross_study_supporting')
     numeric = c['status'] == 'complete' and all(x['pass'] for x in checks)
     represented = all(x['pass'] for x in group_checks)
-    result = {'status': c['status'], 'protocol_id': PROTOCOL, 'collection': c, 'scores': scores,
+    result = {'status': c['status'], 'protocol_id': m['protocol_id'], 'collection': c, 'scores': scores,
               'checks': checks, 'grouping_checks': group_checks, 'numerical_checks_pass': numeric,
               'representation_checks_pass': represented, 'comparisons': comparisons, 'denominator': 22,
               'raw_pass_count': sum(x['pass'] for x in comparisons),

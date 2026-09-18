@@ -2779,3 +2779,36 @@ locks/cache/recovery reused. Completeintegration tests/cost/report pending.
 Plan,sourceclarification,status,commands,vault/currentcheckpoint/agentguide
 updated. Nextcollect/reportactualjob;donotresubmit. GoalACTIVE,nopush/promotion.
 Commit onlyownscope/sessionentry,preserve unrelatedworktreechanges.
+
+
+## 2026-09-18 — Larger grouped checkpoint launched; medium PQQ classes overlap
+
+Previous turn madeprogress: implemented/launched frozen25-reference medium
+calibration. It remainslive as1201524; actualpartial_report_v2 has13pairs,20/40
+available classorderings andgap upperbound-165.697893modelkcal. No cleanbands
+can be released underfixedrule. Finishall25,nocase/threshold rescue. Baseline
+25/25 andearlier17/22 broad typed-medium result remainunchanged.
+
+Declared/launched separate intact_POLAR_large_typed31_group_vacuum_compatibility_v1
+before groupedlarge results andbefore inspectingmedium overlap. Same34site
+physicalpreparations and55mediumtasks plus2nativeidentity controls;57calls.
+Onlycheckpoint changes scientifically; existingqualifiedlarge tiling retained.
+All22directions/strata unchanged; improvement requires>17correct retainingall7
+originaldirections. Newjob1201533,oneadditionalA5000/16CPU/64474MiB. Manifest
+SHAabedfd09d430d9533a14325241fbbbf550943d7b5342e65c4a3910ae844c39d2.
+
+Fourprelaunch tests pass69.112s,eightmediumreport regressions pass97.334s,zero
+skips. Isolatedpreflightpasses. Bothactualnativecontrols nowpass: exactenergy,
+maxforce7.084e-13eV/A,density3.043e-14;groupedtasks running. FirstPQQrelative
+direction passes(+51.626235modelkcal); otherdirectional results pending. Shared
+reportcomparisons factored without changingmedium outputs. NoDFT/solvent/training.
+
+New canonicalplot/cost helpers exercised onactualpartial data; exportedfigure
+inspected. Fullcost/results pending. Declaredsaved-readout analysis ofall25
+canonical cases plus34oldtyped sites: components/charge/baseline correlations,
+zeroenergycalls/fitting/newclassifier. Scriptready butanalysisnotrun;mustreject
+partialpanel. Plans,commands,vault,currentcheckpoint/agentguide updated.
+
+Bothjobsactive;donotresubmit/reprioritize. GoalACTIVE,baseline/default unchanged.
+Nextcollectbothactualjobs,reportaccuracy/cost andruncomplete-panelreadoutaudit.
+Commitonlyownscope/sessionentry; preserveunrelatededits,nopush/promotion.

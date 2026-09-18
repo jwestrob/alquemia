@@ -78,9 +78,12 @@ All61numericchecks pass; threegrouping shifts2.51–3.28 failthe retained2gate,
 althoughall22directional outcomes remainunchanged. No absolutecalibration or
 defaultchange. [Completed operations](../diagnostics/mace_group_transfer_20260918/COMMANDS.md).
 The [same-model PQQ calibration attempt](../diagnostics/mace_group_canonical_20260918/PLAN.md)
-has job1201524 submitted:50 new endpoints on25 existing references, four crystal
-endpoints reused, no result yet. Research bands require a complete positive
-class gap; previous grouping failures remain. Baseline unchanged.
+has job1201524 running:50 new endpoints on25 existing references, four crystal
+endpoints reused. The partial panel already overlaps, ruling out a positive
+class gap under its fixed rule; full results remain pending. Previous grouping
+failures and the baseline remain unchanged. A separately declared
+[large-checkpoint grouped transfer](../diagnostics/mace_group_large_20260918/PLAN.md)
+is job1201533:57calls, same34sites/22comparisons, no inherited absolute band.
 [Operations and missing-source correction](../diagnostics/mace_group_canonical_20260918/COMMANDS.md).
 Recover the [live checkpoint](../diagnostics/mace_discriminator_goal_20260916/CURRENT.md)
 and inspect actual jobs before submitting research work.

@@ -77,14 +77,16 @@ Khoury6/9 andparvalbumin4/6 retain their previous supporting-family failures.
 All61numericchecks pass; threegrouping shifts2.51–3.28 failthe retained2gate,
 althoughall22directional outcomes remainunchanged. No absolutecalibration or
 defaultchange. [Completed operations](../diagnostics/mace_group_transfer_20260918/COMMANDS.md).
-The [same-model PQQ calibration attempt](../diagnostics/mace_group_canonical_20260918/PLAN.md)
-has job1201524 running:50 new endpoints on25 existing references, four crystal
-endpoints reused. The partial panel already overlaps, ruling out a positive
-class gap under its fixed rule; full results remain pending. Previous grouping
-failures and the baseline remain unchanged. A separately declared
-[large-checkpoint grouped transfer](../diagnostics/mace_group_large_20260918/PLAN.md)
-is job1201533:57calls, same34sites/22comparisons, no inherited absolute band.
-[Operations and missing-source correction](../diagnostics/mace_group_canonical_20260918/COMMANDS.md).
+The [same-model PQQ calibration](../diagnostics/mace_group_canonical_20260918/REPORT.md)
+completed50calls: class gap−213.316367 and106/154 pair orderings, no valid bands.
+The short learned readout separates25/25; electrostatics correlates with protein
+charge and destroys total-score separation. This is a diagnostic, not a new
+classifier. The previous **whole-chain masked OMOL** classifier still separates
+25/25 with its own9.108591 gap; do not describe it as a carved-core result.
+The [large-checkpoint transfer](../diagnostics/mace_group_large_20260918/REPORT.md)
+completed57calls:17/22, the same failures as medium, with about twice the observed
+campaign GPU allocation. All69numerical checks pass; three grouping checks fail.
+No larger canonical expansion or default promotion. Both jobs are complete.
 Recover the [live checkpoint](../diagnostics/mace_discriminator_goal_20260916/CURRENT.md)
 and inspect actual jobs before submitting research work.
 

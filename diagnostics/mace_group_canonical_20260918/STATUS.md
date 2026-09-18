@@ -1,4 +1,11 @@
-# Running: unchanged typed-group PQQ model
+# Completed: unchanged typed-group PQQ model
+
+**Final status:** job 1201524 completed all 50 endpoints. All 54 charge checks
+pass; calibration fails with class overlap and 106/154 expected orderings.
+See REPORT.md, RESULT.json and VALIDATION.md for final results and costs.
+The following initial-execution snapshot is retained as history.
+
+## Historical running snapshot
 
 Job **1201524** is running on one A5000, 16 CPUs and 64474 MiB host RAM.
 Manifest V2 SHA:

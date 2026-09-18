@@ -115,5 +115,44 @@ class ActualPartialTests(unittest.TestCase):
         self.assertGreater(missing, 1)
 
 
+@unittest.skipUnless((WORK / 'report_v1/result.json').exists(), 'completed real canonical report unavailable')
+class CompletedCanonicalTests(unittest.TestCase):
+    def test_complete_actual_algebra_and_failed_calibration_are_preserved(self):
+        d = read_json(WORK / 'report_v1/result.json')
+        self.assertEqual(d['status'], 'complete'); self.assertTrue(d['numerical_checks_pass'])
+        self.assertEqual(len(d['checks']), 54); self.assertTrue(all(c['pass'] for c in d['checks']))
+        self.assertEqual(d['calibration_scored_count'], 25)
+        self.assertEqual(d['pairwise_scored_count'], 154)
+        self.assertEqual(d['retrospective_transfer_scored'], 2)
+        self.assertEqual(d['retrospective_transfer_denominator'], 3)
+        self.assertEqual(d['retrospective_transfer_classified'], 0)
+        self.assertEqual(d['calibration']['status'], 'unavailable_class_overlap')
+        self.assertLess(d['calibration']['observed_class_gap_model_kcal'], 0)
+        self.assertFalse(d['representation_checks_pass'])
+        rows = {**d['collection']['rows'], **d['collection']['reused_rows']}
+        for name, score in d['scores'].items():
+            self.assertIsNone(score['research_class']); self.assertIsNone(score['production_class'])
+            if name == '1KB0':
+                self.assertIsNone(score['R_model_kcal']); continue
+            expected = (rows[name + '_Ca_primary']['energy_eV'] - rows[name + '_La_primary']['energy_eV']) * EV_TO_KCAL
+            self.assertEqual(score['R_model_kcal'], expected)
+        pairs = d['calibration_pairwise']
+        for pair in pairs:
+            margin = d['scores'][pair['La']]['R_model_kcal'] - d['scores'][pair['Ca']]['R_model_kcal']
+            self.assertEqual(pair['margin_model_kcal'], margin)
+            self.assertEqual(pair['pass'], margin > .02)
+        self.assertEqual(d['pairwise_pass_count'], sum(p['pass'] for p in pairs))
+
+    def test_current_report_replays_actual_complete_scientific_values(self):
+        from mace_group_canonical import report
+        original = read_json(WORK / 'report_v1/result.json')
+        with tempfile.TemporaryDirectory() as d:
+            out = Path(d) / 'replay'; report(MANIFEST, out)
+            replay = read_json(out / 'result.json')
+        for key in ('scores', 'checks', 'calibration', 'calibration_pairwise', 'grouping_checks',
+                    'numerical_checks_pass', 'representation_checks_pass', 'pairwise_pass_count'):
+            self.assertEqual(replay[key], original[key])
+
+
 if __name__ == '__main__':
     unittest.main()

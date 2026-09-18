@@ -23,6 +23,9 @@ def main():
     for name in ('manifest', 'submission', 'preparation', 'output'):
         p.add_argument('--' + name, required=True)
     p.add_argument('--allow-running', action='store_true')
+    p.add_argument('--preparation-reused', action='store_true',
+                   help='Preparation timing is historical, not new work for this job.')
+    p.add_argument('--prior-costs', default='Four cached crystal endpoints, source physical preparation and numerical/grouping qualification are additional historical costs.')
     a = p.parse_args(); mp = Path(a.manifest).resolve(); m = read_json(mp); submission = read_json(a.submission)
     if submission['manifest'] != record(mp) or submission['returncode'] != 0:
         raise InvalidArtifact('successful submission must match the exact manifest')
@@ -71,8 +74,9 @@ def main():
             'model_timing_missing_attempts': sum(r['evaluation_seconds'] is None for r in attempts),
             'preparation': record(a.preparation), 'preparation_wall_seconds': prep['wall_seconds'],
             'preparation_CPU_seconds': prep['CPU_seconds'], 'attempts': attempts,
+            'preparation_reused': a.preparation_reused,
             'new_DFT_calls': 0, 'new_solvent_calls': 0,
-            'prior_costs': 'Four cached crystal endpoints, source physical preparation and numerical/grouping qualification are additional historical costs.',
+            'prior_costs': a.prior_costs,
             'other_local_costs': 'Manifest preparation, failed/successful preflight, tests, reports and plotting are additional and not fully CPU-profiled.',
             'production_cost_established': False}
     for field in ('peak_cuda_allocated_bytes', 'peak_cuda_reserved_bytes', 'peak_worker_host_RSS_KiB'):

@@ -1,0 +1,312 @@
+{
+  "schema_version": "alquemia.aqualysin_mapping_curation.v1",
+  "date": "2026-09-18",
+  "scope": "Evidence curation and source identifier/connectivity inventory only; no new calculations or preparations",
+  "target_id": "aqualysin_I_weak_Ca_site",
+  "protein_name": "Aqualysin I",
+  "biological_group": "aqualysin_I_Taq_YT1",
+  "status": "affinity_verified_structural_assignment_hypothesis_only",
+  "direction": "Ca",
+  "label_type": "conditional_weak_site_solution_association_affinity",
+  "evidence_stratum": "direct_same_assay_La_Ca_conditional_site_affinity",
+  "not_labels": [
+    "physiological metal use",
+    "whole-protein global metal preference",
+    "thermal stability or catalytic activity preference",
+    "siteX preference",
+    "confirmed affinity of 4DZT Ca303"
+  ],
+  "measurements": [
+    {
+      "metal": "Ca2+",
+      "quantity": "association_constant",
+      "value": 6200,
+      "units": "M^-1",
+      "uncertainty": null
+    },
+    {
+      "metal": "La3+",
+      "quantity": "association_constant",
+      "value": 1100,
+      "units": "M^-1",
+      "uncertainty": null
+    }
+  ],
+  "assay": {
+    "method": "23Na NMR linewidth competition; Eq10",
+    "temperature_C": 22,
+    "pH": 6.0,
+    "buffer": "20mM MES-NaOH",
+    "D2O_percent": 10,
+    "protein_mM": 0.1,
+    "background_Na_mM": 6.53,
+    "occupancy": "Holoenzyme retains one tightly bound Ca; weak site initially Ca depleted; Na present",
+    "fit_assumption": "Protein-bound competitor negligible relative to free competitor; total metal used in linear fit",
+    "separate_La_site": {
+      "name": "X",
+      "Ca_competition": "not observed for dominant bound La population",
+      "approx_La_Ka_M_inverse": 20000,
+      "mapping": null,
+      "not_target": true
+    }
+  },
+  "construct": {
+    "species": "Thermus aquaticus YT-1",
+    "expression_host": "Escherichia coli",
+    "precursor": "C-terminal prosequence omitted; matured at70C",
+    "assay_point_mutation": "none specified; full sample sequence not supplied",
+    "assay_inhibitor": "No PMSF/PMS treatment specified",
+    "caution": "1997 preparation citation concerns Asn219 mutants but is not evidence of a mutant NMR sample"
+  },
+  "structure": {
+    "pdb_id": "4DZT",
+    "chain": "A",
+    "assembly": "monomeric biological assembly1",
+    "source": "natural Thermus aquaticus YT-1",
+    "resolution_A": 1.95,
+    "mature_residues": 276,
+    "uniprot": "P08594",
+    "uniprot_interval": [
+      128,
+      403
+    ],
+    "mutations": "RCSB reports none; CIF mutation field unknown",
+    "source_same_as_previously_archived": true,
+    "crystal_pH": 7.5,
+    "crystal_temperature_K": 296,
+    "crystal_medium": "21% PEG800;100mM phosphate",
+    "inhibitor": {
+      "selector": "A:PMS301",
+      "bond": "Ser222 OG-PMS301 S",
+      "status": "covalent adduct; assay mismatch must be resolved explicitly"
+    },
+    "alternate_residues": [
+      "A:ASP17",
+      "A:HIS70"
+    ],
+    "pins": [
+      {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_additional_evidence_20260918/aqualysin/4DZT.cif",
+        "sha256": "336ae35a2a6466b271e54dac056394648589914e5e62a85acc0fc7eaa5927072",
+        "size_bytes": 275404
+      },
+      {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_additional_evidence_20260918/aqualysin/4DZT_inventory.json",
+        "sha256": "f3a85852635d854e95132b508a3a0d5973207066fc5b9b8114a4bb1fa59e4556",
+        "size_bytes": 80549
+      }
+    ]
+  },
+  "candidate_site_mapping": [
+    {
+      "selector": {
+        "author_chain": "A",
+        "author_residue": 303,
+        "residue_name": "CA",
+        "atom_name": "CA",
+        "label_asym_id": "D"
+      },
+      "protein_donors": [
+        "A:VAL170:O",
+        "A:ALA173:O",
+        "A:THR175:OG1",
+        "A:ASP196:OD1"
+      ],
+      "deposited_linked_water": "A:HOH1074:O",
+      "nomenclature": {
+        "VPR_2005_2019": "Ca1",
+        "AQN_2018": "Ca2",
+        "AQN_2018_alignment_residues": [
+          "V174",
+          "A177",
+          "T179",
+          "D200"
+        ]
+      },
+      "assignment": "Best published hypothesis for measured weak site",
+      "confirmed": false,
+      "basis": "2019 authors infer AQUI weak site corresponds to VPR Ca1; crosswalk traced through primary VPR donor identities, 2018 comparison and deposited 4DZT bonds"
+    },
+    {
+      "selector": {
+        "author_chain": "A",
+        "author_residue": 302,
+        "residue_name": "CA",
+        "atom_name": "CA",
+        "label_asym_id": "C"
+      },
+      "protein_donors": [
+        "A:ASP11:OD1",
+        "A:ASP11:O",
+        "A:ASP14:OD1",
+        "A:GLN15:OE1",
+        "A:SER21:OG",
+        "A:SER23:O"
+      ],
+      "deposited_linked_water": "A:HOH1012:O",
+      "nomenclature": {
+        "VPR_2005_2019": "Ca3",
+        "AQN_2018": "Ca1",
+        "AQN_2018_alignment_residues": [
+          "D11",
+          "D14",
+          "Q15",
+          "S20",
+          "S22"
+        ]
+      },
+      "assignment": "Would be spectator strong Ca under the Ca303 hypothesis; not experimentally established in this curation",
+      "confirmed": false
+    }
+  ],
+  "missing_link": "No residue-specific aqualysin La/Ca competition or selective-depletion evidence located tying assay to a 4DZT ion; no better matched experimentally assigned structure located in this bounded search",
+  "usable_for": [
+    "Direct conditional affinity evidence inventory with unresolved structural site",
+    "One biological observation; any future structural hypotheses remain grouped"
+  ],
+  "not_ready_for": [
+    "Confirmed site-classification denominator",
+    "Unqualified whole-protein Ca-preference label"
+  ],
+  "preparation_requirements": [
+    "Explicitly agree structural hypothesis or locate direct site assignment",
+    "Resolve inhibitor adduct versus uninhibited assay; no silent removal",
+    "Retain other Ca when modelling conditional single-site substitution; spectator identity remains conditional on mapping",
+    "Declare waters, disulfides, protonation, alternate selection and pH treatment before calculation",
+    "Keep La-only siteX separate",
+    "Never select site after inspecting score"
+  ],
+  "consumed_status": {
+    "affinity_evidence": "previously inspected",
+    "mapping_evidence": "previously discussed; residue crosswalk clarified2026-09-18",
+    "scores": "No aqualysin score inspected or generated by this curation",
+    "prospective_blind": false
+  },
+  "primary_sources": [
+    {
+      "id": "suefuji_2002",
+      "doi": "10.1271/bbb.66.1281",
+      "url": "https://doi.org/10.1271/bbb.66.1281",
+      "role": "primary_direct_conditional_affinity",
+      "support_locations": [
+        "pp1281-1282 Materials and Methods",
+        "p1283 Eq10",
+        "pp1284-1285 discussion of Na competition",
+        "p1285 Table1 and distinct siteX"
+      ],
+      "artifacts": [
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_additional_evidence_20260918/aqualysin/aqualysin_2002_archived.pdf",
+          "sha256": "894e41c887b64b86016512194456035a1ca07c1454e56e4456dffda5ba2c3afc",
+          "size_bytes": 245414
+        },
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_additional_evidence_20260918/aqualysin/aqualysin_2002_archived.txt",
+          "sha256": "df395b5f7d1b670bf2c45bef78acb06d464da82553dd1ad296df06c63459b764",
+          "size_bytes": 35345
+        }
+      ],
+      "acquisition": "Reused archived primary PDF/text after current J-STAGE DNS failure; previous source untouched"
+    },
+    {
+      "id": "oskarsson_2019",
+      "doi": "10.1016/j.bbapap.2018.11.010",
+      "url": "https://doi.org/10.1016/j.bbapap.2018.11.010",
+      "repository_url": "https://opinvisindi.is/bitstreams/60f398cb-139f-4797-851a-899a5d0245c9/download",
+      "role": "primary_VPR_experiment_with_hypothesized_aqualysin_site_assignment",
+      "support_locations": [
+        "journal pp160-161; Ca1/Ca3 argument",
+        "journal p161 = repository PDF page160"
+      ],
+      "artifacts": [
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_additional_evidence_20260918/aqualysin/vpr_2019.pdf",
+          "sha256": "df766e176e4abbdffc13489e9be604e368e83ca9362d4a9ee2df4b54b9b1811f",
+          "size_bytes": 20472607
+        },
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_additional_evidence_20260918/aqualysin/vpr_2019.txt",
+          "sha256": "d83fd1c2d9a3bef8807a53462e330352d52aa70cd9368d9c6375dbd158d3ba29",
+          "size_bytes": 621116
+        }
+      ],
+      "container": "2020 author dissertation containing complete 2019 primary paper"
+    },
+    {
+      "id": "arnorsdottir_2005",
+      "doi": "10.1111/j.1742-4658.2005.04523.x",
+      "url": "https://febs.onlinelibrary.wiley.com/doi/10.1111/j.1742-4658.2005.04523.x",
+      "role": "primary_VPR_structure_site_nomenclature",
+      "support_locations": [
+        "Calcium-binding sites, Ca1 donor paragraph and Ca3 donor paragraph"
+      ],
+      "artifacts": [
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_additional_evidence_20260918/aqualysin/primary_web_capture.json",
+          "sha256": "d2c2bb0af32e6548a50a99eee08eb576906e0891a19b27a067bd61a323062954",
+          "size_bytes": 30452
+        }
+      ]
+    },
+    {
+      "id": "liu_2018_comparison",
+      "doi": "10.1039/C8RA05845H",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9085296/",
+      "role": "primary_computational_comparison_nomenclature_only_not_affinity_evidence",
+      "support_locations": [
+        "Table7; numbering follows comparison alignment"
+      ],
+      "artifacts": [
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_additional_evidence_20260918/aqualysin/aqualysin_2018_archived.xml",
+          "sha256": "6a8d632b742bb51651298905582b5c74fdf1b16779724292c058b5f2a4e8632f",
+          "size_bytes": 189705
+        }
+      ]
+    },
+    {
+      "id": "4DZT",
+      "doi": "10.2210/pdb4dzt/pdb",
+      "url": "https://www.rcsb.org/structure/4DZT",
+      "role": "primary_deposited_structure",
+      "support_locations": [
+        "_entity_poly",
+        "_struct_ref_seq",
+        "_struct_conn",
+        "_pdbx_modification_feature",
+        "_exptl_crystal_grow",
+        "_atom_site"
+      ],
+      "artifacts": [
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_additional_evidence_20260918/aqualysin/4DZT.cif",
+          "sha256": "336ae35a2a6466b271e54dac056394648589914e5e62a85acc0fc7eaa5927072",
+          "size_bytes": 275404
+        },
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_additional_evidence_20260918/aqualysin/4DZT_inventory.json",
+          "sha256": "f3a85852635d854e95132b508a3a0d5973207066fc5b9b8114a4bb1fa59e4556",
+          "size_bytes": 80549
+        }
+      ]
+    }
+  ],
+  "prior_records_preserved": [
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/accuracy_strategy_20260915/CHALLENGE_PANEL_CURATION.json",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/mace_omol_20260917/AQUALYSIN_EVIDENCE_FOLLOWUP.md"
+  ],
+  "performed": [
+    "Primary literature reading",
+    "Existing primary source reuse and new author-repository/CIF download",
+    "Deposited identity/connectivity inventory",
+    "Documentation"
+  ],
+  "not_performed": [
+    "Geometry or protonation preparation",
+    "Structural prediction or model generation",
+    "MACE or quantum evaluation",
+    "Scoring or thresholding",
+    "Jobs",
+    "Commit"
+  ]
+}

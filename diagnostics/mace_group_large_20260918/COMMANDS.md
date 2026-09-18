@@ -1,7 +1,7 @@
 # Large grouped-model run
 
-Job **1201533** executes the frozen57-task manifest below. Do not submit a
-duplicate. The medium PQQ job1201524 continues independently. Read PLAN.md;
+Job **1201533 completed** all 57 tasks. Do not submit a duplicate. The medium
+PQQ job 1201524 also completed. Read PLAN.md and REPORT.md;
 this is consumed development data, not a new blind benchmark.
 
 Protocol: `intact_POLAR_large_typed31_group_vacuum_compatibility_v1`.
@@ -39,4 +39,7 @@ medium-source/report regressions pass97.334s,zero skips. MACE-environment
 preflight passed. Both actual native controls now pass: energies reproduce
 exactly, maximum force difference7.084e-13eV/A and density difference3.043e-14.
 Saved check: `workspaces/mace_group_large_20260918/native_gate_v1.json`.
-Grouped discrimination calls are running; their results remain pending.
+Full report: `workspaces/mace_group_large_20260918/report_v1/`.
+All 69 numerical checks pass; all three grouping checks fail. Both checkpoints
+give 17/22 raw directions, with the same failures. Six complete-result/source
+tests pass in 130.358 seconds, zero skipped. See VALIDATION.md and REPORT.md.

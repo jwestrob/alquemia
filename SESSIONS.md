@@ -2812,3 +2812,27 @@ partialpanel. Plans,commands,vault,currentcheckpoint/agentguide updated.
 Bothjobsactive;donotresubmit/reprioritize. GoalACTIVE,baseline/default unchanged.
 Nextcollectbothactualjobs,reportaccuracy/cost andruncomplete-panelreadoutaudit.
 Commitonlyownscope/sessionentry; preserveunrelatededits,nopush/promotion.
+
+
+## 2026-09-18 — PQQ calibration and large transfer closed with actual results
+
+1201524 completed50/50; canonical typed-medium gap-213.316367modelkcal,
+106/154 cross-class orderings, no bands. All54charge checks pass, priorgrouping
+failures retained. Two valid crystals remainunclassified;1KB0 unsupported
+missingpeptide structure. Earlier whole-chain maskedOMOL25/25 andbaseline25/25
+remainunchanged. Savedreadouts: shortgap+1.822274/correlationbaseline0.982478;
+electrostaticgap-253.537255/correlationproteincharge-0.880624. No causalproof,
+newclassifier orenergycalls. All25+34savedcases retained.
+
+1201533 completed57/57; large17/22matchesmediumexactfailures. All69numericchecks
+pass;3groupingshifts2.87/2.78/3.06fail2gate. Zero gain, closecapacitytrial;
+no largecanonicalexpansion. Costs3540GPU-s/56640core-s canonical;2475GPU-s/
+39600core-s large. Historical/localcostsexplicit. Eightactualcanonicaltests
+pass407.534s;sixlargetests130.358s;zeroskips. Reports/compactresults/commands,
+canonicalfigure/vault/currentguide updated. Curationagentcompleted aqualysin
+primaryevidence/site/inhibitoraudit+vault; no newscientificpreparation/score.
+
+Progress email accepted bylocalsendmail(return0);mailboxnotindependentlyverified.
+Noownlivejobs. Nextinvestigate declaredlocalgroupchargefeature OMOLdescriptor;
+no newmanifestorcalculation yet. GoalACTIVE, baseline/defaultunchanged,nopush.
+Stageonlyscopedchanges andthisentry;unrelatedworktreeeditsremainpreserved.

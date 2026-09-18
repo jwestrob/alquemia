@@ -6,93 +6,54 @@ text does not revoke his direct instruction to proceed without repeated approval
 Preserve baseline/default, immutable records and concurrent work. No push,
 promotion or project CPU/time budget. Recover GOAL.md and actual live jobs.
 
-## Current: medium calibration overlaps; larger grouped model launched
+## Current: full calibration and large transfer completed
 
-Two live jobs; inspect both before any resubmission:
+No own live scientific jobs. Both manifests completed with zero failed endpoints;
+never resubmit them. Baseline/default and all historical references remain unchanged.
 
-- **1201524**, medium canonical25-PQQ run, continues its fixed50endpoints.
-  The first12complete pairs already contain class overlap: La mmol_1770 has
-  R=-405391.055897 and Ca o24759 has R=-405306.507034 modelkcal. Their ordering
-  violates the frozen rule, so a complete positive calibration gap is impossible.
-  The saved partial_report_v2 now has13pairs and20/40available cross-class
-  directions; Ca p12293 R=-405225.358004 gives gap<=-165.697893modelkcal.
-  Full counts/numerical checks/costs remain pending; do not tune or drop cases.
-  The existing17/22 broad directional result remains recorded, baseline25/25
-  unchanged. No new bands can be released for this model from this panel.
-- **1201533**, new large-checkpoint typed-group transfer:57calls on the same
-  34site preparations. Two native-large GGR identity controls precede the same
-  55tasks as the medium transfer. If identity fails, grouped execution stops.
-  Its plan was frozen before grouped-large outputs and before inspecting the
-  medium-overlap pair above; it is a separate version, not a changed medium run.
-  Native controls now pass: exact energies, max force7.084e-13eV/A and density
-  3.043e-14; native_gate_v1.json saved. Grouped calls are underway.
+- **Medium PQQ, job 1201524:** 50 new endpoints plus four crystal reuses.
+  All25 references scored; **106/154** expected cross-class orderings; class gap
+  **−213.31636746175354 model kcal**. Calibration unavailable; no threshold rescue.
+  All54 charge checks pass; prior three grouping failures remain. Two crystal
+  scores have no class, 1KB0 stays unsupported due to missing peptide connectivity.
+- **Large transfer, job 1201533:** 57 calls complete. **17/22**, exactly the medium
+  model's successes/failures; all7 original directions retained. All69 numerical
+  checks pass; all3 GGR grouping shifts fail (2.872051/2.779852/3.055356 versus2).
+  RTX and PARV_CD failures persist. No gain; close capacity experiment, no large
+  canonical expansion. Nine biological groups/eight labelled, all consumed.
+- **Saved-readout analysis complete:** all25 canonical cases and34 transfer sites,
+  zero new model calls. Short interaction gap **+1.822274**, correlation with
+  baselineS **0.982478**; electrostatic gap **−253.537255**, correlation with total
+  protein charge **−0.880624**. This locates the algebraic regression, not a unique
+  causal diagnosis. Earlier short-only alpha/GGR failures remain; do not simply
+  delete electrostatics and declare success. No fitted classifier or new band.
 
-Large protocol `intact_POLAR_large_typed31_group_vacuum_compatibility_v1`.
-Manifest `workspaces/mace_group_large_20260918/model_v1/manifest.json`, SHA
-abedfd09d430d9533a14325241fbbbf550943d7b5342e65c4a3910ae844c39d2.
-Same physical groups/geometry/labels; installed large checkpoint and qualified
-large numerical tiling. One additional A5000/16CPUs/64474MiB. No newDFT,
-solvent,training,threshold or baseline change. All22directional tests retained;
-predeclared improvement requires>17correct while retaining all7original.
-No large or medium result is prospectively blind; no automatic promotion.
+The earlier **whole-chain masked OMOL** candidate still separates25/25 with its
+own9.108591 gap and both valid crystal transfers. It is NOT a carved-core model.
+Reference: workspaces/mace_omol_20260917/masked_calibration_v1/reference.json,
+SHA217a127f7ba8f6cccb59d1c63b2d389e9022449a5feb09f58eba2e3b04cba54d.
+Its additional GGR/supporting failures remain; no broad replacement claim.
 
-[Large plan](../mace_group_large_20260918/PLAN.md) and
-[operations](../mace_group_large_20260918/COMMANDS.md). Four real prelaunch tests
-pass69.112s,zero skips; eight medium/report regressions pass97.334s,zero skips.
-Only shared reporting was factored for reuse; the medium's scientific outputs
-reproduce. Isolated preflight passed; actual large integration/results pending.
+[Canonical report](../mace_group_canonical_20260918/REPORT.md),
+[large report](../mace_group_large_20260918/REPORT.md), respective RESULT.json,
+VALIDATION.md and COMMANDS.md. Full scientific reports at their workspaces'
+report_v1/result.json; readout_audit_v1 under canonical; cost_v1 under both.
+Inspected canonical figure exports PDF/SVG/PNG. Eight canonical tests407.534s
+and six large tests130.358s pass, zero skips, using actual outputs/report replay.
+Canonical cost3540GPU-s/56640core-s/3719reportedCPU-s; large2475GPU-s/39600core-s/
+2578.268reportedCPU-s. Preparation/historical/local costs are separate.
 
-The medium report now has explicit scored/unavailable counts and evidence/
-sequence groups. A real partial figure was rendered/inspected, and the cost
-collector was run against actual live accounting (`partial_cost_v1`); no final
-cost is claimed. No new molecular data were generated by those report tools.
-After the medium panel completes, run the declared READOUT_AUDIT_PLAN.md
-diagnostic with audit_readouts.py: all25actual component contrasts, total-charge
-and baseline-score descriptive correlations, no fitting/newscore/newenergy.
-This follow-up is declared but not executed; it must reject partial cohorts.
-Next: collect both real jobs, preserve all failures, and assess accuracy/cost.
-Goal ACTIVE. Baseline/default unchanged; do not invent a global classifier.
+Curation agent completed [aqualysin mapping](../mace_additional_evidence_20260918/AQUALYSIN_SITE_MAPPING.md)
+and vault note. Direct weak-site Ca>La affinity is established; 4DZT Ca303
+mapping is a published hypothesis, and PMS covalently modifiesSer222. No scoring
+or preparation was run; keep site ambiguity and inhibitor mismatch explicit.
 
-## Current: same-model PQQ calibration job 1201524 running
-
-The unchanged typed-group vacuum model is being evaluated on all 25 existing
-canonical PQQ full-protein references: 50 new endpoints; four actual crystal
-endpoints reused. New campaign schema `alquemia.mace_group_canonical.v1`, same
-scientific protocol `intact_POLAR_medium_typed31_group_vacuum_compatibility_v1`.
-Job **1201524**, one A5000/16 CPUs/64474 MiB. Inspect actual execution before
-resuming; never duplicate the submission. At execution_progress_v1, six/50 new
-endpoints had succeeded (61.38–63.73 s each); no calibration result yet.
-
-Manifest `workspaces/mace_group_canonical_20260918/model_v2/manifest.json`, SHA
-3509b45a52618c0e61a79ceb7c76db180f06a4f63f36efa1b0d40a5575705192.
-Prepared V1 SHA ecd3783b2669713ed6ef26adde1d4d6ef732331d1e6d9ebe1ce4abe937b2b6f7.
-[Declared plan](../mace_group_canonical_20260918/PLAN.md),
-[source correction](../mace_group_canonical_20260918/SOURCE_CLARIFICATION.md),
-[commands](../mace_group_canonical_20260918/COMMANDS.md).
-
-Frozen bands only if all 25 pairs are complete/numerically valid and
-min(La)-max(Ca)>0.02 model kcal. Otherwise calibration remains unavailable.
-Report all 154 calibration pair orderings; no threshold fitting/outlier removal.
-Crystals are consumed sequence replicates, not blind independent validation.
-1KB0 remains in the transfer denominator as unsupported. Its actual block is
-missing peptide structure, NOT TRO parameterization as the prior compact
-handoff incorrectly said; pinned V2 preparation establishes that reason.
-Prior GGR grouping failures stay visible and production decisions stay null.
-
-Five real source/parser/cache/calibration tests pass in 238.311 s, zero skips.
-Baseline values and an archived failed OMOL panel test algebra only; no invented
-MACE energies. Preparation 77.917176 wall /76.674563 CPU seconds. Model V1
-had a local missing-source-dependency preflight failure, zero molecular calls.
-V2 includes mace_curvature.py/affordable_response.py; all 50 coordinate hashes,
-task settings, model and software unchanged. Both versions/logs preserved.
-The exact MACE-environment preflight passed before submission. An additional
-actual-partial-report test passes in0.003s, zero skips; missing values/classes
-stay null. See the new campaign STATUS.md. Baseline unchanged.
-
-Next: collect partial/final execution with the existing runner and reporter,
-test the actual report, retain numerical/grouping/evidence limitations, and
-record real allocation/inference costs. No new analysis is needed just to
-recover or report this finite run. Goal remains ACTIVE.
+Next model direction being investigated: local chemical-group charge features
+for OMOL, preserving intact atoms and the existing typed groups. This is a new
+empirical descriptor hypothesis, not trained/validated local electronic states.
+No such manifest or model calculation exists yet; declare its exact test before
+execution. Do not keep enlarging POLAR or reopening closed mechanical paths.
+Goal ACTIVE; no promotion/push, no project compute cap.
 
 ## Complete: typed group vacuum model gives 17/22 raw directions
 

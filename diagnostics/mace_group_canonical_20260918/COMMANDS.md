@@ -26,7 +26,7 @@ includes those dependencies. Preserve V1 and its failure log.
 workspaces/mace_hybrid_20260916/software_v1/venv/bin/python workspaces/mace_group_canonical_20260918/model_v2/implementation/mace_hybrid.py dry-run --manifest workspaces/mace_group_canonical_20260918/model_v2/manifest.json
 ```
 
-Job **1201524** has been submitted for this manifest; do not submit a duplicate.
+Job **1201524 completed** all 50 new endpoints; do not submit a duplicate.
 For execution use the existing `diagnostics/mace_hybrid_20260916/run_pilot.sbatch`
 runner and the exact absolute arguments recorded in `model_v2/submission.json`.
 Inspect that receipt and live jobs before submitting: never duplicate an active
@@ -48,6 +48,13 @@ The report includes all 28 cases, baseline fields, exact endpoint energies,
 154 calibration pair comparisons, three retrospective transfers (including
 unavailable 1KB0), optional research bands, and the prior grouping failures.
 No broad or production-qualified classification is emitted.
+
+Completed results are in `report_v1/result.json`: 106/154 raw class orderings,
+gap −213.316367 model kcal, no bands. All 54 charge checks pass; inherited
+grouping failures remain. Eight real-artifact tests pass in 407.534 seconds,
+zero skipped. The saved-readout diagnostic is complete in `readout_audit_v1/`;
+final costs and inspected figures are in `cost_v1/` and `figure_v1/`.
+See REPORT.md and VALIDATION.md. No new inference is needed to inspect them.
 
 ```bash
 /groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python -m unittest discover -s tests -p test_mace_group_canonical.py -v

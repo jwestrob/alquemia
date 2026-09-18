@@ -2542,3 +2542,27 @@ and results in matching workspace prepared_v1/report_v1. Agent guide/checkpoint
 and vault note updated. Next declare coupled-model/native validation before
 new scientific output. Goalactive, baseline/default unchanged, no push. Commit
 only scoped own files and this entry; preserve unrelated shared edits.
+
+
+## 2026-09-18 — Coupled donor/metal path pilot running
+
+Declared COUPLED_PATH_PLAN.md before new energies under the active goal. All16
+matched states retain donor membership, source chemistry, waters and bonds on
+four predefined displacements (plus reused center). Nonlinear learned full
+response plus fixed Cartesian DFT-minus-core tangent; path direction from the
+physical displacement metric, not fitted stiffness. No stationary minimum claim.
+All native criteria and12-comparison denominator frozen; old failures preserved.
+
+Actual coupled_prepared_v1 and coupled_initial_v1 in mace_site_response_20260918.
+Five jobs1201398–1201402 running64 MACE scalars through existing GPU runner.
+Native helper implemented for at most16DFT+32MACE but not executed at this entry.
+Two real kinematics/manifest/corrupt-charge tests pass44.722s; initial missing-
+manifest skip later executed. Frozen GPU preflight passes; existing gradient
+worker unchanged. Prep67.267659wall/66.249144CPU-s, all paths<=0.20A; max geometry
+Jacobian error2.102e-8; no exclusions. Other local cost not fully profiled.
+
+Scoped code/dispatch, plan/runbook/checkpoint/guide updated. Continue actual
+selection and native validation, then all12 raw/qualified comparisons and costs.
+Goalactive; baseline/default unchanged. No push. Only own changes and this entry
+staged; unrelated edits retained. Vault gradient note already filed; pilot result
+will update it after real execution.

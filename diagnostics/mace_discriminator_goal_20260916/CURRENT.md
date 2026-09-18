@@ -6,6 +6,32 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
+## Running: coupled donor/metal path pilot
+
+Plan diagnostics/mace_site_response_20260918/COUPLED_PATH_PLAN.md declared before
+new energies, under active autonomous goal. All16 states /8 representations
+remain in scope; all source-derived paths pass donor membership, fixed waters,
+bonds and analytic geometry checks. Maximum heavy motion0.20A; finite five-point
+path including reused center. New protocol matched_vacuum_hybrid_coupled_donor_path_v1.
+No stationary-minimum or binding-free-energy claim. Native and learned checks
+are required; no baseline/default change or fitted decision threshold.
+
+Actual preparation coupled_prepared_v1/preparation.json; initial manifest
+coupled_initial_v1/initial.json in workspaces/mace_site_response_20260918.
+Five GPU jobs1201398–1201402 running64 total scalar calls;16CPU/64474MiB/A5000
+per existing runner. No duplicate executors. Finite conditional native phase
+at most16DFT+32MACE gradients, code implemented but not yet executed at this
+checkpoint. Native source selection is replayed from actual grid receipts.
+
+Two real kinematics/manifest/corrupted-charge tests pass44.722s (initial manifest
+check was skipped before manifest existed, later executed). Frozen GPU preflight
+passed; exact saved force backend unchanged. Preparation67.267659wall/66.249144CPU-s;
+max geometry-J error2.102e-8 A/unit, no excluded states. Other local housekeeping
+not fully timed. Runbook COUPLED_PATH_COMMANDS.md has exact next operations.
+Next collect all64, select fixed minima, prepare/preflight/run native validation,
+then report all12 raw/qualified comparisons and actual costs. Do not tune after
+viewing selection. Goalactive; unrelated work and old failures preserved.
+
 ## Complete: physical donor-coordinate gradient diagnostic
 
 Source-defined chi rotations, all coordinating peptide crankshafts and metal

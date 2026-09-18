@@ -74,6 +74,8 @@ def common(source_inventory, software, agreement, output, stage):
              'mace_omol_neutral.py', 'mace_omol_neutral_worker.py', 'mace_omol_neutral_run.py',
              'mace_omol_vacuum_hybrid.py', 'mace_omol_vacuum.py', 'mace_omol_matched_h.py',
              'mace_omol_hybrid_transfer.py','mace_omol_hybrid_transfer_minimum.py','mace_omol_hybrid_response.py','mace_omol_hybrid_minimum.py','mace_metal_response.py','mace_metal_minimum.py','mace_bounded_response.py')
+    if stage == 'coupled_donor_path':
+        names += ('mace_site_path.py', 'mace_site_kinematics.py')
     pins = snapshot(out, names)
     m = {'schema_version': SCHEMA, 'protocol_id': PROTOCOL, 'stage': stage,
          'inventory': record(source_inventory), 'software': record(software), 'agreement': record(agreement),
@@ -149,6 +151,9 @@ def prepare_benchmark(qualification, mechanics, agreement, output):
 
 
 def validate(manifest):
+    if read_json(manifest).get('stage')=='coupled_donor_path':
+        from mace_site_path import validate as path_validate
+        return path_validate(manifest)
     if read_json(manifest).get('stage')=='matched_hybrid_GGR_transfer':
         from mace_omol_hybrid_transfer import validate as validate_transfer
         return validate_transfer(manifest)
@@ -269,7 +274,7 @@ def worker(manifest, task_id, output, memory_mode):
     if read_json(manifest).get('stage')=='shared_neutral_core':
         from mace_omol_neutral_worker import worker as neutral_worker
         return neutral_worker(manifest,task_id,output,memory_mode)
-    if read_json(manifest).get('stage') in ('masked_gradient_core','masked_gradient_full','masked_core_response','matched_hybrid_GGR_transfer','matched_hybrid_response','matched_hybrid_response_validation'):
+    if read_json(manifest).get('stage') in ('coupled_donor_path','masked_gradient_core','masked_gradient_full','masked_core_response','matched_hybrid_GGR_transfer','matched_hybrid_response','matched_hybrid_response_validation'):
         from mace_omol_gradient_worker import worker as gradient_worker
         return gradient_worker(manifest,task_id,output,memory_mode)
     import torch
@@ -469,6 +474,9 @@ def accepted_state(result, task):
 
 
 def collect(manifest):
+    if read_json(manifest).get('stage')=='coupled_donor_path':
+        from mace_site_path import collect as path_collect
+        return path_collect(manifest)
     if read_json(manifest).get('stage')=='matched_hybrid_GGR_transfer':
         from mace_omol_hybrid_transfer import collect as collect_transfer
         return collect_transfer(manifest)

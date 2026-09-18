@@ -6,7 +6,49 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
-## Latest: full density/GK/MACE candidate complete; accuracy gate fails
+## Latest: responsive trial-density candidate passes development gates
+
+Jobs 1201135 and 1201137 completed. All four alpha-minus-GGR contrasts pass:
+10.127062/10.668296 kcal/mol for 1F6S, 9.252283/9.793516 for 6IP9
+(extended/connected GGR). GGR connected-minus-extended = -0.541233142,
+passing unchanged absolute <=2 criterion. All 32 numerical/identity/rigid/
+radius checks pass. These are two consumed biological groups, not blind or
+broad validation. No absolute reference/bands or combined gradient exists.
+Baseline remains unchanged; active goal is not complete.
+
+Protocol: saved_responsive_trial_density_AMOEBA2018_GK_proxy_POLAR_short_hybrid_v1.
+Same full physical geometry/cavity/permanent environment/MACE as the frozen
+parent. All density-dependent terms replaced together using eight preassigned
+saved responsive wavefunctions; their old generating-field energy is subtracted
+once. Trial density is not self-consistent with the current AMOEBA/GK model.
+No labels, waters, thresholds, geometry, radius or per-case density selection
+changed to obtain this result. All 16 boundary initializations/12 checks pass.
+
+Actual outputs: trial_density_gk_fields_v1/report_job_1201135/result.json,
+trial_density_gk_hybrid_v1/collection_job_1201137.json, and
+trial_density_gk_comparison_v1.json under workspaces/mace_omol_20260917.
+Frozen implementation/config: trial_density_gk_pipeline_v1. Reports and exact
+commands: diagnostics/mace_omol_20260917/TRIAL_DENSITY_GK_{REPORT,RESULT,COMMANDS}.
+Twelve distinct new tests plus 13 old regressions pass across focused runs;
+no final scientific integration test remains skipped. No new DFT/MACE/fit.
+Eight actual density queries; native 34 energies/32 field queries/40 responses,
+37 verified environment-only reuses. No failed scientific attempt/retry.
+Total new jobs: 42,256 allocated core-s, 4,846.341587 actual CPU-s, zero GPU.
+Fresh matched production-pair cost still unmeasured; archived costs additional.
+
+Matched component audit: small differential intrinsic response energies mask
+larger reaction-field and induction changes. MACE short term is unchanged;
+removing it algebraically leaves GGR partition -5.656808 versus full -0.541233.
+This is a development component audit, not independent validation or proof
+that MACE alone explains the ordering improvement.
+
+NEXT: freeze this passing candidate and prepare wider real-case evaluation.
+Read existing evidence curation and compatible physical preparations first.
+Preserve biological groups and evidence strata; no fitted test-set threshold.
+No new trial-density job remains live. Check live queue before using resources;
+PLM1200796, H2001200809 and other agents' MopB jobs remain untouched.
+
+## Completed: full density/GK/MACE candidate; accuracy gate fails
 
 Job1201074 completed all51static energies,48field queries and60response solves,
 no retries. All32numerical/identity/rigid/radius checks pass. Ordering2/4fails
@@ -40,7 +82,8 @@ atoms4698/1932/1898, correct AMOEBAresiduecharge ledger/source mask, common
 Ca2018GKmetalradius1.82485A (not LaFF). Three tests pass39.789s; nativewall
 16.248823s/CPU16.064919s. DENSITY_GK_BOUNDARY_REPORT/RESULT. Allinputsimmutable.
 
-NEXT: TRIAL_DENSITY_GK_PLAN.md declared before new responsive-density query or
+Historical next step, now completed: TRIAL_DENSITY_GK_PLAN.md was declared before
+new responsive-density query or
 fullmodelscore. Reuse eight1200983protein-field responsive quantum densities in
 exactly the same current functional, removing their old generating-field energy
 once and recomputing every density-dependent term. No newDFT/MACE/fit needed.
@@ -56,12 +99,11 @@ geometry/microstate/source mapping; old-field subtraction reproduces intrinsic
 core energies within1.165e-10kcal. Actual intrinsic polarizationcost37.355376--
 41.323737kcal, allnonnegative. Audit15.358869wall/14.253791CPU, no newsciencecalls.
 Initial audit wrongly treated validator status dict as manifest; fixedAPIread,
-no scientific rerun. Next implement49point density observation preparation using
-existing utility runner, then responsiveboundary/currentfunctional execution.
-No new responsiveutilities/nativecalls submitted yet. Do not restartvacuumjob.
+no scientific rerun. The49point preparation, responsiveboundary and dependentexecution are now
+implemented as detailed in the live section above. Do not restartvacuumjob.
 
 Goal remainsactive; preserve all unrelated dirtyfiles. Reports/current/vault/
-SESSIONS being updated with scopedcommit. PLM1200796andH2001200809untouched;
+SESSIONS recorded in scopedcommits. PLM1200796andH2001200809untouched;
 rechecklivejobs. No per-analysis approval gate, projectbudget or promotion.
 
 ## Previous: native energy identity and supplied-field response both pass

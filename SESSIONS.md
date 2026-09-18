@@ -2056,3 +2056,30 @@ Sourceaudit scripts/mace_trial_density.py completedall8exactstate/wavefunction/
 subtractionchecks,2tests pass. No newDFT/fit/MACE ornewresponsiveutility/native
 calls yet. Implement49point densityquerypreparationnext. Goalactive;
 no scientificclaim fromcomponenttests orfavorablecoreselection.
+
+
+## 2026-09-18 — Responsive-density GK/MACE candidate passes development gates
+
+Jobs 1201135/1201137 complete: eight actual saved-density queries, 34 new native
+static energies, 32 field queries, 40 responses and 37 qualified environment-only
+reuses. All four alpha/GGR ordering comparisons pass (9.252283–10.668296 kcal/mol),
+GGR partition -0.541233142 passes unchanged abs<=2, all 32 numerical controls pass.
+Two consumed biological groups only; no absolute calibration or blind validation.
+Old generating-field interaction subtracted once; every density-dependent term
+recomputed. Trial density is not self-consistent with current AMOEBA/GK. Geometry,
+cavity, thresholds, labels, MACE short terms and baseline/default unchanged.
+
+Twelve distinct new tests and 13 regression tests pass; no final integration
+skip. Initial reuse-count assertion corrected before new scientific calls; no
+failed scientific attempt/retry. Incremental jobs 42,256 allocated core-s /
+4,846.341587 actual CPU-s, zero GPU/new DFT/MACE/charge fits; reused costs extra.
+Fresh matched production cost unmeasured. Components show meaningful density
+response in GK/induction; omitting unchanged MACE algebraically worsens partition
+to -5.656808. Development audit only. Full records TRIAL_DENSITY_GK_REPORT.md,
+RESULT.json and COMMANDS.md; immutable workspace trial_density_gk_* and frozen
+pipeline. Current/agent guide/vault updated; email 20260918T025052Z accepted relay.
+
+No new pilot job live. Preserve PLM1200796, H2001200809 and other agents' MopB
+jobs/edits. Active goal remains incomplete. Next: freeze passing model, inventory
+wider source-backed real cases and declare grouped validation before scoring.
+No push, production rescore, threshold fitting or default promotion.

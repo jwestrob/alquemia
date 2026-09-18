@@ -132,7 +132,13 @@ def accepted(directory,task,path):
 
 
 def execute(path,retry=False):
-    m=validate(path);mp=Path(path).resolve();root=mp.parent/'execution';root.mkdir(exist_ok=True)
+    return execute_prepared(path,validate(path),retry)
+
+
+def execute_prepared(path,m,retry=False):
+    """Shared utility executor; caller supplies its protocol-validated manifest."""
+    if read_json(path)!=m:raise InvalidArtifact('validated utility manifest changed')
+    mp=Path(path).resolve();root=mp.parent/'execution';root.mkdir(exist_ok=True)
     if not os.environ.get('SLURM_JOB_ID') or int(os.environ.get('SLURM_NTASKS','0'))!=8:
         raise InvalidArtifact('eight-worker CPU allocation required')
     def one(task):

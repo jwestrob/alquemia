@@ -20,6 +20,7 @@ from mace_native_field_input import derive as derive_input
 from mace_tinker_framework_solver import ENERGY_NAMES
 
 PROTOCOL='vacuum_density_direct_AMOEBA2018_GK_proxy_POLAR_short_hybrid_v1'
+TRIAL_PROTOCOL='saved_responsive_trial_density_AMOEBA2018_GK_proxy_POLAR_short_hybrid_v1'
 TOL=dict(refinement_kcal=.01,rigid_kcal=.01,identity_kcal=1e-8,algebra_kcal=1e-7,
          radius_relative_kcal=1.,partition_kcal=2.,ordering_kcal=.02,large_dipole_eA=1.)
 VARIANTS=dict(primary=1.,rigid=1.,radius_minus=.95,radius_plus=1.05)
@@ -89,26 +90,81 @@ def load_terms(path,bm):
 
 
 def key(t,m):
-    return cache_key(dict(task={k:v for k,v in t.items() if k!='cache_key'},protocol=PROTOCOL,sources=m['sources'],
+    return cache_key(dict(task={k:v for k,v in t.items() if k!='cache_key'},protocol=m['protocol'],sources=m['sources'],
         software=m['software'],implementation=m['implementation'],plan=m['plan'],tolerances=TOL))
 
 
-def prepare(boundary,density,short_report,software,plan,output):
+def load_trial_terms(audit_path,bm,short_report):
+    a=read_json(audit_path);parent=read_json(verify(a['parent_manifest']))
+    if a['protocol']!=TRIAL_PROTOCOL or not a['complete'] or not a['gates_pass']:
+        raise InvalidArtifact('qualified trial density audit required')
+    if bm['sources']['charges']!=a['charges'] or parent['sources']['short_report']!=record(short_report):
+        raise InvalidArtifact('trial boundary/short source mismatch')
+    old_boundary=read_json(verify(parent['sources']['boundary_manifest']))
+    terms=load_terms(short_report,old_boundary)
+    for tid,row in a['rows'].items():
+        t=next(t for t in bm['tasks'] if t['case_id']==row['case_id'] and t['metal']==row['metal'] and t['mode']=='source')
+        ct=row['source_task'];term=terms[tid]
+        old_meta=read_json(verify(old_boundary['cases'][row['case_id']]))
+        if read_json(verify(t['boundary']))!=old_meta:raise InvalidArtifact('trial physical boundary differs from frozen parent')
+        if ct['xyz']!=t['source_QM_xyz'] or ct['source_receipt']!=t['source_quantum_receipt'] or row['short_receipts']!=term:
+            raise InvalidArtifact('trial quantum geometry/receipt/context mismatch')
+        term.update(intrinsic_core_hartree=row['intrinsic_core_hartree'],embedded_energy_hartree=row['embedded_energy_hartree'],
+            old_field_coupling_kcal=row['old_field_coupling_kcal'],vacuum_source_output=term['source_output'],
+            vacuum_source_receipt=term['source_receipt'],source_output=ct['source_output'],source_receipt=ct['source_receipt'])
+    return terms
+
+
+def attach_environment_reuse(m,audit_path):
+    a=read_json(audit_path);r=read_json(verify(a['parent']));parent=validate(verify(r['manifest']))
+    oldsw=read_json(verify(parent['software']));sw=read_json(verify(m['software']))
+    if not r['complete'] or not r['numerical_pass'] or any(oldsw[k]!=sw[k] for k in ('executable','library','derived_routine','frontend')):
+        raise InvalidArtifact('environment reuse backend differs')
+    old={t['task_id']:t for t in parent['static_tasks']+parent['response_tasks']};count=0
+    for t in m['static_tasks']+m['response_tasks']:
+        if t['state']!='environment':continue
+        previous=old[t['task_id']]
+        if any(t[k]['sha256']!=previous[k]['sha256'] for k in ('xyz','key','mask','overrides')) or any(
+                t[k]!=previous[k] for k in ('mode','poleps','rotation','translation_A','frozen_indices','metal_GK_diameter')):
+            raise InvalidArtifact('environment-only scientific inputs changed')
+        pin=r['tasks'][t['task_id']]['result'];row=read_json(verify(pin))
+        if row['status']!='computed_native_hybrid_component' or row['cache_key']!=previous['cache_key']:
+            raise InvalidArtifact('environment reuse lacks matching executed task')
+        verify(row['receipt']['log'])
+        t['reuse_component']=pin;t['cache_key']=key(t,m);count+=1
+    if count!=37:raise InvalidArtifact('unexpected environment reuse inventory')
+    m.update(reused_environment_components=37,new_energy_calls=34,new_field_queries=32,new_response_solves=40)
+
+
+def prepare(boundary,density,short_report,software,plan,output,trial_source_audit=None):
     start=time.monotonic();cpu=time.process_time();br=read_json(boundary);bm=validate_boundary(verify(br['manifest']))
-    dr=read_json(density);dm=validate_density(verify(dr['manifest']));sw=read_json(software)
+    dr=read_json(density);sw=read_json(software)
+    if trial_source_audit:
+        from mace_trial_density_fields import validate as validate_trial_fields
+        dm=validate_trial_fields(verify(dr['manifest']))
+        if dm['source_audit']!=record(trial_source_audit):raise InvalidArtifact('trial observations/audit mismatch')
+        terms=load_trial_terms(trial_source_audit,bm,short_report);protocol=TRIAL_PROTOCOL
+        trial_parent=read_json(verify(read_json(trial_source_audit)['parent_manifest']))
+        physical_templates={t['task_id']:t for t in trial_parent['static_tasks']+trial_parent['response_tasks']}
+    else:
+        dm=validate_density(verify(dr['manifest']));terms=load_terms(short_report,bm);protocol=PROTOCOL
     if not br['complete'] or not br['gates_pass'] or not dr['complete'] or not dr['numerical_pass'] or sw['returncode']:
         raise InvalidArtifact('boundary/density/software prerequisite failed')
     if sw['library']!=read_json(verify(bm['software']))['library']:raise InvalidArtifact('native library changed')
-    terms=load_terms(short_report,bm);root=Path(output).resolve();root.mkdir(parents=True,exist_ok=False)
+    root=Path(output).resolve();root.mkdir(parents=True,exist_ok=False)
     impl=root/'implementation';impl.mkdir()
     for name,pin in bm['implementation'].items():shutil.copyfile(verify(pin),impl/name)
     for name in ('mace_native_field_input.py','mace_density_gk_hybrid.py'):
         shutil.copyfile(Path(__file__).with_name(name),impl/name)
+    if trial_source_audit:
+        for name in ('mace_trial_density.py','mace_trial_density_fields.py','mace_qm_field.py'):
+            shutil.copyfile(Path(__file__).with_name(name),impl/name)
     write_new(root/'reused_terms.json',terms)
-    m=dict(protocol=PROTOCOL,sources=dict(boundary=record(boundary),boundary_manifest=br['manifest'],density=record(density),
+    m=dict(protocol=protocol,sources=dict(boundary=record(boundary),boundary_manifest=br['manifest'],density=record(density),
         density_manifest=dr['manifest'],short_report=record(short_report)),software=record(software),plan=record(plan),
         implementation={p.name:record(p) for p in sorted(impl.glob('*.py'))},tolerances=TOL,threads=64,terms=record(root/'reused_terms.json'),
         static_tasks=[],response_tasks=[],new_energy_calls=51,new_field_queries=48,new_response_solves=60,new_DFT_calls=0,new_MACE_calls=0,**NULLS)
+    if trial_source_audit:m['sources']['trial_source_audit']=record(trial_source_audit)
     def task(case,state,variant,mode,eps):
         metal='Ca' if state=='environment' else state
         old=next(t for t in bm['tasks'] if t['case_id']==case and t['metal']==metal and t['mode']==('zero_source' if state=='environment' else 'source'))
@@ -116,6 +172,9 @@ def prepare(boundary,density,short_report,software,plan,output):
         rid=mode+'_'+variant+'_'+case+'_'+state+('_standard' if eps==1e-7 else '')
         d=root/'tasks'/rid;d.mkdir(parents=True)
         rotate=variant=='rigid';mat=rotation() if rotate else np.eye(3);shift=np.array([17.,-23.,9.]) if rotate else np.zeros(3)
+        if trial_source_audit:
+            prototype=physical_templates[rid]
+            mat=np.array(prototype['rotation']);shift=np.array(prototype['translation_A'])
         coords=np.array(meta['positions_A'])@mat.T+shift
         lines=verify(old['xyz']).read_text().splitlines();rows=[lines[0]]
         for line,p in zip(lines[1:],coords):
@@ -129,13 +188,21 @@ def prepare(boundary,density,short_report,software,plan,output):
                 f[4]=diameter;line=' '.join(f)
             opts.append(line)
         (d/'framework.key').write_text('\n'.join(opts)+'\n')
+        if trial_source_audit:
+            # Fixed physical-system comparison: preserve the actual parent's
+            # coordinates, including its rigid replay, across CPU/BLAS hosts.
+            shutil.copyfile(verify(prototype['xyz']),d/'framework.xyz')
+            shutil.copyfile(verify(prototype['key']),d/'framework.key')
         for k in ('mask','overrides'):shutil.copyfile(verify(old[k]),d/Path(old[k]['path']).name)
         dt=next(t for t in dm['tasks'] if t['task_id']==case+'_'+metal)
+        if trial_source_audit:dt={**dt,'field_arrays':dr['rows'][dt['task_id']]['arrays']}
         t=dict(task_id=rid,case_id=case,state=state,metal=metal,variant=variant,mode=mode,poleps=eps,
             rotation=mat.tolist(),translation_A=shift.tolist(),metal_GK_diameter=diameter,
             xyz=record(d/'framework.xyz'),key=record(d/'framework.key'),mask=record(d/'framework.freeze'),overrides=record(d/'framework.charges'),
             prepared_result=br['tasks'][old['task_id']]['result'],boundary=old['boundary'],frozen_indices=old['frozen_indices'],
             density_task=dt,density_arrays=dr['rows'][dt['task_id']]['arrays'])
+        if trial_source_audit:
+            t.update(physical_coordinate_source=prototype['xyz'],physical_key_source=prototype['key'])
         t['cache_key']=key(t,m);return t
     for var in VARIANTS:
         for case in CASES:
@@ -144,14 +211,16 @@ def prepare(boundary,density,short_report,software,plan,output):
                 m['response_tasks'].append(task(case,state,var,'solve',1e-9))
                 if var=='primary':m['response_tasks'].append(task(case,state,var,'solve',1e-7))
     for state in ('environment','Ca','La'):m['static_tasks'].append(task('GGR_extended',state,'identity','identity',1e-9))
+    if trial_source_audit:attach_environment_reuse(m,trial_source_audit)
     m['preparation_receipt']=dict(wall_seconds=time.monotonic()-start,process_CPU_seconds=time.process_time()-cpu)
     write_new(root/'manifest.json',m);return validate(root/'manifest.json')
 
 
 def validate(path):
     m=read_json(path)
-    if m['protocol']!=PROTOCOL or m['tolerances']!=TOL or len(m['static_tasks'])!=51 or len(m['response_tasks'])!=60:
+    if m['protocol'] not in (PROTOCOL,TRIAL_PROTOCOL) or m['tolerances']!=TOL or len(m['static_tasks'])!=51 or len(m['response_tasks'])!=60:
         raise InvalidArtifact('changed hybrid pilot inventory/settings')
+    if (m['protocol']==TRIAL_PROTOCOL)!=('trial_source_audit' in m['sources']):raise InvalidArtifact('hybrid quantum source convention mismatch')
     for pin in [m['software'],m['plan'],m['terms'],*m['sources'].values(),*m['implementation'].values()]:verify(pin)
     sw=read_json(verify(m['software']))
     for k in ('executable','library','original_source','original_routine','derived_routine','frontend','implementation','log'):verify(sw[k])
@@ -161,6 +230,13 @@ def validate(path):
         if t['cache_key']!=key(t,m):raise InvalidArtifact('changed scientific task key')
         for k in ('xyz','key','mask','overrides','prepared_result','boundary','density_arrays'):verify(t[k])
         for k in ('probes','multipole_inputs','field_arrays'):verify(t['density_task'][k])
+        if m['protocol']==TRIAL_PROTOCOL:
+            for source,target in (('physical_coordinate_source','xyz'),('physical_key_source','key')):
+                verify(t[source])
+                if t[source]['sha256']!=t[target]['sha256']:raise InvalidArtifact('trial physical geometry/parameters changed')
+        if 'reuse_component' in t:
+            if m['protocol']!=TRIAL_PROTOCOL or t['state']!='environment':raise InvalidArtifact('unsupported component reuse')
+            verify(t['reuse_component'])
     return m
 
 
@@ -275,6 +351,19 @@ def execute(path,retry=False):
             result=dict(task_id=t['task_id'],cache_key=t['cache_key'],status='failed',job_id=os.environ['SLURM_JOB_ID'],
                 energy_attempted=False,field_attempted=False,response_attempted=False,receipt=None)
             try:
+                if 'reuse_component' in t:
+                    old=read_json(verify(t['reuse_component']))
+                    for pin in old.get('dependencies',[]):verify(pin)
+                    result.update(parse(verify(old['receipt']['log']).read_text(),t),receipt=old['receipt'],
+                        reused_from=t['reuse_component'],source_job_id=old['job_id'],dependencies=[t['reuse_component']])
+                    if t['mode']=='solve':
+                        pin,deps,diagnostic=supplied(t,m,root)
+                        if verify(pin).read_bytes()!=verify(old['supplied_fields']).read_bytes():
+                            raise InvalidArtifact('reused environment driving fields differ')
+                        result.update(supplied_fields=pin,dependencies=deps+[t['reuse_component']],field_diagnostic=diagnostic)
+                    write_new(out/'result.json',result)
+                    print(json.dumps(dict(task_id=t['task_id'],status=result['status'],reused=True)),flush=True)
+                    continue
                 cmd=[str(verify(sw['executable'])),str(verify(t['xyz'])),str(verify(t['mask'])),str(verify(t['overrides'])),t['mode']]
                 if t['mode']=='solve':
                     pin,deps,diagnostic=supplied(t,m,root);cmd.append(str(verify(pin)))
@@ -290,7 +379,8 @@ def execute(path,retry=False):
                 result.update(energy_attempted='ALQUEMIA_ENERGY_BEGIN' in text,field_attempted='ALQUEMIA_FIELDS_BEGIN' in text,response_attempted='ALQUEMIA_RESPONSE_BEGIN' in text)
                 if r.returncode:raise InvalidArtifact('native execution failed')
                 result.update(parse(text,t))
-            except Exception as error:result['failure_reason']=f'{type(error).__name__}: {error}'
+            except Exception as error:
+                result.update(status='failed',failure_reason=f'{type(error).__name__}: {error}')
             write_new(out/'result.json',result)
             print(json.dumps({k:result.get(k) for k in ('task_id','status','failure_reason')}),flush=True)
 
@@ -328,7 +418,9 @@ def collect(path,output):
                 mat=np.array(tt['rotation']);E=E@mat.T;H=np.einsum('ij,njk,lk->nil',mat,H,mat)
                 direct=coupling(q,dip,Q,phi,E,H);V=sum(direct[k] for k in ('charge','dipole','quadrupole'))
                 G=s['energies_kcal_mol']['solvation_with_nonpolar']-se['energies_kcal_mol']['solvation_with_nonpolar']
-                term=terms[case+'_'+metal];parts=dict(DFT_vacuum_kcal=term['DFT_vacuum_hartree']*HA_TO_KCAL,direct_density_kcal=V,
+                term=terms[case+'_'+metal]
+                core={'DFT_intrinsic_trial_kcal':term['intrinsic_core_hartree']*HA_TO_KCAL} if m['protocol']==TRIAL_PROTOCOL else {'DFT_vacuum_kcal':term['DFT_vacuum_hartree']*HA_TO_KCAL}
+                parts=dict(**core,direct_density_kcal=V,
                     GK_permanent_transfer_kcal=G,environment_induction_transfer_kcal=I-I0,short_context_kcal=term['short_context_kcal'])
                 endpoints[metal]=dict(components=parts,environment_correction_kcal=V+G+I-I0,total_kcal=math.fsum(parts.values()),
                     direct_components_kcal=direct,induction_total_kcal=I,induction_environment_only_kcal=I0,
@@ -376,16 +468,66 @@ def collect(path,output):
     attempts=[read_json(p) for p in root.glob('tasks/*/attempt_*/result.json')];complete=len(parsed)==111
     if complete and (len(checks)!=32 or any(v['status']!='complete' for v in variants.values())):
         raise InvalidArtifact('complete pilot lacks required comparisons')
-    result=dict(protocol=PROTOCOL,manifest=record(path),complete=complete,variants=variants,identity=identity,checks=checks,tasks=rows,
+    result=dict(protocol=m['protocol'],manifest=record(path),complete=complete,variants=variants,identity=identity,checks=checks,tasks=rows,
         numerical_pass=complete and all(c['pass_'] for c in checks if 'relative_sensitivity' not in c['name']),
         radius_sensitivity_pass=complete and all(c['pass_'] for c in checks if 'relative_sensitivity' in c['name']),
         partition_pass=primary.get('partition_pass',False),ordering_pass=primary.get('ordering_pass',False),
         actual_energy_calls=sum(a['energy_attempted'] for a in attempts),actual_field_queries=sum(a['field_attempted'] for a in attempts),
         actual_response_solves=sum(a['response_attempted'] for a in attempts),
-        native_process_wall_seconds=sum(a['receipt']['wall_seconds'] for a in attempts if a['receipt']),
-        native_process_CPU_seconds=sum(a['receipt']['child_CPU_seconds'] for a in attempts if a['receipt']),
-        native_kernel_wall_seconds=sum(a.get('kernel_wall_seconds',0) for a in attempts),**NULLS)
+        reused_environment_components=sum(bool(a.get('reused_from')) and a['status']=='computed_native_hybrid_component' for a in attempts),
+        native_process_wall_seconds=sum(a['receipt']['wall_seconds'] for a in attempts if a['receipt'] and not a.get('reused_from')),
+        native_process_CPU_seconds=sum(a['receipt']['child_CPU_seconds'] for a in attempts if a['receipt'] and not a.get('reused_from')),
+        native_kernel_wall_seconds=sum(a.get('kernel_wall_seconds',0) for a in attempts if not a.get('reused_from')),**NULLS)
     write_new(output,result);return result
+
+
+def pipeline_preflight(path):
+    config=read_json(path)
+    if config['protocol']!=TRIAL_PROTOCOL:raise InvalidArtifact('unsupported prepared pipeline protocol')
+    for pin in [*config['inputs'].values(),config['density_manifest'],*config['implementation'].values()]:verify(pin)
+    a=read_json(verify(config['inputs']['trial_source_audit']));p=validate(verify(a['parent_manifest']))
+    ids=sorted(t['task_id'] for t in p['static_tasks']+p['response_tasks'])
+    if config['task_ids']!=ids or config['new_calls']!=dict(energy=34,field=32,response=40) or config['reused_components']!=37:
+        raise InvalidArtifact('pipeline inventory changed')
+    dm=read_json(verify(config['density_manifest']))
+    if dm['source_audit']!=config['inputs']['trial_source_audit']:raise InvalidArtifact('pipeline density source changed')
+    return config
+
+
+def run_pipeline(path):
+    config=pipeline_preflight(path);root=Path(path).resolve().parent
+    if not os.environ.get('SLURM_JOB_ID') or int(os.environ.get('SLURM_CPUS_PER_TASK','0'))!=64:
+        raise InvalidArtifact('pipeline requires the declared 64CPU allocation')
+    start=time.monotonic();cpu=time.process_time();job=os.environ['SLURM_JOB_ID']
+    receipt=dict(config=record(path),job_id=job,status='failed',phase='inputs',new_DFT_calls=0,new_MACE_calls=0)
+    with (root/'pipeline.lock').open('a') as lock:
+        fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+        try:
+            dr=read_json(config['density_result_path'])
+            if dr['manifest']!=config['density_manifest'] or not dr['complete'] or not dr['numerical_pass']:
+                raise InvalidArtifact('responsive density prerequisites unavailable or failed')
+            kwargs={k:str(verify(v)) for k,v in config['inputs'].items()}
+            mp=Path(config['output_root'])/'manifest.json';receipt['phase']='prepare'
+            if not mp.exists():prepare(**kwargs,density=config['density_result_path'],output=config['output_root'])
+            m=validate(mp)
+            expected_sources={k:config['inputs'][k] for k in ('boundary','short_report','trial_source_audit')}
+            expected_sources['density']=record(config['density_result_path'])
+            if m['protocol']!=TRIAL_PROTOCOL or any(m['sources'][k]!=v for k,v in expected_sources.items()) or any(
+                    m[k]!=config['inputs'][k] for k in ('software','plan')):
+                raise InvalidArtifact('existing pipeline manifest has different scientific inputs')
+            if sorted(t['task_id'] for t in m['static_tasks']+m['response_tasks'])!=config['task_ids']:
+                raise InvalidArtifact('prepared task inventory differs')
+            if [m['new_energy_calls'],m['new_field_queries'],m['new_response_solves'],m['reused_environment_components']]!=[34,32,40,37]:
+                raise InvalidArtifact('prepared execution/reuse inventory differs')
+            receipt.update(manifest=record(mp),phase='execute');execute(mp)
+            receipt['phase']='collect';output=mp.parent/f'collection_job_{job}.json';r=collect(mp,output)
+            receipt.update(status='complete' if r['complete'] else 'incomplete',phase='finished',result=record(output))
+            print(json.dumps({k:r[k] for k in ('complete','numerical_pass','radius_sensitivity_pass','partition_pass','ordering_pass')}))
+        except Exception as error:
+            receipt['failure_reason']=f'{type(error).__name__}: {error}';raise
+        finally:
+            receipt.update(wall_seconds=time.monotonic()-start,process_CPU_seconds=time.process_time()-cpu)
+            write_new(root/f'pipeline_receipt_job_{job}.json',receipt)
 
 
 def main():
@@ -394,18 +536,24 @@ def main():
     for name in ('parent-software','native-source','frontend','output'):s.add_argument('--'+name,required=True)
     s=sub.add_parser('prepare')
     for name in ('boundary','density','short-report','software','plan','output'):s.add_argument('--'+name,required=True)
+    s.add_argument('--trial-source-audit')
     for name in ('dry-run','execute','collect'):
         s=sub.add_parser(name);s.add_argument('--manifest',required=True)
         if name=='collect':s.add_argument('--output',required=True)
         if name=='execute':s.add_argument('--retry-failed',action='store_true')
+    for name in ('pipeline-dry-run','run-pipeline'):
+        s=sub.add_parser(name);s.add_argument('--config',required=True)
     a=p.parse_args()
     if a.command=='build':
         r=build(a.parent_software,a.native_source,a.frontend,a.output);print(json.dumps({'returncode':r['returncode']}));raise SystemExit(r['returncode'])
     elif a.command=='prepare':
-        m=prepare(a.boundary,a.density,a.short_report,a.software,a.plan,a.output);print(json.dumps({'static_tasks':len(m['static_tasks']),'response_tasks':len(m['response_tasks'])}))
+        m=prepare(a.boundary,a.density,a.short_report,a.software,a.plan,a.output,a.trial_source_audit);print(json.dumps({'static_tasks':len(m['static_tasks']),'response_tasks':len(m['response_tasks'])}))
     elif a.command=='dry-run':
         m=validate(a.manifest);print(json.dumps({'static_tasks':len(m['static_tasks']),'response_tasks':len(m['response_tasks']),'new_native_calls':0}))
     elif a.command=='execute':execute(a.manifest,a.retry_failed)
+    elif a.command=='pipeline-dry-run':
+        c=pipeline_preflight(a.config);print(json.dumps({'tasks':len(c['task_ids']),'density_result_available':Path(c['density_result_path']).exists(),'new_calls':0}))
+    elif a.command=='run-pipeline':run_pipeline(a.config)
     else:
         r=collect(a.manifest,a.output);print(json.dumps({k:r[k] for k in ('complete','numerical_pass','radius_sensitivity_pass','partition_pass','ordering_pass')}))
 

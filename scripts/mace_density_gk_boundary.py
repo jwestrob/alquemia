@@ -17,6 +17,9 @@ CASES=('GGR_extended','GGR_connected','ALPHA_1F6S','ALPHA_6IP9')
 METALS=dict(Ca=dict(type=4998,Z=20,mass=40.078),La=dict(type=4999,Z=57,mass=138.90547))
 TOL=dict(environment_charge_e=1e-9,residue_formal_e=1e-8,QM_charge_e=1e-5,native_moments=1e-10)
 CHARGES_SHA='2689bcdfa9b3f2d0358c5e21fa8b5b38533b36502c7e5c3f9826ee7487041d10'
+TRIAL_PROTOCOL='responsive_trial_common_Ca2018_GK_source_boundary_v1'
+CHARGE_SOURCES={PROTOCOL:CHARGES_SHA,
+    TRIAL_PROTOCOL:'fe1ab39ef2ef2ef45f43b49c57a5bce23561fa25ee6c060dfbca43b27df72145'}
 
 
 def residue(pid):return '/'.join(pid.split('/')[:3])
@@ -74,7 +77,7 @@ def boundary(state,mapping,parent_params):
 
 
 def source_key(task,m):
-    return cache_key(dict(task={k:v for k,v in task.items() if k!='cache_key'},protocol=PROTOCOL,
+    return cache_key(dict(task={k:v for k,v in task.items() if k!='cache_key'},protocol=m['protocol'],
         sources=m['sources'],implementation=m['implementation'],tolerances=TOL,software=m['software'],plan=m['plan']))
 
 
@@ -131,9 +134,9 @@ def verify_native(text,task,meta,base_params):
     return result
 
 
-def prepare(frameworks,charges,states,software,plan,output):
+def prepare(frameworks,charges,states,software,plan,output,protocol=PROTOCOL):
     start=time.monotonic();cpu=time.process_time();fm=validate_frameworks(frameworks);cr=read_json(charges);sw=read_json(software)
-    if record(charges)['sha256']!=CHARGES_SHA or cr['status']!='complete' or not cr['projection_gate_pass']:
+    if protocol not in CHARGE_SOURCES or record(charges)['sha256']!=CHARGE_SOURCES[protocol] or cr['status']!='complete' or not cr['projection_gate_pass']:
         raise InvalidArtifact('declared projected charge source required')
     if sw['returncode'] or sw['library']!=read_json(verify(fm['software']))['library']:
         raise InvalidArtifact('unavailable/incompatible native source adapter')
@@ -149,7 +152,7 @@ def prepare(frameworks,charges,states,software,plan,output):
     # Charge utility snapshots contain transitive scientific parser dependencies.
     for name,pin in cm['implementation'].items():shutil.copyfile(verify(pin),impl/name)
     for name in required:shutil.copyfile(deps/name,impl/name)
-    m=dict(protocol=PROTOCOL,sources=dict(frameworks=record(frameworks),charges=record(charges),charge_manifest=cr['manifest']),
+    m=dict(protocol=protocol,sources=dict(frameworks=record(frameworks),charges=record(charges),charge_manifest=cr['manifest']),
         software=record(software),plan=record(plan),tolerances=TOL,implementation={p.name:record(p) for p in sorted(impl.glob('*.py'))},
         tasks=[],cases={},new_energy_calls=0,new_response_solves=0,new_DFT_calls=0,new_MACE_calls=0,numerical_score=None)
     for case in CASES:
@@ -208,7 +211,8 @@ def prepare(frameworks,charges,states,software,plan,output):
 
 def validate(path):
     m=read_json(path)
-    if m['protocol']!=PROTOCOL or m['tolerances']!=TOL or len(m['tasks'])!=16:raise InvalidArtifact('undeclared native boundary configuration')
+    if m['protocol'] not in CHARGE_SOURCES or m['tolerances']!=TOL or len(m['tasks'])!=16:raise InvalidArtifact('undeclared native boundary configuration')
+    if m['sources']['charges']['sha256']!=CHARGE_SOURCES[m['protocol']]:raise InvalidArtifact('boundary density protocol/source mismatch')
     for pin in [m['software'],m['plan'],*m['sources'].values(),*m['implementation'].values(),*m['cases'].values()]:verify(pin)
     sw=read_json(verify(m['software']))
     for k in ('executable','library','source','log','parent_software'):verify(sw[k])
@@ -240,7 +244,7 @@ def collect(path,output):
             p=copy.deepcopy(results[case+'_'+metal+'_source']['parameters']);p['atoms'][-1]['atomic_number']=0
             for a in p['atoms']:a['charge_e']=0.
             checks.append(dict(name=case+'_'+metal+'_cavity_response_identity',pass_=p==ref))
-    result=dict(protocol=PROTOCOL,manifest=record(path),cases=m['cases'],tasks=rows,checks=checks,complete=True,
+    result=dict(protocol=m['protocol'],manifest=record(path),cases=m['cases'],tasks=rows,checks=checks,complete=True,
         gates_pass=all(c['pass_'] for c in checks),actual_native_initializations=16,new_energy_calls=0,new_response_solves=0,
         native_wall_seconds=sum(r['receipt']['wall_seconds'] for r in results.values()),
         native_CPU_seconds=sum(r['receipt']['child_CPU_seconds'] for r in results.values()),
@@ -252,12 +256,15 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='command',required=True)
     s=sub.add_parser('prepare')
     for name in ('frameworks','charges','states','software','plan','output'):s.add_argument('--'+name,required=True)
+    s.add_argument('--density-source',choices=('vacuum','responsive-trial'),default='vacuum')
     for name in ('dry-run','collect'):
         s=sub.add_parser(name);s.add_argument('--manifest',required=True)
         if name=='collect':s.add_argument('--output',required=True)
     a=p.parse_args()
     if a.command=='prepare':
-        r=prepare(a.frameworks,a.charges,a.states,a.software,a.plan,a.output);print(json.dumps({'complete':r['complete'],'gates_pass':r['gates_pass']}))
+        r=prepare(a.frameworks,a.charges,a.states,a.software,a.plan,a.output,
+            PROTOCOL if a.density_source=='vacuum' else TRIAL_PROTOCOL)
+        print(json.dumps({'complete':r['complete'],'gates_pass':r['gates_pass']}))
     elif a.command=='dry-run':print(json.dumps({'tasks':len(validate(a.manifest)['tasks']),'new_native_calls':0}))
     else:
         r=collect(a.manifest,a.output);print(json.dumps({'complete':r['complete'],'gates_pass':r['gates_pass']}))

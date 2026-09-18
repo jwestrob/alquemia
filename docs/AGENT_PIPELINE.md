@@ -7,6 +7,17 @@ operational/status prose; dated experiments and their numerical records remain
 immutable. The baseline remains the default. Broad La/Ca affinity discrimination
 has not been established. The [active MACE goal](../diagnostics/mace_discriminator_goal_20260916/GOAL.md) continues through intermediate failed pilots; production remains unchanged.
 
+**Latest research result:** the responsive trial-density/AMOEBA-GK/MACE hybrid
+passes all four development ordering comparisons and all 32 numerical checks;
+the GGR partition discrepancy is 0.5412 kcal/mol against the unchanged 2 criterion.
+These remain two consumed biological groups, with no absolute calibration.
+The baseline remains the production choice while this frozen candidate earns
+wider testing. [Result and limits](../diagnostics/mace_omol_20260917/TRIAL_DENSITY_GK_REPORT.md),
+[replay commands](../diagnostics/mace_omol_20260917/TRIAL_DENSITY_GK_COMMANDS.md).
+Jobs 1201135/1201137 completed. The earlier frozen-density failure is preserved.
+Recover the [live checkpoint](../diagnostics/mace_discriminator_goal_20260916/CURRENT.md)
+and inspect actual jobs before submitting research work.
+
 ## 1. Select the actual protocol
 
 | Path | Protocol / implementation | Current use and interpretation |

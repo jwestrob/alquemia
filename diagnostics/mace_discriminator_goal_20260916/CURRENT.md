@@ -6,6 +6,59 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
+## Latest: native energy identity and supplied-field response both pass
+
+Goal remains active. Two completed component experiments; no new metal score.
+Job1201055:12native direct-field queries+6no-response energies, combined with
+12old mutual controls. All15checks pass. Maximum native energy-contraction
+residual3.183231456205249e−11kcal, rigid field error3.986394547794703e−15e/Å².
+Exact formula I_GK=−.5*(electric/dielec)*sum(mu_solv,d*F_solv,p) reproduces
+native ep+es−es_static. Keep d/p fields distinct; source-frozen arrays arezero.
+Six rotated outputs were initially rejected only by regenerated-coordinate
+validation. Logged parameters/coordinates exactly match frozen parent and XYZ;
+reparse recovered all withzero native reruns. Local regeneration agrees; no
+numerical size/hardware cause of the compute-node replay difference is claimed.
+Use collection_recovery_pinned_v1.json and its frozen recovery implementation,
+not the initial incomplete collection. Five actual tests pass19.316s.
+Cost38wall×64=2432allocatedcore-s,106.172actualjobCPU-s,0GPU; nativekernels6.304s.
+Manifestc86f03720e7f9aa6eca9f775fc96253b8184cb6a7f56ace011281d069cc586e9.
+
+Job1201061: six supplied-field native mutual/GK replays, all9checks pass. Actual
+native fields are inputs, not new quantum fields. All16iterations at1e−7Debye;
+max dipole replay1.8214596497756474e−16eÅ, energy3.092281986027956e−11kcal.
+Rigid energymax6.99565134709701e−8kcal, vector4.742733983320591e−15eÅ.
+Only nativeinduce0c name/input declaration/dfieldassignment changed; exact inverse
+source test proves all solver/kernel/convergence lines unchanged. Pinned library
+and original source untouched. Four tests pass7.062s. Cost25wall×64=1600core-s,
+199.544actualjobCPU-s,0GPU; kernels4.325634061s. BuildV1failedonTinker'smaxval
+symbol shadowing intrinsic; V2uses equivalentanycomparison, samecriteria. Both
+builds retained; failedprepare rejected unavailable frontend before science.
+Manifest60e6da85420d4942093f4f66fc1888877bb53bf2459aaeede33cdefb4cd32682.
+
+Productsunderworkspaces/mace_omol_20260917/native_field_{accounting,input}_v1;
+accounting software_v1, input software_v2. Reports, exactcosts, runbooks and
+plans NATIVE_FIELD_ACCOUNTING_* / NATIVE_FIELD_INPUT_* in matchingdiagnostics.
+No newDFT,MACE,geometry,training or biological classification in eitherexperiment.
+Old failures stay; baseline/default unchanged. No nativecontrol jobstilllive.
+PLM1200796running and H2001200809pending are unrelated/untouched; recheckqueue.
+
+NEXT DENSITY_MULTIPOLE_COUPLING_PLAN.md declared before outputs:3native
+initialization/rotation-only moment exports +8saved-density orca_vpot queries,
+37observation points per real environment atom to check spatial potential
+Hessians (NOT nuclear DFT Hessians). Exactsource,steps,tolerances,resourcesinplan.
+No code/preparation/submission yet for this next experiment. Quadrupolecoupling
+must use actual internal native Qtensor (kmpole already dividesby3), fulltensor
+contraction, not guessed XML conventions. Use unchanged exterior moments only
+ascomponentdiagnostic until charge-closed source/boundary preparation exists.
+
+Plan also states a concrete candidate expression:vacuumDFT +exactdensitydirect
+coupling +GKpermanentproxytransfer +environmentinductiondifference +MACEshort
+full−core. Exactdensity drivesinduction; projectedCHELPG isonlyaGKproxy, not a
+rescued fieldfit. Fullphysicalmetal/cavity and AMOEBAresiduechargeledger still
+need implementation/explicitparameters before any fullmetalmanifest. NoCPCM,
+missingcomponentzero, oldbands or unique non-electrostaticMACEclaim. Continue
+this concrete route toward a real accuracy test, not another literature survey.
+
 ## Latest: distributed source trials closed; direct-field accounting next
 
 Both declared fits completed on the eight real normalized vacuum endpoints.

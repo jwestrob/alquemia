@@ -445,3 +445,16 @@ shift-4.438kcal still fails.21distinct tests pass. No reference/class/combined
 gradient or production change. Cost45529core-s/66GPU-s includes recovery.
 Next is the declared [AMOEBA capability/accounting investigation](../diagnostics/mace_omol_20260917/AMOEBA_CAPABILITY_PLAN.md),
 with3real parameterization preps and no energy/force evaluation in that stage.
+
+
+## Research component update — 2026-09-17
+
+Native coupled polarization now accepts supplied per-site fields and reproduces
+its original energies/dipoles on all six real controls. Energy accounting and
+rigid checks pass; this is still an ion-excluded framework test, with no new
+metal prediction or change to the production default. See the
+[native field report](../diagnostics/mace_omol_20260917/NATIVE_FIELD_INPUT_REPORT.md)
+and [current goal checkpoint](../diagnostics/mace_discriminator_goal_20260916/CURRENT.md).
+Compact charge/dipole source fits failed their full spatial field screens;
+they were not promoted. The next declared step supplies exact density coupling
+to permanent protein multipoles before a full hybrid score.

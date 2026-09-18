@@ -2011,3 +2011,25 @@ under workspaces. Current checkpoint and vault updated. Next declared plan
 NATIVE_FIELD_ACCOUNTING_PLAN uses12native field queries plus6no-response energies
 and12old mutual controls to verify actual d/p/GK energy algebra; no new source
 model or numerical score yet. Baseline/concurrentPLM/H200 jobs untouched.
+
+
+## 2026-09-17 — Native field accounting and direct-input solver qualified
+
+Autonomous MACE goal continues; no new metal score. Job1201055 completed12field
+queries+6no-response energies: all15native energy/rotation checks pass. Six false
+rotated-coordinate validation failures recovered from identical frozen XYZ and
+parameter records; no scientific reruns/tolerance change. Five tests pass19.316s.
+Cost2432allocatedcore-s/106.172actualCPU-s/0GPU. Job1201061 completed6supplied-field
+native mutual/GK solves, all9replay/rotation checks pass; dipoles1.83e−16eÅ and
+energies3.10e−11kcal replayerror. Four tests pass7.062s. Cost1600allocatedcore-s/
+199.544actualCPU-s/0GPU. Failed first build (maxval symbol collision) retained;
+equivalentanyguard fixes wrapper only; native solver/library unchanged.
+
+Reports/results/runbooks NATIVE_FIELD_ACCOUNTING_* and NATIVE_FIELD_INPUT_* in
+diagnostics/mace_omol_20260917; full products under workspaces. Current/vault
+updated. Next DENSITY_MULTIPOLE_COUPLING_PLAN declares3moment exports and8native
+potential utilities for real quantum-density coupling to permanent quadrupoles,
+not nuclear Hessians. No next preparation/execution yet. It gives a concrete
+mixed exact-direct/proxy-GK hybrid expression; source/cavity/charge boundary
+still needs explicit preparation before metal scoring. Baseline unchanged;
+PLM1200796/H2001200809 untouched. No per-analysis approval gate or promotion.

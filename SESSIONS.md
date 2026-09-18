@@ -2112,3 +2112,35 @@ NEXT: collect actual utility results; four source-boundaryinitializations;
 placeholder job submitted. Activegoal incomplete; baseline/default unchanged.
 Current/vault and TRIAL_DENSITY_GK_EXPANSION_COMPONENT_STATUS.json record pins,
 actual costs, limitations and livejob. Preserve PLM1200796/H2001200809/MopBjobs.
+
+
+## 2026-09-18 — Frozen MACE hybrid structural transfer fails; multisite preparation enabled
+
+Completed job1201162:27static/24field/30response calls, all18numerical/identity/
+rigid/radius checks pass. Both2FVY alpha comparisons pass(+8.928,+8.053kcal),
+both2FW0 fail(-14.764,-15.639). Preserveall6comparisons; threecrystalGGRrange
+24.891kcal. Frozenmodel/threshold unchanged; no absolutereference/promotion.
+2FW0-minus2FVY difference23.692kcal is22.815environmental, versus0.242intrinsicQM
+and0.634MACEshort. Doesnotproveuniquecause; trialdensitynotcurrentAMOEBA/GK
+selfconsistent. Baselineunchanged, goalactive. ReportTRIAL_DENSITY_GK_EXPANSION_REPORT.
+Newgeneric panel/config/compare usesexistingnativeexecutor/collectorequations.
+Freshallocationtotal45208core-s/17650.217382CPU/112GPU-s includes4DFT,8MACE,
+4CHELPG+4queries,fullnumericalcontrols and2failedquantumpreflights; noDFTrerun.
+Newpanel7distincttests pass acrosspreflight6(102.894s) andactualintegration1
+(15.474s); oldhybrid6pass33.062s. Archivedtrial allscores/decisions exact;
+4rigiddipoleintermediates differ<=3.553e-15;1e-12testtoleranceonlyforthose.
+
+Independentdeclaredmultisite preparationall5native frameworks pass, real4CPV
+CD/EF and1SL8EF1/EF3/EF4. ActualACEbond,waters,backgroundCa preserved. v1failed
+selectedmetalaliaspreflight; v2failedOpenMMBondiradiusforCa;bothretained. v3uses
+OpenMMpermanent/polarizationtyping andexistingnativeTinker SOLUTEparameterread;
+OpenMMGKexplicitlyunavailable, noinventedradiusorinstalledenvchange. Type358
+CaQ2,alpha.55A3,radius1.82485A;5nativeparamreadspass2.22e-16charge/pol agreement.
+Newopt-inhelperflagsleaveolddefaultunchanged; nativevalidatoradmitsdeclaredCa.
+New4testspass3.216s;11legacyregressionspass11.094s. Preparation83.401715wall/
+79.253806parentCPU+3.239334nativechildCPU; noenergy/DFT/MACE/response/GPU.
+Products multisite_amoeba_capability_v3; NEXT source/core/water/backgroundbridge
+beforeanyfullscoremanifest. Parvalbuminsupportingcrossstudy, aequorinordered
+vectorwithoutinventedlabels. Tests/report/current/vaultupdated; email040505Z
+acceptedrelay withGGRfailure. Noexpansionjoblive; preservePLM1200796,H2001200809,
+otheragentMopB1201160 andunrelateddirtyfiles. No push/defaultchange.

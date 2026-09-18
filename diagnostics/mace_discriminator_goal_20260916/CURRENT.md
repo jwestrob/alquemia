@@ -6,59 +6,64 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
-## Active transfer: two additional GGR structures, components underway
+## Latest: frozen hybrid fails GGR structural transfer; multisite preparation works
 
-Passing candidate committed 5f7d164. Frozen expansion plan:
-TRIAL_DENSITY_GK_EXPANSION_PLAN.md, two consumed GGR structures 2FW0/2FVY,
-all four new alpha comparisons >0.02, no threshold/physics change. Source-backed
-interface scripts/mace_density_inputs.py reproduces original1GLG coordinates and
-ff19SB generating field exactly; 5 real/corrupted-fixture tests pass10.678s.
-New preparations have4633 physical atoms,58QM atoms,58 projection support atoms,
-exteriorQ=-5,zero waters. Source peptide alpha-cap cores and normalized-H whole
-preparations are reused, with all original exclusions/terminal gaps retained.
-Workspace prefix workspaces/mace_omol_20260917/trial_gk_expansion_*.
+Job1201162 completed27static/24field/30response calls. All18numerical/identity/
+rigid/radius checks pass, but both2FW0 comparisons fail. Alpha1F6S minus2FW0
+=-14.764159019kcal; alpha6IP9=-15.638938500. Both2FVY comparisons pass+8.927577642/
++8.052798162. All six crystal comparisons retain1GLG,2FW0,2FVY; GGRrange24.891221454.
+No old result overwritten, threshold change, case selection or baseline change.
+These remain2consumed groups; no absolute reference or broad validation.
 
-Four new quantum endpoints actually completed job1201154 in232wall seconds,
-14848allocatedcore-s,12744.437828CPU-s. Quantum manifest quantum_v3 SHA
-140aee3be233dca06dfd9613d218c6d7d427ef41e045e1a0598e491063553168.
-All native analytic/state/ECP checks pass in collection_v3/result.json; no new
-vacuum endpoints, so variational diagnostic explicitly unavailable. Saved wave-
-functions exist. Old runtime parser falsely rejected ORCA's conditional numerical-
-gradient warning; actual qualified parser53a8ca8 from prior responsive result
-recollected outputs without rerun. Intermediate collections preserved; primary
-collector/parser are frozen under collection_v3/implementation (not mutable root).
+2FW0-minus2FVY=23.691736661kcal: intrinsicQM+0.242251473,MACEshort+0.634064156,
+directdensity+13.421787726,GK+12.600209216,induction-3.206575910. Environment accounts
+for22.815421032. This identifies dominant terms, not a unique cause. Trialdensity
+responds toff19SB, evaluated withAMOEBA/GK; no currentfunctionalselfconsistency.
+Projected CHELPG remainsGKproxy. Do not rescue by selectingfavorablecrystal.
+Report/actualpins/costs: TRIAL_DENSITY_GK_EXPANSION_REPORT.md / RESULT.json.
+Full products trial_gk_expansion_native_v1/collection_job_1201162.json and
+trial_gk_expansion_comparison_v1/result.json. New panel interface/scripts:
+mace_density_panel.py and mace_density_panel_report.py; existing nativeexecutor/
+collector reused. Scientificprotocol unchanged5f7d164; runnerprotocol
+'declared_source_graph_responsive_density_GK_POLAR_panel_v1'.
 
-Two earlier preflight failures before any DFT:1201149 exact roundoff-diagnostic
-comparison and1201152 missing snapshot import. Each3wall/192allocatedcore-s;
-CPU2.095702/2.250785. Corrected diagnostic comparison within inherited1e-12A
-bound and dependency; all input/XYZ/pointcharge bytes identical. v3 frozen
-preflight passed before submission. No scientific input/criteria change.
+Fresh4DFT1201154,8MACE1201158,4CHELPG+4queries1201161 allcomplete. Source/reference
+8initializations pass. Earlier preflights1201149/1201152 failedbeforeDFT, preserved;
+qualifiedparserrecollection solvedconditionalORCAwarning withoutDFTrerun.
+Recorded allocationtotal45208core-s/17650.217382CPU-s/112GPU-s,1261s jobwall sum
+(includesdevelopmentcontrols/failures; notproductionlatency). Native409wall,
+26176core-s,2812.966CPU; kernels100.439151s. Newpanel7distincttests allpass across
+preflight6pass102.894s and integration1pass15.474s; oldhybrid6pass33.062s. Exact
+legacyreplay scores/decisions; fourrigid dipole contractions differ<=3.553e-15,
+test allows1e-12onlyonthese intermediates, remainingfields exact. No scientific
+rescue. Expansionnojoblive. Email20260918T040505Z acceptedrelay withthisfinding.
 
-Eight MACE short forwards completed1201158:112wall/112GPU-s/1792allocatedcore-s,
-127.215067CPU-s. Source/worker/context manifest short_v1; collection_job_1201158.
-New schema delegates to existing mace_hybrid worker and qualified medium readout.
-Two AMOEBA frameworks plus2native GK parameter reads completed frameworks_v1;
-no energy/response solve yet. Physical parameter preparation110.919070wall/
-108.253656CPU; inputs24.545178wall/20.829422CPU. Optional declared-case helper
-arguments preserve old defaults. OldAMOEBA6tests pass3.648s; oldTinker4pass2.543s.
-Five expansion tests pass5.301s; actual completed output testpass1.547s (6total).
-No quantum/MACE scientific failure. Four source-zero common-cavity native
-initializations now complete; all2pairedenvironment checks pass. No boundary
-energy/response has run yet.
+Independent next-family preparation declared MULTISITE_AMOEBA_PREPARATION_PLAN
+and MULTISITE_NATIVE_PARAMETERS_PLAN. ALL FIVE real frameworks nowpass:
+PARV4CPVCD/EF(1611atoms,onebackgroundCa,onewater,frameworkQ-5) and AEQ1SL8
+EF1/EF3/EF4(2866atoms,twobackgroundCa,threewaters,Q-6). Source ACE0-ALA1bond,
+allheavy/Hcoordinates/protonation/ions/waters retained. Noenergy/DFT/MACE/response.
+Artifacts multisite_amoeba_capability_v3/result.json, config_v2/config.json.
+v1failedbeforetyping becauseoldselectedmetalalias; v2matchedtemplatesbutOpenMM
+GKdefaultBondiradiustablehasnoCa. Bothfailurespreserved. v3usesOpenMMpermanent/
+polarizationparameterswithGKexplicitlyunavailablethere, thenactualnativeTinker
+SOLUTEpreflight. Samequalifiedbackend/AMOEBA2018, noinstalledenvchange/radiusguess.
+NativeCa(type358)Q2,alpha.55A3,radius1.82485A; maxpermanentparamdiff2.22e-16.
+Scopedoptionalflagsinmace_amoeba_capability.py; nativevalidatorrecognizesCa.
+Newscriptmace_multisite_amoeba.py. Legacydefaultsremainold. New4tests pass3.216s; oldAMOEBA/nativeframework11regressions pass11.094s. Nativeprep83.401715
+wall/79.253806parentCPU +3.239334nativechildCPU; noGPU/cluster. Report
+MULTISITE_NATIVE_PARAMETERS_REPORT.md. No fullhybrid scores on these sites yet.
 
-CURRENT: four CHELPG+four49point/ESP nativequeries running1201161, manifest
-trial_gk_expansion_observations_v2. v1frozenpreflight caught missing transitive
-module before anyutility; v2completefrozenpreflight passes. Source scope note
-TRIAL_DENSITY_GK_EXPANSION_QUERY_SCOPE marks historical-center comparison
-unavailable on freshgeometries, notzero/passed. Four newobservation tests pass
-7.080s; oldcharge4tests pass5.126s. Shared utility executor preservesoldbehavior.
-NEXT: collect actual queries, prepare4source-boundaryinitializations and full
-native GK/induction manifest then compare. Reuse
-existing numerical helpers/executors; no fake charge rows. Declared totals:
-8source/reference boundary initializations,4CHELPG+4vpot queries,27static
-energies/24fieldqueries/30responses. Quantum/MACE completed; observation job1201161live. Compact source/cost/status
-record TRIAL_DENSITY_GK_EXPANSION_COMPONENT_STATUS.json.
-Preserve unrelated PLM1200796,H2001200809,MopBjobs. Main goal remainsactive.
+NEXT: scopedcommitownfiles/SESSIONS. Implement
+source-backed quantum-core bridge for multisite cases without droppingbackground
+Ca/ACE/waters; selectedmetalrealIDs currentlydifferfromsinglemetalalias, account
+explicitly. Existingrepairedgeneric sitecores undernonpqq_direct_site_benchmark;
+use same declared peptide policy, supportedwaterHmapping. Needexplicitstate
+accounting beforedeclaring quantum/scoringmanifest. Preserveparvalbumincrossstudy
+and aequorin orderedvector(noinventedlabels). Think about a specific environmental
+accuracy test fromthe2FW0 failure; don't justretuneorrepeatallfailedmodels.
+Goalactive, baseline/defaultunchanged. Noexpansionjoblive. Checkactualqueue;
+PLM1200796,H2001200809,otheragentMopB1201160untouched. No projectcompute/timebudget.
 
 ## Latest: responsive trial-density candidate passes development gates
 

@@ -218,6 +218,9 @@ def prepare(boundary,density,short_report,software,plan,output,trial_source_audi
 
 def validate(path):
     m=read_json(path)
+    if m['protocol']=='declared_source_graph_responsive_density_GK_POLAR_panel_v1':
+        from mace_density_panel import validate as validate_panel
+        return validate_panel(path)
     if m['protocol'] not in (PROTOCOL,TRIAL_PROTOCOL) or m['tolerances']!=TOL or len(m['static_tasks'])!=51 or len(m['response_tasks'])!=60:
         raise InvalidArtifact('changed hybrid pilot inventory/settings')
     if (m['protocol']==TRIAL_PROTOCOL)!=('trial_source_audit' in m['sources']):raise InvalidArtifact('hybrid quantum source convention mismatch')
@@ -387,6 +390,8 @@ def execute(path,retry=False):
 
 def collect(path,output):
     m=validate(path);root=Path(path).resolve().parent;terms=read_json(verify(m['terms']));rows={};parsed={};checks=[]
+    panel=m['protocol']=='declared_source_graph_responsive_density_GK_POLAR_panel_v1'
+    case_ids=m['case_ids'] if panel else CASES
     for t in m['static_tasks']+m['response_tasks']:
         item=accepted(t,root/'tasks'/t['task_id'])
         if item:parsed[t['task_id']]=item[0];rows[t['task_id']]=dict(status=item[0]['status'],result=record(item[1]))
@@ -403,7 +408,7 @@ def collect(path,output):
     variants={}
     for label,var,eps in [('standard','primary',1e-7)]+[(v,v,1e-9) for v in VARIANTS]:
         cases={}
-        for case in CASES:
+        for case in case_ids:
             te,se=fetch(case,'environment',var,'static');tr,er=fetch(case,'environment',var,'solve',eps)
             if not se or not er:cases[case]=dict(status='unavailable');continue
             I0,mu0=induction(tr,er);endpoints={}
@@ -419,7 +424,8 @@ def collect(path,output):
                 direct=coupling(q,dip,Q,phi,E,H);V=sum(direct[k] for k in ('charge','dipole','quadrupole'))
                 G=s['energies_kcal_mol']['solvation_with_nonpolar']-se['energies_kcal_mol']['solvation_with_nonpolar']
                 term=terms[case+'_'+metal]
-                core={'DFT_intrinsic_trial_kcal':term['intrinsic_core_hartree']*HA_TO_KCAL} if m['protocol']==TRIAL_PROTOCOL else {'DFT_vacuum_kcal':term['DFT_vacuum_hartree']*HA_TO_KCAL}
+                core={'DFT_intrinsic_trial_kcal':term['intrinsic_core_hartree']*HA_TO_KCAL} if m['protocol']==TRIAL_PROTOCOL else ({} if panel else {'DFT_vacuum_kcal':term['DFT_vacuum_hartree']*HA_TO_KCAL})
+                if panel:core={'DFT_intrinsic_trial_kcal':term['intrinsic_core_kcal']}
                 parts=dict(**core,direct_density_kcal=V,
                     GK_permanent_transfer_kcal=G,environment_induction_transfer_kcal=I-I0,short_context_kcal=term['short_context_kcal'])
                 endpoints[metal]=dict(components=parts,environment_correction_kcal=V+G+I-I0,total_kcal=math.fsum(parts.values()),
@@ -431,7 +437,10 @@ def collect(path,output):
             R=math.fsum(components.values());error=R-(endpoints['Ca']['total_kcal']-endpoints['La']['total_kcal'])
             checks.append(dict(name=label+'_'+case+'_algebra',error_kcal=error,pass_=abs(error)<=TOL['algebra_kcal']))
             cases[case]=dict(status='computed_development_contrast',endpoints=endpoints,components_R_kcal=components,R_kcal=R,evidence=terms[case+'_Ca']['evidence'])
-        if all(c['status']!='unavailable' for c in cases.values()):
+        if all(c['status']!='unavailable' for c in cases.values()) and panel:
+            from mace_density_panel import comparisons
+            variants[label]=comparisons(m,cases,label)
+        elif all(c['status']!='unavailable' for c in cases.values()):
             partition=cases['GGR_connected']['R_kcal']-cases['GGR_extended']['R_kcal']
             contrasts=[dict(alpha=a,GGR=g,difference_kcal=cases[a]['R_kcal']-cases[g]['R_kcal'],pass_=cases[a]['R_kcal']-cases[g]['R_kcal']>TOL['ordering_kcal'])
                 for a in ('ALPHA_1F6S','ALPHA_6IP9') for g in ('GGR_extended','GGR_connected')]
@@ -441,7 +450,7 @@ def collect(path,output):
     if primary['status']=='complete':
         for var in ('standard','rigid'):
             if variants[var]['status']!='complete':continue
-            for case in CASES:
+            for case in case_ids:
                 a=primary['cases'][case];b=variants[var]['cases'][case]
                 errors={'R':b['R_kcal']-a['R_kcal']}
                 for metal in ('Ca','La'):
@@ -451,12 +460,12 @@ def collect(path,output):
                 checks.append(dict(name=case+'_'+var,errors_kcal=errors,pass_=max(abs(v) for v in errors.values())<=TOL['refinement_kcal' if var=='standard' else 'rigid_kcal']))
         for var in ('radius_minus','radius_plus'):
             if variants[var]['status']!='complete':continue
-            diffs={'partition':variants[var]['partition_kcal']-primary['partition_kcal']}
+            diffs={} if panel else {'partition':variants[var]['partition_kcal']-primary['partition_kcal']}
             diffs.update({x['alpha']+'_'+x['GGR']:x['difference_kcal']-y['difference_kcal'] for x,y in zip(variants[var]['contrasts'],primary['contrasts'])})
             checks.append(dict(name=var+'_relative_sensitivity',errors_kcal=diffs,pass_=max(abs(v) for v in diffs.values())<=TOL['radius_relative_kcal']))
     identity={}
     for state in ('environment','Ca','La'):
-        t,r=fetch('GGR_extended',state,'identity','identity')
+        t,r=fetch(m['identity_case'] if panel else 'GGR_extended',state,'identity','identity')
         if r:identity[state]=dict(native_static_components=r['energies_kcal_mol'],active_terms=r['active_terms'],
             environment_moments_zero=all(all(v==0 for v in a['global_']) for i,a in enumerate(r['moments'],1) if i not in t['frozen_indices']),
             response_all_zero=all(all(v==0 for v in row) for row in r['response'].values()))
@@ -465,8 +474,8 @@ def collect(path,output):
             value=identity[metal]['native_static_components']['solvation_with_nonpolar']-identity['environment']['native_static_components']['solvation_with_nonpolar']
             identity[metal]['environment_correction_kcal']=value
             checks.append(dict(name=metal+'_vacuum_identity',error_kcal=value,pass_=abs(value)<=TOL['identity_kcal'] and all(x['environment_moments_zero'] and x['response_all_zero'] for x in identity.values())))
-    attempts=[read_json(p) for p in root.glob('tasks/*/attempt_*/result.json')];complete=len(parsed)==111
-    if complete and (len(checks)!=32 or any(v['status']!='complete' for v in variants.values())):
+    attempts=[read_json(p) for p in root.glob('tasks/*/attempt_*/result.json')];complete=len(parsed)==len(m['static_tasks'])+len(m['response_tasks'])
+    if complete and (len(checks)!=(7*len(case_ids)+4) or any(v['status']!='complete' for v in variants.values())):
         raise InvalidArtifact('complete pilot lacks required comparisons')
     result=dict(protocol=m['protocol'],manifest=record(path),complete=complete,variants=variants,identity=identity,checks=checks,tasks=rows,
         numerical_pass=complete and all(c['pass_'] for c in checks if 'relative_sensitivity' not in c['name']),

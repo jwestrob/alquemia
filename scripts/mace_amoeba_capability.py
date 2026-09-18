@@ -31,7 +31,7 @@ def atom_id(atom):
     return f'{atom.residue.chain.id}/{atom.residue.id}/{atom.residue.insertionCode.strip()}/{atom.name}'
 
 
-def topology(prep, supported_case_ids=CASES):
+def topology(prep, supported_case_ids=CASES, allow_background_calcium=False):
     """Replay the archived source graph and copy the normalized coordinates."""
     from openmm import app, unit
     if prep['case_id'] not in supported_case_ids or prep['preparation_details']['terminal_additions']:
@@ -40,10 +40,12 @@ def topology(prep, supported_case_ids=CASES):
     by_id = {a['id']: a for a in physical}
     if len(by_id) != len(physical):
         raise InvalidArtifact('duplicate physical identity')
-    if set(a['kind'] for a in physical) - {'protein_source', 'retained_site_water', 'selected_metal'}:
+    allowed={'protein_source', 'retained_site_water', 'selected_metal'}
+    if allow_background_calcium:allowed.add('background_metal')
+    if set(a['kind'] for a in physical) - allowed:
         raise InvalidArtifact('unsupported cofactor/physical atom kind')
     metals = [a for a in physical if a['kind'] == 'selected_metal']
-    if len(metals) != 1 or metals[0]['id'] != 'metal':
+    if len(metals) != 1 or (not allow_background_calcium and metals[0]['id'] != 'metal'):
         raise InvalidArtifact('expected one explicitly unparameterized QM metal')
     for metal in ('Ca', 'La'):
         endpoint = xyz(verify(prep['endpoints'][metal]['xyz']))
@@ -97,8 +99,24 @@ def topology(prep, supported_case_ids=CASES):
         for n in ('H1', 'H2'):
             model.topology.addBond(wa['O'], wa[n])
             water_bonds.append(sorted((atom_id(wa['O']), atom_id(wa[n]))))
+    if allow_background_calcium:
+        background=[a for a in physical if a['kind']=='background_metal']
+        if background!=prep.get('background_metals') or not background:
+            raise InvalidArtifact('explicit background calcium inventory required')
+        source_by_id={atom_id(a):a for a in pdb.topology.atoms()}
+        source_positions=np.asarray(pdb.positions.value_in_unit(unit.angstrom))
+        for a in background:
+            old=source_by_id.get(a['id'])
+            if (a['element']!='Ca' or a['formal_charge_e']!=2 or old is None or
+                old.element.symbol!='Ca' or old.residue.name!='CA' or
+                not np.allclose(source_positions[old.index],a['xyz_A'],atol=1e-12,rtol=0)):
+                raise InvalidArtifact('unsupported or changed background calcium')
+            chain,resid,icode=a['id'].split('/')[:3]
+            if chain not in chains:chains[chain]=model.topology.addChain(chain)
+            residue=model.topology.addResidue('CA',chains[chain],resid,icode)
+            model.topology.addAtom('CA',app.element.calcium,residue)
     ids = [atom_id(a) for a in model.topology.atoms()]
-    if set(ids) | {'metal'} != set(by_id) or len(ids) + 1 != len(physical):
+    if set(ids) | {metals[0]['id']} != set(by_id) or len(ids) + 1 != len(physical):
         raise InvalidArtifact('unaccounted physical atoms')
     positions = np.asarray([by_id[i]['xyz_A'] for i in ids])
     return model.topology, positions, ids, bonds, water_bonds, metals
@@ -115,7 +133,7 @@ def value(obj):
     return list(obj)
 
 
-def prepare_case(pin, ff_paths, output, supported_case_ids=CASES):
+def prepare_case(pin, ff_paths, output, supported_case_ids=CASES, allow_background_calcium=False, native_gk_only=False):
     import openmm as mm
     from openmm import app, unit
     start, cpu = time.monotonic(), time.process_time()
@@ -126,7 +144,7 @@ def prepare_case(pin, ff_paths, output, supported_case_ids=CASES):
                   new_energy_calls=0, new_force_calls=0, settings=SETTINGS)
     output.mkdir(exist_ok=False)
     try:
-        top, pos, ids, bonds, water_bonds, metals = topology(prep,supported_case_ids)
+        top, pos, ids, bonds, water_bonds, metals = topology(prep,supported_case_ids,allow_background_calcium)
         ff = app.ForceField(*map(str, ff_paths))
         unmatched = ff.getUnmatchedResidues(top)
         result['unmatched_residues'] = [dict(chain=r.chain.id, resid=r.id,
@@ -140,17 +158,19 @@ def prepare_case(pin, ff_paths, output, supported_case_ids=CASES):
         if system.getNumParticles() != len(ids) or system.getNumConstraints():
             raise InvalidArtifact('unexpected particles or constraints')
         mp = next(f for f in system.getForces() if isinstance(f, mm.AmoebaMultipoleForce))
-        gk = next(f for f in system.getForces() if isinstance(f, mm.AmoebaGeneralizedKirkwoodForce))
+        gk = next((f for f in system.getForces() if isinstance(f, mm.AmoebaGeneralizedKirkwoodForce)),None)
+        if (gk is None)!=native_gk_only:raise InvalidArtifact('explicit GK preparation mode differs')
         parameters = []
         for i, pid in enumerate(ids):
             m = value(mp.getMultipoleParameters(i))
-            g = value(gk.getParticleParameters(i))
-            if abs(m[0] - g[0]) > 1e-12:
+            g = value(gk.getParticleParameters(i)) if gk is not None else None
+            if g is not None and abs(m[0] - g[0]) > 1e-12:
                 raise InvalidArtifact('multipole/GK source charge mismatch')
             parameters.append(dict(id=pid, index=i, multipole_md_units=m, gk_md_units=g,
                 covalent_maps={str(k): list(mp.getCovalentMap(i, k)) for k in range(8)}))
         charge = math.fsum(p['multipole_md_units'][0] for p in parameters)
-        if abs(charge - prep['protein_charge_e']) > 1e-5:
+        target_charge=prep['protein_charge_e']+(prep['background_metal_charge_e'] if allow_background_calcium else 0)
+        if abs(charge - target_charge) > 1e-5:
             raise InvalidArtifact('framework formal charge changed')
         xml = output/'framework.xml'
         with xml.open('x') as f:
@@ -163,16 +183,22 @@ def prepare_case(pin, ff_paths, output, supported_case_ids=CASES):
             assembly=prep['assembly'], microstate=prep['microstate'],
             explicit_waters=prep['explicit_waters'], evidence=prep['evidence'],
             evidence_use=prep['evidence_use'])
+        if allow_background_calcium:
+            mapping['background_metals']=prep['background_metals']
+            result['background_calcium_opt_in']=True
+            result['framework_formal_charge_e']=target_charge
         write_new(output/'mapping.json', mapping)
         result.update(status='framework_parameterized_no_energy', framework=record(xml),
             mapping=record(output/'mapping.json'), physical_atoms=len(prep['physical_atoms']),
             framework_atoms=len(ids), unparameterized_atoms=len(metals),
             protein_charge_e=charge, explicit_waters=prep['explicit_waters'],
             force_classes=dict(Counter(type(f).__name__ for f in system.getForces())),
-            gk_settings=dict(solute_dielectric=gk.getSoluteDielectric(),
+            gk_settings=None if gk is None else dict(solute_dielectric=gk.getSoluteDielectric(),
                 solvent_dielectric=gk.getSolventDielectric(), include_cavity=gk.getIncludeCavityTerm(),
                 probe_radius_nm=value(gk.getProbeRadius()), surface_area_factor=value(gk.getSurfaceAreaFactor())),
             coordinate_max_change_A=0.0, added_atoms=0, removed_physical_atoms=0)
+        if allow_background_calcium:result['protein_charge_e']=prep['protein_charge_e']
+        if native_gk_only:result['OpenMM_GK_status']='unavailable_native_initialization_required'
     except Exception as error:
         result['failure_reason'] = f'{type(error).__name__}: {error}'
         (output/'failure.txt').write_text(traceback.format_exc())

@@ -62,7 +62,7 @@ def check_parameters(params,task,mapping):
     if params['global']!=expected_global:raise InvalidArtifact('unexpected native solver settings')
     if params['nonpolar']!=list(NONPOLAR) or params['GK_flags']!=['GRYCUK','T','T']:
         raise InvalidArtifact('unexpected solvent constants or flags')
-    physical={a['id']:a for a in mapping['physical_atoms']};z={'H':1,'C':6,'N':7,'O':8,'S':16}
+    physical={a['id']:a for a in mapping['physical_atoms']};z={'H':1,'C':6,'N':7,'O':8,'S':16,'Ca':20}
     source=np.array([physical[i]['xyz_A'] for i in mapping['system_atom_ids']])
     expected=source@np.array(task['rotation']).T+np.array(task['translation_A'])
     for i,(atom,pid,coords) in enumerate(zip(params['atoms'],mapping['system_atom_ids'],expected),1):

@@ -3,11 +3,12 @@
 Run from the repository root. The immutable scope is in PLAN.md; sources in
 INPUTS.json. This is opt-in research; production scoring/reference unchanged.
 
-## Current execution
+## Completed execution
 
-**Job1201517 is running. Do not submit a duplicate.** Exact command and job
-receipt: workspaces/mace_group_transfer_20260918/model_v3/submission.json.
-First two endpoints completed at58.43/58.50s; inspect actual live state.
+**Job1201517 completed all55evaluations. Do not resubmit it.** Exact command:
+workspaces/mace_group_transfer_20260918/model_v3/submission.json. Finalreport
+in report_v1/result.json:17/22 rawdirections,61/61numericchecks,0/3groupingchecks.
+[Interpretation and actualcosts](REPORT.md). No ownlivejobs.
 
 ## Current preparation
 
@@ -42,7 +43,7 @@ A successful baseline or older group-model cache cannot satisfy these tasks.
 ## Report
 
 ```bash
-/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python scripts/mace_group_transfer.py report --manifest workspaces/mace_group_transfer_20260918/model_v3/manifest.json --output workspaces/mace_group_transfer_20260918/report_v1
+/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python scripts/mace_group_transfer.py report --manifest workspaces/mace_group_transfer_20260918/model_v3/manifest.json --output workspaces/mace_group_transfer_20260918/report_review_v1
 ```
 
 This writes an exclusive result directory. All22directional comparisons,three
@@ -63,4 +64,14 @@ snapshots support a fresh replay with another explicit output directory.
 
 Six real source tests pass60.417s,zero skips. Six previous-group regression tests
 pass45.119s,zero skips. The MACE-environment frozen preflight passes. Primary
-scientific comparison and actual-result integration tests remain pending.
+scientific comparison and actual-result integration tests are now complete.
+
+## Completed actual-result tests
+
+Eighttests pass96.968s,zero skips. Includes actualfullreport replay,partial-output
+unavailability,means,orderedsitevectors,sign/unit algebra andreal source-mapping
+checks. See completed_tests.log; partial_report_v1/result.json preserves a real
+24/55endpoint snapshot with missing scores unavailable. No fictitious success.
+Completecost_v1 includesactualGPU/CPUreceipts andboth preflight/preparation
+attempts. Comparison_v1 providesold/new supportingmargins andcomponentaudit;
+figure_v1 containsPDF/SVG/PNG. Report replay addsno scientific evaluation.

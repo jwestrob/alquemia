@@ -109,6 +109,69 @@ class TransferTests(unittest.TestCase):
                     args = (a['resname'], a['id'].rsplit('/', 1)[-1], a['element'])
                     self.assertEqual(loaded(*args), original(*args))
 
+    @unittest.skipUnless(PREP.parent.parent.joinpath('partial_report_v1/result.json').exists(),
+                         'actual partial execution report unavailable')
+    def test_actual_partial_execution_keeps_missing_scores_unavailable(self):
+        from mace_hybrid import EV_TO_KCAL
+        d = read_json(PREP.parent.parent / 'partial_report_v1/result.json')
+        self.assertEqual(d['status'], 'incomplete')
+        self.assertEqual(len(d['comparisons']), 22)
+        self.assertEqual(d['qualified_pass_count'], 0)
+        missing = 0; complete = 0
+        for name, score in d['scores'].items():
+            ca = d['collection']['rows'][score['Ca_task']]
+            la = d['collection']['rows'][score['La_task']]
+            if ca['status'] == la['status'] == 'computed':
+                complete += 1
+                self.assertEqual(score['R_model_kcal'], (ca['energy_eV'] - la['energy_eV']) * EV_TO_KCAL)
+            else:
+                missing += 1
+                self.assertIsNone(score['R_model_kcal'])
+            self.assertIsNone(score['calibrated_class'])
+        self.assertGreater(missing, 0)
+        self.assertGreater(complete, 0)
+        self.assertEqual(len(d['aequorin_ordered']), 3)
+        self.assertTrue(all(x['site_label'] is None for x in d['aequorin_ordered']))
+
+    @unittest.skipUnless(PREP.parent.parent.joinpath('report_v1/result.json').exists(),
+                         'actual full transfer result unavailable')
+    def test_complete_actual_energy_algebra_grouped_means_and_report_replay(self):
+        from mace_group_transfer import report
+        from mace_hybrid import EV_TO_KCAL
+        root = PREP.parent.parent; d = read_json(root / 'report_v1/result.json')
+        self.assertEqual(d['status'], 'complete')
+        self.assertEqual(len(d['collection']['rows']), 55)
+        self.assertEqual(len(d['comparisons']), 22)
+        for name, score in d['scores'].items():
+            ca, la = [d['collection']['rows'][score[k]] for k in ('Ca_task', 'La_task')]
+            self.assertEqual(score['R_model_kcal'], (ca['energy_eV'] - la['energy_eV']) * EV_TO_KCAL)
+            self.assertIsNone(score['calibrated_class'])
+        families = family_cases(self.cfg)
+        for family in ('A0A7', 'HEW5', 'RTX'):
+            values = [d['scores'][name]['R_model_kcal'] for name in families[family]]
+            self.assertEqual(d['Khoury_means'][family], sum(values) / len(values))
+        self.assertEqual([x['site'] for x in d['aequorin_ordered']], families['AEQ_1SL8'])
+        self.assertTrue(all(x['site_label'] is None for x in d['aequorin_ordered']))
+        for c in d['comparisons']:
+            if c['higher_expected'].endswith('_all_site_mean'):
+                hi = d['Khoury_means'][c['higher_expected'].replace('_all_site_mean', '')]
+            else:
+                hi = d['scores'][c['higher_expected']]['R_model_kcal']
+            lo = d['scores'][c['lower_expected']]['R_model_kcal']
+            self.assertEqual(c['margin_model_kcal'], hi - lo)
+            self.assertEqual(c['pass'], hi - lo > .02)
+        for g in d['grouping_checks']:
+            delta = g['alternate_R_model_kcal'] - d['scores'][g['case']]['R_model_kcal']
+            self.assertEqual(g['connected_minus_primary'], delta)
+            self.assertEqual(g['pass'], abs(delta) <= 2.)
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / 'actual_report_replay'
+            report(MANIFEST, out); replay = read_json(out / 'result.json')
+            for key in ('scores', 'checks', 'grouping_checks', 'comparisons', 'Khoury_means',
+                        'aequorin_ordered', 'raw_pass_count', 'qualified_pass_count',
+                        'numerical_checks_pass', 'representation_checks_pass'):
+                self.assertEqual(d[key], replay[key])
+
 
 if __name__ == '__main__':
     unittest.main()

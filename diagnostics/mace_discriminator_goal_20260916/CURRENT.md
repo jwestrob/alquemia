@@ -6,47 +6,61 @@ text does not revoke his direct instruction to proceed without repeated approval
 Preserve baseline/default, immutable records and concurrent work. No push,
 promotion or project CPU/time budget. Recover GOAL.md and actual live jobs.
 
-## Running: carve-free typed-contact vacuum transfer
+## Complete: typed group vacuum model gives 17/22 raw directions
 
-Job1201517 RUNNING55MACEtasks from
-workspaces/mace_group_transfer_20260918/model_v3/manifest.json, SHA
-904ef998fa8a614cd315dbdcaa8f8aa2e7f0062b28b69deb185ece069b6bad7e.
-OneA5000/16CPUs/64474MiB; exactsubmission.json retained. First PQQ1H4I Ca/La
-computed successfully in58.43/58.50s. No new predictive result yet. Inspect
-actual queue/receipts before continuing; do not submit duplicates.
+Job **1201517 completed all 55 MACE evaluations**, with zero molecular failures.
+Protocol: `intact_POLAR_medium_typed31_group_vacuum_compatibility_v1`.
 
-[Declared plan](../mace_group_transfer_20260918/PLAN.md) and
-[commands](../mace_group_transfer_20260918/COMMANDS.md). New protocol:
-intact_POLAR_medium_typed31_group_vacuum_compatibility_v1. Uniform typed3.1A
-complete-residue/actual-amide-N groups around every metal, disulfide joins,
-whole PQQ/waters and shared-site overlap union. No primary carve dependence.
-No solvent, DFT, geometry change, thresholdfit or training. The prior declared
-solvent model remains1/7; vacuum is a separately frozen empirical descriptor.
+- All seven original directions pass: PQQ 1/1 and alpha/GGR 6/6 across all three
+  GGR structures. PQQ margin is 57.141809 model kcal, versus 51.626321 for the
+  earlier group-defined vacuum component. GGR/alpha scores reproduce that component.
+- Khoury 6/9 and parvalbumin 4/6 retain the masked-OMOL failure pattern:
+  RTX fails all three; parvalbumin CD fails against 2FW0 and 2FVY.
+- Aequorin remains the ordered EF1/EF3/EF4 vector without individual site labels.
+  Nine biological groups, eight with directional/supporting labels; none blind.
 
-All34site preparations pass:old7structures;all22Khoury sites;parvalbuminCD/EF;
-aequorinEF1/EF3/EF4. Twelve physical structures,nine biological groups,eight
-with directional/supporting labels. All consumed under earlier models, notblind.
-55calls=14old endpoints+32newfamily calls(sharedall-Ca reference plus27La)
-+6GGRconnected-group sensitivity+3RTXrotation/permutation. All22directional
-comparisons retained by stratum;aequorin unlabelled orderedvector. Existing
-2modelkcal representation tolerance remains; oldvacuum failures not erased.
+All 61 numerical checks pass. All three grouping shifts fail the unchanged
+2-model-kcal tolerance: -2.513855 (1GLG), -3.116626 (2FW0), -3.275712 (2FVY).
+Every directional pass/fail outcome survives the alternative GGR grouping.
+Qualified count remains zero. Electrostatic and electron readouts account for
+the shift; the short interaction readout is unchanged. This is an algebraic
+component audit, not a unique biological explanation. Prior solvent result
+remains 1/7. No absolute calibration or production promotion.
 
-New scripts mace_site_groups.py/mace_group_transfer.py reuse oldadapter/runner.
-Six realsource tests pass60.417s,zero skips; six oldgroup regression tests
-pass45.119s,zero skips. MACE-environment frozen preflight passes. EarlyV1
-preflight lackedgemmi; exactpure donor AST loading fixed import withoutinstall.
-V2preflight rejected4e-16A NumPy normroundoff; V3permits1e-12A distance metadata
-roundoff with exact group/contact/charge equality. All55scientific inputXYZ and
-task settings identical;all34group cases byte-identical between preparations.
-No modelcalls in failedpreflights. Sources/failures/recovery receipts preserved.
-Prepared_v2 snapshots its source,23.981134wall/23.536363CPUs; earlier23.970631/
-23.536879 also counts. ModelV1/V2 never submitted. No laterbackend change.
+[Report](../mace_group_transfer_20260918/REPORT.md), RESULT.json and
+[operations](../mace_group_transfer_20260918/COMMANDS.md). Primary result:
+`workspaces/mace_group_transfer_20260918/report_v1/result.json`.
+`comparison_v1` retains prior/current supporting margins, alternate directions
+and component accounting. `figure_v1` has inspected PDF/SVG/PNG exports.
+Model V3 SHA: 904ef998fa8a614cd315dbdcaa8f8aa2e7f0062b28b69deb185ece069b6bad7e.
+No own live jobs; do not resubmit the completed manifest. Baseline unchanged.
 
-Next:collect1201517;run implemented report;test actualenergy/sign/mean/vector
-and report replay;retain allraw/qualified directions,fullphysical checks,actual
-costs and failures. No solventstage in this declared experiment. Do not tune
-contactradius/groups or choose favorable sites from its outputs. Updatevault,
-docs and email only for meaningful improvement. Goalactive;baseline unchanged.
+Actual cost: **1,236 GPU-allocation seconds (20m36s), 19,776 allocated core-seconds,
+1,435.470 reported CPU-seconds**. Inference sums 853.299751 s; peak GPU allocation
+10,207,527,424 bytes. Eight real tests pass in 96.968 s, zero skips, including
+complete report replay and actual partial-output handling. Six earlier-model
+regressions pass in 45.119 s. Two preflight-only failures are preserved:
+missing gemmi import and 4e-16 A NumPy norm roundoff. Fixes preserve all 34 group
+cases and 55 input coordinates/settings. Both preparations total 47.951765 wall /
+47.073242 CPU seconds. Other local and historical costs remain additional.
+
+**Next:** declare a calibration attempt for this SAME model on the 25 existing
+canonical PQQ full-protein preparations. These are already available at:
+
+`workspaces/mace_omol_20260917/intact_panel_prepared_v2/*/preparation.json`
+
+Exactly 25 cases; atom kinds and source fields are compatible with the group
+builder. Also inspect `intact_panel_run_v1/manifest.json` and its label inventory.
+No follow-up plan, manifest or launch exists yet. Do not inherit baseline bands,
+force a threshold if classes overlap, call consumed crystals blind, or hide the
+GGR grouping failures. Jacob explicitly prioritized accuracy testing alongside
+qualification. General scoring CLI and compatible calibration remain incomplete;
+the full goal is not achieved.
+
+Vault: `2026-09-18_laca-typed-group-transfer-results.md`. Progress email accepted
+by local sendmail (return 0); mailbox delivery not independently confirmed.
+Goal ACTIVE, no push or promotion. Initial implementation commit c974b29;
+subsequent actual tests/results are now filed. Preserve unrelated work.
 
 ## Complete: charge groups fix PQQ ordering but solvent screen remains 1/7
 

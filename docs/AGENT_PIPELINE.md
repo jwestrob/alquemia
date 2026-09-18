@@ -71,11 +71,12 @@ PQQ ordering improves from -17.63 to +19.96 model kcal, but all six alpha/GGR
 directions still fail (1/7 total). Vacuum component directions are promising,
 but its grouping shifts exceed the retained tolerance. No broad validation or
 default change. [Completed operations and failures](../diagnostics/mace_charge_groups_20260918/COMMANDS.md).
-A [carve-free typed-contact grouped-vacuum trial](../diagnostics/mace_group_transfer_20260918/PLAN.md)
-is now running as1201517:55evaluations spanning the original structures and
-all declared Khoury/parvalbumin/aequorin sites. It retests the changed grouping
-policy and retains the earlier representation failures; no new result yet.
-[Operations](../diagnostics/mace_group_transfer_20260918/COMMANDS.md).
+The [carve-free typed-contact grouped-vacuum trial](../diagnostics/mace_group_transfer_20260918/REPORT.md)
+completed55evaluations:17/22 raw directions,including all7original comparisons.
+Khoury6/9 andparvalbumin4/6 retain their previous supporting-family failures.
+All61numericchecks pass; threegrouping shifts2.51–3.28 failthe retained2gate,
+althoughall22directional outcomes remainunchanged. No absolutecalibration or
+defaultchange. [Completed operations](../diagnostics/mace_group_transfer_20260918/COMMANDS.md).
 Recover the [live checkpoint](../diagnostics/mace_discriminator_goal_20260916/CURRENT.md)
 and inspect actual jobs before submitting research work.
 

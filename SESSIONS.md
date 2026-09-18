@@ -2728,3 +2728,26 @@ Scientificreporter implemented; actual fullcomparison/integration tests pending.
 New scripts mace_site_groups.py,mace_group_transfer.py plusopt-in runnerdispatch.
 Plan,inputs,commands,vault,currentcheckpoint/agentguide updated. Preserve job,
 all priorresults and unrelatededits. Goalactive,baseline unchanged,no push.
+
+
+## 2026-09-18 — Whole-protein typed-group transfer complete,17/22 rawdirections
+
+Job1201517 completed55realMACEcalls,zero failures. Original7directions allpass,
+includingalpha/GGR acrossall3GGRstructures. SupportingKhoury6/9 andPARV4/6
+retain maskedOMOLfailurepattern:RTXall3,PARV_CD vs2FW0/2FVY. Ninebiological
+groups,eightdirectional/supporting,noneblind;aequorin remainsorderedunlabelled.
+All61numericchecks pass,butGGRgroup shifts2.513855/3.116626/3.275712 failthe
+unchanged2criterion. All22rawdirectional outcomes survivealternate groups.
+Qualifiedcount0 preserved;noclassificationband orproductionpromotion.
+
+Eightrealtests pass96.968s,zeroskips,includingfullreportreplay andactualpartial
+outputunavailability. Completecost1236GPU-s,19776core-s,1435.470reportedCPU-s;
+local/historicalcosts additional. Two preflight-onlycompatibilityfailures and
+both preparations kept;nomodelcalls infailedpreflights. Fullreport,comparison,
+components,compactresult,standalonefigures,commands,vault andagentdocs updated.
+Progress emailacceptedbylocalsendmail(return0),deliverynotindependentlyverified.
+
+Next:declareunchangedtypedvacuum modelcalibration attempt on25existingcanonical
+PQQfull-preparations;inventoryidentified butnonewmanifest/launchyet. Retainall
+oldresults,groupingfailure,baseline/default andevidencestrata. GoalACTIVE,noown
+livejobs,nopush. Stageonlyownfiles andthissessionentry;unrelatededitspreserved.

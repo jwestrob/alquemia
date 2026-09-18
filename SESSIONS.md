@@ -2463,3 +2463,32 @@ accepted0(update_email_v1);delivery not independently confirmed. Baseline/defaul
 unchanged,no own livejobs,no push. Research goal remainsopen. Next inspect and
 declare unchanged-method transfer to already consumed GGR2FW0/2FVY,not yetrun.
 Only scoped own changes and this session entry staged; unrelated edits preserved.
+
+
+## 2026-09-18 — Matched hybrid transfer to both additional GGR structures running
+
+Declared HYBRID_GGR_TRANSFER_PLAN.md before new output, under active goal.
+Same normalizedH vacuumDFT+maskedfull-minus-core, both source-graph58/111atom
+representations on2FW0/2FVY, unchanged0.20A and qualification rules. New helper
+reproduces actual1GLGnormalized inputs. All4newsource cases pass paired/state
+checks. Two real source regressions pass7.613s; finite-manifest/corrupted-charge
+test initially skipped before manifest creation, then passed16.204s. A repeat
+checks the added fixed descriptor-field guards. Frozen GPU preflight passed.
+
+Workspace mace_omol_hybrid_transfer_20260918:config.json,prepared_v2,
+initial_v1/initial.json. prepared_v1 filename-only failure retained,no inference.
+Jobs1201391centers completed12/12;1201392/1201393grids and1201394quantum running.
+Finite initial156MACE+8nativeDFT;conditional atmost16MACE+8native at fixedeligible
+points. No scientific failure/retry seen. Submission receipts retained. Do not
+run duplicate executors. Existing runner dispatch only; no new workflow system.
+
+New transfer/minimum modules support sourceprep,initial,validate,collect,assess,
+conditionalnative and all12contrast report. Native helper implemented but awaits
+actual complete grids for integration/testing; do not claim executed. Qualification
+and raw ordering remain separate,including original1GLG failures. Goalunfinished.
+
+Prior matched response report now includes actual native/context contribution
+algebra and figure exports; vault updated. Read-only installed-source note describes
+possible selected3x3 learned Hessian to reduce grids later; no implementation,
+second derivative,test or speedup claimed. No change to currentmanifest/model.
+Baseline/default unchanged,no push/promotion. Preserve unrelated shared work.

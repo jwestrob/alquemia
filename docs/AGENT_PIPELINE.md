@@ -38,6 +38,10 @@ partition difference fail qualification; qualified scores stay null. These
 consumed comparisons represent two biological groups. Production remains default.
 [Result and costs](../diagnostics/mace_omol_20260917/MATCHED_H_RESPONSE_REPORT.md)
 and [operations](../diagnostics/mace_omol_20260917/MATCHED_H_RESPONSE_COMMANDS.md).
+The unchanged-method [GGR structural transfer](../diagnostics/mace_omol_20260917/HYBRID_GGR_TRANSFER_PLAN.md)
+is now running on2FW0/2FVY with both existing core definitions. It tests the
+previous direct-MACE failures; no new affinity labels or favorable-core selection.
+[Operations](../diagnostics/mace_omol_20260917/HYBRID_GGR_TRANSFER_COMMANDS.md).
 Recover the [live checkpoint](../diagnostics/mace_discriminator_goal_20260916/CURRENT.md)
 and inspect actual jobs before submitting research work.
 

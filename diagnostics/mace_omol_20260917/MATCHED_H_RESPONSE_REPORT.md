@@ -28,6 +28,21 @@ predeclared positions, not the quadratic predictions. No entropy/solvent term.
 Source atoms, normalized H, core memberships, charges, explicit waters and
 scaffold coordinates remain fixed within each paired comparison.
 
+## Response components
+
+| State | Native DFT contribution | Full-minus-core MACE contribution | Total delta R |
+|---|---:|---:|---:|
+| ALPHA_1F6S | +3.604499 | +4.364710 | +7.969208 |
+| ALPHA_6IP9 | +8.742246 | +1.955297 | +10.697543 |
+| GGR_connected | +2.367183 | -1.365807 | +1.001377 |
+| GGR_extended | +2.471127 | -3.374778 | -0.903651 |
+
+These are actual Ca-minus-La changes (kcal-equivalent), evaluated at the fixed
+metal displacements. The observed alpha response favors La more than the GGR
+response does. The full-minus-core term is a learned descriptor difference;
+this arithmetic does not identify a unique physical interaction or solvent
+mechanism. Native quantum and learned contributions are kept separately.
+
 ## Physical checks and limits
 
 All eight actual energy decreases and prediction-error checks pass. All
@@ -91,3 +106,11 @@ Next scientific priority: test the same model on the already consumed GGR
 2FW0/2FVY structural replicas, where direct MACE previously failed. Prepare a
 separate declared transfer inventory; do not change radius, bands, chemistry or
 qualification criteria to rescue this result. The research goal remains open.
+
+## Figure export
+
+[PDF](../../workspaces/mace_omol_hybrid_response_20260918/figure_v1/matched_response.pdf),
+[SVG](../../workspaces/mace_omol_hybrid_response_20260918/figure_v1/matched_response.svg),
+and [PNG](../../workspaces/mace_omol_hybrid_response_20260918/figure_v1/matched_response.png)
+plot all four actual/static contrasts, with the qualification failures shown.
+The export directory pins its script and source; no new inference or statistics.

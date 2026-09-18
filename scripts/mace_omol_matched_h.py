@@ -204,6 +204,9 @@ def prepare_quantum(preparation,output):
 
 @cached_file_checks
 def validate_quantum(manifest):
+    if read_json(manifest).get('stage')=='matched_hybrid_GGR_transfer':
+        from mace_omol_hybrid_transfer import validate_quantum as transfer
+        return transfer(manifest)
     if read_json(manifest).get('stage')=='matched_hybrid_response_validation':
         from mace_omol_hybrid_minimum import validate_quantum as validate_response
         return validate_response(manifest)
@@ -224,6 +227,9 @@ def validate_quantum(manifest):
 
 
 def collect_quantum(manifest):
+    if read_json(manifest).get('stage')=='matched_hybrid_GGR_transfer':
+        from mace_omol_hybrid_transfer import collect_quantum as transfer
+        return transfer(manifest)
     if read_json(manifest).get('stage')=='matched_hybrid_response_validation':
         from mace_omol_hybrid_minimum import collect_quantum as collect_response
         return collect_response(manifest)

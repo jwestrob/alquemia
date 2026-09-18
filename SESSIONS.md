@@ -2869,3 +2869,35 @@ Final compatibility checks:4source-selector regressions pass14.902s and4existing
 prepared-interface regressions pass28.420s, none skipped. Final sourceV4 accepts
 canonical explicit fields, legacy crystalnormalizedselector and generic
 insertion_code alias; running canonicalV2 snapshot remains unchanged.
+
+
+## 2026-09-18 — PQQ original MACE complete; parser-cache performance check running
+
+Original MACE1201566 completed50fresh endpoints:25/25 correct, all25scores
+bitwise equal to the frozen two-call reference. Median154.717952s/case;
+sum3877.828237s; allocation3879GPU-s/62064SlurmCPU-s, reportedCPU3608s.
+DFT1201562 remains live. No final full-panel speed verdict yet.
+
+Profiling existing first-case reporting found1948XYZ parses;285.690sprofiled
+wall/276.907CPU-s is instrumented and not a comparable production timing.
+IsolatedV5 operation-local strict-XYZ cache preserves all54real endpoint arrays;
+4cache/corruption tests pass18.552s. Local cachedreport scientificfieldsexact,
+101.351wall/93.258CPU-s onloginhost (not comparable toGPUhost timings).
+MatchedCPU-only reportjob1201589 complete:62.06suncached vs44.67scached,
+identicalscience;107allocatedCPU-s/noGPU/no newmodel calls. Actual receipts
+under report_cache_matched_v1. Productioncode andrunningV2snapshot unchanged.
+
+Technical performance re-execution1201609 nowRUNNING:50freshMACE calls onthe
+same25prepared cases usingV5 cache, sameweights/adapters/bands/physicalstates.
+No newDFT; reuse matched1201562 receipts only with exact source/reference equality.
+Source/runmanifesttiming_cached_v1 SHA
+794e45b9475d87d37441cead94c26e335e60e31ebd3dde219f5554326c128953.
+OneA5000/16CPU/64474MiB;CACHED_RUNTIME_CHECK.md declares this technicalfix
+validation. Originaltimings stayreported. Earlycachedscoresexact; end-to-end
+speedunproven untilfullruncomplete. No furthermodel/runtimevariantsplanned.
+
+report.py now supports explicit --mace-run and refuses incomplete jobs. Gate
+isratioofmedianlatencies>=1.5pluslowertotal, asGOAL.mdstates; pairedmedian
+reportedseparately. Finish originalandcached reports, collectuniquejobcosts,
+updatevault/agentdocs, andgiveevidence-based recommendation. Newscientific
+modelsstillpaused; baseline/default unchanged;no push.

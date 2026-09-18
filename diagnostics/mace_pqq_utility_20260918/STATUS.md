@@ -37,6 +37,18 @@ Manifest timing_v2 SHA:
 on node-128-512g-8gpu-1: DFT 32 CPU/no GPU; MACE 16 CPU/one A5000, 64474 MiB each.
 No project runtime cutoff. Complete paired timing/classification result pending.
 
+**Additional technical check, same frozen scientific model:** parser-cache
+job1201609 runs50freshMACE endpoints, no newDFT, against timing_cached_v1 SHA
+794e45b9475d87d37441cead94c26e335e60e31ebd3dde219f5554326c128953.
+One additionalA5000/16CPU/64474MiB on the same host. SourceV5 alters only parsed
+XYZ reuse inside existing verification operations; all54real endpoint coordinate
+arrays are bitwise equal and four cache tests pass18.552s. Matched report-only
+job1201589 measured62.06s→44.67s with identical scientific output,107core-s,noGPU.
+Full optimized workflow speed remains unproven until1201609 completes. Original
+timings remain authoritative and separately reported. See REPORT_CACHE.md and
+CACHED_RUNTIME_CHECK.md; these are engineering checks, no new biological/model
+comparison, scientific protocol, calibration or default change.
+
 First completed pair: DFT239.74962226301432s, MACE161.11215551942587s. The MACE
 score exactly matches51.455254788976355. DFT differs by−0.00024073708349kcal/mol,
 within the declared0.01reproduction tolerance but across its exact calibration

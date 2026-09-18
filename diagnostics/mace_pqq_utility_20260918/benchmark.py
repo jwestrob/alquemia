@@ -50,7 +50,7 @@ def dft_score(energies, baseline):
             'classification_scale': 'released_primary_R_bands'}
 
 
-def prepare(root, output, frozen_mace):
+def prepare(root, output, frozen_mace, methods=None):
     root, out = Path(root).resolve(), Path(output).resolve()
     out.mkdir(parents=True, exist_ok=False)
     impl = out/'implementation'
@@ -96,7 +96,7 @@ def prepare(root, output, frozen_mace):
                 'expected_host': 'node-128-512g-8gpu-1',
                 'MACE_CPUs': 16, 'DFT_CPUs': 32, 'DFT_MPI_ranks_per_endpoint': 16,
                 'score_reproduction_tolerance': 0.01, 'speed_target': 1.5,
-                'fresh_endpoint_counts': {'MACE': 50, 'DFT': 50},
+                'fresh_endpoint_counts': {method:50 for method in (methods or ['DFT','MACE'])},
                 'new_calibration': False, 'baseline_changed': False}
     write(out/'manifest.json', manifest)
     return {'manifest': record(out/'manifest.json'), 'cases': len(cases)}
@@ -170,6 +170,7 @@ def run_mace(m, c, out):
 
 def execute(manifest, method):
     m = read(manifest); root = Path(manifest).resolve().parent
+    if method not in m['fresh_endpoint_counts']:raise ValueError('method is not scheduled in this manifest')
     if not os.environ.get('SLURM_JOB_ID') or socket.gethostname().split('.')[0] != m['expected_host']:
         raise ValueError('matched allocated host required')
     if int(os.environ['SLURM_CPUS_ON_NODE']) != m[method+'_CPUs']:
@@ -210,12 +211,18 @@ def execute(manifest, method):
     return {'status': 'failed' if failures else 'complete', 'failures': failures}
 
 
-def collect(manifest, output):
+def collect(manifest, output, dft_run=None, mace_run=None):
     m = read(manifest); root = Path(manifest).resolve().parent; rows = []
+    runs={'DFT':Path(dft_run).resolve() if dft_run else root,
+          'MACE':Path(mace_run).resolve() if mace_run else root}
+    for directory in runs.values():
+        other=read(directory/'manifest.json')
+        for key in ('cases','baseline','calibration','factorization','development','driver_python'):
+            if other[key]!=m[key]:raise ValueError('comparison changes frozen inputs or reference: '+key)
     for c in m['cases']:
         row = {'case_id':c['case_id'],'expected_class':c['expected_class']}
         for method in ('DFT','MACE'):
-            path = root/method/c['case_id']/'timing.json'
+            path = runs[method]/method/c['case_id']/'timing.json'
             r = read(path) if path.exists() else {'status':'unavailable'}
             if r['status'] == 'complete':
                 old = c['archived_DFT_S' if method=='DFT' else 'archived_MACE_R']
@@ -226,6 +233,7 @@ def collect(manifest, output):
         rows.append(row)
     pairs = [r for r in rows if all(r[k]['status']=='complete' for k in ('DFT','MACE'))]
     result = {'manifest':record(manifest),'status':'complete' if len(pairs)==25 else 'incomplete',
+              'method_manifests':{k:record(v/'manifest.json') for k,v in runs.items()},
               'complete_pairs':len(pairs),'rows':rows,'baseline_changed':False}
     if pairs:
         totals = {k:sum(r[k]['wall_seconds'] for r in pairs) for k in ('DFT','MACE')}
@@ -239,8 +247,10 @@ def collect(manifest, output):
 if __name__ == '__main__':
     p=argparse.ArgumentParser(description=__doc__); sub=p.add_subparsers(dest='command',required=True)
     a=sub.add_parser('prepare');a.add_argument('--root',required=True);a.add_argument('--output',required=True);a.add_argument('--frozen-mace',required=True)
+    a.add_argument('--methods',nargs='+',choices=('DFT','MACE'))
     a=sub.add_parser('execute');a.add_argument('--manifest',required=True);a.add_argument('--method',choices=('DFT','MACE'),required=True)
     a=sub.add_parser('collect');a.add_argument('--manifest',required=True);a.add_argument('--output',required=True)
+    a.add_argument('--dft-run');a.add_argument('--mace-run')
     args=vars(p.parse_args());command=args.pop('command')
     result=globals()[command](**args)
     print(json.dumps(result,indent=2))

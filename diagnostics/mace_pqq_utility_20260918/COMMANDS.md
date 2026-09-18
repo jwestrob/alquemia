@@ -35,6 +35,19 @@ The final report records literal frozen-band calls separately from reproduction
 within the predeclared0.01tolerance, all100successful endpoint receipts, the
 failed initial MPI startup, phase timing and full allocation costs.
 
+The parser-cache implementation is being timed separately as job1201609. It
+reuses the identical DFT campaign and executes50freshMACE endpoints; it does not
+replace the original timings. After completion, its explicit comparison is:
+
+```bash
+python diagnostics/mace_pqq_utility_20260918/report.py \
+  --workspace "$PQQ_WORK" --mace-run "$PQQ_WORK/timing_cached_v1" \
+  --output "$PQQ_WORK/cached_final_report_v1"
+```
+
+Both reports and all development jobs must remain visible in the final summary.
+See CACHED_RUNTIME_CHECK.md for the technical re-execution scope.
+
 The source-backed accuracy replay is already complete in accuracy_v1. To replay
 without inference to a fresh location:
 

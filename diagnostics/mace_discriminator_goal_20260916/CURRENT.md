@@ -30,6 +30,24 @@ See [status](../mace_pqq_utility_20260918/STATUS.md) and COMMANDS.md. Prepared-i
 source-selector compatibility repaired; current script handles three recorded
 selector schemas. Running immutableV2 canonical adapter remains unchanged.
 
+**Update: original MACE1201566 complete,25/25 correct and25/25 scores bitwise
+identical to the archived two-call values.** Median full case latency154.717952s;
+sum3877.828237s. Allocation3879GPU-s/62064core-s; reportedCPU3608s. DFT1201562
+still running; do not extrapolate the final speed ratio from early La cases.
+
+The measured report bottleneck was repeated strict XYZ parsing. An isolatedV5
+operation-local parser cache preserves all54supported endpoint arrays exactly;
+four cache/corruption tests pass18.552s. Matched report-only job1201589 completed:
+62.06s→44.67s, identical scientific fields,107core-s/noGPU/no model evaluations.
+Technical full-workflow re-execution1201609 is RUNNING,50freshMACE endpoints,
+same25inputs/model/bands, sourceV5, oneA5000/16CPU/64474MiB. No extraDFT; compare
+with1201562 through explicit --mace-run. Manifesttiming_cached_v1 SHA
+794e45b9475d87d37441cead94c26e335e60e31ebd3dde219f5554326c128953.
+See CACHED_RUNTIME_CHECK.md. Do not change any scientific model or launch further
+runtime variants. Finish both recorded full comparisons and count all development
+cost, including the original MACE run. report.py is ready but final integration
+is pending complete jobs. GroupedPOLAR/newOMOLfeatures remain paused.
+
 Jacob paused new model experiments for discussion. Recover
 [the utility discussion and actual PLM inventory](../mace_pqq_utility_20260918/DISCUSSION.md)
 before acting. PLM DFT is complete:137/176scored;94La,22indeterminate,21Ca;39unscored.

@@ -32,30 +32,32 @@ def scheduler(jobs):
     return {'command':command,'raw_output':result.stdout,'rows':rows}
 
 
-def generate(workspace, output):
+def generate(workspace, output, mace_run=None):
     work=Path(workspace).resolve();run=work/'timing_v2';out=Path(output).resolve()
+    method_runs={'DFT':run,'MACE':Path(mace_run).resolve() if mace_run else run}
     m=read(run/'manifest.json');accuracy=read(work/'accuracy_v1/result.json')
     for ref in accuracy['source_records']:verify(ref)
     if accuracy['counts']!={'calibration':{'total':25,'DFT_correct':25,'MACE_correct':25,'MACE_unavailable':0},
                            'transfer':{'total':3,'DFT_correct':3,'MACE_correct':2,'MACE_unavailable':1}}:
         raise ValueError('reference inventory differs; investigate before reporting')
-    submissions={k:read(run/(k+'_submission.json')) for k in ('DFT','MACE')}
+    submissions={k:read(method_runs[k]/(k+'_submission.json')) for k in ('DFT','MACE')}
     failed_submission=read(work/'timing_v1/DFT_submission.json')
     jobs={k:r['stdout'].strip().split(';')[0] for k,r in submissions.items()}
     failed_job=failed_submission['stdout'].strip().split(';')[0]
     accounting=scheduler([*jobs.values(),failed_job])
     for method in ('DFT','MACE'):
-        paths=list((run/method).glob('*/timing.json'))
+        paths=list((method_runs[method]/method).glob('*/timing.json'))
         if len(paths)!=25 or any(read(p)['status']!='complete' for p in paths):
             raise ValueError('all 25 successful cases per method required for final comparison')
     out.mkdir(parents=True,exist_ok=False)
-    collect(run/'manifest.json',out/'paired.json');paired=read(out/'paired.json')
+    collect(run/'manifest.json',out/'paired.json',dft_run=method_runs['DFT'],mace_run=method_runs['MACE'])
+    paired=read(out/'paired.json')
     if paired['complete_pairs']!=25:raise ValueError('incomplete paired inventory')
     rows=[];endpoints={'DFT':[],'MACE':[]};mace_results=[]
     for c in paired['rows']:
         row={k:c[k] for k in ('case_id','expected_class')}
         for method in ('DFT','MACE'):
-            r=c[method];result=r['result'];case=run/method/c['case_id']
+            r=c[method];result=r['result'];case=method_runs[method]/method/c['case_id']
             if method=='DFT':
                 for metal in ('Ca','La'):
                     p=case/(metal+'.out.execution.json');e=read(p)
@@ -80,7 +82,7 @@ def generate(workspace, output):
     stats={}
     for method,job in jobs.items():
         s=accounting['rows'][job];times=[r[method+'_seconds'] for r in rows]
-        resources=run/(method+'_job_'+job+'.resources.txt')
+        resources=method_runs[method]/(method+'_job_'+job+'.resources.txt')
         if not resources.is_file():raise ValueError('final process resource receipt missing')
         stats[method]={'job_id':job,'job_state':s['state'],
                        'latency_seconds':{'min':min(times),'median':statistics.median(times),'max':max(times),'sum':sum(times)},
@@ -112,6 +114,7 @@ def generate(workspace, output):
     recommendation=('use_frozen_masked_MACE_as_opt_in_PQQ_screen' if speed_pass and fidelity_pass else
                     'do_not_adopt_for_claimed_PQQ_speed_utility_on_this_evidence')
     result={'status':'complete','manifest':record(run/'manifest.json'),
+            'method_manifests':paired['method_manifests'],
             'reference_fidelity':record(work/'accuracy_v1/result.json'),
             'rows':rows,'methods':stats,'endpoint_receipts':endpoints,
             'median_pair_speedup':speed,'total_case_speedup':total_ratio,
@@ -153,4 +156,5 @@ def generate(workspace, output):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--workspace',required=True);p.add_argument('--output',required=True)
+    p.add_argument('--mace-run')
     print(json.dumps(generate(**vars(p.parse_args())),indent=2))

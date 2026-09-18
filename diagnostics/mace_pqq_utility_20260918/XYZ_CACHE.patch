@@ -1,0 +1,44 @@
+--- source_v4/affordable_common.py
++++ source_v5/affordable_common.py
+@@ -116,6 +116,11 @@
+ 
+ 
+ def xyz(path):
++    from mace_file_checks import cached_xyz
++    return cached_xyz(path, _xyz_uncached)
++
++
++def _xyz_uncached(path):
+     lines = Path(path).read_text().splitlines()
+     if len(lines) < 2 or int(lines[0]) != len(lines) - 2:
+         raise InvalidArtifact(f"invalid XYZ length: {path}")
+--- source_v4/mace_file_checks.py
++++ source_v5/mace_file_checks.py
+@@ -47,3 +47,27 @@
+             common.digest=original
+             _CACHE.reset(token)
+     return run
++
++
++def cached_xyz(path, parser):
++    """Reuse immutable parsed atoms only inside an existing verification operation.
++
++    Every lookup checks file identity, mtime and ctime, including NFS revalidation.
++    Return a fresh list so callers cannot mutate the saved coordinate sequence.
++    The strict original parser, its float conversion and all errors are retained.
++    """
++    cache = _CACHE.get()
++    if cache is None:
++        return parser(path)
++    p = Path(path)
++    before = identity(p)
++    key = ('parsed_xyz', str(p.absolute()), before)
++    stable = max(before[-2:]) < time.time_ns() - 2_000_000_000
++    rows = cache.get(key) if stable else None
++    if rows is None:
++        rows = tuple(parser(path))
++    if identity(p) != before:
++        raise common.InvalidArtifact(f'artifact changed during XYZ parsing: {p}')
++    if stable:
++        cache[key] = rows
++    return list(rows)

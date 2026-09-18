@@ -2751,3 +2751,31 @@ Next:declareunchangedtypedvacuum modelcalibration attempt on25existingcanonical
 PQQfull-preparations;inventoryidentified butnonewmanifest/launchyet. Retainall
 oldresults,groupingfailure,baseline/default andevidencestrata. GoalACTIVE,noown
 livejobs,nopush. Stageonlyownfiles andthissessionentry;unrelatededitspreserved.
+
+
+## 2026-09-18 — Same-model typed-group PQQ calibration running
+
+Declared 25-reference calibration under standing discretionary MACE-goal scope.
+Scientific protocol intact_POLAR_medium_typed31_group_vacuum_compatibility_v1
+unchanged; new campaign schema mace_group_canonical.v1,50newcalls and4actual
+crystal endpoint reuses. Source V2 rejects1KB0 for missing peptide structure,
+not TRO as compact handoff claimed; correction pinned before execution.
+All25sources/group preparations ready, no geometry/state/label changes.
+
+Job1201524 RUNNING oneA5000/16CPU/64474MiB. ModelV2manifest SHA
+3509b45a52618c0e61a79ceb7c76db180f06a4f63f36efa1b0d40a5575705192.
+First6endpoints accepted61.38–63.73s each;377.402845s summed inference,peakGPU
+10568285696bytes. No finalcalibration yet. Require complete25pairs and positive
+classgap>.02 for researchbands; retain154pairs,all3transferdenominator andprior
+GGRgroupingfailures. No qualifiedproductiondecisions,baselineunchanged.
+
+Five real source/parser/cache/calibration tests pass238.311s,zeroskips; actual
+partial-report test passes.003s,zeroskips. Archivedenergies testalgebra only.
+Preparation77.917176wall/76.674563CPU-s. LocalV1preflight missed2snapshot
+dependencies,zero molecularcalls/submission;V2fix preservesmodel/settings/all50
+XYZhashes. Bothversions/logs saved;isolatedMACEpreflightpasses. Existingrunner
+locks/cache/recovery reused. Completeintegration tests/cost/report pending.
+
+Plan,sourceclarification,status,commands,vault/currentcheckpoint/agentguide
+updated. Nextcollect/reportactualjob;donotresubmit. GoalACTIVE,nopush/promotion.
+Commit onlyownscope/sessionentry,preserve unrelatedworktreechanges.

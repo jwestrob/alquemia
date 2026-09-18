@@ -77,6 +77,11 @@ Khoury6/9 andparvalbumin4/6 retain their previous supporting-family failures.
 All61numericchecks pass; threegrouping shifts2.51–3.28 failthe retained2gate,
 althoughall22directional outcomes remainunchanged. No absolutecalibration or
 defaultchange. [Completed operations](../diagnostics/mace_group_transfer_20260918/COMMANDS.md).
+The [same-model PQQ calibration attempt](../diagnostics/mace_group_canonical_20260918/PLAN.md)
+has job1201524 submitted:50 new endpoints on25 existing references, four crystal
+endpoints reused, no result yet. Research bands require a complete positive
+class gap; previous grouping failures remain. Baseline unchanged.
+[Operations and missing-source correction](../diagnostics/mace_group_canonical_20260918/COMMANDS.md).
 Recover the [live checkpoint](../diagnostics/mace_discriminator_goal_20260916/CURRENT.md)
 and inspect actual jobs before submitting research work.
 

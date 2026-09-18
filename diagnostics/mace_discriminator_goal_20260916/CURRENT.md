@@ -6,6 +6,47 @@ text does not revoke his direct instruction to proceed without repeated approval
 Preserve baseline/default, immutable records and concurrent work. No push,
 promotion or project CPU/time budget. Recover GOAL.md and actual live jobs.
 
+## Current: same-model PQQ calibration job 1201524 running
+
+The unchanged typed-group vacuum model is being evaluated on all 25 existing
+canonical PQQ full-protein references: 50 new endpoints; four actual crystal
+endpoints reused. New campaign schema `alquemia.mace_group_canonical.v1`, same
+scientific protocol `intact_POLAR_medium_typed31_group_vacuum_compatibility_v1`.
+Job **1201524**, one A5000/16 CPUs/64474 MiB. Inspect actual execution before
+resuming; never duplicate the submission. At execution_progress_v1, six/50 new
+endpoints had succeeded (61.38–63.73 s each); no calibration result yet.
+
+Manifest `workspaces/mace_group_canonical_20260918/model_v2/manifest.json`, SHA
+3509b45a52618c0e61a79ceb7c76db180f06a4f63f36efa1b0d40a5575705192.
+Prepared V1 SHA ecd3783b2669713ed6ef26adde1d4d6ef732331d1e6d9ebe1ce4abe937b2b6f7.
+[Declared plan](../mace_group_canonical_20260918/PLAN.md),
+[source correction](../mace_group_canonical_20260918/SOURCE_CLARIFICATION.md),
+[commands](../mace_group_canonical_20260918/COMMANDS.md).
+
+Frozen bands only if all 25 pairs are complete/numerically valid and
+min(La)-max(Ca)>0.02 model kcal. Otherwise calibration remains unavailable.
+Report all 154 calibration pair orderings; no threshold fitting/outlier removal.
+Crystals are consumed sequence replicates, not blind independent validation.
+1KB0 remains in the transfer denominator as unsupported. Its actual block is
+missing peptide structure, NOT TRO parameterization as the prior compact
+handoff incorrectly said; pinned V2 preparation establishes that reason.
+Prior GGR grouping failures stay visible and production decisions stay null.
+
+Five real source/parser/cache/calibration tests pass in 238.311 s, zero skips.
+Baseline values and an archived failed OMOL panel test algebra only; no invented
+MACE energies. Preparation 77.917176 wall /76.674563 CPU seconds. Model V1
+had a local missing-source-dependency preflight failure, zero molecular calls.
+V2 includes mace_curvature.py/affordable_response.py; all 50 coordinate hashes,
+task settings, model and software unchanged. Both versions/logs preserved.
+The exact MACE-environment preflight passed before submission. An additional
+actual-partial-report test passes in0.003s, zero skips; missing values/classes
+stay null. See the new campaign STATUS.md. Baseline unchanged.
+
+Next: collect partial/final execution with the existing runner and reporter,
+test the actual report, retain numerical/grouping/evidence limitations, and
+record real allocation/inference costs. No new analysis is needed just to
+recover or report this finite run. Goal remains ACTIVE.
+
 ## Complete: typed group vacuum model gives 17/22 raw directions
 
 Job **1201517 completed all 55 MACE evaluations**, with zero molecular failures.
@@ -44,14 +85,14 @@ missing gemmi import and 4e-16 A NumPy norm roundoff. Fixes preserve all 34 grou
 cases and 55 input coordinates/settings. Both preparations total 47.951765 wall /
 47.073242 CPU seconds. Other local and historical costs remain additional.
 
-**Next:** declare a calibration attempt for this SAME model on the 25 existing
+**Follow-up now launched above:** calibration attempt for this SAME model on the 25 existing
 canonical PQQ full-protein preparations. These are already available at:
 
 `workspaces/mace_omol_20260917/intact_panel_prepared_v2/*/preparation.json`
 
 Exactly 25 cases; atom kinds and source fields are compatible with the group
 builder. Also inspect `intact_panel_run_v1/manifest.json` and its label inventory.
-No follow-up plan, manifest or launch exists yet. Do not inherit baseline bands,
+The subsequent plan and launch are recorded above. Do not inherit baseline bands,
 force a threshold if classes overlap, call consumed crystals blind, or hide the
 GGR grouping failures. Jacob explicitly prioritized accuracy testing alongside
 qualification. General scoring CLI and compatible calibration remain incomplete;

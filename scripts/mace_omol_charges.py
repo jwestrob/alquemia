@@ -143,7 +143,14 @@ def accepted(attempt,task,manifest):
 
 
 def execute(manifest,retry_failed=False):
-    validate(manifest);m=read_json(manifest);mp=Path(manifest).resolve();root=mp.parent/'execution';root.mkdir(exist_ok=True)
+    validate(manifest)
+    return execute_prepared(manifest,read_json(manifest),retry_failed)
+
+
+def execute_prepared(manifest,m,retry_failed=False):
+    """Shared native utility executor; caller provides its validated protocol."""
+    if read_json(manifest)!=m:raise InvalidArtifact('validated utility manifest changed')
+    mp=Path(manifest).resolve();root=mp.parent/'execution';root.mkdir(exist_ok=True)
     if not os.environ.get('SLURM_JOB_ID'):raise InvalidArtifact('utilities require an allocation')
     def one(t):
         td=root/t['task_id'];td.mkdir(exist_ok=True);attempts=sorted(td.glob('attempt_*'))

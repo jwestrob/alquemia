@@ -1,0 +1,126 @@
+{
+  "status": "quantum_and_short_complete_environment_pending",
+  "baseline_changed": false,
+  "full_hybrid_score": null,
+  "plan": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/mace_omol_20260917/TRIAL_DENSITY_GK_EXPANSION_PLAN.md",
+    "sha256": "9dd3c328bab4da81debf99451673f42fa9919c341d89efa012fa236a51104c53"
+  },
+  "query_scope": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/mace_omol_20260917/TRIAL_DENSITY_GK_EXPANSION_QUERY_SCOPE.md",
+    "sha256": "f0973a475da7da9a4fe3d7d26d0169d5d2bb4d38fbcc4d3a91c4061f00137741"
+  },
+  "preparation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/trial_gk_expansion_prepared_v1/preparation.json",
+    "sha256": "b168aa72f294f07a8e3312f81a5e9ef1e13a6a5b1b552d48217b1f4b429d69a6"
+  },
+  "frameworks": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/trial_gk_expansion_frameworks_v1/manifest.json",
+    "sha256": "f375f7db597aeeb417e97df607d5581291250e4e2a08d22dcca95938a47e7937"
+  },
+  "environment_boundary": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/trial_gk_expansion_environment_boundary_v1/result.json",
+    "sha256": "d63a3be148093890604e223a3a0767ae4d529d4b69cf0d0f0675e4b5efb9c5c6"
+  },
+  "quantum": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/trial_gk_expansion_collection_v3/result.json",
+    "sha256": "19cc0d29e4049b7f36c174aa8bd3757f205f7bcc010752f406d3171876c70114"
+  },
+  "short": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/trial_gk_expansion_short_v1/collection_job_1201158.json",
+    "sha256": "1addb751de86bd0535249542095ed3da18040ef2bc44eccf64bd04b947b621f8"
+  },
+  "observations": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/trial_gk_expansion_observations_v2/manifest.json",
+    "sha256": "af2f82b88d0709028973fcb6f1b18d6afae29b338dfda2536501b48cb5f5c21d"
+  },
+  "running_observations_job": 1201161,
+  "new_DFT_endpoints_completed": 4,
+  "new_MACE_calls_completed": 8,
+  "environment_initializations": 4,
+  "tests": {
+    "source_inputs": {
+      "passed": 5,
+      "wall_seconds": 10.678
+    },
+    "expansion_preflight": {
+      "passed": 5,
+      "wall_seconds": 5.301
+    },
+    "real_completed_outputs": {
+      "passed": 1,
+      "wall_seconds": 1.547
+    },
+    "observations": {
+      "passed": 4,
+      "wall_seconds": 7.08
+    },
+    "legacy_amoeba": {
+      "passed": 6,
+      "wall_seconds": 3.648
+    },
+    "legacy_tinker": {
+      "passed": 4,
+      "wall_seconds": 2.543
+    },
+    "legacy_charges": {
+      "passed": 4,
+      "wall_seconds": 5.126
+    }
+  },
+  "limitations": [
+    "Two extra GGR structures remain one consumed biological group.",
+    "No complete new hybrid scores yet.",
+    "No fresh vacuum variational check or archived-center comparison is available."
+  ],
+  "input_preparation": {
+    "CPU_seconds": 20.829422494,
+    "wall_seconds": 24.545178350061178
+  },
+  "framework_preparation": {
+    "CPU_seconds": 108.25365611599999,
+    "wall_seconds": 110.919069647789
+  },
+  "boundary_preparation": {
+    "CPU_seconds": 17.835743425,
+    "wall_seconds": 23.505817528814077
+  },
+  "observation_preparation_v1": {
+    "CPU_seconds": 12.945765,
+    "wall_seconds": 14.110909657552838
+  },
+  "observation_preparation_v2": {
+    "CPU_seconds": 12.731442738,
+    "wall_seconds": 13.750023080036044
+  },
+  "cost_so_far": {
+    "jobs": {
+      "1201149": {
+        "status": "failed_preflight_before_DFT",
+        "wall_seconds": 3,
+        "allocated_core_seconds": 192,
+        "CPU_seconds": 2.095702
+      },
+      "1201152": {
+        "status": "failed_snapshot_import_before_DFT",
+        "wall_seconds": 3,
+        "allocated_core_seconds": 192,
+        "CPU_seconds": 2.250785
+      },
+      "1201154": {
+        "status": "completed",
+        "wall_seconds": 232,
+        "allocated_core_seconds": 14848,
+        "CPU_seconds": 12744.437828
+      },
+      "1201158": {
+        "status": "completed",
+        "wall_seconds": 112,
+        "allocated_core_seconds": 1792,
+        "CPU_seconds": 127.215067,
+        "GPU_seconds": 112
+      }
+    },
+    "source_queries_pending": true
+  }
+}

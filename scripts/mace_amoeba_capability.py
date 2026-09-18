@@ -31,10 +31,10 @@ def atom_id(atom):
     return f'{atom.residue.chain.id}/{atom.residue.id}/{atom.residue.insertionCode.strip()}/{atom.name}'
 
 
-def topology(prep):
+def topology(prep, supported_case_ids=CASES):
     """Replay the archived source graph and copy the normalized coordinates."""
     from openmm import app, unit
-    if prep['case_id'] not in CASES or prep['preparation_details']['terminal_additions']:
+    if prep['case_id'] not in supported_case_ids or prep['preparation_details']['terminal_additions']:
         raise InvalidArtifact('unsupported case or added terminal topology')
     physical = prep['physical_atoms']
     by_id = {a['id']: a for a in physical}
@@ -115,7 +115,7 @@ def value(obj):
     return list(obj)
 
 
-def prepare_case(pin, ff_paths, output):
+def prepare_case(pin, ff_paths, output, supported_case_ids=CASES):
     import openmm as mm
     from openmm import app, unit
     start, cpu = time.monotonic(), time.process_time()
@@ -126,7 +126,7 @@ def prepare_case(pin, ff_paths, output):
                   new_energy_calls=0, new_force_calls=0, settings=SETTINGS)
     output.mkdir(exist_ok=False)
     try:
-        top, pos, ids, bonds, water_bonds, metals = topology(prep)
+        top, pos, ids, bonds, water_bonds, metals = topology(prep,supported_case_ids)
         ff = app.ForceField(*map(str, ff_paths))
         unmatched = ff.getUnmatchedResidues(top)
         result['unmatched_residues'] = [dict(chain=r.chain.id, resid=r.id,

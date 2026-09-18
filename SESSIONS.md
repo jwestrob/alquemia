@@ -2083,3 +2083,32 @@ No new pilot job live. Preserve PLM1200796, H2001200809 and other agents' MopB
 jobs/edits. Active goal remains incomplete. Next: freeze passing model, inventory
 wider source-backed real cases and declare grouped validation before scoring.
 No push, production rescore, threshold fitting or default promotion.
+
+
+## 2026-09-18 — Frozen responsive-GK structural transfer: components completed
+
+Declared TRIAL_DENSITY_GK_EXPANSION_PLAN before new scores on consumed GGR2FW0/
+2FVY. No physics/threshold/geometry rescue. Source-backed generic input adapter
+reproduces passing1GLG coordinates and ff19SB field exactly; new4633atom physical
+inputs/58atom alpha-cap cores keep all original exclusions, zero waters and Qenv-5.
+Four responsive DFT endpoints complete1201154 (232wall,14848core-s,12744.437828CPU).
+Two preflight failures1201149/1201152 each3wall/192core-s occurred before DFT;
+roundoff diagnostic equality and missing snapshot import fixed with byte-identical
+science. Qualified existing parser recollects real analytic results from ORCA's
+conditional numerical-gradient warning; no rerun. Primary frozen collection_v3.
+Eight MACE short evaluations complete1201158 (112GPU-s,1792core-s,127.215067CPU).
+Two AMOEBA frameworks and four source-zero native boundary initializations pass.
+No new complete hybrid score yet. Source/parameter/field/charge procedures are
+unchanged; configurable adapters preserve legacy defaults and old archives.
+
+New tests15distinct pass across focusedruns: input5, expansion6, observation4.
+Legacy AMOEBA6/Tinker4/charge4 regressions pass. All tests use real pinned files
+or explicitly corrupted copies. Four CHELPG+four potential queries submitted
+1201161 from trial_gk_expansion_observations_v2; frozenpreflightpasses. v1caught
+missing transitive import before anyutility; retained. Query-scope record marks
+absent historical-center and vacuum diagnostics unavailable, neverzero/passed.
+NEXT: collect actual utility results; four source-boundaryinitializations;
+27static/24field/30response native tasks and all frozen comparisons. No dependent
+placeholder job submitted. Activegoal incomplete; baseline/default unchanged.
+Current/vault and TRIAL_DENSITY_GK_EXPANSION_COMPONENT_STATUS.json record pins,
+actual costs, limitations and livejob. Preserve PLM1200796/H2001200809/MopBjobs.

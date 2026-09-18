@@ -16,7 +16,7 @@ PROTOCOL = 'frozen_framework_Tinker26_2_parameter_capability_v1'
 STATE_CASES = ('GGR_extended', 'ALPHA_1F6S', 'ALPHA_6IP9')
 
 
-def prepare(framework_result, parameters, build_receipt, states, plan, output):
+def prepare(framework_result, parameters, build_receipt, states, plan, output, case_states=None):
     from openmm import app
     parent = read_json(framework_result)
     build = read_json(build_receipt)
@@ -31,12 +31,16 @@ def prepare(framework_result, parameters, build_receipt, states, plan, output):
     start = time.monotonic(); cpu = time.process_time()
     ffpin = read_json(verify(parent['manifest']))['forcefields'][0]
     ff = app.ForceField(str(verify(ffpin)))
-    for row, case, state_case in zip(parent['cases'], CASES, STATE_CASES):
+    declared_cases=tuple(case_states) if case_states is not None else CASES
+    state_cases=declared_cases if case_states is not None else STATE_CASES
+    if not declared_cases or len(parent['cases'])!=len(declared_cases):raise InvalidArtifact('framework case inventory differs')
+    protocol='declared_source_framework_Tinker26_2_parameter_capability_v1' if case_states is not None else PROTOCOL
+    for row, case, state_case in zip(parent['cases'], declared_cases, state_cases):
         if row['case_id'] != case or row['status'] != 'framework_parameterized_no_energy':
             raise InvalidArtifact('declared framework does not match')
         prep = read_json(verify(row['source_preparation']))
         mapping = read_json(verify(row['mapping']))
-        top, positions, ids, bonds, water_bonds, metals = topology(prep)
+        top, positions, ids, bonds, water_bonds, metals = topology(prep,declared_cases)
         if ids != mapping['system_atom_ids']:
             raise InvalidArtifact('framework atom order changed')
         np.testing.assert_array_equal(positions, mapping['positions_A'])
@@ -49,7 +53,7 @@ def prepare(framework_result, parameters, build_receipt, states, plan, output):
             types.extend(int(template.atoms[i].type) for i in matches)
         if len(types) != len(ids):
             raise InvalidArtifact('atom type count differs')
-        state_path = Path(states)/state_case/'state.json'
+        state_path = verify(case_states[case]) if case_states is not None else Path(states)/state_case/'state.json'
         state = read_json(state_path)
         if state['physical_atoms'] != prep['physical_atoms']:
             raise InvalidArtifact('QM support has a different physical system')
@@ -83,9 +87,9 @@ def prepare(framework_result, parameters, build_receipt, states, plan, output):
         write_new(directory/'mapping.json', meta)
         task = dict(case_id=case, xyz=record(directory/'framework.xyz'), key=record(directory/'framework.key'),
                     mask=record(directory/'framework.freeze'), mapping=record(directory/'mapping.json'))
-        task['cache_key'] = cache_key(dict(task=task, parameters=record(parameters), executable=build['executable'], protocol=PROTOCOL))
+        task['cache_key'] = cache_key(dict(task=task, parameters=record(parameters), executable=build['executable'], protocol=protocol))
         tasks.append(task)
-    manifest = dict(protocol=PROTOCOL, plan=record(plan), parent=record(framework_result),
+    manifest = dict(protocol=protocol, plan=record(plan), parent=record(framework_result),
         build_receipt=record(build_receipt), executable=build['executable'], parameters=record(parameters),
         forcefield=ffpin, implementation=[record(p) for p in sorted(impl.glob('*.py'))], tasks=tasks,
         new_energy_calls=0, new_force_calls=0, full_model_qualified=False,

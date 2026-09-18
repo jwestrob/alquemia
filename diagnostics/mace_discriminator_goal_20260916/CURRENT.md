@@ -6,6 +6,60 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
+## Active transfer: two additional GGR structures, components underway
+
+Passing candidate committed 5f7d164. Frozen expansion plan:
+TRIAL_DENSITY_GK_EXPANSION_PLAN.md, two consumed GGR structures 2FW0/2FVY,
+all four new alpha comparisons >0.02, no threshold/physics change. Source-backed
+interface scripts/mace_density_inputs.py reproduces original1GLG coordinates and
+ff19SB generating field exactly; 5 real/corrupted-fixture tests pass10.678s.
+New preparations have4633 physical atoms,58QM atoms,58 projection support atoms,
+exteriorQ=-5,zero waters. Source peptide alpha-cap cores and normalized-H whole
+preparations are reused, with all original exclusions/terminal gaps retained.
+Workspace prefix workspaces/mace_omol_20260917/trial_gk_expansion_*.
+
+Four new quantum endpoints actually completed job1201154 in232wall seconds,
+14848allocatedcore-s,12744.437828CPU-s. Quantum manifest quantum_v3 SHA
+140aee3be233dca06dfd9613d218c6d7d427ef41e045e1a0598e491063553168.
+All native analytic/state/ECP checks pass in collection_v3/result.json; no new
+vacuum endpoints, so variational diagnostic explicitly unavailable. Saved wave-
+functions exist. Old runtime parser falsely rejected ORCA's conditional numerical-
+gradient warning; actual qualified parser53a8ca8 from prior responsive result
+recollected outputs without rerun. Intermediate collections preserved; primary
+collector/parser are frozen under collection_v3/implementation (not mutable root).
+
+Two earlier preflight failures before any DFT:1201149 exact roundoff-diagnostic
+comparison and1201152 missing snapshot import. Each3wall/192allocatedcore-s;
+CPU2.095702/2.250785. Corrected diagnostic comparison within inherited1e-12A
+bound and dependency; all input/XYZ/pointcharge bytes identical. v3 frozen
+preflight passed before submission. No scientific input/criteria change.
+
+Eight MACE short forwards completed1201158:112wall/112GPU-s/1792allocatedcore-s,
+127.215067CPU-s. Source/worker/context manifest short_v1; collection_job_1201158.
+New schema delegates to existing mace_hybrid worker and qualified medium readout.
+Two AMOEBA frameworks plus2native GK parameter reads completed frameworks_v1;
+no energy/response solve yet. Physical parameter preparation110.919070wall/
+108.253656CPU; inputs24.545178wall/20.829422CPU. Optional declared-case helper
+arguments preserve old defaults. OldAMOEBA6tests pass3.648s; oldTinker4pass2.543s.
+Five expansion tests pass5.301s; actual completed output testpass1.547s (6total).
+No quantum/MACE scientific failure. Four source-zero common-cavity native
+initializations now complete; all2pairedenvironment checks pass. No boundary
+energy/response has run yet.
+
+CURRENT: four CHELPG+four49point/ESP nativequeries running1201161, manifest
+trial_gk_expansion_observations_v2. v1frozenpreflight caught missing transitive
+module before anyutility; v2completefrozenpreflight passes. Source scope note
+TRIAL_DENSITY_GK_EXPANSION_QUERY_SCOPE marks historical-center comparison
+unavailable on freshgeometries, notzero/passed. Four newobservation tests pass
+7.080s; oldcharge4tests pass5.126s. Shared utility executor preservesoldbehavior.
+NEXT: collect actual queries, prepare4source-boundaryinitializations and full
+native GK/induction manifest then compare. Reuse
+existing numerical helpers/executors; no fake charge rows. Declared totals:
+8source/reference boundary initializations,4CHELPG+4vpot queries,27static
+energies/24fieldqueries/30responses. Quantum/MACE completed; observation job1201161live. Compact source/cost/status
+record TRIAL_DENSITY_GK_EXPANSION_COMPONENT_STATUS.json.
+Preserve unrelated PLM1200796,H2001200809,MopBjobs. Main goal remainsactive.
+
 ## Latest: responsive trial-density candidate passes development gates
 
 Jobs 1201135 and 1201137 completed. All four alpha-minus-GGR contrasts pass:

@@ -2524,3 +2524,21 @@ only candidate;keepworkinggradients/mappings. Goalremainsactive/uncompleted.
 Next choose a differentphysical/modelquestion before furthercompute;reviewprior
 coupled-response failures. No newpilot oranalyticHessianimplementation launched.
 Onlyscoped ownfiles andthissessionentrycommitted;unrelatedsharedworkpreserved.
+
+
+## 2026-09-18 — Physical donor-coordinate interface and saved gradients complete
+
+New source-defined metal/chi/peptide kinematics preserve actual bonds, source
+atoms, cap chain rules and fixed waters/exterior on all16 matched-hybrid states.
+Three real-fixture tests pass18.098s, no skips. Maximum Jacobian error7.052e-9,
+bond error2.088e-14A. All projected gradients/signs replay real saved outputs.
+Connected2FW0/2FVY donor contrast sensitivity exceeds metal sensitivity; no
+relaxation, curvature or improved discrimination claimed. All scores null.
+
+Zero newDFT/MACE/solver calls or Slurm jobs. Localprep28.044262wall/26.487931CPU-s,
+report0.052886wall-s; tests additional. Protocol matched_hybrid_physical_donor_coordinates_v1.
+Plan/report/compactresult in diagnostics/mace_site_response_20260918; full pins
+and results in matching workspace prepared_v1/report_v1. Agent guide/checkpoint
+and vault note updated. Next declare coupled-model/native validation before
+new scientific output. Goalactive, baseline/default unchanged, no push. Commit
+only scoped own files and this entry; preserve unrelated shared edits.

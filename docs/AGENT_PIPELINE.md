@@ -45,6 +45,10 @@ kcal-equivalent and qualification remains unavailable. Stop expanding/tuning
 this metal-only candidate; preserve the production baseline and research tools.
 [Final transfer result](../diagnostics/mace_omol_20260917/HYBRID_GGR_TRANSFER_REPORT.md)
 and [operations](../diagnostics/mace_omol_20260917/HYBRID_GGR_TRANSFER_COMMANDS.md).
+The [physical donor-coordinate diagnostic](../diagnostics/mace_site_response_20260918/REPORT.md)
+now projects all saved matched-hybrid gradients onto actual donor torsions and
+peptide motions. All geometry checks pass; donor sensitivity is substantial in
+the failed GGR cases. Zero new energy calls; no response correction is available.
 Recover the [live checkpoint](../diagnostics/mace_discriminator_goal_20260916/CURRENT.md)
 and inspect actual jobs before submitting research work.
 

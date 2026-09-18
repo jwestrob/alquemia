@@ -6,6 +6,25 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
+## Complete: physical donor-coordinate gradient diagnostic
+
+Source-defined chi rotations, all coordinating peptide crankshafts and metal
+translations now work on all16 saved matched-hybrid states (8 representations,
+5 structures,2 biological groups). No new DFT/MACE/solver calls. Connected
+2FW0/2FVY donor contrast sensitivity exceeds metal sensitivity; this supports
+considering coupled response, not a favorable score prediction. All original
+metal-only transfer failures remain. All response corrections null.
+
+New scripts mace_site_coordinates.py/mace_site_response.py and three real-fixture
+tests pass18.098s. Geometry J errors<=7.052e-9; bonds<=2.088e-14A. Localprep
+28.044262wall/26.487931CPU-s, report0.052886wall-s. Plan/report/compactresult:
+diagnostics/mace_site_response_20260918. Sourcepins/fullresults in matching
+workspace prepared_v1/report_v1. Vault note filed. No own livejobs.
+
+Next declare a coupled response potential and actual native validation before
+new calculations. Physical coordinates alone do not establish learned curvature
+or affinity accuracy. Baseline/default and failed experiments remain unchanged.
+
 ## Complete: GGR transfer fails; metal-only correction is insufficient
 
 All6jobs1201391–1201394,1201396–1201397 completed16nativeDFT+172MACE,

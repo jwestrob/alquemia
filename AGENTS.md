@@ -8,6 +8,13 @@ Before acting, inspect git status, [SESSIONS.md](SESSIONS.md), the relevant
 experiment's agreement/report, and live jobs. Preserve unrelated edits,
 immutable scientific artifacts and active executors.
 
+**Latest agreed goal, 2026-09-18:** demonstrate PQQ reference fidelity and useful
+measured speed of the existing frozen masked-MACE scorer versus DFT. Recover
+[the new scope](diagnostics/mace_pqq_utility_20260918/GOAL.md) and CURRENT.md.
+New scientific model experiments remain paused; older blanket pilot language
+below does not enlarge this newer agreed scope. Do not use unlabelled hillslope
+predictions as accuracy labels or change the baseline/default.
+
 **Active research goal, 2026-09-16:** build a working, affordable MACE-based
 La/Ca discriminator. Jacob approved autonomous pursuit through failed pilots
 and implementation changes; see [goal and acceptance scope](diagnostics/mace_discriminator_goal_20260916/GOAL.md).

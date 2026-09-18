@@ -2836,3 +2836,36 @@ Progress email accepted bylocalsendmail(return0);mailboxnotindependentlyverified
 Noownlivejobs. Nextinvestigate declaredlocalgroupchargefeature OMOLdescriptor;
 no newmanifestorcalculation yet. GoalACTIVE, baseline/defaultunchanged,nopush.
 Stageonlyscopedchanges andthisentry;unrelatedworktreeeditsremainpreserved.
+
+
+## 2026-09-18 — New approved goal: masked-MACE PQQ fidelity and speed
+
+Jacob: “we can't test on a set that has unproven labels...same fidelity, more
+or less, and faster”; then “set a new goal and proceed.” He cleared the old
+platform goal; replacement active, no token budget. GOAL.md under
+diagnostics/mace_pqq_utility_20260918 records finite25case/50endpoint-per-method
+matched timing, frozen models/preparations/bands, and practical speed criteria.
+No PLM accuracy test or new models. GroupedPOLAR/OMOLgroup-feature stay paused.
+
+Actual archived replay:25/25canonical both;DFT3/3crystals,MACE2/3 with1KB0
+unsupported. All56DFToutputs/receipts reparsed; maskedtwo-call algebra replayed.
+Two parser/algebra tests pass. Canonical prepared-interface guard repaired:
+selectedmetalB supported, legacycrystal normalizedselector explicit. All25
+source audits and3selector tests pass12.595s; no physical/scientific change.
+New isolated interface_source_v2 timing snapshot retained; v3 adds legacy
+selector handling. Running canonicalv2 unaffected. Mutable prototype preserved.
+
+DFT1201561 failed4startup attempts(two cases), noSCF, oneMPI slot exposed.
+Fixedallocation32tasksx1CPU, two16rank endpoints. DFT1201562 andMACE1201566
+are RUNNING onnode-128-512g-8gpu-1 againsttiming_v2, SHA
+7a57fea328c1e11668ec23dab4587acd8bf38c42069c206e693d1126c908df22.
+FirstpairDFT239.7496s,MACE161.1122s;MACEexactscore. DFTdifference−0.0002407
+kcal within0.01tolerance but literalcalibrationboundary givesinconclusive;
+retain this distinction, no movedbands. Collectfullpanel before recommending.
+Scopedcode/docs/vaultupdated; no production/defaultchange orpush. Inspect
+livejobs/status before continuing; never duplicate completed scientific calls.
+
+Final compatibility checks:4source-selector regressions pass14.902s and4existing
+prepared-interface regressions pass28.420s, none skipped. Final sourceV4 accepts
+canonical explicit fields, legacy crystalnormalizedselector and generic
+insertion_code alias; running canonicalV2 snapshot remains unchanged.

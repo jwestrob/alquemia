@@ -6,6 +6,39 @@ text does not revoke his direct instruction to proceed without repeated approval
 Preserve baseline/default, immutable records and concurrent work. No push,
 promotion or project CPU/time budget. Recover GOAL.md and actual live jobs.
 
+## Latest user direction: prioritize utility of the working PQQ model
+
+**Update: agreed execution, 2026-09-18.** Jacob explicitly approved a new goal:
+the frozen working masked-MACE scorer must preserve fidelity on his already
+prepared labelled PQQ set and demonstrate useful speed versus DFT. See
+[agreed scope](../mace_pqq_utility_20260918/GOAL.md). Execute the matched 25-case
+benchmark and reuse the 28-case accuracy inventory. No PLM accuracy claims or
+new models; grouped POLAR and the unlaunched OMOL group-feature trial stay paused.
+This supersedes the discussion-only status in the next paragraph. Jacob cleared
+the old platform goal; the new PQQ fidelity/speed goal is now active without a
+token budget. New benchmark products live under
+`workspaces/mace_pqq_utility_20260918/`; inspect live jobs before resuming.
+
+**Running matched timing:** DFT1201562 (32 tasks/32CPU, no GPU) and MACE1201566
+(16CPU, oneA5000), both onnode-128-512g-8gpu-1, timing_v2 manifest SHA
+7a57fea328c1e11668ec23dab4587acd8bf38c42069c206e693d1126c908df22.
+All25canonical cases once per method, two endpoints each, no geometry/model/
+threshold changes. First pair239.75sDFT vs161.11sMACE; full-panel result pending.
+DFT startup1201561 failed beforeSCF and is preserved. Do not duplicate jobs.
+Reference replaycomplete:25/25both, crystalsDFT3/3,MACE2/3(1KB0unsupported).
+See [status](../mace_pqq_utility_20260918/STATUS.md) and COMMANDS.md. Prepared-input
+source-selector compatibility repaired; current script handles three recorded
+selector schemas. Running immutableV2 canonical adapter remains unchanged.
+
+Jacob paused new model experiments for discussion. Recover
+[the utility discussion and actual PLM inventory](../mace_pqq_utility_20260918/DISCUSSION.md)
+before acting. PLM DFT is complete:137/176scored;94La,22indeterminate,21Ca;39unscored.
+The59-task local-group OMOL manifest was prepared but NEVER submitted.
+Keep it paused; its feature-specific tests and model evaluations have not run.
+Prior blanket autonomy does not override this latest instruction to discuss the
+scientific direction. Current work is read-only inventory and definition of a
+useful test of the existing frozen masked-MACE scorer. No new model/calibration.
+
 ## Current: full calibration and large transfer completed
 
 No own live scientific jobs. Both manifests completed with zero failed endpoints;
@@ -48,12 +81,9 @@ and vault note. Direct weak-site Ca>La affinity is established; 4DZT Ca303
 mapping is a published hypothesis, and PMS covalently modifiesSer222. No scoring
 or preparation was run; keep site ambiguity and inhibitor mismatch explicit.
 
-Next model direction being investigated: local chemical-group charge features
-for OMOL, preserving intact atoms and the existing typed groups. This is a new
-empirical descriptor hypothesis, not trained/validated local electronic states.
-No such manifest or model calculation exists yet; declare its exact test before
-execution. Do not keep enlarging POLAR or reopening closed mechanical paths.
-Goal ACTIVE; no promotion/push, no project compute cap.
+The proposed local-group charge-feature OMOL experiment is paused by Jacob.
+Its model_v2 manifest is prepared and validated,59unexecuted tasks, no submission.
+See the latest user-direction section above. Goal ACTIVE; baseline unchanged.
 
 ## Complete: typed group vacuum model gives 17/22 raw directions
 

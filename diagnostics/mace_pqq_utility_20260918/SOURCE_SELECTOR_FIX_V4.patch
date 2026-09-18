@@ -1,0 +1,35 @@
+--- frozen/mace_omol_prepared.py
++++ selector_fixed_v4/mace_omol_prepared.py
+@@ -4,6 +4,7 @@
+ import copy
+ import importlib.metadata
+ import json
++import re
+ from pathlib import Path
+ import sys
+ import numpy as np
+@@ -49,9 +50,22 @@
+         raise InvalidArtifact('duplicate/synthetic fragment atom in whole-chain input')
+     # Existing explicit ligand/water exclusions remain visible; do not reduce a
+     # multisite source to the singleton model merely because a preparation did.
+-    metals=[r for r in details['source_residue_inventory'] if r['chain']=='A' and
++    selected=row['selected_site']
++    if 'chain' not in selected:
++        # Earlier crystal records use the equivalent normalized-selector form.
++        match=re.fullmatch(r'([^:]+):([A-Z]{1,3})(-?\d+)([A-Za-z]?)/([^/]+)',
++                           selected.get('normalized_selector',''))
++        if match is None:raise InvalidArtifact('unsupported selected source metal selector')
++        chain,resname,resnum,icode,_=match.groups()
++        selected={'chain':chain,'resname':resname,'resnum':resnum,'icode':icode}
++    metals=[r for r in details['source_residue_inventory'] if r['chain'] in ('A',selected['chain']) and
+             r['resname'] in ('CA','LA','CE','PR','ND','SM','EU','GD','TB','DY','HO','ER','TM','YB','LU','Y')]
+-    if len(metals)!=1:raise InvalidArtifact('single metal-bearing chain required; multisite input unsupported')
++    matching=[r for r in metals if r['chain']==selected['chain'] and
++              str(r['resid'])==str(selected['resnum']) and
++              r['icode']==selected.get('icode',selected.get('insertion_code')) and
++              r['resname']==selected['resname']]
++    if len(metals)!=1 or len(matching)!=1:
++        raise InvalidArtifact('one explicitly selected source metal required; multisite input unsupported')
+     for m in ('La','Ca'):
+         e=p['endpoints'][m];coords=xyz(verify(e['xyz']));wanted=[(m if a['element']=='M' else a['element'],*a['xyz_A']) for a in expected]
+         charge=q+cq+(3 if m=='La' else 2)

@@ -43,7 +43,12 @@ def prepare(assessment,output):
     out=Path(output).resolve();out.mkdir(parents=True,exist_ok=False)
     _,md,m=common(verify(p['inventory']),verify(p['software']),verify(initial['agreement']),out/'mace',STAGE)
     states={};excluded={};tasks=[];quantum=[]
-    qr=out/'quantum';qr.mkdir();qpins=snapshot(qr,m['implementation'])
+    unavailable={name+'_'+metal:{'reason':state['prediction']['status'],'prediction':state['prediction']}
+                 for name,row in a['rows'].items() for metal,state in row.items()
+                 if name+'_'+metal not in selected}
+    qr=out/'quantum';qr.mkdir()
+    parent_quantum=read_json(verify(r['quantum']['manifest']))
+    qpins=snapshot(qr,(*m['implementation'],*parent_quantum['implementation']))
     for key,item in selected.items():
         name,metal=item['case_id'],item['metal'];c=read_json(verify(p['cases'][name]));original=read_json(verify(c['source_mapping']));repair=read_json(verify(original['source_preparation']))
         graph,coords,pos,mk,_,_=physical_model(repair);u=item['prediction']['displacement_A']
@@ -57,11 +62,14 @@ def prepare(assessment,output):
            'input':record(ip),'xyz':record(xp),'output_path':str(d/'endpoint.out'),'engrad_path':str(d/'endpoint.engrad'),
            'task_type':'analytic_gradient','source_mapping':p['cases'][name],'displacement_A':u,'assessment':record(assessment)}
         t['cache_key']=cache_key({'task':t,'method':METHOD,'protocol':POLICY,'implementation':qpins});quantum.append(t)
+    # Preserve the existing matched-H runner's largest-core-first task policy.
+    quantum.sort(key=lambda t:(-len(xyz(verify(t['xyz']))),t['task_id']))
     top={'protocol_id':POLICY,'assessment':record(assessment),'states':states,'excluded':excluded,'agreement':initial['agreement'],
          'new_DFT_calls':len(quantum),'new_MACE_gradient_calls':len(tasks),'implementation':m['implementation'],
+         'unavailable_predictions':unavailable,
          'preparation_wall_seconds':time.monotonic()-start,'preparation_CPU_seconds':time.process_time()-cpu}
     write_new(out/'preparation.json',top)
-    if not states:return {'status':'no_supported_native_points','preparation':record(out/'preparation.json'),'excluded':excluded}
+    if not states:return {'status':'no_supported_native_points','preparation':record(out/'preparation.json'),'excluded':excluded,'unavailable_predictions':unavailable}
     m.update(protocol_id=POLICY,model=gradient_model(verify(p['software'])),gradient_settings=CONFIG,core_report=gm['core_report'],
              minimum_preparation=record(out/'preparation.json'),tasks=tasks)
     check_parent(m);seal(md,m)
@@ -143,20 +151,26 @@ def report(prepared,quantum,mace,output):
         scores[name]={'static_R_kcal_scale':base,'actual_delta_R_kcal_scale':delta,'actual_R_kcal_scale':None if delta is None else base+delta,
                       'endpoint_validated_delta_R_kcal_scale':valid,'qualified_R_kcal_scale':None,'calibrated_class':None}
     x,y=[scores[name] for name in ('GGR_extended','GGR_connected')]
-    partition={'response_difference_kcal':None,'final_difference_kcal':None,'pass':False}
+    raw_response=None if x['actual_delta_R_kcal_scale'] is None or y['actual_delta_R_kcal_scale'] is None else y['actual_delta_R_kcal_scale']-x['actual_delta_R_kcal_scale']
+    raw_final=None if x['actual_R_kcal_scale'] is None or y['actual_R_kcal_scale'] is None else y['actual_R_kcal_scale']-x['actual_R_kcal_scale']
+    partition={'response_difference_kcal':None,'final_difference_kcal':None,'pass':False,
+               'actual_response_difference_kcal':raw_response,'actual_final_difference_kcal':raw_final,
+               'actual_response_threshold_pass':None if raw_response is None else abs(raw_response)<=2,
+               'actual_final_threshold_pass':None if raw_final is None else abs(raw_final)<=2}
     if all(v['endpoint_validated_delta_R_kcal_scale'] is not None for v in (x,y)):
         d=y['endpoint_validated_delta_R_kcal_scale']-x['endpoint_validated_delta_R_kcal_scale'];final=y['actual_R_kcal_scale']-x['actual_R_kcal_scale']
-        partition={'response_difference_kcal':d,'final_difference_kcal':final,'pass':abs(d)<=2 and abs(final)<=2}
+        partition.update(response_difference_kcal=d,final_difference_kcal=final,pass_=abs(d)<=2 and abs(final)<=2)
+        partition['pass']=partition.pop('pass_')
     for row in scores.values():
         if partition['pass'] and row['endpoint_validated_delta_R_kcal_scale'] is not None:row['qualified_R_kcal_scale']=row['actual_R_kcal_scale']
     contrasts=[]
     for alpha in ('ALPHA_1F6S','ALPHA_6IP9'):
         for ggr in ('GGR_extended','GGR_connected'):
             x,y=scores[alpha],scores[ggr];original=x['static_R_kcal_scale']-y['static_R_kcal_scale'];raw=None if x['actual_R_kcal_scale'] is None or y['actual_R_kcal_scale'] is None else x['actual_R_kcal_scale']-y['actual_R_kcal_scale'];q=None if x['qualified_R_kcal_scale'] is None or y['qualified_R_kcal_scale'] is None else x['qualified_R_kcal_scale']-y['qualified_R_kcal_scale']
-            contrasts.append({'alpha':alpha,'GGR':ggr,'static_margin_kcal':original,'actual_margin_kcal':raw,'qualified_margin_kcal':q,'qualified_direction_pass':q is not None and q>.02})
+            contrasts.append({'alpha':alpha,'GGR':ggr,'static_margin_kcal':original,'actual_margin_kcal':raw,'actual_direction_pass':None if raw is None else raw>.02,'qualified_margin_kcal':q,'qualified_direction_pass':q is not None and q>.02})
     out=Path(output).resolve();out.mkdir(parents=True,exist_ok=False);source=out/'report_source.py';source.write_bytes(Path(__file__).read_bytes())
-    result={'status':'complete','protocol_id':POLICY,'prepared':record(prepared),'quantum':qc,'MACE':mc,'implementation':record(source),'rows':rows,'scores':scores,'partition':partition,'contrasts':contrasts,'all_four_direction_gate':all(c['qualified_direction_pass'] for c in contrasts),'excluded':top['excluded'],'baseline_changed':False,'all_cases_consumed_development':True,'aqueous_score':None,'entropy_correction':None,'report_wall_seconds':time.monotonic()-start,'report_CPU_seconds':time.process_time()-cpu}
-    write_new(out/'result.json',result);return {k:result[k] for k in ('status','scores','partition','contrasts','all_four_direction_gate')}
+    result={'status':'complete','protocol_id':POLICY,'prepared':record(prepared),'quantum':qc,'MACE':mc,'implementation':record(source),'rows':rows,'scores':scores,'partition':partition,'contrasts':contrasts,'all_four_actual_direction_gate':all(c['actual_direction_pass'] is True for c in contrasts),'all_four_direction_gate':all(c['qualified_direction_pass'] for c in contrasts),'excluded':top['excluded'],'unavailable_predictions':top['unavailable_predictions'],'baseline_changed':False,'all_cases_consumed_development':True,'aqueous_score':None,'entropy_correction':None,'report_wall_seconds':time.monotonic()-start,'report_CPU_seconds':time.process_time()-cpu}
+    write_new(out/'result.json',result);return {k:result[k] for k in ('status','scores','partition','contrasts','all_four_actual_direction_gate','all_four_direction_gate')}
 
 
 if __name__=='__main__':

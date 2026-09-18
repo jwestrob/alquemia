@@ -2442,3 +2442,24 @@ bounded-result update. Baseline/default unchanged, goal unfinished, no push or
 production rescore. Continue collecting the specific live jobs, then assess
 and execute only their predeclared eligible native checks. Preserve unrelated
 shared edits and other agents' work.
+
+
+## 2026-09-18 — Matched vacuum response improves actual alpha/GGR ordering
+
+Jobs1201385–1201390 completed244MACE+8nativeDFT,zero scientific failures.
+Actual alpha-minus-GGR margins now+13.202491/+11.178967(1F6S) and
++10.796095/+8.772571(6IP9):4/4 versusstatic2/4,two consumed biological groups.
+All8energy/magnitude checks pass;27/29individual native checks. Two radial
+signs fail(alpha1Ca/GGRextendedCa), final partition2.023524 fails2.0 while
+response partition1.905028 passes. Qualified scores remainnull; no gate change.
+
+Native helper now snapshots complete quantum dependencies, orders large cores
+first, and records unavailable predictions/raw diagnostics separately. Primary
+native_report_v2 pins reporter/receipts;v1 preserved. Four actual fixture/replay
+regressions pass16.211s,none skipped. complete_cost_v1:3882GPUallocation-s,
+101408allocatedcore-s,40115.518reportedCPU-s;local and historical reuse separate.
+Report/runbook/current/agent guide/vault updated. Authorized result email relay
+accepted0(update_email_v1);delivery not independently confirmed. Baseline/default
+unchanged,no own livejobs,no push. Research goal remainsopen. Next inspect and
+declare unchanged-method transfer to already consumed GGR2FW0/2FVY,not yetrun.
+Only scoped own changes and this session entry staged; unrelated edits preserved.

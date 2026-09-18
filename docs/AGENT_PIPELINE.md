@@ -7,7 +7,7 @@ operational/status prose; dated experiments and their numerical records remain
 immutable. The baseline remains the default. Broad La/Ca affinity discrimination
 has not been established. The [active MACE goal](../diagnostics/mace_discriminator_goal_20260916/GOAL.md) continues through intermediate failed pilots; production remains unchanged.
 
-**Latest research result:** the complete frozen-response conductor correction
+**Earlier research result:** the complete frozen-response conductor correction
 provides no overall improvement over the preceding GK hybrid:4/12 directional
 comparisons remain correct. Parvalbumin EF improves, alpha-lactalbumin regresses.
 All56 new solves complete and paired grid changes are small; earlier endpoint
@@ -31,11 +31,13 @@ supports a conditional response component, not broader classification accuracy.
 Four new analytic DFT and eight short MACE calls took217CPU-allocation wall seconds
 and81GPU seconds; GGR/native grids were reused. No free-minimum or entropy claim.
 [Commands](../diagnostics/mace_omol_20260917/BOUNDED_METAL_RESPONSE_COMMANDS.md).
-Baseline remains default. A separate [matched vacuum hybrid response pilot](../diagnostics/mace_omol_20260917/MATCHED_H_RESPONSE_PLAN.md)
-is now running:12new center gradients reproduce the archived energies exactly;
-216whole-protein grid calls are in progress. Its gradient and energy both belong
-to the existing normalized-H vacuum hybrid. The CPCM correction is not reused.
-[Operations](../diagnostics/mace_omol_20260917/MATCHED_H_RESPONSE_COMMANDS.md).
+**Latest: matched vacuum hybrid response improves raw alpha/GGR ordering from
+2/4 to 4/4**, with actual margins +8.77 to +13.20 kcal-equivalent. All eight
+native energy checks pass, but two radial signs and the final 2.024 kcal
+partition difference fail qualification; qualified scores stay null. These
+consumed comparisons represent two biological groups. Production remains default.
+[Result and costs](../diagnostics/mace_omol_20260917/MATCHED_H_RESPONSE_REPORT.md)
+and [operations](../diagnostics/mace_omol_20260917/MATCHED_H_RESPONSE_COMMANDS.md).
 Recover the [live checkpoint](../diagnostics/mace_discriminator_goal_20260916/CURRENT.md)
 and inspect actual jobs before submitting research work.
 

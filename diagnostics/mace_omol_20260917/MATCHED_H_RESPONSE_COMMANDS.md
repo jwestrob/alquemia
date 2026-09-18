@@ -57,3 +57,25 @@ report commands. Report requires --prepared (minimum preparation JSON), --quantu
 It separates actual exploratory, endpoint-validated and partition-qualified
 contrasts; all four alpha/GGR comparisons must pass their original0.02margin.
 Actual submitted paths/receipts will be recorded after the initial assessment.
+
+## Actual native stage, 2026-09-18
+
+All228initial calls completed. Assessment_v1 passed the frozen numerical criteria
+on all eight states. Minimum_v1 froze eight physically eligible points before
+native outputs. Jobs1201389(quantum) and1201390(MACE) completed;
+submission.json files retain exact commands. Three native-preparation tests pass
+7.134s. Both frozen implementation preflights passed.
+
+Replay the completed report without new inference:
+
+```bash
+/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python scripts/mace_omol_hybrid_minimum.py report --prepared workspaces/mace_omol_hybrid_response_20260918/minimum_v1/preparation.json --quantum workspaces/mace_omol_hybrid_response_20260918/minimum_v1/quantum/manifest.json --mace workspaces/mace_omol_hybrid_response_20260918/minimum_v1/mace/manifest.json --output workspaces/mace_omol_hybrid_response_20260918/native_report_replay_v1
+```
+
+No numerical quantum derivative or geometry optimization is invoked. Keep
+actual exploratory ordering distinct from energy/gradient/partition qualification.
+
+Primary result is native_report_v2/result.json. Version1 remains intact; version2
+exposes actual partition and ordering diagnostics even when qualification fails.
+All four raw directions pass; fully qualified decisions remain unavailable.
+See MATCHED_H_RESPONSE_REPORT.md for native checks, measured costs and limits.

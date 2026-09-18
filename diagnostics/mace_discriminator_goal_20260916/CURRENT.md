@@ -6,30 +6,29 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
-## Running: matched vacuum hybrid response
+## Complete: matched vacuum hybrid response improves all four raw directions
 
-The previous bounded pilot was progress, but still0/2directions. New declared
-MATCHED_H_RESPONSE_PLAN.md tests response on the earlier normalized-H vacuum
-hybrid with its OWN gradient:DFTvac+Tfull−Tcore. Cheap curvature is Hessian(Tfull),
-so replacing DFTcore curvature with learnedcore curvature cancels the subtractive
-core. No reuse of incompatible CPCM response values. Same0.20A sphere, all four
-representations, both metals; allfour final alpha/GGR margins must exceed0.02
-and both final/response GGR partition shifts must be<=2. No threshold tuning.
+Jobs1201385–1201390 completed:244newMACE+8nativeDFT, no execution failures.
+Actual alpha-minus-GGR margins now all correct:1F6S +13.202491/+11.178967;
+6IP9 +10.796095/+8.772571 (extended/connected). Static was2/4; response4/4.
+Two biological groups, consumed development, no absolute calibrated decisions.
+All8energy and magnitude checks pass;27/29individual native checks pass. Two
+radial signs fail (alpha1Ca/GGRextendedCa overshoot); final partition2.023524
+fails frozen2.0, response partition1.905028 passes. All qualified scores null.
+Do not loosen gates or claim broad validation. No production/default change.
 
-Initial prepared_v1 under workspaces/mace_omol_hybrid_response_20260918. New
-center job1201385completed12analytic MACE calls; all scalar energies exactly
-match archives. Two original normalized GGR whole gradients reused by actual
-input/receipt identity. Whole grids1201386/1201387/1201388 are running (72calls
-each); no new DFT yet. Explicit collections_v1.json and commands in
-MATCHED_H_RESPONSE_COMMANDS.md. Native conditional module is implemented but
-unexecuted until positive, converged predictions and unchanged donors pass.
-It permits atmost8newDFT/16matchingMACEgradient calls, with every point frozen.
+Primary native_report_v2/result.json preserves raw versus qualified fields;
+v1 remains intact. All228initial numerical calls pass. Four actual native/grid/
+input regressions pass16.211s,none skipped;8earlier tests already passed.
+Report MATCHED_H_RESPONSE_REPORT.md and runbook in diagnostics/mace_omol_20260917.
+Workspace workspaces/mace_omol_hybrid_response_20260918/. complete_cost_v1:
+3882GPUallocation-s,101408allocatedcore-s,40115.518reportedCPU-s. Reused centers
+have separate historical cost; local housekeeping not fully profiled. Goal open.
 
-Three initial source/grid/corrupted-input tests pass29.414s; frozen GPU preflight
-passes. Five existing matched-H regressions pass9.147s. New modules mace_omol_hybrid_response.py,mace_omol_hybrid_minimum.py;
-small existing OMOL/matched-H stage dispatch, no worker/Hamiltonian changes.
-Scoped commit follows this checkpoint. Preserve baseline/default,
-other work and all frozen snapshots; inspect actual jobs before any resubmission.
+Next priority: unchanged-method transfer to already consumed GGR2FW0/2FVY,
+where direct MACE failed. Prepare/declare exact source-backed cores and finite
+inventory first. Existing primary native checks are complete; no live own jobs.
+No extra inference/quantum pilot has yet run for this transfer.
 
 ## Latest: bounded response complete; margins improve, directions still fail
 

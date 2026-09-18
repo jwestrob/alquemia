@@ -103,9 +103,10 @@ def generate(workspace, output):
         peak_cuda_reserved_bytes=max(r['peak_cuda_reserved_bytes'] for r in mace_results),
         maximum_worker_process_RSS_KiB=max(r['peak_host_RSS_KiB'] for r in mace_results))
     speed=statistics.median(r['speedup'] for r in rows)
+    median_latency_ratio=stats['DFT']['latency_seconds']['median']/stats['MACE']['latency_seconds']['median']
     total_ratio=stats['DFT']['latency_seconds']['sum']/stats['MACE']['latency_seconds']['sum']
     raw_job_ratio=stats['DFT']['allocation_seconds']/stats['MACE']['allocation_seconds']
-    speed_pass=speed>=m['speed_target'] and total_ratio>1
+    speed_pass=median_latency_ratio>=m['speed_target'] and total_ratio>1
     reproduction_pass=all(s['within_declared_reproduction_tolerance']==25 for s in stats.values())
     fidelity_pass=stats['MACE']['literal_correct']==25 and reproduction_pass
     recommendation=('use_frozen_masked_MACE_as_opt_in_PQQ_screen' if speed_pass and fidelity_pass else
@@ -114,6 +115,7 @@ def generate(workspace, output):
             'reference_fidelity':record(work/'accuracy_v1/result.json'),
             'rows':rows,'methods':stats,'endpoint_receipts':endpoints,
             'median_pair_speedup':speed,'total_case_speedup':total_ratio,
+            'ratio_of_median_latencies':median_latency_ratio,
             'whole_allocation_speedup':raw_job_ratio,
             'speed_target':m['speed_target'],'speed_gate_pass':speed_pass,'fidelity_gate_pass':fidelity_pass,
             'recommendation':recommendation,'baseline_changed':False,'default_promotion':False,
@@ -132,7 +134,8 @@ def generate(workspace, output):
     with (out/'scores_and_timings.tsv').open('x') as f:
         w=csv.DictWriter(f,fieldnames=list(rows[0]),delimiter='\t');w.writeheader();w.writerows(rows)
     lines=['# Frozen masked-MACE PQQ utility comparison','',f'Recommendation: **{recommendation}**.',
-           '',f'Median paired speedup **{speed:.3f}×**; total case speedup **{total_ratio:.3f}×**; '
+           '',f'Ratio of median scoring times **{median_latency_ratio:.3f}×**; '
+           f'median paired speedup **{speed:.3f}×**; total case speedup **{total_ratio:.3f}×**; '
            f'whole-allocation speedup **{raw_job_ratio:.3f}×**.',
            '', '| Method | Literal correct / 25 reruns | Reproduced within 0.01 / 25 | Median seconds | Total seconds |',
            '|---|---:|---:|---:|---:|']
@@ -144,7 +147,8 @@ def generate(workspace, output):
             '', 'Exact costs, startup failures, endpoint receipts and all28archived references are linked in result.json.',
             'All25fresh paired rows are in scores_and_timings.tsv. Production default unchanged.']
     (out/'REPORT.md').write_text('\n'.join(lines)+'\n')
-    return {'result':record(out/'result.json'),'recommendation':recommendation,'median_pair_speedup':speed}
+    return {'result':record(out/'result.json'),'recommendation':recommendation,
+            'ratio_of_median_latencies':median_latency_ratio,'median_pair_speedup':speed}
 
 
 if __name__=='__main__':

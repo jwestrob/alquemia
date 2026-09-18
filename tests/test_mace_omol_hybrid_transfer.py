@@ -47,4 +47,54 @@ class TransferTests(unittest.TestCase):
             p=Path(td)/'corrupted_actual_charge.json';p.write_text(json.dumps(m))
             with self.assertRaises(InvalidArtifact):validate(p)
 
+    @unittest.skipUnless((BASE/'minimum_v1/preparation.json').exists(),'requires actual transfer grids and fixed native points')
+    def test_actual_predictions_and_native_source_coordinates(self):
+        from mace_omol_hybrid_transfer_minimum import inputs
+        ap=BASE/'assessment_v1/result.json';a,p,cases,selected=inputs(ap)
+        top=read_json(BASE/'minimum_v1/preparation.json')
+        self.assertEqual(len(selected),8);self.assertEqual(top['excluded'],{})
+        self.assertEqual(validate(BASE/'minimum_v1/mace/manifest.json')['tasks'],16)
+        self.assertEqual(validate_quantum(BASE/'minimum_v1/quantum/manifest.json')['status'],'dry_run_pass')
+        for key,state in top['states'].items():
+            name,metal=state['case_id'],state['metal'];c=cases[name];u=np.array(selected[key]['prediction']['displacement_A'])
+            self.assertLessEqual(np.linalg.norm(u),.20+1e-10)
+            positions=[]
+            for kind,e in [('core',c['endpoints'][metal]),('full',p['fulls'][c['global_id']][metal])]:
+                old=xyz(verify(e['xyz']));new=xyz(verify(state['endpoints'][kind]['xyz']));i=e['metal_index']
+                self.assertEqual(old[:i]+old[i+1:],new[:i]+new[i+1:])
+                np.testing.assert_allclose(np.array(new[i][1:])-old[i][1:],u,atol=5e-10,rtol=0)
+                positions.append(new[i][1:])
+            np.testing.assert_allclose(*positions,atol=5e-10,rtol=0)
+        corrupted=copy.deepcopy(a);corrupted['rows']['GGR_2FW0_connected']['Ca']['prediction']['displacement_A'][0]+=.01
+        with tempfile.TemporaryDirectory() as td:
+            path=Path(td)/'corrupted_actual_prediction.json';path.write_text(json.dumps(corrupted))
+            with self.assertRaises(InvalidArtifact):inputs(path)
+
+    @unittest.skipUnless((BASE/'report_v1/result.json').exists(),'requires all actual native transfer outputs')
+    def test_actual_transfer_report_algebra_and_complete_denominator(self):
+        from mace_omol_hybrid_transfer_minimum import report
+        archived=read_json(BASE/'report_v1/result.json')
+        with tempfile.TemporaryDirectory() as td:
+            output=Path(td)/'replay'
+            report(BASE/'minimum_v1/preparation.json',BASE/'minimum_v1/quantum/manifest.json',BASE/'minimum_v1/mace/manifest.json',output)
+            actual=read_json(output/'result.json')
+        for key in ('rows','scores','partition','contrasts'):
+            self.assertEqual(actual[key],archived[key])
+        self.assertEqual(len(actual['contrasts']),12)
+        self.assertEqual(sum(c['reused_comparison'] for c in actual['contrasts']),4)
+        self.assertEqual(actual['biological_groups'],2)
+        reference=read_json(verify(actual['reference_report']))
+        for name,s in actual['scores'].items():
+            ca,la=[actual['rows'][name+'_'+metal] for metal in ('Ca','La')]
+            self.assertEqual(s['actual_delta_R_kcal_scale'],ca['actual_energy_change_kcal_mol']-la['actual_energy_change_kcal_mol'])
+            self.assertIsNone(s['calibrated_class'])
+        for c in actual['contrasts']:
+            y=(reference['scores']['GGR_'+c['GGR'].rsplit('_',1)[1]] if c['reused_comparison'] else actual['scores'][c['GGR']])
+            x=reference['scores'][c['alpha']]
+            self.assertEqual(c['actual_margin_kcal'],x['actual_R_kcal_scale']-y['actual_R_kcal_scale'])
+            self.assertIsNone(c['qualified_margin_kcal'])
+        self.assertFalse(actual['all_twelve_qualified_directions_pass'])
+        self.assertIsNone(actual['aqueous_score'])
+        self.assertIsNone(actual['entropy_correction'])
+
 if __name__=='__main__':unittest.main()

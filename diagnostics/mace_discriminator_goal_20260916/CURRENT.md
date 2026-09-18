@@ -1,4 +1,4 @@
-# Active MACE discriminator checkpoint — 2026-09-17
+# Active MACE discriminator checkpoint — 2026-09-18
 
 **Goal active; no broadly validated MACE replacement.** Jacob authorized autonomous
 analyses and available resources. Home/project AGENTS now remove the old
@@ -6,35 +6,48 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
-## Running: fixed GGR structural transfer
+## Complete: GGR transfer fails; metal-only correction is insufficient
 
-Declared HYBRID_GGR_TRANSFER_PLAN.md before new outputs. Same energy/model,
-source-backed alpha_caps and connected_segment cores on both2FW0/2FVY,
-normalizedH,zero water,existing source protonation/exclusions,0.20A sphere.
-Compare all12alpha-minus-GGR margins,including four reused1GLG comparisons.
-Both proteins remain two consumed biological groups. Prior qualification failures
-remain failures; no threshold/core/radius adjustment. Baseline unchanged.
+All6jobs1201391–1201394,1201396–1201397 completed16nativeDFT+172MACE,
+zero scientific failures/retries. All8new raw alpha/GGR directions still fail,
+although margins improve8.05–13.84kcal-equivalent. Finalnew margins−4.0334
+through−14.0590. Across3GGRstructures/2cores and2alpha structures:static2/12,
+response4/12 (all successes are prior1GLGcases). Stilltwo biological groups.
+No structural-robustness or broad-affinity gain demonstrated.
 
-Workspace workspaces/mace_omol_hybrid_transfer_20260918/. config.json pins all
-sources. prepared_v1 stopped before inference due to an output-filename bug;
-prepared_v2 complete with all four58/111atom cases. New source-normalization
-helper reproduces both actual archived1GLGcores. Two source tests pass7.613s;
-finite-manifest test initially skipped before manifests existed, then ran and
-passed16.204s. Frozen GPU preflight passed. No scientific failure/retry.
+Newnativechecks21/25pass,sixofeightendpointspass. Both extendedCa energy
+prediction checks fail;2FVYextendedCa interiorgradient fails;2FW0extendedCa
+radialsign fails. All4connected endpoints pass physical checks yet stillfail
+ordering. Final partition5.932741(2FW0),4.870317(2FVY);responsepartition
+2.701406/3.043337. Allfour exceedfrozen2.0. Allqualified scores remainnull,
+including retained original1GLGfailures. No label/radius/threshold changes.
 
-Initial_v1/initial.json pins156MACE+8nativeDFT tasks. Jobs1201391centers(12),
-1201392/1201393grids(72each),1201394quantum(8) are running;inspect before resuming.
-Submission.json files record exact commands. No native-displaced tasks yet.
-New scripts/mace_omol_hybrid_transfer.py implements prep/initial/validate/collect/
-assess; mace_omol_hybrid_transfer_minimum.py adds conditional native prepare/report
-but remains untested on new completed predictions until these jobs finish.
-Existing OMOL/quantum runner dispatch only; no new workflow engine.
+Primary report HYBRID_GGR_TRANSFER_REPORT.md and compactRESULT in
+ diagnostics/mace_omol_20260917. Workspace mace_omol_hybrid_transfer_20260918:
+config.json,prepared_v2,initial_v1,assessment_v1,minimum_v1,report_v1,
+complete_cost_v1. Exact frozen manifests,submissions,reporter,receipts retained.
+Sourceprepared_v1 filename-only failure is preserved,not a scientific retry.
 
-After allinitial tasks complete,run assess --initial initial_v1/initial.json
---output assessment_v1. Then prepare only its fixed eligible native points.
-Do not rerun originals or use absent values. Current native helper must be
-checked on those real artifacts before executing its conditional stage.
-Goalactive;no promotion/push. Prior result email accepted relay after4/4gain.
+Five distinct real source/manifests/nativepoint/actualoutput tests executed:
+two7.613s,finite16.204s(repeated16.158s afterfixedfield guards),nativepoint5.568s,
+finalreport5.216s;initialfinite skip was later executed. Frozenpreflights pass.
+Actualwholecenters reproduce archives exactly;all24odd-axischecks pass.
+Cost3758GPUallocation-s,172768allocatedcore-s,107344.786reportedCPU-s.
+Localunprofiled and priorreferencecosts remain explicit and additional.
+
+Recommendation: retain baseline; stop expanding/tuning this metal-only response
+as the broad replacement. Preserve its useful gradients/source mappings. No
+analytic-Hessian implementation or extra quantum pilot is justified merely to
+make this failed discriminator faster. SELECTED_METAL_HESSIAN_NOTE.md is a
+read-only later engineering option,not an executed/approved-by-result backend.
+
+Goal remainsactive,notcomplete/blocked. No own livejobs and no extra pilot is
+declared. Next choose a different physical/model question from these results,
+with the emphasis on transferable discrimination; do not just widen radius,
+choose the favorable core, or repeat1GLG. Coupled ligand/scaffold response and
+structural-state modeling are possibilities,not validated methods or launched
+experiments. Recover prior coupled-response failures before selecting a plan.
+All authorization/baseline/concurrency constraints still apply; no push/promotion.
 
 ## Complete: matched vacuum hybrid response improves all four raw directions
 

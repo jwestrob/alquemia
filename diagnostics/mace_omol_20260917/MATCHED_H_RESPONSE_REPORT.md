@@ -114,3 +114,10 @@ qualification criteria to rescue this result. The research goal remains open.
 and [PNG](../../workspaces/mace_omol_hybrid_response_20260918/figure_v1/matched_response.png)
 plot all four actual/static contrasts, with the qualification failures shown.
 The export directory pins its script and source; no new inference or statistics.
+
+## Subsequent transfer result, 2026-09-18
+
+The unchanged follow-up on2FW0/2FVY corrected none of eight new directions.
+Across all structures the response reaches4/12 versus2/12static, with additional
+partition failures. This limits the original1GLG improvement above; see the
+[complete transfer report](HYBRID_GGR_TRANSFER_REPORT.md).

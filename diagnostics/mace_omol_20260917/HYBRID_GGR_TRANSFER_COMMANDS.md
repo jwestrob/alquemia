@@ -51,9 +51,11 @@ The same two existing runners consume its quantum/mace manifests. After their
 completion, the report preserves all12raw comparisons and qualification limits:
 
 ```bash
-/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python scripts/mace_omol_hybrid_transfer_minimum.py report --prepared workspaces/mace_omol_hybrid_transfer_20260918/minimum_v1/preparation.json --quantum workspaces/mace_omol_hybrid_transfer_20260918/minimum_v1/quantum/manifest.json --mace workspaces/mace_omol_hybrid_transfer_20260918/minimum_v1/mace/manifest.json --output workspaces/mace_omol_hybrid_transfer_20260918/report_v1
+/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python scripts/mace_omol_hybrid_transfer_minimum.py report --prepared workspaces/mace_omol_hybrid_transfer_20260918/minimum_v1/preparation.json --quantum workspaces/mace_omol_hybrid_transfer_20260918/minimum_v1/quantum/manifest.json --mace workspaces/mace_omol_hybrid_transfer_20260918/minimum_v1/mace/manifest.json --output workspaces/mace_omol_hybrid_transfer_20260918/report_replay_v1
 ```
 
-As of this checkpoint only initial jobs have run. Native preparation/report
-commands are implemented but await actual eligible predictions; do not describe
-those integrations as completed. Production and old experiments remain unchanged.
+All initial and native jobs completed:1201391–1201394,1201396–1201397.
+Actualprimaryresult is report_v1/result.json. The report command above replays
+it into a fresh directory without inference. No own jobs remain. All8new raw
+directions and both structures'partition checks fail. See the final report;
+production and old experiments remain unchanged.

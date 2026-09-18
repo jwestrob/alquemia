@@ -38,10 +38,13 @@ partition difference fail qualification; qualified scores stay null. These
 consumed comparisons represent two biological groups. Production remains default.
 [Result and costs](../diagnostics/mace_omol_20260917/MATCHED_H_RESPONSE_REPORT.md)
 and [operations](../diagnostics/mace_omol_20260917/MATCHED_H_RESPONSE_COMMANDS.md).
-The unchanged-method [GGR structural transfer](../diagnostics/mace_omol_20260917/HYBRID_GGR_TRANSFER_PLAN.md)
-is now running on2FW0/2FVY with both existing core definitions. It tests the
-previous direct-MACE failures; no new affinity labels or favorable-core selection.
-[Operations](../diagnostics/mace_omol_20260917/HYBRID_GGR_TRANSFER_COMMANDS.md).
+**The subsequent GGR structural transfer failed:** all eight new comparisons
+remain misordered on2FW0/2FVY. Across all structures:4/12 raw directions versus
+2/12 static; no new structural robustness. New partition changes are4.87–5.93
+kcal-equivalent and qualification remains unavailable. Stop expanding/tuning
+this metal-only candidate; preserve the production baseline and research tools.
+[Final transfer result](../diagnostics/mace_omol_20260917/HYBRID_GGR_TRANSFER_REPORT.md)
+and [operations](../diagnostics/mace_omol_20260917/HYBRID_GGR_TRANSFER_COMMANDS.md).
 Recover the [live checkpoint](../diagnostics/mace_discriminator_goal_20260916/CURRENT.md)
 and inspect actual jobs before submitting research work.
 

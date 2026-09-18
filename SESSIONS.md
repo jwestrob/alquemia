@@ -2492,3 +2492,35 @@ algebra and figure exports; vault updated. Read-only installed-source note descr
 possible selected3x3 learned Hessian to reduce grids later; no implementation,
 second derivative,test or speedup claimed. No change to currentmanifest/model.
 Baseline/default unchanged,no push/promotion. Preserve unrelated shared work.
+
+
+## 2026-09-18 — GGR transfer complete: improved margins, failed robustness
+
+Allinitial/nativejobs1201391–1201394,1201396–1201397 completed16DFT+172MACE,
+zero scientific failures/retries. Fourwholecenterenergies exactlymatcharchives;
+24odd-axischecks pass. All8fixedpositions donor-preserving. Actual8newalpha/GGR
+margins remainnegative(−4.0334to−14.0590) despite8.05–13.84improvements.
+Combined3structures/2cores/2alphas:static2/12,response4/12,all4successesprior1GLG.
+Two consumed biological groups,no broad/prospectivevalidation. Baselineunchanged.
+
+Native21/25checks pass,sixofeightendpoints. Both extendedCaenergy predictions
+fail;2FVYextendedCa interiorgradient and2FW0extendedCa radialsign fail. Allfour
+connected endpoints passphysicalchecks butstillfailordering. Finalpartition
+5.932741/4.870317 andresponsepartition2.701406/3.043337fail2.0. Qualifiedscores
+remainnull. No rule,core,radius,reference orlabeladjustment torescueoutcome.
+
+Actualassessment,minimum andreport_v1 executed,testedandpinned. Five distinct
+real-fixturetests executed:source2(7.613s),finite(16.204/16.158s),nativepoint
+(5.568s),actualreportreplay(5.216s). Initialfinitepre-manifestskip laterexecuted.
+Initial/sourceV1 filename-only failure preserved,no extra scientificcalculation.
+Completecost3758GPUallocation-s,172768allocatedcore-s,107344.786reportedCPU-s;
+localunprofiled/historicalreusecostadditional. No ownjobsremain.
+
+HYBRID_GGR_TRANSFER_REPORT.md/RESULT.json,commands,current/agentguide,vaultnotes
+updated. Follow-up emailacceptedrelay0(update_email_v1),deliverynotindependently
+confirmed. Earlier1GLGreport nowlinks completedfailedtransfer,originalnumbers
+preserved. No push/defaultpromotion. Recommendstop expanding/tuning this metal-
+only candidate;keepworkinggradients/mappings. Goalremainsactive/uncompleted.
+Next choose a differentphysical/modelquestion before furthercompute;reviewprior
+coupled-response failures. No newpilot oranalyticHessianimplementation launched.
+Onlyscoped ownfiles andthissessionentrycommitted;unrelatedsharedworkpreserved.

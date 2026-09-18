@@ -2676,3 +2676,31 @@ Jacob's standing explicit goal authorization covers this contained pilot.
 Goal active; baseline/default unchanged. No push, no production promotion,
 no interference with unrelated changes/jobs. Commit only own files and this
 turn's scoped session entries.
+
+
+## 2026-09-18 — Charge-group whole-protein trial complete; PQQ gain, broader failure
+
+Jobs1201508/1201513 completed24MACE+24OBC-II evaluations. Declared total passes
+1/7 directions,30/30 numerical and3/3 grouping checks. PQQ4MAE-minus-1H4I
+improves from nativePOLAR/GB -17.628168 to +19.957810modelkcal. All six
+alpha/GGR directions still fail. Four consumed biological groups; baseline
+unchanged, no absolute calibration, broad validation or production promotion.
+
+Vacuum component gets all seven directions but grouping shifts2.51–3.28 fail
+the existing2 criterion. GB reverses all six alpha/GGR comparisons and largely
+cancels grouping sensitivity. This is an algebraic diagnosis, not proof that
+solvent is wrong. Consider a separately frozen vacuum compatibility descriptor
+on additional families; no new scientific manifest/launch yet. Multisite source
+grouping requires explicit implementation; current prep rejects background metals.
+
+Six real tests pass45.957s,zero skips,including actual fullreport replay,
+sign/conversion,missing-solvent behavior,native energy/density/force identity.
+Additional force-rotation checks pass. Total895GPUallocation-s,14320core-s,
+987.336reportedCPU-s includes both setup failures:one preforward dispatch and
+one OOMforward. ZeroDFT/training. Exact costs,failed receipts and source pins
+preserved. Completed report,compactresult,commands and standalonefigures filed;
+currentcheckpoint/agentguide/vault updated. Limited-result email submitted to
+Jacob via sendmail(return0); mailbox delivery not independently verified.
+
+Goal remainsactive. No own livejobs, no push/default change. Only own scoped
+files and this session entry staged; unrelated worktree edits preserved.

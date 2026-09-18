@@ -65,10 +65,12 @@ evidence strata are retained. This static occupancy descriptor does not model
 experimental folding or titration. Neither addition changes the production
 baseline or supplies a broadly validated replacement. Both results have vault
 notes, actual receipts and replay commands. Those two studies have no live jobs.
-A [new charge-group POLAR proposal](../diagnostics/mace_charge_groups_20260918/PROPOSAL.md)
-is running as job 1201508 with seven pinned inputs and 24 model tasks.
-Its charge-group preparation/software checks pass; scientific results are pending.
-[Operations and preserved technical failures](../diagnostics/mace_charge_groups_20260918/COMMANDS.md).
+The [whole-protein charge-group POLAR trial](../diagnostics/mace_charge_groups_20260918/REPORT.md)
+completed 24 MACE and 24 solvent calls. All numerical/grouping checks pass;
+PQQ ordering improves from -17.63 to +19.96 model kcal, but all six alpha/GGR
+directions still fail (1/7 total). Vacuum component directions are promising,
+but its grouping shifts exceed the retained tolerance. No broad validation or
+default change. [Completed operations and failures](../diagnostics/mace_charge_groups_20260918/COMMANDS.md).
 Recover the [live checkpoint](../diagnostics/mace_discriminator_goal_20260916/CURRENT.md)
 and inspect actual jobs before submitting research work.
 

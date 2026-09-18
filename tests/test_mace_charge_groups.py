@@ -11,6 +11,7 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 from affordable_common import InvalidArtifact, read_json, verify, record
 from mace_charge_groups import prepared, validate, kernel_parent_gate
 from mace_group_constraints import GroupRestoration, configure
+from mace_hybrid import accepted_attempt, EV_TO_KCAL
 
 PREP = ROOT / 'workspaces/mace_charge_groups_20260918/groups_v1/preparation.json'
 TRACE = ROOT / 'workspaces/mace_response_trace_20260916/medium_v1/collection_job_1200676.json'
@@ -18,6 +19,73 @@ TRACE = ROOT / 'workspaces/mace_response_trace_20260916/medium_v1/collection_job
 
 @unittest.skipUnless(PREP.exists() and TRACE.exists(), 'pinned real preparations/traces unavailable')
 class GroupTests(unittest.TestCase):
+    @unittest.skipUnless(PREP.parent.parent.joinpath('model_v3/execution/GGR_1GLG_La_one_group/attempt_001/result.json').exists(),
+                         'actual native-limit pilot evaluations unavailable')
+    def test_actual_native_limit_energy_density_and_force(self):
+        mp = PREP.parent.parent / 'model_v3/manifest.json'; m = read_json(mp)
+        old = read_json(ROOT / 'workspaces/mace_global_benchmark_20260916/mace_v1/medium/collection_job_1200701.json')
+        for metal in ('Ca', 'La'):
+            tid = 'GGR_1GLG_' + metal + '_one_group'
+            task = next(t for t in m['tasks'] if t['task_id'] == tid)
+            actual = accepted_attempt(mp.parent / 'execution' / tid / 'attempt_001', task, mp)
+            self.assertIsNotNone(actual)
+            native = old['rows'][tid.replace('one_group', 'primary')]
+            self.assertLessEqual(abs(actual['energy_eV'] - native['energy_eV']) * EV_TO_KCAL, .01)
+            np.testing.assert_allclose(np.load(verify(actual['density_coefficients'])),
+                                       np.load(verify(native['density_coefficients'])), atol=1e-9, rtol=0)
+            np.testing.assert_allclose(np.load(verify(actual['forces'])),
+                                       np.load(verify(native['forces'])), atol=.001, rtol=0)
+
+    @unittest.skipUnless(PREP.parent.parent.joinpath('report_v1/result.json').exists(),
+                         'complete actual model/solvent report unavailable')
+    def test_actual_report_energy_algebra_and_replay(self):
+        from mace_charge_groups import report
+        root = PREP.parent.parent
+        saved = read_json(root / 'report_v1/result.json')
+        self.assertEqual(saved['status'], 'complete')
+        self.assertEqual(len(saved['contrasts']), 7)
+        self.assertEqual(len(saved['grouping_checks']), 3)
+        for case, variants in saved['scores'].items():
+            for variant, score in variants.items():
+                ca, la = [case + '_' + metal + '_' + variant for metal in ('Ca', 'La')]
+                molecular = saved['MACE']['rows']; solvent = saved['solvent']['rows']
+                vacuum = (molecular[ca]['energy_eV'] - molecular[la]['energy_eV']) * EV_TO_KCAL
+                correction = solvent[ca]['GB_reaction_kcal_mol'] - solvent[la]['GB_reaction_kcal_mol']
+                for endpoint in (ca, la):
+                    self.assertEqual(solvent[endpoint]['GB_reaction_kcal_mol'],
+                                     solvent[endpoint]['GB_reaction_kJ_mol'] / 4.184)
+                    self.assertFalse(solvent[endpoint]['direct_Coulomb_included'])
+                self.assertAlmostEqual(score['R_candidate_model_kcal'], vacuum + correction, places=9)
+                self.assertIsNone(score['calibrated_class'])
+        for contrast in saved['contrasts']:
+            hi, lo = [saved['scores'][contrast[k]]['primary']['R_candidate_model_kcal']
+                      for k in ('higher_expected', 'lower_expected')]
+            self.assertEqual(contrast['margin_model_kcal'], hi - lo)
+            self.assertEqual(contrast['pass'], hi - lo > .02)
+        for check in saved['grouping_checks']:
+            scores = saved['scores'][check['case']]
+            delta = scores['connected']['R_candidate_model_kcal'] - scores['primary']['R_candidate_model_kcal']
+            self.assertEqual(check['connected_minus_primary_model_kcal'], delta)
+            self.assertEqual(check['pass'], abs(delta) <= 2.)
+        with tempfile.TemporaryDirectory() as d:
+            report(root / 'model_v3/manifest.json', verify(saved['native_reference']),
+                   Path(d) / 'replay', root / 'solvent_v1/manifest.json')
+            replay = read_json(Path(d) / 'replay/result.json')
+            for key in ('scores', 'contrasts', 'checks', 'grouping_checks', 'raw_pass_count',
+                        'qualified_pass_count', 'numerical_checks_pass', 'representation_checks_pass'):
+                self.assertEqual(replay[key], saved[key])
+            # With actual molecular results but no supplied solvent, every
+            # candidate score must remain unavailable, never vacuum or zero.
+            report(root / 'model_v3/manifest.json', verify(saved['native_reference']),
+                   Path(d) / 'missing_solvent')
+            missing = read_json(Path(d) / 'missing_solvent/result.json')
+            self.assertEqual(missing['status'], 'incomplete')
+            self.assertEqual(missing['qualified_pass_count'], 0)
+            for variants in missing['scores'].values():
+                for score in variants.values():
+                    self.assertIsNone(score['R_candidate_model_kcal'])
+                    self.assertIsNone(score['GB_Ca_minus_La_kcal'])
+
     @unittest.skipUnless(PREP.parent.parent.joinpath('model_v2/manifest.json').exists(), 'real pilot manifest unavailable')
     def test_actual_manifest_execution_gate_and_corrupted_charge(self):
         import copy

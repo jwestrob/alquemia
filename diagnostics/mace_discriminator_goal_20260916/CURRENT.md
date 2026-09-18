@@ -6,52 +6,62 @@ text does not revoke his direct instruction to proceed without repeated approval
 Preserve baseline/default, immutable records and concurrent work. No push,
 promotion or project CPU/time budget. Recover GOAL.md and actual live jobs.
 
-## Running: chemical-group charge conservation in intact POLAR
+## Complete: charge groups fix PQQ ordering but solvent screen remains 1/7
 
-Job 1201508 is RUNNING the 24 model tasks in
-workspaces/mace_charge_groups_20260918/model_v3/manifest.json
-(SHA 36d9bef54ca559f2a114440889b89eb5f9de24efe640ff5a13023c72561a7ebb).
-One A5000, 16 CPUs, 64,474 MiB, existing run_pilot.sbatch and model environment.
-Latest observed: six endpoints computed, including both one-group controls
-which exactly reproduce archived native energies (difference 0.0 at saved
-precision). Four alpha endpoints completed in 8.68–9.06 s of inference each.
-GGR/PQQ comparisons and solvent are pending. Inspect actual queue/receipts.
+All 24 MACE and 24 OBC-II calls completed, jobs1201508/1201513. Protocol
+intact_POLAR_medium_chemical_group_charge_frozen_OBC2_v1 passes all30 numerical
+and all3 grouping checks, but only1/7 expected directions. PQQ4MAE-minus-1H4I
+improves from native POLAR/OBC-II -17.628168 to +19.957810 model kcal.
+All six alpha/GGR directions fail (-25.3350 through -61.8806). Four consumed
+biological groups, not seven independent/blind observations. Baseline unchanged.
 
-[Scope](../mace_charge_groups_20260918/PROPOSAL.md) and
-[commands](../mace_charge_groups_20260918/COMMANDS.md): constrain each POLAR
-charge-restoration stage within source-defined chemical groups, keep full
-protein geometry/fields and all learned weights. Medium checkpoint plus
-unchanged frozen-monopole OBC-II. Seven structures, 24 MACE + 24 GB tasks,
-zero DFT/training/optimization. All seven directional comparisons and grouping
-controls frozen. Formal group constraints are an unvalidated model hypothesis;
-learned density coefficients are not ordinary atomic partial charges.
+[Report](../mace_charge_groups_20260918/REPORT.md), compact RESULT.json and
+[operations](../mace_charge_groups_20260918/COMMANDS.md). Full report:
+workspaces/mace_charge_groups_20260918/report_v1/result.json.
+The original model_v3 manifest SHA remains
+36d9bef54ca559f2a114440889b89eb5f9de24efe640ff5a13023c72561a7ebb.
+Solvent_v1 SHA e97a3e70546f6fe4702f6a65ae57e3971ce09351d0cca3077a11b0cab996d408.
+No own live jobs. Do not resubmit completed manifests.
 
-All seven source preparations now pass. groups_v1/preparation.json, config.json
-and source_review_v1 preserve mapping, formal-charge ledger and exact code.
-Prep 11.245473 wall / 11.105136 CPU s. Four real source/trace/adapter tests pass
-23.170 s, no skips; twelve existing runner tests pass 17.125 s, no skips.
-Full rotation/grouping and predictive checks have not run to completion;
-the two one-group native energy replays now pass exactly. New scripts mace_charge_group_prepare.py, mace_group_constraints.py,
-mace_charge_groups.py and conditional old-runner dispatch are implemented.
+Important transferable observation: grouped vacuum component gives all7
+expected directions; GB reverses all6 alpha/GGR directions. This is an
+algebraic component diagnosis, not proof that solvent is physically wrong.
+Vacuum grouping shifts -2.513855/-3.275712/-3.116626 exceed the existing2
+criterion; solvent totals reduce them to -0.077926/-0.083309/+0.021714.
+Do not hide that vacuum failure or relabel the declared total as a7/7 success.
+The model is an empirical learned-density constraint, not validated charge
+partitioning or self-consistent solvent. Absolute classes remain unavailable.
 
-Technical failures preserved: 1201505 failed gate dispatch before a model call
-(4 GPU-allocation s, 64 core-s, 6.690 CPU-s). 1201507 attempted one forward;
-copying the native method after realspace setup bypassed the old unused-grid
-memory fix (18 GPU-allocation s, 288 core-s, 22.560 CPU-s). V3 installs group
-constraints first and keeps live native globals, then retains both old wrappers.
-All 24 inputs/model settings match V2. Added wrapper-composition test passes.
-No scientific parameter changed and no physical result is being rescued.
+Next research direction: consider a separately versioned grouped-vacuum
+compatibility descriptor and test accuracy on additional existing biological
+groups (Khoury domains, parvalbumin; aequorin ordered/unlabeled), while preserving
+its current representation warning. Do not fit a dielectric/threshold to these
+seven inspected directions. Formalize source-based multisite groups first:
+the current adapter/preparation assumes one selected metal; it explicitly
+rejects background metals. Khoury22 and multisite5 archived site preparations
+exist, but no follow-up scientific manifest/launch is yet declared. Source
+inspection below is not a new completed analysis. Use supporting evidence
+strata; Ca folding thresholds in Khoury are not Ca Kd. AMOEBA/GK and responsive
+QM densities have already been extensively tried; recover prior failed transfer.
 
-Next: collect job 1201508; inspect the two one-group native replays and all
-primary outputs. Then prepare/run the already declared 24 GB tasks using the
-pinned solver environment, report all seven raw/qualified directions and actual
-costs, test real report replay, and update vault/results. Reporter implemented;
-no complete scientific result yet. Preserve original failures and denominator.
+Six real tests pass45.957s, no skips: group inventory/corruption, native
+energy+density+force identity, full report replay, actual sign/unit algebra,
+explicit missing solvent, saved traces and wrapper composition. Additional
+actual force rotation checks pass <=1.420e-7eV/A. Native energies reproduce
+exactly; density/force differences are <=4.802e-15e/1.510e-13eV/A.
 
-The agent briefly re-opened scope approval during recovery, then corrected it:
-Jacob's explicit standing goal approval already covers this contained pilot.
-The sent question is optional steering, not a permission gate. Do not reinstate
-that interim gate after compaction. Goal active; baseline/default unchanged.
+Completecost includes both setup failures:895GPUallocation-s,14320core-s,
+987.336reportedCPU-s. MACE inference660.037016s,GB1.400081s. Peak successful
+modelGPU10207527424bytes. Perpair alpha17.38–18.10s/GGR49.03–49.39s/
+PQQ113.35–117.72s onA5000; local and historical costs additional.
+1201505 failed before forward;1201507 one failed forward bypassed old memory
+wrapper; V3 fixed composition with identical scientific settings/input hashes.
+All original artifacts preserved. No DFT/training/optimization in this pilot.
+
+Vault results note filed; email update records limited PQQ gain and six broad
+failures. Goal ACTIVE; no production promotion, push or project budget.
+Standing explicit discretionary authorization covers contained pilots. Earlier
+reopened approval question was corrected as optional steering, not a gate.
 
 ## Current: two completed tests do not improve discrimination
 

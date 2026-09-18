@@ -50,8 +50,9 @@ now projects all saved matched-hybrid gradients onto actual donor torsions and
 peptide motions. All geometry checks pass; donor sensitivity is substantial in
 the failed GGR cases. Zero new energy calls; no response correction is available.
 A [coupled donor/metal path pilot](../diagnostics/mace_site_response_20260918/COUPLED_PATH_PLAN.md)
-is now running64 finite MACE points across all16 endpoint states. Source geometry
-checks pass; actual DFT validation and predictive results remain pending.
+completed64 finite MACE points across all16 endpoint states. Preliminary
+surrogate ordering remains4/12;16DFT and32MACE native checks are running.
+Source geometry checks pass; actual validated predictive results remain pending.
 [Operations](../diagnostics/mace_site_response_20260918/COUPLED_PATH_COMMANDS.md).
 Recover the [live checkpoint](../diagnostics/mace_discriminator_goal_20260916/CURRENT.md)
 and inspect actual jobs before submitting research work.

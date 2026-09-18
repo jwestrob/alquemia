@@ -6,31 +6,45 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
-## Running: coupled donor/metal path pilot
+## Running: native validation of coupled donor/metal path
 
-Plan diagnostics/mace_site_response_20260918/COUPLED_PATH_PLAN.md declared before
-new energies, under active autonomous goal. All16 states /8 representations
-remain in scope; all source-derived paths pass donor membership, fixed waters,
-bonds and analytic geometry checks. Maximum heavy motion0.20A; finite five-point
-path including reused center. New protocol matched_vacuum_hybrid_coupled_donor_path_v1.
-No stationary-minimum or binding-free-energy claim. Native and learned checks
-are required; no baseline/default change or fitted decision threshold.
+Initial jobs1201398–1201402 completed all64 real MACE scalar calls, zero failures.
+Frozen selection coupled_selection_v1/result.json chooses nonzero paths for all16
+states. Preliminary surrogate ordering remains4/12 (only prior1GLG); no broader
+accuracy gain. These are predictions, not native results or qualified scores.
 
-Actual preparation coupled_prepared_v1/preparation.json; initial manifest
-coupled_initial_v1/initial.json in workspaces/mace_site_response_20260918.
-Five GPU jobs1201398–1201402 running64 total scalar calls;16CPU/64474MiB/A5000
-per existing runner. No duplicate executors. Finite conditional native phase
-at most16DFT+32MACE gradients, code implemented but not yet executed at this
-checkpoint. Native source selection is replayed from actual grid receipts.
+Native jobs1201407 quantum and1201408 MACE are RUNNING. The finite manifests in
+workspaces/mace_site_response_20260918/coupled_native_v1/preparation.json contain
+16 native analytic DFT and32 learned full/core gradients. Both frozen preflights
+pass. Last observation:16/32 MACE complete without failure; the first four large
+DFT cores still converging. Actual quantum host node-64-768g-10,64CPU; one A5000
+with16CPU/64474MiB for MACE. Inspect actual jobs before any retry; no duplicates.
 
-Two real kinematics/manifest/corrupted-charge tests pass44.722s (initial manifest
-check was skipped before manifest existed, later executed). Frozen GPU preflight
-passed; exact saved force backend unchanged. Preparation67.267659wall/66.249144CPU-s;
-max geometry-J error2.102e-8 A/unit, no excluded states. Other local housekeeping
-not fully timed. Runbook COUPLED_PATH_COMMANDS.md has exact next operations.
-Next collect all64, select fixed minima, prepare/preflight/run native validation,
-then report all12 raw/qualified comparisons and actual costs. Do not tune after
-viewing selection. Goalactive; unrelated work and old failures preserved.
+Plan COUPLED_PATH_PLAN.md and protocol matched_vacuum_hybrid_coupled_donor_path_v1
+are frozen. Same16 states/8 representations, donor membership, source chemistry,
+fixed waters/exterior. The selected point is a bounded discrete descriptor, not
+a stationary minimum. Keep the declared energy/tangent-gradient checks and all12
+comparisons, and both2kcal GGR partition criteria. No default/band/label changes.
+
+Three real tests pass25.952s: nonzero analytic coordinate Jacobians, exact
+positions-only fast map, real manifest/corrupted charge, and actual selection/
+corrupted chosen point. Earlier tests2 passed44.722s; initial missing-manifest
+skip was later executed. Positions-only normalization removes unused Jacobian
+arrays and exactly reproduces existing geometry; native pins include this fix.
+No scientific backend change. Actual preparation coupled_prepared_v1 remains
+unchanged (SHA40d8fda02ec578c84a969c02a10c3d87f87372b0f6fd8e1802d4689d014c6a7c).
+
+Initial-only cost:1292GPUallocation-s,20672allocatedcore-s,1545.636reportedCPU-s;
+native costs additional/pending. Preparation67.267659wall/66.249144CPU-s; tests
+and other unprofiled local costs additional. Initial cost JSON/Slurm rows in
+coupled_initial_cost_v1. All preparations and actual results retain source pins.
+
+Next collect native outputs and run mace_site_path_native.py report using
+coupled_native_v1/preparation.json ->coupled_report_v1. Then test/replay actual
+report, compare all12 raw/qualified margins against the metal-only transfer,
+record total cost, report/vault note, and scoped commit. Native helper implemented
+and preflighted; final report not yet executed. Runbook COUPLED_PATH_COMMANDS.md.
+Goalactive; baseline/default unchanged; no push or interference with other work.
 
 ## Complete: physical donor-coordinate gradient diagnostic
 

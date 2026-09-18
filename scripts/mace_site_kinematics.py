@@ -46,7 +46,21 @@ class Kinematics:
             else:raise InvalidArtifact('unsupported physical core link')
         return p,core,jac,cj
 
-    def displacement(self,q):return float(np.linalg.norm(self.evaluate(q)[0][self.heavy]-self.positions[self.heavy],axis=1).max())
+    def positions_only(self,q):
+        """Same rotation algebra without constructing unused Jacobian arrays."""
+        q=np.asarray(q,dtype=float)
+        if q.shape!=(len(self.modes),) or not np.isfinite(q).all():raise InvalidArtifact('invalid physical coordinates')
+        p=self.positions.copy()
+        for mode,angle in zip(self.modes,q):
+            ids=mode['moving_indices']
+            if mode['unit']=='angstrom':p[ids]+=angle*np.array(mode['axis']);continue
+            i,j=mode['axis_indices'];a=p[i].copy();v=p[j]-a;length=np.linalg.norm(v)
+            if length<=1e-10:raise InvalidArtifact('zero rotation axis')
+            axis=v/length;r=p[ids]-a;c,s=np.cos(angle),np.sin(angle);nr=r@axis
+            p[ids]=a+c*r+s*np.cross(axis,r)+(1-c)*nr[:,None]*axis
+        return p
+
+    def displacement(self,q):return float(np.linalg.norm(self.positions_only(q)[self.heavy]-self.positions[self.heavy],axis=1).max())
 
     def check(self,q):
         p,c,j,cj=self.evaluate(q);errors=[]

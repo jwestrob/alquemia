@@ -2566,3 +2566,24 @@ selection and native validation, then all12 raw/qualified comparisons and costs.
 Goalactive; baseline/default unchanged. No push. Only own changes and this entry
 staged; unrelated edits retained. Vault gradient note already filed; pilot result
 will update it after real execution.
+
+
+## 2026-09-18 — Coupled path initial complete; native validation running
+
+All64 MACE scalar calls completed (1201398–1201402), no failures. Selection is
+coupled_selection_v1/result.json; all16 selected points nonzero. Preliminary
+surrogate raw ordering remains4/12, only1GLG; no broader improvement claimed.
+Native quantum1201407 and MACE1201408 RUNNING, finite16DFT+32gradients. Both
+frozen preflights pass. Last16/32 MACE complete, zero failures; first four large
+DFT cores still converging. Preserve live jobs; do not submit duplicates.
+
+Three actual-fixture tests pass25.952s including corrupt-charge/selected-point
+rejection. Positions-only geometry normalization avoids unused Jacobian arrays,
+exactly reproducing source coordinates; original prepared paths unchanged.
+Native implementation snapshot contains the speed fix; no model/backend change.
+Initial-only cost1292GPU-s,20672allocatedcore-s,1545.636reportedCPU-s; native,
+prior gradient and local housekeeping costs additional. Sourceprep67.267659wall/
+66.249144CPU-s. Updated checkpoint/runbook/guide and vault status. Final native
+report pending; code implemented/preflighted, not yet executed on all native
+outputs. Goalactive; baseline unchanged, no push. Only scoped own files/entry
+committed; unrelated shared changes retained.

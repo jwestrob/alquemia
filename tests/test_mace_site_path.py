@@ -21,6 +21,7 @@ class CoupledPathTests(unittest.TestCase):
             q=np.array(s['direction']['q']);self.assertLess(np.array(row['hybrid_projected_gradient'])@q,0)
             for fraction in (.5,1.):
                 check=kin.check(q*fraction);self.assertTrue(check['pass'],check);self.assertLessEqual(kin.displacement(q*fraction),.20+1e-12)
+                np.testing.assert_array_equal(kin.positions_only(q*fraction),kin.evaluate(q*fraction)[0])
             # Archived full gradient independently projects through the map at 0.
             g=np.load(verify(row['hybrid_physical_gradient']))
             np.testing.assert_allclose(np.einsum('mij,ij->m',j,g),row['hybrid_projected_gradient'],atol=1e-9,rtol=0)
@@ -33,5 +34,15 @@ class CoupledPathTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             q=Path(d)/'corrupted_real_manifest.json';q.write_text(json.dumps(broken))
             with self.assertRaises(InvalidArtifact):validate(q)
+
+    @unittest.skipUnless((BASE/'coupled_selection_v1/result.json').exists(),'actual finite energy grid not yet collected')
+    def test_actual_selection_and_corrupted_selected_point(self):
+        from mace_site_path_native import check_selection
+        a=read_json(BASE/'coupled_selection_v1/result.json');p=read_json(P)
+        check_selection(a,p)
+        broken=copy.deepcopy(a);key=next(iter(broken['selected']))
+        chosen=broken['selected'][key]['point']
+        broken['selected'][key]['point']='p025' if chosen!='p025' else 'p100'
+        with self.assertRaises(InvalidArtifact):check_selection(broken,p)
 
 if __name__=='__main__':unittest.main()

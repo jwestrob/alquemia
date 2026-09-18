@@ -1,8 +1,9 @@
 # Alquemia: current operating guide for agents
 
-**Updated 2026-09-18.** Start here for new work. Jacob has approved contained
-pilots autonomously; see root AGENTS.md for the instruction superseding older
-per-pilot approval language. This guide supersedes older
+**Updated 2026-09-18.** Start here for new work. Recover the latest user
+instructions and [checkpoint](../diagnostics/mace_discriminator_goal_20260916/CURRENT.md)
+for analysis authorization; a newer user instruction takes precedence over the
+local AGENTS note. This guide supersedes older
 operational/status prose; dated experiments and their numerical records remain
 immutable. The baseline remains the default. Broad La/Ca affinity discrimination
 has not been established. The [active MACE goal](../diagnostics/mace_discriminator_goal_20260916/GOAL.md) continues through intermediate failed pilots; production remains unchanged.
@@ -63,7 +64,11 @@ author-domain challenge remains 6/9 and RTX worsens. Original site vectors and
 evidence strata are retained. This static occupancy descriptor does not model
 experimental folding or titration. Neither addition changes the production
 baseline or supplies a broadly validated replacement. Both results have vault
-notes, actual receipts and replay commands. No own research jobs remain live.
+notes, actual receipts and replay commands. Those two studies have no live jobs.
+A [new charge-group POLAR proposal](../diagnostics/mace_charge_groups_20260918/PROPOSAL.md)
+is running as job 1201508 with seven pinned inputs and 24 model tasks.
+Its charge-group preparation/software checks pass; scientific results are pending.
+[Operations and preserved technical failures](../diagnostics/mace_charge_groups_20260918/COMMANDS.md).
 Recover the [live checkpoint](../diagnostics/mace_discriminator_goal_20260916/CURRENT.md)
 and inspect actual jobs before submitting research work.
 

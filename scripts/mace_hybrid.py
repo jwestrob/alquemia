@@ -163,6 +163,9 @@ def prepare(root, software, output, agreement):
 
 
 def dry_run(manifest):
+    if read_json(manifest).get('schema_version') in ('alquemia.mace_charge_groups.v1', 'alquemia.mace_charge_groups_gb.v1'):
+        from mace_charge_groups import validate
+        return validate(manifest)
     if read_json(manifest).get("schema_version") == "alquemia.mace_bounded_response_short.v1":
         from mace_bounded_response import validate
         return validate(manifest)
@@ -289,7 +292,7 @@ def worker(manifest, task_id, output, memory_mode):
     if read_json(manifest).get('schema_version') == 'alquemia.mace_omol.v1':
         from mace_omol import worker as omol_worker
         return omol_worker(manifest, task_id, output, memory_mode)
-    if read_json(manifest).get('schema_version') in ('alquemia.mace_gb.v1', 'alquemia.mace_global_gb.v1', 'alquemia.mace_local_gb.v1', 'alquemia.mace_curvature_gb.v1', 'alquemia.mace_mechanics_gb.v1', 'alquemia.mace_canonical_gb.v1', 'alquemia.mace_metal_response_gb.v1'):
+    if read_json(manifest).get('schema_version') in ('alquemia.mace_gb.v1', 'alquemia.mace_global_gb.v1', 'alquemia.mace_local_gb.v1', 'alquemia.mace_curvature_gb.v1', 'alquemia.mace_mechanics_gb.v1', 'alquemia.mace_canonical_gb.v1', 'alquemia.mace_metal_response_gb.v1', 'alquemia.mace_charge_groups_gb.v1'):
         from mace_gb import worker as gb_worker
         return gb_worker(manifest, task_id, output, memory_mode)
     import torch
@@ -311,6 +314,14 @@ def worker(manifest, task_id, output, memory_mode):
         print(json.dumps({'event': 'model_load_start', 'task': task_id, 'device': result['device']}), flush=True)
         calc = mace_polar(model=str(verify(m['model']['checkpoint'])), device='cuda',
                           default_dtype='float64', pbc_handling='realspace')
+        group_observer = None
+        if m['model'].get('charge_group_adapter'):
+            from mace_group_constraints import ADAPTER, configure as configure_groups
+            if m['model']['charge_group_adapter'] != ADAPTER:
+                raise InvalidArtifact('unsupported charge-group adapter')
+            group_observer, result['charge_group_adapter'] = configure_groups(
+                calc, t['atom_group_indices'], t['group_charges_e'],
+                m['model']['native_polar_source']['sha256'], output)
         if m['model'].get('execution_adapter'):
             from mace_realspace_compat import ADAPTER_ID, configure
             if m['model']['execution_adapter'] != ADAPTER_ID:
@@ -375,10 +386,14 @@ def worker(manifest, task_id, output, memory_mode):
                           charge_check=abs(total_charge-t['charge']) <= m['tolerances']['total_charge_e'])
             if charge_observer is not None:
                 result['charge_trace'] = charge_observer.finish(output, t['charge'], density)
+            if group_observer is not None:
+                group_path = output / 'charge_groups.json'
+                write_new(group_path, group_observer.receipt())
+                result['charge_groups'] = record(group_path)
         if m.get('schema_version') == 'alquemia.mace_rotation.v1':
             from mace_rotation import probe
             result['rotation_probe'] = probe(calc, m, t, output)
-        if m.get('schema_version') in ('alquemia.mace_rotation.v1', 'alquemia.mace_analytic.v1', 'alquemia.mace_response_trace.v1', 'alquemia.mace_hydrogen.v1', 'alquemia.mace_global_benchmark.v1', 'alquemia.mace_local_correction.v1', 'alquemia.mace_curvature.v1', 'alquemia.mace_mechanics_core.v1', 'alquemia.mace_canonical.v1', 'alquemia.mace_metal_response_core.v1'):
+        if m.get('schema_version') in ('alquemia.mace_rotation.v1', 'alquemia.mace_analytic.v1', 'alquemia.mace_response_trace.v1', 'alquemia.mace_hydrogen.v1', 'alquemia.mace_global_benchmark.v1', 'alquemia.mace_local_correction.v1', 'alquemia.mace_curvature.v1', 'alquemia.mace_mechanics_core.v1', 'alquemia.mace_canonical.v1', 'alquemia.mace_metal_response_core.v1', 'alquemia.mace_charge_groups.v1'):
             result['energy_components_eV'] = {key: float(calc.results[key]) for key in
                 ('interaction_energy', 'electrostatic_energy', 'electron_energy')}
     except Exception as exc:
@@ -429,6 +444,13 @@ def accepted_attempt(attempt, task, manifest):
         if result.get('charge_trace'):
             trace = read_json(verify(result['charge_trace']))
             verify(trace['arrays'])
+        if task.get('charge_group_adapter'):
+            group = read_json(verify(result['charge_groups']))
+            if (group['adapter_id'] != task['charge_group_adapter'] or
+                    group['atom_group_indices'] != task['atom_group_indices'] or
+                    group['group_charges_e'] != task['group_charges_e'] or len(group['stages']) != 3):
+                return None
+            verify(result['charge_group_adapter']['copied_forward'])
         return result
     except (OSError, ValueError, KeyError, TypeError):
         return None
@@ -461,7 +483,10 @@ def execute(manifest, memory_mode, selected=None):
                 if core_gate(mp)['status'] != 'pass':
                     raise InvalidArtifact('full GB execution requires native/custom core agreement')
             if t['kind'] == 'full' and m['model'].get('pair_kernel'):
-                if m.get('schema_version') in ('alquemia.mace_global_benchmark.v1', 'alquemia.mace_short_engine.v1', 'alquemia.mace_mechanics_short.v1', 'alquemia.mace_mechanics_minimum_short.v1', 'alquemia.mace_density_short.v1', 'alquemia.mace_metal_response_short.v1', 'alquemia.mace_metal_minimum_short.v1', 'alquemia.mace_bounded_response_short.v1'):
+                if m.get('schema_version') == 'alquemia.mace_charge_groups.v1':
+                    from mace_charge_groups import kernel_parent_gate
+                    validation = kernel_parent_gate(m)
+                elif m.get('schema_version') in ('alquemia.mace_global_benchmark.v1', 'alquemia.mace_short_engine.v1', 'alquemia.mace_mechanics_short.v1', 'alquemia.mace_mechanics_minimum_short.v1', 'alquemia.mace_density_short.v1', 'alquemia.mace_metal_response_short.v1', 'alquemia.mace_metal_minimum_short.v1', 'alquemia.mace_bounded_response_short.v1'):
                     from mace_global_benchmark import numerical_parent_gate
                     validation = numerical_parent_gate(m)
                 elif m.get('schema_version') == 'alquemia.mace_hydrogen.v1':
@@ -538,6 +563,9 @@ def compare_cores(manifest):
 
 
 def collect(manifest):
+    if read_json(manifest).get('schema_version') in ('alquemia.mace_charge_groups.v1', 'alquemia.mace_charge_groups_gb.v1'):
+        from mace_charge_groups import collect as collect_groups
+        return collect_groups(manifest)
     if read_json(manifest).get("schema_version") == "alquemia.mace_bounded_response_short.v1":
         from mace_metal_response import collect as collect_response
         return collect_response(manifest)

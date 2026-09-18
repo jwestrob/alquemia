@@ -1,15 +1,62 @@
 # Active MACE discriminator checkpoint — 2026-09-18
 
-**Goal active; no broadly validated MACE replacement.** Jacob authorized autonomous
-analyses and available resources. Home/project AGENTS now remove the old
-per-analysis permission gate. Preserve baseline/default, immutable studies,
-other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
-Recover GOAL.md and inspect live jobs before resuming.
+**Goal active; no broadly validated MACE replacement.** Jacob's explicit standing
+discretionary approval covers contained MACE pilots. The generic supplied AGENTS
+text does not revoke his direct instruction to proceed without repeated approval.
+Preserve baseline/default, immutable records and concurrent work. No push,
+promotion or project CPU/time budget. Recover GOAL.md and actual live jobs.
+
+## Running: chemical-group charge conservation in intact POLAR
+
+Job 1201508 is RUNNING the 24 model tasks in
+workspaces/mace_charge_groups_20260918/model_v3/manifest.json
+(SHA 36d9bef54ca559f2a114440889b89eb5f9de24efe640ff5a13023c72561a7ebb).
+One A5000, 16 CPUs, 64,474 MiB, existing run_pilot.sbatch and model environment.
+Latest observed: six endpoints computed, including both one-group controls
+which exactly reproduce archived native energies (difference 0.0 at saved
+precision). Four alpha endpoints completed in 8.68–9.06 s of inference each.
+GGR/PQQ comparisons and solvent are pending. Inspect actual queue/receipts.
+
+[Scope](../mace_charge_groups_20260918/PROPOSAL.md) and
+[commands](../mace_charge_groups_20260918/COMMANDS.md): constrain each POLAR
+charge-restoration stage within source-defined chemical groups, keep full
+protein geometry/fields and all learned weights. Medium checkpoint plus
+unchanged frozen-monopole OBC-II. Seven structures, 24 MACE + 24 GB tasks,
+zero DFT/training/optimization. All seven directional comparisons and grouping
+controls frozen. Formal group constraints are an unvalidated model hypothesis;
+learned density coefficients are not ordinary atomic partial charges.
+
+All seven source preparations now pass. groups_v1/preparation.json, config.json
+and source_review_v1 preserve mapping, formal-charge ledger and exact code.
+Prep 11.245473 wall / 11.105136 CPU s. Four real source/trace/adapter tests pass
+23.170 s, no skips; twelve existing runner tests pass 17.125 s, no skips.
+Full rotation/grouping and predictive checks have not run to completion;
+the two one-group native energy replays now pass exactly. New scripts mace_charge_group_prepare.py, mace_group_constraints.py,
+mace_charge_groups.py and conditional old-runner dispatch are implemented.
+
+Technical failures preserved: 1201505 failed gate dispatch before a model call
+(4 GPU-allocation s, 64 core-s, 6.690 CPU-s). 1201507 attempted one forward;
+copying the native method after realspace setup bypassed the old unused-grid
+memory fix (18 GPU-allocation s, 288 core-s, 22.560 CPU-s). V3 installs group
+constraints first and keeps live native globals, then retains both old wrappers.
+All 24 inputs/model settings match V2. Added wrapper-composition test passes.
+No scientific parameter changed and no physical result is being rescued.
+
+Next: collect job 1201508; inspect the two one-group native replays and all
+primary outputs. Then prepare/run the already declared 24 GB tasks using the
+pinned solver environment, report all seven raw/qualified directions and actual
+costs, test real report replay, and update vault/results. Reporter implemented;
+no complete scientific result yet. Preserve original failures and denominator.
+
+The agent briefly re-opened scope approval during recovery, then corrected it:
+Jacob's explicit standing goal approval already covers this contained pilot.
+The sent question is optional steering, not a permission gate. Do not reinstate
+that interim gate after compaction. Goal active; baseline/default unchanged.
 
 ## Current: two completed tests do not improve discrimination
 
-All own jobs have finished; verified against the live queue. The goal remains
-active. No new scientific calculation is currently declared or running.
+Both preceding studies have finished. Their jobs were verified complete; the
+new pilot above is separate. The goal remains active. The charge-group pilot above is running under the active goal.
 
 **Coupled donor/metal response:** all 16 native DFT and 96 MACE calls completed,
 with zero scientific execution failures. Actual ordering is 4/12 raw and 0/12

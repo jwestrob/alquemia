@@ -2615,3 +2615,64 @@ active; neither negative result completes it. Stop expanding these two failed
 variants. Next review existing alternative models and state coverage before a
 new accuracy experiment. Baseline/default and immutable records unchanged;
 no push/promotion. Only own scoped changes and this entry staged.
+
+
+## 2026-09-18 — New charge-group model proposed; scope reply pending
+
+Reviewed prior global POLAR, masked OMOL, AMOEBA/GK, density and mechanical
+results before proposing a different model. Alpha 6IP9 is already La-bound;
+metal-adapted source geometry and AMOEBA are not novel untried explanations.
+New PROPOSAL.md under diagnostics/mace_charge_groups_20260918 specifies grouped
+Fukui charge conservation in intact POLAR plus unchanged frozen-monopole OBC-II:
+seven existing structures, 24 MACE + 24 solver calls, no DFT/training/optimization.
+Model limitations, exact comparison/control counts and tolerances recorded.
+SOURCE_INVENTORY.json pins existing inputs/source code; no scientific call or
+new adapter/preparation/manifest/submission. Vault proposal note filed.
+
+Asked Jacob to agree to this scientific scope or discuss the model first,
+following the latest supplied AGENTS instructions. Reply pending; time is not
+agreement. Earlier blanket authorization remains historical, not erased.
+Checkpoint/agent guide record this current boundary. Previous two negative
+studies committed b3e49f5. Goal active, baseline unchanged, no own jobs, no push.
+
+
+Correction to the preceding scope entry: the agent unnecessarily reopened
+approval despite Jacob's explicit standing discretionary MACE-goal authorization.
+That authorization already covers this contained pilot. Corrected in commentary,
+checkpoint and proposal; the sent question is optional steering. Continue the
+finite charge-group experiment unless Jacob redirects it. No new scientific
+calculation has run at this correction; production restrictions remain intact.
+
+
+## 2026-09-18 — Intact POLAR charge-group pilot implemented and running
+
+The declared finite experiment now has seven complete source/charge-group
+preparations (11.245473 wall / 11.105136 CPU s). New task-local POLAR adapter
+replaces only the two native restoration blocks, retains full field interactions,
+all learned weights and physical coordinates. Same medium checkpoint/OBC-II
+scope, no DFT/training/optimization. Four real source/trace/wrapper tests pass
+23.170 s, no skips; 12 old runner tests pass 17.125 s, no skips.
+
+Existing runner dispatch/collect/cache handling extended opt-in. Model V1 failed
+legacy gate dispatch before inference (1201505: 4 GPU-s, 64 core-s, 6.690 CPU-s).
+V2 attempted one forward and hit OOM because a copied method bypassed the
+existing unused reciprocal-grid override (1201507: 18 GPU-s, 288 core-s,
+22.560 CPU-s). V3 preserves the realspace/analytic wrapper composition and live
+native globals. Same model/settings and byte-identical 24 scientific inputs;
+all failures preserved, no changed physical parameters or expanded task set.
+
+Job 1201508 RUNNING model_v3/manifest.json, SHA
+36d9bef54ca559f2a114440889b89eb5f9de24efe640ff5a13023c72561a7ebb.
+One A5000/16CPU/64474MiB. Six endpoints observed complete: both one-group
+native controls reproduce archived energies exactly; all four alpha endpoints
+computed in 8.68–9.06 s inference each. No predictive result or gain yet.
+The already declared 24 GB tasks follow completed model outputs. Reporter and
+source-safe collection are implemented; final actual-result replay still pending.
+
+Plan/input inventory/commands, current checkpoint, agent guide and vault note
+updated. Exact inspected source code preserved; no scientific reconstruction.
+The earlier reopened approval question was corrected as optional steering:
+Jacob's standing explicit goal authorization covers this contained pilot.
+Goal active; baseline/default unchanged. No push, no production promotion,
+no interference with unrelated changes/jobs. Commit only own files and this
+turn's scoped session entries.

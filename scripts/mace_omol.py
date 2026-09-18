@@ -76,6 +76,8 @@ def common(source_inventory, software, agreement, output, stage):
              'mace_omol_hybrid_transfer.py','mace_omol_hybrid_transfer_minimum.py','mace_omol_hybrid_response.py','mace_omol_hybrid_minimum.py','mace_metal_response.py','mace_metal_minimum.py','mace_bounded_response.py')
     if stage == 'coupled_donor_path':
         names += ('mace_site_path.py', 'mace_site_kinematics.py')
+    if stage == 'collective_metals':
+        names += ('mace_collective.py',)
     pins = snapshot(out, names)
     m = {'schema_version': SCHEMA, 'protocol_id': PROTOCOL, 'stage': stage,
          'inventory': record(source_inventory), 'software': record(software), 'agreement': record(agreement),
@@ -151,6 +153,9 @@ def prepare_benchmark(qualification, mechanics, agreement, output):
 
 
 def validate(manifest):
+    if read_json(manifest).get('stage')=='collective_metals':
+        from mace_collective import validate as collective
+        return collective(manifest)
     if read_json(manifest).get('stage')=='coupled_donor_path':
         from mace_site_path import validate as path_validate
         return path_validate(manifest)
@@ -474,6 +479,9 @@ def accepted_state(result, task):
 
 
 def collect(manifest):
+    if read_json(manifest).get('stage')=='collective_metals':
+        from mace_collective import collect as collective
+        return collective(manifest)
     if read_json(manifest).get('stage')=='coupled_donor_path':
         from mace_site_path import collect as path_collect
         return path_collect(manifest)

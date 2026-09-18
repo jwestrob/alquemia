@@ -6,45 +6,53 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
-## Running: native validation of coupled donor/metal path
+## Current: two completed tests do not improve discrimination
 
-Initial jobs1201398–1201402 completed all64 real MACE scalar calls, zero failures.
-Frozen selection coupled_selection_v1/result.json chooses nonzero paths for all16
-states. Preliminary surrogate ordering remains4/12 (only prior1GLG); no broader
-accuracy gain. These are predictions, not native results or qualified scores.
+All own jobs have finished; verified against the live queue. The goal remains
+active. No new scientific calculation is currently declared or running.
 
-Native jobs1201407 quantum and1201408 MACE are RUNNING. The finite manifests in
-workspaces/mace_site_response_20260918/coupled_native_v1/preparation.json contain
-16 native analytic DFT and32 learned full/core gradients. Both frozen preflights
-pass. Last observation:16/32 MACE complete without failure; the first four large
-DFT cores still converging. Actual quantum host node-64-768g-10,64CPU; one A5000
-with16CPU/64474MiB for MACE. Inspect actual jobs before any retry; no duplicates.
+**Coupled donor/metal response:** all 16 native DFT and 96 MACE calls completed,
+with zero scientific execution failures. Actual ordering is 4/12 raw and 0/12
+qualified comparisons. All successes remain confined to the prior 1GLG GGR
+structure; all eight comparisons involving 2FW0/2FVY fail. Every margin is
+worse than the preceding metal-only response. All 16 energy-prediction checks
+pass, but six gradient checks and all three representation checks fail.
+Close this path candidate as an accuracy improvement; retain the physical
+coordinate and gradient machinery. These are two consumed biological groups,
+not 12 independent tests. Production baseline/default unchanged.
 
-Plan COUPLED_PATH_PLAN.md and protocol matched_vacuum_hybrid_coupled_donor_path_v1
-are frozen. Same16 states/8 representations, donor membership, source chemistry,
-fixed waters/exterior. The selected point is a bounded discrete descriptor, not
-a stationary minimum. Keep the declared energy/tangent-gradient checks and all12
-comparisons, and both2kcal GGR partition criteria. No default/band/label changes.
+Primary result: workspaces/mace_site_response_20260918/coupled_report_v1/result.json.
+Plan, report, compact result and replay commands:
+[COUPLED_PATH_REPORT.md](../mace_site_response_20260918/COUPLED_PATH_REPORT.md).
+Jobs 1201398–1201402, 1201407 and 1201408 completed. Total 2,112 GPU-allocation
+seconds, 129,088 allocated core-seconds and 90,201.055 reported CPU-seconds;
+archived centers and separately recorded local work are additional. Four real
+fixture tests pass (61.767 s, zero skips), including actual energy algebra and
+complete report replay. Comparison PDF/SVG/PNG are in coupled_figure_v2.
 
-Three real tests pass25.952s: nonzero analytic coordinate Jacobians, exact
-positions-only fast map, real manifest/corrupted charge, and actual selection/
-corrupted chosen point. Earlier tests2 passed44.722s; initial missing-manifest
-skip was later executed. Positions-only normalization removes unused Jacobian
-arrays and exactly reproduces existing geometry; native pins include this fix.
-No scientific backend change. Actual preparation coupled_prepared_v1 remains
-unchanged (SHA40d8fda02ec578c84a969c02a10c3d87f87372b0f6fd8e1802d4689d014c6a7c).
+**Whole-protein simultaneous substitution:** all eight MACE calls in job
+1201453 completed. All 23 numerical/algebra checks pass. Replacing all modeled
+metals together leaves the supporting author-domain challenge at 6/9; RTX
+becomes 10.038875 model kcal per metal less La-like. A0A7/HEW5 still pass;
+RTX still fails all three GGR comparisons. Parvalbumin mean remains 2/3;
+aequorin site labels remain unresolved and its original ordered vector is
+preserved. This is a fixed-geometry occupancy descriptor, not measured
+cooperativity or a titration/folding ensemble. Close this candidate as an RTX fix.
 
-Initial-only cost:1292GPUallocation-s,20672allocatedcore-s,1545.636reportedCPU-s;
-native costs additional/pending. Preparation67.267659wall/66.249144CPU-s; tests
-and other unprofiled local costs additional. Initial cost JSON/Slurm rows in
-coupled_initial_cost_v1. All preparations and actual results retain source pins.
+New opt-in protocol: masked_omol_whole_protein_collective_metal_substitution_v1.
+Primary result: workspaces/mace_collective_20260918/report_v1/result.json.
+[Report and commands](../mace_collective_20260918/REPORT.md). Cost: 115 GPU-allocation
+seconds, 1,840 allocated core-seconds, 140.033 reported CPU-seconds; local and
+historical work additional. Three real fixture tests pass (23.181 s, zero skips),
+including actual report replay. No DFT, trajectory, fitting or training calls.
 
-Next collect native outputs and run mace_site_path_native.py report using
-coupled_native_v1/preparation.json ->coupled_report_v1. Then test/replay actual
-report, compare all12 raw/qualified margins against the metal-only transfer,
-record total cost, report/vault note, and scoped commit. Native helper implemented
-and preflighted; final report not yet executed. Runbook COUPLED_PATH_COMMANDS.md.
-Goalactive; baseline/default unchanged; no push or interference with other work.
+Both results and figures are filed in the vault note
+2026-09-18_laca-coupled-and-collective-results.md. No improvement email sent.
+Next: review existing model failures and metal-conditioned structure/occupancy
+coverage before declaring a materially different accuracy experiment. AMOEBA/GK
+and responsive-density trials already exist: recover them rather than rediscover
+the same approach. Do not tune the failed response paths or select favorable
+structures. No new threshold, label, reference, core or default has changed.
 
 ## Complete: physical donor-coordinate gradient diagnostic
 
@@ -61,9 +69,9 @@ tests pass18.098s. Geometry J errors<=7.052e-9; bonds<=2.088e-14A. Localprep
 diagnostics/mace_site_response_20260918. Sourcepins/fullresults in matching
 workspace prepared_v1/report_v1. Vault note filed. No own livejobs.
 
-Next declare a coupled response potential and actual native validation before
-new calculations. Physical coordinates alone do not establish learned curvature
-or affinity accuracy. Baseline/default and failed experiments remain unchanged.
+The subsequent coupled-path test is now complete and unsuccessful; see the
+current result above. Physical coordinates alone do not establish learned
+curvature or affinity accuracy. Baseline/default and failed records are unchanged.
 
 ## Complete: GGR transfer fails; metal-only correction is insufficient
 

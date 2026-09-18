@@ -2587,3 +2587,31 @@ prior gradient and local housekeeping costs additional. Sourceprep67.267659wall/
 report pending; code implemented/preflighted, not yet executed on all native
 outputs. Goalactive; baseline unchanged, no push. Only scoped own files/entry
 committed; unrelated shared changes retained.
+
+
+## 2026-09-18 — Coupled donor and collective substitution tests complete
+
+Coupled path: all 16 native DFT and 96 MACE calls completed, no scientific
+execution failures. Actual ordering remains 4/12 raw, 0/12 qualified; all eight
+additional GGR comparisons fail. Every margin is worse than prior metal-only
+response. All energy checks pass, six gradient checks and three representation
+checks fail. Four real tests pass (61.767 s, no skips), including native algebra
+and report replay. Total 2,112 GPU-allocation seconds, 129,088 allocated core-
+seconds, 90,201.055 reported CPU-seconds; local/archived costs additional.
+
+New collective_metals opt-in dispatch preserves the old one-metal guard and
+native worker. All eight whole-protein MACE calls completed (1201453); all 23
+numerical/algebra checks pass. Author-domain comparisons remain 6/9; RTX shifts
+-10.038875 model kcal per metal. Parvalbumin mean remains 2/3; original ordered
+site scores preserved, aequorin labels unresolved. Three real tests pass
+(23.181 s, no skips), including actual report replay. Cost 115 GPU-allocation
+seconds, 1,840 allocated core-seconds, 140.033 reported CPU-seconds; additional
+local/historical costs recorded. No new DFT/training/trajectory in this test.
+
+Both reports, compact results, runbooks and figures filed under diagnostics/
+and workspaces/; vault note 2026-09-18_laca-coupled-and-collective-results.md.
+Current checkpoint and agent guide updated. No own live jobs. Goal remains
+active; neither negative result completes it. Stop expanding these two failed
+variants. Next review existing alternative models and state coverage before a
+new accuracy experiment. Baseline/default and immutable records unchanged;
+no push/promotion. Only own scoped changes and this entry staged.

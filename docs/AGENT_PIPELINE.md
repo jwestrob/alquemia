@@ -31,7 +31,7 @@ supports a conditional response component, not broader classification accuracy.
 Four new analytic DFT and eight short MACE calls took217CPU-allocation wall seconds
 and81GPU seconds; GGR/native grids were reused. No free-minimum or entropy claim.
 [Commands](../diagnostics/mace_omol_20260917/BOUNDED_METAL_RESPONSE_COMMANDS.md).
-**Latest: matched vacuum hybrid response improves raw alpha/GGR ordering from
+**Earlier development result: matched vacuum hybrid response improves raw alpha/GGR ordering from
 2/4 to 4/4**, with actual margins +8.77 to +13.20 kcal-equivalent. All eight
 native energy checks pass, but two radial signs and the final 2.024 kcal
 partition difference fail qualification; qualified scores stay null. These
@@ -49,11 +49,21 @@ The [physical donor-coordinate diagnostic](../diagnostics/mace_site_response_202
 now projects all saved matched-hybrid gradients onto actual donor torsions and
 peptide motions. All geometry checks pass; donor sensitivity is substantial in
 the failed GGR cases. Zero new energy calls; no response correction is available.
-A [coupled donor/metal path pilot](../diagnostics/mace_site_response_20260918/COUPLED_PATH_PLAN.md)
-completed64 finite MACE points across all16 endpoint states. Preliminary
-surrogate ordering remains4/12;16DFT and32MACE native checks are running.
-Source geometry checks pass; actual validated predictive results remain pending.
+The [coupled donor/metal path test](../diagnostics/mace_site_response_20260918/COUPLED_PATH_REPORT.md)
+is complete: 16 native DFT and 96 MACE calls retain 4/12 raw directions and no
+qualified comparisons. All eight additional GGR-structure comparisons still
+fail; coupled margins are worse than the earlier metal-only response. All
+energy-prediction checks pass, while six gradient checks and all three
+representation checks fail. Close this path as an accuracy improvement.
 [Operations](../diagnostics/mace_site_response_20260918/COUPLED_PATH_COMMANDS.md).
+
+The [whole-protein simultaneous-substitution test](../diagnostics/mace_collective_20260918/REPORT.md)
+also completed: eight MACE calls, all 23 numerical/algebra checks pass, but the
+author-domain challenge remains 6/9 and RTX worsens. Original site vectors and
+evidence strata are retained. This static occupancy descriptor does not model
+experimental folding or titration. Neither addition changes the production
+baseline or supplies a broadly validated replacement. Both results have vault
+notes, actual receipts and replay commands. No own research jobs remain live.
 Recover the [live checkpoint](../diagnostics/mace_discriminator_goal_20260916/CURRENT.md)
 and inspect actual jobs before submitting research work.
 

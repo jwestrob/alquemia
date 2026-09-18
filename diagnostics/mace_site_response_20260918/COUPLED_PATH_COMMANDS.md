@@ -5,14 +5,14 @@ Run from the repository root. The scientific definition is frozen in
 All compute products and actual submission argv/receipts are under
 `workspaces/mace_site_response_20260918/`.
 
-## Initial complete; native validation running
+## Complete
 
 Actual paths are `coupled_prepared_v1/preparation.json` and
 `coupled_initial_v1/initial.json`. All sixteen states retain donor membership;
 64 finite whole-system scalar tasks are split among five protein manifests.
 Jobs 1201398/1201399 (alpha) and 1201400/1201401/1201402 (GGR 1GLG/2FVY/2FW0)
 completed all64 calls. Native jobs1201407 (16DFT) and1201408 (32MACE gradients)
-are running. Both frozen preflights passed. Inspect jobs before any restart.
+completed. Both frozen preflights passed. Inspect jobs before any restart.
 
 Fresh preparation replay, with no inference:
 
@@ -66,6 +66,10 @@ minimum. Fresh report replays require a new output directory.
 
 Actual selection is `coupled_selection_v1/result.json`; native manifest links
 are in `coupled_native_v1/preparation.json`. The initial surrogate still gives
-4/12 correct raw directions, only1GLG. Actual native results remain pending.
+4/12 correct raw directions, only1GLG. Actual native results confirm4/12, with0/12 qualified comparisons.
 Initial allocation cost1292GPU-s/20672core-s; native costs are additional.
 Three real-fixture tests passed25.952s, none skipped in the final run.
+
+All native jobs completed; primary result is `coupled_report_v1/result.json`.
+No own job remains. See [final report](COUPLED_PATH_REPORT.md) for all failures
+and actual total costs. Final four real-fixture tests pass61.767s, zero skips.

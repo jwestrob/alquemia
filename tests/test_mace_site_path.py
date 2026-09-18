@@ -45,4 +45,25 @@ class CoupledPathTests(unittest.TestCase):
         broken['selected'][key]['point']='p025' if chosen!='p025' else 'p100'
         with self.assertRaises(InvalidArtifact):check_selection(broken,p)
 
+    @unittest.skipUnless((BASE/'coupled_report_v1/result.json').exists(),'actual native calculations not yet reported')
+    def test_actual_native_energy_algebra_and_report_replay(self):
+        from affordable_common import HA_TO_KCAL
+        from mace_hybrid import EV_TO_KCAL
+        from mace_site_path_native import report
+        old=read_json(BASE/'coupled_report_v1/result.json');selection=read_json(verify(old['selection']))
+        for name,s in old['scores'].items():
+            energies={}
+            for metal in ('Ca','La'):
+                key=name+'_'+metal;point=selection['selected'][key]['point'];q=old['quantum']['rows'][key]
+                f,c=[old['MACE']['rows'][kind+'__'+key+'__'+point]['energy_eV'] for kind in ('full','core')]
+                energies[metal]=(q['energy_hartree'],f,c)
+            ca,la=energies['Ca'],energies['La']
+            direct=(ca[0]-la[0])*HA_TO_KCAL+((ca[1]-la[1])-(ca[2]-la[2]))*EV_TO_KCAL
+            self.assertAlmostEqual(direct,s['actual_R_kcal'],places=6)
+        self.assertEqual(len(old['contrasts']),12)
+        with tempfile.TemporaryDirectory() as d:
+            report(BASE/'coupled_native_v1/preparation.json',Path(d)/'replay');new=read_json(Path(d)/'replay/result.json')
+            for key in ('rows','scores','partition','contrasts','raw_pass_count','qualified_pass_count'):
+                self.assertEqual(old[key],new[key])
+
 if __name__=='__main__':unittest.main()

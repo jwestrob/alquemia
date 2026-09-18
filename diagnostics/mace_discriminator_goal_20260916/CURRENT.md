@@ -6,6 +6,62 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
+## ACTIVE: failed multisite transfer; charge-representation sensitivity identified
+
+The five-site hybrid extension is complete (1201164/65/67/68): 10 DFT endpoints,
+20 MACE forwards, 10 CHELPG fits + 10 density queries, 20 boundary initializations,
+63 static / 60 field / 75 response calculations. All 39 numerical checks pass;
+all six supporting parvalbumin CD/EF-minus-GGR comparisons fail. Aequorin remains
+an ordered EF1/EF3/EF4 vector without site labels. No calibration/default change.
+Full report/results: MULTISITE_DENSITY_HYBRID_REPORT/RESULT in mace_omol_20260917.
+Total allocation 65,328 core-s / 208 GPU-s; summed job wall 1462 s. Quantum CPU
+is recorded only to whole seconds. All 13 new tests and 13 legacy regressions
+pass; no final integration skip. No DFT retry. All new science below is diagnostic.
+
+GGR saved-output localization: 1,072 checks pass (max1.5e-13 kcal), two tests pass.
+Only1.3996 of the13.4218 direct-field difference belongs to source-touching
+residues; remaining effect is distributed. Analytical source-self GK difference
++18.129021 and source/environment cross -5.528812 sum to+12.600209.
+Native source-only verification COMPLETED1201172: 15 static calculations,
+all checks pass within6.324e-13kcal. 49wall / 3136core-s /141.559CPU, noGPU,
+noDFT/MACE/response/field. All3real-fixture tests pass35.054s. gk_source_native_v2
+was executed; v1 parser-prefix issue caught before calls, no scientific retry.
+Report GK_SOURCE_NATIVE_VALIDATION_REPORT/RESULT. No native job remains live.
+
+Source factorization now COMPLETE: projected-charge changes contribute+18.452793,
+source-distance changes-0.372800, effective-radius changes+0.049028 kcal to the
+18.129021 source-self shift. All8 mixed combinations and6 marginal orderings
+are explicit algebraic counterfactuals, not new QM states. Exact source IDs,
+charge sums and native endpoint closure pass. Products gk_source_factorization_v1;
+report GK_SOURCE_FACTORIZATION_REPORT/RESULT. The common30A native/OpenMM tanh
+bound is verified but changes in radii are not the main contribution here.
+Do not claim charge fit instability until it is actually tested.
+
+NEXT: investigate/document native CHELPG numerical sampling refinement on the
+SAME saved densities, before choosing a new solvation model. Installed
+orca_chelpg accepts onlyGBW/optional density (help receipt chelpg_sampling_help_v1),
+so alternate sampling is not a supported extra CLI flag. Main ORCA CHELPG with
+MORead/NoIter may allow this; verify manual and actual unchanged density before
+calling any scientific result a same-density comparison. No refinement pilot
+has yet been declared or run. Existing parse_chelpg is intentionally hardcoded
+to .3A/2.8A/COSMO/no dipole; preserve default and snapshots. Earlier distributed
+charge/dipole fitting trials failed field screens; do not rediscover them.
+
+Read-only ORCA multiscale manual fetched to cpcm_transfer_reference_audit_v1
+(recorded successful HTML fetch, local bs4 parse failed; standard HTMLParser
+subsequently wrote manual_text.txt). C-PCM/B documented for QM/QM2, passes
+large low-level surface charges to small high/low calculations; no demonstrated
+cheap MM-only full-protein CPCM route. No integrated backend has been chosen.
+Native/OpenMM formula source pinned in gk_formula_source_v1; no env install.
+
+This checkpoint records scoped changes since dc94cc8; continue with charge-sampling investigation.
+Includes multisite adapters/comparisons, three GK diagnostic scripts and
+localization, tests, plans/reports. docs/AGENT_PIPELINE and vault updated through
+five-site failure; native/factor findings appended. Email multisite_hybrid_email_v1
+accepted relay with five-site failure and ongoing diagnosis. Preserve unrelated
+working edits/SESSIONS. Goal remains active with no resource/time budget.
+PLM1200796, H2001200809, MopB1201160 are other active/pending jobs; do not disturb.
+
 ## Latest: frozen hybrid fails GGR structural transfer; multisite preparation works
 
 Job1201162 completed27static/24field/30response calls. All18numerical/identity/

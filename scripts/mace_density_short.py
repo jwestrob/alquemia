@@ -37,7 +37,7 @@ def prepare(preparation,quantum_manifest,reference_manifest,output):
     model['preparation_policy']='source_graph_exact_paired_normalized_coordinates_v1'
     m=dict(schema_version=SCHEMA,protocol_id=PROTOCOL,preparation=record(preparation),quantum_manifest=record(quantum_manifest),
         reference_manifest=record(reference_manifest),short_reference=old['short_reference'],numerical_reference=old['numerical_reference'],
-        agreement=p['agreement'],software=old['software'],model=model,implementation=pins,tasks=[],baseline_changed=False,
+        agreement=qm['agreement'],software=old['software'],model=model,implementation=pins,tasks=[],baseline_changed=False,
         reference=None,calibrated_class=None,combined_gradient=None)
     for name,pin in p['cases'].items():
         c=read_json(verify(pin));physical=read_json(verify(c['normalized_global_preparation']))
@@ -45,6 +45,8 @@ def prepare(preparation,quantum_manifest,reference_manifest,output):
             for metal,e in ends.items():
                 t=dict(task_id=f'{name}_{metal}_{kind}',case_id=name,metal=metal,kind=kind,source_mapping=pin,
                     xyz=e['xyz'],charge=e['charge'],spin_multiplicity=1,energy_component='interaction_energy')
+                if kind=='full' and physical.get('background_metals'):
+                    t['background_calcium_indices']=[i for i,a in enumerate(physical['physical_atoms']) if a['kind']=='background_metal']
                 t['cache_key']=key(t,m);m['tasks'].append(t)
     m['new_MACE_calls']=len(m['tasks']);write_new(root/'manifest.json',m);return validate(root/'manifest.json')
 
@@ -66,7 +68,9 @@ def validate(path):
         e=(c if t['kind']=='core' else physical)['endpoints'][t['metal']]
         if t['xyz']!=e['xyz'] or t['charge']!=e['charge'] or t['spin_multiplicity']!=1 or t['energy_component']!='interaction_energy':
             raise InvalidArtifact('short physical state/component differs')
-        check_atoms(xyz(verify(t['xyz'])),t['charge'])
+        background=[i for i,a in enumerate(physical['physical_atoms']) if a['kind']=='background_metal'] if t['kind']=='full' else []
+        if t.get('background_calcium_indices',[])!=background:raise InvalidArtifact('background calcium mapping differs')
+        check_atoms(xyz(verify(t['xyz'])),t['charge'],background_calcium_indices=background)
         if t['cache_key']!=key(t,m):raise InvalidArtifact('short scientific cache differs')
     return dict(status='pass',tasks=len(m['tasks']),manifest=record(path))
 

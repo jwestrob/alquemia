@@ -8,12 +8,16 @@ immutable. The baseline remains the default. Broad La/Ca affinity discrimination
 has not been established. The [active MACE goal](../diagnostics/mace_discriminator_goal_20260916/GOAL.md) continues through intermediate failed pilots; production remains unchanged.
 
 **Latest research result:** the frozen responsive-density/AMOEBA-GK/MACE
-candidate fails its GGR structural-transfer gate. 2FVY passes both alpha
-comparisons;2FW0 fails both by14.76–15.64kcal despite all18numerical checks passing.
-The previous two-group development and partition pass remains historical;
-there is no broad validation or absolute calibration. Baseline stays default.
-[Transfer result, components and costs](../diagnostics/mace_omol_20260917/TRIAL_DENSITY_GK_EXPANSION_REPORT.md).
-Jobs1201154/1201158/1201161/1201162 completed; no expansion job remains live.
+candidate fails broader transfer. Both parvalbumin sites fall below all three
+GGR structures: all six supporting ordering tests fail, while all39 numerical
+checks pass. Aequorin is retained as an ordered three-site vector without
+invented per-site classifications. Ten quantum endpoints,20MACE forwards and
+all density/native components completed. Baseline stays default; no absolute
+calibration or promotion. [Five-site result and runnable replay](../diagnostics/mace_omol_20260917/MULTISITE_DENSITY_HYBRID_REPORT.md).
+The [earlier alpha/2FW0 failure](../diagnostics/mace_omol_20260917/TRIAL_DENSITY_GK_EXPANSION_REPORT.md)
+remains. Saved-output localization now identifies distributed field contributions
+and a consequential source self-solvation term; native component verification
+is the next contained diagnostic, not a new accepted score.
 Recover the [live checkpoint](../diagnostics/mace_discriminator_goal_20260916/CURRENT.md)
 and inspect actual jobs before submitting research work.
 

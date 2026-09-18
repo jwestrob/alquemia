@@ -19,21 +19,26 @@ from mace_omol_solvent import forcefield_background
 from mace_omol_vacuum import METHOD,embedded_input,parse_endpoint
 
 PROTOCOL='source_graph_normalized_responsive_density_inputs_v1'
+MULTISITE_PROTOCOL='source_graph_multisite_normalized_responsive_density_inputs_v2'
 QUANTUM_PROTOCOL='source_graph_r2scan3c_fixed_ff19SB_trial_density_v1'
 NULLS=dict(reference=None,calibrated_class=None,combined_gradient=None,
            relaxation_correction=None,baseline_changed=False)
 
 
-def normalize(physical_path,core_path):
+def normalize(physical_path,core_path,allow_multisite=False):
     """Reuse the archived physical H rule; preserve heavy atoms and real caps."""
     p=read_json(physical_path);c=read_json(core_path)
     if p['status']!='prepared' or c['status']!='prepared':
         raise InvalidArtifact('prepared physical and source-core records required')
-    if p['cofactor_charge_e'] or p.get('background_metals') or p['explicit_waters']:
+    if allow_multisite:
+        from mace_multisite_density import audit_alias
+        audit_alias(p)
+    if p['cofactor_charge_e'] or (not allow_multisite and (p.get('background_metals') or p['explicit_waters'])):
         raise InvalidArtifact('this input version supports dry single-metal standard proteins only')
-    if any(a['kind'] not in ('protein_source','selected_metal') for a in p['physical_atoms']):
+    kinds=('protein_source','selected_metal','background_metal','retained_site_water') if allow_multisite else ('protein_source','selected_metal')
+    if any(a['kind'] not in kinds for a in p['physical_atoms']):
         raise InvalidArtifact('unsupported nonstandard physical component')
-    if c['explicit_water_inventory'] or c['protocol_id']!='generic_peptide_alpha_caps_native_r2scan3c_dev_v1':
+    if (c['explicit_water_inventory'] and not allow_multisite) or c['protocol_id']!='generic_peptide_alpha_caps_native_r2scan3c_dev_v1':
         raise InvalidArtifact('declared dry peptide alpha-cap source required')
     if c['source_structure']!=p['source']:raise InvalidArtifact('core and protein source differ')
     graph=SourceGraph(verify(c['source_structure']),verify(c['topology_definition']))
@@ -113,7 +118,7 @@ def environment(case,proj,background):
             projection_support_ids=sorted(set(local)&support),exterior_target_e=target,original_exterior_charge_e=before,
             delta_e=delta,recipient_ids=recipients,recipient_bonds=bonds,increment_per_recipient_e=increment,
             original_recipient_charges_e=[ff[i] for i in recipients],new_recipient_charges_e=[env[i] for i in recipients]))
-    values=[env.get(i,0.) for i in ids];expected=prep['protein_charge_e']-sum(ledger.values())
+    values=[env.get(i,0.) for i in ids];expected=prep['protein_charge_e']+prep.get('background_metal_charge_e',0)-sum(ledger.values())
     if abs(math.fsum(values)-expected)>1e-6:raise InvalidArtifact('whole exterior charge closure fails')
     return dict(physical_atoms=physical,projection_support_ids=sorted(support),environment_charges_e=values,
         environment_charge=expected,boundary_ledger=rows,ligand_ledger=ledger,ligand_ledger_source=case['source_core'],
@@ -123,6 +128,13 @@ def environment(case,proj,background):
         QM_charges=None,environment_correction=None)
 
 
+def generating_background(prep,multi=False):
+    if multi:
+        from mace_multisite_density import background
+        return background(prep)
+    return forcefield_background(prep)
+
+
 def pointcharges(state):
     rows=[(q,*a['xyz_A']) for a,q in zip(state['physical_atoms'],state['environment_charges_e']) if q]
     return str(len(rows))+'\n'+''.join(' '.join(format(float(x),'.17g') for x in r)+'\n' for r in rows)
@@ -130,18 +142,22 @@ def pointcharges(state):
 
 def prepare(config,output):
     started=time.monotonic();cpu=time.process_time();cfg=read_json(config)
-    if cfg['protocol']!=PROTOCOL or not cfg['cases']:raise InvalidArtifact('explicit supported input configuration required')
+    if cfg['protocol'] not in (PROTOCOL,MULTISITE_PROTOCOL) or not cfg['cases']:raise InvalidArtifact('explicit supported input configuration required')
+    multi=cfg['protocol']==MULTISITE_PROTOCOL
     old=read_json(verify(cfg['quantum_implementation_parent']));root=Path(output).resolve();root.mkdir(parents=True,exist_ok=False)
     impl=root/'implementation';impl.mkdir();paths={k:verify(v) for k,v in old['implementation'].items()}
     for name in ('mace_density_inputs.py','mace_mechanics.py','mace_omol_matched_h.py','mace_omol_charges.py','mace_omol_solvent.py','mace_responsive_charges.py','mace_omol_vacuum.py'):
         paths[name]=Path(__file__).with_name(name)
+    if multi:
+        for name in ('mace_multisite_density.py','mace_amoeba_capability.py'):
+            paths[name]=Path(__file__).with_name(name)
     pins={}
     for name,src in paths.items():shutil.copyfile(src,impl/name);pins[name]=record(impl/name)
-    m=dict(protocol_id=PROTOCOL,config=record(config),agreement=cfg['plan'],implementation=pins,cases={},**NULLS)
+    m=dict(protocol_id=cfg['protocol'],config=record(config),agreement=cfg['plan'],implementation=pins,cases={},**NULLS)
     for row in cfg['cases']:
         name=row['case_id']
         if not name.replace('_','').isalnum() or name in m['cases']:raise InvalidArtifact('invalid or duplicate case ID')
-        pp=verify(row['physical']);cp=verify(row['core']);case=normalize(pp,cp)
+        pp=verify(row['physical']);cp=verify(row['core']);case=normalize(pp,cp,multi)
         if case['global_id']!=name:raise InvalidArtifact('configuration/source identity differs')
         d=root/name;d.mkdir();write_new(d/'original_physical.json',case.pop('original_physical_atoms'))
         case['physical_atoms']=record(d/'original_physical.json')
@@ -150,7 +166,7 @@ def prepare(config,output):
         proj=projection(case,xyz(verify(case['endpoints']['Ca']['xyz'])))
         if projection(case,xyz(verify(case['endpoints']['La']['xyz'])))!=proj:raise InvalidArtifact('paired projection differs')
         write_new(d/'projection.json',proj);case['projection']=record(d/'projection.json')
-        state=environment(case,proj,forcefield_background(read_json(pp)))
+        state=environment(case,proj,generating_background(read_json(pp),multi))
         write_new(d/'state.json',state);case['state']=record(d/'state.json')
         (d/'environment.pc').write_text(pointcharges(state));case['pointcharges']=record(d/'environment.pc')
         nearest=min(np.linalg.norm(np.array(a['xyz_A'])-np.array(q[1:])) for a,v in zip(state['physical_atoms'],state['environment_charges_e']) if v for q in xyz(verify(case['endpoints']['Ca']['xyz'])))
@@ -163,12 +179,13 @@ def prepare(config,output):
 
 def audit(path):
     m=read_json(path);cfg=read_json(verify(m['config']))
-    if m['protocol_id']!=PROTOCOL or cfg['protocol']!=PROTOCOL:raise InvalidArtifact('input protocol differs')
+    if m['protocol_id'] not in (PROTOCOL,MULTISITE_PROTOCOL) or cfg['protocol']!=m['protocol_id']:raise InvalidArtifact('input protocol differs')
+    multi=m['protocol_id']==MULTISITE_PROTOCOL
     for pin in [m['agreement'],*m['implementation'].values()]:verify(pin)
     if set(m['cases'])!={r['case_id'] for r in cfg['cases']}:raise InvalidArtifact('case inventory differs')
     results={}
     for row in cfg['cases']:
-        case=read_json(verify(m['cases'][row['case_id']]));fresh=normalize(verify(row['physical']),verify(row['core']))
+        case=read_json(verify(m['cases'][row['case_id']]));fresh=normalize(verify(row['physical']),verify(row['core']),multi)
         if read_json(verify(case['physical_atoms']))!=fresh['original_physical_atoms']:raise InvalidArtifact('original physical mapping changed')
         for key in ('mapping','evidence','normalized_global_preparation','source_core'):
             if case[key]!=fresh[key]:raise InvalidArtifact('source mapping/state differs: '+key)
@@ -186,7 +203,7 @@ def audit(path):
         proj=projection(case,xyz(verify(case['endpoints']['Ca']['xyz'])))
         from mace_responsive_charges import same_projection
         if not same_projection(read_json(verify(case['projection'])),proj):raise InvalidArtifact('source projection differs')
-        state=environment(case,proj,forcefield_background(read_json(verify(row['physical']))))
+        state=environment(case,proj,generating_background(read_json(verify(row['physical'])),multi))
         if state!=read_json(verify(case['state'])) or pointcharges(state)!=verify(case['pointcharges']).read_text():
             raise InvalidArtifact('permanent generating field differs')
         paired(verify(case['endpoints']['La']['xyz']),verify(case['endpoints']['Ca']['xyz']),case['endpoints']['La']['charge'],case['endpoints']['Ca']['charge'])
@@ -200,7 +217,7 @@ def quantum_key(t,m):
         **{k:m[k] for k in ('protocol_id','method','preparation','orca','implementation')}))
 
 
-def prepare_quantum(preparation,output):
+def prepare_quantum(preparation,output,plan=None):
     audit(preparation);p=read_json(preparation);cfg=read_json(verify(p['config']));old=read_json(verify(cfg['quantum_implementation_parent']))
     root=Path(output).resolve();root.mkdir(parents=True,exist_ok=False);impl=root/'implementation';impl.mkdir();pins={}
     for name,pin in p['implementation'].items():
@@ -209,7 +226,7 @@ def prepare_quantum(preparation,output):
     name='mace_responsive_charges.py'
     if name not in pins:
         shutil.copyfile(Path(__file__).with_name(name),impl/name);pins[name]=record(impl/name)
-    m=dict(protocol_id=QUANTUM_PROTOCOL,preparation=record(preparation),agreement=p['agreement'],implementation=pins,
+    m=dict(protocol_id=QUANTUM_PROTOCOL,preparation=record(preparation),agreement=record(plan) if plan else p['agreement'],implementation=pins,
         method=METHOD,orca=old['orca'],tasks=[],compute_budget=None,wall_time_limit=None,
         execution_policy={k:pins[n] for k,n in [('task_runner','run_orca_task_manifest.py'),('runtime_renderer','render_orca_runtime_input.py')]},
         energy_scope=old['energy_scope'],variational_response_check=None,**NULLS)
@@ -263,13 +280,13 @@ def main():
     p=sub.add_parser('prepare');p.add_argument('--config',required=True);p.add_argument('--output',required=True)
     for command in ('audit','prepare-quantum'):
         p=sub.add_parser(command);p.add_argument('--preparation',required=True)
-        if command=='prepare-quantum':p.add_argument('--output',required=True)
+        if command=='prepare-quantum':p.add_argument('--output',required=True);p.add_argument('--plan')
     for command in ('dry-run','execute','collect'):
         p=sub.add_parser(command);p.add_argument('--manifest',required=True);p.add_argument('--output')
     a=parser.parse_args()
     if a.command=='prepare':r=prepare(a.config,a.output)
     elif a.command=='audit':r=audit(a.preparation)
-    elif a.command=='prepare-quantum':r=prepare_quantum(a.preparation,a.output)
+    elif a.command=='prepare-quantum':r=prepare_quantum(a.preparation,a.output,a.plan)
     elif a.command=='dry-run':r=validate_quantum(a.manifest)
     elif a.command=='collect':r=collect_quantum(a.manifest)
     else:

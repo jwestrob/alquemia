@@ -218,7 +218,7 @@ def prepare(boundary,density,short_report,software,plan,output,trial_source_audi
 
 def validate(path):
     m=read_json(path)
-    if m['protocol']=='declared_source_graph_responsive_density_GK_POLAR_panel_v1':
+    if m['protocol'] in ('declared_source_graph_responsive_density_GK_POLAR_panel_v1','declared_source_graph_responsive_density_GK_POLAR_panel_v2'):
         from mace_density_panel import validate as validate_panel
         return validate_panel(path)
     if m['protocol'] not in (PROTOCOL,TRIAL_PROTOCOL) or m['tolerances']!=TOL or len(m['static_tasks'])!=51 or len(m['response_tasks'])!=60:
@@ -390,7 +390,7 @@ def execute(path,retry=False):
 
 def collect(path,output):
     m=validate(path);root=Path(path).resolve().parent;terms=read_json(verify(m['terms']));rows={};parsed={};checks=[]
-    panel=m['protocol']=='declared_source_graph_responsive_density_GK_POLAR_panel_v1'
+    panel=m['protocol'] in ('declared_source_graph_responsive_density_GK_POLAR_panel_v1','declared_source_graph_responsive_density_GK_POLAR_panel_v2')
     case_ids=m['case_ids'] if panel else CASES
     for t in m['static_tasks']+m['response_tasks']:
         item=accepted(t,root/'tasks'/t['task_id'])
@@ -461,7 +461,7 @@ def collect(path,output):
         for var in ('radius_minus','radius_plus'):
             if variants[var]['status']!='complete':continue
             diffs={} if panel else {'partition':variants[var]['partition_kcal']-primary['partition_kcal']}
-            diffs.update({x['alpha']+'_'+x['GGR']:x['difference_kcal']-y['difference_kcal'] for x,y in zip(variants[var]['contrasts'],primary['contrasts'])})
+            diffs.update({x.get('comparison_id') or x['alpha']+'_'+x['GGR']:x['difference_kcal']-y['difference_kcal'] for x,y in zip(variants[var]['contrasts'],primary['contrasts'])})
             checks.append(dict(name=var+'_relative_sensitivity',errors_kcal=diffs,pass_=max(abs(v) for v in diffs.values())<=TOL['radius_relative_kcal']))
     identity={}
     for state in ('environment','Ca','La'):

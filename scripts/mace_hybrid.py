@@ -354,7 +354,7 @@ def worker(manifest, task_id, output, memory_mode):
                           charge_check=None, charge_response_status='not_part_of_this_component',
                           energy_definition='trained_local_interaction_energy_only',
                           force_definition='negative_Cartesian_gradient_of_interaction_energy',
-                          input_state_check=check_atoms(rows,t['charge']))
+                          input_state_check=check_atoms(rows,t['charge'],background_calcium_indices=t.get('background_calcium_indices',())))
         else:
             density = np.asarray(calc.results['density_coefficients'])
             if density.shape != (len(atoms), 4) or not np.isfinite(density).all():

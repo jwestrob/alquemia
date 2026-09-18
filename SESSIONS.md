@@ -2144,3 +2144,39 @@ beforeanyfullscoremanifest. Parvalbuminsupportingcrossstudy, aequorinordered
 vectorwithoutinventedlabels. Tests/report/current/vaultupdated; email040505Z
 acceptedrelay withGGRfailure. Noexpansionjoblive; preservePLM1200796,H2001200809,
 otheragentMopB1201160 andunrelateddirtyfiles. No push/defaultchange.
+
+
+## 2026-09-18 — Multisite hybrid transfer fails; source-solvation sensitivity localized
+
+Completed the frozen five-site extension (PARV4CPV CD/EF, AEQ1SL8 EF1/EF3/EF4):
+10 DFT endpoints1201164,20 MACE forwards1201165,10CHELPG+10queries1201167,
+20boundary initializations and63static/60field/75response calls1201168.
+All39numerical checks pass; all6 supporting parvalbumin-minus-GGR comparisons
+fail. Aequorin stays an ordered vector without invented site labels. Prior
+alpha/2FW0 failure retained. Baseline/default, water/protonation states and
+thresholds unchanged. 65,328allocatedcore-s/208GPU-s; summedwall1462s, with
+quantumCPU recorded only to whole seconds. NoDFTretry. Source bridges preserve
+actualACEbond, backgroundCa and water unions; explicitamber19/TIP3P Ca template
+verified against originalwatercharges. New comparison runner v2 retains every
+site/reference; native equations unchanged.13new tests and13legacy regressions
+pass, including completed native integration (3pass11.506s). Old snapshots intact.
+
+Saved GGR component localization passes1072closure/rigid checks;2tests pass.
+Only1.3996 of13.4218kcal direct shift touches source residues. Native15call
+source-only/empty verification1201172 confirms+18.1290self/-5.5288cross GK split
+within6.324e-13kcal;3real-outputtests pass35.054s.49wall/3136core-s/141.559CPU,
+noGPU/DFT/MACE/fields/response. v1parser-prefix issue caught before any call;
+v2executed firstattempts. Symmetric saved-array attribution finds charge changes
++18.452793, distances-0.372800, Bornradii+0.049028. Mixed combinations are explicit
+algebraic counterfactuals, not computed QMstates. All native/closure checks pass.
+The native/OpenMM30A tanh bound is verified, but radius changes are not the main
+contributor here. No charge-instability claim until sampling is tested.
+
+Reports/plans/results: MULTISITE_DENSITY_HYBRID_*, GGR_DENSITY_LOCALIZATION_*,
+GK_SOURCE_* underdiagnostics/mace_omol_20260917; exact productsunderworkspaces.
+Current/agentguide/vaultupdated; emailmultisite_hybrid_email_v1acceptedrelay.
+Next investigate documented same-density nativeCHELPG sampling. Standalone
+utility acceptsGBW/optional density only; main ORCA NoIter route not yet tested.
+No new refinement pilot declared/launched. No new study job remains live.
+Preserve PLM1200796,H2001200809,MopB1201160 and unrelateddirtyfiles/SESSIONS.
+Activegoal incomplete; no promotion, push, productionrescore or resourcebudget.

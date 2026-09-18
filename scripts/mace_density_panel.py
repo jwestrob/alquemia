@@ -65,20 +65,28 @@ def prepare(config,output):
     br,bm,er,em,dr,dm,rr,terms=inputs(**args)
     cases=sorted(bm['cases'])
     if cases!=c['case_ids'] or c['identity_case'] not in cases:raise InvalidArtifact('declared case inventory differs')
-    if set(c['reference_cases'])!={'ALPHA_1F6S','ALPHA_6IP9'}:raise InvalidArtifact('both frozen alpha references required')
+    if 'comparison_spec' in c:
+        from mace_density_comparisons import validate_spec
+        validate_spec(c['comparison_spec'],cases,c['software'])
+    elif set(c['reference_cases'])!={'ALPHA_1F6S','ALPHA_6IP9'}:raise InvalidArtifact('both frozen alpha references required')
     sw=read_json(verify(c['software']));parent=read_json(verify(rr['manifest']))
     if c['software']!=parent['software'] or sw['returncode']:raise InvalidArtifact('frozen native backend differs')
     root=Path(output).resolve();root.mkdir(parents=True,exist_ok=False);impl=root/'implementation';impl.mkdir()
     paths={n:verify(p) for src in (bm,em,dm) for n,p in src['implementation'].items()}
-    for n in ('mace_density_panel.py','mace_density_gk_hybrid.py','mace_density_short.py'):
+    for n in ('mace_density_panel.py','mace_density_gk_hybrid.py','mace_density_short.py','mace_density_comparisons.py'):
         paths[n]=Path(__file__).with_name(n)
     for n,p in paths.items():shutil.copyfile(p,impl/n)
     write_new(root/'terms.json',terms)
-    m=dict(protocol=PROTOCOL,scientific_protocol=TRIAL_PROTOCOL,case_ids=cases,identity_case=c['identity_case'],
-        reference_cases=c['reference_cases'],sources={**c['inputs'],'config':record(config)},software=c['software'],plan=c['plan'],
+    protocol=PROTOCOL
+    if 'comparison_spec' in c:
+        from mace_density_comparisons import PROTOCOL as comparison_protocol
+        protocol=comparison_protocol
+    m=dict(protocol=protocol,scientific_protocol=TRIAL_PROTOCOL,case_ids=cases,identity_case=c['identity_case'],
+        reference_cases=c.get('reference_cases',[]),sources={**c['inputs'],'config':record(config)},software=c['software'],plan=c['plan'],
         implementation={p.name:record(p) for p in impl.glob('*.py')},terms=record(root/'terms.json'),threads=64,tolerances=TOL,
         static_tasks=[],response_tasks=[],new_energy_calls=12*len(cases)+3,new_field_queries=12*len(cases),
         new_response_solves=15*len(cases),new_DFT_calls=0,new_MACE_calls=0,**NULLS)
+    if 'comparison_spec' in c:m['sources']['comparison_spec']=c['comparison_spec']
     def task(case,state,variant,mode,eps):
         metal='Ca' if state=='environment' else state
         src,report=(em,er) if state=='environment' else (bm,br)
@@ -121,12 +129,17 @@ def prepare(config,output):
 
 def validate(path):
     m=read_json(path)
-    if m['protocol']!=PROTOCOL or m['scientific_protocol']!=TRIAL_PROTOCOL or m['tolerances']!=TOL or m['threads']!=64:
+    if m['protocol'] not in (PROTOCOL,'declared_source_graph_responsive_density_GK_POLAR_panel_v2') or m['scientific_protocol']!=TRIAL_PROTOCOL or m['tolerances']!=TOL or m['threads']!=64:
         raise InvalidArtifact('panel model/settings differ')
     for pin in [m['software'],m['plan'],m['terms'],*m['sources'].values(),*m['implementation'].values()]:verify(pin)
     c=read_json(verify(m['sources']['config']));n=len(m['case_ids'])
-    if any(m[k]!=c[k] for k in ('case_ids','identity_case','reference_cases','scientific_protocol','software','plan','tolerances')):
+    if any(m[k]!=c[k] for k in ('case_ids','identity_case','scientific_protocol','software','plan','tolerances')) or m['reference_cases']!=c.get('reference_cases',[]):
         raise InvalidArtifact('declared panel scope differs')
+    if 'comparison_spec' in c:
+        from mace_density_comparisons import validate_spec,PROTOCOL as comparison_protocol
+        if m['protocol']!=comparison_protocol or m['sources'].get('comparison_spec')!=c['comparison_spec']:raise InvalidArtifact('comparison scope differs')
+        validate_spec(c['comparison_spec'],m['case_ids'],m['software'])
+    elif m['protocol']!=PROTOCOL:raise InvalidArtifact('missing comparison specification')
     if {k:m['sources'][k] for k in c['inputs']}!=c['inputs']:raise InvalidArtifact('panel source selection differs')
     if [m['new_energy_calls'],m['new_field_queries'],m['new_response_solves']]!=[12*n+3,12*n,15*n] or m['new_DFT_calls'] or m['new_MACE_calls']:
         raise InvalidArtifact('panel calls differ')
@@ -152,6 +165,9 @@ def validate(path):
 
 
 def comparisons(m,cases,label):
+    if 'comparison_spec' in m['sources']:
+        from mace_density_comparisons import comparisons as grouped_comparisons
+        return grouped_comparisons(m,cases,label)
     reference=read_json(verify(m['sources']['reference']))['variants'][label]
     contrasts=[]
     for a in m['reference_cases']:

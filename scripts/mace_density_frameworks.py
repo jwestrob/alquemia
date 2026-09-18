@@ -72,7 +72,7 @@ def prepare(preparation,reference_solver,output):
 
 def validate(path):
     m=read_json(path)
-    if m['protocol']!=PROTOCOL or m['new_energy_calls'] or m['new_response_solves']:raise InvalidArtifact('framework preparation scope differs')
+    if m['protocol'] not in (PROTOCOL,'source_multisite_AMOEBA2018_GK_verified_framework_import_v1') or m['new_energy_calls'] or m['new_response_solves']:raise InvalidArtifact('framework preparation scope differs')
     for p in [m['preparation'],m['reference_solver'],m['parent'],m['software'],m['executable'],m['native_parameters'],m['plan'],*m['implementation'].values()]:verify(p)
     prep=read_json(verify(m['preparation']))
     if len(m['tasks'])!=len(prep['cases']) or {t['case_id'] for t in m['tasks']}!=set(prep['cases']):raise InvalidArtifact('framework inventory differs')

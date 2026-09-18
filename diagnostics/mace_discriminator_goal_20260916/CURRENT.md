@@ -6,7 +6,59 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
-## ACTIVE: charge sampling complete; isolated ddX build ready
+## Latest: native polarization accounting passes; resolution job 1201312 runs
+
+The complete frozen-response functional now passes all 28 native checks on
+GGR 2FW0/2FVY Ca/La. It includes permanent/permanent, permanent/induced and
+induced/induced reaction terms with both AMOEBA dipole sets. Cross energy
+agrees by 2.73e-11 kcal; archived induction agrees by 4.60e-8 kcal. This is
+energy-accounting support, not a new conductor score or biological improvement.
+See FROZEN_RESPONSE_TRANSFER_PLAN.md and FROZEN_RESPONSE_REPORT.md.
+
+Job 1201309 exposed missing switch('MPOLE') initialization in the new wrapper.
+Its failed outputs remain. Corrected isolated wrapper/job 1201310 passes;
+no native library, scientific input or tolerance changed. Both jobs together:
+58 allocation-wall seconds, 3712 allocated core-seconds, 234.977 CPU-seconds.
+Three actual-input/output tests pass in 22.090 s, no skip. Products:
+frozen_response_v2/collection_job_1201310.json (passing), frozen_response_v1
+(failed); separate software builds and cost receipts. No response iterations.
+
+Conductor refinement 1201302 COMPLETE: 16 new solves plus 4 exact reuses;
+444/450 checks pass. Endpoint refinement and two rotation checks still fail.
+The GGR source-self between-structure contrast is 1.925845 kcal at 18/974 and
+1.944634 at 24/2030 (change 0.018789), versus archived GK 18.129021. This is
+model sensitivity, not affinity improvement. Cost 1446 allocation-wall seconds,
+92544 allocated core-seconds, 81415 reported CPU-seconds. Read-only report
+120.139343 s. DDX_CPCM_REFINEMENT_REPORT.md; ddx_cpcm_source_report_v2/result.json.
+
+RUNNING 1201312: DDX_RESOLUTION_PLAN.md separates basis from integration errors
+on the same 2FW0 pair: 18/2030, 24/3470, 30/3470, 30/5810, eight new solves.
+All physical parameters and original tolerances unchanged. One 64-CPU/128-GiB
+allocation. No new DFT/MACE/force/affinity calls. Workspace ddx_resolution_v1;
+use its frozen implementation for collect after execution. Its manifest SHA:
+09b5f3cab73c711fbaf080d47489105378db745a8b2be44427d30fa6f48d17a0.
+
+Finite-dielectric recovery 1201286–1201292 is COMPLETE and unsuccessful:
+18 new starts, 12 failures, six successes (including two zeros), two exact
+reuses. 312/350 checks pass; no complete 2FVY pair. No wider PCM launch.
+Cost 17340 summed job-wall seconds, 1109760 allocated core-seconds, 1073219
+reported CPU-seconds. DDX_ITERATION_RECOVERY_REPORT.md; collection and frozen
+report under ddx_source_recovery_v1 and ddx_source_recovery_report_v1.
+The isolated GMRES comparison remains failed at strict numerical-equivalence
+gates and slower; DDX_KRYLOV_REPORT.md. Do not launch the old matrix-storage
+proposal: measured cost was in the first dielectric system, not the L solve.
+
+Full conductor transfer still needs a verified native multipole representation
+and numerical qualification. The tested stationary cross expression is
+C_R=E_R(P+(mu_d+mu_p)/2)-E_R((mu_d-mu_p)/2). A future transfer must subtract the
+same expression with GK and preserve all other hybrid terms. Do not replace
+only source-self or call frozen response self-consistent. No threshold/aqref.
+Latest prior own commit: 100dd52. The next scoped commit records the completed
+Krylov/conductor studies, native functional check and running resolution test.
+Two resolution-source/cache tests pass in 29.504 seconds, no scientific calls.
+
+## Earlier charge-sampling and PCM development
+
 
 The sampling experiment completed 40 native NoIter high-level property replays
 and 40 actual saved-density potential queries. No SCF optimization or scientific
@@ -93,11 +145,64 @@ The root reporter supports original and independently recovered states and
 checks reuse coefficients/receipts; use the frozen recovery reporter for new
 outputs. The separate six-call DDX_MATRIX_STORAGE_PLAN is UNEXECUTED.
 
+### Completed GMRES; current conductor model/refinement
+
+DDX_KRYLOV_PLAN/REPORT record same-operator GMRES qualification1201296:
+2endpoints/4linear systems,allnewtrue residuals pass,18/21overallchecks pass;
+Ca native reference residual2.598e-8fails1e-9, endpoint/paired energy deviations
+1.309/1.321e-6fail1e-6kcal. Gates unchanged; no widerGMRES job. Cost945wall,
+60480allocatedcore-s,58042reportedCPU-s(whole-secondprecision),478588KiBRSS.
+Isolated kernelbuild1201295:89wall/5696core-s/76.976CPU-s;19nativeFortran
+numericalmodules unchanged. OriginalddXenvironment untouched. Newadapter only
+exposes nativeoperators/preconditioners/norm/source for SciPyGMRES. Full operator
+calls require dodiagTrue thenrestoreflag, nativeJacobi usesoffdiagonaloperators.
+Three source/preparation tests pass29.197s; actualoutputs inddx_krylov_v1 and
+readonlysummaryddx_krylov_report_v1. No predictive or speedup claim.
+
+DDX_CPCM_PLAN switches explicitly to conductor-like physical approximation,
+f=(78.3-1)/78.3, nativecosmo rawenergy multiplied once. Same cavities/charges,
+original stockddXmodule. This shares ORCA's scaling form, not its complete
+quantum/Gaussiancavity model; no oldreference/bands. Chosen because almostall
+finitePCMcost is firstdielectricsystem; not from biologicalclassifications.
+
+CPCMjob1201299 COMPLETE20/20solves,source/math/runtimechecks pass;overall
+420/430numericalchecks pass,10fail. Between-GGR source-self contrasts
+[6/194,9/302,12/590]=[1.9069791988,2.0981994222,1.8918314748]kcal vsGK18.1290.
+Failures: endpointrefinement up1.05777kcal,2FW0Rrefinement.18411,between-R.20637,
+2FVYCa rigid.05496,andcoarse2FW0reciprocity.08840;retainall. Cost285wall,
+18240allocatedcore-s,13388reportedCPU-s,721624KiBRSS,0GPU/DFT/MACE. Localreport
+45.5377s. Three actualnative/source tests pass30.145s;four-testset including
+refinementreuse passes45.049s,no skip. No fullhybridscore/accuracy claim.
+Manifestddx_cpcm_source_v1 SHA
+ e5ac44778fa284028c1895903f334d8d355533569128c314a7fbfd275ebf968d.
+Reportddx_cpcm_source_report_v1/result.json;costddx_cpcm_cost_v1.
+
+DDX_CPCM_REFINEMENT_PLAN freezes newprimary18/974 andrefined24/2030, coarse
+reference12/590 from actualfirstoutputs. NativeCAPI confirms bothLebedevgrids
+supported(Pythonmodulehasno supported_lebedev_gridsattribute; no scientific
+call was made by that failed metadata lookup). Reuse4actualcoarsereference
+states;16newroles,alloriginalsource/physicalsettings/tolerances. One64CPU/
+128GiBjob1201302 RUNNINGnode-64-768g-6, no automaticretries/projectbudget.
+Manifestddx_cpcm_source_v2 SHA
+b6225d23440423c917009009c5e7d6581445fd5207057e3668a40df60f45d300.
+Frozen sharedworker retainsrawconductorenergy,prefactor,scaledenergy andfresh
+Models. Newreuse prefers per-state nativeparameters, preserving correctgrid
+provenance. Frozenreporter handles v1/v2 andverifiedreuse coefficients. Next:
+run ddx_cpcm_source_v2/implementation/mace_ddx_source_report.py on its actual
+collection_job_1201302.json,outputddx_cpcm_source_report_v2. Do not mutate snapshots.
+
+Rootuncommitted: mace_ddx_kernels.py,krylov.py,cpcm.py; updatesrecovery.py and
+source_report.py;twonewtestfiles,Krylov/CPCM plans/reports/wrappers. Currentand
+vault needfinalscopedcommit. Independentenergy-accounting work may follow:
+anyfullGK-to-CPCMreplacement must include permanent/source,induced andmixed
+reaction terms coherently; do not replaceonlyGQQ andcallitahydrid improvement.
+No such fulltransfer or density-import pilot has been run/prepared yet.
+
 DENSITY_IMPORT_CAPABILITY_NOTE records read-only ORCA/PySCF/MOKIT/IOData source
 inspection. No density-import dependency/install/export/pilot was performed.
 Exact-density coupling needs both surfacephi andintegralpsi; cap positions and
 La ECP conventions require validation. Do not mix exactphi with fittedpsi.
-Latest preceding own commit325ed72; other agent's238d32a completes PLM audit.
+Latest own commit100dd52; other agent's238d32a completes PLM audit.
 Preserve unrelated dirtyfiles, index entries and jobs.
 
 DDX_CAPABILITY_NOTE records the source audit. Exact-density coupling requires

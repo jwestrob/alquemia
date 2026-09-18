@@ -2248,3 +2248,43 @@ Current checkpoint, agent guide and vault updated. Goal remains active; no
 broadly validated MACE replacement. No push/default promotion/productionrescore
 or project CPU/time budget. Other agent238d32a and unrelatedworking changes,
 SESSIONS lines, jobs and index entries preserved. New results remain opt-in.
+
+
+## 2026-09-18 — Conductor refinement and full polarization functional
+
+Preserved production/default, all prior experiments and concurrent changes.
+Isolated native-operator GMRES job1201296 converged both real endpoints but
+failed strict native-equivalence gates (18/21 pass); no wider launch. Cost
+split >99% in the finite-dielectric system motivated a separately declared
+stock-ddX conductor approximation. Original recovery1201286–1201292 finished:
+18 starts,12 failures,6 successes plus2 reuses;312/350 checks pass. No complete
+2FVY pair, no new score. Summed cost1109760 core-s/1073219 reportedCPU-s.
+
+Conductor job1201299 completed20/20 states,420/430checks pass;285wallseconds,
+18240core-s. Refined1201302 completed16new/4reused roles,444/450checks pass;
+1446wall/92544core-s/81415CPU-s. GGR source-self between-structure contrast
+1.925845 vs1.944634kcal at18/974vs24/2030, compared withGK18.129021. Four
+endpoint refinement and two endpoint rotation checks still fail; no tolerance
+change, classification, reference or default promotion. Full frozen reports
+and failed states retained. GMRES/CPCM source tests3/4pass; shared recovery
+regression3pass50.038s. Scientific gates remain distinct from parser tests.
+
+Implemented native frozen-response functional qualification using bothAMOEBA
+dipole sets. Firstwrapper1201309 omitted nativeMPOLEcutoff initialization;
+retained failure, repaired isolated frontend and replayed same4states in
+1201310. All28actual numerical checks pass: crossenergy discrepancy<=2.73e-11
+kcal, stationaryenergy<=4.60e-8kcal, response residual<=3.00e-10Debye. No native
+kernel/physicalinput/tolerance changed. Bothjobs58wall/3712core-s/234.977CPU-s;
+zeroiterativeresponse/DFT/MACE/continuum/forcecalls. Three actualtests pass22.090s.
+
+RUNNING1201312, ddx_resolution_v1: eight conductor solves on same2FW0Ca/La,
+18/2030,24/3470,30/3470,30/5810. Separates angularbasis from integrationerror,
+preserving physical model and frozen tolerances. Two input/cache tests pass
+29.504s. Fullnewhybrid transfer still needs matched multipole representation
+and numerical qualification; source-self replacement alone is insufficient.
+
+Plans/results/commands in diagnostics/mace_omol_20260917/DDX_* and
+FROZEN_RESPONSE_*. Candidate outputs remain underworkspaces. Current checkpoint,
+agentguide andvault updated. Goal active; no broad MACEreplacement, push,
+defaultpromotion or projectcompute/timebudget. Commit only this session's
+scopedfiles and thisSESSIONSentry; other working notes and edits preserved.

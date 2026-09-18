@@ -63,3 +63,33 @@ The original incomplete20-role run and the successful single-state logged
 recovery remain under `ddx_source_self_v2` and `ddx_convergence_v1`. Their
 records are not changed by the new collection. See DDX_SOURCE_SELF_PLAN,
 DDX_CONVERGENCE_REPORT and DDX_ITERATION_RECOVERY_PLAN for the actual scope.
+
+
+## Current resolution and polarization diagnostics
+
+These commands collect completed existing work; they do not submit new jobs.
+Run from the repository root. All scientific configurations are in the pinned
+manifests and their implementation snapshots.
+
+```bash
+OPENBLAS_NUM_THREADS=1 /groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python \
+  workspaces/mace_omol_20260917/ddx_resolution_v1/implementation/mace_ddx_resolution.py \
+  dry-run --manifest workspaces/mace_omol_20260917/ddx_resolution_v1/manifest.json
+
+# Job 1201312 writes collection_job_1201312.json on completion. For a separate
+# read-only collection after all four groups finish, use a new output filename:
+OPENBLAS_NUM_THREADS=1 /groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python \
+  workspaces/mace_omol_20260917/ddx_resolution_v1/implementation/mace_ddx_resolution.py \
+  collect --manifest workspaces/mace_omol_20260917/ddx_resolution_v1/manifest.json \
+  --output workspaces/mace_omol_20260917/ddx_resolution_v1/recollection.json
+
+OPENBLAS_NUM_THREADS=1 /groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python \
+  workspaces/mace_omol_20260917/frozen_response_v2/implementation/mace_frozen_response.py \
+  dry-run --manifest workspaces/mace_omol_20260917/frozen_response_v2/manifest.json
+```
+
+Corrected native-functional results are in
+`frozen_response_v2/collection_job_1201310.json`. They pass their accounting
+checks; no conductor transfer or biological score is present. The earlier
+wrapper failure in `frozen_response_v1` is retained. Completed PCM/conductor
+inventories and their numerical reports are described in CURRENT.md.

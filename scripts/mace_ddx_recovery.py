@@ -73,7 +73,7 @@ def preflight(path):
 def retained_state(item):
     source=read_json(verify(item['receipt']))
     if item['kind']=='original':
-        group=source['groups'][item['group']];original=group['rows'][item['state']];prefix=item['state']+'_';parameters=group['actual_parameters']
+        group=source['groups'][item['group']];original=group['rows'][item['state']];prefix=item['state']+'_';parameters=original.get('actual_parameters',group['actual_parameters'])
     else:
         original=source;prefix='';manifest=logged_preflight(verify(source['manifest']));parameters={**manifest['model'],**manifest['grid']}
     if original['status']!='computed':raise InvalidArtifact('cannot reuse unsuccessful state')
@@ -86,7 +86,12 @@ def retained_state(item):
 
 
 def execute(path,group_id,output):
-    m=preflight(path);g=next(g for g in m['groups'] if g['group_id']==group_id)
+    return execute_group(preflight(path),path,group_id,output)
+
+
+def execute_group(m,path,group_id,output):
+    """Execute one already validated group; explicit optional conductor prefactor."""
+    g=next(g for g in m['groups'] if g['group_id']==group_id);factor=m.get('energy_prefactor',1.)
     pyddx=None
     if g['new_states']:
         import pyddx
@@ -110,10 +115,11 @@ def execute(path,group_id,output):
                 a.update(cavity_bohr=cavity,phi=phi,psi=psi);row.update(potential_max_error_au=pe,psi_max_error=se,charge_sum_e=math.fsum(q),preparation_wall_seconds=time.monotonic()-before)
                 if pe>m['tolerances']['potential_au'] or se>m['tolerances']['psi']:raise InvalidArtifact('source potential/integral gate failed')
                 state=pyddx.State(model,np.asfortranarray(psi),phi);row['forward_solve_started']=row['new_forward_solve_started']=True;solve=time.monotonic();state.solve(tol=m['tolerances']['solver'])
-                x=np.array(state.x);energy=float(state.energy());a['x']=x
+                x=np.array(state.x);raw_energy=float(state.energy());energy=raw_energy*factor;a['x']=x
                 if not state.is_solved or not np.isfinite(energy) or not np.isfinite(x).all():raise InvalidArtifact('native solve incomplete/nonfinite')
-                err=abs(.5*math.fsum((psi*x).ravel())-energy)*HA_TO_KCAL
+                err=abs(factor*.5*math.fsum((psi*x).ravel())-energy)*HA_TO_KCAL
                 row.update(status='computed',energy_hartree=energy,energy_kcal_mol=energy*HA_TO_KCAL,contraction_error_kcal=err,
+                           raw_native_energy_hartree=raw_energy,energy_prefactor=factor,
                            contraction_pass=err<=m['tolerances']['energy_kcal'],passive_energy_pass=energy*HA_TO_KCAL<=m['tolerances']['energy_kcal'],
                            final_single_layer_iterations=state.x_n_iter,solve_wall_seconds=time.monotonic()-solve)
             if 'cavity_bohr' in a:
@@ -129,7 +135,7 @@ def execute(path,group_id,output):
         print(group_id,label,row['execution'],row['status'],flush=True)
         state=None;model=None;a.clear();gc.collect()
     if all(r['rows'][label]['status']=='computed' for label in ('Ca','La')):
-        r['reciprocity_error_kcal']=.5*abs(math.fsum((arrays['Ca_psi']*arrays['La_x']).ravel())-math.fsum((arrays['La_psi']*arrays['Ca_x']).ravel()))*HA_TO_KCAL
+        r['reciprocity_error_kcal']=factor*.5*abs(math.fsum((arrays['Ca_psi']*arrays['La_x']).ravel())-math.fsum((arrays['La_psi']*arrays['Ca_x']).ravel()))*HA_TO_KCAL
     np.savez_compressed(d/'arrays.npz',**arrays)
     r.update(status='complete' if all(row['status']=='computed' for row in r['rows'].values()) else 'incomplete',arrays=record(d/'arrays.npz'),
              wall_seconds=time.monotonic()-start,CPU_seconds=time.process_time()-cpu,peak_process_RSS_KiB=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,

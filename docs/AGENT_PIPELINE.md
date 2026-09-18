@@ -504,3 +504,39 @@ successful coefficients. [Recovery scope](../diagnostics/mace_omol_20260917/DDX_
 This is a frozen projected-charge solvent-component diagnostic: no complete
 hybrid rescore, exact-density claim or production/default change. Recover
 CURRENT.md for current job and manifest status before executing anything.
+
+
+### Affordable conductor component,2026-09-18
+
+The distinct conductor-like protein-boundary pilot completed20/20real solves
+in285allocated wall seconds(64CPUs). It reduces the same-charge GGR source-self
+structural discrepancy from18.129kcal(GK) to1.89–2.10across its three resolutions.
+Its frozen numerical gate still fails420/430checks; refinement/rotation errors
+remain. This is model sensitivity, not demonstrated biological improvement.
+[Actual result](../diagnostics/mace_omol_20260917/DDX_CPCM_REPORT.md).
+
+Higher-resolution job1201302 retains all physical parameters and tolerances:
+18/974versus24/2030,16newroles plus4exactreuses. Native energies, conductor
+prefactor and unrounded scaled values remain separate. No baseline/default,
+aquo reference, threshold, fullhybrid score or combinedgradient change.
+[Scope](../diagnostics/mace_omol_20260917/DDX_CPCM_REFINEMENT_PLAN.md).
+The separate GMRES qualification converges but fails strict equivalence checks
+and is slower; its cost split motivated the conductor approximation, not a new
+class label. [GMRES result](../diagnostics/mace_omol_20260917/DDX_KRYLOV_REPORT.md).
+
+
+### Polarization accounting and conductor refinement, 2026-09-18
+
+The full frozen-response reaction-energy expression passes 28 native checks
+on four real GGR endpoints. It retains both AMOEBA dipole states and all
+permanent/induced cross terms. A corrected isolated wrapper restores native
+cutoff initialization; the initial failed execution remains recorded.
+[Derivation and result](../diagnostics/mace_omol_20260917/FROZEN_RESPONSE_REPORT.md).
+
+Conductor refinement completes but fails six of 450 numerical checks.
+The between-structure contrast stabilizes, while individual energies still
+need refinement. Job 1201312 separates angular-basis and integration errors;
+[scope](../diagnostics/mace_omol_20260917/DDX_RESOLUTION_PLAN.md).
+Finite-dielectric PCM recovery has finished unsuccessfully; no further PCM
+campaign is running. Recover CURRENT.md before execution. No new hybrid score,
+calibration, baseline integration or production/default change is available.

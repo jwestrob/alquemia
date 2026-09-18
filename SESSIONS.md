@@ -2288,3 +2288,36 @@ FROZEN_RESPONSE_*. Candidate outputs remain underworkspaces. Current checkpoint,
 agentguide andvault updated. Goal active; no broad MACEreplacement, push,
 defaultpromotion or projectcompute/timebudget. Commit only this session's
 scopedfiles and thisSESSIONSentry; other working notes and edits preserved.
+
+
+## 2026-09-18 — Conductor discrimination complete; full metal response begins
+
+Complete conductor correction passes4/12 directional comparisons, unchanged
+from priorGK; alpha4/6→1/6,parv0/6→3/6. All56solvescomplete and105new functional/
+paired-refinement checks pass; previous endpoint/rotation failures retained.
+No overall gain, close this branch without wider panel expansion. Costs3436
+summedwall-s,219904allocatedcore-s,209515reportedCPU-s,zeroGPU-s. Longestjob810s.
+Four real-fixture conductor tests pass1.681s. Fullunroundedoutputsandreceipts
+under conductor_discrimination_v1; report in diagnostics/mace_omol_20260917.
+
+Resolution1201312complete22/24checks; pairedchangespass,butendpointbasisstill
+fails. Multipolebridge1201317 numericalchecks pass; collector now correctly
+interprets disabledFMM orders as−2,28/28passwithoutnewcalculations. Original
+failedcollectionpreserved. Two actualbridge tests pass16.642s. Parallel source
+build1201323 successfully served56solves; dedicated12callscalingtestdeferred.
+
+Read user-requested Khoury2025 paper; SI44pagesandsevenauthorPDBs retrieved via
+EuropePMC. Agentkhoury_benchmark independently runs44maskedMACEendpoints on
+all22sites acrossA0A7,HEW5,RTX (job1201351), includingpH6/source policies and
+vaultnote. Parentdoesnoteditagentfiles. No claimCaCDthresholdsareaffinityKd.
+
+Parent full3Dmetal-response plan uses actual archived DFT gradient directions
+missed by prior1Daxis. Samephysicalchemistry,8centerstatesreused; new288MACEcore,
+288GB,216fullshort,atmost8conditionalanalyticDFTvalidations. Noentropy or
+conductorcombination. Newscriptmace_metal_response.py withfocusedexistingrunner
+dispatch; baseline/defaultunchanged. Fourrealfixturetests pass17.195s; frozen
+GPUenvdryrunpass. Prepared_v2 jobs1201352–1201358submitted, noDFT yet. V1unused
+prep preserved;V2frozensourceavoidsliveimplementationhashdependency.
+
+Goalactive;nopush/defaultpromotion/productionrescore. No projectcompute/timecap.
+Concurrentworkingchanges,index,experiments andjobs preserved.

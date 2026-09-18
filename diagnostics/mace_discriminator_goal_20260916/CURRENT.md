@@ -6,6 +6,60 @@ per-analysis permission gate. Preserve baseline/default, immutable studies,
 other agents' edits/jobs. No push/promotion. No project CPU/time/token budget.
 Recover GOAL.md and inspect live jobs before resuming.
 
+## Latest checkpoint, 2026-09-18: conductor closed; parallel new tests
+
+Conductor discrimination COMPLETE:56/56 solves,105/105 new functional/refinement
+checks pass, but prior/new directional total stays4/12. Alpha4/6→1/6; parv0/6→3/6
+(all EF). No overall gain; close this challenger without wider PQQ expansion.
+Earlier endpoint/rotation failures remain. Final collection and costs:
+workspaces/mace_omol_20260917/conductor_discrimination_v1/collection_final.json;
+conductor_discrimination_cost_v1/result.json. Cost219904 allocatedcore-s,
+209515 CPU-s,0 GPU-s;3436 summed jobwall-s; longestjob810s. Four actual-fixture
+ tests pass1.681s. Report CONDUCTOR_DISCRIMINATION_REPORT.md.
+
+Resolution1201312 completed22/24checks (endpoint basis changesfail; pairedpass).
+Native multipole bridge1201317 now28/28pass after collector-only disabled-FMM
+metadata fix; original failed report remains. Parallel native build1201323
+worked on all56scores; separate12callsource-scaling benchmark deferred/unrun.
+
+Jacob requested paper d5sc02315g.pdf and parallel work with improvement track.
+Main paper fully read; EuropePMC SI44pages +seven authorPDBs downloaded to
+workspaces/mace_omol_20260917/d5sc02315g_reading_v1. SI TableS6 exact LaKd
+A0A7=17±2,HEW5=5.2±1.7,RTX=40±4µM; Ca values are approximate CD folding
+thresholds, not fittedKd. Author-domain models omit ITC construct MPVP scar.
+Agent /root/khoury_benchmark owns44 maskedMACEcalls acrossall22sites, report,
+vaultnote and focused mace_omol_multisite/prepared changes. Do not overlap.
+
+Parent declared METAL_RESPONSE_PLAN.md: prior metal-axis gradient captures only
+1.5–31% of actual alpha DFT metal-gradient norm. New full3D physical metal-only
+response uses same nativeDFT center anchors/MACE+GBcurvature and full-minus-core
+short component.37points/state;288newcore+288GB+216fullshort, centersreused;
+up to8 conditionalDFT analytic validations, no score until independentlychecked.
+Prepared_v2 passes4realfixturetests17.195s and frozen GPU-environment dry-run.
+Jobs1201352–1201358 submitted:four72-callcore andthree72-callfull-short manifests.
+V1 unused preparation preserved; V2 pins a frozen preparation implementation
+so later collector development cannot invalidate it. Products under
+workspaces/mace_metal_response_20260918/prepared_v2. No newDFT yet. Preserve prior
+2Dfailedresponse and baseline. No combining conductor/mechanics corrections.
+
+## User steering, 2026-09-18: usefulness and qualification in parallel
+
+Jacob approved prioritizing complete discrimination results while qualification
+continues, reducing bookkeeping and consistency work that does not inform the
+main goal. He requested email when discrimination improves, including PQQ spread
+where possible. Next execute CONDUCTOR_DISCRIMINATION_PLAN.md: seven existing
+GGR/alpha/parvalbumin cases, complete frozen-response correction at two grids.
+Preserve failed numerical gates; report exploratory rankings alongside them.
+Do not gate all biological learning on full endpoint convergence. The proposed
+12-call source-thread benchmark is deferred in favor of actual scoring work.
+
+Current own commit b09ffa4. Stock multipole bridge1201317 and isolated parallel
+build1201323 are complete. All bridge source/rigid numerical checks pass; four
+metadata checks falsely fail because native ddX normalizes disabled FMM orders
+to -2. Verified ddx_parameters.f90 lines274–277; fix the read-only parameter
+interpretation with a new report, no rerun or tolerance change. Resolution
+job1201312 still runs. Email sent/relay accepted: conductor_progress_email_v1.
+
 ## Latest: native polarization accounting passes; resolution job 1201312 runs
 
 The complete frozen-response functional now passes all 28 native checks on

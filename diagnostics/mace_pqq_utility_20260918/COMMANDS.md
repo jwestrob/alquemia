@@ -23,6 +23,18 @@ partial comparisons under new versioned names. Final reporting must include
 Slurm allocation receipts and the `/usr/bin/time` files, so job-level startup
 overhead and failed attempts are not lost.
 
+After both jobs are terminal and all25pairs are complete, build the final
+report (this refuses running/incomplete campaigns):
+
+```bash
+python diagnostics/mace_pqq_utility_20260918/report.py \
+  --workspace "$PQQ_WORK" --output "$PQQ_WORK/final_report_v1"
+```
+
+The final report records literal frozen-band calls separately from reproduction
+within the predeclared0.01tolerance, all100successful endpoint receipts, the
+failed initial MPI startup, phase timing and full allocation costs.
+
 The source-backed accuracy replay is already complete in accuracy_v1. To replay
 without inference to a fresh location:
 

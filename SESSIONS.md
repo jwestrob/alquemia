@@ -2321,3 +2321,27 @@ prep preserved;V2frozensourceavoidsliveimplementationhashdependency.
 
 Goalactive;nopush/defaultpromotion/productionrescore. No projectcompute/timecap.
 Concurrentworkingchanges,index,experiments andjobs preserved.
+
+
+## 2026-09-18 — Khoury author-domain masked-MACE benchmark (parallel agent)
+
+Completed the declared 44-endpoint/22-site pilot on three author Ca-conditioned
+domain models. New pH6 preparation preserves all source heavy coordinates,
+all background Ca ions and paired protonation; old multisite default and
+production baseline unchanged. Exact SI domain sequences verified; missing
+experimental MPVP scars and ITC-versus-CD evidence limitations remain explicit.
+All 44 endpoints and all numerical accounting/permutation checks pass. Fixed
+all-site means: A0A7 49.234436, HEW5 70.120351, RTX 2.777993 model kcal.
+Declared domain-mean comparisons against three GGR structures: 6/9 pass,
+covering two of three new domain groups. RTX fails all three; every RTX site
+scores below every GGR structure. No threshold/site/water/microstate rescue.
+
+Job1201351 completed: one A5000/16CPUs/64474MiB,799 wall/GPU-allocation seconds,
+12784 allocated core-seconds,852.837 reported CPU-seconds. Initial preparation
+517.424638 wall/449.499209 CPU seconds; read-only report549.30 wall/476.58 CPU
+seconds. Recovery housekeeping not separately timed. Three real-fixture tests
+pass25.400s,zero skips. Source/report: diagnostics/mace_omol_20260917/
+KHOURY_BENCHMARK_{PLAN,REPORT,COMMANDS}.md; workspace khoury_author_domains_*;
+full report SHA e409364d66a7571ad51f167ae4ae82652c0dbf8aed6a4e2c2f532f33ee5b3339.
+Dedicated vault capture written. No remaining benchmark job, follow-up pilot,
+email, push or default promotion. Parent continues discriminator improvements.

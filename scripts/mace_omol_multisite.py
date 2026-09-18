@@ -11,7 +11,35 @@ from mace_gb import RADII
 from mace_hybrid import check_atoms, write_xyz
 
 POLICY = 'omol_intact_multisite_fixed_background_Ca_source_acetyl_ff19sb_v1'
+AUTHOR_POLICY = 'omol_author_AF3_domain_multisite_pH6_fixed_Ca_ff19sb_v1'
 ASSEMBLY = 'deposited_chain_A_with_declared_cofactor_and_site_waters'
+
+
+def author_mapping(cfg, normalized):
+    """Verify identifier-only normalization of every original author heavy atom."""
+    import gemmi
+    receipt = read_json(verify(cfg['author_normalization']))
+    if receipt['normalized'] != normalized or receipt['policy_id'] != AUTHOR_POLICY:
+        raise InvalidArtifact('author normalization source/policy mismatch')
+    def entries(pin):
+        st = gemmi.read_structure(str(verify(pin)))
+        if len(st) != 1: raise InvalidArtifact('one complete author model required')
+        result = {}
+        for c in st[0]:
+            for r in c:
+                for a in r:
+                    key = f'{c.name}/{r.seqid.num}/{r.seqid.icode.strip()}/{a.name}'
+                    if a.element.is_hydrogen or a.altloc.strip('\x00 ') or key in result:
+                        raise InvalidArtifact('unexpected H/alternate/duplicate author source atom')
+                    result[key] = {'element': a.element.name, 'resname': r.name, 'xyz_A': list(a.pos)}
+        return result
+    old, new = entries(receipt['original']), entries(normalized)
+    mapping = receipt['source_to_normalized']
+    if set(mapping) != set(old) or set(mapping.values()) != set(new) or len(mapping) != len(new):
+        raise InvalidArtifact('author normalization atom inventory differs')
+    if any(old[k] != new[v] for k,v in mapping.items()):
+        raise InvalidArtifact('author normalization changed chemistry or source coordinates')
+    return receipt
 
 
 def build(recipe, site_key):
@@ -23,10 +51,16 @@ def build(recipe, site_key):
     source = choices[0]; sites = source['sites']
     if [s['site_key'] for s in sites] != cfg['site_order'] or site_key not in cfg['site_order']:
         raise InvalidArtifact('source site inventory/order differs')
+    policy = cfg.get('policy_id', POLICY)
+    if policy not in (POLICY, AUTHOR_POLICY): raise InvalidArtifact('unsupported multisite policy')
+    author = author_mapping(cfg, source['source']) if policy == AUTHOR_POLICY else None
     pm = read_json(verify(cfg['protonation']))
-    if (pm['source'] != source['source'] or pm['ph'] != 7.0 or pm['add_missing_residues']
+    if (pm['source'] != source['source'] or pm['ph'] != (6.0 if author else 7.0) or pm['add_missing_residues']
             or pm.get('repaired_missing_atom_count', 0)):
-        raise InvalidArtifact('requires archived pH7 preparation without rebuilt residues/heavy atoms')
+        raise InvalidArtifact('requires policy-matched archived pH without rebuilt residues/heavy atoms')
+    if author and (cfg['retain_source_acetyl'] or cfg['retained_water_oxygen_ids']
+                   or pm.get('protocol_id') != 'openmm_author_domain_pH6_fixed_seed_v1'):
+        raise InvalidArtifact('author domain requires declared native pH6 preparation without added cofactors/water')
     raw = gemmi.read_structure(str(verify(source['source']))); raw.setup_entities()
     residues = [r for c in raw[0] if c.name == 'A' for r in c]
     supported = STANDARD | ({'ACE'} if cfg['retain_source_acetyl'] else set())
@@ -120,7 +154,7 @@ def build(recipe, site_key):
         if frozenset(addresses) not in retained: raise InvalidArtifact('raw covalent connection was lost')
         links.append(addresses)
     evidence = cfg['evidence']
-    result = {'status': 'prepared', 'case_id': row['case_id'], 'policy_id': POLICY,
+    result = {'status': 'prepared', 'case_id': row['case_id'], 'policy_id': policy,
               'source': pm['output'], 'source_preparation': cfg['protonation'], 'recipe': record(recipe),
               'selected_site_key': site_key, 'physical_atoms': physical, 'assembly': ASSEMBLY,
               'explicit_waters': waters, 'water_H_moves': moves, 'protein_charge_e': q,
@@ -133,6 +167,13 @@ def build(recipe, site_key):
               'microstate': 'archived_explicit_protonation; actual_source_acetyl_if_present; background_Ca2plus; fixed_neutral_site_water_union',
               'evidence': evidence, 'evidence_use': 'consumed_method_development', 'reference': None,
               'baseline_coordinates_modified': False}
+    if author:
+        result.update(author_source=author['original'], author_normalization=cfg['author_normalization'],
+                      author_source_to_normalized=author['source_to_normalized'],
+                      construct_relation='author_domain_model_missing_experimental_N_terminal_MPVP_scar',
+                      geometry_origin='author_AF3_Ca_conditioned_prediction',
+                      evidence_use='newly_scored_exploratory_challenge_labels_and_models_inspected',
+                      microstate='archived_OpenMM_pH6_explicit_protonation; background_Ca2plus; no_explicit_water')
     return result
 
 
@@ -152,7 +193,7 @@ def audit(path):
         if xyz(verify(e['xyz'])) != coords or e['charge'] != q or e['spin_multiplicity'] != 1 or e['state'] != check_atoms(coords,q,background_calcium_indices=background_indices):
             raise InvalidArtifact('multisite paired coordinates/charge/electron state differ')
     return {'status': 'pass', 'preparation': record(path), 'atoms': len(p['physical_atoms']),
-            'policy_id': POLICY, 'assembly': ASSEMBLY, 'protein_charge_e': p['protein_charge_e'],
+            'policy_id': p['policy_id'], 'assembly': ASSEMBLY, 'protein_charge_e': p['protein_charge_e'],
             'background_metal_charge_e': p['background_metal_charge_e'],
             'explicit_water_count': len(p['explicit_waters']), 'background_metals': p['background_metals'],
             'scope': 'actual source replay; selected substitution with fixed other calcium ions and site-water union',

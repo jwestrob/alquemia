@@ -1,0 +1,117 @@
+{
+  "GGR_structural_robustness": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/hydration_network_20260918/GGR_REPLICATE_RESULT.json",
+    "sha256": "3340cf57e133616b55477d209caad333f269120cf6feee017375911730b2861e"
+  },
+  "PQQ_changed": false,
+  "baseline_default_changed": false,
+  "correct_replica_orderings_after": 6,
+  "correct_replica_orderings_before": 0,
+  "email_receipt": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_network_20260918/improved_discrimination_email_v1/receipt.json",
+    "sha256": "b7ee9552f0f2a0cdf523933a0455169a0d8a19e19009cd071452981f132d1368"
+  },
+  "independent_biological_comparisons": 1,
+  "minimum_after_margin_kcal_mol": 0.6548403115761975,
+  "native_DFT_minimum_equivalence": "not_established",
+  "native_DFT_optimization_jobs_still_running": [
+    1201824,
+    1201825
+  ],
+  "occupancy_probabilities": null,
+  "original_core_cases": [
+    {
+      "case": "1F6S",
+      "direction_reproduced": true,
+      "original_R_hartree": -646.0958750732041,
+      "original_alpha_minus_GGR_kcal_mol": -14.5592454084387,
+      "prepared_R_hartree": -646.0552654876481,
+      "prepared_alpha_minus_GGR_kcal_mol": 10.923654263172676,
+      "water_preparation_delta_R_kcal_mol": 25.482899671611374
+    },
+    {
+      "case": "6IP9",
+      "direction_reproduced": true,
+      "original_R_hartree": -646.1006295187021,
+      "original_alpha_minus_GGR_kcal_mol": -17.542705002091296,
+      "prepared_R_hartree": -646.049450365032,
+      "prepared_alpha_minus_GGR_kcal_mol": 14.57269879719279,
+      "water_preparation_delta_R_kcal_mol": 32.11540379928408
+    }
+  ],
+  "practical_route_allocated_GPU_seconds_two_structures": 96,
+  "practical_route_measured_allocated_core_seconds_two_structures": 9088,
+  "preparation_and_test_CPU_cost": "not separately metered; not represented as zero",
+  "reference_failed_attempt_cost": {
+    "SCF_evaluations": 0,
+    "allocated_core_seconds": 64,
+    "elapsed_seconds": 1,
+    "job_id": 1201830
+  },
+  "stages": {
+    "MACE_optimization": {
+      "allocated_CPUs": 16,
+      "allocated_GPU_seconds": 96,
+      "allocated_core_seconds": 1536,
+      "elapsed_seconds": 96,
+      "job_id": 1201849,
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_network_20260918/mace_optimization_v1/collection_job_1201849.json",
+        "sha256": "d6370e5128d9e44409a9a8558ee41909821fd567c92eb794d48b28e841d0b1fb"
+      }
+    },
+    "MACE_proposal_check": {
+      "allocated_CPUs": 16,
+      "allocated_GPU_seconds": 137,
+      "allocated_core_seconds": 2192,
+      "elapsed_seconds": 137,
+      "job_id": 1201847,
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_network_20260918/mace_proposal_v2/collection_job_1201847.json",
+        "sha256": "19af492087b27759712254ca3c7d0d4d571b1827261a595a459db2ae013d89a4"
+      }
+    },
+    "expanded_DFT_adjudication": {
+      "allocated_CPUs": 64,
+      "allocated_GPU_seconds": 0,
+      "allocated_core_seconds": 25728,
+      "elapsed_seconds": 402,
+      "job_id": 1201853,
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_network_20260918/proposal_dft_v1/collection_numeric_parser_v2.json",
+        "sha256": "c048a1ec4b130edd40e94db549df97edc38d0b7f1b88d032ce7151140a4ba92b"
+      }
+    },
+    "original_core_score": {
+      "allocated_CPUs": 64,
+      "allocated_GPU_seconds": 0,
+      "allocated_core_seconds": 7552,
+      "elapsed_seconds": 118,
+      "job_id": 1201867,
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_network_20260918/core_transfer_v1/collection_1201867.json",
+        "sha256": "14c45ef51dbfeb407d5deac00f4c88e86179ac9f2644d9f6dc352ca36292c31f"
+      }
+    },
+    "water_reference": {
+      "allocated_CPUs": 64,
+      "allocated_GPU_seconds": 0,
+      "allocated_core_seconds": 1536,
+      "elapsed_seconds": 24,
+      "job_id": 1201831,
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_network_20260918/water_reference_v2/reference_1201831.json",
+        "sha256": "02db4b4dfb2969ea548bfb927a7ab047625443a36bc58196d9fa0fff6fed3887"
+      }
+    }
+  },
+  "status": "water_preparation_improves_consumed_development_discrimination",
+  "tests": {
+    "archived_baseline_and_development": 23,
+    "hydration_network": 13,
+    "hydration_square": 4,
+    "passed": 40,
+    "skipped": 0
+  },
+  "water_state_free_energies": null
+}

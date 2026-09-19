@@ -22,26 +22,29 @@ scientific integrity, immutable experiments, scheduler rules and concurrent work
 
 ## Current work — 2026-09-18
 
-Jacob approved water-network/occupancy modeling with “proceed!”. Recover
-[the hydration-network plan](diagnostics/hydration_network_20260918/AGREEMENT.md).
-Native DFT water-orientation searches are running as jobs 1201824 (1F6S) and
-1201825 (6IP9), four searches per job on64CPUs, two seeds for each metal.
-Only inner-water H orientations change; protein and water oxygens stay fixed.
-New70/76-atom cores include source-defined missing hydrogen-bond neighbors;
-protein composition is common across the two structural replicates. A separate
-gas-water reference/comparator completed as1201831 after a launcher-only
-retry; see WATER_REFERENCE.md for results and actual whole-node allocation cost. No occupancy probabilities,
-new classification or production change yet. Preserve current jobs and collect
-actual outcomes before extending the finite occupancy-state manifests.
+**Water preparation now improves the consumed alpha/GGR discrimination case.**
+Read [the result](diagnostics/hydration_network_20260918/REPORT.md) and
+[operations](diagnostics/hydration_network_20260918/COMMANDS.md). Exact MACE water
+rotations in expanded physical contexts, then original-core/original-recipe DFT,
+change alpha−GGR(1GLG) from−14.56/−17.54 to+10.92/+14.57kcal/mol. Reused GGR
+replicates give0/6→6/6 directions, one biological comparison, weakest margin0.655.
+No threshold fit, altered water count or production/PQQ change.40fixture tests
+pass, including archived PQQ energies/bands. Core-transfer job1201867 is complete.
 
-The native MACE proposal check passed (1201847); all eight exact rigid-water
-MACE optimizations subsequently converged (1201849). Four selected configurations
-are undergoing native DFT adjudication as1201853. Read MACE_PROPOSAL_REPORT.md and
-MACE_OPTIMIZATION_PLAN.md. Preserve the native DFT comparison jobs. No broader
-accuracy/occupancy gain is established yet. The corrected Opt collector retains
-actual printed gradients and explicitly handles the missing final.engrad;
-do not rerun these searches merely for that artifact. Frozen-coordinate drift
-in native Opt remains an explicit geometry check, not an erased failure.
+Jobs1201824/1201825 remain live native DFT orientation comparators; do not duplicate
+or interrupt them. The corrected collector handles Opt's absent final.engrad
+and retains actual gradient/geometry pairs; a missing artifact alone is not a
+reason to rerun chemistry. Small frozen-coordinate drift remains an explicit
+geometry check. Completed MACE jobs1201847/1201849 and DFT adjudication1201853
+must not be rerun. The practical route took96GPU-s plus118s on64CPUs for two
+structures; the ongoing native searches are separate development cost.
+
+Jacob approved this work with “proceed!”; standing autonomy applies. Next collect
+the native comparators, then advance the declared joint water occupancy table
+using the useful cheap proposal route. The old36-task DFT-only occupancy manifest
+is unsubmitted; do not blindly launch it. Bulk-water reference exists, but missing
+bound-state free-energy terms are not zero and no occupancy probabilities exist.
+Vault/result email updated. No production promotion or broad validation claimed.
 
 The preceding [hydration-square pilot](diagnostics/hydration_square_20260918/REPORT.md)
 is complete:14 endpoints, substantial water-specific effects, one biological

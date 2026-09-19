@@ -3084,3 +3084,35 @@ the exact-geometry gate passing; do not silently loosen it. Unqualified observed
 energies are preserved. Exact MACE rotations keep the physical constraints.
 Updated current pointers/runbook and vault note
 2026-09-18_laca-water-networks-and-mace-proposals.md. No push.
+
+
+## 2026-09-18 — Water-only preparation repairs alpha/GGR ordering
+
+Completed expanded DFT adjudication1201853:all four MACE proposals lower both
+original starts; native DFT gradients remain nonzero, not claimed stationary
+points. Then froze a preparation-only transfer into original40/43-atom cores,
+original native DFT recipe/SCF, unchanged protein/caps/metal/O/water count/charge.
+Four single points1201867 completed; no retries. Alpha−GGR1GLG changes
+−14.559→+10.924 (1F6S) and−17.543→+14.573 (6IP9) kcal/mol. Reused all three
+archived dry GGR sources:0/6→6/6 ordering comparisons, minimum margin0.654840.
+This remains one consumed biological comparison between two groups; no threshold
+fit, broad validation or new default. Baseline/PQQ inputs/results unchanged.
+
+The practical two-structure route costs96GPU-s for eight MACE searches/136
+energy-force objective evaluations plus118s on64CPUs for four original-core
+DFT endpoints:9088allocated core-s including GPU-host cores. Separate development
+adjudication402s/25728core-s. Preparation/test CPU not individually metered.
+40real-fixture tests pass (13new hydration,4prior-water,23baseline/development),
+including released PQQ energy/band checks. Real EnGrad component parser fixed to
+ignore progress ellipses; original incomplete collection preserved and recollected
+without rerunning QM. Missing collector dependency copied/pinned; no input changes.
+
+Committed focused initial implementation3f89fbc; current changes add original-core
+transfer/comparison, parser fix, result/accounting/commands and current pointers.
+REPORT.md/RESULT.json/GGR_REPLICATE_RESULT.json contain real receipts and limits.
+Vault updated; improvement email accepted by authorized relay, receipt preserved.
+Native DFT optimizations1201824/1201825 remain RUNNING as direct comparators.
+Preserve them; corrected Opt collector handles absent final.engrad and retains
+unqualified geometry observations. No native-minimum equivalence established.
+Joint water occupancy/free-energy work remains next;36-task DFT-only continuation
+is unsubmitted. Do not restart completed jobs or silently fill missing water terms.

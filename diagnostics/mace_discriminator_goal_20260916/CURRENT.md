@@ -1,55 +1,54 @@
 # MACE discriminator checkpoint — 2026-09-18
 
-## Current: approved hydration-network development running
+## Current: demonstrated water-preparation improvement; native comparators running
 
-Jacob approved the water-network/orientation/bulk-exchange plan with “proceed!”.
-See [scope](../hydration_network_20260918/AGREEMENT.md). Source-neighbor checks
-found omitted backbone/sidechain polar contacts. New70/76-atom cores preserve
-source heavy geometry and use a common complete-protein-fragment union, with
-one/two frozen outer waters and two/three variable first-shell waters. All120
-shared modeled site-chain residues match; other deposit chains and remote
-unresolved termini differ. Eleven real-fixture network/projection/parser tests pass, plus four baseline-water tests; dry-runs pass.
+**Original-core water preparation repairs both alpha/GGR directions.** New
+MACE exact rigid-water geometry preparation in source-defined70/76-atom contexts,
+then DFT in unchanged40/43-atom cores with original SCF/recipe, gives alpha−GGR1GLG
+−14.559→+10.924 (1F6S),−17.543→+14.573 (6IP9) kcal/mol. Only water H positions
+change; no water deletion, new score threshold, added scoring atoms or altered
+protein/metal/O geometry. MACE is a cheap proposer; native DFT remains the scorer.
 
-Jobs1201824/1201825 run four constrained native ORCA optimizations each on64CPUs:
-two geometry-defined starts per metal, only inner-water H rotations, fixed
-water internal geometry/O positions/protein. No numerical gradients/Hessians.
-The shared bulk-water reference completed as1201831 after an MPI-slot recovery;
-it used one rank, but the scheduler allocated64CPUs. Both attempts cost1,600
-allocated core-seconds. See WATER_REFERENCE.md and REFERENCE_RESULT.json. Actual optimizer SCF tolerance is1e-8,
-whereas old square SPs used1e-6: do not attribute old/new changes solely to
-representation. New empty-occupancy SPs will explicitly match TightSCF.
-No occupied-state free energies or probabilities are implied. Baseline unchanged.
+The subsequent archived three-GGR-source comparison gives0/6→6/6 directions,
+one consumed biological comparison, minimum margin0.654840. Not six independent
+observations or broad validation. Baseline and PQQ defaults/inputs/results remain
+unchanged.40real-fixture tests pass, including old PQQ energy/band regression.
+Read [REPORT](../hydration_network_20260918/REPORT.md),
+[RESULT](../hydration_network_20260918/RESULT.json) and
+[operations](../hydration_network_20260918/COMMANDS.md).
 
-Collect those results, then continue the approved occupancy-table development;
-record missing bound-water entropy/non-electrostatic terms explicitly. Existing
-approval pauses are superseded by Jacob's standing authorization. Full launch
-receipts: hydration_network_20260918/SUBMISSIONS.json. No other campaign restart.
+Completed:
+-1201847:16MACE proposal checks;8/8 energy-change signs,4/4 seed rankings,
+ median water-rotation gradient cosine0.991329.137GPU-s/2192allocatedcore-s.
+-1201849:eight exact water-rotation searches, all converge; both seeds reach
+ essentially identical minima per metal/structure.96GPU-s/1536core-s.
+-1201853:four expanded-core native DFT energy/gradient checks, all proposals
+ lower both original starts.402s/25728core-s. DFT rotational gradients remain
+ 3.47–5.42kcal/mol/radian; do not call these DFT stationary points.
+-1201867:four original-core native SPs;118s/7552core-s. This establishes the
+ preparation-only result above. Total proposed practical route96GPU-s/9088
+ allocatedcore-s across both structures; preparation/test CPU unmetered.
+-1201831:gas-water reference/CPCM comparator, after startup-only1201830 failure;
+ both allocations together25s/1600core-s. Bound-state free-energy terms missing.
 
-### MACE water proposals: demonstrated local utility, DFT adjudication running
+Still running:1201824/1201825, eight native constrained DFT searches, four per
+64CPU allocation. Preserve them. They are direct development comparators, not
+required by the proposed scanner path. Current native minimum equivalence remains
+unestablished. Read COLLECTION_POLICY.md: original runner mistakenly expects
+final.engrad, but native Opt ends with an energy-only step; do not rerun successful
+chemistry merely for that artifact. Collector retains actual printed gradients
+at their evaluated geometries and final XYZ separately. Native constraints show
+small drift; the declared geometry gate is unchanged and unqualified observed
+energies remain visible. Exact MACE rotations avoid that drift.
 
-Actual job1201847 completed16 native OMOL calls:8/8 local DFT energy-change
-signs,4/4 initial-seed rankings, median rotational-gradient cosine0.991329.
-Local energy-change MAE0.424043kcal/mol. Cost137GPU-s /2192allocated core-s.
-See hydration_network_20260918/MACE_PROPOSAL_REPORT.md. Generated water H in
-A211/A310 is initially1.852/1.880A from the metal; outward orientation strongly
-lowers both DFT energies, especiallyLa. This is a concrete candidate mechanism,
-not a final occupancy/classification result.
-
-The subsequent exact rigid-water MACE optimization completed all eight searches
-(job1201849). Both seeds converge for every metal/structure. Four selected
-per-metal configurations are being adjudicated with native DFT analytic energy/
-gradient endpoints as1201853, workspace hydration_network_20260918/proposal_dft_v1.
-Keep native optimization jobs1201824/1201825 running as direct comparators.
-Do not duplicate any of these tasks or expand the36-state DFT-only occupancy
-manifest before evaluating this cheaper proposal route.
-
-Collector correction: native Opt has no final.engrad and makes a final energy-only
-step. Original protein receipts may flag the missing artifact; do not rerun
-successful chemistry for that reason. Use the corrected collector and retain
-actual gradient/geometry pairs. Native frozen-coordinate drift up to6.3e-5A was
-found in early source-seed steps; final2e-5A geometry gate is unchanged, and
-unqualified observed energies remain visible. Exact MACE rotations avoid drift.
-Read COLLECTION_POLICY.md and COMMANDS.md. No baseline/default change.
+Next: collect the native searches once finished, then advance joint occupancy
+with cheap MACE proposals and native DFT adjudication. Do not launch the obsolete
+36-task DFT-only occupancy manifest. Preserve missing entropy/non-electrostatic
+terms as unavailable; do not infer occupancy from electronic energies alone.
+All plans/receipts are in hydration_network_20260918. Jacob's “proceed!” and
+standing autonomy authorize contained continuation. No fresh approval gate.
+Vault note2026-09-18_laca-water-networks-and-mace-proposals.md includes the result.
+Improvement email accepted by the authorized relay; receipt under that workspace.
 
 ## Completed: hydration-square pilot; approval gate removed
 

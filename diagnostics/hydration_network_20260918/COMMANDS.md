@@ -81,3 +81,108 @@ use an incomplete state table to choose occupancies or a favorable deletion.
 Fixture absence causes explicit skips; the completed water reference is an actual
 scientific integration result, not a mock. Missing bound-state entropy and
 non-electrostatic terms remain unavailable. No new classification bands.
+
+## MACE proposal route (current)
+
+Completed: proposal check1201847, all eight exact-rotation searches1201849.
+Running: four DFT adjudication endpoints1201853. Preserve these tasks.
+The MACE checks use actual first/third DFT gradient checkpoints and native OMOL;
+they do not use masked features or assign free energies to water occupancies.
+
+Replay preparation in fresh directories, without changing any source paths:
+
+```bash
+"$HYDRATION_PY" scripts/hydration_mace.py prepare \
+  --manifests "$HYDRATION_ROOT/workspaces/hydration_network_20260918/orientation_1f6s_v1/manifest.json" \
+              "$HYDRATION_ROOT/workspaces/hydration_network_20260918/orientation_6ip9_v1/manifest.json" \
+  --software "$HYDRATION_ROOT/workspaces/mace_omol_20260917/software_v1/software_manifest.json" \
+  --inventory "$HYDRATION_ROOT/workspaces/mace_canonical_20260916/audit_v2/inventory.json" \
+  --agreement "$HYDRATION_ROOT/diagnostics/hydration_network_20260918/MACE_PROPOSAL_PLAN.md" \
+  --output "$HYDRATION_ROOT/workspaces/hydration_network_20260918/mace_proposal_replay_v1"
+"$HYDRATION_PY" scripts/hydration_proposal_opt.py prepare \
+  --proposal-collection "$HYDRATION_ROOT/workspaces/hydration_network_20260918/mace_proposal_v2/collection_job_1201847.json" \
+  --manifests "$HYDRATION_ROOT/workspaces/hydration_network_20260918/orientation_1f6s_v1/manifest.json" \
+              "$HYDRATION_ROOT/workspaces/hydration_network_20260918/orientation_6ip9_v1/manifest.json" \
+  --inventory "$HYDRATION_ROOT/workspaces/mace_canonical_20260916/audit_v2/inventory.json" \
+  --agreement "$HYDRATION_ROOT/diagnostics/hydration_network_20260918/MACE_OPTIMIZATION_PLAN.md" \
+  --output "$HYDRATION_ROOT/workspaces/hydration_network_20260918/mace_optimization_replay_v1"
+```
+
+For the optimization replay above, the existing finite executor command is:
+
+```bash
+sbatch --parsable --partition=gpu --nodelist=node-128-512g-8gpu-1 \
+  --job-name=water-mace-opt --cpus-per-task=16 --gres=gpu:1 --mem=64474M \
+  --export=ALL,MACE_MIN_MEMORY_MIB=64474 \
+  --output="$HYDRATION_ROOT/workspaces/hydration_network_20260918/mace_optimization_replay_v1/slurm_%j.out" \
+  --error="$HYDRATION_ROOT/workspaces/hydration_network_20260918/mace_optimization_replay_v1/slurm_%j.err" \
+  diagnostics/mace_hybrid_20260916/run_pilot.sbatch \
+  "$HYDRATION_ROOT/workspaces/mace_hybrid_20260916/software_v1/venv/bin/python" \
+  "$HYDRATION_ROOT/workspaces/hydration_network_20260918/mace_optimization_replay_v1/manifest.json" native
+```
+
+Do not rerun the completed searches without a scientific reason. Recollect
+current results or prepare DFT replay from their validated output as follows:
+
+```bash
+"$HYDRATION_PY" scripts/hydration_proposal_opt.py collect \
+  --manifest "$HYDRATION_ROOT/workspaces/hydration_network_20260918/mace_optimization_v1/manifest.json" \
+  --output "$HYDRATION_ROOT/workspaces/hydration_network_20260918/mace_optimization_v1/recollection_v1.json"
+"$HYDRATION_PY" scripts/hydration_adjudicate.py prepare \
+  --collection "$HYDRATION_ROOT/workspaces/hydration_network_20260918/mace_optimization_v1/collection_job_1201849.json" \
+  --agreement "$HYDRATION_ROOT/diagnostics/hydration_network_20260918/MACE_OPTIMIZATION_PLAN.md" \
+  --output "$HYDRATION_ROOT/workspaces/hydration_network_20260918/proposal_dft_replay_v1"
+```
+
+DFT uses `adjudicate.sbatch` with the same absolute-manifest argument and log
+options as `run.sbatch`. It runs four16-rank native energy/analytic-gradient
+endpoints and writes its collection automatically. Actual proposal_dft_v1 had
+one missing collector import copied from the pinned existing MACE implementation;
+`collection_dependency_fix.json` records it. No quantum input or existing file
+was changed. Future preparations include that dependency from the outset.
+
+## Confirmed original-core result and archived GGR robustness
+
+Completed job1201867, all four endpoints. The original recipe/SCF/core is retained;
+only water H coordinates change. Read REPORT.md before applying the development
+result elsewhere. Recollect and reproduce the expanded GGR comparison without
+running any inference or DFT:
+
+```bash
+"$HYDRATION_PY" scripts/hydration_core_transfer.py collect \
+  --manifest "$HYDRATION_ROOT/workspaces/hydration_network_20260918/core_transfer_v1/manifest.json" \
+  --output "$HYDRATION_ROOT/workspaces/hydration_network_20260918/core_transfer_v1/recollection_v1.json"
+"$HYDRATION_PY" scripts/hydration_core_transfer.py compare-ggr-replicates \
+  --collection "$HYDRATION_ROOT/workspaces/hydration_network_20260918/core_transfer_v1/collection_1201867.json" \
+  --ggr-study "$HYDRATION_ROOT/diagnostics/ggr_mechanism_plan_20260915/RESULT.json" \
+  --output "$HYDRATION_ROOT/workspaces/hydration_network_20260918/core_transfer_v1/ggr_recomparison_v1.json"
+```
+
+For independently reproducing the preparation in a fresh directory:
+
+```bash
+"$HYDRATION_PY" scripts/hydration_core_transfer.py prepare \
+  --config "$HYDRATION_ROOT/diagnostics/hydration_network_20260918/CONFIG.json" \
+  --adjudication "$HYDRATION_ROOT/workspaces/hydration_network_20260918/proposal_dft_v1/collection_numeric_parser_v2.json" \
+  --ggr-release "$HYDRATION_ROOT/diagnostics/baseline_benchmark_20260915/RESULT.json" \
+  --agreement "$HYDRATION_ROOT/diagnostics/hydration_network_20260918/CORE_TRANSFER_PLAN.md" \
+  --output "$HYDRATION_ROOT/workspaces/hydration_network_20260918/core_transfer_replay_v1"
+```
+
+Execution uses `core_transfer.sbatch` with the same explicit absolute-manifest
+argument/log options as the other DFT wrappers. Do not submit a duplicate merely
+to replay collection. The successful expanded DFT collection is
+`proposal_dft_v1/collection_numeric_parser_v2.json`: its original collection
+failed on the progress text `gCP correction ... done`, fixed by requiring actual
+numeric tokens. All four quantum jobs were already successful; no recomputation.
+
+The23 archived baseline/development tests can be rerun with:
+
+```bash
+"$HYDRATION_PY" -m unittest discover -s tests -p test_affordable_development.py -q
+```
+
+Current next action is to inspect1201824/1201825 and collect only when finished.
+Do not infer final native convergence or occupancy from the confirmed preparation
+result. The old DFT-only occupancy execution example above is historical prepared
+capability, not the recommended continuation now that cheap MACE proposals work.

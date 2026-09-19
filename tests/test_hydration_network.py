@@ -182,5 +182,34 @@ class NetworkFixtures(unittest.TestCase):
             fixed=[i for i in range(len(initial)) if i not in mobile]
             np.testing.assert_array_equal(coords[fixed],initial[fixed])
 
+    def test_real_proposal_transfer_preserves_original_core_and_water_count(self):
+        mp=ROOT/'workspaces/hydration_network_20260918/core_transfer_v1/manifest.json'
+        if not mp.exists():self.skipTest('real proposed water transfer unavailable')
+        m=h.read_json(mp)
+        for t in m['tasks']:
+            before=h.xyz(h.verify(t['original_xyz']));after=h.xyz(h.verify(t['xyz']))
+            self.assertEqual(len(before),40 if t['case']=='1F6S' else 43)
+            self.assertEqual([a[0] for a in before],[a[0] for a in after])
+            for i in range(len(before)):
+                if i not in t['water_H_indices']:self.assertEqual(before[i],after[i])
+            parent=h.read_json(h.verify(t['parent']))
+            for w in h.square.water_groups(parent,before):
+                oh=[np.linalg.norm(np.array(after[i][1:])-after[w['oxygen_index']][1:]) for i in w['hydrogen_indices']]
+                oxygen=next(np.array(a[1:]) for a in self.reference if a[0]=='O')
+                reference_oh=[np.linalg.norm(np.array(a[1:])-oxygen) for a in self.reference if a[0]=='H']
+                np.testing.assert_allclose(oh,reference_oh,atol=2e-9,rtol=0)
+            original=h.verify(parent['outputs'][t['metal']]['input']).read_text().splitlines()[0]
+            self.assertEqual(h.verify(t['input']).read_text().splitlines()[0],original)
+
+    def test_real_analytic_output_component_parser_ignores_gradient_progress_ellipsis(self):
+        mp=ROOT/'workspaces/hydration_network_20260918/proposal_dft_v1/manifest.json'
+        if not mp.exists():self.skipTest('real DFT adjudication unavailable')
+        for t in h.read_json(mp)['tasks']:
+            p=Path(t['output_path']);receipt=Path(str(p)+'.execution.json')
+            if not receipt.exists():self.skipTest('actual DFT endpoint not complete')
+            e=h.square.endpoint(h.record(p),h.record(receipt),t['xyz'],t['input'])
+            self.assertIsNotNone(e['components_hartree']['gCP'])
+            self.assertAlmostEqual(sum(e['components_hartree'][k] for k in ('SCF','gCP','dispersion')),e['energy_hartree'],places=10)
+
 
 if __name__=='__main__':unittest.main()

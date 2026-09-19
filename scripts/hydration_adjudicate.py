@@ -39,7 +39,7 @@ def prepare(collection,agreement,output):
         fixed=[i for i in range(1,len(a)) if i not in la['mobile_indices']]
         if any(a[i]!=b[i] for i in fixed):raise InvalidArtifact('paired protein/oxygen geometry differs')
     impl=out/'implementation';impl.mkdir();pins={}
-    for name in ('hydration_adjudicate.py','hydration_network.py','hydration_mace.py','hydration_square.py','affordable_peptide.py'):
+    for name in ('hydration_adjudicate.py','hydration_network.py','hydration_mace.py','hydration_square.py','affordable_peptide.py','mace_hybrid.py'):
         p=impl/name;shutil.copyfile(Path(__file__).with_name(name),p);pins[name]=record(p)
     manifest={'protocol_id':PROTOCOL,'tasks':tasks,'agreement':record(agreement),'orca':source['orca'],
               'execution_policy':source['execution_policy'],'mace_collection':record(collection),

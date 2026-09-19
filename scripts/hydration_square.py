@@ -203,9 +203,10 @@ def endpoint(output, receipt, expected_xyz=None, expected_input=None):
         verify(rec['artifacts'][name])
     text=op.read_text(); value=energy(op)
     terms={}
-    for name,pattern in {'CPCM_dielectric':r'CPCM Dielectric\s*:\s*([-+\d.Ee]+)',
-                         'dispersion':r'Dispersion correction\s+([-+\d.Ee]+)',
-                         'gCP':r'gCP correction\s+([-+\d.Ee]+)'}.items():
+    number=r'([-+]?\d+(?:\.\d*)?(?:[Ee][-+]?\d+)?)'
+    for name,pattern in {'CPCM_dielectric':r'CPCM Dielectric\s*:\s*'+number,
+                         'dispersion':r'Dispersion correction\s+'+number,
+                         'gCP':r'gCP correction\s+'+number}.items():
         found=re.findall(pattern,text)
         terms[name]=float(found[-1]) if found else None
     if terms['dispersion'] is not None and terms['gCP'] is not None:

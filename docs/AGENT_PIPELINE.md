@@ -40,7 +40,8 @@ pauses above do not reinstate it. Recover the current checkpoint for next work.
 native DFT water-orientation searches on source-defined expanded networks in
 1F6S/6IP9. Missing hydrogen-bond partners are restored; protein/water oxygens
 stay fixed. The independent liquid-water reference completed as1201831.
-No optimized endpoint or occupancy/accuracy claim is available yet. Recover
+A preparation-only accuracy improvement is now available below; native DFT minima
+and occupancy remain unestablished. Recover
 [operations](../diagnostics/hydration_network_20260918/COMMANDS.md) and the
 [Opt collection correction](../diagnostics/hydration_network_20260918/COLLECTION_POLICY.md)
 before collecting; an absent final `.engrad` does not justify rerunning a
@@ -50,10 +51,19 @@ a fresh preparation with the corrected artifact expectation.
 **A useful MACE water-proposal result:** native OMOL reproduced8/8 local DFT
 energy-change directions and4/4 seed rankings, with median water-rotation gradient
 cosine0.9913. All eight subsequent exact rigid-water optimizations converged.
-Four selected configurations are undergoing DFT adjudication as1201853; native
+Four selected configurations passed DFT adjudication as1201853; native
 DFT searches remain live for comparison. [Proposal result](../diagnostics/hydration_network_20260918/MACE_PROPOSAL_REPORT.md)
 and [follow-up scope](../diagnostics/hydration_network_20260918/MACE_OPTIMIZATION_PLAN.md).
 This is local proposal utility, not an occupancy or broad accuracy claim.
+
+**Prepared original-core scoring now repairs the alpha/GGR comparison:** only
+water H positions change; the original40/43-atom cores and native DFT recipe stay
+fixed. Alpha−GGR1GLG changes from−14.56/−17.54 to+10.92/+14.57kcal/mol. All six
+comparisons to three archived GGR structures now have the expected ordering;
+weakest margin0.655. One consumed biological comparison, not broad validation.
+Practical route:96GPU-s for preparation plus118s on64CPUs for four DFT endpoints.
+Production/default and PQQ remain unchanged;40fixture tests pass. Read the
+[complete result](../diagnostics/hydration_network_20260918/REPORT.md).
 
 **Earlier research result:** the complete frozen-response conductor correction
 provides no overall improvement over the preceding GK hybrid:4/12 directional

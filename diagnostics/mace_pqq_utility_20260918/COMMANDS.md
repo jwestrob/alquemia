@@ -1,6 +1,6 @@
 # PQQ utility benchmark operations
 
-The timing_v2 jobs are already submitted: DFT1201562, MACE1201566. Do not launch
+The jobs are complete: DFT1201562, MACE1201566 and cached MACE1201609. Do not launch
 duplicates. Actual argv and scheduler responses are in the respective
 `timing_v2/{DFT,MACE}_submission.json`. The failed MPI startup is preserved in
 timing_v1; it is not successful timing evidence.
@@ -53,10 +53,11 @@ job costs (the shared DFT run is counted once):
 
 ```bash
 python diagnostics/mace_pqq_utility_20260918/finalize.py \
-  --workspace "$PQQ_WORK" --output "$PQQ_WORK/complete_comparison_v1"
+  --workspace "$PQQ_WORK" --output "$PQQ_WORK/complete_comparison_replay_v2"
 ```
 
-This requires all three campaign legs to have completed. It does not submit
+The original result is in complete_comparison_v1; this replay uses a new output
+directory. This requires all three campaign legs to have completed. It does not submit
 calculations. Accuracy and coverage are reported before runtime; matching the
 reference classifications is not evidence of improved accuracy on new proteins.
 

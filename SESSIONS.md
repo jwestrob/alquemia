@@ -2901,3 +2901,35 @@ isratioofmedianlatencies>=1.5pluslowertotal, asGOAL.mdstates; pairedmedian
 reportedseparately. Finish originalandcached reports, collectuniquejobcosts,
 updatevault/agentdocs, andgiveevidence-based recommendation. Newscientific
 modelsstillpaused; baseline/default unchanged;no push.
+
+
+## 2026-09-18 — Completed frozen PQQ MACE utility comparison
+
+All campaigns completed: DFT1201562, MACE1201566 and cache MACE1201609.
+50 DFT + 100 MACE fresh endpoints; four failed MPI startups retained. Both MACE
+runs reproduce all 25 archived scores exactly and classify 25/25 correctly.
+Supported crystal transfers remain 2/2, with 1KB0 unsupported (2/3 coverage).
+Median complete latencies: DFT239.844624s, MACE154.717952s, cached129.002392s.
+Original/cached median speedups1.550x/1.859x; speed criteria pass.
+
+The combined qualification stays false: Q9L935 DFT shifts+0.124766838kcal/mol
+but staysCa, exceeding0.01reproduction tolerance. La endpoint carries the
+shift; unchanged XYZ/method, echoed input only15→16MPI ranks. Both outputs
+print convergence but density/DIIS residuals exceed printed tolerances; default
+ORCA convergence is energy-based. Numerical sensitivity is plausible, no unique
+cause proved. No tighter-SCF or rescue calculation. Separately A0A3F2YLY8
+shifts−0.000240737 across exact La band into inconclusive. DFT24correct,
+1inconclusive, zero reversed;24/25scores reproduced. MACE has no failed calls.
+
+Diagnostics/mace_pqq_utility_20260918 now contains REPORT, RESULT, all25joined
+rows, DFT_REPRODUCIBILITY and VALIDATION. Finalizer ran on complete artifacts
+successfully; completion audit verifies receipts, inventories, exact score
+reproduction and retained failed gate. Unique cluster cost331851allocatedSlurm
+CPU-s/7112GPU-s; localdevelopment separately recorded. No new protocol/default,
+reference or threshold. All jobs terminal, no resubmission needed.
+
+Latest accuracy-first steering recorded; baseline retained and MACE available
+as optional PQQ research scorer, without a broad accuracy or full qualification
+claim. Agent guide/checkpoint/vault updated. Email summary accepted by relay
+(return0), mailbox receipt not confirmed. Finish scoped commit/tracker closure;
+new models and runtime variants remain paused. No push or production rescore.

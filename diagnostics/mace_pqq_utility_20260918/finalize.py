@@ -41,6 +41,15 @@ def finalize(workspace, output):
                      'cached_MACE_R_model_kcal':r['MACE_score'],'cached_MACE_class':r['MACE_class'],
                      'cache_score_change_model_kcal':r['MACE_score']-a['MACE_score']})
     if old_rows:raise ValueError('case inventories differ')
+    accuracy_by_class={}
+    for expected in ('Ca','La'):
+        selected=[r for r in rows if r['expected_class']==expected]
+        accuracy_by_class[expected]={'total':len(selected)}
+        for method in ('DFT','original_MACE','cached_MACE'):
+            accuracy_by_class[expected][method]={
+                'correct':sum(r[method+'_class']==expected for r in selected),
+                'inconclusive':sum(r[method+'_class']=='inconclusive' for r in selected),
+                'opposite_class':sum(r[method+'_class'] in ('Ca','La') and r[method+'_class']!=expected for r in selected)}
     costs={}
     for name,job in jobs.items():
         s=account['rows'][job];elapsed=int(s['elapsed_seconds']);cpus=int(s['allocated_cpus'])
@@ -51,7 +60,7 @@ def finalize(workspace, output):
             'cached_comparison':record(out/'cached/result.json'),
             'reference_fidelity':new['reference_fidelity'],'recommendation':new['recommendation'],
             'scientific_protocol_changed':False,'production_default_changed':False,
-            'rows':rows,'unique_cluster_costs':costs,
+            'rows':rows,'accuracy_by_class':accuracy_by_class,'unique_cluster_costs':costs,
             'development_cluster_totals':{key:sum(v[key] for v in costs.values()) for key in
                                         ('allocated_CPU_seconds','reported_CPU_seconds','GPU_allocation_seconds')},
             'local_development_receipts':[record(work/p) for p in
@@ -69,6 +78,14 @@ def finalize(workspace, output):
     baseline=new['methods']['DFT'];original=old['methods']['MACE'];cached=new['methods']['MACE']
     lines=['# PQQ reference fidelity and measured MACE utility','',
            f"Recommendation: **{new['recommendation']}**. The production DFT default is unchanged.",'',
+           '## Prediction fidelity','',
+           '| Reference class | Cases | DFT correct | Original MACE correct | Cached MACE correct |',
+           '|---|---:|---:|---:|---:|']
+    for expected,a in accuracy_by_class.items():
+        lines.append(f"| {expected} | {a['total']} | {a['DFT']['correct']} | {a['original_MACE']['correct']} | {a['cached_MACE']['correct']} |")
+    lines+=['', 'Archived crystal transfers: DFT 3/3; MACE 2/2 scored, with 1KB0 unsupported (2/3 of the complete transfer set). '
+            'Reference replay preserves performance; it does not demonstrate improved accuracy on unseen proteins.',
+            '', '## Full workflow timing','',
            '| Workflow | Median seconds / protein | Total case seconds | Fresh correct / 25 | Scores reproduced / 25 |',
            '|---|---:|---:|---:|---:|']
     for label,s in [('DFT',baseline),('Original masked MACE',original),('Parser-cache masked MACE',cached)]:

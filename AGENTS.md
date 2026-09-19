@@ -15,6 +15,14 @@ New scientific model experiments remain paused; older blanket pilot language
 below does not enlarge this newer agreed scope. Do not use unlabelled hillslope
 predictions as accuracy labels or change the baseline/default.
 
+**PQQ comparison completed, 2026-09-18:** all scheduled jobs finished. MACE
+retains 25/25 calls and is 1.859x faster at median with the tested cache. One DFT
+reference reproduction exception leaves the strict combined gate failed; do not
+hide it or call it a MACE prediction failure. Recover the
+[completed report](diagnostics/mace_pqq_utility_20260918/REPORT.md).
+Accuracy remains the priority; new model trials and runtime variants stay paused.
+The earlier broad goal and running-job notes are historical, not a new launch scope.
+
 **Active research goal, 2026-09-16:** build a working, affordable MACE-based
 La/Ca discriminator. Jacob approved autonomous pursuit through failed pilots
 and implementation changes; see [goal and acceptance scope](diagnostics/mace_discriminator_goal_20260916/GOAL.md).

@@ -8,8 +8,10 @@ operational/status prose; dated experiments and their numerical records remain
 immutable. The baseline remains the default. Broad La/Ca affinity discrimination
 has not been established. The [current MACE goal](../diagnostics/mace_pqq_utility_20260918/GOAL.md)
 tests the frozen scorer on Jacob's labelled PQQ references. Latest steering:
-accuracy and robustness take priority over speed. Finish the existing comparison;
-new model trials and further runtime variants remain paused. Matching calibration
+accuracy and robustness take priority over speed. The [comparison is complete](../diagnostics/mace_pqq_utility_20260918/REPORT.md):
+MACE retains 25/25 calls at 1.859x median speed, with a separate DFT reproduction
+exception preventing the strict combined qualification. New model trials and
+further runtime variants remain paused. Matching calibration
 calls preserves fidelity but does not demonstrate improved generalization.
 Production remains unchanged.
 

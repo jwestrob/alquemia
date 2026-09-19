@@ -1,4 +1,26 @@
-# Matched PQQ utility benchmark — running
+# Matched PQQ utility benchmark — complete
+
+All jobs are terminal; no resubmission is needed. The complete result is in
+[REPORT.md](REPORT.md), with exact receipts linked by RESULT.json.
+
+- Both fresh MACE workflows: 25/25 correct, all scores exactly reproduced.
+  Archived transfers: 2/2 scored, 1KB0 unsupported (2/3 total coverage).
+- DFT: 24 correct and one numerical-boundary inconclusive; zero reversed
+  classes. 24/25 scores reproduce within 0.01 kcal/mol. Q9L935 differs by
+  +0.12476683783011211 but remains Ca. See DFT_REPRODUCIBILITY.md.
+- Median full scoring latency: DFT 239.844624 s, original MACE 154.717952 s,
+  cached MACE 129.002392 s. Speed criteria pass; the combined qualification
+  gate fails because of the DFT reproduction exception. No changed tolerance.
+- 50 fresh DFT and 100 fresh MACE endpoints completed. Unique cluster totals:
+  331851 allocated Slurm CPU-seconds and 7112 GPU allocation-seconds, including
+  four failed MPI startups and the report-only check. Local development
+  receipts are separate and are not claimed to form a complete CPU total.
+- Accuracy remains the priority. No accuracy improvement on new proteins has
+  been demonstrated. Baseline/default, inputs and calibrations are unchanged;
+  new scientific model trials and additional timing variants remain paused.
+
+## Historical execution record (superseded by completion above)
+
 
 Approved goal: GOAL.md. No new model, calibration, physical preparation or
 unlabelled application test. Baseline/default unchanged.

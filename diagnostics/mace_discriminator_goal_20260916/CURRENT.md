@@ -1,4 +1,22 @@
-# Active MACE discriminator checkpoint — 2026-09-18
+# MACE discriminator checkpoint — 2026-09-18
+
+## Completed: labelled PQQ utility benchmark
+
+All three campaign legs completed: DFT 1201562, original MACE 1201566,
+parser-cache MACE 1201609. No own live scientific jobs; do not resubmit.
+Both MACE runs retain 25/25 calls and exact archived scores. Consumed transfers:
+2/2 supported, 1KB0 unsupported. DFT rerun: 24 correct, one tiny boundary
+inconclusive; 24/25 reproduced within 0.01. Q9L935 shifts +0.12477 kcal/mol
+but remains Ca; the strict combined gate stays false, despite MACE's passing
+fidelity and speed. Median times: DFT 239.84 s, MACE 154.72 s, cached 129.00 s
+(1.859x versus DFT). Full results, receipts, costs and investigation:
+[completed report](../mace_pqq_utility_20260918/REPORT.md).
+
+This completes the agreed comparison, not a demonstration of improved accuracy.
+Retain the production default and preserve the frozen MACE research scorer.
+Further accuracy experiments require a concrete agreed scope; do not restart
+paused models, tighten DFT settings, refit bands or add runtime variants
+because of this result. The historical running notes below are superseded.
 
 ## Latest steering: accuracy takes priority
 
@@ -16,11 +34,10 @@ resumption of grouped POLAR, the paused OMOL group-feature trial or other new mo
 experiments. Discuss the concrete next accuracy experiment before executing it.
 This steering supersedes any older suggestion to extend performance engineering.
 
-**Goal active; no broadly validated MACE replacement.** Jacob's explicit standing
-discretionary approval covers contained MACE pilots. The generic supplied AGENTS
-text does not revoke his direct instruction to proceed without repeated approval.
-Preserve baseline/default, immutable records and concurrent work. No push,
-promotion or project CPU/time budget. Recover GOAL.md and actual live jobs.
+**Comparison complete; no broadly validated MACE replacement.** Preserve the
+baseline/default, immutable records and concurrent work. The latest agreed
+scientific scope takes precedence over older broad pilot authorizations.
+No push, production promotion or further model execution is implied.
 
 ## Latest user direction: prioritize utility of the working PQQ model
 

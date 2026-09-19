@@ -1,0 +1,78 @@
+{
+  "DFT_execution_events": [
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/response_probe_20260919/continuation_v2/dft/budget_events.jsonl",
+      "sha256": "a82c1bbf42318f3f9499a2a0076ef2cf0a781ed6e4b44a9ced497b1407ee4e41"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/response_probe_20260919/continuation_v2/dft_8gy2_retry_v1/budget_events.jsonl",
+      "sha256": "c762879f0741936e82952bac90418cf5628ba70e0af064b4dedcfd3106362e5d"
+    }
+  ],
+  "GPU_seconds": 45,
+  "MACE_collection": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/response_probe_20260919/continuation_v2/mace/collection_job_1202089.json",
+    "sha256": "7996b66d42c9319fdd62d8087dd848f44f63d26cac9939279406d836e33e7186"
+  },
+  "MACE_model_evaluation_seconds": 7.839879423379898,
+  "allocated_core_seconds": 23760,
+  "command": [
+    "sacct",
+    "-j",
+    "1202089,1202090,1202092",
+    "--format=JobID,State,ElapsedRaw,AllocCPUS,ReqMem,MaxRSS,AllocTRES",
+    "-P",
+    "-n"
+  ],
+  "direct_transfer": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/response_probe_20260919/continuation_v2/direct_transfer_v1.json",
+    "sha256": "88c32fa650ab79c91d9ff83e8090caffda49b32adb07553af19b05eec2747d9e"
+  },
+  "jobs": [
+    {
+      "GPU_seconds": 45,
+      "allocated_CPUs": 16,
+      "allocated_core_seconds": 720,
+      "elapsed_seconds": 45,
+      "job_id": 1202089,
+      "purpose": "6MACEcoregradients"
+    },
+    {
+      "GPU_seconds": 0,
+      "allocated_CPUs": 64,
+      "allocated_core_seconds": 12736,
+      "elapsed_seconds": 199,
+      "job_id": 1202090,
+      "purpose": "4successfulGGRDFT+2preSCFfailed8GY2launches"
+    },
+    {
+      "GPU_seconds": 0,
+      "allocated_CPUs": 64,
+      "allocated_core_seconds": 10304,
+      "elapsed_seconds": 161,
+      "job_id": 1202092,
+      "purpose": "2successful8GY2DFTnewlineonlyretry",
+      "requested_CPUs": 32
+    }
+  ],
+  "preSCF_failed_DFT_attempts": 2,
+  "returncode": 0,
+  "scores": {
+    "8GY2": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/response_probe_20260919/continuation_v2/8GY2_score_v1.json",
+      "sha256": "f310cc1f6d4f581710ac721945a82a479abc3c9ae6c0094be9e383c8a1557253"
+    },
+    "GGR_2FVY": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/response_probe_20260919/continuation_v2/GGR_2FVY_score_v1.json",
+      "sha256": "d87c0552f20ece47fb2243b6a5c51477a13c04ddbaedf396e5f9222c69cbfffa"
+    },
+    "GGR_2FW0": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/response_probe_20260919/continuation_v2/GGR_2FW0_score_v1.json",
+      "sha256": "0216b212642402edc50c1e0dbfa5b1d7962064a9a142ce36b4f237c5cd313708"
+    }
+  },
+  "stderr": "",
+  "stdout": "1202089|COMPLETED|45|16|200000M||billing=16,cpu=16,node=1\n1202089.batch|COMPLETED|45|16||142444K|cpu=16,mem=0,node=1\n1202089.extern|COMPLETED|46|16||0|billing=16,cpu=16,node=1\n1202090|FAILED|199|64|256G||billing=64,cpu=64,node=1\n1202090.batch|FAILED|199|64||8639744K|cpu=64,mem=0,node=1\n1202090.extern|COMPLETED|199|64||68K|billing=64,cpu=64,node=1\n1202092|COMPLETED|161|64|256G||billing=64,cpu=64,node=1\n1202092.batch|COMPLETED|161|64||5817084K|cpu=64,mem=0,node=1\n1202092.extern|COMPLETED|161|64||56K|billing=64,cpu=64,node=1\n",
+  "successful_DFT_calls": 6,
+  "successful_MACE_calls": 6
+}

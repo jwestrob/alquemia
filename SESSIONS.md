@@ -3239,3 +3239,24 @@ workspaces/hydration_scanner_20260919. Vault:2026-09-19_laca-context-prepared-ma
 Result email accepted by local relay09:59:53UTC. Goal remains active; no default change
 or push. Second-shell and water-basin calculations continue; response agent is preparing
 GGR replicate and8GY2 tests. Inspect live jobs and per-track records before continuing.
+
+
+## 2026-09-19: parallel accuracy tracks and completed-agent review
+
+Jacob explicitly authorized subagents to investigate competing chemical states,
+protein-environment effects and electronic-treatment errors. Metal specificity
+includes noncatalytic proteins; a faster surrogate of current DFT is not the
+accuracy objective. Scope/ownership: diagnostics/accuracy_tracks_20260919/PLAN.md.
+The ten-endpoint context-supported coordination pilot is authorized and running;
+other agents are defining balanced chemical-state and independent electronic tests.
+
+Parent reviewed completed response and second-shell deliverables and reran their
+26 real-fixture tests: 15 response tests passed in3.384s; 11 second-shell tests
+passed in2.773s. Radial hybrid preserves25/25PQQ and passes8GY2, but main direct
+structural robustness is2/6 rather than the earlier partition-inflated4/4.
+Second-shell and physical-H pilots preserve PQQ ordering without improving its
+separation. Reports, runnable research interfaces and original outputs retained;
+no baseline/default promotion. Water-basin report identity erratum is being
+handled by its owning agent: both1F6Sand6IP9arealpha-lactalbumin.
+
+Other agents' existing dirty files and shared dispatch changes remain unstaged.

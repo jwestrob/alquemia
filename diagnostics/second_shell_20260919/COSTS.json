@@ -1,0 +1,62 @@
+{
+  "H_optimization_objective_invocations": 2113,
+  "independent_MACE_forwards": "not inferred from objective calls because ASE may cache",
+  "jobs": [
+    {
+      "allocated_core_seconds": 143616,
+      "allocated_cpus": 64,
+      "gpu_allocation_seconds": 0,
+      "job_id": "1202082",
+      "name": "donor-second-shell-DFT",
+      "node": "node-64-768g-14",
+      "requested_memory": "256G",
+      "state": "COMPLETED",
+      "wall_seconds": 2244
+    },
+    {
+      "allocated_core_seconds": 2320,
+      "allocated_cpus": 16,
+      "gpu_allocation_seconds": 145,
+      "job_id": "1202083",
+      "name": "donor-second-shell-MACE",
+      "node": "node-224-2t-8gpu-1",
+      "requested_memory": "200000M",
+      "state": "COMPLETED",
+      "wall_seconds": 145
+    },
+    {
+      "allocated_core_seconds": 4224,
+      "allocated_cpus": 16,
+      "gpu_allocation_seconds": 264,
+      "job_id": "1202091",
+      "name": "PQQ-context-H",
+      "node": "node-224-2t-8gpu-1",
+      "requested_memory": "200000M",
+      "state": "COMPLETED",
+      "wall_seconds": 264
+    },
+    {
+      "allocated_core_seconds": 20928,
+      "allocated_cpus": 64,
+      "gpu_allocation_seconds": 0,
+      "job_id": "1202101",
+      "name": "PQQ-context-H-DFT",
+      "node": "node-64-768g-11",
+      "requested_memory": "256G",
+      "state": "COMPLETED",
+      "wall_seconds": 327
+    }
+  ],
+  "local_preparation_test_cost": "not individually metered",
+  "native_H_optimization_tasks": 4,
+  "native_proposed_core_evaluations": 4,
+  "native_static_MACE_evaluations": 20,
+  "new_DFT_endpoints": 14,
+  "prior_reused_cost": "not counted as new",
+  "source": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/second_shell_20260919/COSTS_sacct.tsv",
+    "sha256": "4f5d678ab39763359435c5957df9e052139d509c81471da50ba7474c2b35357e"
+  },
+  "total_GPU_allocation_seconds": 409,
+  "total_allocated_core_seconds": 171088
+}

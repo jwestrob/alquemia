@@ -1,5 +1,25 @@
 # Agent entry point
 
+## Current: three accuracy tracks — 2026-09-19 evening
+
+Jacob explicitly authorized parallel investigations of competing chemical states,
+protein-environment effects and electronic-treatment errors. See
+[current agreement](diagnostics/accuracy_tracks_20260919/PLAN.md).
+Metal specificity includes noncatalytic binders such as LanM; catalytic competence
+and a faster surrogate of unchanged DFT are not the improvement target.
+The coordination-preparation pilot is authorized for execution; chemical-state
+and electronic-method agents are defining their finite scientific manifests.
+Preserve all jobs and inspect current receipts before rerunning anything.
+
+Earlier subagents completed: the frozen radial hybrid preserves 25/25 PQQ and
+passes 8GY2, but only improves the main alpha/GGR structural comparisons 0/6→2/6;
+the earlier 4/4 result counted two representations of one GGR structure.
+Static second-shell and PQQ H preparation do not improve PQQ separation.
+Wider water-basin energies fail native DFT agreement on all four endpoints;
+those endpoints are two alpha-lactalbumin structures, not an alpha/GGR transfer.
+The contextual-water component is being generalized separately. No promotion or
+baseline/default change is authorized by these progress results.
+
 ## Active: improve the MACE-assisted scanner — 2026-09-19
 
 Jacob's active goal is in [parallel goal](diagnostics/parallel_discriminator_20260919/GOAL.md).

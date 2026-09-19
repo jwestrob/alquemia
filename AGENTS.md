@@ -1,5 +1,18 @@
 # Agent entry point
 
+## Active: improve the MACE-assisted scanner — 2026-09-19
+
+Jacob's active goal is in [parallel goal](diagnostics/parallel_discriminator_20260919/GOAL.md).
+He owns remaining PLM folds; prioritize classifier utility before the provisional
+Tuesday shutdown. Context-prepared masked MACE improves alpha/GGR 2/6→6/6
+structural comparisons, with unchanged dry PQQ inputs; one biological comparison.
+Read [scanner result](diagnostics/hydration_scanner_20260919/REPORT.md).
+MACE donor response plus DFT also preserves 25/25 PQQ and improves consumed direct
+ordering without fitting to those labels; see diagnostics/response_probe_20260919.
+Second-shell and wider water-basin jobs and continuations are active; inspect the
+live queue and their diagnostics. Preserve existing jobs and other agents' files.
+These are progress toward the goal, not completion or default promotion.
+
 ## Current: coupled water response complete — 2026-09-19
 
 27native DFT checks and all MACE tasks completed. All11trial steps lower native

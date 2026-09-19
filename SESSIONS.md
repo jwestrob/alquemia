@@ -3218,3 +3218,24 @@ Own changes: hydration_basin*.py,15coupled-stage dispatch lines in mace_omol.py,
 real-fixture tests, experiment records and current agent pointers. The3unowned
 preexisting group-feature dispatch lines and all unrelated changes remain untouched.
 No push, rollout or default change.
+
+## 2026-09-19 — Context-prepared MACE scanner improves direct ordering
+
+Active goal: improve the MACE-assisted PQQ classifier, ready for PLM folds supplied
+by Jacob; remaining folding belongs to him, provisional shutdown Tuesday. Agents
+second_shell, water_basins and khoury_benchmark own parallel research; preserve jobs.
+
+Root job1202084 completed12 MACE calls in97 GPU-s/1552 allocated CPU-s. Source water-H
+transfer into existing whole proteins improves alpha/GGR2/6→6/6 structural directions;
+one biological comparison. Matched DFT cells reused, no new DFT. Alpha MACE score
+spread8.923→0.159 model-kcal; dry PQQ inputs preserved. Four-state MACE accounting
+retains the actual detached reference when water H depends on metal. Four real-fixture
+tests pass. Scoped code: hydration_scanner.py plus six mace_omol dispatch lines.
+Unsubmitted v1 and partial results remain. Only v2 executed. QOS required the existing
+seven-day scheduler ceiling instead of infinite; pending job updated, no resubmission.
+
+Report, results and commands: diagnostics/hydration_scanner_20260919. Workspaces:
+workspaces/hydration_scanner_20260919. Vault:2026-09-19_laca-context-prepared-mace-scanner.md.
+Result email accepted by local relay09:59:53UTC. Goal remains active; no default change
+or push. Second-shell and water-basin calculations continue; response agent is preparing
+GGR replicate and8GY2 tests. Inspect live jobs and per-track records before continuing.

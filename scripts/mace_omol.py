@@ -153,6 +153,9 @@ def prepare_benchmark(qualification, mechanics, agreement, output):
 
 
 def validate(manifest):
+    if read_json(manifest).get('stage')=='hydration_scanner_comparison':
+        from hydration_scanner import validate as scanner_validate
+        return scanner_validate(manifest)
     if read_json(manifest).get('stage')=='hydration_coupled_validation':
         from hydration_basin_validation import validate as basin_check_validate
         return basin_check_validate(manifest)
@@ -500,6 +503,9 @@ def accepted_state(result, task):
 
 
 def collect(manifest):
+    if read_json(manifest).get('stage')=='hydration_scanner_comparison':
+        from hydration_scanner import collect as scanner_collect
+        return scanner_collect(manifest)
     if read_json(manifest).get('stage')=='hydration_coupled_validation':
         from hydration_basin_validation import collect_mace as basin_check_collect
         return basin_check_collect(manifest)

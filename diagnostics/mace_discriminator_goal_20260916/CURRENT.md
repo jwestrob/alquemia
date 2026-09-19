@@ -1,20 +1,30 @@
 # MACE discriminator checkpoint — 2026-09-18
 
-## Current: hydration repair and matched water test authorized
+## Current: hydration mechanism pilot completed; approval gate removed
 
 Jacob removed the stale per-analysis approval gate on 2026-09-18: “remove that
-AGENTS.md thing bro. I thought we got rid of that.” Continue the water test
-approved with “Yallah!” using standing discretionary permissions. Normalize the
-internal geometry of all five observed waters in 1F6S/6IP9 to the existing H2O
-reference, preserving oxygens, water planes/bisectors and every protein/cap
-coordinate. Recompute both full parents and all single-water deletions: 14 ORCA
-single points. No occupancy model, threshold change or production modification.
-See [execution decision](../hydration_square_20260918/DECISION.md). The earlier
-pending-choice note and all historical approval pauses below are superseded.
-Four real-fixture software tests pass; all seven prepared pairs also passed
-coordinate, water-geometry, charge and parity checks. Job **1201801** is running
-on 64 CPUs (four 16-rank endpoints concurrently); no energy result is claimed
-until collection. See the hydration SUBMISSION.json and frozen manifest.
+AGENTS.md thing bro. I thought we got rid of that.” Standing discretionary
+permissions remain in force. Global/project AGENTS and current pointers are
+updated; historical pauses below do not reinstate that gate.
+
+The test approved with “Yallah!” completed as job **1201801**: all 14 native
+ORCA single points succeeded, no retries, no live hydration job. All five water
+internal geometries were normalized with fixed oxygens/planes/bisectors and
+byte-identical protein/cap coordinates. Full-parent repair shifts R toward La
+by +4.925351 (1F6S) and +2.479708 (6IP9) kcal/mol. Individual water-addition
+contrasts are −19.069507/+3.682600 in 1F6S and −19.951475/+5.008322/−0.452355
+in 6IP9. One water in each structure strongly shifts the contrast toward Ca,
+while another favors La: water count alone cannot represent these effects.
+One biological group, consumed structures; no occupancy or accuracy claim.
+
+All prepared-state and square algebra checks pass. Four prior fixture tests
+passed. Cost: 333 s allocation wall, 21,312 allocated core-seconds, zero GPU.
+Baseline/default, reference and old inputs/results are unchanged. See
+[report](../hydration_square_20260918/REPORT.md),
+[result index](../hydration_square_20260918/RESULT.json) and
+[commands](../hydration_square_20260918/COMMANDS.md). Next target is a consistent
+bulk-water exchange cycle and metal-dependent hydration-state selection, not
+choosing the deletion that gives a favorable class. No extra states launched.
 
 The delegated benchmark augmentation is complete at e542fc6: 8GY2 is a ready
 additional Ca-associated PQQ structural control with unchanged fixed-core-v3

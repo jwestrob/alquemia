@@ -26,14 +26,15 @@ score operations are in [commands](../diagnostics/site_classifier_20260918/COMMA
 describe the six research models. Do not treat training fits as validation or
 restart paused model campaigns from older notes below.
 
-**Current hydration experiment:** normalize the internal geometry of all five
-observed waters in the consumed alpha-lactalbumin inputs, preserving oxygen and
-protein coordinates; compare each individual water's presence/absence for both
-metals. Four full-parent and ten deletion endpoints are running as job1201801.
-See [decision](../diagnostics/hydration_square_20260918/DECISION.md) and the current
-checkpoint. Jacob removed the standing per-analysis approval gate again on
-2026-09-18; stale pauses above and in historical records do not suspend this
-work or reinstate a permission requirement. Production remains unchanged.
+**Hydration mechanism pilot completed:** all 14 native DFT endpoints succeeded
+(job 1201801; 333 s allocation wall, 21,312 allocated core-seconds). Normalizing
+water H geometry shifts the two alpha contrasts +4.93/+2.48 kcal/mol toward La;
+individual water effects range from −19.95 to +5.01. This identifies substantial
+water-specific coupling, not a validated occupancy correction or accuracy gain.
+[Results and operations](../diagnostics/hydration_square_20260918/REPORT.md).
+No hydration job remains live. Baseline and old inputs are unchanged. Jacob
+removed the standing per-analysis approval gate again on 2026-09-18; historical
+pauses above do not reinstate it. Recover the current checkpoint for next work.
 
 **Earlier research result:** the complete frozen-response conductor correction
 provides no overall improvement over the preceding GK hybrid:4/12 directional

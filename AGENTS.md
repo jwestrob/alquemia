@@ -22,13 +22,15 @@ scientific integrity, immutable experiments, scheduler rules and concurrent work
 
 ## Current work — 2026-09-18
 
-Jacob approved the matched observed-water mechanism test with “Yallah!”. The
-source check found stretched water hydrogens in both alpha-lactalbumin parents.
-Proceed with the documented normalization of all five waters, then the matched
-single-water deletion squares: 14 ORCA endpoints, unchanged heavy atoms and
-paired protein geometry. See [execution decision](diagnostics/hydration_square_20260918/DECISION.md)
+The matched observed-water mechanism test is complete: job 1201801, all 14
+ORCA endpoints successful. Repairing water H geometry shifts the alpha contrasts
++4.93/+2.48 kcal/mol toward La. Individual retained waters shift them from −19.95
+to +5.01 kcal/mol; hydration identity matters, but occupancy and improved accuracy
+are not established. See [report](diagnostics/hydration_square_20260918/REPORT.md)
 and [checkpoint](diagnostics/mace_discriminator_goal_20260916/CURRENT.md).
-The earlier preparation-choice pause is cleared. Baseline remains unchanged.
+No hydration job remains live. Baseline and old inputs remain unchanged.
+Next research direction: explicit, consistently referenced hydration states;
+do not select deletions by their agreement with labels or rerun this pilot.
 
 Completed work is preserved in dated reports:
 

@@ -3022,3 +3022,27 @@ normally at this entry; collect all before interpreting the water pattern.
 Artifacts: workspaces/hydration_square_20260918/repaired_v1; compact decision,
 submission receipt and executable commands in diagnostics/hydration_square_20260918.
 Current pointers and vault note updated. Baseline/default remains unchanged.
+
+
+## 2026-09-18 — Hydration-square pilot completed: substantial water-specific effects
+
+Job1201801 completed all14 native ORCA endpoints, no retries: seven paired states,
+five single-water squares from two consumed structures of one biological group.
+Original inputs remain unchanged. Water internal-geometry repair shifts the full
+Ca−La contrasts +4.925351 (1F6S) and+2.479708 (6IP9) kcal/mol toward La.
+Conditional water-addition contrasts: 1F6S A211−19.069507/A212+3.682600;
+6IP9 A310−19.951475/A322+5.008322/A326−0.452355 kcal/mol. All five outcomes
+reported; no outcome-based state selection. Geometry and individual water identity
+matter substantially. These are not additive terms or occupancy/free-energy
+predictions, and no classification/accuracy gain is claimed.
+
+All preparation invariants and square algebra checks pass; four earlier fixture
+software tests passed. Source parents/archived endpoints reverified. No GPU,
+no production changes. Actual allocation333s /21,312 core-seconds on64CPUs;
+runner331.638098605s /21,224.838310719 core-seconds. Four concurrent16-rank
+endpoints, median88.1425315s; Slurm reports batch MaxRSS7,525,768KiB.
+No job remains live. REPORT.md/RESULT.json and runnable COMMANDS.md record all
+results, components, costs and immutable collection/receipt pointers. Current
+AGENTS/checkpoint/agent guide and vault note updated. The next modeling target is
+consistent bulk-water exchange and metal-dependent hydration-state selection,
+not choosing the deletion that matches a label. No additional states launched.

@@ -7,14 +7,21 @@ This is a progress record, not a completed accuracy claim.
 - Ten native MACE searches completed in 45.05 worker seconds, job1202426.
 - SLSQP converged in12–19 iterations. Every proposal meets covalent/source/water
   checks but touches the declared0.20Å boundary; these are constrained proposals.
-- Ten original-core native CPCM-DFT checks are running as job1202428,
+- All ten original-core native CPCM-DFT checks completed normally as job1202428,
   four concurrent16-rank tasks on64 allocated CPUs.
 - First job1202425 failed at import before model load/energy evaluation. The
   implementation-only fix defers preparation dependencies outside the GPU path.
-- The first four native DFT results retain PQQ ordering but narrow the
+- Native DFT results retain PQQ ordering but narrow the
   XoxF-minus-MxaF gap30.0719→26.2757kcal/mol from the matched starting geometries.
-  All endpoint energies decrease; this does not demonstrate accuracy improvement.
-  Six alpha/GGR endpoints remain pending at this checkpoint.
+  Alpha1F6S-minus-GGR changes10.9237→3.8202; alpha6IP9-minus-GGR changes
+  14.5727→13.9748. All three directions remain correct, but alpha replica spread
+  worsens3.6490→10.1546. Nine of ten native endpoint energies decrease;1F6SCa
+  rises0.07747kcal/mol. No accuracy or robustness improvement is demonstrated.
+- Cost including the failed import:30,560allocated CPU-seconds,54GPU-seconds.
+- Next declared environment test applies the unchanged static complete-second-
+  shell rule to archivedGGR2FW0/2FVY. Compare the full2alpha×3GGRmatrix, retaining
+  all unsupported states. This tests the stability of the earlier~3.9kcal1GLG
+  context gain; it does not retune the failed geometry proposal.
 
 ## Chemical states
 
@@ -31,7 +38,10 @@ all other coordinates fixed, so the proton reservoir cancels. Exact fractions,
 H identity and acid geometry checks are frozen in the owning agent's plan before
 energies. An uphill fixed-heavy path does not rule out a separately relaxed basin.
 No pH population, entropy or full occupancy claim follows from this electronic
-test. The failed wider-basin approximation remains unavailable.
+test. Submitted as job1202444:24nativeEnGrad tasks, four16-rank tasks concurrently
+on64CPUs. All three contacts pass the declared geometry gates. Four neutral
+native endpoints are reused; five real-geometry/receipt tests pass. The failed
+wider-basin approximation remains unavailable.
 
 Identity correction:1F6Sand6IP9arebothalpha-lactalbumin structures. Prior wider
 water-basin prose mistakenly called6IP9GGR; numerical PDB IDs and energies are
@@ -68,3 +78,7 @@ the new parallel-scope record. Parent reran26real-fixture tests successfully.
 The detailed~1MBsecond-shell atom inventory remains preserved locally; it was
 not added to the compact diagnostic commit. Other agents' dirty changes remain
 untouched. No default, published reference or production score was changed.
+
+Commit `5b00d91` contains the completed reusable contextual-water component and
+failed-basin results with the explicit protein-identity correction. Parent reran
+nine contextual tests in28.162s and13basin tests in0.756s; all passed.

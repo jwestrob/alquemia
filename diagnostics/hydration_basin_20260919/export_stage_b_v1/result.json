@@ -1,0 +1,1406 @@
+{
+  "accounting": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/hydration_basin_20260919/THERMODYNAMIC_ACCOUNTING.md",
+    "sha256": "07a7f710f1aaf1fd7cbdef9622f4faa74fb2bf6c2fc917f65feda1d600c9b81b"
+  },
+  "baseline_changed": false,
+  "classification_accuracy_claim": null,
+  "direction_checks": [
+    {
+      "DFT_even_kcal_mol": 0.012884209151822208,
+      "center_id": "1F6S__11__Ca",
+      "even_error": -0.009747602821140785,
+      "even_pass": false,
+      "even_tolerance": 0.005,
+      "kind": "soft",
+      "pass": false,
+      "predicted_even_kcal_mol": 0.0031366063306814233
+    },
+    {
+      "DFT_even_kcal_mol": 0.1083522834447117,
+      "center_id": "1F6S__11__Ca",
+      "even_error": 0.0008065153796293911,
+      "even_pass": true,
+      "even_tolerance": 0.027088070861177926,
+      "kind": "response",
+      "pass": true,
+      "predicted_even_kcal_mol": 0.1091587988243411
+    },
+    {
+      "DFT_even_kcal_mol": 0.007916163887473474,
+      "center_id": "1F6S__11__La",
+      "even_error": -3.4094990322100505e-05,
+      "even_pass": true,
+      "even_tolerance": 0.005,
+      "kind": "soft",
+      "pass": true,
+      "predicted_even_kcal_mol": 0.007882068897151373
+    },
+    {
+      "DFT_even_kcal_mol": 0.11806420764471737,
+      "center_id": "1F6S__11__La",
+      "even_error": 0.009502133027213644,
+      "even_pass": true,
+      "even_tolerance": 0.029516051911179342,
+      "kind": "response",
+      "pass": true,
+      "predicted_even_kcal_mol": 0.127566340671931
+    },
+    {
+      "DFT_even_kcal_mol": 0.011468873076784104,
+      "center_id": "6IP9__110__Ca",
+      "even_error": -0.003029384715237171,
+      "even_pass": true,
+      "even_tolerance": 0.005,
+      "kind": "soft",
+      "pass": true,
+      "predicted_even_kcal_mol": 0.008439488361546933
+    },
+    {
+      "DFT_even_kcal_mol": 0.09651739929134123,
+      "center_id": "6IP9__110__Ca",
+      "even_error": 0.0008425232585006492,
+      "even_pass": true,
+      "even_tolerance": 0.024129349822835308,
+      "kind": "response",
+      "pass": true,
+      "predicted_even_kcal_mol": 0.09735992254984188
+    },
+    {
+      "DFT_even_kcal_mol": 0.012900086771376558,
+      "center_id": "6IP9__110__La",
+      "even_error": 0.0013571740648985683,
+      "even_pass": true,
+      "even_tolerance": 0.005,
+      "kind": "soft",
+      "pass": true,
+      "predicted_even_kcal_mol": 0.014257260836275126
+    },
+    {
+      "DFT_even_kcal_mol": 0.10033955774264541,
+      "center_id": "6IP9__110__La",
+      "even_error": -0.0007381222787599118,
+      "even_pass": true,
+      "even_tolerance": 0.025084889435661353,
+      "kind": "response",
+      "pass": true,
+      "predicted_even_kcal_mol": 0.0996014354638855
+    }
+  ],
+  "evidence_use": "consumed_single_biological_comparison",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_basin_20260919/analysis_implementation_v3/hydration_basin_report.py",
+    "sha256": "86b84c688df22e6ae39dae3273d8f889192c6b88b4b3939765b2396725b43855"
+  },
+  "pairs": [
+    {
+      "R_hartree": -646.0545732723931,
+      "R_kcal_mol": -405405.3654494538,
+      "absolute_calibrated_decision": null,
+      "both_native_stationary": false,
+      "both_step_energy_checks_pass": true,
+      "case": "1F6S",
+      "generation": 0,
+      "last_step_prediction_contrast_error_kcal_mol": -0.06794768524021766,
+      "pattern": "11",
+      "response_score_contribution_kcal_mol": -1.7450332821770371,
+      "status": "computed_component"
+    },
+    {
+      "R_hartree": -646.0537019530689,
+      "R_kcal_mol": -405404.81868832296,
+      "absolute_calibrated_decision": null,
+      "both_native_stationary": false,
+      "both_step_energy_checks_pass": true,
+      "case": "6IP9",
+      "generation": 0,
+      "last_step_prediction_contrast_error_kcal_mol": 0.012451335929437812,
+      "pattern": "110",
+      "response_score_contribution_kcal_mol": -0.24257925689354654,
+      "status": "computed_component"
+    }
+  ],
+  "stage_a": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_basin_20260919/mace_v1/collection_job_1202050.json",
+    "sha256": "c97f205da8badff7628ab33be709883afa3eec3eed0948815509c6c14076ef40"
+  },
+  "status": "complete",
+  "steps": [
+    {
+      "DFT_gradient_max": 3.235645832514516,
+      "DFT_physical_gradient": [
+        0.35815294486912297,
+        -2.5984059294870043,
+        0.8085652040157107,
+        -0.533622078928835,
+        -1.026163863358498,
+        -1.180008849953587,
+        -3.235645832514516,
+        1.7090748405740204,
+        -1.7043849171494223,
+        -0.3350852897241528,
+        -0.8341474717639947,
+        1.0792580231542608
+      ],
+      "actual_change_kcal_mol": -4.207638415813154,
+      "amplitude": null,
+      "case": "1F6S",
+      "center_id": "1F6S__11__Ca",
+      "charge": -2,
+      "energy_error_kcal_mol": -0.019006796042985385,
+      "energy_pass": true,
+      "energy_tolerance": 0.4207638415813154,
+      "generation": 0,
+      "geometry": {
+        "fixed_coordinates_exact": true,
+        "maximum_total_atom_displacement_A": 0.259038228977649,
+        "origin_xyz": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_network_20260918/proposal_dft_v1/tasks/1F6S__Ca/core.xyz",
+          "sha256": "fb0f54a85ddb6dcd911b3045ff1c8bcc4463cb6ba9a5086486e41450717552b0"
+        },
+        "rigid_water_shapes_preserved": true,
+        "waters": [
+          {
+            "OH_lengths_A": [
+              0.9571628483206845,
+              0.9571628483364246
+            ],
+            "O_displacement_A": 0.19828241047544987,
+            "metal_O_final_A": 2.4896275403285757,
+            "metal_O_initial_A": 2.5770364762649396,
+            "nearest_other_heavy_atom_distance_A": 2.638001993842211,
+            "nearest_other_heavy_atom_element": "O",
+            "nearest_other_heavy_atom_index": 46,
+            "source": {
+              "canonical_resname": "HOH",
+              "chain": "A",
+              "insertion_code": "",
+              "resname": "HOH",
+              "resnum": 211
+            }
+          },
+          {
+            "OH_lengths_A": [
+              0.9571628483090506,
+              0.9571628482781274
+            ],
+            "O_displacement_A": 0.20028829134201734,
+            "metal_O_final_A": 2.4363735042380603,
+            "metal_O_initial_A": 2.581455790828123,
+            "nearest_other_heavy_atom_distance_A": 2.7094758331339706,
+            "nearest_other_heavy_atom_element": "O",
+            "nearest_other_heavy_atom_index": 25,
+            "source": {
+              "canonical_resname": "HOH",
+              "chain": "A",
+              "insertion_code": "",
+              "resname": "HOH",
+              "resnum": 212
+            }
+          }
+        ]
+      },
+      "harmonic_free_energy_kcal_mol": null,
+      "kind": "proposal",
+      "metal": "Ca",
+      "native_energy_hartree": -2821.642468446506,
+      "native_result": {
+        "components_hartree": {
+          "CPCM_dielectric": -0.41835405153722,
+          "SCF": -2821.670563241506,
+          "dispersion": -0.035001242,
+          "gCP": 0.063096037
+        },
+        "energy_hartree": -2821.642468446506,
+        "orca_version": "6.1.1",
+        "output": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_basin_20260919/validation_v1/dft/tasks/1F6S__11__Ca__proposal/endpoint.out",
+          "sha256": "8eda4472a423e476229bfbc7d79a957ccc2798e5080c95451af8a99976f616ea"
+        },
+        "receipt": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_basin_20260919/validation_v1/dft/tasks/1F6S__11__Ca__proposal/endpoint.out.execution.json",
+          "sha256": "5ea24ee26d9e8576ff4baa9a314da5a539c15bd5c3c74250dba6fd28e9e373ce"
+        },
+        "wall_seconds": 335.698533
+      },
+      "occupancy_probability": null,
+      "pattern": "11",
+      "predicted_change_kcal_mol": -4.226645211856139,
+      "predicted_physical_gradient": [
+        3.0941498625513866,
+        -1.019048941883515,
+        0.09992318730926186,
+        2.1289179889089212e-05,
+        -2.2950028918344704e-05,
+        2.1395902963720784e-05,
+        -2.2161384299048055,
+        1.2975100560741017,
+        -0.3722500849113217,
+        -9.836629714523288e-06,
+        -6.267904204725247e-05,
+        -1.571587589234233e-05
+      ],
+      "stationary_within_tolerance": false,
+      "task_id": "1F6S__11__Ca__proposal",
+      "thermal_extent": {
+        "all_RMS_within_declared_domain": false,
+        "coordinate_units": "per water: Angstrom x3, radian x3",
+        "covariance": [
+          [
+            0.015615108864799446,
+            0.0038910224517867183,
+            0.00034731134215482275,
+            0.0001007857947648378,
+            -0.0029356691253250196,
+            0.0029658820422526137,
+            -2.994241975293853e-05,
+            1.0468752554796181e-05,
+            6.318359540509025e-06,
+            -6.76414556711614e-05,
+            -2.775884452331103e-05,
+            -0.00010573702462441
+          ],
+          [
+            0.003891022451786718,
+            0.010736009205125654,
+            0.0031894853107789227,
+            -7.717327431898973e-05,
+            0.003130017030061637,
+            -0.004448633667773034,
+            0.000359234047471766,
+            0.0004246658568187485,
+            8.573004935336564e-05,
+            0.00017832148743108652,
+            9.27072623368965e-06,
+            0.00042590556743756793
+          ],
+          [
+            0.00034731134215482286,
+            0.0031894853107789227,
+            0.008213770226752876,
+            -0.002240347462860285,
+            0.0034601427744889576,
+            -0.003598422519197593,
+            0.00026698540554060345,
+            0.000373206062468759,
+            5.1336345388655655e-05,
+            4.544348833327877e-05,
+            -7.916593069558387e-05,
+            0.0003669466348023993
+          ],
+          [
+            0.00010078579476483796,
+            -7.717327431898967e-05,
+            -0.0022403474628602846,
+            0.008835554841835696,
+            -0.002980044390615069,
+            0.0019000193576165303,
+            -1.6076387164587777e-05,
+            -5.9759920626334134e-05,
+            1.4760436989076551e-06,
+            6.924729735447841e-05,
+            6.83217391812574e-05,
+            -3.908923999065215e-05
+          ],
+          [
+            -0.0029356691253250187,
+            0.0031300170300616373,
+            0.003460142774488958,
+            -0.002980044390615069,
+            0.01469709757881053,
+            -0.006959877406262366,
+            0.00010710815457088108,
+            0.00028354313817945153,
+            0.000107661621251713,
+            0.0002520177944017792,
+            0.00014369748499645717,
+            0.00014842639883148087
+          ],
+          [
+            0.0029658820422526115,
+            -0.004448633667773034,
+            -0.0035984225191975925,
+            0.0019000193576165301,
+            -0.006959877406262365,
+            0.0185318763462841,
+            -7.674379304428102e-05,
+            -0.0002893194445993087,
+            -5.1604751636366485e-05,
+            6.445887282576281e-05,
+            0.00010053284398193971,
+            -0.00016037291782581694
+          ],
+          [
+            -2.9942419752938448e-05,
+            0.0003592340474717659,
+            0.0002669854055406033,
+            -1.6076387164587726e-05,
+            0.00010710815457088091,
+            -7.67437930442808e-05,
+            0.05963763001889884,
+            0.01998911483050118,
+            -0.0008685448859853879,
+            0.0037615308664786552,
+            -0.009289462395928667,
+            0.04877050963062901
+          ],
+          [
+            1.0468752554796236e-05,
+            0.00042466585681874845,
+            0.00037320606246875885,
+            -5.9759920626334086e-05,
+            0.00028354313817945137,
+            -0.0002893194445993085,
+            0.019989114830501177,
+            0.013800391334306411,
+            0.00021182707307017078,
+            0.0009546772820435894,
+            -0.004032235713447724,
+            0.01975914219854606
+          ],
+          [
+            6.318359540509031e-06,
+            8.573004935336565e-05,
+            5.133634538865565e-05,
+            1.4760436989076558e-06,
+            0.000107661621251713,
+            -5.160475163636652e-05,
+            -0.0008685448859853883,
+            0.0002118270730701705,
+            0.007937183633666842,
+            0.002541805128238424,
+            0.0024485069277515926,
+            -0.0011769348397912174
+          ],
+          [
+            -6.764145567116136e-05,
+            0.00017832148743108654,
+            4.544348833327878e-05,
+            6.924729735447838e-05,
+            0.0002520177944017791,
+            6.445887282576278e-05,
+            0.0037615308664786565,
+            0.00095467728204359,
+            0.002541805128238423,
+            0.014745013823334705,
+            0.0008756043331480182,
+            0.006330967103302103
+          ],
+          [
+            -2.775884452331102e-05,
+            9.270726233689665e-06,
+            -7.916593069558385e-05,
+            6.832173918125738e-05,
+            0.0001436974849964572,
+            0.00010053284398193967,
+            -0.009289462395928668,
+            -0.004032235713447725,
+            0.0024485069277515917,
+            0.000875604333148018,
+            0.020065461638074454,
+            -0.016300206281951793
+          ],
+          [
+            -0.00010573702462440998,
+            0.0004259055674375679,
+            0.000366946634802399,
+            -3.908923999065208e-05,
+            0.00014842639883148068,
+            -0.00016037291782581664,
+            0.04877050963062902,
+            0.019759142198546062,
+            -0.001176934839791216,
+            0.0063309671033021046,
+            -0.01630020628195179,
+            0.08151008557070553
+          ]
+        ],
+        "harmonic_free_energy_kcal_mol": null,
+        "physical_fluctuation_estimate": null,
+        "status": "conditional_classical_harmonic_model_diagnostic",
+        "temperature_K": 298.15,
+        "waters": [
+          {
+            "RMS_within_declared_domain": true,
+            "rotation_RMS_radian": 0.20509638896609156,
+            "translation_RMS_A": 0.18591634757782322
+          },
+          {
+            "RMS_within_declared_domain": false,
+            "rotation_RMS_radian": 0.3410580024455,
+            "translation_RMS_A": 0.2852633958061779
+          }
+        ]
+      },
+      "total_change_from_initial_kcal_mol": -4.207638415813154,
+      "water_count": 2,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_basin_20260919/validation_v1/dft/tasks/1F6S__11__Ca__proposal/core.xyz",
+        "sha256": "4d25e780da6e5b298a16763c52e818f1458b599bd7adaeda15be531eb81a2d9b"
+      }
+    },
+    {
+      "DFT_gradient_max": 2.1542131309709163,
+      "DFT_physical_gradient": [
+        -0.3745146499025829,
+        -2.1542131309709163,
+        0.9877890882362017,
+        -1.1247130767096052,
+        -0.7287366418177289,
+        -1.5943768410315318,
+        -1.0412918658063806,
+        0.8773354038427428,
+        -0.9049264096623233,
+        -0.18725154579723427,
+        -0.4256203912072021,
+        0.5083466707441475
+      ],
+      "actual_change_kcal_mol": -2.4626051336361168,
+      "amplitude": null,
+      "case": "1F6S",
+      "center_id": "1F6S__11__La",
+      "charge": -1,
+      "energy_error_kcal_mol": 0.048940889197232273,
+      "energy_pass": true,
+      "energy_tolerance": 0.24626051336361168,
+      "generation": 0,
+      "geometry": {
+        "fixed_coordinates_exact": true,
+        "maximum_total_atom_displacement_A": 0.20751122373681916,
+        "origin_xyz": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_network_20260918/proposal_dft_v1/tasks/1F6S__La/core.xyz",
+          "sha256": "b2e8c2c57920396832b2b1de78eb4e48c9594f5c412aee711c5600f2af1a9464"
+        },
+        "rigid_water_shapes_preserved": true,
+        "waters": [
+          {
+            "OH_lengths_A": [
+              0.9571628483375202,
+              0.9571628483534268
+            ],
+            "O_displacement_A": 0.20459241235024764,
+            "metal_O_final_A": 2.6200028271663984,
+            "metal_O_initial_A": 2.5770364762649396,
+            "nearest_other_heavy_atom_distance_A": 2.666673274173204,
+            "nearest_other_heavy_atom_element": "O",
+            "nearest_other_heavy_atom_index": 46,
+            "source": {
+              "canonical_resname": "HOH",
+              "chain": "A",
+              "insertion_code": "",
+              "resname": "HOH",
+              "resnum": 211
+            }
+          },
+          {
+            "OH_lengths_A": [
+              0.9571628483306757,
+              0.9571628483679374
+            ],
+            "O_displacement_A": 0.19388446251999325,
+            "metal_O_final_A": 2.56986819607393,
+            "metal_O_initial_A": 2.581455790828123,
+            "nearest_other_heavy_atom_distance_A": 2.742339071553541,
+            "nearest_other_heavy_atom_element": "O",
+            "nearest_other_heavy_atom_index": 24,
+            "source": {
+              "canonical_resname": "HOH",
+              "chain": "A",
+              "insertion_code": "",
+              "resname": "HOH",
+              "resnum": 212
+            }
+          }
+        ]
+      },
+      "harmonic_free_energy_kcal_mol": null,
+      "kind": "proposal",
+      "metal": "La",
+      "native_energy_hartree": -2175.587895174113,
+      "native_result": {
+        "components_hartree": {
+          "CPCM_dielectric": -0.25055997962912,
+          "SCF": -2175.6169409861127,
+          "dispersion": -0.035668769,
+          "gCP": 0.064714581
+        },
+        "energy_hartree": -2175.587895174113,
+        "orca_version": "6.1.1",
+        "output": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_basin_20260919/validation_v1/dft/tasks/1F6S__11__La__proposal/endpoint.out",
+          "sha256": "cda6105e64bd28a7fb51aa5dd0621f6441b23d85c95f67c15abe30e7dafbd17d"
+        },
+        "receipt": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_basin_20260919/validation_v1/dft/tasks/1F6S__11__La__proposal/endpoint.out.execution.json",
+          "sha256": "2e8d1ca1090dde9fb867ab08c7e7fc3e59e35afbd737a244fb1c1c9f9bc2d53a"
+        },
+        "wall_seconds": 381.122742
+      },
+      "occupancy_probability": null,
+      "pattern": "11",
+      "predicted_change_kcal_mol": -2.4136642444388845,
+      "predicted_physical_gradient": [
+        1.7415813082828713,
+        0.20781527240984587,
+        0.9664083557218,
+        5.6612725102200845e-06,
+        -2.707934949512141e-05,
+        2.7931723845379043e-05,
+        9.266089840309633e-06,
+        1.5765744272755455e-05,
+        5.769780270625802e-05,
+        3.3125687696212285e-05,
+        1.6091727843074977e-05,
+        4.3500387477416883e-07
+      ],
+      "stationary_within_tolerance": false,
+      "task_id": "1F6S__11__La__proposal",
+      "thermal_extent": {
+        "all_RMS_within_declared_domain": false,
+        "coordinate_units": "per water: Angstrom x3, radian x3",
+        "covariance": [
+          [
+            0.017501892614953586,
+            0.004348070894243117,
+            0.0009380379609013058,
+            -0.0004325334377998091,
+            -0.002988143523884349,
+            0.0038155934170569787,
+            0.00039161200645474516,
+            0.00015811043375676967,
+            -1.6058141254619862e-06,
+            -1.218620683900203e-05,
+            -5.227983850580838e-05,
+            0.00019121515283470803
+          ],
+          [
+            0.004348070894243119,
+            0.009117490085381276,
+            0.0004885074299265093,
+            0.001234646844046396,
+            0.0016136272083787633,
+            -0.0019891089399341633,
+            0.0003938388377102546,
+            0.0003630320233727785,
+            1.5710015097957688e-05,
+            0.00019581748942330837,
+            3.378693791790732e-05,
+            0.0003503602997659099
+          ],
+          [
+            0.0009380379609013055,
+            0.0004885074299265092,
+            0.0072846389211856846,
+            -0.0028607049221758417,
+            0.0016288106978369235,
+            -0.001494748280029482,
+            0.0001780383855280415,
+            0.0003291692356646847,
+            -7.2835335730885585e-06,
+            7.034980721610178e-06,
+            -8.102183081480211e-05,
+            0.00022345420239498748
+          ],
+          [
+            -0.0004325334377998089,
+            0.0012346468440463955,
+            -0.0028607049221758413,
+            0.010198392453456476,
+            -0.002383631591158429,
+            0.0006715062059996517,
+            -9.925782032221104e-06,
+            -3.503440354279426e-05,
+            3.2227406057130304e-05,
+            0.00011029770238451141,
+            9.533842878726672e-05,
+            -1.574819498928778e-05
+          ],
+          [
+            -0.0029881435238843495,
+            0.001613627208378764,
+            0.0016288106978369235,
+            -0.002383631591158429,
+            0.01486167703327865,
+            -0.005419581444719754,
+            0.00011901671116078204,
+            0.00022845002284933345,
+            7.923700958783171e-05,
+            0.00020840484476911513,
+            0.00010033800128346772,
+            0.00011108158716766645
+          ],
+          [
+            0.00381559341705698,
+            -0.0019891089399341633,
+            -0.0014947482800294818,
+            0.0006715062059996515,
+            -0.005419581444719754,
+            0.018017464818711502,
+            -2.7931699433135674e-05,
+            -0.00016426175428887373,
+            -2.1993297243101145e-06,
+            4.318894549886101e-05,
+            6.678896338916201e-05,
+            -6.467241523371413e-05
+          ],
+          [
+            0.0003916120064547454,
+            0.0003938388377102544,
+            0.00017803838552804123,
+            -9.92578203222106e-06,
+            0.00011901671116078202,
+            -2.7931699433135572e-05,
+            0.039818609956985,
+            0.012325898154012646,
+            -0.0017846065470861862,
+            0.0028294550588847363,
+            -0.0030070282444407443,
+            0.02475735020643852
+          ],
+          [
+            0.00015811043375676972,
+            0.0003630320233727785,
+            0.0003291692356646845,
+            -3.503440354279424e-05,
+            0.00022845002284933348,
+            -0.0001642617542888737,
+            0.012325898154012648,
+            0.008968233624543033,
+            -0.0008588899252837595,
+            0.00015691417483773437,
+            -0.002105221742138626,
+            0.010461214725833974
+          ],
+          [
+            -1.605814125461983e-06,
+            1.5710015097957685e-05,
+            -7.283533573088556e-06,
+            3.222740605713031e-05,
+            7.923700958783171e-05,
+            -2.199329724310107e-06,
+            -0.0017846065470861862,
+            -0.0008588899252837596,
+            0.008581764685032026,
+            0.002866922363294553,
+            0.00215914427695874,
+            -0.0017037030731232319
+          ],
+          [
+            -1.2186206839002018e-05,
+            0.00019581748942330834,
+            7.034980721610155e-06,
+            0.00011029770238451142,
+            0.00020840484476911504,
+            4.3188945498861e-05,
+            0.0028294550588847346,
+            0.00015691417483773397,
+            0.0028669223632945525,
+            0.013618347779672173,
+            0.0009952813455354874,
+            0.004418596832165901
+          ],
+          [
+            -5.227983850580839e-05,
+            3.378693791790734e-05,
+            -8.10218308148021e-05,
+            9.533842878726673e-05,
+            0.00010033800128346773,
+            6.678896338916201e-05,
+            -0.003007028244440745,
+            -0.0021052217421386266,
+            0.00215914427695874,
+            0.0009952813455354874,
+            0.017579599674543204,
+            -0.00875936473544013
+          ],
+          [
+            0.00019121515283470806,
+            0.0003503602997659099,
+            0.00022345420239498734,
+            -1.5748194989287763e-05,
+            0.00011108158716766649,
+            -6.467241523371413e-05,
+            0.02475735020643852,
+            0.010461214725833974,
+            -0.001703703073123232,
+            0.004418596832165902,
+            -0.00875936473544013,
+            0.04901330114147708
+          ]
+        ],
+        "harmonic_free_energy_kcal_mol": null,
+        "physical_fluctuation_estimate": null,
+        "status": "conditional_classical_harmonic_model_diagnostic",
+        "temperature_K": 298.15,
+        "waters": [
+          {
+            "RMS_within_declared_domain": true,
+            "rotation_RMS_radian": 0.20755128114624258,
+            "translation_RMS_A": 0.18413044729625938
+          },
+          {
+            "RMS_within_declared_domain": false,
+            "rotation_RMS_radian": 0.2832159045599178,
+            "translation_RMS_A": 0.2395174487726522
+          }
+        ]
+      },
+      "total_change_from_initial_kcal_mol": -2.4626051336361168,
+      "water_count": 2,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_basin_20260919/validation_v1/dft/tasks/1F6S__11__La__proposal/core.xyz",
+        "sha256": "82f321eaa9e8414c054c666d72123be396f7326cbfaac02c226b00d1f9408d5a"
+      }
+    },
+    {
+      "DFT_gradient_max": 1.2814656047226158,
+      "DFT_physical_gradient": [
+        -0.4237371708309081,
+        0.05341972384990701,
+        0.10460626681555141,
+        0.1670159474708119,
+        -0.6578062485396117,
+        -0.7592403740643211,
+        1.2814656047226158,
+        0.8952744405993726,
+        1.2121306991259413,
+        0.08581585099806698,
+        -0.6804248080112949,
+        0.6316646286319844
+      ],
+      "actual_change_kcal_mol": -2.0557097702549982,
+      "amplitude": null,
+      "case": "6IP9",
+      "center_id": "6IP9__110__Ca",
+      "charge": -2,
+      "energy_error_kcal_mol": 0.07029484877338277,
+      "energy_pass": true,
+      "energy_tolerance": 0.20557097702549984,
+      "generation": 0,
+      "geometry": {
+        "fixed_coordinates_exact": true,
+        "maximum_total_atom_displacement_A": 0.21881386677710826,
+        "origin_xyz": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_occupancy_20260918/dft_v1/tasks/6IP9__110__Ca/core.xyz",
+          "sha256": "ff072dfc2334b0f3a3b22a0c05e1af8ef1155aab0c820ed329326ad9eb453daf"
+        },
+        "rigid_water_shapes_preserved": true,
+        "waters": [
+          {
+            "OH_lengths_A": [
+              0.9571628482503829,
+              0.9571628483141085
+            ],
+            "O_displacement_A": 0.20066160767213836,
+            "metal_O_final_A": 2.623805350251675,
+            "metal_O_initial_A": 2.5557474444866406,
+            "nearest_other_heavy_atom_distance_A": 2.5767024881857967,
+            "nearest_other_heavy_atom_element": "O",
+            "nearest_other_heavy_atom_index": 25,
+            "source": {
+              "canonical_resname": "HOH",
+              "chain": "A",
+              "insertion_code": "",
+              "resname": "HOH",
+              "resnum": 310
+            }
+          },
+          {
+            "OH_lengths_A": [
+              0.9571628483083894,
+              0.9571628482862051
+            ],
+            "O_displacement_A": 0.20673808660613094,
+            "metal_O_final_A": 2.646471355860343,
+            "metal_O_initial_A": 2.7015930485548707,
+            "nearest_other_heavy_atom_distance_A": 2.791314937392891,
+            "nearest_other_heavy_atom_element": "O",
+            "nearest_other_heavy_atom_index": 36,
+            "source": {
+              "canonical_resname": "HOH",
+              "chain": "A",
+              "insertion_code": "",
+              "resname": "HOH",
+              "resnum": 322
+            }
+          }
+        ]
+      },
+      "harmonic_free_energy_kcal_mol": null,
+      "kind": "proposal",
+      "metal": "Ca",
+      "native_energy_hartree": -2898.032565775228,
+      "native_result": {
+        "components_hartree": {
+          "CPCM_dielectric": -0.3685725615241,
+          "SCF": -2898.0610429852277,
+          "dispersion": -0.035982712,
+          "gCP": 0.064459922
+        },
+        "energy_hartree": -2898.032565775228,
+        "orca_version": "6.1.1",
+        "output": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_basin_20260919/validation_v1/dft/tasks/6IP9__110__Ca__proposal/endpoint.out",
+          "sha256": "2d88033f6fb2e41b7539dfbeee6604f552d6fb5ecb9e0412ba609a482608d1c6"
+        },
+        "receipt": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_basin_20260919/validation_v1/dft/tasks/6IP9__110__Ca__proposal/endpoint.out.execution.json",
+          "sha256": "de150ba2974fd6f2221f5b6d1eb0c4e98425dfd5311c39febfc464c252631ef3"
+        },
+        "wall_seconds": 375.096074
+      },
+      "occupancy_probability": null,
+      "pattern": "110",
+      "predicted_change_kcal_mol": -1.9854149214816155,
+      "predicted_physical_gradient": [
+        -0.17828282942056672,
+        -0.12923170763385894,
+        0.19673285341097824,
+        8.217959254884497e-09,
+        1.9697201632410143e-06,
+        1.2379287892048155e-06,
+        1.5186909989471467,
+        0.4259905142229372,
+        0.573198029460289,
+        -5.694828471837801e-08,
+        3.5218290236934047e-07,
+        2.159234123094622e-06
+      ],
+      "stationary_within_tolerance": false,
+      "task_id": "6IP9__110__Ca__proposal",
+      "thermal_extent": {
+        "all_RMS_within_declared_domain": false,
+        "coordinate_units": "per water: Angstrom x3, radian x3",
+        "covariance": [
+          [
+            0.033970187342705176,
+            0.03898996307528945,
+            0.0006943673905007316,
+            -0.008144089193321115,
+            0.009084709020100118,
+            -0.02318842211128053,
+            -0.0003325730167494369,
+            7.579434467017586e-05,
+            -0.00020431125681667238,
+            0.00011723711572306427,
+            0.0004751473131173327,
+            -0.0006482983434116031
+          ],
+          [
+            0.038989963075289465,
+            0.0682748788916767,
+            0.0027455508412825512,
+            -0.013991911812695792,
+            0.017195031199626173,
+            -0.02871550705834946,
+            -0.0002071025478197726,
+            0.0006043877931034696,
+            0.00011040602089248888,
+            0.0003413341006646423,
+            0.0008168651298899105,
+            -0.0009163337845728412
+          ],
+          [
+            0.0006943673905007312,
+            0.0027455508412825504,
+            0.006573085656908106,
+            -0.00040353029096063794,
+            0.004490136495592457,
+            -0.006200751306022727,
+            1.4120033531364223e-06,
+            0.00017432140614000594,
+            7.315929976466532e-05,
+            8.4532544781784e-05,
+            9.172082476492759e-05,
+            -0.00010105987378109367
+          ],
+          [
+            -0.008144089193321116,
+            -0.013991911812695794,
+            -0.0004035302909606378,
+            0.02009427545656586,
+            -0.011198667911999884,
+            0.01185311304150259,
+            6.606606402244059e-05,
+            -5.742734212820532e-05,
+            1.9892776386510907e-05,
+            0.00012041204633687023,
+            -0.00020021793537040292,
+            0.00028246313857435777
+          ],
+          [
+            0.009084709020100116,
+            0.017195031199626166,
+            0.0044901364955924564,
+            -0.01119866791199988,
+            0.050649814400369766,
+            -0.05460577217063241,
+            -0.0010096881534247212,
+            0.0002516630981974745,
+            -0.0005829346767327521,
+            0.0008342640431592916,
+            0.0006105459160223082,
+            -0.0011085636285812891
+          ],
+          [
+            -0.023188422111280523,
+            -0.028715507058349448,
+            -0.006200751306022726,
+            0.011853113041502588,
+            -0.05460577217063241,
+            0.11746001320278297,
+            0.0011747971382865185,
+            -0.00018438915385148288,
+            0.0007114327945674686,
+            -0.0005474533189115834,
+            -0.0011217936822726325,
+            0.0017066326755394016
+          ],
+          [
+            -0.00033257301674943714,
+            -0.00020710254781977267,
+            1.4120033531364134e-06,
+            6.606606402244064e-05,
+            -0.001009688153424721,
+            0.0011747971382865185,
+            0.047659526594339995,
+            0.00292067364019807,
+            0.025351581990652263,
+            -0.006118451957341967,
+            0.013400707857935321,
+            0.009544522755903692
+          ],
+          [
+            7.579434467017584e-05,
+            0.0006043877931034694,
+            0.00017432140614000597,
+            -5.742734212820532e-05,
+            0.00025166309819747457,
+            -0.00018438915385148285,
+            0.00292067364019807,
+            0.01729061225063633,
+            0.005739320875894818,
+            0.002160710148369129,
+            0.0009149951763273463,
+            -0.0035953285473772447
+          ],
+          [
+            -0.0002043112568166724,
+            0.00011040602089248886,
+            7.31592997646653e-05,
+            1.9892776386510964e-05,
+            -0.000582934676732752,
+            0.0007114327945674684,
+            0.02535158199065226,
+            0.005739320875894818,
+            0.029618736312727805,
+            -0.0001201979526702665,
+            0.013906782013143376,
+            0.006982708667079304
+          ],
+          [
+            0.00011723711572306416,
+            0.00034133410066464204,
+            8.4532544781784e-05,
+            0.00012041204633687021,
+            0.0008342640431592914,
+            -0.0005474533189115832,
+            -0.006118451957341969,
+            0.0021607101483691288,
+            -0.00012019795267026714,
+            0.050064809298207814,
+            0.029427302005533677,
+            -0.008553783177157121
+          ],
+          [
+            0.00047514731311733277,
+            0.0008168651298899104,
+            9.172082476492759e-05,
+            -0.0002002179353704028,
+            0.000610545916022308,
+            -0.0011217936822726325,
+            0.013400707857935321,
+            0.0009149951763273458,
+            0.013906782013143375,
+            0.029427302005533677,
+            0.056009087198951514,
+            -0.0004198681373349458
+          ],
+          [
+            -0.0006482983434116031,
+            -0.0009163337845728409,
+            -0.00010105987378109367,
+            0.0002824631385743578,
+            -0.001108563628581289,
+            0.0017066326755394014,
+            0.009544522755903692,
+            -0.003595328547377245,
+            0.006982708667079304,
+            -0.00855378317715712,
+            -0.00041986813733494577,
+            0.02197303370628501
+          ]
+        ],
+        "harmonic_free_energy_kcal_mol": null,
+        "physical_fluctuation_estimate": null,
+        "status": "conditional_classical_harmonic_model_diagnostic",
+        "temperature_K": 298.15,
+        "waters": [
+          {
+            "RMS_within_declared_domain": false,
+            "rotation_RMS_radian": 0.4338249682299517,
+            "translation_RMS_A": 0.3298759644037285
+          },
+          {
+            "RMS_within_declared_domain": false,
+            "rotation_RMS_radian": 0.3578364573425189,
+            "translation_RMS_A": 0.307520528026511
+          }
+        ]
+      },
+      "total_change_from_initial_kcal_mol": -2.0557097702549982,
+      "water_count": 2,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_basin_20260919/validation_v1/dft/tasks/6IP9__110__Ca__proposal/core.xyz",
+        "sha256": "6036a1bc79c5ee57ada8193b7837ae83c795d15955c06bddf513558cfbc65972"
+      }
+    },
+    {
+      "DFT_gradient_max": 0.6113665020743326,
+      "DFT_physical_gradient": [
+        -0.6113665020743326,
+        0.48452018406287856,
+        0.26656396692848716,
+        0.6072609743267069,
+        -0.20012297042610008,
+        -0.2852825297637728,
+        0.20056008719910956,
+        0.4807035668486983,
+        0.3618971036740861,
+        -0.2875260957110745,
+        -0.5535548186759752,
+        0.4498235916718634
+      ],
+      "actual_change_kcal_mol": -1.8131305133614517,
+      "amplitude": null,
+      "case": "6IP9",
+      "center_id": "6IP9__110__La",
+      "charge": -1,
+      "energy_error_kcal_mol": 0.057843512843944955,
+      "energy_pass": true,
+      "energy_tolerance": 0.18131305133614517,
+      "generation": 0,
+      "geometry": {
+        "fixed_coordinates_exact": true,
+        "maximum_total_atom_displacement_A": 0.208515227715271,
+        "origin_xyz": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_occupancy_20260918/dft_v1/tasks/6IP9__110__La/core.xyz",
+          "sha256": "588b99e1b310348ff27cea12ff4f57d15d80e1cc1aa763bd299f56e81217791f"
+        },
+        "rigid_water_shapes_preserved": true,
+        "waters": [
+          {
+            "OH_lengths_A": [
+              0.9571628482503822,
+              0.957162848314109
+            ],
+            "O_displacement_A": 0.1998301017624748,
+            "metal_O_final_A": 2.6438201053629657,
+            "metal_O_initial_A": 2.5557474444866406,
+            "nearest_other_heavy_atom_distance_A": 2.5934427149661183,
+            "nearest_other_heavy_atom_element": "O",
+            "nearest_other_heavy_atom_index": 25,
+            "source": {
+              "canonical_resname": "HOH",
+              "chain": "A",
+              "insertion_code": "",
+              "resname": "HOH",
+              "resnum": 310
+            }
+          },
+          {
+            "OH_lengths_A": [
+              0.9571628483083897,
+              0.9571628482862047
+            ],
+            "O_displacement_A": 0.19510437789386334,
+            "metal_O_final_A": 2.707141784717502,
+            "metal_O_initial_A": 2.7015930485548707,
+            "nearest_other_heavy_atom_distance_A": 2.8085148114495913,
+            "nearest_other_heavy_atom_element": "O",
+            "nearest_other_heavy_atom_index": 36,
+            "source": {
+              "canonical_resname": "HOH",
+              "chain": "A",
+              "insertion_code": "",
+              "resname": "HOH",
+              "resnum": 322
+            }
+          }
+        ]
+      },
+      "harmonic_free_energy_kcal_mol": null,
+      "kind": "proposal",
+      "metal": "La",
+      "native_energy_hartree": -2251.978863822159,
+      "native_result": {
+        "components_hartree": {
+          "CPCM_dielectric": -0.21453589903551,
+          "SCF": -2252.008523867159,
+          "dispersion": -0.036644638,
+          "gCP": 0.066304683
+        },
+        "energy_hartree": -2251.978863822159,
+        "orca_version": "6.1.1",
+        "output": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_basin_20260919/validation_v1/dft/tasks/6IP9__110__La__proposal/endpoint.out",
+          "sha256": "684cbb352a240111af4064dbbf8f5eb1767fa990d3a699a6dd20bbeb15079a72"
+        },
+        "receipt": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_basin_20260919/validation_v1/dft/tasks/6IP9__110__La__proposal/endpoint.out.execution.json",
+          "sha256": "5d4cad1b083e40e0ed1e1c5566e87c28a5d68954a3c774a0fcb74040422fe9a4"
+        },
+        "wall_seconds": 391.315594
+      },
+      "occupancy_probability": null,
+      "pattern": "110",
+      "predicted_change_kcal_mol": -1.7552870005175067,
+      "predicted_physical_gradient": [
+        -0.12855748259595146,
+        -0.0675489378076648,
+        0.13688199941927337,
+        -7.935704089951665e-06,
+        -5.648193337347129e-07,
+        4.806494191789834e-06,
+        -1.0136931942739125e-06,
+        -1.401861809274818e-06,
+        7.720527979593328e-06,
+        -1.3273558587035553e-05,
+        2.4510825048719296e-06,
+        3.485935708146421e-05
+      ],
+      "stationary_within_tolerance": false,
+      "task_id": "6IP9__110__La__proposal",
+      "thermal_extent": {
+        "all_RMS_within_declared_domain": false,
+        "coordinate_units": "per water: Angstrom x3, radian x3",
+        "covariance": [
+          [
+            0.03359341051902053,
+            0.03235727951920604,
+            0.0010829676799122298,
+            -0.007441485092234404,
+            0.016792112032812063,
+            -0.03833648834910491,
+            -0.0002021883532348583,
+            -0.00010634277591875525,
+            -0.000300141313055847,
+            0.00016160826808450215,
+            0.0002874396905405644,
+            -0.0004983941112997448
+          ],
+          [
+            0.032357279519206056,
+            0.04409888754926229,
+            -0.00047266078695094643,
+            -0.008115138510056238,
+            0.018958774385620266,
+            -0.03667167205650815,
+            -5.1430774503114245e-05,
+            0.00020384733715913864,
+            -0.00013679785109221713,
+            0.00024379991681297542,
+            0.0003279048748511768,
+            -0.0005544240405790472
+          ],
+          [
+            0.001082967679912229,
+            -0.00047266078695094784,
+            0.00612095208323638,
+            -0.0007299918860813147,
+            0.0016661895854039308,
+            -0.0041639052451525405,
+            9.013132797921392e-05,
+            0.000114407105791679,
+            8.767099592618395e-05,
+            -6.111488738831775e-05,
+            4.3850985940062565e-06,
+            -1.0542975737144573e-05
+          ],
+          [
+            -0.007441485092234405,
+            -0.00811513851005624,
+            -0.0007299918860813151,
+            0.014888111881807782,
+            -0.01032245191650012,
+            0.014479015652710278,
+            -2.040773955518506e-05,
+            4.3109132332352335e-05,
+            4.1131635892662185e-05,
+            0.00014809125746004156,
+            -7.411071673630142e-05,
+            0.00015112720540247138
+          ],
+          [
+            0.016792112032812067,
+            0.01895877438562027,
+            0.0016661895854039317,
+            -0.01032245191650012,
+            0.03425226743329023,
+            -0.043704565687910445,
+            -0.0002916795849649539,
+            0.00013871360399713445,
+            -0.00023097009528715953,
+            0.0002524411354467537,
+            0.00025969187489538486,
+            -0.0005040197525631478
+          ],
+          [
+            -0.0383364883491049,
+            -0.036671672056508134,
+            -0.004163905245152541,
+            0.014479015652710273,
+            -0.04370456568791044,
+            0.10671006852066287,
+            0.0003563894955642567,
+            1.9880094124918366e-05,
+            0.00040741166312552324,
+            -5.011972945886482e-05,
+            -0.0004979566008516564,
+            0.0009193854066287063
+          ],
+          [
+            -0.0002021883532348584,
+            -5.1430774503114285e-05,
+            9.013132797921389e-05,
+            -2.0407739555185026e-05,
+            -0.0002916795849649538,
+            0.00035638949556425676,
+            0.039102242503633665,
+            -0.0004234919098281724,
+            0.015626226523727842,
+            -0.01716011639168225,
+            0.002189941434969844,
+            0.004085004157539779
+          ],
+          [
+            -0.00010634277591875533,
+            0.00020384733715913858,
+            0.00011440710579167897,
+            4.310913233235237e-05,
+            0.00013871360399713434,
+            1.988009412491852e-05,
+            -0.00042349190982817224,
+            0.009472798855447762,
+            -0.0010828137234865159,
+            0.0017509896589437486,
+            -0.0005020232630752186,
+            -0.003757827588796439
+          ],
+          [
+            -0.00030014131305584706,
+            -0.0001367978510922171,
+            8.767099592618392e-05,
+            4.11316358926622e-05,
+            -0.00023097009528715948,
+            0.00040741166312552324,
+            0.015626226523727842,
+            -0.0010828137234865157,
+            0.020964660374602696,
+            -0.008400045758230452,
+            0.004658125809965577,
+            0.0057257284674345895
+          ],
+          [
+            0.0001616082680845022,
+            0.00024379991681297553,
+            -6.11148873883177e-05,
+            0.0001480912574600415,
+            0.0002524411354467537,
+            -5.011972945886493e-05,
+            -0.017160116391682245,
+            0.0017509896589437486,
+            -0.008400045758230452,
+            0.04771198245533089,
+            0.018662508215076562,
+            -0.008275079365318714
+          ],
+          [
+            0.0002874396905405643,
+            0.00032790487485117676,
+            4.385098594006271e-06,
+            -7.411071673630142e-05,
+            0.00025969187489538486,
+            -0.0004979566008516564,
+            0.0021899414349698452,
+            -0.0005020232630752186,
+            0.004658125809965579,
+            0.01866250821507656,
+            0.034464874463007666,
+            -0.001035089915398369
+          ],
+          [
+            -0.0004983941112997448,
+            -0.000554424040579047,
+            -1.0542975737144589e-05,
+            0.00015112720540247135,
+            -0.0005040197525631477,
+            0.0009193854066287063,
+            0.004085004157539778,
+            -0.003757827588796439,
+            0.0057257284674345895,
+            -0.008275079365318714,
+            -0.001035089915398369,
+            0.01798574549842895
+          ]
+        ],
+        "harmonic_free_energy_kcal_mol": null,
+        "physical_fluctuation_estimate": null,
+        "status": "conditional_classical_harmonic_model_diagnostic",
+        "temperature_K": 298.15,
+        "waters": [
+          {
+            "RMS_within_declared_domain": false,
+            "rotation_RMS_radian": 0.39477898606151884,
+            "translation_RMS_A": 0.2895051815624708
+          },
+          {
+            "RMS_within_declared_domain": false,
+            "rotation_RMS_radian": 0.3164847585852556,
+            "translation_RMS_A": 0.2637038144086735
+          }
+        ]
+      },
+      "total_change_from_initial_kcal_mol": -1.8131305133614517,
+      "water_count": 2,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_basin_20260919/validation_v1/dft/tasks/6IP9__110__La__proposal/core.xyz",
+        "sha256": "e9d6af690fe3cdf25336a594fad225a0237a613c4b27a7b1b349c1ffe3ace309"
+      }
+    }
+  ],
+  "thermochemistry": {
+    "missing": [
+      "validated stationary coupled basin spectra and their physical extent",
+      "bound internal water vibration and its consistent reference",
+      "non-electrostatic solvent contribution",
+      "competing orientation basins and all occupancy-state corrections"
+    ],
+    "occupancy_probabilities": null,
+    "status": "unavailable"
+  },
+  "thermochemistry_reference": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/hydration_network_20260918/WATER_THERMOCHEMISTRY.json",
+    "sha256": "13dce98c189fed7367230df4278aee7f280e3ed1b919fc37b9887875cc0f7b98"
+  },
+  "validations": [
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/hydration_basin_20260919/VALIDATION_v1.json",
+      "sha256": "0ade0d5a5ec2c0a97231ade21959400bf593f0cee28d698069fa30656b3cae64"
+    }
+  ],
+  "water_reference": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_network_20260918/water_reference_v2/reference_1201831.json",
+    "sha256": "02db4b4dfb2969ea548bfb927a7ab047625443a36bc58196d9fa0fff6fed3887"
+  }
+}

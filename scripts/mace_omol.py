@@ -153,6 +153,12 @@ def prepare_benchmark(qualification, mechanics, agreement, output):
 
 
 def validate(manifest):
+    if read_json(manifest).get('stage')=='hydration_coupled_validation':
+        from hydration_basin_validation import validate as basin_check_validate
+        return basin_check_validate(manifest)
+    if read_json(manifest).get('stage')=='hydration_coupled_basin':
+        from hydration_basin import validate as basin_validate
+        return basin_validate(manifest)
     if read_json(manifest).get('stage')=='hydration_water_motion':
         from hydration_water_motion import validate_mace
         return validate_mace(manifest)
@@ -285,6 +291,9 @@ def input_batch(calc, atoms, charge, multiplicity, batch=None, metal_index=0):
 
 
 def worker(manifest, task_id, output, memory_mode):
+    if read_json(manifest).get('stage')=='hydration_coupled_basin':
+        from hydration_basin import worker as basin_worker
+        return basin_worker(manifest,task_id,output,memory_mode)
     if read_json(manifest).get('stage')=='hydration_orientation_optimization':
         from hydration_proposal_opt import worker as hydration_opt_worker
         return hydration_opt_worker(manifest,task_id,output,memory_mode)
@@ -491,6 +500,12 @@ def accepted_state(result, task):
 
 
 def collect(manifest):
+    if read_json(manifest).get('stage')=='hydration_coupled_validation':
+        from hydration_basin_validation import collect_mace as basin_check_collect
+        return basin_check_collect(manifest)
+    if read_json(manifest).get('stage')=='hydration_coupled_basin':
+        from hydration_basin import collect as basin_collect
+        return basin_collect(manifest)
     if read_json(manifest).get('stage')=='hydration_water_motion':
         from hydration_water_motion import collect_mace
         return collect_mace(manifest)

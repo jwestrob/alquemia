@@ -1,27 +1,30 @@
 # Alquemia: current operating guide for agents
 
-## Current: local water response passes — 2026-09-18
+## Current: coupled water response complete — 2026-09-19
 
-All four metal states (1F6S11 and6IP9110, Ca/La) pass the prescribed local radial
-energy/gradient/curvature checks. Eight native DFT evaluations and16MACE calls
-completed as1201953/1201958; startup-only1201954 failed before inference and is
-included in cost. Curvature errors0.58–2.53%; maximum anchored energy error
-0.00707kcal/mol and Ca−La response error0.00905kcal/mol. This supports continuing
-DFT-anchored cheap water mechanics; it does not yet supply occupancy/entropy or
-new classification accuracy. Baseline/default/PQQ unchanged.56real-fixture tests
-pass, zero skips. Cost:69,008allocated core-s and137GPU-s. No next-stage run.
+27native DFT checks and all MACE tasks completed. All11trial steps lower native
+energy and pass energy checks;3/4endpoints meet water-coordinate minimum criteria.
+1F6SCa remains nonstationary (projected max0.70245 versus0.4 limit) and retains
+its failed soft-mode check.7/8initial direction checks pass; all4response paths pass.
+This supports cheap water-relaxation proposals, not harmonic entropy or occupancy.
+Thermal model extents exceed the validated local domain; missing free-energy terms
+remain null. Baseline/default/PQQ unchanged.71real-fixture tests pass, zero skips.
 
-Read [motion report](../diagnostics/hydration_motion_20260918/REPORT.md) and [commands](../diagnostics/hydration_motion_20260918/COMMANDS.md).
-Do not rerun completed motion or occupancy jobs. Final result RESULT_v2.json and
-export_v3 use a frozen analyzer. Native orientation comparator1201824 has completed all four1F6S optimizations.
-They converge normally but fail the frozen-coordinate tolerance (drift2.26e-5 to
-7.46e-4Å); one also exceeds the rigid-water tolerance. Actual final energies and
-gradient traces are retained in orientation_1f6s_v1/collected_opt_v2.json, without
-promoting them to qualified exact-geometry minima. No rerun or tolerance change.
-Comparator1201825 for6IP9 remains live; preserve it. These are separate older
-runs and do not affect the successful exact-coordinate motion checks.
-Next scientific target: coupled physical water motions and stable basins.
+Read [coupled report](../diagnostics/hydration_basin_20260919/REPORT.md),
+[actual tables](../diagnostics/hydration_basin_20260919/export_final_v1/TABLES.md), and
+[commands](../diagnostics/hydration_basin_20260919/COMMANDS.md). The finite continuation is
+complete; do not launch a third recentering round or rerun completed jobs. One
+qualified6IP9La endpoint was explicitly reused. Exact new allocation cost:
+178496core-s/840GPU-s. Final report uses frozen analysis_implementation_v4.
+Four initial collection equality failures were recovered without new chemistry.
+The next research issue is wider water basins and complete state accounting,
+not another identical local step or an invented entropy offset.
 
+Older native orientation comparator1201825 for6IP9 remains live; preserve it and
+collect it when finished.1201824 is complete with recorded geometry-tolerance
+failures. These older jobs are separate from the completed coupled-response pilot.
+Prior radial/occupancy/preparation results remain preserved; older summaries below
+are historical checkpoints. Current work and vault note are recorded in SESSIONS.
 
 **Updated 2026-09-18.** Start here for new work. Recover the latest user
 instructions and [checkpoint](../diagnostics/mace_discriminator_goal_20260916/CURRENT.md)
@@ -48,7 +51,7 @@ Production/PQQ unchanged;49fixture tests pass. Jobs1201908/1201910 completed.
 [Result](../diagnostics/hydration_occupancy_20260918/REPORT.md),
 [commands](../diagnostics/hydration_occupancy_20260918/COMMANDS.md),
 [local-motion plan, now executed](../diagnostics/hydration_occupancy_20260918/NEXT_MOTION.md).
-Separate native orientation comparators1201824/1201825 remain live.
+Native orientation1201824 is complete;1201825 remains live.
 
 **Earlier classifier experiment:** Jacob approved the archived-feature classifier
 comparison; it is now complete. Holding homolog groups together, DFT and

@@ -3177,3 +3177,44 @@ promoting them to qualified exact-geometry minima. No rerun or tolerance change.
 Comparator1201825 for6IP9 remains live; preserve it. These are separate older
 runs and do not affect the successful exact-coordinate motion checks.
 No push.
+
+## 2026-09-19 — Coupled water response complete; occupancy remains gated
+
+Jacob: “go for all of it!” Scope: coupled physical water motions, native checks,
+two bounded recentering rounds, conditional basin/free-energy accounting. Reused
+actual occupancy states and native analytic gradients; no production/PQQ change.
+New physicalCOM/SO3 coordinates, full cheap coupled curvature and Cartesian
+DFT gradient anchor preserve water shape and every frozen coordinate exactly.
+
+All9new allocations completed:27native DFT endpoints,27coupled response tasks,
+27matched MACE endpoints;2828recorded MACE objective evaluations. All11trial
+steps lower native energy and pass checks (max error0.070295kcal/mol). Three of
+four final endpoints satisfy the frozen water-coordinate minimum criterion.
+1F6SCa remains at gradient max0.70245 versus0.4; its initial soft-mode check also
+fails.7/8direction checks pass; all4response directions pass. No failed curvature
+was promoted. Thermal model extents exceed the declared local domain, and
+internal-water/non-electrostatic/competing-basin terms remain unavailable.
+No entropy, occupancy probability, calibrated new score or accuracy claim.
+
+Actual total response contributions toCa−La:1F6S11−1.97685,6IP9110−0.46063kcal/mol;
+one consumed biological comparison.6IP9La's stationary native endpoint is reused
+from round1 whileCa receives round2. Baseline bands are not transferred. Native
+jobs1202052/1202058/1202064 and MACE1202050/1202053/1202056/1202059/1202063/1202065
+completed. Four initial collection tuple-equality errors recovered from existing
+outputs, no extra native calculation. Exact allocation178496core-s/840GPU-s;
+Slurm's64CPU allocation is counted despite round2's48CPU request.
+
+71distinct real-fixture tests pass (15new,33prior water,23baseline), zero skips.
+Reports/commands/receipts: diagnostics/hydration_basin_20260919; final numerical
+record export_final_v1/result.json, frozen analysis_implementation_v4. Workspaces
+under workspaces/hydration_basin_20260919. Vault note:
+agent-captures/2026-09-19_laca-coupled-water-response.md. Current agent guides updated.
+Do not rerun completed jobs or launch a third identical recentering round. The
+next modeling issue is wider basins/consistent state accounting, not a tolerance
+change or fitted entropy offset. Older native comparator1201825 remains live;
+preserve/collect when finished.1201824 is already complete with geometry failures.
+
+Own changes: hydration_basin*.py,15coupled-stage dispatch lines in mace_omol.py,
+real-fixture tests, experiment records and current agent pointers. The3unowned
+preexisting group-feature dispatch lines and all unrelated changes remain untouched.
+No push, rollout or default change.

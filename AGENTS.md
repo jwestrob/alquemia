@@ -22,6 +22,15 @@ scientific integrity, immutable experiments, scheduler rules and concurrent work
 
 ## Current work — 2026-09-18
 
+**Joint occupancy arrangement experiment complete.** Jacob: “I fully approve.”
+Read [report](diagnostics/hydration_occupancy_20260918/REPORT.md) and
+[commands](diagnostics/hydration_occupancy_20260918/COMMANDS.md). MACE1201908 and
+DFT1201910 completed all12patterns/24endpoints (20new,4reused). All16 additions
+shift the electronic contrast towardLa; water identity and coupled effects
+matter.49fixture tests pass. Occupancy free energies/probabilities remain
+unavailable; no new accuracy/default/PQQ claim. Do not rerun completed jobs or
+submit source-only native templates. Next local-motion work is planned, unrun.
+
 **Water preparation now improves the consumed alpha/GGR discrimination case.**
 Read [the result](diagnostics/hydration_network_20260918/REPORT.md) and
 [operations](diagnostics/hydration_network_20260918/COMMANDS.md). Exact MACE water
@@ -39,9 +48,9 @@ geometry check. Completed MACE jobs1201847/1201849 and DFT adjudication1201853
 must not be rerun. The practical route took96GPU-s plus118s on64CPUs for two
 structures; the ongoing native searches are separate development cost.
 
-Jacob approved this work with “proceed!”; standing autonomy applies. Next collect
-the native comparators, then advance the declared joint water occupancy table
-using the useful cheap proposal route. The old36-task DFT-only occupancy manifest
+Jacob approved this work with “proceed!”; standing autonomy applies. Collect the
+native comparators once they finish. The joint occupancy table is complete; its
+separate local-motion follow-on is described above. The old36-task DFT-only manifest
 is unsubmitted; do not blindly launch it. Bulk-water reference exists, but missing
 bound-state free-energy terms are not zero and no occupancy probabilities exist.
 Vault/result email updated. No production promotion or broad validation claimed.

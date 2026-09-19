@@ -10,12 +10,24 @@ has not been established. The [current MACE goal](../diagnostics/mace_pqq_utilit
 tests the frozen scorer on Jacob's labelled PQQ references. Latest steering:
 accuracy and robustness take priority over speed. The [comparison is complete](../diagnostics/mace_pqq_utility_20260918/REPORT.md):
 MACE retains 25/25 calls at 1.859x median speed, with a separate DFT reproduction
-exception preventing the strict combined qualification. New model trials and
-further runtime variants remain paused. Matching calibration
+exception preventing the strict combined qualification. Earlier grouped-model trials and
+further runtime variants remain paused; the approved water-state work is below. Matching calibration
 calls preserves fidelity but does not demonstrate improved generalization.
 Production remains unchanged.
 
-**Latest accuracy experiment:** Jacob approved the archived-feature classifier
+**Current water-state experiment is complete:** all12 arrangements across1F6S
+and6IP9,24 endpoints (20new/4reused),16 water-addition contrasts. All additions
+shift the electronic contrast towardLa after contextual water-H preparation;
+Ca/La fixed-count site rankings differ and water coupling is substantial.
+This is a consumed mechanistic experiment, not a new accuracy or equilibrium
+occupancy claim. Missing bound-water free-energy terms remain unavailable.
+Production/PQQ unchanged;49fixture tests pass. Jobs1201908/1201910 completed.
+[Result](../diagnostics/hydration_occupancy_20260918/REPORT.md),
+[commands](../diagnostics/hydration_occupancy_20260918/COMMANDS.md),
+[next local-motion plan, unrun](../diagnostics/hydration_occupancy_20260918/NEXT_MOTION.md).
+Separate native orientation comparators1201824/1201825 remain live.
+
+**Earlier classifier experiment:** Jacob approved the archived-feature classifier
 comparison; it is now complete. Holding homolog groups together, DFT and
 DFT+structure each give 25/25 PQQ calls, while adding the two MACE summaries
 gives 24/25. The direct-affinity set contains only two biological groups, so

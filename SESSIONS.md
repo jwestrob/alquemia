@@ -3116,3 +3116,30 @@ Preserve them; corrected Opt collector handles absent final.engrad and retains
 unqualified geometry observations. No native-minimum equivalence established.
 Joint water occupancy/free-energy work remains next;36-task DFT-only continuation
 is unsubmitted. Do not restart completed jobs or silently fill missing water terms.
+
+## 2026-09-18 — Joint water-arrangement experiment complete
+
+Jacob approved with “I fully approve.” All4+8 patterns/24 metal endpoints are
+complete: MACE1201908 (32converged searches,407objective evaluations,291GPU-s)
+and DFT1201910 (20new EnGrad endpoints; four matched full states reused).
+All16 additions shift the electronic contrast towardLa; fixed-count water-site
+preferences differ betweenCa/La.6IP9A322+A326 has substantial nonadditivity
+(7.50/6.66kcal/mol Ca/La). This is one consumed biological group, no new accuracy
+or equilibrium-occupancy claim. Missing bound free-energy terms remain null.
+
+New protocol native_r2scan3c_cpcm_mace_prepared_water_arrangements_v1; cheap
+proposal protocol mace_omol_rigid_water_occupancy_proposals_v1. Baseline/default/
+PQQ unchanged.49real-fixture tests pass, zero skips; archived full-water MACE
+collection reproduces exactly. Total new allocation119536CPU-core-s/291GPU-s.
+Physical gradients are projected without new energies; median translation cosine
+0.959 but6IP9La110A322 is0.062, so no curvature/entropy is claimed. One aligned
+experimental water candidate overlaps existing1F6S water; nothing was inserted.
+
+Owned code: hydration_occupancy.py, hydration_site_proposals.py, occupancy
+extension of hydration_proposal_opt.py, and test_hydration_occupancy.py.
+Results/CSV/figure/commands in diagnostics/hydration_occupancy_20260918.
+Workspaces under workspaces/hydration_occupancy_20260918; source states_v1 native
+inputs are preparation only, never submit. Completed jobs must not be rerun.
+Native comparator jobs1201824/1201825 remain live from the prior experiment;
+preserve them. Local-motion follow-on is planned but unrun. Current pointers
+and vault note updated. No push or production promotion.

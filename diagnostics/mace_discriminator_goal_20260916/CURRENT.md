@@ -1,6 +1,22 @@
 # MACE discriminator checkpoint — 2026-09-18
 
-## Current: demonstrated water-preparation improvement; native comparators running
+## Current: joint occupancy table complete; local free-energy model remains next
+
+Jacob: “I fully approve.” Read [the complete report](../hydration_occupancy_20260918/REPORT.md)
+and [operations](../hydration_occupancy_20260918/COMMANDS.md).
+MACE1201908/DFT1201910 completed all12patterns/24endpoints (20new,4reused).
+All16 additions shift the fixed-context electronic contrast towardLa, and
+conditional fixed-count site preferences differ betweenCa/La. Strong coupled
+water effects mean isolated water-removal terms cannot simply be added.
+No equilibrium occupancy/free-energy population or new classifier accuracy claim.
+Missing bound-motion/vibration/solvent terms remain unavailable. Baseline/PQQ
+unchanged.49real-fixture tests pass. New allocation291GPU-s/119536CPU-core-s.
+Do not repeat these jobs or submit the source-only native templates. Separate
+native comparators1201824/1201825 remain live. Next local-motion plan is unrun;
+include the weak6IP9A322 case identified by saved physical gradients. Source-site
+transfer found one overlapping candidate; no water was inserted. Vault updated.
+
+## Previous milestone: demonstrated water-preparation improvement; native comparators running
 
 **Original-core water preparation repairs both alpha/GGR directions.** New
 MACE exact rigid-water geometry preparation in source-defined70/76-atom contexts,

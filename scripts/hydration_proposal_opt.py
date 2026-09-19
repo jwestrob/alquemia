@@ -33,7 +33,7 @@ def rotate_waters(initial, groups, parameters):
     return coords,np.array(jacobians)
 
 
-def prepare(proposal_collection, manifests, inventory, agreement, output):
+def prepare(proposal_collection, manifests, inventory, agreement, output, occupancy=False):
     import mace_omol as omol
     prior=read_json(proposal_collection)
     if not prior.get('checks',{}).get('proposal_utility_pass'):raise InvalidArtifact('proposal utility check did not pass')
@@ -44,19 +44,24 @@ def prepare(proposal_collection, manifests, inventory, agreement, output):
     tasks=[]
     for mp in manifests:
         parent=read_json(mp)
-        for metal in ('Ca','La'):
-            matches=[t for t in parent['tasks'] if t['metal']==metal]
+        keys=sorted({(t['case'],t['pattern'],t['metal']) for t in parent['tasks']
+                     if not occupancy or t['variable_water_count']>0})
+        for case,pattern,metal in keys:
+            matches=[t for t in parent['tasks'] if (t['case'],t['pattern'],t['metal'])==(case,pattern,metal)]
             if {t['seed'] for t in matches}!=set(SETTINGS['starts']) or len(matches)!=2:
-                raise InvalidArtifact('two original full-water starts required')
+                raise InvalidArtifact('two predefined water orientation starts required')
             source=next(t for t in matches if t['seed']=='source')
-            tasks.append({'task_id':source['case']+'__'+metal,'case_id':source['case'],'metal':metal,'metal_index':0,
+            task={'task_id':case+'__'+(pattern+'__' if occupancy else '')+metal,'case_id':case,'metal':metal,'metal_index':0,
                 'kind':'core','variant':'primary','energy_component':omol.COMPONENT,'energy_only':False,
                 'charge':source['charge'],'spin_multiplicity':1,'xyz':source['xyz'],
                 'state':check_atoms(xyz(verify(source['xyz'])),source['charge']),
                 'water_groups':source['groups'],'mobile_indices':source['mobile_indices'],
-                'starts':{t['seed']:t['xyz'] for t in matches},'water_orientation_optimization':True})
+                'starts':{t['seed']:t['xyz'] for t in matches},'water_orientation_optimization':True}
+            if occupancy:task.update(pattern=pattern,variable_water_count=source['variable_water_count'])
+            tasks.append(task)
     m.update(tasks=tasks,optimization=SETTINGS,source_manifests=[record(p) for p in manifests],
              proposal_collection=record(proposal_collection),evidence_use='consumed_water_orientation_development')
+    if occupancy:m.update(occupancy_enumerated=True,protocol_id='mace_omol_rigid_water_occupancy_proposals_v1')
     return omol.seal(out,m)
 
 
@@ -68,7 +73,25 @@ def validate(manifest):
     verify(m['agreement']);verify(m['proposal_collection'])
     for p in m['implementation'].values():verify(p)
     for p in m['source_manifests']:verify(p)
-    if {(t['case_id'],t['metal']) for t in m['tasks']}!={(c,z) for c in ('1F6S','6IP9') for z in ('Ca','La')} or len(m['tasks'])!=4:
+    if m.get('occupancy_enumerated'):
+        expected={}
+        for pin in m['source_manifests']:
+            for t in read_json(verify(pin))['tasks']:
+                if t['variable_water_count']>0:
+                    expected.setdefault((t['case'],t['pattern'],t['metal']),{})[t['seed']]=t
+        keys=[(t['case_id'],t['pattern'],t['metal']) for t in m['tasks']]
+        if len(keys)!=len(set(keys)) or set(keys)!=set(expected):
+            raise InvalidArtifact('missing/duplicate manifested occupancy proposals')
+        for t in m['tasks']:
+            sources=expected[(t['case_id'],t['pattern'],t['metal'])]
+            s=sources['source']
+            if (t['starts']!={k:v['xyz'] for k,v in sources.items()} or
+                t['water_groups']!=s['groups'] or t['mobile_indices']!=s['mobile_indices'] or
+                t['charge']!=s['charge'] or t['xyz']!=s['xyz']):
+                raise InvalidArtifact('occupancy preparation changed')
+            counterpart=(t['case_id'],t['pattern'],'La' if t['metal']=='Ca' else 'Ca')
+            if counterpart not in expected:raise InvalidArtifact('unpaired occupancy state')
+    elif {(t['case_id'],t['metal']) for t in m['tasks']}!={(c,z) for c in ('1F6S','6IP9') for z in ('Ca','La')} or len(m['tasks'])!=4:
         raise InvalidArtifact('four paired optimization tasks required')
     for t in m['tasks']:
         initial=xyz(verify(t['xyz']));fixed=[i for i in range(len(initial)) if i not in t['mobile_indices']]
@@ -79,7 +102,7 @@ def validate(manifest):
         payload={k:v for k,v in t.items() if k!='cache_key'}
         if t['cache_key']!=cache_key({'task':payload,'model':m['model'],'software':m['software'],'implementation':m['implementation']}):
             raise InvalidArtifact('optimization cache identity changed')
-    return {'status':'pass','tasks':4,'manifest':record(manifest)}
+    return {'status':'pass','tasks':len(m['tasks']),'manifest':record(manifest)}
 
 
 def worker(manifest,task_id,output,memory_mode):
@@ -176,6 +199,7 @@ if __name__=='__main__':
     import json
     p=argparse.ArgumentParser(description=__doc__);s=p.add_subparsers(dest='op',required=True)
     q=s.add_parser('prepare');q.add_argument('--manifests',nargs='+',required=True)
+    q.add_argument('--occupancy',action='store_true')
     for name in ('proposal-collection','inventory','agreement','output'):q.add_argument('--'+name,required=True)
     q=s.add_parser('collect');q.add_argument('--manifest',required=True);q.add_argument('--output',required=True)
     a=vars(p.parse_args());op=a.pop('op')

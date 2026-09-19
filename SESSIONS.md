@@ -3260,3 +3260,24 @@ no baseline/default promotion. Water-basin report identity erratum is being
 handled by its owning agent: both1F6Sand6IP9arealpha-lactalbumin.
 
 Other agents' existing dirty files and shared dispatch changes remain unstaged.
+
+
+## 2026-09-19: contextual water interface and basin interpretation
+
+Committed the reusable explicit-input contextual-water component after parent
+replay:9real-fixture tests pass in28.162s;13completed basin tests pass in0.756s.
+The component reuses4actualproposals/8scoringendpoints and preserves30dry inputs
+exactly, with no new science calls or defaultchange. Allfour bound/detached
+energies remain explicit for endpoint-specific waterH. WetPQQ/cofactor context
+and absent-water placement are unsupported rather than guessed. Runnable commands:
+diagnostics/contextual_water_20260919/COMMANDS.md.
+
+Completed wider-basin results and code are retained as failed-target evidence:
+0/4endpoints pass DFTagreement; nooccupancy/entropy score. Both1F6Sand6IP9are
+bovinealpha-lactalbumin, verified from originalCIFheaders. Earlier prose named
+6IP9GGR incorrectly; diagnostics/water_basins_20260919/IDENTITY_ERRATUM.md records
+the correction without changing coordinates/energies/numericalreceipts.
+
+Ongoing new accuracy tracks remain separate: coordinationDFT1202428, independent
+coupledcluster1202429, and a frozen24point balanced internal proton-transfer test
+in preparation. See diagnostics/accuracy_tracks_20260919/STATUS.md.

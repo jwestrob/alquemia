@@ -8,6 +8,18 @@ Before acting, inspect git status, [SESSIONS.md](SESSIONS.md), the relevant
 experiment's agreement/report, and live jobs. Preserve unrelated edits,
 immutable scientific artifacts and active executors.
 
+**Completed approved analysis, 2026-09-18:** Jacob approved a small task-specific
+classifier using archived DFT, structural and MACE features (“I agree. Vamonos.”).
+Recover [the frozen classifier plan](diagnostics/site_classifier_20260918/AGREEMENT.md).
+Three nested models, grouped validation, separate PQQ and direct-affinity targets;
+no new energy calculations or changed production default. This supersedes the
+pause only for this explicitly agreed classifier experiment. Older physics and
+runtime experiments stay paused. The [completed classifier report](diagnostics/site_classifier_20260918/REPORT.md)
+records 25/25 grouped PQQ calls for DFT and DFT+structure, 24/25 with the two
+MACE features, and no evaluable direct-affinity folds (only two biological
+groups). No demonstrated accuracy gain; do not promote these research models
+or retune against the same cases. Runnable commands and exported models exist.
+
 **Latest agreed goal, 2026-09-18:** demonstrate PQQ reference fidelity and useful
 measured speed of the existing frozen masked-MACE scorer versus DFT. Recover
 [the new scope](diagnostics/mace_pqq_utility_20260918/GOAL.md) and CURRENT.md.

@@ -15,6 +15,17 @@ further runtime variants remain paused. Matching calibration
 calls preserves fidelity but does not demonstrate improved generalization.
 Production remains unchanged.
 
+**Latest accuracy experiment:** Jacob approved the archived-feature classifier
+comparison; it is now complete. Holding homolog groups together, DFT and
+DFT+structure each give 25/25 PQQ calls, while adding the two MACE summaries
+gives 24/25. The direct-affinity set contains only two biological groups, so
+out-of-group validation is unavailable. No accuracy improvement established
+and no default changed. The reusable inventory, feature, evaluate, export and
+score operations are in [commands](../diagnostics/site_classifier_20260918/COMMANDS.md);
+[results and limitations](../diagnostics/site_classifier_20260918/REPORT.md)
+describe the six research models. Do not treat training fits as validation or
+restart paused model campaigns from older notes below.
+
 **Earlier research result:** the complete frozen-response conductor correction
 provides no overall improvement over the preceding GK hybrid:4/12 directional
 comparisons remain correct. Parvalbumin EF improves, alpha-lactalbumin regresses.

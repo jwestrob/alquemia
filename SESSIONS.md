@@ -2933,3 +2933,38 @@ as optional PQQ research scorer, without a broad accuracy or full qualification
 claim. Agent guide/checkpoint/vault updated. Email summary accepted by relay
 (return0), mailbox receipt not confirmed. Finish scoped commit/tracker closure;
 new models and runtime variants remain paused. No push or production rescore.
+
+
+## 2026-09-18 — Completed approved archived-feature classifier experiment
+
+Jacob approved DFT / DFT+structure / DFT+structure+MACE with “I agree. Vamonos.”
+Frozen scope: diagnostics/site_classifier_20260918/AGREEMENT.md. Implemented
+scripts/site_classifier.py inventory, features, evaluate, export and score;
+all calculations reuse archived energy/readout artifacts. Fixed ridge logistic
+model, train-only scaling, class/biological-group weighting, homolog groups
+held together; PQQ functional class and direct affinity remain separate targets.
+
+32 supported rows, zero feature failures; 1KB0 unavailable. Across four held-out
+PQQ groups, DFT and DFT+structure each give 25/25, MACE-augmented gives 24/25.
+Q9Z4J7 is the added error; its 6–12 A contribution outweighs the other fitted
+terms, an algebraic explanation without unique physical attribution. No tuning.
+Both available crystal transfers replay correctly but share a training group.
+Three GGR/two alpha structures form only two biological groups: direct-affinity
+leave-group-out folds are untrainable, not 0% accuracy. All training fits are
+5/5, including DFT alone; no accuracy repair demonstrated.
+
+Six real-fixture tests pass in 3.465 s. Six exported research models retain exact
+coefficients, actual qualification and target/protocol guards. Actual score CLI
+replays 1H4I as Ca. Final artifact audit passes eleven pinned-file checks and
+six exact exports. Feature extraction 13.237680656835437 s wall / 12.908226509
+CPU s; grouping/fits 1.039798479527235 s wall / 0.911060191 CPU s. Early fixture
+extraction/test attempts remain in workspaces/site_classifier_20260918; no new
+DFT/MACE forward, GPU allocation or Slurm job. Baseline/default unchanged.
+
+REPORT.md, RESULT.json, all feature/prediction rows and COMMANDS.md are recorded
+under diagnostics/site_classifier_20260918. Agent guide/checkpoint updated;
+vault note agent-captures/2026-09-18_laca-task-specific-classifier.md written.
+No accuracy gain established or promotion. Additional independent labelled
+families with matched features are needed for the affinity test; PqqT/aqualysin
+remain candidates with unresolved evidence/preparation gates. No expansion or
+new experiment launched. Other models/runtime variants remain paused.

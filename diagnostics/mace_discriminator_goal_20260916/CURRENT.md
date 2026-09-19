@@ -1,5 +1,35 @@
 # MACE discriminator checkpoint — 2026-09-18
 
+## Completed: approved archived-feature classifier experiment
+
+Jacob approved the proposed DFT / DFT+structure / DFT+structure+MACE comparison
+with “I agree. Vamonos.” The frozen scope is
+[site_classifier_20260918/AGREEMENT.md](../site_classifier_20260918/AGREEMENT.md).
+32 supported prepared structures (27 PQQ including two crystal replicates,
+three GGR, two alpha); 1KB0 remains unsupported. PQQ forms four frozen homology
+groups. The direct-affinity target has only two biological groups and no
+trainable leave-group-out fold. No weak or protein-level label is promoted to
+a site label. Fixed regularization and features, no model/threshold search.
+No GPU/DFT calls or production changes. New products are under
+`workspaces/site_classifier_20260918/`. Other model experiments remain paused.
+
+Actual grouped PQQ results: DFT 25/25; DFT+structure 25/25;
+DFT+structure+MACE 24/25. Q9Z4J7 is the added MACE-feature error; the fitted
+6–12 A contribution explains the sign algebraically, not a physical cause.
+No tuning or rescue variant. All three final fits replay both supported
+crystals correctly, but those crystals share a training homology group.
+The five direct-site cases remain unevaluable out of group; perfect training
+fits, including DFT alone, do not establish a repair of the known failures.
+
+Six real-fixture tests pass. Feature extraction 13.237680657 s wall,
+12.908226509 CPU s; grouping/fits 1.039798480 s wall, 0.911060191 CPU s.
+Six research models exported with actual qualification metadata; scoring CLI
+replayed 1H4I. No new energy evaluations or default change. Read
+[report](../site_classifier_20260918/REPORT.md) and
+[commands](../site_classifier_20260918/COMMANDS.md). The next accuracy test
+needs additional independent labelled affinity groups with matched features;
+candidate evidence/preparation gates remain unresolved. No expansion launched.
+
 ## Completed: labelled PQQ utility benchmark
 
 All three campaign legs completed: DFT 1201562, original MACE 1201566,

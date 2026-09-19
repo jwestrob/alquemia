@@ -1,0 +1,278 @@
+{
+  "accuracy_gain_demonstrated": false,
+  "agreement": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/site_classifier_20260918/AGREEMENT.md",
+    "sha256": "3546a63ba11e5bc65001eb15d3b93a7d83b05ce29f4623664394961856905047"
+  },
+  "baseline_changed": false,
+  "errors": [
+    {
+      "arm": "DFT_structure_MACE",
+      "feature_logit_contributions": {
+        "DFT_S_kcal_mol": -0.18461568281549492,
+        "MACE_response_6to12_model_kcal": 0.33862635668857816,
+        "MACE_response_le6_model_kcal": -0.09703691092781343,
+        "acid_oxygen_fraction": -0.02488484594974498,
+        "contact_count": -0.061909142546235196,
+        "denticity_excess_fraction": 0.05854082995446787,
+        "local_probe_accessible_fraction": 0.0,
+        "mean_contact_distance_A": 0.004717604521025237
+      },
+      "intercept": -0.01001232151775381,
+      "interpretation": "algebraic explanation of this fitted classifier, not a physical causal decomposition",
+      "prediction": {
+        "case_id": "q9z4j7-pqq-la_model",
+        "class": "La",
+        "correct": false,
+        "group": "group:a8r3s4-pqq-la_model",
+        "label": "Ca",
+        "logit": 0.02342588740702891,
+        "status": "predicted"
+      },
+      "target": "PQQ_functional_class",
+      "training_cases": [
+        "a0a3f2yly8-pqq-la_model",
+        "a0acd6b9f2-pqq-la_model",
+        "c5atj3-pqq-la_model",
+        "c5b120-pqq-la_model",
+        "i0jwn7-pqq-la_model",
+        "mmol_1770-pqq-la_model",
+        "mmol_2048-pqq-la_model",
+        "q89gy2-pqq-la_model",
+        "q92wy9-pqq-la_model",
+        "atq70401.1-pqq-la_model",
+        "bbl57595.1-pqq-la_model",
+        "o24759-pqq-la_model",
+        "p12293-pqq-la_model",
+        "p15279-pqq-la_model",
+        "p16027-pqq-la_model",
+        "p38539-pqq-la_model",
+        "q4w6g0-pqq-la_model",
+        "q60ar6-pqq-la_model",
+        "q8gr64-pqq-la_model",
+        "q9l935-pqq-la_model"
+      ]
+    }
+  ],
+  "exported_models": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/site_classifier_20260918/models_v1/manifest.json",
+    "sha256": "a821e11c72d53f2fa33a9d417b06e6c4ebb7878fbc32d29be509e7b49fa98c34"
+  },
+  "feature_data": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/site_classifier_20260918/features_v2/features.json",
+    "sha256": "d98ab8feeb9909cbed61d4e842d038964e720355c6795410bd5406d5e4efb81a"
+  },
+  "feature_failures": [],
+  "feature_v1_to_v2_values_identical": true,
+  "final_feature_seconds": {
+    "CPU": 12.908226509,
+    "wall": 13.237680656835437
+  },
+  "fitting_and_grouping_seconds": {
+    "CPU": 0.911060191,
+    "wall": 1.039798479527235
+  },
+  "full_evaluation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/site_classifier_20260918/evaluation_v1/result.json",
+    "sha256": "0fab79c9cda53d3e5c5c45389051e624009f7df7cd351bb326541c75488aad34"
+  },
+  "new_DFT_evaluations": 0,
+  "new_MACE_forwards": 0,
+  "note": "Early source snapshot preserves original feature-extraction code; v2 pins immutable implementations.",
+  "protocol": "site_label_ridge_logistic_archived_features_v1",
+  "status": "completed_research_experiment",
+  "summary": {
+    "PQQ_functional_class": {
+      "arms": {
+        "DFT": {
+          "by_class": {
+            "Ca": {
+              "correct": 14,
+              "predicted": 14,
+              "total": 14
+            },
+            "La": {
+              "correct": 11,
+              "predicted": 11,
+              "total": 11
+            }
+          },
+          "consumed_transfers": [
+            {
+              "case_id": "1H4I",
+              "class": "Ca",
+              "correct": true,
+              "label": "Ca",
+              "logit": -0.35532401915916734,
+              "same_group_in_training": true
+            },
+            {
+              "case_id": "4MAE",
+              "class": "La",
+              "correct": true,
+              "label": "La",
+              "logit": 0.4898299805986837,
+              "same_group_in_training": true
+            }
+          ],
+          "correct": 25,
+          "predicted": 25,
+          "total": 25,
+          "training_replay_correct": 25
+        },
+        "DFT_structure": {
+          "by_class": {
+            "Ca": {
+              "correct": 14,
+              "predicted": 14,
+              "total": 14
+            },
+            "La": {
+              "correct": 11,
+              "predicted": 11,
+              "total": 11
+            }
+          },
+          "consumed_transfers": [
+            {
+              "case_id": "1H4I",
+              "class": "Ca",
+              "correct": true,
+              "label": "Ca",
+              "logit": -0.9276845019065618,
+              "same_group_in_training": true
+            },
+            {
+              "case_id": "4MAE",
+              "class": "La",
+              "correct": true,
+              "label": "La",
+              "logit": 1.2449218010191438,
+              "same_group_in_training": true
+            }
+          ],
+          "correct": 25,
+          "predicted": 25,
+          "total": 25,
+          "training_replay_correct": 25
+        },
+        "DFT_structure_MACE": {
+          "by_class": {
+            "Ca": {
+              "correct": 13,
+              "predicted": 14,
+              "total": 14
+            },
+            "La": {
+              "correct": 11,
+              "predicted": 11,
+              "total": 11
+            }
+          },
+          "consumed_transfers": [
+            {
+              "case_id": "1H4I",
+              "class": "Ca",
+              "correct": true,
+              "label": "Ca",
+              "logit": -1.3211769620394105,
+              "same_group_in_training": true
+            },
+            {
+              "case_id": "4MAE",
+              "class": "La",
+              "correct": true,
+              "label": "La",
+              "logit": 1.3786954633561355,
+              "same_group_in_training": true
+            }
+          ],
+          "correct": 24,
+          "predicted": 25,
+          "total": 25,
+          "training_replay_correct": 25
+        }
+      },
+      "biological_groups": 25,
+      "training_rows": 25,
+      "validation_groups": 4
+    },
+    "direct_site_affinity_direction": {
+      "arms": {
+        "DFT": {
+          "by_class": {
+            "Ca": {
+              "correct": 0,
+              "predicted": 0,
+              "total": 3
+            },
+            "La": {
+              "correct": 0,
+              "predicted": 0,
+              "total": 2
+            }
+          },
+          "consumed_transfers": [],
+          "correct": 0,
+          "predicted": 0,
+          "total": 5,
+          "training_replay_correct": 5
+        },
+        "DFT_structure": {
+          "by_class": {
+            "Ca": {
+              "correct": 0,
+              "predicted": 0,
+              "total": 3
+            },
+            "La": {
+              "correct": 0,
+              "predicted": 0,
+              "total": 2
+            }
+          },
+          "consumed_transfers": [],
+          "correct": 0,
+          "predicted": 0,
+          "total": 5,
+          "training_replay_correct": 5
+        },
+        "DFT_structure_MACE": {
+          "by_class": {
+            "Ca": {
+              "correct": 0,
+              "predicted": 0,
+              "total": 3
+            },
+            "La": {
+              "correct": 0,
+              "predicted": 0,
+              "total": 2
+            }
+          },
+          "consumed_transfers": [],
+          "correct": 0,
+          "predicted": 0,
+          "total": 5,
+          "training_replay_correct": 5
+        }
+      },
+      "biological_groups": 2,
+      "training_rows": 5,
+      "validation_groups": 2
+    }
+  },
+  "test_log": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/site_classifier_20260918/tests_v3.log",
+    "sha256": "5025f68ba5874b4a34f14ddfc96aa2ade7e1a36d438cc98bbd8103d75658e996"
+  },
+  "unavailable": [
+    {
+      "case_id": "1KB0",
+      "label": "Ca",
+      "reason": "unsupported_geometry",
+      "role": "retrospective_external_class_transfer",
+      "target": "PQQ_functional_class"
+    }
+  ]
+}

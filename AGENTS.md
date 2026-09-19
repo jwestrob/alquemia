@@ -1,5 +1,28 @@
 # Agent entry point
 
+## Current: local water response passes — 2026-09-18
+
+All four metal states (1F6S11 and6IP9110, Ca/La) pass the prescribed local radial
+energy/gradient/curvature checks. Eight native DFT evaluations and16MACE calls
+completed as1201953/1201958; startup-only1201954 failed before inference and is
+included in cost. Curvature errors0.58–2.53%; maximum anchored energy error
+0.00707kcal/mol and Ca−La response error0.00905kcal/mol. This supports continuing
+DFT-anchored cheap water mechanics; it does not yet supply occupancy/entropy or
+new classification accuracy. Baseline/default/PQQ unchanged.56real-fixture tests
+pass, zero skips. Cost:69,008allocated core-s and137GPU-s. No next-stage run.
+
+Read [motion report](diagnostics/hydration_motion_20260918/REPORT.md) and [commands](diagnostics/hydration_motion_20260918/COMMANDS.md).
+Do not rerun completed motion or occupancy jobs. Final result RESULT_v2.json and
+export_v3 use a frozen analyzer. Native orientation comparator1201824 has completed all four1F6S optimizations.
+They converge normally but fail the frozen-coordinate tolerance (drift2.26e-5 to
+7.46e-4Å); one also exceeds the rigid-water tolerance. Actual final energies and
+gradient traces are retained in orientation_1f6s_v1/collected_opt_v2.json, without
+promoting them to qualified exact-geometry minima. No rerun or tolerance change.
+Comparator1201825 for6IP9 remains live; preserve it. These are separate older
+runs and do not affect the successful exact-coordinate motion checks.
+Next scientific target: coupled physical water motions and stable basins.
+
+
 Read [docs/AGENT_PIPELINE.md](docs/AGENT_PIPELINE.md) for current operations,
 protocol choices, interpretation limits and runnable examples. Older root
 documents retain dated material; the current guide identifies what supersedes it.
@@ -29,7 +52,7 @@ DFT1201910 completed all12patterns/24endpoints (20new,4reused). All16 additions
 shift the electronic contrast towardLa; water identity and coupled effects
 matter.49fixture tests pass. Occupancy free energies/probabilities remain
 unavailable; no new accuracy/default/PQQ claim. Do not rerun completed jobs or
-submit source-only native templates. Next local-motion work is planned, unrun.
+submit source-only native templates. The subsequent local-motion check is complete; see the current result above.
 
 **Water preparation now improves the consumed alpha/GGR discrimination case.**
 Read [the result](diagnostics/hydration_network_20260918/REPORT.md) and

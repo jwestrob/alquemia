@@ -153,6 +153,9 @@ def prepare_benchmark(qualification, mechanics, agreement, output):
 
 
 def validate(manifest):
+    if read_json(manifest).get('stage')=='hydration_water_motion':
+        from hydration_water_motion import validate_mace
+        return validate_mace(manifest)
     if read_json(manifest).get('stage')=='hydration_orientation_optimization':
         from hydration_proposal_opt import validate as hydration_opt_validate
         return hydration_opt_validate(manifest)
@@ -488,6 +491,9 @@ def accepted_state(result, task):
 
 
 def collect(manifest):
+    if read_json(manifest).get('stage')=='hydration_water_motion':
+        from hydration_water_motion import collect_mace
+        return collect_mace(manifest)
     if read_json(manifest).get('stage')=='hydration_orientation_optimization':
         from hydration_proposal_opt import collect as hydration_opt_collect
         return hydration_opt_collect(manifest)

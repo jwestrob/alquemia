@@ -3143,3 +3143,37 @@ inputs are preparation only, never submit. Completed jobs must not be rerun.
 Native comparator jobs1201824/1201825 remain live from the prior experiment;
 preserve them. Local-motion follow-on is planned but unrun. Current pointers
 and vault note updated. No push or production promotion.
+
+## 2026-09-18 — DFT-anchored water radial response passes
+
+Jacob: “proceed.” Eight native r2SCAN-3c/CPCM analytic EnGrad endpoints and16
+MACE calls tested one collective physical water-translation coordinate at1F6S11
+and6IP9110, bothCa/La, including the weak A322-containing arrangement. All four
+states pass all frozen energy/gradient/curvature/refinement checks. Curvature
+errors0.58–2.53%; max anchored energy error0.00707kcal/mol; max Ca−La response
+error0.00905kcal/mol. One consumed biological group, no new accuracy/occupancy claim.
+
+DFT1201953 completed1044s×64CPUs; MACE1201958 completed136s×16CPUs/oneGPU.
+Startup1201954 failed before inference in1s on16CPUs/oneGPU; repaired only a
+2.22e-16 cross-NumPy vector-roundoff comparison, preserving exact XYZs and all
+scientific thresholds. Total69,008allocated core-s and137GPU-s. First preparation
+failed a path-containment dry run before submission; no DFT computation repeated.
+56distinct real-fixture tests pass (26prior water,7new motion,23baseline), no skips.
+
+Protocol native_r2scan3c_cpcm_anchored_mace_water_radial_motion_v1. Baseline/default/
+PQQ unchanged. Numerical occupancy/entropy/relaxation remain null; next target
+is coupled physical water motions and stable basins, with no follow-on run yet.
+Results/commands/receipts/figure in diagnostics/hydration_motion_20260918; final
+RESULT_v2.json/export_v3 use frozen analysis_implementation_v1. Its scientific
+contents equal the initial result. Preserve all prior/failed artifacts.
+
+Owned changes: hydration_water_motion.py, stage dispatch in mace_omol.py, motion
+tests, new diagnostic and current guide pointers. Prior unowned group-feature
+changes remain untouched. Vault note updated. Native orientation comparator1201824 has completed all four1F6S optimizations.
+They converge normally but fail the frozen-coordinate tolerance (drift2.26e-5 to
+7.46e-4Å); one also exceeds the rigid-water tolerance. Actual final energies and
+gradient traces are retained in orientation_1f6s_v1/collected_opt_v2.json, without
+promoting them to qualified exact-geometry minima. No rerun or tolerance change.
+Comparator1201825 for6IP9 remains live; preserve it. These are separate older
+runs and do not affect the successful exact-coordinate motion checks.
+No push.

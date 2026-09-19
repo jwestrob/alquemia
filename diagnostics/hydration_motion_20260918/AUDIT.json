@@ -1,0 +1,41 @@
+{
+  "DFT": {
+    "budget_enforced": false,
+    "historical_budget": null,
+    "manifest": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_motion_20260918/pilot_v2/dft/manifest.json",
+      "sha256": "36de08013c55228e3247b7bb5c7988774946ae34a06f9a8d7ee9abb1ac05725f"
+    },
+    "status": "dry_run_pass",
+    "tasks": 8
+  },
+  "MACE": {
+    "manifest": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_motion_20260918/mace_retry_v1/manifest.json",
+      "sha256": "ae6cc905a0043add6bce8325c891b71366f717f856e66058e332a13c6ab29276"
+    },
+    "status": "pass",
+    "tasks": 16
+  },
+  "agreement": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/hydration_motion_20260918/AGREEMENT.md",
+    "sha256": "797f12d29fdf96031a39269246fc6d33163219681adbbf05af7a43121e055407"
+  },
+  "baseline_changed": false,
+  "git_head_at_start": "766e91d562445f73a9d4d911e38760a22a5656a2",
+  "preparation_only_failures": [
+    "pilot_v1: DFT geometry outside manifest root; no submitted job"
+  ],
+  "scientific_tolerances_changed": false,
+  "scope": "local water-motion development, one consumed biological group",
+  "source_occupancy_collection": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/hydration_occupancy_20260918/dft_v1/collection_1201910.json",
+    "sha256": "05c8da5601cf150b6faf07e3439c9f1e0f88b91943f7e96e64d3b13d55eafbe2"
+  },
+  "startup_failure": {
+    "inference_calls": 0,
+    "job": "1201954",
+    "reason": "unit-vector recomputation differs by 2.22e-16 between NumPy environments"
+  },
+  "technical_repair": "exact pinned displacement retained; independent recomputed vector checked at 1e-14 roundoff tolerance"
+}

@@ -76,7 +76,14 @@ Actual Hamiltonian, La46ECP, Ca3s/3p and La5s/5p correlation, electron accountin
 PTES and TightPNO were checked. No new PQQ/high-level expansion was submitted.
 Five source/parser tests pass; completed new CC scientific regression is unavailable.
 Recover [checkpoint](../electronic_accuracy_20260919/CURRENT.md) and live receipts.
-The owning agent is attaching automatic final collection without new chemistry.
+Automatic final collection is installed: detached monitor PID1633721 waits for
+terminal job/accounting and free execution lock, then writes actual results/cost,
+report/vault and a final email. It never launches chemistry. Root reran6real
+electronic-source/incomplete-result tests successfully (0.347s). Charged-PQQ has
+its existing successful-job collector plus live completion observer PID1638834
+(session22209) to retain failures and allocation cost. Root reran its2source tests
+(1.044s); actual new scientific outcomes remain pending. Installation receipts
+and recovery commands are in each diagnostic checkpoint. Do not duplicate them.
 
 ## Preservation and validation
 

@@ -2968,3 +2968,34 @@ No accuracy gain established or promotion. Additional independent labelled
 families with matched features are needed for the affinity test; PqqT/aqualysin
 remain candidates with unresolved evidence/preparation gates. No expansion or
 new experiment launched. Other models/runtime variants remain paused.
+
+
+## 2026-09-18 — Hydration-square implementation; water geometry choice pending
+
+Jacob approved the matched observed-water proposal with “Yallah!”. Source audit
+of both consumed alpha-lactalbumin repaired-v3 parents identifies five retained
+waters: 1F6S A211/A212 and 6IP9 A310/A322/A326. Every generated O–H bond is
+stretched (1.163–1.190 A). The existing PDBFixer/OpenMM call supplies no forcefield;
+installed generic hydrogen-placement/minimization code was inspected. Old inputs
+and energies remain untouched. No new scientific calculation or allocation.
+
+An asynchronous choice was requested before proceeding: archived water geometry
+(ten deletion endpoints) versus internal-water geometry normalized to the existing
+pinned H2O reference, holding O/protein/cap coordinates and each water plane and
+bisector fixed (14 endpoints including four repaired full-state calculations).
+Do not treat silence as agreement. See diagnostics/hydration_square_20260918/
+AGREEMENT.md and PREPARATION_FINDING.md. On answer, write a separate decision
+record/configuration, prepare, dry-run and use the existing manifested runner.
+
+scripts/hydration_square.py implements audit, preparation, output/receipt/component
+collection and matched-square algebra. Proposed normalizer is implemented but no
+scientific normalized preparation is released. Four real-fixture software checks
+pass in 0.341 s. Source audit v2 preserves the actual implementation bytes; values
+match the first audit. No entropy, bulk-water chemical potential, occupancy or
+new classification is available. 64-CPU sbatch wrapper has no requested time limit;
+no compute-budget stopping rule. Root baseline/default and other agents' edits
+remain unchanged. Vault note 2026-09-18_laca-hydration-square-preparation.md written.
+
+Delegated dataset work completed separately at e542fc6: one new prepared PQQ
+Ca-association structural control (8GY2/O05542); no additional direct-affinity
+group became ready, and no energies ran. Report and vault note are complete.

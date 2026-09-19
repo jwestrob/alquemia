@@ -1,5 +1,24 @@
 # MACE discriminator checkpoint — 2026-09-18
 
+## Current: approved hydration mechanism test; water geometry choice pending
+
+Jacob approved the matched hydration-square proposal with “Yallah!”. Parent
+inventory and existing endpoint checks are complete. All five retained waters
+in 1F6S/6IP9 have preparation-generated O–H bonds of 1.163–1.190 A. An explicit
+question is pending: run the archived geometries (ten new deletion endpoints),
+or normalize all water internal geometries to the existing H2O reference while
+preserving oxygen positions/planes/bisectors/protein coordinates (14 endpoints,
+including four recomputed full states). No job is submitted before that choice.
+Read [scope](../hydration_square_20260918/AGREEMENT.md) and
+[source finding](../hydration_square_20260918/PREPARATION_FINDING.md).
+`scripts/hydration_square.py` and a 64-CPU runner are implemented; four actual
+fixture software tests pass. No energy, occupancy, new class or accuracy result.
+
+The delegated benchmark augmentation is complete at e542fc6: 8GY2 is a ready
+additional Ca-associated PQQ structural control with unchanged fixed-core-v3
+inputs; no energy run. Direct-affinity expansion remains gated. See
+[report](../benchmark_augmentation_20260918/REPORT.md) and its vault note.
+
 ## Completed: approved archived-feature classifier experiment
 
 Jacob approved the proposed DFT / DFT+structure / DFT+structure+MACE comparison

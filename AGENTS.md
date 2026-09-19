@@ -8,6 +8,15 @@ Before acting, inspect git status, [SESSIONS.md](SESSIONS.md), the relevant
 experiment's agreement/report, and live jobs. Preserve unrelated edits,
 immutable scientific artifacts and active executors.
 
+**Current hydration test, 2026-09-18:** Jacob approved the matched observed-water
+mechanism test with “Yallah!”; see
+[scope](diagnostics/hydration_square_20260918/AGREEMENT.md). Source integrity
+checks found stretched water hydrogens in both alpha parents. A scientific
+choice about first normalizing water internal geometry is pending; see
+[finding and proposed repair](diagnostics/hydration_square_20260918/PREPARATION_FINDING.md).
+No new hydration calculations are launched. Complete the recorded choice before
+preparation/execution; keep other model campaigns paused and baseline unchanged.
+
 **Completed approved analysis, 2026-09-18:** Jacob approved a small task-specific
 classifier using archived DFT, structural and MACE features (“I agree. Vamonos.”).
 Recover [the frozen classifier plan](diagnostics/site_classifier_20260918/AGREEMENT.md).

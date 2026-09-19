@@ -3046,3 +3046,41 @@ results, components, costs and immutable collection/receipt pointers. Current
 AGENTS/checkpoint/agent guide and vault note updated. The next modeling target is
 consistent bulk-water exchange and metal-dependent hydration-state selection,
 not choosing the deletion that matches a label. No additional states launched.
+
+
+## 2026-09-18 — Water-network implementation and useful MACE proposals
+
+Jacob approved water identity/orientation/occupancy development with “proceed!”.
+Implemented source-defined complete hydrogen-bond networks, two common water
+orientation seeds, native constrained DFT, liquid-water reference and explicit
+missing free-energy terms. Baseline/default and old experiments remain unchanged.
+Two consumed alpha-lactalbumin structures form one biological group; no blind
+validation claim. Native DFT jobs1201824/1201825 remain live, four searches each.
+Bulk reference1201831 completed after launcher-only failure1201830; both attempts
+cost1600allocated core-seconds. Optional explicit runner MPI/concurrency fixes
+one-rank work under whole-node allocations; prior defaults remain unchanged.
+
+The16-call native MACE proposal test1201847 passed:8/8 DFT local energy-change
+signs,4/4 initial-seed rankings, median water-rotation gradient cosine0.991329,
+local-change MAE0.424043kcal/mol.137GPU-s /2192allocated core-s. Water H in the
+problematic A211/A310 starts only1.852/1.880A from the metal; outward reorientation
+shifts initial DFT R by24.82/31.16kcal/mol. These are actual ongoing-optimization
+SCF/gradient checkpoints, not minima or final affinity predictions.
+
+All eight exact rigid-water MACE searches1201849 converged. Their four selected
+per-metal proposals are now undergoing native DFT energy/analytic-gradient
+adjudication as1201853. No new PQQ job or production change. The36-task DFT-only
+occupancy continuation remains unsubmitted, with original artifact expectations
+superseded. Eleven real-fixture network/parser/physical-Jacobian tests and four
+archived-water tests pass. Generated datasets and force/energy receipts remain
+under workspaces/hydration_network_20260918, plans/results under diagnostics.
+
+Native Opt does not emit a final.engrad and ends with an energy-only evaluation.
+The original running manifests wrongly expect that artifact: preserve receipts,
+collect with the corrected implementation, do not rerun successful chemistry.
+Actual printed analytic gradients retain their evaluated coordinates/energies.
+Small frozen-coordinate drift in native optimization is retained and may prevent
+the exact-geometry gate passing; do not silently loosen it. Unqualified observed
+energies are preserved. Exact MACE rotations keep the physical constraints.
+Updated current pointers/runbook and vault note
+2026-09-18_laca-water-networks-and-mace-proposals.md. No push.

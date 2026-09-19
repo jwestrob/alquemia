@@ -1,0 +1,46 @@
+{
+  "temperature_K": 298.15,
+  "standard_pressure_bar": 1.0,
+  "liquid_pressure_bar": 1.0,
+  "gas_H298_minus_H0_kJ_mol": 9.904,
+  "gas_entropy_J_mol_K": 188.834,
+  "harmonic_frequencies_cm_inverse": [
+    3832,
+    1649,
+    3943
+  ],
+  "liquid_molar_volume_cm3_mol": 18.070112034694613,
+  "liquid_volume_approximation": "inverse of published 55.34 mol/L water concentration; used only for tiny incompressible pressure correction",
+  "vapor_pressure": {
+    "antoine_ABC": [
+      5.40221,
+      1838.675,
+      -31.737
+    ],
+    "temperature_range_K": [
+      273.0,
+      303.0
+    ],
+    "pressure_unit": "bar"
+  },
+  "sources": {
+    "gas_thermochemistry": {
+      "url": "https://janaf.nist.gov/tables/H-064.html",
+      "values": "H(0)-H(298.15)=-9.904 kJ/mol; S(298.15)=188.834 J/mol/K; standard pressure 0.1 MPa"
+    },
+    "harmonic_frequencies": {
+      "url": "https://cccbdb.nist.gov/exp2x.asp?casno=7732185&charge=0",
+      "values": "harmonic column 3832,1649,3943 cm^-1; half-sum is harmonic approximation, not exact anharmonic ZPE"
+    },
+    "vapor_pressure": {
+      "url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C7732185&Mask=4",
+      "reference": "Bridgeman and Aldrich, 1964; NIST fit for 273-303 K"
+    },
+    "liquid_concentration": {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2700946/",
+      "value_mol_L": 55.34
+    }
+  },
+  "retrieved_date": "2026-09-18",
+  "fit_to_protein_labels": false
+}

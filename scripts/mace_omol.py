@@ -153,6 +153,12 @@ def prepare_benchmark(qualification, mechanics, agreement, output):
 
 
 def validate(manifest):
+    if read_json(manifest).get('stage')=='hydration_orientation_optimization':
+        from hydration_proposal_opt import validate as hydration_opt_validate
+        return hydration_opt_validate(manifest)
+    if read_json(manifest).get('stage')=='hydration_orientation_proposal':
+        from hydration_mace import validate as hydration_validate
+        return hydration_validate(manifest)
     if read_json(manifest).get('stage')=='collective_metals':
         from mace_collective import validate as collective
         return collective(manifest)
@@ -276,6 +282,9 @@ def input_batch(calc, atoms, charge, multiplicity, batch=None, metal_index=0):
 
 
 def worker(manifest, task_id, output, memory_mode):
+    if read_json(manifest).get('stage')=='hydration_orientation_optimization':
+        from hydration_proposal_opt import worker as hydration_opt_worker
+        return hydration_opt_worker(manifest,task_id,output,memory_mode)
     if read_json(manifest).get('stage')=='shared_neutral_core':
         from mace_omol_neutral_worker import worker as neutral_worker
         return neutral_worker(manifest,task_id,output,memory_mode)
@@ -479,6 +488,12 @@ def accepted_state(result, task):
 
 
 def collect(manifest):
+    if read_json(manifest).get('stage')=='hydration_orientation_optimization':
+        from hydration_proposal_opt import collect as hydration_opt_collect
+        return hydration_opt_collect(manifest)
+    if read_json(manifest).get('stage')=='hydration_orientation_proposal':
+        from hydration_mace import collect as hydration_collect
+        return hydration_collect(manifest)
     if read_json(manifest).get('stage')=='collective_metals':
         from mace_collective import collect as collective
         return collective(manifest)

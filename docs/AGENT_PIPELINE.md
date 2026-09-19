@@ -32,9 +32,28 @@ water H geometry shifts the two alpha contrasts +4.93/+2.48 kcal/mol toward La;
 individual water effects range from −19.95 to +5.01. This identifies substantial
 water-specific coupling, not a validated occupancy correction or accuracy gain.
 [Results and operations](../diagnostics/hydration_square_20260918/REPORT.md).
-No hydration job remains live. Baseline and old inputs are unchanged. Jacob
+That square pilot has no live jobs. Baseline and old inputs are unchanged. Jacob
 removed the standing per-analysis approval gate again on 2026-09-18; historical
 pauses above do not reinstate it. Recover the current checkpoint for next work.
+
+**Hydration-network continuation is running:** jobs1201824/1201825 contain eight
+native DFT water-orientation searches on source-defined expanded networks in
+1F6S/6IP9. Missing hydrogen-bond partners are restored; protein/water oxygens
+stay fixed. The independent liquid-water reference completed as1201831.
+No optimized endpoint or occupancy/accuracy claim is available yet. Recover
+[operations](../diagnostics/hydration_network_20260918/COMMANDS.md) and the
+[Opt collection correction](../diagnostics/hydration_network_20260918/COLLECTION_POLICY.md)
+before collecting; an absent final `.engrad` does not justify rerunning a
+converged native optimization. Stage B remains prepared, unsubmitted, and needs
+a fresh preparation with the corrected artifact expectation.
+
+**A useful MACE water-proposal result:** native OMOL reproduced8/8 local DFT
+energy-change directions and4/4 seed rankings, with median water-rotation gradient
+cosine0.9913. All eight subsequent exact rigid-water optimizations converged.
+Four selected configurations are undergoing DFT adjudication as1201853; native
+DFT searches remain live for comparison. [Proposal result](../diagnostics/hydration_network_20260918/MACE_PROPOSAL_REPORT.md)
+and [follow-up scope](../diagnostics/hydration_network_20260918/MACE_OPTIMIZATION_PLAN.md).
+This is local proposal utility, not an occupancy or broad accuracy claim.
 
 **Earlier research result:** the complete frozen-response conductor correction
 provides no overall improvement over the preceding GK hybrid:4/12 directional

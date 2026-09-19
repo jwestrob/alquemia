@@ -115,7 +115,12 @@ def execute(manifest):
             raise InvalidArtifact(f"partial attempt retained: {t['task_id']}; prepare explicit fresh retry")
         unfinished.append(t['task_id'])
     if not unfinished: return {'status':'already_complete'}
-    ranks=min(16,cpus); workers=min(len(unfinished),max(1,cpus//ranks))
+    resources=m.get('execution_resources',{})
+    ranks=int(resources.get('mpi_ranks',min(16,cpus)))
+    if ranks < 1 or ranks > cpus: raise InvalidArtifact('invalid explicit MPI rank request')
+    workers=int(resources.get('concurrent_tasks',min(len(unfinished),max(1,cpus//ranks))))
+    if workers < 1 or workers*ranks > cpus: raise InvalidArtifact('invalid explicit task concurrency')
+    workers=min(workers,len(unfinished))
     def append(event):
         with events.open('a') as f: f.write(json.dumps(event)+'\n'); f.flush(); os.fsync(f.fileno())
     implementation=snapshot_implementation(mp.parent/f"implementation_{os.environ['SLURM_JOB_ID']}")

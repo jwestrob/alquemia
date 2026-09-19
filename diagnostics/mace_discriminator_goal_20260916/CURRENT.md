@@ -1,6 +1,57 @@
 # MACE discriminator checkpoint — 2026-09-18
 
-## Current: hydration mechanism pilot completed; approval gate removed
+## Current: approved hydration-network development running
+
+Jacob approved the water-network/orientation/bulk-exchange plan with “proceed!”.
+See [scope](../hydration_network_20260918/AGREEMENT.md). Source-neighbor checks
+found omitted backbone/sidechain polar contacts. New70/76-atom cores preserve
+source heavy geometry and use a common complete-protein-fragment union, with
+one/two frozen outer waters and two/three variable first-shell waters. All120
+shared modeled site-chain residues match; other deposit chains and remote
+unresolved termini differ. Eleven real-fixture network/projection/parser tests pass, plus four baseline-water tests; dry-runs pass.
+
+Jobs1201824/1201825 run four constrained native ORCA optimizations each on64CPUs:
+two geometry-defined starts per metal, only inner-water H rotations, fixed
+water internal geometry/O positions/protein. No numerical gradients/Hessians.
+The shared bulk-water reference completed as1201831 after an MPI-slot recovery;
+it used one rank, but the scheduler allocated64CPUs. Both attempts cost1,600
+allocated core-seconds. See WATER_REFERENCE.md and REFERENCE_RESULT.json. Actual optimizer SCF tolerance is1e-8,
+whereas old square SPs used1e-6: do not attribute old/new changes solely to
+representation. New empty-occupancy SPs will explicitly match TightSCF.
+No occupied-state free energies or probabilities are implied. Baseline unchanged.
+
+Collect those results, then continue the approved occupancy-table development;
+record missing bound-water entropy/non-electrostatic terms explicitly. Existing
+approval pauses are superseded by Jacob's standing authorization. Full launch
+receipts: hydration_network_20260918/SUBMISSIONS.json. No other campaign restart.
+
+### MACE water proposals: demonstrated local utility, DFT adjudication running
+
+Actual job1201847 completed16 native OMOL calls:8/8 local DFT energy-change
+signs,4/4 initial-seed rankings, median rotational-gradient cosine0.991329.
+Local energy-change MAE0.424043kcal/mol. Cost137GPU-s /2192allocated core-s.
+See hydration_network_20260918/MACE_PROPOSAL_REPORT.md. Generated water H in
+A211/A310 is initially1.852/1.880A from the metal; outward orientation strongly
+lowers both DFT energies, especiallyLa. This is a concrete candidate mechanism,
+not a final occupancy/classification result.
+
+The subsequent exact rigid-water MACE optimization completed all eight searches
+(job1201849). Both seeds converge for every metal/structure. Four selected
+per-metal configurations are being adjudicated with native DFT analytic energy/
+gradient endpoints as1201853, workspace hydration_network_20260918/proposal_dft_v1.
+Keep native optimization jobs1201824/1201825 running as direct comparators.
+Do not duplicate any of these tasks or expand the36-state DFT-only occupancy
+manifest before evaluating this cheaper proposal route.
+
+Collector correction: native Opt has no final.engrad and makes a final energy-only
+step. Original protein receipts may flag the missing artifact; do not rerun
+successful chemistry for that reason. Use the corrected collector and retain
+actual gradient/geometry pairs. Native frozen-coordinate drift up to6.3e-5A was
+found in early source-seed steps; final2e-5A geometry gate is unchanged, and
+unqualified observed energies remain visible. Exact MACE rotations avoid drift.
+Read COLLECTION_POLICY.md and COMMANDS.md. No baseline/default change.
+
+## Completed: hydration-square pilot; approval gate removed
 
 Jacob removed the stale per-analysis approval gate on 2026-09-18: “remove that
 AGENTS.md thing bro. I thought we got rid of that.” Standing discretionary

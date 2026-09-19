@@ -22,15 +22,31 @@ scientific integrity, immutable experiments, scheduler rules and concurrent work
 
 ## Current work — 2026-09-18
 
-The matched observed-water mechanism test is complete: job 1201801, all 14
-ORCA endpoints successful. Repairing water H geometry shifts the alpha contrasts
-+4.93/+2.48 kcal/mol toward La. Individual retained waters shift them from −19.95
-to +5.01 kcal/mol; hydration identity matters, but occupancy and improved accuracy
-are not established. See [report](diagnostics/hydration_square_20260918/REPORT.md)
-and [checkpoint](diagnostics/mace_discriminator_goal_20260916/CURRENT.md).
-No hydration job remains live. Baseline and old inputs remain unchanged.
-Next research direction: explicit, consistently referenced hydration states;
-do not select deletions by their agreement with labels or rerun this pilot.
+Jacob approved water-network/occupancy modeling with “proceed!”. Recover
+[the hydration-network plan](diagnostics/hydration_network_20260918/AGREEMENT.md).
+Native DFT water-orientation searches are running as jobs 1201824 (1F6S) and
+1201825 (6IP9), four searches per job on64CPUs, two seeds for each metal.
+Only inner-water H orientations change; protein and water oxygens stay fixed.
+New70/76-atom cores include source-defined missing hydrogen-bond neighbors;
+protein composition is common across the two structural replicates. A separate
+gas-water reference/comparator completed as1201831 after a launcher-only
+retry; see WATER_REFERENCE.md for results and actual whole-node allocation cost. No occupancy probabilities,
+new classification or production change yet. Preserve current jobs and collect
+actual outcomes before extending the finite occupancy-state manifests.
+
+The native MACE proposal check passed (1201847); all eight exact rigid-water
+MACE optimizations subsequently converged (1201849). Four selected configurations
+are undergoing native DFT adjudication as1201853. Read MACE_PROPOSAL_REPORT.md and
+MACE_OPTIMIZATION_PLAN.md. Preserve the native DFT comparison jobs. No broader
+accuracy/occupancy gain is established yet. The corrected Opt collector retains
+actual printed gradients and explicitly handles the missing final.engrad;
+do not rerun these searches merely for that artifact. Frozen-coordinate drift
+in native Opt remains an explicit geometry check, not an erased failure.
+
+The preceding [hydration-square pilot](diagnostics/hydration_square_20260918/REPORT.md)
+is complete:14 endpoints, substantial water-specific effects, one biological
+group, no occupancy or accuracy gain established. Do not rerun it or select a
+favorable deletion from its outcomes. Recover the current checkpoint for status.
 
 Completed work is preserved in dated reports:
 

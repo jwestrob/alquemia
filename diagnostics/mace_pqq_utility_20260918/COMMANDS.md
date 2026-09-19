@@ -48,6 +48,18 @@ python diagnostics/mace_pqq_utility_20260918/report.py \
 Both reports and all development jobs must remain visible in the final summary.
 See CACHED_RUNTIME_CHECK.md for the technical re-execution scope.
 
+To generate both comparisons together, with one joined score table and unique
+job costs (the shared DFT run is counted once):
+
+```bash
+python diagnostics/mace_pqq_utility_20260918/finalize.py \
+  --workspace "$PQQ_WORK" --output "$PQQ_WORK/complete_comparison_v1"
+```
+
+This requires all three campaign legs to have completed. It does not submit
+calculations. Accuracy and coverage are reported before runtime; matching the
+reference classifications is not evidence of improved accuracy on new proteins.
+
 The source-backed accuracy replay is already complete in accuracy_v1. To replay
 without inference to a fresh location:
 

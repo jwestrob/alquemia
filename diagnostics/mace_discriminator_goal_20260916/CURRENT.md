@@ -1,5 +1,21 @@
 # Active MACE discriminator checkpoint — 2026-09-18
 
+## Latest steering: accuracy takes priority
+
+Jacob: “ok. but remember we're trying to get accuracy and not just speed.
+refocus efforts.” Stop adding performance optimizations or runtime variants.
+Let the already submitted jobs finish and collect their actual results; do not
+discard that comparison or interfere with live jobs. Matching 25/25 consumed PQQ
+references preserves fidelity but does not demonstrate improved generalization.
+Accuracy and robustness on Jacob's prepared, labelled benchmark come first;
+runtime is a secondary practicality criterion. PQQ fidelity is a requirement,
+and a wider score gap alone is not evidence of greater accuracy. Use existing
+results to identify reliably labelled failures and structural sensitivity;
+do not treat unlabelled hillslope predictions as accuracy truth. No automatic
+resumption of grouped POLAR, the paused OMOL group-feature trial or other new model
+experiments. Discuss the concrete next accuracy experiment before executing it.
+This steering supersedes any older suggestion to extend performance engineering.
+
 **Goal active; no broadly validated MACE replacement.** Jacob's explicit standing
 discretionary approval covers contained MACE pilots. The generic supplied AGENTS
 text does not revoke his direct instruction to proceed without repeated approval.

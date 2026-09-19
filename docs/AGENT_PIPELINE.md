@@ -6,7 +6,12 @@ for analysis authorization; a newer user instruction takes precedence over the
 local AGENTS note. This guide supersedes older
 operational/status prose; dated experiments and their numerical records remain
 immutable. The baseline remains the default. Broad La/Ca affinity discrimination
-has not been established. The [active MACE goal](../diagnostics/mace_discriminator_goal_20260916/GOAL.md) continues through intermediate failed pilots; production remains unchanged.
+has not been established. The [current MACE goal](../diagnostics/mace_pqq_utility_20260918/GOAL.md)
+tests the frozen scorer on Jacob's labelled PQQ references. Latest steering:
+accuracy and robustness take priority over speed. Finish the existing comparison;
+new model trials and further runtime variants remain paused. Matching calibration
+calls preserves fidelity but does not demonstrate improved generalization.
+Production remains unchanged.
 
 **Earlier research result:** the complete frozen-response conductor correction
 provides no overall improvement over the preceding GK hybrid:4/12 directional

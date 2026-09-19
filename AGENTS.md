@@ -1,24 +1,35 @@
 # Agent entry point
 
-## Current: three accuracy tracks — 2026-09-19 evening
+## Current: water preparation promoted — 2026-09-19
 
-Jacob explicitly authorized parallel investigations of competing chemical states,
-protein-environment effects and electronic-treatment errors. See
-[current agreement](diagnostics/accuracy_tracks_20260919/PLAN.md).
-Metal specificity includes noncatalytic binders such as LanM; catalytic competence
-and a faster surrogate of unchanged DFT are not the improvement target.
-The coordination-preparation pilot is authorized for execution; chemical-state
-and electronic-method agents are defining their finite scientific manifests.
-Preserve all jobs and inspect current receipts before rerunning anything.
+Jacob authorized promotion and discretionary next experiments: “go ahead and
+promote it ... make sure you have an eye towards improving the classifier.”
+Use `scripts/affordable_workflow.py baseline` for the new versioned prepared-site
+workflow, default `contextual_if_supported`; explicit `original` remains available.
+Read [promotion report](diagnostics/water_promotion_20260919/REPORT.md) and
+[executable commands](diagnostics/water_promotion_20260919/COMMANDS.md).
+Supported wet amide-v3 sites receive MACE contextual water-H preparation before
+unchanged native DFT. Original/prepared scores are retained side by side. Dry PQQ
+is exact identity with its own released bands. Unsupported wet cofactors/legacy
+cores fail explicitly; raw legacy inbox watchers have not been migrated/restarted.
+No occupancy, entropy, environmental scorer or new absolute threshold is promoted.
 
-Earlier subagents completed: the frozen radial hybrid preserves 25/25 PQQ and
-passes 8GY2, but only improves the main alpha/GGR structural comparisons 0/6→2/6;
-the earlier 4/4 result counted two representations of one GGR structure.
-Static second-shell and PQQ H preparation do not improve PQQ separation.
-Wider water-basin energies fail native DFT agreement on all four endpoints;
-those endpoints are two alpha-lactalbumin structures, not an alpha/GGR transfer.
-The contextual-water component is being generalized separately. No promotion or
-baseline/default change is authorized by these progress results.
+Parallel accuracy findings and jobs are in
+[current status](diagnostics/accuracy_tracks_20260919/STATUS.md).
+Static complete second-shell context improves every alpha/GGR structural margin;
+compact native OMOL retains25/25PQQ plus3/3consumed crystal transfers, with a much
+narrower calibration gap. No context-scorer promotion. Source-supported geometry
+proposals did not improve these margins; sampled internal proton transfer is
+uphill. Independent parvalbumin water preparation completed, but its La/Ca
+labels remain unresolved. Coupled-cluster and charged-PQQ native checks are
+separate ongoing diagnostics; inspect live receipts before doing anything.
+
+The user explicitly authorized parallel chemical-state, environment and
+independent electronic investigations. Metal specificity includes noncatalytic
+binders such as LanM. Catalytic competence and imitating unchanged DFT with a
+faster model are not the accuracy target. Preserve active jobs and other agents'
+files. Older entries below are dated development checkpoints, not instructions
+to rerun completed work or undo the authorized promotion.
 
 ## Active: improve the MACE-assisted scanner — 2026-09-19
 

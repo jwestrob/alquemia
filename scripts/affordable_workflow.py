@@ -200,4 +200,9 @@ def main():
     print(json.dumps({k:v for k,v in r.items() if k in ('status','elapsed_seconds','allocated_core_seconds')}) or 'prepared')
 
 
-if __name__=='__main__': main()
+if __name__=='__main__':
+    import sys
+    if len(sys.argv)>1 and sys.argv[1]=='baseline':
+        from baseline_water import main as baseline_main
+        baseline_main(sys.argv[2:])
+    else: main()

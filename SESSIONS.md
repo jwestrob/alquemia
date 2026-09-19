@@ -3281,3 +3281,7 @@ the correction without changing coordinates/energies/numericalreceipts.
 Ongoing new accuracy tracks remain separate: coordinationDFT1202428, independent
 coupledcluster1202429, and a frozen24point balanced internal proton-transfer test
 in preparation. See diagnostics/accuracy_tracks_20260919/STATUS.md.
+
+## 2026-09-19 — Contextual water preparation promoted
+
+Jacob: "go ahead and promote it ... undergo the next round of experiments at your discretion ... improving the classifier." Implemented `affordable_workflow.py baseline` with default contextual_if_supported for eligible source-backed prepared sites, explicit original mode, separate original/prepared scores, exact dry PQQ identity and original bands, unsupported wet-core errors, immutable manifests/reuse and fresh retry operations. Legacy raw inbox/watchers untouched; no entropy/occupancy/environmental-score promotion. Four real MACE proposals and12actual DFT endpoints reused;50real-fixture integration/component tests pass. Report/commands in diagnostics/water_promotion_20260919; release params/baseline_water_v1.json. Independent parvalbumin transfer completed separately (4864CPU-s/24GPU-s), unresolved labels. Accuracy jobs and results updated in diagnostics/accuracy_tracks_20260919/STATUS.md; vault updated. Other agents' dirty files remain untouched.

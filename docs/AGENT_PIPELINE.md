@@ -1,5 +1,33 @@
 # Alquemia: current operating guide for agents
 
+## Current release: contextual water preparation — 2026-09-19
+
+The promoted prepared-site baseline entry point is now
+`scripts/affordable_workflow.py baseline`. Its default `contextual_if_supported`
+prepares supported existing site-water H coordinates using native MACE in a
+source-backed polar context, then scores the original core with unchanged native
+r2SCAN-3c/CPCM. It preserves original and prepared scores separately. The explicit
+`--water-policy original` path preserves historical preparation.
+
+- [Release report](../diagnostics/water_promotion_20260919/REPORT.md),
+  [runnable operations](../diagnostics/water_promotion_20260919/COMMANDS.md).
+- Dry canonical PQQ inputs remain exact identities and retain their released
+  bands. Water-bearing cofactor/PQQ support is not established.
+- Supported wet inputs require an amide-v3 source graph and explicit prepared
+  assembly. Unsupported legacy cores fail; raw inbox watchers have not changed.
+- Preparation includes established water geometry normalization and contextual
+  orientation. Water O, all other atoms and water inventory stay fixed.
+- Changed wet scores do not inherit canonical PQQ bands. No occupancy/entropy or
+  second-shell scoring correction is promoted.
+- Independent parvalbumin preparation transfer passed; its unresolved affinity
+  labels do not supply a new classifier-accuracy result.
+
+50 real-fixture tests passed for the promoted integration and completed components.
+Promotion replay reused4MACE proposals and12DFT endpoints with zero new molecular
+calls. [Current research status](../diagnostics/accuracy_tracks_20260919/STATUS.md)
+records the accuracy experiments and ongoing jobs. Treat the following sections
+as dated records where they conflict with this release; preserve their artifacts.
+
 ## Current: coupled water response complete — 2026-09-19
 
 27native DFT checks and all MACE tasks completed. All11trial steps lower native

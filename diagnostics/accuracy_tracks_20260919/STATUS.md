@@ -1,84 +1,91 @@
-# Live status — 2026-09-19
+# Accuracy tracks — 2026-09-19 latest checkpoint
 
-This is a progress record, not a completed accuracy claim.
+Jacob authorized contextual water preparation promotion and discretionary next
+experiments. Accuracy and PQQ fidelity remain the objective; neither catalytic
+competence nor imitating unchanged DFT is a substitute.
 
-## Context-supported geometry
+## Promoted water preparation
 
-- Ten native MACE searches completed in 45.05 worker seconds, job1202426.
-- SLSQP converged in12–19 iterations. Every proposal meets covalent/source/water
-  checks but touches the declared0.20Å boundary; these are constrained proposals.
-- All ten original-core native CPCM-DFT checks completed normally as job1202428,
-  four concurrent16-rank tasks on64 allocated CPUs.
-- First job1202425 failed at import before model load/energy evaluation. The
-  implementation-only fix defers preparation dependencies outside the GPU path.
-- Native DFT results retain PQQ ordering but narrow the
-  XoxF-minus-MxaF gap30.0719→26.2757kcal/mol from the matched starting geometries.
-  Alpha1F6S-minus-GGR changes10.9237→3.8202; alpha6IP9-minus-GGR changes
-  14.5727→13.9748. All three directions remain correct, but alpha replica spread
-  worsens3.6490→10.1546. Nine of ten native endpoint energies decrease;1F6SCa
-  rises0.07747kcal/mol. No accuracy or robustness improvement is demonstrated.
-- Cost including the failed import:30,560allocated CPU-seconds,54GPU-seconds.
-- Next declared environment test applies the unchanged static complete-second-
-  shell rule to archivedGGR2FW0/2FVY. Compare the full2alpha×3GGRmatrix, retaining
-  all unsupported states. This tests the stability of the earlier~3.9kcal1GLG
-  context gain; it does not retune the failed geometry proposal.
+The versioned `affordable_workflow.py baseline` interface defaults to supported
+contextual water-H preparation. Both original and prepared scores are retained;
+dry canonical PQQ is exact identity with released bands. Unsupported wet
+cofactors/legacy source maps fail explicitly. Raw legacy inbox watchers remain
+untouched. [Release report](../water_promotion_20260919/REPORT.md),
+[commands](../water_promotion_20260919/COMMANDS.md).
 
-## Chemical states
+Demonstrated alpha/GGR discrimination: native DFT0/6→6/6, whole-chain masked
+MACE2/6→6/6, one biological comparison across structural replicas. This is useful
+preparation improvement, not broad affinity validation. Reference water internal
+geometry normalization is part of preparation, alongside contextual orientation.
+No new occupancy, protonation, entropy or absolute wet-site bands are promoted.
 
-The reusable contextual-water preparation replay has reproduced four archived
-proposals and30zero-water identity operations without new molecular calculations.
-Scoring replay/negative tests completed: nine tests pass; no new molecular calls.
-The reusable component is documented in diagnostics/contextual_water_20260919.
+Independent parvalbumin transfer completed (jobs1202475/1202476): dryCD unchanged;
+wetEF R shifts−3.3215921675kcal/mol. Original O–H bonds were stretched, so absolute
+energy drops combine normalization and orientation. Its two site directions remain
+unresolved in the evidence ledger. Cost4864allocatedCPU-s/24GPU-s. Six real-fixture
+tests pass. [Report](../water_reference_validation_20260919/REPORT.md).
+No qualified existing wet-PQQ preparation was found in the bounded source inventory;
+do not invent waters or advertise wet-PQQ support.
 
-Next approved finite test: all existing site-water/carboxylate-O contacts≤2.60Å
-in the full-water contextual alpha preparations (one1F6S and two6IP9contacts),
-bothCa/La, four new internal-proton-transfer path points percontact:24native
-EnGrad calculations with archived neutral centers reused. Same atoms/charge and
-all other coordinates fixed, so the proton reservoir cancels. Exact fractions,
-H identity and acid geometry checks are frozen in the owning agent's plan before
-energies. An uphill fixed-heavy path does not rule out a separately relaxed basin.
-No pH population, entropy or full occupancy claim follows from this electronic
-test. Submitted as job1202444:24nativeEnGrad tasks, four16-rank tasks concurrently
-on64CPUs. All three contacts pass the declared geometry gates. Four neutral
-native endpoints are reused; five real-geometry/receipt tests pass. The failed
-wider-basin approximation remains unavailable.
+## Environmental accuracy track
 
-Identity correction:1F6Sand6IP9arebothalpha-lactalbumin structures. Prior wider
-water-basin prose mistakenly called6IP9GGR; numerical PDB IDs and energies are
-unchanged. The owning agent is correcting interpretation and the vault note.
+| Experiment | Result | Actual new allocation |
+|---|---|---|
+| Context-supported coordinate proposals | No improvement; PQQ gap30.0719→26.2757, alpha/GGR margins weaken, alpha replica spread grows3.649→10.155 | 30560CPU-s/54GPU-s including one import failure |
+| Static complete polar context on GGR replicas | All6 native DFT margins improve; weakest0.654840→4.564286kcal/mol. Native OMOL2/6→6/6 | 35840CPU-s/20GPU-s |
+| Complete compact-context OMOL PQQ panel | 25/25canonical and3/3consumed crystal transfers; gap79.030608→2.315459model-kcal | 1120CPU-s/70GPU-s |
+| Native CPCM DFT on all4charge−1 PQQ expansions | Job1202478 running;8new endpoints, old core and neutral controls reused | Final cost pending |
 
-## Independent electronic diagnostic
+These costs exclude unmetered local preparation/testing. They describe development,
+not a matched end-to-end production speed benchmark. The static scorer remains
+research-only. Expanded PQQ no longer has perfect label/total-charge separation:
+three Ca-family contexts share charge with ten La-family contexts and still order
+correctly. The much narrower gap is a robustness concern; this harder equal-charge
+comparison is not itself a new biological validation set. Actual charged residues,
+solvation differences and model charge-conditioning can all contribute. The native
+CPCM check tests the effect without tuning charges or thresholds.
 
-Frozen first scope: six DLPNO-CCSD(T1)/TightPNO/CPCM-PTES single points on exact
-real GGR1GLG and alpha1F6S original/context-prepared water-H Ca/La cores.
-Submitted as job1202429 on64CPUs/256GiB, four16-rank tasks concurrently. The
-agent is verifying the actual parsed Hamiltonian before interpreting energies.
+Completed reports: [geometry](../coordination_preparation_20260919/REPORT.md),
+[replicas](../environment_replicas_20260919/REPORT.md),
+[PQQ panel](../environment_pqq_20260919/REPORT.md).
+Running scope: `diagnostics/environment_pqq_dft_20260919/`.
 
-Selected reference: diffuse def2-TZVPPD on ligands/La, cc-pwCVTZ onCa,
-La46-electron def2 ECP, explicit Ca10/La46 total frozen-core policy,
-AutoAux correlation fitting, TightSCF/DefGrid3. No composite-method D3/gCP
-addition. This is a finite-basis diagnostic, not a claimed complete-basis truth.
-Preserve SCF/correlation/triples terms and diagnostics. A changed prediction
-cannot be attributed uniquely to correlation when basis/solvent treatment also
-differs. Measure small-core throughput before executing larger PQQ controls.
+## Chemical-state accuracy track
 
-## Existing noncatalytic guardrail
+All24native analytic-gradient points on three source-water/carboxylate proton
+paths completed normally. Every sampled point is uphill; transferred-state costs
+range20.8–90.0kcal/mol. Tiny near-origin response is possible, but no competitive
+transferred basin, pH population or useful correction was established.
+Both1F6Sand6IP9are bovine alpha-lactalbumin, one biological group.
+Cost154752allocatedCPU-s, zeroGPU-s. Batch1202444 failed only in postprocessing;
+all actual quantum results were recovered without scientific retries. Eight tests
+pass. [Report](../chemical_states_20260919/REPORT.md).
+Do not add an unfavorable state's attractive relative shift to the classifier.
 
-`diagnostics/benchmark_set_20260915/SCORING_RESULTS_1199508.md` and
-`workspaces/benchmark_set_20260915/ready_tasks_v4/manifest.json` retain the
-completed50-atom Hans-LanM EF1/EF2/EF3 Ca/La pairs. All rank aboveGGR under the
-baseline. These are three ordered sites within one protein-level coupled
-folding/dimerization measurement, not three independent site-affinity labels.
-They are available for relevant follow-ons without new folds or invented labels.
+## Independent electronic diagnostic — unfinished
 
-## Completed scoped review
+Job1202429 continues the declared six DLPNO-CCSD(T1)/TightPNO/CPCM-PTES endpoints
+on exact real GGR1GLG and original/water-prepared alpha1F6S cores. No final pair
+was available at the latest checkpoint; four initial HF references converged.
+Four16-rank tasks share64CPUs/256GiB; diffuse-basis solvent/integral transformations
+are expensive (hundreds of seconds per batch,25–30batches on alpha).
+Transient scratch exceeded513GiB; active files must not be removed.
+This is a one-time reference diagnostic, not an affordable routine scanner method.
 
-Commit `e085d55` contains completed response/second-shell code and reports plus
-the new parallel-scope record. Parent reran26real-fixture tests successfully.
-The detailed~1MBsecond-shell atom inventory remains preserved locally; it was
-not added to the compact diagnostic commit. Other agents' dirty changes remain
-untouched. No default, published reference or production score was changed.
+Actual Hamiltonian, La46ECP, Ca3s/3p and La5s/5p correlation, electron accounting,
+PTES and TightPNO were checked. No new PQQ/high-level expansion was submitted.
+Five source/parser tests pass; completed new CC scientific regression is unavailable.
+Recover [checkpoint](../electronic_accuracy_20260919/CURRENT.md) and live receipts.
+The owning agent is attaching automatic final collection without new chemistry.
 
-Commit `5b00d91` contains the completed reusable contextual-water component and
-failed-basin results with the explicit protein-identity correction. Parent reran
-nine contextual tests in28.162s and13basin tests in0.756s; all passed.
+## Preservation and validation
+
+The previously completed water-basin entropy approximation remains unavailable;
+it failed its independent DFT energy checks. Historical identity erratum is
+preserved. Existing Hans-LanM EF1/EF2/EF3 scores remain ordered site vectors within
+one protein-level measurement, not three independent labels.
+
+The root reran integration and completed-component tests on actual artifacts.
+See the promotion VERIFICATION.json for current totals and exact logs. No fake
+scientific results, source resets, shared-job interruption, threshold refit,
+production rescore, push or environmental-scorer promotion occurred.

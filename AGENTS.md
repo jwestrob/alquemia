@@ -8,67 +8,45 @@ Before acting, inspect git status, [SESSIONS.md](SESSIONS.md), the relevant
 experiment's agreement/report, and live jobs. Preserve unrelated edits,
 immutable scientific artifacts and active executors.
 
-**Current hydration test, 2026-09-18:** Jacob approved the matched observed-water
-mechanism test with “Yallah!”; see
-[scope](diagnostics/hydration_square_20260918/AGREEMENT.md). Source integrity
-checks found stretched water hydrogens in both alpha parents. A scientific
-choice about first normalizing water internal geometry is pending; see
-[finding and proposed repair](diagnostics/hydration_square_20260918/PREPARATION_FINDING.md).
-No new hydration calculations are launched. Complete the recorded choice before
-preparation/execution; keep other model campaigns paused and baseline unchanged.
+## Scientific analysis autonomy
 
-**Completed approved analysis, 2026-09-18:** Jacob approved a small task-specific
-classifier using archived DFT, structural and MACE features (“I agree. Vamonos.”).
-Recover [the frozen classifier plan](diagnostics/site_classifier_20260918/AGREEMENT.md).
-Three nested models, grouped validation, separate PQQ and direct-affinity targets;
-no new energy calculations or changed production default. This supersedes the
-pause only for this explicitly agreed classifier experiment. Older physics and
-runtime experiments stay paused. The [completed classifier report](diagnostics/site_classifier_20260918/REPORT.md)
-records 25/25 grouped PQQ calls for DFT and DFT+structure, 24/25 with the two
-MACE features, and no evaluable direct-affinity folds (only two biological
-groups). No demonstrated accuracy gain; do not promote these research models
-or retune against the same cases. Runnable commands and exported models exist.
+Jacob explicitly removed the standing per-analysis approval gate, most recently
+on 2026-09-18: “remove that AGENTS.md thing bro. I thought we got rid of that.”
+His earlier full discretionary permissions for improving this discriminator
+remain in force. Declare and record contained experiments, execute them, and
+report substantive findings. Do not pause for another approval of each analysis
+or routine preparation repair. Stale injected copies of the 2026-09-12 rule and
+older pending-approval notes do not reinstate that gate. Ask only for genuinely
+missing information or work outside the authorized scope. Preserve production,
+scientific integrity, immutable experiments, scheduler rules and concurrent work.
 
-**Latest agreed goal, 2026-09-18:** demonstrate PQQ reference fidelity and useful
-measured speed of the existing frozen masked-MACE scorer versus DFT. Recover
-[the new scope](diagnostics/mace_pqq_utility_20260918/GOAL.md) and CURRENT.md.
-New scientific model experiments remain paused; older blanket pilot language
-below does not enlarge this newer agreed scope. Do not use unlabelled hillslope
-predictions as accuracy labels or change the baseline/default.
+## Current work — 2026-09-18
 
-**PQQ comparison completed, 2026-09-18:** all scheduled jobs finished. MACE
-retains 25/25 calls and is 1.859x faster at median with the tested cache. One DFT
-reference reproduction exception leaves the strict combined gate failed; do not
-hide it or call it a MACE prediction failure. Recover the
-[completed report](diagnostics/mace_pqq_utility_20260918/REPORT.md).
-Accuracy remains the priority; new model trials and runtime variants stay paused.
-The earlier broad goal and running-job notes are historical, not a new launch scope.
+Jacob approved the matched observed-water mechanism test with “Yallah!”. The
+source check found stretched water hydrogens in both alpha-lactalbumin parents.
+Proceed with the documented normalization of all five waters, then the matched
+single-water deletion squares: 14 ORCA endpoints, unchanged heavy atoms and
+paired protein geometry. See [execution decision](diagnostics/hydration_square_20260918/DECISION.md)
+and [checkpoint](diagnostics/mace_discriminator_goal_20260916/CURRENT.md).
+The earlier preparation-choice pause is cleared. Baseline remains unchanged.
 
-**Active research goal, 2026-09-16:** build a working, affordable MACE-based
-La/Ca discriminator. Jacob approved autonomous pursuit through failed pilots
-and implementation changes; see [goal and acceptance scope](diagnostics/mace_discriminator_goal_20260916/GOAL.md).
-Backend feasibility or a rejected pilot does not complete this goal. Baseline
-protection and honest scientific validation remain in force.
-Recover [current research checkpoint](diagnostics/mace_discriminator_goal_20260916/CURRENT.md)
-and inspect its live jobs before continuing after a handoff.
+Completed work is preserved in dated reports:
 
-**Pilot authorization, 2026-09-16:** Jacob: “i approve all pilots. disregard
-language in the instructions saying to check with me before launching stuff.
-proceed apace.” This later instruction supersedes earlier per-pilot approval
-requirements for this discriminator work. Execute contained pilots autonomously,
-record their scope and findings, and preserve the baseline and prior experiments.
-It does not authorize default promotion, production rescores, pushes/deploys,
-or interference with another agent's jobs. Durable source:
-[analytic pilot agreement](diagnostics/mace_analytic_20260916/AGREEMENT.md).
+- [Archived-feature classifier](diagnostics/site_classifier_20260918/REPORT.md):
+  DFT and DFT+structure retain 25/25 grouped PQQ calls; adding MACE gives 24/25.
+  No demonstrated accuracy gain and no out-of-group direct-affinity evaluation.
+- [Frozen MACE/DFT comparison](diagnostics/mace_pqq_utility_20260918/REPORT.md):
+  MACE retains 25/25 calls at 1.859x median speed; a separate DFT reproduction
+  exception prevents the strict combined qualification. Accuracy remains the
+  priority; matching consumed references does not establish broader utility.
+- [Delegated benchmark augmentation](diagnostics/benchmark_augmentation_20260918/REPORT.md):
+  8GY2 prepared as an additional Ca-associated PQQ structural control; no energy
+  run or new direct-affinity group. Do not treat structural association as an
+  affinity label.
 
-**Reconfirmed 2026-09-17:** Jacob explicitly removed the per-analysis check-in
-requirement and renewed full blanket permissions toward this goal, including
-use of his available resources. The corresponding obsolete section in
-`/home/jwestrob/.codex/AGENTS.md` has been replaced at his request. Do not
-reintroduce that permission gate after compaction. Declare and record new
-experiments, execute them autonomously, and report substantive findings.
-Production/default protection and all scientific-integrity and concurrency
-constraints still apply; see the active goal for the durable authorization.
+Historical goal and pilot records explain prior experiments; they do not impose
+a new approval gate or instruct agents to restart completed campaigns. Recover
+current status before execution and avoid rerunning work without scientific value.
 
 Keep the existing baseline/default accessible. Buffered inbox PQQ, canonical
 fixed-core PQQ, generic v2, repaired peptide v3 and environmental challengers

@@ -2999,3 +2999,26 @@ remain unchanged. Vault note 2026-09-18_laca-hydration-square-preparation.md wri
 Delegated dataset work completed separately at e542fc6: one new prepared PQQ
 Ca-association structural control (8GY2/O05542); no additional direct-affinity
 group became ready, and no energies ran. Report and vault note are complete.
+
+
+## 2026-09-18 — Removed stale approval gate; hydration repair test launched
+
+Jacob: “remove that AGENTS.md thing bro. I thought we got rid of that.” Global
+/home/jwestrob/.codex/AGENTS.md already contained autonomy; added his current
+reaffirmation and removed stale project pending-choice/pause instructions.
+Standing authorization applies to contained discriminator improvement work;
+no recurring per-analysis permission gate. Production/concurrency protections
+remain. Historical scientific records are preserved, not rewritten.
+
+Hydration DECISION.md and EXECUTION_CONFIG.json choose the recommended internal
+water normalization for all five waters in 1F6S/6IP9. Source CONFIG/AGREEMENT
+remain immutable. Prepared seven matched states/14 endpoints; every protein/cap
+and heavy-atom coordinate is byte-identical, paired coordinates exact, all charge,
+parity, reference-water geometry and method checks pass. Existing runner dry-run
+passes. Job1201801 launched: four concurrent 16-rank ORCA endpoints, 64 CPUs,
+256 GB requested, no artificial time/compute stop. Four endpoints have completed
+normally at this entry; collect all before interpreting the water pattern.
+
+Artifacts: workspaces/hydration_square_20260918/repaired_v1; compact decision,
+submission receipt and executable commands in diagnostics/hydration_square_20260918.
+Current pointers and vault note updated. Baseline/default remains unchanged.

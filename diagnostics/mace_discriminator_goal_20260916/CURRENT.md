@@ -1,18 +1,20 @@
 # MACE discriminator checkpoint — 2026-09-18
 
-## Current: approved hydration mechanism test; water geometry choice pending
+## Current: hydration repair and matched water test authorized
 
-Jacob approved the matched hydration-square proposal with “Yallah!”. Parent
-inventory and existing endpoint checks are complete. All five retained waters
-in 1F6S/6IP9 have preparation-generated O–H bonds of 1.163–1.190 A. An explicit
-question is pending: run the archived geometries (ten new deletion endpoints),
-or normalize all water internal geometries to the existing H2O reference while
-preserving oxygen positions/planes/bisectors/protein coordinates (14 endpoints,
-including four recomputed full states). No job is submitted before that choice.
-Read [scope](../hydration_square_20260918/AGREEMENT.md) and
-[source finding](../hydration_square_20260918/PREPARATION_FINDING.md).
-`scripts/hydration_square.py` and a 64-CPU runner are implemented; four actual
-fixture software tests pass. No energy, occupancy, new class or accuracy result.
+Jacob removed the stale per-analysis approval gate on 2026-09-18: “remove that
+AGENTS.md thing bro. I thought we got rid of that.” Continue the water test
+approved with “Yallah!” using standing discretionary permissions. Normalize the
+internal geometry of all five observed waters in 1F6S/6IP9 to the existing H2O
+reference, preserving oxygens, water planes/bisectors and every protein/cap
+coordinate. Recompute both full parents and all single-water deletions: 14 ORCA
+single points. No occupancy model, threshold change or production modification.
+See [execution decision](../hydration_square_20260918/DECISION.md). The earlier
+pending-choice note and all historical approval pauses below are superseded.
+Four real-fixture software tests pass; all seven prepared pairs also passed
+coordinate, water-geometry, charge and parity checks. Job **1201801** is running
+on 64 CPUs (four 16-rank endpoints concurrently); no energy result is claimed
+until collection. See the hydration SUBMISSION.json and frozen manifest.
 
 The delegated benchmark augmentation is complete at e542fc6: 8GY2 is a ready
 additional Ca-associated PQQ structural control with unchanged fixed-core-v3

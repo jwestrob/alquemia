@@ -26,6 +26,15 @@ score operations are in [commands](../diagnostics/site_classifier_20260918/COMMA
 describe the six research models. Do not treat training fits as validation or
 restart paused model campaigns from older notes below.
 
+**Current hydration experiment:** normalize the internal geometry of all five
+observed waters in the consumed alpha-lactalbumin inputs, preserving oxygen and
+protein coordinates; compare each individual water's presence/absence for both
+metals. Four full-parent and ten deletion endpoints are running as job1201801.
+See [decision](../diagnostics/hydration_square_20260918/DECISION.md) and the current
+checkpoint. Jacob removed the standing per-analysis approval gate again on
+2026-09-18; stale pauses above and in historical records do not suspend this
+work or reinstate a permission requirement. Production remains unchanged.
+
 **Earlier research result:** the complete frozen-response conductor correction
 provides no overall improvement over the preceding GK hybrid:4/12 directional
 comparisons remain correct. Parvalbumin EF improves, alpha-lactalbumin regresses.

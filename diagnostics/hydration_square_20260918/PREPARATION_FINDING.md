@@ -1,5 +1,10 @@
 # Stretched water hydrogens in both alpha-lactalbumin parents
 
+**Resolution, 2026-09-18:** the stale approval gate is removed; the recommended
+repair and 14-endpoint test are executing under Jacob's standing authorization.
+See [decision](DECISION.md) and [submission receipt](SUBMISSION.json). The
+preflight status recorded below is historical.
+
 Read-only inspection completed before new electronic calculations. The source
 cores, archived energies and production preparation are unchanged.
 

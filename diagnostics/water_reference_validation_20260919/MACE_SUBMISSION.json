@@ -1,0 +1,23 @@
+{
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--partition=gpu_h200",
+    "--job-name=parv-water-H",
+    "--cpus-per-task=16",
+    "--gres=gpu:1",
+    "--mem=200000M",
+    "--time=7-00:00:00",
+    "--export=ALL,MACE_MIN_MEMORY_MIB=200000",
+    "--output=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/water_reference_validation_20260919/proposals_v1/slurm_%j.out",
+    "--error=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/water_reference_validation_20260919/proposals_v1/slurm_%j.err",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/mace_hybrid_20260916/run_pilot.sbatch",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_hybrid_20260916/software_v1/venv/bin/python",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/water_reference_validation_20260919/proposals_v1/manifest.json",
+    "native"
+  ],
+  "returncode": 0,
+  "stdout": "1202475\n",
+  "stderr": "",
+  "utc": "2026-09-19T22:01:36.307825+00:00"
+}

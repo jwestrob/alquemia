@@ -1,0 +1,1056 @@
+{
+  "bands": {
+    "Ca_max_model_kcal_mol": -405347.73205159395,
+    "La_min_model_kcal_mol": -405345.416592485,
+    "calibration_only": true,
+    "inconclusive_between": true
+  },
+  "class_ranges": {
+    "Ca": {
+      "context_R_model_kcal_mol": {
+        "max": -405347.73205159395,
+        "min": -405421.2482124621,
+        "width": 73.51616086816648
+      },
+      "core_R_model_kcal_mol": {
+        "max": -405391.7169957054,
+        "min": -405407.53635039774,
+        "width": 15.819354692357592
+      }
+    },
+    "La": {
+      "context_R_model_kcal_mol": {
+        "max": -405276.2806838587,
+        "min": -405345.416592485,
+        "width": 69.13590862625279
+      },
+      "core_R_model_kcal_mol": {
+        "max": -405296.0571029667,
+        "min": -405312.6863877443,
+        "width": 16.62928477762034
+      }
+    }
+  },
+  "component_attribution": "unresolved: no charge/density or atomic-energy components archived; geometry fixed, composition and charge coupled",
+  "context_gap_model_kcal_mol": 2.3154591089696623,
+  "core_gap_model_kcal_mol": 79.03060796106001,
+  "cost": {
+    "collection_wall_seconds": 67.54654839262366,
+    "median_endpoint_evaluation_seconds": 0.170356011018157,
+    "new_DFT_endpoints": 0,
+    "new_endpoints": 52,
+    "peak_cuda_allocated_bytes": 9092231168,
+    "peak_worker_host_RSS_KiB": 2666152,
+    "reused_context_endpoints": 4,
+    "sum_endpoint_evaluation_seconds": 11.594540107995272,
+    "sum_endpoint_wall_seconds": 60.95603668689728
+  },
+  "descriptive_charge_strata": [
+    {
+      "added_formal_charge": -1,
+      "cases": [
+        "a8r3s4-pqq-la_model",
+        "q88jh5-pqq-la_model",
+        "q9z4j7-pqq-la_model"
+      ],
+      "expected_class": "Ca",
+      "n_structures": 3,
+      "shift_max": 51.02518085873453,
+      "shift_mean": 49.84840595343849,
+      "shift_min": 49.12865617487114
+    },
+    {
+      "added_formal_charge": 0,
+      "cases": [
+        "atq70401.1-pqq-la_model",
+        "bbl57595.1-pqq-la_model",
+        "o24759-pqq-la_model",
+        "p12293-pqq-la_model",
+        "p15279-pqq-la_model",
+        "p16027-pqq-la_model",
+        "p38539-pqq-la_model",
+        "q4w6g0-pqq-la_model",
+        "q60ar6-pqq-la_model",
+        "q8gr64-pqq-la_model",
+        "q9l935-pqq-la_model"
+      ],
+      "expected_class": "Ca",
+      "n_structures": 11,
+      "shift_max": -1.0201299143373035,
+      "shift_mean": -13.470841361516664,
+      "shift_min": -19.47529207984917
+    },
+    {
+      "added_formal_charge": -1,
+      "cases": [
+        "a0acd6b9f2-pqq-la_model"
+      ],
+      "expected_class": "La",
+      "n_structures": 1,
+      "shift_max": 19.776419107976835,
+      "shift_mean": 19.776419107976835,
+      "shift_min": 19.776419107976835
+    },
+    {
+      "added_formal_charge": 0,
+      "cases": [
+        "a0a3f2yly8-pqq-la_model",
+        "c5atj3-pqq-la_model",
+        "c5axv8-pqq-la_model",
+        "c5b120-pqq-la_model",
+        "i0jwn7-pqq-la_model",
+        "mmol_1770-pqq-la_model",
+        "mmol_2048-pqq-la_model",
+        "q88jh0-pqq-la_model",
+        "q89gy2-pqq-la_model",
+        "q92wy9-pqq-la_model"
+      ],
+      "expected_class": "La",
+      "n_structures": 10,
+      "shift_max": -26.571629573591053,
+      "shift_mean": -30.238486873317743,
+      "shift_min": -38.36664879496675
+    }
+  ],
+  "protocol_id": "native_OMOL_complete_polar_context_disulfide_v2",
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/environment_pqq_20260919/prepared_v1/result_1202474.json",
+    "sha256": "f7e64eec5e129af10eb4ae8306f3885db822aa05d2d9fd0bd28200850e724a26"
+  },
+  "rows": [
+    {
+      "added_formal_charge": 0,
+      "atoms": 169,
+      "case": "a0a3f2yly8-pqq-la_model",
+      "charged_added_fragments": [],
+      "charged_added_polar_metal_distances_A": [],
+      "context_R_model_kcal_mol": -405345.416592485,
+      "context_charge_Ca": -3,
+      "context_elements": {
+        "C": 59,
+        "H": 73,
+        "La": 1,
+        "N": 14,
+        "O": 22
+      },
+      "core_R_model_kcal_mol": -405312.6863877443,
+      "core_charge_Ca": -3,
+      "decision": "La-supported",
+      "delta_R_model_kcal_mol": -32.73020474065561,
+      "endpoint_energies_eV": {
+        "Ca": -146704.20086555634,
+        "La": -129126.7599665036
+      },
+      "expected_class": "La",
+      "expected_region_pass": true,
+      "group": "a0a3f2yly8",
+      "original_atoms": 80,
+      "removed_caps": 4,
+      "retained_original_coordinates_exact": true,
+      "role": "calibration"
+    },
+    {
+      "added_formal_charge": -1,
+      "atoms": 161,
+      "case": "a0acd6b9f2-pqq-la_model",
+      "charged_added_fragments": [
+        {
+          "formal_charge": -1,
+          "kind": "sidechain",
+          "source": {
+            "canonical_resname": "ASP",
+            "chain": "A",
+            "insertion_code": "",
+            "resname": "ASP",
+            "resnum": 203
+          }
+        }
+      ],
+      "charged_added_polar_metal_distances_A": [
+        6.779380797683517,
+        6.520669367480612,
+        4.814076858547233
+      ],
+      "context_R_model_kcal_mol": -405276.2806838587,
+      "context_charge_Ca": -4,
+      "context_elements": {
+        "C": 58,
+        "H": 67,
+        "La": 1,
+        "N": 13,
+        "O": 22
+      },
+      "core_R_model_kcal_mol": -405296.0571029667,
+      "core_charge_Ca": -3,
+      "decision": "La-supported",
+      "delta_R_model_kcal_mol": 19.776419107976835,
+      "endpoint_energies_eV": {
+        "Ca": -144078.09288952348,
+        "La": -126503.65000721926
+      },
+      "expected_class": "La",
+      "expected_region_pass": true,
+      "group": "a0acd6b9f2",
+      "original_atoms": 80,
+      "removed_caps": 4,
+      "retained_original_coordinates_exact": true,
+      "role": "calibration"
+    },
+    {
+      "added_formal_charge": 0,
+      "atoms": 153,
+      "case": "c5atj3-pqq-la_model",
+      "charged_added_fragments": [],
+      "charged_added_polar_metal_distances_A": [],
+      "context_R_model_kcal_mol": -405327.69462288526,
+      "context_charge_Ca": -3,
+      "context_elements": {
+        "C": 55,
+        "H": 64,
+        "La": 1,
+        "N": 13,
+        "O": 20
+      },
+      "core_R_model_kcal_mol": -405298.9494375119,
+      "core_charge_Ca": -3,
+      "decision": "La-supported",
+      "delta_R_model_kcal_mol": -28.745185373350978,
+      "endpoint_energies_eV": {
+        "Ca": -136805.2368819709,
+        "La": -119228.56448025524
+      },
+      "expected_class": "La",
+      "expected_region_pass": true,
+      "group": "c5atj3",
+      "original_atoms": 80,
+      "removed_caps": 4,
+      "retained_original_coordinates_exact": true,
+      "role": "calibration"
+    },
+    {
+      "added_formal_charge": 0,
+      "atoms": 172,
+      "case": "c5axv8-pqq-la_model",
+      "charged_added_fragments": [],
+      "charged_added_polar_metal_distances_A": [],
+      "context_R_model_kcal_mol": -405341.0003126181,
+      "context_charge_Ca": -3,
+      "context_elements": {
+        "C": 62,
+        "H": 72,
+        "La": 1,
+        "N": 15,
+        "O": 22
+      },
+      "core_R_model_kcal_mol": -405307.82057684794,
+      "core_charge_Ca": -3,
+      "decision": "La-supported",
+      "delta_R_model_kcal_mol": -33.179735770158004,
+      "endpoint_energies_eV": {
+        "Ca": -151286.04129110635,
+        "La": -133708.7919000741
+      },
+      "expected_class": "La",
+      "expected_region_pass": true,
+      "group": "c5axv8",
+      "original_atoms": 80,
+      "removed_caps": 4,
+      "retained_original_coordinates_exact": true,
+      "role": "calibration"
+    },
+    {
+      "added_formal_charge": 0,
+      "atoms": 174,
+      "case": "c5b120-pqq-la_model",
+      "charged_added_fragments": [],
+      "charged_added_polar_metal_distances_A": [],
+      "context_R_model_kcal_mol": -405332.4373859279,
+      "context_charge_Ca": -3,
+      "context_elements": {
+        "C": 62,
+        "H": 74,
+        "La": 1,
+        "N": 15,
+        "O": 22
+      },
+      "core_R_model_kcal_mol": -405305.15124759,
+      "core_charge_Ca": -3,
+      "decision": "La-supported",
+      "delta_R_model_kcal_mol": -27.286138337862212,
+      "endpoint_energies_eV": {
+        "Ca": -151318.6672278099,
+        "La": -133741.78916042327
+      },
+      "expected_class": "La",
+      "expected_region_pass": true,
+      "group": "c5b120",
+      "original_atoms": 80,
+      "removed_caps": 4,
+      "retained_original_coordinates_exact": true,
+      "role": "calibration"
+    },
+    {
+      "added_formal_charge": 0,
+      "atoms": 190,
+      "case": "i0jwn7-pqq-la_model",
+      "charged_added_fragments": [],
+      "charged_added_polar_metal_distances_A": [],
+      "context_R_model_kcal_mol": -405336.8167637352,
+      "context_charge_Ca": -3,
+      "context_elements": {
+        "C": 66,
+        "H": 84,
+        "La": 1,
+        "N": 15,
+        "O": 24
+      },
+      "core_R_model_kcal_mol": -405298.45011494023,
+      "core_charge_Ca": -3,
+      "decision": "La-supported",
+      "delta_R_model_kcal_mol": -38.36664879496675,
+      "endpoint_energies_eV": {
+        "Ca": -159713.2154444771,
+        "La": -142136.14746929472
+      },
+      "expected_class": "La",
+      "expected_region_pass": true,
+      "group": "i0jwn7",
+      "original_atoms": 80,
+      "removed_caps": 4,
+      "retained_original_coordinates_exact": true,
+      "role": "calibration"
+    },
+    {
+      "added_formal_charge": 0,
+      "atoms": 174,
+      "case": "mmol_1770-pqq-la_model",
+      "charged_added_fragments": [],
+      "charged_added_polar_metal_distances_A": [],
+      "context_R_model_kcal_mol": -405330.3143328195,
+      "context_charge_Ca": -3,
+      "context_elements": {
+        "C": 62,
+        "H": 74,
+        "La": 1,
+        "N": 15,
+        "O": 22
+      },
+      "core_R_model_kcal_mol": -405303.5033291565,
+      "core_charge_Ca": -3,
+      "decision": "La-supported",
+      "delta_R_model_kcal_mol": -26.811003662995063,
+      "endpoint_energies_eV": {
+        "Ca": -151318.9864248753,
+        "La": -133742.20042178498
+      },
+      "expected_class": "La",
+      "expected_region_pass": true,
+      "group": "mmol_1770",
+      "original_atoms": 80,
+      "removed_caps": 4,
+      "retained_original_coordinates_exact": true,
+      "role": "calibration"
+    },
+    {
+      "added_formal_charge": 0,
+      "atoms": 159,
+      "case": "mmol_2048-pqq-la_model",
+      "charged_added_fragments": [],
+      "charged_added_polar_metal_distances_A": [],
+      "context_R_model_kcal_mol": -405337.56918373983,
+      "context_charge_Ca": -3,
+      "context_elements": {
+        "C": 56,
+        "H": 68,
+        "La": 1,
+        "N": 13,
+        "O": 21
+      },
+      "core_R_model_kcal_mol": -405307.0497196312,
+      "core_charge_Ca": -3,
+      "decision": "La-supported",
+      "delta_R_model_kcal_mol": -30.51946410862729,
+      "endpoint_energies_eV": {
+        "Ca": -139962.3323953843,
+        "La": -122385.2317921824
+      },
+      "expected_class": "La",
+      "expected_region_pass": true,
+      "group": "mmol_2048",
+      "original_atoms": 80,
+      "removed_caps": 4,
+      "retained_original_coordinates_exact": true,
+      "role": "calibration"
+    },
+    {
+      "added_formal_charge": 0,
+      "atoms": 163,
+      "case": "q88jh0-pqq-la_model",
+      "charged_added_fragments": [],
+      "charged_added_polar_metal_distances_A": [],
+      "context_R_model_kcal_mol": -405334.6926891052,
+      "context_charge_Ca": -3,
+      "context_elements": {
+        "C": 57,
+        "H": 70,
+        "La": 1,
+        "N": 13,
+        "O": 20,
+        "S": 2
+      },
+      "core_R_model_kcal_mol": -405307.4822200822,
+      "core_charge_Ca": -3,
+      "decision": "La-supported",
+      "delta_R_model_kcal_mol": -27.21046902303351,
+      "endpoint_energies_eV": {
+        "Ca": -160658.1321782732,
+        "La": -143081.1563116845
+      },
+      "expected_class": "La",
+      "expected_region_pass": true,
+      "group": "q88jh0",
+      "original_atoms": 80,
+      "removed_caps": 4,
+      "retained_original_coordinates_exact": true,
+      "role": "calibration"
+    },
+    {
+      "added_formal_charge": 0,
+      "atoms": 160,
+      "case": "q89gy2-pqq-la_model",
+      "charged_added_fragments": [],
+      "charged_added_polar_metal_distances_A": [],
+      "context_R_model_kcal_mol": -405330.62385603425,
+      "context_charge_Ca": -3,
+      "context_elements": {
+        "C": 57,
+        "H": 67,
+        "La": 1,
+        "N": 14,
+        "O": 21
+      },
+      "core_R_model_kcal_mol": -405304.05222646066,
+      "core_charge_Ca": -3,
+      "decision": "La-supported",
+      "delta_R_model_kcal_mol": -26.571629573591053,
+      "endpoint_energies_eV": {
+        "Ca": -142484.91587687828,
+        "La": -124908.116451591
+      },
+      "expected_class": "La",
+      "expected_region_pass": true,
+      "group": "q89gy2",
+      "original_atoms": 80,
+      "removed_caps": 4,
+      "retained_original_coordinates_exact": true,
+      "role": "calibration"
+    },
+    {
+      "added_formal_charge": 0,
+      "atoms": 183,
+      "case": "q92wy9-pqq-la_model",
+      "charged_added_fragments": [],
+      "charged_added_polar_metal_distances_A": [],
+      "context_R_model_kcal_mol": -405330.5809775161,
+      "context_charge_Ca": -3,
+      "context_elements": {
+        "C": 64,
+        "H": 80,
+        "La": 1,
+        "N": 15,
+        "O": 23
+      },
+      "core_R_model_kcal_mol": -405299.61658816814,
+      "core_charge_Ca": -3,
+      "decision": "La-supported",
+      "delta_R_model_kcal_mol": -30.964389347936958,
+      "endpoint_energies_eV": {
+        "Ca": -155532.33558276124,
+        "La": -137955.5380168625
+      },
+      "expected_class": "La",
+      "expected_region_pass": true,
+      "group": "q92wy9",
+      "original_atoms": 80,
+      "removed_caps": 4,
+      "retained_original_coordinates_exact": true,
+      "role": "calibration"
+    },
+    {
+      "added_formal_charge": -1,
+      "atoms": 155,
+      "case": "a8r3s4-pqq-la_model",
+      "charged_added_fragments": [
+        {
+          "formal_charge": -1,
+          "kind": "sidechain",
+          "source": {
+            "canonical_resname": "ASP",
+            "chain": "A",
+            "insertion_code": "",
+            "resname": "ASP",
+            "resnum": 212
+          }
+        }
+      ],
+      "charged_added_polar_metal_distances_A": [
+        6.557379735839615,
+        6.42148970255345,
+        4.709153002398627
+      ],
+      "context_R_model_kcal_mol": -405350.3667047001,
+      "context_charge_Ca": -3,
+      "context_elements": {
+        "C": 52,
+        "H": 67,
+        "La": 1,
+        "N": 12,
+        "O": 21,
+        "S": 2
+      },
+      "core_R_model_kcal_mol": -405401.39188555884,
+      "core_charge_Ca": -2,
+      "decision": "Ca-supported",
+      "delta_R_model_kcal_mol": 51.02518085873453,
+      "endpoint_energies_eV": {
+        "Ca": -155984.2744458327,
+        "La": -138406.61888959786
+      },
+      "expected_class": "Ca",
+      "expected_region_pass": true,
+      "group": "a8r3s4",
+      "original_atoms": 73,
+      "removed_caps": 3,
+      "retained_original_coordinates_exact": true,
+      "role": "calibration"
+    },
+    {
+      "added_formal_charge": 0,
+      "atoms": 147,
+      "case": "atq70401.1-pqq-la_model",
+      "charged_added_fragments": [],
+      "charged_added_polar_metal_distances_A": [],
+      "context_R_model_kcal_mol": -405419.4628840221,
+      "context_charge_Ca": -2,
+      "context_elements": {
+        "C": 52,
+        "H": 64,
+        "La": 1,
+        "N": 12,
+        "O": 18
+      },
+      "core_R_model_kcal_mol": -405403.77673672757,
+      "core_charge_Ca": -2,
+      "decision": "Ca-supported",
+      "delta_R_model_kcal_mol": -15.68614729453111,
+      "endpoint_energies_eV": {
+        "Ca": -128126.1632708785,
+        "La": -110545.51142072082
+      },
+      "expected_class": "Ca",
+      "expected_region_pass": true,
+      "group": "atq70401.1",
+      "original_atoms": 73,
+      "removed_caps": 2,
+      "retained_original_coordinates_exact": true,
+      "role": "calibration"
+    },
+    {
+      "added_formal_charge": 0,
+      "atoms": 154,
+      "case": "bbl57595.1-pqq-la_model",
+      "charged_added_fragments": [],
+      "charged_added_polar_metal_distances_A": [],
+      "context_R_model_kcal_mol": -405415.86204616056,
+      "context_charge_Ca": -2,
+      "context_elements": {
+        "C": 54,
+        "H": 67,
+        "La": 1,
+        "N": 13,
+        "O": 19
+      },
+      "core_R_model_kcal_mol": -405399.6380876289,
+      "core_charge_Ca": -2,
+      "decision": "Ca-supported",
+      "delta_R_model_kcal_mol": -16.22395853168564,
+      "endpoint_energies_eV": {
+        "Ca": -133789.00869214174,
+        "La": -116208.51298909244
+      },
+      "expected_class": "Ca",
+      "expected_region_pass": true,
+      "group": "bbl57595.1",
+      "original_atoms": 73,
+      "removed_caps": 3,
+      "retained_original_coordinates_exact": true,
+      "role": "calibration"
+    },
+    {
+      "added_formal_charge": 0,
+      "atoms": 147,
+      "case": "o24759-pqq-la_model",
+      "charged_added_fragments": [],
+      "charged_added_polar_metal_distances_A": [],
+      "context_R_model_kcal_mol": -405419.81874558236,
+      "context_charge_Ca": -2,
+      "context_elements": {
+        "C": 52,
+        "H": 64,
+        "La": 1,
+        "N": 12,
+        "O": 18
+      },
+      "core_R_model_kcal_mol": -405407.53635039774,
+      "core_charge_Ca": -2,
+      "decision": "Ca-supported",
+      "delta_R_model_kcal_mol": -12.282395184622146,
+      "endpoint_energies_eV": {
+        "Ca": -128127.24959446609,
+        "La": -110546.58231269062
+      },
+      "expected_class": "Ca",
+      "expected_region_pass": true,
+      "group": "o24759",
+      "original_atoms": 73,
+      "removed_caps": 2,
+      "retained_original_coordinates_exact": true,
+      "role": "calibration"
+    },
+    {
+      "added_formal_charge": 0,
+      "atoms": 147,
+      "case": "p12293-pqq-la_model",
+      "charged_added_fragments": [],
+      "charged_added_polar_metal_distances_A": [],
+      "context_R_model_kcal_mol": -405421.2482124621,
+      "context_charge_Ca": -2,
+      "context_elements": {
+        "C": 52,
+        "H": 64,
+        "La": 1,
+        "N": 12,
+        "O": 18
+      },
+      "core_R_model_kcal_mol": -405401.77292038227,
+      "core_charge_Ca": -2,
+      "decision": "Ca-supported",
+      "delta_R_model_kcal_mol": -19.47529207984917,
+      "endpoint_energies_eV": {
+        "Ca": -128130.6219076212,
+        "La": -110549.89263829494
+      },
+      "expected_class": "Ca",
+      "expected_region_pass": true,
+      "group": "p12293",
+      "original_atoms": 73,
+      "removed_caps": 2,
+      "retained_original_coordinates_exact": true,
+      "role": "calibration"
+    },
+    {
+      "added_formal_charge": 0,
+      "atoms": 147,
+      "case": "p15279-pqq-la_model",
+      "charged_added_fragments": [],
+      "charged_added_polar_metal_distances_A": [],
+      "context_R_model_kcal_mol": -405420.9347009378,
+      "context_charge_Ca": -2,
+      "context_elements": {
+        "C": 52,
+        "H": 64,
+        "La": 1,
+        "N": 12,
+        "O": 18
+      },
+      "core_R_model_kcal_mol": -405403.42014203867,
+      "core_charge_Ca": -2,
+      "decision": "Ca-supported",
+      "delta_R_model_kcal_mol": -17.514558899158146,
+      "endpoint_energies_eV": {
+        "Ca": -128131.03814074042,
+        "La": -110550.32246656058
+      },
+      "expected_class": "Ca",
+      "expected_region_pass": true,
+      "group": "p15279",
+      "original_atoms": 73,
+      "removed_caps": 2,
+      "retained_original_coordinates_exact": true,
+      "role": "calibration"
+    },
+    {
+      "added_formal_charge": 0,
+      "atoms": 147,
+      "case": "p16027-pqq-la_model",
+      "charged_added_fragments": [],
+      "charged_added_polar_metal_distances_A": [],
+      "context_R_model_kcal_mol": -405418.23915118567,
+      "context_charge_Ca": -2,
+      "context_elements": {
+        "C": 52,
+        "H": 64,
+        "La": 1,
+        "N": 12,
+        "O": 18
+      },
+      "core_R_model_kcal_mol": -405402.3436333335,
+      "core_charge_Ca": -2,
+      "decision": "Ca-supported",
+      "delta_R_model_kcal_mol": -15.895517852157354,
+      "endpoint_energies_eV": {
+        "Ca": -128128.64200741539,
+        "La": -110548.04322333599
+      },
+      "expected_class": "Ca",
+      "expected_region_pass": true,
+      "group": "p16027",
+      "original_atoms": 73,
+      "removed_caps": 2,
+      "retained_original_coordinates_exact": true,
+      "role": "calibration"
+    },
+    {
+      "added_formal_charge": 0,
+      "atoms": 159,
+      "case": "p38539-pqq-la_model",
+      "charged_added_fragments": [],
+      "charged_added_polar_metal_distances_A": [],
+      "context_R_model_kcal_mol": -405409.0806191494,
+      "context_charge_Ca": -2,
+      "context_elements": {
+        "C": 57,
+        "H": 69,
+        "La": 1,
+        "N": 13,
+        "O": 19
+      },
+      "core_R_model_kcal_mol": -405391.7169957054,
+      "core_charge_Ca": -2,
+      "decision": "Ca-supported",
+      "delta_R_model_kcal_mol": -17.363623443990946,
+      "endpoint_energies_eV": {
+        "Ca": -136929.97094420675,
+        "La": -119349.76931166528
+      },
+      "expected_class": "Ca",
+      "expected_region_pass": true,
+      "group": "p38539",
+      "original_atoms": 73,
+      "removed_caps": 2,
+      "retained_original_coordinates_exact": true,
+      "role": "calibration"
+    },
+    {
+      "added_formal_charge": 0,
+      "atoms": 142,
+      "case": "q4w6g0-pqq-la_model",
+      "charged_added_fragments": [],
+      "charged_added_polar_metal_distances_A": [],
+      "context_R_model_kcal_mol": -405394.6604292645,
+      "context_charge_Ca": -2,
+      "context_elements": {
+        "C": 51,
+        "H": 61,
+        "La": 1,
+        "N": 11,
+        "O": 18
+      },
+      "core_R_model_kcal_mol": -405392.95531916537,
+      "core_charge_Ca": -2,
+      "decision": "Ca-supported",
+      "delta_R_model_kcal_mol": -1.705110099108424,
+      "endpoint_energies_eV": {
+        "Ca": -125555.1345843293,
+        "La": -107975.55827040518
+      },
+      "expected_class": "Ca",
+      "expected_region_pass": true,
+      "group": "q4w6g0",
+      "original_atoms": 71,
+      "removed_caps": 3,
+      "retained_original_coordinates_exact": true,
+      "role": "calibration"
+    },
+    {
+      "added_formal_charge": 0,
+      "atoms": 147,
+      "case": "q60ar6-pqq-la_model",
+      "charged_added_fragments": [],
+      "charged_added_polar_metal_distances_A": [],
+      "context_R_model_kcal_mol": -405418.75145640905,
+      "context_charge_Ca": -2,
+      "context_elements": {
+        "C": 52,
+        "H": 64,
+        "La": 1,
+        "N": 12,
+        "O": 18
+      },
+      "core_R_model_kcal_mol": -405405.5666089905,
+      "core_charge_Ca": -2,
+      "decision": "Ca-supported",
+      "delta_R_model_kcal_mol": -13.184847418568097,
+      "endpoint_energies_eV": {
+        "Ca": -128121.44251321592,
+        "La": -110540.82151347942
+      },
+      "expected_class": "Ca",
+      "expected_region_pass": true,
+      "group": "q60ar6",
+      "original_atoms": 73,
+      "removed_caps": 2,
+      "retained_original_coordinates_exact": true,
+      "role": "calibration"
+    },
+    {
+      "added_formal_charge": -1,
+      "atoms": 139,
+      "case": "q88jh5-pqq-la_model",
+      "charged_added_fragments": [
+        {
+          "formal_charge": -1,
+          "kind": "sidechain",
+          "source": {
+            "canonical_resname": "ASP",
+            "chain": "A",
+            "insertion_code": "",
+            "resname": "ASP",
+            "resnum": 220
+          }
+        }
+      ],
+      "charged_added_polar_metal_distances_A": [
+        6.56148047318591,
+        6.357603951175317,
+        4.6044701106642005
+      ],
+      "context_R_model_kcal_mol": -405348.99936314113,
+      "context_charge_Ca": -3,
+      "context_elements": {
+        "C": 49,
+        "H": 57,
+        "La": 1,
+        "N": 12,
+        "O": 20
+      },
+      "core_R_model_kcal_mol": -405398.128019316,
+      "core_charge_Ca": -2,
+      "decision": "Ca-supported",
+      "delta_R_model_kcal_mol": 49.12865617487114,
+      "endpoint_energies_eV": {
+        "Ca": -128985.22436608638,
+        "La": -111407.62810339342
+      },
+      "expected_class": "Ca",
+      "expected_region_pass": true,
+      "group": "q88jh5",
+      "original_atoms": 73,
+      "removed_caps": 3,
+      "retained_original_coordinates_exact": true,
+      "role": "calibration"
+    },
+    {
+      "added_formal_charge": 0,
+      "atoms": 123,
+      "case": "q8gr64-pqq-la_model",
+      "charged_added_fragments": [],
+      "charged_added_polar_metal_distances_A": [],
+      "context_R_model_kcal_mol": -405406.12979183026,
+      "context_charge_Ca": -2,
+      "context_elements": {
+        "C": 42,
+        "H": 52,
+        "La": 1,
+        "N": 10,
+        "O": 18
+      },
+      "core_R_model_kcal_mol": -405405.1096619159,
+      "core_charge_Ca": -2,
+      "decision": "Ca-supported",
+      "delta_R_model_kcal_mol": -1.0201299143373035,
+      "endpoint_energies_eV": {
+        "Ca": -114591.0005397707,
+        "La": -97010.9268672127
+      },
+      "expected_class": "Ca",
+      "expected_region_pass": true,
+      "group": "q8gr64",
+      "original_atoms": 71,
+      "removed_caps": 3,
+      "retained_original_coordinates_exact": true,
+      "role": "calibration"
+    },
+    {
+      "added_formal_charge": 0,
+      "atoms": 141,
+      "case": "q9l935-pqq-la_model",
+      "charged_added_fragments": [],
+      "charged_added_polar_metal_distances_A": [],
+      "context_R_model_kcal_mol": -405415.52138379397,
+      "context_charge_Ca": -2,
+      "context_elements": {
+        "C": 51,
+        "H": 61,
+        "La": 1,
+        "N": 11,
+        "O": 17
+      },
+      "core_R_model_kcal_mol": -405397.6937095353,
+      "core_charge_Ca": -2,
+      "decision": "Ca-supported",
+      "delta_R_model_kcal_mol": -17.82767425867496,
+      "endpoint_energies_eV": {
+        "Ca": -123508.106473701,
+        "La": -105927.62554317008
+      },
+      "expected_class": "Ca",
+      "expected_region_pass": true,
+      "group": "q9l935",
+      "original_atoms": 73,
+      "removed_caps": 2,
+      "retained_original_coordinates_exact": true,
+      "role": "calibration"
+    },
+    {
+      "added_formal_charge": -1,
+      "atoms": 139,
+      "case": "q9z4j7-pqq-la_model",
+      "charged_added_fragments": [
+        {
+          "formal_charge": -1,
+          "kind": "sidechain",
+          "source": {
+            "canonical_resname": "ASP",
+            "chain": "A",
+            "insertion_code": "",
+            "resname": "ASP",
+            "resnum": 212
+          }
+        }
+      ],
+      "charged_added_polar_metal_distances_A": [
+        6.4873092264821155,
+        6.257220948632068,
+        4.5183846671127945
+      ],
+      "context_R_model_kcal_mol": -405347.73205159395,
+      "context_charge_Ca": -3,
+      "context_elements": {
+        "C": 49,
+        "H": 57,
+        "La": 1,
+        "N": 12,
+        "O": 20
+      },
+      "core_R_model_kcal_mol": -405397.12343242066,
+      "core_charge_Ca": -2,
+      "decision": "Ca-supported",
+      "delta_R_model_kcal_mol": 49.39138082670979,
+      "endpoint_energies_eV": {
+        "Ca": -128993.38175349082,
+        "La": -111415.8404466279
+      },
+      "expected_class": "Ca",
+      "expected_region_pass": true,
+      "group": "q9z4j7",
+      "original_atoms": 73,
+      "removed_caps": 3,
+      "retained_original_coordinates_exact": true,
+      "role": "calibration"
+    },
+    {
+      "added_formal_charge": 0,
+      "atoms": 154,
+      "case": "1H4I",
+      "charged_added_fragments": [],
+      "charged_added_polar_metal_distances_A": [],
+      "context_R_model_kcal_mol": -405428.4733514628,
+      "context_charge_Ca": -2,
+      "context_elements": {
+        "C": 54,
+        "H": 67,
+        "La": 1,
+        "N": 13,
+        "O": 19
+      },
+      "core_R_model_kcal_mol": -405405.6231521251,
+      "core_charge_Ca": -2,
+      "decision": "Ca-supported",
+      "delta_R_model_kcal_mol": -22.85019933769945,
+      "endpoint_energies_eV": {
+        "Ca": -133789.74691710545,
+        "La": -116208.70433609841
+      },
+      "expected_class": "Ca",
+      "expected_region_pass": true,
+      "group": "p16027",
+      "original_atoms": 73,
+      "removed_caps": 2,
+      "retained_original_coordinates_exact": true,
+      "role": "retrospective_structural_transfer"
+    },
+    {
+      "added_formal_charge": 0,
+      "atoms": 202,
+      "case": "4MAE",
+      "charged_added_fragments": [],
+      "charged_added_polar_metal_distances_A": [],
+      "context_R_model_kcal_mol": -405338.64814680367,
+      "context_charge_Ca": -3,
+      "context_elements": {
+        "C": 70,
+        "H": 88,
+        "La": 1,
+        "N": 17,
+        "O": 26
+      },
+      "core_R_model_kcal_mol": -405303.4009723768,
+      "core_charge_Ca": -3,
+      "decision": "La-supported",
+      "delta_R_model_kcal_mol": -35.247174426855054,
+      "endpoint_energies_eV": {
+        "Ca": -171003.39045150872,
+        "La": -153426.24306004005
+      },
+      "expected_class": "La",
+      "expected_region_pass": true,
+      "group": "i0jwn7",
+      "original_atoms": 80,
+      "removed_caps": 4,
+      "retained_original_coordinates_exact": true,
+      "role": "retrospective_structural_transfer"
+    },
+    {
+      "added_formal_charge": 0,
+      "atoms": 159,
+      "case": "1KB0",
+      "charged_added_fragments": [],
+      "charged_added_polar_metal_distances_A": [],
+      "context_R_model_kcal_mol": -405410.24849115347,
+      "context_charge_Ca": -2,
+      "context_elements": {
+        "C": 56,
+        "H": 70,
+        "La": 1,
+        "N": 12,
+        "O": 20
+      },
+      "core_R_model_kcal_mol": -405395.5839287484,
+      "core_charge_Ca": -2,
+      "decision": "Ca-supported",
+      "delta_R_model_kcal_mol": -14.664562405087054,
+      "endpoint_energies_eV": {
+        "Ca": -136471.6142196854,
+        "La": -118891.3619434206
+      },
+      "expected_class": "Ca",
+      "expected_region_pass": true,
+      "group": "q46444",
+      "original_atoms": 71,
+      "removed_caps": 3,
+      "retained_original_coordinates_exact": true,
+      "role": "retrospective_structural_transfer"
+    }
+  ]
+}

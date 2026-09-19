@@ -76,7 +76,7 @@ was corrected without changing the Hamiltonian or launching a calculation.
 The first two test errors were fixture identity/path mistakes, corrected without
 changing expected energies or weakening the runner's directory boundary.
 
-**50 real-fixture tests pass, zero skips:**10integration tests (28.311s) plus40
+**50 real-fixture tests pass, zero skips:**10integration tests (29.740s) plus40
 existing/component tests (57.215s). Checks cover real energy extraction, signs,
 units, released PQQ decisions, unchanged dry coordinates, source water mapping,
 explicit original access, unsupported wet chemistry, charge/input mismatch,

@@ -1,0 +1,118 @@
+{
+  "source": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_torsion_20260920/partial_DFT_result_v3.json",
+    "sha256": "bde98c292f8cb68fb660eacb182f2a33a4166781256554af2f901376b919c7f9"
+  },
+  "case_id": "PQQSEQ_83440678cbbd658047c9",
+  "role": "extra_acidic_ligand_homolog",
+  "units": "kcal/mol unless explicitly marked",
+  "score_sign": "R = E_Ca - E_La; positive differential work is a shift toward La on the same protocol scale",
+  "general_response_accuracy_threshold": null,
+  "rows": [
+    {
+      "angle_radian": -0.2,
+      "endpoints": {
+        "Ca": {
+          "DFT_work_kcal_mol": 30.47422140295202,
+          "MACE_work_kcal_mol": 31.07484814126837,
+          "composite_work_kcal_mol": 30.99057834404237,
+          "solvent_transfer_work_kcal_mol": -0.08426979722599981,
+          "MACE_minus_DFT_kcal_mol": 0.6006267383163504,
+          "composite_minus_DFT_kcal_mol": 0.5163569410903506
+        },
+        "La": {
+          "DFT_work_kcal_mol": 62.63295968586436,
+          "MACE_work_kcal_mol": 61.813203601080566,
+          "composite_work_kcal_mol": 59.48110397574495,
+          "solvent_transfer_work_kcal_mol": -2.3320996253356157,
+          "MACE_minus_DFT_kcal_mol": -0.8197560847837906,
+          "composite_minus_DFT_kcal_mol": -3.1518557101194062
+        }
+      },
+      "DFT_Ca_minus_La_work_kcal_mol": -32.15873828291234,
+      "Ca_minus_La_work_kcal_mol": {
+        "MACE": -30.738355459812198,
+        "composite": -28.49052563170258,
+        "solvent_transfer": 2.247829828109616
+      },
+      "differential_errors": {
+        "MACE": {
+          "model_minus_DFT_kcal_mol": 1.420382823100141,
+          "absolute_error_percent_of_native_signal": 4.416786537470801
+        },
+        "composite": {
+          "model_minus_DFT_kcal_mol": 3.668212651209757,
+          "absolute_error_percent_of_native_signal": 11.406581374365906
+        }
+      }
+    },
+    {
+      "angle_radian": 0.2,
+      "endpoints": {
+        "Ca": {
+          "DFT_work_kcal_mol": -22.392882197234627,
+          "MACE_work_kcal_mol": -23.304891471358378,
+          "composite_work_kcal_mol": -23.01882483879992,
+          "solvent_transfer_work_kcal_mol": 0.2860666325584589,
+          "MACE_minus_DFT_kcal_mol": -0.9120092741237507,
+          "composite_minus_DFT_kcal_mol": -0.6259426415652918
+        },
+        "La": {
+          "DFT_work_kcal_mol": -52.26070811896686,
+          "MACE_work_kcal_mol": -51.840284785195756,
+          "composite_work_kcal_mol": -49.97597240286719,
+          "solvent_transfer_work_kcal_mol": 1.8643123823285634,
+          "MACE_minus_DFT_kcal_mol": 0.4204233337711045,
+          "composite_minus_DFT_kcal_mol": 2.284735716099668
+        }
+      },
+      "DFT_Ca_minus_La_work_kcal_mol": 29.867825921732233,
+      "Ca_minus_La_work_kcal_mol": {
+        "MACE": 28.53539331383738,
+        "composite": 26.957147564067274,
+        "solvent_transfer": -1.5782457497701046
+      },
+      "differential_errors": {
+        "MACE": {
+          "model_minus_DFT_kcal_mol": -1.3324326078948552,
+          "absolute_error_percent_of_native_signal": 4.461096737962971
+        },
+        "composite": {
+          "model_minus_DFT_kcal_mol": -2.9106783576649597,
+          "absolute_error_percent_of_native_signal": 9.745196604842642
+        }
+      }
+    }
+  ],
+  "existing_composite_finite_difference_diagnostics": {
+    "Ca": {
+      "boundary_is_lowest_sample": true,
+      "central_curvature_kcal_mol_rad2": {
+        "0.2": 199.29383763106122,
+        "0.4": 127.37255302160311
+      },
+      "central_slope_kcal_mol_rad": {
+        "0.2": -135.02350795710572,
+        "0.4": -110.28015401182589
+      },
+      "lowest_sampled_angle_radian": 0.4
+    },
+    "La": {
+      "boundary_is_lowest_sample": true,
+      "central_curvature_kcal_mol_rad2": {
+        "0.2": 237.6282893219439,
+        "0.4": 118.6306207607293
+      },
+      "central_slope_kcal_mol_rad": {
+        "0.2": -273.64269094653037,
+        "0.4": -223.03455632199433
+      },
+      "lowest_sampled_angle_radian": 0.4
+    }
+  },
+  "scientific_calls_added": 0,
+  "biological_label": null,
+  "affinity_correction": null,
+  "minimum_validated": false,
+  "baseline_changed": false
+}

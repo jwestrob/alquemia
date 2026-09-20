@@ -41,9 +41,11 @@ Preparation/adapters and restartable native endpoint operation are exposed by:
 "$FOLD_PY" -m unittest discover -s tests -p test_accommodation_folds.py -v
 ```
 
-Comparison/reporting is in scripts/accommodation_folds_compare.py. Its actual
-commands and final results will be recorded after the four solvent collections
-exist. The original25replay cases stay separate from225otherstructural samples.
+Comparison/reporting is in scripts/accommodation_folds_compare.py. All four
+solvent collections now exist, including explicit recovery of collection after
+two executor failures. Actual commands are in [comparison commands](FOLD_COMPARISON_COMMANDS.md)
+and final findings in [comparison report](FOLD_COMPARISON_REPORT.md).
+The original25replay cases stay separate from225otherstructural samples.
 No threshold is refitted, missing scores remain missing, and no ensemble is
 silently accepted after dropping one of its declared members.
 

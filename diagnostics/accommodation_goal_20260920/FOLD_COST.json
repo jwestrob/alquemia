@@ -1,0 +1,307 @@
+{
+  "scope": "actual fold preparation, native MACE and native GFN2; both core and context; includes failed import and SCF attempts",
+  "jobs": [
+    {
+      "job_id": "1203744",
+      "name": "PQQ-fold-prepare",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed_seconds": 138,
+      "allocated_cpus": 64,
+      "allocated_tres": "billing=64,cpu=64,node=1",
+      "actual_cpu_time": "34:30.456",
+      "peak_rss": "",
+      "nodes": "node-64-768g-11",
+      "allocated_core_seconds": 8832,
+      "allocated_gpus_from_submission": 0,
+      "allocated_gpu_seconds": 0,
+      "steps": [
+        {
+          "job_id": "1203744.batch",
+          "name": "batch",
+          "state": "COMPLETED",
+          "exit_code": "0:0",
+          "elapsed_seconds": "138",
+          "allocated_cpus": "64",
+          "allocated_tres": "cpu=64,mem=0,node=1",
+          "actual_cpu_time": "34:30.454",
+          "peak_rss": "1238064K",
+          "nodes": "node-64-768g-11"
+        },
+        {
+          "job_id": "1203744.extern",
+          "name": "extern",
+          "state": "COMPLETED",
+          "exit_code": "0:0",
+          "elapsed_seconds": "138",
+          "allocated_cpus": "64",
+          "allocated_tres": "billing=64,cpu=64,node=1",
+          "actual_cpu_time": "00:00.001",
+          "peak_rss": "72K",
+          "nodes": "node-64-768g-11"
+        }
+      ]
+    },
+    {
+      "job_id": "1203747",
+      "name": "PQQ-fold-MACE",
+      "state": "FAILED",
+      "exit_code": "1:0",
+      "elapsed_seconds": 0,
+      "allocated_cpus": 32,
+      "allocated_tres": "billing=32,cpu=32,node=1",
+      "actual_cpu_time": "00:00.075",
+      "peak_rss": "",
+      "nodes": "node-224-2t-8gpu-1",
+      "allocated_core_seconds": 0,
+      "allocated_gpus_from_submission": 1,
+      "allocated_gpu_seconds": 0,
+      "steps": [
+        {
+          "job_id": "1203747.batch",
+          "name": "batch",
+          "state": "FAILED",
+          "exit_code": "1:0",
+          "elapsed_seconds": "0",
+          "allocated_cpus": "32",
+          "allocated_tres": "cpu=32,mem=0,node=1",
+          "actual_cpu_time": "00:00.073",
+          "peak_rss": "0",
+          "nodes": "node-224-2t-8gpu-1"
+        },
+        {
+          "job_id": "1203747.extern",
+          "name": "extern",
+          "state": "COMPLETED",
+          "exit_code": "0:0",
+          "elapsed_seconds": "1",
+          "allocated_cpus": "32",
+          "allocated_tres": "billing=32,cpu=32,node=1",
+          "actual_cpu_time": "00:00.001",
+          "peak_rss": "0",
+          "nodes": "node-224-2t-8gpu-1"
+        }
+      ]
+    },
+    {
+      "job_id": "1203769",
+      "name": "PQQ-fold-MACE",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed_seconds": 170,
+      "allocated_cpus": 32,
+      "allocated_tres": "billing=32,cpu=32,node=1",
+      "actual_cpu_time": "02:08.487",
+      "peak_rss": "",
+      "nodes": "node-224-2t-8gpu-1",
+      "allocated_core_seconds": 5440,
+      "allocated_gpus_from_submission": 1,
+      "allocated_gpu_seconds": 170,
+      "steps": [
+        {
+          "job_id": "1203769.batch",
+          "name": "batch",
+          "state": "COMPLETED",
+          "exit_code": "0:0",
+          "elapsed_seconds": "170",
+          "allocated_cpus": "32",
+          "allocated_tres": "cpu=32,mem=0,node=1",
+          "actual_cpu_time": "02:08.485",
+          "peak_rss": "1172596K",
+          "nodes": "node-224-2t-8gpu-1"
+        },
+        {
+          "job_id": "1203769.extern",
+          "name": "extern",
+          "state": "COMPLETED",
+          "exit_code": "0:0",
+          "elapsed_seconds": "170",
+          "allocated_cpus": "32",
+          "allocated_tres": "billing=32,cpu=32,node=1",
+          "actual_cpu_time": "00:00.001",
+          "peak_rss": "0",
+          "nodes": "node-224-2t-8gpu-1"
+        }
+      ]
+    },
+    {
+      "job_id": "1203797",
+      "name": "PQQ-fold-GFN2",
+      "state": "FAILED",
+      "exit_code": "1:0",
+      "elapsed_seconds": 1138,
+      "allocated_cpus": 64,
+      "allocated_tres": "billing=64,cpu=64,node=1",
+      "actual_cpu_time": "11:41:26",
+      "peak_rss": "",
+      "nodes": "node-64-768g-19",
+      "allocated_core_seconds": 72832,
+      "allocated_gpus_from_submission": 0,
+      "allocated_gpu_seconds": 0,
+      "steps": [
+        {
+          "job_id": "1203797.batch",
+          "name": "batch",
+          "state": "FAILED",
+          "exit_code": "1:0",
+          "elapsed_seconds": "1138",
+          "allocated_cpus": "64",
+          "allocated_tres": "cpu=64,mem=0,node=1",
+          "actual_cpu_time": "11:41:26",
+          "peak_rss": "3950924K",
+          "nodes": "node-64-768g-19"
+        },
+        {
+          "job_id": "1203797.extern",
+          "name": "extern",
+          "state": "COMPLETED",
+          "exit_code": "0:0",
+          "elapsed_seconds": "1138",
+          "allocated_cpus": "64",
+          "allocated_tres": "billing=64,cpu=64,node=1",
+          "actual_cpu_time": "00:00.001",
+          "peak_rss": "0",
+          "nodes": "node-64-768g-19"
+        }
+      ]
+    },
+    {
+      "job_id": "1203798",
+      "name": "PQQ-fold-GFN2",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed_seconds": 854,
+      "allocated_cpus": 64,
+      "allocated_tres": "billing=64,cpu=64,node=1",
+      "actual_cpu_time": "07:07:30",
+      "peak_rss": "",
+      "nodes": "node-64-768g-6",
+      "allocated_core_seconds": 54656,
+      "allocated_gpus_from_submission": 0,
+      "allocated_gpu_seconds": 0,
+      "steps": [
+        {
+          "job_id": "1203798.batch",
+          "name": "batch",
+          "state": "COMPLETED",
+          "exit_code": "0:0",
+          "elapsed_seconds": "854",
+          "allocated_cpus": "64",
+          "allocated_tres": "cpu=64,mem=0,node=1",
+          "actual_cpu_time": "07:07:30",
+          "peak_rss": "4254092K",
+          "nodes": "node-64-768g-6"
+        },
+        {
+          "job_id": "1203798.extern",
+          "name": "extern",
+          "state": "COMPLETED",
+          "exit_code": "0:0",
+          "elapsed_seconds": "854",
+          "allocated_cpus": "64",
+          "allocated_tres": "billing=64,cpu=64,node=1",
+          "actual_cpu_time": "00:00.001",
+          "peak_rss": "0",
+          "nodes": "node-64-768g-6"
+        }
+      ]
+    },
+    {
+      "job_id": "1203799",
+      "name": "PQQ-fold-GFN2",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed_seconds": 940,
+      "allocated_cpus": 64,
+      "allocated_tres": "billing=64,cpu=64,node=1",
+      "actual_cpu_time": "07:56:21",
+      "peak_rss": "",
+      "nodes": "node-64-768g-17",
+      "allocated_core_seconds": 60160,
+      "allocated_gpus_from_submission": 0,
+      "allocated_gpu_seconds": 0,
+      "steps": [
+        {
+          "job_id": "1203799.batch",
+          "name": "batch",
+          "state": "COMPLETED",
+          "exit_code": "0:0",
+          "elapsed_seconds": "940",
+          "allocated_cpus": "64",
+          "allocated_tres": "cpu=64,mem=0,node=1",
+          "actual_cpu_time": "07:56:21",
+          "peak_rss": "4167996K",
+          "nodes": "node-64-768g-17"
+        },
+        {
+          "job_id": "1203799.extern",
+          "name": "extern",
+          "state": "COMPLETED",
+          "exit_code": "0:0",
+          "elapsed_seconds": "940",
+          "allocated_cpus": "64",
+          "allocated_tres": "billing=64,cpu=64,node=1",
+          "actual_cpu_time": "00:00.001",
+          "peak_rss": "0",
+          "nodes": "node-64-768g-17"
+        }
+      ]
+    },
+    {
+      "job_id": "1203800",
+      "name": "PQQ-fold-GFN2",
+      "state": "FAILED",
+      "exit_code": "1:0",
+      "elapsed_seconds": 776,
+      "allocated_cpus": 64,
+      "allocated_tres": "billing=64,cpu=64,node=1",
+      "actual_cpu_time": "07:28:29",
+      "peak_rss": "",
+      "nodes": "node-64-768g-21",
+      "allocated_core_seconds": 49664,
+      "allocated_gpus_from_submission": 0,
+      "allocated_gpu_seconds": 0,
+      "steps": [
+        {
+          "job_id": "1203800.batch",
+          "name": "batch",
+          "state": "FAILED",
+          "exit_code": "1:0",
+          "elapsed_seconds": "776",
+          "allocated_cpus": "64",
+          "allocated_tres": "cpu=64,mem=0,node=1",
+          "actual_cpu_time": "07:28:29",
+          "peak_rss": "4280368K",
+          "nodes": "node-64-768g-21"
+        },
+        {
+          "job_id": "1203800.extern",
+          "name": "extern",
+          "state": "COMPLETED",
+          "exit_code": "0:0",
+          "elapsed_seconds": "776",
+          "allocated_cpus": "64",
+          "allocated_tres": "billing=64,cpu=64,node=1",
+          "actual_cpu_time": "00:00.001",
+          "peak_rss": "0",
+          "nodes": "node-64-768g-21"
+        }
+      ]
+    }
+  ],
+  "allocated_core_seconds": 251584,
+  "allocated_gpu_seconds": 170,
+  "timing_resolution": "Slurm integer job elapsed seconds; subsecond failed import rounds to zero",
+  "gpu_accounting": "one GPU in explicit submission; this cluster omits GPU from AllocTRES",
+  "new_MACE_endpoints": 834,
+  "reused_MACE_endpoints": 98,
+  "new_GFN2_attempts": 1668,
+  "reused_GFN2_endpoints": 196,
+  "not_included": [
+    "fold generation archived before experiment",
+    "historical reused endpoint costs",
+    "separate donor-response experiments",
+    "DFT comparator still running"
+  ],
+  "interpretation": "one-time dual-representation robustness test, not per-site production cost or matched-hardware DFT speedup"
+}

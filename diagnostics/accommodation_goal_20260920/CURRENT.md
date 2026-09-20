@@ -11,6 +11,19 @@ credible metal-dependent response. Unknown PLM predictions remain unlabeled.
 
 ## Current execution
 
+**Completed benefit:** on the additional La-conditioned reference folds, the
+context solvent correction removes the native MACE wrong calls. The predeclared
+four-fold median also corrects Q9Z4J7 on unchanged protein coverage. This supports
+more reliable use of La-conditioned folds; it does not establish superiority to
+DFT or new biological accuracy. Ca-conditioned folds expose two new individual
+errors, and incomplete preparations still limit coverage. Read the
+[full comparison](FOLD_COMPARISON_REPORT.md), committed as7069cd1.
+
+The next practical question is whether this robustness survives the three-fold
+inventory available for the PLM scan. The separate [three-fold plan](THREE_FOLD_PLAN.md)
+tests every possible three-of-four subset of the consumed La-conditioned reference
+folds, with unchanged bands and no new molecular calculations or selected subset.
+
 - Fast-PQQ release complete: commit8dd81ba, report in pqq_fast_release_20260920.
 - Matched source inventory complete: commit8ace781. All250 existingAF3 structures
   pinned, including125Ca-conditioned and125La-conditioned, no new folds.
@@ -22,7 +35,8 @@ credible metal-dependent response. Unknown PLM predictions remain unlabeled.
   match their archive. No scientific MACE failure; earlier1203747 failed importing
   CPU-only gemmi before any scientific evaluation and was repaired with lazy imports.
 - Solvent tasks:1668new +196exact-compatible reused nativeGFN2 endpoints.
-  Four disjoint case manifests run as1203797/1203798/1203799/1203800 on existing64CPU runners.
+  Four disjoint case manifests completed as1203797/1203798/1203799/1203800 on existing64CPU runners.
+  Two vacuum SCF failures remain unavailable; all other results were collected.
   Initial split failed path-containment validation before execution; version2
   stages actual input copies within each manifest directory. No solver results
   were generated or overwritten in either preparation failure.
@@ -67,15 +81,20 @@ mechanical correction, or ensemble promotion has occurred.
 Geometry-only mapping41851ec found62flagged reference folds, but only one has
 the same extraAsp compression as the two PLM examples. The others are anchorGlu
 warnings and do not inherit the extraAsp validation. The sole matched-phenotype
-reference (MMOL1770,Ca-conditioned sample1) is tested at fixed±0.2rad with4newMACE
+reference (MMOL1770,Ca-conditioned sample1) completed fixed±0.2rad with4newMACE
 and8newGFN2 calls, q0reused, in accommodation_reference_profile_20260920. No newDFT.
+Both metals prefer the same boundary point: native MACE's wrong call becomes
+inconclusive; the already-correct composite call gains margin. This does not add
+a correct decisive classification or establish an interior relaxed minimum.
 
-A separate baseline comparison is in preparation by khoury_benchmark: exact old
+A separate baseline comparison is running as1203976–1203979: exact old
 DFTcore recipe on all208supported noncanonical fold samples (416endpoints), with
 25canonical outputs reused and17unsupported retained. This is a direct comparator
 for accuracy/conditioning robustness, parallel to candidate development, with no
-threshold fitting or baseline change. Confirm actualsubmission/status in that
-new experiment record before running anything.
+threshold fitting or baseline change. Four64CPU jobs each run four16-rank endpoints;
+automatic collection is installed. Read
+[status and commands](../accommodation_fold_DFT_20260920/STATUS.md), commit82c7bcc.
+Do not duplicate these jobs. Early partial pairs are insufficient for a panel claim.
 
 The H-only minimizer diagnosticb62b011 converged under the same generic potential
 after monotonic preconditioning. It fixes silent numerical failure; that potential

@@ -1,5 +1,25 @@
 # Agent entry point
 
+## Latest: three-fold report works; physical response still under test — 2026-09-20
+
+Optional `affordable_workflow.py standard ensemble` is committed as11d9669;
+read [its commands and limits](diagnostics/pqq_ensemble_20260920/REPORT.md).
+Every available consumed-reference triple is correct with context+solvent, and
+the simpler native core matches that result. The two isolated PLM development
+cases remain Ca-like across all three folds; [report](diagnostics/plm_fold_sensitivity_20260920/REPORT.md),
+commit82ed189. Their biological labels remain unknown. No ensemble default or
+production PLM rescore occurred.
+
+NativeDFT1203771 confirms the small control response and the first large PLM
+calcium response; lanthanum/differential validation remains incomplete. The four
+preserved-baseline jobs1203976–1203979 remain active. Both have automatic collectors;
+do not duplicate them. The same100-triple DFT comparison is implemented in11a41b0;
+run its [final command](diagnostics/accommodation_fold_DFT_20260920/THREE_FOLD_DFT_REPORT.md)
+after final_collection.json exists. Root owns the current checkpoint; all three
+agents' original scoped tasks are completed or finishing reports. Reactivate
+water_basins for full native response and khoury_benchmark for final matched DFT
+comparison when actual collections exist. Preserve independentCC1202429.
+
 ## Current: fast PQQ released; structural robustness under test — 2026-09-20
 
 The authorized fast PQQ source-to-score release passed and is committed as

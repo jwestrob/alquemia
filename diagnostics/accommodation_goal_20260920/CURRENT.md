@@ -87,8 +87,12 @@ passing. The ready command is in accommodation_fold_DFT_20260920/THREE_FOLD_DFT_
   response is in OMOL, with the solvent term moderating it. NativeDFT1203771 now
   checks the16predeclared endpoints. Keep the failed1H4IGFN2 point unavailable.
   The first four DFT control endpoints now agree with all displacement-work signs
-  and small differential response; the large PLM response remains pending. See
+  and small differential response; the PLM differential response remains pending. See
   [partial DFT report](../accommodation_torsion_20260920/PARTIAL_DFT_REPORT_v1.md).
+  Partial_v2 now adds the first PLM Ca origin and both displaced Ca endpoints:
+  native DFT confirms the large predicted energy penalty/relief in both directions.
+  This supports actual local strain response on the calcium surface. La response
+  and metal selectivity remain unavailable; do not infer them from calcium alone.
 - CC1202429 remains independent; preserve its monitor and outputs.
 
 ## Numerical replay and pooling rules

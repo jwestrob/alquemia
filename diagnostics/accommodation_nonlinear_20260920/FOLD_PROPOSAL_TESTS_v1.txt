@@ -1,0 +1,26 @@
+test_actual_prelaunch_missing_proposals_preserve_baselines_and_denominators (test_accommodation_fold_proposals.FoldProposalPreflight.test_actual_prelaunch_missing_proposals_preserve_baselines_and_denominators) ... ok
+test_actual_proposal_input_staging_in_four_disjoint_shards (test_accommodation_fold_proposals.FoldProposalPreflight.test_actual_proposal_input_staging_in_four_disjoint_shards) ... ok
+test_corrupted_real_scope_rejected (test_accommodation_fold_proposals.FoldProposalPreflight.test_corrupted_real_scope_rejected) ... ok
+test_exact_primary_population_and_one_actual_missing_origin (test_accommodation_fold_proposals.FoldProposalPreflight.test_exact_primary_population_and_one_actual_missing_origin) ... ok
+test_original_completed_thirty_case_selection_regression (test_accommodation_fold_proposals.FoldProposalPreflight.test_original_completed_thirty_case_selection_regression) ... FAIL
+test_real_archived_composite_algebra_replays_every_available_pair (test_accommodation_fold_proposals.FoldProposalPreflight.test_real_archived_composite_algebra_replays_every_available_pair) ... ok
+test_receipt_indirection_uses_actual_archived_shard (test_accommodation_fold_proposals.FoldProposalPreflight.test_receipt_indirection_uses_actual_archived_shard) ... ok
+
+======================================================================
+FAIL: test_original_completed_thirty_case_selection_regression (test_accommodation_fold_proposals.FoldProposalPreflight.test_original_completed_thirty_case_selection_regression)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/tests/test_accommodation_fold_proposals.py", line 72, in test_original_completed_thirty_case_selection_regression
+    self.assertEqual(new['cases'], old['cases'])
+AssertionError: Lists differ: [{'R0[1061 chars]97, 'biological_group': 'a0a3f2yly8', 'case_id[62486 chars]le'}] != [{'R0[1061 chars]97, 'case_id': 'a0a3f2yly8-pqq-la_model', 'del[61624 chars]le'}]
+
+First differing element 0:
+{'R0'[1060 chars]97, 'biological_group': 'a0a3f2yly8', 'case_id[1021 chars]ble'}
+{'R0'[1060 chars]97, 'case_id': 'a0a3f2yly8-pqq-la_model', 'del[987 chars]ble'}
+
+Diff is 95995 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 7 tests in 39.715s
+
+FAILED (failures=1)

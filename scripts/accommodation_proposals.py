@@ -170,11 +170,18 @@ def prepare(references, torsion, primary_result, compact, agreement, output, cpu
 
 def validate(manifest):
     m = read_json(manifest)
-    if m['protocol_id'] != PROTOCOL or m['settings'] != SETTINGS or len(m['tasks']) != 60:
+    fold_scope = m.get('evaluation_scope') == 'primary225_fold_transfer_v1'
+    if fold_scope:
+        from accommodation_fold_proposals import validate_scope
+        validate_scope(m)
+    count = 416 if fold_scope else 60
+    cases = 208 if fold_scope else 30
+    if m['protocol_id'] != PROTOCOL or m['settings'] != SETTINGS or len(m['tasks']) != count:
         raise InvalidArtifact('frozen proposal policy differs')
-    if len(m['cases']) != 30 or {(t['case_id'], t['metal']) for t in m['tasks']} != {(c['case_id'], z) for c in m['cases'] for z in ('Ca', 'La')}:
-        raise InvalidArtifact('complete 30-context/60-endpoint scope differs')
-    for key in ('references', 'torsion', 'primary_result', 'compact', 'agreement', 'software', 'orca', 'cpu_executable', 'gpu_executable', 'frozen_comparison'):
+    if len(m['cases']) != cases or {(t['case_id'], t['metal']) for t in m['tasks']} != {(c['case_id'], z) for c in m['cases'] for z in ('Ca', 'La')}:
+        raise InvalidArtifact('complete declared context/endpoint scope differs')
+    sources = ('fold_design', 'fold_comparison', 'proposal_reference', 'sources') if fold_scope else ('references', 'torsion', 'primary_result', 'compact')
+    for key in (*sources, 'agreement', 'software', 'orca', 'cpu_executable', 'gpu_executable', 'frozen_comparison'):
         verify(m[key])
     for pin in m['implementation'].values():
         verify(pin)
@@ -191,7 +198,7 @@ def validate(manifest):
     for c in m['cases']:
         ca, la = [next(t for t in m['tasks'] if t['case_id'] == c['case_id'] and t['metal'] == z) for z in ('Ca', 'La')]
         paired(verify(la['xyz']), verify(ca['xyz']), la['charge'], ca['charge'])
-    return {'status': 'validated', 'manifest': record(manifest), 'starts': 60,
+    return {'status': 'validated', 'manifest': record(manifest), 'starts': count,
             'q0_available': sum(t['q0_status'] == 'available' for t in m['tasks']),
             'new_molecular_calls': 0}
 
@@ -326,11 +333,35 @@ def propose(manifest):
     return low_prepare(manifest)
 
 
+def write_low_shards(dest, low, shard_count):
+    """Partition existing explicit tasks; each executor owns its own contained paths."""
+    from affordable_workflow import dry_run
+    tasks, reused = low['all_tasks'], low['reused']
+    shard_pins, task_manifests = [], {}
+    for shard in range(shard_count):
+        subset = tasks[shard::shard_count]
+        selected = {t['task_id'] for t in subset}
+        sm = {**low, 'all_tasks': subset, 'tasks': [t for t in subset if t['task_id'] not in reused],
+              'reused': {k: v for k, v in reused.items() if k in selected}, 'shard': shard}
+        sp = Path(dest) / ('shard_' + str(shard)) / 'manifest.json'; write_new(sp, sm)
+        dry = dry_run(sp) if sm['tasks'] else {'status': 'no_new_tasks'}
+        write_new(sp.parent / 'PREFLIGHT.json', dry); shard_pins.append(record(sp))
+        task_manifests.update({tid: record(sp) for tid in selected})
+    return {**low, 'tasks': [], 'shards': shard_pins, 'task_manifests': task_manifests,
+            'execute_master_forbidden': True}
+
+
+def low_completed(low, master, task_id):
+    actual = verify(low['task_manifests'][task_id]) if 'task_manifests' in low else master
+    return low['reused'].get(task_id) or completed(actual, task_id)
+
+
 def low_prepare(manifest):
     from affordable_workflow import dry_run
     m = read_json(manifest); root = Path(manifest).parent
     dest = root / 'proposal_GFN2'; dest.mkdir(parents=True, exist_ok=False)
     tasks, unavailable, reused = [], [], {}
+    shard_count = 4 if m.get('evaluation_scope') == 'primary225_fold_transfer_v1' else 1
     for t in m['tasks']:
         rp = root / 'proposals' / t['task_id'] / 'result.json'
         if not rp.exists():
@@ -341,7 +372,10 @@ def low_prepare(manifest):
             unavailable.append({'task_id': t['task_id'], 'reason': r.get('reason', r['status'])}); continue
         p = r['proposal']
         for medium in ('vacuum', 'alpb'):
-            tid = t['task_id'] + '__' + medium; directory = dest / 'tasks' / tid; directory.mkdir(parents=True)
+            tid = t['task_id'] + '__' + medium
+            shard = len(tasks) % shard_count
+            task_root = dest / ('shard_' + str(shard)) if shard_count > 1 else dest
+            directory = task_root / 'tasks' / tid; directory.mkdir(parents=True)
             xp = directory / 'core.xyz'; shutil.copyfile(verify(p['coordinate']), xp)
             ip = directory / 'endpoint.inp'; ip.write_text(input_text(t['charge'], t['multiplicity'], medium, 'native'))
             task = {'task_id': tid, 'case': t['case_id'], 'case_id': t['case_id'], 'metal': t['metal'],
@@ -358,11 +392,14 @@ def low_prepare(manifest):
            'execution_resources': {'mpi_ranks': 8, 'concurrent_tasks': 8},
            'all_tasks': tasks, 'tasks': [t for t in tasks if t['task_id'] not in reused],
            'reused': reused, 'unavailable_proposals': unavailable, 'new_DFT_calls': 0}
-    if len(tasks) > 120: raise InvalidArtifact('proposal GFN2 scope exceeded')
+    if len(tasks) > m['maximum_new_GFN2_singlepoints']: raise InvalidArtifact('proposal GFN2 scope exceeded')
+    if shard_count > 1:
+        low = write_low_shards(dest, low, shard_count)
     path = dest / 'manifest.json'; write_new(path, low)
-    dry = dry_run(path) if low['tasks'] else {'status': 'no_new_tasks'}
+    dry = ({'status': 'shards_dry_run_pass', 'shards': low['shards']} if shard_count > 1 else
+           dry_run(path) if low['tasks'] else {'status': 'no_new_tasks'})
     write_new(dest / 'PREFLIGHT.json', dry)
-    return {'manifest': record(path), 'new_GFN2_tasks': len(low['tasks']), 'reused': len(reused),
+    return {'manifest': record(path), 'new_GFN2_tasks': len(tasks) - len(reused), 'reused': len(reused),
             'unavailable_proposals': len(unavailable), 'preflight': dry}
 
 
@@ -419,7 +456,7 @@ def collect(manifest, output):
                 rr = {'status': 'unavailable', 'task_id': lt['task_id'], 'energy_hartree': None,
                       'reused_q0': lt['task_id'] in low['reused']}
                 try:
-                    pin = low['reused'].get(lt['task_id']) or completed(lp, lt['task_id'])
+                    pin = low_completed(low, lp, lt['task_id'])
                     if pin is None: raise InvalidArtifact('proposal solver receipt unavailable or failed')
                     original_m = read_json(verify(pin['manifest']))
                     original_t = next(x for x in original_m['all_tasks'] if x['task_id'] == pin['task_id'])
@@ -443,13 +480,15 @@ def collect(manifest, output):
                     row['selection'] = select_endpoint(row['origin_components'], row['proposal_components'])
                     row['status'] = row['selection']['status']; row['reason'] = None
         endpoints.append(row); index[t['case_id'], t['metal']] = row
-    frozen = read_json(verify(m['frozen_comparison'])); cases = []
+    frozen = read_json(verify(m.get('fold_comparison', m['frozen_comparison']))); cases = []
     for c in m['cases']:
         pair = {z: index[c['case_id'], z] for z in ('Ca', 'La')}
         row = {'case_id': c['case_id'], 'label_scope': c['label_scope'],
                'expected_class': c.get('expected_class_for_later_report_only'),
                'status': 'unavailable', 'R0': None, 'R_proposal': None, 'R_selected': None,
                'old_band_origin_decision': None, 'old_band_selected_decision': None}
+        for key in ('root_case_id', 'biological_group', 'source_conditioning_metal', 'canonical_coordinate_match'):
+            if key in c: row[key] = c[key]
         for name, field in (('R0', 'origin_components'), ('R_proposal', 'proposal_components')):
             if all(e[field] is not None for e in pair.values()): row[name] = score(pair['Ca'][field], pair['La'][field])
         if all(e['status'] == 'available' for e in pair.values()):
@@ -462,14 +501,22 @@ def collect(manifest, output):
         row['origin_replay_contrast_difference_model_kcal_mol'] = (row['R0']['composite_R_model_kcal_mol'] - old['composite_R_model_kcal_mol']) if row['R0'] and old else None
         row['delta_R_model_kcal_mol'] = row['R_selected']['composite_R_model_kcal_mol'] - row['R0']['composite_R_model_kcal_mol'] if row['R_selected'] and row['R0'] else None
         cases.append(row)
+    for c in m.get('unavailable_cases', []):
+        cases.append({**c, 'expected_class': c['expected_class_for_later_report_only'],
+                      'status': 'unavailable', 'R0': None, 'R_proposal': None, 'R_selected': None,
+                      'old_band_origin_decision': None, 'old_band_selected_decision': None,
+                      'endpoint_selection': {}, 'delta_R_model_kcal_mol': None})
     evaluations = [read_json(p) for p in root.glob('proposals/*/evaluations/*/result.json')]
     natives = [read_json(verify(e['MACE'])) for e in evaluations if e.get('MACE')]
     groups = {'canonical': [r for r in cases if r['case_id'].endswith('-pqq-la_model')],
               'consumed_crystals': [r for r in cases if r['case_id'] in ('1H4I', '4MAE', '1KB0')],
               'unlabeled_PLM': [r for r in cases if r['case_id'] in PLM]}
+    if m.get('evaluation_scope') == 'primary225_fold_transfer_v1':
+        groups = {'primary225': cases, **{z + '_conditioned': [r for r in cases if r['source_conditioning_metal'] == z] for z in ('La', 'Ca')}}
     costs = [read_json(p) for p in root.glob('proposal_execution_*.json')]
     result = {'protocol_id': PROTOCOL, 'manifest': record(manifest), 'endpoints': endpoints, 'cases': cases,
-              'endpoint_denominator': 60, 'case_denominator': 30,
+              'endpoint_denominator': 2 * len(cases), 'case_denominator': len(cases),
+              'prepared_endpoint_denominator': len(m['tasks']),
               'available_endpoints': sum(r['status'] == 'available' for r in endpoints),
               'available_cases': sum(r['status'] == 'available' for r in cases),
               'proposal_status_counts': dict(Counter(read_json(p)['status'] for p in root.glob('proposals/*/result.json'))),
@@ -489,7 +536,7 @@ def collect(manifest, output):
 
 def report(result, output):
     lines = ['# MACE proposal / composite selection', '',
-             f"Available: {result['available_cases']}/30 cases, {result['available_endpoints']}/60 endpoints.", '',
+             f"Available: {result['available_cases']}/{result['case_denominator']} cases, {result['available_endpoints']}/{result['endpoint_denominator']} endpoints.", '',
              '| Stratum | Stage | Correct | Wrong | Inconclusive | Unavailable | Unlabeled | Total |',
              '|---|---|---:|---:|---:|---:|---:|---:|']
     for group, stages in result['counts'].items():

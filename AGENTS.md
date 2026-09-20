@@ -13,8 +13,11 @@ Read [proposal result](diagnostics/accommodation_nonlinear_20260920/PROPOSAL_REP
 The next [declared challenge](diagnostics/accommodation_nonlinear_20260920/FOLD_TRANSFER_PLAN.md)
 uses every225primary noncanonical reference fold, with the same physical rule and
 all unavailable inputs retained. A distinct canonical-only development reference
-was frozen inbdec940; old-band transfer remains explicit. Water_basins completed all208 supported
-physical maps1204176; Khoury owns runner adaptation; root reviews before energy submission.
+was frozen inbdec940; old-band transfer remains explicit. All208 supported physical maps are ready. Reviewed GPU1204185 now runs
+the unchanged proposal rule (416tasks,415available origins). Khoury may launch its
+four finite solvent shards after actual dry-runs; no further permission is needed.
+Adapter7809fe0/review32ef387 and seven real-artifact tests passed. Water_basins is
+finished; Khoury/root own execution and results.
 Second_shell owns final existingDFT comparisons after1203976–1203979 complete.
 All production defaults and PLM results remain unchanged; preserve independentCC.
 Read [current checkpoint](diagnostics/accommodation_goal_20260920/CURRENT.md) before

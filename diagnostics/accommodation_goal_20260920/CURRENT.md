@@ -1,6 +1,6 @@
 # Overnight accuracy research checkpoint — 2026-09-20
 
-## Latest substantive result and continuation — 13:10 UTC
+## Latest substantive result and continuation — 13:35 UTC
 
 Native DFT confirms both large PLM differential donor responses. Native MACE
 captures the direction and approximate magnitude, supporting a physical strain
@@ -24,18 +24,21 @@ improvement. [Proposal report](../accommodation_nonlinear_20260920/PROPOSAL_REPO
 The next [fixed fold-transfer plan](../accommodation_nonlinear_20260920/FOLD_TRANSFER_PLAN.md)
 uses all225 primary noncanonical reference structures, preserving17unsupported
 preparations and the archived context solvent failure. Water_basins completed all208 supported maps
-as1204176 (57reused/151new, zero energies), retaining all225rows. Khoury owns
-the thin proposal-runner adapter; root approved its reuse design and reviews the
-actual finite manifest before energy submission. No parameter changes or selected
-failure subset. Root froze a **distinct canonical-only developmental reference**
+as1204176 (57reused/151new, zero energies), retaining all225rows. The reviewed
+416-task proposal manifest has415reusable origins; the one old A8R3S4Ca3La solvent
+failure stays unavailable. GPU1204185 is now running the unchanged proposal rule
+on oneH200/32CPU/200000MiB. Khoury owns execution and may submit the four disjoint
+64CPU solvent shards after their actual finite dry-runs, without another approval
+round. No parameter changes, selected failure subset or q0 retries. Adapter7809fe0
+and independent review32ef387 are committed; seven real-artifact tests pass. Root froze a **distinct canonical-only developmental reference**
 under the same original extrema rule, before these new fold outputs; old bands
 remain alongside it. [Calibration](../accommodation_nonlinear_20260920/PROPOSAL_CALIBRATION.md),
 commitbdec940; four actual-artifact tests pass. Calibration success is not validation.
 
 Second_shell independently verified proposal states, coordinates, selection and
 energy algebra. It now owns the final preserved-DFT comparison and100triple report
-when the existing four jobs1203976–1203979 finish. Latest checkpoint338/416 complete,
-no terminal failure; do not duplicate calculations or automatic collection. The
+when the existing four jobs1203976–1203979 finish. Jobs1203977/1203979 have left the live queue;1203976/1203978 remain running.
+No final collection exists yet. Do not duplicate calculations or automatic collection. The
 prior partial comparison remains historical. Preserve independentCC1202429.
 
 Root owns integration/current state and the active goal. No production default,

@@ -34,7 +34,26 @@ checks, individual scores/spread/median and developmental frozen-band transfer.
 One real end-to-end request will use the lexicographically first three
 noncanonical Q9Z4J7 La source IDs; six MACE and twelve GFN2 evaluations, no DFT.
 This validates the interface on consumed sources, not new predictive evidence.
-No default ensemble promotion or PLM rescore is authorized by this checkpoint.
+The interface check makes no ensemble default or production scan changes.
+
+The reference interface check completed successfully as1204055: all declared
+source preparations/endpoints succeeded and the three-fold aggregate reproduced
+archived values. The optional report retains individual scores, spread and
+unknown-input-domain flags. Its release/ensemble checks pass (23tests), committed
+as11d9669. Second_shell owns a subsequently authorized isolated continuation on the TWO existing PLM compression
+diagnostics, all three saved folds each (12MACE/24GFN2, no DFT/folding). This asks
+whether their predictions depend on one source fold; it does not modify the
+production scan or supply biological labels. See [source readiness](PLM_SOURCE_READINESS.md).
+One previously inadmissible source stays included and flagged; preparation
+failure must produce an unavailable group, never a replacement member.
+Its separate plan is diagnostics/plm_fold_sensitivity_20260920/PLAN.md;
+independent jobs1204068(07ab) and1204069(8344) use the existing H200 layout.
+
+Khoury owns the same100-triple comparison against preserved DFT. Its partial
+snapshot is insufficient for a panel conclusion; use the ready final command
+only after the existing DFT jobs finish. No additional DFT work is needed.
+Comparator/tests/report are committed as11a41b0, with five actual-artifact tests
+passing. The ready command is in accommodation_fold_DFT_20260920/THREE_FOLD_DFT_REPORT.md.
 
 - Fast-PQQ release complete: commit8dd81ba, report in pqq_fast_release_20260920.
 - Matched source inventory complete: commit8ace781. All250 existingAF3 structures

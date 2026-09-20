@@ -1,5 +1,18 @@
 # Agent entry point
 
+## Active overnight goal — 2026-09-20
+
+Jacob authorized autonomous pursuit of improved metal-accommodation discrimination:
+"Set a goal ... run on this overnight ... If you see promising new directions,
+pursue them." Read [goal/ownership](diagnostics/accommodation_goal_20260920/GOAL.md).
+The fast-PQQ source-to-score release is separately authorized for conditional
+compatible-PQQ promotion; second_shell owns that integration. Root studies physical
+donor organization; water_basins owns the solvent-consistent gradient pilot;
+khoury_benchmark owns matched source controls. PLM results are predictions, not
+labels. Existing PLM geometry screening already identified compressed sites; reuse
+that work rather than rediscovering it. Speed or preparation alone is not goal
+completion. Preserve all unrelated edits, CC1202429 and its completion monitor.
+
 ## Latest: usable opt-in composite scorer — 2026-09-20
 
 Jacob said "pursue!". Numerical tightening passed all6contexts:24nativeGFN2

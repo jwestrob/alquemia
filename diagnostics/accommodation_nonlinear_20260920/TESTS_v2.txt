@@ -1,0 +1,19 @@
+test_actual_analytic_components_sign_units_and_current_jacobian (test_accommodation_nonlinear.Nonlinear.test_actual_analytic_components_sign_units_and_current_jacobian) ... ok
+test_actual_eight_endpoint_coordinates_charge_and_moving_maps_match (test_accommodation_nonlinear.Nonlinear.test_actual_eight_endpoint_coordinates_charge_and_moving_maps_match) ... ok
+test_actual_nonstationary_gradient_and_unrefined_curvature_rejected (test_accommodation_nonlinear.Nonlinear.test_actual_nonstationary_gradient_and_unrefined_curvature_rejected) ... ok
+test_native_analytic_recipe_matches_actual_converged_input (test_accommodation_nonlinear.Nonlinear.test_native_analytic_recipe_matches_actual_converged_input) ... ok
+test_real_archived_energy_work_and_score_algebra (test_accommodation_nonlinear.Nonlinear.test_real_archived_energy_work_and_score_algebra) ... ERROR
+
+======================================================================
+ERROR: test_real_archived_energy_work_and_score_algebra (test_accommodation_nonlinear.Nonlinear.test_real_archived_energy_work_and_score_algebra)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/tests/test_accommodation_nonlinear.py", line 70, in test_real_archived_energy_work_and_score_algebra
+    self.assertIsNone(endpoint['work_kcal_mol']['composite'])
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'composite'
+
+----------------------------------------------------------------------
+Ran 5 tests in 1.238s
+
+FAILED (errors=1)

@@ -1,0 +1,48 @@
+test_actual_analytic_components_sign_units_and_current_jacobian (test_accommodation_nonlinear.Nonlinear.test_actual_analytic_components_sign_units_and_current_jacobian) ... ok
+test_actual_eight_endpoint_coordinates_charge_and_moving_maps_match (test_accommodation_nonlinear.Nonlinear.test_actual_eight_endpoint_coordinates_charge_and_moving_maps_match) ... FAIL
+test_actual_nonstationary_gradient_and_unrefined_curvature_rejected (test_accommodation_nonlinear.Nonlinear.test_actual_nonstationary_gradient_and_unrefined_curvature_rejected) ... ok
+test_native_analytic_recipe_matches_actual_converged_input (test_accommodation_nonlinear.Nonlinear.test_native_analytic_recipe_matches_actual_converged_input) ... ok
+test_real_archived_energy_work_and_score_algebra (test_accommodation_nonlinear.Nonlinear.test_real_archived_energy_work_and_score_algebra) ... ERROR
+
+======================================================================
+ERROR: test_real_archived_energy_work_and_score_algebra (test_accommodation_nonlinear.Nonlinear.test_real_archived_energy_work_and_score_algebra)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/tests/test_accommodation_nonlinear.py", line 66, in test_real_archived_energy_work_and_score_algebra
+    work=nl.relative_components(point,origin);expected=endpoint['work_kcal_mol']
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/accommodation_nonlinear.py", line 230, in relative_components
+    solvent=((value['GFN2_ALPB_hartree']-origin['GFN2_ALPB_hartree'])-
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'float'
+
+======================================================================
+FAIL: test_actual_eight_endpoint_coordinates_charge_and_moving_maps_match (test_accommodation_nonlinear.Nonlinear.test_actual_eight_endpoint_coordinates_charge_and_moving_maps_match)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/tests/test_accommodation_nonlinear.py", line 37, in test_actual_eight_endpoint_coordinates_charge_and_moving_maps_match
+    np.testing.assert_array_equal(kin.evaluate(q)[0][fixed],kin.positions[fixed])
+  File "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/lib/python3.11/site-packages/numpy/testing/_private/utils.py", line 920, in assert_array_equal
+    assert_array_compare(operator.__eq__, x, y, err_msg=err_msg,
+  File "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/lib/python3.11/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/lib/python3.11/site-packages/numpy/testing/_private/utils.py", line 797, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 8 / 477 (1.68%)
+Max absolute difference: 2.22044605e-16
+Max relative difference: 9.14672378e-15
+ x: array([[ 2.0070e+00, -1.3487e+01, -2.1620e+00],
+       [-4.2700e-01, -1.4916e+01,  5.2840e+00],
+       [-5.8100e-01, -1.3395e+01,  5.2910e+00],...
+ y: array([[ 2.0070e+00, -1.3487e+01, -2.1620e+00],
+       [-4.2700e-01, -1.4916e+01,  5.2840e+00],
+       [-5.8100e-01, -1.3395e+01,  5.2910e+00],...
+
+----------------------------------------------------------------------
+Ran 5 tests in 1.225s
+
+FAILED (failures=1, errors=1)

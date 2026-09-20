@@ -1,0 +1,44 @@
+test_actual_raw_values_median_and_spread (test_pqq_ensemble.Ensemble.test_actual_raw_values_median_and_spread) ... ok
+test_corrupted_membership_conditioning_and_roles_fail (test_pqq_ensemble.Ensemble.test_corrupted_membership_conditioning_and_roles_fail) ... ok
+test_corrupted_real_result_bands_score_and_domain_rejected (test_pqq_ensemble.Ensemble.test_corrupted_real_result_bands_score_and_domain_rejected) ... ok
+test_corrupted_real_source_sequence_fails (test_pqq_ensemble.Ensemble.test_corrupted_real_source_sequence_fails) ... ok
+test_existing_standard_result_cannot_gain_posthoc_members (test_pqq_ensemble.Ensemble.test_existing_standard_result_cannot_gain_posthoc_members) ... ok
+test_extra_real_protein_chain_in_corrupted_copy_changes_assembly (test_pqq_ensemble.Ensemble.test_extra_real_protein_chain_in_corrupted_copy_changes_assembly) ... ok
+test_fresh_literal_standard_execution_and_replay (test_pqq_ensemble.Ensemble.test_fresh_literal_standard_execution_and_replay) ... ok
+test_missing_real_score_makes_entire_descriptor_unavailable (test_pqq_ensemble.Ensemble.test_missing_real_score_makes_entire_descriptor_unavailable) ... ok
+test_real_sources_match_actual_sequence_roles_and_La (test_pqq_ensemble.Ensemble.test_real_sources_match_actual_sequence_roles_and_La) ... ok
+test_unexecuted_or_missing_members_do_not_gain_a_median (test_pqq_ensemble.Ensemble.test_unexecuted_or_missing_members_do_not_gain_a_median) ... ok
+test_actual_existing_water_request_keeps_baseline_route (test_pqq_fast_release.FastSource.test_actual_existing_water_request_keeps_baseline_route) ... ok
+test_actual_fresh_source_reproduction_includes_all_hydrogens_and_charges (test_pqq_fast_release.FastSource.test_actual_fresh_source_reproduction_includes_all_hydrogens_and_charges) ... ok
+test_actual_full_panel_reconstructs_same_context_from_protonated_source (test_pqq_fast_release.FastSource.test_actual_full_panel_reconstructs_same_context_from_protonated_source) ... ok
+test_auto_PQQ_and_explicit_DFT_select_different_backends (test_pqq_fast_release.FastSource.test_auto_PQQ_and_explicit_DFT_select_different_backends) ... ok
+test_explicit_DFT_manifest_retains_original_core_and_recipe (test_pqq_fast_release.FastSource.test_explicit_DFT_manifest_retains_original_core_and_recipe) ... ok
+test_full_fresh_classification_preserves_exact_band_edges (test_pqq_fast_release.FastSource.test_full_fresh_classification_preserves_exact_band_edges) ... ok
+test_invalid_case_path_rejected_before_source_preparation (test_pqq_fast_release.FastSource.test_invalid_case_path_rejected_before_source_preparation) ... ok
+test_literal_standard_CLI_used_fresh_source_and_components (test_pqq_fast_release.FastSource.test_literal_standard_CLI_used_fresh_source_and_components) ... ok
+test_pinned_source_coverage_and_roles (test_pqq_fast_release.FastSource.test_pinned_source_coverage_and_roles) ... ok
+test_prediction_request_needs_no_label_and_retains_unknown_domain (test_pqq_fast_release.FastSource.test_prediction_request_needs_no_label_and_retains_unknown_domain) ... ok
+test_real_core_rebuild_rejects_corrupted_donor_identity (test_pqq_fast_release.FastSource.test_real_core_rebuild_rejects_corrupted_donor_identity) ... ok
+test_release_gate_and_implementation_are_checked (test_pqq_fast_release.FastSource.test_release_gate_and_implementation_are_checked) ... ok
+test_unknown_source_protocol_is_not_silent_DFT_fallback (test_pqq_fast_release.FastSource.test_unknown_source_protocol_is_not_silent_DFT_fallback) ... ok
+test_pqq_microstates (unittest.loader._FailedTest.test_pqq_microstates) ... ERROR
+
+======================================================================
+ERROR: test_pqq_microstates (unittest.loader._FailedTest.test_pqq_microstates)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_pqq_microstates
+Traceback (most recent call last):
+  File "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/lib/python3.11/unittest/loader.py", line 419, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/lib/python3.11/unittest/loader.py", line 362, in _get_module_from_name
+    __import__(name)
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/tests/test_pqq_microstates.py", line 7, in <module>
+    import pytest
+ModuleNotFoundError: No module named 'pytest'
+
+
+----------------------------------------------------------------------
+Ran 24 tests in 7.923s
+
+FAILED (errors=1)

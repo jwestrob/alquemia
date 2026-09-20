@@ -1,0 +1,139 @@
+{
+  "PLM_scored": false,
+  "available_sources": 3,
+  "cost": {
+    "GPU_accounting_note": "Scheduler AllocTRES omits GRES; one requested GPU is recorded by the wrapper and actual native CUDA workers.",
+    "allocated_CPUs": 32,
+    "allocated_GPU_count": 1,
+    "allocated_GPU_seconds": 120,
+    "allocated_core_seconds": 3840,
+    "allocated_host_memory_MiB": 200000,
+    "allocation_evidence": {
+      "scheduler": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_ensemble_20260920/SACCT.txt",
+        "sha256": "c756de6321341736220985b9f2e9edf361a9901c2d69d77748dd63dd247a4cd1"
+      },
+      "submission": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_ensemble_20260920/SUBMISSION.json",
+        "sha256": "a7765f6ad900a8265d210c83118d6b49d442779b467702bdf8ea67b473e6c788"
+      },
+      "wrapper": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_ensemble_20260920/run.sbatch",
+        "sha256": "8263a2bc75875598bc4b4f672f00dcce97f089fa86920e68f610a398ade86e80"
+      }
+    },
+    "elapsed_seconds": 120,
+    "job_id": "1204055",
+    "new_DFT_calls": 0,
+    "new_GFN2_calls": 12,
+    "new_MACE_calls": 6,
+    "scientific_failures": 0,
+    "source_to_score_seconds": 117.67742663994431,
+    "state": "COMPLETED"
+  },
+  "decision": "Ca-supported",
+  "default_changed": false,
+  "frozen_bands": {
+    "Ca_supported_max_R_model_kcal_mol": -405464.18774828,
+    "La_supported_min_R_model_kcal_mol": -405459.1113819997,
+    "protocol_id": "native_OMOL_plus_native_GFN2_ALPB_transfer_v1",
+    "representation": "context",
+    "solver": "native"
+  },
+  "full_ensemble": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_ensemble_20260920/pilot_v1/ensemble_1204055.json",
+    "sha256": "41080d9e6b2f82909aa3e70a974f57d8dfc8ed8f74b99dd451c5bf568b5da303"
+  },
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_ensemble_20260920/pilot_v1/implementation/pqq_ensemble.py",
+    "sha256": "a25aa47ba855430c4f08317dad1ac49d0e7590f58e5c2f056bc18acf66fdeac7"
+  },
+  "independent_validation": false,
+  "limitation": "consumed Q9Z4J7 integration; single-source bands transfer to median is developmental; prior native-core triple parity retained",
+  "median_R_model_kcal_mol": -405469.6848696391,
+  "plan": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_ensemble_20260920/PLAN.md",
+    "sha256": "ec3b750a4e940afe932402d8c4a5a0049ff3d6707ea44a39b45e97d42c8a7d46"
+  },
+  "protocol_id": "PQQ_declared_three_La_fold_median_development_v1",
+  "request": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_ensemble_20260920/REQUEST.json",
+    "sha256": "3c7e857a2f1a4fb60f84768299fad905dfdbefefaf9bc863627772ad2cca48a4"
+  },
+  "required_sources": 3,
+  "rows": [
+    {
+      "R_model_kcal_mol": -405466.96524348116,
+      "case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-1",
+      "context_added_charge": -1,
+      "context_atom_count": 139,
+      "coordinates_vs_archive": {
+        "Ca": {
+          "changed_atom_indices": [],
+          "exact": true,
+          "max_displacement_A": 0.0
+        },
+        "La": {
+          "changed_atom_indices": [],
+          "exact": true,
+          "max_displacement_A": 0.0
+        }
+      },
+      "delta_vs_archive_model_kcal_mol": 6.402842700481415e-10,
+      "endpoint_seconds": 27.732736486941576,
+      "native_MACE_peak_cuda_allocated_bytes": 2590018048,
+      "native_MACE_peak_host_RSS_KiB": 1812224,
+      "source_domain_status": "unvalidated_input_domain",
+      "source_preparation_seconds": 11.100907128304243
+    },
+    {
+      "R_model_kcal_mol": -405469.6848696391,
+      "case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-2",
+      "context_added_charge": -1,
+      "context_atom_count": 127,
+      "coordinates_vs_archive": {
+        "Ca": {
+          "changed_atom_indices": [],
+          "exact": true,
+          "max_displacement_A": 0.0
+        },
+        "La": {
+          "changed_atom_indices": [],
+          "exact": true,
+          "max_displacement_A": 0.0
+        }
+      },
+      "delta_vs_archive_model_kcal_mol": 0.0,
+      "endpoint_seconds": 26.382432729005814,
+      "native_MACE_peak_cuda_allocated_bytes": 2376353280,
+      "native_MACE_peak_host_RSS_KiB": 1816572,
+      "source_domain_status": "unvalidated_input_domain",
+      "source_preparation_seconds": 10.631071291863918
+    },
+    {
+      "R_model_kcal_mol": -405488.87675400084,
+      "case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-3",
+      "context_added_charge": -1,
+      "context_atom_count": 145,
+      "coordinates_vs_archive": {
+        "Ca": {
+          "changed_atom_indices": [],
+          "exact": true,
+          "max_displacement_A": 0.0
+        },
+        "La": {
+          "changed_atom_indices": [],
+          "exact": true,
+          "max_displacement_A": 0.0
+        }
+      },
+      "delta_vs_archive_model_kcal_mol": 0.0,
+      "endpoint_seconds": 26.784678623080254,
+      "native_MACE_peak_cuda_allocated_bytes": 2789489152,
+      "native_MACE_peak_host_RSS_KiB": 1822884,
+      "source_domain_status": "unvalidated_input_domain",
+      "source_preparation_seconds": 11.214535418897867
+    }
+  ],
+  "score_spread_model_kcal_mol": 21.91151051968336
+}

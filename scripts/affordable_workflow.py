@@ -206,6 +206,10 @@ if __name__=='__main__':
         from baseline_water import main as baseline_main
         baseline_main(sys.argv[2:])
     elif len(sys.argv)>1 and sys.argv[1]=='standard':
-        from pqq_standard import main as standard_main
-        standard_main(sys.argv[2:])
+        if len(sys.argv)>2 and sys.argv[2]=='ensemble':
+            from pqq_ensemble import main as ensemble_main
+            ensemble_main(sys.argv[3:])
+        else:
+            from pqq_standard import main as standard_main
+            standard_main(sys.argv[2:])
     else: main()

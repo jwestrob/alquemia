@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/accommodation_torsion_profiles.py", line 210, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/accommodation_torsion_profiles.py", line 207, in main
+    a=vars(p.parse_args());op=a.pop('operation');r=globals()[op](**a);print(json.dumps({k:v for k,v in r.items() if k!='rows'},indent=2))
+                                                   ^^^^^^^^^^^^^^^^^^
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/accommodation_torsion_profiles.py", line 110, in prepare
+    if receipt is None or xyz(verify(oldtask['xyz']))!=rows or oldtask['charge']!=charge:raise InvalidArtifact('exact original 4MAE DFT missing')
+                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+affordable_common.InvalidArtifact: exact original 4MAE DFT missing

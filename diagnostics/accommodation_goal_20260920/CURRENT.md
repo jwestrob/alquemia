@@ -1,5 +1,35 @@
 # Overnight accuracy research checkpoint — 2026-09-20
 
+## Latest substantive result and continuation
+
+Native DFT confirms the first large PLM **differential** donor response, not just
+the calcium component. MACE captures its direction and approximate magnitude;
+the solvent term worsens differential agreement. This is evidence for a physical
+accommodation mechanism, not a known PLM label or validated relaxed score.
+See [partial_v3](../accommodation_torsion_20260920/PARTIAL_DFT_REPORT_v3.md),
+commit eec6c4f. Existing profiles have boundary minima/nonconstant curvature.
+
+The [next declared experiment](../accommodation_nonlinear_20260920/PLAN.md) tests
+actual composite energies/analytic gradients along one or two whole-carboxylate
+torsions. Second_shell implements the bounded optimizer; khoury prepares exact
+all28 reference mappings for a common-rule followup without new molecular calls.
+Root owns technical review, execution coordination and later native validation.
+The first experiment contains eight metal-specific starts on the four original
+contexts. No fresh DFT is included until a separate validation manifest exists.
+No score-directed starting point, fitted spring or harmonic entropy is introduced.
+
+The [latest partial benchmark](../accommodation_fold_DFT_20260920/PARTIAL_MATCHED_REPORT_v2.md)
+contains189/416 completed DFT endpoints. On the same42 La-conditioned source pairs,
+context composite corrects one additional call and removes the one DFT wrong call;
+on37 available triples DFT, native core and context composite all agree correctly.
+This is a small consumed-structure robustness result; completion order and missing
+coverage prevent a panel conclusion. All existing DFT jobs continue normally.
+The first PLM response observer completed its read-only task; it launches nothing.
+
+Third substantive email accepted by local relay at12:10UTC; exact message/receipt
+under workspaces/accommodation_goal_20260920/email_physical_response_v1/. Earlier
+dated checkpoints below are retained as history, not new execution instructions.
+
 ## Why these experiments
 
 The release now makes source-backed PQQ scoring practical. The active goal goes

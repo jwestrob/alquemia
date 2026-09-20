@@ -1,5 +1,24 @@
 # Agent entry point
 
+## Latest: physical differential confirmed; bounded accommodation next — 2026-09-20
+
+Native DFT now confirms preferential La stabilization on the first compressed
+PLM donor path. MACE captures the sign and approximate magnitude; solvent transfer
+worsens differential agreement here. Read [actual evidence and limits](diagnostics/accommodation_torsion_20260920/PARTIAL_DFT_REPORT_v3.md),
+commit eec6c4f. No stationary minimum or biological correction is established.
+The separate [nonlinear plan](diagnostics/accommodation_nonlinear_20260920/PLAN.md)
+uses actual composite energies/analytic gradients and bounded whole-donor motions,
+not a spring extrapolation. Second_shell owns its implementation/pilot; khoury
+prepares the same physical mappings for all28 established PQQ references, without
+new energies. Root owns review and next native validation decision. All production
+defaults and existing PLM results stay unchanged.
+
+The [latest partial matched comparison](diagnostics/accommodation_fold_DFT_20260920/PARTIAL_MATCHED_REPORT_v2.md)
+shows a small La-conditioned single-fold gain; all37 available three-fold DFT
+summaries match native core and context composite. Four DFT fold jobs and the
+remaining original donor checks continue. Do not duplicate them or mistake the
+partial snapshot for the final panel. Progress email accepted at12:10UTC.
+
 ## Latest: three-fold report works; physical response still under test — 2026-09-20
 
 Optional `affordable_workflow.py standard ensemble` is committed as11d9669;

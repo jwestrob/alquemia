@@ -23,6 +23,18 @@ The next practical question is whether this robustness survives the three-fold
 inventory available for the PLM scan. The separate [three-fold plan](THREE_FOLD_PLAN.md)
 tests every possible three-of-four subset of the consumed La-conditioned reference
 folds, with unchanged bands and no new molecular calculations or selected subset.
+That addendum is complete (3048586): all available context-composite triples are
+correct, and native core matches that result on identical coverage. Read
+[three-fold report](THREE_FOLD_REPORT.md). It supports subset robustness, not
+superiority to every simpler method or validation of PLM labels.
+
+Second_shell now owns an optional `standard ensemble` aggregation interface:
+three declared La-conditioned source folds, strict membership/state/sequence
+checks, individual scores/spread/median and developmental frozen-band transfer.
+One real end-to-end request will use the lexicographically first three
+noncanonical Q9Z4J7 La source IDs; six MACE and twelve GFN2 evaluations, no DFT.
+This validates the interface on consumed sources, not new predictive evidence.
+No default ensemble promotion or PLM rescore is authorized by this checkpoint.
 
 - Fast-PQQ release complete: commit8dd81ba, report in pqq_fast_release_20260920.
 - Matched source inventory complete: commit8ace781. All250 existingAF3 structures
@@ -45,6 +57,9 @@ folds, with unchanged bands and no new molecular calculations or selected subset
   diagnosed PLM examples; this is not biological accuracy evidence. Most of the
   response is in OMOL, with the solvent term moderating it. NativeDFT1203771 now
   checks the16predeclared endpoints. Keep the failed1H4IGFN2 point unavailable.
+  The first four DFT control endpoints now agree with all displacement-work signs
+  and small differential response; the large PLM response remains pending. See
+  [partial DFT report](../accommodation_torsion_20260920/PARTIAL_DFT_REPORT_v1.md).
 - CC1202429 remains independent; preserve its monitor and outputs.
 
 ## Numerical replay and pooling rules

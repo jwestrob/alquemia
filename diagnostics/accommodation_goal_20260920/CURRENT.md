@@ -48,6 +48,16 @@ One previously inadmissible source stays included and flagged; preparation
 failure must produce an unavailable group, never a replacement member.
 Its separate plan is diagnostics/plm_fold_sensitivity_20260920/PLAN.md;
 independent jobs1204068(07ab) and1204069(8344) use the existing H200 layout.
+Both are now complete: all six preparations and12MACE/24GFN2 endpoints succeeded.
+Every fold of both targets remains Ca-supported; each three-fold median equals
+sample0. Fold aggregation therefore does not resolve this particular concern.
+Extra-Asp compression persists across all six structures. Sample0 contexts,
+states and methods match the original torsion origins, with exact/numerical replay.
+The old admission failure is retained even though current source preparation
+supports that member. Biological labels remain unknown; do not call this six
+classification failures or alter the reference bands to make them La-like.
+The native donor-response validation is the next relevant evidence for this
+persistent geometry concern. No extra angles or replacement samples were added.
 
 Khoury owns the same100-triple comparison against preserved DFT. Its partial
 snapshot is insufficient for a panel conclusion; use the ready final command

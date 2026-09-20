@@ -3373,3 +3373,28 @@ parity on37 completed triples. Four baseline jobs1203976–79 continue; independ
 CC1202429/monitor preserved. Root emailed substantive physical finding at12:10UTC.
 Vault updated; ongoing goal remains active. Only scoped new files/own log appendix
 are staged; unrelated shared worktree changes remain untouched.
+
+
+## 2026-09-20 — root: canonical reference before all-fold accommodation transfer
+
+Continued Jacob's active overnight accuracy goal. The complete original native
+donor checks support both PLM differential responses. Full composite nonlinear
+pilot has zero completely qualified pairs, so its separate native candidate
+executor remains gated off; the real eight-candidate manifest/dry-run is retained.
+The cheaper native-MACE proposal/composite selection experiment completed all30
+cases, preserving canonical class ordering and3crystal calls, with one canonical
+Ca reference inconclusive under old bands. No accuracy gain claimed from this.
+
+Root committed bdec940: separate canonical-only developmental reference using
+exactly the existing extrema/minimum-gap rule, four real-artifact parser/algebra
+tests, and fixed FOLD_TRANSFER_PLAN.md for all225primarynoncanonical folds. Neither
+crystals, PLM predictions nor test folds set the new bands. Old-band results remain.
+Water completed geometry mapping1204176,208supported/17sourcefailures,57reused151new,
+zero energies. Khoury owns minimal existing-runner adaptation; root must review the
+finite task manifest before energy submission. Second_shell owns final matched DFT
+and100triple reporting once existing1203976-79 finish. No duplicate calculation,
+production change, push, reference overwrite or unknown-label assignment.
+
+Agent scoped commits: proposal report60b794f, independentreview3b377a5, native
+preflight3985cb4, foldmappingab82b1b. Root checkpoint updated inAGENTS/CURRENT; vault
+updated with motivation, benefits and limits. Latest email remains12:10UTC.

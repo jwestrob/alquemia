@@ -1,51 +1,47 @@
 # Overnight accuracy research checkpoint — 2026-09-20
 
-## Latest substantive result and continuation
+## Latest substantive result and continuation — 13:10 UTC
 
-Native DFT confirms both large PLM **differential** donor responses, not just
-their calcium components. MACE captures the direction and approximate magnitude;
-the solvent term worsens differential agreement. All 16 original native endpoints
-completed; all 12 planned work comparisons are available. This supports a physical
-accommodation mechanism, not known PLM labels or validated relaxed scores.
-See [final native report](../accommodation_torsion_20260920/FINAL_DFT_REPORT.md).
-Existing profiles have boundary minima/nonconstant curvature. The original native
-job1203771 is complete; do not rerun it. Final native result/figure are saved.
+Native DFT confirms both large PLM differential donor responses. Native MACE
+captures the direction and approximate magnitude, supporting a physical strain
+mechanism; unknown PLM labels remain unknown. All16 original native endpoints
+completed, with [final evidence](../accommodation_torsion_20260920/FINAL_DFT_REPORT.md).
 
-The [next declared experiment](../accommodation_nonlinear_20260920/PLAN.md) tests
-actual composite energies/analytic gradients along one or two whole-carboxylate
-torsions. Second_shell's implementation4755719 passed preflight and runs as1204162.
-The first Ca control is an interior qualified cheap minimum; the corresponding La
-candidate is stationary but fails the frozen curvature refinement tolerance.
-That is a numerical qualification failure, not evidence of an unstable basin.
-All 28 exact reference mappings are prepared (e6ef185), with no energy calls.
-Root owns technical review, execution coordination and later native validation.
-The first experiment contains eight metal-specific starts on the four original
-contexts. No fresh DFT is included until a separate validation manifest exists.
-No score-directed starting point, fitted spring or harmonic entropy is introduced.
-Water_basins implemented the separate native candidate adapter82dd519; it still
-requires final pilot output and genuine task-path preflight before submission.
-Root identified a shard-directory containment fix before any candidate calculation.
+The fully composite nonlinear pilot is complete. It finds large accommodation
+responses, but zero complete metal pairs pass all frozen curvature/stationarity
+checks. Solvent derivatives dominate the observed refinement failures. Its separate
+native follow-on remains **prepare/dry-run only**; do not waive that execution gate.
+Read [full pilot](../accommodation_nonlinear_20260920/REPORT.md), commit7164833.
 
-Khoury owns the new [proposal experiment](../accommodation_nonlinear_20260920/PROPOSAL_PLAN.md):
-all 28 reference contexts plus the two original PLM contexts. Native MACE proposes
-the bounded donor arrangement; the existing primary composite evaluates the
-proposal and original, selecting only by energy. This tests whether solvent must
-be solved throughout the search. It preserves the running full-gradient pilot,
-does not remove solvent from scoring and does not promise a continuous minimum.
-Its source compatibility/preparation is in progress; no submission yet at this
-checkpoint. No threshold fitting or production/default change.
+The cheaper MACE-proposal experiment also completed: all30sources/60proposals and
+120primaryGFN2 endpoints. MACE proposes donor geometry; actual composite energies
+choose between the proposal and origin. It reproduces the full search's four-case
+candidate contrasts closely while avoiding repeated solvent-force calculations.
+All reference classes remain ordered; one canonical Ca call becomes inconclusive
+under old bands. This is practical engineering evidence, not demonstrated accuracy
+improvement. [Proposal report](../accommodation_nonlinear_20260920/PROPOSAL_REPORT.md).
 
-The [latest partial benchmark](../accommodation_fold_DFT_20260920/PARTIAL_MATCHED_REPORT_v2.md)
-contains189/416 completed DFT endpoints. On the same42 La-conditioned source pairs,
-context composite corrects one additional call and removes the one DFT wrong call;
-on37 available triples DFT, native core and context composite all agree correctly.
-This is a small consumed-structure robustness result; completion order and missing
-coverage prevent a panel conclusion. The four baseline DFT jobs continue normally.
-The first PLM response observer completed its read-only task; it launches nothing.
+The next [fixed fold-transfer plan](../accommodation_nonlinear_20260920/FOLD_TRANSFER_PLAN.md)
+uses all225 primary noncanonical reference structures, preserving17unsupported
+preparations and the archived context solvent failure. Water_basins completed all208 supported maps
+as1204176 (57reused/151new, zero energies), retaining all225rows. Khoury owns
+the thin proposal-runner adapter; root approved its reuse design and reviews the
+actual finite manifest before energy submission. No parameter changes or selected
+failure subset. Root froze a **distinct canonical-only developmental reference**
+under the same original extrema rule, before these new fold outputs; old bands
+remain alongside it. [Calibration](../accommodation_nonlinear_20260920/PROPOSAL_CALIBRATION.md),
+commitbdec940; four actual-artifact tests pass. Calibration success is not validation.
 
-Third substantive email accepted by local relay at12:10UTC; exact message/receipt
-under workspaces/accommodation_goal_20260920/email_physical_response_v1/. Earlier
-dated checkpoints below are retained as history, not new execution instructions.
+Second_shell independently verified proposal states, coordinates, selection and
+energy algebra. It now owns the final preserved-DFT comparison and100triple report
+when the existing four jobs1203976–1203979 finish. Latest checkpoint338/416 complete,
+no terminal failure; do not duplicate calculations or automatic collection. The
+prior partial comparison remains historical. Preserve independentCC1202429.
+
+Root owns integration/current state and the active goal. No production default,
+PLM result, existing calibration, aquo reference or water state changed during this
+continuation. Latest substantive email accepted12:10UTC; send another when the
+known-class robustness experiment provides useful conclusions.
 
 ## Why these experiments
 

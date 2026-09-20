@@ -1,27 +1,24 @@
 # Agent entry point
 
-## Latest: both physical differentials confirmed; accommodation running — 2026-09-20
+## Latest: accommodation mechanism supported; test classifier robustness — 2026-09-20
 
-Native DFT now confirms preferential La stabilization on both compressed
-PLM donor paths. All 16 original native endpoints completed as1203771. MACE captures
-the sign and approximate magnitude; solvent transfer worsens differential agreement
-here. Read [final evidence and limits](diagnostics/accommodation_torsion_20260920/FINAL_DFT_REPORT.md).
-No stationary native minimum or biological correction is established.
-The separate [nonlinear plan](diagnostics/accommodation_nonlinear_20260920/PLAN.md)
-uses actual composite energies/analytic gradients and bounded whole-donor motions,
-not a spring extrapolation. Second_shell owns running pilot1204162; all 28 reference
-maps are prepared (e6ef185). Khoury now owns the separately declared
-[MACE proposal experiment](diagnostics/accommodation_nonlinear_20260920/PROPOSAL_PLAN.md):
-same physical motions, MACE proposes, actual composite energy selects/scores.
-Water_basins owns the native candidate adapter; final pilot collection and genuine
-runner preflight are required before its separate native jobs. Root owns integration
-review/coordination. All production defaults and PLM results stay unchanged.
+Original native donor validation is complete: both PLM differential responses are
+confirmed. Full composite optimization1204162 is also complete, but zero pairs
+pass its frozen minimum/curvature gates; its native follow-on is **dry-run only**.
+The cheaper MACE-proposal/actual-composite-selection experiment1204169/1204171
+completed all30sources. Reference classes remain ordered; one Ca reference becomes
+inconclusive on old bands. This is engineering progress, not yet an accuracy gain.
+Read [proposal result](diagnostics/accommodation_nonlinear_20260920/PROPOSAL_REPORT.md).
 
-The [latest partial matched comparison](diagnostics/accommodation_fold_DFT_20260920/PARTIAL_MATCHED_REPORT_v2.md)
-shows a small La-conditioned single-fold gain; all37 available three-fold DFT
-summaries match native core and context composite. Four DFT fold jobs continue.
-Do not duplicate them or mistake the
-partial snapshot for the final panel. Progress email accepted at12:10UTC.
+The next [declared challenge](diagnostics/accommodation_nonlinear_20260920/FOLD_TRANSFER_PLAN.md)
+uses every225primary noncanonical reference fold, with the same physical rule and
+all unavailable inputs retained. A distinct canonical-only development reference
+was frozen inbdec940; old-band transfer remains explicit. Water_basins completed all208 supported
+physical maps1204176; Khoury owns runner adaptation; root reviews before energy submission.
+Second_shell owns final existingDFT comparisons after1203976–1203979 complete.
+All production defaults and PLM results remain unchanged; preserve independentCC.
+Read [current checkpoint](diagnostics/accommodation_goal_20260920/CURRENT.md) before
+submitting work, and do not rerun completed experiments.
 
 ## Latest: three-fold report works; physical response still under test — 2026-09-20
 

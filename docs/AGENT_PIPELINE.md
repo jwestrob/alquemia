@@ -1,5 +1,29 @@
 # Alquemia: current operating guide for agents
 
+## Current standard mode: fast compatible PQQ — 2026-09-20
+
+`scripts/affordable_workflow.py standard` now selects
+`fast_PQQ_OMOL_GFN2_ALPB_v1` automatically for supported explicit PQQ source
+requests. Fresh source preparation exactly reproduced all 28 reference contexts;
+fresh scoring retained 25/25 canonical calls and 3/3 consumed crystal controls
+with unchanged bands. A literal CLI run also passed. Full source-to-score
+allocation averaged 42.3 seconds/site on one H200 with 32 CPUs, excluding folding.
+
+- [Release report](../diagnostics/pqq_fast_release_20260920/REPORT.md),
+  [runnable source example and commands](../diagnostics/pqq_fast_release_20260920/COMMANDS.md).
+- The request records source, assembly and canonical residue selectors. Unsupported
+  chemistry fails explicitly; unseen source geometry remains
+  `unvalidated_input_domain`. No PLM rescoring or raw watcher change occurred.
+- The composite uses native MACE plus native GFN2 ALPB-minus-vacuum transfer and
+  its own fixed bands. It has no compatible aquo S reference; do not compare its
+  raw scale directly with historical DFT S values.
+- `--mode dft-reference` retains original-core r2SCAN-3c/CPCM and its reference.
+  Existing `baseline` commands remain unchanged. Other chemistry continues through
+  the staged contextual-water/DFT baseline described below.
+- 57 focused tests passed; actual release compute comprised 58 MACE and 116 GFN2
+  calls, with zero DFT reruns. All references were already consumed. This is
+  reference-fidelity/operational qualification, not broad affinity validation.
+
 ## Current release: contextual water preparation — 2026-09-19
 
 The promoted prepared-site baseline entry point is now

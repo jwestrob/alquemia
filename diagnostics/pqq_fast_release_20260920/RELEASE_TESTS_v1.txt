@@ -1,0 +1,24 @@
+test_actual_existing_water_request_keeps_baseline_route (test_pqq_fast_release.FastSource.test_actual_existing_water_request_keeps_baseline_route) ... ok
+test_actual_fresh_source_reproduction_includes_all_hydrogens_and_charges (test_pqq_fast_release.FastSource.test_actual_fresh_source_reproduction_includes_all_hydrogens_and_charges) ... ok
+test_actual_full_panel_reconstructs_same_context_from_protonated_source (test_pqq_fast_release.FastSource.test_actual_full_panel_reconstructs_same_context_from_protonated_source) ... ok
+test_auto_PQQ_and_explicit_DFT_select_different_backends (test_pqq_fast_release.FastSource.test_auto_PQQ_and_explicit_DFT_select_different_backends) ... ok
+test_explicit_DFT_manifest_retains_original_core_and_recipe (test_pqq_fast_release.FastSource.test_explicit_DFT_manifest_retains_original_core_and_recipe) ... ok
+test_full_fresh_classification_preserves_exact_band_edges (test_pqq_fast_release.FastSource.test_full_fresh_classification_preserves_exact_band_edges) ... FAIL
+test_invalid_case_path_rejected_before_source_preparation (test_pqq_fast_release.FastSource.test_invalid_case_path_rejected_before_source_preparation) ... ok
+test_pinned_source_coverage_and_roles (test_pqq_fast_release.FastSource.test_pinned_source_coverage_and_roles) ... ok
+test_real_core_rebuild_rejects_corrupted_donor_identity (test_pqq_fast_release.FastSource.test_real_core_rebuild_rejects_corrupted_donor_identity) ... ok
+test_release_gate_and_implementation_are_checked (test_pqq_fast_release.FastSource.test_release_gate_and_implementation_are_checked) ... ok
+test_unknown_source_protocol_is_not_silent_DFT_fallback (test_pqq_fast_release.FastSource.test_unknown_source_protocol_is_not_silent_DFT_fallback) ... ok
+
+======================================================================
+FAIL: test_full_fresh_classification_preserves_exact_band_edges (test_pqq_fast_release.FastSource.test_full_fresh_classification_preserves_exact_band_edges)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/tests/test_pqq_fast_release.py", line 93, in test_full_fresh_classification_preserves_exact_band_edges
+    self.assertLess(abs(row['score_difference_model_kcal_mol']), 1e-7)
+AssertionError: 0.0004057501209899783 not less than 1e-07
+
+----------------------------------------------------------------------
+Ran 11 tests in 1.432s
+
+FAILED (failures=1)

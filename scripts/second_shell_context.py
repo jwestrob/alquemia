@@ -87,7 +87,7 @@ def default_config(root, agreement):
             'software':record(root/'workspaces/mace_omol_20260917/software_v1/software_manifest.json')}
 
 
-def parent_state(item, topology):
+def parent_state(item, topology, *, require_endpoint_receipts=True):
     p=read_json(verify(item['parent'])); isp='fixed_core' in p
     source=read_json(verify(p['protonation_manifest']))['output'] if isp else p['source_structure']
     graph=peptide.SourceGraph(verify(source), verify(topology))
@@ -137,8 +137,9 @@ def parent_state(item, topology):
     water_keys={k for k in old_sources if graph.meta[k]['canonical_resname']=='HOH'}
     for metal in ('Ca','La'):
         e=item['endpoints'][metal]
-        actual=endpoint(e['output'],e['receipt'],e['xyz'],e['input'])
-        if actual['energy_hartree']!=e['energy_hartree']:raise InvalidArtifact('archived energy differs')
+        if require_endpoint_receipts:
+            actual=endpoint(e['output'],e['receipt'],e['xyz'],e['input'])
+            if actual['energy_hartree']!=e['energy_hartree']:raise InvalidArtifact('archived energy differs')
         header=[s.strip() for s in verify(e['input']).read_text().splitlines() if s.strip().startswith('!')]
         if len(header)!=1 or set(header[0].lower().split()[1:])!={'r2scan-3c','noautostart','cpcm(water)','defgrid3'}:
             raise InvalidArtifact('parent native SP recipe unsupported')

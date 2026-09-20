@@ -1,0 +1,164 @@
+{
+  "cases": [
+    {
+      "all_evidence_consumed": true,
+      "assembly": {
+        "chain": "A",
+        "kind": "explicit_selected_crystal_chain",
+        "model": "1",
+        "raw_metal": "A:CA701/CA",
+        "raw_pqq": "A:PQQ601",
+        "selection": {
+          "alternate_conformer_selections": [],
+          "excluded_other_chains": [
+            "B",
+            "C",
+            "D"
+          ],
+          "excluded_other_models": [],
+          "excluded_selected_chain_residue_count": 0,
+          "excluded_selected_chain_residues": [],
+          "heavy_coordinate_check": {
+            "allowed_serialization_tolerance_A": 0.001,
+            "atom_count": 4645,
+            "identity_sets_equal": true,
+            "label": "retained_raw_source_to_selected_normalized_PDB",
+            "maximum_displacement_A": 0.0,
+            "maximum_displacement_atom": [
+              "A",
+              1,
+              "",
+              "ASN",
+              "N",
+              "N"
+            ],
+            "passes": true,
+            "query_coordinate_digest": "667dd176e3cf6c8f8eab9ab1e3f05e85a1ec5c002c06a921b331094ea9fcc035",
+            "reference_coordinate_digest": "667dd176e3cf6c8f8eab9ab1e3f05e85a1ec5c002c06a921b331094ea9fcc035"
+          },
+          "metal_normalization": {
+            "coordinate_changed": false,
+            "native_atom_name_retained": "CA",
+            "native_element_retained": true,
+            "normalized": "A:LA701/CA",
+            "residue_name_only_changed_to_LA": true,
+            "source": "A:CA701/CA"
+          },
+          "retained_chain": "A",
+          "retained_heavy_atom_count": 4645,
+          "retained_residue_count": 597,
+          "retained_source_hydrogen_count": 0
+        }
+      },
+      "biological_group": "p16027",
+      "case_id": "1H4I",
+      "evidence_stratum": "canonical_PQQ_functional_class",
+      "expected_class": "Ca",
+      "label_scope": "canonical_PQQ_functional_class",
+      "metal": {
+        "atom": "CA",
+        "chain": "A",
+        "icode": "",
+        "resname": "LA",
+        "resnum": 701
+      },
+      "normalization": "selected_crystal_chain",
+      "pqq": {
+        "chain": "A",
+        "icode": "",
+        "resname": "PQQ",
+        "resnum": 601
+      },
+      "role": "retrospective_structural_transfer",
+      "roles": {
+        "anchor_asparagine": {
+          "chain": "A",
+          "icode": "",
+          "resname": "ASN",
+          "resnum": 261
+        },
+        "anchor_glutamate": {
+          "chain": "A",
+          "icode": "",
+          "resname": "GLU",
+          "resnum": 177
+        },
+        "catalytic_asp_cationic_partner": {
+          "chain": "A",
+          "icode": "",
+          "resname": "ARG",
+          "resnum": 331
+        },
+        "catalytic_aspartate": {
+          "chain": "A",
+          "icode": "",
+          "resname": "ASP",
+          "resnum": 303
+        },
+        "extra_acidic_ligand_homolog": {
+          "chain": "A",
+          "icode": "",
+          "resname": "ALA",
+          "resnum": 305
+        }
+      },
+      "source_structure": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mxaf_qm/1H4I.pdb",
+        "sha256": "385cf656e0f99409012463aeb2d77196cc45e99fc5baaa3347705e29a52a9217"
+      }
+    }
+  ],
+  "config": {
+    "calibration_implementation_pins": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/implementation_pins.json",
+      "sha256": "cc3b51977293a5d3a00ee387091fc8cbb8a9938b9987f0620d12621c09b42bc5"
+    },
+    "crystal_normalizer": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_pmdh_fixed_core_calibration_20260914/reserved_crystal_holdout/prepare_holdouts.py",
+      "sha256": "8c8742fca31a8db617dd4afa937522fb5b6e1051fef28e1a0f13dd384f1b6da1"
+    },
+    "model": {
+      "checkpoint": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/software_v1/MACE-omol-0-extra-large-1024.model",
+        "sha256": "9b64b4fd5153ca578c694abc57806d8111050de6ff652e695c9b525bc4d36469"
+      },
+      "dtype": "float64",
+      "embedding_specs": {
+        "total_charge": {
+          "emb_dim": 1024,
+          "in_dim": 1,
+          "num_classes": 201,
+          "offset": 100,
+          "per": "graph",
+          "type": "categorical"
+        },
+        "total_spin": {
+          "emb_dim": 1024,
+          "in_dim": 1,
+          "num_classes": 101,
+          "offset": 0,
+          "per": "graph",
+          "type": "categorical"
+        }
+      },
+      "energy_component": "MACE_OMOL_total_vacuum_energy",
+      "execution_adapter": null,
+      "extra_dispersion": false,
+      "family": "MACE_OMOL",
+      "head": "omol",
+      "periodic": false,
+      "r_max_A": 6.0,
+      "solvent": null,
+      "spin_input_convention": "multiplicity"
+    },
+    "software": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/software_v1/software_manifest.json",
+      "sha256": "7d2448b279b5191a529ef329a60442635601576794f9737efc64343c9a6e0168"
+    },
+    "topology": {
+      "path": "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/lib/python3.11/site-packages/openmm/app/data/amber19/protein.ff19SB.xml",
+      "sha256": "086bfdb1c05e7d5cb1d330e6c39fab5056a95e89492cdbd3044c746db13e9d09"
+    }
+  },
+  "schema_version": "fixed_core_PQQ_source_to_complete_context_v1"
+}

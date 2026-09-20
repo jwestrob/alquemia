@@ -92,7 +92,10 @@ def prepare(inventory, comparison, agreement, output, cpu_python, gpu_python, pr
     for source_script in Path(__file__).parent.glob('*.py'):
         dest = impl / source_script.name; shutil.copyfile(source_script, dest)
         implementation[source_script.name] = record(dest)
-    orca = read_json(Path(__file__).resolve().parents[1] / 'params/baseline_water_v1.json')['artifacts']['orca']
+    orca = inv.get('orca')
+    if orca is None:
+        orca = read_json(Path(__file__).resolve().parents[1] / 'params/baseline_water_v1.json')['artifacts']['orca']
+    verify(orca)
     sources = {c['case_id']: c for c in inv['cases']}
     cases = list(sources) if prepared_pairs else list(CASES)
     if not cases or len(cases) != len(set(cases)) or any(not re.fullmatch(r'[a-zA-Z0-9_.-]+', c) for c in cases):

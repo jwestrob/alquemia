@@ -99,4 +99,44 @@ class Nonlinear(unittest.TestCase):
             self.assertNotIn('NumGrad',verify(t['input']).read_text())
         self.assertEqual(nl.SETTINGS['maxiter'],24);self.assertEqual(nl.SETTINGS['bounds_radian'],[-.8,.8])
 
+    def test_actual_nonlinear_candidates_retain_pass_and_refinement_failure(self):
+        # Executed scientific fixtures from the frozen eight-endpoint pilot.
+        # Replaying acceptance algebra must preserve a failed check even when
+        # the candidate is stationary and its reported curvature is positive.
+        directory=ROOT/'workspaces/accommodation_nonlinear_20260920/pilot_v2/endpoints'
+        for metal,expected in [('Ca',True),('La',False)]:
+            receipt=directory/f'1H4I__{metal}'/'result.json'
+            if not receipt.exists():self.skipTest('executed nonlinear fixture unavailable')
+            row=read_json(receipt);point=row['candidate']
+            work=nl.relative_components(point['components'],row['origin']['components'])
+            self.assertEqual(work,row['accommodation_work'])
+            gate=nl.candidate_gate(row['optimizer']['success'],point['active_q_radian'],
+                point['gradient_kcal_mol_rad'],work['composite_kcal_mol'],point['geometry_checks'])
+            self.assertEqual(gate,row['stationarity'])
+            self.assertTrue(gate['eligible_for_curvature'])
+            h=row['curvature'];replayed=nl.curvature_gate(h['fine_H_kcal_mol_rad2'],h['coarse_H_kcal_mol_rad2'])
+            self.assertEqual(replayed['status'],h['status'])
+            self.assertEqual(replayed['status']=='pass',expected)
+            self.assertEqual(row['stationary_minimum_qualified'],expected)
+            components=nl.curvature_components(receipt.parent,row)
+            self.assertEqual(components['status'],'complete')
+            for name in ('fine_H_kcal_mol_rad2','coarse_H_kcal_mol_rad2'):
+                native=np.asarray(components['components']['native_MACE'][name])
+                solvent=np.asarray(components['components']['solvent_transfer'][name])
+                np.testing.assert_allclose(native+solvent,h[name],atol=1e-10,rtol=0)
+            self.assertIsNone(row['numerical_relaxation_free_energy'])
+            self.assertIsNone(row['entropy'])
+
+    def test_actual_projected_optimizer_stop_does_not_override_raw_gradient(self):
+        receipt=ROOT/'workspaces/accommodation_nonlinear_20260920/pilot_v2/endpoints/PQQSEQ_83440678cbbd658047c9__La/result.json'
+        if not receipt.exists():self.skipTest('executed nonlinear fixture unavailable')
+        row=read_json(receipt);point=row['candidate']
+        self.assertTrue(row['optimizer']['success'])
+        self.assertGreater(max(abs(g) for g in point['gradient_kcal_mol_rad']),nl.SETTINGS['gtol'])
+        gate=nl.candidate_gate(row['optimizer']['success'],point['active_q_radian'],point['gradient_kcal_mol_rad'],
+            row['accommodation_work']['composite_kcal_mol'],point['geometry_checks'])
+        self.assertEqual(gate,row['stationarity'])
+        self.assertFalse(gate['eligible_for_curvature'])
+        self.assertFalse(row['stationary_minimum_qualified'])
+
 if __name__=='__main__':unittest.main()

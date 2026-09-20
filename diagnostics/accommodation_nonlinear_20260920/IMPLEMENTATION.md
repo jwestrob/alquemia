@@ -68,3 +68,19 @@ full q through the existing torsion analyzer, and records its own analysis hash.
 This is report-only: the pinned running optimizer/energy/gradient implementation
 is unchanged. Final manual collection will include these fields; original automatic
 outputs remain preserved.
+
+## Completed execution
+
+Job1204162 is complete. The final manual collection is collection_final_v1.json;
+it also separates native and solvent Hessian components from the already executed
+probe gradients. No additional energy or gradient was requested for that audit.
+The final report and COST.json retain8candidates,3qualified individual minima,
+zero fully qualified pairs,89MACE calls and178GFN2 attempts(177complete).
+The failed ALPB curvature probe remains unavailable and was not retried.
+
+TESTS_v4/v5 add replay of the actual passing1H4I Ca and failed1H4I La curvature
+checks and exact component-Hessian reconstruction. TESTS_v6 adds the observed
+PLM8344 La projected-versus-absolute gradient stop: scipy success cannot override
+the independent raw-stationarity gate. Seven tests pass; no simulated nonlinear
+solver result is used. The running snapshot was never modified by these reporting
+or test additions. Baseline, released scorer and original bands remain unchanged.

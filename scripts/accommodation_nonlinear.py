@@ -376,6 +376,31 @@ def contrast_components(ca,la):
     return {'native_MACE_R_model_kcal_mol':mace,'solvent_R_kcal_mol':solv,'composite_R_model_kcal_mol':mace+solv}
 
 
+def curvature_components(endpoint_directory,row):
+    """Audit existing probes; a component Hessian need not itself be stable."""
+    keys=row.get('curvature',{}).get('evaluation_keys',[])
+    candidate=row.get('candidate')
+    if candidate is None:return {'status':'unavailable','reason':'candidate unavailable'}
+    n=len(candidate['active_q_radian'])
+    if len(keys)!=4*n:return {'status':'unavailable','reason':'incomplete curvature probe pairs','probe_keys':keys}
+    points=[read_json(Path(endpoint_directory)/'evaluations'/k/'result.json') for k in keys]
+    if any(p['status']!='complete' for p in points):raise InvalidArtifact('completed curvature key points to failed evaluation')
+    result={'status':'complete','interpretation':'component audit; no independent component stability requirement','components':{}}
+    for name,field in [('native_MACE','native_gradient_kcal_mol_rad'),('solvent_transfer','solvent_gradient_kcal_mol_rad')]:
+        matrices=[]
+        for j,h in enumerate(SETTINGS['hessian_steps_radian']):
+            columns=[]
+            for i in range(n):
+                plus,minus=points[j*2*n+2*i:j*2*n+2*i+2]
+                columns.append((np.asarray(plus[field])-np.asarray(minus[field]))/(2*h))
+            matrices.append(np.asarray(columns).T)
+        fine,coarse=matrices
+        result['components'][name]={'fine_H_kcal_mol_rad2':fine.tolist(),'coarse_H_kcal_mol_rad2':coarse.tolist(),
+            'refinement_max_error':float(np.max(np.abs(fine-coarse))),
+            'symmetry_error':max(float(np.max(np.abs(fine-fine.T))),float(np.max(np.abs(coarse-coarse.T))))}
+    return result
+
+
 def collect(manifest,output):
     from accommodation_torsion_analysis import donor_distances
     m=read_json(manifest);out=Path(manifest).parent;endpoints=[];index={}
@@ -390,6 +415,7 @@ def collect(manifest,output):
         for state in ('origin','candidate'):
             point=row.get(state)
             row['reported_donor_contacts_A'][state]=(donor_distances({'mapping':t['mapping'],'q':point['full_q']}) if point else None)
+        row['reported_curvature_components']=curvature_components(rp.parent,row)
         endpoints.append(row);index[t['case_id'],t['metal']]=row
     cases=[];primary=read_json(verify(m['primary_result']))
     for case in CASES:

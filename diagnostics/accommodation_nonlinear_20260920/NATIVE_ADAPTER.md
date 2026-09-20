@@ -4,10 +4,11 @@
 candidate records, native ORCA runner and analytic-gradient parser. No new
 scientific calculation or candidate preparation ran during implementation.
 
-**Five real-artifact tests pass**, zero skips, in 1.513 seconds. They replay actual
+**Six real-artifact tests pass**, zero skips, in 2.889 seconds. They replay actual
 native water-gradient drivers and unit conversion; current-coordinate projection
 using archived GFN2 gradients; native PLM work/sign algebra; the eight original
-DFT state records; and the exact EnGrad-only input change. Malformed-input checks
+DFT state records; the exact EnGrad-only input change; and runner path containment
+using an actual completed 1H4I Ca candidate. Malformed-input checks
 use explicitly corrupted copies of real records. The water-gradient fixtures used
 TightSCF historically; their parser evidence does not change the new native recipe.
 
@@ -19,6 +20,26 @@ exactly. The 168-atom second PLM mapped origin has the previously observed
 coordinates are retained. Inventory and exact source/receipt pins:
 
 `workspaces/accommodation_nonlinear_20260920/native_adapter_preflight_v1/origins.json`
+
+## Shard layout repair, before scientific execution
+
+The first adapter placed task files under the common output directory while its
+runner manifests lived one level deeper in shard directories. The existing
+runner correctly requires every task input, XYZ, output and gradient artifact to
+remain inside its own manifest directory. Parent review caught this incompatibility
+before any native validation submission.
+
+Tasks now live under `shard_N/tasks/CASE__METAL/`, alongside their owning shard
+manifest. Each shard keeps its own `execute.lock` and execution events. The
+combined inventory references the children; no scientific input bytes changed.
+
+Both shard-location preflights pass using unchanged bytes from the actual
+completed 1H4I Ca nonlinear candidate, staged solely to check layout. The test
+also confirms that a corrupted manifest pointing outside its shard is rejected.
+No final pilot collection was fabricated, no endpoint output was created, and
+these staging manifests are not execution candidates. Actual staging receipt:
+
+`workspaces/accommodation_nonlinear_20260920/native_adapter_layout_v1/PREFLIGHT.json`
 
 ## Operations and safeguards
 
@@ -71,8 +92,9 @@ scripts/accommodation_nonlinear_native.py origins \
 `--agreement`, `--controls-manifest`, `--torsion-manifest`, and `--output`.
 No source-code edits or shell defaults select inputs.
 
-Full preparation and runner preflight remain **unrun until the real final pilot
-collection exists**. No synthetic candidate or successful native output was used
+Full eight-state preparation and its runner preflight remain **unrun until the
+real final pilot collection exists**. The isolated real-candidate layout preflight
+above has run. No synthetic candidate or successful native output was used
 to claim end-to-end readiness. The final collection will provide the concrete
 prepare/execute/collect commands under the separately frozen
 [native validation plan](NATIVE_VALIDATION_PLAN.md). No additional DFT has been

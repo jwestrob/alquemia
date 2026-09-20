@@ -110,5 +110,42 @@ class NativeAdapter(unittest.TestCase):
                 self.assertEqual(works['Ca']-works['La'], r['DFT_Ca_minus_La_work_kcal_mol'])
                 self.assertEqual(np.sign(works['Ca']-works['La']), np.sign(r['angle_radian']))
 
+    def test_actual_candidate_shard_containment_and_runner_preflight(self):
+        from affordable_workflow import dry_run
+        from run_orca_task_manifest import TaskRunnerError
+        from affordable_common import write_new
+        pilot = read_json(ROOT/'workspaces/accommodation_nonlinear_20260920/pilot_v2/manifest.json')
+        receipt_path = ROOT/'workspaces/accommodation_nonlinear_20260920/pilot_v2/endpoints/1H4I__Ca/result.json'
+        actual = read_json(receipt_path)
+        source = next(t for t in pilot['tasks'] if t['task_id'] == actual['task_id'])
+        origin = next(r for r in native.origins(self.design, self.controls, self.torsion) if r['task_id'] == actual['task_id'])
+        state = {'candidate': actual['candidate'], 'origin': origin, 'cheap_work': actual['accommodation_work']}
+        # Stage the same real candidate in two possible shard positions only to
+        # exercise file layout. No final pilot collection or solver result is
+        # fabricated, and neither staging manifest is executed.
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d); parents = []
+            for ordinal in (0, 4):
+                task = native.stage_candidate(source, state, root, ordinal)
+                parent = root/f'shard_{ordinal//4}'; parents.append(parent)
+                for path in (task['input']['path'], task['xyz']['path'], task['output_path'], task['engrad_path']):
+                    self.assertTrue(Path(path).is_relative_to(parent))
+                self.assertEqual(verify(task['xyz']).read_bytes(), verify(actual['candidate']['coordinate']).read_bytes())
+                mp = parent/'manifest.json'
+                m = {'protocol_id': 'actual_candidate_path_preflight_only', 'tasks': [task],
+                     'agreement': record(ROOT/'diagnostics/accommodation_nonlinear_20260920/NATIVE_VALIDATION_PLAN.md'),
+                     'orca': pilot['orca'], 'execution_permitted_by_physical_gate': False,
+                     'execution_policy': {'task_runner': record(ROOT/'scripts/run_orca_task_manifest.py'),
+                                          'runtime_renderer': record(ROOT/'scripts/render_orca_runtime_input.py')}}
+                write_new(mp, m)
+                self.assertEqual(dry_run(mp)['status'], 'dry_run_pass')
+                self.assertFalse(Path(task['output_path']).exists())
+                # Explicit malformed copy reproduces the old out/tasks layout.
+                outside = root/'outside.xyz'; outside.write_bytes(verify(task['xyz']).read_bytes())
+                broken = {**m, 'tasks': [{**task, 'xyz': record(outside)}]}
+                bp = parent/'corrupted_manifest.json'; write_new(bp, broken)
+                with self.assertRaises(TaskRunnerError): dry_run(bp)
+            self.assertNotEqual(parents[0]/'execute.lock', parents[1]/'execute.lock')
+
 
 if __name__ == '__main__': unittest.main()

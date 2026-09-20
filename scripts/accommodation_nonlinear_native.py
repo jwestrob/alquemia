@@ -154,6 +154,20 @@ def candidate_coordinates(task, candidate):
     return delta
 
 
+def stage_candidate(source_task, state, output, ordinal):
+    """Keep every runner-owned file inside its own shard, including outputs."""
+    candidate = state['candidate']; delta = candidate_coordinates(source_task, candidate)
+    td = Path(output).resolve()/f'shard_{ordinal//4}'/'tasks'/source_task['task_id']
+    td.mkdir(parents=True, exist_ok=False)
+    xp = td/'core.xyz'; shutil.copyfile(verify(candidate['coordinate']), xp)
+    ip = td/'endpoint.inp'; ip.write_text(recipe(source_task['charge'], source_task['multiplicity']))
+    task = {k: source_task[k] for k in ('task_id', 'case_id', 'metal', 'charge', 'multiplicity', 'mapping', 'active_indices', 'active_mode_ids')}
+    task.update(case=task['case_id'], xyz=record(xp), input=record(ip), output_path=str(td/'endpoint.out'),
+                engrad_path=str(td/'endpoint.engrad'), candidate=candidate,
+                candidate_mapping_roundoff_A=delta, origin=state['origin'], cheap_work=state['cheap_work'])
+    return task
+
+
 def prepare(collection, execution, agreement, controls_manifest, torsion_manifest, output):
     c, pilot, qualified = pilot_source(collection, execution)
     originals = origins(verify(pilot['source']), controls_manifest, torsion_manifest)
@@ -172,15 +186,8 @@ def prepare(collection, execution, agreement, controls_manifest, torsion_manifes
         if row.get('candidate') is None:
             state['reason'] = row.get('reason', 'optimizer final candidate unavailable')
         else:
-            candidate = row['candidate']; delta = candidate_coordinates(source_task, candidate)
-            td = out/'tasks'/source_task['task_id']; td.mkdir(parents=True)
-            xp = td/'core.xyz'; shutil.copyfile(verify(candidate['coordinate']), xp)
-            ip = td/'endpoint.inp'; ip.write_text(recipe(source_task['charge'], source_task['multiplicity']))
-            t = {k: source_task[k] for k in ('task_id', 'case_id', 'metal', 'charge', 'multiplicity', 'mapping', 'active_indices', 'active_mode_ids')}
-            t.update(case=t['case_id'], xyz=record(xp), input=record(ip), output_path=str(td/'endpoint.out'),
-                     engrad_path=str(td/'endpoint.engrad'), candidate=candidate,
-                     candidate_mapping_roundoff_A=delta, origin=state['origin'], cheap_work=state['cheap_work'])
-            tasks.append(t); state['status'] = 'prepared_candidate'
+            tasks.append(stage_candidate(source_task, state, out, len(tasks)))
+            state['status'] = 'prepared_candidate'
         states.append(state)
     selection = {'protocol_id': PROTOCOL, 'collection': record(collection), 'execution': record(execution),
                  'agreement': record(agreement), 'source': pilot['source'], 'states': states,
@@ -195,7 +202,7 @@ def prepare(collection, execution, agreement, controls_manifest, torsion_manifes
               'baseline_changed': False, 'execution_permitted_by_physical_gate': bool(qualified)}
     shards = []
     for i in range(0, len(tasks), 4):
-        p = out/f'shard_{i//4}'/'manifest.json'; p.parent.mkdir()
+        p = out/f'shard_{i//4}'/'manifest.json'
         write_new(p, {**shared, 'tasks': tasks[i:i+4]}); shards.append(record(p))
     write_new(out/'manifest.json', {**shared, 'tasks': tasks, 'shards': shards})
     return dry_run(out/'manifest.json')

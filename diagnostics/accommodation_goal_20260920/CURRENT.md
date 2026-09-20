@@ -2,28 +2,45 @@
 
 ## Latest substantive result and continuation
 
-Native DFT confirms the first large PLM **differential** donor response, not just
-the calcium component. MACE captures its direction and approximate magnitude;
-the solvent term worsens differential agreement. This is evidence for a physical
-accommodation mechanism, not a known PLM label or validated relaxed score.
-See [partial_v3](../accommodation_torsion_20260920/PARTIAL_DFT_REPORT_v3.md),
-commit eec6c4f. Existing profiles have boundary minima/nonconstant curvature.
+Native DFT confirms both large PLM **differential** donor responses, not just
+their calcium components. MACE captures the direction and approximate magnitude;
+the solvent term worsens differential agreement. All 16 original native endpoints
+completed; all 12 planned work comparisons are available. This supports a physical
+accommodation mechanism, not known PLM labels or validated relaxed scores.
+See [final native report](../accommodation_torsion_20260920/FINAL_DFT_REPORT.md).
+Existing profiles have boundary minima/nonconstant curvature. The original native
+job1203771 is complete; do not rerun it. Final native result/figure are saved.
 
 The [next declared experiment](../accommodation_nonlinear_20260920/PLAN.md) tests
 actual composite energies/analytic gradients along one or two whole-carboxylate
-torsions. Second_shell implements the bounded optimizer; khoury prepares exact
-all28 reference mappings for a common-rule followup without new molecular calls.
+torsions. Second_shell's implementation4755719 passed preflight and runs as1204162.
+The first Ca control is an interior qualified cheap minimum; the corresponding La
+candidate is stationary but fails the frozen curvature refinement tolerance.
+That is a numerical qualification failure, not evidence of an unstable basin.
+All 28 exact reference mappings are prepared (e6ef185), with no energy calls.
 Root owns technical review, execution coordination and later native validation.
 The first experiment contains eight metal-specific starts on the four original
 contexts. No fresh DFT is included until a separate validation manifest exists.
 No score-directed starting point, fitted spring or harmonic entropy is introduced.
+Water_basins implemented the separate native candidate adapter82dd519; it still
+requires final pilot output and genuine task-path preflight before submission.
+Root identified a shard-directory containment fix before any candidate calculation.
+
+Khoury owns the new [proposal experiment](../accommodation_nonlinear_20260920/PROPOSAL_PLAN.md):
+all 28 reference contexts plus the two original PLM contexts. Native MACE proposes
+the bounded donor arrangement; the existing primary composite evaluates the
+proposal and original, selecting only by energy. This tests whether solvent must
+be solved throughout the search. It preserves the running full-gradient pilot,
+does not remove solvent from scoring and does not promise a continuous minimum.
+Its source compatibility/preparation is in progress; no submission yet at this
+checkpoint. No threshold fitting or production/default change.
 
 The [latest partial benchmark](../accommodation_fold_DFT_20260920/PARTIAL_MATCHED_REPORT_v2.md)
 contains189/416 completed DFT endpoints. On the same42 La-conditioned source pairs,
 context composite corrects one additional call and removes the one DFT wrong call;
 on37 available triples DFT, native core and context composite all agree correctly.
 This is a small consumed-structure robustness result; completion order and missing
-coverage prevent a panel conclusion. All existing DFT jobs continue normally.
+coverage prevent a panel conclusion. The four baseline DFT jobs continue normally.
 The first PLM response observer completed its read-only task; it launches nothing.
 
 Third substantive email accepted by local relay at12:10UTC; exact message/receipt

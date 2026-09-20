@@ -3342,3 +3342,34 @@ continuing. All actual products are under workspaces/. CC1202429 and its indepen
 monitor remain untouched. Progress email accepted by localrelay; message/receipt
 in accommodation_goal workspace/email_progress_v1. Root stages only this appendix;
 preexisting unrelated SESSIONS changes remain unstaged. No push.
+
+## 2026-09-20 — Native donor mechanism confirmed; common-rule accommodation underway
+
+All 16 fixed native donor checks completed as1203771. Both compressed PLM
+examples show preferential La stabilization under the declared intact Asp
+rotation, captured by MACE; the solvent term worsens differential agreement.
+All12 endpoint-work and all6 differential signs match; no PLM biological labels,
+minima or corrected-affinity claim. Final result/report in accommodation_torsion
+FINAL_DFT_REPORT.md; actual native allocation589696core-s, combined614944core-s
+and13GPU-s. No native retry; prior cheap SCF failures remain unavailable.
+
+Root's separate nonlinear plan60451d0 uses actual composite energies and analytic
+gradients on bounded whole-donor motions. Second_shell implementation4755719
+passed preflight and runs as1204162. First Ca control qualifies; La stationary
+candidate fails frozen curvature refinement and remains unqualified. No rescue.
+All28 exact reference mappings are prepared(e6ef185), no new reference energies.
+Water_basins native adapter82dd519 follows separate plan d57d717; final real pilot
+collection/physical gate/runner preflight required before candidate DFT submission.
+Root identified shard path-containment fix before any candidate calculation.
+
+The new PROPOSAL_PLAN declares30contexts(28references+2PLM), same physical modes:
+MACE proposes; actual primary composite energy chooses original/proposal. Khoury
+owns implementation and compatibility preflight, no submission at this checkpoint.
+This tests whether expensive solvent gradients are needed during search while
+retaining solvent in scoring. No label-directed movement, fit or default change.
+
+Partial matched DFT report17596dc shows a small La-source single-fold benefit and
+parity on37 completed triples. Four baseline jobs1203976–79 continue; independent
+CC1202429/monitor preserved. Root emailed substantive physical finding at12:10UTC.
+Vault updated; ongoing goal remains active. Only scoped new files/own log appendix
+are staged; unrelated shared worktree changes remain untouched.

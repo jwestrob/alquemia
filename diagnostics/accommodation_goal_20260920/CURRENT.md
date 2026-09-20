@@ -61,3 +61,23 @@ solvent_shards_v2/ after validation and submission, not the full parent manifest
 Three actual-source adapter/reconciliation tests pass. Additional report tests
 are owned by second_shell. No production rescore, PLM output change, new threshold,
 mechanical correction, or ensemble promotion has occurred.
+
+## Contained continuations
+
+Geometry-only mapping41851ec found62flagged reference folds, but only one has
+the same extraAsp compression as the two PLM examples. The others are anchorGlu
+warnings and do not inherit the extraAsp validation. The sole matched-phenotype
+reference (MMOL1770,Ca-conditioned sample1) is tested at fixed±0.2rad with4newMACE
+and8newGFN2 calls, q0reused, in accommodation_reference_profile_20260920. No newDFT.
+
+A separate baseline comparison is in preparation by khoury_benchmark: exact old
+DFTcore recipe on all208supported noncanonical fold samples (416endpoints), with
+25canonical outputs reused and17unsupported retained. This is a direct comparator
+for accuracy/conditioning robustness, parallel to candidate development, with no
+threshold fitting or baseline change. Confirm actualsubmission/status in that
+new experiment record before running anything.
+
+The H-only minimizer diagnosticb62b011 converged under the same generic potential
+after monotonic preconditioning. It fixes silent numerical failure; that potential
+still produces longHbonds, also present in its nominally successful controls.
+No Hmodel change is promoted. See accommodation_controls HYDROGEN_DIAGNOSTIC_REPORT.

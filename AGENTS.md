@@ -1,5 +1,20 @@
 # Agent entry point
 
+## Latest research result: compact MACE + solvent transfer — 2026-09-20
+
+Completed approved native GFN2 ALPB-minus-vacuum correction on the fixed33-case
+core/context inventory:264/264 primary endpoints converged. Core native MACE
+alpha/GGR improves2/6→6/6; both representations retain25/25PQQ plus3/3consumed
+crystal calls. Context PQQ gap improves2.315→5.076model-kcal. Standalone GFN2 does
+not achieve the same ordering. This is useful development evidence, not broader
+accuracy than the promoted DFT baseline. Eight alternate-SCF checks failed;
+numerical qualification remains unavailable. No new DFT/MACE calls or default
+change. Read [result](diagnostics/compact_solvation_20260920/REPORT.md) and
+[commands](diagnostics/compact_solvation_20260920/COMMANDS.md); do not rerun the
+completed panel. All attempts cost37,376allocatedCPU-s, zero newGPU-s. Pursue the
+challenger, resolve numerical reproducibility before promotion. Charged-PQQ DFT
+1202478 is also complete; CC1202429 remains separate under its existing monitor.
+
 ## Current: water preparation promoted — 2026-09-19
 
 Jacob authorized promotion and discretionary next experiments: “go ahead and

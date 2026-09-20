@@ -1,0 +1,19 @@
+test_actual_failed_numerical_endpoint_has_no_energy (test_compact_solvation.CompactSolvationTests.test_actual_failed_numerical_endpoint_has_no_energy) ... ok
+test_actual_native_parameters_and_charge_closure (test_compact_solvation.CompactSolvationTests.test_actual_native_parameters_and_charge_closure) ... FAIL
+test_cache_contains_solvent_and_numerical_solver (test_compact_solvation.CompactSolvationTests.test_cache_contains_solvent_and_numerical_solver) ... ok
+test_changed_electronic_state_rejected (test_compact_solvation.CompactSolvationTests.test_changed_electronic_state_rejected) ... ok
+test_native_and_numerical_check_are_distinct (test_compact_solvation.CompactSolvationTests.test_native_and_numerical_check_are_distinct) ... ok
+test_real_fixed_eight_task_scope (test_compact_solvation.CompactSolvationTests.test_real_fixed_eight_task_scope) ... ok
+
+======================================================================
+FAIL: test_actual_native_parameters_and_charge_closure (test_compact_solvation.CompactSolvationTests.test_actual_native_parameters_and_charge_closure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/tests/test_compact_solvation.py", line 42, in test_actual_native_parameters_and_charge_closure
+    self.assertAlmostEqual(audit['charge_sum_e'],t['charge'],places=8)
+AssertionError: -1.9999999837028144 != -2 within 8 places (1.6297185601032993e-08 difference)
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.216s
+
+FAILED (failures=1)

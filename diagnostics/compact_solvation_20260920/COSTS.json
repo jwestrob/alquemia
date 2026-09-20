@@ -1,0 +1,132 @@
+{
+  "time_utc": "2026-09-20T08:03:22.861639+00:00",
+  "command": [
+    "sacct",
+    "-n",
+    "-P",
+    "-j",
+    "1203145,1203147,1203165",
+    "--format=JobID,State,ElapsedRaw,AllocCPUS,CPUTimeRAW,TotalCPU,MaxRSS,ReqMem,AllocTRES,NodeList"
+  ],
+  "rows": [
+    {
+      "JobID": "1203145",
+      "State": "COMPLETED",
+      "ElapsedRaw": "24",
+      "AllocCPUS": "64",
+      "CPUTimeRAW": "1536",
+      "TotalCPU": "13:25.479",
+      "MaxRSS": "",
+      "ReqMem": "128G",
+      "AllocTRES": "billing=64,cpu=64,node=1",
+      "NodeList": "node-64-768g-8"
+    },
+    {
+      "JobID": "1203145.batch",
+      "State": "COMPLETED",
+      "ElapsedRaw": "24",
+      "AllocCPUS": "64",
+      "CPUTimeRAW": "1536",
+      "TotalCPU": "13:25.477",
+      "MaxRSS": "0",
+      "ReqMem": "",
+      "AllocTRES": "cpu=64,mem=0,node=1",
+      "NodeList": "node-64-768g-8"
+    },
+    {
+      "JobID": "1203145.extern",
+      "State": "COMPLETED",
+      "ElapsedRaw": "24",
+      "AllocCPUS": "64",
+      "CPUTimeRAW": "1536",
+      "TotalCPU": "00:00.001",
+      "MaxRSS": "0",
+      "ReqMem": "",
+      "AllocTRES": "billing=64,cpu=64,node=1",
+      "NodeList": "node-64-768g-8"
+    },
+    {
+      "JobID": "1203147",
+      "State": "FAILED",
+      "ElapsedRaw": "60",
+      "AllocCPUS": "64",
+      "CPUTimeRAW": "3840",
+      "TotalCPU": "48:32.098",
+      "MaxRSS": "",
+      "ReqMem": "128G",
+      "AllocTRES": "billing=64,cpu=64,node=1",
+      "NodeList": "node-64-768g-33"
+    },
+    {
+      "JobID": "1203147.batch",
+      "State": "FAILED",
+      "ElapsedRaw": "60",
+      "AllocCPUS": "64",
+      "CPUTimeRAW": "3840",
+      "TotalCPU": "48:32.097",
+      "MaxRSS": "4609668K",
+      "ReqMem": "",
+      "AllocTRES": "cpu=64,mem=0,node=1",
+      "NodeList": "node-64-768g-33"
+    },
+    {
+      "JobID": "1203147.extern",
+      "State": "COMPLETED",
+      "ElapsedRaw": "60",
+      "AllocCPUS": "64",
+      "CPUTimeRAW": "3840",
+      "TotalCPU": "00:00.001",
+      "MaxRSS": "0",
+      "ReqMem": "",
+      "AllocTRES": "billing=64,cpu=64,node=1",
+      "NodeList": "node-64-768g-33"
+    },
+    {
+      "JobID": "1203165",
+      "State": "COMPLETED",
+      "ElapsedRaw": "500",
+      "AllocCPUS": "64",
+      "CPUTimeRAW": "32000",
+      "TotalCPU": "04:26:02",
+      "MaxRSS": "",
+      "ReqMem": "128G",
+      "AllocTRES": "billing=64,cpu=64,node=1",
+      "NodeList": "node-64-768g-17"
+    },
+    {
+      "JobID": "1203165.batch",
+      "State": "COMPLETED",
+      "ElapsedRaw": "500",
+      "AllocCPUS": "64",
+      "CPUTimeRAW": "32000",
+      "TotalCPU": "04:26:02",
+      "MaxRSS": "4328500K",
+      "ReqMem": "",
+      "AllocTRES": "cpu=64,mem=0,node=1",
+      "NodeList": "node-64-768g-17"
+    },
+    {
+      "JobID": "1203165.extern",
+      "State": "COMPLETED",
+      "ElapsedRaw": "500",
+      "AllocCPUS": "64",
+      "CPUTimeRAW": "32000",
+      "TotalCPU": "00:00.001",
+      "MaxRSS": "96K",
+      "ReqMem": "",
+      "AllocTRES": "billing=64,cpu=64,node=1",
+      "NodeList": "node-64-768g-17"
+    }
+  ],
+  "allocated_cpu_seconds_total": 37376,
+  "allocated_cpu_seconds_primary": 33536,
+  "allocated_cpu_seconds_failed_numerical": 3840,
+  "allocated_gpu_seconds": 0,
+  "sum_job_elapsed_seconds": 584,
+  "new_low_level_calls": 272,
+  "primary_converged_calls": 264,
+  "failed_numerical_calls": 8,
+  "new_DFT_or_MACE_calls": 0,
+  "host_memory_requested_per_job": "128GiB",
+  "peak_host_memory_caveat": "sacct MaxRSS is the observed batch-step value; pilot reports zero (unavailable), never interpreted as zero usage. MPI/process accounting may not capture true aggregate peak."
+}

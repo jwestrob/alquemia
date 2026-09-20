@@ -1,0 +1,18 @@
+test_all_132_actual_native_sources_and_fixed_denominators (test_compact_solvation_compare.CompactSources.test_all_132_actual_native_sources_and_fixed_denominators) ... FAIL
+test_explicit_corruption_of_actual_native_energy_is_rejected (test_compact_solvation_compare.CompactSources.test_explicit_corruption_of_actual_native_energy_is_rejected) ... ok
+test_identity_unit_algebra_uses_actual_archived_quantum_values (test_compact_solvation_compare.CompactSources.test_identity_unit_algebra_uses_actual_archived_quantum_values) ... ok
+test_no_low_level_outputs_retains_native_and_null_composite (test_compact_solvation_compare.CompactSources.test_no_low_level_outputs_retains_native_and_null_composite) ... ok
+test_replays_existing_alpha_ggr_native_context_gain (test_compact_solvation_compare.CompactSources.test_replays_existing_alpha_ggr_native_context_gain) ... ok
+
+======================================================================
+FAIL: test_all_132_actual_native_sources_and_fixed_denominators (test_compact_solvation_compare.CompactSources.test_all_132_actual_native_sources_and_fixed_denominators)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/tests/test_compact_solvation_compare.py", line 20, in test_all_132_actual_native_sources_and_fixed_denominators
+    self.assertEqual(sum(c['role']=='retrospective_structural_transfer' for c in self.inv['cases']),3)
+AssertionError: 2 != 3
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.015s
+
+FAILED (failures=1)

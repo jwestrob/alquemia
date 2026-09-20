@@ -51,3 +51,9 @@ The objective is a mechanistic gain, not a prescribed winning backend. Pursue
 promising contained alternatives within this authorization, write short result
 and vault notes, and email Jacob substantive results. This document records a
 plan and permission, not a scientific outcome.
+
+Jacob's subsequent reporting preference: "don't focus so much on numbers, but
+why we're doing what we're doing and the benefits we're seeing, as well as the
+engineering progress." Lead updates and email with scientific motivation, what
+was learned, practical benefit and remaining limitation; keep detailed numerical
+tables and execution receipts in linked reports.

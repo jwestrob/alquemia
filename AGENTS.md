@@ -1,5 +1,26 @@
 # Agent entry point
 
+## Current: fast PQQ released; structural robustness under test — 2026-09-20
+
+The authorized fast PQQ source-to-score release passed and is committed as
+8dd81ba. `affordable_workflow.py standard` chooses the named fast mode for
+compatible explicit PQQ source requests; explicit `dft-reference` and existing
+water-prepared baseline remain available. Read
+[release report/limits](diagnostics/pqq_fast_release_20260920/REPORT.md) and
+[commands](diagnostics/pqq_fast_release_20260920/COMMANDS.md). This release proves
+source reconstruction and retained reference fidelity, not broad accuracy gains.
+
+Root is testing all250 saved, known-reference AF3 samples across both folding
+metals under [frozen plan](diagnostics/accommodation_goal_20260920/FOLD_ROBUSTNESS_PLAN.md).
+Primary comparisons exclude the25 original calibration geometries. Root owns
+`accommodation_folds.py` and execution; second_shell owns the comparison/report;
+khoury_benchmark audits source/H-preparation failures. Water_basins owns the
+separate solvent-consistent physical donor profiles and preselected DFT checks.
+Do not change bands or infer PLM labels from predicted XoxF names. See the
+[current checkpoint](diagnostics/accommodation_goal_20260920/CURRENT.md) before
+submitting work; preserve CC1202429 and all independent jobs. Jacob requests
+updates led by motivation and practical benefits, with detailed numbers in reports.
+
 ## Active overnight goal — 2026-09-20
 
 Jacob authorized autonomous pursuit of improved metal-accommodation discrimination:

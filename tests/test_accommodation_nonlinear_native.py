@@ -147,5 +147,22 @@ class NativeAdapter(unittest.TestCase):
                 with self.assertRaises(TaskRunnerError): dry_run(bp)
             self.assertNotEqual(parents[0]/'execute.lock', parents[1]/'execute.lock')
 
+    def test_real_final_collection_report_fields_and_failed_physical_gate(self):
+        import copy
+        from affordable_common import write_new
+        cp = ROOT/'workspaces/accommodation_nonlinear_20260920/collection_final_v1.json'
+        ep = ROOT/'workspaces/accommodation_nonlinear_20260920/pilot_v2/execution_1204162.json'
+        collection, pilot, qualified = native.pilot_source(cp, ep)
+        self.assertEqual(len(collection['endpoints']), 8)
+        self.assertEqual(qualified, [])
+        self.assertEqual(sum(r['candidate'] is not None for r in collection['endpoints']), 8)
+        # Explicitly corrupted copy of a real final candidate. Additional
+        # reporting fields must not weaken the frozen candidate comparison.
+        corrupt = copy.deepcopy(collection)
+        corrupt['endpoints'][0]['candidate']['active_q_radian'][0] += .01
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d)/'corrupted_collection.json'; write_new(p, corrupt)
+            with self.assertRaises(InvalidArtifact): native.pilot_source(p, ep)
+
 
 if __name__ == '__main__': unittest.main()

@@ -126,7 +126,10 @@ def pilot_source(collection, execution):
     for row in c['endpoints']:
         if 'receipt' in row:
             p = row['receipt']
-            if recorded.get(p['path']) != p or {k: v for k, v in row.items() if k != 'receipt'} != read_json(verify(p)):
+            # Final reporting adds these two descriptive fields; the original
+            # endpoint/candidate record still has to match its actual receipt.
+            report_only = {'receipt', 'reported_donor_contacts_A', 'reported_curvature_components'}
+            if recorded.get(p['path']) != p or {k: v for k, v in row.items() if k not in report_only} != read_json(verify(p)):
                 raise InvalidArtifact('pilot endpoint differs from terminal execution')
         elif row.get('candidate') is not None or x['error'] is None:
             raise InvalidArtifact('missing terminal pilot endpoint receipt')

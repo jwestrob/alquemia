@@ -1,14 +1,18 @@
-# Native candidate adapter: ready for the final pilot collection
+# Native candidate adapter: eight candidates prepared, execution gate failed
 
 `scripts/accommodation_nonlinear_native.py` connects the existing nonlinear
-candidate records, native ORCA runner and analytic-gradient parser. No new
-scientific calculation or candidate preparation ran during implementation.
+candidate records, native ORCA runner and analytic-gradient parser. All eight
+actual final candidates are now prepared in two runner-compatible shards.
+Both four-task dry-runs pass. **No native validation was submitted:** none of
+the four cases has both cheap endpoints qualified, so the frozen execution gate
+fails. Both shard execution calls were checked to refuse before the runner starts.
 
-**Six real-artifact tests pass**, zero skips, in 2.889 seconds. They replay actual
+**Seven real-artifact tests pass**, zero skips, in 2.955 seconds. They replay actual
 native water-gradient drivers and unit conversion; current-coordinate projection
 using archived GFN2 gradients; native PLM work/sign algebra; the eight original
 DFT state records; the exact EnGrad-only input change; and runner path containment
-using an actual completed 1H4I Ca candidate. Malformed-input checks
+using an actual completed 1H4I Ca candidate; and final-collection identity/gating.
+Malformed-input checks
 use explicitly corrupted copies of real records. The water-gradient fixtures used
 TightSCF historically; their parser evidence does not change the new native recipe.
 
@@ -40,6 +44,23 @@ No final pilot collection was fabricated, no endpoint output was created, and
 these staging manifests are not execution candidates. Actual staging receipt:
 
 `workspaces/accommodation_nonlinear_20260920/native_adapter_layout_v1/PREFLIGHT.json`
+
+## Genuine final-collection preparation
+
+Final source: `workspaces/accommodation_nonlinear_20260920/collection_final_v1.json`,
+with `pilot_v2/execution_1204162.json`. Final reporting adds donor-contact and
+curvature-component descriptions beside the immutable endpoint records. The
+adapter permits exactly those two report-only fields and still requires every
+original candidate field to match its terminal receipt. The first prepare attempt
+rejected those additions before creating outputs; no calculation was involved.
+
+Actual prepared inventory:
+`workspaces/accommodation_nonlinear_20260920/native_prepared_v1/manifest.json`.
+Its `PREFLIGHT.json` records both runner passes and explicit execution refusals.
+`collection_unrun_v1.json` retains all eight candidates with native energies,
+gradients and work **unavailable**, not zero. No endpoint output, gradient or
+execution event was created. Actual analytic-driver checks on these candidates
+remain unrun; compatibility was tested on archived native gradient outputs only.
 
 ## Operations and safeguards
 
@@ -92,10 +113,16 @@ scripts/accommodation_nonlinear_native.py origins \
 `--agreement`, `--controls-manifest`, `--torsion-manifest`, and `--output`.
 No source-code edits or shell defaults select inputs.
 
-Full eight-state preparation and its runner preflight remain **unrun until the
-real final pilot collection exists**. The isolated real-candidate layout preflight
-above has run. No synthetic candidate or successful native output was used
-to claim end-to-end readiness. The final collection will provide the concrete
-prepare/execute/collect commands under the separately frozen
-[native validation plan](NATIVE_VALIDATION_PLAN.md). No additional DFT has been
-submitted, and production/default behavior is unchanged.
+The prepared inventory can be checked without executing chemistry:
+
+```bash
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python \
+workspaces/accommodation_nonlinear_20260920/native_prepared_v1/implementation/accommodation_nonlinear_native.py \
+dry-run --manifest workspaces/accommodation_nonlinear_20260920/native_prepared_v1/manifest.json
+```
+
+Do not submit these shards under the frozen [native validation plan](NATIVE_VALIDATION_PLAN.md):
+its physical gate failed. Readiness of the runner does not change that scientific
+decision. No synthetic candidate or successful native output was used. Production
+and the separate proposal model remain unchanged.

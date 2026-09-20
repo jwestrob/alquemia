@@ -3311,3 +3311,34 @@ Jacob: "pursue!" after completed utility report/recommendation. Root declared nu
 Completed root numerical qualification:24/24nativeTight endpoints across6contexts pass unchanged0.10transfer/0.20score criteria; maxscorechange0.025544882kcal. Restart-control repairs preserved48totalattempts:8xtbw and8simpleMORead requests ignored; explicitblockMORead works but only1/8converges, no pairs. Independent raw-output review confirms state/parameter invariants and limited precision claim. Numericalcost16,128CPU-s/0GPU-s. Parallel scanner now accepts explicit supported preparedpairs with optional oldMACE scores and unchanged protocol/bands. Failed32CPU-as-one-MPI-task launch retained; corrected32task layout completes8MACE+16GFN2 in117s includingcollection,4sites27–31s, exactMACE repeats, maxcompositedelta6.4e-10. Includingfailedlayout scanner5,120CPU-s/160GPU-s; combinedcontinuation21,248CPU-s/160GPU-s. No newgeometry/DFT/calibration/defaultchange or newindependentbiologicallabels. Reports/commands in diagnostics/compact_qualification_20260920 and compact_scanner_20260920. Scope finished; existingCC1202429/monitor untouched. Useopt-in research scorer alongsideproductionbaseline; do notresubmitcompletedpilots.
 
 Root combined compact suite:27real-fixture tests pass in8.018s, zero skips. Independent numerical agent review reproduced raw-energy differences. Final reports/vault notes and summary email saved; local relay accepted. Current commands lead with successful corrected-layout operation. Only scoped new code/diagnostics and own coordination entries are committed.
+
+## 2026-09-20 — Released fast PQQ and launched known-fold robustness research
+
+Jacob authorized the overnight accuracy goal, promising-direction autonomy and
+parallel agents; latest steering asks reports to lead with motivation/benefits
+rather than numerical receipts. Goal remains active: speed or preparation alone
+is not completion. Fast source-backed PQQ release8dd81ba passed fresh28reference
+preparations/classifications and literal CLI,57tests. Standard compatiblePQQ mode
+now uses namedfast route, explicitDFT and existingwater baseline preserved.
+
+Curation8ace781 froze250realAF3 referencefolds (bothmetalconditions), primary225
+excluding25canonicalreplays. Root836f98f preparedall250 on1203744;17failures stay
+visible (16offsiteions,1silentH-minimizationfailure). Seven2.22e-16Å cap replay
+differences reconciled without coordinate edits. WarmnativeMACE1203769 completed
+834freshendpoints plus98reused;2freshreferencechecks exact. FirstGPUimport failure
+1203747 occurred before evaluation, retained. Four1668-new/196-reusedGFN2shards
+1203797/98/99/1203800 now run under existing runners; comparison agent preserves
+frozenbands and complete4La/5Ca pools, no test-set threshold fit.
+
+Separate analyticresponse6eb5268 and torsion5afc85d are saved. Targeted donor
+decompression preferentially stabilizesLa in two unlabeledPLM examples at the
+cheap level;16preselectedDFTchecks1203771 remain underway. This is a physical
+hypothesis, not proven prediction accuracy. H-repair diagnostic1203793 reproduces
+a silent minimizer failure and removes collisions with unchangedheavyatoms/state;
+strict convergence and chemical evaluation remain separate. NoPLM rescore.
+
+Read diagnostics/accommodation_goal_20260920/CURRENT.md and the frozenplans before
+continuing. All actual products are under workspaces/. CC1202429 and its independent
+monitor remain untouched. Progress email accepted by localrelay; message/receipt
+in accommodation_goal workspace/email_progress_v1. Root stages only this appendix;
+preexisting unrelated SESSIONS changes remain unstaged. No push.

@@ -1,0 +1,145 @@
+{
+  "GFN2_SCFS_completed": 16,
+  "GFN2_attempts": 32,
+  "GFN2_startup_failures": 16,
+  "MACE_calls": 16,
+  "PQQ_decisions": [
+    {
+      "case_id": "1H4I",
+      "decision": "Ca-supported"
+    },
+    {
+      "case_id": "q9z4j7-pqq-la_model",
+      "decision": "Ca-supported"
+    }
+  ],
+  "actual_collection": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/compact_scanner_20260920/pilot_v2/result_1203319.json",
+    "sha256": "8b1cd2ff0025f038680848d611ba251dc8cfc0a3a0cab1f95fef968557b50ce4"
+  },
+  "all_four_scores_pass_repeat_tolerance": true,
+  "allocation_receipts": [
+    {
+      "allocated_CPUs": 32,
+      "allocated_GPU_seconds": 43,
+      "allocated_GPUs": 1,
+      "allocated_core_seconds": 1376,
+      "job_id": "1203299",
+      "node": "node-224-2t-8gpu-1",
+      "reported_TotalCPU": "00:44.645",
+      "requested_memory": "200000M",
+      "state": "COMPLETED",
+      "wall_seconds": 43
+    },
+    {
+      "allocated_CPUs": 32,
+      "allocated_GPU_seconds": 117,
+      "allocated_GPUs": 1,
+      "allocated_core_seconds": 3744,
+      "job_id": "1203319",
+      "node": "node-224-2t-8gpu-1",
+      "reported_TotalCPU": "19:12.816",
+      "requested_memory": "200000M",
+      "state": "COMPLETED",
+      "wall_seconds": 117
+    }
+  ],
+  "alpha_minus_GGR_model_kcal_mol": 24.30463001038879,
+  "archived_comparison": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/compact_solvation_20260920/full_v1/comparison_v1.json",
+    "sha256": "0fbbf688f922ae8e1c32d26df79284de6897c406cd11465dfed302fd48dd48a0"
+  },
+  "baseline_changed": false,
+  "complete_sites": 4,
+  "folding_context_preparation_included": false,
+  "independent_alpha_GGR_comparisons": 1,
+  "max_composite_repeat_difference_model_kcal_mol": 6.402842700481415e-10,
+  "max_native_MACE_repeat_difference_kcal_mol": 0.0,
+  "mean_complete_score_path_seconds_per_site": 29.163604194298387,
+  "median_site_endpoint_path_seconds": 28.528287125751376,
+  "new_DFT_calls": 0,
+  "new_geometry_generated": false,
+  "peak_observed_MACE_cuda_allocated_bytes": 2785492480,
+  "peak_observed_MACE_host_RSS_KiB": 1923424,
+  "prepared_input_timing": {
+    "allocated_GPU_seconds": 116.65441677719355,
+    "allocated_core_seconds": 3732.9413368701935,
+    "available": 4,
+    "collection_included": true,
+    "folding_or_context_preparation_included": false,
+    "manifest": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/compact_scanner_20260920/pilot_v2/manifest.json",
+      "sha256": "0b1dbaadafd7d374e233f71d815261df24f32ab6d568506d5b92b6c15451dcb0"
+    },
+    "prepared_input_score_path_seconds": 116.65441677719355,
+    "slurm_job_id": "1203319"
+  },
+  "protocol_id": "native_OMOL_plus_native_GFN2_ALPB_transfer_v1",
+  "qualification_note": "Execution repeatability passed. Separate native tight-SCF qualification passed six contexts; independent ordinary-SCF pair qualification unavailable; see compact_qualification_20260920.",
+  "review_implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/compact_solvation_scanner.py",
+    "sha256": "95da189fda1ee0aca25f981bfe2bbaf2141e0380c3642a2e9350f810c1cf0a37"
+  },
+  "reviewed_collection": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/compact_scanner_20260920/pilot_v2/reviewed_collection_v2.json",
+    "sha256": "d8a4ba4a4b2d3db8ca85069692ea594cbd758e6fdfb99de7b78c3739140b30ec"
+  },
+  "rows": [
+    {
+      "GFN2_stage_seconds": 20.668310187757015,
+      "MACE_stage_seconds": 10.32715966179967,
+      "case_id": "1H4I",
+      "composite_R_model_kcal_mol": -405506.6479819513,
+      "endpoint_path_seconds": 30.998068246990442,
+      "published_PQQ_decision": "Ca-supported",
+      "repeat_difference_model_kcal_mol": -6.402842700481415e-10
+    },
+    {
+      "GFN2_stage_seconds": 18.85818860307336,
+      "MACE_stage_seconds": 9.240462873131037,
+      "case_id": "q9z4j7-pqq-la_model",
+      "composite_R_model_kcal_mol": -405464.18774828064,
+      "endpoint_path_seconds": 28.10221816971898,
+      "published_PQQ_decision": "Ca-supported",
+      "repeat_difference_model_kcal_mol": -6.402842700481415e-10
+    },
+    {
+      "GFN2_stage_seconds": 19.044060837477446,
+      "MACE_stage_seconds": 9.90691164135933,
+      "case_id": "1F6S",
+      "composite_R_model_kcal_mol": -405464.833744834,
+      "endpoint_path_seconds": 28.95435608178377,
+      "published_PQQ_decision": null,
+      "repeat_difference_model_kcal_mol": -6.402842700481415e-10
+    },
+    {
+      "GFN2_stage_seconds": 17.01438771188259,
+      "MACE_stage_seconds": 9.96080720052123,
+      "case_id": "1GLG",
+      "composite_R_model_kcal_mol": -405489.1383748444,
+      "endpoint_path_seconds": 26.979585725814104,
+      "published_PQQ_decision": null,
+      "repeat_difference_model_kcal_mol": 6.402842700481415e-10
+    }
+  ],
+  "scientific_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/compact_scanner_20260920/pilot_v2/manifest.json",
+    "sha256": "0b1dbaadafd7d374e233f71d815261df24f32ab6d568506d5b92b6c15451dcb0"
+  },
+  "site_denominator": 4,
+  "source_allocation_receipt": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/compact_scanner_20260920/SACCT.txt",
+    "sha256": "750130d787e886a62c3866a27ff4730414888021b11d62717b588e1e3503bb8e"
+  },
+  "source_tests": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/compact_scanner_20260920/TESTS.txt",
+    "sha256": "6e4cb930110c11c8e2eb5cf80f96a52d9774359339ab143d2c97ba7274b5135d"
+  },
+  "successful_timing_allocation_GPU_seconds": 117,
+  "successful_timing_allocation_core_seconds": 3744,
+  "threshold_fit": false,
+  "total_development_allocated_GPU_seconds": 160,
+  "total_development_allocated_core_seconds": 5120,
+  "total_native_MACE_inference_seconds": 3.1198812797665596,
+  "whole_allocation_peak_host_memory": null
+}

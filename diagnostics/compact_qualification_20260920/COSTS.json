@@ -1,0 +1,131 @@
+{
+  "allocated_cpu_seconds": 16128,
+  "allocated_gpu_seconds": 0,
+  "command": [
+    "sacct",
+    "-n",
+    "-P",
+    "-j",
+    "1203265,1203284,1203308",
+    "--format=JobID,State,ElapsedRaw,AllocCPUS,CPUTimeRAW,TotalCPU,MaxRSS,ReqMem,AllocTRES,NodeList"
+  ],
+  "failed_endpoints": 23,
+  "memory_note": "Requested128GiB per job; MaxRSS observed batch value is not guaranteed total MPI-process peak.",
+  "new_DFT_MACE_calls": 0,
+  "new_low_level_attempts": 48,
+  "previous_phase_cost_included": false,
+  "rows": [
+    {
+      "AllocCPUS": "64",
+      "AllocTRES": "billing=64,cpu=64,node=1",
+      "CPUTimeRAW": "8128",
+      "ElapsedRaw": "127",
+      "JobID": "1203265",
+      "MaxRSS": "",
+      "NodeList": "node-64-768g-29",
+      "ReqMem": "128G",
+      "State": "FAILED",
+      "TotalCPU": "01:28:27"
+    },
+    {
+      "AllocCPUS": "64",
+      "AllocTRES": "cpu=64,mem=0,node=1",
+      "CPUTimeRAW": "8128",
+      "ElapsedRaw": "127",
+      "JobID": "1203265.batch",
+      "MaxRSS": "4735980K",
+      "NodeList": "node-64-768g-29",
+      "ReqMem": "",
+      "State": "FAILED",
+      "TotalCPU": "01:28:27"
+    },
+    {
+      "AllocCPUS": "64",
+      "AllocTRES": "billing=64,cpu=64,node=1",
+      "CPUTimeRAW": "8128",
+      "ElapsedRaw": "127",
+      "JobID": "1203265.extern",
+      "MaxRSS": "0",
+      "NodeList": "node-64-768g-29",
+      "ReqMem": "",
+      "State": "COMPLETED",
+      "TotalCPU": "00:00.001"
+    },
+    {
+      "AllocCPUS": "64",
+      "AllocTRES": "billing=64,cpu=64,node=1",
+      "CPUTimeRAW": "4160",
+      "ElapsedRaw": "65",
+      "JobID": "1203284",
+      "MaxRSS": "",
+      "NodeList": "node-64-768g-23",
+      "ReqMem": "128G",
+      "State": "FAILED",
+      "TotalCPU": "52:13.978"
+    },
+    {
+      "AllocCPUS": "64",
+      "AllocTRES": "cpu=64,mem=0,node=1",
+      "CPUTimeRAW": "4160",
+      "ElapsedRaw": "65",
+      "JobID": "1203284.batch",
+      "MaxRSS": "4491820K",
+      "NodeList": "node-64-768g-23",
+      "ReqMem": "",
+      "State": "FAILED",
+      "TotalCPU": "52:13.977"
+    },
+    {
+      "AllocCPUS": "64",
+      "AllocTRES": "billing=64,cpu=64,node=1",
+      "CPUTimeRAW": "4160",
+      "ElapsedRaw": "65",
+      "JobID": "1203284.extern",
+      "MaxRSS": "0",
+      "NodeList": "node-64-768g-23",
+      "ReqMem": "",
+      "State": "COMPLETED",
+      "TotalCPU": "00:00.001"
+    },
+    {
+      "AllocCPUS": "64",
+      "AllocTRES": "billing=64,cpu=64,node=1",
+      "CPUTimeRAW": "3840",
+      "ElapsedRaw": "60",
+      "JobID": "1203308",
+      "MaxRSS": "",
+      "NodeList": "node-64-768g-29",
+      "ReqMem": "128G",
+      "State": "FAILED",
+      "TotalCPU": "48:01.829"
+    },
+    {
+      "AllocCPUS": "64",
+      "AllocTRES": "cpu=64,mem=0,node=1",
+      "CPUTimeRAW": "3840",
+      "ElapsedRaw": "60",
+      "JobID": "1203308.batch",
+      "MaxRSS": "4613792K",
+      "NodeList": "node-64-768g-29",
+      "ReqMem": "",
+      "State": "FAILED",
+      "TotalCPU": "48:01.827"
+    },
+    {
+      "AllocCPUS": "64",
+      "AllocTRES": "billing=64,cpu=64,node=1",
+      "CPUTimeRAW": "3840",
+      "ElapsedRaw": "60",
+      "JobID": "1203308.extern",
+      "MaxRSS": "56K",
+      "NodeList": "node-64-768g-29",
+      "ReqMem": "",
+      "State": "COMPLETED",
+      "TotalCPU": "00:00.001"
+    }
+  ],
+  "source_preparation_cost": "reuse; local audit/preparation/test CPU not in scheduler allocation",
+  "successful_endpoints": 25,
+  "summed_job_wall_seconds": 252,
+  "time_utc": "2026-09-20T08:40:51.493301+00:00"
+}

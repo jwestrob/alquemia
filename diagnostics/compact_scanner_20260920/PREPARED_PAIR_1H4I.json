@@ -1,0 +1,83 @@
+{
+  "cases": [
+    {
+      "all_evidence_consumed": true,
+      "biological_group": "p16027",
+      "case_id": "1H4I",
+      "evidence_stratum": "canonical_PQQ_functional_class",
+      "expected_class": "Ca",
+      "label_scope": "canonical_PQQ_functional_class",
+      "representations": {
+        "context": {
+          "endpoints": {
+            "Ca": {
+              "charge": -2,
+              "metal_index": 0,
+              "multiplicity": 1,
+              "xyz": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/second_shell_20260919/prepared_v2/tasks/1H4I__expanded__Ca/core.xyz",
+                "sha256": "d2f0908cd217272b11342369d14e488f2e0c351586cead815a4110963a0e4c18"
+              }
+            },
+            "La": {
+              "charge": -1,
+              "metal_index": 0,
+              "multiplicity": 1,
+              "xyz": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/second_shell_20260919/prepared_v2/tasks/1H4I__expanded__La/core.xyz",
+                "sha256": "3056a1bf62c4f8f1e274043e68e66c22230171cb11ea54b48b9ab656e7f7009d"
+              }
+            }
+          },
+          "preparation": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/environment_pqq_20260919/prepared_v1/cases/1H4I/preparation.json",
+            "sha256": "b6580579b3add379e6f855a9e1679ee67ef04db8c449e7633b81db7ef5ee3536"
+          },
+          "protocol_id": "native_OMOL_complete_polar_context_disulfide_v2"
+        }
+      },
+      "role": "retrospective_structural_transfer",
+      "sequence_accession_group": "p16027"
+    }
+  ],
+  "example_only_no_new_science": true,
+  "model": {
+    "checkpoint": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/software_v1/MACE-omol-0-extra-large-1024.model",
+      "sha256": "9b64b4fd5153ca578c694abc57806d8111050de6ff652e695c9b525bc4d36469"
+    },
+    "dtype": "float64",
+    "embedding_specs": {
+      "total_charge": {
+        "emb_dim": 1024,
+        "in_dim": 1,
+        "num_classes": 201,
+        "offset": 100,
+        "per": "graph",
+        "type": "categorical"
+      },
+      "total_spin": {
+        "emb_dim": 1024,
+        "in_dim": 1,
+        "num_classes": 101,
+        "offset": 0,
+        "per": "graph",
+        "type": "categorical"
+      }
+    },
+    "energy_component": "MACE_OMOL_total_vacuum_energy",
+    "execution_adapter": null,
+    "extra_dispersion": false,
+    "family": "MACE_OMOL",
+    "head": "omol",
+    "periodic": false,
+    "r_max_A": 6.0,
+    "solvent": null,
+    "spin_input_convention": "multiplicity"
+  },
+  "schema_version": "prepared_complete_context_pairs_v1",
+  "software": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/software_v1/software_manifest.json",
+    "sha256": "7d2448b279b5191a529ef329a60442635601576794f9737efc64343c9a6e0168"
+  }
+}

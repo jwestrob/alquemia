@@ -1,5 +1,23 @@
 # Agent entry point
 
+## Latest: usable opt-in composite scorer — 2026-09-20
+
+Jacob said "pursue!". Numerical tightening passed all6contexts:24nativeGFN2
+endpoints, maximum score shift0.025545kcal below unchanged0.20tolerance. Ordinary
+SCF remains unreliable even after actual orbital restart; no complete cross-solver
+pair and no broad qualification claim. Read [numerical result](diagnostics/compact_qualification_20260920/REPORT.md).
+
+The fresh four-site prepared-input MACE+solvent path completed in117s on1H200/
+32CPUs/200000MiB, about27–31s per site; all scores repeat within6.4e-10model-kcal.
+Use [scanner commands](diagnostics/compact_scanner_20260920/COMMANDS.md) and
+`scripts/compact_solvation_scanner.py` for opt-in supported prepared pairs. Old
+MACE energies are optional. PQQ bands require compatible PQQ context provenance;
+generic sites retain raw contrasts. Current commands use the corrected32-task
+MPI layout; the first layout attempt failed before GFN2 SCF and is preserved.
+Total continuation cost including all failures:21,248allocatedCPU-s/160GPU-s.
+Default DFT/water-preparation workflow and calibration remain unchanged. Do not
+rerun completed qualification/timing pilots. CC1202429/monitor remain independent.
+
 ## Latest research result: compact MACE + solvent transfer — 2026-09-20
 
 Completed approved native GFN2 ALPB-minus-vacuum correction on the fixed33-case

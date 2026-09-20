@@ -1,0 +1,298 @@
+{
+  "artifacts": {
+    "alpha_archived_dft_matrix": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_controls_20260920/alpha_archived_dft_matrix.json",
+      "sha256": "715ce97dd6c7c14f932e7cf1f4452762b4dea1fc90b420a2d814952861a5aa4d"
+    },
+    "alpha_atom_mapping": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_controls_20260920/alpha_atom_mapping.json",
+      "sha256": "eb6682cffff286348568c8e98a98c6b1d35f5397ff1748bc4818ea30237dcabb"
+    },
+    "alpha_equal_two_water_pair": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_controls_20260920/alpha_equal_two_water_pair.json",
+      "sha256": "cf8a02974e05934e4e2fb67e1cbfc104f7e90f5a388c64515f9be799d7ed3d2f"
+    },
+    "alpha_sources": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_controls_20260920/alpha_sources.json",
+      "sha256": "c204c02bba95b557f1383a2770cee0eee32ec873222b0043bc98b3a57408abfa"
+    },
+    "context_construction_options": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_controls_20260920/context_construction_options.json",
+      "sha256": "414de3d445f54850b033cfd94cb549a5cdcd0895bd19ceb32d0232d2def1cf44"
+    },
+    "independent_control_readiness": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_controls_20260920/independent_control_readiness.json",
+      "sha256": "a363d6dc63e6a984ef582c0aa1fd72566cd32ba98e3937162cb55053d0f44622"
+    }
+  },
+  "baseline_changed": false,
+  "excluded_structural_lead": {
+    "pair": [
+      "9B26",
+      "2MBX"
+    ],
+    "reason": "Cod Gad m 1.0201 La X-ray versus Ca NMR (20 models); N-terminal G versus M, extra partial-occupancy La and crystallization anions. No exact same-construct crystal pair or matched La/Ca affinity verified. Do not borrow carp parvalbumin affinity labels.",
+    "source_pins": [
+      {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_controls_20260920/sources/9B26.cif",
+        "sha256": "7a4daeb7985e5d78f4d7f7cdfacea3d553d95a2fd07c7aa841a61687e13d0596"
+      },
+      {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_controls_20260920/sources/2MBX.cif",
+        "sha256": "67ddaa9a964c6b774749563b68c2a8af8a32a3bbb7d12691c6474fef18b3584c"
+      }
+    ],
+    "sources": [
+      "https://doi.org/10.1002/pro.5226",
+      "https://doi.org/10.1002/prot.24664"
+    ]
+  },
+  "experiments": [
+    {
+      "biological_group": "bovine_alpha_lactalbumin_P00711",
+      "id": "alpha_native_metal_conditioned_geometry",
+      "label": "Qualified strong-site La>Ca NMR competition; exact assay conditions pending.",
+      "question": "How much does observed coordination organization depend on the Ca-bound versus La-bound source geometry?",
+      "retained_states": "Both native water inventories (2 and 3); no automatic cross-state energy or water-occupancy interpretation.",
+      "source_structures": [
+        "1F6S:A:CA201",
+        "6IP9:A:LA203"
+      ],
+      "sources": [
+        "https://doi.org/10.1038/s41598-018-38024-1",
+        "https://doi.org/10.1074/jbc.M004752200",
+        "https://doi.org/10.1016/0167-4838(95)00223-5"
+      ],
+      "status": "source_geometry_pair_ready; not matched native composition"
+    },
+    {
+      "biological_group": "bovine_alpha_lactalbumin_P00711",
+      "energy_model": "native_r2scan3c_cpcm_single_water_square_v1",
+      "id": "alpha_two_water_geometry_matrix",
+      "invalid_claims": [
+        "freshaffinityvalidation",
+        "metalcausalityisolatedfrompacking",
+        "native6IP9wateroccupancy",
+        "bindingfreeenergy"
+      ],
+      "n_atoms_each": 40,
+      "selection": "Water correspondence from common C-alpha alignment alone. Removing 6IP9 A322 was previously prepared and evaluated among all individual deletions.",
+      "states": [
+        "1F6S__full",
+        "6IP9__minus_A_322"
+      ],
+      "status": "archived4endpointmatrixcomplete",
+      "valid_test": "Conditional equal-composition change in Ca-La electronic contrast with observed protein and remaining water geometry, on consumed structures."
+    },
+    {
+      "biological_group": "GGR_MglB",
+      "cases": [
+        {
+          "endpoints": {
+            "Ca": {
+              "all_electron_count_for_parity": 218,
+              "charge": -1,
+              "input": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/affordable_challenger_20260915/verified_repairs/ggr_1glg_GGR/ggr_1glg_GGR_amide_v3_Ca.inp",
+                "sha256": "35bf8d47daeeec2d0c341aa581d08e13df21855bcbdc8b95a4768e748c271eb8"
+              },
+              "multiplicity": 1,
+              "xyz": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/affordable_challenger_20260915/verified_repairs/ggr_1glg_GGR/ggr_1glg_GGR_amide_v3_Ca.xyz",
+                "sha256": "799168f8b8f4414e31df793bd45fd1b0a20412e3f42e9d5ee9e74387a9d77048"
+              }
+            },
+            "La": {
+              "all_electron_count_for_parity": 254,
+              "charge": 0,
+              "input": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/affordable_challenger_20260915/verified_repairs/ggr_1glg_GGR/ggr_1glg_GGR_amide_v3_La.inp",
+                "sha256": "e36a542316804dbbd6d64bedd885780cb3f567030021754b9a9563ac52746f6e"
+              },
+              "multiplicity": 1,
+              "xyz": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/affordable_challenger_20260915/verified_repairs/ggr_1glg_GGR/ggr_1glg_GGR_amide_v3_La.xyz",
+                "sha256": "4bf755ee343cc00aada8bafca65595c771bdfdaaebfec075f6acb1a5ba7bb3dc"
+              }
+            }
+          },
+          "explicit_waters": [],
+          "native_metal": {
+            "atom": "CA",
+            "canonical_resname": "CA",
+            "chain": "A",
+            "insertion_code": "",
+            "resname": "CA",
+            "resnum": 312,
+            "source_element": "Ca",
+            "xyz_A": [
+              23.168,
+              41.519,
+              73.363
+            ]
+          },
+          "pdb": "1GLG",
+          "preparation": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/affordable_challenger_20260915/verified_repairs/ggr_1glg_GGR/repair_manifest.json",
+            "sha256": "91147d0e56093ff03fa0b37680dc1443a1264fcac29f43aea49a9788570eea07"
+          },
+          "source": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nonpqq_direct_site_benchmark_20260915/prepared/ggr_1glg/ggr_1glg_protonated.pdb",
+            "sha256": "66ff9f6972c3f4a9bb1ff6cb2c5b0c1ce07069e5c285bf6b093f9ee355ec7090"
+          }
+        },
+        {
+          "endpoints": {
+            "Ca": {
+              "all_electron_count_for_parity": 218,
+              "charge": -1,
+              "input": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_b_prepared_v1/2fw0/amide_v3/ggr_2fw0_GGR_amide_v3_Ca.inp",
+                "sha256": "6a9c817c3ad0a90baa2f08396bbfd6447d7373953f1f614d3f426c9b8b9f8d49"
+              },
+              "multiplicity": 1,
+              "xyz": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_b_prepared_v1/2fw0/amide_v3/ggr_2fw0_GGR_amide_v3_Ca.xyz",
+                "sha256": "19c87480c9e963d78e58c19c50d0e7c983201cefdafe96b5b71474f9b5a117f6"
+              }
+            },
+            "La": {
+              "all_electron_count_for_parity": 254,
+              "charge": 0,
+              "input": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_b_prepared_v1/2fw0/amide_v3/ggr_2fw0_GGR_amide_v3_La.inp",
+                "sha256": "30429eb4cda9e6cb244d948315166c64db795974a876d02d1dee07f727d44066"
+              },
+              "multiplicity": 1,
+              "xyz": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_b_prepared_v1/2fw0/amide_v3/ggr_2fw0_GGR_amide_v3_La.xyz",
+                "sha256": "3cd3c7573a17b53687897ff920e3ab257b66584ba1bdf5a1e28e992c9a413b08"
+              }
+            }
+          },
+          "explicit_waters": [],
+          "native_metal": {
+            "atom": "CA",
+            "canonical_resname": "CA",
+            "chain": "A",
+            "insertion_code": "",
+            "resname": "CA",
+            "resnum": 310,
+            "source_element": "Ca",
+            "xyz_A": [
+              -4.998,
+              -23.443,
+              -69.526
+            ]
+          },
+          "pdb": "2FW0",
+          "preparation": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_b_prepared_v1/2fw0/amide_v3/repair_manifest.json",
+            "sha256": "1eb0a92c4d13a279a6b7d422635251bfe6c517eba3293bbd92f318991c7f1f0b"
+          },
+          "source": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_b_prepared_v1/2fw0/source_protonated.pdb",
+            "sha256": "1b1bb91677b30134fd899013e6cf8d630fb173a4ad90a7ae213598638ac630a7"
+          }
+        },
+        {
+          "endpoints": {
+            "Ca": {
+              "all_electron_count_for_parity": 218,
+              "charge": -1,
+              "input": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_b_prepared_v1/2fvy/amide_v3/ggr_2fvy_GGR_amide_v3_Ca.inp",
+                "sha256": "1a8941fbf4035b41970f4289795718c41604a32dfa162009b843649d0cf676cd"
+              },
+              "multiplicity": 1,
+              "xyz": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_b_prepared_v1/2fvy/amide_v3/ggr_2fvy_GGR_amide_v3_Ca.xyz",
+                "sha256": "458dc2fc34ae084983843d918a6949e25f285ee5b7c941e3b6fb95ec1d5aeb5f"
+              }
+            },
+            "La": {
+              "all_electron_count_for_parity": 254,
+              "charge": 0,
+              "input": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_b_prepared_v1/2fvy/amide_v3/ggr_2fvy_GGR_amide_v3_La.inp",
+                "sha256": "6a56e559678d0468bea4c34be05eadd89b59fe79806c48a52d321ac44201794b"
+              },
+              "multiplicity": 1,
+              "xyz": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_b_prepared_v1/2fvy/amide_v3/ggr_2fvy_GGR_amide_v3_La.xyz",
+                "sha256": "228292adf61e9c54ff8c079c9f401787dfd4d09c820007dc67e3ffc88397ed58"
+              }
+            }
+          },
+          "explicit_waters": [],
+          "native_metal": {
+            "atom": "CA",
+            "canonical_resname": "CA",
+            "chain": "A",
+            "insertion_code": "",
+            "resname": "CA",
+            "resnum": 311,
+            "source_element": "Ca",
+            "xyz_A": [
+              -20.53,
+              9.511,
+              24.544
+            ]
+          },
+          "pdb": "2FVY",
+          "preparation": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_b_prepared_v1/2fvy/amide_v3/repair_manifest.json",
+            "sha256": "8c605023ef0f5906765c476bbc91ec6ba2f6ef61b4cfdb1f3636819c8880359f"
+          },
+          "source": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ggr_mechanism_20260915/stage_b_prepared_v1/2fvy/source_protonated.pdb",
+            "sha256": "5ad0a7107a706e90fc42934d2506e10aaf7466c34df76e6a968053806b82f5c2"
+          }
+        }
+      ],
+      "id": "ggr_same_metal_scaffold_robustness",
+      "interpretation": "Same-metal geometries and one biological affinity group; sugar state, crystallization and radiation differences are confounded. No La-bound crystal verified.",
+      "question": "Compare conformational and source-context variability within one Ca-associated protein against the alpha metal-conditioned change.",
+      "source_report": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/ggr_mechanism_plan_20260915/REPORT.md",
+        "sha256": "aa4201e7ae506fe6b0e0fac14f4e91c2301cf4fd8bb137da0924371d07ac3c17"
+      },
+      "status": "prepared_inputs_ready_previously_scored"
+    },
+    {
+      "ExaF_D319S": "Functional ethanol-oxidation loss only; no La/Ca affinity label or paired mutant crystal verified.",
+      "WT_structure": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/sources/pdb/6OC6.cif",
+        "sha256": "265e177f12451af1de90aea3af627fa356f62c1c3f75a93ea2a741c19362d9f3"
+      },
+      "biological_group": "Mextorquens_AM1_XoxF1_C5B120",
+      "id": "xoxf1_D320A_loading_perturbation",
+      "interpretation": "Cellular competition/loading, not equilibrium Kd. Useful mutation test if controlled mutant geometry is prepared later.",
+      "loading_conditions": "Minimal methanol medium contains 20 uM Ca; 2 uM La for protein loading experiments and 20 uM La for crystal production. Protein buffer-exchanged into 25 mM Tris, 150 mM NaCl, pH 8.",
+      "mutation": "D320A, full precursor paper numbering",
+      "observation": "With La added, WT was 39% La-loaded with no detectable Ca. D320A had trace La and loaded Ca. Without added La, WT was >97% Ca-loaded. Ca loading did not restore mutant function.",
+      "other_structure": "6OC5 is WT La without PQQ, not Ca or D320A.",
+      "preparation_gate": "Prior WT 6OC6 full-protein preparation reconstructed 130 missing heavy atoms across 44 noncore residues. A local preparation needs an explicit policy. Do not reuse the failed preparation.",
+      "primary_capture": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_controls_20260920/sources/good_2020.pdf",
+        "sha256": "03f0ec1bca75fe38dc2f5abf9b5e93f0dbc4eacfe2f03b77243e9ecb40871b3a"
+      },
+      "primary_source": "https://doi.org/10.1074/jbc.RA120.013227",
+      "status": "experimental_loading_label_ready_mutant_geometry_missing_no_model_generated"
+    }
+  ],
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/accommodation_controls_20260920/build_inventory.py",
+    "sha256": "8198a19bb17d052a54576f0e98c41bb75ae96246bba1971504566e2ab8402ba2"
+  },
+  "new_endpoint_evaluations": 0,
+  "new_fold_jobs": 0,
+  "new_submission_jobs": 0,
+  "report": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/accommodation_controls_20260920/REPORT.md",
+    "sha256": "d3416923eca48bb2dbee22230c98a94917794baa5fe16552943e0dcba32f46cc"
+  },
+  "schema_version": "alquemia.accommodation_controls.v1",
+  "scope_authority": "Parent 2026-09-20 overnight accommodation task; later explicit extension to reuse four archived DFT energies and review existing independent controls. No new folds or energy calls.",
+  "status": "curation_complete_archived_alpha_matrix_reused_no_new_endpoints"
+}

@@ -33,6 +33,15 @@ nonlinear profile; a local harmonic correction is not yet justified. New angle
 extent, coupling, step acceptance and validation points must be recorded in a
 separate experiment before execution. The completed profile remains immutable.
 
+For future native validation points, prefer supported analytic `EnGrad` endpoints
+over another SP-only scan when possible. Existing hydration-basin work already
+extracted native r2SCAN-3c/CPCM gradients, and the response adapter checks units,
+atom order and physical cap mappings. Actual support and numerical settings must
+be checked for the new context. One gradient can test the projected force along
+both donor modes at a proposed geometry, making it more informative than energy
+alone. It is not a license to rerun the present SPs or invoke numerical DFT
+gradients, and it does not supply a validated curvature or an entropy model.
+
 The candidate must then be tested with one common rule on known-label PQQ
 structures, including their structural variants. Keeping the established PQQ
 task reliable is a requirement. A movement-induced change in an unknown PLM

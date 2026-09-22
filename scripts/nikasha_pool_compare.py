@@ -12,19 +12,68 @@ from affordable_common import InvalidArtifact, read_json, record, verify, write_
 from accommodation_fold_proposals import outcome, summarize_rows, strict_summary
 from accommodation_folds_compare import source_groups, decision
 from compact_solvation_compare import MINIMUM_CALIBRATION_GAP
-from nikasha_pool import PROTOCOL, SETTINGS, choose_rows
+from nikasha_pool import PROTOCOL, SETTINGS, ADAPTIVE_PROTOCOL, ADAPTIVE_SETTINGS, choose_rows
 
 VARIANTS = ('mathematical', 'operational')
 REFERENCE_ID = 'Nikasha_common_geometry_canonical25_reference_v1'
+ADAPTIVE_REFERENCE_ID = 'Nikasha_adaptive_angular_common_geometry_canonical25_reference_v1'
+PROTOCOLS = {
+    PROTOCOL: (SETTINGS, REFERENCE_ID, {'pilot4', 'remaining26'}),
+    ADAPTIVE_PROTOCOL: (ADAPTIVE_SETTINGS, ADAPTIVE_REFERENCE_ID, {'adaptive4', 'adaptive26'}),
+}
+
+
+def numerical_provenance(data, manifest, collection):
+    """Retain qualified iteration-ceiling differences without treating them as a new Hamiltonian."""
+    ceiling = manifest.get('GFN2_maxiter', 125)
+    if ceiling not in (125, 500): raise InvalidArtifact('unsupported adaptive numerical ceiling')
+    policy = manifest.get('numerical_policy_id', 'native_GFN2_MaxIter125_unchanged_convergence_v1')
+    if policy != f'native_GFN2_MaxIter{ceiling}_unchanged_convergence_v1':
+        raise InvalidArtifact('adaptive numerical policy differs')
+    recovered = data.get('recovery_overlay_applied', False)
+    qualification_pin = data.get('numerical_diagnostic') if recovered else manifest.get('numerical_qualification')
+    if ceiling == 500 or recovered:
+        if qualification_pin is None: raise InvalidArtifact('iteration ceiling lacks actual qualification')
+        qualification = read_json(verify(qualification_pin)); qm = read_json(verify(qualification['manifest']))
+        if (qualification['protocol_id'] != 'adaptive_pool_native_GFN2_MaxIter500_diagnostic_v1' or
+                qualification['complete'] != 3 or qualification['denominator'] != 3 or
+                not qualification['both_controls_pass'] or not qualification['formerly_failed_cell_complete'] or
+                qm['orca'] != manifest['orca'] or qm['control_tolerance_kcal_mol'] != .05 or
+                any(r['status'] != 'complete' or not r['parameters_identical'] or
+                    r['charge_sanity_status'] != 'pass' for r in qualification['rows'])):
+            raise InvalidArtifact('incompatible adaptive numerical qualification')
+    if recovered:
+        primary = read_json(verify(data['recovered_from']))
+        primary_rows = {r['case_id']: r for r in primary['cases']}
+        if (data.get('numerical_policy_id') != 'primary_native_GFN2_with_explicit_MaxIter500_completion_v1' or
+                primary['protocol_id'] != ADAPTIVE_PROTOCOL or primary['manifest'] != data['manifest'] or
+                data['additional_GFN2_attempts'] != 3 or
+                data['primary_GFN2_complete'] != primary['GFN2_complete'] or
+                set(primary_rows) != {r['case_id'] for r in data['cases']} or
+                any(r.get('primary_pool') != primary_rows[r['case_id']]['pool'] for r in data['cases'])):
+            raise InvalidArtifact('adaptive recovery lost its primary failed result')
+    return {'collection': record(collection), 'manifest_GFN2_maxiter': ceiling,
+            'manifest_numerical_policy_id': policy,
+            'collection_numerical_policy_id': data.get('numerical_policy_id', policy),
+            'qualification': qualification_pin, 'recovery_overlay_applied': recovered,
+            'recovered_from': data.get('recovered_from'),
+            'primary_GFN2_complete': data.get('primary_GFN2_complete', data.get('GFN2_complete')),
+            'additional_GFN2_attempts': data.get('additional_GFN2_attempts', 0)}
 
 
 def load_results(collections):
     """Check saved matrix algebra; do not rerun the source output parsers or models."""
-    rows, manifests, pins, signature = {}, [], [], None
+    rows, manifests, pins, signature, protocol, numerical = {}, [], [], None, None, []
     for path in collections:
         data = read_json(path); m = read_json(verify(data['manifest']))
-        if data['protocol_id'] != PROTOCOL or m['protocol_id'] != PROTOCOL or m['settings'] != SETTINGS:
+        current = data['protocol_id']
+        if (current not in PROTOCOLS or m['protocol_id'] != current or
+                m['settings'] != PROTOCOLS[current][0]):
             raise InvalidArtifact('shared-pool protocol differs')
+        if protocol is not None and protocol != current: raise InvalidArtifact('mixed pool protocols')
+        protocol = current
+        if protocol == ADAPTIVE_PROTOCOL:
+            numerical.append(numerical_provenance(data, m, path))
         sig = {k: m[k] for k in ('model', 'software', 'orca', 'settings')}
         if signature is not None and sig != signature: raise InvalidArtifact('mixed pool methods or software')
         signature = sig
@@ -43,7 +92,8 @@ def load_results(collections):
             rows[cid] = {**c, 'collection': record(path)}
         manifests.append(m); pins.append(record(path))
     if not manifests: raise InvalidArtifact('no actual pool collections provided')
-    return {'rows': rows, 'manifests': manifests, 'collections': pins, 'signature': signature}
+    return {'rows': rows, 'manifests': manifests, 'collections': pins, 'signature': signature,
+            'protocol_id': protocol, 'numerical_provenance': numerical}
 
 
 def original_reference(bundle):
@@ -81,7 +131,7 @@ def calibration_rows(bundle, original, variant):
     return result
 
 
-def extrema_reference(rows, variant):
+def extrema_reference(rows, variant, reference_id=REFERENCE_ID):
     available = [r for r in rows if r['R_model_kcal_mol'] is not None]
     band = gap = extrema = None; status = 'unavailable_calibration_member'
     if len(rows) != 25: raise InvalidArtifact('calibration requires all25 designated members')
@@ -92,7 +142,7 @@ def extrema_reference(rows, variant):
         gap = extrema['La_min'] - extrema['Ca_max']
         status = 'available' if gap > MINIMUM_CALIBRATION_GAP else 'unsupported_class_separation'
         if status == 'available': band = extrema
-    return {'reference_id': REFERENCE_ID + '_' + variant, 'variant': variant, 'status': status,
+    return {'reference_id': reference_id + '_' + variant, 'variant': variant, 'status': status,
             'calibration_denominator': 25, 'available_calibration': len(available), 'bands': band,
             'class_extrema': extrema, 'gap_model_kcal_mol': gap,
             'minimum_gap_model_kcal_mol': MINIMUM_CALIBRATION_GAP, 'rows': rows}
@@ -100,14 +150,15 @@ def extrema_reference(rows, variant):
 
 def calibrate(collections, agreement, output):
     bundle = load_results(collections); original_pin, original = original_reference(bundle)
-    if {m['population'] for m in bundle['manifests']} != {'pilot4', 'remaining26'}:
-        raise InvalidArtifact('reference requires the declared pilot4 + remaining26 original sources')
+    protocol = bundle['protocol_id']; _, reference_id, populations = PROTOCOLS[protocol]
+    if len(bundle['manifests']) != 2 or {m['population'] for m in bundle['manifests']} != populations:
+        raise InvalidArtifact('reference requires the declared ' + ' + '.join(sorted(populations)) + ' original sources')
     parents = [read_json(verify(m['source_manifest'])) for m in bundle['manifests']]
     expected = {c['case_id'] for c in parents[0]['cases']}
     if len(expected) != 30 or set(bundle['rows']) != expected or any({c['case_id'] for c in p['cases']} != expected for p in parents):
         raise InvalidArtifact('original30 source union differs; folds may not enter calibration')
-    variants = {v: extrema_reference(calibration_rows(bundle, original, v), v) for v in VARIANTS}
-    result = {'protocol_id': PROTOCOL, 'reference_id': REFERENCE_ID, **bundle['signature'],
+    variants = {v: extrema_reference(calibration_rows(bundle, original, v), v, reference_id) for v in VARIANTS}
+    result = {'protocol_id': protocol, 'reference_id': reference_id, **bundle['signature'],
               'variants': variants, 'collections': bundle['collections'], 'original_reference': original_pin,
               'old_frozen_bands': old_bands(original), 'agreement': record(agreement), 'implementation': record(__file__),
               'frozen_at_UTC': datetime.now(timezone.utc).isoformat(),
@@ -115,13 +166,16 @@ def calibrate(collections, agreement, output):
               'noncanonical_folds_used_for_calibration': False, 'crystals_or_PLM_used_for_calibration': False,
               'new_molecular_calls': 0, 'production_changed': False,
               'interpretation': 'developmental calibration, not independent validation'}
+    if protocol == ADAPTIVE_PROTOCOL: result['numerical_provenance'] = bundle['numerical_provenance']
     write_new(output, result)
     return {v: {k: variants[v][k] for k in ('status', 'bands', 'gap_model_kcal_mol', 'available_calibration')} for v in VARIANTS}
 
 
 def checked_reference(path, bundle):
     reference = read_json(path)
-    if reference['protocol_id'] != PROTOCOL or reference['noncanonical_folds_used_for_calibration'] or reference['crystals_or_PLM_used_for_calibration']:
+    protocol = bundle['protocol_id']; reference_id = PROTOCOLS[protocol][1]
+    if (reference['protocol_id'] != protocol or reference['reference_id'] != reference_id or
+            reference['noncanonical_folds_used_for_calibration'] or reference['crystals_or_PLM_used_for_calibration']):
         raise InvalidArtifact('incompatible or contaminated pool reference')
     if any(reference[k] != bundle['signature'][k] for k in bundle['signature']):
         raise InvalidArtifact('pool reference method differs')
@@ -135,9 +189,16 @@ def checked_reference(path, bundle):
         if any(r['expected_class'] != designated[r['case_id']]['expected_class'] for r in saved['rows']):
             raise InvalidArtifact('saved canonical labels differ')
         # Integrity check of the frozen artifact, not a new fit on transfer data.
-        if extrema_reference(saved['rows'], v) != saved:
+        if extrema_reference(saved['rows'], v, reference_id) != saved:
             raise InvalidArtifact('saved reference extrema/bands differ from its canonical rows')
-    for pin in reference['collections']: verify(pin)
+    numerical = []
+    for pin in reference['collections']:
+        source = verify(pin)
+        if protocol == ADAPTIVE_PROTOCOL:
+            data = read_json(source)
+            numerical.append(numerical_provenance(data, read_json(verify(data['manifest'])), source))
+    if protocol == ADAPTIVE_PROTOCOL and reference.get('numerical_provenance') != numerical:
+        raise InvalidArtifact('saved adaptive numerical provenance differs')
     return reference
 
 
@@ -161,6 +222,8 @@ def inspect(collections, output, reference=None):
         own = old['R_selected']['composite_R_model_kcal_mol'] if old['R_selected'] else None
         r = {'case_id': cid, 'expected_class': old['expected_class'], 'pool_status': pool['status'],
              'static_R': static, 'own_proposal_R': own, 'variants': {}, 'collection': case['collection']}
+        if bundle['protocol_id'] == ADAPTIVE_PROTOCOL:
+            r.update(primary_pool=case.get('primary_pool', pool), prior_pool=case['prior_pool'])
         for v in VARIANTS:
             value = pool[v]['composite_R_model_kcal_mol'] if pool[v] else None
             new = ref['variants'][v]['bands'] if ref else None
@@ -169,9 +232,10 @@ def inspect(collections, output, reference=None):
                 'delta_from_own_proposal': value - own if value is not None and own is not None else None,
                 'selected_candidates': {z: pool['rows'][z][v + '_candidate'] for z in ('Ca', 'La')} if pool['rows'] else None}
         rows.append(r)
-    result = {'protocol_id': PROTOCOL, 'collections': bundle['collections'], 'reference': record(reference) if reference else None,
+    result = {'protocol_id': bundle['protocol_id'], 'collections': bundle['collections'], 'reference': record(reference) if reference else None,
               'original_reference': original_pin, 'rows': rows, 'new_molecular_calls': 0,
               'interpretation': 'raw development comparison; unknown PLM labels remain unknown'}
+    if bundle['protocol_id'] == ADAPTIVE_PROTOCOL: result['numerical_provenance'] = bundle['numerical_provenance']
     write_new(output, result)
     lines = ['# Actual shared-pool contrast changes', '', '| Case | Variant | R | Δ from own proposal | Old-band transfer | New-band call |', '|---|---|---:|---:|---|---|']
     for row in rows:
@@ -194,7 +258,7 @@ def aggregate(members, index, method, bands, expected):
 
 def compare(collections, reference, prior_comparison, output):
     bundle = load_results(collections); ref = checked_reference(reference, bundle); prior = read_json(prior_comparison)
-    if len(bundle['manifests']) != 1 or bundle['manifests'][0]['population'] != 'primary225':
+    if bundle['protocol_id'] != PROTOCOL or len(bundle['manifests']) != 1 or bundle['manifests'][0]['population'] != 'primary225':
         raise InvalidArtifact('fold comparison requires the full primary225 pool collection')
     pm = read_json(verify(prior['manifest'])); source = read_json(verify(pm['sources'])); groups = source_groups(source)
     if bundle['manifests'][0]['source'] != prior['selection']:

@@ -19,7 +19,9 @@ from mace_hybrid import EV_TO_KCAL
 from mace_site_kinematics import Kinematics
 
 PROTOCOL = 'common_four_angular_native_OMOL_SLSQP_proposals_v1'
-CASES = ('1H4I', '4MAE', *PLM)
+PILOT4 = ('1H4I', '4MAE', *PLM)
+CASES = PILOT4  # Original import/API retained for the completed pilot.
+POPULATIONS = ('pilot4', 'remaining26')
 SETTINGS = {'optimizer': 'SLSQP', 'maxiter': 200, 'ftol_eV': 1e-9,
             'maximum_physical_heavy_displacement_A': .8, 'angular_bound_radian': .8,
             'final_physical_tolerance_A': 1e-7, 'angular_tolerance_radian': 1e-12,
@@ -74,13 +76,25 @@ def final_geometry(kin, task, active, symbols):
                      'metal_water_PQQ_scaffold_modes_added': False}
 
 
-def prepare(source, diagnostic, agreement, output):
+def population_cases(parent, population='pilot4'):
+    """Frozen source order, never score/label/availability-based selection."""
+    ids = [c['case_id'] for c in parent['cases']]
+    if len(ids) != 30 or len(set(ids)) != 30 or not set(PILOT4) <= set(ids):
+        raise InvalidArtifact('expected original consumed30 source with pilot4')
+    if population == 'pilot4':
+        return list(PILOT4)
+    if population == 'remaining26':
+        return [cid for cid in ids if cid not in PILOT4]
+    raise InvalidArtifact('unknown adaptive population: '+str(population))
+
+
+def prepare(source, diagnostic, agreement, output, population='pilot4'):
     parent = read_json(source); diag = read_json(diagnostic)
     if record(source) not in [a['manifest'] for a in diag['archives']]:
         raise InvalidArtifact('diagnostic has another source')
-    if len(parent['cases']) != 30: raise InvalidArtifact('expected original consumed30 source')
+    cases = population_cases(parent, population)
     tasks = []; choices = []
-    for cid in CASES:
+    for cid in cases:
         ts = [next(t for t in parent['tasks'] if t['case_id']==cid and t['metal']==z) for z in ('Ca','La')]
         paired(verify(ts[1]['xyz']), verify(ts[0]['xyz']), ts[1]['charge'], ts[0]['charge'])
         if (read_json(verify(ts[0]['mapping'])) != read_json(verify(ts[1]['mapping'])) or
@@ -111,13 +125,17 @@ def prepare(source, diagnostic, agreement, output):
         target=impl/p.name;shutil.copyfile(p,target);pins[p.name]=record(target)
     m={'protocol_id':PROTOCOL,'settings':SETTINGS,'source_manifest':record(source),
        'diagnostic':record(diagnostic),'agreement':record(agreement),'tasks':tasks,'selections':choices,
-       'cases':[c for cid in CASES for c in parent['cases'] if c['case_id']==cid],
-       'declared_case_ids':list(CASES),'implementation':pins,
+       'cases':[c for cid in cases for c in parent['cases'] if c['case_id']==cid],
+       'declared_case_ids':cases,'implementation':pins,
        **{k:parent[k] for k in ('model','software','orca','cpu_python','gpu_python','cpu_executable','gpu_executable')},
        'resources':{'GPU_cpus':32,'GPUs':1,'GPU_host_mem_MiB':200000},
-       'new_optimizer_starts':8,'new_DFT_calls':0,'new_GFN2_calls_in_this_adapter':0,
+       'new_optimizer_starts':len(tasks),'new_DFT_calls':0,'new_GFN2_calls_in_this_adapter':0,
        'source_states_changed':False,'reference':None,'production_changed':False,
        'execution_requires_completed_shared_pool_pilot':True}
+    # Keep default pilot manifests structurally compatible with the original.
+    if population != 'pilot4':
+        m.update(population=population, excluded_case_ids=list(PILOT4),
+                 population_rule='original30_source_order_excluding_fixed_pilot4')
     path=out/'manifest.json';write_new(path,m);check=validate(path);write_new(out/'PREFLIGHT.json',check)
     return check
 
@@ -125,9 +143,20 @@ def prepare(source, diagnostic, agreement, output):
 def validate(manifest):
     m=read_json(manifest)
     if m['protocol_id']!=PROTOCOL or m['settings']!=SETTINGS: raise InvalidArtifact('adaptive protocol/settings differ')
-    if m['declared_case_ids']!=list(CASES) or len(m['tasks'])!=8: raise InvalidArtifact('four-context/eight-endpoint scope differs')
     parent=read_json(verify(m['source_manifest']));diag=read_json(verify(m['diagnostic']));verify(m['agreement'])
-    if {(t['case_id'],t['metal']) for t in m['tasks']}!={(c,z) for c in CASES for z in ('Ca','La')}:
+    cases=population_cases(parent,m.get('population','pilot4'))
+    if (m['declared_case_ids']!=cases or len(m['tasks'])!=2*len(cases) or
+            m['new_optimizer_starts']!=2*len(cases)):
+        raise InvalidArtifact('declared population/endpoint scope differs')
+    if m['source_manifest'] not in [a['manifest'] for a in diag['archives']]:
+        raise InvalidArtifact('diagnostic has another source')
+    if m['cases'] != [c for cid in cases for c in parent['cases'] if c['case_id']==cid]:
+        raise InvalidArtifact('source case records changed')
+    if (m.get('population','pilot4')=='remaining26' and
+            (m.get('excluded_case_ids')!=list(PILOT4) or
+             m.get('population_rule')!='original30_source_order_excluding_fixed_pilot4')):
+        raise InvalidArtifact('fixed pilot exclusions differ')
+    if {(t['case_id'],t['metal']) for t in m['tasks']}!={(c,z) for c in cases for z in ('Ca','La')}:
         raise InvalidArtifact('paired task membership differs')
     if any(m[k]!=parent[k] for k in ('model','software','orca','cpu_python','gpu_python')):
         raise InvalidArtifact('source electronic model or environment differs')
@@ -145,12 +174,12 @@ def validate(manifest):
                 any(kin.modes[i]['kind'] not in ('sidechain_torsion','peptide_crankshaft') for i in t['active_indices'])):
             raise InvalidArtifact('unsupported or mismapped selected mode')
         final_geometry(kin,t,np.zeros(4),[a[0] for a in xyz(verify(t['xyz']))])
-    for cid in CASES:
+    for cid in cases:
         ca,la=[next(t for t in m['tasks'] if t['case_id']==cid and t['metal']==z) for z in ('Ca','La')]
         if ca['active_mode_ids']!=la['active_mode_ids'] or ca['active_indices']!=la['active_indices']:
             raise InvalidArtifact('endpoint active spaces differ')
         paired(verify(la['xyz']),verify(ca['xyz']),la['charge'],ca['charge'])
-    return {'status':'prepared_dry_run_pass','manifest':record(manifest),'cases':4,'tasks':8,
+    return {'status':'prepared_dry_run_pass','manifest':record(manifest),'cases':len(cases),'tasks':len(m['tasks']),
             'molecular_calls':0,'optimizer_executed':False,'new_DFT_calls':0}
 
 
@@ -158,7 +187,8 @@ def pool_gate(manifest, pool_collection):
     m=read_json(manifest);pool=read_json(pool_collection);pm=read_json(verify(pool['manifest']))
     if (pool['protocol_id']!='nikasha_common_geometry_native_OMOL_GFN2_ALPB_v1' or
         pm['source_manifest']!=m['source_manifest'] or pm['model']!=m['model'] or
-        {c['case_id'] for c in pool['cases']}!=set(CASES) or
+        {c['case_id'] for c in pool['cases']}!=set(PILOT4) or
+        len(pool['cases'])!=len(PILOT4) or
         any(c['pool']['status']!='available' for c in pool['cases'])):
         raise InvalidArtifact('complete compatible four-case shared-pool pilot required')
     return record(pool_collection)
@@ -250,7 +280,7 @@ def execute(manifest,pool_collection):
                  'new_DFT_calls':0,'new_GFN2_calls':0}
         write_new(root/('execution_'+os.environ['SLURM_JOB_ID']+'.json'),receipt)
     if error:raise InvalidArtifact(error)
-    return {'status':'proposal_phase_complete','endpoint_denominator':8,'results':results,
+    return {'status':'proposal_phase_complete','endpoint_denominator':len(m['tasks']),'results':results,
             'common_pool_scoring':'required_next_stage_not_executed_here'}
 
 
@@ -278,9 +308,9 @@ def collect(manifest,output):
                 raise InvalidArtifact('candidate coordinates do not reproduce physical map')
         endpoints.append(row)
     cases=[{'case_id':cid,'status':'ready_for_common_pool' if all(e['status']=='candidate_available' for e in endpoints if e['case_id']==cid) else 'unavailable',
-            'selected_geometry':None,'score':None} for cid in CASES]
+            'selected_geometry':None,'score':None} for cid in m['declared_case_ids']]
     result={'protocol_id':PROTOCOL,'manifest':record(manifest),'source_manifest':m['source_manifest'],
-            'cases':cases,'endpoints':endpoints,'case_denominator':4,'endpoint_denominator':8,
+            'cases':cases,'endpoints':endpoints,'case_denominator':len(cases),'endpoint_denominator':len(m['tasks']),
             'available_candidates':sum(e['status']=='candidate_available' for e in endpoints),
             'new_DFT_calls':0,'new_GFN2_calls_in_adapter':0,'common_pool_scoring_performed':False,
             'production_changed':False,'reference':None}
@@ -291,6 +321,8 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='operation',required=True)
     q=sub.add_parser('prepare')
     for key in ('source','diagnostic','agreement','output'):q.add_argument('--'+key,required=True)
+    q.add_argument('--population',choices=POPULATIONS,default='pilot4',
+                   help='pilot4 preserves the original scope; remaining26 excludes exactly that fixed pilot')
     q=sub.add_parser('dry-run');q.add_argument('--manifest',required=True)
     q=sub.add_parser('execute');q.add_argument('--manifest',required=True);q.add_argument('--pool-collection',required=True)
     q=sub.add_parser('collect');q.add_argument('--manifest',required=True);q.add_argument('--output',required=True)

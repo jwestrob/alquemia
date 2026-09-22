@@ -19,10 +19,12 @@ from mace_hybrid import check_atoms, write_xyz
 from mace_site_kinematics import Kinematics
 
 PROTOCOL = 'nikasha_common_geometry_native_OMOL_GFN2_ALPB_v1'
+ADAPTIVE_PROTOCOL = 'nikasha_adaptive_angular_common_geometry_native_OMOL_GFN2_ALPB_v1'
 SETTINGS = {'coordinate_copy_tolerance_A': 1e-12, 'origin_selection_tolerance_kcal_mol': .1,
             'equivalent_cell_tolerance_kcal_mol': .1,
             'candidate_order': ['origin', 'proposal_Ca', 'proposal_La']}
 PILOT = ('1H4I', '4MAE', *PLM)
+ADAPTIVE_SETTINGS = {**SETTINGS, 'candidate_order': SETTINGS['candidate_order'] + ['adaptive_Ca', 'adaptive_La']}
 
 
 @lru_cache(maxsize=None)
@@ -208,21 +210,131 @@ def prepare(source, population, agreement, output, shards):
 
 def validate(manifest):
     m = read_json(manifest)
-    if m['protocol_id'] != PROTOCOL or m['settings'] != SETTINGS: raise InvalidArtifact('pool protocol changed')
+    expected = {PROTOCOL: SETTINGS, ADAPTIVE_PROTOCOL: ADAPTIVE_SETTINGS}
+    if m['protocol_id'] not in expected or m['settings'] != expected[m['protocol_id']]:
+        raise InvalidArtifact('pool protocol changed')
     for key in ('source', 'source_manifest', 'agreement', 'software', 'orca'): verify(m[key])
     for pin in m['implementation'].values(): verify(pin)
-    n = {'pilot4': 4, 'remaining26': 26, 'primary225': 225}[m['population']]
+    n = {'pilot4': 4, 'remaining26': 26, 'primary225': 225, 'adaptive4': 4}[m['population']]
+    adaptive = m['protocol_id'] == ADAPTIVE_PROTOCOL
+    if adaptive != (m['population'] == 'adaptive4'): raise InvalidArtifact('pool population/protocol mismatch')
+    if adaptive:
+        verify(m['base_pool']); verify(m['adaptive_proposals'])
     if (len(m['cases']) != n or len(set(m['declared_case_ids'])) != n or
             {c['case_id'] for c in m['cases']} != set(m['declared_case_ids'])):
         raise InvalidArtifact('pool denominator differs')
-    if len(m['tasks']) > 2 * n or m['maximum_new_GFN2_calls'] != 2 * len(m['tasks']):
+    if len(m['tasks']) > (4 if adaptive else 2) * n or m['maximum_new_GFN2_calls'] != 2 * len(m['tasks']):
         raise InvalidArtifact('unexpected additional cells')
     for t in m['tasks']:
         atoms = xyz(verify(t['xyz'])); check_atoms(atoms, t['charge'])
         if atoms[0][0] != t['metal'] or t['multiplicity'] != 1: raise InvalidArtifact('unsupported cross state')
+        if t.get('native_reuse'): native_reuse(t, m)
     return {'status': 'validated', 'manifest': record(manifest), 'denominator': n,
             'prepared': sum(c['status'] == 'prepared' for c in m['cases']),
-            'new_MACE_cells': len(m['tasks']), 'new_GFN2_calls': 2 * len(m['tasks']), 'new_DFT_calls': 0}
+            'new_MACE_cells': m['new_MACE_cells'], 'new_GFN2_calls': 2 * len(m['tasks']), 'new_DFT_calls': 0}
+
+
+def native_reuse(task, manifest):
+    native = pinned(task['native_reuse']); request = pinned(native['request'])
+    if (native['status'] != 'complete' or native['model'] != manifest['model'] or
+            request['charge'] != task['charge'] or request['multiplicity'] != task['multiplicity'] or
+            xyz(verify(request['xyz'])) != xyz(verify(task['xyz']))):
+        raise InvalidArtifact('reused native candidate state/geometry/model differs')
+    return native
+
+
+def prepare_expansion(base_pool, proposals, agreement, output, shards=1):
+    """Admit actual mapped adaptive candidates into the existing common pool."""
+    from adaptive_angular_proposals import PROTOCOL as proposal_protocol, final_geometry
+    started = time.monotonic(); base = read_json(base_pool); bm = pinned(base['manifest'])
+    adaptive = read_json(proposals); am = pinned(adaptive['manifest'])
+    if (base['protocol_id'] != PROTOCOL or bm['population'] != 'pilot4' or
+            adaptive['protocol_id'] != proposal_protocol or am['protocol_id'] != proposal_protocol or
+            am['source_manifest'] != bm['source_manifest'] or
+            any(am[k] != bm[k] for k in ('model', 'software', 'orca', 'cpu_python', 'gpu_python')) or
+            {c['case_id'] for c in base['cases']} != set(PILOT) or
+            {c['case_id'] for c in adaptive['cases']} != set(PILOT) or shards not in (1, 4)):
+        raise InvalidArtifact('adaptive/base pool population or physical method differs')
+    if any(c['pool']['status'] != 'available' for c in base['cases']):
+        raise InvalidArtifact('completed original common pool required')
+    tasks_by_id = {(t['case_id'], t['metal']): t for t in am['tasks']}
+    endpoints = {(e['case_id'], e['metal']): e for e in adaptive['endpoints']}
+    if len(endpoints) != 8: raise InvalidArtifact('adaptive endpoint denominator differs')
+    out = Path(output).resolve(); out.mkdir(parents=True, exist_ok=False)
+    cases, tasks = [], []
+    for prior in base['cases']:
+        cid = prior['case_id']; names = [q['id'] for q in prior['candidates']]
+        if choose_rows(prior['matrix'], names) != prior['pool']:
+            raise InvalidArtifact('original pool algebra changed')
+        c = json.loads(json.dumps(prior)); c.pop('pool')
+        c.update(status='unavailable', reason=None, prior_pool=prior['pool'], base_collection=record(base_pool))
+        for cells in c['matrix'].values():
+            for cell in cells.values(): cell['reused'] = True
+        pending = []
+        try:
+            atoms_by_name = {q['id']: xyz(verify(q['xyz'])) for q in c['candidates']}
+            points = {}
+            for z in ('Ca', 'La'):
+                t = tasks_by_id[cid, z]; e = endpoints[cid, z]
+                if e['status'] != 'candidate_available': raise InvalidArtifact('adaptive candidate unavailable: ' + z)
+                receipt = pinned(e['proposal_receipt']); point = e['candidate']
+                if (receipt['status'] != 'proposal_available' or receipt['manifest'] != adaptive['manifest'] or
+                        point != receipt['proposal'] or e['origin_components'] != c['matrix'][z]['origin']['components'] or
+                        xyz(verify(t['xyz'])) != xyz(verify(c['matrix'][z]['origin']['xyz'])) or
+                        e['mapping'] != t['mapping'] or e['source_preparation'] != t['source_preparation']):
+                    raise InvalidArtifact('adaptive origin, state, mapping or receipt changed')
+                kin = Kinematics(pinned(t['mapping'])['context']); q = np.asarray(point['full_q'])
+                if any(q[i] != 0 for i in set(range(len(q))) - set(t['active_indices'])):
+                    raise InvalidArtifact('unselected adaptive coordinate changed')
+                atoms = xyz(verify(point['coordinate']))
+                final_geometry(kin, t, q[t['active_indices']], [a[0] for a in atoms])
+                if (not np.allclose(kin.evaluate(q)[1], [a[1:] for a in atoms], atol=1e-12, rtol=0) or
+                        [a[0] for a in atoms] != [a[0] for a in xyz(verify(t['xyz']))]):
+                    raise InvalidArtifact('adaptive coordinate or inventory differs from physical source')
+                points[z] = point
+                name = 'adaptive_' + z
+                match = next((k for k, a in atoms_by_name.items() if same_geometry(a, atoms)), None)
+                if match is None:
+                    match = name; atoms_by_name[name] = atoms
+                    c['candidates'].append({'id': name, 'xyz': point['coordinate']})
+                c['aliases'][name] = {'representative': match, 'source_xyz': point['coordinate']}
+            for z in ('Ca', 'La'):
+                t = tasks_by_id[cid, z]
+                for candidate in c['candidates']:
+                    name = candidate['id']
+                    if name in c['matrix'][z]: continue
+                    atoms = atoms_by_name[name]; paired = [(z, *atoms[0][1:]), *atoms[1:]]
+                    check_atoms(paired, t['charge']); tid = cid + '__' + z + '__at_' + name
+                    td = out / 'cells' / tid; td.mkdir(parents=True)
+                    xp = td / 'context.xyz'; write_xyz(xp, paired)
+                    if xyz(xp) != paired: raise InvalidArtifact('adaptive cross-coordinate serialization changed')
+                    task = {'task_id': tid, 'case_id': cid, 'metal': z, 'candidate': name,
+                            'xyz': record(xp), 'charge': t['charge'], 'multiplicity': t['multiplicity'],
+                            'source_mapping': t['mapping'], 'source_preparation': t['source_preparation']}
+                    if name == c['aliases']['adaptive_' + z]['representative']:
+                        if xyz(verify(points[z]['coordinate'])) == paired:
+                            task['native_reuse'] = points[z]['MACE']; native_reuse(task, bm)
+                        else:
+                            task['native_reuse_not_used'] = 'numerical-copy alias; evaluate the actual representative coordinates'
+                    pending.append(task)
+                    c['matrix'][z][name] = {'status': 'pending', 'task_id': tid, 'xyz': task['xyz'], 'reused': False}
+            c['status'] = 'prepared'; tasks.extend(pending)
+        except (InvalidArtifact, KeyError, OSError, StopIteration) as exc:
+            c['reason'] = str(exc)
+        cases.append(c)
+    impl = out / 'implementation'; impl.mkdir(); pins = {}
+    for p in Path(__file__).parent.glob('*.py'):
+        target = impl / p.name; shutil.copyfile(p, target); pins[p.name] = record(target)
+    m = {k: bm[k] for k in ('source', 'source_manifest', 'model', 'software', 'orca', 'cpu_python', 'gpu_python', 'resources')}
+    m.update(protocol_id=ADAPTIVE_PROTOCOL, settings=ADAPTIVE_SETTINGS, agreement=record(agreement),
+             base_pool=record(base_pool), adaptive_proposals=record(proposals),
+             population='adaptive4', declared_case_ids=list(PILOT), cases=cases, tasks=tasks,
+             implementation=pins, shard_count=shards,
+             new_MACE_cells=sum(not t.get('native_reuse') for t in tasks), maximum_new_GFN2_calls=2*len(tasks),
+             new_DFT_calls=0, new_optimizations=0, source_preparation_wall_seconds=time.monotonic()-started,
+             production_changed=False, reference=None)
+    path = out / 'manifest.json'; write_new(path, m); low_prepare(path)
+    result = validate(path); write_new(out / 'PREFLIGHT.json', result); return result
 
 
 def low_prepare(manifest):
@@ -237,7 +349,7 @@ def low_prepare(manifest):
                 ip = td / 'endpoint.inp'; ip.write_text(input_text(cell['charge'], cell['multiplicity'], medium, 'native'))
                 tasks.append({**cell, 'task_id': tid, 'cell_id': cell['task_id'], 'case': cell['case_id'],
                               'medium': medium, 'xyz': record(xp), 'input': record(ip), 'output_path': str(td / 'endpoint.out')})
-        low = {'protocol_id': PROTOCOL, 'pool_manifest': record(manifest), 'agreement': m['agreement'],
+        low = {'protocol_id': m['protocol_id'], 'pool_manifest': record(manifest), 'agreement': m['agreement'],
                'orca': m['orca'], 'tasks': tasks, 'all_tasks': tasks, 'shard': shard,
                'execution_policy': {'task_runner': m['implementation']['run_orca_task_manifest.py'],
                                     'runtime_renderer': m['implementation']['render_orca_runtime_input.py']},
@@ -255,8 +367,10 @@ def execute_mace(manifest):
     lock = (root / 'execute.lock').open('a+'); fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
     start = time.monotonic(); worker = None; receipts = []; error = None
     try:
-        worker = WarmGPU(manifest)
         for t in m['tasks']:
+            if t.get('native_reuse'):
+                native_reuse(t, m); continue
+            if worker is None: worker = WarmGPU(manifest)
             td = root / 'cells' / t['task_id']; request = td / 'request.json'; result = td / 'mace_result.json'
             expected = {k: t[k] for k in ('task_id', 'xyz', 'charge', 'multiplicity')} | {'manifest': record(manifest)}
             if request.exists():
@@ -300,21 +414,37 @@ def collect(manifest, output):
             except Exception as exc:
                 row['reason'] = str(exc)
             if row['status'] != 'complete':
-                row['artifacts'] = [record(p) for p in (Path(t['output_path']), Path(t['output_path'] + '.execution.json')) if p.exists()]
+                op = Path(t['output_path']); receipt_path = Path(t['output_path'] + '.execution.json')
+                row['artifacts'] = [record(p) for p in (op, receipt_path) if p.exists()]
+                if receipt_path.exists():
+                    receipt = read_json(receipt_path)
+                    row['execution_status'] = {k: receipt.get(k) for k in ('returncode', 'normal_termination', 'scf_converged', 'launch_error')}
+                    if op.exists() and 'the SCF has not converged' in op.read_text(errors='replace'):
+                        row.setdefault('reason', 'SCF_not_converged')
+                    else: row.setdefault('reason', 'execution_or_output_validation_failed')
+                else: row.setdefault('reason', 'execution_not_complete')
             new.setdefault(t['cell_id'], {})[t['medium']] = row
     cases = []; tasks = {t['task_id']: t for t in m['tasks']}
     for c in m['cases']:
         matrix = json.loads(json.dumps(c['matrix']))
+        if c['status'] != 'prepared':
+            cases.append({**c, 'matrix': matrix, 'pool': {'status': 'unavailable', 'reason': c['reason'],
+                          'mathematical': None, 'operational': None, 'rows': None}})
+            continue
         for z, cells in matrix.items():
             for q, cell in cells.items():
                 if cell['reused']: continue
                 rp = root / 'cells' / cell['task_id'] / 'mace_result.json'
-                native = read_json(rp) if rp.exists() else None; lows = new.get(cell['task_id'], {})
-                cell.update(status='unavailable', low=lows, MACE=record(rp) if native else None)
+                task = tasks[cell['task_id']]
+                native_pin = task.get('native_reuse') or (record(rp) if rp.exists() else None)
+                native = pinned(native_pin) if native_pin else None; lows = new.get(cell['task_id'], {})
+                cell.update(status='unavailable', low=lows, MACE=native_pin)
                 if native:
                     try:
-                        request = pinned(native['request']); task = tasks[cell['task_id']]
-                        if (request['manifest'] != record(manifest) or request['task_id'] != task['task_id'] or
+                        request = pinned(native['request'])
+                        if task.get('native_reuse'):
+                            native_reuse(task, m)
+                        elif (request['manifest'] != record(manifest) or request['task_id'] != task['task_id'] or
                                 request['xyz'] != task['xyz'] or request['charge'] != task['charge'] or
                                 request['multiplicity'] != task['multiplicity'] or native['model'] != m['model']):
                             raise InvalidArtifact('fresh cross-cell MACE state/geometry/method differs')
@@ -327,13 +457,13 @@ def collect(manifest, output):
                     cell.update(status='complete', components={'MACE_eV': native['energy_eV'],
                         'GFN2_vacuum_hartree': lows['vacuum']['energy_hartree'],
                         'GFN2_ALPB_hartree': lows['alpb']['energy_hartree']})
-        pool = choose_rows(matrix, [q['id'] for q in c['candidates']]) if c['status'] == 'prepared' else {
-            'status': 'unavailable', 'reason': c['reason'], 'mathematical': None, 'operational': None, 'rows': None}
+        pool = choose_rows(matrix, [q['id'] for q in c['candidates']])
         cases.append({**c, 'matrix': matrix, 'pool': pool})
     native_receipts = [read_json(p) for p in root.glob('cells/*/mace_result.json')]
-    result = {'protocol_id': PROTOCOL, 'manifest': record(manifest), 'cases': cases,
+    result = {'protocol_id': m['protocol_id'], 'manifest': record(manifest), 'cases': cases,
               'denominator': len(cases), 'available': sum(c['pool']['status'] == 'available' for c in cases),
-              'required_new_MACE_cells': len(m['tasks']), 'required_new_GFN2_calls': 2 * len(m['tasks']),
+              'required_new_MACE_cells': m['new_MACE_cells'], 'required_new_GFN2_calls': 2 * len(m['tasks']),
+              'native_candidate_reuses': sum(bool(t.get('native_reuse')) for t in m['tasks']),
               'MACE_calls_started': sum(r['model_call_started'] for r in native_receipts),
               'MACE_calls_complete': sum(r['status'] == 'complete' for r in native_receipts),
               'GFN2_complete': sum(r['status'] == 'complete' for v in new.values() for r in v.values()),
@@ -347,6 +477,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__); sub = parser.add_subparsers(dest='operation', required=True)
     p = sub.add_parser('prepare')
     for key in ('source', 'population', 'agreement', 'output'): p.add_argument('--' + key, required=True)
+    p.add_argument('--shards', type=int, default=1)
+    p = sub.add_parser('prepare-expansion')
+    for key in ('base-pool', 'proposals', 'agreement', 'output'): p.add_argument('--' + key, required=True)
     p.add_argument('--shards', type=int, default=1)
     for name in ('validate', 'execute-mace', 'collect'):
         p = sub.add_parser(name); p.add_argument('--manifest', required=True)

@@ -142,5 +142,23 @@ class AdaptivePoolComparison(unittest.TestCase):
             self.assertEqual(replay['variants'], frozen['variants'])
             self.assertNotIn('numerical_provenance', replay)
 
+    def test_actual_adaptive30_keeps_missing_canonical_reference_unavailable(self):
+        remaining = ROOT / 'workspaces/adaptive_accommodation_20260922/remaining26_pool_v1/final_collection.json'
+        reference = remaining.parent / 'REFERENCE.json'
+        if not remaining.exists() or not reference.exists():
+            self.skipTest('actual adaptive26 collection/reference not available yet')
+        bundle = compare.load_results([self.pilot, remaining])
+        frozen = compare.checked_reference(reference, bundle)
+        self.assertEqual(frozen['reference_id'], compare.ADAPTIVE_REFERENCE_ID)
+        self.assertEqual(len(bundle['rows']), 30)
+        for variant in compare.VARIANTS:
+            data = frozen['variants'][variant]
+            self.assertEqual(data['available_calibration'], 24)
+            self.assertIsNone(data['bands']); self.assertIsNone(data['gap_model_kcal_mol'])
+            self.assertEqual(data['status'], 'unavailable_calibration_member')
+            self.assertEqual([r['case_id'] for r in data['rows'] if r['status'] == 'unavailable'],
+                             ['mmol_1770-pqq-la_model'])
+        self.assertEqual([r['manifest_GFN2_maxiter'] for r in frozen['numerical_provenance']], [125, 500])
+
 
 if __name__ == '__main__': unittest.main()

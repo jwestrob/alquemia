@@ -54,9 +54,11 @@ installation, environment upgrade or package publication accompanies this name.
 Scores describe protocol-specific coordination chemistry. Functional association,
 affinity and physiological occupancy remain distinct evidence. Unknown PLM
 structures are predictions; source-domain and preparation failures stay visible.
-The ongoing common-geometry-pool experiment has its own
-[plan](../diagnostics/nikasha_shared_pool_20260922/PLAN.md) and does not change the
-released default unless separately qualified and promoted.
+The completed shared-pool and adaptive geometry tests did not improve the
+reference decisions enough to earn promotion. Read the
+[September22 delivery](../diagnostics/nikasha_recovery_20260922/DELIVERY.md) for
+the recovered comparison with DFT, actual research outcomes and manuscript
+figures/tables. The released default remains unchanged.
 
 The [agent operating guide](AGENT_PIPELINE.md) links current releases and dated
 research records. The [PLM source inventory](../diagnostics/nikasha_plm_sources_20260922/SOURCES.md)

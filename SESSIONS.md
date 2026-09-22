@@ -3428,3 +3428,31 @@ ThinNikashaCLI and176protein/200gene source/transcript relational export deliver
 existingPLMDFTscoresnotrelabeled asMACE. Agentvaultnotes/currentcheckpoint updated.
 Emailwithsupportedmethodcomparison sentandrelayaccepted. Only ownscopedfiles and
 thislogappendix committed; unrelateddirtyworkspace and immutableexperiments retained.
+
+
+## 2026-09-22 — Nikasha finite-search delivery complete
+
+Recovered all Sept20 DFT/proposals and completed the shared-pool225 challenge,
+original30 adaptive search and jointmetal4 pilot. Released context remains the
+best supported practical scorer; neither new search earned routine promotion.
+Static203/207 correct versus DFT198/207 on matched consumed structures; all94
+available La triples correct for both. Sharedpool recalibrated198correct versus
+static201 on205matched. Angular24matchedcanonical:22correct/1wrong/1inconclusive
+versus static24correct, with MMOL1770 invalid trial outside common coverage and
+new calibration explicitly unavailable. Joint7/8 candidates,3/4 pools remove
+native metal forces but change no available calls; PLM8344La has invalid trial.
+No biological input was relabeled and no failed result was substituted.
+
+Focused mechanics inventory closes scaffold score feasibility: parameterized
+parents exist, but capped-local subtraction/exterior cofactor coupling unresolved.
+No scaffold energy/Hessian/spring correction. No newDFT, production change, PLM
+cohort rescore, push or publication. All jobs/collectors terminal. Exact new
+development allocation263224core-s/607GPU-s excludes reused historical work and
+local preparation/reporting. The wider accuracy-improvement goal remains open.
+
+Thin nikasha entrypoint,176protein/200gene existing-data export, two editable
+scientific figures, manuscript methods and exact protocol supplement delivered.
+Root final delivery: diagnostics/nikasha_recovery_20260922/DELIVERY.md. Joint
+scorer/tests and report are scoped root changes; agent reports/figures/scaffold
+inventories have separate commits. Vault updated at
+/home/jwestrob/jwestrob/obsidian-vault/agent-captures/2026-09-22_nikasha_shared_pool_and_adaptive_progress.md.

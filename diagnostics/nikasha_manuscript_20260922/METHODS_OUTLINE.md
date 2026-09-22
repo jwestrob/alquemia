@@ -82,3 +82,22 @@ into a community total or infer a replicated depth/month/site causal effect.
 This outline describes what the existing evidence supports. It does not freeze a
 research challenger as the selected manuscript protocol or claim that a new
 MACE-based PLM cohort has already been calculated.
+
+## Delivered scientific figures and research conclusion
+
+The editable [structural comparison](STRUCTURAL_COMPARISON_CAPTION.md) shows
+the matched207 results and strict100-triple denominator. The independent
+[fixed displacement figure](FIXED_DISPLACEMENT_CAPTION.md) shows all nativeDFT,
+MACE and composite differential responses for the two tested directions in all
+three contexts. It validates those particular displacements, not the later
+adaptive/joint proposals. Captions include biological and replication limits.
+
+The completed shared-pool and adaptive experiments are research results, not
+additional production-method components. None earned routine promotion. Keep
+the paper's supported scoring method separate from these failed extensions;
+their exact [delivery record](../nikasha_recovery_20260922/DELIVERY.md) preserves
+all failures, methods and costs.
+
+The [technical supplement](TECHNICAL_SUPPLEMENT.md) records the released model/
+software identities, actual nativeGFN2 inputs, unit conversions, frozen bands
+and exact completed example artifacts.

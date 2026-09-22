@@ -1,42 +1,39 @@
 # Nikasha current checkpoint — 2026-09-22
 
-## Latest execution checkpoint — 2026-09-22
+## Latest completed delivery — 2026-09-22
 
-Current name **Nikasha**; old commands/protocols/defaults retained. Read
-[recovered completed work](../nikasha_recovery_20260922/REPORT.md),
-[shared-pool result](../nikasha_shared_pool_20260922/ORIGINAL30_RESULT.md)
-and [adaptive pilot](../adaptive_accommodation_20260922/PILOT_RESULT.md).
-Do not restart Sept20 jobs; DFT/proposals finished, independentCC failed without
-one complete metal pair. The separate unqualified candidateDFT campaign stays
-**dry-run only**. Released fastPQQ and explicitDFT remain available.
+Current name **Nikasha**; released fastPQQ, explicit DFT and historical commands
+remain intact. Read [delivery](../nikasha_recovery_20260922/DELIVERY.md).
+All September20 preservedDFT/proposals and September22 common-pool/adaptive/joint
+jobs are terminal. No active collectors or new submissions are needed. Independent
+CC failed without a complete metal pair; do not retry it. The separately gated
+candidateDFT campaign remains **dry-run only**.
 
-Shared-pool original30 complete:60crossMACE/120GFN, no new correct calls; frozen
-canonical reference in remaining26_v1/REFERENCE.json. Full225 comparison runs
-1209870/1209871/1209872/1209874/1209880;1209873 was cancelled pending and replaced
-by1209880 on a second CPU host. Automatic collector owns final_collection and
-final_comparison under workspaces/nikasha_shared_pool_20260922/primary225_v1.
-Check actual jobs/receipts; never duplicate successful tasks or its collector.
+The released static context composite remains strongest on the completed matched
+structural challenge:203/207 correct versus DFT198/207, from25 consumed groups.
+Both retain all94 available La-conditioned triples; these are correlated subsets.
+Shared pooling did not earn routine use. Full225 report and frozen reference:
+[shared-pool result](../nikasha_shared_pool_20260922/FULL225_RESULT.md).
 
-Adaptive four-context native proposals1209857 complete8/8. Common pool1209859/
-1209860 gives3/4 because one vacuumSCF stopped at125cycles. Separate three-call
-qualification1209876 converges it at129 and reproduces controls. Explicit recovered
-collection gives4/4, preserves both known control classes, and only modest extra
-PLM shifts. Both PLM labels remain unknown. Primary failure remains archived.
-No accommodation candidate is promoted; no PLM cohort has been rescored.
+Four-angle adaptive scoring gives29/30 available. On24 matched canonical members,
+static24correct versus adaptive22correct/1wrong/1inconclusive; missingMMOL1770
+prevents its calibration. Jointmetal/four-angle pilot1209901–03 gives7/8 valid
+candidates,3/4 pools, real native-force relief and no changed available class calls.
+Both missing candidates are oversized optimizer-trial failures, not bad protein
+chemistry. See [angular](../adaptive_accommodation_20260922/CANONICAL_POOL_COMPARISON.md)
+and [joint](../adaptive_metal_20260922/FINAL_RESULT.md) reports. No promotion.
 
-Root owns pool integration and launch. The unchanged remaining26 adaptive proposal
-manifest runs1209886 (52tasks); see CONTINUATION_EXECUTION_PLAN.md. Its future
-new solvent cells use the qualified500-iteration ceiling with unchanged physics.
-Khoury owns comparison/reference code, full225 collector and an editable evidence
-figure. Water_basins prepares a separate jointmetal/angular pilot and diagnoses
-an actual SLSQP unsafe-trial failure; no launch yet. Second_shell investigates
-scaffold-model feasibility only; no new forcefield energies or arbitrary springs.
+Scaffold feasibility is complete: exact standard-protein parent maps/parameters
+exist, but a defensible capped-local subtraction and exterior metal/PQQ coupling
+do not. No scaffold energies/corrections were manufactured or run. Its optional
+parent diagnostic is proposed only; do not treat its presence as a queued job.
 
-PLM existing-data export complete:176proteins/200genes, originalDFT score identities
-and actual transcript measures retained. See diagnostics/nikasha_plm_export_20260922/.
-Root manuscript outline is diagnostics/nikasha_manuscript_20260922/METHODS_OUTLINE.md.
-Latest substantive email sent23:06UTC (actual receipt records precise time) under
-workspaces/nikasha_recovery_20260922/email_supported_method_v1. No pushes/publication.
+PLM export retains176proteins/200genes, originalDFT identities and actual transcript
+measures. Two editable scientific figures and methods outline are ready under
+diagnostics/nikasha_manuscript_20260922. No MACE cohort rescore, remote push or
+publication occurred. All agents' bounded tasks are complete. The larger goal
+of better discrimination remains open; more motion alone is not demonstrated
+utility. Recover actual results before proposing another model/version.
 
 ## Historical September20 checkpoint
 

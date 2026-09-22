@@ -1,33 +1,42 @@
 # Nikasha current checkpoint — 2026-09-22
 
-## Latest recovery and execution — 2026-09-22
+## Latest execution checkpoint — 2026-09-22
 
-Current name: **Nikasha**, with old commands and protocols retained. Read
-[recovered outcomes](../nikasha_recovery_20260922/REPORT.md) and
-[shared-pool plan](../nikasha_shared_pool_20260922/PLAN.md).
-All Sept20 proposal, solvent and preserved-DFT jobs have completed. Do not restart
-1204185/1204188–91 or1203976–79. IndependentCC1202429 failed without a complete
-metal pair; no CC retry is authorized by this continuation.
+Current name **Nikasha**; old commands/protocols/defaults retained. Read
+[recovered completed work](../nikasha_recovery_20260922/REPORT.md),
+[shared-pool result](../nikasha_shared_pool_20260922/ORIGINAL30_RESULT.md)
+and [adaptive pilot](../adaptive_accommodation_20260922/PILOT_RESULT.md).
+Do not restart Sept20 jobs; DFT/proposals finished, independentCC failed without
+one complete metal pair. The separate unqualified candidateDFT campaign stays
+**dry-run only**. Released fastPQQ and explicitDFT remain available.
 
-The released static context+native-solvent scorer remains the strongest supported
-practical method. Restricted accommodation did not improve reference accuracy;
-its new calibration transferred worse. Unknown PLM structures remain unlabeled.
-The separate unqualified composite-minimum DFT campaign remains dry-run only.
+Shared-pool original30 complete:60crossMACE/120GFN, no new correct calls; frozen
+canonical reference in remaining26_v1/REFERENCE.json. Full225 comparison runs
+1209870/1209871/1209872/1209874/1209880;1209873 was cancelled pending and replaced
+by1209880 on a second CPU host. Automatic collector owns final_collection and
+final_comparison under workspaces/nikasha_shared_pool_20260922/primary225_v1.
+Check actual jobs/receipts; never duplicate successful tasks or its collector.
 
-Root owns shared-pool scoring/integration: both metals score each actual candidate
-at fixed chemistry, preserving old results. Pilot GPU1209840 completed8crosscells;
-solvent1209845 runs unchanged64CPU work on available GPU-node CPUs (no GPU).
-Pending1209841 was cancelled before execution. Check receipts before new submission.
-The remaining26 canonical/crystal sources are being prepared; their execution
-follows technical pilot success. Canonical-only pool references freeze before
-pooled primary225 fold outcomes. No production promotion or full PLM rescore.
+Adaptive four-context native proposals1209857 complete8/8. Common pool1209859/
+1209860 gives3/4 because one vacuumSCF stopped at125cycles. Separate three-call
+qualification1209876 converges it at129 and reproduces controls. Explicit recovered
+collection gives4/4, preserves both known control classes, and only modest extra
+PLM shifts. Both PLM labels remain unknown. Primary failure remains archived.
+No accommodation candidate is promoted; no PLM cohort has been rescored.
 
-Water_basins owns a prepare-only four-context adaptive donor proposal adapter,
-using archived physical force selection and an explicit final displacement bound.
-Second_shell owns existing-data PLM joins; Khoury finished recovery and comparison
-operations. No one duplicates root's chemistry. New thin `scripts/nikasha` wrapper
-preserves existing commands. See docs/NIKASHA.md and the source inventory under
- diagnostics/nikasha_plm_sources_20260922/.
+Root owns pool integration and launch. The unchanged remaining26 adaptive proposal
+manifest runs1209886 (52tasks); see CONTINUATION_EXECUTION_PLAN.md. Its future
+new solvent cells use the qualified500-iteration ceiling with unchanged physics.
+Khoury owns comparison/reference code, full225 collector and an editable evidence
+figure. Water_basins prepares a separate jointmetal/angular pilot and diagnoses
+an actual SLSQP unsafe-trial failure; no launch yet. Second_shell investigates
+scaffold-model feasibility only; no new forcefield energies or arbitrary springs.
+
+PLM existing-data export complete:176proteins/200genes, originalDFT score identities
+and actual transcript measures retained. See diagnostics/nikasha_plm_export_20260922/.
+Root manuscript outline is diagnostics/nikasha_manuscript_20260922/METHODS_OUTLINE.md.
+Latest substantive email sent23:06UTC (actual receipt records precise time) under
+workspaces/nikasha_recovery_20260922/email_supported_method_v1. No pushes/publication.
 
 ## Historical September20 checkpoint
 

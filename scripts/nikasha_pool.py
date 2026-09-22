@@ -215,11 +215,16 @@ def validate(manifest):
         raise InvalidArtifact('pool protocol changed')
     for key in ('source', 'source_manifest', 'agreement', 'software', 'orca'): verify(m[key])
     for pin in m['implementation'].values(): verify(pin)
-    n = {'pilot4': 4, 'remaining26': 26, 'primary225': 225, 'adaptive4': 4}[m['population']]
+    n = {'pilot4': 4, 'remaining26': 26, 'primary225': 225, 'adaptive4': 4, 'adaptive26': 26}[m['population']]
     adaptive = m['protocol_id'] == ADAPTIVE_PROTOCOL
-    if adaptive != (m['population'] == 'adaptive4'): raise InvalidArtifact('pool population/protocol mismatch')
+    if adaptive != (m['population'] in ('adaptive4', 'adaptive26')): raise InvalidArtifact('pool population/protocol mismatch')
     if adaptive:
         verify(m['base_pool']); verify(m['adaptive_proposals'])
+    if m.get('GFN2_maxiter', 125) not in (125, 500): raise InvalidArtifact('unsupported iteration ceiling')
+    if m.get('GFN2_maxiter') == 500:
+        qualification = pinned(m['numerical_qualification'])
+        if not qualification['both_controls_pass'] or not qualification['formerly_failed_cell_complete']:
+            raise InvalidArtifact('iteration-ceiling qualification failed')
     if (len(m['cases']) != n or len(set(m['declared_case_ids'])) != n or
             {c['case_id'] for c in m['cases']} != set(m['declared_case_ids'])):
         raise InvalidArtifact('pool denominator differs')
@@ -243,23 +248,33 @@ def native_reuse(task, manifest):
     return native
 
 
-def prepare_expansion(base_pool, proposals, agreement, output, shards=1):
+def prepare_expansion(base_pool, proposals, agreement, output, shards=1, maxiter=125, numerical_qualification=None):
     """Admit actual mapped adaptive candidates into the existing common pool."""
     from adaptive_angular_proposals import PROTOCOL as proposal_protocol, final_geometry
     started = time.monotonic(); base = read_json(base_pool); bm = pinned(base['manifest'])
     adaptive = read_json(proposals); am = pinned(adaptive['manifest'])
-    if (base['protocol_id'] != PROTOCOL or bm['population'] != 'pilot4' or
+    if (base['protocol_id'] != PROTOCOL or bm['population'] not in ('pilot4', 'remaining26') or
             adaptive['protocol_id'] != proposal_protocol or am['protocol_id'] != proposal_protocol or
             am['source_manifest'] != bm['source_manifest'] or
             any(am[k] != bm[k] for k in ('model', 'software', 'orca', 'cpu_python', 'gpu_python')) or
-            {c['case_id'] for c in base['cases']} != set(PILOT) or
-            {c['case_id'] for c in adaptive['cases']} != set(PILOT) or shards not in (1, 4)):
+            {c['case_id'] for c in base['cases']} != set(bm['declared_case_ids']) or
+            {c['case_id'] for c in adaptive['cases']} != set(bm['declared_case_ids']) or shards not in (1, 4)):
         raise InvalidArtifact('adaptive/base pool population or physical method differs')
+    n = {'pilot4': 4, 'remaining26': 26}[bm['population']]
+    if len(base['cases']) != n or maxiter not in (125, 500): raise InvalidArtifact('expansion scope differs')
+    qualification = None
+    if maxiter == 500:
+        if numerical_qualification is None: raise InvalidArtifact('iteration ceiling needs actual qualification')
+        qualification = read_json(numerical_qualification); qm = pinned(qualification['manifest'])
+        if (qualification['protocol_id'] != 'adaptive_pool_native_GFN2_MaxIter500_diagnostic_v1' or
+                not qualification['both_controls_pass'] or not qualification['formerly_failed_cell_complete'] or
+                qm['orca'] != bm['orca'] or qm['control_tolerance_kcal_mol'] != .05):
+            raise InvalidArtifact('iteration ceiling qualification incompatible')
     if any(c['pool']['status'] != 'available' for c in base['cases']):
         raise InvalidArtifact('completed original common pool required')
     tasks_by_id = {(t['case_id'], t['metal']): t for t in am['tasks']}
     endpoints = {(e['case_id'], e['metal']): e for e in adaptive['endpoints']}
-    if len(endpoints) != 8: raise InvalidArtifact('adaptive endpoint denominator differs')
+    if len(endpoints) != 2*n: raise InvalidArtifact('adaptive endpoint denominator differs')
     out = Path(output).resolve(); out.mkdir(parents=True, exist_ok=False)
     cases, tasks = [], []
     for prior in base['cases']:
@@ -328,11 +343,13 @@ def prepare_expansion(base_pool, proposals, agreement, output, shards=1):
     m = {k: bm[k] for k in ('source', 'source_manifest', 'model', 'software', 'orca', 'cpu_python', 'gpu_python', 'resources')}
     m.update(protocol_id=ADAPTIVE_PROTOCOL, settings=ADAPTIVE_SETTINGS, agreement=record(agreement),
              base_pool=record(base_pool), adaptive_proposals=record(proposals),
-             population='adaptive4', declared_case_ids=list(PILOT), cases=cases, tasks=tasks,
+             population='adaptive'+str(n), declared_case_ids=bm['declared_case_ids'], cases=cases, tasks=tasks,
              implementation=pins, shard_count=shards,
              new_MACE_cells=sum(not t.get('native_reuse') for t in tasks), maximum_new_GFN2_calls=2*len(tasks),
              new_DFT_calls=0, new_optimizations=0, source_preparation_wall_seconds=time.monotonic()-started,
              production_changed=False, reference=None)
+    m.update(GFN2_maxiter=maxiter, numerical_policy_id='native_GFN2_MaxIter'+str(maxiter)+'_unchanged_convergence_v1',
+             numerical_qualification=record(numerical_qualification) if qualification else None)
     path = out / 'manifest.json'; write_new(path, m); low_prepare(path)
     result = validate(path); write_new(out / 'PREFLIGHT.json', result); return result
 
@@ -346,7 +363,9 @@ def low_prepare(manifest):
             for medium in ('vacuum', 'alpb'):
                 tid = cell['task_id'] + '__' + medium; td = sd / 'tasks' / tid; td.mkdir(parents=True)
                 xp = td / 'core.xyz'; shutil.copyfile(verify(cell['xyz']), xp)
-                ip = td / 'endpoint.inp'; ip.write_text(input_text(cell['charge'], cell['multiplicity'], medium, 'native'))
+                ip = td / 'endpoint.inp'; template = input_text(cell['charge'], cell['multiplicity'], medium, 'native')
+                if m.get('GFN2_maxiter') == 500: template = template.replace('%scf\n', '%scf\n MaxIter 500\n')
+                ip.write_text(template)
                 tasks.append({**cell, 'task_id': tid, 'cell_id': cell['task_id'], 'case': cell['case_id'],
                               'medium': medium, 'xyz': record(xp), 'input': record(ip), 'output_path': str(td / 'endpoint.out')})
         low = {'protocol_id': m['protocol_id'], 'pool_manifest': record(manifest), 'agreement': m['agreement'],
@@ -461,6 +480,8 @@ def collect(manifest, output):
         cases.append({**c, 'matrix': matrix, 'pool': pool})
     native_receipts = [read_json(p) for p in root.glob('cells/*/mace_result.json')]
     result = {'protocol_id': m['protocol_id'], 'manifest': record(manifest), 'cases': cases,
+              'numerical_policy_id': m.get('numerical_policy_id', 'primary_native_GFN2_MaxIter125_v1'),
+              'GFN2_maxiter': m.get('GFN2_maxiter', 125),
               'denominator': len(cases), 'available': sum(c['pool']['status'] == 'available' for c in cases),
               'required_new_MACE_cells': m['new_MACE_cells'], 'required_new_GFN2_calls': 2 * len(m['tasks']),
               'native_candidate_reuses': sum(bool(t.get('native_reuse')) for t in m['tasks']),
@@ -473,14 +494,71 @@ def collect(manifest, output):
     return {k: v for k, v in result.items() if k != 'cases'}
 
 
+def recover(collection, diagnostic, output):
+    """Explicit numerical-completion result; preserve the original failed matrix."""
+    original = read_json(collection); d = read_json(diagnostic); dm = pinned(d['manifest'])
+    if (original['protocol_id'] != ADAPTIVE_PROTOCOL or
+            d['protocol_id'] != 'adaptive_pool_native_GFN2_MaxIter500_diagnostic_v1' or
+            not d['both_controls_pass'] or not d['formerly_failed_cell_complete'] or
+            d['complete'] != 3 or d['denominator'] != 3 or dm['control_tolerance_kcal_mol'] != .05):
+        raise InvalidArtifact('declared numerical-completion checks did not pass')
+    from mace_hybrid import HA_TO_KCAL
+    for task, row in zip(dm['tasks'], d['rows']):
+        if (row['task_id'] != task['task_id'] or row['status'] != 'complete' or
+                not row['parameters_identical'] or row['charge_sanity_status'] != 'pass' or
+                pinned(row['parameter_export']) != pinned(task['source_parameters']) or
+                energy(verify(row['output'])) != row['energy_hartree'] or
+                verify(task['input']).read_text().replace(' MaxIter 500\n', '') != verify(task['source_task']['input']).read_text() or
+                xyz(verify(task['xyz'])) != xyz(verify(task['source_task']['xyz']))):
+            raise InvalidArtifact('numerical-completion state/recipe/result differs')
+        receipt = pinned(row['receipt'])
+        if not receipt['scf_converged'] or not receipt['normal_termination'] or receipt['returncode'] != 0:
+            raise InvalidArtifact('numerical-completion receipt failed')
+        if task['source_endpoint']:
+            if abs((row['energy_hartree'] - task['source_endpoint']['energy_hartree']) * HA_TO_KCAL) > .05:
+                raise InvalidArtifact('original control energy was not reproduced')
+    targets = [(t, r) for t, r in zip(dm['tasks'], d['rows']) if t['source_endpoint'] is None]
+    if len(targets) != 1: raise InvalidArtifact('only declared missing endpoint may be completed')
+    task, row = targets[0]; source = task['source_task']
+    result = json.loads(json.dumps(original))
+    case = next(c for c in result['cases'] if c['case_id'] == source['case_id'])
+    cell = case['matrix'][source['metal']][source['candidate']]
+    previous = cell['low'][source['medium']]
+    if (source['medium'] != 'vacuum' or previous['status'] != 'unavailable' or
+            task['source_output'] not in previous['artifacts'] or cell['low']['alpb']['status'] != 'complete'):
+        raise InvalidArtifact('numerical replacement does not identify the failed required cell')
+    replacement = {k: row[k] for k in ('manifest', 'task_id', 'output', 'receipt', 'energy_hartree')}
+    cell['low']['vacuum'] = {**replacement, 'status': 'complete', 'diagnostic': record(diagnostic),
+                             'audit': row, 'previous_failed_attempt': previous}
+    cell.update(status='complete', components={'MACE_eV': pinned(cell['MACE'])['energy_eV'],
+                'GFN2_vacuum_hartree': row['energy_hartree'],
+                'GFN2_ALPB_hartree': cell['low']['alpb']['energy_hartree']})
+    for c in result['cases']:
+        c['primary_pool'] = c['pool']
+        if c['status'] == 'prepared': c['pool'] = choose_rows(c['matrix'], [q['id'] for q in c['candidates']])
+    result.update(numerical_policy_id='primary_native_GFN2_with_explicit_MaxIter500_completion_v1',
+                  recovered_from=record(collection), numerical_diagnostic=record(diagnostic),
+                  recovery_overlay_applied=True, additional_GFN2_attempts=3,
+                  primary_GFN2_complete=original['GFN2_complete'], GFN2_complete=original['GFN2_complete']+1,
+                  available=sum(c['pool']['status'] == 'available' for c in result['cases']),
+                  implementation=record(__file__))
+    write_new(output, result)
+    return {'available': result['available'], 'numerical_policy_id': result['numerical_policy_id'],
+            'original_result_overwritten': False, 'additional_GFN2_attempts': 3}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__); sub = parser.add_subparsers(dest='operation', required=True)
     p = sub.add_parser('prepare')
     for key in ('source', 'population', 'agreement', 'output'): p.add_argument('--' + key, required=True)
     p.add_argument('--shards', type=int, default=1)
+    p = sub.add_parser('recover')
+    for key in ('collection', 'diagnostic', 'output'): p.add_argument('--' + key, required=True)
     p = sub.add_parser('prepare-expansion')
     for key in ('base-pool', 'proposals', 'agreement', 'output'): p.add_argument('--' + key, required=True)
     p.add_argument('--shards', type=int, default=1)
+    p.add_argument('--maxiter', type=int, choices=(125, 500), default=125)
+    p.add_argument('--numerical-qualification')
     for name in ('validate', 'execute-mace', 'collect'):
         p = sub.add_parser(name); p.add_argument('--manifest', required=True)
         if name == 'collect': p.add_argument('--output', required=True)

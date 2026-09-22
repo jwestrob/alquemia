@@ -3398,3 +3398,33 @@ production change, push, reference overwrite or unknown-label assignment.
 Agent scoped commits: proposal report60b794f, independentreview3b377a5, native
 preflight3985cb4, foldmappingab82b1b. Root checkpoint updated inAGENTS/CURRENT; vault
 updated with motivation, benefits and limits. Latest email remains12:10UTC.
+
+
+## 2026-09-22 — root: Nikasha recovery, shared geometry competition and adaptive candidates
+
+Jacob supplied the GPT6pro execution brief: recover completed work, implement
+same-geometry competition, then force-selected accommodation and PLM delivery.
+This resumes discretionary contained MACE/GFN2 development, preserving production
+and explicitDFT. The separately gated unqualified native candidateDFT stays unrun.
+
+Recovered final source comparison supports the released context composite over
+DFT on individual consumed folds (203vs198correct on identical207coverage), with
+both correct on94available three-fold subsets. These are25protein groups, not new
+blind labels. Earlier restricted proposals did not improveaccuracy. Shared-pool
+original30 executes60MACE/120GFN and makes no classificationgain; its reference
+was frozen before225fold execution. Original30 and allfold records/collectors are
+under diagnostics/nikasha_shared_pool_20260922 and matching workspaces.
+
+Force-selected four-angular pilot produces8valid candidates. Common solvent pool
+initially3/4; the failed4MAELa vacuum state needs129ratherthan125iterations. A
+separateMaxIter500 diagnostic with2exactcontrols passes and is explicitly joined
+as recovered_collection_v1, leavingoriginalfailure intact. All4calls/unknownPLM
+categoriesunchanged; addedPLMscore shiftsaremodest. Remaining26same-ruleproposals
+run1209886. Qualified500cyclepolicy forfuturecells changes noHamiltonian/tolerances.
+Root owns poolscoring; Khoury comparison/collector/figure, water jointmetal preparation,
+second_shell scaffoldfeasibility. No speculativecorrection orpromotion.
+
+ThinNikashaCLI and176protein/200gene source/transcript relational export delivered;
+existingPLMDFTscoresnotrelabeled asMACE. Agentvaultnotes/currentcheckpoint updated.
+Emailwithsupportedmethodcomparison sentandrelayaccepted. Only ownscopedfiles and
+thislogappendix committed; unrelateddirtyworkspace and immutableexperiments retained.

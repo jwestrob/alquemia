@@ -2,6 +2,7 @@
 import copy
 from pathlib import Path
 import sys
+import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -65,6 +66,26 @@ class AdaptivePool(unittest.TestCase):
                 a = new['work_from_origin_kcal_mol'][new['mathematical_candidate']]['composite_kcal_mol']
                 b = old['work_from_origin_kcal_mol'][old['mathematical_candidate']]['composite_kcal_mol']
                 self.assertLessEqual(a, b)
+
+    def test_explicit_numerical_recovery_preserves_primary_failure(self):
+        source = self.root / 'collection_with_reasons.json'
+        diagnostic = ROOT / 'workspaces/adaptive_maxiter_20260922/prepared_v1/collection_1209876.json'
+        if not diagnostic.exists(): self.skipTest('real three-cell iteration diagnostic unavailable')
+        pin = pool.record(source)
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / 'recovered.json'; pool.recover(source, diagnostic, out)
+            result = pool.read_json(out)
+            self.assertEqual(result['available'], 4)
+            self.assertEqual(result['additional_GFN2_attempts'], 3)
+            case = next(c for c in result['cases'] if c['case_id'] == '4MAE')
+            self.assertEqual(case['primary_pool']['status'], 'unavailable')
+            self.assertEqual(case['pool']['status'], 'available')
+            old = case['matrix']['La']['adaptive_Ca']['low']['vacuum']['previous_failed_attempt']
+            self.assertEqual(old['reason'], 'SCF_not_converged')
+            self.assertEqual(pool.record(source), pin)
+            damaged = pool.read_json(diagnostic); damaged['both_controls_pass'] = False
+            bad = Path(tmp) / 'CORRUPTED_real_diagnostic.json'; pool.write_new(bad, damaged)
+            with self.assertRaises(pool.InvalidArtifact): pool.recover(source, bad, Path(tmp) / 'invalid.json')
 
 
 if __name__ == '__main__': unittest.main()

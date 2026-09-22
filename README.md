@@ -1,7 +1,7 @@
-# alchemical_bvs — vertical-swap DFT discriminator for Ca²⁺ vs Ln³⁺ pocket preference
+# Nikasha — La/Ca coordination-chemistry discriminator
 
-> **Current agent guide — 2026-09-16:** [Alquemia operations and protocol status](docs/AGENT_PIPELINE.md).
-> The baseline remains the default. Canonical fixed-core PQQ, buffered inbox PQQ, repaired generic cores, and the global research pilot are separate protocols; their scores and bands are not interchangeable.
+> **Current name and operations — 2026-09-22:** [Nikasha entrypoint](docs/NIKASHA.md) and [agent guide](docs/AGENT_PIPELINE.md). Alquemia is the historical name; `alchemical_bvs` remains the repository directory.
+> The current standard selects the released fast scorer for compatible PQQ sites; explicit DFT and contextual-water baseline routes remain available. Protocols retain their own scores and bands.
 > This guide supersedes conflicting operational/status prose below; dated scientific records remain historical.
 
 ![Python](https://img.shields.io/badge/python-3.11%2B-blue)

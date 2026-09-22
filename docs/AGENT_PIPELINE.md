@@ -1,4 +1,13 @@
-# Alquemia: current operating guide for agents
+# Nikasha: current operating guide for agents
+
+## Current name and entrypoint — 2026-09-22
+
+Alquemia is now **Nikasha**. Use the thin `scripts/nikasha` entrypoint with the
+same arguments/interpreter as `scripts/affordable_workflow.py`; both remain valid.
+Read [Nikasha operations](NIKASHA.md). Historical protocol IDs, schemas, results,
+paths and calibration bands retain their original names and meanings. The current
+delivery target is the integrated PLM manuscript. New common-pool research is
+recorded in its [separate plan](../diagnostics/nikasha_shared_pool_20260922/PLAN.md).
 
 ## Current standard mode: fast compatible PQQ — 2026-09-20
 

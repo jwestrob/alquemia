@@ -1,0 +1,212 @@
+{
+  "schema": "nikasha_interface_checks_v1",
+  "scientific_calls": 0,
+  "python": "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python",
+  "wrapper_sha256": "b5a3fef2c09fe8fe0bf47ab02d9ef422890694e96947b9c824ad8a98a2ad78a3",
+  "checks": [
+    {
+      "arguments": [
+        "--help"
+      ],
+      "same_returncode": true,
+      "same_output_after_program_name": false,
+      "runs": [
+        {
+          "command": [
+            "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python",
+            "scripts/affordable_workflow.py",
+            "--help"
+          ],
+          "returncode": 0,
+          "stdout": "usage: affordable_workflow.py [-h]\n                              {prepare,dry-run,execute,collect,prepare-retry}\n                              ...\n\nFinite opt-in development operations using the existing manifested ORCA\nrunner.\n\npositional arguments:\n  {prepare,dry-run,execute,collect,prepare-retry}\n\noptions:\n  -h, --help            show this help message and exit\n",
+          "stderr": "",
+          "wall_seconds": 0.09959330782294273
+        },
+        {
+          "command": [
+            "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python",
+            "scripts/nikasha",
+            "--help"
+          ],
+          "returncode": 0,
+          "stdout": "usage: nikasha [-h] {prepare,dry-run,execute,collect,prepare-retry} ...\n\nFinite opt-in development operations using the existing manifested ORCA\nrunner.\n\npositional arguments:\n  {prepare,dry-run,execute,collect,prepare-retry}\n\noptions:\n  -h, --help            show this help message and exit\n",
+          "stderr": "",
+          "wall_seconds": 0.10530334711074829
+        }
+      ],
+      "same_output_after_program_name_and_whitespace": true
+    },
+    {
+      "arguments": [
+        "standard",
+        "--help"
+      ],
+      "same_returncode": true,
+      "same_output_after_program_name": true,
+      "runs": [
+        {
+          "command": [
+            "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python",
+            "scripts/affordable_workflow.py",
+            "standard",
+            "--help"
+          ],
+          "returncode": 0,
+          "stdout": "usage: affordable_workflow.py [-h] {prepare,validate,execute,collect} ...\n\nStandard prepared-source dispatch: fast compatible PQQ or the existing\nbaseline. The explicit DFT reference path remains available. Unsupported fast\npreparation fails without replacing its score with DFT or an older cache\nentry.\n\npositional arguments:\n  {prepare,validate,execute,collect}\n\noptions:\n  -h, --help            show this help message and exit\n",
+          "stderr": "",
+          "wall_seconds": 0.09405313804745674
+        },
+        {
+          "command": [
+            "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python",
+            "scripts/nikasha",
+            "standard",
+            "--help"
+          ],
+          "returncode": 0,
+          "stdout": "usage: nikasha [-h] {prepare,validate,execute,collect} ...\n\nStandard prepared-source dispatch: fast compatible PQQ or the existing\nbaseline. The explicit DFT reference path remains available. Unsupported fast\npreparation fails without replacing its score with DFT or an older cache\nentry.\n\npositional arguments:\n  {prepare,validate,execute,collect}\n\noptions:\n  -h, --help            show this help message and exit\n",
+          "stderr": "",
+          "wall_seconds": 0.09387381747364998
+        }
+      ],
+      "same_output_after_program_name_and_whitespace": true
+    },
+    {
+      "arguments": [
+        "baseline",
+        "--help"
+      ],
+      "same_returncode": true,
+      "same_output_after_program_name": false,
+      "runs": [
+        {
+          "command": [
+            "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python",
+            "scripts/affordable_workflow.py",
+            "baseline",
+            "--help"
+          ],
+          "returncode": 0,
+          "stdout": "usage: affordable_workflow.py [-h]\n                              {request,prepare,water-execute,prepare-dft,prepare-retry,dry-run,execute,collect,report}\n                              ...\n\nPromoted, versioned water preparation around the existing ORCA workflow. Entry\npoint: affordable_workflow.py baseline. Original inputs/results stay intact.\n\npositional arguments:\n  {request,prepare,water-execute,prepare-dft,prepare-retry,dry-run,execute,collect,report}\n\noptions:\n  -h, --help            show this help message and exit\n",
+          "stderr": "",
+          "wall_seconds": 0.6446831710636616
+        },
+        {
+          "command": [
+            "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python",
+            "scripts/nikasha",
+            "baseline",
+            "--help"
+          ],
+          "returncode": 0,
+          "stdout": "usage: nikasha [-h]\n               {request,prepare,water-execute,prepare-dft,prepare-retry,dry-run,execute,collect,report}\n               ...\n\nPromoted, versioned water preparation around the existing ORCA workflow. Entry\npoint: affordable_workflow.py baseline. Original inputs/results stay intact.\n\npositional arguments:\n  {request,prepare,water-execute,prepare-dft,prepare-retry,dry-run,execute,collect,report}\n\noptions:\n  -h, --help            show this help message and exit\n",
+          "stderr": "",
+          "wall_seconds": 0.39177344739437103
+        }
+      ],
+      "same_output_after_program_name_and_whitespace": true
+    },
+    {
+      "arguments": [
+        "standard",
+        "ensemble",
+        "--help"
+      ],
+      "same_returncode": true,
+      "same_output_after_program_name": false,
+      "runs": [
+        {
+          "command": [
+            "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python",
+            "scripts/affordable_workflow.py",
+            "standard",
+            "ensemble",
+            "--help"
+          ],
+          "returncode": 0,
+          "stdout": "usage: affordable_workflow.py [-h] --plan PLAN [--collection COLLECTION]\n                              --output OUTPUT\n\nOpt-in, declared three-La-fold median of existing standard PQQ scores. This is\na developmental transfer of frozen single-structure bands, not a thermal\nensemble, probability, new calibration, or automatic scoring default.\n\noptions:\n  -h, --help            show this help message and exit\n  --plan PLAN\n  --collection COLLECTION\n  --output OUTPUT\n",
+          "stderr": "",
+          "wall_seconds": 0.39899132400751114
+        },
+        {
+          "command": [
+            "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python",
+            "scripts/nikasha",
+            "standard",
+            "ensemble",
+            "--help"
+          ],
+          "returncode": 0,
+          "stdout": "usage: nikasha [-h] --plan PLAN [--collection COLLECTION] --output OUTPUT\n\nOpt-in, declared three-La-fold median of existing standard PQQ scores. This is\na developmental transfer of frozen single-structure bands, not a thermal\nensemble, probability, new calibration, or automatic scoring default.\n\noptions:\n  -h, --help            show this help message and exit\n  --plan PLAN\n  --collection COLLECTION\n  --output OUTPUT\n",
+          "stderr": "",
+          "wall_seconds": 0.3804903067648411
+        }
+      ],
+      "same_output_after_program_name_and_whitespace": true
+    },
+    {
+      "arguments": [
+        "standard",
+        "validate",
+        "--plan",
+        "workspaces/pqq_fast_release_20260920/standard_1H4I_v1/plan.json"
+      ],
+      "same_returncode": true,
+      "same_output_after_program_name": true,
+      "runs": [
+        {
+          "command": [
+            "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python",
+            "scripts/affordable_workflow.py",
+            "standard",
+            "validate",
+            "--plan",
+            "workspaces/pqq_fast_release_20260920/standard_1H4I_v1/plan.json"
+          ],
+          "returncode": 0,
+          "stdout": "{\"status\": \"validated\", \"backend\": \"fast_pqq\"}\n",
+          "stderr": "",
+          "wall_seconds": 0.5867923852056265
+        },
+        {
+          "command": [
+            "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python",
+            "scripts/nikasha",
+            "standard",
+            "validate",
+            "--plan",
+            "workspaces/pqq_fast_release_20260920/standard_1H4I_v1/plan.json"
+          ],
+          "returncode": 0,
+          "stdout": "{\"status\": \"validated\", \"backend\": \"fast_pqq\"}\n",
+          "stderr": "",
+          "wall_seconds": 0.2201740499585867
+        }
+      ],
+      "same_output_after_program_name_and_whitespace": true
+    }
+  ],
+  "interpretation": "Five old/new command pairs succeed. Help differs only in program name and argparse wrapping; real plan validation output is identical. Zero scientific calls.",
+  "input_pins": [
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/affordable_workflow.py",
+      "sha256": "1ebe5aaa03d59eaabd933339366b3b5c5705a1216bb15fe502583f8290ad5d32"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/pqq_standard.py",
+      "sha256": "ffa189586f0285d6564d70c4bdb6bee0a102342175491e8f54ed1cfd619dfbba"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/baseline_water.py",
+      "sha256": "d23998631b600100c23d037079892c241a98ddacccff2fd95684ff115749b491"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/pqq_ensemble.py",
+      "sha256": "601bee537ac71992e7b33e462867c5b86fdba6450a8fa0e69a58bee97531ebdf"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_fast_release_20260920/standard_1H4I_v1/plan.json",
+      "sha256": "5cf0d8df801a1a9afe1e6aa4a887efbbb1fb512479ce9b5cfdcfbf0948bd6da1"
+    }
+  ]
+}

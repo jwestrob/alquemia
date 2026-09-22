@@ -1,0 +1,12 @@
+#!/usr/bin/env python3
+"""Nikasha entrypoint; delegates to the existing manifested workflow."""
+from pathlib import Path
+import runpy
+import sys
+
+
+if __name__ == "__main__":
+    # Keep the caller's interpreter, argv, working directory and environment.
+    # The established workflow owns parsing, scientific protocols and execution.
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    runpy.run_module("affordable_workflow", run_name="__main__", alter_sys=False)

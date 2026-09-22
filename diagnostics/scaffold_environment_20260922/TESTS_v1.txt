@@ -1,0 +1,32 @@
+test_actual_paired_context_and_every_cap_have_real_source_bond (test_scaffold_environment_inventory.RealScaffoldInventory.test_actual_paired_context_and_every_cap_have_real_source_bond) ... FAIL
+test_corrupted_real_mapping_missing_cap_is_rejected (test_scaffold_environment_inventory.RealScaffoldInventory.test_corrupted_real_mapping_missing_cap_is_rejected) ... ok
+test_exact_source_atoms_protons_and_explicit_terminal_completion (test_scaffold_environment_inventory.RealScaffoldInventory.test_exact_source_atoms_protons_and_explicit_terminal_completion) ... ok
+test_no_silent_unknown_cofactor_omission (test_scaffold_environment_inventory.RealScaffoldInventory.test_no_silent_unknown_cofactor_omission) ... ok
+test_serialized_parent_parameters_and_partition_are_complete (test_scaffold_environment_inventory.RealScaffoldInventory.test_serialized_parent_parameters_and_partition_are_complete) ... ok
+
+======================================================================
+FAIL: test_actual_paired_context_and_every_cap_have_real_source_bond (test_scaffold_environment_inventory.RealScaffoldInventory.test_actual_paired_context_and_every_cap_have_real_source_bond)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/tests/test_scaffold_environment_inventory.py", line 53, in test_actual_paired_context_and_every_cap_have_real_source_bond
+    np.testing.assert_array_equal(actual[link['context_index']], real[link['parent_index']])
+  File "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/lib/python3.11/site-packages/numpy/testing/_private/utils.py", line 920, in assert_array_equal
+    assert_array_compare(operator.__eq__, x, y, err_msg=err_msg,
+  File "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/lib/python3.11/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/lib/python3.11/site-packages/numpy/testing/_private/utils.py", line 797, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 1 / 3 (33.3%)
+Max absolute difference: 3.55271368e-15
+Max relative difference: 1.42943336e-16
+ x: array([ 57.302, -24.854,  50.35 ])
+ y: array([ 57.302, -24.854,  50.35 ])
+
+----------------------------------------------------------------------
+Ran 5 tests in 15.515s
+
+FAILED (failures=1)

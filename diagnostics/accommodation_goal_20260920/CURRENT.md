@@ -1,3 +1,36 @@
+# Nikasha current checkpoint — 2026-09-22
+
+## Latest recovery and execution — 2026-09-22
+
+Current name: **Nikasha**, with old commands and protocols retained. Read
+[recovered outcomes](../nikasha_recovery_20260922/REPORT.md) and
+[shared-pool plan](../nikasha_shared_pool_20260922/PLAN.md).
+All Sept20 proposal, solvent and preserved-DFT jobs have completed. Do not restart
+1204185/1204188–91 or1203976–79. IndependentCC1202429 failed without a complete
+metal pair; no CC retry is authorized by this continuation.
+
+The released static context+native-solvent scorer remains the strongest supported
+practical method. Restricted accommodation did not improve reference accuracy;
+its new calibration transferred worse. Unknown PLM structures remain unlabeled.
+The separate unqualified composite-minimum DFT campaign remains dry-run only.
+
+Root owns shared-pool scoring/integration: both metals score each actual candidate
+at fixed chemistry, preserving old results. Pilot GPU1209840 completed8crosscells;
+solvent1209845 runs unchanged64CPU work on available GPU-node CPUs (no GPU).
+Pending1209841 was cancelled before execution. Check receipts before new submission.
+The remaining26 canonical/crystal sources are being prepared; their execution
+follows technical pilot success. Canonical-only pool references freeze before
+pooled primary225 fold outcomes. No production promotion or full PLM rescore.
+
+Water_basins owns a prepare-only four-context adaptive donor proposal adapter,
+using archived physical force selection and an explicit final displacement bound.
+Second_shell owns existing-data PLM joins; Khoury finished recovery and comparison
+operations. No one duplicates root's chemistry. New thin `scripts/nikasha` wrapper
+preserves existing commands. See docs/NIKASHA.md and the source inventory under
+ diagnostics/nikasha_plm_sources_20260922/.
+
+## Historical September20 checkpoint
+
 # Overnight accuracy research checkpoint — 2026-09-20
 
 ## Latest substantive result and continuation — 13:35 UTC

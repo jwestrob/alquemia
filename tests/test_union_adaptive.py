@@ -83,4 +83,34 @@ class Fixtures(unittest.TestCase):
         self.assertEqual(j['counts']['adaptive']['union_adaptive_minimal'],{'correct':8})
         self.assertEqual(j['counts']['released']['union_adaptive_minimal'],{'correct':7,'inconclusive':1})
 
+    def test_exact_canonical_selection_and_pilot_reuse(self):
+        p=RUN.parent/'CANONICAL_INPUTS_v1.json';data=read_json(p)
+        self.assertEqual(u.declared_population(p,verify(data['calibration'])),('canonical_remaining24',24))
+        self.assertEqual(sum(r['role']=='calibration' for r in data['all_cases']),25)
+        self.assertEqual({r['case_id'] for r in data['all_cases'] if r['role']!='calibration'},{'1H4I','4MAE','1KB0'})
+        self.assertEqual(len(data['cases']),24)
+        self.assertEqual(set(data['reuse_case_ids']),set(u.CANONICAL_REUSE))
+        # A corrupted real source selector cannot substitute a favorable fold.
+        data['cases'][0]['actual_union_case_id']='corrupted_actual_source_id'
+        with tempfile.TemporaryDirectory() as td:
+            q=Path(td)/'corrupted_inputs.json';write_new(q,data)
+            with self.assertRaises(InvalidArtifact):u.declared_population(q,verify(data['calibration']))
+
+    def test_actual_canonical_reference_and_missing_member(self):
+        from nikasha_pool_compare import extrema_reference
+        j=read_json(RUN.parent/'CANONICAL_REFERENCE_v1.json')
+        self.assertEqual((j['denominator'],j['calibration_denominator'],j['crystal_transfer_denominator']),(28,25,3))
+        self.assertFalse(j['crystals_or_noncanonical_used_for_fit'])
+        for name,r in j['variants'].items():
+            self.assertEqual(len(r['rows']),25)
+            self.assertFalse(any(c['case_id'] in ('1H4I','4MAE','1KB0') for c in r['rows']))
+            replay=extrema_reference(r['rows'],name,'Nikasha_union_adaptive_minimal_canonical25_v1')
+            for key in ('status','bands','gap_model_kcal_mol','available_calibration'):
+                self.assertEqual(replay[key],r[key])
+            # Explicitly corrupted real result: a deleted energy cannot become zero.
+            broken=[dict(c) for c in r['rows']];broken[0]['R_model_kcal_mol']=None
+            absent=extrema_reference(broken,name)
+            self.assertEqual(absent['status'],'unavailable_calibration_member')
+            self.assertIsNone(absent['bands'])
+
 if __name__=='__main__':unittest.main()

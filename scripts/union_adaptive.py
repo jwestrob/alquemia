@@ -24,6 +24,44 @@ PROTOCOL='fixed_union_context_four_angular_native_OMOL_SLSQP_v1'
 POOL_PROTOCOL='nikasha_union_adaptive_minimal_common_geometry_native_OMOL_GFN2_ALPB_v1'
 SETTINGS=copy.deepcopy(completion.SETTINGS)
 POOL_SETTINGS={**pool.SETTINGS,'candidate_order':['origin','adaptive_Ca','adaptive_La']}
+CANONICAL_REUSE=('1H4I','4MAE','q9z4j7-pqq-la_model','q88jh5-pqq-la_model')
+
+
+def declared_population(inputs,calibration):
+    data=read_json(inputs);population=data.get('population','common8')
+    if population=='common8':
+        if len(data['cases'])!=8:raise InvalidArtifact('exact common8 required')
+        return population,8
+    if population!='canonical_remaining24':raise InvalidArtifact('undeclared union population')
+    if data['calibration']!=record(calibration):raise InvalidArtifact('canonical union source collection differs')
+    cal=read_json(calibration);canonical=[r for r in cal['rows'] if r['canonical_coordinate_match']]
+    crystals=[r for r in cal['rows'] if not r['canonical_coordinate_match']]
+    if len(canonical)!=25 or {r['case_id'] for r in crystals}!={'1H4I','4MAE','1KB0'}:raise InvalidArtifact('canonical25/crystal3 differs')
+    expected=[{'case_id':r['root_case_id'] if r['canonical_coordinate_match'] else r['case_id'],
+        'actual_union_case_id':r['case_id'],'known_class':r['expected_class'],'biological_group':r['biological_group'],
+        'role':'calibration' if r['canonical_coordinate_match'] else 'consumed_crystal_transfer'} for r in cal['rows']]
+    if data['all_cases']!=expected or data['cases']!=[r for r in expected if r['case_id'] not in CANONICAL_REUSE] or data['reuse_case_ids']!=list(CANONICAL_REUSE):
+        raise InvalidArtifact('designated canonical/reused source membership changed')
+    pilot=read_json(verify(data['pilot_collection']));pm=read_json(verify(pilot['manifest']))
+    if pilot['protocol_id']!=POOL_PROTOCOL or pm['settings']!=POOL_SETTINGS:raise InvalidArtifact('reused pilot model policy differs')
+    for cid in CANONICAL_REUSE:
+        c=next(x for x in pilot['cases'] if x['case_id']==cid)
+        row=next(x for x in expected if x['case_id']==cid)
+        actual=next(x for x in cal['rows'] if x['case_id']==row['actual_union_case_id'])
+        if c['source']['origin_row']!=actual or c['pool']['status']!='available':raise InvalidArtifact('reused canonical pool/origin differs')
+    return population,24
+
+
+def canonical_inputs(calibration,pilot,agreement,output):
+    cal=read_json(calibration)
+    rows=[{'case_id':r['root_case_id'] if r['canonical_coordinate_match'] else r['case_id'],
+        'actual_union_case_id':r['case_id'],'known_class':r['expected_class'],'biological_group':r['biological_group'],
+        'role':'calibration' if r['canonical_coordinate_match'] else 'consumed_crystal_transfer'} for r in cal['rows']]
+    result={'population':'canonical_remaining24','calibration':record(calibration),'pilot_collection':record(pilot),
+        'agreement':record(agreement),'all_cases':rows,'cases':[r for r in rows if r['case_id'] not in CANONICAL_REUSE],
+        'reuse_case_ids':list(CANONICAL_REUSE),'canonical_denominator':25,'transfer_denominator':3,
+        'new_sources':24,'new_searches':48,'maximum_cross_MACE_calls':48,'maximum_GFN2_calls':192,'new_q0_calls':0}
+    write_new(output,result);declared_population(output,calibration);return result
 
 
 def snapshot(out):
@@ -35,6 +73,7 @@ def snapshot(out):
 
 def lookup(preparation,crystals,calibration,transfer,inputs):
     prep=read_json(preparation);cr=read_json(crystals);cal=read_json(calibration);trans=read_json(transfer);common=read_json(inputs)
+    _,count=declared_population(inputs,calibration)
     rows=[]
     for case in common['cases']:
         cid=case['case_id'];matches=[(pin,r) for pin,col in ((record(calibration),cal),(record(transfer),trans)) for r in col['rows']
@@ -43,7 +82,7 @@ def lookup(preparation,crystals,calibration,transfer,inputs):
         pin,row=matches[0];original=next(p for p in prep['cases']+cr['cases'] if p['case_id']==row['case_id'])
         if row['status']!='complete' or original['status']!='prepared':raise InvalidArtifact('required union source unavailable: '+cid)
         rows.append({'case_id':cid,'actual_union_case_id':row['case_id'],'base':case,'union':original,'collection':pin,'origin_row':row})
-    if len(rows)!=8:raise InvalidArtifact('exact common8 required')
+    if len(rows)!=count:raise InvalidArtifact('declared population differs')
     return prep,rows
 
 
@@ -67,6 +106,7 @@ def prepare(preparation,crystals,calibration,transfer,inputs,source,agreement,ou
     from second_shell_context import parent_state
     from coordination_preparation_context import geometry
     prep,rows=lookup(preparation,crystals,calibration,transfer,inputs);sm=read_json(source)
+    population,count=declared_population(inputs,calibration)
     if sm['model']!=prep['config']['model'] or sm['settings']!=SETTINGS:raise InvalidArtifact('checkpoint or scaled optimizer differs')
     out=Path(output).resolve();out.mkdir(parents=True,exist_ok=False);tasks=[];cases=[]
     for row in rows:
@@ -114,21 +154,22 @@ def prepare(preparation,crystals,calibration,transfer,inputs,source,agreement,ou
         preparation=record(preparation),crystals=record(crystals),calibration=record(calibration),transfer=record(transfer),
         cases=cases,tasks=tasks,declared_case_ids=[r['case_id'] for r in rows],implementation=snapshot(out/'implementation'),
         optimizer_software={'version':scipy.__version__,'wrapper':record(scipy_slsqp.__file__),'kernel':record(scipy_kernel.__file__)},
-        maximum_optimizer_starts=16,new_origin_calls=0,maximum_cross_MACE_calls=16,maximum_GFN2_calls=64,
+        population=population,maximum_optimizer_starts=2*count,new_origin_calls=0,maximum_cross_MACE_calls=2*count,maximum_GFN2_calls=8*count,
         production_changed=False,new_DFT_calls=0,reference=None)
     mp=out/'manifest.json';write_new(mp,m);result=validate(mp);write_new(out/'PREFLIGHT.json',result);return result
 
 
 def validate(manifest):
     m=read_json(manifest)
-    if m['protocol_id']!=PROTOCOL or m['settings']!=SETTINGS or len(m['tasks'])!=16:raise InvalidArtifact('fixed union/adaptive scope differs')
+    population,count=declared_population(verify(m['inputs']),verify(m['calibration']))
+    if m.get('population','common8')!=population or m['protocol_id']!=PROTOCOL or m['settings']!=SETTINGS or len(m['tasks'])!=2*count:raise InvalidArtifact('fixed union/adaptive scope differs')
     for k in ('agreement','inputs','source','preparation','crystals','calibration','transfer','software','orca','cpu_executable','gpu_executable'):verify(m[k])
     for pin in m['implementation'].values():verify(pin)
     for k in ('wrapper','kernel'):verify(m['optimizer_software'][k])
     if m['optimizer_software']['version']!=scipy.__version__:raise InvalidArtifact('optimizer runtime differs')
     ids=[c['case_id'] for c in read_json(verify(m['inputs']))['cases']]
     if m['declared_case_ids']!=ids or {(t['case_id'],t['metal']) for t in m['tasks']}!={(c,z) for c in ids for z in ('Ca','La')}:
-        raise InvalidArtifact('exact paired common8 required')
+        raise InvalidArtifact('exact paired declared population required')
     for c in m['cases']:
         data=[]
         for z in ('Ca','La'):
@@ -148,7 +189,7 @@ def validate(manifest):
             angular.final_geometry(k,t,np.zeros(4),[a[0] for a in xyz(verify(t['xyz']))])
         choice=preview(data[0][0].modes,data[0][1],data[0][2],data[1][2])
         if choice!=c['selection'] or any(t['selector']!=choice for t in m['tasks'] if t['case_id']==c['case_id']):raise InvalidArtifact('fixed common selector changed')
-    return {'status':'prepared','manifest':record(manifest),'cases':8,'optimizer_starts':16,'new_q0_calls':0,'molecular_calls_in_validation':0}
+    return {'status':'prepared','manifest':record(manifest),'cases':count,'optimizer_starts':2*count,'new_q0_calls':0,'molecular_calls_in_validation':0}
 
 
 def execute(manifest):
@@ -168,7 +209,7 @@ def execute(manifest):
         elapsed=time.monotonic()-started
         write_new(root/('EXECUTION_'+os.environ['SLURM_JOB_ID']+'.json'),{'manifest':record(manifest),'results':results,'error':error,
                   'wall_seconds':elapsed,'allocated_core_seconds':elapsed*32,'allocated_GPU_seconds':elapsed,'job_id':os.environ['SLURM_JOB_ID'],
-                  'maximum_optimizer_starts':16,'new_q0_calls':0,'GPU_command':gpu.command if gpu else None})
+                  'maximum_optimizer_starts':m['maximum_optimizer_starts'],'new_q0_calls':0,'GPU_command':gpu.command if gpu else None})
     if error:raise InvalidArtifact(error)
     return {'status':'completed','results':results}
 
@@ -187,14 +228,14 @@ def collect(manifest,output):
         rows.append({'task_id':t['task_id'],'case_id':t['case_id'],'metal':t['metal'],'status':'candidate_available' if ok else 'unavailable',
                      'proposal_receipt':record(p) if r else None,'candidate':r['proposal'] if ok else None,
                      'reason':r.get('reason') if r else 'not_run','boundary_flag':r.get('boundary_flag') if r else None})
-    result={'protocol_id':PROTOCOL,'manifest':record(manifest),'endpoints':rows,'denominator':16,'available':sum(r['status']=='candidate_available' for r in rows)}
+    result={'protocol_id':PROTOCOL,'manifest':record(manifest),'endpoints':rows,'denominator':len(m['tasks']),'available':sum(r['status']=='candidate_available' for r in rows)}
     write_new(output,result);return result
 
 
 def prepare_pool(proposals,agreement,output):
     """Only assemble cells; unchanged shared executors compute/collect them."""
     result=read_json(proposals);mp=verify(result['manifest']);validate(mp);m=read_json(mp)
-    if result['protocol_id']!=PROTOCOL or len(result['endpoints'])!=16:raise InvalidArtifact('proposal population differs')
+    if result['protocol_id']!=PROTOCOL or len(result['endpoints'])!=len(m['tasks']):raise InvalidArtifact('proposal population differs')
     out=Path(output).resolve();out.mkdir(parents=True,exist_ok=False);cases=[];tasks=[]
     for source in m['cases']:
         cid=source['case_id'];ts={z:next(t for t in m['tasks'] if (t['case_id'],t['metal'])==(cid,z)) for z in ('Ca','La')}
@@ -235,7 +276,7 @@ def prepare_pool(proposals,agreement,output):
     pm={k:m[k] for k in ('model','software','orca','cpu_python','gpu_python','resources')}
     pm.update(protocol_id=POOL_PROTOCOL,settings=POOL_SETTINGS,source=record(proposals),source_manifest=record(mp),agreement=record(agreement),
         declared_case_ids=m['declared_case_ids'],cases=cases,tasks=tasks,implementation=snapshot(out/'implementation'),
-        population='common8_union_adaptive_minimal',shard_count=1,new_MACE_cells=sum(not t.get('native_reuse') for t in tasks),
+        population=m.get('population','common8')+'_union_adaptive_minimal',shard_count=1,new_MACE_cells=sum(not t.get('native_reuse') for t in tasks),
         maximum_new_GFN2_calls=2*len(tasks),new_DFT_calls=0,new_optimizations=0,GFN2_maxiter=500,
         numerical_policy_id='native_GFN2_MaxIter500_unchanged_convergence_v1',reference=None,production_changed=False)
     path=out/'manifest.json';write_new(path,pm);check=validate_pool(path);pool.low_prepare(path);write_new(out/'PREFLIGHT.json',check);return check
@@ -243,9 +284,10 @@ def prepare_pool(proposals,agreement,output):
 
 def validate_pool(manifest):
     m=read_json(manifest);source=read_json(verify(m['source']));sm=read_json(verify(m['source_manifest']));validate(verify(m['source_manifest']))
+    count=len(sm['cases'])
     if (m['protocol_id']!=POOL_PROTOCOL or m['settings']!=POOL_SETTINGS or m['GFN2_maxiter']!=500 or
-        source['manifest']!=m['source_manifest'] or m['declared_case_ids']!=sm['declared_case_ids'] or len(m['cases'])!=8 or
-        m['maximum_new_GFN2_calls']!=2*len(m['tasks']) or len(m['tasks'])>32 or m['new_MACE_cells']>16):
+        source['manifest']!=m['source_manifest'] or m['declared_case_ids']!=sm['declared_case_ids'] or len(m['cases'])!=count or
+        m['maximum_new_GFN2_calls']!=2*len(m['tasks']) or len(m['tasks'])>4*count or m['new_MACE_cells']>2*count):
         raise InvalidArtifact('fixed minimal union pool differs')
     for key in ('model','software','orca','cpu_python','gpu_python','resources'):
         if m[key]!=sm[key]:raise InvalidArtifact('union pool scientific runtime differs')
@@ -284,7 +326,7 @@ def validate_pool(manifest):
                 if (task['case_id'],task['metal'],task['candidate'],task['source_mapping'],task['source_preparation'])!=(cid,z,name,t['mapping'],t['source_preparation']):raise InvalidArtifact('cross source identity differs')
                 if xyz(verify(task['xyz']))!=want or (task['charge'],task['multiplicity'])!=(t['charge'],t['multiplicity']):raise InvalidArtifact('cross geometry/state differs')
                 if task.get('native_reuse'):pool.native_reuse(task,m)
-    return {'status':'validated','manifest':record(manifest),'denominator':8,'prepared':sum(c['status']=='prepared' for c in m['cases']),
+    return {'status':'validated','manifest':record(manifest),'denominator':count,'prepared':sum(c['status']=='prepared' for c in m['cases']),
             'new_MACE_cells':m['new_MACE_cells'],'new_GFN2_calls':m['maximum_new_GFN2_calls'],'new_DFT_calls':0}
 
 
@@ -348,8 +390,62 @@ def compare(collection,union_reference,output):
     write_new(output,result);return result
 
 
+def canonical_reference(collection,inputs,agreement,output):
+    """Freeze a distinct canonical25 reference; all three crystals stay outside."""
+    from datetime import datetime,timezone
+    from nikasha_pool_compare import extrema_reference
+    from accommodation_folds_compare import decision
+    from accommodation_fold_proposals import outcome
+    selection=read_json(inputs);declared_population(inputs,verify(selection['calibration']))
+    fresh=read_json(collection);fm=read_json(verify(fresh['manifest']));validate_pool(verify(fresh['manifest']))
+    parent=read_json(verify(fm['source_manifest']))
+    if parent['inputs']!=record(inputs) or parent['agreement']!=record(agreement) or fm['agreement']!=record(agreement):raise InvalidArtifact('canonical agreement/input differs')
+    pilot=read_json(verify(selection['pilot_collection']));pm=read_json(verify(pilot['manifest']));validate_pool(verify(pilot['manifest']))
+    if any(fm[k]!=pm[k] for k in ('protocol_id','settings','model','software','orca','GFN2_maxiter')):raise InvalidArtifact('reused pool method differs')
+    if [c['case_id'] for c in fresh['cases']]!=[c['case_id'] for c in selection['cases']]:raise InvalidArtifact('fresh canonical denominator differs')
+    rows=[]
+    for src in selection['all_cases']:
+        reused=src['case_id'] in CANONICAL_REUSE;col=pilot if reused else fresh
+        c=next(c for c in col['cases'] if c['case_id']==src['case_id'])
+        if c['source']['actual_union_case_id']!=src['actual_union_case_id'] or c['source']['origin_row']['expected_class']!=src['known_class']:raise InvalidArtifact('canonical source/state/label differs')
+        # Recompute selections from actual component cells; an absent cell stays unavailable.
+        if c['status']=='prepared':
+            chosen=pool.choose_rows(c['matrix'],[q['id'] for q in c['candidates']])
+            if chosen!=c['pool']:raise InvalidArtifact('collected pool differs from actual matrix')
+        else:
+            chosen=c['pool']
+            if chosen['status']!='unavailable' or any(chosen[v] is not None for v in ('mathematical','operational')):
+                raise InvalidArtifact('unsupported preparation was substituted with a score')
+        scores={v:chosen[v]['composite_R_model_kcal_mol'] if chosen['status']=='available' else None for v in ('mathematical','operational')}
+        rows.append({**src,'expected_class':src['known_class'],'status':chosen['status'],'scores':scores,
+            'selected_candidates':{v:{z:chosen['rows'][z][v+'_candidate'] for z in ('Ca','La')} for v in scores} if chosen['status']=='available' else None,
+            'pool':chosen,'collection':selection['pilot_collection'] if reused else record(collection),'reused_common8':reused})
+    variants={}
+    for variant in ('mathematical','operational'):
+        canonical=[{**r,'R_model_kcal_mol':r['scores'][variant]} for r in rows if r['role']=='calibration']
+        variants[variant]=extrema_reference(canonical,variant,'Nikasha_union_adaptive_minimal_canonical25_v1')
+        values={z:[r['scores'][variant] for r in rows if r['role']=='calibration' and r['known_class']==z] for z in ('Ca','La')}
+        if all(v is not None for vals in values.values() for v in vals):
+            variants[variant]['class_spread']={z:max(v)-min(v) for z,v in values.items()}
+        for r in rows:
+            r.setdefault('own_reference',{})[variant]={'decision':decision(r['scores'][variant],variants[variant]['bands']) if variants[variant]['bands'] else 'unavailable',
+                                                     'reference_status':variants[variant]['status']}
+            r['own_reference'][variant]['outcome']=outcome(r['own_reference'][variant]['decision'],r['known_class'])
+    result={'protocol_id':POOL_PROTOCOL,'reference_id':'Nikasha_union_adaptive_minimal_canonical25_v1','variants':variants,
+        'inputs':record(inputs),'agreement':record(agreement),'collections':[selection['pilot_collection'],record(collection)],
+        'denominator':28,'complete':sum(r['status']=='available' for r in rows),'rows':rows,
+        'calibration_denominator':25,'crystal_transfer_denominator':3,'crystals_or_noncanonical_used_for_fit':False,
+        'frozen_UTC':datetime.now(timezone.utc).isoformat(),'new_calls_in_analysis':0,'production_changed':False,
+        'implementation':record(__file__),'model':fm['model'],'settings':fm['settings'],'optimizer_settings':parent['settings']}
+    write_new(output,result);return result
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__);s=p.add_subparsers(dest='op',required=True)
+    q=s.add_parser('canonical_inputs')
+    for name in ('calibration','pilot','agreement','output'):q.add_argument('--'+name,required=True)
+    q=s.add_parser('canonical_reference')
+    for name in ('collection','inputs','agreement','output'):q.add_argument('--'+name,required=True)
     q=s.add_parser('prepare')
     for name in ('preparation','crystals','calibration','transfer','inputs','source','agreement','output'):q.add_argument('--'+name,required=True)
     for name in ('validate','execute','collect'):

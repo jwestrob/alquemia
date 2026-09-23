@@ -1,0 +1,205 @@
+{
+  "all28_available": true,
+  "bands": {
+    "mathematical": {
+      "Ca_max": -405463.7090572145,
+      "La_min": -405456.46881754074
+    },
+    "operational": {
+      "Ca_max": -405463.7090572145,
+      "La_min": -405456.46881754074
+    }
+  },
+  "canonical_denominator": 25,
+  "class_spread": {
+    "Ca": 24.18282278155675,
+    "La": 35.515088107960764
+  },
+  "common8_after_reference_freeze": [
+    {
+      "R_model_kcal_mol": -405505.42010669457,
+      "case_id": "1H4I",
+      "crystal_control": true,
+      "decision": "Ca-supported",
+      "known_class": "Ca",
+      "outcome": "correct",
+      "used_in_canonical_reference": false
+    },
+    {
+      "R_model_kcal_mol": -405444.3044253682,
+      "case_id": "4MAE",
+      "crystal_control": true,
+      "decision": "La-supported",
+      "known_class": "La",
+      "outcome": "correct",
+      "used_in_canonical_reference": false
+    },
+    {
+      "R_model_kcal_mol": -405464.23587753915,
+      "case_id": "q9z4j7-pqq-la_model",
+      "crystal_control": false,
+      "decision": "Ca-supported",
+      "known_class": "Ca",
+      "outcome": "correct",
+      "used_in_canonical_reference": true
+    },
+    {
+      "R_model_kcal_mol": -405463.7090572145,
+      "case_id": "q88jh5-pqq-la_model",
+      "crystal_control": false,
+      "decision": "Ca-supported",
+      "known_class": "Ca",
+      "outcome": "correct",
+      "used_in_canonical_reference": true
+    },
+    {
+      "R_model_kcal_mol": -405450.71660188097,
+      "case_id": "a0a3f2yly8-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "crystal_control": false,
+      "decision": "La-supported",
+      "known_class": "La",
+      "outcome": "correct",
+      "used_in_canonical_reference": false
+    },
+    {
+      "R_model_kcal_mol": -405455.4701721703,
+      "case_id": "a0a3f2yly8-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "crystal_control": false,
+      "decision": "La-supported",
+      "known_class": "La",
+      "outcome": "correct",
+      "used_in_canonical_reference": false
+    },
+    {
+      "R_model_kcal_mol": -405454.84413224465,
+      "case_id": "a0acd6b9f2-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "crystal_control": false,
+      "decision": "La-supported",
+      "known_class": "La",
+      "outcome": "correct",
+      "used_in_canonical_reference": false
+    },
+    {
+      "R_model_kcal_mol": -405439.8083847241,
+      "case_id": "a0acd6b9f2-pqq-la_model__conditioned_La__seed-1_sample-4",
+      "crystal_control": false,
+      "decision": "La-supported",
+      "known_class": "La",
+      "outcome": "correct",
+      "used_in_canonical_reference": false
+    }
+  ],
+  "common8_replay_counts": {
+    "correct": 8
+  },
+  "cost": {
+    "allocated_core_seconds": 54256,
+    "fresh_GFN2_calls": 192,
+    "fresh_cross_MACE_calls": 48,
+    "fresh_optimizer_MACE_calls": 2275,
+    "jobs": [
+      {
+        "allocated_core_seconds": 21024,
+        "allocated_cpus": 32,
+        "elapsed_seconds": 657,
+        "job_id": "1210465",
+        "node": "node-224-2t-8gpu-1",
+        "requested_GPU_seconds": 657,
+        "requested_memory": "200000M",
+        "state": "COMPLETED"
+      },
+      {
+        "allocated_core_seconds": 1152,
+        "allocated_cpus": 32,
+        "elapsed_seconds": 36,
+        "job_id": "1210505",
+        "node": "node-224-2t-8gpu-1",
+        "requested_GPU_seconds": 36,
+        "requested_memory": "200000M",
+        "state": "COMPLETED"
+      },
+      {
+        "allocated_core_seconds": 32064,
+        "allocated_cpus": 64,
+        "elapsed_seconds": 501,
+        "job_id": "1210506",
+        "node": "node-224-2t-8gpu-1",
+        "requested_GPU_seconds": 0,
+        "requested_memory": "128G",
+        "state": "COMPLETED"
+      },
+      {
+        "allocated_core_seconds": 16,
+        "allocated_cpus": 1,
+        "elapsed_seconds": 16,
+        "job_id": "1210507",
+        "node": "node-224-2t-8gpu-1",
+        "requested_GPU_seconds": 0,
+        "requested_memory": "8G",
+        "state": "COMPLETED"
+      }
+    ],
+    "local_preparation_and_analysis_time": "unmetered; not included",
+    "nested_runner_allocations_added": false,
+    "new_DFT": 0,
+    "new_scientific_retries": 0,
+    "pilot_cost": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/union_adaptive_20260923/COSTS_v1.json",
+      "sha256": "4a054bbd438d2e0f8d558d5e035f60750a106c2a3f67bbd7e3c84779bdad8ceb"
+    },
+    "requested_GPU_seconds": 693,
+    "reused_q0_force_arrays": 48,
+    "scheduler": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/union_adaptive_20260923/CANONICAL_SACCT_v1.txt",
+      "sha256": "14836bd68a89dba351482d30921297c637df7b251e7a18971cfcb3cadd921f25"
+    },
+    "scope": "24 newly executed canonical/crystal sources; four pilot reuses excluded from this new allocation total"
+  },
+  "counts": {
+    "mathematical": {
+      "calibration": {
+        "correct": 25
+      },
+      "consumed_crystal_transfer": {
+        "correct": 3
+      }
+    },
+    "operational": {
+      "calibration": {
+        "correct": 25
+      },
+      "consumed_crystal_transfer": {
+        "correct": 3
+      }
+    }
+  },
+  "crystal_denominator": 3,
+  "gap_model_kcal_mol": 7.240239673759788,
+  "new225_evaluation": false,
+  "new_stage_calls": {
+    "DFT": 0,
+    "GFN2": 192,
+    "cross_MACE": 48,
+    "optimizer_MACE": 2275,
+    "optimizer_starts": 48
+  },
+  "old_reference_gaps": {
+    "original_adaptive": 2.5466901855543256,
+    "released_static": 5.076366280321963,
+    "static_union": 11.066621970327105
+  },
+  "optimizer_audit": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/union_adaptive_20260923/CANONICAL_OPTIMIZER_AUDIT_v1.json",
+    "sha256": "9f62dd697d5a2da5ea95bdca750028980a070199f0162f2c784c8968abebb562"
+  },
+  "production_changed": false,
+  "protocol_id": "nikasha_union_adaptive_minimal_common_geometry_native_OMOL_GFN2_ALPB_v1",
+  "reference": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/union_adaptive_20260923/CANONICAL_REFERENCE_v1.json",
+    "sha256": "2f142883dcfd8b452d6c75e714b49ee1cac7a29ae317a4f289dcbc740498c5c7"
+  },
+  "reference_status": "available",
+  "reused_completed_sources": 4,
+  "status": "completed",
+  "three_fold_union_validated": false
+}

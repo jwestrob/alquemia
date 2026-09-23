@@ -59,6 +59,21 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   Preserve all subsets, verify actual maps and exact reuse, and prepare one
   separate A0A3 Ca1 stress probe using only its La-triple-selected membership.
   No new molecular work or three-fold qualification is implied by preparation.
+  Reference-only replay interface is committeddee7e05:15/20 A0A3/Q9 sources
+  plus3/3 crystals replay exactly, with five original Q9 Ca exclusions retained;
+ 8 real-fixture tests pass. Historical canonical membership cannot be invented
+  for an unknown application protein. Triple preparation now validates all125
+  distinct source/membership pairs plus the separate A0A3 Ca1 probe:70 primary
+  origins match ten-fold and36 match original local contexts exactly, including
+  actual MACE force arrays and4GFN cells each.19 primary origins and the stress
+  origin are new; no energies have run. The stress context is169 versus193atoms.
+  Root additionally authorized preparation of each original canonical geometry
+  under its lexicographically first complete noncanonical-La triple, with skipped
+  unavailable triples recorded before energies. These25 alone may calibrate the
+  new three-fold method using the unchanged extrema rule; all100 primary triples
+  remain intact. All25+3 crystal preparations pass;16 canonical+3crystal contexts
+  match ten-fold and9 canonical contexts change. Molecular scope remains pending
+  the exact reuse/new-call inventory; no old reference is silently inherited.
 - **water_basins:** [standalone xTB pilot](../standalone_xtb_20260923/REPORT.md)
   completed224/224 physical calls: all four numerical pool checks and14/14 tight
   derivative quantities pass. Four known sources have correct relative class
@@ -133,6 +148,11 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   32CPUs/64GiB per shard. Pin the actual rank-panel qualification. Preserve the
   repaired-H supplement and original full225 records separately. Precision34
   report/tests are committedd45581a;9 real-fixture tests pass.
+  Four finite GPU→CPU chains now run:1211044→1211045,1211046→1211047,
+ 1211048→1211049 and1211050→1211051, with51/51/50/50 fresh sources. Each CPU job
+  automatically collects its own pool. Six prelaunch tests pass; adapter/report/
+  plan/receipts committed3834224. Root independently reviewed final comparison
+  logic and found no blocker. Do not duplicate jobs or their collectors.
 - **khoury_benchmark:** expose the supported minimal adaptive scorer as a small
   opt-in source-to-score candidate, reusing existing physical preparation,
   selector, optimizer and shared scoring. Implement/test on completed recovery
@@ -190,6 +210,16 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   Khoury's next task is a thin practical execution-integration plan with the
   existing source/runners and second_shell's interface, not a second workflow.
   No further molecular calls until a specific integration fixture is declared.
+  Rank28 report and five passing final tests are committedfdec061. Root accepted
+  this exact two-arm integration plan: all10 A0A3 folds, independent fresh source
+  preparation, sequential same-host32CPU/1H200/200000MiB jobs. Released arm uses
+ 20 freshMACE+40GFN (unchanged4×8ranks/default125); candidate uses20q0MACE,
+ 20 bounded searches, up to20crossMACE and120GFN (32×1rank/MaxIter500). Total160GFN,
+ 60 fixedMACE plus searches, no archived energies/forces or DFT. Existing released
+  per-source model loads versus candidate stage batching remain explicit; no
+  pure-physics speedup or optimized-static comparison is implied. Thin adapter
+  `pqq_union_execution.py` is preparing/preflighting; submission waits for the
+  full225 result and root's resulting execution decision. No production change.
 - **root:** integration, actual benefit/cost comparison and substantive email.
   The [completed recovered ledger](../adaptive_minimal_pool_20260923/RECOVERY_REPORT.md)
   retains204 correct/1 wrong/1 inconclusive/19 unavailable among225. On206 common

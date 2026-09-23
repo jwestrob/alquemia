@@ -12,6 +12,15 @@ included. No arbitrary project-wide time or compute cap is reinstated.
 
 ## Current ownership and results
 
+- **Main completed result:** [full225 union/adaptive transfer](../union_adaptive_20260923/TRANSFER225_REPORT.md)
+  is205 correct/0 wrong/1 inconclusive/19 unavailable. On205 common sources,
+  released201/2/2 becomes204/0/1: both wrong calls and two inconclusives repaired,
+  one C5AXV8 La3 call becomes inconclusive. All available strict aggregates are
+  correct, but their coverage declines; fold spread is narrower in20/42 matched
+  arms and wider in22/42. Do not claim uniformly improved spread. Cost513768
+  allocated core-seconds/4123 requested GPU-seconds;8 actual-fixture tests pass.
+  All13 jobs/collectors are terminal; commit3c6d054. Root verified the ledger,
+  generated the three-method editable figure and emailed the actual result.
 - **second_shell:** [union context plus adaptive accommodation](../union_adaptive_20260923/REPORT.md).
   The common8 pilot completed all16 searches/16 cross-MACE/64 GFN2 cells. All
   pools available; original adaptive14/15 opposing source-pair ordering becomes
@@ -35,7 +44,12 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   passing physical checks.12,750 new MACE calls, zero model failures. Both failed
   traces are preserved, without rescue. CPU jobs now allow ordinary gpu or
   standard-shared placement at unchanged priority/resources; no exclusive node.
-  Do not duplicate these collectors. See
+  All follow-ons are now terminal; do not duplicate them. New authorized task:
+  implement an opt-in source-group prepare/dry-run/archive-replay interface using
+  existing preparation/union/adaptive modules, tested on real full A0A3 andQ9
+  source groups. No new molecular calls yet; no three-fold equivalence claim,
+  production change or new workflow framework. A cheaper numerical profile waits
+  for the separate qualifications below. See
   [physical interpretation](CONTEXT_MECHANISM_NOTE.md).
 - **water_basins:** [standalone xTB pilot](../standalone_xtb_20260923/REPORT.md)
   completed224/224 physical calls: all four numerical pool checks and14/14 tight
@@ -79,6 +93,20 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   [commands](../preparation_coverage_20260923/COMMANDS.md), commit6aa9d6e.
   The other16 exclusions are real off-site ions, not a parser defect. Historical
   225 outputs/exclusions remain unchanged; this is supplemental coverage only.
+  Origins are now complete:4MACE/8GFN. Repaired local and union-static scores are
+  correctly La-supported (R−405448.3006703/−405449.1840259). Both original-policy
+  searches and2crossMACE1210819 succeeded; final8GFN1210820 also completed.
+  Final union/adaptive R is−405447.048247691, also correctly La-supported under
+  its own frozen bands. All42 actual MACE calls/16GFN succeeded;5280 allocated
+  core-seconds/57 GPU-seconds;7 real-fixture tests pass. Final report commita7c1220.
+  The original225 record remains unchanged; no restart of these jobs is needed.
+  Water also owns the authorized **34-source stopping-policy expansion**:
+  canonical25+3crystals+4noncanonical pilotfolds+the two failed225 sources. Reuse
+  four exact precision pools;30fresh/60searches/60crossMACE/240native8rankGFN max,
+  no newq0/DFT. Same gates and only ftol1e−8 change. GPU1210813 completed all60
+  searches; formerly failed Q92La/Q60La now converge in13/17 evaluations with
+  the same physical boundary limits. Canonical score equivalence remains pending;
+  CPU1211010 owns240nativeGFN. All original225 results remain preserved.
 - **khoury_benchmark:** expose the supported minimal adaptive scorer as a small
   opt-in source-to-score candidate, reusing existing physical preparation,
   selector, optimizer and shared scoring. Implement/test on completed recovery
@@ -115,6 +143,17 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   Compare all cells to fresh8-rank (.1kcal component/.2 pairedR gates), preserve
   historical values, actual cost and all failures. No per-cell favorable rank
   choice or production change. Scope approved before calls; agent owns manifests.
+  Rank test is now complete: all24 cells and gates pass, maximum1/4vs8 energy
+  difference1.25e−9kcal and pairedR1.23e−9. One-rank8cell allocation18s×8CPUs=144
+  core-seconds, versus36s×64=2304 at8ranks; allthree tests cost3824 core-seconds,
+  zeroGPU. Four artifact tests pass; commit66de402. This is scalar qualification,
+  not native-gradient qualification or a universal throughput factor. New task:
+  execute the same one-rank check across all28 union canonical/crystal common
+  three-candidate pools:336 fresh cells, no exact prior one-rank reuse. Use32
+  workers/32CPUs/64GiB, CPU-only, preserving each original electronic input
+  including its MaxIter125 or500. Same component/pool gates; no optimization,
+  new geometry or reference fit. Root accepted this finite manifest scope before
+  execution; khoury owns preparation, preflight, submission and collection.
 - **root:** integration, actual benefit/cost comparison and substantive email.
   The [completed recovered ledger](../adaptive_minimal_pool_20260923/RECOVERY_REPORT.md)
   retains204 correct/1 wrong/1 inconclusive/19 unavailable among225. On206 common

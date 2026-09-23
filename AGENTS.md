@@ -8,13 +8,16 @@ before resuming. The original LanM, native continuation, native-force and
 minimal-pool/recovery rounds are complete. LanM failed structural transfer;
 native continuation did not fix derivative consistency. Do not duplicate them.
 
-Two useful pilots now advance to canonical reference checks: fixed union context
-plus adaptive accommodation, and standalone xTB solvent scoring. Root owns
-integration, second_shell owns union/adaptive, water_basins owns standalone xTB,
-khoury owns the opt-in minimal-adaptive source interface. Each has finite declared
-manifests; reuse completed molecules and retain unavailable cases. No production
-change, broad PLM rescore or separately gated quantum campaign is authorized by
-this round. Older proposed-only/pending-approval notes below are historical.
+The full225 union/adaptive comparison is complete:205correct/0wrong/1inconclusive/
+19unavailable, correcting both released errors; strict coverage and structural
+spread still have tradeoffs. Standalone solvent scoring and its force-guided
+search did not earn replacement use. Root owns integration/figures/email;
+second_shell now owns an opt-in source-group interface, water_basins owns the
+34-source stopping-policy qualification and repaired-H supplement, and khoury
+owns broader one-rank native-solver qualification after a successful24-call
+pilot. Follow their current finite manifests; do not duplicate finished jobs.
+Production, broad PLM rescoring and the separately gated quantum campaign remain
+unchanged. Older proposed-only/pending-approval notes below are historical.
 
 ## Restart/scaffold round completed; LanM follow-up requested — 2026-09-22
 

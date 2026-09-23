@@ -33,5 +33,25 @@ OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
   --output workspaces/discrimination_transfer_figures_20260923/recovered_v2
 ```
 
-The running union/adaptive comparison will be plotted only after all four real
-collections are terminal. No projected result is shown in the current figure.
+## Completed union/adaptive comparison
+
+All four real collections are now terminal. The actual three-method output is
+`workspaces/discrimination_transfer_figures_20260923/union225_v1/`, again with
+editable SVG/PDF, PNG, all-source CSV and receipt. Its PNG was visually inspected.
+The union/adaptive result is205 correct/0 wrong/1 inconclusive/19 unavailable;
+the plot retains C5AXV8's inconclusive call and both numerical coverage failures.
+It shows that spread is not uniformly reduced. Use the source values and the
+complete comparison ledger for counts; no unseen/missing source is inferred.
+
+Exact rerender operation, using a new directory:
+
+```bash
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+  /groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python \
+  scripts/plot_discrimination_transfer.py \
+  --comparison workspaces/union_adaptive_20260923/transfer225_v1/COMPARISON_v1.json \
+  --methods 'context_composite=Released static' \
+    'native_minimal_recovered=Original-context adaptive' \
+    'union_adaptive=Consistent pocket + adaptive' \
+  --output workspaces/discrimination_transfer_figures_20260923/union225_v2
+```

@@ -1,0 +1,20 @@
+{
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--dependency=afterok:1211048",
+    "--output=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/slsqp_precision_transfer_20260923/cpu_2_%j.out",
+    "--error=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/slsqp_precision_transfer_20260923/cpu_2_%j.err",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/slsqp_precision_transfer_20260923/run_cpu.sbatch",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/slsqp_precision_transfer_20260923/run_v1/shard_2/pool/manifest.json"
+  ],
+  "depends_on_GPU": "1211048",
+  "future_pool_manifest": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/slsqp_precision_transfer_20260923/run_v1/shard_2/pool/manifest.json",
+  "job_id": "1211049",
+  "script": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/slsqp_precision_transfer_20260923/run_cpu.sbatch",
+    "sha256": "a82150839698887f07025cc63e21627cd7c17156a36ea6ca8c9467d22e8c292e"
+  },
+  "stderr": "",
+  "stdout": "1211049\n"
+}

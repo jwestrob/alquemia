@@ -30,7 +30,12 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   warmGPU shards;408 searches/408 cross-MACE/1632 GFN2 maximum before failures.
   Original optimizer/settings stay fixed. Proposal jobs1210573–1210576 have
   finite after-any follow-ons: CPU1210586/88/90/92, then cross-MACE plus collection
-  1210587/89/91/93. Do not duplicate these collectors. See
+  1210587/89/91/93, final comparison1210601. All408 searches are now terminal:
+  406 admitted, Q92WY9 Ca2/La and Q60AR6 La0/La fail the200-iteration gate despite
+  passing physical checks.12,750 new MACE calls, zero model failures. Both failed
+  traces are preserved, without rescue. CPU jobs now allow ordinary gpu or
+  standard-shared placement at unchanged priority/resources; no exclusive node.
+  Do not duplicate these collectors. See
   [physical interpretation](CONTEXT_MECHANISM_NOTE.md).
 - **water_basins:** [standalone xTB pilot](../standalone_xtb_20260923/REPORT.md)
   completed224/224 physical calls: all four numerical pool checks and14/14 tight
@@ -64,6 +69,16 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   pass; [report](../slsqp_precision_20260923/REPORT.md), commit35cff37. No shared
   defaults, reference refit or import into frozen225. Water now independently
   reviews the225 comparison, with no duplicate molecular work.
+  That review found no blocker. Water's new supplemental task reuses the actual
+  archived MMOL1770 La4 hydrogen repair: all4895 heavy coordinates/9582 atom
+  identities unchanged, same captured potential/protons; fixed old union184
+  atoms and released-local160 atoms. Finite scope:4q0MACE+8nativeGFN, then2
+  original-policy searches+2crossMACE+8GFN. Origin jobs1210669/1210670 are queued;
+  agent must be reactivated after origins_v1/collection_final.json exists to
+  perform the already-authorized continuation. See
+  [commands](../preparation_coverage_20260923/COMMANDS.md), commit6aa9d6e.
+  The other16 exclusions are real off-site ions, not a parser defect. Historical
+  225 outputs/exclusions remain unchanged; this is supplemental coverage only.
 - **khoury_benchmark:** expose the supported minimal adaptive scorer as a small
   opt-in source-to-score candidate, reusing existing physical preparation,
   selector, optimizer and shared scoring. Implement/test on completed recovery
@@ -84,8 +99,22 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   valid energy-selected candidates, no stationarity/entropy claim. At most1000
   new standaloneGFN/480MACE including16 missing baseline cells and cross-scores.
   No six-case calibration; compare strongest static/nativeadaptive and retain
-  missing/failed status. Frozen run_v3 job1210579 has been submitted; do not
-  duplicate it. Earlier run_v2 was unexecuted and remains preserved.
+  missing/failed status. Frozen run_v3 job1210579 completed:12 finite proposals,
+  all6 pools available,228 standaloneGFN/94 MACE calls, no molecular failures.
+  Q9/C5AX raw ordering is repaired, but all6 remain unseparated (gap−8.754669)
+  and transferred decisions stay3correct/1wrong/2inconclusive. Strongest native
+  adaptive is5correct/1wrong here. This scorer branch is closed without expansion
+  or calibration; qualified gradient machinery remains a research capability.
+  Cost6976 core-seconds/218 GPU-seconds;7 tests pass; commitdfad71e. Earlier
+  run_v2 was unexecuted and remains preserved.
+  New contained task: native ORCA GFN2 **rank throughput/energy qualification**.
+  No matched1/4/8-rank evidence was found among512 existing compatible receipts.
+  Use exact Q9/Q89 adaptive_Ca geometries, both metals/media:8 cells per rank,
+  24 fresh calls total. Three ordinary same-host CPU-only8/32/64CPU allocations,
+  eight workers,1/4/8ranks, unchanged MPI/thread fixes and electronic inputs.
+  Compare all cells to fresh8-rank (.1kcal component/.2 pairedR gates), preserve
+  historical values, actual cost and all failures. No per-cell favorable rank
+  choice or production change. Scope approved before calls; agent owns manifests.
 - **root:** integration, actual benefit/cost comparison and substantive email.
   The [completed recovered ledger](../adaptive_minimal_pool_20260923/RECOVERY_REPORT.md)
   retains204 correct/1 wrong/1 inconclusive/19 unavailable among225. On206 common

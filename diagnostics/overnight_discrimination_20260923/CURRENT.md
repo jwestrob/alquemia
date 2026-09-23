@@ -64,7 +64,13 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   old exclusions remain. Fragment selections decrease34→27 across references.
   Sizes169–218atoms. Independent review confirms maps/anchors/state; a future
   defining-triple failure-propagation edge is being fixed without changing any
-  actual successful geometry. No envelope molecular work has launched yet.
+  actual successful geometry. All68 fresh paired MACE origins now completed in
+  job1211294 (warm evaluation11.550s, peakCUDA~6.50GB). Jobs1211342/1211343 run68
+  bounded native-only searches and136 strict fresh scalar origins. The same34
+  pilot permits at most68 cross-MACE and272 candidate scalar cells afterward;
+  all scalar inputs use the qualified freshTolE1e-10 profile. No fake low-level
+  q0 values or extra starts. All34 have same-profile ten-fold comparators after
+  Water's exact four-source supplement. Full100 envelope transfer stays unrun.
 - **Numerical diagnosis:** exact geometry×rank test1211105 completes four missing
   scalar cells. For both Q4Ca2 and P385La2, old/new geometry energy jumps are the
   same at1 and8ranks; maximum rank interaction1.25e−9kcal. This isolates the tested
@@ -76,11 +82,18 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   reference remains unavailable. This is not a selective favorable-cell repair.
   Strict20 is now complete,commitc0f8c08: all ten two-start cells agree within
   2.55e-7kcal atTolE1e-10Eh. Cost17s×20CPU=340core-s, zeroGPU. This does not yet
-  repair a whole score/reference or qualify forces. Water now runs1211270:
-  same32pools/384cells, strict fresh NoAutostart versus strict from original loose
-  cold seeds;758new calls/10exactreuses. Both branch references require all25
-  canonical members and predeclared agreement gates. Fresh and seeded costs stay
-  separate; no hidden substitution or claim that seeded work is one-call use. See
+  repair a whole score/reference or qualify forces. Strict32 job1211270 is now
+  complete:384/384 fresh-versus-seeded energy agreements, max1.0349e-5kcal/cell,
+  all32 sources correct. Both fresh and seeded canonical references qualify;
+  old31/32 becomes32/32 by repairing Q4Ca2. Cost16320core-s,zeroGPU; fresh executor
+  226.771s×32CPU is separate from the development restart comparison. Four extra
+  ten-fold comparators1211311 complete48calls/all4correct,1632core-s. Combined
+  final commit2496b6f,six artifact tests pass. No force qualification or default
+  change. Khoury now runs full225 strict transfer1211337–1211340:4×600 fresh
+  scalar cells,200 new pools plus8exact reuses,208 supported/17 old exclusions.
+  No new MACE,geometry,search,DFT or calibration fit; use the frozen strict32
+  fresh reference. Retain all source/group/triple outcomes alongside old methods.
+  Water independently reviews the comparison while jobs run. See
   [focused next questions](FOCUSED_NEXT.md) for the recorded purpose and scope.
 
 Older running/pending prose below is

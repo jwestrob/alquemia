@@ -23,16 +23,20 @@ replacement. The exact rank/geometry diagnostic attributes the two tested jumps
 to geometry/electronic solution, not rank. Uniform two-pass continuation is now
 complete: raw old-band calls32/32 correct, but five canonical pools fail settling;
 no new calibrated reference is available. The stricter20-call diagnostic passes
-all ten two-start energy checks. Water now runs1211270: same32 fixed pools,
-strict fresh starts versus strict continuations from original cold seeds,
-758new/10reused scalar calls. No new MACE/search/DFT or automatic promotion.
+all ten two-start energy checks. Strict32 and the four-source supplement are now
+complete,commit2496b6f:384/384 start agreements, all32 sources and4 extra pools correct,
+and separate qualified fresh reference. Khoury runs full225 fresh-strict transfer
+jobs1211337–1211340:2400new scalar cells,8 exact pool reuses,17 old exclusions.
+Water independently reviews this comparison; no duplicate chemistry.
 The full100 three-fold-context transfer regresses94correct to92correct/2inconclusive
 (six unchanged unavailable). Both losses are A8R3S4. Smaller-context origins lose
 their solvent margin; differential accommodation itself is slightly smaller.
 The completed component and omitted-contact audits find no new severe protein
-clashes. Second_shell now prepares a general4.3Å motion-envelope pilot: all135
-prepared pairs/34pilot inputs pass,94triples retain support; six old exclusions
-remain. Exact reuse and finite MACE/scalar execution are separate next steps.
+clashes. Second_shell runs the general4.3Å motion-envelope pilot: all135 prepared
+pairs/34pilot inputs pass,94triples retain support; six old exclusions remain.
+All68 new MACE origins completed1211294. Jobs1211342/1211343 now run68 bounded
+searches and136 strict fresh scalar origins. At most68 cross-MACE/272 candidate
+scalar cells complete the same34 pools afterward; no full100 envelope transfer yet.
 The general three-source
 API/executor is implemented and preflighted, but its PLM molecular launch is held.
 Khoury's fresh ten-source comparison completes10/10correct versus released8/1/1,

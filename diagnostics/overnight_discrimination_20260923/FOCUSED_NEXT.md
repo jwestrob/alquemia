@@ -108,3 +108,25 @@ references. Only25 original canonical cases may fit; crystals/folds stay outside
 No favorable-start selection. The fresh branch is the proposed one-call route;
 the seeded branch includes the cost of its prior loose-cold call. These are
 development qualification branches, not a production/default change.
+
+Strict32 has now passed all384 agreements and all32 known calls; its fresh
+reference is available. A four-pool supplement added48 fresh cells for the exact
+ten-fold A0A3Ca3,A0ACLa4,A8La1/La3 comparators; all remain correct. Neither branch
+added MACE or optimized geometries. Reports/receipts are committed2496b6f.
+
+Root authorized full225 transfer of this qualified numerical setting, reusing
+all existing ten-fold precision geometries and MACE values. Exactly208 prepared
+pools,17 old exclusions,8 strict whole-pool reuses and200×12=2400new scalar cells.
+Khoury owns four disjoint32CPU/64GiB shards1211337–1211340. No new calibration;
+retain frozen strict32 bands and all original biological/group/triple denominators.
+Water reviews only; no duplicated chemistry. This determines whether the observed
+numerical repair transfers to the actual benchmark.
+
+Root also authorized the declared34-source envelope pilot after physical-map
+review and exact reuse audit (no compatible old origins/pools). All68 MACE origins
+completed;68bounded searches and136strict fresh scalar origins run1211342/1211343.
+At most68cross-MACE and272candidate scalar cells finish the same fixed pools.
+Use its own canonical25 calibration with the same frozen rule, compare to the
+now available same-scalar-profile ten-fold results, and keep all six probes and
+three crystals outside fitting. No full100 envelope scoring has been authorized
+by this pilot. Its preparation remains ready for a later evidence-based decision.

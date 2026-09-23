@@ -1,0 +1,37 @@
+test_actual_seeds_order_state (test_native_failed_cell_recovery.ActualRecovery.test_actual_seeds_order_state) ... ok
+test_actual_two_task_preflight_and_recipe (test_native_failed_cell_recovery.ActualRecovery.test_actual_two_task_preflight_and_recipe) ... ok
+test_real_result_or_incomplete_preserves_failure (test_native_failed_cell_recovery.ActualRecovery.test_real_result_or_incomplete_preserves_failure) ... ok
+test_wrong_seed_or_state_rejected (test_native_failed_cell_recovery.ActualRecovery.test_wrong_seed_or_state_rejected) ... ERROR
+
+======================================================================
+ERROR: test_wrong_seed_or_state_rejected (test_native_failed_cell_recovery.ActualRecovery.test_wrong_seed_or_state_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/run_orca_task_manifest.py", line 147, in _resolve_under
+    resolved.relative_to(root)
+  File "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/lib/python3.11/pathlib.py", line 730, in relative_to
+    raise ValueError("{!r} is not in the subpath of {!r}"
+ValueError: '/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/native_failed_cell_recovery_20260923/run_v1/tasks/origin/endpoint.inp' is not in the subpath of '/tmp/tmpefnh7g8x' OR one path is relative and the other is absolute.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/tests/test_native_failed_cell_recovery.py", line 34, in test_wrong_seed_or_state_rejected
+    with self.assertRaises(InvalidArtifact):n.validate(p)
+                                            ^^^^^^^^^^^^^
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/native_failed_cell_recovery.py", line 110, in validate
+    load_manifest_tasks(Path(manifest))
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/run_orca_task_manifest.py", line 271, in load_manifest_tasks
+    tasks = _normalise_task_list(manifest, manifest_path.parent)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/run_orca_task_manifest.py", line 180, in _normalise_task_list
+    "input": _resolve_under(root, input_value, f"{task_id} input"),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/run_orca_task_manifest.py", line 149, in _resolve_under
+    raise TaskRunnerError(f"{label} escapes manifest directory: {value}") from exc
+run_orca_task_manifest.TaskRunnerError: origin input escapes manifest directory: /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/native_failed_cell_recovery_20260923/run_v1/tasks/origin/endpoint.inp
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.011s
+
+FAILED (errors=1)

@@ -1,5 +1,16 @@
 # Nikasha current checkpoint — 2026-09-22
 
+## Active approved next phase
+
+Jacob approved consistent context, matched solvent and adaptive completion with
+“lets address all that, including adaptive accommodation.” Read the finite
+[plan](../nikasha_next_phase_20260922/PLAN.md). Root integrates scoring/references;
+second_shell owns context preparation, khoury_benchmark CPCM, water_basins adaptive
+search. Do not restart previous completed jobs. New branch results and task/job
+receipts live under their respective September22 diagnostics/workspaces. Each
+changed scorer requires the full canonical calibration before fold transfer.
+No default promotion, new DFT or PLM cohort rescore is part of this phase.
+
 ## Latest completed delivery — 2026-09-22
 
 Current name **Nikasha**; released fastPQQ, explicit DFT and historical commands

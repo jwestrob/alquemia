@@ -12,14 +12,16 @@ from affordable_common import InvalidArtifact, read_json, record, verify, write_
 from accommodation_fold_proposals import outcome, summarize_rows, strict_summary
 from accommodation_folds_compare import source_groups, decision
 from compact_solvation_compare import MINIMUM_CALIBRATION_GAP
-from nikasha_pool import PROTOCOL, SETTINGS, ADAPTIVE_PROTOCOL, ADAPTIVE_SETTINGS, choose_rows
+from nikasha_pool import PROTOCOL, SETTINGS, ADAPTIVE_PROTOCOL, ADAPTIVE_SETTINGS, SCALED_PROTOCOL, choose_rows
 
 VARIANTS = ('mathematical', 'operational')
 REFERENCE_ID = 'Nikasha_common_geometry_canonical25_reference_v1'
 ADAPTIVE_REFERENCE_ID = 'Nikasha_adaptive_angular_common_geometry_canonical25_reference_v1'
+SCALED_REFERENCE_ID = 'Nikasha_scaled_angular_common_geometry_canonical25_reference_v1'
 PROTOCOLS = {
     PROTOCOL: (SETTINGS, REFERENCE_ID, {'pilot4', 'remaining26'}),
     ADAPTIVE_PROTOCOL: (ADAPTIVE_SETTINGS, ADAPTIVE_REFERENCE_ID, {'adaptive4', 'adaptive26'}),
+    SCALED_PROTOCOL: (ADAPTIVE_SETTINGS, SCALED_REFERENCE_ID, {'scaled30'}),
 }
 
 
@@ -72,9 +74,14 @@ def load_results(collections):
             raise InvalidArtifact('shared-pool protocol differs')
         if protocol is not None and protocol != current: raise InvalidArtifact('mixed pool protocols')
         protocol = current
-        if protocol == ADAPTIVE_PROTOCOL:
+        if protocol in (ADAPTIVE_PROTOCOL, SCALED_PROTOCOL):
             numerical.append(numerical_provenance(data, m, path))
         sig = {k: m[k] for k in ('model', 'software', 'orca', 'settings')}
+        if protocol == SCALED_PROTOCOL:
+            sig.update({k: m[k] for k in ('proposal_protocol_id', 'proposal_settings')})
+            proposer = read_json(verify(read_json(verify(m['adaptive_proposals']))['manifest']))
+            if m['proposal_protocol_id'] != proposer['protocol_id'] or m['proposal_settings'] != proposer['settings']:
+                raise InvalidArtifact('scaled proposal source policy changed')
         if signature is not None and sig != signature: raise InvalidArtifact('mixed pool methods or software')
         signature = sig
         if len(data['cases']) != data['denominator'] or {c['case_id'] for c in data['cases']} != set(m['declared_case_ids']):
@@ -151,7 +158,7 @@ def extrema_reference(rows, variant, reference_id=REFERENCE_ID):
 def calibrate(collections, agreement, output):
     bundle = load_results(collections); original_pin, original = original_reference(bundle)
     protocol = bundle['protocol_id']; _, reference_id, populations = PROTOCOLS[protocol]
-    if len(bundle['manifests']) != 2 or {m['population'] for m in bundle['manifests']} != populations:
+    if len(bundle['manifests']) != len(populations) or {m['population'] for m in bundle['manifests']} != populations:
         raise InvalidArtifact('reference requires the declared ' + ' + '.join(sorted(populations)) + ' original sources')
     parents = [read_json(verify(m['source_manifest'])) for m in bundle['manifests']]
     expected = {c['case_id'] for c in parents[0]['cases']}
@@ -166,7 +173,7 @@ def calibrate(collections, agreement, output):
               'noncanonical_folds_used_for_calibration': False, 'crystals_or_PLM_used_for_calibration': False,
               'new_molecular_calls': 0, 'production_changed': False,
               'interpretation': 'developmental calibration, not independent validation'}
-    if protocol == ADAPTIVE_PROTOCOL: result['numerical_provenance'] = bundle['numerical_provenance']
+    if protocol in (ADAPTIVE_PROTOCOL, SCALED_PROTOCOL): result['numerical_provenance'] = bundle['numerical_provenance']
     write_new(output, result)
     return {v: {k: variants[v][k] for k in ('status', 'bands', 'gap_model_kcal_mol', 'available_calibration')} for v in VARIANTS}
 
@@ -194,10 +201,10 @@ def checked_reference(path, bundle):
     numerical = []
     for pin in reference['collections']:
         source = verify(pin)
-        if protocol == ADAPTIVE_PROTOCOL:
+        if protocol in (ADAPTIVE_PROTOCOL, SCALED_PROTOCOL):
             data = read_json(source)
             numerical.append(numerical_provenance(data, read_json(verify(data['manifest'])), source))
-    if protocol == ADAPTIVE_PROTOCOL and reference.get('numerical_provenance') != numerical:
+    if protocol in (ADAPTIVE_PROTOCOL, SCALED_PROTOCOL) and reference.get('numerical_provenance') != numerical:
         raise InvalidArtifact('saved adaptive numerical provenance differs')
     return reference
 
@@ -222,7 +229,7 @@ def inspect(collections, output, reference=None):
         own = old['R_selected']['composite_R_model_kcal_mol'] if old['R_selected'] else None
         r = {'case_id': cid, 'expected_class': old['expected_class'], 'pool_status': pool['status'],
              'static_R': static, 'own_proposal_R': own, 'variants': {}, 'collection': case['collection']}
-        if bundle['protocol_id'] == ADAPTIVE_PROTOCOL:
+        if bundle['protocol_id'] in (ADAPTIVE_PROTOCOL, SCALED_PROTOCOL):
             r.update(primary_pool=case.get('primary_pool', pool), prior_pool=case['prior_pool'])
         for v in VARIANTS:
             value = pool[v]['composite_R_model_kcal_mol'] if pool[v] else None
@@ -258,7 +265,8 @@ def aggregate(members, index, method, bands, expected):
 
 def compare(collections, reference, prior_comparison, output):
     bundle = load_results(collections); ref = checked_reference(reference, bundle); prior = read_json(prior_comparison)
-    if bundle['protocol_id'] != PROTOCOL or len(bundle['manifests']) != 1 or bundle['manifests'][0]['population'] != 'primary225':
+    population = {PROTOCOL: 'primary225', SCALED_PROTOCOL: 'scaled225'}.get(bundle['protocol_id'])
+    if population is None or len(bundle['manifests']) != 1 or bundle['manifests'][0]['population'] != population:
         raise InvalidArtifact('fold comparison requires the full primary225 pool collection')
     pm = read_json(verify(prior['manifest'])); source = read_json(verify(pm['sources'])); groups = source_groups(source)
     if bundle['manifests'][0]['source'] != prior['selection']:
@@ -309,7 +317,7 @@ def compare(collections, reference, prior_comparison, output):
                 matched[name][pool_method][prior_method] = {'declared': len(subset), 'common': len(common),
                     'counts': summarize_rows(common, (pool_method, prior_method)),
                     'outcome_transitions': dict(Counter(r['methods'][prior_method]['outcome'] + '->' + r['methods'][pool_method]['outcome'] for r in common))}
-    result = {'protocol_id': PROTOCOL, 'collections': bundle['collections'], 'reference': record(reference),
+    result = {'protocol_id': bundle['protocol_id'], 'collections': bundle['collections'], 'reference': record(reference),
               'prior_comparison': record(prior_comparison), 'sources': pm['sources'], 'bands': bands,
               'rows': rows, 'pools': pools, 'triples': triples, 'counts': counts, 'matched': matched,
               'implementation': record(__file__), 'new_molecular_calls': 0, 'thresholds_fitted_on_folds': False,

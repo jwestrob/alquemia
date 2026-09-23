@@ -1,5 +1,18 @@
 # Agent entry point
 
+## Active approved next phase — 2026-09-22
+
+Jacob: “lets address all that, including adaptive accommodation.” Read
+[the three-branch plan](diagnostics/nikasha_next_phase_20260922/PLAN.md).
+Root owns shared scoring/calibration and integration; second_shell owns consistent
+source-backed context membership, khoury_benchmark owns matched native GFN2 CPCM,
+and water_basins owns generic unit-scaled adaptive search. Canonical calibration
+precedes fold transfer, with independent references for changed protocols.
+The old-band adaptive regression was not a completed recalibrated transfer test.
+Do not duplicate these agents' manifests, jobs or collectors. Production and
+explicit DFT remain unchanged; no new DFT, folds, PLM rescore or promotion is
+authorized by this phase. Older completed checkpoints below remain historical.
+
 ## Latest completed delivery — 2026-09-22
 
 Current name **Nikasha**; released fastPQQ, explicit DFT and historical commands

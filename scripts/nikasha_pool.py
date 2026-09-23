@@ -21,6 +21,7 @@ from mace_site_kinematics import Kinematics
 PROTOCOL = 'nikasha_common_geometry_native_OMOL_GFN2_ALPB_v1'
 ADAPTIVE_PROTOCOL = 'nikasha_adaptive_angular_common_geometry_native_OMOL_GFN2_ALPB_v1'
 JOINT_PROTOCOL = 'nikasha_joint_metal_angular_common_geometry_native_OMOL_GFN2_ALPB_v1'
+SCALED_PROTOCOL = 'nikasha_scaled_angular_common_geometry_native_OMOL_GFN2_ALPB_v1'
 SETTINGS = {'coordinate_copy_tolerance_A': 1e-12, 'origin_selection_tolerance_kcal_mol': .1,
             'equivalent_cell_tolerance_kcal_mol': .1,
             'candidate_order': ['origin', 'proposal_Ca', 'proposal_La']}
@@ -212,18 +213,26 @@ def prepare(source, population, agreement, output, shards):
 
 def validate(manifest):
     m = read_json(manifest)
-    expected = {PROTOCOL: SETTINGS, ADAPTIVE_PROTOCOL: ADAPTIVE_SETTINGS, JOINT_PROTOCOL: JOINT_SETTINGS}
+    expected = {PROTOCOL: SETTINGS, ADAPTIVE_PROTOCOL: ADAPTIVE_SETTINGS, JOINT_PROTOCOL: JOINT_SETTINGS,
+                SCALED_PROTOCOL: ADAPTIVE_SETTINGS}
     if m['protocol_id'] not in expected or m['settings'] != expected[m['protocol_id']]:
         raise InvalidArtifact('pool protocol changed')
     for key in ('source', 'source_manifest', 'agreement', 'software', 'orca'): verify(m[key])
     for pin in m['implementation'].values(): verify(pin)
-    n = {'pilot4': 4, 'remaining26': 26, 'primary225': 225, 'adaptive4': 4, 'adaptive26': 26, 'joint4': 4}[m['population']]
+    n = {'pilot4': 4, 'remaining26': 26, 'primary225': 225, 'adaptive4': 4, 'adaptive26': 26,
+         'joint4': 4, 'scaled30': 30, 'scaled225': 225}[m['population']]
     allowed = {PROTOCOL: ('pilot4', 'remaining26', 'primary225'),
-               ADAPTIVE_PROTOCOL: ('adaptive4', 'adaptive26'), JOINT_PROTOCOL: ('joint4',)}
+               ADAPTIVE_PROTOCOL: ('adaptive4', 'adaptive26'), JOINT_PROTOCOL: ('joint4',),
+               SCALED_PROTOCOL: ('scaled30', 'scaled225')}
     if m['population'] not in allowed[m['protocol_id']]: raise InvalidArtifact('pool population/protocol mismatch')
-    adaptive = m['protocol_id'] in (ADAPTIVE_PROTOCOL, JOINT_PROTOCOL)
+    adaptive = m['protocol_id'] in (ADAPTIVE_PROTOCOL, JOINT_PROTOCOL, SCALED_PROTOCOL)
     if adaptive:
-        verify(m['base_pool']); verify(m['adaptive_proposals'])
+        for pin in m.get('base_pools', [m.get('base_pool')]): verify(pin)
+        verify(m['adaptive_proposals'])
+    if m['protocol_id'] == SCALED_PROTOCOL:
+        source = pinned(pinned(m['adaptive_proposals'])['manifest'])
+        if m['proposal_protocol_id'] != source['protocol_id'] or m['proposal_settings'] != source['settings']:
+            raise InvalidArtifact('scaled proposal policy differs from its actual source')
     if m.get('GFN2_maxiter', 125) not in (125, 500): raise InvalidArtifact('unsupported iteration ceiling')
     if m.get('GFN2_maxiter') == 500:
         qualification = pinned(m['numerical_qualification'])
@@ -252,6 +261,36 @@ def native_reuse(task, manifest):
     return native
 
 
+def expansion_bases(paths):
+    """Join actual disjoint original30 pool collections without inventing a result."""
+    paths = list(paths) if isinstance(paths, (list, tuple)) else [paths]
+    if not paths: raise InvalidArtifact('missing base collection')
+    data = [read_json(p) for p in paths]; manifests = [pinned(d['manifest']) for d in data]
+    origins = {}; cases = []
+    for path, collection, manifest in zip(paths, data, manifests):
+        if (collection['protocol_id'] != manifest['protocol_id'] or
+                len(collection['cases']) != collection['denominator'] or
+                {c['case_id'] for c in collection['cases']} != set(manifest['declared_case_ids'])):
+            raise InvalidArtifact('base collection denominator or protocol differs')
+        for c in collection['cases']:
+            if c['case_id'] in origins: raise InvalidArtifact('duplicate source in base collections')
+            origins[c['case_id']] = record(path); cases.append(c)
+    if len(paths) == 1: return data[0], manifests[0], origins
+    if (len(paths) != 2 or {m['population'] for m in manifests} != {'pilot4', 'remaining26'} or
+            any(m['protocol_id'] != PROTOCOL or m['settings'] != SETTINGS for m in manifests)):
+        raise InvalidArtifact('only the declared original30 base split can be joined')
+    first = manifests[0]
+    keys = ('source', 'source_manifest', 'model', 'software', 'orca', 'cpu_python', 'gpu_python', 'resources')
+    if any(any(m[k] != first[k] for k in keys) for m in manifests):
+        raise InvalidArtifact('base collections have different physical sources or methods')
+    source = pinned(first['source_manifest'])
+    ids = [c['case_id'] for c in source['cases']]
+    if len(ids) != 30 or set(ids) != set(origins): raise InvalidArtifact('original30 source union differs')
+    lookup = {c['case_id']: c for c in cases}
+    return ({'protocol_id': PROTOCOL, 'cases': [lookup[cid] for cid in ids]},
+            {**first, 'population': 'original30', 'declared_case_ids': ids}, origins)
+
+
 def prepare_expansion(base_pool, proposals, agreement, output, shards=1, maxiter=125, numerical_qualification=None, proposal_family='angular'):
     """Admit actual mapped adaptive candidates into the existing common pool."""
     if proposal_family == 'angular':
@@ -260,9 +299,14 @@ def prepare_expansion(base_pool, proposals, agreement, output, shards=1, maxiter
     elif proposal_family == 'joint':
         from adaptive_metal_proposals import PROTOCOL as proposal_protocol, final_geometry
         base_protocol, populations, protocol, settings, prefix = ADAPTIVE_PROTOCOL, ('adaptive4',), JOINT_PROTOCOL, JOINT_SETTINGS, 'joint'
+    elif proposal_family == 'scaled-angular':
+        from adaptive_completion import PROTOCOL as proposal_protocol
+        from adaptive_angular_proposals import final_geometry
+        base_protocol, populations, protocol, settings, prefix = PROTOCOL, ('original30', 'primary225'), SCALED_PROTOCOL, ADAPTIVE_SETTINGS, 'adaptive'
     else:
         raise InvalidArtifact('unsupported physical proposal family')
-    started = time.monotonic(); base = read_json(base_pool); bm = pinned(base['manifest'])
+    started = time.monotonic(); base, bm, base_origins = expansion_bases(base_pool)
+    base_paths = list(base_pool) if isinstance(base_pool, (list, tuple)) else [base_pool]
     adaptive = read_json(proposals); am = pinned(adaptive['manifest'])
     if (base['protocol_id'] != base_protocol or bm['population'] not in populations or
             adaptive['protocol_id'] != proposal_protocol or am['protocol_id'] != proposal_protocol or
@@ -271,7 +315,7 @@ def prepare_expansion(base_pool, proposals, agreement, output, shards=1, maxiter
             {c['case_id'] for c in base['cases']} != set(bm['declared_case_ids']) or
             {c['case_id'] for c in adaptive['cases']} != set(bm['declared_case_ids']) or shards not in (1, 4)):
         raise InvalidArtifact('adaptive/base pool population or physical method differs')
-    n = {'pilot4': 4, 'remaining26': 26, 'adaptive4': 4}[bm['population']]
+    n = {'pilot4': 4, 'remaining26': 26, 'adaptive4': 4, 'original30': 30, 'primary225': 225}[bm['population']]
     if len(base['cases']) != n or maxiter not in (125, 500): raise InvalidArtifact('expansion scope differs')
     qualification = None
     if maxiter == 500:
@@ -281,7 +325,7 @@ def prepare_expansion(base_pool, proposals, agreement, output, shards=1, maxiter
                 not qualification['both_controls_pass'] or not qualification['formerly_failed_cell_complete'] or
                 qm['orca'] != bm['orca'] or qm['control_tolerance_kcal_mol'] != .05):
             raise InvalidArtifact('iteration ceiling qualification incompatible')
-    if any(c['pool']['status'] != 'available' for c in base['cases']):
+    if proposal_family != 'scaled-angular' and any(c['pool']['status'] != 'available' for c in base['cases']):
         raise InvalidArtifact('completed original common pool required')
     tasks_by_id = {(t['case_id'], t['metal']): t for t in am['tasks']}
     endpoints = {(e['case_id'], e['metal']): e for e in adaptive['endpoints']}
@@ -290,14 +334,16 @@ def prepare_expansion(base_pool, proposals, agreement, output, shards=1, maxiter
     cases, tasks = [], []
     for prior in base['cases']:
         cid = prior['case_id']; names = [q['id'] for q in prior['candidates']]
-        if choose_rows(prior['matrix'], names) != prior['pool']:
+        if prior['status'] == 'prepared' and choose_rows(prior['matrix'], names) != prior['pool']:
             raise InvalidArtifact('original pool algebra changed')
         c = json.loads(json.dumps(prior)); c.pop('pool')
-        c.update(status='unavailable', reason=None, prior_pool=prior['pool'], base_collection=record(base_pool))
+        c.update(status='unavailable', reason=None, prior_pool=prior['pool'], base_collection=base_origins[cid])
         for cells in c['matrix'].values():
             for cell in cells.values(): cell['reused'] = True
         pending = []
         try:
+            if prior['pool']['status'] != 'available':
+                raise InvalidArtifact('inherited base pool unavailable: ' + str(prior.get('reason') or prior['pool'].get('reason')))
             atoms_by_name = {q['id']: xyz(verify(q['xyz'])) for q in c['candidates']}
             points = {}
             for z in ('Ca', 'La'):
@@ -353,12 +399,17 @@ def prepare_expansion(base_pool, proposals, agreement, output, shards=1, maxiter
         target = impl / p.name; shutil.copyfile(p, target); pins[p.name] = record(target)
     m = {k: bm[k] for k in ('source', 'source_manifest', 'model', 'software', 'orca', 'cpu_python', 'gpu_python', 'resources')}
     m.update(protocol_id=protocol, settings=settings, agreement=record(agreement),
-             base_pool=record(base_pool), adaptive_proposals=record(proposals),
-             proposal_family=proposal_family, population=prefix+str(n), declared_case_ids=bm['declared_case_ids'], cases=cases, tasks=tasks,
+             adaptive_proposals=record(proposals),
+             proposal_family=proposal_family, population=('scaled' if proposal_family == 'scaled-angular' else prefix)+str(n),
+             declared_case_ids=bm['declared_case_ids'], cases=cases, tasks=tasks,
              implementation=pins, shard_count=shards,
              new_MACE_cells=sum(not t.get('native_reuse') for t in tasks), maximum_new_GFN2_calls=2*len(tasks),
              new_DFT_calls=0, new_optimizations=0, source_preparation_wall_seconds=time.monotonic()-started,
              production_changed=False, reference=None)
+    if len(base_paths) == 1: m['base_pool'] = record(base_paths[0])
+    else: m['base_pools'] = [record(p) for p in base_paths]
+    if proposal_family == 'scaled-angular':
+        m.update(proposal_protocol_id=am['protocol_id'], proposal_settings=am['settings'])
     m.update(GFN2_maxiter=maxiter, numerical_policy_id='native_GFN2_MaxIter'+str(maxiter)+'_unchanged_convergence_v1',
              numerical_qualification=record(numerical_qualification) if qualification else None)
     path = out / 'manifest.json'; write_new(path, m); low_prepare(path)
@@ -567,11 +618,12 @@ def main():
     p = sub.add_parser('recover')
     for key in ('collection', 'diagnostic', 'output'): p.add_argument('--' + key, required=True)
     p = sub.add_parser('prepare-expansion')
-    for key in ('base-pool', 'proposals', 'agreement', 'output'): p.add_argument('--' + key, required=True)
+    p.add_argument('--base-pool', nargs='+', required=True)
+    for key in ('proposals', 'agreement', 'output'): p.add_argument('--' + key, required=True)
     p.add_argument('--shards', type=int, default=1)
     p.add_argument('--maxiter', type=int, choices=(125, 500), default=125)
     p.add_argument('--numerical-qualification')
-    p.add_argument('--proposal-family', choices=('angular', 'joint'), default='angular')
+    p.add_argument('--proposal-family', choices=('angular', 'joint', 'scaled-angular'), default='angular')
     for name in ('validate', 'execute-mace', 'collect'):
         p = sub.add_parser(name); p.add_argument('--manifest', required=True)
         if name == 'collect': p.add_argument('--output', required=True)

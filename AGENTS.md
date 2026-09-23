@@ -1,5 +1,24 @@
 # Agent entry point
 
+## PLM operations packaged — 2026-09-23
+
+Jacob requested the final PQQ SOP and manuscript draft, with Spicy-Lams inventory
+in parallel. Read [the SOP](docs/PLM_PQQ_SOP.md) and
+[packaging report](diagnostics/plm_pqq_delivery_20260923/REPORT.md).
+Fresh preparation of all six consumed PLM sources exactly reproduces the archived
+envelope state/coordinates/maps. The operations package reuses existing science;
+no new endpoint scoring, full-cohort submission or default promotion occurred.
+Jacob plans to start the scan. Preserve the current production/static and explicit
+DFT access, individual failures, and the separate recovery evidence.
+
+The [Spicy-Lams inventory](diagnostics/spicy_lams_inventory_20260923/REPORT.md)
+and vault note locate 616 assay sequences and full mature-chain models for all
+16 reserved-panel proteins. No new within-series scoring or reserved-outcome
+unblinding occurred. Whole-protein response is
+the intended next research direction, but occupancy/assembly must be established
+per construct and conditions rather than imposing four ions on every LanM.
+The older overnight jobs below are complete; do not restart them.
+
 ## Completed overnight discrimination work — 2026-09-23
 
 Jacob authorized discretionary contained experiments and parallel agents. The

@@ -1,5 +1,19 @@
 # Nikasha: current operating guide for agents
 
+## PLM handoff packaged — 23 September 2026
+
+Start with the [PLM PQQ SOP](PLM_PQQ_SOP.md). The opt-in three-source envelope
+candidate now has a fresh-source bridge (`pqq_plm_prepare.py`), pinned operations
+configuration and disjoint-batch biological export (`pqq_plm_export.py`). All six
+fresh real PLM preparations exactly reproduce archived coordinates/states/maps;
+no new scoring or cohort submission was performed. Default/static and explicit
+DFT paths remain unchanged. [Package report](../diagnostics/plm_pqq_delivery_20260923/REPORT.md)
+and [manuscript draft](../diagnostics/plm_pqq_delivery_20260923/MANUSCRIPT.md).
+Jacob will start the PLM scan; do not duplicate it from historical examples.
+The [Spicy-Lams inventory](../diagnostics/spicy_lams_inventory_20260923/REPORT.md)
+locates sequences, structures and previous global models without reading the
+reserved selectivity outcomes. No new LanM calculation was launched.
+
 ## Strongest completed candidate — September23 strict scalar update
 
 The ten-fold consistent-pocket/adaptive candidate now gives207correct/0wrong/

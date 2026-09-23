@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/spicy_lams_inventory_20260923/build_inventory.py", line 132, in <module>
+    p=argparse.ArgumentParser();p.add_argument('--output',required=True);main(p.parse_args().output)
+                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/spicy_lams_inventory_20260923/build_inventory.py", line 97, in main
+    meta=structure(p);matches=sorted({r['accession']for r in records for c in meta['chains']if r['sequence_sha256']==c['sequence_sha256']})
+         ^^^^^^^^^^^^
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/spicy_lams_inventory_20260923/build_inventory.py", line 38, in structure
+    residues=[r for r in c if gemmi.find_tabulated_residue(r.name).is_amino_acid()]
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

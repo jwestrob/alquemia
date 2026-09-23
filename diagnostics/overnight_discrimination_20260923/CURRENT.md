@@ -12,7 +12,25 @@ included. No arbitrary project-wide time or compute cap is reinstated.
 
 ## Current ownership and results
 
-- **Latest completed comparison:** the separately calibrated precision candidate
+- **Latest full-panel result:** [strict fresh scoring](../strict_native_transfer_20260923/REPORT.md)
+  gives207correct/0wrong/1inconclusive/17unavailable. Both released errors remain
+  repaired; Q4Ca2 is now correct and C5AXV8La3 remains inconclusive. On207 common
+  sources released203/2/2 becomes206/0/1. All94 available triples remain correct.
+  All2400 new scalar cells complete plus96 reused; no new MACE/search/DFT.
+  Jobs1211337–1211340 and collector are terminal,168352allocatedcore-s/zeroGPU.
+  Six artifact tests pass. The fresh strict32 reference remains frozen; transfer
+  adds no fit. Only Q4 changes its class from the prior precision result, and
+  that pool was already qualified/reused; the200 newly rescored pools retain
+  their prior calls. No hidden new validation gain is inferred from the reuse.
+  Root's [same-solver static ablation](../strict_static_ablation_20260923/REPORT.md)
+  gives199/1/8/17 versus accommodated207/0/1/17, with all208 sources shared.
+  Seven inconclusives and one wrong call are repaired, no correct static call lost.
+  All eight require actual score movement under adaptive bands, not just a new
+  calibration. Static92 correct triples become94; released already had94.
+  Three real-artifact tests pass. Editable figure and substantive email delivered;
+  production stays unchanged. Water now investigates C5AX from archived outputs
+  and assesses a bounded six-angle extension; no new experiment launched there.
+- **Prior completed comparison:** the separately calibrated precision candidate
   is206 correct/0 wrong/2 inconclusive/17 unavailable across the fixed225 sources.
   Both released errors stay repaired; both original optimizer failures recover.
   Q4W6G0 Ca2 becomes inconclusive and C5AXV8 La3 remains inconclusive. On207
@@ -65,9 +83,10 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   Sizes169–218atoms. Independent review confirms maps/anchors/state; a future
   defining-triple failure-propagation edge is being fixed without changing any
   actual successful geometry. All68 fresh paired MACE origins now completed in
-  job1211294 (warm evaluation11.550s, peakCUDA~6.50GB). Jobs1211342/1211343 run68
-  bounded native-only searches and136 strict fresh scalar origins. The same34
-  pilot permits at most68 cross-MACE and272 candidate scalar cells afterward;
+  job1211294 (warm evaluation11.550s, peakCUDA~6.50GB). Jobs1211342/1211343 complete68
+  bounded native-only searches and136 strict fresh scalar origins. All searches
+  pass;998 actual MACE calls and25 boundary flags. Jobs1211421/1211422 now run68
+  cross-MACE and272 candidate scalar cells to complete the same34-source pilot;
   all scalar inputs use the qualified freshTolE1e-10 profile. No fake low-level
   q0 values or extra starts. All34 have same-profile ten-fold comparators after
   Water's exact four-source supplement. Full100 envelope transfer stays unrun.
@@ -89,11 +108,9 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   226.771s×32CPU is separate from the development restart comparison. Four extra
   ten-fold comparators1211311 complete48calls/all4correct,1632core-s. Combined
   final commit2496b6f,six artifact tests pass. No force qualification or default
-  change. Khoury now runs full225 strict transfer1211337–1211340:4×600 fresh
-  scalar cells,200 new pools plus8exact reuses,208 supported/17 old exclusions.
-  No new MACE,geometry,search,DFT or calibration fit; use the frozen strict32
-  fresh reference. Retain all source/group/triple outcomes alongside old methods.
-  Water independently reviews the comparison while jobs run. See
+  change. Khoury's full225 strict transfer is complete as summarized above.
+  Water's independent review found no material implementation/denominator issue.
+  All source/group/triple outcomes remain alongside old methods. See
   [focused next questions](FOCUSED_NEXT.md) for the recorded purpose and scope.
 
 Older running/pending prose below is

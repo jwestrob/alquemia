@@ -25,18 +25,23 @@ complete: raw old-band calls32/32 correct, but five canonical pools fail settlin
 no new calibrated reference is available. The stricter20-call diagnostic passes
 all ten two-start energy checks. Strict32 and the four-source supplement are now
 complete,commit2496b6f:384/384 start agreements, all32 sources and4 extra pools correct,
-and separate qualified fresh reference. Khoury runs full225 fresh-strict transfer
-jobs1211337–1211340:2400new scalar cells,8 exact pool reuses,17 old exclusions.
-Water independently reviews this comparison; no duplicate chemistry.
+and separate qualified fresh reference. Full225 fresh-strict transfer is complete:
+207correct/0wrong/1inconclusive/17unavailable, all94 available triples correct.
+All2400 new scalar cells pass; eight exact pools are reused. Q4 is repaired;
+C5AXV8 La3 remains inconclusive. Same-solver static ablation gives199/1/8/17,
+so accommodation adds useful decisions beyond consistent pocket preparation.
+See diagnostics/strict_native_transfer_20260923/REPORT.md and
+diagnostics/strict_static_ablation_20260923/REPORT.md. Root emailed the result.
 The full100 three-fold-context transfer regresses94correct to92correct/2inconclusive
 (six unchanged unavailable). Both losses are A8R3S4. Smaller-context origins lose
 their solvent margin; differential accommodation itself is slightly smaller.
 The completed component and omitted-contact audits find no new severe protein
 clashes. Second_shell runs the general4.3Å motion-envelope pilot: all135 prepared
 pairs/34pilot inputs pass,94triples retain support; six old exclusions remain.
-All68 new MACE origins completed1211294. Jobs1211342/1211343 now run68 bounded
-searches and136 strict fresh scalar origins. At most68 cross-MACE/272 candidate
-scalar cells complete the same34 pools afterward; no full100 envelope transfer yet.
+All68 new MACE origins,68 bounded searches and136 strict scalar origins completed.
+Jobs1211421/1211422 now run68 cross-MACE and272 strict candidate scalar cells;
+no full100 envelope transfer yet. Water audits the remaining C5AX ambiguity and
+the feasibility of broader donor freedom using existing artifacts only.
 The general three-source
 API/executor is implemented and preflighted, but its PLM molecular launch is held.
 Khoury's fresh ten-source comparison completes10/10correct versus released8/1/1,

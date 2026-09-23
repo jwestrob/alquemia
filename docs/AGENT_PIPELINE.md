@@ -1,5 +1,22 @@
 # Nikasha: current operating guide for agents
 
+## Strongest completed candidate — September23 strict scalar update
+
+The ten-fold consistent-pocket/adaptive candidate now gives207correct/0wrong/
+1inconclusive/17unavailable on225 consumed structural replicas. Both released
+wrong calls are repaired, and all94 available three-source subsets remain correct.
+Fresh nativeGFN2 withTolE1e-10Eh resolves the identified Q4 numerical artifact;
+the canonical32-source fresh/seeded check qualifies scalar energies, not forces.
+[Full report](../diagnostics/strict_native_transfer_20260923/REPORT.md).
+Same-solver static pockets give199/1/8/17, establishing additional utility from
+accommodation. [Matched ablation](../diagnostics/strict_static_ablation_20260923/REPORT.md).
+
+This remains a candidate. The practical three-source4.3Å buffered-pocket pilot
+is completing its final matrix cells; do not inherit ten-fold performance for it.
+Production/static and explicitDFT commands below remain available unchanged.
+Use the linked live checkpoint before any launch; earlier numerical warnings
+remain historical evidence and are not instructions to repeat completed tests.
+
 ## Opt-in adaptive candidate and active research — 2026-09-23
 
 The smaller adaptive scorer is now runnable from supported explicit PQQ sources:

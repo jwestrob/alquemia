@@ -2,6 +2,25 @@
 
 ## September23 development update
 
+**Latest:** fresh strict-native solvent scoring gives207correct/0wrong/
+1inconclusive/17unavailable across the225 structural replicas. On207 sources
+shared with release,203correct/2wrong/2inconclusive becomes206/0/1. Both old errors
+are repaired; C5AXV8La3 remains inconclusive although release called it correctly.
+All94 available three-source aggregates stay correct. These remain25 consumed
+protein groups, not225 independent biochemical observations.
+
+A matched ablation isolates the contribution of accommodation: the same fixed
+pockets and strict solver give199/1/8/17 at the origins versus207/0/1/17 after
+common-pool accommodation. Both methods have separate canonical25-only extrema
+references. Every repaired source also needs physical score movement under the
+adaptive bands, so new thresholds alone cannot explain the improvement.
+The strict update adds no MACE or geometry search; it reuses existing proposals.
+The four-job development transfer uses168352allocatedcore-s, zeroGPU. That is
+not a per-site end-to-end timing. The practical three-source buffered-pocket
+test remains pending. [Full strict result](../strict_native_transfer_20260923/REPORT.md),
+[matched ablation and editable figure](../strict_static_ablation_20260923/REPORT.md).
+The following paragraphs retain preceding development stages for context.
+
 The released method below remains available. The completed fixed-pocket plus
 adaptive candidate now provides a real individual-structure improvement:
 205correct/0wrong/1inconclusive/19unavailable across the frozen225 sources.

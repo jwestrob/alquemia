@@ -1,5 +1,15 @@
 # Agent entry point
 
+## Active overnight discrimination work — 2026-09-23
+
+Jacob authorized discretionary contained experiments and parallel agents in his
+latest message. Read [the current scope and ownership](diagnostics/overnight_discrimination_20260923/CURRENT.md).
+The older pending LanM choice and proposed-only continuation notes below are
+historical: La/Dy solution-affinity-direction testing, fixed PQQ pool native
+continuations, and a coordinated solvent-force consistency test are now approved
+and active. Do not duplicate their jobs or collectors. Production remains intact;
+the separately gated quantum campaign is not part of this round.
+
 ## Restart/scaffold round completed; LanM follow-up requested — 2026-09-22
 
 Read [the completed round](diagnostics/scaffold_restart_round_20260922/REPORT.md)

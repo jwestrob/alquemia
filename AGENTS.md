@@ -16,9 +16,13 @@ The opt-in reference replay interface, repaired-H supplement,34-source stopping
 test and28-reference one-rank scalar qualification are complete. The stopping
 candidate retains34/34 calls but fails strict numerical equivalence on5/32 pools;
 keep its separate canonical reference. One-rank scalar energies pass all336 cells.
-Water_basins now owns the separately calibrated full225 numerical candidate;
-second_shell owns three-fold-context preparation only; khoury owns practical
-execution integration and a matched fresh-run plan. Follow their current finite
+The numerical candidate has now completed225 transfer:206correct/0wrong/2inconclusive/
+17unavailable, retaining both error repairs and recovering optimizer coverage.
+Its solvent components remain numerically sensitive; it is not an identical
+replacement. Water_basins owns final reporting and a geometry/rank inventory.
+Second_shell's three-fold-context canonical/stress pilot passes; full100-triple
+transfer remains in finite-manifest preparation. Khoury's exact v4 matched fresh
+ten-source execution is now authorized. Follow their current finite
 manifests and recorded submission boundaries; do not duplicate finished jobs.
 Production, broad PLM rescoring and the separately gated quantum campaign remain
 unchanged. Older proposed-only/pending-approval notes below are historical.

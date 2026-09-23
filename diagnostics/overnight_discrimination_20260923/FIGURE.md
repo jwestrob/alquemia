@@ -55,3 +55,28 @@ OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
     'union_adaptive=Consistent pocket + adaptive' \
   --output workspaces/discrimination_transfer_figures_20260923/union225_v2
 ```
+
+## Completed uniform-precision candidate
+
+`workspaces/discrimination_transfer_figures_20260923/precision225_v1/` adds the
+separately calibrated numerical candidate alongside released static and the
+original union/adaptive method. The PNG was visually inspected; editable SVG/PDF,
+all675 method/source rows and pinned receipt are present. The candidate has206
+correct/0wrong/2inconclusive/17unavailable. Q4W6G0's new inconclusive and C5AXV8's
+retained inconclusive are visible; recovered coverage is not concealed.
+
+The numerical candidate uses a different frozen reference. NativeGFN2 component
+sensitivity remains; neither identical numerical scores nor universally reduced
+structural spread is implied. The figure is a completed development comparison,
+not a production promotion or independent biological validation.
+
+```bash
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+  /groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python \
+  scripts/plot_discrimination_transfer.py \
+  --comparison workspaces/slsqp_precision_transfer_20260923/COMPARISON_v1.json \
+  --methods 'context_composite=Released static' \
+    'union_adaptive=Consistent pocket + adaptive' \
+    'union_precision=Cheaper numerical candidate' \
+  --output workspaces/discrimination_transfer_figures_20260923/precision225_v2
+```

@@ -12,6 +12,32 @@ included. No arbitrary project-wide time or compute cap is reinstated.
 
 ## Current ownership and results
 
+- **Latest completed comparison:** the separately calibrated precision candidate
+  is206 correct/0 wrong/2 inconclusive/17 unavailable across the fixed225 sources.
+  Both released errors stay repaired; both original optimizer failures recover.
+  Q4W6G0 Ca2 becomes inconclusive and C5AXV8 La3 remains inconclusive. On207
+  common sources, released203/2/2 becomes205/0/2. Complete La4/Ca5/balanced
+  aggregates are23/22/21 correct respectively; all94 available La triples are
+  correct. This is improved source-level accuracy/coverage, not new independent
+  biological validation. All404 searches/404 cross-MACE/1616 nativeGFN calls
+  succeed. Actual new allocation165472 core-seconds/2312 GPU-seconds, excluding
+  reused origins/pools and prior qualification. Combined numerical gates pass
+  182/206; large nativeGFN component sensitivity remains despite small geometric
+  changes. Do not call the new stopping profile numerically identical.
+  Water owns final tests/report and a read-only geometry/rank diagnostic inventory.
+- **Current execution:** root authorized Khoury's exact frozen v4 fresh10-A0A3
+  comparison after this verdict: sequential same-host released/candidate jobs,
+  independent source preparation,160GFN and60 fixedMACE plus20 bounded searches,
+  with no archived energy/force substitution. This tests practical repeatability
+  and measured end-to-end cost, not another calibration. No third arm or default
+  change. Second_shell's three-La-structure-context pilot has also completed:
+  25 canonical plus3 crystals correct; separate difficult A0A3Ca1 correct with
+  the smaller169-atom context. Its new canonical-only reference independently
+  reproduces the ten-fold extrema. All20 searches/20crossMACE/104GFN/12originMACE
+  succeed. Full100-triple transfer is preparation/reuse-inventory only pending
+  review of its exact new-call manifest. Older running/pending prose below is
+  chronological history; use these latest outcomes and the agents' receipts.
+
 - **Main completed result:** [full225 union/adaptive transfer](../union_adaptive_20260923/TRANSFER225_REPORT.md)
   is205 correct/0 wrong/1 inconclusive/19 unavailable. On205 common sources,
   released201/2/2 becomes204/0/1: both wrong calls and two inconclusives repaired,
@@ -74,6 +100,19 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   remain intact. All25+3 crystal preparations pass;16 canonical+3crystal contexts
   match ten-fold and9 canonical contexts change. Molecular scope remains pending
   the exact reuse/new-call inventory; no old reference is silently inherited.
+  Root has now authorized the canonical28 plus separate A0A3Ca1 molecular pilot,
+  following exact19 unchanged-context precision-pool/map reuse audit. Expected
+  new work:6 origin pairs (12MACE/24GFN),10 searched pools (20 searches/20crossMACE/
+ 80GFN). Same fixed numerical/physical policy, new3fold preparation ID and own
+  canonical25-only calibration.3crystals and stress are excluded from fitting.
+  If pool reuse fails, revise the explicit count before extra calls; no silent
+  old-precision substitution. Use ordinary warmGPU and32×1rank CPU stages.
+  Full100-triple molecular transfer remains a subsequent unlaunched experiment.
+  Preparation is committed01eb485 (11 real-fixture tests). All19 reused complete
+  pools passed exact context/core/state/maps/candidate/settings/receipt audits;
+  no enlarged molecular scope. New origins now run as1211064 (12MACE) and1211065
+  (24GFN), with4 actual prelaunch tests passing. The remaining10 searched pools
+  retain the authorized20-search/20cross/80GFN continuation.
 - **water_basins:** [standalone xTB pilot](../standalone_xtb_20260923/REPORT.md)
   completed224/224 physical calls: all four numerical pool checks and14/14 tight
   derivative quantities pass. Four known sources have correct relative class
@@ -153,6 +192,11 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   automatically collects its own pool. Six prelaunch tests pass; adapter/report/
   plan/receipts committed3834224. Root independently reviewed final comparison
   logic and found no blocker. Do not duplicate jobs or their collectors.
+  All404 searches now succeed, maximum27 iterations/31 evaluations;171 endpoints
+  retain a boundary flag. All404 native-energy comparison gates pass, maxchange
+  5.7426e−5kcal and maxatom displacement0.00299849Å. The four GPU jobs have ended;
+  all four dependent CPU stages run. Solvent gates and final decisions remain
+  pending. Search completion alone is not classifier qualification.
 - **khoury_benchmark:** expose the supported minimal adaptive scorer as a small
   opt-in source-to-score candidate, reusing existing physical preparation,
   selector, optimizer and shared scoring. Implement/test on completed recovery

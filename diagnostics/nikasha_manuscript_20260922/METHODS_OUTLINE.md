@@ -25,6 +25,23 @@ to the three-fold scanner automatically. Current PLM exports still contain their
 original DFT results. [Completed comparison](../union_adaptive_20260923/TRANSFER225_REPORT.md),
 [editable three-method figure](../overnight_discrimination_20260923/FIGURE.md).
 
+The subsequent uniform stopping-policy candidate completes the same225-source
+panel with206correct/0wrong/2inconclusive/17unavailable. On207 common sources,
+released203/2/2 becomes205/0/2. It retains both error repairs and recovers two
+optimizer failures; Q4W6G0 gains an inconclusive call. Strict aggregate coverage
+recovers to23 La4,22 Ca5 and21 balanced groups, all correct; all94 available
+La triples are correct. The new profile has its own canonical-only reference.
+Large nativeGFN2 component changes at nearly identical geometries prevent a
+claim of numerical equivalence or uniformly improved robustness. Its new
+execution costs165472 allocated core-seconds and2312 requested GPU-seconds,
+excluding reused origins/pools and prior qualification. Fresh matched execution
+is separately running to measure end-to-end cost without archive reuse.
+
+A separately prepared three-La-structure-context pilot retains25 canonical and
+three crystal calls and repairs the difficult A0A3Ca1 probe using169 atoms rather
+than193. This establishes feasibility, not completed three-fold transfer; that
+full comparison remains pending. No default or PLM result has been replaced.
+
 ## Current supported method
 
 Describe Nikasha as an affordable, structure-sensitive La/Ca **class discriminator**.

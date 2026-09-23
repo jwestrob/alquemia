@@ -34,10 +34,21 @@ canonical membership for unknown proteins. The
 completes the ten-A0A3-source matched integration:10correct versus released8/1/1,
 at358s versus451s including fresh preparation on the same hardware. Batching and
 model-load counts differ; the measurement is for these actual paths. It is not
-yet a general PLM entrypoint. Three-La-source membership passes its canonical/crystal/stress pilot;
-complete transfer and general source integration remain separate work. Keep the
-released standard command available. No candidate has replaced PLM results or
-production defaults.
+yet a general PLM entrypoint. Three-La-source membership passes its canonical/
+crystal/stress pilot but loses two calls in the completed full100-triple transfer:
+92correct/2inconclusive/6unavailable versus94/0/6 for released and ten-fold
+precision scoring. Both new inconclusives are A8R3S4; see
+[the transfer result](../diagnostics/union_triple_transfer_20260923/REPORT.md).
+The general [three-source preparation](../diagnostics/pqq_three_source_20260923/REPORT.md)
+and [execution adapter](../diagnostics/pqq_three_source_execution_20260923/REPORT.md)
+are implemented and preflighted on actual PLM inputs. Molecular execution remains
+held; these inputs supply no validation labels. Keep the released standard
+command available. No candidate has replaced PLM results or production defaults.
+
+Uniform native continuation repairs the Q4 inconclusive while preserving raw
+25canonical/3crystal decisions, but five canonical pools still fail numerical
+settling. Its reference remains unavailable; do not replace individual favorable
+cells in a cold-protocol score. [Result](../diagnostics/precision_pool_continuation_20260923/REPORT.md).
 
 ## Current name and entrypoint — 2026-09-22
 

@@ -44,8 +44,17 @@ succeed; eleven tests pass. [Fresh report](../pqq_union_execution_20260923/REPOR
 
 A separately prepared three-La-structure-context pilot retains25 canonical and
 three crystal calls and repairs the difficult A0A3Ca1 probe using169 atoms rather
-than193. This establishes feasibility, not completed three-fold transfer; that
-full comparison remains pending. No default or PLM result has been replaced.
+than193. Full transfer subsequently gives92correct/2inconclusive/6unavailable
+triples, versus94/0/6 for both released static and ten-fold precision scoring.
+Both newly inconclusive triples are the same Ca control, A8R3S4. The pilot does
+not qualify the reduced-context policy for routine use. Its general preparation/
+execution adapter is preflighted on existing PLM inputs, with molecular launch
+held. No default or PLM result has been replaced.
+
+Uniform two-pass native continuation preserves all25 canonical and3crystal
+old-band calls and repairs the specified Q4 fold abstention, but five canonical
+pools fail numerical settling. Therefore its new reference is unavailable; this
+is a numerical diagnostic with a useful repair, not a calibrated release.
 
 ## Current supported method
 

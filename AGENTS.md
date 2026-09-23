@@ -20,12 +20,18 @@ The numerical candidate has now completed225 transfer:206correct/0wrong/2inconcl
 17unavailable, retaining both error repairs and recovering optimizer coverage.
 Its solvent components remain numerically sensitive; it is not an identical
 replacement. The exact rank/geometry diagnostic attributes the two tested jumps
-to geometry/electronic solution, not rank. Water owns eight fixed continuation
-calls on those real seed pairs. Second_shell's three-fold-context pilot passes;
-the exact full100-triple transfer is now authorized with70wholepool reuses and
-55newpools. Khoury's fresh ten-source comparison completes10/10correct versus
-released8/1/1, at358s versus451s on the same host (batching differs); its current
-task is three-source request/preparation/dry-run only. Follow their current finite
+to geometry/electronic solution, not rank. Uniform two-pass continuation is now
+complete: raw old-band calls32/32 correct, but five canonical pools fail settling;
+no new calibrated reference is available. Water owns a finite20-call stricter
+native stopping diagnostic on those five La cells and their Ca counterparts.
+The full100 three-fold-context transfer regresses94correct to92correct/2inconclusive
+(six unchanged unavailable). Both losses are A8R3S4. Smaller-context origins lose
+their solvent margin; differential accommodation itself is slightly smaller.
+Second_shell owns the component audit; Khoury owns an omitted-contact audit of
+all55 changed pairs and their ten-fold counterparts. The general three-source
+API/executor is implemented and preflighted, but its PLM molecular launch is held.
+Khoury's fresh ten-source comparison completes10/10correct versus released8/1/1,
+at358s versus451s on the same host (batching differs). Follow current finite
 manifests and recorded submission boundaries; do not duplicate finished jobs.
 Production, broad PLM rescoring and the separately gated quantum campaign remain
 unchanged. Older proposed-only/pending-approval notes below are historical.

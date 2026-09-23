@@ -34,10 +34,11 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   benchmark. A released-wrapper collection glob bug was fixed without rerunning
   chemistry. Eleven tests pass; commit655b3cf. All strict group calls were already
   correct; the gain is individual-source reliability. Root emailed the completed
-  result. Khoury now owns implementation-only three-source request/preparation/
-  dry-run, with an actual physical-state anchor rather than invented historical
-  canonical membership; no new molecular execution in that interface task.
-- **Current transfer:** Second_shell's three-La-structure-context pilot completed:
+  result. The general three-source request/preparation/executor is now complete
+  and preflighted on two actual PLM triples, with an actual physical-state anchor
+  rather than invented historical canonical membership. Commits7ac4723/caac061;
+  thirteen tests pass. Molecular execution remains held after the transfer loss.
+- **Completed transfer:** Second_shell's three-La-structure-context pilot completed:
   25 canonical plus3 crystals correct; separate difficult A0A3Ca1 correct with
   the smaller169-atom context. Its new canonical-only reference independently
   reproduces the ten-fold extrema. All20 searches/20crossMACE/104GFN/12originMACE
@@ -47,16 +48,29 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   reuses and55newpools. Finite new work19origins=38MACE/76GFN,110searches/
   110crossMACE/440candidateGFN maximum. Same frozen threefold reference/settings,
   two disjoint28/27source warmGPU shards,32CPU/oneH200/200000MiB each and32×1rank
-  CPU solvent stages. No extra source or threshold fit. Unknown-input interface
-  work is independent and cannot silently inherit ten-fold eligibility.
+  CPU solvent stages. Actual full result is92correct/2inconclusive/6unavailable
+  versus94/0/6 for released and ten-fold precision. All1817 newMACE/516GFN calls
+  succeed;31153core-s/644GPU-s, including two preflight failures and metadata-only
+  recovery. Ten tests pass; final commitaf092ab. Both losses are A8R3S4 triples
+  omitting neutral Ser352. The same four motions/candidate choices persist;
+  origin solvent offsets account for most of the shift, while differential
+  accommodation slightly decreases. Second_shell is finishing the exact audit.
+  Khoury now audits actual omitted-heavy-atom contacts across all55 changed pairs
+  and matched ten-fold proposals, with no new molecular energies or decision rule.
 - **Numerical diagnosis:** exact geometry×rank test1211105 completes four missing
   scalar cells. For both Q4Ca2 and P385La2, old/new geometry energy jumps are the
   same at1 and8ranks; maximum rank interaction1.25e−9kcal. This isolates the tested
   sensitivity to geometry/electronic solution, not rank count. Cost342core-s,
-  zeroGPU. Water now owns an exact eight-call diagnostic: the four valid rank1
-  GBW+xtbw seed pairs, two fixed continuations each, unchanged chemistry and actual
-  XTBRESTART checks. Report stage2 uniformly and retain both; no cross-seeding,
-  score update, threshold adjustment or additional pass.
+  zeroGPU. The eight fixed self-continuation calls settle both diagnosed jumps.
+  The ensuing uniform32 test is also complete:756fresh+12reused calls,13504core-s,
+  zeroGPU. Raw old-band calls improve31correct/1inconclusive to32correct, including
+  canonical25/crystals3 unchanged. Five canonical pools fail settling, so its
+  reference remains unavailable. This is not a selective favorable-cell repair.
+  Water now owns one separately versioned20-call diagnostic: the five failing
+  La cells plus their Ca counterparts, nativeTolE1e-10Eh from each exact cold and
+  pass2 seed, unchanged300K/MaxIter500. Compare independent starts at0.1kcal;
+  no further pass, score/reference repair or force-qualification claim. See
+  [focused next questions](FOCUSED_NEXT.md) for the recorded purpose and scope.
 
 Older running/pending prose below is
   chronological history; use these latest outcomes and the agents' receipts.

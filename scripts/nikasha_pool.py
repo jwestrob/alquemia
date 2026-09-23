@@ -213,6 +213,9 @@ def prepare(source, population, agreement, output, shards):
 
 def validate(manifest):
     m = read_json(manifest)
+    if m['protocol_id'] == 'nikasha_declared_finite_geometry_native_OMOL_GFN2_ALPB_v1':
+        from nikasha_finite_candidates import validate as validate_finite
+        return validate_finite(manifest)
     expected = {PROTOCOL: SETTINGS, ADAPTIVE_PROTOCOL: ADAPTIVE_SETTINGS, JOINT_PROTOCOL: JOINT_SETTINGS,
                 SCALED_PROTOCOL: ADAPTIVE_SETTINGS}
     if m['protocol_id'] not in expected or m['settings'] != expected[m['protocol_id']]:

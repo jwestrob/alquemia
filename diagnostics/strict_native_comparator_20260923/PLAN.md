@@ -1,0 +1,7 @@
+# Four-source strict scalar comparator completion
+
+Root explicitly authorized this finite completion on2026-09-23 after strict32 qualified. Score the exact existing tenfold-precision pools for A0A3F2YLY8 Ca-conditioned sample3, A0ACD6B9F2 La-conditioned sample4, and A8R3S4 La-conditioned samples1and3. These are consumed development sources and are the four missing comparators for the new envelope pilot; not additional calibration sources.
+
+All three actual geometries per source (origin, adaptive_Ca, adaptive_La), both metals and vacuum/ALPBwater are retained. Forty-eight fresh nativeGFN2 scalar calls: native mixer, electronic300K, TolE1e-10Eh, MaxIter500, explicitNoAutostart, no seeds, rank1, exactly the qualified strict32 fresh recipe. Use existing32-worker/32CPU/64GiB CPU-only runner. No new MACE, search, DFT, geometry/state changes, retries or threshold fit. Archive source coordinates/charges/mappings/MACE and exact executed source receipts.
+
+Apply only the frozen strict32 fresh canonical25 reference, preserving raw original-cold comparisons, candidate choices, component shifts and failures. Three candidates are optimization alternatives, not population weights. A missing scalar cell makes its complete pool unavailable; no silent fallback. Both mathematical and existing0.1kcal-origin-policy selections remain visible. This is matched-method comparison preparation, not new independent validation. Production/defaults remain unchanged.

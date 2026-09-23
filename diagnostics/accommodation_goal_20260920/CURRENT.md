@@ -1,48 +1,53 @@
 # Nikasha current checkpoint — 2026-09-22
 
-## Active approved next phase
+## Latest completed phase: adaptive accommodation shows a modest gain
 
 Jacob approved consistent context, matched solvent and adaptive completion with
-“lets address all that, including adaptive accommodation.” Read the finite
-[plan](../nikasha_next_phase_20260922/PLAN.md). Root integrates scoring/references;
-second_shell owns context preparation, khoury_benchmark CPCM, water_basins adaptive
-search. Do not restart previous completed jobs. New branch results and task/job
-receipts live under their respective September22 diagnostics/workspaces. Each
-changed scorer requires the full canonical calibration before fold transfer.
-No default promotion, new DFT or PLM cohort rescore is part of this phase.
+“lets address all that, including adaptive accommodation.” All three branches
+are finished. Read the [final report](../nikasha_next_phase_20260922/REPORT.md),
+compact `RESULT.json` and executable `COMMANDS.md`. No jobs or collectors remain.
+No new DFT, folds, PLM cohort rescore or default promotion occurred.
 
-Latest evidence: the scaled-angular original30 is completely scored. Its own
-canonical reference separates25/25 (gap2.54669 model kcal/mol), with3/3 consumed
-crystal transfers retained. Reference and30-source comparison are under
-`workspaces/adaptive_completion_20260922/original30_pool_v1/`; read
-[canonical result](../nikasha_next_phase_20260922/ADAPTIVE_CANONICAL_RESULT.md).
-Full225 searches1210021–1210024 are complete:409/410 accepted candidates and204
-complete pairs, with one200-iteration failure and20 inherited unavailable cases.
-All225/450 statuses remain in `primary225_v2_sharded/final_collection.json`.
-Root's final cross-scoring is running as1210049 (MACE) and1210050–1210053
-(four solvent shards), manifest `primary225_pool_v1/manifest.json`, SHA256
-`128435beee43f64039edc191bd26fe7f015cbe08355984e5bd9982b4a5f80c42`.
-This contains408 new cross-MACE and1632 nativeGFN2 calls; no additional searches
-or DFT. Do not duplicate these jobs. Their wrappers collect named snapshots;
-root owns final comparison against the already frozen canonical reference.
+Adaptive full225 uses its own complete canonical-only reference, frozen before
+transfer. On204 matched sources, released200correct/2wrong/2inconclusive becomes
+202/1/1. It fixes A0ACD6B9F2 Ca-sample4 and two inconclusives; all111 available
+Ca-class structures remain correct. A0ACD6B9F2 score ranges shrink in both folding
+arms. One correct C5AXV8 fold becomes inconclusive. These are consumed structural
+replicas of25 proteins, not fresh independent biological validation.
 
-Consistent-context canonical25 also separates (gap11.06662); frozen reference is
-`workspaces/consistent_context_20260922/calibration28_v1/REFERENCE_v2.json`.
-The original incomplete reference was a collector status-translation defect;
-its record remains preserved and no molecular calculation was repeated.
-Full225 is complete. On207 matched sources, static203correct/2wrong/2inconclusive
-compares with union198/1/8: one error corrected, six correct calls become
-inconclusive. No promotion. An independent unchanged-context A8R3S4 SCF recovery
-is available under the released bands. Read the final
-[context report](../consistent_context_20260922/REPORT.md), commit5957847.
+Full denominators remain visible: released203/2/2/18 versus adaptive202/1/1/21
+(correct/wrong/inconclusive/unavailable). Three more sources are unavailable;
+strict group summaries lose coverage without changing available correct calls.
+All25 canonical and3 consumed crystal decisions remain correct under the new
+reference. The five-geometry scorer has not earned routine promotion or a cold
+end-to-end throughput claim. Pursue its demonstrated, localized benefit.
 
-CPCM pilot1209970 and matched vacuum1209980 are terminal; their observer exited.
-CPCM forces ordinary ORCA SCF:4/8 CPCM and1/8 matched vacuum endpoints converged,
-giving0/4 complete metal contrasts. All11 failed endpoints explicitly exhausted
-SCF iterations, not scheduler resources. This solver route is unqualified; no
-broader calibration/transfer or retry is planned. Read the final
-[solvent report](../solvent_cpcm_20260922/REPORT.md), commit33c2102.
-Released fastMACE/GFN2ALPB remains the production method throughout.
+Original30 calibration and full225 proposal/cross-scoring jobs all completed.
+Full225:409/410 valid proposals,204 complete pairs,408/408 fresh cross-MACE and
+1632/1632 fresh nativeGFN2 successes. The sole optimizer failure remains explicit.
+Final pools/reference/comparison are in `workspaces/adaptive_completion_20260922/`
+under `primary225_pool_v1` and `original30_pool_v1`. The last full snapshot was
+reused byte-for-byte; do not duplicate collection or chemistry.
+
+Consistent membership alone gives198/1/8 on207 matched sources versus released
+203/2/2: one corrected error, six new abstentions. Its unchanged-context A8R3S4
+SCF recovery is separately reusable under released bands. CPCM plus matched
+vacuum gives0/4 complete metal pairs, with11 genuineSCF failures among16 attempts.
+No further CPCM expansion or retry is planned. Their agents' reports/vault notes
+are complete; commits5957847 and33c2102 preserve the final branch records.
+
+Total measured new phase allocation:912793CPU-seconds and4365 requestedGPU-seconds.
+Local unmetered preparation/testing/reporting is additional, not zero. Fresh work:
+13742MACE evaluations and2406GFN2 attempts; zeroDFT. Full source/group/triple ledgers,
+component works, exact costs and reporting scripts are under
+`workspaces/nikasha_next_phase_20260922/`.
+
+The next proposed scientific test combines consistent pocket membership with
+adaptive accommodation: the branches corrected different errors separately.
+That interaction has not been tested or promoted; agree its scope before launch.
+The broader accuracy goal remains open. The released fastMACE/GFN2 scorer and
+explicit historical DFT access are unchanged. Earlier entries below describe
+historical intermediate states, including an incomplete old adaptive reference.
 
 ## Latest completed delivery — 2026-09-22
 

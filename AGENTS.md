@@ -1,17 +1,22 @@
 # Agent entry point
 
-## Active approved next phase — 2026-09-22
+## Latest completed phase — 2026-09-22
 
 Jacob: “lets address all that, including adaptive accommodation.” Read
 [the three-branch plan](diagnostics/nikasha_next_phase_20260922/PLAN.md).
-Root owns shared scoring/calibration and integration; second_shell owns consistent
-source-backed context membership, khoury_benchmark owns matched native GFN2 CPCM,
-and water_basins owns generic unit-scaled adaptive search. Canonical calibration
-precedes fold transfer, with independent references for changed protocols.
-The old-band adaptive regression was not a completed recalibrated transfer test.
-Do not duplicate these agents' manifests, jobs or collectors. Production and
-explicit DFT remain unchanged; no new DFT, folds, PLM rescore or promotion is
-authorized by this phase. Older completed checkpoints below remain historical.
+All three branches and their jobs/collectors are finished. Read the
+[final result](diagnostics/nikasha_next_phase_20260922/REPORT.md) and compact
+`RESULT.json`. Adaptive accommodation now has a complete canonical reference and
+full225 transfer: on204 matched sources, released200correct/2wrong/2inconclusive
+becomes202/1/1. It fixes the A0ACD6B9F2 error and two inconclusives, retains all111
+available Ca-class calls, but loses three sources versus released coverage and
+adds cost. Pursue this branch; no production promotion. Consistent context alone
+fixes a different error but adds six abstentions; CPCM yields no converged metal
+pair. The proposed combined-context/adaptive test is not executed or authorized
+by this completed phase; agree its scope before launching.
+Do not rerun these manifests or collectors. Production fastMACE/GFN2 and explicit
+DFT remain intact. No new DFT, folds or PLM rescore occurred. Root integrated the
+three agents' work; their tasks are complete. Older checkpoints are historical.
 
 ## Latest completed delivery — 2026-09-22
 

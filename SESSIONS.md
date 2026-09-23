@@ -3456,3 +3456,37 @@ Root final delivery: diagnostics/nikasha_recovery_20260922/DELIVERY.md. Joint
 scorer/tests and report are scoped root changes; agent reports/figures/scaffold
 inventories have separate commits. Vault updated at
 /home/jwestrob/jwestrob/obsidian-vault/agent-captures/2026-09-22_nikasha_shared_pool_and_adaptive_progress.md.
+
+
+## 2026-09-22 — Nikasha adaptive accommodation improves matched fold calls
+
+Completed Jacob's “lets address all that, including adaptive accommodation” scope:
+consistent context, matched CPCM and complete adaptive calibration/225-fold transfer.
+Final report: diagnostics/nikasha_next_phase_20260922/REPORT.md; compact RESULT.json;
+full ledgers/costs under workspaces/nikasha_next_phase_20260922/.
+
+Adaptive improves matched204 from200correct/2wrong/2inconclusive to202/1/1.
+It fixes A0ACD6B9F2 Ca-sample4 and two inconclusives, with one new C5AXV8 abstention;
+all111 available Ca-class structures remain correct. A0ACD6B9F2 fold spreads shrink
+in both conditioning arms. Own canonical25 and consumed crystals3/3 remain correct.
+Coverage falls207→204; full225 is202/1/1/21. Available strict group decisions stay
+correct, with reduced coverage. This is a localized development benefit, not broad
+independent affinity validation. Pursue adaptive; no default promotion.
+
+Consistent context alone fixes the other old error but adds six inconclusives on
+matched207; no net gain. A8R3S4 baseline SCF recovery is separately reusable. CPCM
+plus matched vacuum has0/4 complete metal pairs; all11 failures are explicit SCF
+nonconvergence. No further CPCM expansion/retry. All branch jobs and collectors
+are terminal; no chemistry should be rerun from older checkpoints.
+
+Full adaptive transfer:409/410 valid proposals,204 complete pairs,408/408 new
+cross-MACE and1632/1632 newGFN2 successes. Last collector snapshot reused bytewise.
+Phase total912793 allocatedCPU-seconds and4365 requestedGPU-seconds, including
+failures/idle allocation/in-job collection. Local unmetered setup is additional.
+Fresh work13742MACE evaluations and2406GFN2 attempts; zero newDFT. No new folds,
+PLM cohort rescore, production promotion, remote push or publication.
+
+Proposed next: combine consistent membership and adaptive search under one new
+reference; the branches corrected different errors separately. Not executed;
+agree the combined analysis scope before launch. Production fastMACE/GFN2 and
+explicit DFT remain available. Broader accuracy goal stays open.

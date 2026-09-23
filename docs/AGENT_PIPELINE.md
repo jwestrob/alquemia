@@ -6,11 +6,16 @@ Alquemia is now **Nikasha**. Use the thin `scripts/nikasha` entrypoint with the
 same arguments/interpreter as `scripts/affordable_workflow.py`; both remain valid.
 Read [Nikasha operations](NIKASHA.md). Historical protocol IDs, schemas, results,
 paths and calibration bands retain their original names and meanings. The current
-delivery target is the integrated PLM manuscript. The completed common-pool and adaptive tests are summarized in the
-[September22 delivery](../diagnostics/nikasha_recovery_20260922/DELIVERY.md).
-They did not earn promotion. All their jobs/collectors are finished; the released
-static scorer and explicit DFT remain current. PLM exports and editable manuscript
-figures are linked from that delivery.
+delivery target is the integrated PLM manuscript. The latest
+[three-branch result](../diagnostics/nikasha_next_phase_20260922/REPORT.md) completes
+adaptive calibration and full fold transfer: modest matched-source accuracy gain,
+reduced A0ACD6B9F2 fold disagreement, lower coverage and greater cost. It earns
+further development, not default promotion. Consistent context alone is not a net
+gain; the CPCM route is numerically unqualified. All jobs/collectors are finished.
+Use the released static scorer or explicit DFT as before. Reproduction commands
+are in the new report directory. The earlier
+[September22 delivery](../diagnostics/nikasha_recovery_20260922/DELIVERY.md)
+retains the PLM exports, editable figures and historical intermediate results.
 
 ## Current standard mode: fast compatible PQQ — 2026-09-20
 

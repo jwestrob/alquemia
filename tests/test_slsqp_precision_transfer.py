@@ -3,6 +3,7 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+import statistics
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 import slsqp_precision_transfer as transfer
 import adaptive_completion
@@ -90,5 +91,75 @@ class TransferTests(unittest.TestCase):
         self.assertEqual(actual['numerical_pass'],expected['numerical_pass'])
         self.assertEqual(actual['delta_R']['operational'],expected['delta_R'])
         self.assertEqual(actual['components'],expected['components'])
+
+@unittest.skipUnless((ROOT/'workspaces/slsqp_precision_transfer_20260923/COMPARISON_v1.json').exists(),
+                     'actual full225 scientific collections are still unrun/incomplete')
+class FinalTransferTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        from slsqp_precision_transfer_report import METHODS
+        cls.methods=METHODS
+        cls.r=read_json(ROOT/'workspaces/slsqp_precision_transfer_20260923/COMPARISON_v1.json')
+        cls.old=read_json(verify(cls.r['baseline']))
+        cls.rows={r['case_id']:r for r in cls.r['rows']}
+
+    def test_unchanged_old_ledgers_and_complete_denominators(self):
+        for kind,count in [('rows',225),('pools',75),('triples',100)]:
+            self.assertEqual(len(self.r[kind]),count)
+            for a,b in zip(self.old[kind],self.r[kind]):
+                for key,value in a.items():
+                    if key=='methods':
+                        self.assertEqual({k:b['methods'][k] for k in value},value)
+                    else:self.assertEqual(b[key],value)
+        self.assertEqual(sum(r['precision_reused_from34'] for r in self.r['rows']),6)
+        self.assertEqual(sum(r['precision_collection'] is None for r in self.r['rows']),17)
+        ref=read_json(verify(self.r['reference']));self.assertEqual(self.r['reference']['sha256'],transfer.REFERENCE_HASH)
+        for mode,name in zip(('operational','mathematical'),self.methods):
+            self.assertEqual(self.r['bands'][name],ref['variants'][mode]['bands'])
+
+    def test_all_real_raw_matrices_and_operational_choices(self):
+        from affordable_common import HA_TO_KCAL
+        from mace_hybrid import EV_TO_KCAL
+        collections={}
+        def energy(c):return c['MACE_eV']*EV_TO_KCAL+(c['GFN2_ALPB_hartree']-c['GFN2_vacuum_hartree'])*HA_TO_KCAL
+        for row in self.r['rows']:
+            pin=row['precision_collection']
+            if not pin:
+                for name in self.methods:self.assertIsNone(row['methods'][name]['R'])
+                continue
+            path=verify(pin)
+            if str(path) not in collections:collections[str(path)]=read_json(path)
+            c=next(c for c in collections[str(path)]['cases'] if c['case_id']==row['case_id'])
+            names=[x['id'] for x in c['candidates']]
+            available=c['status']=='prepared' and all(c['matrix'][z].get(q,{}).get('status')=='complete' for z in ('Ca','La') for q in names)
+            self.assertEqual(available,row['precision_status']=='available')
+            if not available:
+                for name in self.methods:self.assertIsNone(row['methods'][name]['R'])
+                continue
+            choices={}
+            for z in ('Ca','La'):
+                values={q:energy(c['matrix'][z][q]['components']) for q in names}
+                minimum=min(names,key=values.get)
+                selected=minimum if values[minimum]-values['origin'] < -.1 else 'origin'
+                choices[z]={'mathematical':minimum,'operational':selected}
+            for mode,name in zip(('operational','mathematical'),self.methods):
+                for z in ('Ca','La'):self.assertEqual(choices[z][mode],row['precision_candidates'][mode][z])
+                a=c['matrix']['Ca'][choices['Ca'][mode]]['components'];b=c['matrix']['La'][choices['La'][mode]]['components']
+                self.assertAlmostEqual(energy(a)-energy(b),row['methods'][name]['R'],places=6)
+
+    def test_strict_actual75_groups_and100_triples(self):
+        from accommodation_folds_compare import decision
+        for kind in ('pools','triples'):
+            for row in self.r[kind]:
+                for name in self.methods:
+                    missing=sorted(cid for cid in row['members'] if self.rows[cid]['methods'][name]['R'] is None)
+                    actual=row['methods'][name];self.assertEqual(actual['missing_members'],missing)
+                    if missing:self.assertIsNone(actual['R']);continue
+                    if kind=='pools' and row['pool']=='balanced':
+                        arms=[p for p in self.r['pools'] if p['root_case_id']==row['root_case_id'] and p['pool'] in ('La4','Ca5')]
+                        expected=sum(statistics.median(self.rows[cid]['methods'][name]['R'] for cid in a['members']) for a in arms)/2
+                    else:expected=statistics.median(self.rows[cid]['methods'][name]['R'] for cid in row['members'])
+                    self.assertEqual(actual['R'],expected)
+                    self.assertEqual(actual['decision'],decision(expected,self.r['bands'][name]))
 
 if __name__=='__main__':unittest.main()

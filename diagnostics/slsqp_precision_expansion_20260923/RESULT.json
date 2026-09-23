@@ -1,0 +1,269 @@
+{
+  "denominator": 34,
+  "counts": {
+    "all34": {
+      "available": 34,
+      "denominator": 34,
+      "new_old_reference": {
+        "mathematical": {
+          "correct": 34
+        },
+        "operational": {
+          "correct": 34
+        }
+      },
+      "new_own_reference": {
+        "mathematical": {
+          "correct": 34
+        },
+        "operational": {
+          "correct": 34
+        }
+      }
+    },
+    "canonical25": {
+      "available": 25,
+      "denominator": 25,
+      "new_old_reference": {
+        "mathematical": {
+          "correct": 25
+        },
+        "operational": {
+          "correct": 25
+        }
+      },
+      "new_own_reference": {
+        "mathematical": {
+          "correct": 25
+        },
+        "operational": {
+          "correct": 25
+        }
+      }
+    },
+    "crystals3": {
+      "available": 3,
+      "denominator": 3,
+      "new_old_reference": {
+        "mathematical": {
+          "correct": 3
+        },
+        "operational": {
+          "correct": 3
+        }
+      },
+      "new_own_reference": {
+        "mathematical": {
+          "correct": 3
+        },
+        "operational": {
+          "correct": 3
+        }
+      }
+    },
+    "noncanonical4": {
+      "available": 4,
+      "denominator": 4,
+      "new_old_reference": {
+        "mathematical": {
+          "correct": 4
+        },
+        "operational": {
+          "correct": 4
+        }
+      },
+      "new_own_reference": {
+        "mathematical": {
+          "correct": 4
+        },
+        "operational": {
+          "correct": 4
+        }
+      }
+    },
+    "old_failures2": {
+      "available": 2,
+      "denominator": 2,
+      "new_old_reference": {
+        "mathematical": {
+          "correct": 2
+        },
+        "operational": {
+          "correct": 2
+        }
+      },
+      "new_own_reference": {
+        "mathematical": {
+          "correct": 2
+        },
+        "operational": {
+          "correct": 2
+        }
+      }
+    }
+  },
+  "numerical_comparison_denominator": 32,
+  "numerical_passes": 27,
+  "gates": {
+    "GFN2_cell_work_kcal_mol": 0.1,
+    "pooled_R_kcal_mol": 0.2,
+    "proposal_energy_kcal_mol": 0.001
+  },
+  "new_reference": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/slsqp_precision_expansion_20260923/REFERENCE_v1.json",
+    "sha256": "1f8470bbdf7a056098ca261aa10b72bdc940cf71ab860fbbc54090bda1e73250"
+  },
+  "old_reference": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/union_adaptive_20260923/CANONICAL_REFERENCE_v1.json",
+    "sha256": "2f142883dcfd8b452d6c75e714b49ee1cac7a29ae317a4f289dcbc740498c5c7"
+  },
+  "original225_unchanged": true,
+  "production_changed": false,
+  "status": "complete_classification_retained_strict_equivalence_failed_on5",
+  "comparison": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/slsqp_precision_expansion_20260923/COMPARISON_v1.json",
+    "sha256": "c276b5f9ad35d7411f6b50e9a19670588607cd738b331696d41363a601c42b95"
+  },
+  "search_audit": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/slsqp_precision_expansion_20260923/SEARCH_AUDIT_v1.json",
+    "sha256": "12618f485b7a53edac87ec5795bc775bbef0339083d2f0e6d1eabb441bd94c2b"
+  },
+  "costs": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/slsqp_precision_expansion_20260923/COSTS.json",
+    "sha256": "e4811c215df138630eca1d22458a96f27e6a27c161bc4a9a106f167bbe15fb95"
+  },
+  "allocated_core_seconds": 53824,
+  "requested_GPU_seconds": 350,
+  "new_search_MACE_calls": 847,
+  "new_cross_MACE_calls": 60,
+  "new_total_MACE_calls": 907,
+  "new_DFT_calls": 0,
+  "reference_variants": {
+    "mathematical": {
+      "status": "available",
+      "bands": {
+        "Ca_max": -405463.71230032056,
+        "La_min": -405456.3869114709
+      },
+      "gap_model_kcal_mol": 7.325388849654701,
+      "calibration_denominator": 25
+    },
+    "operational": {
+      "status": "available",
+      "bands": {
+        "Ca_max": -405463.71230032056,
+        "La_min": -405456.3869114709
+      },
+      "gap_model_kcal_mol": 7.325388849654701,
+      "calibration_denominator": 25
+    }
+  },
+  "failing_sources": [
+    {
+      "case_id": "c5axv8-pqq-la_model",
+      "delta_R": {
+        "mathematical": 0.08190606982680038,
+        "operational": 0.08190606982680038
+      },
+      "components_failed": [
+        {
+          "ALPB_delta_kcal_mol": -0.0005180391910778301,
+          "ALPB_pass": true,
+          "MACE_delta_kcal_mol": 5.431619169923937e-06,
+          "candidate": "adaptive_Ca",
+          "metal": "Ca",
+          "transfer_delta_kcal_mol": -0.1049332989196768,
+          "vacuum_delta_kcal_mol": 0.10441525972859897,
+          "vacuum_pass": false
+        }
+      ]
+    },
+    {
+      "case_id": "i0jwn7-pqq-la_model",
+      "delta_R": {
+        "mathematical": -0.906285488163121,
+        "operational": -0.906285488163121
+      },
+      "components_failed": [
+        {
+          "ALPB_delta_kcal_mol": 0.01015256234996178,
+          "ALPB_pass": true,
+          "MACE_delta_kcal_mol": 0.00040666874340710134,
+          "candidate": "adaptive_Ca",
+          "metal": "La",
+          "transfer_delta_kcal_mol": 1.0646733930205299,
+          "vacuum_delta_kcal_mol": -1.054520830670568,
+          "vacuum_pass": false
+        }
+      ]
+    },
+    {
+      "case_id": "a8r3s4-pqq-la_model",
+      "delta_R": {
+        "mathematical": 0.20265186624601483,
+        "operational": 0.20265186624601483
+      },
+      "components_failed": [
+        {
+          "ALPB_delta_kcal_mol": 0.20333587578744336,
+          "ALPB_pass": false,
+          "MACE_delta_kcal_mol": 4.832281974972488e-07,
+          "candidate": "adaptive_Ca",
+          "metal": "Ca",
+          "transfer_delta_kcal_mol": 0.20308864205921154,
+          "vacuum_delta_kcal_mol": 0.0002472337282318218,
+          "vacuum_pass": true
+        },
+        {
+          "ALPB_delta_kcal_mol": -0.0038587452696473407,
+          "ALPB_pass": true,
+          "MACE_delta_kcal_mol": 5.920753489835041e-05,
+          "candidate": "adaptive_Ca",
+          "metal": "La",
+          "transfer_delta_kcal_mol": -0.23937857419236755,
+          "vacuum_delta_kcal_mol": 0.23551982892272022,
+          "vacuum_pass": false
+        }
+      ]
+    },
+    {
+      "case_id": "p16027-pqq-la_model",
+      "delta_R": {
+        "mathematical": -5.679845344275236e-05,
+        "operational": -5.679845344275236e-05
+      },
+      "components_failed": [
+        {
+          "ALPB_delta_kcal_mol": 0.11716557200242891,
+          "ALPB_pass": false,
+          "MACE_delta_kcal_mol": 9.054421235577269e-05,
+          "candidate": "adaptive_La",
+          "metal": "La",
+          "transfer_delta_kcal_mol": 0.1695773124849067,
+          "vacuum_delta_kcal_mol": -0.052411740482477785,
+          "vacuum_pass": true
+        }
+      ]
+    },
+    {
+      "case_id": "q60ar6-pqq-la_model",
+      "delta_R": {
+        "mathematical": 0.41768625646363944,
+        "operational": 0.41768625646363944
+      },
+      "components_failed": [
+        {
+          "ALPB_delta_kcal_mol": 0.0007674108234756666,
+          "ALPB_pass": true,
+          "MACE_delta_kcal_mol": 2.4698330094303827e-07,
+          "candidate": "adaptive_Ca",
+          "metal": "Ca",
+          "transfer_delta_kcal_mol": 1.0395385914626858,
+          "vacuum_delta_kcal_mol": -1.0387711806392101,
+          "vacuum_pass": false
+        }
+      ]
+    }
+  ],
+  "new_GFN2_calls": 240
+}

@@ -130,3 +130,72 @@ Use its own canonical25 calibration with the same frozen rule, compare to the
 now available same-scalar-profile ten-fold results, and keep all six probes and
 three crystals outside fitting. No full100 envelope scoring has been authorized
 by this pilot. Its preparation remains ready for a later evidence-based decision.
+
+## Completed strict transfer and bounded donor-freedom follow-up
+
+Strict225 completes207correct/0wrong/1inconclusive/17unavailable, with all94
+available triples correct. Root's same-solver origin-only ablation gives199/1/8/17;
+common-pool accommodation adds seven correct calls from inconclusives and repairs
+one wrong call. No correct static call is lost in that matched208-source test.
+Production stays unchanged; practical three-source qualification remains pending.
+
+Water's archived C5AX audit identifies a generic subspace limitation: the first
+four force-ranked angular directions can concentrate on one donor while other
+donors retain substantial load. It does not demonstrate that more freedom will
+improve the contrast. Strict numerical convergence does not remove this example's
+ambiguity. Its large between-fold solvent variation also remains unexplained.
+
+Root authorized the exact read-only feasibility inventory
+`workspaces/c5ax_response_20260923/SIX_MODE_FEASIBILITY_v1.json`, SHA256
+`d580f4bf6ede0b5fd312602475832b4e29c6b481c7e5475dcbac26702e6b18af`:
+all five C5AX La sources plus A0A3Ca1,A0ACCa4,A8La1/La3. Extend the original
+paired-origin force selector from four to six independent angular directions;
+retain the original four. Start each endpoint from its actual old proposal with
+the extra coordinates zero, preserving origin-relative±0.8rad/0.8Å constraints.
+Both metals cross-score the common origin/two-old/two-new pool. No donor-specific
+override, new random start, clipping, water/proton change or quantum calculation.
+
+Finite work:18warm-started searches, at most18cross-MACE and72fresh strictGFN2;
+108 compatible old scalar cells reused. Water owns a private thin adapter,
+real-fixture preflight, execution, collection, report and vault note. Failures
+remain visible and cannot become a successful old-method fallback. Judge added
+per-metal works, physical checks, residual loads, raw contrasts and explicitly
+old-band transfer. These nine sources cannot calibrate a new method. Any full
+canonical qualification is a later decision based on actual physical benefit.
+
+Khoury prepares a thin opt-in general three-source envelope/strict adapter using
+the two existing PLM request fixtures. Preparation and dry-run only; no molecular
+launch and no invented calibration. Second_shell's actual pilot reference must
+be available before any new calibrated output. Defaults remain unchanged.
+
+That preparation is now complete on both actual three-source requests, and the
+separating envelope reference is available. Root reviewed the adapter and
+authorized a **separate small usability integration**, concurrent with benchmark
+transfer:12fresh MACE origin-force calls,12bounded four-angle searches, at most
+12cross-MACE and72strict scalar calls. Use the exact existing two PLM triples,
+reuse their recorded protonation and expose this excluded historical cost.
+No new folds, protonation, DFT, cohort scan or production promotion. Khoury may
+launch after finite manifests and real-fixture preflight without another approval.
+Unknown protein classes stay unknown; outputs test usability and measure cost,
+not reference accuracy. Preserve originalDFT results separately and report all
+three source scores, strict median/spread, chosen geometries, works and failures.
+The envelope pilot's new A0A3Ca3 abstention remains an explicit limitation.
+
+## Decisions after the completed pilots
+
+The six-angle test completed9/9 extended pools. C5AXLa3 shifts only−0.011689
+modelkcal: the extra Ca/La composite works nearly cancel. Its old-band transfer
+goes8correct/1inc to6/3; this is not a calibrated six-angle accuracy result.
+Root closes this branch without canonical expansion or a threshold refit.
+The four-angle candidate remains preferable for the next practical test.
+
+The4.3Å pilot gives33correct/1inc: all25canonical/3crystals and five of six
+probes pass. Both A8 probes recover; A0A3Ca3 regresses. Root authorizes the
+already-declared full100-triple transfer under the unchanged pinned reference
+to assess practical three-source fidelity, retaining this separate regression.
+There are104 distinct source/membership pairs and three exact pilot overlaps;
+after verifying those reuses, execute101 new pools in disjoint51/50-source
+shards:202originMACE,202bounded searches, at most202crossMACE,404origin plus
+at most808candidate strictGFN. All94 complete and six old unavailable triples
+remain. Preserve original3.5Å, released and strict-tenfold comparisons.
+No cutoff, bounds, threshold, labels or source selection changes; no promotion.

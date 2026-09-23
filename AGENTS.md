@@ -38,10 +38,17 @@ their solvent margin; differential accommodation itself is slightly smaller.
 The completed component and omitted-contact audits find no new severe protein
 clashes. Second_shell runs the general4.3Å motion-envelope pilot: all135 prepared
 pairs/34pilot inputs pass,94triples retain support; six old exclusions remain.
-All68 new MACE origins,68 bounded searches and136 strict scalar origins completed.
-Jobs1211421/1211422 now run68 cross-MACE and272 strict candidate scalar cells;
-no full100 envelope transfer yet. Water audits the remaining C5AX ambiguity and
-the feasibility of broader donor freedom using existing artifacts only.
+The envelope34 pilot is complete:33correct/0wrong/1inconclusive. Canonical25 and
+crystals3 pass; both A8 probes recover, but A0A3Ca3 becomes inconclusive. The
+tenfold comparator remains34/34. Full100 envelope transfer is now authorized
+after exact three-pool reuse/preflight:101 new pools,202 origins/searches/cross
+maximum and1212 strict scalar cells. No promotion. Khoury's opt-in preparation
+is complete; the exact six-source PLM integration is authorized separately as
+usability/cost testing, with unknown labels and preserved DFT outputs.
+The nine-source six-angle pilot completed all18 searches/18cross/72newscalar
+cells. C5AX's extra composite works cancel; old-band transfer worsens8/1 to6/3
+correct/inconclusive. Close this branch; no canonical expansion or new fit.
+Retain four-angle scoring. Water owns final report/tests/vault only.
 The general three-source
 API/executor is implemented and preflighted, but its PLM molecular launch is held.
 Khoury's fresh ten-source comparison completes10/10correct versus released8/1/1,

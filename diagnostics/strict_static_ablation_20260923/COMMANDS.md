@@ -1,8 +1,9 @@
 # Actual read-only operations
 
 Run from the repository root. The first command has already completed; do not
-overwrite its reference. Full transfer comparison awaits the owned strict225
-collector. Each operation refuses to overwrite its output.
+overwrite its reference. Full transfer comparison has also completed using the
+owned strict225 collector. Each operation refuses to overwrite its output;
+use a new output location for a replay.
 
 ```bash
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \

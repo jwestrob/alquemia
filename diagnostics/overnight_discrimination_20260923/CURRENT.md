@@ -28,8 +28,17 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   All eight require actual score movement under adaptive bands, not just a new
   calibration. Static92 correct triples become94; released already had94.
   Three real-artifact tests pass. Editable figure and substantive email delivered;
-  production stays unchanged. Water now investigates C5AX from archived outputs
-  and assesses a bounded six-angle extension; no new experiment launched there.
+  production stays unchanged. Water's archived C5AX diagnosis is complete,
+  commita0271a4: current four-angle freedom leaves omitted donor loads, but the
+  ambiguity is not a solver failure. Authorized nine-source six-angle warm-start
+  pilot now completes18searches/18crossMACE/72newstrictGFN,108oldscalarcells reused.
+  C5AXLa3 moves only−0.011689kcal: addedCa/La composite work−0.589819/−0.578130
+  cancels. Old-band transfer changes8correct/1inc to6/3, not a newly calibrated
+  accuracy claim. Close the branch without canonical expansion. Cost5120core-s/
+  101requestedGPU-s. GPU1211537's molecular work succeeds but later staging
+  metadata fails; empty staging attempts remain, zero-runtime dependent1211538
+  was canceled, and actual72scalarcells complete1211603 without MACE reruns.
+  Water owns final report/tests/vault; four-angle candidate remains preferred.
 - **Prior completed comparison:** the separately calibrated precision candidate
   is206 correct/0 wrong/2 inconclusive/17 unavailable across the fixed225 sources.
   Both released errors stay repaired; both original optimizer failures recover.
@@ -87,9 +96,25 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   bounded native-only searches and136 strict fresh scalar origins. All searches
   pass;998 actual MACE calls and25 boundary flags. Jobs1211421/1211422 now run68
   cross-MACE and272 candidate scalar cells to complete the same34-source pilot;
-  all scalar inputs use the qualified freshTolE1e-10 profile. No fake low-level
-  q0 values or extra starts. All34 have same-profile ten-fold comparators after
-  Water's exact four-source supplement. Full100 envelope transfer stays unrun.
+  These final stages are now complete:1134newMACE/408strictGFN,34/34complete
+  pools. Canonical25 and3crystals retain calls; six probes give5correct/1inc.
+  Both A8 losses recover, but A0A3Ca3 newly becomes inconclusive (0.56934below
+  La edge), versus34/34 for strict tenfold. Its origin shifts−2.96095kcal and
+  differential accommodation improves+1.39970, leaving final−1.56125: a starting
+  context offset, not a newly active movement bound. Own gap7.07139625.
+  No fake low-level q0 values or extra starts. Stable reference is
+  workspaces/motion_envelope_20260923/REFERENCE_PINNED_v1.json; original writer
+  bytes and first export are preserved after report-only schema fixes.
+  Root now authorizes full100 transfer after exact three-pool overlap verification:
+  104source/context pairs,3pilot pools reused,101newpools;202originMACE,202searches,
+  at most202crossMACE and1212strictGFN. Two disjoint51/50-source shards, same
+  frozen reference/settings and all100 memberships/six old unavailable triples.
+  The Ca3 probe regression remains part of assessment. Khoury's actual two-PLM
+  three-source preparations both pass (213/201atoms),commit7b53a04. The exact
+  six-source integration is now authorized after real-fixture preflight:12fresh
+  origins/12searches/at most12crossMACE/72strictGFN, archived protonation reused.
+  This tests usability/cost on unknown labels, not classification fidelity;
+  no cohort scan, new DFT/folds/protonation or production promotion.
 - **Numerical diagnosis:** exact geometry×rank test1211105 completes four missing
   scalar cells. For both Q4Ca2 and P385La2, old/new geometry energy jumps are the
   same at1 and8ranks; maximum rank interaction1.25e−9kcal. This isolates the tested

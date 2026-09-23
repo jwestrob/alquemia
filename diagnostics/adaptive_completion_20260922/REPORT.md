@@ -1,5 +1,10 @@
 # Scaled four-angle completion: numerical result
 
+Later checkpoint: canonical-only pool calibration retained25/25 calls; the
+approved noncanonical transfer completed409/410 valid proposals, with all225/450
+denominators retained. See [transfer result](TRANSFER_RESULT.md). This report
+below records the preceding original30 proposal result and serial preparation.
+
 The same four-angle physical model now produces **60/60 valid original30
 candidates**, including the prior MMOL1770 La search failure. These30 include
 25 canonical references,3 consumed crystal controls and2 unlabeled PLM cases.

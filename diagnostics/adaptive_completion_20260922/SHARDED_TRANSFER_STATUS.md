@@ -1,5 +1,10 @@
 # Primary225 transfer submitted
 
+**Terminal update:** all410 searches have finished;409 candidates pass and one
+reaches the unchanged iteration limit. Full225/450 collection is validated.
+See [terminal result](TRANSFER_RESULT.md) for actual failures and cost. The
+submission details below are retained as the execution checkpoint.
+
 Root authorized full transfer after the independently saved canonical-only
 reference became available:25/25 calls, gap2.54669018555 model kcal/mol. That
 calibration is development evidence; the forthcoming consumed-fold transfer

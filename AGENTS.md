@@ -2,13 +2,19 @@
 
 ## Active overnight discrimination work — 2026-09-23
 
-Jacob authorized discretionary contained experiments and parallel agents in his
-latest message. Read [the current scope and ownership](diagnostics/overnight_discrimination_20260923/CURRENT.md).
-The older pending LanM choice and proposed-only continuation notes below are
-historical: La/Dy solution-affinity-direction testing, fixed PQQ pool native
-continuations, and a coordinated solvent-force consistency test are now approved
-and active. Do not duplicate their jobs or collectors. Production remains intact;
-the separately gated quantum campaign is not part of this round.
+Jacob authorized discretionary contained experiments and parallel agents. Read
+[the current scope and ownership](diagnostics/overnight_discrimination_20260923/CURRENT.md)
+before resuming. The original LanM, native continuation, native-force and
+minimal-pool/recovery rounds are complete. LanM failed structural transfer;
+native continuation did not fix derivative consistency. Do not duplicate them.
+
+Two useful pilots now advance to canonical reference checks: fixed union context
+plus adaptive accommodation, and standalone xTB solvent scoring. Root owns
+integration, second_shell owns union/adaptive, water_basins owns standalone xTB,
+khoury owns the opt-in minimal-adaptive source interface. Each has finite declared
+manifests; reuse completed molecules and retain unavailable cases. No production
+change, broad PLM rescore or separately gated quantum campaign is authorized by
+this round. Older proposed-only/pending-approval notes below are historical.
 
 ## Restart/scaffold round completed; LanM follow-up requested — 2026-09-22
 

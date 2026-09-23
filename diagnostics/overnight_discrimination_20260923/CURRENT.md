@@ -12,26 +12,36 @@ included. No arbitrary project-wide time or compute cap is reinstated.
 
 ## Current ownership and results
 
-- **second_shell:** [union context plus adaptive accommodation](../union_adaptive_20260923/PLAN.md).
-  The common8 test combines two previously complementary error corrections.
-  All16 searches and16 cross-MACE calls completed;64 native GFN2 cells are being
-  collected. Solver1210424 and collector1210425 were cancelled while pending,
-  with zero molecular calls, and replaced by1210431/1210432 on available CPUs.
-  Preserve all receipts; do not rerun. Report raw work/order and frozen-band
-  transfer only; no fitting on these eight cases.
-- **water_basins:** installed standalone xTB comparison, declared224 calls:
-  four existing fixed five-geometry PQQ pools plus the32 existing force-test
-  displacements, each at documented accuracies0.2 and0.02. Fresh GFN2,300 K,
-  MaxIter500, explicit matched vacuum/ALPB water, fixed solvent surface and
-  reference convention. Both settings use the same real atoms/states. Always
-  report0.02 and its0.2 sensitivity. No native/external component mixing, inherited
-  calibrated decisions, third accuracy, optimization, new MACE or DFT. This tests
-  predictive usefulness and derivative consistency together; it is not a default
-  backend switch. Eight CPU workers times eight threads,128 GiB, no GPU.
+- **second_shell:** [union context plus adaptive accommodation](../union_adaptive_20260923/REPORT.md).
+  The common8 pilot completed all16 searches/16 cross-MACE/64 GFN2 cells. All
+  pools available; original adaptive14/15 opposing source-pair ordering becomes
+  15/15, and its transferred bands give8 correct rather than7/1. No common8 fit.
+  The actual rule combines consistent ten-fold fragment membership with bounded
+  physical donor accommodation. New cost15075 core-seconds/127 GPU-seconds.
+  Now authorized: canonical25 plus three consumed crystals, reuse four common8
+  results, exactly24 new sources/48 searches/48 cross-MACE/192 GFN2 before exact
+  deduplication. All original force arrays exist. Calibrate only the designated25
+  using the unchanged extrema/minimum-gap rule; freeze before further transfer.
+  No225 expansion yet. See [physical interpretation](CONTEXT_MECHANISM_NOTE.md).
+- **water_basins:** [standalone xTB pilot](../standalone_xtb_20260923/REPORT.md)
+  completed224/224 physical calls: all four numerical pool checks and14/14 tight
+  derivative quantities pass. Four known sources have correct relative class
+  ordering, including the difficult A0A3 Ca1, but native bands do not all transfer.
+  The exact installed6.7.1/accuracy0.02 GFN2 ALPB−vacuum backend is a distinct
+  composite; it does not inherit a calibration. Cost3968 core-seconds/zero GPU.
+  Now authorized: all25 original canonical plus three consumed crystals under
+  the same exact backend, scoring static origins and minimal three-candidate
+  pools. Reuse matching224-pilot cells and all archived MACE; at most336 solver
+  cells before reuse/deduplication. No new MACE, optimization or DFT. Freeze
+  separate canonical-only static/minimal references before any225 transfer.
+  Broader225 scoring is not yet launched. Original parser-only unavailable
+  collection is preserved; all executable attempts actually succeeded.
 - **khoury_benchmark:** expose the supported minimal adaptive scorer as a small
   opt-in source-to-score candidate, reusing existing physical preparation,
   selector, optimizer and shared scoring. Implement/test on completed recovery
-  fixtures; no new molecular calls, cohort rescore or production change.
+  fixtures; no new molecular calls, cohort rescore or production change. Accept
+  explicit supported source requests or pinned completed prepared-pool replay;
+  report new-source eligibility separately from established biological validity.
 - **root:** integration, actual benefit/cost comparison and substantive email.
   The [completed recovered ledger](../adaptive_minimal_pool_20260923/RECOVERY_REPORT.md)
   retains204 correct/1 wrong/1 inconclusive/19 unavailable among225. On206 common
@@ -39,7 +49,9 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   already-correct static cases; they do not add two error corrections. Canonical25
   reference unchanged; all25+3 known canonical/crystal calls remain correct.
   Three versus five geometries cuts nominal solvent cells20→12, not a measured
-  40% runtime. Independent review and five new real-ledger tests pass.
+  40% runtime. Independent review and five new real-ledger tests pass. Root sent
+  a new email about the two promising pilots; neither is described as broad
+  validation or a promoted default.
 
 ## Closed experiments this round
 

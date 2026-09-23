@@ -1,0 +1,42 @@
+[
+  {
+    "name": "MACE",
+    "command": [
+      "sbatch",
+      "--parsable",
+      "--output",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_series_followup_20260923/dy_transfer_v1/mace_%j.out",
+      "--error",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_series_followup_20260923/dy_transfer_v1/mace_%j.err",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_series_followup_20260923/run_transfer_mace.sbatch",
+      "--manifest",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_series_followup_20260923/dy_transfer_v1/manifest.json",
+      "--output",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_series_followup_20260923/dy_transfer_v1/mace_results"
+    ],
+    "stdout": "1210367\n",
+    "stderr": "",
+    "returncode": 0,
+    "submitted_utc": "2026-09-23T07:17:02.536639+00:00"
+  },
+  {
+    "name": "GFN_initial",
+    "command": [
+      "sbatch",
+      "--parsable",
+      "--output",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_series_followup_20260923/dy_transfer_v1/initial_%j.out",
+      "--error",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_series_followup_20260923/dy_transfer_v1/initial_%j.err",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_series_followup_20260923/run_transfer_native.sbatch",
+      "--manifest",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_series_followup_20260923/dy_transfer_v1/native_initial/manifest.json",
+      "--authorization",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_series_followup_20260923/DY_TRANSFER_PLAN.md"
+    ],
+    "stdout": "1210368\n",
+    "stderr": "",
+    "returncode": 0,
+    "submitted_utc": "2026-09-23T07:17:02.565830+00:00"
+  }
+]

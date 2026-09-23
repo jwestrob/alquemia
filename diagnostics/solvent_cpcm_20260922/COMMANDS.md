@@ -9,13 +9,14 @@ CPCM_PY=/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python
 "$CPCM_PY" -m unittest discover -s tests -p test_solvent_cpcm_pilot.py -v
 ```
 
-Jobs1209970/1209980 are already submitted. Submission receipts, allocation,
+Jobs1209970/1209980 are terminal and the final collection exists. Do not resubmit
+or rerun the completed observer. Submission receipts, allocation,
 preflight and immutable implementation copies are alongside each manifest. Do
 not resubmit completed/partial tasks in place. `execute` uses the existing locked
 ORCA executor and explicitly rejects partial-attempt overwrites.
 
-Once both jobs terminate, the installed observer writes the final matched result.
-Only if that observer has failed and the final result is absent:
+The observer wrote the final matched result. The following is a recovery command
+only if that output were absent; it must not overwrite the existing result:
 
 ```bash
 "$CPCM_PY" workspaces/solvent_cpcm_20260922/matched_vacuum_v1/implementation/solvent_cpcm_matched.py collect \

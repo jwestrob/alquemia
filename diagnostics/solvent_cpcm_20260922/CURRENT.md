@@ -1,35 +1,23 @@
-# Checkpoint — pilot and matched vacuum qualification running
+# Final checkpoint — matched CPCM route unqualified
 
-The CPCM backend is real, but ORCA6.1.1 automatically replaces the special native
-xTB mixer with ordinary ORCA SCF. Thus the original archived native vacuum cannot
-silently supply the reference. The first actual Ca output confirms the expected
-Gaussian-vdW cavity, water epsilon80.151, Ca radius2.772Å and nonzero printed
-reaction-field energy. This does not by itself qualify the complete transfer.
+Jobs 1209970/1209980 are terminal; the finite observer completed successfully and
+exited. Do not relaunch it or recollect the immutable result. All 16 attempts ran:
+four Ca CPCM and one Ca vacuum converged; 11 SCFs failed at the printed 499 cycles
+under MaxIter500. **Zero complete Ca/La pairs; zero new classifications.**
 
-- Initial eight CPCM calls: job **1209970**, `pilot_v1/manifest.json`,
-  SHA `8d6d6c69faa32fbc99f4e8629676b71a70d45d8b727f02997abc9fc25468d5dc`.
-- Eight matched ordinary-vacuum controls: **1209980**,
-  `matched_vacuum_v1/manifest.json`,
-  SHA `e7cab4f09ee010bf44a2e73eb45a5ea87dd32865a02e658d257693a05af758e0`.
-  Genuine explicit MOREAD uses each matching native vacuum GBW. Zero CPCM reruns.
-- Both use64CPU/128GiB,8concurrent×8MPI, explicitnode224, noGPU. Scheduler default
-  time limit remains; no added project CPU/time limit.
-- Initial observations: all four Ca CPCM complete; La still oscillating. One of
-  eight ordinary vacuum controls complete, with the others continuing. These are
-  operational observations, not a final denominator or discrimination claim.
+The actual backend contains the expected CPCM field/cavity but forces ordinary
+ORCA SCF. Matched seeded vacuum controls also fail 7/8 despite confirmed MOREAD.
+The one complete 4MAE-Ca vacuum agrees with native to +0.0007018304 kcal/mol; this
+cannot qualify missing La results. Preserve the released ALPB default.
 
-Finite local observer PID3554671 waits only for these two jobs. Its exact script,
-command and receipt are `matched_vacuum_v1/finish_frozen.py` and `MONITOR.json`.
-It performs no molecular calls: final matched collection, actual costs/scheduler
-accounting, `REPORT.md` here and a dedicated vault note. The wrapper also collects
-its phase when execution ends nonzero. No failed endpoint becomes a baseline
-substitute. No additional seeded CPCM attempt is automatic.
+Final [report](REPORT.md) and [artifact pins](FINAL_ARTIFACTS.json) distinguish
+backend implementation from numerical feasibility and untested discriminatory
+utility. Scheduler allocation totals 290048 core-seconds; inner executors
+289550.752817 core-seconds; 0 GPU. No retries or wider submissions are planned.
 
-All paths above are under `workspaces/solvent_cpcm_20260922/`. Final authoritative
-output will be `matched_vacuum_v1/final_collection.json`. Do not duplicate the
-observer or change running snapshots. If it fails, rerun the recorded command
-after checking whether its final output already exists.
-
-No full30 calibration or225fold transfer is submitted. Proceed to those only if
-this matched pilot is coherent; numerical qualification currently remains open.
-Released MACE+GFN2ALPB and preserved DFT remain unchanged.
+Authoritative workspace result:
+`workspaces/solvent_cpcm_20260922/matched_vacuum_v1/final_collection.json`.
+Its SHA is `60a80f536d13a0745fee1e0cd535e3f2b1e1422631140e465b5e4dbaedc952b2`.
+Original inputs, outputs, failed attempts and frozen code remain unchanged.
+Vault note:
+`/home/jwestrob/jwestrob/obsidian-vault/agent-captures/2026-09-22_Nikasha-matched-CPCM-solvent-pilot.md`.

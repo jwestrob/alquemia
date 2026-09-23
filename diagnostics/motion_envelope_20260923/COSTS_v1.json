@@ -1,0 +1,237 @@
+{
+  "additional_local_preparation_wall_seconds": 73.1082,
+  "allocated_core_seconds": 67040,
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/motion_envelope_20260923/summarize_costs.py",
+    "sha256": "edf58fc45564752529028b49583b2471c9944e5d6b468ea7fc5a9505625b0f7d"
+  },
+  "limits": [
+    "Nested runner allocations are not added to outer allocation cost.",
+    "Local preparation/preflight/analysis is additional and lacks an allocated-core receipt.",
+    "Model load is measured once per batch; other initialization/collection residuals are not assigned an unmeasured cause.",
+    "These34-source batch timings do not measure an isolated three-source request. GPU-seconds mean requested allocation, not active utilization."
+  ],
+  "outer_elapsed_seconds_summed_not_makespan": 2095,
+  "requested_GPU_seconds": 1250,
+  "scheduler_command": [
+    "sacct",
+    "-X",
+    "-j",
+    "1211294,1211342,1211343,1211421,1211422",
+    "--parsable2",
+    "--format=JobID,JobName,Partition,State,ExitCode,ElapsedRaw,AllocCPUS,ReqMem,AllocTRES,NodeList,Submit,Start,End"
+  ],
+  "scheduler_receipt": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/motion_envelope_20260923/SACCT_FINAL.txt",
+    "sha256": "466404ee4f949cd9357e059cc4eae8b43eb407c1ef02e5cfa019d18492c53978"
+  },
+  "stages": [
+    {
+      "allocated_core_seconds": 640,
+      "job_id": 1211294,
+      "outer_elapsed_seconds": 20,
+      "requested_GPU_seconds": 20,
+      "scheduler": {
+        "AllocCPUS": "32",
+        "AllocTRES": "billing=32,cpu=32,node=1",
+        "ElapsedRaw": "20",
+        "End": "2026-09-23T05:56:21",
+        "ExitCode": "0:0",
+        "JobID": "1211294",
+        "JobName": "envelope-q0-mace",
+        "NodeList": "node-224-2t-8gpu-1",
+        "Partition": "gpu",
+        "ReqMem": "200000M",
+        "Start": "2026-09-23T05:56:01",
+        "State": "COMPLETED",
+        "Submit": "2026-09-23T05:55:51"
+      },
+      "stage": "origin_MACE",
+      "timer_receipts": [
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/pilot34_origins_v1/mace/execution_1211294_0.json",
+          "sha256": "c8ab5eccc6ada5810336618cb20904d848a4f044e192842068a78d29d57e4de7"
+        }
+      ],
+      "timers": {
+        "execution_1211294_0.json": {
+          "model_load_seconds": 1.214171390980482,
+          "wall_seconds": 11.550079498440027
+        }
+      }
+    },
+    {
+      "allocated_core_seconds": 37696,
+      "job_id": 1211342,
+      "outer_elapsed_seconds": 1178,
+      "requested_GPU_seconds": 1178,
+      "scheduler": {
+        "AllocCPUS": "32",
+        "AllocTRES": "billing=32,cpu=32,node=1",
+        "ElapsedRaw": "1178",
+        "End": "2026-09-23T06:31:09",
+        "ExitCode": "0:0",
+        "JobID": "1211342",
+        "JobName": "envelope-search",
+        "NodeList": "node-224-2t-8gpu-1",
+        "Partition": "gpu",
+        "ReqMem": "200000M",
+        "Start": "2026-09-23T06:11:31",
+        "State": "COMPLETED",
+        "Submit": "2026-09-23T06:11:24"
+      },
+      "stage": "native_search",
+      "timer_receipts": [
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/pilot34_searches_v1/EXECUTION_1211342.json",
+          "sha256": "b997b5b1e75dbddaa8f96e968f31e198b3b5a8f05f84e233860fe87fe724891a"
+        },
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/pilot34_searches_v1/gpu_summary_1211342.json",
+          "sha256": "53dcf0bde9eb76ee6a19d95b88a5b5fa774c5e24282d4be3e6c627b3cab64994"
+        }
+      ],
+      "timers": {
+        "EXECUTION_1211342.json": {
+          "error": null,
+          "job_id": "1211342",
+          "wall_seconds": 1090.3110498078167
+        },
+        "gpu_summary_1211342.json": {
+          "device": "NVIDIA H200",
+          "failed_requests": 0,
+          "job_id": "1211342",
+          "model_load_seconds": 1.5558900870382786,
+          "new_MACE_calls": 998,
+          "wall_seconds": 879.8652410544455
+        },
+        "search_timer_aggregation": {
+          "MACE_evaluation_count": 998,
+          "available_proposals": 68,
+          "boundary_proposals": 25,
+          "executor_minus_recorded_GPU_worker_interval_seconds": 210.44580875337124,
+          "executor_minus_summed_search_wall_seconds": 227.5522329956293,
+          "maximum_per_search_wall_seconds": 22.94701435416937,
+          "search_count": 68,
+          "sum_MACE_evaluation_wall_seconds": 246.6400184445083,
+          "sum_per_search_wall_seconds": 862.7588168121874
+        }
+      }
+    },
+    {
+      "allocated_core_seconds": 20128,
+      "job_id": 1211343,
+      "outer_elapsed_seconds": 629,
+      "requested_GPU_seconds": 0,
+      "scheduler": {
+        "AllocCPUS": "32",
+        "AllocTRES": "billing=32,cpu=32,node=1",
+        "ElapsedRaw": "629",
+        "End": "2026-09-23T06:22:00",
+        "ExitCode": "0:0",
+        "JobID": "1211343",
+        "JobName": "envelope-strict",
+        "NodeList": "node-224-2t-8gpu-1",
+        "Partition": "gpu",
+        "ReqMem": "64G",
+        "Start": "2026-09-23T06:11:31",
+        "State": "COMPLETED",
+        "Submit": "2026-09-23T06:11:24"
+      },
+      "stage": "origin_scalar",
+      "timer_receipts": [
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/motion_envelope_20260923/origin_cpu_1211343.out",
+          "sha256": "25ad867101ebfb72c6e631ec6e593d5e1049007760fcefbef6507f1588e2c744"
+        }
+      ],
+      "timers": {
+        "native_runner": {
+          "allocated_core_seconds": 14080.90429532528,
+          "elapsed_seconds": 440.028259228915
+        }
+      }
+    },
+    {
+      "allocated_core_seconds": 1664,
+      "job_id": 1211421,
+      "outer_elapsed_seconds": 52,
+      "requested_GPU_seconds": 52,
+      "scheduler": {
+        "AllocCPUS": "32",
+        "AllocTRES": "billing=32,cpu=32,node=1",
+        "ElapsedRaw": "52",
+        "End": "2026-09-23T06:37:23",
+        "ExitCode": "0:0",
+        "JobID": "1211421",
+        "JobName": "envelope-cross",
+        "NodeList": "node-224-2t-8gpu-1",
+        "Partition": "gpu",
+        "ReqMem": "200000M",
+        "Start": "2026-09-23T06:36:31",
+        "State": "COMPLETED",
+        "Submit": "2026-09-23T06:36:30"
+      },
+      "stage": "cross_MACE",
+      "timer_receipts": [
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/pilot34_pool_v1/MACE_EXECUTION_1211421.json",
+          "sha256": "f2c779f95c49f115c98fea2533394dd3776f3b788c2e4af04555e8755ab967eb"
+        },
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/pilot34_pool_v1/gpu_summary_1211421.json",
+          "sha256": "3af4914860955bbe891fc50f92d411be9177463e9c9c71f42ac7f00ae73b5787"
+        }
+      ],
+      "timers": {
+        "MACE_EXECUTION_1211421.json": {
+          "error": null,
+          "job_id": "1211421",
+          "wall_seconds": 21.366733968257904
+        },
+        "gpu_summary_1211421.json": {
+          "device": "NVIDIA H200",
+          "failed_requests": 0,
+          "job_id": "1211421",
+          "model_load_seconds": 1.1718683019280434,
+          "new_MACE_calls": 68,
+          "wall_seconds": 13.92689784988761
+        }
+      }
+    },
+    {
+      "allocated_core_seconds": 6912,
+      "job_id": 1211422,
+      "outer_elapsed_seconds": 216,
+      "requested_GPU_seconds": 0,
+      "scheduler": {
+        "AllocCPUS": "32",
+        "AllocTRES": "billing=32,cpu=32,node=1",
+        "ElapsedRaw": "216",
+        "End": "2026-09-23T06:40:07",
+        "ExitCode": "0:0",
+        "JobID": "1211422",
+        "JobName": "envelope-strict",
+        "NodeList": "node-128-512g-8gpu-1",
+        "Partition": "gpu",
+        "ReqMem": "64G",
+        "Start": "2026-09-23T06:36:31",
+        "State": "COMPLETED",
+        "Submit": "2026-09-23T06:36:30"
+      },
+      "stage": "candidate_scalar",
+      "timer_receipts": [
+        {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/motion_envelope_20260923/candidate_cpu_1211422.out",
+          "sha256": "2a4b5f31d8fe76731663b0bfd97ac3b4a3a16e76ae592080e81b298a36739e8e"
+        }
+      ],
+      "timers": {
+        "native_runner": {
+          "allocated_core_seconds": 5440.232936859131,
+          "elapsed_seconds": 170.00727927684784
+        }
+      }
+    }
+  ]
+}

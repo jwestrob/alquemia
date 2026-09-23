@@ -6,7 +6,10 @@ ten-fold precision methods. Both new abstentions concern the Ca-associated A8R3S
 control; no wrong calls.125 source/context pairs give121correct/4inconclusive.
 See REPORT.md/RESULT.json and `workspaces/union_triple_transfer_20260923/COMPARISON_v1.json`.
 No rollout or refit. Ten actual-fixture tests pass16.704s. Scoped existing-output
-A8 audit follows; no new molecular tasks.
+A8 audit complete: loss of starting solvent margin dominates; differential
+accommodation is slightly smaller, selected motions unchanged for the two failing
+members. All four triples and actual3.5026–3.5466Å Ser352-to-Asn300 source contacts
+retained. See A8_AUDIT.md. No new molecular tasks in this branch.
 
 The two original CPU stages failed before scalar work due diagnostic-roundoff
 comparison. Read-only replay1211145 verified exact selected motions; narrow

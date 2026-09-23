@@ -41,10 +41,12 @@ Three source/context pairs newly abstain: A8 sample1 with168 atoms, sample3 with
 168 atoms and sample1 with149 atoms. The last does not change its triple median.
 The fourth individual inconclusive, C5AXV8 La sample3, is inherited unchanged.
 The two offending168-atom A8 origins are Ca-supported before accommodation;
-selected accommodation shifts R toward La by+9.0227/+8.0513 model kcal/mol. Thus
-the failure concerns response in the smaller contexts, with composition, cavity
-and possible mode-selection changes together. It does not establish a unique
-missing-residue mechanism or a biological affinity change.
+selected accommodation shifts R toward La by+9.0227/+8.0513 model kcal/mol.
+The subsequent [component audit](A8_AUDIT.md) shows that these work contrasts are
+slightly smaller than before contraction: the starting solvent correction already
+lost most of the Ca margin. Their selected modes/candidate identities remain
+unchanged. This is a changed-context offset followed by nearly the same relaxation,
+not evidence of increased accommodation or a unique missing-residue mechanism.
 
 All61 triples with exact ten-fold membership replay identically. Among33 changed
 triples, structural score ranges shrink for12 and grow for21; median range grows
@@ -97,8 +99,8 @@ real records. Molecular execution is separately evidenced above. No scientific
 executable was replaced by a fake result. [Commands](COMMANDS.md) replay saved
 results; production and explicit historical methods remain unchanged.
 
-Next: audit existing A8 membership/components/candidate selections and native
-solver traces across all four triples. No additional chemistry, cutoff, threshold
-or model change is authorized by this completed transfer report. The unknown-
+The [completed existing-output audit](A8_AUDIT.md) retains all four A8 triples,
+actual source distances and solver traces; four further fixture tests pass.
+No additional chemistry, cutoff, threshold or model was changed by that audit. The unknown-
 protein three-source preparation API is useful plumbing, but this result does not
 qualify an automatic scoring rollout.

@@ -1,5 +1,30 @@
 # Nikasha in the integrated PLM manuscript
 
+## September23 development update
+
+The released method below remains available. The completed fixed-pocket plus
+adaptive candidate now provides a real individual-structure improvement:
+205correct/0wrong/1inconclusive/19unavailable across the frozen225 sources.
+On205 shared sources, released201/2/2 becomes204/0/1. Both previous wrong calls
+are corrected; C5AXV8 gains an inconclusive call. All25 canonical references and
+three consumed crystals retain their expected classes under the candidate's own
+frozen canonical-only bands. Strict aggregate coverage declines, and structural
+spread is not uniformly reduced. These are repeats of25 consumed protein groups.
+
+The candidate fixes surrounding fragment membership across the declared ten
+source folds, selects four source-mapped angular motions using native MACE
+forces, and proposes bounded motions independently for Ca and La. Both metals
+then compete over the same origin/Ca-proposal/La-proposal geometry pool using
+the existing composite expression below. This is finite local energy selection,
+not an equilibrium ensemble or exact composite-energy minimization. Proton and
+water inventories stay fixed; no entropy term is added.
+
+Report this as a supported research improvement while its practical input and
+numerical profile are qualified. Do not assign its ten-fold membership evidence
+to the three-fold scanner automatically. Current PLM exports still contain their
+original DFT results. [Completed comparison](../union_adaptive_20260923/TRANSFER225_REPORT.md),
+[editable three-method figure](../overnight_discrimination_20260923/FIGURE.md).
+
 ## Current supported method
 
 Describe Nikasha as an affordable, structure-sensitive La/Ca **class discriminator**.
@@ -92,11 +117,12 @@ MACE and composite differential responses for the two tested directions in all
 three contexts. It validates those particular displacements, not the later
 adaptive/joint proposals. Captions include biological and replication limits.
 
-The completed shared-pool and adaptive experiments are research results, not
-additional production-method components. None earned routine promotion. Keep
-the paper's supported scoring method separate from these failed extensions;
-their exact [delivery record](../nikasha_recovery_20260922/DELIVERY.md) preserves
-all failures, methods and costs.
+The September22 shared-pool and adaptive experiments remain preserved in their
+exact [delivery record](../nikasha_recovery_20260922/DELIVERY.md). The successful
+September23 combination described above supersedes the earlier conclusion that
+no accommodation variant had demonstrated useful improvement. It has not changed
+production defaults. Distinguish the completed accuracy result from the ongoing
+qualification of a practical execution profile and smaller input inventory.
 
 The [technical supplement](TECHNICAL_SUPPLEMENT.md) records the released model/
 software identities, actual nativeGFN2 inputs, unit conversions, frozen bands

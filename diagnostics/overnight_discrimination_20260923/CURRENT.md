@@ -22,7 +22,14 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   results, exactly24 new sources/48 searches/48 cross-MACE/192 GFN2 before exact
   deduplication. All original force arrays exist. Calibrate only the designated25
   using the unchanged extrema/minimum-gap rule; freeze before further transfer.
-  No225 expansion yet. See [physical interpretation](CONTEXT_MECHANISM_NOTE.md).
+  Canonical stage now complete:25/25 plus3/3 crystals correct, own gap7.240240.
+  Reference is frozen; all4 noncanonical pilotfolds remain correct. New stage cost
+  54256 core-seconds/693 GPU-seconds; Q89La alone needed1304 evaluations despite
+  eventually converging. **Full225 transfer now authorized:**208 prepared origins,
+  17 exact exclusions,4 reused pilotpools,204 new sources in4 disjoint51-source
+  warmGPU shards;408 searches/408 cross-MACE/1632 GFN2 maximum before failures.
+  Original optimizer/settings stay fixed. See
+  [physical interpretation](CONTEXT_MECHANISM_NOTE.md).
 - **water_basins:** [standalone xTB pilot](../standalone_xtb_20260923/REPORT.md)
   completed224/224 physical calls: all four numerical pool checks and14/14 tight
   derivative quantities pass. Four known sources have correct relative class
@@ -34,14 +41,44 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   pools. Reuse matching224-pilot cells and all archived MACE; at most336 solver
   cells before reuse/deduplication. No new MACE, optimization or DFT. Freeze
   separate canonical-only static/minimal references before any225 transfer.
-  Broader225 scoring is not yet launched. Original parser-only unavailable
-  collection is preserved; all executable attempts actually succeeded.
+  Canonical check is now complete: static retains25/25 canonical plus3/3
+  crystals, gap9.759549; minimal adaptive has overlapping canonical classes
+  (gap−1.112976), so its bands are null and that expansion is closed.
+  Static-only225 transfer1210508 is now complete:201 correct/2 wrong/5
+  inconclusive/17 unprepared. On207 common sources native released203/2/2 beats
+  standalone200/2/5. All832 logical cells succeeded (828 new+4 reused),244s×64
+  CPUs=15616 core-seconds, zeroGPU. Four tests pass. This branch is closed as a
+  replacement scorer; no threshold repair or adaptive expansion. Its reliable
+  gradient backend supports the separately declared solvent-aware search below.
+  Original parser-only unavailable collection is preserved; all executable
+  attempts actually succeeded.
+  Water now owns a small **numerical stopping-precision pilot** in exact union
+  contexts:Q89GY2,Q9Z4J7,1H4I,A0A3Ca1;8 searches/8 cross-MACE/32 nativeGFN max.
+  Change only private optimizer ftol to1e−8Hartree; keep source/selector/200iter/
+  physical bounds unchanged. Test nativeenergy closeness and R within existing
+  numerical scale, record cost and failures. No shared defaults, reference refit
+  or import into the frozen225 experiment. See agent plan when prepared.
 - **khoury_benchmark:** expose the supported minimal adaptive scorer as a small
   opt-in source-to-score candidate, reusing existing physical preparation,
   selector, optimizer and shared scoring. Implement/test on completed recovery
   fixtures; no new molecular calls, cohort rescore or production change. Accept
   explicit supported source requests or pinned completed prepared-pool replay;
   report new-source eligibility separately from established biological validity.
+  The fresh two-source integration1210488 completed2/2: exact released1H4I/
+  4MAE context coordinates,72 actual MACE calls and24 nativeGFN successes.
+  Correct Ca/La calls, max pooled-R replay difference0.005729kcal. Cost220s on
+  32CPUs/oneH200 (7040 core-seconds/220 GPU-seconds), including preparation;
+  eight tests pass, no skips. [Commands and limits](../pqq_adaptive_candidate_20260923/COMMANDS.md).
+  Khoury now owns the authorized **solvent-aware finite response** development
+  pilot:Q9Z4J7,C5AXV8,Q88,A0A3Ca1 plusA0ACCa4/La4. Preserve initial4-source
+  proposal-only inventory; freeze six-source scope before any execution. Exact
+  same four modes/context/states; each metal starts at its own best existing
+  standalone-scored3candidate geometry and lowers its own composite energy.
+  SLSQP20/40distinct evaluations,ftol0.001kcal, unchanged physical bounds; finite
+  valid energy-selected candidates, no stationarity/entropy claim. At most1000
+  new standaloneGFN/480MACE including16 missing baseline cells and cross-scores.
+  No six-case calibration; compare strongest static/nativeadaptive and retain
+  missing/failed status. Exact admission policy/manifests precede execution.
 - **root:** integration, actual benefit/cost comparison and substantive email.
   The [completed recovered ledger](../adaptive_minimal_pool_20260923/RECOVERY_REPORT.md)
   retains204 correct/1 wrong/1 inconclusive/19 unavailable among225. On206 common

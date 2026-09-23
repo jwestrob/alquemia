@@ -1,5 +1,26 @@
 # Nikasha: current operating guide for agents
 
+## Opt-in adaptive candidate and active research — 2026-09-23
+
+The smaller adaptive scorer is now runnable from supported explicit PQQ sources:
+[commands](../diagnostics/pqq_adaptive_candidate_20260923/COMMANDS.md),
+[fresh integration and limits](../diagnostics/pqq_adaptive_candidate_20260923/REPORT.md).
+It retains the demonstrated individual-fold improvement and restores two excluded
+sources, with its own frozen reference. Fresh1H4I/4MAE preparation and scoring
+passed; this is an optional accuracy/robustness candidate, not a faster default.
+Original scores remain visible. Production static scoring and explicit DFT are
+unchanged.
+
+The combined union/adaptive and standalone-xTB investigations are separate
+methods. Read [live ownership/status](../diagnostics/overnight_discrimination_20260923/CURRENT.md)
+before launching anything; older “all jobs finished” statements apply to their
+dated phases. Standalone static preserves25+3 reference fidelity but worsens
+full-fold transfer; its backend-only replacement branch is closed. Standalone
+scoring of existing adaptive candidates fails canonical separation and has no
+valid decision bands. Union/adaptive passes25+3 and is entering full-fold transfer. Do not mix these backends
+or references. LanM La/Dy testing failed structural transfer and establishes no
+robust within-series affinity prediction.
+
 ## Current name and entrypoint — 2026-09-22
 
 Alquemia is now **Nikasha**. Use the thin `scripts/nikasha` entrypoint with the

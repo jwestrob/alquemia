@@ -10,56 +10,64 @@ below and resolves the pending choice in the older checkpoint. Production
 promotion, a full PLM rescore and the separately gated quantum campaign are not
 included. No arbitrary project-wide time or compute cap is reinstated.
 
-## Active work and purpose
+## Current ownership and results
 
-| Owner | Experiment | Useful question | New molecular work |
-|---|---|---|---|
-| water_basins | [LanM La/Dy](../lanm_series_followup_20260923/PLAN.md) | Does the fixed-state composite capture Hans's stronger light-over-heavy preference relative to Mex? | Six ordered EF1–3 sites, 12 MACE endpoints and 48 native GFN2 initial/continuation calls |
-| khoury_benchmark | [Four fixed PQQ pools](../native_pool_continuation_20260923/PLAN.md) | Does consistent native continuation settle the solvent contribution and change known-class decisions? | Same 80 matrix cells, two continuations each; archived MACE reused |
-| second_shell | [Solvent-force consistency](../native_solvent_force_20260923/PLAN.md) | Does the continuation remedy make solvent forces useful for a more informed accommodation search? | 32 displaced native cells, initial plus two continuations; eight origin gradients reused from the PQQ experiment |
+- **second_shell:** [union context plus adaptive accommodation](../union_adaptive_20260923/PLAN.md).
+  The common8 test combines two previously complementary error corrections.
+  All16 searches and16 cross-MACE calls completed;64 native GFN2 cells are being
+  collected. Solver1210424 and collector1210425 were cancelled while pending,
+  with zero molecular calls, and replaced by1210431/1210432 on available CPUs.
+  Preserve all receipts; do not rerun. Report raw work/order and frozen-band
+  transfer only; no fitting on these eight cases.
+- **water_basins:** installed standalone xTB comparison, declared224 calls:
+  four existing fixed five-geometry PQQ pools plus the32 existing force-test
+  displacements, each at documented accuracies0.2 and0.02. Fresh GFN2,300 K,
+  MaxIter500, explicit matched vacuum/ALPB water, fixed solvent surface and
+  reference convention. Both settings use the same real atoms/states. Always
+  report0.02 and its0.2 sensitivity. No native/external component mixing, inherited
+  calibrated decisions, third accuracy, optimization, new MACE or DFT. This tests
+  predictive usefulness and derivative consistency together; it is not a default
+  backend switch. Eight CPU workers times eight threads,128 GiB, no GPU.
+- **khoury_benchmark:** expose the supported minimal adaptive scorer as a small
+  opt-in source-to-score candidate, reusing existing physical preparation,
+  selector, optimizer and shared scoring. Implement/test on completed recovery
+  fixtures; no new molecular calls, cohort rescore or production change.
+- **root:** integration, actual benefit/cost comparison and substantive email.
+  The [completed recovered ledger](../adaptive_minimal_pool_20260923/RECOVERY_REPORT.md)
+  retains204 correct/1 wrong/1 inconclusive/19 unavailable among225. On206 common
+  sources released is202/2/2 versus adaptive204/1/1. The two recoveries restore
+  already-correct static cases; they do not add two error corrections. Canonical25
+  reference unchanged; all25+3 known canonical/crystal calls remain correct.
+  Three versus five geometries cuts nominal solvent cells20→12, not a measured
+  40% runtime. Independent review and five new real-ledger tests pass.
 
-The force coordinates are existing complete-carboxylate Glu172 chi3 in 4MAE
-and Glu221 chi3 in Q88JH5. The former is eligible in the full physical mapping
-but was not selected in the later adaptive four-angle search. This diagnostic
-does not silently redefine that selector.
+## Closed experiments this round
 
-Root owns integration, actual benefit/cost comparison, follow-up scientific
-choices and email. Each agent owns its named script, diagnostic and workspace;
-coordinate the shared Git index before staging. Eight PQQ origin gradients are
-shared across branches, not independently recomputed. All other chemistry is
-disjoint. Preserve failed attempts and fixed denominators.
+- [LanM](../lanm_series_followup_20260923/README.md): initial Hans-La versus Mex-Nd
+  La/Dy contrast was +4.866,−0.264,+12.499 model kcal/mol for orderedEF1–3. The
+  actual Hans-Dy source changes it to −9.568,−28.187,−20.673. Both metals favor
+  the Dy-source core, so pooling those two sources does not repair the sign.
+  Do not claim robust within-series affinity discrimination. All18 MACE/72 GFN2
+  calls completed,10128 allocated core-seconds/31 GPU-seconds. Root emailed the
+  positive observation and then its failed structural transfer; both preserved.
+- [Native pool continuation](../native_pool_continuation_20260923/REPORT.md):
+  all160 calls completed, all four pools pass energy-settling gates, no class
+  changes. Final corrected-receipt result is `result_receipts_v2.json` in its
+  run_v1 workspace. No broad continuation rescore is justified by this result.
+- [Native solvent forces](../native_solvent_force_20260923/REPORT.md):96 calls
+  plus eight shared origin gradients completed. Both sources pass energy
+  settling but fail derivative consistency;7/14 derivative quantities pass.
+  This continuation remedy is closed for force-driven optimization. No entropy
+  offset or numerical derivative repair was invented.
+- [Two-source recovery](../adaptive_origin_recovery_20260923/REPORT.md):67 MACE
+  calls/16 native GFN2 completed,5152 allocated core-seconds/49 GPU-seconds.
+  P12293 Ca-sample4 and Q60AR6 Ca-sample1 correctly Ca-like. The distinct
+  Q60AR6 La-sample0 iteration-limit failure remains unavailable.
 
-## Completed first round and active follow-ups
-
-- LanM original pilot completed12 MACE/48 native GFN calls: ordered Hans–Mex
-  La/Dy vector is +4.866368,−0.264440,+12.499116 model kcal/mol. Root emailed
-  Jacob the signal and conditioning limitation. Water_basins now owns the
-  separate Dy-bound Hans8FNR chainA EF1–3 transfer:6 MACE/24 GFN calls, same
-  atoms/states/caps and reused Mex outputs. Preliminary native-MACE signs reverse;
-  wait for the final composite and retain both source conditions prominently.
-- Native PQQ continuation completed160 calls, all four pools pass declared
-  settling checks, **no classification changes**. Commit950928e. No broad
-  continuation rescore follows from this unchanged predictive result.
-- Native solvent-force test completed96 calls plus eight shared origin gradients.
-  Both sources pass energy settling but fail derivative consistency;7/14 derivative
-  quantities pass. Commit98c3f2a. No new force-driven optimization is enabled.
-- Root's [minimal adaptive pool replay](../adaptive_minimal_pool_20260923/REPORT.md)
-  retains every individual/group/triple classification of the five-candidate
-  method while reducing nominal solvent calls20→12. Canonical25 bands reproduce
-  exactly; all25+3 known canonical/crystal calls remain correct. Zero molecular
-  calls, six real-artifact tests. Existing numerical limits remain explicit.
-- Khoury owns direct preparation of the three-candidate adaptive pool and exactly
-  two valid-origin recoveries: P12293 Ca-sample4 and Q60AR6 Ca-sample1. Same
-  four-mode selector/scaled optimizer, four searches/four cross-MACE/16 GFN calls,
-  existing origins and root's frozen minimal reference reused. The distinct
-  Q60AR6 La-sample0 iteration-limit failure is not retried.
-- Second_shell owns a contained **fixed membership × adaptive** common8 pilot.
-  Reuse the existing union contexts and origin energies for exactly the earlier
-  common8; same four-mode native-vacuum selection/optimizer; two new geometries
-  per source cross-scored in the minimal pool. At most16 searches/16 cross-MACE/
-  64 GFN calls, plus missing actual origin-force evaluations. This combination
-  tests complementary error corrections; it is not the rejected protein-only
-  force-field proposal. No common8 threshold fitting or production change.
+Each agent owns its named script, diagnostic and workspace; coordinate the
+shared Git index before staging. Preserve failed attempts and fixed denominators.
+No duplicate chemistry or collectors. Production and the gated quantum campaign
+remain untouched.
 
 ## Interpretation boundaries
 

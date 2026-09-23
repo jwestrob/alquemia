@@ -9,7 +9,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'scripts'))
-from affordable_common import InvalidArtifact, read_json
+from affordable_common import InvalidArtifact, read_json, verify, xyz
 from consistent_context_compare import collect, reference, transfer_compare
 from compact_solvation_compare import mix_pair
 
@@ -124,6 +124,43 @@ class ActualUnionTransfer(unittest.TestCase):
                     pin = solvent['reused'][tid+'__'+medium+'__native']; old = row['solvent_endpoints'][metal][medium]
                     for key in ('receipt', 'manifest', 'output', 'task_id', 'energy_hartree'):
                         self.assertEqual(pin[key], old[key])
+
+
+class FinalTransferRecords(unittest.TestCase):
+    def test_full_source_and_identically_scorable_denominators(self):
+        result = read_json(BASE/'primary225_v1/comparison_v1.json')
+        src = read_json(ROOT/'diagnostics/accommodation_controls_20260920/PQQ_ALL250_SOURCES.json')
+        self.assertEqual({r['case_id'] for r in result['rows']},
+                         {r['case_id'] for r in src['cases'] if r['primary_evaluation_pool']})
+        self.assertEqual((len(result['rows']), len(result['pools']), len(result['triples'])), (225, 75, 100))
+        new = result['counts']['single_sources']['all']['context_union']
+        self.assertEqual(new, {'denominator': 225, 'correct': 199, 'wrong': 1, 'inconclusive': 8, 'unavailable': 17})
+        matched = result['matched']['context_composite']
+        self.assertEqual(matched['baseline'], {'denominator': 207, 'correct': 203, 'wrong': 2, 'inconclusive': 2, 'unavailable': 0})
+        self.assertEqual(matched['union'], {'denominator': 207, 'correct': 198, 'wrong': 1, 'inconclusive': 8, 'unavailable': 0})
+        changes = [(r['methods']['context_composite']['outcome'], r['methods']['context_union']['outcome'])
+                   for r in matched['transitions']]
+        self.assertEqual(changes.count(('wrong', 'correct')), 1)
+        self.assertEqual(changes.count(('correct', 'inconclusive')), 6)
+
+    def test_numerical_recovery_preserves_released_state_and_bands(self):
+        recovery = read_json(ROOT/'diagnostics/consistent_context_20260922/SCF_RECOVERY_v1.json')
+        self.assertEqual(recovery['released_band_decision'], 'Ca-supported')
+        self.assertFalse(recovery['original_baseline_overwritten'])
+        baseline = read_json(verify(recovery['released_reference_source']))
+        before = next(r for r in baseline['rows'] if r['case_id'] == recovery['case_id'])
+        self.assertEqual(before['methods']['context_composite']['outcome'], 'unavailable')
+        self.assertEqual(recovery['released_bands'], baseline['bands']['context_composite'])
+        self.assertLessEqual(recovery['R_model_kcal_mol'], recovery['released_bands']['Ca_max'])
+        for state in recovery['states'].values():
+            a, b = xyz(verify(state['old_xyz'])), xyz(verify(state['new_xyz']))
+            self.assertEqual([r[0] for r in a], [r[0] for r in b])
+            self.assertLessEqual(max(abs(x[i]-y[i]) for x,y in zip(a,b) for i in (1,2,3)), 1e-12)
+            self.assertTrue(state['native_reused'])
+        failed = [r for r in recovery['endpoint_recovery'] if r['old_status'] != 'complete']
+        self.assertEqual([(r['metal'], r['medium']) for r in failed], [('La', 'vacuum')])
+        for row in recovery['endpoint_recovery']:
+            if row['old_status'] == 'complete': self.assertEqual(row['old_energy_hartree'], row['new_energy_hartree'])
 
 
 if __name__ == '__main__': unittest.main()

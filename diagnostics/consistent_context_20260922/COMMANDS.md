@@ -10,7 +10,7 @@ UNION_PY=/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python
 export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
 ```
 
-## Read the frozen reference and initial transfer result
+## Read the frozen reference and completed full transfer
 
 ```bash
 "$UNION_PY" - "$UNION_ROOT" <<'PY'
@@ -18,8 +18,8 @@ import json, pathlib, sys
 root = pathlib.Path(sys.argv[1])/'workspaces/consistent_context_20260922'
 reference = json.loads((root/'calibration28_v1/REFERENCE_v2.json').read_text())
 print('Frozen bands:', reference['bands'], 'gap:', reference['gap_model_kcal_mol'])
-pilot = json.loads((root/'pilot36_v1/comparison_v1.json').read_text())
-print(json.dumps(pilot['counts']['single_sources']['all'], indent=2))
+result = json.loads((root/'primary225_v1/comparison_v1.json').read_text())
+print(json.dumps(result['counts']['single_sources']['all'], indent=2))
 PY
 ```
 
@@ -44,10 +44,13 @@ this operation performs no molecular energy calculation.
 ```
 
 The prepared `READY.json` records fresh and reused task counts. The per-phase
-`submission_mace.json`, `submission_solvent.json`, and `submission_collect.json`
-record exact submitted commands and file hashes. `run_mace.sbatch` calls the
+submission JSON files record exact commands and file hashes. In the full stage,
+`submission_mace_layout_v2.json` and `submission_collect_layout_v2.json` are the
+executed replacements of cancelled, never-started requests; the scientific
+manifests are unchanged. `run_mace.sbatch` calls the
 existing warm-MACE executor; `run_solvent.sbatch` calls the existing ORCA runner.
 The dependent collector performs no molecular calls and preserves failed cells.
+All jobs are now complete. See REPORT.md, RESULT_v1.json and COST_v1.json.
 
 ## Re-collect and compare saved results without scientific execution
 

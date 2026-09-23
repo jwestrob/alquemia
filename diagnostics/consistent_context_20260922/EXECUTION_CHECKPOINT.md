@@ -1,5 +1,7 @@
 # Full transfer execution checkpoint
 
+Historical running checkpoint. The completed result is in [REPORT.md](REPORT.md).
+
 Frozen full scope: 225 transfer sources, 208 supported and 17 original unsupported.
 There are 188 fresh MACE and 378 fresh GFN2 endpoints; 228 and 454 respective
 components are reused with exact state and coordinate checks, including every

@@ -1,19 +1,25 @@
-# Full225 transfer: active, no final predictive result yet
+# Full225 transfer complete
 
-Frozen own reference retains25/25 canonical and3/3 consumed crystals, gap7.24024.
-The parent authorized the full225 structural challenge after this result. Four
-noncanonical pilot pools are reused;204 new supported sources are prepared in
-four disjoint51-source shards. All408 exact q0 force arrays are reused. The17
-prior preparation exclusions remain part of225; no new chemistry is guessed.
+The frozen union/adaptive protocol returns205correct,0wrong,1inconclusive and
+19unavailable. Matched205 versus released improves201correct/2wrong/2inconclusive
+→204/0/1; versus recovered original-context adaptive203/1/1→204/0/1. Both historical
+errors are corrected; C5AXV8 La-sample3 remains inconclusive. Canonical25 and three
+consumed crystals remain correct under the reference frozen before transfer.
 
-Four proposal manifests pass physical/state/selection preflight. Four real-fixture
-transfer tests pass, including all225/75/100 comparator joins and corrupted-label
-rejection. Two proposal shards started normally; all observed completed proposals
-are admitted at this checkpoint. Remaining proposals/solvent/cross scoring and
-comparison run through the finite dependency graph in TRANSFER225_COMMANDS.md.
+All13 allocations/collectors are terminal.408searches yielded406admitted endpoints,
+12,750fresh searchMACE calls,404crossMACE and1,616/1,616 successful nativeGFN2 calls.
+The17 original preparation exclusions and two optimizer-limit failures remain
+visible; no rescue or fallback. Final8real-fixture tests pass, zero skips.
 
-No final fold accuracy, coverage or cost claim is available until those jobs
-finish. Do not infer transfer success from canonical fitting. The optimizer is
-unchanged despite the separate precision experiment. Production/default and
-unknown PLM cohort remain untouched. Update this checkpoint after actual final
-collections, keeping raw receipts and failures intact.
+Read [report](TRANSFER225_REPORT.md), [result](TRANSFER225_RESULT.json) and
+[commands](TRANSFER225_COMMANDS.md). Workspace transfer225_v1 retains all225 rows,
+75 strict aggregates,100 correlated triples, individual component work, optimizer
+traces and exact cost receipts. New transfer cost513,768CPU-seconds/4,123requested
+GPU-seconds. No repeated completed jobs, production promotion or PLM rescore.
+
+Pursue this localized discrimination gain. Numerical stopping still loses two
+otherwise feasible source geometries; future three-fold use also needs its own
+fixed-context compatibility check. The separately tested precision revision was
+not imported into this immutable result. All available strict aggregate decisions
+remain correct, with less coverage than released; score spread is not uniformly
+smaller. Broader affinity validation is not claimed.

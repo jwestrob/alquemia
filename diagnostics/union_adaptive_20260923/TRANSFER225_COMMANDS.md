@@ -1,8 +1,8 @@
-# Full225 operations and live-job recovery
+# Completed full225 operations and read-only replay
 
-The finite source manifests and dependencies are already submitted. Do not
-resubmit molecular jobs or alter their optimizer settings. Read current Slurm
-state and the existing receipts before any recovery.
+All13 finite allocations/collectors completed. Do not resubmit molecular jobs
+or alter their optimizer settings. The saved COMPARISON_v1.json is the final
+225-source result; TRANSFER225_REPORT.md and TRANSFER225_RESULT.json summarize it.
 
 ## Fixed chain
 
@@ -17,20 +17,24 @@ All edges use `afterany`, retaining actual failed endpoints/cells. The existing
 CPU/GPU executors only run valid prepared tasks. The final comparison job1210601
 depends on all four collection jobs. Exact commands/wrappers/pins are under
 `workspaces/union_adaptive_20260923/transfer225_v1/`; production is unchanged.
+The four solver jobs were subsequently broadened in place to
+`gpu,standard-shared`;64CPUs/128GiB, job IDs, priorities and dependencies stayed
+unchanged. `CPU_PARTITION_UPDATE_v1.json` preserves each before/after scheduler
+record. The original wrapper's submission directive remains historical evidence.
 
 ```bash
 cd /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs
 UNION_PY=/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python
 UNION_STAGE=$PWD/workspaces/union_adaptive_20260923/transfer225_v1
 export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
-squeue -j 1210573,1210574,1210575,1210576,1210586,1210587,1210588,1210589,1210590,1210591,1210592,1210593,1210601
+sacct -X -j 1210573,1210574,1210575,1210576,1210586,1210587,1210588,1210589,1210590,1210591,1210592,1210593,1210601 -o JobID,State,Elapsed,AllocCPUS
 "$UNION_PY" scripts/union_adaptive_transfer.py validate_selection \
   --inputs "$UNION_STAGE/INPUTS_shard_0.json" \
   --calibration workspaces/consistent_context_20260922/calibration28_v1/collection_final_v2.json
 "$UNION_PY" -m unittest discover -s tests -p test_union_adaptive_transfer.py -v
 ```
 
-After all four terminal collections exist, the comparison can be replayed with
+All four terminal collections exist. The comparison can be replayed with
 no molecular work into a new output path:
 
 ```bash

@@ -1,0 +1,20 @@
+test_actual_old_gradient_matches_mapping_chain_rule (test_native_solvent_force.RealFixtures.test_actual_old_gradient_matches_mapping_chain_rule) ... ok
+test_corrupted_real_manifest_rejected (test_native_solvent_force.RealFixtures.test_corrupted_real_manifest_rejected) ... ok
+test_exact_paired_coordinates_and_physical_caps (test_native_solvent_force.RealFixtures.test_exact_paired_coordinates_and_physical_caps) ... ok
+test_fixed_actual_displacement_manifest (test_native_solvent_force.RealFixtures.test_fixed_actual_displacement_manifest) ... ok
+test_restart_recipe_preserves_native_solver (test_native_solvent_force.RealFixtures.test_restart_recipe_preserves_native_solver) ... ok
+test_terminal_role_and_rms_measure_are_declared (test_native_solvent_force.RealFixtures.test_terminal_role_and_rms_measure_are_declared) ... ERROR
+
+======================================================================
+ERROR: test_terminal_role_and_rms_measure_are_declared (test_native_solvent_force.RealFixtures.test_terminal_role_and_rms_measure_are_declared)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/tests/test_native_solvent_force.py", line 42, in test_terminal_role_and_rms_measure_are_declared
+    for key,meta in d['maps'].items(self):
+                    ^^^^^^^^^^^^^^^^^^^^^
+TypeError: dict.items() takes no arguments (1 given)
+
+----------------------------------------------------------------------
+Ran 6 tests in 3.525s
+
+FAILED (errors=1)

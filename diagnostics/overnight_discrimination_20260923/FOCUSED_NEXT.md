@@ -89,3 +89,22 @@ calibration rule; old-band transfer remains separate. New bands are not inherite
 The full55 component decomposition is
 [recorded separately](CONTEXT_CONTRAST_AUDIT.md). Its source/energy algebra is
 read-only and supplies no added classifier or fitted parameter.
+
+## Strict stopping pilot passed; uniform qualification executing
+
+The20-call diagnostic completed: all ten two-start scalar cells agree within
+2.55e-7kcal, at17s×20CPU=340allocatedcore-s, zeroGPU. Root authorized the next
+uniform32 qualification, then clarified the design before any full-panel
+manifest/submission: compare fresh strict NoAutostart calculations against strict
+continuations from each exact original loose-cold seed. The previously suggested
+full cold-seed/pass2-seed design and separate ten-cell direct-start check were
+never prepared or executed.
+
+Same32 sources/384cells, TolE1e-10Eh/300K/MaxIter500/native mixer, unchanged
+coordinates/chemistry/MACE. Fresh384 and seeded374new+10exactreuses:758new calls
+in job1211270,32CPU/64GiB, noGPU. Preserve per-cell0.1kcal and paired/pool0.2kcal
+agreement gates, all failures, both raw matrices and separately gated canonical
+references. Only25 original canonical cases may fit; crystals/folds stay outside.
+No favorable-start selection. The fresh branch is the proposed one-call route;
+the seeded branch includes the cost of its prior loose-cold call. These are
+development qualification branches, not a production/default change.

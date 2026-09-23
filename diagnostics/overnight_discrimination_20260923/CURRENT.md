@@ -54,9 +54,17 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   recovery. Ten tests pass; final commitaf092ab. Both losses are A8R3S4 triples
   omitting neutral Ser352. The same four motions/candidate choices persist;
   origin solvent offsets account for most of the shift, while differential
-  accommodation slightly decreases. Second_shell is finishing the exact audit.
-  Khoury now audits actual omitted-heavy-atom contacts across all55 changed pairs
-  and matched ten-fold proposals, with no new molecular energies or decision rule.
+  accommodation slightly decreases. The exact audit is committed8f9c6ba.
+  Khoury's omitted-contact audit41dca63 finds no newly created heavy contact below
+  2.0Å among110 three-fold and110 matched ten-fold proposals; four tests pass.
+  Root's all55 component decompositionf58a913 finds larger solvent than native
+  shifts in36/55 pairs, not universally towardLa. No clash correction is justified.
+  Second_shell now owns the general4.3Å envelope preparation/pilot inventory.
+  All135 prepared pairs and34pilot inputs pass;94triples retain support and six
+  old exclusions remain. Fragment selections decrease34→27 across references.
+  Sizes169–218atoms. Independent review confirms maps/anchors/state; a future
+  defining-triple failure-propagation edge is being fixed without changing any
+  actual successful geometry. No envelope molecular work has launched yet.
 - **Numerical diagnosis:** exact geometry×rank test1211105 completes four missing
   scalar cells. For both Q4Ca2 and P385La2, old/new geometry energy jumps are the
   same at1 and8ranks; maximum rank interaction1.25e−9kcal. This isolates the tested
@@ -66,10 +74,13 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   zeroGPU. Raw old-band calls improve31correct/1inconclusive to32correct, including
   canonical25/crystals3 unchanged. Five canonical pools fail settling, so its
   reference remains unavailable. This is not a selective favorable-cell repair.
-  Water now owns one separately versioned20-call diagnostic: the five failing
-  La cells plus their Ca counterparts, nativeTolE1e-10Eh from each exact cold and
-  pass2 seed, unchanged300K/MaxIter500. Compare independent starts at0.1kcal;
-  no further pass, score/reference repair or force-qualification claim. See
+  Strict20 is now complete,commitc0f8c08: all ten two-start cells agree within
+  2.55e-7kcal atTolE1e-10Eh. Cost17s×20CPU=340core-s, zeroGPU. This does not yet
+  repair a whole score/reference or qualify forces. Water now runs1211270:
+  same32pools/384cells, strict fresh NoAutostart versus strict from original loose
+  cold seeds;758new calls/10exactreuses. Both branch references require all25
+  canonical members and predeclared agreement gates. Fresh and seeded costs stay
+  separate; no hidden substitution or claim that seeded work is one-call use. See
   [focused next questions](FOCUSED_NEXT.md) for the recorded purpose and scope.
 
 Older running/pending prose below is

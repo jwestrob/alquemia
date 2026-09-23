@@ -22,13 +22,18 @@ Its solvent components remain numerically sensitive; it is not an identical
 replacement. The exact rank/geometry diagnostic attributes the two tested jumps
 to geometry/electronic solution, not rank. Uniform two-pass continuation is now
 complete: raw old-band calls32/32 correct, but five canonical pools fail settling;
-no new calibrated reference is available. Water owns a finite20-call stricter
-native stopping diagnostic on those five La cells and their Ca counterparts.
+no new calibrated reference is available. The stricter20-call diagnostic passes
+all ten two-start energy checks. Water now runs1211270: same32 fixed pools,
+strict fresh starts versus strict continuations from original cold seeds,
+758new/10reused scalar calls. No new MACE/search/DFT or automatic promotion.
 The full100 three-fold-context transfer regresses94correct to92correct/2inconclusive
 (six unchanged unavailable). Both losses are A8R3S4. Smaller-context origins lose
 their solvent margin; differential accommodation itself is slightly smaller.
-Second_shell owns the component audit; Khoury owns an omitted-contact audit of
-all55 changed pairs and their ten-fold counterparts. The general three-source
+The completed component and omitted-contact audits find no new severe protein
+clashes. Second_shell now prepares a general4.3Å motion-envelope pilot: all135
+prepared pairs/34pilot inputs pass,94triples retain support; six old exclusions
+remain. Exact reuse and finite MACE/scalar execution are separate next steps.
+The general three-source
 API/executor is implemented and preflighted, but its PLM molecular launch is held.
 Khoury's fresh ten-source comparison completes10/10correct versus released8/1/1,
 at358s versus451s on the same host (batching differs). Follow current finite

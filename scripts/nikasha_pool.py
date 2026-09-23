@@ -213,6 +213,9 @@ def prepare(source, population, agreement, output, shards):
 
 def validate(manifest):
     m = read_json(manifest)
+    if m['protocol_id'] == 'nikasha_union_adaptive_minimal_common_geometry_native_OMOL_GFN2_ALPB_v1':
+        from union_adaptive import validate_pool
+        return validate_pool(manifest)
     if m['protocol_id'] in ('nikasha_declared_finite_geometry_native_OMOL_GFN2_ALPB_v1',
                             'nikasha_collective_scaffold_geometry_native_OMOL_GFN2_ALPB_v1'):
         from nikasha_finite_candidates import validate as validate_finite

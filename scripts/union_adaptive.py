@@ -32,6 +32,9 @@ def declared_population(inputs,calibration):
     if population=='common8':
         if len(data['cases'])!=8:raise InvalidArtifact('exact common8 required')
         return population,8
+    if population=='transfer225_shard':
+        from union_adaptive_transfer import validate_selection
+        return population,validate_selection(inputs,calibration)['new_sources']
     if population!='canonical_remaining24':raise InvalidArtifact('undeclared union population')
     if data['calibration']!=record(calibration):raise InvalidArtifact('canonical union source collection differs')
     cal=read_json(calibration);canonical=[r for r in cal['rows'] if r['canonical_coordinate_match']]
@@ -155,7 +158,7 @@ def prepare(preparation,crystals,calibration,transfer,inputs,source,agreement,ou
         cases=cases,tasks=tasks,declared_case_ids=[r['case_id'] for r in rows],implementation=snapshot(out/'implementation'),
         optimizer_software={'version':scipy.__version__,'wrapper':record(scipy_slsqp.__file__),'kernel':record(scipy_kernel.__file__)},
         population=population,maximum_optimizer_starts=2*count,new_origin_calls=0,maximum_cross_MACE_calls=2*count,maximum_GFN2_calls=8*count,
-        production_changed=False,new_DFT_calls=0,reference=None)
+        production_changed=False,new_DFT_calls=0,reference=read_json(inputs).get('reference'))
     mp=out/'manifest.json';write_new(mp,m);result=validate(mp);write_new(out/'PREFLIGHT.json',result);return result
 
 
@@ -278,7 +281,7 @@ def prepare_pool(proposals,agreement,output):
         declared_case_ids=m['declared_case_ids'],cases=cases,tasks=tasks,implementation=snapshot(out/'implementation'),
         population=m.get('population','common8')+'_union_adaptive_minimal',shard_count=1,new_MACE_cells=sum(not t.get('native_reuse') for t in tasks),
         maximum_new_GFN2_calls=2*len(tasks),new_DFT_calls=0,new_optimizations=0,GFN2_maxiter=500,
-        numerical_policy_id='native_GFN2_MaxIter500_unchanged_convergence_v1',reference=None,production_changed=False)
+        numerical_policy_id='native_GFN2_MaxIter500_unchanged_convergence_v1',reference=m.get('reference'),production_changed=False)
     path=out/'manifest.json';write_new(path,pm);check=validate_pool(path);pool.low_prepare(path);write_new(out/'PREFLIGHT.json',check);return check
 
 
@@ -286,7 +289,7 @@ def validate_pool(manifest):
     m=read_json(manifest);source=read_json(verify(m['source']));sm=read_json(verify(m['source_manifest']));validate(verify(m['source_manifest']))
     count=len(sm['cases'])
     if (m['protocol_id']!=POOL_PROTOCOL or m['settings']!=POOL_SETTINGS or m['GFN2_maxiter']!=500 or
-        source['manifest']!=m['source_manifest'] or m['declared_case_ids']!=sm['declared_case_ids'] or len(m['cases'])!=count or
+        source['manifest']!=m['source_manifest'] or m['declared_case_ids']!=sm['declared_case_ids'] or m.get('reference')!=sm.get('reference') or len(m['cases'])!=count or
         m['maximum_new_GFN2_calls']!=2*len(m['tasks']) or len(m['tasks'])>4*count or m['new_MACE_cells']>2*count):
         raise InvalidArtifact('fixed minimal union pool differs')
     for key in ('model','software','orca','cpu_python','gpu_python','resources'):

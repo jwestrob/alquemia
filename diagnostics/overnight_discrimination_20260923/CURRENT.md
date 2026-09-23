@@ -10,36 +10,47 @@ below and resolves the pending choice in the older checkpoint. Production
 promotion, a full PLM rescore and the separately gated quantum campaign are not
 included. No arbitrary project-wide time or compute cap is reinstated.
 
-## Latest checkpoint — September23, after the six-source PLM integration
+## Final checkpoint — September23
 
-- Strict225 and matched static ablation are complete:207/0/1/17 versus199/1/8/17
-  on the same208 supported sources. This is a demonstrated accommodation gain.
-- Six-angle9 is complete and closed, commits a0271a4/30602fc; no extra searches.
-- Envelope full100 is running under second_shell, checkpoint2ae1e24. All202
-  originMACE and404strict scalar cells succeeded. Exact-byte runner-path recovery
-  retained all original calculations/receipts; failed empty downstream stages
-  remain costed. Actual replacement searches1211693/1211697 feed cross
-  1211694/1211698, scalar1211695/1211699 and collectors1211696/1211700. No duplicate
-  molecules or collectors. Frozen reference,101newpools+3reuses,100triples.
-- Two-PLM-triple integration1211626 completes, commit0f2a639:6/6sources,
-  183MACE/72strictGFN,251s/8032allocatedcore-s/251requestedGPU-s. Both mediansCa;
-  origin ranges40.138/72.416 narrow to2.307/17.230. Unknown labels, experimental
-  status; theA0A3Ca3 probe regression remains. Separate prep16.955s excludes
-  prior protonation. [Report](../pqq_three_source_envelope_execution_20260923/REPORT.md).
-- Root's overlayf3eac97 retains176original protein rows/34fields and appends
-  19candidate fields for the actual two groups;174unscored. Four join tests pass.
-  [Report](../plm_candidate_overlay_20260923/REPORT.md).
-- Khoury now generalizes only the experimental execution API to any explicit
-  supported complete triples, preserving historicalv1 and the identical method.
-  Preflight real existing inputs separately/together; zero new chemistry.
-- Water now describes actual six-source donor movements/typed contacts and an
-  editable response figure from saved coordinates, no new score/threshold/run.
-- Root owns integrated outcome, shared guide/checkpoint, exports and email.
-  Latest email reports strict225/ablation with figure; next waits for a substantive
-  completed result. Production, full cohort and gatedquantum stay unchanged.
+All owned jobs, collectors and agent tasks in this round are complete. No work
+remains running in the background. [Delivery and practical next command](DELIVERY.md).
 
-The following record retains the chronological experiments and their decisions;
-this checkpoint supersedes older running/preparation statuses.
+- Strongest strict-tenfold225 result remains207/0/1/17; matched static ablation
+  199/1/8/17 proves useful accommodation beyond pocket preparation. Original
+  released errors remain repaired; C5AXLa3 is inconclusive.
+- Motion-envelope full100 primary completes91 correct/9 unavailable. One real
+  500-cycle SCFfailure blocks3triples;6old exclusions remain. The separate two-
+  seed sensitivity restores94correct/6unavailable without changing geometry,
+  Hamiltonian or bands. Primary/source/cost records stay unchanged.104unique
+  pairs become100correct/4inc in the sensitivity, versus strict-tenfold103/1.
+  On91 matched complete triples, same-context origins give89correct/2inc;
+  accommodation gives91correct. Spread is not uniformly improved:39decrease/
+  52increase versus origin; medians7.180→8.941. Ca3 pilot regression remains.
+  Primary c608713, recovery7991561; root pooled sensitivity recorded separately.
+- Exact two-PLM-triple integration0f2a639 completes6/6 sources in251s,
+  8032allocatedcore-s/251requestedGPU-s,183MACE/72GFN. Separateprep16.955s,
+  archivedprotonation reused. Both mediansCa; unknown labels. Geometry report
+  7e5b738 traces actual short-Asp-contact relief and seven bounded candidates;
+  ranges40.138→2.307 and72.416→17.230. Root overlayf3eac97 retains all176 original
+  rows/34fields and appends19candidate fields for only2groups;174not_scored.
+- Reusable experimental execution APIaae102d derives finite tasks from explicit
+  supported complete triples; same method/reference, historicalv1 preserved.
+  Separate and jointv2 preflights pass; no newv2 molecular execution or default.
+- Six-angle9 branch30602fc closed: C5AX extraCa/La works cancel and probe
+  separation worsens. No additional starts, refit or canonical expansion.
+- Strict donor-responsea254f52 completes36logicalcells (32new+4reused),
+  1216allocatedcore-s/zeroGPU. Max responsechange0.08082kcal; the solvent-added
+  DFT disagreement is not explained by loose stopping. No furthercalls.
+- Two-start failed-cell recovery1211825 takes21s on2CPU (42allocatedcore-s),
+  zeroGPU; energies agree1.43714e-7kcal. Fixedorigin-seededresult, no favorable
+  choice. Its sensitivity is separate; genericAPI has no automaticretry policy.
+- Root sent Jacob the completed practical findings and geometry figure using
+  the authorized mail relay; accepted, delivery confirmation unavailable.
+  Methods draft and vault are updated. Production, full cohort, DFT access and
+  separately gated quantum work remain unchanged. No push or goal-status change.
+
+The following record retains chronological experiments and decisions. This final
+checkpoint supersedes older running/preparation statuses; do not duplicate them.
 
 ## Current ownership and results
 

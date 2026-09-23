@@ -1,48 +1,52 @@
 # Agent entry point
 
-## Active overnight discrimination work — 2026-09-23
+## Completed overnight discrimination work — 2026-09-23
 
-Jacob authorized discretionary contained experiments and parallel agents. Read
-[the live scope and ownership](diagnostics/overnight_discrimination_20260923/CURRENT.md)
-before acting. Preserve production/static, explicitDFT, historical artifacts and
-other agents' jobs. No cohort rescore or separately gated quantum launch.
+Jacob authorized discretionary contained experiments and parallel agents. The
+round is complete; all owned jobs and collectors are terminal. Read
+[the delivery](diagnostics/overnight_discrimination_20260923/DELIVERY.md) and
+[checkpoint](diagnostics/overnight_discrimination_20260923/CURRENT.md) before
+new work. Preserve production/static, explicit DFT and all original artifacts.
 
-Strongest completed ten-fold-context candidate:207correct/0wrong/1inconclusive/
-17unavailable on225 consumed structures, both released errors repaired, all94
-available three-source subsets correct. Same-solver static ablation gives
-199/1/8/17, so accommodation itself adds useful decisions. Strict scalar energies
-are qualified, not solvent forces. Read
-[full transfer](diagnostics/strict_native_transfer_20260923/REPORT.md) and
-[ablation](diagnostics/strict_static_ablation_20260923/REPORT.md).
+Strongest completed ten-fold-context/adaptive candidate: 207 correct, zero wrong,
+1 inconclusive, 17 unavailable among 225 consumed structures; both released
+errors repaired. Same-solver static pockets give 199/1/8/17, demonstrating a
+contribution from accommodation. All 94 supported three-source subsets remain
+correct. [Full result](diagnostics/strict_native_transfer_20260923/REPORT.md).
 
-The practical4.3Å three-source envelope pilot retains25canonical/3crystal calls
-and restores both A8 probes lost by3.5Å, but A0A3Ca3 becomes inconclusive.
-Second_shell owns its full100-triple transfer:104source/context pairs,3exact
-pilot reuses,101newpools; frozen reference/method,94supported+6old unavailable
-triples. All202MACE/404strictGFN origins completed. A byte-identical runner-path
-collection failure was recovered with original receipts and no molecule rerun;
-failed/empty initial chains remain in accounting. Replacement finite searches
-1211693/1211697, cross1211694/1211698, scalar1211695/1211699 and collectors
-1211696/1211700 are owned; do not duplicate them. Read
-[transfer plan](diagnostics/motion_envelope_transfer_20260923/PLAN.md).
+The practical 4.3 Å three-source envelope has now completed its full100 test:
+primary 91 correct/9 unavailable, including one actual failed scalar cell that
+blocks three triples. Two prescribed same-metal electronic restarts converge
+and agree; the separately named recovery sensitivity restores 94 correct/6 old
+exclusions. The original primary result remains unchanged. Four of104 individual
+source/context pairs are inconclusive, versus one under strict tenfold; the
+separate A0A3Ca3 pilot also becomes inconclusive. Fold spread does not uniformly
+shrink. Keep these limitations alongside the complete median-call fidelity.
+[Primary](diagnostics/motion_envelope_transfer_20260923/REPORT.md),
+[recovery](diagnostics/native_failed_cell_recovery_20260923/POOLED_SENSITIVITY.md).
 
-Khoury's exact two-PLM-triple integration completed all6sources in251allocation
-seconds on1H200/32CPU:183MACE/72strictGFN, no molecular failures. Both medians
-remainCa-supported; accommodation narrows source spread. Their true preferences
-are unknown. [Result](diagnostics/pqq_three_source_envelope_execution_20260923/REPORT.md).
-Root's [overlay](diagnostics/plm_candidate_overlay_20260923/REPORT.md) appends these
-two candidate results to176proteins, preserving every originalDFT/expression
-field;174 remain explicitly unscored. Khoury now generalizes the same opt-in
-execution interface to explicit complete triples, preflight only, no chemistry.
-Water owns a read-only donor-movement explanation/figure for the six PLM sources.
-Root owns integrated comparison, shared docs, PLM export and substantive email.
+The actual two-PLM-triple integration completes all6 sources in251 allocation
+seconds on1 H200/32 CPU, with183 MACE/72 strictGFN calls. Both medians remain
+Ca-supported on the candidate scale; their true preferences are unknown.
+Short-contact relief reduces the two source-score ranges substantially.
+[Physical response](diagnostics/plm_envelope_response_20260923/REPORT.md).
+The [reusable opt-in API](diagnostics/pqq_three_source_envelope_api_20260923/COMMANDS.md)
+accepts explicit complete prepared triples. Interfacev2 preflights are unexecuted;
+actual integration remains v1. Automatic restart is not part of the API.
+Root's [overlay](diagnostics/plm_candidate_overlay_20260923/REPORT.md) appends only
+these two actual groups to176 unchanged original protein/DFT/expression records.
 
-The nine-source six-angle extension is complete and closed: extraCa/La works
-cancel forC5AXLa3; old-band calls and raw probe separation worsen. Keep four
-angles; no expanded calibration or tuned bounds. LanM La/Dy structural transfer,
-standalone-solvent replacement, generic scaffold proposal and solvent-force
-continuation branches are also closed. Do not repeat them. Older statuses below
-are historical; use the linked actual results and live ownership.
+Six-angle expansion failed to add useful discrimination and is closed. Strict
+solver repetition on all old DFT-tested donor motions changes response by at
+most0.081 kcal/mol; solvent-added DFT disagreement remains. LanM series transfer,
+standalone-solvent replacement, generic scaffold proposals and solvent-gradient
+continuation are also closed. Do not rerun them from older checkpoints.
+
+All three agents have completed reports/tests/vault notes and released ownership.
+Root owns delivery, shared docs, the joined tables and substantive email (sent
+with the physical-response figure). No production promotion, cohort rescore,
+new DFT/folding, remote push or goal-status change occurred. Older text below
+is historical and does not authorize restarting completed campaigns.
 
 ## Restart/scaffold round completed; LanM follow-up requested — 2026-09-22
 

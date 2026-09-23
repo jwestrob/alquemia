@@ -11,22 +11,35 @@ the canonical32-source fresh/seeded check qualifies scalar energies, not forces.
 Same-solver static pockets give199/1/8/17, establishing additional utility from
 accommodation. [Matched ablation](../diagnostics/strict_static_ablation_20260923/REPORT.md).
 
-This remains a candidate. The practical three-source4.3Å buffered-pocket pilot
-retains25canonical/3crystal calls and5/6probes, with a newA0A3Ca3 inconclusive.
-Its full100-triple transfer is running separately; do not inherit ten-fold
-performance. [Pilot](../diagnostics/motion_envelope_20260923/REPORT.md).
-The exact two-PLM-triple integration completes all6sources in251allocation seconds
-on1H200/32CPU, with smaller score spreads and both mediansCa-supported. Unknown
-labels remain unknown. [Commands/result](../diagnostics/pqq_three_source_envelope_execution_20260923/COMMANDS.md).
-The [protein-table overlay](../diagnostics/plm_candidate_overlay_20260923/REPORT.md)
-preserves all176 original rows/DFT/expression fields and appends only these two
-computed candidate groups.174 proteins remain explicitly unscored. No cohort
-rescore or production promotion. Six-angle expansion did not earn its cost and
-is closed; retain four-angle accommodation.
+The practical three-source4.3Å envelope has also completed transfer. Its original
+primary result is91correct/9unavailable; a separately qualified two-start repair
+of one failed solvent cell restores94correct/6old exclusions. All available group
+calls are correct, but individual-source abstentions increase and spread does
+not uniformly shrink. [Primary](../diagnostics/motion_envelope_transfer_20260923/REPORT.md),
+[separate recovery](../diagnostics/native_failed_cell_recovery_20260923/POOLED_SENSITIVITY.md).
+The A0A3Ca3 pilot regression remains explicit. This is an experimental three-source
+route; do not give individual inputs the ten-fold candidate's performance claim.
+
+The two-PLM-triple integration completes all6sources in251 allocation seconds on
+1H200/32CPU, with smaller score ranges and both mediansCa-supported; actual labels
+remain unknown. [Physical result](../diagnostics/plm_envelope_response_20260923/REPORT.md).
+Use the [generic opt-in commands](../diagnostics/pqq_three_source_envelope_api_20260923/COMMANDS.md)
+for explicit complete prepared triples. Interfacev2 changes scope handling only;
+its preflight examples are unexecuted, and historicalv1 replay works. The API
+uses fresh strict endpoints; the separate recovery is not an automatic retry.
+Source protonation currently requires compatible archived preparation.
+
+The [protein overlay](../diagnostics/plm_candidate_overlay_20260923/REPORT.md)
+preserves all176 original rows/DFT/expression fields and appends only the two
+computed candidate groups.174 remain unscored. A concise
+[manuscript draft](../diagnostics/nikasha_manuscript_20260922/PLM_ACCOMMODATION_DRAFT_20260923.md)
+separates validated findings from limitations. No cohort rescore or promotion.
+All jobs/collectors in this round are terminal. Six-angle expansion and the
+strict-solvent response explanation are closed; do not repeat them.
 
 Production/static and explicitDFT commands below remain unchanged. Read the
-[live ownership](../diagnostics/overnight_discrimination_20260923/CURRENT.md)
-before launching; older warnings/results below describe their dated profiles.
+[final checkpoint](../diagnostics/overnight_discrimination_20260923/CURRENT.md)
+before new work; older warnings/results below describe dated profiles.
 
 ## Opt-in adaptive candidate and active research — 2026-09-23
 

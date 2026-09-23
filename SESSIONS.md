@@ -3490,3 +3490,30 @@ Proposed next: combine consistent membership and adaptive search under one new
 reference; the branches corrected different errors separately. Not executed;
 agree the combined analysis scope before launch. Production fastMACE/GFN2 and
 explicit DFT remain available. Broader accuracy goal stays open.
+
+
+## 2026-09-23 — root: practical accommodation delivered, full100 collected
+
+Jacob authorized discretionary contained overnight experiments and parallel agents.
+All owned jobs/collectors in the round are terminal. Strict-tenfold225 remains
+207correct/0wrong/1inconclusive/17unavailable; same-pocket static ablation199/1/8/17
+shows a useful contribution from movement. All94 available triples remain correct.
+Practical4.3Å full100 primary is91correct/9unavailable; one genuineSCFfailure blocks
+three triples. Separately qualifiedtwo-seed sensitivity restores94correct/6old
+exclusions without geometry/bandchanges. Primary untouched. Individual abstentions
+increase; fold spreads do not uniformly shrink. Read finaldelivery and reports.
+
+Two actual PLM triples complete6/6sources in251allocation seconds on1H200/32CPU,
+183MACE/72GFN; originalHpreparation reused. Bothmedian predictionsCa-supported,
+unknownlabels. Actualshort-Asp-contact relief accompanies smaller source ranges.
+GenericexperimentalAPI v2 preflights explicitcomplete triples; actualrun remainsv1.
+Rootoverlay retains176originalprotein/DFT/expression rows, adds only2actualgroups.
+Six-angleextension andstrict-solvent numerical explanation ofDFTerror bothclosed.
+No newDFT/folds/cohortrescore/defaultpromotion/pushorgoalstatuschange.
+
+Finalreports:diagnostics/overnight_discrimination_20260923/DELIVERY.md andCURRENT.md.
+Rootpooledsensitivity pins actualqualifiedrecovery; threeartifacttests pass.
+FourPLMjoin tests pass; agents'completedscoped checks/receipts are inlinkedreports.
+Substantiveemailwithphysical-responsefigure acceptedbylocalrelay; vaultupdated.
+Agents completed scopedcommits7e5b738,a254f52,aae102d,7991561,c608713 and released
+ownership. Root retains integration/docs/PLMexports; no duplicatechemistry needed.

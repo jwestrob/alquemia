@@ -199,3 +199,64 @@ shards:202originMACE,202bounded searches, at most202crossMACE,404origin plus
 at most808candidate strictGFN. All94 complete and six old unavailable triples
 remain. Preserve original3.5Å, released and strict-tenfold comparisons.
 No cutoff, bounds, threshold, labels or source selection changes; no promotion.
+
+
+## Strict solver response check using completed native DFT
+
+Root assigned water a small independent follow-up after the six-source PLM
+geometry report. Question: did the previously loose nativeGFN stopping rule
+cause the solvent contribution to worsen the known DFT donor-displacement
+response? Use every original case/angle already represented by
+`diagnostics/accommodation_torsion_20260920/FINAL_COMPONENTS_v1.json`:4MAE,
+PLM8344 andPLM07ab, angles0 and±0.2rad, both metals and bothmedia. Exact finite
+maximum36fresh scalar cells, with only actual compatible strict reuse deducted.
+Keep old coordinates, physical maps, charges, spin and chemical state intact.
+Reuse exact archivedMACE/nativeDFT values; no new MACE, DFT, optimization, folds,
+chemical states, classifications or calibration. All12 endpoint works and six
+paired differential responses remain in the comparison.
+
+Use the already qualified nativeGFN profile:TolE1e-10Eh,SmearTemp300,MaxIter500,
+NoAutostart,fresh,one rank,32workers/64GiB CPU-only via the existing pinned runner.
+Inventory/provenance/preflight precede submission; no arbitrary projectwide cap.
+No automatic molecular retries or favorable start selection. Report all failures,
+receipts and actual allocations. Agent may execute this exact checked scope
+under Jacob's discretionary overnight authorization without another permission
+loop. A larger or chemically changed experiment is outside this assignment.
+
+No response-accuracy tolerance was declared in the old study, so report observed
+errors rather than inventing a new pass threshold. The DFT(CPCM) and composite
+(ALPB transfer) energy models differ; numerical repair cannot imply exact
+Hamiltonian equivalence. No full-gradient, entropy or relaxed-candidate validation
+is claimed. A negative result closes this numerical explanation, not the useful
+accommodation classifier. Directory:`diagnostics/strict_donor_response_20260923/`.
+
+
+## Separate two-start diagnostic for the actual full100 SCF failure
+
+The original full100 envelope comparison retains a real failed cell:A0ACD6B9F2,
+La-conditioned sample0, La evaluated at theCa proposal in vacuum. NativeGFN2
+oscillates through500cycles and emitsLEANSCF error termination. The original
+process exit0 does not establish success; convergence/normal-termination checks
+correctly reject it. There is no OOM or launch evidence. All other807 candidate
+scalar cells and202searches complete. Do not rewrite this frozen primary result.
+
+Root assigned khoury an independent numerical recovery diagnostic, conditional
+on actual saved compatible seeds. Use this exact source/context/metal/charge/
+atom-order vacuum origin and successful ownLa-proposal electronic states.
+Exactly two starts at the failed unchanged coordinates:origin-seeded (predeclared
+proposed recovery) and ownLa-proposal-seeded (agreement check). No favorable
+energy selection. Retain nativeGFN2,TolE1e-10Eh,SmearTemp300,MaxIter500,one rank,
+unchanged mixer/Hamiltonian, and existing seeded runner/receipt logic. No cold
+rerun, added starts, geometry/state/band change or larger quantum work. If real
+seeds are absent, report that without invented values or silent recomputation.
+
+Both attempts must converge and agree within the previously used0.1kcal/cell
+scalar agreement tolerance. Otherwise keep recovery unavailable and close this
+attempt. Existing strict32 fresh/seed384 qualification is relevant evidence, not
+proof for a missing cell. Preserve actual seed/output hashes, all failures and
+cost. Any recovered matrix/summary is a separately named sensitivity result;
+no hidden replacement in the original comparison, no new calibration or default.
+Agent may execute the exact two checked cells after finite manifest/preflight
+under Jacob's standing discretionary scope. Root integrates only after both the
+original result and this diagnostic exist. Directory:
+`diagnostics/native_failed_cell_recovery_20260923/`.

@@ -53,7 +53,8 @@ def source_pair(source,parent,cid,diagnostic):
     return tasks
 
 
-def prepare(source,base_collection,diagnostic,agreement,output):
+def prepare(source,base_collection,diagnostic,agreement,output,execution_shards=1):
+    if execution_shards not in (1,4):raise InvalidArtifact('only declared serial/four-shard execution supported')
     parent=read_json(source);base=read_json(base_collection);bm=read_json(verify(base['manifest']));diag=read_json(diagnostic)
     if bm['source_manifest']!=record(source) or len(base['cases'])!=225:
         raise InvalidArtifact('exact primary225 base/source union required')
@@ -82,7 +83,8 @@ def prepare(source,base_collection,diagnostic,agreement,output):
        'optimizer_software':{'version':scipy.__version__,'wrapper':record(scipy_slsqp.__file__),'kernel':record(scipy_kernel.__file__)},
        'new_optimizer_starts':len(tasks),'endpoint_denominator':450,'new_DFT_calls':0,'new_GFN2_calls_in_this_adapter':0,
        'source_states_changed':False,'reference':None,'production_changed':False,'all_evidence_consumed':True,
-       'execution_requires_separate_frozen_reference':True}
+       'execution_requires_separate_frozen_reference':True,
+       'execution_partition':{'rule':'task_index_modulo','shards':execution_shards}}
     write_new(out/'manifest.json',m);r=validate(out/'manifest.json');write_new(out/'PREFLIGHT.json',r);return r
 
 
@@ -91,6 +93,9 @@ def validate(manifest):
     bm=read_json(verify(base['manifest']));diag=read_json(verify(m['diagnostic']))
     if m['protocol_id']!=PROTOCOL or m['settings']!=completion.SETTINGS or m['stage']!='primary225':
         raise InvalidArtifact('scaled numerical protocol differs')
+    partition=m.get('execution_partition',{'rule':'task_index_modulo','shards':1})
+    if partition.get('rule')!='task_index_modulo' or partition.get('shards') not in (1,4):
+        raise InvalidArtifact('unsupported execution partition')
     if bm['source_manifest']!=m['source_manifest'] or m['declared_case_ids']!=[b['case_id'] for b in base['cases']] or len(m['cases'])!=225:
         raise InvalidArtifact('source population/order changed')
     verify(m['agreement'])
@@ -143,7 +148,15 @@ def validate(manifest):
             'tasks':len(m['tasks']),'endpoint_denominator':450,'new_molecular_calls':0}
 
 
-def execute(manifest,reference):
+def shard_tasks(manifest_data,shard_index):
+    partition=manifest_data.get('execution_partition',{'rule':'task_index_modulo','shards':1})
+    count=partition['shards']
+    if partition['rule']!='task_index_modulo' or count not in (1,4) or not 0<=shard_index<count:
+        raise InvalidArtifact('invalid fixed execution shard')
+    return [(i,t) for i,t in enumerate(manifest_data['tasks']) if i%count==shard_index]
+
+
+def execute(manifest,reference,shard_index=0):
     validate(manifest);ref=read_json(reference)
     if (ref.get('protocol_id')!=SCALED_POOL or ref.get('proposal_protocol_id')!=PROTOCOL or
             ref.get('proposal_settings')!=completion.SETTINGS or not ref.get('frozen_at_UTC') or
@@ -151,11 +164,14 @@ def execute(manifest,reference):
         raise InvalidArtifact('matching separately frozen canonical reference required')
     if (not os.environ.get('SLURM_JOB_ID') or int(os.environ.get('SLURM_CPUS_ON_NODE','0'))!=32 or
             int(os.environ.get('SLURM_MEM_PER_NODE','0'))!=200000):raise InvalidArtifact('existing32CPU/200000MiB/GPU allocation required')
-    m=read_json(manifest);root=Path(manifest).parent;lock=(root/'proposal.lock').open('a+')
+    m=read_json(manifest);root=Path(manifest).parent;selected=shard_tasks(m,shard_index)
+    partition=m.get('execution_partition',{'rule':'task_index_modulo','shards':1})
+    lock_name='proposal.lock' if partition['shards']==1 else 'proposal_shard_'+str(shard_index)+'.lock'
+    lock=(root/lock_name).open('a+')
     fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB);began=time.monotonic();gpu=None;error=None;results=[]
     try:
         gpu=WarmGPU(manifest)
-        for t in m['tasks']:
+        for _,t in selected:
             pin=completion.optimize(manifest,t,gpu);results.append(pin)
             print(json.dumps({'task_id':t['task_id'],'status':read_json(verify(pin))['status']}),flush=True)
     except Exception as exc:error=str(exc)
@@ -164,12 +180,16 @@ def execute(manifest,reference):
             if gpu is not None:gpu.close()
         except Exception as exc:error=(error+'; ' if error else '')+str(exc)
         elapsed=time.monotonic()-began
-        write_new(root/('execution_'+os.environ['SLURM_JOB_ID']+'.json'),
+        write_new(root/('execution_'+os.environ['SLURM_JOB_ID']+'_shard_'+str(shard_index)+'.json'),
                   {'manifest':record(manifest),'frozen_reference':record(reference),'results':results,'error':error,
+                   'execution_partition':partition,'shard_index':shard_index,'lock_path':str(root/lock_name),
+                   'selected_task_indices':[i for i,_ in selected],
+                   'selected_task_ids':[t['task_id'] for _,t in selected],
                    'wall_seconds':elapsed,'allocated_core_seconds':elapsed*32,'allocated_GPU_seconds':elapsed,
                    'job_id':os.environ['SLURM_JOB_ID'],'new_DFT_calls':0,'new_GFN2_calls':0})
     if error:raise InvalidArtifact(error)
-    return {'status':'proposal_phase_complete','executed_tasks':len(m['tasks']),'endpoint_denominator':450}
+    return {'status':'proposal_shard_complete','shard_index':shard_index,
+            'executed_tasks':len(selected),'endpoint_denominator':450}
 
 
 def collect(manifest,output):
@@ -210,8 +230,10 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);s=p.add_subparsers(dest='op',required=True)
     q=s.add_parser('prepare')
     for k in ('source','base_collection','diagnostic','agreement','output'):q.add_argument('--'+k.replace('_','-'),required=True)
+    q.add_argument('--execution-shards',type=int,choices=(1,4),default=1)
     q=s.add_parser('dry-run');q.add_argument('--manifest',required=True)
     q=s.add_parser('execute');q.add_argument('--manifest',required=True);q.add_argument('--reference',required=True)
+    q.add_argument('--shard-index',type=int,default=0)
     q=s.add_parser('collect');q.add_argument('--manifest',required=True);q.add_argument('--output',required=True)
     a=vars(p.parse_args());op=a.pop('op');fn={'prepare':prepare,'dry-run':validate,'execute':execute,'collect':collect}[op]
     print(json.dumps(fn(**a),indent=2))

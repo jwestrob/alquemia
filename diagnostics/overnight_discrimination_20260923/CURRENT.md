@@ -28,7 +28,9 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   eventually converging. **Full225 transfer now authorized:**208 prepared origins,
   17 exact exclusions,4 reused pilotpools,204 new sources in4 disjoint51-source
   warmGPU shards;408 searches/408 cross-MACE/1632 GFN2 maximum before failures.
-  Original optimizer/settings stay fixed. See
+  Original optimizer/settings stay fixed. Proposal jobs1210573–1210576 have
+  finite after-any follow-ons: CPU1210586/88/90/92, then cross-MACE plus collection
+  1210587/89/91/93. Do not duplicate these collectors. See
   [physical interpretation](CONTEXT_MECHANISM_NOTE.md).
 - **water_basins:** [standalone xTB pilot](../standalone_xtb_20260923/REPORT.md)
   completed224/224 physical calls: all four numerical pool checks and14/14 tight
@@ -52,12 +54,16 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   gradient backend supports the separately declared solvent-aware search below.
   Original parser-only unavailable collection is preserved; all executable
   attempts actually succeeded.
-  Water now owns a small **numerical stopping-precision pilot** in exact union
+  Water completed the **numerical stopping-precision pilot** in exact union
   contexts:Q89GY2,Q9Z4J7,1H4I,A0A3Ca1;8 searches/8 cross-MACE/32 nativeGFN max.
-  Change only private optimizer ftol to1e−8Hartree; keep source/selector/200iter/
-  physical bounds unchanged. Test nativeenergy closeness and R within existing
-  numerical scale, record cost and failures. No shared defaults, reference refit
-  or import into the frozen225 experiment. See agent plan when prepared.
+  Only private optimizer ftol changed to1e−8Hartree; source/selector/200iter/
+  physical bounds stayed unchanged. All8 searches/8 cross-MACE/32 nativeGFN
+  completed and all frozen gates passed. Total search wall417.11→37.98s;
+  Q89La1304→16 evaluations, with maximum pooled score change0.012467kcal and
+  unchanged choices/decisions. Cost8480 core-seconds/75 GPU-seconds. Four tests
+  pass; [report](../slsqp_precision_20260923/REPORT.md), commit35cff37. No shared
+  defaults, reference refit or import into frozen225. Water now independently
+  reviews the225 comparison, with no duplicate molecular work.
 - **khoury_benchmark:** expose the supported minimal adaptive scorer as a small
   opt-in source-to-score candidate, reusing existing physical preparation,
   selector, optimizer and shared scoring. Implement/test on completed recovery
@@ -78,7 +84,8 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   valid energy-selected candidates, no stationarity/entropy claim. At most1000
   new standaloneGFN/480MACE including16 missing baseline cells and cross-scores.
   No six-case calibration; compare strongest static/nativeadaptive and retain
-  missing/failed status. Exact admission policy/manifests precede execution.
+  missing/failed status. Frozen run_v3 job1210579 has been submitted; do not
+  duplicate it. Earlier run_v2 was unexecuted and remains preserved.
 - **root:** integration, actual benefit/cost comparison and substantive email.
   The [completed recovered ledger](../adaptive_minimal_pool_20260923/RECOVERY_REPORT.md)
   retains204 correct/1 wrong/1 inconclusive/19 unavailable among225. On206 common

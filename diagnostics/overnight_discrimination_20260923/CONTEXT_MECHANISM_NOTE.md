@@ -34,9 +34,10 @@ metal-dependent solvent response.
 
 The concrete hypothesis is that consistent local membership avoids fold-dependent
 omissions, while accommodation addresses strained donor arrangements. The eight
-source pilot supports pursuing that combination; full canonical and structural
-transfer tests are still needed to establish practical utility. A future three-fold
-scanner is not automatically equivalent to this ten-fold union policy.
+source pilot supported pursuing that combination. The subsequent canonical test
+retains25/25 plus3/3 consumed crystals with its own frozen reference; full225
+structural transfer is running. A future three-fold scanner is not automatically
+equivalent to this ten-fold union policy.
 
 ## Actual source records
 

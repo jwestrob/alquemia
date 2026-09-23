@@ -12,10 +12,21 @@ Same-solver static pockets give199/1/8/17, establishing additional utility from
 accommodation. [Matched ablation](../diagnostics/strict_static_ablation_20260923/REPORT.md).
 
 This remains a candidate. The practical three-source4.3Å buffered-pocket pilot
-is completing its final matrix cells; do not inherit ten-fold performance for it.
-Production/static and explicitDFT commands below remain available unchanged.
-Use the linked live checkpoint before any launch; earlier numerical warnings
-remain historical evidence and are not instructions to repeat completed tests.
+retains25canonical/3crystal calls and5/6probes, with a newA0A3Ca3 inconclusive.
+Its full100-triple transfer is running separately; do not inherit ten-fold
+performance. [Pilot](../diagnostics/motion_envelope_20260923/REPORT.md).
+The exact two-PLM-triple integration completes all6sources in251allocation seconds
+on1H200/32CPU, with smaller score spreads and both mediansCa-supported. Unknown
+labels remain unknown. [Commands/result](../diagnostics/pqq_three_source_envelope_execution_20260923/COMMANDS.md).
+The [protein-table overlay](../diagnostics/plm_candidate_overlay_20260923/REPORT.md)
+preserves all176 original rows/DFT/expression fields and appends only these two
+computed candidate groups.174 proteins remain explicitly unscored. No cohort
+rescore or production promotion. Six-angle expansion did not earn its cost and
+is closed; retain four-angle accommodation.
+
+Production/static and explicitDFT commands below remain unchanged. Read the
+[live ownership](../diagnostics/overnight_discrimination_20260923/CURRENT.md)
+before launching; older warnings/results below describe their dated profiles.
 
 ## Opt-in adaptive candidate and active research — 2026-09-23
 

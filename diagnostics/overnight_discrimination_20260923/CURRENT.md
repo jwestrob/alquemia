@@ -10,6 +10,37 @@ below and resolves the pending choice in the older checkpoint. Production
 promotion, a full PLM rescore and the separately gated quantum campaign are not
 included. No arbitrary project-wide time or compute cap is reinstated.
 
+## Latest checkpoint — September23, after the six-source PLM integration
+
+- Strict225 and matched static ablation are complete:207/0/1/17 versus199/1/8/17
+  on the same208 supported sources. This is a demonstrated accommodation gain.
+- Six-angle9 is complete and closed, commits a0271a4/30602fc; no extra searches.
+- Envelope full100 is running under second_shell, checkpoint2ae1e24. All202
+  originMACE and404strict scalar cells succeeded. Exact-byte runner-path recovery
+  retained all original calculations/receipts; failed empty downstream stages
+  remain costed. Actual replacement searches1211693/1211697 feed cross
+  1211694/1211698, scalar1211695/1211699 and collectors1211696/1211700. No duplicate
+  molecules or collectors. Frozen reference,101newpools+3reuses,100triples.
+- Two-PLM-triple integration1211626 completes, commit0f2a639:6/6sources,
+  183MACE/72strictGFN,251s/8032allocatedcore-s/251requestedGPU-s. Both mediansCa;
+  origin ranges40.138/72.416 narrow to2.307/17.230. Unknown labels, experimental
+  status; theA0A3Ca3 probe regression remains. Separate prep16.955s excludes
+  prior protonation. [Report](../pqq_three_source_envelope_execution_20260923/REPORT.md).
+- Root's overlayf3eac97 retains176original protein rows/34fields and appends
+  19candidate fields for the actual two groups;174unscored. Four join tests pass.
+  [Report](../plm_candidate_overlay_20260923/REPORT.md).
+- Khoury now generalizes only the experimental execution API to any explicit
+  supported complete triples, preserving historicalv1 and the identical method.
+  Preflight real existing inputs separately/together; zero new chemistry.
+- Water now describes actual six-source donor movements/typed contacts and an
+  editable response figure from saved coordinates, no new score/threshold/run.
+- Root owns integrated outcome, shared guide/checkpoint, exports and email.
+  Latest email reports strict225/ablation with figure; next waits for a substantive
+  completed result. Production, full cohort and gatedquantum stay unchanged.
+
+The following record retains the chronological experiments and their decisions;
+this checkpoint supersedes older running/preparation statuses.
+
 ## Current ownership and results
 
 - **Latest full-panel result:** [strict fresh scoring](../strict_native_transfer_20260923/REPORT.md)

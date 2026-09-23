@@ -3,59 +3,46 @@
 ## Active overnight discrimination work — 2026-09-23
 
 Jacob authorized discretionary contained experiments and parallel agents. Read
-[the current scope and ownership](diagnostics/overnight_discrimination_20260923/CURRENT.md)
-before resuming. The original LanM, native continuation, native-force and
-minimal-pool/recovery rounds are complete. LanM failed structural transfer;
-native continuation did not fix derivative consistency. Do not duplicate them.
+[the live scope and ownership](diagnostics/overnight_discrimination_20260923/CURRENT.md)
+before acting. Preserve production/static, explicitDFT, historical artifacts and
+other agents' jobs. No cohort rescore or separately gated quantum launch.
 
-The full225 union/adaptive comparison is complete:205correct/0wrong/1inconclusive/
-19unavailable, correcting both released errors; strict coverage and structural
-spread still have tradeoffs. Standalone solvent scoring and its force-guided
-search did not earn replacement use. Root owns integration/figures/email.
-The opt-in reference replay interface, repaired-H supplement,34-source stopping
-test and28-reference one-rank scalar qualification are complete. The stopping
-candidate retains34/34 calls but fails strict numerical equivalence on5/32 pools;
-keep its separate canonical reference. One-rank scalar energies pass all336 cells.
-The numerical candidate has now completed225 transfer:206correct/0wrong/2inconclusive/
-17unavailable, retaining both error repairs and recovering optimizer coverage.
-Its solvent components remain numerically sensitive; it is not an identical
-replacement. The exact rank/geometry diagnostic attributes the two tested jumps
-to geometry/electronic solution, not rank. Uniform two-pass continuation is now
-complete: raw old-band calls32/32 correct, but five canonical pools fail settling;
-no new calibrated reference is available. The stricter20-call diagnostic passes
-all ten two-start energy checks. Strict32 and the four-source supplement are now
-complete,commit2496b6f:384/384 start agreements, all32 sources and4 extra pools correct,
-and separate qualified fresh reference. Full225 fresh-strict transfer is complete:
-207correct/0wrong/1inconclusive/17unavailable, all94 available triples correct.
-All2400 new scalar cells pass; eight exact pools are reused. Q4 is repaired;
-C5AXV8 La3 remains inconclusive. Same-solver static ablation gives199/1/8/17,
-so accommodation adds useful decisions beyond consistent pocket preparation.
-See diagnostics/strict_native_transfer_20260923/REPORT.md and
-diagnostics/strict_static_ablation_20260923/REPORT.md. Root emailed the result.
-The full100 three-fold-context transfer regresses94correct to92correct/2inconclusive
-(six unchanged unavailable). Both losses are A8R3S4. Smaller-context origins lose
-their solvent margin; differential accommodation itself is slightly smaller.
-The completed component and omitted-contact audits find no new severe protein
-clashes. Second_shell runs the general4.3Å motion-envelope pilot: all135 prepared
-pairs/34pilot inputs pass,94triples retain support; six old exclusions remain.
-The envelope34 pilot is complete:33correct/0wrong/1inconclusive. Canonical25 and
-crystals3 pass; both A8 probes recover, but A0A3Ca3 becomes inconclusive. The
-tenfold comparator remains34/34. Full100 envelope transfer is now authorized
-after exact three-pool reuse/preflight:101 new pools,202 origins/searches/cross
-maximum and1212 strict scalar cells. No promotion. Khoury's opt-in preparation
-is complete; the exact six-source PLM integration is authorized separately as
-usability/cost testing, with unknown labels and preserved DFT outputs.
-The nine-source six-angle pilot completed all18 searches/18cross/72newscalar
-cells. C5AX's extra composite works cancel; old-band transfer worsens8/1 to6/3
-correct/inconclusive. Close this branch; no canonical expansion or new fit.
-Retain four-angle scoring. Water owns final report/tests/vault only.
-The general three-source
-API/executor is implemented and preflighted, but its PLM molecular launch is held.
-Khoury's fresh ten-source comparison completes10/10correct versus released8/1/1,
-at358s versus451s on the same host (batching differs). Follow current finite
-manifests and recorded submission boundaries; do not duplicate finished jobs.
-Production, broad PLM rescoring and the separately gated quantum campaign remain
-unchanged. Older proposed-only/pending-approval notes below are historical.
+Strongest completed ten-fold-context candidate:207correct/0wrong/1inconclusive/
+17unavailable on225 consumed structures, both released errors repaired, all94
+available three-source subsets correct. Same-solver static ablation gives
+199/1/8/17, so accommodation itself adds useful decisions. Strict scalar energies
+are qualified, not solvent forces. Read
+[full transfer](diagnostics/strict_native_transfer_20260923/REPORT.md) and
+[ablation](diagnostics/strict_static_ablation_20260923/REPORT.md).
+
+The practical4.3Å three-source envelope pilot retains25canonical/3crystal calls
+and restores both A8 probes lost by3.5Å, but A0A3Ca3 becomes inconclusive.
+Second_shell owns its full100-triple transfer:104source/context pairs,3exact
+pilot reuses,101newpools; frozen reference/method,94supported+6old unavailable
+triples. All202MACE/404strictGFN origins completed. A byte-identical runner-path
+collection failure was recovered with original receipts and no molecule rerun;
+failed/empty initial chains remain in accounting. Replacement finite searches
+1211693/1211697, cross1211694/1211698, scalar1211695/1211699 and collectors
+1211696/1211700 are owned; do not duplicate them. Read
+[transfer plan](diagnostics/motion_envelope_transfer_20260923/PLAN.md).
+
+Khoury's exact two-PLM-triple integration completed all6sources in251allocation
+seconds on1H200/32CPU:183MACE/72strictGFN, no molecular failures. Both medians
+remainCa-supported; accommodation narrows source spread. Their true preferences
+are unknown. [Result](diagnostics/pqq_three_source_envelope_execution_20260923/REPORT.md).
+Root's [overlay](diagnostics/plm_candidate_overlay_20260923/REPORT.md) appends these
+two candidate results to176proteins, preserving every originalDFT/expression
+field;174 remain explicitly unscored. Khoury now generalizes the same opt-in
+execution interface to explicit complete triples, preflight only, no chemistry.
+Water owns a read-only donor-movement explanation/figure for the six PLM sources.
+Root owns integrated comparison, shared docs, PLM export and substantive email.
+
+The nine-source six-angle extension is complete and closed: extraCa/La works
+cancel forC5AXLa3; old-band calls and raw probe separation worsen. Keep four
+angles; no expanded calibration or tuned bounds. LanM La/Dy structural transfer,
+standalone-solvent replacement, generic scaffold proposal and solvent-force
+continuation branches are also closed. Do not repeat them. Older statuses below
+are historical; use the linked actual results and live ownership.
 
 ## Restart/scaffold round completed; LanM follow-up requested — 2026-09-22
 

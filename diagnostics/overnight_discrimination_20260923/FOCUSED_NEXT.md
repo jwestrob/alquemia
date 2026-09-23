@@ -56,7 +56,36 @@ closed; this experiment does not repeat them or adjust model parameters.
 ## Decision sought
 
 Identify whether a concrete geometric omission or demonstrable numerical stop
-artifact needs repair before changing the representation. A small chemically
-consistent context expansion may be a later experiment, but it is not yet
-specified or executed here. No boundary refit will conceal the two A8 losses.
+artifact needs repair before changing the representation. No boundary refit
+will conceal the two A8 losses.
 Unknown PLM inputs remain useful integration fixtures, not classification labels.
+
+## Motion-envelope preparation assigned after the distance audit
+
+The actual omitted Ser352 oxygen lies3.5026–3.5466Å from its closest frozen
+donor anchor across the four A8 La folds, just beyond3.5Å. It never crosses
+inside3.5Å in the tested proposals. This is hard membership sensitivity, not
+an observed newly formed contact.
+
+Root assigned second_shell a versioned **4.3Å** polar-contact envelope, derived
+before new energies from existing3.5Å selection plus the frozen0.8Å maximum
+physical displacement. Use the same original donor anchors/functional groups,
+complete source fragments and union across the same three declared structures.
+Freeze membership before forces/search. The bound concerns original moving
+anchors versus omitted atoms held fixed; it is not a claim about all pairs of
+moving atoms or convergence of solvent/environment effects. Do not add waters,
+change protonation, or include Ser by identity.
+
+Prepare all100 original triples, the same canonical25 under their previously
+declared first complete triple, and three singleton crystals. Also prepare the
+four existing hard folds A0A3Ca1/Ca3,A0ACCa4/La4 and the two failing A8La1/La3
+source/context pairs. Retain six old unavailable triples and actual graph/map
+failures. Audit compatible prior origins/pools and report exact new atom/charge/
+task counts before molecular submission. Initial molecular pilot will be only
+canonical28 plus these six probes, with the existing four-mode/native-composite
+search and ftol1e-8. Only canonical25 may define a new reference using the fixed
+calibration rule; old-band transfer remains separate. New bands are not inherited.
+
+The full55 component decomposition is
+[recorded separately](CONTEXT_CONTRAST_AUDIT.md). Its source/energy algebra is
+read-only and supplies no added classifier or fitted parameter.

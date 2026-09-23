@@ -12,6 +12,7 @@ import itertools
 import json
 import os
 from pathlib import Path
+import re
 import shutil
 import sys
 import time
@@ -120,9 +121,12 @@ def checked(plan):
 
 def dry_run(plan):
     p,req,_,_=checked(plan)
+    root=Path(plan).parent;prep=root/'source_preparation/preparation.json'
+    preparation_status=('prepared' if read_json(prep)['supported']==len(req['cases']) else 'partial') if prep.exists() else 'not_executed'
     return {'plan':record(plan),'profile':p['profile'],'arm':p['arm'],'sources':len(req['cases']),
             'declared_calls':p['declared_calls'],'resources':p['resources'],'new_molecular_calls':0,
-            'fresh_source_preparation_status':'not_executed','submission_status':'not_submitted'}
+            'fresh_source_preparation_status':preparation_status,
+            'submission_status':'submitted' if (root/'SUBMISSION.json').exists() else 'not_submitted'}
 
 
 def fresh_preparation(plan,output):
@@ -313,7 +317,8 @@ def collect(plan,output):
     if p['arm']=='released-static':
         manifest=root/'prepared_score/scoring/manifest.json';result=None
         if manifest.exists():
-            generated=list(manifest.parent.glob('result_*.json'))
+            generated=[path for path in manifest.parent.glob('result_*.json')
+                       if re.fullmatch(r'result_[0-9]+\.json',path.name)]
             if len(generated)==1:
                 result=read_json(generated[0])
                 if result['manifest']!=record(manifest):raise InvalidArtifact('static collection manifest differs')

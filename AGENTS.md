@@ -1,5 +1,30 @@
 # Agent entry point
 
+## Restart/scaffold round completed; LanM follow-up requested — 2026-09-22
+
+Read [the completed round](diagnostics/scaffold_restart_round_20260922/REPORT.md)
+and [current ownership](diagnostics/scaffold_restart_round_20260922/CURRENT.md).
+All seven jobs/collectors are terminal. Native continuation removes the Q88La
+4.805 kcal artifact; no full predictive restart comparison has run. All80 saved
+seed pairs for the proposed four-pool follow-up exist; that follow-up is not
+automatically authorized by the completed diagnostic.
+
+Corrected collective scaffold proposals score8/8, but transferred adaptive calls
+degrade7correct/1wrong→3/5 and both A0AC La folds fall below two Ca controls in raw
+ordering. Reduced fold spread does not rescue this result. Close this generic
+protein-only proposal rule; do not enlarge its bounds or refit on these eight.
+The reusable Cartesian shared-pool primitive remains available. Production stays
+unchanged. Preserve failed CUDA, false-stereocenter and seed-only attempts.
+
+Jacob then requested a subagent for within-lanthanide LanM discrimination.
+Water_basins owns `diagnostics/lanm_series_followup_20260923/`: recover actual
+last tests, source/label compatibility and electronic-state support. Root asked
+whether to prioritize La/Dy solution affinity or La/Lu resin selectivity; these
+are distinct evidence types. No new series calculations have launched. Do not
+inherit La/Ca bands, silently force open-shell Dy into singlet adapters, or call
+raw cross-element core energies affinity. Root owns integration; other branches
+are complete. The broader improvement goal remains open.
+
 ## Completed parallel pilots — 2026-09-22
 
 Jacob approved alternative starts, solvent-guided proposals and direct local

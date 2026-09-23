@@ -7,9 +7,9 @@ from pathlib import Path
 from affordable_common import InvalidArtifact, read_json, record, verify, write_new
 from accommodation_folds_compare import decision
 from accommodation_fold_proposals import outcome
-from accommodation_nonlinear import relative_components
+from accommodation_nonlinear import relative_components, contrast_components
 from nikasha_pool import choose_rows, pinned
-from nikasha_finite_candidates import PROTOCOL, sources
+from nikasha_finite_candidates import protocol_for, sources
 
 
 def result_row(case, prior, expected, reference):
@@ -45,19 +45,70 @@ def result_row(case, prior, expected, reference):
     return row
 
 
+def scaffold_targets(case, prior):
+    """Paired target effects, including the unperturbed-donor control."""
+    rows = {}
+    for target, new_alias, old_alias in (('origin','scaffold_origin','origin'),
+                                        ('Ca_adaptive','scaffold_Ca','adaptive_Ca'),
+                                        ('La_adaptive','scaffold_La','adaptive_La')):
+        if new_alias not in case['aliases']:
+            rows[target] = {'status':'unavailable','reason':'required_mechanics_target_unavailable'}
+            continue
+        new = case['aliases'][new_alias]['representative']
+        old = prior['aliases'][old_alias]['representative']
+        cells = {z:case['matrix'][z][new] for z in ('Ca','La')}
+        before = {z:prior['matrix'][z][old] for z in ('Ca','La')}
+        if any(c['status']!='complete' for c in [*cells.values(),*before.values()]):
+            rows[target] = {'status':'unavailable','reason':'required_matched_energy_cell_unavailable',
+                            'candidate':new,'prior_candidate':old}
+            continue
+        works = {z:relative_components(cells[z]['components'],before[z]['components']) for z in ('Ca','La')}
+        current = contrast_components(cells['Ca']['components'],cells['La']['components'])
+        original = contrast_components(before['Ca']['components'],before['La']['components'])
+        delta = current['composite_R_model_kcal_mol']-original['composite_R_model_kcal_mol']
+        if abs(delta-(works['Ca']['composite_kcal_mol']-works['La']['composite_kcal_mol']))>1e-6:
+            raise InvalidArtifact('matched scaffold work sign or unit mismatch')
+        rows[target] = {'status':'available','candidate':new,'prior_candidate':old,
+                        'R':current,'prior_R':original,'delta_R':delta,'endpoint_work':works,
+                        'mechanics':case['aliases'][new_alias]['physical_checks']}
+    control = rows['origin']
+    for row in rows.values():
+        row['delta_R_minus_origin_response'] = (row['delta_R']-control['delta_R']
+            if row['status']=='available' and control['status']=='available' else None)
+    return rows
+
+
+def source_spreads(rows):
+    pairs = [('a0a3f2yly8-pqq-la_model__conditioned_Ca__seed-1_sample-1',
+              'a0a3f2yly8-pqq-la_model__conditioned_Ca__seed-1_sample-3'),
+             ('a0acd6b9f2-pqq-la_model__conditioned_Ca__seed-1_sample-4',
+              'a0acd6b9f2-pqq-la_model__conditioned_La__seed-1_sample-4')]
+    by_id = {r['case_id']:r for r in rows}; result = []
+    for a,b in pairs:
+        pair = {'case_ids':[a,b]}
+        for method in ('static','adaptive','candidate'):
+            values = [by_id[c][method+'_R'] for c in (a,b)]
+            pair[method+'_absolute_R_difference'] = None if any(v is None for v in values) else abs(values[0]-values[1])
+        result.append(pair)
+    return result
+
+
 def compare(inputs,collections,output):
     config=read_json(inputs);reference=pinned(config['adaptive_reference']);branches={}
     allowed={r['case_id']:r for r in config['cases']}
     for path in collections:
         data=read_json(path);m=pinned(data['manifest']);branch=m['branch']
-        if data['protocol_id']!=PROTOCOL or m['protocol_id']!=PROTOCOL or m['inputs']!=record(inputs):
+        protocol=protocol_for(branch)
+        if data['protocol_id']!=protocol or m['protocol_id']!=protocol or m['inputs']!=record(inputs):
             raise InvalidArtifact('not a matching finite pilot collection')
         if branch in branches:raise InvalidArtifact('duplicate branch collection')
         rows=[]
         for case in data['cases']:
             if case['case_id'] not in allowed:raise InvalidArtifact('undeclared source')
             source,prior,_,_=sources(config,case['case_id'])
-            rows.append(result_row(case,prior,source['known_class'],reference))
+            row=result_row(case,prior,source['known_class'],reference)
+            if branch=='collective_scaffold': row['matched_targets']=scaffold_targets(case,prior)
+            rows.append(row)
         expected=[r['case_id'] for r in config['cases'] if branch!='local_basin_breadth' or r['basin_four']]
         if [r['case_id'] for r in rows]!=expected or data['denominator']!=len(rows):
             raise InvalidArtifact('changed pilot denominator')
@@ -71,6 +122,9 @@ def compare(inputs,collections,output):
                           'MACE_calls_started':data['MACE_calls_started'],'MACE_calls_complete':data['MACE_calls_complete'],
                           'required_new_GFN2_calls':data['required_new_GFN2_calls'],'GFN2_complete':data['GFN2_complete'],
                           'local_basin_note':'row minima only; conditional integration reported separately' if branch=='local_basin_breadth' else None}
+        if branch=='collective_scaffold':
+            branches[branch]['predeclared_source_pair_spreads']=source_spreads(rows)
+            branches[branch]['matched_target_note']='origin response is an explicit protein-relaxation control; subtraction is descriptive, not an exact bias correction'
     result={'inputs':record(inputs),'implementation':record(__file__),'branches':branches,
             'new_molecular_calls_in_comparison':0,'new_calibration':None,'production_changed':False,
             'interpretation':'selected consumed development pilot; old-band transfer, no new calibrated accuracy estimate'}

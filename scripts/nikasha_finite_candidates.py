@@ -3,7 +3,9 @@
 The specification pins common pilot inputs and a branch agreement. Each case has
 case_id, status (prepared/unavailable), and candidates [{id, full_q, optional
 coordinate, optional native_reuse}]. native_reuse maps a metal to its real saved
-MACE receipt. Chemical states and source maps always come from the pinned inputs.
+MACE receipt. Collective scaffold candidates instead carry target and a pinned
+mechanics_receipt; full Cartesian source/cap reconstruction is checked without
+inventing angular coordinates. Chemical states come from the pinned inputs.
 """
 from __future__ import annotations
 import argparse
@@ -21,7 +23,19 @@ from mace_site_kinematics import Kinematics
 import nikasha_pool as pool
 
 PROTOCOL = 'nikasha_declared_finite_geometry_native_OMOL_GFN2_ALPB_v1'
-BRANCHES = ('structure_informed_starts', 'solvent_guided', 'local_basin_breadth')
+SCAFFOLD_PROTOCOL = 'nikasha_collective_scaffold_geometry_native_OMOL_GFN2_ALPB_v1'
+BRANCHES = ('structure_informed_starts', 'solvent_guided', 'local_basin_breadth', 'collective_scaffold')
+
+
+def protocol_for(branch):
+    if branch not in BRANCHES: raise InvalidArtifact('unsupported pilot branch')
+    return SCAFFOLD_PROTOCOL if branch == 'collective_scaffold' else PROTOCOL
+
+
+def candidate_metadata(candidate, branch):
+    if branch == 'collective_scaffold':
+        return {k: candidate[k] for k in ('target', 'mechanics_receipt')}
+    return {'full_q': candidate['full_q']}
 
 
 def sources(inputs, cid):
@@ -47,9 +61,12 @@ def sources(inputs, cid):
     return row, base, bm, tasks
 
 
-def physical_candidate(candidate, tasks, settings):
+def physical_candidate(candidate, tasks, settings, branch=None):
     if not re.fullmatch(r'[A-Za-z0-9_+-]+', candidate['id']):
         raise InvalidArtifact('unsafe candidate identifier')
+    if branch == 'collective_scaffold':
+        from nikasha_scaffold_candidates import physical_candidate as scaffold_candidate
+        return scaffold_candidate(candidate, tasks, settings)
     q = np.asarray(candidate['full_q'], dtype=float)
     rows = {}; checks = {}
     for z, task in tasks.items():
@@ -85,7 +102,8 @@ def load_spec(path):
     spec = read_json(path); inputs = pool.pinned(spec['inputs'])
     verify(spec['agreement']); verify(inputs['agreement'])
     if spec['branch'] not in BRANCHES: raise InvalidArtifact('unsupported pilot branch')
-    expected = {'maximum_angle_radian': .8, 'maximum_heavy_displacement_A': .8}
+    expected = ({'maximum_heavy_displacement_A': .8} if spec['branch'] == 'collective_scaffold'
+                else {'maximum_angle_radian': .8, 'maximum_heavy_displacement_A': .8})
     if spec['coordinate_limits'] != expected: raise InvalidArtifact('current approved physical domain changed')
     ids = [c['case_id'] for c in spec['cases']]
     declared = [r['case_id'] for r in inputs['cases'] if spec['branch'] != 'local_basin_breadth' or r['basin_four']]
@@ -100,6 +118,11 @@ def load_spec(path):
         if len(candidates) > maximum or len({p['id'] for p in candidates}) != len(candidates):
             raise InvalidArtifact('candidate count/identities differ')
         if c['status'] == 'prepared' and not candidates: raise InvalidArtifact('prepared source has no proposal')
+        if spec['branch'] == 'collective_scaffold':
+            if maximum != 3: raise InvalidArtifact('scaffold requires three declared target slots')
+            expected_targets = {'scaffold_origin': 'origin', 'scaffold_Ca': 'Ca_adaptive', 'scaffold_La': 'La_adaptive'}
+            if c['status'] == 'prepared' and {p['id']: p.get('target') for p in candidates} != expected_targets:
+                raise InvalidArtifact('scaffold source is missing a declared matched target')
     return spec, inputs
 
 
@@ -123,16 +146,17 @@ def prepare(specification, output, shards=1):
         for candidate in proposed['candidates']:
             name = candidate['id']
             if name in c['aliases'] or name in known: raise InvalidArtifact('new candidate shadows archived identity')
-            paired, checks = physical_candidate(candidate, endpoints, spec['coordinate_limits'])
+            paired, checks = physical_candidate(candidate, endpoints, spec['coordinate_limits'], spec['branch'])
+            metadata = candidate_metadata(candidate, spec['branch'])
             match = next((k for k, a in known.items() if pool.same_geometry(a, paired['Ca'])), None)
             if match is not None:
-                c['aliases'][name] = {'representative': match, 'full_q': candidate['full_q'], 'physical_checks': checks}
+                c['aliases'][name] = {'representative': match, **metadata, 'physical_checks': checks}
                 continue
             match = name; known[name] = paired['Ca']
             cd = out/'candidates'/cid/name; cd.mkdir(parents=True)
             xp = cd/'geometry.xyz'; write_xyz(xp, paired['Ca'])
-            c['candidates'].append({'id': name, 'xyz': record(xp), 'full_q': candidate['full_q']})
-            c['aliases'][name] = {'representative': match, 'source_xyz': record(xp), 'full_q': candidate['full_q'], 'physical_checks': checks}
+            c['candidates'].append({'id': name, 'xyz': record(xp), **metadata})
+            c['aliases'][name] = {'representative': match, 'source_xyz': record(xp), **metadata, 'physical_checks': checks}
             for z, endpoint in endpoints.items():
                 tid = cid+'__'+z+'__at_'+name; td = out/'cells'/tid; td.mkdir(parents=True)
                 cp = td/'context.xyz'; write_xyz(cp, paired[z])
@@ -148,7 +172,7 @@ def prepare(specification, output, shards=1):
     for path in Path(__file__).parent.glob('*.py'):
         dst = impl/path.name; shutil.copyfile(path,dst); pins[path.name] = record(dst)
     m = {k:reference[k] for k in ('model','software','orca','cpu_python','gpu_python','resources')}
-    m.update(protocol_id=PROTOCOL, branch=spec['branch'], specification=record(specification),
+    m.update(protocol_id=protocol_for(spec['branch']), branch=spec['branch'], specification=record(specification),
              agreement=spec['agreement'], inputs=spec['inputs'], cases=cases, tasks=tasks,
              declared_case_ids=[c['case_id'] for c in cases], implementation=pins, shard_count=shards,
              new_MACE_cells=sum(not t.get('native_reuse') for t in tasks), maximum_new_GFN2_calls=2*len(tasks),
@@ -162,7 +186,7 @@ def prepare(specification, output, shards=1):
 
 def validate(manifest):
     m = read_json(manifest)
-    if m['protocol_id'] != PROTOCOL: raise InvalidArtifact('finite pool protocol differs')
+    if m['protocol_id'] != protocol_for(m.get('branch')): raise InvalidArtifact('finite pool protocol differs')
     spec, inputs = load_spec(verify(m['specification']))
     if m['inputs'] != spec['inputs'] or m['agreement'] != spec['agreement'] or m['branch'] != spec['branch']:
         raise InvalidArtifact('finite pilot specification differs')
@@ -185,9 +209,10 @@ def validate(manifest):
                 if c['matrix'][z][name] != {**old,'reused':True}: raise InvalidArtifact('archived cell changed')
         if proposed['status'] != 'prepared': continue
         for candidate in proposed['candidates']:
-            paired, checks = physical_candidate(candidate,endpoints,spec['coordinate_limits'])
+            paired, checks = physical_candidate(candidate,endpoints,spec['coordinate_limits'],spec['branch'])
             alias = c['aliases'][candidate['id']]; name = alias['representative']
-            if alias['full_q'] != candidate['full_q']: raise InvalidArtifact('alias coordinate differs')
+            if any(alias.get(k) != v for k,v in candidate_metadata(candidate,spec['branch']).items()):
+                raise InvalidArtifact('alias physical provenance differs')
             for z in ('Ca','La'):
                 cell = c['matrix'][z][name]
                 if not pool.same_geometry(paired[z],xyz(verify(cell['xyz']))):

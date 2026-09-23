@@ -1,5 +1,20 @@
 # Agent entry point
 
+## Active small whole-protein LanM occupancy pilot — 2026-09-23
+
+Jacob authorized a few two-ion/four-ion structures, starting with Hans-LanM,
+before broader within-series work. Read
+[current state](diagnostics/lanm_global_occupancy_20260923/CURRENT.md) and
+[frozen scope](diagnostics/lanm_global_occupancy_20260923/PLAN.md).
+Jobs1213018 and dependent1213040 are submitted; inspect actual queue/receipts.
+They test complete Hans8DQ2/Hans8FNR/Mex8FNS monomers at EF12,EF23,EF1234 using
+bounded native MACE proposals and shared nativeGFN2 solvent scoring. The finite
+continuation submits a CPU-only scalar matrix after actual first-source feasibility,
+then collects and emails Jacob. Do not duplicate jobs or interpret pending
+calculations as results. PQQ production/SOP and all prior outputs stay intact.
+Root owns scoring/execution; Khoury's preparation/review is complete. No reserved
+SpyCI-LAMBS outcomes are opened and no library campaign is launched.
+
 ## PLM operations packaged — 2026-09-23
 
 Jacob requested the final PQQ SOP and manuscript draft, with Spicy-Lams inventory

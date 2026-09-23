@@ -1,8 +1,8 @@
 # Approved threefold-preparation pilot operations
 
-All paths explicit, original chemistry/defaults preserved. Live finite jobs are
-recorded in CURRENT.md; do not duplicate them. CPU automatic collection follows
-terminal GPU state, including retained failures.
+All four finite jobs are complete; do not rerun them. Original chemistry/defaults
+are preserved. Read REPORT.md and RESULT.json for the actual result. The commands
+below validate or replay saved artifacts without molecular calls.
 
 ```bash
 cd /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs
@@ -19,7 +19,7 @@ actual shared pool is `pool_v1/manifest.json`; terminal collection is
 reference are in `REFERENCE_v1.json`. These are under
 `workspaces/union_triple_pilot_20260923/`.
 
-Read-only scientific collection replay after the jobs finish, writing a new file:
+Read-only scientific collection replay, writing a new file:
 
 ```bash
 "$TRIPLE_PY" workspaces/union_triple_pilot_20260923/pool_v1/implementation/union_triple_adaptive.py collect_pool \

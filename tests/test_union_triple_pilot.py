@@ -74,5 +74,45 @@ class TriplePilot(unittest.TestCase):
             path=Path(td)/'corrupted_optimizer_tolerance.json';write_new(path,d)
             with self.assertRaisesRegex(InvalidArtifact,'scope/settings'):adaptive.validate(path)
 
+    def test_final_reference_uses_exact25_not_crystals_or_stress(self):
+        d=read_json(BASE/'REFERENCE_v1.json');rows=d['rows']
+        self.assertEqual(len(rows),29)
+        self.assertEqual(sum(r['role']=='canonical_calibration' for r in rows),25)
+        self.assertEqual(sum(r['role']=='consumed_crystal_transfer' for r in rows),3)
+        self.assertEqual(sum(r['role']=='separate_stress' for r in rows),1)
+        self.assertFalse(d['crystals_or_stress_used_for_fit']);self.assertFalse(d['production_changed'])
+        for v in ('operational','mathematical'):
+            canonical=[r for r in rows if r['role']=='canonical_calibration']
+            extrema={z:([r['pool'][v]['composite_R_model_kcal_mol'] for r in canonical if r['expected_class']==z]) for z in ('Ca','La')}
+            self.assertEqual((len(extrema['Ca']),len(extrema['La'])),(14,11))
+            self.assertEqual(d['variants'][v]['bands'],{'Ca_max':max(extrema['Ca']),'La_min':min(extrema['La'])})
+            self.assertGreater(d['variants'][v]['gap_model_kcal_mol'],d['minimum_gap_model_kcal_mol'])
+            for r in rows:
+                self.assertEqual(r['status'],'available')
+                self.assertEqual(r['own_reference_decisions'][v],r['expected_class']+'-supported')
+        self.assertEqual(sum(r['pool_reused'] for r in rows),19)
+
+    def test_final_actual_pool_algebra_and_complete_native_cells(self):
+        d=read_json(BASE/'REFERENCE_v1.json')
+        for r in d['rows']:
+            self.assertEqual(pool.choose_rows(r['matrix'],adaptive.CANDIDATES),r['pool'])
+        c=read_json(BASE/'pool_v1/collection_final.json')
+        self.assertEqual((c['denominator'],c['available'],c['GFN2_complete'],c['MACE_calls_complete']),(10,10,80,20))
+        self.assertEqual(c['native_candidate_reuses'],20)
+        lm=read_json(BASE/'pool_v1/solvent/shard_0/manifest.json')
+        self.assertEqual(lm['execution_resources'],{'mpi_ranks':1,'concurrent_tasks':32})
+        self.assertEqual(len(lm['tasks']),80)
+
+    def test_final_search_receipts_keep_boundary_and_actual_call_counts(self):
+        rows=[read_json(p) for p in (BASE/'proposals_v1/proposals').glob('*/result.json')]
+        self.assertEqual(len(rows),20)
+        self.assertEqual({r['status'] for r in rows},{'proposal_available'})
+        self.assertEqual(sum(r['boundary_flag'] for r in rows),11)
+        self.assertTrue(all(not r['unconstrained_minimum_claimed'] for r in rows))
+        actual=[x for r in rows for x in r['requests'] if not x['reused']]
+        self.assertEqual(len(actual),389)
+        self.assertEqual(len({x['result']['sha256'] for x in actual}),389)
+        for x in actual:verify(x['result'])
+
 
 if __name__=='__main__':unittest.main()

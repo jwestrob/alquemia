@@ -1,0 +1,65 @@
+{
+  "GPU_accounting_basis": "one H200 requested by pinned submitted wrappers, not inferred from absent scheduler GRES accounting",
+  "additional_unallocated_work": "local preparation/reuse audits/tests; preparation-only measured433.57CPU-s recorded separately",
+  "allocated_CPU_seconds": 14368,
+  "allocated_GPU_seconds": 296,
+  "allocation_includes": "startup, validation, collection, worker idle; nested receipts not added again",
+  "boundary_limited_searches": 11,
+  "executor_wall_seconds": {
+    "candidate_GFN2": 44.536241728812456,
+    "cross_MACE": 14.944187331944704,
+    "origin_GFN2": 52.72604749724269,
+    "origin_MACE": 9.923863735049963,
+    "proposal_MACE": 111.5981178842485
+  },
+  "fresh_scientific_calls": {
+    "DFT": 0,
+    "candidate_GFN2": 80,
+    "cross_MACE": 20,
+    "origin_GFN2": 24,
+    "origin_MACE": 12,
+    "search_MACE": 389
+  },
+  "jobs": [
+    {
+      "allocated_cpus": 32,
+      "job_id": "1211064",
+      "node": "node-224-2t-8gpu-1",
+      "requested_gpus": 1,
+      "state": "COMPLETED",
+      "wall_seconds": 141
+    },
+    {
+      "allocated_cpus": 32,
+      "job_id": "1211065",
+      "node": "node-224-2t-8gpu-1",
+      "requested_gpus": 0,
+      "state": "COMPLETED",
+      "wall_seconds": 86
+    },
+    {
+      "allocated_cpus": 32,
+      "job_id": "1211073",
+      "node": "node-224-2t-8gpu-1",
+      "requested_gpus": 1,
+      "state": "COMPLETED",
+      "wall_seconds": 155
+    },
+    {
+      "allocated_cpus": 32,
+      "job_id": "1211074",
+      "node": "node-224-2t-8gpu-1",
+      "requested_gpus": 0,
+      "state": "COMPLETED",
+      "wall_seconds": 67
+    }
+  ],
+  "old_gpu_scheduler_tres_missing": true,
+  "reused_full_pools": 19,
+  "sacct": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/union_triple_pilot_20260923/SACCT_FINAL.txt",
+    "sha256": "5197180a04aae7c21dfbe17aab655f9120307eae56d5f17e2196d6565a2faf8c"
+  },
+  "scientific_failed_attempts": 0,
+  "successful_searches": 20
+}

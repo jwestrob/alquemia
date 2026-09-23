@@ -1,4 +1,12 @@
-# Triple-membership canonical pilot — current checkpoint
+# Triple-membership canonical pilot — complete
+
+All29 pools are available:25/25 canonical,3/3 consumed crystal transfers and the
+separate A0A3Ca1 stress call correct. New canonical gap7.325388849654701 model
+kcal/mol; stress La margin1.1024. Final jobs1211064/65/73/74 are terminal. Do not
+duplicate them. Read REPORT.md, RESULT.json and COSTS_v1.json. Ten actual-fixture
+tests pass. Full100 transfer is now in preparation/reuse audit only; no submission.
+
+Historical execution checkpoint follows.
 
 Preparation committed01eb485; reference-only tenfold CLI committeddee7e05.
 New scientific pilot is separately authorized in PLAN.md. No100-triple transfer.

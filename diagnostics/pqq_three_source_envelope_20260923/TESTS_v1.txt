@@ -1,0 +1,25 @@
+test_actual_calibration_and_unknown_source_identity (test_pqq_three_source_envelope.ThreeSourceEnvelope.test_actual_calibration_and_unknown_source_identity) ... ok
+test_corrupted_real_preparation_cannot_emit_incomplete_or_changed_tasks (test_pqq_three_source_envelope.ThreeSourceEnvelope.test_corrupted_real_preparation_cannot_emit_incomplete_or_changed_tasks) ... ok
+test_corrupted_real_request_state_anchor_and_membership_rejected (test_pqq_three_source_envelope.ThreeSourceEnvelope.test_corrupted_real_request_state_anchor_and_membership_rejected) ... ok
+test_exact_discovery_union_and_immutable_old_preparations (test_pqq_three_source_envelope.ThreeSourceEnvelope.test_exact_discovery_union_and_immutable_old_preparations) ... FAIL
+test_missing_reference_stops_before_any_molecular_task (test_pqq_three_source_envelope.ThreeSourceEnvelope.test_missing_reference_stops_before_any_molecular_task) ... ok
+test_real_preparation_whole_state_pairing_and_strict_scalar_recipe (test_pqq_three_source_envelope.ThreeSourceEnvelope.test_real_preparation_whole_state_pairing_and_strict_scalar_recipe) ... ok
+
+======================================================================
+FAIL: test_exact_discovery_union_and_immutable_old_preparations (test_pqq_three_source_envelope.ThreeSourceEnvelope.test_exact_discovery_union_and_immutable_old_preparations)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/tests/test_pqq_three_source_envelope.py", line 51, in test_exact_discovery_union_and_immutable_old_preparations
+    self.assertEqual(discovery['cases'],actual)
+AssertionError: Lists differ: [{'added_fragment_ids': [['peptide', 'A', 28[45569 chars]ed'}] != [{'case_id': 'PQQSEQ_07ab500e3df76b30d71c_AF[45569 chars]rue}]
+
+First differing element 0:
+{'added_fragment_ids': [['peptide', 'A', 28[15573 chars]red'}
+{'case_id': 'PQQSEQ_07ab500e3df76b30d71c_AF[15573 chars]True}
+
+Diff is 97911 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 6 tests in 4.288s
+
+FAILED (failures=1)

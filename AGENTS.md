@@ -1,5 +1,19 @@
 # Agent entry point
 
+## Completed parallel pilots — 2026-09-22
+
+Jacob approved alternative starts, solvent-guided proposals and direct local
+basin-width tests. All executions/collectors are terminal; read
+[the final report](diagnostics/nikasha_parallel_pilots_20260922/REPORT.md) and
+[checkpoint](diagnostics/nikasha_parallel_pilots_20260922/CURRENT.md). Neither
+search policy adds discrimination. Two of four curves pass integration gates,
+with small width contributions, but electronic-solver continuity is unqualified.
+A reproducible4.805kcal GFN2 jump occurs at almost identical Q88 geometries;
+large solvent-component jumps also appear on finite basin grids. No remedy or
+new classifier gain is claimed. Production stays unchanged. Restart, standalone
+xTB, collective-scaffold and redox follow-ons remain proposed-only. Do not rerun
+these completed manifests or launch those separate proposals from this checkpoint.
+
 ## Latest completed phase — 2026-09-22
 
 Jacob: “lets address all that, including adaptive accommodation.” Read

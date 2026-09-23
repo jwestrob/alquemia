@@ -45,19 +45,38 @@ The existing `diagnostics/nikasha_shared_pool_20260922/run_mace.sbatch` and
 the exact jobs, allocations and command arguments; consult them before any
 execution. The source checkouts and historical protocols remain unchanged.
 
-After the three branch agents have finished their collections, generate a joint
-comparison using their actual paths, for example the completed collection paths
-recorded in CURRENT.md/REPORT.md. The command takes explicit inputs and refuses
-to overwrite its output:
+All three collections are finished. Replay their actual comparison without any
+molecular evaluations. The temporary output directory is new on each invocation;
+the archived result is never overwritten:
 
 ```bash
-"$NIKASHA_PY" scripts/nikasha_parallel_compare.py --help
+NIKASHA_REPLAY_DIR=$(mktemp -d /tmp/nikasha-parallel-replay.XXXXXX)
+"$NIKASHA_PY" scripts/nikasha_parallel_compare.py \
+  --inputs diagnostics/nikasha_parallel_pilots_20260922/INPUTS.json \
+  --collections \
+    workspaces/structure_informed_starts_20260922/pool_v1/final_collection.json \
+    workspaces/solvent_guided_20260922/pool_v1/after_solvent_0_1210101.json \
+    workspaces/local_basin_breadth_20260922/scoring_v1/after_solvent_3_1210125.json \
+  --output "$NIKASHA_REPLAY_DIR/COMPARISON.json"
 ```
 
 The output preserves static and adaptive contrasts, individual Ca/La work,
 selected candidates, and separate transfer of released/adaptive bands. It does
 not calibrate a new threshold. The basin branch's conditional integral is
-reported by its own analyzer; the shared comparison only reports grid minima.
+reported by its own analyzer; the shared comparison reports minima from the
+expanded common pool (old candidates plus grid), not the standalone grid.
+Its breadth term must not be added to an unrelated adaptive winner.
+
+The primary archived result is
+`workspaces/nikasha_parallel_pilots_20260922/COMPARISON_v1.json` and `.md`.
+The separate integral is `workspaces/local_basin_breadth_20260922/RESULT_v2.json`.
+Its earlier partialv1 is a preserved JSON serialization failure, not a scientific
+output. Branch COMMANDS files give geometry, collection, integration and plot
+replays. No scientific executable is needed for the comparison above.
+
+All submitted jobs are terminal. Do not resubmit them from the generic runner
+examples. Proposed native restarts, backend fallback, collective scaffold and
+redox work have not run.
 
 Validation logs: FINITE_TESTS.txt (5 passed), POOL_REGRESSION.txt (30 passed),
 COMPARE_TESTS.txt (3 passed). These use actual pinned molecular fixtures and

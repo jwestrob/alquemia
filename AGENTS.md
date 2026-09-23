@@ -11,11 +11,15 @@ native continuation did not fix derivative consistency. Do not duplicate them.
 The full225 union/adaptive comparison is complete:205correct/0wrong/1inconclusive/
 19unavailable, correcting both released errors; strict coverage and structural
 spread still have tradeoffs. Standalone solvent scoring and its force-guided
-search did not earn replacement use. Root owns integration/figures/email;
-second_shell now owns an opt-in source-group interface, water_basins owns the
-34-source stopping-policy qualification and repaired-H supplement, and khoury
-owns broader one-rank native-solver qualification after a successful24-call
-pilot. Follow their current finite manifests; do not duplicate finished jobs.
+search did not earn replacement use. Root owns integration/figures/email.
+The opt-in reference replay interface, repaired-H supplement,34-source stopping
+test and28-reference one-rank scalar qualification are complete. The stopping
+candidate retains34/34 calls but fails strict numerical equivalence on5/32 pools;
+keep its separate canonical reference. One-rank scalar energies pass all336 cells.
+Water_basins now owns the separately calibrated full225 numerical candidate;
+second_shell owns three-fold-context preparation only; khoury owns practical
+execution integration and a matched fresh-run plan. Follow their current finite
+manifests and recorded submission boundaries; do not duplicate finished jobs.
 Production, broad PLM rescoring and the separately gated quantum campaign remain
 unchanged. Older proposed-only/pending-approval notes below are historical.
 

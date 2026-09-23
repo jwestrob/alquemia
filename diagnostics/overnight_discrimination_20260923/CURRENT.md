@@ -51,6 +51,14 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   production change or new workflow framework. A cheaper numerical profile waits
   for the separate qualifications below. See
   [physical interpretation](CONTEXT_MECHANISM_NOTE.md).
+  Next independent task is preparation only for all100 existing noncanonical
+  La triples under each triple's own fixed fragment union. Root's read-only
+  [inventory](../union_subset_inventory_20260923/REPORT.md) found61 identical
+  fragment lists,33 smaller and6 with existing preparation failures; the33
+  reduce to16 selections/55 source-selection pairs before graph equivalence.
+  Preserve all subsets, verify actual maps and exact reuse, and prepare one
+  separate A0A3 Ca1 stress probe using only its La-triple-selected membership.
+  No new molecular work or three-fold qualification is implied by preparation.
 - **water_basins:** [standalone xTB pilot](../standalone_xtb_20260923/REPORT.md)
   completed224/224 physical calls: all four numerical pool checks and14/14 tight
   derivative quantities pass. Four known sources have correct relative class
@@ -107,6 +115,24 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   searches; formerly failed Q92La/Q60La now converge in13/17 evaluations with
   the same physical boundary limits. Canonical score equivalence remains pending;
   CPU1211010 owns240nativeGFN. All original225 results remain preserved.
+  Expansion is now complete:34/34 available and correct under old and newly
+  frozen canonical-only bands, including both former optimizer failures.
+  Strict numerical equivalence is27/32:five sources fail a component or paired
+  contrast gate; maximum medium change1.05452kcal, maximum contrast change0.90629.
+  All successful-old MACE energy gates pass. This is a separately calibrated
+  candidate, not an identical replacement. New reference SHA256
+  `1f8470bbdf7a056098ca261aa10b72bdc940cf71ab860fbbc54090bda1e73250`.
+  Actual new work847 searchMACE+60 crossMACE=907 calls and240GFN;907 optimizer
+  evaluations additionally include60 cached origins. Cost53824core-s/350GPU-s.
+  Next authorized preparation: full225 uniform-precision transfer, same fixed
+  denominator/208supported origins,6 exact transfer-pool reuses from34,202new
+  sources/404searches/404crossMACE/1616GFN maximum. Keep the frozen new reference
+  and compare as a distinct candidate. The one-rank panel now passes; root
+  authorized execution after finite preflight, using four disjoint warmGPU
+  shards (32CPUs/200000MiB each), with dependent CPU work at32 one-rank workers,
+  32CPUs/64GiB per shard. Pin the actual rank-panel qualification. Preserve the
+  repaired-H supplement and original full225 records separately. Precision34
+  report/tests are committedd45581a;9 real-fixture tests pass.
 - **khoury_benchmark:** expose the supported minimal adaptive scorer as a small
   opt-in source-to-score candidate, reusing existing physical preparation,
   selector, optimizer and shared scoring. Implement/test on completed recovery
@@ -154,6 +180,16 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   including its MaxIter125 or500. Same component/pool gates; no optimization,
   new geometry or reference fit. Root accepted this finite manifest scope before
   execution; khoury owns preparation, preflight, submission and collection.
+  Rank28 is now complete, job1211024:336/336 medium cells and28/28 pooled gates
+  pass, all56 row selections and all336 SCF cycle counts unchanged. Maximum
+  component difference7.80933e−6kcal, maximum selected contrast1.92085e−9.
+  Exact old-band replay retains one C5AXV8 calibration-edge inconclusive caused
+  by−6.40e−10kcal roundoff;27 other calls stay correct. No band was changed.
+  Cost8992 allocatedcore-s/zeroGPU (281s×32CPU), executor200.186s. This qualifies
+  scalar one-rank execution for the next candidate; gradients remain unqualified.
+  Khoury's next task is a thin practical execution-integration plan with the
+  existing source/runners and second_shell's interface, not a second workflow.
+  No further molecular calls until a specific integration fixture is declared.
 - **root:** integration, actual benefit/cost comparison and substantive email.
   The [completed recovered ledger](../adaptive_minimal_pool_20260923/RECOVERY_REPORT.md)
   retains204 correct/1 wrong/1 inconclusive/19 unavailable among225. On206 common

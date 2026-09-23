@@ -1,7 +1,9 @@
 """Execute the declared triple-transfer manifest with existing scientific kernels."""
 from __future__ import annotations
 import argparse
+import copy
 import json
+import math
 import os
 from pathlib import Path
 import time
@@ -22,6 +24,24 @@ import slsqp_precision as precision
 from slsqp_precision_transfer import qualification,low_prepare
 import union_triple_transfer as transfer
 from union_triple_adaptive import PROTOCOL,POOL_PROTOCOL
+
+SELECTOR_DIAGNOSTIC_COPY_TOLERANCE=1e-12
+SELECTOR_DIAGNOSTIC_FIELDS=('Ca_kcal_mol_A','La_kcal_mol_A','differential_kcal_mol_A','independent_geometric_fraction')
+
+
+def selector_equivalence(frozen,recomputed):
+    """Only replayed diagnostic rounding may differ; retain the frozen selector."""
+    a=copy.deepcopy(frozen);b=copy.deepcopy(recomputed);maximum=0.
+    if len(a['selected'])!=len(b['selected']):raise InvalidArtifact('selected subspace differs')
+    for x,y in zip(a['selected'],b['selected']):
+        for key in SELECTOR_DIAGNOSTIC_FIELDS:
+            u=x.pop(key);v=y.pop(key)
+            if not isinstance(u,float) or not isinstance(v,float) or not math.isfinite(u) or not math.isfinite(v):
+                raise InvalidArtifact('selector diagnostic type/nonfinite differs')
+            delta=abs(u-v);maximum=max(maximum,delta)
+            if delta>SELECTOR_DIAGNOSTIC_COPY_TOLERANCE:raise InvalidArtifact('selector diagnostic exceeds copy tolerance')
+    if a!=b:raise InvalidArtifact('selected subspace or nondiagnostic selector data differs')
+    return maximum
 
 
 def execute_origins(manifest):
@@ -149,7 +169,10 @@ def validate(manifest):
         r=rows[c['case_id']]
         if c['origin_row']!=r or c['union']!=r['source'] or r['status']!='complete':raise InvalidArtifact('actual source row changed')
         ts,choice=build_tasks(r,m['model']);tasks.extend(ts)
-        if c['selection']!=choice:raise InvalidArtifact('four-mode selector changed')
+        selector_equivalence(c['selection'],choice)
+    for expected_task,actual_task in zip(m['tasks'],tasks):
+        selector_equivalence(expected_task['selector'],actual_task['selector'])
+        actual_task['selector']=expected_task['selector']
     if tasks!=m['tasks']:raise InvalidArtifact('actual q0 force/state/projection task changed')
     return {'status':'validated','manifest':record(manifest),'declared_sources':len(expected),'prepared_sources':len(m['cases']),
         'unavailable':len(m['unavailable']),'searches':len(tasks),'maximum_cross_MACE':2*len(m['cases']),'maximum_GFN2':8*len(m['cases'])}

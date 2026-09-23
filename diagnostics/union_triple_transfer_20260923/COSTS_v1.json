@@ -1,0 +1,171 @@
+{
+  "additional_cost_not_in_allocation_total": "local preparation/reuse audit, local tests and comparison; folding and historical pools excluded",
+  "allocated_CPU_seconds": 31153,
+  "allocated_GPU_seconds": 644,
+  "allocation_basis": "whole outer allocation; no nested CPU cost added again; GPU requests pinned by wrappers because scheduler omitsGRES",
+  "boundary_flags": 75,
+  "executor_wall": [
+    {
+      "receipt": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/union_triple_transfer_20260923/run_v2/searches/shard_0/proposals/EXECUTION_1211129.json",
+        "sha256": "0326566a123619ccf7378221fc4c7b3a61647bf52fe62520f48f8d28a318f1a8"
+      },
+      "stage": "search",
+      "wall_seconds": 230.90269942581654
+    },
+    {
+      "receipt": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/union_triple_transfer_20260923/run_v2/searches/shard_1/proposals/EXECUTION_1211132.json",
+        "sha256": "b406df8c24ee1a75194efb95f5a1306db0ad5e61352ad19b4669115a981bb03e"
+      },
+      "stage": "search",
+      "wall_seconds": 226.8836075142026
+    },
+    {
+      "receipt": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/union_triple_transfer_20260923/run_v2/origins/solvent/budget_events.jsonl",
+        "sha256": "8148b83e1ddf7dbd0a1b16a0b3b35415dd924277c2450db1edc17727195ed367"
+      },
+      "stage": "scalar",
+      "wall_seconds": 27.285124000161886
+    },
+    {
+      "receipt": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/union_triple_transfer_20260923/run_v2/searches/shard_0/pool/solvent/shard_0/budget_events.jsonl",
+        "sha256": "acf1b31aa1acb8145747004f2abaffd1d42c87fed4ddc03bcfc6df568165eff3"
+      },
+      "stage": "scalar",
+      "wall_seconds": 67.83560382202268
+    },
+    {
+      "receipt": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/union_triple_transfer_20260923/run_v2/searches/shard_1/pool/solvent/shard_0/budget_events.jsonl",
+        "sha256": "9dc580bf44312f08b362fc620d2ba2efcba1085930ee62a183e783412de5058d"
+      },
+      "stage": "scalar",
+      "wall_seconds": 97.35190276801586
+    }
+  ],
+  "failed_scientific_calls": 0,
+  "fresh_molecular_calls": {
+    "DFT": 0,
+    "candidate_GFN2": 440,
+    "cross_MACE": 110,
+    "new_folds": 0,
+    "origin_GFN2": 76,
+    "origin_MACE": 38,
+    "search_MACE": 1669
+  },
+  "fresh_search_evaluations_median": 15.0,
+  "fresh_total_GFN2": 516,
+  "fresh_total_MACE": 1817,
+  "historical_full_pool_reuses": 70,
+  "jobs": [
+    {
+      "allocated_CPUs": 32,
+      "elapsed_seconds": 17,
+      "exit_code": "0:0",
+      "job_id": "1211120",
+      "name": "triple-q0-mace",
+      "node": "node-224-2t-8gpu-1",
+      "requested_GPUs": 1,
+      "state": "COMPLETED"
+    },
+    {
+      "allocated_CPUs": 32,
+      "elapsed_seconds": 44,
+      "exit_code": "0:0",
+      "job_id": "1211121",
+      "name": "triple100-q0-gfn",
+      "node": "node-128-512g-8gpu-1",
+      "requested_GPUs": 0,
+      "state": "COMPLETED"
+    },
+    {
+      "allocated_CPUs": 32,
+      "elapsed_seconds": 317,
+      "exit_code": "0:0",
+      "job_id": "1211129",
+      "name": "triple100-search",
+      "node": "node-224-2t-8gpu-1",
+      "requested_GPUs": 1,
+      "state": "COMPLETED"
+    },
+    {
+      "allocated_CPUs": 32,
+      "elapsed_seconds": 3,
+      "exit_code": "1:0",
+      "job_id": "1211130",
+      "name": "triple100-pool",
+      "node": "node-128-512g-8gpu-1",
+      "requested_GPUs": 0,
+      "state": "FAILED"
+    },
+    {
+      "allocated_CPUs": 32,
+      "elapsed_seconds": 310,
+      "exit_code": "0:0",
+      "job_id": "1211132",
+      "name": "triple100-search",
+      "node": "node-224-2t-8gpu-1",
+      "requested_GPUs": 1,
+      "state": "COMPLETED"
+    },
+    {
+      "allocated_CPUs": 32,
+      "elapsed_seconds": 3,
+      "exit_code": "1:0",
+      "job_id": "1211133",
+      "name": "triple100-pool",
+      "node": "node-128-512g-8gpu-1",
+      "requested_GPUs": 0,
+      "state": "FAILED"
+    },
+    {
+      "allocated_CPUs": 1,
+      "elapsed_seconds": 17,
+      "exit_code": "0:0",
+      "job_id": "1211145",
+      "name": "triple100-metadata",
+      "node": "node-128-512g-8gpu-1",
+      "requested_GPUs": 0,
+      "state": "COMPLETED"
+    },
+    {
+      "allocated_CPUs": 32,
+      "elapsed_seconds": 134,
+      "exit_code": "0:0",
+      "job_id": "1211154",
+      "name": "triple100-pool",
+      "node": "node-128-512g-8gpu-1",
+      "requested_GPUs": 0,
+      "state": "COMPLETED"
+    },
+    {
+      "allocated_CPUs": 32,
+      "elapsed_seconds": 145,
+      "exit_code": "0:0",
+      "job_id": "1211155",
+      "name": "triple100-pool",
+      "node": "node-224-2t-8gpu-1",
+      "requested_GPUs": 0,
+      "state": "COMPLETED"
+    }
+  ],
+  "maximum_search": {
+    "evaluations": 27,
+    "task_id": "a8r3s4-pqq-la_model__conditioned_La__seed-1_sample-1__union_94fc62d523cbf165__La",
+    "wall_seconds": 6.096615508198738
+  },
+  "metadata_replay_new_molecular_calls": 0,
+  "production_changed": false,
+  "read_only_metadata_allocation_CPU_seconds": 17,
+  "reuse_audit_wall_seconds": 173.19521204568446,
+  "sacct": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/union_triple_transfer_20260923/SACCT_FINAL.txt",
+    "sha256": "2bad8c8eda5abcf93edc3475cdcd2301b1959fce5afa3ca0f1aaa5b7c2bd423b"
+  },
+  "successful_searches": 110,
+  "technical_failed_allocated_CPU_seconds": 192,
+  "technical_failed_allocations": 2
+}

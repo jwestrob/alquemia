@@ -4,10 +4,14 @@ import copy
 import sys
 import tempfile
 import unittest
+import statistics
+import re
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 from affordable_common import InvalidArtifact,read_json,verify,write_new
 import union_triple_transfer as transfer
 import nikasha_pool as pool
+import union_triple_transfer_run as runner
+from accommodation_folds_compare import decision
 
 ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT/'workspaces/union_triple_transfer_20260923/run_v2'
@@ -83,6 +87,56 @@ class TripleTransfer(unittest.TestCase):
             self.assertEqual([c['case_id'] for c in m['cases']],m['declared_source_pairs'])
         self.assertEqual(set(ids),{r['pair_id'] for r in self.a['rows'] if not r['pool_reuse']})
         self.assertEqual(len(ids),55);self.assertEqual(len({t['task_id'] for t in tasks}),110)
+
+    def test_actual_host_selector_roundoff_is_narrow(self):
+        d=read_json(BASE/'SELECTOR_HOST_DIAGNOSTIC.json');self.assertEqual(len(d['rows']),55)
+        self.assertEqual(d['new_molecular_calls'],0)
+        for r in d['rows']:
+            self.assertTrue(r['same_selected_IDs']);m=read_json(verify(r['manifest']))
+            old=next(c['selection'] for c in m['cases'] if c['case_id']==r['case_id']);actual=copy.deepcopy(old)
+            for delta in r['selection_differences']:
+                match=re.fullmatch(r'\.selected\[(\d+)\]\.([A-Za-z_]+)',delta['path'])
+                self.assertIsNotNone(match);self.assertEqual(delta['kind'],'float')
+                actual['selected'][int(match.group(1))][match.group(2)]=delta['actual']
+            self.assertLessEqual(runner.selector_equivalence(old,actual),1e-12)
+        bad=copy.deepcopy(old);bad['selected'][0]['id']='explicitly_corrupted_mode_identity'
+        with self.assertRaisesRegex(InvalidArtifact,'subspace'):runner.selector_equivalence(old,bad)
+        bad=copy.deepcopy(old);bad['selected'][0]['Ca_kcal_mol_A']+=.01
+        with self.assertRaisesRegex(InvalidArtifact,'copy tolerance'):runner.selector_equivalence(old,bad)
+
+    def test_final_actual125_pairs_and100_strict_triples(self):
+        d=read_json(BASE.parent/'COMPARISON_v1.json')
+        self.assertEqual((len(d['rows']),len(d['triples'])),(125,100))
+        self.assertEqual(len({r['case_id'] for r in d['rows']}),98)
+        self.assertFalse(d['new_thresholds_fitted']);self.assertFalse(d['production_changed'])
+        for level,rows in [('pairs',d['rows']),('triples',d['triples'])]:
+            for method,counters in d['counts'][level].items():
+                self.assertEqual(sum(counters.values()),len(rows))
+                for r in rows:
+                    x=r['methods'][method]
+                    self.assertEqual(x['decision'],decision(x['R'],d['bands'][method]))
+        for t in d['triples']:
+            for x in t['methods'].values():
+                if x['missing_members']:
+                    self.assertIsNone(x['R']);self.assertIsNone(x['range']);self.assertEqual(x['outcome'],'unavailable')
+                else:
+                    self.assertEqual(x['R'],statistics.median(x['member_R']))
+                    self.assertEqual(x['range'],max(x['member_R'])-min(x['member_R']))
+            if t['status']!='prepared':self.assertEqual(t['methods']['triple_union']['outcome'],'unavailable')
+
+    def test_final_exact_selection_triples_and_both_pool_algebras(self):
+        d=read_json(BASE.parent/'COMPARISON_v1.json')
+        exact=[t for t in d['triples'] if t.get('all_members_exact_tenfold')]
+        self.assertEqual(len(exact),61)
+        for t in exact:
+            self.assertEqual(t['methods']['triple_union']['R'],t['methods']['union_precision']['R'])
+        for r in d['rows']:
+            if r['status']=='available':
+                names=list(r['matrix']['Ca'])
+                expected=pool.choose_rows(r['matrix'],names)
+                self.assertEqual(expected,r['pool'])
+                for variant,method in [('operational','triple_union'),('mathematical','triple_union_mathematical')]:
+                    self.assertEqual(expected[variant]['composite_R_model_kcal_mol'],r['methods'][method]['R'])
 
 
 if __name__=='__main__':unittest.main()

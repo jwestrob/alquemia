@@ -1,4 +1,19 @@
-# Full100 triple transfer — approved, running
+# Full100 triple transfer — complete
+
+All molecular tasks and collections are terminal. Final result:92correct/
+2inconclusive/6oldunavailable across100 triples, versus94/0/6 for released and
+ten-fold precision methods. Both new abstentions concern the Ca-associated A8R3S4
+control; no wrong calls.125 source/context pairs give121correct/4inconclusive.
+See REPORT.md/RESULT.json and `workspaces/union_triple_transfer_20260923/COMPARISON_v1.json`.
+No rollout or refit. Ten actual-fixture tests pass16.704s. Scoped existing-output
+A8 audit follows; no new molecular tasks.
+
+The two original CPU stages failed before scalar work due diagnostic-roundoff
+comparison. Read-only replay1211145 verified exact selected motions; narrow
+validator recovery1211154/55 completed all440 unchanged candidate GFN calls.
+Original failures remain in costs:31,153 allocatedCPU-s/644GPU-s. All110 searches
+andcrossMACE,38 freshoriginMACE/76originGFN succeeded. Historical running checkpoint
+follows for source provenance; do not duplicate its jobs.
 
 Canonical pilot completed and committedb443163:25/25+3/3+separate stress correct.
 New independent reference `union_triple_pilot_20260923/REFERENCE_v1.json` is frozen.

@@ -52,3 +52,11 @@ The released artifact's frozen_bands are composite reference bands. The older
 full_v1 comparison's top-level native_PQQ_bands describe vacuum-only results;
 its calibration.context.bands hold the composite calibration. Do not confuse
 those quantities or silently recalculate the released threshold.
+
+## Completed delivery
+
+All four allocations are terminal:1210669,1210670,1210819,1210820. Do not rerun
+the molecular commands above. All16GFN and42 actualMACE calls succeeded. Read
+REPORT.md/RESULT.json and the pinned COMPARISON_v1.json for the final outcome;
+comparison outputs are write-once. The read-only fixture command above now
+checks all completed actual artifacts (7tests,0skips).

@@ -61,4 +61,23 @@ class CoverageTests(unittest.TestCase):
             self.assertGreaterEqual(sum(v['unit']=='radian' for v in k.modes),4)
         self.assertEqual(maps[0],maps[1])
 
+    def test_actual_scored_origin_and_proposal_reuse(self):
+        run=ROOT/'workspaces/preparation_coverage_20260923'
+        self.assertEqual(score.validate(run/'proposals_v1/manifest.json')['optimizer_starts'],2)
+        self.assertEqual(score.validate_pool(run/'pool_v1/manifest.json')['new_GFN2_calls'],8)
+        for stage in ('origins_v1','pool_v1'):
+            col=read_json(run/stage/'collection_final.json');self.assertEqual(col['GFN2_complete'],8)
+            self.assertTrue(all(c['pool']['status']=='available' for c in col['cases']))
+
+    def test_actual_score_sign_reference_and_failure_history(self):
+        run=ROOT/'workspaces/preparation_coverage_20260923';r=read_json(run/'COMPARISON_v1.json')
+        self.assertFalse(r['historical225_modified']);self.assertTrue(r['historical_preparation_failure_retained'])
+        self.assertEqual(r['independent_biological_observations_added'],0)
+        for row in r['rows'].values():
+            self.assertEqual(row['decision'],'La-supported')
+            self.assertAlmostEqual(row['R_model_kcal_mol'],row['components']['native_R_model_kcal_mol']+row['components']['solvation_delta_R_kcal_mol'],places=8)
+        work=r['rows']['union_adaptive']['selected_work']
+        self.assertAlmostEqual(r['rows']['union_adaptive']['R_model_kcal_mol']-r['rows']['union_static']['R_model_kcal_mol'],work['Ca']['composite_kcal_mol']-work['La']['composite_kcal_mol'],places=8)
+        self.assertEqual(r['optimizers']['Ca']['optimizer']['ftol_hartree_equivalent'],adaptive_completion.SETTINGS['optimizer_ftol'])
+
 if __name__=='__main__':unittest.main()

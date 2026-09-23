@@ -19,10 +19,13 @@ keep its separate canonical reference. One-rank scalar energies pass all336 cell
 The numerical candidate has now completed225 transfer:206correct/0wrong/2inconclusive/
 17unavailable, retaining both error repairs and recovering optimizer coverage.
 Its solvent components remain numerically sensitive; it is not an identical
-replacement. Water_basins owns final reporting and a geometry/rank inventory.
-Second_shell's three-fold-context canonical/stress pilot passes; full100-triple
-transfer remains in finite-manifest preparation. Khoury's exact v4 matched fresh
-ten-source execution is now authorized. Follow their current finite
+replacement. The exact rank/geometry diagnostic attributes the two tested jumps
+to geometry/electronic solution, not rank. Water owns eight fixed continuation
+calls on those real seed pairs. Second_shell's three-fold-context pilot passes;
+the exact full100-triple transfer is now authorized with70wholepool reuses and
+55newpools. Khoury's fresh ten-source comparison completes10/10correct versus
+released8/1/1, at358s versus451s on the same host (batching differs); its current
+task is three-source request/preparation/dry-run only. Follow their current finite
 manifests and recorded submission boundaries; do not duplicate finished jobs.
 Production, broad PLM rescoring and the separately gated quantum campaign remain
 unchanged. Older proposed-only/pending-approval notes below are historical.

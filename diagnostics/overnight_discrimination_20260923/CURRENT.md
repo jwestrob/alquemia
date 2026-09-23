@@ -24,18 +24,41 @@ included. No arbitrary project-wide time or compute cap is reinstated.
   reused origins/pools and prior qualification. Combined numerical gates pass
   182/206; large nativeGFN component sensitivity remains despite small geometric
   changes. Do not call the new stopping profile numerically identical.
-  Water owns final tests/report and a read-only geometry/rank diagnostic inventory.
-- **Current execution:** root authorized Khoury's exact frozen v4 fresh10-A0A3
-  comparison after this verdict: sequential same-host released/candidate jobs,
-  independent source preparation,160GFN and60 fixedMACE plus20 bounded searches,
-  with no archived energy/force substitution. This tests practical repeatability
-  and measured end-to-end cost, not another calibration. No third arm or default
-  change. Second_shell's three-La-structure-context pilot has also completed:
+  Final report is committedb4acebb; nine artifact tests pass with zero skips.
+- **Fresh practical win, complete:** Khoury's frozen v4 fresh10-A0A3 comparison
+  reproduces the gain without archived energies/forces: released8correct/1wrong/
+  1inconclusive becomes10correct. Same-host32CPU/H200 allocations take451s versus
+  358s, including independent preparation. All160GFN/332actualMACE calls succeed;
+  total25888core-s/809GPU-s. Different batching/model loads and solver parallelism
+  contribute to timing; this is not an isolated physics speedup or universal
+  benchmark. A released-wrapper collection glob bug was fixed without rerunning
+  chemistry. Eleven tests pass; commit655b3cf. All strict group calls were already
+  correct; the gain is individual-source reliability. Root emailed the completed
+  result. Khoury now owns implementation-only three-source request/preparation/
+  dry-run, with an actual physical-state anchor rather than invented historical
+  canonical membership; no new molecular execution in that interface task.
+- **Current transfer:** Second_shell's three-La-structure-context pilot completed:
   25 canonical plus3 crystals correct; separate difficult A0A3Ca1 correct with
   the smaller169-atom context. Its new canonical-only reference independently
   reproduces the ten-fold extrema. All20 searches/20crossMACE/104GFN/12originMACE
-  succeed. Full100-triple transfer is preparation/reuse-inventory only pending
-  review of its exact new-call manifest. Older running/pending prose below is
+  succeed. Final reportb443163:421actualMACE/104GFN,14368core-s/296GPU-s; ten tests
+  pass. Root authorized full100-triple transfer after successful exact reuse
+  audit:94complete/6unavailable triples,125source-membership pairs,70wholepool
+  reuses and55newpools. Finite new work19origins=38MACE/76GFN,110searches/
+  110crossMACE/440candidateGFN maximum. Same frozen threefold reference/settings,
+  two disjoint28/27source warmGPU shards,32CPU/oneH200/200000MiB each and32×1rank
+  CPU solvent stages. No extra source or threshold fit. Unknown-input interface
+  work is independent and cannot silently inherit ten-fold eligibility.
+- **Numerical diagnosis:** exact geometry×rank test1211105 completes four missing
+  scalar cells. For both Q4Ca2 and P385La2, old/new geometry energy jumps are the
+  same at1 and8ranks; maximum rank interaction1.25e−9kcal. This isolates the tested
+  sensitivity to geometry/electronic solution, not rank count. Cost342core-s,
+  zeroGPU. Water now owns an exact eight-call diagnostic: the four valid rank1
+  GBW+xtbw seed pairs, two fixed continuations each, unchanged chemistry and actual
+  XTBRESTART checks. Report stage2 uniformly and retain both; no cross-seeding,
+  score update, threshold adjustment or additional pass.
+
+Older running/pending prose below is
   chronological history; use these latest outcomes and the agents' receipts.
 
 - **Main completed result:** [full225 union/adaptive transfer](../union_adaptive_20260923/TRANSFER225_REPORT.md)

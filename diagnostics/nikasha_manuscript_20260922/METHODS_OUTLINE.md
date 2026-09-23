@@ -34,8 +34,13 @@ La triples are correct. The new profile has its own canonical-only reference.
 Large nativeGFN2 component changes at nearly identical geometries prevent a
 claim of numerical equivalence or uniformly improved robustness. Its new
 execution costs165472 allocated core-seconds and2312 requested GPU-seconds,
-excluding reused origins/pools and prior qualification. Fresh matched execution
-is separately running to measure end-to-end cost without archive reuse.
+excluding reused origins/pools and prior qualification. The separate fresh
+ten-A0A3-source comparison completes10correct versus released8correct/1wrong/
+1inconclusive, without archived energies/forces. Including fresh preparation,
+same-host32CPU/H200 allocations take358s versus451s. Batching, model-load count
+and scalar solver parallelism differ; this measures the actual execution paths,
+not an isolated scientific-component speedup. All160GFN/332MACE evaluations
+succeed; eleven tests pass. [Fresh report](../pqq_union_execution_20260923/REPORT.md).
 
 A separately prepared three-La-structure-context pilot retains25 canonical and
 three crystal calls and repairs the difficult A0A3Ca1 probe using169 atoms rather
@@ -133,6 +138,11 @@ the matched207 results and strict100-triple denominator. The independent
 MACE and composite differential responses for the two tested directions in all
 three contexts. It validates those particular displacements, not the later
 adaptive/joint proposals. Captions include biological and replication limits.
+
+The later [actual accommodation example](ACCOMMODATION_EXAMPLE_CAPTION.md)
+plots the cross-scored common pool and source-mapped metal–heteroatom distances
+for the difficult A0A3 Ca-conditioned fold. It makes the additional local response
+visible while separating it from the preceding pocket-membership change.
 
 The September22 shared-pool and adaptive experiments remain preserved in their
 exact [delivery record](../nikasha_recovery_20260922/DELIVERY.md). The successful

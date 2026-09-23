@@ -17,9 +17,27 @@ before launching anything; older “all jobs finished” statements apply to the
 dated phases. Standalone static preserves25+3 reference fidelity but worsens
 full-fold transfer; its backend-only replacement branch is closed. Standalone
 scoring of existing adaptive candidates fails canonical separation and has no
-valid decision bands. Union/adaptive passes25+3 and is entering full-fold transfer. Do not mix these backends
-or references. LanM La/Dy testing failed structural transfer and establishes no
+valid decision bands. Union/adaptive has now completed full-fold transfer:
+205 correct/0 wrong/1 inconclusive/19 unavailable among225. Its separately
+calibrated cheaper numerical profile completes206/0/2/17, with both old wrong
+calls repaired and two optimizer failures recovered. NativeGFN2 electronic
+solution sensitivity remains; the profiles are not numerically identical. See
+[the full report](../diagnostics/slsqp_precision_transfer_20260923/REPORT.md).
+Do not mix these backends or references. LanM La/Dy testing failed structural
+transfer and establishes no
 robust within-series affinity prediction.
+
+The [union source interface](../diagnostics/pqq_union_candidate_20260923/COMMANDS.md)
+currently supports explicit archived reference groups; it must reject invented
+canonical membership for unknown proteins. The
+[fresh execution adapter](../diagnostics/pqq_union_execution_20260923/COMMANDS.md)
+completes the ten-A0A3-source matched integration:10correct versus released8/1/1,
+at358s versus451s including fresh preparation on the same hardware. Batching and
+model-load counts differ; the measurement is for these actual paths. It is not
+yet a general PLM entrypoint. Three-La-source membership passes its canonical/crystal/stress pilot;
+complete transfer and general source integration remain separate work. Keep the
+released standard command available. No candidate has replaced PLM results or
+production defaults.
 
 ## Current name and entrypoint — 2026-09-22
 

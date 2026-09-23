@@ -11,6 +11,30 @@ receipts live under their respective September22 diagnostics/workspaces. Each
 changed scorer requires the full canonical calibration before fold transfer.
 No default promotion, new DFT or PLM cohort rescore is part of this phase.
 
+Latest evidence: the scaled-angular original30 is completely scored. Its own
+canonical reference separates25/25 (gap2.54669 model kcal/mol), with3/3 consumed
+crystal transfers retained. Reference and30-source comparison are under
+`workspaces/adaptive_completion_20260922/original30_pool_v1/`; read
+[canonical result](../nikasha_next_phase_20260922/ADAPTIVE_CANONICAL_RESULT.md).
+Full225 searches are jobs1210021–1210024, exact410tasks split into four disjoint
+shards in `primary225_v2_sharded`; all225/450 statuses remain. Root owns later
+common-pool scoring, not a second proposal execution.
+
+Consistent-context canonical25 also separates (gap11.06662); frozen reference is
+`workspaces/consistent_context_20260922/calibration28_v1/REFERENCE_v2.json`.
+The original incomplete reference was a collector status-translation defect;
+its record remains preserved and no molecular calculation was repeated.
+Pilot36 yields static21correct/2wrong/2inconclusive versus union19/1/5, with11
+prior unsupported retained. One corrected error is offset by three new
+abstentions; no net gain is claimed. Second_shell owns unchanged full225
+continuation and exact archive reuse.
+
+CPCM forces ordinary ORCA SCF. Seven of8 matched ordinary-vacuum controls
+failed; no reliable paired correction is available. Original CPCM job1209970
+is still finishing its finite pilot; existing observer3554671 owns terminal
+collection/report. Do not duplicate its chemistry or launch wider CPCM work.
+Released fastMACE/GFN2ALPB remains the production method throughout.
+
 ## Latest completed delivery — 2026-09-22
 
 Current name **Nikasha**; released fastPQQ, explicit DFT and historical commands

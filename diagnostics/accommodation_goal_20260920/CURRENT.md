@@ -16,23 +16,32 @@ canonical reference separates25/25 (gap2.54669 model kcal/mol), with3/3 consumed
 crystal transfers retained. Reference and30-source comparison are under
 `workspaces/adaptive_completion_20260922/original30_pool_v1/`; read
 [canonical result](../nikasha_next_phase_20260922/ADAPTIVE_CANONICAL_RESULT.md).
-Full225 searches are jobs1210021–1210024, exact410tasks split into four disjoint
-shards in `primary225_v2_sharded`; all225/450 statuses remain. Root owns later
-common-pool scoring, not a second proposal execution.
+Full225 searches1210021–1210024 are complete:409/410 accepted candidates and204
+complete pairs, with one200-iteration failure and20 inherited unavailable cases.
+All225/450 statuses remain in `primary225_v2_sharded/final_collection.json`.
+Root's final cross-scoring is running as1210049 (MACE) and1210050–1210053
+(four solvent shards), manifest `primary225_pool_v1/manifest.json`, SHA256
+`128435beee43f64039edc191bd26fe7f015cbe08355984e5bd9982b4a5f80c42`.
+This contains408 new cross-MACE and1632 nativeGFN2 calls; no additional searches
+or DFT. Do not duplicate these jobs. Their wrappers collect named snapshots;
+root owns final comparison against the already frozen canonical reference.
 
 Consistent-context canonical25 also separates (gap11.06662); frozen reference is
 `workspaces/consistent_context_20260922/calibration28_v1/REFERENCE_v2.json`.
 The original incomplete reference was a collector status-translation defect;
 its record remains preserved and no molecular calculation was repeated.
-Pilot36 yields static21correct/2wrong/2inconclusive versus union19/1/5, with11
-prior unsupported retained. One corrected error is offset by three new
-abstentions; no net gain is claimed. Second_shell owns unchanged full225
-continuation and exact archive reuse.
+Full225 is complete. On207 matched sources, static203correct/2wrong/2inconclusive
+compares with union198/1/8: one error corrected, six correct calls become
+inconclusive. No promotion. An independent unchanged-context A8R3S4 SCF recovery
+is available under the released bands. Read the final
+[context report](../consistent_context_20260922/REPORT.md), commit5957847.
 
-CPCM forces ordinary ORCA SCF. Seven of8 matched ordinary-vacuum controls
-failed; no reliable paired correction is available. Original CPCM job1209970
-is still finishing its finite pilot; existing observer3554671 owns terminal
-collection/report. Do not duplicate its chemistry or launch wider CPCM work.
+CPCM pilot1209970 and matched vacuum1209980 are terminal; their observer exited.
+CPCM forces ordinary ORCA SCF:4/8 CPCM and1/8 matched vacuum endpoints converged,
+giving0/4 complete metal contrasts. All11 failed endpoints explicitly exhausted
+SCF iterations, not scheduler resources. This solver route is unqualified; no
+broader calibration/transfer or retry is planned. Read the final
+[solvent report](../solvent_cpcm_20260922/REPORT.md), commit33c2102.
 Released fastMACE/GFN2ALPB remains the production method throughout.
 
 ## Latest completed delivery — 2026-09-22

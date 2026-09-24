@@ -6,12 +6,15 @@ Jacob authorized a few two-ion/four-ion structures, starting with Hans-LanM,
 before broader within-series work. Read
 [current state](diagnostics/lanm_global_occupancy_20260923/CURRENT.md) and
 [frozen scope](diagnostics/lanm_global_occupancy_20260923/PLAN.md).
-Jobs1213018 and dependent1213040 are submitted; inspect actual queue/receipts.
-They test complete Hans8DQ2/Hans8FNR/Mex8FNS monomers at EF12,EF23,EF1234 using
-bounded native MACE proposals and shared nativeGFN2 solvent scoring. The finite
-continuation submits a CPU-only scalar matrix after actual first-source feasibility,
-then collects and emails Jacob. Do not duplicate jobs or interpret pending
-calculations as results. PQQ production/SOP and all prior outputs stay intact.
+Job1213018 executed on September24: whole-protein MACE passed native force
+qualification, but both nonorigin proposals failed covalent geometry checks.
+All four native origin tasks failed at MPI startup; dependent1213040 was cancelled.
+CPU-only recovery1216461 repeats only those four unchanged origin cells with the
+corrected32-task allocation. No new MACE/DFT or eight-system continuation runs.
+Read [first-run findings](diagnostics/lanm_global_occupancy_20260923/FIRST_RUN.md).
+Do not restart the old continuation: its gate does not require an admitted
+nonorigin geometry. Accommodation and within-series preference remain unavailable.
+PQQ production/SOP and all prior outputs stay intact.
 Root owns scoring/execution; Khoury's preparation/review is complete. No reserved
 SpyCI-LAMBS outcomes are opened and no library campaign is launched.
 

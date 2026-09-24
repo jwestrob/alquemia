@@ -1,4 +1,28 @@
-# Small LanM occupancy pilot — queued, not yet a scientific result
+# Small LanM occupancy pilot — first execution, 2026-09-24
+
+Read [the first-run findings](FIRST_RUN.md). Job1213018 ran458seconds and failed;
+its dependent1213040 was cancelled. Whole-protein MACE completed129 evaluations,
+including a passing full/native force comparison, in451.4204568 worker seconds.
+Both nonorigin proposals were rejected for stretched covalent C–C bonds.
+There is no valid accommodated score or within-series preference result.
+
+All four native origin tasks failed before energies because the original
+one-task/32-thread allocation exposed too few MPI task slots. Technical recovery
+**1216461** is submitted CPU-only with32 tasks,1CPU/task,200000MiB, four concurrent
+eight-rank endpoints. `native_feasibility_retry_v1/manifest.json` has identical
+input/coordinate hashes, scientific keys, states and implementation to the four
+original tasks; only execution directories/concurrency changed. Dry-run and
+syntax checks pass. No new MACE calls or DFT are included. Its collector retains
+unavailable cells and explicitly leaves accommodation unavailable.
+
+The other eight systems are not being run. Do not restart the old automatic
+continuation: its completion gate does not require an admitted nonorigin geometry.
+A physically valid motion policy must be established before expanding response
+calculations. Do not loosen the covalent gate or count the large vacuum energy
+drops as physical accommodation. PQQ production and the other session's PLM scan
+are unaffected.
+
+## Historical pre-execution checkpoint — superseded by the status above
 
 Jacob explicitly requested a few two-ion and four-ion structures, beginning with
 Hans-LanM, before extending across the library. He then requested email when a

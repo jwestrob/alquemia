@@ -11,10 +11,14 @@ qualification, but both nonorigin proposals failed covalent geometry checks.
 All four native origin tasks failed at MPI startup; dependent1213040 was cancelled.
 CPU recovery1216461 also failed: ORCA's MaxCore2000MB was below its measured
 SCF requirement. Jacob requested full use of allocated CPUs/RAM and watchers.
-Recovery1216547 repeats only those four origin cells on an exclusive memory node,
-dividing all allocated CPUs over four MPI workers and reserving25% RAM headroom.
-Agent `/root/lanm_completion_watch` monitors start/completion/failure; Slurm email
-END/FAIL is also enabled. No new MACE/DFT or eight-system continuation runs.
+Recovery1216547 failed before any molecular work (absent optional memory envvar).
+Fixed1216564 is actually running all four native origin cells on112 CPUs,
+4×28 MPI ranks,1546754MiB RAM, MaxCore10800MB/rank. All four entered SCF.
+Agent `/root/lanm_completion_watch` pings root; chat-independent reporterPID3696728
+collects, writes result/vault and emails terminal results. See current state for
+receipt paths. Slurm END/FAIL is also enabled. User may exhaust assistant usage;
+compute and reporting continue independently. No new MACE/DFT or eight-system
+continuation runs. Do not assume a pending agent notification wakes an idle root.
 Read [first-run findings](diagnostics/lanm_global_occupancy_20260923/FIRST_RUN.md).
 Do not restart the old continuation: its gate does not require an admitted
 nonorigin geometry. Accommodation and within-series preference remain unavailable.

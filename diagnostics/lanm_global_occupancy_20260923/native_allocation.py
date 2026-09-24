@@ -13,6 +13,16 @@ def layout(cpus,memory_mib,slots):
     if maxcore<6000:raise ValueError('insufficient RAM for all CPUs at measured whole-source requirement')
     return ranks,memory_mib,maxcore
 
+def whole_node_memory(job_record,node_record):
+    # --mem=0 may omit SLURM_MEM_PER_NODE entirely. Read the authoritative
+    # scheduler request and registered node memory instead of that optional env.
+    requested=re.search(r'(?:^|\s)MinMemoryNode=(\S+)',job_record)
+    if requested is None or requested.group(1)!='0':
+        raise ValueError('whole-node memory was not granted by the scheduler')
+    registered=re.search(r'(?:^|\s)RealMemory=(\d+)',node_record)
+    if registered is None:raise ValueError('missing registered node memory')
+    return int(registered.group(1))
+
 def main():
     job=os.environ['SLURM_JOB_ID']
     raw=subprocess.check_output(['scontrol','show','job',job,'-o'],text=True)
@@ -25,10 +35,8 @@ def main():
     cpus=int(os.environ['SLURM_CPUS_ON_NODE'])
     if cpus!=int(field('NumCPUs')) or len(os.sched_getaffinity(0))<cpus:
         raise ValueError('scheduler CPU allocation and process affinity differ')
-    memory=int(os.environ['SLURM_MEM_PER_NODE'])
-    if memory==0:
-        node=subprocess.check_output(['scontrol','show','node',field('NodeList'),'-o'],text=True)
-        memory=int(re.search(r'(?:^|\s)RealMemory=(\d+)',node).group(1))
+    node=subprocess.check_output(['scontrol','show','node',field('NodeList'),'-o'],text=True)
+    memory=whole_node_memory(raw,node)
     print(*layout(cpus,memory,int(os.environ['SLURM_NTASKS'])))
 
 if __name__=='__main__':main()

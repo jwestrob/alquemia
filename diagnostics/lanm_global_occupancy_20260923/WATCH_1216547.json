@@ -1,0 +1,51 @@
+{
+  "job_id": "1216547",
+  "terminal_utc": "2026-09-24T23:02:13.273418+00:00",
+  "state": "FAILED",
+  "accounting": "1216547|FAILED|1:0|0|64|773914M|node-64-768g-4|billing=64,cpu=64,node=1",
+  "history": [
+    {
+      "utc": "2026-09-24T23:01:43.244911+00:00",
+      "state": "PENDING",
+      "queue": "1216547|PENDING||64|0|(Resources)",
+      "accounting": ""
+    },
+    {
+      "utc": "2026-09-24T23:02:13.273418+00:00",
+      "state": "FAILED",
+      "queue": "",
+      "accounting": "1216547|FAILED|1:0|0|64|773914M|node-64-768g-4|billing=64,cpu=64,node=1"
+    }
+  ],
+  "scope": "read-only completion watch; no new science or job changes",
+  "top_log_excerpts": {
+    "out": {
+      "first": [],
+      "last": []
+    },
+    "err": {
+      "first": [
+        "Traceback (most recent call last):",
+        "  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_global_occupancy_20260923/native_allocation.py\", line 34, in <module>",
+        "    if __name__=='__main__':main()",
+        "                            ^^^^^^",
+        "  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_global_occupancy_20260923/native_allocation.py\", line 28, in main",
+        "    memory=int(os.environ['SLURM_MEM_PER_NODE'])",
+        "               ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^",
+        "  File \"<frozen os>\", line 679, in __getitem__",
+        "KeyError: 'SLURM_MEM_PER_NODE'"
+      ],
+      "last": [
+        "Traceback (most recent call last):",
+        "  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_global_occupancy_20260923/native_allocation.py\", line 34, in <module>",
+        "    if __name__=='__main__':main()",
+        "                            ^^^^^^",
+        "  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_global_occupancy_20260923/native_allocation.py\", line 28, in main",
+        "    memory=int(os.environ['SLURM_MEM_PER_NODE'])",
+        "               ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^",
+        "  File \"<frozen os>\", line 679, in __getitem__",
+        "KeyError: 'SLURM_MEM_PER_NODE'"
+      ]
+    }
+  }
+}

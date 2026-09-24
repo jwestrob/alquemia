@@ -1,5 +1,36 @@
 # Small LanM occupancy pilot — whole-node recovery, 2026-09-24
 
+## Running and chat-independent delivery
+
+**1216564 is actually RUNNING** on node-112-1500g-1: all112 CPUs are used by four
+28-rank ORCA calculations, with1546754MiB node RAM and MaxCore10800MB/rank.
+All four have entered actual native SCF iterations; no converged endpoints yet.
+At10min26s, batch CPU time was17h49m17s and MaxRSS761154068KiB. This demonstrates
+real CPU use; it does not establish convergence or scientific selectivity.
+
+The preceding1216547 failed immediately because `SLURM_MEM_PER_NODE` is absent
+for this scheduler's `--mem=0`. The fix reads actual `MinMemoryNode=0` and node
+`RealMemory`; regression against real scheduler records passes. No chemistry
+changed and that failed attempt ran no molecular evaluations.
+
+User requested unattended execution through possible usage exhaustion. The batch
+executes and collects independently of chat. A detached low-cost reporter is
+running as PID3696728, recorded in `DELIVERY_WATCHER_1216564.json`; it polls only
+this job, writes `NATIVE_RESULT_1216564.md`, a vault note and
+`DELIVERY_1216564.json`, and emails the actual terminal result. Slurm END/FAIL
+email is also enabled. Agent `/root/lanm_completion_watch` separately pings root
+and writes `WATCH_1216564.json`; it does not duplicate email or submit work.
+Agent messages can wait until the root session is active: do not claim that
+these notifications can resume an assistant while its usage is exhausted.
+Collection/reporting do not require an active assistant.
+
+Only the four original native cells are running. No automatic resubmission,
+new MACE/DFT or eight-source continuation. The invalid relaxation search remains
+closed pending a physically valid motion policy. Inspect these actual receipts
+on resumption before doing further work.
+
+## Earlier recovery checkpoint
+
 **Latest:** job1216461 failed after308seconds on64 allocated CPUs. The MPI slot
 fix worked; ORCA then explicitly refused SCF because MaxCore2000MB was below its
 5535.5MB vacuum /5735.8MB ALPB estimate. All four cells remain unavailable.

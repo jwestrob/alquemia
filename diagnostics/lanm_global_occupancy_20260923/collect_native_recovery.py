@@ -2,6 +2,7 @@
 from pathlib import Path
 import json
 import sys
+import argparse
 
 ROOT=Path(__file__).resolve().parents[2]
 W=ROOT/'workspaces/lanm_global_occupancy_20260923'
@@ -11,7 +12,10 @@ from compact_solvation import completed,diagnostics
 from structure_informed_starts import scf_details
 
 def main():
-    mp=W/'native_feasibility_retry_v1/manifest.json';m=read_json(mp);rows=[]
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--manifest',type=Path,default=W/'native_feasibility_retry_v1/manifest.json')
+    args=parser.parse_args()
+    mp=args.manifest.resolve();m=read_json(mp);rows=[]
     for t in m['tasks']:
         row={'task_id':t['task_id'],'metal':t['metal'],'medium':t['medium'],
              'status':'unavailable','energy_hartree':None}
@@ -30,7 +34,7 @@ def main():
         'cell_denominator':4,'MACE_reused':record(W/'mace_feasibility_v2/result.json'),
         'accommodated_score':None,'accommodation_status':'unavailable_both_nonorigin_proposals_rejected_geometry',
         'new_MACE_calls':0,'new_DFT_calls':0,'continuation_to_eight_other_systems':False}
-    write_new(W/'native_feasibility_retry_v1/COLLECTION.json',result)
+    write_new(mp.parent/'COLLECTION.json',result)
     print(json.dumps({k:result[k] for k in ('complete_cells','cell_denominator','accommodation_status')}))
 
 if __name__=='__main__':main()

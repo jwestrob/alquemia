@@ -1,4 +1,30 @@
-# Small LanM occupancy pilot — first execution, 2026-09-24
+# Small LanM occupancy pilot — whole-node recovery, 2026-09-24
+
+**Latest:** job1216461 failed after308seconds on64 allocated CPUs. The MPI slot
+fix worked; ORCA then explicitly refused SCF because MaxCore2000MB was below its
+5535.5MB vacuum /5735.8MB ALPB estimate. All four cells remain unavailable.
+The PMIX warnings in output tails are not the identified fatal cause.
+
+Jacob explicitly requested: “If we have the memory we should use more processes!
+Just use what's available on the node!” He also requested completion watchers.
+**Job1216547** now requests one exclusive memory-partition node and all its RAM.
+At startup it divides ALL allocated CPUs among four MPI workers and derives
+per-rank MaxCore from75% of allocated RAM (remaining25% covers other allocations).
+The64-task scheduler request is an admission minimum; larger allocations use
+their full CPU count:64→4×16,112→4×28,224→4×56. Each MPI launch fits the scheduler
+slots and total simultaneous ranks equal allocated CPUs. No oversubscription or
+scheduler/environment rewriting. All observed memory-node classes pass dry-run
+resource checks. Input changes are MaxCore and MPI count only; source coordinates,
+Hamiltonian, chemical states and SCF tolerances are identical. Cache keys change.
+
+`native_feasibility_retry_v2/manifest.json` is created on the allocated node from
+actual resources. `native_memory_preflight_v1` is dry-run only. The unchanged four
+origin cells are the only molecular tasks; no new MACE/DFT or other sources.
+Slurm END/FAIL emails are enabled; agent `/root/lanm_completion_watch` monitors
+start and terminal status and pings root with actual outputs. Expected receipt:
+`diagnostics/lanm_global_occupancy_20260923/WATCH_1216547.json`.
+
+## Earlier first-run and first-retry checkpoint
 
 Read [the first-run findings](FIRST_RUN.md). Job1213018 ran458seconds and failed;
 its dependent1213040 was cancelled. Whole-protein MACE completed129 evaluations,

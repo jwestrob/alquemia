@@ -9,8 +9,12 @@ before broader within-series work. Read
 Job1213018 executed on September24: whole-protein MACE passed native force
 qualification, but both nonorigin proposals failed covalent geometry checks.
 All four native origin tasks failed at MPI startup; dependent1213040 was cancelled.
-CPU-only recovery1216461 repeats only those four unchanged origin cells with the
-corrected32-task allocation. No new MACE/DFT or eight-system continuation runs.
+CPU recovery1216461 also failed: ORCA's MaxCore2000MB was below its measured
+SCF requirement. Jacob requested full use of allocated CPUs/RAM and watchers.
+Recovery1216547 repeats only those four origin cells on an exclusive memory node,
+dividing all allocated CPUs over four MPI workers and reserving25% RAM headroom.
+Agent `/root/lanm_completion_watch` monitors start/completion/failure; Slurm email
+END/FAIL is also enabled. No new MACE/DFT or eight-system continuation runs.
 Read [first-run findings](diagnostics/lanm_global_occupancy_20260923/FIRST_RUN.md).
 Do not restart the old continuation: its gate does not require an admitted
 nonorigin geometry. Accommodation and within-series preference remain unavailable.

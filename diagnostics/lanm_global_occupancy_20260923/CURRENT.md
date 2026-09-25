@@ -1,5 +1,17 @@
 # Small LanM occupancy pilot — whole-node recovery, 2026-09-24
 
+## Latest terminal result — seeded vacuum recovery failed
+
+Job1217219 is FAILED after39377seconds (10h56m17s),112 allocated CPUs. Both
+endpoints actually activated XTBRESTART but failed SCF convergence after500cycles.
+Recovery is0/2; the original two converged ALPB results remain valid and preserved.
+No complete composite or within-series preference is available. Read
+`NATIVE_RESULT_1217219.md`, `WATCH_1217219.json`, `DELIVERY_1217219.json`.
+The detached reporter completed, wrote the vault note and emailed the actual
+outcome (local relay accepted). No job is attached to retry this branch again.
+Do not restart from the historical queued/running checkpoints below. A different
+initial electronic guess alone has not fixed whole-protein vacuum convergence.
+
 **For host/session restart:** read [RESTART_HANDOFF.md](RESTART_HANDOFF.md).
 It includes exact inspection/resume commands and how to restore the detached
 reporter without duplicate submissions or lost partial outputs. Mirrored in

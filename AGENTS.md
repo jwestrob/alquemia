@@ -1,5 +1,14 @@
 # Agent entry point
 
+## Restart recovery — 2026-09-25
+
+Start with [the compact restart handoff](diagnostics/lanm_global_occupancy_20260923/RESTART_HANDOFF.md).
+It records the actual results, queued1217219, approved two-cell numerical recovery,
+exact resume/watcher commands, concurrent PLM ownership and vault location.
+A host reboot can kill detached reporters and agent sessions even if Slurm jobs
+survive. Inspect the scheduler and receipts before resubmitting anything.
+Vault copy: `agent-captures/2026-09-25_Nikasha-restart-handoff.md`.
+
 ## Active small whole-protein LanM occupancy pilot — 2026-09-23
 
 Jacob authorized a few two-ion/four-ion structures, starting with Hans-LanM,

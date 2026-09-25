@@ -1,5 +1,10 @@
 # Small LanM occupancy pilot — whole-node recovery, 2026-09-24
 
+**For host/session restart:** read [RESTART_HANDOFF.md](RESTART_HANDOFF.md).
+It includes exact inspection/resume commands and how to restore the detached
+reporter without duplicate submissions or lost partial outputs. Mirrored in
+vault `agent-captures/2026-09-25_Nikasha-restart-handoff.md`.
+
 ## Latest — 2026-09-25: two converged solvent cells, two vacuum recoveries queued
 
 1216564 ended after5h52m21s: both ALPB cells passed collection; both vacuum

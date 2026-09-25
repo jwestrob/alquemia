@@ -31,6 +31,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--job',required=True)
     p.add_argument('--manifest',type=Path,required=True)
+    p.add_argument('--seeded-vacuum',action='store_true')
     a=p.parse_args()
     if not re.fullmatch(r'\d+',a.job):raise ValueError('numeric job ID required')
     lock=(DIAG/f'delivery_{a.job}.lock').open('a+')
@@ -43,15 +44,19 @@ def main():
         time.sleep(60)
     cp=a.manifest.parent/'COLLECTION.json'
     if a.manifest.exists() and not cp.exists():
-        r=subprocess.run([PY,str(DIAG/'collect_native_recovery.py'),'--manifest',str(a.manifest)],
+        command=([PY,str(DIAG/'seed_vacuum_recovery.py'),'collect'] if a.seeded_vacuum else
+                 [PY,str(DIAG/'collect_native_recovery.py')])
+        r=subprocess.run(command+['--manifest',str(a.manifest)],
                          cwd=ROOT,capture_output=True,text=True)
         result['collector_recovery']={'exit_code':r.returncode,'stdout':r.stdout,'stderr':r.stderr}
     collection=json.loads(cp.read_text()) if cp.exists() else None
     count=collection['complete_cells'] if collection else 0
+    denominator=2 if a.seeded_vacuum else 4
     lines=['# Whole-protein LanM native feasibility', '',
-           f"Job {a.job}: {result['state']}; {count}/4 native origin cells passed collection.",
+           f"Job {a.job}: {result['state']}; {count}/{denominator} native origin cells passed collection.",
            f"Node {result['node']}; {result['allocated_cpus']} allocated CPUs; {result['elapsed_seconds']} elapsed seconds.", '',
-           'These are the same Hans8DQ2 EF12 La/Dy vacuum/ALPB endpoints. No new MACE or DFT ran.',
+           ('These are two same-metal ALPB-seeded vacuum recovery endpoints; solvent energies are reused. Single-seed convergence is not a ground-state qualification.' if a.seeded_vacuum else
+            'These are the same Hans8DQ2 EF12 La/Dy vacuum/ALPB endpoints.')+' No new MACE or DFT ran.',
            'Both earlier relaxed geometries remain rejected for covalent distortion. This result tests native whole-protein execution; it is not a validated within-series preference or accommodated score.', '']
     if a.manifest.exists():
         manifest=json.loads(a.manifest.read_text())
@@ -75,7 +80,7 @@ def main():
         result['vault']=str(vault)
     except OSError as exc:result['vault_error']=str(exc)
     msg=EmailMessage();msg['To']='jacobwestroberts@gmail.com';msg['From']='jwestrob@biotite.berkeley.edu'
-    msg['Subject']=f'Nikasha LanM: native run {a.job} {result["state"]}, {count}/4 cells'
+    msg['Subject']=f'Nikasha LanM: native run {a.job} {result["state"]}, {count}/{denominator} cells'
     msg['Date']=formatdate(localtime=False);msg['Message-ID']=make_msgid();msg.set_content(body)
     eml=DIAG/f'native_result_{a.job}.eml'
     with eml.open('xb') as f:f.write(msg.as_bytes())

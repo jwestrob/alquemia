@@ -1,5 +1,31 @@
 # Small LanM occupancy pilot — whole-node recovery, 2026-09-24
 
+## Latest — 2026-09-25: two converged solvent cells, two vacuum recoveries queued
+
+1216564 ended after5h52m21s: both ALPB cells passed collection; both vacuum
+cells failed SCF convergence after500cycles. The independent reporter delivered
+the actual2/4 result to the vault and local mail relay successfully. Read
+`NATIVE_RESULT_1216564.md` and `DELIVERY_1216564.json`. These are numerical failures,
+not scheduler or memory failures. All original artifacts remain intact.
+
+Following Jacob's “two failed” / “proceed”, technical numerical recovery
+**1217219** repeats only the two vacuum cells with their own converged same-metal
+ALPB electronic states as initial guesses. Read [exact scope](SEEDED_VACUUM_PLAN.md).
+The target Hamiltonian stays vacuum; atoms/coordinates/state/tolerances stay fixed.
+Actual native restart markers must be observed. No additional solvent/MACE/DFT
+calls or relaxed structures. Two workers use all allocated CPUs and node memory
+with headroom. This is a separately named single-seed recovery, not proof of
+a unique electronic state or a validated preference.
+
+Runtime artifacts: `workspaces/lanm_global_occupancy_20260923/seeded_vacuum_v1/`.
+Real-fixture preflight and missing-output collection passed in
+`seeded_vacuum_preflight_v1` (no molecular execution there).
+Agent `/root/lanm_completion_watch` watches start/native-restart/terminal status.
+Independent reporterPID4160763 writes result/vault/email even without active chat;
+receipt `DELIVERY_WATCHER_1217219.json`. No automatic further retry/expansion.
+
+## Historical completed execution checkpoint
+
 ## Running and chat-independent delivery
 
 **1216564 is actually RUNNING** on node-112-1500g-1: all112 CPUs are used by four

@@ -12,9 +12,11 @@ All four native origin tasks failed at MPI startup; dependent1213040 was cancell
 CPU recovery1216461 also failed: ORCA's MaxCore2000MB was below its measured
 SCF requirement. Jacob requested full use of allocated CPUs/RAM and watchers.
 Recovery1216547 failed before any molecular work (absent optional memory envvar).
-Fixed1216564 is actually running all four native origin cells on112 CPUs,
-4×28 MPI ranks,1546754MiB RAM, MaxCore10800MB/rank. All four entered SCF.
-Agent `/root/lanm_completion_watch` pings root; chat-independent reporterPID3696728
+Fixed1216564 completed with two converged ALPB cells and two vacuum SCF failures
+after500cycles. Technical recovery1217219 uses each metal's successful ALPB state
+to initialize its unchanged vacuum target, two tasks sharing the full allocation.
+Read SEEDED_VACUUM_PLAN.md in the diagnostic directory. No solvent cells repeat.
+Agent `/root/lanm_completion_watch` pings root; chat-independent reporterPID4160763
 collects, writes result/vault and emails terminal results. See current state for
 receipt paths. Slurm END/FAIL is also enabled. User may exhaust assistant usage;
 compute and reporting continue independently. No new MACE/DFT or eight-system

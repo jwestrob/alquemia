@@ -2,10 +2,11 @@
 import os
 import re
 import subprocess
+import argparse
 
-def layout(cpus,memory_mib,slots):
-    if cpus<4 or cpus%4:raise ValueError('four equal workers require a CPU count divisible by four')
-    ranks=cpus//4
+def layout(cpus,memory_mib,slots,workers=4):
+    if workers<1 or cpus<workers or cpus%workers:raise ValueError('equal workers require a divisible CPU count')
+    ranks=cpus//workers
     if ranks>slots:raise ValueError('an MPI worker would exceed declared Slurm task slots')
     # ORCA MaxCore is per MPI rank in MB, Slurm memory is MiB. Reserve 25% for
     # allocations outside MaxCore and round downward, never upward.
@@ -24,6 +25,9 @@ def whole_node_memory(job_record,node_record):
     return int(registered.group(1))
 
 def main():
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--workers',type=int,default=4)
+    args=parser.parse_args()
     job=os.environ['SLURM_JOB_ID']
     raw=subprocess.check_output(['scontrol','show','job',job,'-o'],text=True)
     def field(key):
@@ -37,6 +41,6 @@ def main():
         raise ValueError('scheduler CPU allocation and process affinity differ')
     node=subprocess.check_output(['scontrol','show','node',field('NodeList'),'-o'],text=True)
     memory=whole_node_memory(raw,node)
-    print(*layout(cpus,memory,int(os.environ['SLURM_NTASKS'])))
+    print(*layout(cpus,memory,int(os.environ['SLURM_NTASKS']),args.workers))
 
 if __name__=='__main__':main()

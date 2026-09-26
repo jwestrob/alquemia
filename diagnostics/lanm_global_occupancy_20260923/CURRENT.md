@@ -1,5 +1,9 @@
 # Small LanM occupancy pilot — whole-node recovery, 2026-09-24
 
+September26: Jacob requested discussion/model selection and Pro review before
+further engineering. See [the review brief](../../docs/PRO_REVIEW_LANM_20260926.md).
+No new LanM model or calculation is launched. PQQ execution is owned separately.
+
 ## Latest terminal result — seeded vacuum recovery failed
 
 Job1217219 is FAILED after39377seconds (10h56m17s),112 allocated CPUs. Both

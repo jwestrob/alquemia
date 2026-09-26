@@ -1,5 +1,9 @@
 # GPT-6 Pro scientific review brief: La/Ca energetic discriminator
 
+> Historical brief. For the current September26 LanM model-selection review,
+> start with [docs/PRO_REVIEW_LANM_20260926.md](docs/PRO_REVIEW_LANM_20260926.md).
+> The original assignment and evidence below remain preserved.
+
 ## Assignment
 
 Audit whether the current frozen-geometry DFT strategy can demonstrate

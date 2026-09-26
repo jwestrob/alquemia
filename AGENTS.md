@@ -1,5 +1,14 @@
 # Agent entry point
 
+## Current Pro review — 2026-09-26
+
+Read [the current model-selection brief](docs/PRO_REVIEW_LANM_20260926.md).
+Both seeded vacuum retries1217219 failed after500iterations; all owned LanM
+calculations are terminal. The whole-protein MACE search also yielded no admitted
+relaxed geometry. Jacob wants scientific model selection with Pro before more
+engineering. PQQ execution belongs to another session. No new LanM run is queued
+here. The restart/queued checkpoints below are historical; do not relaunch them.
+
 ## Restart recovery — 2026-09-25
 
 Start with [the compact restart handoff](diagnostics/lanm_global_occupancy_20260923/RESTART_HANDOFF.md).

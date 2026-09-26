@@ -3517,3 +3517,18 @@ FourPLMjoin tests pass; agents'completedscoped checks/receipts are inlinkedrepor
 Substantiveemailwithphysical-responsefigure acceptedbylocalrelay; vaultupdated.
 Agents completed scopedcommits7e5b738,a254f52,aae102d,7991561,c608713 and released
 ownership. Root retains integration/docs/PLMexports; no duplicatechemistry needed.
+
+
+## 2026-09-26 — Pro model-selection review, whole-protein LanM phase terminal
+
+Jacob requested current documentation and a remote push for Pro review. Start
+with docs/PRO_REVIEW_LANM_20260926.md and its compact actual-artifact evidence
+export. Whole-protein MACE ran but both relaxed candidates failed covalent
+geometry. Native job1216564 gave2valid ALPB/2failed vacuum; seeded1217219
+also failed both vacuum cells after500iterations. No valid whole-protein
+selectivity or accommodation; no additional LanM calculation launched.
+Current priority is discussing model choice with Jacob/Pro, including coherent
+solvent-aware whole-protein response. PQQ execution belongs to another session.
+Old queued restart instructions are historical, not an instruction to rerun.
+Scoped review docs and terminal summaries prepared for the authorized push;
+unrelated working-tree edits preserved.

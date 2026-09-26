@@ -1,5 +1,11 @@
 # Nikasha restart handoff — 2026-09-25
 
+> September26 update:1217219 is terminal; both seeded vacuum endpoints failed
+> after500cycles. No new calculation is queued by this session. Read
+> [the current Pro review](../../docs/PRO_REVIEW_LANM_20260926.md) and CURRENT.md.
+> The queued-job/resubmission instructions below are historical and must not
+> trigger an automatic relaunch of this failed branch.
+
 **Read this first after a restart.** This is the compact state of Jacob's long
 session, including the last approved action. Recover actual scheduler/artifact
 state before doing anything: the snapshot below can become stale.

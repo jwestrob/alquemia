@@ -1,0 +1,151 @@
+{
+  "recorded_utc": "2026-09-26T23:35:31.690984+00:00",
+  "status": "reference_queued_ml_backend_blocked",
+  "reference_job": "1218751",
+  "collector_job": "1218752",
+  "discriminator_dependency": "1217591",
+  "new_molecular_evaluations": 0,
+  "new_allocated_core_seconds": 0,
+  "new_gpu_seconds": 0,
+  "tests": {
+    "unit_parser_allocation": {
+      "passed": 12,
+      "failed": 0
+    },
+    "preparation_checks": {
+      "status": "pass",
+      "checks": [
+        {
+          "check": "same_inventory_charge_only_declared_H_moves",
+          "status": "pass",
+          "changed_indices": [
+            2412
+          ]
+        },
+        {
+          "check": "paired_coordinate_identity",
+          "status": "pass",
+          "max_delta_A": 0.0
+        },
+        {
+          "check": "complete_source_and_synthetic_atom_accounting",
+          "status": "pass"
+        },
+        {
+          "check": "physical_cap_Jacobians_selected_real_coordinate_FD",
+          "status": "pass",
+          "max_absolute_error": 4.588350810408315e-10,
+          "step_A": 1e-05,
+          "tolerance": 1e-08
+        },
+        {
+          "check": "modeled_H_to_QM_heavy_no_short_clash",
+          "status": "pass",
+          "before_after_A": [
+            2.1929856360678714,
+            2.013943734116046
+          ],
+          "minimum_A": 1.2
+        }
+      ],
+      "molecular_evaluations": 0,
+      "scientific_integration_tests": 0,
+      "notes": "Coordinate finite differences validate analytic cap Jacobians, not an electronic energy or force."
+    }
+  },
+  "rows": [
+    {
+      "backend": "ORCA_r2SCAN3c",
+      "metal": "Ca",
+      "environment": "A",
+      "energy_hartree": null,
+      "status": "queued"
+    },
+    {
+      "backend": "ORCA_r2SCAN3c",
+      "metal": "Ca",
+      "environment": "B",
+      "energy_hartree": null,
+      "status": "queued"
+    },
+    {
+      "backend": "ORCA_r2SCAN3c",
+      "metal": "Ca",
+      "environment": "isolated",
+      "energy_hartree": null,
+      "status": "queued"
+    },
+    {
+      "backend": "ORCA_r2SCAN3c",
+      "metal": "La",
+      "environment": "A",
+      "energy_hartree": null,
+      "status": "queued"
+    },
+    {
+      "backend": "ORCA_r2SCAN3c",
+      "metal": "La",
+      "environment": "B",
+      "energy_hartree": null,
+      "status": "queued"
+    },
+    {
+      "backend": "ORCA_r2SCAN3c",
+      "metal": "La",
+      "environment": "isolated",
+      "energy_hartree": null,
+      "status": "queued"
+    },
+    {
+      "backend": "MACEPOL_EF",
+      "metal": "Ca",
+      "environment": "A",
+      "energy_hartree": null,
+      "status": "unavailable_exact_weights_and_engine"
+    },
+    {
+      "backend": "MACEPOL_EF",
+      "metal": "Ca",
+      "environment": "B",
+      "energy_hartree": null,
+      "status": "unavailable_exact_weights_and_engine"
+    },
+    {
+      "backend": "MACEPOL_EF",
+      "metal": "Ca",
+      "environment": "isolated",
+      "energy_hartree": null,
+      "status": "unavailable_exact_weights_and_engine"
+    },
+    {
+      "backend": "MACEPOL_EF",
+      "metal": "La",
+      "environment": "A",
+      "energy_hartree": null,
+      "status": "unavailable_exact_weights_and_engine"
+    },
+    {
+      "backend": "MACEPOL_EF",
+      "metal": "La",
+      "environment": "B",
+      "energy_hartree": null,
+      "status": "unavailable_exact_weights_and_engine"
+    },
+    {
+      "backend": "MACEPOL_EF",
+      "metal": "La",
+      "environment": "isolated",
+      "energy_hartree": null,
+      "status": "unavailable_exact_weights_and_engine"
+    }
+  ],
+  "full_hybrid_status": "unsupported_cross_parameters_and_boundary_reference",
+  "electronic_double_difference_kcal_mol": null,
+  "prediction": null,
+  "production_changed": false,
+  "scheduler": "JOBID|NAME|STATE|DEPENDENCY\n1218751|Nikasha-field-reference|PENDING|afterany:1217591(unfulfilled)\n1218752|Nikasha-field-collect|PENDING|afterany:1218751(unfulfilled)\n",
+  "source_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/reference_scout_v1/manifest.json",
+    "sha256": "c822b82da3857e45ead36a345d6130d8138833c56e065113dc83ed4ad3526696"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "model": "e2b0aeed27c2822790a6994c9a64327e5f131158",
+  "engine": "4af44eb9a9ce91428dad142cbaa8bdd598e7a09f",
+  "model_commit": {
+    "author": {
+      "name": "hsuchein",
+      "email": "hsuchein0126@outlook.com",
+      "date": "2026-05-16T02:43:24Z"
+    },
+    "committer": {
+      "name": "hsuchein",
+      "email": "hsuchein0126@outlook.com",
+      "date": "2026-05-16T02:43:24Z"
+    },
+    "message": "0515 ablation: env-var gates for qV + sign-fix + register 0514 chain models\n\nAdds two env-var overrides for the 0515 (head ON/OFF) × (qV+sign-fix vs\npre-0428 ORIGINAL) 2x2 ablation, both gated off by default so production\nbehavior is unchanged:\n- FORCE_DISABLE_QV=1 in PolarMACE.forward → falls back to legacy qER even\n  when batch has external_potential\n- FORCE_NO_NEGATE=1 in AtomicData.from_config → keeps E_input = +E_phys\n  (pre-0428 OMol25 convention)\n\nAlso registers the four 0514 qV chain candidates (ft1_lr5e4 + ft2_lr{1,2,5}e4_q10)\nin eval_macepol_0428.py MODELS so the val_f sweep can target them by tag.\n\nCo-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>",
+    "tree": {
+      "sha": "73923de2e67a4d896bfe04653c42d587d0142011",
+      "url": "https://api.github.com/repos/ClickFF/MACEPOL-EF/git/trees/73923de2e67a4d896bfe04653c42d587d0142011"
+    },
+    "url": "https://api.github.com/repos/ClickFF/MACEPOL-EF/git/commits/e2b0aeed27c2822790a6994c9a64327e5f131158",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "engine_commit": {
+    "author": {
+      "name": "Hsuchein",
+      "email": "129578396+Hsuchein@users.noreply.github.com",
+      "date": "2026-01-23T03:38:16Z"
+    },
+    "committer": {
+      "name": "GitHub",
+      "email": "noreply@github.com",
+      "date": "2026-01-23T03:38:16Z"
+    },
+    "message": "Update references section in README.md",
+    "tree": {
+      "sha": "dd627becd5d931afcad2caad11a1993594487100",
+      "url": "https://api.github.com/repos/ClickFF/MLMM4AMBER/git/trees/dd627becd5d931afcad2caad11a1993594487100"
+    },
+    "url": "https://api.github.com/repos/ClickFF/MLMM4AMBER/git/commits/4af44eb9a9ce91428dad142cbaa8bdd598e7a09f",
+    "comment_count": 0,
+    "verification": {
+      "verified": true,
+      "reason": "valid",
+      "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJpcu0oCRC1aQ7uu5UhlAAAeWUQAImqaqlVXDFUWtCO4VrhyZ+R\nJ+vFwmsBsxk8oei+xgzzr/NMS7oRZqThbJ4Pcm1BeehbZQwzrr4ncUt+4NelyJkx\nn0GbJIGsA3t8okrWjNv5/FEQKf9mttYceblh1QbulhedPuahTlmlCRP4XPUPWseq\n5H94fEe7Kv7JTLLWUhAiXB+1NDo5PUV/bB9bg/8NULE/xFCEI4U9bgfn76KU9fkf\nEbksLX+OnMbZxamZqb2XC50bvKZ+FL+w5pJsmvYoMarha9mSd7CIfXN4zHwArqvL\nO+3tUOrymDvw3c+MAM4Qwsg8RtF9iUyb6tPS23MK1gNlevuyngbmwNOJ++s9x+yy\n+v0g7YI9Q6Ne6BdQbqch9jpFm1d2RYdtPCloO05yI8oFJMPaqTKIfH75cGeMBqBb\nJdzCiGPXZICUxVurF/fwgEhnQ1PolJ0w7z1GY8bPz2V5AMnLbS14IV8aV583jOv+\nniOv3W0OABeeZOZOthEu3ivnlub5QBDAiGFk/OW+Y3BUO02BBSnsQxB0F7qpePBq\njKzxP2mpyWd1EPlpu+hLH/zuqmOPBSQsG2HCWuELVTanFfL8zsoNXCLebwijwRe2\nHRwN0vn97gbFqvRMd6WU0J1klI3/gRCF5orZXt5bKfjymUYvvTBFlxnpuPh4YLDT\nL2T2z3llGwM6WNYSyPcU\n=wy46\n-----END PGP SIGNATURE-----\n",
+      "payload": "tree dd627becd5d931afcad2caad11a1993594487100\nparent 8795e32b9922e4c63d5247e082e4776b59a287bd\nauthor Hsuchein <129578396+Hsuchein@users.noreply.github.com> 1769139496 -0500\ncommitter GitHub <noreply@github.com> 1769139496 -0500\n\nUpdate references section in README.md",
+      "verified_at": "2026-01-23T03:38:16Z"
+    }
+  }
+}

@@ -1,5 +1,20 @@
 # Agent entry point
 
+## Field-aware response phase — 2026-09-26
+
+Jacob supplied a new execution handoff, superseding the discussion-only pause
+below. Read [the live checkpoint](diagnostics/metal_environment_response_20260926/CURRENT.md).
+Audit MACEPOL-EF/MLMM4AMBER and develop the finite real Ca/La embedded-response
+scout first. Root owns execution; parallel agents own upstream and preparation
+audits. Research jobs must wait behind the other session's discriminator jobs.
+Prepare for Monday 28 September shutdown at 10 AM Pacific. Do not revive old
+LanM vacuum subtraction, change PQQ production, or launch a library campaign.
+Reference scout1218751 is queued afterany final PQQ collector1217591;
+independent collection1218752 follows it. No molecular evaluation has run yet.
+Upstream audit found actual atomwise qV support but unavailable paper weights
+and engine coupling; full hybrid cross parameters remain blocked. Read CURRENT
+before resuming; do not duplicate either job. All three audit agents finished.
+
 ## Current Pro review — 2026-09-26
 
 Read [the current model-selection brief](docs/PRO_REVIEW_LANM_20260926.md).

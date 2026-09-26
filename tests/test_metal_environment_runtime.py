@@ -1,0 +1,72 @@
+"""Resource algebra and immutable-template rendering; no molecular executions."""
+import hashlib
+import json
+import os
+from pathlib import Path
+import sys
+import tempfile
+import unittest
+from unittest.mock import patch
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'scripts'))
+from metal_environment_runtime import allocation_policy, render_runtime_input
+
+ENV = {'SLURM_CPUS_ON_NODE':'64', 'SLURM_NTASKS':'64',
+       'SLURM_MEM_PER_NODE':'262144'}
+
+
+class AllocationTests(unittest.TestCase):
+    def test_approved_256_gib_allocation(self):
+        p = allocation_policy(ENV)
+        self.assertEqual((p['workers'],p['ranks_per_worker'],p['maxcore_MB']), (4,16,3200))
+        self.assertAlmostEqual(p['per_rank_decimal_MB_before_rounding'],3221.225472)
+        p = allocation_policy(dict(ENV,SLURM_MEM_PER_NODE='256000'))
+        self.assertEqual(p['maxcore_MB'],3100)
+        self.assertAlmostEqual(p['per_rank_decimal_MB_before_rounding'],3145.728)
+
+    def test_per_cpu_memory_and_mpi_slots(self):
+        env = dict(ENV); del env['SLURM_MEM_PER_NODE']; env['SLURM_MEM_PER_CPU']='4096'
+        self.assertEqual(allocation_policy(env)['maxcore_MB'],3200)
+        p = allocation_policy(dict(ENV,SLURM_NTASKS='1'))
+        self.assertEqual((p['workers'],p['ranks_per_worker']),(1,1))
+        p = allocation_policy(dict(ENV,SLURM_NTASKS='32',SLURM_CPUS_ON_NODE='32'))
+        self.assertEqual((p['workers'],p['ranks_per_worker']),(4,8))
+
+    def test_missing_zero_and_multinode_evidence_fail(self):
+        for change in ({'SLURM_MEM_PER_NODE':'0'}, {'SLURM_CPUS_ON_NODE':'0'},
+                       {'SLURM_JOB_NUM_NODES':'2'}):
+            with self.assertRaises(ValueError):
+                allocation_policy(dict(ENV,**change))
+        with self.assertRaises(ValueError):
+            allocation_policy({'SLURM_CPUS_ON_NODE':'64','SLURM_NTASKS':'64'})
+
+    def test_render_real_archived_scientific_input(self):
+        # Use actual immutable archived ORCA input, no invented molecular fixture.
+        source = ROOT/'diagnostics/pqq_balanced_embedding_20260914/prepared/mxaf/qm33/Ca.inp'
+        if not source.exists():
+            self.skipTest('Archived real ORCA template unavailable')
+        archived = source.read_bytes()
+        with tempfile.TemporaryDirectory() as directory, patch.dict(os.environ,ENV,clear=True):
+            # Resource-policy adaptation of actual archived input; preserve all
+            # method, charge, spin, embedding and geometry-reference lines.
+            template = Path(directory)/'source.inp'
+            original = b''.join(line for line in archived.splitlines(keepends=True)
+                                if not line.lower().lstrip().startswith(b'%maxcore'))
+            template.write_bytes(original)
+            runtime = Path(directory)/'endpoint.runtime.inp'
+            record = render_runtime_input(template,runtime,nprocs=16)
+            self.assertEqual(source.read_bytes(),archived)
+            self.assertEqual(template.read_bytes(),original)
+            self.assertEqual(record['template']['sha256'],hashlib.sha256(original).hexdigest())
+            self.assertEqual(record['runtime_input']['sha256'],hashlib.sha256(runtime.read_bytes()).hexdigest())
+            self.assertEqual(record,json.loads(runtime.with_suffix('.json').read_text()))
+            self.assertTrue(runtime.read_text().startswith('%maxcore 3200\n'))
+            self.assertEqual(record['schema_version'],'alchemical_bvs.orca_runtime_input.v1')
+            with patch.dict(os.environ,{'SLURM_NTASKS':'1'}):
+                with self.assertRaisesRegex(ValueError,'layout exceeds'):
+                    render_runtime_input(template,Path(directory)/'bad.inp',nprocs=16)
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -3532,3 +3532,21 @@ solvent-aware whole-protein response. PQQ execution belongs to another session.
 Old queued restart instructions are historical, not an instruction to rerun.
 Scoped review docs and terminal summaries prepared for the authorized push;
 unrelated working-tree edits preserved.
+
+
+## 2026-09-26 — field-aware response scout queued behind PQQ
+
+Jacob authorized the new Pro handoff and requires research to wait behind the
+other session's discriminator before Monday10AM Pacific shutdown. Read
+diagnostics/metal_environment_response_20260926/CURRENT.md and REPORT.md.
+MACEPOL-EF code supports atomwise potential+field; exact trained checkpoint and
+paper-compatible engine unavailable. Author question drafted, not sent.
+Prepared actual1H4I54atom Ca−3/La−2 core and fixed9087charge A/B environments;
+only realThr159HG1 rotates+10degrees. Full hybrid cross-parameters remain blocked;
+reference is explicitly electronic-component response, not an affinity scorer.
+12unit/parser/allocation tests +5physical preparation checks pass; no new molecular
+evaluations yet. CPU scout1218751 afteranyPQQ1217591:6analytic-gradient endpoints,
+64CPUs/256GiB,4x16native ranks, noGPU. Collector1218752 afteranyscout writes actual
+results/accounting without this chat. Both dependency-pending, no oldjob retry.
+All three bounded agents complete; root owns integration/recovery. No production
+change, remote push, email or library campaign. Vault checkpoint updated.

@@ -1,0 +1,40 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "check": "same_inventory_charge_only_declared_H_moves",
+      "status": "pass",
+      "changed_indices": [
+        2412
+      ]
+    },
+    {
+      "check": "paired_coordinate_identity",
+      "status": "pass",
+      "max_delta_A": 0.0
+    },
+    {
+      "check": "complete_source_and_synthetic_atom_accounting",
+      "status": "pass"
+    },
+    {
+      "check": "physical_cap_Jacobians_selected_real_coordinate_FD",
+      "status": "pass",
+      "max_absolute_error": 4.588350810408315e-10,
+      "step_A": 1e-05,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "modeled_H_to_QM_heavy_no_short_clash",
+      "status": "pass",
+      "before_after_A": [
+        2.1929856360678714,
+        2.013943734116046
+      ],
+      "minimum_A": 1.2
+    }
+  ],
+  "molecular_evaluations": 0,
+  "scientific_integration_tests": 0,
+  "notes": "Coordinate finite differences validate analytic cap Jacobians, not an electronic energy or force."
+}

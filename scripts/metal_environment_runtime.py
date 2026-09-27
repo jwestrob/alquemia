@@ -12,6 +12,7 @@ import math
 import os
 from pathlib import Path
 import re
+import subprocess
 
 
 def _positive(value, name):
@@ -20,11 +21,25 @@ def _positive(value, name):
     return int(value)
 
 
+def exclusive_node_memory(job_text, node_text, partition_text):
+    """Full scheduler-registered RAM only for a verified whole-node allocation."""
+    def field(text, key):
+        hit=re.search(r'(?:^|\s)'+key+r'=(\S+)',text)
+        if not hit: raise ValueError('Missing scheduler field '+key)
+        return hit[1]
+    if (field(job_text,'NumNodes')!='1' or
+        field(partition_text,'OverSubscribe')!='EXCLUSIVE' or
+        int(field(job_text,'NumCPUs'))!=int(field(node_text,'CPUTot'))):
+        return None
+    return int(field(node_text,'RealMemory'))
+
+
 def allocation_policy(environment=None, *, workers=4, ranks=16):
     """Return bounded concurrency and a 25%-reserved per-rank memory ceiling.
 
-    No host /proc memory, zero-memory whole-node guess, or cpus-per-task as MPI
-    slots. Slurm must provide actual allocated CPUs and local task slots.
+    Verified exclusive allocations use full scheduler RealMemory irrespective
+    of the original request. Shared allocations use granted memory. No host
+    /proc guess or cpus-per-task substitution for actual MPI slots.
     """
     env = os.environ if environment is None else environment
     cpus = _positive(env.get('SLURM_CPUS_ON_NODE'), 'SLURM_CPUS_ON_NODE')
@@ -41,7 +56,21 @@ def allocation_policy(environment=None, *, workers=4, ranks=16):
     usable = min(cpus, slots)
     workers = min(_positive(workers, 'workers'), usable)
     ranks = min(_positive(ranks, 'ranks'), usable // workers)
-    if env.get('SLURM_MEM_PER_NODE') is not None:
+    full_memory=None
+    if env.get('SLURM_JOB_ID'):
+        job=subprocess.check_output(['scontrol','show','job',str(env['SLURM_JOB_ID']),'-o'],text=True)
+        def value(key):
+            match=re.search(r'(?:^|\s)'+key+r'=(\S+)',job)
+            if not match: raise ValueError('Missing scheduler field '+key)
+            return match[1]
+        if value('NumNodes')=='1':
+            node=subprocess.check_output(['scontrol','show','node',value('NodeList'),'-o'],text=True)
+            partition=subprocess.check_output(['scontrol','show','partition',value('Partition'),'-o'],text=True)
+            full_memory=exclusive_node_memory(job,node,partition)
+    if full_memory is not None:
+        memory=full_memory
+        source='exclusive whole-node scheduler RealMemory; request is not a ceiling'
+    elif env.get('SLURM_MEM_PER_NODE') is not None:
         memory = _positive(env['SLURM_MEM_PER_NODE'], 'SLURM_MEM_PER_NODE')
         source = 'SLURM_MEM_PER_NODE'
     else:

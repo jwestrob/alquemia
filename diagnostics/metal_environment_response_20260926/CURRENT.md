@@ -87,3 +87,43 @@ endpoints require an explicit fresh attempt, never an automatic rerun.
 Startup exit75 means new discriminator work or Monday's shutdown cutoff
 prevented molecular execution; read the job log. The cutoff is a shutdown
 safeguard, not a project compute/time budget.
+
+
+## Queue eligibility update — 2026-09-26
+
+Jacob permits any available queue except test. Updated pending1218751 in place
+to standard,memory,high-memory,standard-shared; afterany1217591 remains intact.
+Suitable CPU nodes are idle; no GPU allocation is needed. No duplicate job or
+scientific-input change. Actual scheduler update and before/after records:
+`workspaces/metal_environment_response_20260926/reference_scout_v1/PARTITION_UPDATE_1.json`.
+Original submitted batch script remains historical; this scheduler update is
+the current partition policy. Collector1218752 remains standard-shared.
+
+
+## 2026-09-27 recovery
+
+Original1218751 exited75 before molecular execution because a new PQQ4A
+batch was pending; collector1218752 recorded six missing cells. No chemistry
+failed or ran, zero allocated core-seconds for the deferred scout. Queue now
+empty; root resubmitted the unchanged frozen manifest as **1219207**, collector
+**1219208**. No scientific input or historical collection overwritten.
+See reference_scout_v1/RELAUNCH_20260927.json. New terminal files are
+FINAL_COLLECTION_1219207.json, final_accounting_1219207.txt, AUTO_REPORT_1219207.md.
+Original FINAL_COLLECTION.json/AUTO_REPORT.md remain the deferred attempt.
+
+
+## Exclusive-node correction — 2026-09-27
+
+Jacob reiterated: use full node RAM/threads, not the request as a memory cap.
+Live1219207 acquired344CPUs exclusively but original request/manifest launched
+4x16ranks with256GiB-derived MaxCore. All6tasks already started when inspected;
+3Ca completed. Do not rewrite their frozen implementation or discard results.
+Future renderer now verifies scheduler exclusivity and uses full RealMemory;
+shared nodes remain allocation-bound. Future prepare requires explicit workers
+and MPI ranks; execution checks all workers fit task slots. On this344CPU node,
+6x57ranks uses342slots; memory is derived from8256990MiB with25%operational
+headroom, not256GiB. Five resource tests pass, including actual captured scheduler
+records in RESOURCE_POLICY_20260927.json. New run_reference_fullnode.sbatch
+requests344slots/exclusive/--mem=0 for an appropriately prepared new manifest;
+it is NOT a request to repeat the current six endpoints. Original submitted
+script/manifest remain preserved. Policy is recorded prominently in AGENTS.md.

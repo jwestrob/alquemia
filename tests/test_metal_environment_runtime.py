@@ -10,13 +10,25 @@ from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from metal_environment_runtime import allocation_policy, render_runtime_input
+from metal_environment_runtime import allocation_policy, render_runtime_input, exclusive_node_memory
 
 ENV = {'SLURM_CPUS_ON_NODE':'64', 'SLURM_NTASKS':'64',
        'SLURM_MEM_PER_NODE':'262144'}
 
 
 class AllocationTests(unittest.TestCase):
+    def test_actual_exclusive_node_ignores_smaller_request(self):
+        captured=json.loads((ROOT/'diagnostics/metal_environment_response_20260926/RESOURCE_POLICY_20260927.json').read_text())
+        self.assertEqual(exclusive_node_memory(captured['job'],captured['node'],captured['partition']),8256990)
+        env=dict(ENV,SLURM_JOB_ID='1219207',SLURM_CPUS_ON_NODE='344',SLURM_NTASKS='344')
+        with patch('metal_environment_runtime.subprocess.check_output',side_effect=[captured['job'],captured['node'],captured['partition']]):
+            result=allocation_policy(env,workers=6,ranks=57)
+        self.assertEqual(result['allocated_memory_MiB'],8256990)
+        self.assertEqual(result['workers']*result['ranks_per_worker'],342)
+        self.assertGreater(result['maxcore_MB'],18000)
+        shared=captured['partition'].replace('OverSubscribe=EXCLUSIVE','OverSubscribe=NO')
+        self.assertIsNone(exclusive_node_memory(captured['job'],captured['node'],shared))
+
     def test_approved_256_gib_allocation(self):
         p = allocation_policy(ENV)
         self.assertEqual((p['workers'],p['ranks_per_worker'],p['maxcore_MB']), (4,16,3200))

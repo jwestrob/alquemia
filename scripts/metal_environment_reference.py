@@ -32,7 +32,9 @@ def read_pcgrad(path, count):
     return values
 
 
-def prepare(inputs, plan, output):
+def prepare(inputs, plan, output, *, mpi_ranks, workers):
+    if mpi_ranks<1 or workers<1 or workers>6:
+        raise InvalidArtifact('positive MPI ranks and one to six workers required')
     config = read_json(inputs)
     out = Path(output).resolve()
     out.mkdir(parents=True, exist_ok=False)
@@ -74,7 +76,7 @@ def prepare(inputs, plan, output):
              tasks=tasks, orca=record(ORCA), implementation=pins,
              execution_policy={'task_runner':pins['run_orca_task_manifest.py'],
                                'runtime_renderer':pins['render_orca_runtime_input.py']},
-             execution_resources={'mpi_ranks':16, 'concurrent_tasks':4},
+             execution_resources={'mpi_ranks':mpi_ranks, 'concurrent_tasks':workers},
              energy_scope='embedded_electronic_component_only',
              full_hybrid_status='unsupported_cross_parameters_and_boundary_reference',
              classification=None, affinity=None, compute_budget=None, wall_time_limit=None)
@@ -167,17 +169,20 @@ def main():
     sub=p.add_subparsers(dest='op',required=True)
     a=sub.add_parser('prepare')
     for k in ('inputs','plan','output'): a.add_argument('--'+k,required=True)
+    a.add_argument('--mpi-ranks',type=int,required=True)
+    a.add_argument('--workers',type=int,required=True)
     for op in ('dry-run','execute','collect'):
         a=sub.add_parser(op); a.add_argument('--manifest',required=True); a.add_argument('--output')
     args=p.parse_args()
-    if args.op=='prepare': result=prepare(args.inputs,args.plan,args.output)
+    if args.op=='prepare': result=prepare(args.inputs,args.plan,args.output,mpi_ranks=args.mpi_ranks,workers=args.workers)
     elif args.op=='dry-run': result=validate(args.manifest)
     elif args.op=='collect': result=collect(args.manifest)
     else:
         validate(args.manifest)
-        # Match 64 allocated task slots; the existing runner partitions four workers.
-        if int(os.environ.get('SLURM_NTASKS','0')) < 16:
-            raise InvalidArtifact('native MPI requires at least 16 allocated task slots')
+        layout=read_json(args.manifest)['execution_resources']
+        if int(os.environ.get('SLURM_NTASKS','0')) < layout['mpi_ranks']*layout['concurrent_tasks']:
+            raise InvalidArtifact('native MPI layout exceeds allocated task slots')
+        os.environ['METAL_ENV_WORKERS']=str(layout['concurrent_tasks'])
         result=execute(args.manifest)
     if args.op!='prepare' and args.output: write_new(args.output,result)
     print(json.dumps(result,indent=2))

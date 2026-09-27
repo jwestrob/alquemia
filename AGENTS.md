@@ -1,5 +1,18 @@
 # Agent entry point
 
+## Exclusive-node resource policy — Jacob, 2026-09-27
+
+On an exclusive whole-node allocation, use the node's scheduler-registered RAM
+and available CPU/MPI slots, not the smaller original memory request as an
+artificial ceiling. Request whole-node memory (`--mem=0`) and enough task slots
+when submitting such jobs. Derive per-worker ORCA MaxCore from full node memory
+and actual concurrency, retaining operational headroom; use parallel independent
+endpoints to exploit available CPUs. Verify exclusivity through scheduler data.
+Shared nodes still require respecting allocated resources and other users.
+Do not repeat the fixed64-slot/256GiB layout on a344CPU/8TB exclusive node.
+Already-running ORCA workers cannot have their ranks/MaxCore changed in place;
+preserve completed work and record that limitation explicitly.
+
 ## Field-aware response phase — 2026-09-26
 
 Jacob supplied a new execution handoff, superseding the discussion-only pause

@@ -205,3 +205,19 @@ Same frozen20-cell manifest; no molecular work discarded. No other job or
 priority modified. See force_checks_v1/NORMAL_QUEUE_SUBMISSION.json for exact
 commands/rearm. completion_event_normal_queue.json is now the active receipt.
 Earlier PQQ dependency instructions are superseded by this clarification.
+
+## Native force result and grid diagnosis — 2026-09-27
+
+Worker1219319 and collector1219320 completed; actual completion event automatically
+woke root. All20 molecular cells complete;14/16 derivative/repeat/rigid checks pass.
+Both rigid checks fail unchanged tolerances, while selected MM and boundary
+finite differences pass. Read FORCE_CHECK_REPORT.md and RESULT_1219319.json.
+A distinct eight-cell quadrature diagnosis is submitted as1219437, collector1219438,
+8x43MPI=344slots, full exclusive RAM, normal priority with no PQQ dependency.
+Frozen GRID_CHECK_PLAN.md; new grid_check_v1 manifest and four real-artifact tests
+pass. Attempt to invoke pytest found it absent; unittest ran4tests successfully.
+Wake watcherPID3344984 is armed, event native-grid-check-v1; exact rearm command
+is grid_check_v1/SUBMISSION.json. On restart inspect receipts before submission.
+Next: read grid_check_v1/FINAL_COLLECTION.json and actual numerical grid headers,
+compare rigid residuals and response shifts. No automatic further refinement,
+no full-hybrid/ML/biological validation claim. Original gate remains failed.

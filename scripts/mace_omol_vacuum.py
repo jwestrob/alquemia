@@ -121,15 +121,32 @@ def validate(manifest):
     return dry_run(manifest)
 
 
-def embedded_input(charge):
-    return (f'! {METHOD}\n%method\n DoEQ false\nend\n'
+REFINED_EMBEDDED_GRID = 'angular7_intacc7_unpruned_no_h_reduction_v1'
+
+
+def embedded_input(charge, *, grid_profile=None):
+    if grid_profile not in (None, REFINED_EMBEDDED_GRID):
+        raise InvalidArtifact('unsupported embedded numerical grid profile')
+    numerical = (' AngularGrid 7\n IntAcc 7.0\n GridPruning Unpruned\n HGridReduced false\n'
+                 if grid_profile == REFINED_EMBEDDED_GRID else '')
+    return (f'! {METHOD}\n%method\n'+numerical+' DoEQ false\nend\n'
             '%pointcharges "environment.pc"\n'+f'* xyzfile {charge} 1 core.xyz\n')
 
 
-def parse_endpoint(task,output,engrad,*,permanent_field=False):
-    expected=embedded_input(task['charge']) if permanent_field else scientific_input(task['charge'])
+def parse_endpoint(task,output,engrad,*,permanent_field=False,grid_profile=None):
+    if grid_profile is not None and not permanent_field:
+        raise InvalidArtifact('named grid profile supported only for embedded diagnostic')
+    expected=embedded_input(task['charge'],grid_profile=grid_profile) if permanent_field else scientific_input(task['charge'])
     if verify(task['input']).read_text()!=expected:raise InvalidArtifact('exact embedded EnGrad input required' if permanent_field else 'exact vacuum EnGrad input required')
     text=Path(output).read_text();e=energy(output)
+    if grid_profile is not None:
+        # Input echo alone does not establish the executed quadrature.
+        grid_checks = [r'General Integration Accuracy\s+IntAcc\s+\.{2,}\s+7\.0+\b',
+                       r'Angular Grid \(max\. ang\.\)\s+AngularGrid\s+\.{2,}\s+7\b',
+                       r'Angular grid pruning method\s+GridPruning\s+\.{2,}\s+0\b',
+                       r'\bHGridReduced\s+false\b']
+        if not all(re.search(pattern,text,re.I) for pattern in grid_checks) or 'Angular grids for H and He will be reduced' in text:
+            raise InvalidArtifact('actual refined grid/header not established')
     if not re.search(r'Program Version\s+6\.1\.1\b',text):raise InvalidArtifact('ORCA version differs')
     if re.search(r'^\s*(?:CPCM SOLVATION MODEL|SMD SOLVATION(?: MODEL)?|COSMO SOLVATION(?: MODEL)?)\s*$',text,re.M|re.I):
         raise InvalidArtifact('vacuum endpoint contains solvent model')

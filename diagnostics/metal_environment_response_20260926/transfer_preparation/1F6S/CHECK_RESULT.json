@@ -1,0 +1,30 @@
+{
+  "checks": [
+    {
+      "La_explicit_electrons": 204,
+      "all_electron_counts": {
+        "Ca": 214,
+        "La": 250
+      },
+      "check": "paired52geometry_state_parity",
+      "status": "pass"
+    },
+    {
+      "check": "only_declared_environment_H_moves_charge_closure",
+      "status": "pass"
+    },
+    {
+      "FD_step_A": 1e-05,
+      "check": "all11cap_Jacobians",
+      "maximum_absolute_error": 6.55911713831614e-10,
+      "status": "pass",
+      "tolerance": 1e-08
+    },
+    {
+      "check": "existing6cellprepare_dry_run",
+      "status": "pass"
+    }
+  ],
+  "molecular_evaluations": 0,
+  "status": "pass"
+}

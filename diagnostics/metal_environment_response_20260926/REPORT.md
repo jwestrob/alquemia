@@ -6,6 +6,15 @@ comparison is blocked by unavailable exact weights/interface, and native rigid
 qualification remains failed.** Do not adopt this path as a preference scorer
 or launch coupled LanM relaxation. Preserve the released PQQ workflow.
 
+## Expanded-region result
+
+The completed Thr159 partition test retains the response direction: +0.3528 to
++0.5208kcal/mol. This shows finite representation dependence without a large
+jump on this case; it is not partition convergence or improved classification.
+[Actual comparison](PARTITION_REPORT.md). Cumulative molecular development work
+now42outputs/864128allocatedCPU-s,zeroGPU. All owned molecular jobs are terminal;
+current independent transfer-preparation and legacy hybrid checks are in CURRENT.md.
+
 ## 27 September continuation
 
 Strict-convergence worker1219450 added4outputs,746s/256624allocatedCPU-s;

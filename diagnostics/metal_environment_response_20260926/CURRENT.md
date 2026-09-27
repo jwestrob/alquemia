@@ -273,3 +273,20 @@ assembly/protons/waters preserved. New B has QM HG1 motion (not changedMMfield).
 On completion read FINAL_COLLECTION.json: compare metal responses, partition
 double-difference and HG1 projected forces, report actual costs and limitations.
 No automatic new core/LanM relaxation follows. Production stays untouched.
+
+## Expanded partition result — 2026-09-27
+
+Worker1219460 and collector1219461 completed,4/4 actual endpoints; completion
+wake acknowledged. PARTITION_REPORT.md/RESULT_1219460.json record delta small
++0.352795817 versus expanded+0.520767257kcal/mol, shift+0.167971439, same direction.
+HG1 differential arc forces preserve direction at both endpoints; individual
+components change with representation. Fine numerical qualification remains
+unestablished, complete hybrid and exact ML model still unavailable. No affinity
+or predictive gain claimed.452s/155488allocatedCPU-s; cumulative864128CPU-s,zeroGPU.
+
+No owned Slurm jobs remain active. Root continues authorized work: preparation
+agent audits matched4MAE/nonPQQ sources under original structural selection rule;
+finite_field_derivatives reviews legacy cross-interaction parameters for a coherent
+full hybrid path. These tasks are preparation/read-only, not molecular submissions.
+Do not repeat completed numerical/grid/SCF matrices. Next decision comes from
+transfer-preparation and hybrid-feasibility records, not an automatic optimizer.

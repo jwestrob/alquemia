@@ -15,10 +15,12 @@ import re
 import subprocess
 import time
 
-POLICY = {'id':'native_scf_health_v1', 'trah_macro_window':8,
+POLICY = {'id':'native_scf_health_v2', 'trah_macro_window':8,
           'trah_error_floor':1.0, 'minimum_relative_error_improvement':0.5,
           'extreme_micro_step_hartree':1e6, 'extreme_distinct_macro_count':3,
-          'silent_output_seconds':900, 'automatic_cancellation':False}
+          'silent_output_seconds':900, 'automatic_cancellation':False,
+          'diis_window':12, 'diis_error_floor':1e-2, 'diis_rms_density_floor':1e-1,
+          'diis_max_density_floor':1.0, 'diis_energy_span_hartree':1.0}
 TERMINAL={'COMPLETED','FAILED','CANCELLED','TIMEOUT','NODE_FAIL','OUT_OF_MEMORY','PREEMPTED','BOOT_FAIL','DEADLINE','REVOKED'}
 F=r'[-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eEdD][-+]?\d+)?'
 
@@ -35,11 +37,17 @@ def inspect_text(text):
             re.findall(r'^\s*(\d+)\s+('+F+r')\s+('+F+r').*\(TRAH MAcro\)',text,re.M)]
     micro=[{'iteration':int(i),'step_hartree':number(e)} for i,e in
            re.findall(r'^\s*(\d+)\s+dE\s+('+F+r').*\(TRAH MIcro\)',text,re.M)]
-    diis=re.findall(r'^\s*(\d+)\s+('+F+r')\s+('+F+r')\s+('+F+r')\s+('+F+r')\s+('+F+r')\s+('+F+r')\s+('+F+r')\s*$',text,re.M)
+    diis_matches=list(re.finditer(r'^\s*(\d+)\s+('+F+r')\s+('+F+r')\s+('+F+r')\s+('+F+r')\s+('+F+r')\s+('+F+r')\s+('+F+r')\s*$',text,re.M))
+    diis=[dict(zip(('iteration','energy_hartree','delta_energy_hartree','rms_density','max_density','diis_error','damping','iteration_seconds'),[int(m[1])]+[number(v) for v in m.groups()[1:]])) for m in diis_matches]
+    phase_transition=max(text.rfind('(TRAH MAcro)'),text.rfind('Leaving SCF to start the TRAH'),text.rfind('Initializing SOSCF'))
+    diis_active=bool(diis_matches and diis_matches[-1].end()>phase_transition)
     alerts=[]
     if failure:alerts.append('explicit_native_failure')
     window=macros[-POLICY['trah_macro_window']:]
     if not normal and not converged:
+        d=diis[-POLICY['diis_window']:]
+        if diis_active and len(d)==POLICY['diis_window'] and all(r['diis_error']>POLICY['diis_error_floor'] and r['rms_density']>POLICY['diis_rms_density_floor'] and r['max_density']>POLICY['diis_max_density_floor'] for r in d) and d[-1]['diis_error']>=d[0]['diis_error']*POLICY['minimum_relative_error_improvement'] and max(r['energy_hartree'] for r in d)-min(r['energy_hartree'] for r in d)>POLICY['diis_energy_span_hartree']:
+            alerts.append('gross_diis_nonprogress')
         if len(window)==POLICY['trah_macro_window'] and all(r['error_norm']>POLICY['trah_error_floor'] for r in window) and window[-1]['error_norm']>=window[0]['error_norm']*POLICY['minimum_relative_error_improvement']:
             alerts.append('persistent_large_trah_error_without_twofold_improvement')
         extreme={r['iteration'] for r in micro if abs(r['step_hartree'])>POLICY['extreme_micro_step_hartree']}
@@ -47,7 +55,8 @@ def inspect_text(text):
             alerts.append('repeated_extreme_trah_micro_steps')
     return {'normal_termination':normal,'scf_converged':converged,'explicit_failure':failure,
             'last_trah_macros':window,'trah_macro_count':len(macros),
-            'last_diis_iteration':int(diis[-1][0]) if diis else None,
+            'last_diis_iteration':diis[-1]['iteration'] if diis else None,
+            'last_diis_rows':diis[-POLICY['diis_window']:], 'diis_current_phase':diis_active,
             'extreme_micro_distinct_macros':sorted({r['iteration'] for r in micro if abs(r['step_hartree'])>POLICY['extreme_micro_step_hartree']}),
             'negative_gap_warning_count':len(re.findall('negative HOMO - LUMO gap',text)),
             'alerts':alerts}

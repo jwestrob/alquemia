@@ -1,0 +1,583 @@
+{
+  "policy": {
+    "id": "native_scf_health_v2",
+    "trah_macro_window": 8,
+    "trah_error_floor": 1.0,
+    "minimum_relative_error_improvement": 0.5,
+    "extreme_micro_step_hartree": 1000000.0,
+    "extreme_distinct_macro_count": 3,
+    "silent_output_seconds": 900,
+    "automatic_cancellation": false,
+    "diis_window": 12,
+    "diis_error_floor": 0.01,
+    "diis_rms_density_floor": 0.1,
+    "diis_max_density_floor": 1.0,
+    "diis_energy_span_hartree": 1.0
+  },
+  "frozen_before_new_recovery_runs_utc": "2026-09-27T22:49:51.248716+00:00",
+  "development_evidence": {
+    "Dy_A": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_hans_scout_v1/Dy_A/endpoint.out",
+      "sha256": "f6cf2f062fa5c6bb8f315ce5b9a9ca126bb61338a64cc6bcbe3f8e4337ef6708",
+      "actual_prefix_through_iteration": 16,
+      "health": {
+        "normal_termination": false,
+        "scf_converged": false,
+        "explicit_failure": false,
+        "last_trah_macros": [],
+        "trah_macro_count": 0,
+        "last_diis_iteration": 16,
+        "last_diis_rows": [
+          {
+            "iteration": 5,
+            "energy_hartree": -5661.684477334602,
+            "delta_energy_hartree": 648.0,
+            "rms_density": 4.88,
+            "max_density": 728.0,
+            "diis_error": 0.921,
+            "damping": 0.7,
+            "iteration_seconds": 60.5
+          },
+          {
+            "iteration": 6,
+            "energy_hartree": -5922.31560097685,
+            "delta_energy_hartree": -261.0,
+            "rms_density": 8.95,
+            "max_density": 1460.0,
+            "diis_error": 1.32,
+            "damping": 0.7,
+            "iteration_seconds": 61.8
+          },
+          {
+            "iteration": 7,
+            "energy_hartree": -5842.257768317213,
+            "delta_energy_hartree": 80.1,
+            "rms_density": 10.5,
+            "max_density": 1410.0,
+            "diis_error": 0.619,
+            "damping": 0.7,
+            "iteration_seconds": 64.4
+          },
+          {
+            "iteration": 8,
+            "energy_hartree": -5824.378473219804,
+            "delta_energy_hartree": 17.9,
+            "rms_density": 5.79,
+            "max_density": 709.0,
+            "diis_error": 0.455,
+            "damping": 0.7,
+            "iteration_seconds": 62.1
+          },
+          {
+            "iteration": 9,
+            "energy_hartree": -5765.539758199004,
+            "delta_energy_hartree": 58.8,
+            "rms_density": 5.78,
+            "max_density": 629.0,
+            "diis_error": 0.869,
+            "damping": 0.7,
+            "iteration_seconds": 62.9
+          },
+          {
+            "iteration": 10,
+            "energy_hartree": -5806.2257747890035,
+            "delta_energy_hartree": -40.7,
+            "rms_density": 12.0,
+            "max_density": 1930.0,
+            "diis_error": 0.316,
+            "damping": 0.7,
+            "iteration_seconds": 64.8
+          },
+          {
+            "iteration": 11,
+            "energy_hartree": -5689.15120840961,
+            "delta_energy_hartree": 117.0,
+            "rms_density": 14.7,
+            "max_density": 2110.0,
+            "diis_error": 0.466,
+            "damping": 0.7,
+            "iteration_seconds": 63.3
+          },
+          {
+            "iteration": 12,
+            "energy_hartree": -5513.988497374055,
+            "delta_energy_hartree": 175.0,
+            "rms_density": 8.08,
+            "max_density": 819.0,
+            "diis_error": 0.709,
+            "damping": 0.7,
+            "iteration_seconds": 63.0
+          },
+          {
+            "iteration": 13,
+            "energy_hartree": -5632.077683492214,
+            "delta_energy_hartree": -118.0,
+            "rms_density": 4.97,
+            "max_density": 553.0,
+            "diis_error": 0.349,
+            "damping": 0.7,
+            "iteration_seconds": 66.3
+          },
+          {
+            "iteration": 14,
+            "energy_hartree": -5811.411201765106,
+            "delta_energy_hartree": -179.0,
+            "rms_density": 3.49,
+            "max_density": 387.0,
+            "diis_error": 0.548,
+            "damping": 0.7,
+            "iteration_seconds": 65.7
+          },
+          {
+            "iteration": 15,
+            "energy_hartree": -5725.600100049764,
+            "delta_energy_hartree": 85.8,
+            "rms_density": 2.61,
+            "max_density": 271.0,
+            "diis_error": 0.74,
+            "damping": 0.7,
+            "iteration_seconds": 64.9
+          },
+          {
+            "iteration": 16,
+            "energy_hartree": -5605.859357799316,
+            "delta_energy_hartree": 120.0,
+            "rms_density": 1.89,
+            "max_density": 189.0,
+            "diis_error": 1.08,
+            "damping": 0.7,
+            "iteration_seconds": 64.7
+          }
+        ],
+        "diis_current_phase": true,
+        "extreme_micro_distinct_macros": [],
+        "negative_gap_warning_count": 0,
+        "alerts": [
+          "gross_diis_nonprogress"
+        ]
+      }
+    },
+    "Dy_B": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_hans_scout_v1/Dy_B/endpoint.out",
+      "sha256": "1a97351cacd93eb405aa76385d9d7279c17839be757a3c88c0d053fa80e167db",
+      "actual_prefix_through_iteration": 16,
+      "health": {
+        "normal_termination": false,
+        "scf_converged": false,
+        "explicit_failure": false,
+        "last_trah_macros": [],
+        "trah_macro_count": 0,
+        "last_diis_iteration": 16,
+        "last_diis_rows": [
+          {
+            "iteration": 5,
+            "energy_hartree": -5660.822038691345,
+            "delta_energy_hartree": 648.0,
+            "rms_density": 4.98,
+            "max_density": 730.0,
+            "diis_error": 0.921,
+            "damping": 0.7,
+            "iteration_seconds": 60.0
+          },
+          {
+            "iteration": 6,
+            "energy_hartree": -5919.99701810674,
+            "delta_energy_hartree": -259.0,
+            "rms_density": 8.84,
+            "max_density": 1440.0,
+            "diis_error": 1.32,
+            "damping": 0.7,
+            "iteration_seconds": 62.0
+          },
+          {
+            "iteration": 7,
+            "energy_hartree": -5846.832026019256,
+            "delta_energy_hartree": 73.2,
+            "rms_density": 10.2,
+            "max_density": 1380.0,
+            "diis_error": 0.619,
+            "damping": 0.7,
+            "iteration_seconds": 63.2
+          },
+          {
+            "iteration": 8,
+            "energy_hartree": -5837.293313019916,
+            "delta_energy_hartree": 9.54,
+            "rms_density": 5.76,
+            "max_density": 754.0,
+            "diis_error": 0.452,
+            "damping": 0.7,
+            "iteration_seconds": 63.0
+          },
+          {
+            "iteration": 9,
+            "energy_hartree": -5776.758240376352,
+            "delta_energy_hartree": 60.5,
+            "rms_density": 6.42,
+            "max_density": 869.0,
+            "diis_error": 0.868,
+            "damping": 0.7,
+            "iteration_seconds": 61.8
+          },
+          {
+            "iteration": 10,
+            "energy_hartree": -5811.102675895585,
+            "delta_energy_hartree": -34.3,
+            "rms_density": 11.8,
+            "max_density": 1950.0,
+            "diis_error": 0.316,
+            "damping": 0.7,
+            "iteration_seconds": 64.5
+          },
+          {
+            "iteration": 11,
+            "energy_hartree": -5703.8658025757395,
+            "delta_energy_hartree": 107.0,
+            "rms_density": 14.7,
+            "max_density": 2000.0,
+            "diis_error": 0.475,
+            "damping": 0.7,
+            "iteration_seconds": 63.5
+          },
+          {
+            "iteration": 12,
+            "energy_hartree": -5514.113155897816,
+            "delta_energy_hartree": 190.0,
+            "rms_density": 8.41,
+            "max_density": 968.0,
+            "diis_error": 0.709,
+            "damping": 0.7,
+            "iteration_seconds": 64.1
+          },
+          {
+            "iteration": 13,
+            "energy_hartree": -5604.12679115247,
+            "delta_energy_hartree": -90.0,
+            "rms_density": 5.14,
+            "max_density": 527.0,
+            "diis_error": 0.362,
+            "damping": 0.7,
+            "iteration_seconds": 65.1
+          },
+          {
+            "iteration": 14,
+            "energy_hartree": -5838.7940114347875,
+            "delta_energy_hartree": -235.0,
+            "rms_density": 3.54,
+            "max_density": 369.0,
+            "diis_error": 0.543,
+            "damping": 0.7,
+            "iteration_seconds": 65.6
+          },
+          {
+            "iteration": 15,
+            "energy_hartree": -5745.290903225126,
+            "delta_energy_hartree": 93.5,
+            "rms_density": 2.62,
+            "max_density": 258.0,
+            "diis_error": 0.708,
+            "damping": 0.7,
+            "iteration_seconds": 65.6
+          },
+          {
+            "iteration": 16,
+            "energy_hartree": -5598.478150087838,
+            "delta_energy_hartree": 147.0,
+            "rms_density": 1.94,
+            "max_density": 180.0,
+            "diis_error": 1.04,
+            "damping": 0.7,
+            "iteration_seconds": 64.7
+          }
+        ],
+        "diis_current_phase": true,
+        "extreme_micro_distinct_macros": [],
+        "negative_gap_warning_count": 0,
+        "alerts": [
+          "gross_diis_nonprogress"
+        ]
+      }
+    },
+    "La_A": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_hans_scout_v1/La_A/endpoint.out",
+      "sha256": "7d22b878ea58b9bfcbd104c09323e9ec3bcebcb00e8fc935e7c032a2a8c0bb72",
+      "actual_prefix_through_iteration": 16,
+      "health": {
+        "normal_termination": false,
+        "scf_converged": false,
+        "explicit_failure": false,
+        "last_trah_macros": [],
+        "trah_macro_count": 0,
+        "last_diis_iteration": 16,
+        "last_diis_rows": [
+          {
+            "iteration": 5,
+            "energy_hartree": -5710.219436204599,
+            "delta_energy_hartree": 7.05,
+            "rms_density": 0.0652,
+            "max_density": 6.94,
+            "diis_error": 0.472,
+            "damping": 0.7,
+            "iteration_seconds": 33.6
+          },
+          {
+            "iteration": 6,
+            "energy_hartree": -5704.630912218101,
+            "delta_energy_hartree": 5.59,
+            "rms_density": 0.0727,
+            "max_density": 7.02,
+            "diis_error": 0.539,
+            "damping": 0.7,
+            "iteration_seconds": 32.4
+          },
+          {
+            "iteration": 7,
+            "energy_hartree": -5700.930986228348,
+            "delta_energy_hartree": 3.7,
+            "rms_density": 0.0761,
+            "max_density": 7.43,
+            "diis_error": 0.565,
+            "damping": 0.7,
+            "iteration_seconds": 33.3
+          },
+          {
+            "iteration": 8,
+            "energy_hartree": -5698.901172540864,
+            "delta_energy_hartree": 2.03,
+            "rms_density": 0.0717,
+            "max_density": 6.03,
+            "diis_error": 0.563,
+            "damping": 0.7,
+            "iteration_seconds": 32.1
+          },
+          {
+            "iteration": 9,
+            "energy_hartree": -5701.794467197411,
+            "delta_energy_hartree": -2.89,
+            "rms_density": 0.106,
+            "max_density": 10.4,
+            "diis_error": 0.482,
+            "damping": 0.7,
+            "iteration_seconds": 33.9
+          },
+          {
+            "iteration": 10,
+            "energy_hartree": -5720.6970060294225,
+            "delta_energy_hartree": -18.9,
+            "rms_density": 0.0787,
+            "max_density": 7.56,
+            "diis_error": 0.281,
+            "damping": 0.7,
+            "iteration_seconds": 33.3
+          },
+          {
+            "iteration": 11,
+            "energy_hartree": -5721.133823566284,
+            "delta_energy_hartree": -0.437,
+            "rms_density": 0.0622,
+            "max_density": 5.36,
+            "diis_error": 0.304,
+            "damping": 0.7,
+            "iteration_seconds": 35.2
+          },
+          {
+            "iteration": 12,
+            "energy_hartree": -5717.105657527776,
+            "delta_energy_hartree": 4.03,
+            "rms_density": 0.0532,
+            "max_density": 3.99,
+            "diis_error": 0.361,
+            "damping": 0.7,
+            "iteration_seconds": 33.1
+          },
+          {
+            "iteration": 13,
+            "energy_hartree": -5713.010095476991,
+            "delta_energy_hartree": 4.1,
+            "rms_density": 0.047,
+            "max_density": 4.09,
+            "diis_error": 0.396,
+            "damping": 0.7,
+            "iteration_seconds": 34.2
+          },
+          {
+            "iteration": 14,
+            "energy_hartree": -5709.761074529139,
+            "delta_energy_hartree": 3.25,
+            "rms_density": 0.043,
+            "max_density": 3.76,
+            "diis_error": 0.394,
+            "damping": 0.7,
+            "iteration_seconds": 33.3
+          },
+          {
+            "iteration": 15,
+            "energy_hartree": -5707.537754811809,
+            "delta_energy_hartree": 2.22,
+            "rms_density": 0.0504,
+            "max_density": 5.7,
+            "diis_error": 0.436,
+            "damping": 0.7,
+            "iteration_seconds": 32.7
+          },
+          {
+            "iteration": 16,
+            "energy_hartree": -5706.907878515976,
+            "delta_energy_hartree": 0.63,
+            "rms_density": 0.0582,
+            "max_density": 5.41,
+            "diis_error": 0.492,
+            "damping": 0.7,
+            "iteration_seconds": 34.1
+          }
+        ],
+        "diis_current_phase": true,
+        "extreme_micro_distinct_macros": [],
+        "negative_gap_warning_count": 0,
+        "alerts": []
+      }
+    },
+    "La_B": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_hans_scout_v1/La_B/endpoint.out",
+      "sha256": "e8708a2b09050c5e4c9e49b816543c0bb0ecb38071815f572409af590f8eaf7f",
+      "actual_prefix_through_iteration": 16,
+      "health": {
+        "normal_termination": false,
+        "scf_converged": false,
+        "explicit_failure": false,
+        "last_trah_macros": [],
+        "trah_macro_count": 0,
+        "last_diis_iteration": 16,
+        "last_diis_rows": [
+          {
+            "iteration": 5,
+            "energy_hartree": -5710.218699118981,
+            "delta_energy_hartree": 7.05,
+            "rms_density": 0.0652,
+            "max_density": 6.94,
+            "diis_error": 0.472,
+            "damping": 0.7,
+            "iteration_seconds": 33.8
+          },
+          {
+            "iteration": 6,
+            "energy_hartree": -5704.628168876061,
+            "delta_energy_hartree": 5.59,
+            "rms_density": 0.0727,
+            "max_density": 7.02,
+            "diis_error": 0.539,
+            "damping": 0.7,
+            "iteration_seconds": 32.4
+          },
+          {
+            "iteration": 7,
+            "energy_hartree": -5700.926448929644,
+            "delta_energy_hartree": 3.7,
+            "rms_density": 0.0761,
+            "max_density": 7.44,
+            "diis_error": 0.565,
+            "damping": 0.7,
+            "iteration_seconds": 33.7
+          },
+          {
+            "iteration": 8,
+            "energy_hartree": -5698.895194584351,
+            "delta_energy_hartree": 2.03,
+            "rms_density": 0.0717,
+            "max_density": 6.03,
+            "diis_error": 0.563,
+            "damping": 0.7,
+            "iteration_seconds": 31.8
+          },
+          {
+            "iteration": 9,
+            "energy_hartree": -5701.78971965866,
+            "delta_energy_hartree": -2.89,
+            "rms_density": 0.106,
+            "max_density": 10.4,
+            "diis_error": 0.482,
+            "damping": 0.7,
+            "iteration_seconds": 34.0
+          },
+          {
+            "iteration": 10,
+            "energy_hartree": -5720.694987026596,
+            "delta_energy_hartree": -18.9,
+            "rms_density": 0.0787,
+            "max_density": 7.56,
+            "diis_error": 0.281,
+            "damping": 0.7,
+            "iteration_seconds": 33.3
+          },
+          {
+            "iteration": 11,
+            "energy_hartree": -5721.134407716323,
+            "delta_energy_hartree": -0.439,
+            "rms_density": 0.0621,
+            "max_density": 5.36,
+            "diis_error": 0.304,
+            "damping": 0.7,
+            "iteration_seconds": 34.9
+          },
+          {
+            "iteration": 12,
+            "energy_hartree": -5717.107700598885,
+            "delta_energy_hartree": 4.03,
+            "rms_density": 0.0532,
+            "max_density": 4.0,
+            "diis_error": 0.361,
+            "damping": 0.7,
+            "iteration_seconds": 32.5
+          },
+          {
+            "iteration": 13,
+            "energy_hartree": -5713.014081238369,
+            "delta_energy_hartree": 4.09,
+            "rms_density": 0.047,
+            "max_density": 4.1,
+            "diis_error": 0.396,
+            "damping": 0.7,
+            "iteration_seconds": 34.5
+          },
+          {
+            "iteration": 14,
+            "energy_hartree": -5709.766064824613,
+            "delta_energy_hartree": 3.25,
+            "rms_density": 0.043,
+            "max_density": 3.77,
+            "diis_error": 0.394,
+            "damping": 0.7,
+            "iteration_seconds": 34.2
+          },
+          {
+            "iteration": 15,
+            "energy_hartree": -5707.543602898335,
+            "delta_energy_hartree": 2.22,
+            "rms_density": 0.0504,
+            "max_density": 5.7,
+            "diis_error": 0.436,
+            "damping": 0.7,
+            "iteration_seconds": 32.7
+          },
+          {
+            "iteration": 16,
+            "energy_hartree": -5706.915957968162,
+            "delta_energy_hartree": 0.628,
+            "rms_density": 0.0581,
+            "max_density": 5.41,
+            "diis_error": 0.492,
+            "damping": 0.7,
+            "iteration_seconds": 34.4
+          }
+        ],
+        "diis_current_phase": true,
+        "extreme_micro_distinct_macros": [],
+        "negative_gap_warning_count": 0,
+        "alerts": []
+      }
+    }
+  },
+  "tests_passed": 6,
+  "new_molecular_runs": 0,
+  "new_job_submissions": 0
+}

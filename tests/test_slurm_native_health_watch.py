@@ -1,5 +1,6 @@
 """Health parsing on retained actual failed-Dy/successful-La ORCA outputs only."""
 import sys
+import re
 import unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -31,6 +32,24 @@ class RealSCFHealth(unittest.TestCase):
         self.assertEqual(result['maximum_remaining_endpoint_rank_demand'],112)
         self.assertEqual(result['allocated_cpus_without_remaining_endpoint_work'],112)
         self.assertIn('not measured',result['resource_note'])
+
+    def test_gross_diis_alert_before_trah_on_actual_prefixes(self):
+        for name in ('Dy_A','Dy_B','La_A','La_B'):
+            with self.subTest(endpoint=name):
+                text=(W/name/'endpoint.out').read_text()
+                start=text.index('Iteration    Energy')
+                next_iteration=re.search(r'^\s*17\s+-',text[start:],re.M)
+                self.assertIsNotNone(next_iteration)
+                prefix=text[:start+next_iteration.start()]
+                result=inspect_text(prefix)
+                self.assertEqual(result['last_diis_iteration'],16)
+                self.assertTrue(result['diis_current_phase'])
+                self.assertEqual('gross_diis_nonprogress' in result['alerts'],name.startswith('Dy'))
+
+    def test_previous_diis_rows_do_not_trigger_after_trah_transition(self):
+        result=inspect_text((W/'Dy_A/endpoint.out').read_text())
+        self.assertFalse(result['diis_current_phase'])
+        self.assertNotIn('gross_diis_nonprogress',result['alerts'])
 
     def test_live_prefix_can_alert_before_terminal(self):
         # Prefix of a real retained log: exactly what was available at that point.

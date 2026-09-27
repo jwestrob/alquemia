@@ -254,3 +254,22 @@ and vault note; no expanded molecular submission before interpreting native gate
 Public model branch/release recheck remains blocked on exact weights; no new
 checkpoint or engine release found. See upstream/RECHECK_20260927.md.
 Do not treat prior REPORT.md terminal checkpoint as current job state.
+
+## Expanded partition diagnostic queued — 2026-09-27
+
+StrictSCF1219450/collector1219451 completed; automatic wake acknowledged.
+Four outputs failed frozen summary-residual admission; all actually ended inTRAH.
+Raw rigid error barely changes; close SCF remedy, no further grid/solver sweep.
+See SCF_CHECK_REPORT.md and scf_check/FAILURE_DIAGNOSIS.md.
+
+Independent coarse physical partition diagnostic now submitted as1219460,collector1219461,
+watcherPID4023339, event native-expanded-partition-v1. Four real expanded Thr159
+Ca/La A/B cells, original native DefGrid3/TightSCF;4x86MPI/full exclusive RAM,
+normal priority/no PQQ dependencies. Tests5pass; dry-run passes. Immutable plan
+PARTITION_DIAGNOSTIC_PLAN.md; manifest and exact rearm in partition_v1.
+Known fine numerical failures remain, so this is not qualification, affinity,
+optimization or classifier promotion. Small effects unresolved; source chemistry,
+assembly/protons/waters preserved. New B has QM HG1 motion (not changedMMfield).
+On completion read FINAL_COLLECTION.json: compare metal responses, partition
+double-difference and HG1 projected forces, report actual costs and limitations.
+No automatic new core/LanM relaxation follows. Production stays untouched.

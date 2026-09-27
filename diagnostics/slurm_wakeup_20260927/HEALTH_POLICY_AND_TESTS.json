@@ -1,0 +1,263 @@
+{
+  "policy": {
+    "id": "native_scf_health_v1",
+    "trah_macro_window": 8,
+    "trah_error_floor": 1.0,
+    "minimum_relative_error_improvement": 0.5,
+    "extreme_micro_step_hartree": 1000000.0,
+    "extreme_distinct_macro_count": 3,
+    "silent_output_seconds": 900,
+    "automatic_cancellation": false
+  },
+  "recorded_utc": "2026-09-27T22:45:55.603860+00:00",
+  "scope": "alert_only_policy_developed_on_consumed_failed_run_before_new_recovery_jobs",
+  "fixtures": {
+    "Dy_A": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_hans_scout_v1/Dy_A/endpoint.out",
+      "sha256": "f6cf2f062fa5c6bb8f315ce5b9a9ca126bb61338a64cc6bcbe3f8e4337ef6708",
+      "evidence": {
+        "normal_termination": false,
+        "scf_converged": false,
+        "explicit_failure": false,
+        "last_trah_macros": [
+          {
+            "iteration": 90,
+            "energy_hartree": 499.570915096642,
+            "error_norm": 515.1853
+          },
+          {
+            "iteration": 91,
+            "energy_hartree": 499.570915097349,
+            "error_norm": 433.2609
+          },
+          {
+            "iteration": 92,
+            "energy_hartree": -699.042212798366,
+            "error_norm": 421.4871
+          },
+          {
+            "iteration": 93,
+            "energy_hartree": -1406.088632817569,
+            "error_norm": 346.595
+          },
+          {
+            "iteration": 94,
+            "energy_hartree": -1886.448514626461,
+            "error_norm": 226.7572
+          },
+          {
+            "iteration": 95,
+            "energy_hartree": -2297.485024357451,
+            "error_norm": 203.4349
+          },
+          {
+            "iteration": 96,
+            "energy_hartree": -2690.635524519922,
+            "error_norm": 194.7596
+          },
+          {
+            "iteration": 97,
+            "energy_hartree": -3068.463118076935,
+            "error_norm": 187.1073
+          }
+        ],
+        "trah_macro_count": 98,
+        "last_diis_iteration": 50,
+        "extreme_micro_distinct_macros": [
+          0,
+          1,
+          39,
+          85,
+          87,
+          89,
+          91
+        ],
+        "negative_gap_warning_count": 376,
+        "alerts": [
+          "repeated_extreme_trah_micro_steps"
+        ]
+      }
+    },
+    "Dy_B": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_hans_scout_v1/Dy_B/endpoint.out",
+      "sha256": "1a97351cacd93eb405aa76385d9d7279c17839be757a3c88c0d053fa80e167db",
+      "evidence": {
+        "normal_termination": false,
+        "scf_converged": false,
+        "explicit_failure": false,
+        "last_trah_macros": [
+          {
+            "iteration": 42,
+            "energy_hartree": -1954.600637737897,
+            "error_norm": 90.08002
+          },
+          {
+            "iteration": 43,
+            "energy_hartree": -1956.637351819061,
+            "error_norm": 90.15058
+          },
+          {
+            "iteration": 44,
+            "energy_hartree": -1958.663093659134,
+            "error_norm": 90.21615
+          },
+          {
+            "iteration": 45,
+            "energy_hartree": -1960.692157535721,
+            "error_norm": 90.28154
+          },
+          {
+            "iteration": 46,
+            "energy_hartree": -1962.656354674377,
+            "error_norm": 90.32877
+          },
+          {
+            "iteration": 47,
+            "energy_hartree": -1964.686475390098,
+            "error_norm": 90.40177
+          },
+          {
+            "iteration": 48,
+            "energy_hartree": -1966.725920711826,
+            "error_norm": 90.48523
+          },
+          {
+            "iteration": 49,
+            "energy_hartree": -1968.763592751763,
+            "error_norm": 90.56575
+          }
+        ],
+        "trah_macro_count": 50,
+        "last_diis_iteration": 50,
+        "extreme_micro_distinct_macros": [
+          4,
+          7,
+          8
+        ],
+        "negative_gap_warning_count": 196,
+        "alerts": [
+          "persistent_large_trah_error_without_twofold_improvement",
+          "repeated_extreme_trah_micro_steps"
+        ]
+      }
+    },
+    "La_A": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_hans_scout_v1/La_A/endpoint.out",
+      "sha256": "7d22b878ea58b9bfcbd104c09323e9ec3bcebcb00e8fc935e7c032a2a8c0bb72",
+      "evidence": {
+        "normal_termination": true,
+        "scf_converged": true,
+        "explicit_failure": false,
+        "last_trah_macros": [
+          {
+            "iteration": 39,
+            "energy_hartree": -5729.470549517025,
+            "error_norm": 1.790219
+          },
+          {
+            "iteration": 40,
+            "energy_hartree": -5729.470549517024,
+            "error_norm": 2.448738
+          },
+          {
+            "iteration": 41,
+            "energy_hartree": -5729.917401528939,
+            "error_norm": 1.318764
+          },
+          {
+            "iteration": 42,
+            "energy_hartree": -5730.114027549088,
+            "error_norm": 0.2142537
+          },
+          {
+            "iteration": 43,
+            "energy_hartree": -5730.128572085489,
+            "error_norm": 0.09264279
+          },
+          {
+            "iteration": 44,
+            "energy_hartree": -5730.130256491983,
+            "error_norm": 0.01577658
+          },
+          {
+            "iteration": 45,
+            "energy_hartree": -5730.130374493498,
+            "error_norm": 0.002292676
+          },
+          {
+            "iteration": 46,
+            "energy_hartree": -5730.130376013233,
+            "error_norm": 0.0001936124
+          }
+        ],
+        "trah_macro_count": 47,
+        "last_diis_iteration": 412,
+        "extreme_micro_distinct_macros": [],
+        "negative_gap_warning_count": 80,
+        "alerts": []
+      }
+    },
+    "La_B": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_hans_scout_v1/La_B/endpoint.out",
+      "sha256": "e8708a2b09050c5e4c9e49b816543c0bb0ecb38071815f572409af590f8eaf7f",
+      "evidence": {
+        "normal_termination": true,
+        "scf_converged": true,
+        "explicit_failure": false,
+        "last_trah_macros": [
+          {
+            "iteration": 25,
+            "energy_hartree": -5730.057986128297,
+            "error_norm": 0.3415943
+          },
+          {
+            "iteration": 26,
+            "energy_hartree": -5729.380932043287,
+            "error_norm": 0.3415943
+          },
+          {
+            "iteration": 27,
+            "energy_hartree": -5729.380932043291,
+            "error_norm": 2.285256
+          },
+          {
+            "iteration": 28,
+            "energy_hartree": -5729.885037026674,
+            "error_norm": 1.748035
+          },
+          {
+            "iteration": 29,
+            "energy_hartree": -5730.125302606152,
+            "error_norm": 0.1434029
+          },
+          {
+            "iteration": 30,
+            "energy_hartree": -5730.130430298968,
+            "error_norm": 0.03030336
+          },
+          {
+            "iteration": 31,
+            "energy_hartree": -5730.130539204687,
+            "error_norm": 0.001985649
+          },
+          {
+            "iteration": 32,
+            "energy_hartree": -5730.13054040727,
+            "error_norm": 0.000128787
+          }
+        ],
+        "trah_macro_count": 33,
+        "last_diis_iteration": 412,
+        "extreme_micro_distinct_macros": [],
+        "negative_gap_warning_count": 59,
+        "alerts": []
+      }
+    }
+  },
+  "tests": {
+    "passed": 4,
+    "scientific_evaluations": 0,
+    "new_slurm_jobs": 0,
+    "new_queue_delivery_test": "not_run; uses already demonstrated supported codex queue path"
+  }
+}

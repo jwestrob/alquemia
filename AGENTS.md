@@ -1,5 +1,16 @@
 # Agent entry point
 
+## Scheduling clarification — 2026-09-27
+
+Jacob: “i just meant don't bump them up in the queue. run the stuff!” Use normal
+scheduler priorities; **do not add PQQ dependencies or refuse startup because
+another session has PQQ jobs**. Earlier “behind PQQ” wording meant no priority
+boost, not serialization. Current force worker1219319, collector1219320, wake
+watcherPID3197471 replace cancelled pending1219316/17. Same scientific manifest;
+full-node RAM and340working MPI ranks. Active receipt is
+force_checks_v1/completion_event_normal_queue.json; rearm command in
+NORMAL_QUEUE_SUBMISSION.json. No other session's jobs were modified.
+
 ## Native field-force qualification queued — 2026-09-27
 
 Read [CURRENT](diagnostics/metal_environment_response_20260926/CURRENT.md).

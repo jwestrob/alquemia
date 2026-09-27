@@ -193,3 +193,15 @@ original job IDs, not redoing chemistry. Test gate passed, notification pause
 is resolved. No new scientific calculation launched during this repair. Next
 scientific work remains native MM/boundary directional-force qualification,
 respecting current other-session PQQ priority and full exclusive-node resources.
+
+
+## Scheduling correction — current ownership
+
+Jacob clarified: do not raise priority over PQQ; **do not wait for PQQ**.
+Cancelled only owned pending1219316/1219317 and replaced the submitted startup
+guard with a normal-priority batch. Current worker **1219319**, collector
+**1219320**, wake watcherPID3197471; event native-force-checks-normal-queue.
+Same frozen20-cell manifest; no molecular work discarded. No other job or
+priority modified. See force_checks_v1/NORMAL_QUEUE_SUBMISSION.json for exact
+commands/rearm. completion_event_normal_queue.json is now the active receipt.
+Earlier PQQ dependency instructions are superseded by this clarification.

@@ -1,5 +1,26 @@
 # Agent entry point
 
+## Mandatory Slurm completion wake — verified 2026-09-27
+
+Read [the tested wake repair](diagnostics/slurm_wakeup_20260927/REPORT.md) and
+[commands](diagnostics/slurm_wakeup_20260927/COMMANDS.md). A collector, email or
+subagent message alone is NOT a completion wake. Before yielding with owned
+Slurm work outstanding, arm `watch_and_queue.py` on explicit job IDs (including
+afterany collectors where appropriate), the actual current root thread UUID,
+the matching Codex executable and a unique durable receipt/event. Save its PID
+and exact command. The supported `codex queue --thread ... --message ...` starts
+a new turn after the current turn ends. Do not wait forever inside tools for
+this queued event; finish a short progress turn once the watcher is armed.
+
+Actual idle wake passed both success1219311 and intentional failure1219312 on
+test; root acknowledged `slurm-terminal-wake-proof-01` without a human nudge.
+Test partition authorization was for these tiny notification tests, not science.
+No terminal injection, email, second session or daemon restart is needed.
+On host reboot rearm the monitor on the original job IDs after inspecting its
+receipt; never resubmit chemistry just because the monitor died. Distinguish
+queued acknowledgement from actual root delivery. A closed client, unavailable
+host, authentication or usage limit can still prevent event processing.
+
 ## Exclusive-node resource policy — Jacob, 2026-09-27
 
 On an exclusive whole-node allocation, use the node's scheduler-registered RAM

@@ -1,5 +1,27 @@
 # Field-aware metal response — restart checkpoint
 
+## Latest terminal result — 2026-09-27
+
+Scout1219207 and collector1219208 completed. All6native energies/analytic
+gradient artifacts pass the existing parser; new directional derivative and
+expanded-region tests remain pending. Thr159H rotation lowers electronic
+energy for both metals: Ca -3.328669, La -2.975873 kcal/mol. Electronic response double
+difference +0.352796 kcal/mol favors Ca along this specific perturbation; not an
+affinity or classifier result. Native runtime276s,344allocatedCPUs=94944CPU-s,
+0GPU-s; only4x16ranks were configured. Preserve actual cost and do not claim
+whole-node utilization. Full hybrid and exact ML checkpoint remain blocked.
+
+Read RESULT_1219207.json and reference_scout_v1/AUTO_REPORT_1219207.md.
+No owned job remains active. Other session's new PQQ jobs1219217–1219220
+are separate and must retain priority. Earlier queued entries below are dated
+history. No new molecular submission was made during this status check.
+
+Completion gap: the collector wrote files but did not notify/wake this chat.
+Do not describe this as a completion-alert mechanism. For short pilots keep
+an active monitoring turn through terminal collection; a detached collector
+alone does not ensure the assistant resumes. No external message was sent.
+
+
 2026-09-26. Root owns integration/execution. New user handoff authorizes the
 staged Ca/La environmental-response scout and supersedes the previous discussion
 pause. Historical whole-protein LanM vacuum subtraction remains closed.
@@ -127,3 +149,19 @@ records in RESOURCE_POLICY_20260927.json. New run_reference_fullnode.sbatch
 requests344slots/exclusive/--mem=0 for an appropriately prepared new manifest;
 it is NOT a request to repeat the current six endpoints. Original submitted
 script/manifest remain preserved. Policy is recorded prominently in AGENTS.md.
+
+
+## Completion wake fixed — 2026-09-27
+
+Scientific work was paused at Jacob's request while a subagent repaired actual
+Slurm-to-root wake. Supported installed `codex queue` succeeded: direct probe,
+then test jobs1219311(success)/1219312(intentionalfailure), automatically resumed
+this root after final with no human nudge.90CPU-s total, no science. Read
+diagnostics/slurm_wakeup_20260927/REPORT.md and COMMANDS.md. AGENTS now requires
+an armed detached watch_and_queue.py monitor before yielding with owned jobs.
+A saved report or subagent message is not enough. Watcher queues into the current
+thread, then root consumes it after final; host restart requires rearming on
+original job IDs, not redoing chemistry. Test gate passed, notification pause
+is resolved. No new scientific calculation launched during this repair. Next
+scientific work remains native MM/boundary directional-force qualification,
+respecting current other-session PQQ priority and full exclusive-node resources.

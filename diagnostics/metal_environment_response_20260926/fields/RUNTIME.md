@@ -1,5 +1,12 @@
 # Allocation-aware runtime wrapper
 
+**27 September update:** exclusive whole-node allocations now use the actual
+scheduler `RealMemory`, regardless of the original memory request. Verify one
+node, exclusive partition and full CPU ownership; shared nodes retain their
+allocation limits. New manifests declare concurrency/ranks explicitly. The
+force-check plan uses20×17ranks and344task slots, with whole-node `--mem=0`.
+The historical4×16/256GiB settings below describe the first scout only.
+
 `scripts/metal_environment_runtime.py` wraps the unchanged renderer and adds
 allocation-derived `%maxcore` only to runtime inputs. It preserves the original
 schema, template path/hash, parser method identity and MPI provenance. The final

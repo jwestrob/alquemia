@@ -1,5 +1,16 @@
 # Agent entry point
 
+## Native field-force qualification queued — 2026-09-27
+
+Read [CURRENT](diagnostics/metal_environment_response_20260926/CURRENT.md).
+Scout1219207 completed6/6; its electronic response contrast is0.352796kcal/mol,
+not a classifier/affinity result. New20-cell native derivative job1219316 waits
+behind the other session's PQQ1219220; collector1219317 follows. Full-node RAM,
+344task slots,20×17ranks. Tested completion-wake watcherPID3158143 is armed;
+exact rearm command is in force_checks_v1/SUBMISSION.json. Do not duplicate
+these jobs. Native qualification and exact MACEPOL-EF checkpoint remain pending;
+full hybrid cross-interaction parameters remain unsupported.
+
 ## Mandatory Slurm completion wake — verified 2026-09-27
 
 Read [the tested wake repair](diagnostics/slurm_wakeup_20260927/REPORT.md) and

@@ -1,5 +1,33 @@
 # Field-aware metal response — restart checkpoint
 
+## Active force-check batch — 2026-09-27
+
+Root resumed authorized scientific work after actual completion wake was fixed.
+Twenty fixed native analytic-gradient tasks are prepared/dry-run passed under
+FORCE_CHECK_PLAN.md: two physical derivative modes, two signed step sizes,
+repetition and joint rigid transform, both metals. Six real-artifact tests pass.
+No new derivative result yet. Original saved gradients have net translation
+residual below2.75e−6kcal/mol/Å; this sanity check does not replace the new tests.
+
+**Owned job1219316** waits afterany PQQ1219220 (upstream1219217→18→19).
+Exclusive344MPI task slots,20workers×17ranks=340, `--mem=0`; renderer uses full
+scheduler node RAM with operational headroom. **Collector1219317** follows
+afterany1219316. Workspace: workspaces/metal_environment_response_20260926/force_checks_v1/.
+Manifest SHA2569c0a0c6f885c09f813c746c188e13cbed2373d6afdcf88e25991815bec745a9c.
+
+**Wake watcherPID3158143 is armed**, event native-force-checks-v1, monitoring
+both owned IDs and targeting root01a0a63a-ee36-7483-b726-1f7f5b7f75cc via the
+tested `codex queue` interface. SUBMISSION.json retains exact launch/rearm
+command and receipt path completion_event.json. Final output: FINAL_COLLECTION.json,
+AUTO_REPORT.md and final_accounting.txt. On wake acknowledge the receipt, inspect
+all force/refinement/rigid residuals, then decide whether expanded-region work
+is justified. No automatic full hybrid/ML qualification or classifier promotion.
+
+On restart inspect squeue/sacct and receipts; rearm watcher only using command
+in SUBMISSION.json if needed. Do not relaunch successful chemistry. The previous
+scout remains complete and immutable. No other-session job was modified.
+
+
 ## Latest terminal result — 2026-09-27
 
 Scout1219207 and collector1219208 completed. All6native energies/analytic

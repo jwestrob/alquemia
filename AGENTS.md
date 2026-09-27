@@ -1,5 +1,24 @@
 # Agent entry point
 
+## Second PQQ response diagnostic submitted — 2026-09-27
+
+4MAE sixcell worker1219487,collector1219488,actual wakePID102822,event native-4MAE-transfer-v1.
+Prepared exact matched80QM/8774PC canonicaldry source, Ca-3/La-2 physicalsinglets,
+explicitLa368electrons with46ECP. Same structural rule selectsThr154HG1 PC2407;
+only thisfieldcoordinate moves10degrees, fixedcore. Historical15P603 adduct/water
+exclusions and longOH1.18042A remain explicit conditional-model limitations.
+Four real-input checks and existingrunner dry-run pass.6x57MPI=342/344slots,
+full exclusiveRAM/normalpriority/noPQQdependency. TRANSFER_4MAE_PLAN.md frozen;
+transfer_4MAE_v1/manifest.json and SUBMISSION.json pin inputs/rearm.
+Numericalqualification remainsunestablished; this is response transfer only,
+not prediction, optimization or class improvement. Read terminal collection
+and compare per-metal responses without absolute cross-protein totals.
+
+Preparation agent continues1F6S exact atomiccharge/map inventory (no runs).
+Hybrid feasibility found reusable metalLJ and exact-sourceproteinSystem; agent
+exports unchanged proteinmechanics and audits exact-statePQQ GAFF2 crossLJonly.
+No forcefield choice/completehybridenergy/optimization is silently promoted.
+
 ## Expanded partition result — 2026-09-27
 
 Worker1219460 and collector1219461 completed,4/4 actual endpoints; completion

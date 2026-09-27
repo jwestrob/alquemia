@@ -29,6 +29,18 @@ class AllocationTests(unittest.TestCase):
         shared=captured['partition'].replace('OverSubscribe=EXCLUSIVE','OverSubscribe=NO')
         self.assertIsNone(exclusive_node_memory(captured['job'],captured['node'],shared))
 
+    def test_shared_zero_request_uses_observed_available_memory(self):
+        # Resource-only scheduler fixtures; no scientific data or energies.
+        env=dict(ENV,SLURM_JOB_ID='1219782',SLURM_CPUS_ON_NODE='24',SLURM_NTASKS='24',SLURM_MEM_PER_NODE='0')
+        job='NumNodes=1 NumCPUs=24 NodeList=node-48-384g-1 Partition=standard-shared'
+        node='CPUTot=48 RealMemory=385557'
+        partition='OverSubscribe=YES'
+        with patch('metal_environment_runtime.subprocess.check_output',side_effect=[job,node,partition]), patch('metal_environment_runtime.Path.read_text',return_value='MemAvailable: 83886080 kB\n'):
+            result=allocation_policy(env,workers=2,ranks=12)
+        self.assertEqual(result['allocated_memory_MiB'],81920)
+        self.assertIn('not exclusive entitlement',result['memory_source'])
+        self.assertEqual(result['workers']*result['ranks_per_worker'],24)
+
     def test_approved_256_gib_allocation(self):
         p = allocation_policy(ENV)
         self.assertEqual((p['workers'],p['ranks_per_worker'],p['maxcore_MB']), (4,16,3200))

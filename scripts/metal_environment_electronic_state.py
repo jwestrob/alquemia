@@ -44,10 +44,15 @@ def describe(path, metal, charge, multiplicity):
                 xyz=record(path))
 
 
-def input_text(charge, multiplicity, embedded=True):
+def input_text(charge, multiplicity, embedded=True, guess=None):
     if type(charge) is not int or type(multiplicity) is not int or multiplicity not in (1, 6):
         raise InvalidArtifact('unsupported input state')
+    if guess not in (None, 'HCore', 'PModel'):
+        raise InvalidArtifact('unsupported native initial guess')
     original = embedded_input(charge) if embedded else scientific_input(charge)
+    if guess is not None:
+        first, rest = original.split('\n', 1)
+        original = first + f'\n%scf\n Guess {guess}\nend\n' + rest
     return original.replace(f'* xyzfile {charge} 1 core.xyz',
                             f'* xyzfile {charge} {multiplicity} core.xyz')
 
@@ -112,9 +117,13 @@ def electronic_evidence(text, symbols, multiplicity):
 def parse(task, output, engrad, *, embedded=True):
     """Parse actual native output; retain missing spin/stability evidence explicitly."""
     state = describe(verify(task['xyz']), task['metal'], task['charge'], task['multiplicity'])
-    if verify(task['input']).read_text() != input_text(task['charge'], task['multiplicity'], embedded):
+    if verify(task['input']).read_text() != input_text(task['charge'], task['multiplicity'], embedded, task.get('scf_guess')):
         raise InvalidArtifact('native research input differs')
     text = Path(output).read_text(); value = energy(output)
+    if task.get('scf_guess'):
+        wanted = 'HCORE' if task['scf_guess']=='HCore' else 'MODEL POTENTIAL'
+        if f'INITIAL GUESS: {wanted}' not in text:
+            raise InvalidArtifact('executed initial guess differs')
     if not re.search(r'Program Version\s+6\.1\.1\b',text):
         raise InvalidArtifact('ORCA version differs')
     if re.search(r'^\s*(?:CPCM SOLVATION MODEL|SMD SOLVATION(?: MODEL)?|COSMO SOLVATION(?: MODEL)?)\s*$',text,re.M|re.I):

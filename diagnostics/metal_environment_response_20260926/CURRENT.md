@@ -1,5 +1,27 @@
 # Field-aware metal response — restart checkpoint
 
+## Active recovery: small Dy two-start diagnostic — 27 September15:55PDT
+
+Jacob explicitly authorized proceeding before shutdown. Saved largeDy diagnosis
+shows immediate molecularSCFdivergence, not failedatomicguess or observedbasis
+linear-dependency. No unchangedlarge retry. New finite2cells use exactconsumed
+50atomHansEF3Dy core, native r2SCAN3c/ECP28/sextet, isolatedHCore/PModel starts.
+NoPAtom (archivedengineunsupported), newbasis/spin or biologicalscore.
+
+Worker1219790/collector1219791:24sharedCPUs,2x12MPI,--mem=0,normalpriority.
+workspace dy_small_guess_v3; exactSUBMISSION.json has BOTH terminalwatchPID3782325
+and livehealthv2PID3782329 (earlyDIIS/TRAHpathology+partialcompletion alerts).
+Noautomaticcancel or arbitrarytimecap; root responds to queuedhealthalerts.
+
+Startup-only1219782/1219786 failed before molecularcalls; actualsharedSlurm omits
+bothmemoryenvvars for--mem=0. Initialzero-envfix insufficient. Resourceprobe1219788
+exposedexactcause; correctedprobe1219789 passed on actualnode. Newrenderer verifies
+schedulerMinMemoryNode0, uses observedlocalMemAvailable bounded byRealMemory for
+sharedmem0; exclusivefullnodepolicyunchanged. Allfailedattempts retained.
+Sixresource tests and existing3state/parser tests pass, oneDyexecutiontest unrun.
+Alloriginal195atomoutputs intact; other2sourcepreparations stay unscored.
+ReadDY_SMALL_GUESS_PLAN.md and lanm_preparation_feasibility/DY_SCF_DIAGNOSIS.md.
+
 ## Terminal collection: Hans scout — 27 September
 
 1219501 cancelled/1219502 completed; completionevent acknowledged. Actualcollector

@@ -38,8 +38,8 @@ def allocation_policy(environment=None, *, workers=4, ranks=16):
     """Return bounded concurrency and a 25%-reserved per-rank memory ceiling.
 
     Verified exclusive allocations use full scheduler RealMemory irrespective
-    of the original request. Shared allocations use granted memory. No host
-    /proc guess or cpus-per-task substitution for actual MPI slots.
+    of the original request. Shared allocations use granted memory; mem=0 uses observed local available
+    memory bounded by scheduler RAM. No cpus-per-task substitution for MPI slots.
     """
     env = os.environ if environment is None else environment
     cpus = _positive(env.get('SLURM_CPUS_ON_NODE'), 'SLURM_CPUS_ON_NODE')
@@ -70,6 +70,21 @@ def allocation_policy(environment=None, *, workers=4, ranks=16):
     if full_memory is not None:
         memory=full_memory
         source='exclusive whole-node scheduler RealMemory; request is not a ceiling'
+    elif (str(env.get('SLURM_MEM_PER_NODE')) == '0' or
+          (env.get('SLURM_MEM_PER_NODE') is None and env.get('SLURM_MEM_PER_CPU') is None
+           and env.get('SLURM_JOB_ID') and re.search(r'(?:^|\s)MinMemoryNode=0(?:\s|$)', job))):
+        # --mem=0 means no request ceiling, not zero RAM. On a shared node
+        # other jobs own resources too: use currently available local memory,
+        # bounded by scheduler-registered RAM, rather than claiming exclusivity.
+        if not env.get('SLURM_JOB_ID') or value('NumNodes') != '1':
+            raise ValueError('Shared mem=0 requires a verified single-node allocation')
+        registered = re.search(r'(?:^|\s)RealMemory=(\d+)', node)
+        available = re.search(r'^MemAvailable:\s+(\d+) kB$',
+                              Path('/proc/meminfo').read_text(), re.M)
+        if not registered or not available:
+            raise ValueError('Cannot establish local available memory for shared mem=0')
+        memory = min(int(registered[1]), int(available[1]) // 1024)
+        source = 'shared mem=0: observed local MemAvailable bounded by scheduler RealMemory; not exclusive entitlement'
     elif env.get('SLURM_MEM_PER_NODE') is not None:
         memory = _positive(env['SLURM_MEM_PER_NODE'], 'SLURM_MEM_PER_NODE')
         source = 'SLURM_MEM_PER_NODE'

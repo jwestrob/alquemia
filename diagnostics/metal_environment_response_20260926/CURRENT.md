@@ -15,7 +15,9 @@ nikasha_lanm_ef3_embedded_native_explicit_state_v1. No inheritedbands/affinitycl
 On wake inspect all4energies/gradients, actualspin/ECP/nativecomponents/SCF, projection
 and costs before remaining2sources. Failures stay visible; no unchangedautomaticretry.
 Savedcombined1H4I report complete: commonclassicalwork retainsdelta+.352795817;
-electronicrigidfailure remains. Sourceandstatepreparation agents are finished.
+electronicrigidfailure remains. Initial source/state audits are finished. Preparation agent now prepares the two
+remaining declared sources (Hans8FNR/Mex8FNS), without molecular submissions;
+execution expansion remains gated on this first scout.
 
 Historical checkpoints follow. Latest entry above supersedes job status below.
 

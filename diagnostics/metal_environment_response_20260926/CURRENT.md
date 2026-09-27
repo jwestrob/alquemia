@@ -1,5 +1,27 @@
 # Field-aware metal response — restart checkpoint
 
+## Terminal collection: Hans scout — 27 September
+
+1219501 cancelled/1219502 completed; completionevent acknowledged. Actualcollector
+retains2completeLa endpoints;2Dy attempted/unconverged lack finalreceipts and remain
+unavailable. LaAsp85work−0.176654390kcal/mol; noLa/Dycontrast. Read
+LANM_EF3_SCOUT_RESULT.md for evidence/cost/monitoringfailure. Total6,691,331allocated
+CPU-s includingcollector. Noownedactivejobs, no retries/transfer submissions.
+Next: saved-outputdiagnosis/modelselection; completion-onlywatcher is insufficient
+for futurecostlySCF. PreservePQQ and allpreparedunscoredsources.
+
+## STOPPED: Hans scout pathological Dy SCF — 27 September
+
+At Jacob's runtime inquiry, job1219501 had run8h17m36s on224allocatedCPUs.
+La_A/La_B terminated normally after2h47m/2h6m; both Dy SCFs remained pathological
+with large TRAH residuals/negative orbital gaps. Root cancelled ONLY owned1219501
+after preserving outputtails/reason in lanm_ef3_hans_scout_v1/EARLY_STOP_20260927.json.
+Collector1219502 remains afterany; actual completionwake still armed. Preserve all
+outputs and completed La receipts. No unchangedretry or transfer-source execution.
+Other2source preparations are complete but unscored. Completion-only monitoring
+missed prolonged nonconvergence; a runtime convergence/stagnation monitor is needed
+before further costly reference work. No measured CPU utilization claim.
+
 ## Active: first explicit-state LanM EF3 scout — 27 September
 
 Worker1219501/collector1219502, node-224-3t-2,224CPUs,4x56MPI,--mem=0. Actual completion

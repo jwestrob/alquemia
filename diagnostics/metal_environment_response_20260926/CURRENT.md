@@ -347,3 +347,15 @@ Read scoutreceipt/time/forces andpartialcollection; ifexecutable/admissible run
 remaining31 tasks inparallelsharedallocation, reusingCa_A. No newQM/MD/optimization.
 Fullsolvent/electronicnumerics/MLqualification remain unavailable. Ledger/classical
 success cannot retroactively pass them. All agentimplementationtasks completed.
+
+## Latest: classical matrix and source-strain diagnosis — 2026-09-27
+
+Scout1219495 completed in11s/1CPU; finite components and305812KiB process peakRSS.
+Large retained-bonded/LJ energies require source diagnosis, not relaxation. Agent
+finds severe clash in experimentally missing/rebuilt A596 tail; detailed audit pending.
+Frozen remaining31 classical configurations submitted: worker1219497,collector1219498,
+32sharedCPUs,--mem=0,normalpriority; Ca_A cache retained. Actual wakePID568878,
+event classical-component-matrix-v1, rearm command in component_checks_v1/MATRIX_SUBMISSION.json.
+Inspect FINAL_COLLECTION_1219497.json and200checks on wake. No new quantum calls.
+Root acknowledged scout event. Jacob requested continued work and campaign email;
+email artifact/relay receipt saved in component workspace. Production untouched.

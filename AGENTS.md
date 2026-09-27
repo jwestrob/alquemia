@@ -1,5 +1,25 @@
 # Agent entry point
 
+## Continued native diagnosis — 2026-09-27
+
+Jacob: "Proceed! Don't stop!" Continuing with a concrete SCF-stopping hypothesis,
+not another grid sweep. Four refined A/rigid outputs retained density changes
+far above nominal TightSCF density thresholds. New explicit all-criteria/forced
+SCF protocol preserves grid, Hamiltonian, geometry, state and125iteration limit.
+SCF_CHECK_PLAN.md frozen before execution;3new real-artifact tests pass,4old-grid
+regression tests pass, dry-run passes. Manifest in scf_check_v1.
+Worker1219450, collector1219451, watcherPID3695497; full344slots
+(4x86MPI), full exclusive RAM, normal priority/no PQQ dependencies. Exact rearm
+command in scf_check_v1/SUBMISSION.json. Read actual residuals and rigid checks
+on completion; B response/strict finite differences remain unrun.
+
+Expanded Thr159 region preparation is ready but unscored (63QM,9078MM), same
+original boundary convention and physical state. Preparation agent owns its report
+and vault note; no expanded molecular submission before interpreting native gate.
+Public model branch/release recheck remains blocked on exact weights; no new
+checkpoint or engine release found. See upstream/RECHECK_20260927.md.
+Do not treat prior REPORT.md terminal checkpoint as current job state.
+
 ## Grid diagnosis complete — 2026-09-27
 
 Worker1219437/collector1219438 terminal,8/8 endpoints complete. Wake event received

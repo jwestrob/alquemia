@@ -122,23 +122,55 @@ def validate(manifest):
 
 
 REFINED_EMBEDDED_GRID = 'angular7_intacc7_unpruned_no_h_reduction_v1'
+STRICT_EMBEDDED_SCF = 'tight_all_active_criteria_forced_125_v1'
+STRICT_SCF_LIMITS = {'Energy change': 1e-8, 'MAX-Density change': 1e-7,
+                     'RMS-Density change': 5e-9, 'Orbital Gradient': 1e-5,
+                     'Orbital Rotation': 1e-5}
 
 
-def embedded_input(charge, *, grid_profile=None):
+def terminal_scf_residuals(text):
+    result = {}
+    for name in (*STRICT_SCF_LIMITS, 'DIIS Error'):
+        found = re.findall(r'Last '+re.escape(name)+r'\s*\.{2,}\s*([-+0-9.eE]+)\s*Tolerance\s*:\s*([-+0-9.eE]+)', text)
+        if len(found) != 1:
+            raise InvalidArtifact('missing/ambiguous terminal SCF residual: '+name)
+        result[name] = {'value':float(found[0][0]), 'printed_tolerance':float(found[0][1])}
+    return result
+
+
+def embedded_input(charge, *, grid_profile=None, scf_profile=None):
     if grid_profile not in (None, REFINED_EMBEDDED_GRID):
         raise InvalidArtifact('unsupported embedded numerical grid profile')
     numerical = (' AngularGrid 7\n IntAcc 7.0\n GridPruning Unpruned\n HGridReduced false\n'
                  if grid_profile == REFINED_EMBEDDED_GRID else '')
-    return (f'! {METHOD}\n%method\n'+numerical+' DoEQ false\nend\n'
+    if scf_profile not in (None, STRICT_EMBEDDED_SCF) or (scf_profile and grid_profile != REFINED_EMBEDDED_GRID):
+        raise InvalidArtifact('unsupported embedded SCF/grid profile combination')
+    scf = ('%scf\n ConvCheckMode 0\n ConvForced 1\n MaxIter 125\n TolE 1e-8\n TolRMSP 5e-9\n TolMaxP 1e-7\n TolErr 5e-7\n TolG 1e-5\n TolX 1e-5\nend\n'
+           if scf_profile else '')
+    return (f'! {METHOD}\n'+scf+'%method\n'+numerical+' DoEQ false\nend\n'
             '%pointcharges "environment.pc"\n'+f'* xyzfile {charge} 1 core.xyz\n')
 
 
-def parse_endpoint(task,output,engrad,*,permanent_field=False,grid_profile=None):
-    if grid_profile is not None and not permanent_field:
+def parse_endpoint(task,output,engrad,*,permanent_field=False,grid_profile=None,scf_profile=None):
+    if (grid_profile is not None or scf_profile is not None) and not permanent_field:
         raise InvalidArtifact('named grid profile supported only for embedded diagnostic')
-    expected=embedded_input(task['charge'],grid_profile=grid_profile) if permanent_field else scientific_input(task['charge'])
+    expected=embedded_input(task['charge'],grid_profile=grid_profile,scf_profile=scf_profile) if permanent_field else scientific_input(task['charge'])
     if verify(task['input']).read_text()!=expected:raise InvalidArtifact('exact embedded EnGrad input required' if permanent_field else 'exact vacuum EnGrad input required')
     text=Path(output).read_text();e=energy(output)
+    scf_evidence = {}
+    if scf_profile:
+        residuals = terminal_scf_residuals(text)
+        if not re.search(r'Convergence Check Mode\s+ConvCheckMode\s+\.{2,}\s+All\b',text,re.I) or not re.search(r'Convergence forced\s+ConvForced\s+\.{2,}\s+1\b',text):
+            raise InvalidArtifact('actual forced all-criteria SCF header not established')
+        for name,limit in STRICT_SCF_LIMITS.items():
+            value = residuals[name]
+            if not np.isfinite(value['value']) or abs(value['value']) > limit or value['printed_tolerance'] != limit:
+                raise InvalidArtifact('strict terminal SCF criterion failed: '+name)
+        # DIIS error may be stale once the actual iterative solver is SOSCF.
+        if 'Initializing SOSCF' not in text and abs(residuals['DIIS Error']['value']) > 5e-7:
+            raise InvalidArtifact('strict terminal active DIIS error failed')
+        scf_evidence={'scf_profile':scf_profile,'terminal_scf_residuals':residuals,
+                      'diis_residual_note':'recorded; inactive historical value when solver switches to SOSCF'}
     if grid_profile is not None:
         # Input echo alone does not establish the executed quadrature.
         grid_checks = [r'General Integration Accuracy\s+IntAcc\s+\.{2,}\s+7\.0+\b',
@@ -179,7 +211,7 @@ def parse_endpoint(task,output,engrad,*,permanent_field=False,grid_profile=None)
         raise InvalidArtifact('analytic gradient energy/order differs')
     if not np.allclose(raw['coordinates_bohr']*BOHR_TO_A,[a[1:] for a in atoms],atol=1e-6,rtol=0):
         raise InvalidArtifact('gradient coordinates differ from frozen input')
-    return {'energy_hartree':e,'gradient_kcal_mol_per_A':(raw['gradient_Ha_per_bohr']*HA_TO_KCAL/BOHR_TO_A).tolist(),
+    return {'energy_hartree':e,'gradient_kcal_mol_per_A':(raw['gradient_Ha_per_bohr']*HA_TO_KCAL/BOHR_TO_A).tolist(),**scf_evidence,
             'quantity':'gradient_not_force','energy_scope':'embedded_permanent_field_endpoint' if permanent_field else 'isolated_vacuum_endpoint','explicit_electrons':electrons,
             'ecp_core_electrons':46 if ecp else 0,'native_components':components,
             'engrad':record(engrad),'environment_gradient_included':False,

@@ -6,6 +6,23 @@ comparison is blocked by unavailable exact weights/interface, and native rigid
 qualification remains failed.** Do not adopt this path as a preference scorer
 or launch coupled LanM relaxation. Preserve the released PQQ workflow.
 
+## 27 September continuation
+
+Strict-convergence worker1219450 added4outputs,746s/256624allocatedCPU-s;
+all4remain invalid under its frozen printed-residual admission rules. Actual
+TRAH switching limits interpretation of those summary density fields. Raw
+rotation errors are essentially unchanged: the remedy is rejected, not repeated.
+See [SCF diagnosis](SCF_CHECK_REPORT.md). Completed molecular-worker cumulative
+cost is now708640allocatedCPU-s across38outputs, zeroGPU; this is development
+cost, not routine inference cost.
+
+An independent [partition diagnostic](PARTITION_DIAGNOSTIC_PLAN.md) is being
+prepared to compare the same physical hydroxyl perturbation with Thr159 treated
+electronically. Known numerical failures remain visible, and no passed
+qualification, optimization or classifier follows from this test. Exact ML
+weights remain blocked after the public-branch recheck. Check CURRENT.md for
+current submission ownership; earlier terminal-state statements below are dated.
+
 ## What actually ran
 
 On consumed1H4I, six scout endpoints, twenty force-check endpoints and eight

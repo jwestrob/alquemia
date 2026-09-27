@@ -1,5 +1,24 @@
 # Field-aware metal response — restart checkpoint
 
+## Active: first explicit-state LanM EF3 scout — 27 September
+
+Worker1219501/collector1219502, node-224-3t-2,224CPUs,4x56MPI,--mem=0. Actual completion
+wakePID929432, event lanm-hans-ef3-explicit-state-scout-v1. Exact rearm command in
+workspaces/metal_environment_response_20260926/lanm_ef3_hans_scout_v1/SUBMISSION.json.
+Four endpoints only: La/Dy × source/+2degreeAsp85;195QM/1696field charges,
+actualLa/La/Na spectators, total+6; new documented local peptide-boundary policy.
+NativeLaECP46/DyECP28, physicalsinglet/sextet. No wholeprotein vacuum retry.
+Seven preparation checks, independent review,7runner tests and actualdryrun pass.
+State parser replays all6CaLa outputs and actualopen-shell format; Dyexecutionunrun.
+Plan LANM_EF3_SCOUT_PLAN.md frozen before execution; explicitstate protocol
+nikasha_lanm_ef3_embedded_native_explicit_state_v1. No inheritedbands/affinityclaim.
+On wake inspect all4energies/gradients, actualspin/ECP/nativecomponents/SCF, projection
+and costs before remaining2sources. Failures stay visible; no unchangedautomaticretry.
+Savedcombined1H4I report complete: commonclassicalwork retainsdelta+.352795817;
+electronicrigidfailure remains. Sourceandstatepreparation agents are finished.
+
+Historical checkpoints follow. Latest entry above supersedes job status below.
+
 ## Read first: 27 September, classical matrix complete
 
 All owned Slurm jobs are terminal. Three-core electronic response matrix completed;

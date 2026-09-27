@@ -1,5 +1,21 @@
 # Field-aware metal response — restart checkpoint
 
+## Read first: 27 September, classical matrix complete
+
+All owned Slurm jobs are terminal. Three-core electronic response matrix completed;
+classical component checks now pass200/200. No new classifier gain or full hybrid
+qualification is claimed. Native rigid-rotation failure, absent solvent, missing
+exact MACEPOL-EF weights, and newly diagnosed archived hydrogen/tail strain remain.
+Read COMPONENT_CHECK_REPORT.md, THREE_CORE_REPORT.md and
+hybrid_feasibility/component_checks/SOURCE_STRAIN_REPORT.md.
+
+Active agent work: saved combined-force integration; consumed LanM EF3 preparation
+audit; installed La/Dy electronic-state capability. No molecular jobs authorized
+by these read-only tasks. Root owns future finite submissions and actual wake.
+Do not rerun old scouts, serialize behind PQQ jobs, or revive whole-protein vacuum
+GFN2. Entries below are chronological history; later completed records supersede
+older queued descriptions. Latest completed job pair1219497/1219498.
+
 ## Active force-check batch — 2026-09-27
 
 Root resumed authorized scientific work after actual completion wake was fixed.
@@ -359,3 +375,15 @@ event classical-component-matrix-v1, rearm command in component_checks_v1/MATRIX
 Inspect FINAL_COLLECTION_1219497.json and200checks on wake. No new quantum calls.
 Root acknowledged scout event. Jacob requested continued work and campaign email;
 email artifact/relay receipt saved in component workspace. Production untouched.
+
+## Latest: classical derivative matrix complete — 2026-09-27
+
+Worker1219497/collector1219498 terminal; actual wake acknowledged.32/32configs,
+200/200frozenchecks pass. COMPONENT_CHECK_REPORT.md records exact residuals/cost.
+Classical A/B response cancels between metals for this specific H motion; static
+crossLJ Ca-minus-La is+0.382390829kcal/mol. Not a classifier or qualified fullhybrid.
+Classical stage686allocatedCPU-s including scout/collectors; noGPU.
+No owned active Slurm job. Preparation agent assembles saved combined-force evidence;
+mechanics agent diagnoses missing-tail clash; wake-repair agent now audits installed
+La/Dy reference state/basis capability. All tasks read-only/no molecular runs.
+Native rigid failure and absent solvent remain explicit; no dry relaxation.

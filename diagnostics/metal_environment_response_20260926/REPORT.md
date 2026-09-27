@@ -1,63 +1,58 @@
-# Field-aware candidate: reference scout queued, ML comparison blocked
+# Field-aware Nikasha: response measurable; candidate not yet qualified
 
-26 September 2026 checkpoint. **The public model has the intended atomwise
-potential coupling, but its exact trained weights and matching engine interface
-are not available in the inspected release.** Do not substitute a different
-potential. Continue the small embedded-electronic reference scout; obtain the
-identified checkpoint/interface before committing to an ML integration.
+27 September 2026. **The native reference detects a stable metal-dependent
+response to a real protein-environment perturbation. The intended MACEPOL-EF
+comparison is blocked by unavailable exact weights/interface, and native rigid
+qualification remains failed.** Do not adopt this path as a preference scorer
+or launch coupled LanM relaxation. Preserve the released PQQ workflow.
 
-## What is executable
+## What actually ran
 
-Real1H4I qm36 core, Ca−3/La−2 physical singlets, paired fixed coordinates and
-9,087 matching protein point charges. A deterministic+10degree rotation of
-Thr159's hydroxyl H defines environmentB. The source O–H length1.18537Å is
-inherited, not an optimized bond; preserve that limitation. Native r2SCAN-3c
-analytic gradients supply six endpoints (four embedded plus two isolated).
-La uses native46-core def2-ECP, not an imposed effective singlet for Dy.
+On consumed1H4I, six scout endpoints, twenty force-check endpoints and eight
+numerical-diagnostic endpoints completed:34 new native r2SCAN-3c analytic-gradient
+calculations. Same54-atom electronic core, Ca-3/La-2 singlets, native La46-core
+ECP,9087 fixed protein charges. EnvironmentB rotates actual Thr159 HG1 by10degrees;
+this is a modeled perturbation with inherited source O-H geometry, not sampling.
 
-Job1218751 waits for the other session's final PQQ collector1217591. It requests
-64CPU slots/256GiB and uses four16-rank workers; allocation-derived MaxCore
-reserves25% for other memory. No GPU. Collector1218752 writes terminal results
-and accounting without requiring this chat or a login watcher. No new molecular
-calculation has executed, so all new energy/force comparisons remain unavailable.
-Measured new molecular cost at this checkpoint:0 allocatedCPU-s and0GPU-s.
-Audit/preparation effort is additional, not a molecular timing measurement.
+The double difference (LaB-LaA)-(CaB-CaA) is+0.352796kcal/mol originally and
++0.352640 after quadrature refinement. Its stability supports interpreting this
+specific electronic response. It does not establish affinity or discrimination.
+Selected external-charge and mapped-boundary force finite differences and repeats
+pass. Joint rotation fails the declared energy tolerance on both numerical grids;
+translation passes. Denser quadrature did not solve that issue. Exact residuals
+and all unavailable statuses remain in the linked result records.
 
-## What the checks establish
+## What is and is not supported
 
-Twelve field-algebra/native-parser/allocation tests pass, plus five source and
-cap-map preparation checks. Actual archived native output confirms analytic
-core gradients and external-charge gradient artifacts can be parsed. Algebra
-tests check response through both potential and field, rigid transformations,
-charged-gauge conventions and cache identities. They do **not** qualify an
-unavailable ML checkpoint or replace new native directional-force checks.
+1. Public model source supports atomwise potential and field; exact paper weights
+and matching engine implementation are unavailable. No alternative model was
+silently substituted. Metal/spin field-response quality is untested.
+2. Native selected analytic derivatives agree with energy differences. Rigid
+qualification fails; constant-potential gauge has algebra-only coverage, and
+refined-grid finite differences remain unrun. This is not complete coupling validation.
+3. Only one consumed Ca/La core was evaluated. No ML/reference accuracy comparison,
+expanded-region qualification,4MAE/non-PQQ transfer, or new La/Dy result exists.
+4. Small rotational sensitivity is unresolved. Full hybrid cross repulsion,
+dispersion and boundary mechanics remain missing; they were never filled with zero.
+5. Next justified step is obtaining the exact model/interface and resolving the
+native numerical failure through a specific diagnosis, not further generic grid
+increases or whole-protein optimization. Author question is drafted, unsent.
 
-Full hybrid energy and relaxation remain unsupported: standard protein
-parameters alone do not supply metal/PQQ cross repulsion/dispersion or a matched
-boundary reference. The queued calculation tests the electronic embedding
-component only, with all omitted terms explicitly unavailable. Its response is
-neither a binding affinity nor evidence of improved classification.
+## Costs and usable artifacts
 
-## Upstream implementation findings
+Completed molecular workers:276+455+583=1314 allocation wall-seconds,
+452016 allocated CPU-seconds, zero GPU. These include the original scout's
+underused344CPU allocation; they are not measured CPU utilization or production
+throughput. Collectors and notification tests are separately recorded, outside
+this molecular-worker sum. MaxRSS is batch accounting, not verified aggregate MPI
+peak memory. Latest worker used8x43MPI ranks with verified exclusive-node RAM.
 
-Model code `e2b0aeed27c2822790a6994c9a64327e5f131158` accepts atomwise phi and field;
-the README is outdated. Default ASE mappings can silently fill absent phi with
-zero, ndarray field updates can bypass caching, and actual spin inputs use
-multiplicity. Public engine `4af44eb9a9ce91428dad142cbaa8bdd598e7a09f` lacks the
-paper's field/potential coupling. Checkpoint-specific field sign, executable
-element support and licensing remain unresolved. Closed-shell nonmetal field
-training is not metal-response qualification. Exact sources and an unsent author
-question are in [the audit](upstream/AUDIT.md).
+- [Scout result](RESULT_1219207.json)
+- [Directional forces](FORCE_CHECK_REPORT.md)
+- [Grid diagnosis](GRID_CHECK_REPORT.md)
+- [Upstream capabilities and unsent author question](upstream/AUDIT.md)
+- [Checkpoint and recovery](CURRENT.md)
 
-## Next decision
-
-**Pursue the small reference test; defer ML integration and full hybrid
-relaxation.** Inspect actual six-cell results, then qualify native MM/boundary
-directional derivatives and region dependence under the frozen tolerances.
-Do not expand to LanM or claim environmental accuracy from code tests alone.
-No production change, remote push, external email, old vacuum retry or library
-campaign occurred. All old results and unrelated work remain intact.
-
-See [CURRENT.md](CURRENT.md) for exact recovery commands/job ownership,
-[PLAN.md](PLAN.md) for energy accounting and frozen gates, and
-[preparation report](preparation/REPORT.md) for physical mappings and limitations.
+All owned science and collectors are terminal. Actual wake events worked for both
+new jobs. No production promotion, remote push, email, library run or old LanM
+vacuum retry occurred. The26September queued report is archived separately.

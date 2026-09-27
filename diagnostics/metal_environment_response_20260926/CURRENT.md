@@ -221,3 +221,16 @@ is grid_check_v1/SUBMISSION.json. On restart inspect receipts before submission.
 Next: read grid_check_v1/FINAL_COLLECTION.json and actual numerical grid headers,
 compare rigid residuals and response shifts. No automatic further refinement,
 no full-hybrid/ML/biological validation claim. Original gate remains failed.
+
+## Grid diagnosis complete — 2026-09-27
+
+Worker1219437/collector1219438 terminal,8/8 endpoints complete. Wake event received
+and ROOT_ACK.json written. Refined double difference0.352640263kcal/mol differs
+by only-0.000155555; both rigid energy gates still fail. No further automatic grid
+round, LanM optimization or expansion is launched. All owned jobs terminal.
+Read GRID_CHECK_REPORT.md and updated REPORT.md; original qualification preserved.
+Exact MACEPOL-EF weights/interface and full hybrid cross interactions remain blocked.
+Next recovery command (read-only): python -c 'import json; print(json.load(open("workspaces/metal_environment_response_20260926/grid_check_v1/FINAL_COLLECTION.json"))["checks"])'.
+Next scientific decision: specific residual diagnosis or obtain exact checkpoint;
+do not resubmit completed34endpoints. Molecular workers total452016allocatedCPU-s,
+zeroGPU; latest200552CPU-s. No external email or push.

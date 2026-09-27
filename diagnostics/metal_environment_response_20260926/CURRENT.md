@@ -327,3 +327,23 @@ Oncompletion inspect FINAL_COLLECTION.json; complete3coredevelopmentreference
 comparison with allnumerical/unavailableML/fullhybridlimitations visible. No
 automaticlibraryexpansion orLanMrelaxation. Root owns sharedenergy/execution;
 agentmechanics task onlypreparesinteractionledger, noenergycalls.
+
+## Three-core reference complete; classical scout submitted — 2026-09-27
+
+1F6S1219489/collector1219490 completed6/6; delta+.269010220kcal/mol. Actualwake
+acknowledged. THREE_CORE_REPORT.md records all18primaryendpoints plus diagnostics;
+cumulative54QMoutputs/1319928allocatedCPU-s,zeroGPU. These responses are notclass
+decisions. Formalpointmetal retrospectivelycapturesroughlyhalf PQQresponse,closer
+1F6S; see FORMAL_FIELD_COMPARATOR*. StaticpairedR regionpromotion shifts-1.071921A,
+-1.239893B kcal/mol: responsecontinuity is not staticcontrastinvariance. This is
+electroniccomponentonly, no calibratedscore or uniquephysicalcause claim.
+
+Finite32configuration classicalcomponentmanifest prepared/dryrunpasses,4realartifact
+noContexttests passed. SingleCa_A scoutworker1219495,collector1219496,actualwakePID473985.
+Uses1sharedCPU because OpenMMReference intrinsicallysinglethread; no344CPUexclusive
+reservation, --mem=0. Exactrearm in component_checks_v1/SCOUT_SUBMISSION.json.
+COMPONENT_CHECK_PLAN.md freezes components/directions/tolerances before energies.
+Read scoutreceipt/time/forces andpartialcollection; ifexecutable/admissible run
+remaining31 tasks inparallelsharedallocation, reusingCa_A. No newQM/MD/optimization.
+Fullsolvent/electronicnumerics/MLqualification remain unavailable. Ledger/classical
+success cannot retroactively pass them. All agentimplementationtasks completed.

@@ -1,5 +1,17 @@
 # Field-aware metal response — restart checkpoint
 
+## Compact comparison completed — 28 September04:15PDT
+
+All six frozen-core La/Dy endpoints available: Hans8DQ2/Mex D=+11.330886345,
+Hans8FNR/Mex D=-18.468182860kcal/mol. Source reversal persists. Read
+ electronic_diagnosis_20260928/COMPACT_EXCHANGE_RESULT.md and COMPACT_FORCE_RESULT.json.
+1220308/1220309 terminal; no recovery/repeat. New cost72,361allocatedCPU-s.
+Embedded1220312 remains running; collector1220313 armed. C-boundH repair1220315
+completed32seconds/1CPU; embedding_preparation collecting actual admission tests.
+No repaired electronic endpoints launched, no production promotion. Both source
+contrasts and verified H-preparation confounds must remain in every interpretation.
+
+
 ## Hydrogen-direction defect diagnosed — 28 September04:09PDT
 
 Native exact-source scaffold decomposition1220314 completed: its independently

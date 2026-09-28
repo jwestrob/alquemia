@@ -29,4 +29,9 @@ class FrozenFTests(unittest.TestCase):
   p=ROOT/'workspaces/metal_environment_response_20260926/dy_frozen_f_scout_v1/Dy_origin/endpoint.out'
   hits=re.findall(r'Type\s+(\w+)\s+ECP(?:\s+(\S+))?\s+\(replacing\s+(\d+)\s+core electrons',p.read_text())
   self.assertEqual(hits,[('Dy','','55')])
+ def test_executed_origin_gradient(self):
+  from metal_environment_frozen_f import collect
+  r=collect(ROOT/'workspaces/metal_environment_response_20260926/dy_frozen_f_scout_v1/manifest.json')['rows']['Dy_origin']
+  self.assertEqual(r['status'],'complete');self.assertEqual(len(r['gradient_kcal_mol_per_A']),50)
+  self.assertFalse(r['force_consistency_qualified'])
 if __name__=='__main__':unittest.main()

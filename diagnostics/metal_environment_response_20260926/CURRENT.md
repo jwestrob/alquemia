@@ -1,5 +1,21 @@
 # Field-aware metal response — restart checkpoint
 
+## Origin passed; directional qualification running — 28 September03:13PDT
+
+Read electronic_diagnosis_20260928/FROZEN_F_SCOUT_RESULT.md. Worker1220294/collector
+1220295 complete; no rerun. Actual Dy ECP55 origin converged20cycles and native
+analytic gradient matches state/coordinates/energy. Cost21961allocatedCPU-s.
+Only collector custom-ECP-header handling corrected; old error preserved.
+
+Worker1220300 now RUNNING40CPUs, collector1220301 afterany. Four predeclared metal
+steps,10MPI each; workspace dy_frozen_f_direction_v1, exact wake/health commands
+in SUBMISSION.json. Inspect FINAL_COLLECTION.json and force_consistency on wake.
+If all declared tolerances pass, proceed to compatible La/Dy matched response;
+if failed, diagnose actual residuals without loosening tolerance. No PQQ changes.
+La basis-only1220299 also completed; matching ECP46/AutoAux asset pinned in
+LADY_SERIES_REFERENCE_ASSETS.md. No La molecular calculation yet.
+
+
 ## Active frozen-f force scout — 28 September 03:03 PDT
 
 Worker1220294 is confirmed RUNNING on node-48-256g-8,40allocatedCPUs; collector

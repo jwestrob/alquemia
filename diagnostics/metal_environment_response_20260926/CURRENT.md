@@ -1,5 +1,36 @@
 # Field-aware metal response — restart checkpoint
 
+## Repair comparison closed; coupled-response work continues — 28 September04:58PDT
+
+Repaired compact1220316/collector1220317 completed all6 endpoints. D(Hans8DQ2,Mex)
+=+11.090948176 and D(Hans8FNR,Mex)=-18.612513541kcal/mol. Changes-.239938169/-.144330681;
+source reversal persists. Read electronic_diagnosis_20260928/COMPACT_CH_COMPARISON.md
+and force results. Large absolute H-repair works cancel between metals; do not call
+this a discrimination gain. Close compact C-H rescoring, retain improved preparation.
+Actual electronicworker+collector85,106CPU-s; separate geometryprep32CPU-s.
+
+Original embedded1220312 remains running on oldnormalizedH;1220313 collector.
+La SOSCF residuals improve; Dy remains oscillatory. Saved partialoutput evidence
+under embedded_SOSCF_observation_v1 is NOT accepted molecular energies.
+One diagnosed nextscout1220323 runs repairedDy_A with explicitTRAH,112MPI on
+node-112-1500g-1,mem0; collector1220324. Workspace lady_repaired_trah_scout_v1;
+manifest aaf27076a6e0976263a28a69f9b9c1e1151d90ce123623819b37fb8b8735049d.
+Newsolver AND repairedH/field differ fromold; do not claim uniquecause or reuseold
+energies. Read EMBEDDED_TRAH_SCOUT_PLAN.md; exactwatches in SUBMISSION.json.
+
+Repaired full-region source contracts for all3sources are ready under
+lanm_ef3_CboundH_repaired_v2; other repaired electroniccells unsubmitted.
+Selected classical scaffold ledger is tested separately; coarse andhalfstep
+MM-LJ finite-difference gates fail but4.0018errorratio and Richardson~3.18e-5kcal/rad
+indicate finite-step truncation. No fullhybrid force qualification claimed.
+Embedding_preparation owns finalboundedreport; no additionalQM/optimization.
+Root ownsallscoring/execution. PQQ and sharedproduction writer unchanged.
+
+Email update accepted bylocalrelay04:36PDT; recipient delivery not independently
+verified. Vault/report checkpoints current. Goal remains active: neither a solver
+capability nor repairedgeometry is a working La/Dy discriminator.
+
+
 ## Matched C-H repair comparison launched — 28 September04:23PDT
 
 Worker1220316, collector1220317, six new analytic endpoints,48CPU standard exclusive,

@@ -1,5 +1,12 @@
 # Field-aware metal response — restart checkpoint
 
+## Glu91 response launched — September28 08:42PDT
+
+Worker1220359/collector1220360 executes the four prescribed ±1degree Glu91 endpoints from matched accepted repaired La/Dy orbital seeds. Workspace lady_glu91_seeded_v1; manifest97c426e3c490a34ee4d881c85e5147dc05aa390cab4615b8b19466705c400c88. Four86MPI tasks,344CPU high-memory node,exclusive mem0,normal priority. No origin repeats. Completion/health watchers armed; exactcommands/PIDs in SUBMISSION.json. Source geometry and states unchanged from glu91_motion_v1. Preparation dry-run passed. Read GLU91_SEEDED_EXECUTION_PLAN.md for purpose and limitations.
+
+Next collect actual energies/gradients and match classical terms before comparing the common origin/minus/plus pool. Do not interpret candidates as populations or a minimum; compare energy derivatives with repaired-origin projected gradients. FNR1220342 still runs separately;1220344 aggregates repaired origins only, not this new motion. Preserve partial results if shutdown interrupts; do not blindly relaunch after restart. PQQ unchanged.
+
+
 ## Repaired Hans8DQ2 pair accepted — September28 08:39PDT
 
 Dy1220323/collector1220324 completed normally with native gradients and field gradients. Cost1,501,026allocatedCPU-s (13402×112+2),zeroGPU. Accepted comparison now4/6: electronic Hans8DQ2-minus-Mex exchange+11.6984892964kcal/mol, finite electronic/classical+11.6898571756. This retains conditional relative La preference for this source; FNR remains null, so the earlier source reversal is not resolved. No affinity or broad discrimination claim.

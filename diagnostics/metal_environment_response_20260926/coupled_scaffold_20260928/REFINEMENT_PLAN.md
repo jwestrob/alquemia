@@ -1,0 +1,5 @@
+# One authorized classical half-step after coarse failure
+
+Coarse±.05° MM-LJ derivative residual.20717 exceeds frozen.02701kcal/radian tolerance. Direct pair algebra independently reproduces the analytic force and finite difference. Largest contribution is repaired Met132HB2–water334O,2.46037Å at origin with.88179kcal repulsion, swept2.47639→2.44435Å. A second H40HB3–H113HB2 pair at2.03811Å contributes.13174kcal/radian error. This is steep finite displacement response, not evidence of an overlap or a metal-specific force defect.
+
+Root authorizes exactly±.025° classical-only with unchanged model, states, origin and tolerances, no new step expansion. Reuse actual coarse origin analytic derivatives. Two new configurations×two target LJ assignments×four components=16energy/force queries. Original failures remain. Report coarse/half residual ratio and separately named Richardson derivative(4Dhalf−Dfull)/3, without inventing a new admission gate. No QM, optimization, source editing or threshold tuning.

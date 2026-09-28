@@ -39,6 +39,16 @@ class ActualLanMAssembly(unittest.TestCase):
     def test_wrong_source_state_and_missing_electronic_rejected(self):
         with self.assertRaisesRegex(InvalidArtifact,'geometry/field'):f.assemble(INPUTS,'B','La',COLLECTION,'La_A')
         with self.assertRaisesRegex(InvalidArtifact,'unavailable'):f.assemble(INPUTS,'A','Dy',COLLECTION,'Dy_A')
+    def test_actual_classical_bridge_sum_and_coordinate_rejection(self):
+        base=ROOT/'workspaces/metal_environment_response_20260926/force_assembly_classical_v1'
+        for state in ('A','B'):
+            cl=read_json(base/state/'CLASSICAL.json');r=f.assemble(INPUTS,state,'La',COLLECTION,'La_'+state,base/state/'CLASSICAL.json')
+            ix={sid:i for i,sid in enumerate(cl['source_ids'])};order=[ix[a['id']] for a in r['physical_atoms']]
+            expected=np.array(r['electronic']['gradient_kcal_mol_A'])+np.array(cl['gradient_kcal_mol_A'])[order]
+            np.testing.assert_array_equal(r['total_gradient_kcal_mol_A'],expected);np.testing.assert_array_equal(r['total_force_kcal_mol_A'],-expected)
+            broken=copy.deepcopy(cl);broken['coordinates_A'][0][0]+=.01
+            with self.assertRaisesRegex(InvalidArtifact,'coordinates differ'):f.add_classical(r,broken)
+
     def test_classical_undeclared_coulomb_rejected(self):
         r=f.assemble(INPUTS,'A','La',COLLECTION,'La_A')
         with self.assertRaisesRegex(InvalidArtifact,'exclusions'):f.add_classical(r,dict(quantity='gradient',units='kcal/mol/angstrom',QM_MM_Coulomb_included=True,C4_induction_included=False))

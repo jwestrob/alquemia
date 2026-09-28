@@ -1,0 +1,9 @@
+# Two matching classical evaluations — declared before execution
+
+Root authorizes exactly the archived original-geometry La_A and La_B physical configurations. Reuse the selected coupled_scaffold_classical_v1 ledger, native force constructor and fixed boundary convention. One normal standard-shared CPU, mem0, OpenMM double-precision Reference platform; no quantum call, optimization or extra geometry. Four per-component energy/Cartesian-force queries per geometry (eight queries total), retain each before sum.
+
+Verify that the repaired-source ledger and original A/B fixtures share exact native System/topology, physical atom IDs, QM membership, fixed shifted charges and spectators; coordinates are explicitly replaced by the archived mapped physical A/B coordinates. The ledger's `target_EF3` ID is mapped to actual source-site A/203//LA, with identity/position confirmed through the source map. No parameter or charge adjustment accompanies this alias.
+
+Compute retained bonded, MM–MM LJ, fixed-charge MM–MM Coulomb and realQM–MM LJ exactly once. No synthetic cap particles, QM–QM classical energy, classical QM–MM Coulomb or C4 induction. Preserve selected native boundary/exclusion rules and ion-parameter limitations. Export per-component gradient and energy, then sum classical gradients and add mapped electronic gradients at identical coordinates.
+
+This demonstrates assembly of a finite dry conditional model using the OLD native r2SCAN-3c quantum fixture plus the selected classical ledger. It is not the repaired frozen-f model, solvent consistency, affinity or force qualification of a full hybrid. Previous coarse/half-step classical finite-difference gate failures remain failures. No rescue, threshold change or numerical gradient is proposed here. Existing quantum energies never fill missing new endpoints.

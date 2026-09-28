@@ -170,3 +170,12 @@ All four original-H frozen-f embedded endpoints1220312 and collector1220313 are 
 
 Repaired Dy TRAH scout1220323 remains live, collector1220324 pending. At last check42min, macro2 with improving electronic gradient; no accepted repaired energy yet. Finite physical force assembly now works on archived native La A/B plus matching classical terms (1220328,1CPU-s). Agent finite_field_derivatives will apply it to the completed frozen-f endpoints, reusing exact La classical data and computing only missing Dy classical terms. No new quantum stage or optimization launched. Source reversal still unresolved; goal open; PQQ unchanged.
 
+
+## Repaired origins running; Glu91 matrix prepared — 28 September06:05PDT
+
+Dy TRAH1220323/collector1220324 remains live, no accepted repaired Dy endpoint yet. Missing repaired La origin now runs independently as1220332/collector1220333,112MPI on standard node-112-1500g-2,mem0; source-matched old La orbitals initialize a NEW calculation, never fill its energy. This explicitly revises the earlier sequential scheduling gate; see REPAIRED_LA_SEEDED_PLAN.md. All displaced Glu91 electronic cells still wait for the repaired origins/forces. Both jobs have terminal and health watchers; exact commands/PIDs in each SUBMISSION.json.
+
+La workspace lady_repaired_la_seeded_v1; the unseeded lady_repaired_la_origin_prepared_v1 remains unsubmitted. Glu91 source pair glu91_motion_v1 and four-cell lady_glu91_response_prepared_v1 pass preparation/dry-run, no submissions. Mode was selected from actual original-H differential forces: Glu91 normalized load~2.75 versus~.066 for tested N83 hinge. Do not generalize to all scaffold modes or biological affinity. Field/caps unchanged for the five moved real donor atoms; inventory/covalent checks pass.
+
+Classical quarter-step passes unchanged thresholds after diagnosed truncation; original coarse/half failures and final stdout-only process failure remain preserved. Force assembly now includes all four original frozen-f endpoints and exact classical partners. No LanM accuracy improvement or production change yet. Orbital integration22real-artifact tests pass; actual seeded execution/collection still needs qualification. Read force_assembly_20260928/FROZEN_F_PROJECTION_REPORT.md and coupled_scaffold_20260928/QUARTER_STEP_REPORT.md.
+

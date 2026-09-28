@@ -17,7 +17,9 @@ checks are implemented; see force_assembly_20260928 and coupled_scaffold_2026092
 
 At the latest check, repaired Dy TRAH scout1220323 remains RUNNING, collector1220324
 pending. Inspect the scheduler before any action; watchers are active. The repaired
-La origin and Glu91±1degree matrix are prepared/dry-run only, not submitted.
+unseeded La origin and Glu91±1degree matrix are prepared/dry-run only. A separately
+named same-metal seeded La origin1220332/collector1220333 now runs independently;
+see the newer checkpoint and REPAIRED_LA_SEEDED_PLAN.md. No displaced jobs submitted.
 Glu91 was selected from real differential force loads, not desired labels. Follow
 its GLU91_RESPONSE_DECISION.md and actual repaired-origin results before execution.
 Do not restart failed explicit-f or whole-protein vacuum campaigns. Keep mem=0,

@@ -1,0 +1,7 @@
+# Missing repaired La origin: preparation only
+
+The repaired Hans8DQ2 Dy_A TRAH scout remains running. Prepare its missing La_A partner using the exact same repaired source A coordinates, field, membership, proton and solvent inventory. Keep PBE0-D4/light def2-TZVP/La lcecp1 ECP46/AuxJ, RIJCOSX/DefGrid3/VeryTightSCF, finite field, DoEQ false, PModel/NoAutostart and analytic gradients. Default La SCF policy is supported by both completed original-source La endpoints; the numerical SCF algorithm differs from the Dy TRAH scout but the declared target electronic Hamiltonian does not.
+
+New protocol suffix origin_subset_v1 declares exactly one La_A task. No old-coordinate result fills it, and no Dy origin or Asp85 B endpoint is repeated. Prepare one 86-rank endpoint with one worker; actual submission must use matching allocated slots and mem=0 with existing allocation-aware runtime renderer. Preparation is not submission. The repaired Dy origin must first be assessed as stated in GLU91_RESPONSE_DECISION.md; no new quantum calls are authorized by this file alone independently of the current goal and gate.
+
+The source is workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8DQ2/INPUTS.json. Literal basis/ECP/aux assets are read from the pinned completed lady_frozen_embedded_hans_v2 manifest. Output is workspaces/metal_environment_response_20260926/lady_repaired_la_origin_prepared_v1. Implementation is newly snapshotted; neither active job snapshot is edited. Missing A/B works remain null.

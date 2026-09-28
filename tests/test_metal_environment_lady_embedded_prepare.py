@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 from affordable_common import InvalidArtifact,read_json,verify
-from metal_environment_lady_embedded_prepare import state,validate,input_text,asset_text
+from metal_environment_lady_embedded_prepare import state,validate,input_text,asset_text,prepare
 from metal_environment_lanm_reference import check_config
 PREP=ROOT/'workspaces/metal_environment_response_20260926/lanm_ef3_preparation_v1'
 
@@ -30,3 +30,20 @@ def test_corrupted_real_spin_and_charge_rejected():
 def test_wrong_actual_element_basis_rejected():
  m=read_json(ROOT/'workspaces/metal_environment_response_20260926/lady_frozen_embedded_prepared_v1/Hans8DQ2/manifest.json')
  with pytest.raises(InvalidArtifact):asset_text('La',m['assets']['Dy']['basis'],m['assets']['La']['aux'])
+
+def test_real_origin_subset_and_missing_displacement(tmp_path):
+ m=read_json(ROOT/'workspaces/metal_environment_response_20260926/lady_frozen_embedded_hans_v2/manifest.json')
+ out=tmp_path/'la_origin'
+ result=prepare(verify(m['inputs']),verify(m['agreement']),out,m['assets'],8,1,origin_metals=['La'])
+ assert result['status']=='dry_run_pass'
+ sub=read_json(out/'manifest.json')
+ assert sub['protocol_id'].endswith('_origin_subset_v1')
+ assert [t['task_id'] for t in sub['tasks']]==['La_A']
+ assert sub['tasks'][0]['xyz']['sha256']==next(t for t in m['tasks'] if t['task_id']=='La_A')['xyz']['sha256']
+ # Corrupt a real prepared manifest: a claimed second origin must not pass.
+ sub['origin_metals']=['La','Dy'];(out/'manifest.json').write_text(json.dumps(sub))
+ with pytest.raises(InvalidArtifact):validate(out/'manifest.json')
+
+def test_subset_rejects_duplicate_metals_before_preparation(tmp_path):
+ with pytest.raises(InvalidArtifact):prepare(None,None,tmp_path/'unused',{},8,1,origin_metals=['La','La'])
+ with pytest.raises(InvalidArtifact):prepare(None,None,tmp_path/'unused',{},8,2,origin_metals=['La'])

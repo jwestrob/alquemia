@@ -14,6 +14,9 @@ from mace_omol_vacuum import METHOD, embedded_input, scientific_input
 
 NUMBERS = {'H':1, 'C':6, 'N':7, 'O':8, 'F':9, 'P':15, 'S':16, 'Cl':17,
            'Ca':20, 'La':57, 'Dy':66}
+PBE0_PROFILE = 'isolated_pbe0_d4_def2tzvpp_v1'
+PBE0_METHOD = 'PBE0 D4 def2-TZVPP def2/J RIJCOSX NoAutostart DefGrid3 TightSCF EnGrad'
+
 STATES = {'Ca': (2, 1, 0), 'La': (3, 1, 46), 'Dy': (3, 6, 28)}
 
 
@@ -44,12 +47,15 @@ def describe(path, metal, charge, multiplicity):
                 xyz=record(path))
 
 
-def input_text(charge, multiplicity, embedded=True, guess=None):
+def input_text(charge, multiplicity, embedded=True, guess=None, method_profile=None):
     if type(charge) is not int or type(multiplicity) is not int or multiplicity not in (1, 6):
         raise InvalidArtifact('unsupported input state')
     if guess not in (None, 'HCore', 'PModel'):
         raise InvalidArtifact('unsupported native initial guess')
-    original = embedded_input(charge) if embedded else scientific_input(charge)
+    if method_profile not in (None, PBE0_PROFILE) or (method_profile and embedded):
+        raise InvalidArtifact('unsupported electronic method/environment combination')
+    original = (f'! {PBE0_METHOD}\n* xyzfile {charge} 1 core.xyz\n' if method_profile else
+                embedded_input(charge) if embedded else scientific_input(charge))
     if guess is not None:
         first, rest = original.split('\n', 1)
         original = first + f'\n%scf\n Guess {guess}\nend\n' + rest
@@ -117,7 +123,7 @@ def electronic_evidence(text, symbols, multiplicity):
 def parse(task, output, engrad, *, embedded=True):
     """Parse actual native output; retain missing spin/stability evidence explicitly."""
     state = describe(verify(task['xyz']), task['metal'], task['charge'], task['multiplicity'])
-    if verify(task['input']).read_text() != input_text(task['charge'], task['multiplicity'], embedded, task.get('scf_guess')):
+    if verify(task['input']).read_text() != input_text(task['charge'], task['multiplicity'], embedded, task.get('scf_guess'), task.get('method_profile')):
         raise InvalidArtifact('native research input differs')
     text = Path(output).read_text(); value = energy(output)
     if task.get('scf_guess'):
@@ -148,6 +154,10 @@ def parse(task, output, engrad, *, embedded=True):
     patterns={'analytic_scf':r'ORCA SCF GRADIENT CALCULATION','native_dispersion':r'DISPERSION GRADIENT',
               'native_gcp':r'gCP correction\s+\.{2,}\s+done','total_cartesian':r'CARTESIAN GRADIENT',
               'native_D4':r'DFTD4','native_gcp_energy':r'gCP correction\s+[-+0-9.]'}
+    if task.get('method_profile') == PBE0_PROFILE:
+        del patterns['native_gcp']; del patterns['native_gcp_energy']
+        if re.search(r'gCP correction\s+[-+0-9.]',text):
+            raise InvalidArtifact('undeclared composite gCP in PBE0 reference')
     if state['ecp_core_electrons']:
         patterns['native_ecp']=r'ECP gradient\s+\(SHARK\)\s+\.{2,}\s+done'
     components={k:bool(re.search(p,text,re.I)) for k,p in patterns.items()}

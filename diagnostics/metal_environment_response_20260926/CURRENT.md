@@ -1,5 +1,31 @@
 # Field-aware metal response — restart checkpoint
 
+## Current: isolated native Dy failed; one PBE0 capability test running — 27 September 18:02 PDT
+
+The live-health event for 1219790 was reviewed and acted on. PModel explicitly
+failed SCF convergence; HCore plateaued above the unchanged tolerance and root
+cancelled the remaining work. Neither supplies an accepted energy or gradient.
+The completed collector preserves PModel as invalid and HCore as missing its
+final receipt; both were actually attempted. Worker 7010 s × 24 CPUs plus the
+1 CPU-second collector cost 168241 allocated CPU-seconds, zero GPU time.
+Read DY_SMALL_GUESS_RESULT.md. Do not restart this two-start experiment.
+
+One separately declared PBE0-D4/def2-TZVPP explicit-f sextet capability endpoint
+is now running: worker 1219868, collector 1219869, workspace
+dy_pbe0_capability_v1. Startup verified: 24 MPI ranks on standard-shared,
+--mem=0, observed available RAM policy; atomic PModel initialization is active.
+This is not yet molecular convergence. Method and basis both differ from native
+r2SCAN-3c. No preference result, matched La calculation or embedded continuation
+is implied. Read DY_PBE0_CAPABILITY_PLAN.md.
+
+Terminal watcher PID 1293984 and live-health v3 PID 1293986 are alive; exact
+commands and pins are in SUBMISSION.json. Near-root stagnation now triggers a
+review wake using the printed SCF tolerance. No automatic cancellation or
+relaxed scientific acceptance. On wake inspect actual endpoint.out, electronic
+state/gradient evidence and FINAL_COLLECTION.json; do not extend an unchanged
+failure. All PQQ production, other agents' jobs and historical outputs remain intact.
+
+
 ## Active recovery: small Dy two-start diagnostic — 27 September15:55PDT
 
 Jacob explicitly authorized proceeding before shutdown. Saved largeDy diagnosis

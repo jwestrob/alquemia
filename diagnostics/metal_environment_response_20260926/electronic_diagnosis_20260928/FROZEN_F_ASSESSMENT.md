@@ -22,15 +22,17 @@ A separate lanthanide chloride-cluster study used occupation-specific large-core
 
 Our scientific inference: for fixed Dy(III), fixed proton/water inventory and oxygen-donor coordination, this is a plausible way to retain ionic size, valence polarization and ligand strain while removing the difficult explicit-f optimization. The importance of missing f-shell response in small La/Dy selectivity differences remains unknown. Ionic-looking coordination is a rationale to test the approximation, not a quantitative error bound.
 
+Reusable exact files under `benchmarks/hans_lanm_dy_qmmm_correction_v1/qmmm_calibration/basis/` are `lcecp1_tzvp_Dy.orca.inc` and `lcecp1_tzvp_Dy_autoauxj_orca611.inc`; their QZVP/QZVPP counterparts are pinned in the inventory. These are bare directives requiring the existing runner’s single `%basis` wrapper. Do not substitute native Dy def2/J for the declared custom AutoAux without a separate compatibility check.
+
 ## What the real archive establishes
 
 `FROZEN_F_INVENTORY.json` pins the actual basis/ECP/AuxJ assets, reviewed protocol and91 large-core stage outputs in the consumed August calibration shards. This count includes stages/starts and is **not91 independent molecules or accepted results**.
 
--46 outputs contain final energy, normal termination, and a native stable-wavefunction statement.
--None of those91 outputs prints a Cartesian gradient; no `.engrad` exists anywhere in the inspected calibration shards. The inputs are energy calculations. This is no archived analytic-force qualification.
--The q155 B10-medoid PModel output explicitly reports ECP55, charge−1,654electrons and multiplicity1, then stable convergence. The matched ECP28 recipe has681electrons: the27-electron difference is exactly55−28, not a changed formal charge.
--Seven task identities have both completed HCore/PModel starts. Only two meet the **original**1e−7Eh energy-agreement threshold; five miss it, by differences up to4.79669e−7Eh. These differences are small on a chemical energy scale, but the historical gate stays failed. No occupied-subspace-overlap qualification was established in this audit.
--All eight explicit-4f PBE0 molecular outputs previously inspected lacked convergence, so no completed matched frozen-f/explicit-f correction exists here. Do not compare their raw totals or fill that gap with the frozen-f answer.
+- 46 outputs contain final energy, normal termination, and a native stable-wavefunction statement.
+- None of those91 outputs prints a Cartesian gradient; no `.engrad` exists anywhere in the inspected calibration shards. The inputs are energy calculations. This is no archived analytic-force qualification.
+- The q155 B10-medoid PModel output explicitly reports ECP55, charge−1,654electrons and multiplicity1, then stable convergence. The matched ECP28 recipe has681electrons: the27-electron difference is exactly55−28, not a changed formal charge.
+- Seven task identities have both completed HCore/PModel starts. Only two meet the **original**1e−7Eh energy-agreement threshold; five miss it, by differences up to4.79669e−7Eh. These differences are small on a chemical energy scale, but the historical gate stays failed. No occupied-subspace-overlap qualification was established in this audit.
+- All eight explicit-4f PBE0 molecular outputs previously inspected lacked convergence, so no completed matched frozen-f/explicit-f correction exists here. Do not compare their raw totals or fill that gap with the frozen-f answer.
 
 | Archived matched-start identity | HCore−PModel, Eh | Old energy gate |
 |---|---:|---|

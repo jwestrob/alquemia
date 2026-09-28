@@ -1,5 +1,20 @@
 # Field-aware metal response — restart checkpoint
 
+## Active diagnosis — 28 September 2026
+
+Jacob approved explicit-f/frozen-f model diagnosis and ongoing scoped commits/pushes.
+All campaign commits through776a13b are now on origin/main. No owned molecular jobs
+are active; other-session PQQ jobs remain untouched. Root owns saved explicit-f
+numerical diagnosis; finite_field_derivatives owns archived frozen-f evidence.
+Read electronic_diagnosis_20260928/EXPLICIT_F_DIAGNOSIS.md and its pinned JSON.
+Five real failed outputs audited. No unique wrong-occupation diagnosis; isolated
+near-root stagnation differs from embedded gross divergence. Frozen-f force and
+transfer qualification is not inherited from old converged singlepoints.
+User now says shutdown tomorrow morning; exact scheduler shutdown time has not
+been independently established. Maintain restart-ready records without assuming
+additional compute availability. No automatic relaunch from older plans.
+
+
 ## PBE0 capability attempt stopped — 27 September 23:00 PDT
 
 Root received the live near-root stagnation wake and stopped only worker1219868.

@@ -1,0 +1,3 @@
+# La auxiliary basis export, declared before execution
+
+One La(III) atom at coordinate origin is an atomic basis-construction input, not a measured structure or molecular-energy fixture. ORCA6.1.1 PBE0/RKS/RIJCOSX, exact archived lcecp-1-TZVP/ECP46, element-specific AutoAuxSize1; PrintBasis, DryRun true, HCore, NoAutoStart. Standard-shared oneCPU mem0, allocation-derived MaxCore. No molecular SCF, no NoIter/PModel fallback, no energies scored. If DryRun fails to emit an auxiliary basis, report missing export. Inspect output for no SCF iterations/atomic fitting SCF; preserve input/output/hash. Normalize printed La AuxJ to a literal NewAuxJGTO asset only after verification. Root authorized this distinct basis-only allocation.

@@ -72,3 +72,19 @@ substitution or importing old model scores. Report both Hans-vs-Mex contrasts;
 unknown source/state populations and missing environmental/scaffold physics stay
 explicit. Use the shared existing batch templates with this script name, preserving
 separate workspace/wake IDs. If force gate fails, do not bypass it.
+
+## Embedded execution bridge prepared, not executed
+
+Root added metal_environment_lady_embedded.py. It collects actual state/ECP/gradient
+plus required point-charge gradient and physical donor torsion projection. Execution
+requires the passed local force gate and an executor pinned in the prepared snapshot.
+The agent's existing preparation-only Hans manifest predates this bridge and cannot
+be executed by it; prepare a NEW versioned workspace after the gate using the same
+frozen source/assets, rather than editing its immutable snapshot. The old manifest
+still passes read-only dry-run. No embedded molecular cells have been submitted.
+The shared parser now reads charge from declared state, enabling the real Mexcharge0
+region; compact charge−1 tests remain unchanged. Actual embedded analytic integration
+is unrun and must not be claimed from preparation tests.
+
+Current active work remains directional1220300/collector1220301. Latest observation
+at03:27PDT:13macroSCF iterations on plus, residual improving; no failure alerts.

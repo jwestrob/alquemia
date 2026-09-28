@@ -40,7 +40,7 @@ def prepare(a):
  t['cache_key']=cache_key(dict(task=t,protocol=PROTOCOL,implementation=pins,orca=m['orca'],state=m['electronic_state'],basis=m['basis'],aux=m['aux']));m['tasks']=[t];write_new(w/'manifest.json',m);return validate(w/'manifest.json')
 def parse(t,m):
  text=Path(t['output_path']).read_text();e=energy(t['output_path']);st=m['electronic_state']
- checks=[(r'Program Version\s+(6\.1\.1)\b','6.1.1'),(r'Total Charge\s+Charge\s+\.{2,}\s+(-?\d+)','-1'),(r'Multiplicity\s+Mult\s+\.{2,}\s+(\d+)','1'),(r'Number of Electrons\s+NEL\s+\.{2,}\s+(\d+)',str(st['explicit_electrons'])),(r'Hartree-Fock type\s+HFTyp\s+\.{2,}\s+(\w+)','RHF')]
+ checks=[(r'Program Version\s+(6\.1\.1)\b','6.1.1'),(r'Total Charge\s+Charge\s+\.{2,}\s+(-?\d+)',str(st['charge'])),(r'Multiplicity\s+Mult\s+\.{2,}\s+(\d+)','1'),(r'Number of Electrons\s+NEL\s+\.{2,}\s+(\d+)',str(st['explicit_electrons'])),(r'Hartree-Fock type\s+HFTyp\s+\.{2,}\s+(\w+)','RHF')]
  for pattern,want in checks:
   if re.findall(pattern,text)!=[want]:raise InvalidArtifact('executed state/version mismatch: '+pattern)
  ecps=re.findall(r'Type\s+(\w+)\s+ECP(?:\s+(\S+))?\s+\(replacing\s+(\d+)\s+core electrons',text)

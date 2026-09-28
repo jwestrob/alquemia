@@ -1,5 +1,29 @@
 # Field-aware metal response — restart checkpoint
 
+## Hydrogen-direction defect diagnosed — 28 September04:09PDT
+
+Native exact-source scaffold decomposition1220314 completed: its independently
+partitioned energies reconstruct the parent within2.31e-10kcal/mol. However,
+4846.85kcal/mol of4922.94angle strain involves H;563.92 lies inside the new QM
+region. Archived PDBFixer H directions already contain these defects; radial
+normalization retained them. Read scaffold_decomposition_20260928/REPORT.md and
+its upcoming source audit. Compact old sources also retain malformed H angles
+and long H bonds; they are not the normalized full-region preparation.
+
+Current compact1220308 and embedded1220312 continue unchanged with collectors
+1220309/1220313 and their existing watchers. Both Mex compact endpoints finished;
+all three Hans SCFs converged and gradients remain active. No classifier verdict.
+These outputs remain conditional on their actual distorted H preparation.
+
+Embedding_preparation owns a declared versioned carbon-bound-H-only repair
+pilot, preserving heavy atoms, proton inventory, waters and exchangeable H.
+No new electronic matrix or production change authorized by this checkpoint.
+Root will assess real geometry/strain improvement before assigning follow-up
+endpoints; no old inputs/results will be rewritten. Finite_field_derivatives
+owns compact-source H audit and completed-gradient diagnostics. Future watcher
+v5 fixes orbital-table misparsing; existing live snapshots stay unchanged.
+
+
 ## Two scientific matrices running — 28 September03:51PDT
 
 Compact comparison1220308 remains RUNNING40sharedCPUs, collector1220309. Five

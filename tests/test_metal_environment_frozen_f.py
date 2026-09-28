@@ -24,4 +24,9 @@ class FrozenFTests(unittest.TestCase):
   for step in STEPS.values():
    shifted=q.copy();shifted[d['metal_index']]+=step*v
    self.assertAlmostEqual(np.linalg.norm(shifted[d['donor_index']]-shifted[d['metal_index']]),np.linalg.norm(q[d['donor_index']]-q[d['metal_index']])-step)
+ def test_actual_custom_ecp_header(self):
+  import re
+  p=ROOT/'workspaces/metal_environment_response_20260926/dy_frozen_f_scout_v1/Dy_origin/endpoint.out'
+  hits=re.findall(r'Type\s+(\w+)\s+ECP(?:\s+(\S+))?\s+\(replacing\s+(\d+)\s+core electrons',p.read_text())
+  self.assertEqual(hits,[('Dy','','55')])
 if __name__=='__main__':unittest.main()

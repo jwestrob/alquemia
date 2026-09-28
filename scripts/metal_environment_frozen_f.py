@@ -41,7 +41,7 @@ def parse(t,m):
  checks=[(r'Program Version\s+(6\.1\.1)\b','6.1.1'),(r'Total Charge\s+Charge\s+\.{2,}\s+(-?\d+)','-1'),(r'Multiplicity\s+Mult\s+\.{2,}\s+(\d+)','1'),(r'Number of Electrons\s+NEL\s+\.{2,}\s+(\d+)',str(st['explicit_electrons'])),(r'Hartree-Fock type\s+HFTyp\s+\.{2,}\s+(\w+)','RHF')]
  for pattern,want in checks:
   if re.findall(pattern,text)!=[want]:raise InvalidArtifact('executed state/version mismatch: '+pattern)
- ecps=re.findall(r'Type\s+(\w+)\s+ECP\s+(\S+)\s+\(replacing\s+(\d+)\s+core electrons',text)
+ ecps=re.findall(r'Type\s+(\w+)\s+ECP(?:\s+(\S+))?\s+\(replacing\s+(\d+)\s+core electrons',text)
  if len(ecps)!=1 or ecps[0][0]!='Dy' or ecps[0][2]!='55':raise InvalidArtifact('expected actual Dy ECP55')
  for pattern in [r'ORCA SCF GRADIENT CALCULATION',r'DISPERSION GRADIENT',r'ECP gradient\s+\(SHARK\)\s+\.{2,}\s+done',r'CARTESIAN GRADIENT',r'DFTD4']:
   if not re.search(pattern,text,re.I):raise InvalidArtifact('missing analytic component '+pattern)
@@ -58,7 +58,7 @@ def collect(path):
   if r['status']=='complete':
    try:r.update(parse(t,m))
    except (ValueError,OSError) as e:r.update(status='invalid',reason=str(e),energy_hartree=None)
- return dict(protocol_id=PROTOCOL,manifest=record(path),rows=rows,classification=None,affinity=None)
+ return dict(protocol_id=PROTOCOL,manifest=record(path),collector_implementation=record(__file__),rows=rows,classification=None,affinity=None)
 def main():
  p=argparse.ArgumentParser();s=p.add_subparsers(dest='op',required=True);a=s.add_parser('prepare')
  for k in ('source','basis','aux','plan','output'):a.add_argument('--'+k,required=True)

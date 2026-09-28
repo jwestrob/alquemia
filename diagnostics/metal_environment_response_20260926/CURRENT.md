@@ -1,5 +1,20 @@
 # Field-aware metal response — restart checkpoint
 
+## Active frozen-f force scout — 28 September 03:03 PDT
+
+Worker1220294 is confirmed RUNNING on node-48-256g-8,40allocatedCPUs; collector
+1220295 afterany. One exact Hans50atom DyIII ECP55 PBE0-D4 analytic-gradient task,
+new protocol nikasha_DyIII_frozen4f_pbe0_force_scout_v1. No production edits.
+Two real state/manifest checks pass; scientific gradient qualification awaits output.
+Read electronic_diagnosis_20260928/FROZEN_F_SCOUT_PLAN.md. Source/basis/state and
+snapshotted scripts are pinned in dy_frozen_f_scout_v1/manifest.json.
+Terminal watcher370918 and live health watcher370919 armed; exact commands in
+SUBMISSION.json. On wake inspect actual ECP55/208electrons/effectiveRHF1 and
+analytic-gradient components, then execute only the declared dependent physical
+metal-direction checks if admissible. Never treat this approximation as physical
+singlet Dy. Existing ECP28 sextet and PQQ remain intact. No label-based selection.
+
+
 ## Active diagnosis — 28 September 2026
 
 Jacob approved explicit-f/frozen-f model diagnosis and ongoing scoped commits/pushes.

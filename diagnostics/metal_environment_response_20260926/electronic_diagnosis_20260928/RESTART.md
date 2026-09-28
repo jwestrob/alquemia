@@ -51,3 +51,24 @@ origin. No dependent calculations have yet been submitted.
 Embedding agent independently recovers consumed-source transfer design/occupancy;
 root owns all molecular execution. Source/label audit does not block collecting
 the active scout. Overall goal remains La/Dy discrimination, not merely forces.
+
+## Next matched exchange implementation — pushed fc7ecd3
+
+`metal_environment_lady_compact.py` is ready and refuses preparation unless the
+actual four-direction collection reports its declared force gate passed. Six
+real-fixture tests pass, including all three actual paired source coordinates and
+electron counts. No new exchange manifest or molecular jobs have been submitted.
+Current task remains1220300/collector1220301, confirmed running at03:18PDT.
+
+After successful FINAL_COLLECTION.json, prepare (from repository root):
+
+```bash
+/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python scripts/metal_environment_lady_compact.py prepare --origin-manifest workspaces/metal_environment_response_20260926/dy_frozen_f_scout_v1/manifest.json --force-gate workspaces/metal_environment_response_20260926/dy_frozen_f_direction_v1/FINAL_COLLECTION.json --la-basis legacy/qmmm_lc/ecp_lib/orca_La.ecp_basis --la-aux diagnostics/metal_environment_response_20260926/electronic_diagnosis_20260928/lcecp1_tzvp_La_autoauxj_orca611.inc --plan diagnostics/metal_environment_response_20260926/electronic_diagnosis_20260928/COMPACT_EXCHANGE_PLAN.md --ranks 8 --workers 5 --output workspaces/metal_environment_response_20260926/lady_compact_exchange_v1
+```
+
+This is a40CPU finite five-new-cell layout; assess actual available slots before
+submission. Reuse of the real Hans8DQ2_Dy origin is mandatory. No native3c La
+substitution or importing old model scores. Report both Hans-vs-Mex contrasts;
+unknown source/state populations and missing environmental/scaffold physics stay
+explicit. Use the shared existing batch templates with this script name, preserving
+separate workspace/wake IDs. If force gate fails, do not bypass it.

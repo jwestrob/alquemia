@@ -195,3 +195,6 @@ Same geometry/state/Hamiltonian, explicitTRAH two-origin recovery1220342/collect
 
 All six classical bridges completed8CPU-s total; separate electronic and finite sums are available once actual quantum results finish. No demonstrated LanM discrimination yet. Current runner/seed tests23pass; comparison tests4pass. PQQ unchanged.
 
+
+### Archived electronic-population diagnostic, Sep28
+Four original-H completed states conserve charge and retain positive printed frontier gaps. Population schemes disagree even on the sign of the metal-charge difference; no oxidation-state or repaired-state failure diagnosis follows. No new molecular calls. See electronic_diagnosis_20260928/POPULATION_REPORT.md. Four repaired quantum workers still live; no accepted repaired comparison yet.

@@ -1,0 +1,5 @@
+# Archived electronic-population diagnostic
+
+Use only the four completed original-H frozen-f Hans8DQ2 endpoints in lady_frozen_embedded_hans_v2. Inspect printed occupied/virtual orbital energies and Mulliken/Loewdin atom charges, mapped to physical source residues and caps. Verify atom counts and charge closure against the declared state; retain both charge schemes separately. Compare A/B changes and La/Dy distributions without selecting a favorable scheme. No new electronic evaluations, empirical correction, oxidation-state inference, or altered acceptance threshold.
+
+Question: do completed states show an obvious charge-accounting problem or an occupied/virtual inversion that would motivate investigation of the running electronic instabilities? Positive gaps do not prove SCF stability; population charges do not uniquely establish charge localization. These old-H configurations cannot diagnose the cause of repaired-state convergence problems or validate the repaired electronic surface. There is no prior threshold for a biologically acceptable atom charge; report actual values and scheme dependence rather than inventing one.

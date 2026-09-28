@@ -47,3 +47,23 @@ def test_real_origin_subset_and_missing_displacement(tmp_path):
 def test_subset_rejects_duplicate_metals_before_preparation(tmp_path):
  with pytest.raises(InvalidArtifact):prepare(None,None,tmp_path/'unused',{},8,1,origin_metals=['La','La'])
  with pytest.raises(InvalidArtifact):prepare(None,None,tmp_path/'unused',{},8,2,origin_metals=['La'])
+
+def test_seeded_repaired_origin_keeps_target_coordinates(tmp_path):
+ from metal_environment_orbital_seed import stage_seed
+ base=ROOT/'workspaces/metal_environment_response_20260926'
+ source=base/'lady_frozen_embedded_hans_v2/manifest.json'
+ target=base/'lady_repaired_la_origin_prepared_v1/manifest.json'
+ stage_seed(source,source.parent/'FINAL_COLLECTION.json','La_A',target,'La_A',tmp_path/'seed')
+ m=read_json(target);out=tmp_path/'seeded'
+ result=prepare(verify(m['inputs']),verify(m['agreement']),out,m['assets'],8,1,origin_metals=['La'],seed_records={'La_A':tmp_path/'seed/SEED.json'})
+ assert result['status']=='dry_run_pass'
+ new=read_json(out/'manifest.json');t=new['tasks'][0]
+ assert new['protocol_id'].endswith('_moread_v1')
+ assert t['xyz']['sha256']==m['tasks'][0]['xyz']['sha256']
+ assert 'Guess MORead' in verify(t['input']).read_text()
+ assert 'Guess PModel' not in verify(t['input']).read_text()
+ assert t['cache_key']!=m['tasks'][0]['cache_key']
+ # A corrupted real seed target cannot silently seed another geometry.
+ s=read_json(tmp_path/'seed/SEED.json');s['target_task_id']='Dy_A'
+ (tmp_path/'seed/SEED.json').write_text(json.dumps(s))
+ with pytest.raises(InvalidArtifact):validate(out/'manifest.json')

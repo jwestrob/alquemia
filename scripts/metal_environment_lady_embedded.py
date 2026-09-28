@@ -17,6 +17,10 @@ def collect(path):
   if r['status']!='complete':continue
   try:
    text=verify(r['output']).read_text()
+   if m.get('initial_guess')=='MORead':
+    actual='\n'.join(line for line in text.splitlines() if not re.match(r'\s*\|\s*\d+>',line))
+    if 'initial.gbw' not in actual or 'INITIAL GUESS: MODEL POTENTIAL' in actual:raise InvalidArtifact('explicit orbital-read execution evidence missing or fallback used')
+    r['orbital_initialization']=dict(seed=t['orbital_seed'],gbw=t['initial_gbw'],target_energy_reused=False)
    if m.get('solver')=='TRAH' and not re.search(r'\((?:TRAH|NR) MAcro\)',text):raise InvalidArtifact('actual TRAH iteration evidence missing')
    n=int(verify(t['pointcharges']).read_text().splitlines()[0])
    counts=re.findall(r'Reading point charge file\s+\.{2,}\s+ok\s+\((\d+) point charges\)',text)

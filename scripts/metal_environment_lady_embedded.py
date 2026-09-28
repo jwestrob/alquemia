@@ -16,7 +16,9 @@ def collect(path):
   r=rows[t['task_id']]
   if r['status']!='complete':continue
   try:
-   text=verify(r['output']).read_text();n=int(verify(t['pointcharges']).read_text().splitlines()[0])
+   text=verify(r['output']).read_text()
+   if m.get('solver')=='TRAH' and not re.search(r'\((?:TRAH|NR) MAcro\)',text):raise InvalidArtifact('actual TRAH iteration evidence missing')
+   n=int(verify(t['pointcharges']).read_text().splitlines()[0])
    counts=re.findall(r'Reading point charge file\s+\.{2,}\s+ok\s+\((\d+) point charges\)',text)
    if not counts or any(int(x)!=n for x in counts) or 'environment.pc' not in text:raise InvalidArtifact('executed permanent field differs')
    r.update(parse(t,{'electronic_state':t['electronic_state']}));tan=torsion_tangent(c,t['configuration'])
@@ -26,8 +28,8 @@ def collect(path):
   except (ValueError,OSError) as e:r.update(status='invalid',reason=str(e),energy_hartree=None)
  works={}
  for metal in ('La','Dy'):
-  a,b=[rows[metal+'_'+x] for x in ('A','B')];works[metal]=(b['energy_hartree']-a['energy_hartree'])*HA_TO_KCAL if a['status']==b['status']=='complete' else None
- return dict(protocol_id=PROTOCOL,manifest=record(path),collector=record(__file__),rows=rows,per_metal_perturbation_work_kcal_mol=works,Dy_minus_La_perturbation_work_kcal_mol=works['Dy']-works['La'] if all(x is not None for x in works.values()) else None,source_id=m['source_id'],energy_scope='finite embedded electronic component; not full hybrid',classification=None,affinity=None,force_consistency_qualified=False)
+  a,b=[rows.get(metal+'_'+x,{'status':'unavailable'}) for x in ('A','B')];works[metal]=(b['energy_hartree']-a['energy_hartree'])*HA_TO_KCAL if a['status']==b['status']=='complete' else None
+ return dict(protocol_id=m['protocol_id'],manifest=record(path),collector=record(__file__),rows=rows,per_metal_perturbation_work_kcal_mol=works,Dy_minus_La_perturbation_work_kcal_mol=works['Dy']-works['La'] if all(x is not None for x in works.values()) else None,source_id=m['source_id'],energy_scope='finite embedded electronic component; not full hybrid',classification=None,affinity=None,force_consistency_qualified=False)
 
 def main():
  p=argparse.ArgumentParser();p.add_argument('op',choices=['collect','execute','dry-run']);p.add_argument('--manifest',required=True);p.add_argument('--output');p.add_argument('--force-gate');a=p.parse_args()

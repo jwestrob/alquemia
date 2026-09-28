@@ -202,3 +202,7 @@ Four original-H completed states conserve charge and retain positive printed fro
 ## First repaired full-region endpoint accepted — 28 September
 
 Hans8DQ2La1220332/collector1220333 completed and passed collection:−5728.001479272300Eh,25SCF cycles,580,500allocatedCPU-s including collector. Physical gradients assembled with exact repaired classical partner. Glu91 total angular gradient decreases3.46524→1.35121kcal/mol/rad; this is one-metal repair response, not a La/Dy result. See force_assembly_20260928/REPAIRED_LA_REPORT.md and pinned projection JSON. Dy origin1220323, Mex pair1220336 and FNR recovery1220342 remain live; summary1220344 waits. No Glu91 quantum submission, no default change.
+
+## Mex repaired pair accepted — 28 September
+
+Worker1220336/collector1220337 completed La/Dy, energies−5636.761993646614/−5642.249821148190Eh. Physical gradients assembled with exact classical partners. Cost1,344,450allocatedCPU-s; no GPU. Comparison3/6accepted, Hans contrasts still null. Read repaired_exchange_20260928/MEX_REPORT.md and MEX_RESULT.json. Raw cross-element contrast is not affinity. Only quantumworkers1220323(DQ2Dy) and1220342(FNRLa/Dy) remain live;1220344 summary still pending. No Glu91 endpoint launched.

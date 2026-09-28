@@ -767,3 +767,9 @@ origin. No dependent calculations have yet been submitted.
 Embedding agent independently recovers consumed-source transfer design/occupancy;
 root owns all molecular execution. Source/label audit does not block collecting
 the active scout. Overall goal remains La/Dy discrimination, not merely forces.
+
+## Glu91 collection and classical bridge — September28 08:48PDT
+
+Classical four-state job1220361 completed3CPU-s/16 component queries; no quantum or origin repeats. Its B−A response+0.033739411802kcal/mol is identical for both metals. Full bridges: workspaces/metal_environment_response_20260926/glu91_classical_20260928. Agent report/tests committed79362d9; no active agent jobs.
+
+Root common-pool collector glu91_response_20260928/COLLECT.py/CONFIG.json executed against real accepted origins: four displaced states correctly unavailable, no pool fabricated. Summary1220362 waits afterany1220360, then writes workspaces/metal_environment_response_20260926/glu91_response_final_v1. Completion watcher details in glu91_response_20260928/SUBMISSION.json. No chemistry from this collector. Numerical analysis policy GLU91_ANALYSIS_POLICY.md frozen before displaced results. Current quantumworkers1220342FNR and1220359Glu91 remain live. GitHubDNS intermittently prevents pushes; inspect git origin before assuming all latest commits remote.

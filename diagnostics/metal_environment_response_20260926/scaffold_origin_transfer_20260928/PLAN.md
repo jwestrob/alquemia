@@ -1,0 +1,11 @@
+# Declared classical origin transfer — 28 September 2026
+
+Question: supply the same finite classical ledger on repaired Hans8FNR and Mex8FNS source A for La/Dy, keeping native source topology and actual spectator identities. Four configurations, sixteen component energy/force queries; one shared CPU, mem=0; no quantum calls, optimization, solvent addition or source changes.
+
+Use the reviewed fixed-length-cap policy from coupled_scaffold_20260928: omit wholly QM native bonded terms; retain all MM terms and cut radial bonds; omit cross angular terms only when every exterior atom is replaced by its actual cap whose retained anchor occurs in that term. Retain other cross terms. Native exclusions/LJ exceptions remain, shifted MM charges regenerate 1–4 Coulomb products with native scaling. Classical components are retained bonded + MM LJ + MM Coulomb + QM–MM LJ. No QM–MM Coulomb, C4 induction, cap LJ or invented metal bonds. Electronic component is absent here, not zero in a full score.
+
+Pin exact ff19SB/TIP3P XML and source maps per structure. La/Dy and spectator Dy/Nd use existing pure12–6 TIP3P IOD parameters: La1.718/.15060822, Dy1.609/.08389240, Nd1.681/.12564307 (Rmin/2 angstrom / epsilon kcal/mol), read from installed Amber file. These are candidate cross parameters, not fitted or qualified for frozen-f QM/MM. Lorentz–Berthelot combination as existing builder.
+
+Before evaluation require native atom-order/charge agreement, unique physical IDs, every selected source atom and field row mapped, exact source A core/cap geometry, four real caps/cut radial terms, field charge closure to 1e-9 e, native exception agreement to 1e-9 e², no coordinate alterations. Save each full component energy/Cartesian gradient immediately. Require finite arrays and exact equality of the first three components between target metals (tolerance1e-9 kcal/mol and gradient units); only target cross LJ may differ. These are implementation checks, not new force numerical qualification.
+
+Keep source occupancy/assembly differences explicit. Only same-source Dy-minus-La component contrasts are reportable; no minima across unlike source compositions. Finite crystal hydration, fixed-charge spectators and unqualified cross parameterization remain limitations. No biological classification or full response qualification follows from completion.

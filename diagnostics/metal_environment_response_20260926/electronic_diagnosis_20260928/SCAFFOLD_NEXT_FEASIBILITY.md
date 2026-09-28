@@ -11,7 +11,7 @@ Base directory `workspaces/metal_environment_response_20260926/lanm_ef3_preparat
 - `core_mapping_A.json`, `core_mapping_B.json`:190 real QM nonmetal atoms, target EF3 and four synthetic caps. Retained/omitted source coordinates and analytic cap Jacobians are present.
 - `boundary_mapping.json`, `environment_atoms.json`, `INPUTS.json`: local charge redistribution, four omitted-MM1 CA charges with physical atoms retained, actual La/La/Na spectators, source receipts and exact A/B correspondence.
 
-Existing `scripts/metal_environment_mechanics.py` and `metal_environment_components.py` implement an earlier1H4I ledger/components; reuse their term classification, exception handling and chain-rule patterns, **not their1H4I products, source-size assumptions or already chosen boundary policy**. No new engine was built in this review.
+Existing `scripts/metal_environment_mechanics.py` and `metal_environment_component_checks.py` implement an earlier1H4I ledger/components; reuse their term classification, exception handling and chain-rule patterns, **not their1H4I products, source-size assumptions or already chosen boundary policy**. No new engine was built in this review.
 
 ## Exact subtraction inventory
 

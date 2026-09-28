@@ -48,6 +48,20 @@ def test_subset_rejects_duplicate_metals_before_preparation(tmp_path):
  with pytest.raises(InvalidArtifact):prepare(None,None,tmp_path/'unused',{},8,1,origin_metals=['La','La'])
  with pytest.raises(InvalidArtifact):prepare(None,None,tmp_path/'unused',{},8,2,origin_metals=['La'])
 
+def test_real_two_origin_trah_recovery_preserves_states(tmp_path):
+ m=read_json(ROOT/'workspaces/metal_environment_response_20260926/lady_repaired_origins_Hans8FNR_v1/manifest.json')
+ out=tmp_path/'trah_origins'
+ result=prepare(verify(m['inputs']),verify(m['agreement']),out,m['assets'],8,2,origin_metals=['La','Dy'],origin_solver='TRAH')
+ assert result['status']=='dry_run_pass'
+ recovery=read_json(out/'manifest.json')
+ assert recovery['protocol_id'].endswith('_origin_subset_v1_trah_v1')
+ assert recovery['solver']=='TRAH'
+ for old,new in zip(m['tasks'],recovery['tasks']):
+  assert old['electronic_state']==new['electronic_state']
+  assert old['xyz']['sha256']==new['xyz']['sha256']
+  assert old['pointcharges']['sha256']==new['pointcharges']['sha256']
+  assert ' TRAH\n' in verify(new['input']).read_text()
+
 def test_seeded_repaired_origin_keeps_target_coordinates(tmp_path):
  from metal_environment_orbital_seed import stage_seed
  base=ROOT/'workspaces/metal_environment_response_20260926'

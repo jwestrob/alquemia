@@ -1,0 +1,9 @@
+# Compact La/Dy force diagnostic — frozen before reading compact results
+
+Analyze only the six declared compact endpoints for Hans8DQ2, Hans8FNR and Mex8FNS (including the reused Hans8DQ2 Dy origin). No new evaluations or optimization. The same coordinates/atom ordering within each La/Dy pair must be exact.
+
+For each source choose its nearest real oxygen to the metal using the pinned origin coordinates only; ties break by lowest zero-based XYZ index. Compact caps are hydrogen, so an oxygen cannot be a link cap. Freeze index, distance and unit vector pointing metal→oxygen before reading gradients. Report each metal's directional energy gradient in kcal/mol/angstrom; positive means moving metal toward that oxygen increases energy to first order. Force is its negative. Report Dy−La gradient/force differences and individual metal gradient vectors/norms. No favorable direction selection or classifier threshold.
+
+Also report all oxygen distances sorted by distance, and the vector sum of all gradients as an isolated capped-system translation residual. This sum is not a physical protein/link-atom mapping or an arbitrary force subtraction. No residue-specific ligand force projection without a verified source mapping. No gate is invented from these observed loads; report residuals and existing qualification status.
+
+Use only an existing final collection, matching actual hashed engrad and pinned coordinates/electronic state. Missing/failed rows stay unavailable; one available endpoint may be reported while its pair contrast is null. A completed calculation is not automatically qualified for every directional force or electronic-state assumption. These are conditional local strain/source-sensitivity diagnostics, not affinity, relaxation work, thermal populations, or independent biological replicates.

@@ -1,5 +1,9 @@
 # Field-aware metal response — restart checkpoint
 
+## Repaired Dy solver setback — 28 September
+
+Job1220323 remains RUNNING. After macro5 error2.04e−4, its predicted−0.05068Eh step instead raised energy+0.51948Eh and was flagged rejected. Macro7 subsequently reports the higher energy and error2.2688. It is not near converged or an accepted endpoint. Preserve actual output snapshot/pin in electronic_diagnosis_20260928/DY_TRAH_REJECTION_OBSERVATION.json. No unique cause or terminal failure established; existing monitoring continues, no duplicate or new chemistry. Other three workers remain live and the comparison collector1220344 remains pending.
+
 ## Automatic comparison after terminal collectors — 28 September06:45PDT
 
 Postprocessing1220344 waits afterany on1220324/1220333/1220337/1220343; it writes both primary and separate FNR recovery comparisons, plus accounting, to workspaces/metal_environment_response_20260926/repaired_exchange_auto_v1. No new chemistry or promotion. Existing four quantum workers remain live. Exact watcher command/PID and output are in repaired_exchange_20260928/AUTO_COLLECTION.json; a completion wake is armed. Do not duplicate this summary job or overwrite its output directory.

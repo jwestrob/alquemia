@@ -1,5 +1,11 @@
 # Field-aware metal response — restart checkpoint
 
+## Embedded Hans comparison complete — 28 September05:30PDT
+
+All four original-H frozen-f embedded endpoints1220312 and collector1220313 are complete. La work−0.04353110, Dy+0.06425619, differential+0.10778728kcal/mol for the prescribed +2degree Asp85 motion. Native gradients/point-charge gradients collected; no affinity or full force qualification. Actual cost1,828,018allocatedCPU-s,0GPU. Read electronic_diagnosis_20260928/EMBEDDED_HANS_RESULT.md. Do not rerun this matrix.
+
+Repaired Dy TRAH scout1220323 remains live, collector1220324 pending. At last check42min, macro2 with improving electronic gradient; no accepted repaired energy yet. Finite physical force assembly now works on archived native La A/B plus matching classical terms (1220328,1CPU-s). Agent finite_field_derivatives will apply it to the completed frozen-f endpoints, reusing exact La classical data and computing only missing Dy classical terms. No new quantum stage or optimization launched. Source reversal still unresolved; goal open; PQQ unchanged.
+
 ## Repair comparison closed; coupled-response work continues — 28 September04:58PDT
 
 Repaired compact1220316/collector1220317 completed all6 endpoints. D(Hans8DQ2,Mex)

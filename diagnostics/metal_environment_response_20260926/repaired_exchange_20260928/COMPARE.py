@@ -2,11 +2,14 @@
 import argparse
 import json
 import sys
+import math
+import numpy as np
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from affordable_common import HA_TO_KCAL, InvalidArtifact, read_json, record, verify, write_new
+from metal_environment_force_assembly import prepare_mapping
 
 
 def compare(config):
@@ -39,6 +42,27 @@ def compare(config):
                    electronic_state=t['electronic_state'], initial_guess=m.get('initial_guess', 'PModel'),
                    solver=m.get('solver', 'default'), status='unavailable', energy_hartree=None,
                    reason='collection_not_available')
+        row.update(classical_status='unavailable', classical_kcal_mol=None)
+        classical_path=Path(entry['classical']) if entry.get('classical') else None
+        if classical_path is not None and classical_path.exists():
+            classical=read_json(classical_path)
+            if classical['inputs'] != m['inputs'] or classical['metal'] != t['metal']:
+                raise InvalidArtifact('classical source/state differs')
+            if classical.get('QM_MM_Coulomb_included') is not False or classical.get('C4_induction_included') is not False:
+                raise InvalidArtifact('classical electrostatic exclusions differ')
+            verify(classical['ledger'])
+            physical=prepare_mapping(verify(m['inputs']), 'A', t['metal'])['physical_atoms']
+            indices={sid:i for i,sid in enumerate(classical['source_ids'])}
+            if len(indices)!=len(classical['source_ids']) or set(indices)!={a['id'] for a in physical}:
+                raise InvalidArtifact('classical physical membership differs')
+            coords=np.asarray(classical['coordinates_A'])
+            if coords.shape!=(len(physical),3) or not np.allclose(coords[[indices[a['id']] for a in physical]], [a['xyz_A'] for a in physical], atol=1e-8,rtol=0):
+                raise InvalidArtifact('classical coordinates differ')
+            total=classical['total_kcal_mol']
+            if not math.isfinite(total) or abs(sum(classical['components_kcal_mol'].values())-total)>1e-8:
+                raise InvalidArtifact('classical energy components inconsistent')
+            row.update(classical_status='complete', classical_kcal_mol=total, classical=record(classical_path),
+                       classical_components_kcal_mol=classical['components_kcal_mol'])
         path = Path(entry['collection'])
         if path.exists():
             c = read_json(path)
@@ -68,11 +92,26 @@ def compare(config):
         mex = declaration['mex_source']
         differences[hans] = (contrasts[hans] - contrasts[mex]
                              if contrasts[hans] is not None and contrasts[mex] is not None else None)
+    classical_contrasts={}
+    for source in declaration['sources']:
+        pair={r['metal']:r for r in rows if r['source']==source}
+        classical_contrasts[source]=(pair['Dy']['classical_kcal_mol']-pair['La']['classical_kcal_mol']
+                                     if all(r['classical_status']=='complete' for r in pair.values()) else None)
+    finite_contrasts={s:contrasts[s]+classical_contrasts[s]
+                      if contrasts[s] is not None and classical_contrasts[s] is not None else None
+                      for s in declaration['sources']}
+    finite_differences={s:finite_contrasts[s]-finite_contrasts[declaration['mex_source']]
+                        if finite_contrasts[s] is not None and finite_contrasts[declaration['mex_source']] is not None else None
+                        for s in declaration['hans_sources']}
     return dict(declaration=record(config), implementation=record(__file__), rows=rows,
                 complete_cells=sum(r['status'] == 'complete' for r in rows), declared_cells=len(expected),
                 raw_Dy_minus_La_kcal_mol=contrasts, Hans_minus_Mex_exchange_kcal_mol=differences,
+                classical_Dy_minus_La_kcal_mol=classical_contrasts,
+                finite_electronic_plus_classical_Dy_minus_La_kcal_mol=finite_contrasts,
+                finite_Hans_minus_Mex_exchange_kcal_mol=finite_differences,
                 sign_convention='Positive exchange means conditional greater relative La preference in Hans',
                 energy_scope='finite embedded electronic component only', affinity=None, classification=None,
+                finite_energy_scope='embedded electronic plus explicitly matched classical terms; no bulk solvent',
                 limitations=declaration['limitations'])
 
 

@@ -38,3 +38,15 @@ def test_missing_is_unavailable_not_zero(tmp_path):
 def test_duplicate_real_cell_rejected(tmp_path):
     path=declaration(tmp_path);c=json.loads(path.read_text());c['cells'].append(c['cells'][0]);path.write_text(json.dumps(c))
     with pytest.raises(module.InvalidArtifact):module.compare(path)
+
+
+def test_actual_classical_terms_do_not_fill_missing_quantum(tmp_path):
+    c=json.loads((HERE/'COMPARISON_WITH_CLASSICAL.json').read_text())
+    for cell in c['cells']:cell['collection']=str(tmp_path/'unavailable.json')
+    path=tmp_path/'classical.json';path.write_text(json.dumps(c));result=module.compare(path)
+    assert result['complete_cells']==0
+    assert all(r['classical_status']=='complete' for r in result['rows'])
+    assert result['classical_Dy_minus_La_kcal_mol']['Hans8DQ2']==pytest.approx(.058069241205,abs=1e-10)
+    assert result['classical_Dy_minus_La_kcal_mol']['Hans8FNR']==pytest.approx(.073347255864,abs=1e-10)
+    assert result['classical_Dy_minus_La_kcal_mol']['Mex8FNS']==pytest.approx(.066701362053,abs=1e-10)
+    assert all(v is None for v in result['finite_Hans_minus_Mex_exchange_kcal_mol'].values())

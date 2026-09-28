@@ -1,5 +1,21 @@
 # Field-aware metal response — restart checkpoint
 
+## Local force gate passed; matched exchange running — 28 September03:43PDT
+
+Read electronic_diagnosis_20260928/FROZEN_F_FORCE_RESULT.md and JSON. All four
+actual displacement endpoints completed; both derivative/refinement tolerances
+pass unchanged. One local direction qualified, not biological selectivity.
+Worker1220300/collector1220301 terminal, acknowledged; no repeat.
+
+Worker1220308 confirmed RUNNING40sharedCPUs (5×8MPI), collector1220309 afterany.
+Workspace lady_compact_exchange_v1, pinned finite5new+1reused origins across
+Hans8DQ2/Hans8FNR/Mex8FNS. Exact wake/live-health commands in SUBMISSION.json.
+On completion inspect all endpoint states/gradients and BOTH conditional exchange
+values. Do not select a favorable source or use raw unlike-region minima.
+Embedded preparation/bridge is ready but no embedded frozen-f call submitted yet.
+PQQ production and other sessions remain untouched. All original failures retained.
+
+
 ## Origin passed; directional qualification running — 28 September03:13PDT
 
 Read electronic_diagnosis_20260928/FROZEN_F_SCOUT_RESULT.md. Worker1220294/collector

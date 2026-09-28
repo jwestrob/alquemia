@@ -52,3 +52,26 @@ python scripts/metal_environment_orbital_seed.py \
 ```
 
 The B target above is already complete: this example validates compatibility only, and does not authorize rerunning it. Root integrates with a separately declared future displacement scout.
+
+## v2: hydrogen-repair boundary diagnostics
+
+The exact intended transfer from completed original `La_A` to
+`lady_repaired_la_origin_prepared_v1/La_A` initially failed because its boundary
+ledger includes coordinate-derived dipoles. Inspection found all charges,
+redistribution increments, recipients, removed atom IDs and formal fragment
+charges unchanged. Only four dipole pairs changed, with added original-dipole
+records and coordinate-preparation provenance.
+
+Protocol `nikasha_same_metal_frozen_f_orbital_seed_v2` excludes precisely these
+known diagnostic fields from boundary identity comparison: top-level
+`coordinate_preparation`/`original_boundary_mapping`, and ledger
+`dipole_before_eA`/`retained_MM_dipole_after_eA`/`original_dipole_diagnostic`.
+The original-boundary pin is verified when present. Both boundary pins and all
+excluded diagnostic values are recorded in `boundary_diagnostic_changes`.
+All other boundary properties must remain identical. No broad exception for
+boundary or charge changes was added.
+
+The exact real repaired target now validates; corrupted copies changing a
+redistribution charge increment, recipient identity or removed atom identity
+still fail. All **13 tests passed in 8.08 s**. This remains initialization
+compatibility only; no seeded molecular execution or speedup is claimed.

@@ -50,3 +50,29 @@ def test_unaccepted_source_rejected(tmp_path):
     p = tmp_path/'bad_collection.json'; p.write_text(json.dumps(c))
     with pytest.raises(InvalidArtifact, match='not accepted'):
         validate_seed(MAN, p, 'Dy_A', MAN, 'Dy_B')
+
+REPAIRED = ROOT/'workspaces/metal_environment_response_20260926/lady_repaired_la_origin_prepared_v1/manifest.json'
+
+
+@pytest.mark.skipif(not REPAIRED.exists(), reason='real repaired-H target unavailable')
+def test_real_hydrogen_repair_seed():
+    r = validate_seed(MAN, COL, 'La_A', REPAIRED, 'La_A')
+    assert r['boundary_diagnostic_changes']['changed']
+    assert r['coordinate_changes']['max_displacement_A'] > 0
+    assert r['field_changes']['changed']
+    assert r['target_energy'] is None
+
+
+@pytest.mark.skipif(not REPAIRED.exists(), reason='real repaired-H target unavailable')
+@pytest.mark.parametrize('change', ['charge', 'recipient', 'removed_atom'])
+def test_repaired_boundary_chemistry_mismatch_rejected(change, tmp_path):
+    m = read_json(REPAIRED); t = next(t for t in m['tasks'] if t['task_id'] == 'La_A')
+    boundary = read_json(t['boundary_mapping']['path'])
+    if change == 'charge': boundary['ledger'][0]['each_increment_e'] += 0.1
+    elif change == 'recipient': boundary['ledger'][0]['recipients'][0] += '_corrupted'
+    else: boundary['ledger'][0]['removed_source_ids'][0] += '_corrupted'
+    p = tmp_path/'malformed_boundary.json'; p.write_text(json.dumps(boundary))
+    t['boundary_mapping'] = record(p)
+    p = tmp_path/'malformed_manifest.json'; p.write_text(json.dumps(m))
+    with pytest.raises(InvalidArtifact, match='boundary identity mismatch'):
+        validate_seed(MAN, COL, 'La_A', p, 'La_A')

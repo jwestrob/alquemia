@@ -11,7 +11,7 @@ from pathlib import Path
 import numpy as np
 from affordable_common import InvalidArtifact, read_json, record, verify, write_new, xyz, energy
 
-PROTOCOL = 'nikasha_same_metal_frozen_f_orbital_seed_v1'
+PROTOCOL = 'nikasha_same_metal_frozen_f_orbital_seed_v2'
 GEOMETRIC_KEYS = {'xyz_A', 'retained_xyz_A', 'omitted_xyz_A',
                   'jacobian_retained', 'jacobian_omitted'}
 
@@ -22,6 +22,27 @@ def identity(value):
     if isinstance(value, list):
         return [identity(v) for v in value]
     return value
+
+
+
+def boundary_identity_and_diagnostics(pin):
+    """Separate only known geometric diagnostics from boundary chemistry."""
+    boundary = read_json(verify(pin))
+    diagnostics = {}
+    for key in ('coordinate_preparation', 'original_boundary_mapping'):
+        if key in boundary:
+            diagnostics[key] = boundary.pop(key)
+    if 'original_boundary_mapping' in diagnostics:
+        verify(diagnostics['original_boundary_mapping'])
+    diagnostics['ledger'] = []
+    for entry in boundary['ledger']:
+        geometric = {}
+        for key in ('dipole_before_eA', 'retained_MM_dipole_after_eA',
+                    'original_dipole_diagnostic'):
+            if key in entry:
+                geometric[key] = entry.pop(key)
+        diagnostics['ledger'].append(geometric)
+    return identity(boundary), diagnostics
 
 
 def task(manifest, task_id):
@@ -69,7 +90,9 @@ def validate_seed(source_manifest, collection, source_task_id, target_manifest, 
             verify(endpoint[key])
     maps = [read_json(verify(x['core_mapping'])) for x in (s, t)]
     require(identity(maps[0]) == identity(maps[1]), 'ordered source/cap identity mismatch')
-    require(identity(read_json(verify(s['boundary_mapping']))) == identity(read_json(verify(t['boundary_mapping']))), 'boundary identity mismatch')
+    sb, sd = boundary_identity_and_diagnostics(s['boundary_mapping'])
+    tb, td = boundary_identity_and_diagnostics(t['boundary_mapping'])
+    require(sb == tb, 'boundary identity mismatch')
     rs, rt = xyz(verify(s['xyz'])), xyz(verify(t['xyz']))
     es, et = [x[0] for x in rs], [x[0] for x in rt]
     qs, qt = [x[1:] for x in rs], [x[1:] for x in rt]
@@ -89,6 +112,8 @@ def validate_seed(source_manifest, collection, source_task_id, target_manifest, 
                 electronic_state=s['electronic_state'], method=sm['method'], orca=sm['orca'],
                 assets=sm['assets'][s['metal']], coordinate_changes=dict(source=s['xyz'], target=t['xyz'],
                 max_displacement_A=float(np.linalg.norm(np.array(qt)-qs, axis=1).max())),
+                boundary_diagnostic_changes=dict(source=s['boundary_mapping'], target=t['boundary_mapping'],
+                source_diagnostics=sd, target_diagnostics=td, changed=sd != td),
                 field_changes=dict(source=s['pointcharges'], target=t['pointcharges'],
                 changed=s['pointcharges']['sha256'] != t['pointcharges']['sha256']),
                 scf_initial_guess='Guess MORead\n MOInp "initial.gbw"',

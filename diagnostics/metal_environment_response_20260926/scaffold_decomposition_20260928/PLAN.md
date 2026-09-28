@@ -1,0 +1,7 @@
+# Exact Hans native scaffold decomposition
+
+Declared before energies. Evaluate only the existing1,887-atom normalized Hans8DQ2 ff19SB/TIP3P parent at archived A/B, with no metal particles or invented ion parameters. All original charges remain native for this accounting test; no shifted-charge hybrid energy is claimed. Actual La/La/Na/target interactions are unavailable, not zero corrections.
+
+Partition native bonds, angles, torsions and CMAP into wholly selected real QM, cross, and MM terms. Independently construct native nonbonded subsets QQ/MM plus explicit cross pair Coulomb/LJ with original native exceptions. Sum all partitions and compare with the unmodified parent System. Synthetic caps are absent; classifications use physical source IDs only. No exclusions are changed, and no classical energy is combined with QM.
+
+Use OpenMM Reference double precision on one shared CPU, two configurations only. Record parent/component energies, parent force maxima and highest source bond strains, preserving both zero motion of the exterior and any parent strain. Numerical decomposition tolerance1e−6kcal/mol plus1e−10 times parent magnitude, fixed before results. No optimization, force-field changes, new configurations, high-level endpoints or biological classification. This test establishes accounting and native source strain, not scaffold compliance or a valid capped hybrid boundary policy.

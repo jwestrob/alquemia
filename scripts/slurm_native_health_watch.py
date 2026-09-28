@@ -15,7 +15,7 @@ import re
 import subprocess
 import time
 
-POLICY = {'id':'native_scf_health_v4', 'trah_macro_window':8,
+POLICY = {'id':'native_scf_health_v5', 'trah_macro_window':8,
           'trah_error_floor':1.0, 'minimum_relative_error_improvement':0.5,
           'extreme_micro_step_hartree':1e6, 'extreme_distinct_macro_count':3,
           'silent_output_seconds':900, 'automatic_cancellation':False,
@@ -32,6 +32,31 @@ def number(v):return float(v.replace('D','E').replace('d','e'))
 def save(path,data):
     p=path.with_suffix(path.suffix+'.tmp');p.write_text(json.dumps(data,indent=2,allow_nan=False)+'\n');p.replace(path)
 
+def diis_table(text):
+    """Read only the most recent explicitly headed DIIS iteration table.
+
+    ORCA also prints paired orbital rows with eight numbers. Shape alone is
+    insufficient; a DIIS-specific header opens parsing and a solver transition
+    or SCF/property section closes it. Warnings inside the table are harmless.
+    """
+    header=re.compile(r'^\s*Iteration\s+Energy\s*\(Eh\)\s+Delta-E\s+RMSDP\s+MaxDP\s+DIISErr\s+Damp\s+Time\(sec\)\s*$')
+    row_pattern=re.compile(r'^\s*(\d+)\s+('+F+r')\s+('+F+r')\s+('+F+r')\s+('+F+r')\s+('+F+r')\s+('+F+r')\s+('+F+r')\s*$')
+    end=re.compile(r'SCF (?:CONVERGED|NOT CONVERGED|DID NOT CONVERGE)|Leaving SCF to start the TRAH|Initializing SOSCF|TOTAL SCF ENERGY|ORBITAL ENERGIES|ORCA SCF GRADIENT|ORCA finished by error termination|ORCA TERMINATED NORMALLY|\((?:TRAH|NR)\s+MAcro\)',re.I)
+    rows=[];active=False
+    for line in text.splitlines():
+        if header.fullmatch(line):
+            rows=[];active=True
+            continue
+        if active and (end.search(line) or re.match(r'^\s*Iteration\s+Energy',line)):
+            active=False
+        if not active:
+            continue
+        m=row_pattern.fullmatch(line)
+        if m:
+            rows.append(dict(zip(('iteration','energy_hartree','delta_energy_hartree','rms_density','max_density','diis_error','damping','iteration_seconds'),[int(m[1])]+[number(v) for v in m.groups()[1:]])))
+    return rows,active
+
+
 def inspect_text(text):
     normal='ORCA TERMINATED NORMALLY' in text
     converged=bool(re.search(r'SCF CONVERGED AFTER',text))
@@ -40,10 +65,7 @@ def inspect_text(text):
             re.findall(r'^\s*(\d+)\s+('+F+r')\s+('+F+r').*\(TRAH MAcro\)',text,re.M)]
     micro=[{'iteration':int(i),'step_hartree':number(e)} for i,e in
            re.findall(r'^\s*(\d+)\s+dE\s+('+F+r').*\(TRAH MIcro\)',text,re.M)]
-    diis_matches=list(re.finditer(r'^\s*(\d+)\s+('+F+r')\s+('+F+r')\s+('+F+r')\s+('+F+r')\s+('+F+r')\s+('+F+r')\s+('+F+r')\s*$',text,re.M))
-    diis=[dict(zip(('iteration','energy_hartree','delta_energy_hartree','rms_density','max_density','diis_error','damping','iteration_seconds'),[int(m[1])]+[number(v) for v in m.groups()[1:]])) for m in diis_matches]
-    phase_transition=max(text.rfind('(TRAH MAcro)'),text.rfind('Leaving SCF to start the TRAH'),text.rfind('Initializing SOSCF'))
-    diis_active=bool(diis_matches and diis_matches[-1].end()>phase_transition)
+    diis,diis_active=diis_table(text)
     trah_tolerances=[number(v) for v in re.findall(r'Converg\. threshold\s+\(grad\. norm\)\s+\.{2,}\s+('+F+r')',text)]
     trah_tolerance=trah_tolerances[-1] if trah_tolerances else None
     # TRAH switches to Newton-Raphson near a root; include those macro rows

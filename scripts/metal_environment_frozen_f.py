@@ -11,10 +11,12 @@ PROTOCOL='nikasha_DyIII_frozen4f_pbe0_force_scout_v1'
 METHOD='PBE0 D4 def2-TZVP def2/J RIJCOSX NoAutostart DefGrid3 VeryTightSCF EnGrad'
 def state(path):
  atoms=xyz(path);symbols=[a[0] for a in atoms]
- if symbols.count('Dy')!=1 or set(symbols)-{'Dy','H','C','N','O'}:raise InvalidArtifact('one Dy and closed-shell CHNO ligands required')
- total=sum(NUMBERS[s] for s in symbols)+1;explicit=total-55
+ metals=[x for x in symbols if x in ('La','Dy')]
+ if len(metals)!=1 or set(symbols)-{'Dy','La','H','C','N','O'}:raise InvalidArtifact('one La/Dy and closed-shell CHNO ligands required')
+ metal=metals[0];core=55 if metal=='Dy' else 46
+ total=sum(NUMBERS[s] for s in symbols)+1;explicit=total-core
  if explicit%2:raise InvalidArtifact('effective closed-shell electron parity differs')
- return dict(metal='Dy',oxidation_state_hypothesis=3,charge=-1,physical_multiplicity=6,physical_f_occupation=9,effective_multiplicity=1,ecp_core_electrons=55,all_electron_count=total,explicit_electrons=explicit,alpha_electrons=explicit//2,beta_electrons=explicit//2,representation='spin_free_frozen_4f9_valence_model',spin_orbit_included=False)
+ return dict(metal=metal,oxidation_state_hypothesis=3,charge=-1,physical_multiplicity=6 if metal=='Dy' else 1,physical_f_occupation=9 if metal=='Dy' else 0,effective_multiplicity=1,ecp_core_electrons=core,all_electron_count=total,explicit_electrons=explicit,alpha_electrons=explicit//2,beta_electrons=explicit//2,representation='spin_free_frozen_4f9_valence_model' if metal=='Dy' else 'spin_free_4f0_valence_model',spin_orbit_included=False)
 def input_text(basis,aux):
  return f'! {METHOD}\n%scf\n Guess PModel\nend\n%basis\n{basis}\n{aux}\nend\n* xyzfile -1 1 core.xyz\n'
 def validate(path):
@@ -22,7 +24,7 @@ def validate(path):
  if m['protocol_id']!=PROTOCOL or len(m['tasks'])!=1:raise InvalidArtifact('single scout required')
  for p in m['implementation'].values():verify(p)
  t=m['tasks'][0]
- if state(verify(t['xyz']))!=m['electronic_state'] or t['xyz']['sha256']!=m['source_xyz']['sha256']:raise InvalidArtifact('state/source mismatch')
+ if state(verify(t['xyz']))['metal']!='Dy' or state(verify(t['xyz']))!=m['electronic_state'] or t['xyz']['sha256']!=m['source_xyz']['sha256']:raise InvalidArtifact('state/source mismatch')
  if verify(t['input']).read_text()!=input_text(verify(m['basis']).read_text(),verify(m['aux']).read_text()):raise InvalidArtifact('input/basis differs')
  bare={k:v for k,v in t.items() if k!='cache_key'}
  if t['cache_key']!=cache_key(dict(task=bare,protocol=PROTOCOL,implementation=m['implementation'],orca=m['orca'],state=m['electronic_state'],basis=m['basis'],aux=m['aux'])):raise InvalidArtifact('cache identity mismatch')
@@ -42,7 +44,7 @@ def parse(t,m):
  for pattern,want in checks:
   if re.findall(pattern,text)!=[want]:raise InvalidArtifact('executed state/version mismatch: '+pattern)
  ecps=re.findall(r'Type\s+(\w+)\s+ECP(?:\s+(\S+))?\s+\(replacing\s+(\d+)\s+core electrons',text)
- if len(ecps)!=1 or ecps[0][0]!='Dy' or ecps[0][2]!='55':raise InvalidArtifact('expected actual Dy ECP55')
+ if len(ecps)!=1 or ecps[0][0]!=st['metal'] or ecps[0][2]!=str(st['ecp_core_electrons']):raise InvalidArtifact('actual element/core differs')
  for pattern in [r'ORCA SCF GRADIENT CALCULATION',r'DISPERSION GRADIENT',r'ECP gradient\s+\(SHARK\)\s+\.{2,}\s+done',r'CARTESIAN GRADIENT',r'DFTD4']:
   if not re.search(pattern,text,re.I):raise InvalidArtifact('missing analytic component '+pattern)
  if re.search(r'gCP correction\s+[-+0-9.]|^\s*CPCM SOLVATION MODEL',text,re.M):raise InvalidArtifact('undeclared energy term')

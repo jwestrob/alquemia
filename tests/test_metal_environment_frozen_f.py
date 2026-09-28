@@ -34,4 +34,14 @@ class FrozenFTests(unittest.TestCase):
   r=collect(ROOT/'workspaces/metal_environment_response_20260926/dy_frozen_f_scout_v1/manifest.json')['rows']['Dy_origin']
   self.assertEqual(r['status'],'complete');self.assertEqual(len(r['gradient_kcal_mol_per_A']),50)
   self.assertFalse(r['force_consistency_qualified'])
+ def test_actual_three_source_paired_states(self):
+  import numpy as np
+  from metal_environment_lady_compact import SOURCES
+  from affordable_common import xyz
+  for source,prefix in SOURCES.items():
+   paths={m:ROOT/'workspaces/lanm_series_followup_20260923'/(prefix+m)/'core.xyz' for m in ('La','Dy')}
+   states={m:state(p) for m,p in paths.items()}
+   self.assertEqual(states['La']['explicit_electrons'],states['Dy']['explicit_electrons'])
+   self.assertEqual(states['La']['physical_multiplicity'],1);self.assertEqual(states['Dy']['physical_multiplicity'],6)
+   self.assertTrue(np.array_equal([x[1:] for x in xyz(paths['La'])],[x[1:] for x in xyz(paths['Dy'])]))
 if __name__=='__main__':unittest.main()

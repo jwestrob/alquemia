@@ -1,5 +1,9 @@
 # Field-aware metal response — restart checkpoint
 
+## Automatic comparison after terminal collectors — 28 September06:45PDT
+
+Postprocessing1220344 waits afterany on1220324/1220333/1220337/1220343; it writes both primary and separate FNR recovery comparisons, plus accounting, to workspaces/metal_environment_response_20260926/repaired_exchange_auto_v1. No new chemistry or promotion. Existing four quantum workers remain live. Exact watcher command/PID and output are in repaired_exchange_20260928/AUTO_COLLECTION.json; a completion wake is armed. Do not duplicate this summary job or overwrite its output directory.
+
 ## FNR numerical divergence and explicit recovery — 28 September06:34PDT
 
 Both Hans8FNR default/PModel solves diverged together (hundreds ofHartree energy rises, density changes>1000); no energy accepted. Stopped owned1220334 after1244s; collector1220335 completed2s. Cost278,658allocatedCPU-s. Inputs/outputs/primary collection remain unchanged and unavailable. Snapshots and checks are in electronic_diagnosis_20260928/FNR_DEFAULT_DIVERGENCE.json; no obvious atom/field coincidence or below-threshold overlap eigenvalue found. Unique cause unresolved.

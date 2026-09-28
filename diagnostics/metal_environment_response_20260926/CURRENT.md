@@ -522,3 +522,5 @@ La/Dy reference state/basis capability. All tasks read-only/no molecular runs.
 Native rigid failure and absent solvent remain explicit; no dry relaxation.
 
 Final scheduler accounting: worker1219868 cancelled after18101s on24CPUs; collector1219869 completed in4s on1CPU. Total434428 allocatedCPU-seconds, zeroGPU. Collector retains endpoint unavailable after cancellation; no valid quantum energy or gradient.
+
+Frozen-f audit complete: see electronic_diagnosis_20260928/RESTART.md for next exact scope, state accounting and remote-sync status. No new owned compute. Latest push retries failed on temporary github.com DNS, after successful campaign push through776a13b.

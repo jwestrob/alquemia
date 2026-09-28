@@ -1,0 +1,187 @@
+{
+  "balanced_D_definition": "(E_Hans,Dy - E_Hans,La) - (E_Mex,Dy - E_Mex,La)",
+  "balanced_contrasts": {
+    "Hans8DQ2": {
+      "change_kcal_mol": -0.23993816878866348,
+      "old_D_kcal_mol": 11.330886344890471,
+      "repaired_D_kcal_mol": 11.090948176101808
+    },
+    "Hans8FNR": {
+      "change_kcal_mol": -0.14433068114302472,
+      "old_D_kcal_mol": -18.468182859864502,
+      "repaired_D_kcal_mol": -18.612513541007527
+    }
+  },
+  "cost": {
+    "GPU_seconds": 0,
+    "allocated_CPUs": 48,
+    "batch_MaxRSS_KiB": 9705744,
+    "collector_allocated_CPU_seconds": 2,
+    "collector_job": 1220317,
+    "electronic_batch_and_collector_CPU_seconds": 85106,
+    "including_preparation_CPU_seconds": 85138,
+    "memory_note": "Slurm batch-step RSS, not proven simultaneous total over all MPI children",
+    "upstream_classical_preparation_CPU_seconds": 32,
+    "worker_allocated_CPU_seconds": 85104,
+    "worker_job": 1220316,
+    "worker_wall_seconds": 1773
+  },
+  "coverage": {
+    "original_complete": 6,
+    "repaired_complete": 6,
+    "unavailable": 0
+  },
+  "direction": "positive supports greater relative La preference in Hans under this fixed-state isolated model",
+  "inputs": {
+    "old_force_diagnostic": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/metal_environment_response_20260926/electronic_diagnosis_20260928/COMPACT_FORCE_RESULT.json",
+      "sha256": "5667ff97ba8c46974976e29c0c054cd8eb36e3ef458cf70a4039493732ab948c"
+    },
+    "original_collection": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_compact_exchange_v1/FINAL_COLLECTION.json",
+      "sha256": "b6c575d0f29393ea722bdfe979584c8cf59024d7ffe5d183c7270581caf016ed"
+    },
+    "prepared_inputs": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/compact_CH_repair_v1/manifest.json",
+      "sha256": "ab66e90ae55b86ffab30a26b04820ff022663d97792888d56f020ca6b725c56d"
+    },
+    "repaired_collection": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_compact_CHrepair_v1/FINAL_COLLECTION.json",
+      "sha256": "e41a9cd6cab4292f07b06ffa6935b1d44d4fc48eada034edde27fbdb1c63a741"
+    },
+    "repaired_force_diagnostic": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/metal_environment_response_20260926/electronic_diagnosis_20260928/COMPACT_CH_FORCE_RESULT.json",
+      "sha256": "65b08e5d9ca9ef2096f4870fa3e279e3d61b89fa78842fe056cd901ba7abf09b"
+    }
+  },
+  "production_changed": false,
+  "rows": {
+    "Hans8DQ2_Dy": {
+      "execution_wall_seconds": 1610.831841,
+      "metal": "Dy",
+      "old_energy_hartree": -1407.723125602833,
+      "old_gradient_load_kcal_mol_A": 19.004140524813437,
+      "old_metal_gradient_norm_kcal_mol_A": 39.72059128311369,
+      "old_status": "complete",
+      "old_translation_residual_norm_kcal_mol_A": 6.560559438688909e-07,
+      "receipt": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_compact_CHrepair_v1/Hans8DQ2_Dy/endpoint.out.execution.json",
+        "sha256": "26f1749fff6adce90daf6870f287ace1a85d446bc58923d86622be8cb43275cb"
+      },
+      "repair_work_kcal_mol": -219.58917540001733,
+      "repaired_energy_hartree": -1408.073063228476,
+      "repaired_gradient_load_kcal_mol_A": 19.008727218213206,
+      "repaired_metal_gradient_norm_kcal_mol_A": 40.436865757398465,
+      "repaired_status": "complete",
+      "repaired_translation_residual_norm_kcal_mol_A": 6.610821925431824e-07,
+      "source": "Hans8DQ2"
+    },
+    "Hans8DQ2_La": {
+      "execution_wall_seconds": 1678.282565,
+      "metal": "La",
+      "old_energy_hartree": -1402.253727086978,
+      "old_gradient_load_kcal_mol_A": 27.930112753862655,
+      "old_metal_gradient_norm_kcal_mol_A": 38.35426952307409,
+      "old_status": "complete",
+      "old_translation_residual_norm_kcal_mol_A": 5.557201111623256e-07,
+      "receipt": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_compact_CHrepair_v1/Hans8DQ2_La/endpoint.out.execution.json",
+        "sha256": "844f5ee1b206b3754770b233a8f90529581a5840f846deaf15f13d56425ad0b0"
+      },
+      "repair_work_kcal_mol": -219.27342233907473,
+      "repaired_energy_hartree": -1402.603161528089,
+      "repaired_gradient_load_kcal_mol_A": 28.554868315221334,
+      "repaired_metal_gradient_norm_kcal_mol_A": 39.63517621636203,
+      "repaired_status": "complete",
+      "repaired_translation_residual_norm_kcal_mol_A": 5.760247081241451e-07,
+      "source": "Hans8DQ2"
+    },
+    "Hans8FNR_Dy": {
+      "execution_wall_seconds": 1697.260201,
+      "metal": "Dy",
+      "old_energy_hartree": -1407.814874325178,
+      "old_gradient_load_kcal_mol_A": 50.2636683238865,
+      "old_metal_gradient_norm_kcal_mol_A": 57.63247831127245,
+      "old_status": "complete",
+      "old_translation_residual_norm_kcal_mol_A": 5.613579325696347e-08,
+      "receipt": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_compact_CHrepair_v1/Hans8FNR_Dy/endpoint.out.execution.json",
+        "sha256": "e1acbc6a56cc1012acd87d6f78b9bf0a31f9478950954d69c8f3d36463a6f67b"
+      },
+      "repair_work_kcal_mol": -168.76001508837322,
+      "repaired_energy_hartree": -1408.083810527866,
+      "repaired_gradient_load_kcal_mol_A": 49.34376194108644,
+      "repaired_metal_gradient_norm_kcal_mol_A": 56.869577338680166,
+      "repaired_status": "complete",
+      "repaired_translation_residual_norm_kcal_mol_A": 4.059596427210515e-08,
+      "source": "Hans8FNR"
+    },
+    "Hans8FNR_La": {
+      "execution_wall_seconds": 1767.658179,
+      "metal": "La",
+      "old_energy_hartree": -1402.297987969793,
+      "old_gradient_load_kcal_mol_A": 64.3200340125036,
+      "old_metal_gradient_norm_kcal_mol_A": 71.03330937636936,
+      "old_status": "complete",
+      "old_translation_residual_norm_kcal_mol_A": 6.985278715647301e-08,
+      "receipt": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_compact_CHrepair_v1/Hans8FNR_La/endpoint.out.execution.json",
+        "sha256": "97fced6720c6b651c8ba9710528143ea06425c06c157c3e8da3338d4d6d01c76"
+      },
+      "repair_work_kcal_mol": -168.53986951507628,
+      "repaired_energy_hartree": -1402.566573348179,
+      "repaired_gradient_load_kcal_mol_A": 63.59966804522053,
+      "repaired_metal_gradient_norm_kcal_mol_A": 70.3194548576456,
+      "repaired_status": "complete",
+      "repaired_translation_residual_norm_kcal_mol_A": 7.905968299203265e-08,
+      "source": "Hans8FNR"
+    },
+    "Mex8FNS_Dy": {
+      "execution_wall_seconds": 1361.303443,
+      "metal": "Dy",
+      "old_energy_hartree": -1312.366550471455,
+      "old_gradient_load_kcal_mol_A": -56.637209396159896,
+      "old_metal_gradient_norm_kcal_mol_A": 70.96571103456351,
+      "old_status": "complete",
+      "old_translation_residual_norm_kcal_mol_A": 3.2225983991140123e-07,
+      "receipt": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_compact_CHrepair_v1/Mex8FNS_Dy/endpoint.out.execution.json",
+        "sha256": "7a634563ec6017e3e0e828a47f7237315859c26c61a8b81330529dac51758524"
+      },
+      "repair_work_kcal_mol": -52.335766512076574,
+      "repaired_energy_hartree": -1312.449952824217,
+      "repaired_gradient_load_kcal_mol_A": -56.98151439385915,
+      "repaired_metal_gradient_norm_kcal_mol_A": 71.28540656003338,
+      "repaired_status": "complete",
+      "repaired_translation_residual_norm_kcal_mol_A": 3.287334715460006e-07,
+      "source": "Mex8FNS"
+    },
+    "Mex8FNS_La": {
+      "execution_wall_seconds": 1419.904737,
+      "metal": "La",
+      "old_energy_hartree": -1306.879095038829,
+      "old_gradient_load_kcal_mol_A": -56.66471972148728,
+      "old_metal_gradient_norm_kcal_mol_A": 68.6318904211156,
+      "old_status": "complete",
+      "old_translation_residual_norm_kcal_mol_A": 2.7088680947995357e-07,
+      "receipt": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_compact_CHrepair_v1/Mex8FNS_La/endpoint.out.execution.json",
+        "sha256": "e530c84ad2398f787135118a6bd6e8ddec935632e9cd5c43e0007b110cafd6d3"
+      },
+      "repair_work_kcal_mol": -52.25995161992264,
+      "repaired_energy_hartree": -1306.96237657287,
+      "repaired_gradient_load_kcal_mol_A": -56.9408242378052,
+      "repaired_metal_gradient_norm_kcal_mol_A": 68.87508879120837,
+      "repaired_status": "complete",
+      "repaired_translation_residual_norm_kcal_mol_A": 2.658038444790105e-07,
+      "source": "Mex8FNS"
+    }
+  },
+  "unavailable_quantities": [
+    "affinity",
+    "protein_level_preference_validation",
+    "full_hybrid_force_qualification",
+    "equilibrium_populations",
+    "electronic_work_of_remaining_exchangeable_H_repair"
+  ]
+}

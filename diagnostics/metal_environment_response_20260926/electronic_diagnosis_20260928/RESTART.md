@@ -88,3 +88,25 @@ is unrun and must not be claimed from preparation tests.
 
 Current active work remains directional1220300/collector1220301. Latest observation
 at03:27PDT:13macroSCF iterations on plus, residual improving; no failure alerts.
+
+## Two scientific matrices running — 28 September03:51PDT
+
+Compact comparison1220308 remains RUNNING40sharedCPUs, collector1220309. Five
+new La/Dy origins plus exact reused Dy origin; report both Hans-source exchanges.
+
+First full-region frozen-f Hans scout1220312 confirmed RUNNING on node-344-8t-1;
+collector1220313 afterany. Four86MPI endpoints assign all344slots; actual runtime
+receipts confirm full8256990MiB scheduler RAM policy,mem0,25%operationalheadroom.
+Workspace lady_frozen_embedded_hans_v2; manifest708ba36d326f1435f1fe6d2a09e455fce0d52b2a6083bab9e1dc3d7e31627925.
+Exact terminal/live-health commands/PIDs in SUBMISSION.json. No other full-region
+source launched. Read electronic_diagnosis_20260928/EMBEDDED_EXECUTION_PLAN.md.
+
+This is the fixed195atom source and frozen+2degreeAsp85 perturbation, same finite
+field for La/Dy andA/B, targetcharge−1/806effectiveelectrons, physicalLa1/Dy6 with
+restrictedvalence1. Parser requires actual customECP, native gradient andpcgrad,
+and projects the physical torsion with existing cap Jacobians. Electronic component
+only; no complete solvent/MMmechanics or affinity claim. Monitor SCFprogress and
+partialcompletion; do not repeat unmonitored largeDy expenditure. PQQ unchanged.
+On terminal wake collect actual per-metal work and paired response, with missing
+cells explicit. A converged local origin alone does not qualify embedded forces.
+

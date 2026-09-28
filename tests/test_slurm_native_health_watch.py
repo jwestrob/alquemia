@@ -51,6 +51,33 @@ class RealSCFHealth(unittest.TestCase):
         self.assertFalse(result['diis_current_phase'])
         self.assertNotIn('gross_diis_nonprogress',result['alerts'])
 
+    def test_actual_small_dy_near_root_stagnation(self):
+        small=ROOT/'workspaces/metal_environment_response_20260926/dy_small_guess_v3'
+        for name in ('PModel','HCore'):
+            text=(small/name/'endpoint.out').read_text()
+            # Actual printed molecular log before native error/footer, preserving
+            # all real convergence rows rather than inventing residual values.
+            prefix=text.split('ORCA finished by error termination')[0]
+            result=inspect_text(prefix)
+            self.assertEqual(result['printed_trah_gradient_tolerance'],1e-5)
+            self.assertIn('near_root_stagnation_review_only',result['alerts'])
+            self.assertLess(result['near_root_energy_span_hartree'],1e-6)
+            self.assertEqual(len(result['near_root_macro_window']),12)
+            self.assertTrue(all(row['error_norm']>5e-5 for row in result['near_root_macro_window']))
+        hcore=inspect_text((small/'HCore/endpoint.out').read_text())
+        self.assertEqual([r['iteration'] for r in hcore['near_root_macro_window']],list(range(81,93)))
+        self.assertTrue(any(r['solver']=='NR' for r in hcore['near_root_macro_window']))
+
+    def test_near_root_rule_uses_actual_tolerance_and_never_invents_one(self):
+        text=(ROOT/'workspaces/metal_environment_response_20260926/dy_small_guess_v3/HCore/endpoint.out').read_text()
+        # Explicitly corrupted copy removes the printed threshold: unavailable
+        # evidence must not acquire a guessed tolerance or trigger this rule.
+        corrupt=re.sub(r'^.*Converg\. threshold.*$', '', text, flags=re.M)
+        self.assertNotEqual(corrupt,text)
+        result=inspect_text(corrupt)
+        self.assertIsNone(result['printed_trah_gradient_tolerance'])
+        self.assertNotIn('near_root_stagnation_review_only',result['alerts'])
+
     def test_live_prefix_can_alert_before_terminal(self):
         # Prefix of a real retained log: exactly what was available at that point.
         lines=(W/'Dy_B/endpoint.out').read_text().splitlines()

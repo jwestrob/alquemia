@@ -14,6 +14,8 @@ from metal_environment_force_assembly import prepare_mapping
 
 def compare(config):
     declaration = read_json(config)
+    if declaration.get('primary_declaration'):
+        verify(declaration['primary_declaration'])
     rows = []
     recipes = []
     seen = set()
@@ -104,6 +106,9 @@ def compare(config):
                         if finite_contrasts[s] is not None and finite_contrasts[declaration['mex_source']] is not None else None
                         for s in declaration['hans_sources']}
     return dict(declaration=record(config), implementation=record(__file__), rows=rows,
+                analysis_role=declaration.get('analysis_role','primary'),
+                primary_declaration=declaration.get('primary_declaration'),
+                replaced_attempts=declaration.get('replaced_attempts',[]),
                 complete_cells=sum(r['status'] == 'complete' for r in rows), declared_cells=len(expected),
                 raw_Dy_minus_La_kcal_mol=contrasts, Hans_minus_Mex_exchange_kcal_mol=differences,
                 classical_Dy_minus_La_kcal_mol=classical_contrasts,

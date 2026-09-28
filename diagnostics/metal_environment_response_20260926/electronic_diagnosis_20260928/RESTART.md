@@ -186,3 +186,12 @@ All six repaired origins now run: Hans8DQ2 Dy1220323/collector1220324 and seeded
 
 Read electronic_diagnosis_20260928/REPAIRED_EMBEDDED_EXCHANGE_PLAN.md for the predeclared direct representation comparison and numerical-policy differences. Electronic-only conditional EF3 exchanges are not whole-protein affinity labels. Both Hans sources remain separate with source waters/spectators preserved. The joinable6cell collector and exact runnable command are in repaired_exchange_20260928/REPORT.md; three real-archive tests pass. First table0/6, no values invented. Do not rerun completed compact/original-H tests or consume reserved labels. PQQ unchanged; goal still open.
 
+
+## FNR numerical divergence and explicit recovery — 28 September06:34PDT
+
+Both Hans8FNR default/PModel solves diverged together (hundreds ofHartree energy rises, density changes>1000); no energy accepted. Stopped owned1220334 after1244s; collector1220335 completed2s. Cost278,658allocatedCPU-s. Inputs/outputs/primary collection remain unchanged and unavailable. Snapshots and checks are in electronic_diagnosis_20260928/FNR_DEFAULT_DIVERGENCE.json; no obvious atom/field coincidence or below-threshold overlap eigenvalue found. Unique cause unresolved.
+
+Same geometry/state/Hamiltonian, explicitTRAH two-origin recovery1220342/collector1220343 submitted on released224CPU node,2×112MPI,mem0. New workspace lady_repaired_origins_Hans8FNR_trah_v1; watchers armed via SUBMISSION.json. No failed wavefunction reuse or iteration/threshold increase. Other jobs1220323(DQ2Dy),1220332(DQ2La),1220336(Mex pair) remain unchanged. Use separately named COMPARISON_RECOVERY_v1.json for recovery; primary configs still point to original failedFNR. Do not hide fallback or rerun the primary pair. Glu91 remains unsubmitted. Read FNR_TRAH_RECOVERY_PLAN.md.
+
+All six classical bridges completed8CPU-s total; separate electronic and finite sums are available once actual quantum results finish. No demonstrated LanM discrimination yet. Current runner/seed tests23pass; comparison tests4pass. PQQ unchanged.
+

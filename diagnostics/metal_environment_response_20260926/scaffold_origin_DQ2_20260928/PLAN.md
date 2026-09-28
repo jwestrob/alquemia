@@ -1,0 +1,5 @@
+# Repaired Hans8DQ2 origin full-gradient completion
+
+The archived repaired coupled_scaffold_classical_v1 origin has exact component energies and directional projections, but no full Cartesian arrays. The original-H force assembly is incompatible and will not be reused. Evaluate exactly two repaired source-A configurations, La/Dy, eight component energy/force queries, same reviewed ledger and actual La/La/Na spectators. No quantum calls or optimization. One shared CPU, mem=0.
+
+Reuse the f2a96e6 source-specific classical builder with only its finite source list changed to Hans8DQ2. Preserve the same fixed-cap exclusions, pure12–6 TIP3P parameters, charge redistribution, native topology and source coordinates. Save gradients (negative native forces) by actual source identity including target A/203//LA. Compare all eight component energies against original repaired scaffold origins with absolute tolerance1e−9 kcal/mol; require native/source/ledger identity and finite full arrays. This only completes missing Cartesian observables, not new physics or new derivative qualification. Two configurations maximum, old outputs immutable.

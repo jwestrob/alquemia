@@ -539,3 +539,30 @@ Native rigid failure and absent solvent remain explicit; no dry relaxation.
 Final scheduler accounting: worker1219868 cancelled after18101s on24CPUs; collector1219869 completed in4s on1CPU. Total434428 allocatedCPU-seconds, zeroGPU. Collector retains endpoint unavailable after cancellation; no valid quantum energy or gradient.
 
 Frozen-f audit complete: see electronic_diagnosis_20260928/RESTART.md for next exact scope, state accounting and remote-sync status. No new owned compute. Latest push retries failed on temporary github.com DNS, after successful campaign push through776a13b.
+
+
+## Update: actual running scout and successful remote backup
+
+28 September03:06PDT: worker1220294 confirmed running40CPUs, collector1220295
+pending afterany. Frozen-f molecular SCF advancing; no admitted endpoint yet.
+All changes throughb3eb8c1 successfully pushed to origin/main; previous DNS
+failure is resolved. No remote raw-workspace backup is implied.
+
+The dependent force check is implemented, three real-fixture checks pass.
+It explicitly refuses preparation until the origin energy/gradient is complete.
+After origin collection, from repository root:
+
+```bash
+/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python scripts/metal_environment_frozen_f_response.py prepare --origin-manifest workspaces/metal_environment_response_20260926/dy_frozen_f_scout_v1/manifest.json --plan diagnostics/metal_environment_response_20260926/electronic_diagnosis_20260928/FROZEN_F_SCOUT_PLAN.md --ranks 10 --workers 4 --output workspaces/metal_environment_response_20260926/dy_frozen_f_direction_v1
+```
+
+Inspect current free slots before selecting execution layout;40total here is a
+recorded runnable layout, not a requirement to reserve a larger idle node. Use
+existing batch/collector templates with the new response script name and matching
+manifest CPU slots. Arm both actual terminal and live-health watches as in scout
+SUBMISSION.json; use new job IDs, receipt paths and event names. Never rerun the
+origin. No dependent calculations have yet been submitted.
+
+Embedding agent independently recovers consumed-source transfer design/occupancy;
+root owns all molecular execution. Source/label audit does not block collecting
+the active scout. Overall goal remains La/Dy discrimination, not merely forces.

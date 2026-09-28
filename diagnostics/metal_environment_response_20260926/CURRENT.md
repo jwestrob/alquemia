@@ -1,5 +1,9 @@
 # Field-aware metal response — restart checkpoint
 
+## First repaired full-region endpoint accepted — 28 September
+
+Hans8DQ2La1220332/collector1220333 completed and passed collection:−5728.001479272300Eh,25SCF cycles,580,500allocatedCPU-s including collector. Physical gradients assembled with exact repaired classical partner. Glu91 total angular gradient decreases3.46524→1.35121kcal/mol/rad; this is one-metal repair response, not a La/Dy result. See force_assembly_20260928/REPAIRED_LA_REPORT.md and pinned projection JSON. Dy origin1220323, Mex pair1220336 and FNR recovery1220342 remain live; summary1220344 waits. No Glu91 quantum submission, no default change.
+
 ## Repaired Dy solver setback — 28 September
 
 Job1220323 remains RUNNING. After macro5 error2.04e−4, its predicted−0.05068Eh step instead raised energy+0.51948Eh and was flagged rejected. Macro7 subsequently reports the higher energy and error2.2688. It is not near converged or an accepted endpoint. Preserve actual output snapshot/pin in electronic_diagnosis_20260928/DY_TRAH_REJECTION_OBSERVATION.json. No unique cause or terminal failure established; existing monitoring continues, no duplicate or new chemistry. Other three workers remain live and the comparison collector1220344 remains pending.

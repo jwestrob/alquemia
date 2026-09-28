@@ -198,3 +198,7 @@ All six classical bridges completed8CPU-s total; separate electronic and finite 
 
 ### Archived electronic-population diagnostic, Sep28
 Four original-H completed states conserve charge and retain positive printed frontier gaps. Population schemes disagree even on the sign of the metal-charge difference; no oxidation-state or repaired-state failure diagnosis follows. No new molecular calls. See electronic_diagnosis_20260928/POPULATION_REPORT.md. Four repaired quantum workers still live; no accepted repaired comparison yet.
+
+## First repaired full-region endpoint accepted — 28 September
+
+Hans8DQ2La1220332/collector1220333 completed and passed collection:−5728.001479272300Eh,25SCF cycles,580,500allocatedCPU-s including collector. Physical gradients assembled with exact repaired classical partner. Glu91 total angular gradient decreases3.46524→1.35121kcal/mol/rad; this is one-metal repair response, not a La/Dy result. See force_assembly_20260928/REPAIRED_LA_REPORT.md and pinned projection JSON. Dy origin1220323, Mex pair1220336 and FNR recovery1220342 remain live; summary1220344 waits. No Glu91 quantum submission, no default change.

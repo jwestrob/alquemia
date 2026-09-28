@@ -179,3 +179,10 @@ La workspace lady_repaired_la_seeded_v1; the unseeded lady_repaired_la_origin_pr
 
 Classical quarter-step passes unchanged thresholds after diagnosed truncation; original coarse/half failures and final stdout-only process failure remain preserved. Force assembly now includes all four original frozen-f endpoints and exact classical partners. No LanM accuracy improvement or production change yet. Orbital integration22real-artifact tests pass; actual seeded execution/collection still needs qualification. Read force_assembly_20260928/FROZEN_F_PROJECTION_REPORT.md and coupled_scaffold_20260928/QUARTER_STEP_REPORT.md.
 
+
+## Direct repaired Hans/Mex comparison launched — 28 September06:13PDT
+
+All six repaired origins now run: Hans8DQ2 Dy1220323/collector1220324 and seededLa1220332/collector1220333; Hans8FNR pair1220334/collector1220335; Mex8FNS pair1220336/collector1220337. Two new pairs use separate idle224CPU high-memory nodes,2×112MPI each,mem0, normal priority. Their terminal and health watchers are armed; exactcommands/PIDs in SUBMISSION.json. No Glu91 displaced endpoints launched.
+
+Read electronic_diagnosis_20260928/REPAIRED_EMBEDDED_EXCHANGE_PLAN.md for the predeclared direct representation comparison and numerical-policy differences. Electronic-only conditional EF3 exchanges are not whole-protein affinity labels. Both Hans sources remain separate with source waters/spectators preserved. The joinable6cell collector and exact runnable command are in repaired_exchange_20260928/REPORT.md; three real-archive tests pass. First table0/6, no values invented. Do not rerun completed compact/original-H tests or consume reserved labels. PQQ unchanged; goal still open.
+

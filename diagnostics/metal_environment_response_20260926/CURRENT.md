@@ -1,5 +1,11 @@
 # Field-aware metal response — restart checkpoint
 
+## Direct repaired Hans/Mex comparison launched — 28 September06:13PDT
+
+All six repaired origins now run: Hans8DQ2 Dy1220323/collector1220324 and seededLa1220332/collector1220333; Hans8FNR pair1220334/collector1220335; Mex8FNS pair1220336/collector1220337. Two new pairs use separate idle224CPU high-memory nodes,2×112MPI each,mem0, normal priority. Their terminal and health watchers are armed; exactcommands/PIDs in SUBMISSION.json. No Glu91 displaced endpoints launched.
+
+Read electronic_diagnosis_20260928/REPAIRED_EMBEDDED_EXCHANGE_PLAN.md for the predeclared direct representation comparison and numerical-policy differences. Electronic-only conditional EF3 exchanges are not whole-protein affinity labels. Both Hans sources remain separate with source waters/spectators preserved. The joinable6cell collector and exact runnable command are in repaired_exchange_20260928/REPORT.md; three real-archive tests pass. First table0/6, no values invented. Do not rerun completed compact/original-H tests or consume reserved labels. PQQ unchanged; goal still open.
+
 ## Repaired origins running; Glu91 matrix prepared — 28 September06:05PDT
 
 Dy TRAH1220323/collector1220324 remains live, no accepted repaired Dy endpoint yet. Missing repaired La origin now runs independently as1220332/collector1220333,112MPI on standard node-112-1500g-2,mem0; source-matched old La orbitals initialize a NEW calculation, never fill its energy. This explicitly revises the earlier sequential scheduling gate; see REPAIRED_LA_SEEDED_PLAN.md. All displaced Glu91 electronic cells still wait for the repaired origins/forces. Both jobs have terminal and health watchers; exact commands/PIDs in each SUBMISSION.json.

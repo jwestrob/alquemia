@@ -15,14 +15,15 @@ import re
 import subprocess
 import time
 
-POLICY = {'id':'native_scf_health_v3', 'trah_macro_window':8,
+POLICY = {'id':'native_scf_health_v4', 'trah_macro_window':8,
           'trah_error_floor':1.0, 'minimum_relative_error_improvement':0.5,
           'extreme_micro_step_hartree':1e6, 'extreme_distinct_macro_count':3,
           'silent_output_seconds':900, 'automatic_cancellation':False,
           'diis_window':12, 'diis_error_floor':1e-2, 'diis_rms_density_floor':1e-1,
           'diis_max_density_floor':1.0, 'diis_energy_span_hartree':1.0,
           'near_root_macro_window':12, 'near_root_tolerance_multiple':5.0,
-          'near_root_energy_span_hartree':1e-6}
+          'near_root_energy_span_hartree':1e-6,
+          'successful_partial_debounce_seconds':120}
 TERMINAL={'COMPLETED','FAILED','CANCELLED','TIMEOUT','NODE_FAIL','OUT_OF_MEMORY','PREEMPTED','BOOT_FAIL','DEADLINE','REVOKED'}
 F=r'[-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eEdD][-+]?\d+)?'
 
@@ -101,6 +102,37 @@ def snapshot(manifest,allocated_cpus,clock=None):
             'allocated_cpus_without_remaining_endpoint_work':max(0,allocated_cpus-occupied),
             'resource_note':'scheduler/manifest accounting; not measured CPU utilization'}
 
+def select_events(snap, job_state, state, clock):
+    """Coalesce successful progress; never debounce pathology/failure/final events.
+
+    `clock` is an observed wall-clock timestamp persisted across monitor restarts.
+    A partial-success condition is reset when no longer running/partial. One
+    successful-partial event per job replaces per-endpoint/count notifications.
+    """
+    events=[]
+    successes=0
+    for tid,row in snap['endpoints'].items():
+        events += [(tid+':'+reason,reason) for reason in row['alerts']]
+        success=(row['terminal'] and row['normal_termination'] and
+                 row['scf_converged'] and not row['explicit_failure'] and
+                 row.get('execution_returncode') in (None,0))
+        successes += int(success)
+        if row['terminal'] and not success:
+            events.append((tid+':terminal','endpoint terminal without confirmed success'))
+    partial=(job_state=='RUNNING' and successes>0 and
+             snap['terminal_endpoints']<snap['total_endpoints'])
+    if partial:
+        since=state.setdefault('successful_partial_since_unix',clock)
+        if clock-since>=POLICY['successful_partial_debounce_seconds']:
+            events.append(('successful_partial_persistent',
+                'successful partial completion persists at least120s; inspect remaining work and allocation'))
+    else:
+        state.pop('successful_partial_since_unix',None)
+    if job_state in TERMINAL:
+        events.append(('job_terminal','scheduler terminal '+job_state))
+    return [(key,why) for key,why in events if key not in state['notifications']]
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     for x in ('manifest','job','thread','codex','receipt'):p.add_argument('--'+x,required=True)
@@ -130,14 +162,7 @@ def main():
                 snap=snapshot(manifest,int(record[3]))
             except (OSError,ValueError) as error:
                 state.update(last_snapshot_error=str(error),last_checked_utc=now());save(receipt,state);time.sleep(a.interval);continue
-            events=[]
-            for tid,row in snap['endpoints'].items():
-                events += [(tid+':'+reason,reason) for reason in row['alerts']]
-                if row['terminal']:events.append((tid+':terminal','endpoint terminal'))
-            if snap['terminal_endpoints'] and snap['terminal_endpoints']<snap['total_endpoints']:
-                events.append(('partial_terminal:'+str(snap['terminal_endpoints']),'partial completion leaves allocated CPUs without remaining endpoint work'))
-            if job_state in TERMINAL:events.append(('job_terminal','scheduler terminal '+job_state))
-            unseen=[(key,why) for key,why in events if key not in state['notifications']]
+            unseen=select_events(snap,job_state,state,time.time())
             state.update(snapshot=snap,job_state=job_state,last_checked_utc=now());save(receipt,state)
             if unseen:
                 keys=[k for k,_ in unseen]

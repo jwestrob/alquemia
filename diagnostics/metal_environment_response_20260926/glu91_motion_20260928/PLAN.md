@@ -1,0 +1,5 @@
+# Repaired Hans EF3 Glu91 finite displacement, preparation only
+
+Development selection: the completed original-H physical-force comparison identified a larger Glu91 differential load than the prescribed N83 hinge. This selection uses observed forces, not labels. Construct exactly −1° and +1° about source CB91→CG91 from repaired-v2 A. Preserve all chemical inventories, spectator occupancy and boundary charges. No molecular calls/optimization. No automatic half-step expansion.
+
+A means Glu91_minus1deg; B means Glu91_plus1deg. Original repaired A is separately pinned. Rotate the connected CG-side source graph component after cutting CB–CG; do not move arbitrary caps or disconnected fragments. Verify source covalent bond distances and tetrahedral signed volumes, cap maps, unchanged field, paired coordinates, and unchanged physical membership. Tangents use actual origin/minus/plus geometries, raw Å/radian plus physical Euclidean normalization. Electronic state metadata remains physical, not an instruction to force frozen-f valence sextet. The executor owns its distinct electronic-state translation.

@@ -1,5 +1,29 @@
 # Agent entry point
 
+## LanM frozen-f response work — 2026-09-28
+
+Jacob resumed the active La/Dy discriminator goal and authorized contained work,
+commits and pushes. PQQ production belongs to another session. Read
+[the current checkpoint](diagnostics/metal_environment_response_20260926/CURRENT.md)
+and its newer execution receipts before acting. Older pause/queued notes below
+are historical and do not authorize reruns.
+
+Frozen-f compact force qualification and both original/repaired compact matrices
+are complete. Hans/Mex source reversal persists; hydrogen repair did not resolve it.
+The four-cell original-H embedded Hans job1220312/collector1220313 completed:
+small donor differential response, not an affinity or working LanM discriminator.
+Physical electronic/classical gradient assembly and refined classical derivative
+checks are implemented; see force_assembly_20260928 and coupled_scaffold_20260928.
+
+At the latest check, repaired Dy TRAH scout1220323 remains RUNNING, collector1220324
+pending. Inspect the scheduler before any action; watchers are active. The repaired
+La origin and Glu91±1degree matrix are prepared/dry-run only, not submitted.
+Glu91 was selected from real differential force loads, not desired labels. Follow
+its GLU91_RESPONSE_DECISION.md and actual repaired-origin results before execution.
+Do not restart failed explicit-f or whole-protein vacuum campaigns. Keep mem=0,
+allocation-aware native memory, finite manifests, state/occupancy distinctions,
+immutable outputs and completion wakes. No automatic production promotion.
+
 ## Three-core reference complete; classical scout submitted — 2026-09-27
 
 1F6S1219489/collector1219490 completed6/6; delta+.269010220kcal/mol. Actualwake

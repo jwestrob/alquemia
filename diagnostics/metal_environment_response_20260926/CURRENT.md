@@ -1,5 +1,25 @@
 # Field-aware metal response — restart checkpoint
 
+## Matched C-H repair comparison launched — 28 September04:23PDT
+
+Worker1220316, collector1220317, six new analytic endpoints,48CPU standard exclusive,
+mem0,6×8MPI; no old energy reuse. Workspace lady_compact_CHrepair_v1. New protocol
+nikasha_LaDy_compact_CHrepair_v1, exact reviewed repaired-input manifest compact_CH_repair_v1.
+Terminal and futurev5 live-health watchers armed; commands/PIDs in SUBMISSION.json.
+Read electronic_diagnosis_20260928/COMPACT_CH_REPAIR_PLAN.md and COMPACT_CH_TRANSFER_REPORT.md.
+Only14/14/10 real carbon-boundH atoms changed per source, identically for both metals.
+Old compact protocol collection still reproduces exact published completed values.
+Original caps/exchangeableH/waters/heavies remain exact; this is a targeted repair.
+
+All3 fullsource C-H geometry candidates separately admitted from saved forces/coords;
+original serialization errors, missing optimizer flags and CH2-label volume flags
+remain visible. No unrecorded repeat. Repair itself32CPU-s; electroniccostpending.
+Embedded1220312 still running original normalized-H195atom Hans; collector1220313.
+No new embeddedsource, production change or classifier-success claim. Root owns
+execution/results. Other agents' preparation/audits completed. Inspect actual jobs
+and receipts after restart; do not repeat either matrix or its successful origins.
+
+
 ## Compact comparison completed — 28 September04:15PDT
 
 All six frozen-core La/Dy endpoints available: Hans8DQ2/Mex D=+11.330886345,

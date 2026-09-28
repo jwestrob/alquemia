@@ -1,0 +1,7 @@
+# Repaired full-region A/B transfer — preparation only
+
+Freeze before outputs: use each existing Hans8DQ2/Hans8FNR/Mex8FNS region with its separately reviewed full-source C-bound-H geometry. Preserve all atom identities, selected region, charge redistribution values/recipients, formal charges, physical electronic metadata, cap policy, actual spectators, waters, exchangeable H and heavy coordinates. No molecule, proton, water or state is added or removed.
+
+Repaired A copies only admitted free-H source coordinates. Build B anew from repaired A with the same source-specific +2degree CA→CB Asp85/86 rotation, including HB2/HB3/CG/OD1/OD2. Recompute mapped caps/Jacobians from actual source cuts. Regenerate environment coordinate rows by source IDs, retaining all old charges, ordering and source spectators. A/B external fields must match exactly within each source. No energy or endpoint reuse from old geometries.
+
+Write new source coordinate artifacts, environment/map files and INPUTS contracts compatible with the existing embedded preparer. Include original and reviewed-admission pins. Tests require exact frozen identity/state/heavy/water/H constraints, direct physical source↔QM/MM matching, exact paired La/Dy coordinates, preserved charge sums and covalent lengths under B, and unchanged source selection. No endpoint preparation or submission beyond the source contract; root owns subsequent matrix execution.

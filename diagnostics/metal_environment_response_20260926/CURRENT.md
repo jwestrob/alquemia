@@ -1,5 +1,12 @@
 # Field-aware metal response — restart checkpoint
 
+## Glu91 finite response complete — September28 09:16PDT
+
+All4seeded endpoints1220359/collector1220360 and common-pool summary1220362 completed. La selectsorigin,Dy−1degree; finite Dy−La poolchange−0.1739401kcal/mol. Directional derivative residuals0.00948La/0.00859Dy below frozen0.1kcal/mol/angstrom diagnostic tolerance. Different donor response is supported, but the small finite shift does not resolve the source reversal or prove improved discrimination. Dy remains nonstationary at the selected boundary; do not extrapolate harmonic correction or automatically widen search. Read glu91_response_20260928/REPORT.md and RESULT.json. Exact incremental cost697,991allocatedCPU-s including16classicalqueries,zeroGPU. No quantum repeats.
+
+Only quantumworker1220342Hans8FNR remains live, collector1220343 and original-pair summary1220344 pending. Completed donor work requires no restart; its wake alerts may arrive later. No new molecular stage planned before interpreting FNR. PQQ unchanged; goal remains open. Current all-six donor result is workspaces/metal_environment_response_20260926/glu91_response_final_v1/RESULT.json.
+
+
 ## Glu91 response launched — September28 08:42PDT
 
 Worker1220359/collector1220360 executes the four prescribed ±1degree Glu91 endpoints from matched accepted repaired La/Dy orbital seeds. Workspace lady_glu91_seeded_v1; manifest97c426e3c490a34ee4d881c85e5147dc05aa390cab4615b8b19466705c400c88. Four86MPI tasks,344CPU high-memory node,exclusive mem0,normal priority. No origin repeats. Completion/health watchers armed; exactcommands/PIDs in SUBMISSION.json. Source geometry and states unchanged from glu91_motion_v1. Preparation dry-run passed. Read GLU91_SEEDED_EXECUTION_PLAN.md for purpose and limitations.

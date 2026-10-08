@@ -1,0 +1,38 @@
+{
+  "job": "1220342",
+  "role": "interrupted_unconverged_initial_guess_candidates_only",
+  "files": {
+    "La": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_repaired_origins_Hans8FNR_trah_v1/La_A/endpoint.runtime.gbw",
+      "bytes": 121060010,
+      "mtime_utc": "2026-09-28T17:52:45.333777+00:00",
+      "sha256": "415e92f2b141d168bbf06cd47c722ee5a5f554223dba7c7d54144389ae87c3db",
+      "status": "present_but_reader_and_restart_unvalidated",
+      "accepted_energy": null
+    },
+    "Dy": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_repaired_origins_Hans8FNR_trah_v1/Dy_A/endpoint.runtime.gbw",
+      "bytes": 121061226,
+      "mtime_utc": "2026-09-28T17:31:41.913475+00:00",
+      "sha256": "7b4476da43bb491970c7aea3f8007a5bc6da3cb7651cd18f0beaf807f7aef857",
+      "status": "present_but_reader_and_restart_unvalidated",
+      "accepted_energy": null
+    }
+  },
+  "current_seed_adapter_accepts": false,
+  "reason": "Existing validated seed path requires an accepted converged source; do not weaken it for interrupted outputs.",
+  "next_gate": "Read a copied GBW with the pinned ORCA utility, establish state/basis/coordinate identity, then prepare a distinct interrupted-continuation route. No molecular execution while compute is down.",
+  "reader_observation": {
+    "executable": "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca_2json",
+    "initial_La_attempt_exit_code": 64,
+    "initial_La_failure": "environment.pc absent from working directory",
+    "retry_inputs": "Separate copied GBW and original matching environment.pc for each metal",
+    "both_GBW_read_messages": "done",
+    "both_pointcharge_read_messages": "ok (2008 point charges)",
+    "full_export_status": "deliberately_stopped_during_one_electron_integral_reconstruction",
+    "reason": "Default export performs integral reconstruction; avoid continuing compute on login host during cluster outage.",
+    "SCF_calls": 0,
+    "full_checkpoint_integrity_qualified": false,
+    "measured_usage_sample": "La 57s / 99.7%CPU / 1811852KiB RSS; Dy 44s / 99.1%CPU / 1808960KiB RSS. Sample only, not final integrated cost."
+  }
+}

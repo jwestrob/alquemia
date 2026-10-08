@@ -15,3 +15,7 @@ Reproduce the file-only comparison from the repository root (choose a fresh outp
 ```
 
 RESULT.json pins the terminal evidence and regenerated comparison. PQQ production is unchanged.
+
+## Saved orbital assessment
+
+Both approximately116MiB GBW files survived and are pinned in ORBITAL_INVENTORY.json. The native ORCA6.1.1 exporter reports successful GBW reads for both and reads the matching2008 point charges. Its default export then reconstructs integrals; both owned utility processes were deliberately terminated before full export to avoid continuing computation on the login host during the outage. One earlier La read failed because environment.pc was absent from the working directory; that log is preserved. No SCF was run. Binary completeness, occupation/state integrity and successful MORead continuation remain unqualified. Existing accepted-source seed validation remains unchanged and correctly rejects these unconverged sources. Raw utility logs and scratch copies are under workspaces/metal_environment_response_20260926/recovery_20261007/orbital_read/.

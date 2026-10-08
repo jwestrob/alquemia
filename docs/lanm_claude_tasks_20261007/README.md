@@ -5,6 +5,10 @@ Root integrates results. Claude sessions and subagents run headlessly on the log
 host and independently submit their owned scientific jobs through Slurm. Claude
 sessions themselves do NOT go in Slurm. Read COMMON_RULES.md first.
 
+Every parent and child must first read applicable CLAUDE.md and AGENTS.md files
+and record those paths. Current Slurm-only computation rules override historical
+login-compute or scheduler-bypass examples. See COMMON_RULES.md.
+
 ## Current prerequisites
 
 - Installed `/home/jwestrob/.local/bin/claude`: version2.1.283. Local help verifies

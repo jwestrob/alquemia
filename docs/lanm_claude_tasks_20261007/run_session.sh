@@ -37,7 +37,7 @@ fi
 {
   cat "$SPEC_DIR/COMMON_RULES.md"
   printf '\nCanonical repository (read-only artifacts): %s\nOwned worktree: %s\nOwned output: %s\n' "$CANONICAL_REPO" "$TASK_WORKTREE" "$TASK_OUTPUT"
-  printf '\nRead canonical AGENTS.md, docs/AGENT_PIPELINE.md and the current field-response checkpoint. Newer receipts supersede old running-status prose.\n'
+  printf '\nBefore task work, read applicable CLAUDE.md AND AGENTS.md as specified in COMMON_RULES.md, then docs/AGENT_PIPELINE.md and the current field-response checkpoint. Record instructions_read paths in STATUS.json. Newer receipts supersede old running-status prose.\n'
   cat "$TASK_SPEC"
 } > "$TASK_OUTPUT/prompt.txt"
 sha256sum "$TASK_SPEC" "$SPEC_DIR/COMMON_RULES.md" "$SPEC_DIR/agents.json" "$SPEC_DIR/session.settings.json" > "$TASK_OUTPUT/spec_hashes.txt"

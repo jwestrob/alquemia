@@ -1,0 +1,11 @@
+# Interrupted Hans8FNR continuation — prepared only
+
+Question: can same-metal saved orbitals avoid repeating the poor PModel initialization of the interrupted Hans8FNR pair? This is numerical recovery of the same two missing endpoints, not a new scientific model or an accepted energy reuse.
+
+Prepare exactly La_A and Dy_A from the pinned manifest of job1220342. Keep coordinates, finite field, source and cap mappings, charges, physical/effective spin states, frozen-f basis/ECP/AuxJ, PBE0-D4, grid, VeryTightSCF, TRAH and analytic-gradient requests identical. Change only the initial guess to explicit MORead of the respective surviving GBW. Do not increase iteration limits. The orbital checkpoint is not an exact continuation of TRAH's optimizer history. Fresh SCF convergence and complete gradients are required. No silent PModel fallback; the existing collector checks actual MORead and TRAH output.
+
+The interrupted-seed path has its own protocol and accepts only an exactly unchanged target. The earlier accepted-source seed path still rejects unconverged inputs. Every saved output, GBW and cancellation record is pinned. A reader failure, occupation/state discrepancy or repeat of sustained rejected-step cycling requires diagnosis; do not automatically chain retries. The binary reader audit is incomplete and is explicitly not a successful molecular restart.
+
+No execution is authorized by this file's existence. Jacob authorized testing current scheduler access; that test was rejected for absent account/partition association. Prepare and dry-run now; submit only after valid scheduler access is restored, using normal priority, an appropriate allocation with full-node memory and actual CPU slots, and the established completion-wake watcher. Recompute resource layout if the allocated node differs. Do not use the test partition for these molecular endpoints or the historical September startup-cutoff scripts.
+
+The output remains a separately named recovery comparison. Preserve the cancelled primary and cancelled TRAH attempts, all four completed other-source endpoints, and all actual costs. Report both Hans-minus-Mex contrasts when available. No source selection, threshold fitting, affinity claim or PQQ change.

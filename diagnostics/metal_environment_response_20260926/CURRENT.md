@@ -1,5 +1,9 @@
 # Field-aware metal response — restart checkpoint
 
+## Interrupted continuation prepared — 7 October 2026
+
+New same-state MORead/TRAH continuation passes offline validation for the two missing Hans8FNR endpoints. 33 real-artifact checks pass; no new SCF. Manifest and exact dry-run command are in recovery_20261007/REPORT.md. Account access is unavailable: the user-authorized test-partition submission was rejected for invalid account/partition association. Node-idle listings are insufficient. No jobs queued. Original cancelled attempts and four accepted endpoints remain intact.
+
 ## Drives restored; compute unavailable — 7 October 2026
 
 Saved terminal accounting confirms 1220342 was cancelled by uid 0 during shutdown at September 28 10:59:32. Both Hans8FNR endpoints remain unconverged and unavailable; the old watcher RUNNING receipt is stale. File-only comparison recovered four accepted endpoints and unchanged Hans8DQ2-minus-Mex +11.689857 kcal/mol. No new chemistry or submissions. Read recovery_20261007/REPORT.md and RESULT.json before resuming. Preserve interrupted outputs and inspect restart admissibility before any separately versioned continuation; do not blindly relaunch historical scripts. The goal remains open and PQQ unchanged.

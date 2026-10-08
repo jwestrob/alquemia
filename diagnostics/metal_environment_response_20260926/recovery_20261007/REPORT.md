@@ -19,3 +19,17 @@ RESULT.json pins the terminal evidence and regenerated comparison. PQQ productio
 ## Saved orbital assessment
 
 Both approximately116MiB GBW files survived and are pinned in ORBITAL_INVENTORY.json. The native ORCA6.1.1 exporter reports successful GBW reads for both and reads the matching2008 point charges. Its default export then reconstructs integrals; both owned utility processes were deliberately terminated before full export to avoid continuing computation on the login host during the outage. One earlier La read failed because environment.pc was absent from the working directory; that log is preserved. No SCF was run. Binary completeness, occupation/state integrity and successful MORead continuation remain unqualified. Existing accepted-source seed validation remains unchanged and correctly rejects these unconverged sources. Raw utility logs and scratch copies are under workspaces/metal_environment_response_20260926/recovery_20261007/orbital_read/.
+
+## Continuation preparation completed
+
+A separately labelled interrupted-MORead protocol is implemented and dry-run validated for exactly La_A and Dy_A. Target geometry, field, charge/spin metadata, basis/ECP and solver are unchanged. Saved orbitals are initial guesses only; no source energy is imported. The existing accepted-source seed path remains strict. Preparation verifies cancellation accounting, the interrupted collection's manifest pin, source output, checkpoint hashes and exact target identity. The collector still requires actual MORead/TRAH evidence and fresh converged energy/gradients.
+
+Validation: 32 real-artifact preparation/seed regression tests passed, plus one end-to-end continuation/declaration-rejection test. No scientific integration calculation ran. New manifest SHA256: 6c0b86f366c90cb3c014eb849b1cd647227a580fda5fbe7babc67b130a4a98c9. Resource layout is two112-rank tasks; recheck against the eventual allocation.
+
+Run the prepared snapshot's offline validation:
+
+```bash
+/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_FNR_interrupted_continuation_20261007_v1/implementation/metal_environment_lady_embedded.py dry-run --manifest /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_FNR_interrupted_continuation_20261007_v1/manifest.json
+```
+
+The user-authorized test-partition probe failed at submission with invalid account/account-partition association; no job ID was created. Scheduler node-idle state does not establish usable account access. Raw receipt: workspaces/cluster_probe_20261007/submission.json. Do not change accounts or partitions to evade this failure. No Slurm jobs or completion watchers were launched.

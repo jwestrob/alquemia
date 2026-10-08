@@ -32,7 +32,11 @@ def input_text(charge,basis,aux,trah=False,seeded=False):
 def check_seed(seed_pin,target,method,orca,assets):
  from metal_environment_orbital_seed import validate_seed,task
  s=read_json(verify(seed_pin));original=verify(s['target_manifest'])
- checked=validate_seed(verify(s['source_manifest']),verify(s['source_collection']),s['source_task_id'],original,s['target_task_id'])
+ from metal_environment_interrupted_seed import PROTOCOL as INTERRUPTED,validate_interrupted
+ if s.get('protocol_id')==INTERRUPTED:
+  if s['source_task_id']!=s['target_task_id']:raise InvalidArtifact('interrupted task identity differs')
+  checked=validate_interrupted(verify(s['source_manifest']),original,s['source_task_id'],verify(s['evidence']),verify(s['inventory']))
+ else:checked=validate_seed(verify(s['source_manifest']),verify(s['source_collection']),s['source_task_id'],original,s['target_task_id'])
  if any(s.get(k)!=v for k,v in checked.items()):raise InvalidArtifact('seed validation record differs')
  verify(s['staged_gbw'])
  if s['staged_gbw']['sha256']!=s['source_gbw']['sha256']:raise InvalidArtifact('staged orbital copy differs')
@@ -55,6 +59,11 @@ def validate(path):
  seeded=m.get('initial_guess')=='MORead'
  if m.get('initial_guess','PModel') not in ('PModel','MORead'):raise InvalidArtifact('unknown initial guess')
  if seeded:protocol+='_moread_v1'
+ interrupted=m.get('seed_kind')=='interrupted'
+ if m.get('seed_kind') not in (None,'interrupted'):raise InvalidArtifact('unknown seed kind')
+ if interrupted:
+  if not seeded or not trah:raise InvalidArtifact('interrupted continuation requires MORead/TRAH')
+  protocol+='_interrupted_v1'
  if m.get('solver','default') not in ('default','TRAH') or m['protocol_id']!=protocol or m['method']!=METHOD:raise InvalidArtifact('method identity differs')
  c=check_config(read_json(verify(m['inputs'])))
  if m['source_id']!=c['source_id']:raise InvalidArtifact('source differs')
@@ -71,6 +80,8 @@ def validate(path):
   b,a=asset_text(t['metal'],m['assets'][t['metal']]['basis'],m['assets'][t['metal']]['aux'])
   if seeded:
    s=check_seed(t['orbital_seed'],t,m['method'],m['orca'],m['assets'])
+   from metal_environment_interrupted_seed import PROTOCOL as INTERRUPTED
+   if (s['protocol_id']==INTERRUPTED)!=interrupted:raise InvalidArtifact('seed kind declaration differs')
    if verify(t['initial_gbw']).name!='initial.gbw' or t['initial_gbw']['sha256']!=s['source_gbw']['sha256']:raise InvalidArtifact('task initial orbital differs')
   elif 'orbital_seed' in t or 'initial_gbw' in t:raise InvalidArtifact('undeclared orbital seed')
   if verify(t['input']).read_text()!=input_text(t['charge'],b,a,trah,seeded):raise InvalidArtifact('literal input differs')
@@ -86,6 +97,11 @@ def prepare(inputs,plan,output,assets,mpi_ranks,workers,trah_scout=False,origin_
  use_trah=trah_scout or origin_solver=='TRAH'
  if origin_metals is not None and use_trah:protocol+='_trah_v1'
  if seed_records is not None:protocol+='_moread_v1'
+ from metal_environment_interrupted_seed import PROTOCOL as INTERRUPTED
+ interrupted=seed_records is not None and any(read_json(p).get('protocol_id')==INTERRUPTED for p in seed_records.values())
+ if interrupted:
+  if not use_trah or not all(read_json(p).get('protocol_id')==INTERRUPTED for p in seed_records.values()):raise InvalidArtifact('mixed seeds or non-TRAH interrupted continuation')
+  protocol+='_interrupted_v1'
  if type(mpi_ranks) is not int or mpi_ranks<1 or type(workers) is not int or not 1<=workers<=4:raise InvalidArtifact('invalid four-cell layout')
  c=check_config(read_json(inputs))
  if c['configurations']['A']['pointcharges']['sha256']!=c['configurations']['B']['pointcharges']['sha256']:raise InvalidArtifact('fixed field must be identical')
@@ -102,6 +118,7 @@ def prepare(inputs,plan,output,assets,mpi_ranks,workers,trah_scout=False,origin_
  if use_trah:m['solver']='TRAH'
  if origin_metals is not None:m['origin_metals']=origin_metals
  if seed_records is not None:m['initial_guess']='MORead'
+ if interrupted:m['seed_kind']='interrupted'
  for label in ('A','B'):
   for z in ('La','Dy'):
    if trah_scout and (z,label)!=('Dy','A'):continue

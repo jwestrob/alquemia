@@ -1,5 +1,9 @@
 # Field-aware metal response — restart checkpoint
 
+## Drives restored; compute unavailable — 7 October 2026
+
+Saved terminal accounting confirms 1220342 was cancelled by uid 0 during shutdown at September 28 10:59:32. Both Hans8FNR endpoints remain unconverged and unavailable; the old watcher RUNNING receipt is stale. File-only comparison recovered four accepted endpoints and unchanged Hans8DQ2-minus-Mex +11.689857 kcal/mol. No new chemistry or submissions. Read recovery_20261007/REPORT.md and RESULT.json before resuming. Preserve interrupted outputs and inspect restart admissibility before any separately versioned continuation; do not blindly relaunch historical scripts. The goal remains open and PQQ unchanged.
+
 ## Pre-shutdown checkpoint — September28 09:47PDT
 
 Only owned quantumjob1220342 remains RUNNING (Hans8FNR repaired La/Dy), with collector1220343 and comparison1220344 pending. Both sources rejected a TRAH step and remain unconverged, now processing macro11; no accepted FNR energy. Snapshot/pins: electronic_diagnosis_20260928/FNR_PRE_SHUTDOWN_OBSERVATION.json. Job is not cancelled or restarted. Completed donor/other-source jobs require no repeats. No additional molecular stage is queued.

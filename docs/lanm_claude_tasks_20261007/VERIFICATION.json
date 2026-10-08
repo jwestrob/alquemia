@@ -1,0 +1,33 @@
+{
+  "cli_version": "2.1.283",
+  "auth_verified": true,
+  "execution_location": "login_host",
+  "selected_model_alias": "sonnet",
+  "resolved_model": "claude-sonnet-5",
+  "effort": "low",
+  "session_uuid": "de18e4c2-c6b7-48e2-9bed-a17402a5c896",
+  "agent_calls": [
+    {
+      "id": "toolu_01Vw7JRRVaCin7NzQvL3wHho",
+      "subagent_type": "reviewer",
+      "parent_tool_use_id": null
+    },
+    {
+      "id": "toolu_01HaBnVmhRg42N9jXs62jpnY",
+      "subagent_type": "analyst",
+      "parent_tool_use_id": "toolu_01Vw7JRRVaCin7NzQvL3wHho"
+    }
+  ],
+  "result_subtype": "success",
+  "result": "PASS \u2014 delegation succeeded. Rule: Claude/subagents run headlessly on the login host, never as Slurm jobs; scientific compute (ORCA, MACE/OpenMM/GFN2, integrals) must run via Slurm. Top-level sessions may submit/monitor/recover their own finite Slurm jobs without extra approval.",
+  "permission_denials": [],
+  "reported_cost_usd": 0.3180161,
+  "cost_note": "CLI reported estimate; not a verified invoice",
+  "transcript": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/claude_lanm_20261007/headless_smoke_v1/events.jsonl",
+    "sha256": "6ee214cc7a702f4dcfcd28475fa2806c4593a6c5769d509359de73ecfa83081c"
+  },
+  "scientific_jobs_submitted": 0,
+  "scientific_job_access": "blocked_account_association",
+  "completion_wake_for_Claude_sessions": "not_yet_tested"
+}

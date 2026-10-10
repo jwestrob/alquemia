@@ -15,6 +15,10 @@ This is execution authorization, not a request for another permission check.
    task session logs and worktree ownership before dispatch; don't duplicate jobs.
    A test-partition success establishes that route only: inspect science partition
    access and current resources before the molecular submission.
+   Also read diagnostics/native_gfn2_la_shellfix_20261009/README.md: new La
+   native-GFN2 work must import the pinned corrected full JSON, with new cache
+   identity. The prepared Hans8FNR PBE0-D4 DFT continuation is unaffected. Preserve
+   production and old results; do not apply the example's shift as a constant.
 3. Start task01 restart review in an isolated worktree using run_session.sh,
    with a recorded model, effort, session UUID, PID and fresh output directory.
    Preliminary task03 interpretation may run alongside it. Both Claude parents

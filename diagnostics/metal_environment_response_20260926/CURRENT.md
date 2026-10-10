@@ -1,5 +1,17 @@
 # Field-aware metal response — restart checkpoint
 
+## Native GFN2 La parameter correction recorded — 9 October 2026
+
+Jacob supplied a tested full parameter table repairing La kcn/shpoly/lgam shell
+assignment in his ORCA6.1.1 executable. Byte-for-byte copy and exact three-field
+semantic diff verified; read [scope/pins](../native_gfn2_la_shellfix_20261009/README.md).
+No molecular rerun here. New La native-GFN2 tasks need explicit corrected full-table
+import and distinct parameter/cache identity; old results/calibrations stay separate.
+The +22.60kcal/mol example is not a universal correction. Other metals/versions
+remain unverified; accommodation/calibration remains unresolved. Pending Hans8FNR
+recovery uses PBE0-D4 frozen-f DFT and is unchanged. Claude shared rules and the
+scheduler-ready instructions now carry this finding; PQQ production untouched.
+
 ## Automatic scheduler recovery watch — 9 October 2026
 
 Jacob requested 30-minute Slurm probes followed by automatic root wake and owned

@@ -1,0 +1,75 @@
+{
+  "protocol_id": "orca611-native-gfn2-la-shellfix-v1",
+  "scope": "La kcn/shpoly/lgam only; full parameter import; no global reordering",
+  "source": {
+    "path": "/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-10-09_Nikasha_native_parity/inputs/La_vacuum_corrected/control.xtb.json",
+    "sha256": "a4f83ca72d58d6e80f634e61bb8e99b7af0f26c38cc4a9295e85215ecf72d05c",
+    "bytes": 72451
+  },
+  "original": {
+    "path": "/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-10-09_Nikasha_native_parity/inputs/La_vacuum_original/control.xtb.json",
+    "sha256": "f3dac846a59238947d35c23ba5bdb40c19a34482fe9860e8e11bf9c00d719107",
+    "bytes": 72450
+  },
+  "local_copy": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/native_gfn2_la_shellfix_20261009/parameter_source/control.xtb.json",
+    "sha256": "a4f83ca72d58d6e80f634e61bb8e99b7af0f26c38cc4a9295e85215ecf72d05c",
+    "bytes": 72451
+  },
+  "semantic_changes": [
+    {
+      "path": "/element/La/kcn",
+      "before": [
+        0.1071684,
+        -0.0239967,
+        -0.0777542
+      ],
+      "after": [
+        -0.0777542,
+        0.1071684,
+        -0.0239967
+      ]
+    },
+    {
+      "path": "/element/La/lgam",
+      "before": [
+        1.0,
+        0.7,
+        0.5300334
+      ],
+      "after": [
+        0.5300334,
+        1.0,
+        0.7
+      ]
+    },
+    {
+      "path": "/element/La/shpoly",
+      "before": [
+        -0.06732008,
+        0.54136379,
+        -0.37820063
+      ],
+      "after": [
+        -0.37820063,
+        -0.06732008,
+        0.54136379
+      ]
+    }
+  ],
+  "declared_La_shells": [
+    "5d",
+    "6s",
+    "6p"
+  ],
+  "all_other_json_fields_unchanged": true,
+  "causality_evidence": "User reports bidirectional ORCA/xTB causality; this session verified files only, no new molecular evaluations.",
+  "reported_example_Ca_minus_La_solvent_shift_kcal_mol": 22.6,
+  "shift_scope": "Motivating example only; not a universal correction or reference offset",
+  "orca_executable": "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+  "orca_executable_sha256_from_campaign_receipts": "38b5f057452fef275c0a1b98d270ad03d0411dab70453820d1c678bd732f6c83",
+  "molecular_tests_run_this_session": 0,
+  "production_changed": false,
+  "prepared_FNR_continuation_affected": false,
+  "FNR_method": "PBE0-D4 frozen-f DFT, not native GFN2"
+}

@@ -1,5 +1,16 @@
 # Field-aware metal response — restart checkpoint
 
+## Automatic scheduler recovery watch — 9 October 2026
+
+Jacob requested 30-minute Slurm probes followed by automatic root wake and owned
+LanM resumption. Detached monitor PID669874; first attempt rejected for invalid
+account/partition association, no jobs allocated. Read
+[monitor status/rearm](../slurm_readiness_20261009/README.md) and actual workspace
+state before acting. Probe success queues ON_READY.md instructions for headless
+Claude task01/preliminary03, then reviewed task02 endpoint recovery. Claude runs
+on login; all scientific compute through Slurm. No fresh human permission needed,
+no duplicate chemistry, no PQQ work. Wake self-test is not scheduler readiness.
+
 ## Interrupted continuation prepared — 7 October 2026
 
 New same-state MORead/TRAH continuation passes offline validation for the two missing Hans8FNR endpoints. 33 real-artifact checks pass; no new SCF. Manifest and exact dry-run command are in recovery_20261007/REPORT.md. Account access is unavailable: the user-authorized test-partition submission was rejected for invalid account/partition association. Node-idle listings are insufficient. No jobs queued. Original cancelled attempts and four accepted endpoints remain intact.

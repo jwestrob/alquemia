@@ -1,5 +1,42 @@
 # Corrected Nikasha parameter/context work — 12 October 2026
 
+## Running after second restoration — 12 October, 12:20 Pacific
+
+Probe2658 completed with the unique marker; root acknowledged actual delivery.
+Process-check2659 ran on both old nodes and confirmed all four former worker
+identities absent. New operational recovery preserves the exact scientific
+manifest/implementation and original failure snapshot; it does not claim a clean
+stop. Existing53 complete pools are reused,51 untouched sources continue, and
+both interrupted P12293 La searches remain unavailable under the frozen policy.
+
+- MACE lanes2660/2661 RUNNING on nodes64-768g-1/-2, seven CPUs each.
+- New collector2662 follows both; solvent2663 follows successful full collection.
+- Attempt004 passed all four real startup checks: energies exact, max force
+  residual9.55e-14eV/angstrom. Metadata coordinator2085650 released source work.
+- All four jobs have completion wakes. Exact commands, receipts, policy snapshot
+  and recovery pins: slurm_resumption_20261012/lane_jobs_v3/ in this workspace.
+
+Account restored as banfield/standard. Actual QOS12CPU/job60/user remains; actual
+shared grants now4GB/CPU (28000MiB per MACE lane). No memory/time flags or policy
+bypass; older full-node grants are historical. All molecular work is on Slurm.
+Fresh GFN2 output remains ca_conditioned_gfn2_slurm_v1; cancelled1031 never ran.
+Original125-source denominator,16 preparation exclusions and3 real pool reuses
+remain. No corrected Ca-extension classification exists yet.
+
+Independent LanM collector gate2664 passed all eight actual tests (29allocated
+CPU-seconds). Both unchanged Hans8FNR singleton targets launched: La2665/Dy2666,
+12CPUs/48000MiB each, runtime MaxCore3100MB/rank. Real test and original force gates
+admitted both. Completion wakes2088240/2088244 and alert-only health watches
+2089707/2089708 are recorded per singleton. No molecular endpoint accepted yet.
+Read diagnostics/claude_lanm_20261012/02_endpoint_recovery/INTEGRATOR_REVIEW.md.
+Task02 is finished; root owns collection/integration, not duplicate preparation.
+
+Next: collect actual terminal results and interpret fixed-band Ca transfer and
+missing LanM paired contrasts separately. On failures inspect actual receipts;
+never re-run a completed cell or silently restart interrupted optimization.
+
+### Prior outage evidence retained below
+
 ## Scheduler regressed after execution — 12 October 11:43 Pacific
 
 Worker1028/1029 both NODE_FAIL after709/708seconds on seven CPUs each;

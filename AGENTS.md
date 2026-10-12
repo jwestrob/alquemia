@@ -1,30 +1,30 @@
-# Scheduler regression — 12 October 2026, 11:43 Pacific
+# Slurm work resumed — 12 October 2026, 12:20 Pacific
 
-Slurm briefly ran, then lanes1028/1029 NODE_FAIL;1030 never started and1031
-was administrator-cancelled before execution. Failure collector1071 preserved
-53 complete native MACE pools;51 sources untouched and2 La searches interrupted.
-Original51 plus2 newly completed pools are safe. No new composite decisions yet.
-standard-shared disappeared, and standard submissions now fail Invalid account;
-actual sacctmgr returned no jwestrob associations. Do not bypass account/QOS.
-All new science/tests remain Slurm-only; login clients/orchestration are allowed.
+Readiness probe 2658 passed. Real Slurm process check 2659 confirmed all four
+old workers gone. The earlier NODE_FAILs and interrupted searches stay preserved.
+Root resumed the exact frozen Ca manifest as attempt004: lanes2660/2661 RUNNING,
+collector2662 afterany, corrected solvent2663 afterok. All four startup checks
+passed; the shared gate released new work. Reuse53 complete pools, continue51
+untouched sources, retain two interrupted La searches as unavailable. No repeat
+of completed chemistry and no new composite classification yet.
 
-Root rearmed the tested30-minute monitor, PID2016159, under
-workspaces/slurm_readiness_20261012_regression/. Read its state and
- diagnostics/slurm_readiness_20261009/ON_READY.md before dispatch. Recheck actual
-scheduler limits; earlier12CPU/job60/user observations may change during repair.
-Before new source writes, verify old remote worker identities are gone using the
-prepared node_recovery_v1 check; its submission was rejected, not executed.
-Resume unchanged106-source manifest in a fresh recovery attempt. Preserve two
-interrupted searches as unavailable under the frozen policy; no automatic rerun.
+Actual current policy: banfield/standard,12CPUs/job60/user. Scheduler default is
+4GB/CPU; these are shared allocations, not whole-node reservations. No memory or
+time flags were added. MACE lanes each7CPU/28000MiB; original kernels unchanged.
+Metadata coordinator2085650 and every job's completion wake are recorded under
+workspaces/orca_parameter_audit_20261012/slurm_resumption_20261012/lane_jobs_v3/.
+No new science on login; the temporary login exception below is historical.
 
-Claude task02 is complete, scheduler-blocked, with no molecular jobs. Its two
-Hans8FNR singleton preparations preserve the original science. Independent review
-found a missing copied pcgrad positive control and absent executable Slurm-test
-gate. Both fixes are integrated as411135d; eight revised tests remain UNRUN.
+LanM's eight revised real-artifact tests PASSED on Slurm2664. Exact prepared
+Hans8FNR La2665/Dy2666 now run,12CPU/48000MiB each; actual grant derives MaxCore.
+Both admission gates passed. Completion and alert-only SCF-health wakes are armed.
 Read diagnostics/claude_lanm_20261012/02_endpoint_recovery/INTEGRATOR_REVIEW.md
-for the exact Slurm test command. No duplicate endpoint launches. Current receipts and recovery instructions:
-diagnostics/orca_parameter_audit_20261012/CURRENT.md and the matching workspace.
-Production and earlier failed experiments remain unchanged.
+and actual singleton receipts. No endpoint result accepted yet; do not duplicate.
+Claude task02 is finished; root owns integration and further dispatch.
+
+Production and all historical failures remain unchanged. Read current checkpoint:
+diagnostics/orca_parameter_audit_20261012/CURRENT.md. Old readiness monitor exited
+successfully after waking root; current jobs have their own recorded watchers.
 
 # Current execution authorization — 12 October 2026
 

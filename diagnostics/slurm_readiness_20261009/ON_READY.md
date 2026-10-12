@@ -1,5 +1,18 @@
 # Automatic LanM resumption after Slurm recovery
 
+## Already resumed after probe2658 — 12 October, 12:20 Pacific
+
+This readiness event is acknowledged in the regression monitor's ROOT_ACK.json.
+Process-check2659 passed both former nodes. Ca lanes2660/2661 run attempt004 with
+all four startup controls passed; collector2662 and solvent2663 are dependent.
+LanM eight-test gate2664 passed; La2665/Dy2666 run with exact existing preparation.
+All computation is Slurm-only. Completion and LanM health watchers are armed.
+Read CURRENT.md and actual lane_jobs_v3/singleton receipts before any action.
+Do not follow the older redispatch instructions below to duplicate active work.
+The readiness monitor exited after its successful wake; job watchers now own
+notification. Current account/QOS is standard12CPU/job60/user, shared4GB/CPU grants.
+No default or historical results changed.
+
 ## Read first: second scheduler outage, 12 October 11:43 Pacific
 
 The earlier readiness success and jobs are historical. Lanes1028/1029 both

@@ -23,9 +23,13 @@ SHA256: `6e31585165092f10a8294d31c7def13331fe0e6196949b5a3eb94dc75cf59ccb`
 Heisenberg owns the actual CPU runner, two persistent seven-thread workers,
 qualification barrier and restart handling. Root owns launch and the subsequent
 qualified GFN2 component stage. The agreed MACE terminal collection is
-`workspaces/orca_parameter_audit_20261012/cpu_proposal_batch_v1/FINAL_COLLECTION.json`.
+`workspaces/orca_parameter_audit_20261012/cpu_proposal_batch_preflight_v1/FINAL_COLLECTION.json`.
+Root selected the existing validated preparation for execution, avoiding duplicate
+physical checks; the earlier proposed `_v1` output path was never launched.
 No downstream solvent implementation is a prerequisite for launching the
 reviewed MACE batch.
+The downstream adapter and its real archived parser checks are documented in
+[GFN2_REPORT.md](GFN2_REPORT.md); they do not add molecular results.
 
 ## Cost forecast
 

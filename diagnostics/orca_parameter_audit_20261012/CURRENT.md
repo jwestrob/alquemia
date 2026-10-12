@@ -61,6 +61,9 @@ Maximum component residual1.29869250e-7Eh; population residual1.09345701e-7e.
 No task exceptions or failed canonical components. The original absolute-energy
 parity gate remains failed; no raw absolute totals are made equivalent.
 Root inspected raw receipts and acknowledged the actual completion wake.
+Independent raw reconstruction also passes: see `expanded_canonical_review/REPORT.md`
+and RESULT.json (commit24401b2), including all300 input records and preserved
+absolute-energy failures.
 
 The already-frozen transfer stage now runs on14 one-thread numerical workers:
 worker1490237 (startticks41917155), completion watcher1490238. Exact commands,
@@ -96,8 +99,8 @@ Do not use a stale stage collection to monitor an interrupted/resumed attempt.
 If a worker is externally killed, inspect its owned START.json process groups
 before reallocating threads: underlying children use separate process groups.
 
-Root owns14 numerical workers. Independent canonical review owns<=1 read-only
-thread; Curie's Ca-conditioned inventory owns<=1. Total<=16. All previous
+Root owns14 numerical workers. Independent canonical review is finished; Curie's Ca-conditioned inventory
+owns<=1 read-only thread. Total<=16. All previous
 runtime/factorial/canonical workers are terminal. Driver/PLAN remain frozen.
 
 The q9 diagnosis is complete in `q9_response_diagnosis/REPORT.md` (ed2cf8f).
@@ -121,7 +124,7 @@ python scripts/compare_context_factorial.py \
 Jacob cleared the pause and explicitly authorizes<=16 TOTAL numerical login
 threads. Recorded verbatim atop AGENTS.md. Root's current worker owns14;
 all remaining light preparation/analysis shares at most2. Earlier runtime,
-rootMACE and solvent allocations are released. Canonical review and Ca-conditioned inventory each use<=1 thread. Independent guard/runtime/factorial/expanded-launch reviews
+rootMACE and solvent allocations are released. Canonical review is complete; Ca-conditioned inventory uses<=1 thread. Independent guard/runtime/factorial/expanded-launch reviews
 are complete. New guarded dispatch is committed/pushed asdd758db; its molecular branch
 remains explicitly unexecuted. Root owns scoring/reporting, current-facing docs and integration.
 

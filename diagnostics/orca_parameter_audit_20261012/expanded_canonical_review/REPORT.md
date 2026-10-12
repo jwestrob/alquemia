@@ -1,6 +1,6 @@
 # Independent corrected expanded canonical review
 
-12 October 2026. **The archived expanded-context candidate regains a valid
+12 October 2026. **The archived expanded-context candidate retains a valid
 canonical calibration after the La parameter correction. Its accommodation
 narrows the training separation relative to its own origins.** The frozen
 operational calibration gate passes, permitting the already-declared structural

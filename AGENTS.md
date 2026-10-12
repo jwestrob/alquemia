@@ -20,8 +20,9 @@ interrupted searches as unavailable under the frozen policy; no automatic rerun.
 Claude task02 is complete, scheduler-blocked, with no molecular jobs. Its two
 Hans8FNR singleton preparations preserve the original science. Independent review
 found a missing copied pcgrad positive control and absent executable Slurm-test
-gate. Gauss now owns only these fixes in the idle worktree02; root integrates.
-No duplicate endpoint launches. Current receipts and recovery instructions:
+gate. Both fixes are integrated as411135d; eight revised tests remain UNRUN.
+Read diagnostics/claude_lanm_20261012/02_endpoint_recovery/INTEGRATOR_REVIEW.md
+for the exact Slurm test command. No duplicate endpoint launches. Current receipts and recovery instructions:
 diagnostics/orca_parameter_audit_20261012/CURRENT.md and the matching workspace.
 Production and earlier failed experiments remain unchanged.
 

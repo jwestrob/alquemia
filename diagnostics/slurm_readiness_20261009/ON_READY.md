@@ -31,9 +31,12 @@ source statuses must become terminal before corrected-solvent execution. Origina
 Fresh collector follows actual new lanes; fresh GFN2 stage follows successful
 collection.1031 is cancelled: do not try to update its old dependency.
 
-Claude task02 still independently owns the two missing Hans8FNR endpoints.
-Read its actual task outputs, reviewer findings and supervisor receipt; do not
-duplicate it. Slurm-only execution and admission tests are required. Current
+Claude task02 completed without molecular jobs. Root integrated its reviewed
+preparation/wrapper and follow-up fixes as411135d; eight revised tests are UNRUN.
+Run the exact Slurm test command in diagnostics/claude_lanm_20261012/
+02_endpoint_recovery/INTEGRATOR_REVIEW.md first. Both existing singleton jobs
+require its real successful test receipt as their second argument. Read actual
+outputs and scheduler before dispatch; do not repeat preparation or accepted cells. Current
 12CPU/job limit and memory defaults must be rechecked, not assumed permanent.
 
 ## Actual readiness and dispatch — 12 October 2026

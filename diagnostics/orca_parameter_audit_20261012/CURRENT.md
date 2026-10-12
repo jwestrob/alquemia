@@ -35,7 +35,11 @@ state, seed and asset pins. Its submissions all failed; no molecular call ran.
 Its six collector tests passed on login, contrary to the declared Slurm test gate;
 no nested Task invocation was observed. Review found that relocated positive
 fixtures omitted endpoint.runtime.pcgrad and the wrapper lacked an executable
-Slurm-test receipt gate. Gauss owns minimal fixes in the now-idle worktree02.
+Slurm-test receipt gate. Root integrated the minimal fixes as411135d: real
+pcgrad copies, two positive controls, healthy-node restriction and a receipt gate
+requiring actual Slurm8/8 plus exact implementation pins before ORCA. All eight
+revised tests remain UNRUN; only AST/shell syntax and metadata checks passed.
+Exact command: diagnostics/claude_lanm_20261012/02_endpoint_recovery/INTEGRATOR_REVIEW.md.
 These findings do not invalidate the original molecular fixtures, but task exit0
 is not accepted as clearance to launch. No current owned molecular jobs.
 

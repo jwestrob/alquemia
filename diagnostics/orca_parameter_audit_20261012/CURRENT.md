@@ -8,16 +8,20 @@ CPUs/user across running jobs. Four science jobs below remain RUNNING (38 CPUs).
 Both readiness probe monitors have exited and are explicitly disarmed; do not
 rearm them. Individual job completion and health watchers remain active.
 
-Claude03 is initialized on the login host (Sonnet/medium, Task children available),
-supervisor2142451, session7e19f112-d807-461c-a981-5561c419c00f. It owns only the
-existing six-endpoint LanM comparison: prepare one 1CPU Slurm job afterany2665:2666,
-reuse four accepted origins and collect the two current singleton results, retain
-unavailable cells, arm a completion wake, then finish waiting_slurm. No additional
-molecular calculations or readiness probes. Submission is not yet verified.
-Exact scope: diagnostics/claude_lanm_20261012/03_source_interpretation_launch/.
-Actual output: workspaces/claude_lanm_20261012/source_interpretation_03_v1/;
-supervisor receipt: workspaces/claude_lanm_20261012/supervisor_03_v1/LAUNCH.json.
-Root retains scoring/integration and the two molecular jobs. Do not duplicate.
+Claude03 ended without task work, despite process exit 0. It received the complete
+dispatch but misidentified it as untrusted file instructions and asked for redundant
+confirmation. No edits, child agents or submission; original transcript preserved.
+Root acknowledged the event and completed setup directly, without a Claude retry.
+
+The unchanged six-endpoint LanM comparison is queued as job 2669, one CPU,
+afterany:2665:2666. Only the two Hans8FNR manifest/collection paths differ from
+the existing declaration. Four accepted origins and all six classical terms are
+reused; missing cells stay unavailable. No molecular calculations are added.
+Completion watcher PID 2157957 is armed. Exact plan, submission and watcher:
+workspaces/claude_lanm_20261012/comparison_root_recovery_v1/.
+Read diagnostics/claude_lanm_20261012/03_comparison_root_recovery/REPORT.md.
+Scientific comparison is still unrun. Root owns collection/integration and the
+two molecular jobs; do not duplicate. Readiness probes remain off.
 
 ## Running after second restoration — 12 October, 12:20 Pacific
 

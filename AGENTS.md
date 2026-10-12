@@ -1,13 +1,15 @@
-# Current Claude comparison ownership — 12 October 2026
+# Current LanM comparison ownership — 12 October 2026
 
-Claude03 supervisor2142451 is running on login, isolated worktree_03. It owns
-one 1CPU Slurm comparison afterany2665:2666 using the exact existing six-cell
-LanM comparison and actual singleton collections. No new molecular calculations;
-root retains endpoints/scoring integration. Dispatch scope and session pins:
-diagnostics/claude_lanm_20261012/03_source_interpretation_launch/.
-Inspect source_interpretation_03_v1 and supervisor_03_v1 under the Claude workspace
-before any duplicate dispatch. Readiness probes remain explicitly disarmed;
-scientific job completion/health alerts remain active. All science uses Slurm.
+Claude03 finished without doing the task: no edits, child agents or submission.
+Its exit 0 is not acceptance. Root recovered the scoped comparison directly as
+Slurm job 2669, one CPU, afterany:2665:2666; completion watcher PID 2157957.
+The exact existing six-cell comparator reuses four accepted origins and reads
+the two current singleton collections, preserving unavailable cells. No new
+molecular calculations. Root owns this job and integration; do not duplicate.
+Read diagnostics/claude_lanm_20261012/03_comparison_root_recovery/REPORT.md and
+workspaces/claude_lanm_20261012/comparison_root_recovery_v1/ receipts.
+Readiness probes remain explicitly disarmed; scientific completion/health alerts
+remain active. All science uses Slurm.
 
 # Slurm work resumed — 12 October 2026, 12:20 Pacific
 

@@ -3,7 +3,7 @@ import argparse
 import csv
 import json
 from pathlib import Path
-from context_factorial_mace import EV_TO_KCAL, pin, read, verify, write
+from context_factorial_mace import EV_TO_KCAL, pin, read, verify, write, xyz
 
 HA_TO_KCAL = 627.509474  # retain the released protocol's conversion exactly
 ORDER = ["origin", "original_adaptive_Ca", "original_adaptive_La",
@@ -22,7 +22,13 @@ def collect(mace_path, solvent_path):
         high = mrows[low["id"]]
         verify(high["receipt"])
         verify(high["xyz"])
-        if high["xyz"] != low["xyz"] or high["charge"] != low["charge"] or high["multiplicity"] != low["uhf"] + 1:
+        a, b = xyz(verify(high["xyz"])), xyz(verify(low["xyz"]))
+        if len(a) != len(b) or [r[0] for r in a] != [r[0] for r in b]:
+            raise ValueError("mismatched composite atom membership/order")
+        coordinate_error = max(abs(x-y) for u, v in zip(a, b) for x, y in zip(u[1:], v[1:]))
+        # Archive files and replay files can differ in comments/decimal spelling.
+        # Use the same predeclared 1e-12-A serialization gate as MACE archive reuse.
+        if coordinate_error > 1e-12 or high["charge"] != low["charge"] or high["multiplicity"] != low["uhf"] + 1:
             raise ValueError("mismatched composite coordinates or state")
         for receipt in low["inputs"].values():
             if receipt:
@@ -30,6 +36,7 @@ def collect(mace_path, solvent_path):
         r = {k: high[k] for k in ("task_id", "protein", "target_context", "geometry_id", "metal", "charge", "multiplicity", "xyz")}
         accepted = low["accepted"]
         r.update(accepted=accepted, failure_reason=low.get("failure_reason"),
+                 solvent_xyz=low["xyz"], composite_coordinate_max_error_A=coordinate_error,
                  mace_eV=high["energy_eV"], mace_reused=high["reused"],
                  gfn2_vacuum_hartree=low["primary_vacuum_energy_hartree"],
                  gfn2_water_hartree=low["primary_water_energy_hartree"],

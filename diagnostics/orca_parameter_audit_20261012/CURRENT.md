@@ -15,56 +15,76 @@ recovered_strict208/IMPORT.json. Corrected origin-only203/3/2 and frozen geometr
 No threshold tuning or production promotion. Current operating guide and PLM SOP
 now identify the earlier native energetic performance claims as historical.
 
-## Active finite experiment
+## Completed context experiment
 
-Two consumed boundary proteins now have exact original/expanded representations
-of the same five saved donor geometries. Context expansion had also changed the
-fourth selected torsion; this matched factorial separates those effects.
-No new optimizer, physical inventory, DFT or folds.
+All40 composite endpoints are now available. The independent review agrees with
+all energies, selections, interactions and costs. Read context_comparison/REPORT.md
+and RESULT.json. Root acknowledged the actual context-factorial-solvent-v2 wake.
+No factorial workers remain; do not rerun completed80input pairs.
 
-MACE is complete:24 reused endpoint energies plus16 new cross-context calls;
-four additional CPU/GPU origin replays agree exactly. Actual20 calls:113.884s
-wall,590.696 process CPU-s,4.25GiB peak RSS, zeroGPU. See context_MACE/REPORT.md.
+Two-anchor ordering (La reference c5 minus Ca reference q9) in original/expanded
+contexts, kcal/mol:
 
-GFN2 component-qualified v2 is RUNNING under Curie, two serial numerical workers.
-Actual workspace: workspaces/orca_parameter_audit_20261012/context_gfn2_component_v2/.
-Read FINAL_COLLECTION.json if present before any rerun. The original four-input
-xTB/tblite scout failed absolute-energy parity; a separate four-call diagnostic
-isolated nonsc three-body dispersion. That density-independent term cancels
-within each backend's same-geometry ALPB−vacuum contribution. Version2 requires
-1e-6Eh per-metal transfer parity and1e-5e per-input populations, preserving all
-original absolute mismatches and every failed gate. Primary energies stay actual
-standalone xTB6.7.1, with tblite0.7.0 as component check.
+- Origin: +8.867782 / +12.175484.
+- Original three proposals: −4.556602 / −1.212842.
+- Expanded three proposals: +0.437421 / +3.472171.
+- Common five: −3.714195 / +1.265264.
 
-The frozen v2 matrix is80inputs/backend, including four scout reuses. No rescue
-or repeated2796-point panel. See context_GFN2/COMPONENT_V2_PLAN.md.
-WorkerPID1406461; durable watcherPID1418506. Exact rearm/receipt command in
-workspace WATCHER_REARM.json; event context-factorial-solvent-v2 queues root
-01a0a63a-ee36-7483-b726-1f7f5b7f75cc. Inspect receipt before rearming.
+Expanded context alone does not restore the original proposal pool's ordering.
+q9's original La proposal still gives~12.1kcal/mol La-favoring motion response
+in both contexts. Context adds a mostly static offset; geometry selection also
+matters. A positive two-anchor ordering is not a full canonical calibration.
+No production promotion or claim that accommodation is repaired.
 
-## Next exact command
+MACE:24 reused energies+16 new cross-context+four exact CPU/GPU replays. Actual
+20calls used113.884s elapsed/590.696 processCPU-s/4.25GiB peakRSS, zeroGPU.
+GFN2:80primary+80independent+four causal diagnostic calls,2490.296 measuredCPU-s.
+All40 solvent components pass v2; every original absolute-energy comparison fails
+v1 and stays recorded. Density-independent nonsc dispersion cancels exactly
+within same-coordinate water−vacuum terms; no fitted offset or changed parameters.
+Reports: context_MACE/, context_GFN2/, context_comparison_review/.
 
-After the solvent final collection exists, run once into this new directory:
+## Next owned tasks (preparation only at this checkpoint)
+
+Curie: inventory/prepare corrected evaluation of the *existing* expanded-context
+three-candidate method on its canonical25 and known-reference transfer population.
+Use current actual pool/reference/group manifests, existing MACE, and24 compatible
+GFNinput reuses. No repeat of2796original-panel points, no newoptimization, no
+unknown PLM labels in calibration. Canonical charges differ; derive each state
+from exact manifests rather than copying the two-boundary charge.
+
+Preliminary finite inventory:135pools (25canonical,3crystals,6pilot,101additional
+transfer); full100transfer uses104source/context pairs from98structures. This is
+La-conditioned coverage plus three Ca-conditioned probes, not full two-condition
+validation. Maximum1596new primary+1596independent points; first canonical stage
+276+276. Integrator must inspect final pinned manifest/dryrun and freeze the same
+existing reference rule before launch. This is scope review under already-given
+autonomy, not a new user approval gate. Own expanded_transfer_inventory/.
+
+Heisenberg: source-derived q9 donor/denticity/contact diagnosis and exact compatible
+archivedDFT inventory, no molecularcalls. Own q9_response_diagnosis/.
+
+Root: scientific comparison/report, next finite execution decision, aggregate
+thread allocation and durable wake. Until declared otherwise these follow-ups
+use <=2 and <=1 threads, respectively. All previous molecular workers are done.
+
+Exact read-only completed comparison reproduction (choose a fresh output path):
 
 ```bash
 python scripts/compare_context_factorial.py \
   --mace diagnostics/orca_parameter_audit_20261012/context_MACE/RESULT.json \
   --solvent workspaces/orca_parameter_audit_20261012/context_gfn2_component_v2/FINAL_COLLECTION.json \
-  --output diagnostics/orca_parameter_audit_20261012/context_comparison
+  --output /tmp/nikasha_context_factorial_recheck_20261012
 ```
-
-Then independently audit raw components, common-pool selections, origin/adapted
-work, context interactions and two-anchor ordering. A positive two-anchor gap
-is not full canonical recalibration. Decide any next same-search-policy pilot
-from those results; no new optimization is automatically queued.
 
 ## Ownership and safeguards
 
 Jacob cleared the pause and explicitly authorizes<=16 TOTAL numerical login
 threads. Recorded verbatim atop AGENTS.md. Runtime4/rootMACE8 allocations are
-released after completion; Curie owns2 numerical threads. Dalton owns file-only
-guard/runtime review; Heisenberg owns completed runtime records and new guarded
-dispatch wrapper. Root owns scoring/reporting, current-facing docs and integration.
+released after completion. Curie owns<=2 preparation threads; Heisenberg owns<=1
+coordinate-analysis thread. Dalton completed independent guard/runtime/factorial
+review. New guarded dispatch is committed/pushed asdd758db; its molecular branch
+remains explicitly unexecuted. Root owns scoring/reporting, current-facing docs and integration.
 
 Parameter guard commitcd97a66 implements exact task-local full-file imports,
 shell-aware audits, runtime/profile/state admission and pre/postflight hashes.

@@ -1,0 +1,2174 @@
+{
+  "protocol_id": "corrected_context_geometry_factorial_v2",
+  "MACE": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/orca_parameter_audit_20261012/context_MACE/RESULT.json",
+    "sha256": "e4e44526d39fc12b356ebacdbc06e93b4d7b385b192f9cd74dbe59b24ffdd530"
+  },
+  "solvent": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_gfn2_component_v2/FINAL_COLLECTION.json",
+    "sha256": "d36d9c26909697cc01ebfa78ae6cd6fbdcd0fddb5c8e7b1efe9a4b871a9c005a"
+  },
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/compare_context_factorial.py",
+    "sha256": "5b4ee388e552d8c216759ddf916205603efd29e9cba68fa37854a96b7259579a"
+  },
+  "declared_endpoints": 40,
+  "accepted_endpoints": 40,
+  "units": "eV and hartree for original components; model kcal/mol after one conversion",
+  "EV_TO_KCAL": 23.06054783061903,
+  "HA_TO_KCAL": 627.509474,
+  "expression": "E=MACE_vac + GFN2_water-GFN2_vac; R=E_Ca-E_La",
+  "bands": null,
+  "classification_status": "no_calibration_for_two_development_cases",
+  "population_claim": false,
+  "endpoints": [
+    {
+      "task_id": "q9z4j7-pqq-la_model__original__original_adaptive_Ca__Ca",
+      "protein": "q9z4j7-pqq-la_model",
+      "target_context": "original",
+      "geometry_id": "original_adaptive_Ca",
+      "metal": "Ca",
+      "charge": -3,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/original/original_adaptive_Ca/Ca.xyz",
+        "sha256": "6b6877bb6b87bb85a2fd58c6e2c9752c32e9f67f5e613516dbe2d30f06f4cdf2"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/slsqp_precision_20260923/pool_v1/cells/q9z4j7-pqq-la_model__Ca__at_adaptive_Ca/context.xyz",
+        "sha256": "f5c9c855494b52104145a56bdaa1736285ac748e042cb06e828a88babb204ab9"
+      },
+      "composite_coordinate_max_error_A": 5.551115123125783e-17,
+      "mace_eV": -132141.23373546024,
+      "mace_reused": true,
+      "gfn2_vacuum_hartree": -259.043087146701,
+      "gfn2_water_hartree": -259.680239830085,
+      "gfn2_solvation_hartree": -0.637152683383988,
+      "E_model_kcal_mol": -3047649.0602987977,
+      "solver_component_error_hartree": -1.0751153922683443e-07,
+      "all_atom_population_error_e": 8.345833379941325e-08
+    },
+    {
+      "task_id": "q9z4j7-pqq-la_model__original__original_adaptive_Ca__La",
+      "protein": "q9z4j7-pqq-la_model",
+      "target_context": "original",
+      "geometry_id": "original_adaptive_Ca",
+      "metal": "La",
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/original/original_adaptive_Ca/La.xyz",
+        "sha256": "964758c76778831fbb46b1d2cdeec2ad495c72762eb242b433a95fe4b6fcc24a"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/slsqp_precision_20260923/pool_v1/cells/q9z4j7-pqq-la_model__La__at_adaptive_Ca/context.xyz",
+        "sha256": "f7bcf8fc636520c4aaa482132299d2d64b69fa2dd1a5052841fc23d3439cba9e"
+      },
+      "composite_coordinate_max_error_A": 5.551115123125783e-17,
+      "mace_eV": -114563.98279556919,
+      "mace_reused": true,
+      "gfn2_vacuum_hartree": -259.740811206998,
+      "gfn2_water_hartree": -260.200270583089,
+      "gfn2_solvation_hartree": -0.4594593760909902,
+      "E_model_kcal_mol": -2642196.520034854,
+      "solver_component_error_hartree": -9.20383058655716e-08,
+      "all_atom_population_error_e": 7.453421280168016e-08
+    },
+    {
+      "task_id": "q9z4j7-pqq-la_model__original__original_adaptive_La__Ca",
+      "protein": "q9z4j7-pqq-la_model",
+      "target_context": "original",
+      "geometry_id": "original_adaptive_La",
+      "metal": "Ca",
+      "charge": -3,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/original/original_adaptive_La/Ca.xyz",
+        "sha256": "8f8bf56443911e9581cd12353a48d0ce9862a3be6111f4b4b97b724c69b0877c"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/slsqp_precision_20260923/pool_v1/cells/q9z4j7-pqq-la_model__Ca__at_adaptive_La/context.xyz",
+        "sha256": "f982e60a8bb2d01316f01c86ddbc2a7b148b55e0d5fec3338ff7acdb7e5aab51"
+      },
+      "composite_coordinate_max_error_A": 5.551115123125783e-17,
+      "mace_eV": -132141.20243337174,
+      "mace_reused": true,
+      "gfn2_vacuum_hartree": -259.041699230004,
+      "gfn2_water_hartree": -259.680806949445,
+      "gfn2_solvation_hartree": -0.6391077194410286,
+      "E_model_kcal_mol": -3047649.5652591363,
+      "solver_component_error_hartree": -1.079891944755218e-07,
+      "all_atom_population_error_e": 8.314208205240092e-08
+    },
+    {
+      "task_id": "q9z4j7-pqq-la_model__original__original_adaptive_La__La",
+      "protein": "q9z4j7-pqq-la_model",
+      "target_context": "original",
+      "geometry_id": "original_adaptive_La",
+      "metal": "La",
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/original/original_adaptive_La/La.xyz",
+        "sha256": "1c35a77fb142772d4da29910e5c10a17abeffbcef415fbc0cd91f4026680140e"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/slsqp_precision_20260923/pool_v1/cells/q9z4j7-pqq-la_model__La__at_adaptive_La/context.xyz",
+        "sha256": "bc8ced85bacea8aa991a8da5c6e5a34be26020d3a373cdc5e7d43cff68aa54d9"
+      },
+      "composite_coordinate_max_error_A": 5.551115123125783e-17,
+      "mace_eV": -114564.03112162818,
+      "mace_reused": true,
+      "gfn2_vacuum_hartree": -259.743743660661,
+      "gfn2_water_hartree": -260.205179278232,
+      "gfn2_solvation_hartree": -0.4614356175709986,
+      "E_model_kcal_mol": -2642198.874570501,
+      "solver_component_error_hartree": -9.255785471395939e-08,
+      "all_atom_population_error_e": 7.902318593933089e-08
+    },
+    {
+      "task_id": "q9z4j7-pqq-la_model__original__expanded_adaptive_Ca__Ca",
+      "protein": "q9z4j7-pqq-la_model",
+      "target_context": "original",
+      "geometry_id": "expanded_adaptive_Ca",
+      "metal": "Ca",
+      "charge": -3,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/original/expanded_adaptive_Ca/Ca.xyz",
+        "sha256": "d23e69617ba1b5bf38189123d4aadfa9a77218791d6e07d9c898c1b3f7c4d752"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/original/expanded_adaptive_Ca/Ca.xyz",
+        "sha256": "d23e69617ba1b5bf38189123d4aadfa9a77218791d6e07d9c898c1b3f7c4d752"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -132141.20712928145,
+      "mace_reused": false,
+      "gfn2_vacuum_hartree": -259.042036431816,
+      "gfn2_water_hartree": -259.679574264325,
+      "gfn2_solvation_hartree": -0.6375378325090537,
+      "E_model_kcal_mol": -3047648.688430464,
+      "solver_component_error_hartree": -1.074212150342646e-07,
+      "all_atom_population_error_e": 8.32532223160598e-08
+    },
+    {
+      "task_id": "q9z4j7-pqq-la_model__original__expanded_adaptive_Ca__La",
+      "protein": "q9z4j7-pqq-la_model",
+      "target_context": "original",
+      "geometry_id": "expanded_adaptive_Ca",
+      "metal": "La",
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/original/expanded_adaptive_Ca/La.xyz",
+        "sha256": "c57c5ba38fb5da9cca2f5fff715311ee8e58f48210fefb395a7d900844cc2ec5"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/original/expanded_adaptive_Ca/La.xyz",
+        "sha256": "c57c5ba38fb5da9cca2f5fff715311ee8e58f48210fefb395a7d900844cc2ec5"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -114563.88151295803,
+      "mace_reused": false,
+      "gfn2_vacuum_hartree": -259.734039201571,
+      "gfn2_water_hartree": -260.192642091495,
+      "gfn2_solvation_hartree": -0.45860288992395226,
+      "E_model_kcal_mol": -2642193.646949171,
+      "solver_component_error_hartree": -9.205695050695795e-08,
+      "all_atom_population_error_e": 7.677486829615887e-08
+    },
+    {
+      "task_id": "q9z4j7-pqq-la_model__original__expanded_adaptive_La__Ca",
+      "protein": "q9z4j7-pqq-la_model",
+      "target_context": "original",
+      "geometry_id": "expanded_adaptive_La",
+      "metal": "Ca",
+      "charge": -3,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/original/expanded_adaptive_La/Ca.xyz",
+        "sha256": "e7444c783407e0e31dd9f250aa658e3db0ce49cc21431e275c27f3ab86f4937d"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/original/expanded_adaptive_La/Ca.xyz",
+        "sha256": "e7444c783407e0e31dd9f250aa658e3db0ce49cc21431e275c27f3ab86f4937d"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -132141.20315716756,
+      "mace_reused": false,
+      "gfn2_vacuum_hartree": -259.04095798371,
+      "gfn2_water_hartree": -259.680179729366,
+      "gfn2_solvation_hartree": -0.6392217456560161,
+      "E_model_kcal_mol": -3047649.653502795,
+      "solver_component_error_hartree": -1.0749528200904024e-07,
+      "all_atom_population_error_e": 8.020935776675842e-08
+    },
+    {
+      "task_id": "q9z4j7-pqq-la_model__original__expanded_adaptive_La__La",
+      "protein": "q9z4j7-pqq-la_model",
+      "target_context": "original",
+      "geometry_id": "expanded_adaptive_La",
+      "metal": "La",
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/original/expanded_adaptive_La/La.xyz",
+        "sha256": "9c587ad1eb579ef7b1f2ed238d436810c050284c1c0b84c8bc776f39e6060d14"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/original/expanded_adaptive_La/La.xyz",
+        "sha256": "9c587ad1eb579ef7b1f2ed238d436810c050284c1c0b84c8bc776f39e6060d14"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -114563.89973165344,
+      "mace_reused": false,
+      "gfn2_vacuum_hartree": -259.734471592668,
+      "gfn2_water_hartree": -260.194119682426,
+      "gfn2_solvation_hartree": -0.4596480897579909,
+      "E_model_kcal_mol": -2642194.722955066,
+      "solver_component_error_hartree": -9.218337027050438e-08,
+      "all_atom_population_error_e": 7.867715184906032e-08
+    },
+    {
+      "task_id": "q9z4j7-pqq-la_model__original__origin__Ca",
+      "protein": "q9z4j7-pqq-la_model",
+      "target_context": "original",
+      "geometry_id": "origin",
+      "metal": "Ca",
+      "charge": -3,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/consistent_context_20260922/prepared_v1/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0/Ca_context.xyz",
+        "sha256": "9c26e526607023a763ef46e3406cc5e84b2dadab3bbd00629a75793919870ebf"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/consistent_context_20260922/prepared_v1/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0/Ca_context.xyz",
+        "sha256": "9c26e526607023a763ef46e3406cc5e84b2dadab3bbd00629a75793919870ebf"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -132140.89749453336,
+      "mace_reused": true,
+      "gfn2_vacuum_hartree": -259.032599564488,
+      "gfn2_water_hartree": -259.676810454006,
+      "gfn2_solvation_hartree": -0.6442108895179786,
+      "E_model_kcal_mol": -3047645.735490039,
+      "solver_component_error_hartree": -1.0694134289224166e-07,
+      "all_atom_population_error_e": 8.395846851083633e-08
+    },
+    {
+      "task_id": "q9z4j7-pqq-la_model__original__origin__La",
+      "protein": "q9z4j7-pqq-la_model",
+      "target_context": "original",
+      "geometry_id": "origin",
+      "metal": "La",
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/consistent_context_20260922/prepared_v1/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0/La_context.xyz",
+        "sha256": "4f3da4cad8c0c6df034ee8943b2c31a89410b62bb8bf2eb69015013b872d94fe"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/consistent_context_20260922/prepared_v1/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0/La_context.xyz",
+        "sha256": "4f3da4cad8c0c6df034ee8943b2c31a89410b62bb8bf2eb69015013b872d94fe"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -114563.35682103781,
+      "mace_reused": true,
+      "gfn2_vacuum_hartree": -259.723692029446,
+      "gfn2_water_hartree": -260.184544109895,
+      "gfn2_solvation_hartree": -0.4608520804490013,
+      "E_model_kcal_mol": -2642182.9586544116,
+      "solver_component_error_hartree": -9.310485893365694e-08,
+      "all_atom_population_error_e": 7.315294892062951e-08
+    },
+    {
+      "task_id": "q9z4j7-pqq-la_model__expanded__original_adaptive_Ca__Ca",
+      "protein": "q9z4j7-pqq-la_model",
+      "target_context": "expanded",
+      "geometry_id": "original_adaptive_Ca",
+      "metal": "Ca",
+      "charge": -3,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/expanded/original_adaptive_Ca/Ca.xyz",
+        "sha256": "0f896a807916e15bf9a1130face414a14500ecb949b894f00475c4492865a447"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/expanded/original_adaptive_Ca/Ca.xyz",
+        "sha256": "0f896a807916e15bf9a1130face414a14500ecb949b894f00475c4492865a447"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -182850.27956146933,
+      "mace_reused": false,
+      "gfn2_vacuum_hartree": -334.444530092085,
+      "gfn2_water_hartree": -335.065979721293,
+      "gfn2_solvation_hartree": -0.621449629207973,
+      "E_model_kcal_mol": -4217017.583199266,
+      "solver_component_error_hartree": -1.1811687272711424e-07,
+      "all_atom_population_error_e": 8.188518063612094e-08
+    },
+    {
+      "task_id": "q9z4j7-pqq-la_model__expanded__original_adaptive_Ca__La",
+      "protein": "q9z4j7-pqq-la_model",
+      "target_context": "expanded",
+      "geometry_id": "original_adaptive_Ca",
+      "metal": "La",
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/expanded/original_adaptive_Ca/La.xyz",
+        "sha256": "77f8802abf72066b0299d5226633d788648cb1519177f5c7b81215a21e1160a4"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/expanded/original_adaptive_Ca/La.xyz",
+        "sha256": "77f8802abf72066b0299d5226633d788648cb1519177f5c7b81215a21e1160a4"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -165272.53549442237,
+      "mace_reused": false,
+      "gfn2_vacuum_hartree": -335.128299337518,
+      "gfn2_water_hartree": -335.585677548784,
+      "gfn2_solvation_hartree": -0.4573782112660183,
+      "E_model_kcal_mol": -3811562.2190175788,
+      "solver_component_error_hartree": -1.0105333103638259e-07,
+      "all_atom_population_error_e": 6.673570263071582e-08
+    },
+    {
+      "task_id": "q9z4j7-pqq-la_model__expanded__original_adaptive_La__Ca",
+      "protein": "q9z4j7-pqq-la_model",
+      "target_context": "expanded",
+      "geometry_id": "original_adaptive_La",
+      "metal": "Ca",
+      "charge": -3,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/expanded/original_adaptive_La/Ca.xyz",
+        "sha256": "d5ae8caee05c34e3a44a4a85f989c4e90f646d4e4d03ae3c171ae967019f351c"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/expanded/original_adaptive_La/Ca.xyz",
+        "sha256": "d5ae8caee05c34e3a44a4a85f989c4e90f646d4e4d03ae3c171ae967019f351c"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -182850.23677845753,
+      "mace_reused": false,
+      "gfn2_vacuum_hartree": -334.443138161533,
+      "gfn2_water_hartree": -335.066409837147,
+      "gfn2_solvation_hartree": -0.623271675613978,
+      "E_model_kcal_mol": -4217017.739950959,
+      "solver_component_error_hartree": -1.1917342135348008e-07,
+      "all_atom_population_error_e": 8.321416433698658e-08
+    },
+    {
+      "task_id": "q9z4j7-pqq-la_model__expanded__original_adaptive_La__La",
+      "protein": "q9z4j7-pqq-la_model",
+      "target_context": "expanded",
+      "geometry_id": "original_adaptive_La",
+      "metal": "La",
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/expanded/original_adaptive_La/La.xyz",
+        "sha256": "3264622a47b429150e3fb0589f40c814eb083d2d3e2bfd219a2bad73b1047a11"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/expanded/original_adaptive_La/La.xyz",
+        "sha256": "3264622a47b429150e3fb0589f40c814eb083d2d3e2bfd219a2bad73b1047a11"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -165272.5720104248,
+      "mace_reused": false,
+      "gfn2_vacuum_hartree": -335.131465846469,
+      "gfn2_water_hartree": -335.590496722509,
+      "gfn2_solvation_hartree": -0.4590308760400035,
+      "E_model_kcal_mol": -3811564.0981594026,
+      "solver_component_error_hartree": -1.0138319339603186e-07,
+      "all_atom_population_error_e": 7.311053962233416e-08
+    },
+    {
+      "task_id": "q9z4j7-pqq-la_model__expanded__expanded_adaptive_Ca__Ca",
+      "protein": "q9z4j7-pqq-la_model",
+      "target_context": "expanded",
+      "geometry_id": "expanded_adaptive_Ca",
+      "metal": "Ca",
+      "charge": -3,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/expanded/expanded_adaptive_Ca/Ca.xyz",
+        "sha256": "770ac42b39ed911d683dafdd2b13bdaa0b3e5126e48fa4381ca8dcbcdd23ddb9"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/pilot34_pool_v1/cells/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0__envelope_5eba0c9b39ead1ee__Ca__at_adaptive_Ca/context.xyz",
+        "sha256": "fbb0fc8c80686790850f3666eea474525a3469b469cc64339652bf0c40183510"
+      },
+      "composite_coordinate_max_error_A": 5.551115123125783e-17,
+      "mace_eV": -182850.33274333592,
+      "mace_reused": true,
+      "gfn2_vacuum_hartree": -334.446448484288,
+      "gfn2_water_hartree": -335.067550671873,
+      "gfn2_solvation_hartree": -0.6211021875849951,
+      "E_model_kcal_mol": -4217018.591579335,
+      "solver_component_error_hartree": -1.245193743670825e-07,
+      "all_atom_population_error_e": 7.744385627228567e-08
+    },
+    {
+      "task_id": "q9z4j7-pqq-la_model__expanded__expanded_adaptive_Ca__La",
+      "protein": "q9z4j7-pqq-la_model",
+      "target_context": "expanded",
+      "geometry_id": "expanded_adaptive_Ca",
+      "metal": "La",
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/expanded/expanded_adaptive_Ca/La.xyz",
+        "sha256": "ac0e3495c20070f4f39cf74d227af7a8a9efa4dfda94b5fb1bc94469109bc08c"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/pilot34_pool_v1/cells/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0__envelope_5eba0c9b39ead1ee__La__at_adaptive_Ca/context.xyz",
+        "sha256": "0b924da2656f005a565e8287c8b40e0c5d22dcdd8607814dcead9e278abaa9dc"
+      },
+      "composite_coordinate_max_error_A": 5.551115123125783e-17,
+      "mace_eV": -165272.5117330066,
+      "mace_reused": true,
+      "gfn2_vacuum_hartree": -335.124292743741,
+      "gfn2_water_hartree": -335.58054334789,
+      "gfn2_solvation_hartree": -0.4562506041489769,
+      "E_model_kcal_mol": -3811560.9634821652,
+      "solver_component_error_hartree": -1.0122454341399134e-07,
+      "all_atom_population_error_e": 6.504648236704824e-08
+    },
+    {
+      "task_id": "q9z4j7-pqq-la_model__expanded__expanded_adaptive_La__Ca",
+      "protein": "q9z4j7-pqq-la_model",
+      "target_context": "expanded",
+      "geometry_id": "expanded_adaptive_La",
+      "metal": "Ca",
+      "charge": -3,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/expanded/expanded_adaptive_La/Ca.xyz",
+        "sha256": "ec4cfc79152e2b7f9c03b20b2295b11d9d9b4c8c95160a7041edeec35ed816b8"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/pilot34_pool_v1/cells/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0__envelope_5eba0c9b39ead1ee__Ca__at_adaptive_La/context.xyz",
+        "sha256": "dd3f3ea3199c29cea1083e6bbe87590804658f88005167a550d1397fb11bf498"
+      },
+      "composite_coordinate_max_error_A": 5.551115123125783e-17,
+      "mace_eV": -182850.32614534456,
+      "mace_reused": true,
+      "gfn2_vacuum_hartree": -334.445331142474,
+      "gfn2_water_hartree": -335.068052877553,
+      "gfn2_solvation_hartree": -0.6227217350789829,
+      "E_model_kcal_mol": -4217019.4557074355,
+      "solver_component_error_hartree": -1.1506153896334581e-07,
+      "all_atom_population_error_e": 7.865443674148764e-08
+    },
+    {
+      "task_id": "q9z4j7-pqq-la_model__expanded__expanded_adaptive_La__La",
+      "protein": "q9z4j7-pqq-la_model",
+      "target_context": "expanded",
+      "geometry_id": "expanded_adaptive_La",
+      "metal": "La",
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/expanded/expanded_adaptive_La/La.xyz",
+        "sha256": "c3d98d2392b0ce88364061931345bce55ed799f978a26fe7c1948492d0aa7964"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/pilot34_pool_v1/cells/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0__envelope_5eba0c9b39ead1ee__La__at_adaptive_La/context.xyz",
+        "sha256": "8ca5e6d6919db0e4c75839376d96484ae85d00f4c66fd7c693796008ff8b751b"
+      },
+      "composite_coordinate_max_error_A": 5.551115123125783e-17,
+      "mace_eV": -165272.52618723194,
+      "mace_reused": true,
+      "gfn2_vacuum_hartree": -335.124814802262,
+      "gfn2_water_hartree": -335.582012718917,
+      "gfn2_solvation_hartree": -0.4571979166549909,
+      "E_model_kcal_mol": -3811561.891252092,
+      "solver_component_error_hartree": -1.013823975881678e-07,
+      "all_atom_population_error_e": 7.362360948670599e-08
+    },
+    {
+      "task_id": "q9z4j7-pqq-la_model__expanded__origin__Ca",
+      "protein": "q9z4j7-pqq-la_model",
+      "target_context": "expanded",
+      "geometry_id": "origin",
+      "metal": "Ca",
+      "charge": -3,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/prepared/q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0/Ca_context.xyz",
+        "sha256": "9c130719ffa7df942c00b16840d6abcd52c732083aec8187b6ebf0075a17f5ba"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/prepared/q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0/Ca_context.xyz",
+        "sha256": "9c130719ffa7df942c00b16840d6abcd52c732083aec8187b6ebf0075a17f5ba"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -182849.9906876049,
+      "mace_reused": true,
+      "gfn2_vacuum_hartree": -334.434503878852,
+      "gfn2_water_hartree": -335.063664561368,
+      "gfn2_solvation_hartree": -0.6291606825159874,
+      "E_model_kcal_mol": -4217015.760368704,
+      "solver_component_error_hartree": -1.238680056303565e-07,
+      "all_atom_population_error_e": 7.60596697291227e-08
+    },
+    {
+      "task_id": "q9z4j7-pqq-la_model__expanded__origin__La",
+      "protein": "q9z4j7-pqq-la_model",
+      "target_context": "expanded",
+      "geometry_id": "origin",
+      "metal": "La",
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/prepared/q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0/La_context.xyz",
+        "sha256": "23c940d691f696868fe120af9628258af3cdfe6636970e6154969394061b1f5f"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/prepared/q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0/La_context.xyz",
+        "sha256": "23c940d691f696868fe120af9628258af3cdfe6636970e6154969394061b1f5f"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -165271.94294273935,
+      "mace_reused": true,
+      "gfn2_vacuum_hartree": -335.111636269216,
+      "gfn2_water_hartree": -335.571328969955,
+      "gfn2_solvation_hartree": -0.45969270073902635,
+      "E_model_kcal_mol": -3811550.006815222,
+      "solver_component_error_hartree": -1.0217570434178924e-07,
+      "all_atom_population_error_e": 7.007755586929676e-08
+    },
+    {
+      "task_id": "c5axv8-pqq-la_model__original__original_adaptive_Ca__Ca",
+      "protein": "c5axv8-pqq-la_model",
+      "target_context": "original",
+      "geometry_id": "original_adaptive_Ca",
+      "metal": "Ca",
+      "charge": -3,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/c5axv8-pqq-la_model/original/original_adaptive_Ca/Ca.xyz",
+        "sha256": "2b2e011602256d6fe6dfa377160a1d9c23491ccbf7774d10aa8582443637b2fe"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/slsqp_precision_expansion_20260923/pool_v1/cells/c5axv8-pqq-la_model__Ca__at_adaptive_Ca/context.xyz",
+        "sha256": "f662309e8b53858f89d3ece6443de78e374729d7da4d9eba4cead56cc9a1f6f0"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -151286.3761404622,
+      "mace_reused": true,
+      "gfn2_vacuum_hartree": -303.312257977874,
+      "gfn2_water_hartree": -303.84546828194,
+      "gfn2_solvation_hartree": -0.5332103040659604,
+      "E_model_kcal_mol": -3489081.307625586,
+      "solver_component_error_hartree": -8.577012522437144e-08,
+      "all_atom_population_error_e": 9.19400207077814e-08
+    },
+    {
+      "task_id": "c5axv8-pqq-la_model__original__original_adaptive_Ca__La",
+      "protein": "c5axv8-pqq-la_model",
+      "target_context": "original",
+      "geometry_id": "original_adaptive_Ca",
+      "metal": "La",
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/c5axv8-pqq-la_model/original/original_adaptive_Ca/La.xyz",
+        "sha256": "a77e960a3bc68493a27950aa87be8d18f222caeb2a2db8eac23273e60a5ca8ea"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/slsqp_precision_expansion_20260923/pool_v1/cells/c5axv8-pqq-la_model__La__at_adaptive_Ca/context.xyz",
+        "sha256": "0a53b80279af70680c1bb10b997f87908a59ae50a819b4e58cea4f5d808d001c"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -133708.70640893606,
+      "mace_reused": true,
+      "gfn2_vacuum_hartree": -304.012980034748,
+      "gfn2_water_hartree": -304.367553644629,
+      "gfn2_solvation_hartree": -0.3545736098810153,
+      "E_model_kcal_mol": -3083618.517812898,
+      "solver_component_error_hartree": -7.261871814989718e-08,
+      "all_atom_population_error_e": 4.8640002248134806e-08
+    },
+    {
+      "task_id": "c5axv8-pqq-la_model__original__original_adaptive_La__Ca",
+      "protein": "c5axv8-pqq-la_model",
+      "target_context": "original",
+      "geometry_id": "original_adaptive_La",
+      "metal": "Ca",
+      "charge": -3,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/c5axv8-pqq-la_model/original/original_adaptive_La/Ca.xyz",
+        "sha256": "629e98708034c82ec791fea65d1d9b5753f2f381510defedc26b62ba0fff20c1"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/slsqp_precision_expansion_20260923/pool_v1/cells/c5axv8-pqq-la_model__Ca__at_adaptive_La/context.xyz",
+        "sha256": "a68640eef4b554c9339442a06a80435629376450cb15187a08af1d0cbc23b12f"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -151286.22717329237,
+      "mace_reused": true,
+      "gfn2_vacuum_hartree": -303.303459406193,
+      "gfn2_water_hartree": -303.843829500044,
+      "gfn2_solvation_hartree": -0.5403700938510383,
+      "E_model_kcal_mol": -3489082.3651969624,
+      "solver_component_error_hartree": -8.641325166536262e-08,
+      "all_atom_population_error_e": 8.141855323273717e-08
+    },
+    {
+      "task_id": "c5axv8-pqq-la_model__original__original_adaptive_La__La",
+      "protein": "c5axv8-pqq-la_model",
+      "target_context": "original",
+      "geometry_id": "original_adaptive_La",
+      "metal": "La",
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/c5axv8-pqq-la_model/original/original_adaptive_La/La.xyz",
+        "sha256": "3df83782b24481f3b4080ed509c3f36ecc4766c1b841ee92a5abe1a30893a040"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/slsqp_precision_expansion_20260923/pool_v1/cells/c5axv8-pqq-la_model__La__at_adaptive_La/context.xyz",
+        "sha256": "e8dd948753b62026611d84b1db24327a1f0640006441b512c424c861e8f26061"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -133708.9281188919,
+      "mace_reused": true,
+      "gfn2_vacuum_hartree": -304.012598148211,
+      "gfn2_water_hartree": -304.372729188765,
+      "gfn2_solvation_hartree": -0.3601310405539948,
+      "E_model_kcal_mol": -3083627.1179063376,
+      "solver_component_error_hartree": -7.28904865354707e-08,
+      "all_atom_population_error_e": 5.741442682394293e-08
+    },
+    {
+      "task_id": "c5axv8-pqq-la_model__original__expanded_adaptive_Ca__Ca",
+      "protein": "c5axv8-pqq-la_model",
+      "target_context": "original",
+      "geometry_id": "expanded_adaptive_Ca",
+      "metal": "Ca",
+      "charge": -3,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/c5axv8-pqq-la_model/original/expanded_adaptive_Ca/Ca.xyz",
+        "sha256": "a96b1b9291f40a4bee217154be1f2f1e9dc211a0df1800a8f51b19e1ee8645df"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/c5axv8-pqq-la_model/original/expanded_adaptive_Ca/Ca.xyz",
+        "sha256": "a96b1b9291f40a4bee217154be1f2f1e9dc211a0df1800a8f51b19e1ee8645df"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -151286.59622061983,
+      "mace_reused": false,
+      "gfn2_vacuum_hartree": -303.317630707332,
+      "gfn2_water_hartree": -303.84575923205,
+      "gfn2_solvation_hartree": -0.5281285247179994,
+      "E_model_kcal_mol": -3489083.193929902,
+      "solver_component_error_hartree": -8.434250275968225e-08,
+      "all_atom_population_error_e": 6.426341569998328e-08
+    },
+    {
+      "task_id": "c5axv8-pqq-la_model__original__expanded_adaptive_Ca__La",
+      "protein": "c5axv8-pqq-la_model",
+      "target_context": "original",
+      "geometry_id": "expanded_adaptive_Ca",
+      "metal": "La",
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/c5axv8-pqq-la_model/original/expanded_adaptive_Ca/La.xyz",
+        "sha256": "103e619188f6afac8e6de3e9b58e0a9486ea4b65b9d37fc791066d53d91a08b2"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/c5axv8-pqq-la_model/original/expanded_adaptive_Ca/La.xyz",
+        "sha256": "103e619188f6afac8e6de3e9b58e0a9486ea4b65b9d37fc791066d53d91a08b2"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -133708.95908226247,
+      "mace_reused": false,
+      "gfn2_vacuum_hartree": -304.014470151999,
+      "gfn2_water_hartree": -304.367227166595,
+      "gfn2_solvation_hartree": -0.3527570145960226,
+      "E_model_kcal_mol": -3083623.2046674755,
+      "solver_component_error_hartree": -7.124771173039335e-08,
+      "all_atom_population_error_e": 4.843800038845103e-08
+    },
+    {
+      "task_id": "c5axv8-pqq-la_model__original__expanded_adaptive_La__Ca",
+      "protein": "c5axv8-pqq-la_model",
+      "target_context": "original",
+      "geometry_id": "expanded_adaptive_La",
+      "metal": "Ca",
+      "charge": -3,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/c5axv8-pqq-la_model/original/expanded_adaptive_La/Ca.xyz",
+        "sha256": "37cba995b8d8499a8d43ab3ac9c49809df2cd7321420956fdcb333d9166b37d0"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/c5axv8-pqq-la_model/original/expanded_adaptive_La/Ca.xyz",
+        "sha256": "37cba995b8d8499a8d43ab3ac9c49809df2cd7321420956fdcb333d9166b37d0"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -151286.45624431496,
+      "mace_reused": false,
+      "gfn2_vacuum_hartree": -303.311651969294,
+      "gfn2_water_hartree": -303.846346047566,
+      "gfn2_solvation_hartree": -0.5346940782719685,
+      "E_model_kcal_mol": -3489084.0859466856,
+      "solver_component_error_hartree": -8.505452342433273e-08,
+      "all_atom_population_error_e": 8.450278476956896e-08
+    },
+    {
+      "task_id": "c5axv8-pqq-la_model__original__expanded_adaptive_La__La",
+      "protein": "c5axv8-pqq-la_model",
+      "target_context": "original",
+      "geometry_id": "expanded_adaptive_La",
+      "metal": "La",
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/c5axv8-pqq-la_model/original/expanded_adaptive_La/La.xyz",
+        "sha256": "9a1354eb0ed2bb93e1f74c588ff61a6a74571c7315ec4b9f2188703d0bc2d8d3"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/c5axv8-pqq-la_model/original/expanded_adaptive_La/La.xyz",
+        "sha256": "9a1354eb0ed2bb93e1f74c588ff61a6a74571c7315ec4b9f2188703d0bc2d8d3"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -133709.1015645575,
+      "mace_reused": false,
+      "gfn2_vacuum_hartree": -304.016698068314,
+      "gfn2_water_hartree": -304.374399123505,
+      "gfn2_solvation_hartree": -0.3577010551910007,
+      "E_model_kcal_mol": -3083629.5928195682,
+      "solver_component_error_hartree": -7.187560413512983e-08,
+      "all_atom_population_error_e": 5.381387491176781e-08
+    },
+    {
+      "task_id": "c5axv8-pqq-la_model__original__origin__Ca",
+      "protein": "c5axv8-pqq-la_model",
+      "target_context": "original",
+      "geometry_id": "origin",
+      "metal": "Ca",
+      "charge": -3,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/consistent_context_20260922/prepared_v1/cases/c5axv8-pqq-la_model__conditioned_La__seed-1_sample-1/Ca_context.xyz",
+        "sha256": "e6adb6fd3669466f2911147fb2a5ebfb0bd6d47f9b605a72370d62e56ab0d50f"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/environment_pqq_20260919/prepared_v1/cases/c5axv8-pqq-la_model/Ca.xyz",
+        "sha256": "e6adb6fd3669466f2911147fb2a5ebfb0bd6d47f9b605a72370d62e56ab0d50f"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -151286.04129110635,
+      "mace_reused": true,
+      "gfn2_vacuum_hartree": -303.299555174553,
+      "gfn2_water_hartree": -303.84072951954,
+      "gfn2_solvation_hartree": -0.5411743449869846,
+      "E_model_kcal_mol": -3489078.5833271286,
+      "solver_component_error_hartree": -8.664159167892649e-08,
+      "all_atom_population_error_e": 7.714762850774548e-08
+    },
+    {
+      "task_id": "c5axv8-pqq-la_model__original__origin__La",
+      "protein": "c5axv8-pqq-la_model",
+      "target_context": "original",
+      "geometry_id": "origin",
+      "metal": "La",
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/consistent_context_20260922/prepared_v1/cases/c5axv8-pqq-la_model__conditioned_La__seed-1_sample-1/La_context.xyz",
+        "sha256": "be9d89c8572983636758d6bb93321fc1ab9315d766a758af0296375219eb0354"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/environment_pqq_20260919/prepared_v1/cases/c5axv8-pqq-la_model/La.xyz",
+        "sha256": "be9d89c8572983636758d6bb93321fc1ab9315d766a758af0296375219eb0354"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -133708.7919000741,
+      "mace_reused": true,
+      "gfn2_vacuum_hartree": -304.008941310815,
+      "gfn2_water_hartree": -304.370184123337,
+      "gfn2_solvation_hartree": -0.36124281252205037,
+      "E_model_kcal_mol": -3083624.674273217,
+      "solver_component_error_hartree": -7.337990837186226e-08,
+      "all_atom_population_error_e": 4.690652266603479e-08
+    },
+    {
+      "task_id": "c5axv8-pqq-la_model__expanded__original_adaptive_Ca__Ca",
+      "protein": "c5axv8-pqq-la_model",
+      "target_context": "expanded",
+      "geometry_id": "original_adaptive_Ca",
+      "metal": "Ca",
+      "charge": -3,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/c5axv8-pqq-la_model/expanded/original_adaptive_Ca/Ca.xyz",
+        "sha256": "a46d2df6bb521b1ec2dfdeb4ec93362475f6edf16b1617677156b7b10d721e2b"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/c5axv8-pqq-la_model/expanded/original_adaptive_Ca/Ca.xyz",
+        "sha256": "a46d2df6bb521b1ec2dfdeb4ec93362475f6edf16b1617677156b7b10d721e2b"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -184338.8001414109,
+      "mace_reused": false,
+      "gfn2_vacuum_hartree": -337.302901665836,
+      "gfn2_water_hartree": -337.857432082836,
+      "gfn2_solvation_hartree": -0.5545304170000236,
+      "E_model_kcal_mol": -4251301.690790216,
+      "solver_component_error_hartree": -9.54179881773598e-08,
+      "all_atom_population_error_e": 6.324523738054921e-08
+    },
+    {
+      "task_id": "c5axv8-pqq-la_model__expanded__original_adaptive_Ca__La",
+      "protein": "c5axv8-pqq-la_model",
+      "target_context": "expanded",
+      "geometry_id": "original_adaptive_Ca",
+      "metal": "La",
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/c5axv8-pqq-la_model/expanded/original_adaptive_Ca/La.xyz",
+        "sha256": "baea523f0dbaf972bb51458d69179abca0690d3ffc99364d99a74472d57646d4"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/c5axv8-pqq-la_model/expanded/original_adaptive_Ca/La.xyz",
+        "sha256": "baea523f0dbaf972bb51458d69179abca0690d3ffc99364d99a74472d57646d4"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -166761.15298829394,
+      "mace_reused": false,
+      "gfn2_vacuum_hartree": -338.006357494434,
+      "gfn2_water_hartree": -338.382296285574,
+      "gfn2_solvation_hartree": -0.3759387911400154,
+      "E_model_kcal_mol": -3845839.4499288145,
+      "solver_component_error_hartree": -8.161373443726916e-08,
+      "all_atom_population_error_e": 5.521988566403735e-08
+    },
+    {
+      "task_id": "c5axv8-pqq-la_model__expanded__original_adaptive_La__Ca",
+      "protein": "c5axv8-pqq-la_model",
+      "target_context": "expanded",
+      "geometry_id": "original_adaptive_La",
+      "metal": "Ca",
+      "charge": -3,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/c5axv8-pqq-la_model/expanded/original_adaptive_La/Ca.xyz",
+        "sha256": "f64219062d343e77cf1c849ec09a5f039224ecd160e34ee3734e2a198741b31a"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/c5axv8-pqq-la_model/expanded/original_adaptive_La/Ca.xyz",
+        "sha256": "f64219062d343e77cf1c849ec09a5f039224ecd160e34ee3734e2a198741b31a"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -184338.6754471091,
+      "mace_reused": false,
+      "gfn2_vacuum_hartree": -337.294946326963,
+      "gfn2_water_hartree": -337.85613412414,
+      "gfn2_solvation_hartree": -0.5611877971770127,
+      "E_model_kcal_mol": -4251302.992840438,
+      "solver_component_error_hartree": -9.593293270881986e-08,
+      "all_atom_population_error_e": 6.411956665619556e-08
+    },
+    {
+      "task_id": "c5axv8-pqq-la_model__expanded__original_adaptive_La__La",
+      "protein": "c5axv8-pqq-la_model",
+      "target_context": "expanded",
+      "geometry_id": "original_adaptive_La",
+      "metal": "La",
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/c5axv8-pqq-la_model/expanded/original_adaptive_La/La.xyz",
+        "sha256": "3c087c18ae77fde89064e9b2d0b2c7bdba2d1372dd8e8286defa6c2e00855e9d"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/c5axv8-pqq-la_model/expanded/original_adaptive_La/La.xyz",
+        "sha256": "3c087c18ae77fde89064e9b2d0b2c7bdba2d1372dd8e8286defa6c2e00855e9d"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -166761.39584993868,
+      "mace_reused": false,
+      "gfn2_vacuum_hartree": -338.006805450452,
+      "gfn2_water_hartree": -338.387664892493,
+      "gfn2_solvation_hartree": -0.3808594420409577,
+      "E_model_kcal_mol": -3845848.1382064475,
+      "solver_component_error_hartree": -8.182638566722744e-08,
+      "all_atom_population_error_e": 5.398399816058941e-08
+    },
+    {
+      "task_id": "c5axv8-pqq-la_model__expanded__expanded_adaptive_Ca__Ca",
+      "protein": "c5axv8-pqq-la_model",
+      "target_context": "expanded",
+      "geometry_id": "expanded_adaptive_Ca",
+      "metal": "Ca",
+      "charge": -3,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/c5axv8-pqq-la_model/expanded/expanded_adaptive_Ca/Ca.xyz",
+        "sha256": "9eada563af19fbb86dc94d8e28cd6f710d65a6e2a633db5660f39f8436ced22b"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/pilot34_pool_v1/cells/c5axv8-pqq-la_model__conditioned_La__seed-1_sample-1__envelope_aa36ec84c4cbdc62__Ca__at_adaptive_Ca/context.xyz",
+        "sha256": "509d272b05fa08e99bd636c6ff4736cbaca08558d25ac0db0b442c6666bcbd10"
+      },
+      "composite_coordinate_max_error_A": 5.551115123125783e-17,
+      "mace_eV": -184339.0591466539,
+      "mace_reused": true,
+      "gfn2_vacuum_hartree": -337.309780015181,
+      "gfn2_water_hartree": -337.858729762168,
+      "gfn2_solvation_hartree": -0.5489497469870344,
+      "E_model_kcal_mol": -4251304.161669706,
+      "solver_component_error_hartree": -9.357216868011164e-08,
+      "all_atom_population_error_e": 8.693075537191675e-08
+    },
+    {
+      "task_id": "c5axv8-pqq-la_model__expanded__expanded_adaptive_Ca__La",
+      "protein": "c5axv8-pqq-la_model",
+      "target_context": "expanded",
+      "geometry_id": "expanded_adaptive_Ca",
+      "metal": "La",
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/c5axv8-pqq-la_model/expanded/expanded_adaptive_Ca/La.xyz",
+        "sha256": "82c7aa5f7cc9443e3b6b8f26fe2de0ed78bf4ee86858abc0bf389d5dcbcdac97"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/pilot34_pool_v1/cells/c5axv8-pqq-la_model__conditioned_La__seed-1_sample-1__envelope_aa36ec84c4cbdc62__La__at_adaptive_Ca/context.xyz",
+        "sha256": "71af2fd11c92759d337c54593db27819362a60f7cb5330098f5ed2017a055a9d"
+      },
+      "composite_coordinate_max_error_A": 5.551115123125783e-17,
+      "mace_eV": -166761.44865722218,
+      "mace_reused": true,
+      "gfn2_vacuum_hartree": -338.009529841957,
+      "gfn2_water_hartree": -338.38288814575,
+      "gfn2_solvation_hartree": -0.3733583037929975,
+      "E_model_kcal_mol": -3845844.6489360183,
+      "solver_component_error_hartree": -7.977229188327328e-08,
+      "all_atom_population_error_e": 6.684652398281088e-08
+    },
+    {
+      "task_id": "c5axv8-pqq-la_model__expanded__expanded_adaptive_La__Ca",
+      "protein": "c5axv8-pqq-la_model",
+      "target_context": "expanded",
+      "geometry_id": "expanded_adaptive_La",
+      "metal": "Ca",
+      "charge": -3,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/c5axv8-pqq-la_model/expanded/expanded_adaptive_La/Ca.xyz",
+        "sha256": "bf7ad3cb61ed8dffbd24609fd6993926ae505a48881a416851b27d6086275471"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/pilot34_pool_v1/cells/c5axv8-pqq-la_model__conditioned_La__seed-1_sample-1__envelope_aa36ec84c4cbdc62__Ca__at_adaptive_La/context.xyz",
+        "sha256": "18d58a35baed7ed55387a27d9748eb7f86c1b4b5a7a9c4e6644e5029efbf1e29"
+      },
+      "composite_coordinate_max_error_A": 5.551115123125783e-17,
+      "mace_eV": -184338.93792869683,
+      "mace_reused": true,
+      "gfn2_vacuum_hartree": -337.304467127268,
+      "gfn2_water_hartree": -337.859510944419,
+      "gfn2_solvation_hartree": -0.5550438171509882,
+      "E_model_kcal_mol": -4251305.190403973,
+      "solver_component_error_hartree": -9.420728019904345e-08,
+      "all_atom_population_error_e": 6.979306232945959e-08
+    },
+    {
+      "task_id": "c5axv8-pqq-la_model__expanded__expanded_adaptive_La__La",
+      "protein": "c5axv8-pqq-la_model",
+      "target_context": "expanded",
+      "geometry_id": "expanded_adaptive_La",
+      "metal": "La",
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/c5axv8-pqq-la_model/expanded/expanded_adaptive_La/La.xyz",
+        "sha256": "9f14ebd4fb63bdca55a0cfb20d1ec7a1c322bbb6a751b77b5d258b23f4bf26d8"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/pilot34_pool_v1/cells/c5axv8-pqq-la_model__conditioned_La__seed-1_sample-1__envelope_aa36ec84c4cbdc62__La__at_adaptive_La/context.xyz",
+        "sha256": "d68e17bd6dd92573ad3171c2a4094d454924c1d88f5593259314c45d86e6397a"
+      },
+      "composite_coordinate_max_error_A": 5.551115123125783e-17,
+      "mace_eV": -166761.6071921936,
+      "mace_reused": true,
+      "gfn2_vacuum_hartree": -338.012380709338,
+      "gfn2_water_hartree": -338.390190388741,
+      "gfn2_solvation_hartree": -0.3778096794030148,
+      "E_model_kcal_mol": -3845851.0981196766,
+      "solver_component_error_hartree": -8.03490820544539e-08,
+      "all_atom_population_error_e": 6.770080684947999e-08
+    },
+    {
+      "task_id": "c5axv8-pqq-la_model__expanded__origin__Ca",
+      "protein": "c5axv8-pqq-la_model",
+      "target_context": "expanded",
+      "geometry_id": "origin",
+      "metal": "Ca",
+      "charge": -3,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/prepared/c5axv8-pqq-la_model__envelope_aa36ec84c4cbdc62/cases/c5axv8-pqq-la_model__conditioned_La__seed-1_sample-1/Ca_context.xyz",
+        "sha256": "13360d2b92d4c22a715f9ab93ff6c2e9ce1a63bb2be088b99ba9c14f0f14a8e0"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/prepared/c5axv8-pqq-la_model__envelope_aa36ec84c4cbdc62/cases/c5axv8-pqq-la_model__conditioned_La__seed-1_sample-1/Ca_context.xyz",
+        "sha256": "13360d2b92d4c22a715f9ab93ff6c2e9ce1a63bb2be088b99ba9c14f0f14a8e0"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -184338.51779305073,
+      "mace_reused": true,
+      "gfn2_vacuum_hartree": -337.292036246784,
+      "gfn2_water_hartree": -337.853611954972,
+      "gfn2_solvation_hartree": -0.561575708188002,
+      "E_model_kcal_mol": -4251299.60066932,
+      "solver_component_error_hartree": -9.610710094420938e-08,
+      "all_atom_population_error_e": 5.888212284421712e-08
+    },
+    {
+      "task_id": "c5axv8-pqq-la_model__expanded__origin__La",
+      "protein": "c5axv8-pqq-la_model",
+      "target_context": "expanded",
+      "geometry_id": "origin",
+      "metal": "La",
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/prepared/c5axv8-pqq-la_model__envelope_aa36ec84c4cbdc62/cases/c5axv8-pqq-la_model__conditioned_La__seed-1_sample-1/La_context.xyz",
+        "sha256": "c28fb80e2b71a0953c8114b269d1d4436da559136e0fcbad4d8b0390e23c1244"
+      },
+      "accepted": true,
+      "failure_reason": null,
+      "solvent_xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/prepared/c5axv8-pqq-la_model__envelope_aa36ec84c4cbdc62/cases/c5axv8-pqq-la_model__conditioned_La__seed-1_sample-1/La_context.xyz",
+        "sha256": "c28fb80e2b71a0953c8114b269d1d4436da559136e0fcbad4d8b0390e23c1244"
+      },
+      "composite_coordinate_max_error_A": 0.0,
+      "mace_eV": -166761.28531832926,
+      "mace_reused": true,
+      "gfn2_vacuum_hartree": -338.004127269407,
+      "gfn2_water_hartree": -338.385677238982,
+      "gfn2_solvation_hartree": -0.3815499695750191,
+      "E_model_kcal_mol": -3845846.0225995514,
+      "solver_component_error_hartree": -8.217477898142533e-08,
+      "all_atom_population_error_e": 5.8051813467407953e-08
+    }
+  ],
+  "contrasts": [
+    {
+      "protein": "c5axv8-pqq-la_model",
+      "context": "original",
+      "geometry": "origin",
+      "accepted": true,
+      "R_MACE_kcal_mol": -405341.0003126181,
+      "R_solvent_kcal_mol": -112.90874129308477,
+      "R_model_kcal_mol": -405453.90905391145,
+      "work_Ca_kcal_mol": 0.0,
+      "work_La_kcal_mol": 0.0
+    },
+    {
+      "protein": "c5axv8-pqq-la_model",
+      "context": "original",
+      "geometry": "original_adaptive_Ca",
+      "accepted": true,
+      "R_MACE_kcal_mol": -405350.6935946829,
+      "R_solvent_kcal_mol": -112.09621800509375,
+      "R_model_kcal_mol": -405462.78981268825,
+      "work_Ca_kcal_mol": -2.7242984576150775,
+      "work_La_kcal_mol": 6.1564603191800416
+    },
+    {
+      "protein": "c5axv8-pqq-la_model",
+      "context": "original",
+      "geometry": "original_adaptive_La",
+      "accepted": true,
+      "R_MACE_kcal_mol": -405342.14557709673,
+      "R_solvent_kcal_mol": -113.1017135286857,
+      "R_model_kcal_mol": -405455.2472906248,
+      "work_Ca_kcal_mol": -3.7818698338232934,
+      "work_La_kcal_mol": -2.443633120507002
+    },
+    {
+      "protein": "c5axv8-pqq-la_model",
+      "context": "original",
+      "geometry": "expanded_adaptive_Ca",
+      "accepted": true,
+      "R_MACE_kcal_mol": -405349.94197835523,
+      "R_solvent_kcal_mol": -110.04728407122735,
+      "R_model_kcal_mol": -405459.9892624263,
+      "work_Ca_kcal_mol": -4.610602773260325,
+      "work_La_kcal_mol": 1.4696057415567338
+    },
+    {
+      "protein": "c5axv8-pqq-la_model",
+      "context": "original",
+      "geometry": "expanded_adaptive_La",
+      "accepted": true,
+      "R_MACE_kcal_mol": -405343.4283283023,
+      "R_solvent_kcal_mol": -111.06479881520794,
+      "R_model_kcal_mol": -405454.4931271174,
+      "work_Ca_kcal_mol": -5.502619557082653,
+      "work_La_kcal_mol": -4.918546351138502
+    },
+    {
+      "protein": "c5axv8-pqq-la_model",
+      "context": "expanded",
+      "geometry": "origin",
+      "accepted": true,
+      "R_MACE_kcal_mol": -405340.6102132246,
+      "R_solvent_kcal_mol": -112.96785654349436,
+      "R_model_kcal_mol": -405453.5780697684,
+      "work_Ca_kcal_mol": 0.0,
+      "work_La_kcal_mol": 0.0
+    },
+    {
+      "protein": "c5axv8-pqq-la_model",
+      "context": "expanded",
+      "geometry": "original_adaptive_Ca",
+      "accepted": true,
+      "R_MACE_kcal_mol": -405350.1729241982,
+      "R_solvent_kcal_mol": -112.06793720421854,
+      "R_model_kcal_mol": -405462.2408614019,
+      "work_Ca_kcal_mol": -2.0901208966970444,
+      "work_La_kcal_mol": 6.57267073681578
+    },
+    {
+      "protein": "c5axv8-pqq-la_model",
+      "context": "expanded",
+      "geometry": "original_adaptive_La",
+      "accepted": true,
+      "R_MACE_kcal_mol": -405341.6968827124,
+      "R_solvent_kcal_mol": -113.15775127871109,
+      "R_model_kcal_mol": -405454.8546339907,
+      "work_Ca_kcal_mol": -3.3921711184084415,
+      "work_La_kcal_mol": -2.1156068961136043
+    },
+    {
+      "protein": "c5axv8-pqq-la_model",
+      "context": "expanded",
+      "geometry": "expanded_adaptive_Ca",
+      "accepted": true,
+      "R_MACE_kcal_mol": -405349.3274395307,
+      "R_solvent_kcal_mol": -110.18529415759095,
+      "R_model_kcal_mol": -405459.51273368765,
+      "work_Ca_kcal_mol": -4.561000386252999,
+      "work_La_kcal_mol": 1.373663533013314
+    },
+    {
+      "protein": "c5axv8-pqq-la_model",
+      "context": "expanded",
+      "geometry": "expanded_adaptive_La",
+      "accepted": true,
+      "R_MACE_kcal_mol": -405342.87618374295,
+      "R_solvent_kcal_mol": -111.2161005530743,
+      "R_model_kcal_mol": -405454.0922842962,
+      "work_Ca_kcal_mol": -5.589734653010964,
+      "work_La_kcal_mol": -5.075520125217736
+    },
+    {
+      "protein": "q9z4j7-pqq-la_model",
+      "context": "original",
+      "geometry": "origin",
+      "accepted": true,
+      "R_MACE_kcal_mol": -405347.7174457955,
+      "R_solvent_kcal_mol": -115.05938983214035,
+      "R_model_kcal_mol": -405462.7768356274,
+      "work_Ca_kcal_mol": 0.0,
+      "work_La_kcal_mol": 0.0
+    },
+    {
+      "protein": "q9z4j7-pqq-la_model",
+      "context": "original",
+      "geometry": "original_adaptive_Ca",
+      "accepted": true,
+      "R_MACE_kcal_mol": -405341.0360301508,
+      "R_solvent_kcal_mol": -111.50423379274942,
+      "R_model_kcal_mol": -405452.54026394384,
+      "work_Ca_kcal_mol": -3.3248087586835027,
+      "work_La_kcal_mol": -13.561380442231894
+    },
+    {
+      "protein": "q9z4j7-pqq-la_model",
+      "context": "original",
+      "geometry": "original_adaptive_La",
+      "accepted": true,
+      "R_MACE_kcal_mol": -405339.1997614469,
+      "R_solvent_kcal_mol": -111.49092718893695,
+      "R_model_kcal_mol": -405450.6906886352,
+      "work_Ca_kcal_mol": -3.8297690972685814,
+      "work_La_kcal_mol": -15.915916089434177
+    },
+    {
+      "protein": "q9z4j7-pqq-la_model",
+      "context": "original",
+      "geometry": "expanded_adaptive_Ca",
+      "accepted": true,
+      "R_MACE_kcal_mol": -405342.7581095913,
+      "R_solvent_kcal_mol": -112.28337170179721,
+      "R_model_kcal_mol": -405455.0414812928,
+      "work_Ca_kcal_mol": -2.9529404249042273,
+      "work_La_kcal_mol": -10.68829475948587
+    },
+    {
+      "protein": "q9z4j7-pqq-la_model",
+      "context": "original",
+      "geometry": "expanded_adaptive_La",
+      "accepted": true,
+      "R_MACE_kcal_mol": -405342.2463773722,
+      "R_solvent_kcal_mol": -112.68417035682678,
+      "R_model_kcal_mol": -405454.93054772913,
+      "work_Ca_kcal_mol": -3.918012755922973,
+      "work_La_kcal_mol": -11.764300654176623
+    },
+    {
+      "protein": "q9z4j7-pqq-la_model",
+      "context": "expanded",
+      "geometry": "origin",
+      "accepted": true,
+      "R_MACE_kcal_mol": -405359.4107893772,
+      "R_solvent_kcal_mol": -106.34276410470244,
+      "R_model_kcal_mol": -405465.7535534818,
+      "work_Ca_kcal_mol": 0.0,
+      "work_La_kcal_mol": 0.0
+    },
+    {
+      "protein": "q9z4j7-pqq-la_model",
+      "context": "expanded",
+      "geometry": "original_adaptive_Ca",
+      "accepted": true,
+      "R_MACE_kcal_mol": -405352.40781251644,
+      "R_solvent_kcal_mol": -102.95636917119013,
+      "R_model_kcal_mol": -405455.3641816876,
+      "work_Ca_kcal_mol": -1.822830562479794,
+      "work_La_kcal_mol": -12.212202356662601
+    },
+    {
+      "protein": "q9z4j7-pqq-la_model",
+      "context": "expanded",
+      "geometry": "original_adaptive_La",
+      "accepted": true,
+      "R_MACE_kcal_mol": -405350.5791338057,
+      "R_solvent_kcal_mol": -103.06265775000418,
+      "R_model_kcal_mol": -405453.64179155603,
+      "work_Ca_kcal_mol": -1.9795822547748685,
+      "work_La_kcal_mol": -14.091344180516899
+    },
+    {
+      "protein": "q9z4j7-pqq-la_model",
+      "context": "expanded",
+      "geometry": "expanded_adaptive_Ca",
+      "accepted": true,
+      "R_MACE_kcal_mol": -405354.1821667595,
+      "R_solvent_kcal_mol": -103.44593041000292,
+      "R_model_kcal_mol": -405457.62809716957,
+      "work_Ca_kcal_mol": -2.8312106309458613,
+      "work_La_kcal_mol": -10.956666943151504
+    },
+    {
+      "protein": "q9z4j7-pqq-la_model",
+      "context": "expanded",
+      "geometry": "expanded_adaptive_La",
+      "accepted": true,
+      "R_MACE_kcal_mol": -405353.6966911093,
+      "R_solvent_kcal_mol": -103.86776423371072,
+      "R_model_kcal_mol": -405457.5644553434,
+      "work_Ca_kcal_mol": -3.6953387316316366,
+      "work_La_kcal_mol": -11.884436869993806
+    }
+  ],
+  "pools": [
+    {
+      "protein": "c5axv8-pqq-la_model",
+      "context": "original",
+      "pool": "origin",
+      "geometry_order": [
+        "origin"
+      ],
+      "available": true,
+      "mathematical": {
+        "Ca": {
+          "geometry": "origin",
+          "E_model_kcal_mol": -3489078.5833271286,
+          "work_kcal_mol": 0.0
+        },
+        "La": {
+          "geometry": "origin",
+          "E_model_kcal_mol": -3083624.674273217,
+          "work_kcal_mol": 0.0
+        },
+        "R_model_kcal_mol": -405453.90905391145
+      },
+      "operational": {
+        "Ca": {
+          "geometry": "origin",
+          "E_model_kcal_mol": -3489078.5833271286,
+          "work_kcal_mol": 0.0
+        },
+        "La": {
+          "geometry": "origin",
+          "E_model_kcal_mol": -3083624.674273217,
+          "work_kcal_mol": 0.0
+        },
+        "R_model_kcal_mol": -405453.90905391145
+      }
+    },
+    {
+      "protein": "c5axv8-pqq-la_model",
+      "context": "original",
+      "pool": "original_three",
+      "geometry_order": [
+        "origin",
+        "original_adaptive_Ca",
+        "original_adaptive_La"
+      ],
+      "available": true,
+      "mathematical": {
+        "Ca": {
+          "geometry": "original_adaptive_La",
+          "E_model_kcal_mol": -3489082.3651969624,
+          "work_kcal_mol": -3.7818698338232934
+        },
+        "La": {
+          "geometry": "original_adaptive_La",
+          "E_model_kcal_mol": -3083627.1179063376,
+          "work_kcal_mol": -2.443633120507002
+        },
+        "R_model_kcal_mol": -405455.2472906248
+      },
+      "operational": {
+        "Ca": {
+          "geometry": "original_adaptive_La",
+          "E_model_kcal_mol": -3489082.3651969624,
+          "work_kcal_mol": -3.7818698338232934
+        },
+        "La": {
+          "geometry": "original_adaptive_La",
+          "E_model_kcal_mol": -3083627.1179063376,
+          "work_kcal_mol": -2.443633120507002
+        },
+        "R_model_kcal_mol": -405455.2472906248
+      }
+    },
+    {
+      "protein": "c5axv8-pqq-la_model",
+      "context": "original",
+      "pool": "expanded_three",
+      "geometry_order": [
+        "origin",
+        "expanded_adaptive_Ca",
+        "expanded_adaptive_La"
+      ],
+      "available": true,
+      "mathematical": {
+        "Ca": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -3489084.0859466856,
+          "work_kcal_mol": -5.502619557082653
+        },
+        "La": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -3083629.5928195682,
+          "work_kcal_mol": -4.918546351138502
+        },
+        "R_model_kcal_mol": -405454.4931271174
+      },
+      "operational": {
+        "Ca": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -3489084.0859466856,
+          "work_kcal_mol": -5.502619557082653
+        },
+        "La": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -3083629.5928195682,
+          "work_kcal_mol": -4.918546351138502
+        },
+        "R_model_kcal_mol": -405454.4931271174
+      }
+    },
+    {
+      "protein": "c5axv8-pqq-la_model",
+      "context": "original",
+      "pool": "common_five",
+      "geometry_order": [
+        "origin",
+        "original_adaptive_Ca",
+        "original_adaptive_La",
+        "expanded_adaptive_Ca",
+        "expanded_adaptive_La"
+      ],
+      "available": true,
+      "mathematical": {
+        "Ca": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -3489084.0859466856,
+          "work_kcal_mol": -5.502619557082653
+        },
+        "La": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -3083629.5928195682,
+          "work_kcal_mol": -4.918546351138502
+        },
+        "R_model_kcal_mol": -405454.4931271174
+      },
+      "operational": {
+        "Ca": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -3489084.0859466856,
+          "work_kcal_mol": -5.502619557082653
+        },
+        "La": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -3083629.5928195682,
+          "work_kcal_mol": -4.918546351138502
+        },
+        "R_model_kcal_mol": -405454.4931271174
+      }
+    },
+    {
+      "protein": "c5axv8-pqq-la_model",
+      "context": "expanded",
+      "pool": "origin",
+      "geometry_order": [
+        "origin"
+      ],
+      "available": true,
+      "mathematical": {
+        "Ca": {
+          "geometry": "origin",
+          "E_model_kcal_mol": -4251299.60066932,
+          "work_kcal_mol": 0.0
+        },
+        "La": {
+          "geometry": "origin",
+          "E_model_kcal_mol": -3845846.0225995514,
+          "work_kcal_mol": 0.0
+        },
+        "R_model_kcal_mol": -405453.5780697684
+      },
+      "operational": {
+        "Ca": {
+          "geometry": "origin",
+          "E_model_kcal_mol": -4251299.60066932,
+          "work_kcal_mol": 0.0
+        },
+        "La": {
+          "geometry": "origin",
+          "E_model_kcal_mol": -3845846.0225995514,
+          "work_kcal_mol": 0.0
+        },
+        "R_model_kcal_mol": -405453.5780697684
+      }
+    },
+    {
+      "protein": "c5axv8-pqq-la_model",
+      "context": "expanded",
+      "pool": "original_three",
+      "geometry_order": [
+        "origin",
+        "original_adaptive_Ca",
+        "original_adaptive_La"
+      ],
+      "available": true,
+      "mathematical": {
+        "Ca": {
+          "geometry": "original_adaptive_La",
+          "E_model_kcal_mol": -4251302.992840438,
+          "work_kcal_mol": -3.3921711184084415
+        },
+        "La": {
+          "geometry": "original_adaptive_La",
+          "E_model_kcal_mol": -3845848.1382064475,
+          "work_kcal_mol": -2.1156068961136043
+        },
+        "R_model_kcal_mol": -405454.8546339907
+      },
+      "operational": {
+        "Ca": {
+          "geometry": "original_adaptive_La",
+          "E_model_kcal_mol": -4251302.992840438,
+          "work_kcal_mol": -3.3921711184084415
+        },
+        "La": {
+          "geometry": "original_adaptive_La",
+          "E_model_kcal_mol": -3845848.1382064475,
+          "work_kcal_mol": -2.1156068961136043
+        },
+        "R_model_kcal_mol": -405454.8546339907
+      }
+    },
+    {
+      "protein": "c5axv8-pqq-la_model",
+      "context": "expanded",
+      "pool": "expanded_three",
+      "geometry_order": [
+        "origin",
+        "expanded_adaptive_Ca",
+        "expanded_adaptive_La"
+      ],
+      "available": true,
+      "mathematical": {
+        "Ca": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -4251305.190403973,
+          "work_kcal_mol": -5.589734653010964
+        },
+        "La": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -3845851.0981196766,
+          "work_kcal_mol": -5.075520125217736
+        },
+        "R_model_kcal_mol": -405454.0922842962
+      },
+      "operational": {
+        "Ca": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -4251305.190403973,
+          "work_kcal_mol": -5.589734653010964
+        },
+        "La": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -3845851.0981196766,
+          "work_kcal_mol": -5.075520125217736
+        },
+        "R_model_kcal_mol": -405454.0922842962
+      }
+    },
+    {
+      "protein": "c5axv8-pqq-la_model",
+      "context": "expanded",
+      "pool": "common_five",
+      "geometry_order": [
+        "origin",
+        "original_adaptive_Ca",
+        "original_adaptive_La",
+        "expanded_adaptive_Ca",
+        "expanded_adaptive_La"
+      ],
+      "available": true,
+      "mathematical": {
+        "Ca": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -4251305.190403973,
+          "work_kcal_mol": -5.589734653010964
+        },
+        "La": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -3845851.0981196766,
+          "work_kcal_mol": -5.075520125217736
+        },
+        "R_model_kcal_mol": -405454.0922842962
+      },
+      "operational": {
+        "Ca": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -4251305.190403973,
+          "work_kcal_mol": -5.589734653010964
+        },
+        "La": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -3845851.0981196766,
+          "work_kcal_mol": -5.075520125217736
+        },
+        "R_model_kcal_mol": -405454.0922842962
+      }
+    },
+    {
+      "protein": "q9z4j7-pqq-la_model",
+      "context": "original",
+      "pool": "origin",
+      "geometry_order": [
+        "origin"
+      ],
+      "available": true,
+      "mathematical": {
+        "Ca": {
+          "geometry": "origin",
+          "E_model_kcal_mol": -3047645.735490039,
+          "work_kcal_mol": 0.0
+        },
+        "La": {
+          "geometry": "origin",
+          "E_model_kcal_mol": -2642182.9586544116,
+          "work_kcal_mol": 0.0
+        },
+        "R_model_kcal_mol": -405462.7768356274
+      },
+      "operational": {
+        "Ca": {
+          "geometry": "origin",
+          "E_model_kcal_mol": -3047645.735490039,
+          "work_kcal_mol": 0.0
+        },
+        "La": {
+          "geometry": "origin",
+          "E_model_kcal_mol": -2642182.9586544116,
+          "work_kcal_mol": 0.0
+        },
+        "R_model_kcal_mol": -405462.7768356274
+      }
+    },
+    {
+      "protein": "q9z4j7-pqq-la_model",
+      "context": "original",
+      "pool": "original_three",
+      "geometry_order": [
+        "origin",
+        "original_adaptive_Ca",
+        "original_adaptive_La"
+      ],
+      "available": true,
+      "mathematical": {
+        "Ca": {
+          "geometry": "original_adaptive_La",
+          "E_model_kcal_mol": -3047649.5652591363,
+          "work_kcal_mol": -3.8297690972685814
+        },
+        "La": {
+          "geometry": "original_adaptive_La",
+          "E_model_kcal_mol": -2642198.874570501,
+          "work_kcal_mol": -15.915916089434177
+        },
+        "R_model_kcal_mol": -405450.6906886352
+      },
+      "operational": {
+        "Ca": {
+          "geometry": "original_adaptive_La",
+          "E_model_kcal_mol": -3047649.5652591363,
+          "work_kcal_mol": -3.8297690972685814
+        },
+        "La": {
+          "geometry": "original_adaptive_La",
+          "E_model_kcal_mol": -2642198.874570501,
+          "work_kcal_mol": -15.915916089434177
+        },
+        "R_model_kcal_mol": -405450.6906886352
+      }
+    },
+    {
+      "protein": "q9z4j7-pqq-la_model",
+      "context": "original",
+      "pool": "expanded_three",
+      "geometry_order": [
+        "origin",
+        "expanded_adaptive_Ca",
+        "expanded_adaptive_La"
+      ],
+      "available": true,
+      "mathematical": {
+        "Ca": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -3047649.653502795,
+          "work_kcal_mol": -3.918012755922973
+        },
+        "La": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -2642194.722955066,
+          "work_kcal_mol": -11.764300654176623
+        },
+        "R_model_kcal_mol": -405454.93054772913
+      },
+      "operational": {
+        "Ca": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -3047649.653502795,
+          "work_kcal_mol": -3.918012755922973
+        },
+        "La": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -2642194.722955066,
+          "work_kcal_mol": -11.764300654176623
+        },
+        "R_model_kcal_mol": -405454.93054772913
+      }
+    },
+    {
+      "protein": "q9z4j7-pqq-la_model",
+      "context": "original",
+      "pool": "common_five",
+      "geometry_order": [
+        "origin",
+        "original_adaptive_Ca",
+        "original_adaptive_La",
+        "expanded_adaptive_Ca",
+        "expanded_adaptive_La"
+      ],
+      "available": true,
+      "mathematical": {
+        "Ca": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -3047649.653502795,
+          "work_kcal_mol": -3.918012755922973
+        },
+        "La": {
+          "geometry": "original_adaptive_La",
+          "E_model_kcal_mol": -2642198.874570501,
+          "work_kcal_mol": -15.915916089434177
+        },
+        "R_model_kcal_mol": -405450.7789322939
+      },
+      "operational": {
+        "Ca": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -3047649.653502795,
+          "work_kcal_mol": -3.918012755922973
+        },
+        "La": {
+          "geometry": "original_adaptive_La",
+          "E_model_kcal_mol": -2642198.874570501,
+          "work_kcal_mol": -15.915916089434177
+        },
+        "R_model_kcal_mol": -405450.7789322939
+      }
+    },
+    {
+      "protein": "q9z4j7-pqq-la_model",
+      "context": "expanded",
+      "pool": "origin",
+      "geometry_order": [
+        "origin"
+      ],
+      "available": true,
+      "mathematical": {
+        "Ca": {
+          "geometry": "origin",
+          "E_model_kcal_mol": -4217015.760368704,
+          "work_kcal_mol": 0.0
+        },
+        "La": {
+          "geometry": "origin",
+          "E_model_kcal_mol": -3811550.006815222,
+          "work_kcal_mol": 0.0
+        },
+        "R_model_kcal_mol": -405465.7535534818
+      },
+      "operational": {
+        "Ca": {
+          "geometry": "origin",
+          "E_model_kcal_mol": -4217015.760368704,
+          "work_kcal_mol": 0.0
+        },
+        "La": {
+          "geometry": "origin",
+          "E_model_kcal_mol": -3811550.006815222,
+          "work_kcal_mol": 0.0
+        },
+        "R_model_kcal_mol": -405465.7535534818
+      }
+    },
+    {
+      "protein": "q9z4j7-pqq-la_model",
+      "context": "expanded",
+      "pool": "original_three",
+      "geometry_order": [
+        "origin",
+        "original_adaptive_Ca",
+        "original_adaptive_La"
+      ],
+      "available": true,
+      "mathematical": {
+        "Ca": {
+          "geometry": "original_adaptive_La",
+          "E_model_kcal_mol": -4217017.739950959,
+          "work_kcal_mol": -1.9795822547748685
+        },
+        "La": {
+          "geometry": "original_adaptive_La",
+          "E_model_kcal_mol": -3811564.0981594026,
+          "work_kcal_mol": -14.091344180516899
+        },
+        "R_model_kcal_mol": -405453.64179155603
+      },
+      "operational": {
+        "Ca": {
+          "geometry": "original_adaptive_La",
+          "E_model_kcal_mol": -4217017.739950959,
+          "work_kcal_mol": -1.9795822547748685
+        },
+        "La": {
+          "geometry": "original_adaptive_La",
+          "E_model_kcal_mol": -3811564.0981594026,
+          "work_kcal_mol": -14.091344180516899
+        },
+        "R_model_kcal_mol": -405453.64179155603
+      }
+    },
+    {
+      "protein": "q9z4j7-pqq-la_model",
+      "context": "expanded",
+      "pool": "expanded_three",
+      "geometry_order": [
+        "origin",
+        "expanded_adaptive_Ca",
+        "expanded_adaptive_La"
+      ],
+      "available": true,
+      "mathematical": {
+        "Ca": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -4217019.4557074355,
+          "work_kcal_mol": -3.6953387316316366
+        },
+        "La": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -3811561.891252092,
+          "work_kcal_mol": -11.884436869993806
+        },
+        "R_model_kcal_mol": -405457.5644553434
+      },
+      "operational": {
+        "Ca": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -4217019.4557074355,
+          "work_kcal_mol": -3.6953387316316366
+        },
+        "La": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -3811561.891252092,
+          "work_kcal_mol": -11.884436869993806
+        },
+        "R_model_kcal_mol": -405457.5644553434
+      }
+    },
+    {
+      "protein": "q9z4j7-pqq-la_model",
+      "context": "expanded",
+      "pool": "common_five",
+      "geometry_order": [
+        "origin",
+        "original_adaptive_Ca",
+        "original_adaptive_La",
+        "expanded_adaptive_Ca",
+        "expanded_adaptive_La"
+      ],
+      "available": true,
+      "mathematical": {
+        "Ca": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -4217019.4557074355,
+          "work_kcal_mol": -3.6953387316316366
+        },
+        "La": {
+          "geometry": "original_adaptive_La",
+          "E_model_kcal_mol": -3811564.0981594026,
+          "work_kcal_mol": -14.091344180516899
+        },
+        "R_model_kcal_mol": -405455.3575480329
+      },
+      "operational": {
+        "Ca": {
+          "geometry": "expanded_adaptive_La",
+          "E_model_kcal_mol": -4217019.4557074355,
+          "work_kcal_mol": -3.6953387316316366
+        },
+        "La": {
+          "geometry": "original_adaptive_La",
+          "E_model_kcal_mol": -3811564.0981594026,
+          "work_kcal_mol": -14.091344180516899
+        },
+        "R_model_kcal_mol": -405455.3575480329
+      }
+    }
+  ],
+  "effects": [
+    {
+      "protein": "c5axv8-pqq-la_model",
+      "geometry": "origin",
+      "MACE_context_effect_kcal_mol": 0.39009939349489287,
+      "MACE_motion_work_original_kcal_mol": 0.0,
+      "MACE_motion_work_expanded_kcal_mol": 0.0,
+      "MACE_interaction_kcal_mol": 0.0,
+      "solvent_context_effect_kcal_mol": -0.0591152504095902,
+      "solvent_motion_work_original_kcal_mol": 0.0,
+      "solvent_motion_work_expanded_kcal_mol": 0.0,
+      "solvent_interaction_kcal_mol": 0.0,
+      "model_context_effect_kcal_mol": 0.3309841430746019,
+      "model_motion_work_original_kcal_mol": 0.0,
+      "model_motion_work_expanded_kcal_mol": 0.0,
+      "model_interaction_kcal_mol": 0.0
+    },
+    {
+      "protein": "c5axv8-pqq-la_model",
+      "geometry": "original_adaptive_Ca",
+      "MACE_context_effect_kcal_mol": 0.5206704846932553,
+      "MACE_motion_work_original_kcal_mol": -9.693282064807136,
+      "MACE_motion_work_expanded_kcal_mol": -9.562710973608773,
+      "MACE_interaction_kcal_mol": 0.1305710911983624,
+      "solvent_context_effect_kcal_mol": 0.028280800875208456,
+      "solvent_motion_work_original_kcal_mol": 0.8125232879910271,
+      "solvent_motion_work_expanded_kcal_mol": 0.8999193392758258,
+      "solvent_interaction_kcal_mol": 0.08739605128479866,
+      "model_context_effect_kcal_mol": 0.5489512863568962,
+      "model_motion_work_original_kcal_mol": -8.880758776795119,
+      "model_motion_work_expanded_kcal_mol": -8.662791633512825,
+      "model_interaction_kcal_mol": 0.21796714328229427
+    },
+    {
+      "protein": "c5axv8-pqq-la_model",
+      "geometry": "original_adaptive_La",
+      "MACE_context_effect_kcal_mol": 0.44869438430760056,
+      "MACE_motion_work_original_kcal_mol": -1.1452644786331803,
+      "MACE_motion_work_expanded_kcal_mol": -1.0866694878204726,
+      "MACE_interaction_kcal_mol": 0.05859499081270769,
+      "solvent_context_effect_kcal_mol": -0.05603775002538214,
+      "solvent_motion_work_original_kcal_mol": -0.19297223560093357,
+      "solvent_motion_work_expanded_kcal_mol": -0.1898947352167255,
+      "solvent_interaction_kcal_mol": 0.003077500384208065,
+      "model_context_effect_kcal_mol": 0.3926566340960562,
+      "model_motion_work_original_kcal_mol": -1.3382367133162916,
+      "model_motion_work_expanded_kcal_mol": -1.2765642222948372,
+      "model_interaction_kcal_mol": 0.061672491021454334
+    },
+    {
+      "protein": "c5axv8-pqq-la_model",
+      "geometry": "expanded_adaptive_Ca",
+      "MACE_context_effect_kcal_mol": 0.614538824534975,
+      "MACE_motion_work_original_kcal_mol": -8.941665737133007,
+      "MACE_motion_work_expanded_kcal_mol": -8.717226306092925,
+      "MACE_interaction_kcal_mol": 0.22443943104008213,
+      "solvent_context_effect_kcal_mol": -0.13801008636359313,
+      "solvent_motion_work_original_kcal_mol": 2.861457221857421,
+      "solvent_motion_work_expanded_kcal_mol": 2.782562385903418,
+      "solvent_interaction_kcal_mol": -0.07889483595400293,
+      "model_context_effect_kcal_mol": 0.4765287386253476,
+      "model_motion_work_original_kcal_mol": -6.080208514817059,
+      "model_motion_work_expanded_kcal_mol": -5.934663919266313,
+      "model_interaction_kcal_mol": 0.14554459555074573
+    },
+    {
+      "protein": "c5axv8-pqq-la_model",
+      "geometry": "expanded_adaptive_La",
+      "MACE_context_effect_kcal_mol": 0.5521445593331009,
+      "MACE_motion_work_original_kcal_mol": -2.428015684185084,
+      "MACE_motion_work_expanded_kcal_mol": -2.265970518346876,
+      "MACE_interaction_kcal_mol": 0.16204516583820805,
+      "solvent_context_effect_kcal_mol": -0.15130173786636192,
+      "solvent_motion_work_original_kcal_mol": 1.843942477876837,
+      "solvent_motion_work_expanded_kcal_mol": 1.7517559904200652,
+      "solvent_interaction_kcal_mol": -0.09218648745677172,
+      "model_context_effect_kcal_mol": 0.40084282122552395,
+      "model_motion_work_original_kcal_mol": -0.5840732059441507,
+      "model_motion_work_expanded_kcal_mol": -0.5142145277932286,
+      "model_interaction_kcal_mol": 0.06985867815092206
+    },
+    {
+      "protein": "q9z4j7-pqq-la_model",
+      "geometry": "origin",
+      "MACE_context_effect_kcal_mol": -11.693343581689987,
+      "MACE_motion_work_original_kcal_mol": 0.0,
+      "MACE_motion_work_expanded_kcal_mol": 0.0,
+      "MACE_interaction_kcal_mol": 0.0,
+      "solvent_context_effect_kcal_mol": 8.716625727437915,
+      "solvent_motion_work_original_kcal_mol": 0.0,
+      "solvent_motion_work_expanded_kcal_mol": 0.0,
+      "solvent_interaction_kcal_mol": 0.0,
+      "model_context_effect_kcal_mol": -2.976717854384333,
+      "model_motion_work_original_kcal_mol": 0.0,
+      "model_motion_work_expanded_kcal_mol": 0.0,
+      "model_interaction_kcal_mol": 0.0
+    },
+    {
+      "protein": "q9z4j7-pqq-la_model",
+      "geometry": "original_adaptive_Ca",
+      "MACE_context_effect_kcal_mol": -11.371782365662511,
+      "MACE_motion_work_original_kcal_mol": 6.681415644707158,
+      "MACE_motion_work_expanded_kcal_mol": 7.002976860734634,
+      "MACE_interaction_kcal_mol": 0.3215612160274759,
+      "solvent_context_effect_kcal_mol": 8.547864621559285,
+      "solvent_motion_work_original_kcal_mol": 3.555156039390937,
+      "solvent_motion_work_expanded_kcal_mol": 3.3863949335123067,
+      "solvent_interaction_kcal_mol": -0.16876110587863025,
+      "model_context_effect_kcal_mol": -2.8239177437499166,
+      "model_motion_work_original_kcal_mol": 10.23657168354839,
+      "model_motion_work_expanded_kcal_mol": 10.389371794182807,
+      "model_interaction_kcal_mol": 0.15280011063441634
+    },
+    {
+      "protein": "q9z4j7-pqq-la_model",
+      "geometry": "original_adaptive_La",
+      "MACE_context_effect_kcal_mol": -11.379372358787805,
+      "MACE_motion_work_original_kcal_mol": 8.517684348567855,
+      "MACE_motion_work_expanded_kcal_mol": 8.831655571470037,
+      "MACE_interaction_kcal_mol": 0.3139712229021825,
+      "solvent_context_effect_kcal_mol": 8.428269438932773,
+      "solvent_motion_work_original_kcal_mol": 3.5684626432034037,
+      "solvent_motion_work_expanded_kcal_mol": 3.280106354698262,
+      "solvent_interaction_kcal_mol": -0.28835628850514183,
+      "model_context_effect_kcal_mol": -2.951102920807898,
+      "model_motion_work_original_kcal_mol": 12.086146992165595,
+      "model_motion_work_expanded_kcal_mol": 12.11176192574203,
+      "model_interaction_kcal_mol": 0.02561493357643485
+    },
+    {
+      "protein": "q9z4j7-pqq-la_model",
+      "geometry": "expanded_adaptive_Ca",
+      "MACE_context_effect_kcal_mol": -11.424057168187574,
+      "MACE_motion_work_original_kcal_mol": 4.9593362041632645,
+      "MACE_motion_work_expanded_kcal_mol": 5.228622617665678,
+      "MACE_interaction_kcal_mol": 0.2692864135024138,
+      "solvent_context_effect_kcal_mol": 8.837441291794292,
+      "solvent_motion_work_original_kcal_mol": 2.7760181303431466,
+      "solvent_motion_work_expanded_kcal_mol": 2.8968336946995237,
+      "solvent_interaction_kcal_mol": 0.12081556435637708,
+      "model_context_effect_kcal_mol": -2.5866158767603338,
+      "model_motion_work_original_kcal_mol": 7.735354334581643,
+      "model_motion_work_expanded_kcal_mol": 8.125456312205642,
+      "model_interaction_kcal_mol": 0.3901019776239991
+    },
+    {
+      "protein": "q9z4j7-pqq-la_model",
+      "geometry": "expanded_adaptive_La",
+      "MACE_context_effect_kcal_mol": -11.450313737092074,
+      "MACE_motion_work_original_kcal_mol": 5.4710684232995845,
+      "MACE_motion_work_expanded_kcal_mol": 5.714098267897498,
+      "MACE_interaction_kcal_mol": 0.24302984459791332,
+      "solvent_context_effect_kcal_mol": 8.816406123116067,
+      "solvent_motion_work_original_kcal_mol": 2.375219475313571,
+      "solvent_motion_work_expanded_kcal_mol": 2.4749998709917236,
+      "solvent_interaction_kcal_mol": 0.09978039567815244,
+      "model_context_effect_kcal_mol": -2.633907614275813,
+      "model_motion_work_original_kcal_mol": 7.8462878982536495,
+      "model_motion_work_expanded_kcal_mol": 8.18909813836217,
+      "model_interaction_kcal_mol": 0.3428102401085198
+    }
+  ],
+  "anchor_ordering": [
+    {
+      "context": "original",
+      "pool": "origin",
+      "two_anchor_La_minus_Ca_kcal_mol": 8.867781715933233,
+      "is_full_canonical_gap": false
+    },
+    {
+      "context": "original",
+      "pool": "original_three",
+      "two_anchor_La_minus_Ca_kcal_mol": -4.556601989548653,
+      "is_full_canonical_gap": false
+    },
+    {
+      "context": "original",
+      "pool": "expanded_three",
+      "two_anchor_La_minus_Ca_kcal_mol": 0.43742061173543334,
+      "is_full_canonical_gap": false
+    },
+    {
+      "context": "original",
+      "pool": "common_five",
+      "two_anchor_La_minus_Ca_kcal_mol": -3.7141948235221207,
+      "is_full_canonical_gap": false
+    },
+    {
+      "context": "expanded",
+      "pool": "origin",
+      "two_anchor_La_minus_Ca_kcal_mol": 12.175483713392168,
+      "is_full_canonical_gap": false
+    },
+    {
+      "context": "expanded",
+      "pool": "original_three",
+      "two_anchor_La_minus_Ca_kcal_mol": -1.212842434644699,
+      "is_full_canonical_gap": false
+    },
+    {
+      "context": "expanded",
+      "pool": "expanded_three",
+      "two_anchor_La_minus_Ca_kcal_mol": 3.4721710472367704,
+      "is_full_canonical_gap": false
+    },
+    {
+      "context": "expanded",
+      "pool": "common_five",
+      "two_anchor_La_minus_Ca_kcal_mol": 1.2652637367136776,
+      "is_full_canonical_gap": false
+    }
+  ]
+}

@@ -6,10 +6,12 @@ corrected-discrimination computation on the login node, at most16 TOTAL numerica
 threads across all owned sessions/subprocesses. It supersedes older Slurm-only
 rules for this temporary scope. Root allocates the aggregate allowance; children inherit their parent's share.
 Corrected canonical and structural-transfer workers are complete; no resubmission.
-The CPU force/proposal scout passed and released its eight threads. The finite
-106-source Ca-conditioned batch is being prepared, not launched yet. Its planned
-two warm model workers use seven active numerical threads each, leaving two
-for other work. No new time/call cap or production change.
+The CPU force/proposal scout passed. The finite106-source Ca-conditioned batch
+is launched as owned worker1620438, completion watcher1620439. Its two warm model
+workers use seven active numerical threads each, leaving two for all other work.
+The runner first rechecks frozen inputs and requires four actual replay gates.
+Read cpu_proposal_batch_preflight_v1/LAUNCH.json under the current workspace;
+do not duplicate it. No new time/call cap or production change.
 Read `diagnostics/orca_parameter_audit_20261012/CURRENT.md` and actual scout receipts.
 Do not
 fabricate Slurm environment variables, modify other users' jobs, overwrite

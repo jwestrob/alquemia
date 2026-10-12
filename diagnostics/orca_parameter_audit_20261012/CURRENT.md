@@ -96,7 +96,9 @@ The real Ca inventory125 contains110 original supported sources and15 retained
 PQQ exclusions. Only3had exact existing expanded pools. Curie's same-policy
 preparation of107missing sources admitted106; MMOL2048 Ca sample0 additionally
 fails unsupported-disulfide-partner chemistry. Total potential coverage109/125,
-with16 explicit exclusions. No repair, new fold or new energetic result implied.
+with16 explicit exclusions. These leave22 represented biological groups out
+of25 declared: all five Ca folds of C5AXV8, Q88JH5 and Q9Z4J7 are excluded.
+No repair, new fold or new energetic result implied.
 Uses each protein's frozen canonical La-union4.3Å selection, as the old probes
 did. Current preparation:
 `workspaces/orca_parameter_audit_20261012/ca_conditioned_preparation_v3/`.
@@ -113,16 +115,48 @@ combined processCPU-s at eight active numerical threads; zero failures/GPU.
 Both processes are terminal. Read cpu_proposal_feasibility/REPORT.md and
 SCOUT_RESULT.json (commit2cc4bf2), independently checked by Gauss.
 
-Curie and Heisenberg are preparing one finite106-source extension: unchanged
-four-mode policy, original optimizer parent/kernel, maxiter200, common
+The finite106-source extension is now launched (12October, worker1620438,
+start ticks42612665). Completion watcher1620439 is armed on the actual root
+thread with event `corrected-ca-conditioned-proposals-v1`. Snapshot/manifest
+remain immutable; do not duplicate the batch. Initial launch performs its
+file/geometry preflight, then both workers must pass four actual seven-thread
+parity replays before either enters new-source computation. All four actual replay gates now pass: energies identical, maximum force
+residual8.88e-14eV/Å. Both lanes have entered new-source execution; first new
+source completion remains under observation. No new composite prediction yet.
+
+Unchanged four-mode policy, original optimizer parent/kernel, maxiter200, common
 origin/Ca/La pool and cross-scoring. Three completed Ca probes will be reused;
 all125 original sources stay in the denominator. Frozen expanded canonical bands
-are not refitted. No new folds, chemistry, starts, time/call ceiling or production
-change. Planned two warm CPU model workers use seven active numerical threads
+are not refitted. Two warm CPU model workers use seven active numerical threads
 each, with their one-thread optimizer parents active only while their respective
-model waits; aggregate at most14, leaving two headroom. Batch not launched yet.
-Root owns final manifest review, launch/completion wake and the separate corrected
-GFN2 stage. Agent preparation/code review performs no additional molecular calls.
+model waits; aggregate at most14, leaving two for all other numerical work.
+No new folds, chemistry, optimizer starts per source, time/call ceiling or
+production change. Scoped runner commitc3ae2f8; independent review passed.
+
+Execution workspace (its name records the successful preparation attempt):
+`workspaces/orca_parameter_audit_20261012/cpu_proposal_batch_preflight_v1/`.
+Manifest SHA256 `3b3c9c1fcd9c094790125a8354521954fbcb82973492c0b998b2386569fc44f8`.
+LAUNCH.json records exact worker and wake commands/PIDs. Source
+`cpu_proposal_batch/COMMANDS.md` gives execution/restart instructions.
+The failed initial population-order preflight is preserved separately; zero
+molecular calls occurred in it. Current dry-run admits all106 sources,169–215atoms,
+maximum q0 mapping residual1.78e-15Å. Five file-only recovery checks passed.
+
+Root owns first-source observation, integration and the subsequent corrected
+GFN2 launch after the MACE worker releases its threads. Curie's minimal GFN2
+adapter is being checked with actual archived parser fixtures; it runs no new
+molecular work and uses at most one remaining thread. It will retain all125
+rows, separate valid origins from unavailable pools, use exactly frozen
+canonical bands and make no new Ca-triple aggregation. The final MACE collection
+alone is not a composite score or classification result.
+
+Next read-only command:
+```bash
+tail -n 12 workspaces/orca_parameter_audit_20261012/cpu_proposal_batch_preflight_v1/ROOT_WORKER.log
+```
+On the completion wake read its FINAL_COLLECTION.json, source results and
+actual remaining process identities before preparing/executing GFN2. Never
+restart optimizer calls merely because a watcher/client died.
 
 The q9 structural diagnosis is complete in `q9_response_diagnosis/REPORT.md`.
 CN7/denticity stay unchanged; two included hydrogen-bond geometries change in
@@ -142,7 +176,7 @@ python scripts/compare_context_factorial.py \
 ## Ownership and safeguards
 
 Jacob cleared the pause and explicitly authorizes<=16 TOTAL numerical login
-threads. Recorded verbatim atop AGENTS.md. CPU scout is terminal. Planned finite Ca extension owns at most14 after launch;
+threads. Recorded verbatim atop AGENTS.md. CPU scout is terminal. Active finite Ca extension owns at most14;
 all other numerical work must share the remaining two.
 Earlier runtime/factorial/reference workers and all independent audits are
 complete. Ca-conditioned preparation and CPU qualification are complete. Independent guard/runtime/factorial/expanded-launch reviews

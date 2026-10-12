@@ -13,13 +13,17 @@ def main():
     parser.add_argument('--directory', required=True)
     parser.add_argument('--stage', required=True, choices=['canonical', 'transfer', 'proposals'])
     parser.add_argument('--result-name', help='Explicit terminal JSON filename within the run directory.')
+    parser.add_argument('--receipt-name', help='Unique receipt filename for an explicitly reviewed restart.')
     parser.add_argument('--event-name', help='Unique completion event identity.')
     parser.add_argument('--continuation', help='Recorded instructions for the receiving root; never executed here.')
     parser.add_argument('--thread', required=True)
     parser.add_argument('--codex', required=True)
     args = parser.parse_args()
     base = Path(args.directory).resolve()
-    receipt = base / (args.stage + '_completion_event.json')
+    receipt_name = args.receipt_name or args.stage + '_completion_event.json'
+    if Path(receipt_name).name != receipt_name:
+        raise ValueError('receipt-name must be a filename within the run directory')
+    receipt = base / receipt_name
     if receipt.exists():
         raise RuntimeError('Completion receipt exists; inspect before rearming.')
     name = args.result_name or ('CANONICAL_COLLECTION.json' if args.stage == 'canonical' else 'FINAL_COLLECTION.json')

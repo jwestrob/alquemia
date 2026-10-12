@@ -18,19 +18,25 @@ upstream failure cannot leave an unnoticed dependency waiting forever.
 
 The wrapper requires real `SLURM_JOB_ID` and `SLURM_CPUS_ON_NODE`, supports one
 node, and derives concurrency from allocated CPUs and the number of pending
-inputs. Root explicitly requested 64 CPU slots on a healthy 64-CPU node; the
+inputs. Root explicitly requested 12 CPU slots on a healthy 64-CPU node; the
 wrapper rejects a different allocation or a CPU affinity mask smaller than that
-allocation. The script requests `--ntasks=64 --nodes=1 -w node-64-768g-2` on
-`standard`, because the current scheduler does not automatically allocate every
-CPU with partition defaults. Read-only `scontrol` verified that node IDLE with
+allocation. The script requests `--ntasks=12 --nodes=1 -w node-64-768g-2` on
+`standard`, within the current account's permitted QOS limit of 12 CPUs per job.
+No account, QOS or partition switch evades this limit. Read-only `scontrol`
+verified that node IDLE with
 64 effective CPUs and no existing allocation. It is outside the known bad-node
-list. This permits 64 independent one-thread inputs when enough remain.
+list. This permits 12 independent one-thread inputs when enough remain.
 Each input still runs the pinned xTB then independent tblite
 backend sequentially through unchanged `context_factorial_gfn2.execute_point`.
 Each executor thread is bound to one distinct inherited CPU; child processes
 inherit this affinity and all numerical thread environment settings equal one.
 No molecular timeout, new iteration limit, RAM request, CPU-per-task flag or
 walltime is added. Partition defaults apply.
+
+The earlier 64-CPU proposal in commit `1d6f9f9` was never submitted or executed.
+Root's separate 14-CPU MACE submission was rejected with
+`QOSMaxCpuPerJobLimit`; subsequent account/QOS inspection established the
+12-CPU per-job limit. This wrapper revision changes only execution placement.
 
 Both preparation and execution have nonblocking ownership locks. Existing raw
 RESULT files are verified/reused; an existing incomplete point directory is

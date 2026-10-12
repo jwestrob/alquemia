@@ -34,7 +34,7 @@ def allocation():
     cpus = int(os.environ['SLURM_CPUS_ON_NODE'])
     nodes = int(os.environ.get('SLURM_JOB_NUM_NODES', os.environ.get('SLURM_NNODES', '1')))
     affinity = sorted(os.sched_getaffinity(0))
-    if nodes != 1 or cpus != 64 or len(affinity) < cpus:
+    if nodes != 1 or cpus != 12 or len(affinity) < cpus:
         raise RuntimeError(f'Unsupported allocation: nodes={nodes}, CPUs={cpus}, affinity={affinity}')
     return {
         'job_id': os.environ['SLURM_JOB_ID'], 'partition': os.environ.get('SLURM_JOB_PARTITION'),

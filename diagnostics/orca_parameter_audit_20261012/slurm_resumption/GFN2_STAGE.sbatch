@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH -p standard
 #SBATCH -J Nikasha-Ca-GFN2
-#SBATCH --ntasks=64
+#SBATCH --ntasks=12
 #SBATCH --nodes=1
 #SBATCH -w node-64-768g-2
 #SBATCH -o workspaces/orca_parameter_audit_20261012/GFN2_slurm_%j.out

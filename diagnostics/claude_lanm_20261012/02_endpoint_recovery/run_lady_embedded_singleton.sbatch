@@ -12,8 +12,9 @@
 #SBATCH --partition=standard
 #SBATCH --nodes=1
 #SBATCH --ntasks=12
-#SBATCH --cpus-per-task=1
 #SBATCH --no-requeue
+#SBATCH -o /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/claude_lanm_20261012/recovery_02_v1/slurm_%x_%j.out
+#SBATCH -e /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/claude_lanm_20261012/recovery_02_v1/slurm_%x_%j.err
 
 set -euo pipefail
 if [ "$#" -ne 1 ]; then

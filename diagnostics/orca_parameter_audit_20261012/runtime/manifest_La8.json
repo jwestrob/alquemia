@@ -1,0 +1,568 @@
+{
+  "case": "PQQSEQ_1bda0f218f8aa800bb74_AF3_seed101_sample2",
+  "coordinate_context": "adaptive_La",
+  "binary": {
+    "path": "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+    "sha256": "38b5f057452fef275c0a1b98d270ad03d0411dab70453820d1c678bd732f6c83"
+  },
+  "remote_root": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/runtime_qualification_v1",
+  "preflight": "Ca_vacuum_default",
+  "jobs": [
+    {
+      "id": "Ca_vacuum_default",
+      "metal": "Ca",
+      "medium": "vacuum",
+      "variant": "default",
+      "input_dir": "inputs/Ca_vacuum_default",
+      "expected": {
+        "charge": -6,
+        "multiplicity": 1,
+        "valence_electrons": 692,
+        "atoms": 222,
+        "basis_functions": 605,
+        "smear_temperature_K": 300,
+        "max_iterations": 500,
+        "tol_energy_hartree": 1e-10
+      },
+      "original_runtime_input": {
+        "path": "/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-09-23_Nikasha_PQQ/preparation_revision_4A/mapping_repair/workspaces/004/nikasha/scoring/shard-0000/execution/pool/solvent/shard_0/tasks/PQQSEQ_1bda0f218f8aa800bb74_AF3_seed101_sample2__Ca__at_adaptive_La__vacuum/endpoint.runtime.inp",
+        "local_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_native_followup_2026-10-09/recovered/9259b296785e237e728d92ccf435eb8a8dcb006caf8f283fd8a873a90229baf0__endpoint.runtime.inp",
+        "sha256": "9259b296785e237e728d92ccf435eb8a8dcb006caf8f283fd8a873a90229baf0"
+      },
+      "scored_xyz": {
+        "local_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_local_solvation_2026-10-09/Ca_vacuum/context.xyz",
+        "sha256": "4137cc9cce6beceb3b7fb3da860f50d86e4411564091fd0b3f9f7828cbbb66af",
+        "copied_byte_exact": true
+      },
+      "parameter_source": null,
+      "allowed_input_changes": [],
+      "historical_native_energy_hartree": -398.345284704513,
+      "historical_native_metal_charge_e": 0.6322521146703943,
+      "files": {
+        "core.xyz": {
+          "sha256": "4137cc9cce6beceb3b7fb3da860f50d86e4411564091fd0b3f9f7828cbbb66af",
+          "bytes": 11567
+        },
+        "endpoint.inp": {
+          "sha256": "9259b296785e237e728d92ccf435eb8a8dcb006caf8f283fd8a873a90229baf0",
+          "bytes": 208
+        }
+      },
+      "archived_receipt": {
+        "path": "/groups/banfield/users/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/native_reciprocal_controls/results/Ca_vacuum_default/receipt.json",
+        "sha256": "f081b02a8e05daef8d628e98f9f39a2dd018171592feeae51ed0b7087bdcd3b2",
+        "bytes": 9245
+      },
+      "archived_property": {
+        "path": "/groups/banfield/users/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/native_reciprocal_controls/results/Ca_vacuum_default/endpoint.property.txt",
+        "sha256": "9d8c099602b4a9fa915d56fbbb253161dcc957abd716fb4cbaec35d56e5e9ad3",
+        "bytes": 222220
+      },
+      "stage": "La8"
+    },
+    {
+      "id": "Ca_water_default",
+      "metal": "Ca",
+      "medium": "water",
+      "variant": "default",
+      "input_dir": "inputs/Ca_water_default",
+      "expected": {
+        "charge": -6,
+        "multiplicity": 1,
+        "valence_electrons": 692,
+        "atoms": 222,
+        "basis_functions": 605,
+        "smear_temperature_K": 300,
+        "max_iterations": 500,
+        "tol_energy_hartree": 1e-10
+      },
+      "original_runtime_input": {
+        "path": "/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-09-23_Nikasha_PQQ/preparation_revision_4A/mapping_repair/workspaces/004/nikasha/scoring/shard-0000/execution/pool/solvent/shard_0/tasks/PQQSEQ_1bda0f218f8aa800bb74_AF3_seed101_sample2__Ca__at_adaptive_La__alpb/endpoint.runtime.inp",
+        "local_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_native_followup_2026-10-09/recovered/331597c501707f1fcb46a6f9c3c11445f09338074c1dc1cf1cafa52acf58b0c6__endpoint.runtime.inp",
+        "sha256": "331597c501707f1fcb46a6f9c3c11445f09338074c1dc1cf1cafa52acf58b0c6"
+      },
+      "scored_xyz": {
+        "local_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_local_solvation_2026-10-09/Ca_vacuum/context.xyz",
+        "sha256": "4137cc9cce6beceb3b7fb3da860f50d86e4411564091fd0b3f9f7828cbbb66af",
+        "copied_byte_exact": true
+      },
+      "parameter_source": null,
+      "allowed_input_changes": [],
+      "historical_native_energy_hartree": -400.042243182428,
+      "historical_native_metal_charge_e": 0.5971350906516029,
+      "files": {
+        "core.xyz": {
+          "sha256": "4137cc9cce6beceb3b7fb3da860f50d86e4411564091fd0b3f9f7828cbbb66af",
+          "bytes": 11567
+        },
+        "endpoint.inp": {
+          "sha256": "331597c501707f1fcb46a6f9c3c11445f09338074c1dc1cf1cafa52acf58b0c6",
+          "bytes": 220
+        }
+      },
+      "archived_receipt": {
+        "path": "/groups/banfield/users/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/native_reciprocal_controls/results/Ca_water_default/receipt.json",
+        "sha256": "6e65654b2c81b01d479f704fb630819aac3edc5a6a37da683d2d8f96590dd9aa",
+        "bytes": 9244
+      },
+      "archived_property": {
+        "path": "/groups/banfield/users/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/native_reciprocal_controls/results/Ca_water_default/endpoint.property.txt",
+        "sha256": "f82e159eeccb193e0bf07a037d5c8dfd64fef0f77b9ed5ccd443321ec4264232",
+        "bytes": 222220
+      },
+      "stage": "La8"
+    },
+    {
+      "id": "La_vacuum_default",
+      "metal": "La",
+      "medium": "vacuum",
+      "variant": "default",
+      "input_dir": "inputs/La_vacuum_default",
+      "expected": {
+        "charge": -5,
+        "multiplicity": 1,
+        "valence_electrons": 692,
+        "atoms": 222,
+        "basis_functions": 605,
+        "smear_temperature_K": 300,
+        "max_iterations": 500,
+        "tol_energy_hartree": 1e-10
+      },
+      "original_runtime_input": {
+        "path": "/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-09-23_Nikasha_PQQ/preparation_revision_4A/mapping_repair/workspaces/004/nikasha/scoring/shard-0000/execution/pool/solvent/shard_0/tasks/PQQSEQ_1bda0f218f8aa800bb74_AF3_seed101_sample2__La__at_adaptive_La__vacuum/endpoint.runtime.inp",
+        "local_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_native_followup_2026-10-09/recovered/14257b1adf74380947f0a51ca13dbbc8fd44c6b4540d60929aefe98b74c20772__endpoint.runtime.inp",
+        "sha256": "14257b1adf74380947f0a51ca13dbbc8fd44c6b4540d60929aefe98b74c20772"
+      },
+      "scored_xyz": {
+        "local_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_local_solvation_2026-10-09/La_vacuum/context.xyz",
+        "sha256": "0e78c9d0c0188420b3888567fd3e24613b7f1eb0bfa01e72fa0b9f894fa4e8d1",
+        "copied_byte_exact": true
+      },
+      "parameter_source": null,
+      "allowed_input_changes": [],
+      "historical_native_energy_hartree": -400.305073021938,
+      "historical_native_metal_charge_e": 0.968772928548268,
+      "files": {
+        "core.xyz": {
+          "sha256": "0e78c9d0c0188420b3888567fd3e24613b7f1eb0bfa01e72fa0b9f894fa4e8d1",
+          "bytes": 11567
+        },
+        "endpoint.inp": {
+          "sha256": "14257b1adf74380947f0a51ca13dbbc8fd44c6b4540d60929aefe98b74c20772",
+          "bytes": 208
+        }
+      },
+      "archived_receipt": {
+        "path": "/groups/banfield/users/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/native_reciprocal_controls/results/La_vacuum_default/receipt.json",
+        "sha256": "fcad5543a7d0c14f32d502235fa6b079b17a2ea8696ab57c5aae0523ab7d4533",
+        "bytes": 9248
+      },
+      "archived_property": {
+        "path": "/groups/banfield/users/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/native_reciprocal_controls/results/La_vacuum_default/endpoint.property.txt",
+        "sha256": "b1d5ccddef7b05ae164eeca38e6cfd61ce1b49d0ff44823dc05792c7b70bc18e",
+        "bytes": 221605
+      },
+      "stage": "La8"
+    },
+    {
+      "id": "La_water_default",
+      "metal": "La",
+      "medium": "water",
+      "variant": "default",
+      "input_dir": "inputs/La_water_default",
+      "expected": {
+        "charge": -5,
+        "multiplicity": 1,
+        "valence_electrons": 692,
+        "atoms": 222,
+        "basis_functions": 605,
+        "smear_temperature_K": 300,
+        "max_iterations": 500,
+        "tol_energy_hartree": 1e-10
+      },
+      "original_runtime_input": {
+        "path": "/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-09-23_Nikasha_PQQ/preparation_revision_4A/mapping_repair/workspaces/004/nikasha/scoring/shard-0000/execution/pool/solvent/shard_0/tasks/PQQSEQ_1bda0f218f8aa800bb74_AF3_seed101_sample2__La__at_adaptive_La__alpb/endpoint.runtime.inp",
+        "local_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_native_followup_2026-10-09/recovered/d9dbc8c577d07beb508feb02fef6adf181a3654b975d0a27f3f4dcb01556e122__endpoint.runtime.inp",
+        "sha256": "d9dbc8c577d07beb508feb02fef6adf181a3654b975d0a27f3f4dcb01556e122"
+      },
+      "scored_xyz": {
+        "local_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_local_solvation_2026-10-09/La_vacuum/context.xyz",
+        "sha256": "0e78c9d0c0188420b3888567fd3e24613b7f1eb0bfa01e72fa0b9f894fa4e8d1",
+        "copied_byte_exact": true
+      },
+      "parameter_source": null,
+      "allowed_input_changes": [],
+      "historical_native_energy_hartree": -401.586099434573,
+      "historical_native_metal_charge_e": 1.002057387845759,
+      "files": {
+        "core.xyz": {
+          "sha256": "0e78c9d0c0188420b3888567fd3e24613b7f1eb0bfa01e72fa0b9f894fa4e8d1",
+          "bytes": 11567
+        },
+        "endpoint.inp": {
+          "sha256": "d9dbc8c577d07beb508feb02fef6adf181a3654b975d0a27f3f4dcb01556e122",
+          "bytes": 220
+        }
+      },
+      "archived_receipt": {
+        "path": "/groups/banfield/users/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/native_reciprocal_controls/results/La_water_default/receipt.json",
+        "sha256": "a49bc7b6139bcaa3bea81eee12d55a55964d870fb964abaec5a43e57290a1a6d",
+        "bytes": 9233
+      },
+      "archived_property": {
+        "path": "/groups/banfield/users/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/native_reciprocal_controls/results/La_water_default/endpoint.property.txt",
+        "sha256": "ce8423ceef2a49cc90574649d43a8e3967e0a52a462cf1ac5813e99eb96918ca",
+        "bytes": 221810
+      },
+      "stage": "La8"
+    },
+    {
+      "id": "La_vacuum_original",
+      "metal": "La",
+      "medium": "vacuum",
+      "variant": "original",
+      "input_dir": "inputs/La_vacuum_original",
+      "expected": {
+        "charge": -5,
+        "multiplicity": 1,
+        "valence_electrons": 692,
+        "atoms": 222,
+        "basis_functions": 605,
+        "smear_temperature_K": 300,
+        "max_iterations": 500,
+        "tol_energy_hartree": 1e-10
+      },
+      "original_runtime_input": {
+        "path": "/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-09-23_Nikasha_PQQ/preparation_revision_4A/mapping_repair/workspaces/004/nikasha/scoring/shard-0000/execution/pool/solvent/shard_0/tasks/PQQSEQ_1bda0f218f8aa800bb74_AF3_seed101_sample2__La__at_adaptive_La__vacuum/endpoint.runtime.inp",
+        "local_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_native_followup_2026-10-09/recovered/14257b1adf74380947f0a51ca13dbbc8fd44c6b4540d60929aefe98b74c20772__endpoint.runtime.inp",
+        "sha256": "14257b1adf74380947f0a51ca13dbbc8fd44c6b4540d60929aefe98b74c20772"
+      },
+      "scored_xyz": {
+        "local_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_local_solvation_2026-10-09/La_vacuum/context.xyz",
+        "sha256": "0e78c9d0c0188420b3888567fd3e24613b7f1eb0bfa01e72fa0b9f894fa4e8d1",
+        "copied_byte_exact": true
+      },
+      "parameter_source": {
+        "local_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_native_followup_2026-10-09/native_parameter_audit/native_original.xtb.json",
+        "sha256": "f3dac846a59238947d35c23ba5bdb40c19a34482fe9860e8e11bf9c00d719107"
+      },
+      "allowed_input_changes": [
+        "XTBParamFile control.xtb.json",
+        "ReadXTBParam false -> true",
+        "WriteXTBParam true -> false (preserve imported bytes)"
+      ],
+      "historical_native_energy_hartree": -400.305073021938,
+      "historical_native_metal_charge_e": 0.968772928548268,
+      "files": {
+        "control.xtb.json": {
+          "sha256": "f3dac846a59238947d35c23ba5bdb40c19a34482fe9860e8e11bf9c00d719107",
+          "bytes": 72450
+        },
+        "core.xyz": {
+          "sha256": "0e78c9d0c0188420b3888567fd3e24613b7f1eb0bfa01e72fa0b9f894fa4e8d1",
+          "bytes": 11567
+        },
+        "endpoint.inp": {
+          "sha256": "b96782d035b5103f03d5f8aaf024931e2d099eba207abc3b517ed57763532a51",
+          "bytes": 241
+        }
+      },
+      "archived_receipt": {
+        "path": "/groups/banfield/users/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/native_reciprocal_controls/results/La_vacuum_original/receipt.json",
+        "sha256": "c07964b23720fcdaed23e4b496de676995ba0e0bc751745dfcb58cd798c6307b",
+        "bytes": 9797
+      },
+      "archived_property": {
+        "path": "/groups/banfield/users/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/native_reciprocal_controls/results/La_vacuum_original/endpoint.property.txt",
+        "sha256": "19a659aa93e57b756680d83a82c1d8882b35eb55121b69f075a62bbfd51ee1a0",
+        "bytes": 221605
+      },
+      "stage": "La8"
+    },
+    {
+      "id": "La_water_original",
+      "metal": "La",
+      "medium": "water",
+      "variant": "original",
+      "input_dir": "inputs/La_water_original",
+      "expected": {
+        "charge": -5,
+        "multiplicity": 1,
+        "valence_electrons": 692,
+        "atoms": 222,
+        "basis_functions": 605,
+        "smear_temperature_K": 300,
+        "max_iterations": 500,
+        "tol_energy_hartree": 1e-10
+      },
+      "original_runtime_input": {
+        "path": "/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-09-23_Nikasha_PQQ/preparation_revision_4A/mapping_repair/workspaces/004/nikasha/scoring/shard-0000/execution/pool/solvent/shard_0/tasks/PQQSEQ_1bda0f218f8aa800bb74_AF3_seed101_sample2__La__at_adaptive_La__alpb/endpoint.runtime.inp",
+        "local_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_native_followup_2026-10-09/recovered/d9dbc8c577d07beb508feb02fef6adf181a3654b975d0a27f3f4dcb01556e122__endpoint.runtime.inp",
+        "sha256": "d9dbc8c577d07beb508feb02fef6adf181a3654b975d0a27f3f4dcb01556e122"
+      },
+      "scored_xyz": {
+        "local_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_local_solvation_2026-10-09/La_vacuum/context.xyz",
+        "sha256": "0e78c9d0c0188420b3888567fd3e24613b7f1eb0bfa01e72fa0b9f894fa4e8d1",
+        "copied_byte_exact": true
+      },
+      "parameter_source": {
+        "local_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_native_followup_2026-10-09/native_parameter_audit/native_original.xtb.json",
+        "sha256": "f3dac846a59238947d35c23ba5bdb40c19a34482fe9860e8e11bf9c00d719107"
+      },
+      "allowed_input_changes": [
+        "XTBParamFile control.xtb.json",
+        "ReadXTBParam false -> true",
+        "WriteXTBParam true -> false (preserve imported bytes)"
+      ],
+      "historical_native_energy_hartree": -401.586099434573,
+      "historical_native_metal_charge_e": 1.002057387845759,
+      "files": {
+        "control.xtb.json": {
+          "sha256": "f3dac846a59238947d35c23ba5bdb40c19a34482fe9860e8e11bf9c00d719107",
+          "bytes": 72450
+        },
+        "core.xyz": {
+          "sha256": "0e78c9d0c0188420b3888567fd3e24613b7f1eb0bfa01e72fa0b9f894fa4e8d1",
+          "bytes": 11567
+        },
+        "endpoint.inp": {
+          "sha256": "f200da7315f7143be81d996b128dc06f48c7ec023f7ecca416b08e2f5c3a034b",
+          "bytes": 253
+        }
+      },
+      "archived_receipt": {
+        "path": "/groups/banfield/users/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/native_reciprocal_controls/results/La_water_original/receipt.json",
+        "sha256": "00a43db01d4271a1dec847a4414088ae5bdbec1047e46e209ae4b2422d232fd1",
+        "bytes": 9784
+      },
+      "archived_property": {
+        "path": "/groups/banfield/users/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/native_reciprocal_controls/results/La_water_original/endpoint.property.txt",
+        "sha256": "cc2e50beac3dd34ed6b4615bff7f579935aa8511a143510a2a587bc26a8fa94f",
+        "bytes": 221810
+      },
+      "stage": "La8"
+    },
+    {
+      "id": "La_vacuum_corrected",
+      "metal": "La",
+      "medium": "vacuum",
+      "variant": "corrected",
+      "input_dir": "inputs/La_vacuum_corrected",
+      "expected": {
+        "charge": -5,
+        "multiplicity": 1,
+        "valence_electrons": 692,
+        "atoms": 222,
+        "basis_functions": 605,
+        "smear_temperature_K": 300,
+        "max_iterations": 500,
+        "tol_energy_hartree": 1e-10
+      },
+      "original_runtime_input": {
+        "path": "/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-09-23_Nikasha_PQQ/preparation_revision_4A/mapping_repair/workspaces/004/nikasha/scoring/shard-0000/execution/pool/solvent/shard_0/tasks/PQQSEQ_1bda0f218f8aa800bb74_AF3_seed101_sample2__La__at_adaptive_La__vacuum/endpoint.runtime.inp",
+        "local_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_native_followup_2026-10-09/recovered/14257b1adf74380947f0a51ca13dbbc8fd44c6b4540d60929aefe98b74c20772__endpoint.runtime.inp",
+        "sha256": "14257b1adf74380947f0a51ca13dbbc8fd44c6b4540d60929aefe98b74c20772"
+      },
+      "scored_xyz": {
+        "local_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_local_solvation_2026-10-09/La_vacuum/context.xyz",
+        "sha256": "0e78c9d0c0188420b3888567fd3e24613b7f1eb0bfa01e72fa0b9f894fa4e8d1",
+        "copied_byte_exact": true
+      },
+      "parameter_source": {
+        "local_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_native_followup_2026-10-09/native_parameter_audit/native_La_three_arrays_corrected.xtb.json",
+        "sha256": "a4f83ca72d58d6e80f634e61bb8e99b7af0f26c38cc4a9295e85215ecf72d05c"
+      },
+      "allowed_input_changes": [
+        "XTBParamFile control.xtb.json",
+        "ReadXTBParam false -> true",
+        "WriteXTBParam true -> false (preserve imported bytes)"
+      ],
+      "historical_native_energy_hartree": -400.305073021938,
+      "historical_native_metal_charge_e": 0.968772928548268,
+      "files": {
+        "control.xtb.json": {
+          "sha256": "a4f83ca72d58d6e80f634e61bb8e99b7af0f26c38cc4a9295e85215ecf72d05c",
+          "bytes": 72451
+        },
+        "core.xyz": {
+          "sha256": "0e78c9d0c0188420b3888567fd3e24613b7f1eb0bfa01e72fa0b9f894fa4e8d1",
+          "bytes": 11567
+        },
+        "endpoint.inp": {
+          "sha256": "b96782d035b5103f03d5f8aaf024931e2d099eba207abc3b517ed57763532a51",
+          "bytes": 241
+        }
+      },
+      "archived_receipt": {
+        "path": "/groups/banfield/users/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/native_reciprocal_controls/results/La_vacuum_corrected/receipt.json",
+        "sha256": "14527d3a3b6a47e4638af5fdc087394ed0e84e3a72fd82f808b02fb1b3dc20b8",
+        "bytes": 9815
+      },
+      "archived_property": {
+        "path": "/groups/banfield/users/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/native_reciprocal_controls/results/La_vacuum_corrected/endpoint.property.txt",
+        "sha256": "e3919e486663c1383601b4413c952a63b5a99039a8335badfc4cc93c93c8e466",
+        "bytes": 222220
+      },
+      "stage": "La8"
+    },
+    {
+      "id": "La_water_corrected",
+      "metal": "La",
+      "medium": "water",
+      "variant": "corrected",
+      "input_dir": "inputs/La_water_corrected",
+      "expected": {
+        "charge": -5,
+        "multiplicity": 1,
+        "valence_electrons": 692,
+        "atoms": 222,
+        "basis_functions": 605,
+        "smear_temperature_K": 300,
+        "max_iterations": 500,
+        "tol_energy_hartree": 1e-10
+      },
+      "original_runtime_input": {
+        "path": "/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-09-23_Nikasha_PQQ/preparation_revision_4A/mapping_repair/workspaces/004/nikasha/scoring/shard-0000/execution/pool/solvent/shard_0/tasks/PQQSEQ_1bda0f218f8aa800bb74_AF3_seed101_sample2__La__at_adaptive_La__alpb/endpoint.runtime.inp",
+        "local_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_native_followup_2026-10-09/recovered/d9dbc8c577d07beb508feb02fef6adf181a3654b975d0a27f3f4dcb01556e122__endpoint.runtime.inp",
+        "sha256": "d9dbc8c577d07beb508feb02fef6adf181a3654b975d0a27f3f4dcb01556e122"
+      },
+      "scored_xyz": {
+        "local_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_local_solvation_2026-10-09/La_vacuum/context.xyz",
+        "sha256": "0e78c9d0c0188420b3888567fd3e24613b7f1eb0bfa01e72fa0b9f894fa4e8d1",
+        "copied_byte_exact": true
+      },
+      "parameter_source": {
+        "local_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_native_followup_2026-10-09/native_parameter_audit/native_La_three_arrays_corrected.xtb.json",
+        "sha256": "a4f83ca72d58d6e80f634e61bb8e99b7af0f26c38cc4a9295e85215ecf72d05c"
+      },
+      "allowed_input_changes": [
+        "XTBParamFile control.xtb.json",
+        "ReadXTBParam false -> true",
+        "WriteXTBParam true -> false (preserve imported bytes)"
+      ],
+      "historical_native_energy_hartree": -401.586099434573,
+      "historical_native_metal_charge_e": 1.002057387845759,
+      "files": {
+        "control.xtb.json": {
+          "sha256": "a4f83ca72d58d6e80f634e61bb8e99b7af0f26c38cc4a9295e85215ecf72d05c",
+          "bytes": 72451
+        },
+        "core.xyz": {
+          "sha256": "0e78c9d0c0188420b3888567fd3e24613b7f1eb0bfa01e72fa0b9f894fa4e8d1",
+          "bytes": 11567
+        },
+        "endpoint.inp": {
+          "sha256": "f200da7315f7143be81d996b128dc06f48c7ec023f7ecca416b08e2f5c3a034b",
+          "bytes": 253
+        }
+      },
+      "archived_receipt": {
+        "path": "/groups/banfield/users/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/native_reciprocal_controls/results/La_water_corrected/receipt.json",
+        "sha256": "7c6f52dbfbbb925b1bada6e504f3e1fbf9ba55f22d1e9bbc1473cea07dc1eb21",
+        "bytes": 9802
+      },
+      "archived_property": {
+        "path": "/groups/banfield/users/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/native_reciprocal_controls/results/La_water_corrected/endpoint.property.txt",
+        "sha256": "98abd59cd276b6d63f66658e56d4bb9b136ff6f6ef310c80fba1940a3196c5fc",
+        "bytes": 222220
+      },
+      "stage": "La8"
+    }
+  ],
+  "limits": {
+    "workers": 4,
+    "threads_per_process": 1,
+    "maxcore_MB": 2000,
+    "wall_seconds": 240,
+    "rss_bytes": 6442450944
+  },
+  "parameter_leaf_changes": [
+    {
+      "path": "element.La.kcn.0",
+      "before": 0.1071684,
+      "after": -0.0777542
+    },
+    {
+      "path": "element.La.kcn.1",
+      "before": -0.0239967,
+      "after": 0.1071684
+    },
+    {
+      "path": "element.La.kcn.2",
+      "before": -0.0777542,
+      "after": -0.0239967
+    },
+    {
+      "path": "element.La.shpoly.0",
+      "before": -0.06732008,
+      "after": -0.37820063
+    },
+    {
+      "path": "element.La.shpoly.1",
+      "before": 0.54136379,
+      "after": -0.06732008
+    },
+    {
+      "path": "element.La.shpoly.2",
+      "before": -0.37820063,
+      "after": 0.54136379
+    },
+    {
+      "path": "element.La.lgam.0",
+      "before": 1.0,
+      "after": 0.5300334
+    },
+    {
+      "path": "element.La.lgam.1",
+      "before": 0.7,
+      "after": 1.0
+    },
+    {
+      "path": "element.La.lgam.2",
+      "before": 0.5300334,
+      "after": 0.7
+    }
+  ],
+  "source_docs": {
+    "path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_local_investigation_2026-10-09/parameter_audit/sources/orca6.1_semiempirical.html",
+    "sha256": "61ed9139c05c7ec41b879540efb1f8c5f30f3c5666e2d44516eeec7ff9d6b4b9",
+    "url": "https://www.faccts.de/docs/orca/6.1/manual/contents/modelchemistries/semiempirical.html#custom-parameterization"
+  },
+  "prediction": "Original exported JSON roundtrip matches native default; correcting only La kcn/shpoly/lgam order matches standalone fixed-state results.",
+  "restart_policy": "Fresh per-job output directory, only planned input files, NoAutostart, no initial gbw/xtbw/restart files.",
+  "local_computation": "Input preparation and runner lifecycle verification only; root owns remote molecular execution.",
+  "created_utc": "2026-10-12T11:55:46.581026+00:00",
+  "source_bundle": {
+    "path": "/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-10-09_Nikasha_native_parity/bundle_manifest.json",
+    "sha256": "33281d7cc4c776fb8a650ea5a688022075eebe5068c9b11036016cc3626c8727",
+    "bytes": 19638
+  },
+  "source_runner": {
+    "path": "/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-10-09_Nikasha_native_parity/run_native_controls.py",
+    "sha256": "90acf29c38c3b106c8dc2fb3805448adeb03f6efd2661727efddbc50bbc0ef0e",
+    "bytes": 12416
+  },
+  "task_document": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/docs/orca_parameter_audit_20261012/runtime_qualification.md",
+    "sha256": "07a51cf2d11063fe06a10a87c1e2b699452deedcbeddc31b0fb5a1149a350e24",
+    "bytes": 4107
+  },
+  "common_rules": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/docs/orca_parameter_audit_20261012/COMMON_RULES.md",
+    "sha256": "86be0aab422ee49f1829a7a8ce870232c435b69052e5db556ee08ce8d8e31f16",
+    "bytes": 2583
+  },
+  "runtime_helper": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/worktree_runtime/scripts/orca_parameter_runtime_qualification.py",
+    "sha256": "c1f63d5787e8632cc6b903fe2ba0b3d54fbc12ccc63c38dd085676ac9d678824",
+    "bytes": 16016
+  },
+  "admission": {
+    "roundtrip_energy_Eh": 1e-08,
+    "roundtrip_charge_e": 1e-07,
+    "parity_energy_Eh": 1e-06,
+    "parity_charge_e": 1e-05,
+    "all_printed_density_criteria": true,
+    "no_retries": true
+  }
+}

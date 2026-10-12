@@ -1,0 +1,77 @@
+{
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/worktree_runtime/scripts/guarded_native_gfn2_dispatch.py",
+    "sha256": "581af16b3184e883a2d46c3c0dea9396c28016e304086e41b6fab23f9c7ae7ff",
+    "bytes": 7757
+  },
+  "validation_implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/worktree_runtime/scripts/validate_guarded_native_dispatch.py",
+    "sha256": "f329bbbdb329e2ea838aedd8472268e43de13c2f902dc47521b689b0aabe2665",
+    "bytes": 5099
+  },
+  "checks": [
+    {
+      "case": "Ca_vacuum_corrected_file",
+      "passed": true,
+      "receipt": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/runtime_qualification_v1/guarded_dispatch_validation_v2/Ca_vacuum_corrected_file/dispatch_receipt.json",
+        "sha256": "d41d817feb9e9a2b1ab9e7039374b1117505afa9f7c72918c2245985740ca299",
+        "bytes": 3883
+      }
+    },
+    {
+      "case": "Ca_water_corrected_file",
+      "passed": true,
+      "receipt": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/runtime_qualification_v1/guarded_dispatch_validation_v2/Ca_water_corrected_file/dispatch_receipt.json",
+        "sha256": "d9011d9da26ba36f7becc16ca8f276b9252c93113b55900d192f5c118aa6eaae",
+        "bytes": 3876
+      }
+    },
+    {
+      "case": "La_vacuum_corrected",
+      "passed": true,
+      "receipt": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/runtime_qualification_v1/guarded_dispatch_validation_v2/La_vacuum_corrected/dispatch_receipt.json",
+        "sha256": "bece235d49f284ac90395dcbb94013bb492f59d3fd57724e2e20b49908b24e6c",
+        "bytes": 3848
+      }
+    },
+    {
+      "case": "La_water_corrected",
+      "passed": true,
+      "receipt": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/runtime_qualification_v1/guarded_dispatch_validation_v2/La_water_corrected/dispatch_receipt.json",
+        "sha256": "65b75dc47266c41ac76e43aff114df93c8f551a8cb02c171063305fe97b8495e",
+        "bytes": 3841
+      }
+    },
+    {
+      "case": "wrong_parameter_file",
+      "passed": true,
+      "rejected": true,
+      "error": "candidate full-file pin mismatch"
+    },
+    {
+      "case": "wrong_expected_state",
+      "passed": true,
+      "rejected": true,
+      "error": "expected state differs from declared binding"
+    },
+    {
+      "case": "simulated_parser_failure_only",
+      "passed": true,
+      "owned_stop_flag_set": true,
+      "original_signal_handlers_restored": true,
+      "failure_receipt_preserved": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/runtime_qualification_v1/guarded_dispatch_validation_v2/simulated_parser_failure_only/dispatch_receipt.json",
+        "sha256": "b37b54d9ad35dc106ba8b15de0058fb5a30abeb2b482f6b26d7db8bed3809032",
+        "bytes": 5656
+      },
+      "simulation_only": "Executor and postflight mocked solely to exercise parser-failure cleanup; no scientific value or molecular process created."
+    }
+  ],
+  "all_passed": true,
+  "actual_numerical_calls": 0,
+  "supersedes": "Earlier v1 dry-run/rejection proofs predate reviewed dispatcher cleanup repair; retained as historical evidence only."
+}

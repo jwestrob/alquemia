@@ -1,0 +1,678 @@
+{
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/orca_parameter_audit_20261012/q9_response_diagnosis/SUPPLEMENT.py",
+    "sha256": "ccfbd289a16d2a0436c28e05288c8ffafda0ba0bae4c5792f760dc2cd6a56c4c"
+  },
+  "discovery": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/DISCOVERY.json",
+    "sha256": "6699edfd0f0b090863e1bedb9da70a54f00e8ff69cd53ab5349dd31df2f153b4"
+  },
+  "union": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee/UNION.json",
+    "sha256": "776dbc768ebf2d4e25d7f37e07d4e0e8465446ff0877e6f79da4cff7eac6b6b1"
+  },
+  "original_radius_A": 3.5,
+  "expanded_radius_A": 4.3,
+  "selector_elements": [
+    "N",
+    "O",
+    "S"
+  ],
+  "anchors": "Fixed original-core nonwater N/O within 3.3 A of metal, plus same functional-group O/N partners.",
+  "selection_geometry": "Four saved q9 La-conditioned samples 1-4; their fragment union transferred to canonical sample0. Not a swept motion envelope.",
+  "omission_mechanisms": [
+    {
+      "groups": [
+        "Leu485 sidechain",
+        "Ala483 sidechain",
+        "Phe214 sidechain",
+        "Phe442 sidechain"
+      ],
+      "reason": "No sidechain N/O/S selector. Nonpolar carbon/hydrogen proximity does not independently select these groups."
+    },
+    {
+      "groups": [
+        "Glu213 C/O and Phe214 N/H peptide",
+        "Trp349 C/O and Asp350 N/H peptide"
+      ],
+      "reason": "Both polar selector ends are outside 4.3 A of every fixed anchor in all four discovery members. The adjacent selected donor sidechain or peptide does not force the whole residue into the union."
+    },
+    {
+      "groups": [
+        "Trp591 sidechain"
+      ],
+      "reason": "Indole NE1 selector is outside 4.3 A in all four discovery members despite some ring atoms approaching moved Glu hydrogens."
+    },
+    {
+      "groups": [
+        "Phe442 peptide versus sidechain"
+      ],
+      "reason": "Phe442 O selects its peptide in expanded context, but peptide closure/capping does not include its nonpolar sidechain or CA/HA."
+    }
+  ],
+  "source_member_replay": [
+    {
+      "case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-1",
+      "source": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_goal_20260920/folds_v1/source_preparation/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-1/protonated.pdb",
+        "sha256": "693f73275eb5d5bf5977c8dfee7c5c88aa9a382916e4beee2fcce95ce47157b5"
+      },
+      "preparation": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_goal_20260920/folds_v1/source_preparation/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-1/context_preparation.json",
+        "sha256": "04505ba5d7f64e7118c0b9d10335b4feee42706d2ad01f7e3924190c3ae09804"
+      },
+      "anchor_distance_replay": [
+        {
+          "target": [
+            "A",
+            213,
+            "",
+            "O"
+          ],
+          "nearest_anchor": [
+            "A",
+            213,
+            "",
+            "OE2"
+          ],
+          "distance_A": 5.734728066787474,
+          "recorded_selected_contact": false
+        },
+        {
+          "target": [
+            "A",
+            214,
+            "",
+            "N"
+          ],
+          "nearest_anchor": [
+            "A",
+            213,
+            "",
+            "OE2"
+          ],
+          "distance_A": 5.344876050948236,
+          "recorded_selected_contact": false
+        },
+        {
+          "target": [
+            "A",
+            349,
+            "",
+            "O"
+          ],
+          "nearest_anchor": [
+            "A",
+            350,
+            "",
+            "OD2"
+          ],
+          "distance_A": 4.957823010152743,
+          "recorded_selected_contact": false
+        },
+        {
+          "target": [
+            "A",
+            350,
+            "",
+            "N"
+          ],
+          "nearest_anchor": [
+            "A",
+            350,
+            "",
+            "OD1"
+          ],
+          "distance_A": 4.317856644215969,
+          "recorded_selected_contact": false
+        },
+        {
+          "target": [
+            "A",
+            442,
+            "",
+            "O"
+          ],
+          "nearest_anchor": [
+            "A",
+            350,
+            "",
+            "OD2"
+          ],
+          "distance_A": 4.063732397685655,
+          "recorded_selected_contact": true
+        },
+        {
+          "target": [
+            "A",
+            591,
+            "",
+            "NE1"
+          ],
+          "nearest_anchor": [
+            "A",
+            213,
+            "",
+            "OE2"
+          ],
+          "distance_A": 7.262421703536638,
+          "recorded_selected_contact": false
+        }
+      ]
+    },
+    {
+      "case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-2",
+      "source": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_goal_20260920/folds_v1/source_preparation/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-2/protonated.pdb",
+        "sha256": "5242a25e4c7074634300bacb1c3aaa0fe4e60163ec8e584c3e908b6e1a8adcfa"
+      },
+      "preparation": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_goal_20260920/folds_v1/source_preparation/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-2/context_preparation.json",
+        "sha256": "6384c87b5a16bf9f09f2c003270f9be2e36b699902ffac729634ae6db33f69e5"
+      },
+      "anchor_distance_replay": [
+        {
+          "target": [
+            "A",
+            213,
+            "",
+            "O"
+          ],
+          "nearest_anchor": [
+            "A",
+            213,
+            "",
+            "OE2"
+          ],
+          "distance_A": 5.742342901638669,
+          "recorded_selected_contact": false
+        },
+        {
+          "target": [
+            "A",
+            214,
+            "",
+            "N"
+          ],
+          "nearest_anchor": [
+            "A",
+            213,
+            "",
+            "OE2"
+          ],
+          "distance_A": 5.329524838107052,
+          "recorded_selected_contact": false
+        },
+        {
+          "target": [
+            "A",
+            349,
+            "",
+            "O"
+          ],
+          "nearest_anchor": [
+            "A",
+            350,
+            "",
+            "OD2"
+          ],
+          "distance_A": 4.934195375134632,
+          "recorded_selected_contact": false
+        },
+        {
+          "target": [
+            "A",
+            350,
+            "",
+            "N"
+          ],
+          "nearest_anchor": [
+            "A",
+            350,
+            "",
+            "OD1"
+          ],
+          "distance_A": 4.309816353396047,
+          "recorded_selected_contact": false
+        },
+        {
+          "target": [
+            "A",
+            442,
+            "",
+            "O"
+          ],
+          "nearest_anchor": [
+            "A",
+            350,
+            "",
+            "OD2"
+          ],
+          "distance_A": 4.084155971556425,
+          "recorded_selected_contact": true
+        },
+        {
+          "target": [
+            "A",
+            591,
+            "",
+            "NE1"
+          ],
+          "nearest_anchor": [
+            "A",
+            213,
+            "",
+            "OE2"
+          ],
+          "distance_A": 7.364438607253102,
+          "recorded_selected_contact": false
+        }
+      ]
+    },
+    {
+      "case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-3",
+      "source": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_goal_20260920/folds_v1/source_preparation/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-3/protonated.pdb",
+        "sha256": "8f11e975cff7b2f31d85252a9ef57d24605dbb0699fee633e8faad05317e70e8"
+      },
+      "preparation": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_goal_20260920/folds_v1/source_preparation/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-3/context_preparation.json",
+        "sha256": "1c47ef08d71f17fef90976501ef36b29aca40f9272258ed8220c08f7d753eed2"
+      },
+      "anchor_distance_replay": [
+        {
+          "target": [
+            "A",
+            213,
+            "",
+            "O"
+          ],
+          "nearest_anchor": [
+            "A",
+            213,
+            "",
+            "OE2"
+          ],
+          "distance_A": 5.736285209087846,
+          "recorded_selected_contact": false
+        },
+        {
+          "target": [
+            "A",
+            214,
+            "",
+            "N"
+          ],
+          "nearest_anchor": [
+            "A",
+            213,
+            "",
+            "OE2"
+          ],
+          "distance_A": 5.324625245028986,
+          "recorded_selected_contact": false
+        },
+        {
+          "target": [
+            "A",
+            349,
+            "",
+            "O"
+          ],
+          "nearest_anchor": [
+            "A",
+            350,
+            "",
+            "OD2"
+          ],
+          "distance_A": 4.891223466577663,
+          "recorded_selected_contact": false
+        },
+        {
+          "target": [
+            "A",
+            350,
+            "",
+            "N"
+          ],
+          "nearest_anchor": [
+            "A",
+            350,
+            "",
+            "OD1"
+          ],
+          "distance_A": 4.323659907994614,
+          "recorded_selected_contact": false
+        },
+        {
+          "target": [
+            "A",
+            442,
+            "",
+            "O"
+          ],
+          "nearest_anchor": [
+            "A",
+            350,
+            "",
+            "OD2"
+          ],
+          "distance_A": 3.9687664330368455,
+          "recorded_selected_contact": true
+        },
+        {
+          "target": [
+            "A",
+            591,
+            "",
+            "NE1"
+          ],
+          "nearest_anchor": [
+            "A",
+            213,
+            "",
+            "OE2"
+          ],
+          "distance_A": 7.264641216192305,
+          "recorded_selected_contact": false
+        }
+      ]
+    },
+    {
+      "case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-4",
+      "source": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_goal_20260920/folds_v1/source_preparation/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-4/protonated.pdb",
+        "sha256": "1a78e31ba52977a9b48b728d93f687ad7dfdc0c23d727d444f289f5496fae246"
+      },
+      "preparation": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_goal_20260920/folds_v1/source_preparation/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-4/context_preparation.json",
+        "sha256": "6c21eac6390e49c2e21905afd30625180011489a4fdaab7c03291e57d87da368"
+      },
+      "anchor_distance_replay": [
+        {
+          "target": [
+            "A",
+            213,
+            "",
+            "O"
+          ],
+          "nearest_anchor": [
+            "A",
+            213,
+            "",
+            "OE2"
+          ],
+          "distance_A": 5.796416479170558,
+          "recorded_selected_contact": false
+        },
+        {
+          "target": [
+            "A",
+            214,
+            "",
+            "N"
+          ],
+          "nearest_anchor": [
+            "A",
+            213,
+            "",
+            "OE2"
+          ],
+          "distance_A": 5.421094538928464,
+          "recorded_selected_contact": false
+        },
+        {
+          "target": [
+            "A",
+            349,
+            "",
+            "O"
+          ],
+          "nearest_anchor": [
+            "A",
+            350,
+            "",
+            "OD2"
+          ],
+          "distance_A": 4.889208831702733,
+          "recorded_selected_contact": false
+        },
+        {
+          "target": [
+            "A",
+            350,
+            "",
+            "N"
+          ],
+          "nearest_anchor": [
+            "A",
+            350,
+            "",
+            "OD1"
+          ],
+          "distance_A": 4.323333089180154,
+          "recorded_selected_contact": false
+        },
+        {
+          "target": [
+            "A",
+            442,
+            "",
+            "O"
+          ],
+          "nearest_anchor": [
+            "A",
+            350,
+            "",
+            "OD2"
+          ],
+          "distance_A": 4.038253830555973,
+          "recorded_selected_contact": true
+        },
+        {
+          "target": [
+            "A",
+            591,
+            "",
+            "NE1"
+          ],
+          "nearest_anchor": [
+            "A",
+            213,
+            "",
+            "OE2"
+          ],
+          "distance_A": 7.257756815986604,
+          "recorded_selected_contact": false
+        }
+      ]
+    }
+  ],
+  "relevant_fragments": [
+    {
+      "kind": "peptide",
+      "source": {
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "GLY",
+        "resnum": 211
+      }
+    },
+    {
+      "kind": "peptide",
+      "source": {
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "ASP",
+        "resnum": 212
+      }
+    },
+    {
+      "kind": "peptide",
+      "source": {
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "GLY",
+        "resnum": 299
+      }
+    },
+    {
+      "kind": "peptide",
+      "source": {
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "ASN",
+        "resnum": 300
+      }
+    },
+    {
+      "kind": "peptide",
+      "source": {
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "PRO",
+        "resnum": 301
+      }
+    },
+    {
+      "kind": "peptide",
+      "source": {
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "ASP",
+        "resnum": 350
+      }
+    },
+    {
+      "kind": "peptide",
+      "source": {
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "PHE",
+        "resnum": 351
+      }
+    },
+    {
+      "kind": "peptide",
+      "source": {
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "PHE",
+        "resnum": 442
+      }
+    },
+    {
+      "kind": "sidechain",
+      "source": {
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "CYS",
+        "resnum": 139
+      }
+    },
+    {
+      "kind": "sidechain",
+      "source": {
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "ASP",
+        "resnum": 212
+      }
+    },
+    {
+      "kind": "sidechain",
+      "source": {
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "TRP",
+        "resnum": 282
+      }
+    },
+    {
+      "kind": "sidechain",
+      "source": {
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "TRP",
+        "resnum": 304
+      }
+    },
+    {
+      "kind": "sidechain",
+      "source": {
+        "chain": "A",
+        "insertion_code": "",
+        "resname": "SER",
+        "resnum": 352
+      }
+    }
+  ],
+  "interpretation": "No claim that every omitted atom needs addition. Source parent graft is a coordinate diagnostic, not an evaluated full-protein structure.",
+  "pins": [
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/orca_parameter_audit_20261012/q9_response_diagnosis/RESULT_V2.json",
+      "sha256": "5146ae06ff7ce2e87b3c2b4b260a132301d871afbfc6a20ec776e6d9cb6084b9"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/DISCOVERY.json",
+      "sha256": "6699edfd0f0b090863e1bedb9da70a54f00e8ff69cd53ab5349dd31df2f153b4"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee/UNION.json",
+      "sha256": "776dbc768ebf2d4e25d7f37e07d4e0e8465446ff0877e6f79da4cff7eac6b6b1"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/second_shell_context.py",
+      "sha256": "7b775b3fdac79a4c3663f598087f83fbdd53792b96232775df15163d97e5f3f8"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/motion_envelope.py",
+      "sha256": "5fd5ee525a8978741058bb929116b852803c8c4c1e82bfe96db24ce578018b7a"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/consistent_context.py",
+      "sha256": "e7010a14bb84729cecb1c104b95365445afae9bb134eec5a6df536b91568e2fe"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/affordable_peptide.py",
+      "sha256": "4efbbdbe77fc8f9c8c599594db20191de72c6968f2b753d1e99a8d2ff2a1fd51"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_goal_20260920/folds_v1/source_preparation/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-1/context_preparation.json",
+      "sha256": "04505ba5d7f64e7118c0b9d10335b4feee42706d2ad01f7e3924190c3ae09804"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_goal_20260920/folds_v1/source_preparation/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-1/protonated.pdb",
+      "sha256": "693f73275eb5d5bf5977c8dfee7c5c88aa9a382916e4beee2fcce95ce47157b5"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_goal_20260920/folds_v1/source_preparation/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-2/context_preparation.json",
+      "sha256": "6384c87b5a16bf9f09f2c003270f9be2e36b699902ffac729634ae6db33f69e5"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_goal_20260920/folds_v1/source_preparation/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-2/protonated.pdb",
+      "sha256": "5242a25e4c7074634300bacb1c3aaa0fe4e60163ec8e584c3e908b6e1a8adcfa"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_goal_20260920/folds_v1/source_preparation/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-3/context_preparation.json",
+      "sha256": "1c47ef08d71f17fef90976501ef36b29aca40f9272258ed8220c08f7d753eed2"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_goal_20260920/folds_v1/source_preparation/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-3/protonated.pdb",
+      "sha256": "8f11e975cff7b2f31d85252a9ef57d24605dbb0699fee633e8faad05317e70e8"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_goal_20260920/folds_v1/source_preparation/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-4/context_preparation.json",
+      "sha256": "6c21eac6390e49c2e21905afd30625180011489a4fdaab7c03291e57d87da368"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_goal_20260920/folds_v1/source_preparation/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-4/protonated.pdb",
+      "sha256": "1a78e31ba52977a9b48b728d93f687ad7dfdc0c23d727d444f289f5496fae246"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/orca_parameter_audit_20261012/q9_response_diagnosis/SUPPLEMENT.py",
+      "sha256": "ccfbd289a16d2a0436c28e05288c8ffafda0ba0bae4c5792f760dc2cd6a56c4c"
+    }
+  ],
+  "new_molecular_calls": 0
+}

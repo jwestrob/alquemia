@@ -1,0 +1,5871 @@
+{
+  "question": "Missing environment resistance versus local model response; geometric diagnosis only",
+  "source_parent": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_goal_20260920/folds_v1/source_preparation/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0/protonated.pdb",
+    "sha256": "33979950bb7c31e864f80d004af4bfd34925ec2e27b2ee447c9b353d7afef502"
+  },
+  "preparation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/PREPARATION.json",
+    "sha256": "29ddbe9e29682a0af4891dc63c749c21d7a8be88528288dcd526bc67dcb7f2ed"
+  },
+  "definitions": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/orca_parameter_audit_20261012/q9_response_diagnosis/PLAN.md",
+    "sha256": "92e05de5433064b34e4bd9c1da02aa5b5cb9b4dcb77eadfa5df1ebe6a48c9e69"
+  },
+  "typed_coordination_policy": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/coordination_policy.py",
+    "sha256": "37b1d07cce8bbcf5984edb157640ddd1936bc56c7070db36f4461b119d4368bb"
+  },
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/orca_parameter_audit_20261012/q9_response_diagnosis/ANALYZE.py",
+    "sha256": "934bd844e40ab3fee3a003264db602112e09abddf9de6cf1238c59a0159c2cc6"
+  },
+  "parent_atom_count": 9456,
+  "same_saved_motion_in_both_contexts_verified": true,
+  "context_metadata": {
+    "original": {
+      "origin": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/consistent_context_20260922/prepared_v1/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0/Ca_context.xyz",
+        "sha256": "9c26e526607023a763ef46e3406cc5e84b2dadab3bbd00629a75793919870ebf"
+      },
+      "atom_count": 145,
+      "cap_count": 9,
+      "selection": {
+        "eligible_count": 7,
+        "method_applied_to_optimization": false,
+        "rank_tolerance": 1e-05,
+        "redundant": [],
+        "selected": [
+          {
+            "Ca_kcal_mol_A": 11.18690757670472,
+            "La_kcal_mol_A": 24.935734674276276,
+            "criterion": "differential",
+            "differential_kcal_mol_A": -13.748827097571557,
+            "id": "A/213/chi1",
+            "independent_geometric_fraction": 1.0
+          },
+          {
+            "Ca_kcal_mol_A": -3.1449866121707313,
+            "La_kcal_mol_A": -14.762569956623667,
+            "criterion": "individual",
+            "differential_kcal_mol_A": 11.617583344452935,
+            "id": "A/213/chi3",
+            "independent_geometric_fraction": 0.9993361182774565
+          },
+          {
+            "Ca_kcal_mol_A": -2.5166722565679867,
+            "La_kcal_mol_A": 6.30879160881981,
+            "criterion": "differential",
+            "differential_kcal_mol_A": -8.825463865387796,
+            "id": "A/213/chi2",
+            "independent_geometric_fraction": 0.7831173434147185
+          },
+          {
+            "Ca_kcal_mol_A": -4.066030682252154,
+            "La_kcal_mol_A": -9.007274261495281,
+            "criterion": "individual",
+            "differential_kcal_mol_A": 4.941243579243127,
+            "id": "A/350/chi1",
+            "independent_geometric_fraction": 0.9999999999999999
+          }
+        ]
+      },
+      "final_geometry": {
+        "all_other_physical_atoms_fixed": true,
+        "angular_boundary_flag": false,
+        "boundary_heavy_atoms": 1,
+        "mapping_checks": {
+          "bond_max_error_A": 1.5543122344752192e-15,
+          "fixed_atoms_unchanged": true,
+          "jacobian_max_error_A_per_unit": 1.911056646264342e-09,
+          "maximum_heavy_displacement_A": 0.8000000002753894,
+          "new_severe_overlaps": [],
+          "pass": true
+        },
+        "maximum_heavy_displacement_A": 0.8000000002753894,
+        "metal_water_PQQ_scaffold_modes_added": false,
+        "physical_feasible": true
+      },
+      "boundary_flag": true,
+      "residual": {
+        "all_mode_ids": [
+          "metal_x",
+          "metal_y",
+          "metal_z",
+          "A/213/chi1",
+          "A/213/chi2",
+          "A/213/chi3",
+          "A/300/chi1",
+          "A/300/chi2",
+          "A/350/chi1",
+          "A/350/chi2"
+        ],
+        "force_hamiltonian": "native_vacuum_OMOL",
+        "normalized_gradient_kcal_mol_A": [
+          5.212027510662906,
+          -39.67431411411574,
+          -12.261119787918346,
+          1.253457836935828,
+          -0.4442794865532032,
+          -1.8953154675304136,
+          -5.2611734014266816,
+          -5.767118083837567,
+          6.0928954738594115e-05,
+          10.144807754214744
+        ],
+        "omitted_angular_max_load": 10.144807754214744,
+        "raw_gradient_kcal_per_unit": [
+          5.212027510662906,
+          -39.67431411411574,
+          -12.261119787918346,
+          6.637842742106346,
+          -1.5507115940179452,
+          -2.9448002179658648,
+          -18.304313768892865,
+          -8.981683711122013,
+          0.00020271692891757342,
+          15.731119740239643
+        ],
+        "selected_max_load": 1.8953154675304136
+      },
+      "optimizer": {
+        "ftol_hartree_equivalent": 1e-08,
+        "function_evaluations": 14,
+        "gradient_evaluations": 12,
+        "iterations": 12,
+        "message": "Optimization terminated successfully",
+        "success": true
+      },
+      "proposal_receipt": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/slsqp_precision_20260923/proposals_v1/proposals/q9z4j7-pqq-la_model__La/result.json",
+        "sha256": "61e9c661012586d041af5111d423221f95c34106bc05a74549cb26b7ca62f5ba"
+      }
+    },
+    "expanded": {
+      "origin": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/prepared/q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0/Ca_context.xyz",
+        "sha256": "9c130719ffa7df942c00b16840d6abcd52c732083aec8187b6ebf0075a17f5ba"
+      },
+      "atom_count": 192,
+      "cap_count": 14,
+      "selection": {
+        "eligible_count": 7,
+        "method_applied_to_optimization": false,
+        "rank_tolerance": 1e-05,
+        "redundant": [],
+        "selected": [
+          {
+            "Ca_kcal_mol_A": 10.417457652291239,
+            "La_kcal_mol_A": 24.574009618224128,
+            "criterion": "differential",
+            "differential_kcal_mol_A": -14.15655196593289,
+            "id": "A/213/chi1",
+            "independent_geometric_fraction": 1.0
+          },
+          {
+            "Ca_kcal_mol_A": -4.216804927292962,
+            "La_kcal_mol_A": -15.744126119736185,
+            "criterion": "individual",
+            "differential_kcal_mol_A": 11.527321192443223,
+            "id": "A/213/chi3",
+            "independent_geometric_fraction": 0.9993361182774563
+          },
+          {
+            "Ca_kcal_mol_A": -3.3439420808114333,
+            "La_kcal_mol_A": 6.029124960988507,
+            "criterion": "differential",
+            "differential_kcal_mol_A": -9.37306704179994,
+            "id": "A/213/chi2",
+            "independent_geometric_fraction": 0.7831173434147186
+          },
+          {
+            "Ca_kcal_mol_A": 8.454559736974252,
+            "La_kcal_mol_A": 6.812684536445817,
+            "criterion": "individual",
+            "differential_kcal_mol_A": 1.6418752005284354,
+            "id": "A/350/chi2",
+            "independent_geometric_fraction": 1.0
+          }
+        ]
+      },
+      "final_geometry": {
+        "all_other_physical_atoms_fixed": true,
+        "angular_boundary_flag": false,
+        "boundary_heavy_atoms": 1,
+        "mapping_checks": {
+          "bond_max_error_A": 1.3322676295501878e-15,
+          "fixed_atoms_unchanged": true,
+          "jacobian_max_error_A_per_unit": 2.5363805777889326e-09,
+          "maximum_heavy_displacement_A": 0.8000000000103614,
+          "new_severe_overlaps": [],
+          "pass": true
+        },
+        "maximum_heavy_displacement_A": 0.8000000000103614,
+        "metal_water_PQQ_scaffold_modes_added": false,
+        "physical_feasible": true
+      },
+      "boundary_flag": true,
+      "residual": {
+        "all_mode_ids": [
+          "metal_x",
+          "metal_y",
+          "metal_z",
+          "A/213/chi1",
+          "A/213/chi2",
+          "A/213/chi3",
+          "A/300/chi1",
+          "A/300/chi2",
+          "A/350/chi1",
+          "A/350/chi2"
+        ],
+        "force_hamiltonian": "native_vacuum_OMOL",
+        "normalized_gradient_kcal_mol_A": [
+          14.510481054166634,
+          -26.21019320243271,
+          -10.70419274099613,
+          1.0867973065406151,
+          -0.4571065769476575,
+          -1.6924137233803789,
+          -3.1666646545757344,
+          -0.545117023193354,
+          -12.136179272223798,
+          1.9041849432425216e-05
+        ],
+        "omitted_angular_max_load": 12.136179272223798,
+        "raw_gradient_kcal_per_unit": [
+          14.510481054166634,
+          -26.21019320243271,
+          -10.70419274099613,
+          5.751938606213647,
+          -1.594954461256439,
+          -2.6295465778015568,
+          -11.017242545645594,
+          -0.8489627950557094,
+          -39.77037049223818,
+          2.952738196272325e-05
+        ],
+        "selected_max_load": 1.6924137233803789
+      },
+      "optimizer": {
+        "ftol_hartree_equivalent": 1e-08,
+        "function_evaluations": 17,
+        "gradient_evaluations": 15,
+        "iterations": 15,
+        "message": "Optimization terminated successfully",
+        "success": true
+      },
+      "proposal_receipt": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/pilot34_searches_v1/proposals/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0__envelope_5eba0c9b39ead1ee__La/result.json",
+        "sha256": "a4317582e1242acdd5a19f385351080afb623b14c75d8aec708bb69164897731"
+      }
+    }
+  },
+  "movements": [
+    {
+      "id": [
+        "source",
+        "A",
+        213,
+        "",
+        "HB2",
+        "",
+        "H"
+      ],
+      "label": "A:GLU213:HB2",
+      "element": "H",
+      "included_original": true,
+      "included_expanded": true,
+      "displacement_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.1823995307420881,
+        "expanded_adaptive_La": 0.182547249639696
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        213,
+        "",
+        "HB3",
+        "",
+        "H"
+      ],
+      "label": "A:GLU213:HB3",
+      "element": "H",
+      "included_original": true,
+      "included_expanded": true,
+      "displacement_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.19638091975305316,
+        "expanded_adaptive_La": 0.19653996168073257
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        213,
+        "",
+        "CG",
+        "",
+        "C"
+      ],
+      "label": "A:GLU213:CG",
+      "element": "C",
+      "included_original": true,
+      "included_expanded": true,
+      "displacement_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.24694948163160796,
+        "expanded_adaptive_La": 0.24714947724038508
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        213,
+        "",
+        "HG2",
+        "",
+        "H"
+      ],
+      "label": "A:GLU213:HG2",
+      "element": "H",
+      "included_original": true,
+      "included_expanded": true,
+      "displacement_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.3162705632407482,
+        "expanded_adaptive_La": 0.33026640421926884
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        213,
+        "",
+        "HG3",
+        "",
+        "H"
+      ],
+      "label": "A:GLU213:HG3",
+      "element": "H",
+      "included_original": true,
+      "included_expanded": true,
+      "displacement_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.3090744159787798,
+        "expanded_adaptive_La": 0.2996368284073597
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        213,
+        "",
+        "CD",
+        "",
+        "C"
+      ],
+      "label": "A:GLU213:CD",
+      "element": "C",
+      "included_original": true,
+      "included_expanded": true,
+      "displacement_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.4036111139165514,
+        "expanded_adaptive_La": 0.3973414994495299
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        213,
+        "",
+        "OE1",
+        "",
+        "O"
+      ],
+      "label": "A:GLU213:OE1",
+      "element": "O",
+      "included_original": true,
+      "included_expanded": true,
+      "displacement_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.47088742603048767,
+        "expanded_adaptive_La": 0.4431576456287201
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        213,
+        "",
+        "OE2",
+        "",
+        "O"
+      ],
+      "label": "A:GLU213:OE2",
+      "element": "O",
+      "included_original": true,
+      "included_expanded": true,
+      "displacement_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.8000000002753894,
+        "expanded_adaptive_La": 0.8000000000103613
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        350,
+        "",
+        "HB2",
+        "",
+        "H"
+      ],
+      "label": "A:ASP350:HB2",
+      "element": "H",
+      "included_original": true,
+      "included_expanded": true,
+      "displacement_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.22546268775934541,
+        "expanded_adaptive_La": 0.0
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        350,
+        "",
+        "HB3",
+        "",
+        "H"
+      ],
+      "label": "A:ASP350:HB3",
+      "element": "H",
+      "included_original": true,
+      "included_expanded": true,
+      "displacement_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.13799377465604104,
+        "expanded_adaptive_La": 0.0
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        350,
+        "",
+        "CG",
+        "",
+        "C"
+      ],
+      "label": "A:ASP350:CG",
+      "element": "C",
+      "included_original": true,
+      "included_expanded": true,
+      "displacement_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.2712610426675338,
+        "expanded_adaptive_La": 0.0
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        350,
+        "",
+        "OD1",
+        "",
+        "O"
+      ],
+      "label": "A:ASP350:OD1",
+      "element": "O",
+      "included_original": true,
+      "included_expanded": true,
+      "displacement_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.4606615207124864,
+        "expanded_adaptive_La": 0.1841149540588905
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        350,
+        "",
+        "OD2",
+        "",
+        "O"
+      ],
+      "label": "A:ASP350:OD2",
+      "element": "O",
+      "included_original": true,
+      "included_expanded": true,
+      "displacement_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.3419555022693008,
+        "expanded_adaptive_La": 0.1853011440473527
+      }
+    }
+  ],
+  "coordination": [
+    {
+      "id": [
+        "source",
+        "A",
+        213,
+        "",
+        "OE1",
+        "",
+        "O"
+      ],
+      "label": "A:GLU213:OE1",
+      "element": "O",
+      "included_original": true,
+      "included_expanded": true,
+      "donor_type": "sidechain_O",
+      "distances_A": {
+        "origin": 2.2541253292574477,
+        "original_adaptive_La": 2.6799411985268238,
+        "expanded_adaptive_La": 2.656251344429767
+      },
+      "direct": {
+        "origin": true,
+        "original_adaptive_La": true,
+        "expanded_adaptive_La": true
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        213,
+        "",
+        "OE2",
+        "",
+        "O"
+      ],
+      "label": "A:GLU213:OE2",
+      "element": "O",
+      "included_original": true,
+      "included_expanded": true,
+      "donor_type": "sidechain_O",
+      "distances_A": {
+        "origin": 2.9395594908081044,
+        "original_adaptive_La": 2.5997634936912704,
+        "expanded_adaptive_La": 2.619646919947212
+      },
+      "direct": {
+        "origin": true,
+        "original_adaptive_La": true,
+        "expanded_adaptive_La": true
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        300,
+        "",
+        "OD1",
+        "",
+        "O"
+      ],
+      "label": "A:ASN300:OD1",
+      "element": "O",
+      "included_original": true,
+      "included_expanded": true,
+      "donor_type": "sidechain_O",
+      "distances_A": {
+        "origin": 2.3696373140208613,
+        "original_adaptive_La": 2.3696373140208613,
+        "expanded_adaptive_La": 2.3696373140208613
+      },
+      "direct": {
+        "origin": true,
+        "original_adaptive_La": true,
+        "expanded_adaptive_La": true
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        350,
+        "",
+        "OD1",
+        "",
+        "O"
+      ],
+      "label": "A:ASP350:OD1",
+      "element": "O",
+      "included_original": true,
+      "included_expanded": true,
+      "donor_type": "sidechain_O",
+      "distances_A": {
+        "origin": 2.9289919767728967,
+        "original_adaptive_La": 2.8760140005955908,
+        "expanded_adaptive_La": 3.034749989068487
+      },
+      "direct": {
+        "origin": true,
+        "original_adaptive_La": true,
+        "expanded_adaptive_La": true
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        350,
+        "",
+        "OD2",
+        "",
+        "O"
+      ],
+      "label": "A:ASP350:OD2",
+      "element": "O",
+      "included_original": true,
+      "included_expanded": true,
+      "donor_type": "sidechain_O",
+      "distances_A": {
+        "origin": 3.7084132725466294,
+        "original_adaptive_La": 3.404591521097303,
+        "expanded_adaptive_La": 3.6255840286019296
+      },
+      "direct": {
+        "origin": false,
+        "original_adaptive_La": false,
+        "expanded_adaptive_La": false
+      }
+    },
+    {
+      "id": [
+        "source",
+        "C",
+        1,
+        "",
+        "O1",
+        "",
+        "O"
+      ],
+      "label": "C:PQQ1:O1",
+      "element": "O",
+      "included_original": true,
+      "included_expanded": true,
+      "donor_type": "cofactor_O",
+      "distances_A": {
+        "origin": 2.360952985554774,
+        "original_adaptive_La": 2.360952985554774,
+        "expanded_adaptive_La": 2.360952985554774
+      },
+      "direct": {
+        "origin": true,
+        "original_adaptive_La": true,
+        "expanded_adaptive_La": true
+      }
+    },
+    {
+      "id": [
+        "source",
+        "C",
+        1,
+        "",
+        "N2",
+        "",
+        "N"
+      ],
+      "label": "C:PQQ1:N2",
+      "element": "N",
+      "included_original": true,
+      "included_expanded": true,
+      "donor_type": "cofactor_N",
+      "distances_A": {
+        "origin": 2.4384011154853096,
+        "original_adaptive_La": 2.4384011154853096,
+        "expanded_adaptive_La": 2.4384011154853096
+      },
+      "direct": {
+        "origin": true,
+        "original_adaptive_La": true,
+        "expanded_adaptive_La": true
+      }
+    },
+    {
+      "id": [
+        "source",
+        "C",
+        1,
+        "",
+        "O6",
+        "",
+        "O"
+      ],
+      "label": "C:PQQ1:O6",
+      "element": "O",
+      "included_original": true,
+      "included_expanded": true,
+      "donor_type": "cofactor_O",
+      "distances_A": {
+        "origin": 2.5951965243503237,
+        "original_adaptive_La": 2.5951965243503237,
+        "expanded_adaptive_La": 2.5951965243503237
+      },
+      "direct": {
+        "origin": true,
+        "original_adaptive_La": true,
+        "expanded_adaptive_La": true
+      }
+    }
+  ],
+  "torsions": [
+    {
+      "id": "A/213/chi1",
+      "atoms": [
+        "A:GLU213:N",
+        "A:GLU213:CA",
+        "A:GLU213:CB",
+        "A:GLU213:CG"
+      ],
+      "angles_degrees": {
+        "origin": -72.0199113538904,
+        "original_adaptive_La": -82.1411565137886,
+        "expanded_adaptive_La": -82.14937475848465
+      },
+      "changes_degrees": {
+        "origin": 0.0,
+        "original_adaptive_La": -10.121245159898194,
+        "expanded_adaptive_La": -10.129463404594276
+      },
+      "declared_rotation_degrees": {
+        "original_adaptive_La": -10.121245159898232,
+        "expanded_adaptive_La": -10.12946340459425
+      }
+    },
+    {
+      "id": "A/213/chi2",
+      "atoms": [
+        "A:GLU213:CA",
+        "A:GLU213:CB",
+        "A:GLU213:CG",
+        "A:GLU213:CD"
+      ],
+      "angles_degrees": {
+        "origin": 63.213448944831455,
+        "original_adaptive_La": 66.73812109501301,
+        "expanded_adaptive_La": 67.47940492962265
+      },
+      "changes_degrees": {
+        "origin": 0.0,
+        "original_adaptive_La": 3.5246721501815728,
+        "expanded_adaptive_La": 4.265955984791191
+      },
+      "declared_rotation_degrees": {
+        "original_adaptive_La": 3.524672150181589,
+        "expanded_adaptive_La": 4.2659559847912485
+      }
+    },
+    {
+      "id": "A/213/chi3",
+      "atoms": [
+        "A:GLU213:CB",
+        "A:GLU213:CG",
+        "A:GLU213:CD",
+        "A:GLU213:OE1"
+      ],
+      "angles_degrees": {
+        "origin": -122.85245956902436,
+        "original_adaptive_La": -102.52889625417724,
+        "expanded_adaptive_La": -102.96714969794309
+      },
+      "changes_degrees": {
+        "origin": 0.0,
+        "original_adaptive_La": 20.32356331484712,
+        "expanded_adaptive_La": 19.88530987108129
+      },
+      "declared_rotation_degrees": {
+        "original_adaptive_La": 20.32356331484703,
+        "expanded_adaptive_La": 19.885309871081382
+      }
+    },
+    {
+      "id": "A/350/chi1",
+      "atoms": [
+        "A:ASP350:N",
+        "A:ASP350:CA",
+        "A:ASP350:CB",
+        "A:ASP350:CG"
+      ],
+      "angles_degrees": {
+        "origin": 177.59140221351618,
+        "original_adaptive_La": -171.4634591758799,
+        "expanded_adaptive_La": 177.59140221351618
+      },
+      "changes_degrees": {
+        "origin": 0.0,
+        "original_adaptive_La": 10.94513861060392,
+        "expanded_adaptive_La": 0.0
+      },
+      "declared_rotation_degrees": {
+        "original_adaptive_La": 10.945138610603898,
+        "expanded_adaptive_La": 0.0
+      }
+    },
+    {
+      "id": "A/350/chi2",
+      "atoms": [
+        "A:ASP350:CA",
+        "A:ASP350:CB",
+        "A:ASP350:CG",
+        "A:ASP350:OD1"
+      ],
+      "angles_degrees": {
+        "origin": 36.10002166544631,
+        "original_adaptive_La": 36.100021665446164,
+        "expanded_adaptive_La": 26.436738089063862
+      },
+      "changes_degrees": {
+        "origin": 0.0,
+        "original_adaptive_La": -1.4210854715202004e-13,
+        "expanded_adaptive_La": -9.66328357638244
+      },
+      "declared_rotation_degrees": {
+        "original_adaptive_La": 0.0,
+        "expanded_adaptive_La": -9.663283576382426
+      }
+    },
+    {
+      "id": "A/300/chi1",
+      "atoms": [
+        "A:ASN300:N",
+        "A:ASN300:CA",
+        "A:ASN300:CB",
+        "A:ASN300:CG"
+      ],
+      "angles_degrees": {
+        "origin": 57.644626247334585,
+        "original_adaptive_La": 57.644626247334585,
+        "expanded_adaptive_La": 57.644626247334585
+      },
+      "changes_degrees": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.0,
+        "expanded_adaptive_La": 0.0
+      },
+      "declared_rotation_degrees": {
+        "original_adaptive_La": 0.0,
+        "expanded_adaptive_La": 0.0
+      }
+    },
+    {
+      "id": "A/300/chi2",
+      "atoms": [
+        "A:ASN300:CA",
+        "A:ASN300:CB",
+        "A:ASN300:CG",
+        "A:ASN300:OD1"
+      ],
+      "angles_degrees": {
+        "origin": -77.0667557551252,
+        "original_adaptive_La": -77.0667557551252,
+        "expanded_adaptive_La": -77.0667557551252
+      },
+      "changes_degrees": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.0,
+        "expanded_adaptive_La": 0.0
+      },
+      "declared_rotation_degrees": {
+        "original_adaptive_La": 0.0,
+        "expanded_adaptive_La": 0.0
+      }
+    }
+  ],
+  "contacts": [
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "CG",
+          "",
+          "C"
+        ],
+        "label": "A:GLU213:CG",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          304,
+          "",
+          "NE1",
+          "",
+          "N"
+        ],
+        "label": "A:TRP304:NE1",
+        "element": "N",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.878060597773068,
+        "original_adaptive_La": 3.793810096645594,
+        "expanded_adaptive_La": 3.793762593672359
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.08425050112747412,
+        "expanded_adaptive_La": -0.08429800410070909
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "CG",
+          "",
+          "C"
+        ],
+        "label": "A:GLU213:CG",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          304,
+          "",
+          "CE2",
+          "",
+          "C"
+        ],
+        "label": "A:TRP304:CE2",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 4.1132693809182985,
+        "original_adaptive_La": 3.98737701106574,
+        "expanded_adaptive_La": 3.9872949469913452
+      },
+      "bins": {
+        "origin": ">4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.1258923698525587,
+        "expanded_adaptive_La": -0.1259744339269533
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "CG",
+          "",
+          "C"
+        ],
+        "label": "A:GLU213:CG",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          304,
+          "",
+          "CZ2",
+          "",
+          "C"
+        ],
+        "label": "A:TRP304:CZ2",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.8486819821855893,
+        "original_adaptive_La": 3.7291175571385917,
+        "expanded_adaptive_La": 3.7290410284945286
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.1195644250469976,
+        "expanded_adaptive_La": -0.11964095369106076
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "CG",
+          "",
+          "C"
+        ],
+        "label": "A:GLU213:CG",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          485,
+          "",
+          "CD2",
+          "",
+          "C"
+        ],
+        "label": "A:LEU485:CD2",
+        "element": "C",
+        "included_original": false,
+        "included_expanded": false
+      },
+      "distances_A": {
+        "origin": 3.8359625910584696,
+        "original_adaptive_La": 3.5993807637335222,
+        "expanded_adaptive_La": 3.599190994433933
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.23658182732494737,
+        "expanded_adaptive_La": -0.2367715966245365
+      },
+      "either_partner_omitted_from_both": true
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "CD",
+          "",
+          "C"
+        ],
+        "label": "A:GLU213:CD",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          212,
+          "",
+          "C",
+          "",
+          "C"
+        ],
+        "label": "A:ASP212:C",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.9508947087969832,
+        "original_adaptive_La": 4.1260229922881075,
+        "expanded_adaptive_La": 4.136254683521428
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": ">4.0",
+        "expanded_adaptive_La": ">4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.1751282834911243,
+        "expanded_adaptive_La": 0.18535997472444476
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "CD",
+          "",
+          "C"
+        ],
+        "label": "A:GLU213:CD",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          304,
+          "",
+          "NE1",
+          "",
+          "N"
+        ],
+        "label": "A:TRP304:NE1",
+        "element": "N",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.9672698420954435,
+        "original_adaptive_La": 3.6325055127463246,
+        "expanded_adaptive_La": 3.647296145687868
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.3347643293491189,
+        "expanded_adaptive_La": -0.31997369640757567
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "CD",
+          "",
+          "C"
+        ],
+        "label": "A:GLU213:CD",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          304,
+          "",
+          "CZ2",
+          "",
+          "C"
+        ],
+        "label": "A:TRP304:CZ2",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 4.313401094264246,
+        "original_adaptive_La": 3.9164841994171256,
+        "expanded_adaptive_La": 3.9214435638149343
+      },
+      "bins": {
+        "origin": ">4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.39691689484712045,
+        "expanded_adaptive_La": -0.3919575304493117
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "CD",
+          "",
+          "C"
+        ],
+        "label": "A:GLU213:CD",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "C",
+          1,
+          "",
+          "N2",
+          "",
+          "N"
+        ],
+        "label": "C:PQQ1:N2",
+        "element": "N",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.884780173960942,
+        "original_adaptive_La": 4.137311350707018,
+        "expanded_adaptive_La": 4.127033741202357
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": ">4.0",
+        "expanded_adaptive_La": ">4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.2525311767460754,
+        "expanded_adaptive_La": 0.242253567241415
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "CD",
+          "",
+          "C"
+        ],
+        "label": "A:GLU213:CD",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "C",
+          1,
+          "",
+          "O6",
+          "",
+          "O"
+        ],
+        "label": "C:PQQ1:O6",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.6846011995872776,
+        "original_adaptive_La": 4.000469602274034,
+        "expanded_adaptive_La": 3.9996578576916995
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": ">4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.3158684026867564,
+        "expanded_adaptive_La": 0.31505665810442185
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "OE1",
+          "",
+          "O"
+        ],
+        "label": "A:GLU213:OE1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          212,
+          "",
+          "C",
+          "",
+          "C"
+        ],
+        "label": "A:ASP212:C",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 4.068928728793367,
+        "original_adaptive_La": 3.903004871374842,
+        "expanded_adaptive_La": 3.915596641619779
+      },
+      "bins": {
+        "origin": ">4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.16592385741852445,
+        "expanded_adaptive_La": -0.1533320871735877
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "OE1",
+          "",
+          "O"
+        ],
+        "label": "A:GLU213:OE1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          300,
+          "",
+          "CG",
+          "",
+          "C"
+        ],
+        "label": "A:ASN300:CG",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.6528008431886896,
+        "original_adaptive_La": 3.6807673277809863,
+        "expanded_adaptive_La": 3.6838491649801246
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.02796648459229667,
+        "expanded_adaptive_La": 0.03104832179143502
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "OE1",
+          "",
+          "O"
+        ],
+        "label": "A:GLU213:OE1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          300,
+          "",
+          "OD1",
+          "",
+          "O"
+        ],
+        "label": "A:ASN300:OD1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.2975275586414736,
+        "original_adaptive_La": 3.478884438223771,
+        "expanded_adaptive_La": 3.472637710273344
+      },
+      "bins": {
+        "origin": "<=3.5",
+        "original_adaptive_La": "<=3.5",
+        "expanded_adaptive_La": "<=3.5"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.1813568795822973,
+        "expanded_adaptive_La": 0.17511015163187027
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "OE1",
+          "",
+          "O"
+        ],
+        "label": "A:GLU213:OE1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          300,
+          "",
+          "ND2",
+          "",
+          "N"
+        ],
+        "label": "A:ASN300:ND2",
+        "element": "N",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.2156504785190823,
+        "original_adaptive_La": 3.0829289405508593,
+        "expanded_adaptive_La": 3.09557054232009
+      },
+      "bins": {
+        "origin": "<=3.5",
+        "original_adaptive_La": "<=3.5",
+        "expanded_adaptive_La": "<=3.5"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.13272153796822295,
+        "expanded_adaptive_La": -0.12007993619899215
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "OE1",
+          "",
+          "O"
+        ],
+        "label": "A:GLU213:OE1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          304,
+          "",
+          "CD1",
+          "",
+          "C"
+        ],
+        "label": "A:TRP304:CD1",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 4.294469233793626,
+        "original_adaptive_La": 3.896458401721703,
+        "expanded_adaptive_La": 3.920105168414522
+      },
+      "bins": {
+        "origin": ">4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.39801083207192267,
+        "expanded_adaptive_La": -0.3743640653791038
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "OE1",
+          "",
+          "O"
+        ],
+        "label": "A:GLU213:OE1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          304,
+          "",
+          "NE1",
+          "",
+          "N"
+        ],
+        "label": "A:TRP304:NE1",
+        "element": "N",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.1555712636541755,
+        "original_adaptive_La": 2.7838946483206386,
+        "expanded_adaptive_La": 2.803865611807527
+      },
+      "bins": {
+        "origin": "<=3.5",
+        "original_adaptive_La": "<=3.5",
+        "expanded_adaptive_La": "<=3.5"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.3716766153335369,
+        "expanded_adaptive_La": -0.3517056518466486
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "OE1",
+          "",
+          "O"
+        ],
+        "label": "A:GLU213:OE1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          304,
+          "",
+          "CE2",
+          "",
+          "C"
+        ],
+        "label": "A:TRP304:CE2",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.8652799381157377,
+        "original_adaptive_La": 3.5644268506535917,
+        "expanded_adaptive_La": 3.5775536371346224
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.300853087462146,
+        "expanded_adaptive_La": -0.2877263009811153
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "OE1",
+          "",
+          "O"
+        ],
+        "label": "A:GLU213:OE1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          304,
+          "",
+          "CZ2",
+          "",
+          "C"
+        ],
+        "label": "A:TRP304:CZ2",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.944455475727923,
+        "original_adaptive_La": 3.764227008400011,
+        "expanded_adaptive_La": 3.767821418708732
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.18022846732791198,
+        "expanded_adaptive_La": -0.17663405701919066
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "OE1",
+          "",
+          "O"
+        ],
+        "label": "A:GLU213:OE1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "CG",
+          "",
+          "C"
+        ],
+        "label": "A:ASP350:CG",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.9468881413082886,
+        "original_adaptive_La": 3.8059446051191816,
+        "expanded_adaptive_La": 4.010593125170255
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": ">4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.14094353618910693,
+        "expanded_adaptive_La": 0.0637049838619661
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "OE1",
+          "",
+          "O"
+        ],
+        "label": "A:GLU213:OE1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD1",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.7228356128091393,
+        "original_adaptive_La": 3.577693741292627,
+        "expanded_adaptive_La": 4.027185036026086
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": ">4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.14514187151651248,
+        "expanded_adaptive_La": 0.304349423216947
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "OE1",
+          "",
+          "O"
+        ],
+        "label": "A:GLU213:OE1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD2",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD2",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 4.053966206075231,
+        "original_adaptive_La": 3.863020207783451,
+        "expanded_adaptive_La": 4.001689674305278
+      },
+      "bins": {
+        "origin": ">4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": ">4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.1909459982917796,
+        "expanded_adaptive_La": -0.052276531769952506
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "OE1",
+          "",
+          "O"
+        ],
+        "label": "A:GLU213:OE1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "C",
+          1,
+          "",
+          "O6",
+          "",
+          "O"
+        ],
+        "label": "C:PQQ1:O6",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.527513855394476,
+        "original_adaptive_La": 3.871271446871001,
+        "expanded_adaptive_La": 3.854716937151186
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.3437575914765252,
+        "expanded_adaptive_La": 0.32720308175670976
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "OE2",
+          "",
+          "O"
+        ],
+        "label": "A:GLU213:OE2",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          139,
+          "",
+          "CB",
+          "",
+          "C"
+        ],
+        "label": "A:CYS139:CB",
+        "element": "C",
+        "included_original": false,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.9471658186602703,
+        "original_adaptive_La": 4.022913565801561,
+        "expanded_adaptive_La": 3.9958955945207864
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": ">4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.07574774714129084,
+        "expanded_adaptive_La": 0.04872977586051608
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "OE2",
+          "",
+          "O"
+        ],
+        "label": "A:GLU213:OE2",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          139,
+          "",
+          "SG",
+          "",
+          "S"
+        ],
+        "label": "A:CYS139:SG",
+        "element": "S",
+        "included_original": false,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.596090933221796,
+        "original_adaptive_La": 3.5993240884315325,
+        "expanded_adaptive_La": 3.5732126995134363
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.003233155209736438,
+        "expanded_adaptive_La": -0.02287823370835973
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "OE2",
+          "",
+          "O"
+        ],
+        "label": "A:GLU213:OE2",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "C",
+          1,
+          "",
+          "C4",
+          "",
+          "C"
+        ],
+        "label": "C:PQQ1:C4",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 4.00615289273887,
+        "original_adaptive_La": 3.7602203050571905,
+        "expanded_adaptive_La": 3.7545386661512627
+      },
+      "bins": {
+        "origin": ">4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.24593258768167914,
+        "expanded_adaptive_La": -0.2516142265876069
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "OE2",
+          "",
+          "O"
+        ],
+        "label": "A:GLU213:OE2",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "C",
+          1,
+          "",
+          "O1",
+          "",
+          "O"
+        ],
+        "label": "C:PQQ1:O1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 4.345449689042551,
+        "original_adaptive_La": 3.7723311120201473,
+        "expanded_adaptive_La": 3.777580951295864
+      },
+      "bins": {
+        "origin": ">4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.5731185770224041,
+        "expanded_adaptive_La": -0.5678687377466876
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "OE2",
+          "",
+          "O"
+        ],
+        "label": "A:GLU213:OE2",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "C",
+          1,
+          "",
+          "N2",
+          "",
+          "N"
+        ],
+        "label": "C:PQQ1:N2",
+        "element": "N",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.1292896957616447,
+        "original_adaptive_La": 3.052513004010953,
+        "expanded_adaptive_La": 3.0530316142221796
+      },
+      "bins": {
+        "origin": "<=3.5",
+        "original_adaptive_La": "<=3.5",
+        "expanded_adaptive_La": "<=3.5"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.07677669175069157,
+        "expanded_adaptive_La": -0.07625808153946512
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "OE2",
+          "",
+          "O"
+        ],
+        "label": "A:GLU213:OE2",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "C",
+          1,
+          "",
+          "C12",
+          "",
+          "C"
+        ],
+        "label": "C:PQQ1:C12",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.245622898612839,
+        "original_adaptive_La": 3.4854376106248517,
+        "expanded_adaptive_La": 3.483890904901763
+      },
+      "bins": {
+        "origin": "<=3.5",
+        "original_adaptive_La": "<=3.5",
+        "expanded_adaptive_La": "<=3.5"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.23981471201201288,
+        "expanded_adaptive_La": 0.2382680062889242
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "OE2",
+          "",
+          "O"
+        ],
+        "label": "A:GLU213:OE2",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "C",
+          1,
+          "",
+          "C13",
+          "",
+          "C"
+        ],
+        "label": "C:PQQ1:C13",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.095857393356484,
+        "original_adaptive_La": 3.555589080172139,
+        "expanded_adaptive_La": 3.561849804622587
+      },
+      "bins": {
+        "origin": "<=3.5",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.4597316868156551,
+        "expanded_adaptive_La": 0.4659924112661029
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "OE2",
+          "",
+          "O"
+        ],
+        "label": "A:GLU213:OE2",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "C",
+          1,
+          "",
+          "O5",
+          "",
+          "O"
+        ],
+        "label": "C:PQQ1:O5",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.718059843520543,
+        "original_adaptive_La": 4.336778049527949,
+        "expanded_adaptive_La": 4.340239932226559
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": ">4.0",
+        "expanded_adaptive_La": ">4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.6187182060074057,
+        "expanded_adaptive_La": 0.6221800887060156
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "OE2",
+          "",
+          "O"
+        ],
+        "label": "A:GLU213:OE2",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "C",
+          1,
+          "",
+          "O6",
+          "",
+          "O"
+        ],
+        "label": "C:PQQ1:O6",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.046383265447735,
+        "original_adaptive_La": 3.3861836475503724,
+        "expanded_adaptive_La": 3.4015632827534157
+      },
+      "bins": {
+        "origin": "<=3.5",
+        "original_adaptive_La": "<=3.5",
+        "expanded_adaptive_La": "<=3.5"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.3398003821026374,
+        "expanded_adaptive_La": 0.3551800173056807
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "CG",
+          "",
+          "C"
+        ],
+        "label": "A:ASP350:CG",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          300,
+          "",
+          "CG",
+          "",
+          "C"
+        ],
+        "label": "A:ASN300:CG",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.9018741650647835,
+        "original_adaptive_La": 3.6758888712930955,
+        "expanded_adaptive_La": 3.9018741650647835
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.22598529377168797,
+        "expanded_adaptive_La": 0.0
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "CG",
+          "",
+          "C"
+        ],
+        "label": "A:ASP350:CG",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          300,
+          "",
+          "OD1",
+          "",
+          "O"
+        ],
+        "label": "A:ASN300:OD1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.874281610827999,
+        "original_adaptive_La": 3.683300755099142,
+        "expanded_adaptive_La": 3.874281610827999
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.19098085572885726,
+        "expanded_adaptive_La": 0.0
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "CG",
+          "",
+          "C"
+        ],
+        "label": "A:ASP350:CG",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          300,
+          "",
+          "ND2",
+          "",
+          "N"
+        ],
+        "label": "A:ASN300:ND2",
+        "element": "N",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 4.171323291235049,
+        "original_adaptive_La": 3.90883326550207,
+        "expanded_adaptive_La": 4.171323291235049
+      },
+      "bins": {
+        "origin": ">4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": ">4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.2624900257329785,
+        "expanded_adaptive_La": 0.0
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "CG",
+          "",
+          "C"
+        ],
+        "label": "A:ASP350:CG",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          304,
+          "",
+          "NE1",
+          "",
+          "N"
+        ],
+        "label": "A:TRP304:NE1",
+        "element": "N",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.63964641139768,
+        "original_adaptive_La": 3.428220972843622,
+        "expanded_adaptive_La": 3.63964641139768
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": "<=3.5",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.2114254385540577,
+        "expanded_adaptive_La": 0.0
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "CG",
+          "",
+          "C"
+        ],
+        "label": "A:ASP350:CG",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          304,
+          "",
+          "CE2",
+          "",
+          "C"
+        ],
+        "label": "A:TRP304:CE2",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.6433447544804216,
+        "original_adaptive_La": 3.512026464776941,
+        "expanded_adaptive_La": 3.6433447544804216
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.13131828970348058,
+        "expanded_adaptive_La": 0.0
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "CG",
+          "",
+          "C"
+        ],
+        "label": "A:ASP350:CG",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          304,
+          "",
+          "CZ2",
+          "",
+          "C"
+        ],
+        "label": "A:TRP304:CZ2",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.6290741243463183,
+        "original_adaptive_La": 3.574738673953765,
+        "expanded_adaptive_La": 3.6290741243463183
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.05433545039255305,
+        "expanded_adaptive_La": 0.0
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "CG",
+          "",
+          "C"
+        ],
+        "label": "A:ASP350:CG",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          378,
+          "",
+          "NH2",
+          "",
+          "N"
+        ],
+        "label": "A:ARG378:NH2",
+        "element": "N",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.279028362182919,
+        "original_adaptive_La": 3.510199282767891,
+        "expanded_adaptive_La": 3.279028362182919
+      },
+      "bins": {
+        "origin": "<=3.5",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "<=3.5"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.2311709205849719,
+        "expanded_adaptive_La": 0.0
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "CG",
+          "",
+          "C"
+        ],
+        "label": "A:ASP350:CG",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "C",
+          1,
+          "",
+          "O1",
+          "",
+          "O"
+        ],
+        "label": "C:PQQ1:O1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.7179268416686195,
+        "original_adaptive_La": 3.7715927967063996,
+        "expanded_adaptive_La": 3.7179268416686195
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.053665955037780044,
+        "expanded_adaptive_La": 0.0
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD1",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          300,
+          "",
+          "CB",
+          "",
+          "C"
+        ],
+        "label": "A:ASN300:CB",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.4037313348735387,
+        "original_adaptive_La": 3.1078025060121686,
+        "expanded_adaptive_La": 3.4651680244592247
+      },
+      "bins": {
+        "origin": "<=3.5",
+        "original_adaptive_La": "<=3.5",
+        "expanded_adaptive_La": "<=3.5"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.2959288288613702,
+        "expanded_adaptive_La": 0.06143668958568593
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD1",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          300,
+          "",
+          "CG",
+          "",
+          "C"
+        ],
+        "label": "A:ASN300:CG",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 2.917001714089315,
+        "original_adaptive_La": 2.5384411651861423,
+        "expanded_adaptive_La": 3.041897077204431
+      },
+      "bins": {
+        "origin": "<=3.5",
+        "original_adaptive_La": "<=3.5",
+        "expanded_adaptive_La": "<=3.5"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.3785605489031729,
+        "expanded_adaptive_La": 0.12489536311511573
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD1",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          300,
+          "",
+          "OD1",
+          "",
+          "O"
+        ],
+        "label": "A:ASN300:OD1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 2.7599653983338275,
+        "original_adaptive_La": 2.4961231532946213,
+        "expanded_adaptive_La": 2.8735930052532024
+      },
+      "bins": {
+        "origin": "<=3.5",
+        "original_adaptive_La": "<=3.5",
+        "expanded_adaptive_La": "<=3.5"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.26384224503920617,
+        "expanded_adaptive_La": 0.1136276069193749
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD1",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          300,
+          "",
+          "ND2",
+          "",
+          "N"
+        ],
+        "label": "A:ASN300:ND2",
+        "element": "N",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.498806796609381,
+        "original_adaptive_La": 3.0499174784493905,
+        "expanded_adaptive_La": 3.6583104271366556
+      },
+      "bins": {
+        "origin": "<=3.5",
+        "original_adaptive_La": "<=3.5",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.44888931815999067,
+        "expanded_adaptive_La": 0.15950363052727434
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD1",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          304,
+          "",
+          "NE1",
+          "",
+          "N"
+        ],
+        "label": "A:TRP304:NE1",
+        "element": "N",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 4.061802924810608,
+        "original_adaptive_La": 3.740076521158954,
+        "expanded_adaptive_La": 4.21333758142623
+      },
+      "bins": {
+        "origin": ">4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": ">4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.32172640365165384,
+        "expanded_adaptive_La": 0.15153465661562215
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD1",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          352,
+          "",
+          "N",
+          "",
+          "N"
+        ],
+        "label": "A:SER352:N",
+        "element": "N",
+        "included_original": false,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.749758658900596,
+        "original_adaptive_La": 3.9540032385866786,
+        "expanded_adaptive_La": 3.6152755247566097
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.20424457968608278,
+        "expanded_adaptive_La": -0.13448313414398605
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD1",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          352,
+          "",
+          "CB",
+          "",
+          "C"
+        ],
+        "label": "A:SER352:CB",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.526456862064245,
+        "original_adaptive_La": 3.7166915881365052,
+        "expanded_adaptive_La": 3.4443719608480006
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "<=3.5"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.19023472607226033,
+        "expanded_adaptive_La": -0.08208490121624434
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD1",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          378,
+          "",
+          "NH2",
+          "",
+          "N"
+        ],
+        "label": "A:ARG378:NH2",
+        "element": "N",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.4376686867701487,
+        "original_adaptive_La": 3.8947295956802823,
+        "expanded_adaptive_La": 3.29133235193717
+      },
+      "bins": {
+        "origin": "<=3.5",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "<=3.5"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.4570609089101336,
+        "expanded_adaptive_La": -0.14633633483297848
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD1",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "C",
+          1,
+          "",
+          "O1",
+          "",
+          "O"
+        ],
+        "label": "C:PQQ1:O1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.432426109911181,
+        "original_adaptive_La": 3.6856941870566633,
+        "expanded_adaptive_La": 3.4271803407305237
+      },
+      "bins": {
+        "origin": "<=3.5",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "<=3.5"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.2532680771454823,
+        "expanded_adaptive_La": -0.005245769180657334
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD2",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD2",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          304,
+          "",
+          "NE1",
+          "",
+          "N"
+        ],
+        "label": "A:TRP304:NE1",
+        "element": "N",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 4.079242086466554,
+        "original_adaptive_La": 3.870581395762146,
+        "expanded_adaptive_La": 3.9206492461960365
+      },
+      "bins": {
+        "origin": ">4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.20866069070440751,
+        "expanded_adaptive_La": -0.15859284027051723
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD2",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD2",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          304,
+          "",
+          "CE2",
+          "",
+          "C"
+        ],
+        "label": "A:TRP304:CE2",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.7566422507340245,
+        "original_adaptive_La": 3.6435700166126033,
+        "expanded_adaptive_La": 3.605323887037361
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.1130722341214212,
+        "expanded_adaptive_La": -0.1513183636966633
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD2",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD2",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          304,
+          "",
+          "CZ2",
+          "",
+          "C"
+        ],
+        "label": "A:TRP304:CZ2",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.257744158156069,
+        "original_adaptive_La": 3.208453328255524,
+        "expanded_adaptive_La": 3.1078300621100117
+      },
+      "bins": {
+        "origin": "<=3.5",
+        "original_adaptive_La": "<=3.5",
+        "expanded_adaptive_La": "<=3.5"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.049290829900544786,
+        "expanded_adaptive_La": -0.1499140960460572
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD2",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD2",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          304,
+          "",
+          "CH2",
+          "",
+          "C"
+        ],
+        "label": "A:TRP304:CH2",
+        "element": "C",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.9213358693180056,
+        "original_adaptive_La": 3.9861278059696037,
+        "expanded_adaptive_La": 3.815964143070617
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": "3.5-4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.0647919366515981,
+        "expanded_adaptive_La": -0.10537172624738878
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD2",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD2",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          378,
+          "",
+          "NH2",
+          "",
+          "N"
+        ],
+        "label": "A:ARG378:NH2",
+        "element": "N",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 2.831854692599887,
+        "original_adaptive_La": 2.995503778048387,
+        "expanded_adaptive_La": 2.9988379016863678
+      },
+      "bins": {
+        "origin": "<=3.5",
+        "original_adaptive_La": "<=3.5",
+        "expanded_adaptive_La": "<=3.5"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.16364908544849976,
+        "expanded_adaptive_La": 0.16698320908648068
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD2",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD2",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          442,
+          "",
+          "O",
+          "",
+          "O"
+        ],
+        "label": "A:PHE442:O",
+        "element": "O",
+        "included_original": false,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.9609877555983424,
+        "original_adaptive_La": 4.257959306004186,
+        "expanded_adaptive_La": 4.140751765096466
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": ">4.0",
+        "expanded_adaptive_La": ">4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.29697155040584367,
+        "expanded_adaptive_La": 0.17976400949812366
+      },
+      "either_partner_omitted_from_both": false
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD2",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD2",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          442,
+          "",
+          "CB",
+          "",
+          "C"
+        ],
+        "label": "A:PHE442:CB",
+        "element": "C",
+        "included_original": false,
+        "included_expanded": false
+      },
+      "distances_A": {
+        "origin": 3.892889672210092,
+        "original_adaptive_La": 4.203577467725836,
+        "expanded_adaptive_La": 3.990990644602909
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": ">4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.3106877955157441,
+        "expanded_adaptive_La": 0.09810097239281701
+      },
+      "either_partner_omitted_from_both": true
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD2",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD2",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "A",
+          442,
+          "",
+          "CD2",
+          "",
+          "C"
+        ],
+        "label": "A:PHE442:CD2",
+        "element": "C",
+        "included_original": false,
+        "included_expanded": false
+      },
+      "distances_A": {
+        "origin": 3.7144885246827726,
+        "original_adaptive_La": 4.014803492912383,
+        "expanded_adaptive_La": 3.7729902485535063
+      },
+      "bins": {
+        "origin": "3.5-4.0",
+        "original_adaptive_La": ">4.0",
+        "expanded_adaptive_La": "3.5-4.0"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": 0.30031496822961,
+        "expanded_adaptive_La": 0.05850172387073371
+      },
+      "either_partner_omitted_from_both": true
+    },
+    {
+      "moving": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD2",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD2",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "partner": {
+        "id": [
+          "source",
+          "C",
+          1,
+          "",
+          "O1",
+          "",
+          "O"
+        ],
+        "label": "C:PQQ1:O1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "distances_A": {
+        "origin": 3.1713262209996635,
+        "original_adaptive_La": 3.0430035509483764,
+        "expanded_adaptive_La": 3.1753277483160063
+      },
+      "bins": {
+        "origin": "<=3.5",
+        "original_adaptive_La": "<=3.5",
+        "expanded_adaptive_La": "<=3.5"
+      },
+      "delta_A": {
+        "origin": 0.0,
+        "original_adaptive_La": -0.12832267005128717,
+        "expanded_adaptive_La": 0.0040015273163427345
+      },
+      "either_partner_omitted_from_both": false
+    }
+  ],
+  "omitted_source_atoms_near_movement": [
+    {
+      "id": [
+        "source",
+        "A",
+        213,
+        "",
+        "C",
+        "",
+        "C"
+      ],
+      "label": "A:GLU213:C",
+      "element": "C",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "GLU",
+      "backbone_atom": true,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 2.594493399490544,
+          "atom": "A:GLU213:HB3"
+        },
+        "original_adaptive_La": {
+          "distance_A": 2.5423726001851863,
+          "atom": "A:GLU213:HB3"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 2.5423371236977284,
+          "atom": "A:GLU213:HB3"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        213,
+        "",
+        "O",
+        "",
+        "O"
+      ],
+      "label": "A:GLU213:O",
+      "element": "O",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "GLU",
+      "backbone_atom": true,
+      "typed_metal_donor": "backbone_O",
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 2.5982226617439848,
+          "atom": "A:GLU213:HB3"
+        },
+        "original_adaptive_La": {
+          "distance_A": 2.5855339828767567,
+          "atom": "A:GLU213:HB3"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 2.58553669597207,
+          "atom": "A:GLU213:HB3"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        214,
+        "",
+        "N",
+        "",
+        "N"
+      ],
+      "label": "A:PHE214:N",
+      "element": "N",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "PHE",
+      "backbone_atom": true,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 3.6907470788446077,
+          "atom": "A:GLU213:HB3"
+        },
+        "original_adaptive_La": {
+          "distance_A": 3.592109299401516,
+          "atom": "A:GLU213:HB3"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 3.5920329690117105,
+          "atom": "A:GLU213:HB3"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        214,
+        "",
+        "H",
+        "",
+        "H"
+      ],
+      "label": "A:PHE214:H",
+      "element": "H",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "PHE",
+      "backbone_atom": true,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 3.715450040035526,
+          "atom": "A:GLU213:HB2"
+        },
+        "original_adaptive_La": {
+          "distance_A": 3.7841788888813284,
+          "atom": "A:GLU213:HB2"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 3.7842411596452754,
+          "atom": "A:GLU213:HB2"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        214,
+        "",
+        "CD2",
+        "",
+        "C"
+      ],
+      "label": "A:PHE214:CD2",
+      "element": "C",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "PHE",
+      "backbone_atom": false,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 3.8407505776866055,
+          "atom": "A:GLU213:HB2"
+        },
+        "original_adaptive_La": {
+          "distance_A": 4.002400998680907,
+          "atom": "A:GLU213:HB3"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 4.002248769498038,
+          "atom": "A:GLU213:HB3"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        214,
+        "",
+        "HD2",
+        "",
+        "H"
+      ],
+      "label": "A:PHE214:HD2",
+      "element": "H",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "PHE",
+      "backbone_atom": false,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 3.361098927434299,
+          "atom": "A:GLU213:HB2"
+        },
+        "original_adaptive_La": {
+          "distance_A": 3.491951136929104,
+          "atom": "A:GLU213:HB2"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 3.492066974785408,
+          "atom": "A:GLU213:HB2"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        214,
+        "",
+        "CE2",
+        "",
+        "C"
+      ],
+      "label": "A:PHE214:CE2",
+      "element": "C",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "PHE",
+      "backbone_atom": false,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 3.9860765170779153,
+          "atom": "A:GLU213:HB2"
+        },
+        "original_adaptive_La": {
+          "distance_A": 4.0629694941006615,
+          "atom": "A:GLU213:HB3"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 4.0628207784269295,
+          "atom": "A:GLU213:HB3"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        349,
+        "",
+        "HA",
+        "",
+        "H"
+      ],
+      "label": "A:TRP349:HA",
+      "element": "H",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "TRP",
+      "backbone_atom": true,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 3.8434293280870935,
+          "atom": "A:ASP350:HB2"
+        },
+        "original_adaptive_La": {
+          "distance_A": 3.8904170443175254,
+          "atom": "A:ASP350:HB2"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 3.8434293280870935,
+          "atom": "A:ASP350:HB2"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        349,
+        "",
+        "C",
+        "",
+        "C"
+      ],
+      "label": "A:TRP349:C",
+      "element": "C",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "TRP",
+      "backbone_atom": true,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 2.6579518430550992,
+          "atom": "A:ASP350:HB2"
+        },
+        "original_adaptive_La": {
+          "distance_A": 2.655021674221954,
+          "atom": "A:ASP350:HB2"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 2.6579518430550992,
+          "atom": "A:ASP350:HB2"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        349,
+        "",
+        "O",
+        "",
+        "O"
+      ],
+      "label": "A:TRP349:O",
+      "element": "O",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "TRP",
+      "backbone_atom": true,
+      "typed_metal_donor": "backbone_O",
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 2.536439630663423,
+          "atom": "A:ASP350:HB2"
+        },
+        "original_adaptive_La": {
+          "distance_A": 2.440018819972355,
+          "atom": "A:ASP350:HB2"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 2.536439630663423,
+          "atom": "A:ASP350:HB2"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        350,
+        "",
+        "N",
+        "",
+        "N"
+      ],
+      "label": "A:ASP350:N",
+      "element": "N",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "ASP",
+      "backbone_atom": true,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 2.334284258611192,
+          "atom": "A:ASP350:HB2"
+        },
+        "original_adaptive_La": {
+          "distance_A": 2.392151019576824,
+          "atom": "A:ASP350:HB2"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 2.334284258611192,
+          "atom": "A:ASP350:HB2"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        350,
+        "",
+        "H",
+        "",
+        "H"
+      ],
+      "label": "A:ASP350:H",
+      "element": "H",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "ASP",
+      "backbone_atom": true,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 2.92768065198375,
+          "atom": "A:ASP350:HB2"
+        },
+        "original_adaptive_La": {
+          "distance_A": 3.0620300964893485,
+          "atom": "A:ASP350:HB2"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 2.92768065198375,
+          "atom": "A:ASP350:HB2"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        442,
+        "",
+        "HA",
+        "",
+        "H"
+      ],
+      "label": "A:PHE442:HA",
+      "element": "H",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "PHE",
+      "backbone_atom": true,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 3.9381724187749847,
+          "atom": "A:ASP350:HB2"
+        },
+        "original_adaptive_La": {
+          "distance_A": 3.732244966720947,
+          "atom": "A:ASP350:HB2"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 3.9381724187749847,
+          "atom": "A:ASP350:HB2"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        442,
+        "",
+        "CB",
+        "",
+        "C"
+      ],
+      "label": "A:PHE442:CB",
+      "element": "C",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "PHE",
+      "backbone_atom": false,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 3.2248789124554738,
+          "atom": "A:ASP350:HB2"
+        },
+        "original_adaptive_La": {
+          "distance_A": 3.0346151119693427,
+          "atom": "A:ASP350:HB2"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 3.2248789124554738,
+          "atom": "A:ASP350:HB2"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        442,
+        "",
+        "HB2",
+        "",
+        "H"
+      ],
+      "label": "A:PHE442:HB2",
+      "element": "H",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "PHE",
+      "backbone_atom": false,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 3.044146021464805,
+          "atom": "A:ASP350:HB2"
+        },
+        "original_adaptive_La": {
+          "distance_A": 2.905451911558414,
+          "atom": "A:ASP350:HB2"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 3.044146021464805,
+          "atom": "A:ASP350:HB2"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        442,
+        "",
+        "HB3",
+        "",
+        "H"
+      ],
+      "label": "A:PHE442:HB3",
+      "element": "H",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "PHE",
+      "backbone_atom": false,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 2.4875451754691817,
+          "atom": "A:ASP350:HB2"
+        },
+        "original_adaptive_La": {
+          "distance_A": 2.280525086306902,
+          "atom": "A:ASP350:HB2"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 2.4875451754691817,
+          "atom": "A:ASP350:HB2"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        442,
+        "",
+        "CD2",
+        "",
+        "C"
+      ],
+      "label": "A:PHE442:CD2",
+      "element": "C",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "PHE",
+      "backbone_atom": false,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 3.7144885246827726,
+          "atom": "A:ASP350:OD2"
+        },
+        "original_adaptive_La": {
+          "distance_A": 4.014803492912383,
+          "atom": "A:ASP350:OD2"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 3.7729902485535063,
+          "atom": "A:ASP350:OD2"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        442,
+        "",
+        "HD2",
+        "",
+        "H"
+      ],
+      "label": "A:PHE442:HD2",
+      "element": "H",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "PHE",
+      "backbone_atom": false,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 2.6684962057308605,
+          "atom": "A:ASP350:OD2"
+        },
+        "original_adaptive_La": {
+          "distance_A": 2.9645833605011687,
+          "atom": "A:ASP350:OD2"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 2.7357728303790916,
+          "atom": "A:ASP350:OD2"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        483,
+        "",
+        "HA",
+        "",
+        "H"
+      ],
+      "label": "A:ALA483:HA",
+      "element": "H",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "ALA",
+      "backbone_atom": true,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 3.964971248319465,
+          "atom": "A:GLU213:HB3"
+        },
+        "original_adaptive_La": {
+          "distance_A": 3.922960247848007,
+          "atom": "A:GLU213:HB3"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 3.92294288101635,
+          "atom": "A:GLU213:HB3"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        483,
+        "",
+        "HB3",
+        "",
+        "H"
+      ],
+      "label": "A:ALA483:HB3",
+      "element": "H",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "ALA",
+      "backbone_atom": false,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 3.688710614835488,
+          "atom": "A:GLU213:HB3"
+        },
+        "original_adaptive_La": {
+          "distance_A": 3.7115798010756436,
+          "atom": "A:GLU213:HB3"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 3.7116162659444263,
+          "atom": "A:GLU213:HB3"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        485,
+        "",
+        "CD2",
+        "",
+        "C"
+      ],
+      "label": "A:LEU485:CD2",
+      "element": "C",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "LEU",
+      "backbone_atom": false,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 2.873376585134639,
+          "atom": "A:GLU213:HG3"
+        },
+        "original_adaptive_La": {
+          "distance_A": 2.5852968661202334,
+          "atom": "A:GLU213:HG3"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 2.594229853357019,
+          "atom": "A:GLU213:HG3"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        485,
+        "",
+        "HD21",
+        "",
+        "H"
+      ],
+      "label": "A:LEU485:HD21",
+      "element": "H",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "LEU",
+      "backbone_atom": false,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 2.5742024007447433,
+          "atom": "A:GLU213:HB3"
+        },
+        "original_adaptive_La": {
+          "distance_A": 2.4146668250351997,
+          "atom": "A:GLU213:HG3"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 2.4265490125886555,
+          "atom": "A:GLU213:HG3"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        485,
+        "",
+        "HD22",
+        "",
+        "H"
+      ],
+      "label": "A:LEU485:HD22",
+      "element": "H",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "LEU",
+      "backbone_atom": false,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 3.148074649686691,
+          "atom": "A:GLU213:HG3"
+        },
+        "original_adaptive_La": {
+          "distance_A": 2.8803154928332404,
+          "atom": "A:GLU213:HG3"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 2.883858939457379,
+          "atom": "A:GLU213:HG3"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        485,
+        "",
+        "HD23",
+        "",
+        "H"
+      ],
+      "label": "A:LEU485:HD23",
+      "element": "H",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "LEU",
+      "backbone_atom": false,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 2.8141927794662522,
+          "atom": "A:GLU213:HG3"
+        },
+        "original_adaptive_La": {
+          "distance_A": 2.5966452724665525,
+          "atom": "A:GLU213:HG3"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 2.60538079218055,
+          "atom": "A:GLU213:HG3"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        591,
+        "",
+        "CZ2",
+        "",
+        "C"
+      ],
+      "label": "A:TRP591:CZ2",
+      "element": "C",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "TRP",
+      "backbone_atom": false,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 3.889828916546331,
+          "atom": "A:GLU213:HG2"
+        },
+        "original_adaptive_La": {
+          "distance_A": 3.755854583383615,
+          "atom": "A:GLU213:HG2"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 3.7497608295821934,
+          "atom": "A:GLU213:HG2"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        591,
+        "",
+        "HZ2",
+        "",
+        "H"
+      ],
+      "label": "A:TRP591:HZ2",
+      "element": "H",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "TRP",
+      "backbone_atom": false,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 3.937776149046566,
+          "atom": "A:GLU213:HG2"
+        },
+        "original_adaptive_La": {
+          "distance_A": 3.845348693755682,
+          "atom": "A:GLU213:HG2"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 3.8407136752284767,
+          "atom": "A:GLU213:HG2"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        591,
+        "",
+        "CH2",
+        "",
+        "C"
+      ],
+      "label": "A:TRP591:CH2",
+      "element": "C",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "TRP",
+      "backbone_atom": false,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 3.839329238291502,
+          "atom": "A:GLU213:HG2"
+        },
+        "original_adaptive_La": {
+          "distance_A": 3.6107690953536506,
+          "atom": "A:GLU213:HG2"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 3.6004514683320767,
+          "atom": "A:GLU213:HG2"
+        }
+      }
+    },
+    {
+      "id": [
+        "source",
+        "A",
+        591,
+        "",
+        "HH2",
+        "",
+        "H"
+      ],
+      "label": "A:TRP591:HH2",
+      "element": "H",
+      "included_original": false,
+      "included_expanded": false,
+      "resname": "TRP",
+      "backbone_atom": false,
+      "typed_metal_donor": null,
+      "nearest_moved": {
+        "origin": {
+          "distance_A": 3.4649888888710745,
+          "atom": "A:GLU213:HB3"
+        },
+        "original_adaptive_La": {
+          "distance_A": 3.5568757259558845,
+          "atom": "A:GLU213:HB3"
+        },
+        "expanded_adaptive_La": {
+          "distance_A": 3.547713717936865,
+          "atom": "A:GLU213:HG2"
+        }
+      }
+    }
+  ],
+  "hydrogen_bond_geometry": [
+    {
+      "donor": {
+        "id": [
+          "source",
+          "A",
+          300,
+          "",
+          "ND2",
+          "",
+          "N"
+        ],
+        "label": "A:ASN300:ND2",
+        "element": "N",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "hydrogen": {
+        "id": [
+          "source",
+          "A",
+          300,
+          "",
+          "HD21",
+          "",
+          "H"
+        ],
+        "label": "A:ASN300:HD21",
+        "element": "H",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "acceptor": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "OE1",
+          "",
+          "O"
+        ],
+        "label": "A:GLU213:OE1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "geometry": {
+        "origin": {
+          "D_A_A": 3.2156504785190823,
+          "H_A_A": 3.1533754930233098,
+          "D_H_A_degrees": 82.28059579201222,
+          "geometry_flag": false
+        },
+        "original_adaptive_La": {
+          "D_A_A": 3.0829289405508593,
+          "H_A_A": 2.9795511993135504,
+          "D_H_A_degrees": 83.71315935827272,
+          "geometry_flag": false
+        },
+        "expanded_adaptive_La": {
+          "D_A_A": 3.09557054232009,
+          "H_A_A": 2.9953203633173513,
+          "D_H_A_degrees": 83.61527641656346,
+          "geometry_flag": false
+        }
+      }
+    },
+    {
+      "donor": {
+        "id": [
+          "source",
+          "A",
+          300,
+          "",
+          "ND2",
+          "",
+          "N"
+        ],
+        "label": "A:ASN300:ND2",
+        "element": "N",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "hydrogen": {
+        "id": [
+          "source",
+          "A",
+          300,
+          "",
+          "HD21",
+          "",
+          "H"
+        ],
+        "label": "A:ASN300:HD21",
+        "element": "H",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "acceptor": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD1",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "geometry": {
+        "origin": {
+          "D_A_A": 3.498806796609381,
+          "H_A_A": 4.4870466901961255,
+          "D_H_A_degrees": 28.9032004502401,
+          "geometry_flag": false
+        },
+        "original_adaptive_La": {
+          "D_A_A": 3.0499174784493905,
+          "H_A_A": 4.050763302872167,
+          "D_H_A_degrees": 27.406767997546496,
+          "geometry_flag": false
+        },
+        "expanded_adaptive_La": {
+          "D_A_A": 3.6583104271366556,
+          "H_A_A": 4.6560429983296725,
+          "D_H_A_degrees": 28.320180007650688,
+          "geometry_flag": false
+        }
+      }
+    },
+    {
+      "donor": {
+        "id": [
+          "source",
+          "A",
+          300,
+          "",
+          "ND2",
+          "",
+          "N"
+        ],
+        "label": "A:ASN300:ND2",
+        "element": "N",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "hydrogen": {
+        "id": [
+          "source",
+          "A",
+          300,
+          "",
+          "HD22",
+          "",
+          "H"
+        ],
+        "label": "A:ASN300:HD22",
+        "element": "H",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "acceptor": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "OE1",
+          "",
+          "O"
+        ],
+        "label": "A:GLU213:OE1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "geometry": {
+        "origin": {
+          "D_A_A": 3.2156504785190823,
+          "H_A_A": 3.9279013480483442,
+          "D_H_A_degrees": 45.72092284169126,
+          "geometry_flag": false
+        },
+        "original_adaptive_La": {
+          "D_A_A": 3.0829289405508593,
+          "H_A_A": 3.702682151823115,
+          "D_H_A_degrees": 50.21916428598597,
+          "geometry_flag": false
+        },
+        "expanded_adaptive_La": {
+          "D_A_A": 3.09557054232009,
+          "H_A_A": 3.720055675848549,
+          "D_H_A_degrees": 50.010795989162936,
+          "geometry_flag": false
+        }
+      }
+    },
+    {
+      "donor": {
+        "id": [
+          "source",
+          "A",
+          300,
+          "",
+          "ND2",
+          "",
+          "N"
+        ],
+        "label": "A:ASN300:ND2",
+        "element": "N",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "hydrogen": {
+        "id": [
+          "source",
+          "A",
+          300,
+          "",
+          "HD22",
+          "",
+          "H"
+        ],
+        "label": "A:ASN300:HD22",
+        "element": "H",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "acceptor": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD1",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "geometry": {
+        "origin": {
+          "D_A_A": 3.498806796609381,
+          "H_A_A": 3.7465021019612412,
+          "D_H_A_degrees": 68.87848377300708,
+          "geometry_flag": false
+        },
+        "original_adaptive_La": {
+          "D_A_A": 3.0499174784493905,
+          "H_A_A": 3.293182169334086,
+          "D_H_A_degrees": 67.811437770211,
+          "geometry_flag": false
+        },
+        "expanded_adaptive_La": {
+          "D_A_A": 3.6583104271366556,
+          "H_A_A": 3.892129752547035,
+          "D_H_A_degrees": 69.89790986516729,
+          "geometry_flag": false
+        }
+      }
+    },
+    {
+      "donor": {
+        "id": [
+          "source",
+          "A",
+          304,
+          "",
+          "NE1",
+          "",
+          "N"
+        ],
+        "label": "A:TRP304:NE1",
+        "element": "N",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "hydrogen": {
+        "id": [
+          "source",
+          "A",
+          304,
+          "",
+          "HE1",
+          "",
+          "H"
+        ],
+        "label": "A:TRP304:HE1",
+        "element": "H",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "acceptor": {
+        "id": [
+          "source",
+          "A",
+          213,
+          "",
+          "OE1",
+          "",
+          "O"
+        ],
+        "label": "A:GLU213:OE1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "geometry": {
+        "origin": {
+          "D_A_A": 3.1555712636541755,
+          "H_A_A": 2.29783920238123,
+          "D_H_A_degrees": 127.14107991092374,
+          "geometry_flag": true
+        },
+        "original_adaptive_La": {
+          "D_A_A": 2.7838946483206386,
+          "H_A_A": 1.8652769360429107,
+          "D_H_A_degrees": 130.65955406303632,
+          "geometry_flag": true
+        },
+        "expanded_adaptive_La": {
+          "D_A_A": 2.803865611807527,
+          "H_A_A": 1.890799583202242,
+          "D_H_A_degrees": 130.26218948570954,
+          "geometry_flag": true
+        }
+      }
+    },
+    {
+      "donor": {
+        "id": [
+          "source",
+          "A",
+          304,
+          "",
+          "NE1",
+          "",
+          "N"
+        ],
+        "label": "A:TRP304:NE1",
+        "element": "N",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "hydrogen": {
+        "id": [
+          "source",
+          "A",
+          304,
+          "",
+          "HE1",
+          "",
+          "H"
+        ],
+        "label": "A:TRP304:HE1",
+        "element": "H",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "acceptor": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD1",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "geometry": {
+        "origin": {
+          "D_A_A": 4.061802924810608,
+          "H_A_A": 4.127935803764396,
+          "D_H_A_degrees": 78.54009904035611,
+          "geometry_flag": false
+        },
+        "original_adaptive_La": {
+          "D_A_A": 3.740076521158954,
+          "H_A_A": 3.760360606082521,
+          "D_H_A_degrees": 79.96234288135544,
+          "geometry_flag": false
+        },
+        "expanded_adaptive_La": {
+          "D_A_A": 4.21333758142623,
+          "H_A_A": 4.3025035085282575,
+          "D_H_A_degrees": 77.75904209238027,
+          "geometry_flag": false
+        }
+      }
+    },
+    {
+      "donor": {
+        "id": [
+          "source",
+          "A",
+          304,
+          "",
+          "NE1",
+          "",
+          "N"
+        ],
+        "label": "A:TRP304:NE1",
+        "element": "N",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "hydrogen": {
+        "id": [
+          "source",
+          "A",
+          304,
+          "",
+          "HE1",
+          "",
+          "H"
+        ],
+        "label": "A:TRP304:HE1",
+        "element": "H",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "acceptor": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD2",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD2",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "geometry": {
+        "origin": {
+          "D_A_A": 4.079242086466554,
+          "H_A_A": 4.453810615641398,
+          "D_H_A_degrees": 64.13543855737896,
+          "geometry_flag": false
+        },
+        "original_adaptive_La": {
+          "D_A_A": 3.870581395762146,
+          "H_A_A": 4.181772689960308,
+          "D_H_A_degrees": 66.74682350064788,
+          "geometry_flag": false
+        },
+        "expanded_adaptive_La": {
+          "D_A_A": 3.9206492461960365,
+          "H_A_A": 4.285248024941131,
+          "D_H_A_degrees": 64.32695990180594,
+          "geometry_flag": false
+        }
+      }
+    },
+    {
+      "donor": {
+        "id": [
+          "source",
+          "A",
+          352,
+          "",
+          "N",
+          "",
+          "N"
+        ],
+        "label": "A:SER352:N",
+        "element": "N",
+        "included_original": false,
+        "included_expanded": true
+      },
+      "hydrogen": {
+        "id": [
+          "source",
+          "A",
+          352,
+          "",
+          "H",
+          "",
+          "H"
+        ],
+        "label": "A:SER352:H",
+        "element": "H",
+        "included_original": false,
+        "included_expanded": true
+      },
+      "acceptor": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD1",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "geometry": {
+        "origin": {
+          "D_A_A": 3.749758658900596,
+          "H_A_A": 2.6167403386656463,
+          "D_H_A_degrees": 160.62099812482293,
+          "geometry_flag": false
+        },
+        "original_adaptive_La": {
+          "D_A_A": 3.9540032385866786,
+          "H_A_A": 2.832332470724696,
+          "D_H_A_degrees": 158.62490869773075,
+          "geometry_flag": false
+        },
+        "expanded_adaptive_La": {
+          "D_A_A": 3.6152755247566097,
+          "H_A_A": 2.47833826129044,
+          "D_H_A_degrees": 161.30164401611566,
+          "geometry_flag": false
+        }
+      }
+    },
+    {
+      "donor": {
+        "id": [
+          "source",
+          "A",
+          378,
+          "",
+          "NH2",
+          "",
+          "N"
+        ],
+        "label": "A:ARG378:NH2",
+        "element": "N",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "hydrogen": {
+        "id": [
+          "source",
+          "A",
+          378,
+          "",
+          "HH21",
+          "",
+          "H"
+        ],
+        "label": "A:ARG378:HH21",
+        "element": "H",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "acceptor": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD1",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "geometry": {
+        "origin": {
+          "D_A_A": 3.4376686867701487,
+          "H_A_A": 3.79204179829284,
+          "D_H_A_degrees": 63.81286607746452,
+          "geometry_flag": false
+        },
+        "original_adaptive_La": {
+          "D_A_A": 3.8947295956802823,
+          "H_A_A": 4.212165639863812,
+          "D_H_A_degrees": 66.51988520717623,
+          "geometry_flag": false
+        },
+        "expanded_adaptive_La": {
+          "D_A_A": 3.29133235193717,
+          "H_A_A": 3.6869001194689774,
+          "D_H_A_degrees": 61.53736485043723,
+          "geometry_flag": false
+        }
+      }
+    },
+    {
+      "donor": {
+        "id": [
+          "source",
+          "A",
+          378,
+          "",
+          "NH2",
+          "",
+          "N"
+        ],
+        "label": "A:ARG378:NH2",
+        "element": "N",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "hydrogen": {
+        "id": [
+          "source",
+          "A",
+          378,
+          "",
+          "HH21",
+          "",
+          "H"
+        ],
+        "label": "A:ARG378:HH21",
+        "element": "H",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "acceptor": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD2",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD2",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "geometry": {
+        "origin": {
+          "D_A_A": 2.831854692599887,
+          "H_A_A": 2.559937108602475,
+          "D_H_A_degrees": 90.58042947276358,
+          "geometry_flag": false
+        },
+        "original_adaptive_La": {
+          "D_A_A": 2.995503778048387,
+          "H_A_A": 2.7505275639877613,
+          "D_H_A_degrees": 90.02625870511305,
+          "geometry_flag": false
+        },
+        "expanded_adaptive_La": {
+          "D_A_A": 2.9988379016863678,
+          "H_A_A": 2.7021120547350206,
+          "D_H_A_degrees": 92.56791659745265,
+          "geometry_flag": false
+        }
+      }
+    },
+    {
+      "donor": {
+        "id": [
+          "source",
+          "A",
+          378,
+          "",
+          "NH2",
+          "",
+          "N"
+        ],
+        "label": "A:ARG378:NH2",
+        "element": "N",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "hydrogen": {
+        "id": [
+          "source",
+          "A",
+          378,
+          "",
+          "HH22",
+          "",
+          "H"
+        ],
+        "label": "A:ARG378:HH22",
+        "element": "H",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "acceptor": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD1",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD1",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "geometry": {
+        "origin": {
+          "D_A_A": 3.4376686867701487,
+          "H_A_A": 2.552460381670987,
+          "D_H_A_degrees": 130.74297683413675,
+          "geometry_flag": false
+        },
+        "original_adaptive_La": {
+          "D_A_A": 3.8947295956802823,
+          "H_A_A": 3.0083051919902837,
+          "D_H_A_degrees": 132.0010932823924,
+          "geometry_flag": false
+        },
+        "expanded_adaptive_La": {
+          "D_A_A": 3.29133235193717,
+          "H_A_A": 2.3821399433565933,
+          "D_H_A_degrees": 132.34503972269854,
+          "geometry_flag": true
+        }
+      }
+    },
+    {
+      "donor": {
+        "id": [
+          "source",
+          "A",
+          378,
+          "",
+          "NH2",
+          "",
+          "N"
+        ],
+        "label": "A:ARG378:NH2",
+        "element": "N",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "hydrogen": {
+        "id": [
+          "source",
+          "A",
+          378,
+          "",
+          "HH22",
+          "",
+          "H"
+        ],
+        "label": "A:ARG378:HH22",
+        "element": "H",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "acceptor": {
+        "id": [
+          "source",
+          "A",
+          350,
+          "",
+          "OD2",
+          "",
+          "O"
+        ],
+        "label": "A:ASP350:OD2",
+        "element": "O",
+        "included_original": true,
+        "included_expanded": true
+      },
+      "geometry": {
+        "origin": {
+          "D_A_A": 2.831854692599887,
+          "H_A_A": 2.573889857783352,
+          "D_H_A_degrees": 90.1037855781171,
+          "geometry_flag": false
+        },
+        "original_adaptive_La": {
+          "D_A_A": 2.995503778048387,
+          "H_A_A": 2.676854289031139,
+          "D_H_A_degrees": 93.86045354425133,
+          "geometry_flag": false
+        },
+        "expanded_adaptive_La": {
+          "D_A_A": 2.9988379016863678,
+          "H_A_A": 2.734310465031078,
+          "D_H_A_degrees": 91.18522475995907,
+          "geometry_flag": false
+        }
+      }
+    }
+  ],
+  "ambiguous_parent_hydrogens": [],
+  "summaries": {
+    "origin": {
+      "coordination_number": 7,
+      "denticity": {
+        "A:GLU213": 2,
+        "A:ASN300": 1,
+        "A:ASP350": 1,
+        "C:PQQ1": 3
+      },
+      "maximum_real_heavy_displacement_A": 0.0,
+      "contact_changes_at_3_5_A": {
+        "new": [],
+        "lost": []
+      },
+      "hydrogen_bond_geometry_changes": {
+        "new": [],
+        "lost": []
+      }
+    },
+    "original_adaptive_La": {
+      "coordination_number": 7,
+      "denticity": {
+        "A:GLU213": 2,
+        "A:ASN300": 1,
+        "A:ASP350": 1,
+        "C:PQQ1": 3
+      },
+      "maximum_real_heavy_displacement_A": 0.8000000002753894,
+      "contact_changes_at_3_5_A": {
+        "new": [
+          {
+            "moving": {
+              "id": [
+                "source",
+                "A",
+                350,
+                "",
+                "CG",
+                "",
+                "C"
+              ],
+              "label": "A:ASP350:CG",
+              "element": "C",
+              "included_original": true,
+              "included_expanded": true
+            },
+            "partner": {
+              "id": [
+                "source",
+                "A",
+                304,
+                "",
+                "NE1",
+                "",
+                "N"
+              ],
+              "label": "A:TRP304:NE1",
+              "element": "N",
+              "included_original": true,
+              "included_expanded": true
+            },
+            "distances_A": {
+              "origin": 3.63964641139768,
+              "original_adaptive_La": 3.428220972843622,
+              "expanded_adaptive_La": 3.63964641139768
+            },
+            "bins": {
+              "origin": "3.5-4.0",
+              "original_adaptive_La": "<=3.5",
+              "expanded_adaptive_La": "3.5-4.0"
+            },
+            "delta_A": {
+              "origin": 0.0,
+              "original_adaptive_La": -0.2114254385540577,
+              "expanded_adaptive_La": 0.0
+            },
+            "either_partner_omitted_from_both": false
+          }
+        ],
+        "lost": [
+          {
+            "moving": {
+              "id": [
+                "source",
+                "A",
+                213,
+                "",
+                "OE2",
+                "",
+                "O"
+              ],
+              "label": "A:GLU213:OE2",
+              "element": "O",
+              "included_original": true,
+              "included_expanded": true
+            },
+            "partner": {
+              "id": [
+                "source",
+                "C",
+                1,
+                "",
+                "C13",
+                "",
+                "C"
+              ],
+              "label": "C:PQQ1:C13",
+              "element": "C",
+              "included_original": true,
+              "included_expanded": true
+            },
+            "distances_A": {
+              "origin": 3.095857393356484,
+              "original_adaptive_La": 3.555589080172139,
+              "expanded_adaptive_La": 3.561849804622587
+            },
+            "bins": {
+              "origin": "<=3.5",
+              "original_adaptive_La": "3.5-4.0",
+              "expanded_adaptive_La": "3.5-4.0"
+            },
+            "delta_A": {
+              "origin": 0.0,
+              "original_adaptive_La": 0.4597316868156551,
+              "expanded_adaptive_La": 0.4659924112661029
+            },
+            "either_partner_omitted_from_both": false
+          },
+          {
+            "moving": {
+              "id": [
+                "source",
+                "A",
+                350,
+                "",
+                "CG",
+                "",
+                "C"
+              ],
+              "label": "A:ASP350:CG",
+              "element": "C",
+              "included_original": true,
+              "included_expanded": true
+            },
+            "partner": {
+              "id": [
+                "source",
+                "A",
+                378,
+                "",
+                "NH2",
+                "",
+                "N"
+              ],
+              "label": "A:ARG378:NH2",
+              "element": "N",
+              "included_original": true,
+              "included_expanded": true
+            },
+            "distances_A": {
+              "origin": 3.279028362182919,
+              "original_adaptive_La": 3.510199282767891,
+              "expanded_adaptive_La": 3.279028362182919
+            },
+            "bins": {
+              "origin": "<=3.5",
+              "original_adaptive_La": "3.5-4.0",
+              "expanded_adaptive_La": "<=3.5"
+            },
+            "delta_A": {
+              "origin": 0.0,
+              "original_adaptive_La": 0.2311709205849719,
+              "expanded_adaptive_La": 0.0
+            },
+            "either_partner_omitted_from_both": false
+          },
+          {
+            "moving": {
+              "id": [
+                "source",
+                "A",
+                350,
+                "",
+                "OD1",
+                "",
+                "O"
+              ],
+              "label": "A:ASP350:OD1",
+              "element": "O",
+              "included_original": true,
+              "included_expanded": true
+            },
+            "partner": {
+              "id": [
+                "source",
+                "A",
+                378,
+                "",
+                "NH2",
+                "",
+                "N"
+              ],
+              "label": "A:ARG378:NH2",
+              "element": "N",
+              "included_original": true,
+              "included_expanded": true
+            },
+            "distances_A": {
+              "origin": 3.4376686867701487,
+              "original_adaptive_La": 3.8947295956802823,
+              "expanded_adaptive_La": 3.29133235193717
+            },
+            "bins": {
+              "origin": "<=3.5",
+              "original_adaptive_La": "3.5-4.0",
+              "expanded_adaptive_La": "<=3.5"
+            },
+            "delta_A": {
+              "origin": 0.0,
+              "original_adaptive_La": 0.4570609089101336,
+              "expanded_adaptive_La": -0.14633633483297848
+            },
+            "either_partner_omitted_from_both": false
+          },
+          {
+            "moving": {
+              "id": [
+                "source",
+                "A",
+                350,
+                "",
+                "OD1",
+                "",
+                "O"
+              ],
+              "label": "A:ASP350:OD1",
+              "element": "O",
+              "included_original": true,
+              "included_expanded": true
+            },
+            "partner": {
+              "id": [
+                "source",
+                "C",
+                1,
+                "",
+                "O1",
+                "",
+                "O"
+              ],
+              "label": "C:PQQ1:O1",
+              "element": "O",
+              "included_original": true,
+              "included_expanded": true
+            },
+            "distances_A": {
+              "origin": 3.432426109911181,
+              "original_adaptive_La": 3.6856941870566633,
+              "expanded_adaptive_La": 3.4271803407305237
+            },
+            "bins": {
+              "origin": "<=3.5",
+              "original_adaptive_La": "3.5-4.0",
+              "expanded_adaptive_La": "<=3.5"
+            },
+            "delta_A": {
+              "origin": 0.0,
+              "original_adaptive_La": 0.2532680771454823,
+              "expanded_adaptive_La": -0.005245769180657334
+            },
+            "either_partner_omitted_from_both": false
+          }
+        ]
+      },
+      "hydrogen_bond_geometry_changes": {
+        "new": [],
+        "lost": []
+      }
+    },
+    "expanded_adaptive_La": {
+      "coordination_number": 7,
+      "denticity": {
+        "A:GLU213": 2,
+        "A:ASN300": 1,
+        "A:ASP350": 1,
+        "C:PQQ1": 3
+      },
+      "maximum_real_heavy_displacement_A": 0.8000000000103613,
+      "contact_changes_at_3_5_A": {
+        "new": [
+          {
+            "moving": {
+              "id": [
+                "source",
+                "A",
+                350,
+                "",
+                "OD1",
+                "",
+                "O"
+              ],
+              "label": "A:ASP350:OD1",
+              "element": "O",
+              "included_original": true,
+              "included_expanded": true
+            },
+            "partner": {
+              "id": [
+                "source",
+                "A",
+                352,
+                "",
+                "CB",
+                "",
+                "C"
+              ],
+              "label": "A:SER352:CB",
+              "element": "C",
+              "included_original": true,
+              "included_expanded": true
+            },
+            "distances_A": {
+              "origin": 3.526456862064245,
+              "original_adaptive_La": 3.7166915881365052,
+              "expanded_adaptive_La": 3.4443719608480006
+            },
+            "bins": {
+              "origin": "3.5-4.0",
+              "original_adaptive_La": "3.5-4.0",
+              "expanded_adaptive_La": "<=3.5"
+            },
+            "delta_A": {
+              "origin": 0.0,
+              "original_adaptive_La": 0.19023472607226033,
+              "expanded_adaptive_La": -0.08208490121624434
+            },
+            "either_partner_omitted_from_both": false
+          }
+        ],
+        "lost": [
+          {
+            "moving": {
+              "id": [
+                "source",
+                "A",
+                213,
+                "",
+                "OE2",
+                "",
+                "O"
+              ],
+              "label": "A:GLU213:OE2",
+              "element": "O",
+              "included_original": true,
+              "included_expanded": true
+            },
+            "partner": {
+              "id": [
+                "source",
+                "C",
+                1,
+                "",
+                "C13",
+                "",
+                "C"
+              ],
+              "label": "C:PQQ1:C13",
+              "element": "C",
+              "included_original": true,
+              "included_expanded": true
+            },
+            "distances_A": {
+              "origin": 3.095857393356484,
+              "original_adaptive_La": 3.555589080172139,
+              "expanded_adaptive_La": 3.561849804622587
+            },
+            "bins": {
+              "origin": "<=3.5",
+              "original_adaptive_La": "3.5-4.0",
+              "expanded_adaptive_La": "3.5-4.0"
+            },
+            "delta_A": {
+              "origin": 0.0,
+              "original_adaptive_La": 0.4597316868156551,
+              "expanded_adaptive_La": 0.4659924112661029
+            },
+            "either_partner_omitted_from_both": false
+          },
+          {
+            "moving": {
+              "id": [
+                "source",
+                "A",
+                350,
+                "",
+                "OD1",
+                "",
+                "O"
+              ],
+              "label": "A:ASP350:OD1",
+              "element": "O",
+              "included_original": true,
+              "included_expanded": true
+            },
+            "partner": {
+              "id": [
+                "source",
+                "A",
+                300,
+                "",
+                "ND2",
+                "",
+                "N"
+              ],
+              "label": "A:ASN300:ND2",
+              "element": "N",
+              "included_original": true,
+              "included_expanded": true
+            },
+            "distances_A": {
+              "origin": 3.498806796609381,
+              "original_adaptive_La": 3.0499174784493905,
+              "expanded_adaptive_La": 3.6583104271366556
+            },
+            "bins": {
+              "origin": "<=3.5",
+              "original_adaptive_La": "<=3.5",
+              "expanded_adaptive_La": "3.5-4.0"
+            },
+            "delta_A": {
+              "origin": 0.0,
+              "original_adaptive_La": -0.44888931815999067,
+              "expanded_adaptive_La": 0.15950363052727434
+            },
+            "either_partner_omitted_from_both": false
+          }
+        ]
+      },
+      "hydrogen_bond_geometry_changes": {
+        "new": [
+          {
+            "donor": {
+              "id": [
+                "source",
+                "A",
+                378,
+                "",
+                "NH2",
+                "",
+                "N"
+              ],
+              "label": "A:ARG378:NH2",
+              "element": "N",
+              "included_original": true,
+              "included_expanded": true
+            },
+            "hydrogen": {
+              "id": [
+                "source",
+                "A",
+                378,
+                "",
+                "HH22",
+                "",
+                "H"
+              ],
+              "label": "A:ARG378:HH22",
+              "element": "H",
+              "included_original": true,
+              "included_expanded": true
+            },
+            "acceptor": {
+              "id": [
+                "source",
+                "A",
+                350,
+                "",
+                "OD1",
+                "",
+                "O"
+              ],
+              "label": "A:ASP350:OD1",
+              "element": "O",
+              "included_original": true,
+              "included_expanded": true
+            },
+            "geometry": {
+              "origin": {
+                "D_A_A": 3.4376686867701487,
+                "H_A_A": 2.552460381670987,
+                "D_H_A_degrees": 130.74297683413675,
+                "geometry_flag": false
+              },
+              "original_adaptive_La": {
+                "D_A_A": 3.8947295956802823,
+                "H_A_A": 3.0083051919902837,
+                "D_H_A_degrees": 132.0010932823924,
+                "geometry_flag": false
+              },
+              "expanded_adaptive_La": {
+                "D_A_A": 3.29133235193717,
+                "H_A_A": 2.3821399433565933,
+                "D_H_A_degrees": 132.34503972269854,
+                "geometry_flag": true
+              }
+            }
+          }
+        ],
+        "lost": []
+      }
+    }
+  },
+  "pins": [
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/PREPARATION.json",
+      "sha256": "29ddbe9e29682a0af4891dc63c749c21d7a8be88528288dcd526bc67dcb7f2ed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_goal_20260920/folds_v1/source_preparation/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0/protonated.pdb",
+      "sha256": "33979950bb7c31e864f80d004af4bfd34925ec2e27b2ee447c9b353d7afef502"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/consistent_context_20260922/prepared_v1/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0/Ca_context.xyz",
+      "sha256": "9c26e526607023a763ef46e3406cc5e84b2dadab3bbd00629a75793919870ebf"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/union_adaptive_20260923/proposals_v1/maps/q9z4j7-pqq-la_model__La.json",
+      "sha256": "a1f48f12a3688e146e234d4a27cfa15a370533532a3b754c10e970ad5761606e"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/slsqp_precision_20260923/proposals_v1/proposals/q9z4j7-pqq-la_model__La/result.json",
+      "sha256": "61e9c661012586d041af5111d423221f95c34106bc05a74549cb26b7ca62f5ba"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/prepared/q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0/Ca_context.xyz",
+      "sha256": "9c130719ffa7df942c00b16840d6abcd52c732083aec8187b6ebf0075a17f5ba"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/prepared/q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee/cases/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0/La_mapping.json",
+      "sha256": "8ad845708c3ee5f09c3602ab13007e7b46e6c0926115473d77184698ef45daba"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/pilot34_searches_v1/proposals/q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0__envelope_5eba0c9b39ead1ee__La/result.json",
+      "sha256": "a4317582e1242acdd5a19f385351080afb623b14c75d8aec708bb69164897731"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/original/original_adaptive_La/La.xyz",
+      "sha256": "1c35a77fb142772d4da29910e5c10a17abeffbcef415fbc0cd91f4026680140e"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/expanded/original_adaptive_La/La.xyz",
+      "sha256": "3264622a47b429150e3fb0589f40c814eb083d2d3e2bfd219a2bad73b1047a11"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/original/expanded_adaptive_La/La.xyz",
+      "sha256": "9c587ad1eb579ef7b1f2ed238d436810c050284c1c0b84c8bc776f39e6060d14"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_factorial_preparation_v1/q9z4j7-pqq-la_model/expanded/expanded_adaptive_La/La.xyz",
+      "sha256": "c3d98d2392b0ce88364061931345bce55ed799f978a26fe7c1948492d0aa7964"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/orca_parameter_audit_20261012/q9_response_diagnosis/PLAN.md",
+      "sha256": "92e05de5433064b34e4bd9c1da02aa5b5cb9b4dcb77eadfa5df1ebe6a48c9e69"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/coordination_policy.py",
+      "sha256": "37b1d07cce8bbcf5984edb157640ddd1936bc56c7070db36f4461b119d4368bb"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/orca_parameter_audit_20261012/q9_response_diagnosis/ANALYZE.py",
+      "sha256": "934bd844e40ab3fee3a003264db602112e09abddf9de6cf1238c59a0159c2cc6"
+    }
+  ],
+  "numerical_threads": 1,
+  "new_molecular_calls": 0,
+  "new_optimizations": 0,
+  "interpretation_limit": "Distances and contact flags identify hypotheses, not interaction energies or unique causes."
+}

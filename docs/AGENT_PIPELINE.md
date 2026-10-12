@@ -20,6 +20,21 @@ New native research execution must use the
 [pinned parameter guard](../diagnostics/orca_parameter_audit_20261012/parameter_guard/REPORT.md).
 Historical invocations remain reproducible. No new classifier is promoted here.
 
+## Corrected expanded candidate: completed development transfer
+
+The existing4.3Å own-three candidate now has a compatible corrected calibration
+and [complete transfer result](../diagnostics/orca_parameter_audit_20261012/expanded_transfer_review/REPORT.md).
+All25 calibration cases and3 crystals separate. On110 noncalibration pools,
+corrected origins give106correct/2wrong/2inconclusive; accommodation109/1/0.
+Primary104source/context pairs are all correct, and94/100triples are correct
+with six old preparation exclusions. Replicas are correlated; only three sources
+are Ca-conditioned and one of those remains wrong. Spread improves inconsistently.
+This is a separately named development result using pinned standaloneGFN2 plus
+independent component checks. It does not repair the smaller-context strict208
+calibration or update the legacy production command/calibration automatically.
+CPU energy/force and two-proposal parity passed. The finite extension to106
+new Ca-conditioned sources is being prepared under the same method and bands.
+
 ## PLM handoff packaged — 23 September 2026
 
 Start with the [PLM PQQ SOP](PLM_PQQ_SOP.md). The opt-in three-source envelope

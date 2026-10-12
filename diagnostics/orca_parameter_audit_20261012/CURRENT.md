@@ -44,71 +44,91 @@ v1 and stays recorded. Density-independent nonsc dispersion cancels exactly
 within same-coordinate water−vacuum terms; no fitted offset or changed parameters.
 Reports: context_MACE/, context_GFN2/, context_comparison_review/.
 
-## Canonical calibration passed; structural transfer is running
+## Corrected expanded transfer complete: limited useful gain
 
-All25 canonical pools are available (14Ca/11La), with all150 solvent components
-passing the frozen component/population gates. The unchanged extrema rule yields
-an accommodated class gap of3.472171047kcal/mol (Ca edgeq9z4j7, La edgec5axv8).
-Origin-only also separates, gap10.297678912 (La edgeA0A3F2YLY8). These are
-calibration results on consumed training inputs, not independent predictive
-accuracy or evidence that accommodation is better. Original strict208 calibration
-and the two-anchor common-five sensitivity remain separately reported.
+Read `expanded_transfer_review/REPORT.md` and RESULT.json (independent raw audit,
+commitf397fac). All135 pools and810 solvent components are available; calibration
+is exactly unchanged from the canonical collection. Completed1620input pairs
+include1596new pairs plus24reuses. Both actual completion wakes were acknowledged.
+No canonical/transfer worker or collector remains active; do not rerun them.
 
-Actual canonical cost:552 fresh calls (276xTB+276tblite),10085.975583CPU-s,
-744.688672s molecular-stage elapsed at14workers, peak single-processRSS127052KiB.
-24 input pairs/48 backend calls were reused and are not counted as new compute.
-Maximum component residual1.29869250e-7Eh; population residual1.09345701e-7e.
-No task exceptions or failed canonical components. The original absolute-energy
-parity gate remains failed; no raw absolute totals are made equivalent.
-Root inspected raw receipts and acknowledged the actual completion wake.
-Independent raw reconstruction also passes: see `expanded_canonical_review/REPORT.md`
-and RESULT.json (commit24401b2), including all300 input records and preserved
-absolute-energy failures.
+| Population | Corrected origin C/W/I/U | Corrected accommodation C/W/I/U |
+|---|---|---|
+| Canonical calibration25 |25/0/0/0|25/0/0/0|
+| Crystal controls3 |3/0/0/0|3/0/0/0|
+| All noncalibration pools110 |106/2/2/0|109/1/0/0|
+| Primary unique contextpairs104 |103/1/0/0|104/0/0/0|
+| Declared triples100 |94/0/0/6|94/0/0/6|
 
-The already-frozen transfer stage now runs on14 one-thread numerical workers:
-worker1490237 (startticks41917155), completion watcher1490238. Exact commands,
-input/collection hashes and pre-execution declaration are in
-`workspaces/orca_parameter_audit_20261012/expanded_candidate_reevaluation_v3/TRANSFER_LAUNCH.json`.
-Frozen manifest SHA256:
-`4f842a2d92364e1559dd5d266ae86e6b682a8ed81181a9e58f0a17cbd59ccfe1`.
-Frozen canonical collection SHA256:
-`929dedab7ba46c7088de7a4a695a8f19fc5af60066ecd3599645f687bd4e6896`.
-Do not duplicate the completed canonical stage or active transfer worker.
+Rows overlap and are not additive. Primary104pairs are98structures from25proteins;
+all examples are consumed development evidence. Accommodation fixes two
+A0A3F2YLY8 Ca-conditioned inconclusives and one A0ACD6B9F2 La-conditioned wrong
+call; its Ca-conditioned sample4 remains wrong. Both methods use their own fixed
+canonical-only bands. The expanded accommodated gap is3.472171047kcal/mol;
+origin gap10.297678912. Smaller-context strict208 calibration is still invalid.
+The separate two-anchor common-five sensitivity is not erased or folded into
+this own-three method. No production promotion or unknown PLM inference.
 
-Question: do those unchanged canonical-only bands retain reference fidelity on
-structural transfer? The1320 further input pairs cover3 crystals,6 probes and
-101 additional pools; the complete declared100 triples use104source/context
-pairs from98 structures, with six original preparation exclusions. Both pooled
-and origin-only results retain their own fixed calibration and availability.
-All810 MACE energies across the full135pools are reused; no optimization,
-new structures, state changes, threshold tuning on test outcomes or production
-promotion. Charges remain source-specific (Ca/La−4/−3,−3/−2,−2/−1).
+Spread is mixed:51/94 triples narrow,43widen; median range5.104313→5.522710.
+Only3completed sources are Ca-conditioned. The six old preparation exclusions
+remain. Historical native nonconvergence stays failed; its newly complete
+standalone result is a separate corrected-backend outcome.
 
-Coverage is primarily La-conditioned plus three Ca-conditioned probes, not the
-full original two-conditioning panel. Unknown PLM labels are excluded. Curie
-inventories additional real Ca-conditioned preparation/proposal reuse, read-only;
-no extension is running or implied. The expanded own-three method stays distinct
-from the two-anchor common-five sensitivity. A larger training gap alone is not
-an accuracy benefit.
+All810 component checks pass (max2.124440925e-7Eh); max population error
+5.411258489e-7e. All1620 absolute backend-energy comparisons still fail the
+originalv1 gate, preserved explicitly. Complete raw audit and rows are available.
+Actual3192fresh backend calls cost59339.275963childCPU-s; numerical-stage times
+744.688672s canonical and3563.979321s transfer on14 one-thread workers. These
+exclude preparation/collection and reuse all MACE work; no whole-scanner speedup
+is claimed. Peak single-childRSS129020KiB. No GPU or Slurm allocation.
 
-Next precise action on completion: read
-`workspaces/orca_parameter_audit_20261012/expanded_candidate_reevaluation_v3/FINAL_COLLECTION.json`,
-all unavailable cells and calibrated paired/triple comparisons, then acknowledge
-`transfer_completion_event.json`. Its watcher queues the real root thread.
-Do not use a stale stage collection to monitor an interrupted/resumed attempt.
-If a worker is externally killed, inspect its owned START.json process groups
-before reallocating threads: underlying children use separate process groups.
+Final collection:
+`workspaces/orca_parameter_audit_20261012/expanded_candidate_reevaluation_v3/FINAL_COLLECTION.json`
+SHA256 `49bcb0040f31d7f19864591c2392364cb847123ed113095476cdd56c1aa39fab`.
+Manifest SHA256 `4f842a2d92364e1559dd5d266ae86e6b682a8ed81181a9e58f0a17cbd59ccfe1`.
+Canonical SHA256 `929dedab7ba46c7088de7a4a695a8f19fc5af60066ecd3599645f687bd4e6896`.
+Email update to Jacob accepted by local relay; delivery is not independently
+verified. Message/receipt are in that workspace as TRANSFER_UPDATE_EMAIL*.
 
-Root owns14 numerical workers. Independent canonical review is finished; Curie's Ca-conditioned inventory
-owns<=1 read-only thread. Total<=16. All previous
-runtime/factorial/canonical workers are terminal. Driver/PLAN remain frozen.
+## Next owned task: complete Ca-conditioned structural coverage
 
-The q9 diagnosis is complete in `q9_response_diagnosis/REPORT.md` (ed2cf8f).
+The real Ca inventory125 contains110 original supported sources and15 retained
+PQQ exclusions. Only3had exact existing expanded pools. Curie's same-policy
+preparation of107missing sources admitted106; MMOL2048 Ca sample0 additionally
+fails unsupported-disulfide-partner chemistry. Total potential coverage109/125,
+with16 explicit exclusions. No repair, new fold or new energetic result implied.
+Uses each protein's frozen canonical La-union4.3Å selection, as the old probes
+did. Current preparation:
+`workspaces/orca_parameter_audit_20261012/ca_conditioned_preparation_v3/`.
+First sorted new admitted source A0A3F2YLY8 Ca sample0 is pinned before energies.
+Three old-probe replays preserve exact discrete state/maps and coordinates within
+existing1e-12Å tolerance (cap roundoff≤8.88e-16Å); retain original old-probe files
+for exact cache reuse. Curie owns final report/vault and preparation receipts.
+
+CPU qualification passed: five archived energy/force replays and both original
+optimizer starts reproduce GPU energies exactly, force error at most1.47e-13eV/Å,
+final coordinate differences at most1.95e-14Å. Same modes, optimizer statistics
+and boundary admissions.33 actual forwards cost443.418s elapsed and2766.676
+combined processCPU-s at eight active numerical threads; zero failures/GPU.
+Both processes are terminal. Read cpu_proposal_feasibility/REPORT.md and
+SCOUT_RESULT.json (commit2cc4bf2), independently checked by Gauss.
+
+Curie and Heisenberg are preparing one finite106-source extension: unchanged
+four-mode policy, original optimizer parent/kernel, maxiter200, common
+origin/Ca/La pool and cross-scoring. Three completed Ca probes will be reused;
+all125 original sources stay in the denominator. Frozen expanded canonical bands
+are not refitted. No new folds, chemistry, starts, time/call ceiling or production
+change. Planned two warm CPU model workers use seven active numerical threads
+each, with their one-thread optimizer parents active only while their respective
+model waits; aggregate at most14, leaving two headroom. Batch not launched yet.
+Root owns final manifest review, launch/completion wake and the separate corrected
+GFN2 stage. Agent preparation/code review performs no additional molecular calls.
+
+The q9 structural diagnosis is complete in `q9_response_diagnosis/REPORT.md`.
 CN7/denticity stay unchanged; two included hydrogen-bond geometries change in
-opposite directions; both saved La proposals reach0.8Å displacement boundary.
-Omitted packing atoms have no new heavy contact within the fixed3.5Å bin.
-The archived73-atom DFT origin has different charge/context and does not validate
-the145/192-atom donor motions. Zero new molecular calls in that diagnosis.
+opposite directions; both La proposals reach0.8Å displacement boundary. Omitted
+packing has no new heavy contact within the fixed3.5Å bin. Archived73-atom DFT
+origins do not validate the145/192-atom donor motions. Zero new molecular calls.
 
 Exact read-only completed comparison reproduction (choose a fresh output path):
 
@@ -122,9 +142,10 @@ python scripts/compare_context_factorial.py \
 ## Ownership and safeguards
 
 Jacob cleared the pause and explicitly authorizes<=16 TOTAL numerical login
-threads. Recorded verbatim atop AGENTS.md. Root's current worker owns14;
-all remaining light preparation/analysis shares at most2. Earlier runtime,
-rootMACE and solvent allocations are released. Canonical review is complete; Ca-conditioned inventory uses<=1 thread. Independent guard/runtime/factorial/expanded-launch reviews
+threads. Recorded verbatim atop AGENTS.md. CPU scout is terminal. Planned finite Ca extension owns at most14 after launch;
+all other numerical work must share the remaining two.
+Earlier runtime/factorial/reference workers and all independent audits are
+complete. Ca-conditioned preparation and CPU qualification are complete. Independent guard/runtime/factorial/expanded-launch reviews
 are complete. New guarded dispatch is committed/pushed asdd758db; its molecular branch
 remains explicitly unexecuted. Root owns scoring/reporting, current-facing docs and integration.
 
@@ -141,7 +162,7 @@ remain under workspaces/claude_parameter_audit_20261012/. Codex completed runtim
 work without changing authentication or asking Jacob to repeat authorization.
 
 No Slurm science jobs were submitted. The30minute readiness monitor remains
-activePID669874; latest probe119 still fails account/partition admission. On recovery
+activePID669874; latest probe122 still fails account/partition admission. On recovery
 inspect actual live jobs; do not duplicate login work or automatically restart
 old LanM campaigns. Historical outputs, existing production and concurrent files
 are preserved. Scoped commits/pushes remain authorized.

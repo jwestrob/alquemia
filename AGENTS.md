@@ -5,10 +5,13 @@ This clears the discussion hold and authorizes contained parameter-audit and
 corrected-discrimination computation on the login node, at most16 TOTAL numerical
 threads across all owned sessions/subprocesses. It supersedes older Slurm-only
 rules for this temporary scope. Root allocates the aggregate allowance; children inherit their parent's share.
-Current corrected transfer worker1490237 uses14 one-thread workers; remaining
-light work shares at most2. Watcher1490238 is armed; the canonical stage passed and is complete. Exact commands/checkpoint:
-`diagnostics/orca_parameter_audit_20261012/CURRENT.md`. Earlier runtime/context/
-MACE workers are complete; do not add their old allocations to new work. Do not
+Corrected canonical and structural-transfer workers are complete; no resubmission.
+The CPU force/proposal scout passed and released its eight threads. The finite
+106-source Ca-conditioned batch is being prepared, not launched yet. Its planned
+two warm model workers use seven active numerical threads each, leaving two
+for other work. No new time/call cap or production change.
+Read `diagnostics/orca_parameter_audit_20261012/CURRENT.md` and actual scout receipts.
+Do not
 fabricate Slurm environment variables, modify other users' jobs, overwrite
 production or silently replace historical scores. Read
 `diagnostics/orca_parameter_audit_20261012/CURRENT.md` and the confirmed synced

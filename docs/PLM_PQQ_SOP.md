@@ -10,6 +10,13 @@ the frozen geometry comparator and explicit DFT access. See the
 [affected-run ledger](../diagnostics/orca_parameter_audit_20261012/lineage/REPORT.md).
 No production default or historical input is changed by this notice.
 
+**Corrected expanded development result:** the same4.3Å own-three policy now
+retains25/25 canonical reference separation and94correct/6preparation-unavailable
+three-source summaries under its own corrected bands. Accommodation improves
+three individual development calls; one Ca-conditioned source remains wrong.
+See the [paired report](../diagnostics/orca_parameter_audit_20261012/expanded_transfer_review/REPORT.md).
+This does not update the historical commands below or authorize a cohort rescore.
+
 **Historical September manuscript candidate:** the explicit three-source, 4.3 Å
 motion-envelope protocol. This is an opt-in command; `nikasha standard` still
 uses the released static scorer. Original DFT results remain available.

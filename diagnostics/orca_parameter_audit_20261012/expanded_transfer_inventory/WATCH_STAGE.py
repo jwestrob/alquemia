@@ -11,7 +11,10 @@ def main():
     parser.add_argument('--worker-pid', required=True, type=int)
     parser.add_argument('--worker-start', required=True)
     parser.add_argument('--directory', required=True)
-    parser.add_argument('--stage', required=True, choices=['canonical', 'transfer'])
+    parser.add_argument('--stage', required=True, choices=['canonical', 'transfer', 'proposals'])
+    parser.add_argument('--result-name', help='Explicit terminal JSON filename within the run directory.')
+    parser.add_argument('--event-name', help='Unique completion event identity.')
+    parser.add_argument('--continuation', help='Recorded instructions for the receiving root; never executed here.')
     parser.add_argument('--thread', required=True)
     parser.add_argument('--codex', required=True)
     args = parser.parse_args()
@@ -19,7 +22,10 @@ def main():
     receipt = base / (args.stage + '_completion_event.json')
     if receipt.exists():
         raise RuntimeError('Completion receipt exists; inspect before rearming.')
-    result = base / ('CANONICAL_COLLECTION.json' if args.stage == 'canonical' else 'FINAL_COLLECTION.json')
+    name = args.result_name or ('CANONICAL_COLLECTION.json' if args.stage == 'canonical' else 'FINAL_COLLECTION.json')
+    if Path(name).name != name:
+        raise ValueError('result-name must be a filename within the run directory')
+    result = base / name
     while True:
         try:
             data = json.loads(result.read_text())
@@ -38,7 +44,7 @@ def main():
             break
         time.sleep(5)
     event = {
-        'event': 'corrected-expanded-' + args.stage + '-v1',
+        'event': args.event_name or 'corrected-expanded-' + args.stage + '-v1',
         'state': state, 'result': str(result), 'worker_pid': args.worker_pid,
         'worker_start_ticks': args.worker_start, 'created_epoch': time.time(),
         'thread': args.thread, 'scientific_jobs_modified': False,
@@ -47,12 +53,16 @@ def main():
     if data:
         for key in ('calibration', 'completed_inputs', 'declared_inputs', 'available_pools', 'declared_pools'):
             event[key] = data.get(key)
-    message = (
-        '[AUTOMATED OWNED COMPLETION EVENT; not a human message]\n'
-        f'Event: {event["event"]}\nReceipt: {receipt}\nState: {state}\nResult: {result}\n'
+    continuation = args.continuation or (
         'Read actual corrected reference results and failures. Continue the already-authorized '
         'staged evaluation only if its frozen canonical gate passes. Preserve production, '
         'historical failures, and the aggregate 16-thread login limit.'
+    )
+    event['continuation'] = continuation
+    message = (
+        '[AUTOMATED OWNED COMPLETION EVENT; not a human message]\n'
+        f'Event: {event["event"]}\nReceipt: {receipt}\nState: {state}\nResult: {result}\n'
+        + continuation
     )
 
     def save():

@@ -1,15 +1,19 @@
 # Automatic LanM resumption after Slurm recovery
 
-## Actual readiness event — 12 October 2026
+## Actual readiness and dispatch — 12 October 2026
 
-Probe1025 completed on biotite with the exact marker; ROOT_ACK.json records
-receipt. Test scheduling works; normal science execution still needs its actual
-allocation receipt. Root is draining the current login MACE batch without
-interrupting its active source searches, then resuming the same frozen runner
-on Slurm. The two-lane run is not duplicated. A separate LanM task01 Claude
-review is running in workspaces/claude_lanm_20261012/; its supervisor owns the
-completion wake. Claude stays on login; new science/tests run through Slurm.
-The earlier temporary login exception below no longer authorizes new dispatch.
+Probe1025 and real science placement are verified. The clean source-boundary
+drain preserved51 complete pools. Current Slurm lanes1028/1029 run with7CPUs each;
+collector1030 follows both, corrected solvent1031 follows with12CPUs. The newly
+enforced standard QOS limit is12CPU/job and60/user; the old14CPU request was
+rejected without a job. No account/QOS change or repeated chemistry occurred.
+Actual receipts/coordinator/wakes: workspaces/orca_parameter_audit_20261012/
+slurm_resumption_20261012/lane_jobs_v2/. Root owns this corrected Ca sequence.
+Claude task01 review completed; task02 independently owns the two missing LanM
+endpoints after its targeted collector-test gate. All scientific work uses Slurm;
+Claude clients remain on login. Read CURRENT before any new dispatch, not the
+historical readiness plan below. Already-acknowledged drain and task01 events
+must not cause duplicate launches.
 
 ## Current priority — 12 October 2026
 

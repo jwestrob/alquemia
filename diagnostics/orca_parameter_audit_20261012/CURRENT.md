@@ -1,37 +1,57 @@
 # Corrected Nikasha parameter/context work — 12 October 2026
 
-## Slurm recovery in progress — 12 October, 11:07 Pacific
+## Slurm restored; corrected Ca continuation running — 12 October 2026
 
-Actual test probe1025 completed and root acknowledged it. New science belongs
-on Slurm again. Corrected Ca-conditioned coverage remains the immediate task;
-no production workflow or legacy results changed.
+The test probe1025 passed; actual science jobs1028/1029 now run on
+node-64-768g-1/-2, seven allocated CPUs each. They continue the original two
+independent source partitions with the exact frozen MACE/optimizer manifest.
+Source-boundary drain preserved51 complete native pools, zero unavailable pools,
+zero unreceipted calls and no interrupted optimizer. All55 remaining sources
+continue through the same method; no composite Ca-transfer result exists yet.
+The old login worker and both lanes/models have ended. Its partial completion
+wake is already acknowledged as an operational drain, not final science.
 
-The login batch completed49/106 source pools before root launched a graceful
-drain (supervisor1952935). Its two active source searches finish before either
-lane stops; the script then captures process accounting and preserves the
-partial collection in attempts/001. Do not interpret that operational stop as
-scientific failure or launch against its partial collection. Exact receipt/log:
+The scheduler now enforces standard QOS12 CPUs/job,60/user,1500G/job and3T/user.
+The original14-CPU request was rejected before job creation. No account/QOS or
+priority change was attempted. Two natural independent7-CPU source jobs satisfy
+these limits. Actual default memory grants are recorded; no RAM-sharing claim.
+No memory cap, walltime, optimizer or molecular iteration change was added.
+The unsubmitted64-CPU solvent proposal was replaced with a12-CPU request.
+
+Collector1030 follows both lanes with afterany; corrected-solvent job1031 follows
+successful collection with afterok. It uses the unchanged qualified standalone
+xTB/tblite components, frozen canonical bands and all125 declared Ca sources,
+including three real reused pools and16 preparation exclusions. Production and
+historical results remain intact. A failed predecessor blocks dependent science.
+Each of1028/1029/1030/1031 has its own completion watcher; exact commands/PIDs and
+submissions are in lane_jobs_v2/{CHAIN.json,*_WATCH.json,*_SUBMISSION.json} under
 workspaces/orca_parameter_audit_20261012/slurm_resumption_20261012/.
-Read DRAIN.json when present and verify all old processes have stopped.
-The old proposal watcher may wake with this partial collection; do not rerun it.
+All four actual compute-node controls PASSED: energies reproduce exactly;
+maximum force residual9.55e-14 eV/Å. Metadata-only coordinator1968704 holds the
+shared lock and has released new-source work. It runs on
+login; all new scientific work runs through Slurm. Actual attempt:003.
 
-The unchanged frozen CPU runner has a guarded shared14-CPU Slurm wrapper in
-slurm_resumption/cpu_resume/ (d69f88a). Its existing two seven-thread lanes and
-four startup controls remain unchanged. Slurm's default RAM may reserve the
-node's full memory; the actual job receipt records this without claiming RAM
-sharing. The same scientific solvent driver now has a separate allocation-aware
-wrapper (1d6f9f9), prepared for64 independent one-thread inputs on standard,
-node-64-768g-2. It follows successful terminal MACE collection using afterok.
-Neither wrapper has been submitted yet at this checkpoint. Root owns submission
-and separate completion wakes for both. No new whole-scanner speed claim.
+Claude task01 completed its static restart review: no critical scientific-code
+finding; obsolete wrapper and missing collector test coverage are retained.
+Its actual report/ROOT_ACK is in workspaces/claude_lanm_20261012/review_01_v1/.
+Task01 did not invoke its configured child agents; this is not claimed as tested
+nested delegation. Its STATUS session ID was wrong; ROOT_ACK records the actual
+8ffdbf03-2fbf-4afb-a5c7-95bce8b8c334 identity. No molecular work ran in task01.
 
-Independent authorized Claude task01 is running on the login host in
-workspaces/claude_lanm_20261012/worktree_01, session
-8ffdbf03-2fbf-4afb-a5c7-95bce8b8c334, supervisor1946403. It may delegate two review
-children. Its completion supervisor records actual exit and queues this root
-thread. It performs no molecular calculation; task02's two missing Hans8FNR
-PBE0-D4 endpoints await accepted findings and a current allocation wrapper.
-The native-GFN2 La correction does not alter that DFT Hamiltonian.
+Independent Claude task02 is launched, supervisor1966569, actual session
+41989854-8859-4e9e-8374-d96c69796a01. It owns task-local admission tests and the
+TWO missing Hans8FNR La_A/Dy_A endpoints, using separate12-CPU Slurm jobs after
+its real-fixture test gate. Existing canonical preparer supports these resource
+changes while preserving the scientific target and interrupted MORead/TRAH seeds.
+The PBE0-D4 frozen-f Hamiltonian is unaffected by native-GFN2 La corrections.
+Its worktree, launch, output and completion supervisor are under
+workspaces/claude_lanm_20261012/. It may delegate two children; it must arm actual
+root wakes before ending waiting_slurm. Root does not duplicate its submissions.
+No other LanM campaign, production promotion or library rescore is authorized.
+
+Next: inspect attempt003/QUALIFICATION_RELEASE.json and actual lane receipts;
+then read collector1030 and corrected-solvent1031 results. Inspect Claude02's
+actual outputs/wakes separately. Do not resubmit completed or queued work.
 
 ## Result and current decision
 

@@ -1,17 +1,23 @@
 # Scheduler restored — 12 October 2026
 
+Current account standard QOS now enforces12 CPUs/job and60/user (actual14-CPU
+submission rejected). Do not inherit old whole-node requests or change accounts/
+QOS to bypass it. Use actual allocations; no memory/time caps or production changes.
+
 The real Slurm test probe1025 completed with its unique marker; root acknowledged
 it in workspaces/slurm_readiness_20261009/ROOT_ACK.json. The temporary login
 compute exception below is now historical. All new scientific computation uses
 Slurm; Claude clients and lightweight orchestration stay on the login host.
-Root is draining the already-running corrected Ca batch at complete-source
-boundaries, preserving every completed/active search before Slurm continuation.
+Root drained the login batch cleanly:51 complete native pools preserved.
+Slurm lanes1028/1029 now run; collector1030 and solvent1031 follow. Metadata
+coordinator1968704 and four completion watchers are recorded in lane_jobs_v2.
 Read diagnostics/orca_parameter_audit_20261012/CURRENT.md and
 workspaces/orca_parameter_audit_20261012/slurm_resumption_20261012/ before acting.
 Do not duplicate the batch or treat its drain's partial collection as a completed
 scientific experiment. Corrected Ca transfer remains priority. The independent
-Claude LanM task01 review runs in its own worktree; it has no molecular execution
-authorization. Task02's prepared missing pair follows accepted review.
+Claude task01 review is complete; task02 now owns admission tests and exactly
+the two missing Hans8FNR endpoints, each12CPU on Slurm after its test gate.
+Task02 supervisor1966569 and its worktree are in workspaces/claude_lanm_20261012/.
 No production change or old campaign restart is authorized by scheduler recovery.
 
 # Current execution authorization — 12 October 2026

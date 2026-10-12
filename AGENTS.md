@@ -26,6 +26,15 @@ Production and all historical failures remain unchanged. Read current checkpoint
 diagnostics/orca_parameter_audit_20261012/CURRENT.md. Old readiness monitor exited
 successfully after waking root; current jobs have their own recorded watchers.
 
+## Current scheduler clarification and monitor stop
+
+Jacob requested disarming the readiness watcher. Both probe monitors have already
+exited; do not automatically rearm them. Running-job completion/health alerts stay.
+Live test-only checks:12CPUs accepted,13 rejected by QOSMaxCpuPerJobLimit; standard
+also caps60CPUs/user. The8-thread Slack example is not the maximum. Use -c for one
+multithreaded task and -n for MPI tasks as appropriate; neither bypasses the cap.
+No running scientific job or scientific protocol changed during this check.
+
 # Current execution authorization — 12 October 2026
 
 Jacob explicitly said: "alright. i authorize you to do whatever you can with 16 threads or less here on the login node while we wait for the cluster. i'm going to bed so proceed apace."

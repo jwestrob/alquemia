@@ -1,5 +1,23 @@
 # Automatic LanM resumption after Slurm recovery
 
+## Readiness watcher disarmed by Jacob — 12 October2026
+
+Jacob requested that the readiness watcher be disarmed while investigating
+Rohan's new scheduler policy. Both readiness monitors had already exited after
+successful delivery; no readiness process remains. USER_DISARMED_20261012.json
+in each monitor workspace records this. Do not automatically rearm probe loops.
+Existing scientific completion and health watchers remain active.
+
+Live account remains standard QOS:12 CPU slots/job,60/user. Explicit test-only
+requests confirmed12 accepted and13 rejected with QOSMaxCpuPerJobLimit; no
+compute job was submitted by those checks. LanM2665/2666 actually allocate12
+CPUs each. Rohan's8-thread example is not the maximum. Threaded commands use
+one task with -cN; MPI uses -nN. Either way total CPU slots must fit the QOS.
+MACE's existing direct batch launcher correctly uses its seven allocated CPUs;
+do not restart completed/running work merely to restyle resource arguments.
+Evidence: workspaces/orca_parameter_audit_20261012/slurm_resumption_20261012/
+cpu_limit_investigation_v1/TEST_ONLY_RESULTS.json.
+
 ## Already resumed after probe2658 — 12 October, 12:20 Pacific
 
 This readiness event is acknowledged in the regression monitor's ROOT_ACK.json.

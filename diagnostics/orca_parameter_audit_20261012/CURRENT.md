@@ -1,5 +1,33 @@
 # Corrected Nikasha parameter/context work — 12 October 2026
 
+## Proposal collection complete; corrected solvent stage running
+
+MACE jobs 2660/2661 and collector 2662 completed successfully. Attempt 004's
+actual terminal collection contains all 106 declared new sources: 104 complete
+native candidate matrices and two unavailable P12293 searches interrupted by the
+earlier node failure. Both lanes report zero new failed model requests. These
+are proposal results; corrected composite classifications are still pending.
+
+The corrected expanded candidate's canonical calibration is already complete;
+reuse expanded_candidate_reevaluation_v3/CANONICAL_COLLECTION.json and its frozen
+bands. The older strict208 corrected calibration remains a separate failed
+result. The remaining deliverable is the full 125-source Ca-conditioned transfer
+assessment, retaining the three actual prior pools and 16 preparation exclusions.
+
+Existing solvent job 2663 is now RUNNING on node-64-768g-3 with 12 CPUs. Its
+original node-2 restriction caused a resource wait; root changed only its pending
+ReqNodeList after checking an available healthy node and the adapter's portability
+requirements. No new submission, resource/priority change, scientific change or
+running-job interruption. The existing on-node preflight checks pinned binaries,
+parameters and libraries before execution. Original submission records remain.
+
+Actual proposal collection: cpu_proposal_batch_preflight_v1/attempts/004/
+FINAL_COLLECTION.json in the audit workspace. Completion acknowledgements and
+GFN2_PLACEMENT_UPDATE_v1.json are in slurm_resumption_20261012/lane_jobs_v3/.
+Solvent output: ca_conditioned_gfn2_slurm_v1/. Watcher 2086172 remains armed on
+job 2663. Next: inspect its actual final collection and complete the fixed-band
+reevaluation; no calibration refit or additional LanM work.
+
 ## User priority: corrected La/Ca recalibration first
 
 Jacob explicitly prioritizes recalibration and reevaluation ahead of La/Dy,

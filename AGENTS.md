@@ -1,5 +1,14 @@
 # Priority: corrected La/Ca recalibration first — 12 October 2026
 
+Latest execution: proposal jobs 2660/2661 and collector 2662 completed. All 106
+new sources are terminal: 104 native matrices complete, two prior node-failure
+interruptions retained. Existing corrected solvent job 2663 now runs with 12 CPUs
+on healthy node-64-768g-3; only its pending node restriction changed, with no new
+submission or running-job interruption. Completion watcher 2086172 is active.
+Canonical recalibration of the expanded candidate is already complete; remaining
+work is the full fixed-band Ca-conditioned reevaluation. Read the latest CURRENT
+and actual receipts before any action; do not repeat completed proposals.
+
 Jacob: "We need to do the recalibration first before the La/Dy stuff. Don't
 cancel running jobs but that's our first priority."
 

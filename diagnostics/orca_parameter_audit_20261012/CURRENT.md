@@ -1,5 +1,50 @@
 # Corrected Nikasha parameter/context work — 12 October 2026
 
+## Scheduler regressed after execution — 12 October 11:43 Pacific
+
+Worker1028/1029 both NODE_FAIL after709/708seconds on seven CPUs each;
+collector1030 failed before startup. Administrator0 cancelled dependent1031
+before any GFN2 work. No scientific convergence/classification failure is inferred.
+A standard-partition collector1071 wrote an immutable attempt003 failure snapshot
+and intentionally exited1 because both source jobs failed. Actual totals:
+53 complete native pools,51 untouched sources,2 interrupted P12293 La searches
+(Ca-conditioned samples1/4). Original51 complete pools and2 newly completed pools
+are safe.109 source-call receipts from003 were independently checked;2 interrupted
+forwards have unknown completion/cost. No corrected composite decision yet.
+
+The next process-check submission was rejected Invalid account/partition;
+`sacctmgr show assoc where user=jwestrob` returned no associations. standard-shared
+also disappeared. No account/QOS workaround. The earlier7CPU/12CPU resource plans
+need current-policy inspection when scheduling recovers. Current failure evidence
+and exact process-check command/script: workspaces/orca_parameter_audit_20261012/
+slurm_resumption_20261012/node_recovery_v1/{SCHEDULER_REGRESSION,SUBMISSION,
+RECOVERY_INVENTORY}.json and INSPECT_OLD_WORKERS.py. Prior remote processes must
+be confirmed gone before writing a fresh recovery attempt. Preserve partial
+searches as unavailable; don't reinterpret the old clean drain as a clean stop now.
+
+Monitor2016159 uses the existing tested monitor.py with a fresh state directory:
+workspaces/slurm_readiness_20261012_regression/{DEPLOYMENT,state}.json. Every30min
+it tries one tiny test probe, then queues this root only after actual completion
+and the unique marker. Its first new attempt was rejected; no probe job created.
+Follow the updated ON_READY.md for source continuation and fresh collector/GFN2
+submissions. Do not repeat completed chemistry or revive cancelled1031.
+All new molecular work and scientific tests remain on Slurm.
+
+Claude task02 completed; both Hans8FNR12CPU singleton manifests retain exact target,
+state, seed and asset pins. Its submissions all failed; no molecular call ran.
+Its six collector tests passed on login, contrary to the declared Slurm test gate;
+no nested Task invocation was observed. Review found that relocated positive
+fixtures omitted endpoint.runtime.pcgrad and the wrapper lacked an executable
+Slurm-test receipt gate. Gauss owns minimal fixes in the now-idle worktree02.
+These findings do not invalidate the original molecular fixtures, but task exit0
+is not accepted as clearance to launch. No current owned molecular jobs.
+
+Next: monitor wake → verify actual scheduler/account and old remote processes →
+new unchanged MACE continuation → terminal106 collection → corrected solvent.
+Independently complete task02 fixes and actual Slurm test gate, then its two endpoints.
+
+### Historical first restoration (superseded by failure above)
+
 ## Slurm restored; corrected Ca continuation running — 12 October 2026
 
 The test probe1025 passed; actual science jobs1028/1029 now run on

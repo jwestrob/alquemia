@@ -1,5 +1,41 @@
 # Automatic LanM resumption after Slurm recovery
 
+## Read first: second scheduler outage, 12 October 11:43 Pacific
+
+The earlier readiness success and jobs are historical. Lanes1028/1029 both
+NODE_FAIL after about12minutes; collector1030 never started, and1031 was
+cancelled by administrator0 before execution. Failure collector1071 succeeded
+in writing attempt003/FINAL_COLLECTION.json (its exit1 deliberately retains
+predecessor failures):53 complete pools,53 pending. Two pending P12293 La
+searches are interrupted;51 sources are untouched. Preserve both interruptions.
+A new standard-partition process-check submission was rejected: invalid account;
+`sacctmgr show assoc where user=jwestrob` returned no associations. Do not switch
+account/QOS or resume login-node science. Recheck actual current policies.
+
+The replacement30-minute monitor uses workspaces/slurm_readiness_20261012_regression/.
+After its genuine readiness event, first inspect current ownership and scheduler.
+Then submit the stored nonmolecular process check in
+workspaces/orca_parameter_audit_20261012/slurm_resumption_20261012/node_recovery_v1/:
+SUBMISSION.json records the rejected exact command and INSPECT_OLD_WORKERS.py
+checks both former nodes' PID/start identities. Save a fresh submission receipt
+and arm a wake. Require both host receipts all_prior_workers_gone before writing
+new source results. Do not assume NODE_FAIL killed every remote process.
+
+Continue the exact106-source MACE manifest in a NEW explicitly labeled recovery
+plan/attempt using existing LANES.py. Do not pass the historical clean DRAIN.json
+as evidence of a clean current stop. Reuse53 complete pools, retain two partial
+La searches unavailable (frozen CPU_BATCH.py does this), execute51 untouched
+sources and any missing cross-score of the two retained Ca proposals. All106
+source statuses must become terminal before corrected-solvent execution. Original
+125-source denominator,16 preparation exclusions and3 reused pools remain fixed.
+Fresh collector follows actual new lanes; fresh GFN2 stage follows successful
+collection.1031 is cancelled: do not try to update its old dependency.
+
+Claude task02 still independently owns the two missing Hans8FNR endpoints.
+Read its actual task outputs, reviewer findings and supervisor receipt; do not
+duplicate it. Slurm-only execution and admission tests are required. Current
+12CPU/job limit and memory defaults must be rechecked, not assumed permanent.
+
 ## Actual readiness and dispatch — 12 October 2026
 
 Probe1025 and real science placement are verified. The clean source-boundary

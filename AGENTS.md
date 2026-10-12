@@ -1,24 +1,29 @@
-# Scheduler restored — 12 October 2026
+# Scheduler regression — 12 October 2026, 11:43 Pacific
 
-Current account standard QOS now enforces12 CPUs/job and60/user (actual14-CPU
-submission rejected). Do not inherit old whole-node requests or change accounts/
-QOS to bypass it. Use actual allocations; no memory/time caps or production changes.
+Slurm briefly ran, then lanes1028/1029 NODE_FAIL;1030 never started and1031
+was administrator-cancelled before execution. Failure collector1071 preserved
+53 complete native MACE pools;51 sources untouched and2 La searches interrupted.
+Original51 plus2 newly completed pools are safe. No new composite decisions yet.
+standard-shared disappeared, and standard submissions now fail Invalid account;
+actual sacctmgr returned no jwestrob associations. Do not bypass account/QOS.
+All new science/tests remain Slurm-only; login clients/orchestration are allowed.
 
-The real Slurm test probe1025 completed with its unique marker; root acknowledged
-it in workspaces/slurm_readiness_20261009/ROOT_ACK.json. The temporary login
-compute exception below is now historical. All new scientific computation uses
-Slurm; Claude clients and lightweight orchestration stay on the login host.
-Root drained the login batch cleanly:51 complete native pools preserved.
-Slurm lanes1028/1029 now run; collector1030 and solvent1031 follow. Metadata
-coordinator1968704 and four completion watchers are recorded in lane_jobs_v2.
-Read diagnostics/orca_parameter_audit_20261012/CURRENT.md and
-workspaces/orca_parameter_audit_20261012/slurm_resumption_20261012/ before acting.
-Do not duplicate the batch or treat its drain's partial collection as a completed
-scientific experiment. Corrected Ca transfer remains priority. The independent
-Claude task01 review is complete; task02 now owns admission tests and exactly
-the two missing Hans8FNR endpoints, each12CPU on Slurm after its test gate.
-Task02 supervisor1966569 and its worktree are in workspaces/claude_lanm_20261012/.
-No production change or old campaign restart is authorized by scheduler recovery.
+Root rearmed the tested30-minute monitor, PID2016159, under
+workspaces/slurm_readiness_20261012_regression/. Read its state and
+ diagnostics/slurm_readiness_20261009/ON_READY.md before dispatch. Recheck actual
+scheduler limits; earlier12CPU/job60/user observations may change during repair.
+Before new source writes, verify old remote worker identities are gone using the
+prepared node_recovery_v1 check; its submission was rejected, not executed.
+Resume unchanged106-source manifest in a fresh recovery attempt. Preserve two
+interrupted searches as unavailable under the frozen policy; no automatic rerun.
+
+Claude task02 is complete, scheduler-blocked, with no molecular jobs. Its two
+Hans8FNR singleton preparations preserve the original science. Independent review
+found a missing copied pcgrad positive control and absent executable Slurm-test
+gate. Gauss now owns only these fixes in the idle worktree02; root integrates.
+No duplicate endpoint launches. Current receipts and recovery instructions:
+diagnostics/orca_parameter_audit_20261012/CURRENT.md and the matching workspace.
+Production and earlier failed experiments remain unchanged.
 
 # Current execution authorization — 12 October 2026
 

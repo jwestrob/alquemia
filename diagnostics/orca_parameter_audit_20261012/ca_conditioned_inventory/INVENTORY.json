@@ -1,0 +1,2946 @@
+{
+  "protocol_id": "Ca_conditioned_expanded_existing_policy_inventory_v1",
+  "status": "inventory_only_no_scientific_calls",
+  "sources": {
+    "source_preparation": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/accommodation_goal_20260920/folds_v1/preparation_reconciled_v1.json",
+      "sha256": "6663747bc91aabd7cbc919c73fdc4eb21e53330012935153cf862e1c3e9fdf7c"
+    },
+    "expanded_selection": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/SELECTION.json",
+      "sha256": "cef56345053710dcf780baadfaac5548508cc469958dcf81fb40a5c1ad4e6228"
+    },
+    "expanded_preparation": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v2/PREPARATION.json",
+      "sha256": "d6d112719ce257acd67bab4b20831574cfd03c7b1f1d0266d62548050369892b"
+    },
+    "ownthree_revaluation": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/expanded_candidate_reevaluation_v3/manifest.json",
+      "sha256": "4f842a2d92364e1559dd5d266ae86e6b682a8ed81181a9e58f0a17cbd59ccfe1"
+    },
+    "tenfold_preparation": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/consistent_context_20260922/prepared_v1/PREPARATION.json",
+      "sha256": "8f92f9752bf9e978c1b96da041c261deb82d128f531f6f6f4e058e63a19fb8a2"
+    }
+  },
+  "denominator": 125,
+  "biological_groups": 25,
+  "available_source_groups": 22,
+  "source_classes": {
+    "La": 55,
+    "Ca": 70
+  },
+  "supported_source_classes": {
+    "La": 50,
+    "Ca": 60
+  },
+  "counts": {
+    "expanded_preparation_then_proposals_and_components": 107,
+    "reuse_saved_ownthree": 3,
+    "source_preparation_excluded": 15
+  },
+  "additional_exact_saved_expanded_pools_beyond_probes": 0,
+  "exact_tenfold_fragment_matches": 0,
+  "existing_probes_MACE_cells": 18,
+  "existing_probes_GFN_inputs_per_backend": 36,
+  "conditional_upper_work": {
+    "expanded_preparation_requests": 107,
+    "bounded_MACE_searches": 214,
+    "MACE_origin_evaluations": 214,
+    "MACE_cross_proposal_evaluations": 214,
+    "MACE_final_matrix_cells_including_search_endpoints": 642,
+    "GFN_inputs_per_backend": 1284,
+    "primary_plus_independent_GFN_calls": 2568,
+    "optimizer_trial_calls": "not determined by inventory; existing bounded optimizer policy, measure actual"
+  },
+  "scope_distinction": "Apply each protein existing canonical La-three-source4.3A fragment union to each Ca source, exactly as declared probes. New Ca-only or mixed union discovery changes preparation rule and is not this extension.",
+  "reuse_qualification": "Existing three ownthree geometries/MACE are verified. Corrected GFN results are reusable only after root current transfer finishes and each actual raw component passes; no missing energy presumed.",
+  "gates": [
+    "root interprets current corrected transfer and measured throughput",
+    "preserve15 original source PQQ exclusions",
+    "source graph/cap/state and paired endpoint checks for each new prepared source",
+    "same bounded optimizer settings and common ownthree pool, no old-tenfold proposal substitution",
+    "same actual corrected canonical bands, no Ca-fold refit"
+  ],
+  "new_folds": 0,
+  "new_prepared_coordinates": 0,
+  "new_molecular_calls": 0,
+  "production_changed": false,
+  "rows": [
+    {
+      "case_id": "a0a3f2yly8-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "protein": "a0a3f2yly8-pqq-la_model",
+      "biological_group": "a0a3f2yly8",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/a0a3f2yly8-pqq-ca/seed-1_sample-0/model.cif",
+        "sha256": "831880e6110563297ed5000d78ec85d4462660075a7690c79b3b3f0c8a882076"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "a0a3f2yly8-pqq-la_model__envelope_e05e200a13d024a5",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/a0a3f2yly8-pqq-la_model__envelope_e05e200a13d024a5/UNION.json",
+        "sha256": "78b8c74cf99c9fc44438485e7abad61b4163907d562de64424d6691762614d56"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "a0a3f2yly8-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "protein": "a0a3f2yly8-pqq-la_model",
+      "biological_group": "a0a3f2yly8",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/a0a3f2yly8-pqq-ca/seed-1_sample-1/model.cif",
+        "sha256": "fe8ff6bfdef2cb371b2496184777585cf1e9d244f1fe3c50c6737e817236afc1"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "a0a3f2yly8-pqq-la_model__envelope_e05e200a13d024a5",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/a0a3f2yly8-pqq-la_model__envelope_e05e200a13d024a5/UNION.json",
+        "sha256": "78b8c74cf99c9fc44438485e7abad61b4163907d562de64424d6691762614d56"
+      },
+      "exact_expanded_preparation": true,
+      "exact_saved_ownthree_pool": "a0a3f2yly8-pqq-la_model__conditioned_Ca__seed-1_sample-1__envelope_e05e200a13d024a5",
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "reuse_saved_ownthree"
+    },
+    {
+      "case_id": "a0a3f2yly8-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "protein": "a0a3f2yly8-pqq-la_model",
+      "biological_group": "a0a3f2yly8",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/a0a3f2yly8-pqq-ca/seed-1_sample-2/model.cif",
+        "sha256": "900c3e27f63ff00f6d6a97d69e0f3fed3f1ad93c94cdf24bc327ce61504bc908"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "a0a3f2yly8-pqq-la_model__envelope_e05e200a13d024a5",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/a0a3f2yly8-pqq-la_model__envelope_e05e200a13d024a5/UNION.json",
+        "sha256": "78b8c74cf99c9fc44438485e7abad61b4163907d562de64424d6691762614d56"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "a0a3f2yly8-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "protein": "a0a3f2yly8-pqq-la_model",
+      "biological_group": "a0a3f2yly8",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/a0a3f2yly8-pqq-ca/seed-1_sample-3/model.cif",
+        "sha256": "7a420866a024e08f9c2301fc4d03f4a17efe2a7dfa9a7541405a5ed41eba787c"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "a0a3f2yly8-pqq-la_model__envelope_e05e200a13d024a5",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/a0a3f2yly8-pqq-la_model__envelope_e05e200a13d024a5/UNION.json",
+        "sha256": "78b8c74cf99c9fc44438485e7abad61b4163907d562de64424d6691762614d56"
+      },
+      "exact_expanded_preparation": true,
+      "exact_saved_ownthree_pool": "a0a3f2yly8-pqq-la_model__conditioned_Ca__seed-1_sample-3__envelope_e05e200a13d024a5",
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "reuse_saved_ownthree"
+    },
+    {
+      "case_id": "a0a3f2yly8-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "protein": "a0a3f2yly8-pqq-la_model",
+      "biological_group": "a0a3f2yly8",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/a0a3f2yly8-pqq-ca/seed-1_sample-4/model.cif",
+        "sha256": "a579f284ac2e19bef5d8e26a5047e0982712e40fd17bec5122a245de89897bc1"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "a0a3f2yly8-pqq-la_model__envelope_e05e200a13d024a5",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/a0a3f2yly8-pqq-la_model__envelope_e05e200a13d024a5/UNION.json",
+        "sha256": "78b8c74cf99c9fc44438485e7abad61b4163907d562de64424d6691762614d56"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "a0acd6b9f2-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "protein": "a0acd6b9f2-pqq-la_model",
+      "biological_group": "a0acd6b9f2",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/a0acd6b9f2-pqq-ca/seed-1_sample-0/model.cif",
+        "sha256": "fee685e93234a85a9aa437d64f4e816bed2abac149967e2796cb20b10f031105"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "a0acd6b9f2-pqq-la_model__envelope_2eda778295ffed58",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/a0acd6b9f2-pqq-la_model__envelope_2eda778295ffed58/UNION.json",
+        "sha256": "0d20dc45cee70740f66caa55f63d84d7fa8f1b9a82c074917ccd5aa82a285751"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "a0acd6b9f2-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "protein": "a0acd6b9f2-pqq-la_model",
+      "biological_group": "a0acd6b9f2",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/a0acd6b9f2-pqq-ca/seed-1_sample-1/model.cif",
+        "sha256": "5f0d33139c7d5a29719db33bf0f93098feb2679c815e3021d67c94b50a46214d"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "a0acd6b9f2-pqq-la_model__envelope_2eda778295ffed58",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/a0acd6b9f2-pqq-la_model__envelope_2eda778295ffed58/UNION.json",
+        "sha256": "0d20dc45cee70740f66caa55f63d84d7fa8f1b9a82c074917ccd5aa82a285751"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "a0acd6b9f2-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "protein": "a0acd6b9f2-pqq-la_model",
+      "biological_group": "a0acd6b9f2",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/a0acd6b9f2-pqq-ca/seed-1_sample-2/model.cif",
+        "sha256": "b329b35c088bc80924b524150df49e26a8e2dccb81435dd22dae2673b60a5152"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "a0acd6b9f2-pqq-la_model__envelope_2eda778295ffed58",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/a0acd6b9f2-pqq-la_model__envelope_2eda778295ffed58/UNION.json",
+        "sha256": "0d20dc45cee70740f66caa55f63d84d7fa8f1b9a82c074917ccd5aa82a285751"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "a0acd6b9f2-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "protein": "a0acd6b9f2-pqq-la_model",
+      "biological_group": "a0acd6b9f2",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/a0acd6b9f2-pqq-ca/seed-1_sample-3/model.cif",
+        "sha256": "7a3befb4ec1557bb866ae600664a3827dbddcbfaf2efd12d132b036e1cdf99d8"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "a0acd6b9f2-pqq-la_model__envelope_2eda778295ffed58",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/a0acd6b9f2-pqq-la_model__envelope_2eda778295ffed58/UNION.json",
+        "sha256": "0d20dc45cee70740f66caa55f63d84d7fa8f1b9a82c074917ccd5aa82a285751"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "a0acd6b9f2-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "protein": "a0acd6b9f2-pqq-la_model",
+      "biological_group": "a0acd6b9f2",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/a0acd6b9f2-pqq-ca/seed-1_sample-4/model.cif",
+        "sha256": "4735cf125e060ac80ede926b5da2a4561bd29af8591b1a5a941f8f497d42238c"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "a0acd6b9f2-pqq-la_model__envelope_2eda778295ffed58",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/a0acd6b9f2-pqq-la_model__envelope_2eda778295ffed58/UNION.json",
+        "sha256": "0d20dc45cee70740f66caa55f63d84d7fa8f1b9a82c074917ccd5aa82a285751"
+      },
+      "exact_expanded_preparation": true,
+      "exact_saved_ownthree_pool": "a0acd6b9f2-pqq-la_model__conditioned_Ca__seed-1_sample-4__envelope_2eda778295ffed58",
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "reuse_saved_ownthree"
+    },
+    {
+      "case_id": "c5atj3-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "protein": "c5atj3-pqq-la_model",
+      "biological_group": "c5atj3",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/c5atj3-pqq-ca/seed-1_sample-0/model.cif",
+        "sha256": "50550a83a47f3218cc7dd64222259c658a202720fd4e56f3d5f80b3ca0b1b142"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "c5atj3-pqq-la_model__envelope_531a4a67d5ba9360",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/c5atj3-pqq-la_model__envelope_531a4a67d5ba9360/UNION.json",
+        "sha256": "ce27a8beae1ec326c070d87a62ad7e07de243d033bdf96eb73281b629a505c49"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "c5atj3-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "protein": "c5atj3-pqq-la_model",
+      "biological_group": "c5atj3",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/c5atj3-pqq-ca/seed-1_sample-1/model.cif",
+        "sha256": "f66b2d7fc3e550b08d0f18272459238a6af7342bd1a9f0ded941304f3aa0d159"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "c5atj3-pqq-la_model__envelope_531a4a67d5ba9360",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/c5atj3-pqq-la_model__envelope_531a4a67d5ba9360/UNION.json",
+        "sha256": "ce27a8beae1ec326c070d87a62ad7e07de243d033bdf96eb73281b629a505c49"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "c5atj3-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "protein": "c5atj3-pqq-la_model",
+      "biological_group": "c5atj3",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/c5atj3-pqq-ca/seed-1_sample-2/model.cif",
+        "sha256": "616dc0fc8cfbfbdbd434efcb01ae3816f37875075527db4d7b41a6beb13090d6"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "c5atj3-pqq-la_model__envelope_531a4a67d5ba9360",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/c5atj3-pqq-la_model__envelope_531a4a67d5ba9360/UNION.json",
+        "sha256": "ce27a8beae1ec326c070d87a62ad7e07de243d033bdf96eb73281b629a505c49"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "c5atj3-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "protein": "c5atj3-pqq-la_model",
+      "biological_group": "c5atj3",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/c5atj3-pqq-ca/seed-1_sample-3/model.cif",
+        "sha256": "51e58eb9af9f9b834600c22847e9acbf9e8413b91a93b914726c86037a47b92f"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "c5atj3-pqq-la_model__envelope_531a4a67d5ba9360",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/c5atj3-pqq-la_model__envelope_531a4a67d5ba9360/UNION.json",
+        "sha256": "ce27a8beae1ec326c070d87a62ad7e07de243d033bdf96eb73281b629a505c49"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "c5atj3-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "protein": "c5atj3-pqq-la_model",
+      "biological_group": "c5atj3",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/c5atj3-pqq-ca/seed-1_sample-4/model.cif",
+        "sha256": "88071208dde563c526c8dc44c6a0ff24007b7f3a68b6e44eae45dad101875e2c"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "c5atj3-pqq-la_model__envelope_531a4a67d5ba9360",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/c5atj3-pqq-la_model__envelope_531a4a67d5ba9360/UNION.json",
+        "sha256": "ce27a8beae1ec326c070d87a62ad7e07de243d033bdf96eb73281b629a505c49"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "c5axv8-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "protein": "c5axv8-pqq-la_model",
+      "biological_group": "c5axv8",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/c5axv8-pqq-ca/seed-1_sample-0/model.cif",
+        "sha256": "caa498928a9a26333f20c61047287cabe4ca97bd35d9c4f36d980987f47e201c"
+      },
+      "source_preparation_status": "unsupported",
+      "source_preparation_reason": "exact selected PQQ required",
+      "existing_target_selection_id": "c5axv8-pqq-la_model__envelope_aa36ec84c4cbdc62",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/c5axv8-pqq-la_model__envelope_aa36ec84c4cbdc62/UNION.json",
+        "sha256": "dfe05a95e72d8e89ffdcf78528abe34570cfcfb68e9138609b1e9ba8a0938a31"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prior_unsupported",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "source_preparation_excluded"
+    },
+    {
+      "case_id": "c5axv8-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "protein": "c5axv8-pqq-la_model",
+      "biological_group": "c5axv8",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/c5axv8-pqq-ca/seed-1_sample-1/model.cif",
+        "sha256": "2cba8d19431948bd192abcb49a1422c1b665b1ec3226f7a5b36ef040cdeb142a"
+      },
+      "source_preparation_status": "unsupported",
+      "source_preparation_reason": "exact selected PQQ required",
+      "existing_target_selection_id": "c5axv8-pqq-la_model__envelope_aa36ec84c4cbdc62",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/c5axv8-pqq-la_model__envelope_aa36ec84c4cbdc62/UNION.json",
+        "sha256": "dfe05a95e72d8e89ffdcf78528abe34570cfcfb68e9138609b1e9ba8a0938a31"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prior_unsupported",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "source_preparation_excluded"
+    },
+    {
+      "case_id": "c5axv8-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "protein": "c5axv8-pqq-la_model",
+      "biological_group": "c5axv8",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/c5axv8-pqq-ca/seed-1_sample-2/model.cif",
+        "sha256": "505fbb0b5cf509ca8985dc9a8614ae2a761b8d8d1b3f3c77382df3904bcceb10"
+      },
+      "source_preparation_status": "unsupported",
+      "source_preparation_reason": "exact selected PQQ required",
+      "existing_target_selection_id": "c5axv8-pqq-la_model__envelope_aa36ec84c4cbdc62",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/c5axv8-pqq-la_model__envelope_aa36ec84c4cbdc62/UNION.json",
+        "sha256": "dfe05a95e72d8e89ffdcf78528abe34570cfcfb68e9138609b1e9ba8a0938a31"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prior_unsupported",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "source_preparation_excluded"
+    },
+    {
+      "case_id": "c5axv8-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "protein": "c5axv8-pqq-la_model",
+      "biological_group": "c5axv8",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/c5axv8-pqq-ca/seed-1_sample-3/model.cif",
+        "sha256": "526474251b53359bd66ebbdd3801488b0ac76d8f3c8019429a668832d3cbdfc4"
+      },
+      "source_preparation_status": "unsupported",
+      "source_preparation_reason": "exact selected PQQ required",
+      "existing_target_selection_id": "c5axv8-pqq-la_model__envelope_aa36ec84c4cbdc62",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/c5axv8-pqq-la_model__envelope_aa36ec84c4cbdc62/UNION.json",
+        "sha256": "dfe05a95e72d8e89ffdcf78528abe34570cfcfb68e9138609b1e9ba8a0938a31"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prior_unsupported",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "source_preparation_excluded"
+    },
+    {
+      "case_id": "c5axv8-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "protein": "c5axv8-pqq-la_model",
+      "biological_group": "c5axv8",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/c5axv8-pqq-ca/seed-1_sample-4/model.cif",
+        "sha256": "91dddf6985b5d2afd6a2ac50999853fe2ae13d627918902d15ccac88fa4a0d47"
+      },
+      "source_preparation_status": "unsupported",
+      "source_preparation_reason": "exact selected PQQ required",
+      "existing_target_selection_id": "c5axv8-pqq-la_model__envelope_aa36ec84c4cbdc62",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/c5axv8-pqq-la_model__envelope_aa36ec84c4cbdc62/UNION.json",
+        "sha256": "dfe05a95e72d8e89ffdcf78528abe34570cfcfb68e9138609b1e9ba8a0938a31"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prior_unsupported",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "source_preparation_excluded"
+    },
+    {
+      "case_id": "c5b120-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "protein": "c5b120-pqq-la_model",
+      "biological_group": "c5b120",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/XOXF-c5b120-pqq-ca/seed-1_sample-0/model.cif",
+        "sha256": "030a1b67fc19a12cf838a69c3e728ecc56a9d032c206009f6dbb6daa546b15a3"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "c5b120-pqq-la_model__envelope_9a8c10eba2ec7e13",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/c5b120-pqq-la_model__envelope_9a8c10eba2ec7e13/UNION.json",
+        "sha256": "1258af4af7af62374ddc39884d7d9afbaed5355bf271985f59c3686b39ded882"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "c5b120-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "protein": "c5b120-pqq-la_model",
+      "biological_group": "c5b120",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/XOXF-c5b120-pqq-ca/seed-1_sample-1/model.cif",
+        "sha256": "8c0a96b0fe949d319576984f2ccbd9d4185e2fd1144af67594a181260e5d586e"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "c5b120-pqq-la_model__envelope_9a8c10eba2ec7e13",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/c5b120-pqq-la_model__envelope_9a8c10eba2ec7e13/UNION.json",
+        "sha256": "1258af4af7af62374ddc39884d7d9afbaed5355bf271985f59c3686b39ded882"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "c5b120-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "protein": "c5b120-pqq-la_model",
+      "biological_group": "c5b120",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/XOXF-c5b120-pqq-ca/seed-1_sample-2/model.cif",
+        "sha256": "5e7698a91fd28d1b0c7e9fba52a0b2b4eaf18e828296e423eaf33d4390cfedee"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "c5b120-pqq-la_model__envelope_9a8c10eba2ec7e13",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/c5b120-pqq-la_model__envelope_9a8c10eba2ec7e13/UNION.json",
+        "sha256": "1258af4af7af62374ddc39884d7d9afbaed5355bf271985f59c3686b39ded882"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "c5b120-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "protein": "c5b120-pqq-la_model",
+      "biological_group": "c5b120",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/XOXF-c5b120-pqq-ca/seed-1_sample-3/model.cif",
+        "sha256": "c484b4e6287da2960ca9c41b1deeb514b0d70c5ecbee5d7fc74724fe3327f666"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "c5b120-pqq-la_model__envelope_9a8c10eba2ec7e13",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/c5b120-pqq-la_model__envelope_9a8c10eba2ec7e13/UNION.json",
+        "sha256": "1258af4af7af62374ddc39884d7d9afbaed5355bf271985f59c3686b39ded882"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "c5b120-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "protein": "c5b120-pqq-la_model",
+      "biological_group": "c5b120",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/XOXF-c5b120-pqq-ca/seed-1_sample-4/model.cif",
+        "sha256": "5fad217dad7c4e089590f826a8ffe5e486f7236c02671418e94bd2507540ffb5"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "c5b120-pqq-la_model__envelope_9a8c10eba2ec7e13",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/c5b120-pqq-la_model__envelope_9a8c10eba2ec7e13/UNION.json",
+        "sha256": "1258af4af7af62374ddc39884d7d9afbaed5355bf271985f59c3686b39ded882"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "i0jwn7-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "protein": "i0jwn7-pqq-la_model",
+      "biological_group": "i0jwn7",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/i0jwn7-pqq-ca/seed-1_sample-0/model.cif",
+        "sha256": "f32feeb376099ec4d41ec7642e0ccf93969aaa6e69856f44a405f37a0820dce4"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "i0jwn7-pqq-la_model__envelope_8a96291197228b6f",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/i0jwn7-pqq-la_model__envelope_8a96291197228b6f/UNION.json",
+        "sha256": "7f184510f4aa1c64b5bdecdc74f41ab6749f265ca53af0ecb6b7fe1617a39f27"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "i0jwn7-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "protein": "i0jwn7-pqq-la_model",
+      "biological_group": "i0jwn7",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/i0jwn7-pqq-ca/seed-1_sample-1/model.cif",
+        "sha256": "fc31459fe9b90d5f9af47bdb5f95884694cebd4fb0dbf6a3bb45cf46c288cdd8"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "i0jwn7-pqq-la_model__envelope_8a96291197228b6f",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/i0jwn7-pqq-la_model__envelope_8a96291197228b6f/UNION.json",
+        "sha256": "7f184510f4aa1c64b5bdecdc74f41ab6749f265ca53af0ecb6b7fe1617a39f27"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "i0jwn7-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "protein": "i0jwn7-pqq-la_model",
+      "biological_group": "i0jwn7",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/i0jwn7-pqq-ca/seed-1_sample-2/model.cif",
+        "sha256": "45247dcda653a024003df7714dfc622c34e457ac8828bc766e16d6c1ba027c4b"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "i0jwn7-pqq-la_model__envelope_8a96291197228b6f",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/i0jwn7-pqq-la_model__envelope_8a96291197228b6f/UNION.json",
+        "sha256": "7f184510f4aa1c64b5bdecdc74f41ab6749f265ca53af0ecb6b7fe1617a39f27"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "i0jwn7-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "protein": "i0jwn7-pqq-la_model",
+      "biological_group": "i0jwn7",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/i0jwn7-pqq-ca/seed-1_sample-3/model.cif",
+        "sha256": "da378c2e7e4bd5f7e20dd32a9e09981b05012df5308aa348cad188afd300dc60"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "i0jwn7-pqq-la_model__envelope_8a96291197228b6f",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/i0jwn7-pqq-la_model__envelope_8a96291197228b6f/UNION.json",
+        "sha256": "7f184510f4aa1c64b5bdecdc74f41ab6749f265ca53af0ecb6b7fe1617a39f27"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "i0jwn7-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "protein": "i0jwn7-pqq-la_model",
+      "biological_group": "i0jwn7",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/i0jwn7-pqq-ca/seed-1_sample-4/model.cif",
+        "sha256": "bef503d279277bd1588d634f57d80e8f3ac9ef86678a7aafee35ffb9a007b16c"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "i0jwn7-pqq-la_model__envelope_8a96291197228b6f",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/i0jwn7-pqq-la_model__envelope_8a96291197228b6f/UNION.json",
+        "sha256": "7f184510f4aa1c64b5bdecdc74f41ab6749f265ca53af0ecb6b7fe1617a39f27"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "mmol_1770-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "protein": "mmol_1770-pqq-la_model",
+      "biological_group": "mmol_1770",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/mmol_1770-pqq-ca/seed-1_sample-0/model.cif",
+        "sha256": "f2165bcdcd55f2971eff9a207310b5d7b66fac633d896278195aed8556805a6b"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "mmol_1770-pqq-la_model__envelope_5063ec4e8b07a456",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/mmol_1770-pqq-la_model__envelope_5063ec4e8b07a456/UNION.json",
+        "sha256": "16d0e0ad8324fffd8d96dca4794db86dcdd1414a2caf0ed98c2a452fc1e5e8c3"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "mmol_1770-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "protein": "mmol_1770-pqq-la_model",
+      "biological_group": "mmol_1770",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/mmol_1770-pqq-ca/seed-1_sample-1/model.cif",
+        "sha256": "4630ea3f80fa5e1613d9da26baaa5753810fc120bb976f96ee56a37612e89a40"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "mmol_1770-pqq-la_model__envelope_5063ec4e8b07a456",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/mmol_1770-pqq-la_model__envelope_5063ec4e8b07a456/UNION.json",
+        "sha256": "16d0e0ad8324fffd8d96dca4794db86dcdd1414a2caf0ed98c2a452fc1e5e8c3"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "mmol_1770-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "protein": "mmol_1770-pqq-la_model",
+      "biological_group": "mmol_1770",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/mmol_1770-pqq-ca/seed-1_sample-2/model.cif",
+        "sha256": "ee95e883b0f8cf86a0cfe2385e3df064bb3bece67c4506178e4c31f24ace7a15"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "mmol_1770-pqq-la_model__envelope_5063ec4e8b07a456",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/mmol_1770-pqq-la_model__envelope_5063ec4e8b07a456/UNION.json",
+        "sha256": "16d0e0ad8324fffd8d96dca4794db86dcdd1414a2caf0ed98c2a452fc1e5e8c3"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "mmol_1770-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "protein": "mmol_1770-pqq-la_model",
+      "biological_group": "mmol_1770",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/mmol_1770-pqq-ca/seed-1_sample-3/model.cif",
+        "sha256": "0ec79a0b48b08696a9be594349940700fce6a98dbcf090256278b0bb302e7cc7"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "mmol_1770-pqq-la_model__envelope_5063ec4e8b07a456",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/mmol_1770-pqq-la_model__envelope_5063ec4e8b07a456/UNION.json",
+        "sha256": "16d0e0ad8324fffd8d96dca4794db86dcdd1414a2caf0ed98c2a452fc1e5e8c3"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "mmol_1770-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "protein": "mmol_1770-pqq-la_model",
+      "biological_group": "mmol_1770",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/mmol_1770-pqq-ca/seed-1_sample-4/model.cif",
+        "sha256": "90736c7e832cb94aa2f3a96df788ac2d664f1b490843f227d3879bc5e7f65119"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "mmol_1770-pqq-la_model__envelope_5063ec4e8b07a456",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/mmol_1770-pqq-la_model__envelope_5063ec4e8b07a456/UNION.json",
+        "sha256": "16d0e0ad8324fffd8d96dca4794db86dcdd1414a2caf0ed98c2a452fc1e5e8c3"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "mmol_2048-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "protein": "mmol_2048-pqq-la_model",
+      "biological_group": "mmol_2048",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/mmol_2048-pqq-ca/seed-1_sample-0/model.cif",
+        "sha256": "e93ecaeb1ccdeb1e8886ba5b76cdd35d2fa249eaa9cb7d90bff4e9d9174f58fc"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "mmol_2048-pqq-la_model__envelope_b2b70954adaf23d6",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/mmol_2048-pqq-la_model__envelope_b2b70954adaf23d6/UNION.json",
+        "sha256": "67097599ccfdd634c4541e992048d977cd7edc91558247341960dd2c482b6e8f"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "mmol_2048-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "protein": "mmol_2048-pqq-la_model",
+      "biological_group": "mmol_2048",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/mmol_2048-pqq-ca/seed-1_sample-1/model.cif",
+        "sha256": "a2eab68c8d6c61f8cfc0b41c72decc0a288ae69014458ce3180807853be9582c"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "mmol_2048-pqq-la_model__envelope_b2b70954adaf23d6",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/mmol_2048-pqq-la_model__envelope_b2b70954adaf23d6/UNION.json",
+        "sha256": "67097599ccfdd634c4541e992048d977cd7edc91558247341960dd2c482b6e8f"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "mmol_2048-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "protein": "mmol_2048-pqq-la_model",
+      "biological_group": "mmol_2048",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/mmol_2048-pqq-ca/seed-1_sample-2/model.cif",
+        "sha256": "17b2bf19034897460c608e1502a58b1a566da1ae0941a719c3f7d12baf82eb1a"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "mmol_2048-pqq-la_model__envelope_b2b70954adaf23d6",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/mmol_2048-pqq-la_model__envelope_b2b70954adaf23d6/UNION.json",
+        "sha256": "67097599ccfdd634c4541e992048d977cd7edc91558247341960dd2c482b6e8f"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "mmol_2048-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "protein": "mmol_2048-pqq-la_model",
+      "biological_group": "mmol_2048",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/mmol_2048-pqq-ca/seed-1_sample-3/model.cif",
+        "sha256": "f340e35523895dfbda8e4ed3cb5bf00b56b38f05fb4059c6e5ae703ac4361ea8"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "mmol_2048-pqq-la_model__envelope_b2b70954adaf23d6",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/mmol_2048-pqq-la_model__envelope_b2b70954adaf23d6/UNION.json",
+        "sha256": "67097599ccfdd634c4541e992048d977cd7edc91558247341960dd2c482b6e8f"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "mmol_2048-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "protein": "mmol_2048-pqq-la_model",
+      "biological_group": "mmol_2048",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/mmol_2048-pqq-ca/seed-1_sample-4/model.cif",
+        "sha256": "b197bbe7138e81fa111ea9bbbc6497b15753c318c198467cbec0f91526ca5cc6"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "mmol_2048-pqq-la_model__envelope_b2b70954adaf23d6",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/mmol_2048-pqq-la_model__envelope_b2b70954adaf23d6/UNION.json",
+        "sha256": "67097599ccfdd634c4541e992048d977cd7edc91558247341960dd2c482b6e8f"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q88jh0-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "protein": "q88jh0-pqq-la_model",
+      "biological_group": "q88jh0",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/q88jh0-pqq-ca/seed-1_sample-0/model.cif",
+        "sha256": "f914de39c95cac023c44da98d58cb35151d2b61d3a6342fd8fca932e36c70129"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q88jh0-pqq-la_model__envelope_2fba6938336689b8",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q88jh0-pqq-la_model__envelope_2fba6938336689b8/UNION.json",
+        "sha256": "169e2a8c3b722a0748496cdc1d0225fc927b2d2ba7e6611128b64945781d86de"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q88jh0-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "protein": "q88jh0-pqq-la_model",
+      "biological_group": "q88jh0",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/q88jh0-pqq-ca/seed-1_sample-1/model.cif",
+        "sha256": "b7a9f5d40b3b8d6d935ee59a240d3fdb0fb74b6d48ea99a4837ade7aea73b60b"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q88jh0-pqq-la_model__envelope_2fba6938336689b8",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q88jh0-pqq-la_model__envelope_2fba6938336689b8/UNION.json",
+        "sha256": "169e2a8c3b722a0748496cdc1d0225fc927b2d2ba7e6611128b64945781d86de"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q88jh0-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "protein": "q88jh0-pqq-la_model",
+      "biological_group": "q88jh0",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/q88jh0-pqq-ca/seed-1_sample-2/model.cif",
+        "sha256": "3c5716f6f80c6a6acb658958a4c4f431ac755e708fb3edfe5dc1d2ee0b4f2e6d"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q88jh0-pqq-la_model__envelope_2fba6938336689b8",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q88jh0-pqq-la_model__envelope_2fba6938336689b8/UNION.json",
+        "sha256": "169e2a8c3b722a0748496cdc1d0225fc927b2d2ba7e6611128b64945781d86de"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q88jh0-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "protein": "q88jh0-pqq-la_model",
+      "biological_group": "q88jh0",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/q88jh0-pqq-ca/seed-1_sample-3/model.cif",
+        "sha256": "4b94d817d8718888c1d820bca663a1e1edb5c4b8b09250d187745c669d3d51b3"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q88jh0-pqq-la_model__envelope_2fba6938336689b8",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q88jh0-pqq-la_model__envelope_2fba6938336689b8/UNION.json",
+        "sha256": "169e2a8c3b722a0748496cdc1d0225fc927b2d2ba7e6611128b64945781d86de"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q88jh0-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "protein": "q88jh0-pqq-la_model",
+      "biological_group": "q88jh0",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/q88jh0-pqq-ca/seed-1_sample-4/model.cif",
+        "sha256": "5b5eab2e3926086bb6b4e8309e0e6fb0d4e4c968ba7ec85dec46dd44da7dac86"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q88jh0-pqq-la_model__envelope_2fba6938336689b8",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q88jh0-pqq-la_model__envelope_2fba6938336689b8/UNION.json",
+        "sha256": "169e2a8c3b722a0748496cdc1d0225fc927b2d2ba7e6611128b64945781d86de"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q89gy2-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "protein": "q89gy2-pqq-la_model",
+      "biological_group": "q89gy2",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/q89gy2-pqq-ca/seed-1_sample-0/model.cif",
+        "sha256": "25358397e33eb5b3a099e9f53e8ff9ae589ab55ecd013a6ca0d3407eed3439d9"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q89gy2-pqq-la_model__envelope_d6071546219d9d9e",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q89gy2-pqq-la_model__envelope_d6071546219d9d9e/UNION.json",
+        "sha256": "97b108f473ca43e48b064bc3980bea1dc2444455425293f3d39ed00b3068f815"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q89gy2-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "protein": "q89gy2-pqq-la_model",
+      "biological_group": "q89gy2",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/q89gy2-pqq-ca/seed-1_sample-1/model.cif",
+        "sha256": "902a1d8bdcbc7d226679a17332b4db52b9a4914c7068bfb495aef64262195e7e"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q89gy2-pqq-la_model__envelope_d6071546219d9d9e",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q89gy2-pqq-la_model__envelope_d6071546219d9d9e/UNION.json",
+        "sha256": "97b108f473ca43e48b064bc3980bea1dc2444455425293f3d39ed00b3068f815"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q89gy2-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "protein": "q89gy2-pqq-la_model",
+      "biological_group": "q89gy2",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/q89gy2-pqq-ca/seed-1_sample-2/model.cif",
+        "sha256": "280cae191113665b2b617bb5c07037187c6e634ea5d19f73d8297bcf087e3a20"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q89gy2-pqq-la_model__envelope_d6071546219d9d9e",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q89gy2-pqq-la_model__envelope_d6071546219d9d9e/UNION.json",
+        "sha256": "97b108f473ca43e48b064bc3980bea1dc2444455425293f3d39ed00b3068f815"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q89gy2-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "protein": "q89gy2-pqq-la_model",
+      "biological_group": "q89gy2",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/q89gy2-pqq-ca/seed-1_sample-3/model.cif",
+        "sha256": "f0f5a7dbfa41e9bb01209f817e26e21d11bfab3a62ee842743413e532db59184"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q89gy2-pqq-la_model__envelope_d6071546219d9d9e",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q89gy2-pqq-la_model__envelope_d6071546219d9d9e/UNION.json",
+        "sha256": "97b108f473ca43e48b064bc3980bea1dc2444455425293f3d39ed00b3068f815"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q89gy2-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "protein": "q89gy2-pqq-la_model",
+      "biological_group": "q89gy2",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/q89gy2-pqq-ca/seed-1_sample-4/model.cif",
+        "sha256": "b1a6a574e5f2730f695f513f95235bafb3e25a237e9ba430c62c060e05c49dc9"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q89gy2-pqq-la_model__envelope_d6071546219d9d9e",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q89gy2-pqq-la_model__envelope_d6071546219d9d9e/UNION.json",
+        "sha256": "97b108f473ca43e48b064bc3980bea1dc2444455425293f3d39ed00b3068f815"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q92wy9-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "protein": "q92wy9-pqq-la_model",
+      "biological_group": "q92wy9",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/q92wy9-pqq-ca/seed-1_sample-0/model.cif",
+        "sha256": "bd91d5bf21499e2093f0f9cb841f0cb66f970168f73082eea49a55d08b941e21"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q92wy9-pqq-la_model__envelope_95c60a681ae9e61a",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q92wy9-pqq-la_model__envelope_95c60a681ae9e61a/UNION.json",
+        "sha256": "619ed336025383057ee6d4d3fd14527b4bd9d2255d18f21e60c762d0019d9f43"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q92wy9-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "protein": "q92wy9-pqq-la_model",
+      "biological_group": "q92wy9",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/q92wy9-pqq-ca/seed-1_sample-1/model.cif",
+        "sha256": "0ee6177d4e17a19e5e9bbf4c3c289e666c6ae81e11e4e36b9641519cada808cf"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q92wy9-pqq-la_model__envelope_95c60a681ae9e61a",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q92wy9-pqq-la_model__envelope_95c60a681ae9e61a/UNION.json",
+        "sha256": "619ed336025383057ee6d4d3fd14527b4bd9d2255d18f21e60c762d0019d9f43"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q92wy9-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "protein": "q92wy9-pqq-la_model",
+      "biological_group": "q92wy9",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/q92wy9-pqq-ca/seed-1_sample-2/model.cif",
+        "sha256": "71d0dc68d0a16aef9aea0d9876184f321da37108d0079e9a8e6cd222f80a5950"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q92wy9-pqq-la_model__envelope_95c60a681ae9e61a",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q92wy9-pqq-la_model__envelope_95c60a681ae9e61a/UNION.json",
+        "sha256": "619ed336025383057ee6d4d3fd14527b4bd9d2255d18f21e60c762d0019d9f43"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q92wy9-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "protein": "q92wy9-pqq-la_model",
+      "biological_group": "q92wy9",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/q92wy9-pqq-ca/seed-1_sample-3/model.cif",
+        "sha256": "69a331476d8ee7e394a8429a6a2cb2b4e9d863d3f96c222e9cdd5ef7f9e75e46"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q92wy9-pqq-la_model__envelope_95c60a681ae9e61a",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q92wy9-pqq-la_model__envelope_95c60a681ae9e61a/UNION.json",
+        "sha256": "619ed336025383057ee6d4d3fd14527b4bd9d2255d18f21e60c762d0019d9f43"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q92wy9-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "protein": "q92wy9-pqq-la_model",
+      "biological_group": "q92wy9",
+      "expected_class": "La",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/q92wy9-pqq-ca/seed-1_sample-4/model.cif",
+        "sha256": "b87a2247802a405b8b3dbbe57fd6ee15408ca4b49c85af74d50d867289564640"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q92wy9-pqq-la_model__envelope_95c60a681ae9e61a",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q92wy9-pqq-la_model__envelope_95c60a681ae9e61a/UNION.json",
+        "sha256": "619ed336025383057ee6d4d3fd14527b4bd9d2255d18f21e60c762d0019d9f43"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "a8r3s4-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "protein": "a8r3s4-pqq-la_model",
+      "biological_group": "a8r3s4",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/a8r3s4-pqq-ca/seed-1_sample-0/model.cif",
+        "sha256": "91361be2ce9ac0e189d71cac62f5abda1ae905fb661ac7eee3a5a8c491eb9e4c"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "a8r3s4-pqq-la_model__envelope_5eba0c9b39ead1ee",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/a8r3s4-pqq-la_model__envelope_5eba0c9b39ead1ee/UNION.json",
+        "sha256": "43966311d36e5d32f1e2ac1ea322ca56639837a3cb4536f0c91537ecfd53e1a1"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "a8r3s4-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "protein": "a8r3s4-pqq-la_model",
+      "biological_group": "a8r3s4",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/a8r3s4-pqq-ca/seed-1_sample-1/model.cif",
+        "sha256": "51cca2f3da3703163745257f5d7e4bfc06dd01d97210d8760f9d50d2ddd32c30"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "a8r3s4-pqq-la_model__envelope_5eba0c9b39ead1ee",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/a8r3s4-pqq-la_model__envelope_5eba0c9b39ead1ee/UNION.json",
+        "sha256": "43966311d36e5d32f1e2ac1ea322ca56639837a3cb4536f0c91537ecfd53e1a1"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "a8r3s4-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "protein": "a8r3s4-pqq-la_model",
+      "biological_group": "a8r3s4",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/a8r3s4-pqq-ca/seed-1_sample-2/model.cif",
+        "sha256": "de6460a323022613dcdecfe1a9a4a47d8c981ff6007b048236d7358d33e3a576"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "a8r3s4-pqq-la_model__envelope_5eba0c9b39ead1ee",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/a8r3s4-pqq-la_model__envelope_5eba0c9b39ead1ee/UNION.json",
+        "sha256": "43966311d36e5d32f1e2ac1ea322ca56639837a3cb4536f0c91537ecfd53e1a1"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "a8r3s4-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "protein": "a8r3s4-pqq-la_model",
+      "biological_group": "a8r3s4",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/a8r3s4-pqq-ca/seed-1_sample-3/model.cif",
+        "sha256": "f82ff237e67f38677c7d896aef8414e9948af1efec6195b78da917d2b5ee3dd2"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "a8r3s4-pqq-la_model__envelope_5eba0c9b39ead1ee",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/a8r3s4-pqq-la_model__envelope_5eba0c9b39ead1ee/UNION.json",
+        "sha256": "43966311d36e5d32f1e2ac1ea322ca56639837a3cb4536f0c91537ecfd53e1a1"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "a8r3s4-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "protein": "a8r3s4-pqq-la_model",
+      "biological_group": "a8r3s4",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/a8r3s4-pqq-ca/seed-1_sample-4/model.cif",
+        "sha256": "a132458462d2e25743f2a821a3178d3f43c530f4850c1c964be57a58f55b163f"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "a8r3s4-pqq-la_model__envelope_5eba0c9b39ead1ee",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/a8r3s4-pqq-la_model__envelope_5eba0c9b39ead1ee/UNION.json",
+        "sha256": "43966311d36e5d32f1e2ac1ea322ca56639837a3cb4536f0c91537ecfd53e1a1"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "atq70401.1-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "protein": "atq70401.1-pqq-la_model",
+      "biological_group": "atq70401.1",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/atq70401.1-pqq-ca/seed-1_sample-0/model.cif",
+        "sha256": "48a869ce96bc784495d95c50671ba89e216d9566c5d7bd431f83f60caf9c715f"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "atq70401.1-pqq-la_model__envelope_1de9a1c85821aa97",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/atq70401.1-pqq-la_model__envelope_1de9a1c85821aa97/UNION.json",
+        "sha256": "c34ae92dcb935b12f484ad9cc7a66fa087aa869a45a0d35c52fe3ac51da9bb26"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "atq70401.1-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "protein": "atq70401.1-pqq-la_model",
+      "biological_group": "atq70401.1",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/atq70401.1-pqq-ca/seed-1_sample-1/model.cif",
+        "sha256": "ef9f3450bb516d6c75d357f3a6da4aa25abdfc879408bd7b8ea2c4054f829352"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "atq70401.1-pqq-la_model__envelope_1de9a1c85821aa97",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/atq70401.1-pqq-la_model__envelope_1de9a1c85821aa97/UNION.json",
+        "sha256": "c34ae92dcb935b12f484ad9cc7a66fa087aa869a45a0d35c52fe3ac51da9bb26"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "atq70401.1-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "protein": "atq70401.1-pqq-la_model",
+      "biological_group": "atq70401.1",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/atq70401.1-pqq-ca/seed-1_sample-2/model.cif",
+        "sha256": "6ce7a3c1294e03bb9bd698c8f9e44c63223ff08439b5e04cdfdee01f2a9be152"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "atq70401.1-pqq-la_model__envelope_1de9a1c85821aa97",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/atq70401.1-pqq-la_model__envelope_1de9a1c85821aa97/UNION.json",
+        "sha256": "c34ae92dcb935b12f484ad9cc7a66fa087aa869a45a0d35c52fe3ac51da9bb26"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "atq70401.1-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "protein": "atq70401.1-pqq-la_model",
+      "biological_group": "atq70401.1",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/atq70401.1-pqq-ca/seed-1_sample-3/model.cif",
+        "sha256": "190436e8f26f4b70c90be855a601adf3e93ebbb32447670aa65b097994165df3"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "atq70401.1-pqq-la_model__envelope_1de9a1c85821aa97",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/atq70401.1-pqq-la_model__envelope_1de9a1c85821aa97/UNION.json",
+        "sha256": "c34ae92dcb935b12f484ad9cc7a66fa087aa869a45a0d35c52fe3ac51da9bb26"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "atq70401.1-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "protein": "atq70401.1-pqq-la_model",
+      "biological_group": "atq70401.1",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/atq70401.1-pqq-ca/seed-1_sample-4/model.cif",
+        "sha256": "218160a77fa94340db572df3ba0d61aa151b34a2d3fe19d3e0d2f564f5ae9bcb"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "atq70401.1-pqq-la_model__envelope_1de9a1c85821aa97",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/atq70401.1-pqq-la_model__envelope_1de9a1c85821aa97/UNION.json",
+        "sha256": "c34ae92dcb935b12f484ad9cc7a66fa087aa869a45a0d35c52fe3ac51da9bb26"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "bbl57595.1-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "protein": "bbl57595.1-pqq-la_model",
+      "biological_group": "bbl57595.1",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/bbl57595.1-pqq-ca/seed-1_sample-0/model.cif",
+        "sha256": "c86cf2e2cb8346fe2cd924d49adff7f00627208352906472451668ed5667722f"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "bbl57595.1-pqq-la_model__envelope_58e1b3ec0c1917b9",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/bbl57595.1-pqq-la_model__envelope_58e1b3ec0c1917b9/UNION.json",
+        "sha256": "b24fe4cf365f5085aad3b4b4c095e248e4b4ed27b97177634773a8a79508079e"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "bbl57595.1-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "protein": "bbl57595.1-pqq-la_model",
+      "biological_group": "bbl57595.1",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/bbl57595.1-pqq-ca/seed-1_sample-1/model.cif",
+        "sha256": "ceabba6d9349e3ce77b4bf5bd4d2ff05aec8f1c321cba0e9451a1a0a88558a01"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "bbl57595.1-pqq-la_model__envelope_58e1b3ec0c1917b9",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/bbl57595.1-pqq-la_model__envelope_58e1b3ec0c1917b9/UNION.json",
+        "sha256": "b24fe4cf365f5085aad3b4b4c095e248e4b4ed27b97177634773a8a79508079e"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "bbl57595.1-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "protein": "bbl57595.1-pqq-la_model",
+      "biological_group": "bbl57595.1",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/bbl57595.1-pqq-ca/seed-1_sample-2/model.cif",
+        "sha256": "9cf5bb79297199bfc1d020ad9265c6bd42796a0814dcdfa3bebc081b2e43620a"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "bbl57595.1-pqq-la_model__envelope_58e1b3ec0c1917b9",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/bbl57595.1-pqq-la_model__envelope_58e1b3ec0c1917b9/UNION.json",
+        "sha256": "b24fe4cf365f5085aad3b4b4c095e248e4b4ed27b97177634773a8a79508079e"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "bbl57595.1-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "protein": "bbl57595.1-pqq-la_model",
+      "biological_group": "bbl57595.1",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/bbl57595.1-pqq-ca/seed-1_sample-3/model.cif",
+        "sha256": "407633bec80b9f26117041fc5370c4a54bcfc69a9e8740decfa7a0b5c12528e1"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "bbl57595.1-pqq-la_model__envelope_58e1b3ec0c1917b9",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/bbl57595.1-pqq-la_model__envelope_58e1b3ec0c1917b9/UNION.json",
+        "sha256": "b24fe4cf365f5085aad3b4b4c095e248e4b4ed27b97177634773a8a79508079e"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "bbl57595.1-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "protein": "bbl57595.1-pqq-la_model",
+      "biological_group": "bbl57595.1",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/bbl57595.1-pqq-ca/seed-1_sample-4/model.cif",
+        "sha256": "0bb9191f783f2c23a725126edcef6392f041f1c9bbb2483a918997e1409cf43b"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "bbl57595.1-pqq-la_model__envelope_58e1b3ec0c1917b9",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/bbl57595.1-pqq-la_model__envelope_58e1b3ec0c1917b9/UNION.json",
+        "sha256": "b24fe4cf365f5085aad3b4b4c095e248e4b4ed27b97177634773a8a79508079e"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "o24759-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "protein": "o24759-pqq-la_model",
+      "biological_group": "o24759",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/o24759-pqq-ca/seed-1_sample-0/model.cif",
+        "sha256": "020b2226979fc856d9a0c38ef7db29788d7bf20781008e3864d2a7b54e965f73"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "o24759-pqq-la_model__envelope_e4efa4342e5fcf03",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/o24759-pqq-la_model__envelope_e4efa4342e5fcf03/UNION.json",
+        "sha256": "581d4986373b0a969e4d72c241ab8de3c2a886729be9cc7892e188df5f58c68f"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "o24759-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "protein": "o24759-pqq-la_model",
+      "biological_group": "o24759",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/o24759-pqq-ca/seed-1_sample-1/model.cif",
+        "sha256": "29904fbcac52a2e682e87837823e38e235cded33ce44946275289c991567a77b"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "o24759-pqq-la_model__envelope_e4efa4342e5fcf03",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/o24759-pqq-la_model__envelope_e4efa4342e5fcf03/UNION.json",
+        "sha256": "581d4986373b0a969e4d72c241ab8de3c2a886729be9cc7892e188df5f58c68f"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "o24759-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "protein": "o24759-pqq-la_model",
+      "biological_group": "o24759",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/o24759-pqq-ca/seed-1_sample-2/model.cif",
+        "sha256": "0a9934c082ecf4b7fa0d24a3f9454ac56cb5de47e69cbbbe359cc2632d0d71df"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "o24759-pqq-la_model__envelope_e4efa4342e5fcf03",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/o24759-pqq-la_model__envelope_e4efa4342e5fcf03/UNION.json",
+        "sha256": "581d4986373b0a969e4d72c241ab8de3c2a886729be9cc7892e188df5f58c68f"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "o24759-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "protein": "o24759-pqq-la_model",
+      "biological_group": "o24759",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/o24759-pqq-ca/seed-1_sample-3/model.cif",
+        "sha256": "8ab2e10c1017e17ca8794b11a49eaff3ba74e2a8508cab4171ab000c00760f3f"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "o24759-pqq-la_model__envelope_e4efa4342e5fcf03",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/o24759-pqq-la_model__envelope_e4efa4342e5fcf03/UNION.json",
+        "sha256": "581d4986373b0a969e4d72c241ab8de3c2a886729be9cc7892e188df5f58c68f"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "o24759-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "protein": "o24759-pqq-la_model",
+      "biological_group": "o24759",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/o24759-pqq-ca/seed-1_sample-4/model.cif",
+        "sha256": "da223ee344be034bac91187f4be6689466ade625beea44adcd47ede3de9c34a6"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "o24759-pqq-la_model__envelope_e4efa4342e5fcf03",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/o24759-pqq-la_model__envelope_e4efa4342e5fcf03/UNION.json",
+        "sha256": "581d4986373b0a969e4d72c241ab8de3c2a886729be9cc7892e188df5f58c68f"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "p12293-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "protein": "p12293-pqq-la_model",
+      "biological_group": "p12293",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/p12293-pqq-ca/seed-1_sample-0/model.cif",
+        "sha256": "a295d7e4fa6af93008a2f2b8b8ba9dc1781695fa5804c78ee40b21ae91eaf705"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "p12293-pqq-la_model__envelope_e88ef960dad9c35e",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/p12293-pqq-la_model__envelope_e88ef960dad9c35e/UNION.json",
+        "sha256": "2332525dbcb009f36acba82d4aa41da6b712b248d790fbd5af97e4f16236a5f8"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "p12293-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "protein": "p12293-pqq-la_model",
+      "biological_group": "p12293",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/p12293-pqq-ca/seed-1_sample-1/model.cif",
+        "sha256": "2abc6ad16c452da9cb449882d5dc64dda699f919a43a457e7bb2794e9215abc9"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "p12293-pqq-la_model__envelope_e88ef960dad9c35e",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/p12293-pqq-la_model__envelope_e88ef960dad9c35e/UNION.json",
+        "sha256": "2332525dbcb009f36acba82d4aa41da6b712b248d790fbd5af97e4f16236a5f8"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "p12293-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "protein": "p12293-pqq-la_model",
+      "biological_group": "p12293",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/p12293-pqq-ca/seed-1_sample-2/model.cif",
+        "sha256": "f725871344eee81e142eb7cb4bf8815bd46bf61d325f50b97cd322a58a9bd14f"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "p12293-pqq-la_model__envelope_e88ef960dad9c35e",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/p12293-pqq-la_model__envelope_e88ef960dad9c35e/UNION.json",
+        "sha256": "2332525dbcb009f36acba82d4aa41da6b712b248d790fbd5af97e4f16236a5f8"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "p12293-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "protein": "p12293-pqq-la_model",
+      "biological_group": "p12293",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/p12293-pqq-ca/seed-1_sample-3/model.cif",
+        "sha256": "20c6881a69474746876ad088aca1a808766c590be6a87da2a47a0961635c0837"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "p12293-pqq-la_model__envelope_e88ef960dad9c35e",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/p12293-pqq-la_model__envelope_e88ef960dad9c35e/UNION.json",
+        "sha256": "2332525dbcb009f36acba82d4aa41da6b712b248d790fbd5af97e4f16236a5f8"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "p12293-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "protein": "p12293-pqq-la_model",
+      "biological_group": "p12293",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/p12293-pqq-ca/seed-1_sample-4/model.cif",
+        "sha256": "05951858b5830b8a0c964ecff2bfe4b876799e277e6fdbc288210f986df0d657"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "p12293-pqq-la_model__envelope_e88ef960dad9c35e",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/p12293-pqq-la_model__envelope_e88ef960dad9c35e/UNION.json",
+        "sha256": "2332525dbcb009f36acba82d4aa41da6b712b248d790fbd5af97e4f16236a5f8"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "p15279-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "protein": "p15279-pqq-la_model",
+      "biological_group": "p15279",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/p15279-pqq-ca/seed-1_sample-0/model.cif",
+        "sha256": "fcd21f65c479ad39a75aefecb8d745b0ebc6ff6e9b917c8c3799b2318d5830b7"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "p15279-pqq-la_model__envelope_1de9a1c85821aa97",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/p15279-pqq-la_model__envelope_1de9a1c85821aa97/UNION.json",
+        "sha256": "26e285b3b894673ff890472272feaef4a99daa272bf4f288cc97a9226720db4d"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "p15279-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "protein": "p15279-pqq-la_model",
+      "biological_group": "p15279",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/p15279-pqq-ca/seed-1_sample-1/model.cif",
+        "sha256": "95882156a333524a16a15704dc6e50cd312a47a64a2d580723ef971c0ac6fabe"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "p15279-pqq-la_model__envelope_1de9a1c85821aa97",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/p15279-pqq-la_model__envelope_1de9a1c85821aa97/UNION.json",
+        "sha256": "26e285b3b894673ff890472272feaef4a99daa272bf4f288cc97a9226720db4d"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "p15279-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "protein": "p15279-pqq-la_model",
+      "biological_group": "p15279",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/p15279-pqq-ca/seed-1_sample-2/model.cif",
+        "sha256": "a166c0cb8ae634d39ed87f1ed4bab6ed439b987208b8366dc1f0e374e5696ab3"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "p15279-pqq-la_model__envelope_1de9a1c85821aa97",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/p15279-pqq-la_model__envelope_1de9a1c85821aa97/UNION.json",
+        "sha256": "26e285b3b894673ff890472272feaef4a99daa272bf4f288cc97a9226720db4d"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "p15279-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "protein": "p15279-pqq-la_model",
+      "biological_group": "p15279",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/p15279-pqq-ca/seed-1_sample-3/model.cif",
+        "sha256": "21e64b9a8c7da5ffa20abb77f02c7f66d9244056cd5a20480668b39f9c6f0eb5"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "p15279-pqq-la_model__envelope_1de9a1c85821aa97",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/p15279-pqq-la_model__envelope_1de9a1c85821aa97/UNION.json",
+        "sha256": "26e285b3b894673ff890472272feaef4a99daa272bf4f288cc97a9226720db4d"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "p15279-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "protein": "p15279-pqq-la_model",
+      "biological_group": "p15279",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/p15279-pqq-ca/seed-1_sample-4/model.cif",
+        "sha256": "2749a6d32d33959c765bb75768d78ab55c3004d9f43ec8d8df7edbe85a54a3c8"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "p15279-pqq-la_model__envelope_1de9a1c85821aa97",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/p15279-pqq-la_model__envelope_1de9a1c85821aa97/UNION.json",
+        "sha256": "26e285b3b894673ff890472272feaef4a99daa272bf4f288cc97a9226720db4d"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "p16027-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "protein": "p16027-pqq-la_model",
+      "biological_group": "p16027",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/p16027-pqq-ca/seed-1_sample-0/model.cif",
+        "sha256": "78fafb1d439c2b59b40e8ed2799a303d3a8ff19487ac7af8370a1913a025edc3"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "p16027-pqq-la_model__envelope_1de9a1c85821aa97",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/p16027-pqq-la_model__envelope_1de9a1c85821aa97/UNION.json",
+        "sha256": "703a99b200a1efca3d93dae7205995af6a007339d1e2dae9a0e7a08b86d21dc4"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "p16027-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "protein": "p16027-pqq-la_model",
+      "biological_group": "p16027",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/p16027-pqq-ca/seed-1_sample-1/model.cif",
+        "sha256": "45a8dd2806a830f4f7f39a3830b783c793b36a9f58dfb4eff08c058e78c01dee"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "p16027-pqq-la_model__envelope_1de9a1c85821aa97",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/p16027-pqq-la_model__envelope_1de9a1c85821aa97/UNION.json",
+        "sha256": "703a99b200a1efca3d93dae7205995af6a007339d1e2dae9a0e7a08b86d21dc4"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "p16027-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "protein": "p16027-pqq-la_model",
+      "biological_group": "p16027",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/p16027-pqq-ca/seed-1_sample-2/model.cif",
+        "sha256": "2add708cf3a5562544b72feca5b2985714e0c58ce6acd77f8c90b1ead6198523"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "p16027-pqq-la_model__envelope_1de9a1c85821aa97",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/p16027-pqq-la_model__envelope_1de9a1c85821aa97/UNION.json",
+        "sha256": "703a99b200a1efca3d93dae7205995af6a007339d1e2dae9a0e7a08b86d21dc4"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "p16027-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "protein": "p16027-pqq-la_model",
+      "biological_group": "p16027",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/p16027-pqq-ca/seed-1_sample-3/model.cif",
+        "sha256": "5770b9aaa28fad23cd91f8d5a845b0821b286681dac8463e8577f13d11bd5749"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "p16027-pqq-la_model__envelope_1de9a1c85821aa97",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/p16027-pqq-la_model__envelope_1de9a1c85821aa97/UNION.json",
+        "sha256": "703a99b200a1efca3d93dae7205995af6a007339d1e2dae9a0e7a08b86d21dc4"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "p16027-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "protein": "p16027-pqq-la_model",
+      "biological_group": "p16027",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/p16027-pqq-ca/seed-1_sample-4/model.cif",
+        "sha256": "7b54edb3212e284c6d1760916b2f5d640080e25953ff72a3e48f8d63494f27c5"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "p16027-pqq-la_model__envelope_1de9a1c85821aa97",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/p16027-pqq-la_model__envelope_1de9a1c85821aa97/UNION.json",
+        "sha256": "703a99b200a1efca3d93dae7205995af6a007339d1e2dae9a0e7a08b86d21dc4"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "p38539-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "protein": "p38539-pqq-la_model",
+      "biological_group": "p38539",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/p38539-pqq-ca/seed-1_sample-0/model.cif",
+        "sha256": "515810e66d60f208d0126f7c1031d9766f2c6e71262e5648c1b15c6ad1c28958"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "p38539-pqq-la_model__envelope_3c659c8193acdad7",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/p38539-pqq-la_model__envelope_3c659c8193acdad7/UNION.json",
+        "sha256": "02d4d460b28cdca049838e8a9e1225396952a5f9d767bb076b9cf8e5b61340a4"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "p38539-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "protein": "p38539-pqq-la_model",
+      "biological_group": "p38539",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/p38539-pqq-ca/seed-1_sample-1/model.cif",
+        "sha256": "2ad446aab8d4b45c1f8363c7d3ff10ec215f6bf1479bda43c1789d90fa62eab6"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "p38539-pqq-la_model__envelope_3c659c8193acdad7",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/p38539-pqq-la_model__envelope_3c659c8193acdad7/UNION.json",
+        "sha256": "02d4d460b28cdca049838e8a9e1225396952a5f9d767bb076b9cf8e5b61340a4"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "p38539-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "protein": "p38539-pqq-la_model",
+      "biological_group": "p38539",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/p38539-pqq-ca/seed-1_sample-2/model.cif",
+        "sha256": "419fe19d8cf8281df9dea4346659dc8b00bce70f085a0757118278b4ffcdc61c"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "p38539-pqq-la_model__envelope_3c659c8193acdad7",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/p38539-pqq-la_model__envelope_3c659c8193acdad7/UNION.json",
+        "sha256": "02d4d460b28cdca049838e8a9e1225396952a5f9d767bb076b9cf8e5b61340a4"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "p38539-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "protein": "p38539-pqq-la_model",
+      "biological_group": "p38539",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/p38539-pqq-ca/seed-1_sample-3/model.cif",
+        "sha256": "0f8c19599805fda7cb2c293ba7f215674f6a1658b52a432d1eb329bcfe6f63e7"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "p38539-pqq-la_model__envelope_3c659c8193acdad7",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/p38539-pqq-la_model__envelope_3c659c8193acdad7/UNION.json",
+        "sha256": "02d4d460b28cdca049838e8a9e1225396952a5f9d767bb076b9cf8e5b61340a4"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "p38539-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "protein": "p38539-pqq-la_model",
+      "biological_group": "p38539",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/p38539-pqq-ca/seed-1_sample-4/model.cif",
+        "sha256": "285a39e41e73bea8bd36fff705f07335ee021d90e81cbe917a7f0dfaff62be28"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "p38539-pqq-la_model__envelope_3c659c8193acdad7",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/p38539-pqq-la_model__envelope_3c659c8193acdad7/UNION.json",
+        "sha256": "02d4d460b28cdca049838e8a9e1225396952a5f9d767bb076b9cf8e5b61340a4"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q4w6g0-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "protein": "q4w6g0-pqq-la_model",
+      "biological_group": "q4w6g0",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q4w6g0-pqq-ca/seed-1_sample-0/model.cif",
+        "sha256": "b1830df27202ffb56c1078446da105b01a78629b16b74d4e71be50c80aab1b45"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q4w6g0-pqq-la_model__envelope_6827bf3c955fda67",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q4w6g0-pqq-la_model__envelope_6827bf3c955fda67/UNION.json",
+        "sha256": "6c49bf06b9c4237979a86d1a35e4e28eafd6f3bbd1e2386d63d710aa6d9a24e4"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q4w6g0-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "protein": "q4w6g0-pqq-la_model",
+      "biological_group": "q4w6g0",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q4w6g0-pqq-ca/seed-1_sample-1/model.cif",
+        "sha256": "3b0d34333aa50ef086a41d21088df7d725e4ca83dcb8e73c573527d46cef67b1"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q4w6g0-pqq-la_model__envelope_6827bf3c955fda67",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q4w6g0-pqq-la_model__envelope_6827bf3c955fda67/UNION.json",
+        "sha256": "6c49bf06b9c4237979a86d1a35e4e28eafd6f3bbd1e2386d63d710aa6d9a24e4"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q4w6g0-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "protein": "q4w6g0-pqq-la_model",
+      "biological_group": "q4w6g0",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q4w6g0-pqq-ca/seed-1_sample-2/model.cif",
+        "sha256": "c1b36d9747f0cd74394db5feee97c7d8e894ef9a041a8f96a1bb10dad9b9b5b2"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q4w6g0-pqq-la_model__envelope_6827bf3c955fda67",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q4w6g0-pqq-la_model__envelope_6827bf3c955fda67/UNION.json",
+        "sha256": "6c49bf06b9c4237979a86d1a35e4e28eafd6f3bbd1e2386d63d710aa6d9a24e4"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q4w6g0-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "protein": "q4w6g0-pqq-la_model",
+      "biological_group": "q4w6g0",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q4w6g0-pqq-ca/seed-1_sample-3/model.cif",
+        "sha256": "7e46ffe73e8299e14b38cf4591598a5e60bbe6b4e934b5dac740ddd761d784b5"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q4w6g0-pqq-la_model__envelope_6827bf3c955fda67",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q4w6g0-pqq-la_model__envelope_6827bf3c955fda67/UNION.json",
+        "sha256": "6c49bf06b9c4237979a86d1a35e4e28eafd6f3bbd1e2386d63d710aa6d9a24e4"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q4w6g0-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "protein": "q4w6g0-pqq-la_model",
+      "biological_group": "q4w6g0",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q4w6g0-pqq-ca/seed-1_sample-4/model.cif",
+        "sha256": "31c3778cc181646f7ebc2878b72ad8d1796d4bc4afb7eab0bf826a2d9e5a6eeb"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q4w6g0-pqq-la_model__envelope_6827bf3c955fda67",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q4w6g0-pqq-la_model__envelope_6827bf3c955fda67/UNION.json",
+        "sha256": "6c49bf06b9c4237979a86d1a35e4e28eafd6f3bbd1e2386d63d710aa6d9a24e4"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q60ar6-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "protein": "q60ar6-pqq-la_model",
+      "biological_group": "q60ar6",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q60ar6-pqq-ca/seed-1_sample-0/model.cif",
+        "sha256": "9941b6c303edceafa1c3e804726abbd9ef3c3c0cbebf9ecd485dec4facef7f2c"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q60ar6-pqq-la_model__envelope_cefdcb289daedf76",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q60ar6-pqq-la_model__envelope_cefdcb289daedf76/UNION.json",
+        "sha256": "c517e9ad2d4651a5803b76cd01e398a50dd58b20eadf4e6cd63bcc5fd0f1e260"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q60ar6-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "protein": "q60ar6-pqq-la_model",
+      "biological_group": "q60ar6",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q60ar6-pqq-ca/seed-1_sample-1/model.cif",
+        "sha256": "e0b68e9c2ba465db78bc1c1290066437142eb27d6d773f1b4008c2b3d012078d"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q60ar6-pqq-la_model__envelope_cefdcb289daedf76",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q60ar6-pqq-la_model__envelope_cefdcb289daedf76/UNION.json",
+        "sha256": "c517e9ad2d4651a5803b76cd01e398a50dd58b20eadf4e6cd63bcc5fd0f1e260"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q60ar6-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "protein": "q60ar6-pqq-la_model",
+      "biological_group": "q60ar6",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q60ar6-pqq-ca/seed-1_sample-2/model.cif",
+        "sha256": "558b519a856ae96d9baa48d57746651e770a745dbe54dc23cc0f0ab7987e00b4"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q60ar6-pqq-la_model__envelope_cefdcb289daedf76",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q60ar6-pqq-la_model__envelope_cefdcb289daedf76/UNION.json",
+        "sha256": "c517e9ad2d4651a5803b76cd01e398a50dd58b20eadf4e6cd63bcc5fd0f1e260"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q60ar6-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "protein": "q60ar6-pqq-la_model",
+      "biological_group": "q60ar6",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q60ar6-pqq-ca/seed-1_sample-3/model.cif",
+        "sha256": "1233f87b12577cfd1ae8f66dba1e06eb7bb5ee5c8f9da29999ee860af9af0629"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q60ar6-pqq-la_model__envelope_cefdcb289daedf76",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q60ar6-pqq-la_model__envelope_cefdcb289daedf76/UNION.json",
+        "sha256": "c517e9ad2d4651a5803b76cd01e398a50dd58b20eadf4e6cd63bcc5fd0f1e260"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q60ar6-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "protein": "q60ar6-pqq-la_model",
+      "biological_group": "q60ar6",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q60ar6-pqq-ca/seed-1_sample-4/model.cif",
+        "sha256": "5d92d6ffb4b16864ea41fd2ac65590b17fcbfc04b2c3d1c9a5960d1ad20df7c3"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q60ar6-pqq-la_model__envelope_cefdcb289daedf76",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q60ar6-pqq-la_model__envelope_cefdcb289daedf76/UNION.json",
+        "sha256": "c517e9ad2d4651a5803b76cd01e398a50dd58b20eadf4e6cd63bcc5fd0f1e260"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q88jh5-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "protein": "q88jh5-pqq-la_model",
+      "biological_group": "q88jh5",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q88jh5-pqq-ca/seed-1_sample-0/model.cif",
+        "sha256": "d6ee5e93d624c68741dc4836c3db388383012cc32200a5481ead6e0e6f54d35b"
+      },
+      "source_preparation_status": "unsupported",
+      "source_preparation_reason": "exact selected PQQ required",
+      "existing_target_selection_id": "q88jh5-pqq-la_model__envelope_12c9e6b669aeb9c8",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q88jh5-pqq-la_model__envelope_12c9e6b669aeb9c8/UNION.json",
+        "sha256": "6737f7596c68ef4f4452ad29c64517d1a960ac28a8ddf2b297991cb69ca4152d"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prior_unsupported",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "source_preparation_excluded"
+    },
+    {
+      "case_id": "q88jh5-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "protein": "q88jh5-pqq-la_model",
+      "biological_group": "q88jh5",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q88jh5-pqq-ca/seed-1_sample-1/model.cif",
+        "sha256": "5c312108026544f70cd2783bbefa196a266e65fe966825ad466c1ff77f1e9066"
+      },
+      "source_preparation_status": "unsupported",
+      "source_preparation_reason": "exact selected PQQ required",
+      "existing_target_selection_id": "q88jh5-pqq-la_model__envelope_12c9e6b669aeb9c8",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q88jh5-pqq-la_model__envelope_12c9e6b669aeb9c8/UNION.json",
+        "sha256": "6737f7596c68ef4f4452ad29c64517d1a960ac28a8ddf2b297991cb69ca4152d"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prior_unsupported",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "source_preparation_excluded"
+    },
+    {
+      "case_id": "q88jh5-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "protein": "q88jh5-pqq-la_model",
+      "biological_group": "q88jh5",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q88jh5-pqq-ca/seed-1_sample-2/model.cif",
+        "sha256": "9a12942dfce41b71e99c6855f22dc528581e2052be1821148bb8a0f2dab03eae"
+      },
+      "source_preparation_status": "unsupported",
+      "source_preparation_reason": "exact selected PQQ required",
+      "existing_target_selection_id": "q88jh5-pqq-la_model__envelope_12c9e6b669aeb9c8",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q88jh5-pqq-la_model__envelope_12c9e6b669aeb9c8/UNION.json",
+        "sha256": "6737f7596c68ef4f4452ad29c64517d1a960ac28a8ddf2b297991cb69ca4152d"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prior_unsupported",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "source_preparation_excluded"
+    },
+    {
+      "case_id": "q88jh5-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "protein": "q88jh5-pqq-la_model",
+      "biological_group": "q88jh5",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q88jh5-pqq-ca/seed-1_sample-3/model.cif",
+        "sha256": "14c9048313ca5420eec03c7557a743ed09b5c368896eb045d7fceb1de1b4b5cb"
+      },
+      "source_preparation_status": "unsupported",
+      "source_preparation_reason": "exact selected PQQ required",
+      "existing_target_selection_id": "q88jh5-pqq-la_model__envelope_12c9e6b669aeb9c8",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q88jh5-pqq-la_model__envelope_12c9e6b669aeb9c8/UNION.json",
+        "sha256": "6737f7596c68ef4f4452ad29c64517d1a960ac28a8ddf2b297991cb69ca4152d"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prior_unsupported",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "source_preparation_excluded"
+    },
+    {
+      "case_id": "q88jh5-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "protein": "q88jh5-pqq-la_model",
+      "biological_group": "q88jh5",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q88jh5-pqq-ca/seed-1_sample-4/model.cif",
+        "sha256": "f7fa79cbe84e996b04c881ff41f66338cf80213f200e47dddafd1c47414d3b99"
+      },
+      "source_preparation_status": "unsupported",
+      "source_preparation_reason": "exact selected PQQ required",
+      "existing_target_selection_id": "q88jh5-pqq-la_model__envelope_12c9e6b669aeb9c8",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q88jh5-pqq-la_model__envelope_12c9e6b669aeb9c8/UNION.json",
+        "sha256": "6737f7596c68ef4f4452ad29c64517d1a960ac28a8ddf2b297991cb69ca4152d"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prior_unsupported",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "source_preparation_excluded"
+    },
+    {
+      "case_id": "q8gr64-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "protein": "q8gr64-pqq-la_model",
+      "biological_group": "q8gr64",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q8gr64-pqq-ca/seed-1_sample-0/model.cif",
+        "sha256": "553948a0197dc95abc4da773ea222c953af262d321366432ecb1b0bfa50b7abb"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q8gr64-pqq-la_model__envelope_0e84aa21f1346d1a",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q8gr64-pqq-la_model__envelope_0e84aa21f1346d1a/UNION.json",
+        "sha256": "371d4510528084cd778663d7faee8d6560cbfea89dc592e40bdde9f6fb1eaa13"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q8gr64-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "protein": "q8gr64-pqq-la_model",
+      "biological_group": "q8gr64",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q8gr64-pqq-ca/seed-1_sample-1/model.cif",
+        "sha256": "e1819f90d6772007bcbc40bf9371efcc1590b657645cd30866bfabce7b71fadb"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q8gr64-pqq-la_model__envelope_0e84aa21f1346d1a",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q8gr64-pqq-la_model__envelope_0e84aa21f1346d1a/UNION.json",
+        "sha256": "371d4510528084cd778663d7faee8d6560cbfea89dc592e40bdde9f6fb1eaa13"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q8gr64-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "protein": "q8gr64-pqq-la_model",
+      "biological_group": "q8gr64",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q8gr64-pqq-ca/seed-1_sample-2/model.cif",
+        "sha256": "f8853e6b9a2b2eae9940a7c2fee8e6ed8dcf9b445a59f30551765c2d58505c24"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q8gr64-pqq-la_model__envelope_0e84aa21f1346d1a",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q8gr64-pqq-la_model__envelope_0e84aa21f1346d1a/UNION.json",
+        "sha256": "371d4510528084cd778663d7faee8d6560cbfea89dc592e40bdde9f6fb1eaa13"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q8gr64-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "protein": "q8gr64-pqq-la_model",
+      "biological_group": "q8gr64",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q8gr64-pqq-ca/seed-1_sample-3/model.cif",
+        "sha256": "e3f0d8ede656a8cb1f7324bd3e609d03e86c53308e8c163fae36a3b30afea6c4"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q8gr64-pqq-la_model__envelope_0e84aa21f1346d1a",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q8gr64-pqq-la_model__envelope_0e84aa21f1346d1a/UNION.json",
+        "sha256": "371d4510528084cd778663d7faee8d6560cbfea89dc592e40bdde9f6fb1eaa13"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q8gr64-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "protein": "q8gr64-pqq-la_model",
+      "biological_group": "q8gr64",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q8gr64-pqq-ca/seed-1_sample-4/model.cif",
+        "sha256": "3d665cde42f8acecabcf547655831b085e97ecda7848379f46ba2cdbeda66403"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q8gr64-pqq-la_model__envelope_0e84aa21f1346d1a",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q8gr64-pqq-la_model__envelope_0e84aa21f1346d1a/UNION.json",
+        "sha256": "371d4510528084cd778663d7faee8d6560cbfea89dc592e40bdde9f6fb1eaa13"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q9l935-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "protein": "q9l935-pqq-la_model",
+      "biological_group": "q9l935",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q9l935-pqq-ca/seed-1_sample-0/model.cif",
+        "sha256": "39353d8525ee3ed6c971a95361d6b4b366f605e7d72dbf66d36c6dfc52cf4600"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q9l935-pqq-la_model__envelope_722cdd31821909e8",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q9l935-pqq-la_model__envelope_722cdd31821909e8/UNION.json",
+        "sha256": "5648ea1199d957d45f0d949a95a482fb4f51b6a248986a559b71972fb7ad5d71"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q9l935-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "protein": "q9l935-pqq-la_model",
+      "biological_group": "q9l935",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q9l935-pqq-ca/seed-1_sample-1/model.cif",
+        "sha256": "da590037032d72c8ea4d0f6df8f74aaafe3b3d4404d278c1d76ded64c5f71610"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q9l935-pqq-la_model__envelope_722cdd31821909e8",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q9l935-pqq-la_model__envelope_722cdd31821909e8/UNION.json",
+        "sha256": "5648ea1199d957d45f0d949a95a482fb4f51b6a248986a559b71972fb7ad5d71"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q9l935-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "protein": "q9l935-pqq-la_model",
+      "biological_group": "q9l935",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q9l935-pqq-ca/seed-1_sample-2/model.cif",
+        "sha256": "c43246efa31894a43dbee13e92fcb9dd5715266749e358a4e45e55d7ff9e98aa"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q9l935-pqq-la_model__envelope_722cdd31821909e8",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q9l935-pqq-la_model__envelope_722cdd31821909e8/UNION.json",
+        "sha256": "5648ea1199d957d45f0d949a95a482fb4f51b6a248986a559b71972fb7ad5d71"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q9l935-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "protein": "q9l935-pqq-la_model",
+      "biological_group": "q9l935",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q9l935-pqq-ca/seed-1_sample-3/model.cif",
+        "sha256": "8e7b4429c40606e39e76e9f599cb755b99fe012ae42013895c3040946525385d"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q9l935-pqq-la_model__envelope_722cdd31821909e8",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q9l935-pqq-la_model__envelope_722cdd31821909e8/UNION.json",
+        "sha256": "5648ea1199d957d45f0d949a95a482fb4f51b6a248986a559b71972fb7ad5d71"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q9l935-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "protein": "q9l935-pqq-la_model",
+      "biological_group": "q9l935",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q9l935-pqq-ca/seed-1_sample-4/model.cif",
+        "sha256": "4d6a88b5b287df2e862c5bf5df0d5a48f9a621b8ae3fb78f3b31e3f848e419cd"
+      },
+      "source_preparation_status": "prepared",
+      "source_preparation_reason": null,
+      "existing_target_selection_id": "q9l935-pqq-la_model__envelope_722cdd31821909e8",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q9l935-pqq-la_model__envelope_722cdd31821909e8/UNION.json",
+        "sha256": "5648ea1199d957d45f0d949a95a482fb4f51b6a248986a559b71972fb7ad5d71"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prepared",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "expanded_preparation_then_proposals_and_components"
+    },
+    {
+      "case_id": "q9z4j7-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "protein": "q9z4j7-pqq-la_model",
+      "biological_group": "q9z4j7",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q9z4j7-pqq-ca/seed-1_sample-0/model.cif",
+        "sha256": "3e3a2d618c7ea7968fe8c25dc22c077533553ec0a9ec42fe443785701086bc8e"
+      },
+      "source_preparation_status": "unsupported",
+      "source_preparation_reason": "exact selected PQQ required",
+      "existing_target_selection_id": "q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee/UNION.json",
+        "sha256": "776dbc768ebf2d4e25d7f37e07d4e0e8465446ff0877e6f79da4cff7eac6b6b1"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prior_unsupported",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "source_preparation_excluded"
+    },
+    {
+      "case_id": "q9z4j7-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "protein": "q9z4j7-pqq-la_model",
+      "biological_group": "q9z4j7",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q9z4j7-pqq-ca/seed-1_sample-1/model.cif",
+        "sha256": "776a5ea8e5834244b7f10f3b7a3a38ca70daa88a188f95388f3862a5f790a418"
+      },
+      "source_preparation_status": "unsupported",
+      "source_preparation_reason": "exact selected PQQ required",
+      "existing_target_selection_id": "q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee/UNION.json",
+        "sha256": "776dbc768ebf2d4e25d7f37e07d4e0e8465446ff0877e6f79da4cff7eac6b6b1"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prior_unsupported",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "source_preparation_excluded"
+    },
+    {
+      "case_id": "q9z4j7-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "protein": "q9z4j7-pqq-la_model",
+      "biological_group": "q9z4j7",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q9z4j7-pqq-ca/seed-1_sample-2/model.cif",
+        "sha256": "76accb71dd42ff99d4aa1845fd76690a15f97fbc142fd3b7801047661665b625"
+      },
+      "source_preparation_status": "unsupported",
+      "source_preparation_reason": "exact selected PQQ required",
+      "existing_target_selection_id": "q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee/UNION.json",
+        "sha256": "776dbc768ebf2d4e25d7f37e07d4e0e8465446ff0877e6f79da4cff7eac6b6b1"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prior_unsupported",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "source_preparation_excluded"
+    },
+    {
+      "case_id": "q9z4j7-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "protein": "q9z4j7-pqq-la_model",
+      "biological_group": "q9z4j7",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q9z4j7-pqq-ca/seed-1_sample-3/model.cif",
+        "sha256": "74f65e9162ba5fae66ed893efa111393495fc82bb383847d1fee59eadf4dc71b"
+      },
+      "source_preparation_status": "unsupported",
+      "source_preparation_reason": "exact selected PQQ required",
+      "existing_target_selection_id": "q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee/UNION.json",
+        "sha256": "776dbc768ebf2d4e25d7f37e07d4e0e8465446ff0877e6f79da4cff7eac6b6b1"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prior_unsupported",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "source_preparation_excluded"
+    },
+    {
+      "case_id": "q9z4j7-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "protein": "q9z4j7-pqq-la_model",
+      "biological_group": "q9z4j7",
+      "expected_class": "Ca",
+      "conditioning": "Ca",
+      "source_structure": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q9z4j7-pqq-ca/seed-1_sample-4/model.cif",
+        "sha256": "4d52c2243612308b95a69f2635e61defe50237c6aa3592e5846779b0a0611bfc"
+      },
+      "source_preparation_status": "unsupported",
+      "source_preparation_reason": "exact selected PQQ required",
+      "existing_target_selection_id": "q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee",
+      "target_union": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/run_v1/selections/q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee/UNION.json",
+        "sha256": "776dbc768ebf2d4e25d7f37e07d4e0e8465446ff0877e6f79da4cff7eac6b6b1"
+      },
+      "exact_expanded_preparation": false,
+      "exact_saved_ownthree_pool": null,
+      "existing_tenfold_status": "prior_unsupported",
+      "tenfold_fragment_list_equal_target": false,
+      "required_work": "source_preparation_excluded"
+    }
+  ]
+}

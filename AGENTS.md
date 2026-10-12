@@ -4,8 +4,11 @@ Jacob explicitly said: "alright. i authorize you to do whatever you can with 16 
 This clears the discussion hold and authorizes contained parameter-audit and
 corrected-discrimination computation on the login node, at most16 TOTAL numerical
 threads across all owned sessions/subprocesses. It supersedes older Slurm-only
-rules for this temporary scope. Root allocates per-task budgets (runtime4,
-context2, guard1, root8 maximum); children inherit their parent's share. Do not
+rules for this temporary scope. Root allocates the aggregate allowance; children inherit their parent's share.
+Current corrected canonical worker1475139 uses14 one-thread workers; remaining
+light work shares at most2. Watcher1475140 is armed. Exact commands/checkpoint:
+`diagnostics/orca_parameter_audit_20261012/CURRENT.md`. Earlier runtime/context/
+MACE workers are complete; do not add their old allocations to new work. Do not
 fabricate Slurm environment variables, modify other users' jobs, overwrite
 production or silently replace historical scores. Read
 `diagnostics/orca_parameter_audit_20261012/CURRENT.md` and the confirmed synced

@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/orca_parameter_audit_20261012/cpu_proposal_batch/CPU_BATCH.py", line 469, in <module>
+    if a.operation=='prepare': prepare(a.output)
+                               ^^^^^^^^^^^^^^^^^
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/orca_parameter_audit_20261012/cpu_proposal_batch/CPU_BATCH.py", line 88, in prepare
+    result=validate(out/'manifest.json'); write(out/'DRY_RUN.json',result); print(json.dumps(result),flush=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/orca_parameter_audit_20261012/cpu_proposal_batch/CPU_BATCH.py", line 114, in validate
+    if [c['source_case_id'] for c in m['cases']]!=expected: raise ValueError('exact prepared106 population differs')
+                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: exact prepared106 population differs

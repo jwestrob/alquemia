@@ -5,23 +5,24 @@
 # 112-rank x 2-concurrent-task layout this standard-QOS singleton-origin
 # continuation does not use (QOS caps standard jobs at 12 CPUs; see
 # workspaces/orca_parameter_audit_20261012/slurm_resumption_20261012/SCHEDULER_POLICY.json).
-# This wrapper has no date cutoff and derives --ntasks from the manifest's own
-# execution_resources (mpi_ranks * concurrent_tasks) instead of a fixed number,
-# so it cannot silently drift out of sync with a differently-sized manifest again.
+# This wrapper has no date cutoff. It requests the current QOS limit of 12
+# tasks, then verifies that allocation against the manifest's execution layout.
 #SBATCH --job-name=Nikasha-LaDy-singleton-origin
 #SBATCH --partition=standard
 #SBATCH --nodes=1
 #SBATCH --ntasks=12
+#SBATCH -w node-64-768g-2
 #SBATCH --no-requeue
 #SBATCH -o /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/claude_lanm_20261012/recovery_02_v1/slurm_%x_%j.out
 #SBATCH -e /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/claude_lanm_20261012/recovery_02_v1/slurm_%x_%j.err
 
 set -euo pipefail
-if [ "$#" -ne 1 ]; then
-    echo 'Usage: run_lady_embedded_singleton.sbatch ABSOLUTE_MANIFEST' >&2
+if [ "$#" -ne 2 ]; then
+    echo 'Usage: run_lady_embedded_singleton.sbatch ABSOLUTE_MANIFEST ABSOLUTE_SLURM_TEST_RECEIPT' >&2
     exit 2
 fi
 FIELD_MANIFEST="$1"
+FIELD_TEST_RECEIPT="$2"
 FIELD_WORK=$(dirname "$FIELD_MANIFEST")
 FIELD_PY=/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python
 FIELD_SCRIPT="$FIELD_WORK/implementation/metal_environment_lady_embedded.py"
@@ -29,12 +30,14 @@ cd /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/
 export PATH=/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg:$PATH
 export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
 
-REQUIRED_NTASKS=$("$FIELD_PY" -c "
-import json
-m = json.load(open('$FIELD_MANIFEST'))
-r = m['execution_resources']
-print(r['mpi_ranks'] * r['concurrent_tasks'])
-")
+case "${SLURM_JOB_NODELIST:-}" in
+    node-64-768g-1|node-64-768g-2) ;;
+    *) echo 'Expected one of the two reviewed healthy 64-768g nodes.' >&2; exit 76 ;;
+esac
+FIELD_GATE=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/claude_lanm_20261012/worktree_02/diagnostics/claude_lanm_20261012/02_endpoint_recovery/collector_test_gate.py
+"$FIELD_PY" "$FIELD_GATE" check --receipt "$FIELD_TEST_RECEIPT" --manifest "$FIELD_MANIFEST"
+
+REQUIRED_NTASKS=$("$FIELD_PY" -c 'import json,sys; r=json.load(open(sys.argv[1]))["execution_resources"]; print(r["mpi_ranks"]*r["concurrent_tasks"])' "$FIELD_MANIFEST")
 if [ "${SLURM_NTASKS:-0}" -ne "$REQUIRED_NTASKS" ]; then
     echo "Allocation mismatch: SLURM_NTASKS=${SLURM_NTASKS:-0} but manifest requires $REQUIRED_NTASKS (mpi_ranks*concurrent_tasks)." >&2
     exit 76

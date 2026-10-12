@@ -58,7 +58,9 @@ def _retargeted_manifest(real_dir, dest, *, corrupt_output=None):
 
     # run_orca_task_manifest._resolve_under requires input/xyz/output/engrad to
     # resolve under the manifest's own directory, so these four (only) must be
-    # physically copied alongside the retargeted manifest. Everything else
+    # physically copied alongside the retargeted manifest. The collector also
+    # reads endpoint.runtime.pcgrad beside the output, so copy that real file.
+    # Everything else
     # (pointcharges, core/boundary mapping, orbital_seed, initial_gbw, basis
     # assets) is validated by plain verify() against its real recorded path
     # and stays untouched at its real archived location.
@@ -74,6 +76,9 @@ def _retargeted_manifest(real_dir, dest, *, corrupt_output=None):
         new_engrad = dest / real_engrad.name
         shutil.copyfile(real_engrad, new_engrad)
         t['engrad_path'] = str(new_engrad)
+
+    shutil.copyfile(real_output.with_name('endpoint.runtime.pcgrad'),
+                    dest / 'endpoint.runtime.pcgrad')
 
     real_input = Path(t['input']['path'])
     new_input = dest / real_input.name
@@ -117,11 +122,27 @@ def test_real_accepted_moread_la_endpoint_collects(tmp_path):
 
 
 def test_real_accepted_trah_dy_endpoint_collects(tmp_path):
-    """Real archived Mex8FNS Dy_A TRAH-scout endpoint, read in place, is accepted."""
+    """Real archived Hans8DQ2 Dy_A TRAH-scout endpoint, read in place, is accepted."""
     result = collect(DY_REAL / 'manifest.json')
     row = result['rows']['Dy_A']
     assert row['status'] == 'complete'
     assert row['energy_hartree'] is not None
+
+
+def test_relocated_moread_la_endpoint_collects(tmp_path):
+    """Uncorrupted relocated control must pass before corruptions are meaningful."""
+    manifest, task_id = _retargeted_manifest(LA_REAL, tmp_path / 'la_control')
+    row = collect(manifest)['rows'][task_id]
+    assert row['status'] == 'complete'
+    assert row['orbital_initialization']['target_energy_reused'] is False
+
+
+def test_relocated_trah_dy_endpoint_collects(tmp_path):
+    """Relocation retains the actual accepted Dy point-charge gradient."""
+    manifest, task_id = _retargeted_manifest(DY_REAL, tmp_path / 'dy_control')
+    row = collect(manifest)['rows'][task_id]
+    assert row['status'] == 'complete'
+    assert row['pointcharge_gradient']['path'] == str(tmp_path / 'dy_control' / 'endpoint.runtime.pcgrad')
 
 
 def test_silent_pmodel_fallback_rejected(tmp_path):

@@ -1,0 +1,86 @@
+{
+  "status": "prepared_canonical_execution_owned_by_root",
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/expanded_candidate_reevaluation_v3/manifest.json",
+    "sha256": "4f842a2d92364e1559dd5d266ae86e6b682a8ed81181a9e58f0a17cbd59ccfe1"
+  },
+  "preparation": "workspaces/orca_parameter_audit_20261012/expanded_candidate_reevaluation_v3/PREPARATION.json",
+  "scope": {
+    "manifest": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/expanded_candidate_reevaluation_v3/manifest.json",
+      "sha256": "4f842a2d92364e1559dd5d266ae86e6b682a8ed81181a9e58f0a17cbd59ccfe1"
+    },
+    "status": "prepared_not_executed",
+    "pools": 135,
+    "MACE_cells_reused": 810,
+    "inputs_per_backend": 1620,
+    "reused_inputs_per_backend": 24,
+    "fresh_by_stage_per_backend": {
+      "canonical": 276,
+      "transfer": 1320
+    },
+    "roles": {
+      "canonical_calibration": 25,
+      "crystal_transfer": 3,
+      "separate_probe": 6,
+      "structural_robustness_development": 101
+    },
+    "historical_algebra_check": {
+      "available_pools": 134,
+      "maximum_absolute_R_error_kcal_mol": 0.0
+    },
+    "triples": 100,
+    "prior_unavailable_triples": 6
+  },
+  "canonical_classes": {
+    "La": 11,
+    "Ca": 14
+  },
+  "conditioning": {
+    "La": 129,
+    "None": 3,
+    "Ca": 3
+  },
+  "biological_groups": 26,
+  "charge_pairs": [
+    [
+      -4,
+      -3
+    ],
+    [
+      -3,
+      -2
+    ],
+    [
+      -2,
+      -1
+    ]
+  ],
+  "counts": "pools/source-context records are correlated, not independent proteins",
+  "production_changed": false,
+  "new_MACE_calls": 0,
+  "new_optimization_calls": 0,
+  "cost_planning": {
+    "basis": "80 measured prior matched xTB/tblite input pairs,160 calls,not a new benchmark",
+    "previous_summed_worker_wall_seconds": 2451.363265,
+    "workers": 14,
+    "canonical_new_inputs_per_backend": 276,
+    "canonical_CPU_seconds_mean_extrapolation": 8440.2091059,
+    "canonical_ideal_seconds_at_14": 602.8720789928572,
+    "full_conditional_new_inputs_per_backend": 1596,
+    "full_CPU_seconds_mean_extrapolation": 48806.4265689,
+    "full_ideal_seconds_at_14": 3486.17332635,
+    "largest_previously_measured_atoms": 192,
+    "new_atoms_range": [
+      169,
+      218
+    ],
+    "limits": "planning only; actual SCF cost and imbalance measured by process receipts; no arbitrary project-wide budget",
+    "previous_process_cpu_seconds": 2446.437422
+  },
+  "drafts_superseded_before_execution": {
+    "v1": "driver integrity additions",
+    "v2": "Python-version derived-sum roundoff mismatch at ~1e-13 e; source energies/populations exact; v3 permits <=1e-10 for derived sums only"
+  },
+  "archive_gap": "October current34/current39 corrected raw collection omitted from supplied 129-file snapshot; no scores imported from its prose or edge summaries"
+}

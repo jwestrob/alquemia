@@ -1,0 +1,88 @@
+{
+  "status": "prospective_contract_no_energy_or_optimization_calls",
+  "saved_search_template": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/pilot34_searches_v1/manifest.json",
+    "sha256": "bbd61e28ff67c6af1910619d57f0b02c981fefbf1df7f496af4acd79b500fe2e"
+  },
+  "saved_pool_template": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/pilot34_pool_v1/manifest.json",
+    "sha256": "afe916e1cf53ac62a043f918e2514fc80450f4f5c260475183a401eed1f472dd"
+  },
+  "optimizer_settings": {
+    "additional_starts_or_fallbacks": 0,
+    "angular_bound_radian": 0.8,
+    "angular_boundary_margin_radian": 0.02,
+    "angular_tolerance_radian": 1e-12,
+    "final_physical_tolerance_A": 1e-07,
+    "ftol_eV": 1e-09,
+    "maximum_final_energy_increase_eV": 1e-07,
+    "maximum_physical_heavy_displacement_A": 0.8,
+    "maxiter": 200,
+    "numerical_change": "same_positive_scale_for_shifted_objective_gradient_and_ftol",
+    "objective_eV_multiplier": 0.03674932217934773,
+    "optimizer": "SLSQP",
+    "optimizer_ftol": 1e-08,
+    "optimizer_objective_unit": "hartree_equivalent",
+    "origin_replay_tolerance_kcal_mol": 0.01,
+    "physical_boundary_margin_A": 1e-05,
+    "selected_angular_modes": 4,
+    "selector": "alternating_differential_individual_heavy_norm_MGS_v1",
+    "starts_per_endpoint": 1,
+    "trial_constraint_policy": "infeasible_SLSQP_trials_recorded_final_candidate_must_be_feasible"
+  },
+  "pool_settings": {
+    "candidate_order": [
+      "origin",
+      "adaptive_Ca",
+      "adaptive_La"
+    ],
+    "coordinate_copy_tolerance_A": 1e-12,
+    "equivalent_cell_tolerance_kcal_mol": 0.1,
+    "origin_selection_tolerance_kcal_mol": 0.1
+  },
+  "model": {
+    "checkpoint": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/software_v1/MACE-omol-0-extra-large-1024.model",
+      "sha256": "9b64b4fd5153ca578c694abc57806d8111050de6ff652e695c9b525bc4d36469"
+    },
+    "dtype": "float64",
+    "embedding_specs": {
+      "total_charge": {
+        "emb_dim": 1024,
+        "in_dim": 1,
+        "num_classes": 201,
+        "offset": 100,
+        "per": "graph",
+        "type": "categorical"
+      },
+      "total_spin": {
+        "emb_dim": 1024,
+        "in_dim": 1,
+        "num_classes": 101,
+        "offset": 0,
+        "per": "graph",
+        "type": "categorical"
+      }
+    },
+    "energy_component": "MACE_OMOL_total_vacuum_energy",
+    "execution_adapter": null,
+    "extra_dispersion": false,
+    "family": "MACE_OMOL",
+    "head": "omol",
+    "periodic": false,
+    "r_max_A": 6.0,
+    "solvent": null,
+    "spin_input_convention": "multiplicity"
+  },
+  "active_subspace_rule": "unchanged motion_envelope_run.build_tasks from real paired origin forces; not yet selected for new sources",
+  "proposal_builder": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/motion_envelope_run.py",
+    "sha256": "ae6fe135823846f99c0bd9d909d8087a11c8e45dc1c174e2714f0cf5f937b130"
+  },
+  "completed_corrected_reference_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/expanded_candidate_reevaluation_v3/manifest.json",
+    "sha256": "4f842a2d92364e1559dd5d266ae86e6b682a8ed81181a9e58f0a17cbd59ccfe1"
+  },
+  "new_inputs": "workspaces/orca_parameter_audit_20261012/ca_conditioned_preparation_v3/PREPARATION.json",
+  "note": "No new Ca-fold calibration. Root owns runtime feasibility and any endpoint/proposal execution."
+}

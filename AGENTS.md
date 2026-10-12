@@ -1,3 +1,14 @@
+# Current Claude comparison ownership — 12 October 2026
+
+Claude03 supervisor2142451 is running on login, isolated worktree_03. It owns
+one 1CPU Slurm comparison afterany2665:2666 using the exact existing six-cell
+LanM comparison and actual singleton collections. No new molecular calculations;
+root retains endpoints/scoring integration. Dispatch scope and session pins:
+diagnostics/claude_lanm_20261012/03_source_interpretation_launch/.
+Inspect source_interpretation_03_v1 and supervisor_03_v1 under the Claude workspace
+before any duplicate dispatch. Readiness probes remain explicitly disarmed;
+scientific job completion/health alerts remain active. All science uses Slurm.
+
 # Slurm work resumed — 12 October 2026, 12:20 Pacific
 
 Readiness probe 2658 passed. Real Slurm process check 2659 confirmed all four

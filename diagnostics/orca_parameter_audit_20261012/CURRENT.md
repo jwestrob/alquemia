@@ -1,5 +1,24 @@
 # Corrected Nikasha parameter/context work — 12 October 2026
 
+## Current dispatch and scheduler clarification
+
+Jacob requested proceeding within the current limits. Live test-only submissions
+confirm 12 CPUs/job accepted and 13 rejected; standard QOS allows 60 allocated
+CPUs/user across running jobs. Four science jobs below remain RUNNING (38 CPUs).
+Both readiness probe monitors have exited and are explicitly disarmed; do not
+rearm them. Individual job completion and health watchers remain active.
+
+Claude03 is initialized on the login host (Sonnet/medium, Task children available),
+supervisor2142451, session7e19f112-d807-461c-a981-5561c419c00f. It owns only the
+existing six-endpoint LanM comparison: prepare one 1CPU Slurm job afterany2665:2666,
+reuse four accepted origins and collect the two current singleton results, retain
+unavailable cells, arm a completion wake, then finish waiting_slurm. No additional
+molecular calculations or readiness probes. Submission is not yet verified.
+Exact scope: diagnostics/claude_lanm_20261012/03_source_interpretation_launch/.
+Actual output: workspaces/claude_lanm_20261012/source_interpretation_03_v1/;
+supervisor receipt: workspaces/claude_lanm_20261012/supervisor_03_v1/LAUNCH.json.
+Root retains scoring/integration and the two molecular jobs. Do not duplicate.
+
 ## Running after second restoration — 12 October, 12:20 Pacific
 
 Probe2658 completed with the unique marker; root acknowledged actual delivery.

@@ -1,3 +1,21 @@
+# Priority: corrected La/Ca recalibration first — 12 October 2026
+
+Jacob: "We need to do the recalibration first before the La/Dy stuff. Don't
+cancel running jobs but that's our first priority."
+
+Finish corrected La/Ca calibration and reference reevaluation before further
+La/Dy development. Preserve every running job. Current Ca work is MACE lanes
+2660/2661, collector 2662, then corrected solvent/decision job 2663; it has no
+LanM dependency. Retain the declared reference population and calibration rule.
+Do not fit new bands to the Ca-conditioned evaluation outcomes.
+
+Existing LanM endpoints 2665/2666 and their queued one-CPU comparison 2669 may
+finish and be collected. No additional LanM calculations, numerical retries,
+timeout-recovery submissions or new research branches until the corrected
+La/Ca delivery is resolved. Continue health/completion monitoring and preserve
+failures. Do not change scheduler priority or another session's work. Root owns
+integration; latest detail is diagnostics/orca_parameter_audit_20261012/CURRENT.md.
+
 # Current LanM comparison ownership — 12 October 2026
 
 Claude03 finished without doing the task: no edits, child agents or submission.

@@ -1,5 +1,24 @@
 # Corrected Nikasha parameter/context work — 12 October 2026
 
+## User priority: corrected La/Ca recalibration first
+
+Jacob explicitly prioritizes recalibration and reevaluation ahead of La/Dy,
+while directing that running jobs must not be cancelled. The primary delivery
+is the corrected La/Ca reference calibration, its known-reference decisions and
+the remaining Ca-conditioned transfer assessment. Use the completed corrected
+canonical work; do not repeat it or refit bands on the transfer set.
+
+The current critical path is 2660/2661 MACE proposals → 2662 collection → 2663
+corrected solvent components and fixed-band decisions. None depends on LanM.
+All four molecular jobs were still running at this priority change; no resource,
+priority, scientific setting or job state was altered.
+
+Preserve and collect existing LanM jobs 2665/2666 and comparison 2669. Defer new
+La/Dy development, additional endpoints and recovery submissions until the
+corrected La/Ca delivery is resolved. Health alerts still require review and
+honest failure records; they do not authorize restarting that branch ahead of
+the primary task. The readiness probe monitors remain disarmed.
+
 ## Current dispatch and scheduler clarification
 
 Jacob requested proceeding within the current limits. Live test-only submissions

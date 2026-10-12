@@ -1,3 +1,19 @@
+# Scheduler restored — 12 October 2026
+
+The real Slurm test probe1025 completed with its unique marker; root acknowledged
+it in workspaces/slurm_readiness_20261009/ROOT_ACK.json. The temporary login
+compute exception below is now historical. All new scientific computation uses
+Slurm; Claude clients and lightweight orchestration stay on the login host.
+Root is draining the already-running corrected Ca batch at complete-source
+boundaries, preserving every completed/active search before Slurm continuation.
+Read diagnostics/orca_parameter_audit_20261012/CURRENT.md and
+workspaces/orca_parameter_audit_20261012/slurm_resumption_20261012/ before acting.
+Do not duplicate the batch or treat its drain's partial collection as a completed
+scientific experiment. Corrected Ca transfer remains priority. The independent
+Claude LanM task01 review runs in its own worktree; it has no molecular execution
+authorization. Task02's prepared missing pair follows accepted review.
+No production change or old campaign restart is authorized by scheduler recovery.
+
 # Current execution authorization — 12 October 2026
 
 Jacob explicitly said: "alright. i authorize you to do whatever you can with 16 threads or less here on the login node while we wait for the cluster. i'm going to bed so proceed apace."

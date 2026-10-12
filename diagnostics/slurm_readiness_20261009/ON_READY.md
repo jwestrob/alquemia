@@ -1,5 +1,16 @@
 # Automatic LanM resumption after Slurm recovery
 
+## Actual readiness event — 12 October 2026
+
+Probe1025 completed on biotite with the exact marker; ROOT_ACK.json records
+receipt. Test scheduling works; normal science execution still needs its actual
+allocation receipt. Root is draining the current login MACE batch without
+interrupting its active source searches, then resuming the same frozen runner
+on Slurm. The two-lane run is not duplicated. A separate LanM task01 Claude
+review is running in workspaces/claude_lanm_20261012/; its supervisor owns the
+completion wake. Claude stays on login; new science/tests run through Slurm.
+The earlier temporary login exception below no longer authorizes new dispatch.
+
 ## Current priority — 12 October 2026
 
 Jacob cleared the scientific hold and authorized at most16 total login compute

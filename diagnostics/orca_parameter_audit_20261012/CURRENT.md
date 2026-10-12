@@ -1,5 +1,38 @@
 # Corrected Nikasha parameter/context work — 12 October 2026
 
+## Slurm recovery in progress — 12 October, 11:07 Pacific
+
+Actual test probe1025 completed and root acknowledged it. New science belongs
+on Slurm again. Corrected Ca-conditioned coverage remains the immediate task;
+no production workflow or legacy results changed.
+
+The login batch completed49/106 source pools before root launched a graceful
+drain (supervisor1952935). Its two active source searches finish before either
+lane stops; the script then captures process accounting and preserves the
+partial collection in attempts/001. Do not interpret that operational stop as
+scientific failure or launch against its partial collection. Exact receipt/log:
+workspaces/orca_parameter_audit_20261012/slurm_resumption_20261012/.
+Read DRAIN.json when present and verify all old processes have stopped.
+The old proposal watcher may wake with this partial collection; do not rerun it.
+
+The unchanged frozen CPU runner has a guarded shared14-CPU Slurm wrapper in
+slurm_resumption/cpu_resume/ (d69f88a). Its existing two seven-thread lanes and
+four startup controls remain unchanged. Slurm's default RAM may reserve the
+node's full memory; the actual job receipt records this without claiming RAM
+sharing. The same scientific solvent driver now has a separate allocation-aware
+wrapper (1d6f9f9), prepared for64 independent one-thread inputs on standard,
+node-64-768g-2. It follows successful terminal MACE collection using afterok.
+Neither wrapper has been submitted yet at this checkpoint. Root owns submission
+and separate completion wakes for both. No new whole-scanner speed claim.
+
+Independent authorized Claude task01 is running on the login host in
+workspaces/claude_lanm_20261012/worktree_01, session
+8ffdbf03-2fbf-4afb-a5c7-95bce8b8c334, supervisor1946403. It may delegate two review
+children. Its completion supervisor records actual exit and queues this root
+thread. It performs no molecular calculation; task02's two missing Hans8FNR
+PBE0-D4 endpoints await accepted findings and a current allocation wrapper.
+The native-GFN2 La correction does not alter that DFT Hamiltonian.
+
 ## Result and current decision
 
 The live Linux native-ORCA parameter correction is reproduced. Sixty actual

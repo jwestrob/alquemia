@@ -121,8 +121,13 @@ thread with event `corrected-ca-conditioned-proposals-v1`. Snapshot/manifest
 remain immutable; do not duplicate the batch. Initial launch performs its
 file/geometry preflight, then both workers must pass four actual seven-thread
 parity replays before either enters new-source computation. All four actual replay gates now pass: energies identical, maximum force
-residual8.88e-14eV/Å. Both lanes have entered new-source execution; first new
-source completion remains under observation. No new composite prediction yet.
+residual8.88e-14eV/Å. Both lanes have entered new-source execution. The first completed source is
+A0A3F2YLY8 Ca-conditioned sample2:31 actual model forwards, both proposals
+physically admitted/interior, all six common-pool cells complete. Root verified
+raw state/energy/force pins and exact paired coordinates using the downstream
+reader. FIRST_SOURCE_ROOT_CHECK.json retains the check and measured call costs.
+The independently prescribed sample0 remains in progress, not omitted. No new
+composite prediction yet.
 
 Unchanged four-mode policy, original optimizer parent/kernel, maxiter200, common
 origin/Ca/La pool and cross-scoring. Three completed Ca probes will be reused;
@@ -142,12 +147,15 @@ The failed initial population-order preflight is preserved separately; zero
 molecular calls occurred in it. Current dry-run admits all106 sources,169–215atoms,
 maximum q0 mapping residual1.78e-15Å. Five file-only recovery checks passed.
 
-Root owns first-source observation, integration and the subsequent corrected
-GFN2 launch after the MACE worker releases its threads. Curie's minimal GFN2
-adapter is being checked with actual archived parser fixtures; it runs no new
-molecular work and uses at most one remaining thread. It will retain all125
-rows, separate valid origins from unavailable pools, use exactly frozen
-canonical bands and make no new Ca-triple aggregation. The final MACE collection
+Root completed first-source observation and owns integration and the subsequent corrected
+GFN2 launch after the MACE worker releases its threads. The minimal GFN2 adapter
+is complete (commit6d3ec04), independently reviewed, and has run zero new
+molecular calls. Five actual-artifact parser/recovery checks pass; all nine
+archived policy scores reproduce exactly. It retains all125 rows, separates
+valid origins from unavailable pools, uses exactly frozen canonical bands and
+makes no new Ca-triple aggregation. Exact prepare/dry-run/execute/collect commands
+are in ca_conditioned_execution/GFN2_REPORT.md. Both implementation/review agents
+are finished; no other numerical workers are owned. The final MACE collection
 alone is not a composite score or classification result.
 
 Next read-only command:

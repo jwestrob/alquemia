@@ -1,0 +1,968 @@
+{
+  "source_collection": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/expanded_candidate_reevaluation_v3/CANONICAL_COLLECTION.json",
+    "sha256": "929dedab7ba46c7088de7a4a695a8f19fc5af60066ecd3599645f687bd4e6896"
+  },
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/expanded_candidate_reevaluation_v3/manifest.json",
+    "sha256": "4f842a2d92364e1559dd5d266ae86e6b682a8ed81181a9e58f0a17cbd59ccfe1"
+  },
+  "audit_script": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/orca_parameter_audit_20261012/expanded_canonical_review/REVIEW.py",
+    "sha256": "686da5d2ba4fe1c5f43831e919b809c3c3a60956fc6292589c1f5ecc65db3bb1"
+  },
+  "canonical_members": 25,
+  "class_counts": {
+    "La": 11,
+    "Ca": 14
+  },
+  "calibration": {
+    "operational": {
+      "status": "available",
+      "gap_kcal_mol": 3.4721710470039397,
+      "bands": {
+        "Ca_max": -405457.564455343,
+        "La_min": -405454.092284296
+      },
+      "Ca_boundary": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0__envelope_5eba0c9b39ead1ee",
+      "La_boundary": "c5axv8-pqq-la_model__conditioned_La__seed-1_sample-1__envelope_aa36ec84c4cbdc62"
+    },
+    "mathematical": {
+      "status": "available",
+      "gap_kcal_mol": 3.4721710470039397,
+      "bands": {
+        "Ca_max": -405457.564455343,
+        "La_min": -405454.092284296
+      },
+      "Ca_boundary": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0__envelope_5eba0c9b39ead1ee",
+      "La_boundary": "c5axv8-pqq-la_model__conditioned_La__seed-1_sample-1__envelope_aa36ec84c4cbdc62"
+    },
+    "origin": {
+      "status": "available",
+      "gap_kcal_mol": 10.29767891188385,
+      "bands": {
+        "Ca_max": -405465.7535534819,
+        "La_min": -405455.45587457
+      },
+      "Ca_boundary": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0__envelope_5eba0c9b39ead1ee",
+      "La_boundary": "a0a3f2yly8-pqq-la_model__conditioned_La__seed-1_sample-1__envelope_e05e200a13d024a5"
+    }
+  },
+  "components_qualified": 150,
+  "raw_inputs_checked": 300,
+  "maximum_component_error_Eh": 1.298692495765863e-07,
+  "maximum_population_error_e": 1.0934570093823481e-07,
+  "absolute_v1_gate_failures": 300,
+  "maximum_absolute_backend_error_Eh": 0.00019385891346246353,
+  "cost": {
+    "fresh": {
+      "xtb": {
+        "calls": 276,
+        "wall_seconds_sum": 1988.6620593070984,
+        "cpu_seconds_sum": 1979.0577529999996,
+        "peak_process_RSS_KiB": 103936
+      },
+      "tblite": {
+        "calls": 276,
+        "wall_seconds_sum": 8120.915694952011,
+        "cpu_seconds_sum": 8106.9178299999985,
+        "peak_process_RSS_KiB": 127052
+      }
+    },
+    "reused": {
+      "xtb": {
+        "calls": 24,
+        "wall_seconds_sum": 178.73742246627808,
+        "cpu_seconds_sum": 178.24666399999998,
+        "peak_process_RSS_KiB": 89600
+      },
+      "tblite": {
+        "calls": 24,
+        "wall_seconds_sum": 757.0250091552734,
+        "cpu_seconds_sum": 756.0067610000001,
+        "peak_process_RSS_KiB": 111104
+      }
+    }
+  },
+  "canonical_execution_wall_seconds": 744.6886720657349,
+  "workers": 14,
+  "rows": [
+    {
+      "case_id": "a0a3f2yly8-pqq-la_model__conditioned_La__seed-1_sample-1__envelope_e05e200a13d024a5",
+      "protein": "a0a3f2yly8-pqq-la_model",
+      "expected_class": "La",
+      "scores_kcal_mol": {
+        "operational": -405443.7224820405,
+        "mathematical": -405443.7224820405,
+        "origin": -405455.45587457
+      },
+      "chosen": {
+        "Ca": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        },
+        "La": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        }
+      },
+      "work_kcal_mol": {
+        "Ca": {
+          "origin": 0.0,
+          "adaptive_Ca": -2.7075437025400353,
+          "adaptive_La": -3.2133782080541344
+        },
+        "La": {
+          "origin": 0.0,
+          "adaptive_Ca": -14.342524427760004,
+          "adaptive_La": -14.946770737533875
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 11.733392529480625
+    },
+    {
+      "case_id": "a0acd6b9f2-pqq-la_model__conditioned_La__seed-1_sample-3__envelope_2eda778295ffed58",
+      "protein": "a0acd6b9f2-pqq-la_model",
+      "expected_class": "La",
+      "scores_kcal_mol": {
+        "operational": -405433.55749321246,
+        "mathematical": -405433.55749321246,
+        "origin": -405436.37906492373
+      },
+      "chosen": {
+        "Ca": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        },
+        "La": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        }
+      },
+      "work_kcal_mol": {
+        "Ca": {
+          "origin": 0.0,
+          "adaptive_Ca": -1.6567889146760324,
+          "adaptive_La": -2.3824372792902935
+        },
+        "La": {
+          "origin": 0.0,
+          "adaptive_Ca": -3.3401264414176124,
+          "adaptive_La": -5.20400899057555
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 2.821571711276192
+    },
+    {
+      "case_id": "a8r3s4-pqq-la_model__conditioned_La__seed-1_sample-0__envelope_5eba0c9b39ead1ee",
+      "protein": "a8r3s4-pqq-la_model",
+      "expected_class": "Ca",
+      "scores_kcal_mol": {
+        "operational": -405465.0614176683,
+        "mathematical": -405465.0614176683,
+        "origin": -405475.0191053155
+      },
+      "chosen": {
+        "Ca": {
+          "origin": "origin",
+          "mathematical": "adaptive_Ca",
+          "operational": "adaptive_Ca"
+        },
+        "La": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        }
+      },
+      "work_kcal_mol": {
+        "Ca": {
+          "origin": 0.0,
+          "adaptive_Ca": -4.763276531834015,
+          "adaptive_La": -2.575461816349729
+        },
+        "La": {
+          "origin": 0.0,
+          "adaptive_Ca": -13.236231173005965,
+          "adaptive_La": -14.720964179055974
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 9.957687647198327
+    },
+    {
+      "case_id": "atq70401.1-pqq-la_model__conditioned_La__seed-1_sample-0__envelope_1de9a1c85821aa97",
+      "protein": "atq70401.1-pqq-la_model",
+      "expected_class": "Ca",
+      "scores_kcal_mol": {
+        "operational": -405479.8163500487,
+        "mathematical": -405479.8163500487,
+        "origin": -405488.94771532755
+      },
+      "chosen": {
+        "Ca": {
+          "origin": "origin",
+          "mathematical": "adaptive_Ca",
+          "operational": "adaptive_Ca"
+        },
+        "La": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        }
+      },
+      "work_kcal_mol": {
+        "Ca": {
+          "origin": 0.0,
+          "adaptive_Ca": -4.2337528016490715,
+          "adaptive_La": -2.9110773409290553
+        },
+        "La": {
+          "origin": 0.0,
+          "adaptive_Ca": -12.68096158361903,
+          "adaptive_La": -13.365118080431321
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 9.131365278852172
+    },
+    {
+      "case_id": "bbl57595.1-pqq-la_model__conditioned_La__seed-1_sample-2__envelope_58e1b3ec0c1917b9",
+      "protein": "bbl57595.1-pqq-la_model",
+      "expected_class": "Ca",
+      "scores_kcal_mol": {
+        "operational": -405481.453704449,
+        "mathematical": -405481.453704449,
+        "origin": -405490.4219484222
+      },
+      "chosen": {
+        "Ca": {
+          "origin": "origin",
+          "mathematical": "adaptive_Ca",
+          "operational": "adaptive_Ca"
+        },
+        "La": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        }
+      },
+      "work_kcal_mol": {
+        "Ca": {
+          "origin": 0.0,
+          "adaptive_Ca": -6.036641589817005,
+          "adaptive_La": -4.675738456526497
+        },
+        "La": {
+          "origin": 0.0,
+          "adaptive_Ca": -14.608604335176006,
+          "adaptive_La": -15.00488556303338
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 8.968243973213248
+    },
+    {
+      "case_id": "c5atj3-pqq-la_model__conditioned_La__seed-1_sample-2__envelope_531a4a67d5ba9360",
+      "protein": "c5atj3-pqq-la_model",
+      "expected_class": "La",
+      "scores_kcal_mol": {
+        "operational": -405430.0433994814,
+        "mathematical": -405430.0433994814,
+        "origin": -405434.9393825687
+      },
+      "chosen": {
+        "Ca": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        },
+        "La": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        }
+      },
+      "work_kcal_mol": {
+        "Ca": {
+          "origin": 0.0,
+          "adaptive_Ca": -6.756314907576211,
+          "adaptive_La": -6.856341183277678
+        },
+        "La": {
+          "origin": 0.0,
+          "adaptive_Ca": -10.609999591054798,
+          "adaptive_La": -11.75232427057875
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 4.8959830873063765
+    },
+    {
+      "case_id": "c5axv8-pqq-la_model__conditioned_La__seed-1_sample-1__envelope_aa36ec84c4cbdc62",
+      "protein": "c5axv8-pqq-la_model",
+      "expected_class": "La",
+      "scores_kcal_mol": {
+        "operational": -405454.092284296,
+        "mathematical": -405454.092284296,
+        "origin": -405453.5780697681
+      },
+      "chosen": {
+        "Ca": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        },
+        "La": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        }
+      },
+      "work_kcal_mol": {
+        "Ca": {
+          "origin": 0.0,
+          "adaptive_Ca": -4.561000386883738,
+          "adaptive_La": -5.589734653330515
+        },
+        "La": {
+          "origin": 0.0,
+          "adaptive_Ca": 1.3736635333116718,
+          "adaptive_La": -5.075520125449643
+        }
+      },
+      "accommodation_delta_R_kcal_mol": -0.514214527909644
+    },
+    {
+      "case_id": "c5b120-pqq-la_model__conditioned_La__seed-1_sample-0__envelope_9a8c10eba2ec7e13",
+      "protein": "c5b120-pqq-la_model",
+      "expected_class": "La",
+      "scores_kcal_mol": {
+        "operational": -405438.17308907205,
+        "mathematical": -405438.17308907205,
+        "origin": -405443.7013090991
+      },
+      "chosen": {
+        "Ca": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        },
+        "La": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        }
+      },
+      "work_kcal_mol": {
+        "Ca": {
+          "origin": 0.0,
+          "adaptive_Ca": -4.004644327542659,
+          "adaptive_La": -4.861918817346297
+        },
+        "La": {
+          "origin": 0.0,
+          "adaptive_Ca": -9.023449129209594,
+          "adaptive_La": -10.390138844346115
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 5.528220027044881
+    },
+    {
+      "case_id": "i0jwn7-pqq-la_model__conditioned_La__seed-1_sample-3__envelope_8a96291197228b6f",
+      "protein": "i0jwn7-pqq-la_model",
+      "expected_class": "La",
+      "scores_kcal_mol": {
+        "operational": -405439.3381748873,
+        "mathematical": -405439.3381748873,
+        "origin": -405442.9449505587
+      },
+      "chosen": {
+        "Ca": {
+          "origin": "origin",
+          "mathematical": "adaptive_Ca",
+          "operational": "adaptive_Ca"
+        },
+        "La": {
+          "origin": "origin",
+          "mathematical": "adaptive_Ca",
+          "operational": "adaptive_Ca"
+        }
+      },
+      "work_kcal_mol": {
+        "Ca": {
+          "origin": 0.0,
+          "adaptive_Ca": -3.6855848599631518,
+          "adaptive_La": -3.482237972472039
+        },
+        "La": {
+          "origin": 0.0,
+          "adaptive_Ca": -7.292360531348106,
+          "adaptive_La": -7.175361106811327
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 3.6067756714182906
+    },
+    {
+      "case_id": "mmol_1770-pqq-la_model__conditioned_La__seed-1_sample-3__envelope_5063ec4e8b07a456",
+      "protein": "mmol_1770-pqq-la_model",
+      "expected_class": "La",
+      "scores_kcal_mol": {
+        "operational": -405437.01271645346,
+        "mathematical": -405437.01271645346,
+        "origin": -405445.59885473363
+      },
+      "chosen": {
+        "Ca": {
+          "origin": "origin",
+          "mathematical": "adaptive_Ca",
+          "operational": "adaptive_Ca"
+        },
+        "La": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        }
+      },
+      "work_kcal_mol": {
+        "Ca": {
+          "origin": 0.0,
+          "adaptive_Ca": -9.506116817331,
+          "adaptive_La": -9.285641919162243
+        },
+        "La": {
+          "origin": 0.0,
+          "adaptive_Ca": -14.372685622789598,
+          "adaptive_La": -18.092255097494117
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 8.586138280166779
+    },
+    {
+      "case_id": "mmol_2048-pqq-la_model__conditioned_La__seed-1_sample-4__envelope_b2b70954adaf23d6",
+      "protein": "mmol_2048-pqq-la_model",
+      "expected_class": "La",
+      "scores_kcal_mol": {
+        "operational": -405442.9009485623,
+        "mathematical": -405442.9009485623,
+        "origin": -405444.59582573624
+      },
+      "chosen": {
+        "Ca": {
+          "origin": "origin",
+          "mathematical": "adaptive_Ca",
+          "operational": "adaptive_Ca"
+        },
+        "La": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        }
+      },
+      "work_kcal_mol": {
+        "Ca": {
+          "origin": 0.0,
+          "adaptive_Ca": -5.784567974246445,
+          "adaptive_La": -3.4234216430440365
+        },
+        "La": {
+          "origin": 0.0,
+          "adaptive_Ca": -5.686244151834886,
+          "adaptive_La": -7.479445148174561
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 1.6948771739262156
+    },
+    {
+      "case_id": "o24759-pqq-la_model__conditioned_La__seed-1_sample-3__envelope_e4efa4342e5fcf03",
+      "protein": "o24759-pqq-la_model",
+      "expected_class": "Ca",
+      "scores_kcal_mol": {
+        "operational": -405477.6151869891,
+        "mathematical": -405477.6151869891,
+        "origin": -405486.23571487545
+      },
+      "chosen": {
+        "Ca": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        },
+        "La": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        }
+      },
+      "work_kcal_mol": {
+        "Ca": {
+          "origin": 0.0,
+          "adaptive_Ca": -3.1561455796757105,
+          "adaptive_La": -3.8489577693088304
+        },
+        "La": {
+          "origin": 0.0,
+          "adaptive_Ca": -10.223666927120819,
+          "adaptive_La": -12.469485655698895
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 8.620527886378113
+    },
+    {
+      "case_id": "p12293-pqq-la_model__conditioned_La__seed-1_sample-4__envelope_e88ef960dad9c35e",
+      "protein": "p12293-pqq-la_model",
+      "expected_class": "Ca",
+      "scores_kcal_mol": {
+        "operational": -405481.24445188197,
+        "mathematical": -405481.24445188197,
+        "origin": -405489.7646142567
+      },
+      "chosen": {
+        "Ca": {
+          "origin": "origin",
+          "mathematical": "adaptive_Ca",
+          "operational": "adaptive_Ca"
+        },
+        "La": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        }
+      },
+      "work_kcal_mol": {
+        "Ca": {
+          "origin": 0.0,
+          "adaptive_Ca": -3.2301403070817765,
+          "adaptive_La": -2.9485375836532155
+        },
+        "La": {
+          "origin": 0.0,
+          "adaptive_Ca": -11.197450728658183,
+          "adaptive_La": -11.750302681782594
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 8.520162374712527
+    },
+    {
+      "case_id": "p15279-pqq-la_model__conditioned_La__seed-1_sample-2__envelope_1de9a1c85821aa97",
+      "protein": "p15279-pqq-la_model",
+      "expected_class": "Ca",
+      "scores_kcal_mol": {
+        "operational": -405484.118632331,
+        "mathematical": -405484.118632331,
+        "origin": -405492.02657854493
+      },
+      "chosen": {
+        "Ca": {
+          "origin": "origin",
+          "mathematical": "adaptive_Ca",
+          "operational": "adaptive_Ca"
+        },
+        "La": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        }
+      },
+      "work_kcal_mol": {
+        "Ca": {
+          "origin": 0.0,
+          "adaptive_Ca": -4.8595930611861125,
+          "adaptive_La": -4.478519972245147
+        },
+        "La": {
+          "origin": 0.0,
+          "adaptive_Ca": -12.653200960900833,
+          "adaptive_La": -12.767539275107053
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 7.907946213905234
+    },
+    {
+      "case_id": "p16027-pqq-la_model__conditioned_La__seed-1_sample-2__envelope_1de9a1c85821aa97",
+      "protein": "p16027-pqq-la_model",
+      "expected_class": "Ca",
+      "scores_kcal_mol": {
+        "operational": -405480.76051332586,
+        "mathematical": -405480.76051332586,
+        "origin": -405487.8525499309
+      },
+      "chosen": {
+        "Ca": {
+          "origin": "origin",
+          "mathematical": "adaptive_Ca",
+          "operational": "adaptive_Ca"
+        },
+        "La": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        }
+      },
+      "work_kcal_mol": {
+        "Ca": {
+          "origin": 0.0,
+          "adaptive_Ca": -3.46735353185934,
+          "adaptive_La": -2.8634865673762873
+        },
+        "La": {
+          "origin": 0.0,
+          "adaptive_Ca": -10.18140183539861,
+          "adaptive_La": -10.559390136928634
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 7.09203660505591
+    },
+    {
+      "case_id": "p38539-pqq-la_model__conditioned_La__seed-1_sample-0__envelope_3c659c8193acdad7",
+      "protein": "p38539-pqq-la_model",
+      "expected_class": "Ca",
+      "scores_kcal_mol": {
+        "operational": -405474.38930877007,
+        "mathematical": -405474.38930877007,
+        "origin": -405475.3408981315
+      },
+      "chosen": {
+        "Ca": {
+          "origin": "origin",
+          "mathematical": "adaptive_Ca",
+          "operational": "adaptive_Ca"
+        },
+        "La": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        }
+      },
+      "work_kcal_mol": {
+        "Ca": {
+          "origin": 0.0,
+          "adaptive_Ca": -2.6201215288081734,
+          "adaptive_La": -2.155206290221513
+        },
+        "La": {
+          "origin": 0.0,
+          "adaptive_Ca": -3.160237016184393,
+          "adaptive_La": -3.571710890202581
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 0.9515893614152446
+    },
+    {
+      "case_id": "q4w6g0-pqq-la_model__conditioned_La__seed-1_sample-2__envelope_6827bf3c955fda67",
+      "protein": "q4w6g0-pqq-la_model",
+      "expected_class": "Ca",
+      "scores_kcal_mol": {
+        "operational": -405469.237596515,
+        "mathematical": -405469.237596515,
+        "origin": -405473.49074473506
+      },
+      "chosen": {
+        "Ca": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        },
+        "La": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        }
+      },
+      "work_kcal_mol": {
+        "Ca": {
+          "origin": 0.0,
+          "adaptive_Ca": -4.812327655666705,
+          "adaptive_La": -5.364891521750554
+        },
+        "La": {
+          "origin": 0.0,
+          "adaptive_Ca": -8.419943563626749,
+          "adaptive_La": -9.61803974182882
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 4.253148220072035
+    },
+    {
+      "case_id": "q60ar6-pqq-la_model__conditioned_La__seed-1_sample-1__envelope_cefdcb289daedf76",
+      "protein": "q60ar6-pqq-la_model",
+      "expected_class": "Ca",
+      "scores_kcal_mol": {
+        "operational": -405476.8633689992,
+        "mathematical": -405476.8633689992,
+        "origin": -405484.12480976037
+      },
+      "chosen": {
+        "Ca": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        },
+        "La": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        }
+      },
+      "work_kcal_mol": {
+        "Ca": {
+          "origin": 0.0,
+          "adaptive_Ca": -3.7092766869645404,
+          "adaptive_La": -4.464928318948558
+        },
+        "La": {
+          "origin": 0.0,
+          "adaptive_Ca": -10.682755186629636,
+          "adaptive_La": -11.726369080077292
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 7.2614407611545175
+    },
+    {
+      "case_id": "q88jh0-pqq-la_model__conditioned_La__seed-1_sample-0__envelope_2fba6938336689b8",
+      "protein": "q88jh0-pqq-la_model",
+      "expected_class": "La",
+      "scores_kcal_mol": {
+        "operational": -405443.20005613274,
+        "mathematical": -405443.20005613274,
+        "origin": -405450.0126662444
+      },
+      "chosen": {
+        "Ca": {
+          "origin": "origin",
+          "mathematical": "origin",
+          "operational": "origin"
+        },
+        "La": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        }
+      },
+      "work_kcal_mol": {
+        "Ca": {
+          "origin": 0.0,
+          "adaptive_Ca": 1.0293782242090197,
+          "adaptive_La": 0.8377532574524906
+        },
+        "La": {
+          "origin": 0.0,
+          "adaptive_Ca": -5.654551998092454,
+          "adaptive_La": -6.812610111644935
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 6.812610111664981
+    },
+    {
+      "case_id": "q88jh5-pqq-la_model__conditioned_La__seed-1_sample-2__envelope_12c9e6b669aeb9c8",
+      "protein": "q88jh5-pqq-la_model",
+      "expected_class": "Ca",
+      "scores_kcal_mol": {
+        "operational": -405459.92572552245,
+        "mathematical": -405459.92572552245,
+        "origin": -405468.68769189663
+      },
+      "chosen": {
+        "Ca": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        },
+        "La": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        }
+      },
+      "work_kcal_mol": {
+        "Ca": {
+          "origin": 0.0,
+          "adaptive_Ca": -0.611323339250033,
+          "adaptive_La": -1.646123122428718
+        },
+        "La": {
+          "origin": 0.0,
+          "adaptive_Ca": -7.793074313709854,
+          "adaptive_La": -10.408089496567626
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 8.761966374178883
+    },
+    {
+      "case_id": "q89gy2-pqq-la_model__conditioned_La__seed-1_sample-3__envelope_d6071546219d9d9e",
+      "protein": "q89gy2-pqq-la_model",
+      "expected_class": "La",
+      "scores_kcal_mol": {
+        "operational": -405440.73876529164,
+        "mathematical": -405440.73876529164,
+        "origin": -405442.5259445006
+      },
+      "chosen": {
+        "Ca": {
+          "origin": "origin",
+          "mathematical": "adaptive_Ca",
+          "operational": "adaptive_Ca"
+        },
+        "La": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        }
+      },
+      "work_kcal_mol": {
+        "Ca": {
+          "origin": 0.0,
+          "adaptive_Ca": -1.1119456386774642,
+          "adaptive_La": 0.6301539586930307
+        },
+        "La": {
+          "origin": 0.0,
+          "adaptive_Ca": -1.157990764125954,
+          "adaptive_La": -2.899124847680019
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 1.787179208942689
+    },
+    {
+      "case_id": "q8gr64-pqq-la_model__conditioned_La__seed-1_sample-2__envelope_0e84aa21f1346d1a",
+      "protein": "q8gr64-pqq-la_model",
+      "expected_class": "Ca",
+      "scores_kcal_mol": {
+        "operational": -405475.9991225654,
+        "mathematical": -405475.9991225654,
+        "origin": -405487.97973113065
+      },
+      "chosen": {
+        "Ca": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        },
+        "La": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        }
+      },
+      "work_kcal_mol": {
+        "Ca": {
+          "origin": 0.0,
+          "adaptive_Ca": -5.727579230716267,
+          "adaptive_La": -5.960861887283297
+        },
+        "La": {
+          "origin": 0.0,
+          "adaptive_Ca": -16.898159604791893,
+          "adaptive_La": -17.941470452540365
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 11.980608565267175
+    },
+    {
+      "case_id": "q92wy9-pqq-la_model__conditioned_La__seed-1_sample-4__envelope_95c60a681ae9e61a",
+      "protein": "q92wy9-pqq-la_model",
+      "expected_class": "La",
+      "scores_kcal_mol": {
+        "operational": -405432.9698691809,
+        "mathematical": -405432.9698691809,
+        "origin": -405439.03355391
+      },
+      "chosen": {
+        "Ca": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        },
+        "La": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        }
+      },
+      "work_kcal_mol": {
+        "Ca": {
+          "origin": 0.0,
+          "adaptive_Ca": -2.94559236009947,
+          "adaptive_La": -3.140090241646628
+        },
+        "La": {
+          "origin": 0.0,
+          "adaptive_Ca": -2.964413275287254,
+          "adaptive_La": -9.203774970722833
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 6.063684729102533
+    },
+    {
+      "case_id": "q9l935-pqq-la_model__conditioned_La__seed-1_sample-1__envelope_722cdd31821909e8",
+      "protein": "q9l935-pqq-la_model",
+      "expected_class": "Ca",
+      "scores_kcal_mol": {
+        "operational": -405480.5308035518,
+        "mathematical": -405480.5308035518,
+        "origin": -405483.44185000437
+      },
+      "chosen": {
+        "Ca": {
+          "origin": "origin",
+          "mathematical": "adaptive_Ca",
+          "operational": "adaptive_Ca"
+        },
+        "La": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        }
+      },
+      "work_kcal_mol": {
+        "Ca": {
+          "origin": 0.0,
+          "adaptive_Ca": -5.498097466753979,
+          "adaptive_La": -4.389898045341354
+        },
+        "La": {
+          "origin": 0.0,
+          "adaptive_Ca": -7.3695079031851725,
+          "adaptive_La": -8.409143919361002
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 2.9110464525874704
+    },
+    {
+      "case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0__envelope_5eba0c9b39ead1ee",
+      "protein": "q9z4j7-pqq-la_model",
+      "expected_class": "Ca",
+      "scores_kcal_mol": {
+        "operational": -405457.564455343,
+        "mathematical": -405457.564455343,
+        "origin": -405465.7535534819
+      },
+      "chosen": {
+        "Ca": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        },
+        "La": {
+          "origin": "origin",
+          "mathematical": "adaptive_La",
+          "operational": "adaptive_La"
+        }
+      },
+      "work_kcal_mol": {
+        "Ca": {
+          "origin": 0.0,
+          "adaptive_Ca": -2.8312106304634135,
+          "adaptive_La": -3.695338731112482
+        },
+        "La": {
+          "origin": 0.0,
+          "adaptive_Ca": -10.956666942846988,
+          "adaptive_La": -11.884436870020744
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 8.189098138886038
+    }
+  ],
+  "scientific_calls_by_audit": 0,
+  "interpretation": "Canonical training separation, not predictive validation; all absolute-v1 failures remain failures."
+}

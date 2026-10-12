@@ -1,3 +1,18 @@
+# Current execution authorization — 12 October 2026
+
+Jacob explicitly said: "alright. i authorize you to do whatever you can with 16 threads or less here on the login node while we wait for the cluster. i'm going to bed so proceed apace."
+This clears the discussion hold and authorizes contained parameter-audit and
+corrected-discrimination computation on the login node, at most16 TOTAL numerical
+threads across all owned sessions/subprocesses. It supersedes older Slurm-only
+rules for this temporary scope. Root allocates per-task budgets (runtime4,
+context2, guard1, root8 maximum); children inherit their parent's share. Do not
+fabricate Slurm environment variables, modify other users' jobs, overwrite
+production or silently replace historical scores. Read
+`diagnostics/orca_parameter_audit_20261012/CURRENT.md` and the confirmed synced
+12October vault dispatch. The original2796point rescore is complete; reuse it.
+Claude sessions remain login-host clients and may invoke their own subagents.
+This is recorded current user authorization, not a new per-analysis approval gate.
+
 # Agent entry point
 
 ## LanM frozen-f response work — 2026-09-28

@@ -1,5 +1,25 @@
 # Nikasha: current operating guide for agents
 
+## Parameter correction supersedes energetic performance claims — 12 October 2026
+
+The tested native ORCA6.1.1 GFN2 implementation misassigns three La parameter
+arrays. The completed corrected strict208 replay removes the accommodated
+canonical separation: gap −4.556602 kcal/mol, with no valid released-rule bands.
+The September207/0/1 result below is historical and cannot describe corrected
+predictions. Corrected origin-only scoring has its own calibration and gives
+203correct/3wrong/2inconclusive on208 supported folds; the frozen geometry
+comparator remains208/208 on its original poses. These folds represent25proteins.
+
+Read the [current audit](../diagnostics/orca_parameter_audit_20261012/CURRENT.md),
+[affected lineage](../diagnostics/orca_parameter_audit_20261012/lineage/REPORT.md)
+and [imported completed correction](../diagnostics/orca_parameter_audit_20261012/recovered_strict208/REPORT.md).
+Other native-GFN2 releases share the demonstrated parameter dependency but need
+their own compatible corrected calibration; do not transplant the strict208
+gap or bands into a different protocol. MACE weights and explicit DFT are unchanged.
+New native research execution must use the
+[pinned parameter guard](../diagnostics/orca_parameter_audit_20261012/parameter_guard/REPORT.md).
+Historical invocations remain reproducible. No new classifier is promoted here.
+
 ## PLM handoff packaged — 23 September 2026
 
 Start with the [PLM PQQ SOP](PLM_PQQ_SOP.md). The opt-in three-source envelope

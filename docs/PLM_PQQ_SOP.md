@@ -1,6 +1,16 @@
 # Nikasha SOP: score PLM PQQ proteins with local accommodation
 
-**Recommended manuscript candidate:** the explicit three-source, 4.3 Å
+**12 October correction notice:** this is the historical operations SOP. Its
+native-GFN2 La term uses the demonstrated shell-assignment error. The corrected
+strict accommodated reference panel loses separation; the expanded-context panel
+remains a separate development result, not a validated repair. Withhold the old
+energetic accuracy claim pending compatible recalibration and evaluation. Preserve
+the frozen geometry comparator and explicit DFT access. See the
+[current audit](../diagnostics/orca_parameter_audit_20261012/CURRENT.md) and
+[affected-run ledger](../diagnostics/orca_parameter_audit_20261012/lineage/REPORT.md).
+No production default or historical input is changed by this notice.
+
+**Historical September manuscript candidate:** the explicit three-source, 4.3 Å
 motion-envelope protocol. This is an opt-in command; `nikasha standard` still
 uses the released static scorer. Original DFT results remain available.
 

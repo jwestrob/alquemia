@@ -1,0 +1,1825 @@
+{
+  "schema_version": "orca_parameter_lineage_audit.v1",
+  "created_utc": "2026-10-12T11:41:49.312237+00:00",
+  "owner": "la_parameter_scope",
+  "scope": "bounded file-only dependency audit; four actual La endpoint samples plus selected manifests/reports, no full archive hashing sweep",
+  "dispatch": {
+    "path": "/home/jwestrob/jwestrob/obsidian-vault/agent-captures/2026-10-12_nikasha-orca-parameter-audit-biotite-dispatch.md",
+    "sha256": "907ec97fe414bc3afd608438c8f43fa9a04b4f0fb95db37303ac796aaf8f7331",
+    "bytes": 11148,
+    "kind": "synced_dispatch_read_after_user_confirmed_sync",
+    "status": "file_hashed"
+  },
+  "new_molecular_jobs": 0,
+  "new_slurm_jobs": 0,
+  "reserved_labels_read": false,
+  "production_or_shared_files_modified": false,
+  "completed_evidence_summary": {
+    "summary": {
+      "declared_alternate_folds": 225,
+      "original_available_alternate_folds": 208,
+      "original_unsupported_folds": 17,
+      "label_root_proteins": 25,
+      "canonical25": 25,
+      "canonical_classes": {
+        "Ca": 14,
+        "La": 11
+      },
+      "fresh_required_points": 2796,
+      "primary_completed_points": 2796,
+      "primary_valid_points": 2796,
+      "primary_failed_points": 0,
+      "primary_failed_point_details": [],
+      "original_native_outcomes_all225": {
+        "correct": 207,
+        "unavailable": 17,
+        "inconclusive": 1
+      },
+      "profiles": {
+        "fixed_previous_operational": {
+          "declared_denominator": 225,
+          "original_available_denominator": 208,
+          "complete_standalone_pools": 208,
+          "original_unsupported": 17,
+          "new_primary_failed_pools": 0,
+          "outcomes_all225": {
+            "unavailable": 225
+          },
+          "outcomes_original208": {
+            "unavailable": 208
+          },
+          "diagnostics_original208": {
+            "unavailable": 208
+          },
+          "available_calibrated_diagnostics": 0,
+          "selection_changed_cases": 0,
+          "classification_changed_cases": null,
+          "diagnostic_or_availability_changed_cases": 208,
+          "canonical_selection_changed_cases": 0,
+          "gap_model_kcal_mol": -4.556601990771014,
+          "calibration_status": "unsupported_class_separation",
+          "score_shift_kcal_mol": {
+            "minimum": -10.329531185445376,
+            "median": 2.7162659017485566,
+            "maximum": 23.89419263304444
+          }
+        },
+        "reselected_operational": {
+          "declared_denominator": 225,
+          "original_available_denominator": 208,
+          "complete_standalone_pools": 208,
+          "original_unsupported": 17,
+          "new_primary_failed_pools": 0,
+          "outcomes_all225": {
+            "unavailable": 225
+          },
+          "outcomes_original208": {
+            "unavailable": 208
+          },
+          "diagnostics_original208": {
+            "unavailable": 208
+          },
+          "available_calibrated_diagnostics": 0,
+          "selection_changed_cases": 14,
+          "classification_changed_cases": null,
+          "diagnostic_or_availability_changed_cases": 208,
+          "canonical_selection_changed_cases": 2,
+          "gap_model_kcal_mol": -4.556601990771014,
+          "calibration_status": "unsupported_class_separation",
+          "score_shift_kcal_mol": {
+            "minimum": -10.329531185445376,
+            "median": 2.7376951482729055,
+            "maximum": 23.89419263304444
+          }
+        },
+        "reselected_mathematical": {
+          "declared_denominator": 225,
+          "original_available_denominator": 208,
+          "complete_standalone_pools": 208,
+          "original_unsupported": 17,
+          "new_primary_failed_pools": 0,
+          "outcomes_all225": {
+            "unavailable": 225
+          },
+          "outcomes_original208": {
+            "unavailable": 208
+          },
+          "diagnostics_original208": {
+            "unavailable": 208
+          },
+          "available_calibrated_diagnostics": 0,
+          "selection_changed_cases": 14,
+          "classification_changed_cases": null,
+          "diagnostic_or_availability_changed_cases": 208,
+          "canonical_selection_changed_cases": 2,
+          "gap_model_kcal_mol": -4.556601990771014,
+          "calibration_status": "unsupported_class_separation",
+          "score_shift_kcal_mol": {
+            "minimum": -10.329531185445376,
+            "median": 2.7376951482729055,
+            "maximum": 23.89419263304444
+          }
+        }
+      },
+      "frozen_strongest_geometry_comparator": {
+        "protocol": "original_24start on raw original geometry",
+        "correct": 208,
+        "denominator": 208,
+        "geometry_selection_differs_from_accommodated_energy_protocol": true,
+        "interpretation": "Frozen end-to-end comparator; alternate folds share the same25 protein labels."
+      },
+      "original_production_labels_preserved": true,
+      "corrected_standalone_calls_are_recomputed_diagnostics": true
+    },
+    "validation": {
+      "status": "passed",
+      "primary_attempts": 2796,
+      "primary_valid_points": 2796,
+      "primary_failed_points": 0,
+      "primary_failures_preserved": true,
+      "rescued_or_mixed_native_Ca_points": 0,
+      "reference25_attempts": 300,
+      "alternate208_attempts": 2496,
+      "exact_input_and_output_hashes_verified": true,
+      "full_precision_stdout_energies_verified": true,
+      "charge_electron_spin_temperature_matches_explicit_native_manifest": true,
+      "complete_point_SCF_residuals_pass": true,
+      "owned_process_groups_all_verified_empty": true,
+      "global_monitor_faults": 0,
+      "peak_concurrent_jobs": 4,
+      "peak_requested_OMP_threads": 8,
+      "max_elapsed_seconds": 4.311325167072937,
+      "sum_elapsed_seconds": 4760.944602696458,
+      "maximum_RSS_MiB": 141.59375,
+      "max_valid_charge_sum_error_e": 1.4000000003733248e-07,
+      "native_SCF_records_available": 300,
+      "native_SCF_records_unavailable": 2496,
+      "native_SCF_counts": {
+        "energy": {
+          "pass": 300
+        },
+        "rms_density": {
+          "pass": 299,
+          "overrun": 1
+        },
+        "max_density": {
+          "pass": 244,
+          "overrun": 56
+        }
+      },
+      "native_baseline_exactly_reproduced": true,
+      "original_declared_alternate_statuses_retained": 225,
+      "original_production_labels_preserved": true,
+      "validated_UTC": "2026-10-09T12:18:59.998001+00:00",
+      "native_all_three_record_counts": {
+        "pass_count": 244,
+        "overrun_count": 56,
+        "unavailable_count": 2496
+      },
+      "native_canonical_selected_strict_pass_cases": 10,
+      "native_canonical_complete_pool_strict_pass_cases": 4
+    },
+    "calibration_profiles": {
+      "fixed_previous_operational": {
+        "reference_id": "standalone_strict208_canonical25_20261009_fixed_previous_operational",
+        "status": "unsupported_class_separation",
+        "calibration_denominator": 25,
+        "available_calibration": 25,
+        "bands": null,
+        "gap_model_kcal_mol": -4.556601990771014
+      },
+      "reselected_operational": {
+        "reference_id": "standalone_strict208_canonical25_20261009_reselected_operational",
+        "status": "unsupported_class_separation",
+        "calibration_denominator": 25,
+        "available_calibration": 25,
+        "bands": null,
+        "gap_model_kcal_mol": -4.556601990771014
+      },
+      "reselected_mathematical": {
+        "reference_id": "standalone_strict208_canonical25_20261009_reselected_mathematical",
+        "status": "unsupported_class_separation",
+        "calibration_denominator": 25,
+        "available_calibration": 25,
+        "bands": null,
+        "gap_model_kcal_mol": -4.556601990771014
+      }
+    }
+  },
+  "native_runtime_historical": {
+    "executable_path": "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+    "executable_sha256": "38b5f057452fef275c0a1b98d270ad03d0411dab70453820d1c678bd732f6c83",
+    "version": "6.1.1",
+    "library_hashes": "not recorded in sampled historical receipts; current runtime verification owned by root"
+  },
+  "representative_native_endpoints": [
+    {
+      "id": "released_static_PQQ_q9z4j7",
+      "sampling": "one actual La/vacuum endpoint; not an all-endpoint revalidation",
+      "manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_fast_release_20260920/full_v1/prepared_score/scoring/cases/q9z4j7-pqq-la_model/solvent/manifest.json",
+        "sha256": "c352ff28a276036ab0e1e6b5de07612aeef3a0ea042f583dd1981d13e4efbf4b",
+        "bytes": 97633,
+        "kind": "inspected_artifact",
+        "status": "file_hashed"
+      },
+      "task_id": "q9z4j7-pqq-la_model__context__La__vacuum__native",
+      "charge": -2,
+      "multiplicity": 1,
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_fast_release_20260920/full_v1/prepared_score/scoring/cases/q9z4j7-pqq-la_model/solvent/tasks/q9z4j7-pqq-la_model__context__La__vacuum__native/endpoint.inp",
+        "sha256": "dcb5b766704a68f7417ac32a63638e228ff36d54aed6ab082aab7b7a823b9b7e",
+        "bytes": 162,
+        "kind": "inspected_artifact",
+        "status": "file_hashed",
+        "expected_sha256": "dcb5b766704a68f7417ac32a63638e228ff36d54aed6ab082aab7b7a823b9b7e",
+        "matches_expected_sha256": true
+      },
+      "input_body": "! Native-GFN2-xTB NoAutostart\n%maxcore 2000\n%method\n WriteXTBParam true\n ReadXTBParam false\nend\n%scf\n SmearTemp 300\n UseXTBMixer true\nend\n* xyzfile -2 1 core.xyz\n",
+      "geometry": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_fast_release_20260920/full_v1/prepared_score/scoring/cases/q9z4j7-pqq-la_model/solvent/tasks/q9z4j7-pqq-la_model__context__La__vacuum__native/core.xyz",
+        "sha256": "ea7da6854839cdb3a9621b3eedd987cca39ed5cc68cc5baa442b68cd6c97fda8",
+        "bytes": 7271,
+        "kind": "inspected_artifact",
+        "status": "file_hashed",
+        "expected_sha256": "ea7da6854839cdb3a9621b3eedd987cca39ed5cc68cc5baa442b68cd6c97fda8",
+        "matches_expected_sha256": true
+      },
+      "actual_receipt": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_fast_release_20260920/full_v1/prepared_score/scoring/cases/q9z4j7-pqq-la_model/solvent/tasks/q9z4j7-pqq-la_model__context__La__vacuum__native/endpoint.out.execution.json",
+        "sha256": "4a68ebe11a1aba97e9aa162ffad7641601feb9733d642138546b7071bd4c84e3",
+        "bytes": 4115,
+        "kind": "inspected_artifact",
+        "status": "file_hashed"
+      },
+      "actual_output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_fast_release_20260920/full_v1/prepared_score/scoring/cases/q9z4j7-pqq-la_model/solvent/tasks/q9z4j7-pqq-la_model__context__La__vacuum__native/endpoint.out",
+        "sha256": "1f6eea354cb2b83615648f6eb1ac30ec9569044a3fda272310d8c4586ec27bd0",
+        "bytes": 137105,
+        "kind": "inspected_artifact",
+        "status": "file_hashed",
+        "expected_sha256": "1f6eea354cb2b83615648f6eb1ac30ec9569044a3fda272310d8c4586ec27bd0",
+        "matches_expected_sha256": true
+      },
+      "command": [
+        "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+        "endpoint.runtime.inp",
+        "--bind-to none"
+      ],
+      "orca_recorded": {
+        "path": "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+        "sha256": "38b5f057452fef275c0a1b98d270ad03d0411dab70453820d1c678bd732f6c83"
+      },
+      "orca_version_observed": "6.1.1",
+      "receipt_completion": {
+        "returncode": 0,
+        "normal_termination": true,
+        "scf_converged": true
+      },
+      "parameter_export": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_fast_release_20260920/full_v1/prepared_score/scoring/cases/q9z4j7-pqq-la_model/solvent/tasks/q9z4j7-pqq-la_model__context__La__vacuum__native/endpoint.runtime.xtb.json",
+        "sha256": "f3dac846a59238947d35c23ba5bdb40c19a34482fe9860e8e11bf9c00d719107",
+        "bytes": 72450,
+        "kind": "inspected_artifact",
+        "status": "file_hashed"
+      },
+      "La_export": {
+        "shells": [
+          "5d",
+          "6s",
+          "6p"
+        ],
+        "kcn": [
+          0.1071684,
+          -0.0239967,
+          -0.0777542
+        ],
+        "shpoly": [
+          -0.06732008,
+          0.54136379,
+          -0.37820063
+        ],
+        "lgam": [
+          1.0,
+          0.7,
+          0.5300334
+        ],
+        "refocc": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "score_component": "GFN2_ALPB_hartree - GFN2_vacuum_hartree; La term enters Ca-minus-La composite with negative sign",
+      "shared_library_identity": "not present in inspected historical endpoint receipt; requires separate runtime audit"
+    },
+    {
+      "id": "strict_canonical_pool",
+      "sampling": "one actual La/vacuum endpoint; not an all-endpoint revalidation",
+      "manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_pool_20260923/run_v1/fresh/manifest.json",
+        "sha256": "0b4b63b2f6a4a9205b90c7dc8e576128246a753dada8c5a6603e4cf063fe1255",
+        "bytes": 3446831,
+        "kind": "inspected_artifact",
+        "status": "file_hashed"
+      },
+      "task_id": "a0a3f2yly8-pqq-la_model__origin__La__vacuum",
+      "charge": -2,
+      "multiplicity": 1,
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_pool_20260923/run_v1/fresh/tasks/a0a3f2yly8-pqq-la_model__origin__La__vacuum/endpoint.inp",
+        "sha256": "98faf01bb890ea96599c491eb87452cf1a41d4e74632e81d18fab8cc32e71f44",
+        "bytes": 187,
+        "kind": "inspected_artifact",
+        "status": "file_hashed",
+        "expected_sha256": "98faf01bb890ea96599c491eb87452cf1a41d4e74632e81d18fab8cc32e71f44",
+        "matches_expected_sha256": true
+      },
+      "input_body": "! Native-GFN2-xTB NoAutostart\n%maxcore 2000\n%method\n WriteXTBParam true\n ReadXTBParam false\nend\n%scf\n MaxIter 500\n TolE 1e-10\n SmearTemp 300\n UseXTBMixer true\nend\n* xyzfile -2 1 core.xyz\n",
+      "geometry": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_pool_20260923/run_v1/fresh/tasks/a0a3f2yly8-pqq-la_model__origin__La__vacuum/core.xyz",
+        "sha256": "4be2d070b577c2cde2d6e9943541fcd016d168aa73970e9845b9a2e9a8c856fc",
+        "bytes": 10016,
+        "kind": "inspected_artifact",
+        "status": "file_hashed",
+        "expected_sha256": "4be2d070b577c2cde2d6e9943541fcd016d168aa73970e9845b9a2e9a8c856fc",
+        "matches_expected_sha256": true
+      },
+      "actual_receipt": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_pool_20260923/run_v1/fresh/tasks/a0a3f2yly8-pqq-la_model__origin__La__vacuum/endpoint.out.execution.json",
+        "sha256": "feb99d7978405aca2bf5571f0613e42df566d56181f50f71968d66bdebe96624",
+        "bytes": 3753,
+        "kind": "inspected_artifact",
+        "status": "file_hashed"
+      },
+      "actual_output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_pool_20260923/run_v1/fresh/tasks/a0a3f2yly8-pqq-la_model__origin__La__vacuum/endpoint.out",
+        "sha256": "e226e09becd6328db35aaef7cc501922f551685b2d29bbd3f075c76a596f2551",
+        "bytes": 172363,
+        "kind": "inspected_artifact",
+        "status": "file_hashed",
+        "expected_sha256": "e226e09becd6328db35aaef7cc501922f551685b2d29bbd3f075c76a596f2551",
+        "matches_expected_sha256": true
+      },
+      "command": [
+        "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+        "endpoint.runtime.inp",
+        "--bind-to none"
+      ],
+      "orca_recorded": {
+        "path": "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+        "sha256": "38b5f057452fef275c0a1b98d270ad03d0411dab70453820d1c678bd732f6c83"
+      },
+      "orca_version_observed": "6.1.1",
+      "receipt_completion": {
+        "returncode": 0,
+        "normal_termination": true,
+        "scf_converged": true
+      },
+      "parameter_export": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_pool_20260923/run_v1/fresh/tasks/a0a3f2yly8-pqq-la_model__origin__La__vacuum/endpoint.runtime.xtb.json",
+        "sha256": "f3dac846a59238947d35c23ba5bdb40c19a34482fe9860e8e11bf9c00d719107",
+        "bytes": 72450,
+        "kind": "inspected_artifact",
+        "status": "file_hashed"
+      },
+      "La_export": {
+        "shells": [
+          "5d",
+          "6s",
+          "6p"
+        ],
+        "kcn": [
+          0.1071684,
+          -0.0239967,
+          -0.0777542
+        ],
+        "shpoly": [
+          -0.06732008,
+          0.54136379,
+          -0.37820063
+        ],
+        "lgam": [
+          1.0,
+          0.7,
+          0.5300334
+        ],
+        "refocc": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "score_component": "GFN2_ALPB_hartree - GFN2_vacuum_hartree; La term enters Ca-minus-La composite with negative sign",
+      "shared_library_identity": "not present in inspected historical endpoint receipt; requires separate runtime audit"
+    },
+    {
+      "id": "strict_alternate_transfer",
+      "sampling": "one actual La/vacuum endpoint; not an all-endpoint revalidation",
+      "manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_transfer_20260923/run_v1/shard_0/manifest.json",
+        "sha256": "6f6bf7083262b5c0514a6d64ec6eae1300fd66223e36bb734c0ec85d21189ea3",
+        "bytes": 3875277,
+        "kind": "inspected_artifact",
+        "status": "file_hashed"
+      },
+      "task_id": "a0a3f2yly8-pqq-la_model__conditioned_Ca__seed-1_sample-0__origin__La__vacuum",
+      "charge": -2,
+      "multiplicity": 1,
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_transfer_20260923/run_v1/shard_0/tasks/a0a3f2yly8-pqq-la_model__conditioned_Ca__seed-1_sample-0__origin__La__vacuum/endpoint.inp",
+        "sha256": "98faf01bb890ea96599c491eb87452cf1a41d4e74632e81d18fab8cc32e71f44",
+        "bytes": 187,
+        "kind": "inspected_artifact",
+        "status": "file_hashed",
+        "expected_sha256": "98faf01bb890ea96599c491eb87452cf1a41d4e74632e81d18fab8cc32e71f44",
+        "matches_expected_sha256": true
+      },
+      "input_body": "! Native-GFN2-xTB NoAutostart\n%maxcore 2000\n%method\n WriteXTBParam true\n ReadXTBParam false\nend\n%scf\n MaxIter 500\n TolE 1e-10\n SmearTemp 300\n UseXTBMixer true\nend\n* xyzfile -2 1 core.xyz\n",
+      "geometry": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_transfer_20260923/run_v1/shard_0/tasks/a0a3f2yly8-pqq-la_model__conditioned_Ca__seed-1_sample-0__origin__La__vacuum/core.xyz",
+        "sha256": "281964bd2a1925fc890e554b713f88099d5cfa57d85d7bce4a5e8130f7fc89a5",
+        "bytes": 10483,
+        "kind": "inspected_artifact",
+        "status": "file_hashed",
+        "expected_sha256": "281964bd2a1925fc890e554b713f88099d5cfa57d85d7bce4a5e8130f7fc89a5",
+        "matches_expected_sha256": true
+      },
+      "actual_receipt": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_transfer_20260923/run_v1/shard_0/tasks/a0a3f2yly8-pqq-la_model__conditioned_Ca__seed-1_sample-0__origin__La__vacuum/endpoint.out.execution.json",
+        "sha256": "12f40313066e49660655748bf95d0c22f99e431621ce856e643c6855d26cf7ef",
+        "bytes": 3983,
+        "kind": "inspected_artifact",
+        "status": "file_hashed"
+      },
+      "actual_output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_transfer_20260923/run_v1/shard_0/tasks/a0a3f2yly8-pqq-la_model__conditioned_Ca__seed-1_sample-0__origin__La__vacuum/endpoint.out",
+        "sha256": "134556a4311ee7eb7949cbed40e36329fd0dfce2f50f81b5fba7614943e06e64",
+        "bytes": 172016,
+        "kind": "inspected_artifact",
+        "status": "file_hashed",
+        "expected_sha256": "134556a4311ee7eb7949cbed40e36329fd0dfce2f50f81b5fba7614943e06e64",
+        "matches_expected_sha256": true
+      },
+      "command": [
+        "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+        "endpoint.runtime.inp",
+        "--bind-to none"
+      ],
+      "orca_recorded": {
+        "path": "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+        "sha256": "38b5f057452fef275c0a1b98d270ad03d0411dab70453820d1c678bd732f6c83"
+      },
+      "orca_version_observed": "6.1.1",
+      "receipt_completion": {
+        "returncode": 0,
+        "normal_termination": true,
+        "scf_converged": true
+      },
+      "parameter_export": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_transfer_20260923/run_v1/shard_0/tasks/a0a3f2yly8-pqq-la_model__conditioned_Ca__seed-1_sample-0__origin__La__vacuum/endpoint.runtime.xtb.json",
+        "sha256": "f3dac846a59238947d35c23ba5bdb40c19a34482fe9860e8e11bf9c00d719107",
+        "bytes": 72450,
+        "kind": "inspected_artifact",
+        "status": "file_hashed"
+      },
+      "La_export": {
+        "shells": [
+          "5d",
+          "6s",
+          "6p"
+        ],
+        "kcn": [
+          0.1071684,
+          -0.0239967,
+          -0.0777542
+        ],
+        "shpoly": [
+          -0.06732008,
+          0.54136379,
+          -0.37820063
+        ],
+        "lgam": [
+          1.0,
+          0.7,
+          0.5300334
+        ],
+        "refocc": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "score_component": "GFN2_ALPB_hartree - GFN2_vacuum_hartree; La term enters Ca-minus-La composite with negative sign",
+      "shared_library_identity": "not present in inspected historical endpoint receipt; requires separate runtime audit"
+    },
+    {
+      "id": "PLM_three_source_envelope",
+      "sampling": "one actual La/vacuum endpoint; not an all-endpoint revalidation",
+      "manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_three_source_envelope_execution_20260923/run_v1/pool/solvent/shard_0/manifest.json",
+        "sha256": "72b5d64e1e67e245eca2723712995f1f2901109e5a6e7c89b6b769e765c10d0b",
+        "bytes": 250144,
+        "kind": "inspected_artifact",
+        "status": "file_hashed"
+      },
+      "task_id": "PQQSEQ_07ab500e3df76b30d71c_AF3_sample0__La__at_adaptive_Ca__vacuum",
+      "charge": -2,
+      "multiplicity": 1,
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_three_source_envelope_execution_20260923/run_v1/pool/solvent/shard_0/tasks/PQQSEQ_07ab500e3df76b30d71c_AF3_sample0__La__at_adaptive_Ca__vacuum/endpoint.inp",
+        "sha256": "98faf01bb890ea96599c491eb87452cf1a41d4e74632e81d18fab8cc32e71f44",
+        "bytes": 187,
+        "kind": "inspected_artifact",
+        "status": "file_hashed",
+        "expected_sha256": "98faf01bb890ea96599c491eb87452cf1a41d4e74632e81d18fab8cc32e71f44",
+        "matches_expected_sha256": true
+      },
+      "input_body": "! Native-GFN2-xTB NoAutostart\n%maxcore 2000\n%method\n WriteXTBParam true\n ReadXTBParam false\nend\n%scf\n MaxIter 500\n TolE 1e-10\n SmearTemp 300\n UseXTBMixer true\nend\n* xyzfile -2 1 core.xyz\n",
+      "geometry": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_three_source_envelope_execution_20260923/run_v1/pool/solvent/shard_0/tasks/PQQSEQ_07ab500e3df76b30d71c_AF3_sample0__La__at_adaptive_Ca__vacuum/core.xyz",
+        "sha256": "5c76c863a9b1a3697fe7b536a4e1b2248fb7f6bcd22fc57943e5384356de7cef",
+        "bytes": 11230,
+        "kind": "inspected_artifact",
+        "status": "file_hashed",
+        "expected_sha256": "5c76c863a9b1a3697fe7b536a4e1b2248fb7f6bcd22fc57943e5384356de7cef",
+        "matches_expected_sha256": true
+      },
+      "actual_receipt": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_three_source_envelope_execution_20260923/run_v1/pool/solvent/shard_0/tasks/PQQSEQ_07ab500e3df76b30d71c_AF3_sample0__La__at_adaptive_Ca__vacuum/endpoint.out.execution.json",
+        "sha256": "1cf9c30f5519faae4d5b3245930728a5bf8c3832b41ff31ab6200834d8eb678b",
+        "bytes": 4111,
+        "kind": "inspected_artifact",
+        "status": "file_hashed"
+      },
+      "actual_output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_three_source_envelope_execution_20260923/run_v1/pool/solvent/shard_0/tasks/PQQSEQ_07ab500e3df76b30d71c_AF3_sample0__La__at_adaptive_Ca__vacuum/endpoint.out",
+        "sha256": "9088201dcee05815d244f31d02cb95d17b3d14a11c83424d56ff4fcaabffc59e",
+        "bytes": 187154,
+        "kind": "inspected_artifact",
+        "status": "file_hashed",
+        "expected_sha256": "9088201dcee05815d244f31d02cb95d17b3d14a11c83424d56ff4fcaabffc59e",
+        "matches_expected_sha256": true
+      },
+      "command": [
+        "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+        "endpoint.runtime.inp",
+        "--bind-to none"
+      ],
+      "orca_recorded": {
+        "path": "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+        "sha256": "38b5f057452fef275c0a1b98d270ad03d0411dab70453820d1c678bd732f6c83"
+      },
+      "orca_version_observed": "6.1.1",
+      "receipt_completion": {
+        "returncode": 0,
+        "normal_termination": true,
+        "scf_converged": true
+      },
+      "parameter_export": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_three_source_envelope_execution_20260923/run_v1/pool/solvent/shard_0/tasks/PQQSEQ_07ab500e3df76b30d71c_AF3_sample0__La__at_adaptive_Ca__vacuum/endpoint.runtime.xtb.json",
+        "sha256": "f3dac846a59238947d35c23ba5bdb40c19a34482fe9860e8e11bf9c00d719107",
+        "bytes": 72450,
+        "kind": "inspected_artifact",
+        "status": "file_hashed"
+      },
+      "La_export": {
+        "shells": [
+          "5d",
+          "6s",
+          "6p"
+        ],
+        "kcn": [
+          0.1071684,
+          -0.0239967,
+          -0.0777542
+        ],
+        "shpoly": [
+          -0.06732008,
+          0.54136379,
+          -0.37820063
+        ],
+        "lgam": [
+          1.0,
+          0.7,
+          0.5300334
+        ],
+        "refocc": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "score_component": "GFN2_ALPB_hartree - GFN2_vacuum_hartree; La term enters Ca-minus-La composite with negative sign",
+      "shared_library_identity": "not present in inspected historical endpoint receipt; requires separate runtime audit"
+    }
+  ],
+  "lineage": [
+    {
+      "id": "native_La_causal_controls",
+      "status": "completed_causal_intervention_on_recorded_cluster_binary",
+      "engine": "ORCA 6.1.1 native GFN2",
+      "evidence": "/home/jwestrob/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/native_reciprocal_controls/AUDIT.json",
+      "parameter_change": "element.La kcn/shpoly/lgam only; shells and all other fields retained",
+      "corrected_parameter_sha256": "a4f83ca72d58d6e80f634e61bb8e99b7af0f26c38cc4a9295e85215ecf72d05c",
+      "original_parameter_sha256": "f3dac846a59238947d35c23ba5bdb40c19a34482fe9860e8e11bf9c00d719107",
+      "scope_limit": "current libraries/build equivalence not established by historical executable name alone; transition metals separate"
+    },
+    {
+      "id": "released_static_PQQ",
+      "status": "affected_dependency_confirmed_by_actual_endpoint",
+      "route": [
+        "scripts/affordable_workflow.py standard",
+        "scripts/pqq_standard.py",
+        "params/pqq_fast_v1.json",
+        "scripts/compact_solvation_scanner.py",
+        "scripts/compact_solvation.py",
+        "scripts/run_orca_task_manifest.py"
+      ],
+      "calibration": "workspaces/compact_solvation_20260920/full_v1/comparison_v1.json",
+      "representative": "released_static_PQQ_q9z4j7",
+      "consequence": "native-La solvent component and associated reference bands need same-identity reevaluation; strict208 corrected band cannot replace this distinct static calibration",
+      "corrected_static_release_status": "not established in this bounded audit; production not modified"
+    },
+    {
+      "id": "strict_original_accommodation",
+      "status": "completed_corrected_recomputation_calibration_unavailable",
+      "native_calibration": "workspaces/strict_native_pool_20260923/run_v1/REFERENCES.json",
+      "native_transfer": "workspaces/strict_native_transfer_20260923/run_v1/COMPARISON.json",
+      "representatives": [
+        "strict_canonical_pool",
+        "strict_alternate_transfer"
+      ],
+      "completed_points": 2796,
+      "valid_points": 2796,
+      "original_calibration_gap_kcal_mol": 7.333342258,
+      "corrected_calibration_gap_kcal_mol": -4.556601990771014,
+      "corrected_bands": null,
+      "corrected_calibrated_alternate_calls": 0,
+      "numeric_complete_alternate_pools": 208,
+      "declared_alternate_folds": 225,
+      "original_unsupported": 17,
+      "downstream_claims": [
+        "diagnostics/strict_native_transfer_20260923/REPORT.md",
+        "diagnostics/overnight_discrimination_20260923/DELIVERY.md",
+        "diagnostics/nikasha_manuscript_20260922/PLM_ACCOMMODATION_DRAFT_20260923.md"
+      ],
+      "reuse_instruction": "reuse exact completed source-pinned results; no rerun requested; preserve all historical values"
+    },
+    {
+      "id": "envelope_PLM_candidate",
+      "status": "affected_dependency_confirmed_by_actual_endpoint_and_package_pins",
+      "route": [
+        "params/pqq_plm_envelope_v1.json",
+        "scripts/pqq_three_source_envelope.py",
+        "scripts/pqq_three_source_envelope_execution.py",
+        "scripts/motion_envelope_scalar.py",
+        "scripts/compact_solvation.py",
+        "scripts/run_orca_task_manifest.py"
+      ],
+      "calibration": "workspaces/motion_envelope_20260923/REFERENCE_PINNED_v1.json",
+      "representative": "PLM_three_source_envelope",
+      "downstream_claims": [
+        "docs/PLM_PQQ_SOP.md",
+        "diagnostics/motion_envelope_transfer_20260923/REPORT.md",
+        "diagnostics/plm_candidate_overlay_20260923/REPORT.md",
+        "diagnostics/nikasha_manuscript_20260922/PLM_ACCOMMODATION_DRAFT_20260923.md"
+      ],
+      "consequence": "scores, candidate choices, medians, ranges and old calibrated calls consume native La correction; this audit does not transplant exact strict208 failure to different expanded contexts",
+      "synced_expanded_diagnostic": "corrected reference gap +3.472171 reported for exact expanded panel; full original/expanded geometry equivalence not established"
+    },
+    {
+      "id": "EastRiver_PQQ_production",
+      "status": "actual_motivating_source_lineage_in_completed_control_receipts; full_external_campaign_not_inventoried",
+      "external_source_root": "/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-09-23_Nikasha_PQQ/preparation_revision_4A/mapping_repair",
+      "causal_control_root": "/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-10-09_Nikasha_native_parity",
+      "consequence": "motivating 222-atom La source native term affected; other session owns production; broad 43-protein counts are synced audit evidence, not an exhaustive local campaign audit"
+    },
+    {
+      "id": "historical_standalone_xTB",
+      "status": "distinct_engine_not_affected_by_demonstrated_native_ORCA_assignment",
+      "manifest": "workspaces/standalone_xtb_reference_20260923/run_v1/manifest.json",
+      "executable_recorded": {
+        "path": "/home/jwestrob/miniconda3/envs/lanm_bench/bin/xtb",
+        "sha256": "481a1e7d8151fc08e0341b8e06ab60ac09cf1c2628738eeb83346271274bf8f4"
+      },
+      "package_recorded": {
+        "path": "/home/jwestrob/miniconda3/envs/lanm_bench/conda-meta/xtb-6.7.1-h8876d29_4.json",
+        "sha256": "a08bf315b368e2a5496def3d2bf8885e9f517400af84d6e755432d2c1d6daebf"
+      },
+      "parameter_recorded": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/standalone_xtb_reference_20260923/run_v1/parameters/param_gfn2-xtb.txt",
+        "sha256": "f6f05c6c5264cb2f75c54f8ac6838044541c1e493b16f1a4d4ee4fa64de5f545"
+      },
+      "backend_settings": {
+        "accuracies": [
+          "0.2",
+          "0.02"
+        ],
+        "cell_tolerance_kcal_mol": 0.1,
+        "contrast_tolerance_kcal_mol": 0.2,
+        "derivative_absolute_tolerance_kcal_mol_radian": 0.2,
+        "derivative_relative_tolerance": 0.05,
+        "gfn": 2,
+        "ionic_strength_M": 0,
+        "maximum_calls": 224,
+        "maximum_iterations": 500,
+        "q0_analytic_gradients": 16,
+        "reference_state": "gsolv",
+        "reported_accuracy": "0.02",
+        "restart": false,
+        "solvent": "water",
+        "surface_grid": "normal",
+        "surface_points": 230,
+        "temperature_K": 300,
+        "threads_per_task": 8,
+        "workers": 8
+      },
+      "scope_limit": "native-band transfer tests remain incompatible-reference diagnostics; historical standalone branch has its own geometry and calibration scope"
+    },
+    {
+      "id": "corrected_standalone_recompute",
+      "status": "completed_external_recompute_evidence_reused",
+      "engine": "standalone xTB 6.7.1 on arm64, recorded in synced dependency report",
+      "evidence": "/home/jwestrob/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/strict208_recompute/validation.json",
+      "primary_valid_points": 2796,
+      "backend_binary_and_libraries": "raw pins retained in original compute archive; not included in strict208 selected summary files inspected here; no cluster substitution claim",
+      "unchanged_components": [
+        "native MACE values",
+        "source geometry candidate pools",
+        "original labels",
+        "original production data"
+      ]
+    },
+    {
+      "id": "MACE_components",
+      "status": "checkpoint_not_changed_by_GFN2_parameter_fix",
+      "recorded_checkpoint_sha256": "9b64b4fd5153ca578c694abc57806d8111050de6ff652e695c9b525bc4d36469",
+      "method": "MACE-OMOL vacuum energy and proposal forces, float64",
+      "evidence": "workspaces/motion_envelope_20260923/REFERENCE_PINNED_v1.json",
+      "consequence": "raw MACE energies/forces unchanged; GFN2-dependent candidate selection and composite claims affected; accommodation problem remains"
+    },
+    {
+      "id": "explicit_DFT_components",
+      "status": "distinct_Hamiltonian_no_demonstrated_parameter_effect",
+      "routes": [
+        "params/baseline_water_v1.json",
+        "scripts/pqq_standard.py --mode dft-reference",
+        "workspaces/metal_environment_response_20260926/lady_FNR_interrupted_continuation_20261007_v1/manifest.json"
+      ],
+      "FNR_method": "PBE0 D4 def2-TZVP def2/J RIJCOSX NoAutostart DefGrid3 VeryTightSCF EnGrad",
+      "FNR_protocol": "nikasha_lady_frozen4f_embedded_response_preparation_v1_origin_subset_v1_trah_v1_moread_v1_interrupted_v1",
+      "FNR_states": [
+        {
+          "all_electron_count": 862,
+          "alpha_electrons": 408,
+          "beta_electrons": 408,
+          "charge": -1,
+          "ecp_core_electrons": 46,
+          "effective_multiplicity": 1,
+          "explicit_electrons": 816,
+          "metal": "La",
+          "oxidation_state_hypothesis": 3,
+          "physical_f_occupation": 0,
+          "physical_multiplicity": 1,
+          "physical_state_qualified": false,
+          "representation": "spin_free_frozen_f_valence_model",
+          "spin_orbit_included": false
+        },
+        {
+          "all_electron_count": 871,
+          "alpha_electrons": 408,
+          "beta_electrons": 408,
+          "charge": -1,
+          "ecp_core_electrons": 55,
+          "effective_multiplicity": 1,
+          "explicit_electrons": 816,
+          "metal": "Dy",
+          "oxidation_state_hypothesis": 3,
+          "physical_f_occupation": 9,
+          "physical_multiplicity": 6,
+          "physical_state_qualified": false,
+          "representation": "spin_free_frozen_f_valence_model",
+          "spin_orbit_included": false
+        }
+      ],
+      "consequence": "native GFN2 JSON correction does not apply to explicit r2SCAN-3c/CPCM or PBE0-D4 frozen-f inputs; same ORCA binary does not imply same parameter usage; old LanM continuation not launched"
+    },
+    {
+      "id": "geometry_comparator_and_biological_metadata",
+      "status": "retained_distinct_baseline",
+      "frozen_geometry": {
+        "protocol": "original_24start on raw original geometry",
+        "correct": 208,
+        "denominator": 208,
+        "geometry_selection_differs_from_accommodated_energy_protocol": true,
+        "interpretation": "Frozen end-to-end comparator; alternate folds share the same25 protein labels."
+      },
+      "evidence": "/home/jwestrob/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/strict208_recompute/summary.json",
+      "scope_limit": "geometry raw-pose comparator not rerun here; outcome is source-pinned synced evidence. No reserved labels read. Sequence, expression and old DFT columns are not changed by a native GFN2 correction"
+    },
+    {
+      "id": "transition_metals",
+      "status": "macOS_evidence_only_cluster_reproduction_remaining",
+      "metals": [
+        "Cu",
+        "Mn",
+        "Fe",
+        "Co",
+        "Ni"
+      ],
+      "parameter_fields": [
+        "kcn",
+        "shpoly",
+        "lgam",
+        "refocc"
+      ],
+      "reported_tight_aquo_parity": {
+        "passed": 14,
+        "total": 14
+      },
+      "reported_roundtrip": "all14 equal energies/populations;10 formally accepted at original loose setting",
+      "scope_limit": "do not promote La-only JSON as correction of other metals; neutral reference populations are distinct from actual SCF occupations; GFN2 spin-independent energy is not physical spin energetics"
+    }
+  ],
+  "current_released_implementation_pin_checks": [
+    {
+      "name": "affordable_common.py",
+      "declared": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/affordable_common.py",
+        "sha256": "4b683f86d4c4f81c6246d5cecd0acfbc1d2565db157321e3d8fbc8073502fde5"
+      },
+      "current_matches_release": true
+    },
+    {
+      "name": "compact_solvation.py",
+      "declared": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/compact_solvation.py",
+        "sha256": "c0a142121b482ff9ec8d5931ba12709b4b3193e84b63786e4820479648349c0f"
+      },
+      "current_matches_release": true
+    },
+    {
+      "name": "compact_solvation_compare.py",
+      "declared": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/compact_solvation_compare.py",
+        "sha256": "7623c6f1418687647c4fd0e2b36846656deb96dfe9e6afeddb34a36905af378c"
+      },
+      "current_matches_release": true
+    },
+    {
+      "name": "compact_solvation_scanner.py",
+      "declared": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/compact_solvation_scanner.py",
+        "sha256": "4494558bef393945705439bbfeca77ca2149b217500932f150cbc3c9aa25ee3c"
+      },
+      "current_matches_release": true
+    },
+    {
+      "name": "environment_context_chemistry.py",
+      "declared": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/environment_context_chemistry.py",
+        "sha256": "871c749d63340c252536bce45d703ba12df70be402f94cdc71dd7cc772a7ed06"
+      },
+      "current_matches_release": true
+    },
+    {
+      "name": "mace_hybrid.py",
+      "declared": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/mace_hybrid.py",
+        "sha256": "efed4e9ffdfe9d611fcd976a8187367e46f556dab6d6627ddc01e5756b85a72f"
+      },
+      "current_matches_release": true
+    },
+    {
+      "name": "mace_omol.py",
+      "declared": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/mace_omol.py",
+        "sha256": "1194c14bb0ba1130212f8a365228808475694e126dbaebefc370a24dc6d981ef"
+      },
+      "current_matches_release": true
+    },
+    {
+      "name": "mace_omol_neutral_worker.py",
+      "declared": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/mace_omol_neutral_worker.py",
+        "sha256": "4e458a59b71f845fcacfb83fba88cb8f60706f61afbac30eafe4b5b5992a1ba4"
+      },
+      "current_matches_release": true
+    },
+    {
+      "name": "pqq_fast_prepare.py",
+      "declared": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/pqq_fast_prepare.py",
+        "sha256": "b4b9b0633b589d2fcae1c00dd14b3597208588a19c4dc8fa7584ae54505c62e9"
+      },
+      "current_matches_release": true
+    },
+    {
+      "name": "pqq_fast_release.py",
+      "declared": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/pqq_fast_release.py",
+        "sha256": "da19c4e196461392321b059d0054ae562768bea7f0d1914c8e5f4c4218d84271"
+      },
+      "current_matches_release": true
+    },
+    {
+      "name": "pqq_standard.py",
+      "declared": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/pqq_standard.py",
+        "sha256": "ffa189586f0285d6564d70c4bdb6bee0a102342175491e8f54ed1cfd619dfbba"
+      },
+      "current_matches_release": true
+    },
+    {
+      "name": "second_shell_context.py",
+      "declared": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/second_shell_context.py",
+        "sha256": "7b775b3fdac79a4c3663f598087f83fbdd53792b96232775df15163d97e5f3f8"
+      },
+      "current_matches_release": true
+    }
+  ],
+  "enforcement_integration_proposal": [
+    {
+      "file": "scripts/run_orca_task_manifest.py",
+      "functions": [
+        "_normalise_task_list",
+        "_verify_prepared_task",
+        "_run_one",
+        "_completed_attempt_is_valid"
+      ],
+      "role": "carry parameter-policy metadata, verify full parameter/executable/runtime identity before any launch or cached acceptance, preserve pre/post hashes and output import evidence; ordinary DFT paths remain method-gated"
+    },
+    {
+      "file": "scripts/compact_solvation.py",
+      "functions": [
+        "input_text",
+        "prepare",
+        "validate",
+        "reusable",
+        "diagnostics"
+      ],
+      "role": "version native import profile; full parameter hash in cache key; imported-file audit replaces assumption that WriteXTBParam export exists; avoid changing historical recipe validators"
+    },
+    {
+      "file": "scripts/motion_envelope_scalar.py",
+      "functions": [
+        "prepare",
+        "validate"
+      ],
+      "role": "bind separate scientific keys to corrected parameter and reference identities; prevent old bands or mixed parameter legs"
+    },
+    {
+      "file": "scripts/render_orca_runtime_input.py",
+      "functions": [
+        "render_runtime_input"
+      ],
+      "role": "validate and record parameter contract; preserve allocation-only rendering instead of silently altering scientific template"
+    },
+    {
+      "file": "scripts/affordable_workflow.py",
+      "functions": [
+        "dry_run",
+        "execute"
+      ],
+      "role": "same helper preflight before scheduler admission, with launch-time recheck and explicit immutable original-control profile"
+    }
+  ],
+  "unknowns": [
+    "No claim of full pipeline archive coverage from four native endpoint samples.",
+    "Historical task receipts pin driver executable but not all relevant ORCA shared libraries/solver helpers.",
+    "2,496 historical alternate SCF/population audit records unavailable in the synced recompute summary; 300 canonical observed records include 56 max-density overruns.",
+    "Native boundary controls retain four density failures; observed energy agreement does not supply accepted paired scores.",
+    "Exact original-to-expanded context mapping and factorial preparation remain separate work; no mixed geometries generated here.",
+    "Concurrent external PQQ production state is not changed or exhaustively scanned."
+  ],
+  "source_files": [
+    {
+      "path": "/home/jwestrob/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/MANIFEST.json",
+      "sha256": "31401c5a2f3c192d490833cd33c7f5feb65d49d93c466dd7811f4d25892412db",
+      "bytes": 47264,
+      "kind": "synced_snapshot_manifest",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/home/jwestrob/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/REPORT.md",
+      "sha256": "659111573accf5b783bfc186940f79cc617c49f4221682e280ef9a45fc613b5a",
+      "bytes": 13146,
+      "kind": "synced_evidence",
+      "status": "file_hashed",
+      "expected_sha256": "659111573accf5b783bfc186940f79cc617c49f4221682e280ef9a45fc613b5a",
+      "matches_expected_sha256": true,
+      "original_source_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_native_followup_2026-10-09/REPORT.md"
+    },
+    {
+      "path": "/home/jwestrob/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/DEPENDENCIES.md",
+      "sha256": "80417ea10507ab7f86e3595c3a01ac30f35cead0a1e97d36f50c75b2fcb6ff51",
+      "bytes": 2237,
+      "kind": "synced_evidence",
+      "status": "file_hashed",
+      "expected_sha256": "80417ea10507ab7f86e3595c3a01ac30f35cead0a1e97d36f50c75b2fcb6ff51",
+      "matches_expected_sha256": true,
+      "original_source_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_native_followup_2026-10-09/DEPENDENCIES.md"
+    },
+    {
+      "path": "/home/jwestrob/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/native_reciprocal_controls/REPORT.md",
+      "sha256": "ec7ef683584925ca730303aaaf003485910ff5a3db2fd817615cfcb3f561bba6",
+      "bytes": 4448,
+      "kind": "synced_evidence",
+      "status": "file_hashed",
+      "expected_sha256": "ec7ef683584925ca730303aaaf003485910ff5a3db2fd817615cfcb3f561bba6",
+      "matches_expected_sha256": true,
+      "original_source_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_native_followup_2026-10-09/native_reciprocal_controls/REPORT.md"
+    },
+    {
+      "path": "/home/jwestrob/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/native_reciprocal_controls/AUDIT.json",
+      "sha256": "a687cb7ee61d00f6448db1ecaf07d26eb7e000d42e3c593283004625cafb6243",
+      "bytes": 13357,
+      "kind": "synced_evidence",
+      "status": "file_hashed",
+      "expected_sha256": "a687cb7ee61d00f6448db1ecaf07d26eb7e000d42e3c593283004625cafb6243",
+      "matches_expected_sha256": true,
+      "original_source_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_native_followup_2026-10-09/native_reciprocal_controls/AUDIT.json"
+    },
+    {
+      "path": "/home/jwestrob/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/strict208_recompute/REPORT.md",
+      "sha256": "9dec1ee77a821adb977ac40b5185a59a4e8b5a6c50e9e7eb984fda5a73445d35",
+      "bytes": 14870,
+      "kind": "synced_evidence",
+      "status": "file_hashed",
+      "expected_sha256": "9dec1ee77a821adb977ac40b5185a59a4e8b5a6c50e9e7eb984fda5a73445d35",
+      "matches_expected_sha256": true,
+      "original_source_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_native_followup_2026-10-09/strict208_recompute/REPORT.md"
+    },
+    {
+      "path": "/home/jwestrob/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/strict208_recompute/calibration.json",
+      "sha256": "254ba53236ef49d6750e25466c122dabe36b92733bc3e33a881b17f261996045",
+      "bytes": 26073,
+      "kind": "synced_evidence",
+      "status": "file_hashed",
+      "expected_sha256": "254ba53236ef49d6750e25466c122dabe36b92733bc3e33a881b17f261996045",
+      "matches_expected_sha256": true,
+      "original_source_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_native_followup_2026-10-09/strict208_recompute/calibration.json"
+    },
+    {
+      "path": "/home/jwestrob/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/strict208_recompute/validation.json",
+      "sha256": "0f6d5658adea43a6634e2055550c130c4feb498e7dbd5eec5bf589aa4b330967",
+      "bytes": 1525,
+      "kind": "synced_evidence",
+      "status": "file_hashed",
+      "expected_sha256": "0f6d5658adea43a6634e2055550c130c4feb498e7dbd5eec5bf589aa4b330967",
+      "matches_expected_sha256": true,
+      "original_source_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_native_followup_2026-10-09/strict208_recompute/validation.json"
+    },
+    {
+      "path": "/home/jwestrob/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/strict208_recompute/summary.json",
+      "sha256": "97a6d9bf5ce51773bf165edeca818c6834211f16cd66ded978162f969f48e6c4",
+      "bytes": 3738,
+      "kind": "synced_evidence",
+      "status": "file_hashed",
+      "expected_sha256": "97a6d9bf5ce51773bf165edeca818c6834211f16cd66ded978162f969f48e6c4",
+      "matches_expected_sha256": true,
+      "original_source_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_native_followup_2026-10-09/strict208_recompute/summary.json"
+    },
+    {
+      "path": "/home/jwestrob/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/strict208_recompute/canonical25_scores.tsv",
+      "sha256": "07002b2ec61cf98f8986842774852a167aec1b6ae52929f459a097b376d9e4b4",
+      "bytes": 16630,
+      "kind": "synced_evidence",
+      "status": "file_hashed",
+      "expected_sha256": "07002b2ec61cf98f8986842774852a167aec1b6ae52929f459a097b376d9e4b4",
+      "matches_expected_sha256": true,
+      "original_source_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_native_followup_2026-10-09/strict208_recompute/canonical25_scores.tsv"
+    },
+    {
+      "path": "/home/jwestrob/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/strict208_recompute/per_protein_fold_outcomes.tsv",
+      "sha256": "1617671daad5e62968bf467a281ab0f69fd5085e79fb4ed84cdb9f1ce0a87667",
+      "bytes": 9504,
+      "kind": "synced_evidence",
+      "status": "file_hashed",
+      "expected_sha256": "1617671daad5e62968bf467a281ab0f69fd5085e79fb4ed84cdb9f1ce0a87667",
+      "matches_expected_sha256": true,
+      "original_source_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_native_followup_2026-10-09/strict208_recompute/per_protein_fold_outcomes.tsv"
+    },
+    {
+      "path": "/home/jwestrob/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/strict208_recompute/canonical_origin_accommodation.tsv",
+      "sha256": "d535c785273b35a7b3567d54422a453e60bfe7a00f75b93e09f0030ab5933da5",
+      "bytes": 1497,
+      "kind": "synced_evidence",
+      "status": "file_hashed",
+      "expected_sha256": "d535c785273b35a7b3567d54422a453e60bfe7a00f75b93e09f0030ab5933da5",
+      "matches_expected_sha256": true,
+      "original_source_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_native_followup_2026-10-09/strict208_recompute/canonical_origin_accommodation.tsv"
+    },
+    {
+      "path": "/home/jwestrob/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/strict208_recompute/reference_edge_context_comparison.tsv",
+      "sha256": "401c32cca85dbea578f5dac4336cd66ca01f57131d61dcf43e0afb75c9b274d6",
+      "bytes": 4045,
+      "kind": "synced_evidence",
+      "status": "file_hashed",
+      "expected_sha256": "401c32cca85dbea578f5dac4336cd66ca01f57131d61dcf43e0afb75c9b274d6",
+      "matches_expected_sha256": true,
+      "original_source_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_native_followup_2026-10-09/strict208_recompute/reference_edge_context_comparison.tsv"
+    },
+    {
+      "path": "/home/jwestrob/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/la_followup/strict208_recompute/origin_only_ablation/REPORT.md",
+      "sha256": "68bbba2f12532e501f0b824caa9b0f85a3146b5df5a8fc0d804ce91bbd370887",
+      "bytes": 3117,
+      "kind": "synced_evidence",
+      "status": "file_hashed",
+      "expected_sha256": "68bbba2f12532e501f0b824caa9b0f85a3146b5df5a8fc0d804ce91bbd370887",
+      "matches_expected_sha256": true,
+      "original_source_path": "/Users/jacob/Documents/Codex/2026-10-01/task/nikasha_native_followup_2026-10-09/strict208_recompute/origin_only_ablation/REPORT.md"
+    },
+    {
+      "path": "/home/jwestrob/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/metal_extension/runtime/report.md",
+      "sha256": "9c62b1a5a88b505a4f2dff8f5bd2a83fda689db4758e0e0a02ac8809efa6fcc6",
+      "bytes": 13811,
+      "kind": "synced_evidence",
+      "status": "file_hashed",
+      "expected_sha256": "9c62b1a5a88b505a4f2dff8f5bd2a83fda689db4758e0e0a02ac8809efa6fcc6",
+      "matches_expected_sha256": true,
+      "original_source_path": "/Users/jacob/Documents/Berkeley/Nikasha/metal_benchmark_2026-10-08/evidence_completion_2026-10-09/runtime/report.md"
+    },
+    {
+      "path": "/home/jwestrob/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/metal_extension/runtime/schema_audit.json",
+      "sha256": "133a551bef9899f313b6f3ac088f3a0e173fad20bf246960a74bc81a10510761",
+      "bytes": 9141,
+      "kind": "synced_evidence",
+      "status": "file_hashed",
+      "expected_sha256": "133a551bef9899f313b6f3ac088f3a0e173fad20bf246960a74bc81a10510761",
+      "matches_expected_sha256": true,
+      "original_source_path": "/Users/jacob/Documents/Berkeley/Nikasha/metal_benchmark_2026-10-08/evidence_completion_2026-10-09/runtime/schema_audit.json"
+    },
+    {
+      "path": "/home/jwestrob/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/metal_extension/runtime/state_manifest.json",
+      "sha256": "fffb65eb0d3b26f0a4b86f893c99c9d216817ed4f821ee955ecd763d40fc1dd4",
+      "bytes": 2649,
+      "kind": "synced_evidence",
+      "status": "file_hashed",
+      "expected_sha256": "fffb65eb0d3b26f0a4b86f893c99c9d216817ed4f821ee955ecd763d40fc1dd4",
+      "matches_expected_sha256": true,
+      "original_source_path": "/Users/jacob/Documents/Berkeley/Nikasha/metal_benchmark_2026-10-08/evidence_completion_2026-10-09/runtime/state_manifest.json"
+    },
+    {
+      "path": "/home/jwestrob/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/metal_extension/runtime_independent_audit/report.md",
+      "sha256": "36456c6c4ceb9773d2b13f8bac4a505033fff3f920b8d257578424ac092c94cc",
+      "bytes": 4721,
+      "kind": "synced_evidence",
+      "status": "file_hashed",
+      "expected_sha256": "36456c6c4ceb9773d2b13f8bac4a505033fff3f920b8d257578424ac092c94cc",
+      "matches_expected_sha256": true,
+      "original_source_path": "/Users/jacob/Documents/Berkeley/Nikasha/metal_benchmark_2026-10-08/evidence_completion_2026-10-09/runtime_independent_audit/report.md"
+    },
+    {
+      "path": "/home/jwestrob/jwestrob/obsidian-vault/projects/lanthanide-binding/orca_parameter_audit_2026-10-12/metal_extension/runtime_independent_audit/data.json",
+      "sha256": "04320110c17b9f4d469bc7bd0785b46c684de878581057f8eeb990ab812329e2",
+      "bytes": 23085,
+      "kind": "synced_evidence",
+      "status": "file_hashed",
+      "expected_sha256": "04320110c17b9f4d469bc7bd0785b46c684de878581057f8eeb990ab812329e2",
+      "matches_expected_sha256": true,
+      "original_source_path": "/Users/jacob/Documents/Berkeley/Nikasha/metal_benchmark_2026-10-08/evidence_completion_2026-10-09/runtime_independent_audit/data.json"
+    },
+    {
+      "path": "/home/jwestrob/jwestrob/obsidian-vault/agent-captures/2026-10-12_nikasha-orca-parameter-audit-biotite-dispatch.md",
+      "sha256": "907ec97fe414bc3afd608438c8f43fa9a04b4f0fb95db37303ac796aaf8f7331",
+      "bytes": 11148,
+      "kind": "synced_dispatch_read_after_user_confirmed_sync",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/params/pqq_fast_v1.json",
+      "sha256": "5ccc66bba69ceddd59b9178f04618f5b65149f275f0a4b967c0213d29c71bfd7",
+      "bytes": 9981,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/params/pqq_plm_envelope_v1.json",
+      "sha256": "f543f901a9498ca24eb84e1e733de83ebdbe7ff280cb667b19afbec1335aff8e",
+      "bytes": 1973,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/params/baseline_water_v1.json",
+      "sha256": "10794bd5f4f7cb38b22d69e55ae80a13a5aaec3d1eaaf73bafa47a8aa5800c94",
+      "bytes": 2649,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/native_gfn2_la_shellfix_20261009/PARAMETER_RECORD.json",
+      "sha256": "f686abb2802f610f278cb48441bc67be09f9ddcf973ec511bd46743190afd14f",
+      "bytes": 2504,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_fast_release_20260920/REPORT.md",
+      "sha256": "c089aa3f135bce8b2bad7e846f78bcb310e8e3a4402b2d2e0231626a95fedd32",
+      "bytes": 7233,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_fast_release_20260920/RELEASE_PANEL.json",
+      "sha256": "451f959d995d289cc246df5e937ef9d33be668ad227d23cdd5fd5bfa213b0d67",
+      "bytes": 27838,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/strict_native_transfer_20260923/REPORT.md",
+      "sha256": "36782b9ac6667a8b36bd664550a6e4b41efe8388377f0918aaf8e719ac2b77ac",
+      "bytes": 3648,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/overnight_discrimination_20260923/DELIVERY.md",
+      "sha256": "8f3da7b0efc2521185b284674d7fabbfaf3b168ffae28cfdd912069681af34f1",
+      "bytes": 6970,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/nikasha_manuscript_20260922/PLM_ACCOMMODATION_DRAFT_20260923.md",
+      "sha256": "4416f2fc9103b140919339c63481613dfca7527707a2c6b408b0d89d81d6d218",
+      "bytes": 8072,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/docs/PLM_PQQ_SOP.md",
+      "sha256": "5a8b967bce024d6e62f9ce48aec9221c3de20c01f9a49866752cf3f15a5ecc31",
+      "bytes": 12022,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/motion_envelope_transfer_20260923/REPORT.md",
+      "sha256": "c5edbee354eae5e9bb89a2c12ef728d562e424df07339a8eb03e52de7d4ce8fa",
+      "bytes": 6968,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/plm_candidate_overlay_20260923/REPORT.md",
+      "sha256": "735f7c7df7d04698aed8128e33a3677c56949869a37c4c5c74eafeb268390a71",
+      "bytes": 3532,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/standalone_xtb_20260923/REPORT.md",
+      "sha256": "2289cdf93c0f8a719fb966d0bd7a7ac1d267aa278ca08ad2a0618827196c8c66",
+      "bytes": 7135,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/metal_environment_response_20260926/recovery_20261007/CONTINUATION_PLAN.md",
+      "sha256": "76478126b9833abaf4f2fbe6ba794df84fdff5d775f251fb406bd434dcd5ac6d",
+      "bytes": 2237,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/compact_solvation_20260920/full_v1/comparison_v1.json",
+      "sha256": "0fbbf688f922ae8e1c32d26df79284de6897c406cd11465dfed302fd48dd48a0",
+      "bytes": 2132676,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_pool_20260923/run_v1/REFERENCES.json",
+      "sha256": "171bd31d466ff97ef6073ce23286af8519ef23690f7d6ad23bb444cab30ecd5c",
+      "bytes": 28180,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_transfer_20260923/run_v1/COMPARISON.json",
+      "sha256": "6ed4c1f4acf4359010922ff3f088c5b36105caf52dc92c734e27dd7e35d0df46",
+      "bytes": 11332445,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/motion_envelope_20260923/REFERENCE_PINNED_v1.json",
+      "sha256": "4a1d3ae6e83b5b6ace408f729c39390d44f673554e338df932fd38fc971f67d9",
+      "bytes": 411861,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/standalone_xtb_reference_20260923/run_v1/manifest.json",
+      "sha256": "0e52ef44fad06e9a8f175cc2c92d761bd6264dbe87798d3e6ad5c812daeb250e",
+      "bytes": 10760019,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_FNR_interrupted_continuation_20261007_v1/manifest.json",
+      "sha256": "6c0b86f366c90cb3c014eb849b1cd647227a580fda5fbe7babc67b130a4a98c9",
+      "bytes": 166925,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/pqq_standard.py",
+      "sha256": "ffa189586f0285d6564d70c4bdb6bee0a102342175491e8f54ed1cfd619dfbba",
+      "bytes": 12167,
+      "kind": "inspected_artifact",
+      "status": "file_hashed",
+      "expected_sha256": "ffa189586f0285d6564d70c4bdb6bee0a102342175491e8f54ed1cfd619dfbba",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/compact_solvation.py",
+      "sha256": "c0a142121b482ff9ec8d5931ba12709b4b3193e84b63786e4820479648349c0f",
+      "bytes": 14572,
+      "kind": "inspected_artifact",
+      "status": "file_hashed",
+      "expected_sha256": "c0a142121b482ff9ec8d5931ba12709b4b3193e84b63786e4820479648349c0f",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/motion_envelope_scalar.py",
+      "sha256": "dee26b10293f5bcc231466e89ac828365c7c6c26d40eecb20b6ba13d345c90f3",
+      "bytes": 7761,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/pqq_three_source_envelope_execution.py",
+      "sha256": "58f5d3b34ab24516793d065f10baee1a65ff8094dc1dc9b39bf36e16373c23ec",
+      "bytes": 10704,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/pqq_three_source_envelope.py",
+      "sha256": "2eccc797cbc444ec2f47852b9bd073d23d2e164207e6512cd2af7c931e100d11",
+      "bytes": 18943,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/affordable_workflow.py",
+      "sha256": "1ebe5aaa03d59eaabd933339366b3b5c5705a1216bb15fe502583f8290ad5d32",
+      "bytes": 13158,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/run_orca_task_manifest.py",
+      "sha256": "b9278e74e5317e859e8cb05541e1ec57cb335b26dcdf65a83b89675407343b9a",
+      "bytes": 24321,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/render_orca_runtime_input.py",
+      "sha256": "4d75904eca4296abd892958df700063e272f5f029a0ce256bcf1b579768aeadb",
+      "bytes": 4368,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/affordable_common.py",
+      "sha256": "4b683f86d4c4f81c6246d5cecd0acfbc1d2565db157321e3d8fbc8073502fde5",
+      "bytes": 5288,
+      "kind": "inspected_artifact",
+      "status": "file_hashed",
+      "expected_sha256": "4b683f86d4c4f81c6246d5cecd0acfbc1d2565db157321e3d8fbc8073502fde5",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/native_xtb_restart.py",
+      "sha256": "cffb2a384fd003ccaf140a533ff41c1f087eeda64d2b63177856e265d053a80d",
+      "bytes": 15470,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/accommodation_response.py",
+      "sha256": "66f9cf07a10d5ca1ede2b909847a8c256da969aaba525cc33d7e9683906a136d",
+      "bytes": 20509,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/solvent_cpcm_pilot.py",
+      "sha256": "3babbbe006a5a56b78e2da08b7f8da1a85ed500f73cca6dbc40010b1698c82af",
+      "bytes": 14475,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/solvent_cpcm_matched.py",
+      "sha256": "67ce80381e1a29fb1c817998138fa03033c139feb2569009599a020557ca8815",
+      "bytes": 12719,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/affordable_global.py",
+      "sha256": "6fb8ae16e544a1c56696c8583eb07097c6f0be6d52a674dddf424da689adad04",
+      "bytes": 12313,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/lanm_series_followup.py",
+      "sha256": "433fdf85448182841a967a6855d2941b55976d4f429beacf77d0da802bb299c9",
+      "bytes": 35744,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_fast_release_20260920/full_v1/prepared_score/scoring/cases/q9z4j7-pqq-la_model/solvent/manifest.json",
+      "sha256": "c352ff28a276036ab0e1e6b5de07612aeef3a0ea042f583dd1981d13e4efbf4b",
+      "bytes": 97633,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_fast_release_20260920/full_v1/prepared_score/scoring/cases/q9z4j7-pqq-la_model/solvent/tasks/q9z4j7-pqq-la_model__context__La__vacuum__native/endpoint.inp",
+      "sha256": "dcb5b766704a68f7417ac32a63638e228ff36d54aed6ab082aab7b7a823b9b7e",
+      "bytes": 162,
+      "kind": "inspected_artifact",
+      "status": "file_hashed",
+      "expected_sha256": "dcb5b766704a68f7417ac32a63638e228ff36d54aed6ab082aab7b7a823b9b7e",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_fast_release_20260920/full_v1/prepared_score/scoring/cases/q9z4j7-pqq-la_model/solvent/tasks/q9z4j7-pqq-la_model__context__La__vacuum__native/core.xyz",
+      "sha256": "ea7da6854839cdb3a9621b3eedd987cca39ed5cc68cc5baa442b68cd6c97fda8",
+      "bytes": 7271,
+      "kind": "inspected_artifact",
+      "status": "file_hashed",
+      "expected_sha256": "ea7da6854839cdb3a9621b3eedd987cca39ed5cc68cc5baa442b68cd6c97fda8",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_fast_release_20260920/full_v1/prepared_score/scoring/cases/q9z4j7-pqq-la_model/solvent/tasks/q9z4j7-pqq-la_model__context__La__vacuum__native/endpoint.runtime.xtb.json",
+      "sha256": "f3dac846a59238947d35c23ba5bdb40c19a34482fe9860e8e11bf9c00d719107",
+      "bytes": 72450,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_fast_release_20260920/full_v1/prepared_score/scoring/cases/q9z4j7-pqq-la_model/solvent/tasks/q9z4j7-pqq-la_model__context__La__vacuum__native/endpoint.out.execution.json",
+      "sha256": "4a68ebe11a1aba97e9aa162ffad7641601feb9733d642138546b7071bd4c84e3",
+      "bytes": 4115,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_fast_release_20260920/full_v1/prepared_score/scoring/cases/q9z4j7-pqq-la_model/solvent/tasks/q9z4j7-pqq-la_model__context__La__vacuum__native/endpoint.out",
+      "sha256": "1f6eea354cb2b83615648f6eb1ac30ec9569044a3fda272310d8c4586ec27bd0",
+      "bytes": 137105,
+      "kind": "inspected_artifact",
+      "status": "file_hashed",
+      "expected_sha256": "1f6eea354cb2b83615648f6eb1ac30ec9569044a3fda272310d8c4586ec27bd0",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_fast_release_20260920/full_v1/prepared_score/scoring/cases/q9z4j7-pqq-la_model/solvent/tasks/q9z4j7-pqq-la_model__context__La__vacuum__native/endpoint.runtime.inp",
+      "sha256": "79055ef87e84a7f7850dc1c16591d9d726617d324bb3226f3d33e898aab46ee9",
+      "bytes": 183,
+      "kind": "inspected_artifact",
+      "status": "file_hashed",
+      "expected_sha256": "79055ef87e84a7f7850dc1c16591d9d726617d324bb3226f3d33e898aab46ee9",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_pool_20260923/run_v1/fresh/manifest.json",
+      "sha256": "0b4b63b2f6a4a9205b90c7dc8e576128246a753dada8c5a6603e4cf063fe1255",
+      "bytes": 3446831,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_pool_20260923/run_v1/fresh/tasks/a0a3f2yly8-pqq-la_model__origin__La__vacuum/endpoint.inp",
+      "sha256": "98faf01bb890ea96599c491eb87452cf1a41d4e74632e81d18fab8cc32e71f44",
+      "bytes": 187,
+      "kind": "inspected_artifact",
+      "status": "file_hashed",
+      "expected_sha256": "98faf01bb890ea96599c491eb87452cf1a41d4e74632e81d18fab8cc32e71f44",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_pool_20260923/run_v1/fresh/tasks/a0a3f2yly8-pqq-la_model__origin__La__vacuum/core.xyz",
+      "sha256": "4be2d070b577c2cde2d6e9943541fcd016d168aa73970e9845b9a2e9a8c856fc",
+      "bytes": 10016,
+      "kind": "inspected_artifact",
+      "status": "file_hashed",
+      "expected_sha256": "4be2d070b577c2cde2d6e9943541fcd016d168aa73970e9845b9a2e9a8c856fc",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_pool_20260923/run_v1/fresh/tasks/a0a3f2yly8-pqq-la_model__origin__La__vacuum/endpoint.runtime.xtb.json",
+      "sha256": "f3dac846a59238947d35c23ba5bdb40c19a34482fe9860e8e11bf9c00d719107",
+      "bytes": 72450,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_pool_20260923/run_v1/fresh/tasks/a0a3f2yly8-pqq-la_model__origin__La__vacuum/endpoint.out.execution.json",
+      "sha256": "feb99d7978405aca2bf5571f0613e42df566d56181f50f71968d66bdebe96624",
+      "bytes": 3753,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_pool_20260923/run_v1/fresh/tasks/a0a3f2yly8-pqq-la_model__origin__La__vacuum/endpoint.out",
+      "sha256": "e226e09becd6328db35aaef7cc501922f551685b2d29bbd3f075c76a596f2551",
+      "bytes": 172363,
+      "kind": "inspected_artifact",
+      "status": "file_hashed",
+      "expected_sha256": "e226e09becd6328db35aaef7cc501922f551685b2d29bbd3f075c76a596f2551",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_pool_20260923/run_v1/fresh/tasks/a0a3f2yly8-pqq-la_model__origin__La__vacuum/endpoint.runtime.inp",
+      "sha256": "71890a9fdc60d7f9489078872993fa06284800661be3f64e8868f1b4b88f730b",
+      "bytes": 208,
+      "kind": "inspected_artifact",
+      "status": "file_hashed",
+      "expected_sha256": "71890a9fdc60d7f9489078872993fa06284800661be3f64e8868f1b4b88f730b",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_transfer_20260923/run_v1/shard_0/manifest.json",
+      "sha256": "6f6bf7083262b5c0514a6d64ec6eae1300fd66223e36bb734c0ec85d21189ea3",
+      "bytes": 3875277,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_transfer_20260923/run_v1/shard_0/tasks/a0a3f2yly8-pqq-la_model__conditioned_Ca__seed-1_sample-0__origin__La__vacuum/endpoint.inp",
+      "sha256": "98faf01bb890ea96599c491eb87452cf1a41d4e74632e81d18fab8cc32e71f44",
+      "bytes": 187,
+      "kind": "inspected_artifact",
+      "status": "file_hashed",
+      "expected_sha256": "98faf01bb890ea96599c491eb87452cf1a41d4e74632e81d18fab8cc32e71f44",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_transfer_20260923/run_v1/shard_0/tasks/a0a3f2yly8-pqq-la_model__conditioned_Ca__seed-1_sample-0__origin__La__vacuum/core.xyz",
+      "sha256": "281964bd2a1925fc890e554b713f88099d5cfa57d85d7bce4a5e8130f7fc89a5",
+      "bytes": 10483,
+      "kind": "inspected_artifact",
+      "status": "file_hashed",
+      "expected_sha256": "281964bd2a1925fc890e554b713f88099d5cfa57d85d7bce4a5e8130f7fc89a5",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_transfer_20260923/run_v1/shard_0/tasks/a0a3f2yly8-pqq-la_model__conditioned_Ca__seed-1_sample-0__origin__La__vacuum/endpoint.runtime.xtb.json",
+      "sha256": "f3dac846a59238947d35c23ba5bdb40c19a34482fe9860e8e11bf9c00d719107",
+      "bytes": 72450,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_transfer_20260923/run_v1/shard_0/tasks/a0a3f2yly8-pqq-la_model__conditioned_Ca__seed-1_sample-0__origin__La__vacuum/endpoint.out.execution.json",
+      "sha256": "12f40313066e49660655748bf95d0c22f99e431621ce856e643c6855d26cf7ef",
+      "bytes": 3983,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_transfer_20260923/run_v1/shard_0/tasks/a0a3f2yly8-pqq-la_model__conditioned_Ca__seed-1_sample-0__origin__La__vacuum/endpoint.out",
+      "sha256": "134556a4311ee7eb7949cbed40e36329fd0dfce2f50f81b5fba7614943e06e64",
+      "bytes": 172016,
+      "kind": "inspected_artifact",
+      "status": "file_hashed",
+      "expected_sha256": "134556a4311ee7eb7949cbed40e36329fd0dfce2f50f81b5fba7614943e06e64",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/strict_native_transfer_20260923/run_v1/shard_0/tasks/a0a3f2yly8-pqq-la_model__conditioned_Ca__seed-1_sample-0__origin__La__vacuum/endpoint.runtime.inp",
+      "sha256": "71890a9fdc60d7f9489078872993fa06284800661be3f64e8868f1b4b88f730b",
+      "bytes": 208,
+      "kind": "inspected_artifact",
+      "status": "file_hashed",
+      "expected_sha256": "71890a9fdc60d7f9489078872993fa06284800661be3f64e8868f1b4b88f730b",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_three_source_envelope_execution_20260923/run_v1/pool/solvent/shard_0/manifest.json",
+      "sha256": "72b5d64e1e67e245eca2723712995f1f2901109e5a6e7c89b6b769e765c10d0b",
+      "bytes": 250144,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_three_source_envelope_execution_20260923/run_v1/pool/solvent/shard_0/tasks/PQQSEQ_07ab500e3df76b30d71c_AF3_sample0__La__at_adaptive_Ca__vacuum/endpoint.inp",
+      "sha256": "98faf01bb890ea96599c491eb87452cf1a41d4e74632e81d18fab8cc32e71f44",
+      "bytes": 187,
+      "kind": "inspected_artifact",
+      "status": "file_hashed",
+      "expected_sha256": "98faf01bb890ea96599c491eb87452cf1a41d4e74632e81d18fab8cc32e71f44",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_three_source_envelope_execution_20260923/run_v1/pool/solvent/shard_0/tasks/PQQSEQ_07ab500e3df76b30d71c_AF3_sample0__La__at_adaptive_Ca__vacuum/core.xyz",
+      "sha256": "5c76c863a9b1a3697fe7b536a4e1b2248fb7f6bcd22fc57943e5384356de7cef",
+      "bytes": 11230,
+      "kind": "inspected_artifact",
+      "status": "file_hashed",
+      "expected_sha256": "5c76c863a9b1a3697fe7b536a4e1b2248fb7f6bcd22fc57943e5384356de7cef",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_three_source_envelope_execution_20260923/run_v1/pool/solvent/shard_0/tasks/PQQSEQ_07ab500e3df76b30d71c_AF3_sample0__La__at_adaptive_Ca__vacuum/endpoint.runtime.xtb.json",
+      "sha256": "f3dac846a59238947d35c23ba5bdb40c19a34482fe9860e8e11bf9c00d719107",
+      "bytes": 72450,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_three_source_envelope_execution_20260923/run_v1/pool/solvent/shard_0/tasks/PQQSEQ_07ab500e3df76b30d71c_AF3_sample0__La__at_adaptive_Ca__vacuum/endpoint.out.execution.json",
+      "sha256": "1cf9c30f5519faae4d5b3245930728a5bf8c3832b41ff31ab6200834d8eb678b",
+      "bytes": 4111,
+      "kind": "inspected_artifact",
+      "status": "file_hashed"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_three_source_envelope_execution_20260923/run_v1/pool/solvent/shard_0/tasks/PQQSEQ_07ab500e3df76b30d71c_AF3_sample0__La__at_adaptive_Ca__vacuum/endpoint.out",
+      "sha256": "9088201dcee05815d244f31d02cb95d17b3d14a11c83424d56ff4fcaabffc59e",
+      "bytes": 187154,
+      "kind": "inspected_artifact",
+      "status": "file_hashed",
+      "expected_sha256": "9088201dcee05815d244f31d02cb95d17b3d14a11c83424d56ff4fcaabffc59e",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_three_source_envelope_execution_20260923/run_v1/pool/solvent/shard_0/tasks/PQQSEQ_07ab500e3df76b30d71c_AF3_sample0__La__at_adaptive_Ca__vacuum/endpoint.runtime.inp",
+      "sha256": "71890a9fdc60d7f9489078872993fa06284800661be3f64e8868f1b4b88f730b",
+      "bytes": 208,
+      "kind": "inspected_artifact",
+      "status": "file_hashed",
+      "expected_sha256": "71890a9fdc60d7f9489078872993fa06284800661be3f64e8868f1b4b88f730b",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-10-09_Nikasha_native_parity/inputs/La_vacuum_corrected/control.xtb.json",
+      "sha256": "a4f83ca72d58d6e80f634e61bb8e99b7af0f26c38cc4a9295e85215ecf72d05c",
+      "bytes": 72451,
+      "kind": "native_parameter_identity",
+      "status": "file_hashed",
+      "expected_sha256": "a4f83ca72d58d6e80f634e61bb8e99b7af0f26c38cc4a9295e85215ecf72d05c",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/users/jwestrob/EastRiver/EastRiver_PLM/revision_analysis/2026-10-09_Nikasha_native_parity/inputs/La_vacuum_original/control.xtb.json",
+      "sha256": "f3dac846a59238947d35c23ba5bdb40c19a34482fe9860e8e11bf9c00d719107",
+      "bytes": 72450,
+      "kind": "native_parameter_identity",
+      "status": "file_hashed",
+      "expected_sha256": "f3dac846a59238947d35c23ba5bdb40c19a34482fe9860e8e11bf9c00d719107",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/native_gfn2_la_shellfix_20261009/parameter_source/control.xtb.json",
+      "sha256": "a4f83ca72d58d6e80f634e61bb8e99b7af0f26c38cc4a9295e85215ecf72d05c",
+      "bytes": 72451,
+      "kind": "native_parameter_identity",
+      "status": "file_hashed",
+      "expected_sha256": "a4f83ca72d58d6e80f634e61bb8e99b7af0f26c38cc4a9295e85215ecf72d05c",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/standalone_xtb_reference_20260923/run_v1/parameters/param_gfn2-xtb.txt",
+      "sha256": "f6f05c6c5264cb2f75c54f8ac6838044541c1e493b16f1a4d4ee4fa64de5f545",
+      "bytes": 35849,
+      "kind": "historical_standalone_dependency",
+      "status": "file_hashed",
+      "expected_sha256": "f6f05c6c5264cb2f75c54f8ac6838044541c1e493b16f1a4d4ee4fa64de5f545",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/home/jwestrob/miniconda3/envs/lanm_bench/share/xtb/param_gfn2-xtb.txt",
+      "sha256": "f6f05c6c5264cb2f75c54f8ac6838044541c1e493b16f1a4d4ee4fa64de5f545",
+      "bytes": 35849,
+      "kind": "historical_standalone_dependency",
+      "status": "file_hashed",
+      "expected_sha256": "f6f05c6c5264cb2f75c54f8ac6838044541c1e493b16f1a4d4ee4fa64de5f545",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/home/jwestrob/miniconda3/envs/lanm_bench/conda-meta/xtb-6.7.1-h8876d29_4.json",
+      "sha256": "a08bf315b368e2a5496def3d2bf8885e9f517400af84d6e755432d2c1d6daebf",
+      "bytes": 7787,
+      "kind": "historical_standalone_dependency",
+      "status": "file_hashed",
+      "expected_sha256": "a08bf315b368e2a5496def3d2bf8885e9f517400af84d6e755432d2c1d6daebf",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/compact_solvation_compare.py",
+      "sha256": "7623c6f1418687647c4fd0e2b36846656deb96dfe9e6afeddb34a36905af378c",
+      "bytes": 22537,
+      "kind": "released_implementation_pin",
+      "status": "file_hashed",
+      "expected_sha256": "7623c6f1418687647c4fd0e2b36846656deb96dfe9e6afeddb34a36905af378c",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/compact_solvation_scanner.py",
+      "sha256": "4494558bef393945705439bbfeca77ca2149b217500932f150cbc3c9aa25ee3c",
+      "bytes": 25023,
+      "kind": "released_implementation_pin",
+      "status": "file_hashed",
+      "expected_sha256": "4494558bef393945705439bbfeca77ca2149b217500932f150cbc3c9aa25ee3c",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/environment_context_chemistry.py",
+      "sha256": "871c749d63340c252536bce45d703ba12df70be402f94cdc71dd7cc772a7ed06",
+      "bytes": 6023,
+      "kind": "released_implementation_pin",
+      "status": "file_hashed",
+      "expected_sha256": "871c749d63340c252536bce45d703ba12df70be402f94cdc71dd7cc772a7ed06",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/mace_hybrid.py",
+      "sha256": "efed4e9ffdfe9d611fcd976a8187367e46f556dab6d6627ddc01e5756b85a72f",
+      "bytes": 54884,
+      "kind": "released_implementation_pin",
+      "status": "file_hashed",
+      "expected_sha256": "efed4e9ffdfe9d611fcd976a8187367e46f556dab6d6627ddc01e5756b85a72f",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/mace_omol.py",
+      "sha256": "1194c14bb0ba1130212f8a365228808475694e126dbaebefc370a24dc6d981ef",
+      "bytes": 39164,
+      "kind": "released_implementation_pin",
+      "status": "file_hashed",
+      "expected_sha256": "1194c14bb0ba1130212f8a365228808475694e126dbaebefc370a24dc6d981ef",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/mace_omol_neutral_worker.py",
+      "sha256": "4e458a59b71f845fcacfb83fba88cb8f60706f61afbac30eafe4b5b5992a1ba4",
+      "bytes": 10645,
+      "kind": "released_implementation_pin",
+      "status": "file_hashed",
+      "expected_sha256": "4e458a59b71f845fcacfb83fba88cb8f60706f61afbac30eafe4b5b5992a1ba4",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/pqq_fast_prepare.py",
+      "sha256": "b4b9b0633b589d2fcae1c00dd14b3597208588a19c4dc8fa7584ae54505c62e9",
+      "bytes": 16056,
+      "kind": "released_implementation_pin",
+      "status": "file_hashed",
+      "expected_sha256": "b4b9b0633b589d2fcae1c00dd14b3597208588a19c4dc8fa7584ae54505c62e9",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/pqq_fast_release.py",
+      "sha256": "da19c4e196461392321b059d0054ae562768bea7f0d1914c8e5f4c4218d84271",
+      "bytes": 4458,
+      "kind": "released_implementation_pin",
+      "status": "file_hashed",
+      "expected_sha256": "da19c4e196461392321b059d0054ae562768bea7f0d1914c8e5f4c4218d84271",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/second_shell_context.py",
+      "sha256": "7b775b3fdac79a4c3663f598087f83fbdd53792b96232775df15163d97e5f3f8",
+      "bytes": 22988,
+      "kind": "released_implementation_pin",
+      "status": "file_hashed",
+      "expected_sha256": "7b775b3fdac79a4c3663f598087f83fbdd53792b96232775df15163d97e5f3f8",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_FNR_interrupted_continuation_20261007_v1/La_A/endpoint.inp",
+      "sha256": "33cfdb54a8b41d4247ced9d572bd3c5b36e5e38e92a452d44652d262e4eb2077",
+      "bytes": 4711,
+      "kind": "prepared_DFT_input",
+      "status": "file_hashed",
+      "expected_sha256": "33cfdb54a8b41d4247ced9d572bd3c5b36e5e38e92a452d44652d262e4eb2077",
+      "matches_expected_sha256": true
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_FNR_interrupted_continuation_20261007_v1/Dy_A/endpoint.inp",
+      "sha256": "a0b50d48100f6e0a6f9a3188df5e4d6a61588ebd5dd113b7ce67226670a130b9",
+      "bytes": 3907,
+      "kind": "prepared_DFT_input",
+      "status": "file_hashed",
+      "expected_sha256": "a0b50d48100f6e0a6f9a3188df5e4d6a61588ebd5dd113b7ce67226670a130b9",
+      "matches_expected_sha256": true
+    }
+  ]
+}

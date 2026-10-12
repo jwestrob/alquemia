@@ -1,5 +1,15 @@
 # Automatic LanM resumption after Slurm recovery
 
+## Current priority — 12 October 2026
+
+Jacob cleared the scientific hold and authorized at most16 total login compute
+threads while Slurm is unavailable. The active work is the parameter/runtime audit
+and corrected context/accommodation test. Read diagnostics/orca_parameter_audit_20261012/CURRENT.md
+and actual Claude/runtime receipts before dispatch. Do not automatically restart
+old LanM jobs or duplicate live login workers when a Slurm probe succeeds. Keep
+normal scheduler priorities and inspect the current resource rules. The older
+numbered LanM task list below is a deferred roadmap, not the first dispatch.
+
 Jacob authorized this monitor on 9 October 2026: try every 30 minutes and wake
 Codex as soon as a real test job succeeds, then resume submitting the work.
 This is execution authorization, not a request for another permission check.

@@ -1,8 +1,9 @@
 # Explicit spectator preparation: implementation ready
 
 The narrow adapter is implemented and frozen for Q9's five real two-Ca sources.
-Root submitted job **2969**, six shared CPUs on node-64-768g-5; its completion
-wake is armed. Preparation results are pending. No energy/model evaluation is
+Jobs **2969/2985 completed**: all 15 sources pass. Read FINAL_REPORT.md and
+FINAL_RESULT.json for the actual results; the launch details below remain
+the first-execution record. No energy/model evaluation is
 part of this job, and no production or original source result is changed.
 
 The source geometry audits already show a distinct PQQ Ca and remote structural

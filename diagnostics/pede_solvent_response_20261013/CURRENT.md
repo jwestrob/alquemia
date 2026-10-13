@@ -1,5 +1,11 @@
 # Active solvent-response investigation — 13 October 2026
 
+Latest at14:28UTC: five of eight DFT endpoints have passed collection. All four
+water cells are complete; sample3 La vacuum also completed in pair job3373
+(8052s,12 CPUs). Jobs3371/3372/3374 continue their vacuum endpoints. Collector3377
+and completion/health wakes remain armed. No full solvent-response conclusion
+exists yet; do not rerun the completed pair from older execution notes below.
+
 Jacob authorized contained work to fix the solvent correction. Read [PLAN.md](PLAN.md).
 The saved solvent decomposition completed as3352: all36 origin endpoints close
 algebraically. The sample3→1 Ca−La solvent change +21.2566 kcal/mol contains

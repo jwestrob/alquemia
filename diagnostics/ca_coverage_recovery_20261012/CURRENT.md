@@ -62,14 +62,36 @@ memory/time request or parameter change. GPU QOS imposed12GiB hostRAM. All outpu
 terminal receipts, completion wakes and root acknowledgements remain in the
 matching refold workspace. Do not rerun any of these completed fifteen folds.
 
-Curie implements the separately versioned spectator-aware preparation adapter
-under spectator_preparation/: retain both full-source ions, original canonical
-context membership, PQQ/proton/water state and old paired-coordinate gates.
-Require the spectator to be farther than4.3A from every retained physical heavy
-atom before explicit exclusion from the local Hamiltonian. One previously scored
-single-Ca real source supplies the unchanged-preparation regression. Root submits
-all preparation/testing through Slurm. No new molecular scores yet; all samples
-and failures remain visible, and calibration stays frozen.
+## All fifteen preparations admitted; scoring in progress
+
+Spectator-aware preparation2969/2985 completed **15/15** under the same new source
+adapter. The previously scored one-Ca P12293 sample0 exactly reproduces its old
+core/context coordinates, maps and state. Both native Ca and all source heavy
+coordinates are retained exactly. All paired local contexts have192atoms and
+match their own frozen canonical state and fragment membership. Spectators are
+23.74–24.21A from the nearest retained heavy atom, outside the unchanged4.3A
+boundary. Their exclusion from the local Hamiltonian is explicit; this is not a
+global electrostatic model. See spectator_preparation/FINAL_REPORT.md and actual
+FINAL_PREPARATION.json in spectator_preparation_q9_v2 and _c5q88_v1 workspaces.
+
+The existing native CPU and corrected-solvent kernels now score these real inputs:
+
+| Batch | Native jobs (7CPUs each) | Collector | Corrected solvent (12CPUs) | Completion wake PID |
+|---|---|---|---|---|
+| Q9/ExaA, five sources | 2996,2997 | 2998 afterany | 2999 afterok collector | 3714564 |
+| C5/ExaF + Q88/PedE, ten sources | 3018,3019,3020 | 3021 afterany | 3022 afterok collector | 3731153 |
+
+Q9 native preflight and both real force/energy qualification fixtures pass in
+both lanes. Model searches are running; no new composite classifications exist
+yet. The same bounded four-mode search, common candidate pool, corrected GFN2
+components and frozen bands apply. No source ranking, threshold refit or new
+biological labels. Normal scheduler/user CPU limits may queue a lane; no bypass.
+
+Exact submission/dependency/wake commands are in the matching
+`two_ca_scoring_q9_v1` and `two_ca_scoring_c5q88_v1` workspaces. Both batch overlays
+preserve primary125 plus the earlier three recoveries. The final cumulative
+report must combine both actual5+10 results; neither batch alone is the complete
+fifteen-source outcome. Gauss owns the separate finite merger; root integrates.
 
 ## Runtime failures retained
 
@@ -84,8 +106,8 @@ corrected it before any molecular call. No completed chemistry was repeated.
 
 ## Resume precisely
 
-Root owns integration and submissions. Curie owns spectator preparation; Gauss
-owns the thin native/solvent adapter; Heisenberg finishes actual refold reports.
+Root owns integration and submissions. Curie/Heisenberg preparation and refold
+reports are complete; Gauss finishes the small cumulative result merger.
 Read actual Slurm status and these receipts before acting:
 
 - Completed disulfide/solvent_v1/FINAL_COLLECTION.json and its primary/recovery
@@ -95,9 +117,12 @@ Read actual Slurm status and these receipts before acting:
   source geometry failures; this audit is not full endpoint preparation.
 - All three fold EXECUTION.json and audit FINAL_AUDIT.json are complete. Use
   their exact per-row source/active/spectator selectors; no fold/audit reruns.
-- Run the narrow spectator preparation and real-source regression under Slurm
-  when Curie supplies the implementation. Score only admitted states with the
-  same corrected Hamiltonian and frozen bands; preserve failed preparations.
+- Do not repeat completed preparation2969/2985. Inspect the exact native lane
+  receipts and the dependent NATIVE_COLLECTION.json in both scoring workspaces.
+- Read corrected-solvent outputs under two_ca_solvent_q9_v1 and
+  two_ca_solvent_c5q88_v1 when their jobs finish. Retain unavailable cells and
+  actual costs. Combine the two disjoint new-source batches on the same immutable
+  primary125/prior-three-recovery ledger; no automatic production promotion.
 
 Existing LanM 2665/2666 and collector2669 remain preserved. Readiness probes stay
 off; owned completion wakes are armed. Avoid stale/mismatched node-48-256g-18.

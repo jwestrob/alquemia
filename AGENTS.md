@@ -1,3 +1,18 @@
+# PedE failure diagnosis complete — 13 October 2026
+
+Jacob requested investigation before more experiments. Read
+[the saved-artifact diagnosis](diagnostics/pede_failure_diagnosis_20261013/REPORT.md)
+and its CURRENT.md. All seven small analysis/export jobs are terminal; no new
+molecular calls, folds, thresholds or production changes. Geometry/confidence
+does not expose a shared wrong-only fold defect. The largest PedE origin spread
+is almost entirely the corrected GFN2 solvent contribution, with marked PQQ/
+context charge redistribution. This suggests a solvent/electronic-response
+qualification question, not proof of bad folding or an established SCF branch
+error. Fine cofactor geometry and the transfer of La-conditioned calibration
+also remain limitations. Original results and all analysis failures are retained.
+Next molecular comparison is proposed for discussion only; do not launch from
+delayed completion wakes. No diagnosis jobs remain outstanding.
+
 # LanM comparison complete — 13 October 2026
 
 Both Hans8FNR continuations 2665/2666 converged and passed electronic collection.

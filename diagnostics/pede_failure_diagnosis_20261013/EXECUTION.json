@@ -1,0 +1,324 @@
+{
+  "captured_utc": "2026-10-13T08:52:02.169219+00:00",
+  "scheduler_records": [
+    {
+      "JobID": "3338",
+      "State": "FAILED",
+      "ExitCode": "1:0",
+      "ElapsedRaw": "1",
+      "AllocCPUS": "1",
+      "MaxRSS": ""
+    },
+    {
+      "JobID": "3338.batch",
+      "State": "FAILED",
+      "ExitCode": "1:0",
+      "ElapsedRaw": "1",
+      "AllocCPUS": "1",
+      "MaxRSS": "57852K"
+    },
+    {
+      "JobID": "3339",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "ElapsedRaw": "1",
+      "AllocCPUS": "1",
+      "MaxRSS": ""
+    },
+    {
+      "JobID": "3339.batch",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "ElapsedRaw": "1",
+      "AllocCPUS": "1",
+      "MaxRSS": "46580K"
+    },
+    {
+      "JobID": "3340",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "ElapsedRaw": "5",
+      "AllocCPUS": "1",
+      "MaxRSS": ""
+    },
+    {
+      "JobID": "3340.batch",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "ElapsedRaw": "5",
+      "AllocCPUS": "1",
+      "MaxRSS": "140044K"
+    },
+    {
+      "JobID": "3341",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "ElapsedRaw": "0",
+      "AllocCPUS": "1",
+      "MaxRSS": ""
+    },
+    {
+      "JobID": "3341.batch",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "ElapsedRaw": "0",
+      "AllocCPUS": "1",
+      "MaxRSS": "69268K"
+    },
+    {
+      "JobID": "3344",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "ElapsedRaw": "2",
+      "AllocCPUS": "1",
+      "MaxRSS": ""
+    },
+    {
+      "JobID": "3344.batch",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "ElapsedRaw": "2",
+      "AllocCPUS": "1",
+      "MaxRSS": "42008K"
+    },
+    {
+      "JobID": "3345",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "ElapsedRaw": "2",
+      "AllocCPUS": "1",
+      "MaxRSS": ""
+    },
+    {
+      "JobID": "3345.batch",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "ElapsedRaw": "2",
+      "AllocCPUS": "1",
+      "MaxRSS": "32184K"
+    },
+    {
+      "JobID": "3348",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "ElapsedRaw": "1",
+      "AllocCPUS": "1",
+      "MaxRSS": ""
+    },
+    {
+      "JobID": "3348.batch",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "ElapsedRaw": "1",
+      "AllocCPUS": "1",
+      "MaxRSS": "14352K"
+    }
+  ],
+  "allocated_CPU_seconds_from_integer_scheduler_elapsed": 12,
+  "allocated_GPU_seconds": 0,
+  "new_molecular_calls": 0,
+  "new_folds": 0,
+  "scope": "saved-artifact analysis and export only; elapsed rounded by scheduler; raw process times retained in execution receipts",
+  "jobs": {
+    "3338": {
+      "workspace": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/calibration_v1",
+      "execution_receipt": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/calibration_v1/execution/RECEIPT.json",
+      "execution_receipt_sha256": "6acd14d8bc209c5d6056e25e850041ac7325250d0b17feb091850bce2383c5e5",
+      "execution": {
+        "job_id": "3338",
+        "new_molecular_calls": 0,
+        "config": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/calibration_v1/CONFIG.json",
+          "sha256": "cfc3fe8109149adcc8983ef917fff4d16ed2df170e36a69c6571845b7f5ee244"
+        },
+        "status": "failed",
+        "error": "'NoneType' object has no attribute 'get'",
+        "traceback": "Traceback (most recent call last):\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pede_failure_diagnosis_20261013/CALIBRATION.py\", line 59, in run\n    value = r.get('pool', {}).get(policy, {}).get('R_model_kcal_mol')\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'get'\n",
+        "elapsed_seconds": 0.15693972306326032,
+        "process_CPU_seconds": 0.236585,
+        "peak_RSS_KiB": 56260
+      }
+    },
+    "3339": {
+      "workspace": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/calibration_v2",
+      "execution_receipt": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/calibration_v2/execution/RECEIPT.json",
+      "execution_receipt_sha256": "3899f9ec8d31e29f99dab31be5ae770e06be3f19776db78f6241918fcc65398b",
+      "execution": {
+        "job_id": "3339",
+        "new_molecular_calls": 0,
+        "config": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/calibration_v2/CONFIG.json",
+          "sha256": "6d7e81923f3dc867a840fbf004e1ad9ac9b4abf443ff94c4583cb5e68a03b22f"
+        },
+        "status": "complete",
+        "result": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/calibration_v2/execution/RESULT.json",
+          "sha256": "9bdcb9d3c98cebd8788958d6ba5803c07e1b050c13d7f2388d524eb0b8330f9c"
+        },
+        "report": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/calibration_v2/execution/REPORT.md",
+          "sha256": "931a6b61157e33f97c23a467dfb833768df9df1bd62e26246dae038d64accae0"
+        },
+        "elapsed_seconds": 0.16922928893473,
+        "process_CPU_seconds": 0.23275399999999996,
+        "peak_RSS_KiB": 56248
+      }
+    },
+    "3340": {
+      "workspace": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/geometry_v1",
+      "execution_receipt": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/geometry_v1/execution/EXECUTION.json",
+      "execution_receipt_sha256": "f0c0846ef7897bcaa72e8fe002109d779f7a74f03b65c16d12150c2f907f5ca6",
+      "execution": {
+        "manifest": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/geometry_v1/manifest.json",
+          "sha256": "94b3ad3b1dbb76a4856d21c07a526190e7be0a97576aca0ae33b77deb7865e83"
+        },
+        "job_id": "3340",
+        "hostname": "node-64-768g-5",
+        "status": "complete",
+        "new_energy_calls": 0,
+        "new_folds": 0,
+        "numerical_threads": 1,
+        "result": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/geometry_v1/execution/RESULT.json",
+          "sha256": "9045340de5214591230352c90159a2d0faa87bea8caea9ee8175807fd85a5bf5"
+        },
+        "wall_seconds": 3.6515241540037096,
+        "CPU_seconds": 3.895055,
+        "peak_RSS_KiB": 136872
+      }
+    },
+    "3341": {
+      "workspace": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_v1",
+      "execution_receipt": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_v1/execution/EXECUTION_3341.json",
+      "execution_receipt_sha256": "3d30ae52ea727c7143b30d8c1dac605ac5d6cc729aadad4e9954d249f4f95e73",
+      "execution": {
+        "config": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_v1/CONFIG.json",
+          "sha256": "80aed43b76bbfe9271d6252717550c86ce1ab94976b154bb9d1ffdd97bd67843"
+        },
+        "driver": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pede_failure_diagnosis_20261013/energetics/ANALYZE.py",
+          "sha256": "78912def57c96fff8573efbac56fdef4c90051c97447c3c6e2bfc1e2ab24923c"
+        },
+        "job_id": "3341",
+        "allocation": "JobId=3341 JobName=Nikasha-PedE-energetics UserId=jwestrob(601) GroupId=jwestrob(601) MCS_label=N/A Priority=1 Nice=0 Account=banfield QOS=standard JobState=RUNNING Reason=None Dependency=(null) Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:00 TimeLimit=3-00:00:00 TimeMin=N/A SubmitTime=2026-10-13T01:28:53 EligibleTime=2026-10-13T01:28:53 AccrueTime=2026-10-13T01:28:53 StartTime=2026-10-13T01:28:54 EndTime=2026-10-16T01:28:54 Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-13T01:28:54 Scheduler=Main Partition=standard AllocNode:Sid=biotite:238737 ReqNodeList=node-64-768g-5 ExcNodeList=(null) NodeList=node-64-768g-5 BatchHost=node-64-768g-5 NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:* ReqTRES=cpu=1,mem=4000M,node=1,billing=1 AllocTRES=cpu=1,mem=4000M,node=1,billing=1 Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=1 MinMemoryCPU=4000M MinTmpDiskNode=0 Features=(null) DelayBoot=00:00:00 OverSubscribe=NO Exclusive=NO Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null) Command=(null) SubmitLine=sbatch --parsable --partition=standard --nodelist=node-64-768g-5 --job-name=Nikasha-PedE-energetics --nodes=1 --ntasks=1 --no-requeue --output=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_v1/slurm_%j.out --error=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_v1/slurm_%j.err --wrap env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 /groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pede_failure_diagnosis_20261013/energetics/ANALYZE.py --config /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_v1/CONFIG.json WorkDir=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs StdErr=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_v1/slurm_3341.err StdIn=/dev/null StdOut=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_v1/slurm_3341.out\n",
+        "new_molecular_calls": 0,
+        "status": "complete",
+        "outputs": {
+          "RESULT.json": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_v1/execution/RESULT.json",
+            "sha256": "089687102f7ba404718aae7c5f8bfa67a7c0b2e8a7fcace53c0b98b7451dc7d5"
+          },
+          "CELLS.tsv": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_v1/execution/CELLS.tsv",
+            "sha256": "60ba1f6e77669c48e16134d236ab04b33eb7e3a5e9149193d297217aa746c23e"
+          },
+          "WORKS.tsv": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_v1/execution/WORKS.tsv",
+            "sha256": "3679440e8d67c10ddb670b1d88f13dba0ec70b03efd738c8ab8138adaa8c1607"
+          },
+          "REPORT.md": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_v1/execution/REPORT.md",
+            "sha256": "5ba52a1a56f838404d70591e03655871a858765357142245e129d4b19128f798"
+          }
+        },
+        "elapsed_seconds": 0.6431506070075557,
+        "process_CPU_seconds": 0.368029,
+        "peak_RSS_KiB": 63512
+      }
+    },
+    "3344": {
+      "workspace": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/geometry_local_v2",
+      "execution_receipt": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/geometry_local_v2/execution/EXECUTION.json",
+      "execution_receipt_sha256": "23364c6b6a734d86d8704d62f449ab57fb380e3e5999788748928e13c705d4c3",
+      "execution": {
+        "manifest": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/geometry_local_v2/manifest.json",
+          "sha256": "03cd57fe962638c5e51cb4e51d8106f000c9c49bda1de24383fde0dde3d2b1dc"
+        },
+        "job_id": "3344",
+        "hostname": "node-64-768g-5",
+        "status": "complete",
+        "new_energy_calls": 0,
+        "new_folds": 0,
+        "numerical_threads": 1,
+        "result": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/geometry_local_v2/execution/RESULT.json",
+          "sha256": "b4d1d99ca1e7b7471323312f63aa5ab370df38c3c72e957f4c0cc17d398c0995"
+        },
+        "wall_seconds": 0.9322974350070581,
+        "CPU_seconds": 1.090761,
+        "peak_RSS_KiB": 78832
+      }
+    },
+    "3345": {
+      "workspace": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_charges_v1",
+      "execution_receipt": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_charges_v1/execution/EXECUTION_3345.json",
+      "execution_receipt_sha256": "1f82aad9ea7d1dbf2eee358e8324f10d3ad98f55f58b98a14ef373fc092721cb",
+      "execution": {
+        "job_id": "3345",
+        "config": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_charges_v1/CONFIG.json",
+          "sha256": "4e1e34d23ac5d8f27332835fbf47fb982ac83de8f7ae900a5e2d9a20d7b71bc5"
+        },
+        "allocation": "JobId=3345 JobName=Nikasha-PedE-saved-charges UserId=jwestrob(601) GroupId=jwestrob(601) MCS_label=N/A Priority=1 Nice=0 Account=banfield QOS=standard JobState=RUNNING Reason=None Dependency=(null) Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:01 TimeLimit=3-00:00:00 TimeMin=N/A SubmitTime=2026-10-13T01:41:23 EligibleTime=2026-10-13T01:41:23 AccrueTime=2026-10-13T01:41:23 StartTime=2026-10-13T01:41:23 EndTime=2026-10-16T01:41:23 Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-13T01:41:23 Scheduler=Main Partition=standard AllocNode:Sid=biotite:263807 ReqNodeList=node-64-768g-5 ExcNodeList=(null) NodeList=node-64-768g-5 BatchHost=node-64-768g-5 NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:* ReqTRES=cpu=1,mem=4000M,node=1,billing=1 AllocTRES=cpu=1,mem=4000M,node=1,billing=1 Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=1 MinMemoryCPU=4000M MinTmpDiskNode=0 Features=(null) DelayBoot=00:00:00 OverSubscribe=NO Exclusive=NO Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null) Command=(null) SubmitLine=sbatch --parsable --partition=standard --nodelist=node-64-768g-5 --job-name=Nikasha-PedE-saved-charges --nodes=1 --ntasks=1 --no-requeue --output=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_charges_v1/slurm_%j.out --error=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_charges_v1/slurm_%j.err --wrap env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 /groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pede_failure_diagnosis_20261013/energetics/CHARGES.py --config /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_charges_v1/CONFIG.json WorkDir=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs StdErr=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_charges_v1/slurm_3345.err StdIn=/dev/null StdOut=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_charges_v1/slurm_3345.out\n",
+        "new_molecular_calls": 0,
+        "status": "complete",
+        "outputs": {
+          "RESULT.json": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_charges_v1/execution/RESULT.json",
+            "sha256": "de426d40a3ebe945092617acc300de692faac09670a9b20f2db9e3e5dc177b31"
+          },
+          "ORIGIN_CHARGES.tsv": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_charges_v1/execution/ORIGIN_CHARGES.tsv",
+            "sha256": "eb5e0966133a97090b496cb3913cdb94664023e87b66aee04dbd4897a55de98d"
+          },
+          "ATOM_CHARGES.tsv": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_charges_v1/execution/ATOM_CHARGES.tsv",
+            "sha256": "7a2c49e08a0ae96f1ac45bac2156cd523d5dc545be58ead24758628ab4cb1ee2"
+          },
+          "ORIGIN_SOLVENT.tsv": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_charges_v1/execution/ORIGIN_SOLVENT.tsv",
+            "sha256": "300547e245ca66c2c5918ab05dc4c05dad23d606ff78559d7ecaed5658e54eca"
+          }
+        },
+        "elapsed_seconds": 1.3529544139746577,
+        "process_CPU_seconds": 0.8466359999999999,
+        "peak_RSS_KiB": 34460
+      }
+    },
+    "3348": {
+      "workspace": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_charges_export_v2",
+      "execution_receipt": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_charges_export_v2/execution/EXECUTION_3348.json",
+      "execution_receipt_sha256": "2a2e04608870dde0339b4f5c586d9fa61be19f3871db744cb199bb702d6425e1",
+      "execution": {
+        "job_id": "3348",
+        "config": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_charges_export_v2/CONFIG.json",
+          "sha256": "4ddd7517f8d7440bce1233c0b2d187e1d37fea16d7cfed245dcd0852cd80e7d1"
+        },
+        "allocation": "JobId=3348 JobName=Nikasha-PedE-charge-export UserId=jwestrob(601) GroupId=jwestrob(601) MCS_label=N/A Priority=1 Nice=0 Account=banfield QOS=standard JobState=RUNNING Reason=None Dependency=(null) Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:01 TimeLimit=3-00:00:00 TimeMin=N/A SubmitTime=2026-10-13T01:47:38 EligibleTime=2026-10-13T01:47:38 AccrueTime=2026-10-13T01:47:38 StartTime=2026-10-13T01:47:38 EndTime=2026-10-16T01:47:38 Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-13T01:47:38 Scheduler=Main Partition=standard AllocNode:Sid=biotite:283740 ReqNodeList=node-64-768g-5 ExcNodeList=(null) NodeList=node-64-768g-5 BatchHost=node-64-768g-5 NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:* ReqTRES=cpu=1,mem=4000M,node=1,billing=1 AllocTRES=cpu=1,mem=4000M,node=1,billing=1 Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=1 MinMemoryCPU=4000M MinTmpDiskNode=0 Features=(null) DelayBoot=00:00:00 OverSubscribe=NO Exclusive=NO Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null) Command=(null) SubmitLine=sbatch --parsable --partition=standard --nodelist=node-64-768g-5 --job-name=Nikasha-PedE-charge-export --nodes=1 --ntasks=1 --no-requeue --output=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_charges_export_v2/slurm_%j.out --error=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_charges_export_v2/slurm_%j.err --wrap env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 /groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pede_failure_diagnosis_20261013/energetics/EXPORT_CHARGES.py --config /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_charges_export_v2/CONFIG.json WorkDir=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs StdErr=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_charges_export_v2/slurm_3348.err StdIn=/dev/null StdOut=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_charges_export_v2/slurm_3348.out\n",
+        "new_molecular_calls": 0,
+        "new_population_analysis": false,
+        "status": "complete",
+        "exported_rows": 72,
+        "output": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_charges_export_v2/execution/ORIGIN_CHARGES.tsv",
+          "sha256": "d2c975c629087d873d69abe26f4d814f3fd6065bb79e2390c2252f8372359bf1"
+        },
+        "superseded_export": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_charges_v1/execution/ORIGIN_CHARGES.tsv",
+          "sha256": "eb5e0966133a97090b496cb3913cdb94664023e87b66aee04dbd4897a55de98d"
+        },
+        "authoritative_JSON": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/energetics_charges_v1/execution/RESULT.json",
+          "sha256": "de426d40a3ebe945092617acc300de692faac09670a9b20f2db9e3e5dc177b31"
+        },
+        "elapsed_seconds": 0.022936566034331918,
+        "process_CPU_seconds": 0.085623,
+        "peak_RSS_KiB": 22908
+      }
+    }
+  }
+}

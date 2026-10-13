@@ -1,0 +1,383 @@
+{
+  "protocol": "Nikasha_PedE_frozen_band_diagnosis_v1",
+  "pins": [
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/calibration_v2/CALIBRATION.py",
+      "sha256": "ba2d4c642ae967f6d81569b9ab83db8c79e375d4ff1eb67811f1de6f22ea513f"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pede_failure_diagnosis_20261013/PLAN.md",
+      "sha256": "73d84481c453f0270c89e1218752f01e53f8916abf1804de85792034268abd79"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/two_ca_scoring_final_v1/RESULT.json",
+      "sha256": "e4601ad0e5378027c5dedb8ffbcb367d99aa54b2ec6eaff74ca0b5e05114bb03"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/expanded_candidate_reevaluation_v3/CANONICAL_COLLECTION.json",
+      "sha256": "929dedab7ba46c7088de7a4a695a8f19fc5af60066ecd3599645f687bd4e6896"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pede_failure_diagnosis_20261013/CALIBRATION_SCHEMA_RECOVERY.md",
+      "sha256": "f8d9defbb12a4087c663d1bbcde35bfad7d50201cb8f0a0ab1c96e6fef4cb78f"
+    }
+  ],
+  "bands": {
+    "operational": {
+      "status": "available",
+      "available": 25,
+      "gap_kcal_mol": 3.4721710470039397,
+      "bands": {
+        "Ca_max": -405457.564455343,
+        "La_min": -405454.092284296
+      }
+    },
+    "mathematical": {
+      "status": "available",
+      "available": 25,
+      "gap_kcal_mol": 3.4721710470039397,
+      "bands": {
+        "Ca_max": -405457.564455343,
+        "La_min": -405454.092284296
+      }
+    },
+    "origin": {
+      "status": "available",
+      "available": 25,
+      "gap_kcal_mol": 10.29767891188385,
+      "bands": {
+        "Ca_max": -405465.7535534819,
+        "La_min": -405455.45587457
+      }
+    }
+  },
+  "band_edge_shifts": {
+    "Ca_max": 8.189098138886038,
+    "La_min": 1.3635902740061283
+  },
+  "summaries": {
+    "canonical25": {
+      "sources": 25,
+      "groups": 25,
+      "transitions": {
+        "correct->correct": 25
+      },
+      "policy_counts": {
+        "origin": {
+          "correct": 25
+        },
+        "operational": {
+          "correct": 25
+        }
+      },
+      "by_expected_class": {
+        "Ca": {
+          "sources": 14,
+          "groups": 14,
+          "delta_R_by_source": {
+            "n": 14,
+            "minimum": 0.9515893614152446,
+            "median": 8.354630256799283,
+            "maximum": 11.980608565267175
+          },
+          "delta_R_group_medians": {
+            "a8r3s4": 9.957687647198327,
+            "atq70401.1": 9.131365278852172,
+            "bbl57595.1": 8.968243973213248,
+            "o24759": 8.620527886378113,
+            "p12293": 8.520162374712527,
+            "p15279": 7.907946213905234,
+            "p16027": 7.09203660505591,
+            "p38539": 0.9515893614152446,
+            "q4w6g0": 4.253148220072035,
+            "q60ar6": 7.2614407611545175,
+            "q88jh5": 8.761966374178883,
+            "q8gr64": 11.980608565267175,
+            "q9l935": 2.9110464525874704,
+            "q9z4j7": 8.189098138886038
+          },
+          "expected_band_margin_change_by_source": {
+            "n": 14,
+            "minimum": -3.7915104263811372,
+            "median": -0.1655321179132443,
+            "maximum": 7.237508777470794
+          }
+        },
+        "La": {
+          "sources": 11,
+          "groups": 11,
+          "delta_R_by_source": {
+            "n": 11,
+            "minimum": -0.514214527909644,
+            "median": 4.8959830873063765,
+            "maximum": 11.733392529480625
+          },
+          "delta_R_group_medians": {
+            "a0a3f2yly8": 11.733392529480625,
+            "a0acd6b9f2": 2.821571711276192,
+            "c5atj3": 4.8959830873063765,
+            "c5axv8": -0.514214527909644,
+            "c5b120": 5.528220027044881,
+            "i0jwn7": 3.6067756714182906,
+            "mmol_1770": 8.586138280166779,
+            "mmol_2048": 1.6948771739262156,
+            "q88jh0": 6.812610111664981,
+            "q89gy2": 1.787179208942689,
+            "q92wy9": 6.063684729102533
+          },
+          "expected_band_margin_change_by_source": {
+            "n": 11,
+            "minimum": -1.8778048019157723,
+            "median": 3.5323928133002482,
+            "maximum": 10.369802255474497
+          }
+        }
+      }
+    },
+    "recovered125": {
+      "sources": 125,
+      "groups": 25,
+      "transitions": {
+        "inconclusive->correct": 4,
+        "correct->correct": 115,
+        "wrong->wrong": 1,
+        "inconclusive->inconclusive": 1,
+        "correct->inconclusive": 2,
+        "inconclusive->wrong": 2
+      },
+      "policy_counts": {
+        "origin": {
+          "inconclusive": 7,
+          "correct": 117,
+          "wrong": 1
+        },
+        "operational": {
+          "correct": 119,
+          "wrong": 3,
+          "inconclusive": 3
+        }
+      },
+      "by_expected_class": {
+        "Ca": {
+          "sources": 70,
+          "groups": 14,
+          "delta_R_by_source": {
+            "n": 70,
+            "minimum": 0.17089764890260994,
+            "median": 7.6884996931185015,
+            "maximum": 17.213807858875953
+          },
+          "delta_R_group_medians": {
+            "a8r3s4": 8.136088476981968,
+            "atq70401.1": 7.603535068454221,
+            "bbl57595.1": 9.106930089066736,
+            "o24759": 6.730572693515569,
+            "p12293": 8.299731098057237,
+            "p15279": 8.206595114606898,
+            "p16027": 5.8135337079293095,
+            "p38539": 6.222013040969614,
+            "q4w6g0": 4.837699725350831,
+            "q60ar6": 5.3117289278889075,
+            "q88jh5": 9.669093389355112,
+            "q8gr64": 12.583100303541869,
+            "q9l935": 3.9910010927706026,
+            "q9z4j7": 11.809135559247807
+          },
+          "expected_band_margin_change_by_source": {
+            "n": 70,
+            "minimum": -9.024709719989914,
+            "median": 0.5005984457675368,
+            "maximum": 8.018200489983428
+          }
+        },
+        "La": {
+          "sources": 55,
+          "groups": 11,
+          "delta_R_by_source": {
+            "n": 55,
+            "minimum": -3.5861349249025807,
+            "median": 1.8064610465662554,
+            "maximum": 18.13204753928585
+          },
+          "delta_R_group_medians": {
+            "a0a3f2yly8": 5.459834777342621,
+            "a0acd6b9f2": 0.44407772907288745,
+            "c5atj3": 2.871415810077451,
+            "c5axv8": 1.921600452333223,
+            "c5b120": 0.6121639389893971,
+            "i0jwn7": 0.5323581668781117,
+            "mmol_1770": 5.360757691320032,
+            "mmol_2048": 0.026925007405225188,
+            "q88jh0": 1.4241937523474917,
+            "q89gy2": -0.3389186948770657,
+            "q92wy9": 4.205530565814115
+          },
+          "expected_band_margin_change_by_source": {
+            "n": 55,
+            "minimum": -4.949725198908709,
+            "median": 0.4428707725601271,
+            "maximum": 16.76845726527972
+          }
+        }
+      }
+    }
+  },
+  "new_fit": false,
+  "interpretation": "Descriptive consumed-source analysis; margins are distances to frozen decision bands, not probabilities or affinities.",
+  "PedE_rows": [
+    {
+      "scope": "recovered125",
+      "source_id": "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-0",
+      "group": "q88jh5",
+      "expected_class": "Ca",
+      "conditioning": "2Ca_v1",
+      "policies": {
+        "origin": {
+          "R_kcal_mol": -405478.0576485173,
+          "outcome": "correct",
+          "Ca_band_margin_kcal_mol": 12.304095035418868,
+          "La_band_margin_kcal_mol": -22.601773947302718,
+          "expected_band_margin_kcal_mol": 12.304095035418868
+        },
+        "operational": {
+          "R_kcal_mol": -405468.38855512795,
+          "outcome": "correct",
+          "Ca_band_margin_kcal_mol": 10.824099784949794,
+          "La_band_margin_kcal_mol": -14.296270831953734,
+          "expected_band_margin_kcal_mol": 10.824099784949794
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 9.669093389355112,
+      "expected_band_margin_change_kcal_mol": -1.4799952504690737
+    },
+    {
+      "scope": "recovered125",
+      "source_id": "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-1",
+      "group": "q88jh5",
+      "expected_class": "Ca",
+      "conditioning": "2Ca_v1",
+      "policies": {
+        "origin": {
+          "R_kcal_mol": -405459.5596177587,
+          "outcome": "inconclusive",
+          "Ca_band_margin_kcal_mol": -6.1939357231603935,
+          "La_band_margin_kcal_mol": -4.103743188723456,
+          "expected_band_margin_kcal_mol": -6.1939357231603935
+        },
+        "operational": {
+          "R_kcal_mol": -405450.1405870343,
+          "outcome": "wrong",
+          "Ca_band_margin_kcal_mol": -7.423868308716919,
+          "La_band_margin_kcal_mol": 3.9516972617129795,
+          "expected_band_margin_kcal_mol": -7.423868308716919
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 9.419030724442564,
+      "expected_band_margin_change_kcal_mol": -1.2299325855565257
+    },
+    {
+      "scope": "recovered125",
+      "source_id": "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-2",
+      "group": "q88jh5",
+      "expected_class": "Ca",
+      "conditioning": "2Ca_v1",
+      "policies": {
+        "origin": {
+          "R_kcal_mol": -405464.0189443203,
+          "outcome": "inconclusive",
+          "Ca_band_margin_kcal_mol": -1.7346091615618207,
+          "La_band_margin_kcal_mol": -8.563069750322029,
+          "expected_band_margin_kcal_mol": -1.7346091615618207
+        },
+        "operational": {
+          "R_kcal_mol": -405453.8155989813,
+          "outcome": "wrong",
+          "Ca_band_margin_kcal_mol": -3.7488563617225736,
+          "La_band_margin_kcal_mol": 0.2766853147186339,
+          "expected_band_margin_kcal_mol": -3.7488563617225736
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 10.203345339046791,
+      "expected_band_margin_change_kcal_mol": -2.014247200160753
+    },
+    {
+      "scope": "recovered125",
+      "source_id": "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-3",
+      "group": "q88jh5",
+      "expected_class": "Ca",
+      "conditioning": "2Ca_v1",
+      "policies": {
+        "origin": {
+          "R_kcal_mol": -405480.6658325708,
+          "outcome": "correct",
+          "Ca_band_margin_kcal_mol": 14.912279088923242,
+          "La_band_margin_kcal_mol": -25.20995800080709,
+          "expected_band_margin_kcal_mol": 14.912279088923242
+        },
+        "operational": {
+          "R_kcal_mol": -405470.0826120714,
+          "outcome": "correct",
+          "Ca_band_margin_kcal_mol": 12.518156728416216,
+          "La_band_margin_kcal_mol": -15.990327775420155,
+          "expected_band_margin_kcal_mol": 12.518156728416216
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 10.583220499393065,
+      "expected_band_margin_change_kcal_mol": -2.3941223605070263
+    },
+    {
+      "scope": "recovered125",
+      "source_id": "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-4",
+      "group": "q88jh5",
+      "expected_class": "Ca",
+      "conditioning": "2Ca_v1",
+      "policies": {
+        "origin": {
+          "R_kcal_mol": -405470.4081004057,
+          "outcome": "correct",
+          "Ca_band_margin_kcal_mol": 4.654546923818998,
+          "La_band_margin_kcal_mol": -14.952225835702848,
+          "expected_band_margin_kcal_mol": 4.654546923818998
+        },
+        "operational": {
+          "R_kcal_mol": -405464.4358872953,
+          "outcome": "correct",
+          "Ca_band_margin_kcal_mol": 6.871431952284183,
+          "La_band_margin_kcal_mol": -10.343602999288123,
+          "expected_band_margin_kcal_mol": 6.871431952284183
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 5.972213110420853,
+      "expected_band_margin_change_kcal_mol": 2.2168850284651853
+    },
+    {
+      "scope": "canonical25",
+      "source_id": "q88jh5-pqq-la_model__conditioned_La__seed-1_sample-2",
+      "group": "q88jh5",
+      "expected_class": "Ca",
+      "conditioning": "La",
+      "policies": {
+        "origin": {
+          "R_kcal_mol": -405468.68769189663,
+          "outcome": "correct",
+          "Ca_band_margin_kcal_mol": 2.934138414741028,
+          "La_band_margin_kcal_mol": -13.231817326624878,
+          "expected_band_margin_kcal_mol": 2.934138414741028
+        },
+        "operational": {
+          "R_kcal_mol": -405459.92572552245,
+          "outcome": "correct",
+          "Ca_band_margin_kcal_mol": 2.3612701794481836,
+          "La_band_margin_kcal_mol": -5.833441226452123,
+          "expected_band_margin_kcal_mol": 2.3612701794481836
+        }
+      },
+      "accommodation_delta_R_kcal_mol": 8.761966374178883,
+      "expected_band_margin_change_kcal_mol": -0.5728682352928445
+    }
+  ],
+  "complete_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_failure_diagnosis_20261013/calibration_v2/execution/RESULT.json",
+    "sha256": "9bdcb9d3c98cebd8788958d6ba5803c07e1b050c13d7f2388d524eb0b8330f9c"
+  }
+}

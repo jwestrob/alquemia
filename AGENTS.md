@@ -1,26 +1,28 @@
-# Active: recover eighteen unavailable Ca sources — 12 October 2026
+# Complete: Ca-source coverage recovery — 12 October 2026
 
-Jacob: "Well we need to redo those structures then, don't we?" Recover these
-cases separately, preserving original125 outcomes and frozen calibration. Read
-[the current recovery checkpoint](diagnostics/ca_coverage_recovery_20261012/CURRENT.md).
-Actual audits2864/2866 complete: fifteen offsite Ca placements, one existing-H
-mapping defect with intact disulfide. MxaF2869/2873 recoveredbothmissingcases
-withcorrectCa calls; original125 unchanged, recovery107/1/1/16. RepairedXoxF
-native2875/solvent2880 completed: repairedXoxF is inconclusive (staticLa-correct).
-Recovery overlay107correct/1wrong/2inconclusive/15unavailable. ExaA two-Ca
-AF3 scout2881/audit2884 completed: allfive uniquePQQCa sites, remoteCa retained.
-C5AXV8 fold2912/audit2925 and Q88JH5 fold2913/audit2931 completed5/5each.
-All15 new sources pass spectator preparation2969/2985; oldone-Ca regressionexact.
-Q9jobs2996-2999 complete: all5Ca-correct underall3policies; recovery112/1/2/10.
-C5/Q88 native3018/3019 complete,3020 stillruns;collector3021/solvent3022 follow.
-No C5/Q88 compositeyet. Pipelinewake3731153 and finalmerger3049/wake3772470 remain.
-Q9result is coverage recovery withunchangedbands; no new accommodationaccuracyclaim.
-Root integrates both5+10 batches; no promotion. Root owns execution/scoring; agents
-own disjoint MxaF, disulfide and refold code. New Ca-source recovery is authorized;
-older prohibitions on repairing the completed primary test do not block it.
-All science on Slurm; production and original results remain unchanged. Existing
-LanM jobs are preserved, new La/Dy work remains lower priority. Readiness probes
-off; owned completion wakes mandatory. Inspect current receipts before reruns.
+Read [the delivery](diagnostics/ca_coverage_recovery_20261012/DELIVERY.md) and
+[current checkpoint](diagnostics/ca_coverage_recovery_20261012/CURRENT.md).
+All 18 unavailable accommodated sources now have separate recovery results:
+**119 correct / 3 wrong / 3 inconclusive / 0 unavailable** across 125 models.
+Static origins on the same sources give 117/1/7/0. Original primary125 remains
+105/1/1/18; calibration and production are unchanged. These are correlated folds.
+
+Both MxaF searches recover correctly. Repaired MMOL_2048 is inconclusive after
+accommodation (static La-correct). All 15 two-Ca folds and preparations pass:
+ExaA 5 correct; ExaF 4 correct/1 inconclusive; PedE 3 correct/2 wrong. PedE samples
+1/2 change from inconclusive to wrong La; saved numerical/state/selection checks
+pass, and no unique physical cause is established. Preserve those errors and
+all inspected sources; no retuning, new voting policy or automatic promotion.
+
+All recovery jobs and final merger3049 are complete and acknowledged. Do not
+rerun preparations, folds or scores from older pending notes. Root and the
+three agents finished reports, exact result pins and vault updates. Recovery
+cost is 74,388 allocated CPU-seconds and 387 allocated GPU-seconds, including
+failed startup/support jobs; exact receipts are in the delivery directory.
+Existing LanM2665/2666 and collector2669 are preserved under Jacob's instruction.
+No new La/Dy calculation follows automatically from these completion events.
+All new science uses Slurm; readiness probes remain off and completion wakes
+remain mandatory. Unrelated dirty files and PQQ production belong to other work.
 
 # Priority: corrected La/Ca recalibration first — 12 October 2026
 

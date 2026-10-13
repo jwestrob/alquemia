@@ -1,146 +1,54 @@
-# Ca reference coverage recovery — 12 October 2026
+# Ca reference coverage recovery — complete, 12 October 2026
 
-Jacob authorized recovery of the eighteen unavailable Ca-conditioned models.
-Keep the original 125-source result and frozen 25-reference calibration intact.
-No production promotion or new La/Dy research is part of this recovery.
+Read [DELIVERY.md](DELIVERY.md), [RESULT.json](RESULT.json) and
+[SOURCES.tsv](SOURCES.tsv). All 18 originally unavailable accommodated sources
+now have separate recovery results. Final collector 3049 completed and root
+acknowledged the actual event.
 
-## Completed recovery
+| Same 125 sources | Correct | Wrong | Inconclusive | Unavailable |
+|---|---:|---:|---:|---:|
+| Static origin | 117 | 1 | 7 | 0 |
+| Accommodated operational/math | 119 | 3 | 3 | 0 |
 
-Both interrupted MxaF models are recovered and classify correctly as Ca under
-all three policies. Native job 2869 and corrected-solvent job 2873 completed;
-all cached-component replay and new component gates passed. The separate recovery
-overlay gives **107 correct / 1 wrong / 1 inconclusive / 16 unavailable**. The
-original result remains 105 / 1 / 1 / 18. See mxaf/RESULT.md and its exact pins.
+Original primary125 remains 105/1/1/18. No new fit, source selection, ensemble
+policy or production promotion. These are correlated model sources.
 
-MMOL_2048 XoxF4-1 Ca sample0 had an intact Cys127–128 disulfide; one existing
-Cys128 HB2 was too far from CB to receive a source-graph parent. Diagnostic 2864
-and repair 2870 completed. Only that H moved 0.287 A to the ff19SB 1.09 A C-H
-length. Heavy atoms, original core, protons/waters and gates are unchanged.
-The 199-atom envelope and frozen state pass; both real controls replay.
-Native job 2875 completed all six matrix cells under the original proposal policy.
-Corrected-solvent job 2880 completed and passed component gates. The recovered
-MMOL source is **inconclusive under accommodation**, while its static origin is
-correctly La-like under its own frozen bands. Do not tune this result away. The
-combined recovery overlay is **107 correct / 1 wrong / 2 inconclusive / 15 unavailable**;
-all 125 primary rows remain intact. See disulfide/solvent_v1/FINAL_COLLECTION.json
-and FINAL_COLLECTION_PRIMARY_RECOVERY_OVERLAY.json in the matching workspace.
+## Completed work
 
-## Fifteen models need a distinct source-occupancy hypothesis
+- MxaF interrupted samples 1/4: both correct Ca; jobs 2869/2873.
+- MMOL_2048: one existing Cys128 hydrogen mapping repair, no heavy-atom change;
+  jobs 2864/2870/2875/2880. Static La-correct, accommodated inconclusive.
+- Fifteen alternative two-Ca AF3 sources all have unique PQQ Ca and retained
+  remote structural Ca: folds 2881/2912/2913, audits 2884/2925/2931.
+- Spectator preparation 2969/2985: all 15 pass, source heavy coordinates retained,
+  old single-Ca regression exact. No global spectator-response model is claimed.
+- Q9/ExaA scoring 2996–2999: 5 correct Ca. C5/ExaF scoring 3018–3022: 4 correct,
+  1 inconclusive; Q88/PedE: 3 correct, 2 wrong. Merger 3049 combines both batches
+  and the prior three repairs.
 
-Audit 2866 found valid PQQ in every source, with Ca 25.0–25.2 A away. No metadata
-repair is justified. Five models each belong to C5AXV8 ExaF, Q88JH5 PedE and
-Q9Z4J7 ExaA. Raw heavy coordinates and normalization are unchanged.
+PedE wrong samples 1/2 were inconclusive at origin. Numerical, state and selection
+checks pass; boundary contact does not distinguish failures. Physical cause
+unresolved. Read two_ca_scoring/PED_E_RECOVERY_FINDINGS.md. Do not retune bands,
+choose favorable sources or invent a five-fold vote from these inspected results.
 
-The ExaA 1FLG crystal provides independent evidence: the exact Q9 Asp45/Thr48/
-Asp51 positions map to crystal Asp11/Thr14/Asp17 in both chains, where they
-coordinate the real second, structural Ca site. The other Ca occupies the PQQ
-site. Thus the original single-Ca fold placed its ion at a real alternative site.
-See refold/REPORT.md and https://www.rcsb.org/structure/1FLG.
+## Resume without rerunning
 
-Successful preparation job 2879 on H200 verified all three exact AF3 cached inputs
-and mapped the crystal. Each new input preserves every original field and adds
-only a second Ca ligand. This occupancy is a homology-based hypothesis for PedE
-and ExaF, not experimental proof for them. No new MSA search. AF3 3.0.4 and actual
-weights are pinned, seed1, five samples, ten recycles; original fold runtime and
-recycles are unverified, so this is not a controlled one-variable fold comparison.
+Authoritative workspace: workspaces/ca_coverage_recovery_20261012/
+two_ca_scoring_final_v1/{RESULT.json,SOURCES.tsv,REPORT.md,EXECUTION_3049.json}.
+ROOT_ACK.json acknowledges the actual completion. Compact results and exact pins
+are in this diagnostic directory; raw workspaces and failed 2877/2878 remain.
+Historical absolute-v1 parity remains failed. All 28 recovery scheduler receipts
+total 74,388 allocated CPU-seconds / 387 allocated GPU-seconds, including failures
+and input support.
 
-**Q9 scout 2881 and source geometry audit 2884 COMPLETED**: all five sources
-have exactly one PQQ-associated Ca (2.400–2.421 A) and one retained structural Ca
-(~25 A from PQQ). All 4849 source atoms/coordinates/occupancies are preserved.
-Sample3 uses active chain D/spectator B; the other four use active B/spectator D.
-Use per-row selectors. These are source-geometry results, not scores.
+Recovery is finished. Root owns integration; all preparation, fold and scoring
+agents completed scoped reports and vault notes. No new molecular submission
+follows automatically. The next question is the PedE accommodation error, not
+more coverage repair. Production and original records remain unchanged.
 
-The same frozen AF3 continuation is complete: C5AXV8 fold2912/audit2925 and
-Q88JH5 fold2913/audit2931 each retain all five models and pass the same unique
-PQQ-Ca geometry rule. Thus **all fifteen newly generated sources have a PQQ-bound
-Ca plus the preserved structural Ca**. This resolves source placement, not final
-chemical preparation or classification. C5 sample1 selects activeD (other fourB);
-Q88 selects activeD in all five. Always consume the actual selectors.
-
-Each fold used12CPUs/oneH200 and took about118s in its wrapper; no new MSA search,
-memory/time request or parameter change. GPU QOS imposed12GiB hostRAM. All outputs,
-terminal receipts, completion wakes and root acknowledgements remain in the
-matching refold workspace. Do not rerun any of these completed fifteen folds.
-
-## All fifteen preparations admitted; ExaA scores complete
-
-Spectator-aware preparation2969/2985 completed **15/15** under the same new source
-adapter. The previously scored one-Ca P12293 sample0 exactly reproduces its old
-core/context coordinates, maps and state. Both native Ca and all source heavy
-coordinates are retained exactly. All paired local contexts have192atoms and
-match their own frozen canonical state and fragment membership. Spectators are
-23.74–24.21A from the nearest retained heavy atom, outside the unchanged4.3A
-boundary. Their exclusion from the local Hamiltonian is explicit; this is not a
-global electrostatic model. See spectator_preparation/FINAL_REPORT.md and actual
-FINAL_PREPARATION.json in spectator_preparation_q9_v2 and _c5q88_v1 workspaces.
-
-The existing native CPU and corrected-solvent kernels now score these real inputs:
-
-| Batch | Native jobs (7CPUs each) | Collector | Corrected solvent (12CPUs) | Completion wake PID |
-|---|---|---|---|---|
-| Q9/ExaA, five sources | 2996,2997 | 2998 afterany | 2999 afterok collector | 3714564 |
-| C5/ExaF + Q88/PedE, ten sources | 3018,3019,3020 | 3021 afterany | 3022 afterok collector | 3731153 |
-
-**Q9/ExaA jobs2996–2999 completed: all five new sources correctly classify Ca**
-under origin, operational and mathematical policies. All required native cells
-and corrected-solvent components are available; calibration is unchanged. This
-recovers source coverage. Both static and accommodated results are correct, so
-these five do not demonstrate extra classification benefit from accommodation.
-The separate cumulative recovery overlay is now112correct/1wrong/2inconclusive/
-10unavailable; original125 remains105/1/1/18.
-
-C5/Q88 native3018/3019 completed seven sources; native3020 is still running with
-one further source complete at this checkpoint. Collector3021, solvent3022 and
-finalmerger3049 follow their declared dependencies. No C5/Q88 classifications
-exist yet. Do not repeat completed Q9 work or treat native-only energies as the
-final composite. Exact sourceIDs/components/outcomes are in
-`two_ca_solvent_q9_v1/FINAL_COLLECTION.json` and its alternative-source overlay.
-The same bounded four-mode search, shared candidate pool, corrected GFN2 and
-frozen bands apply throughout; no source ranking or calibration change.
-
-Exact submission/dependency/wake commands are in the matching
-`two_ca_scoring_q9_v1` and `two_ca_scoring_c5q88_v1` workspaces. Both batch overlays
-preserve primary125 plus the earlier three recoveries. The final cumulative
-report must combine both actual5+10 results; neither batch alone is the complete
-fifteen-source outcome. Final one-CPU merger **3049** is queued afterany2999:3022,
-with wake3772470, using `two_ca_scoring_final_v1/manifest.json`. It requires both
-actual batch outputs and writes RESULT.json, SOURCES.tsv and REPORT.md; missing
-outputs remain an explicit failed collection, not invented scores. All scoped
-implementations are complete; Gauss records the actual Q9 result and root
-integrates the remaining outcomes.
-
-## Runtime failures retained
-
-Job 2877 stopped before scientific work because the node-local container launcher
-has a different hash from login. Technical v3 records each actual node launcher
-while retaining exact shared container/weights/input pins. Job 2878 then exposed
-an Apptainer 1.1.3 user-namespace startup failure on CPU node5; schema never ran.
-H200 Apptainer 1.5.4 ran all actual schema/reference checks successfully as 2879.
-No privilege flags, installations or policy changes were made. Original failed
-outputs remain. Unrun disulfide native_v1 metadata had an ID suffix bug; native_v2
-corrected it before any molecular call. No completed chemistry was repeated.
-
-## Resume precisely
-
-Root owns integration and submissions. Curie/Heisenberg preparation and refold
-reports are complete; Gauss finishes the small cumulative result merger.
-Read actual Slurm status and these receipts before acting:
-
-- Completed disulfide/solvent_v1/FINAL_COLLECTION.json and its primary/recovery
-  overlay retain the new inconclusive result. No further MMOL optimization.
-- workspaces/ca_coverage_recovery_20261012/refold/audit_q9_v1/execution/FINAL_AUDIT.json
-  after2884. Read every sample and distinguish implementation errors from
-  source geometry failures; this audit is not full endpoint preparation.
-- All three fold EXECUTION.json and audit FINAL_AUDIT.json are complete. Use
-  their exact per-row source/active/spectator selectors; no fold/audit reruns.
-- Do not repeat completed preparation2969/2985. Inspect the exact native lane
-  receipts and the dependent NATIVE_COLLECTION.json in both scoring workspaces.
-- Read corrected-solvent outputs under two_ca_solvent_q9_v1 and
-  two_ca_solvent_c5q88_v1 when their jobs finish. Retain unavailable cells and
-  actual costs. Combine the two disjoint new-source batches on the same immutable
-  primary125/prior-three-recovery ledger; no automatic production promotion.
-
-Existing LanM 2665/2666 and collector2669 remain preserved. Readiness probes stay
-off; owned completion wakes are armed. Avoid stale/mismatched node-48-256g-18.
-All science uses Slurm. Scoped commits are backed up to the existing main branch;
-check live git history for the latest push. No push of unrelated dirty files.
+At final review, LanM 2665/2666 still run and collector 2669 waits; old reports
+2832/2833 still appear RUNNING on node-48-256g-18. Preserve under Jacob's explicit
+no-cancellation instruction. Inspect live scheduler/receipts before acting.
+Completion watchers remain armed; readiness probes stay off. All new science
+uses Slurm under current policies. Commit only owned paths; unrelated dirty
+work remains untouched.

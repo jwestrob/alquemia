@@ -61,3 +61,14 @@ common-pool rules remain pinned. Corrected solvent collection retains existing
 component-v2 acceptance and the failed historical absolute-v1 parity gate.
 No production promotion, reference fit, new triple policy, or GPU extrapolation
 is part of this implementation.
+
+## Actual completion — 12 October 2026
+
+The pending/unrun statements above are historical. All five native lanes and
+both solvent batches completed; each native lane passed its two archived
+energy/force qualification fixtures, and all required component-v2 gates passed.
+The cumulative merger3049 executed successfully on Slurm. Independent review
+confirmed exact primary125 preservation, the three prior recoveries and disjoint
+five-plus-ten additions; JSON/TSV decisions and all scheduler rows agree. See
+../DELIVERY.md for results, failures, costs and physical limitations. No extra
+molecular computation was run to write this completion note.

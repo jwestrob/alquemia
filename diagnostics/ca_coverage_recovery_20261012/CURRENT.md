@@ -50,10 +50,17 @@ have exactly one PQQ-associated Ca (2.400–2.421 A) and one retained structural
 Sample3 uses active chain D/spectator B; the other four use active B/spectator D.
 Use per-row selectors. These are source-geometry results, not scores.
 
-The same frozen AF3 manifest now runs C5AXV8 **2912** and Q88JH5 **2913**, five
-samples each, normal H200 queue, 12 CPUs/one GPU. Wakes3578368/3578371 are armed;
-exact submission/watch commands are in refold/run_v3_h200/. No new MSA search,
-memory/time request or parameter change. Actual GPU QOS caps host RAM at12GiB.
+The same frozen AF3 continuation is complete: C5AXV8 fold2912/audit2925 and
+Q88JH5 fold2913/audit2931 each retain all five models and pass the same unique
+PQQ-Ca geometry rule. Thus **all fifteen newly generated sources have a PQQ-bound
+Ca plus the preserved structural Ca**. This resolves source placement, not final
+chemical preparation or classification. C5 sample1 selects activeD (other fourB);
+Q88 selects activeD in all five. Always consume the actual selectors.
+
+Each fold used12CPUs/oneH200 and took about118s in its wrapper; no new MSA search,
+memory/time request or parameter change. GPU QOS imposed12GiB hostRAM. All outputs,
+terminal receipts, completion wakes and root acknowledgements remain in the
+matching refold workspace. Do not rerun any of these completed fifteen folds.
 
 Curie implements the separately versioned spectator-aware preparation adapter
 under spectator_preparation/: retain both full-source ions, original canonical
@@ -77,7 +84,8 @@ corrected it before any molecular call. No completed chemistry was repeated.
 
 ## Resume precisely
 
-Root owns integration and current jobs; agents finish scoped result reports.
+Root owns integration and submissions. Curie owns spectator preparation; Gauss
+owns the thin native/solvent adapter; Heisenberg finishes actual refold reports.
 Read actual Slurm status and these receipts before acting:
 
 - Completed disulfide/solvent_v1/FINAL_COLLECTION.json and its primary/recovery
@@ -85,8 +93,8 @@ Read actual Slurm status and these receipts before acting:
 - workspaces/ca_coverage_recovery_20261012/refold/audit_q9_v1/execution/FINAL_AUDIT.json
   after2884. Read every sample and distinguish implementation errors from
   source geometry failures; this audit is not full endpoint preparation.
-- Inspect folds/c5axv8 and folds/q88jh5 EXECUTION.json after2912/2913, then
-  apply the same five-source audit under Slurm. Do not regenerate Q9.
+- All three fold EXECUTION.json and audit FINAL_AUDIT.json are complete. Use
+  their exact per-row source/active/spectator selectors; no fold/audit reruns.
 - Run the narrow spectator preparation and real-source regression under Slurm
   when Curie supplies the implementation. Score only admitted states with the
   same corrected Hamiltonian and frozen bands; preserve failed preparations.

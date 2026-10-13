@@ -1,3 +1,5 @@
+> **Result available, 13 October 2026:** Both endpoints converged; actual comparison has 6/6 cells and retains the Hans-source reversal. Read [FINAL_REPORT.md](FINAL_REPORT.md). The queued/unrun statements below are historical. Scheduler2669 remains RUNNING despite a complete worker receipt; do not duplicate or cancel.
+
 # Six-cell LanM comparison queued
 
 Job **2669** runs the existing repaired-origin comparison after both Hans8FNR

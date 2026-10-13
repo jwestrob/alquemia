@@ -1,5 +1,29 @@
 # Field-aware metal response — restart checkpoint
 
+## Complete six-cell result — 13 October 2026
+
+Both missing Hans8FNR endpoints converged: La 2665 and Dy 2666. The complete
+six-cell comparison retains opposite Hans-versus-Mex exchange signs:
++11.689857 kcal/mol for La-conditioned 8DQ2; −18.269452 for Dy-conditioned 8FNR,
+including matched classical terms. Read
+[FINAL_REPORT](../claude_lanm_20261012/03_comparison_root_recovery/FINAL_REPORT.md)
+and its exact result/provenance JSON. These are conditional EF3 substitutions,
+not protein binding affinities. Different hydration/spectator states and frozen
+geometry prevent a unique failure diagnosis; no robust LanM classifier yet.
+
+Both scientific endpoint jobs are terminal. The existing comparator 2669 wrote
+its complete result in 3.47 seconds, but scheduler termination remains anomalous:
+Slurm says RUNNING/node-48-256g-18, worker says node-64-768g-18. Its watcher stays
+armed; preserve under no-cancellation instruction, do not repeat. No quantum
+jobs remain active; old reports 2832/2833 are also still registered RUNNING.
+
+Two recovered endpoints cost 935,880 allocated CPU-seconds, zero GPU, excluding all
+prior attempts. Raw outputs, original failures and state approximations remain
+pinned. Root acknowledged the Dy event; agents independently checked raw endpoint
+convergence and all 52 comparison pins. No new molecular work or promotion.
+The fixed-source comparison is closed; do not relaunch from older checkpoints.
+
+
 ## Hans8FNR La recovered — 12 October 2026,21:23Pacific
 
 La2665 converged and passed existing electronic endpoint collection: energy

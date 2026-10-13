@@ -1,12 +1,21 @@
-# LanM endpoint update — 12 October 2026,21:23Pacific
+# LanM comparison complete — 13 October 2026
 
-Hans8FNR La job2665 completed and passed the existing electronic collector;
-five of six repaired origins are available. Dy2666 still runs; comparison2669
-already waits. Read diagnostics/claude_lanm_20261012/02_endpoint_recovery/
-LA_RESULT_2665.md and the actual collections. No new molecular work,rerun or
-promotion. Completion watchers remain alive. This is PBE0-D4 reference work;
-Ca-source recovery is complete as recorded below. Older notes saying both
-LanM endpoints still run are historical. Readiness probes remain OFF.
+Both Hans8FNR continuations 2665/2666 converged and passed electronic collection.
+All six origins are available. Read
+[the final comparison](diagnostics/claude_lanm_20261012/03_comparison_root_recovery/FINAL_REPORT.md).
+The source reversal persists: Hans8DQ2−Mex+11.689857, Hans8FNR−Mex−18.269452 kcal/mol
+including matched classical terms. Positive means conditional relative La
+preference in Hans; no affinity or robust classifier is established. Different
+source water/spectator inventories, fixed geometry and absent bulk solvent remain
+explicit. Do not select the favorable source or rerun the same SCF problem.
+
+The comparison worker 2669 wrote a complete 6/6 result and success receipt; Slurm
+still labels 2669 RUNNING on the inconsistent node identity. Preserve it and its
+terminal watcher under Jacob's no-cancellation instruction. Older reports 2832/2833
+also remain listed; no new calculation or automatic production promotion.
+Root acknowledged Dy completion, pinned results, and updated the vault. The next
+scientific branch needs a specific source-state/structural-response hypothesis.
+Ca delivery below remains unchanged. Readiness probes remain OFF.
 
 # Complete: Ca-source coverage recovery — 12 October 2026
 

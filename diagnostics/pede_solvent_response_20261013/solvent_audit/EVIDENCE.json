@@ -1,0 +1,422 @@
+{
+  "schema": "pede_solvent_saved_decomposition_evidence.v1",
+  "status": "complete",
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/solvent_audit_v1/execution/RESULT.json",
+    "sha256": "b48d8dec8bd5895df435fa12dcf2f9d801bc105aa52be126249d158d344f052d"
+  },
+  "execution": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/solvent_audit_v1/execution/EXECUTION_3352.json",
+    "sha256": "994f2dcc26dbf339e81d92f8d19e2082908bc067f02a44dc59ad8778fae8e187"
+  },
+  "components_table": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/solvent_audit_v1/execution/COMPONENTS.tsv",
+    "sha256": "0e7f96a874c7dab15003e3d921a66af525fbb7c6f8ff3057c22b31f6abbd1218"
+  },
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/solvent_audit_v1/CONFIG.json",
+    "sha256": "dbc3b292a4f73520b0dc00038bbf7eb9e37a7d19395cca02131c94d1ed4aeabc"
+  },
+  "declared_sources": 9,
+  "declared_endpoints": 36,
+  "new_molecular_calls": 0,
+  "new_population_analysis": false,
+  "new_correction": false,
+  "sample3_to_sample1": {
+    "from_source": "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-3",
+    "to_source": "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-1",
+    "Ca_minus_La_terms_kcal_mol": {
+      "Gelec": 38.355220759810834,
+      "Gsasa": -0.19687025661382584,
+      "Ghb": 1.7025500991918747,
+      "Gshift": 0.0,
+      "intrinsic_remainder": -18.60427230159239
+    },
+    "by_metal_kcal_mol": {
+      "Ca": {
+        "Gelec": -210.97341184630244,
+        "Gsasa": -0.06958744098087521,
+        "Ghb": -9.9157467113026,
+        "Gshift": 0.0,
+        "intrinsic_remainder": 164.2294470568477
+      },
+      "La": {
+        "Gelec": -249.32863260611327,
+        "Gsasa": 0.12728281563295063,
+        "Ghb": -11.618296810494474,
+        "Gshift": 0.0,
+        "intrinsic_remainder": 182.83371935844008
+      }
+    },
+    "saved_solvent_double_difference_kcal_mol": 21.256628301423902,
+    "sum_residual_kcal_mol": -6.274092356761685e-10
+  },
+  "measured_cost": {
+    "elapsed_seconds": 0.8181104310788214,
+    "process_CPU_seconds": 0.7031179999999999,
+    "peak_RSS_KiB": 32608
+  },
+  "scheduler_terminal_record": {
+    "job_id": "3352",
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "start": "2026-10-13T02:21:28",
+    "end": "2026-10-13T02:21:30",
+    "elapsed_seconds": "2",
+    "allocated_cpus": "1",
+    "nodes": "node-64-768g-5"
+  },
+  "sources": [
+    {
+      "source_case_id": "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-0",
+      "cohort": "recovered_two_Ca",
+      "contrast_terms_kcal_mol": {
+        "Gelec": -99.34110923649433,
+        "Gsasa": -0.17834372651685015,
+        "Ghb": 0.8724853718247196,
+        "Gshift": 0.0,
+        "intrinsic_remainder": -17.328395082351804
+      },
+      "metals": {
+        "Ca": {
+          "U_Eh": -0.5921399102130067,
+          "Gsolv_Eh": -0.782020459026,
+          "terms_kcal_mol": {
+            "Gelec": -478.8618227291078,
+            "Gsasa": 8.365433752618584,
+            "Ghb": -20.907044873766907,
+            "Gshift": 0.6781869496123788,
+            "intrinsic_remainder": 119.15184330847275
+          },
+          "Gsolv_closure_Eh": -1.1102230246251565e-16,
+          "U_decomposition_closure_Eh": -1.1102230246251565e-16
+        },
+        "La": {
+          "U_Eh": -0.40732140550699114,
+          "Gsolv_Eh": -0.624816509638,
+          "terms_kcal_mol": {
+            "Gelec": -379.5207134926135,
+            "Gsasa": 8.543777479135434,
+            "Ghb": -21.779530245591626,
+            "Gshift": 0.6781869496123788,
+            "intrinsic_remainder": 136.48023839082455
+          },
+          "Gsolv_closure_Eh": 1.1102230246251565e-16,
+          "U_decomposition_closure_Eh": 1.1102230246251565e-16
+        }
+      }
+    },
+    {
+      "source_case_id": "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-1",
+      "cohort": "recovered_two_Ca",
+      "contrast_terms_kcal_mol": {
+        "Gelec": -74.35915057502291,
+        "Gsasa": -0.39122932008671185,
+        "Ghb": 2.3372912973398527,
+        "Gshift": 0.0,
+        "intrinsic_remainder": -25.24751737896713
+      },
+      "metals": {
+        "Ca": {
+          "U_Eh": -0.6762961062469799,
+          "Gsolv_Eh": -1.101339922585,
+          "terms_kcal_mol": {
+            "Gelec": -670.6731704277136,
+            "Gsasa": 8.210872264308232,
+            "Ghb": -29.31712430272109,
+            "Gshift": 0.6781869496123788,
+            "intrinsic_remainder": 266.7190216172236
+          },
+          "Gsolv_closure_Eh": -2.220446049250313e-16,
+          "U_decomposition_closure_Eh": -2.220446049250313e-16
+        },
+        "La": {
+          "U_Eh": -0.5206640241459581,
+          "Gsolv_Eh": -0.98594232048,
+          "terms_kcal_mol": {
+            "Gelec": -596.3140198526906,
+            "Gsasa": 8.602101584394944,
+            "Ghb": -31.654415600060943,
+            "Gshift": 0.6781869496123788,
+            "intrinsic_remainder": 291.9665389961907
+          },
+          "Gsolv_closure_Eh": 0.0,
+          "U_decomposition_closure_Eh": 0.0
+        }
+      }
+    },
+    {
+      "source_case_id": "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-2",
+      "cohort": "recovered_two_Ca",
+      "contrast_terms_kcal_mol": {
+        "Gelec": -81.96029009753545,
+        "Gsasa": -0.20574319978807232,
+        "Ghb": 1.9914565698307136,
+        "Gshift": 0.0,
+        "intrinsic_remainder": -23.737236959452815
+      },
+      "metals": {
+        "Ca": {
+          "U_Eh": -0.6437866073810028,
+          "Gsolv_Eh": -0.994103912796,
+          "terms_kcal_mol": {
+            "Gelec": -606.5962029489941,
+            "Gsasa": 8.300816832379034,
+            "Ghb": -26.192424252957103,
+            "Gshift": 0.6781869496123788,
+            "intrinsic_remainder": 219.8274280540622
+          },
+          "Gsolv_closure_Eh": 0.0,
+          "U_decomposition_closure_Eh": 0.0
+        },
+        "La": {
+          "U_Eh": -0.4781925916850014,
+          "Gsolv_Eh": -0.866337592048,
+          "terms_kcal_mol": {
+            "Gelec": -524.6359128514587,
+            "Gsasa": 8.506560032167107,
+            "Ghb": -28.183880822787817,
+            "Gshift": 0.6781869496123788,
+            "intrinsic_remainder": 243.56466501351503
+          },
+          "Gsolv_closure_Eh": 0.0,
+          "U_decomposition_closure_Eh": 0.0
+        }
+      }
+    },
+    {
+      "source_case_id": "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-3",
+      "cohort": "recovered_two_Ca",
+      "contrast_terms_kcal_mol": {
+        "Gelec": -112.71437133483374,
+        "Gsasa": -0.194359063472886,
+        "Ghb": 0.634741198147978,
+        "Gshift": 0.0,
+        "intrinsic_remainder": -6.643245077374743
+      },
+      "metals": {
+        "Ca": {
+          "U_Eh": -0.5858922138889966,
+          "Gsolv_Eh": -0.749219747268,
+          "terms_kcal_mol": {
+            "Gelec": -459.6997585814111,
+            "Gsasa": 8.280459705289108,
+            "Ghb": -19.40137759141849,
+            "Gshift": 0.6781869496123788,
+            "intrinsic_remainder": 102.48957456037587
+          },
+          "Gsolv_closure_Eh": -9.999778782798785e-13,
+          "U_decomposition_closure_Eh": -9.999778782798785e-13
+        },
+        "La": {
+          "U_Eh": -0.39638553836402934,
+          "Gsolv_Eh": -0.57029975665,
+          "terms_kcal_mol": {
+            "Gelec": -346.9853872465774,
+            "Gsasa": 8.474818768761994,
+            "Ghb": -20.03611878956647,
+            "Gshift": 0.6781869496123788,
+            "intrinsic_remainder": 109.13281963775061
+          },
+          "Gsolv_closure_Eh": -1.1102230246251565e-16,
+          "U_decomposition_closure_Eh": -1.1102230246251565e-16
+        }
+      }
+    },
+    {
+      "source_case_id": "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-4",
+      "cohort": "recovered_two_Ca",
+      "contrast_terms_kcal_mol": {
+        "Gelec": -87.19126469712171,
+        "Gsasa": -0.20467660875741345,
+        "Ghb": 1.7529064016502502,
+        "Gshift": 0.0,
+        "intrinsic_remainder": -27.20797084734832
+      },
+      "metals": {
+        "Ca": {
+          "U_Eh": -0.6077455990940166,
+          "Gsolv_Eh": -0.856989576705,
+          "terms_kcal_mol": {
+            "Gelec": -523.7526813811468,
+            "Gsasa": 8.476592785735713,
+            "Ghb": -23.171176856466023,
+            "Gshift": 0.6781869496123788,
+            "intrinsic_remainder": 156.40295728833595
+          },
+          "Gsolv_closure_Eh": 9.999778782798785e-13,
+          "U_decomposition_closure_Eh": 9.999778782798785e-13
+        },
+        "La": {
+          "U_Eh": -0.42790607407204106,
+          "Gsolv_Eh": -0.720508713145,
+          "terms_kcal_mol": {
+            "Gelec": -436.56141668402506,
+            "Gsasa": 8.681269394493127,
+            "Ghb": -24.924083258116273,
+            "Gshift": 0.6781869496123788,
+            "intrinsic_remainder": 183.61092813568428
+          },
+          "Gsolv_closure_Eh": 1.1102230246251565e-16,
+          "U_decomposition_closure_Eh": 1.1102230246251565e-16
+        }
+      }
+    },
+    {
+      "source_case_id": "q88jh5-pqq-la_model__conditioned_La__seed-1_sample-0",
+      "cohort": "historical_La",
+      "contrast_terms_kcal_mol": {
+        "Gelec": -109.98399597196703,
+        "Gsasa": -0.157685699221501,
+        "Ghb": 1.0083573219020323,
+        "Gshift": 0.0,
+        "intrinsic_remainder": -5.553452737978532
+      },
+      "metals": {
+        "Ca": {
+          "U_Eh": -0.5972182371920098,
+          "Gsolv_Eh": -0.76651459374,
+          "terms_kcal_mol": {
+            "Gelec": -469.50991480816174,
+            "Gsasa": 8.119347340610068,
+            "Ghb": -20.282789013171744,
+            "Gshift": 0.6781869496123788,
+            "intrinsic_remainder": 106.23506764754573
+          },
+          "Gsolv_closure_Eh": 0.0,
+          "U_decomposition_closure_Eh": 0.0
+        },
+        "La": {
+          "U_Eh": -0.41445322432900866,
+          "Gsolv_Eh": -0.592599571145,
+          "terms_kcal_mol": {
+            "Gelec": -359.5259188361947,
+            "Gsasa": 8.277033039831569,
+            "Ghb": -21.291146335073776,
+            "Gshift": 0.6781869496123788,
+            "intrinsic_remainder": 111.78852038552427
+          },
+          "Gsolv_closure_Eh": 0.0,
+          "U_decomposition_closure_Eh": 0.0
+        }
+      }
+    },
+    {
+      "source_case_id": "q88jh5-pqq-la_model__conditioned_La__seed-1_sample-2",
+      "cohort": "historical_La",
+      "contrast_terms_kcal_mol": {
+        "Gelec": -79.44428109622999,
+        "Gsasa": -0.3070309491407288,
+        "Ghb": 2.2711443960509854,
+        "Gshift": 0.0,
+        "intrinsic_remainder": -31.822241273176644
+      },
+      "metals": {
+        "Ca": {
+          "U_Eh": -0.6565693969459971,
+          "Gsolv_Eh": -0.919473266343,
+          "terms_kcal_mol": {
+            "Gelec": -559.7826689665235,
+            "Gsasa": 7.970424801780337,
+            "Ghb": -25.84412850482702,
+            "Gshift": 0.6781869496123788,
+            "intrinsic_remainder": 164.97466879787794
+          },
+          "Gsolv_closure_Eh": 0.0,
+          "U_decomposition_closure_Eh": 0.0
+        },
+        "La": {
+          "U_Eh": -0.4823849209320201,
+          "Gsolv_Eh": -0.796000759776,
+          "terms_kcal_mol": {
+            "Gelec": -480.3383878702935,
+            "Gsasa": 8.277455750921066,
+            "Ghb": -28.115272900878004,
+            "Gshift": 0.6781869496123788,
+            "intrinsic_remainder": 196.79691007105458
+          },
+          "Gsolv_closure_Eh": -1.1102230246251565e-16,
+          "U_decomposition_closure_Eh": -1.1102230246251565e-16
+        }
+      }
+    },
+    {
+      "source_case_id": "q88jh5-pqq-la_model__conditioned_La__seed-1_sample-3",
+      "cohort": "historical_La",
+      "contrast_terms_kcal_mol": {
+        "Gelec": -108.10887198668513,
+        "Gsasa": -0.1792119800005505,
+        "Ghb": 0.9769221262428651,
+        "Gshift": 0.0,
+        "intrinsic_remainder": -4.326476574654379
+      },
+      "metals": {
+        "Ca": {
+          "U_Eh": -0.6337366400339874,
+          "Gsolv_Eh": -0.879223585563,
+          "terms_kcal_mol": {
+            "Gelec": -538.96847456182,
+            "Gsasa": 8.186736635983825,
+            "Ghb": -21.617578729435756,
+            "Gshift": 0.6781869496123788,
+            "intrinsic_remainder": 154.0453840627773
+          },
+          "Gsolv_closure_Eh": 1.000088900582341e-12,
+          "U_decomposition_closure_Eh": 1.000088900582341e-12
+        },
+        "La": {
+          "U_Eh": -0.45583073894300696,
+          "Gsolv_Eh": -0.708212363762,
+          "terms_kcal_mol": {
+            "Gelec": -430.8596025751349,
+            "Gsasa": 8.365948615984376,
+            "Ghb": -22.59450085567862,
+            "Gshift": 0.6781869496123788,
+            "intrinsic_remainder": 158.37186063743167
+          },
+          "Gsolv_closure_Eh": 9.99866855977416e-13,
+          "U_decomposition_closure_Eh": 9.99866855977416e-13
+        }
+      }
+    },
+    {
+      "source_case_id": "q88jh5-pqq-la_model__conditioned_La__seed-1_sample-4",
+      "cohort": "historical_La",
+      "contrast_terms_kcal_mol": {
+        "Gelec": -98.6143065093342,
+        "Gsasa": -0.167693643881746,
+        "Ghb": 1.1116516953227595,
+        "Gshift": 0.0,
+        "intrinsic_remainder": -17.880051788446025
+      },
+      "metals": {
+        "Ca": {
+          "U_Eh": -0.6304195374960386,
+          "Gsolv_Eh": -0.832744572336,
+          "terms_kcal_mol": {
+            "Gelec": -508.76810307469475,
+            "Gsasa": 8.162431895738704,
+            "Ghb": -22.62762433294709,
+            "Gshift": 0.6781869496123788,
+            "intrinsic_remainder": 126.9608761894558
+          },
+          "Gsolv_closure_Eh": -9.999778782798785e-13,
+          "U_decomposition_closure_Eh": -9.999778782798785e-13
+        },
+        "La": {
+          "U_Eh": -0.446278253523019,
+          "Gsolv_Eh": -0.677096964601,
+          "terms_kcal_mol": {
+            "Gelec": -410.15379656536055,
+            "Gsasa": 8.33012553962045,
+            "Ghb": -23.73927602826985,
+            "Gshift": 0.6781869496123788,
+            "intrinsic_remainder": 144.84092797790183
+          },
+          "Gsolv_closure_Eh": 9.99866855977416e-13,
+          "U_decomposition_closure_Eh": 9.99866855977416e-13
+        }
+      }
+    }
+  ]
+}

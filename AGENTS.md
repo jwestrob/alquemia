@@ -1,3 +1,13 @@
+# LanM endpoint update — 12 October 2026,21:23Pacific
+
+Hans8FNR La job2665 completed and passed the existing electronic collector;
+five of six repaired origins are available. Dy2666 still runs; comparison2669
+already waits. Read diagnostics/claude_lanm_20261012/02_endpoint_recovery/
+LA_RESULT_2665.md and the actual collections. No new molecular work,rerun or
+promotion. Completion watchers remain alive. This is PBE0-D4 reference work;
+Ca-source recovery is complete as recorded below. Older notes saying both
+LanM endpoints still run are historical. Readiness probes remain OFF.
+
 # Complete: Ca-source coverage recovery — 12 October 2026
 
 Read [the delivery](diagnostics/ca_coverage_recovery_20261012/DELIVERY.md) and

@@ -1,3 +1,5 @@
+> **Update,12 October21:23Pacific:** La2665 completed and its energy/gradients pass the existing collector. Dy2666 remains running; comparison2669 remains queued. Read [the actual La result](LA_RESULT_2665.md). The two-running/pending statements below are historical. No rerun or changed gate.
+
 # Task02 follow-up — Slurm gate passed; two endpoints running
 
 ## Executed 12 October 2026, 12:19 Pacific

@@ -1,5 +1,23 @@
 # Field-aware metal response — restart checkpoint
 
+## Hans8FNR La recovered — 12 October 2026,21:23Pacific
+
+La2665 converged and passed existing electronic endpoint collection: energy
+−5804.400869806574Eh,native198-atom gradient and point-charge gradient present.
+Five of six repaired reference origins now available. Dy2666 still RUNNING;
+existing comparison2669 waits for both. Read
+[the actual result](../claude_lanm_20261012/02_endpoint_recovery/LA_RESULT_2665.md).
+This is unchanged PBE0-D4/ECP46 same-state interrupted-orbital continuation,
+not GFN2,structural relaxation,affinity or a validated La/Dy classifier.
+Cost32,640s×12CPUs=391,680allocatedCPU-s; no GPU. Original failures retained.
+Root acknowledged completion; remaining completion/health watchers are alive.
+No new jobs/retries. On terminal events inspect actual collections and existing
+comparison result; preserve both Hans sources and all unavailable cells.
+
+Latest Ca recalibration/coverage delivery is complete under
+../ca_coverage_recovery_20261012/DELIVERY.md. Readiness probes are OFF; the older
+October9 monitor section below is historical and must not rearm them.
+
 ## Native GFN2 La parameter correction recorded — 9 October 2026
 
 Jacob supplied a tested full parameter table repairing La kcn/shpoly/lgam shell

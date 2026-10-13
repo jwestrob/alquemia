@@ -1,6 +1,6 @@
 # Two-Ca recovery: inputs and ExaA reference audit complete
 
-CPU preparation job 2879 completed on node-224-2t-8gpu-1. All three exact cached inputs passed the actual AF3 upstream schema: seed 1, chains A/B/C/D, every original field unchanged, with only a separate `[Ca+2]` ligand D appended from B. Root has submitted Q9Z4J7's five-model scout as **job 2881**, twelve CPUs/one H200 GPU. Its prediction and structural admission remain pending; no other refold job is submitted.
+CPU preparation job 2879 completed on node-224-2t-8gpu-1. All three exact cached inputs passed the actual AF3 upstream schema: seed 1, chains A/B/C/D, every original field unchanged, with only a separate `[Ca+2]` ligand D appended from B. Root has submitted Q9Z4J7's five-model scout as **job 2881**, twelve CPUs/one H200 GPU. Inference has now completed and the separate [generated-source audit](audit/REPORT.md) passed all five unique-PQQ-Ca site checks. Full protonation/context/scoring admission remains pending. The preparation-state details below retain their original scope.
 
 ## Why two Ca is physically motivated for ExaA
 
@@ -32,6 +32,6 @@ Prepared inputs are not scoring endpoints. Both ions remain in full sources. Uni
 - Job 2878 / `run_v3` on node 5: pinned shared runtime passed; exact Q9 input was written. Apptainer 1.1.3 failed namespace startup with `Could not write info to setgroups: Permission denied`. **The upstream schema never ran** despite the generic exception saying schema rejected. Actual log/receipt preserved; zero folds/energies or mapping.
 - Job 2879 / `run_v3_h200`: unchanged v3 implementation completed using node-local Apptainer 1.5.4. All three schema validations and the 1FLG audit passed. This establishes a working approved H200 transport; it does not diagnose the precise node 5 kernel/runtime cause or bypass any configuration.
 
-Job 2879 scheduler elapsed 15 s; receipt reports 11.876681 CPU-s, 7.303611 s inside the prepared-output phase, 199924 KiB parent / 185528 KiB child peak RSS. Scheduler MaxRSS separately reports 5106820K; these measurements have different accounting scopes and are retained as observed. No energy or fold calls occurred in preparation. Job 2881's inference cost/result remains pending. Root owns its watcher 3530162, event `ca-coverage-ExaA-two-Ca-AF3-scout-v1`.
+Job 2879 scheduler elapsed 15 s; receipt reports 11.876681 CPU-s, 7.303611 s inside the prepared-output phase, 199924 KiB parent / 185528 KiB child peak RSS. Scheduler MaxRSS separately reports 5106820K; these measurements have different accounting scopes and are retained as observed. No energy or fold calls occurred in preparation. Job 2881's completed inference cost/result and audit2884 are now recorded separately in audit/REPORT.md. Root owns its watcher 3530162, event `ca-coverage-ExaA-two-Ca-AF3-scout-v1`.
 
 This agent performed code/metadata work and read actual receipts on login; all input/schema/structure operations executed inside the real Slurm job. Python AST checks passed; no independent scientific tests or submissions were run by this agent.

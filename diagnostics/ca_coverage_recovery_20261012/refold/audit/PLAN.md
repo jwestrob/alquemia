@@ -1,0 +1,7 @@
+# Five generated Q9 models: source geometry audit
+
+Read all five actual model pins from completed job2881 EXECUTION.json. Retain every sample and all failures, without ranking. On one Slurm CPU, use the existing schema/connectivity PQQ helper and normalizer. Transfer only the validated PQQ residue name to a full mmCIF retaining every original atom, both native Ca, occupancy and coordinates exactly. The normalizer's intermediate PDB is retained but never supplies audit coordinates. Native Ca residues are not renamed or removed.
+
+Require one schema-valid PQQ and two native monatomic Ca sites. Identify an active site only when exactly one Ca has a PQQ heavy atom strictly closer than4.0Å, frozen before reading new coordinates. Record both Ca identities, all existing3.1Å typed contacts/CN, PQQ direct-donor distances, active–spectator distance, PQQ schema and complete source counts. Missing/ambiguous sites remain unavailable. This is descriptive source geometry, not hydrogen/protonation, fixed-context, spectator-admission or scoring qualification. The helper's PQQ microstate metadata describes validation only; no hydrogens are added to output. No energy/model calls or folds occur in this audit.
+
+Root submits and owns completion wake. Successful executable unique-PQQ-site examples may motivate the already-declared other two inputs; this audit does not launch them or select among the five models.

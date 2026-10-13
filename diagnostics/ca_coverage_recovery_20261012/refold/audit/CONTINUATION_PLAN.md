@@ -1,0 +1,9 @@
+# Same source-geometry audit for the remaining declared two-Ca inputs
+
+12 October 2026. Root submitted the already-declared C5AXV8 and Q88JH5 five-model AF3 batches as jobs 2912 and 2913 after Q9 inference 2881 and geometry audit 2884 passed. This declaration extends the identical source-geometry audit to all five actual terminal outputs of each target. It does not change the existing audit implementation, thresholds, normalization, selectors or all-sample retention.
+
+Each new manifest pins the real completed target EXECUTION.json and all five model bytes, the shared fold manifest, and the exact driver/helper/RUN pins from the executed Q9 audit. It replaces only target/model/output metadata and this target-scope declaration. No fold is repeated and no absent result is synthesized. All model rows and failures remain in the result, without ranking.
+
+Use one actual Slurm CPU. Require one complete schema-valid PQQ, exactly two native monatomic Ca ions and exactly one Ca strictly closer than 4.0 Å to a PQQ heavy atom. Transfer only the existing normalizer's validated PQQ residue name onto original full coordinates; retain both Ca ions and every source atom/occupancy/coordinate exactly. Report both ion identities, unchanged 3.1 Å typed contacts/CN, PQQ donor distances and intermetal separation. Ion labels may exchange roles, so each actual source's selector is authoritative.
+
+These are source-geometry checks only. No hydrogen output, spectator/context admission, optimization, MACE, GFN2 or score calculation occurs. The exact original 125 result and frozen corrected calibration remain intact. Root owns submission/wakes and any later execution; Curie owns the separately declared spectator-aware preparation. No additional folds, seeds, MSA searches or scoring are authorized by these manifests.

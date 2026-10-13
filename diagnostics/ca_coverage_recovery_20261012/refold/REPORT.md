@@ -1,6 +1,6 @@
 # Two-Ca recovery: inputs and ExaA reference audit complete
 
-CPU preparation job 2879 completed on node-224-2t-8gpu-1. All three exact cached inputs passed the actual AF3 upstream schema: seed 1, chains A/B/C/D, every original field unchanged, with only a separate `[Ca+2]` ligand D appended from B. Root has submitted Q9Z4J7's five-model scout as **job 2881**, twelve CPUs/one H200 GPU. Inference has now completed and the separate [generated-source audit](audit/REPORT.md) passed all five unique-PQQ-Ca site checks. Full protonation/context/scoring admission remains pending. The preparation-state details below retain their original scope.
+CPU preparation job 2879 completed on node-224-2t-8gpu-1. All three exact cached inputs passed the actual AF3 upstream schema: seed 1, chains A/B/C/D, every original field unchanged, with only a separate `[Ca+2]` ligand D appended from B. Root has submitted Q9Z4J7's five-model scout as **job 2881**, twelve CPUs/one H200 GPU. Inference has now completed and the separate [generated-source audit](audit/REPORT.md) passed all five unique-PQQ-Ca site checks. The remaining ten models also completed and passed the same source-geometry checks; see [C5/Q88 audits](audit/CONTINUATION_REPORT.md). Full protonation/context/scoring admission is separate. The preparation-state details below retain their original scope.
 
 ## Why two Ca is physically motivated for ExaA
 

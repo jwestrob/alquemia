@@ -1,0 +1,131 @@
+{
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/manifest.json",
+    "sha256": "1d34a717b2d97fe4c59852d2f894eddab24c4e69f6bdb0d86839ada694f88fb7"
+  },
+  "prepared": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/prepared/PREPARED.json",
+    "sha256": "f1134b4091849a7d2de8b5d0344ba3dec0853f267b74ae48d507312e79948a7e"
+  },
+  "container_launcher": {
+    "invoked_path": "/usr/local/bin/singularity",
+    "resolved_artifact": {
+      "path": "/usr/bin/apptainer",
+      "sha256": "ebcf9e6d4fd3dea6f10ef50863b528dc0981c048ea568ce86345a495d163345d"
+    },
+    "version": "apptainer version 1.5.4",
+    "version_stderr": "",
+    "hostname": "node-224-2t-8gpu-1"
+  },
+  "target": "q88jh5",
+  "input": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/prepared/inputs/q88jh5.json",
+    "sha256": "da00cc41da79441feac33034fdd87c3e56ade4ccc82acd07f93df6283dbf73f3"
+  },
+  "command": [
+    "/usr/local/bin/singularity",
+    "exec",
+    "--nv",
+    "--bind",
+    "/groups,/shared",
+    "--pwd",
+    "/app/alphafold",
+    "/shared/software/alphafold3/3.0.4/container/alphafold3.sif",
+    "python",
+    "/app/alphafold/run_alphafold.py",
+    "--json_path=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/prepared/inputs/q88jh5.json",
+    "--output_dir=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/folds/q88jh5/outputs",
+    "--model_dir=/groups/shared/db/alphafold3/weights",
+    "--run_data_pipeline=false",
+    "--run_inference=true",
+    "--num_diffusion_samples=5",
+    "--num_recycles=10"
+  ],
+  "job_id": "2913",
+  "status": "execution_complete_not_structurally_validated",
+  "models": [
+    {
+      "sample": 0,
+      "model": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/folds/q88jh5/outputs/Q88JH5-pqq-Ca/seed-1_sample-0/Q88JH5-pqq-Ca_seed-1_sample-0_model.cif",
+        "sha256": "4ecf39839a09575d58d122c3df91ce653fd2d2e8764215b29fb7e60ea1e2da0e"
+      },
+      "new_source_id": "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-0",
+      "original_source_id": "q88jh5-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "state_id": "q88jh5__occupancy2Ca_v1"
+    },
+    {
+      "sample": 1,
+      "model": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/folds/q88jh5/outputs/Q88JH5-pqq-Ca/seed-1_sample-1/Q88JH5-pqq-Ca_seed-1_sample-1_model.cif",
+        "sha256": "424f17c3bff5ee6c181591dad3e1d1737dcc87ead9643222fee7b78917509599"
+      },
+      "new_source_id": "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-1",
+      "original_source_id": "q88jh5-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "state_id": "q88jh5__occupancy2Ca_v1"
+    },
+    {
+      "sample": 2,
+      "model": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/folds/q88jh5/outputs/Q88JH5-pqq-Ca/seed-1_sample-2/Q88JH5-pqq-Ca_seed-1_sample-2_model.cif",
+        "sha256": "f7626975b7205c153316f2f5170d3e017f528eab69b1e46b369dd083be4a1387"
+      },
+      "new_source_id": "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-2",
+      "original_source_id": "q88jh5-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "state_id": "q88jh5__occupancy2Ca_v1"
+    },
+    {
+      "sample": 3,
+      "model": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/folds/q88jh5/outputs/Q88JH5-pqq-Ca/seed-1_sample-3/Q88JH5-pqq-Ca_seed-1_sample-3_model.cif",
+        "sha256": "6b0e5357472a0df476d4fea7392d09da3973f7f87f77fc99f8a9516344da9e00"
+      },
+      "new_source_id": "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-3",
+      "original_source_id": "q88jh5-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "state_id": "q88jh5__occupancy2Ca_v1"
+    },
+    {
+      "sample": 4,
+      "model": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/folds/q88jh5/outputs/Q88JH5-pqq-Ca/seed-1_sample-4/Q88JH5-pqq-Ca_seed-1_sample-4_model.cif",
+        "sha256": "610441ce16b2657ea1680ab290d5ea44f52d2833542e7d96926b7e5cb22145c0"
+      },
+      "new_source_id": "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-4",
+      "original_source_id": "q88jh5-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "state_id": "q88jh5__occupancy2Ca_v1"
+    }
+  ],
+  "new_scores": 0,
+  "structural_admission": "not_yet_evaluated",
+  "CPU_affinity": [
+    24,
+    26,
+    28,
+    30,
+    32,
+    34,
+    136,
+    138,
+    140,
+    142,
+    144,
+    146
+  ],
+  "allocated_CPUs": 12,
+  "numerical_thread_limit": 12,
+  "SLURM_resources": {
+    "SLURM_JOB_GPUS": "2",
+    "SLURM_JOB_CPUS_PER_NODE": "12",
+    "SLURM_CPUS_PER_TASK": "12",
+    "CUDA_VISIBLE_DEVICES": "0",
+    "SLURM_JOB_NODELIST": "node-224-2t-8gpu-1"
+  },
+  "returncode": 0,
+  "wall_seconds": 117.87981711397879,
+  "child_CPU_seconds": 211.27286999999998,
+  "child_peak_RSS_KiB": 10520544,
+  "log": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/folds/q88jh5/af3.log",
+    "sha256": "53185d72b052adad47311570928c4c3f3a51a3d0b2bb00e4e30061d4348f84d6"
+  }
+}

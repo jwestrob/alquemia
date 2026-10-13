@@ -1,0 +1,1729 @@
+{
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/audit_q88jh5_v1/manifest.json",
+    "sha256": "8eaa8dd36052b855aaca84bcbfc9d51f753934b53b55e3dfc48d4f36e47291db"
+  },
+  "terminal": true,
+  "rows": [
+    {
+      "sample": 0,
+      "model": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/folds/q88jh5/outputs/Q88JH5-pqq-Ca/seed-1_sample-0/Q88JH5-pqq-Ca_seed-1_sample-0_model.cif",
+        "sha256": "4ecf39839a09575d58d122c3df91ce653fd2d2e8764215b29fb7e60ea1e2da0e"
+      },
+      "new_source_id": "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-0",
+      "original_source_id": "q88jh5-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "state_id": "q88jh5__occupancy2Ca_v1",
+      "status": "unique_PQQ_Ca_source_geometry",
+      "scope": "source geometry only; no protonation/context/scoring admission",
+      "new_hydrogens": false,
+      "energy_calls": 0,
+      "raw_PQQ_candidates": [
+        {
+          "chain": "C",
+          "resnum": 1,
+          "icode": "",
+          "resname": "LIG_C",
+          "schema_id": "protenix_generic_pqq_v1",
+          "microstate_used_for_validation": "pqq_ox_3minus_v1",
+          "formula": "C14H3N2O8"
+        }
+      ],
+      "normalizer": {
+        "lanthanum_residues": 0,
+        "pqq_residues": 1
+      },
+      "residue_name_alias": {
+        "before": {
+          "chain": "C",
+          "resnum": 1,
+          "icode": "",
+          "resname": "LIG_C"
+        },
+        "after": {
+          "chain": "C",
+          "resnum": 1,
+          "icode": "",
+          "resname": "PQQ"
+        }
+      },
+      "full_source": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/audit_q88jh5_v1/execution/sample-0/full_source_PQQ_normalized.cif",
+        "sha256": "5280f26faff52089e94bf0aaa46df7cce54a63f5781b879a49a813ba2b2f6357"
+      },
+      "all_source_atoms_preserved_exactly": true,
+      "source_atom_count": 4922,
+      "source_heavy_atom_count": 4922,
+      "source_hydrogen_count": 0,
+      "PQQ": {
+        "chain": "C",
+        "resnum": 1,
+        "icode": "",
+        "resname": "PQQ",
+        "schema_id": "protenix_generic_pqq_v1",
+        "microstate_used_for_validation": "pqq_ox_3minus_v1",
+        "formula": "C14H3N2O8",
+        "validated_microstate_metadata": {
+          "spec_version": "pqq_microstates.v1",
+          "microstate_id": "pqq_ox_3minus_v1",
+          "role": "production_baseline",
+          "oxidation_state": "oxidized_quinone",
+          "formal_charge": -3,
+          "multiplicity": 1,
+          "protonated_carboxyl": null,
+          "atom_naming_schema": "protenix_generic_pqq_v1",
+          "allowed_donor_atoms": [
+            "N2",
+            "O1",
+            "O5",
+            "O6"
+          ],
+          "hydrogens": [
+            {
+              "name": "H_N1",
+              "parent_atom": "N1",
+              "kind": "invariant_ring",
+              "origin": "generated_opposite_bisector",
+              "xyz_A": [
+                -1.883665,
+                6.741282,
+                -0.907771
+              ]
+            },
+            {
+              "name": "H_C3",
+              "parent_atom": "C10",
+              "kind": "invariant_ring",
+              "origin": "generated_opposite_bisector",
+              "xyz_A": [
+                -0.802075,
+                9.035035,
+                2.446709
+              ]
+            },
+            {
+              "name": "H_C8",
+              "parent_atom": "C1",
+              "kind": "invariant_ring",
+              "origin": "generated_opposite_bisector",
+              "xyz_A": [
+                -6.670049,
+                6.193365,
+                -2.196733
+              ]
+            }
+          ],
+          "formula": "C14H3N2O8"
+        },
+        "source_atom_count": 24,
+        "source_heavy_atom_count": 24,
+        "microstate_metadata_is_not_source_protonation": true
+      },
+      "metal_sites": [
+        {
+          "selector": {
+            "chain": "B",
+            "resnum": 1,
+            "icode": "",
+            "resname": "LIG_B",
+            "atom": "CA1",
+            "element": "Ca"
+          },
+          "label": "B:LIG_B1:CA1",
+          "xyz_A": [
+            6.021,
+            -17.486,
+            3.312
+          ],
+          "nearest_PQQ_heavy_A": 25.072189154519396,
+          "PQQ_associated": false,
+          "PQQ_donor_distances_A": {
+            "O1": 29.67650548834886,
+            "N2": 28.789854393518567,
+            "O5": 29.808990623635683,
+            "O6": 29.13569432843501
+          },
+          "typed_CN": 6,
+          "typed_contacts": [
+            {
+              "chain": "A",
+              "resnum": 53,
+              "icode": "",
+              "resname": "ASP",
+              "atom": "O",
+              "element": "O",
+              "distance_A": 2.332,
+              "donor_type": "backbone_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 56,
+              "icode": "",
+              "resname": "THR",
+              "atom": "O",
+              "element": "O",
+              "distance_A": 2.333,
+              "donor_type": "backbone_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 59,
+              "icode": "",
+              "resname": "ASP",
+              "atom": "O",
+              "element": "O",
+              "distance_A": 2.528,
+              "donor_type": "backbone_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 53,
+              "icode": "",
+              "resname": "ASP",
+              "atom": "OD1",
+              "element": "O",
+              "distance_A": 2.628,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 59,
+              "icode": "",
+              "resname": "ASP",
+              "atom": "OD1",
+              "element": "O",
+              "distance_A": 2.675,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 56,
+              "icode": "",
+              "resname": "THR",
+              "atom": "OG1",
+              "element": "O",
+              "distance_A": 2.748,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            }
+          ],
+          "untyped_ON_3p1A": [],
+          "sulfur_contacts": []
+        },
+        {
+          "selector": {
+            "chain": "D",
+            "resnum": 1,
+            "icode": "",
+            "resname": "LIG_D",
+            "atom": "CA1",
+            "element": "Ca"
+          },
+          "label": "D:LIG_D1:CA1",
+          "xyz_A": [
+            -8.338,
+            9.524,
+            1.769
+          ],
+          "nearest_PQQ_heavy_A": 2.425659085691968,
+          "PQQ_associated": true,
+          "PQQ_donor_distances_A": {
+            "O1": 2.425659085691968,
+            "N2": 2.432019325581109,
+            "O5": 2.563183567363055,
+            "O6": 4.518665510966705
+          },
+          "typed_CN": 7,
+          "typed_contacts": [
+            {
+              "chain": "A",
+              "resnum": 221,
+              "icode": "",
+              "resname": "GLU",
+              "atom": "OE1",
+              "element": "O",
+              "distance_A": 2.271,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 308,
+              "icode": "",
+              "resname": "ASN",
+              "atom": "OD1",
+              "element": "O",
+              "distance_A": 2.371,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "C",
+              "resnum": 1,
+              "icode": "",
+              "resname": "PQQ",
+              "atom": "O1",
+              "element": "O",
+              "distance_A": 2.426,
+              "donor_type": "cofactor_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "C",
+              "resnum": 1,
+              "icode": "",
+              "resname": "PQQ",
+              "atom": "N2",
+              "element": "N",
+              "distance_A": 2.432,
+              "donor_type": "cofactor_N",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "C",
+              "resnum": 1,
+              "icode": "",
+              "resname": "PQQ",
+              "atom": "O5",
+              "element": "O",
+              "distance_A": 2.563,
+              "donor_type": "cofactor_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 221,
+              "icode": "",
+              "resname": "GLU",
+              "atom": "OE2",
+              "element": "O",
+              "distance_A": 3.001,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 358,
+              "icode": "",
+              "resname": "ASP",
+              "atom": "OD1",
+              "element": "O",
+              "distance_A": 3.051,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            }
+          ],
+          "untyped_ON_3p1A": [],
+          "sulfur_contacts": []
+        }
+      ],
+      "Ca_Ca_distance_A": 30.62844805079095,
+      "PQQ_associated_Ca_count": 1,
+      "active_Ca": {
+        "chain": "D",
+        "resnum": 1,
+        "icode": "",
+        "resname": "LIG_D",
+        "atom": "CA1",
+        "element": "Ca"
+      },
+      "spectator_Ca": {
+        "chain": "B",
+        "resnum": 1,
+        "icode": "",
+        "resname": "LIG_B",
+        "atom": "CA1",
+        "element": "Ca"
+      },
+      "spectator_context_admission": "not_evaluated"
+    },
+    {
+      "sample": 1,
+      "model": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/folds/q88jh5/outputs/Q88JH5-pqq-Ca/seed-1_sample-1/Q88JH5-pqq-Ca_seed-1_sample-1_model.cif",
+        "sha256": "424f17c3bff5ee6c181591dad3e1d1737dcc87ead9643222fee7b78917509599"
+      },
+      "new_source_id": "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-1",
+      "original_source_id": "q88jh5-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+      "state_id": "q88jh5__occupancy2Ca_v1",
+      "status": "unique_PQQ_Ca_source_geometry",
+      "scope": "source geometry only; no protonation/context/scoring admission",
+      "new_hydrogens": false,
+      "energy_calls": 0,
+      "raw_PQQ_candidates": [
+        {
+          "chain": "C",
+          "resnum": 1,
+          "icode": "",
+          "resname": "LIG_C",
+          "schema_id": "protenix_generic_pqq_v1",
+          "microstate_used_for_validation": "pqq_ox_3minus_v1",
+          "formula": "C14H3N2O8"
+        }
+      ],
+      "normalizer": {
+        "lanthanum_residues": 0,
+        "pqq_residues": 1
+      },
+      "residue_name_alias": {
+        "before": {
+          "chain": "C",
+          "resnum": 1,
+          "icode": "",
+          "resname": "LIG_C"
+        },
+        "after": {
+          "chain": "C",
+          "resnum": 1,
+          "icode": "",
+          "resname": "PQQ"
+        }
+      },
+      "full_source": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/audit_q88jh5_v1/execution/sample-1/full_source_PQQ_normalized.cif",
+        "sha256": "9ad64c98c18a25e5fd63398ff2f0027ecc27a8cb61b1f3fe655309499a29c321"
+      },
+      "all_source_atoms_preserved_exactly": true,
+      "source_atom_count": 4922,
+      "source_heavy_atom_count": 4922,
+      "source_hydrogen_count": 0,
+      "PQQ": {
+        "chain": "C",
+        "resnum": 1,
+        "icode": "",
+        "resname": "PQQ",
+        "schema_id": "protenix_generic_pqq_v1",
+        "microstate_used_for_validation": "pqq_ox_3minus_v1",
+        "formula": "C14H3N2O8",
+        "validated_microstate_metadata": {
+          "spec_version": "pqq_microstates.v1",
+          "microstate_id": "pqq_ox_3minus_v1",
+          "role": "production_baseline",
+          "oxidation_state": "oxidized_quinone",
+          "formal_charge": -3,
+          "multiplicity": 1,
+          "protonated_carboxyl": null,
+          "atom_naming_schema": "protenix_generic_pqq_v1",
+          "allowed_donor_atoms": [
+            "N2",
+            "O1",
+            "O5",
+            "O6"
+          ],
+          "hydrogens": [
+            {
+              "name": "H_N1",
+              "parent_atom": "N1",
+              "kind": "invariant_ring",
+              "origin": "generated_opposite_bisector",
+              "xyz_A": [
+                2.753308,
+                -5.482083,
+                -2.478966
+              ]
+            },
+            {
+              "name": "H_C3",
+              "parent_atom": "C10",
+              "kind": "invariant_ring",
+              "origin": "generated_opposite_bisector",
+              "xyz_A": [
+                4.587986,
+                -4.196093,
+                -6.046245
+              ]
+            },
+            {
+              "name": "H_C8",
+              "parent_atom": "C1",
+              "kind": "invariant_ring",
+              "origin": "generated_opposite_bisector",
+              "xyz_A": [
+                -0.728446,
+                -9.057583,
+                -2.531946
+              ]
+            }
+          ],
+          "formula": "C14H3N2O8"
+        },
+        "source_atom_count": 24,
+        "source_heavy_atom_count": 24,
+        "microstate_metadata_is_not_source_protonation": true
+      },
+      "metal_sites": [
+        {
+          "selector": {
+            "chain": "B",
+            "resnum": 1,
+            "icode": "",
+            "resname": "LIG_B",
+            "atom": "CA1",
+            "element": "Ca"
+          },
+          "label": "B:LIG_B1:CA1",
+          "xyz_A": [
+            -9.5,
+            14.959,
+            7.528
+          ],
+          "nearest_PQQ_heavy_A": 25.060325097651862,
+          "PQQ_associated": false,
+          "PQQ_donor_distances_A": {
+            "O1": 29.67982835192953,
+            "N2": 28.813208585646965,
+            "O5": 29.224221957136855,
+            "O6": 29.87422477655278
+          },
+          "typed_CN": 6,
+          "typed_contacts": [
+            {
+              "chain": "A",
+              "resnum": 56,
+              "icode": "",
+              "resname": "THR",
+              "atom": "O",
+              "element": "O",
+              "distance_A": 2.301,
+              "donor_type": "backbone_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 53,
+              "icode": "",
+              "resname": "ASP",
+              "atom": "O",
+              "element": "O",
+              "distance_A": 2.343,
+              "donor_type": "backbone_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 59,
+              "icode": "",
+              "resname": "ASP",
+              "atom": "O",
+              "element": "O",
+              "distance_A": 2.472,
+              "donor_type": "backbone_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 53,
+              "icode": "",
+              "resname": "ASP",
+              "atom": "OD1",
+              "element": "O",
+              "distance_A": 2.567,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 59,
+              "icode": "",
+              "resname": "ASP",
+              "atom": "OD1",
+              "element": "O",
+              "distance_A": 2.57,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 56,
+              "icode": "",
+              "resname": "THR",
+              "atom": "OG1",
+              "element": "O",
+              "distance_A": 2.727,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            }
+          ],
+          "untyped_ON_3p1A": [],
+          "sulfur_contacts": []
+        },
+        {
+          "selector": {
+            "chain": "D",
+            "resnum": 1,
+            "icode": "",
+            "resname": "LIG_D",
+            "atom": "CA1",
+            "element": "Ca"
+          },
+          "label": "D:LIG_D1:CA1",
+          "xyz_A": [
+            -0.079,
+            -9.864,
+            -7.892
+          ],
+          "nearest_PQQ_heavy_A": 2.4052927056805378,
+          "PQQ_associated": true,
+          "PQQ_donor_distances_A": {
+            "O1": 2.4052927056805378,
+            "N2": 2.4457185038348146,
+            "O5": 4.525941780447468,
+            "O6": 2.5730958007816187
+          },
+          "typed_CN": 7,
+          "typed_contacts": [
+            {
+              "chain": "A",
+              "resnum": 221,
+              "icode": "",
+              "resname": "GLU",
+              "atom": "OE1",
+              "element": "O",
+              "distance_A": 2.295,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 308,
+              "icode": "",
+              "resname": "ASN",
+              "atom": "OD1",
+              "element": "O",
+              "distance_A": 2.383,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "C",
+              "resnum": 1,
+              "icode": "",
+              "resname": "PQQ",
+              "atom": "O1",
+              "element": "O",
+              "distance_A": 2.405,
+              "donor_type": "cofactor_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "C",
+              "resnum": 1,
+              "icode": "",
+              "resname": "PQQ",
+              "atom": "N2",
+              "element": "N",
+              "distance_A": 2.446,
+              "donor_type": "cofactor_N",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "C",
+              "resnum": 1,
+              "icode": "",
+              "resname": "PQQ",
+              "atom": "O6",
+              "element": "O",
+              "distance_A": 2.573,
+              "donor_type": "cofactor_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 221,
+              "icode": "",
+              "resname": "GLU",
+              "atom": "OE2",
+              "element": "O",
+              "distance_A": 2.959,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 358,
+              "icode": "",
+              "resname": "ASP",
+              "atom": "OD1",
+              "element": "O",
+              "distance_A": 3.053,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            }
+          ],
+          "untyped_ON_3p1A": [],
+          "sulfur_contacts": []
+        }
+      ],
+      "Ca_Ca_distance_A": 30.703631218473166,
+      "PQQ_associated_Ca_count": 1,
+      "active_Ca": {
+        "chain": "D",
+        "resnum": 1,
+        "icode": "",
+        "resname": "LIG_D",
+        "atom": "CA1",
+        "element": "Ca"
+      },
+      "spectator_Ca": {
+        "chain": "B",
+        "resnum": 1,
+        "icode": "",
+        "resname": "LIG_B",
+        "atom": "CA1",
+        "element": "Ca"
+      },
+      "spectator_context_admission": "not_evaluated"
+    },
+    {
+      "sample": 2,
+      "model": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/folds/q88jh5/outputs/Q88JH5-pqq-Ca/seed-1_sample-2/Q88JH5-pqq-Ca_seed-1_sample-2_model.cif",
+        "sha256": "f7626975b7205c153316f2f5170d3e017f528eab69b1e46b369dd083be4a1387"
+      },
+      "new_source_id": "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-2",
+      "original_source_id": "q88jh5-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+      "state_id": "q88jh5__occupancy2Ca_v1",
+      "status": "unique_PQQ_Ca_source_geometry",
+      "scope": "source geometry only; no protonation/context/scoring admission",
+      "new_hydrogens": false,
+      "energy_calls": 0,
+      "raw_PQQ_candidates": [
+        {
+          "chain": "C",
+          "resnum": 1,
+          "icode": "",
+          "resname": "LIG_C",
+          "schema_id": "protenix_generic_pqq_v1",
+          "microstate_used_for_validation": "pqq_ox_3minus_v1",
+          "formula": "C14H3N2O8"
+        }
+      ],
+      "normalizer": {
+        "lanthanum_residues": 0,
+        "pqq_residues": 1
+      },
+      "residue_name_alias": {
+        "before": {
+          "chain": "C",
+          "resnum": 1,
+          "icode": "",
+          "resname": "LIG_C"
+        },
+        "after": {
+          "chain": "C",
+          "resnum": 1,
+          "icode": "",
+          "resname": "PQQ"
+        }
+      },
+      "full_source": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/audit_q88jh5_v1/execution/sample-2/full_source_PQQ_normalized.cif",
+        "sha256": "30d8f2780298d4b4cf9ced29fdc239c6b186b0d19f6112fd7d5d14cb452a7159"
+      },
+      "all_source_atoms_preserved_exactly": true,
+      "source_atom_count": 4922,
+      "source_heavy_atom_count": 4922,
+      "source_hydrogen_count": 0,
+      "PQQ": {
+        "chain": "C",
+        "resnum": 1,
+        "icode": "",
+        "resname": "PQQ",
+        "schema_id": "protenix_generic_pqq_v1",
+        "microstate_used_for_validation": "pqq_ox_3minus_v1",
+        "formula": "C14H3N2O8",
+        "validated_microstate_metadata": {
+          "spec_version": "pqq_microstates.v1",
+          "microstate_id": "pqq_ox_3minus_v1",
+          "role": "production_baseline",
+          "oxidation_state": "oxidized_quinone",
+          "formal_charge": -3,
+          "multiplicity": 1,
+          "protonated_carboxyl": null,
+          "atom_naming_schema": "protenix_generic_pqq_v1",
+          "allowed_donor_atoms": [
+            "N2",
+            "O1",
+            "O5",
+            "O6"
+          ],
+          "hydrogens": [
+            {
+              "name": "H_N1",
+              "parent_atom": "N1",
+              "kind": "invariant_ring",
+              "origin": "generated_opposite_bisector",
+              "xyz_A": [
+                2.816045,
+                -2.832485,
+                -6.08057
+              ]
+            },
+            {
+              "name": "H_C3",
+              "parent_atom": "C10",
+              "kind": "invariant_ring",
+              "origin": "generated_opposite_bisector",
+              "xyz_A": [
+                -0.135824,
+                -5.396953,
+                -7.658566
+              ]
+            },
+            {
+              "name": "H_C8",
+              "parent_atom": "C1",
+              "kind": "invariant_ring",
+              "origin": "generated_opposite_bisector",
+              "xyz_A": [
+                6.813422,
+                -4.659376,
+                -3.730717
+              ]
+            }
+          ],
+          "formula": "C14H3N2O8"
+        },
+        "source_atom_count": 24,
+        "source_heavy_atom_count": 24,
+        "microstate_metadata_is_not_source_protonation": true
+      },
+      "metal_sites": [
+        {
+          "selector": {
+            "chain": "B",
+            "resnum": 1,
+            "icode": "",
+            "resname": "LIG_B",
+            "atom": "CA1",
+            "element": "Ca"
+          },
+          "label": "B:LIG_B1:CA1",
+          "xyz_A": [
+            -8.455,
+            11.919,
+            11.835
+          ],
+          "nearest_PQQ_heavy_A": 25.02234081775724,
+          "PQQ_associated": false,
+          "PQQ_donor_distances_A": {
+            "O1": 29.656563691702384,
+            "N2": 28.767984114289273,
+            "O5": 29.121780594599638,
+            "O6": 29.789255378407834
+          },
+          "typed_CN": 6,
+          "typed_contacts": [
+            {
+              "chain": "A",
+              "resnum": 53,
+              "icode": "",
+              "resname": "ASP",
+              "atom": "O",
+              "element": "O",
+              "distance_A": 2.302,
+              "donor_type": "backbone_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 56,
+              "icode": "",
+              "resname": "THR",
+              "atom": "O",
+              "element": "O",
+              "distance_A": 2.316,
+              "donor_type": "backbone_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 59,
+              "icode": "",
+              "resname": "ASP",
+              "atom": "O",
+              "element": "O",
+              "distance_A": 2.537,
+              "donor_type": "backbone_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 53,
+              "icode": "",
+              "resname": "ASP",
+              "atom": "OD1",
+              "element": "O",
+              "distance_A": 2.576,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 59,
+              "icode": "",
+              "resname": "ASP",
+              "atom": "OD1",
+              "element": "O",
+              "distance_A": 2.597,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 56,
+              "icode": "",
+              "resname": "THR",
+              "atom": "OG1",
+              "element": "O",
+              "distance_A": 2.746,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            }
+          ],
+          "untyped_ON_3p1A": [],
+          "sulfur_contacts": []
+        },
+        {
+          "selector": {
+            "chain": "D",
+            "resnum": 1,
+            "icode": "",
+            "resname": "LIG_D",
+            "atom": "CA1",
+            "element": "Ca"
+          },
+          "label": "D:LIG_D1:CA1",
+          "xyz_A": [
+            5.334,
+            -9.803,
+            -4.787
+          ],
+          "nearest_PQQ_heavy_A": 2.419648528195779,
+          "PQQ_associated": true,
+          "PQQ_donor_distances_A": {
+            "O1": 2.419648528195779,
+            "N2": 2.433589324434179,
+            "O5": 4.524547933219407,
+            "O6": 2.579501696064572
+          },
+          "typed_CN": 6,
+          "typed_contacts": [
+            {
+              "chain": "A",
+              "resnum": 221,
+              "icode": "",
+              "resname": "GLU",
+              "atom": "OE1",
+              "element": "O",
+              "distance_A": 2.331,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 308,
+              "icode": "",
+              "resname": "ASN",
+              "atom": "OD1",
+              "element": "O",
+              "distance_A": 2.376,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "C",
+              "resnum": 1,
+              "icode": "",
+              "resname": "PQQ",
+              "atom": "O1",
+              "element": "O",
+              "distance_A": 2.42,
+              "donor_type": "cofactor_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "C",
+              "resnum": 1,
+              "icode": "",
+              "resname": "PQQ",
+              "atom": "N2",
+              "element": "N",
+              "distance_A": 2.434,
+              "donor_type": "cofactor_N",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "C",
+              "resnum": 1,
+              "icode": "",
+              "resname": "PQQ",
+              "atom": "O6",
+              "element": "O",
+              "distance_A": 2.58,
+              "donor_type": "cofactor_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 221,
+              "icode": "",
+              "resname": "GLU",
+              "atom": "OE2",
+              "element": "O",
+              "distance_A": 2.938,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            }
+          ],
+          "untyped_ON_3p1A": [],
+          "sulfur_contacts": []
+        }
+      ],
+      "Ca_Ca_distance_A": 30.631237144457618,
+      "PQQ_associated_Ca_count": 1,
+      "active_Ca": {
+        "chain": "D",
+        "resnum": 1,
+        "icode": "",
+        "resname": "LIG_D",
+        "atom": "CA1",
+        "element": "Ca"
+      },
+      "spectator_Ca": {
+        "chain": "B",
+        "resnum": 1,
+        "icode": "",
+        "resname": "LIG_B",
+        "atom": "CA1",
+        "element": "Ca"
+      },
+      "spectator_context_admission": "not_evaluated"
+    },
+    {
+      "sample": 3,
+      "model": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/folds/q88jh5/outputs/Q88JH5-pqq-Ca/seed-1_sample-3/Q88JH5-pqq-Ca_seed-1_sample-3_model.cif",
+        "sha256": "6b0e5357472a0df476d4fea7392d09da3973f7f87f77fc99f8a9516344da9e00"
+      },
+      "new_source_id": "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-3",
+      "original_source_id": "q88jh5-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+      "state_id": "q88jh5__occupancy2Ca_v1",
+      "status": "unique_PQQ_Ca_source_geometry",
+      "scope": "source geometry only; no protonation/context/scoring admission",
+      "new_hydrogens": false,
+      "energy_calls": 0,
+      "raw_PQQ_candidates": [
+        {
+          "chain": "C",
+          "resnum": 1,
+          "icode": "",
+          "resname": "LIG_C",
+          "schema_id": "protenix_generic_pqq_v1",
+          "microstate_used_for_validation": "pqq_ox_3minus_v1",
+          "formula": "C14H3N2O8"
+        }
+      ],
+      "normalizer": {
+        "lanthanum_residues": 0,
+        "pqq_residues": 1
+      },
+      "residue_name_alias": {
+        "before": {
+          "chain": "C",
+          "resnum": 1,
+          "icode": "",
+          "resname": "LIG_C"
+        },
+        "after": {
+          "chain": "C",
+          "resnum": 1,
+          "icode": "",
+          "resname": "PQQ"
+        }
+      },
+      "full_source": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/audit_q88jh5_v1/execution/sample-3/full_source_PQQ_normalized.cif",
+        "sha256": "c4f63b48a280a889639f99fe509cf0555c0e68d422121fc5a289bf07abe2a04c"
+      },
+      "all_source_atoms_preserved_exactly": true,
+      "source_atom_count": 4922,
+      "source_heavy_atom_count": 4922,
+      "source_hydrogen_count": 0,
+      "PQQ": {
+        "chain": "C",
+        "resnum": 1,
+        "icode": "",
+        "resname": "PQQ",
+        "schema_id": "protenix_generic_pqq_v1",
+        "microstate_used_for_validation": "pqq_ox_3minus_v1",
+        "formula": "C14H3N2O8",
+        "validated_microstate_metadata": {
+          "spec_version": "pqq_microstates.v1",
+          "microstate_id": "pqq_ox_3minus_v1",
+          "role": "production_baseline",
+          "oxidation_state": "oxidized_quinone",
+          "formal_charge": -3,
+          "multiplicity": 1,
+          "protonated_carboxyl": null,
+          "atom_naming_schema": "protenix_generic_pqq_v1",
+          "allowed_donor_atoms": [
+            "N2",
+            "O1",
+            "O5",
+            "O6"
+          ],
+          "hydrogens": [
+            {
+              "name": "H_N1",
+              "parent_atom": "N1",
+              "kind": "invariant_ring",
+              "origin": "generated_opposite_bisector",
+              "xyz_A": [
+                8.671875,
+                -0.366302,
+                2.243266
+              ]
+            },
+            {
+              "name": "H_C3",
+              "parent_atom": "C10",
+              "kind": "invariant_ring",
+              "origin": "generated_opposite_bisector",
+              "xyz_A": [
+                9.082552,
+                -4.285643,
+                3.732567
+              ]
+            },
+            {
+              "name": "H_C8",
+              "parent_atom": "C1",
+              "kind": "invariant_ring",
+              "origin": "generated_opposite_bisector",
+              "xyz_A": [
+                8.82445,
+                3.567959,
+                5.301198
+              ]
+            }
+          ],
+          "formula": "C14H3N2O8"
+        },
+        "source_atom_count": 24,
+        "source_heavy_atom_count": 24,
+        "microstate_metadata_is_not_source_protonation": true
+      },
+      "metal_sites": [
+        {
+          "selector": {
+            "chain": "B",
+            "resnum": 1,
+            "icode": "",
+            "resname": "LIG_B",
+            "atom": "CA1",
+            "element": "Ca"
+          },
+          "label": "B:LIG_B1:CA1",
+          "xyz_A": [
+            -14.746,
+            1.236,
+            -8.605
+          ],
+          "nearest_PQQ_heavy_A": 25.091139511787823,
+          "PQQ_associated": false,
+          "PQQ_donor_distances_A": {
+            "O1": 29.672219886621225,
+            "N2": 28.804654658579057,
+            "O5": 29.20710932290287,
+            "O6": 29.856429391338814
+          },
+          "typed_CN": 6,
+          "typed_contacts": [
+            {
+              "chain": "A",
+              "resnum": 53,
+              "icode": "",
+              "resname": "ASP",
+              "atom": "O",
+              "element": "O",
+              "distance_A": 2.333,
+              "donor_type": "backbone_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 56,
+              "icode": "",
+              "resname": "THR",
+              "atom": "O",
+              "element": "O",
+              "distance_A": 2.371,
+              "donor_type": "backbone_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 59,
+              "icode": "",
+              "resname": "ASP",
+              "atom": "OD1",
+              "element": "O",
+              "distance_A": 2.557,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 59,
+              "icode": "",
+              "resname": "ASP",
+              "atom": "O",
+              "element": "O",
+              "distance_A": 2.566,
+              "donor_type": "backbone_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 53,
+              "icode": "",
+              "resname": "ASP",
+              "atom": "OD1",
+              "element": "O",
+              "distance_A": 2.592,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 56,
+              "icode": "",
+              "resname": "THR",
+              "atom": "OG1",
+              "element": "O",
+              "distance_A": 2.711,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            }
+          ],
+          "untyped_ON_3p1A": [],
+          "sulfur_contacts": []
+        },
+        {
+          "selector": {
+            "chain": "D",
+            "resnum": 1,
+            "icode": "",
+            "resname": "LIG_D",
+            "atom": "CA1",
+            "element": "Ca"
+          },
+          "label": "D:LIG_D1:CA1",
+          "xyz_A": [
+            9.893,
+            0.428,
+            9.592
+          ],
+          "nearest_PQQ_heavy_A": 2.408853669279228,
+          "PQQ_associated": true,
+          "PQQ_donor_distances_A": {
+            "O1": 2.410851509321966,
+            "N2": 2.408853669279228,
+            "O5": 4.488351256307822,
+            "O6": 2.5309440926263074
+          },
+          "typed_CN": 6,
+          "typed_contacts": [
+            {
+              "chain": "A",
+              "resnum": 221,
+              "icode": "",
+              "resname": "GLU",
+              "atom": "OE1",
+              "element": "O",
+              "distance_A": 2.239,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 308,
+              "icode": "",
+              "resname": "ASN",
+              "atom": "OD1",
+              "element": "O",
+              "distance_A": 2.355,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "C",
+              "resnum": 1,
+              "icode": "",
+              "resname": "PQQ",
+              "atom": "N2",
+              "element": "N",
+              "distance_A": 2.409,
+              "donor_type": "cofactor_N",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "C",
+              "resnum": 1,
+              "icode": "",
+              "resname": "PQQ",
+              "atom": "O1",
+              "element": "O",
+              "distance_A": 2.411,
+              "donor_type": "cofactor_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "C",
+              "resnum": 1,
+              "icode": "",
+              "resname": "PQQ",
+              "atom": "O6",
+              "element": "O",
+              "distance_A": 2.531,
+              "donor_type": "cofactor_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 221,
+              "icode": "",
+              "resname": "GLU",
+              "atom": "OE2",
+              "element": "O",
+              "distance_A": 2.989,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            }
+          ],
+          "untyped_ON_3p1A": [],
+          "sulfur_contacts": []
+        }
+      ],
+      "Ca_Ca_distance_A": 30.6408876176915,
+      "PQQ_associated_Ca_count": 1,
+      "active_Ca": {
+        "chain": "D",
+        "resnum": 1,
+        "icode": "",
+        "resname": "LIG_D",
+        "atom": "CA1",
+        "element": "Ca"
+      },
+      "spectator_Ca": {
+        "chain": "B",
+        "resnum": 1,
+        "icode": "",
+        "resname": "LIG_B",
+        "atom": "CA1",
+        "element": "Ca"
+      },
+      "spectator_context_admission": "not_evaluated"
+    },
+    {
+      "sample": 4,
+      "model": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/folds/q88jh5/outputs/Q88JH5-pqq-Ca/seed-1_sample-4/Q88JH5-pqq-Ca_seed-1_sample-4_model.cif",
+        "sha256": "610441ce16b2657ea1680ab290d5ea44f52d2833542e7d96926b7e5cb22145c0"
+      },
+      "new_source_id": "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-4",
+      "original_source_id": "q88jh5-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "state_id": "q88jh5__occupancy2Ca_v1",
+      "status": "unique_PQQ_Ca_source_geometry",
+      "scope": "source geometry only; no protonation/context/scoring admission",
+      "new_hydrogens": false,
+      "energy_calls": 0,
+      "raw_PQQ_candidates": [
+        {
+          "chain": "C",
+          "resnum": 1,
+          "icode": "",
+          "resname": "LIG_C",
+          "schema_id": "protenix_generic_pqq_v1",
+          "microstate_used_for_validation": "pqq_ox_3minus_v1",
+          "formula": "C14H3N2O8"
+        }
+      ],
+      "normalizer": {
+        "lanthanum_residues": 0,
+        "pqq_residues": 1
+      },
+      "residue_name_alias": {
+        "before": {
+          "chain": "C",
+          "resnum": 1,
+          "icode": "",
+          "resname": "LIG_C"
+        },
+        "after": {
+          "chain": "C",
+          "resnum": 1,
+          "icode": "",
+          "resname": "PQQ"
+        }
+      },
+      "full_source": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/audit_q88jh5_v1/execution/sample-4/full_source_PQQ_normalized.cif",
+        "sha256": "0d6f4f4e45c1378ee1a51fe389c61a452948e3310f6e88bd8c7f8a25d2ffaec2"
+      },
+      "all_source_atoms_preserved_exactly": true,
+      "source_atom_count": 4922,
+      "source_heavy_atom_count": 4922,
+      "source_hydrogen_count": 0,
+      "PQQ": {
+        "chain": "C",
+        "resnum": 1,
+        "icode": "",
+        "resname": "PQQ",
+        "schema_id": "protenix_generic_pqq_v1",
+        "microstate_used_for_validation": "pqq_ox_3minus_v1",
+        "formula": "C14H3N2O8",
+        "validated_microstate_metadata": {
+          "spec_version": "pqq_microstates.v1",
+          "microstate_id": "pqq_ox_3minus_v1",
+          "role": "production_baseline",
+          "oxidation_state": "oxidized_quinone",
+          "formal_charge": -3,
+          "multiplicity": 1,
+          "protonated_carboxyl": null,
+          "atom_naming_schema": "protenix_generic_pqq_v1",
+          "allowed_donor_atoms": [
+            "N2",
+            "O1",
+            "O5",
+            "O6"
+          ],
+          "hydrogens": [
+            {
+              "name": "H_N1",
+              "parent_atom": "N1",
+              "kind": "invariant_ring",
+              "origin": "generated_opposite_bisector",
+              "xyz_A": [
+                -3.323037,
+                5.866315,
+                -1.887008
+              ]
+            },
+            {
+              "name": "H_C3",
+              "parent_atom": "C10",
+              "kind": "invariant_ring",
+              "origin": "generated_opposite_bisector",
+              "xyz_A": [
+                -7.292432,
+                5.350346,
+                -0.555802
+              ]
+            },
+            {
+              "name": "H_C8",
+              "parent_atom": "C1",
+              "kind": "invariant_ring",
+              "origin": "generated_opposite_bisector",
+              "xyz_A": [
+                -2.292283,
+                6.390996,
+                -6.748824
+              ]
+            }
+          ],
+          "formula": "C14H3N2O8"
+        },
+        "source_atom_count": 24,
+        "source_heavy_atom_count": 24,
+        "microstate_metadata_is_not_source_protonation": true
+      },
+      "metal_sites": [
+        {
+          "selector": {
+            "chain": "B",
+            "resnum": 1,
+            "icode": "",
+            "resname": "LIG_B",
+            "atom": "CA1",
+            "element": "Ca"
+          },
+          "label": "B:LIG_B1:CA1",
+          "xyz_A": [
+            10.126,
+            -15.095,
+            4.981
+          ],
+          "nearest_PQQ_heavy_A": 25.064338132095166,
+          "PQQ_associated": false,
+          "PQQ_donor_distances_A": {
+            "O1": 29.720030299446197,
+            "N2": 28.8240142416007,
+            "O5": 29.198254245759284,
+            "O6": 29.86756133332616
+          },
+          "typed_CN": 6,
+          "typed_contacts": [
+            {
+              "chain": "A",
+              "resnum": 53,
+              "icode": "",
+              "resname": "ASP",
+              "atom": "O",
+              "element": "O",
+              "distance_A": 2.353,
+              "donor_type": "backbone_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 56,
+              "icode": "",
+              "resname": "THR",
+              "atom": "O",
+              "element": "O",
+              "distance_A": 2.373,
+              "donor_type": "backbone_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 59,
+              "icode": "",
+              "resname": "ASP",
+              "atom": "O",
+              "element": "O",
+              "distance_A": 2.534,
+              "donor_type": "backbone_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 53,
+              "icode": "",
+              "resname": "ASP",
+              "atom": "OD1",
+              "element": "O",
+              "distance_A": 2.55,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 59,
+              "icode": "",
+              "resname": "ASP",
+              "atom": "OD1",
+              "element": "O",
+              "distance_A": 2.561,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 56,
+              "icode": "",
+              "resname": "THR",
+              "atom": "OG1",
+              "element": "O",
+              "distance_A": 2.688,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            }
+          ],
+          "untyped_ON_3p1A": [],
+          "sulfur_contacts": []
+        },
+        {
+          "selector": {
+            "chain": "D",
+            "resnum": 1,
+            "icode": "",
+            "resname": "LIG_D",
+            "atom": "CA1",
+            "element": "Ca"
+          },
+          "label": "D:LIG_D1:CA1",
+          "xyz_A": [
+            -7.583,
+            6.276,
+            -8.121
+          ],
+          "nearest_PQQ_heavy_A": 2.445304684492303,
+          "PQQ_associated": true,
+          "PQQ_donor_distances_A": {
+            "O1": 2.445304684492303,
+            "N2": 2.456671935770017,
+            "O5": 4.50566809696409,
+            "O6": 2.5544169589164576
+          },
+          "typed_CN": 6,
+          "typed_contacts": [
+            {
+              "chain": "A",
+              "resnum": 221,
+              "icode": "",
+              "resname": "GLU",
+              "atom": "OE1",
+              "element": "O",
+              "distance_A": 2.368,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 308,
+              "icode": "",
+              "resname": "ASN",
+              "atom": "OD1",
+              "element": "O",
+              "distance_A": 2.383,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "C",
+              "resnum": 1,
+              "icode": "",
+              "resname": "PQQ",
+              "atom": "O1",
+              "element": "O",
+              "distance_A": 2.445,
+              "donor_type": "cofactor_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "C",
+              "resnum": 1,
+              "icode": "",
+              "resname": "PQQ",
+              "atom": "N2",
+              "element": "N",
+              "distance_A": 2.457,
+              "donor_type": "cofactor_N",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "C",
+              "resnum": 1,
+              "icode": "",
+              "resname": "PQQ",
+              "atom": "O6",
+              "element": "O",
+              "distance_A": 2.554,
+              "donor_type": "cofactor_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            },
+            {
+              "chain": "A",
+              "resnum": 221,
+              "icode": "",
+              "resname": "GLU",
+              "atom": "OE2",
+              "element": "O",
+              "distance_A": 2.928,
+              "donor_type": "sidechain_O",
+              "qualifies_at_3p1A": true,
+              "included_in_qm_at_3p3A": true
+            }
+          ],
+          "untyped_ON_3p1A": [],
+          "sulfur_contacts": []
+        }
+      ],
+      "Ca_Ca_distance_A": 30.691867424449757,
+      "PQQ_associated_Ca_count": 1,
+      "active_Ca": {
+        "chain": "D",
+        "resnum": 1,
+        "icode": "",
+        "resname": "LIG_D",
+        "atom": "CA1",
+        "element": "Ca"
+      },
+      "spectator_Ca": {
+        "chain": "B",
+        "resnum": 1,
+        "icode": "",
+        "resname": "LIG_B",
+        "atom": "CA1",
+        "element": "Ca"
+      },
+      "spectator_context_admission": "not_evaluated"
+    }
+  ],
+  "denominator": 5,
+  "unique_PQQ_Ca_sources": 5,
+  "scope": "source geometry only; no protonation/context/scoring admission",
+  "new_scores": 0,
+  "new_hydrogens": false,
+  "all_samples_retained": true
+}

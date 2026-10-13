@@ -9,15 +9,29 @@ and continuum terms, not surface area or a double-counted constant. This does
 not prove an unphysical SCF branch or justify deleting any contribution.
 Read [the component report](solvent_audit/REPORT.md).
 
-Fixed-origin DFT scout3354 is RUNNING on node-64-768g-5: sample1 La/CPCM water,
-native r2SCAN-3c/DefGrid3/TightSCF, twelve MPI ranks. Real preflight passed all
-eight frozen input inventories and three archived parser checks. Allocation
-48000MiB; the existing runtime derives MaxCore3100MB/rank with25% headroom.
-The actual output confirms ORCA6.1.1, native basis and La ECP46/NEL828. No new
-energy has completed yet. Only this one molecular cell is submitted. Completion
-wakePID349926 and alert-only health watcherPID365231 are armed; commands are in
-reference_v1/SCOUT_SUBMISSION.json. Inspect actual result/cost before its vacuum
-partner and the remaining six cells. All eight inputs are already pinned.
+Fixed-origin DFT scout3354 converged: sample1 La/CPCM water, native
+r2SCAN-3c/DefGrid3/TightSCF. Slurm reports FAILED because the collector looked
+for the final TRAH tolerance in an optional absent summary row. Actual printed
+threshold1e-5 and final macro residual5.663e-7 pass the unchanged criterion.
+Collection-only recovery3370 passed15 real-artifact/parser checks with zero
+molecular reruns. One of eight endpoints is now available. Read
+[SCOUT_REPORT.md](SCOUT_REPORT.md) and the versioned recovery report. The
+original failed batch/collection remains preserved; no tolerance was loosened.
+
+The remaining seven frozen endpoints are RUNNING in four disjoint12-MPI lanes
+on node-64-768g-5:3371 sample1 La vacuum;3372 sample1 Ca water/vacuum;3373 sample3
+La water/vacuum;3374 sample3 Ca water/vacuum. All four started without a launch
+error. `REFERENCE_DISPATCH_v1.json` maps the eight tasks without repeating the
+scout. Each pair stops if its first cell is unavailable. No optimization or new
+chemical state. Completion and alert-only health wakes are armed for every lane;
+exact commands/PIDs are in the linked CONTINUATION_SUBMISSION.json files and
+reference_continuation_v2/SUBMISSION.json. Shared QoS respected,48 new CPUs total.
+
+Actual scout cost9580s on12 CPUs =114960 allocated CPU-seconds; sampled
+peakRSS18172MiB. Actual memory grant48000MiB, runtime MaxCore3100MB/rank with25%
+headroom. This is development reference cost; no routine-method speed claim.
+No solvent transfer or source double difference exists until matching cells
+complete. Root owns execution; comparison agent prepares the saved-result join.
 
 Cofactor saved audit3353 failed on unavailable-row schema handling; separate
 reader recovery3356 completed. All nine admitted origins pass source/PQQ/H/cap
@@ -28,7 +42,7 @@ No redox/template substitution or mapped preparation defect was established.
 No geometry, score or chemical state changed. Production remains unchanged.
 
 Three saved-artifact jobs used7 allocated CPU-seconds total, including3353's
-failure. Molecular scout cost is pending. The first health-monitor attempt
+failure; parser recovery3370 adds2. The first health-monitor attempt
 failed on a monitor-only missing resource field; v2 fixes that schema. The
 molecular process and original completion wake were unaffected. Both failures
 are retained. Do not restart chemistry because a watcher failed.

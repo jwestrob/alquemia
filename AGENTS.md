@@ -1,5 +1,10 @@
 # PedE solvent-response work authorized — 13 October 2026
 
+Latest: DFT scout3354 converged; a parser-only tolerance lookup failure was
+recovered by3370 (15 checks, no molecular rerun). Remaining seven frozen cells
+now run in disjoint12-MPI jobs3371–3374, with completion and health wakes.
+Read CURRENT/EXECUTION before action. No solvent-model fix is established yet.
+
 Jacob: “Continue your investigation however you see fit. Let's fix our solvent
 correction.” Read [the new plan](diagnostics/pede_solvent_response_20261013/PLAN.md)
 and CURRENT.md/actual execution receipts. This supersedes the discussion-only

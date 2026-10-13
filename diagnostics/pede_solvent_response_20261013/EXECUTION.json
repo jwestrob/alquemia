@@ -16,7 +16,7 @@
     "job_id": "3354",
     "submission": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/reference_v1/SCOUT_SUBMISSION.json",
     "completion": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/reference_v1/scout_completion_event.json",
-    "status_at_checkpoint": "running_preflight_passed",
+    "status_at_checkpoint": "native_converged_recovered_collection",
     "submitted_molecular_cells": 1
   },
   "checkpoint_utc": "2026-10-13T09:31:34.603838+00:00",
@@ -27,5 +27,55 @@
     "status": "complete",
     "result": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/cofactor_review_v2/execution/RESULT.json"
   },
-  "saved_analysis_allocated_CPU_seconds": 7
+  "saved_analysis_allocated_CPU_seconds": 7,
+  "DFT_parser_recovery": {
+    "job_id": "3370",
+    "submission": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/reference_collection_recovery_v2/SUBMISSION.json",
+    "status": "complete_15_checks_no_molecular_rerun"
+  },
+  "DFT_continuation": {
+    "submission": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/reference_continuation_v2/SUBMISSION.json",
+    "new_endpoints": 7,
+    "jobs": [
+      {
+        "job_id": "3371",
+        "tasks": [
+          "sample1_La_vacuum"
+        ],
+        "submission": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/reference_v1/CONTINUATION_SUBMISSION.json",
+        "watch_pid": 644303,
+        "health_watch_pid": 644304
+      },
+      {
+        "job_id": "3372",
+        "tasks": [
+          "sample1_Ca_water",
+          "sample1_Ca_vacuum"
+        ],
+        "submission": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/reference_sample1_Ca_v1/CONTINUATION_SUBMISSION.json",
+        "watch_pid": 644306,
+        "health_watch_pid": 644307
+      },
+      {
+        "job_id": "3373",
+        "tasks": [
+          "sample3_La_water",
+          "sample3_La_vacuum"
+        ],
+        "submission": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/reference_sample3_La_v1/CONTINUATION_SUBMISSION.json",
+        "watch_pid": 644313,
+        "health_watch_pid": 644315
+      },
+      {
+        "job_id": "3374",
+        "tasks": [
+          "sample3_Ca_water",
+          "sample3_Ca_vacuum"
+        ],
+        "submission": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/reference_sample3_Ca_v1/CONTINUATION_SUBMISSION.json",
+        "watch_pid": 644321,
+        "health_watch_pid": 644322
+      }
+    ]
+  }
 }

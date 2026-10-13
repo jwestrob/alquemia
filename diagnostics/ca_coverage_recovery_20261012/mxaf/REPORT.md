@@ -1,5 +1,8 @@
 # MxaF Ca-conditioned technical recovery
 
+**Completed:** both sources recovered correctly; see [RESULT.md](RESULT.md).
+The preparation/submission notes below preserve the earlier checkpoint.
+
 ## Question and status
 
 Can two P12293 La searches interrupted by Slurm `NODE_FAIL` complete under the

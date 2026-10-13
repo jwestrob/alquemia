@@ -1,0 +1,53 @@
+{
+  "status": "ready_for_root_submission_scientific_preparation_UNRUN",
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/spectator_preparation_q9_v2/manifest.json",
+    "sha256": "b79a1b21f9e7d348154e34ea8a63966429f9511fef36537bedcb2cf55aa177dc"
+  },
+  "implementation": {
+    "PREPARE.py": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/ca_coverage_recovery_20261012/spectator_preparation/PREPARE.py",
+      "sha256": "76901cb4ccf950bea82ac87d46ed6f06d6040b00987ceda950286087d2ca00d7"
+    },
+    "PROTONATE.py": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/ca_coverage_recovery_20261012/spectator_preparation/PROTONATE.py",
+      "sha256": "ed2525582128a1d7c479a371fe5b494a5dfec6df9367153967972b9702074133"
+    },
+    "EXECUTION_PLAN.md": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/ca_coverage_recovery_20261012/spectator_preparation/EXECUTION_PLAN.md",
+      "sha256": "22ef8a4a94b6e2c69b1c7ad09444db4848a4b24499ac892ede949675e548d760"
+    },
+    "run.sbatch": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/ca_coverage_recovery_20261012/spectator_preparation/run.sbatch",
+      "sha256": "5f3d5345a6ee5a6c0f851d6f3b9512036bbfeeb331a0905befccc22f7218f816"
+    }
+  },
+  "expected_final_preparation": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/spectator_preparation_q9_v2/execution/FINAL_PREPARATION.json",
+  "scope": {
+    "new_Q9_sources": 5,
+    "one_Ca_real_regression": 1,
+    "new_endpoint_calls": 0
+  },
+  "static_review": {
+    "root": "strict association comparison, explicit spawn and actual standard partition checked",
+    "Gauss": "no additional blocker, read-only code review",
+    "Python_AST": "passed, no scientific imports",
+    "bash_syntax": "passed"
+  },
+  "resources": {
+    "partition": "standard",
+    "nodes": 1,
+    "allocated_CPUs": 6,
+    "source_workers": 5,
+    "threads_per_worker": 1,
+    "start_method": "spawn",
+    "memory_request": null,
+    "time_request": null
+  },
+  "unrun_v1_retained": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/spectator_preparation_q9_v1/manifest.json",
+  "submission_template": [
+    "sbatch",
+    "--export=ALL,MANIFEST=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/spectator_preparation_q9_v2/manifest.json",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/ca_coverage_recovery_20261012/spectator_preparation/run.sbatch"
+  ]
+}

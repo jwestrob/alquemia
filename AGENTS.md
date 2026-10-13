@@ -4,8 +4,12 @@ Jacob: "Well we need to redo those structures then, don't we?" Recover these
 cases separately, preserving original125 outcomes and frozen calibration. Read
 [the current recovery checkpoint](diagnostics/ca_coverage_recovery_20261012/CURRENT.md).
 Actual audits2864/2866 complete: fifteen offsite Ca placements, one existing-H
-mapping defect with intact disulfide. MxaF interrupted La searches restart as
-job2869 with exact archived policy and reuse. Root owns execution/scoring; agents
+mapping defect with intact disulfide. MxaF2869/2873 recoveredbothmissingcases
+withcorrectCa calls; original125 unchanged, recovery107/1/1/16. RepairedXoxF
+native2875/solvent2880 completed: repairedXoxF is inconclusive (staticLa-correct).
+Recovery overlay107correct/1wrong/2inconclusive/15unavailable. ExaA two-Ca
+AF3 scout2881 completed allfive outputs; source geometry audit2884 runs with
+a wake. Input/schema/reference checks2879 passed on H200. Root owns execution/scoring; agents
 own disjoint MxaF, disulfide and refold code. New Ca-source recovery is authorized;
 older prohibitions on repairing the completed primary test do not block it.
 All science on Slurm; production and original results remain unchanged. Existing

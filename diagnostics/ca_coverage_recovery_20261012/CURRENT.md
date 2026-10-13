@@ -62,7 +62,7 @@ memory/time request or parameter change. GPU QOS imposed12GiB hostRAM. All outpu
 terminal receipts, completion wakes and root acknowledgements remain in the
 matching refold workspace. Do not rerun any of these completed fifteen folds.
 
-## All fifteen preparations admitted; scoring in progress
+## All fifteen preparations admitted; ExaA scores complete
 
 Spectator-aware preparation2969/2985 completed **15/15** under the same new source
 adapter. The previously scored one-Ca P12293 sample0 exactly reproduces its old
@@ -81,11 +81,22 @@ The existing native CPU and corrected-solvent kernels now score these real input
 | Q9/ExaA, five sources | 2996,2997 | 2998 afterany | 2999 afterok collector | 3714564 |
 | C5/ExaF + Q88/PedE, ten sources | 3018,3019,3020 | 3021 afterany | 3022 afterok collector | 3731153 |
 
-Q9 native preflight and both real force/energy qualification fixtures pass in
-both lanes. Model searches are running; no new composite classifications exist
-yet. The same bounded four-mode search, common candidate pool, corrected GFN2
-components and frozen bands apply. No source ranking, threshold refit or new
-biological labels. Normal scheduler/user CPU limits may queue a lane; no bypass.
+**Q9/ExaA jobs2996–2999 completed: all five new sources correctly classify Ca**
+under origin, operational and mathematical policies. All required native cells
+and corrected-solvent components are available; calibration is unchanged. This
+recovers source coverage. Both static and accommodated results are correct, so
+these five do not demonstrate extra classification benefit from accommodation.
+The separate cumulative recovery overlay is now112correct/1wrong/2inconclusive/
+10unavailable; original125 remains105/1/1/18.
+
+C5/Q88 native3018/3019 completed seven sources; native3020 is still running with
+one further source complete at this checkpoint. Collector3021, solvent3022 and
+finalmerger3049 follow their declared dependencies. No C5/Q88 classifications
+exist yet. Do not repeat completed Q9 work or treat native-only energies as the
+final composite. Exact sourceIDs/components/outcomes are in
+`two_ca_solvent_q9_v1/FINAL_COLLECTION.json` and its alternative-source overlay.
+The same bounded four-mode search, shared candidate pool, corrected GFN2 and
+frozen bands apply throughout; no source ranking or calibration change.
 
 Exact submission/dependency/wake commands are in the matching
 `two_ca_scoring_q9_v1` and `two_ca_scoring_c5q88_v1` workspaces. Both batch overlays
@@ -95,7 +106,8 @@ fifteen-source outcome. Final one-CPU merger **3049** is queued afterany2999:302
 with wake3772470, using `two_ca_scoring_final_v1/manifest.json`. It requires both
 actual batch outputs and writes RESULT.json, SOURCES.tsv and REPORT.md; missing
 outputs remain an explicit failed collection, not invented scores. All scoped
-agent implementations/reviews are complete; root integrates actual outcomes.
+implementations are complete; Gauss records the actual Q9 result and root
+integrates the remaining outcomes.
 
 ## Runtime failures retained
 

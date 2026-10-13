@@ -11,9 +11,10 @@ Recovery overlay107correct/1wrong/2inconclusive/15unavailable. ExaA two-Ca
 AF3 scout2881/audit2884 completed: allfive uniquePQQCa sites, remoteCa retained.
 C5AXV8 fold2912/audit2925 and Q88JH5 fold2913/audit2931 completed5/5each.
 All15 new sources pass spectator preparation2969/2985; oldone-Ca regressionexact.
-Native2996/2997 and3018/3019/3020 score unchanged fourmodepools; collectors2998/3021
-and correctedsolvent2999/3022 follow. Pipelinewakes3714564/3731153 armed. No new
-composite classifications yet. Finalmerger3049 follows2999/3022, wake3772470.
+Q9jobs2996-2999 complete: all5Ca-correct underall3policies; recovery112/1/2/10.
+C5/Q88 native3018/3019 complete,3020 stillruns;collector3021/solvent3022 follow.
+No C5/Q88 compositeyet. Pipelinewake3731153 and finalmerger3049/wake3772470 remain.
+Q9result is coverage recovery withunchangedbands; no new accommodationaccuracyclaim.
 Root integrates both5+10 batches; no promotion. Root owns execution/scoring; agents
 own disjoint MxaF, disulfide and refold code. New Ca-source recovery is authorized;
 older prohibitions on repairing the completed primary test do not block it.

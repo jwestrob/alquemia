@@ -1,0 +1,802 @@
+{
+  "status": "input_and_reference_preparation_complete_Q9_prediction_pending",
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/manifest.json",
+    "sha256": "1d34a717b2d97fe4c59852d2f894eddab24c4e69f6bdb0d86839ada694f88fb7"
+  },
+  "prepared": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/prepared/PREPARED.json",
+    "sha256": "f1134b4091849a7d2de8b5d0344ba3dec0853f267b74ae48d507312e79948a7e"
+  },
+  "reference_audit": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/prepared/1FLG_AUDIT.json",
+    "sha256": "8a4f94a953e2e0d12c3b56372a22d679356094877de0f05532058894c05752de"
+  },
+  "reference_coordinates": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/prepared/1FLG.cif",
+    "sha256": "81e5f7791c7e8b2fe25a033503bfc084561b109a8ad87384d6ffa9cea9ba7ff3"
+  },
+  "execution": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/prepared/EXECUTION.json",
+    "sha256": "ea3d616ecf3ff546fd0d7321659d10370507486e00445a0428bb5296d50726cb"
+  },
+  "targets": [
+    {
+      "accession": "q9z4j7",
+      "source_input": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q9z4j7-pqq-ca/q9z4j7-pqq-ca_data.json",
+        "sha256": "9c8ae2cf5589d8977e4623437914079a9748abf6a8a48e8cd1a96ad77342d316"
+      },
+      "new_state_id": "q9z4j7__occupancy2Ca_v1",
+      "new_source_ids": [
+        "q9z4j7-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-0",
+        "q9z4j7-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-1",
+        "q9z4j7-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-2",
+        "q9z4j7-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-3",
+        "q9z4j7-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-4"
+      ],
+      "original_source_ids": [
+        "q9z4j7-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+        "q9z4j7-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+        "q9z4j7-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+        "q9z4j7-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+        "q9z4j7-pqq-la_model__conditioned_Ca__seed-1_sample-4"
+      ],
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/prepared/inputs/q9z4j7.json",
+        "sha256": "6295db531c0bd5e13aa5832041ae292cf4d3b588d2ed964f356d2320e049f41a"
+      },
+      "original_name_retained": "Q9Z4J7-pqq-Ca",
+      "protein_fields_sha256": {
+        "sequence": "08aac3c266b93ceba2c10624e392752178b0cd9fc2a8c2417c75c9a2757f5433",
+        "modifications": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "unpairedMsa": "b51d7e027d55caa6b873251db42cd82304703d67091b4cc8b89d505c61343f46",
+        "pairedMsa": "71f75c34c4d1a41368903f5727a5097b32f7fcfdbd9b600717d5a39774e32452",
+        "templates": "41c020a8f58317beb919af34541ea3e3650093f4b82f0b3ef5e12de1d1ce424d"
+      },
+      "only_change": "append separateD ligand identical toB exceptid",
+      "all_original_fields_identical": true,
+      "schema_command": [
+        "/usr/local/bin/singularity",
+        "exec",
+        "--bind",
+        "/groups,/shared",
+        "--pwd",
+        "/app/alphafold",
+        "/shared/software/alphafold3/3.0.4/container/alphafold3.sif",
+        "python",
+        "-c",
+        "import json,sys;from pathlib import Path;from alphafold3.common import folding_input;p=Path(sys.argv[1]);x=folding_input.Input.from_json(p.read_text(),json_path=p);print(json.dumps({\"name\":x.name,\"seeds\":x.rng_seeds,\"chains\":[c.id for c in x.chains]}))",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/prepared/inputs/q9z4j7.json"
+      ],
+      "schema_log": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/prepared/q9z4j7_schema.log",
+        "sha256": "e81613fb40e2b75a1477e735797140a5b0420ad488448e095e1b696f14348bc3"
+      }
+    },
+    {
+      "accession": "c5axv8",
+      "source_input": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/La-binding-controls/Ca-alone/c5axv8-pqq-ca/c5axv8-pqq-ca_data.json",
+        "sha256": "3fc739a80aaa0039642cfa2f9426edc3d8c68d7334802c39e2134c90e0562ee8"
+      },
+      "new_state_id": "c5axv8__occupancy2Ca_v1",
+      "new_source_ids": [
+        "c5axv8-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-0",
+        "c5axv8-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-1",
+        "c5axv8-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-2",
+        "c5axv8-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-3",
+        "c5axv8-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-4"
+      ],
+      "original_source_ids": [
+        "c5axv8-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+        "c5axv8-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+        "c5axv8-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+        "c5axv8-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+        "c5axv8-pqq-la_model__conditioned_Ca__seed-1_sample-4"
+      ],
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/prepared/inputs/c5axv8.json",
+        "sha256": "7a88fe51ef5a8017dc63d7417eff16f70a2d744ca7f0b80eaf4f94558afd6ead"
+      },
+      "original_name_retained": "C5AXV8-pqq-Ca",
+      "protein_fields_sha256": {
+        "sequence": "af4ce207b3f74586b96e9b280e0f13c9cd999358a9407227535a50e4932cc4e8",
+        "modifications": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "unpairedMsa": "6bf9c476973a8f6fc023a7ceeed481fd0209c162af04a03cdbfc34afef262bab",
+        "pairedMsa": "4e9a6e653f63689ca7a679be13fa99c0ee616ccce019c89529ab1887462bf43c",
+        "templates": "7bc2f01f2fff86b77391e67409f1a289c9e6a3c8e2ab63254231e65c368b2db5"
+      },
+      "only_change": "append separateD ligand identical toB exceptid",
+      "all_original_fields_identical": true,
+      "schema_command": [
+        "/usr/local/bin/singularity",
+        "exec",
+        "--bind",
+        "/groups,/shared",
+        "--pwd",
+        "/app/alphafold",
+        "/shared/software/alphafold3/3.0.4/container/alphafold3.sif",
+        "python",
+        "-c",
+        "import json,sys;from pathlib import Path;from alphafold3.common import folding_input;p=Path(sys.argv[1]);x=folding_input.Input.from_json(p.read_text(),json_path=p);print(json.dumps({\"name\":x.name,\"seeds\":x.rng_seeds,\"chains\":[c.id for c in x.chains]}))",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/prepared/inputs/c5axv8.json"
+      ],
+      "schema_log": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/prepared/c5axv8_schema.log",
+        "sha256": "ebf194a411bab509460588a32316da0f2d39f8cfc832db0540a80a925aa1cea0"
+      }
+    },
+    {
+      "accession": "q88jh5",
+      "source_input": {
+        "path": "/groups/banfield/projects/multienv/corkscrew/supplementary_structures/Ca-binding-controls/Ca-alone/q88jh5-pqq-ca/q88jh5-pqq-ca_data.json",
+        "sha256": "febccf4e4f2eb7ba14f37ba6aa9760fd755a3211b4ca01f4ecc86cdde59c8419"
+      },
+      "new_state_id": "q88jh5__occupancy2Ca_v1",
+      "new_source_ids": [
+        "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-0",
+        "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-1",
+        "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-2",
+        "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-3",
+        "q88jh5-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-4"
+      ],
+      "original_source_ids": [
+        "q88jh5-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+        "q88jh5-pqq-la_model__conditioned_Ca__seed-1_sample-1",
+        "q88jh5-pqq-la_model__conditioned_Ca__seed-1_sample-2",
+        "q88jh5-pqq-la_model__conditioned_Ca__seed-1_sample-3",
+        "q88jh5-pqq-la_model__conditioned_Ca__seed-1_sample-4"
+      ],
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/prepared/inputs/q88jh5.json",
+        "sha256": "da00cc41da79441feac33034fdd87c3e56ade4ccc82acd07f93df6283dbf73f3"
+      },
+      "original_name_retained": "Q88JH5-pqq-Ca",
+      "protein_fields_sha256": {
+        "sequence": "165e4790eea87f76d2c9c47a0615b19cdda5496d5ae74d05f0f2175a5626ae8a",
+        "modifications": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "unpairedMsa": "83542f1ff2258b97877724f0eb4b6114c4966f509f6911830e9b4679c79fee84",
+        "pairedMsa": "b641d876dc329b0f2d2e4213d7a2fa8768b848c47da7d56b5fe7a002c1e68f74",
+        "templates": "5c7c88e0a58b8e621cb2e641f2265be3f66f5d51290421474c0c14954d993805"
+      },
+      "only_change": "append separateD ligand identical toB exceptid",
+      "all_original_fields_identical": true,
+      "schema_command": [
+        "/usr/local/bin/singularity",
+        "exec",
+        "--bind",
+        "/groups,/shared",
+        "--pwd",
+        "/app/alphafold",
+        "/shared/software/alphafold3/3.0.4/container/alphafold3.sif",
+        "python",
+        "-c",
+        "import json,sys;from pathlib import Path;from alphafold3.common import folding_input;p=Path(sys.argv[1]);x=folding_input.Input.from_json(p.read_text(),json_path=p);print(json.dumps({\"name\":x.name,\"seeds\":x.rng_seeds,\"chains\":[c.id for c in x.chains]}))",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/prepared/inputs/q88jh5.json"
+      ],
+      "schema_log": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/ca_coverage_recovery_20261012/refold/run_v3_h200/prepared/q88jh5_schema.log",
+        "sha256": "b145243c1833cd7c0558a28973dfd497e924f11fd147ecb36e76e0b172beeb9a"
+      }
+    }
+  ],
+  "source_historical_AF3_version_and_recycles": "unverified",
+  "reference_mappings": [
+    {
+      "chain": "A",
+      "alignment_score": 1111,
+      "identity_percent": 100.0,
+      "six_donor_region": [
+        {
+          "source_position": 45,
+          "source_residue": "D",
+          "crystal_chain": "A",
+          "crystal_resnum": 11,
+          "crystal_icode": "",
+          "crystal_resname": "ASP",
+          "identity": true
+        },
+        {
+          "source_position": 48,
+          "source_residue": "T",
+          "crystal_chain": "A",
+          "crystal_resnum": 14,
+          "crystal_icode": "",
+          "crystal_resname": "THR",
+          "identity": true
+        },
+        {
+          "source_position": 51,
+          "source_residue": "D",
+          "crystal_chain": "A",
+          "crystal_resnum": 17,
+          "crystal_icode": "",
+          "crystal_resname": "ASP",
+          "identity": true
+        }
+      ]
+    },
+    {
+      "chain": "B",
+      "alignment_score": 1111,
+      "identity_percent": 100.0,
+      "six_donor_region": [
+        {
+          "source_position": 45,
+          "source_residue": "D",
+          "crystal_chain": "B",
+          "crystal_resnum": 11,
+          "crystal_icode": "",
+          "crystal_resname": "ASP",
+          "identity": true
+        },
+        {
+          "source_position": 48,
+          "source_residue": "T",
+          "crystal_chain": "B",
+          "crystal_resnum": 14,
+          "crystal_icode": "",
+          "crystal_resname": "THR",
+          "identity": true
+        },
+        {
+          "source_position": 51,
+          "source_residue": "D",
+          "crystal_chain": "B",
+          "crystal_resnum": 17,
+          "crystal_icode": "",
+          "crystal_resname": "ASP",
+          "identity": true
+        }
+      ]
+    }
+  ],
+  "Ca_sites": [
+    {
+      "site": "A:CA751:CA",
+      "typed_CN": 7,
+      "typed_contacts": [
+        {
+          "chain": "A",
+          "resnum": 701,
+          "icode": "",
+          "resname": "PQQ",
+          "atom": "O5",
+          "element": "O",
+          "distance_A": 2.732,
+          "donor_type": "cofactor_O",
+          "qualifies_at_3p1A": true,
+          "included_in_qm_at_3p3A": true,
+          "Q9Z4J7_mapping": null
+        },
+        {
+          "chain": "A",
+          "resnum": 701,
+          "icode": "",
+          "resname": "PQQ",
+          "atom": "O7A",
+          "element": "O",
+          "distance_A": 2.792,
+          "donor_type": "cofactor_O",
+          "qualifies_at_3p1A": true,
+          "included_in_qm_at_3p3A": true,
+          "Q9Z4J7_mapping": null
+        },
+        {
+          "chain": "A",
+          "resnum": 179,
+          "icode": "",
+          "resname": "GLU",
+          "atom": "OE1",
+          "element": "O",
+          "distance_A": 2.839,
+          "donor_type": "sidechain_O",
+          "qualifies_at_3p1A": true,
+          "included_in_qm_at_3p3A": true,
+          "Q9Z4J7_mapping": {
+            "source_position": 213,
+            "source_residue": "E",
+            "crystal_chain": "A",
+            "crystal_resnum": 179,
+            "crystal_icode": "",
+            "crystal_resname": "GLU",
+            "identity": true
+          }
+        },
+        {
+          "chain": "A",
+          "resnum": 316,
+          "icode": "",
+          "resname": "ASP",
+          "atom": "OD1",
+          "element": "O",
+          "distance_A": 2.844,
+          "donor_type": "sidechain_O",
+          "qualifies_at_3p1A": true,
+          "included_in_qm_at_3p3A": true,
+          "Q9Z4J7_mapping": {
+            "source_position": 350,
+            "source_residue": "D",
+            "crystal_chain": "A",
+            "crystal_resnum": 316,
+            "crystal_icode": "",
+            "crystal_resname": "ASP",
+            "identity": true
+          }
+        },
+        {
+          "chain": "A",
+          "resnum": 266,
+          "icode": "",
+          "resname": "ASN",
+          "atom": "OD1",
+          "element": "O",
+          "distance_A": 2.916,
+          "donor_type": "sidechain_O",
+          "qualifies_at_3p1A": true,
+          "included_in_qm_at_3p3A": true,
+          "Q9Z4J7_mapping": {
+            "source_position": 300,
+            "source_residue": "N",
+            "crystal_chain": "A",
+            "crystal_resnum": 266,
+            "crystal_icode": "",
+            "crystal_resname": "ASN",
+            "identity": true
+          }
+        },
+        {
+          "chain": "A",
+          "resnum": 701,
+          "icode": "",
+          "resname": "PQQ",
+          "atom": "N6",
+          "element": "N",
+          "distance_A": 2.926,
+          "donor_type": "cofactor_N",
+          "qualifies_at_3p1A": true,
+          "included_in_qm_at_3p3A": true,
+          "Q9Z4J7_mapping": null
+        },
+        {
+          "chain": "A",
+          "resnum": 179,
+          "icode": "",
+          "resname": "GLU",
+          "atom": "OE2",
+          "element": "O",
+          "distance_A": 2.928,
+          "donor_type": "sidechain_O",
+          "qualifies_at_3p1A": true,
+          "included_in_qm_at_3p3A": true,
+          "Q9Z4J7_mapping": {
+            "source_position": 213,
+            "source_residue": "E",
+            "crystal_chain": "A",
+            "crystal_resnum": 179,
+            "crystal_icode": "",
+            "crystal_resname": "GLU",
+            "identity": true
+          }
+        }
+      ],
+      "PQQ_associations": [
+        "A:PQQ701"
+      ],
+      "nearest_PQQ_atom_A": 2.7317873270077224
+    },
+    {
+      "site": "A:CA761:CA",
+      "typed_CN": 6,
+      "typed_contacts": [
+        {
+          "chain": "A",
+          "resnum": 17,
+          "icode": "",
+          "resname": "ASP",
+          "atom": "O",
+          "element": "O",
+          "distance_A": 2.698,
+          "donor_type": "backbone_O",
+          "qualifies_at_3p1A": true,
+          "included_in_qm_at_3p3A": true,
+          "Q9Z4J7_mapping": {
+            "source_position": 51,
+            "source_residue": "D",
+            "crystal_chain": "A",
+            "crystal_resnum": 17,
+            "crystal_icode": "",
+            "crystal_resname": "ASP",
+            "identity": true
+          }
+        },
+        {
+          "chain": "A",
+          "resnum": 17,
+          "icode": "",
+          "resname": "ASP",
+          "atom": "OD1",
+          "element": "O",
+          "distance_A": 2.724,
+          "donor_type": "sidechain_O",
+          "qualifies_at_3p1A": true,
+          "included_in_qm_at_3p3A": true,
+          "Q9Z4J7_mapping": {
+            "source_position": 51,
+            "source_residue": "D",
+            "crystal_chain": "A",
+            "crystal_resnum": 17,
+            "crystal_icode": "",
+            "crystal_resname": "ASP",
+            "identity": true
+          }
+        },
+        {
+          "chain": "A",
+          "resnum": 11,
+          "icode": "",
+          "resname": "ASP",
+          "atom": "O",
+          "element": "O",
+          "distance_A": 2.85,
+          "donor_type": "backbone_O",
+          "qualifies_at_3p1A": true,
+          "included_in_qm_at_3p3A": true,
+          "Q9Z4J7_mapping": {
+            "source_position": 45,
+            "source_residue": "D",
+            "crystal_chain": "A",
+            "crystal_resnum": 11,
+            "crystal_icode": "",
+            "crystal_resname": "ASP",
+            "identity": true
+          }
+        },
+        {
+          "chain": "A",
+          "resnum": 11,
+          "icode": "",
+          "resname": "ASP",
+          "atom": "OD1",
+          "element": "O",
+          "distance_A": 2.875,
+          "donor_type": "sidechain_O",
+          "qualifies_at_3p1A": true,
+          "included_in_qm_at_3p3A": true,
+          "Q9Z4J7_mapping": {
+            "source_position": 45,
+            "source_residue": "D",
+            "crystal_chain": "A",
+            "crystal_resnum": 11,
+            "crystal_icode": "",
+            "crystal_resname": "ASP",
+            "identity": true
+          }
+        },
+        {
+          "chain": "A",
+          "resnum": 14,
+          "icode": "",
+          "resname": "THR",
+          "atom": "O",
+          "element": "O",
+          "distance_A": 2.877,
+          "donor_type": "backbone_O",
+          "qualifies_at_3p1A": true,
+          "included_in_qm_at_3p3A": true,
+          "Q9Z4J7_mapping": {
+            "source_position": 48,
+            "source_residue": "T",
+            "crystal_chain": "A",
+            "crystal_resnum": 14,
+            "crystal_icode": "",
+            "crystal_resname": "THR",
+            "identity": true
+          }
+        },
+        {
+          "chain": "A",
+          "resnum": 14,
+          "icode": "",
+          "resname": "THR",
+          "atom": "OG1",
+          "element": "O",
+          "distance_A": 2.908,
+          "donor_type": "sidechain_O",
+          "qualifies_at_3p1A": true,
+          "included_in_qm_at_3p3A": true,
+          "Q9Z4J7_mapping": {
+            "source_position": 48,
+            "source_residue": "T",
+            "crystal_chain": "A",
+            "crystal_resnum": 14,
+            "crystal_icode": "",
+            "crystal_resname": "THR",
+            "identity": true
+          }
+        }
+      ],
+      "PQQ_associations": [],
+      "nearest_PQQ_atom_A": 25.28244080384645
+    },
+    {
+      "site": "B:CA752:CA",
+      "typed_CN": 6,
+      "typed_contacts": [
+        {
+          "chain": "B",
+          "resnum": 266,
+          "icode": "",
+          "resname": "ASN",
+          "atom": "OD1",
+          "element": "O",
+          "distance_A": 2.748,
+          "donor_type": "sidechain_O",
+          "qualifies_at_3p1A": true,
+          "included_in_qm_at_3p3A": true,
+          "Q9Z4J7_mapping": {
+            "source_position": 300,
+            "source_residue": "N",
+            "crystal_chain": "B",
+            "crystal_resnum": 266,
+            "crystal_icode": "",
+            "crystal_resname": "ASN",
+            "identity": true
+          }
+        },
+        {
+          "chain": "B",
+          "resnum": 179,
+          "icode": "",
+          "resname": "GLU",
+          "atom": "OE1",
+          "element": "O",
+          "distance_A": 2.785,
+          "donor_type": "sidechain_O",
+          "qualifies_at_3p1A": true,
+          "included_in_qm_at_3p3A": true,
+          "Q9Z4J7_mapping": {
+            "source_position": 213,
+            "source_residue": "E",
+            "crystal_chain": "B",
+            "crystal_resnum": 179,
+            "crystal_icode": "",
+            "crystal_resname": "GLU",
+            "identity": true
+          }
+        },
+        {
+          "chain": "B",
+          "resnum": 702,
+          "icode": "",
+          "resname": "PQQ",
+          "atom": "O7A",
+          "element": "O",
+          "distance_A": 2.794,
+          "donor_type": "cofactor_O",
+          "qualifies_at_3p1A": true,
+          "included_in_qm_at_3p3A": true,
+          "Q9Z4J7_mapping": null
+        },
+        {
+          "chain": "B",
+          "resnum": 702,
+          "icode": "",
+          "resname": "PQQ",
+          "atom": "O5",
+          "element": "O",
+          "distance_A": 2.824,
+          "donor_type": "cofactor_O",
+          "qualifies_at_3p1A": true,
+          "included_in_qm_at_3p3A": true,
+          "Q9Z4J7_mapping": null
+        },
+        {
+          "chain": "B",
+          "resnum": 702,
+          "icode": "",
+          "resname": "PQQ",
+          "atom": "N6",
+          "element": "N",
+          "distance_A": 2.927,
+          "donor_type": "cofactor_N",
+          "qualifies_at_3p1A": true,
+          "included_in_qm_at_3p3A": true,
+          "Q9Z4J7_mapping": null
+        },
+        {
+          "chain": "B",
+          "resnum": 179,
+          "icode": "",
+          "resname": "GLU",
+          "atom": "OE2",
+          "element": "O",
+          "distance_A": 2.927,
+          "donor_type": "sidechain_O",
+          "qualifies_at_3p1A": true,
+          "included_in_qm_at_3p3A": true,
+          "Q9Z4J7_mapping": {
+            "source_position": 213,
+            "source_residue": "E",
+            "crystal_chain": "B",
+            "crystal_resnum": 179,
+            "crystal_icode": "",
+            "crystal_resname": "GLU",
+            "identity": true
+          }
+        }
+      ],
+      "PQQ_associations": [
+        "B:PQQ702"
+      ],
+      "nearest_PQQ_atom_A": 2.7940681809862835
+    },
+    {
+      "site": "B:CA762:CA",
+      "typed_CN": 6,
+      "typed_contacts": [
+        {
+          "chain": "B",
+          "resnum": 17,
+          "icode": "",
+          "resname": "ASP",
+          "atom": "OD1",
+          "element": "O",
+          "distance_A": 2.651,
+          "donor_type": "sidechain_O",
+          "qualifies_at_3p1A": true,
+          "included_in_qm_at_3p3A": true,
+          "Q9Z4J7_mapping": {
+            "source_position": 51,
+            "source_residue": "D",
+            "crystal_chain": "B",
+            "crystal_resnum": 17,
+            "crystal_icode": "",
+            "crystal_resname": "ASP",
+            "identity": true
+          }
+        },
+        {
+          "chain": "B",
+          "resnum": 11,
+          "icode": "",
+          "resname": "ASP",
+          "atom": "OD1",
+          "element": "O",
+          "distance_A": 2.659,
+          "donor_type": "sidechain_O",
+          "qualifies_at_3p1A": true,
+          "included_in_qm_at_3p3A": true,
+          "Q9Z4J7_mapping": {
+            "source_position": 45,
+            "source_residue": "D",
+            "crystal_chain": "B",
+            "crystal_resnum": 11,
+            "crystal_icode": "",
+            "crystal_resname": "ASP",
+            "identity": true
+          }
+        },
+        {
+          "chain": "B",
+          "resnum": 14,
+          "icode": "",
+          "resname": "THR",
+          "atom": "O",
+          "element": "O",
+          "distance_A": 2.72,
+          "donor_type": "backbone_O",
+          "qualifies_at_3p1A": true,
+          "included_in_qm_at_3p3A": true,
+          "Q9Z4J7_mapping": {
+            "source_position": 48,
+            "source_residue": "T",
+            "crystal_chain": "B",
+            "crystal_resnum": 14,
+            "crystal_icode": "",
+            "crystal_resname": "THR",
+            "identity": true
+          }
+        },
+        {
+          "chain": "B",
+          "resnum": 11,
+          "icode": "",
+          "resname": "ASP",
+          "atom": "O",
+          "element": "O",
+          "distance_A": 2.808,
+          "donor_type": "backbone_O",
+          "qualifies_at_3p1A": true,
+          "included_in_qm_at_3p3A": true,
+          "Q9Z4J7_mapping": {
+            "source_position": 45,
+            "source_residue": "D",
+            "crystal_chain": "B",
+            "crystal_resnum": 11,
+            "crystal_icode": "",
+            "crystal_resname": "ASP",
+            "identity": true
+          }
+        },
+        {
+          "chain": "B",
+          "resnum": 17,
+          "icode": "",
+          "resname": "ASP",
+          "atom": "O",
+          "element": "O",
+          "distance_A": 2.926,
+          "donor_type": "backbone_O",
+          "qualifies_at_3p1A": true,
+          "included_in_qm_at_3p3A": true,
+          "Q9Z4J7_mapping": {
+            "source_position": 51,
+            "source_residue": "D",
+            "crystal_chain": "B",
+            "crystal_resnum": 17,
+            "crystal_icode": "",
+            "crystal_resname": "ASP",
+            "identity": true
+          }
+        },
+        {
+          "chain": "B",
+          "resnum": 14,
+          "icode": "",
+          "resname": "THR",
+          "atom": "OG1",
+          "element": "O",
+          "distance_A": 3.044,
+          "donor_type": "sidechain_O",
+          "qualifies_at_3p1A": true,
+          "included_in_qm_at_3p3A": true,
+          "Q9Z4J7_mapping": {
+            "source_position": 48,
+            "source_residue": "T",
+            "crystal_chain": "B",
+            "crystal_resnum": 14,
+            "crystal_icode": "",
+            "crystal_resname": "THR",
+            "identity": true
+          }
+        }
+      ],
+      "PQQ_associations": [],
+      "nearest_PQQ_atom_A": 25.43111128126335
+    }
+  ],
+  "runtime": {
+    "invoked_path": "/usr/local/bin/singularity",
+    "resolved_artifact": {
+      "path": "/usr/bin/apptainer",
+      "sha256": "ebcf9e6d4fd3dea6f10ef50863b528dc0981c048ea568ce86345a495d163345d"
+    },
+    "version": "apptainer version 1.5.4",
+    "version_stderr": "",
+    "hostname": "node-224-2t-8gpu-1"
+  },
+  "root_submitted_Q9_scout": {
+    "job_id": "2881",
+    "watcher_pid": 3530162,
+    "event": "ca-coverage-ExaA-two-Ca-AF3-scout-v1",
+    "models": 5,
+    "status": "pending actual prediction/admission result",
+    "CPUs": 12,
+    "GPUs": 1
+  },
+  "other_fold_jobs_submitted": 0,
+  "agent_scientific_calls": 0,
+  "prep_fold_calls": 0,
+  "prep_energy_calls": 0,
+  "original_bands": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/expanded_candidate_reevaluation_v3/CANONICAL_COLLECTION.json",
+    "sha256": "929dedab7ba46c7088de7a4a695a8f19fc5af60066ecd3599645f687bd4e6896"
+  },
+  "preserved_attempts": [
+    "run_v1 unexecuted draft",
+    "2877 run_v2 launcher identity preflight failure",
+    "2878 run_v3 node5 container startup failure before schema"
+  ]
+}

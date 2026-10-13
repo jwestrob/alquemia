@@ -1,3 +1,17 @@
+# Active: recover eighteen unavailable Ca sources — 12 October 2026
+
+Jacob: "Well we need to redo those structures then, don't we?" Recover these
+cases separately, preserving original125 outcomes and frozen calibration. Read
+[the current recovery checkpoint](diagnostics/ca_coverage_recovery_20261012/CURRENT.md).
+Actual audits2864/2866 complete: fifteen offsite Ca placements, one existing-H
+mapping defect with intact disulfide. MxaF interrupted La searches restart as
+job2869 with exact archived policy and reuse. Root owns execution/scoring; agents
+own disjoint MxaF, disulfide and refold code. New Ca-source recovery is authorized;
+older prohibitions on repairing the completed primary test do not block it.
+All science on Slurm; production and original results remain unchanged. Existing
+LanM jobs are preserved, new La/Dy work remains lower priority. Readiness probes
+off; owned completion wakes mandatory. Inspect current receipts before reruns.
+
 # Priority: corrected La/Ca recalibration first — 12 October 2026
 
 Latest execution: proposal jobs 2660/2661, collector 2662 and corrected solvent

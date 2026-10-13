@@ -34,6 +34,27 @@ two lane manifests for samples0/2/4 and1/3, and `SOLVENT_CONFIG.json`
 No model or solvent call occurred during binding. Code, plan and wrappers are
 frozen by those manifests. Root owns submission and actual integration results.
 
+The remaining ten actual C5AXV8/Q88JH5 preparations also passed and were bound
+without changing the adapters: `two_ca_scoring_c5q88_v1/manifest.json` has SHA256
+`38c4630f8645ab31bbd88870b3d101f89b22cb40fe8215bbd10f33e40ca36ea2`;
+its three seven-CPU lanes contain4/3/3 sources. Its solvent configuration has
+SHA256 `0824aad4ca5f7ecf1b4ff52e091148fe9ece305b4bed36577efe6300b9bdb63f`.
+Root submitted Q9 lanes2996/2997, collector2998 and solvent2999; remaining
+lanes3018/3019/3020, collector3021 and solvent3022. Read actual receipts for their
+current states rather than treating submission as scientific acceptance.
+
+## Cumulative collection
+
+Separate new files `MERGE.py` / `merge.sbatch` leave the running code and pinned
+plan untouched. AST/shell checks pass. The metadata-only final manifest is
+`workspaces/ca_coverage_recovery_20261012/two_ca_scoring_final_v1/manifest.json`
+(SHA256 `17fcbd7bf20429e468cba0aaddf72d354c6e2acb1e63feab9e8b88a4fd0fcf10`).
+Root can run it on one Slurm CPU after both solvent jobs terminate. It requires
+both real5+10 result overlays, validates their exact original125 and prior-three
+records, and writes the cumulative JSON/TSV/report. A missing batch explicitly
+fails with an execution receipt; it cannot be reported as a completed15-source
+comparison. This collection has not yet executed at this checkpoint.
+
 The native worker retains its existing two archived force/energy qualification
 fixtures per lane. The same original kernel, optimizer, selector, model and
 common-pool rules remain pinned. Corrected solvent collection retains existing

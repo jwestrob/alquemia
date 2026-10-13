@@ -1,3 +1,14 @@
+# PedE solvent-response work authorized — 13 October 2026
+
+Jacob: “Continue your investigation however you see fit. Let's fix our solvent
+correction.” Read [the new plan](diagnostics/pede_solvent_response_20261013/PLAN.md)
+and CURRENT.md/actual execution receipts. This supersedes the discussion-only
+pause immediately below. Root owns submissions: saved component/cofactor audits
+and a fixed-origin eight-cell native DFT reference, starting with one La-water
+scout. No optimization or new folds; production and old results stay intact.
+All scientific work uses Slurm under current shared QoS, no memory/time overrides.
+Arm actual completion wakes. Preserve existing unrelated scheduler-listed jobs.
+
 # PedE failure diagnosis complete — 13 October 2026
 
 Jacob requested investigation before more experiments. Read

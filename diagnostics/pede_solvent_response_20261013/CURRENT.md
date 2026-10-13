@@ -31,7 +31,12 @@ Actual scout cost9580s on12 CPUs =114960 allocated CPU-seconds; sampled
 peakRSS18172MiB. Actual memory grant48000MiB, runtime MaxCore3100MB/rank with25%
 headroom. This is development reference cost; no routine-method speed claim.
 No solvent transfer or source double difference exists until matching cells
-complete. Root owns execution; comparison agent prepares the saved-result join.
+complete. The saved-result comparison passed six real-fixture checks in3376:
+one accepted scout, seven unresolved cells, no invented corrections, preserved
+raw energy and reproduced saved GFN2 algebra. Collector3377 is queued afterany
+3371–3374 on one CPU, with completion wake armed. It adds no molecular calls;
+failed or missing cells remain explicit. Exact command/PID are recorded in
+comparison_v1/FINAL_SUBMISSION.json. Root owns execution and interpretation.
 
 Cofactor saved audit3353 failed on unavailable-row schema handling; separate
 reader recovery3356 completed. All nine admitted origins pass source/PQQ/H/cap

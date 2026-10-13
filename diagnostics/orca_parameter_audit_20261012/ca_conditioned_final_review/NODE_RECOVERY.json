@@ -1,0 +1,18 @@
+{
+  "checked_utc": "2026-10-13T00:56:55.841807+00:00",
+  "metadata_only_command": [
+    "ssh",
+    "-o",
+    "BatchMode=yes",
+    "-o",
+    "ConnectTimeout=8",
+    "node-48-256g-18",
+    "hostname; ps -u jwestrob -o pid,ppid,stat,etime,time,pcpu,rss,args | grep -E 'python3 .*REVIEW|/bin/bash .*slurm_script' | grep -v grep"
+  ],
+  "returncode": 1,
+  "stdout": "node-64-768g-18\n",
+  "stderr": "Warning: Permanently added 'node-48-256g-18' (ED25519) to the list of known hosts.\n",
+  "prior_step_error": "srun2833.0 Header lengths are longer than data received; exit139",
+  "scheduler_observation": "2832/2833 still RUNNING; node48-256g-18 lacks registered version/boot time; no own review or batch-shell worker found by process inspection",
+  "recovery": "Same saved-artifact analysis, separate output directory, verified registered node64-768g-3; no molecular calls or running-job cancellation"
+}

@@ -1,5 +1,56 @@
 # Corrected Nikasha parameter/context work — 12 October 2026
 
+## Corrected La/Ca delivery complete; final review passed
+
+Final review 2834 completed in 54 seconds on one CPU. It reparsed all 1,300
+unique inputs and all 650 matched solvent components, reproducing every selection
+and class decision. Component and population checks pass the unchanged limits;
+absolute-energy v1 failures remain failed. Full report, all 125 rows, exceptions,
+actual costs and pins: ca_conditioned_final_review/DELIVERY.md and REPORT.md.
+Result SHA256 b93e622dbbed40d3540b3e6f3a6874216297f7e8f203ad263ebd4e7308c0e053.
+Root read the actual receipt and wrote v3 ROOT_ACK.json. Recalibration/reevaluation
+is complete; no repeated chemistry, threshold refit or production promotion.
+
+Existing LanM endpoints 2665/2666 and comparison 2669 remain monitored. Reporting
+allocations 2832/2833 still have stale RUNNING scheduler records on the mismatched
+node; their failed/missing receipts and absent-worker inspection are preserved.
+No running job was cancelled. Readiness probes remain disarmed. Do not rerun
+either completed Ca molecular campaign or the passed final review.
+
+## Completed scoring and review history
+
+Job 2663 completed in 7,604 seconds on 12 CPUs. Its actual final collection is
+ca_conditioned_gfn2_slurm_v1/FINAL_COLLECTION.json (SHA256
+304486558f3bf821d81dd270758bd0136b35440004c7a87baf2bc9892ce9cec4).
+All 1,264 primary and 1,264 independent backend calls have execution receipts;
+the stage reports no interruption. No molecular repeats or new calibration fit.
+
+Collected full 125-source outcomes: 105 correct / 1 wrong / 1 inconclusive /
+18 unavailable. On 107 sources available to both policies, static origins give
+102 / 1 / 4, accommodation gives 105 / 1 / 1. Four inconclusives become correct;
+MMOL_1770 Ca-conditioned sample 0 regresses from correct to inconclusive. The
+remaining wrong A0ACD6B9F2 Ca-conditioned sample 4 is the already-known reused
+probe. Preserve the 16 preparation exclusions and two interrupted P12293 searches.
+All 25 canonical references remain on the previously frozen calibration; do not
+refit using these outcomes or infer new Ca-conditioned triple results.
+
+Root acknowledged the actual completion receipt. Independent final comparison
+and report preparation are in progress under ca_conditioned_final_review/; any
+scientific analysis executes on Slurm and reuses saved artifacts only. No final
+production promotion or new La/Dy development. Existing LanM jobs and comparison
+remain owned and monitored under the user's instruction to preserve running work.
+
+Final-review job 2834 now runs on registered node-64-768g-3, one CPU; watcher
+3426029 is armed, event corrected-ca-final-review-v3. Read the v3 workspace's
+actual RECEIPT.json/RESULT.json before claiming completed review. Earlier review
+2832 failed on excluded-source metadata; v2 fixes only that join. Jobs 2832/2833
+landed on node-48-256g-18, which resolves as node-64-768g-18 and returns Slurm
+header errors. Process inspection found no own review worker, while scheduler
+records remained RUNNING. Those artifacts/allocations are preserved, watchers
+remain active, and no running job was cancelled. The v3 submission repeats only
+the saved-artifact review, with identical science/code and separate outputs.
+Read ca_conditioned_final_review/DELIVERY.md for the collected outcome summary.
+
 ## Proposal collection complete; corrected solvent stage running
 
 MACE jobs 2660/2661 and collector 2662 completed successfully. Attempt 004's

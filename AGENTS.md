@@ -1,21 +1,25 @@
 # Priority: corrected La/Ca recalibration first — 12 October 2026
 
-Latest execution: proposal jobs 2660/2661 and collector 2662 completed. All 106
-new sources are terminal: 104 native matrices complete, two prior node-failure
-interruptions retained. Existing corrected solvent job 2663 now runs with 12 CPUs
-on healthy node-64-768g-3; only its pending node restriction changed, with no new
-submission or running-job interruption. Completion watcher 2086172 is active.
-Canonical recalibration of the expanded candidate is already complete; remaining
-work is the full fixed-band Ca-conditioned reevaluation. Read the latest CURRENT
-and actual receipts before any action; do not repeat completed proposals.
+Latest execution: proposal jobs 2660/2661, collector 2662 and corrected solvent
+job 2663 are complete. The full 125-source Ca-conditioned collection gives
+105 correct / 1 wrong / 1 inconclusive / 18 unavailable. Among 107 sources with
+both scores, static origins give 102 / 1 / 4 and accommodation gives 105 / 1 / 1:
+four resolved abstentions, one new abstention, the same known wrong source.
+All 25 canonical references retain the previously frozen calibration. Final
+saved-artifact review 2834 PASSED: all 1,300 unique inputs, 650 solvent components
+and every recorded selection/decision reproduced. Read the completed delivery
+under diagnostics/orca_parameter_audit_20261012/ca_conditioned_final_review/.
+No new fit or production promotion. Read the latest CURRENT and actual receipts;
+do not repeat completed proposals or solvent work. All scientific analysis uses
+Slurm; individual LanM watchers remain active and readiness probes remain off.
 
 Jacob: "We need to do the recalibration first before the La/Dy stuff. Don't
 cancel running jobs but that's our first priority."
 
 Finish corrected La/Ca calibration and reference reevaluation before further
-La/Dy development. Preserve every running job. Current Ca work is MACE lanes
-2660/2661, collector 2662, then corrected solvent/decision job 2663; it has no
-LanM dependency. Retain the declared reference population and calibration rule.
+La/Dy development. Preserve every running job. The Ca molecular work and final
+comparison are complete, with no production promotion. Retain the declared
+reference population and calibration rule.
 Do not fit new bands to the Ca-conditioned evaluation outcomes.
 
 Existing LanM endpoints 2665/2666 and their queued one-CPU comparison 2669 may

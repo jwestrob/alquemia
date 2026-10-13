@@ -44,17 +44,25 @@ and ExaF, not experimental proof for them. No new MSA search. AF3 3.0.4 and actu
 weights are pinned, seed1, five samples, ten recycles; original fold runtime and
 recycles are unverified, so this is not a controlled one-variable fold comparison.
 
-**Q9 five-model scout 2881 COMPLETED on H200, 12 CPUs/one GPU**: all five
-raw outputs exist, 125 scheduler seconds. Inference success is not admission.
-**Five-source geometry audit 2884 runs on one CPU**, watcher3556764, using
-refold/audit_q9_v1/manifest.json; no new energies or protonation.
-Actual scheduler allocation is 12 GiB host RAM; no memory or time request was
-added. Manifest and submission/watch receipts are under refold/run_v3_h200/.
-Both full-source ions will remain explicit. Curie's spectator adapter is PLAN
-ONLY, under spectator_preparation/; do not score until exactly one PQQ-associated
-Ca is found and the spectator is demonstrably outside the retained local context.
-All generated samples and failures remain visible; no score-based selection.
-Other two five-model batches require an executable scout and a root submission.
+**Q9 scout 2881 and source geometry audit 2884 COMPLETED**: all five sources
+have exactly one PQQ-associated Ca (2.400–2.421 A) and one retained structural Ca
+(~25 A from PQQ). All 4849 source atoms/coordinates/occupancies are preserved.
+Sample3 uses active chain D/spectator B; the other four use active B/spectator D.
+Use per-row selectors. These are source-geometry results, not scores.
+
+The same frozen AF3 manifest now runs C5AXV8 **2912** and Q88JH5 **2913**, five
+samples each, normal H200 queue, 12 CPUs/one GPU. Wakes3578368/3578371 are armed;
+exact submission/watch commands are in refold/run_v3_h200/. No new MSA search,
+memory/time request or parameter change. Actual GPU QOS caps host RAM at12GiB.
+
+Curie implements the separately versioned spectator-aware preparation adapter
+under spectator_preparation/: retain both full-source ions, original canonical
+context membership, PQQ/proton/water state and old paired-coordinate gates.
+Require the spectator to be farther than4.3A from every retained physical heavy
+atom before explicit exclusion from the local Hamiltonian. One previously scored
+single-Ca real source supplies the unchanged-preparation regression. Root submits
+all preparation/testing through Slurm. No new molecular scores yet; all samples
+and failures remain visible, and calibration stays frozen.
 
 ## Runtime failures retained
 
@@ -77,9 +85,11 @@ Read actual Slurm status and these receipts before acting:
 - workspaces/ca_coverage_recovery_20261012/refold/audit_q9_v1/execution/FINAL_AUDIT.json
   after2884. Read every sample and distinguish implementation errors from
   source geometry failures; this audit is not full endpoint preparation.
-- For a successful Q9 scout, run source/occupancy admission under Slurm before
-  implementing the pinned spectator-aware protonation path and scoring it.
-  Preserve all samples. Use the same frozen corrected bands, without refitting.
+- Inspect folds/c5axv8 and folds/q88jh5 EXECUTION.json after2912/2913, then
+  apply the same five-source audit under Slurm. Do not regenerate Q9.
+- Run the narrow spectator preparation and real-source regression under Slurm
+  when Curie supplies the implementation. Score only admitted states with the
+  same corrected Hamiltonian and frozen bands; preserve failed preparations.
 
 Existing LanM 2665/2666 and collector2669 remain preserved. Readiness probes stay
 off; owned completion wakes are armed. Avoid stale/mismatched node-48-256g-18.

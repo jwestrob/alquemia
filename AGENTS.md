@@ -8,8 +8,9 @@ mapping defect with intact disulfide. MxaF2869/2873 recoveredbothmissingcases
 withcorrectCa calls; original125 unchanged, recovery107/1/1/16. RepairedXoxF
 native2875/solvent2880 completed: repairedXoxF is inconclusive (staticLa-correct).
 Recovery overlay107correct/1wrong/2inconclusive/15unavailable. ExaA two-Ca
-AF3 scout2881 completed allfive outputs; source geometry audit2884 runs with
-a wake. Input/schema/reference checks2879 passed on H200. Root owns execution/scoring; agents
+AF3 scout2881/audit2884 completed: allfive uniquePQQCa sites, remoteCa retained.
+C5AXV8 fold2912/Q88JH5 fold2913 queued on H200 with wakes; same frozen inputs.
+Curie implements narrow spectator prep; no scores yet. Input checks2879 passed. Root owns execution/scoring; agents
 own disjoint MxaF, disulfide and refold code. New Ca-source recovery is authorized;
 older prohibitions on repairing the completed primary test do not block it.
 All science on Slurm; production and original results remain unchanged. Existing

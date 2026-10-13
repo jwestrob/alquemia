@@ -1,0 +1,45 @@
+{
+  "status": "prepared_unexecuted",
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/comparison_v1/CONFIG.json",
+    "sha256": "fc43e8e834a3a9f5c6b6e64103cd5bbdf96d61b9e570b63f927b356fb124e1e9"
+  },
+  "driver": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/comparison_v1/COMPARE.py",
+    "sha256": "93cb56a469e09af954192c5a52a2193f1216e97c97dbb2b1d5b828e6a97312b2"
+  },
+  "plan": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pede_solvent_response_20261013/comparison/PLAN.md",
+    "sha256": "4ce1b10e0533ea3cff3ea042e38f3ea7b44629eed40c49e4812e1a3c737346ec"
+  },
+  "commands": {
+    "partial-test": [
+      "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python3.11",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/comparison_v1/COMPARE.py",
+      "partial-test",
+      "--config",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/comparison_v1/CONFIG.json"
+    ],
+    "collect": [
+      "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python3.11",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/comparison_v1/COMPARE.py",
+      "collect",
+      "--config",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/comparison_v1/CONFIG.json"
+    ]
+  },
+  "resources": {
+    "partition": "standard",
+    "ntasks": 1,
+    "memory_flags": null,
+    "time_flags": null
+  },
+  "final_dependencies_afterany": [
+    "3371",
+    "3372",
+    "3373",
+    "3374"
+  ],
+  "scope": "eight original endpoints only; one actual accepted partial fixture plus seven unresolved; no molecular calls",
+  "preparation_checks": "AST syntax and exact metadata/source-key/hash checks only; actual scientific parser/algebra test requires Slurm"
+}

@@ -91,7 +91,11 @@ Exact submission/dependency/wake commands are in the matching
 `two_ca_scoring_q9_v1` and `two_ca_scoring_c5q88_v1` workspaces. Both batch overlays
 preserve primary125 plus the earlier three recoveries. The final cumulative
 report must combine both actual5+10 results; neither batch alone is the complete
-fifteen-source outcome. Gauss owns the separate finite merger; root integrates.
+fifteen-source outcome. Final one-CPU merger **3049** is queued afterany2999:3022,
+with wake3772470, using `two_ca_scoring_final_v1/manifest.json`. It requires both
+actual batch outputs and writes RESULT.json, SOURCES.tsv and REPORT.md; missing
+outputs remain an explicit failed collection, not invented scores. All scoped
+agent implementations/reviews are complete; root integrates actual outcomes.
 
 ## Runtime failures retained
 

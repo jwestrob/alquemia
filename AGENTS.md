@@ -13,7 +13,8 @@ C5AXV8 fold2912/audit2925 and Q88JH5 fold2913/audit2931 completed5/5each.
 All15 new sources pass spectator preparation2969/2985; oldone-Ca regressionexact.
 Native2996/2997 and3018/3019/3020 score unchanged fourmodepools; collectors2998/3021
 and correctedsolvent2999/3022 follow. Pipelinewakes3714564/3731153 armed. No new
-composite classifications yet. Root integrates both5+10 batches; no promotion. Root owns execution/scoring; agents
+composite classifications yet. Finalmerger3049 follows2999/3022, wake3772470.
+Root integrates both5+10 batches; no promotion. Root owns execution/scoring; agents
 own disjoint MxaF, disulfide and refold code. New Ca-source recovery is authorized;
 older prohibitions on repairing the completed primary test do not block it.
 All science on Slurm; production and original results remain unchanged. Existing

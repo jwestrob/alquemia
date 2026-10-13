@@ -1,0 +1,43 @@
+{
+  "status": "prepared_unexecuted_technical_recovery",
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/cofactor_review_v2/manifest.json",
+    "sha256": "5e93850f5811751e088efd6e4701f1881352b53f7fc0c89aef02d36a443995e9"
+  },
+  "driver": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pede_solvent_response_20261013/cofactor_review/ANALYZE_v2.py",
+    "sha256": "3d58831067c794165e1e2f43d5aa344df93d74fa96c6a1c52850b72a6e8dd8f2"
+  },
+  "plan": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pede_solvent_response_20261013/cofactor_review/PLAN.md",
+    "sha256": "40f3638ac13dc4f6643e69d842afd2a7ee3e36315cca73f6c56528bbea84c87a"
+  },
+  "chemical_reference_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pede_solvent_response_20261013/cofactor_review/SOURCES.md",
+    "sha256": "41b2707cd2cb403a067a41c7f7ceb12ef4021aced6244c7ae0757422532cffe5"
+  },
+  "command": [
+    "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pede_solvent_response_20261013/cofactor_review/ANALYZE_v2.py",
+    "execute",
+    "--manifest",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/cofactor_review_v2/manifest.json"
+  ],
+  "resources": {
+    "partition": "standard",
+    "ntasks": 1,
+    "memory_flag": null,
+    "time_flag": null
+  },
+  "scientific_execution": "root Slurm submission only; no scientific imports or analysis executed by preparation",
+  "tests": "Python AST syntax only; no scientific tests or result claimed",
+  "predecessor_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/cofactor_review_v1/manifest.json",
+    "sha256": "eda3bf5ac1660de9664fbd8570826066602b2dbd5fe78aa5b2945747546799d6"
+  },
+  "predecessor_receipt": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/cofactor_review_v1/execution/RECEIPT.json",
+    "sha256": "d34e2e5b8bd59781e9876ea9e7085fae96e1ee0131557fe1e1cc2692b14ce69b"
+  },
+  "change": "Reader preserves raw-only unavailable La sample 1 instead of interpreting unavailable metadata strings as local geometries; same scientific scope/settings/inputs."
+}

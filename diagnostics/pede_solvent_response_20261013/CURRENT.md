@@ -1,11 +1,15 @@
 # Active solvent-response investigation — 13 October 2026
 
-Latest at15:24UTC: seven of eight DFT endpoints have passed collection. La
-vacuum3371 completed in11435s on12 CPUs; its final TRAH residual8.692805e-7
-passes the unchanged1e-5 criterion. All sample3 cells are complete. Only sample1
-Ca vacuum3372 remains: iteration40 with gross DIIS oscillation, before its native
-AutoTRAH start50. Collector3377 and completion/health wakes remain armed. No full
-source-response conclusion exists yet; do not rerun completed endpoints.
+Latest at16:14UTC: seven of eight DFT endpoints have passed collection. Only
+sample1 Ca vacuum3372 remains. Its TRAH residual is still very large, but accepted
+downhill steps and improving gap/curvature warnings show energetic recovery.
+Continue the original finite attempt; no limit extension or duplicate launch.
+The independently reviewed same-state water-GBW contingency is being prepared;
+read [its activation rules](SEEDED_RECOVERY_PLAN.md). Collector3377 and wakes
+remain armed. No full source-response conclusion exists yet.
+
+La vacuum3371 completed in11435s on12 CPUs; final TRAH residual8.692805e-7 passes
+the unchanged1e-5 criterion. All sample3 cells are complete. Do not rerun them.
 
 At14:44UTC3372's sample1 Ca vacuum triggered gross DIIS nonprogress: large
 density/energy oscillations from the atomic initial guess. No converged energy

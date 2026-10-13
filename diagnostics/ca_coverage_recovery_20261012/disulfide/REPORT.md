@@ -1,10 +1,10 @@
-# MMOL_2048 preparation recovered; discrimination not yet scored
+# MMOL_2048 preparation and native pool recovered; solvent score pending
 
 **The excluded source contains an intact disulfide. A malformed existing hydrogen
 coordinate caused the preparation failure; a new protein fold was unnecessary.**
 The versioned one-H repair now passes the unchanged199-atom envelope, physical
-mapping and frozen chemical-state checks. Native accommodation is prepared
-separately; no new score or classification is claimed here.
+mapping and frozen chemical-state checks. Native accommodation now completes
+the common six-cell geometry pool; no new composite classification is claimed here.
 
 ## What actually failed
 
@@ -48,14 +48,22 @@ Diagnosis:4.335s measured script wall time. Preparation:7.875s wall,
 6.664processCPU-s, peak RSS177300KiB on one Slurm CPU. No energies, forces,
 optimizations, new protons or waters were calculated.
 
-`NATIVE_PLAN.md` and `native_v2/manifest.json` define the one-source stage,
-submitted by root as Slurm2875 (seven CPUs on node-64-768g-5; completion wake
-PID3509945). It uses the next one-source
-seven-CPU stage: existing warm CPU MACE, two origin evaluations, two unchanged
-four-mode proposals and their complete shared pool. Two existing runtime force
-fixtures qualify the worker first. The same-protein preparation controls are
-not rescored. Native/model and solvent outcomes remain unavailable until actual
-execution; a repaired input is not evidence of better class discrimination.
+Slurm2875 completed the one-source native stage on seven CPUs at
+node-64-768g-5: both origins, both unchanged four-mode proposals and both cross
+evaluations form a complete shared pool. The two existing runtime force fixtures
+passed with exact energies and maximum force residual9.55e−14 eV/Å. This stage
+used33 actual forwards,463.764s elapsed,2549.236 measured modelCPU-s and
+3246.348 allocatedCPU-s. These are this CPU recovery's measured costs, not
+GPU throughput or a full new-site latency estimate. All started model calls
+have terminal receipts. The same-protein preparation controls were not rescored.
+
+`SOLVENT_PLAN.md` defines corrected solvent Slurm2880, submitted after completed
+2875 on node-64-768g-5 with12CPUs and completion watcher PID3530160. It uses unchanged
+component gates and frozen bands, at most12 fresh inputs per backend. It retains
+the125 primary rows and appends preparation recovery, with separately pinned
+MxaF technical recovery when available. Solvent/composite outcomes remain
+unavailable until actual execution. A repaired input or native pool is not
+evidence of better class discrimination.
 
 Original125-source results, frozen calibration and every original failure remain
 visible. Later results must be appended as named preparation recovery.

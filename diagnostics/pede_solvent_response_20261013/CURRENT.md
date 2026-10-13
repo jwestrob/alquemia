@@ -6,6 +6,15 @@ water cells are complete; sample3 La vacuum also completed in pair job3373
 and completion/health wakes remain armed. No full solvent-response conclusion
 exists yet; do not rerun the completed pair from older execution notes below.
 
+At14:44UTC3372's sample1 Ca vacuum triggered gross DIIS nonprogress: large
+density/energy oscillations from the atomic initial guess. No converged energy
+is available. Its printed AutoTRAH fallback starts at iteration50 and has not
+yet run; preserve the primary attempt with its unchanged total125-iteration
+limit. Health/completion wakes continue. A read-only review is checking the
+successful same-metal water wavefunction as a conditional recovery seed, with
+no additional molecular submission. Exact alert snapshot/decision are under
+reference_sample1_Ca_v1/health_reviews/gross_diis_v1.
+
 Jacob authorized contained work to fix the solvent correction. Read [PLAN.md](PLAN.md).
 The saved solvent decomposition completed as3352: all36 origin endpoints close
 algebraically. The sample3→1 Ca−La solvent change +21.2566 kcal/mol contains

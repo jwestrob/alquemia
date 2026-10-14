@@ -1,5 +1,10 @@
 # PedE solvent response: independent check complete
 
+Subsequent result: the [qualified native replay](fixed_charge_replay/REPORT.md)
+locates most GFN2 source sensitivity in additional electronic redistribution
+plus intrinsic compensation. This reference report retains the original DFT
+comparison and its costs; CURRENT.md records the next candidate preparation.
+
 The solvent sensitivity persists under independent DFT, but its source-dependent
 Ca−La contrast is **+10.03 kcal/mol versus +21.26** with corrected GFN2/ALPB.
 The cheap model gives much larger individual Ca and La responses, partly hidden
@@ -36,7 +41,7 @@ original failures and frozen classification bands remain unchanged.
 Total: **8 new molecular endpoints, zero molecular retries,1,074,804 allocated
 CPU-seconds, zero GPU-seconds.** Saved audits/reader failures3352/3353/3356 add7;
 parser recovery3370 adds2; partial test3376 and final collector3377 add1 each.
-The full current phase therefore used1,074,815 allocated CPU-seconds. Allocation
+The DFT/reference phase therefore used1,074,815 allocated CPU-seconds. Allocation
 is not a utilization measurement or a future screening-cost estimate.
 
 All molecular workers used12 MPI ranks on node-64-768g-5, a48000MiB actual

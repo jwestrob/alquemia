@@ -19,7 +19,7 @@
     "status_at_checkpoint": "native_converged_recovered_collection",
     "submitted_molecular_cells": 1
   },
-  "checkpoint_utc": "2026-10-14T02:42:15.845518+00:00",
+  "checkpoint_utc": "2026-10-14T03:09:05.909742+00:00",
   "cofactor_audit_v2": {
     "job_id": "3356",
     "submission": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/cofactor_review_v2/SUBMISSION.json",
@@ -142,11 +142,80 @@
     "note": "Original3354 batch failed only after converged molecular execution; its full cost included. Support jobs accounted separately."
   },
   "parser_and_comparison_support_allocated_CPU_seconds": 4,
-  "phase_total_allocated_CPU_seconds": 1074815,
+  "phase_total_allocated_CPU_seconds": 1076483,
   "fixed_charge_replay": {
-    "status": "preparing_unsubmitted",
+    "status": "complete_v3_native_replay",
     "plan": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pede_solvent_response_20261013/FIXED_CHARGE_REPLAY_PLAN.md",
-    "new_SCC_calls": 0,
-    "new_DFT_calls": 0
+    "attempts": [
+      {
+        "job_id": "4000",
+        "submission": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/fixed_charge_replay_v1/SUBMISSION.json",
+        "ack": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/fixed_charge_replay_v1/ROOT_ACK.json",
+        "status": "failed_CMake_export",
+        "allocated_CPU_seconds": 120,
+        "new_SCC_calls": 0,
+        "new_DFT_calls": 0,
+        "component_evaluations": 0
+      },
+      {
+        "job_id": "4001",
+        "status": "failed_diagonal_HB_SASA_input_conversion_mismatch",
+        "submission": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/fixed_charge_replay_v2/SUBMISSION.json",
+        "completion": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/fixed_charge_replay_v2/completion_event.json",
+        "manifest_sha256": "d1392c78cf3c0446a73ad4337db105f9ab371d10d2932b0586023ba223820689",
+        "watch_pid": 3798037,
+        "new_SCC_calls": 0,
+        "new_DFT_calls": 0,
+        "allocated_CPU_seconds": 768,
+        "component_evaluations": 4,
+        "ack": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/fixed_charge_replay_v2/ROOT_ACK.json"
+      },
+      {
+        "job_id": "4002",
+        "status": "complete_eight_components_all_diagonal_gates_pass",
+        "submission": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/fixed_charge_replay_v3/SUBMISSION.json",
+        "completion": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/fixed_charge_replay_v3/completion_event.json",
+        "manifest_sha256": "d556ea7a7e60a8b503f44281f40404e93cb7fd11ede26b91aa946bb253a9ec1c",
+        "watch_pid": 3807328,
+        "new_SCC_calls": 0,
+        "new_DFT_calls": 0,
+        "allocated_CPU_seconds": 780,
+        "elapsed_seconds": 65,
+        "component_evaluations": 8,
+        "ack": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/fixed_charge_replay_v3/ROOT_ACK.json",
+        "result": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/fixed_charge_replay_v3/execution_v1/FINAL_COLLECTION.json",
+          "sha256": "844fbaf4cfe3be17edb7c069a4c950985b603e1fb524d98be0633462c3ab77e9"
+        },
+        "qualification": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/fixed_charge_replay_v3/execution_v1/QUALIFICATION.json",
+          "sha256": "27c00b7210c30bc3feaaf3746423f1c52c77bba933524a3c1f980ea7e5be6d8d"
+        }
+      }
+    ],
+    "source_metal_contrast": {
+      "definition": "sample1_Ca\u2212sample1_La\u2212sample3_Ca+sample3_La",
+      "coefficients": {
+        "sample1_Ca": 1,
+        "sample1_La": -1,
+        "sample3_Ca": -1,
+        "sample3_La": 1
+      },
+      "hartree": {
+        "G_qvac_Eh": 0.003999740313247124,
+        "redistribution_plus_I_Eh": 0.029874835669316757,
+        "U_archived_Eh": 0.0338745934239455,
+        "U_closure_residual_Eh": -1.7441381561233982e-08,
+        "sum_of_two_terms_Eh": 0.03387457598256388
+      },
+      "HA_TO_KCAL": 627.509474,
+      "kcal_mol": {
+        "G_qvac": 2.509874940102298,
+        "redistribution_plus_I": 18.746742416689393,
+        "U_archived": 21.2566283014239,
+        "U_closure_residual": -1.0944632169323234e-05,
+        "sum_of_two_terms": 21.256617356791693
+      }
+    }
   }
 }

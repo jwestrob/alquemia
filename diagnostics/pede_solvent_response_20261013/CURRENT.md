@@ -34,29 +34,35 @@ saved audits/parser/collection jobs totals1,074,815 allocated CPU-seconds.
 These are development-reference costs, not routine classifier runtime.
 Exact receipts, costs and result hashes: [EXECUTION.json](EXECUTION.json).
 
-## Next authorized diagnostic
+## Native fixed-charge replay complete; next candidate preparing
 
-[FIXED_CHARGE_REPLAY_PLAN.md](FIXED_CHARGE_REPLAY_PLAN.md) defines eight inexpensive
-native ALPB component evaluations using the existing vacuum/water charge
-vectors. It separates a frozen-distribution contribution from additional
-solvent-driven redistribution while retaining intrinsic-energy compensation.
-First qualify four water-charge diagonals against archived native components.
-Use the actual eight-decimal charge precision and frozen analytic rounding
-bounds; no fabricated shell populations, new electronic calculations or fitted
-parameters. Agent la_parameter_scope owns wrapper preparation, root owns
-submission/scoring. An independent agent reviews the interface and accounting.
+[The native replay](fixed_charge_replay/REPORT.md) completed as4002: all eight
+fixed-charge evaluations and16water-component gates pass. The original21.2566
+kcal/mol source/metal contrast separates into2.5099 on vacuum charges plus
+18.7467 from additional redistribution including intrinsic compensation. The
+closure residual is1.1e−5kcal/mol, within the predeclared precision budget.
+This identifies model sensitivity, not a proven erroneous contribution.
 
-At this checkpoint the isolated xTB6.7.1 wrapper/build is being prepared, **not
-submitted**. Compilation/tests/evaluations use standard Slurm under current
-shared policy, no memory/time overrides. Record new submission and completion
-wake before yielding. Read the replay READY/SUBMISSION records for a newer state.
-Do not rerun the eight DFT endpoints or historical CPCM/CHELPG/LanM campaigns.
+Two technical failures are preserved:4000CMake export,4001wrong wrapper XYZ
+conversion import. Version3 uses the actual reader conversion; native parameters
+and all tolerances stay unchanged. Final build/evaluations65s on12CPUs; all three
+attempts1668allocatedCPU-s, zero newSCC/DFT, zeroGPU. Entire current phase through
+4002 totals1,076,483allocatedCPU-s. All actual results/costs are in EXECUTION.json.
+
+Next [research candidate](frozen_distribution_candidate/PLAN.md): MACE vacuum
+energy plus native ALPB evaluated on its matching GFN2vacuum charges. Keep the
+full continuum functional, explicitly omit extra solute electronic relaxation,
+and test usefulness with separate canonical calibration followed by frozen-band
+structural transfer. No fitted response fraction or production promotion.
+Inventory/code preparation runs in parallel; no candidate evaluation submitted.
+Canonical rule/population must be pinned before execution. All new compute uses
+Slurm and actual completion wakes. Do not rerun completed DFT or replays.
 
 ## Queue and recovery
 
-All owned PedE molecular/comparison jobs are terminal. Scheduler still lists
-old reporting2669/2832/2833 on node-48-256g-18 despite completed output receipts;
-preserve these unrelated entries under Jacob's instruction. Readiness probes
-remain off. Completion wakes for any newly submitted work remain mandatory.
-Root has read and acknowledged3372 and the actual3377result. A delayed terminal
-wake requires acknowledgement, not duplicate chemistry.
+All PedE DFT/comparison/replay jobs are terminal. Root read/acknowledged3372,
+3377result and4000/4001/4002. Delayed wakes need acknowledgement, not reruns.
+Scheduler still lists unrelated reporting2669/2832/2833 on node-48-256g-18 despite
+completed output receipts; preserve these under Jacob's instruction. Readiness
+probes remain off. New candidate inventory/preparation agents are active; root
+owns execution and shared scoring/status.

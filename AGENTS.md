@@ -10,12 +10,18 @@ terminal; the conditional seeded retry is closed and unrun. The printed125
 SCF limit was not a total-work cap: unchanged3372 converged after843 reported
 cycles including TRAH work. Do not restart it.
 
-Next contained diagnostic is native fixed-charge ALPB replay using saved charges
-and unchanged parameters; see FIXED_CHARGE_REPLAY_PLAN.md. Agent prepares an
-isolated version-matched wrapper, root submits on Slurm after review. First
-require water-charge component reproduction within declared rounding bounds.
-No new SCC/DFT, optimization, fitted scaling or production change. Consult actual
-replay SUBMISSION/EXECUTION records before assuming it has launched.
+Native fixed-charge replay4002 also completed: all8 evaluations and16component
+gates pass unchanged. Of21.2566kcal/mol source contrast,2.5099 comes from the
+functional on vacuum charges and18.7467 from redistribution plus intrinsic
+compensation. See fixed_charge_replay/REPORT.md. This is localization, not proof
+of error or a validated correction.4000build/4001input-conversion failures remain.
+All PedE DFT/replay jobs are terminal; delayed wakes do not authorize reruns.
+
+A separate frozen-distribution candidate is preparing under
+frozen_distribution_candidate/PLAN.md: existing shared pools, canonical25 first,
+then fixed-band full declared structural transfer. Exact inventory/calibration
+rule must be frozen before scoring. No new SCC/DFT/optimization, fitted response
+factor or production change. Root owns submissions; agents inventory/adapter only.
 
 Jacob: “Continue your investigation however you see fit. Let's fix our solvent
 correction.” Read [the new plan](diagnostics/pede_solvent_response_20261013/PLAN.md)

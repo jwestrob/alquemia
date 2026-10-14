@@ -25,6 +25,9 @@ eightcellmidpoint4137 complete8/8: targetpairedchange−0.176971, control+1.6177
 kcal/mol; sourcegap reduction mainlycontrolLa stabilization. No classifiergain.
 Read diagnostics/exaa_metal_midpoint_20261014/REPORT.md andCURRENT.md. Fractionprobe
 closed; no automaticfinersearch/optimizer/DFT/bands. Allownedjobs terminal.
+Next cavity-exclusion feasibility is complete at diagnostics/native_cavity_shielding_20261014/
+CURRENT.md. Proposed12-update native component scout remains unrun; source-only
+cavity API blocked, retainedcaps must stayexplicit. No new correction/calibration.
 Scouts were reviewed before continuation; no new per-analysis approval loop.
 This tests a common physical displacement, not the full operational three-candidate
 pool or classifier calibration. Old CPCM DFT is not a matched MACE-vacuum reference.

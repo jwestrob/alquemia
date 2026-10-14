@@ -13,6 +13,7 @@ fractions, bisection or automatic joint optimizer.
 Scoring cost278s/7CPU,8MACE/32SCC/16native replay,zeroDFT/GPU;156saved algebra checks
 passed. Exact runtime/source/parameter pins and commands remain in scoring_v1.
 Root owns integration. Independent review: review/RESULT_REVIEW.md. A distinct
-read-only feasibility audit of native protein-cavity shielding is being prepared
-under diagnostics/native_cavity_shielding_20261014/feasibility; no molecular
-calculation, model adoption or production change follows from that audit alone.
+read-only feasibility audit of native protein-cavity shielding is complete under
+diagnostics/native_cavity_shielding_20261014/feasibility/FEASIBILITY.md. It defines
+a capped-union component scout; a source-only native cavity remains unsupported.
+No molecular calculation, model adoption or production change has followed.

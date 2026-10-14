@@ -1,0 +1,380 @@
+{
+  "status": "complete",
+  "scope": "two_authorized_source_and_fixed_pool_packing_tests",
+  "crystal_denominator": 2,
+  "crystal_rows": [
+    {
+      "chain": "A",
+      "status": "available",
+      "conditional_decisions": {
+        "operational": {
+          "decision": "Ca",
+          "outcome": "correct"
+        },
+        "mathematical": {
+          "decision": "Ca",
+          "outcome": "correct"
+        },
+        "origin": {
+          "decision": "inconclusive",
+          "outcome": "inconclusive"
+        }
+      },
+      "works": {
+        "Ca": {
+          "origin": {
+            "MACE_kcal_mol": 0.0,
+            "solvent_kcal_mol": 0.0,
+            "total_kcal_mol": 0.0
+          },
+          "adaptive_Ca": {
+            "MACE_kcal_mol": -6.448552762283362,
+            "solvent_kcal_mol": 2.061737689200667,
+            "total_kcal_mol": -4.386815073082695
+          },
+          "adaptive_La": {
+            "MACE_kcal_mol": -6.061702774391513,
+            "solvent_kcal_mol": 0.8918991216555181,
+            "total_kcal_mol": -5.169803652735995
+          }
+        },
+        "La": {
+          "origin": {
+            "MACE_kcal_mol": 0.0,
+            "solvent_kcal_mol": 0.0,
+            "total_kcal_mol": 0.0
+          },
+          "adaptive_Ca": {
+            "MACE_kcal_mol": -7.564876081972856,
+            "solvent_kcal_mol": 1.9976137777449579,
+            "total_kcal_mol": -5.567262304227898
+          },
+          "adaptive_La": {
+            "MACE_kcal_mol": -8.06970981218577,
+            "solvent_kcal_mol": 0.9699088972725441,
+            "total_kcal_mol": -7.099800914913226
+          }
+        }
+      },
+      "selected": {
+        "mathematical": {
+          "Ca": {
+            "candidate": "adaptive_La",
+            "work": {
+              "MACE_kcal_mol": -6.061702774391513,
+              "solvent_kcal_mol": 0.8918991216555181,
+              "total_kcal_mol": -5.169803652735995
+            }
+          },
+          "La": {
+            "candidate": "adaptive_La",
+            "work": {
+              "MACE_kcal_mol": -8.06970981218577,
+              "solvent_kcal_mol": 0.9699088972725441,
+              "total_kcal_mol": -7.099800914913226
+            }
+          },
+          "differential_work_kcal_mol": 1.9299972621772312
+        },
+        "operational": {
+          "Ca": {
+            "candidate": "adaptive_La",
+            "work": {
+              "MACE_kcal_mol": -6.061702774391513,
+              "solvent_kcal_mol": 0.8918991216555181,
+              "total_kcal_mol": -5.169803652735995
+            }
+          },
+          "La": {
+            "candidate": "adaptive_La",
+            "work": {
+              "MACE_kcal_mol": -8.06970981218577,
+              "solvent_kcal_mol": 0.9699088972725441,
+              "total_kcal_mol": -7.099800914913226
+            }
+          },
+          "differential_work_kcal_mol": 1.9299972621772312
+        }
+      },
+      "pool": {
+        "status": "available",
+        "operational": {
+          "Ca": {
+            "candidate": "adaptive_La",
+            "work_kcal_mol": -5.169803652735995,
+            "all_works_kcal_mol": {
+              "origin": 0.0,
+              "adaptive_Ca": -4.386815073082695,
+              "adaptive_La": -5.169803652735995
+            },
+            "components": {
+              "MACE_eV": -182843.05571079932,
+              "solvent_hartree": -0.522623220153416
+            }
+          },
+          "La": {
+            "candidate": "adaptive_La",
+            "work_kcal_mol": -7.099800914913226,
+            "all_works_kcal_mol": {
+              "origin": 0.0,
+              "adaptive_Ca": -5.567262304227898,
+              "adaptive_La": -7.099800914913226
+            },
+            "components": {
+              "MACE_eV": -165265.32959030825,
+              "solvent_hartree": -0.3405805493146094
+            }
+          },
+          "R_model_kcal_mol": -405466.2274557295
+        },
+        "mathematical": {
+          "Ca": {
+            "candidate": "adaptive_La",
+            "work_kcal_mol": -5.169803652735995,
+            "all_works_kcal_mol": {
+              "origin": 0.0,
+              "adaptive_Ca": -4.386815073082695,
+              "adaptive_La": -5.169803652735995
+            },
+            "components": {
+              "MACE_eV": -182843.05571079932,
+              "solvent_hartree": -0.522623220153416
+            }
+          },
+          "La": {
+            "candidate": "adaptive_La",
+            "work_kcal_mol": -7.099800914913226,
+            "all_works_kcal_mol": {
+              "origin": 0.0,
+              "adaptive_Ca": -5.567262304227898,
+              "adaptive_La": -7.099800914913226
+            },
+            "components": {
+              "MACE_eV": -165265.32959030825,
+              "solvent_hartree": -0.3405805493146094
+            }
+          },
+          "R_model_kcal_mol": -405466.2274557295
+        },
+        "origin": {
+          "Ca": {
+            "candidate": "origin",
+            "work_kcal_mol": 0.0,
+            "all_works_kcal_mol": {
+              "origin": 0.0,
+              "adaptive_Ca": -4.386815073082695,
+              "adaptive_La": -5.169803652735995
+            },
+            "components": {
+              "MACE_eV": -182842.79285048833,
+              "solvent_hartree": -0.5240445518760595
+            }
+          },
+          "La": {
+            "candidate": "origin",
+            "work_kcal_mol": 0.0,
+            "all_works_kcal_mol": {
+              "origin": 0.0,
+              "adaptive_Ca": -5.567262304227898,
+              "adaptive_La": -7.099800914913226
+            },
+            "components": {
+              "MACE_eV": -165264.97965457075,
+              "solvent_hartree": -0.3421261975278387
+            }
+          },
+          "R_model_kcal_mol": -405468.1574529917
+        }
+      },
+      "admission": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_source_packing_20261014/crystal_v3/execution/chain_A/ADMISSION.json",
+        "sha256": "f3dbe4113e214ed32ce52e29daf367b596b88e3b9d9b987d1f57ae3684df2870"
+      }
+    },
+    {
+      "chain": "B",
+      "status": "unavailable",
+      "conditional_decisions": {
+        "operational": {
+          "decision": null,
+          "outcome": "unavailable"
+        },
+        "mathematical": {
+          "decision": null,
+          "outcome": "unavailable"
+        },
+        "origin": {
+          "decision": null,
+          "outcome": "unavailable"
+        }
+      },
+      "works": null,
+      "selected": null,
+      "pool": {
+        "status": "unavailable",
+        "operational": null,
+        "mathematical": null,
+        "origin": null
+      },
+      "admission": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_source_packing_20261014/crystal_v3/execution/chain_B/ADMISSION.json",
+        "sha256": "6ad1c66ad850da6b547e7d055361534896b599b7807e45c44911ae83e2f80744"
+      }
+    }
+  ],
+  "packing_rows": [
+    {
+      "case_id": "q9z4j7-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-0",
+      "role": "control",
+      "status": "available",
+      "expanded_minus_small_works": {
+        "Ca": {
+          "origin": {
+            "MACE_kcal_mol": 0.0,
+            "solvent_kcal_mol": 0.0,
+            "total_kcal_mol": 0.0,
+            "Gelec_kcal_mol": 0.0,
+            "Ghb_kcal_mol": 0.0,
+            "Gsasa_kcal_mol": 0.0,
+            "Gshift_kcal_mol": 0.0
+          },
+          "adaptive_Ca": {
+            "MACE_kcal_mol": 1.5748211269149852,
+            "solvent_kcal_mol": -0.3524461886883478,
+            "total_kcal_mol": 1.222374938226638,
+            "Gelec_kcal_mol": -0.428266607178341,
+            "Ghb_kcal_mol": 0.039211729069177886,
+            "Gsasa_kcal_mol": 0.03660868942081418,
+            "Gshift_kcal_mol": 0.0
+          },
+          "adaptive_La": {
+            "MACE_kcal_mol": 2.0580472062619686,
+            "solvent_kcal_mol": -0.4821825573255022,
+            "total_kcal_mol": 1.5758646489364665,
+            "Gelec_kcal_mol": -0.5906436676013946,
+            "Ghb_kcal_mol": 0.0551030277263814,
+            "Gsasa_kcal_mol": 0.0533580825495762,
+            "Gshift_kcal_mol": 0.0
+          }
+        },
+        "La": {
+          "origin": {
+            "MACE_kcal_mol": 0.0,
+            "solvent_kcal_mol": 0.0,
+            "total_kcal_mol": 0.0,
+            "Gelec_kcal_mol": 0.0,
+            "Ghb_kcal_mol": 0.0,
+            "Gsasa_kcal_mol": 0.0,
+            "Gshift_kcal_mol": 0.0
+          },
+          "adaptive_Ca": {
+            "MACE_kcal_mol": 1.4134288399058779,
+            "solvent_kcal_mol": -0.27126336533033857,
+            "total_kcal_mol": 1.1421654745755383,
+            "Gelec_kcal_mol": -0.35406765545147,
+            "Ghb_kcal_mol": 0.04619560070030967,
+            "Gsasa_kcal_mol": 0.03660868942081309,
+            "Gshift_kcal_mol": 0.0
+          },
+          "adaptive_La": {
+            "MACE_kcal_mol": 1.8599558886895746,
+            "solvent_kcal_mol": -0.39085920422286996,
+            "total_kcal_mol": 1.469096684466706,
+            "Gelec_kcal_mol": -0.5050569671515364,
+            "Ghb_kcal_mol": 0.060839680379090176,
+            "Gsasa_kcal_mol": 0.053358082549576205,
+            "Gshift_kcal_mol": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "q9z4j7-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-3",
+      "role": "target",
+      "status": "available",
+      "expanded_minus_small_works": {
+        "Ca": {
+          "origin": {
+            "MACE_kcal_mol": 0.0,
+            "solvent_kcal_mol": 0.0,
+            "total_kcal_mol": 0.0,
+            "Gelec_kcal_mol": 0.0,
+            "Ghb_kcal_mol": 0.0,
+            "Gsasa_kcal_mol": 0.0,
+            "Gshift_kcal_mol": 0.0
+          },
+          "adaptive_Ca": {
+            "MACE_kcal_mol": 3.2931853321803874,
+            "solvent_kcal_mol": -0.8418640235821484,
+            "total_kcal_mol": 2.4513213085982386,
+            "Gelec_kcal_mol": -0.910024091657174,
+            "Ghb_kcal_mol": 0.027579534261188924,
+            "Gsasa_kcal_mol": 0.040580533813868315,
+            "Gshift_kcal_mol": 0.0
+          },
+          "adaptive_La": {
+            "MACE_kcal_mol": 3.7917154055912725,
+            "solvent_kcal_mol": -1.099199997198585,
+            "total_kcal_mol": 2.692515408392688,
+            "Gelec_kcal_mol": -1.2097562182416823,
+            "Ghb_kcal_mol": 0.04699627444935413,
+            "Gsasa_kcal_mol": 0.06355994659377137,
+            "Gshift_kcal_mol": 0.0
+          }
+        },
+        "La": {
+          "origin": {
+            "MACE_kcal_mol": 0.0,
+            "solvent_kcal_mol": 0.0,
+            "total_kcal_mol": 0.0,
+            "Gelec_kcal_mol": 0.0,
+            "Ghb_kcal_mol": 0.0,
+            "Gsasa_kcal_mol": 0.0,
+            "Gshift_kcal_mol": 0.0
+          },
+          "adaptive_Ca": {
+            "MACE_kcal_mol": 2.8765947172177277,
+            "solvent_kcal_mol": -0.5002593541491926,
+            "total_kcal_mol": 2.3763353630685344,
+            "Gelec_kcal_mol": -0.5791140113475131,
+            "Ghb_kcal_mol": 0.03827210243121948,
+            "Gsasa_kcal_mol": 0.04058255476707701,
+            "Gshift_kcal_mol": 0.0
+          },
+          "adaptive_La": {
+            "MACE_kcal_mol": 3.3713137121188126,
+            "solvent_kcal_mol": -0.5452037948615398,
+            "total_kcal_mol": 2.82610991725727,
+            "Gelec_kcal_mol": -0.6721212182291796,
+            "Ghb_kcal_mol": 0.06335545582061741,
+            "Gsasa_kcal_mol": 0.06356196754698333,
+            "Gshift_kcal_mol": 0.0
+          }
+        }
+      }
+    }
+  ],
+  "evidence": {
+    "crystal": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_source_packing_20261014/crystal_solvent_v1/execution/FINAL_COLLECTION.json",
+      "sha256": "c3711fcb0be689a977082f29bcc9af52ccfd69f59d639b5c158a05f60283854b"
+    },
+    "source_comparison": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_source_packing_20261014/crystal_saved_comparison_v1/execution/RESULT.json",
+      "sha256": "fd5c7b663814be6783ca2e5cd160db38e3b115d3c66aaf52ebc20ab789dae351"
+    },
+    "packing": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_source_packing_20261014/packing_comparison_v1/execution/RESULT.json",
+      "sha256": "664a35cf2fc117f77acadcf45f5e2a8fa5409a83952f27874e987dafa010ac3c"
+    },
+    "scheduler": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_source_packing_20261014/FINAL_SCHEDULER_RECEIPTS.txt",
+      "sha256": "bd9a29b90df088d1a775bed5d2b9089bc1fb08e6761ed1628c5c0714daf104fe"
+    }
+  },
+  "production_changed": false,
+  "calibration_changed": false,
+  "new_DFT": false,
+  "no_active_owned_jobs": true,
+  "interpretation": "Conditional crystalCa; raw positive accommodation is La-directed. Missing-packing contribution largely cancels; source sensitivity is not proof of bad folds or correct learned energetics."
+}

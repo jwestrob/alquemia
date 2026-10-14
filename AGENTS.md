@@ -1,4 +1,4 @@
-# ExaA source and packing tests authorized — 14 October 2026
+# ExaA source and packing tests complete — 14 October 2026
 
 Jacob approved the two tests after discussing the inconclusives: “yep. go”. Read
 diagnostics/exaa_source_packing_20261014/PLAN.md and CURRENT.md. Root owns all
@@ -10,11 +10,12 @@ cause. See packing/FINAL_REPORT.md; no expanded-context class calls or optimizat
 Crystal4088's original failures remain;4093 admits A using its exact saved single
 remote-terminal-OXT completion with deposited heavy coordinates unchanged. B stays
 unavailable at the existing3.5Å Asp-partner gate (actual3.511Å), not a finding that
-the crystal is defective. Native4095 completes6/6 A cells, both proposals pass
-geometry/no-boundary gates (33actual MACE forwards). Solvent4096 runs on7CPUs;
-read-only source comparison4106 follows on1CPU, both with actual completion wakes.
-Read CURRENT and exact workspace submissions before any
-action; do not duplicate them. Crystal chemistry is explicitly conditional on
+the crystal is defective. Native4095/solvent4096/comparison4106 all complete:
+crystalA classifiesCa under unchanged accommodated bands, with+1.930kcal/mol
+accommodation versus+16.692 in the ambiguous fold. Raw motion is La-directed;
+static inconclusive→accommodatedCa uses different frozen bands, not a physical
+shift towardCa. No owned jobs remain. Read REPORT/CURRENT and actual results;
+delayed completion notices do not request reruns. Crystal chemistry is conditional on
 the existing oxidized-PQQ3− hypothesis. No redox or local heavy-atom repair.
 
 New scoring must preserve the current qualified standaloneGFN2 plus native

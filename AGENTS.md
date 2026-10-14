@@ -1,3 +1,22 @@
+# Inconclusive benchmark review complete — 14 October 2026 UTC
+
+Jacob requested the fixed-charge candidate's inconclusives. Read
+[the case-by-case report](diagnostics/pqq_inconclusive_review_20261014/REPORT.md)
+and CURRENT.md. Three saved-artifact Slurm jobs4037/4038/4041 complete all48 peer
+contexts/nine targets,53allocatedCPU-s, zero new molecular calls/folds. No common
+preparation, confidence or optimizer-bound failure explains them. Four current
+Ca-source ambiguities: ExaF two-Ca4, MMOL1770Ca0, ExaA two-Ca3, XoxF1Ca4;
+five additional La-conditioned ExaA/PedE controls remain ambiguous. Exact current
+scores/triples are unchanged. Geometry4038's nearest-nonbonded field was invalid
+because fixed PQQ bonds were absent from that graph;4041 supplies the separate
+corrected inter-residue descriptor. Do not interpret the old field as clashes.
+
+Real omitted packing around moving ExaA donors motivates a small fixed-geometry
+context comparison, but does not prove its energy effect or sign. That test is
+proposed, not launched. All agent tasks complete; production/calibration untouched.
+Preserve unrelated scheduler-listed jobs2669/2832/2833. Delayed wakes require
+receipt review, not chemistry reruns. Root owns any next scoring/execution phase.
+
 # PedE solvent-response work authorized — 13 October 2026
 
 Newest14OctoberUTC: fixed-charge candidate4007–4010 completed, summary4014.

@@ -1,5 +1,9 @@
 # PedE solvent-response checkpoint — 14 October 2026 UTC
 
+The subsequent [inconclusive-source review](../pqq_inconclusive_review_20261014/REPORT.md)
+is complete:48 peers/nine ambiguous contexts, no new chemistry or score changes.
+Read that checkpoint for the current diagnosis and proposed physical next test.
+
 **Latest: the fixed-charge candidate completed and corrects both PedE errors.**
 All five two-Ca PedE sources are now correct. The recovered125 source set changes
 119correct/3wrong/3inconclusive to121/0/4. However, five previously correct
@@ -11,8 +15,8 @@ Production and all historical results remain unchanged.
 **All eight DFT endpoints and comparison3377 are complete.** The source-dependent
 Ca−La solvent contrast is +10.0342163383 kcal/mol with r2SCAN-3c/CPCM and
 +21.2566283014 with corrected GFN2/ALPB. The direction survives; the magnitude
-and individual metal responses are strongly model-dependent. No solvent-model
-fix or improved classification has yet been demonstrated.
+and individual metal responses are strongly model-dependent. The DFT comparison
+alone did not establish a classifier fix; the later candidate test above is separate.
 
 Read [REFERENCE_REPORT.md](REFERENCE_REPORT.md), [the scientific comparison](comparison/REPORT.md)
 and [electronic limits](solvent_audit/REFERENCE_ELECTRONIC_LIMITS.md).

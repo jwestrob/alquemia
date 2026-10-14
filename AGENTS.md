@@ -10,8 +10,10 @@ cause. See packing/FINAL_REPORT.md; no expanded-context class calls or optimizat
 Crystal4088's original failures remain;4093 admits A using its exact saved single
 remote-terminal-OXT completion with deposited heavy coordinates unchanged. B stays
 unavailable at the existing3.5Å Asp-partner gate (actual3.511Å), not a finding that
-the crystal is defective. Native4095 now runs; solvent4096 follows, both7CPUs with
-actual completion wakes. Read CURRENT and exact workspace submissions before any
+the crystal is defective. Native4095 completes6/6 A cells, both proposals pass
+geometry/no-boundary gates (33actual MACE forwards). Solvent4096 runs on7CPUs;
+read-only source comparison4106 follows on1CPU, both with actual completion wakes.
+Read CURRENT and exact workspace submissions before any
 action; do not duplicate them. Crystal chemistry is explicitly conditional on
 the existing oxidized-PQQ3− hypothesis. No redox or local heavy-atom repair.
 

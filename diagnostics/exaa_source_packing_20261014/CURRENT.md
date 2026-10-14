@@ -48,11 +48,13 @@ repeated. ChainB remains unavailable because its mapped Asp-partner contact is
 3.511Å versus the existing3.5Å preparation cutoff; that is a workflow gate, not
 proof of a defective crystal. Both rows and the original4088 failures remain.
 The actual v3 preparation is in crystal_v3/execution/FINAL_PREPARATION.json.
-**Crystal native4095 runs on7CPUs; solvent4096 follows afterany4095 on7CPUs.**
-The actual runtime/source physical preflights pass for A, including exact q=0
-reconstruction for both metals. The existing two real model qualification gates
-must pass before the two unchanged bounded accommodation searches and common-pool
-cross-scoring. B remains in the denominator without molecular calls. Solvent
+**Crystal native4095 completed; solvent4096 is running on7CPUs.**
+All6 A matrix cells are complete; both unchanged searches converge and their
+proposals pass physical geometry checks without active-bound flags. Runtime,
+source mapping and both real model qualification gates pass. The native job
+made33 actual forwards in427.602s (scheduler428s), including the two controls.
+This qualifies execution, not a biological class decision. B remains in the
+denominator without molecular calls. Solvent
 reuses these MACE receipts and the same published-parameter GFN2/native frozen
 ALPB method; canonical operational/mathematical/origin bands stay frozen.
 Oxidized-PQQ redox remains an explicit conditional model assumption, not an
@@ -62,9 +64,15 @@ diagnose a bad fold or correct model.
 Exact native config/submission/wakePID254783 are under `crystal_native_v1/`;
 the solvent submission/wakePID254785 is `CRYSTAL_SOLVENT_SUBMISSION_v1.json`.
 Both use the actual current root thread and separate durable completion events.
-Next: inspect native `FINAL_COLLECTION.json` and `MATRIX_INPUT.json`, then solvent
+Native terminal receipt/results acknowledged; do not rerun from its delayed wake.
+Read-only collector4106 follows afterany4096 on oneCPU, with wakePID267070;
+exact command is `crystal_saved_comparison_v1/SUBMISSION.json`. It retains all10
+current modeled ExaA sources and2crystal chains;5historical single-Ca exclusions
+remain separate recovery provenance, not additional current observations.
+Next: inspect solvent
 `crystal_solvent_v1/execution/FINAL_COLLECTION.json`. Compare original/accommodated
-conditional crystal decisions with all saved ExaA sources. Do not repeat a
+conditional crystal decisions with all saved ExaA sources using
+`crystal_saved_comparison_v1/execution/REPORT.md` and RESULT.json. Do not repeat a
 successful molecular matrix if a report/export fails. Do not loosen chainB's
 gate, change redox, or refit bands to rescue an outcome. No new DFT is queued.
 

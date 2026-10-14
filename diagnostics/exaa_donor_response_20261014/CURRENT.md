@@ -1,4 +1,4 @@
-# ExaA donor response: target differential supported; controls finishing
+# ExaA donor response: target differential supported; final control finishing
 
 Independent r2SCAN-3c vacuum reproduces the target's large La-directed response:
 **+17.135466 versus MACE+16.403481 kcal/mol**, difference+0.731985. Both metals
@@ -8,20 +8,20 @@ metal preference follows. Read TARGET_RESPONSE_REPORT.md and TARGET_RESPONSE_RES
 
 ## Live state
 
-Six of eight original molecular cells are complete. Only control proposals remain:
+Seven of eight original molecular cells are complete. Only the control Ca proposal remains:
 
 | Job | Task | Last observed status |
 |---|---|---|
 |4109/4110|target La origin/proposal|COMPLETED|
 |4117/4118|target Ca origin/proposal|COMPLETED|
 |4119/4121|control La/Ca origins|COMPLETED|
-|4120|control La adaptive_La|RUNNING|
+|4120|control La adaptive_La|COMPLETED; final TRAH residual9.023521e−7|
 |4122|control Ca adaptive_La|RUNNING|
 |4125|four-cell target comparison|COMPLETED|
 |4123|complete eight-cell comparison|PENDING(Dependency)|
 
-Each remaining molecular job uses12MPI ranks on shared standard/node-64-768g-5,
-normal priority, no memory/time override;24CPU currently active. Both completion/
+The remaining molecular job uses12MPI ranks on shared standard/node-64-768g-5,
+normal priority, no memory/time override;12CPU currently active. Its completion/
 health watchers and full-collector wake are armed. No successful cell is rerun.
 Exact submissions/rearm commands are linked by CONTINUATION.json.
 
@@ -43,7 +43,7 @@ Production and historical source/score records remain unchanged.
 
 ## Next precise action
 
-Read actual4120/4122 collections and
+Read the final4122 collection together with completed4120 and
 `workspaces/exaa_donor_response_20261014/full_comparison_v1/execution/RESULT.json`
 when collector4123 completes. Compare individual works, D=W_Ca−W_La, then
 D_target−D_control, with solver qualifications retained. Failed/missing cells
@@ -58,10 +58,14 @@ ROOT_ACK or ROOT_REVIEW receipts. Duplicate events do not authorize reruns.
 
 ## Cost and continuity
 
-Six completed molecular cells total379092allocatedCPU-s, zeroGPU; ongoing work
+Seven completed molecular cells total463020allocatedCPU-s, zeroGPU; ongoing work
 excluded. Preflight4108 adds72CPU-s; joins4111/4125 each report0integer wallseconds
 with0.077/0.087actualCPU-seconds. All exact costs and hash pins remain in prior
 endpoint/target reports. These are targeted reference costs, not scanner costs.
 Jacob's discretionary authorization continues. Repository and vault record the
 result; substantive email accepted by local relay (inbox delivery unconfirmed).
-Full matrix interpretation remains pending the two control proposals.
+Control La proposal4120 took6994s×12=83928allocatedCPU-s (actualTotalCPU23:03:05,
+batchMaxRSS12925392K). Its17checks pass; late state warnings remain. Full matrix
+interpretation awaits the last control Ca proposal. A read-only agent reviews one
+physical next-test hypothesis from saved source/contact reports; it launches no
+chemistry and does not supersede the full-matrix decision.

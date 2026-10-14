@@ -1,3 +1,13 @@
+# Idle reporting jobs cancelled — 14 October 2026
+
+Jacob explicitly authorized cancelling2669/2832/2833 if idle. Live host process
+inspection found no owned workers; all three were cancelled and the user queue
+is empty.2669 had completed its comparison;2832 failed in reporting;2833 had
+a communication failure and no terminal receipt.2834 completed their replacement
+review. Results/failures remain preserved. This supersedes older no-cancellation
+notes for these three jobs only. Read diagnostics/pqq_inconclusive_review_20261014/
+SCHEDULER_CLEANUP.json. Delayed terminal wakes do not authorize reruns.
+
 # Inconclusive benchmark review complete — 14 October 2026 UTC
 
 Jacob requested the fixed-charge candidate's inconclusives. Read

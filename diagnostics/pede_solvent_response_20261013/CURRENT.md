@@ -1,5 +1,10 @@
 # PedE solvent-response checkpoint — 14 October 2026 UTC
 
+Latest scheduler update: Jacob authorized idle-report cleanup;2669/2832/2833
+were verified without live workers and cancelled. Queue empty. Their completed/
+failed outputs and successful replacement2834 remain preserved. This supersedes
+older queue-preservation notes below for these jobs only.
+
 The subsequent [inconclusive-source review](../pqq_inconclusive_review_20261014/REPORT.md)
 is complete:48 peers/nine ambiguous contexts, no new chemistry or score changes.
 Read that checkpoint for the current diagnosis and proposed physical next test.

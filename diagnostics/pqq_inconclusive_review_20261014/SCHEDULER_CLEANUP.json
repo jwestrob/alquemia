@@ -1,0 +1,26 @@
+{
+  "verified_utc": "2026-10-14T07:20:27.254752+00:00",
+  "job_ids": [
+    "2669",
+    "2832",
+    "2833"
+  ],
+  "scheduler_command": [
+    "sacct",
+    "-j",
+    "2669,2832,2833",
+    "--format=JobID,State,ExitCode,ElapsedRaw,AllocCPUS,TotalCPU",
+    "-P"
+  ],
+  "scheduler_stdout": "JobID|State|ExitCode|ElapsedRaw|AllocCPUS|TotalCPU\n2669|CANCELLED by 601|0:0|84210|1|00:00:00\n2669.batch|CANCELLED||84210|1|00:00:00\n2832|CANCELLED by 601|0:0|109668|1|00:00:00\n2832.batch|CANCELLED||109668|1|00:00:00\n2833|CANCELLED by 601|0:0|109595|1|00:00:00\n2833.batch|CANCELLED||109595|1|00:00:00\n2833.0|CANCELLED|0:11|0|1|00:00:00\n",
+  "user_queue": "",
+  "before_cancellation": "No live owned workers on actual host node-64-768g-18; scheduler alias node-48-256g-18. Three lingering single-CPU,4000MiB allocations.",
+  "receipts": {
+    "2669": "comparison_complete;6/6 accepted;zero new molecular calls",
+    "2832": "KeyError case_id during reporting; replaced by2834",
+    "2833": "No terminal worker receipt; recorded step communication failure; no live worker; replaced by2834",
+    "2834": "Replacement review completed successfully"
+  },
+  "scope": "Explicit user-authorized cancellation of these three idle owned report allocations only; results and failures preserved",
+  "cancellation_receipt": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_inconclusive_review_20261014/scheduler_cleanup_v1/CANCELLATION.json"
+}

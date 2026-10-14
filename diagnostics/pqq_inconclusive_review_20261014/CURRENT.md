@@ -24,7 +24,9 @@ All agent tasks and owned analysis jobs are complete. Three one-CPU jobs used53
 allocated CPU-seconds, no new energies or folds. Root owns integration. The proposed
 next physical test is a matched, fixed-geometry omitted-packing comparison in ExaA;
 it has not been launched. No new energy calculation, optimization, refold or recalibration is queued.
-Unrelated scheduler-listed reporting jobs2669/2832/2833 remain untouched.
+Jacob subsequently authorized idle-job cleanup. Live process inspection found no
+workers for2669/2832/2833; all three are now cancelled and the user queue is empty.
+Their completed/failed outputs remain preserved. See SCHEDULER_CLEANUP.json.
 
 The four current Ca-source ambiguities are ExaF two-Ca4, XoxF4-2 Ca0, ExaA
 two-Ca3 and XoxF1 Ca4. Five additional ambiguous ExaA/PedE La-conditioned controls

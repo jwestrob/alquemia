@@ -1,0 +1,90 @@
+{
+  "status": "complete_diagnostic",
+  "energy_hartree": -6718.999611994237,
+  "output": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_donor_response_20261014/reference_v1/tasks/sample3_Ca_adaptive_La_vacuum/endpoint.out",
+    "sha256": "974c01bc8891a5511985cbdb9fcba708a760ab68f632f5a4a75ed3c38040b933"
+  },
+  "execution": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_donor_response_20261014/reference_v1/tasks/sample3_Ca_adaptive_La_vacuum/endpoint.out.execution.json",
+    "sha256": "3e8e69a4cf72be955dbce50a510c2137f245cb8df1603054b250afc1fac0c6c0"
+  },
+  "checks": {
+    "native_receipt_success": true,
+    "manifest_identity": true,
+    "output_identity": true,
+    "version": true,
+    "energy_present": true,
+    "electron_count": true,
+    "populations_complete": true,
+    "gbw_retained": true,
+    "native_basis": true,
+    "La_ECP": true,
+    "native_executable_pin": true,
+    "native_runner_pin": true,
+    "runtime_renderer_pin": true,
+    "actual12MPI": true,
+    "template_identity": true,
+    "coordinate_identity": true
+  },
+  "final_solver": "DIIS/SOSCF (see raw iteration table)",
+  "final_trah_macro": null,
+  "scf_summary": [
+    {
+      "criterion": "Energy change",
+      "value": 5.7989e-09,
+      "tolerance": 1e-08
+    },
+    {
+      "criterion": "MAX-Density change",
+      "value": 0.021944,
+      "tolerance": 1e-07
+    },
+    {
+      "criterion": "RMS-Density change",
+      "value": 0.00015205,
+      "tolerance": 5e-09
+    },
+    {
+      "criterion": "DIIS Error",
+      "value": 0.0030329,
+      "tolerance": 5e-07
+    },
+    {
+      "criterion": "Orbital Gradient",
+      "value": 1.0425e-05,
+      "tolerance": 1e-05
+    },
+    {
+      "criterion": "Orbital Rotation",
+      "value": 7.2773e-05,
+      "tolerance": 1e-05
+    }
+  ],
+  "electronic_state_warning_lines": [
+    "WARNINGS",
+    "Please study these warnings very carefully!",
+    "WARNING: SCAN, rSCAN, or r2SCAN functional requested.",
+    "Warning: op=0 Small HOMO/LUMO gap (  -1.061) - skipping pre-diagonalization",
+    "Warning: op=0 Small HOMO/LUMO gap (  -0.048) - skipping pre-diagonalization"
+  ],
+  "density_response_qualification": "unestablished; electronic warnings retained, no stability/repeat/gradient qualification",
+  "schema": "exaa_target_Ca_proposal_review.v1",
+  "utc": "2026-10-14T13:30:13.483809+00:00",
+  "job_id": "4118",
+  "collection": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_donor_response_20261014/reference_v1/attempts/4118_execute_sample3_Ca_adaptive_La_vacuum/COLLECTION.json",
+    "sha256": "8a5c185eeb67857217203241769441f7df47ecf93aa08176ae26777649922440"
+  },
+  "scheduler": {
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed_seconds": 4736,
+    "allocated_cpus": 12,
+    "allocated_cpu_seconds": 56832,
+    "total_cpu": "15:30:12",
+    "batch_max_rss": "11443488K"
+  },
+  "interpretation": "Native SOSCF energy convergence; final orbital gradient1.0425e-5 exceeds1e-5. Consistent with frozen non-TRAH admission, not uniform gradient qualification. Matching origin still running; no Ca work or differential yet.",
+  "production_changed": false
+}

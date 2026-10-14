@@ -1,10 +1,11 @@
 # ExaA donor-response checkpoint
 
-**Two native DFT scouts are running:4109 origin and4110 adaptive_La.** Each uses
+**Origin4109 completed and passed numerical admission;4110 adaptive_La runs.** Each uses
 12MPI ranks on the shared standard node, normal priority, with completion and
 health wakes armed. Collector4111 waits afterany on both and keeps all eight
-planned cells visible, including six not yet submitted. No completed new energy
-is claimed at this checkpoint. Native output confirms the expected La46-core ECP.
+planned cells visible, including six not yet submitted. The origin took6026s
+on12CPUs and passed all17 native checks; no paired work is available yet. Native
+output confirms the expected La46-core ECP. See SCOUT_ORIGIN_RESULT.json.
 
 Jacob authorized autonomous next rounds on14October2026. Read PLAN.md. This test
 asks whether independent vacuum DFT supports the large MACE stabilization on a
@@ -20,8 +21,10 @@ This common-path test is distinct from full operational candidate minimization.
   are the declared singlets. Existing dry oxidized-PQQ3− hypothesis retained.
 - Actual shared grant48,000MiB; renderer derives MaxCore3100decimalMB per rank
   with existing headroom. No memory/time override or scheduler priority boost.
-- Initial native endpoints4109/4110 are active, each at the expected ECP stage
-  when inspected. No SCF convergence or response result yet.
+- Origin4109 ended with final TRAH residual8.804145e−7 below its printed1e−5
+  threshold. Retained density summaries and final electronic-state warnings
+  remain explicit limitations; this is not an electronic-state uniqueness claim.
+- Proposal4110 is progressing in TRAH. No finite-motion response result yet.
 - Read LAUNCH.json and immutable workspace SUBMISSION.json files for exact pins,
   commands and watcher PIDs. Only root owns submissions/collection/integration.
 

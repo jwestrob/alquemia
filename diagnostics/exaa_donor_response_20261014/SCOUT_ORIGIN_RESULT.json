@@ -1,0 +1,81 @@
+{
+  "status": "one_of_two_scouts_complete",
+  "job_id": "4109",
+  "task_id": "sample3_La_origin_vacuum",
+  "collection": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_donor_response_20261014/reference_v1/attempts/4109_execute_sample3_La_origin_vacuum/COLLECTION.json",
+    "sha256": "17302bb43143159c5790c47218c2cae937704fae6e078d7e4347978d1444387f"
+  },
+  "energy_hartree": -6073.09669732537,
+  "checks": {
+    "native_receipt_success": true,
+    "manifest_identity": true,
+    "output_identity": true,
+    "version": true,
+    "energy_present": true,
+    "electron_count": true,
+    "populations_complete": true,
+    "gbw_retained": true,
+    "native_basis": true,
+    "La_ECP": true,
+    "final_TRAH_gradient": true,
+    "native_executable_pin": true,
+    "native_runner_pin": true,
+    "runtime_renderer_pin": true,
+    "actual12MPI": true,
+    "template_identity": true,
+    "coordinate_identity": true
+  },
+  "final_TRAH_criterion": {
+    "threshold": 1e-05,
+    "evidence": {
+      "active_TolG": [
+        "1.000e-05"
+      ],
+      "TRAH_gradient_norm": [
+        "1.000e-05"
+      ],
+      "optional_summary_tolerance": []
+    },
+    "source_lines": [
+      "   Converg. threshold    (grad. norm)   ....   1.000e-05",
+      " Orbital Gradient       TolG            ....  1.000e-05"
+    ],
+    "observed_residual": 8.804145e-07,
+    "passed": true
+  },
+  "state_qualification": "unestablished; late negative-gap warnings and runtime level shifting mean final orbital table is not independent stability or unique-state evidence",
+  "scf_summary": [
+    {
+      "criterion": "Energy change",
+      "value": -2.0827e-10,
+      "tolerance": 1e-08
+    },
+    {
+      "criterion": "MAX-Density change",
+      "value": 0.050956,
+      "tolerance": 1e-07
+    },
+    {
+      "criterion": "RMS-Density change",
+      "value": 0.00057499,
+      "tolerance": 5e-09
+    },
+    {
+      "criterion": "DIIS Error",
+      "value": 0.055274,
+      "tolerance": 5e-07
+    }
+  ],
+  "elapsed_seconds": 6026,
+  "allocated_cpus": 12,
+  "allocated_cpu_seconds": 72312,
+  "scheduler_TotalCPU": "19:51:59",
+  "scheduler_batch_MaxRSS": "12903172K",
+  "inference": "one origin does not establish finite-motion work or discrimination",
+  "other_scout": "4110 remains active; collector4111 waits",
+  "state_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/exaa_donor_response_20261014/method_review/ORIGIN_STATE_REVIEW.md",
+    "sha256": "c46f087b7e2169b69750a023a750f627605655b78c3e291267cc419b0dcced52"
+  }
+}

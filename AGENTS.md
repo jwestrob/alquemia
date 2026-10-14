@@ -6,8 +6,10 @@ Root owns execution; disjoint agents inventory exact sources and review the nati
 adapter. The new declared matrix is two-Ca ExaA samples0/3, exact192-atom origin
 and saved adaptive_La geometry, both metals: eight native r2SCAN-3c VACUUM cells.
 Actual Slurm4108 preflight passed all source gates and11 archived checks.
-Sample3 La origin/proposal scouts4109/4110 now run as separate12-rank jobs;
-collector4111 follows afterany and actual completion/health wakes are armed.
+Sample3 La origin4109 completed with declared numerical admission in6026s;
+proposal4110 still runs at12ranks. Late electronic-state warnings remain; read
+SCOUT_ORIGIN_RESULT.json and method_review/ORIGIN_STATE_REVIEW.md. Collector4111
+follows afterany and actual completion/health wakes are armed.
 Review convergence/state/runtime before the remaining six; no approval loop.
 This tests a common physical displacement, not the full operational three-candidate
 pool or classifier calibration. Old CPCM DFT is not a matched MACE-vacuum reference.

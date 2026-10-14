@@ -6,11 +6,12 @@ Root owns execution; disjoint agents inventory exact sources and review the nati
 adapter. The new declared matrix is two-Ca ExaA samples0/3, exact192-atom origin
 and saved adaptive_La geometry, both metals: eight native r2SCAN-3c VACUUM cells.
 Actual Slurm4108 preflight passed all source gates and11 archived checks.
-Both La scouts4109/4110 and collector4111 completed: DFT work−26.70294 versus
-MACE−26.78280kcal/mol on the same path. Late electronic-state warnings remain;
-no paired-metal or classifier conclusion yet. The six remaining ORIGINAL cells
-4117–4122 are submitted; collector4123 follows afterany. Completion/health wakes
-are armed. Read SCOUT_DECISION.md, SCOUT_RESULT.json, CURRENT and CONTINUATION.
+Target four-cell comparison4125 completed: DFT differential work+17.13547 versus
+MACE+16.40348kcal/mol on the same saved path. This supports the conditional local
+response, not a class/affinity result. Six of eight endpoints complete; control
+proposals4120/4122 remain running and full collector4123 follows. Solver-specific
+convergence/state caveats remain. Completion/health wakes are armed. Read
+TARGET_RESPONSE_REPORT.md, TARGET_RESPONSE_RESULT.json, CURRENT and CONTINUATION.
 Scouts were reviewed before continuation; no new per-analysis approval loop.
 This tests a common physical displacement, not the full operational three-candidate
 pool or classifier calibration. Old CPCM DFT is not a matched MACE-vacuum reference.

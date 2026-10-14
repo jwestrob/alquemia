@@ -1,0 +1,139 @@
+{
+  "schema": "exaa_target_response_summary.v1",
+  "utc": "2026-10-14T13:48:25.211630+00:00",
+  "actual_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_donor_response_20261014/target_comparison_v1/execution/RESULT.json",
+    "sha256": "f17068d7c0432960eecd4c4b6282c7be35d0e625c153afb9d448b986aeaf437a"
+  },
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_donor_response_20261014/reference_v1/manifest.json",
+    "sha256": "d37733923c3203f41b73d5a3c1789d396e22f8da69e624df2c2d724d0141bcf1"
+  },
+  "sources": [
+    {
+      "sample": 0,
+      "role": "control",
+      "case_id": "q9z4j7-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-0",
+      "works": {
+        "Ca": {
+          "MACE_vacuum_kcal_mol": -7.460053511965913,
+          "DFT_vacuum_kcal_mol": null,
+          "DFT_minus_MACE_kcal_mol": null,
+          "status": "unavailable",
+          "required_cells": [
+            "sample0_Ca_origin_vacuum",
+            "sample0_Ca_adaptive_La_vacuum"
+          ]
+        },
+        "La": {
+          "MACE_vacuum_kcal_mol": -12.721550037883961,
+          "DFT_vacuum_kcal_mol": null,
+          "DFT_minus_MACE_kcal_mol": null,
+          "status": "unavailable",
+          "required_cells": [
+            "sample0_La_origin_vacuum",
+            "sample0_La_adaptive_La_vacuum"
+          ]
+        }
+      },
+      "differential_work": {
+        "MACE_vacuum_kcal_mol": 5.261496525918049,
+        "DFT_vacuum_kcal_mol": null,
+        "DFT_minus_MACE_kcal_mol": null,
+        "status": "unavailable"
+      }
+    },
+    {
+      "sample": 3,
+      "role": "target",
+      "case_id": "q9z4j7-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-3",
+      "works": {
+        "Ca": {
+          "MACE_vacuum_kcal_mol": -10.379322989840333,
+          "DFT_vacuum_kcal_mol": -9.567475315334129,
+          "DFT_minus_MACE_kcal_mol": 0.811847674506204,
+          "status": "available_diagnostic",
+          "required_cells": [
+            "sample3_Ca_origin_vacuum",
+            "sample3_Ca_adaptive_La_vacuum"
+          ]
+        },
+        "La": {
+          "MACE_vacuum_kcal_mol": -26.782803599660028,
+          "DFT_vacuum_kcal_mol": -26.70294112086986,
+          "DFT_minus_MACE_kcal_mol": 0.07986247879016872,
+          "status": "available_diagnostic",
+          "required_cells": [
+            "sample3_La_origin_vacuum",
+            "sample3_La_adaptive_La_vacuum"
+          ]
+        }
+      },
+      "differential_work": {
+        "MACE_vacuum_kcal_mol": 16.403480609819695,
+        "DFT_vacuum_kcal_mol": 17.13546580553573,
+        "DFT_minus_MACE_kcal_mol": 0.7319851957160353,
+        "status": "available_diagnostic"
+      }
+    }
+  ],
+  "target_minus_control_differential": {
+    "definition": "D_target-D_control",
+    "status": "unavailable",
+    "MACE_vacuum_kcal_mol": 11.141984083901647,
+    "DFT_vacuum_kcal_mol": null,
+    "DFT_minus_MACE_kcal_mol": null
+  },
+  "target_collector_available_cells": 4,
+  "declared_cells": 8,
+  "total_completed_endpoints_observed": 6,
+  "latest_endpoint": {
+    "job_id": "4117",
+    "collection": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_donor_response_20261014/reference_v1/attempts/4117_execute_sample3_Ca_origin_vacuum/COLLECTION.json",
+      "sha256": "1eb0faced6131a040ef77fad527a36d61612c54e03ec28ae0e8937fbc28e1679"
+    },
+    "checks": {
+      "native_receipt_success": true,
+      "manifest_identity": true,
+      "output_identity": true,
+      "version": true,
+      "energy_present": true,
+      "electron_count": true,
+      "populations_complete": true,
+      "gbw_retained": true,
+      "native_basis": true,
+      "La_ECP": true,
+      "final_TRAH_gradient": true,
+      "native_executable_pin": true,
+      "native_runner_pin": true,
+      "runtime_renderer_pin": true,
+      "actual12MPI": true,
+      "template_identity": true,
+      "coordinate_identity": true
+    },
+    "final_solver": "TRAH",
+    "final_trah_macro": {
+      "iteration": 4,
+      "energy": -6719.011757608585,
+      "orbital_residual": 9.438462e-07
+    },
+    "scheduler": {
+      "elapsed_seconds": 5716,
+      "allocated_cpus": 12,
+      "allocated_cpu_seconds": 68592,
+      "total_cpu": "18:46:13",
+      "batch_max_rss": "12757568K"
+    }
+  },
+  "target_collector": {
+    "job_id": "4125",
+    "elapsed_seconds": 0,
+    "allocated_cpus": 1,
+    "total_cpu": "00:00.087"
+  },
+  "cumulative_completed_molecular_allocated_cpu_seconds": 379092,
+  "gpu_seconds": 0,
+  "interpretation": "Target paired local response agrees closely between MACE and independent r2SCAN-3c vacuum; not a classifier or affinity result. Same chemical preparation and vacuum limitations remain; no unique electronic-state qualification. Target Ca proposal ended on energy criterion with gradient1.0425e-5 vs1e-5. Control response still unavailable.",
+  "production_changed": false
+}

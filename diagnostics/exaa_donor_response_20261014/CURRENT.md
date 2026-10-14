@@ -1,96 +1,67 @@
-# ExaA donor response: La scout agrees; Ca/control matrix running
+# ExaA donor response: target differential supported; controls finishing
 
-**Independent vacuum DFT reproduces the target's large La work:** −26.70294
-kcal/mol versus MACE−26.78280. This weakens a MACE-only explanation for that
-particular response. Ca–La discrimination, matched-control response and physical
-electronic-state uniqueness remain unestablished. Read SCOUT_DECISION.md,
-SCOUT_RESULT.json and method_review/PAIR_STATE_REVIEW.md. No classifier gain or
-production change is claimed.
+Independent r2SCAN-3c vacuum reproduces the target's large La-directed response:
+**+17.135466 versus MACE+16.403481 kcal/mol**, difference+0.731985. Both metals
+lower energy along the same saved physical path; La lowers it more. This weakens
+a MACE-only motion artifact explanation. No classifier improvement or biological
+metal preference follows. Read TARGET_RESPONSE_REPORT.md and TARGET_RESPONSE_RESULT.json.
 
-## Current execution
+## Live state
 
-The two scouts4109/4110 and join4111 completed. Both molecular endpoints pass
-all17 declared native checks. Final TRAH residuals8.804145e−7/5.466705e−7 are
-below printed1e−5. Near-final negative-gap/Hessian warnings and level shifting
-remain; the final orbital table is not independent stability qualification.
-
-Five of eight cells now complete. The six-cell continuation remains unchanged:
+Six of eight original molecular cells are complete. Only control proposals remain:
 
 | Job | Task | Last observed status |
 |---|---|---|
-|4117|sample3 Ca origin|RUNNING|
-|4118|sample3 Ca adaptive_La|COMPLETED; energy criterion|
-|4119|sample0 La origin|COMPLETED; energy criterion, see below|
-|4120|sample0 La adaptive_La|RUNNING|
-|4121|sample0 Ca origin|COMPLETED; native gradient criterion|
-|4122|sample0 Ca adaptive_La|RUNNING|
+|4109/4110|target La origin/proposal|COMPLETED|
+|4117/4118|target Ca origin/proposal|COMPLETED|
+|4119/4121|control La/Ca origins|COMPLETED|
+|4120|control La adaptive_La|RUNNING|
+|4122|control Ca adaptive_La|RUNNING|
+|4125|four-cell target comparison|COMPLETED|
 |4123|complete eight-cell comparison|PENDING(Dependency)|
 
-Each molecular job uses12MPI ranks on shared standard/node-64-768g-5, normal
-priority, no memory/time override. Three active molecular jobs use36 of the current60CPU user
-allowance;4122 started after4119 freed its slots. Actual grant/memory renderer
-is recorded per execution. All three remaining completion/health watchers plus the
-collector wake are live; completed4119/4118/4121 have been acknowledged. Do not duplicate jobs or restart successful scouts.
+Each remaining molecular job uses12MPI ranks on shared standard/node-64-768g-5,
+normal priority, no memory/time override;24CPU currently active. Both completion/
+health watchers and full-collector wake are armed. No successful cell is rerun.
+Exact submissions/rearm commands are linked by CONTINUATION.json.
 
+## Qualification and scope
 
-Control La origin4119 ended normally in3670s on12CPUs, with all16 applicable
-checks passing. Unlike the scouts, it ended by the native SOSCF energy criterion,
-with actual final orbital gradient4.4651e−5 above printed1e−5; no later TRAH
-ending supersedes that residual. This follows the frozen solver-specific admission
-rule but is weaker numerical qualification. Preserve the limitation in any control
-comparison. See CONTROL_ORIGIN_RESULT.json and method_review/CONTROL_ORIGIN_STATE_REVIEW.md.
-No control work or Ca–La differential is available from this single new endpoint.
+Target La cells and Ca origin meet their final TRAH residual gates. Target Ca
+proposal ends by native SOSCF energy convergence with gradient1.0425e−5 above
+1e−5; control La origin similarly ends with4.4651e−5. These follow the frozen
+solver-specific policy but lack uniform gradient qualification. Control Ca
+origin ends on its native gradient criterion at1.4799e−6. Other large summary
+residuals, late orbital-gap warnings and state limitations remain visible.
+Convergence does not establish stable unique electronic states.
 
-Target Ca proposal4118 also completed,4736s on12CPUs. All16 applicable checks
-pass; it ends on SOSCF energy convergence with orbital gradient1.0425e−5 versus
-1e−5, so it also lacks uniform final-gradient qualification. Its matching Ca
-origin4117 is still progressing. TARGET_CA_PROPOSAL_RESULT.json retains the
-raw residuals and costs. Target-only comparison4125 (1CPU) is submitted to join the
-four original sample3 cells after4117 ends, using the unchanged tested comparator.
-No molecular evaluations are added; missing control cells remain explicit.
-Its completion wake is armed; exact rearm command is target_comparison_v1/SUBMISSION.json.
-
-Control Ca origin4121 completed in4949s on12CPUs, with all16 applicable
-checks passing. Raw SOSCF ending explicitly signals gradient convergence;
-orbital gradient1.4799e−6 is below1e−5. Other printed summary criteria do not
-all pass, and electronic-state qualification remains conditional. Its collection
-is attempts/4121_execute_sample0_Ca_origin_vacuum/COLLECTION.json; ROOT_ACK.json
-retains actual residuals, source hashes and scheduler costs. No new paired work
-is available yet. The three remaining jobs continue without intervention.
-
-## Scope and next action
-
-Exact192-atom ExaA two-Ca samples0/3; dry oxidized-PQQ3− hypothesis, charge
+Exact192-atom ExaA two-Ca samples0/3; dry oxidized-PQQ3− hypothesis, charges
 Ca−3/La−2, singlets,14caps, origin/adaptive_La unchanged. Common physical path,
-not the full operational three-candidate minimum. Native r2SCAN-3c vacuum only;
-no GFN2 parameters, added solvent, new folds, optimization or calibrated DFT call.
+not the complete operational candidate pool. Native r2SCAN-3c vacuum only;
+no GFN2 parameters, new solvent, folds, optimization or recalibration.
+Production and historical source/score records remain unchanged.
 
-Workspace: `workspaces/exaa_donor_response_20261014/reference_v1/`. ManifestSHA:
-`d37733923c3203f41b73d5a3c1789d396e22f8da69e624df2c2d724d0141bcf1`.
-CONTINUATION.json links exact submission/rearm commands and watcher PIDs. Each
-job writes `attempts/JOB_execute_TASK/COLLECTION.json`. Full actual joined result
-will be `workspaces/exaa_donor_response_20261014/full_comparison_v1/execution/RESULT.json`.
-The collector is afterany; failed or missing cells stay explicit.
+## Next precise action
 
-Read live scheduler and receipts on each event. Inspect actual residuals and
-ending solver; do not infer success from scheduler alone or rank estimates from
-health monitoring as utilization. No automatic retries. Once Ca work is available,
-compare D=W_Ca−W_La on the same path; the full matrix adds the matched-control
-D and target-minus-control difference. Use that evidence for the next model
-decision, not agreement for La alone. Root owns submissions/integration.
+Read actual4120/4122 collections and
+`workspaces/exaa_donor_response_20261014/full_comparison_v1/execution/RESULT.json`
+when collector4123 completes. Compare individual works, D=W_Ca−W_La, then
+D_target−D_control, with solver qualifications retained. Failed/missing cells
+stay unavailable. Use the complete contrast to decide the next physical-model
+test; no automatic rerun or extra optimization is prepared.
 
-## Actual costs and continuity
+Workspace: `workspaces/exaa_donor_response_20261014/reference_v1/`.
+ManifestSHA `d37733923c3203f41b73d5a3c1789d396e22f8da69e624df2c2d724d0141bcf1`.
+Task results live in `attempts/JOB_execute_TASK/COLLECTION.json`; raw outputs,
+execution receipts and GBWs remain under `tasks/`. Completed notifications have
+ROOT_ACK or ROOT_REVIEW receipts. Duplicate events do not authorize reruns.
 
-Origin6026s×12 + proposal6494s×12 =150240 allocatedCPU-s, zeroGPU. Preflight4108
-adds72allocatedCPU-s; join4111 recorded0s integer wall/0.077s TotalCPU. Control
-origin4119 adds44040allocatedCPU-s (actual TotalCPU12:04:17; batchMaxRSS11506156K).
-Target Ca proposal4118 adds56832allocatedCPU-s. Completed molecular total
-310500allocatedCPU-s including control Ca origin4121 (59388CPU-s); zeroGPU,
-ongoing jobs excluded. These are
-targeted development reference costs, not routine scanner costs. Both GBWs and
-complete solver outputs are preserved. No old source/calibration is overwritten.
+## Cost and continuity
 
-Jacob's discretionary authorization covers this continuation. Vault updated;
-substantive email accepted by local relay, inbox delivery unconfirmed. Delayed
-4108/4109/4110/4111 notifications do not request reruns. Completed scout callbacks
-are acknowledged in their workspace receipts.
+Six completed molecular cells total379092allocatedCPU-s, zeroGPU; ongoing work
+excluded. Preflight4108 adds72CPU-s; joins4111/4125 each report0integer wallseconds
+with0.077/0.087actualCPU-seconds. All exact costs and hash pins remain in prior
+endpoint/target reports. These are targeted reference costs, not scanner costs.
+Jacob's discretionary authorization continues. Repository and vault record the
+result; substantive email accepted by local relay (inbox delivery unconfirmed).
+Full matrix interpretation remains pending the two control proposals.

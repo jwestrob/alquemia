@@ -21,9 +21,10 @@ delta_D control+4.722377,target−9.894008. Limited2→4pooltargetshift only−1
 controlzero; actualbaseline alsoincludesadaptive_Ca, so no classifiergainclaimed.
 Saved4133full3→5comparison is exactlyunchanged forbothsources; no scoringgain.
 Saved4134forces20/20replay and reversealongline onadaptive_La. One separate
-eightcellmidpoint probe: preparation4136 passesbothhosts/all8; common7 scoring4137
-submittedsevenCPU withwatcher1131772. Read diagnostics/exaa_metal_midpoint_20261014/
-PLAN.md andCURRENT.md. No optimizer/DFT/bands; alloldjobs terminal.
+eightcellmidpoint4137 complete8/8: targetpairedchange−0.176971, control+1.617772
+kcal/mol; sourcegap reduction mainlycontrolLa stabilization. No classifiergain.
+Read diagnostics/exaa_metal_midpoint_20261014/REPORT.md andCURRENT.md. Fractionprobe
+closed; no automaticfinersearch/optimizer/DFT/bands. Allownedjobs terminal.
 Scouts were reviewed before continuation; no new per-analysis approval loop.
 This tests a common physical displacement, not the full operational three-candidate
 pool or classifier calibration. Old CPCM DFT is not a matched MACE-vacuum reference.

@@ -89,4 +89,5 @@ new quantum endpoints or indefinite parameter searches.
 Curie owns exact population/cell/calibration-rule inventory. Heisenberg owns the
 thin native replay adapter. Root freezes the integrated manifest, runs the stages,
 interprets results and updates shared status. The first stage may legitimately
-reject this candidate; do not modify it until it separates the inspected labels.
+reject this candidate; do not tune the model or admission rule to force separation
+of the inspected labels.

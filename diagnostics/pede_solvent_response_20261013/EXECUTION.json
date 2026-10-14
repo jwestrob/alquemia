@@ -10,7 +10,7 @@
     "job_id": "3353",
     "submission": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/cofactor_review_v1/SUBMISSION.json",
     "completion": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/cofactor_review_v1/completion_event.json",
-    "status": "failed_reader_recovery_pending"
+    "status": "failed_reader_preserved_recovered_separately_3356"
   },
   "DFT_water_scout": {
     "job_id": "3354",
@@ -19,7 +19,7 @@
     "status_at_checkpoint": "native_converged_recovered_collection",
     "submitted_molecular_cells": 1
   },
-  "checkpoint_utc": "2026-10-13T15:25:38.916292+00:00",
+  "checkpoint_utc": "2026-10-14T02:42:15.845518+00:00",
   "cofactor_audit_v2": {
     "job_id": "3356",
     "submission": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/cofactor_review_v2/SUBMISSION.json",
@@ -60,7 +60,13 @@
         ],
         "submission": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/reference_sample1_Ca_v1/CONTINUATION_SUBMISSION.json",
         "watch_pid": 644306,
-        "health_watch_pid": 644307
+        "health_watch_pid": 644307,
+        "status": "complete_two_diagnostic_endpoints",
+        "collection": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/reference_sample1_Ca_v1/continuation_v2/COLLECTION.json",
+        "collection_sha256": "36eee842373f00c66b692c0b2996c20d0ef662f7c6839d83de2cf22a80ae6f0e",
+        "completion_ack": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/reference_sample1_Ca_v1/ROOT_COMPLETION_ACK.json",
+        "elapsed_seconds": 50971,
+        "allocated_CPU_seconds": 611652
       },
       {
         "job_id": "3373",
@@ -105,7 +111,7 @@
   },
   "DFT_comparison": {
     "job_id": "3377",
-    "status_at_checkpoint": "pending_afterany",
+    "status_at_checkpoint": "complete_8_of_8_diagnostics",
     "dependencies": [
       "3371",
       "3372",
@@ -115,6 +121,32 @@
     "submission": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/comparison_v1/FINAL_SUBMISSION.json",
     "completion": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/comparison_v1/final_completion_event.json",
     "watch_pid": 669352,
-    "new_molecular_calls": 0
+    "new_molecular_calls": 0,
+    "result": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/comparison_v1/execution/RESULT.json",
+    "result_sha256": "0df3271eb35b617bac1c79caf66be24cf5fe52f3da9c631f21dabd7bdf01bba0",
+    "elapsed_seconds": 1,
+    "allocated_CPU_seconds": 1
+  },
+  "DFT_primary_cost": {
+    "worker_elapsed_seconds": {
+      "3354": 9580,
+      "3371": 11435,
+      "3372": 50971,
+      "3373": 8052,
+      "3374": 9529
+    },
+    "allocated_CPU_seconds": 1074804,
+    "allocated_GPU_seconds": 0,
+    "new_DFT_endpoints": 8,
+    "molecular_retries": 0,
+    "note": "Original3354 batch failed only after converged molecular execution; its full cost included. Support jobs accounted separately."
+  },
+  "parser_and_comparison_support_allocated_CPU_seconds": 4,
+  "phase_total_allocated_CPU_seconds": 1074815,
+  "fixed_charge_replay": {
+    "status": "preparing_unsubmitted",
+    "plan": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pede_solvent_response_20261013/FIXED_CHARGE_REPLAY_PLAN.md",
+    "new_SCC_calls": 0,
+    "new_DFT_calls": 0
   }
 }

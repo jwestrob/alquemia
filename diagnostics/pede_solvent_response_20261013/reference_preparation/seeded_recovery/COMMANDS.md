@@ -1,8 +1,15 @@
 # Conditional same-state Ca vacuum recovery — prepared only
 
+**Closed without activation:** primary3372 subsequently converged and passed
+collection. `READY.json` pins its actual successful receipt and collection.
+The seeded contingency remains unrun. Do not launch its parser tests or molecular
+calculation from the historical commands below; no recovery is now needed.
+
 Scientific scope is root's `diagnostics/pede_solvent_response_20261013/SEEDED_RECOVERY_PLAN.md`.
-The primary3372 remains running; this preparation does not authorize a concurrent
-retry or change its125-iteration bound. No molecule, parser test or Slurm job
+At preparation, primary3372 was running; this preparation did not authorize a concurrent
+retry or change its native iteration settings. The earlier description of125
+as a total-iteration bound was incorrect; see the final electronic-limits note.
+No molecule, parser test or Slurm job
 was executed by the preparation agent.
 
 Frozen workspace:

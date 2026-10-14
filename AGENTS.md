@@ -1,9 +1,21 @@
 # PedE solvent-response work authorized — 13 October 2026
 
-Latest: DFT scout3354 converged; a parser-only tolerance lookup failure was
-recovered by3370 (15 checks, no molecular rerun). Remaining seven frozen cells
-now run in disjoint12-MPI jobs3371–3374, with completion and health wakes.
-Read CURRENT/EXECUTION before action. No solvent-model fix is established yet.
+Latest,14 October UTC: all eight frozen DFT cells and comparison3377 completed.
+The source solvent contrast is +10.0342 kcal/mol with DFT/CPCM versus +21.2566
+with corrected GFN2/ALPB: same direction, materially different magnitude.
+Read [the final reference report](diagnostics/pede_solvent_response_20261013/REFERENCE_REPORT.md)
+and CURRENT/EXECUTION before action. Electronic-state warnings remain; no
+classifier fix or promotion is established. All primary molecular jobs are
+terminal; the conditional seeded retry is closed and unrun. The printed125
+SCF limit was not a total-work cap: unchanged3372 converged after843 reported
+cycles including TRAH work. Do not restart it.
+
+Next contained diagnostic is native fixed-charge ALPB replay using saved charges
+and unchanged parameters; see FIXED_CHARGE_REPLAY_PLAN.md. Agent prepares an
+isolated version-matched wrapper, root submits on Slurm after review. First
+require water-charge component reproduction within declared rounding bounds.
+No new SCC/DFT, optimization, fitted scaling or production change. Consult actual
+replay SUBMISSION/EXECUTION records before assuming it has launched.
 
 Jacob: “Continue your investigation however you see fit. Let's fix our solvent
 correction.” Read [the new plan](diagnostics/pede_solvent_response_20261013/PLAN.md)

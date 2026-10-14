@@ -1,77 +1,62 @@
-# Active solvent-response investigation — 13 October 2026
+# PedE solvent-response checkpoint — 14 October 2026 UTC
 
-Latest at16:14UTC: seven of eight DFT endpoints have passed collection. Only
-sample1 Ca vacuum3372 remains. Its TRAH residual is still very large, but accepted
-downhill steps and improving gap/curvature warnings show energetic recovery.
-Continue the original finite attempt; no limit extension or duplicate launch.
-The independently reviewed same-state water-GBW contingency is being prepared;
-read [its activation rules](SEEDED_RECOVERY_PLAN.md). Collector3377 and wakes
-remain armed. No full source-response conclusion exists yet.
+**All eight DFT endpoints and comparison3377 are complete.** The source-dependent
+Ca−La solvent contrast is +10.0342163383 kcal/mol with r2SCAN-3c/CPCM and
++21.2566283014 with corrected GFN2/ALPB. The direction survives; the magnitude
+and individual metal responses are strongly model-dependent. No solvent-model
+fix or improved classification has yet been demonstrated.
 
-La vacuum3371 completed in11435s on12 CPUs; final TRAH residual8.692805e-7 passes
-the unchanged1e-5 criterion. All sample3 cells are complete. Do not rerun them.
+Read [REFERENCE_REPORT.md](REFERENCE_REPORT.md), [the scientific comparison](comparison/REPORT.md)
+and [electronic limits](solvent_audit/REFERENCE_ELECTRONIC_LIMITS.md).
+The result does not justify removing solvent, fitting a scale factor, replacing
+PQQ geometry or changing bands. The DFT reference has unresolved electronic-state
+warnings and is not a ground-state oracle. Production and failed classifications
+remain intact.
 
-At14:44UTC3372's sample1 Ca vacuum triggered gross DIIS nonprogress: large
-density/energy oscillations from the atomic initial guess. No converged energy
-is available. Its printed AutoTRAH fallback starts at iteration50 and has not
-yet run; preserve the primary attempt with its unchanged total125-iteration
-limit. Health/completion wakes continue. A read-only review is checking the
-successful same-metal water wavefunction as a conditional recovery seed, with
-no additional molecular submission. Exact alert snapshot/decision are under
-reference_sample1_Ca_v1/health_reviews/gross_diis_v1.
+## Completed work and failures
 
-Jacob authorized contained work to fix the solvent correction. Read [PLAN.md](PLAN.md).
-The saved solvent decomposition completed as3352: all36 origin endpoints close
-algebraically. The sample3→1 Ca−La solvent change +21.2566 kcal/mol contains
-electrostatics +38.3552, intrinsic remainder −18.6043, hydrogen-bond +1.7026,
-surface −0.1969 and reference0. The response is dominated by coupled electronic
-and continuum terms, not surface area or a double-counted constant. This does
-not prove an unphysical SCF branch or justify deleting any contribution.
-Read [the component report](solvent_audit/REPORT.md).
+Jobs3354/3371–3374 evaluated exactly eight frozen192-atom origins: two PedE
+sources × Ca/La × vacuum/water. No molecular retries or optimization. The
+scout's original batch failed only during parsing; recovery3370 passed15 actual
+parser/fixture checks and recovered its converged result. The saved comparison
+passed six partial-fixture checks in3376 and collected all eight cells in3377.
+Original parsing/cofactor-reader/monitor failures remain preserved.
 
-Fixed-origin DFT scout3354 converged: sample1 La/CPCM water, native
-r2SCAN-3c/DefGrid3/TightSCF. Slurm reports FAILED because the collector looked
-for the final TRAH tolerance in an optional absent summary row. Actual printed
-threshold1e-5 and final macro residual5.663e-7 pass the unchanged criterion.
-Collection-only recovery3370 passed15 real-artifact/parser checks with zero
-molecular reruns. One of eight endpoints is now available. Read
-[SCOUT_REPORT.md](SCOUT_REPORT.md) and the versioned recovery report. The
-original failed batch/collection remains preserved; no tolerance was loosened.
+Final3372 completed50971s on12 CPUs. Its calcium-vacuum cell accepted TRAH
+residual6.267086e−6 under the printed1e−5 threshold. Earlier descriptions of125
+as a total iteration cap were incorrect: unchanged native input prints125,
+then executes50DIIS iterations and TRAH through macro98, reporting843SCF cycles.
+No limit override or seeded fallback was run. The prepared same-state seeded
+contingency is closed; do not launch it from old commands.
 
-The remaining seven frozen endpoints are RUNNING in four disjoint12-MPI lanes
-on node-64-768g-5:3371 sample1 La vacuum;3372 sample1 Ca water/vacuum;3373 sample3
-La water/vacuum;3374 sample3 Ca water/vacuum. All four started without a launch
-error. `REFERENCE_DISPATCH_v1.json` maps the eight tasks without repeating the
-scout. Each pair stops if its first cell is unavailable. No optimization or new
-chemical state. Completion and alert-only health wakes are armed for every lane;
-exact commands/PIDs are in the linked CONTINUATION_SUBMISSION.json files and
-reference_continuation_v2/SUBMISSION.json. Shared QoS respected,48 new CPUs total.
+Molecular cost1,074,804 allocated CPU-seconds, zero GPU; current phase including
+saved audits/parser/collection jobs totals1,074,815 allocated CPU-seconds.
+These are development-reference costs, not routine classifier runtime.
+Exact receipts, costs and result hashes: [EXECUTION.json](EXECUTION.json).
 
-Actual scout cost9580s on12 CPUs =114960 allocated CPU-seconds; sampled
-peakRSS18172MiB. Actual memory grant48000MiB, runtime MaxCore3100MB/rank with25%
-headroom. This is development reference cost; no routine-method speed claim.
-No solvent transfer or source double difference exists until matching cells
-complete. The saved-result comparison passed six real-fixture checks in3376:
-one accepted scout, seven unresolved cells, no invented corrections, preserved
-raw energy and reproduced saved GFN2 algebra. Collector3377 is queued afterany
-3371–3374 on one CPU, with completion wake armed. It adds no molecular calls;
-failed or missing cells remain explicit. Exact command/PID are recorded in
-comparison_v1/FINAL_SUBMISSION.json. Root owns execution and interpretation.
+## Next authorized diagnostic
 
-Cofactor saved audit3353 failed on unavailable-row schema handling; separate
-reader recovery3356 completed. All nine admitted origins pass source/PQQ/H/cap
-mapping; La1 stays raw-only. All predicted sources have similar long quinone
-C–O geometry, including correct controls. Archived crystal states/geometries
-are heterogeneous: they do not supply a single justified replacement geometry.
-No redox/template substitution or mapped preparation defect was established.
-No geometry, score or chemical state changed. Production remains unchanged.
+[FIXED_CHARGE_REPLAY_PLAN.md](FIXED_CHARGE_REPLAY_PLAN.md) defines eight inexpensive
+native ALPB component evaluations using the existing vacuum/water charge
+vectors. It separates a frozen-distribution contribution from additional
+solvent-driven redistribution while retaining intrinsic-energy compensation.
+First qualify four water-charge diagonals against archived native components.
+Use the actual eight-decimal charge precision and frozen analytic rounding
+bounds; no fabricated shell populations, new electronic calculations or fitted
+parameters. Agent la_parameter_scope owns wrapper preparation, root owns
+submission/scoring. An independent agent reviews the interface and accounting.
 
-Three saved-artifact jobs used7 allocated CPU-seconds total, including3353's
-failure; parser recovery3370 adds2. The first health-monitor attempt
-failed on a monitor-only missing resource field; v2 fixes that schema. The
-molecular process and original completion wake were unaffected. Both failures
-are retained. Do not restart chemistry because a watcher failed.
+At this checkpoint the isolated xTB6.7.1 wrapper/build is being prepared, **not
+submitted**. Compilation/tests/evaluations use standard Slurm under current
+shared policy, no memory/time overrides. Record new submission and completion
+wake before yielding. Read the replay READY/SUBMISSION records for a newer state.
+Do not rerun the eight DFT endpoints or historical CPCM/CHELPG/LanM campaigns.
 
-Exact jobs, receipt paths and wake commands will be recorded in EXECUTION.json.
-Before restarting, inspect that record and actual scheduler/output state. Do not
-repeat completed work or revive historical LanM/PQQ campaigns.
+## Queue and recovery
+
+All owned PedE molecular/comparison jobs are terminal. Scheduler still lists
+old reporting2669/2832/2833 on node-48-256g-18 despite completed output receipts;
+preserve these unrelated entries under Jacob's instruction. Readiness probes
+remain off. Completion wakes for any newly submitted work remain mandatory.
+Root has read and acknowledged3372 and the actual3377result. A delayed terminal
+wake requires acknowledgement, not duplicate chemistry.

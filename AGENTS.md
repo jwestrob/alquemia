@@ -3,13 +3,17 @@
 Jacob approved the two tests after discussing the inconclusives: “yep. go”. Read
 diagnostics/exaa_source_packing_20261014/PLAN.md and CURRENT.md. Root owns all
 submissions/scoring; agents own crystal preparation, fixed-pool packing preparation
-and independent review. Packing preparation4089 and saved-matrix tests4090 pass;
-finite12-cell molecular matrix4091 runs with an actual completion wake. Both
-crystal chains fail the no-missing-terminal-atom gate in4088; a separately named
-remote terminal-OXT preparation recovery is being qualified. Packing keeps all three saved geometries, adds complete all-heavy contact
-fragments by one frozen4.3Å union rule, and does not optimize. Crystal chemistry
-is explicitly conditional on the existing oxidized-PQQ3− hypothesis, with no
-redox or heavy-atom repair. Unsupported sources stay unavailable.
+and independent review. Packing4089–4092 completes2/2 pools/12cells: added context
+restrains both metals similarly, changing the target differential accommodation
+work only16.692→16.317kcal/mol. This does not support omitted packing as its main
+cause. See packing/FINAL_REPORT.md; no expanded-context class calls or optimization.
+Crystal4088's original failures remain;4093 admits A using its exact saved single
+remote-terminal-OXT completion with deposited heavy coordinates unchanged. B stays
+unavailable at the existing3.5Å Asp-partner gate (actual3.511Å), not a finding that
+the crystal is defective. Native4095 now runs; solvent4096 follows, both7CPUs with
+actual completion wakes. Read CURRENT and exact workspace submissions before any
+action; do not duplicate them. Crystal chemistry is explicitly conditional on
+the existing oxidized-PQQ3− hypothesis. No redox or local heavy-atom repair.
 
 New scoring must preserve the current qualified standaloneGFN2 plus native
 frozen-charge ALPB recipe, exact weights and numerical gates. ORCA default La

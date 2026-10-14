@@ -1,0 +1,70 @@
+{
+  "status": "prepared_static_review_passed_native_execution_not_performed_by_preparation_agent",
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/manifest.json",
+    "sha256": "bcd9fc9d8923139dfcb8d7b8d0191c5c29484e700ddc8ffd488c1dea09c10b41"
+  },
+  "inventory": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_inventory_v1/INVENTORY.json",
+    "sha256": "0cc05bebae04cb12c708ad67173b934884080d3c00185a17ac808db3bf0c1af1"
+  },
+  "implementation": {
+    "NATIVE.py": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/implementation/NATIVE.py",
+      "sha256": "97c1c772d950ff008b09e1c3ca3341278359a3590060bd20f51bb8a29226d0fe"
+    },
+    "REPLAY.f90": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/implementation/REPLAY.f90",
+      "sha256": "03ebc1f4cb9a94b9e598caa7c7ac9e3df410bc8ec53a4dc6a75132e1eeecb1e1"
+    },
+    "PREPARE.py": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/implementation/PREPARE.py",
+      "sha256": "ba54211ac95c7fc2e65e1653def1daaec7b2bcd804ac3f08e3edaa568f10ceaf"
+    },
+    "RUN.sbatch": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/implementation/RUN.sbatch",
+      "sha256": "bced6506c6271a8fc7179446ea3a8d4b031ca48528ad57c51fbf7b391c340830"
+    }
+  },
+  "canonical_command": [
+    "sbatch",
+    "--nodes=1",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/implementation/RUN.sbatch",
+    "canonical",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/manifest.json",
+    "bcd9fc9d8923139dfcb8d7b8d0191c5c29484e700ddc8ffd488c1dea09c10b41",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/canonical_v1"
+  ],
+  "canonical_result": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/canonical_v1/FINAL_COLLECTION.json",
+  "transfer_command_template": [
+    "sbatch",
+    "--nodes=1",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/implementation/RUN.sbatch",
+    "transfer",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/manifest.json",
+    "bcd9fc9d8923139dfcb8d7b8d0191c5c29484e700ddc8ffd488c1dea09c10b41",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/transfer_v1",
+    "--calibration",
+    "ROOT_CALIBRATION_PATH",
+    "--calibration-sha",
+    "ROOT_CALIBRATION_SHA"
+  ],
+  "stage_counts": {
+    "canonical_native_inputs": 150,
+    "canonical_component_evaluations": 300,
+    "transfer_native_inputs": 1392,
+    "transfer_reused_inputs": 4,
+    "transfer_new_component_evaluations": 2776,
+    "workers": "actual SLURM_NTASKS, range1..12",
+    "numerical_threads_per_worker": 1,
+    "gate": "each water diagonal passes before its vacuum replay; canonical calibration passes before transfer",
+    "vacuum_precision": "same analytic rounding formula/native allowance and unchanged informative ceiling; declared before candidate evaluation",
+    "retry": "none; fresh output only; partial evidence retained",
+    "SCC_calls": 0,
+    "DFT_calls": 0
+  },
+  "static_review": "Curie: final source and manifest binding passed; no execution during review",
+  "scientific_tests_by_preparation_agent": 0,
+  "engine_rebuilds": 0,
+  "production_changed": false
+}

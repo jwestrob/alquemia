@@ -14,7 +14,7 @@ all17 declared native checks. Final TRAH residuals8.804145e−7/5.466705e−7 ar
 below printed1e−5. Near-final negative-gap/Hessian warnings and level shifting
 remain; the final orbital table is not independent stability qualification.
 
-Four of eight cells now complete. The six-cell continuation remains unchanged:
+Five of eight cells now complete. The six-cell continuation remains unchanged:
 
 | Job | Task | Last observed status |
 |---|---|---|
@@ -22,15 +22,15 @@ Four of eight cells now complete. The six-cell continuation remains unchanged:
 |4118|sample3 Ca adaptive_La|COMPLETED; energy criterion|
 |4119|sample0 La origin|COMPLETED; energy criterion, see below|
 |4120|sample0 La adaptive_La|RUNNING|
-|4121|sample0 Ca origin|RUNNING|
+|4121|sample0 Ca origin|COMPLETED; native gradient criterion|
 |4122|sample0 Ca adaptive_La|RUNNING|
 |4123|complete eight-cell comparison|PENDING(Dependency)|
 
 Each molecular job uses12MPI ranks on shared standard/node-64-768g-5, normal
-priority, no memory/time override. Four active molecular jobs use48 of the current60CPU user
+priority, no memory/time override. Three active molecular jobs use36 of the current60CPU user
 allowance;4122 started after4119 freed its slots. Actual grant/memory renderer
-is recorded per execution. All four remaining completion/health watchers plus the
-collector wake are live; completed4119/4118 have been acknowledged. Do not duplicate jobs or restart successful scouts.
+is recorded per execution. All three remaining completion/health watchers plus the
+collector wake are live; completed4119/4118/4121 have been acknowledged. Do not duplicate jobs or restart successful scouts.
 
 
 Control La origin4119 ended normally in3670s on12CPUs, with all16 applicable
@@ -49,6 +49,14 @@ raw residuals and costs. Target-only comparison4125 (1CPU) is submitted to join 
 four original sample3 cells after4117 ends, using the unchanged tested comparator.
 No molecular evaluations are added; missing control cells remain explicit.
 Its completion wake is armed; exact rearm command is target_comparison_v1/SUBMISSION.json.
+
+Control Ca origin4121 completed in4949s on12CPUs, with all16 applicable
+checks passing. Raw SOSCF ending explicitly signals gradient convergence;
+orbital gradient1.4799e−6 is below1e−5. Other printed summary criteria do not
+all pass, and electronic-state qualification remains conditional. Its collection
+is attempts/4121_execute_sample0_Ca_origin_vacuum/COLLECTION.json; ROOT_ACK.json
+retains actual residuals, source hashes and scheduler costs. No new paired work
+is available yet. The three remaining jobs continue without intervention.
 
 ## Scope and next action
 
@@ -77,7 +85,8 @@ Origin6026s×12 + proposal6494s×12 =150240 allocatedCPU-s, zeroGPU. Preflight41
 adds72allocatedCPU-s; join4111 recorded0s integer wall/0.077s TotalCPU. Control
 origin4119 adds44040allocatedCPU-s (actual TotalCPU12:04:17; batchMaxRSS11506156K).
 Target Ca proposal4118 adds56832allocatedCPU-s. Completed molecular total
-251112allocatedCPU-s, zeroGPU; ongoing jobs excluded. These are
+310500allocatedCPU-s including control Ca origin4121 (59388CPU-s); zeroGPU,
+ongoing jobs excluded. These are
 targeted development reference costs, not routine scanner costs. Both GBWs and
 complete solver outputs are preserved. No old source/calibration is overwritten.
 

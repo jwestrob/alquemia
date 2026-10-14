@@ -5,7 +5,7 @@ All five two-Ca PedE sources are now correct. The recovered125 source set change
 119correct/3wrong/3inconclusive to121/0/4. However, five previously correct
 three-source summaries become inconclusive; no blanket promotion. Read
 [the candidate report](frozen_distribution_candidate/REPORT.md) and EVIDENCE.json.
-All candidate jobs4006–4010/4014 are terminal; do not repeat them from delayed wakes.
+All candidate jobs4006–4010/4014/4016 are terminal; do not repeat them from delayed wakes.
 Production and all historical results remain unchanged.
 
 **All eight DFT endpoints and comparison3377 are complete.** The source-dependent
@@ -68,17 +68,21 @@ calls and four reused input pairs. No new MACE/SCC/DFT or optimizer work occurre
 Canonical25 remains25correct; expanded135 changes134/1/0/0 to129/0/6/0. Existing
 100triples change94correct/6unavailable to89correct/5inconclusive/6unavailable.
 The genuine PedE gain and abstention regressions remain separate. Candidate test,
-replay/calibration and final summary cost730 allocatedCPU-s, zeroGPU, excluding
-previously computed MACE energies/charges. Full phase total1,077,213allocatedCPU-s.
+replay/calibration, summary and saved-matrix diagnosis cost731 allocatedCPU-s,
+zeroGPU, excluding previously computed MACE energies/charges. Full phase total
+1,077,214allocatedCPU-s.
 
-Next useful work is saved-matrix decomposition of the new abstentions into solvent,
-geometry-selection and band effects. No next molecular run or promotion is queued.
+Saved-matrix diagnosis4016 also completed: new abstentions arise from energy-model
+changes plus stricter Ca bands, not harmful geometry reselection. PedE sample2's
+new correct margin is only0.233kcal/mol. Read selection_diagnosis/REPORT.md inside
+the candidate directory. Next is a physical response-model decision; no next
+molecular run or promotion is queued. Do not refold or retune bands to rescue it.
 All scientific computation must continue through Slurm with completion wakes.
 
 ## Queue and recovery
 
 All PedE DFT/comparison/replay/candidate jobs are terminal. Root read/acknowledged
-3372/3377,4000–4002,4006–4010 and4014. Delayed wakes need acknowledgement, not reruns.
+3372/3377,4000–4002,4006–4010,4014 and4016. Delayed wakes need acknowledgement, not reruns.
 Scheduler still lists unrelated reporting2669/2832/2833 on node-48-256g-18 despite
 completed output receipts; preserve these under Jacob's instruction. Readiness
 probes remain off. Candidate agents completed inventory/implementation/independent

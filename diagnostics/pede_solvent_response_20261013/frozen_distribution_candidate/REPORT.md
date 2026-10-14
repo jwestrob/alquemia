@@ -134,13 +134,17 @@ concrete, affordable PedE correction and improved source stability, while exposi
 an unresolved transfer tradeoff. This supports investigating the solvent-response
 model rather than attributing the PedE failures solely to bad folding.
 
-The next useful diagnosis is to separate changed solvent contributions, geometry
-reselection and canonical-band movement for the newly abstaining ExaA/PedE sources,
-using the existing complete energy matrices. That requires no new electronic
-calculations. It should determine whether a new physical response hypothesis is
-needed; it must not become label-dependent switching or retrospective band tuning.
-Do not automatically repeat DFT, refold these proteins, or interpolate the response
-until the classifications look favorable.
+The [saved-matrix diagnosis](selection_diagnosis/REPORT.md) is also complete as
+job4016: the new abstentions combine changed solvent contributions and a stricter
+canonical Ca boundary. Reselection does not cause them; where it changes a
+regressing source, it helps. PedE sample1 is corrected with identical selections;
+sample2 additionally benefits from a different saved Ca candidate and has only
+a 0.23276 kcal/mol correct-class margin. No band was retuned.
+
+That diagnostic adds one allocatedCPU-second (731 for this candidate round).
+The next physical question is how much electronic response is reliable across
+different pockets. Do not automatically repeat DFT, refold these proteins,
+switch models by desired label or interpolate response to force correct calls.
 
 Results/pins: [EVIDENCE.json](EVIDENCE.json). Executable records and restart
 instructions: [COMMANDS.md](COMMANDS.md). Full machine-readable per-source contrasts,

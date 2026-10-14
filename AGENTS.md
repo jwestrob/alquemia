@@ -6,8 +6,10 @@ Both two-Ca PedE errors become correct; all5PedE correct. RecoveredCa125 becomes
 three-source summaries become inconclusive (89correct/5inconclusive/6excluded).
 Read frozen_distribution_candidate/REPORT.md under the diagnostic below. All1542
 native inputs pass;730allocatedCPU-s for this candidate round, no newSCC/DFT/MACE.
+Saved-matrix diagnosis4016 also complete: new abstentions reflect model/band
+changes, not harmful reselection. It adds1CPU-s; see selection_diagnosis/REPORT.md.
 All jobs terminal, no promotion or automatic rerun. Current checkpoint supersedes
-preparing notes below. Saved-matrix diagnosis of new abstentions is next.
+preparing notes below. Next is a physical response-model decision, not refolding.
 
 Latest,14 October UTC: all eight frozen DFT cells and comparison3377 completed.
 The source solvent contrast is +10.0342 kcal/mol with DFT/CPCM versus +21.2566

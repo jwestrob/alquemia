@@ -1,3 +1,23 @@
+# ExaA source and packing tests authorized — 14 October 2026
+
+Jacob approved the two tests after discussing the inconclusives: “yep. go”. Read
+diagnostics/exaa_source_packing_20261014/PLAN.md and CURRENT.md. Root owns all
+submissions/scoring; agents own crystal preparation, fixed-pool packing preparation
+and independent review. Packing preparation4089 and saved-matrix tests4090 pass;
+finite12-cell molecular matrix4091 runs with an actual completion wake. Both
+crystal chains fail the no-missing-terminal-atom gate in4088; a separately named
+remote terminal-OXT preparation recovery is being qualified. Packing keeps all three saved geometries, adds complete all-heavy contact
+fragments by one frozen4.3Å union rule, and does not optimize. Crystal chemistry
+is explicitly conditional on the existing oxidized-PQQ3− hypothesis, with no
+redox or heavy-atom repair. Unsupported sources stay unavailable.
+
+New scoring must preserve the current qualified standaloneGFN2 plus native
+frozen-charge ALPB recipe, exact weights and numerical gates. ORCA default La
+parameters are never an alternative. All numerical work uses Slurm under current
+shared limits. Production/defaults/calibration remain unchanged; no blanket
+refolding, high-level campaign or lost historical failures. Old cancellation
+notifications do not request further action.
+
 # Idle reporting jobs cancelled — 14 October 2026
 
 Jacob explicitly authorized cancelling2669/2832/2833 if idle. Live host process

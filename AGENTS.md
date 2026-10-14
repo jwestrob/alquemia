@@ -14,10 +14,11 @@ late electronic-state warnings remain; no classifier/affinity result or promotio
 No reference jobs remain. Delayed callbacks require ACKs, not reruns.
 Next root-owned phase: diagnostics/exaa_metal_position_20261014/PLAN.md,
 finite eight-cell reciprocal metal-placement MACE test. Preparation4129 passed
-all gates; scoring4130 runs eight new fixed vacuum cells on7CPUs with original
-energies reused. Completion wake armed; read its CURRENT/EXECUTION before acting.
-Independent preparation/scoring review complete. No optimization, DFT or solvent
-added. Root owns actual results and any next decision.
+all gates; scoring4130 completes8/8 new fixed vacuum cells, eight originals reused.
+Reciprocal delta_D control+3.373337/target−9.328603kcal/mol supports the frozen
+ion-placement hypothesis within this model. Read REPORT/RESULT. Solvent follow-up
+is preparing under SOLVENT_PLAN.md, no submission yet. No new optimization/DFT
+or classification. Root owns integration; delayed old callbacks require no reruns.
 Scouts were reviewed before continuation; no new per-analysis approval loop.
 This tests a common physical displacement, not the full operational three-candidate
 pool or classifier calibration. Old CPCM DFT is not a matched MACE-vacuum reference.

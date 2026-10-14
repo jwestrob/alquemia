@@ -1,0 +1,94 @@
+{
+  "schema": "exaa_control_origin_review.v1",
+  "utc": "2026-10-14T13:17:04.588175+00:00",
+  "job_id": "4119",
+  "collection": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_donor_response_20261014/reference_v1/attempts/4119_execute_sample0_La_origin_vacuum/COLLECTION.json",
+    "sha256": "2385c29923a3d42cf056060676e38dbc66236aa6535cd9c66b4c84c7c86b14c0"
+  },
+  "output": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_donor_response_20261014/reference_v1/tasks/sample0_La_origin_vacuum/endpoint.out",
+    "sha256": "6c8b8d901bafc261fe89cd5de9bfac06e55a9871831195cdbe2e369a3e3cb850"
+  },
+  "execution": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_donor_response_20261014/reference_v1/tasks/sample0_La_origin_vacuum/endpoint.out.execution.json",
+    "sha256": "8b5be431527a11cb172b0ce403adc17a73b2051714cb590f7da9d378888e3b13"
+  },
+  "status": "complete_diagnostic",
+  "energy_hartree": -6073.032935684248,
+  "checks": {
+    "native_receipt_success": true,
+    "manifest_identity": true,
+    "output_identity": true,
+    "version": true,
+    "energy_present": true,
+    "electron_count": true,
+    "populations_complete": true,
+    "gbw_retained": true,
+    "native_basis": true,
+    "La_ECP": true,
+    "native_executable_pin": true,
+    "native_runner_pin": true,
+    "runtime_renderer_pin": true,
+    "actual12MPI": true,
+    "template_identity": true,
+    "coordinate_identity": true
+  },
+  "final_solver": "DIIS/SOSCF (see raw iteration table)",
+  "final_trah_macro": null,
+  "scf_summary": [
+    {
+      "criterion": "Energy change",
+      "value": 2.2337e-09,
+      "tolerance": 1e-08
+    },
+    {
+      "criterion": "MAX-Density change",
+      "value": 0.0084356,
+      "tolerance": 1e-07
+    },
+    {
+      "criterion": "RMS-Density change",
+      "value": 8.1128e-05,
+      "tolerance": 5e-09
+    },
+    {
+      "criterion": "DIIS Error",
+      "value": 0.0028108,
+      "tolerance": 5e-07
+    },
+    {
+      "criterion": "Orbital Gradient",
+      "value": 4.4651e-05,
+      "tolerance": 1e-05
+    },
+    {
+      "criterion": "Orbital Rotation",
+      "value": 0.00039244,
+      "tolerance": 1e-05
+    }
+  ],
+  "electronic_state_warning_lines": [
+    "WARNINGS",
+    "Please study these warnings very carefully!",
+    "WARNING: SCAN, rSCAN, or r2SCAN functional requested.",
+    "Warning: op=0 Small HOMO/LUMO gap (  -1.054) - skipping pre-diagonalization",
+    "Warning: op=0 Small HOMO/LUMO gap (  -0.099) - skipping pre-diagonalization"
+  ],
+  "density_response_qualification": "unestablished; electronic warnings retained, no stability/repeat/gradient qualification",
+  "review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/exaa_donor_response_20261014/method_review/CONTROL_ORIGIN_STATE_REVIEW.md",
+    "sha256": "1d2592270c6328b708585acd1b1d1466699750d588c06aea7a667922b7b03dd8"
+  },
+  "interpretation": "Native energy convergence under frozen solver-specific policy; no TRAH ending and no equivalent final-gradient qualification. Control work and paired-metal contrasts await matching endpoints. No rerun or protocol change.",
+  "scheduler": {
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed_seconds": 3670,
+    "allocated_cpus": 12,
+    "allocated_cpu_seconds": 44040,
+    "total_cpu": "12:04:17",
+    "batch_max_rss": "11506156K"
+  },
+  "production_changed": false
+}

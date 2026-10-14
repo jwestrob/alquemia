@@ -14,23 +14,32 @@ all17 declared native checks. Final TRAH residuals8.804145e−7/5.466705e−7 ar
 below printed1e−5. Near-final negative-gap/Hessian warnings and level shifting
 remain; the final orbital table is not independent stability qualification.
 
-The remaining six ORIGINAL cells are submitted unchanged:
+Three of eight cells now complete. The six-cell continuation remains unchanged:
 
 | Job | Task | Last observed status |
 |---|---|---|
 |4117|sample3 Ca origin|RUNNING|
 |4118|sample3 Ca adaptive_La|RUNNING|
-|4119|sample0 La origin|RUNNING|
+|4119|sample0 La origin|COMPLETED; energy criterion, see below|
 |4120|sample0 La adaptive_La|RUNNING|
 |4121|sample0 Ca origin|RUNNING|
-|4122|sample0 Ca adaptive_La|PENDING(Resources)|
+|4122|sample0 Ca adaptive_La|RUNNING|
 |4123|complete eight-cell comparison|PENDING(Dependency)|
 
 Each molecular job uses12MPI ranks on shared standard/node-64-768g-5, normal
 priority, no memory/time override. Five active jobs use the current60CPU user
-allowance; the sixth waits through the scheduler. Actual grant/memory renderer
-is recorded per execution. All six completion/health watchers plus the collector
-wake are armed. Do not duplicate jobs or restart successful scouts.
+allowance;4122 started after4119 freed its slots. Actual grant/memory renderer
+is recorded per execution. All five remaining completion/health watchers plus the
+collector wake are live; completed4119 has been acknowledged. Do not duplicate jobs or restart successful scouts.
+
+
+Control La origin4119 ended normally in3670s on12CPUs, with all16 applicable
+checks passing. Unlike the scouts, it ended by the native SOSCF energy criterion,
+with actual final orbital gradient4.4651e−5 above printed1e−5; no later TRAH
+ending supersedes that residual. This follows the frozen solver-specific admission
+rule but is weaker numerical qualification. Preserve the limitation in any control
+comparison. See CONTROL_ORIGIN_RESULT.json and method_review/CONTROL_ORIGIN_STATE_REVIEW.md.
+No control work or Ca–La differential is available from this single new endpoint.
 
 ## Scope and next action
 
@@ -56,7 +65,9 @@ decision, not agreement for La alone. Root owns submissions/integration.
 ## Actual costs and continuity
 
 Origin6026s×12 + proposal6494s×12 =150240 allocatedCPU-s, zeroGPU. Preflight4108
-adds72allocatedCPU-s; join4111 recorded0s integer wall/0.077s TotalCPU. These are
+adds72allocatedCPU-s; join4111 recorded0s integer wall/0.077s TotalCPU. Control
+origin4119 adds44040allocatedCPU-s (actual TotalCPU12:04:17; batchMaxRSS11506156K).
+Completed molecular total194280allocatedCPU-s, zeroGPU; ongoing jobs excluded. These are
 targeted development reference costs, not routine scanner costs. Both GBWs and
 complete solver outputs are preserved. No old source/calibration is overwritten.
 

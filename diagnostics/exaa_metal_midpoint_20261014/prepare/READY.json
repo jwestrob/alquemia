@@ -1,0 +1,43 @@
+{
+  "status": "prepared_unexecuted",
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_metal_midpoint_20261014/preparation_v1/manifest.json",
+    "sha256": "dab4281c4f0dbdccb20507b3bc3d419eba35a09a3cc215a70dd99eb57b7711b1"
+  },
+  "implementation": {
+    "PREPARE.py": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_metal_midpoint_20261014/preparation_v1/implementation/PREPARE.py",
+      "sha256": "6e8a00714c26663ca4742905a28c3aacd388d225de9f755aaf006d1addb1a213"
+    },
+    "RUN.sbatch": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_metal_midpoint_20261014/preparation_v1/implementation/RUN.sbatch",
+      "sha256": "7982a3b28dc1285f5efd4d9434b442bb5a3871b7e003a7370fe3f1600792a5ab"
+    }
+  },
+  "command": [
+    "sbatch",
+    "--nodelist=node-64-768g-5",
+    "--output=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_metal_midpoint_20261014/preparation_v1/slurm-%j.out",
+    "--error=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_metal_midpoint_20261014/preparation_v1/slurm-%j.err",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_metal_midpoint_20261014/preparation_v1/implementation/RUN.sbatch",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_metal_midpoint_20261014/preparation_v1/manifest.json",
+    "dab4281c4f0dbdccb20507b3bc3d419eba35a09a3cc215a70dd99eb57b7711b1"
+  ],
+  "command_shell": "sbatch --nodelist=node-64-768g-5 --output=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_metal_midpoint_20261014/preparation_v1/slurm-%j.out --error=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_metal_midpoint_20261014/preparation_v1/slurm-%j.err /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_metal_midpoint_20261014/preparation_v1/implementation/RUN.sbatch /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_metal_midpoint_20261014/preparation_v1/manifest.json dab4281c4f0dbdccb20507b3bc3d419eba35a09a3cc215a70dd99eb57b7711b1",
+  "fraction": 0.5,
+  "declared_sources": 2,
+  "declared_new_cells": 8,
+  "source_candidates": [
+    "adaptive_Ca",
+    "adaptive_La"
+  ],
+  "output": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_metal_midpoint_20261014/preparation_v1/execution/PREPARATION.json",
+  "numerical_preparation_performed": false,
+  "new_energy_calls": 0,
+  "new_optimizations": 0,
+  "static_checks": [
+    "Python AST parsed",
+    "bash -n passed"
+  ],
+  "root_owns_submission": true
+}

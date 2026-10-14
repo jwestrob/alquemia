@@ -1,0 +1,51 @@
+{
+  "status": "two_scout_cells_admitted",
+  "actual_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_donor_response_20261014/scout_comparison_v1/execution/RESULT.json",
+    "sha256": "233b8c100791215f11564dc9ae053c5a897b5a4c4ee6bb6c67adfa77f9dcfb7d"
+  },
+  "available_cells": 2,
+  "declared_cells": 8,
+  "target_La_work": {
+    "MACE_vacuum_kcal_mol": -26.782803599660028,
+    "DFT_vacuum_kcal_mol": -26.70294112086986,
+    "DFT_minus_MACE_kcal_mol": 0.07986247879016872,
+    "status": "available_diagnostic",
+    "required_cells": [
+      "sample3_La_origin_vacuum",
+      "sample3_La_adaptive_La_vacuum"
+    ]
+  },
+  "target_differential": {
+    "MACE_vacuum_kcal_mol": 16.403480609819695,
+    "DFT_vacuum_kcal_mol": null,
+    "DFT_minus_MACE_kcal_mol": null,
+    "status": "unavailable"
+  },
+  "costs": {
+    "4109": {
+      "elapsed_s": 6026,
+      "allocated_cpus": 12,
+      "allocated_cpu_s": 72312,
+      "scheduler_TotalCPU": "19:51:59",
+      "scheduler_batch_MaxRSS": "12903172K"
+    },
+    "4110": {
+      "elapsed_s": 6494,
+      "allocated_cpus": 12,
+      "allocated_cpu_s": 77928,
+      "scheduler_TotalCPU": "21:24:39",
+      "scheduler_batch_MaxRSS": "12864516K"
+    },
+    "4111": {
+      "reported_elapsed_s": 0,
+      "allocated_cpus": 1,
+      "scheduler_TotalCPU": "00:00.077"
+    }
+  },
+  "decision": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/exaa_donor_response_20261014/SCOUT_DECISION.md",
+    "sha256": "424eb6b4ce640bbc6a63b8e581fb5e2a0b8225107f8b3142e2a8913ab64f62de"
+  },
+  "limitations": "conditional local La work only; no paired differential, stability-qualified electronic state or classifier improvement yet"
+}

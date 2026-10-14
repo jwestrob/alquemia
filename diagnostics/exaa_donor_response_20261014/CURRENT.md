@@ -1,51 +1,66 @@
-# ExaA donor-response checkpoint
+# ExaA donor response: La scout agrees; Ca/control matrix running
 
-**Origin4109 completed and passed numerical admission;4110 adaptive_La runs.** Each uses
-12MPI ranks on the shared standard node, normal priority, with completion and
-health wakes armed. Collector4111 waits afterany on both and keeps all eight
-planned cells visible, including six not yet submitted. The origin took6026s
-on12CPUs and passed all17 native checks; no paired work is available yet. Native
-output confirms the expected La46-core ECP. See SCOUT_ORIGIN_RESULT.json.
+**Independent vacuum DFT reproduces the target's large La work:** −26.70294
+kcal/mol versus MACE−26.78280. This weakens a MACE-only explanation for that
+particular response. Ca–La discrimination, matched-control response and physical
+electronic-state uniqueness remain unestablished. Read SCOUT_DECISION.md,
+SCOUT_RESULT.json and method_review/PAIR_STATE_REVIEW.md. No classifier gain or
+production change is claimed.
 
-Jacob authorized autonomous next rounds on14October2026. Read PLAN.md. This test
-asks whether independent vacuum DFT supports the large MACE stabilization on a
-saved ExaA donor path. It preserves the exact192-atom origin/adaptive_La geometry,
-charge, cofactor state and caps. The matched control is sample0; target is sample3.
-This common-path test is distinct from full operational candidate minimization.
+## Current execution
 
-## Verified execution
+The two scouts4109/4110 and join4111 completed. Both molecular endpoints pass
+all17 declared native checks. Final TRAH residuals8.804145e−7/5.466705e−7 are
+below printed1e−5. Near-final negative-gap/Hessian warnings and level shifting
+remain; the final orbital table is not independent stability qualification.
 
-- Slurm4108 completed in6s/12CPUs: actual geometry/state/electron/mapping gates
-  and all11 real archived parser/algebra checks passed; zero molecular calls.
-- Ca has838 explicit electrons; La has874 total/828 explicit after ECP46. Both
-  are the declared singlets. Existing dry oxidized-PQQ3− hypothesis retained.
-- Actual shared grant48,000MiB; renderer derives MaxCore3100decimalMB per rank
-  with existing headroom. No memory/time override or scheduler priority boost.
-- Origin4109 ended with final TRAH residual8.804145e−7 below its printed1e−5
-  threshold. Retained density summaries and final electronic-state warnings
-  remain explicit limitations; this is not an electronic-state uniqueness claim.
-- Proposal4110 is progressing in TRAH. No finite-motion response result yet.
-- Read LAUNCH.json and immutable workspace SUBMISSION.json files for exact pins,
-  commands and watcher PIDs. Only root owns submissions/collection/integration.
+The remaining six ORIGINAL cells are submitted unchanged:
 
-## Resume precisely
+| Job | Task | Last observed status |
+|---|---|---|
+|4117|sample3 Ca origin|RUNNING|
+|4118|sample3 Ca adaptive_La|RUNNING|
+|4119|sample0 La origin|RUNNING|
+|4120|sample0 La adaptive_La|RUNNING|
+|4121|sample0 Ca origin|RUNNING|
+|4122|sample0 Ca adaptive_La|PENDING(Resources)|
+|4123|complete eight-cell comparison|PENDING(Dependency)|
 
-Workspace: `workspaces/exaa_donor_response_20261014/reference_v1/`. Manifest SHA:
+Each molecular job uses12MPI ranks on shared standard/node-64-768g-5, normal
+priority, no memory/time override. Five active jobs use the current60CPU user
+allowance; the sixth waits through the scheduler. Actual grant/memory renderer
+is recorded per execution. All six completion/health watchers plus the collector
+wake are armed. Do not duplicate jobs or restart successful scouts.
+
+## Scope and next action
+
+Exact192-atom ExaA two-Ca samples0/3; dry oxidized-PQQ3− hypothesis, charge
+Ca−3/La−2, singlets,14caps, origin/adaptive_La unchanged. Common physical path,
+not the full operational three-candidate minimum. Native r2SCAN-3c vacuum only;
+no GFN2 parameters, added solvent, new folds, optimization or calibrated DFT call.
+
+Workspace: `workspaces/exaa_donor_response_20261014/reference_v1/`. ManifestSHA:
 `d37733923c3203f41b73d5a3c1789d396e22f8da69e624df2c2d724d0141bcf1`.
+CONTINUATION.json links exact submission/rearm commands and watcher PIDs. Each
+job writes `attempts/JOB_execute_TASK/COLLECTION.json`. Full actual joined result
+will be `workspaces/exaa_donor_response_20261014/full_comparison_v1/execution/RESULT.json`.
+The collector is afterany; failed or missing cells stay explicit.
 
-Inspect jobs4109/4110/4111 and task receipts before any action. Each native job
-writes `attempts/JOB_execute_TASK/COLLECTION.json`. Joined actual scout results:
-`workspaces/exaa_donor_response_20261014/scout_comparison_v1/execution/RESULT.json`.
-Absent outputs remain absent. Re-arm recorded watchers after host restart; never
-resubmit chemistry simply because a watcher died. Delayed4108 preflight event was
-already read and acknowledged while root was active; no separate idle-wake claim.
+Read live scheduler and receipts on each event. Inspect actual residuals and
+ending solver; do not infer success from scheduler alone or rank estimates from
+health monitoring as utilization. No automatic retries. Once Ca work is available,
+compare D=W_Ca−W_La on the same path; the full matrix adds the matched-control
+D and target-minus-control difference. Use that evidence for the next model
+decision, not agreement for La alone. Root owns submissions/integration.
 
-Review both scout outputs for admitted energy, final solver residual, orbital
-warnings/state ambiguity and measured cost. The first meaningful quantity is
-La E(adaptive_La)−E(origin). Then pursue the remaining six declared endpoints if
-this reference is usable. All source/implementation agents completed their work.
-No extra approval is required within the current authorized scope.
+## Actual costs and continuity
 
-All three current job IDs and actual watcher commands are in LAUNCH.json-linked
-receipts. The eight-cell matrix is not complete; production/calibrations and old
-negative results remain untouched. No new folds, optimization or parameter fit.
+Origin6026s×12 + proposal6494s×12 =150240 allocatedCPU-s, zeroGPU. Preflight4108
+adds72allocatedCPU-s; join4111 recorded0s integer wall/0.077s TotalCPU. These are
+targeted development reference costs, not routine scanner costs. Both GBWs and
+complete solver outputs are preserved. No old source/calibration is overwritten.
+
+Jacob's discretionary authorization covers this continuation. Vault updated;
+substantive email accepted by local relay, inbox delivery unconfirmed. Delayed
+4108/4109/4110/4111 notifications do not request reruns. Completed scout callbacks
+are acknowledged in their workspace receipts.

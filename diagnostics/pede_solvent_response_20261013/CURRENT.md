@@ -1,5 +1,13 @@
 # PedE solvent-response checkpoint — 14 October 2026 UTC
 
+**Latest: the fixed-charge candidate completed and corrects both PedE errors.**
+All five two-Ca PedE sources are now correct. The recovered125 source set changes
+119correct/3wrong/3inconclusive to121/0/4. However, five previously correct
+three-source summaries become inconclusive; no blanket promotion. Read
+[the candidate report](frozen_distribution_candidate/REPORT.md) and EVIDENCE.json.
+All candidate jobs4006–4010/4014 are terminal; do not repeat them from delayed wakes.
+Production and all historical results remain unchanged.
+
 **All eight DFT endpoints and comparison3377 are complete.** The source-dependent
 Ca−La solvent contrast is +10.0342163383 kcal/mol with r2SCAN-3c/CPCM and
 +21.2566283014 with corrected GFN2/ALPB. The direction survives; the magnitude
@@ -34,7 +42,7 @@ saved audits/parser/collection jobs totals1,074,815 allocated CPU-seconds.
 These are development-reference costs, not routine classifier runtime.
 Exact receipts, costs and result hashes: [EXECUTION.json](EXECUTION.json).
 
-## Native fixed-charge replay complete; next candidate preparing
+## Native fixed-charge replay and candidate complete
 
 [The native replay](fixed_charge_replay/REPORT.md) completed as4002: all eight
 fixed-charge evaluations and16water-component gates pass. The original21.2566
@@ -49,20 +57,29 @@ and all tolerances stay unchanged. Final build/evaluations65s on12CPUs; all thre
 attempts1668allocatedCPU-s, zero newSCC/DFT, zeroGPU. Entire current phase through
 4002 totals1,076,483allocatedCPU-s. All actual results/costs are in EXECUTION.json.
 
-Next [research candidate](frozen_distribution_candidate/PLAN.md): MACE vacuum
+The [research candidate](frozen_distribution_candidate/PLAN.md): MACE vacuum
 energy plus native ALPB evaluated on its matching GFN2vacuum charges. Keep the
 full continuum functional, explicitly omit extra solute electronic relaxation,
 and test usefulness with separate canonical calibration followed by frozen-band
 structural transfer. No fitted response fraction or production promotion.
-Inventory/code preparation runs in parallel; no candidate evaluation submitted.
-Canonical rule/population must be pinned before execution. All new compute uses
-Slurm and actual completion wakes. Do not rerun completed DFT or replays.
+The exact inventory and calibration rule were frozen; canonical4007/4008 passed
+before transfer4009/4010. All1542 native inputs are available, with3076 new component
+calls and four reused input pairs. No new MACE/SCC/DFT or optimizer work occurred.
+Canonical25 remains25correct; expanded135 changes134/1/0/0 to129/0/6/0. Existing
+100triples change94correct/6unavailable to89correct/5inconclusive/6unavailable.
+The genuine PedE gain and abstention regressions remain separate. Candidate test,
+replay/calibration and final summary cost730 allocatedCPU-s, zeroGPU, excluding
+previously computed MACE energies/charges. Full phase total1,077,213allocatedCPU-s.
+
+Next useful work is saved-matrix decomposition of the new abstentions into solvent,
+geometry-selection and band effects. No next molecular run or promotion is queued.
+All scientific computation must continue through Slurm with completion wakes.
 
 ## Queue and recovery
 
-All PedE DFT/comparison/replay jobs are terminal. Root read/acknowledged3372,
-3377result and4000/4001/4002. Delayed wakes need acknowledgement, not reruns.
+All PedE DFT/comparison/replay/candidate jobs are terminal. Root read/acknowledged
+3372/3377,4000–4002,4006–4010 and4014. Delayed wakes need acknowledgement, not reruns.
 Scheduler still lists unrelated reporting2669/2832/2833 on node-48-256g-18 despite
 completed output receipts; preserve these under Jacob's instruction. Readiness
-probes remain off. New candidate inventory/preparation agents are active; root
-owns execution and shared scoring/status.
+probes remain off. Candidate agents completed inventory/implementation/independent
+review; root owns execution, shared scoring/status and final delivery.

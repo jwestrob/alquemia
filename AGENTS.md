@@ -1,5 +1,14 @@
 # PedE solvent-response work authorized — 13 October 2026
 
+Newest14OctoberUTC: fixed-charge candidate4007–4010 completed, summary4014.
+Both two-Ca PedE errors become correct; all5PedE correct. RecoveredCa125 becomes
+121correct/0wrong/4inconclusive versus119/3/3. Tradeoff: five previously correct
+three-source summaries become inconclusive (89correct/5inconclusive/6excluded).
+Read frozen_distribution_candidate/REPORT.md under the diagnostic below. All1542
+native inputs pass;730allocatedCPU-s for this candidate round, no newSCC/DFT/MACE.
+All jobs terminal, no promotion or automatic rerun. Current checkpoint supersedes
+preparing notes below. Saved-matrix diagnosis of new abstentions is next.
+
 Latest,14 October UTC: all eight frozen DFT cells and comparison3377 completed.
 The source solvent contrast is +10.0342 kcal/mol with DFT/CPCM versus +21.2566
 with corrected GFN2/ALPB: same direction, materially different magnitude.

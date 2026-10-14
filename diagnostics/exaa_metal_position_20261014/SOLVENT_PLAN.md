@@ -59,6 +59,17 @@ changes even if that rule fails. This scale remains an interpretive resolution,
 not a measured error or biological accuracy criterion. A reversal/mixed/null
 result limits the mechanism and cannot be hidden by retuning bounds or bands.
 
+As a secondary descriptive analysis, report mathematical row minima for each
+host's four compatible geometries: original/transferred ion crossed with the
+saved origin/adaptive_La arrangement. Score all four for both metals. Compare
+the original two-geometry pool with this four-geometry pool, retaining the
+selected coordinates and per-metal energy changes. A required missing cell
+makes the corresponding pool unavailable. This is not the full historical
+three-candidate pool (the adaptive_Ca geometry is absent), a calibrated class
+result or a population estimate. The primary reciprocal-response rule above
+remains unchanged. This analysis was declared after inspecting vacuum responses
+and before solvent execution; it is development evidence.
+
 If complete and supported, consider a separately declared bounded common search
 that allows ion and donor accommodation under the same physical mapping. This
 result alone cannot establish such a search helps discrimination. If unsupported,

@@ -1,16 +1,24 @@
-# ExaA metal placement: implementation in progress
+# ExaA metal placement: eight-cell MACE test4130 running
 
-The complete eight-cell DFT comparison supports the large target and smaller
-control response. Root selected the finite reciprocal metal-position test in
-PLAN.md to isolate one constraint in the donor-only search. No new preparation
-or scoring has executed yet. No new production, calibration or physical state.
+Preparation4129 passed both sources and all eight geometries on actual Slurm.
+The proper PQQ alignment RMSD is0.022439Å; each transferred metal moves0.364311Å.
+All nonmetal coordinate lines remain unchanged, both metals use identical
+coordinates, and existing bound/source/cap/overlap checks pass. The target's
+original donor motion remains at its existing0.8Å bound; no limit was changed.
 
-Curie owns mapped preparation; Heisenberg owns reuse of the pinned seven-thread
-warm MACE executor; Gauss owns independent review. Root alone submits jobs and
-integrates results. First execute preparation/physical checks on Slurm, then
-evaluate the eight declared vacuum cells only if their unchanged gates admit
-them. Existing original energies are reused by exact scientific identity.
+Scoring4130 now runs on seven shared standard CPUs with the pinned warm float64
+MACE worker. Eight new vacuum evaluations; eight exact originals reused. No
+optimization, solvent, DFT, new state or class/calibration change. WatchPID1068645
+is armed; exact rearm command is scoring_v1/SUBMISSION.json in the workspace.
 
-Do not interpret implementation readiness as molecular execution. All outputs
-belong in the matching workspace. See the preceding completed reference at
-`../exaa_donor_response_20261014/FINAL_REPORT.md` and its actual result pins.
+Read scoring_v1/execution/FINAL_COLLECTION.json and EXECUTION.json when terminal.
+Check actual cell/runtime provenance and complete8/8 denominator. Interpret
+per-host delta_D under the frozen reciprocal-placement rule in PLAN.md; neither
+class labels nor old bands enter this diagnostic. Failures stay unavailable.
+Root owns the next decision; no solvent/optimization follow-up is submitted.
+
+Workspace prefix: workspaces/exaa_metal_position_20261014/.
+ConfigSHA0874c1088e9eeb6ea29fb0408916b7c1926b5ca90396772392c2657ef4ba2154.
+Preparation took3scheduler seconds on1CPU; model cost remains unmeasured until
+actual receipts. EXECUTION.json links pinned commands/manifests/results.
+Previous eight-cell DFT reference is complete; do not rerun its delayed wakes.

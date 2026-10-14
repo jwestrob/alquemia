@@ -1,3 +1,21 @@
+# ExaA donor-response reference authorized — 14 October 2026
+
+Jacob: “please proceed autonomously! feel free to start subsequent rounds of
+experiments!” Read diagnostics/exaa_donor_response_20261014/PLAN.md and CURRENT.md.
+Root owns execution; disjoint agents inventory exact sources and review the native
+adapter. The new declared matrix is two-Ca ExaA samples0/3, exact192-atom origin
+and saved adaptive_La geometry, both metals: eight native r2SCAN-3c VACUUM cells.
+Actual Slurm4108 preflight passed all source gates and11 archived checks.
+Sample3 La origin/proposal scouts4109/4110 now run as separate12-rank jobs;
+collector4111 follows afterany and actual completion/health wakes are armed.
+Review convergence/state/runtime before the remaining six; no approval loop.
+This tests a common physical displacement, not the full operational three-candidate
+pool or classifier calibration. Old CPCM DFT is not a matched MACE-vacuum reference.
+No compatible cached ExaA DFT cells found. Preserve baseline and previous failures;
+no new folds/optimization/threshold changes. Shared Slurm only, current resource
+limits, allocation-derived memory and actual completion/health wakes. Read latest
+CURRENT/receipts before submitting; preparation text is not evidence of execution.
+
 # ExaA source and packing tests complete — 14 October 2026
 
 Jacob approved the two tests after discussing the inconclusives: “yep. go”. Read

@@ -40,6 +40,13 @@ Do not use ORCA's erroneous default La shell assignments, globally reorder a
 parameter file, change weights or remove any established numerical gate. Pin
 the actual published/corrected parameter provenance and executable hashes.
 
+The existing qualification is the component-v2 solvent comparison. Historical
+absolute xTB/tblite parity failures remain failed and are not repaired by this
+test. Individual archived point records can retain that earlier failed absolute
+gate while their explicitly separate component-v2 comparison passes. Preserve
+both statuses and use only the established component admission, without claiming
+absolute backend equivalence.
+
 Retain identical 192 atoms, source/cap maps, dry oxidized-PQQ3− state, Ca−3/La−2,
 singlets, all coordinate files and model pins. No optimization, force evaluation,
 new state, folding or DFT. A failed required cell leaves its dependent response

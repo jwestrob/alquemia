@@ -1,3 +1,19 @@
+# Remaining PQQ causes under investigation — 15 October 2026 UTC
+
+The active goal is to explain remaining failed/abstaining predictions. Read
+diagnostics/pqq_failure_causal_synthesis_20261015/CURRENT.md and newer receipts.
+The completed cavity branch did not improve accommodation and is closed.
+Saved PQQ forces4598 complete8/8: shared quinone strain, distinct pose-response
+signal; no DFT nuclear gradients or classifier gain. MMOL1770Ca0 exact six-cell
+reference preflight4601 passed; origin scouts4603/4604 RUNNING12MPI each with
+terminal/health wakes. Four proposal cells require actual origin review, not a
+new user permission. Source1 is inventoried only. A separate24cell finite PQQ
+rigid-pose test is in preparation; read its frozen plan before submission.
+Root owns execution; agents own disjoint implementations. All numerical work
+uses current shared Slurm rules. Preserve production, original failures and
+the corrected La-parameter/frozen-charge solver lineage. Do not duplicate any
+completed or active task from delayed callbacks.
+
 # ExaA donor-response reference authorized — 14 October 2026
 
 Jacob: “please proceed autonomously! feel free to start subsequent rounds of

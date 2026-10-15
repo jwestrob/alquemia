@@ -6,7 +6,8 @@ are0.51–1.30kcal/mol, with positive fixed-path responses retained. This is a
 sensitivity diagnostic, not a newly optimized/composite classifier. Canonical
 CPU scout5057 is RUNNING, watcher4022277, confige77354e5; inspect its actual
 receipt before releasing remaining23. A separate four-point GPU reuse scout
-is being prepared. Read CURRENT.md for ownership/exact commands; no repeats.
+is submitted as5066, watcher4052621, config3701029e. Read CURRENT.md for
+ownership/exact commands; no repeats.
 
 Preceding result: relaxed-amide solvent4971 is COMPLETE40/40 new endpoints,80reused.
 Common3→6 composite Ca−La changes are Ca4+20.883598/La4+19.290964kcal/mol;

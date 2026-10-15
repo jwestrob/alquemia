@@ -8,6 +8,31 @@ were acknowledged. No repeat chemistry or wider cavity sweep is pending.
 The nine-source causal synthesis in review/REPORT.md distinguishes established
 solvent/calibration effects from source-specific unresolved mechanisms.
 
+## Latest result — 15 October 2026, 04:04 UTC
+
+MMOL's six native reference endpoints and comparison4641 are complete. Both DFT
+and MACE select Ca/adaptive_Ca and La/adaptive_La. The common-pool differential
+relaxation is −5.221985 versus −4.004941 kcal/mol: the Ca-directed response persists
+and is stronger in DFT. This closes the finite MACE-only-artifact test, without
+establishing a unique cause or a better classification. The Ca-path and full-pool
+differences exceed the declared1kcal interpretive resolution. Density residuals
+and nonuniform inverted frontier ordering remain electronic-state limitations.
+See mmol_reference/FINAL_REPORT.md; authoritative result SHA256
+cf0216391de0680b50b746c9799edd5365c23cc6ee1b9855e39844173903ab61.
+Six molecular allocations total307500 allocatedCPU-s; no new solvent or forces.
+
+Canonical fixed-amide geometry4936 completes25/25 sources and50/50 paired
+geometries, including an exact real A0AC regression,11seconds/1CPU and zero
+energy calls. Read a0ac_asn_relaxation/canonical_geometry/REPORT.md. Preparation
+success does not authorize automatic canonical scoring or change calibration.
+
+Asn4844 is still RUNNING on7CPUs: eight of ten total sources have saved complete
+results including the scout; La3 is underway and La4 remains. Named-contact
+analysis4910 waits afterany4844. Both completion watchers are armed. The existing
+solvent gate needs the terminal collection and contact review; it remains unbound.
+No exact compatible204atom A0AC Ca4 vacuumDFT cache was identified in the relevant
+inventories; read a0ac_asn_inventory/CACHE_NOTE.md. No new DFT is submitted.
+
 Current bounded tasks:
 
 - Saved ExaA MACE force projection onto explicitly defined PQQ internal/rigid
@@ -112,7 +137,9 @@ Next finite research work:
  neutral existing ASN anchors pass identity/H-parent/bond/map/cap checks; some
  terminal modes are absent from their original four-mode selectors. Exact
  manifest8ba06c39 in asn_canonical_scope_v1; see canonical_scope/REPORT.md.
- Flip geometry/contact admission and all new canonical energies remain unrun.
+ Geometry4936 subsequently passed all25 sources/50 paired fixed flips, including
+ exact A0AC regression; all new canonical energies remain unrun. Its manifest
+ 8271e29a and full pins are in asn_canonical_geometry_v2 and canonical_geometry/.
  Later solvent requires credible
  complete common6 pools and absolute common6−common4 change ≥1kcal/mol.
  The independently reviewed conditional adapter is ready at
@@ -121,16 +148,13 @@ Next finite research work:
  and evaluates at most40 relaxed endpoints with unchanged qualified solvation.
  No solvent config is bound or job submitted while4844/contact results are
  incomplete; static review is not scientific qualification.
-- MMOL La/adaptive_La4640 completed normally after3683 scheduler seconds/12MPI;
- Ca/adaptive_Ca4637 also completed normally after4093s/12MPI. Both completion
- and health callbacks are acknowledged. Ca/adaptive_La4638 subsequently completed
- normally after4585s/12MPI; proactive review recorded, actual callback pending.
- Proposal4639 remains running, comparator4641 pending. Frozen
- energy-diagnostic admission remains: explicit orbital-gradient stop, with large
- density residuals. Its final printed frontier orbital ordering is inverted,
- also present in both saved origins; electronic stability/same-state continuity
- remain unqualified. No post-hoc gate change or rerun. Actual root review is
- saved in the endpoint directory; full response awaits the comparator.
+- MMOL4637–4640 and comparator4641 are all complete. Actual4638 completion and
+ health callbacks are acknowledged. The last cell4639 (La/adaptive_Ca) ended with
+ TRAH/NR residual5.899231e−6 below the printed1e−5 criterion, but large density
+ residuals. Its final frontier ordering is ordinary; inverted ordering persists
+ in both origins and other proposals. Electronic stability/same-state continuity
+ remain unqualified. No post-hoc gate change or rerun. The complete response is
+ reported above and in mmol_reference/FINAL_REPORT.md.
  The completed Ca proposal audit distinguishes4637 (ordinary final occupied/empty
  ordering) from4638 (inverted ordering and negative diagonal-Hessian warnings).
  Both meet their actual printed orbital-gradient criterion, with larger density

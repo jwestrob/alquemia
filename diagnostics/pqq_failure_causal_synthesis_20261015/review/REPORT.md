@@ -34,9 +34,16 @@ and optimizer checks but keeps its original winners and score. The unchanged
 remaining nine-source test is running, followed by explicit named-contact review;
 solvent reevaluation depends on the declared common-pool response gate.
 
-For MMOL1770, both native DFT origins are complete as energy diagnostics and four
-saved-proposal endpoints are running. Until that six-cell comparison completes,
-we cannot say whether its Ca-directed accommodation is a MACE surface error.
+For MMOL1770, all six native DFT endpoints are now complete as energy diagnostics.
+Both methods choose the same metal-specific geometries. DFT reproduces a stronger
+Ca-directed pool response (−5.222 versus MACE −4.005 kcal/mol), so replacing MACE
+with this DFT treatment would not rescue that response in the same representation.
+This is directional support, not exact quantitative agreement: the pool discrepancy
+is −1.217 and the Ca-generated-path discrepancy is −1.687 kcal/mol, exceeding the
+declared 1 kcal/mol interpretive resolution. Density residuals and nonuniform
+frontier-ordering warnings leave electronic stability and same-state continuity
+unqualified. A MACE-only explanation is unsupported; source/state/environment and
+the adequacy of the shared local representation remain unresolved.
 The small PQQ rotation probe is complete and closed: neither source reaches its
 predeclared solvent-continuation threshold. These results strengthen a
 case-specific explanation; they do not supply one universal solvent or folding
@@ -46,6 +53,7 @@ Evidence: [Asn orientation and contacts](../a0ac_asn_geometry_response/REPORT.md
 [full fixed-alternative comparison](../a0ac_asn_solvent/REPORT.md),
 [geometry/charge factorial](../a0ac_asn_solvent_factorial/REPORT.md),
 [first relaxation control](../a0ac_asn_relaxation/SCOUT_REPORT.md),
+[complete MMOL reference](../mmol_reference/FINAL_REPORT.md),
 [closed PQQ pose probe](../pqq_pose/REPORT.md).
 
 ## 1. What changed the classifications
@@ -71,7 +79,7 @@ review; they are not physical error bars.
 | Exact source | Established result | Still unresolved |
 |---|---|---|
 | XoxF1 A0ACD6B9F2 Ca4, La class; 5.815 kcal/mol short | Wrong Ca becomes inconclusive; original accommodation helps by +12.176. A separately proposed intact Asn orientation, unreachable by the old domain, adds +10.975 to the current model's paired contrast. | Fixed alternative has a short H contact; complete relaxed competition and calibration remain untested. Correctly called La4 shares the starting orientation, so it is not a sufficient failure/exclusion rule. |
-| XoxF4-2 MMOL1770 Ca0, La class; 0.812 short | Correct static origin becomes inconclusive after −4.186 accommodation, mostly MACE (−4.005). Ca proposal compresses Glu200 to 2.151 Å and reaches the movement bound; La does not. | Exact motion has no demonstrated independent electronic reference. Ca1's extra-Asp experiment and La4's hydrogen repair concern different sources. |
+| XoxF4-2 MMOL1770 Ca0, La class; 0.812 short | Correct static origin becomes inconclusive after −4.186 accommodation, mostly MACE (−4.005). Ca proposal compresses Glu200 to 2.151 Å and reaches the movement bound; La does not. Complete same-geometry DFT gives a stronger Ca-directed pool response (−5.222), with the same winners. | Quantitative differences exceed the declared resolution on the pool and Ca path; electronic stability remains unqualified. Shared local representation, source/state/environment or calibration may still be inadequate. Ca1's extra-Asp experiment and La4's hydrogen repair concern different sources. |
 | ExaF C5AXV8 two-Ca4, La class; 0.196 short | Already inconclusive before the solvent change. Both metals select the same La proposal; no bound hit or distinctive gross geometry defect. | Fine energetics, occupancy/state or calibration coverage; no case-specific physical defect is established. Preserve abstention. |
 | ExaA Q9Z4J7 two-Ca3, Ca class; 1.191 short | Newly inconclusive with unchanged selections. Large donor response is reproduced by independent vacuum DFT. Metal/PQQ placement differs from same-condition peers. | Whether that source geometry or the shared dry/cofactor/environment representation is physically inappropriate. Tested simple repairs do not resolve it. |
 | ExaA La2, Ca class; 1.182 short | Newly inconclusive; reselection helps. Both proposals hit bounds, but origin is correct under static bands. | Its own electronic motion response and chemical environment; the two-Ca DFT result cannot be silently transferred to this source. |
@@ -111,13 +119,14 @@ unique defective fold. Crystal bond lengths must not become hand-fitted targets.
 
 ## 4. Declared reference tests and current disposition
 
-1. **MMOL1770 Ca0 reference is executing.** Exact admitted 193-atom state,
-   saved origin/adaptive_Ca/adaptive_La, both metals: six fixed vacuum cells,
-   staged after a scout/cache check. Reuse r2SCAN-3c/DefGrid3/TightSCF and inspect
-   actual endings; compare vacuum with vacuum. Four cells on the Ca-generated
-   path answer a narrower question, not the mixed-geometry operational response.
-   Disagreement motivates a response-model repair; agreement points toward
-   source/state/environment. Ca1's old study is not a substitute.
+1. **MMOL1770 Ca0 reference is complete, six of six.** Exact admitted 193-atom
+   state and saved origin/adaptive_Ca/adaptive_La under both metals, native
+   r2SCAN-3c/DefGrid3/TightSCF vacuum. Both methods choose Ca/adaptive_Ca and
+   La/adaptive_La; DFT strengthens the Ca-directed response rather than reversing
+   it. Do not describe the quantitative discrepancies or electronic-state warnings
+   as a perfect reference match. This closes the finite MACE-versus-DFT motion
+   test, without proving a bad fold or identifying a unique missing interaction.
+   No automatic rerun or method sweep follows.
 2. **The finite rigid-PQQ response probe is complete and closed.** The saved-force
    audit identified a coherent rigid mode in ExaA target and control. Its tested
    ±1° movement did not meet the frozen continuation criterion; do not rerun or

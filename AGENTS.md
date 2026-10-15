@@ -29,7 +29,10 @@ Actual30 forwards/570 scheduler seconds on7CPUs; read SCOUT_REPORT.md.
 Root reviewed actual evidence and submitted remaining18 searches as4844,7CPUs,
 watcher3586320; confige1692709 and exact command in asn_relaxation_remaining_v1/
 SUBMISSION.json. Preserve original modes, bounds, failed rows and both selectors.
-Canonical25 saved-graph inventory4847 passes25/25; no flip geometry/energy calls.
+Canonical geometry4936 now completes25/25 sources and50 paired fixed flips,
+with exact real A0AC regression and unchanged contact/map/state gates. Zero
+energy calls or scores; see canonical_geometry/REPORT.md. No canonical scoring
+or calibration campaign is automatically launched from preparation success.
 Named-contact scout4859 passes actual4831 and missing-row checks, preserving short
 contacts in unselected Ca0 proposals. Final sample4 contact relief remains untested.
 See canonical_scope/REPORT.md and contact_review/SCOUT_REPORT.md.
@@ -37,11 +40,14 @@ Final all-ten contact analysis4910 is queued afterany4844, one CPU, with wake
 watcher3688523. It binds actual terminal results in Slurm and retains failures;
 see asn_relaxation_contact_followup_v1/SUBMISSION.json. Do not duplicate it.
 
-MMOL1770 exact six-cell native r2SCAN-3c vacuum reference: origins4603/4604
-complete as energy diagnostics, with density/state warnings retained. Four saved
-proposals4637/4638/4640 completed;4639 still runs at12MPI, comparator4641 follows.
-Final inverted frontier ordering also occurs in both origins; preserve diagnostic
-scope and electronic-state uncertainty. No origin rerun or stability claim.
+MMOL1770 six-cell native r2SCAN-3c vacuum reference and comparator4641 are
+complete. Both methods choose Ca/adaptive_Ca and La/adaptive_La: differential
+accommodation DFT−5.222 versus MACE−4.005kcal/mol. This reproduces the Ca-directed
+response; a MACE-only explanation is unsupported. Quantitative discrepancies
+exceed the declared1kcal resolution on the Ca path and full pool. Retain density
+and nonuniform frontier/state warnings: energy diagnostics, not stable-state or
+force qualification. Read mmol_reference/FINAL_REPORT.md. No reruns or new class
+calls; six molecular allocations total307500CPU-s. Production remains unchanged.
 
 Delayed callbacks require receipt acknowledgement, not repeated chemistry.
 ROOT_REVIEW records proactive inspection; ROOT_ACK records actual delivery.

@@ -1,5 +1,16 @@
 # Current causal investigation
 
+## Saved ordering gives a narrower diagnosis — 15 October 2026, 07:25 UTC
+
+Saved-result job5317 completed, zero molecular calls. Common3 operational and
+mathematical scores have one overlapping unique source pair: ExaA La3 and A0AC
+Ca4 (gap−1.3704306245 kcal/mol). Both are inconclusive. The other inconclusives
+create no additional overlap; current Ca125 has a positive1.444062334 gap
+despite four inconclusive memberships. Read baseline_ordering/RESULT.md.
+No decision bands, labels or predictions were changed. Original baseline and
+origin-only results remain separate. Full uniform search5297 remains active;
+this ordering diagnostic does not establish its common6 transfer result.
+
 ## Reporting scope during the active search — 15 October 2026, 07:18 UTC
 
 5297 remains RUNNING; 12 of 222 source result receipts are complete, with no

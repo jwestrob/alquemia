@@ -90,11 +90,19 @@ Next finite research work:
  Reviewed v2 uses three exact like-for-like comparisons and keeps both existing
  1e−12Å q0 checks. No molecular inputs/modes/tolerances changed. Root review is
  asn_relaxation_v2/ROOT_REVIEW.json. Read a0ac_asn_relaxation/PREPARATION_REPORT.md.
- Reviewed seven-CPU warm scout4831 is submitted for the first Ca0 pair only,
- watcher3546473 armed. Frozen config053b7835 and exact commands are in
- asn_relaxation_scout_v1/SUBMISSION.json. Inspect actual runtime preflight, search,
- geometry/energy admission and costs before remaining18 searches. Source review
- and successful preparation do not substitute for actual optimizer results.
+ Warm scout4831 completed the first Ca0 pair and both opposite-metal cells.
+ Both searches converge without boundary flags; source/cap/bond/Jacobian and
+ full-source severe-contact gates pass. Original common3/4/6 selections stay
+ identical, paired change zero. Actual30 new forwards,570 scheduler seconds on
+ seven CPUs. Read a0ac_asn_relaxation/SCOUT_REPORT.md and actual ROOT_REVIEW.json.
+ Root released the exact remaining18 searches as4844 (RUNNING on7CPUs), watcher
+ 3586320. Confige1692709 and exact command are in asn_relaxation_remaining_v1/
+ SUBMISSION.json. No solvent/DFT expansion or settings change. Complete common6
+ and named-contact analysis remain pending.
+ Canonical25 source-graph inventory4847 is queued on1CPU (current job-count QOS),
+ watcher3588552; exact manifest8ba06c39 in asn_canonical_scope_v1. All25 original
+ anchors are ASN by metadata; graph/geometry admission and new scoring remain
+ unrun. This inventory does not change residue selection or run canonical energy.
  Later solvent requires credible
  complete common6 pools and absolute common6−common4 change ≥1kcal/mol.
 - Four MMOL proposal jobs4637–4640 are actually RUNNING; comparator4641 pending.

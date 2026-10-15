@@ -23,10 +23,15 @@ energy calls. Original4814 failed5/10 exact cap comparisons; saved diagnostic481
 proved old/new computed caps and raw inputs identical, with pre-existing roundoff.
 Versioned v2 compares equivalent representations exactly and retains original
 q0/geometry tolerances. Read a0ac_asn_relaxation/PREPARATION_REPORT.md.
-Reviewed warm two-metal Ca0 scout4831 is submitted on7CPUs, watcher3546473.
-Config053b7835 and exact commands are in asn_relaxation_scout_v1/SUBMISSION.json.
-Inspect actual preflight/search/common3/4/6 results before the remaining18 searches.
-Preserve original modes, bounds and all source rows.
+Warm Ca0 scout4831 completed: both searches converge inside original bounds and
+pass physical/source gates; common3/4/6 selections and paired score are unchanged.
+Actual30 forwards/570 scheduler seconds on7CPUs; read SCOUT_REPORT.md.
+Root reviewed actual evidence and submitted remaining18 searches as4844,7CPUs,
+watcher3586320; confige1692709 and exact command in asn_relaxation_remaining_v1/
+SUBMISSION.json. Preserve original modes, bounds, failed rows and both selectors.
+Canonical25 saved-graph inventory4847 is queued separately on1CPU, watcher3588552;
+no canonical energy calls or geometry generation. Contact review is prepared
+separately to track the named amide-H contact on actual relaxed candidates.
 
 MMOL1770 exact six-cell native r2SCAN-3c vacuum reference: origins4603/4604
 complete as energy diagnostics, with density/state warnings retained. Four saved

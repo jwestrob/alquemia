@@ -63,7 +63,11 @@ mapped physical Asn hydrogens to the ff19SB1.01Å target, preserving directions
 and every heavy atom. All12 endpoints complete. The four matched alternative-path
 responses change by0.51–1.30kcal/mol but remain strongly positive,31.0–32.6kcal/mol.
 Thus hydrogen preparation affects the magnitude but is not the sole cause of
-the alternative-basin response within this model. The Ca4 relaxed-path change
+the tested origin-to-alternative response within this model. These H-sensitivity
+paths start at the source origin; they do not measure the incremental response
+between the old and new metal-specific selected geometries. They therefore do
+not bound hydrogen effects on that selected-energy increment, which is the
+question in the separate four-cell DFT comparison. The Ca4 relaxed-path change
 exceeds the declared1kcal resolution; do not call it invariant. No optimization
 or solvent calculation followed the H projection, so it does not establish a
 repaired-H composite classifier or the precise MACE equilibrium N–H length.
@@ -95,6 +99,28 @@ Evidence: [Asn orientation and contacts](../a0ac_asn_geometry_response/REPORT.md
 [completed canonical solvent and fixed-band comparison](../a0ac_asn_relaxation/canonical_solvent/FINAL_REPORT.md),
 [complete MMOL reference](../mmol_reference/FINAL_REPORT.md),
 [closed PQQ pose probe](../pqq_pose/REPORT.md).
+
+## How to interpret the native reference checks
+
+A read-only check of the completed A0AC old-selected scouts5762/5763 confirms
+that their final NR orbital gradients meet the actual printed1e-5 criterion.
+The large density-change/DIIS summary entries do not, by themselves, demonstrate
+failed final TRAH convergence: the raw output and inspected documentation do not
+identify their iteration provenance after AutoTRAH. They must not be described
+as either proven final residual failures or proven stale bookkeeping.
+
+ORCA distinguishes density changes, DIIS error and orbital-gradient criteria;
+TightSCF does not mean that every printed quantity independently controls the
+stop. The TRAH criterion is the orbital-gradient norm. These distinctions follow
+the [official ORCA 6.1.1 SCF documentation](https://orca-manual.mpi-muelheim.mpg.de/contents/essentialelements/scf.html).
+
+Near-final frontier and diagonal-Hessian warnings remain in the raw outputs.
+Shifted orbital tables alone establish neither electronic stability nor its
+failure. Neither scout ran an independent stability analysis or demonstrated
+agreement between electronic branches. The [official stability documentation](https://orca-manual.mpi-muelheim.mpg.de/contents/essentialelements/stabilityanalysis.html)
+describes that separate electronic-Hessian test. Retain this distinction when
+interpreting the pending four-cell response; no admission criterion, calculation
+or archived result has changed.
 
 ## 1. What changed the classifications
 

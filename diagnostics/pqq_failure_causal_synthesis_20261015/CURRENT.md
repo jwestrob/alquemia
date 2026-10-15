@@ -9,17 +9,24 @@ below each actual printed orbital-gradient threshold of 1e-5. Final single-point
 energies are -7208.156038453809 and -6562.353307034823 hartree. These absolute
 cross-element totals alone are not preference evidence.
 
-Both outputs retain large density/DIIS summary residuals and near-final frontier
-and electronic-Hessian warnings. The energy-diagnostic admission does not establish
-stable unique ground states, force accuracy or continuity of the electronic state.
+Both outputs retain large density-change/DIIS summary entries and near-final
+frontier and electronic-Hessian warnings. Read-only review of the raw endings
+and the official ORCA 6.1.1 documentation confirms that both meet their printed
+TRAH/NR gradient criterion. The iteration provenance of those other summary
+entries after AutoTRAH is unresolved: they are neither proven final convergence
+failures nor known stale values. Independent electronic stability, force accuracy
+and continuity of the electronic state were not tested. See review/REPORT.md
+for the distinction and primary references.
 The pinned terminal collector correctly handles the final NR macro rows; the
 health watcher's older TRAH display can be stale, so use raw output for progress.
 Independent read-only review agreed that the unchanged continuation gate passes.
 
 Actual collections and their hashes are in immutable `SCOUT_REVIEW.json`, SHA
 **535540dd**, under `asn_selected_reference_parallel_v2` (manifest **08a9b896**).
-This proactive review does not claim receipt of the scouts' terminal callbacks.
-No methods, tolerances, inputs, iteration limits or desired-sign criteria changed.
+The subsequent actual terminal and health callbacks for both scouts are now
+acknowledged in task-local ROOT_ACK.json and HEALTH_ROOT_ACK.json. No chemistry
+was repeated. No methods, tolerances, inputs, iteration limits or desired-sign
+criteria changed.
 
 Exactly the two previously specified new-selected endpoints are now RUNNING:
 

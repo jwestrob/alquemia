@@ -46,8 +46,10 @@ Saved-only summary5030 gives nine correct/one inconclusive to ten correct under
 the unchanged old bands, with substantially reduced within-conditioning spread.
 These are ten correlated structures of one consumed protein. Canonical Ca/La
 reference fidelity remains untested, so this is not yet a calibrated replacement
-classifier or an equilibrium-state determination. The uniform canonical search
-is executing separately; its solvent/calibration result is still unavailable.
+classifier or an equilibrium-state determination. The uniform canonical MACE
+search has completed all25 common6 matrices: every vacuum selection and paired
+contrast is unchanged. The matched solvent/calibration job5158 is running;
+its result remains unavailable until the complete matrix is collected.
 
 The long ND2–H bonds are a separate preparation limitation: archived diagnostics
 already traced such stretching to the generic H-builder potential. The current
@@ -178,6 +180,25 @@ ExaF's near-boundary abstention and XoxF1's distinct Asn-basin hypothesis should
 remain explicit rather than forcing these two tests to serve as universal fixes.
 Another global solvent factor, blanket refolding or automatic search enlargement
 is not supported by the completed evidence.
+
+## Next decision: transfer the supported search correction
+
+The independent causal review recommends no additional per-case repair campaign
+at this point. Internal PQQ flexibility, hydration and permanent protein fields
+remain unresolved possibilities, but the current evidence does not distinguish a
+specific corrective perturbation for the remaining abstentions. Shared PQQ forces
+in successful and inconclusive sources do not by themselves select such a test.
+
+Complete the canonical composite gate, then apply the unchanged amide candidate
+rule to the existing consumed benchmark if that gate passes. Reuse the25 completed
+canonical searches, the ten-source A0AC evidence and exact prior common3 cells.
+Keep all260 cohort memberships/257 unique source-context pairs, including their
+original failures and the15 recovered two-Ca sources. The latter require explicit
+active/spectator-metal mapping; a one-metal preparation assertion must not be
+worked around by deleting a spectator. This test asks whether the diagnosed
+search limitation is transferable, without selecting new cases by their scores.
+It cannot turn these inspected structures into blind validation or establish the
+physical cause of every near-boundary abstention.
 
 ## Main evidence
 

@@ -30,9 +30,14 @@ shifts yield only a raw-0.024705kcal/mol source accommodation difference.
 Per-source HB gates pass; aggregate precision still fails. Keep11 missing local
 cap-zero controls explicit. Close this finite branch; see hb_shielding/REPORT.md.
 
-Root owns execution. All scoped agent implementation/review/report tasks are
-complete; their transfer inventory, MACE report and HB report are available. No new transfer scoring is bound/submitted before the canonical solvent
-result. All scientific work uses Slurm; production and prior failures remain.
+Root owns execution. The independent causal review recommends no additional
+per-case repair campaign now; the uniform amide transfer is the supported next
+test. Gauss is preparing a separate transfer wrapper, reusing canonical/A0AC
+evidence and preserving explicit active/spectator identities in the15 two-Ca
+sources. Heisenberg is preparing a saved-results canonical/A0AC summary adapter;
+Curie's independent causal assessment is complete. These are source-only tasks;
+no transfer campaign is bound/submitted before the canonical solvent result.
+All scientific work uses Slurm; production and prior failures remain.
 Actual delayed5079 callback is acknowledged; its four-point test was not rerun.
 
 The active user goal remains: "keep working until we get a conclusion and figure

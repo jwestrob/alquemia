@@ -1,5 +1,17 @@
 # Remaining PQQ causes under investigation — 15 October 2026 UTC
 
+Recovery5254 is now submitted on1CPU with watcher442562; exact manifest/command
+in asn_transfer_preparation_v2/SUBMISSION.json. Retry six failures, reuse251rows,
+real geometric checks only. Agents' scoped source/review work is complete.
+Read actual recovery results before the separate MACE scout; no scoring yet.
+
+Newest: preparation5205 is COMPLETE251/257, with six explicit handling failures.
+Versioned source-only recovery is being prepared: one deposited activeCe source
+(4MAE) and five caps whose retained atom is a stationary torsion-axis endpoint.
+Reuse251 successful preparations and retain all failedv1 records; actual Slurm
+geometry tests precede new scoring. No owned molecular jobs are running. Read
+the newest CURRENT section for ownership; do not rerun5158/5205 or bindMACE yet.
+
 Latest: canonical solvent5158 and saved summary5202 are COMPLETE. All25 calls,
 selected geometries and bands unchanged;300/300 cells available. The A0AC gain
 remains10/10 under these fixed bands. See canonical_solvent/FINAL_REPORT.md.

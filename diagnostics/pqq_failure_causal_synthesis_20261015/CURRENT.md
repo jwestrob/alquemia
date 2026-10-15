@@ -1,5 +1,39 @@
 # Current causal investigation
 
+## Six-input preparation recovery submitted — 15 October 2026, 06:50 UTC
+
+Independently reviewed recovery5254 is submitted on one CPU, watcher442562.
+Manifest b80f3a14957fc0dfb21b9c43f17ab438824203875cb7e654537fff0c4f068deb,
+exact command in asn_transfer_preparation_v2/SUBMISSION.json. It retries only
+the six5205 failures, reuses251 unchanged rows, and performs the real one-ion
+regression plus125 bounded cap/anchor geometry checks. Zero new molecular energy
+or optimization calls. Source code and frozen plan: transfer/recovery_v2/READY.md.
+All three agents' source/review tasks are complete; root owns launch/integration.
+Read actual execution/PREPARATION.json and CAP_AXIS_CHECK receipts before binding
+the GPU scout against this v2 preparation. No MACE/solvent transfer has launched.
+
+## Transfer preparation terminal; six-input handling recovery
+
+5205 completed:251/257 contexts prepared,34 exact common6 reuses,260 memberships
+retained, zero energies/optimizations. Actual one-ion regression reproduces
+pairedXYZ bytes and geometric/contact evidence exactly. Internal elapsed433.452s
+on one CPU. ROOT_REVIEW.json preserves all six failed contexts.
+
+4MAE failed because its deposited active atom is Ce (A:LA601/CE), which the old
+physical-source parser excludes; its existing218atom Ca/La origins already use
+that exact source position. Five Ca-conditioned sources fail the static moving-
+cap guard: the listed retainedCB lies on the selected CA-CB rotation axis and
+does not move under that mode. Curie's source-map review identifies this as a
+guard false positive, with numerical recovery checks still required.
+
+Gauss owns a separate recovery_v2 parser/runner; Curie owns the minimal axis-aware
+rebase guard and real-map checks; Heisenberg reviews both. Retry exactly these
+six failed preparation contexts and reuse251 successes. Preserve actual source
+Ce identity, reject true moving caps and alternate conformers as before, and
+retain all existing tolerances, modes, endpoint states and old failures. No new
+MACE/solvent is bound or submitted until actual versioned preparation passes.
+Root owns submission; current agent work is source-only.
+
 ## Canonical solvent passes; uniform transfer preparation — 15 October 2026, 06:31 UTC
 
 5158 is COMPLETE: all300 canonical cells available,144 new endpoint geometries,

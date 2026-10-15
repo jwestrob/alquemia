@@ -1,5 +1,25 @@
 # Current causal investigation
 
+## Transfer scout passed; remaining preflight submitted — 15 October 2026, 07:03 UTC
+
+5263 completed the first new source, 1H4I: both bounded searches and all 12
+common6 cells pass their physical/source gates. All vacuum pool choices remain
+unchanged; both new proposals reach a declared boundary, so neither is an
+unconstrained minimum. There is no new composite classification yet. Actual
+cost: 193 scheduler seconds on one A5000 / 12 CPUs, 41 native requests, zero
+failed requests, no SCC or DFT. Read asn_transfer_search_scout_v1/ROOT_REVIEW.json;
+this is proactive review, not acknowledgement of an undelivered callback.
+
+Remaining-stage preflight5291 is submitted, watcher491487, config48873d93 at
+asn_transfer_search_remaining_v1. Its 222 remaining contexts reuse the scout
+and 34 completed contexts; the full denominator remains 257 contexts / 260
+memberships. Exact launch and wake command: PREFLIGHT_SUBMISSION.json. This
+preflight makes no new molecular calls. After actual admission, submit the
+same copied MACE.sbatch with CONFIG.json, its full SHA and `run`; retain the
+original four modes, bounds and fixed canonical bands. Bind solvent only from
+the terminal remaining-stage collection. No remaining molecular run or transfer
+solvent is submitted yet. Root owns execution; all agent reviews are complete.
+
 ## First-source GPU search submitted — 15 October 2026, 06:57 UTC
 
 5258 preflight is COMPLETE and passed:1542 original endpoint cells,34 exact

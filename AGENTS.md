@@ -1,9 +1,11 @@
 # Remaining PQQ causes under investigation — 15 October 2026 UTC
 
-Current owned computation:1H4I GPU scout5263 submitted, watcher467389, same
-config023edf9a after passed preflight5258. Actual launch/rearm in
-asn_transfer_search_scout_v1/SUBMISSION.json. Read newest CURRENT and terminal
-collection before remaining sources; no transfer solvent yet. Do not repeat prep.
+Current owned computation: remaining-stage GPU preflight5291, watcher491487,
+config48873d93 in asn_transfer_search_remaining_v1. Scout5263 completed both
+admitted searches / 12 cells with unchanged vacuum selections; 41 native
+requests in193 scheduler seconds. Both proposals reach a declared boundary.
+Read newest CURRENT and PREFLIGHT_SUBMISSION.json before the remaining222
+source run. No transfer solvent yet; reuse34 prior contexts and the scout.
 
 Latest actual result: recovery5254 completed257/257 contexts and125 cap tests;
 all251 prior successful rows unchanged. First1H4I GPU preflight5258 is submitted,

@@ -6,7 +6,7 @@ Heisenberg independently cleared the exact source below, including the actual150
 
 | File | SHA256 |
 |---|---|
-| `SOLVENT.py` | `2e6156c9513cc9d06113b9f59e16dac36aa858d89ff48548dec2e6de038df2aa` |
+| `SOLVENT.py` | `d8c1d25a8fb71860f37649331995e7e18d8d8d077871e8a641d7a584bb510fdc` |
 | `PLAN.md` | `1a66990588054a4bff5d63b16665914053e79cf018eaef68a5fda1c90214fdf3` |
 | `RUN.sbatch` | `1837ec9802529e95ed92d28e16ef6ac37de03bcecee83741640e5b717dc30e6e` |
 
@@ -14,8 +14,8 @@ From the repository root, after all25 actual common6 results and review:
 
 ```bash
 /usr/bin/python3 diagnostics/pqq_failure_causal_synthesis_20261015/a0ac_asn_relaxation/canonical_solvent/SOLVENT.py bind \
-  --score-config workspaces/pqq_failure_causal_synthesis_20261015/asn_canonical_search_remaining_v1/CONFIG.json \
-  --score-collection workspaces/pqq_failure_causal_synthesis_20261015/asn_canonical_search_remaining_v1/execution/FINAL_COLLECTION.json \
+  --score-config workspaces/pqq_failure_causal_synthesis_20261015/asn_canonical_search_GPU_v1/CONFIG.json \
+  --score-collection workspaces/pqq_failure_causal_synthesis_20261015/asn_canonical_search_GPU_v1/execution/FINAL_COLLECTION.json \
   --output workspaces/pqq_failure_causal_synthesis_20261015/asn_canonical_solvent_v1
 ```
 
@@ -38,4 +38,10 @@ After actual Slurm preflight review, the same command ending in `execute` perfor
 
 The Slurm preflight replays the full MACE collection, generic atom/valence/paired state, final q/source-contact gates, all cached native/component checks and the historical25 common3 pools. The collector retains all four native terms, common3/4/6 policies, exact25 calibration rule and separate old-band transfer. Missing cells cannot produce a partial enlarged minimum; original failures and historical absolute-v1 rejection remain visible.
 
-This initial adapter consumes the frozen CPU canonical-search interface. Any separately qualified future GPU search transport must preserve or explicitly adapt its actual receipt admission; GPU provenance will not be relabeled as CPU.
+## Qualified GPU receipt compatibility
+
+The narrow compatibility delta was independently cleared. For the qualified GPU bridge only, binding pins its actual `execution_adapter`; Slurm validation calls that adapter's exported `gpu_admission`. Each bridged receipt must identify the actual canonical GPU config, its untouched native GPU receipt, original and bridged requests, qualified runtime and four-point parity evidence. CPU archives retain strict CPU admission. The exact `GPU_transport` collection annotation is reproduced before equality checking. No CPU fields or forward counts are invented for GPU receipts.
+
+Current GPU scientific configuration is `asn_canonical_search_GPU_v1/CONFIG.json`, SHA `398420e6d1ba8f169f09b132a4db5f0d746ff471d6fa80297d8b5c8ea0cc6690`; bridge source SHA `da2ee81874876e15cda9e74d38e409d12d90fa76124e9ec28c23f355e7cf9112`. Its original canonical implementation/plan and completed5057 scout identity remain unchanged. The command above is still conditional on actual complete25 results and review. If root selects the unsubmitted CPU fallback instead, substitute its two actual paths; the same binder preserves strict CPU admission. Never combine incomplete competing executions.
+
+Only receipt admission and the explicit collection annotation changed. Geometry, MACE model, optimizer, native solvent, cache identity, full-pool and calibration rules are unchanged. No molecular config has been bound.

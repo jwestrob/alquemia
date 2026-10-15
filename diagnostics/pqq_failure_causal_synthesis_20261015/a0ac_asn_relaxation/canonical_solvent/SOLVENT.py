@@ -7,6 +7,7 @@ HERE=ROOT/'diagnostics/pqq_failure_causal_synthesis_20261015/a0ac_asn_relaxation
 OLD=ROOT/'workspaces/pqq_failure_causal_synthesis_20261015/asn_relaxation_solvent_v1'
 REUSE='a0acd6b9f2-pqq-la_model__conditioned_La__seed-1_sample-3'
 PROTOCOL='canonical25_terminal_amide_frozen_ALPB_common6_v1'
+GPU_KIND='qualified_GPU_request_bridge_v1'
 METALS=('Ca','La');ORDER3=('origin','adaptive_Ca','adaptive_La');ORDER4=ORDER3+('amide_flip',);ORDER6=ORDER4+('relaxed_flip_Ca','relaxed_flip_La')
 ORDERS={'common3':list(ORDER3),'common4':list(ORDER4),'common6':list(ORDER6)}
 KEYS=('matrix','runtime','settings','factorial','component','native_manifest','native_build','native_binary','native_adapter','MACE_model','corrected_ORCA_parameter_provenance','ORCA_correction_policy','solvent_adapter','pool_adapter','scorer','numerical_python')
@@ -29,6 +30,12 @@ def gate(sc,sr,ex,cp):
     require(sc['protocol']==sr['protocol']=='canonical25_terminal_amide_common6_v1' and sc['stage']==sr['stage']=='remaining','Completed full canonical stage required')
     require(sr['config']==ex['config']==cp and ex['status']=='complete' and sr['stage_complete'] and sr['all25_common6_complete'],'Actual complete execution and all25 common6 required')
     require(sr['declared_sources']==25 and [r['source_case_id'] for r in sr['rows']]==sc['all_source_ids'] and sr['pool_orders']==sc['pool_orders']==ORDERS,'Canonical scope/order differs')
+    if sc.get('GPU_transport'):
+        require(sc['GPU_transport']==sr.get('GPU_transport')==GPU_KIND,'Unqualified GPU collection marker')
+        check(sc['execution_adapter']);check(sc['GPU_qualification']);check(sc['GPU_qualification_execution']);check(ex['native_GPU_summary'])
+        require(read(sc['GPU_qualification'])['all_four_pass'] and read(sc['GPU_qualification_execution'])['status']=='complete','Actual GPU parity qualification missing')
+        require(ex['native_failed_requests']==0,'GPU native request failure')
+    else:require('GPU_transport' not in sr,'GPU collection cannot use CPU-only configuration')
     for row in sr['rows']:
         require(row['status']=='complete' and set(row['proposals'])==set(METALS),'Incomplete canonical proposal pair')
         for z in METALS:
@@ -93,6 +100,7 @@ def bind(score_config,score_collection,output):
     c={k:prior[k] for k in KEYS};c.update(protocol_id=PROTOCOL,implementation=pin(out/'SOLVENT.py'),wrapper=pin(out/'RUN.sbatch'),plan=pin(out/'PLAN.md'),
        template=pin(OLD/'CONFIG.json'),dispatcher=prior['prior_adapter'],completed_A0AC_collection=pin(OLD/'execution/FINAL_COLLECTION.json'),completed_A0AC_execution=pin(OLD/'execution/EXECUTION.json'),
        score_config=pin(score_config),score_collection=pin(score_collection),score_execution=pin(expath),score_adapter=sc['implementation'],mace_scorer=sc['old_scorer'],
+       GPU_admission_adapter=sc.get('execution_adapter') if sc.get('GPU_transport')==GPU_KIND else None,
        preparation=sc['preparation'],preparation_manifest=sc['preparation_manifest'],canonical_collection=sc['canonical_collection'],calibration_inventory=cc['inventory'],canonical_native_collection=cc['canonical_native_collection'],
        calibration_plan=sc['calibration_plan'],search_plan=sc['plan'],generic_contact_helper=sc['generic_contact_helper'],
        cells=cells,targets=targets,cached=cached,rows=[{k:r[k] for k in ('source_case_id','case_id','record_id','protein','expected_class','biological_group','source_conditioning_metal')} for r in sr['rows']],
@@ -112,8 +120,25 @@ def preflight(c,f,r,n,a,h,selector,search,mace):
     worker=read(sc['worker_manifest']);b=load('_canonical_solvent_worker_metadata',worker['implementation']);b.parent_env();b.modules(worker)
     import numpy as np
     from mace_site_kinematics import Kinematics
-    mace.physical_result=search.physical_result;pf,completion=search.preflight(sc,b,mace,np)
-    require(search.collect(sc,Path(c['score_collection']['path']).parent,mace,pf)==sr,'Actual full MACE common6 replay differs')
+    mace.physical_result=search.physical_result
+    if sc.get('GPU_transport'):
+        require(c['GPU_admission_adapter']==sc['execution_adapter'],'Qualified GPU admission source differs')
+        gpu=load('_canonical_solvent_GPU_admission',c['GPU_admission_adapter']);cpu_admission=mace.admitted_result
+        require(gpu.KIND==GPU_KIND,'Unknown GPU admission contract')
+        base=read(sc['base_CPU_config'])
+        for key,value in base.items():
+            if key not in ('output','wrapper'):require(sc[key]==value,'GPU bridge altered canonical scientific field: '+key)
+        def admit(value,request,task,model,versions):
+            if value.get('transport_kind')==GPU_KIND:
+                require(value['adapter_config']==c['score_config'],'GPU receipt belongs to another execution')
+                return gpu.gpu_admission(value,request,task,model,versions,np,search,b)
+            return cpu_admission(value,request,task,model,versions)
+        mace.admitted_result=admit
+    else:require(c['GPU_admission_adapter'] is None,'Unexpected GPU admission adapter')
+    pf,completion=search.preflight(sc,b,mace,np)
+    replay=search.collect(sc,Path(c['score_collection']['path']).parent,mace,pf)
+    if sc.get('GPU_transport'):replay['GPU_transport']=GPU_KIND
+    require(replay==sr,'Actual full MACE common6 replay differs')
     require(worker['model']==c['MACE_model'],'MACE model lineage differs')
     runtime=read(c['runtime']);nm=read(c['native_manifest']);build=read(c['native_build'])
     for k in ('xtb','xtb_parameter_file','tblite_python'):check(runtime[k])

@@ -1,5 +1,22 @@
 # Current causal investigation
 
+## Active execution — 15 October 2026, 05:14 UTC
+
+Canonical remaining23 GPU job5089 is RUNNING on the qualified A5000, oneGPU
+and12 scheduler-granted CPUs. Config398420e6 and exact command/wakePID4151535
+are in asn_canonical_search_GPU_v1/SUBMISSION.json. It reuses5057 and A0AC;
+do not submit the CPU fallback. All historical/preparation/runtime checks pass.
+The first new source A8R3S4 completes both searches and all12 common6 cells;
+physical/source gates pass, with its La displacement-boundary flag retained.
+No class/solvent conclusion is available from these vacuum search results.
+
+After actual completion, inspect FINAL_COLLECTION.json/EXECUTION.json and all25
+coverage before binding canonical_solvent/READY.md's matched continuation.
+The independently reviewed solvent adapter admits truthful bridged GPU receipts
+and preserves all native/component/calibration rules. No solvent job is submitted.
+Root owns execution; all scoped implementation/review agents are finished.
+Actual delayed4910 contact callback is acknowledged; no results were rerun.
+
 The active user goal remains: "keep working until we get a conclusion and figure
 out why our predictions are messed up in these cases."
 

@@ -8,9 +8,11 @@ signal; no DFT nuclear gradients or classifier gain. MMOL1770Ca0 exact six-cell
 reference preflight4601 passed; origin scouts4603/4604 RUNNING12MPI each with
 terminal/health wakes. Four proposal cells require actual origin review, not a
 new user permission. Source1 is inventoried only. Separate24cell finite PQQ
-rigid-pose preparation4606 passed all24 cells; no pose energy calls yet. Curie
-finishes the warm MACE scorer and queues an actual root wake when reviewed/ready.
-Read its frozen plan and CURRENT before submission; do not repeat preparation.
+rigid-pose preparation4606 passed all24 cells. Reviewed warm MACE scorer4608
+now runs24new vacuum cells on7CPUs; actual preflight passed. Watcher3372210 is
+armed; read pose_scoring_v1/SUBMISSION.json and the actual fullpool result.
+Gauss prepares a conditional solvent adapter; its actual response gate must pass
+before dispatch. Read CURRENT before submission; do not repeat preparation.
 Root owns execution; agents own disjoint implementations. All numerical work
 uses current shared Slurm rules. Preserve production, original failures and
 the corrected La-parameter/frozen-charge solver lineage. Do not duplicate any

@@ -1,6 +1,7 @@
 # Intact-PQQ pose: bounded static review
 
-Status: mapping and inherited-gate review complete; implementation review pending.
+Status: preparation and scoring implementation static reviews passed; actual
+geometry preparation passed24/24. Pose energy execution remains separate.
 This review uses source code and saved metadata only. No scientific imports,
 coordinate calculations, tests, model calls or submissions were performed.
 
@@ -50,3 +51,79 @@ implementation. Synthetic caps are not physical source atoms. No environment
 energy, reconstructed source geometry or new union preparation is needed.
 Passing this extreme-overlap check establishes no new severe collision; it does
 not establish general steric relaxation or mechanical support by the protein.
+
+## Preparation implementation reviewed
+
+Reviewed `../pqq_pose/PREPARE.py` SHA256
+`7e227e0a942e0826155306340a384be3aef2fc91f345308ed7215beab9c788a5`
+and `../pqq_pose/PREPARE.sbatch` SHA256
+`30bf9bcde11bf8b04429ba24feef2aeed2292e9951ccea1a82f795e5a2356fca`.
+No remaining concrete static launch blocker was found. Actual Slurm preparation
+and its resulting admission are separate, still required evidence.
+
+The original four-angle tasks initially reached a helper requiring seven active
+coordinates. This concrete mismatch was repaired using the existing midpoint
+pattern: prepend the three actual metal translation modes, require their saved
+coordinates to be exactly zero, and retain the unchanged original donor values.
+Task lookup now checks actual saved task/case/metal and map/preparation identity.
+The inherited donor checks must explicitly pass before the new rigid operation.
+
+The final source preserves all 24 declared cells and checks the named intact
+PQQ, source-specific frame, internal distances and H parents, physical source
+bonds, fixed atoms/caps/anchors, original physical displacement ceiling, paired
+Ca/La coordinates and deterministic serialization. It checks local pairs and
+every moved PQQ atom against the unchanged appended physical source. Scientific
+imports follow the actual one-CPU Slurm placement guard. These are static source
+observations, not claims that the unexecuted generated geometries have passed.
+
+## Actual preparation, job4606
+
+The subsequent Slurm result admitted all24 declared cells. Read-only review of
+`workspaces/pqq_failure_causal_synthesis_20261015/pose_preparation_v1/execution/PREPARATION.json`
+(SHA256 `75892efba2fce3f9ce2acd71de09fdb4f643d417e687c5028d5ad4a7a2308799`)
+and the two saved `GEOMETRY_ADMISSION.json` files found no new material blocker.
+No coordinate calculations were repeated during this review.
+
+Both sources and every base/sign have empty new-severe-overlap lists for both
+local and full-source checks. Non-PQQ atoms, caps and anchors remain fixed.
+Example recorded minus-angle PQQ heavy displacements are0.09822437794535492Å
+(sample0) and0.09822754514204593Å (sample3). Recorded internal-distance residuals
+are2.6645352591003757e−15Å for sample0 and3.552713678800501e−15Å for sample3's
+minus-angle variants; source-bond residuals are0. All physical H-parent checks
+pass the frozen1e−10Å requirement.
+
+The target's adaptive_La base retains its pre-existing physical-boundary caveat:
+the recorded total heavy displacement is0.8000000004807638Å for both signs,
+accepted under the unchanged1e−7Å physical tolerance. The new PQQ displacement
+is about0.0982Å; the total boundary value is not additional PQQ motion and does
+not justify changing the admission threshold.
+
+The actual preparation receipt reports31.226323808077723s elapsed,
+29.370238498s process CPU and88,272KiB peak RSS, on one shared CPU. It made zero
+energy calls. The source-overlap checks remain narrow extreme-contact checks;
+they do not establish a relaxed whole-protein pose or accurate PQQ energy.
+
+## Scoring implementation reviewed
+
+Final `../pqq_pose/SCORE.py` SHA256
+`1cf3ae5031f46cae9b89e38a5eb588f6f1db82224bfbf4c707f486c0fa431b85`
+and `../pqq_pose/SCORE.sbatch` SHA256
+`bde1bc60faf62c265f549b7732667d3843cc92d9ed9aee09403c407753483517`
+have no remaining concrete static launch blocker. This was code/metadata review,
+not execution or new scientific testing. The combined Slurm preflight and run
+must still verify actual runtime/receipts before admitting energy results.
+
+The adapter joins all twelve original receipts by model, state, coordinates and
+runtime; calls the same seven-thread warm worker for exactly24 new endpoints;
+and retains failed/missing cells explicitly. Its shared nine-geometry pool is
+complete under both metals, with the original three first in deterministic tie
+order. Mathematical minima and the inherited strict work<−0.1kcal/mol operational
+choice remain separate. A missing required cell blocks the full-pool comparison
+while leaving the original baseline and valid individual cells visible.
+
+The continuation gate uses only the declared absolute mathematical paired
+contrast change of at least1kcal/mol in either source, in either direction. It
+does not launch solvent automatically, assign class labels or change calibration.
+The final narrow reporting repair preserves partial results and guarantees an
+execution receipt even if collection/resource reporting raises. Root owns actual
+submission and the subsequent interpretation.

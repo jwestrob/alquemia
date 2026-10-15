@@ -1,0 +1,57 @@
+{
+  "status": "frozen_and_submitted_by_root",
+  "configuration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/pose_scoring_v1/CONFIG.json",
+    "sha256": "3fadca004a90a13afa372ed5c1454ffc2b3987c3e9833ca15f4c28f9a73a204a"
+  },
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/pose_scoring_v1/SCORE.py",
+    "sha256": "1cf3ae5031f46cae9b89e38a5eb588f6f1db82224bfbf4c707f486c0fa431b85"
+  },
+  "wrapper": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/pose_scoring_v1/SCORE.sbatch",
+    "sha256": "bde1bc60faf62c265f549b7732667d3843cc92d9ed9aee09403c407753483517"
+  },
+  "preparation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/pose_preparation_v1/execution/PREPARATION.json",
+    "sha256": "75892efba2fce3f9ce2acd71de09fdb4f643d417e687c5028d5ad4a7a2308799"
+  },
+  "preparation_job": "4606",
+  "preparation_outcome": "24/24 prepared; actual Slurm result, no energy calls",
+  "scientific_static_review": "Heisenberg cleared final scorer 1cf3ae5031f46cae9b89e38a5eb588f6f1db82224bfbf4c707f486c0fa431b85 and final nested reporting receipt safeguard",
+  "validation_executed_by_preparation_agent": "Metadata binding, AST parsing and shell syntax inspection only; no scientific imports or evaluations on login",
+  "job_id": "4608",
+  "submission": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/pose_scoring_v1/SUBMISSION.json",
+    "sha256": "8d6b2a251aadcff89c15ce1715d150316f8541c06f61f3273e468bd2278de16b"
+  },
+  "exact_submitted_argv": [
+    "sbatch",
+    "--parsable",
+    "--output=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/pose_scoring_v1/slurm_%j.out",
+    "--error=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/pose_scoring_v1/slurm_%j.err",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/pose_scoring_v1/SCORE.sbatch",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/pose_scoring_v1/CONFIG.json",
+    "3fadca004a90a13afa372ed5c1454ffc2b3987c3e9833ca15f4c28f9a73a204a",
+    "run"
+  ],
+  "completion_watch_pid": 3372210,
+  "future_result": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/pose_scoring_v1/execution/FINAL_COLLECTION.json",
+  "finite_scope": {
+    "new_MACE_vacuum_cells": 24,
+    "reused_MACE_vacuum_cells": 12,
+    "sources": 2,
+    "geometries_per_source": 9,
+    "allocation_CPUs": 7,
+    "new_optimizations": 0,
+    "new_SCC_calls": 0,
+    "new_DFT_calls": 0
+  },
+  "pool_policy": "All three original geometries precede both signs for each base; complete common pools only. Mathematical minimum and strict work < -0.1 kcal/mol operational minimum remain separate.",
+  "conditional_next_stage": "Root review only after all24 cells are complete and absolute mathematical common3-to9 Ca-minus-La contrast change is at least1 kcal/mol in either source, either sign. No automatic solvent launch or class call.",
+  "readiness_wake": {
+    "queued": false,
+    "reason": "Root already submitted4608 and explicitly requested no redundant readiness wake; actual Slurm completion watcher is armed."
+  },
+  "production_changed": false
+}

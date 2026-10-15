@@ -19,7 +19,7 @@ Current bounded tasks:
   a distinct rigid-PQQ pose response persists across sources. Read
   pqq_force_inventory/RESULT_REPORT.md. No new molecular calls; DFT forces remain
   unavailable. Actual cost2wallseconds/1CPU; algebra checks are not force-model
-  qualification. ROOT_REVIEW records proactive collection; ACK awaits actual wake.
+  qualification. Actual queued wake has now been received and ROOT_ACK written.
 - Exact MMOL1770 Ca0 six-cell native vacuum reference, common3 pool under both
   metals. Read MMOL_REFERENCE_PLAN.md. Curie owns mmol_inventory/, Gauss owns
   mmol_reference/. Source1 is inventory only. Preflight4601 passed all six
@@ -34,8 +34,13 @@ Current bounded tasks:
   and source-union gates are pinned in pose_preparation_v1/manifest.json SHAeb2763a1.
   Terminal wake3352635 is armed; exact command in that workspace/SUBMISSION.json.
   Both sources pass frozen internal/paired/exterior-contact gates. No pose energy
-  call has yet run. ROOT_REVIEW records actual preparation; scorer work
-  continues separately. No ideal bond target, state change or optimizer.
+  call had run at preparation. Actual queued preparation wake is now acknowledged.
+  Independently reviewed warm scorer4608 is RUNNING on node-64-768g-8,7CPUs;
+  actual preflight passed and model loading began. Exact config3fadca00 and
+  submission/watcher3372210 are in pose_scoring_v1/SUBMISSION.json. This executes
+  the24 new vacuum cells and reuses12 exact original cells. No ideal bond target,
+  state change or optimizer. Gauss prepares the conditional solvent adapter in
+  pqq_pose_solvent/; execution requires the declared actual MACE response gate.
 
 All scientific preparation/analysis/calculation runs on Slurm. Login-host work
 is metadata, reading, editing and submission. Other users/sessions' jobs and the

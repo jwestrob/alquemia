@@ -1,5 +1,18 @@
 # Current causal investigation
 
+## First-source GPU search submitted — 15 October 2026, 06:57 UTC
+
+5258 preflight is COMPLETE and passed:1542 original endpoint cells,34 exact
+executed contexts, full257-context/260-membership preparation. No new model
+calls;144scheduler seconds on1GPU/12CPUs. Actual PREFLIGHT_ROOT_REVIEW.json is
+in asn_transfer_search_scout_v1. The unchanged same config023edf9a is submitted
+with `run` as5263, watcher467389, first new source1H4I only. Exact command/rearm:
+asn_transfer_search_scout_v1/SUBMISSION.json. Both metals retain the original
+four-mode search and common geometry pool. No solvent/DFT/calibration changes.
+Inspect actual execution/FINAL_COLLECTION.json and native request/failure receipts
+before binding remaining sources against recovered v2 preparation. No remaining
+or transfer-solvent job is submitted yet. Root owns integration; agent tasks done.
+
 ## Full preparation recovered; GPU preflight submitted — 15 October 2026, 06:53 UTC
 
 5254 is COMPLETE: all257 contexts prepared,260 memberships retained,251 prior

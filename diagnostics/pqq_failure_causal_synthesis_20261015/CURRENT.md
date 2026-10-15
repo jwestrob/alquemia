@@ -1,5 +1,47 @@
 # Current causal investigation
 
+## Both old-selected DFT scouts admitted; new-selected pair running — 15 October 2026
+
+Both old-selected A0AC Ca4 scouts completed and pass all 20 unchanged energy-diagnostic
+checks: Ca **5762**, 6,736 s on 12 CPUs; La **5763**, 7,026 s on 12 CPUs.
+Their final NR macro residuals are 5.627194e-7 and 8.035475e-7, respectively,
+below each actual printed orbital-gradient threshold of 1e-5. Final single-point
+energies are -7208.156038453809 and -6562.353307034823 hartree. These absolute
+cross-element totals alone are not preference evidence.
+
+Both outputs retain large density/DIIS summary residuals and near-final frontier
+and electronic-Hessian warnings. The energy-diagnostic admission does not establish
+stable unique ground states, force accuracy or continuity of the electronic state.
+The pinned terminal collector correctly handles the final NR macro rows; the
+health watcher's older TRAH display can be stale, so use raw output for progress.
+Independent read-only review agreed that the unchanged continuation gate passes.
+
+Actual collections and their hashes are in immutable `SCOUT_REVIEW.json`, SHA
+**535540dd**, under `asn_selected_reference_parallel_v2` (manifest **08a9b896**).
+This proactive review does not claim receipt of the scouts' terminal callbacks.
+No methods, tolerances, inputs, iteration limits or desired-sign criteria changed.
+
+Exactly the two previously specified new-selected endpoints are now RUNNING:
+
+- **5866**: Ca at relaxed_flip_Ca, 12 MPI slots; completion watcher **2294280**,
+  alert-only health watcher **2294281**.
+- **5867**: La at relaxed_flip_La, 12 MPI slots; completion watcher **2294284**,
+  alert-only health watcher **2294287**.
+
+Each task-local `SUBMISSION.json` retains the exact launch and both watcher
+commands. Saved four-cell collector **5868** is queued afterany:5866:5867 using
+the same preflight/collection wrapper; it runs zero new molecular evaluations.
+Watcher **2296881** and exact command are in `COLLECT_SUBMISSION.json`. Read
+`attempts/5868_collect_all_four/COLLECTION.json` and EXECUTION.json after completion;
+retain any missing cells. The primary comparison is each metal's new-minus-old
+energy and the Ca-minus-La difference of those works against saved MACE. This
+is not a common-geometry pool minimum, solvent validation or a classifier result.
+
+Solvent **5661** remains RUNNING; report **5666** and figure **5748** remain queued
+with their verified live completion watchers. Full-transfer decisions and DFT
+response agreement remain pending. Production and fixed bands are unchanged.
+Do not duplicate any of these jobs or repeat the completed scouts.
+
 ## Independent selected-state DFT scouts submitted — 15 October 2026
 
 Root revised only the scheduling prerequisite in the separate, reviewed

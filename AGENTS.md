@@ -1,3 +1,16 @@
+# Latest owned PQQ work — 15 October 2026 UTC
+
+Read diagnostics/pqq_failure_causal_synthesis_20261015/CURRENT.md and actual receipts.
+Old-selected DFT scouts5762/5763 are complete and admitted under unchanged energy
+checks; density/stability warnings remain. Exact SCOUT_REVIEW.json (535540dd) in
+asn_selected_reference_parallel_v2 releases only the two defined new-selected
+cells5866/5867, now RUNNING at12MPI each with completion and alert-only health
+watchers recorded in task-local SUBMISSION.json. Saved collector5868 follows both;
+COLLECT_SUBMISSION.json records its wake. No additional DFT, changed settings or
+production promotion. Solvent5661 continues, report5666/figure5748 follow it.
+Do not rerun scouts, duplicate jobs or treat energy convergence as stability proof.
+Older submitted/pending status entries below are historical.
+
 # Remaining PQQ causes under investigation — 15 October 2026 UTC
 
 Newest: independent selected-state DFT staging v2 is reviewed and bound under

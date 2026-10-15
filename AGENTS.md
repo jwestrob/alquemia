@@ -4,9 +4,12 @@ Latest: two-H fixed MACE5039 is COMPLETE12/12. The alternative Asn response
 survives shortening only its two inherited long N–H bonds: differential changes
 are0.51–1.30kcal/mol, with positive fixed-path responses retained. This is a
 sensitivity diagnostic, not a newly optimized/composite classifier. Canonical
-CPU scout5057 is RUNNING, watcher4022277, confige77354e5; inspect its actual
-receipt before releasing remaining23. A separate four-point GPU reuse scout
-is submitted as5066, watcher4052621, config3701029e. Read CURRENT.md for
+CPU scout5057 is COMPLETE: both searches pass, original pool score unchanged;
+remaining23 scientific gate passes. GPU reuse scout5066 failed before model
+startup because nested srun rejected its allocation; narrow launcher recovery
+5079 now runs its reviewed launcher-only recovery, watcher4123632, sole
+workspace asn_gpu_reuse_root_v2/confige3a2a38b. CPU remaining23 fallback is
+bound but unsubmitted; do not run duplicate routes. Read CURRENT.md for
 ownership/exact commands; no repeats.
 
 Preceding result: relaxed-amide solvent4971 is COMPLETE40/40 new endpoints,80reused.

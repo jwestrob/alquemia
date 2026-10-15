@@ -1,13 +1,13 @@
-# Canonical MACE/search stage: ready, unrun
+# Canonical MACE/search stage: scout complete; CPU fallback bound
 
 Root submitted the scout as5057, with completion wakePID4022277. Inspect
 asn_canonical_search_scout_v1/SUBMISSION.json and current scheduler/receipts
 before acting. Do not duplicate this scout; remaining23 still require its
 actual completed result and root review.
 
-The CPU scout is frozen from actual5016 preparation (25/25). Curie independently cleared source/state/count/cache/pool integration; Python AST and shell syntax passed. Binding performed metadata reads, hashes and copies only. No energy, force projection, runtime qualification or search was executed by this agent.
+Root's CPU scout5057 completed with both searches and common6 admitted; see [SCOUT_REPORT.md](SCOUT_REPORT.md). The immutable remaining23 CPU configuration is bound as an **unsubmitted fallback**, while root evaluates the separate GPU route. No jobs were submitted by this agent.
 
-Root's exact scout command, from the repository root:
+Executed scout command, retained for provenance; do not repeat:
 
 ```bash
 sbatch workspaces/pqq_failure_causal_synthesis_20261015/asn_canonical_search_scout_v1/RUN.sbatch \
@@ -26,9 +26,19 @@ The wrapper requests seven CPUs on standard, with no host, memory, time, account
 | Actual5016 `PREPARATION.json` | `663ad699c2fae8baf6a42ee65078481a26c872d0fa6ad0d6cf17d3e8eeb0fbca` |
 | Existing frozen canonical collection | `ee00fa03aba64c23e6a737fb2b3b4a9f40dc139e58bdb9225e8ed10c9af2b58d` |
 
-## Remaining23, after actual scout review
+## Remaining23 CPU fallback — bound, not submitted
 
-This command cannot bind without the actual successful scout collection **and** execution receipt. It does no scientific execution and cannot submit a job:
+Actual remaining config SHA: `59fab20f7f615249cd73b9c6d091e79d31b737ecc8ae03bc1c5dbcd3551fea67`. Worker manifest SHA: `525fc9ef9b9a490146565e9b9072d58329fc0b22fdf80aa00a0ac47de320920b`. The implementation and plan are byte-identical to5057. If root chooses this route, its exact command is:
+
+```bash
+sbatch workspaces/pqq_failure_causal_synthesis_20261015/asn_canonical_search_remaining_v1/RUN.sbatch \
+  "$PWD/workspaces/pqq_failure_causal_synthesis_20261015/asn_canonical_search_remaining_v1/CONFIG.json" \
+  59fab20f7f615249cd73b9c6d091e79d31b737ecc8ae03bc1c5dbcd3551fea67
+```
+
+Do not submit concurrently with another route covering these sources. The following metadata binding command has already completed and must not be repeated into the same workspace:
+
+Binding required the actual successful scout collection **and** execution receipt. It performed no scientific execution and submitted no job:
 
 ```bash
 /usr/bin/python3 diagnostics/pqq_failure_causal_synthesis_20261015/a0ac_asn_relaxation/canonical_search/RUN.py bind \

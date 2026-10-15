@@ -21,20 +21,34 @@ H-preparation classifier. Read donor_H_sensitivity/RESULT_REVIEW.md.
 Collection SHA6d2d49b868ebaeb5bfe2de8e2358c690296d498bf221308ed815cfee1cf0be67;
 actual12 forwards,211 scheduler seconds on7CPUs, zero solvent/DFT/optimization.
 
-Canonical first-source CPU scout5057 is RUNNING under the reviewed, frozen
+Canonical first-source CPU scout5057 is COMPLETE under the reviewed, frozen
 canonical_search/PLAN.md. It revalidates all25 references, reuses exact A0AC
 work, and executes only the first original-order source's two fixedflip calls,
 two unchanged bounded searches and two cross scores. Confige77354e5 and exact
 launch/wakePID4022277 are in asn_canonical_search_scout_v1/SUBMISSION.json.
+Both searches converge inside the original bounds and pass physical/source
+gates; all common6 cells are available. Original selected geometries and paired
+vacuum contrast remain unchanged. Actual28 forwards/461.377s on7CPUs. The
+scientific gate for remaining23 passes; no class/solvent result exists yet.
 No remaining23 search or canonical solvent job has been submitted. Gauss owns
 the conditional canonical solvent adapter; Curie prepares a separate four-real-
 point existing-GPU compatibility scout. That scout is now submitted as5066,
 watcher4052621, config3701029e; exact command in asn_gpu_reuse_v1/SUBMISSION.json.
-It uses the unchanged GPU worker on four exact saved CPU points, with existing
-energy/force gates and normal one-GPU scheduler defaults. No optimizer/solvent
-or CPU fallback. A passed scout only permits review of a transport adapter.
+It FAILED before any model call: nested srun rejected its valid batch job ID.
+All four points remain unavailable. Curie owns a narrow launcher recovery inside
+the assigned one-GPU batch; no altered model/parameter/optimizer or CPU fallback.
+Canonical CPU remaining23 fallback is being bound independently. A passed GPU
+scout only permits review of a transport adapter.
 Root owns all submissions and promotion.
 Production and frozen bands remain unchanged. Read newer receipts before acting.
+
+Reviewed launcher recovery5079 is now submitted with watcher4123632. Sole active
+recovery workspace: asn_gpu_reuse_root_v2, confige3a2a38b. It starts the unchanged
+GPU server directly inside the assigned one-GPU batch, with inherited device and
+cgroup checks. The separate agent asn_gpu_reuse_v2 binding is unsubmitted and
+must not be dispatched as a duplicate. CPU remaining23 fallback is now bound
+at asn_canonical_search_remaining_v1 (config59fab20f), unsubmitted. Conditional
+canonical_solvent adapter is ready but requires complete all25 MACE first.
 
 ## Preceding completed result — 15 October 2026, 04:35 UTC
 

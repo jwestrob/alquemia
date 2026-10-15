@@ -31,6 +31,8 @@ def main():
     assert new["origin_collection"] == m["origin_collection"]
     new_by = {r["id"]: r for r in new["rows"]}
     origin_by = {r["id"]: r for r in old["rows"]}
+    new_prepared = {r["id"]: r for r in read(new["preparation"])["rows"]}
+    origin_prepared = {r["id"]: r for r in read(old["preparation"])["rows"]}
     order = ("origin", "adaptive_Ca", "adaptive_La")
     ha = new["hartree_to_kcal_mol"]
     assert ha == old["hartree_to_kcal_mol"]
@@ -44,6 +46,11 @@ def main():
             records = {"origin": origin, **{
                 q: new_by[f"sample{sample}_{q}_{metal}"] for q in order[1:]}}
             assert all(r["status"] == "available" for r in records.values())
+            for q, record in records.items():
+                source = origin_prepared[record["id"]] if q == "origin" else new_prepared[record["id"]]
+                assert source["source_case_id"] == base["source_case_id"]
+                assert source["sample"] == sample and source["metal"] == metal
+                assert record["archived_local"] == source["archived_native_result"]
             # Baseline values are exact saved works, each relative to its own origin.
             works = {q: base["all_origin_relative_works_kcal_mol"][metal][q]["total"] for q in order}
             historical = base["pools"]["historical3"]["mathematical"][metal]
@@ -84,6 +91,8 @@ def main():
             for sample, v in source.items()}
             for q, source in new["Ca_minus_La_accommodation_changes"].items()},
         "source_response_precision_flags": {q: v["precision_informative"] if v else None for q, v in new["sample3_minus_sample0"].items()},
+        "origin_paired_precision_flags": old["paired_precision_informative"],
+        "origin_source_precision_flag": old["contrast_precision_informative"],
         "uncertainty_scope": "Original conservative charge-rounding bounds/flags stay in source collections; no full model uncertainty or confidence is inferred.",
         "classification": None, "production_changed": False,
         "interpretation": "Mathematical row minima of Gelec-only augmentation, not complete protein solvation or calibrated classification. No thresholds fitted."}

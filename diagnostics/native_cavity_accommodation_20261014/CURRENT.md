@@ -1,29 +1,25 @@
-# Cavity-dependent accommodation running — job 4579
+# Complete: tested cavity exclusion branch closed
 
-Preparation4577 completed all8 saved nonorigin cells in14s/1CPU. Original
-kinematics/physical gates, paired coordinates and reused severe-contact policy
-pass; no new coordinates or electronic populations were generated. Source caps,
-flanks and appended protein atoms remain exactly fixed. See preparation_v1 inputs
-and CONTACT_ADMISSION.json records; no new overlap threshold was fitted.
+Preparation4577 completed8/8, native4579 completed16/16, saved comparison4587
+completed. All owned jobs in this phase are terminal. No successful chemistry
+should repeat on delayed completion/health notifications. Root acknowledges each
+actual callback separately; watchers do not license another submission.
 
-Native4579 is RUNNING on node-64-768g-16,4sharedCPU/default16000MiB, one serial
-native worker. First new endpoint qualifies; eight union/cap-removed pairs are
-the entire16-update manifest. The completed origin12 updates and all12 local
-energies are reused. No SCC/MACE/DFT, optimization, folding or class-band changes.
+Read REPORT.md, RESULT.json and review/RESULT_REVIEW.md. All common3 selected
+geometries remain unchanged. Origin+accommodation paired changes are+5.058230
+(control) and+4.887095(target)kcal/mol; their source difference−0.171134 includes
+only−0.076458 from accommodation. No classifier gain or promotion. All per-endpoint
+native gates pass; all aggregated response precision flags remainfalse. No
+retuning, charge recomputation or parameter sweep is warranted by this result.
 
-Config: workspaces/native_cavity_accommodation_20261014/native_v1/CONFIG.json,
-SHA36c9df143bd6f693844941a82f1269be19107b2d4f390f41b682473bf7ddaf5e.
-Exact submission/rearm: native_v1/SUBMISSION.json. Completion watcher3280737
-queues native-cavity-accommodation-v1 to root. Preparation watcher3278039 is
-already terminal/queued; delayed callbacks do not authorize reruns.
+Exact commands/configs/receipts remain in workspaces/native_cavity_accommodation_20261014/
+preparation_v1, native_v1 and summary_v1/SUBMISSION.json. Full origin and local
+chemistry was reused. Full inventory now has a compact pointer at
+../native_cavity_shielding_20261014/accommodation_feasibility/INVENTORY_POINTER.json;
+legacy input bytes stay present for existing pinned manifests. No files were
+silently migrated from their executed paths.
 
-Next: inspect native_v1/execution/{FINAL_COLLECTION,EXECUTION}.json. The saved
-POOL_SUMMARY.py compares exact historical three-candidate minima after the
-Gelec-only diagnostic addition, retaining mathematical/old operational selections
-and no classes. Bind its input hashes only when the actual collection is present;
-run saved numeric reporting on Slurm. Do not repeat chemistry for a reporting error.
-
-The previous origin-only test4562 is complete and does not explain the source
-ambiguity. Its aggregate precision flag remains false. All response sums in this
-phase retain their bounds/flags, rather than widening tolerances. Root owns
-integration/submission; disjoint preparation/runner/review agents are finished.
+The finite origin+accommodation excluded-volume mechanism is closed as an ExaA
+repair. This does not test full protein electrostatics/polarization or complete
+solvent burial. A distinct model needs its own coherent energy before execution;
+no further cavity run is pending. Production/defaults remain unchanged.

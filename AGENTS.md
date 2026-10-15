@@ -32,9 +32,11 @@ andendpointchecks pass; originCa−La transfers+5.031545/+4.936869kcal/mol arema
 commonshift. No sourceambiguity remedy; aggregateprecisionflag remainsfalse.
 Read REPORT/RESULT; no rerunfortolerance. Separatenative_cavity_accommodation_20261014
 PLAN declares8savednonorigin/16nativeupdates to testburial-dependentaccommodation;
-preparation4577 passes8/8, native4579 RUNNING4sharedCPU/defaultRAM, firstendpoint
-qualifies. Wake3280737armed; native_v1/SUBMISSION.json recordsrearm. Zeroelectronic
-reruns. ReadnewCURRENT; collectbeforeanyfurtherphase. Delayedwakes requireACKonly.
+preparation4577 passes8/8, native4579 complete16/16, summary4587complete. Allfour
+selectedgeometries unchanged; sourceaccommodation change−0.076458kcal/mol, no
+classgain. Closethisfiniteorigin+accommodationexclusionbranch; noautowidercavity
+sweep/refit. ReadnewREPORT/RESULT/CURRENT. Aggregateprecisionflags remainfalse,
+perendpointgates pass. Allownedjobs terminal; delayedwakes requireACKonly.
 Source-onlycavity API blocked, retainedcaps explicit. No new correction/calibration.
 Scouts were reviewed before continuation; no new per-analysis approval loop.
 This tests a common physical displacement, not the full operational three-candidate

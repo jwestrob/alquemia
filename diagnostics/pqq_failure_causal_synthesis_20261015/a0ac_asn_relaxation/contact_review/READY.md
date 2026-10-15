@@ -1,7 +1,7 @@
 # Saved post-relaxation contacts
 
-The runner is ready. Root submitted the real-artifact scout check as **4859**;
-do not submit it again. Its immutable receipt is
+The runner is ready and actual real-artifact scout **4859 passed** all four checks
+(`0:0`, one second/one CPU, zero energy calls); do not submit it again. Its receipt is
 `workspaces/pqq_failure_causal_synthesis_20261015/asn_relaxation_contact_scout_v1/SUBMISSION.json`.
 
 Scout CONFIG SHA256:
@@ -12,8 +12,10 @@ identities, unchanged4626 baseline donor distances and explicit missing proposal
 This tests data handling; it adds no molecular evaluation.
 
 The source passed AST and shell syntax checks. Independent static review found
-no remaining schema or missing-candidate blocker. Actual numerical verification
-belongs to job4859; no numerical analysis was run on the login host.
+no remaining schema or missing-candidate blocker. Actual Slurm verification is
+recorded in `SCOUT_REPORT.md`; no numerical analysis was run on the login host.
+The nine real unexecuted rows remain explicitly missing their relaxed proposals.
+The completed Ca0 control does not resolve sample4's named H–H contact.
 
 ## Final ten-source analysis
 

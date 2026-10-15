@@ -98,15 +98,18 @@ Next finite research work:
  Root released the exact remaining18 searches as4844 (RUNNING on7CPUs), watcher
  3586320. Confige1692709 and exact command are in asn_relaxation_remaining_v1/
  SUBMISSION.json. No solvent/DFT expansion or settings change. Complete common6
- and named-contact analysis remain pending. Real4831 saved-contact check4859 is
- queued on one CPU, watcher3618305; configf7b1ddd2 in asn_relaxation_contact_scout_v1.
- It tests the named amide-H/backbone-H pairs and actual nine unexecuted rows;
- no new energy calls. Final40-geometry analysis binds only terminal4844 evidence.
+ and final named-contact analysis remain pending. Real4831 saved-contact check4859
+ completed on one CPU/one second; configf7b1ddd2 in asn_relaxation_contact_scout_v1.
+ All four tests pass, including actual nine unexecuted rows; zero energy calls.
+ Ca0 contact analysis retains short H contacts in its unselected flipped proposals;
+ it does not establish sample4 contact relief. Final40-geometry analysis binds
+ only terminal4844 evidence.
  See a0ac_asn_relaxation/contact_review/READY.md for exact binding command.
- Canonical25 source-graph inventory4847 is queued on1CPU (current job-count QOS),
- watcher3588552; exact manifest8ba06c39 in asn_canonical_scope_v1. All25 original
- anchors are ASN by metadata; graph/geometry admission and new scoring remain
- unrun. This inventory does not change residue selection or run canonical energy.
+ Canonical25 source-graph inventory4847 completed on1CPU/one second. All25
+ neutral existing ASN anchors pass identity/H-parent/bond/map/cap checks; some
+ terminal modes are absent from their original four-mode selectors. Exact
+ manifest8ba06c39 in asn_canonical_scope_v1; see canonical_scope/REPORT.md.
+ Flip geometry/contact admission and all new canonical energies remain unrun.
  Later solvent requires credible
  complete common6 pools and absolute common6−common4 change ≥1kcal/mol.
  The independently reviewed conditional adapter is ready at
@@ -115,7 +118,13 @@ Next finite research work:
  and evaluates at most40 relaxed endpoints with unchanged qualified solvation.
  No solvent config is bound or job submitted while4844/contact results are
  incomplete; static review is not scientific qualification.
-- Four MMOL proposal jobs4637–4640 are actually RUNNING; comparator4641 pending.
+- MMOL La/adaptive_La4640 completed normally after3683 scheduler seconds/12MPI;
+ three proposal jobs4637–4639 remain running, comparator4641 pending. Frozen
+ energy-diagnostic admission remains: explicit orbital-gradient stop, with large
+ density residuals. Its final printed frontier orbital ordering is inverted,
+ also present in both saved origins; electronic stability/same-state continuity
+ remain unqualified. No post-hoc gate change or rerun. Actual root review is
+ saved in the endpoint directory; full response awaits the comparator.
  All exact commands and completion/health watchers are in PROPOSAL_LAUNCH.json.
  No duplicate origin or proposal submissions.
 

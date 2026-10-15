@@ -29,14 +29,16 @@ Actual30 forwards/570 scheduler seconds on7CPUs; read SCOUT_REPORT.md.
 Root reviewed actual evidence and submitted remaining18 searches as4844,7CPUs,
 watcher3586320; confige1692709 and exact command in asn_relaxation_remaining_v1/
 SUBMISSION.json. Preserve original modes, bounds, failed rows and both selectors.
-Canonical25 saved-graph inventory4847 is queued separately on1CPU, watcher3588552;
-no canonical energy calls or geometry generation. Contact review is prepared
-separately to track the named amide-H contact on actual relaxed candidates.
+Canonical25 saved-graph inventory4847 passes25/25; no flip geometry/energy calls.
+Named-contact scout4859 passes actual4831 and missing-row checks, preserving short
+contacts in unselected Ca0 proposals. Final sample4 contact relief remains untested.
+See canonical_scope/REPORT.md and contact_review/SCOUT_REPORT.md.
 
 MMOL1770 exact six-cell native r2SCAN-3c vacuum reference: origins4603/4604
 complete as energy diagnostics, with density/state warnings retained. Four saved
-proposal jobs4637–4640 run at12MPI each; comparator4641 follows. Terminal and
-health wakes are recorded. No origin rerun or gradient/stability claim.
+proposal4640 completed;4637–4639 still run at12MPI each, comparator4641 follows.
+Final inverted frontier ordering also occurs in both origins; preserve diagnostic
+scope and electronic-state uncertainty. No origin rerun or stability claim.
 
 Delayed callbacks require receipt acknowledgement, not repeated chemistry.
 ROOT_REVIEW records proactive inspection; ROOT_ACK records actual delivery.

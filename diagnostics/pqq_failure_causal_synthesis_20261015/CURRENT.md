@@ -1,5 +1,22 @@
 # Current causal investigation
 
+## Individual-source figure queued behind the final report — 15 October 2026
+
+The reviewed thin plotter at a0ac_asn_relaxation/transfer/figure/ reads the actual
+saved report, draws all 257 distinct contexts, retains all 260 membership aliases,
+and shows fixed bands, source conditioning, missing scores and recorded regressions.
+It fits no boundaries and computes no new class decisions. Root AST/bash checks
+pass; actual imports, rendering and visual inspection remain unrun.
+
+Figure job **5748** is queued afterany:5666 on one CPU, watcher **1726926**.
+Exact source/environment pins and arguments: asn_transfer_figure_v1/SUBMISSION.json.
+It requires a completed reporter receipt; missing upstream artifacts fail visibly.
+Inspect the actual PNG before delivering the editable SVG/PDF and figure data.
+All agents have completed their scoped source/review tasks. Solvent5661 continues
+with observed process progress and no nonzero solver exits; report5666 remains
+queued after it. Full scientific acceptance and transfer decisions are pending.
+The conditional DFT adapter is still unbound/unrun. Production remains unchanged.
+
 ## Full solvent transfer running; final report queued — 15 October 2026
 
 Preflight 5610 completed and passed: 771 physical candidate checks, 1,746 cached

@@ -4,7 +4,8 @@ Current owned computation: solvent transfer 5661 RUNNING, watcher 1352388,
 config b8a64366 in asn_transfer_solvent_v1. Preflight 5610 PASSED all 771 physical
 checks, 1,746 cached admissions and exact baseline replay. MACE5297 is complete.
 Final saved report 5666 is queued afterany:5661, watcher 1356356, under
-asn_transfer_report_v1. Read CURRENT and actual SUBMISSION/terminal receipts;
+asn_transfer_report_v1. Figure5748 follows afterany:5666, watcher1726926, under
+asn_transfer_figure_v1; inspect actual rendering before delivery. Read CURRENT and actual SUBMISSION/terminal receipts;
 do not repeat the search or create duplicate collectors. No full-transfer class
 result yet, no new DFT and no production/band change. All agent tasks complete.
 

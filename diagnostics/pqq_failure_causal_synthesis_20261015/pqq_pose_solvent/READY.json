@@ -1,0 +1,35 @@
+{
+  "status": "conditional_adapter_ready",
+  "scientific_execution": "UNRUN",
+  "MACE_stage_gate": "await_actual_terminal_matrix",
+  "files": {
+    "SOLVENT.py": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_failure_causal_synthesis_20261015/pqq_pose_solvent/SOLVENT.py",
+      "sha256": "1e79a6d584dfa8a9b3db059b8e570bcf35d283d9580fd29e4df4ca38ff0e10a5"
+    },
+    "RUN.sbatch": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_failure_causal_synthesis_20261015/pqq_pose_solvent/RUN.sbatch",
+      "sha256": "df3e316288cc2139735e81e30ca2e4a3527d24ee1951e15d06f81294d6d0dfab"
+    },
+    "PLAN.md": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_failure_causal_synthesis_20261015/pqq_pose_solvent/PLAN.md",
+      "sha256": "cdcbac53b9d3dd8bd934773cc4e0ffa58027cacbce50faff460ee484c0106309"
+    }
+  },
+  "prepare_command": "/usr/bin/python3 diagnostics/pqq_failure_causal_synthesis_20261015/pqq_pose_solvent/SOLVENT.py prepare --score-config workspaces/pqq_failure_causal_synthesis_20261015/pose_scoring_v1/CONFIG.json --score-collection workspaces/pqq_failure_causal_synthesis_20261015/pose_scoring_v1/execution/FINAL_COLLECTION.json --output workspaces/pqq_failure_causal_synthesis_20261015/pose_solvent_v1",
+  "checks": "AST syntax only; twelve exact baseline source/state metadata joins; no numerical imports or tests",
+  "maximum_new_calls": {
+    "MACE": 0,
+    "SCC": 96,
+    "native_ALPB": 48,
+    "DFT": 0,
+    "optimization": 0
+  },
+  "independent_static_review": {
+    "reviewer": "la_parameter_scope",
+    "verdict": "No material blocker",
+    "scope": "actual complete MACE gate, full24+12 pool, existing component/native gates, units/sign/resources; no numerical execution"
+  },
+  "execution_command_after_actual_binding": "sbatch workspaces/pqq_failure_causal_synthesis_20261015/pose_solvent_v1/RUN.sbatch \"$PWD/workspaces/pqq_failure_causal_synthesis_20261015/pose_solvent_v1/CONFIG.json\" ACTUAL_PRINTED_CONFIG_SHA execute",
+  "readiness_limit": "No scientific config is fabricated while MACE remains incomplete; prepare binds actual terminal MACE receipt and hashes only after the existing stage gate passes."
+}

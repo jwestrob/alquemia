@@ -39,8 +39,13 @@ Current bounded tasks:
   actual preflight passed and model loading began. Exact config3fadca00 and
   submission/watcher3372210 are in pose_scoring_v1/SUBMISSION.json. This executes
   the24 new vacuum cells and reuses12 exact original cells. No ideal bond target,
-  state change or optimizer. Gauss prepares the conditional solvent adapter in
-  pqq_pose_solvent/; execution requires the declared actual MACE response gate.
+  state change or optimizer. The conditional solvent adapter in pqq_pose_solvent/
+  is now independently reviewed and ready; execution requires the complete actual
+  MACE matrix and declared response gate. Existing corrected standalone/component
+  kernels are reused, not rebuilt. No solvent job has been submitted.
+- Curie reviews existing same-protein source evidence and prior experiments for
+  the separate XoxF1A0ACD6B9F2 Ca4/Asn290 ambiguity in a0ac_asn_inventory/.
+  This is a bounded read-only investigation, with no new molecular task declared.
 
 All scientific preparation/analysis/calculation runs on Slurm. Login-host work
 is metadata, reading, editing and submission. Other users/sessions' jobs and the

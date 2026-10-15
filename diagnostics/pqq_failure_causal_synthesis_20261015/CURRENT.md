@@ -14,7 +14,10 @@ After actual completion, inspect FINAL_COLLECTION.json/EXECUTION.json and all25
 coverage before binding canonical_solvent/READY.md's matched continuation.
 The independently reviewed solvent adapter admits truthful bridged GPU receipts
 and preserves all native/component/calibration rules. No solvent job is submitted.
-Root owns execution; all scoped implementation/review agents are finished.
+Root owns execution. Implementation/review tasks are finished; Gauss now owns
+a metadata-only transfer inventory of the existing expanded135/Ca125 populations
+and reusable maps. No new transfer scoring is bound or submitted before the
+canonical result. Current5089 is the only owned molecular job.
 Actual delayed4910 contact callback is acknowledged; no results were rerun.
 
 The active user goal remains: "keep working until we get a conclusion and figure

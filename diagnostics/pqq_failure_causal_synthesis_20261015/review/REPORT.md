@@ -42,14 +42,24 @@ three-candidate pool, full composite changes are +20.883598kcal/mol at Ca4 and
 select relaxed_flip_Ca for Ca and relaxed_flip_La for La. Their resulting paired
 contrasts sit among their same-conditioning peers. Thus the old local search
 missed an energetically competitive alternative even with solvent included.
-Canonical Ca/La reference fidelity remains untested, so this is not yet a
-calibrated classifier improvement or an equilibrium-state determination.
+Saved-only summary5030 gives nine correct/one inconclusive to ten correct under
+the unchanged old bands, with substantially reduced within-conditioning spread.
+These are ten correlated structures of one consumed protein. Canonical Ca/La
+reference fidelity remains untested, so this is not yet a calibrated replacement
+classifier or an equilibrium-state determination. The uniform canonical search
+is executing separately; its solvent/calibration result is still unavailable.
 
 The long ND2–H bonds are a separate preparation limitation: archived diagnostics
 already traced such stretching to the generic H-builder potential. The current
-matched experiment retains them. A fixed-heavy-geometry sensitivity using actual
-ff19SB bond targets is being prepared to test whether this mechanism depends on
-that artifact; no causal effect of the bond-length repair is established yet.
+matched search retains them. Completed sensitivity5039 shortens only the two
+mapped physical Asn hydrogens to the ff19SB1.01Å target, preserving directions
+and every heavy atom. All12 endpoints complete. The four matched alternative-path
+responses change by0.51–1.30kcal/mol but remain strongly positive,31.0–32.6kcal/mol.
+Thus hydrogen preparation affects the magnitude but is not the sole cause of
+the alternative-basin response within this model. The Ca4 relaxed-path change
+exceeds the declared1kcal resolution; do not call it invariant. No optimization
+or solvent calculation followed the H projection, so it does not establish a
+repaired-H composite classifier or the precise MACE equilibrium N–H length.
 
 For MMOL1770, all six native DFT endpoints are now complete as energy diagnostics.
 Both methods choose the same metal-specific geometries. DFT reproduces a stronger
@@ -73,6 +83,8 @@ Evidence: [Asn orientation and contacts](../a0ac_asn_geometry_response/REPORT.md
 [full alternative-search result](../a0ac_asn_relaxation/FINAL_MACE_REPORT.md),
 [final named-contact evidence](../a0ac_asn_relaxation/contact_review/FINAL_REPORT.md),
 [hydrogen provenance](../a0ac_asn_relaxation/hydrogen_provenance.md),
+[completed hydrogen sensitivity](../a0ac_asn_relaxation/donor_H_sensitivity/RESULT_REVIEW.md),
+[complete solvent and old-band comparison](../a0ac_asn_relaxation/solvent/FINAL_REPORT.md),
 [complete MMOL reference](../mmol_reference/FINAL_REPORT.md),
 [closed PQQ pose probe](../pqq_pose/REPORT.md).
 
@@ -98,7 +110,7 @@ review; they are not physical error bars.
 
 | Exact source | Established result | Still unresolved |
 |---|---|---|
-| XoxF1 A0ACD6B9F2 Ca4, La class; 5.815 kcal/mol short under the preceding model | Wrong Ca becomes inconclusive; original accommodation helps by +12.176. The intact alternative Asn orientation and bounded relaxation add +20.883598 to the full composite paired contrast, putting it among same-conditioning peers. The named short H contact lengthens while oxygen-facing Asn persists. | Canonical fidelity/calibration remains untested and other short H contacts persist. Correctly called La4 shares the starting orientation and gains +19.290964, so orientation is not a sufficient failure/exclusion rule. Hydrogen-length sensitivity is still unrun. |
+| XoxF1 A0ACD6B9F2 Ca4, La class; 5.815 kcal/mol short under the preceding model | Wrong Ca becomes inconclusive; original accommodation helps by +12.176. The intact alternative Asn orientation and bounded relaxation add +20.883598 to the full composite paired contrast, putting it among same-conditioning peers and restoring its call under old bands. The named short H contact lengthens while oxygen-facing Asn persists. Shortening only the two inherited long N–H bonds preserves the large fixed-path vacuum response. | Canonical fidelity/calibration remains untested and other short H contacts persist. Correctly called La4 shares the starting orientation and gains +19.290964, so orientation is not a sufficient failure/exclusion rule. The H correction changes one path by1.301kcal/mol; reoptimized/solvent-corrected H sensitivity remains untested. |
 | XoxF4-2 MMOL1770 Ca0, La class; 0.812 short | Correct static origin becomes inconclusive after −4.186 accommodation, mostly MACE (−4.005). Ca proposal compresses Glu200 to 2.151 Å and reaches the movement bound; La does not. Complete same-geometry DFT gives a stronger Ca-directed pool response (−5.222), with the same winners. | Quantitative differences exceed the declared resolution on the pool and Ca path; electronic stability remains unqualified. Shared local representation, source/state/environment or calibration may still be inadequate. Ca1's extra-Asp experiment and La4's hydrogen repair concern different sources. |
 | ExaF C5AXV8 two-Ca4, La class; 0.196 short | Already inconclusive before the solvent change. Both metals select the same La proposal; no bound hit or distinctive gross geometry defect. | Fine energetics, occupancy/state or calibration coverage; no case-specific physical defect is established. Preserve abstention. |
 | ExaA Q9Z4J7 two-Ca3, Ca class; 1.191 short | Newly inconclusive with unchanged selections. Large donor response is reproduced by independent vacuum DFT. Metal/PQQ placement differs from same-condition peers. | Whether that source geometry or the shared dry/cofactor/environment representation is physically inappropriate. Tested simple repairs do not resolve it. |

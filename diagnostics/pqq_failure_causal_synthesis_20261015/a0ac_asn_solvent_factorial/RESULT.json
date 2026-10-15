@@ -1,0 +1,1998 @@
+{
+  "protocol": "A0AC_sample4_saved_geometry_vacuum_charge_native_ALPB_factorial_v1",
+  "terminal": true,
+  "declared_sources": 2,
+  "declared_metal_pairs": 4,
+  "declared_factorial_cells": 16,
+  "reused_diagonal_cells": 8,
+  "available_new_offdiagonal_cells": 8,
+  "available_metal_factorials": 4,
+  "axis_definition": {
+    "geometry0": "adaptive_La",
+    "geometry1": "amide_flip",
+    "charge0": "actual adaptive_La vacuum GFN2 charges",
+    "charge1": "actual amide_flip vacuum GFN2 charges",
+    "cell_ij": "geometry i, charge vector j"
+  },
+  "new_SCC_calls": 0,
+  "new_MACE_calls": 0,
+  "new_DFT_calls": 0,
+  "new_optimizations": 0,
+  "classification": null,
+  "new_calibration": false,
+  "interpretation": "Counterfactual fixed-distribution diagnostic: geometry includes Born/reaction geometry and HB/SASA weights, not pure cavity volume. Both paths and interaction retained; no unique attribution or physical-state validation.",
+  "rows": [
+    {
+      "case_id": "Ca4_Ca",
+      "source_case_id": "a0acd6b9f2-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "conditioning": "Ca",
+      "sample": 4,
+      "metal": "Ca",
+      "status": "available",
+      "decomposition": {
+        "diagonal_change": {
+          "coefficients": {
+            "11": 1,
+            "00": -1
+          },
+          "components_Eh": {
+            "Gelec": -0.012013461348905796,
+            "Ghb": -0.00027908754619420176,
+            "Gsasa": -8.001031928253112e-05,
+            "Gshift": 0.0
+          },
+          "total_Eh": -0.012372559214382529,
+          "components_kcal_mol": {
+            "Gelec": -7.538560811971206,
+            "Ghb": -0.17513007931227423,
+            "Gsasa": -0.05020723336755316,
+            "Gshift": 0.0
+          },
+          "total_kcal_mol": -7.763898124651034,
+          "conservative_bounds_Eh": {
+            "Gelec": 5.33826758647545e-07,
+            "Ghb": 4.2230856246223e-09,
+            "Gsasa": 2e-09,
+            "Gshift": 2e-09
+          },
+          "total_conservative_bound_Eh": 5.420498442721673e-07,
+          "component_informative_flags": {
+            "Gelec": true,
+            "Ghb": true,
+            "Gsasa": true,
+            "Gshift": true
+          },
+          "total_informative": true,
+          "informative_ceiling_kcal_mol": 0.0006275094739999999,
+          "precision_scope": "Conservative independent stored-charge rounding plus existing native allowance; false aggregate flags are retained, not hidden or relaxed"
+        },
+        "geometry_at_q0": {
+          "coefficients": {
+            "10": 1,
+            "00": -1
+          },
+          "components_Eh": {
+            "Gelec": -0.03638311665633576,
+            "Ghb": -6.892601169443055e-05,
+            "Gsasa": -8.001031928253112e-05,
+            "Gshift": 0.0
+          },
+          "total_Eh": -0.03653205298731272,
+          "components_kcal_mol": {
+            "Gelec": -22.830750395497887,
+            "Ghb": -0.04325172534328996,
+            "Gsasa": -0.05020723336755316,
+            "Gshift": 0.0
+          },
+          "total_kcal_mol": -22.92420935420873,
+          "conservative_bounds_Eh": {
+            "Gelec": 5.357933909315435e-07,
+            "Ghb": 4.2177969324350454e-09,
+            "Gsasa": 2e-09,
+            "Gshift": 2e-09
+          },
+          "total_conservative_bound_Eh": 5.440111878639785e-07,
+          "component_informative_flags": {
+            "Gelec": true,
+            "Ghb": true,
+            "Gsasa": true,
+            "Gshift": true
+          },
+          "total_informative": true,
+          "informative_ceiling_kcal_mol": 0.0006275094739999999,
+          "precision_scope": "Conservative independent stored-charge rounding plus existing native allowance; false aggregate flags are retained, not hidden or relaxed"
+        },
+        "charge_at_x1": {
+          "coefficients": {
+            "11": 1,
+            "10": -1
+          },
+          "components_Eh": {
+            "Gelec": 0.02436965530742996,
+            "Ghb": -0.0002101615344997712,
+            "Gsasa": 0.0,
+            "Gshift": 0.0
+          },
+          "total_Eh": 0.02415949377293019,
+          "components_kcal_mol": {
+            "Gelec": 15.292189583526682,
+            "Ghb": -0.13187835396898429,
+            "Gsasa": 0.0,
+            "Gshift": 0.0
+          },
+          "total_kcal_mol": 15.160311229557697,
+          "conservative_bounds_Eh": {
+            "Gelec": 5.350196283147796e-07,
+            "Ghb": 4.224864689825576e-09,
+            "Gsasa": 2e-09,
+            "Gshift": 2e-09
+          },
+          "total_conservative_bound_Eh": 5.432444930046052e-07,
+          "component_informative_flags": {
+            "Gelec": true,
+            "Ghb": true,
+            "Gsasa": true,
+            "Gshift": true
+          },
+          "total_informative": true,
+          "informative_ceiling_kcal_mol": 0.0006275094739999999,
+          "precision_scope": "Conservative independent stored-charge rounding plus existing native allowance; false aggregate flags are retained, not hidden or relaxed"
+        },
+        "charge_at_x0": {
+          "coefficients": {
+            "01": 1,
+            "00": -1
+          },
+          "components_Eh": {
+            "Gelec": 0.0040651036112552275,
+            "Ghb": -0.0002792245991001911,
+            "Gsasa": 0.0,
+            "Gshift": 0.0
+          },
+          "total_Eh": 0.0037858790121550363,
+          "components_kcal_mol": {
+            "Gelec": 2.550891028854268,
+            "Ghb": -0.17521608130922178,
+            "Gsasa": 0.0,
+            "Gshift": 0.0
+          },
+          "total_kcal_mol": 2.3756749475450465,
+          "conservative_bounds_Eh": {
+            "Gelec": 5.333232932561081e-07,
+            "Ghb": 4.222464432007898e-09,
+            "Gsasa": 2e-09,
+            "Gshift": 2e-09
+          },
+          "total_conservative_bound_Eh": 5.41545757688116e-07,
+          "component_informative_flags": {
+            "Gelec": true,
+            "Ghb": true,
+            "Gsasa": true,
+            "Gshift": true
+          },
+          "total_informative": true,
+          "informative_ceiling_kcal_mol": 0.0006275094739999999,
+          "precision_scope": "Conservative independent stored-charge rounding plus existing native allowance; false aggregate flags are retained, not hidden or relaxed"
+        },
+        "geometry_at_q1": {
+          "coefficients": {
+            "11": 1,
+            "01": -1
+          },
+          "components_Eh": {
+            "Gelec": -0.016078564960161024,
+            "Ghb": 1.3705290598936548e-07,
+            "Gsasa": -8.001031928253112e-05,
+            "Gshift": 0.0
+          },
+          "total_Eh": -0.016158438226537564,
+          "components_kcal_mol": {
+            "Gelec": -10.089451840825474,
+            "Ghb": 8.600199694755818e-05,
+            "Gsasa": -0.05020723336755316,
+            "Gshift": 0.0
+          },
+          "total_kcal_mol": -10.139573072196079,
+          "conservative_bounds_Eh": {
+            "Gelec": 5.325495306393442e-07,
+            "Ghb": 4.229532189398429e-09,
+            "Gsasa": 2e-09,
+            "Gshift": 2e-09
+          },
+          "total_conservative_bound_Eh": 5.407790628287426e-07,
+          "component_informative_flags": {
+            "Gelec": true,
+            "Ghb": true,
+            "Gsasa": true,
+            "Gshift": true
+          },
+          "total_informative": true,
+          "informative_ceiling_kcal_mol": 0.0006275094739999999,
+          "precision_scope": "Conservative independent stored-charge rounding plus existing native allowance; false aggregate flags are retained, not hidden or relaxed"
+        },
+        "interaction": {
+          "coefficients": {
+            "11": 1,
+            "10": -1,
+            "01": -1,
+            "00": 1
+          },
+          "components_Eh": {
+            "Gelec": 0.020304551696174733,
+            "Ghb": 6.906306460041992e-05,
+            "Gsasa": 0.0,
+            "Gshift": 0.0
+          },
+          "total_Eh": 0.020373614760775153,
+          "components_kcal_mol": {
+            "Gelec": 12.741298554672413,
+            "Ghb": 0.04333772734023752,
+            "Gsasa": 0.0,
+            "Gshift": 0.0
+          },
+          "total_kcal_mol": 12.78463628201265,
+          "conservative_bounds_Eh": {
+            "Gelec": 1.0683429215708877e-06,
+            "Ghb": 8.447329121833474e-09,
+            "Gsasa": 4e-09,
+            "Gshift": 4e-09
+          },
+          "total_conservative_bound_Eh": 1.084790250692721e-06,
+          "component_informative_flags": {
+            "Gelec": false,
+            "Ghb": true,
+            "Gsasa": true,
+            "Gshift": true
+          },
+          "total_informative": false,
+          "informative_ceiling_kcal_mol": 0.0006275094739999999,
+          "precision_scope": "Conservative independent stored-charge rounding plus existing native allowance; false aggregate flags are retained, not hidden or relaxed"
+        }
+      },
+      "closure_residuals_Eh": {
+        "geometry_then_charge": {
+          "Gelec": 0.0,
+          "Ghb": 0.0,
+          "Gsasa": 0.0,
+          "Gshift": 0.0
+        },
+        "charge_then_geometry": {
+          "Gelec": 0.0,
+          "Ghb": 0.0,
+          "Gsasa": 0.0,
+          "Gshift": 0.0
+        },
+        "interaction_geometry": {
+          "Gelec": 0.0,
+          "Ghb": 0.0,
+          "Gsasa": 0.0,
+          "Gshift": 0.0
+        },
+        "interaction_charge": {
+          "Gelec": 0.0,
+          "Ghb": 0.0,
+          "Gsasa": 0.0,
+          "Gshift": 0.0
+        }
+      },
+      "matrix": {
+        "00": {
+          "status": "available",
+          "reused": true,
+          "result": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/transfer_v1/tasks/native_715217e88fbd0f8ac5b7a35818e0d25271263a3860fd4a74dd8c3984f3879fd4/vacuum/RESULT.json",
+            "sha256": "b61e8655a003e503cba30761eb9d2120e467eba5669d2c2235fede827b1a1f37"
+          },
+          "components_Eh": {
+            "Gelec": -0.7184818244698995,
+            "Ghb": -0.019626220131166158,
+            "Gsasa": 0.014283237685971562,
+            "Gshift": 0.0010807596981354695
+          },
+          "rounding_bounds_Eh": {
+            "Gelec": 2.6630026063215444e-07,
+            "Ghb": 1.1080089336158844e-09
+          },
+          "G_Eh": -0.7227440472169586,
+          "precision": [
+            {
+              "component": "Gelec",
+              "rounding_bound_Eh": 2.6630026063215444e-07,
+              "tolerance_Eh": 2.6730026063215446e-07,
+              "informative": true
+            },
+            {
+              "component": "Ghb",
+              "rounding_bound_Eh": 1.1080089336158844e-09,
+              "tolerance_Eh": 2.1080089336158844e-09,
+              "informative": true
+            },
+            {
+              "component": "Gsasa",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            },
+            {
+              "component": "Gshift",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            }
+          ],
+          "printed_charge_sum_e": -3.999999950000001,
+          "historical_absolute_point_accepted": {
+            "vacuum": false,
+            "water": false
+          },
+          "diagonal_qualification": "Exact actual command/XYZ/charges/binary; raw four terms and bounds match saved replay"
+        },
+        "11": {
+          "status": "available",
+          "reused": true,
+          "result": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_rotamer_solvent_v1/execution/solvent/replay/tasks/a0acd6b9f2-pqq-la_model__conditioned_Ca__seed-1_sample-4__Ca__amide_flip/vacuum/RESULT.json",
+            "sha256": "60ad353bc47aa90575d28f3a980644dc4cc8fa67cde8485b72a043e551a9de60"
+          },
+          "components_Eh": {
+            "Gelec": -0.7304952858188053,
+            "Ghb": -0.01990530767736036,
+            "Gsasa": 0.01420322736668903,
+            "Gshift": 0.0010807596981354695
+          },
+          "rounding_bounds_Eh": {
+            "Gelec": 2.6552649801539056e-07,
+            "Ghb": 1.1150766910064157e-09
+          },
+          "G_Eh": -0.7351166064313411,
+          "precision": [
+            {
+              "component": "Gelec",
+              "rounding_bound_Eh": 2.6552649801539056e-07,
+              "tolerance_Eh": 2.665264980153906e-07,
+              "informative": true
+            },
+            {
+              "component": "Ghb",
+              "rounding_bound_Eh": 1.1150766910064157e-09,
+              "tolerance_Eh": 2.115076691006416e-09,
+              "informative": true
+            },
+            {
+              "component": "Gsasa",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            },
+            {
+              "component": "Gshift",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            }
+          ],
+          "printed_charge_sum_e": -4.000000069999999,
+          "historical_absolute_point_accepted": {
+            "vacuum": false,
+            "water": false
+          },
+          "diagonal_qualification": "Exact actual command/XYZ/charges/binary; raw four terms and bounds match saved replay"
+        },
+        "01": {
+          "status": "available",
+          "reused": false,
+          "result": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_solvent_factorial_v1/execution/tasks/Ca4_Ca__01/RESULT.json",
+            "sha256": "20a895f34ade8a7165c8f4c829bf313dffad04b431b709a7c855e4830306449f"
+          },
+          "components_Eh": {
+            "Gelec": -0.7144167208586443,
+            "Ghb": -0.01990544473026635,
+            "Gsasa": 0.014283237685971562,
+            "Gshift": 0.0010807596981354695
+          },
+          "rounding_bounds_Eh": {
+            "Gelec": 2.650230326239536e-07,
+            "Ghb": 1.1144554983920135e-09
+          },
+          "G_Eh": -0.7189581682048036,
+          "precision": [
+            {
+              "component": "Gelec",
+              "rounding_bound_Eh": 2.650230326239536e-07,
+              "tolerance_Eh": 2.660230326239536e-07,
+              "informative": true
+            },
+            {
+              "component": "Ghb",
+              "rounding_bound_Eh": 1.1144554983920135e-09,
+              "tolerance_Eh": 2.1144554983920134e-09,
+              "informative": true
+            },
+            {
+              "component": "Gsasa",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            },
+            {
+              "component": "Gshift",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            }
+          ],
+          "printed_charge_sum_e": -4.000000069999999,
+          "geometry_owner": "adaptive_La",
+          "charge_owner": "amide_flip",
+          "geometry_native_input": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/transfer_v1/tasks/native_715217e88fbd0f8ac5b7a35818e0d25271263a3860fd4a74dd8c3984f3879fd4/RESULT.json",
+            "sha256": "d7cb9046d03778f0173447da29ff5257bde1a08ae38c2a0b09e0dc6a99dba913"
+          },
+          "charge_native_input": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_rotamer_solvent_v1/execution/solvent/replay/tasks/a0acd6b9f2-pqq-la_model__conditioned_Ca__seed-1_sample-4__Ca__amide_flip/RESULT.json",
+            "sha256": "d998c8f647cea6feb2a5adf736a6ac3b53ae7a6e3e221a58f739207c5006a04e"
+          }
+        },
+        "10": {
+          "status": "available",
+          "reused": false,
+          "result": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_solvent_factorial_v1/execution/tasks/Ca4_Ca__10/RESULT.json",
+            "sha256": "517325e257a07a316e46c875f619d678bb662af73f934334c3dcbbed37887bfd"
+          },
+          "components_Eh": {
+            "Gelec": -0.7548649411262353,
+            "Ghb": -0.019695146142860588,
+            "Gsasa": 0.01420322736668903,
+            "Gshift": 0.0010807596981354695
+          },
+          "rounding_bounds_Eh": {
+            "Gelec": 2.67493130299389e-07,
+            "Ghb": 1.1097879988191607e-09
+          },
+          "G_Eh": -0.7592761002042714,
+          "precision": [
+            {
+              "component": "Gelec",
+              "rounding_bound_Eh": 2.67493130299389e-07,
+              "tolerance_Eh": 2.68493130299389e-07,
+              "informative": true
+            },
+            {
+              "component": "Ghb",
+              "rounding_bound_Eh": 1.1097879988191607e-09,
+              "tolerance_Eh": 2.1097879988191606e-09,
+              "informative": true
+            },
+            {
+              "component": "Gsasa",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            },
+            {
+              "component": "Gshift",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            }
+          ],
+          "printed_charge_sum_e": -3.999999950000001,
+          "geometry_owner": "amide_flip",
+          "charge_owner": "adaptive_La",
+          "geometry_native_input": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_rotamer_solvent_v1/execution/solvent/replay/tasks/a0acd6b9f2-pqq-la_model__conditioned_Ca__seed-1_sample-4__Ca__amide_flip/RESULT.json",
+            "sha256": "d998c8f647cea6feb2a5adf736a6ac3b53ae7a6e3e221a58f739207c5006a04e"
+          },
+          "charge_native_input": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/transfer_v1/tasks/native_715217e88fbd0f8ac5b7a35818e0d25271263a3860fd4a74dd8c3984f3879fd4/RESULT.json",
+            "sha256": "d7cb9046d03778f0173447da29ff5257bde1a08ae38c2a0b09e0dc6a99dba913"
+          }
+        }
+      }
+    },
+    {
+      "case_id": "Ca4_La",
+      "source_case_id": "a0acd6b9f2-pqq-la_model__conditioned_Ca__seed-1_sample-4",
+      "conditioning": "Ca",
+      "sample": 4,
+      "metal": "La",
+      "status": "available",
+      "decomposition": {
+        "diagonal_change": {
+          "coefficients": {
+            "11": 1,
+            "00": -1
+          },
+          "components_Eh": {
+            "Gelec": -0.014788638369492457,
+            "Ghb": -0.0002978955555195638,
+            "Gsasa": -7.501924962656677e-05,
+            "Gshift": 0.0
+          },
+          "total_Eh": -0.015161553174638588,
+          "components_kcal_mol": {
+            "Gelec": -9.280010684416428,
+            "Ghb": -0.18693228335101925,
+            "Gsasa": -0.047075289873041604,
+            "Gshift": 0.0
+          },
+          "total_kcal_mol": -9.51401825764049,
+          "conservative_bounds_Eh": {
+            "Gelec": 4.019196252569129e-07,
+            "Ghb": 4.342640247911971e-09,
+            "Gsasa": 2e-09,
+            "Gshift": 2e-09
+          },
+          "total_conservative_bound_Eh": 4.1026226550482484e-07,
+          "component_informative_flags": {
+            "Gelec": true,
+            "Ghb": true,
+            "Gsasa": true,
+            "Gshift": true
+          },
+          "total_informative": true,
+          "informative_ceiling_kcal_mol": 0.0006275094739999999,
+          "precision_scope": "Conservative independent stored-charge rounding plus existing native allowance; false aggregate flags are retained, not hidden or relaxed"
+        },
+        "geometry_at_q0": {
+          "coefficients": {
+            "10": 1,
+            "00": -1
+          },
+          "components_Eh": {
+            "Gelec": -0.03978828629713943,
+            "Ghb": -9.346181527841724e-05,
+            "Gsasa": -7.501924962656677e-05,
+            "Gshift": 0.0
+          },
+          "total_Eh": -0.03995676736204441,
+          "components_kcal_mol": {
+            "Gelec": -24.96752660567937,
+            "Ghb": -0.05864817454444476,
+            "Gsasa": -0.047075289873041604,
+            "Gshift": 0.0
+          },
+          "total_kcal_mol": -25.073250070096854,
+          "conservative_bounds_Eh": {
+            "Gelec": 4.0384828482011395e-07,
+            "Ghb": 4.341824016073659e-09,
+            "Gsasa": 2e-09,
+            "Gshift": 2e-09
+          },
+          "total_conservative_bound_Eh": 4.121901088361876e-07,
+          "component_informative_flags": {
+            "Gelec": true,
+            "Ghb": true,
+            "Gsasa": true,
+            "Gshift": true
+          },
+          "total_informative": true,
+          "informative_ceiling_kcal_mol": 0.0006275094739999999,
+          "precision_scope": "Conservative independent stored-charge rounding plus existing native allowance; false aggregate flags are retained, not hidden or relaxed"
+        },
+        "charge_at_x1": {
+          "coefficients": {
+            "11": 1,
+            "10": -1
+          },
+          "components_Eh": {
+            "Gelec": 0.024999647927646973,
+            "Ghb": -0.00020443374024114655,
+            "Gsasa": 0.0,
+            "Gshift": 0.0
+          },
+          "total_Eh": 0.024795214187405826,
+          "components_kcal_mol": {
+            "Gelec": 15.687515921262941,
+            "Ghb": -0.12828410880657448,
+            "Gsasa": 0.0,
+            "Gshift": 0.0
+          },
+          "total_kcal_mol": 15.559231812456366,
+          "conservative_bounds_Eh": {
+            "Gelec": 4.045881709906326e-07,
+            "Ghb": 4.344435541070395e-09,
+            "Gsasa": 2e-09,
+            "Gshift": 2e-09
+          },
+          "total_conservative_bound_Eh": 4.1293260653170297e-07,
+          "component_informative_flags": {
+            "Gelec": true,
+            "Ghb": true,
+            "Gsasa": true,
+            "Gshift": true
+          },
+          "total_informative": true,
+          "informative_ceiling_kcal_mol": 0.0006275094739999999,
+          "precision_scope": "Conservative independent stored-charge rounding plus existing native allowance; false aggregate flags are retained, not hidden or relaxed"
+        },
+        "charge_at_x0": {
+          "coefficients": {
+            "01": 1,
+            "00": -1
+          },
+          "components_Eh": {
+            "Gelec": 0.0032296834210205905,
+            "Ghb": -0.0002806346504661064,
+            "Gsasa": 0.0,
+            "Gshift": 0.0
+          },
+          "total_Eh": 0.002949048770554484,
+          "components_kcal_mol": {
+            "Gelec": 2.026656944711151,
+            "Ghb": -0.17610090190016028,
+            "Gsasa": 0.0,
+            "Gshift": 0.0
+          },
+          "total_kcal_mol": 1.8505560428109908,
+          "conservative_bounds_Eh": {
+            "Gelec": 4.0037725280608364e-07,
+            "Ghb": 4.341938067549013e-09,
+            "Gsasa": 2e-09,
+            "Gshift": 2e-09
+          },
+          "total_conservative_bound_Eh": 4.0871919087363264e-07,
+          "component_informative_flags": {
+            "Gelec": true,
+            "Ghb": true,
+            "Gsasa": true,
+            "Gshift": true
+          },
+          "total_informative": true,
+          "informative_ceiling_kcal_mol": 0.0006275094739999999,
+          "precision_scope": "Conservative independent stored-charge rounding plus existing native allowance; false aggregate flags are retained, not hidden or relaxed"
+        },
+        "geometry_at_q1": {
+          "coefficients": {
+            "11": 1,
+            "01": -1
+          },
+          "components_Eh": {
+            "Gelec": -0.018018321790513048,
+            "Ghb": -1.726090505345737e-05,
+            "Gsasa": -7.501924962656677e-05,
+            "Gshift": 0.0
+          },
+          "total_Eh": -0.018110601945193074,
+          "components_kcal_mol": {
+            "Gelec": -11.30666762912758,
+            "Ghb": -0.010831381450858976,
+            "Gsasa": -0.047075289873041604,
+            "Gshift": 0.0
+          },
+          "total_kcal_mol": -11.364574300451482,
+          "conservative_bounds_Eh": {
+            "Gelec": 4.011171389766023e-07,
+            "Ghb": 4.34454959254575e-09,
+            "Gsasa": 2e-09,
+            "Gshift": 2e-09
+          },
+          "total_conservative_bound_Eh": 4.09461688569148e-07,
+          "component_informative_flags": {
+            "Gelec": true,
+            "Ghb": true,
+            "Gsasa": true,
+            "Gshift": true
+          },
+          "total_informative": true,
+          "informative_ceiling_kcal_mol": 0.0006275094739999999,
+          "precision_scope": "Conservative independent stored-charge rounding plus existing native allowance; false aggregate flags are retained, not hidden or relaxed"
+        },
+        "interaction": {
+          "coefficients": {
+            "11": 1,
+            "10": -1,
+            "01": -1,
+            "00": 1
+          },
+          "components_Eh": {
+            "Gelec": 0.021769964506626382,
+            "Ghb": 7.620091022495987e-05,
+            "Gsasa": 0.0,
+            "Gshift": 0.0
+          },
+          "total_Eh": 0.021846165416851342,
+          "components_kcal_mol": {
+            "Gelec": 13.66085897655179,
+            "Ghb": 0.04781679309358578,
+            "Gsasa": 0.0,
+            "Gshift": 0.0
+          },
+          "total_kcal_mol": 13.708675769645376,
+          "conservative_bounds_Eh": {
+            "Gelec": 8.049654237967163e-07,
+            "Ghb": 8.686373608619408e-09,
+            "Gsasa": 4e-09,
+            "Gshift": 4e-09
+          },
+          "total_conservative_bound_Eh": 8.216517974053357e-07,
+          "component_informative_flags": {
+            "Gelec": true,
+            "Ghb": true,
+            "Gsasa": true,
+            "Gshift": true
+          },
+          "total_informative": true,
+          "informative_ceiling_kcal_mol": 0.0006275094739999999,
+          "precision_scope": "Conservative independent stored-charge rounding plus existing native allowance; false aggregate flags are retained, not hidden or relaxed"
+        }
+      },
+      "closure_residuals_Eh": {
+        "geometry_then_charge": {
+          "Gelec": 0.0,
+          "Ghb": 0.0,
+          "Gsasa": 0.0,
+          "Gshift": 0.0
+        },
+        "charge_then_geometry": {
+          "Gelec": 0.0,
+          "Ghb": 0.0,
+          "Gsasa": 0.0,
+          "Gshift": 0.0
+        },
+        "interaction_geometry": {
+          "Gelec": 0.0,
+          "Ghb": 0.0,
+          "Gsasa": 0.0,
+          "Gshift": 0.0
+        },
+        "interaction_charge": {
+          "Gelec": 0.0,
+          "Ghb": 0.0,
+          "Gsasa": 0.0,
+          "Gshift": 0.0
+        }
+      },
+      "matrix": {
+        "00": {
+          "status": "available",
+          "reused": true,
+          "result": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/transfer_v1/tasks/native_4c24fbba2073a528cb548121d3b6a8bb26b6ea63599b8c4ad2c4551dad0c9144/vacuum/RESULT.json",
+            "sha256": "80011c103201c6963357c7b244f3b94f07b5d8b0c8227c439eafab4fc680e6ea"
+          },
+          "components_Eh": {
+            "Gelec": -0.48200657175629896,
+            "Ghb": -0.019623004926869376,
+            "Gsasa": 0.014829273616479262,
+            "Gshift": 0.0010807596981354695
+          },
+          "rounding_bounds_Eh": {
+            "Gelec": 1.9958986954319712e-07,
+            "Ghb": 1.1700143614576173e-09
+          },
+          "G_Eh": -0.4857195433685536,
+          "precision": [
+            {
+              "component": "Gelec",
+              "rounding_bound_Eh": 1.9958986954319712e-07,
+              "tolerance_Eh": 2.0058986954319712e-07,
+              "informative": true
+            },
+            {
+              "component": "Ghb",
+              "rounding_bound_Eh": 1.1700143614576173e-09,
+              "tolerance_Eh": 2.170014361457617e-09,
+              "informative": true
+            },
+            {
+              "component": "Gsasa",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            },
+            {
+              "component": "Gshift",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            }
+          ],
+          "printed_charge_sum_e": -2.9999999500000003,
+          "historical_absolute_point_accepted": {
+            "vacuum": false,
+            "water": false
+          },
+          "diagonal_qualification": "Exact actual command/XYZ/charges/binary; raw four terms and bounds match saved replay"
+        },
+        "11": {
+          "status": "available",
+          "reused": true,
+          "result": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_rotamer_solvent_v1/execution/solvent/replay/tasks/a0acd6b9f2-pqq-la_model__conditioned_Ca__seed-1_sample-4__La__amide_flip/vacuum/RESULT.json",
+            "sha256": "01380cd3eb5ddeb520c13f263e39295e31ed889166f1a6b09b353098e0bad023"
+          },
+          "components_Eh": {
+            "Gelec": -0.4967952101257914,
+            "Ghb": -0.01992090048238894,
+            "Gsasa": 0.014754254366852695,
+            "Gshift": 0.0010807596981354695
+          },
+          "rounding_bounds_Eh": {
+            "Gelec": 2.0032975571371576e-07,
+            "Ghb": 1.1726258864543534e-09
+          },
+          "G_Eh": -0.5008810965431922,
+          "precision": [
+            {
+              "component": "Gelec",
+              "rounding_bound_Eh": 2.0032975571371576e-07,
+              "tolerance_Eh": 2.0132975571371576e-07,
+              "informative": true
+            },
+            {
+              "component": "Ghb",
+              "rounding_bound_Eh": 1.1726258864543534e-09,
+              "tolerance_Eh": 2.1726258864543534e-09,
+              "informative": true
+            },
+            {
+              "component": "Gsasa",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            },
+            {
+              "component": "Gshift",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            }
+          ],
+          "printed_charge_sum_e": -2.999999960000001,
+          "historical_absolute_point_accepted": {
+            "vacuum": false,
+            "water": false
+          },
+          "diagonal_qualification": "Exact actual command/XYZ/charges/binary; raw four terms and bounds match saved replay"
+        },
+        "01": {
+          "status": "available",
+          "reused": false,
+          "result": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_solvent_factorial_v1/execution/tasks/Ca4_La__01/RESULT.json",
+            "sha256": "91ee8c5f9f320755a7bd67b2fe32f602473daeb3898c47364afcfbddde94cff9"
+          },
+          "components_Eh": {
+            "Gelec": -0.47877688833527837,
+            "Ghb": -0.019903639577335482,
+            "Gsasa": 0.014829273616479262,
+            "Gshift": 0.0010807596981354695
+          },
+          "rounding_bounds_Eh": {
+            "Gelec": 1.9878738326288655e-07,
+            "Ghb": 1.1719237060913958e-09
+          },
+          "G_Eh": -0.48277049459799914,
+          "precision": [
+            {
+              "component": "Gelec",
+              "rounding_bound_Eh": 1.9878738326288655e-07,
+              "tolerance_Eh": 1.9978738326288655e-07,
+              "informative": true
+            },
+            {
+              "component": "Ghb",
+              "rounding_bound_Eh": 1.1719237060913958e-09,
+              "tolerance_Eh": 2.171923706091396e-09,
+              "informative": true
+            },
+            {
+              "component": "Gsasa",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            },
+            {
+              "component": "Gshift",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            }
+          ],
+          "printed_charge_sum_e": -2.999999960000001,
+          "geometry_owner": "adaptive_La",
+          "charge_owner": "amide_flip",
+          "geometry_native_input": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/transfer_v1/tasks/native_4c24fbba2073a528cb548121d3b6a8bb26b6ea63599b8c4ad2c4551dad0c9144/RESULT.json",
+            "sha256": "3e5164441df4e595ba5486682912de71e0ac4f825d482e2f123cc51de73875b5"
+          },
+          "charge_native_input": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_rotamer_solvent_v1/execution/solvent/replay/tasks/a0acd6b9f2-pqq-la_model__conditioned_Ca__seed-1_sample-4__La__amide_flip/RESULT.json",
+            "sha256": "ef8b2f01ea2791686878dd84f1abb92f4da1d0efbf3cad535b0f845e38e2ef24"
+          }
+        },
+        "10": {
+          "status": "available",
+          "reused": false,
+          "result": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_solvent_factorial_v1/execution/tasks/Ca4_La__10/RESULT.json",
+            "sha256": "166548d9451dca188051b3e269570315cd0fd15f54435682b42dffa5404c2174"
+          },
+          "components_Eh": {
+            "Gelec": -0.5217948580534384,
+            "Ghb": -0.019716466742147793,
+            "Gsasa": 0.014754254366852695,
+            "Gshift": 0.0010807596981354695
+          },
+          "rounding_bounds_Eh": {
+            "Gelec": 2.0225841527691684e-07,
+            "Ghb": 1.171809654616042e-09
+          },
+          "G_Eh": -0.5256763107305981,
+          "precision": [
+            {
+              "component": "Gelec",
+              "rounding_bound_Eh": 2.0225841527691684e-07,
+              "tolerance_Eh": 2.0325841527691683e-07,
+              "informative": true
+            },
+            {
+              "component": "Ghb",
+              "rounding_bound_Eh": 1.171809654616042e-09,
+              "tolerance_Eh": 2.1718096546160418e-09,
+              "informative": true
+            },
+            {
+              "component": "Gsasa",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            },
+            {
+              "component": "Gshift",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            }
+          ],
+          "printed_charge_sum_e": -2.9999999500000003,
+          "geometry_owner": "amide_flip",
+          "charge_owner": "adaptive_La",
+          "geometry_native_input": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_rotamer_solvent_v1/execution/solvent/replay/tasks/a0acd6b9f2-pqq-la_model__conditioned_Ca__seed-1_sample-4__La__amide_flip/RESULT.json",
+            "sha256": "ef8b2f01ea2791686878dd84f1abb92f4da1d0efbf3cad535b0f845e38e2ef24"
+          },
+          "charge_native_input": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/transfer_v1/tasks/native_4c24fbba2073a528cb548121d3b6a8bb26b6ea63599b8c4ad2c4551dad0c9144/RESULT.json",
+            "sha256": "3e5164441df4e595ba5486682912de71e0ac4f825d482e2f123cc51de73875b5"
+          }
+        }
+      }
+    },
+    {
+      "case_id": "La4_Ca",
+      "source_case_id": "a0acd6b9f2-pqq-la_model__conditioned_La__seed-1_sample-4",
+      "conditioning": "La",
+      "sample": 4,
+      "metal": "Ca",
+      "status": "available",
+      "decomposition": {
+        "diagonal_change": {
+          "coefficients": {
+            "11": 1,
+            "00": -1
+          },
+          "components_Eh": {
+            "Gelec": -0.010427138108986433,
+            "Ghb": -0.00026889034139828544,
+            "Gsasa": -5.7394971057393024e-05,
+            "Gshift": 0.0
+          },
+          "total_Eh": -0.010753423421442112,
+          "components_kcal_mol": {
+            "Gelec": -6.543127950095431,
+            "Ghb": -0.1687312366945185,
+            "Gsasa": -0.036015888098469916,
+            "Gshift": 0.0
+          },
+          "total_kcal_mol": -6.7478750748884195,
+          "conservative_bounds_Eh": {
+            "Gelec": 5.3540469935533e-07,
+            "Ghb": 4.269537350009001e-09,
+            "Gsasa": 2e-09,
+            "Gshift": 2e-09
+          },
+          "total_conservative_bound_Eh": 5.43674236705339e-07,
+          "component_informative_flags": {
+            "Gelec": true,
+            "Ghb": true,
+            "Gsasa": true,
+            "Gshift": true
+          },
+          "total_informative": true,
+          "informative_ceiling_kcal_mol": 0.0006275094739999999,
+          "precision_scope": "Conservative independent stored-charge rounding plus existing native allowance; false aggregate flags are retained, not hidden or relaxed"
+        },
+        "geometry_at_q0": {
+          "coefficients": {
+            "10": 1,
+            "00": -1
+          },
+          "components_Eh": {
+            "Gelec": -0.03642168004567181,
+            "Ghb": -0.00010204541421674623,
+            "Gsasa": -5.7394971057393024e-05,
+            "Gshift": 0.0
+          },
+          "total_Eh": -0.036581120430945954,
+          "components_kcal_mol": {
+            "Gelec": -22.854949287655813,
+            "Ghb": -0.06403446419926255,
+            "Gsasa": -0.036015888098469916,
+            "Gshift": 0.0
+          },
+          "total_kcal_mol": -22.95499963995355,
+          "conservative_bounds_Eh": {
+            "Gelec": 5.37283791004843e-07,
+            "Ghb": 4.266868482090594e-09,
+            "Gsasa": 2e-09,
+            "Gshift": 2e-09
+          },
+          "total_conservative_bound_Eh": 5.455506594869336e-07,
+          "component_informative_flags": {
+            "Gelec": true,
+            "Ghb": true,
+            "Gsasa": true,
+            "Gshift": true
+          },
+          "total_informative": true,
+          "informative_ceiling_kcal_mol": 0.0006275094739999999,
+          "precision_scope": "Conservative independent stored-charge rounding plus existing native allowance; false aggregate flags are retained, not hidden or relaxed"
+        },
+        "charge_at_x1": {
+          "coefficients": {
+            "11": 1,
+            "10": -1
+          },
+          "components_Eh": {
+            "Gelec": 0.025994541936685378,
+            "Ghb": -0.0001668449271815392,
+            "Gsasa": 0.0,
+            "Gshift": 0.0
+          },
+          "total_Eh": 0.02582769700950384,
+          "components_kcal_mol": {
+            "Gelec": 16.31182133756038,
+            "Ghb": -0.10469677249525595,
+            "Gsasa": 0.0,
+            "Gshift": 0.0
+          },
+          "total_kcal_mol": 16.207124565065126,
+          "conservative_bounds_Eh": {
+            "Gelec": 5.365620060690278e-07,
+            "Ghb": 4.271979912256296e-09,
+            "Gsasa": 2e-09,
+            "Gshift": 2e-09
+          },
+          "total_conservative_bound_Eh": 5.448339859812841e-07,
+          "component_informative_flags": {
+            "Gelec": true,
+            "Ghb": true,
+            "Gsasa": true,
+            "Gshift": true
+          },
+          "total_informative": true,
+          "informative_ceiling_kcal_mol": 0.0006275094739999999,
+          "precision_scope": "Conservative independent stored-charge rounding plus existing native allowance; false aggregate flags are retained, not hidden or relaxed"
+        },
+        "charge_at_x0": {
+          "coefficients": {
+            "01": 1,
+            "00": -1
+          },
+          "components_Eh": {
+            "Gelec": 0.005331863217701516,
+            "Ghb": -0.0002468323009692658,
+            "Gsasa": 0.0,
+            "Gshift": 0.0
+          },
+          "total_Eh": 0.00508503091673225,
+          "components_kcal_mol": {
+            "Gelec": 3.3457946831798253,
+            "Ghb": -0.15488960734743365,
+            "Gsasa": 0.0,
+            "Gshift": 0.0
+          },
+          "total_kcal_mol": 3.190905075832392,
+          "conservative_bounds_Eh": {
+            "Gelec": 5.349701141629509e-07,
+            "Ghb": 4.26829013121549e-09,
+            "Gsasa": 2e-09,
+            "Gshift": 2e-09
+          },
+          "total_conservative_bound_Eh": 5.432384042941664e-07,
+          "component_informative_flags": {
+            "Gelec": true,
+            "Ghb": true,
+            "Gsasa": true,
+            "Gshift": true
+          },
+          "total_informative": true,
+          "informative_ceiling_kcal_mol": 0.0006275094739999999,
+          "precision_scope": "Conservative independent stored-charge rounding plus existing native allowance; false aggregate flags are retained, not hidden or relaxed"
+        },
+        "geometry_at_q1": {
+          "coefficients": {
+            "11": 1,
+            "01": -1
+          },
+          "components_Eh": {
+            "Gelec": -0.01575900132668795,
+            "Ghb": -2.2058040429019654e-05,
+            "Gsasa": -5.7394971057393024e-05,
+            "Gshift": 0.0
+          },
+          "total_Eh": -0.015838454338174362,
+          "components_kcal_mol": {
+            "Gelec": -9.888922633275257,
+            "Ghb": -0.013841629347084857,
+            "Gsasa": -0.036015888098469916,
+            "Gshift": 0.0
+          },
+          "total_kcal_mol": -9.938780150720811,
+          "conservative_bounds_Eh": {
+            "Gelec": 5.342483292271357e-07,
+            "Ghb": 4.273401561381192e-09,
+            "Gsasa": 2e-09,
+            "Gshift": 2e-09
+          },
+          "total_conservative_bound_Eh": 5.425217307885169e-07,
+          "component_informative_flags": {
+            "Gelec": true,
+            "Ghb": true,
+            "Gsasa": true,
+            "Gshift": true
+          },
+          "total_informative": true,
+          "informative_ceiling_kcal_mol": 0.0006275094739999999,
+          "precision_scope": "Conservative independent stored-charge rounding plus existing native allowance; false aggregate flags are retained, not hidden or relaxed"
+        },
+        "interaction": {
+          "coefficients": {
+            "11": 1,
+            "10": -1,
+            "01": -1,
+            "00": 1
+          },
+          "components_Eh": {
+            "Gelec": 0.020662678718983862,
+            "Ghb": 7.998737378772658e-05,
+            "Gsasa": 0.0,
+            "Gshift": 0.0
+          },
+          "total_Eh": 0.02074266609277159,
+          "components_kcal_mol": {
+            "Gelec": 12.966026654380556,
+            "Ghb": 0.05019283485217769,
+            "Gsasa": 0.0,
+            "Gshift": 0.0
+          },
+          "total_kcal_mol": 13.016219489232734,
+          "conservative_bounds_Eh": {
+            "Gelec": 1.0715321202319787e-06,
+            "Ghb": 8.540270043471786e-09,
+            "Gsasa": 4e-09,
+            "Gshift": 4e-09
+          },
+          "total_conservative_bound_Eh": 1.0880723902754505e-06,
+          "component_informative_flags": {
+            "Gelec": false,
+            "Ghb": true,
+            "Gsasa": true,
+            "Gshift": true
+          },
+          "total_informative": false,
+          "informative_ceiling_kcal_mol": 0.0006275094739999999,
+          "precision_scope": "Conservative independent stored-charge rounding plus existing native allowance; false aggregate flags are retained, not hidden or relaxed"
+        }
+      },
+      "closure_residuals_Eh": {
+        "geometry_then_charge": {
+          "Gelec": 0.0,
+          "Ghb": 0.0,
+          "Gsasa": 0.0,
+          "Gshift": 0.0
+        },
+        "charge_then_geometry": {
+          "Gelec": 0.0,
+          "Ghb": 0.0,
+          "Gsasa": 0.0,
+          "Gshift": 0.0
+        },
+        "interaction_geometry": {
+          "Gelec": 0.0,
+          "Ghb": 0.0,
+          "Gsasa": 0.0,
+          "Gshift": 0.0
+        },
+        "interaction_charge": {
+          "Gelec": 0.0,
+          "Ghb": 0.0,
+          "Gsasa": 0.0,
+          "Gshift": 0.0
+        }
+      },
+      "matrix": {
+        "00": {
+          "status": "available",
+          "reused": true,
+          "result": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/transfer_v1/tasks/native_3b244a7d5e3dd365ab220627aa0f79e6ffb490db7265ccca91286bc19a08850b/vacuum/RESULT.json",
+            "sha256": "300f3f9707b6da1ffe264ac24014ed944b4b17abf24cb35e85f67eb129f5c439"
+          },
+          "components_Eh": {
+            "Gelec": -0.7173528644867875,
+            "Ghb": -0.020245597530361932,
+            "Gsasa": 0.014036711332403572,
+            "Gshift": 0.0010807596981354695
+          },
+          "rounding_bounds_Eh": {
+            "Gelec": 2.670632421455726e-07,
+            "Ghb": 1.1322129599216492e-09
+          },
+          "G_Eh": -0.7224809909866103,
+          "precision": [
+            {
+              "component": "Gelec",
+              "rounding_bound_Eh": 2.670632421455726e-07,
+              "tolerance_Eh": 2.680632421455726e-07,
+              "informative": true
+            },
+            {
+              "component": "Ghb",
+              "rounding_bound_Eh": 1.1322129599216492e-09,
+              "tolerance_Eh": 2.132212959921649e-09,
+              "informative": true
+            },
+            {
+              "component": "Gsasa",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            },
+            {
+              "component": "Gshift",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            }
+          ],
+          "printed_charge_sum_e": -3.9999999599999994,
+          "historical_absolute_point_accepted": {
+            "vacuum": false,
+            "water": false
+          },
+          "diagonal_qualification": "Exact actual command/XYZ/charges/binary; raw four terms and bounds match saved replay"
+        },
+        "11": {
+          "status": "available",
+          "reused": true,
+          "result": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_rotamer_solvent_v1/execution/solvent/replay/tasks/a0acd6b9f2-pqq-la_model__conditioned_La__seed-1_sample-4__Ca__amide_flip/vacuum/RESULT.json",
+            "sha256": "0f278574bfa904dba0769633e445a5c39bef0657a2b165d86c08190e74b3a31b"
+          },
+          "components_Eh": {
+            "Gelec": -0.7277800025957739,
+            "Ghb": -0.020514487871760217,
+            "Gsasa": 0.013979316361346179,
+            "Gshift": 0.0010807596981354695
+          },
+          "rounding_bounds_Eh": {
+            "Gelec": 2.6634145720975737e-07,
+            "Ghb": 1.1373243900873514e-09
+          },
+          "G_Eh": -0.7332344144080525,
+          "precision": [
+            {
+              "component": "Gelec",
+              "rounding_bound_Eh": 2.6634145720975737e-07,
+              "tolerance_Eh": 2.673414572097574e-07,
+              "informative": true
+            },
+            {
+              "component": "Ghb",
+              "rounding_bound_Eh": 1.1373243900873514e-09,
+              "tolerance_Eh": 2.1373243900873516e-09,
+              "informative": true
+            },
+            {
+              "component": "Gsasa",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            },
+            {
+              "component": "Gshift",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            }
+          ],
+          "printed_charge_sum_e": -4.000000010000001,
+          "historical_absolute_point_accepted": {
+            "vacuum": false,
+            "water": false
+          },
+          "diagonal_qualification": "Exact actual command/XYZ/charges/binary; raw four terms and bounds match saved replay"
+        },
+        "01": {
+          "status": "available",
+          "reused": false,
+          "result": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_solvent_factorial_v1/execution/tasks/La4_Ca__01/RESULT.json",
+            "sha256": "955b8f73702c1311b7b89b6f9c33d64f37f8c36b7d7606dcf8c9fd42feb3397c"
+          },
+          "components_Eh": {
+            "Gelec": -0.712021001269086,
+            "Ghb": -0.020492429831331198,
+            "Gsasa": 0.014036711332403572,
+            "Gshift": 0.0010807596981354695
+          },
+          "rounding_bounds_Eh": {
+            "Gelec": 2.659068720173783e-07,
+            "Ghb": 1.1360771712938406e-09
+          },
+          "G_Eh": -0.7173959600698782,
+          "precision": [
+            {
+              "component": "Gelec",
+              "rounding_bound_Eh": 2.659068720173783e-07,
+              "tolerance_Eh": 2.6690687201737834e-07,
+              "informative": true
+            },
+            {
+              "component": "Ghb",
+              "rounding_bound_Eh": 1.1360771712938406e-09,
+              "tolerance_Eh": 2.1360771712938407e-09,
+              "informative": true
+            },
+            {
+              "component": "Gsasa",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            },
+            {
+              "component": "Gshift",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            }
+          ],
+          "printed_charge_sum_e": -4.000000010000001,
+          "geometry_owner": "adaptive_La",
+          "charge_owner": "amide_flip",
+          "geometry_native_input": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/transfer_v1/tasks/native_3b244a7d5e3dd365ab220627aa0f79e6ffb490db7265ccca91286bc19a08850b/RESULT.json",
+            "sha256": "47a0e89d234567012a2a09adea3ed35db9f75ff15adabe653f479377d0508d0d"
+          },
+          "charge_native_input": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_rotamer_solvent_v1/execution/solvent/replay/tasks/a0acd6b9f2-pqq-la_model__conditioned_La__seed-1_sample-4__Ca__amide_flip/RESULT.json",
+            "sha256": "f93b83ae87bf88fd8c03f6ae49650eb5cc048fd46a434a90db52e2ae3e863e34"
+          }
+        },
+        "10": {
+          "status": "available",
+          "reused": false,
+          "result": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_solvent_factorial_v1/execution/tasks/La4_Ca__10/RESULT.json",
+            "sha256": "5cd938fe7dd0a3bf92651838c03ca9e800509cc4b15182437c47d8be180a2a78"
+          },
+          "components_Eh": {
+            "Gelec": -0.7537745445324593,
+            "Ghb": -0.02034764294457868,
+            "Gsasa": 0.013979316361346179,
+            "Gshift": 0.0010807596981354695
+          },
+          "rounding_bounds_Eh": {
+            "Gelec": 2.682205488592704e-07,
+            "Ghb": 1.1346555221689445e-09
+          },
+          "G_Eh": -0.7590621114175563,
+          "precision": [
+            {
+              "component": "Gelec",
+              "rounding_bound_Eh": 2.682205488592704e-07,
+              "tolerance_Eh": 2.692205488592704e-07,
+              "informative": true
+            },
+            {
+              "component": "Ghb",
+              "rounding_bound_Eh": 1.1346555221689445e-09,
+              "tolerance_Eh": 2.1346555221689445e-09,
+              "informative": true
+            },
+            {
+              "component": "Gsasa",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            },
+            {
+              "component": "Gshift",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            }
+          ],
+          "printed_charge_sum_e": -3.9999999599999994,
+          "geometry_owner": "amide_flip",
+          "charge_owner": "adaptive_La",
+          "geometry_native_input": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_rotamer_solvent_v1/execution/solvent/replay/tasks/a0acd6b9f2-pqq-la_model__conditioned_La__seed-1_sample-4__Ca__amide_flip/RESULT.json",
+            "sha256": "f93b83ae87bf88fd8c03f6ae49650eb5cc048fd46a434a90db52e2ae3e863e34"
+          },
+          "charge_native_input": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/transfer_v1/tasks/native_3b244a7d5e3dd365ab220627aa0f79e6ffb490db7265ccca91286bc19a08850b/RESULT.json",
+            "sha256": "47a0e89d234567012a2a09adea3ed35db9f75ff15adabe653f479377d0508d0d"
+          }
+        }
+      }
+    },
+    {
+      "case_id": "La4_La",
+      "source_case_id": "a0acd6b9f2-pqq-la_model__conditioned_La__seed-1_sample-4",
+      "conditioning": "La",
+      "sample": 4,
+      "metal": "La",
+      "status": "available",
+      "decomposition": {
+        "diagonal_change": {
+          "coefficients": {
+            "11": 1,
+            "00": -1
+          },
+          "components_Eh": {
+            "Gelec": -0.014822582015723562,
+            "Ghb": -0.0003414494438969927,
+            "Gsasa": -6.52669153364243e-05,
+            "Gshift": 0.0
+          },
+          "total_Eh": -0.01522929837495698,
+          "components_kcal_mol": {
+            "Gelec": -9.301310644008552,
+            "Ghb": -0.21426276093739438,
+            "Gsasa": -0.04095560771236214,
+            "Gshift": 0.0
+          },
+          "total_kcal_mol": -9.556529012658308,
+          "conservative_bounds_Eh": {
+            "Gelec": 4.0407260974399783e-07,
+            "Ghb": 4.3976693936566335e-09,
+            "Gsasa": 2e-09,
+            "Gshift": 2e-09
+          },
+          "total_conservative_bound_Eh": 4.1247027913765444e-07,
+          "component_informative_flags": {
+            "Gelec": true,
+            "Ghb": true,
+            "Gsasa": true,
+            "Gshift": true
+          },
+          "total_informative": true,
+          "informative_ceiling_kcal_mol": 0.0006275094739999999,
+          "precision_scope": "Conservative independent stored-charge rounding plus existing native allowance; false aggregate flags are retained, not hidden or relaxed"
+        },
+        "geometry_at_q0": {
+          "coefficients": {
+            "10": 1,
+            "00": -1
+          },
+          "components_Eh": {
+            "Gelec": -0.04041108825053785,
+            "Ghb": -0.0001274195645180401,
+            "Gsasa": -6.52669153364243e-05,
+            "Gshift": 0.0
+          },
+          "total_Eh": -0.04060377473039232,
+          "components_kcal_mol": {
+            "Gelec": -25.358340731862587,
+            "Ghb": -0.0799569839080244,
+            "Gsasa": -0.04095560771236214,
+            "Gshift": 0.0
+          },
+          "total_kcal_mol": -25.479253323482972,
+          "conservative_bounds_Eh": {
+            "Gelec": 4.058810420046793e-07,
+            "Ghb": 4.3976337674888925e-09,
+            "Gsasa": 2e-09,
+            "Gshift": 2e-09
+          },
+          "total_conservative_bound_Eh": 4.142786757721682e-07,
+          "component_informative_flags": {
+            "Gelec": true,
+            "Ghb": true,
+            "Gsasa": true,
+            "Gshift": true
+          },
+          "total_informative": true,
+          "informative_ceiling_kcal_mol": 0.0006275094739999999,
+          "precision_scope": "Conservative independent stored-charge rounding plus existing native allowance; false aggregate flags are retained, not hidden or relaxed"
+        },
+        "charge_at_x1": {
+          "coefficients": {
+            "11": 1,
+            "10": -1
+          },
+          "components_Eh": {
+            "Gelec": 0.02558850623481429,
+            "Ghb": -0.0002140298793789526,
+            "Gsasa": 0.0,
+            "Gshift": 0.0
+          },
+          "total_Eh": 0.025374476355435337,
+          "components_kcal_mol": {
+            "Gelec": 16.057030087854034,
+            "Ghb": -0.13430577702937,
+            "Gsasa": 0.0,
+            "Gshift": 0.0
+          },
+          "total_kcal_mol": 15.922724310824664,
+          "conservative_bounds_Eh": {
+            "Gelec": 4.066575030032644e-07,
+            "Ghb": 4.400010408532174e-09,
+            "Gsasa": 2e-09,
+            "Gshift": 2e-09
+          },
+          "total_conservative_bound_Eh": 4.150575134117966e-07,
+          "component_informative_flags": {
+            "Gelec": true,
+            "Ghb": true,
+            "Gsasa": true,
+            "Gshift": true
+          },
+          "total_informative": true,
+          "informative_ceiling_kcal_mol": 0.0006275094739999999,
+          "precision_scope": "Conservative independent stored-charge rounding plus existing native allowance; false aggregate flags are retained, not hidden or relaxed"
+        },
+        "charge_at_x0": {
+          "coefficients": {
+            "01": 1,
+            "00": -1
+          },
+          "components_Eh": {
+            "Gelec": 0.003887141414041173,
+            "Ghb": -0.0003011618804012392,
+            "Gsasa": 0.0,
+            "Gshift": 0.0
+          },
+          "total_Eh": 0.003585979533639934,
+          "components_kcal_mol": {
+            "Gelec": 2.4392180640885925,
+            "Ghb": -0.1889819331594325,
+            "Gsasa": 0.0,
+            "Gshift": 0.0
+          },
+          "total_kcal_mol": 2.25023613092916,
+          "conservative_bounds_Eh": {
+            "Gelec": 4.0259626085325716e-07,
+            "Ghb": 4.396406588659714e-09,
+            "Gsasa": 2e-09,
+            "Gshift": 2e-09
+          },
+          "total_conservative_bound_Eh": 4.109926674419169e-07,
+          "component_informative_flags": {
+            "Gelec": true,
+            "Ghb": true,
+            "Gsasa": true,
+            "Gshift": true
+          },
+          "total_informative": true,
+          "informative_ceiling_kcal_mol": 0.0006275094739999999,
+          "precision_scope": "Conservative independent stored-charge rounding plus existing native allowance; false aggregate flags are retained, not hidden or relaxed"
+        },
+        "geometry_at_q1": {
+          "coefficients": {
+            "11": 1,
+            "01": -1
+          },
+          "components_Eh": {
+            "Gelec": -0.018709723429764735,
+            "Ghb": -4.028756349575349e-05,
+            "Gsasa": -6.52669153364243e-05,
+            "Gshift": 0.0
+          },
+          "total_Eh": -0.01881527790859691,
+          "components_kcal_mol": {
+            "Gelec": -11.740528708097145,
+            "Ghb": -0.025280827777961874,
+            "Gsasa": -0.04095560771236214,
+            "Gshift": 0.0
+          },
+          "total_kcal_mol": -11.806765143587468,
+          "conservative_bounds_Eh": {
+            "Gelec": 4.033727218518423e-07,
+            "Ghb": 4.398783229702996e-09,
+            "Gsasa": 2e-09,
+            "Gshift": 2e-09
+          },
+          "total_conservative_bound_Eh": 4.117715050815453e-07,
+          "component_informative_flags": {
+            "Gelec": true,
+            "Ghb": true,
+            "Gsasa": true,
+            "Gshift": true
+          },
+          "total_informative": true,
+          "informative_ceiling_kcal_mol": 0.0006275094739999999,
+          "precision_scope": "Conservative independent stored-charge rounding plus existing native allowance; false aggregate flags are retained, not hidden or relaxed"
+        },
+        "interaction": {
+          "coefficients": {
+            "11": 1,
+            "10": -1,
+            "01": -1,
+            "00": 1
+          },
+          "components_Eh": {
+            "Gelec": 0.021701364820773117,
+            "Ghb": 8.71320010222866e-05,
+            "Gsasa": 0.0,
+            "Gshift": 0.0
+          },
+          "total_Eh": 0.021788496821795404,
+          "components_kcal_mol": {
+            "Gelec": 13.617812023765442,
+            "Ghb": 0.05467615613006253,
+            "Gsasa": 0.0,
+            "Gshift": 0.0
+          },
+          "total_kcal_mol": 13.672488179895504,
+          "conservative_bounds_Eh": {
+            "Gelec": 8.092537638565215e-07,
+            "Ghb": 8.79641699719189e-09,
+            "Gsasa": 4e-09,
+            "Gshift": 4e-09
+          },
+          "total_conservative_bound_Eh": 8.260501808537134e-07,
+          "component_informative_flags": {
+            "Gelec": true,
+            "Ghb": true,
+            "Gsasa": true,
+            "Gshift": true
+          },
+          "total_informative": true,
+          "informative_ceiling_kcal_mol": 0.0006275094739999999,
+          "precision_scope": "Conservative independent stored-charge rounding plus existing native allowance; false aggregate flags are retained, not hidden or relaxed"
+        }
+      },
+      "closure_residuals_Eh": {
+        "geometry_then_charge": {
+          "Gelec": 0.0,
+          "Ghb": 0.0,
+          "Gsasa": 0.0,
+          "Gshift": 0.0
+        },
+        "charge_then_geometry": {
+          "Gelec": 0.0,
+          "Ghb": 0.0,
+          "Gsasa": 0.0,
+          "Gshift": 0.0
+        },
+        "interaction_geometry": {
+          "Gelec": 0.0,
+          "Ghb": 0.0,
+          "Gsasa": 0.0,
+          "Gshift": 0.0
+        },
+        "interaction_charge": {
+          "Gelec": 0.0,
+          "Ghb": 0.0,
+          "Gsasa": 0.0,
+          "Gshift": 0.0
+        }
+      },
+      "matrix": {
+        "00": {
+          "status": "available",
+          "reused": true,
+          "result": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/transfer_v1/tasks/native_de2bf9641be5a3125d709fcbb9b360bb301e4b075a68acfb3ace8f386e053fd3/vacuum/RESULT.json",
+            "sha256": "af3157c485710e69295ba5674ca283ea6bc6df4c8b8436bbaf67267a862b2b79"
+          },
+          "components_Eh": {
+            "Gelec": -0.4841535537335583,
+            "Ghb": -0.020440308454731753,
+            "Gsasa": 0.014585548337067772,
+            "Gshift": 0.0010807596981354695
+          },
+          "rounding_bounds_Eh": {
+            "Gelec": 2.0064807437270634e-07,
+            "Ghb": 1.197646376306676e-09
+          },
+          "G_Eh": -0.4889275541530868,
+          "precision": [
+            {
+              "component": "Gelec",
+              "rounding_bound_Eh": 2.0064807437270634e-07,
+              "tolerance_Eh": 2.0164807437270634e-07,
+              "informative": true
+            },
+            {
+              "component": "Ghb",
+              "rounding_bound_Eh": 1.197646376306676e-09,
+              "tolerance_Eh": 2.197646376306676e-09,
+              "informative": true
+            },
+            {
+              "component": "Gsasa",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            },
+            {
+              "component": "Gshift",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            }
+          ],
+          "printed_charge_sum_e": -2.9999999100000005,
+          "historical_absolute_point_accepted": {
+            "vacuum": false,
+            "water": false
+          },
+          "diagonal_qualification": "Exact actual command/XYZ/charges/binary; raw four terms and bounds match saved replay"
+        },
+        "11": {
+          "status": "available",
+          "reused": true,
+          "result": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_rotamer_solvent_v1/execution/solvent/replay/tasks/a0acd6b9f2-pqq-la_model__conditioned_La__seed-1_sample-4__La__amide_flip/vacuum/RESULT.json",
+            "sha256": "e6aa6d48cda4ef9132d1e006704aa60b0ecb19acbd7c1cfe78beee35a2f39306"
+          },
+          "components_Eh": {
+            "Gelec": -0.49897613574928185,
+            "Ghb": -0.020781757898628746,
+            "Gsasa": 0.014520281421731347,
+            "Gshift": 0.0010807596981354695
+          },
+          "rounding_bounds_Eh": {
+            "Gelec": 2.014245353712915e-07,
+            "Ghb": 1.2000230173499573e-09
+          },
+          "G_Eh": -0.5041568525280438,
+          "precision": [
+            {
+              "component": "Gelec",
+              "rounding_bound_Eh": 2.014245353712915e-07,
+              "tolerance_Eh": 2.024245353712915e-07,
+              "informative": true
+            },
+            {
+              "component": "Ghb",
+              "rounding_bound_Eh": 1.2000230173499573e-09,
+              "tolerance_Eh": 2.2000230173499576e-09,
+              "informative": true
+            },
+            {
+              "component": "Gsasa",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            },
+            {
+              "component": "Gshift",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            }
+          ],
+          "printed_charge_sum_e": -3.0000000300000003,
+          "historical_absolute_point_accepted": {
+            "vacuum": false,
+            "water": false
+          },
+          "diagonal_qualification": "Exact actual command/XYZ/charges/binary; raw four terms and bounds match saved replay"
+        },
+        "01": {
+          "status": "available",
+          "reused": false,
+          "result": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_solvent_factorial_v1/execution/tasks/La4_La__01/RESULT.json",
+            "sha256": "7b92100e5e4d6e789b74b00e6a6234510062beb90ec5628389e607c29ea10b87"
+          },
+          "components_Eh": {
+            "Gelec": -0.4802664123195171,
+            "Ghb": -0.020741470335132992,
+            "Gsasa": 0.014585548337067772,
+            "Gshift": 0.0010807596981354695
+          },
+          "rounding_bounds_Eh": {
+            "Gelec": 1.9994818648055083e-07,
+            "Ghb": 1.1987602123530383e-09
+          },
+          "G_Eh": -0.4853415746194469,
+          "precision": [
+            {
+              "component": "Gelec",
+              "rounding_bound_Eh": 1.9994818648055083e-07,
+              "tolerance_Eh": 2.0094818648055082e-07,
+              "informative": true
+            },
+            {
+              "component": "Ghb",
+              "rounding_bound_Eh": 1.1987602123530383e-09,
+              "tolerance_Eh": 2.1987602123530384e-09,
+              "informative": true
+            },
+            {
+              "component": "Gsasa",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            },
+            {
+              "component": "Gshift",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            }
+          ],
+          "printed_charge_sum_e": -3.0000000300000003,
+          "geometry_owner": "adaptive_La",
+          "charge_owner": "amide_flip",
+          "geometry_native_input": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/transfer_v1/tasks/native_de2bf9641be5a3125d709fcbb9b360bb301e4b075a68acfb3ace8f386e053fd3/RESULT.json",
+            "sha256": "3765260d7503155707e5f5a15d10d67fdb9573091013d4d899ee7de0964850de"
+          },
+          "charge_native_input": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_rotamer_solvent_v1/execution/solvent/replay/tasks/a0acd6b9f2-pqq-la_model__conditioned_La__seed-1_sample-4__La__amide_flip/RESULT.json",
+            "sha256": "2c8cf9ed86d9806fd224b3426f736eadd74165588e713bd520fe4282421ad640"
+          }
+        },
+        "10": {
+          "status": "available",
+          "reused": false,
+          "result": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_solvent_factorial_v1/execution/tasks/La4_La__10/RESULT.json",
+            "sha256": "1c52acc1e8613707ea27000a20830ae8973165388f7a1832f109bbe938d6e638"
+          },
+          "components_Eh": {
+            "Gelec": -0.5245646419840961,
+            "Ghb": -0.020567728019249793,
+            "Gsasa": 0.014520281421731347,
+            "Gshift": 0.0010807596981354695
+          },
+          "rounding_bounds_Eh": {
+            "Gelec": 2.0323296763197294e-07,
+            "Ghb": 1.1999873911822165e-09
+          },
+          "G_Eh": -0.5295313288834791,
+          "precision": [
+            {
+              "component": "Gelec",
+              "rounding_bound_Eh": 2.0323296763197294e-07,
+              "tolerance_Eh": 2.0423296763197294e-07,
+              "informative": true
+            },
+            {
+              "component": "Ghb",
+              "rounding_bound_Eh": 1.1999873911822165e-09,
+              "tolerance_Eh": 2.1999873911822166e-09,
+              "informative": true
+            },
+            {
+              "component": "Gsasa",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            },
+            {
+              "component": "Gshift",
+              "rounding_bound_Eh": 0.0,
+              "tolerance_Eh": 1e-09,
+              "informative": true
+            }
+          ],
+          "printed_charge_sum_e": -2.9999999100000005,
+          "geometry_owner": "amide_flip",
+          "charge_owner": "adaptive_La",
+          "geometry_native_input": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_rotamer_solvent_v1/execution/solvent/replay/tasks/a0acd6b9f2-pqq-la_model__conditioned_La__seed-1_sample-4__La__amide_flip/RESULT.json",
+            "sha256": "2c8cf9ed86d9806fd224b3426f736eadd74165588e713bd520fe4282421ad640"
+          },
+          "charge_native_input": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/transfer_v1/tasks/native_de2bf9641be5a3125d709fcbb9b360bb301e4b075a68acfb3ace8f386e053fd3/RESULT.json",
+            "sha256": "3765260d7503155707e5f5a15d10d67fdb9573091013d4d899ee7de0964850de"
+          }
+        }
+      }
+    }
+  ],
+  "evidence": {
+    "manifest": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_solvent_factorial_v1/manifest.json",
+      "sha256": "e3bd63c88a56fadb81687ae637cfc06518087c4c67bdc48880b4290a77c9bed4"
+    },
+    "collection": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_solvent_factorial_v1/execution/FINAL_COLLECTION.json",
+      "sha256": "d1a4a1fc158f6804e72a9110bfb1e45b6e148d7440a4ad454909ddc504266d55"
+    },
+    "preflight": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_solvent_factorial_v1/execution/PREFLIGHT.json",
+      "sha256": "018963edf7d0b4d41db0a1b2b397c2a1dd8eb6c79abded0784c01efea82ff24a"
+    },
+    "execution": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_solvent_factorial_v1/execution/EXECUTION.json",
+      "sha256": "d2863f91f9343b5864ec3cf693a369808a633decabf00f2544f972cd222324a0"
+    },
+    "partial": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_solvent_factorial_v1/execution/PARTIAL_RESULTS.json",
+      "sha256": "b564cf588ec3d87070241b517f626c7f408e5ff2d6410d6bc7fad61386970197"
+    },
+    "submission": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_solvent_factorial_v1/SUBMISSION.json",
+      "sha256": "200c58439d719714b95f5de5fbbe93ae277c843c29c4f691a7cacb5630bf8b0c"
+    }
+  },
+  "qualification": {
+    "status": "passed",
+    "reused_diagonals": 8,
+    "diagonal_qualification": "Eight actual saved binary executions verified and reparsed; no synthetic diagonal or duplicate native call"
+  },
+  "cost": {
+    "status": "complete",
+    "manifest": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_solvent_factorial_v1/manifest.json",
+      "sha256": "e3bd63c88a56fadb81687ae637cfc06518087c4c67bdc48880b4290a77c9bed4"
+    },
+    "new_SCC_calls": 0,
+    "new_MACE_calls": 0,
+    "new_DFT_calls": 0,
+    "new_optimizations": 0,
+    "elapsed_seconds": 4.417345321038738,
+    "parent_process_CPU_seconds": 2.018821777,
+    "actual_native_execution_receipts": [
+      {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_solvent_factorial_v1/execution/tasks/Ca4_Ca__01/native_EXECUTION.json",
+        "sha256": "1df9ef9a0ea9742d475305955ee5fba9852ac69cb13374368ccc84ccb98d5d0c"
+      },
+      {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_solvent_factorial_v1/execution/tasks/Ca4_Ca__10/native_EXECUTION.json",
+        "sha256": "3d938fb36a80f18c04f0772d93bee16ba19d71959173994f9542e9bf5296cc12"
+      },
+      {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_solvent_factorial_v1/execution/tasks/Ca4_La__01/native_EXECUTION.json",
+        "sha256": "9401e0837fe2c7ccf0a8255b590cb572c043628be2fdfe2bc7a3c79b260026f3"
+      },
+      {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_solvent_factorial_v1/execution/tasks/Ca4_La__10/native_EXECUTION.json",
+        "sha256": "937058ca35fc0d48617d23906b5c99865dda0dd2fdc0195a5ee31d46a34624a9"
+      },
+      {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_solvent_factorial_v1/execution/tasks/La4_Ca__01/native_EXECUTION.json",
+        "sha256": "ec96972f7ae783afba7aa2f124807d0d9bc482fef5dfda7e0e24398f8d2f8d17"
+      },
+      {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_solvent_factorial_v1/execution/tasks/La4_Ca__10/native_EXECUTION.json",
+        "sha256": "a0ab520ef3c4c1af5e179a27ca6a0f9e395b01b14f8dbaf5778a5785096ac2fc"
+      },
+      {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_solvent_factorial_v1/execution/tasks/La4_La__01/native_EXECUTION.json",
+        "sha256": "fb1fdadfdcd58b74d164c33a4ace3f854111762ccc6e4ec51640d8535d92344e"
+      },
+      {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_solvent_factorial_v1/execution/tasks/La4_La__10/native_EXECUTION.json",
+        "sha256": "5fa451f84e37bac1177bf4ff686a0e308186c628a712e1d16940c5482cacf64f"
+      }
+    ],
+    "new_native_calls": 8,
+    "new_diagonal_calls": 0,
+    "reused_diagonals": 8
+  },
+  "terminal_sacct": "JobID|State|ExitCode|ElapsedRaw|AllocCPUS|TotalCPU|MaxRSS|NodeList\n4813|COMPLETED|0:0|4|1|00:02.623||node-64-768g-2\n4813.batch|COMPLETED|0:0|4|1|00:02.623|177188K|node-64-768g-2\n",
+  "interpretation_limits": [
+    "The geometry axis changes complete saved adaptive_La coordinates to the origin-derived amide_flip; it is not an isolated Asn-atom intervention.",
+    "Geometry includes Born/reaction geometry and geometric HB/SASA weights, not cavity volume alone.",
+    "Both paths and the mixed term are retained; charge redistribution opposes the geometric benefit under this model but attribution magnitude is path-dependent.",
+    "Crossed charge vectors are diagnostics, not new self-consistent electronic states.",
+    "Both Ca-metal mixed-term aggregate precision flags fail the unchanged ceiling; individual cells and two-cell differences remain qualified.",
+    "Dry oxidized PQQ, capped representation and unrelaxed represented H contacts remain unchanged; no physical minimum, affinity or classification claim."
+  ],
+  "export_method": "Exact saved Slurm fields copied; no numerical scientific recomputation for reporting",
+  "reporting_new_calls": 0
+}

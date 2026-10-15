@@ -49,8 +49,15 @@ Current bounded tasks:
   ASN_ROTAMER_PLAN.md declares a separate whole-amide180degree origin flip across
   allten sources, source-graph/covalent/fullsourceH+heavy checks first. Curie owns
   a0ac_asn_rotamer preparation, Heisenberg mapping review, Gauss count-aware204atom
-  MACE scoring. At most20new cells plus60existing baselines; no energy submitted.
-  The old0.8domain is not relaxed or retrospectively passed. Root owns submissions.
+  MACE scoring. Preparation4614 completed20/20 on1CPU (about5s), manifestae418440
+  in asn_rotamer_preparation_v1. Root reviewed actual covalent/maps/fullsource
+  contacts: omitted-source nearest heavy4.48–5.27A,H2.74–3.90A; local shortH
+  contacts remain represented in the204atom scoring context, not repaired.
+  Warm MACE4617 is submitted7CPU, config5d5cd000 in asn_rotamer_scoring_v1,
+  watcher3440967. Exact commands/receipts are in SUBMISSION.json. At most20new
+  cells and60reused baselines. Solvent continuation requires actual frozen
+  absolute1kcal paired-change gate; no automatic class/band change. The old0.8
+  domain is not relaxed or retrospectively passed. Root owns submissions.
 
 All scientific preparation/analysis/calculation runs on Slurm. Login-host work
 is metadata, reading, editing and submission. Other users/sessions' jobs and the

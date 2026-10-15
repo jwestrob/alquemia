@@ -15,7 +15,11 @@ a delivery ACK. Next ASN_ROTAMER_PLAN.md declares a finite whole-amide180degree
 alternative across allten XoxF1 origins. Inventory shows nearbyND2/distantOD1 in
 both sample4 sources, with both localAsn modes already present. One source is
 correctly called, so orientation alone is not a defect diagnosis. Agents prepare
-sourcegraph/fullsourceHcontact admission and204atom scoring; no energy submitted.
+sourcegraph/fullsourceHcontact admission and204atom scoring. Preparation4614
+completed20/20; omitted-source contacts reviewed, local shortH contacts retained
+in the204atom energy model. Warm MACE4617 submitted7CPU, config5d5cd000 and
+watcher3440967 in asn_rotamer_scoring_v1/SUBMISSION.json. Solvent continuation
+requires the actual frozen1kcal paired-change gate. No repeated preparation.
 Read CURRENT before submission; do not repeat completed work or loosen oldgates.
 Root owns execution; agents own disjoint implementations. All numerical work
 uses current shared Slurm rules. Preserve production, original failures and

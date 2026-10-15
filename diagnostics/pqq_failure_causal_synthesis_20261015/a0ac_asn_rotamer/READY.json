@@ -1,0 +1,42 @@
+{
+  "status": "frozen_ready_for_root_Slurm_preparation",
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_rotamer_preparation_v1/manifest.json",
+    "sha256": "ae4184400f6908039ebb1eaa2121181e92510738d88366d5175b9ecc9df624fb"
+  },
+  "implementation": {
+    "PREPARE.py": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_rotamer_preparation_v1/implementation/PREPARE.py",
+      "sha256": "45edb9a955782b67b07f8627e42e9e05a4f92c12fb2112fa1a620bcb053e111c"
+    },
+    "RUN.sbatch": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_rotamer_preparation_v1/implementation/RUN.sbatch",
+      "sha256": "e7863329376d137552765b73a58e4ea332edf73d7d94ecb9d79e208db3558273"
+    }
+  },
+  "input_inventory": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/a0ac_inventory_v1/EVIDENCE.json",
+    "sha256": "c91b152b1fb8b548395c41aac72fb2370b5ba73d015abbfce14767ac2787d4d8"
+  },
+  "exact_root_command_argv": [
+    "sbatch",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_rotamer_preparation_v1/implementation/RUN.sbatch",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_rotamer_preparation_v1/manifest.json",
+    "ae4184400f6908039ebb1eaa2121181e92510738d88366d5175b9ecc9df624fb"
+  ],
+  "future_result": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_rotamer_preparation_v1/execution/PREPARATION.json",
+  "independent_review": "Heisenberg cleared PREPARE.py45edb9a955782b67b07f8627e42e9e05a4f92c12fb2112fa1a620bcb053e111c; no scientific execution in review",
+  "validation": "AST parsing and bash syntax only; actual geometry admission unrun at freeze",
+  "declared_sources": 10,
+  "declared_new_geometries": 10,
+  "paired_potential_new_cells": 20,
+  "retained_baseline_cells": 60,
+  "new_energy_calls": 0,
+  "source_rule": "Fixed180degree rotation about named actualCB-CG; OD1/ND2/HD21/HD22 move; all other emitted lines and chemical states exact",
+  "admission": "Named real graph/Hparents, proper rigid rotation and covalent1e-10A invariants, full-source identity/H coverage and inherited relative severe-contact gates. Caps separate; omitted-source minima reported. No old0.8domain admission claim.",
+  "readiness_wake": {
+    "queued": false,
+    "reason": "Root active and explicitly requested direct readiness message; exact manifest delivered."
+  },
+  "production_changed": false
+}

@@ -1,5 +1,20 @@
 # Current causal investigation
 
+## Reporting scope during the active search — 15 October 2026, 07:18 UTC
+
+5297 remains RUNNING; 12 of 222 source result receipts are complete, with no
+failed source receipts at this check. The completion watcher remains armed.
+Gauss owns a compact saved-result exporter under transfer/report/; root owns
+execution and integration. No further molecular branch is launched.
+
+The final comparison will also describe known-class ordering (maximum Ca and
+minimum La scores) on available and matched coverage for each cohort/policy.
+This distinguishes actual overlap from abstention inside the fixed reference
+gap. These consumed-cohort extrema are diagnostic only: no new threshold,
+decision rule or calibration is inferred from them. Scientific calculations
+and report aggregation continue to use Slurm. The canonical causal-report
+update is committed and pushed as58b1bf1.
+
 ## Remaining benchmark search submitted — 15 October 2026, 07:06 UTC
 
 Preflight5291 passed all 257 source checks, 1,542 original cells, 34 cached

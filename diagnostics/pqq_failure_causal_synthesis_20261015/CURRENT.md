@@ -1,5 +1,33 @@
 # Current causal investigation
 
+## Full solvent transfer running; final report queued — 15 October 2026
+
+Preflight 5610 completed and passed: 771 physical candidate checks, 1,746 cached
+endpoint admissions, 12 legacy component replays and 10,140 baseline comparisons
+with zero residual. All molecular-call counts are zero. Measured preflight wall
+is 1,608.2111066160724 s / 11,257.477746312506 allocated CPU-s; scheduler reports
+1,610 s on seven CPUs. This archive-validation overhead is part of campaign cost.
+Actual receipts and proactive review: asn_transfer_solvent_v1/preflight_5610/
+and PREFLIGHT_ROOT_REVIEW.json. The callback is not yet acknowledged as delivered.
+
+Unchanged solvent job **5661** is RUNNING on seven CPUs, watcher **1352388**.
+It reuses 1,746 cached endpoints and evaluates 1,338 new unique endpoints, with
+at most 5,352 SCC and 2,676 native component calls. No new MACE/DFT/optimization.
+Config b8a64366 and exact launch/rearm: asn_transfer_solvent_v1/SUBMISSION.json.
+Execution repeats its input-admission checks before entering molecular work.
+All 257 contexts / 260 memberships and fixed canonical bands remain declared.
+
+Saved-only report **5666** is queued afterany:5661 on one CPU, watcher **1356356**.
+Its frozen reporter is 5c526e22; exact arguments/rearm are in
+asn_transfer_report_v1/SUBMISSION.json. It consumes the actual terminal solvent
+collection/execution and preserves unavailable outcomes. Missing input is a
+visible report failure. No duplicate submission or independent collector needed.
+Read execution/REPORT.md and RESULT.json there after completion, including all
+transitions, ordering, source spreads, triples and costs. Conditional four-cell
+DFT remains unbound/unrun until this comparison is interpreted. Production is
+unchanged. Actual delayed MACE5297 callback is now acknowledged in ROOT_ACK.json;
+all MACE evidence remains reused, never rerun. All agent tasks are complete.
+
 ## Uniform MACE transfer complete; solvent preflight active — 15 October 2026
 
 Job 5297 completed all 222 new contexts. With 34 exact prior contexts and the

@@ -1,13 +1,12 @@
 # Remaining PQQ causes under investigation — 15 October 2026 UTC
 
-Current owned computation: solvent preflight 5610, watcher 1228828, config
-b8a64366 in asn_transfer_solvent_v1. MACE 5297 is COMPLETE: all 257 contexts /
-260 memberships and 3,084 common6 cells pass the declared admission. Read the
-newest CURRENT and actual preflight receipts before unchanged solvent execution.
-No new composite class result yet. Preserve all fixed bands, historical failures
-and production; do not repeat MACE. All agent tasks are complete. Read-only review found active finite archive
-validation, with no molecular calls or unbounded retries. Exact launch/rearm:
-PREFLIGHT_SUBMISSION.json.
+Current owned computation: solvent transfer 5661 RUNNING, watcher 1352388,
+config b8a64366 in asn_transfer_solvent_v1. Preflight 5610 PASSED all 771 physical
+checks, 1,746 cached admissions and exact baseline replay. MACE5297 is complete.
+Final saved report 5666 is queued afterany:5661, watcher 1356356, under
+asn_transfer_report_v1. Read CURRENT and actual SUBMISSION/terminal receipts;
+do not repeat the search or create duplicate collectors. No full-transfer class
+result yet, no new DFT and no production/band change. All agent tasks complete.
 
 Latest actual result: recovery5254 completed257/257 contexts and125 cap tests;
 all251 prior successful rows unchanged. First1H4I GPU preflight5258 is submitted,

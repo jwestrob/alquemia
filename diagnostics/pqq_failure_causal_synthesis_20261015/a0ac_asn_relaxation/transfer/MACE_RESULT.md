@@ -46,5 +46,5 @@ Workspace: `workspaces/pqq_failure_causal_synthesis_20261015/asn_transfer_search
 - `gpu_summary_5297.json`, `ROOT_REVIEW.json` and `SUBMISSION.json` retain actual
   worker measurements, proactive root review and launch/wake commands.
 
-The terminal event is queued; proactive review is not claimed as receipt of an
-undelivered callback. A later callback must not trigger repeated chemistry.
+The terminal event was subsequently delivered and acknowledged in ROOT_ACK.json.
+The earlier proactive review remains distinct from delivery; no chemistry repeated.

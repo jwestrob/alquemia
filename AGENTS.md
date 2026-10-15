@@ -7,8 +7,10 @@ Saved PQQ forces4598 complete8/8: shared quinone strain, distinct pose-response
 signal; no DFT nuclear gradients or classifier gain. MMOL1770Ca0 exact six-cell
 reference preflight4601 passed; origin scouts4603/4604 RUNNING12MPI each with
 terminal/health wakes. Four proposal cells require actual origin review, not a
-new user permission. Source1 is inventoried only. A separate24cell finite PQQ
-rigid-pose test is in preparation; read its frozen plan before submission.
+new user permission. Source1 is inventoried only. Separate24cell finite PQQ
+rigid-pose preparation4606 passed all24 cells; no pose energy calls yet. Curie
+finishes the warm MACE scorer and queues an actual root wake when reviewed/ready.
+Read its frozen plan and CURRENT before submission; do not repeat preparation.
 Root owns execution; agents own disjoint implementations. All numerical work
 uses current shared Slurm rules. Preserve production, original failures and
 the corrected La-parameter/frozen-charge solver lineage. Do not duplicate any

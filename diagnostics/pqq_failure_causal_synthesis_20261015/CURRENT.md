@@ -30,7 +30,12 @@ Current bounded tasks:
 - Finite intact-PQQ pose experiment: read PQQ_POSE_PLAN.md. Curie prepares24new
   MACE cells with +/-1degree cofactor rotations across BOTH sources and ALL three
   donor candidates; twelve baselines reused. Heisenberg reviews mapping/geometry.
-  This branch is not yet submitted. No ideal bond target, state change or optimizer.
+  Geometry preparation4606 completed24/24 (33wallseconds/one shared CPU); reviewed source code
+  and source-union gates are pinned in pose_preparation_v1/manifest.json SHAeb2763a1.
+  Terminal wake3352635 is armed; exact command in that workspace/SUBMISSION.json.
+  Both sources pass frozen internal/paired/exterior-contact gates. No pose energy
+  call has yet run. ROOT_REVIEW records actual preparation; scorer work
+  continues separately. No ideal bond target, state change or optimizer.
 
 All scientific preparation/analysis/calculation runs on Slurm. Login-host work
 is metadata, reading, editing and submission. Other users/sessions' jobs and the

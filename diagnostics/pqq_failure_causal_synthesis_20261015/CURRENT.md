@@ -83,14 +83,18 @@ Next finite research work:
  Two Ca mixed-term aggregate precision flags remain false. Read
  a0ac_asn_solvent_factorial/ and asn_solvent_factorial_v1/ROOT_REVIEW.json.
  Actual cost4 scheduler seconds/1CPU, zeroGPU. No repeat or new score follows.
-- Bounded flipped-origin preparation4814 is partial5/10, zero energy calls.
- Ca1/3/4 and La0/4 fail exact cap-coordinate equality. Original v1 stays intact;
- Heisenberg diagnoses raw/old-map/new-map residuals before a versioned repair.
- The declared first Ca0 source passes all preparation checks. Curie finishes
- the reviewed warm two-metal scout adapter, retaining original modes/settings,
- actual cached q0 forces and rebased Jacobians. No optimization submitted yet.
- Remaining18 searches depend on actual scout review. Later solvent requires
- credible complete new pools and absolute common6−common4 change ≥1kcal/mol.
+- Bounded flipped-origin preparation4821 passes10/10 sources,20 prepared tasks,
+ zero energy calls. Original4814 remains partial5/10. Actual saved-cap4819 proves
+ raw inputs/anchors/links and old/new computed caps identical; only pre-existing
+ arithmetic residuals up to8.9e−16Å caused the raw-versus-computed exact check.
+ Reviewed v2 uses three exact like-for-like comparisons and keeps both existing
+ 1e−12Å q0 checks. No molecular inputs/modes/tolerances changed. Root review is
+ asn_relaxation_v2/ROOT_REVIEW.json. Read a0ac_asn_relaxation/PREPARATION_REPORT.md.
+ Curie finishes the separate warm scout wrapper and Gauss reviews it; no
+ optimizer submitted yet. Next: bind the actual v2 prepared first Ca0 pair,
+ submit seven-CPU warm scout with watcher, inspect its actual geometry/energy
+ admission and costs before remaining18 searches. Later solvent requires credible
+ complete common6 pools and absolute common6−common4 change ≥1kcal/mol.
 - Four MMOL proposal jobs4637–4640 are actually RUNNING; comparator4641 pending.
  All exact commands and completion/health watchers are in PROPOSAL_LAUNCH.json.
  No duplicate origin or proposal submissions.

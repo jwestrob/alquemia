@@ -18,11 +18,13 @@ Geometry lowers the La solvent energy with either saved charge vector; changed
 charges partly oppose it. Large mixed terms prevent unique additive attribution.
 Two Ca mixed-term precision flags remain false. No new scorer or parameter fit.
 
-Bounded flipped-origin relaxation preparation4814 is partial5/10, zero energy
-calls. Five rows fail an exact cap-coordinate equality check; diagnose actual
-residuals before a versioned repair. The declared first Ca0 source passes and
-may proceed to its two-metal scout once the warm runner is reviewed. Preserve
-all ten rows, each original four-mode set, bounds and admission policy.
+Bounded flipped-origin preparation4821 passes all ten sources /20 tasks, zero
+energy calls. Original4814 failed5/10 exact cap comparisons; saved diagnostic4819
+proved old/new computed caps and raw inputs identical, with pre-existing roundoff.
+Versioned v2 compares equivalent representations exactly and retains original
+q0/geometry tolerances. Read a0ac_asn_relaxation/PREPARATION_REPORT.md.
+Curie finishes the warm two-metal Ca0 scout adapter; Gauss reviews it. No
+optimization submitted yet. Preserve original modes, bounds and all source rows.
 
 MMOL1770 exact six-cell native r2SCAN-3c vacuum reference: origins4603/4604
 complete as energy diagnostics, with density/state warnings retained. Four saved

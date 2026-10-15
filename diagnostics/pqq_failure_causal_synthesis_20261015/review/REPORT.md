@@ -9,6 +9,45 @@ every inconclusive protein or establish a universally correct chemical state.
 Read-only synthesis; no analysis, molecular calls or submissions. These are five
 consumed proteins, not nine independent biological tests.
 
+## Latest mechanistic conclusion — 15 October
+
+The XoxF1 case now has a concrete **local-search limitation**: its original Asn290
+terminal amide presents nitrogen toward the metal while oxygen points away. An
+intact 180° alternative presents oxygen instead. The old bounded torsion search
+could not reach this separate orientation. This is a missed candidate geometry,
+not evidence that the whole fold is defective or that atoms were mislabeled.
+
+The same rule was tested on all ten XoxF1 sources. Adding the fixed alternative
+changes the ambiguous Ca-conditioned sample4 paired contrast by +10.975 kcal/mol,
+the correctly called La-conditioned sample4 by +0.673, and the other eight by
+zero. Both sample4 sources have almost the same favorable La solvent change;
+their different vacuum competition explains most of their different net gains.
+A crossed geometry/charge test shows the solvent benefit survives either saved
+charge distribution, while changing charges opposes it. The large mixed term
+prevents unique additive attribution. This constrains the mechanism within the
+model; it does not independently validate its solvent physics.
+
+The fixed alternative leaves a short represented amide-H/backbone-H contact.
+Consequently, its favorable score is a lead, not an accepted relaxed structure
+or a new class decision. The first bounded-relaxation control passes physical
+and optimizer checks but keeps its original winners and score. The unchanged
+remaining nine-source test is running, followed by explicit named-contact review;
+solvent reevaluation depends on the declared common-pool response gate.
+
+For MMOL1770, both native DFT origins are complete as energy diagnostics and four
+saved-proposal endpoints are running. Until that six-cell comparison completes,
+we cannot say whether its Ca-directed accommodation is a MACE surface error.
+The small PQQ rotation probe is complete and closed: neither source reaches its
+predeclared solvent-continuation threshold. These results strengthen a
+case-specific explanation; they do not supply one universal solvent or folding
+repair for all nine abstentions.
+
+Evidence: [Asn orientation and contacts](../a0ac_asn_geometry_response/REPORT.md),
+[full fixed-alternative comparison](../a0ac_asn_solvent/REPORT.md),
+[geometry/charge factorial](../a0ac_asn_solvent_factorial/REPORT.md),
+[first relaxation control](../a0ac_asn_relaxation/SCOUT_REPORT.md),
+[closed PQQ pose probe](../pqq_pose/REPORT.md).
+
 ## 1. What changed the classifications
 
 Changing from self-consistent GFN2 solvent subtraction to frozen-distribution ALPB
@@ -31,7 +70,7 @@ review; they are not physical error bars.
 
 | Exact source | Established result | Still unresolved |
 |---|---|---|
-| XoxF1 A0ACD6B9F2 Ca4, La class; 5.815 kcal/mol short | Wrong Ca becomes inconclusive; accommodation already helps by +12.176. Origin is Ca-like on its own static calibration. Asn290 remains distant, beyond the existing local search's reach. | A different donor basin is plausible, but correctly called La4 also has distant Asn. That contact is neither a sufficient cause nor a valid exclusion rule. |
+| XoxF1 A0ACD6B9F2 Ca4, La class; 5.815 kcal/mol short | Wrong Ca becomes inconclusive; original accommodation helps by +12.176. A separately proposed intact Asn orientation, unreachable by the old domain, adds +10.975 to the current model's paired contrast. | Fixed alternative has a short H contact; complete relaxed competition and calibration remain untested. Correctly called La4 shares the starting orientation, so it is not a sufficient failure/exclusion rule. |
 | XoxF4-2 MMOL1770 Ca0, La class; 0.812 short | Correct static origin becomes inconclusive after −4.186 accommodation, mostly MACE (−4.005). Ca proposal compresses Glu200 to 2.151 Å and reaches the movement bound; La does not. | Exact motion has no demonstrated independent electronic reference. Ca1's extra-Asp experiment and La4's hydrogen repair concern different sources. |
 | ExaF C5AXV8 two-Ca4, La class; 0.196 short | Already inconclusive before the solvent change. Both metals select the same La proposal; no bound hit or distinctive gross geometry defect. | Fine energetics, occupancy/state or calibration coverage; no case-specific physical defect is established. Preserve abstention. |
 | ExaA Q9Z4J7 two-Ca3, Ca class; 1.191 short | Newly inconclusive with unchanged selections. Large donor response is reproduced by independent vacuum DFT. Metal/PQQ placement differs from same-condition peers. | Whether that source geometry or the shared dry/cofactor/environment representation is physically inappropriate. Tested simple repairs do not resolve it. |
@@ -53,7 +92,7 @@ review; they are not physical error bars.
   explanation is weak; all scaffold mechanics were not tested.
 - **Metal coordinate:** reciprocal placement changes the donor-path response but
   adds zero gain against the full original pool. The midpoint's target paired
-  change is only −0.176971 kcal/mol. Coordinate sensitivity is not a useful remedy.
+  change is only −0.176971 kcal/mol. The tested reciprocal and midpoint probes did not provide a useful pool improvement.
 - **Cavity exclusion:** origin shifts are mostly common. The matched follow-up
   changes source-dependent accommodation by only −0.076458 kcal/mol and leaves
   all selections unchanged. Aggregate precision flags remain false. This closes
@@ -70,19 +109,21 @@ occur in successful predictions. Fixed PQQ geometry could still couple to donor
 strain. No result proves a wrong protonation/redox state, missing-water cause or
 unique defective fold. Crystal bond lengths must not become hand-fitted targets.
 
-## 4. Two decisive next tests
+## 4. Declared reference tests and current disposition
 
-1. **Independently reference MMOL1770 Ca0.** Exact admitted 193-atom state,
+1. **MMOL1770 Ca0 reference is executing.** Exact admitted 193-atom state,
    saved origin/adaptive_Ca/adaptive_La, both metals: six fixed vacuum cells,
    staged after a scout/cache check. Reuse r2SCAN-3c/DefGrid3/TightSCF and inspect
    actual endings; compare vacuum with vacuum. Four cells on the Ca-generated
    path answer a narrower question, not the mixed-geometry operational response.
    Disagreement motivates a response-model repair; agreement points toward
    source/state/environment. Ca1's old study is not a substitute.
-2. **Test fixed-PQQ strain through a defined physical response.** Root's saved-force
-   audit should identify a coherent internal mode in ExaA target and control,
-   including Ca/La coupling. If supported, use one finite state-preserving test
-   with unchanged donor contexts and full cross-scoring. No guessed carbonyl
+2. **The finite rigid-PQQ response probe is complete and closed.** The saved-force
+   audit identified a coherent rigid mode in ExaA target and control. Its tested
+   ±1° movement did not meet the frozen continuation criterion; do not rerun or
+   widen it from this old proposal. The broader initial question was cofactor strain,
+   including Ca/La coupling. Internal cofactor flexibility remains untested, not
+   established as the missing cause. No guessed carbonyl
    shortening, crystal transplant or redox switch. Existing ExaA DFT inputs are
    SP, not EnGrad; cached DFT analytic forces are not established. A shared force
    alone does not explain selective failures or justify recalibration.

@@ -8,7 +8,34 @@ were acknowledged. No repeat chemistry or wider cavity sweep is pending.
 The nine-source causal synthesis in review/REPORT.md distinguishes established
 solvent/calibration effects from source-specific unresolved mechanisms.
 
-## Latest result — 15 October 2026, 04:15 UTC
+## Latest result — 15 October 2026, 04:35 UTC
+
+Solvent4971 completed all40 new endpoints with80 old cells reused. The alternative
+amide response survives the complete frozen-qvac composite: common3→6 paired
+changes are +20.883598kcal/mol for Ca-conditioned4 and +19.290964 for La-conditioned4.
+Other eight sources keep their old scores and selected geometries. Both selectors
+agree. Each new sample4 minimum uses relaxed_flip_Ca for Ca and relaxed_flip_La
+for La. This supports missed local orientation as a source of the inconsistency;
+it does not yet establish a calibrated classifier improvement.
+
+All90 saved algebra checks pass (largest residual6.65e-11kcal/mol). Actual160SCC
+calls and80native component replays took941.196s internally; scheduler942s on7CPUs.
+No new MACE/DFT/search occurred. Historical failed absolute-v1 parity is preserved;
+the declared component-v2 and native replay gates determine admission. Read
+asn_relaxation_solvent_v1/execution/FINAL_COLLECTION.json SHA256
+64668c7ec758da42d34b039855bdc370b39d06815db47a00dfaf69c41a69368d.
+
+Next: the same alternative-state rule must retain canonical Ca/La reference
+fidelity. One-CPU geometry-only rebase5016 is submitted, watcher3932797, exact
+manifest4d7a83d… and command in asn_canonical_relaxation_v1/SUBMISSION.json.
+It cannot call molecular engines. Gauss owns the separate finite canonical search
+adapter; Heisenberg owns saved solvent/range/old-band reporting. Curie owns a
+separate fixed-heavy-geometry Asn-H bond-length sensitivity preparation. The latter
+uses archived ff19SB targets to test a known generic H-builder artifact, without
+changing the completed matched experiment. Root owns all submissions. Production
+and thresholds remain unchanged; no new quantum campaign is launched.
+
+### Preceding stage — 04:15 UTC
 
 Full Asn searches4844 and contact review4910 are now complete. All20 searches,
 40 final endpoint cells and ten common6 pools are available. Relative to the

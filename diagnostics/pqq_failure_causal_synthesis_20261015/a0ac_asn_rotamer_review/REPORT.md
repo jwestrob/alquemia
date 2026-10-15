@@ -106,3 +106,59 @@ copy's entire pin dictionary. The scorer now retains the actual preparation pin
 and verifies both copies against the identical fixed content SHA. It also
 preserves partial results and execution receipts through cleanup/reporting
 failures. Neither change alters inputs, physics, selection or admission.
+
+## Actual geometry review — job4614
+
+The saved preparation admits all ten sources and twenty exchanged-metal cells.
+No omitted-source packing obstruction is evident in the recorded nearest contacts.
+This supports the declared fixed-conformer energy test; it does not establish a
+relaxed alternate rotamer, a collision-free rotation path or a complete protein
+energy. The unchanged severe-contact gates remain the admission criteria.
+
+Evidence: `workspaces/pqq_failure_causal_synthesis_20261015/asn_rotamer_preparation_v1/execution/PREPARATION.json`,
+SHA256 `508e7594aea7ad6198c62ce931d84a5f19d72b71070edcdbc782787f8cd9ca30`,
+and each row's `GEOMETRY_ADMISSION.json` and `CONTACT_IDENTITIES.json`.
+The manifest SHA256 is
+`ae4184400f6908039ebb1eaa2121181e92510738d88366d5175b9ecc9df624fb`.
+Stored nearest-contact identities agree with their saved union-index identities.
+This review reads saved results only; it performs no distance or energy calculation.
+
+Each receipt includes9529 full-source atoms and9342 appended physical atoms,
+with all physical hydrogens included and synthetic caps distinguished. All ten
+record no new severe contacts and no inherited contacts below the frozen severe
+thresholds. Covalent, rigid-group and auxiliary replay residuals are about1e−15Å;
+the emitted CG, other coordinate lines and cap anchors remain fixed. The roughly
+2.3Å terminal-group displacements belong to this explicit discrete conformer
+protocol, not the old0.8Å local search domain.
+
+Nearest omitted-source distances below are copied from the saved receipts and
+rounded for display. Ca/La here denotes source folding conditioning, not a new
+biological label. All listed atoms are on source chainA.
+
+| Source | Nearest omitted heavy contact | Before→after (Å) | Nearest omitted H contact | Before→after (Å) |
+|---|---|---:|---|---:|
+| Ca0 | Asn290 ND2—Gly289 CA | 6.394314→4.505337 | Asn290 HD21—Gly289 HA2 | 6.735458→3.052105 |
+| Ca1 | Asn290 ND2—Gly289 CA | 6.440944→4.572510 | Asn290 HD22—Gly289 HA3 | 6.704466→3.464226 |
+| Ca2 | Asn290 ND2—Gly289 CA | 6.348390→4.475576 | Asn290 HD21—Gly289 HA2 | 6.822282→2.741161 |
+| Ca3 | Asn290 ND2—Gly289 CA | 6.407013→4.519666 | Asn290 HD21—Gly289 HA2 | 6.849887→2.867103 |
+| Ca4 | Asn290 OD1—Gly289 CA | 6.147383→5.232481 | Asn290 HD21—Gly268 HA3 | 6.029638→3.604475 |
+| La0 | Asn290 ND2—Gly289 CA | 6.391011→4.518698 | Asn290 HD21—Gly289 HA2 | 6.731266→3.034289 |
+| La1 | Asn290 ND2—Gly289 CA | 6.435257→4.590598 | Asn290 HD22—Gly289 HA3 | 6.794588→3.356908 |
+| La2 | Asn290 ND2—Gly289 CA | 6.353987→4.512834 | Asn290 HD21—Gly289 HA2 | 6.843647→2.817094 |
+| La3 | Asn290 ND2—Gly289 CA | 6.400332→4.551274 | Asn290 HD21—Gly289 HA2 | 6.821932→2.917754 |
+| La4 | Asn290 OD1—Gly289 CA | 6.106476→5.274727 | Asn290 HD21—Gly268 HA3 | 5.776476→3.899380 |
+
+One distinct local limitation matters for interpreting energies: several flips
+place Asn290 HD21 close to its backbone H, both already inside the204-atom scored
+core. Examples are Ca2 at0.961077Å and La2 at0.960025Å, compared with their original
+4.701552Å and4.680432Å separations. These are nonbonded H–H contacts, unlike the
+nearest H records in sample1/4 that identify the preserved covalent ND2–H bond.
+They pass the existing0.55Å severe-contact gate; no stricter threshold is introduced.
+Their energetic cost is included locally. An unfavorable flip energy can therefore
+reflect this unrelaxed conformer's strain and does not rule out every relaxed
+alternate rotamer basin. The omitted-contact records do not support attributing
+such a penalty to an unmodeled exterior clash.
+
+The actual one-CPU preparation receipt reports5.166875s wall,4.195694 CPU-s,
+93748KiB peak RSS and zero energy calls. No additional preparation, optimization,
+submission or scoring modification was performed for this review.

@@ -1,5 +1,20 @@
 # Current causal investigation
 
+## Remaining benchmark search submitted — 15 October 2026, 07:06 UTC
+
+Preflight5291 passed all 257 source checks, 1,542 original cells, 34 cached
+contexts and completed scout reuse; all six recovered inputs pass. The 222
+new contexts plus 35 reused contexts cover all 260 memberships. No new energy
+calls in preflight; 124 scheduler seconds on one GPU / 12 CPUs.
+
+Unchanged molecular search5297 is submitted, watcher504028, config48873d93 in
+asn_transfer_search_remaining_v1. Exact launch/rearm: SUBMISSION.json. The
+original bounded search, physical gates and fixed reference bands remain.
+Read actual execution/FINAL_COLLECTION.json and failures before binding the
+existing SOLVENT.py stage. No transfer solvent, DFT or production promotion.
+Delayed5205/5254/5258 callbacks are acknowledged; do not repeat those jobs.
+Root owns execution; independent review found no remaining preflight gate issue.
+
 ## Transfer scout passed; remaining preflight submitted — 15 October 2026, 07:03 UTC
 
 5263 completed the first new source, 1H4I: both bounded searches and all 12

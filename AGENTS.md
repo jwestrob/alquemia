@@ -27,10 +27,14 @@ Read diagnostics/exaa_metal_midpoint_20261014/REPORT.md andCURRENT.md. Fractionp
 closed; no automaticfinersearch/optimizer/DFT/bands. Allownedjobs terminal.
 Next cavity-exclusion feasibility is complete at diagnostics/native_cavity_shielding_20261014/
 CURRENT.md. Jacob explicitlyinstructedexecution. Preparation4539 complete4/4;
-union9474/core192/capremoved9460; thin-caller build4543 complete. Native4562 is
-RUNNING on node16,4sharedCPU/default16000MiB; qualifiedengine isserial. Sixscout
-controls gate sixcontinuationupdates,12maximum. WakePID3249783 isarmed; exact
-config/command in native_v1/SUBMISSION.json. No separateinitialscout orduplicates.
+union9474/core192/capremoved9460; build4543 andnative4562 complete12/12. Scout
+andendpointchecks pass; originCa−La transfers+5.031545/+4.936869kcal/mol aremainly
+commonshift. No sourceambiguity remedy; aggregateprecisionflag remainsfalse.
+Read REPORT/RESULT; no rerunfortolerance. Separatenative_cavity_accommodation_20261014
+PLAN declares8savednonorigin/16nativeupdates to testburial-dependentaccommodation;
+preparation4577 passes8/8, native4579 RUNNING4sharedCPU/defaultRAM, firstendpoint
+qualifies. Wake3280737armed; native_v1/SUBMISSION.json recordsrearm. Zeroelectronic
+reruns. ReadnewCURRENT; collectbeforeanyfurtherphase. Delayedwakes requireACKonly.
 Source-onlycavity API blocked, retainedcaps explicit. No new correction/calibration.
 Scouts were reviewed before continuation; no new per-analysis approval loop.
 This tests a common physical displacement, not the full operational three-candidate

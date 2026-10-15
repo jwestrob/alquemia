@@ -1,5 +1,20 @@
 # Current causal investigation
 
+## Independent amide-reference feasibility recovered — 15 October 2026
+
+The bounded archive audit found no exact compatible DFT endpoint for the current
+204-atom A0AC Ca4/La4 origin or relaxed-amide geometries. Historical sample4 DFT
+uses an 80-atom CPCM preparation and cannot validate the current vacuum response.
+Read a0ac_asn_relaxation/reference_feasibility/NOTE.md for exact pins and actual
+comparable costs. Its smallest proposed check is four Ca4 vacuum endpoints on
+one shared origin-to-relaxed path; it would test local energy response, not the
+incremental pool gain, solvent or biological preference. Nothing is submitted.
+
+Finish the already-running uniform transfer before deciding whether that separate
+reference check earns a run. Search5297 and watcher504028 remain live; the latest
+poll finds continued progress without source failures. The planned solvent and
+saved-report stages are unchanged. All agent audit/report tasks are complete.
+
 ## Final comparison exporter prepared — 15 October 2026, 07:35 UTC
 
 The focused saved-result exporter is ready under a0ac_asn_relaxation/transfer/report/.

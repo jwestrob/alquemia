@@ -17,9 +17,11 @@ both sample4 sources, with both localAsn modes already present. One source is
 correctly called, so orientation alone is not a defect diagnosis. Agents prepare
 sourcegraph/fullsourceHcontact admission and204atom scoring. Preparation4614
 completed20/20; omitted-source contacts reviewed, local shortH contacts retained
-in the204atom energy model. Warm MACE4617 submitted7CPU, config5d5cd000 and
-watcher3440967 in asn_rotamer_scoring_v1/SUBMISSION.json. Solvent continuation
-requires the actual frozen1kcal paired-change gate. No repeated preparation.
+in the204atom energy model. Warm MACE4617 completed20/20; Ca4 pairedvacuum
+contrast improves+1.460981253638387kcal/mol,other9unchanged. This passes the
+declaredsolventgate; reviewedmatchedsolvent4623 submitted7CPU,config0c22b405,
+watcher3466505 in asn_rotamer_solvent_v1. Full20new/60reused cells,existing
+parameter/component gates. Read a0ac_asn_scoring/REPORT.md. No classgainclaim.
 Read CURRENT before submission; do not repeat completed work or loosen oldgates.
 Root owns execution; agents own disjoint implementations. All numerical work
 uses current shared Slurm rules. Preserve production, original failures and

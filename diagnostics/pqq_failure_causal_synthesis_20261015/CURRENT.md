@@ -53,10 +53,13 @@ Current bounded tasks:
   in asn_rotamer_preparation_v1. Root reviewed actual covalent/maps/fullsource
   contacts: omitted-source nearest heavy4.48–5.27A,H2.74–3.90A; local shortH
   contacts remain represented in the204atom scoring context, not repaired.
-  Warm MACE4617 is submitted7CPU, config5d5cd000 in asn_rotamer_scoring_v1,
-  watcher3440967. Exact commands/receipts are in SUBMISSION.json. At most20new
-  cells and60reused baselines. Solvent continuation requires actual frozen
-  absolute1kcal paired-change gate; no automatic class/band change. The old0.8
+  Warm MACE4617 completed20/20,60baselinesreused,363wallseconds/7CPU. OnlyCa4
+  changes: La selectsflip,pairedvacuumcontrast+1.460981253638387kcal/mol; other9
+  selections unchanged. Both policies agree. Actual frozen1kcal stage gate passes.
+  Read a0ac_asn_scoring/REPORT.md andRESULT.json. Independently reviewed matched
+  solvent4623 submitted7CPU:20new/60reused, atmost80SCC+40native componentcalls,
+  config0c22b405 in asn_rotamer_solvent_v1, watcher3466505. Actualpreflight before
+  calls retains full baseline/gate/parameter/component checks. No class/band change. The old0.8
   domain is not relaxed or retrospectively passed. Root owns submissions.
 
 All scientific preparation/analysis/calculation runs on Slurm. Login-host work

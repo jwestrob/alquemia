@@ -1,11 +1,15 @@
 # Remaining PQQ causes under investigation — 15 October 2026 UTC
 
-Current: canonical remaining23 GPU job5089 is RUNNING, wakePID4151535,
-config398420e6 in asn_canonical_search_GPU_v1. First source passes both searches
-and all12 common6 cells; La boundary flag retained. Exact5057/A0AC results reused.
-Do not launch CPU fallback or another GPU copy. Inspect all25 terminal coverage
-before binding the prepared matched-solvent continuation. Root owns submissions;
-all implementation/review agents finished. Production and bands unchanged.
+Current: canonical GPU5089 is COMPLETE, all25 common6 matrices available and
+saved vacuum selections/contrasts unchanged.727 native requests,953s on1A5000
+and12CPUs; no failed requests. Existing boundary flags and source limitations
+remain. Do not repeat completed searches or submit the CPU fallback.
+Matched-solvent preflight5135 failed on legacy metadata schema before molecular
+calls; preservev1/config52129072. Reviewed v2 preflight5157 is RUNNING,
+config579fe28d, watcher84857. No composite classification yet. Root owns
+submissions. Saved-only ExaA HB5147 completed12/12 with no useful improvement;
+branch closed. No transfer campaign before canonical solvent gate.
+Read CURRENT.md and newer receipts; production and frozen bands unchanged.
 
 Latest: two-H fixed MACE5039 is COMPLETE12/12. The alternative Asn response
 survives shortening only its two inherited long N–H bonds: differential changes

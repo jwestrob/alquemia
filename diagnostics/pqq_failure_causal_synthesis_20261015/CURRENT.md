@@ -1,24 +1,34 @@
 # Current causal investigation
 
-## Active execution — 15 October 2026, 05:14 UTC
+## Active execution — 15 October 2026, 05:31 UTC
 
-Canonical remaining23 GPU job5089 is RUNNING on the qualified A5000, oneGPU
-and12 scheduler-granted CPUs. Config398420e6 and exact command/wakePID4151535
-are in asn_canonical_search_GPU_v1/SUBMISSION.json. It reuses5057 and A0AC;
-do not submit the CPU fallback. All historical/preparation/runtime checks pass.
-The first new source A8R3S4 completes both searches and all12 common6 cells;
-physical/source gates pass, with its La displacement-boundary flag retained.
-No class/solvent conclusion is available from these vacuum search results.
+Canonical GPU5089 is COMPLETE: all25 common6 matrices and proposal pairs are
+available. The23 new sources used727 native GPU requests/zero failed requests,
+953 scheduler seconds on one A5000/12CPUs; actual forward count is unavailable.
+CPU scout5057 and exact A0AC results were reused. All saved vacuum selections
+and contrasts remain unchanged under both policies. Boundary flags remain;
+this is not a composite/classification result. ROOT_REVIEW.json and collection
+cbe1520a are in asn_canonical_search_GPU_v1. Do not submit the CPU fallback.
 
-After actual completion, inspect FINAL_COLLECTION.json/EXECUTION.json and all25
-coverage before binding canonical_solvent/READY.md's matched continuation.
-The independently reviewed solvent adapter admits truthful bridged GPU receipts
-and preserves all native/component/calibration rules. No solvent job is submitted.
-Root owns execution. Implementation/review tasks are finished; Gauss now owns
-a metadata-only transfer inventory of the existing expanded135/Ca125 populations
-and reusable maps. No new transfer scoring is bound or submitted before the
-canonical result. Current5089 is the only owned molecular job.
-Actual delayed4910 contact callback is acknowledged; no results were rerun.
+The exact matched-solvent preflight5135 FAILED before any new molecular calls
+(79.216s on7CPUs): the expansion-schema helper encountered actual legacy task
+metadata without a task-level reuse field. Twelve cached C5AXV8/ExaA cells use
+the older COMPONENT_V2 manifest. The narrow pinned-driver repair has passed independent static review.
+Versioned zero-call preflight5157 is RUNNING, config579fe28d in
+asn_canonical_solvent_v2; watcher84857 and exact launch in PREFLIGHT_SUBMISSION.
+Original v1 config52129072/failure remain unchanged. Do not executev1 or repeat
+MACE. Review5157 before root submits the unchanged missing solvent endpoints.
+
+Saved ExaA HB-shielding5147 is COMPLETE: all12 cells, no selection changes,
+3scheduler seconds on1CPU and zero molecular calls. Large common HB burial
+shifts yield only a raw-0.024705kcal/mol source accommodation difference.
+Per-source HB gates pass; aggregate precision still fails. Keep11 missing local
+cap-zero controls explicit. Close this finite branch; see hb_shielding/REPORT.md.
+
+Root owns execution. All scoped agent implementation/review/report tasks are
+complete; their transfer inventory, MACE report and HB report are available. No new transfer scoring is bound/submitted before the canonical solvent
+result. All scientific work uses Slurm; production and prior failures remain.
+Actual delayed5079 callback is acknowledged; its four-point test was not rerun.
 
 The active user goal remains: "keep working until we get a conclusion and figure
 out why our predictions are messed up in these cases."

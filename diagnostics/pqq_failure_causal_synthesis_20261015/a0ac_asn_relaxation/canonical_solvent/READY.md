@@ -1,3 +1,18 @@
+# Current recovery continuation — 15 October 2026
+
+Canonical MACE5089 completed all25 sources. Original solvent preflight5135
+failed before molecular calls on the legacy task schema; preservev1. The
+[reviewed v2 repair](RECOVERY_V2.md) changes only archived component routing.
+It is now bound at `asn_canonical_solvent_v2/CONFIG.json`, SHA
+`579fe28d6f2affcff1e2b0c90bfcdf03660e23bf33945961183697c4216b7adc`.
+Actual numerical preflight5157 is submitted; exact launch/wake are in that
+workspace's `PREFLIGHT_SUBMISSION.json`. Do not rerun or execute from a static
+review alone. Root will inspect its actual result before `RUN.sbatch CONFIG SHA
+execute`. No molecular call has yet been made by this continuation.
+
+The original conditional package below is historical; its v1 output path and
+source hash are superseded by RECOVERY_V2.md and the actual bound v2 config.
+
 # Canonical solvent continuation — conditional package
 
 `SOLVENT.py`, `RUN.sbatch` and `PLAN.md` are prepared. No molecular config has been bound and no job submitted by this agent. The full25 MACE collection and root's terminal review are prerequisites. A completed one-source scout cannot release this stage.

@@ -2,9 +2,12 @@
 """Conditional canonical25 join around the executed fixed-charge solvent kernel."""
 import argparse, copy, fcntl, hashlib, importlib.util, json, os, shutil, sys, time, traceback
 from pathlib import Path
+from types import FunctionType
 ROOT=next(p for p in Path(__file__).resolve().parents if (p/'scripts/mace_omol.py').is_file())
 HERE=ROOT/'diagnostics/pqq_failure_causal_synthesis_20261015/a0ac_asn_relaxation/canonical_solvent'
 OLD=ROOT/'workspaces/pqq_failure_causal_synthesis_20261015/asn_relaxation_solvent_v1'
+FAILED=ROOT/'workspaces/pqq_failure_causal_synthesis_20261015/asn_canonical_solvent_v1'
+LEGACY=ROOT/'workspaces/orca_parameter_audit_20261012/context_gfn2_component_v2'
 REUSE='a0acd6b9f2-pqq-la_model__conditioned_La__seed-1_sample-3'
 PROTOCOL='canonical25_terminal_amide_frozen_ALPB_common6_v1'
 GPU_KIND='qualified_GPU_request_bridge_v1'
@@ -53,6 +56,57 @@ def identity(t):
     v=t.get('original',t)
     return (t['source_case_id'],t['metal'],v['xyz']['sha256'],v['charge'],v['multiplicity'],v['atom_count'],t['state_signature']['sha256'],t['source_preparation']['sha256'])
 
+class LegacyComponentFacade:
+    """Only the pinned pre-reuse task schema; no shared module or task mutation."""
+    def __init__(self,c,r):
+        self.r=r;self.pins=c['legacy_component'];self.manifest=read(self.pins['manifest']);self.saved=read(self.pins['collection']);self.base=check(self.pins['manifest']).parent
+        require(self.manifest['driver']==self.pins['driver'] and self.saved['manifest']==self.pins['manifest'],'Legacy driver/collection lineage differs')
+        require(self.manifest['runtime']==c['runtime'] and self.manifest['implementation']==c['factorial'],'Legacy runtime/implementation differs')
+        require(all(self.manifest['settings'][k]==c['settings'][k] for k in r.SCIENTIFIC_SETTINGS),'Legacy scientific settings differ')
+        driver=load('_canonical_legacy_component_reader',self.pins['driver']);require(driver.BASE==self.base,'Legacy reader base differs')
+        self.raw=driver.raw_results(self.manifest);self.evidence=[]
+        # Reuse the exact component function with a private raw resolver. Its
+        # module globals, original raw tasks and archive files remain unchanged.
+        self.kernel=FunctionType(r.component.__code__,dict(r.component.__globals__,raw=self.legacy_raw),r.component.__name__,r.component.__defaults__,r.component.__closure__)
+
+    def legacy_raw(self,base,task):
+        require(Path(base).resolve()==self.base and 'reuse' not in task,'Unrecognized legacy routing request')
+        actual,result,p=self.raw.get(task['id'],(None,None,None))
+        require(actual==task and result is not None and p is not None,'Legacy task is not the exact archived task')
+        require(read(p)==result and result['task']==task,'Legacy RESULT/task identity differs')
+        require(result['manifest']==self.pins['manifest'],'Legacy endpoint manifest differs')
+        require(p==pin(self.base/'points'/task['id']/'RESULT.json'),'Legacy endpoint path differs')
+        self.r.verify_raw(result,task,self.manifest|{'_base':str(self.base)})
+        return result,p
+
+    def component(self,base,v,w):
+        if 'reuse' in v and 'reuse' in w:return self.r.component(base,v,w)
+        require('reuse' not in v and 'reuse' not in w and Path(base).resolve()==self.base,'Unsupported mixed/unknown component schema')
+        out=self.kernel(base,v,w);vr,vp=self.legacy_raw(base,v);wr,wp=self.legacy_raw(base,w)
+        # Exact additional criterion from the pinned COMPONENT_V2.collect.
+        ref=max(abs(point.get('reference_energy_difference_hartree',0.0)) for point in (vr,wr))
+        out['accepted']=out['accepted'] and ref<=1e-6
+        out['maximum_available_archived_primary_error_hartree']=ref
+        if not out['accepted']:out['primary_solvation_hartree']=None;out['reason']='component_or_population_or_archived_parity_failed'
+        matches=[(i,row) for i,row in enumerate(self.saved['rows']) if row['inputs']=={'vacuum':vp,'water':wp}]
+        require(len(matches)==1,'Legacy component row join differs');index,stored=matches[0]
+        for key in ('accepted','primary_vacuum_energy_hartree','primary_water_energy_hartree','primary_solvation_hartree','component_error_hartree','absolute_energy_errors_hartree','maximum_available_archived_primary_error_hartree'):
+            require(out[key]==stored[key],'Legacy component replay differs: '+key)
+        require(out['maximum_population_error_e']==stored['max_population_error_e'],'Legacy population criterion differs')
+        out['legacy_component_receipt']={'manifest':self.pins['manifest'],'driver':self.pins['driver'],'collection':self.pins['collection'],'row_index':index}
+        self.evidence.append({'vacuum_task':v['id'],'water_task':w['id'],'collection_row_index':index,'accepted':out['accepted'],'exact_archived_component_replay':True})
+        return out
+
+    def negative_metadata_checks(self):
+        row=next(row for row in self.saved['rows'] if row['inputs']['vacuum'] is not None and read(row['inputs']['vacuum'])['manifest']==self.pins['manifest'])
+        v=read(row['inputs']['vacuum'])['task'];w=read(row['inputs']['water'])['task'];checks=[]
+        for label,alter in [('unknown_task_id',{'id':v['id']+'__invalid_metadata'}),('changed_xyz_pin',{'xyz':dict(v['xyz'],sha256='0'*64)})]:
+            bad=copy.deepcopy(v);bad.update(alter)
+            try:self.component(self.base,bad,w)
+            except (AssertionError,ValueError,KeyError) as e:checks.append({'case':label,'rejected':True,'reason':str(e),'real_task':v['id']})
+            else:raise ValueError('Corrupted legacy metadata was accepted: '+label)
+        return checks
+
 def bind(score_config,score_collection,output):
     """Metadata only; called by root after its actual full-MACE terminal review."""
     sc=read(score_config);sr=read(score_collection);expath=Path(score_collection).with_name('EXECUTION.json');gate(sc,sr,read(expath),pin(score_config))
@@ -96,7 +150,10 @@ def bind(score_config,score_collection,output):
                 targets.append({'cell':t,'route':route})
     require(len(targets)==300 and len(cells)<=144,'Finite endpoint scope differs')
     out=Path(output).resolve();out.mkdir(parents=True,exist_ok=False)
-    for name in ('SOLVENT.py','RUN.sbatch','PLAN.md'):shutil.copy2(HERE/name,out/name)
+    for name in ('SOLVENT.py','RUN.sbatch','PLAN.md','RECOVERY_V2.md'):shutil.copy2(HERE/name,out/name)
+    failed=read(FAILED/'preflight_5135/EXECUTION.json');require(failed['status']=='failed' and failed['reason']=="'reuse'" and all(failed[k]==0 for k in ('SCC_started','SCC_terminal','native_component_calls')),'Original zero-call schema failure differs')
+    legacy=read(LEGACY/'manifest.json');legacy_pins={'manifest':pin(LEGACY/'manifest.json'),'driver':legacy['driver'],'collection':pin(LEGACY/'FINAL_COLLECTION.json')}
+    for p in legacy_pins.values():check(p)
     c={k:prior[k] for k in KEYS};c.update(protocol_id=PROTOCOL,implementation=pin(out/'SOLVENT.py'),wrapper=pin(out/'RUN.sbatch'),plan=pin(out/'PLAN.md'),
        template=pin(OLD/'CONFIG.json'),dispatcher=prior['prior_adapter'],completed_A0AC_collection=pin(OLD/'execution/FINAL_COLLECTION.json'),completed_A0AC_execution=pin(OLD/'execution/EXECUTION.json'),
        score_config=pin(score_config),score_collection=pin(score_collection),score_execution=pin(expath),score_adapter=sc['implementation'],mace_scorer=sc['old_scorer'],
@@ -105,12 +162,17 @@ def bind(score_config,score_collection,output):
        calibration_plan=sc['calibration_plan'],search_plan=sc['plan'],generic_contact_helper=sc['generic_contact_helper'],
        cells=cells,targets=targets,cached=cached,rows=[{k:r[k] for k in ('source_case_id','case_id','record_id','protein','expected_class','biological_group','source_conditioning_metal')} for r in sr['rows']],
        protein='canonical25',CPUs=7,declared_sources=25,declared_added_matrix_cells=150,declared_new_unique_cells=len(cells),reused_original_cells=150,reused_A0AC_additional_cells=6,
-       maximum_SCC_calls=4*len(cells),maximum_native_component_calls=2*len(cells),pool_orders=ORDERS,new_MACE_calls=0,new_DFT_calls=0,new_optimizations=0,automatic_submission=False)
+       maximum_SCC_calls=4*len(cells),maximum_native_component_calls=2*len(cells),pool_orders=ORDERS,new_MACE_calls=0,new_DFT_calls=0,new_optimizations=0,automatic_submission=False,
+       legacy_component=legacy_pins,schema_recovery_note=pin(out/'RECOVERY_V2.md'),original_failed_config=pin(FAILED/'CONFIG.json'),original_failed_preflight=pin(FAILED/'preflight_5135/EXECUTION.json'))
+    old_config=read(c['original_failed_config'])
+    require(failed['config']==c['original_failed_config'],'Original failure config differs')
+    for k,value in old_config.items():
+        if k not in ('implementation','wrapper','plan'):require(c[k]==value,'Schema repair altered scientific configuration: '+k)
     write(out/'CONFIG.json',c);print(json.dumps(pin(out/'CONFIG.json')))
 
 def preflight(c,f,r,n,a,h,selector,search,mace):
     require(pin(sys.executable)==c['numerical_python'] and c['protocol_id']==PROTOCOL,'Interpreter/protocol differs')
-    for k in ('plan','wrapper','search_plan','calibration_plan','generic_contact_helper','completed_A0AC_execution'):check(c[k])
+    for k in ('plan','wrapper','search_plan','calibration_plan','generic_contact_helper','completed_A0AC_execution','schema_recovery_note','original_failed_config','original_failed_preflight'):check(c[k])
     prior=read(c['template'])
     for k in KEYS:require(c[k]==prior[k],'Qualified solvent dependency differs: '+k)
     require(c['dispatcher']==prior['prior_adapter'],'Executed solvent dispatcher differs')
@@ -177,7 +239,10 @@ def preflight(c,f,r,n,a,h,selector,search,mace):
             require(pair['Ca'][1:]==pair['La'][1:] and pair['Ca'][0][1:]==pair['La'][0][1:],'Paired physical frame differs')
             physical.append({'source_case_id':sid,'candidate':q,'physical_admitted':True})
     require(len(c['targets'])==300 and len(c['cached'])==156 and len(c['cells'])==c['declared_new_unique_cells']<=144,'Cell denominator differs')
-    cached=[a.reusable(c,d,n,r) for d in c['cached']];cc=read(c['canonical_collection']);inv=read(c['calibration_inventory']);residuals=[]
+    legacy=LegacyComponentFacade(c,r);negative=legacy.negative_metadata_checks()
+    cached=[a.reusable(c,d,n,legacy) for d in c['cached']]
+    require(len(legacy.evidence)==12 and all(v['accepted'] for v in legacy.evidence),'Exact12 legacy components did not qualify')
+    cc=read(c['canonical_collection']);inv=read(c['calibration_inventory']);residuals=[]
     require(cc['inventory']==c['calibration_inventory'] and c['canonical_native_collection']==cc['canonical_native_collection'] and selector.__file__==c['scorer']['path'],'Canonical baseline/scorer differs')
     require([row['record_id'] for row in c['rows']]==inv['calibration_rule']['designated_record_ids'],'Designated25 changed')
     for source,stored in zip(c['rows'],cc['rows']):
@@ -191,7 +256,8 @@ def preflight(c,f,r,n,a,h,selector,search,mace):
         source=c['cached'][route['cache_index']] if route['kind']=='cached' else declared[route['task_id']]
         require(identity(t)==identity(source),'Exact same-source/state/XYZ cache routing differs')
     return {'status':'passed','physical_checks':physical,'reused_MACE':{t['task_id']:mr[t['task_id']] for t in c['cells']},'cached_evidence':cached,
-       'baseline_replay':{'count':len(residuals),'maximum_residual_kcal_mol':max(residuals,default=None),'tolerance_kcal_mol':h.TOL},'new_molecular_calls':0,'reused_original_cells':150,'reused_A0AC_additional_cells':6}
+       'baseline_replay':{'count':len(residuals),'maximum_residual_kcal_mol':max(residuals,default=None),'tolerance_kcal_mol':h.TOL},'new_molecular_calls':0,'reused_original_cells':150,'reused_A0AC_additional_cells':6,
+       'legacy_schema_qualification':{'status':'passed','pins':c['legacy_component'],'real_component_replays':legacy.evidence,'negative_metadata_checks':negative,'scientific_formulas_and_tolerances_changed':False}}
 
 def component(v):
     return {'MACE_eV':v['MACE_eV'],'solvent_hartree':v['G_qvac_hartree'],'xyz':v['xyz'],'MACE':v['MACE'],'native_result':v['native_result']} if v['status']=='available' else None
@@ -244,7 +310,7 @@ def execute(path,sha,action):
         try:
             sys.path.insert(0,str(ROOT/'scripts'));dispatcher=load('_canonical_solvent_dispatch',c['dispatcher']);f=load('_canonical_factorial',c['factorial']);r=load('_canonical_component',c['component']);n=load('_canonical_native',c['native_adapter'])
             a=load('_canonical_reuse',c['solvent_adapter']);h=load('_canonical_pool',c['pool_adapter']);selector=load('_canonical_selector',c['scorer']);search=load('_canonical_search',c['score_adapter']);mace=load('_canonical_mace_predicate',c['mace_scorer'])
-            pf=preflight(c,f,r,n,a,h,selector,search,mace);write(out/'PREFLIGHT.json',pf)
+            pf=preflight(c,f,r,n,a,h,selector,search,mace);write(out/'PREFLIGHT.json',pf);write(out/'LEGACY_COMPONENT_SCHEMA_TEST.json',pf['legacy_schema_qualification'])
             if action=='execute':sr=dispatcher.solvent(c,out,f,r,n,pf['reused_MACE'])
             receipt['status']='complete'
         except BaseException as e:receipt.update(reason=str(e),traceback=traceback.format_exc())

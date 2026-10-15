@@ -136,8 +136,13 @@ review; they are not physical error bars.
 - **Cavity exclusion:** origin shifts are mostly common. The matched follow-up
   changes source-dependent accommodation by only −0.076458 kcal/mol and leaves
   all selections unchanged. Aggregate precision flags remain false. This closes
-  the tested fixed-charge Gelec exclusion remedy, not HB/nonpolar burial,
-  permanent protein electrostatics, density response or hydration.
+  the tested fixed-charge Gelec exclusion remedy. Saved-output HB diagnostic5147
+  now also retains all12 endpoints with unchanged selections. HB-only paired
+  accommodation changes are−0.033159/−0.057864kcal/mol in control/target, passing
+  their per-source gates. The raw source difference−0.024705 remains unqualified
+  by the unchanged aggregate precision rule. Large common burial shifts offer no
+  useful remedy; close this HB component too. Nonpolar burial, permanent protein
+  electrostatics, density response and hydration are not established by these tests.
 - **Crystal:** conditional 1FLG A has smaller accommodation and a Ca call.
   Its static→accommodated call transition uses different bands; raw motion is
   La-directed. Crystal B remains unsupported. Neither establishes the physical state.
@@ -187,7 +192,8 @@ is not supported by the completed evidence.
   [packing/crystal](../../exaa_source_packing_20261014/REPORT.md),
   [full-pool/force test](../../exaa_metal_position_20261014/FULL_POOL_FORCE_REPORT.md),
   [midpoint](../../exaa_metal_midpoint_20261014/REPORT.md),
-  [cavity-dependent accommodation](../../native_cavity_accommodation_20261014/REPORT.md).
+  [cavity-dependent accommodation](../../native_cavity_accommodation_20261014/REPORT.md),
+  [completed HB component test](../hb_shielding/REPORT.md).
 
 These links point to completed evidence and its source pins; historical proposed
 next steps inside them are superseded by their later actual results above.

@@ -5,9 +5,10 @@ saved vacuum selections/contrasts unchanged.727 native requests,953s on1A5000
 and12CPUs; no failed requests. Existing boundary flags and source limitations
 remain. Do not repeat completed searches or submit the CPU fallback.
 Matched-solvent preflight5135 failed on legacy metadata schema before molecular
-calls; preservev1/config52129072. Reviewed v2 preflight5157 is RUNNING,
-config579fe28d, watcher84857. No composite classification yet. Root owns
-submissions. Saved-only ExaA HB5147 completed12/12 with no useful improvement;
+calls; preservev1/config52129072. V2 preflight5157 PASSED all original/legacy
+checks. Canonical solvent5158 is submitted, config579fe28d, watcher94434; exact
+command in asn_canonical_solvent_v2/SUBMISSION.json. No composite class result
+yet. Root owns submissions. Saved-only ExaA HB5147 completed12/12 with no useful improvement;
 branch closed. No transfer campaign before canonical solvent gate.
 Read CURRENT.md and newer receipts; production and frozen bands unchanged.
 

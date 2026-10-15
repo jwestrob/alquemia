@@ -14,10 +14,15 @@ The exact matched-solvent preflight5135 FAILED before any new molecular calls
 (79.216s on7CPUs): the expansion-schema helper encountered actual legacy task
 metadata without a task-level reuse field. Twelve cached C5AXV8/ExaA cells use
 the older COMPONENT_V2 manifest. The narrow pinned-driver repair has passed independent static review.
-Versioned zero-call preflight5157 is RUNNING, config579fe28d in
-asn_canonical_solvent_v2; watcher84857 and exact launch in PREFLIGHT_SUBMISSION.
-Original v1 config52129072/failure remain unchanged. Do not executev1 or repeat
-MACE. Review5157 before root submits the unchanged missing solvent endpoints.
+Versioned zero-call preflight5157 PASSED:12 exact legacy replays,2 corrupted
+metadata rejections,156 cached component/native checks,75 physical checks and
+975 original-pool comparisons with zero residual. Cost110scheduler seconds/7CPU.
+Actual solvent5158 is submitted on7CPUs; watcher94434, config579fe28d in
+asn_canonical_solvent_v2/SUBMISSION.json. It evaluates144 missing endpoint
+geometries (576SCC/288native replays maximum), reusing156 cached cells. No new
+MACE/DFT/optimization. Read actual EXECUTION/FINAL_COLLECTION on completion and
+retain all25 members, common3/4/6, old-band transfer and fixed calibration rule.
+Original v1 config52129072/failure remain unchanged. Do not repeatMACE or5157.
 
 Saved ExaA HB-shielding5147 is COMPLETE: all12 cells, no selection changes,
 3scheduler seconds on1CPU and zero molecular calls. Large common HB burial

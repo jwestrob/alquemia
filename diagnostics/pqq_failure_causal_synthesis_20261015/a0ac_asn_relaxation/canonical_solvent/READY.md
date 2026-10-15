@@ -5,10 +5,12 @@ failed before molecular calls on the legacy task schema; preservev1. The
 [reviewed v2 repair](RECOVERY_V2.md) changes only archived component routing.
 It is now bound at `asn_canonical_solvent_v2/CONFIG.json`, SHA
 `579fe28d6f2affcff1e2b0c90bfcdf03660e23bf33945961183697c4216b7adc`.
-Actual numerical preflight5157 is submitted; exact launch/wake are in that
-workspace's `PREFLIGHT_SUBMISSION.json`. Do not rerun or execute from a static
-review alone. Root will inspect its actual result before `RUN.sbatch CONFIG SHA
-execute`. No molecular call has yet been made by this continuation.
+Actual numerical preflight5157 passed:12 real legacy replays,2 corrupted
+metadata rejections,156 cache checks,75 physical checks and975 baseline
+comparisons with zero residual. Root reviewed and submitted execute5158;
+watcher94434 and exact argv are in `SUBMISSION.json`. Do not duplicate this job
+or rerun preflight. On completion read actual `execution/FINAL_COLLECTION.json`
+and `EXECUTION.json` before any subsequent transfer decision.
 
 The original conditional package below is historical; its v1 output path and
 source hash are superseded by RECOVERY_V2.md and the actual bound v2 config.

@@ -20,3 +20,13 @@ Metadata-only binding, after static review:
 ```
 
 Root submits the copied `RUN.sbatch CONFIG.json <actual-config-sha> preflight`; execution remains a separate root action after the actual preflight passes. No numerical tests or chemistry run on login.
+
+## Actual Slurm qualification
+
+Job5157 passed in110scheduler seconds on7CPUs:12 exact legacy component replays,
+two rejected corrupted-real-metadata cases,156 cached native/component checks,
+75 physical checks and975 original-pool comparisons with zero maximum residual.
+No molecular calls. Root reviewed actual PREFLIGHT/EXECUTION and submitted only
+the bound missing endpoints as5158, config579fe28d, watcher94434. The frozen
+workspace note retains its original pre-execution version; this appended source
+record reports the later actual result. No change to chemistry or acceptance.

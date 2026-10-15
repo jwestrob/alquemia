@@ -1,5 +1,28 @@
 # Current causal investigation
 
+## Conditional incremental-response adapter prepared — 15 October 2026
+
+The source-only adapter under a0ac_asn_relaxation/reference_candidate_v1/ is
+ready after independent design/code review and root AST/shell checks. No workspace,
+manifest, numerical preflight or DFT cell is bound or submitted. All agent tasks
+are complete. The proposed four cells compare the old and
+new selected states within each metal: Ca adaptive_Ca to relaxed_flip_Ca, La
+adaptive_La to relaxed_flip_La. This directly tests the incremental vacuum gain;
+the earlier common-origin alternative could agree while missing an error in
+that gain. Different metal paths are explicit; this is neither a common-path
+perturbation nor an independently minimized DFT pool. The earlier feasibility
+note is retained. Root reviews the full uniform transfer before deciding whether
+to execute any reference check. Production, existing calibrations and the active
+MACE/solvent plan remain unchanged.
+
+REFERENCE.py SHA9c1fa10b and PREPARE.py SHAf842fdb5 are pinned in the reviewed
+source delivery. READY.md gives explicit future commands. The adapter reuses
+the native executor and real ExaA/MMOL collector fixtures, requires the actual
+terminal-transfer decision for execution, and reviews both old-selected scouts
+before the two new cells. The two revised old-geometry hashes also have no match
+in the bounded historical manifest search. Runtime and scientific checks remain
+unrun; no reference agreement is implied by source review.
+
 ## Independent amide-reference feasibility recovered — 15 October 2026
 
 The bounded archive audit found no exact compatible DFT endpoint for the current

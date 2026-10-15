@@ -1,5 +1,24 @@
 # Current causal investigation
 
+## Uniform MACE transfer complete; solvent preflight active — 15 October 2026
+
+Job 5297 completed all 222 new contexts. With 34 exact prior contexts and the
+1H4I scout, all 257 distinct contexts / 260 memberships and 3,084 common6 MACE
+cells are available. Independent review confirmed source/state/cached identities
+and physical admission. Boundary flags remain explicit. Read
+[a0ac_asn_relaxation/transfer/MACE_RESULT.md](a0ac_asn_relaxation/transfer/MACE_RESULT.md).
+This is search completion, not a solvent-scored classification result.
+
+Solvent preflight 5610 is active with watcher 1228828. Frozen config b8a64366 is
+in asn_transfer_solvent_v1; PREFLIGHT_SUBMISSION.json records exact launch/rearm.
+It binds 1,746 cached and 1,338 new unique endpoints. Inspect actual
+preflight_5610/PREFLIGHT.json and EXECUTION.json before submitting the unchanged
+SOLVENT.sbatch execute action. No new MACE, DFT or optimization is needed for
+this stage. After terminal solvent collection, run the prepared one-CPU report.
+The separate four-cell DFT adapter remains unbound/unrun pending full-transfer
+interpretation. Production and fixed bands are unchanged. Older running-5297
+notes below are historical; do not repeat completed chemistry.
+
 ## Conditional incremental-response adapter prepared — 15 October 2026
 
 The source-only adapter under a0ac_asn_relaxation/reference_candidate_v1/ is

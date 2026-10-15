@@ -1,0 +1,127 @@
+{
+  "status": "unbound_conditional_readiness",
+  "prior_config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_rotamer_solvent_v1/CONFIG.json",
+    "sha256": "0c22b4056a64b4d0dabb3922eff20b72e3a3bd6455dbd740c7501a484415010c"
+  },
+  "prior_collection": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_rotamer_solvent_v1/execution/FINAL_COLLECTION.json",
+    "sha256": "212f8d0ffc82b070a3a7c78ef47e2441acaa76ce061825ffd3662c98f058202f"
+  },
+  "executed_solvent_adapter": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_rotamer_solvent_v1/SOLVENT.py",
+    "sha256": "ada49e46ebe58530c47bd28489332a60b0d78ea1806b46ac902995c347792365"
+  },
+  "scientific_dependencies": {
+    "matrix": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/exaa_source_packing_20261014/MATRIX.py",
+      "sha256": "2f46a3bd439034f7f1379be5dfa867aac7e101b2868dbca6aec7ffbc348bfc7f"
+    },
+    "runtime": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/orca_parameter_audit_20261012/context_gfn2_v1/RUNTIME.json",
+      "sha256": "21a62aa390151e82d96c0e23f7e0a404c868694be6c7da9793d839526525c76c"
+    },
+    "settings": {
+      "accuracy": 0.0001,
+      "maxiter": 500,
+      "temperature_K": 300,
+      "temperature_Eh": 0.000950042573563535,
+      "energy_parity_Eh": 1e-06,
+      "population_parity_e": 1e-05,
+      "charge_sum_tolerance_e": 1e-05,
+      "bohr_A": 0.529177210903,
+      "workers": 2,
+      "numerical_threads_per_worker": 1,
+      "solvation": "ALPB water gsolv",
+      "primary": "xtb6.7.1 native GFN2, not --tblite",
+      "independent": "isolated tblite0.7.0",
+      "require_independent_parity": true,
+      "no_restart": true,
+      "retry_policy": "none"
+    },
+    "factorial": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/context_factorial_gfn2.py",
+      "sha256": "4c534bf7ac264c8babd1e1c8aa28c88b8932bfc53708a52666772339b9dcb95c"
+    },
+    "component": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/orca_parameter_audit_20261012/expanded_transfer_inventory/REEVALUATE.py",
+      "sha256": "5f4424023dedb66b50522b5b9b7689b8883e9429356012f837a61a4f13cea152"
+    },
+    "native_manifest": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/manifest.json",
+      "sha256": "bcd9fc9d8923139dfcb8d7b8d0191c5c29484e700ddc8ffd488c1dea09c10b41"
+    },
+    "native_build": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/canonical_v1/BUILD.json",
+      "sha256": "5cad839740ecf344ad7860eb6ef179c4f0f3f40b8b39acb6023821e65695a02e"
+    },
+    "native_binary": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/canonical_v1/replay",
+      "sha256": "3d6a9d23aa1d1152c368b21f7f6d55a135279596b8d01a3a1b3ebc42617e75b6"
+    },
+    "native_adapter": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/implementation/NATIVE.py",
+      "sha256": "97c1c772d950ff008b09e1c3ca3341278359a3590060bd20f51bb8a29226d0fe"
+    },
+    "MACE_model": {
+      "checkpoint": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/software_v1/MACE-omol-0-extra-large-1024.model",
+        "sha256": "9b64b4fd5153ca578c694abc57806d8111050de6ff652e695c9b525bc4d36469"
+      },
+      "dtype": "float64",
+      "embedding_specs": {
+        "total_charge": {
+          "emb_dim": 1024,
+          "in_dim": 1,
+          "num_classes": 201,
+          "offset": 100,
+          "per": "graph",
+          "type": "categorical"
+        },
+        "total_spin": {
+          "emb_dim": 1024,
+          "in_dim": 1,
+          "num_classes": 101,
+          "offset": 0,
+          "per": "graph",
+          "type": "categorical"
+        }
+      },
+      "energy_component": "MACE_OMOL_total_vacuum_energy",
+      "execution_adapter": null,
+      "extra_dispersion": false,
+      "family": "MACE_OMOL",
+      "head": "omol",
+      "periodic": false,
+      "r_max_A": 6.0,
+      "solvent": null,
+      "spin_input_convention": "multiplicity"
+    },
+    "corrected_ORCA_parameter_provenance": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/params/native_gfn2_parameters_v1/corrected_la.xtb.json",
+      "sha256": "a4f83ca72d58d6e80f634e61bb8e99b7af0f26c38cc4a9295e85215ecf72d05c"
+    },
+    "ORCA_correction_policy": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/params/native_gfn2_parameters_v1/la_shell_three_arrays_v1.json",
+      "sha256": "464fae3122f305c424e8cdb12cab175d31bc87d0fcd582f4bafac3b1cce93815"
+    },
+    "solvent_adapter": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_metal_position_20261014/solvent_v1/SOLVENT.py",
+      "sha256": "cc02ca883ec2f8504e007674b2f6273d4413a2361d0d1f555efe00888bf9a3c8"
+    },
+    "pool_adapter": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/exaa_metal_position_20261014/full_pool_check_v1/COLLECT.py",
+      "sha256": "1d8d0f96aba7d0a3a73953d8543489effbd9474f47372439524991928547da0f"
+    },
+    "scorer": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/scoring/SCORE.py",
+      "sha256": "9589c60af4f977c012eefe55de06eba044a50582a9c994c602da44b53e054375"
+    },
+    "numerical_python": {
+      "path": "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python3.11",
+      "sha256": "53244dfc692ccbfd6a065f053dfa2026e2f3e4755beef84d600c8f7dbc9b5b27"
+    }
+  },
+  "binding_requires": "Actual complete ten-source common6 collection plus declared sign-blind gate; root review and Slurm preflight before molecular submission",
+  "source_tree_copies": 0
+}

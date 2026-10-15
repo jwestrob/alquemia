@@ -109,6 +109,12 @@ Next finite research work:
  unrun. This inventory does not change residue selection or run canonical energy.
  Later solvent requires credible
  complete common6 pools and absolute common6−common4 change ≥1kcal/mol.
+ The independently reviewed conditional adapter is ready at
+ a0ac_asn_relaxation/solvent/READY.md: exact metadata binding, separate Slurm
+ preflight-only command, then root-reviewed execution. It reuses80 prior cells
+ and evaluates at most40 relaxed endpoints with unchanged qualified solvation.
+ No solvent config is bound or job submitted while4844/contact results are
+ incomplete; static review is not scientific qualification.
 - Four MMOL proposal jobs4637–4640 are actually RUNNING; comparator4641 pending.
  All exact commands and completion/health watchers are in PROPOSAL_LAUNCH.json.
  No duplicate origin or proposal submissions.

@@ -1,0 +1,13 @@
+# Conditional relaxed-Asn frozen-distribution solvent stage
+
+Question: does the already declared alternative-basin relaxation change the composite common pool after its actual vacuum response passes the frozen review gate? This prepares execution only. Root reviews the terminal molecular/contact results before submitting; no automatic launch.
+
+Binding requires the exact complete ten-source/common6 collection, all20 credible searches and all40 new final MACE cells, both actual stage execution receipts, and the recorded sign-blind mathematical |common6−common4| ≥1 kcal/mol gate in at least one source. Slurm preflight independently replays this gate and all common-pool choices. All ten sources proceed together, regardless of response sign; a failed gate cannot produce a runnable bound configuration. No partial-pool or favorable-source selection.
+
+At most40 new endpoints: ten existing sources × relaxed-flip-Ca/relaxed-flip-La geometry × Ca/La. Reuse the exact80 completed original/common4 endpoints. Fixed frames retain the204-atom physical state, actual rebased source/cap maps, paired coordinates, original H inventory and passed original/full-source geometry gates. There are no new MACE calls, optimizations, DFT calculations, geometry repairs, waters or charge-state choices.
+
+Reuse the executed `a0ac_asn_solvent/SOLVENT.py` functions and their pinned component-v2/runtime/native dependencies. Each new frame receives the unchanged standalone xTB/tblite vacuum/water qualification, native water-component diagonal and cavity checks, and informative fixed-vacuum-charge replay. Maximum160 SCC backend calls and80 native component replays; seven allocated CPUs, one thread per independent SCC task. No engine rebuild, parameter substitution, memory/time override or retry. Corrected La parameter lineage remains provenance; native ORCA GFN2 is not substituted for the qualified standalone recipe.
+
+Collect common3/common4/common6 separately with the existing mathematical, operational (strict−0.1 kcal/mol work) and origin policies, original-first ties and unit conversions. Report all per-geometry/per-metal works, MACE/solvent components and common4→6 differential changes. Required failures remain explicit and block accommodated pool minima; independent origin values remain labeled separately. No fitted bands, class calls, production changes or equilibrium/affinity claim.
+
+Numerical geometry, saved-energy replay, tests and chemistry execute only inside actual Slurm. Login operations are source writing and metadata/hash binding. Executed outputs are immutable, exclusive-created, and retained on interruption; root owns recovery decisions.

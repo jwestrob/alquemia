@@ -7,8 +7,9 @@ sensitivity diagnostic, not a newly optimized/composite classifier. Canonical
 CPU scout5057 is COMPLETE: both searches pass, original pool score unchanged;
 remaining23 scientific gate passes. GPU reuse scout5066 failed before model
 startup because nested srun rejected its allocation; narrow launcher recovery
-5079 now runs its reviewed launcher-only recovery, watcher4123632, sole
-workspace asn_gpu_reuse_root_v2/confige3a2a38b. CPU remaining23 fallback is
+5079 completed its reviewed launcher-only recovery:4/4 parity passes onA5000,
+energies exact/force errors below7.11e-14eV/A. Sole workspace
+asn_gpu_reuse_root_v2/confige3a2a38b. CPU remaining23 fallback is
 bound but unsubmitted; do not run duplicate routes. Read CURRENT.md for
 ownership/exact commands; no repeats.
 

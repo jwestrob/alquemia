@@ -42,13 +42,18 @@ scout only permits review of a transport adapter.
 Root owns all submissions and promotion.
 Production and frozen bands remain unchanged. Read newer receipts before acting.
 
-Reviewed launcher recovery5079 is now submitted with watcher4123632. Sole active
+Reviewed launcher recovery5079 is COMPLETE4/4; its watcher4123632 is terminal. Sole
 recovery workspace: asn_gpu_reuse_root_v2, confige3a2a38b. It starts the unchanged
 GPU server directly inside the assigned one-GPU batch, with inherited device and
 cgroup checks. The separate agent asn_gpu_reuse_v2 binding is unsubmitted and
 must not be dispatched as a duplicate. CPU remaining23 fallback is now bound
 at asn_canonical_search_remaining_v1 (config59fab20f), unsubmitted. Conditional
 canonical_solvent adapter is ready but requires complete all25 MACE first.
+Actual RTX A5000 energies match CPU exactly at all four points; maximum force
+residual7.11e-14eV/A passes the existing gates. GPU requests take1.17–3.65s versus
+15.30–16.59s for archived CPU calls; full scout46s,12 allocated CPUs/oneGPU.
+Read gpu_reuse/RESULT.md. Curie owns the minimal canonical request/receipt bridge,
+Heisenberg reviews it. No remaining23 molecular submission yet; root owns launch.
 
 ## Preceding completed result — 15 October 2026, 04:35 UTC
 

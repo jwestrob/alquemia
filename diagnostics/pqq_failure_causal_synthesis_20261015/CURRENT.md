@@ -1,5 +1,44 @@
 # Current causal investigation
 
+## Full transfer complete: one unique source repaired, no regressions — 15 October 2026
+
+Read [the completed comparison](a0ac_asn_relaxation/transfer/FINAL_REPORT.md) and
+its delivery/RESULT.json. All257 current unique contexts have complete scores.
+Common3 gives248correct/0wrong/9inconclusive; common4 andcommon6 give249/0/8.
+The repaired A0ACCa4 is shared between expanded135 andcurrentCa125; those cohort
+gains are one unique repair. No coverage loss, new wrong calls or band changes.
+Combined sampled raw ordering gap changes−1.370431→+3.633118kcal/mol. Remaining
+eight abstentions remain in the unchanged canonical interval; their unique physical
+causes are not established. All100 existing triples remain89correct/0wrong/
+5inconclusive/6unavailable. They are correlated development evidence.
+
+All1338 new native endpoints admitted. Solvent5661 completed24381scheduler seconds
+on7CPUs,5352SCC+2676nativecalls; actual collection09ee0ae6, executionfccfa92e.
+Saved reporter5666 completed its application in4.19seconds but its allocation
+lingered; root cancelled only that allocation at203seconds. Complete science and
+scheduler cancellation are recorded separately. Figure5748 completed13seconds,
+summary6035 completed1second, each1CPU/zero molecular calls. Actual PNG inspected.
+Summary resultf70378b7 confirms exact aliases, all257/260denominators, unchanged
+bands, complete outcomes, original triples and18superseded ledger rows. Gauss
+independently reviewed the actual report; no substantive defect found.
+
+Only A0ACCa4/La4 scores change. Fixed flip repairs the class/ordering overlap;
+additional relaxation improves their conditioning-specific spread but adds no
+class call. DFT supports the relaxed La/net response, not the tiny Ca gain or
+the unrelaxed fixed-flip geometry. Its short hydrogen contact prevents declaring
+the cheapest unrelaxed output a validated physical endpoint.
+
+Next finite work is a NEW retrospective saved-data policy replay, not more
+chemistry: if either metal selects the fixed alternative under the existing
+composite operational0.1kcal rule, enable BOTH bounded searches and shared-pool
+scoring; otherwise use common3. Root/independent review identified its limitation:
+an initially unfavorable alternative could relax into a useful basin and be missed.
+Curie prepares transfer/gated_replay; root owns launch/integration, Gauss review.
+No label or desired direction enters routing. No new DFT, MACE, solvent or
+optimization is authorized by this replay. All earlier failures remain preserved;
+production is unchanged. Current conclusion is meaningful, but the full causal
+goal is not being marked complete while final decision/replay delivery is pending.
+
 ## Four-cell DFT response complete; full transfer still running — 15 October 2026
 
 All four selected-state endpoints pass unchanged energy-diagnostic admission.

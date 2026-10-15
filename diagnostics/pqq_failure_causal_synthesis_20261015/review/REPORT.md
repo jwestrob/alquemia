@@ -1,4 +1,29 @@
-# Why nine PQQ sources remain inconclusive
+# PQQ causal investigation: one repaired source, eight remaining abstentions
+
+## Completed uniform comparison — 15 October
+
+The full uniform amide search now repairs A0ACCa4 without regressing another
+context. Across257 unique current contexts,248correct/0wrong/9inconclusive becomes
+249/0/8, with complete coverage and unchanged25-reference bands. The two reported
+cohort gains are the same shared source. The fixed alternative already removes
+the sampled Ca/La raw-score overlap; subsequent bounded relaxation improves
+A0AC source consistency without another class gain. All100 existing triples
+remain89correct/0wrong/5inconclusive/6unavailable.
+
+Read [the final transfer report](../a0ac_asn_relaxation/transfer/FINAL_REPORT.md).
+The eight remaining scores are ordered by known class on this consumed collection
+but lie in the original conservative reference interval. That explains their
+decision status, not a unique physical cause. No interval was narrowed to rescue
+them. The missed-amide explanation is supported for A0AC; broader fold failure
+or one universal solvent defect is not established.
+
+The fixed flip retains a short contact, and DFT tested the relaxed selected states.
+Accordingly, matching class counts alone does not justify promoting the fixed
+unrelaxed endpoint. A separate retrospective screen-and-relax replay is being
+prepared from saved data, retaining both-metal search/pool fairness and explicitly
+allowing that initially unfavorable starts could be missed. No new chemistry or
+production change follows. The chronology below describes the original nine-case
+investigation; older pending statements are superseded by the completed result.
 
 **There is no demonstrated single failure shared by all nine.** Six new
 abstentions are an established solvent-model/calibration tradeoff. Three other

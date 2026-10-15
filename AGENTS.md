@@ -1,5 +1,21 @@
 # Latest owned PQQ work — 15 October 2026 UTC
 
+Uniform amide transfer is COMPLETE. Read
+diagnostics/pqq_failure_causal_synthesis_20261015/a0ac_asn_relaxation/transfer/FINAL_REPORT.md.
+257 unique contexts:248correct/0wrong/9inconclusive becomes249/0/8, no coverage
+loss, unchanged canonical bands. One A0ACCa4 repair is shared by both cohorts;
+do not count it twice. All known-class raw scores are now ordered on this consumed
+set. Fixed flip already gives the class gain; relaxation improves A0AC source
+consistency but not further calls. Do not promote the short-contact fixed geometry
+as independently DFT-validated. All molecular work is terminal; saved report5666
+completed then its allocation was cancelled203s; figure5748/summary6035 completed.
+A new label-free gated-search policy is being prepared for saved-data replay only:
+either metal selecting the fixed alternative triggers both relaxations/common pool.
+This is retrospective, not a new molecular campaign or production promotion.
+Root owns integration; Curie owns transfer/gated_replay source, Gauss review.
+Read newer CURRENT/receipts before acting; no duplicate submissions.
+
+Previous reference checkpoint (completed):
 Read diagnostics/pqq_failure_causal_synthesis_20261015/CURRENT.md and actual receipts.
 All four selected-state DFT cells5762/5763/5866/5867 are complete/admitted.
 Read a0ac_asn_relaxation/reference_parallel_v2/FINAL_REPORT.md under the current
@@ -8,7 +24,7 @@ quantitative differences and electronic-state limitations remain. Collector5868
 completed its four-cell application result, then its stale allocation was cancelled
 after363s; retain scheduler cancellation separately from completed science.
 Exact evidence is in asn_selected_reference_parallel_v2/COLLECTOR_ALLOCATION_RELEASE.json.
-Solvent5661 continues, report5666/figure5748 follow it with armed completion wakes.
+Solvent5661/report5666/figure5748 have now finished as recorded above.
 No additional DFT, changed settings or production promotion. Do not repeat the
 completed four-cell comparison or treat energy convergence as stability proof.
 Older submitted/pending status entries below are historical.

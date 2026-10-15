@@ -1,0 +1,34 @@
+{
+  "status": "ready_unrun",
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_geometry_response_v1/CONFIG.json",
+    "sha256": "c1d5832bec9c57b5046d32383aa5192df1726d5e57b609754d19b6c85cc2bef2"
+  },
+  "method": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_geometry_response_v1/implementation/METHOD.md",
+    "sha256": "fbd15cda21db87bd81bcb188d9247a1ef91cd5429f862dcf1e32b133d8197ba5"
+  },
+  "implementation": {
+    "ANALYZE.py": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_geometry_response_v1/implementation/ANALYZE.py",
+      "sha256": "4a81fac94e31220c5a0956e0b88784dae9005dd7ef6fa68a63c73b1400469dd9"
+    },
+    "RUN.sbatch": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_geometry_response_v1/implementation/RUN.sbatch",
+      "sha256": "b1bc2a281484784413d11975b661178eb3f702bce287072a397342a786583bd1"
+    }
+  },
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--output=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_geometry_response_v1/slurm_%j.out",
+    "--error=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_geometry_response_v1/slurm_%j.err",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_geometry_response_v1/implementation/RUN.sbatch",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_geometry_response_v1/CONFIG.json",
+    "c1d5832bec9c57b5046d32383aa5192df1726d5e57b609754d19b6c85cc2bef2"
+  ],
+  "shell_command": "sbatch --parsable --output=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_geometry_response_v1/slurm_%j.out --error=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_geometry_response_v1/slurm_%j.err /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_geometry_response_v1/implementation/RUN.sbatch /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_geometry_response_v1/CONFIG.json c1d5832bec9c57b5046d32383aa5192df1726d5e57b609754d19b6c85cc2bef2",
+  "checks": "Python AST and bash syntax only; no scientific execution or submission",
+  "result": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_geometry_response_v1/execution/RESULT.json",
+  "receipt": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_geometry_response_v1/execution/EXECUTION.json"
+}

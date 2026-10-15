@@ -1,32 +1,37 @@
 # Remaining PQQ causes under investigation — 15 October 2026 UTC
 
-The active goal is to explain remaining failed/abstaining predictions. Read
-diagnostics/pqq_failure_causal_synthesis_20261015/CURRENT.md and newer receipts.
-The completed cavity branch did not improve accommodation and is closed.
-Saved PQQ forces4598 complete8/8: shared quinone strain, distinct pose-response
-signal; no DFT nuclear gradients or classifier gain. MMOL1770Ca0 exact six-cell
-reference preflight4601 passed; origin scouts4603/4604 RUNNING12MPI each with
-terminal/health wakes. Four proposal cells require actual origin review, not a
-new user permission. Source1 is inventoried only. Separate24cell finite PQQ
-rigid-pose preparation4606 and warm scorer4608 complete24/24. Paired changes
-−0.713229/+0.978209kcal/mol do not pass the frozen1kcal solvent gate; close that
-finite test and leave its solvent adapter unrun. ROOT_REVIEW is proactive, not
-a delivery ACK. Next ASN_ROTAMER_PLAN.md declares a finite whole-amide180degree
-alternative across allten XoxF1 origins. Inventory shows nearbyND2/distantOD1 in
-both sample4 sources, with both localAsn modes already present. One source is
-correctly called, so orientation alone is not a defect diagnosis. Agents prepare
-sourcegraph/fullsourceHcontact admission and204atom scoring. Preparation4614
-completed20/20; omitted-source contacts reviewed, local shortH contacts retained
-in the204atom energy model. Warm MACE4617 completed20/20; Ca4 pairedvacuum
-contrast improves+1.460981253638387kcal/mol,other9unchanged. This passes the
-declaredsolventgate; reviewedmatchedsolvent4623 submitted7CPU,config0c22b405,
-watcher3466505 in asn_rotamer_solvent_v1. Full20new/60reused cells,existing
-parameter/component gates. Read a0ac_asn_scoring/REPORT.md. No classgainclaim.
-Read CURRENT before submission; do not repeat completed work or loosen oldgates.
-Root owns execution; agents own disjoint implementations. All numerical work
-uses current shared Slurm rules. Preserve production, original failures and
-the corrected La-parameter/frozen-charge solver lineage. Do not duplicate any
-completed or active task from delayed callbacks.
+Active goal: explain the remaining failed/abstaining predictions and improve the
+model where evidence supports it. Read diagnostics/pqq_failure_causal_synthesis_20261015/CURRENT.md
+and newer execution receipts before acting. Root owns submissions; agents own
+disjoint adapters/reviews. All numerical work uses current shared Slurm rules.
+Preserve production, original failures and the corrected La-parameter lineage.
+
+Completed finite PQQ pose and cavity-exclusion tests did not earn continuation.
+Do not repeat them. The intact Asn290 alternative is promising: all ten sources
+scored, target Ca-conditioned4 common3→4 contrast +10.975 kcal/mol, La-conditioned4
++0.673, other eight unchanged. Both sample4 La rows gain about9.5 kcal/mol from
+solvent; differing vacuum headroom explains the different net changes. This is
+not a calibrated class rescue. The flip introduces a represented1.38Å H–H contact.
+
+Native geometry/charge factorial4813 completed eight new/eight reused cells.
+Geometry lowers the La solvent energy with either saved charge vector; changed
+charges partly oppose it. Large mixed terms prevent unique additive attribution.
+Two Ca mixed-term precision flags remain false. No new scorer or parameter fit.
+
+Bounded flipped-origin relaxation preparation4814 is partial5/10, zero energy
+calls. Five rows fail an exact cap-coordinate equality check; diagnose actual
+residuals before a versioned repair. The declared first Ca0 source passes and
+may proceed to its two-metal scout once the warm runner is reviewed. Preserve
+all ten rows, each original four-mode set, bounds and admission policy.
+
+MMOL1770 exact six-cell native r2SCAN-3c vacuum reference: origins4603/4604
+complete as energy diagnostics, with density/state warnings retained. Four saved
+proposal jobs4637–4640 run at12MPI each; comparator4641 follows. Terminal and
+health wakes are recorded. No origin rerun or gradient/stability claim.
+
+Delayed callbacks require receipt acknowledgement, not repeated chemistry.
+ROOT_REVIEW records proactive inspection; ROOT_ACK records actual delivery.
+No automatic production promotion or recalibration.
 
 # ExaA donor-response reference authorized — 14 October 2026
 

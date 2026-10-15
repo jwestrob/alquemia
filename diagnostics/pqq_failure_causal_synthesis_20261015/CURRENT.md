@@ -24,9 +24,12 @@ Current bounded tasks:
   metals. Read MMOL_REFERENCE_PLAN.md. Curie owns mmol_inventory/, Gauss owns
   mmol_reference/. Source1 is inventory only. Preflight4601 passed all six
   real-input checks and actual archived parser/collection regressions. Two native
-  origin scouts4603(Ca)/4604(La) submitted,12MPI each, with terminal and health
-  wakes. Read mmol_reference_v1/SCOUT_LAUNCH.json and each task'sSUBMISSION.json.
-  Four proposal cells are prepared but await actual origin state/cost review.
+  origin scouts4603(Ca)/4604(La) complete as energy diagnostics (3978/3789s,
+  12MPI each). Actual state/basis/coordinate checks pass; density/state stability
+  remains unqualified with energy-only endings/warnings retained. Root reviewed
+  both in mmol_reference_v1/SCOUT_REVIEW.json, then submitted four unchanged saved
+  proposals4637–4640 (12MPI each), comparator4641 afterany. All terminal/health
+  wakes recorded in taskSUBMISSION.json andPROPOSAL_LAUNCH.json; no repeat origins.
 - Finite intact-PQQ pose experiment: read PQQ_POSE_PLAN.md. Curie prepares24new
   MACE cells with +/-1degree cofactor rotations across BOTH sources and ALL three
   donor candidates; twelve baselines reused. Heisenberg reviews mapping/geometry.
@@ -56,12 +59,40 @@ Current bounded tasks:
   Warm MACE4617 completed20/20,60baselinesreused,363wallseconds/7CPU. OnlyCa4
   changes: La selectsflip,pairedvacuumcontrast+1.460981253638387kcal/mol; other9
   selections unchanged. Both policies agree. Actual frozen1kcal stage gate passes.
-  Read a0ac_asn_scoring/REPORT.md andRESULT.json. Independently reviewed matched
-  solvent4623 submitted7CPU:20new/60reused, atmost80SCC+40native componentcalls,
-  config0c22b405 in asn_rotamer_solvent_v1, watcher3466505. Actualpreflight before
-  calls retains full baseline/gate/parameter/component checks. No class/band change. The old0.8
+  Read a0ac_asn_scoring/REPORT.md andRESULT.json. Matchedsolvent4623 completes
+  all20new/60reused,80SCC+40nativecalls,475wallseconds/7CPU. Ca4commonpoolcontrast
+  +10.974999511265196kcal/mol,La4+.6730578923597932,other8zero. Both sample4 La
+  solvent gains are about9.5kcal; different vacuum headroom explains most of
+  their different final gains. Read a0ac_asn_solvent/{REPORT,INTERPRETATION}.md.
+  No class/band change. The old0.8
   domain is not relaxed or retrospectively passed. Root owns submissions.
+  Saved-geometry4626 completes10/10: Ca4 AsnO-metal4.595→2.562A,N2.446→4.718A;
+  correctlycalledLa4 showsanalogouschange. TargetincludedHD22-Gly292H1.382A
+  remainsanunrelaxedcontact; read a0ac_asn_geometry_response/REPORT.md. Noenergycalls.
 
 All scientific preparation/analysis/calculation runs on Slurm. Login-host work
 is metadata, reading, editing and submission. Other users/sessions' jobs and the
 production discriminator remain untouched. Current partial plans are not results.
+
+Next finite research work:
+
+- Native geometry/charge factorial4813 is complete:8 new off-diagonal calls,
+ 8 verified saved diagonals, all4 source/metal factorials available. No SCC,
+ MACE or DFT. Both La solvent benefits persist at either saved charge vector;
+ replacing charges opposes the geometry benefit. Large mixed terms are retained.
+ Two Ca mixed-term aggregate precision flags remain false. Read
+ a0ac_asn_solvent_factorial/ and asn_solvent_factorial_v1/ROOT_REVIEW.json.
+ Actual cost4 scheduler seconds/1CPU, zeroGPU. No repeat or new score follows.
+- Bounded flipped-origin preparation4814 is partial5/10, zero energy calls.
+ Ca1/3/4 and La0/4 fail exact cap-coordinate equality. Original v1 stays intact;
+ Heisenberg diagnoses raw/old-map/new-map residuals before a versioned repair.
+ The declared first Ca0 source passes all preparation checks. Curie finishes
+ the reviewed warm two-metal scout adapter, retaining original modes/settings,
+ actual cached q0 forces and rebased Jacobians. No optimization submitted yet.
+ Remaining18 searches depend on actual scout review. Later solvent requires
+ credible complete new pools and absolute common6−common4 change ≥1kcal/mol.
+- Four MMOL proposal jobs4637–4640 are actually RUNNING; comparator4641 pending.
+ All exact commands and completion/health watchers are in PROPOSAL_LAUNCH.json.
+ No duplicate origin or proposal submissions.
+
+Heisenberg owns focused independent review; root owns launch/score integration.

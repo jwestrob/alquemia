@@ -1,6 +1,14 @@
 # Remaining PQQ causes under investigation — 15 October 2026 UTC
 
-Latest: relaxed-amide solvent4971 is COMPLETE40/40 new endpoints,80reused.
+Latest: two-H fixed MACE5039 is COMPLETE12/12. The alternative Asn response
+survives shortening only its two inherited long N–H bonds: differential changes
+are0.51–1.30kcal/mol, with positive fixed-path responses retained. This is a
+sensitivity diagnostic, not a newly optimized/composite classifier. Canonical
+CPU scout5057 is RUNNING, watcher4022277, confige77354e5; inspect its actual
+receipt before releasing remaining23. A separate four-point GPU reuse scout
+is being prepared. Read CURRENT.md for ownership/exact commands; no repeats.
+
+Preceding result: relaxed-amide solvent4971 is COMPLETE40/40 new endpoints,80reused.
 Common3→6 composite Ca−La changes are Ca4+20.883598/La4+19.290964kcal/mol;
 other8sources unchanged, bothselectors agree. This is a promising local-basin
 mechanism, with canonical fidelity still untested. Saved summary5030 gives

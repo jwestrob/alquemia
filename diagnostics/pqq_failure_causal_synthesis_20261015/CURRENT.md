@@ -8,7 +8,30 @@ were acknowledged. No repeat chemistry or wider cavity sweep is pending.
 The nine-source causal synthesis in review/REPORT.md distinguishes established
 solvent/calibration effects from source-specific unresolved mechanisms.
 
-## Latest result — 15 October 2026, 04:35 UTC
+## Latest execution — 15 October 2026, 04:52 UTC
+
+Two-H fixed MACE sensitivity5039 is COMPLETE12/12, with12 exact prior cells
+reused. Shortening only Asn290HD21/HD22 to the actual ff19SB1.01A target changes
+the origin-to-alternative differential works by -0.767221/-1.300843kcal/mol
+(Ca-conditioned4 fixedflip/relaxedLa) and -0.505254/-0.945968 (La-conditioned4).
+All four positive vacuum responses remain31.0–32.6kcal/mol. The inherited
+long N–H bonds contribute measurable sensitivity, but do not remove this
+fixed-path basin response. This is not a reoptimized or solvent-corrected
+H-preparation classifier. Read donor_H_sensitivity/RESULT_REVIEW.md.
+Collection SHA6d2d49b868ebaeb5bfe2de8e2358c690296d498bf221308ed815cfee1cf0be67;
+actual12 forwards,211 scheduler seconds on7CPUs, zero solvent/DFT/optimization.
+
+Canonical first-source CPU scout5057 is RUNNING under the reviewed, frozen
+canonical_search/PLAN.md. It revalidates all25 references, reuses exact A0AC
+work, and executes only the first original-order source's two fixedflip calls,
+two unchanged bounded searches and two cross scores. Confige77354e5 and exact
+launch/wakePID4022277 are in asn_canonical_search_scout_v1/SUBMISSION.json.
+No remaining23 search or canonical solvent job has been submitted. Gauss owns
+the conditional canonical solvent adapter; Curie prepares a separate four-real-
+point existing-GPU compatibility scout. Root owns all submissions and promotion.
+Production and frozen bands remain unchanged. Read newer receipts before acting.
+
+## Preceding completed result — 15 October 2026, 04:35 UTC
 
 Solvent4971 completed all40 new endpoints with80 old cells reused. The alternative
 amide response survives the complete frozen-qvac composite: common3→6 paired

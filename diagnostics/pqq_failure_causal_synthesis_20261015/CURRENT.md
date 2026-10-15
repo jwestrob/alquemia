@@ -1,5 +1,21 @@
 # Current causal investigation
 
+## Final comparison exporter prepared — 15 October 2026, 07:35 UTC
+
+The focused saved-result exporter is ready under a0ac_asn_relaxation/transfer/report/.
+It retains all memberships, per-policy missing scores, recorded decisions and
+components, source spreads, all existing triples and linked cost receipts.
+Known-class ordering is reported within each cohort and across combined260, on
+available and matched coverage, without fitting thresholds. Static schema review,
+Python AST and shell syntax checks pass; actual scientific reporting is unrun
+until the terminal transfer solvent collection exists. READY.md has the exact
+one-CPU Slurm command. All agent tasks are complete and ownership released.
+
+5297 remains the owned active molecular search; its completion watcher is armed.
+Do not launch solvent from a partial MACE stage or repeat prior searches.
+After terminal MACE review, bind the existing SOLVENT.py and run its declared
+preflight/execute stages, then the reporter. Production and fixed bands remain.
+
 ## Saved ordering gives a narrower diagnosis — 15 October 2026, 07:25 UTC
 
 Saved-result job5317 completed, zero molecular calls. Common3 operational and

@@ -1,27 +1,27 @@
-# Native solvent-exclusion feasibility; no molecular calculation submitted
+# Native cavity scout running — job 4562
 
-The completed midpoint test did not establish better discrimination. Read
-../exaa_metal_midpoint_20261014/REPORT.md before designing another search.
+Jacob explicitly instructed execution. The finite12-update scope and numerical
+checks are frozen in PLAN.md; no new permission gate applies.
 
-Next physical question: does omitted protein exclusion materially change the
-fixed core-charge solvent response? An isolated component diagnostic could use
-native ALPB on the exact capped core plus deduplicated source atoms with zero
-charges, subtracting the original core electrostatic solvation term. Zero charges
-on the added atoms explicitly turn off permanent environmental electrostatics;
-they are not a proposed protein charge assignment.
+Actual preparation4539 completed7s/1CPU on node-64-768g-16. All four source/metal
+origins pass: local192 atoms, capped union9474, cap-removed9460, paired geometry
+and exact charge/source maps preserved. Three scout rigid/permutation inputs are
+prepared. No new SCC/MACE/DFT or energy call ran in preparation.
 
-The existing native API has a material limitation: charge sites and cavity atoms
-share one list. Synthetic cap hydrogens therefore remain descreening and ALPB
-shape centers. This is a capped-union exclusion sensitivity, not a source-only
-physical cavity or a complete protein-solvent score. No radius edits, charge
-redistribution, whole-protein SASA addition, new Coulomb term or calibration are
-licensed by this feasibility conclusion. The old failed global-PB protocol stays
-closed.
+Thin-caller build4543 completed4s/1CPU against the unchanged qualified native
+libraries. The independently reviewed runner is submitted as4562 and was verified
+RUNNING on node-64-768g-16, four shared CPUs with16000MiB scheduler-granted RAM.
+The qualified engine is serial; slots provide memory, not four-way computation.
+The job runs six sample0Ca numerical controls, then six further updates only if
+the frozen gates pass. There is no separate first-two scout or duplicate chemistry.
 
-The completed source audit is feasibility/FEASIBILITY.md. Root owns any later
-preparation, implementation and Slurm submission. Its proposed12-update scout
-uses four consumed origin endpoints, cap controls and numerical checks, with zero
-new SCC/MACE/DFT. Freeze actual transformations, input pins and measured memory
-placement before execution; the proposal is unrun.
-No new model, preparation, executable, molecular result or production change exists
-in this namespace yet. All prior jobs are terminal; do not restart them.
+Current config: workspaces/native_cavity_shielding_20261014/native_v1/CONFIG.json,
+SHA f6620e7651f55b0df07c3dbc90de5db21468961da2e924928fc33f9158c594d7.
+Exact submission and watcher command are in native_v1/SUBMISSION.json;
+watcherPID3249783 queues event native-cavity-shielding-v1 to the actual root thread.
+Inspect native_v1/execution/{SCOUT_QUALIFICATION,FINAL_COLLECTION,EXECUTION}.json
+when available. Do not resubmit successful chemistry after a delayed callback.
+Preparation4539/build4543 callbacks also require acknowledgement, not reruns.
+
+No production score or calibration changes. Caps remain explicit model limitations;
+this is a component exclusion sensitivity, not a source-only physical cavity.

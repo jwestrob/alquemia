@@ -1,0 +1,23 @@
+{
+  "status": "metadata_frozen_scientific_preparation_unrun",
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/native_cavity_shielding_20261014/preparation_v1/manifest.json",
+    "sha256": "e4e0a3d878a6a73ae7df7af75d79afc318c212e58ce4f9477bf38fc642c6b247"
+  },
+  "output": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/native_cavity_shielding_20261014/preparation_v1/execution/PREPARATION.json",
+  "declared_endpoints": 4,
+  "first_scout": "sample0_Ca",
+  "energy_calls": 0,
+  "Slurm_command": [
+    "sbatch",
+    "--nodelist=node-64-768g-5",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/native_cavity_shielding_20261014/preparation_v1/implementation/RUN.sbatch",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/native_cavity_shielding_20261014/preparation_v1/manifest.json",
+    "e4e0a3d878a6a73ae7df7af75d79afc318c212e58ce4f9477bf38fc642c6b247"
+  ],
+  "static_checks": [
+    "Python AST parse",
+    "bash -n"
+  ],
+  "scientific_checks": "unrun; must execute in Slurm"
+}

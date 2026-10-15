@@ -26,8 +26,12 @@ kcal/mol; sourcegap reduction mainlycontrolLa stabilization. No classifiergain.
 Read diagnostics/exaa_metal_midpoint_20261014/REPORT.md andCURRENT.md. Fractionprobe
 closed; no automaticfinersearch/optimizer/DFT/bands. Allownedjobs terminal.
 Next cavity-exclusion feasibility is complete at diagnostics/native_cavity_shielding_20261014/
-CURRENT.md. Proposed12-update native component scout remains unrun; source-only
-cavity API blocked, retainedcaps must stayexplicit. No new correction/calibration.
+CURRENT.md. Jacob explicitlyinstructedexecution. Preparation4539 complete4/4;
+union9474/core192/capremoved9460; thin-caller build4543 complete. Native4562 is
+RUNNING on node16,4sharedCPU/default16000MiB; qualifiedengine isserial. Sixscout
+controls gate sixcontinuationupdates,12maximum. WakePID3249783 isarmed; exact
+config/command in native_v1/SUBMISSION.json. No separateinitialscout orduplicates.
+Source-onlycavity API blocked, retainedcaps explicit. No new correction/calibration.
 Scouts were reviewed before continuation; no new per-analysis approval loop.
 This tests a common physical displacement, not the full operational three-candidate
 pool or classifier calibration. Old CPCM DFT is not a matched MACE-vacuum reference.

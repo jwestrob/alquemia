@@ -90,10 +90,12 @@ Next finite research work:
  Reviewed v2 uses three exact like-for-like comparisons and keeps both existing
  1e−12Å q0 checks. No molecular inputs/modes/tolerances changed. Root review is
  asn_relaxation_v2/ROOT_REVIEW.json. Read a0ac_asn_relaxation/PREPARATION_REPORT.md.
- Curie finishes the separate warm scout wrapper and Gauss reviews it; no
- optimizer submitted yet. Next: bind the actual v2 prepared first Ca0 pair,
- submit seven-CPU warm scout with watcher, inspect its actual geometry/energy
- admission and costs before remaining18 searches. Later solvent requires credible
+ Reviewed seven-CPU warm scout4831 is submitted for the first Ca0 pair only,
+ watcher3546473 armed. Frozen config053b7835 and exact commands are in
+ asn_relaxation_scout_v1/SUBMISSION.json. Inspect actual runtime preflight, search,
+ geometry/energy admission and costs before remaining18 searches. Source review
+ and successful preparation do not substitute for actual optimizer results.
+ Later solvent requires credible
  complete common6 pools and absolute common6−common4 change ≥1kcal/mol.
 - Four MMOL proposal jobs4637–4640 are actually RUNNING; comparator4641 pending.
  All exact commands and completion/health watchers are in PROPOSAL_LAUNCH.json.

@@ -23,8 +23,10 @@ energy calls. Original4814 failed5/10 exact cap comparisons; saved diagnostic481
 proved old/new computed caps and raw inputs identical, with pre-existing roundoff.
 Versioned v2 compares equivalent representations exactly and retains original
 q0/geometry tolerances. Read a0ac_asn_relaxation/PREPARATION_REPORT.md.
-Curie finishes the warm two-metal Ca0 scout adapter; Gauss reviews it. No
-optimization submitted yet. Preserve original modes, bounds and all source rows.
+Reviewed warm two-metal Ca0 scout4831 is submitted on7CPUs, watcher3546473.
+Config053b7835 and exact commands are in asn_relaxation_scout_v1/SUBMISSION.json.
+Inspect actual preflight/search/common3/4/6 results before the remaining18 searches.
+Preserve original modes, bounds and all source rows.
 
 MMOL1770 exact six-cell native r2SCAN-3c vacuum reference: origins4603/4604
 complete as energy diagnostics, with density/state warnings retained. Four saved

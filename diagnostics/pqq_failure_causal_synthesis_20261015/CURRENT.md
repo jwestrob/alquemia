@@ -98,7 +98,11 @@ Next finite research work:
  Root released the exact remaining18 searches as4844 (RUNNING on7CPUs), watcher
  3586320. Confige1692709 and exact command are in asn_relaxation_remaining_v1/
  SUBMISSION.json. No solvent/DFT expansion or settings change. Complete common6
- and named-contact analysis remain pending.
+ and named-contact analysis remain pending. Real4831 saved-contact check4859 is
+ queued on one CPU, watcher3618305; configf7b1ddd2 in asn_relaxation_contact_scout_v1.
+ It tests the named amide-H/backbone-H pairs and actual nine unexecuted rows;
+ no new energy calls. Final40-geometry analysis binds only terminal4844 evidence.
+ See a0ac_asn_relaxation/contact_review/READY.md for exact binding command.
  Canonical25 source-graph inventory4847 is queued on1CPU (current job-count QOS),
  watcher3588552; exact manifest8ba06c39 in asn_canonical_scope_v1. All25 original
  anchors are ASN by metadata; graph/geometry admission and new scoring remain

@@ -31,8 +31,14 @@ The fixed alternative leaves a short represented amide-H/backbone-H contact.
 Consequently, its favorable score is a lead, not an accepted relaxed structure
 or a new class decision. The first bounded-relaxation control passes physical
 and optimizer checks but keeps its original winners and score. The unchanged
-remaining nine-source test is running, followed by explicit named-contact review;
-solvent reevaluation depends on the declared common-pool response gate.
+remaining nine-source test is now complete. Allten common6 pools are available;
+Ca4 and La4 gain +16.527 and +11.464kcal/mol in paired vacuum contrast relative
+to the fixed-flip pool, with the other eight unchanged. Both relevant sources
+retain oxygen-facing Asn and lengthen the named H contact to2.17–2.28A; other
+short included H–H contacts remain. The selected new proposals are interior.
+Matched solvent evaluation is running after the frozen gate and actual preflight
+passed. This supports a missed local alternative in the old search, but does not
+yet establish a corrected composite classification or the true equilibrium state.
 
 For MMOL1770, all six native DFT endpoints are now complete as energy diagnostics.
 Both methods choose the same metal-specific geometries. DFT reproduces a stronger
@@ -53,6 +59,8 @@ Evidence: [Asn orientation and contacts](../a0ac_asn_geometry_response/REPORT.md
 [full fixed-alternative comparison](../a0ac_asn_solvent/REPORT.md),
 [geometry/charge factorial](../a0ac_asn_solvent_factorial/REPORT.md),
 [first relaxation control](../a0ac_asn_relaxation/SCOUT_REPORT.md),
+[full alternative-search result](../a0ac_asn_relaxation/FINAL_MACE_REPORT.md),
+[final named-contact evidence](../a0ac_asn_relaxation/contact_review/FINAL_REPORT.md),
 [complete MMOL reference](../mmol_reference/FINAL_REPORT.md),
 [closed PQQ pose probe](../pqq_pose/REPORT.md).
 
@@ -78,7 +86,7 @@ review; they are not physical error bars.
 
 | Exact source | Established result | Still unresolved |
 |---|---|---|
-| XoxF1 A0ACD6B9F2 Ca4, La class; 5.815 kcal/mol short | Wrong Ca becomes inconclusive; original accommodation helps by +12.176. A separately proposed intact Asn orientation, unreachable by the old domain, adds +10.975 to the current model's paired contrast. | Fixed alternative has a short H contact; complete relaxed competition and calibration remain untested. Correctly called La4 shares the starting orientation, so it is not a sufficient failure/exclusion rule. |
+| XoxF1 A0ACD6B9F2 Ca4, La class; 5.815 kcal/mol short | Wrong Ca becomes inconclusive; original accommodation helps by +12.176. A separately proposed intact Asn orientation, unreachable by the old domain, adds +10.975 to the current model's paired contrast. Full relaxed competition adds a further +16.527 in vacuum relative to the fixed-flip pool; the named short H contact lengthens while oxygen-facing Asn persists. | Relaxed composite competition is running; calibration remains untested and other short H contacts persist. Correctly called La4 shares the starting orientation and also benefits from its alternative, so orientation is not a sufficient failure/exclusion rule. |
 | XoxF4-2 MMOL1770 Ca0, La class; 0.812 short | Correct static origin becomes inconclusive after −4.186 accommodation, mostly MACE (−4.005). Ca proposal compresses Glu200 to 2.151 Å and reaches the movement bound; La does not. Complete same-geometry DFT gives a stronger Ca-directed pool response (−5.222), with the same winners. | Quantitative differences exceed the declared resolution on the pool and Ca path; electronic stability remains unqualified. Shared local representation, source/state/environment or calibration may still be inadequate. Ca1's extra-Asp experiment and La4's hydrogen repair concern different sources. |
 | ExaF C5AXV8 two-Ca4, La class; 0.196 short | Already inconclusive before the solvent change. Both metals select the same La proposal; no bound hit or distinctive gross geometry defect. | Fine energetics, occupancy/state or calibration coverage; no case-specific physical defect is established. Preserve abstention. |
 | ExaA Q9Z4J7 two-Ca3, Ca class; 1.191 short | Newly inconclusive with unchanged selections. Large donor response is reproduced by independent vacuum DFT. Metal/PQQ placement differs from same-condition peers. | Whether that source geometry or the shared dry/cofactor/environment representation is physically inappropriate. Tested simple repairs do not resolve it. |

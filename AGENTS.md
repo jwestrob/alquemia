@@ -29,16 +29,25 @@ Actual30 forwards/570 scheduler seconds on7CPUs; read SCOUT_REPORT.md.
 Root reviewed actual evidence and submitted remaining18 searches as4844,7CPUs,
 watcher3586320; confige1692709 and exact command in asn_relaxation_remaining_v1/
 SUBMISSION.json. Preserve original modes, bounds, failed rows and both selectors.
+The full run is now complete:20/20 searches and40 final paired cells. Common4→6
+vacuum contrast changes Ca4+16.527363 and La4+11.463790kcal/mol; other8 unchanged.
+All selected new proposals are interior; four other proposals reach their bounds.
+Read a0ac_asn_relaxation/FINAL_MACE_REPORT.md. These are not composite class calls.
 Canonical geometry4936 now completes25/25 sources and50 paired fixed flips,
 with exact real A0AC regression and unchanged contact/map/state gates. Zero
 energy calls or scores; see canonical_geometry/REPORT.md. No canonical scoring
 or calibration campaign is automatically launched from preparation success.
 Named-contact scout4859 passes actual4831 and missing-row checks, preserving short
-contacts in unselected Ca0 proposals. Final sample4 contact relief remains untested.
+contacts in unselected Ca0 proposals. The full sample4 result follows below.
 See canonical_scope/REPORT.md and contact_review/SCOUT_REPORT.md.
-Final all-ten contact analysis4910 is queued afterany4844, one CPU, with wake
-watcher3688523. It binds actual terminal results in Slurm and retains failures;
-see asn_relaxation_contact_followup_v1/SUBMISSION.json. Do not duplicate it.
+Final contact4910 also completes40/40 geometries. Bothsample4 sources relieve
+the named amide-H/Gly292H contact to2.17–2.28A while retaining oxygen-facing Asn;
+other included H–H contacts remain short. No clash-free/equilibrium claim.
+Read contact_review/FINAL_REPORT.md. The declared sign-blind solvent gate passes.
+Actual preflight4968 passes old80cell and20geometry/40frame replay, zero molecular
+calls. Unchanged40endpoint/all10source solvent job4971 now RUNNING on7CPUs,
+watcher3871230; exact configf9b8b4a3 and launch in asn_relaxation_solvent_v1/
+SUBMISSION.json. No new MACE/DFT/optimization or canonical scoring launched.
 
 MMOL1770 six-cell native r2SCAN-3c vacuum reference and comparator4641 are
 complete. Both methods choose Ca/adaptive_Ca and La/adaptive_La: differential

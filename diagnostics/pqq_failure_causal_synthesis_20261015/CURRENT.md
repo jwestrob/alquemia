@@ -8,7 +8,27 @@ were acknowledged. No repeat chemistry or wider cavity sweep is pending.
 The nine-source causal synthesis in review/REPORT.md distinguishes established
 solvent/calibration effects from source-specific unresolved mechanisms.
 
-## Latest result — 15 October 2026, 04:04 UTC
+## Latest result — 15 October 2026, 04:15 UTC
+
+Full Asn searches4844 and contact review4910 are now complete. All20 searches,
+40 final endpoint cells and ten common6 pools are available. Relative to the
+fixed-flip common4 pool, vacuum paired contrasts change by +16.527363kcal/mol at
+Ca4 and +11.463790 at La4; the other eight remain unchanged. Both mathematical
+and operational selectors agree. Selected new proposals are inside the domain;
+four other-source proposals retain boundary flags. See
+a0ac_asn_relaxation/FINAL_MACE_REPORT.md and contact_review/FINAL_REPORT.md.
+
+The specific HD22–Gly292H contact lengthens to2.17–2.28A in bothsample4 sources,
+with oxygen-facing Asn retained. Other included H–H contacts remain short;
+this is admitted finite geometry/contact relief, not an equilibrium claim.
+The frozen sign-blind solvent gate passes. Actual preflight4968 replayed80prior
+cells and20geometry/40final-frame mappings successfully with zero molecular
+calls (61s/7CPUs). The unchanged matched solvent stage4971 is RUNNING on7CPUs,
+watcher3871230. Configf9b8b4a36c1d1944251307bad16679f088b2a67e71e68428e9e86e03036d4ebe;
+exact command/review/wake in asn_relaxation_solvent_v1/SUBMISSION.json.
+This finite stage adds40endpoints across allten sources, reuses80old cells,
+and adds no MACE/DFT/search or class/calibration change. Read its actual terminal
+FINAL_COLLECTION.json and EXECUTION.json before choosing the next experiment.
 
 MMOL's six native reference endpoints and comparison4641 are complete. Both DFT
 and MACE select Ca/adaptive_Ca and La/adaptive_La. The common-pool differential
@@ -26,12 +46,11 @@ geometries, including an exact real A0AC regression,11seconds/1CPU and zero
 energy calls. Read a0ac_asn_relaxation/canonical_geometry/REPORT.md. Preparation
 success does not authorize automatic canonical scoring or change calibration.
 
-Asn4844 is still RUNNING on7CPUs: eight of ten total sources have saved complete
-results including the scout; La3 is underway and La4 remains. Named-contact
-analysis4910 waits afterany4844. Both completion watchers are armed. The existing
-solvent gate needs the terminal collection and contact review; it remains unbound.
 No exact compatible204atom A0AC Ca4 vacuumDFT cache was identified in the relevant
 inventories; read a0ac_asn_inventory/CACHE_NOTE.md. No new DFT is submitted.
+
+The chronological preparation notes below describe the stages preceding these
+completed results. They do not authorize repeat submissions.
 
 Current bounded tasks:
 

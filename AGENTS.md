@@ -1,5 +1,14 @@
 # Remaining PQQ causes under investigation — 15 October 2026 UTC
 
+Latest: canonical solvent5158 and saved summary5202 are COMPLETE. All25 calls,
+selected geometries and bands unchanged;300/300 cells available. The A0AC gain
+remains10/10 under these fixed bands. See canonical_solvent/FINAL_REPORT.md.
+Uniform transfer preparation5205 is submitted on1CPU, watcher368889, manifest
+e0688046 in asn_transfer_preparation_v1. It retains257contexts/260memberships,
+reuses34 executed contexts and runs zero energies. Read newest CURRENT/receipts
+and transfer/READY.md before the separate GPU scout. No transfer MACE or solvent
+submitted yet; no production change. Earlier pending-canonical notes are history.
+
 Current: canonical GPU5089 is COMPLETE, all25 common6 matrices available and
 saved vacuum selections/contrasts unchanged.727 native requests,953s on1A5000
 and12CPUs; no failed requests. Existing boundary flags and source limitations

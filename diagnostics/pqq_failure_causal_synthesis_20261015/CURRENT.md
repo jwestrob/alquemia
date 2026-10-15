@@ -1,5 +1,28 @@
 # Current causal investigation
 
+## Canonical solvent passes; uniform transfer preparation — 15 October 2026, 06:31 UTC
+
+5158 is COMPLETE: all300 canonical cells available,144 new endpoint geometries,
+576 SCC/288 native calls,2644 scheduler seconds on7CPUs. All25 canonical calls,
+selected geometries and decision bands are unchanged; common3/4/6 operational
+and mathematical gaps equal8.450323470286094kcal/mol. Saved summary5202 passes
+both real-artifact checks and exact shared-A0AC source comparison. With these
+fixed bands A0AC remains10correct/10, versus9correct/1inconclusive before the
+added search. These ten folds are one consumed protein. Read
+a0ac_asn_relaxation/canonical_solvent/FINAL_REPORT.md and the actual ROOT_REVIEW.
+
+Independently reviewed transfer code is ready: COMMON population/cache gates,
+active/spectator geometry, original bounded warm-GPU search, and unchanged
+four-component solvent. Exact duplicate new endpoint identities share one call;
+all dependent memberships/failures remain. Preparation5205 is submitted on1CPU,
+watcher368889, manifest e06880464e5f6914c49836453946420bc7829f293294f85fbd126c89db4f3d89.
+Its257contexts retain260memberships and34 exact executed contexts; zero energy
+or optimization calls. Exact launch/rearm is in asn_transfer_preparation_v1/
+SUBMISSION.json. Inspect actual execution/PREPARATION.json before binding the
+first new-context GPU scout using transfer/READY.md. No transfer MACE/solvent is
+submitted yet. Root owns all launches; agent source/review tasks are complete.
+No production change, old-failure deletion, new calibration rule or label change.
+
 ## Active execution — 15 October 2026, 05:31 UTC
 
 Canonical GPU5089 is COMPLETE: all25 common6 matrices and proposal pairs are

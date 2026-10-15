@@ -1,5 +1,16 @@
 # Remaining PQQ causes under investigation — 15 October 2026 UTC
 
+Newest: independent selected-state DFT staging v2 is reviewed and bound under
+asn_selected_reference_parallel_v2, manifest08a9b896. Actual preflight5761 passes;
+old-selected Ca5762/La5763 submitted12MPI each with completion and alert-only
+health wakes in task-local SUBMISSION.json. Two new-selected endpoints still
+require review of both actual admitted scouts. This scheduling-only revision
+tests the incremental alternative-Asn energy gain independently of pending full
+transfer; it preserves the four cells/method/checks and unrun reference_candidate_v1.
+Read CURRENT and actual receipts. Solvent5661/report5666/figure5748 continue with
+existing watchers; no duplicates, baseline promotion or band changes. The older
+conditional-on-full-transfer scheduling notes below are historical.
+
 Current owned computation: solvent transfer 5661 RUNNING, watcher 1352388,
 config b8a64366 in asn_transfer_solvent_v1. Preflight 5610 PASSED all 771 physical
 checks, 1,746 cached admissions and exact baseline replay. MACE5297 is complete.

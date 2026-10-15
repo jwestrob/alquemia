@@ -1,5 +1,37 @@
 # Current causal investigation
 
+## Independent selected-state DFT scouts submitted — 15 October 2026
+
+Root revised only the scheduling prerequisite in the separate, reviewed
+`a0ac_asn_relaxation/reference_parallel_v2/` package. The four already specified
+A0AC Ca4 old/new selected-state energies test the incremental local-energy gain
+from the alternative Asn basin, independently of whether full transfer improves
+or regresses. Geometry, native r2SCAN-3c vacuum method, scientific checks and
+four-cell denominator are unchanged. The original unbound/unrun v1 remains intact.
+
+Actual Slurm preflight **5761** passed all source/state/cap/pair/runtime and real
+ExaA/MMOL parser checks, with zero new endpoint evaluations: 22 s on 12 CPUs.
+Workspace `asn_selected_reference_parallel_v2`, manifest **08a9b896**, records the
+root decision made while transfer was pending and uninspected. This is an honest
+staging revision, not a fabricated terminal-transfer gate. Exact evidence and
+commands are in ROOT_DECISION.json, PREFLIGHT_SUBMISSION.json and
+PREFLIGHT_ROOT_REVIEW.json.
+
+Old-selected Ca scout **5762** and La scout **5763** are submitted at normal
+priority with 12 MPI slots each. Their task-local SUBMISSION.json files retain
+exact commands, completion watchers **1795978/1795981** and alert-only native
+health watchers **1795979/1795982**. No automatic retries. Inspect both actual
+one-cell collections and convergence/state/runtime before recording the existing
+`continue_two_new_selected` review and submitting the two new-selected cells.
+No new-selected DFT result, solvent qualification or preference claim exists yet.
+
+Solvent **5661** continues; saved report **5666** and figure **5748** remain queued
+behind it with their existing wakes. Do not duplicate these jobs. Actual delayed
+5610 callback is acknowledged in PREFLIGHT_ROOT_ACK.json. Production and frozen
+bands remain unchanged. All agents' scoped source/review tasks are complete.
+Earlier conditional-on-full-transfer notes below describe the superseded v1
+scheduling decision; its scientific design and archived files remain preserved.
+
 ## Individual-source figure queued behind the final report — 15 October 2026
 
 The reviewed thin plotter at a0ac_asn_relaxation/transfer/figure/ reads the actual

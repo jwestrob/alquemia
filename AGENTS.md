@@ -8,11 +8,15 @@ signal; no DFT nuclear gradients or classifier gain. MMOL1770Ca0 exact six-cell
 reference preflight4601 passed; origin scouts4603/4604 RUNNING12MPI each with
 terminal/health wakes. Four proposal cells require actual origin review, not a
 new user permission. Source1 is inventoried only. Separate24cell finite PQQ
-rigid-pose preparation4606 passed all24 cells. Reviewed warm MACE scorer4608
-now runs24new vacuum cells on7CPUs; actual preflight passed. Watcher3372210 is
-armed; read pose_scoring_v1/SUBMISSION.json and the actual fullpool result.
-Gauss prepares a conditional solvent adapter; its actual response gate must pass
-before dispatch. Read CURRENT before submission; do not repeat preparation.
+rigid-pose preparation4606 and warm scorer4608 complete24/24. Paired changes
+−0.713229/+0.978209kcal/mol do not pass the frozen1kcal solvent gate; close that
+finite test and leave its solvent adapter unrun. ROOT_REVIEW is proactive, not
+a delivery ACK. Next ASN_ROTAMER_PLAN.md declares a finite whole-amide180degree
+alternative across allten XoxF1 origins. Inventory shows nearbyND2/distantOD1 in
+both sample4 sources, with both localAsn modes already present. One source is
+correctly called, so orientation alone is not a defect diagnosis. Agents prepare
+sourcegraph/fullsourceHcontact admission and204atom scoring; no energy submitted.
+Read CURRENT before submission; do not repeat completed work or loosen oldgates.
 Root owns execution; agents own disjoint implementations. All numerical work
 uses current shared Slurm rules. Preserve production, original failures and
 the corrected La-parameter/frozen-charge solver lineage. Do not duplicate any

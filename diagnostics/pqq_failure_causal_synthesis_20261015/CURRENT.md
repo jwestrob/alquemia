@@ -35,17 +35,22 @@ Current bounded tasks:
   Terminal wake3352635 is armed; exact command in that workspace/SUBMISSION.json.
   Both sources pass frozen internal/paired/exterior-contact gates. No pose energy
   call had run at preparation. Actual queued preparation wake is now acknowledged.
-  Independently reviewed warm scorer4608 is RUNNING on node-64-768g-8,7CPUs;
-  actual preflight passed and model loading began. Exact config3fadca00 and
-  submission/watcher3372210 are in pose_scoring_v1/SUBMISSION.json. This executes
-  the24 new vacuum cells and reuses12 exact original cells. No ideal bond target,
-  state change or optimizer. The conditional solvent adapter in pqq_pose_solvent/
-  is now independently reviewed and ready; execution requires the complete actual
-  MACE matrix and declared response gate. Existing corrected standalone/component
-  kernels are reused, not rebuilt. No solvent job has been submitted.
-- Curie reviews existing same-protein source evidence and prior experiments for
-  the separate XoxF1A0ACD6B9F2 Ca4/Asn290 ambiguity in a0ac_asn_inventory/.
-  This is a bounded read-only investigation, with no new molecular task declared.
+  Independently reviewed warm scorer4608 completed24/24 on node-64-768g-8,7CPUs.
+  Control paired change−0.7132293300,target+0.9782094679kcal/mol: neither reaches
+  the frozen1kcal solvent gate. Close this finite angle test; prepared solvent
+  adapter stays unrun. Read pqq_pose/REPORT.md and RESULT.json. Config3fadca00 and
+  submission/watcher3372210 are in pose_scoring_v1/SUBMISSION.json. Twelve exact
+  original cells reused; actual426wallseconds/2982allocatedCPU-seconds,zeroGPU.
+  No ideal bond target, state change, optimizer or calibrated classification.
+- XoxF1A0ACD6B9F2 inventory complete: Ca4 and La4 have a distinct terminal-amide
+  orientation, nearby ND2/distant OD1; all other eight origins show the opposite.
+  Both Asn modes already converge inside their local domain. Correctly calledLa4
+  remains a counterexample; this is not evidence of a missing donor or a bad fold.
+  ASN_ROTAMER_PLAN.md declares a separate whole-amide180degree origin flip across
+  allten sources, source-graph/covalent/fullsourceH+heavy checks first. Curie owns
+  a0ac_asn_rotamer preparation, Heisenberg mapping review, Gauss count-aware204atom
+  MACE scoring. At most20new cells plus60existing baselines; no energy submitted.
+  The old0.8domain is not relaxed or retrospectively passed. Root owns submissions.
 
 All scientific preparation/analysis/calculation runs on Slurm. Login-host work
 is metadata, reading, editing and submission. Other users/sessions' jobs and the

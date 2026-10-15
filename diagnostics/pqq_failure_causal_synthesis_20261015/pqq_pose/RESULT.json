@@ -1,0 +1,96 @@
+{
+  "job_id": "4608",
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/pose_scoring_v1/execution/FINAL_COLLECTION.json",
+    "sha256": "ec8b3dab8df55faa36c03d7e8df85ddc0651b0f1616e4d80375f3572648a50cf"
+  },
+  "execution": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/pose_scoring_v1/execution/EXECUTION.json",
+    "sha256": "cc44c6b414b9741ca2637aa07eeef1a54f5cf059bfc699190cdad4326f726c05"
+  },
+  "stage_gate": {
+    "criterion": "absolute mathematical common3_to9 paired contrast change >=1kcal/mol in either source; either sign",
+    "threshold_kcal_mol": 1.0,
+    "decision": "close_finite_angle_test",
+    "solvent_executed": false,
+    "automatic_solvent_launch": false
+  },
+  "rows": [
+    {
+      "sample": 0,
+      "role": "control",
+      "common3_to9": {
+        "mathematical": {
+          "per_metal_change_kcal_mol": {
+            "Ca": -0.9705759254454165,
+            "La": -0.2573465954166565
+          },
+          "paired_contrast_change_kcal_mol": -0.71322933002876,
+          "before": {
+            "Ca": "adaptive_Ca",
+            "La": "adaptive_La"
+          },
+          "after": {
+            "Ca": "adaptive_Ca__PQQ_plus1deg",
+            "La": "adaptive_La__PQQ_plus1deg"
+          }
+        },
+        "operational": {
+          "per_metal_change_kcal_mol": {
+            "Ca": -0.9705759254454165,
+            "La": -0.2573465954166565
+          },
+          "paired_contrast_change_kcal_mol": -0.71322933002876,
+          "before": {
+            "Ca": "adaptive_Ca",
+            "La": "adaptive_La"
+          },
+          "after": {
+            "Ca": "adaptive_Ca__PQQ_plus1deg",
+            "La": "adaptive_La__PQQ_plus1deg"
+          }
+        }
+      }
+    },
+    {
+      "sample": 3,
+      "role": "target",
+      "common3_to9": {
+        "mathematical": {
+          "per_metal_change_kcal_mol": {
+            "Ca": -1.620486019092855,
+            "La": -2.5986954869511294
+          },
+          "paired_contrast_change_kcal_mol": 0.9782094678582745,
+          "before": {
+            "Ca": "adaptive_Ca",
+            "La": "adaptive_La"
+          },
+          "after": {
+            "Ca": "adaptive_Ca__PQQ_plus1deg",
+            "La": "adaptive_La__PQQ_plus1deg"
+          }
+        },
+        "operational": {
+          "per_metal_change_kcal_mol": {
+            "Ca": -1.620486019092855,
+            "La": -2.5986954869511294
+          },
+          "paired_contrast_change_kcal_mol": 0.9782094678582745,
+          "before": {
+            "Ca": "adaptive_Ca",
+            "La": "adaptive_La"
+          },
+          "after": {
+            "Ca": "adaptive_Ca__PQQ_plus1deg",
+            "La": "adaptive_La__PQQ_plus1deg"
+          }
+        }
+      }
+    }
+  ],
+  "execution_seconds": 424.8463682529982,
+  "allocated_CPU_seconds": 2973.9245777709875,
+  "actual_model_forwards": 24,
+  "qualification": "All24newcellscomplete;12exactbaselinecellsreused. No solvent/classification or DFT PQQ qualification."
+}

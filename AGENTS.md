@@ -3,10 +3,12 @@
 Latest: relaxed-amide solvent4971 is COMPLETE40/40 new endpoints,80reused.
 Common3→6 composite Ca−La changes are Ca4+20.883598/La4+19.290964kcal/mol;
 other8sources unchanged, bothselectors agree. This is a promising local-basin
-mechanism, with canonical fidelity still untested. Canonical geometry-only
-rebase5016/watcher3932797 is submitted; no molecularcalls in that job.
-Separate canonical search adapter and donor-H length sensitivity are being
-prepared by disjoint agents. Root owns submissions; CURRENT.md and actual
+mechanism, with canonical fidelity still untested. Saved summary5030 gives
+9correct/1inconclusive→10correct under unchanged oldbands for this oneprotein;
+source spread shrinks substantially. Geometry-only canonical5016 passes25/25;
+two-H sensitivity prep5029 passes12/12. Both ran zeroenergy. Separate canonical
+search and12fixedMACE H-sensitivity adapters are being prepared by disjoint
+agents. Root owns submissions; CURRENT.md and actual
 receipts supersede earlier RUNNING notes below. Do not repeat4971 or completedDFT.
 
 Active goal: explain the remaining failed/abstaining predictions and improve the

@@ -25,15 +25,25 @@ the declared component-v2 and native replay gates determine admission. Read
 asn_relaxation_solvent_v1/execution/FINAL_COLLECTION.json SHA256
 64668c7ec758da42d34b039855bdc370b39d06815db47a00dfaf69c41a69368d.
 
+Saved summary5030 is also complete. With the old frozen bands unchanged, the
+ten-fold result changes9correct/1inconclusive→10correct. This is explicitly
+old-band sensitivity for one consumed protein, not new-protocol validation.
+Within-conditioning score ranges shrink23.325984→5.677901kcal/mol (Ca) and
+20.459435→2.222541 (La). All-ten range remains12.480268, so source dependence is
+reduced, not eliminated. All120 native saved-cell admissions pass their declared
+component/precision/cavity checks; historical absolute-v1 failures remain240/240.
+Exact tables and editable figure are under asn_relaxation_solvent_summary_v1/
+execution/; RESULT SHA2d5ab6278f90b0705e96727399a5fc60ff440d2c6077ef34213f6492c7d31649.
+
 Next: the same alternative-state rule must retain canonical Ca/La reference
-fidelity. One-CPU geometry-only rebase5016 is submitted, watcher3932797, exact
-manifest4d7a83d… and command in asn_canonical_relaxation_v1/SUBMISSION.json.
-It cannot call molecular engines. Gauss owns the separate finite canonical search
-adapter; Heisenberg owns saved solvent/range/old-band reporting. Curie owns a
-separate fixed-heavy-geometry Asn-H bond-length sensitivity preparation. The latter
-uses archived ff19SB targets to test a known generic H-builder artifact, without
-changing the completed matched experiment. Root owns all submissions. Production
-and thresholds remain unchanged; no new quantum campaign is launched.
+fidelity. Geometry-only rebase5016 completes25/25 including exactA0AC regression,
+36s/1CPU, zeroenergy. Gauss owns the separate finite canonical search adapter.
+Two-H sensitivity preparation5029 also passes bothsources/all12frames,2s/1CPU.
+Only Asn290HD21/HD22 move to actualff19SB targets; the complete source graph,
+paired coordinates, fixed heavy/cap atoms and full-source contacts pass. Curie
+prepares its12fixedMACE follow-on; no H sensitivity energy has run yet. Heisenberg
+owns the saved summary/report and independent review. Root owns submissions.
+Production and thresholds remain unchanged; no new quantum campaign is launched.
 
 ### Preceding stage — 04:15 UTC
 

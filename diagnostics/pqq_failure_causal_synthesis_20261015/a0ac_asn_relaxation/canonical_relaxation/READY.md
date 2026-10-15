@@ -1,8 +1,8 @@
 # Canonical rebased geometry package
 
-Metadata freeze is complete. Python AST and shell syntax checks passed; Heisenberg independently cleared the frozen source with no material blocker. Numerical geometry, Jacobian checks and the new exact A0AC rebase regression are **UNRUN**. No job was submitted by this agent.
+Root submitted job **5016**, which completed successfully: **25/25 rebases** and the exact A0AC regression passed. The frozen inputs below remain unchanged. See [REPORT.md](REPORT.md) for actual evidence and costs. Do not resubmit the completed command.
 
-Root's one-CPU geometry-only command, from the repository root:
+Executed one-CPU geometry-only command, retained for provenance:
 
 ```bash
 sbatch workspaces/pqq_failure_causal_synthesis_20261015/asn_canonical_relaxation_v1/implementation/RUN.sbatch \
@@ -26,6 +26,6 @@ The wrapper requests one CPU on standard, constrains numerical libraries to one 
 
 All 25 canonical sources remain in their original order. Context counts, charges, cap inventories and complete source-union sizes are read from the exact inputs. Original four-mode membership/bounds remain unchanged, including sources whose terminal χ2 is not selected. No optimizer, q0 energy or force gradient is fabricated.
 
-The metadata join confirmed the exact A0AC La-conditioned sample 3 source: original tasks/maps/state, six baseline MACE receipts/XYZ pins, and both flipped XYZ hashes match the executed branch. The job must then pass a numerical geometry-only regression against its existing rebased context/checks, cap residuals and full-source union. It exports the actual prepared mapping/contact/task/XYZ and completed search-result aliases; repeated A0AC energy/search work is disallowed. The other 24 sources remain explicitly unqualified for energy/force q0.
+The exact A0AC La-conditioned sample 3 regression passed against its existing rebased context/checks, cap residuals and full-source union. The output exports actual prepared mapping/contact/task/XYZ and completed search-result aliases; repeated A0AC energy/search work is disallowed. The other 24 sources still require actual fixed-flip energies and force projections before cached-q0 searches.
 
-Outputs are `execution/PREPARATION.json` and `EXECUTION.json` beneath the frozen workspace, with all 25 rows and explicit failures. Each admitted row records q0 geometry, Jacobian/bond/cap/source admission and original mode membership. These checks do not establish a clash-free or equilibrium conformer, validate the full search domain, or produce scores. Subsequent energy work remains a separate decision based on the ongoing solvent result.
+Outputs are `execution/PREPARATION.json` and `EXECUTION.json` beneath the frozen workspace, with all 25 rows. Each admitted row records q0 geometry, Jacobian/bond/cap/source admission and original mode membership. These checks do not establish a clash-free or equilibrium conformer, validate the full search domain, or produce scores. Root separately authorized the staged molecular adapter after solvent4971 completed; this geometry package itself made no energy calls.

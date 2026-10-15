@@ -1,5 +1,22 @@
 # Current causal investigation
 
+## Full preparation recovered; GPU preflight submitted — 15 October 2026, 06:53 UTC
+
+5254 is COMPLETE: all257 contexts prepared,260 memberships retained,251 prior
+rows reused unchanged and34 executed common6 aliases preserved. All five25-trial
+cap invariance checks and the actual one-ion parser/flip regression pass. Invalid
+trial corners remain invalid under existing physical/contact gates. No energies
+or optimization;88.9976s internal on one CPU. Read recovery_v2/RESULT.md and actual
+asn_transfer_preparation_v2/ROOT_REVIEW.json. Do not repeat5205/5254.
+
+Unchanged first-new-context (1H4I) GPU preflight5258 is submitted, watcher454446.
+Config023edf9a27c689c3a00fded8f730444cfd01faa60767e88cb237730712a6328b
+at asn_transfer_search_scout_v1; exact command in PREFLIGHT_SUBMISSION.json.
+This is zero-call preflight, not molecular scoring. Inspect preflight_5258/
+EXECUTION.json and actual gates before submitting the same config with `run`.
+The scout binds the recovered v2 preparation; no remaining-source search or
+transfer solvent is submitted yet. Root owns execution; all agent tasks complete.
+
 ## Six-input preparation recovery submitted — 15 October 2026, 06:50 UTC
 
 Independently reviewed recovery5254 is submitted on one CPU, watcher442562.

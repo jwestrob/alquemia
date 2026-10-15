@@ -1,5 +1,11 @@
 # Remaining PQQ causes under investigation — 15 October 2026 UTC
 
+Latest actual result: recovery5254 completed257/257 contexts and125 cap tests;
+all251 prior successful rows unchanged. First1H4I GPU preflight5258 is submitted,
+watcher454446, config023edf9a in asn_transfer_search_scout_v1. This is zero-call
+preflight; inspect it before `run`. No transfer scores yet. Read newest CURRENT;
+older running/recovery notes below are historical. No repeated geometry needed.
+
 Recovery5254 is now submitted on1CPU with watcher442562; exact manifest/command
 in asn_transfer_preparation_v2/SUBMISSION.json. Retry six failures, reuse251rows,
 real geometric checks only. Agents' scoped source/review work is complete.

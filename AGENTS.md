@@ -1,14 +1,16 @@
 # Latest owned PQQ work — 15 October 2026 UTC
 
 Read diagnostics/pqq_failure_causal_synthesis_20261015/CURRENT.md and actual receipts.
-Old-selected DFT scouts5762/5763 are complete and admitted under unchanged energy
-checks; density/stability warnings remain. Exact SCOUT_REVIEW.json (535540dd) in
-asn_selected_reference_parallel_v2 releases only the two defined new-selected
-cells5866/5867, now RUNNING at12MPI each with completion and alert-only health
-watchers recorded in task-local SUBMISSION.json. Saved collector5868 follows both;
-COLLECT_SUBMISSION.json records its wake. No additional DFT, changed settings or
-production promotion. Solvent5661 continues, report5666/figure5748 follow it.
-Do not rerun scouts, duplicate jobs or treat energy convergence as stability proof.
+All four selected-state DFT cells5762/5763/5866/5867 are complete/admitted.
+Read a0ac_asn_relaxation/reference_parallel_v2/FINAL_REPORT.md under the current
+diagnostic: strong La benefit/net direction supported, small Ca gain contradicted;
+quantitative differences and electronic-state limitations remain. Collector5868
+completed its four-cell application result, then its stale allocation was cancelled
+after363s; retain scheduler cancellation separately from completed science.
+Exact evidence is in asn_selected_reference_parallel_v2/COLLECTOR_ALLOCATION_RELEASE.json.
+Solvent5661 continues, report5666/figure5748 follow it with armed completion wakes.
+No additional DFT, changed settings or production promotion. Do not repeat the
+completed four-cell comparison or treat energy convergence as stability proof.
 Older submitted/pending status entries below are historical.
 
 # Remaining PQQ causes under investigation — 15 October 2026 UTC

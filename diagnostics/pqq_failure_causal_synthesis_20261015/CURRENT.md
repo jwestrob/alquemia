@@ -1,5 +1,36 @@
 # Current causal investigation
 
+## Four-cell DFT response complete; full transfer still running — 15 October 2026
+
+All four selected-state endpoints pass unchanged energy-diagnostic admission.
+Read [the actual reference result](a0ac_asn_relaxation/reference_parallel_v2/FINAL_REPORT.md)
+and its compact RESULT.json. DFT supports the strong La lowering and net response
+direction: Ca new−old +1.906580, La −17.400253, paired +19.306832 kcal/mol,
+versus MACE −0.286036, −18.274380 and +17.988344. The Ca gain reverses sign;
+Ca and net discrepancies exceed the declared 1 kcal/mol interpretive resolution.
+Do not call this exact agreement, DFT pool minimization or a solvent/class test.
+Final NR criteria pass; retained electronic warnings and untested stability remain.
+
+New workers5866/5867 completed in8073/7628seconds at12CPUs each. All four molecular
+workers used353556allocatedCPU-seconds. Existing collector5868 wrote a complete
+four-cell application result (SHA4f99815e) at16:00:39UTC. Its scheduler allocation
+then lingered with no remaining application work; a same-allocation Slurm probe
+failed before running. Root preserved results and cancelled only that collector
+at363seconds/12CPUs. Application completion and scheduler CANCELLED remain distinct.
+Including preflight and collector, this stage used358176allocatedCPU-seconds,
+zeroGPU. Cause of delayed shutdown/communication is unresolved; no repeat needed.
+
+Exact four-cell collection: asn_selected_reference_parallel_v2/attempts/
+5868_collect_all_four/COLLECTION.json; root/independent review complete. See
+COLLECTOR_ALLOCATION_RELEASE.json for operational evidence. New endpoint callbacks
+are queued; this is proactive review, not a claim they have already delivered.
+
+Only solvent5661 remains active science; report5666 and figure5748 are queued.
+Completion watchers remain armed. Next: read actual full transfer, all260memberships/
+257contexts, transitions, ordering, spread and costs, then inspect the PNG. No
+additional per-case DFT or threshold adjustment follows. Production stays unchanged.
+Older RUNNING notes below are historical.
+
 ## Both old-selected DFT scouts admitted; new-selected pair running — 15 October 2026
 
 Both old-selected A0AC Ca4 scouts completed and pass all 20 unchanged energy-diagnostic

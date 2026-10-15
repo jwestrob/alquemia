@@ -1,0 +1,480 @@
+{
+  "schema": "A0AC_Ca4_selected_native_collection.v1",
+  "protocol_id": "A0AC_Ca4_selected_old_new_native_r2SCAN3c_vacuum_v1",
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_selected_reference_parallel_v2/manifest.json",
+    "sha256": "08a9b8965e0749e1ff9381d3e524fdf150c38835ce5a185403019ff58371878e"
+  },
+  "source_collection": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_relaxation_remaining_v1/execution/FINAL_COLLECTION.json",
+    "sha256": "2ed05f5a241f4f1eccbb2a680428a4b032a51449df56ad323e138b83cf32fd82"
+  },
+  "complete_cells": 4,
+  "declared_cells": 4,
+  "scientific_scope": "selected old/new metal-specific paths; no common perturbation, pool minimum, solvent or classifier",
+  "selected_candidates": {
+    "Ca": [
+      "adaptive_Ca",
+      "relaxed_flip_Ca"
+    ],
+    "La": [
+      "adaptive_La",
+      "relaxed_flip_La"
+    ]
+  },
+  "per_metal_old_to_new_work_kcal_mol": {
+    "DFT": {
+      "Ca": 1.9065795372056882,
+      "La": -17.400252820748786
+    },
+    "MACE": {
+      "Ca": -0.28603560383416676,
+      "La": -18.27438009098686
+    }
+  },
+  "paired_selected_change_kcal_mol": {
+    "DFT": 19.306832357954473,
+    "MACE": 17.98834448715269
+  },
+  "DFT_minus_MACE_per_metal_kcal_mol": {
+    "Ca": 2.192615141039855,
+    "La": 0.8741272702380734
+  },
+  "DFT_minus_MACE_paired_change_kcal_mol": 1.318487870801782,
+  "interpretive_resolution_kcal_mol": 1.0,
+  "resolution_is_acceptance_threshold": false,
+  "resolution_is_DFT_error_bar": false,
+  "units": {
+    "DFT": "hartree",
+    "MACE": "eV",
+    "work": "kcal/mol",
+    "HA_TO_KCAL": 627.509474,
+    "EV_TO_KCAL": 23.06054783061903
+  },
+  "actual_collection": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_selected_reference_parallel_v2/attempts/5868_collect_all_four/COLLECTION.json",
+    "sha256": "4f99815e0e94421dd9cfeb64c8cd8faa74b2b3338aadee74a6119ef739e2658f"
+  },
+  "cells": [
+    {
+      "task_id": "sample4_Ca_adaptive_Ca_vacuum",
+      "status": "complete_diagnostic",
+      "charge": -4,
+      "multiplicity": 1,
+      "candidate": "adaptive_Ca",
+      "energy_hartree": -7208.156038453809,
+      "printed_explicit_electrons": 904,
+      "checks": {
+        "native_receipt_success": true,
+        "manifest_identity": true,
+        "output_identity": true,
+        "version": true,
+        "energy_present": true,
+        "electron_count": true,
+        "populations_complete": true,
+        "gbw_retained": true,
+        "native_basis": true,
+        "La_ECP": true,
+        "final_TRAH_gradient": true,
+        "native_executable_pin": true,
+        "native_runner_pin": true,
+        "runtime_renderer_pin": true,
+        "actual12MPI": true,
+        "native_auxiliary_basis": true,
+        "native_singlet": true,
+        "population_partition": true,
+        "template_identity": true,
+        "coordinate_identity": true
+      },
+      "final_solver": "TRAH",
+      "final_trah_macro": {
+        "iteration": 5,
+        "energy": -7208.187944126787,
+        "orbital_residual": 5.627194e-07
+      },
+      "final_TRAH_criterion": {
+        "threshold": 1e-05,
+        "evidence": {
+          "active_TolG": [
+            "1.000e-05"
+          ],
+          "TRAH_gradient_norm": [
+            "1.000e-05"
+          ],
+          "optional_summary_tolerance": [
+            "1.0000e-05"
+          ]
+        },
+        "source_lines": [
+          "   Converg. threshold    (grad. norm)   ....   1.000e-05",
+          " Orbital Gradient       TolG            ....  1.000e-05",
+          "  Last Orbital Gradient      ...    5.6272e-07  Tolerance :   1.0000e-05"
+        ],
+        "observed_residual": 5.627194e-07,
+        "passed": true
+      },
+      "scf_summary": [
+        {
+          "criterion": "Energy change",
+          "value": -1.6553e-10,
+          "tolerance": 1e-08
+        },
+        {
+          "criterion": "MAX-Density change",
+          "value": 0.33873,
+          "tolerance": 1e-07
+        },
+        {
+          "criterion": "RMS-Density change",
+          "value": 0.0026834,
+          "tolerance": 5e-09
+        },
+        {
+          "criterion": "DIIS Error",
+          "value": 0.0018575,
+          "tolerance": 5e-07
+        },
+        {
+          "criterion": "Orbital Gradient",
+          "value": 5.6272e-07,
+          "tolerance": 1e-05
+        },
+        {
+          "criterion": "Orbital Rotation",
+          "value": 6.3988e-05,
+          "tolerance": 1e-05
+        }
+      ],
+      "execution": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_selected_reference_parallel_v2/tasks/sample4_Ca_adaptive_Ca_vacuum/endpoint.out.execution.json",
+        "sha256": "edc29cec14d8ec07295bdfb32a1e775064af93a4459e930c193f8ace694642e0"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_selected_reference_parallel_v2/tasks/sample4_Ca_adaptive_Ca_vacuum/endpoint.out",
+        "sha256": "2464122f8221b9b4e947d5cd84b03b8b7d271797d563cda69b0495bf4e489a07"
+      }
+    },
+    {
+      "task_id": "sample4_Ca_relaxed_flip_Ca_vacuum",
+      "status": "complete_diagnostic",
+      "charge": -4,
+      "multiplicity": 1,
+      "candidate": "relaxed_flip_Ca",
+      "energy_hartree": -7208.153000125917,
+      "printed_explicit_electrons": 904,
+      "checks": {
+        "native_receipt_success": true,
+        "manifest_identity": true,
+        "output_identity": true,
+        "version": true,
+        "energy_present": true,
+        "electron_count": true,
+        "populations_complete": true,
+        "gbw_retained": true,
+        "native_basis": true,
+        "La_ECP": true,
+        "final_TRAH_gradient": true,
+        "native_executable_pin": true,
+        "native_runner_pin": true,
+        "runtime_renderer_pin": true,
+        "actual12MPI": true,
+        "native_auxiliary_basis": true,
+        "native_singlet": true,
+        "population_partition": true,
+        "template_identity": true,
+        "coordinate_identity": true
+      },
+      "final_solver": "TRAH",
+      "final_trah_macro": {
+        "iteration": 6,
+        "energy": -7208.18399747288,
+        "orbital_residual": 9.834354e-07
+      },
+      "final_TRAH_criterion": {
+        "threshold": 1e-05,
+        "evidence": {
+          "active_TolG": [
+            "1.000e-05"
+          ],
+          "TRAH_gradient_norm": [
+            "1.000e-05"
+          ],
+          "optional_summary_tolerance": [
+            "1.0000e-05"
+          ]
+        },
+        "source_lines": [
+          "   Converg. threshold    (grad. norm)   ....   1.000e-05",
+          " Orbital Gradient       TolG            ....  1.000e-05",
+          "  Last Orbital Gradient      ...    9.8344e-07  Tolerance :   1.0000e-05"
+        ],
+        "observed_residual": 9.834354e-07,
+        "passed": true
+      },
+      "scf_summary": [
+        {
+          "criterion": "Energy change",
+          "value": -5.5479e-11,
+          "tolerance": 1e-08
+        },
+        {
+          "criterion": "MAX-Density change",
+          "value": 0.19232,
+          "tolerance": 1e-07
+        },
+        {
+          "criterion": "RMS-Density change",
+          "value": 0.0020255,
+          "tolerance": 5e-09
+        },
+        {
+          "criterion": "DIIS Error",
+          "value": 0.0030602,
+          "tolerance": 5e-07
+        },
+        {
+          "criterion": "Orbital Gradient",
+          "value": 9.8344e-07,
+          "tolerance": 1e-05
+        },
+        {
+          "criterion": "Orbital Rotation",
+          "value": 7.84e-05,
+          "tolerance": 1e-05
+        }
+      ],
+      "execution": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_selected_reference_parallel_v2/tasks/sample4_Ca_relaxed_flip_Ca_vacuum/endpoint.out.execution.json",
+        "sha256": "da59a4db46bfcb6fec7de4212fb5e61bbbf580daf238667c19f80025b8317842"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_selected_reference_parallel_v2/tasks/sample4_Ca_relaxed_flip_Ca_vacuum/endpoint.out",
+        "sha256": "43906f64697216e9b8086e11e7503362d83bde27d3a70d7f8cb301466958799f"
+      }
+    },
+    {
+      "task_id": "sample4_La_adaptive_La_vacuum",
+      "status": "complete_diagnostic",
+      "charge": -3,
+      "multiplicity": 1,
+      "candidate": "adaptive_La",
+      "energy_hartree": -6562.353307034823,
+      "printed_explicit_electrons": 894,
+      "checks": {
+        "native_receipt_success": true,
+        "manifest_identity": true,
+        "output_identity": true,
+        "version": true,
+        "energy_present": true,
+        "electron_count": true,
+        "populations_complete": true,
+        "gbw_retained": true,
+        "native_basis": true,
+        "La_ECP": true,
+        "final_TRAH_gradient": true,
+        "native_executable_pin": true,
+        "native_runner_pin": true,
+        "runtime_renderer_pin": true,
+        "actual12MPI": true,
+        "native_auxiliary_basis": true,
+        "native_singlet": true,
+        "population_partition": true,
+        "template_identity": true,
+        "coordinate_identity": true
+      },
+      "final_solver": "TRAH",
+      "final_trah_macro": {
+        "iteration": 5,
+        "energy": -6562.385635952433,
+        "orbital_residual": 8.035475e-07
+      },
+      "final_TRAH_criterion": {
+        "threshold": 1e-05,
+        "evidence": {
+          "active_TolG": [
+            "1.000e-05"
+          ],
+          "TRAH_gradient_norm": [
+            "1.000e-05"
+          ],
+          "optional_summary_tolerance": []
+        },
+        "source_lines": [
+          "   Converg. threshold    (grad. norm)   ....   1.000e-05",
+          " Orbital Gradient       TolG            ....  1.000e-05"
+        ],
+        "observed_residual": 8.035475e-07,
+        "passed": true
+      },
+      "scf_summary": [
+        {
+          "criterion": "Energy change",
+          "value": 5.0022e-11,
+          "tolerance": 1e-08
+        },
+        {
+          "criterion": "MAX-Density change",
+          "value": 0.14295,
+          "tolerance": 1e-07
+        },
+        {
+          "criterion": "RMS-Density change",
+          "value": 0.0018497,
+          "tolerance": 5e-09
+        },
+        {
+          "criterion": "DIIS Error",
+          "value": 0.027053,
+          "tolerance": 5e-07
+        }
+      ],
+      "execution": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_selected_reference_parallel_v2/tasks/sample4_La_adaptive_La_vacuum/endpoint.out.execution.json",
+        "sha256": "988e1fbdfb2ec5ddbcd8e69d8649a2168032618bb9f408d8ef77b5559e795756"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_selected_reference_parallel_v2/tasks/sample4_La_adaptive_La_vacuum/endpoint.out",
+        "sha256": "7da1f14716340aaf2e54714543ec5ea19c4ab3f94ec1e13005c2ae506a387746"
+      }
+    },
+    {
+      "task_id": "sample4_La_relaxed_flip_La_vacuum",
+      "status": "complete_diagnostic",
+      "charge": -3,
+      "multiplicity": 1,
+      "candidate": "relaxed_flip_La",
+      "energy_hartree": -6562.381036102736,
+      "printed_explicit_electrons": 894,
+      "checks": {
+        "native_receipt_success": true,
+        "manifest_identity": true,
+        "output_identity": true,
+        "version": true,
+        "energy_present": true,
+        "electron_count": true,
+        "populations_complete": true,
+        "gbw_retained": true,
+        "native_basis": true,
+        "La_ECP": true,
+        "final_TRAH_gradient": true,
+        "native_executable_pin": true,
+        "native_runner_pin": true,
+        "runtime_renderer_pin": true,
+        "actual12MPI": true,
+        "native_auxiliary_basis": true,
+        "native_singlet": true,
+        "population_partition": true,
+        "template_identity": true,
+        "coordinate_identity": true
+      },
+      "final_solver": "TRAH",
+      "final_trah_macro": {
+        "iteration": 6,
+        "energy": -6562.41218441431,
+        "orbital_residual": 4.762669e-07
+      },
+      "final_TRAH_criterion": {
+        "threshold": 1e-05,
+        "evidence": {
+          "active_TolG": [
+            "1.000e-05"
+          ],
+          "TRAH_gradient_norm": [
+            "1.000e-05"
+          ],
+          "optional_summary_tolerance": []
+        },
+        "source_lines": [
+          "   Converg. threshold    (grad. norm)   ....   1.000e-05",
+          " Orbital Gradient       TolG            ....  1.000e-05"
+        ],
+        "observed_residual": 4.762669e-07,
+        "passed": true
+      },
+      "scf_summary": [
+        {
+          "criterion": "Energy change",
+          "value": 3.2651e-10,
+          "tolerance": 1e-08
+        },
+        {
+          "criterion": "MAX-Density change",
+          "value": 0.025381,
+          "tolerance": 1e-07
+        },
+        {
+          "criterion": "RMS-Density change",
+          "value": 0.00041532,
+          "tolerance": 5e-09
+        },
+        {
+          "criterion": "DIIS Error",
+          "value": 0.07161,
+          "tolerance": 5e-07
+        }
+      ],
+      "execution": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_selected_reference_parallel_v2/tasks/sample4_La_relaxed_flip_La_vacuum/endpoint.out.execution.json",
+        "sha256": "b2a6d86f821167ed0dfa04a1c44b673aca81673959c14a97f045d74be0384dad"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_selected_reference_parallel_v2/tasks/sample4_La_relaxed_flip_La_vacuum/endpoint.out",
+        "sha256": "eb3a37cfae5a91338ed4312956c0b00ad072b69dafaf51a81f0452e73d71d508"
+      }
+    }
+  ],
+  "scheduler_molecular_costs": [
+    {
+      "job_id": "5762",
+      "state": "COMPLETED",
+      "elapsed_seconds": 6736,
+      "allocated_cpus": 12,
+      "allocated_cpu_seconds": 80832
+    },
+    {
+      "job_id": "5763",
+      "state": "COMPLETED",
+      "elapsed_seconds": 7026,
+      "allocated_cpus": 12,
+      "allocated_cpu_seconds": 84312
+    },
+    {
+      "job_id": "5866",
+      "state": "COMPLETED",
+      "elapsed_seconds": 8073,
+      "allocated_cpus": 12,
+      "allocated_cpu_seconds": 96876
+    },
+    {
+      "job_id": "5867",
+      "state": "COMPLETED",
+      "elapsed_seconds": 7628,
+      "allocated_cpus": 12,
+      "allocated_cpu_seconds": 91536
+    }
+  ],
+  "molecular_allocated_cpu_seconds": 353556,
+  "gpu_seconds": 0,
+  "preflight_cost": {
+    "job_id": "5761",
+    "elapsed_seconds": 22,
+    "allocated_cpus": 12,
+    "allocated_cpu_seconds": 264,
+    "molecular_calls": 0
+  },
+  "interpretation": "Supports strong La lowering and net Ca-minus-La response direction; does not support the small predicted Ca lowering. Ca and paired discrepancies exceed the declared interpretive resolution. Not solvent validation, DFT common-pool minimization, electronic-state stability or biological validation.",
+  "reviewed_utc": "2026-10-15T16:04:09.725771+00:00",
+  "collector_cost": {
+    "job_id": "5868",
+    "application_status": "complete",
+    "scheduler_state": "CANCELLED by 601",
+    "elapsed_seconds": 363,
+    "allocated_cpus": 12,
+    "allocated_cpu_seconds": 4356,
+    "molecular_calls": 0,
+    "reason": "Complete result preserved; allocation released after application finished. Shutdown/communication cause unresolved."
+  },
+  "stage_allocated_cpu_seconds": 358176,
+  "peak_memory_aggregate_bytes": null,
+  "peak_memory_note": "No aggregate measured peak-memory value collected here; native output/resource receipts remain retained."
+}

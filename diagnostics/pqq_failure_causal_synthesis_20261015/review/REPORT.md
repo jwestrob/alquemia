@@ -56,6 +56,20 @@ contexts and 260 memberships is still pending; canonical fidelity and the A0AC
 gain do not establish broad transfer, equilibrium populations or a production
 replacement.
 
+The independent selected-state DFT comparison is now complete, four of four.
+Native r2SCAN-3c gives old-to-new works Ca +1.906580 and La −17.400253 kcal/mol;
+MACE gives −0.286036 and −18.274380. Their paired changes are +19.306832 and
++17.988344. Thus the strong La stabilization and net direction survive an
+independent local electronic treatment. The small Ca stabilization does not:
+its sign reverses, and the Ca and paired discrepancies exceed the declared
+1 kcal/mol interpretive resolution. Neither that resolution nor the positive
+paired sign is an admission/validation gate. This strengthens the missed-basin
+explanation for this conditional representation without proving an isolated Asn
+effect, DFT pool minimum, solvent response, electronic stability or generalization.
+Read [the four-cell result](../a0ac_asn_relaxation/reference_parallel_v2/FINAL_REPORT.md).
+The full uniform transfer remains the next decision; no extra DFT is warranted
+by this result alone.
+
 The long ND2–H bonds are a separate preparation limitation: archived diagnostics
 already traced such stretching to the generic H-builder potential. The current
 matched search retains them. Completed sensitivity5039 shortens only the two

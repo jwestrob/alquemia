@@ -2,7 +2,7 @@
 
 **Saved MACE projection is possible; matched saved DFT-force comparison is unavailable.** All eight r2SCAN-3c calculations were single-point energies. Their inputs request `r2SCAN-3c NoAutostart DefGrid3 TightSCF`, with no nuclear-gradient keyword; no `.engrad`/`.grad` file or Cartesian-gradient section exists in any endpoint directory/output. Each retained a GBW. Orbital-gradient convergence diagnostics are not nuclear forces. The completed finite donor-work comparison therefore supports that finite energy path, not uncomputed PQQ forces.
 
-[INVENTORY.json](INVENTORY.json) pins all eight exact endpoints from [the completed DFT result](../../exaa_donor_response_20261014/FINAL_RESULT.json), the corresponding MACE receipts/requests/force arrays, and source maps. All eight MACE force-file hashes and coordinate/state joins passed metadata verification. No force array or coordinate array was numerically loaded. DFT electronic stability and gradient qualification remain unestablished.
+[full inventory pointer](INVENTORY_POINTER.json) pins all eight exact endpoints from [the completed DFT result](../../exaa_donor_response_20261014/FINAL_RESULT.json), the corresponding MACE receipts/requests/force arrays, and source maps. All eight MACE force-file hashes and coordinate/state joins passed metadata verification. No force array or coordinate array was numerically loaded. DFT electronic stability and gradient qualification remain unestablished.
 
 ## Exact cofactor identity
 

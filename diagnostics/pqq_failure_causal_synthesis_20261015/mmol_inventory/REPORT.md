@@ -14,7 +14,7 @@ fixed `mmol_1770-pqq-la_model__envelope_5063ec4e8b07a456` context. Both sources
 have193 atoms/13 caps, dry oxidized-PQQ3−, Ca charge−3/La charge−2, and singlet
 multiplicity. Exact source, state, atom/cap maps, origins, both proposal receipts,
 MACE energies/forces, xTB vacuum/water charge files and qualified frozen-charge
-native ALPB results are pinned in [INVENTORY.json](INVENTORY.json). All12 cells
+native ALPB results are pinned in [full inventory pointer](INVENTORY_POINTER.json). All12 cells
 exist; metadata inspection verified208 referenced file hashes. No numerical
 geometry analysis, scoring, scientific imports or molecular calls ran here.
 

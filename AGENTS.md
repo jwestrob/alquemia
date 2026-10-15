@@ -33,10 +33,13 @@ Canonical25 saved-graph inventory4847 passes25/25; no flip geometry/energy calls
 Named-contact scout4859 passes actual4831 and missing-row checks, preserving short
 contacts in unselected Ca0 proposals. Final sample4 contact relief remains untested.
 See canonical_scope/REPORT.md and contact_review/SCOUT_REPORT.md.
+Final all-ten contact analysis4910 is queued afterany4844, one CPU, with wake
+watcher3688523. It binds actual terminal results in Slurm and retains failures;
+see asn_relaxation_contact_followup_v1/SUBMISSION.json. Do not duplicate it.
 
 MMOL1770 exact six-cell native r2SCAN-3c vacuum reference: origins4603/4604
 complete as energy diagnostics, with density/state warnings retained. Four saved
-proposal4640 completed;4637–4639 still run at12MPI each, comparator4641 follows.
+proposals4637/4638/4640 completed;4639 still runs at12MPI, comparator4641 follows.
 Final inverted frontier ordering also occurs in both origins; preserve diagnostic
 scope and electronic-state uncertainty. No origin rerun or stability claim.
 

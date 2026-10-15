@@ -103,7 +103,10 @@ Next finite research work:
  All four tests pass, including actual nine unexecuted rows; zero energy calls.
  Ca0 contact analysis retains short H contacts in its unselected flipped proposals;
  it does not establish sample4 contact relief. Final40-geometry analysis binds
- only terminal4844 evidence.
+ only terminal4844 evidence. It is now queued as4910 afterany4844 on one CPU;
+ watcher3688523 and exact launch are in asn_relaxation_contact_followup_v1/
+ SUBMISSION.json. Reviewed AFTER.sbatch verifies qualified4859 source hashes,
+ preserves partial/failed outcomes and records binding failures. Do not duplicate.
  See a0ac_asn_relaxation/contact_review/READY.md for exact binding command.
  Canonical25 source-graph inventory4847 completed on1CPU/one second. All25
  neutral existing ASN anchors pass identity/H-parent/bond/map/cap checks; some
@@ -119,12 +122,21 @@ Next finite research work:
  No solvent config is bound or job submitted while4844/contact results are
  incomplete; static review is not scientific qualification.
 - MMOL La/adaptive_La4640 completed normally after3683 scheduler seconds/12MPI;
- three proposal jobs4637–4639 remain running, comparator4641 pending. Frozen
+ Ca/adaptive_Ca4637 also completed normally after4093s/12MPI. Both completion
+ and health callbacks are acknowledged. Ca/adaptive_La4638 subsequently completed
+ normally after4585s/12MPI; proactive review recorded, actual callback pending.
+ Proposal4639 remains running, comparator4641 pending. Frozen
  energy-diagnostic admission remains: explicit orbital-gradient stop, with large
  density residuals. Its final printed frontier orbital ordering is inverted,
  also present in both saved origins; electronic stability/same-state continuity
  remain unqualified. No post-hoc gate change or rerun. Actual root review is
  saved in the endpoint directory; full response awaits the comparator.
+ The completed Ca proposal audit distinguishes4637 (ordinary final occupied/empty
+ ordering) from4638 (inverted ordering and negative diagonal-Hessian warnings).
+ Both meet their actual printed orbital-gradient criterion, with larger density
+ changes retained. Thus electronic-state uncertainty is not uniform across the
+ geometries; neither a passed native stop nor agreement alone proves a stable
+ ground-state response. No new stability campaign or acceptance change follows.
  All exact commands and completion/health watchers are in PROPOSAL_LAUNCH.json.
  No duplicate origin or proposal submissions.
 

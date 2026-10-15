@@ -19,6 +19,17 @@ The completed Ca0 control does not resolve sample4's named H–H contact.
 
 ## Final ten-source analysis
 
+Root has queued the final analysis as **4910**, `afterany:4844`, one standard CPU.
+Do not submit the manual commands below again while that job or its output exists.
+The thin `AFTER.sbatch` verifies the three source hashes from qualified scout4859,
+binds only the actual terminal remaining collection, then executes the unchanged
+analyzer. It preserves failed/partial rows and writes an outer failure receipt if
+binding cannot run. A zero process exit does not imply complete geometry coverage.
+Exact launch and watcher3688523 are recorded in
+`workspaces/pqq_failure_causal_synthesis_20261015/asn_relaxation_contact_followup_v1/SUBMISSION.json`.
+Final output remains `asn_relaxation_contact_review_v1/`. No molecular calls are
+added. The following commands document the same binding for recovery only.
+
 After the actual remaining-stage collection and terminal EXECUTION receipt exist,
 freeze them with this metadata-only command from the repository root:
 

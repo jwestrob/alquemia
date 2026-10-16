@@ -21,14 +21,16 @@ Saved diagnostic12542 identifies the same Asp7 oxygen displacement-envelope
 stop in all four searches, with covalent/contact gates preserved. Read
 lbt3_accommodation/REPORT.md. Do not repeat completed chemistry.
 
-The next declared finite test is LBT3_RANGE_EXTENSION_PLAN.md: warm-start all
-four saved endpoints, change only original-source atom displacement .20→.40Å,
-keep target/torsion/contact/chemical/state gates and the original seven motions.
-Original sources remain reference geometries. Leibniz owns continuation adapter;
-Harvey owns independent review/union-pool adapter. Root submits the first7CCO/La
-scout, then unchanged otherthree after execution/physical admission. Scout12544 is submitted, oneGPU/12CPUs, watcher1944984; exactconfig7ac515db
-in lbt3_range_scout_v1. No range result yet. No new DFT, protein preference
-claim or PQQ change.
+Range-only continuation12544/12545 and pool12546 are COMPLETE,20/20cells.
+Source-local contrast spread further improves57.895436→45.804712kcal/mol but
+remains too large for robust preference. See lbt3_range/REPORT.md; allphysical
+checks pass, boundary/finite-search limitations remain. No repeats.
+Next finite LBT3_COMMON_BASIS_PLAN.md tests matched7/10-coordinate continuations
+from the same range endpoints with unchanged .40Åsource/.20Åtarget/.20rad bounds.
+Candidate adds mappedAsp3/Glu11torsions+Ile10phi selected from priorforce evidence;
+botharms get the same feasible-direction fallback and finitebudgets. Leibniz
+implements; Harvey/child reviewandpool; root submits. No basisenergy yet, no
+new DFT, biologicalpreference claim, protein-level completion or PQQchange.
 
 Root owns submission/integration. Read current receipts before acting; no repeated
 completed chemistry or automatic dimer/full-library campaign. PQQ midpoint and

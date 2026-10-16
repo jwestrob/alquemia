@@ -1,3 +1,24 @@
+# Latest: complete range pool; matched common-basis test in preparation
+
+12544/12545/12546 are complete: allfour range continuations and20/20 paired
+cells admitted. Source-local contrast spread57.895436→45.804712kcal/mol; all
+original sources retained. Read lbt3_range/REPORT.md. No repeated searches.
+LBT3_COMMON_BASIS_PLAN.md now declares matched7/10-coordinate arms from identical
+range endpoints, samebounds/energy/budgets and deterministic feasible fallback.
+Candidate adds prior-force-selected mappedAsp3/Glu11torsions+Ile10phi; no new
+basisenergy yet. Leibniz implements; Harvey/child reviewandpool; root submits.
+All owned molecular jobs terminal. Goal active/unmet; PQQ untouched.
+
+# Latest: range scout complete; remaining three submitted
+
+12544 passes allfour real saved-start preflights and the7CCO/La continuation.
+Two admitted steps add−0.266482kcal/mol own-energy work; the next trialset hits
+the unchanged torsion .20rad bound. Read lbt3_range/SCOUT_REPORT.md. No repeat.
+12545 now runs the otherthree unchanged, oneGPU/12CPUs, watcher1947155;
+configf3d4c206 in lbt3_range_remaining_v1. Pooladapter2abe9640 passed independent
+review; root submits unionpool only after actual continuations. No result claimed
+yet for remainingthree, proteinpreference or expandedpool. Root owns execution.
+
 # Latest: range-only first scout submitted
 
 12544 runs7CCO/La continuation with oneGPU/12CPUs and completion watcher1944984.

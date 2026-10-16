@@ -1,3 +1,18 @@
+# Latest: finite water panel complete; Mex replay diagnosis pending
+
+Water scout 12664 and remaining 12670 complete all 12 geometrically admitted
+cells; four 7CCN inner-water slots remain rejected. Both 7CCO orientations give
+about -2.5 kcal/mol for the Dy-minus-La inward-water response. This is a
+conditional same-composition mechanism, not binding affinity or a solution to
+the source gap. The declared panel is closed; no automatic placement expansion.
+Leibniz owns the concise final water report and a separate Mex force-check plan.
+
+Mex static assembly 12673 stopped before molecular calls at saved mapped-force
+replay. Source remains 9e458e4f, workspace mex_static_v1; failed result preserved.
+Harvey prepares a saved-only diagnostic to identify the actual discrepancy.
+No combined model/relaxation result yet. Root owns submission and integration.
+All molecular jobs in this checkpoint are terminal; no duplicate chemistry.
+
 # Latest: Mex local field complete; whole-system assembly in preparation
 
 Mex jobs 12569/12570 are complete. All four local 209-atom GFN2 cells and

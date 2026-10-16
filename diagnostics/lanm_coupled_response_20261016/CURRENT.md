@@ -1,18 +1,21 @@
-# Latest: water panel complete; narrow Mex replay repair underway
+# Latest: Mex static model works; saved quantum response comparison submitted
 
-Water12565/12664/12670 completes12/16 admitted cells; four7CCN inner placements
-remain rejected. Both7CCO orientations give approximately-2.5kcal/mol Dy-minus-La
-inward-water response. Read lbt3_water/REPORT.md. This is a conditional modeled
-response, not affinity or robust preference. The finite water panel is closed.
+12685 completes two localMACE plus two global2049-atomALPB calls in13s/12CPUs/
+oneH200, reusing all accepted4GFN+2MM origins. Read mex_static/REPORT.md.
+Original12673 raw-replay failure is preserved;12680 diagnosed <=8.88e-16 derived
+cap-scatter arithmetic only. V2 retains exact raw gates and accepted mapped inputs.
+No combined derivative or preference qualification yet.
 
-Mex static12673 failed before molecular calls at exact derived-force equality.
-Saved-only12680 now proves all raw energies/charges/gradients exactly reproduced;
-only cap-scatter roundoff differs, at most8.88e-16kcal/mol/A. Read
-mex_static/REPLAY_DIAGNOSIS.md. Harvey owns narrow versioned replay comparison
-repair; original failure/source and all raw/scientific gates remain unchanged.
-Root submits. Leibniz stages a saved archived-PBE0 response comparison with no
-new DFT. MEX_FORCE_CHECK_PLAN.md is frozen; actual static assembly must pass first.
-All owned jobs terminal; no duplicate chemistry. Active goal remains unmet.
+Saved six-direction PBE0 comparison12686 is COMPLETE,1CPU,watcher2036225,
+workspace mex_reference_response_v1. It binds actual12685 and exact archived
+La/Dy sources; zero new molecular calls. All six metal-differential signs agree;
+magnitudes and weak own-metal/common directions differ. Leibniz writes the report.
+Harvey implements the separately frozen
+MEX_FORCE_CHECK_PLAN.md. Root owns submission/integration; no repeated origins.
+
+Water finite panel is closed12/16admitted,7CCO inward-response about-2.5kcal/mol
+Dy-minus-La in both orientations;7CCNinner4remain geometry-rejected. Read
+lbt3_water/REPORT.md. Goal remains unmet; PQQ/production unchanged.
 
 # Latest: Mex local field complete; whole-system assembly in preparation
 

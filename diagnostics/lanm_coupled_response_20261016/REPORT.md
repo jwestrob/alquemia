@@ -33,12 +33,16 @@ one modeled water inward favors Dy relative to La by about2.5kcal/mol in both
 this is a conditional mechanism, not source-robust preference. See
 [the completed water report](lbt3_water/REPORT.md). The fixed panel is closed.
 
-Next is the coherent Mex local-electronic/protein-mechanical/solvent assembly,
-followed by total-force checks and a saved comparison against matching archived
-PBE0 gradients before mechanical response. Its first attempt stopped before
-molecular calls on derived-gradient arithmetic roundoff; exact raw outputs are
-preserved and a narrow comparison repair is underway. No production/PQQ change,
-dimer prerequisite or broad library campaign. Earlier results below are history.
+The Mex whole-system assembly now works: two new localMACE and two globalALPB
+calls completed in13s on oneH200/12CPUs, reusing existing localfield and MM data.
+An independent saved comparison with matching archived PBE0 gradients agrees
+on all six predeclared metal-differential response signs. Magnitudes differ,
+and weak own-metal/common directions can reverse. See
+[Mex assembly](mex_static/REPORT.md) and [reference response](mex_reference_response/REPORT.md).
+This supports the contained total-force check and then bounded own-energy response;
+it is not affinity, electronic-state or source-robustness validation.
+No newDFT, production/PQQ change, dimer prerequisite or broad library campaign.
+Earlier results below are historical evidence.
 
 
 16 October 2026. Jacob recommended starting with monomers. We recovered Mex-LanM

@@ -39,8 +39,11 @@ relativeLa byabout2.5kcal/mol,7CCNinnerplacements remain unavailable. Read
 lbt3_water/REPORT.md. No affinity/source-robustness claim; finite panel closed.
 Mex whole-system static12673 failed before calls on exact derived-force replay;
 saved12680 proves only cap-scatter roundoff<=8.88e-16, all raw values exact.
-A narrow versioned replay repair is underway. Read CURRENT; no duplicate calls.
-Separate total-force check and savedPBE0 comparison precede mechanical response.
+Reviewed staticv2 job12685 completes2MACE+2globalALPB in13s, reusing4GFN+2MM.
+SavedPBE0 comparison12686 completes six fixed directions: all differential signs
+agree, magnitudes and weak own/common directions differ. Read mex_static/ and
+mex_reference_response/ reports. Total-force check implementation is underway
+before bounded mechanical response; no newDFT or preference claim.
 
 Root owns submission/integration. Read current receipts before acting; no repeated
 completed chemistry or automatic dimer/full-library campaign. PQQ midpoint and

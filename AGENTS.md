@@ -1,3 +1,26 @@
+# La/Dy monomer response underway — 16 October 2026
+
+Active goal is a useful, source-robust LanM La/Dy profiler with protein response;
+it remains unmet. Jacob directed a monomer-first benchmark. Read
+diagnostics/lanm_coupled_response_20261016/REPORT.md and CURRENT.md. Mex-LanM plus
+consumed LBT3 is one natural protein and one peptide control, not two LanMs.
+Whole/core MACE12471 completed8/8; saved comparison12484 shows persistent source
+sensitivity but scaffold-dependent selection of distinct La/heavy conformations.
+No affinity/classifier claim. Preparation12469 and Hans geometry12460 are complete.
+
+Dy also required three nativeGFN2 shell-array repairs. New full La+Dy profile
+635e111b passes actual8/8 real-core runtime controls12488, with unchanged absolute
+energy/population gates. See dy_parameter_qualification/; the La-only production
+profile/registry and old results are unchanged. Never reuse old uncorrectedDy
+native components. This is a scoped implementation check, not spin/affinity proof.
+
+Next declared whole-peptide solvent/force scout is LBT3_SOLVENT_PLAN.md. Native
+MACE force job12500 submitted with actual wake; eight standalone solvent-gradient
+cells and geometry-only coordinate catalogue are being staged by disjoint agents.
+Root owns submission/integration. Read current receipts before acting; no repeated
+completed chemistry or automatic dimer/full-library campaign. PQQ midpoint and
+production remain intact. All numerical work uses current shared Slurm limits.
+
 # La/Dy saved-source response complete — 16 October 2026
 
 After preserving the selected PQQ midpoint (bb27323, pushed), Jacob directed return

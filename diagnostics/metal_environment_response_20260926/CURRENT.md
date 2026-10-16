@@ -1,3 +1,21 @@
+# La/Dy research resumed — 16 October 2026
+
+Jacob selected and preserved the PQQ midpoint policy (pushed bb27323), deferred
+PLM manuscript inclusion, and directed return to La/Dy profiling. All six origin
+calculations are complete; no SCF retry or old LanM job needs restarting. The
+opposite Hans-source orderings remain the starting negative result.
+
+Root declared ../lanm_source_response_20261016/PLAN.md: reuse saved current repaired
+La/Dy nuclear, point-charge and matched classical gradients for the two Hans
+sources. Align matching protein atoms and diagnose source-direction loads before
+new molecular work. Preserve differing water/spectator states. This is zero-new-QM
+analysis, not a global relaxation or affinity estimate. Root owns submissions;
+lanm_science_next implements the scoped adapter, lanm_resume_inventory reviews it.
+Saved-force job11788 is now complete: reciprocal slopes point toward a narrower
+Hans-source gap, with Asp85/Asp87 leads; EF3-only source motion is uphill for both
+metals. Read its REPORT.md/CURRENT.md. No new molecular job is queued. Older
+pending/shutdown notes below are historical. PQQ production and reserved library outcomes remain untouched.
+
 # Field-aware metal response — restart checkpoint
 
 ## Complete six-cell result — 13 October 2026

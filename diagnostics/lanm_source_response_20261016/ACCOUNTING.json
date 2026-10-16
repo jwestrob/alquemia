@@ -1,0 +1,17 @@
+{
+  "command": [
+    "sacct",
+    "-n",
+    "-P",
+    "-j",
+    "11788",
+    "--format=JobIDRaw,State,ExitCode,ElapsedRaw,AllocCPUS,TotalCPU,MaxRSS"
+  ],
+  "stdout": "11788|COMPLETED|0:0|3|1|00:02.992|\n11788.batch|COMPLETED|0:0|3|1|00:02.992|108944K\n",
+  "stderr": "",
+  "observed_utc": "2026-10-16T11:13:59.088308+00:00",
+  "allocated_CPU_seconds": 3,
+  "allocated_GPU_seconds": 0,
+  "application_wall_seconds": 3.3632240295410156,
+  "scope": "New saved-gradient analysis only; prior molecular costs excluded explicitly"
+}

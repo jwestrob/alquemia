@@ -1,3 +1,16 @@
+# La/Dy saved-source response complete — 16 October 2026
+
+After preserving the selected PQQ midpoint (bb27323, pushed), Jacob directed return
+to La/Dy. Read diagnostics/lanm_source_response_20261016/REPORT.md and CURRENT.md.
+Saved-force Slurm11788 completed four repaired Hans assemblies in3s/1CPU, zero
+new molecular calls. Reciprocal differential slopes locally narrow source gap;
+Asp85/Asp87 are leads. EF3-only source motion is uphill for both metals, so no raw
+crystal interpolation or inferred relaxation energy. Next: physically mapped
+coupled donor/metal preparation with scaffold mechanics, before new QM. All six
+origins and the old Glu91 test are complete; no retries or molecular jobs queued.
+State/hydration confounds and frozen-f limits remain. Root owns integration.
+Delayed notification requires acknowledgement only, not repeated calculation.
+
 # PQQ policy selected; La/Dy research resumed — 16 October 2026
 
 Jacob selected the canonical midpoint and authorized commit/push/preservation.

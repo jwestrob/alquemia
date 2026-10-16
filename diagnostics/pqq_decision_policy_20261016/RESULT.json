@@ -1,0 +1,1535 @@
+{
+  "status": "complete",
+  "protocol": "pqq_calibration_only_decision_v1",
+  "primary_rule": "canonical_midpoint",
+  "denominators": {
+    "unique_contexts": 257,
+    "memberships": 260,
+    "canonical_contexts": 25,
+    "noncanonical_contexts": 232,
+    "existing_triples": 100,
+    "superseded_historical_records": 18
+  },
+  "held_out_canonical_counts": {
+    "operational": {
+      "correct": 25,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    "mathematical": {
+      "correct": 25,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    }
+  },
+  "tests": [
+    {
+      "test": "canonical_midpoint_inside_gap_and_exact_tie_abstains",
+      "policy": "operational",
+      "pass": true
+    },
+    {
+      "test": "incomplete_real_calibration_copy_unavailable",
+      "policy": "operational",
+      "pass": true,
+      "fixture": "Explicit subset of real calibration with all La rows removed; not new evidence"
+    },
+    {
+      "test": "canonical_midpoint_inside_gap_and_exact_tie_abstains",
+      "policy": "mathematical",
+      "pass": true
+    },
+    {
+      "test": "incomplete_real_calibration_copy_unavailable",
+      "policy": "mathematical",
+      "pass": true,
+      "fixture": "Explicit subset of real calibration with all La rows removed; not new evidence"
+    }
+  ],
+  "new_molecular_calls": 0,
+  "scores_changed": false,
+  "production_changed": false,
+  "limitations": "Consumed correlated development structures. Sensitivity band is not a confidence interval. Held-out canonical predictions use only their own omitted-group fit; no new blind validation.",
+  "summary": [
+    {
+      "stratum": "all_unique",
+      "policy": "mathematical",
+      "rule": "calibration_sensitivity_band",
+      "n": 257,
+      "correct": 255,
+      "wrong": 0,
+      "inconclusive": 2,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "all_unique",
+      "policy": "mathematical",
+      "rule": "canonical_midpoint",
+      "n": 257,
+      "correct": 257,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "all_unique",
+      "policy": "mathematical",
+      "rule": "existing_bands",
+      "n": 257,
+      "correct": 249,
+      "wrong": 0,
+      "inconclusive": 8,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "all_unique",
+      "policy": "operational",
+      "rule": "calibration_sensitivity_band",
+      "n": 257,
+      "correct": 255,
+      "wrong": 0,
+      "inconclusive": 2,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "all_unique",
+      "policy": "operational",
+      "rule": "canonical_midpoint",
+      "n": 257,
+      "correct": 257,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "all_unique",
+      "policy": "operational",
+      "rule": "existing_bands",
+      "n": 257,
+      "correct": 249,
+      "wrong": 0,
+      "inconclusive": 8,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "canonical",
+      "policy": "mathematical",
+      "rule": "calibration_sensitivity_band",
+      "n": 25,
+      "correct": 25,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "canonical",
+      "policy": "mathematical",
+      "rule": "canonical_midpoint",
+      "n": 25,
+      "correct": 25,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "canonical",
+      "policy": "mathematical",
+      "rule": "existing_bands",
+      "n": 25,
+      "correct": 25,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "canonical",
+      "policy": "operational",
+      "rule": "calibration_sensitivity_band",
+      "n": 25,
+      "correct": 25,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "canonical",
+      "policy": "operational",
+      "rule": "canonical_midpoint",
+      "n": 25,
+      "correct": 25,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "canonical",
+      "policy": "operational",
+      "rule": "existing_bands",
+      "n": 25,
+      "correct": 25,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "cohort_memberships:current_ca125",
+      "policy": "mathematical",
+      "rule": "calibration_sensitivity_band",
+      "n": 125,
+      "correct": 124,
+      "wrong": 0,
+      "inconclusive": 1,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "cohort_memberships:current_ca125",
+      "policy": "mathematical",
+      "rule": "canonical_midpoint",
+      "n": 125,
+      "correct": 125,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "cohort_memberships:current_ca125",
+      "policy": "mathematical",
+      "rule": "existing_bands",
+      "n": 125,
+      "correct": 122,
+      "wrong": 0,
+      "inconclusive": 3,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "cohort_memberships:current_ca125",
+      "policy": "operational",
+      "rule": "calibration_sensitivity_band",
+      "n": 125,
+      "correct": 124,
+      "wrong": 0,
+      "inconclusive": 1,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "cohort_memberships:current_ca125",
+      "policy": "operational",
+      "rule": "canonical_midpoint",
+      "n": 125,
+      "correct": 125,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "cohort_memberships:current_ca125",
+      "policy": "operational",
+      "rule": "existing_bands",
+      "n": 125,
+      "correct": 122,
+      "wrong": 0,
+      "inconclusive": 3,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "cohort_memberships:expanded135",
+      "policy": "mathematical",
+      "rule": "calibration_sensitivity_band",
+      "n": 135,
+      "correct": 134,
+      "wrong": 0,
+      "inconclusive": 1,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "cohort_memberships:expanded135",
+      "policy": "mathematical",
+      "rule": "canonical_midpoint",
+      "n": 135,
+      "correct": 135,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "cohort_memberships:expanded135",
+      "policy": "mathematical",
+      "rule": "existing_bands",
+      "n": 135,
+      "correct": 130,
+      "wrong": 0,
+      "inconclusive": 5,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "cohort_memberships:expanded135",
+      "policy": "operational",
+      "rule": "calibration_sensitivity_band",
+      "n": 135,
+      "correct": 134,
+      "wrong": 0,
+      "inconclusive": 1,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "cohort_memberships:expanded135",
+      "policy": "operational",
+      "rule": "canonical_midpoint",
+      "n": 135,
+      "correct": 135,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "cohort_memberships:expanded135",
+      "policy": "operational",
+      "rule": "existing_bands",
+      "n": 135,
+      "correct": 130,
+      "wrong": 0,
+      "inconclusive": 5,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "cohort_memberships:two_ca15",
+      "policy": "mathematical",
+      "rule": "calibration_sensitivity_band",
+      "n": 15,
+      "correct": 15,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "cohort_memberships:two_ca15",
+      "policy": "mathematical",
+      "rule": "canonical_midpoint",
+      "n": 15,
+      "correct": 15,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "cohort_memberships:two_ca15",
+      "policy": "mathematical",
+      "rule": "existing_bands",
+      "n": 15,
+      "correct": 13,
+      "wrong": 0,
+      "inconclusive": 2,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "cohort_memberships:two_ca15",
+      "policy": "operational",
+      "rule": "calibration_sensitivity_band",
+      "n": 15,
+      "correct": 15,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "cohort_memberships:two_ca15",
+      "policy": "operational",
+      "rule": "canonical_midpoint",
+      "n": 15,
+      "correct": 15,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "cohort_memberships:two_ca15",
+      "policy": "operational",
+      "rule": "existing_bands",
+      "n": 15,
+      "correct": 13,
+      "wrong": 0,
+      "inconclusive": 2,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "conditioning:2Ca_v1",
+      "policy": "mathematical",
+      "rule": "calibration_sensitivity_band",
+      "n": 15,
+      "correct": 15,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "conditioning:2Ca_v1",
+      "policy": "mathematical",
+      "rule": "canonical_midpoint",
+      "n": 15,
+      "correct": 15,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "conditioning:2Ca_v1",
+      "policy": "mathematical",
+      "rule": "existing_bands",
+      "n": 15,
+      "correct": 13,
+      "wrong": 0,
+      "inconclusive": 2,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "conditioning:2Ca_v1",
+      "policy": "operational",
+      "rule": "calibration_sensitivity_band",
+      "n": 15,
+      "correct": 15,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "conditioning:2Ca_v1",
+      "policy": "operational",
+      "rule": "canonical_midpoint",
+      "n": 15,
+      "correct": 15,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "conditioning:2Ca_v1",
+      "policy": "operational",
+      "rule": "existing_bands",
+      "n": 15,
+      "correct": 13,
+      "wrong": 0,
+      "inconclusive": 2,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "conditioning:Ca",
+      "policy": "mathematical",
+      "rule": "calibration_sensitivity_band",
+      "n": 110,
+      "correct": 109,
+      "wrong": 0,
+      "inconclusive": 1,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "conditioning:Ca",
+      "policy": "mathematical",
+      "rule": "canonical_midpoint",
+      "n": 110,
+      "correct": 110,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "conditioning:Ca",
+      "policy": "mathematical",
+      "rule": "existing_bands",
+      "n": 110,
+      "correct": 109,
+      "wrong": 0,
+      "inconclusive": 1,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "conditioning:Ca",
+      "policy": "operational",
+      "rule": "calibration_sensitivity_band",
+      "n": 110,
+      "correct": 109,
+      "wrong": 0,
+      "inconclusive": 1,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "conditioning:Ca",
+      "policy": "operational",
+      "rule": "canonical_midpoint",
+      "n": 110,
+      "correct": 110,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "conditioning:Ca",
+      "policy": "operational",
+      "rule": "existing_bands",
+      "n": 110,
+      "correct": 109,
+      "wrong": 0,
+      "inconclusive": 1,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "conditioning:La",
+      "policy": "mathematical",
+      "rule": "calibration_sensitivity_band",
+      "n": 129,
+      "correct": 128,
+      "wrong": 0,
+      "inconclusive": 1,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "conditioning:La",
+      "policy": "mathematical",
+      "rule": "canonical_midpoint",
+      "n": 129,
+      "correct": 129,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "conditioning:La",
+      "policy": "mathematical",
+      "rule": "existing_bands",
+      "n": 129,
+      "correct": 124,
+      "wrong": 0,
+      "inconclusive": 5,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "conditioning:La",
+      "policy": "operational",
+      "rule": "calibration_sensitivity_band",
+      "n": 129,
+      "correct": 128,
+      "wrong": 0,
+      "inconclusive": 1,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "conditioning:La",
+      "policy": "operational",
+      "rule": "canonical_midpoint",
+      "n": 129,
+      "correct": 129,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "conditioning:La",
+      "policy": "operational",
+      "rule": "existing_bands",
+      "n": 129,
+      "correct": 124,
+      "wrong": 0,
+      "inconclusive": 5,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "conditioning:None",
+      "policy": "mathematical",
+      "rule": "calibration_sensitivity_band",
+      "n": 3,
+      "correct": 3,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "conditioning:None",
+      "policy": "mathematical",
+      "rule": "canonical_midpoint",
+      "n": 3,
+      "correct": 3,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "conditioning:None",
+      "policy": "mathematical",
+      "rule": "existing_bands",
+      "n": 3,
+      "correct": 3,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "conditioning:None",
+      "policy": "operational",
+      "rule": "calibration_sensitivity_band",
+      "n": 3,
+      "correct": 3,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "conditioning:None",
+      "policy": "operational",
+      "rule": "canonical_midpoint",
+      "n": 3,
+      "correct": 3,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "conditioning:None",
+      "policy": "operational",
+      "rule": "existing_bands",
+      "n": 3,
+      "correct": 3,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "existing_100_triples",
+      "policy": "mathematical",
+      "rule": "calibration_sensitivity_band",
+      "n": 100,
+      "correct": 94,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 6,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "existing_100_triples",
+      "policy": "mathematical",
+      "rule": "canonical_midpoint",
+      "n": 100,
+      "correct": 94,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 6,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "existing_100_triples",
+      "policy": "mathematical",
+      "rule": "existing_bands",
+      "n": 100,
+      "correct": 89,
+      "wrong": 0,
+      "inconclusive": 5,
+      "unavailable": 6,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "existing_100_triples",
+      "policy": "operational",
+      "rule": "calibration_sensitivity_band",
+      "n": 100,
+      "correct": 94,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 6,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "existing_100_triples",
+      "policy": "operational",
+      "rule": "canonical_midpoint",
+      "n": 100,
+      "correct": 94,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 6,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "existing_100_triples",
+      "policy": "operational",
+      "rule": "existing_bands",
+      "n": 100,
+      "correct": 89,
+      "wrong": 0,
+      "inconclusive": 5,
+      "unavailable": 6,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "noncanonical",
+      "policy": "mathematical",
+      "rule": "calibration_sensitivity_band",
+      "n": 232,
+      "correct": 230,
+      "wrong": 0,
+      "inconclusive": 2,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "noncanonical",
+      "policy": "mathematical",
+      "rule": "canonical_midpoint",
+      "n": 232,
+      "correct": 232,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "noncanonical",
+      "policy": "mathematical",
+      "rule": "existing_bands",
+      "n": 232,
+      "correct": 224,
+      "wrong": 0,
+      "inconclusive": 8,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "noncanonical",
+      "policy": "operational",
+      "rule": "calibration_sensitivity_band",
+      "n": 232,
+      "correct": 230,
+      "wrong": 0,
+      "inconclusive": 2,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "noncanonical",
+      "policy": "operational",
+      "rule": "canonical_midpoint",
+      "n": 232,
+      "correct": 232,
+      "wrong": 0,
+      "inconclusive": 0,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    },
+    {
+      "stratum": "noncanonical",
+      "policy": "operational",
+      "rule": "existing_bands",
+      "n": 232,
+      "correct": 224,
+      "wrong": 0,
+      "inconclusive": 8,
+      "unavailable": 0,
+      "calibration_unavailable": 0
+    }
+  ],
+  "thresholds": {
+    "operational": {
+      "full": {
+        "status": "available",
+        "Ca_max": -405461.9631022772,
+        "La_min": -405453.5127788069,
+        "midpoint": -405457.73794054205,
+        "training_record_ids": [
+          "expanded135::a0a3f2yly8-pqq-la_model__conditioned_La__seed-1_sample-1::a0a3f2yly8-pqq-la_model__envelope_e05e200a13d024a5",
+          "expanded135::a0acd6b9f2-pqq-la_model__conditioned_La__seed-1_sample-3::a0acd6b9f2-pqq-la_model__envelope_2eda778295ffed58",
+          "expanded135::a8r3s4-pqq-la_model__conditioned_La__seed-1_sample-0::a8r3s4-pqq-la_model__envelope_5eba0c9b39ead1ee",
+          "expanded135::atq70401.1-pqq-la_model__conditioned_La__seed-1_sample-0::atq70401.1-pqq-la_model__envelope_1de9a1c85821aa97",
+          "expanded135::bbl57595.1-pqq-la_model__conditioned_La__seed-1_sample-2::bbl57595.1-pqq-la_model__envelope_58e1b3ec0c1917b9",
+          "expanded135::c5atj3-pqq-la_model__conditioned_La__seed-1_sample-2::c5atj3-pqq-la_model__envelope_531a4a67d5ba9360",
+          "expanded135::c5axv8-pqq-la_model__conditioned_La__seed-1_sample-1::c5axv8-pqq-la_model__envelope_aa36ec84c4cbdc62",
+          "expanded135::c5b120-pqq-la_model__conditioned_La__seed-1_sample-0::c5b120-pqq-la_model__envelope_9a8c10eba2ec7e13",
+          "expanded135::i0jwn7-pqq-la_model__conditioned_La__seed-1_sample-3::i0jwn7-pqq-la_model__envelope_8a96291197228b6f",
+          "expanded135::mmol_1770-pqq-la_model__conditioned_La__seed-1_sample-3::mmol_1770-pqq-la_model__envelope_5063ec4e8b07a456",
+          "expanded135::mmol_2048-pqq-la_model__conditioned_La__seed-1_sample-4::mmol_2048-pqq-la_model__envelope_b2b70954adaf23d6",
+          "expanded135::o24759-pqq-la_model__conditioned_La__seed-1_sample-3::o24759-pqq-la_model__envelope_e4efa4342e5fcf03",
+          "expanded135::p12293-pqq-la_model__conditioned_La__seed-1_sample-4::p12293-pqq-la_model__envelope_e88ef960dad9c35e",
+          "expanded135::p15279-pqq-la_model__conditioned_La__seed-1_sample-2::p15279-pqq-la_model__envelope_1de9a1c85821aa97",
+          "expanded135::p16027-pqq-la_model__conditioned_La__seed-1_sample-2::p16027-pqq-la_model__envelope_1de9a1c85821aa97",
+          "expanded135::p38539-pqq-la_model__conditioned_La__seed-1_sample-0::p38539-pqq-la_model__envelope_3c659c8193acdad7",
+          "expanded135::q4w6g0-pqq-la_model__conditioned_La__seed-1_sample-2::q4w6g0-pqq-la_model__envelope_6827bf3c955fda67",
+          "expanded135::q60ar6-pqq-la_model__conditioned_La__seed-1_sample-1::q60ar6-pqq-la_model__envelope_cefdcb289daedf76",
+          "expanded135::q88jh0-pqq-la_model__conditioned_La__seed-1_sample-0::q88jh0-pqq-la_model__envelope_2fba6938336689b8",
+          "expanded135::q88jh5-pqq-la_model__conditioned_La__seed-1_sample-2::q88jh5-pqq-la_model__envelope_12c9e6b669aeb9c8",
+          "expanded135::q89gy2-pqq-la_model__conditioned_La__seed-1_sample-3::q89gy2-pqq-la_model__envelope_d6071546219d9d9e",
+          "expanded135::q8gr64-pqq-la_model__conditioned_La__seed-1_sample-2::q8gr64-pqq-la_model__envelope_0e84aa21f1346d1a",
+          "expanded135::q92wy9-pqq-la_model__conditioned_La__seed-1_sample-4::q92wy9-pqq-la_model__envelope_95c60a681ae9e61a",
+          "expanded135::q9l935-pqq-la_model__conditioned_La__seed-1_sample-1::q9l935-pqq-la_model__envelope_722cdd31821909e8",
+          "expanded135::q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0::q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee"
+        ],
+        "Ca_boundary_record_ids": [
+          "expanded135::q88jh5-pqq-la_model__conditioned_La__seed-1_sample-2::q88jh5-pqq-la_model__envelope_12c9e6b669aeb9c8"
+        ],
+        "La_boundary_record_ids": [
+          "expanded135::c5axv8-pqq-la_model__conditioned_La__seed-1_sample-1::c5axv8-pqq-la_model__envelope_aa36ec84c4cbdc62"
+        ]
+      },
+      "existing_bands": {
+        "Ca_max": -405461.9631022772,
+        "La_min": -405453.5127788069
+      },
+      "sensitivity_bounds": [
+        -405458.3097447878,
+        -405454.31015960994
+      ]
+    },
+    "mathematical": {
+      "full": {
+        "status": "available",
+        "Ca_max": -405461.9631022772,
+        "La_min": -405453.5127788069,
+        "midpoint": -405457.73794054205,
+        "training_record_ids": [
+          "expanded135::a0a3f2yly8-pqq-la_model__conditioned_La__seed-1_sample-1::a0a3f2yly8-pqq-la_model__envelope_e05e200a13d024a5",
+          "expanded135::a0acd6b9f2-pqq-la_model__conditioned_La__seed-1_sample-3::a0acd6b9f2-pqq-la_model__envelope_2eda778295ffed58",
+          "expanded135::a8r3s4-pqq-la_model__conditioned_La__seed-1_sample-0::a8r3s4-pqq-la_model__envelope_5eba0c9b39ead1ee",
+          "expanded135::atq70401.1-pqq-la_model__conditioned_La__seed-1_sample-0::atq70401.1-pqq-la_model__envelope_1de9a1c85821aa97",
+          "expanded135::bbl57595.1-pqq-la_model__conditioned_La__seed-1_sample-2::bbl57595.1-pqq-la_model__envelope_58e1b3ec0c1917b9",
+          "expanded135::c5atj3-pqq-la_model__conditioned_La__seed-1_sample-2::c5atj3-pqq-la_model__envelope_531a4a67d5ba9360",
+          "expanded135::c5axv8-pqq-la_model__conditioned_La__seed-1_sample-1::c5axv8-pqq-la_model__envelope_aa36ec84c4cbdc62",
+          "expanded135::c5b120-pqq-la_model__conditioned_La__seed-1_sample-0::c5b120-pqq-la_model__envelope_9a8c10eba2ec7e13",
+          "expanded135::i0jwn7-pqq-la_model__conditioned_La__seed-1_sample-3::i0jwn7-pqq-la_model__envelope_8a96291197228b6f",
+          "expanded135::mmol_1770-pqq-la_model__conditioned_La__seed-1_sample-3::mmol_1770-pqq-la_model__envelope_5063ec4e8b07a456",
+          "expanded135::mmol_2048-pqq-la_model__conditioned_La__seed-1_sample-4::mmol_2048-pqq-la_model__envelope_b2b70954adaf23d6",
+          "expanded135::o24759-pqq-la_model__conditioned_La__seed-1_sample-3::o24759-pqq-la_model__envelope_e4efa4342e5fcf03",
+          "expanded135::p12293-pqq-la_model__conditioned_La__seed-1_sample-4::p12293-pqq-la_model__envelope_e88ef960dad9c35e",
+          "expanded135::p15279-pqq-la_model__conditioned_La__seed-1_sample-2::p15279-pqq-la_model__envelope_1de9a1c85821aa97",
+          "expanded135::p16027-pqq-la_model__conditioned_La__seed-1_sample-2::p16027-pqq-la_model__envelope_1de9a1c85821aa97",
+          "expanded135::p38539-pqq-la_model__conditioned_La__seed-1_sample-0::p38539-pqq-la_model__envelope_3c659c8193acdad7",
+          "expanded135::q4w6g0-pqq-la_model__conditioned_La__seed-1_sample-2::q4w6g0-pqq-la_model__envelope_6827bf3c955fda67",
+          "expanded135::q60ar6-pqq-la_model__conditioned_La__seed-1_sample-1::q60ar6-pqq-la_model__envelope_cefdcb289daedf76",
+          "expanded135::q88jh0-pqq-la_model__conditioned_La__seed-1_sample-0::q88jh0-pqq-la_model__envelope_2fba6938336689b8",
+          "expanded135::q88jh5-pqq-la_model__conditioned_La__seed-1_sample-2::q88jh5-pqq-la_model__envelope_12c9e6b669aeb9c8",
+          "expanded135::q89gy2-pqq-la_model__conditioned_La__seed-1_sample-3::q89gy2-pqq-la_model__envelope_d6071546219d9d9e",
+          "expanded135::q8gr64-pqq-la_model__conditioned_La__seed-1_sample-2::q8gr64-pqq-la_model__envelope_0e84aa21f1346d1a",
+          "expanded135::q92wy9-pqq-la_model__conditioned_La__seed-1_sample-4::q92wy9-pqq-la_model__envelope_95c60a681ae9e61a",
+          "expanded135::q9l935-pqq-la_model__conditioned_La__seed-1_sample-1::q9l935-pqq-la_model__envelope_722cdd31821909e8",
+          "expanded135::q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-0::q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee"
+        ],
+        "Ca_boundary_record_ids": [
+          "expanded135::q88jh5-pqq-la_model__conditioned_La__seed-1_sample-2::q88jh5-pqq-la_model__envelope_12c9e6b669aeb9c8"
+        ],
+        "La_boundary_record_ids": [
+          "expanded135::c5axv8-pqq-la_model__conditioned_La__seed-1_sample-1::c5axv8-pqq-la_model__envelope_aa36ec84c4cbdc62"
+        ]
+      },
+      "existing_bands": {
+        "Ca_max": -405461.9631022772,
+        "La_min": -405453.5127788069
+      },
+      "sensitivity_bounds": [
+        -405458.3097447878,
+        -405454.31015960994
+      ]
+    }
+  },
+  "transitions": [
+    {
+      "context_id": "context_1b4eb0764058b64f3c4682dd",
+      "source_case_id": "q88jh5-pqq-la_model__conditioned_La__seed-1_sample-3",
+      "case_id": "q88jh5-pqq-la_model__conditioned_La__seed-1_sample-3__envelope_12c9e6b669aeb9c8",
+      "protein": "q88jh5-pqq-la_model",
+      "biological_group": "q88jh5",
+      "source_conditioning_metal": "La",
+      "expected_class": "Ca",
+      "policy": "operational",
+      "rule": "canonical_midpoint",
+      "score": -405460.12824853504,
+      "calibration": false,
+      "record_ids": [
+        "expanded135::q88jh5-pqq-la_model__conditioned_La__seed-1_sample-3::q88jh5-pqq-la_model__envelope_12c9e6b669aeb9c8"
+      ],
+      "decision": "Ca",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_1b4eb0764058b64f3c4682dd",
+      "source_case_id": "q88jh5-pqq-la_model__conditioned_La__seed-1_sample-3",
+      "case_id": "q88jh5-pqq-la_model__conditioned_La__seed-1_sample-3__envelope_12c9e6b669aeb9c8",
+      "protein": "q88jh5-pqq-la_model",
+      "biological_group": "q88jh5",
+      "source_conditioning_metal": "La",
+      "expected_class": "Ca",
+      "policy": "operational",
+      "rule": "calibration_sensitivity_band",
+      "score": -405460.12824853504,
+      "calibration": false,
+      "record_ids": [
+        "expanded135::q88jh5-pqq-la_model__conditioned_La__seed-1_sample-3::q88jh5-pqq-la_model__envelope_12c9e6b669aeb9c8"
+      ],
+      "decision": "Ca",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_1b4eb0764058b64f3c4682dd",
+      "source_case_id": "q88jh5-pqq-la_model__conditioned_La__seed-1_sample-3",
+      "case_id": "q88jh5-pqq-la_model__conditioned_La__seed-1_sample-3__envelope_12c9e6b669aeb9c8",
+      "protein": "q88jh5-pqq-la_model",
+      "biological_group": "q88jh5",
+      "source_conditioning_metal": "La",
+      "expected_class": "Ca",
+      "policy": "mathematical",
+      "rule": "canonical_midpoint",
+      "score": -405460.12824853504,
+      "calibration": false,
+      "record_ids": [
+        "expanded135::q88jh5-pqq-la_model__conditioned_La__seed-1_sample-3::q88jh5-pqq-la_model__envelope_12c9e6b669aeb9c8"
+      ],
+      "decision": "Ca",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_1b4eb0764058b64f3c4682dd",
+      "source_case_id": "q88jh5-pqq-la_model__conditioned_La__seed-1_sample-3",
+      "case_id": "q88jh5-pqq-la_model__conditioned_La__seed-1_sample-3__envelope_12c9e6b669aeb9c8",
+      "protein": "q88jh5-pqq-la_model",
+      "biological_group": "q88jh5",
+      "source_conditioning_metal": "La",
+      "expected_class": "Ca",
+      "policy": "mathematical",
+      "rule": "calibration_sensitivity_band",
+      "score": -405460.12824853504,
+      "calibration": false,
+      "record_ids": [
+        "expanded135::q88jh5-pqq-la_model__conditioned_La__seed-1_sample-3::q88jh5-pqq-la_model__envelope_12c9e6b669aeb9c8"
+      ],
+      "decision": "Ca",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_23e7e6eed0cf47d7a141cf2d",
+      "source_case_id": "q88jh5-pqq-la_model__conditioned_La__seed-1_sample-4",
+      "case_id": "q88jh5-pqq-la_model__conditioned_La__seed-1_sample-4__envelope_12c9e6b669aeb9c8",
+      "protein": "q88jh5-pqq-la_model",
+      "biological_group": "q88jh5",
+      "source_conditioning_metal": "La",
+      "expected_class": "Ca",
+      "policy": "operational",
+      "rule": "canonical_midpoint",
+      "score": -405460.53841407184,
+      "calibration": false,
+      "record_ids": [
+        "expanded135::q88jh5-pqq-la_model__conditioned_La__seed-1_sample-4::q88jh5-pqq-la_model__envelope_12c9e6b669aeb9c8"
+      ],
+      "decision": "Ca",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_23e7e6eed0cf47d7a141cf2d",
+      "source_case_id": "q88jh5-pqq-la_model__conditioned_La__seed-1_sample-4",
+      "case_id": "q88jh5-pqq-la_model__conditioned_La__seed-1_sample-4__envelope_12c9e6b669aeb9c8",
+      "protein": "q88jh5-pqq-la_model",
+      "biological_group": "q88jh5",
+      "source_conditioning_metal": "La",
+      "expected_class": "Ca",
+      "policy": "operational",
+      "rule": "calibration_sensitivity_band",
+      "score": -405460.53841407184,
+      "calibration": false,
+      "record_ids": [
+        "expanded135::q88jh5-pqq-la_model__conditioned_La__seed-1_sample-4::q88jh5-pqq-la_model__envelope_12c9e6b669aeb9c8"
+      ],
+      "decision": "Ca",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_23e7e6eed0cf47d7a141cf2d",
+      "source_case_id": "q88jh5-pqq-la_model__conditioned_La__seed-1_sample-4",
+      "case_id": "q88jh5-pqq-la_model__conditioned_La__seed-1_sample-4__envelope_12c9e6b669aeb9c8",
+      "protein": "q88jh5-pqq-la_model",
+      "biological_group": "q88jh5",
+      "source_conditioning_metal": "La",
+      "expected_class": "Ca",
+      "policy": "mathematical",
+      "rule": "canonical_midpoint",
+      "score": -405460.53841407184,
+      "calibration": false,
+      "record_ids": [
+        "expanded135::q88jh5-pqq-la_model__conditioned_La__seed-1_sample-4::q88jh5-pqq-la_model__envelope_12c9e6b669aeb9c8"
+      ],
+      "decision": "Ca",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_23e7e6eed0cf47d7a141cf2d",
+      "source_case_id": "q88jh5-pqq-la_model__conditioned_La__seed-1_sample-4",
+      "case_id": "q88jh5-pqq-la_model__conditioned_La__seed-1_sample-4__envelope_12c9e6b669aeb9c8",
+      "protein": "q88jh5-pqq-la_model",
+      "biological_group": "q88jh5",
+      "source_conditioning_metal": "La",
+      "expected_class": "Ca",
+      "policy": "mathematical",
+      "rule": "calibration_sensitivity_band",
+      "score": -405460.53841407184,
+      "calibration": false,
+      "record_ids": [
+        "expanded135::q88jh5-pqq-la_model__conditioned_La__seed-1_sample-4::q88jh5-pqq-la_model__envelope_12c9e6b669aeb9c8"
+      ],
+      "decision": "Ca",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_2ab312ff93172101e01f62fd",
+      "source_case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-4",
+      "case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-4__envelope_5eba0c9b39ead1ee",
+      "protein": "q9z4j7-pqq-la_model",
+      "biological_group": "q9z4j7",
+      "source_conditioning_metal": "La",
+      "expected_class": "Ca",
+      "policy": "operational",
+      "rule": "canonical_midpoint",
+      "score": -405460.3800672716,
+      "calibration": false,
+      "record_ids": [
+        "expanded135::q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-4::q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee"
+      ],
+      "decision": "Ca",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_2ab312ff93172101e01f62fd",
+      "source_case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-4",
+      "case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-4__envelope_5eba0c9b39ead1ee",
+      "protein": "q9z4j7-pqq-la_model",
+      "biological_group": "q9z4j7",
+      "source_conditioning_metal": "La",
+      "expected_class": "Ca",
+      "policy": "operational",
+      "rule": "calibration_sensitivity_band",
+      "score": -405460.3800672716,
+      "calibration": false,
+      "record_ids": [
+        "expanded135::q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-4::q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee"
+      ],
+      "decision": "Ca",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_2ab312ff93172101e01f62fd",
+      "source_case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-4",
+      "case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-4__envelope_5eba0c9b39ead1ee",
+      "protein": "q9z4j7-pqq-la_model",
+      "biological_group": "q9z4j7",
+      "source_conditioning_metal": "La",
+      "expected_class": "Ca",
+      "policy": "mathematical",
+      "rule": "canonical_midpoint",
+      "score": -405460.3800672716,
+      "calibration": false,
+      "record_ids": [
+        "expanded135::q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-4::q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee"
+      ],
+      "decision": "Ca",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_2ab312ff93172101e01f62fd",
+      "source_case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-4",
+      "case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-4__envelope_5eba0c9b39ead1ee",
+      "protein": "q9z4j7-pqq-la_model",
+      "biological_group": "q9z4j7",
+      "source_conditioning_metal": "La",
+      "expected_class": "Ca",
+      "policy": "mathematical",
+      "rule": "calibration_sensitivity_band",
+      "score": -405460.3800672716,
+      "calibration": false,
+      "record_ids": [
+        "expanded135::q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-4::q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee"
+      ],
+      "decision": "Ca",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_41a4bfe8589fd579a5cdc9bd",
+      "source_case_id": "q9z4j7-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-3",
+      "case_id": "q9z4j7-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-3__envelope_5eba0c9b39ead1ee",
+      "protein": "q9z4j7-pqq-la_model",
+      "biological_group": "q9z4j7",
+      "source_conditioning_metal": "2Ca_v1",
+      "expected_class": "Ca",
+      "policy": "operational",
+      "rule": "canonical_midpoint",
+      "score": -405460.7723224332,
+      "calibration": false,
+      "record_ids": [
+        "two_ca_q9_5::q9z4j7-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-3::q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee"
+      ],
+      "decision": "Ca",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_41a4bfe8589fd579a5cdc9bd",
+      "source_case_id": "q9z4j7-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-3",
+      "case_id": "q9z4j7-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-3__envelope_5eba0c9b39ead1ee",
+      "protein": "q9z4j7-pqq-la_model",
+      "biological_group": "q9z4j7",
+      "source_conditioning_metal": "2Ca_v1",
+      "expected_class": "Ca",
+      "policy": "operational",
+      "rule": "calibration_sensitivity_band",
+      "score": -405460.7723224332,
+      "calibration": false,
+      "record_ids": [
+        "two_ca_q9_5::q9z4j7-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-3::q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee"
+      ],
+      "decision": "Ca",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_41a4bfe8589fd579a5cdc9bd",
+      "source_case_id": "q9z4j7-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-3",
+      "case_id": "q9z4j7-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-3__envelope_5eba0c9b39ead1ee",
+      "protein": "q9z4j7-pqq-la_model",
+      "biological_group": "q9z4j7",
+      "source_conditioning_metal": "2Ca_v1",
+      "expected_class": "Ca",
+      "policy": "mathematical",
+      "rule": "canonical_midpoint",
+      "score": -405460.7723224332,
+      "calibration": false,
+      "record_ids": [
+        "two_ca_q9_5::q9z4j7-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-3::q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee"
+      ],
+      "decision": "Ca",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_41a4bfe8589fd579a5cdc9bd",
+      "source_case_id": "q9z4j7-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-3",
+      "case_id": "q9z4j7-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-3__envelope_5eba0c9b39ead1ee",
+      "protein": "q9z4j7-pqq-la_model",
+      "biological_group": "q9z4j7",
+      "source_conditioning_metal": "2Ca_v1",
+      "expected_class": "Ca",
+      "policy": "mathematical",
+      "rule": "calibration_sensitivity_band",
+      "score": -405460.7723224332,
+      "calibration": false,
+      "record_ids": [
+        "two_ca_q9_5::q9z4j7-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-3::q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee"
+      ],
+      "decision": "Ca",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_75f5040bde433e0fd75a9ee1",
+      "source_case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-2",
+      "case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-2__envelope_5eba0c9b39ead1ee",
+      "protein": "q9z4j7-pqq-la_model",
+      "biological_group": "q9z4j7",
+      "source_conditioning_metal": "La",
+      "expected_class": "Ca",
+      "policy": "operational",
+      "rule": "canonical_midpoint",
+      "score": -405460.78124106803,
+      "calibration": false,
+      "record_ids": [
+        "expanded135::q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-2::q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee"
+      ],
+      "decision": "Ca",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_75f5040bde433e0fd75a9ee1",
+      "source_case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-2",
+      "case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-2__envelope_5eba0c9b39ead1ee",
+      "protein": "q9z4j7-pqq-la_model",
+      "biological_group": "q9z4j7",
+      "source_conditioning_metal": "La",
+      "expected_class": "Ca",
+      "policy": "operational",
+      "rule": "calibration_sensitivity_band",
+      "score": -405460.78124106803,
+      "calibration": false,
+      "record_ids": [
+        "expanded135::q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-2::q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee"
+      ],
+      "decision": "Ca",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_75f5040bde433e0fd75a9ee1",
+      "source_case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-2",
+      "case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-2__envelope_5eba0c9b39ead1ee",
+      "protein": "q9z4j7-pqq-la_model",
+      "biological_group": "q9z4j7",
+      "source_conditioning_metal": "La",
+      "expected_class": "Ca",
+      "policy": "mathematical",
+      "rule": "canonical_midpoint",
+      "score": -405460.78124106803,
+      "calibration": false,
+      "record_ids": [
+        "expanded135::q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-2::q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee"
+      ],
+      "decision": "Ca",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_75f5040bde433e0fd75a9ee1",
+      "source_case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-2",
+      "case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-2__envelope_5eba0c9b39ead1ee",
+      "protein": "q9z4j7-pqq-la_model",
+      "biological_group": "q9z4j7",
+      "source_conditioning_metal": "La",
+      "expected_class": "Ca",
+      "policy": "mathematical",
+      "rule": "calibration_sensitivity_band",
+      "score": -405460.78124106803,
+      "calibration": false,
+      "record_ids": [
+        "expanded135::q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-2::q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee"
+      ],
+      "decision": "Ca",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_8c10aad4a0e439bc4ac1d886",
+      "source_case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-3",
+      "case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-3__envelope_5eba0c9b39ead1ee",
+      "protein": "q9z4j7-pqq-la_model",
+      "biological_group": "q9z4j7",
+      "source_conditioning_metal": "La",
+      "expected_class": "Ca",
+      "policy": "operational",
+      "rule": "canonical_midpoint",
+      "score": -405457.9578294747,
+      "calibration": false,
+      "record_ids": [
+        "expanded135::q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-3::q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee"
+      ],
+      "decision": "Ca",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_8c10aad4a0e439bc4ac1d886",
+      "source_case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-3",
+      "case_id": "q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-3__envelope_5eba0c9b39ead1ee",
+      "protein": "q9z4j7-pqq-la_model",
+      "biological_group": "q9z4j7",
+      "source_conditioning_metal": "La",
+      "expected_class": "Ca",
+      "policy": "mathematical",
+      "rule": "canonical_midpoint",
+      "score": -405457.9578294747,
+      "calibration": false,
+      "record_ids": [
+        "expanded135::q9z4j7-pqq-la_model__conditioned_La__seed-1_sample-3::q9z4j7-pqq-la_model__envelope_5eba0c9b39ead1ee"
+      ],
+      "decision": "Ca",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_aebf968b0b8fb7f6fb7ce8ec",
+      "source_case_id": "c5axv8-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-4",
+      "case_id": "c5axv8-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-4__envelope_aa36ec84c4cbdc62",
+      "protein": "c5axv8-pqq-la_model",
+      "biological_group": "c5axv8",
+      "source_conditioning_metal": "2Ca_v1",
+      "expected_class": "La",
+      "policy": "operational",
+      "rule": "canonical_midpoint",
+      "score": -405453.70833242,
+      "calibration": false,
+      "record_ids": [
+        "two_ca_c5q88_10::c5axv8-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-4::c5axv8-pqq-la_model__envelope_aa36ec84c4cbdc62"
+      ],
+      "decision": "La",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_aebf968b0b8fb7f6fb7ce8ec",
+      "source_case_id": "c5axv8-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-4",
+      "case_id": "c5axv8-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-4__envelope_aa36ec84c4cbdc62",
+      "protein": "c5axv8-pqq-la_model",
+      "biological_group": "c5axv8",
+      "source_conditioning_metal": "2Ca_v1",
+      "expected_class": "La",
+      "policy": "operational",
+      "rule": "calibration_sensitivity_band",
+      "score": -405453.70833242,
+      "calibration": false,
+      "record_ids": [
+        "two_ca_c5q88_10::c5axv8-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-4::c5axv8-pqq-la_model__envelope_aa36ec84c4cbdc62"
+      ],
+      "decision": "La",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_aebf968b0b8fb7f6fb7ce8ec",
+      "source_case_id": "c5axv8-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-4",
+      "case_id": "c5axv8-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-4__envelope_aa36ec84c4cbdc62",
+      "protein": "c5axv8-pqq-la_model",
+      "biological_group": "c5axv8",
+      "source_conditioning_metal": "2Ca_v1",
+      "expected_class": "La",
+      "policy": "mathematical",
+      "rule": "canonical_midpoint",
+      "score": -405453.70833242,
+      "calibration": false,
+      "record_ids": [
+        "two_ca_c5q88_10::c5axv8-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-4::c5axv8-pqq-la_model__envelope_aa36ec84c4cbdc62"
+      ],
+      "decision": "La",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_aebf968b0b8fb7f6fb7ce8ec",
+      "source_case_id": "c5axv8-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-4",
+      "case_id": "c5axv8-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-4__envelope_aa36ec84c4cbdc62",
+      "protein": "c5axv8-pqq-la_model",
+      "biological_group": "c5axv8",
+      "source_conditioning_metal": "2Ca_v1",
+      "expected_class": "La",
+      "policy": "mathematical",
+      "rule": "calibration_sensitivity_band",
+      "score": -405453.70833242,
+      "calibration": false,
+      "record_ids": [
+        "two_ca_c5q88_10::c5axv8-pqq-la_model__conditioned_2Ca_v1__seed-1_sample-4::c5axv8-pqq-la_model__envelope_aa36ec84c4cbdc62"
+      ],
+      "decision": "La",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_c9108e4fbc05645c260b4ecf",
+      "source_case_id": "mmol_1770-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "case_id": "mmol_1770-pqq-la_model__conditioned_Ca__seed-1_sample-0__envelope_5063ec4e8b07a456",
+      "protein": "mmol_1770-pqq-la_model",
+      "biological_group": "mmol_1770",
+      "source_conditioning_metal": "Ca",
+      "expected_class": "La",
+      "policy": "operational",
+      "rule": "canonical_midpoint",
+      "score": -405454.3247116466,
+      "calibration": false,
+      "record_ids": [
+        "primary_ca125::mmol_1770-pqq-la_model__conditioned_Ca__seed-1_sample-0::mmol_1770-pqq-la_model__envelope_5063ec4e8b07a456"
+      ],
+      "decision": "La",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    },
+    {
+      "context_id": "context_c9108e4fbc05645c260b4ecf",
+      "source_case_id": "mmol_1770-pqq-la_model__conditioned_Ca__seed-1_sample-0",
+      "case_id": "mmol_1770-pqq-la_model__conditioned_Ca__seed-1_sample-0__envelope_5063ec4e8b07a456",
+      "protein": "mmol_1770-pqq-la_model",
+      "biological_group": "mmol_1770",
+      "source_conditioning_metal": "Ca",
+      "expected_class": "La",
+      "policy": "mathematical",
+      "rule": "canonical_midpoint",
+      "score": -405454.3247116466,
+      "calibration": false,
+      "record_ids": [
+        "primary_ca125::mmol_1770-pqq-la_model__conditioned_Ca__seed-1_sample-0::mmol_1770-pqq-la_model__envelope_5063ec4e8b07a456"
+      ],
+      "decision": "La",
+      "outcome": "correct",
+      "old_decision": "inconclusive",
+      "old_outcome": "inconclusive"
+    }
+  ],
+  "new_wrong_contexts": [],
+  "lost_correct_contexts": [],
+  "artifacts": {
+    "RESULT.json": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_decision_policy_20261016/comparison_v1/execution/RESULT.json",
+      "sha256": "adf8cce4e41a8e5fae30a05e826d1e745b9d489cc8ac688174018fc7fd8e6684"
+    },
+    "INPUTS.json": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_decision_policy_20261016/comparison_v1/execution/INPUTS.json",
+      "sha256": "8f36d2113527ab66742090518b374d6f3b2bd09192ecc4ec13853f3169a9234d"
+    },
+    "FROZEN_THRESHOLDS.json": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_decision_policy_20261016/comparison_v1/execution/FROZEN_THRESHOLDS.json",
+      "sha256": "b387fb3440c3c1fda7cbfdf2a26e49bf332b516369e038b9e5aa56bdf6e71e6f"
+    },
+    "SUMMARY.tsv": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_decision_policy_20261016/comparison_v1/execution/SUMMARY.tsv",
+      "sha256": "d91ecc0c2b2a2f8000b0d6604e302572db5413d9a121e8d05251cee1d8aad812"
+    },
+    "TRANSITIONS.tsv": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_decision_policy_20261016/comparison_v1/execution/TRANSITIONS.tsv",
+      "sha256": "82be5b1946744d3de957fb4339a91bfaaa9e8a044023a25d502f3acb4d635e6a"
+    },
+    "CONTEXTS.tsv": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_decision_policy_20261016/comparison_v1/execution/CONTEXTS.tsv",
+      "sha256": "6bc5fa1cc605492273daf8a3e33d14ad550a27220b76f8386b8913c64b3fef3e"
+    },
+    "TRIPLES.tsv": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_decision_policy_20261016/comparison_v1/execution/TRIPLES.tsv",
+      "sha256": "3f419e85a89176a12cdb3192fdedd9baa3447ac4a36b234a42eb417f251a5b9e"
+    },
+    "HELD_OUT_CANONICAL.tsv": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_decision_policy_20261016/comparison_v1/execution/HELD_OUT_CANONICAL.tsv",
+      "sha256": "d53639e7be1eff60c42e7a23e310145a2ee6fea6357b35cdb4c7881803f215b0"
+    },
+    "EXECUTION.json": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_decision_policy_20261016/comparison_v1/execution/EXECUTION.json",
+      "sha256": "d6341e1d1479760430da0aa9ce064b6a39c1c7167cb6dd3c0559b0d957fe510f"
+    }
+  },
+  "inputs": {
+    "protocol": "pqq_calibration_only_decision_v1",
+    "implementation": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_decision_policy_20261016/comparison_v1/COMPARE.py",
+      "sha256": "5facd7fcf7f525f18677bdb74ccc3010f59d353f4d515a9f8baaea649a362943"
+    },
+    "wrapper": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_decision_policy_20261016/comparison_v1/RUN.sbatch",
+      "sha256": "9a78a7bcc1cfa9f10ab2d896e15fcd12349c3a191b9d9e6197a0b32b1b10ab5b"
+    },
+    "plan": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_decision_policy_20261016/comparison_v1/PLAN.md",
+      "sha256": "ce8a462bdd1e3d4859fb94706d2e5c942998460a10da73b33fc998085db4c727"
+    },
+    "python": {
+      "path": "/usr/bin/python3.12",
+      "sha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f"
+    },
+    "canonical": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_canonical_solvent_v2/execution/FINAL_COLLECTION.json",
+      "sha256": "1506f040eace36620a53a1efbda94638f5cec444910097d0016b359af462b438"
+    },
+    "transfer": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_transfer_solvent_v1/execution/FINAL_COLLECTION.json",
+      "sha256": "09ee0ae6f26b8e7f479d695c6c4b51da49bbf5a656793d1dbe54e93300c994a1"
+    },
+    "inventory": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_inventory_v1/INVENTORY.json",
+      "sha256": "0cc05bebae04cb12c708ad67173b934884080d3c00185a17ac808db3bf0c1af1"
+    },
+    "old_scorer": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/frozen_distribution_candidate_v1/scoring/SCORE.py",
+      "sha256": "9589c60af4f977c012eefe55de06eba044a50582a9c994c602da44b53e054375"
+    }
+  },
+  "submission": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_decision_policy_20261016/comparison_v1/SUBMISSION.json",
+    "sha256": "fda1c739b8cb86c8653b9d27024a8b962836ea06e142e5a194617df67fcbb857"
+  },
+  "cost": {
+    "job": "11426",
+    "scheduler_seconds": 3,
+    "allocated_cpus": 1,
+    "allocated_cpu_seconds": 3,
+    "application_seconds": 2.296996226068586,
+    "new_molecular_calls": 0,
+    "gpu_time_seconds": 0
+  }
+}

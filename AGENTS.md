@@ -1,4 +1,18 @@
-# Latest owned PQQ work — 16 October 2026 UTC
+# Canonical-only decision comparison complete — 16 October 2026 UTC
+
+Jacob approved keeping chemistry fixed and testing decision thresholds. Read
+diagnostics/pqq_decision_policy_20261016/REPORT.md. Existing common6 scores with
+the canonical25 midpoint give257correct/0wrong/0inconclusive, versus249/0/8 under
+old bands. Predeclared calibration-sensitivity band gives255/0/2; ExaA La3 and
+MMOL1770 Ca0 retain sensitivity flags. All94 available existing triples are correct;
+six preparation exclusions remain. Both selectors agree; canonical leave-group-out
+midpoint predictions25/25. No evaluation-extrema fitting or new molecular calls.
+Job11426 complete3s1CPU, resultadf8cce4; independent review passes. Production and
+released bands are unchanged. Staged-executor engineering remains paused. These
+are correlated consumed structures, not257 independent proteins or blind tests.
+Do not rerun completed comparisons or old campaigns from delayed notifications.
+
+# Previous owned PQQ checkpoint — 16 October 2026 UTC
 
 Post-reboot recovery verified the completed results and terminal scheduler records.
 No owned molecular or reporting job needs restarting; unrelated DPANN jobs remain

@@ -1,5 +1,16 @@
 # Nikasha: current operating guide for agents
 
+## Candidate decision rule — 16 October 2026
+
+The [canonical-only threshold comparison](../diagnostics/pqq_decision_policy_20261016/REPORT.md)
+keeps the common6 physics and scores fixed. A midpoint fit only to the designated
+canonical25 gives257correct/0wrong/0inconclusive across the current consumed
+contexts. A separately declared calibration-sensitivity band gives255/0/2.
+All94 available original triple summaries are correct under both rules; six prior
+preparation exclusions remain. This is a candidate decision-policy result, not a
+production change or new independent validation. Keep sensitivity flags visible;
+do not use inspected transfer extrema or PLM outputs to refit the threshold.
+
 ## Latest completed PQQ research candidate — 16 October 2026
 
 Use the [current transfer report](../diagnostics/pqq_failure_causal_synthesis_20261015/a0ac_asn_relaxation/transfer/FINAL_REPORT.md)

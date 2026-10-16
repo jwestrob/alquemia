@@ -1,6 +1,62 @@
 # Current causal investigation
 
+## Calibration-only decision test authorized — 16 October 2026 UTC
+
+COMPLETE: job11426 finished in3seconds on1CPU, zero molecular calls. The canonical
+midpoint gives257correct/0wrong/0inconclusive; the predeclared sensitivity band
+gives255/0/2, versus249/0/8 under old bands. Both selectors agree. All94 available
+existing triples become correct; six preparation exclusions remain. Canonical
+leave-protein-out midpoint predictions are25/25. Read
+../pqq_decision_policy_20261016/REPORT.md and exact resultadf8cce4. Independent
+actual-result review passes. No production promotion, new physics or further
+staged-executor work. The two sensitivity flags are ExaA La3 andMMOL1770 Ca0.
+This is consumed, correlated development evidence, not prospective validation.
+No owned work remains running from this test; delayed callbacks require no rerun.
+
+Jacob approved holding chemistry fixed and testing whether decision thresholds
+cause unnecessary abstentions. Staged-executor development remains paused.
+Root declared diagnostics/pqq_decision_policy_20261016/PLAN.md before evaluation:
+canonical25 midpoint is primary; original bands and a leave-protein-out calibration
+sensitivity band are reported alongside it. No transfer-extrema fitting, molecular
+calls, source selection, changed triple aggregation or production promotion.
+
+Original one-CPU submission11426 used watcher1368519; exact pinned inputs
+6ccd51a4 and source5facd7fc are in workspaces/pqq_decision_policy_20261016/
+comparison_v1/SUBMISSION.json. Read actual results before follow-on. Independent
+inventory/rule/source reviews are complete. Old campaign callbacks do not restart
+work. The previously running cached integration11250 had passed before this pause;
+its actual result remains in its workspace, with no fresh chemistry implied.
+
+## Staged cached admissions under test — 16 October 2026 UTC
+
+Preflight11157 failed before endpoint admission: a legacy helper prepended active
+scripts ahead of the pinned source snapshot. Frozen v1 and its failure remain.
+The separately bound v2 restores snapshot precedence before geometry imports;
+exact module path/hash checks and all scientific policies are unchanged.
+Independent review cleared that narrow repair. Actual preflight11249 PASSED in
+11scheduler seconds on1CPU, with all3 preparations admitted and no relaxed data
+opened. Configfa940801 is under `asn_staged_cache_gate_v2`.
+
+Root submitted integration11250 on1CPU; completion watcher1348332 is recorded in
+INTEGRATION_SUBMISSION.json. This is cached admission, score algebra and malformed
+real-fixture testing only, with zero new molecular calls. Read its actual result
+before claiming success or repeating work. Production and bands stay unchanged.
+
 ## Reboot recovery and gated replay complete — 16 October 2026 UTC
+
+Current follow-on ownership: `live_gate_feasibility` implements the declared
+three-context cache-only staged adapter under transfer/live_gate_v1;
+`staged_cache_review` independently reviews it. Root owns binding, Slurm submission
+and shared documentation. This phase may admit cached endpoints and perform saved
+algebra only, with zero new molecular calls. It is not a live timing benchmark.
+Read that PLAN and later execution receipts before acting; no duplicate work.
+
+Source and independent static review are now complete. Root bound the exact
+three-context scout as `asn_staged_cache_gate_v1`, config SHA6ceeef8f, and submitted
+preflight11157 on1CPU with watcher1341878. Exact command and source pins are in
+PREFLIGHT_SUBMISSION.json. This submission authorizes zero molecular calls.
+Read the actual preflight before the separate integration action; no automatic
+new MACE/solvent/DFT task or production change follows.
 
 The completed molecular collections, reports and figure survived. Live scheduler
 accounting confirms5661/5748/6035/6045 completed; reporter5666 retains its documented

@@ -14,14 +14,21 @@ energy/population gates. See dy_parameter_qualification/; the La-only production
 profile/registry and old results are unchanged. Never reuse old uncorrectedDy
 native components. This is a scoped implementation check, not spin/affinity proof.
 
-Whole-peptide forces12500, mapped motions12509, solvent gradients12510 and
-actual two-step derivative check12519–12521 are complete/passed. See
-lbt3_solvent/ and lbt3_derivative/. Scout12533 completed: admissible9-step La
-response lowersenergy2.880329kcal/mol; finite movement-envelope stop, not minimum.
-Unchanged otherthree12538 submittedoneGPU/12CPUs, watcher1922524. Read CURRENT,
-SCOUT_REPORT and actual receipts. Same frozenplan retains both sources/metals and
-physical guards. Commonpool adapter staged independently. No proteinpreference
-result or complete LanM profiler implied. Do not repeat completed scout.
+Whole-peptide forces, solvent gradients and derivative checks passed. Four
+bounded searches12533/12538 and paired pool12541 are COMPLETE: source-local
+Dy-minus-La spread72.966739→57.895436kcal/mol; no robust preference result.
+Saved diagnostic12542 identifies the same Asp7 oxygen displacement-envelope
+stop in all four searches, with covalent/contact gates preserved. Read
+lbt3_accommodation/REPORT.md. Do not repeat completed chemistry.
+
+The next declared finite test is LBT3_RANGE_EXTENSION_PLAN.md: warm-start all
+four saved endpoints, change only original-source atom displacement .20→.40Å,
+keep target/torsion/contact/chemical/state gates and the original seven motions.
+Original sources remain reference geometries. Leibniz owns continuation adapter;
+Harvey owns independent review/union-pool adapter. Root submits the first7CCO/La
+scout, then unchanged otherthree after execution/physical admission. No range
+result or submission yet. No new DFT, protein preference claim or PQQ change.
+
 Root owns submission/integration. Read current receipts before acting; no repeated
 completed chemistry or automatic dimer/full-library campaign. PQQ midpoint and
 production remain intact. All numerical work uses current shared Slurm limits.

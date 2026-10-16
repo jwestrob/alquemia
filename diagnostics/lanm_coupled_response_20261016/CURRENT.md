@@ -1,3 +1,38 @@
+# Latest: range-only continuation declared; implementation underway
+
+Read LBT3_RANGE_EXTENSION_PLAN.md. All four prior searches and complete paired
+pool are terminal/reused; saved diagnostic12542 identifies the source .20Å
+Asp7 oxygen displacement boundary in every state. The new version changes only
+that original-source envelope to .40Å, retains target .20Å/torsion .20rad and
+all physical/state guards, and starts from each exact saved terminal point.
+Leibniz owns new continuation source; Harvey owns review/union-pool source.
+Root owns submission. No new job or extended-range result yet. First7CCO/La
+scout, then otherthree on execution/physical admission irrespective of sign.
+PQQ and original failures remain intact; goal remains active and unmet.
+
+# Latest: shared-pool response pilot complete; scientific extension being selected
+
+12541 completes4new cross-metal cells/12totalmatrixcells. Source-local paired
+spread72.966739→57.895436kcal/mol; globalmenu La7CCO-derived/Dy7CCN-derived persists.
+Read lbt3_accommodation/REPORT.md and POOL_RESULT.json. No robust preference or
+binding-free-energy claim. 12542 saved diagnostic complete: every search blocked
+atAsp7O sourceextent.20A, no damagedbonds/newseverecontacts. Significant omitted
+donor/backbone loads and distinct internal carboxylate forces remain.
+All owned molecular jobs terminal. Root selects next finite physical-response
+extension; no newbound/search/reference authorized by delayedcompletionalone.
+PQQ untouched. Preserve allcompleted states; no repeat of12533/12538/12541.
+
+# Latest: all four accommodation searches complete and physically admitted
+
+12538 completed three unchanged searches in225s/12CPUs/oneH200; all final
+physical gates pass. Together with12533, all four own-metal candidates exist.
+Every final trial set is blocked by the original0.20A source envelope; forces
+remain. Read lbt3_accommodation/SCOUT_REPORT.md and REMAINING_REPORT.md.
+No repeated searches. All scientific jobs terminal while the narrow four-cell
+opposite-metal common-pool adapter finishes; exact cell/geometry reuse required.
+Root owns execution. Separate saved-force/limiting-atom diagnostics will guide
+any extension; no expanded search or changed bound has been launched.
+
 # Latest: remaining three accommodation searches submitted
 
 12538 runs7CCO/Dy,7CCN/La,7CCN/Dy sequentially with one warm GPU/12 CPUs,

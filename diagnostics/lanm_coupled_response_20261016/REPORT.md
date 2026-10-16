@@ -39,8 +39,10 @@ An independent saved comparison with matching archived PBE0 gradients agrees
 on all six predeclared metal-differential response signs. Magnitudes differ,
 and weak own-metal/common directions can reverse. See
 [Mex assembly](mex_static/REPORT.md) and [reference response](mex_reference_response/REPORT.md).
-This supports the contained total-force check and then bounded own-energy response;
-it is not affinity, electronic-state or source-robustness validation.
+The subsequent16-cell total-force test now passes both external-site and cap-anchor
+interfaces, including component and metal-differential checks, in69s on oneH200/
+12CPUs. Next is bounded own-energy response and a common geometry pool. These
+results do not validate affinity, electronic states or source robustness.
 No newDFT, production/PQQ change, dimer prerequisite or broad library campaign.
 Earlier results below are historical evidence.
 

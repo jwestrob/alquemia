@@ -1,23 +1,24 @@
-# Latest: Mex static model works; saved quantum response comparison submitted
+# Latest: Mex combined forces pass; finite own-energy response in preparation
 
-12685 completes two localMACE plus two global2049-atomALPB calls in13s/12CPUs/
-oneH200, reusing all accepted4GFN+2MM origins. Read mex_static/REPORT.md.
-Original12673 raw-replay failure is preserved;12680 diagnosed <=8.88e-16 derived
-cap-scatter arithmetic only. V2 retains exact raw gates and accepted mapped inputs.
-No combined derivative or preference qualification yet.
+Total-force12709 PASSED all16cells/four own/four common-or-differential checks
+with unchanged component,MMgroup and step gates. Actual8MACE/24localGFN/
+16MMconfigurations/16globalALPB in69s,12CPUs/oneH200. Source333c775e/configac00a61a;
+workspace mex_force_check_v1, result8788a773. No optimizer steps or preference.
+Harvey owns the separately declared seven-coordinate one-proposal-per-metal
+response and common3 pool; original geometry guards,.02A/.5degree bounds, no
+retry or difference optimization. Root submits; no newDFT or repeated origins.
+Leibniz writes the force report and reviews next source. MatchedLBTchild prepares
+four fixedFF-solvent calls with exact reused nativeMACE, preserving both sources.
 
-Saved six-direction PBE0 comparison12686 is COMPLETE,1CPU,watcher2036225,
-workspace mex_reference_response_v1. It binds actual12685 and exact archived
-La/Dy sources; zero new molecular calls. All six metal-differential signs agree;
-magnitudes and weak own-metal/common directions differ. Leibniz writes the report.
-The reviewed frozen total-force check is submitted as12709,12CPUs/oneGPU,
-watcher2046943; workspace mex_force_check_v1,source333c775e/configac00a61a.
-The separately declared four-ALPB matched LBT/Mex comparison is being prepared;
-no newMACE/GFN/MM/DFT for that comparison. Root owns submissions; no repeats.
+Static12685 completes2localMACE+2global2049-atomALPB in13s, reusing4GFN+2MM.
+SavedPBE0 comparison12686 completes six fixed directions: all metal-differential
+signs agree; magnitudes and weak own/common directions differ. Read mex_static/
+and mex_reference_response/. Original12673 failure and12680 arithmetic diagnosis
+remain preserved. No full-gradient, electronic-state or affinity validation.
 
-Water finite panel is closed12/16admitted,7CCO inward-response about-2.5kcal/mol
-Dy-minus-La in both orientations;7CCNinner4remain geometry-rejected. Read
-lbt3_water/REPORT.md. Goal remains unmet; PQQ/production unchanged.
+The water panel is closed12/16admitted:7CCO inward-water response about-2.5kcal/mol
+Dy-minus-La in both orientations;7CCNinner4remain rejected. Read lbt3_water/.
+Goal remains unmet. All existing jobs terminal; no duplicate chemistry or PQQchange.
 
 # Latest: Mex local field complete; whole-system assembly in preparation
 

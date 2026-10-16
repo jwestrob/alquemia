@@ -42,8 +42,9 @@ saved12680 proves only cap-scatter roundoff<=8.88e-16, all raw values exact.
 Reviewed staticv2 job12685 completes2MACE+2globalALPB in13s, reusing4GFN+2MM.
 SavedPBE0 comparison12686 completes six fixed directions: all differential signs
 agree, magnitudes and weak own/common directions differ. Read mex_static/ and
-mex_reference_response/ reports. Total-force check implementation is underway
-before bounded mechanical response; no newDFT or preference claim.
+mex_reference_response/ reports. Total-force12709 PASSES all16cells/four own/four derived checks in69s,12CPU/
+oneH200. Finite seven-coordinate own-gradient/common3 response is being prepared;
+no newDFT, expanded optimizer or preference claim. Read latest CURRENT.
 
 Root owns submission/integration. Read current receipts before acting; no repeated
 completed chemistry or automatic dimer/full-library campaign. PQQ midpoint and

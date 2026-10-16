@@ -1,0 +1,58 @@
+{
+  "status": "execution_failure",
+  "protocol_id": "lbt_whole_MACE_native_fixedFF_ALPB_Mex_balanced_exchange_v1",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt_matched_model_v1/LBT_MATCHED_MODEL.py",
+    "sha256": "2eda8f20a56e55099fe373b36ecdf100f8a5ba6c055545b935779590ded885e1"
+  },
+  "plan": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_response_20261016/LBT_MATCHED_MODEL_PLAN.md",
+    "sha256": "c1ffb2b13e354f1283e70b60fc7038d68180c9f8e7bcab8903c1ad5493a2c1c8"
+  },
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt_matched_model_v1/CONFIG.json",
+    "sha256": "d2e5e01d95c355cb6e76c1364664f76aef1f1249a94f000ffd42124a47b7c053"
+  },
+  "slurm_job_id": "12711",
+  "host": "node-64-768g-2",
+  "declared_cells": 4,
+  "new_ALPB_calls_attempted": 0,
+  "new_MACE_calls": 0,
+  "new_GFN2_calls": 0,
+  "new_MM_calls": 0,
+  "new_DFT_calls": 0,
+  "optimizer_steps": 0,
+  "reused_LBT_MACE_cells": 0,
+  "reused_Mex_static_cells": 0,
+  "affinity": null,
+  "rows": [
+    {
+      "source_id": "7CCO",
+      "metal": "La",
+      "status": "unavailable",
+      "attempted": false
+    },
+    {
+      "source_id": "7CCO",
+      "metal": "Dy",
+      "status": "unavailable",
+      "attempted": false
+    },
+    {
+      "source_id": "7CCN",
+      "metal": "La",
+      "status": "unavailable",
+      "attempted": false
+    },
+    {
+      "source_id": "7CCN",
+      "metal": "Dy",
+      "status": "unavailable",
+      "attempted": false
+    }
+  ],
+  "failure": "KeyError('A/1//H1')",
+  "traceback": "Traceback (most recent call last):\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt_matched_model_v1/LBT_MATCHED_MODEL.py\", line 297, in main\n    try:run(cfg,out,result)\n        ^^^^^^^^^^^^^^^^^^^\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt_matched_model_v1/LBT_MATCHED_MODEL.py\", line 266, in run\n    cells,mex,scfg,build,source,pool_ok=inputs(cfg,out);result['preflight']=pin(out/'PREFLIGHT.json')\n                                        ^^^^^^^^^^^^^^^\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt_matched_model_v1/LBT_MATCHED_MODEL.py\", line 185, in inputs\n    require(all(a['element']==byid[a['id']]['element'] and coordinates_equal([a['xyz_A']],[byid[a['id']]['xyz_A']])\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt_matched_model_v1/LBT_MATCHED_MODEL.py\", line 185, in <genexpr>\n    require(all(a['element']==byid[a['id']]['element'] and coordinates_equal([a['xyz_A']],[byid[a['id']]['xyz_A']])\n                              ~~~~^^^^^^^^^\nKeyError: 'A/1//H1'\n",
+  "elapsed_seconds": 3.2901902499143034,
+  "application_allocated_CPU_seconds": 3.2901902499143034
+}

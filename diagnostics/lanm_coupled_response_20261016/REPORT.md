@@ -87,11 +87,23 @@ Asp7/Asp3/Glu11 torsions by one common force-based rule across both sources and
 metals. The nominated Asp7 carboxylate direction has opposite La/Dy energy slopes.
 This is a local force diagnostic, not a finite relaxation or affinity result.
 
-Next: execute the frozen two-step directional derivative check in
-LBT3_RESPONSE_DESIGN.md, then a small covalent-preserving own-metal response
-pilot if the numerical check passes. The full peptide remains in the energy;
-backbone directions remain available for a diagnosed extension. No production
-change or dimer/library campaign follows automatically.
+The actual two-step directional derivative check passed for both metals and
+its paired response. Four subsequent own-metal searches and the complete shared
+pool are now complete. The source-local Dy-minus-La contrast spread falls from
+72.966739 to57.895436kcal/mol; La and Dy still select different source-derived
+basins. No robust preference or experimental transfer is established.
+
+All four searches reach the original0.20Å atom-displacement envelope at Asp7
+oxygen atoms while separate covalent/contact checks pass. A uniformly declared
+range-only continuation changes that envelope to0.40Å and reuses the exact saved
+endpoints; original-source references, target/torsion limits and all model/state
+assumptions stay fixed. See LBT3_RANGE_EXTENSION_PLAN.md. Added backbone freedom
+is a separate possible test, not silently included in this continuation.
+
+Read lbt3_accommodation/REPORT.md for the full paired matrix, force diagnosis
+and actual costs. The completed response/pool round used32newMACE/64GFN calls,
+385allocatedGPU-seconds and4621allocatedCPU-seconds. All results are preserved;
+there is no new DFT campaign, production change or library rescore.
 
 The overall LanM profiler goal remains active and unmet. A failed local branch
 will change the model choice rather than be hidden or presented as completion.

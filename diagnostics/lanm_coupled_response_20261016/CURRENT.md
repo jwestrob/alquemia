@@ -1,3 +1,14 @@
+# Latest: range-only first scout submitted
+
+12544 runs7CCO/La continuation with oneGPU/12CPUs and completion watcher1944984.
+Frozen adapterc61a12b1/config7ac515db under lbt3_range_scout_v1. Root reviewed
+warm-start/guards/own-energy loop; independent review passed. Internal real-artifact
+preflight checks all four old starts before model loading. Reuse exact saved
+energy/forces and original-source references; .40Å source envelope is the only
+search change. No continuation result yet. Remainingthree follow on execution
+and physical admission, not energy sign. Root owns submissions; Harvey owns
+extended commonpool, Leibniz has separate read-only Mex transfer design.
+
 # Latest: range-only continuation declared; implementation underway
 
 Read LBT3_RANGE_EXTENSION_PLAN.md. All four prior searches and complete paired

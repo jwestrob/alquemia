@@ -26,8 +26,9 @@ four saved endpoints, change only original-source atom displacement .20→.40Å,
 keep target/torsion/contact/chemical/state gates and the original seven motions.
 Original sources remain reference geometries. Leibniz owns continuation adapter;
 Harvey owns independent review/union-pool adapter. Root submits the first7CCO/La
-scout, then unchanged otherthree after execution/physical admission. No range
-result or submission yet. No new DFT, protein preference claim or PQQ change.
+scout, then unchanged otherthree after execution/physical admission. Scout12544 is submitted, oneGPU/12CPUs, watcher1944984; exactconfig7ac515db
+in lbt3_range_scout_v1. No range result yet. No new DFT, protein preference
+claim or PQQ change.
 
 Root owns submission/integration. Read current receipts before acting; no repeated
 completed chemistry or automatic dimer/full-library campaign. PQQ midpoint and

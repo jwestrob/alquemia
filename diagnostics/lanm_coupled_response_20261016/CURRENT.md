@@ -1,3 +1,15 @@
+# Latest: La continuation admitted; unchanged Dy submitted
+
+Scout12727 COMPLETE12accepted/12newowncalls in121s on12CPUs/oneH200.
+All physical guards pass; incrementalLa work−3.335800kcal/mol, mainly MM strain
+relief. Total-sourcework−3.588288; residualactivegradient14.057kcal/mol/A remains.
+Stopped at declared step count, not stationarity. Sourceextent.181529A,target.102301A.
+UnchangedDy12729 submitted, watcher2120326, source dddc4d25/configb4dd005e under
+mex_continuation_Dy_v1. It reuses exact own pilot and does not repeatLa.
+ActualLa gate/root review passes; pairedcommon5 awaitsDy and two crosscells.
+Root owns submissions/status; Harvey owns common5 and reports, childwaterrescore.
+No newDFT or production change; goal remains unmet. Read actual receipts.
+
 # Latest: bounded Mex continuation scout submitted
 
 La scout12727 submitted oneGPU/12CPUs, watcher2115823, exact snapshot/config

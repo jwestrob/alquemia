@@ -39,10 +39,14 @@ An independent saved comparison with matching archived PBE0 gradients agrees
 on all six predeclared metal-differential response signs. Magnitudes differ,
 and weak own-metal/common directions can reverse. See
 [Mex assembly](mex_static/REPORT.md) and [reference response](mex_reference_response/REPORT.md).
-The subsequent16-cell total-force test now passes both external-site and cap-anchor
-interfaces, including component and metal-differential checks, in69s on oneH200/
-12CPUs. Next is bounded own-energy response and a common geometry pool. These
-results do not validate affinity, electronic states or source robustness.
+The subsequent16-cell total-force test passes both external-site and cap-anchor
+interfaces in69s on oneH200/12CPUs. The first coupled response12717 then passes
+all four paired cells and covalent/contact guards in32s on the same resource
+shape. La and Dy each select their own proposal, lowering their energies by
+0.252489/0.354867kcal/mol and changing the paired contrast by−0.102379. The tiny
+step mainly moves the target; residual scaffold/donor/metal loads remain. A
+separate finite same-model continuation is being prepared. These results do not
+validate affinity, electronic states or source robustness.
 The matched fixed-FF solvent comparison now gives the expected conditional relative
 ordering for **both** LBT3 starting sources: Mex–La plus LBT–Dy is favored, by
 +2.533 or +68.101kcal/mol. The common two-source pool chooses7CCO for both metals

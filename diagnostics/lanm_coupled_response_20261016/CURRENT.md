@@ -6,10 +6,14 @@ and +68.101238kcal/mol. The common2 identity gate passes; both metals select7CCO
 so commonpool=+2.532554. Large source magnitude sensitivity remains; no affinity
 or source-robust profiler claim. Source-map-onlyV2 preserves zero-call12711.
 Read lbt_matched_model/ and actual lbt_matched_model_v2 receipts. No repeats.
-Mex own-gradient response12717 submitted12CPU/oneGPU, watcher2063004, source
-f11777c7/configc84d7b29 in mex_response_v1. Independent review passed. Exactly
-one proposal/metal then common3, max4MACE8GFN4MM4ALPB; no newDFT. Harvey owns
-result/report, root owns integration. PQQ/defaults unchanged; goal remains unmet.
+Mex response12717 now PASSED: all4cells/geometry gates, ownworks La−.252489
+and Dy−.354867kcal/mol; each selects its own proposal. Common3 shifts conditional
+Dy−La by−.102379kcal/mol. Motion is mainly the target; residual loads remain.
+Sourcef11777c7/configc84d7b29; all4MACE8GFN4MM4ALPB complete, no newDFT.
+Harvey owns result/report and finite-continuation recommendation. Child stages
+matched-FF rescore of already executed LBT pool18geometries/36cells (32 new
+ALPB,4originreused,zero newMACE/GFN/search). Root owns submissions/integration.
+PQQ/defaults unchanged; goal remains unmet.
 
 # Latest: Mex combined forces pass; finite own-energy response in preparation
 

@@ -47,7 +47,10 @@ oneH200. Finite seven-coordinate own-gradient/common3 response is being prepared
 no newDFT, expanded optimizer or preference claim. Matched LBT fixedFF solvent12715
 completes4/4cells in5s/1CPU: both source-specific balanced exchanges favor
 Mex–La/LBT–Dy, +2.532554/+68.101238kcal/mol; commonpool selects7CCO for both.
-Large magnitude sensitivity remains; no robust profiler. Read latest CURRENT.
+Large magnitude sensitivity remains; no robust profiler. Mex response12717 also
+passes all4cells/physicalguards in32s: ownworks−.252489/−.354867kcal/mol, each
+selects its own proposal, pairedchange−.102379. Same7mode finite continuation
+and matchedFF LBT savedpool rescore are in preparation; no newDFT. Read latest CURRENT.
 
 Root owns submission/integration. Read current receipts before acting; no repeated
 completed chemistry or automatic dimer/full-library campaign. PQQ midpoint and

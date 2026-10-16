@@ -1,5 +1,13 @@
 # Nikasha: current operating guide for agents
 
+## Selected PQQ policy and current priority — 16 October 2026
+
+Jacob selected [the canonical midpoint](../diagnostics/pqq_decision_policy_20261016/DECISION.md)
+for the current common6 PQQ research protocol. Exact threshold, compatibility pins,
+sensitivity flags and scalar outputs are preserved in that directory. Manuscript
+inclusion is deferred. This is a recorded policy selection; historical CLI defaults
+and archived results are preserved. Current research priority is La/Dy profiling.
+
 ## Candidate decision rule — 16 October 2026
 
 The [canonical-only threshold comparison](../diagnostics/pqq_decision_policy_20261016/REPORT.md)

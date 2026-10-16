@@ -1,0 +1,82 @@
+{
+  "policy_id": "pqq_common6_canonical_midpoint_20261016_v1",
+  "status": "selected_by_Jacob",
+  "decision_date": "2026-10-16",
+  "scope": "Existing corrected-parameter MACE OMOL vacuum plus native frozen-vacuum-charge solvent common6 PQQ protocol; exact canonical and transfer score lineage below",
+  "raw_score_units": "kcal/mol",
+  "raw_score_sign": "Ca-minus-La; lower score is Ca-directed",
+  "decision_rule": {
+    "Ca": "score < threshold",
+    "La": "score > threshold",
+    "inconclusive": "score == threshold",
+    "unavailable": "missing or inadmissible score"
+  },
+  "threshold_kcal_mol": -405457.73794054205,
+  "calibration_only": true,
+  "canonical": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_canonical_solvent_v2/execution/FINAL_COLLECTION.json",
+    "sha256": "1506f040eace36620a53a1efbda94638f5cec444910097d0016b359af462b438"
+  },
+  "transfer_evidence": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_transfer_solvent_v1/execution/FINAL_COLLECTION.json",
+    "sha256": "09ee0ae6f26b8e7f479d695c6c4b51da49bbf5a656793d1dbe54e93300c994a1"
+  },
+  "calibration_sensitivity": {
+    "bounds_kcal_mol": [
+      -405458.3097447878,
+      -405454.31015960994
+    ],
+    "flag_rule": "Flag score inside the closed interval, retain midpoint class alongside flag",
+    "meaning": "Leave-biological-group-out calibration sensitivity, not probability or confidence interval",
+    "flagged_contexts": [
+      "ExaA Q9Z4J7 La-conditioned sample3",
+      "MMOL1770 Ca-conditioned sample0"
+    ]
+  },
+  "calibration_record": "FROZEN_THRESHOLDS.json",
+  "evidence_protocol": "pqq_calibration_only_decision_v1",
+  "input_manifest_sha256": "6ccd51a4a2ac48183241ca2d0c914b98d8676752f4b48a3f886071daf3895a11",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_decision_policy_20261016/comparison_v1/COMPARE.py",
+    "sha256": "5facd7fcf7f525f18677bdb74ccc3010f59d353f4d515a9f8baaea649a362943"
+  },
+  "archived_exports": {
+    "CONTEXTS.tsv": {
+      "source": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_decision_policy_20261016/comparison_v1/execution/CONTEXTS.tsv",
+      "source_sha256": "6bc5fa1cc605492273daf8a3e33d14ad550a27220b76f8386b8913c64b3fef3e",
+      "published_sha256": "24af18f233c33444502367a02c4d2eadd02722201ee6bc3be1c6c7d8ab2e9e2f",
+      "change": "CRLF to LF only, if present"
+    },
+    "TRIPLES.tsv": {
+      "source": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_decision_policy_20261016/comparison_v1/execution/TRIPLES.tsv",
+      "source_sha256": "3f419e85a89176a12cdb3192fdedd9baa3447ac4a36b234a42eb417f251a5b9e",
+      "published_sha256": "7b138ca0fb1b2f9f632985c8fd3ac13376f28d016e1aa595c17150b6fb0d4daf",
+      "change": "CRLF to LF only, if present"
+    },
+    "FROZEN_THRESHOLDS.json": {
+      "source": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_decision_policy_20261016/comparison_v1/execution/FROZEN_THRESHOLDS.json",
+      "source_sha256": "b387fb3440c3c1fda7cbfdf2a26e49bf332b516369e038b9e5aa56bdf6e71e6f",
+      "published_sha256": "b387fb3440c3c1fda7cbfdf2a26e49bf332b516369e038b9e5aa56bdf6e71e6f",
+      "change": "CRLF to LF only, if present"
+    }
+  },
+  "observed_result": {
+    "unique_consumed_contexts": 257,
+    "correct": 257,
+    "wrong": 0,
+    "inconclusive": 0,
+    "unavailable": 0,
+    "calibration_sensitive": 2,
+    "available_existing_triples_correct": 94,
+    "existing_triples_excluded": 6
+  },
+  "limitations": [
+    "Correlated repeatedly consumed structures, not 257 independent proteins or blind validation",
+    "No new physical energies or geometries from threshold selection",
+    "No transferable La/Dy threshold or affinity interpretation",
+    "Unchanged historical production invocations and results"
+  ],
+  "plm_manuscript_inclusion": "deferred_by_Jacob; retain geometry-method alternative",
+  "production_entrypoints_modified": false,
+  "next_scientific_priority": "La/Dy LanM profiling; preserve closed negative static-source comparison"
+}

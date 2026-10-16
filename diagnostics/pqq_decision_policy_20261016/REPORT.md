@@ -102,3 +102,11 @@ sbatch --parsable \
 This optional reproduction refuses an existing output directory. Root's original
 submission and completion watcher are recorded in SUBMISSION.json. No reproduction
 or additional experiment is needed to obtain the reported result.
+
+## User decision — 16 October 2026
+
+Jacob selected the canonical midpoint with the sensitivity flags retained.
+See [the preserved decision](DECISION.md) and [exact policy](SELECTED_POLICY.json).
+The full scalar context/triple exports and frozen calibration are now committed
+alongside this report. PLM manuscript inclusion is deferred; research returns to
+La/Dy profiling. Historical production commands and results remain unchanged.

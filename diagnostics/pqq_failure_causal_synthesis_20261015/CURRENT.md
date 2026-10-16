@@ -1,3 +1,15 @@
+## PQQ round preserved; priority returns to La/Dy — 16 October 2026
+
+Jacob selected the canonical midpoint and authorized commit/push/preservation.
+Read diagnostics/pqq_decision_policy_20261016/DECISION.md and SELECTED_POLICY.json.
+Current common6 PQQ scores give 257/257 correct on consumed correlated contexts;
+retain ExaA La3 and MMOL1770 Ca0 calibration-sensitivity flags. Historical bands,
+production invocations and failed results remain intact. PLM manuscript inclusion
+is deferred; the geometry-method alternative is retained. No further PQQ campaign
+or staged-executor engineering is active. La/Dy resumes from the complete six-cell
+comparison, not unchanged SCF retries. Root owns new submissions; source inventory
+and saved-force profiling have separate agent ownership. Read newer checkpoints.
+
 # Current causal investigation
 
 ## Calibration-only decision test authorized — 16 October 2026 UTC

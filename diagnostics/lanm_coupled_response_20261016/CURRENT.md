@@ -10,8 +10,10 @@ Saved six-direction PBE0 comparison12686 is COMPLETE,1CPU,watcher2036225,
 workspace mex_reference_response_v1. It binds actual12685 and exact archived
 La/Dy sources; zero new molecular calls. All six metal-differential signs agree;
 magnitudes and weak own-metal/common directions differ. Leibniz writes the report.
-Harvey implements the separately frozen
-MEX_FORCE_CHECK_PLAN.md. Root owns submission/integration; no repeated origins.
+The reviewed frozen total-force check is submitted as12709,12CPUs/oneGPU,
+watcher2046943; workspace mex_force_check_v1,source333c775e/configac00a61a.
+The separately declared four-ALPB matched LBT/Mex comparison is being prepared;
+no newMACE/GFN/MM/DFT for that comparison. Root owns submissions; no repeats.
 
 Water finite panel is closed12/16admitted,7CCO inward-response about-2.5kcal/mol
 Dy-minus-La in both orientations;7CCNinner4remain geometry-rejected. Read

@@ -1,3 +1,14 @@
+# Latest: Mex local field complete; whole-system assembly in preparation
+
+Mex jobs 12569/12570 are complete. All four local 209-atom GFN2 cells and
+QM/environment gradients pass; 18 seconds on four CPUs for the molecular job.
+Read mex_local_field/REPORT.md. This is a component capability, not preference
+or independent force qualification. Harvey owns a finite static assembly using
+two new local MACE and two fixed-charge global solvent calls; reuse accepted
+GFN2 and classical cells. No optimizer or full-protein SCC. Root submits.
+Leibniz owns separately reviewed LBT3 one-water score adapter. Preserve the four
+geometry-rejected water slots. All prior molecular calls remain terminal.
+
 # Latest: solvent-force capability passed; Mex local field running
 
 12566 passes all26fixed-charge nativeALPB component/force checks in5s/1CPU.

@@ -1,5 +1,39 @@
 # The scaffold changes basin selection; fixed-source dependence remains
 
+## Current result and next decision
+
+**No reliable monomer preference profiler yet.** On the consumed LBT3 control,
+added donor and backbone freedom reduces dependence on the starting structure
+beyond equal extra search in the old coordinates. The remaining discrepancy
+is still too large to claim a trustworthy La/Dy preference.
+
+| Response model | Source-local Dy-minus-La spread, kcal/mol |
+|---|---:|
+| Original fixed sources | 72.967 |
+| Original bounded response | 57.895 |
+| Uniformly enlarged displacement envelope | 45.805 |
+| Matched further search, original seven coordinates | 40.452 |
+| Matched further search, three added donor/backbone coordinates | 29.509 |
+
+These are computational source-sensitivity measures, not measured binding
+energies. All original sources and failures are retained. The matched comparison
+is in [lbt3_basis/REPORT.md](lbt3_basis/REPORT.md).
+
+Two affordable components now work on actual fixtures: native fixed-charge
+solvent forces pass their 26-call derivative/replay test; Mex's four local GFN2
+endpoints converge with and without its actual surrounding protein field.
+The latter field stabilizations are similar for La and Dy at the fixed origin.
+See [solvent forces](frozen_solvent_force/REPORT.md) and
+[Mex local field](mex_local_field/REPORT.md). Their scientific role is to enable
+coupled protein response, not to supply a ready preference correction.
+
+Next tests: the separately declared one-water LBT3 panel and a coherent static
+Mex local-electronic/protein-mechanical/solvent assembly, followed by total-force
+checks before any relaxation. Four geometrically rejected inner-water slots
+remain excluded. No production/PQQ changes, dimer prerequisite or broad library
+campaign. Detailed earlier results below remain historical evidence.
+
+
 16 October 2026. Jacob recommended starting with monomers. We recovered Mex-LanM
 as the natural-protein reference and the already-consumed LBT3 peptide as a small
 opposite-preference control. LBT3 is not a second natural LanM. Exact primary

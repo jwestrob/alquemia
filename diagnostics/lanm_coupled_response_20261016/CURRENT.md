@@ -1,3 +1,17 @@
+# Latest: complete Mex common5; water-model comparison submitted
+
+Both finite continuations12727/12729 complete12steps each, allphysicalguards.
+Common5 job12731 completes10/10matrixcells with2newcrosscells; bothmetals retain
+ownterminal. Originalsource accommodation worksLa−3.588288/Dy−5.078816kcal/mol;
+pairedchange−1.490527, versus priorcommon3−.102379. This weakens the earlier
+Mex-relativeLa signal, not an automatic discrimination improvement. Remains
+nonstationary and singleMexsource. Roundcost274GPU-s/3288allocatedCPU-s.
+Saved all15matchedLBT-menu comparison is being prepared; no newmolecularcalls.
+Water12732 submitted1CPU,watcher2134539, source2b1c2ae2/configaaa94fdf under
+lbt_matched_water_v1:12newFF-ALPB,4oldrejections, no newMACE/GFN/geometry.
+Root owns submission/status; no further optimization or production change.
+Goal remains unmet; read current actual receipts before acting.
+
 # Latest: La continuation admitted; unchanged Dy submitted
 
 Scout12727 COMPLETE12accepted/12newowncalls in121s on12CPUs/oneH200.

@@ -55,11 +55,12 @@ all15menus retain expected conditional Mex–La/LBT–Dy ordering. Added-basis
 sourcegap65.569→28.262kcal/mol (matchedoldbasis38.435), still too large for
 quantitative robustness. No newDFT. Read latest CURRENT.
 
-Bounded same7mode La continuation12727 completed12steps/12owncalls in121s;
-allguards pass, incrementalwork−3.335800kcal/mol, still nonstationary.
-UnchangedDy12729 submitted, watcher2120326, sourcedddc4d25/configb4dd005e under
-mex_continuation_Dy_v1. No pairedcommon5 result yet; no rerun ofLa.
-Read latest CURRENT and receipts before any submission.
+Bounded continuations12727/12729 and common5 crossscore12731 are COMPLETE.
+All10pairedcells/physicalguards pass; bothmetals selectownterminal. Accommodation
+changeDy−La−1.490527kcal/mol weakens prior relativeLa signal; not an accuracygain.
+No moreoptimizer launched. Saved15menu comparison is in preparation.
+Matched-water12732 submitted1CPU/watcher2134539,12newALPB/4oldrejections; no new
+MACE/GFN/geometry. See latest CURRENT and actual receipts, no duplicate jobs.
 
 Root owns submission/integration. Read current receipts before acting; no repeated
 completed chemistry or automatic dimer/full-library campaign. PQQ midpoint and

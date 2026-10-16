@@ -1,0 +1,691 @@
+{
+  "schema": "lbt3_fd_energy_or_comparison.v1",
+  "stage": "collect",
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_fd_collect_v1/CONFIG.json",
+    "sha256": "7152585d9f6ce4098d20d74ed197dcda376315939b93a1bf38e3cf02053386cb"
+  },
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_fd_collect_v1/LBT3_FD.py",
+    "sha256": "0e48b8c6c2f271512f2c445f826036d8a68f7dca0aabc5923697ab3ecb7d9896"
+  },
+  "design": {
+    "plan": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_response_20261016/LBT3_RESPONSE_DESIGN.md",
+      "sha256": "0d6d753f1c8c1fba30a50ae7aab5c208e004758fc662a3070f90aa4e7c7b25a7"
+    },
+    "profile_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_force_profile_v1/execution/RESULT.json",
+      "sha256": "bb317ace394763d8771d18bc2885b0dccc62e664bee40eceb9ff9f257807d652"
+    },
+    "solvent_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_solvent_v1/execution/RESULT.json",
+      "sha256": "517097f1db17fc7ed1067265f3af91b6203c52c2b91eeaf62e4cc47c38e0fd90"
+    },
+    "tolerances": {
+      "absolute_kcal_mol_A": 0.2,
+      "relative": 0.05
+    },
+    "implementation_sha256": "0e48b8c6c2f271512f2c445f826036d8a68f7dca0aabc5923697ab3ecb7d9896",
+    "finite_check": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_force_profile_v1/execution/FINITE_CHECK.json",
+      "sha256": "c7784a3a0e99f4b116560c5e299bb551b0a3128eb97dd94e3bfea74b8206b62d"
+    }
+  },
+  "slurm_job_id": "12521",
+  "host": "node-64-768g-3",
+  "status": "passed",
+  "rows": [],
+  "molecular_calls_attempted": 0,
+  "declared_calls": 0,
+  "new_gradients_requested": 0,
+  "optimizer_steps": 0,
+  "allocated_cpus": 1,
+  "stage_results": {
+    "gpu": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_fd_gpu_v1/execution/RESULT.json",
+      "sha256": "846bcda6a830bebe0193d03ebd7cb80b1528914f626e5fb49a84bae77a45627d"
+    },
+    "cpu": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_fd_cpu_v1/execution/RESULT.json",
+      "sha256": "29bba7afbfe58735ef9299b26a3feb9da790a3fcde7d1a101dad3148dd367a8d"
+    }
+  },
+  "endpoint_availability": [
+    {
+      "task_id": "7CCO_whole_La_FD_h001_plus",
+      "metal": "La",
+      "signed_step_A": 0.001,
+      "MACE_eV": -184236.1613814014,
+      "GFN2_vacuum_hartree": -429.573931531144,
+      "GFN2_water_hartree": -430.041088473074,
+      "complete": true
+    },
+    {
+      "task_id": "7CCO_whole_Dy_FD_h001_plus",
+      "metal": "Dy",
+      "signed_step_A": 0.001,
+      "MACE_eV": -207459.36950615922,
+      "GFN2_vacuum_hartree": -429.444098821265,
+      "GFN2_water_hartree": -429.913558924751,
+      "complete": true
+    },
+    {
+      "task_id": "7CCO_whole_La_FD_h001_minus",
+      "metal": "La",
+      "signed_step_A": -0.001,
+      "MACE_eV": -184236.16072285522,
+      "GFN2_vacuum_hartree": -429.573933104276,
+      "GFN2_water_hartree": -430.041088222793,
+      "complete": true
+    },
+    {
+      "task_id": "7CCO_whole_Dy_FD_h001_minus",
+      "metal": "Dy",
+      "signed_step_A": -0.001,
+      "MACE_eV": -207459.37016958147,
+      "GFN2_vacuum_hartree": -429.444110724643,
+      "GFN2_water_hartree": -429.913568830914,
+      "complete": true
+    },
+    {
+      "task_id": "7CCO_whole_La_FD_h0005_plus",
+      "metal": "La",
+      "signed_step_A": 0.0005,
+      "MACE_eV": -184236.16121714894,
+      "GFN2_vacuum_hartree": -429.57393192822,
+      "GFN2_water_hartree": -430.041088413837,
+      "complete": true
+    },
+    {
+      "task_id": "7CCO_whole_Dy_FD_h0005_plus",
+      "metal": "Dy",
+      "signed_step_A": 0.0005,
+      "MACE_eV": -207459.3696723484,
+      "GFN2_vacuum_hartree": -429.444101801956,
+      "GFN2_water_hartree": -429.913561405866,
+      "complete": true
+    },
+    {
+      "task_id": "7CCO_whole_La_FD_h0005_minus",
+      "metal": "La",
+      "signed_step_A": -0.0005,
+      "MACE_eV": -184236.1608878756,
+      "GFN2_vacuum_hartree": -429.57393271478,
+      "GFN2_water_hartree": -430.041088288697,
+      "complete": true
+    },
+    {
+      "task_id": "7CCO_whole_Dy_FD_h0005_minus",
+      "metal": "Dy",
+      "signed_step_A": -0.0005,
+      "MACE_eV": -207459.37000405966,
+      "GFN2_vacuum_hartree": -429.444107753642,
+      "GFN2_water_hartree": -429.913566358946,
+      "complete": true
+    }
+  ],
+  "derivatives": [
+    {
+      "step_A": 0.001,
+      "component": "MACE_vacuum",
+      "state": "La",
+      "analytic_kcal_mol_A": -7.593226149247442,
+      "numerical_kcal_mol_A": -7.59321802650282,
+      "residual_kcal_mol_A": 8.122744622696132e-06,
+      "tolerance_kcal_mol_A": 0.5796613074623722,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.001,
+      "component": "MACE_vacuum",
+      "state": "Dy",
+      "analytic_kcal_mol_A": 7.649444136714152,
+      "numerical_kcal_mol_A": 7.649440284981075,
+      "residual_kcal_mol_A": -3.851733076487562e-06,
+      "tolerance_kcal_mol_A": 0.5824722068357076,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.001,
+      "component": "MACE_vacuum",
+      "state": "common",
+      "analytic_kcal_mol_A": 0.02810899373335829,
+      "numerical_kcal_mol_A": 0.02811112923912784,
+      "residual_kcal_mol_A": 2.135505769551571e-06,
+      "tolerance_kcal_mol_A": 0.20140544968666793,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.001,
+      "component": "MACE_vacuum",
+      "state": "Dy_minus_La",
+      "analytic_kcal_mol_A": 15.242670285961589,
+      "numerical_kcal_mol_A": 15.242658311483895,
+      "residual_kcal_mol_A": -1.1974477693854624e-05,
+      "tolerance_kcal_mol_A": 0.9621335142980796,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.001,
+      "component": "GFN2_vacuum",
+      "state": "La",
+      "analytic_kcal_mol_A": 0.49357591045518134,
+      "numerical_kcal_mol_A": 0.49357762020033796,
+      "residual_kcal_mol_A": 1.70974515661948e-06,
+      "tolerance_kcal_mol_A": 0.22467879552275907,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.001,
+      "component": "GFN2_vacuum",
+      "state": "Dy",
+      "analytic_kcal_mol_A": 3.7347425175851043,
+      "numerical_kcal_mol_A": 3.734741227862416,
+      "residual_kcal_mol_A": -1.2897226882024881e-06,
+      "tolerance_kcal_mol_A": 0.38673712587925524,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.001,
+      "component": "GFN2_vacuum",
+      "state": "common",
+      "analytic_kcal_mol_A": 2.114159214020148,
+      "numerical_kcal_mol_A": 2.114159424031377,
+      "residual_kcal_mol_A": 2.1001122885166978e-07,
+      "tolerance_kcal_mol_A": 0.3057079607010074,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.001,
+      "component": "GFN2_vacuum",
+      "state": "Dy_minus_La",
+      "analytic_kcal_mol_A": 3.241166607129924,
+      "numerical_kcal_mol_A": 3.2411636076620782,
+      "residual_kcal_mol_A": -2.9994678456546353e-06,
+      "tolerance_kcal_mol_A": 0.3620583303564962,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.001,
+      "component": "GFN2_water",
+      "state": "La",
+      "analytic_kcal_mol_A": -0.07852971273634424,
+      "numerical_kcal_mol_A": -0.0785268508402413,
+      "residual_kcal_mol_A": 2.8618961029347467e-06,
+      "tolerance_kcal_mol_A": 0.20392648563681723,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.001,
+      "component": "GFN2_water",
+      "state": "Dy",
+      "analytic_kcal_mol_A": 3.108104243892935,
+      "numerical_kcal_mol_A": 3.1081055759770737,
+      "residual_kcal_mol_A": 1.332084138550016e-06,
+      "tolerance_kcal_mol_A": 0.35540521219464677,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.001,
+      "component": "GFN2_water",
+      "state": "common",
+      "analytic_kcal_mol_A": 1.514787265578292,
+      "numerical_kcal_mol_A": 1.5147893625684161,
+      "residual_kcal_mol_A": 2.0969901242118283e-06,
+      "tolerance_kcal_mol_A": 0.27573936327891463,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.001,
+      "component": "GFN2_water",
+      "state": "Dy_minus_La",
+      "analytic_kcal_mol_A": 3.1866339566292807,
+      "numerical_kcal_mol_A": 3.186632426817315,
+      "residual_kcal_mol_A": -1.529811965550465e-06,
+      "tolerance_kcal_mol_A": 0.35933169783146407,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.001,
+      "component": "solvent",
+      "state": "La",
+      "analytic_kcal_mol_A": -0.5721056231915256,
+      "numerical_kcal_mol_A": -0.5721044710405793,
+      "residual_kcal_mol_A": 1.1521509463152668e-06,
+      "tolerance_kcal_mol_A": 0.2286052811595763,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.001,
+      "component": "solvent",
+      "state": "Dy",
+      "analytic_kcal_mol_A": -0.6266382736921692,
+      "numerical_kcal_mol_A": -0.6266356518853424,
+      "residual_kcal_mol_A": 2.621806826752504e-06,
+      "tolerance_kcal_mol_A": 0.23133191368460848,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.001,
+      "component": "solvent",
+      "state": "common",
+      "analytic_kcal_mol_A": -0.5993719484418483,
+      "numerical_kcal_mol_A": -0.5993700614629609,
+      "residual_kcal_mol_A": 1.8869788873665527e-06,
+      "tolerance_kcal_mol_A": 0.2299685974220924,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.001,
+      "component": "solvent",
+      "state": "Dy_minus_La",
+      "analytic_kcal_mol_A": -0.05453265050064329,
+      "numerical_kcal_mol_A": -0.05453118084476316,
+      "residual_kcal_mol_A": 1.469655880131926e-06,
+      "tolerance_kcal_mol_A": 0.20272663252503217,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.001,
+      "component": "composite",
+      "state": "La",
+      "analytic_kcal_mol_A": -8.165331772438968,
+      "numerical_kcal_mol_A": -8.165322497543398,
+      "residual_kcal_mol_A": 9.274895569788555e-06,
+      "tolerance_kcal_mol_A": 0.6082665886219485,
+      "within_declared_resolution": true,
+      "acceptance_role": "qualification"
+    },
+    {
+      "step_A": 0.001,
+      "component": "composite",
+      "state": "Dy",
+      "analytic_kcal_mol_A": 7.022805863021979,
+      "numerical_kcal_mol_A": 7.022804633095733,
+      "residual_kcal_mol_A": -1.2299262461823446e-06,
+      "tolerance_kcal_mol_A": 0.5511402931510989,
+      "within_declared_resolution": true,
+      "acceptance_role": "qualification"
+    },
+    {
+      "step_A": 0.001,
+      "component": "composite",
+      "state": "common",
+      "analytic_kcal_mol_A": -0.5712629547084909,
+      "numerical_kcal_mol_A": -0.5712589322238326,
+      "residual_kcal_mol_A": 4.0224846582503915e-06,
+      "tolerance_kcal_mol_A": 0.22856314773542455,
+      "within_declared_resolution": true,
+      "acceptance_role": "qualification"
+    },
+    {
+      "step_A": 0.001,
+      "component": "composite",
+      "state": "Dy_minus_La",
+      "analytic_kcal_mol_A": 15.188137635460945,
+      "numerical_kcal_mol_A": 15.188127130639131,
+      "residual_kcal_mol_A": -1.0504821814194543e-05,
+      "tolerance_kcal_mol_A": 0.9594068817730472,
+      "within_declared_resolution": true,
+      "acceptance_role": "qualification"
+    },
+    {
+      "step_A": 0.0005,
+      "component": "MACE_vacuum",
+      "state": "La",
+      "analytic_kcal_mol_A": -7.593226149247442,
+      "numerical_kcal_mol_A": -7.59322373128015,
+      "residual_kcal_mol_A": 2.4179672921675888e-06,
+      "tolerance_kcal_mol_A": 0.5796613074623722,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.0005,
+      "component": "MACE_vacuum",
+      "state": "Dy",
+      "analytic_kcal_mol_A": 7.649444136714152,
+      "numerical_kcal_mol_A": 7.64944330515731,
+      "residual_kcal_mol_A": -8.315568420513841e-07,
+      "tolerance_kcal_mol_A": 0.5824722068357076,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.0005,
+      "component": "MACE_vacuum",
+      "state": "common",
+      "analytic_kcal_mol_A": 0.02810899373335829,
+      "numerical_kcal_mol_A": 0.028109786938579795,
+      "residual_kcal_mol_A": 7.932052215053886e-07,
+      "tolerance_kcal_mol_A": 0.20140544968666793,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.0005,
+      "component": "MACE_vacuum",
+      "state": "Dy_minus_La",
+      "analytic_kcal_mol_A": 15.242670285961589,
+      "numerical_kcal_mol_A": 15.24266703643746,
+      "residual_kcal_mol_A": -3.2495241288899024e-06,
+      "tolerance_kcal_mol_A": 0.9621335142980796,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.0005,
+      "component": "GFN2_vacuum",
+      "state": "La",
+      "analytic_kcal_mol_A": 0.49357591045518134,
+      "numerical_kcal_mol_A": 0.4935738570381397,
+      "residual_kcal_mol_A": -2.053417041625316e-06,
+      "tolerance_kcal_mol_A": 0.22467879552275907,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.0005,
+      "component": "GFN2_vacuum",
+      "state": "Dy",
+      "analytic_kcal_mol_A": 3.7347425175851043,
+      "numerical_kcal_mol_A": 3.734739373033655,
+      "residual_kcal_mol_A": -3.1445514494521376e-06,
+      "tolerance_kcal_mol_A": 0.38673712587925524,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.0005,
+      "component": "GFN2_vacuum",
+      "state": "common",
+      "analytic_kcal_mol_A": 2.114159214020148,
+      "numerical_kcal_mol_A": 2.1141566150358972,
+      "residual_kcal_mol_A": -2.5989842509233085e-06,
+      "tolerance_kcal_mol_A": 0.3057079607010074,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.0005,
+      "component": "GFN2_vacuum",
+      "state": "Dy_minus_La",
+      "analytic_kcal_mol_A": 3.241166607129924,
+      "numerical_kcal_mol_A": 3.2411655159955153,
+      "residual_kcal_mol_A": -1.0911344086039776e-06,
+      "tolerance_kcal_mol_A": 0.3620583303564962,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.0005,
+      "component": "GFN2_water",
+      "state": "La",
+      "analytic_kcal_mol_A": -0.07852971273634424,
+      "numerical_kcal_mol_A": -0.07852652981218647,
+      "residual_kcal_mol_A": 3.182924157768552e-06,
+      "tolerance_kcal_mol_A": 0.20392648563681723,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.0005,
+      "component": "GFN2_water",
+      "state": "Dy",
+      "analytic_kcal_mol_A": 3.108104243892935,
+      "numerical_kcal_mol_A": 3.108104630727801,
+      "residual_kcal_mol_A": 3.8683486591750693e-07,
+      "tolerance_kcal_mol_A": 0.35540521219464677,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.0005,
+      "component": "GFN2_water",
+      "state": "common",
+      "analytic_kcal_mol_A": 1.514787265578292,
+      "numerical_kcal_mol_A": 1.5147890504578072,
+      "residual_kcal_mol_A": 1.7848795152985986e-06,
+      "tolerance_kcal_mol_A": 0.27573936327891463,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.0005,
+      "component": "GFN2_water",
+      "state": "Dy_minus_La",
+      "analytic_kcal_mol_A": 3.1866339566292807,
+      "numerical_kcal_mol_A": 3.1866311605399877,
+      "residual_kcal_mol_A": -2.7960892929890235e-06,
+      "tolerance_kcal_mol_A": 0.35933169783146407,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.0005,
+      "component": "solvent",
+      "state": "La",
+      "analytic_kcal_mol_A": -0.5721056231915256,
+      "numerical_kcal_mol_A": -0.5721003868503262,
+      "residual_kcal_mol_A": 5.2363411994216236e-06,
+      "tolerance_kcal_mol_A": 0.2286052811595763,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.0005,
+      "component": "solvent",
+      "state": "Dy",
+      "analytic_kcal_mol_A": -0.6266382736921692,
+      "numerical_kcal_mol_A": -0.6266347423058538,
+      "residual_kcal_mol_A": 3.5313863153696445e-06,
+      "tolerance_kcal_mol_A": 0.23133191368460848,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.0005,
+      "component": "solvent",
+      "state": "common",
+      "analytic_kcal_mol_A": -0.5993719484418483,
+      "numerical_kcal_mol_A": -0.59936756457809,
+      "residual_kcal_mol_A": 4.383863758228301e-06,
+      "tolerance_kcal_mol_A": 0.2299685974220924,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.0005,
+      "component": "solvent",
+      "state": "Dy_minus_La",
+      "analytic_kcal_mol_A": -0.05453265050064329,
+      "numerical_kcal_mol_A": -0.05453435545552765,
+      "residual_kcal_mol_A": -1.7049548843572904e-06,
+      "tolerance_kcal_mol_A": 0.20272663252503217,
+      "within_declared_resolution": true,
+      "acceptance_role": "component diagnostic"
+    },
+    {
+      "step_A": 0.0005,
+      "component": "composite",
+      "state": "La",
+      "analytic_kcal_mol_A": -8.165331772438968,
+      "numerical_kcal_mol_A": -8.165324118130476,
+      "residual_kcal_mol_A": 7.65430849192228e-06,
+      "tolerance_kcal_mol_A": 0.6082665886219485,
+      "within_declared_resolution": true,
+      "acceptance_role": "qualification"
+    },
+    {
+      "step_A": 0.0005,
+      "component": "composite",
+      "state": "Dy",
+      "analytic_kcal_mol_A": 7.022805863021979,
+      "numerical_kcal_mol_A": 7.022808562851456,
+      "residual_kcal_mol_A": 2.699829476426885e-06,
+      "tolerance_kcal_mol_A": 0.5511402931510989,
+      "within_declared_resolution": true,
+      "acceptance_role": "qualification"
+    },
+    {
+      "step_A": 0.0005,
+      "component": "composite",
+      "state": "common",
+      "analytic_kcal_mol_A": -0.5712629547084909,
+      "numerical_kcal_mol_A": -0.5712577776395102,
+      "residual_kcal_mol_A": 5.177068980621868e-06,
+      "tolerance_kcal_mol_A": 0.22856314773542455,
+      "within_declared_resolution": true,
+      "acceptance_role": "qualification"
+    },
+    {
+      "step_A": 0.0005,
+      "component": "composite",
+      "state": "Dy_minus_La",
+      "analytic_kcal_mol_A": 15.188137635460945,
+      "numerical_kcal_mol_A": 15.188132680981932,
+      "residual_kcal_mol_A": -4.9544790137190375e-06,
+      "tolerance_kcal_mol_A": 0.9594068817730472,
+      "within_declared_resolution": true,
+      "acceptance_role": "qualification"
+    }
+  ],
+  "step_comparisons": [
+    {
+      "component": "MACE_vacuum",
+      "state": "La",
+      "fine_minus_coarse_kcal_mol_A": -5.704777330528543e-06
+    },
+    {
+      "component": "MACE_vacuum",
+      "state": "Dy",
+      "fine_minus_coarse_kcal_mol_A": 3.0201762344361782e-06
+    },
+    {
+      "component": "MACE_vacuum",
+      "state": "common",
+      "fine_minus_coarse_kcal_mol_A": -1.3423005480461825e-06
+    },
+    {
+      "component": "MACE_vacuum",
+      "state": "Dy_minus_La",
+      "fine_minus_coarse_kcal_mol_A": 8.724953564964721e-06
+    },
+    {
+      "component": "GFN2_vacuum",
+      "state": "La",
+      "fine_minus_coarse_kcal_mol_A": -3.763162198244796e-06
+    },
+    {
+      "component": "GFN2_vacuum",
+      "state": "Dy",
+      "fine_minus_coarse_kcal_mol_A": -1.8548287612496495e-06
+    },
+    {
+      "component": "GFN2_vacuum",
+      "state": "common",
+      "fine_minus_coarse_kcal_mol_A": -2.8089954797749783e-06
+    },
+    {
+      "component": "GFN2_vacuum",
+      "state": "Dy_minus_La",
+      "fine_minus_coarse_kcal_mol_A": 1.9083334370506577e-06
+    },
+    {
+      "component": "GFN2_water",
+      "state": "La",
+      "fine_minus_coarse_kcal_mol_A": 3.2102805483380514e-07
+    },
+    {
+      "component": "GFN2_water",
+      "state": "Dy",
+      "fine_minus_coarse_kcal_mol_A": -9.45249272632509e-07
+    },
+    {
+      "component": "GFN2_water",
+      "state": "common",
+      "fine_minus_coarse_kcal_mol_A": -3.121106089132297e-07
+    },
+    {
+      "component": "GFN2_water",
+      "state": "Dy_minus_La",
+      "fine_minus_coarse_kcal_mol_A": -1.2662773274385586e-06
+    },
+    {
+      "component": "solvent",
+      "state": "La",
+      "fine_minus_coarse_kcal_mol_A": 4.084190253106357e-06
+    },
+    {
+      "component": "solvent",
+      "state": "Dy",
+      "fine_minus_coarse_kcal_mol_A": 9.095794886171404e-07
+    },
+    {
+      "component": "solvent",
+      "state": "common",
+      "fine_minus_coarse_kcal_mol_A": 2.4968848708617486e-06
+    },
+    {
+      "component": "solvent",
+      "state": "Dy_minus_La",
+      "fine_minus_coarse_kcal_mol_A": -3.1746107644892163e-06
+    },
+    {
+      "component": "composite",
+      "state": "La",
+      "fine_minus_coarse_kcal_mol_A": -1.6205870778662756e-06
+    },
+    {
+      "component": "composite",
+      "state": "Dy",
+      "fine_minus_coarse_kcal_mol_A": 3.9297557226092295e-06
+    },
+    {
+      "component": "composite",
+      "state": "common",
+      "fine_minus_coarse_kcal_mol_A": 1.154584322371477e-06
+    },
+    {
+      "component": "composite",
+      "state": "Dy_minus_La",
+      "fine_minus_coarse_kcal_mol_A": 5.550342800475505e-06
+    }
+  ],
+  "individual_metal_composite_passed": true,
+  "composite_passed_all_states": true,
+  "originating_call_counts": {
+    "gpu": 8,
+    "cpu": 16
+  },
+  "formula": "central (E(+h)-E(-h))/(2h); h is signed maximum atom chord displacement in \u00c5",
+  "residual_tolerance": "0.2 + 0.05*abs(saved analytic derivative), kcal/mol/\u00c5; both steps retained",
+  "limits": "One force-nominated direction; no affinity, global force validation, optimizer or biological label",
+  "elapsed_seconds": 0.02700758690480143,
+  "application_allocated_CPU_seconds": 0.02700758690480143,
+  "application_allocated_GPU_seconds": 0,
+  "allocation": {
+    "SLURM_JOB_ID": "12521",
+    "SLURM_CPUS_PER_TASK": "1",
+    "SLURM_MEM_PER_CPU": "4000",
+    "SLURM_MEM_PER_NODE": null,
+    "CUDA_VISIBLE_DEVICES": null
+  }
+}

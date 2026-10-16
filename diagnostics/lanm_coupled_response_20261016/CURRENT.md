@@ -1,3 +1,30 @@
+# Latest: numerical force gate passed; accommodation adapter in preparation
+
+FD12519 completed8/8 MACE and12520 completed16/16 GFN2 energies. Comparison12521
+passes both steps for both metals and their paired derivative, residuals about
+1e−5kcal/mol/angstrom. See lbt3_derivative/REPORT.md. No repeated calls needed.
+All current owned jobs are terminal; actual completion wakes remain recorded.
+
+The fixed LBT3_ACCOMMODATION_PLAN.md now passes its numerical prerequisite.
+Leibniz implements the narrow composite-response adapter; Harvey independently
+reviews state/contact/metric behavior. Root next submits7CCO/La scout, then the
+other three under identical settings on execution/physical admission. This is
+not yet an optimization result or a completed LanM profiler. PQQ stays intact.
+
+# Latest execution: finite derivative matrix submitted
+
+Whole-composite force profile12512 passed both sources and all eight geometric
+finite-check inputs. MACE12519 (one GPU/12 CPUs) and standaloneGFN2 12520
+(four CPUs) now execute the declared 8+16 energy cells. Completion wakes are
+recorded in lbt3_fd_gpu_v1 and lbt3_fd_cpu_v1. Root owns collection/submission;
+no derivative result is implied yet. Reuse all completed origins and forces.
+
+LBT3_ACCOMMODATION_PLAN.md fixes the small own-metal response pilot before any
+optimization: seven common coordinates, original physical guards, whole-peptide
+composite energy/forces, twelve accepted steps maximum, shared cross-scored pool.
+Leibniz implements the narrow adapter; Harvey independently reviews. Actual
+search submission requires the finite derivative gate. No new DFT or PQQ change.
+
 # Latest: whole-peptide solvent and forces complete
 
 12500 completed all four native MACE forces with exact prior-energy replay.

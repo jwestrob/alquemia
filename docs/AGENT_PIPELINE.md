@@ -1,5 +1,24 @@
 # Nikasha: current operating guide for agents
 
+## Latest completed PQQ research candidate — 16 October 2026
+
+Use the [current transfer report](../diagnostics/pqq_failure_causal_synthesis_20261015/a0ac_asn_relaxation/transfer/FINAL_REPORT.md)
+for current performance claims. Corrected La parameters and frozen-charge solvent
+scoring, followed by a uniform intact-amide alternative, give249correct/0wrong/
+8inconclusive with complete coverage across257 consumed source/context pairs.
+The amide addition repairs one unique XoxF source; replicas are not independent
+proteins. Canonical25 bands are unchanged. The100 existing three-source summaries
+remain89correct/0wrong/5inconclusive/6unavailable. Earlier all-correct ensemble
+claims below belong to different historical protocols.
+
+The [saved-data screening replay](../diagnostics/pqq_failure_causal_synthesis_20261015/a0ac_asn_relaxation/transfer/gated_replay/REPORT.md)
+retains every full-search score and selected geometry while triggering relaxation
+for only two contexts. It does not measure live speed or qualify unseen-basin
+recall. The fixed alternative's short contact prevents promoting it as a validated
+relaxed endpoint. Production/defaults remain unchanged; explicit DFT stays intact.
+All jobs in this campaign are terminal and their outputs survived the reboot.
+Read CURRENT and actual receipts before running commands; no duplicate campaign.
+
 ## Parameter correction supersedes energetic performance claims — 12 October 2026
 
 The tested native ORCA6.1.1 GFN2 implementation misassigns three La parameter

@@ -1,5 +1,32 @@
 # Current causal investigation
 
+## Reboot recovery and gated replay complete — 16 October 2026 UTC
+
+The completed molecular collections, reports and figure survived. Live scheduler
+accounting confirms5661/5748/6035/6045 completed; reporter5666 retains its documented
+cancellation after application completion. No job owned by this campaign remains
+in the live queue. The three DPANN array tasks belong to other work and were left
+untouched. No scientific task or completed watcher was restarted.
+
+Saved-data replay6045 completed in2 scheduler seconds on1CPU (0.910187s application),
+with zero molecular calls. Its result SHA256 is
+`9e81ca26276015aaf51ee24bed58f5b1e8350725823b761a399482989c3c3425`.
+Independent post-reboot review verified20 inspected pins and the actual outcome:
+only A0ACCa4 andLa4 trigger. All257 raw scores, both metal selections, decisions
+and availability exactly reproduce full common6 under both reporting policies.
+This retains249correct/0wrong/8inconclusive, the one unique class repair and the
+source-spread benefit, with unchanged canonical bands. See
+[the completed gated replay](a0ac_asn_relaxation/transfer/gated_replay/REPORT.md).
+
+Four eligible and510 avoidable search slots are retrospective policy counts,
+not measured savings. No live gated executor or prospective recall is qualified.
+The short-contact fixed alternative is only a screen; triggered execution must
+retain both bounded relaxations and cross-scoring. Initially unfavorable starts
+can still hide useful relaxed basins. Production is unchanged. The next useful
+engineering question is a contained live execution/runtime comparison using
+existing adapters; no further molecular run has been submitted in recovery.
+The older pending replay and running-job notes below are historical.
+
 ## Full transfer complete: one unique source repaired, no regressions — 15 October 2026
 
 Read [the completed comparison](a0ac_asn_relaxation/transfer/FINAL_REPORT.md) and

@@ -16,7 +16,7 @@ separately visible in the original 278-record ledger.
 
 | Method | Correct unique contexts | Wrong | Inconclusive | Unavailable |
 |---|---:|---:|---:|---:|
-| Existing three-candidate pool | 248 | 0 | 9 | 0 |
+| Corrected frozen-charge three-candidate comparator | 248 | 0 | 9 | 0 |
 | Add the intact fixed amide alternative | 249 | 0 | 8 | 0 |
 | Also add paired bounded relaxation | 249 | 0 | 8 | 0 |
 
@@ -25,6 +25,9 @@ source is **A0ACD6B9F2, Ca-conditioned seed1/sample4**. Its appearance in both
 cohorts explains the two cohort-level improvements: expanded135 changes 129/6 to
 130/5 correct/inconclusive, while currentCa125 changes 121/4 to 122/3. Those gains
 must not be added as two distinct repairs. No correct call or score coverage is lost.
+
+Here the comparator is the corrected-parameter, frozen-charge research protocol,
+not a claim that these changes have been promoted to the production default.
 
 The combined known-class raw ordering gap changes from **−1.370431 to
 +3.633118 kcal/mol** already with the fixed alternative. Subsequent relaxation
@@ -97,13 +100,21 @@ class counts match the more expensive search: its contact geometry and its disti
 reference-validation status still matter. Uniform relaxation has not demonstrated
 additional classification benefit beyond its A0AC source-consistency gain.
 
-A separate **retrospective** policy replay is being prepared: use the existing
-composite fixed-flip selection as a label-free screen; if either metal selects it,
-enable both bounded searches and cross-score the shared pool. That could retain
-the demonstrated geometry benefit while avoiding unnecessary searches. It can
-miss an initially unfavorable alternative that would become favorable after
-relaxation. No prospective accuracy, measured speedup or production promotion
-follows from a saved-data replay.
+A separate **retrospective** policy replay is complete. The existing composite
+fixed-flip selection screens the alternative without using class labels. If either
+metal selects it, both bounded searches and shared-pool cross-scoring are enabled;
+otherwise the original three-candidate result is retained. Missing required
+results remain unavailable. Only A0AC Ca4 and La4 trigger among257 contexts.
+The routed result exactly reproduces full common6 scores, both metal selections,
+decisions and availability under both reporting policies. Thus the geometry and
+source-consistency benefit can be retained by this rule on the consumed archive.
+
+This supports a live opt-in screen-and-relax candidate, not promotion of the
+short-contact fixed geometry. Four eligible and510 avoidable search slots are
+retrospective counts, not measured savings. The screen can miss an initially
+unfavorable alternative that becomes favorable after relaxation. No prospective
+accuracy, live runtime improvement or production promotion is established.
+See [the rule, result and limitations](gated_replay/REPORT.md).
 
 ## Executed work and cost
 
@@ -116,6 +127,7 @@ follows from a saved-data replay.
 | Saved report | 5666 | 203, cancelled after application completion | 1 | none |
 | Editable figure | 5748 | 13 | 1 | none |
 | Saved deduplicated summary | 6035 | 1 | 1 | none |
+| Saved gated-policy replay | 6045 | 2 | 1 | none |
 
 The solvent stage admits all **1338 new unique endpoints**, with **5352 SCC calls
 and 2676 native component calls**, reusing 1746 compatible endpoint results. The
@@ -131,6 +143,8 @@ Reporter5666 finished its application in 4.19 seconds, then its allocation
 lingered. Only that completed owned allocation was cancelled; all report artifacts
 remain valid. Its scheduler cancellation is preserved separately. Figure5748 and
 summary6035 subsequently completed normally. No molecular calculation was repeated.
+Replay6045 also completed normally, with zero molecular calls. Its2 allocated
+CPU-seconds measure the saved-data replay only, not the screened molecular workflow.
 
 ## Reproduction and artifacts
 

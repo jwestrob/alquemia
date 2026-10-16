@@ -1,4 +1,15 @@
-# Latest owned PQQ work — 15 October 2026 UTC
+# Latest owned PQQ work — 16 October 2026 UTC
+
+Post-reboot recovery verified the completed results and terminal scheduler records.
+No owned molecular or reporting job needs restarting; unrelated DPANN jobs remain
+untouched. Gated saved-data replay6045 is COMPLETE (2s,1CPU,zero molecular calls):
+2/257 contexts trigger both relaxations; all257 scores, selections, decisions and
+availability exactly match full common6 under both policies. Read transfer/
+gated_replay/REPORT.md under the diagnostic below. This is retrospective consumed
+evidence, not measured runtime savings or unseen-basin recall. The rule can miss
+an unfavorable fixed start that relaxes usefully. No production promotion, changed
+bands or new molecular campaign follows from these terminal receipts. Root owns
+integration and any separately declared next candidate experiment.
 
 Uniform amide transfer is COMPLETE. Read
 diagnostics/pqq_failure_causal_synthesis_20261015/a0ac_asn_relaxation/transfer/FINAL_REPORT.md.
@@ -9,10 +20,9 @@ set. Fixed flip already gives the class gain; relaxation improves A0AC source
 consistency but not further calls. Do not promote the short-contact fixed geometry
 as independently DFT-validated. All molecular work is terminal; saved report5666
 completed then its allocation was cancelled203s; figure5748/summary6035 completed.
-A new label-free gated-search policy is being prepared for saved-data replay only:
-either metal selecting the fixed alternative triggers both relaxations/common pool.
-This is retrospective, not a new molecular campaign or production promotion.
-Root owns integration; Curie owns transfer/gated_replay source, Gauss review.
+The completed label-free gated-search replay uses either metal selecting the fixed
+alternative to trigger both relaxations/common pool. Curie's source and Gauss's
+review are complete; post-reboot independent review confirmed all inspected pins.
 Read newer CURRENT/receipts before acting; no duplicate submissions.
 
 Previous reference checkpoint (completed):

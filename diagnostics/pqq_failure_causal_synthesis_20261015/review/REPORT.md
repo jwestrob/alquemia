@@ -19,10 +19,12 @@ or one universal solvent defect is not established.
 
 The fixed flip retains a short contact, and DFT tested the relaxed selected states.
 Accordingly, matching class counts alone does not justify promoting the fixed
-unrelaxed endpoint. A separate retrospective screen-and-relax replay is being
-prepared from saved data, retaining both-metal search/pool fairness and explicitly
-allowing that initially unfavorable starts could be missed. No new chemistry or
-production change follows. The chronology below describes the original nine-case
+unrelaxed endpoint. The completed retrospective screen-and-relax replay triggers
+only A0ACCa4/La4 and exactly reproduces full common6 scores, selections and outcomes
+for all257 contexts. Both-metal search/pool fairness is retained. Initially
+unfavorable starts could still be missed; no live speedup is measured. Read
+[the gated replay](../a0ac_asn_relaxation/transfer/gated_replay/REPORT.md).
+No new chemistry or production change follows. The chronology below describes the original nine-case
 investigation; older pending statements are superseded by the completed result.
 
 **There is no demonstrated single failure shared by all nine.** Six new

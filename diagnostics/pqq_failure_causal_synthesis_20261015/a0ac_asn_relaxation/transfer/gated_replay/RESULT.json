@@ -1,0 +1,176 @@
+{
+  "schema": "retrospective_operational_amide_gate.v1",
+  "post_inspection": true,
+  "production_changed": false,
+  "decision_summary": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_transfer_decision_v1/execution/RESULT.json",
+    "sha256": "f70378b775db2844a18f1cbfb5a974b3b3eb6b930aab2b0ea65a0e6831ba61eb"
+  },
+  "declared_contexts": 257,
+  "declared_memberships": 260,
+  "rule": "common4 operational either-metal amide_flip -> common6; otherwise common3; missing screen or required result -> unavailable",
+  "policy_screen": "operational for both reporting policies; no class, conditioning or desired sign in routing",
+  "routing_context_counts": {
+    "triggered": 2,
+    "not_triggered": 255,
+    "screen_unavailable": 0
+  },
+  "trigger_context_ids": [
+    "context_558e69e76ac339a96e174915",
+    "context_f43ad10b97ed34f208559940"
+  ],
+  "replay_search_slot_counts": {
+    "eligible_searches": 4,
+    "avoidable_searches_in_replay": 510,
+    "unknown_screen_searches": 0,
+    "basis": "two own-metal searches per context; all cross-scoring required on triggered branch; counts only, not measured savings"
+  },
+  "summaries": {
+    "operational": {
+      "unique_context_outcomes": {
+        "gated": {
+          "correct": 249,
+          "wrong": 0,
+          "inconclusive": 8,
+          "unavailable": 0,
+          "calibration_unavailable": 0
+        },
+        "full_common6": {
+          "correct": 249,
+          "wrong": 0,
+          "inconclusive": 8,
+          "unavailable": 0,
+          "calibration_unavailable": 0
+        }
+      },
+      "membership_outcomes": {
+        "gated": {
+          "correct": 252,
+          "wrong": 0,
+          "inconclusive": 8,
+          "unavailable": 0,
+          "calibration_unavailable": 0
+        },
+        "full_common6": {
+          "correct": 252,
+          "wrong": 0,
+          "inconclusive": 8,
+          "unavailable": 0,
+          "calibration_unavailable": 0
+        }
+      },
+      "difference_context_ids": [],
+      "untriggered_difference_context_ids": [],
+      "regression_context_ids": [],
+      "gated_unavailable_context_ids": [],
+      "counts": {
+        "difference_context_ids": 0,
+        "untriggered_difference_context_ids": 0,
+        "regression_context_ids": 0,
+        "gated_unavailable_context_ids": 0
+      }
+    },
+    "mathematical": {
+      "unique_context_outcomes": {
+        "gated": {
+          "correct": 249,
+          "wrong": 0,
+          "inconclusive": 8,
+          "unavailable": 0,
+          "calibration_unavailable": 0
+        },
+        "full_common6": {
+          "correct": 249,
+          "wrong": 0,
+          "inconclusive": 8,
+          "unavailable": 0,
+          "calibration_unavailable": 0
+        }
+      },
+      "membership_outcomes": {
+        "gated": {
+          "correct": 252,
+          "wrong": 0,
+          "inconclusive": 8,
+          "unavailable": 0,
+          "calibration_unavailable": 0
+        },
+        "full_common6": {
+          "correct": 252,
+          "wrong": 0,
+          "inconclusive": 8,
+          "unavailable": 0,
+          "calibration_unavailable": 0
+        }
+      },
+      "difference_context_ids": [],
+      "untriggered_difference_context_ids": [],
+      "regression_context_ids": [],
+      "gated_unavailable_context_ids": [],
+      "counts": {
+        "difference_context_ids": 0,
+        "untriggered_difference_context_ids": 0,
+        "regression_context_ids": 0,
+        "gated_unavailable_context_ids": 0
+      }
+    }
+  },
+  "fixed_canonical_bands": {
+    "common3": {
+      "operational": {
+        "Ca_max": -405461.9631022772,
+        "La_min": -405453.5127788069
+      },
+      "mathematical": {
+        "Ca_max": -405461.9631022772,
+        "La_min": -405453.5127788069
+      }
+    },
+    "common4": {
+      "operational": {
+        "Ca_max": -405461.9631022772,
+        "La_min": -405453.5127788069
+      },
+      "mathematical": {
+        "Ca_max": -405461.9631022772,
+        "La_min": -405453.5127788069
+      }
+    },
+    "common6": {
+      "operational": {
+        "Ca_max": -405461.9631022772,
+        "La_min": -405453.5127788069
+      },
+      "mathematical": {
+        "Ca_max": -405461.9631022772,
+        "La_min": -405453.5127788069
+      }
+    }
+  },
+  "bands_equal_old_and_all_pools": {
+    "operational": true,
+    "mathematical": true
+  },
+  "new_molecular_calls": 0,
+  "scores_recomputed": false,
+  "bands_refitted": false,
+  "measured_cost_savings": null,
+  "limits": "Retrospective consumed and correlated evidence. An initially unfavorable fixed flip may relax usefully: this replay cannot establish unseen-basin recall. No automatic promotion or runtime-saving claim. Missing required data never triggers a baseline fallback.",
+  "source_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_transfer_gated_replay_v1/execution/RESULT.json",
+    "sha256": "9e81ca26276015aaf51ee24bed58f5b1e8350725823b761a399482989c3c3425"
+  },
+  "source_execution": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_transfer_gated_replay_v1/execution/EXECUTION.json",
+    "sha256": "9df40b4e8f228ff7f9dc6611a73fa8e7567a1d00324f328402a4c2945427cee4"
+  },
+  "source_inputs": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_transfer_gated_replay_v1/execution/INPUTS.json",
+    "sha256": "390c30507472c908e8481c1ca28323b1700035c78761300773654ad32aff0b8b"
+  },
+  "source_terminal_event": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pqq_failure_causal_synthesis_20261015/asn_transfer_gated_replay_v1/completion_event.json",
+    "sha256": "47d948491d33b057101e46d87a77347adafe7423528a446a6e9d893ea990ae51"
+  },
+  "post_reboot_verified_utc": "2026-10-16T09:13:01.900905+00:00"
+}

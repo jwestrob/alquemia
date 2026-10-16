@@ -16,11 +16,12 @@ native components. This is a scoped implementation check, not spin/affinity proo
 
 Whole-peptide forces12500, mapped motions12509, solvent gradients12510 and
 actual two-step derivative check12519–12521 are complete/passed. See
-lbt3_solvent/ and lbt3_derivative/. First bounded whole-composite response12533
-now submitted7CCO/La ononeGPU/12CPUs, completionwatcher1917544. Read CURRENT and
-actual receipts. Frozenplan LBT3_ACCOMMODATION_PLAN.md retains both sources/metals
-and source-relative physical guards; unchanged otherthree/pool adapters staged
-by disjointagents. No optimization or proteinpreference result impliedyet.
+lbt3_solvent/ and lbt3_derivative/. Scout12533 completed: admissible9-step La
+response lowersenergy2.880329kcal/mol; finite movement-envelope stop, not minimum.
+Unchanged otherthree12538 submittedoneGPU/12CPUs, watcher1922524. Read CURRENT,
+SCOUT_REPORT and actual receipts. Same frozenplan retains both sources/metals and
+physical guards. Commonpool adapter staged independently. No proteinpreference
+result or complete LanM profiler implied. Do not repeat completed scout.
 Root owns submission/integration. Read current receipts before acting; no repeated
 completed chemistry or automatic dimer/full-library campaign. PQQ midpoint and
 production remain intact. All numerical work uses current shared Slurm limits.

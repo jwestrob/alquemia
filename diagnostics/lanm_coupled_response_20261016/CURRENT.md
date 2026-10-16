@@ -1,3 +1,24 @@
+# Latest: remaining three accommodation searches submitted
+
+12538 runs7CCO/Dy,7CCN/La,7CCN/Dy sequentially with one warm GPU/12 CPUs,
+unchanged search physics and fresh per-state history/geometry/cache. Completion
+watcher1922524; implementationba41b0d/configbf84b806 in
+workspaces/lanm_coupled_response_20261016/lbt3_accommodation_remaining_v1/.
+Root and independent reviews passed actual state/counter scope before submission.
+Scout12533 is complete and must be reused. Harvey owns the separate common-pool
+cross-score adapter; Leibniz reviews it. No continuation outcome is implied yet.
+
+# Latest: first accommodation scout complete; unchanged continuation admitted
+
+12533 completed7CCO/La in107s/12CPUs/oneH200. Nine accepted movements lower the
+whole composite energy2.880329kcal/mol; final physical gates pass. All final
+trial multipliers exceed the0.20A source envelope; force remains, so this is a
+finite boundary-limited candidate, not a minimum. Read lbt3_accommodation/
+SCOUT_REPORT.md and exact workspace ROOT_REVIEW. NineMACE/eighteenGFN calls.
+Leibniz stages unchanged otherthree; Harvey stages commonpool cross-scoring.
+Root owns submission. All earlier molecular calls remain reused; no duplicate
+scout or change to PQQ. Protein-level goal remains unmet and active.
+
 # Latest: first intact-peptide accommodation scout submitted
 
 Job12533 runs7CCO/La under the frozen LBT3_ACCOMMODATION_PLAN.md after the

@@ -1,3 +1,17 @@
+# Latest: bounded Mex continuation scout submitted
+
+La scout12727 submitted oneGPU/12CPUs, watcher2115823, exact snapshot/config
+under workspaces/lanm_coupled_response_20261016/mex_continuation_scout_v1/.
+Root and independent review pass sourcec571f20e/config1fdbd370/plan88dc7df6.
+It reuses exact12717 own endpoint/gradient and the same seven mechanical modes,
+with complete force-generating model and original-source physical guards.
+Max12accepted/24newowncalls; no newDFT or larger-source campaign. No result yet.
+Dy is staged separately and follows actual execution/physical/own-descent gates,
+not preference sign; common5 follows both. Root owns submission/integration.
+A separate fixed-water matchedFF rescore is being prepared: exact16oldslots,
+12newALPB,4oldgeometryrejections, no newMACE/GFN/geometry or occupancy claims.
+PQQ/defaults and all completed evidence remain preserved; goal remains unmet.
+
 # Latest: matched accommodation preserves qualitative direction
 
 LBT pool12720 completes36/36cells (32newALPB/4originreuse,13s/1CPU), all15menus.

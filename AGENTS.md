@@ -55,6 +55,11 @@ all15menus retain expected conditional Mex–La/LBT–Dy ordering. Added-basis
 sourcegap65.569→28.262kcal/mol (matchedoldbasis38.435), still too large for
 quantitative robustness. No newDFT. Read latest CURRENT.
 
+Bounded same7mode La continuation12727 is submitted, oneGPU/12CPU, watcher2115823,
+sourcec571f20e/config1fdbd370 in mex_continuation_scout_v1. Exact12717warmstart;
+no result yet. Dy/common5 adapters separately staged; follow actual scout gates,
+not preference sign. Read latest CURRENT and receipts before any submission.
+
 Root owns submission/integration. Read current receipts before acting; no repeated
 completed chemistry or automatic dimer/full-library campaign. PQQ midpoint and
 production remain intact. All numerical work uses current shared Slurm limits.

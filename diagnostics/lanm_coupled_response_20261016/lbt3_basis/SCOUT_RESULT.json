@@ -1,0 +1,222 @@
+{
+  "schema": 1,
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_basis_scout_v1/execution/RESULT.json",
+    "sha256": "700d7ee91feb53539c7f9dceaf2b8a8f2de1fa847fe8af8aab1a1bc113f816fc"
+  },
+  "job_id": "12556",
+  "status": "complete",
+  "continuation_execution_and_physical_admission": true,
+  "preflight_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_basis_scout_v1/execution/PREFLIGHT.json",
+    "sha256": "3e83f95ec53abaa431eb4d1c266b4b3595deab7510919992d9d7e3afb20a76e1"
+  },
+  "rows": [
+    {
+      "source_id": "7CCO",
+      "metal": "La",
+      "arm": "control",
+      "status": "complete",
+      "candidate_admitted": true,
+      "search": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_basis_scout_v1/execution/7CCO_La_control/SEARCH.json",
+        "sha256": "f0d4c4d79307bb207b143e9c2af68c7151b508477f5fd28787df233b9315b46a"
+      },
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_basis_scout_v1/execution/7CCO_La_control/RESULT.json",
+        "sha256": "5635b3f47f1a6e1c4d2915cf4ebeb4b2a8503acae4186b20ad03fddac38a0111"
+      },
+      "actual_cost": {
+        "GFN2_call_seconds": 71.90887318120804,
+        "GFN2_calls_attempted": 8,
+        "MACE_call_seconds": 2.1582312817918137,
+        "MACE_calls_attempted": 4,
+        "cache_hits": 0,
+        "model_load_seconds": 6.385265705990605,
+        "new_composite_evaluations": 4
+      },
+      "accepted_steps": 2,
+      "accepted_fallback_steps": 2,
+      "termination": "no_admissible_decreasing_trial",
+      "work_from_origin": {
+        "GFN2_vacuum_kcal_mol": -0.959882252671506,
+        "GFN2_water_kcal_mol": -0.9028492939889305,
+        "MACE_kcal_mol": -3.3530733745301644,
+        "composite_kcal_mol": -3.296040415847589,
+        "solvent_kcal_mol": 0.05703295868257541
+      },
+      "work_from_continuation_start": {
+        "GFN2_vacuum_kcal_mol": -0.564935612916922,
+        "GFN2_water_kcal_mol": -0.3915292790251202,
+        "MACE_kcal_mol": -0.322635641745445,
+        "composite_kcal_mol": -0.14922930785364324,
+        "solvent_kcal_mol": 0.17340633389180177
+      },
+      "final_geometry": {
+        "all256_new_worsened_severe_contacts": [],
+        "bond_angle_cosine_max_change": 4.496403249731884e-15,
+        "boundary_flags": {
+          "source_displacement": false,
+          "target_displacement": false,
+          "torsion": false
+        },
+        "fixed_atom_max_change_A": 2.886579864025407e-15,
+        "maximum_source_displacement_A": 0.2509629335634575,
+        "maximum_torsion_radian": 0.19892161967094218,
+        "maximum_trial_displacement_A": 0.0,
+        "old_020_guard_pass": false,
+        "pass": true,
+        "peptide_guard": {
+          "boundary_heavy_count": 0,
+          "chirality_failures": [],
+          "fixed_max_error_A": 2.886579864025407e-15,
+          "maximum_heavy_displacement_A": 0.2509629335634575,
+          "new_severe_overlaps": [],
+          "pass": true,
+          "peptide_basin_failures": [],
+          "source_bond_max_error_A": 3.1086244689504383e-15
+        },
+        "protected_group_distance_max_change_A": 3.552713678800501e-15,
+        "source_baseline": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_preparation_v1/execution/7CCO/PHYSICAL.json",
+          "sha256": "115966f115765c9dd90dff6bcc2c702bd48d522fe648030a02b3ddd5eaf673ef"
+        },
+        "source_displacement_bound_A": 0.4,
+        "target_displacement_A": 0.0887399206714831
+      },
+      "final_force_diagnostic": {
+        "active_span_L2_kcal_mol_A": 7.20753481271713,
+        "active_span_RMS_cartesian_kcal_mol_A": 0.26007951026973963,
+        "active_span_max_atom_kcal_mol_A": 5.621760226148551,
+        "full_gradient_L2_kcal_mol_A": 284.3469742123843,
+        "low_active_span_force": false,
+        "normalized_Gram_eigenvalues": [
+          0.842011359333193,
+          0.9999999999999998,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.1579886406668072
+        ],
+        "outside_active_span_L2_kcal_mol_A": 284.25561240837766,
+        "outside_active_span_max_atom_kcal_mol_A": 69.8111338398103,
+        "rank": 7,
+        "stationary_minimum_claimed": false
+      }
+    },
+    {
+      "source_id": "7CCO",
+      "metal": "La",
+      "arm": "candidate",
+      "status": "complete",
+      "candidate_admitted": true,
+      "search": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_basis_scout_v1/execution/7CCO_La_candidate/SEARCH.json",
+        "sha256": "7d4e7e97ef93200c0490ed3c249494c8b36c02f9ebddf391a7884f01725f4471"
+      },
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_basis_scout_v1/execution/7CCO_La_candidate/RESULT.json",
+        "sha256": "999f981a42030fa2449f15f5cba9375bb89c22ecbd6eca558f8ac56f8aeab4fe"
+      },
+      "actual_cost": {
+        "GFN2_call_seconds": 81.20946936740074,
+        "GFN2_calls_attempted": 10,
+        "MACE_call_seconds": 1.687779399100691,
+        "MACE_calls_attempted": 5,
+        "cache_hits": 0,
+        "model_load_seconds": 0.0,
+        "new_composite_evaluations": 5
+      },
+      "accepted_steps": 3,
+      "accepted_fallback_steps": 3,
+      "termination": "no_admissible_decreasing_trial",
+      "work_from_origin": {
+        "GFN2_vacuum_kcal_mol": -0.5499632092239045,
+        "GFN2_water_kcal_mol": -0.5383797307366873,
+        "MACE_kcal_mol": -3.813828732617926,
+        "composite_kcal_mol": -3.8022452541307086,
+        "solvent_kcal_mol": 0.011583478487217191
+      },
+      "work_from_continuation_start": {
+        "GFN2_vacuum_kcal_mol": -0.15501656946932058,
+        "GFN2_water_kcal_mol": -0.027059715772877024,
+        "MACE_kcal_mol": -0.7833909998332067,
+        "composite_kcal_mol": -0.6554341461367632,
+        "solvent_kcal_mol": 0.12795685369644355
+      },
+      "final_geometry": {
+        "all256_new_worsened_severe_contacts": [],
+        "bond_angle_cosine_max_change": 4.496403249731884e-15,
+        "boundary_flags": {
+          "source_displacement": false,
+          "target_displacement": false,
+          "torsion": false
+        },
+        "fixed_atom_max_change_A": 1.7763568394002505e-15,
+        "maximum_source_displacement_A": 0.2252202882832968,
+        "maximum_torsion_radian": 0.19892161967094218,
+        "maximum_trial_displacement_A": 0.0,
+        "old_020_guard_pass": false,
+        "pass": true,
+        "peptide_guard": {
+          "boundary_heavy_count": 0,
+          "chirality_failures": [],
+          "fixed_max_error_A": 1.7763568394002505e-15,
+          "maximum_heavy_displacement_A": 0.2252202882832968,
+          "new_severe_overlaps": [],
+          "pass": true,
+          "peptide_basin_failures": [],
+          "source_bond_max_error_A": 3.1086244689504383e-15
+        },
+        "protected_group_distance_max_change_A": 3.552713678800501e-15,
+        "source_baseline": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_preparation_v1/execution/7CCO/PHYSICAL.json",
+          "sha256": "115966f115765c9dd90dff6bcc2c702bd48d522fe648030a02b3ddd5eaf673ef"
+        },
+        "source_displacement_bound_A": 0.4,
+        "target_displacement_A": 0.0887399206714831
+      },
+      "final_force_diagnostic": {
+        "active_span_L2_kcal_mol_A": 9.47017411550344,
+        "active_span_RMS_cartesian_kcal_mol_A": 0.3417254734286586,
+        "active_span_max_atom_kcal_mol_A": 6.924040822386528,
+        "full_gradient_L2_kcal_mol_A": 284.56969317120047,
+        "low_active_span_force": false,
+        "normalized_Gram_eigenvalues": [
+          0.5037172140825181,
+          0.7939757795138388,
+          0.8420113593331927,
+          1.0,
+          1.0,
+          1.0,
+          1.01134308039923,
+          1.1579886406668072,
+          1.2060242204861613,
+          1.4849397055182505
+        ],
+        "outside_active_span_L2_kcal_mol_A": 284.41207090025773,
+        "outside_active_span_max_atom_kcal_mol_A": 69.36774605037242,
+        "rank": 10,
+        "stationary_minimum_claimed": false
+      }
+    }
+  ],
+  "actual_cost": {
+    "GFN2_call_seconds": 153.11834254860878,
+    "GFN2_calls_attempted": 18,
+    "MACE_call_seconds": 3.8460106808925048,
+    "MACE_calls_attempted": 9,
+    "cache_hits": 0,
+    "model_load_seconds": 6.385265705990605,
+    "new_composite_evaluations": 9
+  },
+  "scheduler": {
+    "elapsed_seconds": 128,
+    "allocated_cpus": 12,
+    "allocated_gpus": 1,
+    "allocated_cpu_seconds": 1536,
+    "allocated_gpu_seconds": 128
+  },
+  "no_preference_result": true
+}

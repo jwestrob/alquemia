@@ -1,3 +1,13 @@
+# Latest: matched-basis scout complete; remaining six submitted
+
+12556 passes all eight real-source preflights and both7CCO/La searches.
+Control/candidate extra works are−0.149229/−0.655434kcal/mol, with physical
+gates preserved and finite-search stops. See lbt3_basis/SCOUT_REPORT.md.
+12558 runs the remaining six unchanged; watcher1972597, configf5d82b06 in
+lbt3_basis_remaining_v1. No source rebasing, larger bounds or sign-based gate.
+Root owns integration/submission; Harvey completes paired-pool review and a
+separate read-only Mex model feasibility check. Goal unmet, PQQ unchanged.
+
 # Latest: complete range pool; matched common-basis test in preparation
 
 12544/12545/12546 are complete: allfour range continuations and20/20 paired

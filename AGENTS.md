@@ -28,9 +28,11 @@ checks pass, boundary/finite-search limitations remain. No repeats.
 Next finite LBT3_COMMON_BASIS_PLAN.md tests matched7/10-coordinate continuations
 from the same range endpoints with unchanged .40Åsource/.20Åtarget/.20rad bounds.
 Candidate adds mappedAsp3/Glu11torsions+Ile10phi selected from priorforce evidence;
-botharms get the same feasible-direction fallback and finitebudgets. Leibniz
-implements; Harvey/child reviewandpool; root submits. No basisenergy yet, no
-new DFT, biologicalpreference claim, protein-level completion or PQQchange.
+both arms get the same feasible-direction fallback and finite search allowances.
+Scout12556 completes both7CCO/La arms and all8preflights; remaining six12558
+runs unchanged with watcher1972597/configf5d82b06. Read lbt3_basis/SCOUT_REPORT.md.
+Harvey owns paired-pool source/review; root owns submission. No new DFT,
+biological preference claim, protein-level completion or PQQ change.
 
 Root owns submission/integration. Read current receipts before acting; no repeated
 completed chemistry or automatic dimer/full-library campaign. PQQ midpoint and

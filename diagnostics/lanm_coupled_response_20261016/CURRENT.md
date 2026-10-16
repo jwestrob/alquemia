@@ -1,3 +1,17 @@
+# Latest: matched accommodation preserves qualitative direction
+
+LBT pool12720 completes36/36cells (32newALPB/4originreuse,13s/1CPU), all15menus.
+Saved combination12722 also complete: adding Mex12717 response leaves every
+predefined menu positive, favoring conditional Mex–La/LBT–Dy. Added donor/backbone
+source gap is28.262193kcal/mol vs65.568684 fixed origins and38.434859 matched
+continued7-coordinate control. Large residual source sensitivity remains.
+Global/fullunion with Mexpilot gives+2.407527; allglobalmenus now select both
+metals from7CCO-derived geometries. No independent-protein accuracy or affinity.
+Read lbt_matched_pool/ and monomer_saved_comparison/ reports/actualreceipts.
+All completed chemistry reused; no newMACE/GFN/DFT in this rescore/combination.
+Harvey implements finite Mex same7-mode continuation per declared plan; child
+finishesLBTreport, Leibnizreviews. Root owns submissions/integration. Goalunmet.
+
 # Latest: matched static monomer/peptide exchange has consistent direction
 
 LBT fixed-FF-solvent12715 completes all4cells in5s/1CPU, reusing4MACE12500 and

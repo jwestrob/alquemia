@@ -54,6 +54,15 @@ and gives+2.533. This is a useful directional result, but the large magnitude
 sensitivity and different assays/partitions prohibit quantitative affinity or
 source-robust classifier claims. Only four new native solvent calls were needed,
 in5seconds/oneCPU; see [matched comparison](lbt_matched_model/REPORT.md).
+Rescoring the complete existing LBT accommodation pool under that matched model
+retains the expected direction in every predefined source/menu. Added donor and
+backbone freedom reduces the source contrast gap from65.569 to28.262kcal/mol;
+equal extra search in the original coordinates leaves38.435. Including Mex's
+first response step retains every sign and gives+2.408 for the full shared menu.
+This is a concrete accommodation benefit, with substantial residual magnitude
+sensitivity. See [matched LBT pool](lbt_matched_pool/REPORT.md) and
+[combined comparison](monomer_saved_comparison/REPORT.md). Only32 new ALPB calls
+were needed,13seconds/oneCPU; the combination used saved data only.
 No newDFT, production/PQQ change, dimer prerequisite or broad library campaign.
 Earlier results below are historical evidence.
 

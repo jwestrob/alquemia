@@ -50,7 +50,10 @@ Mex–La/LBT–Dy, +2.532554/+68.101238kcal/mol; commonpool selects7CCO for both
 Large magnitude sensitivity remains; no robust profiler. Mex response12717 also
 passes all4cells/physicalguards in32s: ownworks−.252489/−.354867kcal/mol, each
 selects its own proposal, pairedchange−.102379. Same7mode finite continuation
-and matchedFF LBT savedpool rescore are in preparation; no newDFT. Read latest CURRENT.
+is in preparation. MatchedFF LBTpool12720 and savedcombination12722 COMPLETE:
+all15menus retain expected conditional Mex–La/LBT–Dy ordering. Added-basis
+sourcegap65.569→28.262kcal/mol (matchedoldbasis38.435), still too large for
+quantitative robustness. No newDFT. Read latest CURRENT.
 
 Root owns submission/integration. Read current receipts before acting; no repeated
 completed chemistry or automatic dimer/full-library campaign. PQQ midpoint and

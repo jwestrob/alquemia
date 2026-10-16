@@ -29,10 +29,12 @@ Next finite LBT3_COMMON_BASIS_PLAN.md tests matched7/10-coordinate continuations
 from the same range endpoints with unchanged .40Åsource/.20Åtarget/.20rad bounds.
 Candidate adds mappedAsp3/Glu11torsions+Ile10phi selected from priorforce evidence;
 both arms get the same feasible-direction fallback and finite search allowances.
-Scout12556 completes both7CCO/La arms and all8preflights; remaining six12558
-runs unchanged with watcher1972597/configf5d82b06. Read lbt3_basis/SCOUT_REPORT.md.
-Harvey owns paired-pool source/review; root owns submission. No new DFT,
-biological preference claim, protein-level completion or PQQ change.
+Matched12556/12558/12560 complete all8searches/36cells. Source-local spread
+45.805→29.509kcal/mol versus40.452 with matched continued7-coordinate control.
+Read lbt3_basis/REPORT.md. Physical gates pass; still no robust preference.
+Next: separately declared LBT3 one-water geometry, localMexGFN2 field scout
+and native fixed-charge solvent-force interface test. Root submits; disjoint
+agents own adapters. No automatic moretorsions/bounds, DFT or PQQ change.
 
 Root owns submission/integration. Read current receipts before acting; no repeated
 completed chemistry or automatic dimer/full-library campaign. PQQ midpoint and

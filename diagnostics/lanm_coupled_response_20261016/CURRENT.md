@@ -1,3 +1,26 @@
+# Latest: solvent-force capability passed; Mex local field running
+
+12566 passes all26fixed-charge nativeALPB component/force checks in5s/1CPU.
+Read frozen_solvent_force/REPORT.md; noSCC, no fullprotein model or preference.
+Water geometry12565 completes12/16admitted:7CCOall8,7CCNinner4rejected;
+retain failures and original placements. See lbt3_water/PREPARATION_REPORT.md.
+Leibniz prepares separate259-atom paired-energy scout; no waterenergies yet.
+Mex preparation12569 passes all4local states and actual209/1840/2049maps.
+12570 now runs exact4localGFN2gradients on4CPUs, watcher2003708, config in
+mex_local_field_run_v1/SUBMISSION.json. No wholeproteinSCC, DFT or PQQchanges.
+Root owns integration; Harvey audits coherent protein mechanics/solvent ledger.
+
+# Latest: matched common-basis comparison complete
+
+12556/12558/12560 complete all8searches and36pairedcells. Added donor/backbone
+freedom reduces source-local contrast spread45.805→29.509kcal/mol; equal extra
+search in old7coordinates gives40.452. Physical gates pass; no reliable preference
+claim or stationary minima. Read lbt3_basis/REPORT.md and exact SUMMARY.json.
+All completed molecular work is reused. No further torsion/bound expansion.
+Root is staging a finite native fixed-charge solvent-force test; Leibniz owns
+LBT3 one-water geometry preparation, Harvey owns localMexGFN2 field scout.
+These are separately declared research tests, no PQQ/production changes.
+
 # Latest: matched-basis scout complete; remaining six submitted
 
 12556 passes all eight real-source preflights and both7CCO/La searches.

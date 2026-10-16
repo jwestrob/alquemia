@@ -43,6 +43,13 @@ The subsequent16-cell total-force test now passes both external-site and cap-anc
 interfaces, including component and metal-differential checks, in69s on oneH200/
 12CPUs. Next is bounded own-energy response and a common geometry pool. These
 results do not validate affinity, electronic states or source robustness.
+The matched fixed-FF solvent comparison now gives the expected conditional relative
+ordering for **both** LBT3 starting sources: Mex–La plus LBT–Dy is favored, by
++2.533 or +68.101kcal/mol. The common two-source pool chooses7CCO for both metals
+and gives+2.533. This is a useful directional result, but the large magnitude
+sensitivity and different assays/partitions prohibit quantitative affinity or
+source-robust classifier claims. Only four new native solvent calls were needed,
+in5seconds/oneCPU; see [matched comparison](lbt_matched_model/REPORT.md).
 No newDFT, production/PQQ change, dimer prerequisite or broad library campaign.
 Earlier results below are historical evidence.
 

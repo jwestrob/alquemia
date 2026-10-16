@@ -1,3 +1,14 @@
+# Latest: matched static monomer/peptide exchange has consistent direction
+
+LBT fixed-FF-solvent12715 completes all4cells in5s/1CPU, reusing4MACE12500 and
+Mex12685. Both source-specific exchanges favor Mex–La plus LBT–Dy: +2.532554
+and +68.101238kcal/mol. The common2 identity gate passes; both metals select7CCO,
+so commonpool=+2.532554. Large source magnitude sensitivity remains; no affinity
+or source-robust profiler claim. Source-map-onlyV2 preserves zero-call12711.
+Read lbt_matched_model/ and actual lbt_matched_model_v2 receipts. No repeats.
+Harvey finishes finite Mex own-gradient response; root owns review/submission.
+All owned existing jobs terminal. PQQ/defaults unchanged; goal remains unmet.
+
 # Latest: Mex combined forces pass; finite own-energy response in preparation
 
 Total-force12709 PASSED all16cells/four own/four common-or-differential checks

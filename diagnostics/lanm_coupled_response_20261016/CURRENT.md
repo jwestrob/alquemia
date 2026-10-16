@@ -1,3 +1,18 @@
+# Latest: whole-peptide solvent and forces complete
+
+12500 completed all four native MACE forces with exact prior-energy replay.
+12509 completed both 64-mode physical coordinate catalogues. 12510 completed
+all eight standalone solvent gradients. See lbt3_solvent/REPORT.md and RESULT.json.
+La selects7CCO and Dy7CCN with and without solvent; source dependence remains.
+No Mex composite or biological accuracy claim follows from these endpoints.
+
+LBT3_RESPONSE_DESIGN.md was frozen before composite-force rankings. Leibniz owns
+force/profile and finite-displacement geometry staging; Harvey owns the separate
+finite-energy adapter. Root owns submissions. Next is one small two-step actual
+derivative check, then a bounded own-metal response search if it passes. Saved-force profile12512 completed with both source rankings and eight paired
+finite-displacement inputs admitted. No optimizer or finite-displacement energy
+job submitted yet. All12500/12509/12510/12512 are terminal; preserve queued completion notices and do not duplicate chemistry.
+
 # Current checkpoint — 16 October 2026
 
 ## Latest actual execution

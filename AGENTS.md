@@ -14,9 +14,11 @@ energy/population gates. See dy_parameter_qualification/; the La-only production
 profile/registry and old results are unchanged. Never reuse old uncorrectedDy
 native components. This is a scoped implementation check, not spin/affinity proof.
 
-Next declared whole-peptide solvent/force scout is LBT3_SOLVENT_PLAN.md. Native
-MACE force job12500 submitted with actual wake; eight standalone solvent-gradient
-cells and geometry-only coordinate catalogue are being staged by disjoint agents.
+Whole-peptide MACE forces12500, mapped motions12509 and solvent gradients12510
+are complete. Both metal-specific source selections survive solvent, but large
+source dependence remains. See lbt3_solvent/REPORT.md. Frozen
+LBT3_RESPONSE_DESIGN.md defines force-selected motions and a small derivative
+check before optimization; disjoint agents stage those adapters.
 Root owns submission/integration. Read current receipts before acting; no repeated
 completed chemistry or automatic dimer/full-library campaign. PQQ midpoint and
 production remain intact. All numerical work uses current shared Slurm limits.

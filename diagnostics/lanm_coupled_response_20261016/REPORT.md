@@ -74,14 +74,24 @@ Preparation's internal missing-H iteration/force-call count is unavailable;
 it is not described as zero-energy work. Historical Mex endpoint costs are not
 included in incremental work. No new DFT or experimental observation was generated.
 
-## Next decision
+## Solvent and response follow-up
 
-Run the declared whole-peptide solvent/force scout in LBT3_SOLVENT_PLAN.md:
-eight standalone analytic energy/gradient evaluations and four nativeMACE force
-evaluations on the unchanged whole origins. Test whether the basin selection
-survives solvent and obtain a coherent response direction before optimization.
-Prepare covalent-preserving whole-peptide coordinates in parallel. No dimer
-campaign, new library, unconditional relaxation or PQQ change is required.
+The scout is now complete: four MACE analytic forces replay the earlier energies
+exactly; all eight whole-peptide GFN2 energy/gradient endpoints pass admission.
+Both selected conformations survive solvent, but the paired source gap remains
+−72.966739 kcal/mol. Details and actual costs are in lbt3_solvent/REPORT.md.
+
+A graph-defined catalogue covers backbone, sidechain and metal motions in the
+intact peptide. Saved-force job12512 selects metal translation and four intact
+Asp7/Asp3/Glu11 torsions by one common force-based rule across both sources and
+metals. The nominated Asp7 carboxylate direction has opposite La/Dy energy slopes.
+This is a local force diagnostic, not a finite relaxation or affinity result.
+
+Next: execute the frozen two-step directional derivative check in
+LBT3_RESPONSE_DESIGN.md, then a small covalent-preserving own-metal response
+pilot if the numerical check passes. The full peptide remains in the energy;
+backbone directions remain available for a diagnosed extension. No production
+change or dimer/library campaign follows automatically.
 
 The overall LanM profiler goal remains active and unmet. A failed local branch
 will change the model choice rather than be hidden or presented as completion.

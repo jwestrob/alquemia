@@ -1,3 +1,15 @@
+# Latest: first intact-peptide accommodation scout submitted
+
+Job12533 runs7CCO/La under the frozen LBT3_ACCOMMODATION_PLAN.md after the
+actual derivative12521 gate passed. One GPU/12 CPUs; completion watcher1917544.
+Exact inputs/configb9577bae and frozen implementationee1db81b are under
+workspaces/lanm_coupled_response_20261016/lbt3_accommodation_scout_v1/.
+Three independent static reviews passed; no optimization result is implied yet.
+Root owns execution and review. Leibniz stages unchanged other-three adapter;
+Harvey stages common-pool cross-scoring. Scout success means execution/physical
+admission, irrespective of energy improvement or preference sign. No duplicate
+submissions, changed physical gates or PQQ changes. Goal remains active.
+
 # Latest: numerical force gate passed; accommodation adapter in preparation
 
 FD12519 completed8/8 MACE and12520 completed16/16 GFN2 energies. Comparison12521

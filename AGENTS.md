@@ -14,11 +14,13 @@ energy/population gates. See dy_parameter_qualification/; the La-only production
 profile/registry and old results are unchanged. Never reuse old uncorrectedDy
 native components. This is a scoped implementation check, not spin/affinity proof.
 
-Whole-peptide MACE forces12500, mapped motions12509 and solvent gradients12510
-are complete. Both metal-specific source selections survive solvent, but large
-source dependence remains. See lbt3_solvent/REPORT.md. Frozen
-LBT3_RESPONSE_DESIGN.md defines force-selected motions and a small derivative
-check before optimization; disjoint agents stage those adapters.
+Whole-peptide forces12500, mapped motions12509, solvent gradients12510 and
+actual two-step derivative check12519–12521 are complete/passed. See
+lbt3_solvent/ and lbt3_derivative/. First bounded whole-composite response12533
+now submitted7CCO/La ononeGPU/12CPUs, completionwatcher1917544. Read CURRENT and
+actual receipts. Frozenplan LBT3_ACCOMMODATION_PLAN.md retains both sources/metals
+and source-relative physical guards; unchanged otherthree/pool adapters staged
+by disjointagents. No optimization or proteinpreference result impliedyet.
 Root owns submission/integration. Read current receipts before acting; no repeated
 completed chemistry or automatic dimer/full-library campaign. PQQ midpoint and
 production remain intact. All numerical work uses current shared Slurm limits.

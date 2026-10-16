@@ -1,17 +1,18 @@
-# Latest: finite water panel complete; Mex replay diagnosis pending
+# Latest: water panel complete; narrow Mex replay repair underway
 
-Water scout 12664 and remaining 12670 complete all 12 geometrically admitted
-cells; four 7CCN inner-water slots remain rejected. Both 7CCO orientations give
-about -2.5 kcal/mol for the Dy-minus-La inward-water response. This is a
-conditional same-composition mechanism, not binding affinity or a solution to
-the source gap. The declared panel is closed; no automatic placement expansion.
-Leibniz owns the concise final water report and a separate Mex force-check plan.
+Water12565/12664/12670 completes12/16 admitted cells; four7CCN inner placements
+remain rejected. Both7CCO orientations give approximately-2.5kcal/mol Dy-minus-La
+inward-water response. Read lbt3_water/REPORT.md. This is a conditional modeled
+response, not affinity or robust preference. The finite water panel is closed.
 
-Mex static assembly 12673 stopped before molecular calls at saved mapped-force
-replay. Source remains 9e458e4f, workspace mex_static_v1; failed result preserved.
-Harvey prepares a saved-only diagnostic to identify the actual discrepancy.
-No combined model/relaxation result yet. Root owns submission and integration.
-All molecular jobs in this checkpoint are terminal; no duplicate chemistry.
+Mex static12673 failed before molecular calls at exact derived-force equality.
+Saved-only12680 now proves all raw energies/charges/gradients exactly reproduced;
+only cap-scatter roundoff differs, at most8.88e-16kcal/mol/A. Read
+mex_static/REPLAY_DIAGNOSIS.md. Harvey owns narrow versioned replay comparison
+repair; original failure/source and all raw/scientific gates remain unchanged.
+Root submits. Leibniz stages a saved archived-PBE0 response comparison with no
+new DFT. MEX_FORCE_CHECK_PLAN.md is frozen; actual static assembly must pass first.
+All owned jobs terminal; no duplicate chemistry. Active goal remains unmet.
 
 # Latest: Mex local field complete; whole-system assembly in preparation
 

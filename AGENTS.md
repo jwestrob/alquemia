@@ -32,9 +32,15 @@ both arms get the same feasible-direction fallback and finite search allowances.
 Matched12556/12558/12560 complete all8searches/36cells. Source-local spread
 45.805→29.509kcal/mol versus40.452 with matched continued7-coordinate control.
 Read lbt3_basis/REPORT.md. Physical gates pass; still no robust preference.
-Next: separately declared LBT3 one-water geometry, localMexGFN2 field scout
-and native fixed-charge solvent-force interface test. Root submits; disjoint
-agents own adapters. No automatic moretorsions/bounds, DFT or PQQ change.
+Native fixed-charge solvent-force12566 passes all26checks. Mex local field
+12569/12570 completes4/4 localGFN2 cells with actual gradients. The fixed-water
+panel12565/12664/12670 completes12/16cells;7CCO inward-water response favorsDy
+relativeLa byabout2.5kcal/mol,7CCNinnerplacements remain unavailable. Read
+lbt3_water/REPORT.md. No affinity/source-robustness claim; finite panel closed.
+Mex whole-system static12673 failed before calls on exact derived-force replay;
+saved12680 proves only cap-scatter roundoff<=8.88e-16, all raw values exact.
+A narrow versioned replay repair is underway. Read CURRENT; no duplicate calls.
+Separate total-force check and savedPBE0 comparison precede mechanical response.
 
 Root owns submission/integration. Read current receipts before acting; no repeated
 completed chemistry or automatic dimer/full-library campaign. PQQ midpoint and

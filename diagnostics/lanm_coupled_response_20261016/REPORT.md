@@ -27,11 +27,18 @@ See [solvent forces](frozen_solvent_force/REPORT.md) and
 [Mex local field](mex_local_field/REPORT.md). Their scientific role is to enable
 coupled protein response, not to supply a ready preference correction.
 
-Next tests: the separately declared one-water LBT3 panel and a coherent static
-Mex local-electronic/protein-mechanical/solvent assembly, followed by total-force
-checks before any relaxation. Four geometrically rejected inner-water slots
-remain excluded. No production/PQQ changes, dimer prerequisite or broad library
-campaign. Detailed earlier results below remain historical evidence.
+The finite explicit-water panel now supplies a concrete local response: moving
+one modeled water inward favors Dy relative to La by about2.5kcal/mol in both
+7CCO orientations. All four7CCN inner placements remain geometry-rejected, so
+this is a conditional mechanism, not source-robust preference. See
+[the completed water report](lbt3_water/REPORT.md). The fixed panel is closed.
+
+Next is the coherent Mex local-electronic/protein-mechanical/solvent assembly,
+followed by total-force checks and a saved comparison against matching archived
+PBE0 gradients before mechanical response. Its first attempt stopped before
+molecular calls on derived-gradient arithmetic roundoff; exact raw outputs are
+preserved and a narrow comparison repair is underway. No production/PQQ change,
+dimer prerequisite or broad library campaign. Earlier results below are history.
 
 
 16 October 2026. Jacob recommended starting with monomers. We recovered Mex-LanM

@@ -1,0 +1,632 @@
+{
+  "status": "finite_panel_closed_with_geometry_exclusions",
+  "scope": "Saved result extraction and report; no new energy arithmetic or molecular calls",
+  "source_results": {
+    "preparation": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_preparation_v1/execution/RESULT.json",
+      "sha256": "4379954911dea5cf6a36e72c0c80d744f4a7bc9137895e0a7c61a593e2b04cd7"
+    },
+    "scout": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_scout_v2/execution/RESULT.json",
+      "sha256": "26aa78c269cd954b63f48ad034771058d72ccd1aae35fd60376a2715466ee18f"
+    },
+    "remaining": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_remaining_v1/execution/RESULT.json",
+      "sha256": "aa4dc92c0a62d7579f84c4c2f0f6e559f3ab275f8c13417f1b1f07eaea6fa63a"
+    }
+  },
+  "plans": {
+    "geometry": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_response_20261016/LBT3_WATER_PLAN.md",
+      "sha256": "f44bfdcd0bcee76dcf4336c59efe29a40b3314f2c8d35d230534b691b67eb47d"
+    },
+    "score": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_response_20261016/LBT3_WATER_SCORE_PLAN.md",
+      "sha256": "1eda4edc5bd5da4103b88e11ee75aff0a35dfeb00bf91f1362996743cb14bd10"
+    }
+  },
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_remaining_v1/LBT3_WATER_SCORE.py",
+    "sha256": "af26bb992e4156f3a1ac31e53b9a242fba115478c2906cf4de8fd114f0853945"
+  },
+  "model": {
+    "checkpoint": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_omol_20260917/software_v1/MACE-omol-0-extra-large-1024.model",
+      "sha256": "9b64b4fd5153ca578c694abc57806d8111050de6ff652e695c9b525bc4d36469"
+    },
+    "dtype": "float64",
+    "embedding_specs": {
+      "total_charge": {
+        "emb_dim": 1024,
+        "in_dim": 1,
+        "num_classes": 201,
+        "offset": 100,
+        "per": "graph",
+        "type": "categorical"
+      },
+      "total_spin": {
+        "emb_dim": 1024,
+        "in_dim": 1,
+        "num_classes": 101,
+        "offset": 0,
+        "per": "graph",
+        "type": "categorical"
+      }
+    },
+    "energy_component": "MACE_OMOL_total_vacuum_energy",
+    "execution_adapter": null,
+    "extra_dispersion": false,
+    "family": "MACE_OMOL",
+    "head": "omol",
+    "periodic": false,
+    "r_max_A": 6.0,
+    "solvent": null,
+    "spin_input_convention": "multiplicity"
+  },
+  "chemical_inventory": {
+    "atom_count": 259,
+    "peptide_and_target_atoms_fixed": 256,
+    "explicit_water_count": 1,
+    "total_charge": -2,
+    "physical_multiplicity": {
+      "La": 1,
+      "Dy": 6
+    },
+    "GFN2_effective_multiplicity": 1,
+    "GFN2_uhf": 0,
+    "water_oxygen_radii_A": {
+      "inner": 2.6,
+      "outer": 4.5
+    },
+    "orientations_degrees": [
+      0,
+      90
+    ]
+  },
+  "declared_cells": 16,
+  "accepted_cells": 12,
+  "geometry_rejected_cells": 4,
+  "all16_available": false,
+  "energy_definition": "MACE_OMOL_vacuum + GFN2_ALPB(Water) - GFN2_vacuum",
+  "transfer_definition": "H = (E_Dy_inner - E_Dy_outer) - (E_La_inner - E_La_outer)",
+  "energy_units": "kcal/mol for saved transfer and menu differences; raw component row units explicit in keys",
+  "interpretive_resolution_kcal_mol": 1.0,
+  "transfers": [
+    {
+      "H_Dy_minus_La_transfer": {
+        "GFN2_vacuum_kcal_mol": -2.516708098297487,
+        "GFN2_water_kcal_mol": -2.9511207071345993,
+        "MACE_kcal_mol": -2.108176119588151,
+        "composite_kcal_mol": -2.5425887284252635,
+        "solvent_kcal_mol": -0.4344126088371123
+      },
+      "interpretation_at_1_kcal_mol": "negative",
+      "missing_cells": [],
+      "own_metal_inner_minus_outer": {
+        "Dy": {
+          "GFN2_vacuum_kcal_mol": -8.39414651094603,
+          "GFN2_water_kcal_mol": -6.531478637703383,
+          "MACE_kcal_mol": 0.6179599694028494,
+          "composite_kcal_mol": 2.4806278426454957,
+          "solvent_kcal_mol": 1.8626678732426463
+        },
+        "La": {
+          "GFN2_vacuum_kcal_mol": -5.877438412648543,
+          "GFN2_water_kcal_mol": -3.580357930568784,
+          "MACE_kcal_mol": 2.7261360889910007,
+          "composite_kcal_mol": 5.023216571070759,
+          "solvent_kcal_mol": 2.2970804820797586
+        }
+      },
+      "plane_angle_degree": 0,
+      "source_id": "7CCO",
+      "status": "available"
+    },
+    {
+      "H_Dy_minus_La_transfer": {
+        "GFN2_vacuum_kcal_mol": -2.616212805890095,
+        "GFN2_water_kcal_mol": -2.9920020764977764,
+        "MACE_kcal_mol": -2.099925037713753,
+        "composite_kcal_mol": -2.475714308321434,
+        "solvent_kcal_mol": -0.3757892706076813
+      },
+      "interpretation_at_1_kcal_mol": "negative",
+      "missing_cells": [],
+      "own_metal_inner_minus_outer": {
+        "Dy": {
+          "GFN2_vacuum_kcal_mol": -15.953523409910577,
+          "GFN2_water_kcal_mol": -12.50844610339243,
+          "MACE_kcal_mol": -10.072770647628646,
+          "composite_kcal_mol": -6.627693341110499,
+          "solvent_kcal_mol": 3.4450773065181473
+        },
+        "La": {
+          "GFN2_vacuum_kcal_mol": -13.337310604020482,
+          "GFN2_water_kcal_mol": -9.516444026894654,
+          "MACE_kcal_mol": -7.972845609914893,
+          "composite_kcal_mol": -4.151979032789065,
+          "solvent_kcal_mol": 3.8208665771258286
+        }
+      },
+      "plane_angle_degree": 90,
+      "source_id": "7CCO",
+      "status": "available"
+    },
+    {
+      "missing_cells": [
+        "7CCN_inner_plane0_La",
+        "7CCN_inner_plane0_Dy"
+      ],
+      "own_metal_inner_minus_outer": {
+        "Dy": null,
+        "La": null
+      },
+      "plane_angle_degree": 0,
+      "source_id": "7CCN",
+      "status": "unavailable"
+    },
+    {
+      "missing_cells": [
+        "7CCN_inner_plane90_La",
+        "7CCN_inner_plane90_Dy"
+      ],
+      "own_metal_inner_minus_outer": {
+        "Dy": null,
+        "La": null
+      },
+      "plane_angle_degree": 90,
+      "source_id": "7CCN",
+      "status": "unavailable"
+    }
+  ],
+  "source_local_common_four_pose_menus": {
+    "7CCN": {
+      "status": "unavailable",
+      "candidate_order": [
+        "inner_plane0",
+        "inner_plane90",
+        "outer_plane0",
+        "outer_plane90"
+      ],
+      "missing_cells": [
+        "7CCN_inner_plane0_La",
+        "7CCN_inner_plane0_Dy",
+        "7CCN_inner_plane90_La",
+        "7CCN_inner_plane90_Dy"
+      ]
+    },
+    "7CCO": {
+      "status": "available",
+      "candidate_order": [
+        "inner_plane0",
+        "inner_plane90",
+        "outer_plane0",
+        "outer_plane90"
+      ],
+      "missing_cells": [],
+      "selected": {
+        "Dy": "inner_plane90",
+        "La": "inner_plane90"
+      },
+      "exact_ties": {
+        "Dy": [
+          "inner_plane90"
+        ],
+        "La": [
+          "inner_plane90"
+        ]
+      }
+    }
+  },
+  "all_four_transfer_contrasts_available": false,
+  "rows": [
+    {
+      "task_id": "7CCO_inner_plane0_La",
+      "source_id": "7CCO",
+      "pose_id": "inner_plane0",
+      "metal": "La",
+      "atom_count": 259,
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_preparation_v1/execution/7CCO/inner_plane0/La.xyz",
+        "sha256": "e122a6b0226d0d49841abaf25155743cae140c2275174dc404ce84b834c37c4e"
+      },
+      "status": "complete",
+      "cell": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_scout_v2/execution/7CCO_inner_plane0_La/CELL.json",
+        "sha256": "169b590f9999eb41b96e1b7025b933e5bc0aab8e454b97f7889ddbe1caf871d8"
+      },
+      "components": {
+        "GFN2_vacuum_hartree": -434.652048892327,
+        "GFN2_water_hartree": -435.134241522142,
+        "MACE_eV": -186315.83476564725
+      }
+    },
+    {
+      "task_id": "7CCO_inner_plane0_Dy",
+      "source_id": "7CCO",
+      "pose_id": "inner_plane0",
+      "metal": "Dy",
+      "atom_count": 259,
+      "charge": -2,
+      "multiplicity": 6,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_preparation_v1/execution/7CCO/inner_plane0/Dy.xyz",
+        "sha256": "f1ac7f55d18ac0d2108b66f5e53bce683d092f743db805674ce0e3e453e9ab04"
+      },
+      "status": "complete",
+      "cell": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_scout_v2/execution/7CCO_inner_plane0_Dy/CELL.json",
+        "sha256": "742fb0d2edcc100163f2ce01d9f48b02a75d7f0bc70fea7586dab83743ceaaf2"
+      },
+      "components": {
+        "GFN2_vacuum_hartree": -434.525756762099,
+        "GFN2_water_hartree": -435.01083055314,
+        "MACE_eV": -209539.11713960505
+      }
+    },
+    {
+      "task_id": "7CCO_inner_plane90_La",
+      "source_id": "7CCO",
+      "pose_id": "inner_plane90",
+      "metal": "La",
+      "atom_count": 259,
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_preparation_v1/execution/7CCO/inner_plane90/La.xyz",
+        "sha256": "3e5228888660f192a41765eeceba804cb511ac89b704b48780cddaeab182e02f"
+      },
+      "status": "complete",
+      "cell": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_remaining_v1/execution/7CCO_inner_plane90_La/CELL.json",
+        "sha256": "5588c27749b4d695329e729a1e27116dbac67d97bdfe53a796306da6c8d379f8"
+      },
+      "components": {
+        "GFN2_vacuum_hartree": -434.66722199832,
+        "GFN2_water_hartree": -435.146447913995,
+        "MACE_eV": -186316.51623377422
+      }
+    },
+    {
+      "task_id": "7CCO_inner_plane90_Dy",
+      "source_id": "7CCO",
+      "pose_id": "inner_plane90",
+      "metal": "Dy",
+      "atom_count": 259,
+      "charge": -2,
+      "multiplicity": 6,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_preparation_v1/execution/7CCO/inner_plane90/Dy.xyz",
+        "sha256": "ff5dffbd396fa5e674147c4bf85db7c5a1786154813052dca4f7659574a98098"
+      },
+      "status": "complete",
+      "cell": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_remaining_v1/execution/7CCO_inner_plane90_Dy/CELL.json",
+        "sha256": "9143ac307de57dc6e2626566977abee2e6f1ffa9c699291c6ff95d636abc7818"
+      },
+      "components": {
+        "GFN2_vacuum_hartree": -434.541095619595,
+        "GFN2_water_hartree": -435.023098256068,
+        "MACE_eV": -209539.79850950514
+      }
+    },
+    {
+      "task_id": "7CCO_outer_plane0_La",
+      "source_id": "7CCO",
+      "pose_id": "outer_plane0",
+      "metal": "La",
+      "atom_count": 259,
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_preparation_v1/execution/7CCO/outer_plane0/La.xyz",
+        "sha256": "a09cc52a3b4af1c57c4e7bdef24e35566e1eb65a720db74b9b73b6bc3ca6b71f"
+      },
+      "status": "complete",
+      "cell": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_remaining_v1/execution/7CCO_outer_plane0_La/CELL.json",
+        "sha256": "e034aa8bddb841dea3aa5ccaf78dab2802e0e7a98cb993918d136fc8ea0dcfb0"
+      },
+      "components": {
+        "GFN2_vacuum_hartree": -434.642682598022,
+        "GFN2_water_hartree": -435.128535858596,
+        "MACE_eV": -186315.9529820968
+      }
+    },
+    {
+      "task_id": "7CCO_outer_plane0_Dy",
+      "source_id": "7CCO",
+      "pose_id": "outer_plane0",
+      "metal": "Dy",
+      "atom_count": 259,
+      "charge": -2,
+      "multiplicity": 6,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_preparation_v1/execution/7CCO/outer_plane0/Dy.xyz",
+        "sha256": "7da2c9841a37d1d79260c7c2c14273e0d6f22513b2cf42af44add19a4f83a82b"
+      },
+      "status": "complete",
+      "cell": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_remaining_v1/execution/7CCO_outer_plane0_Dy/CELL.json",
+        "sha256": "3014a9e34619933ff8c3724127933ee4da52c10491c24f50a636d75879d24830"
+      },
+      "components": {
+        "GFN2_vacuum_hartree": -434.51237983815,
+        "GFN2_water_hartree": -435.000421979392,
+        "MACE_eV": -209539.14393688558
+      }
+    },
+    {
+      "task_id": "7CCO_outer_plane90_La",
+      "source_id": "7CCO",
+      "pose_id": "outer_plane90",
+      "metal": "La",
+      "atom_count": 259,
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_preparation_v1/execution/7CCO/outer_plane90/La.xyz",
+        "sha256": "187b590fc8166c93da7e5efc5fd0e16545f4f9963851f1b8f0697f2b3dc13f9b"
+      },
+      "status": "complete",
+      "cell": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_remaining_v1/execution/7CCO_outer_plane90_La/CELL.json",
+        "sha256": "27f052cb28308350f7c8a095b8c229222dee9edadf6f256b6f29f472d7bde939"
+      },
+      "components": {
+        "GFN2_vacuum_hartree": -434.645967640965,
+        "GFN2_water_hartree": -435.131282495111,
+        "MACE_eV": -186316.1704984661
+      }
+    },
+    {
+      "task_id": "7CCO_outer_plane90_Dy",
+      "source_id": "7CCO",
+      "pose_id": "outer_plane90",
+      "metal": "Dy",
+      "atom_count": 259,
+      "charge": -2,
+      "multiplicity": 6,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_preparation_v1/execution/7CCO/outer_plane90/Dy.xyz",
+        "sha256": "58df055e090c4990e7dfa8e7dc1aa8afc15c3fa5339a1e0ad280e7fad28004a2"
+      },
+      "status": "complete",
+      "cell": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_remaining_v1/execution/7CCO_outer_plane90_Dy/CELL.json",
+        "sha256": "f17840f5ed606cb83ce6e60ed673cdf37a4d2d22e83c0029615f102b83f12dcf"
+      },
+      "components": {
+        "GFN2_vacuum_hartree": -434.515672061751,
+        "GFN2_water_hartree": -435.003164778373,
+        "MACE_eV": -209539.36171282877
+      }
+    },
+    {
+      "task_id": "7CCN_inner_plane0_La",
+      "source_id": "7CCN",
+      "pose_id": "inner_plane0",
+      "metal": "La",
+      "atom_count": 259,
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_preparation_v1/execution/7CCN/inner_plane0/La.xyz",
+        "sha256": "8817b00abea1617c639d8514db215d0dc30c2f77790884676258896ac3f87c5a"
+      },
+      "status": "geometry_rejected",
+      "reason": "Frozen preparation rejected this slot; no replacement"
+    },
+    {
+      "task_id": "7CCN_inner_plane0_Dy",
+      "source_id": "7CCN",
+      "pose_id": "inner_plane0",
+      "metal": "Dy",
+      "atom_count": 259,
+      "charge": -2,
+      "multiplicity": 6,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_preparation_v1/execution/7CCN/inner_plane0/Dy.xyz",
+        "sha256": "20ce8c6ad7c5b60373cc3a82bfe3c2c8f0f11e21875e52a16861e42d2453f340"
+      },
+      "status": "geometry_rejected",
+      "reason": "Frozen preparation rejected this slot; no replacement"
+    },
+    {
+      "task_id": "7CCN_inner_plane90_La",
+      "source_id": "7CCN",
+      "pose_id": "inner_plane90",
+      "metal": "La",
+      "atom_count": 259,
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_preparation_v1/execution/7CCN/inner_plane90/La.xyz",
+        "sha256": "c6472b84dc09558dd2cadb53ad4599922b5af65ffec48b619555041914ff05d4"
+      },
+      "status": "geometry_rejected",
+      "reason": "Frozen preparation rejected this slot; no replacement"
+    },
+    {
+      "task_id": "7CCN_inner_plane90_Dy",
+      "source_id": "7CCN",
+      "pose_id": "inner_plane90",
+      "metal": "Dy",
+      "atom_count": 259,
+      "charge": -2,
+      "multiplicity": 6,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_preparation_v1/execution/7CCN/inner_plane90/Dy.xyz",
+        "sha256": "bce0be48ca0c898351fcd0d333492ff621b07c151a68e30f02423a2815b2badf"
+      },
+      "status": "geometry_rejected",
+      "reason": "Frozen preparation rejected this slot; no replacement"
+    },
+    {
+      "task_id": "7CCN_outer_plane0_La",
+      "source_id": "7CCN",
+      "pose_id": "outer_plane0",
+      "metal": "La",
+      "atom_count": 259,
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_preparation_v1/execution/7CCN/outer_plane0/La.xyz",
+        "sha256": "d4b67671ba33eb7de7c20e301a3f8da7b67efa067f36947924481d49f8129c1a"
+      },
+      "status": "complete",
+      "cell": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_remaining_v1/execution/7CCN_outer_plane0_La/CELL.json",
+        "sha256": "bce1cae66122ecf1cc8947946bdbbd4adb5c1c084536ff780cad87791362493f"
+      },
+      "components": {
+        "GFN2_vacuum_hartree": -434.688269714735,
+        "GFN2_water_hartree": -435.136479105261,
+        "MACE_eV": -186313.11829130186
+      }
+    },
+    {
+      "task_id": "7CCN_outer_plane0_Dy",
+      "source_id": "7CCN",
+      "pose_id": "outer_plane0",
+      "metal": "Dy",
+      "atom_count": 259,
+      "charge": -2,
+      "multiplicity": 6,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_preparation_v1/execution/7CCN/outer_plane0/Dy.xyz",
+        "sha256": "e9e520b68d4b3780a1709cc8adf734a92935837860ee1061985dd9fc00caa1f4"
+      },
+      "status": "complete",
+      "cell": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_remaining_v1/execution/7CCN_outer_plane0_Dy/CELL.json",
+        "sha256": "7d9ec4b7ed3992d9d00c1ec615a9ca6441d11f5c35cb4c176d461bb9b3f3e260"
+      },
+      "components": {
+        "GFN2_vacuum_hartree": -434.570825161236,
+        "GFN2_water_hartree": -435.022941178707,
+        "MACE_eV": -209539.44374912835
+      }
+    },
+    {
+      "task_id": "7CCN_outer_plane90_La",
+      "source_id": "7CCN",
+      "pose_id": "outer_plane90",
+      "metal": "La",
+      "atom_count": 259,
+      "charge": -2,
+      "multiplicity": 1,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_preparation_v1/execution/7CCN/outer_plane90/La.xyz",
+        "sha256": "17c7ca930092539bf9e94de1cecb9930ef48fd14baad8ca4f6aaa86975689e26"
+      },
+      "status": "complete",
+      "cell": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_remaining_v1/execution/7CCN_outer_plane90_La/CELL.json",
+        "sha256": "e6560444296eeed4e4ded4b9145c8d0ea2c7d4e62ea9513cec38d580a7a513dd"
+      },
+      "components": {
+        "GFN2_vacuum_hartree": -434.6898962372,
+        "GFN2_water_hartree": -435.139071451763,
+        "MACE_eV": -186313.12419190144
+      }
+    },
+    {
+      "task_id": "7CCN_outer_plane90_Dy",
+      "source_id": "7CCN",
+      "pose_id": "outer_plane90",
+      "metal": "Dy",
+      "atom_count": 259,
+      "charge": -2,
+      "multiplicity": 6,
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_preparation_v1/execution/7CCN/outer_plane90/Dy.xyz",
+        "sha256": "b0dbb6d98a6ba0b21a1bf5b5574da180529af36fc3dbba28a27bac51268cc535"
+      },
+      "status": "complete",
+      "cell": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt3_water_remaining_v1/execution/7CCN_outer_plane90_Dy/CELL.json",
+        "sha256": "3f1dcbc9e6aa28ad2d6f2cd33df9cebf03dd87e8b6ce0d0c208151b18814d6cd"
+      },
+      "components": {
+        "GFN2_vacuum_hartree": -434.572469345473,
+        "GFN2_water_hartree": -435.025549932008,
+        "MACE_eV": -209539.44794283784
+      }
+    }
+  ],
+  "panel_component_call_totals": {
+    "GFN2_calls_attempted": 24,
+    "MACE_calls_attempted": 12
+  },
+  "stage_costs": {
+    "scout": {
+      "job_id": "12664",
+      "application_wall_seconds": 33.157562722917646,
+      "actual_cost": {
+        "GFN2_calls_attempted": 4,
+        "GFN2_measured_CPU_seconds": 33.906,
+        "GFN2_solver_wall_seconds": 34.000526428222656,
+        "MACE_call_seconds": 1.0020293841371313,
+        "MACE_calls_attempted": 2,
+        "model_load_seconds": 6.270555700990371
+      },
+      "native_runtime": {
+        "actual_model_forwards": 2,
+        "device": "NVIDIA H200",
+        "peak_cuda_allocated_bytes": 4873033728,
+        "versions": {
+          "ase": "3.29.0",
+          "mace-torch": "0.3.16",
+          "torch": "2.8.0"
+        }
+      }
+    },
+    "remaining": {
+      "job_id": "12670",
+      "application_wall_seconds": 117.90700265904889,
+      "actual_cost": {
+        "GFN2_calls_attempted": 20,
+        "GFN2_measured_CPU_seconds": 160.81766,
+        "GFN2_solver_wall_seconds": 161.23837041854858,
+        "MACE_call_seconds": 1.7317028793040663,
+        "MACE_calls_attempted": 10,
+        "model_load_seconds": 6.1512998099206015
+      },
+      "native_runtime": {
+        "actual_model_forwards": 10,
+        "device": "NVIDIA H200",
+        "peak_cuda_allocated_bytes": 5176466944,
+        "versions": {
+          "ase": "3.29.0",
+          "mace-torch": "0.3.16",
+          "torch": "2.8.0"
+        }
+      }
+    }
+  },
+  "reused_scout_task_ids": [
+    "7CCO_inner_plane0_La",
+    "7CCO_inner_plane0_Dy"
+  ],
+  "accounting": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_response_20261016/lbt3_water/ACCOUNTING.txt",
+    "sha256": "2e027002d2051b706f1158fd0f7266242869403946fab2729e3398bf58b68728"
+  },
+  "gradient_calls": 0,
+  "optimization_steps": 0,
+  "old256_energy_reuse": false,
+  "interpretation": {
+    "conditional_7CCO_inward_water_response": "negative H above the predeclared resolution in both orientations; Dy-directed relative response",
+    "source_7CCN_transfer": "unavailable because all four inner-water metal/orientation slots failed the original geometry gate",
+    "same_selected_pose_7CCO": "inner_plane90 for both metals",
+    "affinity": null,
+    "populations": null,
+    "source_gap_resolved": false,
+    "dry_wet_energy_minimization": false,
+    "outer_water_is_bulk_reference": false,
+    "new_water_placement_or_optimization_authorized_by_result": false
+  }
+}

@@ -20,9 +20,12 @@ Root owns all submissions; the goal remains active and unmet.
 - Saved force audit13032 passes4/4 on the original qualified host. The largest
   changed force is wholly-MM Phe1CA and bonded-led. CPU-host exact replay failure
   13031 remains preserved; no physical-accuracy claim follows from either result.
+- Recovery preflight13047 passes;13048 runs one missing ALPB plus original-budget
+  continuation. Whole256 preflight13049 passes; before-La DFT13051 runs12MPI,
+ 1030 explicit electrons. Actual pins/watchers: ACTIVE_CHECKPOINT.json.
 - Independent DFT12977/12978 continue12MPI each with completion/health wakes.
-  Whole-LBT stiffness-reference and Mex8-cell inventories are reviewed proposals;
-  their actual preflight/derivative/cost gates precede new reference execution.
+  Mex8-cell response and remaining whole-LBT reference cells stay gated by actual
+  derivative/admission/cost review. No duplicate submissions.
 
 All scientific computation uses Slurm. No duplicate chemistry, global solver
 fallback, optimizer extension, clamped-core restart or PQQ change is authorized

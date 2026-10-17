@@ -1,0 +1,47 @@
+{
+  "utc": "2026-10-17T05:36:37.410249+00:00",
+  "status": "actual_preflight_pass_scout_selected",
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_v1/preflight/RESULT.json",
+    "sha256": "151d8d5f5fc0d4d4729933b64d98e4962e21518504475facb1d61c37d67c554e"
+  },
+  "preflight_job": 13049,
+  "preflight_allocated_CPU_seconds": 36,
+  "prepared_states": 4,
+  "explicit_electrons": 1030,
+  "alpha_beta": [
+    515,
+    515
+  ],
+  "selected_new_reference_calls": [
+    "before_La"
+  ],
+  "execution_spec": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_reference/EXECUTION_SPEC_V1.md",
+    "sha256": "8f5002f64a1aafc78470c044289129815a72663e89fe9b884841f38c702227ae"
+  },
+  "question": "Does independent whole-peptide DFT support the large terminal restoring force introduced by the hybrid MM scaffold?",
+  "cost_review": {
+    "existing_Mex_derivative_jobs": [
+      "12977",
+      "12978"
+    ],
+    "observed_scope": "Both on12MPI, approximately two hours to11printed SCFiterations with decreasing electronic residuals. No completed timing or derivative outcome yet.",
+    "decision": "One separately measured whole-peptide scout only. No atom-count runtime extrapolation and no further cells before actual cost/admission review."
+  },
+  "interpretation": {
+    "primary_observables": [
+      "Full Phe1CA force vector",
+      "frozen initial hybrid-force projection at Phe1CA",
+      "full before-after displacement-chord projection",
+      "all256atom reference-minus-model force residuals"
+    ],
+    "material_reporting_resolution_kcal_mol_A": 1.0,
+    "resolution_is_not_acceptance_tolerance_or_statistical_uncertainty": true,
+    "no_force_accuracy_pass_claim": true,
+    "force_admission": "Original native analytic state/energy/coordinate/gradient checks; no new derivative qualification in this scout.",
+    "same_fixed_FF_ALPB_added_once": true,
+    "reference_not_an_oracle": true
+  },
+  "continuation_gate": "Review actual native admission, warnings, comparison and measured cost before any remaining three DFTcells. No automatic retry or optimizer."
+}

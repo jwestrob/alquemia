@@ -41,6 +41,19 @@ MaxCore3100. Independent review agrees. Dy physical multiplicity6 and effective
 molecular multiplicity1 remain distinct; atomic-guess multiplicities do not
 override molecular state. No terminal native admission is implied.
 
+## After-Dy terminal result
+
+Job 13292 completed at 19:06 UTC and passes unchanged singleton admission with
+the full 256-atom gradient. It used 24449 seconds on 12 CPUs, or 293388 allocated
+CPU-seconds. Result `3e097a58…` and its native evidence, force report, independent
+review and actual delivery ACK are archived in `after_Dy_result_v1/`.
+SCF converged after 19 cycles; only the orbital-gradient residual passes its
+printed threshold. All state and force-accuracy caveats remain.
+
+Three of the four reference cells are admitted. After-La13290 remains in its
+final gradient calculation; its terminal result still gates full collection.
+No rerun, partial work comparison or new molecular calculation follows.
+
 ## Before-Dy terminal result
 
 Job13291 completed at18:43UTC with native normal termination and a full256-atom

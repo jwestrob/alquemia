@@ -2,6 +2,21 @@
 
 17 October2026UTC. The activated PLAN remains active and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
+## After-Dy complete: three of four reference cells admitted
+
+Job 13292 terminated normally at 19:06 UTC and passes the unchanged singleton
+admission with its full 256-atom gradient. Actual cost: 24449 seconds on 12 CPUs,
+293388 allocated CPU-seconds. Result `3e097a58…`, receipt, force report, root and
+independent reviews, and actual delivery ACK are preserved under
+`lbt_whole_reference_continuation/activation_v1/after_Dy_result_v1/`.
+SCF converged after 19 cycles; only the orbital-gradient residual meets its
+printed threshold. Physical-state and numerical-force qualifications remain false.
+
+After-La13290 remains in its final XC gradient calculation. Await its terminal
+result, then run the original full four-cell collector on one CPU. The complete
+comparison is still unavailable; no partial deformation-work result is reported.
+Mex13281 continues SCF (iteration 30 at review). No new molecular calls or retries.
+
 ## Before-Dy reference complete; two LBT continuations remain
 
 Job13291 terminated normally at18:43UTC and passes unchanged singleton admission:

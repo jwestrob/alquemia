@@ -1,0 +1,69 @@
+{
+  "allocation": {
+    "host": "node-64-768g-13",
+    "slurm_job_id": "13292",
+    "slurm_job_partition": "standard"
+  },
+  "artifacts": {
+    "engrad": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/tasks/after_Dy/execution/after_Dy/endpoint.engrad",
+      "sha256": "ff4fa96198dcadd10ee8c0a2835407c9b10f001ecf1b036da74316eca55ae93f"
+    },
+    "output": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/tasks/after_Dy/execution/after_Dy/endpoint.out",
+      "sha256": "438b5d24041233e804a22ef7d65a83436e33d14fca7ecc883efab3e1446630ae"
+    },
+    "runtime_input": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/tasks/after_Dy/execution/after_Dy/endpoint.runtime.inp",
+      "sha256": "bee029fc3e9c20143b2826f572109265ab751b681e32d8913bcfe3c3a12b8890"
+    },
+    "runtime_sidecar": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/tasks/after_Dy/execution/after_Dy/endpoint.runtime.json",
+      "sha256": "977a656db536048fed3223faad02e0f9fec53632876ae5f944f1655aba023f55"
+    },
+    "template_input": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/tasks/after_Dy/execution/after_Dy/endpoint.inp",
+      "sha256": "17c1d94b607aca45d4757b4e7d9c189b25ed3f44acf55451a27a6d8a28402f3e"
+    },
+    "xyz": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/tasks/after_Dy/execution/after_Dy/physical.xyz",
+      "sha256": "97924b173f744008a93f39f9024c921f7a66d0647c06b8ec9d7f1b9cd84b167a"
+    }
+  },
+  "command": [
+    "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+    "endpoint.runtime.inp",
+    "--bind-to none"
+  ],
+  "expected_engrad_complete": true,
+  "finished_at_utc": "2026-10-17T19:06:53.832067+00:00",
+  "launch_error": null,
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/tasks/after_Dy/execution/after_Dy/MANIFEST.json",
+    "sha256": "c47b6a2d68f2482b1265c54753399002b1a65b7cfbf69a8b747a2620e2ddc0d8"
+  },
+  "normal_termination": true,
+  "orca_executable": {
+    "path": "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+    "sha256": "38b5f057452fef275c0a1b98d270ad03d0411dab70453820d1c678bd732f6c83"
+  },
+  "orca_version": "6.1.1",
+  "parallelism": {
+    "binding": "none",
+    "nprocs": 12,
+    "omp_threads_per_rank": 1
+  },
+  "returncode": 0,
+  "runtime_renderer": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_compact_exchange_v1/implementation/render_orca_runtime_input.py",
+    "sha256": "46356652756311981a51732525457c697b31e860348dee4b590d72e7bddee76d"
+  },
+  "scf_converged": true,
+  "schema_version": "alchemical_bvs.orca_task_execution.v1",
+  "started_at_utc": "2026-10-17T12:19:29.176153+00:00",
+  "task_id": "after_Dy",
+  "task_runner": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_compact_exchange_v1/implementation/run_orca_task_manifest.py",
+    "sha256": "b9278e74e5317e859e8cb05541e1ec57cb335b26dcdf65a83b89675407343b9a"
+  }
+}

@@ -3,6 +3,14 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the goal remains active and unmet.
 
+Newest 19:06 UTC: after-Dy13292 also completed and passes unchanged admission,
+including its 256-atom gradient. Cost 24449 s on 12 CPUs = 293388 CPU-s.
+Result 3e097a58 and delivered-event ACK are archived in the active diagnostic's
+lbt_whole_reference_continuation/activation_v1/after_Dy_result_v1/.
+Three of four reference cells are admitted. After-La13290 remains in its final
+gradient calculation; await it before full collection. Mex13281 remains in SCF.
+All residual/state limitations remain; no partial work comparison or rerun.
+
 Latest: whole-LBT before-Dy13291 completed at18:43UTC and passes unchanged
 singleton admission with the full256-atom gradient. Actual23058s on12CPUs,
 276696allocatedCPU-s. Only the orbital-gradient residual passes its printed

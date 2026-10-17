@@ -21,7 +21,14 @@ and health armers3166960/3166963 are recorded in task-local SUBMISSION.json unde
 Exact source/cost/static-review/submission records are preserved under
 `mex_dft/consistent_grid_v1/displacement_submission_v1/`.
 Each native run must replay the admitted central and match its allocation before
-launch. No retry, new MM/ALPB calls, changed step/tolerance or original-six/eight
+launch. Both effective native grid/state/runtime headers now match the central;
+see `displacement_submission_v1/NATIVE_HEADER_REVIEW.json`. Plus13596's delivered
+silence alert was reviewed: all12 owned MPI workers actively consume
+CPU during the first Fock build; no SCF residual has printed yet. The completed
+central's first iteration took1989.4s. Continue unchanged, without interpreting
+CPU activity as convergence proof. Actual process and alert evidence are archived
+under `displacement_submission_v1/plus/health_review_silence_v1/`.
+No retry, new MM/ALPB calls, changed step/tolerance or original-six/eight
 continuation. No collector holds an allocation while waiting. After both actual
 endpoints terminate, use the existing three-cell collector under Slurm; preserve
 unavailable cells if either fails. No directional result exists yet. The complete

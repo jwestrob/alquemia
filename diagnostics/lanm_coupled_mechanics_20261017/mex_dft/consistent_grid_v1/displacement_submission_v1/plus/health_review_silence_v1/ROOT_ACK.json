@@ -1,0 +1,43 @@
+{
+  "utc": "2026-10-17T23:37:57.812621+00:00",
+  "event": "MM_O97_La_plus:output_silent_review_needed_not_proven_stall",
+  "job": "13596",
+  "status": "actual_health_delivery_reviewed_continue_unchanged",
+  "receipt_snapshot": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/plus/health_review_silence_v1/RECEIPT_SNAPSHOT.json",
+    "sha256": "1969b24c2f3e86cac9d35f03c0f9b71878b40f722a5d93a3fcfa0030751f49ae"
+  },
+  "process_snapshot": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/plus/health_review_silence_v1/PROCESS_SNAPSHOT.txt",
+    "sha256": "0959487cae2643e5e3978cdd8ac48b858d0ac58397e50b365a6ebcd7883d2241"
+  },
+  "process_inspection_command": [
+    "srun",
+    "--jobid=13596",
+    "--overlap",
+    "--ntasks=1",
+    "--cpus-per-task=1",
+    "--cpu-bind=none",
+    "bash",
+    "-c",
+    "ps -u jwestrob -o pid,ppid,stat,pcpu,time,etime,args | rg \"orca|CONSISTENT_GRID|mpirun\""
+  ],
+  "sstat_snapshot": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/plus/health_review_silence_v1/SSTAT.txt",
+    "sha256": "79f0a560228b500e4cba9a6f7ad1a90121bf7c061d596b2a67e9d976fa24c7c1"
+  },
+  "output_tail_snapshot": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/plus/health_review_silence_v1/OUTPUT_TAIL.txt",
+    "sha256": "bbcee1bb2698975cc7517ec8f5e6f41014d63b45d43413b2b783a58f41e75ccd"
+  },
+  "finding": "RUNNING in first incremental Fock formation with no printed SCF iteration/residual yet. Twelve owned orca_leanscf_mpi workers showed approximately99.7-99.8percent lifetime CPU/core, runnable state and substantial cumulative CPU time. Aggregate batch CPU counter is increasing. This is measured process evidence, not manifest idle-rank inference.",
+  "reference_context": {
+    "central_first_iteration_seconds": 1989.4,
+    "record": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_central_v1/FIRST_SCF_ITERATION_REVIEW.json",
+      "sha256": "6d2cd54702c874aa626c06f554354696c0a194f8c50e95a734d1cb8296e1ce74"
+    }
+  },
+  "decision": "Continue unchanged. Output silence at this initial-build duration is not a demonstrated stall or declared recovery trigger. CPU activity alone is not proof of useful scientific progress or convergence. No cancellation,restart,new molecular call or settings change.",
+  "new_molecular_calls": 0
+}

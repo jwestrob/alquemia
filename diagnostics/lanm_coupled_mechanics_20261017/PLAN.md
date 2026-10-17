@@ -1,6 +1,6 @@
 # Nikasha coupled mechanics implementation plan
 
-Prepared 17 October 2026 UTC following Jacob's request for a plan and a goal to activate. **Planning only; execution awaits goal activation.** Root owns integration and submissions. Preserve PQQ production and its completed canonical-midpoint decision.
+Prepared 17 October 2026 UTC following Jacob's request for a plan and a goal to activate. **Goal activated by Jacob on 17 October 2026 UTC; staged implementation and execution are authorized.** Root owns integration and submissions. Preserve PQQ production and its completed canonical-midpoint decision. Read CURRENT.md and actual receipts for execution status.
 
 ## Question and starting evidence
 

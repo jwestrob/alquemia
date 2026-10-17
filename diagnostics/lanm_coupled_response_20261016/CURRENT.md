@@ -1,3 +1,12 @@
+# Coupled mechanics goal activated
+
+17 October 2026 UTC. Jacob activated the saved plan. Current owned work is now
+tracked in [the mechanics checkpoint](../lanm_coupled_mechanics_20261017/CURRENT.md).
+Root bound the six actual terminal sources; disjoint agents implement the LBT
+optimizer, Mex evaluator, and LBT electronic/MM partition. No new job yet;
+root submits real qualification on Slurm after static review. The earlier
+planning pause below is historical. No clamped-core diagnosis or PQQ change.
+
 # Next phase planned: coupled mechanics, awaiting goal activation
 
 17 October 2026 UTC. Jacob requested an implementation plan and a goal to activate.

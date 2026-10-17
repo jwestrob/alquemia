@@ -1,0 +1,60 @@
+{
+  "protocol": "mex_all_physical_cartesian_same_energy_v1",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex/MEX_CARTESIAN.py",
+    "sha256": "5153440c685dc2c1c335c35bdae42b19ce93f15de38d4706bd5b616365a32a8c"
+  },
+  "plan": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/PLAN.md",
+    "sha256": "9e49c81ac4990c76f5bff6bd8c4e445029d3c93761761e9db4f14ec26b85fe03"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex/SPEC.md",
+    "sha256": "540d5e88b8cc23bf991f44a8f05674ce94154622a28f9b67e902976ffcdc95e8"
+  },
+  "pool_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/mex_continuation_pool_v1/execution/RESULT.json",
+    "sha256": "c93f7df93c0c58bebd99d7f2281804c528c596cf30d8cb3ff6572a05a2ad746f"
+  },
+  "pool_implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/mex_continuation_pool_v1/MEX_CONTINUATION_POOL.py",
+    "sha256": "50cbd76258b3db59071a011f1504145716c6a37409bf17086013aeceb738ad27"
+  },
+  "base_implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_response_20261016/MEX_CONTINUATION.py",
+    "sha256": "c571f20ec76bc7bf7ecadb7b3f2c402caf0f1bdfcb57b6a84aaf4c3a2dd15712"
+  },
+  "starts": {
+    "La": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/mex_continuation_scout_v1/execution/point_012_La/POINT.json",
+      "sha256": "f6380efc7961da114f62b0fe3073df6884af42eb6592f1e5cb9d1ede90bc8cef"
+    },
+    "Dy": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/mex_continuation_Dy_v1/execution/point_012_Dy/POINT.json",
+      "sha256": "944c1db18ba6c371a2b2f9c3ce34e20cce47addeecde7cb39bb231e538c2ab77"
+    }
+  },
+  "settings": {
+    "FD_steps_A": [
+      0.0002,
+      0.0001
+    ],
+    "FD_absolute_kcal_mol_A": 0.005,
+    "FD_relative": 0.0001,
+    "replay_energy_kcal_mol": 1e-06,
+    "replay_gradient_kcal_mol_A": 1e-06,
+    "maximum_new_composites": 34,
+    "directions": [
+      "core_backbone",
+      "boundary_anchor",
+      "external_water",
+      "spectator"
+    ],
+    "physical_atoms": 2049,
+    "electronic_atoms": 209,
+    "external_charges": 1840
+  },
+  "scope": "Same Mex model, all 2049 physical coordinates; conditional EF3 exchange with three Nd spectators",
+  "DFT_calls": 0,
+  "production_change": false
+}

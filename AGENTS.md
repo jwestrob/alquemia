@@ -1,3 +1,20 @@
+# Active coupled La/Dy mechanics — 17 October 2026 UTC
+
+Jacob activated “Implement the saved La/Dy mechanics plan. Work autonomously,
+validate the physics, and document the results.” Read
+`diagnostics/lanm_coupled_mechanics_20261017/PLAN.md` and CURRENT.md.
+Root owns submissions; agents own disjoint LBT Cartesian, LBT partition and Mex
+Cartesian source. Six exact old terminals are pinned; do not repeat their science.
+Mex34-cell qualification12952 and search preflight12955 PASSED. Partition12953
+passed all4 preparations with actual XML unchanged from preserved failed12950.
+LBT preflight12954 failed before energies; diagnostic12956 localizes old exact
+transform replay to1e−16 roundoff. Harvey owns versioned replay-only repair,
+Leibniz paired pools, Mex agent LBT local-electronic/MM adapter. Read actual
+CURRENT/INITIAL_EXECUTION_RECORD.json; all initial jobs are terminal. All physics
+uses Slurm, current standard12CPU/job120CPU/user. No source-displacement windows,
+rigid inherited bonds, production promotion or rejected clamped-core diagnosis.
+The goal is active/unmet; older no-job/planning checkpoints below are historical.
+
 # Latest LanM result — 17 October 2026 UTC
 
 All four local PBE0 cells and comparison 12936 are complete. The large MACE-like

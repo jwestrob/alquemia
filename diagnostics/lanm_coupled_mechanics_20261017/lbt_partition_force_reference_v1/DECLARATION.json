@@ -1,0 +1,39 @@
+{
+  "utc": "2026-10-17T19:31:40.684715+00:00",
+  "question": "Does the saved expanded electronic region change the baseline terminal-force mismatch at exact before/cartesian_01 coordinates?",
+  "source": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_partition_force_reference_v1/ANALYZE.py",
+    "sha256": "de696a50fdd1530333a520c858b798193559642a7e2c6e02dd7ea0bb671e7dce"
+  },
+  "ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_partition_force_reference_v1/READY.json",
+    "sha256": "5b48d64d9c27503d77c6e2e4a7c973c986824c5e4b2c5707414db8ccb34f2f22"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_partition_force_reference_v1/SPEC.md",
+    "sha256": "df66a7c5710b932afbe5465a240fa65385b00e67c337e8dabf2c2609f4eb8176"
+  },
+  "static_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_partition_force_reference_v1/STATIC_REVIEW.json",
+    "sha256": "d66c260ad7ecc58f3007a693f708e0bd2d22ac88604ec3d764496bdadf662d12"
+  },
+  "launcher": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_partition_force_reference_v1/RUN.sbatch",
+    "sha256": "c9a2cbbbc8ae1e0f0a51cbef6912fab398b17e414c9c6717ce5f597f501f3ef4"
+  },
+  "cases": [
+    "baseline_La",
+    "baseline_Dy",
+    "expanded_La",
+    "expanded_Dy"
+  ],
+  "planned_work": "One saved-only Slurm analysis; original full gradients and frozen projections; preserve unavailable cases and conversion-order differences.",
+  "resources": {
+    "CPUs": 1,
+    "GPUs": 0,
+    "memory_or_time_override": false
+  },
+  "new_molecular_calls": 0,
+  "production_change": false,
+  "interpretation": "Partition sensitivity on one admitted starting geometry only; no parameter fitting, preference or independent force-accuracy qualification."
+}

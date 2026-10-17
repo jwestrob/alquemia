@@ -70,3 +70,13 @@ The ongoing before-La DFT scout tests the initial forces and cost. It alone cann
 The original runner permits only before-La. A separate [continuation draft](lbt_whole_reference_continuation/CONTINUATION_DRAFT.py) now implements the three already-declared remaining cells as singleton runs and a saved four-cell collector. Read [SPEC_DRAFT.md](lbt_whole_reference_continuation/SPEC_DRAFT.md) and STATIC_DRAFT_REVIEW.json. Author AST inspection and independent static source/provenance review pass; no scientific imports, numerical tests, runnable configs, continuation decision or submissions were made.
 
 The draft replays original13049 unchanged, then separately admits the completed13142 after-Dy solvent. It forbids repeating before-La, retains unavailable comparator slots and uses the original method/state/admission rules. Actual13051 completion and its original saved collection, root force/cost review, a bound continuation decision and real-artifact Slurm checks are still required before execution. No physics result or execution readiness is implied by source review. Root owns those gates and all future launches; source preparation is complete.
+
+The separate saved-artifact validation harness is also prepared and independently
+reviewed: `VALIDATE_DRAFT.py`, interface note and `STATIC_VALIDATION_REVIEW.json`
+in the same continuation directory. It requires a genuine positive replay before
+seven rejection checks; supplemental geometry/metal checks explicitly exercise
+the unchanged native admission helper. AST/source review only: no scientific
+imports, executed tests, bound configuration, decision or submission. Run the
+actual checks through Slurm only after the original scout/collector and cost
+review. Native continuation execution and the later collector need their own
+actual validation; this source review does not establish either.

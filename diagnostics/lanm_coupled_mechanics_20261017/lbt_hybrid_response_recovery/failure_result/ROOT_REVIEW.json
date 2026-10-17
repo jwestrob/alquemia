@@ -1,0 +1,63 @@
+{
+  "utc": "2026-10-17T05:43:10.706786+00:00",
+  "type": "proactive_root_review_not_notification_ack",
+  "job": 13048,
+  "status": "failed_required_search_unavailable",
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/RESULT.json",
+    "sha256": "f1c4f9c2f359528f1f934fac7d0c29d0e355d695405349fe6eb51efa59fe3b73"
+  },
+  "search": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/SEARCH.json",
+    "sha256": "ffbb32508d7e39ab5033847c6aab0150ca5d30eec98771a840b485a73f19748c"
+  },
+  "failed_point": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/original_response_replay/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_008_7CCN_baseline_La/POINT.json",
+    "sha256": "e9aac06650201f257e16b2fc365f474e3e3246a88397cb8fb7d3abd2b6e84867"
+  },
+  "failed_embedded": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/original_response_replay/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_008_7CCN_baseline_La/embedded/RESULT.json",
+    "sha256": "909ced191b78929459d97792dd4066cddef40ab04720840589005887cc577aa2"
+  },
+  "accepted_isolated": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/original_response_replay/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_008_7CCN_baseline_La/isolated/RESULT.json",
+    "sha256": "7adcab0139189a5ac6b6cea1ac3f1bf5d9f59d24bdcbe4f20204ca2b0deb8c12"
+  },
+  "source": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery/RECOVER.py",
+    "sha256": "ba02f7ac712db0e198a5f77b68518ff7838c14179488b2c61d70d3e35b633bbf"
+  },
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/RUN_CONFIG.json",
+    "sha256": "fcb5c5b3551a283c34ef490c5bc49e2e9b27ca6d7757b9854b776e9e70c00581"
+  },
+  "accepted_steps": 10,
+  "distinct_evaluations": 11,
+  "failure": "ValueError(\"Composite unavailable: ValueError('Native GFN component unavailable')\")",
+  "failed_component": "embedded_GFN2",
+  "native_iterations": 500,
+  "last_printed_delta_E_Eh": "-0.150112E+02",
+  "last_printed_RMSdq_e": "0.742",
+  "physical_state_admitted": false,
+  "complete_four_state_pool_available": false,
+  "last_success_is_diagnostic_only": true,
+  "new_calls": {
+    "composites_attempted": 8,
+    "MACE_calls_attempted": 8,
+    "MACE_model_loads": 1,
+    "GFN_calls_attempted": 16,
+    "MM_configurations_attempted": 8,
+    "MM_group_queries_attempted": 32,
+    "ALPB_calls_attempted": 8,
+    "ALPB_cache_hits": 0,
+    "observed_native_child_CPU_seconds": 141.34694,
+    "MACE_model_load_seconds": 6.3427937109954655
+  },
+  "application_seconds": 149.12398517504334,
+  "scheduler_seconds": 151,
+  "allocated_CPU_seconds": 1812,
+  "allocated_GPU_seconds": 151,
+  "reported_TotalCPU": "00:02:57.249",
+  "reported_MaxRSS_KiB": 1386964,
+  "decision": "Stop this finite recovery at its frozen second-failure rule. No further SCC repair or partial-survivor pool. Independent whole-peptide and Mex DFT scouts continue."
+}

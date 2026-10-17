@@ -1,0 +1,283 @@
+{
+  "protocol": "lbt_response_single_embedded_solver_recovery_v1",
+  "stage": "run",
+  "status": "unavailable",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery/RECOVER.py",
+    "sha256": "ba02f7ac712db0e198a5f77b68518ff7838c14179488b2c61d70d3e35b633bbf"
+  },
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/RUN_CONFIG.json",
+    "sha256": "fcb5c5b3551a283c34ef490c5bc49e2e9b27ca6d7757b9854b776e9e70c00581"
+  },
+  "slurm_job_id": "13048",
+  "source_id": "7CCN",
+  "metal": "La",
+  "region": "baseline",
+  "policy": {
+    "source_id": "7CCN",
+    "region": "baseline",
+    "metal": "La",
+    "primary_case": "failed_005",
+    "original_accepted_steps": 2,
+    "original_distinct_evaluations": 3,
+    "total_limits": {
+      "accepted_steps": 80,
+      "evaluations": 200
+    },
+    "maximum_new_composites": 197,
+    "missing_trial_ALPB_calls": 1,
+    "future_requests_use_original_solver": true,
+    "stop_at_first_additional_backend_failure": true
+  },
+  "new_DFT_calls": 0,
+  "new_derivative_directions": 0,
+  "old_failed_search_is_not_relabelled": true,
+  "continuation_execution_and_physical_admission": false,
+  "preflight": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/RECOVERY_PREFLIGHT.json",
+    "sha256": "82812ce96912dd103a5fdb4c5fe73aec0c807dd16dd412b708c7a4eed820a8e6"
+  },
+  "original_failed_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_7CCN_La_v1/execution/RESULT.json",
+    "sha256": "58fed98f78b4b0bcbe6d577a48b88ba9fa551e6e23312f56f9e2e99cc3ee0d17"
+  },
+  "original_cost": {
+    "composites_attempted": 3,
+    "MACE_calls_attempted": 3,
+    "MACE_model_loads": 1,
+    "GFN_calls_attempted": 6,
+    "MM_configurations_attempted": 3,
+    "MM_group_queries_attempted": 12,
+    "ALPB_calls_attempted": 2,
+    "ALPB_cache_hits": 0,
+    "observed_native_child_CPU_seconds": 55.359579,
+    "MACE_model_load_seconds": 6.488629746017978
+  },
+  "certification_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_scc_recovery_v1/execution/RESULT.json",
+    "sha256": "6d2338aaf9e2c902aa5da3682a9f6e6e8e8cdedcc572ba32a2914525b93e1594"
+  },
+  "certification_cost": {
+    "actual_attempted_GFN_calls": 4,
+    "native_child_CPU_seconds": 48.20035,
+    "native_wall_seconds": 48.33714985847473
+  },
+  "recovery_binding_sha256": "c9a5674b5a3e38a6e262fc12072a2fde93359e0fef7ad7237c5495b73a776f18",
+  "declared_search_states": [
+    [
+      "7CCO",
+      "La"
+    ],
+    [
+      "7CCO",
+      "Dy"
+    ],
+    [
+      "7CCN",
+      "La"
+    ],
+    [
+      "7CCN",
+      "Dy"
+    ]
+  ],
+  "declared_search_denominator": 4,
+  "actual_preflight_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/preflight/RESULT.json",
+    "sha256": "fec79b405dc5fd396d21cd812a0d5493a38bd0f9703cbaa922742f29dbd28d52"
+  },
+  "completion_ALPB_receipt": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/trial_completion/ALPB/RESULT.json",
+    "sha256": "7c4d5467e9e7001b20824d213401c52f752ad4b55a337b3de5df2ab935778f22"
+  },
+  "solver_exception_certificate": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/trial_completion/SOLVER_EXCEPTION_CERTIFICATE.json",
+    "sha256": "010829e6407faf5bf529d9d68064097d8d50e7e2fb1987c5169c01eca4dbc216"
+  },
+  "assembled_point": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/trial_completion/ASSEMBLED_POINT.json",
+    "sha256": "9844c68f5802c3df228538f05c361853039b5cf9fc0f056ccb99a785bcaf39e7"
+  },
+  "resume_checkpoint": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/CERTIFIED_RESUME_CHECKPOINT.json",
+    "sha256": "13c8378b7b6bd630a68e0ef8486e2988fe12b9f7f842ef5f5c31ad1505161ba1"
+  },
+  "original_failed_request": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_7CCN_La_v1/execution/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_003_7CCN_baseline_La/POINT.json",
+    "sha256": "ddcaef5b8396815844164ab4a6a0b0d3cb898ad103efadfacbe9863a217ab6ca"
+  },
+  "completion_actual_cost": {
+    "composites_attempted": 0,
+    "MACE_calls_attempted": 0,
+    "MACE_model_loads": 0,
+    "GFN_calls_attempted": 0,
+    "MM_configurations_attempted": 0,
+    "MM_group_queries_attempted": 0,
+    "ALPB_calls_attempted": 1,
+    "ALPB_cache_hits": 0,
+    "observed_native_child_CPU_seconds": 0.0
+  },
+  "binding": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/RECOVERY_BINDING.json",
+    "sha256": "75377036694932fdbcbf499023e59e1bd9c1bf63dfdac073a4309a712b1fab69"
+  },
+  "search": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/SEARCH.json",
+    "sha256": "ffbb32508d7e39ab5033847c6aab0150ca5d30eec98771a840b485a73f19748c"
+  },
+  "terminal_point": {
+    "point": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/original_response_replay/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_007_7CCN_baseline_La/POINT.json",
+      "sha256": "5fae6553d977be3cb4fba90d8759d56771c6748c3e76f82934793416d4798319"
+    },
+    "identity_sha256": "32ebbb0570daee0bfc751f4ee3ab95bed7a037be43f31fbdc39ec4433d134776",
+    "cache_key": "0c621c656f55c2329e0d1127c63f032212b6135b5bf9c13e1d79ffc9e6ddfffc",
+    "component_receipts": {
+      "MM_execution": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/original_response_replay/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_007_7CCN_baseline_La/mm_driver/EXECUTION.json",
+        "sha256": "97a7f1f354c135101c52f362fe3b1fc8b2b728a80761e5e83989a8159cafc8df"
+      },
+      "MM": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/original_response_replay/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_007_7CCN_baseline_La/MM/RESULT.json",
+        "sha256": "527c6937514f4f6bf17b601539c12ca65d7c149acb62958964b35a85cce7cf15"
+      },
+      "MACE": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/original_response_replay/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_007_7CCN_baseline_La/MACE.json",
+        "sha256": "6baa863b84362e616fc9bb4da5a43402c9a6df15d6f934b71d6ff76026133e8b"
+      },
+      "GFN_embedded": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/original_response_replay/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_007_7CCN_baseline_La/embedded/RESULT.json",
+        "sha256": "e76de02f42bdd589c0bf3b6c48c8b2984f6bc0d0be42c6e8859f6dd81d6d9622"
+      },
+      "GFN_isolated": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/original_response_replay/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_007_7CCN_baseline_La/isolated/RESULT.json",
+        "sha256": "0c4dba00352d8eeb6896587f88829d0db79701eb7685226acdfabe7227dafeb5"
+      },
+      "ALPB": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/original_response_replay/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_007_7CCN_baseline_La/ALPB/RESULT.json",
+        "sha256": "ed14a31120772b615d5ef82ab9418e75edfadb52c376f124777f27f23664a857"
+      }
+    }
+  },
+  "termination": "execution_failure",
+  "converged": false,
+  "final_full_force": {
+    "maximum_atom_kcal_mol_A": 5.7025621070192605,
+    "RMS_atom_vector_kcal_mol_A": 1.5748634146745546,
+    "L2_kcal_mol_A": 25.197814634792877,
+    "converged": false
+  },
+  "accepted_steps": 10,
+  "distinct_evaluations": 11,
+  "work_from_start": {
+    "MACE_vacuum": -2.407892485513499,
+    "GFN2_field_difference": -1.4422067202679967,
+    "MM_ledger": -11.6258374845953,
+    "fixed_FF_charge_ALPB": 0.18032422004145288,
+    "composite_kcal_mol": -15.295612470335342
+  },
+  "certified_pending_cache_hit": true,
+  "continuation_actual_cost": {
+    "composites_attempted": 8,
+    "MACE_calls_attempted": 8,
+    "MACE_model_loads": 1,
+    "GFN_calls_attempted": 16,
+    "MM_configurations_attempted": 8,
+    "MM_group_queries_attempted": 32,
+    "ALPB_calls_attempted": 7,
+    "ALPB_cache_hits": 0,
+    "observed_native_child_CPU_seconds": 141.34694,
+    "MACE_model_load_seconds": 6.3427937109954655
+  },
+  "actual_cost": {
+    "composites_attempted": 8,
+    "MACE_calls_attempted": 8,
+    "MACE_model_loads": 1,
+    "GFN_calls_attempted": 16,
+    "MM_configurations_attempted": 8,
+    "MM_group_queries_attempted": 32,
+    "ALPB_calls_attempted": 8,
+    "ALPB_cache_hits": 0,
+    "observed_native_child_CPU_seconds": 141.34694,
+    "MACE_model_load_seconds": 6.3427937109954655
+  },
+  "requests": [
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/original_response_replay/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_001_7CCN_baseline_La/POINT.json",
+      "sha256": "c519e8ebbf3ba4f26a91586b4b6dd6aff5aee3cdd5c6f80e1a247e2e302eadd8"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/original_response_replay/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_002_7CCN_baseline_La/POINT.json",
+      "sha256": "c8e9116fda2d2df53fae3cac3ec5ecad45e84d63b5cfcb5d5785208d5c226928"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/original_response_replay/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_003_7CCN_baseline_La/POINT.json",
+      "sha256": "cff7e08054ee3dafd9ab8d7f20d834ba4388995e2f396078028f8e3980931481"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/original_response_replay/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_004_7CCN_baseline_La/POINT.json",
+      "sha256": "5a0fd727fc69a26596f852a44beca2f6398e61a2207b4b4e2adf788de7e69314"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/original_response_replay/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_005_7CCN_baseline_La/POINT.json",
+      "sha256": "9cdba4e488ec95c0fbb15d4a277f6bf47b799c15b441169cebeb1a509e4a7d3f"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/original_response_replay/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_006_7CCN_baseline_La/POINT.json",
+      "sha256": "9f706423536d999c2b6bd21899ffa5455e602d9be8545839379429a3e4f5295f"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/original_response_replay/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_007_7CCN_baseline_La/POINT.json",
+      "sha256": "5fae6553d977be3cb4fba90d8759d56771c6748c3e76f82934793416d4798319"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/original_response_replay/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_008_7CCN_baseline_La/POINT.json",
+      "sha256": "e9aac06650201f257e16b2fc365f474e3e3246a88397cb8fb7d3abd2b6e84867"
+    }
+  ],
+  "points": [
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/original_response_replay/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_001_7CCN_baseline_La/POINT.json",
+      "sha256": "c519e8ebbf3ba4f26a91586b4b6dd6aff5aee3cdd5c6f80e1a247e2e302eadd8"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/original_response_replay/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_002_7CCN_baseline_La/POINT.json",
+      "sha256": "c8e9116fda2d2df53fae3cac3ec5ecad45e84d63b5cfcb5d5785208d5c226928"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/original_response_replay/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_003_7CCN_baseline_La/POINT.json",
+      "sha256": "cff7e08054ee3dafd9ab8d7f20d834ba4388995e2f396078028f8e3980931481"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/original_response_replay/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_004_7CCN_baseline_La/POINT.json",
+      "sha256": "5a0fd727fc69a26596f852a44beca2f6398e61a2207b4b4e2adf788de7e69314"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/original_response_replay/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_005_7CCN_baseline_La/POINT.json",
+      "sha256": "9cdba4e488ec95c0fbb15d4a277f6bf47b799c15b441169cebeb1a509e4a7d3f"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/original_response_replay/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_006_7CCN_baseline_La/POINT.json",
+      "sha256": "9f706423536d999c2b6bd21899ffa5455e602d9be8545839379429a3e4f5295f"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery_v1/execution/original_response_replay/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_007_7CCN_baseline_La/POINT.json",
+      "sha256": "5fae6553d977be3cb4fba90d8759d56771c6748c3e76f82934793416d4798319"
+    }
+  ],
+  "native_MACE_calls": 8,
+  "native_MACE_device": "NVIDIA H200",
+  "native_MACE_versions": {
+    "torch": "2.8.0",
+    "mace-torch": "0.3.16",
+    "ase": "3.29.0"
+  },
+  "elapsed_seconds": 149.12398517504334,
+  "parent_CPU_seconds": 34.812081,
+  "allocation": {
+    "SLURM_JOB_ID": "13048",
+    "SLURM_CPUS_PER_TASK": "12",
+    "CUDA_VISIBLE_DEVICES": "0"
+  }
+}

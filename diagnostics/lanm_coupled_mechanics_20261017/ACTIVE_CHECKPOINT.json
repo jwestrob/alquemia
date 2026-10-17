@@ -1,6 +1,6 @@
 {
-  "utc": "2026-10-17T05:37:37.796589+00:00",
-  "status": "response_continuation_and_single_whole_DFT_scout_running",
+  "utc": "2026-10-17T05:43:39.248844+00:00",
+  "status": "response_recovery_closed_three_independent_DFT_scouts_running",
   "response_recovery": {
     "job": 13048,
     "submission": {
@@ -20,7 +20,16 @@
     "original_total_limits": {
       "accepted_steps": 80,
       "evaluations": 200
-    }
+    },
+    "status": "FAILED_required_search_unavailable",
+    "root_review": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_hybrid_response_recovery/failure_result/ROOT_REVIEW.json",
+      "sha256": "aa656454a73d294ee8af2b75306f13dd150bdf462caff9b6a3ba6b9771e9c551"
+    },
+    "accepted_steps": 10,
+    "distinct_evaluations": 11,
+    "further_recovery_authorized": false,
+    "dependent_pool_closed": true
   },
   "whole_peptide_reference": {
     "job": 13051,
@@ -52,5 +61,6 @@
     12978
   ],
   "paired_response_pool_available": false,
-  "goal": "active_unmet"
+  "goal": "active_unmet",
+  "Mex_response_adapter": "source-only implementation; execution requires actual full derivative qualification and measured scout decision"
 }

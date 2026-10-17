@@ -1,0 +1,35 @@
+{
+  "utc": "2026-10-17T05:24:30.577911+00:00",
+  "status": "actual_complete_independently_reviewed",
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/hybrid_response_force_audit_v2/execution/RESULT.json",
+    "sha256": "46d01517a6bb3c5dd9faf37ebe91724d433c314c50341d0aeacb60a141541549"
+  },
+  "reviewers": [
+    "root",
+    "lanm_resume_inventory"
+  ],
+  "jobs": {
+    "13031": {
+      "state": "FAILED",
+      "elapsed_s": 6,
+      "allocated_CPUs": 1
+    },
+    "13032": {
+      "state": "COMPLETED",
+      "elapsed_s": 42,
+      "allocated_CPUs": 12,
+      "allocated_GPUs": 0
+    }
+  },
+  "calls": 0,
+  "findings": [
+    "All four states have their largest force change at wholly-MM Phe1 CA.",
+    "Saved MM component evidence is bonded-led; no obvious duplicate interaction or charge-shift error found.",
+    "Unchanged source/config/gates pass on original qualified host/thread setup. Exact arithmetic portability to the first CPU host remains unresolved."
+  ],
+  "limits": [
+    "Numerical closure and force differences do not determine physical accuracy.",
+    "Experimental terminal chemistry remains unresolved."
+  ]
+}

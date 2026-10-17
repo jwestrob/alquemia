@@ -1,0 +1,248 @@
+{
+  "protocol": "lbt_response_embedded_scc_four_damping_controls_v1",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_hybrid_response_scc_recovery/SCOUT.py",
+    "sha256": "16b6dd2785f80b5cfdff6edfa2d72c37cb71c1e409312c4e1a582710a3b2e65b"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_hybrid_response_scc_recovery/SPEC.md",
+    "sha256": "e3abe3132e4c9f8c460b02340548054166c48949d0edd9b76ef479ba73334455"
+  },
+  "plan": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/PLAN.md",
+    "sha256": "9e49c81ac4990c76f5bff6bd8c4e445029d3c93761761e9db4f14ec26b85fe03"
+  },
+  "agreement_gates": {
+    "energy_hartree": 1e-07,
+    "gradient_component_kcal_mol_A": 0.005
+  },
+  "cases": [
+    {
+      "case_id": "failed_005",
+      "fixture": "failed",
+      "broydamp": 0.05
+    },
+    {
+      "case_id": "failed_010",
+      "fixture": "failed",
+      "broydamp": 0.1
+    },
+    {
+      "case_id": "preceding_005",
+      "fixture": "preceding",
+      "broydamp": 0.05
+    },
+    {
+      "case_id": "origin_005",
+      "fixture": "origin",
+      "broydamp": 0.05
+    }
+  ],
+  "fixtures": {
+    "failed": {
+      "point": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_7CCN_La_v1/execution/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_003_7CCN_baseline_La/POINT.json",
+        "sha256": "ddcaef5b8396815844164ab4a6a0b0d3cb898ad103efadfacbe9863a217ab6ca"
+      },
+      "native_result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_7CCN_La_v1/execution/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_003_7CCN_baseline_La/embedded/RESULT.json",
+        "sha256": "a4605d87c20d1dec9770518b4b6bdb87ad2819e84447ec026d96da07e9fe43fe"
+      }
+    },
+    "preceding": {
+      "point": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_7CCN_La_v1/execution/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_002_7CCN_baseline_La/POINT.json",
+        "sha256": "2034ba3690fda30a66374ee40426e57b31edfe9fa76920120bc48e30e969aa28"
+      },
+      "native_result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_7CCN_La_v1/execution/parent_replay/original_preparation_replay/hybrid_parent_replay/evaluator/point_002_7CCN_baseline_La/embedded/RESULT.json",
+        "sha256": "01e2ff7cbd8bf7b4763041a605aaef54cfa1daecebba1e198ef7419627061bd1"
+      }
+    },
+    "origin": {
+      "point": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_origins_v2/execution/evaluator/point_004_7CCN_baseline_La/POINT.json",
+        "sha256": "3be2f74df65e4b3ddbbbc2ce5a8db4d9754a3af0930229c4298ed18bb3e4e383"
+      },
+      "native_result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_origins_v2/execution/evaluator/point_004_7CCN_baseline_La/embedded/RESULT.json",
+        "sha256": "ca1ff314d47982da691fbcd752d7b335ec4c47e95e7cffcb3291bf5bf953e804"
+      }
+    }
+  },
+  "runtime": {
+    "executable": {
+      "path": "/home/jwestrob/miniconda3/envs/lanm_bench/bin/xtb",
+      "sha256": "481a1e7d8151fc08e0341b8e06ab60ac09cf1c2628738eeb83346271274bf8f4"
+    },
+    "parameters": {
+      "path": "/home/jwestrob/miniconda3/envs/lanm_bench/share/xtb/param_gfn2-xtb.txt",
+      "sha256": "f6f05c6c5264cb2f75c54f8ac6838044541c1e493b16f1a4d4ee4fa64de5f545"
+    },
+    "runtime_libraries": [
+      {
+        "path": "/home/jwestrob/miniconda3/envs/lanm_bench/lib/libquadmath.so.0.0.0",
+        "sha256": "1339edaba2f20241e132ecb500b43f98646c2dbcb9aabca15d32f7d43c9dfd08"
+      },
+      {
+        "path": "/home/jwestrob/miniconda3/envs/lanm_bench/lib/libs-dftd3.so.1.2.1",
+        "sha256": "e550626d62f1822b1c6d782aa63121b836dd04f4497a7facc4ddace909b39ad5"
+      },
+      {
+        "path": "/home/jwestrob/miniconda3/envs/lanm_bench/lib/libtoml-f.so.0.4.3",
+        "sha256": "aab15aa15ff819cc40f3f64e2c180d3f1220f9559abb1c1c6ea471a3a8d168dc"
+      },
+      {
+        "path": "/home/jwestrob/miniconda3/envs/lanm_bench/lib/libdftd4.so.3.7.0",
+        "sha256": "94eb9e9d70209e353f8677984e219beca71ccb6d59c567202a1dce41e9c5c7d1"
+      },
+      {
+        "path": "/home/jwestrob/miniconda3/envs/lanm_bench/lib/libgcc_s.so.1",
+        "sha256": "25dd0774b7b2774e922a56971a2aef67f79b73373b77a06e7c7fa540f90541bc"
+      },
+      {
+        "path": "/home/jwestrob/miniconda3/envs/lanm_bench/lib/libgfortran.so.5.0.0",
+        "sha256": "a34b1b99e9376d3c6793138aae7c3827d012da122aaa96562498abd78f7a6d9e"
+      },
+      {
+        "path": "/home/jwestrob/miniconda3/envs/lanm_bench/lib/libgomp.so.1.0.0",
+        "sha256": "fb3a0f069de0eecc09e8bf8fb040f99dad4588fb6d2632873829e3f332e5104b"
+      },
+      {
+        "path": "/home/jwestrob/miniconda3/envs/lanm_bench/lib/libopenblasp-r0.3.32.so",
+        "sha256": "630625c639b53aa5d9a12bc311a81971f7ea294b82a522a2b70d54039fe60730"
+      },
+      {
+        "path": "/home/jwestrob/miniconda3/envs/lanm_bench/lib/libmctc-lib.so.0.4.2",
+        "sha256": "801efa5f1133b7ec1282a33eb18190faf4fbb36d9429a89ab05a590b30bb368c"
+      },
+      {
+        "path": "/home/jwestrob/miniconda3/envs/lanm_bench/lib/libmulticharge.so.0.3.0",
+        "sha256": "8eaec584c8376c47c0da1f669fc6979fd4f3597e7134acb2c233fefcb6e4b5f3"
+      },
+      {
+        "path": "/home/jwestrob/miniconda3/envs/lanm_bench/lib/libtblite.so.0.4.0",
+        "sha256": "b2107b6d1504f4c93d2ba88e5708b64536f188debc26f94fe87572bd6342c5a3"
+      },
+      {
+        "path": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+        "sha256": "3a15d66867d83762c7f2f1e37359cb8f6c5743edb369c65285cb0b1c4f7498bf"
+      },
+      {
+        "path": "/usr/lib/x86_64-linux-gnu/libdl.so.2",
+        "sha256": "c2994527172cc23b7fb0f7d611b71e00a37da27af12c2e5e9e0dc1a742886c96"
+      },
+      {
+        "path": "/usr/lib/x86_64-linux-gnu/libm.so.6",
+        "sha256": "fce00b6f25f459cf4ae0b7fae4257909a1a8a86f9149e7c029a5d617baf1ccd0"
+      },
+      {
+        "path": "/usr/lib/x86_64-linux-gnu/libpthread.so.0",
+        "sha256": "90491a21ce44efcf3bd4b65ec82501c091d7ebe7f8d9b341dd01d721001d9ecd"
+      },
+      {
+        "path": "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2",
+        "sha256": "c20a2dc8917c755f02b94049356320fe1f62ac7d9f8994731f807d9df39302da"
+      }
+    ],
+    "environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "OMP_DYNAMIC": "FALSE",
+      "OMP_MAX_ACTIVE_LEVELS": "1",
+      "XTBPATH": "/home/jwestrob/miniconda3/envs/lanm_bench/share/xtb",
+      "LD_PRELOAD": null,
+      "LD_LIBRARY_PATH": null,
+      "PYTHONPATH": null,
+      "PYTHONHOME": null
+    }
+  },
+  "corrected_profile": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/dy_parameter_qualification_v1/execution/endpoints/corrected_la_dy.xtb.json",
+    "sha256": "635e111bac31e7c5755bf612c8e148ce73b401c110ff31887fd5e31b590fa85f"
+  },
+  "backend": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/context_factorial_gfn2.py",
+    "sha256": "4c534bf7ac264c8babd1e1c8aa28c88b8932bfc53708a52666772339b9dcb95c"
+  },
+  "admission": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_preflight_v1/GFN_ADMISSION.py",
+    "sha256": "3563fb16f5bb986420176e78020afd1dd593e5cb69ef36f15fa1fe3021b99dab"
+  },
+  "gradient_helper": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/affordable_response.py",
+    "sha256": "1f5e1fd25aacc01c5f81eed7490f089c0e4c36509aa77968655279a0dec8dd4f"
+  },
+  "common_helper": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/affordable_common.py",
+    "sha256": "4b683f86d4c4f81c6246d5cecd0acfbc1d2565db157321e3d8fbc8073502fde5"
+  },
+  "mapping_helper": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_partition_v2/PREPARE.py",
+    "sha256": "0d02c79ff22086aa40f366d11951f3f98fcd58b786f4773c6fb7f48d3e340da7"
+  },
+  "installed_package": {
+    "path": "/home/jwestrob/miniconda3/envs/lanm_bench/conda-meta/xtb-6.7.1-h8876d29_4.json",
+    "sha256": "a08bf315b368e2a5496def3d2bf8885e9f517400af84d6e755432d2c1d6daebf"
+  },
+  "installed_xcontrol_manual": {
+    "path": "/home/jwestrob/miniconda3/envs/lanm_bench/share/man/man7/xcontrol.7",
+    "sha256": "bcf85802a65bc542ab73cdc34865bb75a15e1003b31a8fd5191d79f6ab77cd24"
+  },
+  "source_evidence": {
+    "set_module": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/fixed_charge_replay_v3/execution_v1/sources/xtb/src/set_module.f90",
+      "sha256": "c205d72cc1f842b5538072380eb1f5fc7b088956b576c3e289c82b841a7f1346"
+    },
+    "scc_core": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/fixed_charge_replay_v3/execution_v1/sources/xtb/src/scc_core.f90",
+      "sha256": "f4020dc375716360b0473d5eba98494bcc3ec33c67079cd2e6a3428ac97ba750"
+    },
+    "broyden": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/fixed_charge_replay_v3/execution_v1/sources/xtb/src/broyden.f90",
+      "sha256": "aa84e499f499eb8fa0a59cfa4c7dd4c440351ef8c1b7355f61a03c13786d1f75"
+    },
+    "defaults": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/pede_solvent_response_20261013/fixed_charge_replay_v3/execution_v1/sources/xtb/src/setparam.f90",
+      "sha256": "1f87429f9bb36e5b9be0c7bd1a640609742a8bb16f74544c14a0569f8b7e7366"
+    },
+    "package_recipe": {
+      "path": "/groups/banfield/users/jwestrob/miniconda3/pkgs/xtb-6.7.1-h8876d29_4/info/recipe/meta.yaml",
+      "sha256": "931199ebb190f88bed92ab50455e5f5fe11fd05f313d38073c5c774891be0a4f"
+    },
+    "patches": [
+      {
+        "path": "/groups/banfield/users/jwestrob/miniconda3/pkgs/xtb-6.7.1-h8876d29_4/info/recipe/patches/1072.patch",
+        "sha256": "4afaece6b91cc2b1134ce092a99e483ccc168af66ced4c166832bb6ce39f7706"
+      },
+      {
+        "path": "/groups/banfield/users/jwestrob/miniconda3/pkgs/xtb-6.7.1-h8876d29_4/info/recipe/patches/1133.patch",
+        "sha256": "dca101d6dcc225455e0982aeebf093333ac14e4af5e0142de28fc8e49b41f71f"
+      },
+      {
+        "path": "/groups/banfield/users/jwestrob/miniconda3/pkgs/xtb-6.7.1-h8876d29_4/info/recipe/patches/1278.patch",
+        "sha256": "cd2d0d414e4e7970faf70505cd09a014471d77ed43cd14d95be11a7738aa7bc0"
+      },
+      {
+        "path": "/groups/banfield/users/jwestrob/miniconda3/pkgs/xtb-6.7.1-h8876d29_4/info/recipe/patches/version.patch",
+        "sha256": "cf7b5f70bc6efd56be34ed62e35ad2091688d64f9ead0ab985c732fe69ffe763"
+      }
+    ]
+  },
+  "primary_case": "failed_005",
+  "adapted_from": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_hybrid_scc_recovery/SCOUT.py",
+    "sha256": "d1ecf6c53f0d5047a4273cf5a7dfde7c808c9002cbd329c6721ea220036fe460"
+  },
+  "original_failed_response": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_7CCN_La_v1/execution/RESULT.json",
+    "sha256": "58fed98f78b4b0bcbe6d577a48b88ba9fa551e6e23312f56f9e2e99cc3ee0d17"
+  },
+  "original_origins_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_origins_v2/execution/RESULT.json",
+    "sha256": "9fb7d770438c24c3292096ae94d59928f33151d3d473c464556805ec20e108cf"
+  }
+}

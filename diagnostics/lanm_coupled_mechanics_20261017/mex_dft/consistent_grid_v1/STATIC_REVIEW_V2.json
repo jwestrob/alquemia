@@ -1,0 +1,52 @@
+{
+  "status": "pass_narrow_static_diff_review_only",
+  "reviewer": "mechanics_mex_adapter",
+  "original_source": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/CONSISTENT_GRID.py",
+    "sha256": "8258e2126cb30b4aa0f77afa40043d50895a31633fdee1c4cfde74a74320b1cf"
+  },
+  "versioned_source": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/CONSISTENT_GRID_V2.py",
+    "sha256": "1600a0a55635d9c592295cc13cd24d45c2911591889875f4fe06dee363348101"
+  },
+  "previous_static_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/STATIC_REVIEW.json",
+    "sha256": "84a7c8d8f8e8c58d22bd2d050789792bb2bb97aa372cc2bd4aee5744da60b6e7"
+  },
+  "actual_failed_preflight": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/preflight_failure_v1/RESULT.json",
+    "sha256": "2571e606b37e5a2a6ef57ffa67f18ed0b3c4e4d3d66aaa37c2390d36dc5fb58a"
+  },
+  "failure_root_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/preflight_failure_v1/ROOT_REVIEW.json",
+    "sha256": "c2225edf6c4246deccd6daaedbb8b708a0ce4326e5f9bea1cc79bd5759113f27"
+  },
+  "scope": "Read-only source diff, original native output text, saved failure JSON, source hashes and AST syntax; no imports, numerical work or diagnostic execution.",
+  "change": "The only changed source literal replaces the MaxIter label delimiter matching exactly three periods with two or more periods. The required native label, single match and exact iteration count125 are unchanged.",
+  "actual_evidence": {
+    "central_output_line": 2028,
+    "plus_output_line": 2027,
+    "minus_output_line": 2027,
+    "all_three_raw_lines": " Maximum # iterations   MaxIter         ....   125",
+    "failed_job_id": "13279",
+    "failed_status": "execution_failure",
+    "failed_error": "ValueError('Native SCF iteration limit differs')",
+    "native_runner_invocations": 0,
+    "new_DFT_calls_attempted": 0,
+    "new_MM_calls": 0,
+    "new_ALPB_calls": 0
+  },
+  "review_correction": "The earlier static review missed the four-period delimiter. The original source, failed preflight and earlier review remain preserved.",
+  "science_unchanged": [
+    "Three selected cells and all source/state/geometry/charge/basis/ECP/native pins",
+    "Angular and radial grid candidate and full executed fingerprint checks",
+    "Original125-iteration limit, SCF policy and derivative tolerance",
+    "Fresh central gradient, raw QM/pcgrad mapping and unchanged shared components",
+    "Central-before-displacements admission/cost gate and finite no-retry scope"
+  ],
+  "ast_syntax": "passed_without_import",
+  "blocking_findings": [],
+  "remaining_gate": "Actual versioned zero-call Slurm preflight remains decisive before any molecular submission.",
+  "new_molecular_calls": 0,
+  "scientific_execution": false
+}

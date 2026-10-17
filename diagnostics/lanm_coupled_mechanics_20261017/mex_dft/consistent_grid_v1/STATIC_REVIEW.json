@@ -1,0 +1,74 @@
+{
+  "status": "pass_static_source_review_only",
+  "reviewer": "mechanics_mex_adapter",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/CONSISTENT_GRID.py",
+    "sha256": "8258e2126cb30b4aa0f77afa40043d50895a31633fdee1c4cfde74a74320b1cf"
+  },
+  "execution_specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/EXECUTION_SPEC_V1.md",
+    "sha256": "c18dc071b6622624cedc1dec5fa8e0a0a71a0d11ac0abb2988f8c86a7ff19259"
+  },
+  "root_design_decision": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/ROOT_DESIGN_DECISION.json",
+    "sha256": "2a2d6917a4e00967b27b8e2a64e860dfdca0bc16a4fb7bff518fed3dff457b5e"
+  },
+  "prior_proposal_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/SPEC_REVIEW.json",
+    "sha256": "998d6a2efe97c58352f8d5ccb9058045b9cd2c7313cb4818f19a0e9d5cb7d6d7"
+  },
+  "scope": "All553 source lines, immutable helper interfaces, actual original JSON/native text schemas, source hashes and AST syntax. No scientific imports, numerical execution, runtime parser tests, native calls or submissions.",
+  "findings": [
+    {
+      "area": "Frozen inputs and saved-component replay",
+      "result": "PASS",
+      "detail": "Exact original failed collector/recipe/preparation/diagnosis and root design are bound. QUALIFY.inputs/prepared/collect perform saved-only raw admissions; original failure must replay exactly. All four additional gradient helper hashes exist in the original manifest and match actual imported-path candidates. No old singlepoint calculator is reused."
+    },
+    {
+      "area": "Grid and iteration parser",
+      "result": "PASS",
+      "detail": "Corrected native MaxIter label is Maximum # iterations. Actual original output blocks match all required fields and ordered headers. Preflight parses all three old grid sets and their125-iteration setting, then requires their rejection as the new grid2=grid3 candidate. Candidate admission requires complete fingerprint equality and final integration evidence."
+    },
+    {
+      "area": "Task and native runner compatibility",
+      "result": "PASS",
+      "detail": "Three explicit task IDs preserve source maps/state/charges and introduce only the declared method block. New directories contain input/core/field bytes inside singleton-manifest scope. Runner accepts the central nonempty engrad_path and relocates native engrad there; pcgrad remains explicitly pinned at endpoint.runtime.pcgrad. Energy-only displaced tasks have no gradient path."
+    },
+    {
+      "area": "New central analytic gradient",
+      "result": "PASS",
+      "detail": "QUALIFY.admit_sp provides native energy/state/runtime admission; frozen_f.parse independently checks analytic QM/ECP/D4 evidence, atom order, coordinates and energy. Receipt engrad and explicit raw1840-row pcgrad are required. Scatter maps209 QM atoms and1840 external rows to full2049 physical gradients; row832 maps directly to physical1019 and is checked exactly. Units convert once from Hartree/bohr; force is negative gradient."
+    },
+    {
+      "area": "Central row merging",
+      "result": "PASS",
+      "detail": "row.update(parsed) preserves task, original native SCF observations, grid diagnostics and runtime policy while adding analytic evidence. Final JSON canonicalization handles executed_ecp tuple/list serialization without changing scientific values. The fresh central composite replaces only PBE0 gradients and reuses both archived shared components."
+    },
+    {
+      "area": "Enforceable staging and provenance",
+      "result": "PASS",
+      "detail": "Run requires an actual same-binding zero-call preflight. Each displacement additionally requires the actual complete admitted central, exact central/preflight/recipe identities, approved two-task continuation decision, no-retry flag and pinned native/scheduler cost receipts. Matching12MPI and memory-derived runtime fields are checked before and after execution. Saved results re-admit raw native evidence and central assembly."
+    },
+    {
+      "area": "Final comparison and failures",
+      "result": "PASS",
+      "detail": "Collector retains all three slots, requires both new energies and the fresh central derivative, deduplicates native job IDs and reuses unchanged QUALIFY.compare_pair with the original tolerance. No extra MM/ALPB/MACE/GFN calls are reachable. Exceptions and unavailable rows remain explicit; failed original qualification and stopped original six/eight branches are retained on either candidate outcome."
+    }
+  ],
+  "review_fix_completed": {
+    "issue": "MaxIter regex initially used an absent expanded label.",
+    "resolution": "Uses actual native Maximum # iterations and checks all three saved outputs in zero-call preflight.",
+    "scientific_settings_changed": false
+  },
+  "blocking_findings": [],
+  "ast_syntax": "passed_without_import_or_execution",
+  "remaining_runtime_prerequisites": [
+    "Root binds final config and exact manifest/source pins, then runs the reviewed saved-data preflight under Slurm.",
+    "Only actual native output can establish installed parser/default-reset behavior and candidate grid fingerprints; static review does not assert that behavior has passed.",
+    "Root inspects the initial central grid header and its eventual native admission and measured cost before authorizing either displacement.",
+    "All physical-state, SCF residual, single-step truncation, historical allocation and no-global-force-qualification limits remain."
+  ],
+  "new_molecular_calls": 0,
+  "scientific_numerical_execution": false,
+  "source_changes_requested": false
+}

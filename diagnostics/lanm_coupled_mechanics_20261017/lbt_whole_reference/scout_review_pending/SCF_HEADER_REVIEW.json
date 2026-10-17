@@ -1,0 +1,273 @@
+{
+  "observation_started_utc": "2026-10-17T11:28:19.911102+00:00",
+  "observation_finished_utc": "2026-10-17T11:28:19.911849+00:00",
+  "reviewer": "/root/mex_health_review",
+  "job_id": "13051",
+  "task_id": "before_La",
+  "status": "SCF_header_review_only_gradient_and_terminal_admission_pending",
+  "scope": "Read-only native header/SCF and declared configuration comparison. No force parsing, numerical recomputation, admission, submission or job change.",
+  "live_output_observation": {
+    "path": "workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_v1/scout/before_La/endpoint.out",
+    "bytes_read": 373395,
+    "stat_size_before": 373395,
+    "stat_size_after": 373395,
+    "mtime_utc": "2026-10-17T11:14:57.441572+00:00",
+    "mtime_ns_before": 1792235697441572403,
+    "mtime_ns_after": 1792235697441572403,
+    "line_count_in_snapshot": 9776,
+    "live_file_not_final_immutable_artifact": true,
+    "final_output_sha256": null,
+    "observed_tail": [
+      "                         ORCA SCF GRADIENT CALCULATION",
+      "------------------------------------------------------------------------------",
+      "",
+      "Nuc. rep. gradient        (SHARK) ... done (  0.0 sec)",
+      "HCore & Overlap gradient  (SHARK) ... done (130.5 sec)",
+      "ECP gradient              (SHARK) ... done (179.2 sec)",
+      "Split-RIJ-J gradient      (SHARK) ... done (388.3 sec)",
+      "COSX-gradient                     ... "
+    ],
+    "native_normal_termination_observed": false,
+    "terminal_adapter_result_exists": false,
+    "terminal_native_execution_receipt_exists": false,
+    "scheduler_row_observed_earlier_during_review": "13051|RUNNING|0:0|20980|12|node-64-768g-28",
+    "scheduler_row_is_terminal_cost": false
+  },
+  "stable_evidence_pins": {
+    "scout_config": {
+      "path": "workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_v1/SCOUT_CONFIG.json",
+      "sha256": "dc6127e4fad9ffef90e30ed5770e00fd764a1ba6c1b57cbbfb94b6bdbf038ad8"
+    },
+    "execution_spec": {
+      "path": "diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_reference/EXECUTION_SPEC_V1.md",
+      "sha256": "8f5002f64a1aafc78470c044289129815a72663e89fe9b884841f38c702227ae"
+    },
+    "task": {
+      "path": "workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_v1/scout/before_La/TASK.json",
+      "sha256": "7f0bc655074116f8e49430416c37e8c0c6c478017297ac86663880a6db6a26ef"
+    },
+    "runtime": {
+      "path": "workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_v1/scout/before_La/endpoint.runtime.json",
+      "sha256": "04493c90b54e07f8c75e29976be1cd45e543287c8403638b5729496f237a8dae"
+    },
+    "input": {
+      "path": "workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_v1/scout/before_La/endpoint.inp",
+      "sha256": "b94c22fc46ff47bd8c678f2e49634948fa99195638f6f69823d0b99f075b102d"
+    },
+    "runtime_input": {
+      "path": "workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_v1/scout/before_La/endpoint.runtime.inp",
+      "sha256": "d0c7bfa61ab0cc3aa06ed535d3502d19677e5a2a4c668cd55c5d010b7eafb88e"
+    },
+    "preflight_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_v1/preflight/RESULT.json",
+      "sha256": "151d8d5f5fc0d4d4729933b64d98e4962e21518504475facb1d61c37d67c554e"
+    }
+  },
+  "declaration_comparison": {
+    "reviewed_header_matches_declared_recipe_state_runtime": true,
+    "scope_limit": "Header agreement is not a full terminal parser or gradient admission.",
+    "method": "! PBE0 D4 def2-TZVP def2/J RIJCOSX NoAutostart DefGrid3 VeryTightSCF EnGrad",
+    "ORCA_version": "6.1.1",
+    "guess": "PModel",
+    "native_HFTyp": "RHF",
+    "state_from_TASK": {
+      "metal": "La",
+      "oxidation_state_hypothesis": 3,
+      "charge": -2,
+      "physical_multiplicity": 1,
+      "physical_f_occupation": 0,
+      "effective_multiplicity": 1,
+      "ecp_core_electrons": 46,
+      "all_electron_count": 1076,
+      "explicit_electrons": 1030,
+      "alpha_electrons": 515,
+      "beta_electrons": 515,
+      "representation": "spin_free_4f0_valence_model",
+      "spin_orbit_included": false,
+      "physical_state_qualified": false,
+      "whole_physical_atom_count": 256,
+      "target_index": 255,
+      "external_charge_count": 0,
+      "synthetic_cap_count": 0
+    },
+    "native_header": {
+      "atom_count": 256,
+      "charge": -2,
+      "multiplicity": 1,
+      "explicit_electrons": 1030,
+      "La_target_index": 255,
+      "La_ECP_core_electrons": 46
+    },
+    "native_input_coordinate_directive": "* xyzfile -2 1 physical.xyz",
+    "external_pointcharge_directive_present": false,
+    "CPCM_SMD_directive_present": false,
+    "runtime_memory_policy": {
+      "allocated_cpus": 12,
+      "allocated_memory_MiB": 48000,
+      "base_renderer_sha256": "4d75904eca4296abd892958df700063e272f5f029a0ce256bcf1b579768aeadb",
+      "local_mpi_slots": 12,
+      "maxcore_MB": 3100,
+      "memory_source": "SLURM_MEM_PER_NODE",
+      "per_rank_decimal_MB_before_rounding": 3145.7280000000005,
+      "ranks_per_worker": 12,
+      "reserve_fraction": 0.25,
+      "workers": 1,
+      "wrapper_sha256": "46356652756311981a51732525457c697b31e860348dee4b590d72e7bddee76d"
+    },
+    "runtime_parallelism": {
+      "nprocs": 12,
+      "policy": "allocation_aware_mpi_rank_partition",
+      "slurm_cpus_on_node": 12
+    },
+    "runtime_input_matches_recorded_hash": true,
+    "template_matches_recorded_hash": true,
+    "spec_matches_config_pin": true,
+    "atomic_guess_note": "Multiplicity assumed2 belongs to the temporary isolated La PModel atom calculation. The molecular SCF explicitly uses multiplicity1/NEL1030; the atomic guess line is not a molecular-state mismatch."
+  },
+  "SCF": {
+    "native_convergence_observed": true,
+    "cycles": 18,
+    "printed_stopping_route": "Gradient check signals convergence",
+    "MaxIter": 125,
+    "ConvCheckMode": "Total+1el-Energy",
+    "ConvForced": 0,
+    "printed_residuals": {
+      "Energy change": {
+        "value": "4.6566e-09",
+        "tolerance": "1.0000e-09",
+        "within_printed_tolerance": false
+      },
+      "MAX-Density change": {
+        "value": "6.2467e-05",
+        "tolerance": "1.0000e-08",
+        "within_printed_tolerance": false
+      },
+      "RMS-Density change": {
+        "value": "3.4755e-07",
+        "tolerance": "1.0000e-09",
+        "within_printed_tolerance": false
+      },
+      "DIIS Error": {
+        "value": "1.0101e-03",
+        "tolerance": "1.0000e-08",
+        "within_printed_tolerance": false
+      },
+      "Orbital Gradient": {
+        "value": "1.1950e-07",
+        "tolerance": "2.0000e-06",
+        "within_printed_tolerance": true
+      },
+      "Orbital Rotation": {
+        "value": "4.1095e-07",
+        "tolerance": "2.0000e-06",
+        "within_printed_tolerance": true
+      }
+    },
+    "all_printed_residuals_pass": false,
+    "all_residuals_flag_is_admission_gate": false,
+    "residual_source_lines": [
+      {
+        "line_1_based": 2423,
+        "text": "Last Energy change         ...    4.6566e-09  Tolerance :   1.0000e-09"
+      },
+      {
+        "line_1_based": 2424,
+        "text": "Last MAX-Density change    ...    6.2467e-05  Tolerance :   1.0000e-08"
+      },
+      {
+        "line_1_based": 2425,
+        "text": "Last RMS-Density change    ...    3.4755e-07  Tolerance :   1.0000e-09"
+      },
+      {
+        "line_1_based": 2426,
+        "text": "Last DIIS Error            ...    1.0101e-03  Tolerance :   1.0000e-08"
+      },
+      {
+        "line_1_based": 2427,
+        "text": "Last Orbital Gradient      ...    1.1950e-07  Tolerance :   2.0000e-06"
+      },
+      {
+        "line_1_based": 2428,
+        "text": "Last Orbital Rotation      ...    4.1095e-07  Tolerance :   2.0000e-06"
+      }
+    ],
+    "printed_final_grid_exchange_change_Eh": "0.000033234",
+    "printed_final_grid_seconds": "3074.446",
+    "printed_post_grid_SCF_energy_Eh": "-6765.27210348293465",
+    "printed_D4_energy_Eh": "-0.407766294",
+    "printed_final_single_point_energy_Eh": "-6765.679869776899",
+    "printed_grid_correction_is_force_error_estimate": false
+  },
+  "grids": {
+    "XC": {
+      "angular": 6,
+      "max_Lebedev": 590,
+      "printed_IntAcc": "4.959",
+      "points": 2879784
+    },
+    "COSX_grid1": {
+      "angular": 2,
+      "max_Lebedev": 110,
+      "printed_IntAcc": "4.020",
+      "points": 316152
+    },
+    "COSX_grid2": {
+      "angular": 3,
+      "max_Lebedev": 194,
+      "printed_IntAcc": "4.338",
+      "points": 678509
+    },
+    "COSX_grid3": {
+      "angular": 4,
+      "max_Lebedev": 302,
+      "printed_IntAcc": "4.871",
+      "points": 1258276
+    },
+    "common": "OptM3 with GC(2021), adaptive pruning4, mBecke2022, BFCut1e-12, WCut1e-14, H/He angular reduction by1, rotationally invariant construction off.",
+    "COSX": "Partially contracted basis on; UseSFitting on. XC partial contraction off.",
+    "SCF_and_final_COSX_grids_differ": true
+  },
+  "warnings_and_frontier": {
+    "actual_warning_lines": [
+      {
+        "line_1_based": 2355,
+        "text": "Warning: op=0 Small HOMO/LUMO gap (  -0.061) - skipping pre-diagonalization"
+      }
+    ],
+    "initial_small_gap_line": "Warning: op=0 Small HOMO/LUMO gap (  -0.061) - skipping pre-diagonalization",
+    "initial_warning_scope": "Printed after iteration1; followed by a full diagonalization. Do not label it the final gap.",
+    "final_frontier_raw_rows": [
+      {
+        "line_1_based": 2950,
+        "text": "514   2.0000      -0.035206        -0.9580"
+      },
+      {
+        "line_1_based": 2951,
+        "text": "515   0.0000       0.037781         1.0281"
+      }
+    ],
+    "frontier_limit": "The final occupied514 energy is negative and virtual515 positive in the printed table. Neither these finite-basis orbital values nor native convergence establishes electron binding, electronic stability or a physical vacuum dianion."
+  },
+  "pending_comparison_limits": [
+    "Keep original native admission and all failed printed residual flags. No tightened or relaxed SCF gate is inferred.",
+    "The whole reference shares different late-SCF/final COSX grids, but computes nuclear gradients without external point charges. The Mex pcgrad failure cannot be mechanically transferred to it.",
+    "The printed final-grid scalar is an energy correction, not a force-error estimate. This review performs no numerical derivative or force qualification.",
+    "Force comparison remains descriptive and is not an accuracy oracle. Await terminal normal convergence/receipt, finite ordered256-atom gradient, ECP/D4 derivative evidence and original energy/coordinate correspondence tests.",
+    "Conditional free termini, vacuum dianion, post-added fixed-charge ALPB, spin-free representation/SOC omission and nonstationary source geometry remain material limits.",
+    "The independent whole PBE0 model changes electronic extent and partition; disagreement cannot uniquely identify a defective MM parameter. No equilibrium, affinity or La/Dy preference follows from this one scout."
+  ],
+  "decision": {
+    "continue_original_job_unchanged": true,
+    "gradient_admitted": false,
+    "terminal_result_admitted": false,
+    "physical_state_qualified": false,
+    "remaining_three_authorized_by_this_review": false
+  },
+  "actions": {
+    "new_molecular_calls": 0,
+    "scientific_numerical_recomputation": false,
+    "job_changes": false,
+    "submissions": 0,
+    "only_new_file": "SCF_HEADER_REVIEW.json"
+  }
+}

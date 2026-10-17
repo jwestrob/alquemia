@@ -19,9 +19,13 @@ specified under mex_dft/consistent_grid_v1/EXECUTION_SPEC_V1.md: fresh central
 gradient first, then at most two displaced energies after actual admission/cost
 review. Only SCF grid2 is brought to the original final grid3 construction;
 original derivative tolerance and state/SCF settings remain. Root accepted this
-bounded design; Harvey implements the separate thin adapter, Linnaeus reviews.
-No new molecular config or job exists. Actual zero-call Slurm preflight and
-native grid-header verification remain required. See ROOT_DESIGN_DECISION.json.
+bounded design. Saved-only preflight13279 failed on a native-header delimiter
+before molecular calls (10CPU-s). Its result and source are preserved. Reviewed
+adapter1600a0a5 changes only that parser delimiter; exact125-iteration and all
+scientific gates stay unchanged. Actual v2 preflight13280 is submitted on1CPU,
+watcher2758224, configbe60cc31 in mex_consistent_grid_preflight_v2. Review its
+actual result before binding the fresh central; native grid-header verification
+remains required. See ROOT_DESIGN_DECISION.json.
 Whole13051 has converged electronically and is calculating its analytic gradient;
 native terminal admission and the original collector are still required.
 

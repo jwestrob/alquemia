@@ -20,9 +20,10 @@ are archived in `lbt_whole_reference_continuation/full_result_v1/`.
 Four molecular allocations total1154004CPU-s; listed support47CPU-s.
 After-La13290 actual completion delivery is separately acknowledged.
 
-Do not continue or promote the challenged LBT hybrid response. Root is preparing
-a finite saved-only comparison of baseline/expanded-region starting forces
-against this reference; Linnaeus owns its adapter and Harvey its static review.
+Do not continue or promote the challenged LBT hybrid response. The finite saved-only comparison of baseline/expanded-region starting forces
+passed root and Harvey static review and is submitted as13446 on1CPU.
+Exact source/ready/declaration/submission are in `lbt_partition_force_reference_v1/`.
+The completion watcher is3051265; root owns result integration.
 No new molecular calls or repeated MM term counting. Mex13281 remains active;
 actual central gradient admission/cost still gate its two displacements.
 The mechanics goal remains unmet. Earlier checkpoints below are historical.

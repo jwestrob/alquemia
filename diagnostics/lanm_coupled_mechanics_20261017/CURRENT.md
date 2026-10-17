@@ -19,7 +19,9 @@ LBT is a peptide control, not a second natural LanM.7CCN is Lu-conditioned. Mex 
 
 Every job has an actual completion watcher; DFT also has manifest-aware health watchers. Exact commands, configurations and watcher PIDs are in workspaceSUBMISSION.json. Read HYBRID_RESPONSE_CHECKPOINT.json and mex_dft/README.md. All current molecular computation uses Slurm.
 
-**Next:** inspect all four response terminals. If all physical/backend admissions pass, bind their exact results and cross-score the shared pool with at most four opposite-metal calls. The reviewed hybrid_response_comparison/COMPARE.py then separates fixed-coordinate model change, reselection and new response while keeping Mex fixed. FIGURE.py renders only a complete result. A saved-only force audit is being prepared to locate the changed restoring forces; it cannot change the running protocol.
+**Next:** inspect all four response terminals. If all physical/backend admissions pass, bind their exact results and cross-score the shared pool with at most four opposite-metal calls. The reviewed hybrid_response_comparison/COMPARE.py then separates fixed-coordinate model change, reselection and new response while keeping Mex fixed. FIGURE.py renders only a complete result. Saved-only force audit13031 is submitted on1CPU to locate the changed restoring forces; it cannot change the running protocol. Source85fc7dbd/configa4da7df1 passed root and independent review.
+
+First terminal13017 is admitted after80steps, nonconverged (max3.317400/RMS0.901487kcal/mol/A). Work from its hybrid start is−28.244859kcal/mol. It includes12scoutsteps and68new continuation evaluations; continuation allocation315s/12CPU/oneH200. Other three states remain pending/running; the paired result is unavailable until all four admissions and cross scores.
 
 ## Numerical qualification and failures
 

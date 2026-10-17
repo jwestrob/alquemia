@@ -26,10 +26,10 @@ Root owns all submissions; the goal remains active and unmet.
   pool. Read lbt_hybrid_response_recovery/failure_result/REPORT.md.
 - Whole256 preflight13049 passes; before-La DFT13051 runs12MPI,
   1030 explicit electrons. Actual pins/watchers: ACTIVE_CHECKPOINT.json.
-- Mex eight-cell response adapter is statically reviewed but not executable yet.
-  Saved preparation13059/13060/13063 failures are preserved; no molecular calls.
-  Original numerical environment resolves terminal replay; all14 cache-path
-  diagnosis13065 runs12CPUs/noGPU with completion wake. Future DFT stays gated.
+- Mex eight-cell response adapter is prepared and tested, reference execution gated.
+ 13067 prepares8/8;13068 preflight and five failure controls pass, zero molecular
+  calls.13065 proves14/14 scientific cells unchanged; only old wrapper paths differ.
+  Original13059/13060/13063 failures are preserved. Read mex_dft_response/READINESS_REPORT.md.
 - Independent DFT12977/12978 continue12MPI each with completion/health wakes.
   Mex8-cell response and remaining whole-LBT reference cells stay gated by actual
   derivative/admission/cost review. No duplicate submissions.

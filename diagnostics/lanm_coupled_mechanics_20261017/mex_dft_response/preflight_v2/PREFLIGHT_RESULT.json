@@ -1,0 +1,105 @@
+{
+  "protocol": "mex_saved_terminal_embedded_PBE0_response_eight_v1",
+  "stage": "preflight",
+  "status": "complete",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/RESPONSE_REFERENCE_V2.py",
+    "sha256": "3acf08878f5d9b11275145ce65355e34ad01d792118c1635dda437db09ee1324"
+  },
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_preflight_v2/CONFIG.json",
+    "sha256": "7723164c7a78fd46c5091b289965e0704afb475e14e802962c6ae37218302d8c"
+  },
+  "settings": {
+    "maximum_new_DFT_cells": 8,
+    "mpi_ranks": 12,
+    "concurrent_endpoints": 1,
+    "first_cost_scout": "La_terminal__La",
+    "new_other_component_calls": 0,
+    "deformation_work_resolution_kcal_mol": 1.0,
+    "projection_agreement_target_kcal_mol_A": 1.0,
+    "projection_rule": "both full physical own-metal restricted-to-broad chords, unit Cartesian L2 norm",
+    "native_gradient_coordinate_atol_A": 1e-06,
+    "native_gradient_energy_atol_Eh": 1e-08
+  },
+  "slurm_job_id": "13068",
+  "declared_cells": 8,
+  "rows": {
+    "La_terminal__La": {
+      "task_id": "La_terminal__La",
+      "status": "unavailable"
+    },
+    "La_terminal__Dy": {
+      "task_id": "La_terminal__Dy",
+      "status": "unavailable"
+    },
+    "Dy_terminal__La": {
+      "task_id": "Dy_terminal__La",
+      "status": "unavailable"
+    },
+    "Dy_terminal__Dy": {
+      "task_id": "Dy_terminal__Dy",
+      "status": "unavailable"
+    },
+    "La_cartesian_terminal__La": {
+      "task_id": "La_cartesian_terminal__La",
+      "status": "unavailable"
+    },
+    "La_cartesian_terminal__Dy": {
+      "task_id": "La_cartesian_terminal__Dy",
+      "status": "unavailable"
+    },
+    "Dy_cartesian_terminal__La": {
+      "task_id": "Dy_cartesian_terminal__La",
+      "status": "unavailable"
+    },
+    "Dy_cartesian_terminal__Dy": {
+      "task_id": "Dy_cartesian_terminal__Dy",
+      "status": "unavailable"
+    }
+  },
+  "new_DFT_calls_requested": 0,
+  "new_DFT_calls_attempted": 0,
+  "new_MM_calls": 0,
+  "new_ALPB_calls": 0,
+  "new_MACE_calls": 0,
+  "new_GFN_calls": 0,
+  "optimizer_steps": 0,
+  "caveats": {
+    "physical_state_qualified": false,
+    "global_force_qualified": false,
+    "SCF_error_bound_available": false,
+    "stationary_minimum_claimed": false,
+    "affinity_claimed": false,
+    "spectators": [
+      "A/201//ND",
+      "A/202//ND",
+      "A/204//ND"
+    ],
+    "represented_waters": 167,
+    "whole_charge_e": 2,
+    "QM_charge_e": 0,
+    "electronic_model": "spin-free frozen-f; physical La singlet/Dy sextet, effective singlets; no SOC",
+    "scaffold_reference_limit": "The unchanged MM ledger cannot independently validate MM stiffness."
+  },
+  "input_admission_passed": true,
+  "preparation_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/preparation/RESULT.json",
+    "sha256": "101fe515f1ac71aaa3b7a13cc0a89848c01f5bff99ea3c309f2e6867e485fdf8"
+  },
+  "source_replay": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_preflight_v2/preflight/SOURCE_REPLAY.json",
+    "sha256": "e7c214abb14900f4a84e160033fa3f5895fb4e36c4c90b7fe96c50baa42e70cd"
+  },
+  "future_gate_presence": {
+    "qualification_result": false,
+    "first_scout_decision": false,
+    "response_scout_result": false,
+    "remaining_decision": false
+  },
+  "execution_authorized": false,
+  "elapsed_seconds": 30.694495253032073,
+  "application_allocated_CPU_seconds": 368.3339430363849,
+  "parent_peak_RSS_KiB": 488764,
+  "parent_RSS_is_not_MPI_peak": true
+}

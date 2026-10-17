@@ -1,0 +1,153 @@
+{
+  "protocol": "mex_response_failure_gate_regression_v2",
+  "status": "passed",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_preflight_v2/REGRESSION_V2.py",
+    "sha256": "5178ecdcac323e5baabd537951f5672be0ded780074f2f9415d506495b806ef1"
+  },
+  "slurm_job_id": "13068",
+  "molecular_calls": 0,
+  "template": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_preflight_v2/CONFIG_V2.template.json",
+    "sha256": "a35bde861f7a22cb575e76c1670ec4fa9cf8c6030cbafa1c9bf79fbd132d9c5a"
+  },
+  "preparation_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/preparation/RESULT.json",
+    "sha256": "101fe515f1ac71aaa3b7a13cc0a89848c01f5bff99ea3c309f2e6867e485fdf8"
+  },
+  "preflight_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_preflight_v2/preflight/RESULT.json",
+    "sha256": "ecc228201b2de1eb05e7d2b1172a466340e0e3f78551a6c8b7331608e7ca53ea"
+  },
+  "adapter": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/RESPONSE_REFERENCE_V2.py",
+    "sha256": "3acf08878f5d9b11275145ce65355e34ad01d792118c1635dda437db09ee1324"
+  },
+  "fixture_config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_preflight_v2/CONFIG.json",
+    "sha256": "7723164c7a78fd46c5091b289965e0704afb475e14e802962c6ae37218302d8c"
+  },
+  "cases": [
+    {
+      "name": "saved_preflight_control",
+      "passed": true,
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_preflight_v2/regression/saved_preflight_control/execution/RESULT.json",
+        "sha256": "9727978edaf77ffccd2c52d82a6d69eb6266063add6a5fdc09d1fa30d6250c38"
+      },
+      "expected_status": "complete",
+      "observed_status": "complete",
+      "status_before_failure": null,
+      "failure": null,
+      "calls": {
+        "new_DFT_calls_requested": 0,
+        "new_DFT_calls_attempted": 0,
+        "new_MM_calls": 0,
+        "new_ALPB_calls": 0,
+        "new_MACE_calls": 0,
+        "new_GFN_calls": 0,
+        "optimizer_steps": 0
+      }
+    },
+    {
+      "name": "missing_qualification",
+      "passed": true,
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_preflight_v2/regression/missing_qualification/execution/RESULT.json",
+        "sha256": "2f61b6010fbc6f050b869b12df7e2e489e2a24e99b00a201cf96203ec251e5ef"
+      },
+      "expected_status": "execution_failure",
+      "observed_status": "execution_failure",
+      "status_before_failure": "execution_failure",
+      "failure": "ValueError('Missing/changed pinned artifact: None')",
+      "calls": {
+        "new_DFT_calls_requested": 0,
+        "new_DFT_calls_attempted": 0,
+        "new_MM_calls": 0,
+        "new_ALPB_calls": 0,
+        "new_MACE_calls": 0,
+        "new_GFN_calls": 0,
+        "optimizer_steps": 0
+      }
+    },
+    {
+      "name": "real_preparation_is_not_qualification",
+      "passed": true,
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_preflight_v2/regression/real_preparation_is_not_qualification/execution/RESULT.json",
+        "sha256": "086006100aa7aab99794da2726a99bece766ff938d07ab7653597edf4114e742"
+      },
+      "expected_status": "execution_failure",
+      "observed_status": "execution_failure",
+      "status_before_failure": "execution_failure",
+      "failure": "ValueError('Actual full derivative qualification required')",
+      "calls": {
+        "new_DFT_calls_requested": 0,
+        "new_DFT_calls_attempted": 0,
+        "new_MM_calls": 0,
+        "new_ALPB_calls": 0,
+        "new_MACE_calls": 0,
+        "new_GFN_calls": 0,
+        "optimizer_steps": 0
+      }
+    },
+    {
+      "name": "preflight_late_gate_failure",
+      "passed": true,
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_preflight_v2/regression/preflight_late_gate_failure/execution/RESULT.json",
+        "sha256": "7302e81859776ee52cf23d4c70e1cc2c52fecd7aa927ee610d2f3e38f64a9245"
+      },
+      "expected_status": "execution_failure",
+      "observed_status": "execution_failure",
+      "status_before_failure": "complete",
+      "failure": "ValueError('Actual full derivative qualification required')",
+      "calls": {
+        "new_DFT_calls_requested": 0,
+        "new_DFT_calls_attempted": 0,
+        "new_MM_calls": 0,
+        "new_ALPB_calls": 0,
+        "new_MACE_calls": 0,
+        "new_GFN_calls": 0,
+        "optimizer_steps": 0
+      }
+    },
+    {
+      "name": "nonfinite_approximate_gradient",
+      "passed": true,
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_preflight_v2/regression/nonfinite_approximate_gradient/execution/RESULT.json",
+        "sha256": "5ca8982aa1832cea0bac77441c5af69ae531fea1e4efaa717bdbf9f406f56266"
+      },
+      "expected_status": "execution_failure",
+      "observed_status": "execution_failure",
+      "status_before_failure": "execution_failure",
+      "failure": "ValueError('Full physical force unavailable')",
+      "calls": {
+        "new_DFT_calls_requested": 0,
+        "new_DFT_calls_attempted": 0,
+        "new_MM_calls": 0,
+        "new_ALPB_calls": 0,
+        "new_MACE_calls": 0,
+        "new_GFN_calls": 0,
+        "optimizer_steps": 0
+      }
+    }
+  ],
+  "nonfinite_fixture": {
+    "origin_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/mex_dft_origin_assembly_v1/execution/RESULT.json",
+      "sha256": "b5322a5fd2666569d4c9dded8f99980ca977baf8c3c584e2870f64c93eb0618c"
+    },
+    "approximate_assembled": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/mex_static_v2/execution/La/ASSEMBLED.json",
+      "sha256": "5f11ffc957883a4c8fc1ba7ae63bfaeef7ab565bb0752c193a0787cde4818012"
+    },
+    "test_fault_only": "gradient_kcal_mol_A[0][0] replaced in memory by NaN",
+    "original_artifacts_modified": false,
+    "new_molecular_observation": false
+  },
+  "forbidden_entries": [],
+  "scope": "Test-local saved-data hooks; real gate/main/force-report code; no preparation or engine rerun",
+  "elapsed_seconds": 0.5501522050471976
+}

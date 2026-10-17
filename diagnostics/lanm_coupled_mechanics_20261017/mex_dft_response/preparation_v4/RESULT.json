@@ -1,0 +1,177 @@
+{
+  "protocol": "mex_saved_terminal_embedded_PBE0_response_eight_v1",
+  "stage": "prepare",
+  "status": "prepared",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/RESPONSE_REFERENCE_V2.py",
+    "sha256": "3acf08878f5d9b11275145ce65355e34ad01d792118c1635dda437db09ee1324"
+  },
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/CONFIG.json",
+    "sha256": "3ff2b3b70343995d1742b03ac30cd459a2c976a605c7e4505a109fab177c15c0"
+  },
+  "settings": {
+    "maximum_new_DFT_cells": 8,
+    "mpi_ranks": 12,
+    "concurrent_endpoints": 1,
+    "first_cost_scout": "La_terminal__La",
+    "new_other_component_calls": 0,
+    "deformation_work_resolution_kcal_mol": 1.0,
+    "projection_agreement_target_kcal_mol_A": 1.0,
+    "projection_rule": "both full physical own-metal restricted-to-broad chords, unit Cartesian L2 norm",
+    "native_gradient_coordinate_atol_A": 1e-06,
+    "native_gradient_energy_atol_Eh": 1e-08
+  },
+  "slurm_job_id": "13067",
+  "declared_cells": 8,
+  "rows": {
+    "La_terminal__La": {
+      "task_id": "La_terminal__La",
+      "status": "unavailable"
+    },
+    "La_terminal__Dy": {
+      "task_id": "La_terminal__Dy",
+      "status": "unavailable"
+    },
+    "Dy_terminal__La": {
+      "task_id": "Dy_terminal__La",
+      "status": "unavailable"
+    },
+    "Dy_terminal__Dy": {
+      "task_id": "Dy_terminal__Dy",
+      "status": "unavailable"
+    },
+    "La_cartesian_terminal__La": {
+      "task_id": "La_cartesian_terminal__La",
+      "status": "unavailable"
+    },
+    "La_cartesian_terminal__Dy": {
+      "task_id": "La_cartesian_terminal__Dy",
+      "status": "unavailable"
+    },
+    "Dy_cartesian_terminal__La": {
+      "task_id": "Dy_cartesian_terminal__La",
+      "status": "unavailable"
+    },
+    "Dy_cartesian_terminal__Dy": {
+      "task_id": "Dy_cartesian_terminal__Dy",
+      "status": "unavailable"
+    }
+  },
+  "new_DFT_calls_requested": 0,
+  "new_DFT_calls_attempted": 0,
+  "new_MM_calls": 0,
+  "new_ALPB_calls": 0,
+  "new_MACE_calls": 0,
+  "new_GFN_calls": 0,
+  "optimizer_steps": 0,
+  "caveats": {
+    "physical_state_qualified": false,
+    "global_force_qualified": false,
+    "SCF_error_bound_available": false,
+    "stationary_minimum_claimed": false,
+    "affinity_claimed": false,
+    "spectators": [
+      "A/201//ND",
+      "A/202//ND",
+      "A/204//ND"
+    ],
+    "represented_waters": 167,
+    "whole_charge_e": 2,
+    "QM_charge_e": 0,
+    "electronic_model": "spin-free frozen-f; physical La singlet/Dy sextet, effective singlets; no SOC",
+    "scaffold_reference_limit": "The unchanged MM ledger cannot independently validate MM stiffness."
+  },
+  "source_replay": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/preparation/SOURCE_REPLAY.json",
+    "sha256": "338887522c448fd8caf67bf7e19307c460a52e364c13551d35a356c9b19cd4d6"
+  },
+  "directions": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/preparation/DIRECTIONS.json",
+    "sha256": "9a85ae2e93c4b21243874cbd3ec68410d41361034928208e1dc506b9dde29b80"
+  },
+  "tasks": [
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/preparation/La_terminal__La/TASK.json",
+      "sha256": "58061b7eb429fc9ad157d14daa178ebc2984b1ab4724e4404a757366f6f0c1a5"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/preparation/La_terminal__Dy/TASK.json",
+      "sha256": "bd9e2b69b64253d3ba26c529216763ca93e827ff430076c0c7106109667787ea"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/preparation/Dy_terminal__La/TASK.json",
+      "sha256": "f3344c95cdf50b73465b40d61998946031ec7a44e49e5cc97e714d305449db96"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/preparation/Dy_terminal__Dy/TASK.json",
+      "sha256": "7b39a3e5579873f0acd58ff5b5f731d0c227d01d49ed36e0feff1fc73eeedbe7"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/preparation/La_cartesian_terminal__La/TASK.json",
+      "sha256": "057e3505e90ca1a77bca5675c02d28554e4d3d8b8d2472635fc8fb36a746899b"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/preparation/La_cartesian_terminal__Dy/TASK.json",
+      "sha256": "b775611b5a9d6bb3a51a794938f6b07098f16afe2ebf9fc4114472b305fc4fe7"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/preparation/Dy_cartesian_terminal__La/TASK.json",
+      "sha256": "5e8a7e8be2fd51dfe8c6312ac9f0a8048cd2b5fdcb2f7abb3f0b9c5ad99048a9"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/preparation/Dy_cartesian_terminal__Dy/TASK.json",
+      "sha256": "3fdb5e20e8ee77dfb03e3fed5bf3ead3681b4432a2ef07de7d11354e9d6255fc"
+    }
+  ],
+  "shared_components": {
+    "La_terminal__La": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/preparation/La_terminal__La/SHARED.json",
+      "sha256": "6372f9c46d4c8ceb052ecadee66b2b79bbca30299927be499a44fae521aa0789"
+    },
+    "La_terminal__Dy": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/preparation/La_terminal__Dy/SHARED.json",
+      "sha256": "a2a00ac0c0eb5b6579c1b572d7df0d10d0f6f8e28158c71a7dd46bde54a10476"
+    },
+    "Dy_terminal__La": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/preparation/Dy_terminal__La/SHARED.json",
+      "sha256": "c1ac35a265e60149323f2140cfc816ec5feeafd6d36e4d6ee5b610e1863dec1c"
+    },
+    "Dy_terminal__Dy": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/preparation/Dy_terminal__Dy/SHARED.json",
+      "sha256": "9c43394dfc249a6c6e8cb929dd1351f751f76ed1bd0ea8555562b104af72cfaa"
+    },
+    "La_cartesian_terminal__La": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/preparation/La_cartesian_terminal__La/SHARED.json",
+      "sha256": "aeb08de93ebae6b0e1487d3d4b0402faa3a529687ec444218fab78b7450737f4"
+    },
+    "La_cartesian_terminal__Dy": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/preparation/La_cartesian_terminal__Dy/SHARED.json",
+      "sha256": "36aa6b4a177741910d25648e82551adb6387c53f7fcc8375f2ffcabfdc1d5ee1"
+    },
+    "Dy_cartesian_terminal__La": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/preparation/Dy_cartesian_terminal__La/SHARED.json",
+      "sha256": "4dad1ab20994be4238f6985f83076f15d38979422837a22a7392b0e05bf93c02"
+    },
+    "Dy_cartesian_terminal__Dy": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/preparation/Dy_cartesian_terminal__Dy/SHARED.json",
+      "sha256": "87eac95275409f9ce80c947a82d5a1216fe0e64cd68b8cc6a22e49e8c563110b"
+    }
+  },
+  "full_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/preparation/FULL_MANIFEST.json",
+    "sha256": "ba9ec16f51a4866a0bb03b4a8d5100a34b9b930a5bacd32d803768b14cf80a3c"
+  },
+  "input_admission_passed": true,
+  "execution_authorized": false,
+  "future_gate_presence": {
+    "qualification_result": false,
+    "first_scout_decision": false,
+    "response_scout_result": false,
+    "remaining_decision": false
+  },
+  "elapsed_seconds": 31.10983800305985,
+  "application_allocated_CPU_seconds": 373.3180560367182,
+  "parent_peak_RSS_KiB": 491512,
+  "parent_RSS_is_not_MPI_peak": true
+}

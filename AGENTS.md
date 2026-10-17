@@ -10,9 +10,11 @@ Root owns all submissions; the goal remains active and unmet.
   cells, one isolated-GFN failure and37 untouched cells. Preserve that failure.
 - Four-call solver diagnostic13009 passes. Actual saved-only recovery13012
   also passes, admitting66 old cells plus one explicitly certified replacement.
-- Remaining37-cell job13013 is submitted on one H200/12CPUs, with completion
-  watcher2445075. Read POOL_RECOVERY_CHECKPOINT.json and exact receipts.
-  Full104 completion gates the predeclared baseline response; no optimizer yet.
+- Job13013 completes all104 cells. Both regions retain the same selected
+  geometries, with source discrepancies5.03/5.13kcal/mol (old whole model6.21).
+- Response preflight13015 passes. Baseline7CCO-La scout13016 is submitted on
+  one H200/12CPUs, watcher2453270, original12-step/40-evaluation budget. Read
+  HYBRID_RESPONSE_CHECKPOINT.json. Actual scout admission gates all four states.
 - Independent DFT12977/12978 continue with12MPI each and health/completion wakes.
   Actual electronic residuals decrease; no derivative result is available yet.
 

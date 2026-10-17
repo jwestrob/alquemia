@@ -1,0 +1,19 @@
+{
+  "utc": "2026-10-17T19:33:50.818513+00:00",
+  "kind": "proactive_actual_result_review_not_delivery_ack",
+  "job": 13446,
+  "status": "execution_failure_preserved",
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_partition_force_reference_v1/execution/RESULT.json",
+    "sha256": "d761ed01b025c8bc885a03210415201843fc902d07b7c83497c35d7308560a96"
+  },
+  "new_molecular_calls": 0,
+  "rows_admitted": 0,
+  "diagnosis": "ANALYZE v1 grouped HA/BOHR for reference ALPB exact replay, while pinned REFERENCE.py line243 uses sequential g*HA/BOHR. Constants match; exact comparison rejected the different arithmetic association.",
+  "review_miss": "Adapter author and independent static review both incorrectly asserted the grouped reference arithmetic. Root direct source inspection and both agents now confirm sequential producer arithmetic.",
+  "decision": "Prepare separate versioned correction using the exact original sequential conversion; preserve exact closure gates, original model, all four cells and failed v1. No molecular call or tolerance relaxation.",
+  "scheduler": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_partition_force_reference_v1/failed_execution_v1/SACCT.txt",
+    "sha256": "800c6962e2c5ae38d6f7d2108cb953de2f8bfe97b45be1529f477b304ae8b793"
+  }
+}

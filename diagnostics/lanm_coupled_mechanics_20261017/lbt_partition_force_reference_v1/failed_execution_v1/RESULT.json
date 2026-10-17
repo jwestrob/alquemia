@@ -1,0 +1,80 @@
+{
+  "protocol": "lbt_saved_partition_force_reference_v1",
+  "status": "execution_failure",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_partition_force_reference_v1/ANALYZE.py",
+    "sha256": "de696a50fdd1530333a520c858b798193559642a7e2c6e02dd7ea0bb671e7dce"
+  },
+  "ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_partition_force_reference_v1/READY.json",
+    "sha256": "5b48d64d9c27503d77c6e2e4a7c973c986824c5e4b2c5707414db8ccb34f2f22"
+  },
+  "slurm_job_id": "13446",
+  "declared_cells": 4,
+  "rows": [
+    {
+      "region": "baseline",
+      "metal": "La",
+      "status": "unavailable_not_admitted"
+    },
+    {
+      "region": "baseline",
+      "metal": "Dy",
+      "status": "unavailable_not_admitted"
+    },
+    {
+      "region": "expanded",
+      "metal": "La",
+      "status": "unavailable_not_admitted"
+    },
+    {
+      "region": "expanded",
+      "metal": "Dy",
+      "status": "unavailable_not_admitted"
+    }
+  ],
+  "new_molecular_calls": {
+    "DFT": 0,
+    "MACE": 0,
+    "GFN": 0,
+    "MM": 0,
+    "ALPB": 0
+  },
+  "new_geometries": 0,
+  "optimization_steps": 0,
+  "external_process_attempts": [],
+  "expanded_after": {
+    "status": "unavailable",
+    "reason": "No saved expanded hybrid after geometry; outside this four-cell check."
+  },
+  "accuracy_qualified": false,
+  "parameter_change_supported": false,
+  "preference_claim": false,
+  "reference": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_full_collection_v1/collection/RESULT.json",
+    "sha256": "9229f7bebb533dd44a024bb80eca10eded2b3a64cc3972b245d65d82b5ecda97"
+  },
+  "pool": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_pool_recovery_v1/execution/RESULT.json",
+    "sha256": "d98aafb629185e785a3bd291802e46c374cfeb35b46b52486147c51303f1d592"
+  },
+  "directions": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_v1/preflight/DIRECTIONS.json",
+    "sha256": "6c306212746400b7bf25635c0548d45f53d17eb5a39cc95782a1fa72e97d52ed"
+  },
+  "reference_caveats": {
+    "terminal_chemistry": "Conditional free NH3+/COO- termini and five deprotonated acidic side chains; experimental terminal specification unresolved.",
+    "vacuum_dianion": "Post-added fixed-FF ALPB does not polarize or stabilize the vacuum SCF density self-consistently; finite-basis convergence does not prove electron binding or a stable ground state.",
+    "frozen_f": "Physical La multiplicity1/Dy6; effective singlets with La ECP46/Dy ECP55, spin-free frozen-f representation without SOC.",
+    "geometry": "One fixed 7CCO La-proposed before/after deformation; both endpoints nonstationary, no geometry repair or optimization.",
+    "reference_scope": "Whole vacuum PBE0 replaces all internal electronic/MM terms; only unchanged fixed-FF ALPB is added. No CPCM or external point charges.",
+    "force_qualification": "Native analytic-gradient admission only; no numerical derivative test or statistical force-accuracy threshold in this four-cell proposal.",
+    "interpretation": "Independent conditional force/work diagnostic, not an affinity prediction, an exact MACE training-functional replay, or a unique MM-parameter attribution."
+  },
+  "force_convention": "force=-gradient; error=hybrid-reference",
+  "units": "kcal/mol/Angstrom",
+  "closure_policy": "Exact original component ordering and array equality; no tolerance relaxation",
+  "failure": "ValueError('Reference solvent replay differs')",
+  "traceback": "Traceback (most recent call last):\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_partition_force_reference_v1/ANALYZE.py\", line 282, in main\n    pool, refs, directions, mapper = references(ready, result)\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_partition_force_reference_v1/ANALYZE.py\", line 132, in references\n    require(np.array_equal(raw_s, sol['gradient_hartree_per_bohr'])\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_partition_force_reference_v1/ANALYZE.py\", line 31, in require\n    raise ValueError(message)\nValueError: Reference solvent replay differs\n",
+  "elapsed_seconds": 0.5734234770061448
+}

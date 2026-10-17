@@ -1,0 +1,77 @@
+{
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/CONTINUATION.py",
+    "sha256": "06e40d37a44c16446a062bbc479b6a49db70c72e6d16057a2fd7f7278916ee0f"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation/SPEC_DRAFT.md",
+    "sha256": "e23187e044eacef6f0d02e355c0189dfad2638107be97b4438a0068a5f56c0c1"
+  },
+  "original_implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_reference/REFERENCE.py",
+    "sha256": "c22c989674e280806abace63c67148b0181caee0b7b20bcd85b8e3d75d6c2a86"
+  },
+  "original_scout_config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_v1/SCOUT_CONFIG.json",
+    "sha256": "dc6127e4fad9ffef90e30ed5770e00fd764a1ba6c1b57cbbfb94b6bdbf038ad8"
+  },
+  "original_preflight": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_v1/preflight/RESULT.json",
+    "sha256": "151d8d5f5fc0d4d4729933b64d98e4962e21518504475facb1d61c37d67c554e"
+  },
+  "scout_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_v1/scout/RESULT.json",
+    "sha256": "6aa0fdbdfd6ad14efbd3462f0f36ad2f9e36c6d1f2b11dc9b7790bc092f29080"
+  },
+  "scout_collection_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_collection_v1/collection/RESULT.json",
+    "sha256": "ffaffe5fb633ccc93f6338ffaf6b10da8c51ac2098a988ae4aec30e7e4d3a7de"
+  },
+  "model_completion_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_model_completion_v1/collection/RESULT.json",
+    "sha256": "64f27e852d2403600ef7a73616c7e52cf50cfbace75689a5b932fde926a06ef0"
+  },
+  "protocol": "lbt_whole256_reference_continuation_decision_v1",
+  "status": "approved_remaining_three",
+  "utc": "2026-10-17T12:14:51.601298+00:00",
+  "approved_tasks": [
+    "after_La",
+    "before_Dy",
+    "after_Dy"
+  ],
+  "maximum_new_DFT_calls": 3,
+  "allow_retry": false,
+  "measured_cost": {
+    "native_receipt": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_v1/scout/before_La/endpoint.out.execution.json",
+      "sha256": "0c61e0d50ae5ff08812c654f33b46bf0317decf48a4e784c8caed9b93ac2d3d1"
+    },
+    "force_comparison": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_collection_v1/collection/FORCE_COMPARISON.json",
+      "sha256": "f2380adc73984d11addf6ad4095d10bf8acd3bcf2ecc01c3e1f642e0a4e691c1"
+    },
+    "scheduler_receipts": [
+      {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_reference/scout_result_v1/SACCT.txt",
+        "sha256": "77ff37aa2d8cf95205dcf50812846e8734e1aeac9795e5b027b2ed5144ccb506"
+      }
+    ],
+    "scout_elapsed_seconds": 23741,
+    "scout_allocated_CPU_seconds": 284892,
+    "collector_allocated_CPU_seconds": 3,
+    "remaining_three_cost_if_equal_to_scout_CPU_seconds": 854676,
+    "estimate_is_not_runtime_limit_or_forecast": true
+  },
+  "root_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_reference/scout_result_v1/ROOT_REVIEW.json",
+    "sha256": "167a248ff018b991883e1241003cf64bcacb173d28064b8197ed2b810afafe7c"
+  },
+  "rationale": "The admitted whole-reference initial force is much smaller than the hybrid force. The same fixed before/after geometries and both metals are needed to test finite deformation work and metal dependence without choosing favorable survivors. Measured scout cost is feasible under existing resource authorization. Source and scientific settings stay unchanged; no retry or optimization.",
+  "required_before_native_execution": [
+    "Post-scout source/configuration review",
+    "Actual zero-call continuation preflight",
+    "Actual seven negative controls and positive saved replay"
+  ],
+  "numerical_force_accuracy_qualified": false,
+  "physical_state_qualified": false
+}

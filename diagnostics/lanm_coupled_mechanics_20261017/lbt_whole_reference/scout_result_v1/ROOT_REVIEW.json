@@ -1,0 +1,94 @@
+{
+  "utc": "2026-10-17T12:14:51.561627+00:00",
+  "status": "actual_scout_and_original_collector_admitted",
+  "scout_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_v1/scout/RESULT.json",
+    "sha256": "6aa0fdbdfd6ad14efbd3462f0f36ad2f9e36c6d1f2b11dc9b7790bc092f29080"
+  },
+  "collector_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_collection_v1/collection/RESULT.json",
+    "sha256": "ffaffe5fb633ccc93f6338ffaf6b10da8c51ac2098a988ae4aec30e7e4d3a7de"
+  },
+  "force_comparison": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_collection_v1/collection/FORCE_COMPARISON.json",
+    "sha256": "f2380adc73984d11addf6ad4095d10bf8acd3bcf2ecc01c3e1f642e0a4e691c1"
+  },
+  "native_receipt": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_v1/scout/before_La/endpoint.out.execution.json",
+    "sha256": "0c61e0d50ae5ff08812c654f33b46bf0317decf48a4e784c8caed9b93ac2d3d1"
+  },
+  "scheduler_receipt": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_reference/scout_result_v1/SACCT.txt",
+    "sha256": "77ff37aa2d8cf95205dcf50812846e8734e1aeac9795e5b027b2ed5144ccb506"
+  },
+  "independent_review": "mex_health_review: raw pins, normal ending, SCF18, full256 gradients and original parser admission confirmed; no blocker under declared gates.",
+  "scientific_interpretation": "PBE0+sameALPB contradicts the extreme hybrid Phe1CA response; whole-MACE is closer on saved global force difference, but neither model is independently validated. Finite deformation work remains uncomputed.",
+  "native_residual_observations": {
+    "terminal_residuals": {
+      "Energy change": {
+        "value": 4.6566e-09,
+        "printed_tolerance": 1e-09,
+        "within_printed_tolerance": false
+      },
+      "MAX-Density change": {
+        "value": 6.2467e-05,
+        "printed_tolerance": 1e-08,
+        "within_printed_tolerance": false
+      },
+      "RMS-Density change": {
+        "value": 3.4755e-07,
+        "printed_tolerance": 1e-09,
+        "within_printed_tolerance": false
+      },
+      "Orbital Gradient": {
+        "value": 1.195e-07,
+        "printed_tolerance": 2e-06,
+        "within_printed_tolerance": true
+      },
+      "Orbital Rotation": {
+        "value": 4.1095e-07,
+        "printed_tolerance": 2e-06,
+        "within_printed_tolerance": true
+      },
+      "DIIS Error": {
+        "value": 0.0010101,
+        "printed_tolerance": 1e-08,
+        "within_printed_tolerance": false
+      }
+    },
+    "ConvCheckMode": "Total+1el-Energy",
+    "ConvForced": 0,
+    "all_printed_residuals_pass": false,
+    "SOSCF_initialized": true,
+    "native_cycles": [
+      "18"
+    ],
+    "warnings_and_gap_lines": [
+      "                                        WARNINGS",
+      "                       Please study these warnings very carefully!",
+      "Warning: op=0 Small HOMO/LUMO gap (  -0.061) - skipping pre-diagonalization"
+    ],
+    "admission_policy": "unchanged native convergence and compact state/gradient parser; residual flags are observations, not new all-criteria admission"
+  },
+  "limitations": {
+    "terminal_chemistry": "Conditional free NH3+/COO- termini and five deprotonated acidic side chains; experimental terminal specification unresolved.",
+    "vacuum_dianion": "Post-added fixed-FF ALPB does not polarize or stabilize the vacuum SCF density self-consistently; finite-basis convergence does not prove electron binding or a stable ground state.",
+    "frozen_f": "Physical La multiplicity1/Dy6; effective singlets with La ECP46/Dy ECP55, spin-free frozen-f representation without SOC.",
+    "geometry": "One fixed 7CCO La-proposed before/after deformation; both endpoints nonstationary, no geometry repair or optimization.",
+    "reference_scope": "Whole vacuum PBE0 replaces all internal electronic/MM terms; only unchanged fixed-FF ALPB is added. No CPCM or external point charges.",
+    "force_qualification": "Native analytic-gradient admission only; no numerical derivative test or statistical force-accuracy threshold in this four-cell proposal.",
+    "interpretation": "Independent conditional force/work diagnostic, not an affinity prediction, an exact MACE training-functional replay, or a unique MM-parameter attribution."
+  },
+  "new_calls": {
+    "DFT": 1,
+    "ALPB": 0,
+    "MACE": 0,
+    "GFN": 0,
+    "MM": 0
+  },
+  "allocated_CPU_seconds": {
+    "scout": 284892,
+    "collector": 3
+  },
+  "actual_completion_callback_delivery_acknowledged": false
+}

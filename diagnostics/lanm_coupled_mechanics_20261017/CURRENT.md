@@ -2,6 +2,30 @@
 
 17 October2026UTC. The activated PLAN remains active and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
+## Latest: whole-peptide DFT challenges the extreme hybrid terminal force
+
+Whole256 before-La13051 and original saved collector13283 are complete/admitted.
+Along the frozen initial hybrid Phe1CA force direction, PBE0+sameALPB gives
+3.341027 versus hybrid51.063006 and whole-MACE0.798547kcal/mol/A. Global force
+difference RMS is10.141916 for hybrid versus3.511987 for whole-MACE. The large
+hybrid terminal response is poorly supported by this conditional reference;
+MACE remains quantitatively different and is not validated by this comparison.
+Read [the actual scout report](lbt_whole_reference/scout_result_v1/REPORT.md).
+
+Native18-cycle termination/full256 gradient and exact collector replay pass.
+Four printed residual flags and all electronic-state/force-accuracy limitations
+remain explicit. Cost284892CPU-s plus3CPU-s for collection. Root approved the
+original remaining three fixed cells after this measured-cost/force review,
+with no repeated scout, retries or optimization. Exact decision and config are
+in workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/.
+Post-scout source/config review, actual Slurm preflight13288 and all seven
+negative controls13289 pass (5CPU-s total). The original remaining cells now
+run as13290afterLa/13291beforeDy/13292afterDy,12MPI each, with completion and
+actual singleton-manifest health wakes. Native output creation is verified;
+terminal admission remains pending. No waiting collector is allocated.
+Read [the execution checkpoint](lbt_whole_reference_continuation/activation_v1/REPORT.md).
+Mex central13281 continues separately.
+
 ## Latest: Mex mismatch localized to final integration; original gate still fails
 
 Saved diagnosis13277 completed with exact original replay and zero molecular
@@ -29,8 +53,7 @@ grid3 stay unchanged. Charge0/multiplicity1/NEL832, MaxIter125 and12MPI/MaxCore3
 match. Terminal gradient admission and measured cost still gate both displacements.
 No plus/minus or original-six/response-eight cells are submitted. Exact receipts:
 mex_consistent_grid_central_v1/SUBMISSION.json; see the consistent-grid report.
-Whole13051 has converged electronically and is calculating its analytic gradient;
-native terminal admission and the original collector are still required.
+Whole13051 and its original collector13283 have completed as recorded above.
 
 ## Mex derivative scout failure
 
@@ -45,7 +68,8 @@ blocks the dependent eight-cell response panel. No solver/step retry is launched
 Independent source review finds no mapping/sign/unit defect. The saved
 COSX/gridx3 decomposition is complete under mex_dft/gridx3_diagnosis_v1/;
 it makes no molecular calls and cannot override the original failed gate.
-Whole-peptide reference13051 continues independently,12MPI. The goal remains unmet.
+Whole-peptide reference13051 subsequently completed; its result and continuation
+are recorded above. The goal remains unmet.
 
 ## What we learned
 
@@ -66,9 +90,9 @@ LBT is a peptide control, not a second natural LanM.7CCN is Lu-conditioned. Mex 
 | Jobs / task | Work | Resources / gate |
 | --- | --- | --- |
 |12977/12978 complete;13271 failed derivative gate|Embedded PBE0 external-charge La± derivative scout|Both endpoints available; PBE0/total derivatives fail, MM/ALPB pass. Remaining six stopped.|
-|13051|Whole256/q−2 PBE0 before-La force/cost scout|Actual preflight13049 passes all four states,1030 explicit electrons. Only one new reference cell,12MPI. Completion and alert-only health wakes armed.|
+|13051/13283 complete|Whole256/q−2 PBE0 before-La scout and saved collector|Native admission and exact saved replay pass; one new reference cell.284895allocatedCPU-s total.|
 |13281|Mex central La gradient with consistent SCF/final COSX grids|Actual zero-call preflight13280 and native startup checks pass.12MPI; terminal gradient admission and measured cost gate the two displaced calculations. Completion and alert-only health wakes armed.|
-|Source draft complete; execution unbound|Three remaining whole-LBT reference cells|CONTINUATION_DRAFT.py and its separate specification passed static review. Actual13051 admission, original collector, measured-cost decision and Slurm validation still precede execution.|
+|13290/13291/13292 running|Three remaining whole-LBT reference cells|Original source/settings unchanged. Actual13051/13283 admitted; preflight13288 and seven controls13289 pass.12MPI per singleton, completion/health wakes armed.|
 |Stopped at prerequisite|Mex eight-cell DFT response adapter|Prepared source/tests remain preserved. Original scout13271 fails derivative qualification; no response cells submitted.|
 |13122/13130 complete|Four-start MM term attribution and saved report|4/4 states,208 terms, all closures pass. N–CA stretching and N–CA–C bending dominate.10allocatedCPU-s total. See lbt_mm_term_audit/result/REPORT.md.|
 |13140/13141/13142 complete|Whole-LBT fixed-deformation model completion|Native admission and saved replay pass. Two MACE plus one ALPB calls; four energies/three force sets. 140 CPU-s/11 GPU-s. DFT gates unchanged.|
@@ -77,7 +101,7 @@ Read ACTIVE_CHECKPOINT.json for exact active submissions and watcher records. Al
 
 Historical single-endpoint checkpoint, before plus completion: Mex minus 12978 completed on 17 October at 09:38 UTC: 32 SCF cycles, normal native termination, adapter status complete/DFT available. Its final gridx3 exchange step took 1,920.673 s; the long silence resolved without intervention. Scheduler cost: 22,132 s × 12 CPUs = 265,584 allocated CPU-s. Native energy-based convergence does not satisfy every printed density/gradient criterion; all flags and physical-state limitations remain. Read [the single-endpoint checkpoint](mex_dft/scout_minus_result_v1/REPORT.md). No paired derivative or mechanics accuracy result is established. Plus 12977 and whole-peptide 13051 remain active; no dependent reference is launched.
 
-**Next:** collect whole-peptide13051 under its original adapter when actual native output is complete, then review forces and measured cost before continuation. For Mex13281, review the actual terminal central gradient and measured cost before either displaced calculation. Preflight13280 and central submission are already complete; do not repeat them. No displaced or original response cells are submitted.
+**Next:** collect the whole-LBT four-cell comparison after actual13290–13292 terminal results. Preserve all missing/failed slots; no repeated scout or retries. For Mex13281, review the actual terminal central gradient and measured cost before either displaced calculation. Preflight13280 and central submission are already complete; do not repeat them. No displaced Mex or original response cells are submitted.
 
 The saved [startup timing review](mex_dft/consistent_grid_v1/startup_review/PHASE_TIMING_REVIEW.json)
 records that the prior Mex first SCF iterations took about20minutes after startup
@@ -108,7 +132,7 @@ Standard scheduling currently permits12CPU/job and120CPU/user; GPU partitions ha
 
 Saved preparation13059 failed an upstream exact terminal physical/force replay before molecular calls. Its Python binary matched, but NumPy dependency metadata differed (1.26.4 versus original2.4.6). Recovery13060 exposed a missing Gemmi dependency before replay.13063 keeps the original environment and supplies only the exact existing Gemmi package/native libraries in an owned overlay. Neither original environment is modified. The specific terminal numerical field remains unresolved until actual evidence. See mex_dft_response/preparation_failure_v1/.
 
-Mex response adapter delivery: mex_dft_response/READINESS_REPORT.md. All six preparation/diagnosis/preflight allocations are terminal and preserved; no molecular calls were made. The original full physical/source/force checks and native acceptance rules remain unchanged. Mex12977/12978 are complete and scout collection13271 failed its derivative gate. Independent whole-peptide DFT13051 and the separate consistent-grid central scout13281 are active; the original response panel remains stopped.
+Mex response adapter delivery: mex_dft_response/READINESS_REPORT.md. All six preparation/diagnosis/preflight allocations are terminal and preserved; no molecular calls were made. The original full physical/source/force checks and native acceptance rules remain unchanged. Mex12977/12978 are complete and scout collection13271 failed its derivative gate. The separate consistent-grid central scout13281 and whole-LBT remaining13290–13292 are active; the original response panel remains stopped.
 
 ## Fixed-deformation model completion — 17 October2026UTC
 
@@ -118,7 +142,7 @@ The same La displacement has hybrid work -28.244859 versus whole-model work +11.
 
 The ongoing before-La DFT scout tests the initial forces and cost. It alone cannot validate the finite deformation work; the existing admission/cost gates still control further reference cells. No closed-response recovery, new geometry or DFT continuation was launched by this adjunct. All three completion watchers are recorded; delayed callbacks require acknowledgement, never repeated chemistry.
 
-## Remaining whole-peptide reference source — unbound draft
+## Historical source-preparation checkpoint — superseded by activation above
 
 The original runner permits only before-La. A separate [continuation draft](lbt_whole_reference_continuation/CONTINUATION_DRAFT.py) now implements the three already-declared remaining cells as singleton runs and a saved four-cell collector. Read [SPEC_DRAFT.md](lbt_whole_reference_continuation/SPEC_DRAFT.md) and STATIC_DRAFT_REVIEW.json. Author AST inspection and independent static source/provenance review pass; no scientific imports, numerical tests, runnable configs, continuation decision or submissions were made.
 

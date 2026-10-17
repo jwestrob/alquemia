@@ -1,0 +1,69 @@
+{
+  "utc": "2026-10-17T12:19:22.506001+00:00",
+  "task": "after_Dy",
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--job-name=lbt-whole-after_Dy",
+    "--output=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/tasks/after_Dy/slurm_%j.out",
+    "--error=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/tasks/after_Dy/slurm_%j.err",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_v1/RUN.sbatch",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/CONTINUATION.py",
+    "--stage",
+    "run",
+    "--task",
+    "after_Dy",
+    "--config",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/RUN_CONFIG.json",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/tasks/after_Dy/execution"
+  ],
+  "returncode": 0,
+  "stdout": "13292\n",
+  "stderr": "",
+  "configuration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/RUN_CONFIG.json",
+    "sha256": "86a9c7a44f7ba74c3ed368ae91a019e81238ac37a1689161cb311169ec1fe3a0"
+  },
+  "root_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/PREFLIGHT_ROOT_REVIEW.json",
+    "sha256": "7af128957c95b8f2e99932f1983f21b8da9c5062d19de9793c9e682704549254"
+  },
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/CONTINUATION.py",
+    "sha256": "06e40d37a44c16446a062bbc479b6a49db70c72e6d16057a2fd7f7278916ee0f"
+  },
+  "job_id": "13292",
+  "watcher_pid": 2790894,
+  "watcher_command": [
+    "/usr/bin/python3",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/slurm_wakeup_20260927/watch_and_queue.py",
+    "--jobs",
+    "13292",
+    "--thread",
+    "01a0a63a-ee36-7483-b726-1f7f5b7f75cc",
+    "--codex",
+    "/home/jwestrob/.nvm/versions/node/v22.23.1/bin/codex",
+    "--receipt",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/tasks/after_Dy/completion_event.json",
+    "--event",
+    "lbt-whole256-after-Dy-reference-v1",
+    "--interval",
+    "15"
+  ],
+  "health_armer_pid": 2790895,
+  "health_armer_command": [
+    "/usr/bin/python3",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/ARM_HEALTH.py",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/tasks/after_Dy",
+    "13292",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs",
+    "01a0a63a-ee36-7483-b726-1f7f5b7f75cc",
+    "/home/jwestrob/.nvm/versions/node/v22.23.1/bin/codex",
+    "after_Dy"
+  ],
+  "health_armer": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/ARM_HEALTH.py",
+    "sha256": "2eb4bee12bcba66b638ed107cb16dacd042685b08c828189ab3f546851e7fa17"
+  }
+}

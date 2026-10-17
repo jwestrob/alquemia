@@ -3,6 +3,19 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the goal remains active and unmet.
 
+Newest: whole256DFT13051 and saved collector13283 complete/admitted. Phe1CA
+force projection PBE0+ALPB3.341 versus hybrid51.063/MACE0.799kcal/mol/A;
+global RMS force difference10.142hybrid/3.512MACE. Conditional evidence against
+extreme hybrid terminal force, not MACE validation or finite-work proof.
+Read lbt_whole_reference/scout_result_v1/REPORT.md under the active diagnostic.
+Cost284895CPU-s including collector. Root remaining-three decision/config bound
+in lbt_whole_reference_continuation_v1; source/config review and actual Slurm
+preflight13288/seven-controls13289 pass. Remaining13290afterLa/13291beforeDy/
+13292afterDy run12MPI each; completion and singleton health wakes armed.
+Read lbt_whole_reference_continuation/activation_v1/REPORT.md. No scout repeat,
+molecular retry or waiting collector. Preserve full four-cell denominator.
+Mex13281 remains active. New checkpoint supersedes older whole13051-running notes.
+
 Latest saved diagnosis13277 completes: final COSX contributes -0.401606 of
 -0.414201kcal/mol/A mismatch; raw PC-gradient mapping replays exactly. Residual
 after diagnostic subtraction still exceeds tolerance; original gate stays failed.

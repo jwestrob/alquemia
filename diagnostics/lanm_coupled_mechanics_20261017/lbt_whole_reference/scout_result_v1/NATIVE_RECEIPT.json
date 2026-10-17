@@ -1,0 +1,69 @@
+{
+  "allocation": {
+    "host": "node-64-768g-28",
+    "slurm_job_id": "13051",
+    "slurm_job_partition": "standard"
+  },
+  "artifacts": {
+    "engrad": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_v1/scout/before_La/endpoint.engrad",
+      "sha256": "fd8ac1d24c238fa48f3955e7a69d59202eedec38df6586a5eabffbdaff924e18"
+    },
+    "output": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_v1/scout/before_La/endpoint.out",
+      "sha256": "c7f458f63749bbdff49c324616efcbdac92c72131bcf488890a03d919ca87b98"
+    },
+    "runtime_input": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_v1/scout/before_La/endpoint.runtime.inp",
+      "sha256": "d0c7bfa61ab0cc3aa06ed535d3502d19677e5a2a4c668cd55c5d010b7eafb88e"
+    },
+    "runtime_sidecar": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_v1/scout/before_La/endpoint.runtime.json",
+      "sha256": "04493c90b54e07f8c75e29976be1cd45e543287c8403638b5729496f237a8dae"
+    },
+    "template_input": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_v1/scout/before_La/endpoint.inp",
+      "sha256": "b94c22fc46ff47bd8c678f2e49634948fa99195638f6f69823d0b99f075b102d"
+    },
+    "xyz": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_v1/scout/before_La/physical.xyz",
+      "sha256": "41607259606ccb754242ace96cb8e0d2f3db7695ceaf123c86dc15c9316c34fe"
+    }
+  },
+  "command": [
+    "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+    "endpoint.runtime.inp",
+    "--bind-to none"
+  ],
+  "expected_engrad_complete": true,
+  "finished_at_utc": "2026-10-17T12:12:17.912999+00:00",
+  "launch_error": null,
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_v1/scout/MANIFEST.json",
+    "sha256": "8199827e6ee6bb6322acd43eb00fb9686b146308cc686f555feaa32597cb8c70"
+  },
+  "normal_termination": true,
+  "orca_executable": {
+    "path": "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+    "sha256": "38b5f057452fef275c0a1b98d270ad03d0411dab70453820d1c678bd732f6c83"
+  },
+  "orca_version": "6.1.1",
+  "parallelism": {
+    "binding": "none",
+    "nprocs": 12,
+    "omp_threads_per_rank": 1
+  },
+  "returncode": 0,
+  "runtime_renderer": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_compact_exchange_v1/implementation/render_orca_runtime_input.py",
+    "sha256": "46356652756311981a51732525457c697b31e860348dee4b590d72e7bddee76d"
+  },
+  "scf_converged": true,
+  "schema_version": "alchemical_bvs.orca_task_execution.v1",
+  "started_at_utc": "2026-10-17T05:36:39.781777+00:00",
+  "task_id": "before_La",
+  "task_runner": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_compact_exchange_v1/implementation/run_orca_task_manifest.py",
+    "sha256": "b9278e74e5317e859e8cb05541e1ec57cb335b26dcdf65a83b89675407343b9a"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "utc": "2026-10-17T19:36:54.957784+00:00",
+  "kind": "proactive_actual_result_review_not_delivery_ack",
+  "job": 13455,
+  "status": "unavailable_all_four_preserved",
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_partition_force_reference_v2/execution/RESULT.json",
+    "sha256": "b2df5190e8280145773a268ff55a6df887e0d32d151722e0ac3f3b1672924c42"
+  },
+  "new_molecular_calls": 0,
+  "rows_admitted": 0,
+  "findings": "Reference solvent replay and both reference force reports now pass. All four selected hybrid rows fail the combined raw component/full-gradient equality gate. Static source/constant/order comparisons alone do not establish runtime equality.",
+  "decision": "One saved-only diagnostic will expose per-component equality, difference sizes and runtime metadata while retaining the original failure gate. No tolerance relaxation or molecular/model change.",
+  "scheduler": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_partition_force_reference_v1/failed_execution_v2/SACCT.txt",
+    "sha256": "9c525ff5c3865138b7d3499c4f03b41d60293d238f60a144d12b535c4eb6e3e2"
+  }
+}

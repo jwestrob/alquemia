@@ -32,6 +32,8 @@ unchanged; convergence remains unestablished. The checkpoint preserves the
 actual alert, scheduler observations and independent review.
 After-Dy13292's matching first-build alert was separately reviewed with its own
 output and increasing CPU accounting; continue unchanged, with no recovery.
+After-La13290 has the same reviewed first-build status; all three continuation
+jobs remain active without a justified cancellation or retry.
 Mex central13281 continues separately; its first SCF iteration is now printed
 (1989.4s). The initial silent build finished; no convergence trend or terminal
 gradient is established by one iteration.

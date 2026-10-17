@@ -55,6 +55,10 @@ output, empty scheduler stderr, RUNNING state and advancing aggregate CPU were
 reviewed separately; continue unchanged. The actual delivered-event snapshot
 and decision are in `after_Dy_silence_review_v1/`. Neither Dy job has a terminal
 result or a demonstrated SCF convergence trend at this review.
+After-La13290's first-build alert was also reviewed against its own output,
+empty scheduler stderr and increasing aggregate CPU. Continue unchanged; its
+separate snapshot and acknowledgement are in `after_La_silence_review_v1/`.
+All three alerts precede a printed first SCF iteration and establish no stall.
 
 These jobs test the energy and force changes along the same fixed La-proposed
 deformation, for both metals. No optimization, geometry repair, original-scout

@@ -22,6 +22,7 @@ LBT is a peptide control, not a second natural LanM.7CCN is Lu-conditioned. Mex 
 | --- | --- | --- |
 |12977 running;12978 complete|Embedded PBE0 external-charge La± derivative scout|Minus12978 is available under the original native convergence policy; plus12977 continues12MPI. Pair collection and derivative/cost review still gate the remaining six points.|
 |13051|Whole256/q−2 PBE0 before-La force/cost scout|Actual preflight13049 passes all four states,1030 explicit electrons. Only one new reference cell,12MPI. Completion and alert-only health wakes armed.|
+|Source draft complete; execution unbound|Three remaining whole-LBT reference cells|CONTINUATION_DRAFT.py and its separate specification passed static review. Actual13051 admission, original collector, measured-cost decision and Slurm validation still precede execution.|
 |Ready/gated|Mex eight-cell DFT response adapter|Preparation13067 and preflight/regression13068 pass:8/8 tasks,14 saved cells,5 failure controls. Zero new molecular calls. Await full derivative/cost gates.|
 |13122/13130 complete|Four-start MM term attribution and saved report|4/4 states,208 terms, all closures pass. N–CA stretching and N–CA–C bending dominate.10allocatedCPU-s total. See lbt_mm_term_audit/result/REPORT.md.|
 |13140/13141/13142 complete|Whole-LBT fixed-deformation model completion|Native admission and saved replay pass. Two MACE plus one ALPB calls; four energies/three force sets. 140 CPU-s/11 GPU-s. DFT gates unchanged.|
@@ -63,3 +64,9 @@ A bounded cache audit found missing whole-MACE energies at the exact 13017 La te
 The same La displacement has hybrid work -28.244859 versus whole-model work +11.290076 kcal/mol. This establishes Hamiltonian dependence, not which model is accurate or a unique MM defect. Total cost is 140 allocated CPU-seconds and 11 GPU-seconds. Full results, source and actual commands are preserved under lbt_whole_model_completion/; exact native pins are in ACTIVE_CHECKPOINT.json. Independent integration review agrees.
 
 The ongoing before-La DFT scout tests the initial forces and cost. It alone cannot validate the finite deformation work; the existing admission/cost gates still control further reference cells. No closed-response recovery, new geometry or DFT continuation was launched by this adjunct. All three completion watchers are recorded; delayed callbacks require acknowledgement, never repeated chemistry.
+
+## Remaining whole-peptide reference source — unbound draft
+
+The original runner permits only before-La. A separate [continuation draft](lbt_whole_reference_continuation/CONTINUATION_DRAFT.py) now implements the three already-declared remaining cells as singleton runs and a saved four-cell collector. Read [SPEC_DRAFT.md](lbt_whole_reference_continuation/SPEC_DRAFT.md) and STATIC_DRAFT_REVIEW.json. Author AST inspection and independent static source/provenance review pass; no scientific imports, numerical tests, runnable configs, continuation decision or submissions were made.
+
+The draft replays original13049 unchanged, then separately admits the completed13142 after-Dy solvent. It forbids repeating before-La, retains unavailable comparator slots and uses the original method/state/admission rules. Actual13051 completion and its original saved collection, root force/cost review, a bound continuation decision and real-artifact Slurm checks are still required before execution. No physics result or execution readiness is implied by source review. Root owns those gates and all future launches; source preparation is complete.

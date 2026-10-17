@@ -41,6 +41,10 @@ Root owns all submissions; the goal remains active and unmet.
   no parameter change or new chemistry follows. DFT scouts remain independent.
 - Whole256 preflight13049 passes; before-La DFT13051 runs12MPI,
   1030 explicit electrons. Actual pins/watchers: ACTIVE_CHECKPOINT.json.
+  The separate three-cell continuation source draft is complete and statically
+  reviewed under lbt_whole_reference_continuation/. No runnable config or new
+  job exists. Actual13051 admission/collection, root measured-cost decision,
+  execution review and real-artifact Slurm validation remain required before launch.
 - Mex eight-cell response adapter is prepared and tested, reference execution gated.
  13067 prepares8/8;13068 preflight and five failure controls pass, zero molecular
   calls.13065 proves14/14 scientific cells unchanged; only old wrapper paths differ.

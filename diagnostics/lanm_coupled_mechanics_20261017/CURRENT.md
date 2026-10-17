@@ -18,14 +18,15 @@ response cells remain stopped. A separate consistent-grid qualification is
 specified under mex_dft/consistent_grid_v1/EXECUTION_SPEC_V1.md: fresh central
 gradient first, then at most two displaced energies after actual admission/cost
 review. Only SCF grid2 is brought to the original final grid3 construction;
-original derivative tolerance and state/SCF settings remain. Root accepted this
-bounded design. Saved-only preflight13279 failed on a native-header delimiter
-before molecular calls (10CPU-s). Its result and source are preserved. Reviewed
-adapter1600a0a5 changes only that parser delimiter; exact125-iteration and all
-scientific gates stay unchanged. Actual v2 preflight13280 is submitted on1CPU,
-watcher2758224, configbe60cc31 in mex_consistent_grid_preflight_v2. Review its
-actual result before binding the fresh central; native grid-header verification
-remains required. See ROOT_DESIGN_DECISION.json.
+original derivative tolerance and state/SCF settings remain. Root accepted this bounded design. Actual saved-only preflight13280 passes all
+source, shared-component and three legacy-parser controls with zero molecular
+calls (10CPU-s). Failed13279 remains preserved (10CPU-s); versioned adapter1600a0a5
+corrects only a native text delimiter. Root and independent review admit the
+prepared inputs. Fresh central13281 is submitted on12MPI, config28abed13,
+completion watcher2759506 and alert-only health armer2759507. Actual native grid
+header and terminal admission/cost remain required before either displacement.
+No plus/minus or original-six/response-eight cells are submitted. Exact receipts:
+mex_consistent_grid_central_v1/SUBMISSION.json; see the consistent-grid report.
 Whole13051 has converged electronically and is calculating its analytic gradient;
 native terminal admission and the original collector are still required.
 

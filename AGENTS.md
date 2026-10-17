@@ -7,9 +7,10 @@ Latest saved diagnosis13277 completes: final COSX contributes -0.401606 of
 -0.414201kcal/mol/A mismatch; raw PC-gradient mapping replays exactly. Residual
 after diagnostic subtraction still exceeds tolerance; original gate stays failed.
 Read mex_dft/gridx3_diagnosis_v1/REPORT.md. Cost2CPU-s, zero molecular calls.
-Separate consistent-grid preflight13279 retains a zero-call header-parser failure.
-Reviewed delimiter-only adapter1600a0a5 has saved preflight13280 submitted on1CPU,
-configbe60cc31, watcher2758224. No new molecular binding. Read ROOT_DESIGN_DECISION.json;
+Separate consistent-grid preflight13280 PASSED zero-call;13279 parser failure preserved.
+Fresh central13281 submitted12MPI, config28abed13, completion watcher2759506,
+health armer2759507. Actual native grid/state admission and cost gate both displacements.
+Read consistent_grid_v1/REPORT.md and actual SUBMISSION.json;
 three calls maximum, original tolerance,12MPI/defaultpolicy, actual preflight
 and native grid verification required. Original6+8cells remain stopped.
 Whole13051 is calculating its analytic gradient; await actual native admission.

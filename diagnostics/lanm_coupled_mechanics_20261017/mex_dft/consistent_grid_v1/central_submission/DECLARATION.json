@@ -1,0 +1,27 @@
+{
+  "utc": "2026-10-17T11:37:50.154262+00:00",
+  "question": "Does the native consistent-COSX recipe execute the intended grids and admit a fresh central La gradient at tractable measured cost?",
+  "scope": "One central EnGrad, fixed original geometry/state; exact archived MM/ALPB reuse",
+  "configuration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_central_v1/CONFIG.json",
+    "sha256": "28abed131ea5e7d3e832ac4611c15eaeb685c19e15cde4b0fc5da6b14c451af6"
+  },
+  "preflight_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_preflight_v2/ROOT_REVIEW.json",
+    "sha256": "afe02e6bc7bc9f717c9402cd87dd345191288125a1fc72cddc41cf303e61a1e0"
+  },
+  "design_decision": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/ROOT_DESIGN_DECISION.json",
+    "sha256": "2a2d6917a4e00967b27b8e2a64e860dfdca0bc16a4fb7bff518fed3dff457b5e"
+  },
+  "launcher": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_central_v1/RUN.sbatch",
+    "sha256": "f5aa4c5414e4b7268f2ab727db14f07ac1f82c1374c8df034c979df5e64703f9"
+  },
+  "maximum_new_DFT_calls": 1,
+  "requested_CPUs": 12,
+  "scheduler_memory_time_defaults": true,
+  "settings_change": "Only declared AngularGridX2,4,4 and IntAccX default reset; unchanged state/SCF/functional/basis/step/tolerance",
+  "stopping": "Native/source/state/grid failure stops dependent cells; no native retries. At most two displaced singlepoints after actual central admission and measured-cost review.",
+  "original_failed_gate_preserved": true
+}

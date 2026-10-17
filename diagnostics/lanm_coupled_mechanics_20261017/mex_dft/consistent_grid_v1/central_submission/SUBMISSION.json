@@ -1,0 +1,67 @@
+{
+  "utc": "2026-10-17T11:38:39.800878+00:00",
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--job-name=mex-consistent-grid-La",
+    "--output=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_central_v1/slurm_%j.out",
+    "--error=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_central_v1/slurm_%j.err",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_central_v1/RUN.sbatch",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_preflight_v2/CONSISTENT_GRID_V2.py",
+    "--stage",
+    "run",
+    "--task",
+    "MM_O97_La_central",
+    "--config",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_central_v1/CONFIG.json",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_central_v1/execution"
+  ],
+  "returncode": 0,
+  "stdout": "13281\n",
+  "stderr": "",
+  "configuration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_central_v1/CONFIG.json",
+    "sha256": "28abed131ea5e7d3e832ac4611c15eaeb685c19e15cde4b0fc5da6b14c451af6"
+  },
+  "declaration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_central_v1/DECLARATION.json",
+    "sha256": "a6c1a0313f2ca0ab7a058ddf3e0585afaf2864997260bb596ba3f3f026dcc253"
+  },
+  "job_id": "13281",
+  "watcher_pid": 2759506,
+  "watcher_command": [
+    "/usr/bin/python3",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/slurm_wakeup_20260927/watch_and_queue.py",
+    "--jobs",
+    "13281",
+    "--thread",
+    "01a0a63a-ee36-7483-b726-1f7f5b7f75cc",
+    "--codex",
+    "/home/jwestrob/.nvm/versions/node/v22.23.1/bin/codex",
+    "--receipt",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_central_v1/completion_event.json",
+    "--event",
+    "mex-consistent-grid-central-La-v1",
+    "--interval",
+    "15"
+  ],
+  "health_armer_pid": 2759507,
+  "health_armer_command": [
+    "/usr/bin/python3",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt_local_reference_remaining_v2/ARM_HEALTH.py",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_central_v1",
+    "13281",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs",
+    "01a0a63a-ee36-7483-b726-1f7f5b7f75cc",
+    "/home/jwestrob/.nvm/versions/node/v22.23.1/bin/codex"
+  ],
+  "health_armer": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt_local_reference_remaining_v2/ARM_HEALTH.py",
+    "sha256": "addb2e08bdddf90d5d11f68b6c0fd51017ee5e823a92cb8c0a681d1fd90efbc5"
+  },
+  "health_monitor": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/slurm_native_health_watch.py",
+    "sha256": "161591507a0e0cdecd282593b41897c054be726cc70f0a356990eadb5b14ce3a"
+  }
+}

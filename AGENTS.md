@@ -3,12 +3,19 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the goal remains active and unmet.
 
-Latest: Mex scout collector13271 fails embedded-PBE0/total derivative consistency
+Latest saved diagnosis13277 completes: final COSX contributes -0.401606 of
+-0.414201kcal/mol/A mismatch; raw PC-gradient mapping replays exactly. Residual
+after diagnostic subtraction still exceeds tolerance; original gate stays failed.
+Read mex_dft/gridx3_diagnosis_v1/REPORT.md. Cost2CPU-s, zero molecular calls.
+Separate consistent-grid specification drafting only; no new molecular binding.
+Whole13051 is calculating its analytic gradient; await actual native admission.
+
+Mex scout collector13271 fails embedded-PBE0/total derivative consistency
 (residual0.414201 versus0.005409kcal/mol/A); MM/ALPB pass.12977/12978 are complete.
 Read mex_dft/scout_pair_failure_v1/REPORT.md under the active diagnostic. Original
 stop rule closes remaining6 qualification and8 response DFT cells. No retry or
-changed solver/step. A declared saved-only final-COSX correction/pcgrad diagnosis
-is preparing; it cannot override the failed gate. Whole-peptide13051 continues.
+changed solver/step. The completed saved-only final-COSX correction/pcgrad diagnosis
+cannot override the failed gate. Whole-peptide13051 continues.
 Older notes below awaiting Mex endpoints are historical.
 
 - Whole-model completion 13140/13141/13142 is COMPLETE and replayed.

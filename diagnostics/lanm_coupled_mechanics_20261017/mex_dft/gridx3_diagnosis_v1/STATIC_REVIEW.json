@@ -1,0 +1,59 @@
+{
+  "status": "pass_static_review_only",
+  "reviewer": "mechanics_mex_adapter",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/gridx3_diagnosis_v1/DIAGNOSE.py",
+    "sha256": "195dfc83cb5d52b16d410c6f880dfe9e26db9128d87bbd6eac95921cab1dfe84"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/gridx3_diagnosis_v1/SPEC.md",
+    "sha256": "2c242d835f4fb1d726df01512d3e184372e815bd82639a23cbfdc51ec9c893f6"
+  },
+  "source_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/scout_pair_failure_v1/SOURCE_REVIEW.json",
+    "sha256": "9b1166b9c906b2b5a4c776279b88d9c57b8be135b1c7b4b23f98c9c54a7f4af9"
+  },
+  "original_failed_collector": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_scout_pair_collection_v1/execution/RESULT.json",
+    "sha256": "334bb6b4374538a5f293f1e6175340309566de92e42af0588485bca5dfe20953"
+  },
+  "scope": "Full source read and actual JSON/text/hash-only fixture checks. No diagnostic execution, scientific imports, numerical recomputation, molecular calls, config binding, or submissions.",
+  "findings": [
+    {
+      "area": "Actual provenance and schema",
+      "result": "PASS",
+      "evidence": "Actual preparation is prepared job12976; origin equals its exact12849 row and saved La_ASSEMBLED payload. Both endpoints bind the actual collector tasks, original central task, native output/template/XYZ receipt pins and unchanged core-map bytes. Native runtime sidecars expose the accessed memory_policy and UTC timestamp fields."
+    },
+    {
+      "area": "Native text extraction",
+      "result": "PASS",
+      "evidence": "Each actual output has one converged SCF block and one relevant energy label. Final cycle IDs33/46/32 match central/plus/minus convergence. The anchored numeric D4 pattern excludes the additional central gradient-timing line. Label ordering and finite Decimal values are required."
+    },
+    {
+      "area": "Original finite-difference replay",
+      "result": "PASS",
+      "evidence": "Decimal native-energy differences and exact decimal displacement/energy conversion reproduce the original mathematical expression before float output. The fixed finite-decimal operands fit the original and diagnostic Decimal precision. MM and ALPB arithmetic and three-component math.fsum ordering match QUALIFY.compare_pair; exact stored FD/residual equality is required at runtime."
+    },
+    {
+      "area": "Rounding and remaining discrepancy",
+      "result": "PASS",
+      "evidence": "Every printed scalar retains its original text and half-quantum. Net post-SCF shift uses post-grid Total Energy minus last-cycle energy and is explicitly not assumed pure COSX. Separate printed COSX, D4, and closure remainders are retained with rounding bounds. Remaining analytic mismatch is reported without changing original energy or tolerance."
+    },
+    {
+      "area": "External-charge mapping and sign",
+      "result": "PASS",
+      "evidence": "Unique field row832 maps to physical1019 A/97//O with no QM/cap role; exact original field/core pins and sole displaced field row are required. Raw dE/dR is converted once by HA/BOHR, then projected along the frozen direction; force is separately negative gradient. Float replay roundoff and printed-pcgrad precision are distinguished."
+    },
+    {
+      "area": "Finite scope and failure retention",
+      "result": "PASS",
+      "evidence": "Only standard-library parsing and arithmetic are reachable; no process or molecular API call exists. Slurm and fresh-output guards apply. Exceptions set execution_failure. Original PBE0/total failed gate, six not_requested endpoints and stopped response references remain explicit even if saved diagnostic replay completes."
+    }
+  ],
+  "blocking_findings": [],
+  "limitations": [
+    "Static PASS does not assert numerical diagnostic success; actual Slurm saved-data execution remains required.",
+    "The source diagnoses existing failure only; it does not qualify DFT derivatives, remove SCF/density/runtime limitations, or authorize new molecular calls."
+  ],
+  "source_changes_requested": false
+}

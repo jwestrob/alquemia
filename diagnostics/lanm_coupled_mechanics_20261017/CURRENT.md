@@ -2,7 +2,24 @@
 
 17 October2026UTC. The activated PLAN remains active and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
-## Latest: Mex derivative scout failed; saved diagnosis preparing
+## Latest: Mex mismatch localized to final integration; original gate still fails
+
+Saved diagnosis13277 completed with exact original replay and zero molecular
+calls. Printed final COSX contributes -0.401606 of the -0.414201 kcal/mol/A
+derivative mismatch. Native point-charge gradient mapping reproduces exactly.
+Subtracting the printed correction leaves -0.012595; subtracting the full
+post-SCF shift leaves -0.011124. Both exceed the old0.005409 tolerance.
+The post-SCF shift includes an explicit remainder beyond printed rounding;
+neither diagnostic energy definition is promoted. Read
+[the saved diagnosis](mex_dft/gridx3_diagnosis_v1/REPORT.md).
+
+Cost2CPU-s, no new molecular calls. The original remaining6 qualification and8
+response cells remain stopped. A separate consistent-grid qualification spec
+is drafting from this specific diagnosis; no new molecular execution is bound.
+Whole13051 has converged electronically and is calculating its analytic gradient;
+native terminal admission and the original collector are still required.
+
+## Mex derivative scout failure
 
 Both Mex endpoints12977/12978 terminate normally and pass native admission.
 Original saved collector13271 fails PBE0/total directional consistency: embedded
@@ -12,9 +29,8 @@ Read [the failed scout report](mex_dft/scout_pair_failure_v1/REPORT.md).
 The original stop rule closes the remaining six qualification points and
 blocks the dependent eight-cell response panel. No solver/step retry is launched.
 
-Independent source review finds no mapping/sign/unit defect. A concrete saved
-lead is the geometry-dependent final COSX/gridx3 energy correction. One declared
-saved-only Slurm decomposition is preparing under mex_dft/gridx3_diagnosis_v1/;
+Independent source review finds no mapping/sign/unit defect. The saved
+COSX/gridx3 decomposition is complete under mex_dft/gridx3_diagnosis_v1/;
 it makes no molecular calls and cannot override the original failed gate.
 Whole-peptide reference13051 continues independently,12MPI. The goal remains unmet.
 
@@ -47,7 +63,7 @@ Read ACTIVE_CHECKPOINT.json for exact active submissions and watcher records. Al
 
 Historical single-endpoint checkpoint, before plus completion: Mex minus 12978 completed on 17 October at 09:38 UTC: 32 SCF cycles, normal native termination, adapter status complete/DFT available. Its final gridx3 exchange step took 1,920.673 s; the long silence resolved without intervention. Scheduler cost: 22,132 s × 12 CPUs = 265,584 allocated CPU-s. Native energy-based convergence does not satisfy every printed density/gradient criterion; all flags and physical-state limitations remain. Read [the single-endpoint checkpoint](mex_dft/scout_minus_result_v1/REPORT.md). No paired derivative or mechanics accuracy result is established. Plus 12977 and whole-peptide 13051 remain active; no dependent reference is launched.
 
-**Next:** collect whole-peptide13051 under its original adapter when actual native output is complete, then review forces and measured cost before continuation. Run the separately declared saved-only final-grid/pcgrad decomposition after source review. Its result cannot replace the original failed Mex gate. No additional Mex DFT, SCF retry, changed step or response run is submitted.
+**Next:** collect whole-peptide13051 under its original adapter when actual native output is complete, then review forces and measured cost before continuation. Review the separate consistent-grid specification against the actual saved diagnosis and documented native controls. No additional Mex DFT, changed step or response run is submitted.
 
 The saved audit's first CPU-host attempt13031 failed an upstream exact derivative replay before producing rows. Unchanged source/config/gates pass on the original qualified host/thread setup as13032. Cross-host exact-arithmetic portability remains unresolved; use the qualified replay environment, and preserve the first failure. See hybrid_response_force_audit/failure_v1/ and result_v2/.
 

@@ -1,0 +1,119 @@
+{
+  "utc": "2026-10-17T11:09:55.022913+00:00",
+  "reviewer": "/root/mex_health_review",
+  "scope": "Bounded ORCA6.1 primary-document review of COSX final integration, external point-charge handling and native convergence semantics.",
+  "status": "documentation_interpretation_only_original_failed_gate_unchanged",
+  "local_documentation_search": {
+    "installation": "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg",
+    "finding": "Filename inventory found licensing PDFs but no technical manual or source documentation in the installed tree. Official FACCTs ORCA6.1 manual was consulted.",
+    "binary_source_inspected": false
+  },
+  "sources": [
+    {
+      "id": "cosx",
+      "title": "ORCA6.1 Manual,2.8.4.2-2.8.4.4: RIJCOSX gradient, numerical grids and fitting",
+      "url": "https://www.faccts.de/docs/orca/6.1/manual/contents/essentialelements/RI.html",
+      "sections": [
+        "https://www.faccts.de/docs/orca/6.1/manual/contents/essentialelements/RI.html#rijcosx-gradient",
+        "https://www.faccts.de/docs/orca/6.1/manual/contents/essentialelements/RI.html#cosx-numerical-grids",
+        "https://www.faccts.de/docs/orca/6.1/manual/contents/essentialelements/RI.html#sfitting-parameters"
+      ]
+    },
+    {
+      "id": "grids",
+      "title": "ORCA6.1 Manual,2.10.3 and2.10.5: DEFGRIDs and SCF grid keywords",
+      "url": "https://www.faccts.de/docs/orca/6.1/manual/contents/essentialelements/numericalintegration.html",
+      "sections": [
+        "https://www.faccts.de/docs/orca/6.1/manual/contents/essentialelements/numericalintegration.html#the-defgrids",
+        "https://www.faccts.de/docs/orca/6.1/manual/contents/essentialelements/numericalintegration.html#scf-grid-keyword-list"
+      ]
+    },
+    {
+      "id": "charges",
+      "title": "ORCA6.1 Manual,2.2.6: Inclusion of Point Charges",
+      "url": "https://www.faccts.de/docs/orca/6.1/manual/contents/essentialelements/coordinates.html#inclusion-of-point-charges"
+    },
+    {
+      "id": "scf",
+      "title": "ORCA6.1 Manual,2.6.1: Convergence Tolerances",
+      "url": "https://www.faccts.de/docs/orca/6.1/manual/contents/essentialelements/scf.html#convergence-tolerances"
+    },
+    {
+      "id": "interface",
+      "title": "ORCA6.1 Manual,6.4: QM/MM via Interfaces to ORCA",
+      "url": "https://www.faccts.de/docs/orca/6.1/manual/contents/multiscalesimulations/qmmminterfaces.html"
+    }
+  ],
+  "supported_facts": [
+    {
+      "source_ids": [
+        "cosx"
+      ],
+      "fact": "COSX grid2 is used through SCF convergence; grid3 is used for final energy and gradient evaluation. GridX/IntAccX control these grids. UseFinalGridX can disable the final grid, but the manual generally discourages changing it."
+    },
+    {
+      "source_ids": [
+        "cosx"
+      ],
+      "fact": "Since ORCA6, COSX analytic derivatives include grid-weight and fitting-matrix derivatives. The manual describes improved energy/gradient consistency, so a blanket claim that final COSX gradients are omitted is unsupported."
+    },
+    {
+      "source_ids": [
+        "grids"
+      ],
+      "fact": "DEFGRID3 uses XC angular grid6 and COSX angular grids2,3,4. AngularGridX and IntAccX expose angular and radial controls; equal angular labels alone do not document equal complete integration settings."
+    },
+    {
+      "source_ids": [
+        "charges"
+      ],
+      "fact": "External point charges contribute to the one-electron matrix and nuclear interaction. Their mutual interaction is excluded for external files unless DoEQ enables it; this supports retaining the existing DoEQ=false/MM bookkeeping."
+    },
+    {
+      "source_ids": [
+        "scf"
+      ],
+      "fact": "VeryTightSCF uses ConvCheckMode2. Native convergence therefore does not imply every printed density/DIIS criterion passes. ConvCheckMode0 is stricter but has documented exceptions when other criteria are overachieved."
+    },
+    {
+      "source_ids": [
+        "scf"
+      ],
+      "fact": "ConvForced controls subsequent work on nonconverged wavefunctions; it is not an all-residual convergence selector. SCF convergence also does not establish electronic stability."
+    }
+  ],
+  "inference": {
+    "label": "Scientific interpretation, not an explicit pcgrad implementation guarantee from the manual.",
+    "statement": "A density stationary for the grid2 energy need not be stationary for grid3. Displacing an external charge changes the density at fixed QM coordinates, so the post-SCF correction can have a density-response derivative. Saved decomposition can implicate this correction without identifying an omitted implementation term.",
+    "conditional_on_saved_diagnostic": true
+  },
+  "unknowns_and_limits": [
+    "The consulted primary documentation does not explicitly guarantee whether external .pcgrad includes every density-response term associated with the post-SCF grid3 correction.",
+    "General RIJCOSX gradient documentation is not proof of pcgrad-specific handling, nor proof that pcgrad is defective.",
+    "No source-code implementation was available for this check. No missing-response term or causal bug is established.",
+    "SCF paths, runtime differences and single-step truncation remain distinct unresolved possibilities unless actual saved evidence or separately declared qualification resolves them."
+  ],
+  "conditional_three_cell_proposal": {
+    "status": "proposal_only_not_authorization_or_execution",
+    "trigger": "Consider only after actual saved decomposition implicates the final-grid correction.",
+    "question": "Does matching the integration used for density convergence and final evaluation restore the declared external-charge directional derivative agreement?",
+    "single_candidate": "Predeclare one matched angular/radial grid2=grid3 configuration, retaining modern COSX gradient/fitting treatment; verify executed settings in native output. This is not a settings sweep.",
+    "cells": [
+      "One central analytic-gradient calculation including native external point-charge gradient",
+      "One plus singlepoint at original h=0.001A",
+      "One minus singlepoint at original h=0.001A"
+    ],
+    "matched_scope": "All three use the same state, geometry definitions, charge field lineage, numerical recipe and runtime allocation policy; only the declared displacement and energy/gradient run type differ.",
+    "comparison": "Use the new matching central gradient and both new endpoint energies. Keep original derivative tolerance and component/state admissions; record all printed residuals and final-grid corrections.",
+    "limits": "Three cells establish agreement only at the declared step. Any step-stability extension must be separately bounded before execution. Old failed endpoints/gradient remain immutable; no retrospective gate relaxation.",
+    "continuation": "Original failed scout remains failed. Remaining six derivative points and eight response endpoints remain stopped under the original protocol; a new proposal alone does not reopen them."
+  },
+  "actions": {
+    "molecular_calls": 0,
+    "scientific_numerical_analysis": false,
+    "submissions": 0,
+    "parameter_changes": false,
+    "active_adapter_changes": false,
+    "only_new_file": "DOCUMENTATION_REVIEW.json"
+  }
+}

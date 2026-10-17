@@ -1,0 +1,37 @@
+{
+  "utc": "2026-10-17T11:12:28.142443+00:00",
+  "status": "saved_diagnosis_complete_original_qualification_failed",
+  "job_id": "13277",
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_gridx3_saved_diagnosis_v1/execution/RESULT.json",
+    "sha256": "08e4d217dbe5a6391afadc09ddc8aa6a84c51e2eb7d316b17e6b9362b2a508a4"
+  },
+  "original_failure": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_scout_pair_collection_v1/execution/RESULT.json",
+    "sha256": "334bb6b4374538a5f293f1e6175340309566de92e42af0588485bca5dfe20953"
+  },
+  "static_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/gridx3_diagnosis_v1/STATIC_REVIEW.json",
+    "sha256": "4a53d0d449e4ca550bc8b45abec3fa4e1e73ff2c747e2d5a83f1dc8e577e0d7b"
+  },
+  "documentation_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/gridx3_diagnosis_v1/DOCUMENTATION_REVIEW.json",
+    "sha256": "d8899a606d000fcc45331966ff1f979b4e0919c0916a008330f289121585fe5a"
+  },
+  "scheduler_receipt": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_gridx3_saved_diagnosis_v1/SACCT.txt",
+    "sha256": "d6a51602b4c197e10d52ed36720e721a460bd9873155930b6325da7649785165"
+  },
+  "scheduler_command": [
+    "sacct",
+    "-j",
+    "13277",
+    "--noheader",
+    "--parsable2",
+    "--format=JobIDRaw,State,ExitCode,ElapsedRaw,AllocCPUS,NodeList"
+  ],
+  "allocated_CPU_seconds": 2,
+  "new_molecular_calls": 0,
+  "callback_delivery_acknowledged": false,
+  "decision": "Saved final COSX term localizes most of mismatch. Direct pcgrad mapping is exact. Remaining residual and post-SCF closure remainder retained. Original six qualification and eight response cells remain stopped. Separate consistent-grid specification is drafting only; whole-LBT13051 remains independent."
+}

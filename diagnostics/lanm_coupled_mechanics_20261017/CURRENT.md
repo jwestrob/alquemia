@@ -14,8 +14,14 @@ neither diagnostic energy definition is promoted. Read
 [the saved diagnosis](mex_dft/gridx3_diagnosis_v1/REPORT.md).
 
 Cost2CPU-s, no new molecular calls. The original remaining6 qualification and8
-response cells remain stopped. A separate consistent-grid qualification spec
-is drafting from this specific diagnosis; no new molecular execution is bound.
+response cells remain stopped. A separate consistent-grid qualification is
+specified under mex_dft/consistent_grid_v1/EXECUTION_SPEC_V1.md: fresh central
+gradient first, then at most two displaced energies after actual admission/cost
+review. Only SCF grid2 is brought to the original final grid3 construction;
+original derivative tolerance and state/SCF settings remain. Root accepted this
+bounded design; Harvey implements the separate thin adapter, Linnaeus reviews.
+No new molecular config or job exists. Actual zero-call Slurm preflight and
+native grid-header verification remain required. See ROOT_DESIGN_DECISION.json.
 Whole13051 has converged electronically and is calculating its analytic gradient;
 native terminal admission and the original collector are still required.
 
@@ -63,7 +69,7 @@ Read ACTIVE_CHECKPOINT.json for exact active submissions and watcher records. Al
 
 Historical single-endpoint checkpoint, before plus completion: Mex minus 12978 completed on 17 October at 09:38 UTC: 32 SCF cycles, normal native termination, adapter status complete/DFT available. Its final gridx3 exchange step took 1,920.673 s; the long silence resolved without intervention. Scheduler cost: 22,132 s × 12 CPUs = 265,584 allocated CPU-s. Native energy-based convergence does not satisfy every printed density/gradient criterion; all flags and physical-state limitations remain. Read [the single-endpoint checkpoint](mex_dft/scout_minus_result_v1/REPORT.md). No paired derivative or mechanics accuracy result is established. Plus 12977 and whole-peptide 13051 remain active; no dependent reference is launched.
 
-**Next:** collect whole-peptide13051 under its original adapter when actual native output is complete, then review forces and measured cost before continuation. Review the separate consistent-grid specification against the actual saved diagnosis and documented native controls. No additional Mex DFT, changed step or response run is submitted.
+**Next:** collect whole-peptide13051 under its original adapter when actual native output is complete, then review forces and measured cost before continuation. Review the separate consistent-grid adapter and run its saved-input preflight before one measured central calculation. No additional Mex DFT, changed step or response run is submitted.
 
 The saved audit's first CPU-host attempt13031 failed an upstream exact derivative replay before producing rows. Unchanged source/config/gates pass on the original qualified host/thread setup as13032. Cross-host exact-arithmetic portability remains unresolved; use the qualified replay environment, and preserve the first failure. See hybrid_response_force_audit/failure_v1/ and result_v2/.
 

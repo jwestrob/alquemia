@@ -1,0 +1,250 @@
+{
+  "utc": "2026-10-17T11:14:52.697320+00:00",
+  "reviewer": "/root/mex_health_review",
+  "scope": "Independent interpretation of actual saved Slurm13277 result; values below are copied from saved evidence, not recalculated.",
+  "status": "review_complete_original_derivative_gate_remains_failed",
+  "result": {
+    "path": "workspaces/lanm_coupled_mechanics_20261017/mex_gridx3_saved_diagnosis_v1/execution/RESULT.json",
+    "sha256": "08e4d217dbe5a6391afadc09ddc8aa6a84c51e2eb7d316b17e6b9362b2a508a4"
+  },
+  "documentation_review": {
+    "path": "diagnostics/lanm_coupled_mechanics_20261017/mex_dft/gridx3_diagnosis_v1/DOCUMENTATION_REVIEW.json",
+    "sha256": "d8899a606d000fcc45331966ff1f979b4e0919c0916a008330f289121585fe5a"
+  },
+  "original_specification": {
+    "path": "diagnostics/lanm_coupled_mechanics_20261017/mex_dft/SPEC.md",
+    "sha256": "6ca3f276638365a58b026e60d82365941e4e6be8ef4de1c329ae87bb5dd1524c"
+  },
+  "original_failure": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_scout_pair_collection_v1/execution/RESULT.json",
+    "sha256": "334bb6b4374538a5f293f1e6175340309566de92e42af0588485bca5dfe20953"
+  },
+  "source_replay": {
+    "original_FD_replay_exact": true,
+    "input_identity": {
+      "core_bytes_identical": true,
+      "core_mapping_bytes_identical": true,
+      "only_changed_PC_row": 832,
+      "charges_unchanged": true,
+      "printed_D4_identical": true
+    },
+    "source_id": "A/97//O",
+    "physical_index": 1019,
+    "field_row": 832,
+    "file_line_1_based": 834,
+    "component_residual_kcal_mol_A": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "projection_residual_kcal_mol_A": 0.0,
+    "replay_matches": true,
+    "interpretation": "The actual row, conversion, sign and assembly reproduce this O97 component exactly. This excludes a mismatch in that comparison path; it does not validate every gradient component or the native derivative implementation."
+  },
+  "original_checks": {
+    "PBE0_embedded": {
+      "analytic_kcal_mol_A": -3.673753902644237,
+      "FD_kcal_mol_A": -4.087955021545654,
+      "residual_kcal_mol_A": -0.414201118901417,
+      "tolerance_kcal_mol_A": 0.005408795502154565,
+      "passed": false
+    },
+    "MM_ledger": {
+      "analytic_kcal_mol_A": 17.752465327000138,
+      "FD_kcal_mol_A": 17.752485206528945,
+      "residual_kcal_mol_A": 1.9879528807109637e-05,
+      "tolerance_kcal_mol_A": 0.006775248520652895,
+      "passed": true
+    },
+    "fixed_FF_charge_ALPB": {
+      "analytic_kcal_mol_A": -5.530642594057692,
+      "FD_kcal_mol_A": -5.530641590834248,
+      "residual_kcal_mol_A": 1.0032234438739351e-06,
+      "tolerance_kcal_mol_A": 0.005553064259405769,
+      "passed": true
+    },
+    "total": {
+      "analytic_kcal_mol_A": 8.54806883029821,
+      "FD_kcal_mol_A": 8.133888594149042,
+      "residual_kcal_mol_A": -0.41418023614916777,
+      "tolerance_kcal_mol_A": 0.005854806883029821,
+      "passed": false
+    }
+  },
+  "saved_derivative_decomposition": {
+    "original_final": {
+      "coefficients": {
+        "final": 1
+      },
+      "native_hartree_per_A": "-0.006514571",
+      "kcal_mol_A": -4.087955021545654,
+      "printed_half_quantum_bound_kcal_mol_A": 3.13754737e-07
+    },
+    "last_cycle": {
+      "coefficients": {
+        "last_cycle": 1
+      },
+      "native_hartree_per_A": "-0.00587222712055",
+      "kcal_mol_A": -3.684878151624865,
+      "printed_half_quantum_bound_kcal_mol_A": 3.13754737e-11
+    },
+    "printed_COSX": {
+      "coefficients": {
+        "cosx_printed": 1
+      },
+      "native_hartree_per_A": "-0.000640",
+      "kcal_mol_A": -0.40160606336,
+      "printed_half_quantum_bound_kcal_mol_A": 0.000313754737
+    },
+    "net_post_SCF_shift": {
+      "coefficients": {
+        "post_grid": 1,
+        "last_cycle": -1
+      },
+      "native_hartree_per_A": "-0.00064234427445",
+      "kcal_mol_A": -0.40307711778703115,
+      "printed_half_quantum_bound_kcal_mol_A": 3.1689228437e-09
+    },
+    "printed_D4": {
+      "coefficients": {
+        "D4_printed": 1
+      },
+      "native_hartree_per_A": "0.000000",
+      "kcal_mol_A": 0.0,
+      "printed_half_quantum_bound_kcal_mol_A": 0.000313754737
+    },
+    "final_minus_post": {
+      "coefficients": {
+        "final": 1,
+        "post_grid": -1
+      },
+      "native_hartree_per_A": "3.95E-10",
+      "kcal_mol_A": 2.4786624223e-07,
+      "printed_half_quantum_bound_kcal_mol_A": 3.1689228437e-07
+    },
+    "post_SCF_printed_COSX_remainder": {
+      "coefficients": {
+        "post_grid": 1,
+        "last_cycle": -1,
+        "cosx_printed": -1
+      },
+      "native_hartree_per_A": "-0.00000234427445",
+      "kcal_mol_A": -0.0014710544270311393,
+      "printed_half_quantum_bound_kcal_mol_A": 0.0003137579059228437
+    },
+    "final_printed_D4_remainder": {
+      "coefficients": {
+        "final": 1,
+        "post_grid": -1,
+        "D4_printed": -1
+      },
+      "native_hartree_per_A": "3.95E-10",
+      "kcal_mol_A": 2.4786624223e-07,
+      "printed_half_quantum_bound_kcal_mol_A": 0.00031407162928437
+    }
+  },
+  "saved_diagnostic_residuals_kcal_mol_A": {
+    "final_minus_printed_COSX_minus_analytic": -0.012595055541416933,
+    "final_minus_net_post_SCF_shift_minus_analytic": -0.011124001114385607
+  },
+  "printed_closures": {
+    "central": {
+      "post_minus_last_cycle_minus_printed_COSX": {
+        "residual_hartree": "-1.24409424E-8",
+        "printed_rounding_bound_hartree": "5.0000505E-10",
+        "within_printed_rounding": false
+      },
+      "final_minus_post_minus_printed_D4": {
+        "residual_hartree": "-3.7185E-10",
+        "printed_rounding_bound_hartree": "5.00505E-10",
+        "within_printed_rounding": true
+      },
+      "new_minus_old_exchange_minus_printed_COSX": {
+        "residual_hartree": "-1E-9",
+        "printed_rounding_bound_hartree": "1.5E-9",
+        "within_printed_rounding": true
+      }
+    },
+    "plus": {
+      "post_minus_last_cycle_minus_printed_COSX": {
+        "residual_hartree": "1.68322E-11",
+        "printed_rounding_bound_hartree": "5.0000505E-10",
+        "within_printed_rounding": true
+      },
+      "final_minus_post_minus_printed_D4": {
+        "residual_hartree": "-3.7106E-10",
+        "printed_rounding_bound_hartree": "5.00505E-10",
+        "within_printed_rounding": true
+      },
+      "new_minus_old_exchange_minus_printed_COSX": {
+        "residual_hartree": "-1E-9",
+        "printed_rounding_bound_hartree": "1.5E-9",
+        "within_printed_rounding": true
+      }
+    },
+    "minus": {
+      "post_minus_last_cycle_minus_printed_COSX": {
+        "residual_hartree": "4.7053811E-9",
+        "printed_rounding_bound_hartree": "5.0000505E-10",
+        "within_printed_rounding": false
+      },
+      "final_minus_post_minus_printed_D4": {
+        "residual_hartree": "-3.7185E-10",
+        "printed_rounding_bound_hartree": "5.00505E-10",
+        "within_printed_rounding": true
+      },
+      "new_minus_old_exchange_minus_printed_COSX": {
+        "residual_hartree": "0E-9",
+        "printed_rounding_bound_hartree": "1.5E-9",
+        "within_printed_rounding": true
+      }
+    }
+  },
+  "interpretation": {
+    "localization": "Most of the original embedded-PBE0 mismatch is associated with the post-SCF final-integration energy shift. MM and fixed-charge ALPB pass the original direction. Printed D4 is identical and the post-grid-to-final energy closure is consistent with printed rounding.",
+    "residual_not_resolved": "Subtracting the net post-SCF shift leaves -0.011124001114385607 kcal/mol/A; subtracting the printed COSX correction leaves -0.012595055541416933. Both magnitudes remain above the original 0.005408795502154565 tolerance. These subtractions are diagnostic only; neither defines an admitted energy or gradient.",
+    "closure_remainder": "The net post-SCF shift and printed COSX derivative differ by -0.0014710544270311393 kcal/mol/A, larger in magnitude than the saved 0.0003137579059228437 printed-rounding envelope. Central and minus post-minus-last-cycle-minus-COSX closures fail their printed-rounding test. Therefore the entire post-SCF shift must not be labeled pure COSX.",
+    "closure_limit": "Printed-rounding envelopes address digit quantization only. They are not bounds on SCF error, density response, finite-step truncation or other unprinted terms. The closure remainder identifies unresolved accounting, not its physical or implementation cause.",
+    "mechanism_hypothesis": "The manual places density convergence on COSX grid2 and final evaluation on grid3. Nonstationarity for the latter can matter for a displaced external charge. This is an inference consistent with localization, not a documented pcgrad-specific guarantee or proof of a missing derivative term.",
+    "remaining_confounders": [
+      "SCF and density residuals and differing native stopping routes remain recorded; all-three all-printed-residual flags are false.",
+      "The historical central calculation used112MPI/MaxCore10800 while displaced endpoints used12MPI/MaxCore3100.",
+      "Equivalent electronic roots, stability and finite-step truncation are unqualified.",
+      "One external-charge direction does not qualify boundary forces, Dy, global forces, physical accuracy or affinity."
+    ],
+    "separate_proposal": "A new central EnGrad plus two displaced singlepoints with COSX grid2 equal to the original grid3 in angular and radial construction is a bounded candidate test. It requires its own frozen specification, runtime and cost review; this result does not launch it."
+  },
+  "scheduler_cost": {
+    "source": {
+      "path": "workspaces/lanm_coupled_mechanics_20261017/mex_gridx3_saved_diagnosis_v1/SACCT.txt",
+      "sha256": "d6a51602b4c197e10d52ed36720e721a460bd9873155930b6325da7649785165"
+    },
+    "top_level_row": "13277|COMPLETED|0:0|2|1|node-64-768g-1",
+    "elapsed_seconds": 2,
+    "allocated_CPUs": 1,
+    "allocated_CPU_seconds": 2,
+    "application_wall_seconds": 0.6453262399882078,
+    "measured_parent_CPU_seconds": 0.635224,
+    "scope": "Saved diagnosis only; top-level allocation counted once, batch row not added. Zero new molecular calls."
+  },
+  "decision": {
+    "qualification_status": "failed_derivative_gate",
+    "scout_pair_passed": false,
+    "remaining_six_singlepoints_authorized": false,
+    "response_references_authorized": false,
+    "physical_state_qualified": false,
+    "global_force_qualified": false,
+    "new_energy_or_gradient_definition_admitted": false,
+    "original_failed_protocol_preserved": true
+  },
+  "actions": {
+    "new_molecular_calls": 0,
+    "scientific_numerical_recalculation": false,
+    "submissions": 0,
+    "active_adapter_changes": false,
+    "files_written": [
+      "RESULT_REVIEW.json",
+      "../consistent_grid_v1/SPEC_DRAFT.md"
+    ]
+  }
+}

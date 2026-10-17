@@ -1,0 +1,43 @@
+{
+  "utc": "2026-10-17T11:18:48.235943+00:00",
+  "status": "bounded_design_accepted_execution_requires_source_review_and_actual_preflight",
+  "authorization": "Active user goal: implement saved La/Dy mechanics plan, validate physics, document results; contained numerical diagnosis within module4.",
+  "draft": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/SPEC_DRAFT.md",
+    "sha256": "618374bb994d091e7f387f793f459b7a4199a99f65495e03b6e623d82e844809"
+  },
+  "execution_specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/EXECUTION_SPEC_V1.md",
+    "sha256": "c18dc071b6622624cedc1dec5fa8e0a0a71a0d11ac0abb2988f8c86a7ff19259"
+  },
+  "saved_diagnosis": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_gridx3_saved_diagnosis_v1/execution/RESULT.json",
+    "sha256": "08e4d217dbe5a6391afadc09ddc8aa6a84c51e2eb7d316b17e6b9362b2a508a4"
+  },
+  "scheduler_policy": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/SCHEDULER_POLICY.json",
+    "sha256": "fe91fc5319d7a6848614077cde0026adcaf126b496965dda3c6092895e107209"
+  },
+  "resources": {
+    "maximum_new_native_calls": 3,
+    "CPUs_per_native_call": 12,
+    "first_stage_calls": 1,
+    "remaining_stage_requires_actual_central_review": true,
+    "maximum_concurrent_calls_after_review": 2,
+    "scheduler_memory_time_defaults": true,
+    "observed_QoS_MaxWall": "3-00:00:00",
+    "observed_QoS_cpu_per_user": 120,
+    "no_retries": true
+  },
+  "measured_original_cost": {
+    "plus_allocated_CPU_seconds": 319992,
+    "minus_allocated_CPU_seconds": 265584,
+    "collector_allocated_CPU_seconds": 6,
+    "saved_diagnosis_allocated_CPU_seconds": 2,
+    "new_runtime_prediction": null,
+    "decision": "One measured central calculation is justified by exact saved localization and independent documented-controls review. Denser-grid cost is unknown. Review its actual cost before either displacement."
+  },
+  "original_failed_qualification_preserved": true,
+  "original_six_and_response_eight_remain_stopped": true,
+  "molecular_submissions": []
+}

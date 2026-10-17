@@ -1,0 +1,80 @@
+{
+  "status": "pass_bounded_proposal_review_only",
+  "reviewer": "mechanics_mex_adapter",
+  "reviewed_draft": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/SPEC_DRAFT.md",
+    "sha256": "618374bb994d091e7f387f793f459b7a4199a99f65495e03b6e623d82e844809"
+  },
+  "documentation_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/gridx3_diagnosis_v1/DOCUMENTATION_REVIEW.json",
+    "sha256": "d8899a606d000fcc45331966ff1f979b4e0919c0916a008330f289121585fe5a"
+  },
+  "original_specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/SPEC.md",
+    "sha256": "6ca3f276638365a58b026e60d82365941e4e6be8ef4de1c329ae87bb5dd1524c"
+  },
+  "failed_collector": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_scout_pair_collection_v1/execution/RESULT.json",
+    "sha256": "334bb6b4374538a5f293f1e6175340309566de92e42af0588485bca5dfe20953"
+  },
+  "saved_diagnosis": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_gridx3_saved_diagnosis_v1/execution/RESULT.json",
+    "sha256": "08e4d217dbe5a6391afadc09ddc8aa6a84c51e2eb7d316b17e6b9362b2a508a4"
+  },
+  "prior_source_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/scout_pair_failure_v1/SOURCE_REVIEW.json",
+    "sha256": "9b1166b9c906b2b5a4c776279b88d9c57b8be135b1c7b4b23f98c9c54a7f4af9"
+  },
+  "independently_consulted_primary_documentation": [
+    {
+      "url": "https://www.faccts.de/docs/orca/6.1/manual/contents/essentialelements/numericalintegration.html#scf-grid-keyword-list",
+      "supported_scope": "AngularGridX first three entries govern SCF COSX grids; IntAccX=-1 selects defaults. Table2.47 lists angular4/COSX radial accuracy4.871; DEFGRID3 is XC6/COSX2,3,4."
+    },
+    {
+      "url": "https://www.faccts.de/docs/orca/6.1/manual/contents/essentialelements/RI.html#cosx-numerical-grids",
+      "supported_scope": "Late SCF and final integration use distinct COSX grids; documented controls support the proposed consistency question. No pcgrad-specific omission is established."
+    }
+  ],
+  "scope": "Read-only proposal, source-documentation, raw-output and saved-JSON review. No scientific imports, numerical recomputation, implementation changes, native parser tests, molecular calls or submissions.",
+  "findings": [
+    {
+      "area": "Scientific interpretation",
+      "result": "PASS",
+      "detail": "Observed net post-SCF contribution explains most of the original mismatch, while saved residual -0.011124001114385607 kcal/mol/Angstrom remains outside the original gate. Draft correctly treats this as a numerical-consistency hypothesis rather than a proven native implementation bug or repaired qualification."
+    },
+    {
+      "area": "Exact numerical candidate",
+      "result": "PASS",
+      "detail": "AngularGridX2,4,4 and IntAccX -1,-1,-1 are documented controls. Original output fingerprints are reproduced accurately in the draft. Only late-SCF grid2 is intended to become original final grid3; original grid1, final grid3 and XC integration must remain unchanged."
+    },
+    {
+      "area": "Matched three-cell comparison",
+      "result": "PASS",
+      "detail": "Fresh central La analytic gradient with native pcgrad and two exact original +/-0.001 Angstrom field singlepoints use the same candidate recipe and12MPI allocation policy. The historical central cannot substitute for the new central. Fixed source/state/basis/ECP/DoEQ and exact core/field lineage are preserved."
+    },
+    {
+      "area": "Admission and limitations",
+      "result": "PASS",
+      "detail": "Original .005+1e-4 relative derivative tolerance and native SCF/state gates remain. MaxIter125, ConvCheckMode2/Total+1el-Energy and ConvForced0 match actual outputs. Full residual warnings, single-step truncation uncertainty, physical-state limits and historical allocation differences stay explicit."
+    },
+    {
+      "area": "Finite cost and stop",
+      "result": "PASS",
+      "detail": "Central-first staging measures actual cost and native/grid admission before the two displaced cells. Three total molecular calls maximum, no retries or sweep. Failure stops dependent cells. Original remaining six points and eight response references stay stopped on either outcome without a separately declared continuation."
+    }
+  ],
+  "blocking_proposal_findings": [],
+  "execution_prerequisites": [
+    "Root must freeze a final executable specification and exact source/config/manifest/runtime/helper/basis/ECP/input pins; this review covers only the draft.",
+    "Execution adapter source requires independent review and actual zero-molecular-call Slurm preflight before any molecular submission.",
+    "Installed native parser and IntAccX default-reset behavior remain untested. Actual output must show full grid2=grid3 angular/radial/pruning/cutoff/weight/fitting/point-count equality, plus unchanged original grid1/grid3/XC fingerprints. A label alone is insufficient.",
+    "Root must bind the finite resource ceiling and scheduler-compliant allocation policy. All three cells require matching12MPI and memory-derived runtime settings; old measured costs are context, not runtime predictions.",
+    "The two displaced cells require actual admitted new central output plus root measured-cost decision; future inputs may remain unavailable until those real receipts exist.",
+    "Central native analytic-gradient admission must include explicit raw QM-gradient and endpoint.runtime.pcgrad pins and original physical mapping. An energy-only parser cannot substitute for gradient admission.",
+    "Any derivative failure preserves the original and candidate failed results; no correction subtraction, changed tolerance, automatic retry or promotion is authorized by this review."
+  ],
+  "new_molecular_calls": 0,
+  "scientific_numerical_execution": false,
+  "execution_approval": false,
+  "source_changes_requested": false
+}

@@ -1,0 +1,25 @@
+[
+  {
+    "command": [
+      "scontrol",
+      "show",
+      "partition",
+      "standard"
+    ],
+    "stdout": "PartitionName=standard\n   AllowGroups=ALL AllowAccounts=ALL AllowQos=ALL\n   AllocNodes=ALL Default=YES QoS=N/A\n   DefaultTime=NONE DisableRootJobs=NO Exclusive=NO GraceTime=0 Hidden=NO\n   MaxNodes=UNLIMITED MaxTime=UNLIMITED MinNodes=0 LLN=NO MaxCPUsPerNode=UNLIMITED MaxCPUsPerSocket=UNLIMITED\n   Nodes=node-48-256g-[2-3,8-9,12-14],node-48-384g-[1-4],node-64-768g-[1-33],node-112-1500g-[1-4],node-224-3t-[1-2]\n   PriorityJobFactor=100 PriorityTier=100 RootOnly=NO ReqResv=NO OverSubscribe=NO\n   OverTimeLimit=NONE PreemptMode=OFF\n   State=UP TotalCPUs=3536 TotalNodes=50 SelectTypeParameters=NONE\n   JobDefaults=(null)\n   DefMemPerNode=UNLIMITED MaxMemPerNode=UNLIMITED\n   TRES=cpu=3536,mem=41069437M,node=50,billing=3536\n\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "sacctmgr",
+      "-n",
+      "-P",
+      "show",
+      "qos",
+      "standard",
+      "format=Name,MaxWall,MaxTRESPJ,MaxTRESPU,MaxJobsPU"
+    ],
+    "stdout": "standard|3-00:00:00|cpu=12,mem=1500G,node=4|cpu=120,mem=3T|10\n",
+    "stderr": ""
+  }
+]

@@ -23,7 +23,7 @@ All80steps include the successful12-step original LBT scout. Five initial host/c
 
 Saved motion12983 uses both metals and no new molecular calls. Mex MM lowering is mostly common to both metals: bonded−724 to−731, LJ−387 to−389, Coulomb−2014 to−2017 kcal/mol, partly offset by solvent. Water-oxygen aligned RMS movement is0.65–0.69Å; outside-QM peptide-heavy RMS is0.18–0.19Å. These global energy changes are not residue-energy decompositions.
 
-The predeclared largest three-residue window is A77–79, only7.42% of outside-QM peptide squared motion; about49 effective residues participate. This supports distributed response and limits what one local stiffness reference could establish. [Motion report](mex_motion/result/REPORT.md); complete topology/HB feasibility review is pending, with no new expanded-reference submission.
+The predeclared largest three-residue window is A77–79, only7.42% of outside-QM peptide squared motion; about49 effective residues participate. This supports distributed response and limits what one local stiffness reference could establish. [Motion report](mex_motion/result/REPORT.md); topology feasibility review is complete in mex_motion/FEASIBILITY.md. A connected A77–95 expansion is possible, but its new hydrogen-bond neighborhood is unqualified and the motion remains distributed. No expanded DFT is launched; one local segment would not validate global MM lowering.
 
 ## Active independent references
 
@@ -33,7 +33,7 @@ Read mex_dft/README.md for the exact saved collector command. When both actual e
 
 ## Hybrid LBT failure and next action
 
-Local-electronic/MM CPU preflight12972 passed all eight saved component replays. Its H200 nine-cell scout12975 failed in constructor origin-map replay before any molecular call: `Exact origin mapping replay differs`. Preserve its immutable execution/RESULT.json and passing CPUpreflight. Mechanics agent is preparing a zero-call exact-leaf/ULP diagnostic on the actual failed host; root submits it. No geometry or numerical acceptance tolerance has been changed and no chemistry retry is launched.
+Local-electronic/MM CPU preflight12972 passed all eight saved component replays. Its H200 nine-cell scout12975 failed in constructor origin-map replay before any molecular call: `Exact origin mapping replay differs`. Preserve its immutable execution/RESULT.json and passing CPUpreflight. Actual-host zero-call diagnostic12984 completes4/4 maps: all coordinates and identities exact; only baseline7CCN cap Jacobians differ,32 duplicated scalar leaves, max1.11e−16/4ULP. Read lbt_hybrid_mapping_diagnosis/REPORT.md. A narrow versioned derived-Jacobian replay repair is preparing; all physical/state/energy/FD gates remain unchanged. Actual repaired zero-call preflight precedes any chemistry retry.
 
 The eight-origin matrix, remaining24 derivative checks and complete104-cell saved-pool comparison are staged source only and gated on actual repaired scout admission. The fixed pool includes all26 actual source-local geometries, both metals and both regions; eight origins reused, at most96 new composites, exact old whole-solvent reuse. Never select a favorable subset or silently substitute an available baseline for a failed region.
 

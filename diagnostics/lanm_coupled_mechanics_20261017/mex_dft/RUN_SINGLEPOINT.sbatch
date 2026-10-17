@@ -1,0 +1,17 @@
+#!/bin/bash
+#SBATCH --account=banfield
+#SBATCH --partition=standard
+#SBATCH --nodes=1
+#SBATCH --ntasks=12
+#SBATCH --cpus-per-task=1
+#SBATCH --job-name=mex_dft_force
+set -euo pipefail
+if (( $# != 4 )); then
+    echo 'Usage: sbatch RUN_SINGLEPOINT.sbatch ABS_ADAPTER CONFIG FRESH_OUTPUT TASK_ID' >&2
+    exit 2
+fi
+export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1
+export BLIS_NUM_THREADS=1 OMP_DYNAMIC=FALSE MKL_DYNAMIC=FALSE METAL_ENV_WORKERS=1 PYTHONUNBUFFERED=1
+unset OMP_PLACES OMP_PROC_BIND
+export PATH="/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg:$PATH"
+exec /groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python3.11 "$1" --config "$2" --output "$3" --stage singlepoint --task "$4"

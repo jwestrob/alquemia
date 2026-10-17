@@ -1,4 +1,18 @@
-# Current decision: response works, preference remains weak and source-sensitive
+# Current: matched-objective LBT response in preparation
+
+Second Mex6MI5 inventory is complete: it cannot supply the current8FNS construct,
+four-ion occupancy and167-water inventory unchanged. See MEX_SECOND_SOURCE_FEASIBILITY.md.
+No new source preparation or second-Mex calculation was performed.
+
+LBT_MATCHED_RESPONSE_PLAN.md declares one finite test of the remaining search-
+objective asymmetry. Four saved terminal raw MACE forces and matched12720 ALPB
+gradients allow zero-call initialization. Use the same10modes, original-source
+bounds and finite search; no automatic extension. Both source-local/global menus
+remain visible. Harvey owns adapter/config, Leibniz independent review; root owns
+submissions/integration. No new job yet. All previous molecular jobs are terminal.
+PQQ/defaults and all failures remain intact. Active goal is unmet.
+
+# Previous decision: response works, preference remains weak and source-sensitive
 
 All owned molecular work in this round is complete. Mex continuations 12727/12729
 and paired pool 12731 preserve the covalent geometry and lower each metal's energy.

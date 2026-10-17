@@ -1,3 +1,15 @@
+# Latest monomer follow-up — 17 October 2026 UTC
+
+Second Mex6MI5 inventory is complete; matching8FNS requires new construct,
+occupancy and hydration assumptions, so no second-source preparation is launched.
+One finite matched-objective LBT continuation is declared in
+diagnostics/lanm_coupled_response_20261016/LBT_MATCHED_RESPONSE_PLAN.md.
+Reuse four raw MACE force sets and12720 fixed-FF ALPB gradients; do not reuse old
+self-consistent-solvent composite gradients. Same10modes/source bounds, allfour
+starts, shared paired pool; no automatic bounds expansion or repeated chemistry.
+Harvey owns adapter/config, Leibniz review, root submissions/status. No new job yet.
+Read CURRENT and actual receipts. PQQ/defaults preserved; active goal remains unmet.
+
 # La/Dy monomer response underway — 16 October 2026
 
 Active goal is a useful, source-robust LanM La/Dy profiler with protein response;

@@ -1,3 +1,15 @@
+# Latest LanM result — 17 October 2026 UTC
+
+All four local PBE0 cells and comparison 12936 are complete. The large MACE-like
+La source penalty has independent support; the flatter GFN2 result does not.
+Read diagnostics/lanm_coupled_response_20261016/lbt_local_reference/FINAL_REPORT.md.
+Four MACE force calls 12937 also completed with exact saved-energy replay.
+Launcher-only pre-call failure 12935 remains preserved. No repeat, changed
+scientific gates or production promotion. Saved force comparison 12938 is
+complete, all four cases; forces remain descriptively compared, not qualified.
+No owned molecular job remains active. Root owns launches;
+Harvey owns structural feasibility. CURRENT and actual receipts govern.
+
 # Latest LanM execution — 17 October 2026 UTC
 
 Reviewed serialization-only recovery has submitted the three uncomputed local

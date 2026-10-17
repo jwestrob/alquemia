@@ -1,3 +1,32 @@
+# Latest: DFT supports the large local source penalty
+
+17 October 2026 UTC. All four 48-atom PBE0 cells and saved comparator 12936 are
+complete. Source strains La/Dy are +69.911132/+3.584798 kcal/mol, versus MACE
++77.640037/+3.950156 and GFN2 −14.563185/−22.508206. PBE0's differential
+−66.326335 supports the large MACE-like response. Flatter GFN2 is not supported
+as an accuracy improvement. Read lbt_local_reference/FINAL_REPORT.md and its
+exact RESULT.json. All printed SCF residual flags remain false; frozen-f Dy
+state and forces remain unqualified. No affinity, reliable profiler or production
+change. PQQ remains unchanged.
+
+Four new fixed MACE force calls 12937 are complete, with exact energy replay in
+all four states, 11 seconds on H200/12 CPUs. Original 12935 failed before calls
+from the wrong launcher environment; the pre-job GPU partition rejection is
+also preserved. Recovery changed only the launcher to the actual 12500
+environment and GPU queues. Exact receipts: lbt_local_mace_forces_v1/v2.
+
+Saved force comparison 12938 completed all four cases in 10 seconds on one CPU.
+MACE and PBE0 target vectors agree component signs; vector differences are
+0.100–0.193 eV/Å, with all-atom RMS differences 0.154–0.182 eV/Å. This is a
+descriptive local comparison, not a numerical derivative qualification. All GFN
+force slots remain unavailable from energy-only receipts. Source b70d7be9/config
+776235cf and actual result live under lbt_local_force_comparison_v1.
+Leibniz owns its report; Harvey owns the bounded structural next-step memo.
+No owned molecular or saved-analysis job remains active. Next: review the
+specific geometry/mechanics diagnostic before a separately declared finite test.
+No automatic wider search or new DFT. Root owns launch/status; science remains
+Slurm-only and the profiler goal remains unmet.
+
 # Latest: three remaining local DFT cells submitted with reviewed recovery
 
 17 October 2026 UTC. Jobs **12844 (7CCN/La), 12845 (7CCO/Dy), and

@@ -1,38 +1,42 @@
-# Coherent monomer response works; reliable La/Dy preference remains unproven
+# Electronic-model choice is the strongest current lead
 
-## Latest result — 17 October 2026 UTC
+## Current result — 17 October 2026 UTC
 
-Mex-LanM is the natural monomer reference; LBT3 is a measured peptide control,
-not a second natural LanM. The current model combines local MACE chemistry,
-a GFN protein-field correction, retained protein mechanics and fixed-charge
-ALPB solvent. Whole LBT is the electronic region and has no extra MM term.
+**Most of the large disagreement between LBT starting structures disappears when
+we change the electronic model while keeping geometry, mechanics and solvent fixed.**
+The saved46-cell comparison12823 gives:
 
-**Matching the LBT search objective has not solved the preference problem.**
-All four searches preserve the physical gates and lower their own energies, but
-remain nonstationary. After common-pool competition and the unchanged Mex response,
-the conditional exchange is +0.982619 for the 7CCO/global menu and +25.103610 for
-7CCN. Positive favors Mex-La plus LBT-Dy. The global margin is within the existing
-1 kcal/mol interpretive resolution; the source gap remains24.120991 kcal/mol.
-These are finite-state electronic/mechanical contrasts, not affinities or an
-independent-protein validation. The finite objective-asymmetry test is closed.
+| Candidate geometry pool | Source disagreement, kcal/mol |
+|---|---:|
+| Existing MACE-based model | 28.262 |
+| GFN substitution at the same selected geometries | 0.609 |
+| GFN selection within the same geometry pool | 1.173 |
 
-See [the paired result](monomer_matched_response_comparison/REPORT.md) and
-[actual searches and common pool](lbt_matched_response/FINAL_REPORT.md).
-This round used48MACE and48fixed-charge ALPB calls,92GPU-seconds and1107allocated
-CPU-seconds including saved comparison12769. No newGFN,DFT or folds were needed.
+The GFN-selected conditional exchange remains in the expected Mex-La/LBT-Dy
+direction for all15 declared menus. This is model sensitivity, not proof that
+GFN is accurate. Mex is one natural monomer; LBT3 is a peptide with measured
+preferences, not another LanM. Their assays and represented states differ.
+[Full result and limitations](electronic_substitution/REPORT.md).
 
-The separate [electronic substitution](ELECTRONIC_SUBSTITUTION_PLAN.md) uses saved
-energies on exactly the same46 older cells to distinguish model sensitivity from
-search effects. First12770 replayed the baseline but exposed an archived
-cross-receipt closure-field schema mismatch; parser recovery is in progress with
-unchanged scientific gates and no new molecular work. Preserve that partial result.
+Matching the earlier LBT search to the current solvent objective helped one
+source but barely changed the global result: its MACE-based margin is0.982619
+kcal/mol and residual source disagreement24.120991. That finite branch is closed.
+[Search result](lbt_matched_response/FINAL_REPORT.md),
+[paired result](monomer_matched_response_comparison/REPORT.md).
 
-The [second Mex source](MEX_SECOND_SOURCE_FEASIBILITY.md) needs explicit construct,
-occupancy and hydration assumptions before a matched modeled comparison. The
-[water rescore](lbt_matched_water/REPORT.md) weakened the earlier water lead below
-our interpretive resolution; four original geometric exclusions remain. Neither
-branch supplies a ready biological correction. PQQ/defaults are preserved; the
-profiler goal is active and unmet.
+**Next: independently check the local electronic response before spending more
+on search.** The [declared reference test](LBT_LOCAL_REFERENCE_PLAN.md) uses both
+saved48-atom donor geometries and both metals, with the existing PBE0-D4 reference
+recipe. FirstLa7CCO, then the remaining cells after actual admission. Reuse all
+MACE and the available GFN pair; add only two missingGFNvacuum cells. No new
+geometry or optimization, no revival of the old failed14-ion series. The Dy
+reference remains an explicit frozen4f approximation, not physical sextet/SOC
+validation. Adapters are preparing; no new reference result is implied.
+
+The matched-search round used48MACE+48ALPB,92GPU-s/1107allocatedCPU-s including
+its saved comparison. Electronic substitution added18allocatedCPU-s including
+its preserved parser failure and no molecular calls. PQQ/defaults remain intact.
+No affinity or reliable protein-level preference profiler has yet been established.
 
 ## Historical progression under the earlier models
 

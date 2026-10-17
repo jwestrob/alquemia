@@ -1,3 +1,23 @@
+# Latest: electronic-model sensitivity isolated; finite local reference preparing
+
+Saved electronic comparison12823 COMPLETE:36LBT+10Mex cells and15menus, exact
+baseline replay, zero molecular calls. Keeping MACE-selected geometries but
+substituting GFN electronics reduces candidate source gap28.262193→0.608559kcal/mol;
+same-pool GFN reselection gives1.173075. Global exchange becomes+3.809642.
+This is strong model sensitivity, not proofGFNaccuracy or a validated profiler.
+Report electronic_substitution/REPORT.md retains allmenus, f-in-core limitations
+and failed12770schemaattempt. V2 cost8CPU-s; failedv1cost10CPU-s. No rerunsneeded.
+
+LBT_LOCAL_REFERENCE_PLAN.md (2d4bfe0d) declares the next finite check: exactfour
+48atommatched cores, existing PBE0-D4/lcecp1TZVP frozen-f recipe, no solvent or
+optimization. FirstLa7CCOscout, thenremainingthree afteractualnative admission;
+12MPI/cell and allocation-derived memory undercurrentSlurm limits. Preserve
+nativeConvCheckMode; report separateall-residuals flag, no stability/forceclaim.
+Reuse4MACE and2GFN7CCOcells; only2new7CCNGFNvac cells required independently.
+Harvey ownsDFTadapter, LeibnizGFNadapter; root owns submissions/status. No new
+molecularjob submittedyet. No compatiblevacuumDFTcache found; oldr2SCAN/CPCM
+series remainsclosed. Existing matched-objective branch staysclosed. Goalunmet.
+
 # Latest: matched-objective response complete; electronic-model diagnostic collecting
 
 All four LBT searches12762/12765 and common pool12767 are COMPLETE:22geometries,

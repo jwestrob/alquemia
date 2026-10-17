@@ -1,0 +1,105 @@
+{
+  "status": "unavailable",
+  "job_id": "12770",
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/electronic_substitution_v1/execution/RESULT.json",
+    "sha256": "cf42c2ed4d3d39678a73279461627cd6827ab8a503b524a80efda8b849bd4f5a"
+  },
+  "report": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/electronic_substitution_v1/execution/REPORT.md",
+    "sha256": "867eec4043c16ca9910b980197050cf9c2a2db095da4d014a9acebf149b68c00"
+  },
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/electronic_substitution_v1/ELECTRONIC_SUBSTITUTION.py",
+    "sha256": "c561a4cf6d998c3aa36081bf129b8e26ff2577ac083edb7c3253c0c36ad63189"
+  },
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/electronic_substitution_v1/CONFIG.json",
+    "sha256": "0a6b044f60535e776db0232e610ea45b6a61338bd97bceefa89ac2dc5e7554f0"
+  },
+  "submission": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/electronic_substitution_v1/SUBMISSION.json",
+    "sha256": "52ea4175f220be8bceaa60649be5380d1da1a3634b14da69080982e0ff214551"
+  },
+  "scheduler_receipt": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_response_20261016/electronic_substitution/ATTEMPT_V1_SACCT.txt",
+    "sha256": "c747eae60832c6067fb87100593553e990b8213ee3913e34cc611663ec51c8e0"
+  },
+  "scheduler_rows": [
+    {
+      "JobIDRaw": "12770",
+      "JobName": "Monomer-electronic-compare",
+      "State": "FAILED",
+      "ExitCode": "1:0",
+      "ElapsedRaw": "10",
+      "AllocCPUS": "1",
+      "AllocTRES": "billing=1,cpu=1,mem=4096000K,node=1",
+      "TotalCPU": "00:06.676",
+      "MaxRSS": "",
+      "Start": "2026-10-16T17:41:04",
+      "End": "2026-10-16T17:41:14"
+    },
+    {
+      "JobIDRaw": "12770.batch",
+      "JobName": "batch",
+      "State": "FAILED",
+      "ExitCode": "1:0",
+      "ElapsedRaw": "10",
+      "AllocCPUS": "1",
+      "AllocTRES": "cpu=1,mem=4096000K,node=1",
+      "TotalCPU": "00:06.676",
+      "MaxRSS": "602060K",
+      "Start": "2026-10-16T17:41:04",
+      "End": "2026-10-16T17:41:14"
+    }
+  ],
+  "application_elapsed_seconds": 9.809362896019593,
+  "application_process_CPU_seconds": 6.57595907,
+  "new_molecular_calls": 0,
+  "new_geometries": 0,
+  "optimizer_steps": 0,
+  "declared_LBT_cells": 36,
+  "declared_Mex_cells": 10,
+  "declared_menus": 15,
+  "LBT_cell_status_counts": {
+    "available": 20,
+    "unavailable": 16
+  },
+  "Mex_cell_status_counts": {
+    "available": 10,
+    "unavailable": 0
+  },
+  "menu_status_counts": {
+    "available": 3,
+    "unavailable": 12
+  },
+  "unavailable_reasons": [
+    "KeyError('charge_closure_e')"
+  ],
+  "baseline_replay": {
+    "status": "passed",
+    "helper": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/monomer_continued_comparison_v1/MONOMER_CONTINUED_COMPARISON.py",
+      "sha256": "024e2477145ed94a135c5d214e5c9ea9aa4ac79f5a30c0be1e86ef4f182a5407"
+    },
+    "arithmetic_tolerance_kcal_mol": 1e-10,
+    "R_replay_residuals_kcal_mol": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "interpretation": "Partial source-origin menus do not establish the full same-pool electronic substitution comparison. Preserve all failed cells and original output."
+}

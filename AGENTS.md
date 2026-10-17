@@ -1,3 +1,14 @@
+# Current LanM direction — 17 October 2026 UTC
+
+Saved12823 completes46cells/15menus: switchingelectronicmodel atunchangedselected
+geometries reducesLBTsourcegap28.262→0.609kcal/mol (GFNreselection1.173). Thisis
+modelsensitivity, notGFNaccuracy. Report diagnostics/lanm_coupled_response_20261016/
+electronic_substitution/REPORT.md. No morestructuralsearch launched.
+New LBT_LOCAL_REFERENCE_PLAN.md2d4bfe0d declares exactfour48atomvacuumPBE0-D4
+references (La7CCOscoutfirst) plusonlytwo missingGFNcells; adapterspreparing.
+Root ownsexecution; no newmolecularjobs yet. ReadCURRENT/actualreceipts before
+acting. PQQ/defaults preserved; no promotion; goalremainsactive/unmet.
+
 # Current LanM monomer result — 17 October 2026 UTC
 
 Matched LBT objective searches12762/12765 and44-cell pool12767 are complete;

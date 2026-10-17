@@ -2,20 +2,30 @@
 
 17 October2026UTC. The activated PLAN remains active and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
-## After-Dy complete: three of four reference cells admitted
+## Whole LBT four-cell reference complete
 
-Job 13292 terminated normally at 19:06 UTC and passes the unchanged singleton
-admission with its full 256-atom gradient. Actual cost: 24449 seconds on 12 CPUs,
-293388 allocated CPU-seconds. Result `3e097a58…`, receipt, force report, root and
-independent reviews, and actual delivery ACK are preserved under
-`lbt_whole_reference_continuation/activation_v1/after_Dy_result_v1/`.
-SCF converged after 19 cycles; only the orbital-gradient residual meets its
-printed threshold. Physical-state and numerical-force qualifications remain false.
+All four native endpoints and the full saved collector13424 are complete/admitted.
+The same fixed deformation costs PBE0+ALPB La+12.279593/Dy+11.722656 kcal/mol,
+compared with whole-MACE+ALPB +11.290076/+11.082401 and hybrid La−28.244859.
+This challenges the hybrid benefit on the tested fixture. After-state whole-DFT
+and whole-MACE terminal forces strongly oppose the motion; initial projections
+are positive, so the result does not rule out every small displacement.
+Read [the full report](lbt_whole_reference_continuation/FINAL_REPORT.md).
 
-After-La13290 remains in its final XC gradient calculation. Await its terminal
-result, then run the original full four-cell collector on one CPU. The complete
-comparison is still unavailable; no partial deformation-work result is reported.
-Mex13281 continues SCF (iteration 30 at review). No new molecular calls or retries.
+All four retain electronic-state and force-qualification limitations. The
+Dy−La work contrast −0.556937 is below the declared reporting resolution;
+no preference, universal MACE validation or unique MM parameter defect follows.
+The complete result9229f7be, full256 force reports, native pins, reviews and costs
+are archived in `lbt_whole_reference_continuation/full_result_v1/`.
+Four molecular allocations total1154004CPU-s; listed support47CPU-s.
+After-La13290 actual completion delivery is separately acknowledged.
+
+Do not continue or promote the challenged LBT hybrid response. Root is preparing
+a finite saved-only comparison of baseline/expanded-region starting forces
+against this reference; Linnaeus owns its adapter and Harvey its static review.
+No new molecular calls or repeated MM term counting. Mex13281 remains active;
+actual central gradient admission/cost still gate its two displacements.
+The mechanics goal remains unmet. Earlier checkpoints below are historical.
 
 ## Before-Dy reference complete; two LBT continuations remain
 

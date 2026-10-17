@@ -10,15 +10,25 @@ are bound unchanged. The historical draft names/protocol are retained for exact
 reproducibility; actual authorization and evidence are in
 `ROOT_CONTINUATION_DECISION.json` and `EXECUTION_REVIEW.json`.
 
+## Final state
+
+All three continuations and full saved collector13424 are complete/admitted.
+See [the four-cell report](../FINAL_REPORT.md) and `../full_result_v1/` for
+actual work, full forces, caveats and costs. PBE0+ALPB costs about+12kcal/mol
+for both metals, whole-MACE about+11, while hybrid La predicted−28.24.
+The tested hybrid benefit is challenged; metal preference remains unqualified.
+After-La actual completion receipt and ACK are in `after_La_result_v1/`.
+Earlier progress observations below are retained as execution history.
+
 ## Actual checks and launches
 
 | Job | Work | Result/resources |
 | --- | --- | --- |
 |13288|Zero-call continuation preflight|Passed,3seconds/1CPU|
 |13289|Real-input replay and seven rejection controls|Passed,2seconds/1CPU|
-|13290|after-La whole256 PBE0 EnGrad|Started,12MPI|
-|13291|before-Dy whole256 PBE0 EnGrad|Started,12MPI|
-|13292|after-Dy whole256 PBE0 EnGrad|Started,12MPI|
+|13290|after-La whole256 PBE0 EnGrad|Complete/admitted,24919seconds/12MPI|
+|13291|before-Dy whole256 PBE0 EnGrad|Complete/admitted,23058seconds/12MPI|
+|13292|after-Dy whole256 PBE0 EnGrad|Complete/admitted,24449seconds/12MPI|
 
 The positive replay precedes controls for missing/changed scout evidence,
 changed retry permission, wrong cost receipt, repeating before-La, and incorrect

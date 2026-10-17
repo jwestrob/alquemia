@@ -3,13 +3,19 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the goal remains active and unmet.
 
-Newest 19:06 UTC: after-Dy13292 also completed and passes unchanged admission,
-including its 256-atom gradient. Cost 24449 s on 12 CPUs = 293388 CPU-s.
-Result 3e097a58 and delivered-event ACK are archived in the active diagnostic's
-lbt_whole_reference_continuation/activation_v1/after_Dy_result_v1/.
-Three of four reference cells are admitted. After-La13290 remains in its final
-gradient calculation; await it before full collection. Mex13281 remains in SCF.
-All residual/state limitations remain; no partial work comparison or rerun.
+Newest full four-cell result: all whole-LBT endpoints and collector13424 complete.
+Read lbt_whole_reference_continuation/FINAL_REPORT.md under the active diagnostic.
+Exact fixed deformation costs PBE0+ALPB La+12.279593/Dy+11.722656 versus
+whole-MACE+ALPB +11.290076/+11.082401 and hybrid La−28.244859 kcal/mol.
+This challenges this hybrid deformation benefit; do not continue/promote it.
+All electronic-state/force-qualification limits remain. Dy−La contrast−0.556937
+is below reporting resolution, not a preference prediction or an error bar.
+Result9229f7be/full256forces/reviews/costs are preserved in full_result_v1/.
+Four molecular jobs total1154004CPU-s; listed support47CPU-s. No reruns.
+Next finite saved-only baseline/expanded force comparison: Linnaeus adapter,
+Harvey static review, root Slurm submission/integration. No new molecular work.
+Mex13281 remains active; actual central admission/cost still gate2displacements.
+The full goal remains unmet. Earlier running/completion checkpoints are historical.
 
 Latest: whole-LBT before-Dy13291 completed at18:43UTC and passes unchanged
 singleton admission with the full256-atom gradient. Actual23058s on12CPUs,

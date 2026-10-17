@@ -1,6 +1,6 @@
 {
   "utc": "2026-10-17T04:50:08.663048+00:00",
-  "status": "four_state_response_in_progress_first_admitted",
+  "status": "response_required_state_failed_other_state_running",
   "region": "baseline",
   "source": "7CCO",
   "metal": "La",
@@ -26,13 +26,13 @@
     "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_hybrid_response/ROOT_PILOT_RULE.md",
     "sha256": "0ffc04c7808f46944b9de5a3dfbeded842bfc3a1c1faf59dedca1a8fe42453dc"
   },
-  "next": "Read actual four terminal runs13017\u201313020. Each retains80step/200evaluation total budget;13017 includes12 admitted scoutsteps. If all four backend/physical admissions pass, bind exact run_results and launch at most4 opposite-metal pool evaluations. Preserve failed/nonconverged states, no automatic retry or budget extension.",
+  "next": "Finite four-call embedded damping qualification, independently reviewed before Slurm. No automatic search restart/global damping fallback/budget extension.",
   "DFT_jobs": [
     "12977",
     "12978"
   ],
   "goal_status": "active_unmet",
-  "updated_utc": "2026-10-17T05:03:11.237134+00:00",
+  "updated_utc": "2026-10-17T05:08:29.346525+00:00",
   "scout_result": {
     "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_response_baseline_v1/scout/RESULT.json",
     "sha256": "cdd92c666bbb433bb2d3fe30a723e6e66204c58ad087616cf7245e551c21b100"
@@ -130,5 +130,10 @@
   "force_audit_recovery_submission": {
     "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/hybrid_response_force_audit_v2/SUBMISSION.json",
     "sha256": "e91b0870283fa807bdb6c349e609fd0457fadb845c4397e41fef85b3c685227f"
-  }
+  },
+  "response_failure_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_hybrid_response/failure_7CCN_La_v1/ROOT_REVIEW.json",
+    "sha256": "98498372297e4fbf59e643a2c9e4122d65847899ef39e25ea4e2d0e6aa2bab9a"
+  },
+  "new_paired_pool_available": false
 }

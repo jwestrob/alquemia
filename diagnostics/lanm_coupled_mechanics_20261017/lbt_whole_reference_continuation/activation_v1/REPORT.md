@@ -60,6 +60,13 @@ empty scheduler stderr and increasing aggregate CPU. Continue unchanged; its
 separate snapshot and acknowledgement are in `after_La_silence_review_v1/`.
 All three alerts precede a printed first SCF iteration and establish no stall.
 
+Subsequent native output resolves all three initial silence alerts: after-La,
+before-Dy and after-Dy print their first iterations taking1967.8,1948.6 and1969.1
+seconds respectively. Raw rows and live scheduler evidence are retained in
+`first_iteration_review_v2/`. The v1 metadata field-count assertion is preserved;
+no native calculation changed. All remain active; no convergence trend, terminal
+admission or finite-work result follows from this startup progress.
+
 These jobs test the energy and force changes along the same fixed La-proposed
 deformation, for both metals. No optimization, geometry repair, original-scout
 repeat or molecular retry is allowed. The complete four-cell collector retains

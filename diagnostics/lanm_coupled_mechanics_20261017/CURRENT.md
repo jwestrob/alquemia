@@ -34,9 +34,11 @@ After-Dy13292's matching first-build alert was separately reviewed with its own
 output and increasing CPU accounting; continue unchanged, with no recovery.
 After-La13290 has the same reviewed first-build status; all three continuation
 jobs remain active without a justified cancellation or retry.
-Mex central13281 continues separately; its first SCF iteration is now printed
-(1989.4s). The initial silent build finished; no convergence trend or terminal
-gradient is established by one iteration.
+All three initial silence alerts have now resolved: first SCF iterations are
+printed (after-La1967.8s, before-Dy1948.6s, after-Dy1969.1s). Exact rows and live
+accounting are in the execution checkpoint's `first_iteration_review_v2/`.
+Mex central13281 has reached iteration6. All four remain active without terminal
+admission; no new mechanics or preference result is established by this progress.
 
 ## Latest: Mex mismatch localized to final integration; original gate still fails
 

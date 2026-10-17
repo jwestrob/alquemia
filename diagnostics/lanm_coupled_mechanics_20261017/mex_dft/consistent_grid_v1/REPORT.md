@@ -1,7 +1,11 @@
 # Mex consistent-grid qualification: execution checkpoint
 
-17 October 2026 UTC. Central job **13281 is running on 12 MPI ranks**. No new
-gradient or derivative agreement is established yet. Root owns execution.
+Latest, 17 October 2026 UTC: central13281 is complete and admitted under the
+original native rules. Read [the central report](CENTRAL_REPORT.md) for full
+residual caveats, actual497700CPU-s cost and the approved two-singlepoint
+continuation. Directional agreement still requires both displaced energies.
+Read CURRENT.md and actual submission records for launch state. The startup
+checkpoint below is historical; root owns execution.
 
 ## Why this test
 

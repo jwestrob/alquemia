@@ -22,7 +22,16 @@ lbt_partition_force_reference_v1/REPORT.md and archived_comparison_result_v1/.
 Raw exact reconstruction failures13446/13455/13460 remain failed; successful13463
 uses separately declared admitted POINT forces with exact internal/baseline checks.
 All four saved support jobs total3CPU-s; no tolerance change or molecular rerun.
-Mex13281 last reviewed RUNNING; actual central admission/cost still gate2displacements.
+Mex13281 now complete/admitted:41,475s12CPUs=497,700CPU-s. SCF46 gradient-check
+stop; only orbital-gradient printed residual passes. Fullgrid2=grid3/source/state
+checks pass; no directional qualification yet. Root approved original2SPs after
+cost review: plus13596/minus13597 RUNNING12MPI each, config84a47050,
+decision0aad2cd9, source1600a0a5 unchanged. Read mex_dft/consistent_grid_v1/
+CENTRAL_REPORT.md and displacement_submission_v1/ under the active diagnostic.
+Completion/health wakes armed; all launch details in task-local SUBMISSION.json.
+No repeats, retry, newMMALPB, altered step/tolerance or original-six/eight
+continuation. Wait for both terminal results before the existing Slurm three-cell
+collector; no waiting collector allocation. Original failed protocols remain failed.
 The full goal remains unmet. Earlier running/completion checkpoints are historical.
 
 Latest: whole-LBT before-Dy13291 completed at18:43UTC and passes unchanged

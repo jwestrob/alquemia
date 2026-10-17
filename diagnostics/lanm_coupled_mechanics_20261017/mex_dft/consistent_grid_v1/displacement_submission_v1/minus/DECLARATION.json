@@ -1,0 +1,41 @@
+{
+  "utc": "2026-10-17T23:12:55.609590+00:00",
+  "question": "Does the fresh consistent-grid energy slope agree with its central analytic O97 derivative at the original step?",
+  "task": "MM_O97_La_minus",
+  "scope": "One fixed-geometry singlepoint using the prepared original displaced field; no new molecular terms.",
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/CONFIG.json",
+    "sha256": "84a47050ee72128a8b26a64f6d40093e7bcb668891fa72d49d81a94d4cb1128c"
+  },
+  "continuation_decision": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/ROOT_CONTINUATION_DECISION.json",
+    "sha256": "0aad2cd96888ed945273e5caf0565e8e0265f19813d52e4faa0253820b08a3cc"
+  },
+  "launcher": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/RUN.sbatch",
+    "sha256": "f5aa4c5414e4b7268f2ab727db14f07ac1f82c1374c8df034c979df5e64703f9"
+  },
+  "maximum_new_DFT_calls": 1,
+  "CPUs": 12,
+  "stop": "No retry or further cells. Native/source/state/grid failure prevents a qualified three-cell comparison.",
+  "original_step_A": 0.001,
+  "original_tolerance": "0.005+0.0001*max(absFD,absAnalytic) kcal/mol/A",
+  "settings": "Same source,state,PBE0/basis,SCF,grid2=grid3,12MPI/allocation-derivedMaxCore as central; no warm start.",
+  "planned_command": [
+    "sbatch",
+    "--parsable",
+    "--job-name=mex-grid-minus",
+    "--output=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/slurm_%j.out",
+    "--error=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/slurm_%j.err",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/RUN.sbatch",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_preflight_v2/CONSISTENT_GRID_V2.py",
+    "--stage",
+    "run",
+    "--task",
+    "MM_O97_La_minus",
+    "--config",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/CONFIG.json",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/execution"
+  ]
+}

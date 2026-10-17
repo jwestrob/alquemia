@@ -1,0 +1,144 @@
+{
+  "utc": "2026-10-17T23:12:55.609590+00:00",
+  "kind": "terminal_result_review",
+  "job": "13281",
+  "status": "central_admitted_original_rules",
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_central_v1/execution/RESULT.json",
+    "sha256": "dbf29cb3d3b8948630f71b77d924f39630e6a399ba8a21f59bfdd5f118acb27f"
+  },
+  "native_receipt": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_central_v1/execution/native/endpoint.out.execution.json",
+    "sha256": "37b8e471c56d8e7c053151916a90a6dd71fbe7605893a1ea7cf3c0f3bee47e6a"
+  },
+  "SCF": {
+    "terminal_residuals": {
+      "Energy change": {
+        "value": -2.4083e-09,
+        "printed_tolerance": 1e-09,
+        "within_printed_tolerance": false
+      },
+      "MAX-Density change": {
+        "value": 2.4442e-05,
+        "printed_tolerance": 1e-08,
+        "within_printed_tolerance": false
+      },
+      "RMS-Density change": {
+        "value": 2.082e-07,
+        "printed_tolerance": 1e-09,
+        "within_printed_tolerance": false
+      },
+      "Orbital Gradient": {
+        "value": 4.2717e-07,
+        "printed_tolerance": 2e-06,
+        "within_printed_tolerance": true
+      },
+      "Orbital Rotation": {
+        "value": 2.3237e-05,
+        "printed_tolerance": 2e-06,
+        "within_printed_tolerance": false
+      },
+      "DIIS Error": {
+        "value": 0.00058409,
+        "printed_tolerance": 1e-08,
+        "within_printed_tolerance": false
+      }
+    },
+    "ConvCheckMode": "Total+1el-Energy",
+    "ConvForced": 0,
+    "all_printed_residuals_pass": false,
+    "SOSCF_initialized": true,
+    "native_cycles": [
+      "46"
+    ],
+    "warnings_and_gap_lines": [
+      "                                        WARNINGS",
+      "                       Please study these warnings very carefully!",
+      "WARNING: The chosen methods will break translational/rotational symmetry",
+      "WARNING: The chosen methods will break translational symmetry",
+      "WARNING: The chosen methods will break translational symmetry",
+      "Warning: op=0 Small HOMO/LUMO gap (  -0.227) - skipping pre-diagonalization"
+    ],
+    "admission_policy": "unchanged native convergence and compact state/gradient parser; residual flags are observations, not new all-criteria admission"
+  },
+  "runtime": {
+    "allocated_cpus": 12,
+    "allocated_memory_MiB": 48000,
+    "base_renderer_sha256": "4d75904eca4296abd892958df700063e272f5f029a0ce256bcf1b579768aeadb",
+    "local_mpi_slots": 12,
+    "maxcore_MB": 3100,
+    "memory_source": "SLURM_MEM_PER_NODE",
+    "per_rank_decimal_MB_before_rounding": 3145.7280000000005,
+    "ranks_per_worker": 12,
+    "reserve_fraction": 0.25,
+    "workers": 1,
+    "wrapper_sha256": "46356652756311981a51732525457c697b31e860348dee4b590d72e7bddee76d"
+  },
+  "grid_fingerprints": {
+    "XC": {
+      "IntAcc": "4.959",
+      "radial": "OptM3 with GC (2021)",
+      "angular": "6 (Lebedev-590)",
+      "pruning": "4 (adaptive)",
+      "weights": "mBecke (2022)",
+      "BFCut": "1.0000e-12",
+      "WCut": "1.0000e-14",
+      "partial_contraction": "off",
+      "rotational_invariance": "off",
+      "points": "2341093",
+      "H_He_reduction": true
+    },
+    "grid1": {
+      "IntAcc": "4.020",
+      "radial": "OptM3 with GC (2021)",
+      "angular": "2 (Lebedev-110)",
+      "pruning": "4 (adaptive)",
+      "weights": "mBecke (2022)",
+      "BFCut": "1.0000e-12",
+      "WCut": "1.0000e-14",
+      "partial_contraction": "on",
+      "rotational_invariance": "off",
+      "points": "256114",
+      "H_He_reduction": true,
+      "UseSFitting": "on"
+    },
+    "grid2": {
+      "IntAcc": "4.871",
+      "radial": "OptM3 with GC (2021)",
+      "angular": "4 (Lebedev-302)",
+      "pruning": "4 (adaptive)",
+      "weights": "mBecke (2022)",
+      "BFCut": "1.0000e-12",
+      "WCut": "1.0000e-14",
+      "partial_contraction": "on",
+      "rotational_invariance": "off",
+      "points": "1026059",
+      "H_He_reduction": true,
+      "UseSFitting": "on"
+    },
+    "grid3": {
+      "IntAcc": "4.871",
+      "radial": "OptM3 with GC (2021)",
+      "angular": "4 (Lebedev-302)",
+      "pruning": "4 (adaptive)",
+      "weights": "mBecke (2022)",
+      "BFCut": "1.0000e-12",
+      "WCut": "1.0000e-14",
+      "partial_contraction": "on",
+      "rotational_invariance": "off",
+      "points": "1026059",
+      "H_He_reduction": true,
+      "UseSFitting": "on"
+    }
+  },
+  "actual_cost": {
+    "scheduler_elapsed_seconds": 41475,
+    "allocated_cpus": 12,
+    "allocated_CPU_seconds": 497700,
+    "not_measured_utilization": true
+  },
+  "decision": "Proceed with the two originally declared singlepoint displacements under unchanged state, step, runtime and acceptance rules. Native central admission does not qualify directional consistency; all three are needed. No retry or additional campaign.",
+  "physical_state_qualified": false,
+  "global_force_qualified": false,
+  "original_failed_protocol_remains_stopped": true
+}

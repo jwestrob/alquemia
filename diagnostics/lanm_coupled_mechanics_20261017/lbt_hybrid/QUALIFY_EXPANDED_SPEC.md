@@ -6,8 +6,13 @@ gate. It does not authorize optimization. Root owns execution.
 
 ## Required evidence and denominator
 
-The unchanged hybrid evaluator is `EVALUATOR.py`, SHA256
-`a482559ca4febd240a40ec7d6042f4fa24ec4358e4f5ba05770bcfaacea4b784`.
+The bound hybrid evaluator is `EVALUATOR_V2.py`, SHA256
+`686eba84fd3dfcf28724d2d4e7957528c987445d7137b18c88a07dfec055f661`.
+It retains the original model and numerical derivative gates. Its separately
+reviewed `RECOVERY_V2.md` changes only derived cap-Jacobian replay after the
+zero-call 12975 failure and actual-host diagnosis 12984. Exact task coordinates,
+states, charges and raw component-gradient replay remain unchanged. The exact
+parent configuration and cache identity bind that helper and recovery evidence.
 Its nine-cell 7CCO/baseline/La scout must have passed both derivative directions
 at both declared steps, and its eight-origin matrix must be complete. Both
 parents must have the same model identity, exact evaluator configuration and

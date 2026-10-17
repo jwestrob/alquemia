@@ -13,7 +13,7 @@ import time
 import traceback
 
 PROTOCOL = 'lbt_hybrid_remaining_7CCO_derivatives_v1'
-EVALUATOR_SHA = 'a482559ca4febd240a40ec7d6042f4fa24ec4358e4f5ba05770bcfaacea4b784'
+EVALUATOR_SHA = '686eba84fd3dfcf28724d2d4e7957528c987445d7137b18c88a07dfec055f661'
 CASES = [('7CCO', 'baseline', 'Dy'), ('7CCO', 'expanded', 'La'), ('7CCO', 'expanded', 'Dy')]
 FD = {'steps_A': [0.0002, 0.0001], 'absolute_kcal_mol_A': 0.005, 'relative': 0.0001,
       'directions': ['boundary_anchor', 'external_charge'], 'scout_composites': 9}

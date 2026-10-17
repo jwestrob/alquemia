@@ -36,8 +36,12 @@ the parent candidate order within that source.
 
 ## Unchanged model and exact reuse
 
-Use the unchanged `lbt_hybrid/EVALUATOR.py` SHA256
-`a482559ca4febd240a40ec7d6042f4fa24ec4358e4f5ba05770bcfaacea4b784`.
+Use `lbt_hybrid/EVALUATOR_V2.py` SHA256
+`686eba84fd3dfcf28724d2d4e7957528c987445d7137b18c88a07dfec055f661`.
+Its reviewed Jacobian-replay recovery is bound through the exact qualified
+parent configuration/cache identity; it preserves the original model, task
+coordinates, state and numerical derivative gates. The zero-call 12975 failure
+and diagnosis 12984 remain separate evidence, not successful molecular cells.
 The Hamiltonian remains local MACE vacuum plus embedded-minus-isolated GFN2,
 the full MM ledger, and whole-system fixed FF ALPB. Baseline Q172/PC84 and
 expanded Q210/PC46 retain their prepared maps, caps and charge shifts. All 256

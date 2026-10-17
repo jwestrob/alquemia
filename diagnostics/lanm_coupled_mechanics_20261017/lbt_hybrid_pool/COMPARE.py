@@ -13,7 +13,7 @@ import time
 import traceback
 
 PROTOCOL = 'lbt_complete_module2_pool_two_hybrid_regions_v1'
-QUALIFIER_SHA = '588882c910805da0709395ff654ccd2e03ce342983f838b4c96c920c2be3841a'
+QUALIFIER_SHA = 'ca137dd0fa0647268e5be13d21d20b414173767d61f0f519b9a1b693d32cf9df'
 POOL_SHA = 'f4663b24190efcbe1707d604dc30a9140b28dfecb048335ec723e961e4401872'
 SOURCES = ('7CCO', '7CCN')
 REGIONS = ('baseline', 'expanded')

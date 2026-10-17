@@ -50,6 +50,11 @@ Root and independent review therefore retain the unchanged calculation and
 watchers. This does not prove convergence, useful numerical progress or per-rank
 utilization. Evidence and delivered-event acknowledgement are preserved in
 `before_Dy_silence_review_v1/`. No cancellation, retry or new calculation follows.
+After-Dy13292 subsequently emitted the same first-build alert. Its own raw
+output, empty scheduler stderr, RUNNING state and advancing aggregate CPU were
+reviewed separately; continue unchanged. The actual delivered-event snapshot
+and decision are in `after_Dy_silence_review_v1/`. Neither Dy job has a terminal
+result or a demonstrated SCF convergence trend at this review.
 
 These jobs test the energy and force changes along the same fixed La-proposed
 deformation, for both metals. No optimization, geometry repair, original-scout

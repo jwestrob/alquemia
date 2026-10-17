@@ -1,3 +1,14 @@
+# Current LanM monomer result — 17 October 2026 UTC
+
+Matched LBT objective searches12762/12765 and44-cell pool12767 are complete;
+saved12769 gives conditional Mex-La/LBT-Dy R+0.982619/+25.103610 by LBTsource.
+Source gap24.120991 remains; global margin within1kcal. No robust profiler claim.
+Finite objective-asymmetry branch closed; no automatic wider bounds or reruns.
+Read diagnostics/lanm_coupled_response_20261016/CURRENT.md and actual receipts.
+Saved electronic substitution12770 failed16cross-cell closure metadata admissions;
+V2 parser-only recovery is preparing, no molecular calls. Preserve partial/failure.
+Root owns submissions/status; PQQ/defaults preserved; goal remains active/unmet.
+
 # Latest monomer follow-up — 17 October 2026 UTC
 
 Second Mex6MI5 inventory is complete; matching8FNS requires new construct,

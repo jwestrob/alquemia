@@ -1,3 +1,22 @@
+# Latest: matched-objective response complete; electronic-model diagnostic collecting
+
+All four LBT searches12762/12765 and common pool12767 are COMPLETE:22geometries,
+44cells, all physical gates. Matching the search solvent objective changes7CCN
+materially but leaves the global paired contrast almost unchanged. Saved12769
+combines unchanged Mexcommon5: R7CCO/global+0.982619,7CCN+25.103610kcal/mol;
+source spread24.120991. The global margin is within the existing1kcal interpretive
+resolution. No reliable preference/affinity or biological accuracy gain claimed.
+Finite objective test is closed; do not automatically expand/repeat this search.
+See lbt_matched_response/FINAL_REPORT.md and monomer_matched_response_comparison/.
+Cost48MACE+48fixedFFALPB,92GPU-s/1107allocatedCPU-s including12769; no newGFN/DFT.
+
+Saved46-cell electronic substitution12770 preserves baseline replay but fails16
+archived energy-only LBT cross receipts on a missing top-level closure field.
+Actual signed residual exists in solver_observation. Narrow parserV2 is preparing
+at unchanged absolute1e-5 gate; preserve12770partial/failure. No molecular reruns.
+Root owns submission/integration; Leibniz adapter/report, Harvey independent review.
+No jobs need molecular restart. PQQ/defaults and active goal are unchanged.
+
 # Current: matched-objective LBT scout submitted
 
 Scout12762 submitted12CPUs/oneGPU, watcher2179893, sourcea6cc6de4/configc20b989b

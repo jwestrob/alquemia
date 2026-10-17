@@ -3,36 +3,36 @@
 ## Latest result — 17 October 2026 UTC
 
 Mex-LanM is the natural monomer reference; LBT3 is a measured peptide control,
-not a second natural LanM. The working energy combines local MACE chemistry,
-a GFN protein-field correction, the retained protein mechanics and fixed-charge
-ALPB solvent. Whole LBT lies inside the electronic region, so it has no separate
-external-field or MM term. State, source and assay limitations remain explicit.
+not a second natural LanM. The current model combines local MACE chemistry,
+a GFN protein-field correction, retained protein mechanics and fixed-charge
+ALPB solvent. Whole LBT is the electronic region and has no extra MM term.
 
-The Mex finite continuations preserve the checked covalent geometry and lower
-each metal's own energy. Dy benefits more than La. The full paired comparison
-retains the expected conditional Mex-La/LBT-Dy direction, but its shared-menu
-margin is only1.019378kcal/mol; some other declared menus are about0.09. The two
-LBT source-local contrasts still differ by28.262193kcal/mol. Positive signs here
-do not establish a reliable preference classifier or an affinity scale.
-See [the complete comparison](monomer_continued_comparison/REPORT.md) and
-[Mex response](mex_continuation/REPORT.md).
+**Matching the LBT search objective has not solved the preference problem.**
+All four searches preserve the physical gates and lower their own energies, but
+remain nonstationary. After common-pool competition and the unchanged Mex response,
+the conditional exchange is +0.982619 for the 7CCO/global menu and +25.103610 for
+7CCN. Positive favors Mex-La plus LBT-Dy. The global margin is within the existing
+1 kcal/mol interpretive resolution; the source gap remains24.120991 kcal/mol.
+These are finite-state electronic/mechanical contrasts, not affinities or an
+independent-protein validation. The finite objective-asymmetry test is closed.
 
-The matched-solvent water rescore weakens the earlier water lead: its two
-available conditional responses are-0.787/-0.740kcal/mol, within the existing
-1kcal/mol interpretive resolution; four original geometry rejections remain.
-See [matched water](lbt_matched_water/REPORT.md). No hydration expansion follows.
-The latest molecular round used274GPU-seconds and3299allocatedCPU-seconds
-including saved reporting; throughput is adequate for contained profiling tests.
+See [the paired result](monomer_matched_response_comparison/REPORT.md) and
+[actual searches and common pool](lbt_matched_response/FINAL_REPORT.md).
+This round used48MACE and48fixed-charge ALPB calls,92GPU-seconds and1107allocated
+CPU-seconds including saved comparison12769. No newGFN,DFT or folds were needed.
 
-The next declared experiment tests a real asymmetry: LBT's existing geometries
-were generated under the former solvent objective and only rescored under the
-current model. [Matched-response plan](LBT_MATCHED_RESPONSE_PLAN.md) retains all
-four starts and unchanged physical limits. It is in preparation, not a result.
-A separate [saved electronic-substitution diagnostic](ELECTRONIC_SUBSTITUTION_PLAN.md)
-will distinguish sensitivity to MACE electronics from the shared mechanics/solvent.
-The second Mex deposit requires new construct/occupancy/hydration assumptions;
-see [its feasibility record](MEX_SECOND_SOURCE_FEASIBILITY.md). PQQ/defaults remain
-unchanged. The active profiler goal is not complete.
+The separate [electronic substitution](ELECTRONIC_SUBSTITUTION_PLAN.md) uses saved
+energies on exactly the same46 older cells to distinguish model sensitivity from
+search effects. First12770 replayed the baseline but exposed an archived
+cross-receipt closure-field schema mismatch; parser recovery is in progress with
+unchanged scientific gates and no new molecular work. Preserve that partial result.
+
+The [second Mex source](MEX_SECOND_SOURCE_FEASIBILITY.md) needs explicit construct,
+occupancy and hydration assumptions before a matched modeled comparison. The
+[water rescore](lbt_matched_water/REPORT.md) weakened the earlier water lead below
+our interpretive resolution; four original geometric exclusions remain. Neither
+branch supplies a ready biological correction. PQQ/defaults are preserved; the
+profiler goal is active and unmet.
 
 ## Historical progression under the earlier models
 

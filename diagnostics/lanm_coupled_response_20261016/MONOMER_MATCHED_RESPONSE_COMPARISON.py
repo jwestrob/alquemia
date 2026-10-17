@@ -47,6 +47,9 @@ def run(cfg, result):
     require(previous['status'] == replay['status'] == 'complete'
             and previous['rows'] == replay['rows'], 'Previous complete15 comparison does not replay')
     pool = read(cfg['response_pool'])
+    require(pool['status'] in ('complete', 'unavailable') and pool['stage'] == 'pool'
+            and pool['protocol_id'] == 'lbt3_matched_fixedFF_response_pool_v1',
+            'Response pool execution/admission failed')
     poolcfg = read(pool['config'])
     require(pool['implementation']['sha256'] == poolcfg['implementation']['sha256']
             and pin(pool['implementation']['path']) == pool['implementation']
@@ -59,6 +62,8 @@ def run(cfg, result):
     new_menus = comparison['expanded_menus']
     require(len(new_menus) == 3 and {r['source_scope'] for r in new_menus} == set(SCOPES),
             'Three declared source/global scopes required')
+    require((pool['status'] == 'complete') == all(r['status'] == 'available' for r in new_menus),
+            'Pool/menu availability disagrees')
     old_rows = {(r['source_scope'], r['menu']): r for r in previous['rows']}
     old_lbt = {(r['source_scope'], r['menu']): r for r in original_lbt['comparison']['menus']}
     rows = []
@@ -73,6 +78,8 @@ def run(cfg, result):
         if new['status'] != 'available':
             row['reason'] = new.get('reason', 'Required new menu unavailable')
             continue
+        require(new['missing_cells'] == [] and new['declared_search_slots'] == (4 if scope == 'global' else 2),
+                'Available menu lacks its full declared denominator')
         old_parts = old_lbt[(scope, 'union')]['LBT_Dy_minus_La_components_kcal_mol']
         delta = {k: math.fsum((new['LBT_Dy_minus_La_components_kcal_mol'][k], -old_parts[k]))
                  for k in helper.NAMES}

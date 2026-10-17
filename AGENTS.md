@@ -9,7 +9,8 @@ after diagnostic subtraction still exceeds tolerance; original gate stays failed
 Read mex_dft/gridx3_diagnosis_v1/REPORT.md. Cost2CPU-s, zero molecular calls.
 Separate consistent-grid preflight13280 PASSED zero-call;13279 parser failure preserved.
 Fresh central13281 submitted12MPI, config28abed13, completion watcher2759506,
-health armer2759507. Actual native grid/state admission and cost gate both displacements.
+health armer2759507. Actual startup grid/state/runtime checks pass; terminal gradient
+admission and measured cost still gate both displacements.
 Read consistent_grid_v1/REPORT.md and actual SUBMISSION.json;
 three calls maximum, original tolerance,12MPI/defaultpolicy, actual preflight
 and native grid verification required. Original6+8cells remain stopped.

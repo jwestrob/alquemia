@@ -45,7 +45,11 @@ Central13281 uses config `28abed13`, one node and12 actual MPI ranks, with
 scheduler memory/time defaults and allocation-derived MaxCore. Completion
 watcher2759506 and alert-only health armer2759507 are recorded in
 [the exact submission](central_submission/SUBMISSION.json). The native deck
-has started; the effective grid header must still be inspected.
+has started. Actual startup review passes: grid2 and grid3 both use the original
+final-grid construction, including1,026,059 points; XC/grid1/grid3 are unchanged.
+Native charge0/multiplicity1/NEL832, MaxIter125, Total+1el-Energy/ConvForced0
+and12MPI/MaxCore3100 also match. This validates startup settings, not a completed
+SCF calculation or analytic gradient.
 
 Both ±singlepoints require a completed, admitted central gradient and root's
 review of its actual cost. At most three fresh native calls are allowed in total;
@@ -66,6 +70,7 @@ The independent whole-peptide reference13051 continues with its existing wakes.
 - [Failed preflight and recovery decision](preflight_failure_v1/ROOT_REVIEW.json).
 - [Actual passed preflight review](preflight_v2/ROOT_REVIEW.json).
 - [Central declaration](central_submission/DECLARATION.json).
+- [Actual native startup review and saved header](startup_review/STARTUP_REVIEW.json).
 
 Source/preparation checkpoint is pushed in `15587c2`. Subsequent startup and
 result records must be read before further submission; delayed notifications

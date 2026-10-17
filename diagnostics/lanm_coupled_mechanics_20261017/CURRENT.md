@@ -23,8 +23,10 @@ source, shared-component and three legacy-parser controls with zero molecular
 calls (10CPU-s). Failed13279 remains preserved (10CPU-s); versioned adapter1600a0a5
 corrects only a native text delimiter. Root and independent review admit the
 prepared inputs. Fresh central13281 is submitted on12MPI, config28abed13,
-completion watcher2759506 and alert-only health armer2759507. Actual native grid
-header and terminal admission/cost remain required before either displacement.
+completion watcher2759506 and alert-only health armer2759507. Actual native startup
+passes full grid/state/runtime checks: grid2 equals original/final grid3; XC/grid1/
+grid3 stay unchanged. Charge0/multiplicity1/NEL832, MaxIter125 and12MPI/MaxCore3100
+match. Terminal gradient admission and measured cost still gate both displacements.
 No plus/minus or original-six/response-eight cells are submitted. Exact receipts:
 mex_consistent_grid_central_v1/SUBMISSION.json; see the consistent-grid report.
 Whole13051 has converged electronically and is calculating its analytic gradient;

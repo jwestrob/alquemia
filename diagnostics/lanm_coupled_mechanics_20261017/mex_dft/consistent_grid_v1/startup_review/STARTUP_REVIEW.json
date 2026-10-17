@@ -1,0 +1,276 @@
+{
+  "observation_started_utc": "2026-10-17T11:44:23.292782+00:00",
+  "observation_finished_utc": "2026-10-17T11:44:23.293678+00:00",
+  "reviewer": "/root/mex_health_review",
+  "job_id": "13281",
+  "status": "startup_printed_grid_state_runtime_review_passed_only",
+  "scope": "Read-only text and metadata comparison with original native output and accepted execution specification; no scientific source imported or numerical analysis executed.",
+  "live_output": {
+    "path": "workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_central_v1/execution/native/endpoint.out",
+    "bytes_read": 104596,
+    "size_before": 104596,
+    "size_after": 104596,
+    "mtime_utc": "2026-10-17T11:44:02.923125+00:00",
+    "mtime_ns_before": 1792237442923125207,
+    "mtime_ns_after": 1792237442923125207,
+    "live_not_final_artifact": true,
+    "final_output_sha256": null,
+    "snapshot_tail": [
+      "Calculating cut-offs                               ... done",
+      "Initializing the effective Hamiltonian             ... done",
+      "Setting up the integral package (SHARK)            ... done",
+      "Starting the Coulomb interaction                   ... done (  50.5 sec)",
+      "Making the grid                                    ... "
+    ]
+  },
+  "native_header_snapshot": {
+    "path": "diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/startup_review/NATIVE_HEADER.txt",
+    "sha256": "5c1da015cc6aa858c85440f62252f3fd314fe9a0f6ec7b134e86ca8a3268cebe",
+    "source_start_line_1_based": 1854,
+    "source_end_line_1_based": 2043,
+    "scope": "Exact contiguous excerpt from live output: DFT/COSX grid construction through SCF convergence-tolerance header; its hash identifies only this saved excerpt."
+  },
+  "stable_evidence": {
+    "original_native_output": {
+      "path": "workspaces/metal_environment_response_20260926/lady_repaired_origins_Mex8FNS_v1/La_A/endpoint.out",
+      "sha256": "e61f93c17ba85b008ef9b936bd782d87d3cb78cf17eb2efde67bd4c01f06c7e9"
+    },
+    "execution_specification": {
+      "path": "diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/EXECUTION_SPEC_V1.md",
+      "sha256": "c18dc071b6622624cedc1dec5fa8e0a0a71a0d11ac0abb2988f8c86a7ff19259"
+    },
+    "config": {
+      "path": "workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_central_v1/CONFIG.json",
+      "sha256": "28abed131ea5e7d3e832ac4611c15eaeb685c19e15cde4b0fc5da6b14c451af6"
+    },
+    "runtime": {
+      "path": "workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_central_v1/execution/native/endpoint.runtime.json",
+      "sha256": "10afc8b274e109ea07529fec6645be9352731fded2f8fc077bd162132fe0dcac"
+    },
+    "input": {
+      "path": "workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_central_v1/execution/native/endpoint.inp",
+      "sha256": "da3db15dc2a44508eb4b812bd83b5ded7033ab245b867406d136b32162222c5c"
+    },
+    "runtime_input": {
+      "path": "workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_central_v1/execution/native/endpoint.runtime.inp",
+      "sha256": "84cadad964ba95319f94a2725a1e115d0da8e92085062f308144d4a3db4b24a3"
+    },
+    "actual_preflight_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_preflight_v2/preflight/RESULT.json",
+      "sha256": "4c818c8d172937927ac86dcea6a47223579c9632b79af4843ef19a382ab02fd7"
+    }
+  },
+  "grid_fingerprints": {
+    "XC": {
+      "IntAcc": "4.959",
+      "radial": "OptM3 with GC (2021)",
+      "angular": "6 (Lebedev-590)",
+      "pruning": "4 (adaptive)",
+      "weights": "mBecke (2022)",
+      "basis_cutoff": "1.0000e-12",
+      "weight_cutoff": "1.0000e-14",
+      "partial_contraction": "off",
+      "rotational_invariance": "off",
+      "points": "2341093",
+      "H_He_angular_reduction": "one unit"
+    },
+    "grid1": {
+      "IntAcc": "4.020",
+      "radial": "OptM3 with GC (2021)",
+      "angular": "2 (Lebedev-110)",
+      "pruning": "4 (adaptive)",
+      "weights": "mBecke (2022)",
+      "basis_cutoff": "1.0000e-12",
+      "weight_cutoff": "1.0000e-14",
+      "partial_contraction": "on",
+      "rotational_invariance": "off",
+      "points": "256114",
+      "H_He_angular_reduction": "one unit",
+      "UseSFitting": "on"
+    },
+    "grid2": {
+      "IntAcc": "4.871",
+      "radial": "OptM3 with GC (2021)",
+      "angular": "4 (Lebedev-302)",
+      "pruning": "4 (adaptive)",
+      "weights": "mBecke (2022)",
+      "basis_cutoff": "1.0000e-12",
+      "weight_cutoff": "1.0000e-14",
+      "partial_contraction": "on",
+      "rotational_invariance": "off",
+      "points": "1026059",
+      "H_He_angular_reduction": "one unit",
+      "UseSFitting": "on"
+    },
+    "grid3": {
+      "IntAcc": "4.871",
+      "radial": "OptM3 with GC (2021)",
+      "angular": "4 (Lebedev-302)",
+      "pruning": "4 (adaptive)",
+      "weights": "mBecke (2022)",
+      "basis_cutoff": "1.0000e-12",
+      "weight_cutoff": "1.0000e-14",
+      "partial_contraction": "on",
+      "rotational_invariance": "off",
+      "points": "1026059",
+      "H_He_angular_reduction": "one unit",
+      "UseSFitting": "on"
+    }
+  },
+  "original_grid_fingerprints": {
+    "XC": {
+      "IntAcc": "4.959",
+      "radial": "OptM3 with GC (2021)",
+      "angular": "6 (Lebedev-590)",
+      "pruning": "4 (adaptive)",
+      "weights": "mBecke (2022)",
+      "basis_cutoff": "1.0000e-12",
+      "weight_cutoff": "1.0000e-14",
+      "partial_contraction": "off",
+      "rotational_invariance": "off",
+      "points": "2341093",
+      "H_He_angular_reduction": "one unit"
+    },
+    "grid1": {
+      "IntAcc": "4.020",
+      "radial": "OptM3 with GC (2021)",
+      "angular": "2 (Lebedev-110)",
+      "pruning": "4 (adaptive)",
+      "weights": "mBecke (2022)",
+      "basis_cutoff": "1.0000e-12",
+      "weight_cutoff": "1.0000e-14",
+      "partial_contraction": "on",
+      "rotational_invariance": "off",
+      "points": "256114",
+      "H_He_angular_reduction": "one unit",
+      "UseSFitting": "on"
+    },
+    "grid2": {
+      "IntAcc": "4.338",
+      "radial": "OptM3 with GC (2021)",
+      "angular": "3 (Lebedev-194)",
+      "pruning": "4 (adaptive)",
+      "weights": "mBecke (2022)",
+      "basis_cutoff": "1.0000e-12",
+      "weight_cutoff": "1.0000e-14",
+      "partial_contraction": "on",
+      "rotational_invariance": "off",
+      "points": "549243",
+      "H_He_angular_reduction": "one unit",
+      "UseSFitting": "on"
+    },
+    "grid3": {
+      "IntAcc": "4.871",
+      "radial": "OptM3 with GC (2021)",
+      "angular": "4 (Lebedev-302)",
+      "pruning": "4 (adaptive)",
+      "weights": "mBecke (2022)",
+      "basis_cutoff": "1.0000e-12",
+      "weight_cutoff": "1.0000e-14",
+      "partial_contraction": "on",
+      "rotational_invariance": "off",
+      "points": "1026059",
+      "H_He_angular_reduction": "one unit",
+      "UseSFitting": "on"
+    }
+  },
+  "grid_checks": {
+    "XC_unchanged": true,
+    "grid1_unchanged": true,
+    "grid3_unchanged": true,
+    "grid2_equals_original_grid3": true,
+    "grid2_equals_current_grid3": true
+  },
+  "grid_interpretation": "The actual installed ORCA parser accepted AngularGridX2,4,4 and IntAccX-1,-1,-1 and printed the intended full physical grid fingerprints. Grid2 now equals original finalgrid3 in angular/radial construction, pruning, weights, cutoffs, contraction, H/He handling, fitting and point count. XC/grid1/grid3 are unchanged. Timing and worker batch statistics are not physical grid-equality criteria.",
+  "state_and_method": {
+    "ORCA_version": "6.1.1",
+    "method": "PBE0 D4 def2-TZVP def2/J RIJCOSX NoAutostart DefGrid3 VeryTightSCF EnGrad",
+    "guess": "PModel",
+    "DoEQ": false,
+    "qm_atoms": 209,
+    "external_pointcharges": 1840,
+    "La_ECP_core_electrons": 46,
+    "HFTyp": "RHF",
+    "charge": 0,
+    "effective_multiplicity": 1,
+    "explicit_electrons": 832,
+    "state_header_available": true,
+    "state_header_matches_declaration": true,
+    "physical_state_qualified": false,
+    "atomic_guess_note": "Temporary La PModel atomic multiplicity2 does not change the printed molecular multiplicity1 state."
+  },
+  "SCF_settings": {
+    "MaxIter": 125,
+    "ConvCheckMode": "Total+1el-Energy",
+    "ConvForced": 0,
+    "TolE": "1.000e-09 Eh",
+    "one_electron_energy_tolerance": "1.000e-06 Eh",
+    "TolG": "2.000e-06",
+    "TolX": "2.000e-06",
+    "TolErr": "1.000e-08",
+    "Thresh": "1.000e-12 Eh",
+    "TCut": "1.000e-14 Eh",
+    "header_available": true,
+    "matches_original_declaration": true
+  },
+  "runtime": {
+    "execution_context": {
+      "host": "node-64-768g-3",
+      "slurm_job_id": "13281",
+      "slurm_job_partition": "standard"
+    },
+    "parallelism": {
+      "nprocs": 12,
+      "policy": "allocation_aware_mpi_rank_partition",
+      "slurm_cpus_on_node": 12
+    },
+    "memory_policy": {
+      "allocated_cpus": 12,
+      "allocated_memory_MiB": 48000,
+      "base_renderer_sha256": "4d75904eca4296abd892958df700063e272f5f029a0ce256bcf1b579768aeadb",
+      "local_mpi_slots": 12,
+      "maxcore_MB": 3100,
+      "memory_source": "SLURM_MEM_PER_NODE",
+      "per_rank_decimal_MB_before_rounding": 3145.7280000000005,
+      "ranks_per_worker": 12,
+      "reserve_fraction": 0.25,
+      "workers": 1,
+      "wrapper_sha256": "46356652756311981a51732525457c697b31e860348dee4b590d72e7bddee76d"
+    },
+    "native_banner_MPI_processes": 12,
+    "native_MaxCore_MB": 3100,
+    "matches_declared_runtime": true
+  },
+  "warning_lines": [
+    "WARNING: The chosen methods will break translational/rotational symmetry",
+    "WARNING: The chosen methods will break translational symmetry",
+    "WARNING: The chosen methods will break translational symmetry"
+  ],
+  "pending": {
+    "SCF_convergence": true,
+    "final_integration_execution": true,
+    "native_normal_termination": true,
+    "QM_and_external_PC_gradient_admission": true,
+    "central_terminal_result_and_actual_cost_review": true,
+    "displaced_cell_decision": true
+  },
+  "limits": [
+    "Grid3 construction is observed; its later final integration has not yet executed in this snapshot.",
+    "Startup agreement establishes neither SCF convergence nor gradient/derivative consistency, electronic stability or physical accuracy.",
+    "Original failed eight-cell derivative protocol and its remaining-six/response stop remain intact.",
+    "Displaced cells still require root central-result and measured-cost decision under the separate three-cell protocol."
+  ],
+  "decision": "No startup fingerprint mismatch found. Continue original central execution unchanged; no terminal or dependent-call admission by this review.",
+  "actions": {
+    "new_molecular_calls": 0,
+    "scientific_numerical_analysis": false,
+    "scientific_source_import": false,
+    "submissions": 0,
+    "cancellations": 0,
+    "job_changes": false,
+    "files_written": [
+      "STARTUP_REVIEW.json",
+      "NATIVE_HEADER.txt"
+    ]
+  }
+}

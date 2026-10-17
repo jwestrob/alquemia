@@ -3,6 +3,16 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the goal remains active and unmet.
 
+- Whole-model completion 13140/13141/13142 is COMPLETE and replayed.
+  Same 13017 La deformation: hybrid work -28.244859 versus whole-MACE plus
+  fixed-FF ALPB +11.290076 kcal/mol. This establishes model dependence, not
+  unique MM-stiffness attribution or accuracy. Exactly two MACE plus one ALPB
+  calls; four energies/three force sets, hybrid after-Dy still unavailable.
+  Cost 140 allocated CPU-s and 11 GPU-s. Read lbt_whole_model_completion/REPORT.md
+  under the active diagnostic; do not repeat these completed calls.
+  Before-La DFT 13051 tests starting forces/cost only; finite-work validation
+  still requires later admitted reference cells. Existing DFT gates remain.
+
 - Six broad searches are admitted but nonconverged. The conditional source gap
   decreases24.120991→6.209455kcal/mol under unmatched scaffold Hamiltonians;
   this is not a qualified preference prediction.

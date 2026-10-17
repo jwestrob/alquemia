@@ -12,6 +12,8 @@
 
 6. **The terminal force is specifically bond-and-angle dominated.** MM-only audit13122 passes all four original starts and all208 local terms, with exact native parameter/term checks and fullforce closure. The largest term in every case is N–CA stretching, followed by N–CA–C bending. Along the total MM force, bonds contribute24.96–30.62 and angles16.70–22.52kcal/mol/A; torsions/nonbonded are smaller. This identifies the modeled cost, not the accurate model. No copying/counting defect found. Audit+saved report13130 cost10allocatedCPU-s, zero other molecular calls. Read lbt_mm_term_audit/result/REPORT.md and ALL_TERMS.tsv.
 
+7. **The two models disagree on the cost of exactly the same motion.** Whole-model completion 13140–13142 passes all native and saved replay gates. The 13017 La deformation lowers hybrid energy by 28.244859 kcal/mol but raises whole-MACE plus fixed-FF ALPB by 11.290076. Shared solvent cannot explain this disagreement; differing electronic regions and MM mechanics prevent unique attribution to stiffness. Whole-model Dy-minus-La deformation work is -0.207676 kcal/mol, below the existing 1 kcal reporting resolution. Read [the report](lbt_whole_model_completion/REPORT.md). Four energies and three force sets are available; hybrid after-Dy remains missing. No accuracy or preference claim follows.
+
 LBT is a peptide control, not a second natural LanM.7CCN is Lu-conditioned. Mex has an EF3 target, three Nd spectators and167waters. No binding free energy, robust preference classifier or experimental transfer is established.
 
 ## Owned work
@@ -22,6 +24,7 @@ LBT is a peptide control, not a second natural LanM.7CCN is Lu-conditioned. Mex 
 |13051|Whole256/q−2 PBE0 before-La force/cost scout|Actual preflight13049 passes all four states,1030 explicit electrons. Only one new reference cell,12MPI. Completion and alert-only health wakes armed.|
 |Ready/gated|Mex eight-cell DFT response adapter|Preparation13067 and preflight/regression13068 pass:8/8 tasks,14 saved cells,5 failure controls. Zero new molecular calls. Await full derivative/cost gates.|
 |13122/13130 complete|Four-start MM term attribution and saved report|4/4 states,208 terms, all closures pass. N–CA stretching and N–CA–C bending dominate.10allocatedCPU-s total. See lbt_mm_term_audit/result/REPORT.md.|
+|13140/13141/13142 complete|Whole-LBT fixed-deformation model completion|Native admission and saved replay pass. Two MACE plus one ALPB calls; four energies/three force sets. 140 CPU-s/11 GPU-s. DFT gates unchanged.|
 
 Read ACTIVE_CHECKPOINT.json for exact active submissions and watcher records. All four original response jobs13017–13020 and recovery13048 are terminal. Recovery costs151s on12CPUs/oneH200; partial values remain diagnostic only. Solver qualification13033/13036 and saved force audit13032 are terminal. No paired pool or figure is submitted. Root owns submissions; agents own adapters/reviews. All numerical science uses Slurm.
 
@@ -48,3 +51,11 @@ Standard scheduling currently permits12CPU/job and120CPU/user; GPU partitions ha
 Saved preparation13059 failed an upstream exact terminal physical/force replay before molecular calls. Its Python binary matched, but NumPy dependency metadata differed (1.26.4 versus original2.4.6). Recovery13060 exposed a missing Gemmi dependency before replay.13063 keeps the original environment and supplies only the exact existing Gemmi package/native libraries in an owned overlay. Neither original environment is modified. The specific terminal numerical field remains unresolved until actual evidence. See mex_dft_response/preparation_failure_v1/.
 
 Mex response adapter delivery: mex_dft_response/READINESS_REPORT.md. All six preparation/diagnosis/preflight allocations are terminal and preserved; no molecular calls were made. The original full physical/source/force checks and native acceptance rules remain unchanged. Only the three independent DFT scouts listed above are active.
+
+## Fixed-deformation model completion — 17 October2026UTC
+
+A bounded cache audit found missing whole-MACE energies at the exact 13017 La terminal for both metals, plus its Dy fixed-FF ALPB. Root froze lbt_whole_model_completion/SPEC.md before execution; independent source review passed. Preflight 13140 passed with zero molecular calls. Run 13141 completed exactly those three evaluations on 12 CPUs/one H200. Saved collector 13142 replayed actual native outputs, input states, full force arrays and the comparison. Both before points and after-La solvent were reused. Energy coverage is 4/4; whole-MACE force coverage is 3/4 because archived before-Dy was energy-only. The missing hybrid after-Dy point stays unavailable.
+
+The same La displacement has hybrid work -28.244859 versus whole-model work +11.290076 kcal/mol. This establishes Hamiltonian dependence, not which model is accurate or a unique MM defect. Total cost is 140 allocated CPU-seconds and 11 GPU-seconds. Full results, source and actual commands are preserved under lbt_whole_model_completion/; exact native pins are in ACTIVE_CHECKPOINT.json. Independent integration review agrees.
+
+The ongoing before-La DFT scout tests the initial forces and cost. It alone cannot validate the finite deformation work; the existing admission/cost gates still control further reference cells. No closed-response recovery, new geometry or DFT continuation was launched by this adjunct. All three completion watchers are recorded; delayed callbacks require acknowledgement, never repeated chemistry.

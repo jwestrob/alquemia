@@ -1,0 +1,74 @@
+{
+  "utc": "2026-10-17T07:37:45.226242+00:00",
+  "status": "complete_actual_raw_replay_passed",
+  "jobs": [
+    "13140",
+    "13141",
+    "13142"
+  ],
+  "preflight": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_model_completion_v1/preflight/RESULT.json",
+    "sha256": "66bd7fa0cf4aa8789c68c1512d8fb8195e60d9dca594479a9f9af22f503e162c"
+  },
+  "run": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_model_completion_v1/execution/RESULT.json",
+    "sha256": "12c85eb939cbde298c896a80701c91b3eab8b7fb0b1beeb35d1acacdfce5088f"
+  },
+  "collection": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_model_completion_v1/collection/RESULT.json",
+    "sha256": "64f27e852d2403600ef7a73616c7e52cf50cfbace75689a5b932fde926a06ef0"
+  },
+  "energy_cells_available": 4,
+  "whole_force_cells_available": 3,
+  "new_calls": {
+    "MACE": 2,
+    "fixedFF_ALPB": 1,
+    "DFT": 0,
+    "GFN": 0,
+    "MM": 0,
+    "optimization": 0
+  },
+  "allocated_CPU_seconds": 140,
+  "allocated_GPU_seconds": 11,
+  "comparison": {
+    "status": "complete",
+    "definition": "W_M = E_M(after) - E_M(before); delta_W = W_Dy - W_La",
+    "per_metal_work": {
+      "La": {
+        "MACE_eV": 0.2561966352222953,
+        "fixed_ALPB_hartree": 0.008576829203146619,
+        "MACE_kcal_mol": 5.908034760587396,
+        "fixed_ALPB_kcal_mol": 5.382041581854374,
+        "composite_kcal_mol": 11.29007634244177
+      },
+      "Dy": {
+        "MACE_eV": 0.22264372056815773,
+        "fixed_ALPB_hartree": 0.009478923664876349,
+        "MACE_kcal_mol": 5.1342861673489795,
+        "fixed_ALPB_kcal_mol": 5.94811440303271,
+        "composite_kcal_mol": 11.08240057038169
+      }
+    },
+    "Dy_minus_La_deformation_work": {
+      "MACE_eV": -0.03355291465413757,
+      "fixed_ALPB_hartree": 0.00090209446172973,
+      "MACE_kcal_mol": -0.7737485932384169,
+      "fixed_ALPB_kcal_mol": 0.5660728211783361,
+      "composite_kcal_mol": -0.20767577206007992
+    },
+    "hybrid_La_work": {
+      "MACE_vacuum": -10.371216751591232,
+      "GFN2_field_difference": 0.02587555959778407,
+      "MM_ledger": -23.28155956081986,
+      "fixed_FF_charge_ALPB": 5.382041581854374,
+      "composite_kcal_mol": -28.244859170958936
+    },
+    "hybrid_Dy_work": null,
+    "hybrid_Dy_unavailable_reason": "No existing hybrid after-Dy evaluation; closed branch remains closed.",
+    "material_reporting_resolution_kcal_mol": 1.0,
+    "accuracy_or_preference_claim": false,
+    "energy_coverage": 4,
+    "full_force_coverage": 3
+  },
+  "decision": "Same fixed deformation has opposite La work directions under hybrid and whole-MACE Hamiltonians. Independent DFT scouts remain the physical-accuracy gate; no model promotion, parameter adjustment or further geometry/response work."
+}

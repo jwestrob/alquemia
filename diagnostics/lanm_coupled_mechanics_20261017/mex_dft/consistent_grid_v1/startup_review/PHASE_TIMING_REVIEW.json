@@ -1,0 +1,140 @@
+{
+  "utc": "2026-10-17T11:57:26.734713+00:00",
+  "status": "metadata_timing_context_only",
+  "reviewer": "mex_health_review; integrated by root",
+  "historical_rows": [
+    {
+      "job": "12977",
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_scout_MM_O97_La_plus_v1/execution/endpoint.out",
+        "sha256": "550f1b3cd678f219aca2b190772d9511f079e8a7d7d655093bb577a30cb1a4e3"
+      },
+      "startup_seconds": 235.2,
+      "guess_seconds": 104.8,
+      "first_iteration_seconds": 1185.9,
+      "raw_first_iteration_context": [
+        {
+          "line": 2083,
+          "text": "                                      ORCA LEAN-SCF"
+        },
+        {
+          "line": 2084,
+          "text": "                              memory conserving SCF solver"
+        },
+        {
+          "line": 2085,
+          "text": "-------------------------------------------------------------------------------------------"
+        },
+        {
+          "line": 2086,
+          "text": ""
+        },
+        {
+          "line": 2087,
+          "text": "----------------------------------------D-I-I-S--------------------------------------------"
+        },
+        {
+          "line": 2088,
+          "text": "Iteration    Energy (Eh)           Delta-E    RMSDP     MaxDP     DIISErr   Damp  Time(sec)"
+        },
+        {
+          "line": 2089,
+          "text": "-------------------------------------------------------------------------------------------"
+        },
+        {
+          "line": 2090,
+          "text": "               ***  Starting incremental Fock matrix formation  ***"
+        },
+        {
+          "line": 2091,
+          "text": "    1    -5632.1210017005905684     0.00e+00  5.07e-03  8.01e-01  3.36e-01  0.700 1185.9"
+        },
+        {
+          "line": 2092,
+          "text": "Warning: op=0 Small HOMO/LUMO gap (  -0.227) - skipping pre-diagonalization"
+        },
+        {
+          "line": 2093,
+          "text": "         LevelShift set to 0.327 Eh"
+        },
+        {
+          "line": 2094,
+          "text": "         Will do a full diagonalization"
+        }
+      ]
+    },
+    {
+      "job": "12978",
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_scout_MM_O97_La_minus_v1/execution/endpoint.out",
+        "sha256": "11e6b6c312dd9b67ff18e9d262c9edff2d8174e36ade91bc45082a9bea567802"
+      },
+      "startup_seconds": 233.9,
+      "guess_seconds": 105.8,
+      "first_iteration_seconds": 1179.6,
+      "raw_first_iteration_context": [
+        {
+          "line": 2083,
+          "text": "                                      ORCA LEAN-SCF"
+        },
+        {
+          "line": 2084,
+          "text": "                              memory conserving SCF solver"
+        },
+        {
+          "line": 2085,
+          "text": "-------------------------------------------------------------------------------------------"
+        },
+        {
+          "line": 2086,
+          "text": ""
+        },
+        {
+          "line": 2087,
+          "text": "----------------------------------------D-I-I-S--------------------------------------------"
+        },
+        {
+          "line": 2088,
+          "text": "Iteration    Energy (Eh)           Delta-E    RMSDP     MaxDP     DIISErr   Damp  Time(sec)"
+        },
+        {
+          "line": 2089,
+          "text": "-------------------------------------------------------------------------------------------"
+        },
+        {
+          "line": 2090,
+          "text": "               ***  Starting incremental Fock matrix formation  ***"
+        },
+        {
+          "line": 2091,
+          "text": "    1    -5632.1210001612780616     0.00e+00  5.07e-03  8.01e-01  3.36e-01  0.700 1179.6"
+        },
+        {
+          "line": 2092,
+          "text": "Warning: op=0 Small HOMO/LUMO gap (  -0.227) - skipping pre-diagonalization"
+        },
+        {
+          "line": 2093,
+          "text": "         LevelShift set to 0.327 Eh"
+        },
+        {
+          "line": 2094,
+          "text": "         Will do a full diagonalization"
+        }
+      ]
+    }
+  ],
+  "current_job": "13281",
+  "current_startup_seconds": 236.1,
+  "current_guess_seconds": 100.4,
+  "current_phase": "First incremental Fock build; first iteration not yet printed at review",
+  "observed_current_overall_elapsed": "17:54 at11:56:33UTC",
+  "current_CPU_observation": "sstat13051.batch3-03:50:06;13281.batch03:31:05; both schedulerRUNNING on12CPUs",
+  "interpretation": "Previous first SCF iterations took roughly20minutes after startup and guess. Current overall elapsed is shorter than that prior first-cycle sequence. Output silence alone does not warrant intervention. CPU activity does not prove useful SCF convergence.",
+  "limitations": [
+    "Grid1 unchanged; grid2 larger in new recipe.",
+    "Different nodes; historical timings are context, not a deadline or convergence forecast.",
+    "No native terminal admission or gradient result."
+  ],
+  "decision": "Continue existing jobs unchanged with existing health/completion wakes. No new computation or retry."
+}

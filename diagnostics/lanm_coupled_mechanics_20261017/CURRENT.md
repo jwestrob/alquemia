@@ -67,6 +67,7 @@ LBT is a peptide control, not a second natural LanM.7CCN is Lu-conditioned. Mex 
 | --- | --- | --- |
 |12977/12978 complete;13271 failed derivative gate|Embedded PBE0 external-charge La± derivative scout|Both endpoints available; PBE0/total derivatives fail, MM/ALPB pass. Remaining six stopped.|
 |13051|Whole256/q−2 PBE0 before-La force/cost scout|Actual preflight13049 passes all four states,1030 explicit electrons. Only one new reference cell,12MPI. Completion and alert-only health wakes armed.|
+|13281|Mex central La gradient with consistent SCF/final COSX grids|Actual zero-call preflight13280 and native startup checks pass.12MPI; terminal gradient admission and measured cost gate the two displaced calculations. Completion and alert-only health wakes armed.|
 |Source draft complete; execution unbound|Three remaining whole-LBT reference cells|CONTINUATION_DRAFT.py and its separate specification passed static review. Actual13051 admission, original collector, measured-cost decision and Slurm validation still precede execution.|
 |Stopped at prerequisite|Mex eight-cell DFT response adapter|Prepared source/tests remain preserved. Original scout13271 fails derivative qualification; no response cells submitted.|
 |13122/13130 complete|Four-start MM term attribution and saved report|4/4 states,208 terms, all closures pass. N–CA stretching and N–CA–C bending dominate.10allocatedCPU-s total. See lbt_mm_term_audit/result/REPORT.md.|
@@ -76,7 +77,14 @@ Read ACTIVE_CHECKPOINT.json for exact active submissions and watcher records. Al
 
 Historical single-endpoint checkpoint, before plus completion: Mex minus 12978 completed on 17 October at 09:38 UTC: 32 SCF cycles, normal native termination, adapter status complete/DFT available. Its final gridx3 exchange step took 1,920.673 s; the long silence resolved without intervention. Scheduler cost: 22,132 s × 12 CPUs = 265,584 allocated CPU-s. Native energy-based convergence does not satisfy every printed density/gradient criterion; all flags and physical-state limitations remain. Read [the single-endpoint checkpoint](mex_dft/scout_minus_result_v1/REPORT.md). No paired derivative or mechanics accuracy result is established. Plus 12977 and whole-peptide 13051 remain active; no dependent reference is launched.
 
-**Next:** collect whole-peptide13051 under its original adapter when actual native output is complete, then review forces and measured cost before continuation. Review the separate consistent-grid adapter and run its saved-input preflight before one measured central calculation. No additional Mex DFT, changed step or response run is submitted.
+**Next:** collect whole-peptide13051 under its original adapter when actual native output is complete, then review forces and measured cost before continuation. For Mex13281, review the actual terminal central gradient and measured cost before either displaced calculation. Preflight13280 and central submission are already complete; do not repeat them. No displaced or original response cells are submitted.
+
+The saved [startup timing review](mex_dft/consistent_grid_v1/startup_review/PHASE_TIMING_REVIEW.json)
+records that the prior Mex first SCF iterations took about20minutes after startup
+and guess. Output silence during the new first build alone does not establish a
+stall. Both jobs were RUNNING with advancing CPU accounting at12:00UTC; whole13051
+was calculating the COSX gradient. These are activity observations, not convergence
+or force-accuracy evidence. Existing health/completion wakes remain active.
 
 The saved audit's first CPU-host attempt13031 failed an upstream exact derivative replay before producing rows. Unchanged source/config/gates pass on the original qualified host/thread setup as13032. Cross-host exact-arithmetic portability remains unresolved; use the qualified replay environment, and preserve the first failure. See hybrid_response_force_audit/failure_v1/ and result_v2/.
 
@@ -100,7 +108,7 @@ Standard scheduling currently permits12CPU/job and120CPU/user; GPU partitions ha
 
 Saved preparation13059 failed an upstream exact terminal physical/force replay before molecular calls. Its Python binary matched, but NumPy dependency metadata differed (1.26.4 versus original2.4.6). Recovery13060 exposed a missing Gemmi dependency before replay.13063 keeps the original environment and supplies only the exact existing Gemmi package/native libraries in an owned overlay. Neither original environment is modified. The specific terminal numerical field remains unresolved until actual evidence. See mex_dft_response/preparation_failure_v1/.
 
-Mex response adapter delivery: mex_dft_response/READINESS_REPORT.md. All six preparation/diagnosis/preflight allocations are terminal and preserved; no molecular calls were made. The original full physical/source/force checks and native acceptance rules remain unchanged. Mex12977/12978 are complete and scout collection13271 failed its derivative gate. Only independent whole-peptide DFT13051 remains active.
+Mex response adapter delivery: mex_dft_response/READINESS_REPORT.md. All six preparation/diagnosis/preflight allocations are terminal and preserved; no molecular calls were made. The original full physical/source/force checks and native acceptance rules remain unchanged. Mex12977/12978 are complete and scout collection13271 failed its derivative gate. Independent whole-peptide DFT13051 and the separate consistent-grid central scout13281 are active; the original response panel remains stopped.
 
 ## Fixed-deformation model completion — 17 October2026UTC
 

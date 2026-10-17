@@ -7,7 +7,11 @@ diagnostics/lanm_coupled_response_20261016/LBT_MATCHED_RESPONSE_PLAN.md.
 Reuse four raw MACE force sets and12720 fixed-FF ALPB gradients; do not reuse old
 self-consistent-solvent composite gradients. Same10modes/source bounds, allfour
 starts, shared paired pool; no automatic bounds expansion or repeated chemistry.
-Harvey owns adapter/config, Leibniz review, root submissions/status. No new job yet.
+Scout12762 is submitted12CPUs/oneGPU, watcher2179893, sourcea6cc6de4/configc20b989b
+under lbt_matched_response_scout_v1; independent source review passed. Actual scout
+admission gates remainingthree. Pairedpool source6b4944ac reviewed/unsubmitted.
+A separate saved46-cell electronic-substitution diagnostic is in preparation;
+zero new molecular calls. Root owns submissions/status; agents adapters/review.
 Read CURRENT and actual receipts. PQQ/defaults preserved; active goal remains unmet.
 
 # La/Dy monomer response underway — 16 October 2026

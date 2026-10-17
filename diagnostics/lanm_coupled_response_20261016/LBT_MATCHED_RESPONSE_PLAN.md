@@ -53,6 +53,12 @@ or bound expansion. Actual energy selection uses the same Armijo rule; no score
 sign, experimental preference or source gap gates execution. Report all residual
 loads, stopping reasons, old/new components, rejected trials and occupied bounds.
 
+Require own-energy nonincrease from the exact matched-objective warm start.
+An old terminal can lie above its original source under this changed objective;
+do not require new terminal work versus that original source to be negative.
+Report both works, and retain the original source in every applicable common
+pool so it can win normally. This changes no geometric or backend admission.
+
 Run the four-start zero-call artifact/geometry/force preflight and7CCO/La scout
 first. Its execution/physical admission permits the other three unchanged starts.
 A geometry-blocked/no-decrease scout is a valid finite result; an interface/backend

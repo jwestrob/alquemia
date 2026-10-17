@@ -1,4 +1,15 @@
-# Current: matched-objective LBT response in preparation
+# Current: matched-objective LBT scout submitted
+
+Scout12762 submitted12CPUs/oneGPU, watcher2179893, sourcea6cc6de4/configc20b989b
+under lbt_matched_response_scout_v1. Root and independent review passed; actual
+four-start zero-call replay precedes7CCO/La search. Same ten modes and source
+bounds; new gradients assemble raw MACE plus native fixed-FF ALPB only. No new
+GFN/DFT. No result yet; remaining three require the actual scout admission gate.
+Pool source6b4944ac is independently reviewed, not submitted. All prior jobs stay
+terminal. A separate saved46-cell electronic-substitution diagnostic is declared
+and in preparation; zero new molecular calls. Root owns all submissions/status.
+
+# Prior: matched-objective LBT response in preparation
 
 Second Mex6MI5 inventory is complete: it cannot supply the current8FNS construct,
 four-ion occupancy and167-water inventory unchanged. See MEX_SECOND_SOURCE_FEASIBILITY.md.

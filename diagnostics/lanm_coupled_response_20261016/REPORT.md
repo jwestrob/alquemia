@@ -1,4 +1,40 @@
-# The scaffold changes basin selection; fixed-source dependence remains
+# Coherent monomer response works; reliable La/Dy preference remains unproven
+
+## Latest result — 17 October 2026 UTC
+
+Mex-LanM is the natural monomer reference; LBT3 is a measured peptide control,
+not a second natural LanM. The working energy combines local MACE chemistry,
+a GFN protein-field correction, the retained protein mechanics and fixed-charge
+ALPB solvent. Whole LBT lies inside the electronic region, so it has no separate
+external-field or MM term. State, source and assay limitations remain explicit.
+
+The Mex finite continuations preserve the checked covalent geometry and lower
+each metal's own energy. Dy benefits more than La. The full paired comparison
+retains the expected conditional Mex-La/LBT-Dy direction, but its shared-menu
+margin is only1.019378kcal/mol; some other declared menus are about0.09. The two
+LBT source-local contrasts still differ by28.262193kcal/mol. Positive signs here
+do not establish a reliable preference classifier or an affinity scale.
+See [the complete comparison](monomer_continued_comparison/REPORT.md) and
+[Mex response](mex_continuation/REPORT.md).
+
+The matched-solvent water rescore weakens the earlier water lead: its two
+available conditional responses are-0.787/-0.740kcal/mol, within the existing
+1kcal/mol interpretive resolution; four original geometry rejections remain.
+See [matched water](lbt_matched_water/REPORT.md). No hydration expansion follows.
+The latest molecular round used274GPU-seconds and3299allocatedCPU-seconds
+including saved reporting; throughput is adequate for contained profiling tests.
+
+The next declared experiment tests a real asymmetry: LBT's existing geometries
+were generated under the former solvent objective and only rescored under the
+current model. [Matched-response plan](LBT_MATCHED_RESPONSE_PLAN.md) retains all
+four starts and unchanged physical limits. It is in preparation, not a result.
+A separate [saved electronic-substitution diagnostic](ELECTRONIC_SUBSTITUTION_PLAN.md)
+will distinguish sensitivity to MACE electronics from the shared mechanics/solvent.
+The second Mex deposit requires new construct/occupancy/hydration assumptions;
+see [its feasibility record](MEX_SECOND_SOURCE_FEASIBILITY.md). PQQ/defaults remain
+unchanged. The active profiler goal is not complete.
+
+## Historical progression under the earlier models
 
 ## Current result and next decision
 

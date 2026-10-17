@@ -12,9 +12,17 @@ All electronic-state/force-qualification limits remain. Dy−La contrast−0.556
 is below reporting resolution, not a preference prediction or an error bar.
 Result9229f7be/full256forces/reviews/costs are preserved in full_result_v1/.
 Four molecular jobs total1154004CPU-s; listed support47CPU-s. No reruns.
-Next finite saved-only baseline/expanded force comparison: Linnaeus adapter,
-Harvey static review, root Slurm submission/integration. No new molecular work.
-Mex13281 remains active; actual central admission/cost still gate2displacements.
+Saved-only partition comparison13463 now completes all4 admitted archived rows,
+zero molecular calls. Expanded region leaves terminal Phe1CA projection about48
+versus whole-PBE0+ALPB3.3kcal/mol/A; MM remains dominant. Phe1CA stays outside
+electronic-real region in both partitions. RMS difference falls but maximum
+error increases slightly at Ala17 terminal carboxylate carbon. No expanded-path
+work, unique parameter defect or preference claim. Read
+lbt_partition_force_reference_v1/REPORT.md and archived_comparison_result_v1/.
+Raw exact reconstruction failures13446/13455/13460 remain failed; successful13463
+uses separately declared admitted POINT forces with exact internal/baseline checks.
+All four saved support jobs total3CPU-s; no tolerance change or molecular rerun.
+Mex13281 last reviewed RUNNING; actual central admission/cost still gate2displacements.
 The full goal remains unmet. Earlier running/completion checkpoints are historical.
 
 Latest: whole-LBT before-Dy13291 completed at18:43UTC and passes unchanged

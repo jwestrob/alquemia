@@ -20,16 +20,33 @@ are archived in `lbt_whole_reference_continuation/full_result_v1/`.
 Four molecular allocations total1154004CPU-s; listed support47CPU-s.
 After-La13290 actual completion delivery is separately acknowledged.
 
-Do not continue or promote the challenged LBT hybrid response. The finite saved-only comparison of baseline/expanded-region starting forces
-failed its exact reference-solvent replay as13446: new analysis code grouped a
-conversion differently from the original producer. Failure and missed static
-review are preserved. Separate V2 changes only that arithmetic association;
-exact gates and all four cases remain. Root/Harvey narrow review passes and
-V2 is submitted as13455 on1CPU, watcher3054473. Exact source/ready/declaration/
-submission are in `lbt_partition_force_reference_v1/`; root owns integration.
-No new molecular calls or repeated MM term counting. Mex13281 remains active;
-actual central gradient admission/cost still gate its two displacements.
-The mechanics goal remains unmet. Earlier checkpoints below are historical.
+Do not continue or promote the challenged LBT hybrid response.
+
+## Saved partition comparison complete
+
+Job13463 completed the four admitted archived-gradient comparisons on1CPU/1s,
+with zero molecular calls. Expanding the electronic region leaves the Phe1CA
+force projection excessive: La51.063→47.742 versus whole-PBE0+ALPB3.341;
+Dy51.065→47.765 versus3.346 kcal/mol/Å. The MM contribution remains dominant.
+Phe1CA stays outside the electronic-real region in both partitions. Global RMS
+difference falls, but maximum atom error increases slightly at the Ala17 terminal
+carboxylate carbon. No expanded after-state or finite-path validation exists.
+Read [the partition report](lbt_partition_force_reference_v1/REPORT.md).
+
+Result e25076f5, four full256 tables and independent actual review are preserved
+under `lbt_partition_force_reference_v1/archived_comparison_result_v1/`.
+The separate raw reconstruction failures13446/13455/13460 remain failed:
+first an incorrect arithmetic association in the analysis code, then cap-scatter
+last-digit differences up to3.55e-15 kcal/mol/Å. No tolerance was changed.
+The successful comparison explicitly uses the previously admitted POINT forces,
+requiring exact internal component closure and original baseline replay.
+All four support jobs total3allocatedCPU-s; no molecular reruns.
+
+Moving the tested boundary alone does not repair the scaffold force balance.
+No unique parameter fault or La/Dy preference follows. Mex13281's actual central
+gradient admission and measured cost still gate its two displacements; its last
+reviewed state was RUNNING. The mechanics goal remains unmet. Earlier checkpoints
+below are historical.
 
 ## Before-Dy reference complete; two LBT continuations remain
 

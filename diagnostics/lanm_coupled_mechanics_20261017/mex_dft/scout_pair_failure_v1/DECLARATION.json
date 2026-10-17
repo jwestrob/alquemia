@@ -1,0 +1,45 @@
+{
+  "utc": "2026-10-17T10:55:49.701620+00:00",
+  "question": "Original La MM_O97 +/-0.001A PBE0/MM/ALPB component and total centered derivative gate",
+  "scope": "Original scout_pair saved collector; zero new molecular calls",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_preparation_v1/QUALIFY.py",
+    "sha256": "74b56bf12de0543251c59dcf7a6bb1bb3b84afdedc078ac1ff3045471dec7f48"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_preparation_v1/SPEC.md",
+    "sha256": "6ca3f276638365a58b026e60d82365941e4e6be8ef4de1c329ae87bb5dd1524c"
+  },
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_scout_pair_collection_v1/CONFIG.json",
+    "sha256": "d861ad46247254fb3b050eb527fbbc564130cc24c81ac7cea36e7d14abe1d72a"
+  },
+  "launcher": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_preparation_v1/RUN.sbatch",
+    "sha256": "9ec6eb75eb8120846d4a9f531c8b2f71dfe5b2d2b32de641f6f0e43d1905e423"
+  },
+  "endpoints": {
+    "MM_O97_La_plus": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_scout_MM_O97_La_plus_v1/execution/RESULT.json",
+      "sha256": "5566b8763695ae2f99aeed6eb5baa6d599a0f869e0dd1713647e8bb0389dba56"
+    },
+    "MM_O97_La_minus": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_scout_MM_O97_La_minus_v1/execution/RESULT.json",
+      "sha256": "7203afe689b377905df0585fd77afec9f3e3fdbc0cfc33403e61226c34697c52"
+    }
+  },
+  "required_resources": "1CPU Slurm; original Python and one numerical thread",
+  "frozen_gate": {
+    "h_A": 0.001,
+    "absolute_kcal_mol_A": 0.005,
+    "relative": 0.0001,
+    "maximum_displaced_SP": 8,
+    "new_central_gradients": 0,
+    "directions": [
+      "MM_O97",
+      "boundary_CA83"
+    ]
+  },
+  "continuation": "Actual scout_pair_passed and measured cost review before remaining six qualification points; full eight gate before response DFT",
+  "native_caveats": "Both original native admissions retain failed printed residual flags and unqualified physical states. Different native stopping routes are retained."
+}

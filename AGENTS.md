@@ -3,6 +3,14 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the goal remains active and unmet.
 
+Latest: Mex scout collector13271 fails embedded-PBE0/total derivative consistency
+(residual0.414201 versus0.005409kcal/mol/A); MM/ALPB pass.12977/12978 are complete.
+Read mex_dft/scout_pair_failure_v1/REPORT.md under the active diagnostic. Original
+stop rule closes remaining6 qualification and8 response DFT cells. No retry or
+changed solver/step. A declared saved-only final-COSX correction/pcgrad diagnosis
+is preparing; it cannot override the failed gate. Whole-peptide13051 continues.
+Older notes below awaiting Mex endpoints are historical.
+
 - Whole-model completion 13140/13141/13142 is COMPLETE and replayed.
   Same 13017 La deformation: hybrid work -28.244859 versus whole-MACE plus
   fixed-FF ALPB +11.290076 kcal/mol. This establishes model dependence, not

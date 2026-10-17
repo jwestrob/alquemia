@@ -1,0 +1,259 @@
+{
+  "utc": "2026-10-17T10:58:25.428929+00:00",
+  "reviewer": "/root/mex_health_review",
+  "scope": "Independent native-output, source-byte and scheduler-metadata interpretation; no scientific numerical recalculation or molecular calls.",
+  "status": "confirmed_failed_scout_derivative_gate_preserve_original_protocol",
+  "collector_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_scout_pair_collection_v1/execution/RESULT.json",
+    "sha256": "334bb6b4374538a5f293f1e6175340309566de92e42af0588485bca5dfe20953"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/SPEC.md",
+    "sha256": "6ca3f276638365a58b026e60d82365941e4e6be8ef4de1c329ae87bb5dd1524c"
+  },
+  "executed_adapter": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_preparation_v1/QUALIFY.py",
+    "sha256": "74b56bf12de0543251c59dcf7a6bb1bb3b84afdedc078ac1ff3045471dec7f48"
+  },
+  "saved_directional_checks": {
+    "PBE0_embedded": {
+      "analytic_kcal_mol_A": -3.673753902644237,
+      "FD_kcal_mol_A": -4.087955021545654,
+      "residual_kcal_mol_A": -0.414201118901417,
+      "tolerance_kcal_mol_A": 0.005408795502154565,
+      "passed": false
+    },
+    "MM_ledger": {
+      "analytic_kcal_mol_A": 17.752465327000138,
+      "FD_kcal_mol_A": 17.752485206528945,
+      "residual_kcal_mol_A": 1.9879528807109637e-05,
+      "tolerance_kcal_mol_A": 0.006775248520652895,
+      "passed": true
+    },
+    "fixed_FF_charge_ALPB": {
+      "analytic_kcal_mol_A": -5.530642594057692,
+      "FD_kcal_mol_A": -5.530641590834248,
+      "residual_kcal_mol_A": 1.0032234438739351e-06,
+      "tolerance_kcal_mol_A": 0.005553064259405769,
+      "passed": true
+    },
+    "total": {
+      "analytic_kcal_mol_A": 8.54806883029821,
+      "FD_kcal_mol_A": 8.133888594149042,
+      "residual_kcal_mol_A": -0.41418023614916777,
+      "tolerance_kcal_mol_A": 0.005854806883029821,
+      "passed": false
+    }
+  },
+  "numerical_precision_from_saved_collector": {
+    "printed_energy_half_quantum_sum_kcal_mol_A": 3.1375473699999994e-07,
+    "float64_operand_ulp_sum_kcal_mol_A": 5.70716541915317e-07,
+    "SCF_energy_tolerance_sum_sensitivity_proxy_kcal_mol_A": 0.000627509474,
+    "SCF_last_energy_change_sum_sensitivity_proxy_kcal_mol_A": 0.0019198809234398497,
+    "SCF_proxies_are_error_bounds": false,
+    "truncation_or_step_halving_qualified": false,
+    "DFT_subtraction": "Decimal subtraction of exact printed energy strings; native MM/ALPB differences before summation"
+  },
+  "native_records": {
+    "origin": {
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_repaired_origins_Mex8FNS_v1/La_A/endpoint.out",
+        "sha256": "e61f93c17ba85b008ef9b936bd782d87d3cb78cf17eb2efde67bd4c01f06c7e9"
+      },
+      "receipt": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_repaired_origins_Mex8FNS_v1/La_A/endpoint.out.execution.json",
+        "sha256": "74d20bacb5e0d0d1110c7af9804af2417a4048990c27cb642f8695eca376082f"
+      },
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_repaired_origins_Mex8FNS_v1/La_A/endpoint.inp",
+        "sha256": "c8d5db2987858632c74baa1cadf48427c5cb37642bcfc18d594cbdfaa2ca8d9f"
+      },
+      "runtime": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_repaired_origins_Mex8FNS_v1/La_A/endpoint.runtime.json",
+        "sha256": "42d96ca1ada4e4645e9a8fe4a48afb006abb32c4c4b88a972b73d676c8a09707"
+      },
+      "native_returncode": 0,
+      "normal_termination": true,
+      "scf_converged": true,
+      "native_cycles": 33,
+      "printed_stopping_route": "Energy Check",
+      "passed_printed_residuals": [
+        "Energy change",
+        "Orbital Gradient"
+      ],
+      "failed_printed_residuals": [
+        "MAX-Density change",
+        "RMS-Density change",
+        "Orbital Rotation",
+        "DIIS Error"
+      ],
+      "all_printed_residuals_pass": false,
+      "MPI_ranks": 112,
+      "MaxCore_MB": 10800,
+      "orca_executable": {
+        "path": "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+        "sha256": "38b5f057452fef275c0a1b98d270ad03d0411dab70453820d1c678bd732f6c83"
+      }
+    },
+    "plus": {
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_scout_MM_O97_La_plus_v1/execution/endpoint.out",
+        "sha256": "550f1b3cd678f219aca2b190772d9511f079e8a7d7d655093bb577a30cb1a4e3"
+      },
+      "receipt": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_scout_MM_O97_La_plus_v1/execution/endpoint.out.execution.json",
+        "sha256": "3b739903374f0858d31bfa45f8d099a2b23adb96d86c903b29c989b280e7b9a4"
+      },
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_scout_MM_O97_La_plus_v1/execution/endpoint.inp",
+        "sha256": "e8e542380900fd0e7e6a694fc85504a5b679821649feb8e6697da54db64059d8"
+      },
+      "runtime": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_scout_MM_O97_La_plus_v1/execution/endpoint.runtime.json",
+        "sha256": "cd7c168c833c2e86769121b347fc61d40babeffc2706098bf6a9f9b43a81c485"
+      },
+      "native_returncode": 0,
+      "normal_termination": true,
+      "scf_converged": true,
+      "native_cycles": 46,
+      "printed_stopping_route": "Gradient check",
+      "passed_printed_residuals": [
+        "Orbital Gradient"
+      ],
+      "failed_printed_residuals": [
+        "Energy change",
+        "MAX-Density change",
+        "RMS-Density change",
+        "Orbital Rotation",
+        "DIIS Error"
+      ],
+      "all_printed_residuals_pass": false,
+      "MPI_ranks": 12,
+      "MaxCore_MB": 3100,
+      "orca_executable": {
+        "path": "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+        "sha256": "38b5f057452fef275c0a1b98d270ad03d0411dab70453820d1c678bd732f6c83"
+      }
+    },
+    "minus": {
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_scout_MM_O97_La_minus_v1/execution/endpoint.out",
+        "sha256": "11e6b6c312dd9b67ff18e9d262c9edff2d8174e36ade91bc45082a9bea567802"
+      },
+      "receipt": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_scout_MM_O97_La_minus_v1/execution/endpoint.out.execution.json",
+        "sha256": "9f9464d6e489f6ff8d3d551fd2437989e40aa1c224dba790b996be43098d1ac4"
+      },
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_scout_MM_O97_La_minus_v1/execution/endpoint.inp",
+        "sha256": "e8e542380900fd0e7e6a694fc85504a5b679821649feb8e6697da54db64059d8"
+      },
+      "runtime": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_scout_MM_O97_La_minus_v1/execution/endpoint.runtime.json",
+        "sha256": "72adcfd0d4a3dea14556c0036fc9f97f384c7481ef0b9a679232e5b15b3fb115"
+      },
+      "native_returncode": 0,
+      "normal_termination": true,
+      "scf_converged": true,
+      "native_cycles": 32,
+      "printed_stopping_route": "Energy Check",
+      "passed_printed_residuals": [
+        "Energy change"
+      ],
+      "failed_printed_residuals": [
+        "MAX-Density change",
+        "RMS-Density change",
+        "Orbital Gradient",
+        "Orbital Rotation",
+        "DIIS Error"
+      ],
+      "all_printed_residuals_pass": false,
+      "MPI_ranks": 12,
+      "MaxCore_MB": 3100,
+      "orca_executable": {
+        "path": "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+        "sha256": "38b5f057452fef275c0a1b98d270ad03d0411dab70453820d1c678bd732f6c83"
+      }
+    }
+  },
+  "provenance": {
+    "plus_minus_input_bytes_identical": true,
+    "origin_input_matches_after_only_declared_EnGrad_removal": true,
+    "origin_plus_minus_core_xyz_bytes_identical": true,
+    "plus_changed_pointcharge_file_zero_based_line_indices": [
+      833
+    ],
+    "minus_changed_pointcharge_file_zero_based_line_indices": [
+      833
+    ],
+    "changed_line_interpretation": "Header at line0; changed file line833 is external-charge row832, A/97//O. Current prepared task joins are replayed by actual collector13271.",
+    "all_pointcharge_files_have_1841_lines": true,
+    "electronic_state_metadata_equal": true,
+    "electronic_state": {
+      "all_electron_count": 878,
+      "alpha_electrons": 416,
+      "beta_electrons": 416,
+      "charge": 0,
+      "ecp_core_electrons": 46,
+      "effective_multiplicity": 1,
+      "explicit_electrons": 832,
+      "metal": "La",
+      "oxidation_state_hypothesis": 3,
+      "physical_f_occupation": 0,
+      "physical_multiplicity": 1,
+      "physical_state_qualified": false,
+      "representation": "spin_free_frozen_f_valence_model",
+      "spin_orbit_included": false
+    },
+    "method": "PBE0 D4 def2-TZVP def2/J RIJCOSX NoAutostart DefGrid3 VeryTightSCF; PModel; DoEQ false; no solvent polarization in electronic calculation.",
+    "convergence_semantics": "All retain ConvCheckMode=Total+1el-Energy and ConvForced=0. All-residuals flags remain observations under unchanged admission.",
+    "runtime_context": "Origin used112MPI/MaxCore10800MB on node-224-3t-2; displaced endpoints used12MPI/MaxCore3100MB on node-64-768g-28. Runtime difference and distinct SCF paths are preserved; their causal contribution is not established."
+  },
+  "interpretation": {
+    "established": "The declared h=0.001A La external-O97 centered-energy derivative disagrees with the reused analytic embedded-PBE0 derivative beyond the frozen gate; the total also fails. Both endpoints remain natively admitted. The implemented recipe has not earned directional derivative qualification.",
+    "localization": "MM and fixed-FF ALPB pass this direction, localizing the observed component discrepancy to embedded PBE0 in this comparison. This does not qualify their global forces.",
+    "cause_unresolved": "This one pair does not distinguish SCF/density or electronic-root sensitivity, grid/runtime effects, finite-step truncation, or an analytic-derivative/assembly defect. No cause is established by differing stopping routes or printed residual failures alone.",
+    "precision_limit": "The recorded residual is larger than the stored print-quantization and binary64 subtraction scales. Printed SCF tolerances/last-change proxies are not rigorous energy-error bounds and cannot exclude electronic convergence error. Step-halving/truncation remains unqualified.",
+    "not_established": [
+      "DFT physical inaccuracy",
+      "a proved native analytic-gradient bug",
+      "equivalent or distinct electronic roots",
+      "MACE or GFN accuracy",
+      "metal preference or affinity",
+      "stable physical electronic state",
+      "global force qualification"
+    ],
+    "physical_state_qualified": false,
+    "global_force_qualified": false
+  },
+  "scheduler_cost": {
+    "source": "Read-only sacct metadata observed during this review; count top-level allocations once, without adding batch/step rows.",
+    "command": [
+      "sacct",
+      "-n",
+      "-P",
+      "-j",
+      "12977,12978,13271",
+      "--format=JobIDRaw,State,ExitCode,ElapsedRaw,AllocCPUS,CPUTimeRAW,TotalCPU"
+    ],
+    "top_level_rows": [
+      "12977|COMPLETED|0:0|26666|12|319992|3-16:31:49",
+      "12978|COMPLETED|0:0|22132|12|265584|3-01:33:00",
+      "13271|FAILED|1:0|6|1|6|00:04.495"
+    ],
+    "plus_allocated_CPU_seconds": 319992,
+    "minus_allocated_CPU_seconds": 265584,
+    "collector_allocated_CPU_seconds": 6,
+    "total_allocated_CPU_seconds": 585582,
+    "scope": "Two actual displaced DFT scout allocations and original saved collector only; excludes earlier reused origin/preparation costs. Collector scientific failure is preserved separately from native endpoint success. AllocatedCPU-seconds are not measured CPU utilization."
+  },
+  "decision": "OriginalSPEC stop applies: preserve pair failure and all eight slots; remaining six derivative points and eight response endpoints do not proceed. This review authorizes no retry, new central gradient, method/SCF/step/tolerance change, optimizer, or production change.",
+  "actions": {
+    "scientific_numerical_recalculation": false,
+    "molecular_calls": 0,
+    "submissions": 0,
+    "cancellations": 0,
+    "code_or_protocol_edits": false,
+    "only_new_file": "NATIVE_REVIEW.json"
+  }
+}

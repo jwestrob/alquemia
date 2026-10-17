@@ -1,6 +1,6 @@
 {
-  "utc": "2026-10-17T09:41:30.922783+00:00",
-  "status": "Mex_minus_available_two_independent_DFT_scouts_running",
+  "utc": "2026-10-17T11:02:41.611072+00:00",
+  "status": "Mex_derivative_scout_failed_whole_LBT_reference_running",
   "response_recovery": {
     "job": 13048,
     "submission": {
@@ -63,7 +63,7 @@
   "paired_response_pool_available": false,
   "goal": "active_unmet",
   "Mex_response_adapter": {
-    "status": "ready_saved_preparation_preflight_regression_passed_reference_execution_gated",
+    "status": "stopped_failed_original_derivative_prerequisite",
     "job_id": null,
     "submission": {
       "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_preflight_v2/SUBMISSION.json",
@@ -77,7 +77,7 @@
       "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v4/RESPONSE_REFERENCE_V2.py",
       "sha256": "3acf08878f5d9b11275145ce65355e34ad01d792118c1635dda437db09ee1324"
     },
-    "next": "On actual12977/12978 completion, admit each rawSCF endpoint and collect scout_pair under originalQUALIFY. On13051 completion, collect wholepeptideforces under originalREFERENCE. No responsecalls beforefull8-pointderivative/costgate.",
+    "next": "Original scout_pair13271 failed PBE0 and total derivatives; do not submit remaining six qualification or eight response cells. Saved final-grid/native-field diagnosis is separate; whole-LBT13051 continues independently.",
     "preserved_failure": {
       "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft_response/preparation_failure_v1/ROOT_REVIEW.json",
       "sha256": "b6de5b1e5c5515c9ad90499174489c7d26ac8bad100b9d58754696e1745f97ae"
@@ -240,23 +240,44 @@
     "DFT_before_La_scout_scope": "Starting forces and cost only; finite deformation-work validation requires subsequent admitted reference cells."
   },
   "Mex_derivative_scout": {
-    "status": "minus_available_plus_pending_pair_uncollected",
-    "completed_job": 12978,
-    "pending_job": 12977,
-    "review": {
-      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/scout_minus_result_v1/ROOT_REVIEW.json",
-      "sha256": "42e2bdc38769d617862651b16c93bd4b82ae0dced61028ac8ed7f9931aff83eb"
-    },
+    "status": "failed_original_derivative_gate",
+    "completed_jobs": [
+      12977,
+      12978
+    ],
+    "collector_job": 13271,
+    "pending_job": null,
     "result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_scout_pair_collection_v1/execution/RESULT.json",
+      "sha256": "334bb6b4374538a5f293f1e6175340309566de92e42af0588485bca5dfe20953"
+    },
+    "root_review": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/scout_pair_failure_v1/ROOT_REVIEW.json",
+      "sha256": "fec09dc7d4377a789b7ddeff0297608fa5b0e1dd3b1d311bb58b93a7655ac52b"
+    },
+    "native_review": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/scout_pair_failure_v1/NATIVE_REVIEW.json",
+      "sha256": "fe54e0aa1464c9f79299ba03e323b7358c251088981f72232356110087b9c3f0"
+    },
+    "source_review": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/scout_pair_failure_v1/SOURCE_REVIEW.json",
+      "sha256": "9b1166b9c906b2b5a4c776279b88d9c57b8be135b1c7b4b23f98c9c54a7f4af9"
+    },
+    "report": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/scout_pair_failure_v1/REPORT.md",
+      "sha256": "f27f7dddb727a6411977472675b54dd0192f853d2d05e79237453794c8ff3ed8"
+    },
+    "paired_derivative_passed": false,
+    "remaining_six_stopped": true,
+    "response_eight_stopped": true,
+    "allocated_CPU_seconds_pair_and_collector": 585582,
+    "plus_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_scout_MM_O97_La_plus_v1/execution/RESULT.json",
+      "sha256": "5566b8763695ae2f99aeed6eb5baa6d599a0f869e0dd1713647e8bb0389dba56"
+    },
+    "minus_result": {
       "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_scout_MM_O97_La_minus_v1/execution/RESULT.json",
       "sha256": "7203afe689b377905df0585fd77afec9f3e3fdbc0cfc33403e61226c34697c52"
-    },
-    "allocated_CPU_seconds_completed_endpoint": 265584,
-    "paired_derivative_passed": null,
-    "next": "Await actual plus endpoint and run original frozen scout_pair collector; remaining six derivative points and eight response endpoints remain gated.",
-    "integration_review": {
-      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/scout_minus_result_v1/INTEGRATION_REVIEW.json",
-      "sha256": "91bf748ee262c311cf42f44774bf04052d03a178849efd9a09507835f5a92cce"
     }
   },
   "whole_LBT_continuation_source_draft": {
@@ -314,5 +335,15 @@
       "required_before_binding": "Actual13051 admission and original collector; root force/cost continuation review"
     }
   },
-  "updated_utc": "2026-10-17T10:31:08.347020+00:00"
+  "updated_utc": "2026-10-17T11:02:41.611072+00:00",
+  "Mex_saved_gridx3_diagnosis": {
+    "status": "source_preparation",
+    "specification": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/gridx3_diagnosis_v1/SPEC.md",
+      "sha256": "2c242d835f4fb1d726df01512d3e184372e815bd82639a23cbfdc51ec9c893f6"
+    },
+    "new_molecular_calls_authorized": 0,
+    "question": "Decompose original failed derivative into pre-final-grid and final-COSX correction; replay raw central pcgrad mapping",
+    "does_not_override_failed_qualification": true
+  }
 }

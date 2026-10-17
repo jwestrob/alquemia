@@ -35,6 +35,11 @@ memory or priority override is added. Actual source/config/command and
 completion/health-watch records are in the three `*_SUBMISSION.json` files.
 `STARTUP_RECORDS.json` records native output creation and armed health wakes.
 The START file's initial failure-status placeholder is not a terminal result.
+Subsequent native startup review in `native_startup/` confirms all three printed
+charge−2/NEL1030/effective-singlet/ECP46-or55/MaxIter125 settings,12MPI and
+MaxCore3100. Independent review agrees. Dy physical multiplicity6 and effective
+molecular multiplicity1 remain distinct; atomic-guess multiplicities do not
+override molecular state. No terminal native admission is implied.
 
 ## Interpretation and next action
 

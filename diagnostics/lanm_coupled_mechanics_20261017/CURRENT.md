@@ -22,9 +22,13 @@ Post-scout source/config review, actual Slurm preflight13288 and all seven
 negative controls13289 pass (5CPU-s total). The original remaining cells now
 run as13290afterLa/13291beforeDy/13292afterDy,12MPI each, with completion and
 actual singleton-manifest health wakes. Native output creation is verified;
-terminal admission remains pending. No waiting collector is allocated.
+all three printed molecular state/ECP/MaxIter settings and actual12MPI/MaxCore3100
+match the frozen inputs. Independent startup review passes; terminal admission
+remains pending. No waiting collector is allocated.
 Read [the execution checkpoint](lbt_whole_reference_continuation/activation_v1/REPORT.md).
-Mex central13281 continues separately.
+Mex central13281 continues separately; its first SCF iteration is now printed
+(1989.4s). The initial silent build finished; no convergence trend or terminal
+gradient is established by one iteration.
 
 ## Latest: Mex mismatch localized to final integration; original gate still fails
 

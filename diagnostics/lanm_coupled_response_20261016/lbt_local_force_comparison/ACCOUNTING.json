@@ -1,0 +1,113 @@
+{
+  "job_id": "12938",
+  "scientific_status": "complete",
+  "new_molecular_calls": 0,
+  "new_geometries": 0,
+  "declared_cells": 4,
+  "available_MACE_PBE0_cells": 4,
+  "available_GFN_force_cells": 0,
+  "application_elapsed_seconds": 9.201953770010732,
+  "application_CPU_seconds": 8.1563738,
+  "scheduler_records": [
+    {
+      "JobIDRaw": "12938",
+      "JobName": "lbt48_force_compare",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "ElapsedRaw": "10",
+      "AllocCPUS": "1",
+      "TotalCPU": "00:08.288",
+      "CPUTimeRAW": "10",
+      "AllocTRES": "billing=1,cpu=1,mem=4000M,node=1",
+      "Start": "2026-10-16T18:50:54",
+      "End": "2026-10-16T18:51:04"
+    },
+    {
+      "JobIDRaw": "12938.batch",
+      "JobName": "batch",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "ElapsedRaw": "10",
+      "AllocCPUS": "1",
+      "TotalCPU": "00:08.288",
+      "CPUTimeRAW": "10",
+      "AllocTRES": "cpu=1,mem=4000M,node=1",
+      "Start": "2026-10-16T18:50:54",
+      "End": "2026-10-16T18:51:04"
+    }
+  ],
+  "scheduler_command": [
+    "sacct",
+    "-j",
+    "12938",
+    "--format=JobIDRaw,JobName,State,ExitCode,ElapsedRaw,AllocCPUS,TotalCPU,CPUTimeRAW,AllocTRES,Start,End",
+    "-P"
+  ],
+  "scheduler_receipt": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_response_20261016/lbt_local_force_comparison/SACCT_12938.txt",
+    "sha256": "8e3479d27c99ca160e1ea559afc8ec9e586651903d8fde0e9baf9d6953481735"
+  },
+  "source_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt_local_force_comparison_v1/execution/RESULT.json",
+    "sha256": "947433d3266386acc2a7305af3a4e3a70c1258cd808bde776ac238afc5a51da7"
+  },
+  "preserved_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_response_20261016/lbt_local_force_comparison/RESULT.json",
+    "sha256": "947433d3266386acc2a7305af3a4e3a70c1258cd808bde776ac238afc5a51da7"
+  },
+  "generated_report": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt_local_force_comparison_v1/execution/REPORT.md",
+    "sha256": "b12ab3abb6e80fa23995257cba8b4eee4afc0cfd65360e8fd344d7dd4c8f404d"
+  },
+  "preserved_generated_report": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_response_20261016/lbt_local_force_comparison/GENERATED_REPORT.md",
+    "sha256": "b12ab3abb6e80fa23995257cba8b4eee4afc0cfd65360e8fd344d7dd4c8f404d"
+  },
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt_local_force_comparison_v1/LBT_LOCAL_FORCE_COMPARISON.py",
+    "sha256": "b70d7be97189b913ce1bb6d174a205941c8bff63d560ce46aa5cf37e2cb20e91"
+  },
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt_local_force_comparison_v1/CONFIG.json",
+    "sha256": "776235cf67fe662ff33f5aa25abe76bdc6e283b0ac82bfa3d44ee5cbc00664d6"
+  },
+  "plan": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_response_20261016/LBT_LOCAL_FORCE_COMPARISON_PLAN.md",
+    "sha256": "9a3ad675ce892fac408dd5c0f1a25fcf7f46fcfaab5539b32019231839952f28"
+  },
+  "energy_comparison_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt_local_reference_comparison_v2/execution/RESULT.json",
+    "sha256": "95a988fd90e9af1bbc16f293b24b48bcc7dfdeea49ad349c520ac6e1bedc9f7d"
+  },
+  "MACE_force_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt_local_mace_forces_v2/execution/RESULT.json",
+    "sha256": "53ed0c91a864850462ac25fb839cf8f2e021491cea87e7a205c2c2b8f917f0bc"
+  },
+  "parent_execution_refs": {
+    "MACE_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt_local_mace_forces_v2/execution/RESULT.json",
+      "sha256": "53ed0c91a864850462ac25fb839cf8f2e021491cea87e7a205c2c2b8f917f0bc"
+    },
+    "MACE_new_calls_in_parent": 4,
+    "MACE_elapsed_seconds_in_parent": 9.863683938980103,
+    "PBE0_results": {
+      "7CCO_La": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt_local_reference_scout_v1/execution/RESULT.json",
+        "sha256": "53f83f31809b0a8fdd40fea0522428e3811fa387fca2819b9d99bb31746104d8"
+      },
+      "7CCN_La": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt_local_reference_remaining_v2/7CCN_La/execution/RESULT.json",
+        "sha256": "c7d9d92d6225775dd2ccb323852ec6bad6312fa2b6ba7a3c682bf974ac556558"
+      },
+      "7CCO_Dy": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt_local_reference_remaining_v2/7CCO_Dy/execution/RESULT.json",
+        "sha256": "00d810c5e1940ebf1b5ff02ec8e478eb19e434ff120007e277a97b8aa41f47b7"
+      },
+      "7CCN_Dy": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt_local_reference_remaining_v2/7CCN_Dy/execution/RESULT.json",
+        "sha256": "1db006eca709e0af38de8df50936a025bc05d0d1ec99d5d7919275b0ec722b9d"
+      }
+    }
+  },
+  "cost_scope": "This saved comparison only. The four MACE calls belong to parent12937; all PBE0 reference calculations belong to separately preserved parent jobs. No new molecular work here."
+}

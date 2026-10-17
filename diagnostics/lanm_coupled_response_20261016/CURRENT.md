@@ -1,3 +1,27 @@
+# Next phase planned: coupled mechanics, awaiting goal activation
+
+17 October 2026 UTC. Jacob requested an implementation plan and a goal to activate.
+Read [the coupled mechanics plan](../lanm_coupled_mechanics_20261017/PLAN.md) and
+[pasteable goal](../lanm_coupled_mechanics_20261017/GOAL.md). Six initial searches
+would separate full physical-coordinate response from changes to the energy model;
+local electronic and scaffold-mechanics reference checks remain distinct.
+This is planning only: no new scientific job was submitted and the goal remains
+paused. Both agents completed source/implementation reviews, with no chemistry.
+Root owns integration. All prior molecular and saved-force results are terminal.
+The clamped-core/internal-strain branch stays stopped; older next-step prose below
+does not reactivate it. Production and unrelated work remain preserved.
+
+# User steering: mechanics discussion; geometry-diagnosis branch stopped
+
+17 October 2026 UTC. Jacob rejected the proposed geometry/clamped-internal-strain
+branch as the next useful distinction. Root interrupted both agents before any
+new submission. Do not resume the proposed saved projection or clamped-release
+experiment from older notes. Completed DFT/force results remain valid and preserved.
+Current discussion: why the present mechanical response model is insufficient,
+and what coupled whole-protein mechanics should replace the restricted search.
+No new experiment has been selected in this discussion. Earlier local-reference
+and force-comparison jobs are complete; no repeat is requested.
+
 # Latest: DFT supports the large local source penalty
 
 17 October 2026 UTC. All four 48-atom PBE0 cells and saved comparator 12936 are

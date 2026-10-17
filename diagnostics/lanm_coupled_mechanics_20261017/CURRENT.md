@@ -17,8 +17,9 @@ After-La13290 and after-Dy13292 are still calculating gradients; Mex13281 remain
 in SCF. Preserve the completed before-La scout and this before-Dy result, then
 collect all four cells only after both remaining jobs terminate. No partial
 deformation-work comparison, new molecular submission or retry follows.
-The archived completion receipt was inspected proactively; its queued status
-does not establish callback delivery. A delivery acknowledgement remains separate.
+The completion notification has now arrived. Its separate `ROOT_ACK.json`
+records actual delivery and links the earlier proactive result review; the watcher
+receipt and completed scientific result remain unchanged.
 
 ## Execution progress at 17:07 UTC
 

@@ -1,3 +1,16 @@
+# LanM accuracy priority and local reference running — 17 October 2026 UTC
+
+Jacob explicitly allows DFT to become the default for this La/Dy task if it
+proves more accurate than MACE. Do not make MACE adoption a success criterion.
+This does not change PQQ production or establish that either backend is accurate.
+The finite local reference starts with La/7CCO job12826, 12 actual MPI slots;
+terminal watcher2215383 and alert-only health watcher2215999 are armed under
+workspaces/lanm_coupled_response_20261016/lbt_local_reference_scout_v1/.
+Exact source7be8b570/config1f4f57e4; remaining three endpoints require its actual
+native admission. GFN12825 has completed the two missing local cells; all four
+local states are available with old cells reused. No repeated geometry/search.
+Read CURRENT and actual receipts. Root owns integration/submissions.
+
 # Current LanM direction — 17 October 2026 UTC
 
 Saved12823 completes46cells/15menus: switchingelectronicmodel atunchangedselected

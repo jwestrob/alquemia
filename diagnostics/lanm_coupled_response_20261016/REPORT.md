@@ -2,6 +2,11 @@
 
 ## Current result — 17 October 2026 UTC
 
+**Decision:** Jacob explicitly permits DFT as the default for this La/Dy task
+if it proves more accurate than MACE. We will select the backend on evidence;
+the PQQ workflow is unaffected. A small local reference is now running, with
+no claim yet that DFT resolves the protein-preference problem.
+
 **Most of the large disagreement between LBT starting structures disappears when
 we change the electronic model while keeping geometry, mechanics and solvent fixed.**
 The saved46-cell comparison12823 gives:
@@ -31,7 +36,10 @@ recipe. FirstLa7CCO, then the remaining cells after actual admission. Reuse all
 MACE and the available GFN pair; add only two missingGFNvacuum cells. No new
 geometry or optimization, no revival of the old failed14-ion series. The Dy
 reference remains an explicit frozen4f approximation, not physical sextet/SOC
-validation. Adapters are preparing; no new reference result is implied.
+validation. La/7CCO scout12826 is running on12 MPI slots with completion/health
+wakes. The two missing GFN cells completed as12825: its local source-strain
+difference is -7.945 kcal/mol versus MACE -73.690. The independent DFT response
+is pending; agreement with one model will still not establish binding accuracy.
 
 The matched-search round used48MACE+48ALPB,92GPU-s/1107allocatedCPU-s including
 its saved comparison. Electronic substitution added18allocatedCPU-s including

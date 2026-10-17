@@ -1,3 +1,24 @@
+# Latest: local electronic comparison running; DFT explicitly acceptable
+
+Jacob: "if we get more accurate results with DFT than MACE i'm happy to let you
+default to that for this task." Accuracy, not MACE adoption, governs this La/Dy
+research branch. PQQ production remains separate and unchanged. Source consistency
+or the expected sign alone does not establish accuracy.
+
+GFN12825 completed the exact two missing 7CCN vacuum calls on2CPUs, reusing both
+7CCO cells and all four MACE cells. Local source strains E(7CCN)-E(7CCO) are
+MACE La+77.640037/Dy+3.950156, GFN La-14.563185/Dy-22.508206 kcal/mol.
+Their metal-dependent differences are -73.689881 versus -7.945021. This confirms
+a substantial local model disagreement; neither is validated by this comparison.
+Exact result: workspaces/lanm_coupled_response_20261016/lbt_local_gfn_v1/execution/RESULT.json.
+
+Native PBE0 La/7CCO scout12826 is RUNNING on12 actual MPI slots. Immutable source
+7be8b570/config1f4f57e4 under lbt_local_reference_scout_v1; terminal watcher2215383,
+alert-only health watcher2215999. Actual grant determines MaxCore; no memory/time
+request overrides. Remaining three endpoints follow only after actual unchanged
+native convergence/state/gradient admission. No DFT result yet. Root owns launch
+and integration; agents own local GFN reporting and saved comparison code.
+
 # Latest: electronic-model sensitivity isolated; finite local reference preparing
 
 Saved electronic comparison12823 COMPLETE:36LBT+10Mex cells and15menus, exact

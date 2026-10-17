@@ -12,9 +12,10 @@ Root owns all submissions; the goal remains active and unmet.
   also passes, admitting66 old cells plus one explicitly certified replacement.
 - Job13013 completes all104 cells. Both regions retain the same selected
   geometries, with source discrepancies5.03/5.13kcal/mol (old whole model6.21).
-- Response preflight13015 passes. Baseline7CCO-La scout13016 is submitted on
-  one H200/12CPUs, watcher2453270, original12-step/40-evaluation budget. Read
-  HYBRID_RESPONSE_CHECKPOINT.json. Actual scout admission gates all four states.
+- Response preflight13015 and12-step scout13016 pass; scout is nonconverged.
+  Four original states13017–13020 are submitted, oneH200/12CPUs each.13017
+  includes the successful12 scoutsteps in its80-step/200-evaluation budget.
+  Read HYBRID_RESPONSE_CHECKPOINT.json. Allfour admissions gate paired pooling.
 - Independent DFT12977/12978 continue with12MPI each and health/completion wakes.
   Actual electronic residuals decrease; no derivative result is available yet.
 

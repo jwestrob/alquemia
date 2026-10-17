@@ -1,4 +1,71 @@
-# Latest: local electronic comparison running; DFT explicitly acceptable
+# Latest: three remaining local DFT cells submitted with reviewed recovery
+
+17 October 2026 UTC. Jobs **12844 (7CCN/La), 12845 (7CCO/Dy), and
+12846 (7CCN/Dy)** now own the three uncomputed local reference endpoints.
+Each requests 12 MPI slots under normal shared scheduling, with memory derived
+from its actual grant. Terminal and alert-only health watchers are recorded in
+`workspaces/lanm_coupled_response_20261016/lbt_local_reference_remaining_v2/`.
+The first recovery passed actual preflight and exact scout replay and started
+ORCA before the other two were submitted. No completed molecular cell is repeated.
+
+V2 source `10cd06ec` changes only JSON representation in the full-row replay and
+pins the original scout adapter explicitly. Root and independent review passed.
+The original scout 12826/result `53f83f31`, all three pre-call failures
+12837–12839, and saved diagnosis 12840 remain immutable. Scientific coordinates,
+electronic states, numerical settings and admission gates are unchanged.
+
+The scientific question remains whether the large MACE source response is
+supported by the independent PBE0 reference. GFN and MACE disagree substantially;
+a favorable sign or reduced spread alone is insufficient. DFT may become the
+La/Dy backend if the evidence supports it. PQQ production is unchanged.
+
+Next: inspect these three actual endpoint results and native SCF evidence; fill
+the three missing pins in `LBT_LOCAL_REFERENCE_COMPARISON_V2_CONFIG.template.json`
+and run the saved-only comparator on one Slurm CPU. Preserve all four declared
+cells and unavailable outcomes. Do not launch a waiting collector or repeat the
+scout. `DFT_BACKEND_READINESS.md` identifies reusable Mex embedded DFT origins
+and the still unresolved LBT embedding boundary. A separate saved-only Mex
+assembly adapter is being prepared by Harvey; root owns launch and integration.
+The active profiler goal remains unmet.
+
+# Latest: zero-call serialization failure diagnosed; recovery preparing
+
+Follow-ups12837/12838/12839 stopped before staging or molecular calls. Actual
+saved replay12840 proves the sole mismatch: parsed executed_ecp[0] is a Python
+tuple, while the immutable JSON scout stores the identical values as a list.
+JSON round-trip comparison is exact across the entire row, with no changed
+energy, gradient, state, raw artifact or residual. Scout12826 remains admitted
+and must not be repeated. Failed attempts and the diagnostic are preserved.
+
+A versioned adapter/comparator repair is preparing: canonical JSON comparison
+and explicit old-scout/new-adapter lineage, with all scientific gates unchanged.
+Leibniz owns source repair/review; root owns submission. No owned molecular job
+is currently running. Original remaining three cells are still uncomputed.
+Failed allocations cost72CPU-s total; saved diagnosis12840 cost2CPU-s.
+
+# Earlier: DFT scout admitted; remaining three reference cells submitted
+
+Native PBE0 scout12826 completed in839s on12CPUs (10068allocated CPU-s),
+with actual energy/state/gradient admission passed. Its native energy-only
+convergence policy is unchanged; printed density/orbital residual flags remain
+false and visible. This admits the planned comparison, not force consistency,
+electronic stability or physical Dy spin-orbit accuracy.
+
+Root submitted the original remaining cells as independent12-MPI jobs:
+7CCN/La12837,7CCO/Dy12838,7CCN/Dy12839. Each replays the actual admitted scout;
+source7be8b570 and unchanged plan2d4bfe0d. Exact configs, commands, terminal wakes
+and alert-only health supervisors are in workspaces/lanm_coupled_response_20261016/
+lbt_local_reference_remaining_v1/{7CCN_La,7CCO_Dy,7CCN_Dy}/SUBMISSION.json.
+They use normal shared scheduling and allocation-derived memory, no resource
+overrides or priority changes. No repeated completed endpoint or optimization.
+
+Saved comparison adapter dbd47089 is reviewed and committed; root will bind actual
+four result pins after completion, then run its one-CPU comparison. Do not create
+duplicate or idle collectors. GFN12825 is complete and pushed. Root owns launch
+and integration; Leibniz owns scout interpretation and Harvey a bounded DFT/MM
+reuse check. PQQ remains unchanged. Goal remains active and unmet.
+
+# Earlier: local electronic comparison running; DFT explicitly acceptable
 
 Jacob: "if we get more accurate results with DFT than MACE i'm happy to let you
 default to that for this task." Accuracy, not MACE adoption, governs this La/Dy

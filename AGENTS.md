@@ -1,4 +1,28 @@
+# Latest LanM execution — 17 October 2026 UTC
+
+Reviewed serialization-only recovery has submitted the three uncomputed local
+PBE0 cells as 12844/12845/12846 (12 MPI each), with terminal and alert-only health
+wakes. Actual first-job scout replay/startup passed. Preserve completed scout
+12826 and failed pre-call attempts 12837–12839; never rerun them. Read
+`diagnostics/lanm_coupled_response_20261016/CURRENT.md` and actual receipts.
+Root owns integration; the saved comparison awaits these three actual results.
+DFT is explicitly acceptable for La/Dy if more accurate. PQQ is unchanged.
+
 # LanM accuracy priority and local reference running — 17 October 2026 UTC
+
+Newest: follow-ups12837–12839 failed before molecular calls. Saved12840 proves
+only tuple/list serialization differs in executed_ecp; full JSON-canonical row
+replays exactly. Scout12826 remains accepted. Narrow versioned adapter repair
+is preparing with unchanged scientific gates; no owned molecular job running.
+Read CURRENT and actual receipts; never repeat the completed scout.
+
+Latest: scout12826 completed/admitted (839s/12CPUs). Remaining original PBE0
+cells are submitted as12837(7CCNLa),12838(7CCODy),12839(7CCNDy),12MPI each,
+with terminal and alert-only health wakes. Exact receipts are under
+workspaces/lanm_coupled_response_20261016/lbt_local_reference_remaining_v1/.
+Read CURRENT/actual results before acting; no repeated cells or duplicate
+collector. Printed SCF residual flags remain explicit under unchanged native
+admission. Saved comparator dbd47089 awaits actual result pins. No new optimizer.
 
 Jacob explicitly allows DFT to become the default for this La/Dy task if it
 proves more accurate than MACE. Do not make MACE adoption a success criterion.

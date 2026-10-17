@@ -36,8 +36,12 @@ recipe. FirstLa7CCO, then the remaining cells after actual admission. Reuse all
 MACE and the available GFN pair; add only two missingGFNvacuum cells. No new
 geometry or optimization, no revival of the old failed14-ion series. The Dy
 reference remains an explicit frozen4f approximation, not physical sextet/SOC
-validation. La/7CCO scout12826 is running on12 MPI slots with completion/health
-wakes. The two missing GFN cells completed as12825: its local source-strain
+validation. La/7CCO scout12826 completed and passed the declared native checks
+in839s on12 MPI slots; density/orbital residual flags remain visible. Remaining
+three cells12837–12839 stopped before molecular calls on a tuple/list comparison
+defect. Saved diagnostic12840 proves all scientific values replay exactly;
+the reviewed V2 recovery now runs the original three cells as12844–12846,
+reusing the scout. The two missing GFN cells completed as12825: its local source-strain
 difference is -7.945 kcal/mol versus MACE -73.690. The independent DFT response
 is pending; agreement with one model will still not establish binding accuracy.
 
@@ -222,3 +226,15 @@ there is no new DFT campaign, production change or library rescore.
 
 The overall LanM profiler goal remains active and unmet. A failed local branch
 will change the model choice rather than be hidden or presented as completion.
+
+## Local-reference launch recovery, 17 October 2026 UTC
+
+The first PBE0 endpoint is admitted under its declared native energy-convergence
+policy; printed density/orbital residual limitations remain explicit in
+[lbt_local_reference/SCOUT_REPORT.md](lbt_local_reference/SCOUT_REPORT.md).
+Three follow-ups initially stopped before molecular execution because native
+ECP tuples differ in type from their JSON lists. Slurm diagnosis 12840 established
+exact equality after JSON serialization. A reviewed, versioned recovery preserves
+all numerical values and gates. Original three cells are now submitted as
+12844–12846; no new four-cell scientific conclusion is available yet.
+See [LBT_LOCAL_REFERENCE_RECOVERY.md](LBT_LOCAL_REFERENCE_RECOVERY.md).

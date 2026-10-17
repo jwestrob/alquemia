@@ -1,0 +1,318 @@
+{
+  "status": "complete",
+  "protocol": "saved_LBT_MM_term_attribution_summary_v1",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_mm_term_audit/SUMMARIZE.py",
+    "sha256": "1ab063c4a25f1797fcfa0959212329cbd80f2efded5b24609685f9a700c255a1"
+  },
+  "slurm_job_id": "13130",
+  "input": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_mm_term_audit_v1/execution/RESULT.json",
+    "sha256": "4b480b4766cf34ad9092e9b6324abc75bdf65608d2f93384c5ee373294efe674"
+  },
+  "states": [
+    {
+      "source": "7CCO",
+      "metal": "La",
+      "total_MM_force_norm_kcal_mol_A": 52.00944207936208,
+      "bonded_class_signed_projections_kcal_mol_A": {
+        "HarmonicBondForce": 28.261514359573276,
+        "HarmonicAngleForce": 22.523068164738994,
+        "PeriodicTorsionForce": 0.7222823704106984,
+        "CMAPTorsionForce": 0.0
+      },
+      "nonbonded_signed_projections_kcal_mol_A": {
+        "MM_LJ": 0.16299795962588137,
+        "MM_Coulomb": 0.6652049566660363,
+        "QM_MM_LJ": -0.32562573165281133
+      },
+      "sum_projection_minus_total_norm": -7.105427357601002e-15,
+      "largest_five_terms_by_absolute_projection": [
+        {
+          "source": "7CCO",
+          "metal": "La",
+          "class": "HarmonicBondForce",
+          "native_index": 4,
+          "atom_ids": "A/1//CA,A/1//N",
+          "force_norm_kcal_mol_A": 30.68571223315644,
+          "projection_on_total_MM_force_kcal_mol_A": 29.841588541786052,
+          "energy_kcal_mol": 0.6414257052153185,
+          "parameters": "{\"actual_bond_length_A\": 1.5128061474566161, \"native_parameter_XML\": {\"d\": \".1471\", \"k\": \"307105.5999999999\", \"p1\": \"3\", \"p2\": \"0\"}, \"parameter_units\": {\"d\": \"nm\", \"k\": \"kJ/mol/nm^2\", \"p1\": \"physical_index\", \"p2\": \"physical_index\"}, \"reference_bond_length_A\": 1.471, \"stiffness_kcal_mol_A2\": 733.9999999999998}"
+        },
+        {
+          "source": "7CCO",
+          "metal": "La",
+          "class": "HarmonicAngleForce",
+          "native_index": 0,
+          "atom_ids": "A/1//N,A/1//CA,A/1//C",
+          "force_norm_kcal_mol_A": 20.650793533025,
+          "projection_on_total_MM_force_kcal_mol_A": 15.90814598710942,
+          "energy_kcal_mol": 1.2442872246972925,
+          "parameters": "{\"actual_angle_degrees\": 104.05441219836084, \"native_parameter_XML\": {\"a\": \"1.9408061282176945\", \"k\": \"669.44\", \"p1\": \"0\", \"p2\": \"3\", \"p3\": \"4\"}, \"parameter_units\": {\"a\": \"radian\", \"k\": \"kJ/mol/radian^2\", \"p1\": \"physical_index\", \"p2\": \"physical_index\", \"p3\": \"physical_index\"}, \"reference_angle_radians\": 1.9408061282176945, \"stiffness_kcal_mol_radian2\": 160.0}"
+        },
+        {
+          "source": "7CCO",
+          "metal": "La",
+          "class": "HarmonicAngleForce",
+          "native_index": 2,
+          "atom_ids": "A/1//N,A/1//CA,A/1//HA",
+          "force_norm_kcal_mol_A": 5.342056602685085,
+          "projection_on_total_MM_force_kcal_mol_A": 3.404341596579128,
+          "energy_kcal_mol": 0.08705745562755192,
+          "parameters": "{\"actual_angle_degrees\": 107.10921448829058, \"native_parameter_XML\": {\"a\": \"1.911135530933791\", \"k\": \"418.40000000000003\", \"p1\": \"0\", \"p2\": \"3\", \"p3\": \"14\"}, \"parameter_units\": {\"a\": \"radian\", \"k\": \"kJ/mol/radian^2\", \"p1\": \"physical_index\", \"p2\": \"physical_index\", \"p3\": \"physical_index\"}, \"reference_angle_radians\": 1.911135530933791, \"stiffness_kcal_mol_radian2\": 100.0}"
+        },
+        {
+          "source": "7CCO",
+          "metal": "La",
+          "class": "HarmonicAngleForce",
+          "native_index": 10,
+          "atom_ids": "A/1//CA,A/1//C,A/2//N",
+          "force_norm_kcal_mol_A": 2.634296293803443,
+          "projection_on_total_MM_force_kcal_mol_A": 2.5894063799972993,
+          "energy_kcal_mol": 0.058339246462376745,
+          "parameters": "{\"actual_angle_degrees\": 114.94592948525856, \"native_parameter_XML\": {\"a\": \"2.035053907825388\", \"k\": \"585.76\", \"p1\": \"3\", \"p2\": \"4\", \"p3\": \"22\"}, \"parameter_units\": {\"a\": \"radian\", \"k\": \"kJ/mol/radian^2\", \"p1\": \"physical_index\", \"p2\": \"physical_index\", \"p3\": \"physical_index\"}, \"reference_angle_radians\": 2.035053907825388, \"stiffness_kcal_mol_radian2\": 140.0}"
+        },
+        {
+          "source": "7CCO",
+          "metal": "La",
+          "class": "HarmonicAngleForce",
+          "native_index": 19,
+          "atom_ids": "A/1//CB,A/1//CA,A/1//HA",
+          "force_norm_kcal_mol_A": 3.3201250847874206,
+          "projection_on_total_MM_force_kcal_mol_A": 2.4906901456408286,
+          "energy_kcal_mol": 0.03242052824343196,
+          "parameters": "{\"actual_angle_degrees\": 110.9589744068233, \"native_parameter_XML\": {\"a\": \"1.911135530933791\", \"k\": \"418.40000000000003\", \"p1\": \"6\", \"p2\": \"3\", \"p3\": \"14\"}, \"parameter_units\": {\"a\": \"radian\", \"k\": \"kJ/mol/radian^2\", \"p1\": \"physical_index\", \"p2\": \"physical_index\", \"p3\": \"physical_index\"}, \"reference_angle_radians\": 1.911135530933791, \"stiffness_kcal_mol_radian2\": 100.0}"
+        }
+      ]
+    },
+    {
+      "source": "7CCO",
+      "metal": "Dy",
+      "total_MM_force_norm_kcal_mol_A": 48.209179149366356,
+      "bonded_class_signed_projections_kcal_mol_A": {
+        "HarmonicBondForce": 24.957968169650606,
+        "HarmonicAngleForce": 22.175301692070903,
+        "PeriodicTorsionForce": 0.6052241827158898,
+        "CMAPTorsionForce": 0.0
+      },
+      "nonbonded_signed_projections_kcal_mol_A": {
+        "MM_LJ": 0.14461777530803993,
+        "MM_Coulomb": 0.643304119196999,
+        "QM_MM_LJ": -0.3172367895760772
+      },
+      "sum_projection_minus_total_norm": 7.105427357601002e-15,
+      "largest_five_terms_by_absolute_projection": [
+        {
+          "source": "7CCO",
+          "metal": "Dy",
+          "class": "HarmonicBondForce",
+          "native_index": 4,
+          "atom_ids": "A/1//CA,A/1//N",
+          "force_norm_kcal_mol_A": 27.64647396020776,
+          "projection_on_total_MM_force_kcal_mol_A": 26.740898302218252,
+          "energy_kcal_mol": 0.5206590752264618,
+          "parameters": "{\"actual_bond_length_A\": 1.5086654958585937, \"native_parameter_XML\": {\"d\": \".1471\", \"k\": \"307105.5999999999\", \"p1\": \"3\", \"p2\": \"0\"}, \"parameter_units\": {\"d\": \"nm\", \"k\": \"kJ/mol/nm^2\", \"p1\": \"physical_index\", \"p2\": \"physical_index\"}, \"reference_bond_length_A\": 1.471, \"stiffness_kcal_mol_A2\": 733.9999999999998}"
+        },
+        {
+          "source": "7CCO",
+          "metal": "Dy",
+          "class": "HarmonicAngleForce",
+          "native_index": 0,
+          "atom_ids": "A/1//N,A/1//CA,A/1//C",
+          "force_norm_kcal_mol_A": 21.45283650040109,
+          "projection_on_total_MM_force_kcal_mol_A": 16.905384281125613,
+          "energy_kcal_mol": 1.3455685912900903,
+          "parameters": "{\"actual_angle_degrees\": 103.76928577132095, \"native_parameter_XML\": {\"a\": \"1.9408061282176945\", \"k\": \"669.44\", \"p1\": \"0\", \"p2\": \"3\", \"p3\": \"4\"}, \"parameter_units\": {\"a\": \"radian\", \"k\": \"kJ/mol/radian^2\", \"p1\": \"physical_index\", \"p2\": \"physical_index\", \"p3\": \"physical_index\"}, \"reference_angle_radians\": 1.9408061282176945, \"stiffness_kcal_mol_radian2\": 160.0}"
+        },
+        {
+          "source": "7CCO",
+          "metal": "Dy",
+          "class": "HarmonicAngleForce",
+          "native_index": 2,
+          "atom_ids": "A/1//N,A/1//CA,A/1//HA",
+          "force_norm_kcal_mol_A": 4.149015370740523,
+          "projection_on_total_MM_force_kcal_mol_A": 2.5330914006552727,
+          "energy_kcal_mol": 0.05209183334687793,
+          "parameters": "{\"actual_angle_degrees\": 107.65063577792327, \"native_parameter_XML\": {\"a\": \"1.911135530933791\", \"k\": \"418.40000000000003\", \"p1\": \"0\", \"p2\": \"3\", \"p3\": \"14\"}, \"parameter_units\": {\"a\": \"radian\", \"k\": \"kJ/mol/radian^2\", \"p1\": \"physical_index\", \"p2\": \"physical_index\", \"p3\": \"physical_index\"}, \"reference_angle_radians\": 1.911135530933791, \"stiffness_kcal_mol_radian2\": 100.0}"
+        },
+        {
+          "source": "7CCO",
+          "metal": "Dy",
+          "class": "HarmonicAngleForce",
+          "native_index": 10,
+          "atom_ids": "A/1//CA,A/1//C,A/2//N",
+          "force_norm_kcal_mol_A": 2.552843475706223,
+          "projection_on_total_MM_force_kcal_mol_A": 2.5244794038764966,
+          "energy_kcal_mol": 0.05489060798376029,
+          "parameters": "{\"actual_angle_degrees\": 114.99556313196769, \"native_parameter_XML\": {\"a\": \"2.035053907825388\", \"k\": \"585.76\", \"p1\": \"3\", \"p2\": \"4\", \"p3\": \"22\"}, \"parameter_units\": {\"a\": \"radian\", \"k\": \"kJ/mol/radian^2\", \"p1\": \"physical_index\", \"p2\": \"physical_index\", \"p3\": \"physical_index\"}, \"reference_angle_radians\": 2.035053907825388, \"stiffness_kcal_mol_radian2\": 140.0}"
+        },
+        {
+          "source": "7CCO",
+          "metal": "Dy",
+          "class": "HarmonicAngleForce",
+          "native_index": 19,
+          "atom_ids": "A/1//CB,A/1//CA,A/1//HA",
+          "force_norm_kcal_mol_A": 3.2648837161241655,
+          "projection_on_total_MM_force_kcal_mol_A": 2.520307281390263,
+          "energy_kcal_mol": 0.03139715854083412,
+          "parameters": "{\"actual_angle_degrees\": 110.93576315198693, \"native_parameter_XML\": {\"a\": \"1.911135530933791\", \"k\": \"418.40000000000003\", \"p1\": \"6\", \"p2\": \"3\", \"p3\": \"14\"}, \"parameter_units\": {\"a\": \"radian\", \"k\": \"kJ/mol/radian^2\", \"p1\": \"physical_index\", \"p2\": \"physical_index\", \"p3\": \"physical_index\"}, \"reference_angle_radians\": 1.911135530933791, \"stiffness_kcal_mol_radian2\": 100.0}"
+        }
+      ]
+    },
+    {
+      "source": "7CCN",
+      "metal": "La",
+      "total_MM_force_norm_kcal_mol_A": 53.13412196458917,
+      "bonded_class_signed_projections_kcal_mol_A": {
+        "HarmonicBondForce": 30.532996274661194,
+        "HarmonicAngleForce": 18.98129953658572,
+        "PeriodicTorsionForce": 1.2425609154036659,
+        "CMAPTorsionForce": 0.0
+      },
+      "nonbonded_signed_projections_kcal_mol_A": {
+        "MM_LJ": 3.616624166815756,
+        "MM_Coulomb": -0.9968999578023376,
+        "QM_MM_LJ": -0.2424589710748244
+      },
+      "sum_projection_minus_total_norm": 7.105427357601002e-15,
+      "largest_five_terms_by_absolute_projection": [
+        {
+          "source": "7CCN",
+          "metal": "La",
+          "class": "HarmonicBondForce",
+          "native_index": 4,
+          "atom_ids": "A/1//CA,A/1//N",
+          "force_norm_kcal_mol_A": 33.93282503471128,
+          "projection_on_total_MM_force_kcal_mol_A": 33.14141650790129,
+          "energy_kcal_mol": 0.7843573670547201,
+          "parameters": "{\"actual_bond_length_A\": 1.5172300068592801, \"native_parameter_XML\": {\"d\": \".1471\", \"k\": \"307105.5999999999\", \"p1\": \"3\", \"p2\": \"0\"}, \"parameter_units\": {\"d\": \"nm\", \"k\": \"kJ/mol/nm^2\", \"p1\": \"physical_index\", \"p2\": \"physical_index\"}, \"reference_bond_length_A\": 1.471, \"stiffness_kcal_mol_A2\": 733.9999999999998}"
+        },
+        {
+          "source": "7CCN",
+          "metal": "La",
+          "class": "HarmonicAngleForce",
+          "native_index": 0,
+          "atom_ids": "A/1//N,A/1//CA,A/1//C",
+          "force_norm_kcal_mol_A": 17.684082597270734,
+          "projection_on_total_MM_force_kcal_mol_A": 13.03039035023809,
+          "energy_kcal_mol": 0.8993618417576524,
+          "parameters": "{\"actual_angle_degrees\": 105.12501978904429, \"native_parameter_XML\": {\"a\": \"1.9408061282176945\", \"k\": \"669.44\", \"p1\": \"0\", \"p2\": \"3\", \"p3\": \"4\"}, \"parameter_units\": {\"a\": \"radian\", \"k\": \"kJ/mol/radian^2\", \"p1\": \"physical_index\", \"p2\": \"physical_index\", \"p3\": \"physical_index\"}, \"reference_angle_radians\": 1.9408061282176945, \"stiffness_kcal_mol_radian2\": 160.0}"
+        },
+        {
+          "source": "7CCN",
+          "metal": "La",
+          "class": "HarmonicAngleForce",
+          "native_index": 10,
+          "atom_ids": "A/1//CA,A/1//C,A/2//N",
+          "force_norm_kcal_mol_A": 4.154442678229019,
+          "projection_on_total_MM_force_kcal_mol_A": 4.127160475550482,
+          "energy_kcal_mol": 0.14423332930175473,
+          "parameters": "{\"actual_angle_degrees\": 113.99920317343445, \"native_parameter_XML\": {\"a\": \"2.035053907825388\", \"k\": \"585.76\", \"p1\": \"3\", \"p2\": \"4\", \"p3\": \"22\"}, \"parameter_units\": {\"a\": \"radian\", \"k\": \"kJ/mol/radian^2\", \"p1\": \"physical_index\", \"p2\": \"physical_index\", \"p3\": \"physical_index\"}, \"reference_angle_radians\": 2.035053907825388, \"stiffness_kcal_mol_radian2\": 140.0}"
+        },
+        {
+          "source": "7CCN",
+          "metal": "La",
+          "class": "HarmonicAngleForce",
+          "native_index": 13,
+          "atom_ids": "A/1//CA,A/1//CB,A/1//HB3",
+          "force_norm_kcal_mol_A": 3.670402242496158,
+          "projection_on_total_MM_force_kcal_mol_A": 3.3811813929014223,
+          "energy_kcal_mol": 0.1581894402996918,
+          "parameters": "{\"actual_angle_degrees\": 106.27725179661634, \"native_parameter_XML\": {\"a\": \"1.911135530933791\", \"k\": \"418.40000000000003\", \"p1\": \"3\", \"p2\": \"6\", \"p3\": \"16\"}, \"parameter_units\": {\"a\": \"radian\", \"k\": \"kJ/mol/radian^2\", \"p1\": \"physical_index\", \"p2\": \"physical_index\", \"p3\": \"physical_index\"}, \"reference_angle_radians\": 1.911135530933791, \"stiffness_kcal_mol_radian2\": 100.0}"
+        },
+        {
+          "source": "7CCN",
+          "metal": "La",
+          "class": "HarmonicAngleForce",
+          "native_index": 15,
+          "atom_ids": "A/1//C,A/1//CA,A/1//HA",
+          "force_norm_kcal_mol_A": 5.364237658318396,
+          "projection_on_total_MM_force_kcal_mol_A": 2.6634605265134046,
+          "energy_kcal_mol": 0.08411084554830137,
+          "parameters": "{\"actual_angle_degrees\": 111.84997709721105, \"native_parameter_XML\": {\"a\": \"1.911135530933791\", \"k\": \"418.40000000000003\", \"p1\": \"4\", \"p2\": \"3\", \"p3\": \"14\"}, \"parameter_units\": {\"a\": \"radian\", \"k\": \"kJ/mol/radian^2\", \"p1\": \"physical_index\", \"p2\": \"physical_index\", \"p3\": \"physical_index\"}, \"reference_angle_radians\": 1.911135530933791, \"stiffness_kcal_mol_radian2\": 100.0}"
+        }
+      ]
+    },
+    {
+      "source": "7CCN",
+      "metal": "Dy",
+      "total_MM_force_norm_kcal_mol_A": 51.14405320589148,
+      "bonded_class_signed_projections_kcal_mol_A": {
+        "HarmonicBondForce": 30.617047851150897,
+        "HarmonicAngleForce": 16.69936479772408,
+        "PeriodicTorsionForce": 1.2266593418219887,
+        "CMAPTorsionForce": 0.0
+      },
+      "nonbonded_signed_projections_kcal_mol_A": {
+        "MM_LJ": 3.7332216432385996,
+        "MM_Coulomb": -0.8751891155124942,
+        "QM_MM_LJ": -0.2570513125315863
+      },
+      "sum_projection_minus_total_norm": 0.0,
+      "largest_five_terms_by_absolute_projection": [
+        {
+          "source": "7CCN",
+          "metal": "Dy",
+          "class": "HarmonicBondForce",
+          "native_index": 4,
+          "atom_ids": "A/1//CA,A/1//N",
+          "force_norm_kcal_mol_A": 34.19753938240766,
+          "projection_on_total_MM_force_kcal_mol_A": 33.63567578679444,
+          "energy_kcal_mol": 0.796642847282918,
+          "parameters": "{\"actual_bond_length_A\": 1.517590653109547, \"native_parameter_XML\": {\"d\": \".1471\", \"k\": \"307105.5999999999\", \"p1\": \"3\", \"p2\": \"0\"}, \"parameter_units\": {\"d\": \"nm\", \"k\": \"kJ/mol/nm^2\", \"p1\": \"physical_index\", \"p2\": \"physical_index\"}, \"reference_bond_length_A\": 1.471, \"stiffness_kcal_mol_A2\": 733.9999999999998}"
+        },
+        {
+          "source": "7CCN",
+          "metal": "Dy",
+          "class": "HarmonicAngleForce",
+          "native_index": 0,
+          "atom_ids": "A/1//N,A/1//CA,A/1//C",
+          "force_norm_kcal_mol_A": 17.3599280959588,
+          "projection_on_total_MM_force_kcal_mol_A": 12.465587222253875,
+          "energy_kcal_mol": 0.8648890196737231,
+          "parameters": "{\"actual_angle_degrees\": 105.2425853280971, \"native_parameter_XML\": {\"a\": \"1.9408061282176945\", \"k\": \"669.44\", \"p1\": \"0\", \"p2\": \"3\", \"p3\": \"4\"}, \"parameter_units\": {\"a\": \"radian\", \"k\": \"kJ/mol/radian^2\", \"p1\": \"physical_index\", \"p2\": \"physical_index\", \"p3\": \"physical_index\"}, \"reference_angle_radians\": 1.9408061282176945, \"stiffness_kcal_mol_radian2\": 160.0}"
+        },
+        {
+          "source": "7CCN",
+          "metal": "Dy",
+          "class": "HarmonicAngleForce",
+          "native_index": 10,
+          "atom_ids": "A/1//CA,A/1//C,A/2//N",
+          "force_norm_kcal_mol_A": 4.248536633485761,
+          "projection_on_total_MM_force_kcal_mol_A": 4.201833791743374,
+          "energy_kcal_mol": 0.1506122989894608,
+          "parameters": "{\"actual_angle_degrees\": 113.94231300479838, \"native_parameter_XML\": {\"a\": \"2.035053907825388\", \"k\": \"585.76\", \"p1\": \"3\", \"p2\": \"4\", \"p3\": \"22\"}, \"parameter_units\": {\"a\": \"radian\", \"k\": \"kJ/mol/radian^2\", \"p1\": \"physical_index\", \"p2\": \"physical_index\", \"p3\": \"physical_index\"}, \"reference_angle_radians\": 2.035053907825388, \"stiffness_kcal_mol_radian2\": 140.0}"
+        },
+        {
+          "source": "7CCN",
+          "metal": "Dy",
+          "class": "HarmonicAngleForce",
+          "native_index": 13,
+          "atom_ids": "A/1//CA,A/1//CB,A/1//HB3",
+          "force_norm_kcal_mol_A": 3.3424380282499735,
+          "projection_on_total_MM_force_kcal_mol_A": 3.0867078898349156,
+          "energy_kcal_mol": 0.13117986533046513,
+          "parameters": "{\"actual_angle_degrees\": 106.56524926134931, \"native_parameter_XML\": {\"a\": \"1.911135530933791\", \"k\": \"418.40000000000003\", \"p1\": \"3\", \"p2\": \"6\", \"p3\": \"16\"}, \"parameter_units\": {\"a\": \"radian\", \"k\": \"kJ/mol/radian^2\", \"p1\": \"physical_index\", \"p2\": \"physical_index\", \"p3\": \"physical_index\"}, \"reference_angle_radians\": 1.911135530933791, \"stiffness_kcal_mol_radian2\": 100.0}"
+        },
+        {
+          "source": "7CCN",
+          "metal": "Dy",
+          "class": "HarmonicAngleForce",
+          "native_index": 15,
+          "atom_ids": "A/1//C,A/1//CA,A/1//HA",
+          "force_norm_kcal_mol_A": 4.354426769638483,
+          "projection_on_total_MM_force_kcal_mol_A": 2.197063728893568,
+          "energy_kcal_mol": 0.05573316773521861,
+          "parameters": "{\"actual_angle_degrees\": 111.41290980941312, \"native_parameter_XML\": {\"a\": \"1.911135530933791\", \"k\": \"418.40000000000003\", \"p1\": \"4\", \"p2\": \"3\", \"p3\": \"14\"}, \"parameter_units\": {\"a\": \"radian\", \"k\": \"kJ/mol/radian^2\", \"p1\": \"physical_index\", \"p2\": \"physical_index\", \"p3\": \"physical_index\"}, \"reference_angle_radians\": 1.911135530933791, \"stiffness_kcal_mol_radian2\": 100.0}"
+        }
+      ]
+    }
+  ],
+  "state_denominator": 4,
+  "term_denominator": 208,
+  "maximum_closure_force_component_kcal_mol_A": 1.2789769243681803e-13,
+  "maximum_closure_energy_kcal_mol": 2.842170943040401e-14,
+  "new_molecular_calls": 0,
+  "projection_definition": "dot(component force, unit total MM force); signed vector projection, not an independent energy or causal percentage",
+  "physical_accuracy_established": false
+}

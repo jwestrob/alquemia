@@ -24,6 +24,11 @@ Root owns all submissions; the goal remains active and unmet.
   evaluations: embedded GFN reaches500 SCC cycles with large residuals while
   isolated GFN converges. Frozen second-failure stop applies; no retry or partial
   pool. Read lbt_hybrid_response_recovery/failure_result/REPORT.md.
+- MM-only term audit13122 and saved report13130 complete4/4 starts/208 terms.
+  N–CA bond stretching and N–CA–C angle bending dominate the terminal force;
+  native-copy/counting and all full-force closure checks pass.10CPU-s total.
+  Read lbt_mm_term_audit/result/REPORT.md. This identifies MM costs, not accuracy;
+  no parameter change or new chemistry follows. DFT scouts remain independent.
 - Whole256 preflight13049 passes; before-La DFT13051 runs12MPI,
   1030 explicit electrons. Actual pins/watchers: ACTIVE_CHECKPOINT.json.
 - Mex eight-cell response adapter is prepared and tested, reference execution gated.

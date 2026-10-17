@@ -10,15 +10,18 @@
 4. **Original response jobs are terminal.** Three finish80 accepted steps and remain nonconverged;7CCN/La fails embedded GFN after2 steps. The three admitted works are−28.245/−28.397/−31.301 kcal/mol. There is no complete paired response pool. See lbt_hybrid_response/original_four_state_result/.
 5. **The finite numerical recovery failed at a later geometry.** Four-call13036 passes its three frozen agreement gates, and preflight13047 exactly reconstructs the original failed trial. Continuation13048 resumes correctly but fails embedded GFN2 again after10 accepted steps/11 evaluations. The new failed trial reaches500 SCC iterations with large residuals; isolated GFN2 converges. The frozen second-failure rule closes this branch. No four-state pool or partial-survivor substitute is available. See lbt_hybrid_response_recovery/failure_result/REPORT.md.
 
+6. **The terminal force is specifically bond-and-angle dominated.** MM-only audit13122 passes all four original starts and all208 local terms, with exact native parameter/term checks and fullforce closure. The largest term in every case is N–CA stretching, followed by N–CA–C bending. Along the total MM force, bonds contribute24.96–30.62 and angles16.70–22.52kcal/mol/A; torsions/nonbonded are smaller. This identifies the modeled cost, not the accurate model. No copying/counting defect found. Audit+saved report13130 cost10allocatedCPU-s, zero other molecular calls. Read lbt_mm_term_audit/result/REPORT.md and ALL_TERMS.tsv.
+
 LBT is a peptide control, not a second natural LanM.7CCN is Lu-conditioned. Mex has an EF3 target, three Nd spectators and167waters. No binding free energy, robust preference classifier or experimental transfer is established.
 
-## Owned active work
+## Owned work
 
 | Jobs / task | Work | Resources / gate |
 | --- | --- | --- |
 |12977/12978|Embedded PBE0 external-charge La± derivative scout|12 MPI each on node64-28; completion and health wakes armed. Actual derivative/cost result gates six remaining directions.|
 |13051|Whole256/q−2 PBE0 before-La force/cost scout|Actual preflight13049 passes all four states,1030 explicit electrons. Only one new reference cell,12MPI. Completion and alert-only health wakes armed.|
 |Ready/gated|Mex eight-cell DFT response adapter|Preparation13067 and preflight/regression13068 pass:8/8 tasks,14 saved cells,5 failure controls. Zero new molecular calls. Await full derivative/cost gates.|
+|13122/13130 complete|Four-start MM term attribution and saved report|4/4 states,208 terms, all closures pass. N–CA stretching and N–CA–C bending dominate.10allocatedCPU-s total. See lbt_mm_term_audit/result/REPORT.md.|
 
 Read ACTIVE_CHECKPOINT.json for exact active submissions and watcher records. All four original response jobs13017–13020 and recovery13048 are terminal. Recovery costs151s on12CPUs/oneH200; partial values remain diagnostic only. Solver qualification13033/13036 and saved force audit13032 are terminal. No paired pool or figure is submitted. Root owns submissions; agents own adapters/reviews. All numerical science uses Slurm.
 

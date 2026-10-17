@@ -26,6 +26,10 @@ all three printed molecular state/ECP/MaxIter settings and actual12MPI/MaxCore31
 match the frozen inputs. Independent startup review passes; terminal admission
 remains pending. No waiting collector is allocated.
 Read [the execution checkpoint](lbt_whole_reference_continuation/activation_v1/REPORT.md).
+Before-Dy13291's first-build silence alert was reviewed against advancing CPU
+accounting and the completed scout's1949.7-second first iteration. Continue
+unchanged; convergence remains unestablished. The checkpoint preserves the
+actual alert, scheduler observations and independent review.
 Mex central13281 continues separately; its first SCF iteration is now printed
 (1989.4s). The initial silent build finished; no convergence trend or terminal
 gradient is established by one iteration.

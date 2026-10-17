@@ -43,6 +43,14 @@ override molecular state. No terminal native admission is implied.
 
 ## Interpretation and next action
 
+Before-Dy13291 emitted a900-second output-silence alert during its first Fock
+build. Actual scheduler observations show RUNNING with advancing aggregate CPU;
+the completed before-La scout needed1949.7seconds for its first SCF iteration.
+Root and independent review therefore retain the unchanged calculation and
+watchers. This does not prove convergence, useful numerical progress or per-rank
+utilization. Evidence and delivered-event acknowledgement are preserved in
+`before_Dy_silence_review_v1/`. No cancellation, retry or new calculation follows.
+
 These jobs test the energy and force changes along the same fixed La-proposed
 deformation, for both metals. No optimization, geometry repair, original-scout
 repeat or molecular retry is allowed. The complete four-cell collector retains

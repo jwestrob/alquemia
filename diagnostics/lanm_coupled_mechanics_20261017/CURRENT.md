@@ -42,6 +42,8 @@ The primary baseline electronic region (complete residues3–14) was frozen befo
 
 ## Limits and restart
 
+Experimental LBT terminal chemistry has already had a complete bounded primary-source review: [paper, full supplement and deposition audit](../lanm_coupled_response_20261016/LBT_TERMINAL_CHEMISTRY.md). Those records do not establish the synthesis terminal groups and retain a charge-declaration discrepancy. The free NH3+/COO− model remains conditional. Repeating those same sources cannot resolve the missing experimental specification; this uncertainty does not change the ongoing fixed-state force comparison or authorize a new terminal-state campaign.
+
 The prior broad searches and current scout are not minima. No automatic optimizer-budget extension, new source selection, clamped-core restart, parameter fitting or production promotion follows from success. A new failed required cell leaves its dependent result unavailable.
 
 Mex outside-QM motion is distributed: the largest3-residue window contributes only7.42% of peptide squared displacement. One local expanded-DFT region cannot validate global MM lowering; that branch is not launched. See mex_motion/FEASIBILITY.md.

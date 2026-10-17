@@ -1,0 +1,47 @@
+{
+  "utc": "2026-10-17T23:39:05.115203+00:00",
+  "event": "MM_O97_La_minus:output_silent_review_needed_not_proven_stall",
+  "job": "13597",
+  "status": "actual_health_delivery_reviewed_continue_unchanged",
+  "receipt_snapshot": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/health_review_silence_v1/RECEIPT_SNAPSHOT.json",
+    "sha256": "2de163cf3bbf5809b6cd3981eb075ba4a16aa4e2111c6f5dfa53f69f8e4bc89b"
+  },
+  "process_snapshot": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/health_review_silence_v1/PROCESS_SNAPSHOT.txt",
+    "sha256": "dbfef2a936c0b027c82dd82fa358e99bd27ddcedd16b9061abefe2b5e9da3fed"
+  },
+  "process_inspection_command": [
+    "srun",
+    "--jobid=13597",
+    "--overlap",
+    "--ntasks=1",
+    "--cpus-per-task=1",
+    "--cpu-bind=none",
+    "bash",
+    "-c",
+    "ps -u jwestrob -o pid,ppid,stat,pcpu,time,etime,args | rg \"orca|CONSISTENT_GRID|mpirun\""
+  ],
+  "sstat_snapshot": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/health_review_silence_v1/SSTAT.txt",
+    "sha256": "c882198fb2ef6ff06f3f961372330a519d0bbc18b95bb810ad661df1a6249481"
+  },
+  "output_tail_snapshot": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/health_review_silence_v1/OUTPUT_TAIL.txt",
+    "sha256": "b0dd9d2a112e9848ede5881478d9c948f25949f5ca19af03ae478f7520879c71"
+  },
+  "native_header_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/displacement_submission_v1/NATIVE_HEADER_REVIEW.json",
+    "sha256": "29f65ce0e794106183b03a898411cbc30ed7add60313020c2cdc411d11713b6f"
+  },
+  "finding": "RUNNING in initial incremental Fock formation; no SCF iteration or residual printed. Twelve owned MPI workers have runnable states and approximately99.7-99.8percent lifetime CPU/core with substantial accumulated CPU time. No explicit native failure or terminal result.",
+  "reference_context": {
+    "central_first_iteration_seconds": 1989.4,
+    "record": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_central_v1/FIRST_SCF_ITERATION_REVIEW.json",
+      "sha256": "6d2cd54702c874aa626c06f554354696c0a194f8c50e95a734d1cb8296e1ce74"
+    }
+  },
+  "decision": "Continue unchanged. Current silence within the initial build does not establish a stall or recovery trigger; CPU activity alone does not prove useful progress or convergence. No cancellation,restart or settings change.",
+  "new_molecular_calls": 0
+}

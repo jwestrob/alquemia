@@ -1,0 +1,800 @@
+{
+  "protocol": "mex_paired_saved_motion_segment_selection_v1",
+  "status": "complete",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_motion_v1/MOTION.py",
+    "sha256": "a07f84117241d0414aeb7088386d74d76a0df9a0954aacc806d29a07e17ee80c"
+  },
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_motion_v1/CONFIG.json",
+    "sha256": "53c70073545e0c0df119c93cc90f9072ee37f9568148d10cea40f55d7a45e4b2"
+  },
+  "slurm_job_id": "12983",
+  "new_molecular_calls": 0,
+  "new_reference_calls": 0,
+  "new_optimization_steps": 0,
+  "declared_searches": 2,
+  "searches": {
+    "La": {
+      "status": "available",
+      "metal": "La",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_run_La_v2/execution/RESULT.json",
+        "sha256": "c494798a7f2a8bf17d51b642a2345cb9673f165e52f607a9ee3044bfd6cdda62"
+      },
+      "execution_status": "complete",
+      "failure": null,
+      "search": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_run_La_v2/execution/SEARCH.json",
+        "sha256": "5e1199ed4d026bee66c787ad55769211bd61327e4e6f792d69b695ac66017c04"
+      },
+      "termination": "accepted_step_limit",
+      "converged": false,
+      "full_force": {
+        "maximum_atom_kcal_mol_A": 11.0535493646012,
+        "RMS_atom_vector_kcal_mol_A": 1.4175854682652484,
+        "L2_kcal_mol_A": 64.16825538461842,
+        "converged": false
+      },
+      "accepted_steps": 80,
+      "distinct_evaluations": 80,
+      "initial_point": {
+        "protocol": "mex_all_physical_cartesian_same_energy_v1",
+        "point": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/mex_continuation_scout_v1/execution/point_012_La/POINT.json",
+          "sha256": "f6380efc7961da114f62b0fe3073df6884af42eb6592f1e5cb9d1ede90bc8cef"
+        },
+        "identity_sha256": "ebf09f38d199e16e1f09f23d90292f29bebcf695ed17c4d23a5f6e04dfde9c83",
+        "cache_key": "5515e780ef9f1347ac557c87d62564fecc7fa8a8ce6bf825f908cde86ad5f718",
+        "reused": true,
+        "state": {
+          "metal": "La",
+          "oxidation_state": 3,
+          "QM_charge": 0,
+          "whole_system_charge": 2,
+          "physical_multiplicity": 1,
+          "MACE_backend_spin_convention": "multiplicity 2S+1 in atoms.info.spin; inherited audited native adapter",
+          "MACE_spin_value": 1,
+          "GFN2_state": {
+            "charge": 0,
+            "multiplicity": 1,
+            "uhf": 0,
+            "physical_multiplicity": 1,
+            "electronic_state": "original published spin-independent f-in-core GFN2 effective singlet",
+            "valence_electrons": 612
+          },
+          "GFN2_task": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/mex_local_field_run_v1/execution/Mex8FNS_La_embedded/RESULT.json",
+            "sha256": "90746bd5bdd0252b702905926173594477270a4f5c60fdf8b93ccd80b702c799"
+          },
+          "spectators": [
+            {
+              "id": "A/201//ND",
+              "element": "Nd",
+              "oxidation_state": 3,
+              "charge_e": 3.0,
+              "site": "EF1",
+              "position_policy": "all physical coordinates may move",
+              "representation": "formal +3 charge plus explicit pure 12-6 TIP3P IOD LJ from the pinned MM ledger"
+            },
+            {
+              "id": "A/202//ND",
+              "element": "Nd",
+              "oxidation_state": 3,
+              "charge_e": 3.0,
+              "site": "EF2",
+              "position_policy": "all physical coordinates may move",
+              "representation": "formal +3 charge plus explicit pure 12-6 TIP3P IOD LJ from the pinned MM ledger"
+            },
+            {
+              "id": "A/204//ND",
+              "element": "Nd",
+              "oxidation_state": 3,
+              "charge_e": 3.0,
+              "site": "EF4",
+              "position_policy": "all physical coordinates may move",
+              "representation": "formal +3 charge plus explicit pure 12-6 TIP3P IOD LJ from the pinned MM ledger"
+            }
+          ],
+          "fixed_charge_response": "No environment-charge polarization; fixed charges move with their atoms"
+        },
+        "cartesian_request": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_run_La_v2/execution/evaluations/CARTESIAN_REQUEST_0000.json",
+          "sha256": "d6dfa4b747fafe6f66f78505e9e18a950bd243367cda996ea6f9b9cba06fb86c"
+        }
+      },
+      "terminal_point": {
+        "protocol": "mex_all_physical_cartesian_same_energy_v1",
+        "point": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_run_La_v2/execution/evaluations/point_080_La/POINT.json",
+          "sha256": "5c47cf1eb2a7a27b2f2d94df8a73835398a5d05d3afa1b97ed38b2b0292d887b"
+        },
+        "identity_sha256": "ebf09f38d199e16e1f09f23d90292f29bebcf695ed17c4d23a5f6e04dfde9c83",
+        "cache_key": "3604db4e6892b900c48f3c97b7317190f06e2c9e4624768f4f0f7dc91362dd4f",
+        "reused": false,
+        "state": {
+          "metal": "La",
+          "oxidation_state": 3,
+          "QM_charge": 0,
+          "whole_system_charge": 2,
+          "physical_multiplicity": 1,
+          "MACE_backend_spin_convention": "multiplicity 2S+1 in atoms.info.spin; inherited audited native adapter",
+          "MACE_spin_value": 1,
+          "GFN2_state": {
+            "charge": 0,
+            "multiplicity": 1,
+            "uhf": 0,
+            "physical_multiplicity": 1,
+            "electronic_state": "original published spin-independent f-in-core GFN2 effective singlet",
+            "valence_electrons": 612
+          },
+          "GFN2_task": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/mex_local_field_run_v1/execution/Mex8FNS_La_embedded/RESULT.json",
+            "sha256": "90746bd5bdd0252b702905926173594477270a4f5c60fdf8b93ccd80b702c799"
+          },
+          "spectators": [
+            {
+              "id": "A/201//ND",
+              "element": "Nd",
+              "oxidation_state": 3,
+              "charge_e": 3.0,
+              "site": "EF1",
+              "position_policy": "all physical coordinates may move",
+              "representation": "formal +3 charge plus explicit pure 12-6 TIP3P IOD LJ from the pinned MM ledger"
+            },
+            {
+              "id": "A/202//ND",
+              "element": "Nd",
+              "oxidation_state": 3,
+              "charge_e": 3.0,
+              "site": "EF2",
+              "position_policy": "all physical coordinates may move",
+              "representation": "formal +3 charge plus explicit pure 12-6 TIP3P IOD LJ from the pinned MM ledger"
+            },
+            {
+              "id": "A/204//ND",
+              "element": "Nd",
+              "oxidation_state": 3,
+              "charge_e": 3.0,
+              "site": "EF4",
+              "position_policy": "all physical coordinates may move",
+              "representation": "formal +3 charge plus explicit pure 12-6 TIP3P IOD LJ from the pinned MM ledger"
+            }
+          ],
+          "fixed_charge_response": "No environment-charge polarization; fixed charges move with their atoms"
+        },
+        "cartesian_request": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_run_La_v2/execution/evaluations/CARTESIAN_REQUEST_0080.json",
+          "sha256": "62c63cf82c7df27ca77cb8c80caae133747f6f724e351687f7439c71df872847"
+        }
+      },
+      "MM_group_initial_kcal_mol": {
+        "retained_bonded": 1405.3701446007972,
+        "MM_LJ": 152.64087228797496,
+        "MM_Coulomb": -5032.107036672068,
+        "QM_MM_LJ": -44.08796376470334
+      },
+      "MM_group_terminal_kcal_mol": {
+        "retained_bonded": 674.5779548264823,
+        "MM_LJ": -236.47845175123337,
+        "MM_Coulomb": -7046.408576086427,
+        "QM_MM_LJ": -80.68852870023012
+      },
+      "MM_group_work_kcal_mol": {
+        "retained_bonded": -730.7921897743149,
+        "MM_LJ": -389.1193240392083,
+        "MM_Coulomb": -2014.3015394143595,
+        "QM_MM_LJ": -36.60056493552678
+      },
+      "MM_total_work_kcal_mol": -3170.8136181634095,
+      "source_metadata": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_preparation_v1/Mex8FNS/export_v1/EXPORT.json",
+        "sha256": "b9005c860b2795807427c275c6dc9c4aff96352e2572db375bc65b819aa6275f"
+      },
+      "native_bonds": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_preparation_v1/Mex8FNS/export_v1/bonds.json",
+        "sha256": "7b1293cc72b7279aad323cb43d74d4014b769f1d986ccde46eb4797573395677"
+      },
+      "state": {
+        "metal": "La",
+        "oxidation_state": 3,
+        "QM_charge": 0,
+        "whole_system_charge": 2,
+        "physical_multiplicity": 1,
+        "MACE_backend_spin_convention": "multiplicity 2S+1 in atoms.info.spin; inherited audited native adapter",
+        "MACE_spin_value": 1,
+        "GFN2_state": {
+          "charge": 0,
+          "multiplicity": 1,
+          "uhf": 0,
+          "physical_multiplicity": 1,
+          "electronic_state": "original published spin-independent f-in-core GFN2 effective singlet",
+          "valence_electrons": 612
+        },
+        "GFN2_task": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/mex_local_field_run_v1/execution/Mex8FNS_La_embedded/RESULT.json",
+          "sha256": "90746bd5bdd0252b702905926173594477270a4f5c60fdf8b93ccd80b702c799"
+        },
+        "spectators": [
+          {
+            "id": "A/201//ND",
+            "element": "Nd",
+            "oxidation_state": 3,
+            "charge_e": 3.0,
+            "site": "EF1",
+            "position_policy": "all physical coordinates may move",
+            "representation": "formal +3 charge plus explicit pure 12-6 TIP3P IOD LJ from the pinned MM ledger"
+          },
+          {
+            "id": "A/202//ND",
+            "element": "Nd",
+            "oxidation_state": 3,
+            "charge_e": 3.0,
+            "site": "EF2",
+            "position_policy": "all physical coordinates may move",
+            "representation": "formal +3 charge plus explicit pure 12-6 TIP3P IOD LJ from the pinned MM ledger"
+          },
+          {
+            "id": "A/204//ND",
+            "element": "Nd",
+            "oxidation_state": 3,
+            "charge_e": 3.0,
+            "site": "EF4",
+            "position_policy": "all physical coordinates may move",
+            "representation": "formal +3 charge plus explicit pure 12-6 TIP3P IOD LJ from the pinned MM ledger"
+          }
+        ],
+        "fixed_charge_response": "No environment-charge polarization; fixed charges move with their atoms"
+      },
+      "identity_sha256": "ebf09f38d199e16e1f09f23d90292f29bebcf695ed17c4d23a5f6e04dfde9c83"
+    },
+    "Dy": {
+      "status": "available",
+      "metal": "Dy",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_run_Dy_v2/execution/RESULT.json",
+        "sha256": "45287de7fa0f9294a8af158dab706aa3bfe612ee6107a50b5834802496685a83"
+      },
+      "execution_status": "complete",
+      "failure": null,
+      "search": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_run_Dy_v2/execution/SEARCH.json",
+        "sha256": "1d112f1e975ad1e38cec0c4f68a07fca3dbaeac170d20f9ec9147ac51ada7fd8"
+      },
+      "termination": "accepted_step_limit",
+      "converged": false,
+      "full_force": {
+        "maximum_atom_kcal_mol_A": 21.892429408293452,
+        "RMS_atom_vector_kcal_mol_A": 1.7717114051947198,
+        "L2_kcal_mol_A": 80.19807797232833,
+        "converged": false
+      },
+      "accepted_steps": 80,
+      "distinct_evaluations": 80,
+      "initial_point": {
+        "protocol": "mex_all_physical_cartesian_same_energy_v1",
+        "point": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/mex_continuation_Dy_v1/execution/point_012_Dy/POINT.json",
+          "sha256": "944c1db18ba6c371a2b2f9c3ce34e20cce47addeecde7cb39bb231e538c2ab77"
+        },
+        "identity_sha256": "ebf09f38d199e16e1f09f23d90292f29bebcf695ed17c4d23a5f6e04dfde9c83",
+        "cache_key": "4d9a454fcbc8ed80bf8fa8fdb82aa89fdd6594c1bce43e57ca56d9a3768ebd54",
+        "reused": true,
+        "state": {
+          "metal": "Dy",
+          "oxidation_state": 3,
+          "QM_charge": 0,
+          "whole_system_charge": 2,
+          "physical_multiplicity": 6,
+          "MACE_backend_spin_convention": "multiplicity 2S+1 in atoms.info.spin; inherited audited native adapter",
+          "MACE_spin_value": 6,
+          "GFN2_state": {
+            "charge": 0,
+            "multiplicity": 1,
+            "uhf": 0,
+            "physical_multiplicity": 6,
+            "electronic_state": "original published spin-independent f-in-core GFN2 effective singlet",
+            "valence_electrons": 612
+          },
+          "GFN2_task": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/mex_local_field_run_v1/execution/Mex8FNS_Dy_embedded/RESULT.json",
+            "sha256": "9d7a860f0e8b07f7e4e865529b6fa1527955b1992543184e750e9d7b8492c6fd"
+          },
+          "spectators": [
+            {
+              "id": "A/201//ND",
+              "element": "Nd",
+              "oxidation_state": 3,
+              "charge_e": 3.0,
+              "site": "EF1",
+              "position_policy": "all physical coordinates may move",
+              "representation": "formal +3 charge plus explicit pure 12-6 TIP3P IOD LJ from the pinned MM ledger"
+            },
+            {
+              "id": "A/202//ND",
+              "element": "Nd",
+              "oxidation_state": 3,
+              "charge_e": 3.0,
+              "site": "EF2",
+              "position_policy": "all physical coordinates may move",
+              "representation": "formal +3 charge plus explicit pure 12-6 TIP3P IOD LJ from the pinned MM ledger"
+            },
+            {
+              "id": "A/204//ND",
+              "element": "Nd",
+              "oxidation_state": 3,
+              "charge_e": 3.0,
+              "site": "EF4",
+              "position_policy": "all physical coordinates may move",
+              "representation": "formal +3 charge plus explicit pure 12-6 TIP3P IOD LJ from the pinned MM ledger"
+            }
+          ],
+          "fixed_charge_response": "No environment-charge polarization; fixed charges move with their atoms"
+        },
+        "cartesian_request": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_run_Dy_v2/execution/evaluations/CARTESIAN_REQUEST_0000.json",
+          "sha256": "1e2a049a993136604ecbb0efdcd3911223eb0c6820c4e427760ba0f2be1fc855"
+        }
+      },
+      "terminal_point": {
+        "protocol": "mex_all_physical_cartesian_same_energy_v1",
+        "point": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_run_Dy_v2/execution/evaluations/point_080_Dy/POINT.json",
+          "sha256": "4cb5defc6e3d4e13c668d435fa69ef2a7bf56edfb4ea18eaa81d32a29cf37525"
+        },
+        "identity_sha256": "ebf09f38d199e16e1f09f23d90292f29bebcf695ed17c4d23a5f6e04dfde9c83",
+        "cache_key": "5e5d05c78cd03e8a7cd67186725721ae9e0812a0430a234d8563ac932d4be7e0",
+        "reused": false,
+        "state": {
+          "metal": "Dy",
+          "oxidation_state": 3,
+          "QM_charge": 0,
+          "whole_system_charge": 2,
+          "physical_multiplicity": 6,
+          "MACE_backend_spin_convention": "multiplicity 2S+1 in atoms.info.spin; inherited audited native adapter",
+          "MACE_spin_value": 6,
+          "GFN2_state": {
+            "charge": 0,
+            "multiplicity": 1,
+            "uhf": 0,
+            "physical_multiplicity": 6,
+            "electronic_state": "original published spin-independent f-in-core GFN2 effective singlet",
+            "valence_electrons": 612
+          },
+          "GFN2_task": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/mex_local_field_run_v1/execution/Mex8FNS_Dy_embedded/RESULT.json",
+            "sha256": "9d7a860f0e8b07f7e4e865529b6fa1527955b1992543184e750e9d7b8492c6fd"
+          },
+          "spectators": [
+            {
+              "id": "A/201//ND",
+              "element": "Nd",
+              "oxidation_state": 3,
+              "charge_e": 3.0,
+              "site": "EF1",
+              "position_policy": "all physical coordinates may move",
+              "representation": "formal +3 charge plus explicit pure 12-6 TIP3P IOD LJ from the pinned MM ledger"
+            },
+            {
+              "id": "A/202//ND",
+              "element": "Nd",
+              "oxidation_state": 3,
+              "charge_e": 3.0,
+              "site": "EF2",
+              "position_policy": "all physical coordinates may move",
+              "representation": "formal +3 charge plus explicit pure 12-6 TIP3P IOD LJ from the pinned MM ledger"
+            },
+            {
+              "id": "A/204//ND",
+              "element": "Nd",
+              "oxidation_state": 3,
+              "charge_e": 3.0,
+              "site": "EF4",
+              "position_policy": "all physical coordinates may move",
+              "representation": "formal +3 charge plus explicit pure 12-6 TIP3P IOD LJ from the pinned MM ledger"
+            }
+          ],
+          "fixed_charge_response": "No environment-charge polarization; fixed charges move with their atoms"
+        },
+        "cartesian_request": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_run_Dy_v2/execution/evaluations/CARTESIAN_REQUEST_0080.json",
+          "sha256": "bdaf58e852df9d5ad999de593220f5e00fb599ab8cfd47371ed24ac2a5afdad6"
+        }
+      },
+      "MM_group_initial_kcal_mol": {
+        "retained_bonded": 1405.370247400826,
+        "MM_LJ": 152.60778741532917,
+        "MM_Coulomb": -5032.35305864694,
+        "QM_MM_LJ": -44.03625288216023
+      },
+      "MM_group_terminal_kcal_mol": {
+        "retained_bonded": 681.3594970500194,
+        "MM_LJ": -234.1600385552072,
+        "MM_Coulomb": -7049.574887666449,
+        "QM_MM_LJ": -79.68269662412145
+      },
+      "MM_group_work_kcal_mol": {
+        "retained_bonded": -724.0107503508066,
+        "MM_LJ": -386.76782597053636,
+        "MM_Coulomb": -2017.2218290195096,
+        "QM_MM_LJ": -35.64644374196122
+      },
+      "MM_total_work_kcal_mol": -3163.646849082814,
+      "source_metadata": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_preparation_v1/Mex8FNS/export_v1/EXPORT.json",
+        "sha256": "b9005c860b2795807427c275c6dc9c4aff96352e2572db375bc65b819aa6275f"
+      },
+      "native_bonds": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_preparation_v1/Mex8FNS/export_v1/bonds.json",
+        "sha256": "7b1293cc72b7279aad323cb43d74d4014b769f1d986ccde46eb4797573395677"
+      },
+      "state": {
+        "metal": "Dy",
+        "oxidation_state": 3,
+        "QM_charge": 0,
+        "whole_system_charge": 2,
+        "physical_multiplicity": 6,
+        "MACE_backend_spin_convention": "multiplicity 2S+1 in atoms.info.spin; inherited audited native adapter",
+        "MACE_spin_value": 6,
+        "GFN2_state": {
+          "charge": 0,
+          "multiplicity": 1,
+          "uhf": 0,
+          "physical_multiplicity": 6,
+          "electronic_state": "original published spin-independent f-in-core GFN2 effective singlet",
+          "valence_electrons": 612
+        },
+        "GFN2_task": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/mex_local_field_run_v1/execution/Mex8FNS_Dy_embedded/RESULT.json",
+          "sha256": "9d7a860f0e8b07f7e4e865529b6fa1527955b1992543184e750e9d7b8492c6fd"
+        },
+        "spectators": [
+          {
+            "id": "A/201//ND",
+            "element": "Nd",
+            "oxidation_state": 3,
+            "charge_e": 3.0,
+            "site": "EF1",
+            "position_policy": "all physical coordinates may move",
+            "representation": "formal +3 charge plus explicit pure 12-6 TIP3P IOD LJ from the pinned MM ledger"
+          },
+          {
+            "id": "A/202//ND",
+            "element": "Nd",
+            "oxidation_state": 3,
+            "charge_e": 3.0,
+            "site": "EF2",
+            "position_policy": "all physical coordinates may move",
+            "representation": "formal +3 charge plus explicit pure 12-6 TIP3P IOD LJ from the pinned MM ledger"
+          },
+          {
+            "id": "A/204//ND",
+            "element": "Nd",
+            "oxidation_state": 3,
+            "charge_e": 3.0,
+            "site": "EF4",
+            "position_policy": "all physical coordinates may move",
+            "representation": "formal +3 charge plus explicit pure 12-6 TIP3P IOD LJ from the pinned MM ledger"
+          }
+        ],
+        "fixed_charge_response": "No environment-charge polarization; fixed charges move with their atoms"
+      },
+      "identity_sha256": "ebf09f38d199e16e1f09f23d90292f29bebcf695ed17c4d23a5f6e04dfde9c83"
+    }
+  },
+  "selection": {
+    "status": "candidate_for_feasibility_review",
+    "selected_window": {
+      "residue_keys": [
+        [
+          "A",
+          77,
+          ""
+        ],
+        [
+          "A",
+          78,
+          ""
+        ],
+        [
+          "A",
+          79,
+          ""
+        ]
+      ],
+      "residue_ids": [
+        "A/77/",
+        "A/78/",
+        "A/79/"
+      ],
+      "per_metal_squared_displacement_A2": {
+        "La": 1.6935925874933018,
+        "Dy": 1.889927539000897
+      },
+      "pooled_squared_displacement_A2": 3.5835201264941987,
+      "fraction_of_all_outside_QM_peptide_motion": 0.07419798091932923,
+      "outside_QM_heavy_atom_count": 22,
+      "QM_atom_ids": [],
+      "boundary_anchor_ids": [],
+      "rank": 1
+    },
+    "selection_uses_both_metals": true,
+    "reference_outcomes_used": false,
+    "energy_or_preference_sign_used": false,
+    "total_outside_QM_peptide_squared_motion_A2": 48.29673371288005,
+    "effective_participating_residues": 49.265139429021815,
+    "residue_counts_for_descriptive_coverage": {
+      "0.5": 19,
+      "0.8": 46,
+      "0.9": 61
+    },
+    "automatic_localization_pass_threshold": null,
+    "one_region_explains_global_MM_release": "not established; MM group work is global and spatial motion is not a residue energy decomposition",
+    "single_expanded_region_feasibility": "unresolved pending complete chemistry and hydrogen-bond-network review",
+    "per_metal_context": {
+      "La": {
+        "all_window_atom_ids": [
+          "A/77//N",
+          "A/77//H",
+          "A/77//CA",
+          "A/77//HA",
+          "A/77//C",
+          "A/77//O",
+          "A/77//CB",
+          "A/77//HB2",
+          "A/77//HB3",
+          "A/77//CG",
+          "A/77//HG2",
+          "A/77//HG3",
+          "A/77//CD",
+          "A/77//OE1",
+          "A/77//OE2",
+          "A/78//N",
+          "A/78//H",
+          "A/78//CA",
+          "A/78//HA",
+          "A/78//C",
+          "A/78//O",
+          "A/78//CB",
+          "A/78//HB1",
+          "A/78//HB2",
+          "A/78//HB3",
+          "A/79//N",
+          "A/79//H",
+          "A/79//CA",
+          "A/79//HA",
+          "A/79//C",
+          "A/79//O",
+          "A/79//CB",
+          "A/79//HB2",
+          "A/79//HB3",
+          "A/79//CG",
+          "A/79//OD1",
+          "A/79//OD2"
+        ],
+        "ranked_outside_QM_heavy_atom_ids": [
+          "A/77//N",
+          "A/77//CA",
+          "A/77//C",
+          "A/77//O",
+          "A/77//CB",
+          "A/77//CG",
+          "A/77//CD",
+          "A/77//OE1",
+          "A/77//OE2",
+          "A/78//N",
+          "A/78//CA",
+          "A/78//C",
+          "A/78//O",
+          "A/78//CB",
+          "A/79//N",
+          "A/79//CA",
+          "A/79//C",
+          "A/79//O",
+          "A/79//CB",
+          "A/79//CG",
+          "A/79//OD1",
+          "A/79//OD2"
+        ],
+        "whole_window_heavy_atom_count": 22,
+        "existing_QM_peptide_residues": [
+          "A/66/",
+          "A/67/",
+          "A/83/",
+          "A/84/",
+          "A/85/",
+          "A/86/",
+          "A/87/",
+          "A/88/",
+          "A/89/",
+          "A/90/",
+          "A/91/",
+          "A/92/",
+          "A/93/",
+          "A/94/",
+          "A/95/",
+          "A/96/"
+        ],
+        "minimum_peptide_edges_to_QM_residue": 4,
+        "QM_residue_and_window_union_peptide_components": 3,
+        "endpoint_descriptors": {
+          "start": {
+            "minimum_external_window_to_QM_heavy_A": 5.40368489514569,
+            "median_nearest_external_window_to_QM_heavy_A": 8.625723745001064,
+            "gradient_dot_aligned_window_displacement_kcal_mol": {
+              "MACE_vacuum": 0.0,
+              "GFN2_field_difference": 1.2919915883024262,
+              "MM_ledger": 40.23807510845904,
+              "fixed_FF_charge_ALPB": -0.47411986789628086,
+              "MM/retained_bonded": -7.859817200013104,
+              "MM/MM_LJ": 48.04936535895901,
+              "MM/MM_Coulomb": 0.0890320407171652,
+              "MM/QM_MM_LJ": -0.040505091204015346,
+              "total": 41.055946828865174
+            }
+          },
+          "end": {
+            "minimum_external_window_to_QM_heavy_A": 5.351389594943429,
+            "median_nearest_external_window_to_QM_heavy_A": 8.383669364312903,
+            "gradient_dot_aligned_window_displacement_kcal_mol": {
+              "MACE_vacuum": 0.0,
+              "GFN2_field_difference": 1.3186849476325353,
+              "MM_ledger": -2.4098315735245333,
+              "fixed_FF_charge_ALPB": 0.8565826678183766,
+              "MM/retained_bonded": 7.113906594719223,
+              "MM/MM_LJ": 1.6089129402048323,
+              "MM/MM_Coulomb": -11.086395452245705,
+              "MM/QM_MM_LJ": -0.04625565620287586,
+              "total": -0.2345639580736213
+            }
+          }
+        },
+        "projection_is_integrated_work_or_local_energy": false,
+        "feasibility": "Candidate only; charged-boundary and local hydrogen-bond-network review still required."
+      },
+      "Dy": {
+        "all_window_atom_ids": [
+          "A/77//N",
+          "A/77//H",
+          "A/77//CA",
+          "A/77//HA",
+          "A/77//C",
+          "A/77//O",
+          "A/77//CB",
+          "A/77//HB2",
+          "A/77//HB3",
+          "A/77//CG",
+          "A/77//HG2",
+          "A/77//HG3",
+          "A/77//CD",
+          "A/77//OE1",
+          "A/77//OE2",
+          "A/78//N",
+          "A/78//H",
+          "A/78//CA",
+          "A/78//HA",
+          "A/78//C",
+          "A/78//O",
+          "A/78//CB",
+          "A/78//HB1",
+          "A/78//HB2",
+          "A/78//HB3",
+          "A/79//N",
+          "A/79//H",
+          "A/79//CA",
+          "A/79//HA",
+          "A/79//C",
+          "A/79//O",
+          "A/79//CB",
+          "A/79//HB2",
+          "A/79//HB3",
+          "A/79//CG",
+          "A/79//OD1",
+          "A/79//OD2"
+        ],
+        "ranked_outside_QM_heavy_atom_ids": [
+          "A/77//N",
+          "A/77//CA",
+          "A/77//C",
+          "A/77//O",
+          "A/77//CB",
+          "A/77//CG",
+          "A/77//CD",
+          "A/77//OE1",
+          "A/77//OE2",
+          "A/78//N",
+          "A/78//CA",
+          "A/78//C",
+          "A/78//O",
+          "A/78//CB",
+          "A/79//N",
+          "A/79//CA",
+          "A/79//C",
+          "A/79//O",
+          "A/79//CB",
+          "A/79//CG",
+          "A/79//OD1",
+          "A/79//OD2"
+        ],
+        "whole_window_heavy_atom_count": 22,
+        "existing_QM_peptide_residues": [
+          "A/66/",
+          "A/67/",
+          "A/83/",
+          "A/84/",
+          "A/85/",
+          "A/86/",
+          "A/87/",
+          "A/88/",
+          "A/89/",
+          "A/90/",
+          "A/91/",
+          "A/92/",
+          "A/93/",
+          "A/94/",
+          "A/95/",
+          "A/96/"
+        ],
+        "minimum_peptide_edges_to_QM_residue": 4,
+        "QM_residue_and_window_union_peptide_components": 3,
+        "endpoint_descriptors": {
+          "start": {
+            "minimum_external_window_to_QM_heavy_A": 5.4037802664586385,
+            "median_nearest_external_window_to_QM_heavy_A": 8.625723745001064,
+            "gradient_dot_aligned_window_displacement_kcal_mol": {
+              "MACE_vacuum": 0.0,
+              "GFN2_field_difference": 1.3259252723601858,
+              "MM_ledger": 44.074167044024314,
+              "fixed_FF_charge_ALPB": -0.7304030599722116,
+              "MM/retained_bonded": -7.832253624620651,
+              "MM/MM_LJ": 51.30973640898201,
+              "MM/MM_Coulomb": 0.6388144960118662,
+              "MM/QM_MM_LJ": -0.042130236348911304,
+              "total": 44.669689256412305
+            }
+          },
+          "end": {
+            "minimum_external_window_to_QM_heavy_A": 5.325119989819734,
+            "median_nearest_external_window_to_QM_heavy_A": 8.460874684168914,
+            "gradient_dot_aligned_window_displacement_kcal_mol": {
+              "MACE_vacuum": 0.0,
+              "GFN2_field_difference": 1.2996129414877375,
+              "MM_ledger": -2.996341163861274,
+              "fixed_FF_charge_ALPB": 0.9369650961729462,
+              "MM/retained_bonded": 6.499322962242022,
+              "MM/MM_LJ": 1.516858773617399,
+              "MM/MM_Coulomb": -10.964894079287706,
+              "MM/QM_MM_LJ": -0.04762882043299477,
+              "total": -0.7597631262005898
+            }
+          }
+        },
+        "projection_is_integrated_work_or_local_energy": false,
+        "feasibility": "Candidate only; charged-boundary and local hydrogen-bond-network review still required."
+      }
+    }
+  },
+  "alignments": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_motion_v1/execution/ALIGNMENTS.json",
+    "sha256": "7c40fd999e122b31c9eda30e6b08e31e6b8d2a29bb7e3d3e425d3435dfce4d63"
+  },
+  "mechanics": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_motion_v1/execution/MECHANICS.json",
+    "sha256": "8df28b2d393057876c26ad5d55c5bb7ad9aea6bbe91fdb8fdcce7f589e6fb482"
+  },
+  "residues": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_motion_v1/execution/RESIDUES.json",
+    "sha256": "499ff4b48cee3fadd41408fc2c8d188013d18310f21dfbb1c10736129accc7ec"
+  },
+  "windows": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_motion_v1/execution/WINDOWS.json",
+    "sha256": "c569cbb000df8251566aeb0e3a13ce7c95c80a01e98d242edf31bc14718a5d74"
+  },
+  "report": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_motion_v1/execution/REPORT.md",
+    "sha256": "aa0d5f68243d16eb6b687ce5189fc9e57a2f1bdd02a8ebe4551df1197759c618"
+  },
+  "elapsed_seconds": 1.1939430059865117,
+  "process_CPU_seconds": 0.97436038,
+  "numpy_version": "2.4.6"
+}

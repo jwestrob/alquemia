@@ -117,18 +117,6 @@
   ],
   "active_submissions": [
     {
-      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_run_Dy_v2/SUBMISSION.json",
-      "sha256": "c7464e5e28571116e317a72e2ffb79aa2f0a1e2521d9cf07e8358c3e20a66b7c"
-    },
-    {
-      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_pool_v1/SUBMISSION.json",
-      "sha256": "fe7d6090d2c85bb804cd55b00a91d94f1987b2874c25d62630b9ae976c8d159b"
-    },
-    {
-      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_scout_v1/SUBMISSION.json",
-      "sha256": "5b21fa3b7e4b6d886f2c143c993c4ecc4083f5ba23602298f74264e4626bec87"
-    },
-    {
       "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_scout_MM_O97_La_plus_v1/SUBMISSION.json",
       "sha256": "52e0867c99355d4e287fb910c2523ad3a9c630fea5c4b15ccb541d7508b31a87"
     },
@@ -151,7 +139,7 @@
       "sha256": "fc97c1feb145855df7c9ae0a3e93a179389ae07df445dfab8571cc4cb70d8d5d"
     }
   ],
-  "scientific_limit": "Five of six searches are admitted at80 accepted steps, all nonconverged. Mex Dy is running. Evaluate complete paired pools and Hamiltonian/reference evidence before declaring preference or extending the search.",
+  "scientific_limit": "All six searches are admitted and nonconverged. Both paired pools and saved comparison complete. Source spread24.12099 to6.20946 kcal/mol under unchanged but unmatched scaffold Hamiltonians; no qualified preference. Hybrid origin-map failure precedes all molecular calls and is under zero-call diagnosis.",
   "scheduler_note": "H200partitionQoS limits one concurrent job/GPU per user. CPUchecks12972/73 moved to exact qualified standardnode64; physics unmodified. Standardaccount120CPU/user/10jobs does not override partitionpolicy.",
   "Mex": [
     {
@@ -187,13 +175,55 @@
     {
       "source": "8FNS",
       "metal": "Dy",
-      "result": null,
-      "status": "running",
-      "submission": {
-        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_run_Dy_v2/SUBMISSION.json",
-        "sha256": "c7464e5e28571116e317a72e2ffb79aa2f0a1e2521d9cf07e8358c3e20a66b7c"
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_run_Dy_v2/execution/RESULT.json",
+        "sha256": "45287de7fa0f9294a8af158dab706aa3bfe612ee6107a50b5834802496685a83"
+      },
+      "search": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_run_Dy_v2/execution/SEARCH.json",
+        "sha256": "1d112f1e975ad1e38cec0c4f68a07fca3dbaeac170d20f9ec9147ac51ada7fd8"
+      },
+      "accepted_steps": 80,
+      "distinct_evaluations": 80,
+      "converged": false,
+      "physical_state_admitted": true,
+      "termination": "accepted_step_limit",
+      "final_full_force": {
+        "maximum_atom_kcal_mol_A": 21.892429408293452,
+        "RMS_atom_vector_kcal_mol_A": 1.7717114051947198,
+        "L2_kcal_mol_A": 80.19807797232833,
+        "converged": false
+      },
+      "work_from_start": {
+        "MACE_vacuum": -289.0663285702721,
+        "GFN2_field_difference": -38.94951658844898,
+        "MM_ledger": -3163.646849082814,
+        "fixed_FF_charge_ALPB": 549.6280513845212,
+        "composite_kcal_mol": -2942.0346428570138
       }
     }
   ],
-  "updated_utc": "2026-10-17T03:27:30.266000+00:00"
+  "updated_utc": "2026-10-17T03:41:19.355866+00:00",
+  "completed_comparisons": {
+    "lbt_pool_v1": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_pool_v1/execution/RESULT.json",
+      "sha256": "8abf24b4503ed2cd084f243289968cfa3c9ea4594a73efcb94ae76127c0525b2"
+    },
+    "mex_pool_v1": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_pool_v1/execution/RESULT.json",
+      "sha256": "9d5439a42f3cd14bb4fdd63f883cf6e807ccb1752735de1d59cdd13bf5938010"
+    },
+    "comparison_v2": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/comparison_v2/execution/RESULT.json",
+      "sha256": "70f5737993d0e10b7adf8cbd443b76840e4a3ca1db34e0567225ea44093e2c89"
+    },
+    "mex_motion_v1": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_motion_v1/execution/RESULT.json",
+      "sha256": "fee36f58d19a1067a2e18d683e5ec7c503990db7019518c1b620e49b649786c6"
+    }
+  },
+  "preserved_hybrid_failure": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_scout_v1/execution/RESULT.json",
+    "sha256": "31456adc43c5b1ee82eb9274a7873eaa01171b9530fef7008a18d78f719db303"
+  }
 }

@@ -1,49 +1,44 @@
-# Coupled La/Dy mechanics is active
+# Coupled La/Dy mechanics: broad response complete, accuracy checks active
 
-17 October 2026 UTC. Jacob activated “Implement the saved La/Dy mechanics plan. Work autonomously, validate the physics, and document the results.” PLAN.md is the finite protocol. Root owns all submissions and integration; PQQ production remains unchanged.
+17 October 2026 UTC. Jacob activated the saved PLAN.md. Root owns submissions and integration. Goal remains active and unmet; PQQ production is unchanged.
 
-## Actual results
+## Main result
 
-- Mex qualification12952 passes all34 composite evaluations and all component/total derivative checks, including backbone, boundary, water and spectator movement. Search preflight12955 passes.
-- LBT partition12953 passes all four preparations, with native MM XML unchanged from failed12950. Baseline172/expanded210 electronic atoms each include two mapped caps.
-- LBT original preflight12954 failed only old exact-transform replay. Saved diagnostic12956 and reviewed V2 preserve the archived transform and all physical/scientific gates. Preflight12957 and all32 derivative cells12958 pass.
-- Old LBT44-cell pool replay12959 passes with zero calls and an explicit required-missing-cell test.
-- LBT scout12960 passes:12 accepted steps/12 new composites; energy−63.9031 kcal/mol and max force83.2803→12.7867 kcal/mol/Å. Physical/state checks pass, but it is not converged. Read LBT_QUALIFICATION_AND_SCOUT.md.
+**All six broad-coordinate searches and both source-local paired pools are complete.** All six preserve the declared physical state, and none reaches the full-force convergence target. The LBT-source discrepancy in the legacy conditional Mex/LBT exchange decreases from **24.120991 to 6.209455 kcal/mol**. The two conditional values are now **+9.681807 and +3.472352 kcal/mol**, versus +0.982619/+25.103610 before broad response.
 
-## Owned execution
+This isolates the effect of accessible motion under each unchanged model. It does not qualify preference: LBT still uses whole-peptide MACE, Mex uses local electronic/MM mechanics, and all searches stopped at the declared80-step budget. Read [the six-search report](broad_response/REPORT.md), exact tables/results and BROAD_RESPONSE_CHECKPOINT.json.
 
-Root submitted the six planned searches after reviewing actual scout admission and cost. LBT7CCO/La12961 completed/admitted80 steps, maxforce2.14091/RMS0.921311 and energy−98.5724 kcal/mol from the prior restricted terminal; still nonconverged. The other five initial jobs12962–12966 failed before molecular calls because their node lacked a pinned historical compiler path. Configuration-identical host-only recoveries use the qualified H200 node:
+| System/source | Metal | Additional work kcal/mol | Max/RMS force kcal/mol/Å | Job |
+| --- | --- | ---: | --- | --- |
+| LBT7CCO | La | −98.572405 | 2.141/0.921 |12961|
+| LBT7CCO | Dy | −104.193162 |5.176/1.143|12967|
+| LBT7CCN | La | −137.647592 |9.740/1.988|12968|
+| LBT7CCN | Dy | −112.937903 |10.175/1.800|12969|
+| Mex8FNS | La | −2945.113073 |11.054/1.418|12970|
+| Mex8FNS | Dy | −2942.034643 |21.892/1.772|12971|
 
-| System/state | Job |
-| --- | --- |
-| LBT7CCO La, exact scout continuation | 12961 |
-| LBT7CCO Dy | 12967 (pre-call failure12962 retained) |
-| LBT7CCN La | 12968 (pre-call failure12963 retained) |
-| LBT7CCN Dy | 12969 (pre-call failure12964 retained) |
-| Mex La | 12970 (pre-call failure12965 retained) |
-| Mex Dy | 12971 (pre-call failure12966 retained) |
+All80steps include the successful12-step original LBT scout. Five initial host/compiler-path failures12962–12966 remain preserved; fresh recoveries kept identical configurations. LBT pool12974 evaluates only four missing cross cells; Mex pool12981 evaluates only two. Saved comparator12982 passes all six slots, old-state/component/force replay and missing-menu tests. Source062f's pre-execution LBT-stage schema mismatch is preserved; V2f9cdb6a4 changes only LBT `run` versus Mex `pool` stage dispatch. No numerical failure or repeated chemistry is invented for that static finding.
 
-All four LBT searches 12961/12967/12968/12969 are complete and admitted at 80 steps, all nonconverged. Their model energy reductions are 98.57–137.65 kcal/mol and residual maximum forces are 2.14–10.17 kcal/mol/Å. Residuals and component work are pinned in BROAD_RESPONSE_CHECKPOINT.json. These are finite search endpoints, not minima or preference results. LBT paired scoring 12974 is queued, with at most four new cross cells.
+## What moved
 
-Mex La 12970 is also complete and physically/state admitted: 80 steps, energy reduction 2,945.11 kcal/mol, residual maximum/RMS forces 11.05/1.42 kcal/mol/Å. Most lowering is in the MM ledger (−3,170.81 kcal/mol), partly opposed by solvent (+552.93); this is model-specific relaxation, not affinity. It took 716 scheduler seconds on 12 CPUs and one H200. Mex Dy 12971 is running. The full paired comparison must precede interpretation of metal-specific work. No automatic continuation beyond the frozen budget.
+Saved motion12983 uses both metals and no new molecular calls. Mex MM lowering is mostly common to both metals: bonded−724 to−731, LJ−387 to−389, Coulomb−2014 to−2017 kcal/mol, partly offset by solvent. Water-oxygen aligned RMS movement is0.65–0.69Å; outside-QM peptide-heavy RMS is0.18–0.19Å. These global energy changes are not residue-energy decompositions.
 
-Zero-call hybrid preflight 12972 passes all eight saved component replays and freezes actual A2CA/A1N directions; nine-composite hybrid scout 12975 is queued. Mex common5 baseline replay 12973 passes all ten old cells and its missing-cell test. All jobs have completion wakes.
+The predeclared largest three-residue window is A77–79, only7.42% of outside-QM peptide squared motion; about49 effective residues participate. This supports distributed response and limits what one local stiffness reference could establish. [Motion report](mex_motion/result/REPORT.md); complete topology/HB feasibility review is pending, with no new expanded-reference submission.
 
-Embedded DFT preparation 12976 passes both reused origin-gradient checks and constructs the eight declared displaced tasks with zero DFT calls. The first external-charge La ± pair is queued as 12977/12978, 12 MPI slots each on the qualified CPU host. Completion wakes and manifest-aware, alert-only SCF health supervisors are recorded in each SUBMISSION.json. Read mex_dft/README.md for exact collector commands. Actual scout derivative admission and measured cost precede the remaining six endpoints.
+## Active independent references
 
-All searches use 12 CPUs/one GPU and the frozen 80-step/200-evaluation limits. Scout work counts toward its continuation. Actual submission commands, pins and detached completion watchers are under each workspaces/lanm_coupled_mechanics_20261017/{lbt,mex}_run_*/SUBMISSION.json. Inspect actual terminal results before pool evaluation; never duplicate submissions.
+Embedded PBE0 preparation12976 passes two reused origin-gradient checks and constructs the eight declared displaced tasks with zero DFT calls. First external-charge La± pair12977/12978 is RUNNING,12MPI each on node-64-768g-28. Zero-call hostcheck12979 passed before moving only the originally pending node constraints. Same job IDs, original inputs, requested resources and watchers remain. Both actual manifest-aware SCF-health watchers are armed.
 
-## Ownership and next commands
+Read mex_dft/README.md for the exact saved collector command. When both actual endpoints finish, run its one-CPU scout collector. Actual derivative admission and measured cost must precede the remaining six endpoints. No DFT derivative result exists yet.
 
-- Root: source/config pins, scientific submissions, result integration, shared status.
-- Leibniz: paired pools and remaining LBT derivative qualification are implemented and reviewed; no submissions.
-- Harvey: final saved comparator and DFT qualification independently reviewed; no remaining static blocker.
-- mechanics_mex_adapter: saved comparison staging is complete; preparing a saved-only Mex motion/MM diagnostic to select a defensible scaffold-stiffness segment from both actual metal responses. No new energies or shared-status edits.
+## Hybrid LBT failure and next action
 
-Next: collect Mex Dy, then bind the two actual searches into the reviewed Mex paired pool (at most two new opposite-metal composites). Collect queued LBT paired scoring and hybrid scout. After actual hybrid scout admission, run its eight-origin matrix with exact reuse before the prepared expanded-region derivative check. Saved Module2 comparison source 062f1167 is independently reviewed and staged with five completed searches, all five host-startup failures and the original scout counted once; missing Dy/pools remain explicit until actual files arrive.
+Local-electronic/MM CPU preflight12972 passed all eight saved component replays. Its H200 nine-cell scout12975 failed in constructor origin-map replay before any molecular call: `Exact origin mapping replay differs`. Preserve its immutable execution/RESULT.json and passing CPUpreflight. Mechanics agent is preparing a zero-call exact-leaf/ULP diagnostic on the actual failed host; root submits it. No geometry or numerical acceptance tolerance has been changed and no chemistry retry is launched.
 
-The saved comparison retains the prior conditional exchange for continuity, but labels whole-MACE LBT versus local-electronic/MM Mex as different scaffold Hamiltonians. It cannot qualify a matched-Hamiltonian preference. Module3 tests that distinction separately.
+The eight-origin matrix, remaining24 derivative checks and complete104-cell saved-pool comparison are staged source only and gated on actual repaired scout admission. The fixed pool includes all26 actual source-local geometries, both metals and both regions; eight origins reused, at most96 new composites, exact old whole-solvent reuse. Never select a favorable subset or silently substitute an available baseline for a failed region.
 
-Current observed standard policy is12CPU/job120CPU/user3days, with standard_expand24CPU/job500CPU/user5days available. All numerical work uses Slurm, allocation-derived resources, unchanged parameter files and actual completion wakes. No priority changes, memory/time overrides, source-position springs or old clamped-core diagnosis. Goal remains active and unmet.
+## Ownership, resources and restart
 
-H200 partition separately limits one concurrent job/GPU per user; the account 120CPU/10jobs does not override this. CPU checks ran on qualified standard node-64-768g-1 after a recorded scheduler-only update. Keep jobs queued normally. Independent DFT pair 12977/12978 has been submitted; no derivative result exists yet.
+Root: all launches, integration, status, commits/pushes. Mechanics agent: origin-map diagnostic/recovery. Harvey: independent review and bounded stiffness-region feasibility. Leibniz: paired-pool/remaining derivative adapters prepared; no submissions. Exact jobs/configs/watcher commands are in workspace SUBMISSION.json and INITIAL_EXECUTION_RECORD.json.
+
+All numerical work uses Slurm. Standard policy currently12CPU/job120CPU/user; H200 partition separately limits one concurrent job/GPU per user. Allocation-derived native resources, no memory/time overrides or priority changes. Preserve failures, source inventories, charge/spin conventions and original pools. No source-position springs, rejected clamped-core branch, automatic optimizer extension, or production promotion. Further response budgets require a concrete diagnosis and a separately recorded finite scope.

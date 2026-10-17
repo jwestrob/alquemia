@@ -1,3 +1,33 @@
+# Current decision: response works, preference remains weak and source-sensitive
+
+All owned molecular work in this round is complete. Mex continuations 12727/12729
+and paired pool 12731 preserve the covalent geometry and lower each metal's energy.
+Both metals select their own terminal geometry. Dy benefits more, reducing the
+Mex-relative-La exchange signal by 1.490527 kcal/mol from the static calculation.
+These endpoints remain nonstationary; no further optimization is launched.
+
+Saved comparison 12736 preserves all 15 LBT menus and prior columns. Every sign
+remains positive, but prior/control menus are about +0.09 kcal/mol, and the
+added-coordinate/global menu is +1.019378. Its two LBT source contrasts remain
+28.262193 kcal/mol apart. This is no source-robust LanM profiler or accuracy gain.
+Read monomer_continued_comparison/REPORT.md and mex_continuation/REPORT.md.
+
+Matched-water job 12732 completes 12 cells and retains four original geometry
+rejections. Its two available responses shrink from roughly -2.5 to -0.787/-0.740
+kcal/mol under matched fixed-FF solvent, below the existing 1 kcal/mol interpretive
+resolution. Both metals retain the same selected water pose. The 7CCN inner
+states remain unavailable. Read lbt_matched_water/REPORT.md; no hydration expansion.
+
+This finite round used 26 MACE, 52 local GFN2, 26 MM configurations and 38 ALPB
+calls, plus saved-data reporting. Scheduler cost: 3299 allocated CPU-seconds and
+274 GPU-seconds across 12727/12729/12731/12732/12736. No new DFT or protein folds.
+
+Next: read-only feasibility of a second deposited Mex source, 6MI5 model 1,
+checking construct, occupancy and hydration against 8FNS before declaring new
+calculations. Child monomer_primary_candidates owns that inventory; root owns
+integration/submission. Do not call different water/spectator states matched.
+PQQ/defaults and all failures remain intact. Goal remains active and unmet.
+
 # Latest: complete Mex common5; water-model comparison submitted
 
 Both finite continuations12727/12729 complete12steps each, allphysicalguards.

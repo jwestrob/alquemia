@@ -55,12 +55,15 @@ all15menus retain expected conditional Mex–La/LBT–Dy ordering. Added-basis
 sourcegap65.569→28.262kcal/mol (matchedoldbasis38.435), still too large for
 quantitative robustness. No newDFT. Read latest CURRENT.
 
-Bounded continuations12727/12729 and common5 crossscore12731 are COMPLETE.
-All10pairedcells/physicalguards pass; bothmetals selectownterminal. Accommodation
-changeDy−La−1.490527kcal/mol weakens prior relativeLa signal; not an accuracygain.
-No moreoptimizer launched. Saved15menu comparison is in preparation.
-Matched-water12732 submitted1CPU/watcher2134539,12newALPB/4oldrejections; no new
-MACE/GFN/geometry. See latest CURRENT and actual receipts, no duplicate jobs.
+Mex continuations 12727/12729, common5 12731, matched-water 12732 and saved
+comparison 12736 are COMPLETE. Both metals select their own accommodated Mex
+geometry; Dy benefits more. All 15 exchange signs remain positive, but some
+margins are about 0.09 kcal/mol and the candidate/global margin is 1.019378;
+LBT source gap remains 28.262193. No reliable profiler or accuracy gain claimed.
+Water response shrinks below the existing 1 kcal/mol resolution; four original
+geometry exclusions remain. No further optimization or water expansion launched.
+All owned jobs are terminal. A read-only second-Mex-source feasibility check
+(6MI5 versus 8FNS construct/occupancy/hydration) is in progress. Read CURRENT.
 
 Root owns submission/integration. Read current receipts before acting; no repeated
 completed chemistry or automatic dimer/full-library campaign. PQQ midpoint and

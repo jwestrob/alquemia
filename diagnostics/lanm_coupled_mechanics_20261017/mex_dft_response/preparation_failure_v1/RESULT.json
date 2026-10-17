@@ -1,0 +1,92 @@
+{
+  "protocol": "mex_saved_terminal_embedded_PBE0_response_eight_v1",
+  "stage": "prepare",
+  "status": "execution_failure",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v1/RESPONSE_REFERENCE.py",
+    "sha256": "bd29908d44cd975eb37b220ec583706c32346fad62272240d0b6ee28795bb608"
+  },
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v1/CONFIG.json",
+    "sha256": "88b8b6103b661d770983c88efa13fc9ee8461f73dfce877cdad635880ce64308"
+  },
+  "settings": {
+    "maximum_new_DFT_cells": 8,
+    "mpi_ranks": 12,
+    "concurrent_endpoints": 1,
+    "first_cost_scout": "La_terminal__La",
+    "new_other_component_calls": 0,
+    "deformation_work_resolution_kcal_mol": 1.0,
+    "projection_agreement_target_kcal_mol_A": 1.0,
+    "projection_rule": "both full physical own-metal restricted-to-broad chords, unit Cartesian L2 norm",
+    "native_gradient_coordinate_atol_A": 1e-06,
+    "native_gradient_energy_atol_Eh": 1e-08
+  },
+  "slurm_job_id": "13059",
+  "declared_cells": 8,
+  "rows": {
+    "La_terminal__La": {
+      "task_id": "La_terminal__La",
+      "status": "unavailable"
+    },
+    "La_terminal__Dy": {
+      "task_id": "La_terminal__Dy",
+      "status": "unavailable"
+    },
+    "Dy_terminal__La": {
+      "task_id": "Dy_terminal__La",
+      "status": "unavailable"
+    },
+    "Dy_terminal__Dy": {
+      "task_id": "Dy_terminal__Dy",
+      "status": "unavailable"
+    },
+    "La_cartesian_terminal__La": {
+      "task_id": "La_cartesian_terminal__La",
+      "status": "unavailable"
+    },
+    "La_cartesian_terminal__Dy": {
+      "task_id": "La_cartesian_terminal__Dy",
+      "status": "unavailable"
+    },
+    "Dy_cartesian_terminal__La": {
+      "task_id": "Dy_cartesian_terminal__La",
+      "status": "unavailable"
+    },
+    "Dy_cartesian_terminal__Dy": {
+      "task_id": "Dy_cartesian_terminal__Dy",
+      "status": "unavailable"
+    }
+  },
+  "new_DFT_calls_requested": 0,
+  "new_DFT_calls_attempted": 0,
+  "new_MM_calls": 0,
+  "new_ALPB_calls": 0,
+  "new_MACE_calls": 0,
+  "new_GFN_calls": 0,
+  "optimizer_steps": 0,
+  "caveats": {
+    "physical_state_qualified": false,
+    "global_force_qualified": false,
+    "SCF_error_bound_available": false,
+    "stationary_minimum_claimed": false,
+    "affinity_claimed": false,
+    "spectators": [
+      "A/201//ND",
+      "A/202//ND",
+      "A/204//ND"
+    ],
+    "represented_waters": 167,
+    "whole_charge_e": 2,
+    "QM_charge_e": 0,
+    "electronic_model": "spin-free frozen-f; physical La singlet/Dy sextet, effective singlets; no SOC",
+    "scaffold_reference_limit": "The unchanged MM ledger cannot independently validate MM stiffness."
+  },
+  "status_before_failure": "execution_failure",
+  "failure": "ValueError('Terminal physical/full-force replay differs')",
+  "traceback": "Traceback (most recent call last):\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v1/RESPONSE_REFERENCE.py\", line 693, in main\n    prepare(cfg, out, result, context)\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v1/RESPONSE_REFERENCE.py\", line 290, in prepare\n    ev, replay = source_replay(inv, out)\n                 ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_response_prepare_v1/RESPONSE_REFERENCE.py\", line 145, in source_replay\n    slots, failures = pool.admit_searches(pcfg, ev, sm, opt, guard, matrix, by_coordinate)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_pool_baseline_v1/MEX_CARTESIAN_POOL.py\", line 202, in admit_searches\n    require(check == search['final_geometry'] and check['pass'] and check['state_compatible']\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_pool_baseline_v1/MEX_CARTESIAN_POOL.py\", line 22, in require\n    raise ValueError(message)\nValueError: Terminal physical/full-force replay differs\n",
+  "elapsed_seconds": 18.058880890952423,
+  "application_allocated_CPU_seconds": 216.70657069142908,
+  "parent_peak_RSS_KiB": 508680,
+  "parent_RSS_is_not_MPI_peak": true
+}

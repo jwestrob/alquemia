@@ -1,0 +1,50 @@
+{
+  "utc": "2026-10-17T01:29:42.573801+00:00",
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--account=banfield",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/mex_dft_origin_assembly_v1/slurm_%j.out",
+    "--error",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/mex_dft_origin_assembly_v1/slurm_%j.err",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/mex_dft_origin_assembly_v1/RUN.sbatch",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/mex_dft_origin_assembly_v1/MEX_DFT_ORIGIN_ASSEMBLY.py",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/mex_dft_origin_assembly_v1/CONFIG.json",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/mex_dft_origin_assembly_v1/execution"
+  ],
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/mex_dft_origin_assembly_v1/MEX_DFT_ORIGIN_ASSEMBLY.py",
+    "sha256": "c19de37d038f6259c447049015247fc9fb51c2f2b76c0500c049a48d93f4a2fb"
+  },
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/mex_dft_origin_assembly_v1/CONFIG.json",
+    "sha256": "9c428c87a96323818ea9cad2a8262cdab4a7ce3c47edb8ffe0b8c48f2702fbac"
+  },
+  "plan": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_response_20261016/MEX_DFT_ORIGIN_PLAN.md",
+    "sha256": "9dfabb813214393c0748f9ce2ac99498960814cc9bb5f10b19ca9aac622254ab"
+  },
+  "review": "Root and independent reviewer passed exact three-term ledger, full physical gradients and actual saved parents. Saved-only two-metal assembly; no molecular calls, optimization, or affinity result.",
+  "returncode": 0,
+  "stdout": "12849\n",
+  "stderr": "",
+  "job_id": "12849",
+  "watcher_pid": 2247497,
+  "watcher_command": [
+    "/usr/bin/python3",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/slurm_wakeup_20260927/watch_and_queue.py",
+    "--jobs",
+    "12849",
+    "--thread",
+    "01a0a63a-ee36-7483-b726-1f7f5b7f75cc",
+    "--codex",
+    "/home/jwestrob/.nvm/versions/node/v22.23.1/bin/codex",
+    "--receipt",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/mex_dft_origin_assembly_v1/completion_event.json",
+    "--event",
+    "mex-saved-DFT-MM-solvent-origins-v1",
+    "--interval",
+    "15"
+  ]
+}

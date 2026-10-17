@@ -238,3 +238,12 @@ exact equality after JSON serialization. A reviewed, versioned recovery preserve
 all numerical values and gates. Original three cells are now submitted as
 12844–12846; no new four-cell scientific conclusion is available yet.
 See [LBT_LOCAL_REFERENCE_RECOVERY.md](LBT_LOCAL_REFERENCE_RECOVERY.md).
+
+## Reused Mex DFT with whole-scaffold mechanics
+
+Saved-only Slurm12849 assembled both existing embedded PBE0 origins with the
+retained MM ledger and fixed-FF-charge global ALPB. All2049physical gradient
+entries and component energies passed replay; zero molecular calls,5allocated
+CPU-s. This makes a DFT-based total model concrete without repeating expensive
+origins. Total-force consistency and physical electronic states remain unqualified.
+See [the exact assembly report](mex_dft_origin_assembly/REPORT.md).

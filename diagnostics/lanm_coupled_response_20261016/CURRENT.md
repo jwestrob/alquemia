@@ -24,8 +24,13 @@ the three missing pins in `LBT_LOCAL_REFERENCE_COMPARISON_V2_CONFIG.template.jso
 and run the saved-only comparator on one Slurm CPU. Preserve all four declared
 cells and unavailable outcomes. Do not launch a waiting collector or repeat the
 scout. `DFT_BACKEND_READINESS.md` identifies reusable Mex embedded DFT origins
-and the still unresolved LBT embedding boundary. A separate saved-only Mex
-assembly adapter is being prepared by Harvey; root owns launch and integration.
+and the still unresolved LBT embedding boundary. Saved-only Mex DFT+MM+fixed-FF-ALPB assembly12849 is COMPLETE: both metal
+origins and all2049physical gradient entries pass existing replay checks, zero
+new molecular calls,5allocatedCPU-s. Sourcec19de37d/config9c428c87 and exact result
+under mex_dft_origin_assembly_v1. Printed SCF limitations and unqualified total
+derivative/physical state remain. Actual reused MM ledger includes spectator
+LJ; older source monopole-only annotation does not describe that full ledger.
+Root owns integration; Harvey owns the scoped report.
 The active profiler goal remains unmet.
 
 # Latest: zero-call serialization failure diagnosed; recovery preparing

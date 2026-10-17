@@ -1,0 +1,216 @@
+{
+  "point": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_pool_v2/execution/hybrid_parent_replay/evaluator/point_011_7CCO_baseline_La/POINT.json",
+    "sha256": "3fac44a78143ece9cba653e0eaec5aac59852166c32515c400210425d4f2da8f"
+  },
+  "mapping": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_pool_v2/execution/hybrid_parent_replay/evaluator/point_011_7CCO_baseline_La/MAPPING.json",
+    "sha256": "312a4e8403065199950b152f0110a4401b7330da26d6cecf1ca8ab99a38b3342"
+  },
+  "component_receipts": {
+    "MM_execution": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_pool_v2/execution/hybrid_parent_replay/evaluator/point_011_7CCO_baseline_La/mm_driver/EXECUTION.json",
+      "sha256": "f98a3facb9a8b01f01ba640b1eab05a686f03cac8f826e8893570198cf3b6952"
+    },
+    "MM": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_pool_v2/execution/hybrid_parent_replay/evaluator/point_011_7CCO_baseline_La/MM/RESULT.json",
+      "sha256": "0a55cb17fb22fb757fb718c34a671efc97d78e16c297c8d85b5966b560f85c86"
+    },
+    "MACE": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_pool_v2/execution/hybrid_parent_replay/evaluator/point_011_7CCO_baseline_La/MACE.json",
+      "sha256": "71c2d7f7f7c7c49ad167a07cd3d4ff4a90d1c2b42ecc5ba27222b3efda2afa5e"
+    },
+    "GFN_embedded": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_pool_v2/execution/hybrid_parent_replay/evaluator/point_011_7CCO_baseline_La/embedded/RESULT.json",
+      "sha256": "04e5ac0d51ab954d08862a4177e12ed7c7e22d93f669e4afbf11c31b31cf8bb6"
+    },
+    "GFN_isolated": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_pool_v2/execution/hybrid_parent_replay/evaluator/point_011_7CCO_baseline_La/isolated/RESULT.json",
+      "sha256": "1202311f8d5ef98fc5352876bc23745b3d77dc47baa9be51224299dfe06e2d9d"
+    },
+    "ALPB": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_run_7CCO_La_v1/execution/7CCO_La/evaluations/evaluation_068/ALPB/RESULT.json",
+      "sha256": "1d7b7595a492910c84a1af46ed138077d75e6f4aa10df35713e863e0e5943655"
+    }
+  },
+  "region": "baseline",
+  "metal": "La",
+  "component_order": [
+    "MACE_vacuum",
+    "GFN2_field_difference",
+    "MM_ledger",
+    "fixed_FF_charge_ALPB"
+  ],
+  "stored_dictionary_order": [
+    "MACE_vacuum",
+    "GFN2_field_difference",
+    "MM_ledger",
+    "fixed_FF_charge_ALPB"
+  ],
+  "component_key_set_equal": true,
+  "components": {
+    "MACE_vacuum": {
+      "exact_equal": false,
+      "different_scalar_count": 2,
+      "different_atom_indices": [
+        23,
+        207
+      ],
+      "different_physical_ids": [
+        "A/2//CA",
+        "A/15//CA"
+      ],
+      "max_absolute_difference_kcal_mol_A": 8.881784197001252e-16,
+      "maximum_index": [
+        207,
+        2
+      ],
+      "maximum_physical_id": "A/15//CA",
+      "replayed_value_at_maximum": -6.479351368389098,
+      "stored_value_at_maximum": -6.479351368389099,
+      "signed_difference_at_maximum": 8.881784197001252e-16,
+      "replayed_dtype": "float64",
+      "stored_dtype": "float64"
+    },
+    "GFN2_field_difference": {
+      "exact_equal": false,
+      "different_scalar_count": 4,
+      "different_atom_indices": [
+        23,
+        24,
+        207
+      ],
+      "different_physical_ids": [
+        "A/2//CA",
+        "A/2//C",
+        "A/15//CA"
+      ],
+      "max_absolute_difference_kcal_mol_A": 1.7763568394002505e-15,
+      "maximum_index": [
+        24,
+        0
+      ],
+      "maximum_physical_id": "A/2//C",
+      "replayed_value_at_maximum": 0.4346794662889035,
+      "stored_value_at_maximum": 0.4346794662889053,
+      "signed_difference_at_maximum": -1.7763568394002505e-15,
+      "replayed_dtype": "float64",
+      "stored_dtype": "float64"
+    },
+    "MM_ledger": {
+      "exact_equal": true,
+      "different_scalar_count": 0,
+      "different_atom_indices": [],
+      "different_physical_ids": [],
+      "max_absolute_difference_kcal_mol_A": 0.0,
+      "maximum_index": [
+        0,
+        0
+      ],
+      "maximum_physical_id": "A/1//N",
+      "replayed_value_at_maximum": 2.7327388347824706,
+      "stored_value_at_maximum": 2.7327388347824706,
+      "signed_difference_at_maximum": 0.0,
+      "replayed_dtype": "float64",
+      "stored_dtype": "float64"
+    },
+    "fixed_FF_charge_ALPB": {
+      "exact_equal": true,
+      "different_scalar_count": 0,
+      "different_atom_indices": [],
+      "different_physical_ids": [],
+      "max_absolute_difference_kcal_mol_A": 0.0,
+      "maximum_index": [
+        0,
+        0
+      ],
+      "maximum_physical_id": "A/1//N",
+      "replayed_value_at_maximum": -0.5506655383113365,
+      "stored_value_at_maximum": -0.5506655383113365,
+      "signed_difference_at_maximum": 0.0,
+      "replayed_dtype": "float64",
+      "stored_dtype": "float64"
+    }
+  },
+  "stored_component_sum_vs_stored_full": {
+    "exact_equal": true,
+    "different_scalar_count": 0,
+    "different_atom_indices": [],
+    "different_physical_ids": [],
+    "max_absolute_difference_kcal_mol_A": 0.0,
+    "maximum_index": [
+      0,
+      0
+    ],
+    "maximum_physical_id": "A/1//N",
+    "replayed_value_at_maximum": 2.155724352818616,
+    "stored_value_at_maximum": 2.155724352818616,
+    "signed_difference_at_maximum": 0.0,
+    "replayed_dtype": "float64",
+    "stored_dtype": "float64"
+  },
+  "raw_replayed_component_sum_vs_stored_full": {
+    "exact_equal": false,
+    "different_scalar_count": 3,
+    "different_atom_indices": [
+      23,
+      24
+    ],
+    "different_physical_ids": [
+      "A/2//CA",
+      "A/2//C"
+    ],
+    "max_absolute_difference_kcal_mol_A": 1.7763568394002505e-15,
+    "maximum_index": [
+      24,
+      0
+    ],
+    "maximum_physical_id": "A/2//C",
+    "replayed_value_at_maximum": 1.5844199208619623,
+    "stored_value_at_maximum": 1.584419920861964,
+    "signed_difference_at_maximum": -1.7763568394002505e-15,
+    "replayed_dtype": "float64",
+    "stored_dtype": "float64"
+  },
+  "raw_replayed_sum_vs_stored_component_sum": {
+    "exact_equal": false,
+    "different_scalar_count": 3,
+    "different_atom_indices": [
+      23,
+      24
+    ],
+    "different_physical_ids": [
+      "A/2//CA",
+      "A/2//C"
+    ],
+    "max_absolute_difference_kcal_mol_A": 1.7763568394002505e-15,
+    "maximum_index": [
+      24,
+      0
+    ],
+    "maximum_physical_id": "A/2//C",
+    "replayed_value_at_maximum": 1.5844199208619623,
+    "stored_value_at_maximum": 1.584419920861964,
+    "signed_difference_at_maximum": -1.7763568394002505e-15,
+    "replayed_dtype": "float64",
+    "stored_dtype": "float64"
+  },
+  "mapping_cap_anchors": [
+    {
+      "qm_index": 170,
+      "retained_index": 24,
+      "omitted_index": 23,
+      "retained_source_id": "A/2//C",
+      "omitted_source_id": "A/2//CA"
+    },
+    {
+      "qm_index": 171,
+      "retained_index": 206,
+      "omitted_index": 207,
+      "retained_source_id": "A/15//N",
+      "omitted_source_id": "A/15//CA"
+    }
+  ],
+  "cause_determined": false,
+  "original_exact_gate_retained": true
+}

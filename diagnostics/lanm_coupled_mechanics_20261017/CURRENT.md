@@ -2,6 +2,19 @@
 
 17 October2026UTC. The activated PLAN remains active and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
+## Execution progress at 17:07 UTC
+
+All three whole-LBT continuations print SCF convergence: after-La13290 after18
+cycles, before-Dy13291 after17, and after-Dy13292 after19. They are recomputing
+final exchange energies; final gradients, normal termination and native admission
+remain pending. Mex13281 remains in SOSCF, last printed iteration20. All four
+jobs are RUNNING. Continue unchanged, retaining the full four-cell LBT collection
+and Mex central-admission/cost gates. No new scientific calls or submissions.
+Exact native tails and scheduler observations are preserved in
+`lbt_whole_reference_continuation/activation_v1/scf_milestone_v1/`.
+This supersedes the earlier startup-only progress below, without changing any
+scientific result, input, failure or execution setting.
+
 ## Latest: whole-peptide DFT challenges the extreme hybrid terminal force
 
 Whole256 before-La13051 and original saved collector13283 are complete/admitted.

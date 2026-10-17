@@ -67,6 +67,14 @@ seconds respectively. Raw rows and live scheduler evidence are retained in
 no native calculation changed. All remain active; no convergence trend, terminal
 admission or finite-work result follows from this startup progress.
 
+At17:07UTC all three continuations print SCF convergence: after-La18 cycles,
+before-Dy17 and after-Dy19. Each has reached final exchange-energy recomputation.
+The `scf_milestone_v1/` snapshot preserves raw output tails, source manifests,
+the unchanged runtime configuration and live scheduler accounting. Final energies,
+gradients and normal termination remain pending; SCF convergence alone does not
+admit a completed reference or establish electronic-state stability. Mex13281
+remains in SOSCF at iteration20. Continue all four existing jobs unchanged.
+
 These jobs test the energy and force changes along the same fixed La-proposed
 deformation, for both metals. No optimization, geometry repair, original-scout
 repeat or molecular retry is allowed. The complete four-cell collector retains

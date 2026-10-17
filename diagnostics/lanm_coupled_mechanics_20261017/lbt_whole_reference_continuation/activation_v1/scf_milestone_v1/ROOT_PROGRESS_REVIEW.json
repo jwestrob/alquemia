@@ -1,0 +1,113 @@
+{
+  "utc": "2026-10-17T17:07:38.384337+00:00",
+  "kind": "in_progress_native_SCF_milestone_not_terminal_admission",
+  "status": "three_LBT_SCF_converged_final_energy_and_gradient_pending",
+  "scheduler_observations": {
+    "SQUEUE.txt": {
+      "command": [
+        "squeue",
+        "-j",
+        "13281,13290,13291,13292",
+        "-o",
+        "%.10i %.12T %.12M %.6C %.25R"
+      ],
+      "evidence": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation/activation_v1/scf_milestone_v1/SQUEUE.txt",
+        "sha256": "b39b5a5b0ff9a22776f18ceb7a8429f06182d18daca1d41d64baec2133cadf6d"
+      }
+    },
+    "SSTAT.txt": {
+      "command": [
+        "sstat",
+        "-j",
+        "13281.batch,13290.batch,13291.batch,13292.batch",
+        "--format=JobID,AveCPU,MaxRSS",
+        "--noheader"
+      ],
+      "evidence": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation/activation_v1/scf_milestone_v1/SSTAT.txt",
+        "sha256": "d58ca220266916c32c653aab41ed3c5694711c2e1deb045402b8bd74ccfd1b86"
+      }
+    }
+  },
+  "LBT_tasks": [
+    {
+      "task": "after_La",
+      "job": 13290,
+      "scf_converged_cycles_printed": 18,
+      "native_phase": "Recomputing exchange energy using gridx3",
+      "normal_termination_observed": false,
+      "terminal_result_present": false,
+      "native_output": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/tasks/after_La/execution/after_La/endpoint.out",
+      "native_output_bytes_read": 122996,
+      "native_prefix_sha256_at_snapshot": "868774426c996ff9204be3d1ec0ea9d79580ad0260c41830b10893602c9815c4",
+      "tail": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation/activation_v1/scf_milestone_v1/after_La_NATIVE_TAIL.txt",
+        "sha256": "d633402c82f691e1516098a1058c660a06832f470d6bd359b3f3460cf6c5d937"
+      },
+      "manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/tasks/after_La/execution/after_La/MANIFEST.json",
+        "sha256": "e9d935ecf837465531475f1b7c1b32987433855a01d50bb69641798329c21ddd"
+      }
+    },
+    {
+      "task": "before_Dy",
+      "job": 13291,
+      "scf_converged_cycles_printed": 17,
+      "native_phase": "Recomputing exchange energy using gridx3",
+      "normal_termination_observed": false,
+      "terminal_result_present": false,
+      "native_output": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/tasks/before_Dy/execution/before_Dy/endpoint.out",
+      "native_output_bytes_read": 122144,
+      "native_prefix_sha256_at_snapshot": "b1c545c994f8f5347e4108aedc41c6b9eff79947c13eaf08c21f4eabed43fc0e",
+      "tail": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation/activation_v1/scf_milestone_v1/before_Dy_NATIVE_TAIL.txt",
+        "sha256": "45df93101460b3bc1433d08bfc321e4c5b958647477ab0440b5fe80c6ada71b3"
+      },
+      "manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/tasks/before_Dy/execution/before_Dy/MANIFEST.json",
+        "sha256": "ba1a4dd7d1f726a68e7002d620f6c2e31ea9fe10f93608e7768fb0561d13f3da"
+      }
+    },
+    {
+      "task": "after_Dy",
+      "job": 13292,
+      "scf_converged_cycles_printed": 19,
+      "native_phase": "Recomputing exchange energy using gridx3",
+      "normal_termination_observed": false,
+      "terminal_result_present": false,
+      "native_output": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/tasks/after_Dy/execution/after_Dy/endpoint.out",
+      "native_output_bytes_read": 122308,
+      "native_prefix_sha256_at_snapshot": "f1d7ba5d549ec40ff931bae314b161b063f7c0407def98f974de5c9fedb47025",
+      "tail": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation/activation_v1/scf_milestone_v1/after_Dy_NATIVE_TAIL.txt",
+        "sha256": "3f8a0631f05ba1c62196f284ad20019a364d7d139e622d899bdab925c689c573"
+      },
+      "manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/tasks/after_Dy/execution/after_Dy/MANIFEST.json",
+        "sha256": "c47b6a2d68f2482b1265c54753399002b1a65b7cfbf69a8b747a2620e2ddc0d8"
+      }
+    }
+  ],
+  "Mex": {
+    "job": 13281,
+    "status": "running_SOSCF",
+    "last_printed_iteration": 20,
+    "native_output": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_central_v1/execution/native/endpoint.out",
+    "native_prefix_sha256_at_snapshot": "0375e4e40a72b8ae4a56c2ec087f01453eb852022725ef5a6b432c1a3716ffdb",
+    "tail": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation/activation_v1/scf_milestone_v1/Mex_NATIVE_TAIL.txt",
+      "sha256": "e19fa3866952c008903a3e113b84af5fccc2a05861e8b12ff92dbdcdcbbadbbd"
+    }
+  },
+  "run_config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation_v1/RUN_CONFIG.json",
+    "sha256": "86a9c7a44f7ba74c3ed368ae91a019e81238ac37a1689161cb311169ec1fe3a0"
+  },
+  "decision": "Continue all four jobs unchanged. Await terminal admission and the full four-cell LBT collector. Mex displacements remain gated by actual central gradient admission and cost review.",
+  "new_scientific_calls": 0,
+  "new_submissions": 0,
+  "scientific_acceptance_established": false,
+  "rank_utilization_measured": false,
+  "resource_note": "Live scheduler accounting, not final cost or measured per-rank utilization."
+}

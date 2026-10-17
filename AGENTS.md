@@ -3,6 +3,14 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the goal remains active and unmet.
 
+17:07UTC progress: remaining whole-LBT13290/13291/13292 print SCF convergence
+after18/17/19 cycles and are recomputing final exchange energies. Final gradients,
+native termination and full four-cell collection remain pending. Mex13281 remains
+in SOSCF at iteration20. All four jobs remain RUNNING; continue unchanged.
+Exact native snapshots and scheduler accounting are preserved under
+lbt_whole_reference_continuation/activation_v1/scf_milestone_v1/ in the active
+diagnostic. This progress does not admit new energies, forces or preference results.
+
 Newest: whole256DFT13051 and saved collector13283 complete/admitted. Phe1CA
 force projection PBE0+ALPB3.341 versus hybrid51.063/MACE0.799kcal/mol/A;
 global RMS force difference10.142hybrid/3.512MACE. Conditional evidence against

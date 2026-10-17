@@ -1,19 +1,6 @@
 # Active coupled La/Dy mechanics — 17 October 2026 UTC
 
-Jacob activated “Implement the saved La/Dy mechanics plan. Work autonomously,
-validate the physics, and document the results.” Read
-`diagnostics/lanm_coupled_mechanics_20261017/PLAN.md` and CURRENT.md.
-Root owns submissions; agents own disjoint LBT Cartesian, LBT partition and Mex
-Cartesian source. Six exact old terminals are pinned; do not repeat their science.
-Mex34-cell qualification12952 and search preflight12955 PASSED. Partition12953
-passed all4 preparations with actual XML unchanged from preserved failed12950.
-LBT preflight12954 failed before energies; diagnostic12956 localizes old exact
-transform replay to1e−16 roundoff. Harvey owns versioned replay-only repair,
-Leibniz paired pools, Mex agent LBT local-electronic/MM adapter. Read actual
-CURRENT/INITIAL_EXECUTION_RECORD.json; all initial jobs are terminal. All physics
-uses Slurm, current standard12CPU/job120CPU/user. No source-displacement windows,
-rigid inherited bonds, production promotion or rejected clamped-core diagnosis.
-The goal is active/unmet; older no-job/planning checkpoints below are historical.
+Jacob activated the saved mechanics plan; read diagnostics/lanm_coupled_mechanics_20261017/PLAN.md and CURRENT.md. Root owns submissions. Mex34-cell qualification12952 and LBT32-cell qualification12958 pass. LBT scout12960 passes physical admission: energy−63.9031 kcal/mol, maxforce83.2803→12.7867; still nonconverged. LBT12961 completed80steps, maxforce2.14 and stillnonconverged. Five other initial searches12962–12966 failed before calls on a node missing a pinned build dependency; unchanged host-only recoveries12967–12971 are submitted with completion wakes. Hybrid/Mexpool zero-call checks12972/12973 are submitted. Inspect actual receipts, do not repeat. Exact scout checkpoint work counts toward continuation. LBT/Mex paired-pool adapters are under review; distinct local-electronic/MM and embeddedDFT qualification are being prepared in parallel. Preserve failed12950/12954 and archived-transform replay repair. All science uses Slurm under current standard12CPU/job120CPU/user. PQQ is unchanged; no broad production promotion or rejected clamped-core diagnosis. Goal active/unmet.
 
 # Latest LanM result — 17 October 2026 UTC
 

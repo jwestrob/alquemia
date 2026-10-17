@@ -45,7 +45,11 @@ Root owns all submissions; the goal remains active and unmet.
  13067 prepares8/8;13068 preflight and five failure controls pass, zero molecular
   calls.13065 proves14/14 scientific cells unchanged; only old wrapper paths differ.
   Original13059/13060/13063 failures are preserved. Read mex_dft_response/READINESS_REPORT.md.
-- Independent DFT12977/12978 continue12MPI each with completion/health wakes.
+- Mex minus 12978 completed normally: original adapter reports DFT available;
+  32 SCF cycles and 22,132 scheduler seconds on 12 CPUs. Final gridx3 took 1,920.673 s.
+ Read mex_dft/scout_minus_result_v1/REPORT.md under the active diagnostic.
+ Energy-based native admission retains failed printed density/gradient flags;
+ no paired derivative result yet. Independent DFT 12977 and 13051 continue.
   Mex8-cell response and remaining whole-LBT reference cells stay gated by actual
   derivative/admission/cost review. No duplicate submissions.
 

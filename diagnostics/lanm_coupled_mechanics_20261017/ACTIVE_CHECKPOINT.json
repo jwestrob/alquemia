@@ -1,6 +1,6 @@
 {
-  "utc": "2026-10-17T07:42:57.770851+00:00",
-  "status": "response_recovery_closed_three_independent_DFT_scouts_running",
+  "utc": "2026-10-17T09:41:30.922783+00:00",
+  "status": "Mex_minus_available_two_independent_DFT_scouts_running",
   "response_recovery": {
     "job": 13048,
     "submission": {
@@ -238,5 +238,25 @@
     },
     "decision": "Same fixed deformation has opposite La work directions under hybrid and whole-MACE Hamiltonians. Independent DFT scouts remain the physical-accuracy gate; no model promotion, parameter adjustment or further geometry/response work.",
     "DFT_before_La_scout_scope": "Starting forces and cost only; finite deformation-work validation requires subsequent admitted reference cells."
+  },
+  "Mex_derivative_scout": {
+    "status": "minus_available_plus_pending_pair_uncollected",
+    "completed_job": 12978,
+    "pending_job": 12977,
+    "review": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/scout_minus_result_v1/ROOT_REVIEW.json",
+      "sha256": "42e2bdc38769d617862651b16c93bd4b82ae0dced61028ac8ed7f9931aff83eb"
+    },
+    "result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_scout_MM_O97_La_minus_v1/execution/RESULT.json",
+      "sha256": "7203afe689b377905df0585fd77afec9f3e3fdbc0cfc33403e61226c34697c52"
+    },
+    "allocated_CPU_seconds_completed_endpoint": 265584,
+    "paired_derivative_passed": null,
+    "next": "Await actual plus endpoint and run original frozen scout_pair collector; remaining six derivative points and eight response endpoints remain gated.",
+    "integration_review": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/scout_minus_result_v1/INTEGRATION_REVIEW.json",
+      "sha256": "91bf748ee262c311cf42f44774bf04052d03a178849efd9a09507835f5a92cce"
+    }
   }
 }

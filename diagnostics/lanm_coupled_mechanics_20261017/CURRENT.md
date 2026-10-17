@@ -20,13 +20,15 @@ LBT is a peptide control, not a second natural LanM.7CCN is Lu-conditioned. Mex 
 
 | Jobs / task | Work | Resources / gate |
 | --- | --- | --- |
-|12977/12978|Embedded PBE0 external-charge La± derivative scout|12 MPI each on node64-28; completion and health wakes armed. Actual derivative/cost result gates six remaining directions.|
+|12977 running;12978 complete|Embedded PBE0 external-charge La± derivative scout|Minus12978 is available under the original native convergence policy; plus12977 continues12MPI. Pair collection and derivative/cost review still gate the remaining six points.|
 |13051|Whole256/q−2 PBE0 before-La force/cost scout|Actual preflight13049 passes all four states,1030 explicit electrons. Only one new reference cell,12MPI. Completion and alert-only health wakes armed.|
 |Ready/gated|Mex eight-cell DFT response adapter|Preparation13067 and preflight/regression13068 pass:8/8 tasks,14 saved cells,5 failure controls. Zero new molecular calls. Await full derivative/cost gates.|
 |13122/13130 complete|Four-start MM term attribution and saved report|4/4 states,208 terms, all closures pass. N–CA stretching and N–CA–C bending dominate.10allocatedCPU-s total. See lbt_mm_term_audit/result/REPORT.md.|
 |13140/13141/13142 complete|Whole-LBT fixed-deformation model completion|Native admission and saved replay pass. Two MACE plus one ALPB calls; four energies/three force sets. 140 CPU-s/11 GPU-s. DFT gates unchanged.|
 
 Read ACTIVE_CHECKPOINT.json for exact active submissions and watcher records. All four original response jobs13017–13020 and recovery13048 are terminal. Recovery costs151s on12CPUs/oneH200; partial values remain diagnostic only. Solver qualification13033/13036 and saved force audit13032 are terminal. No paired pool or figure is submitted. Root owns submissions; agents own adapters/reviews. All numerical science uses Slurm.
+
+Mex minus 12978 completed on 17 October at 09:38 UTC: 32 SCF cycles, normal native termination, adapter status complete/DFT available. Its final gridx3 exchange step took 1,920.673 s; the long silence resolved without intervention. Scheduler cost: 22,132 s × 12 CPUs = 265,584 allocated CPU-s. Native energy-based convergence does not satisfy every printed density/gradient criterion; all flags and physical-state limitations remain. Read [the single-endpoint checkpoint](mex_dft/scout_minus_result_v1/REPORT.md). No paired derivative or mechanics accuracy result is established. Plus 12977 and whole-peptide 13051 remain active; no dependent reference is launched.
 
 **Next:** collect the one whole-peptide DFT force scout to test the large terminal response without inheriting MM stiffness. This is an explicit conditional vacuum/frozen-f test, not a new source or state search. Collect the Mex derivative scout before its remaining checks or response references. The Mex eight-cell response adapter has passed independent static review and actual saved-only preparation13067 passes all8 tasks with the reviewed narrow cache-wrapper repair.13065 completed14/14 exact native/physical/gradient joins and localized six old wrapper-path differences. Actual bound preflight13068 and all five failure controls pass. Reference execution remains blocked until the full eight-point derivative/admission/cost gates pass. No further DFT cells or SCC repairs are launched.
 
@@ -52,7 +54,7 @@ Standard scheduling currently permits12CPU/job and120CPU/user; GPU partitions ha
 
 Saved preparation13059 failed an upstream exact terminal physical/force replay before molecular calls. Its Python binary matched, but NumPy dependency metadata differed (1.26.4 versus original2.4.6). Recovery13060 exposed a missing Gemmi dependency before replay.13063 keeps the original environment and supplies only the exact existing Gemmi package/native libraries in an owned overlay. Neither original environment is modified. The specific terminal numerical field remains unresolved until actual evidence. See mex_dft_response/preparation_failure_v1/.
 
-Mex response adapter delivery: mex_dft_response/READINESS_REPORT.md. All six preparation/diagnosis/preflight allocations are terminal and preserved; no molecular calls were made. The original full physical/source/force checks and native acceptance rules remain unchanged. Only the three independent DFT scouts listed above are active.
+Mex response adapter delivery: mex_dft_response/READINESS_REPORT.md. All six preparation/diagnosis/preflight allocations are terminal and preserved; no molecular calls were made. The original full physical/source/force checks and native acceptance rules remain unchanged. Mex minus12978 is complete; only independent DFT scouts12977 and13051 remain active.
 
 ## Fixed-deformation model completion — 17 October2026UTC
 

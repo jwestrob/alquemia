@@ -1,6 +1,24 @@
 # Active coupled La/Dy mechanics — 17 October 2026 UTC
 
-Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md. Six broad searches are complete/admitted but NONCONVERGED; source discrepancy24.120991→6.209455kcal/mol under unmatched scaffold Hamiltonians, not qualified preference. Mex motion is distributed; local expanded-DFT feasibility is documented but not launched. Hybrid12975 pre-call map failure is preserved; actual12984 isolates derived-Jacobian roundoff with allXYZexact. Versioned repair passes zero-call12985 and9cell force scout12986 (max total residual1.31e−5kcal/mol/A). Eightorigins12987complete;zero-call12988passes. Remaining24derivatives12989complete/allpass;zero-call104cellpool12990passes. Full104cellpool12992stopped:66complete/1isolatedGFNSCCfailure/37unattempted. Failure7CCNbaselineLa/cartesian_03oscillates through500iterations;embeddedpasses. No newsearch. Finite four-call dampingdiagnostic13009COMPLETE/allpasses afterzero-call13008. SameHamiltonian energy/forces reproduce; explicitsinglecomponentrepair+37untouchedcells adapterpreparing,unsubmitted. Allresults preserved;nooptimizer. DFT12977/12978 continue12MPI onnode64-28, health/completionwatchers armed; actual CPUtime confirms work during silent firstFock setup, noSCFresult yet. Root owns all submissions/integration. No duplicate chemistry, new optimizer extension or PQQ change. Goal active/unmet.
+Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
+Root owns all submissions; the goal remains active and unmet.
+
+- Six broad searches are admitted but nonconverged. The conditional source gap
+  decreases24.120991→6.209455kcal/mol under unmatched scaffold Hamiltonians;
+  this is not a qualified preference prediction.
+- Hybrid force checks12986/12989 pass. Original pool12992 retains66 completed
+  cells, one isolated-GFN failure and37 untouched cells. Preserve that failure.
+- Four-call solver diagnostic13009 passes. Actual saved-only recovery13012
+  also passes, admitting66 old cells plus one explicitly certified replacement.
+- Remaining37-cell job13013 is submitted on one H200/12CPUs, with completion
+  watcher2445075. Read POOL_RECOVERY_CHECKPOINT.json and exact receipts.
+  Full104 completion gates the predeclared baseline response; no optimizer yet.
+- Independent DFT12977/12978 continue with12MPI each and health/completion wakes.
+  Actual electronic residuals decrease; no derivative result is available yet.
+
+All scientific computation uses Slurm. No duplicate chemistry, global solver
+fallback, optimizer extension, clamped-core restart or PQQ change is authorized
+by these checkpoints. Preserve source states, failures and concurrent work.
 
 # Latest LanM result — 17 October 2026 UTC
 

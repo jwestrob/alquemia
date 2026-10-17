@@ -3,6 +3,16 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the goal remains active and unmet.
 
+Latest: whole-LBT before-Dy13291 completed at18:43UTC and passes unchanged
+singleton admission with the full256-atom gradient. Actual23058s on12CPUs,
+276696allocatedCPU-s. Only the orbital-gradient residual passes its printed
+threshold; all other residual flags and physical-state/force-accuracy caveats
+remain. Result fc6f6ad2 is archived under
+lbt_whole_reference_continuation/activation_v1/before_Dy_result_v1/.
+After-La13290 and after-Dy13292 remain in gradient calculations; Mex13281
+continues SCF. Await both remaining LBT endpoints before the full four-cell
+collector. No singleton rerun or partial work comparison.
+
 17:07UTC progress: remaining whole-LBT13290/13291/13292 print SCF convergence
 after18/17/19 cycles and are recomputing final exchange energies. Final gradients,
 native termination and full four-cell collection remain pending. Mex13281 remains

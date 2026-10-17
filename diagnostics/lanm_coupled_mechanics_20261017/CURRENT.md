@@ -2,6 +2,24 @@
 
 17 October2026UTC. The activated PLAN remains active and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
+## Before-Dy reference complete; two LBT continuations remain
+
+Job13291 terminated normally at18:43UTC and passes unchanged singleton admission:
+256-atom gradient,17SCF cycles, charge−2/NEL1030, DyECP55, effective singlet and
+physical multiplicity6,12MPI/MaxCore3100. Actual cost23058seconds ×12CPUs =
+276696allocatedCPU-seconds. The result is pinned as `fc6f6ad2…` in
+`lbt_whole_reference_continuation/activation_v1/before_Dy_result_v1/`.
+Root and independent review agree. Only the orbital-gradient residual passes
+its printed threshold; the other five flags remain false. Native admission
+does not establish physical-state stability or numerical force accuracy.
+
+After-La13290 and after-Dy13292 are still calculating gradients; Mex13281 remains
+in SCF. Preserve the completed before-La scout and this before-Dy result, then
+collect all four cells only after both remaining jobs terminate. No partial
+deformation-work comparison, new molecular submission or retry follows.
+The archived completion receipt was inspected proactively; its queued status
+does not establish callback delivery. A delivery acknowledgement remains separate.
+
 ## Execution progress at 17:07 UTC
 
 All three whole-LBT continuations print SCF convergence: after-La13290 after18

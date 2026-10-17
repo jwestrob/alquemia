@@ -41,6 +41,22 @@ MaxCore3100. Independent review agrees. Dy physical multiplicity6 and effective
 molecular multiplicity1 remain distinct; atomic-guess multiplicities do not
 override molecular state. No terminal native admission is implied.
 
+## Before-Dy terminal result
+
+Job13291 completed at18:43UTC with native normal termination and a full256-atom
+gradient. Unchanged singleton admission passes, with17SCF cycles and the original
+state/runtime settings. Actual scheduler cost is23058seconds on12CPUs,
+276696allocatedCPU-seconds. Result `fc6f6ad2…`, native receipt, force report,
+accounting and independent review are archived in `before_Dy_result_v1/`.
+Only the orbital-gradient residual meets its printed threshold; energy, density,
+rotation and DIIS flags remain false. Physical-state and force-consistency
+qualification remain false. No full deformation-work comparison is available.
+
+After-La13290 and after-Dy13292 still calculate gradients. Retain all four planned
+cells and run the original saved collector after both remaining terminal results.
+No molecular retry or new call. Earlier running/startup observations below are
+historical; `ROOT_REVIEW` records proactive review, not delivered-event ACK.
+
 ## Interpretation and next action
 
 Before-Dy13291 emitted a900-second output-silence alert during its first Fock

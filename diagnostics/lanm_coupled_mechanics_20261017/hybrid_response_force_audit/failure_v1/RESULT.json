@@ -1,0 +1,64 @@
+{
+  "protocol": "lbt_four_selected_starts_same_coordinate_force_audit_v1",
+  "status": "execution_failure",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/hybrid_response_force_audit/AUDIT.py",
+    "sha256": "85fc7dbd2dd483676e58857853c3960f70ad4c5e08450b5381f69a0482f8c56d"
+  },
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/hybrid_response_force_audit_v1/CONFIG.json",
+    "sha256": "a4da7df19b1c84dfdd7dee442e9656a6034efce1b3df50bbb5a9157ab2821205"
+  },
+  "slurm_job_id": "13031",
+  "new_molecular_calls": 0,
+  "new_geometries": 0,
+  "force_convention": "F = -gradient; delta F = hybrid - whole; kcal/mol/A",
+  "declared_states": [
+    [
+      "7CCO",
+      "La"
+    ],
+    [
+      "7CCO",
+      "Dy"
+    ],
+    [
+      "7CCN",
+      "La"
+    ],
+    [
+      "7CCN",
+      "Dy"
+    ]
+  ],
+  "rows": [
+    {
+      "source_id": "7CCO",
+      "metal": "La",
+      "status": "unavailable_not_admitted"
+    },
+    {
+      "source_id": "7CCO",
+      "metal": "Dy",
+      "status": "unavailable_not_admitted"
+    },
+    {
+      "source_id": "7CCN",
+      "metal": "La",
+      "status": "unavailable_not_admitted"
+    },
+    {
+      "source_id": "7CCN",
+      "metal": "Dy",
+      "status": "unavailable_not_admitted"
+    }
+  ],
+  "failure": "ValueError('Restored full component derivative evidence differs')",
+  "traceback": "Traceback (most recent call last):\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/hybrid_response_force_audit/AUDIT.py\", line 222, in main\n    loaded, cart, old, by = inputs(cfg, out, result)\n                            ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/hybrid_response_force_audit/AUDIT.py\", line 73, in inputs\n    loaded = response.prepare(rcfg, d, scratch)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_hybrid_response/RESPONSE.py\", line 90, in prepare\n    base, ev, candidates, cells, old_cells, whole = pool.prepare(pcfg, directory, scratch)\n                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_hybrid_pool_recovery/RECOVER.py\", line 303, in prepare\n    base, ev, candidates, cells, old_cells, whole = _POOL.prepare(original_cfg, prior_dir, scratch)\n                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_hybrid_pool/COMPARE.py\", line 249, in prepare\n    base, ev = qualified_hybrid(cfg, out, result)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_hybrid_pool/COMPARE.py\", line 78, in qualified_hybrid\n    base, ev, centers, frozen = qualifier.load_inputs(qcfg, d, scratch)\n                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_hybrid/QUALIFY_EXPANDED.py\", line 192, in load_inputs\n    center = restore(ev, scout['center'])\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_hybrid/QUALIFY_EXPANDED.py\", line 59, in restore\n    p = ev.restore(record)\n        ^^^^^^^^^^^^^^^^^^\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_hybrid/EVALUATOR_V2.py\", line 498, in restore\n    require(all(np.array_equal(raw_gradients[k],p['component_gradients_kcal_mol_A'][k]) for k in COMPONENTS),\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_hybrid/EVALUATOR_V2.py\", line 36, in require\n    if not ok: raise ValueError(message)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Restored full component derivative evidence differs\n",
+  "elapsed_seconds": 5.164145358023234,
+  "process_CPU_seconds": 3.545465867,
+  "report": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/hybrid_response_force_audit_v1/execution/REPORT.md",
+    "sha256": "bbdaaa1cddf6b0bdf37285b81809901ee2fa26bb4cd55bd66bff848909f37d5a"
+  }
+}

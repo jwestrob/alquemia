@@ -2,48 +2,32 @@
 
 17 October2026UTC. The activated PLAN remains active and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
-## Mex central and minus complete; plus still running
+## Mex consistent-grid test complete: derivative gate still fails
 
-18 October UTC: minus13597 completed32,661s on12CPUs (391,932allocatedCPU-s)
-and passes original native admission, resultbcca4f86. SCF34 stopped through Energy
-Check; only energy-change passes its printed tolerance. The COSX scalar-closure
-remainder exceeds its recorded printed-rounding envelope; retain this diagnostic
-without inventing a new gate or force-error bound. D4 closure passes. Full result,
-cost, reviews and actual terminal-health delivery are archived under
-`mex_dft/consistent_grid_v1/displacement_submission_v1/minus/result_v1/`.
-Plus13596 remains RUNNING, last seen atSCF37. Await its actual terminal result
-before the unchanged three-cell Slurm collection. No repeated minus calculation,
-partial derivative inference, changed settings or tolerance.
+18 October 2026 UTC: all three native endpoints are admitted. Saved collector
+14107 completes the comparison and returns `failed_derivative_gate`; its exit 1
+records the scientific gate failure. **Close this finite candidate.**
 
-Central13281 completed41,475s on12CPUs (497,700allocatedCPU-s) and passes unchanged
-native/source/state/grid/gradient admission. Full resultdbf29cb3, assembly, actual
-health delivery and independent review are archived under
-`mex_dft/consistent_grid_v1/central_result_v1/`.
-SCF46 stopped via the gradient check; only its orbital-gradient printed residual
-passes. The other five residual flags and physical-state/global-force limits
-remain. Grid2=grid3 matches fully, with original grid1/XC unchanged.
-Read [the central report](mex_dft/consistent_grid_v1/CENTRAL_REPORT.md).
+Embedded PBE0 gives analytic slope −3.673646 versus energy-difference slope
+−3.797017 kcal/mol/Å: residual −0.123372 exceeds the original 0.005380 tolerance.
+MM and fixed-charge ALPB pass their individual checks; the total fails.
+The new matched-grid recipe shows a smaller discrepancy than the historical
+0.414201 result but still fails consistency. No unique cause or physical accuracy follows. Read the
+[final report](mex_dft/consistent_grid_v1/final_collection_v1/REPORT.md).
 
-Root accepted the measured cost and approved only the original two displaced
-singlepoints. Both launched on12MPI each; minus is now complete and plus continues; config84a47050,
-decision0aad2cd9, source1600a0a5 unchanged. Completion watchers3166957/3166962
-and health armers3166960/3166963 are recorded in task-local SUBMISSION.json under
-`workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/`.
-Exact source/cost/static-review/submission records are preserved under
-`mex_dft/consistent_grid_v1/displacement_submission_v1/`.
-Each native run must replay the admitted central and match its allocation before
-launch. Both effective native grid/state/runtime headers now match the central;
-see `displacement_submission_v1/NATIVE_HEADER_REVIEW.json`. Both delivered
-initial silence alerts13596/13597 were reviewed: all12 owned MPI workers per job
-were actively consuming CPU during the first Fock build, before SCF residuals printed. The completed
-central's first iteration took1989.4s. Continue unchanged, without interpreting
-CPU activity as convergence proof. Actual process and alert evidence are archived
-under `displacement_submission_v1/{plus,minus}/health_review_silence_v1/`.
-No retry, new MM/ALPB calls, changed step/tolerance or original-six/eight
-continuation. No collector holds an allocation while waiting. After both actual
-endpoints terminate, use the existing three-cell collector under Slurm; preserve
-unavailable cells if either fails. No directional result exists yet. The complete
-LBT result and challenged hybrid-response decision below remain unchanged.
+The exact result `4aa50af0…`, fresh central assembly, all three native pins,
+unchanged source `1600a0a5…`, config `ecee028c…`, costs and independent review are
+preserved under `mex_dft/consistent_grid_v1/final_collection_v1/`.
+Collector 14107 made zero molecular calls. All candidate jobs are terminal.
+Molecular allocations total 1,363,404 CPU-seconds; listed support adds 33.
+
+Retain every SCF residual and stopping-route caveat, including the minus COSX
+scalar-closure flag. These are not error bounds or post hoc rejection criteria.
+No retries, changed thresholds/steps, grid/solver sweep or production change.
+The original remaining six qualification and eight response cells stay stopped.
+The completed LBT reference still challenges the hybrid scaffold force balance;
+that is the next mechanics target, not an excuse to change the input structures.
+The broader goal remains unmet. Earlier execution checkpoints are historical.
 
 ## Whole LBT four-cell reference complete
 
@@ -86,9 +70,7 @@ requiring exact internal component closure and original baseline replay.
 All four support jobs total3allocatedCPU-s; no molecular reruns.
 
 Moving the tested boundary alone does not repair the scaffold force balance.
-No unique parameter fault or La/Dy preference follows. Mex central admission and
-cost review have now passed as described above; the two displaced energies remain
-pending. The mechanics goal remains unmet. Earlier checkpoints below are historical.
+No unique parameter fault or La/Dy preference follows. The separate Mex three-cell consistency test now fails as described above. The mechanics goal remains unmet. Earlier checkpoints below are historical.
 
 ## Before-Dy reference complete; two LBT continuations remain
 

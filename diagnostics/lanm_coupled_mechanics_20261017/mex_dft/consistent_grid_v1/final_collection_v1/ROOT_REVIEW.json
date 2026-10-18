@@ -1,0 +1,48 @@
+{
+  "utc": "2026-10-18T10:19:45.525853+00:00",
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_collection_v1/execution/RESULT.json",
+    "sha256": "4aa50af0ea9ab26219306aff4b2380ab64f38b01282017f19a7cc98d0d782741"
+  },
+  "status": "reviewed_scientific_derivative_gate_failure",
+  "all_three_endpoint_admissions_pass": true,
+  "checks": {
+    "PBE0_embedded": {
+      "analytic_kcal_mol_A": -3.6736455776498964,
+      "FD_kcal_mol_A": -3.797017470284505,
+      "residual_kcal_mol_A": -0.12337189263460857,
+      "tolerance_kcal_mol_A": 0.005379701747028451,
+      "passed": false
+    },
+    "MM_ledger": {
+      "analytic_kcal_mol_A": 17.752465327000138,
+      "FD_kcal_mol_A": 17.752485206528945,
+      "residual_kcal_mol_A": 1.9879528807109637e-05,
+      "tolerance_kcal_mol_A": 0.006775248520652895,
+      "passed": true
+    },
+    "fixed_FF_charge_ALPB": {
+      "analytic_kcal_mol_A": -5.530642594057692,
+      "FD_kcal_mol_A": -5.530641590834248,
+      "residual_kcal_mol_A": 1.0032234438739351e-06,
+      "tolerance_kcal_mol_A": 0.005553064259405769,
+      "passed": true
+    },
+    "total": {
+      "analytic_kcal_mol_A": 8.54817715529255,
+      "FD_kcal_mol_A": 8.424826145410192,
+      "residual_kcal_mol_A": -0.12335100988235759,
+      "tolerance_kcal_mol_A": 0.005854817715529255,
+      "passed": false
+    }
+  },
+  "new_molecular_calls": 0,
+  "decision": "Close consistent-grid candidate under its frozen stop. Original failed protocol and remaining6/response8 remain stopped; no molecular retry, optimization, tolerance/step/grid/solver change or promotion.",
+  "limitations": [
+    "One La external-charge direction at h=0.001 A only.",
+    "SCF energy-change and tolerance proxies are not error bounds.",
+    "Different stopping routes; false printed residuals retained.",
+    "Minus final-grid scalar-closure flag false is retained, not a new admission criterion.",
+    "No unique native bug, root cause, physical state, global force or affinity qualification."
+  ]
+}

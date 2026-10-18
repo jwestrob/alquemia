@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-10-18T10:16:29.381157+00:00",
+  "question": "Does the separately declared consistent-grid La external O97 direction satisfy the unchanged analytic versus finite-difference component and total derivative gate?",
+  "scope": "Saved three-cell collection only; no molecular calls, optimization, retries, or original-six/eight continuation. All three native jobs terminal.",
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_collection_v1/CONFIG.json",
+    "sha256": "ecee028c850f1939d3f02c66de784e697cb40c665793f36e36c1f9ccc0c3ece6"
+  },
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_preflight_v2/CONSISTENT_GRID_V2.py",
+    "sha256": "1600a0a55635d9c592295cc13cd24d45c2911591889875f4fe06dee363348101"
+  },
+  "endpoint_results": {
+    "MM_O97_La_central": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_central_v1/execution/RESULT.json",
+      "sha256": "dbf29cb3d3b8948630f71b77d924f39630e6a399ba8a21f59bfdd5f118acb27f"
+    },
+    "MM_O97_La_plus": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/plus/execution/RESULT.json",
+      "sha256": "4d48d151fbb4ace39a1b2b8d01fa6906a54a3707329d223fd0b818efeeb2ac7f"
+    },
+    "MM_O97_La_minus": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/execution/RESULT.json",
+      "sha256": "bcca4f86aca07fa6ced24c7480f3593485683c73f18d6f947eb8d489c04fc80e"
+    }
+  },
+  "threshold": "abs(FD-analytic) <= 0.005 + 0.0001*max(abs(FD),abs(analytic)) kcal/mol/A",
+  "settings": "Unchanged previously bound source, h=0.001 A; new central gradient and two final native energies with saved MM/ALPB; exact printed-string subtraction.",
+  "execution": "Slurm standard/banfield; one CPU, defaults, no requeue",
+  "interpretation": "Pass qualifies only one direction at one step under this new numerical recipe. Failure closes candidate. Physical state, SCF error bound and global forces remain unqualified."
+}

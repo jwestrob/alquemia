@@ -22,21 +22,19 @@ lbt_partition_force_reference_v1/REPORT.md and archived_comparison_result_v1/.
 Raw exact reconstruction failures13446/13455/13460 remain failed; successful13463
 uses separately declared admitted POINT forces with exact internal/baseline checks.
 All four saved support jobs total3CPU-s; no tolerance change or molecular rerun.
-Mex13281 now complete/admitted:41,475s12CPUs=497,700CPU-s. SCF46 gradient-check
-stop; only orbital-gradient printed residual passes. Fullgrid2=grid3/source/state
-checks pass; no directional qualification yet. Root approved original2SPs after
-cost review: plus13596/minus13597 launched12MPI each, config84a47050,
-decision0aad2cd9, source1600a0a5 unchanged. Read mex_dft/consistent_grid_v1/
-CENTRAL_REPORT.md and displacement_submission_v1/ under the active diagnostic.
-Completion/health wakes armed; all launch details in task-local SUBMISSION.json.
-No repeats, retry, newMMALPB, altered step/tolerance or original-six/eight
-continuation. Wait for both terminal results before the existing Slurm three-cell
-collector; no waiting collector allocation. Minus13597 now complete/admitted:
-32,661s12CPU=391,932CPU-s, resultbcca4f86. SCF34 EnergyCheck, only energy-change
-printed residual passes. Retain COSX scalar-closure flagfalse and D4closuretrue;
-neither new force qualification nor new posthoc rejection. Plus13596 remains
-RUNNING; no partial derivative claim or minus repeat. Read minus/result_v1/
-under displacement_submission_v1. Original failed protocols remain failed.
+Mex consistent-grid test is now COMPLETE with a failed derivative gate.
+All three native endpoints13281/13596/13597 are admitted; saved collector14107
+records PBE0 residual−0.123372 versus tolerance0.005380 kcal/mol/A. MM and ALPB
+pass; total fails. The new recipe shows a smaller discrepancy than the historical
+0.414201 result but does not qualify the force. Read mex_dft/consistent_grid_v1/final_collection_v1/
+REPORT.md under the active diagnostic. Result4aa50af0/configecee028c/source1600a0a5
+and independent review are preserved. Collector made zero molecular calls.
+Molecular cost1363404CPU-s; listed support33CPU-s. All candidate jobs terminal.
+Close candidate under original stop: no retry, new grid/solver/step/tolerance,
+optimization, production promotion or original-six/eight continuation. Retain
+all SCF/state/finite-step caveats and minus COSX scalar-closure flag. Next mechanics
+target remains the unsupported hybrid scaffold response against whole-LBT DFT;
+this result is not a La/Dy preference or a unique native implementation defect.
 The full goal remains unmet. Earlier running/completion checkpoints are historical.
 
 Latest: whole-LBT before-Dy13291 completed at18:43UTC and passes unchanged

@@ -1,0 +1,133 @@
+{
+  "reviewed_utc": "2026-10-18T10:17:02.304895+00:00",
+  "job_id": "13596",
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/plus/execution/RESULT.json",
+    "sha256": "4d48d151fbb4ace39a1b2b8d01fa6906a54a3707329d223fd0b818efeeb2ac7f"
+  },
+  "status": "admitted_under_unchanged_native_policy",
+  "native_status": "available",
+  "SCF": {
+    "terminal_residuals": {
+      "Energy change": {
+        "value": 1.0914e-10,
+        "printed_tolerance": 1e-09,
+        "within_printed_tolerance": true
+      },
+      "MAX-Density change": {
+        "value": 2.5463e-05,
+        "printed_tolerance": 1e-08,
+        "within_printed_tolerance": false
+      },
+      "RMS-Density change": {
+        "value": 2.109e-07,
+        "printed_tolerance": 1e-09,
+        "within_printed_tolerance": false
+      },
+      "Orbital Gradient": {
+        "value": 4.2875e-07,
+        "printed_tolerance": 2e-06,
+        "within_printed_tolerance": true
+      },
+      "Orbital Rotation": {
+        "value": 2.3915e-05,
+        "printed_tolerance": 2e-06,
+        "within_printed_tolerance": false
+      },
+      "DIIS Error": {
+        "value": 0.00058408,
+        "printed_tolerance": 1e-08,
+        "within_printed_tolerance": false
+      }
+    },
+    "ConvCheckMode": "Total+1el-Energy",
+    "ConvForced": 0,
+    "all_printed_residuals_pass": false,
+    "SOSCF_initialized": true,
+    "native_cycles": [
+      "46"
+    ],
+    "warnings_and_gap_lines": [
+      "                                        WARNINGS",
+      "                       Please study these warnings very carefully!",
+      "WARNING: The chosen methods will break translational/rotational symmetry",
+      "WARNING: The chosen methods will break translational symmetry",
+      "WARNING: The chosen methods will break translational symmetry",
+      "Warning: op=0 Small HOMO/LUMO gap (  -0.227) - skipping pre-diagonalization"
+    ],
+    "admission_policy": "unchanged native convergence and compact state/gradient parser; residual flags are observations, not new all-criteria admission"
+  },
+  "final_grid_energy_diagnostics": {
+    "output": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/plus/execution/native/endpoint.out",
+      "sha256": "9b5d66fcfec208b4ed565f662ef8545cb5419f08b9f1672679667463242b4f39"
+    },
+    "converged_cycle": 46,
+    "fields": {
+      "last_cycle": {
+        "line": 2148,
+        "text": "   46    -5636.4640340697769716    -1.09e-10  2.11e-07  2.55e-05  4.29e-07   403.3",
+        "value": "-5636.4640340697769716",
+        "half_quantum_hartree": "5E-17"
+      },
+      "cosx_printed": {
+        "line": 2159,
+        "text": "Exchange energy change after final integration :     -0.000000027 Eh",
+        "value": "-0.000000027",
+        "half_quantum_hartree": "5E-10"
+      },
+      "post_grid": {
+        "line": 2167,
+        "text": "Total Energy       :      -5636.46403409699178 Eh         -153375.98385 eV",
+        "value": "-5636.46403409699178",
+        "half_quantum_hartree": "5E-15"
+      },
+      "post_grid_short": {
+        "line": 2160,
+        "text": "Total energy after final integration           :  -5636.464034097 Eh",
+        "value": "-5636.464034097",
+        "half_quantum_hartree": "5E-10"
+      },
+      "exchange_old": {
+        "line": 2157,
+        "text": "Old exchange energy                            :   -178.933309543 Eh",
+        "value": "-178.933309543",
+        "half_quantum_hartree": "5E-10"
+      },
+      "exchange_new": {
+        "line": 2158,
+        "text": "New exchange energy                            :   -178.933309569 Eh",
+        "value": "-178.933309569",
+        "half_quantum_hartree": "5E-10"
+      },
+      "D4_printed": {
+        "line": 8074,
+        "text": "Dispersion correction           -0.297966109",
+        "value": "-0.297966109",
+        "half_quantum_hartree": "5E-10"
+      },
+      "final": {
+        "line": 8079,
+        "text": "FINAL SINGLE POINT ENERGY     -5636.762000206363",
+        "value": "-5636.762000206363",
+        "half_quantum_hartree": "5E-13"
+      }
+    },
+    "printed_closures": {
+      "post_minus_last_cycle_minus_printed_COSX": {
+        "residual_hartree": "-2.148084E-10",
+        "printed_rounding_bound_hartree": "5.0000505E-10",
+        "within_printed_rounding": true
+      },
+      "final_minus_post_minus_printed_D4": {
+        "residual_hartree": "-3.7122E-10",
+        "printed_rounding_bound_hartree": "5.00505E-10",
+        "within_printed_rounding": true
+      }
+    }
+  },
+  "scheduler_elapsed_seconds": 39481,
+  "allocated_cpus": 12,
+  "allocated_CPU_seconds": 473772,
+  "decision": "Admit plus to original saved three-cell collector. No individual derivative or physical-accuracy claim."
+}

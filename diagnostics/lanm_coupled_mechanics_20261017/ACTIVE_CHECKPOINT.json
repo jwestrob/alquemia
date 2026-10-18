@@ -1,6 +1,6 @@
 {
   "utc": "2026-10-18T08:21:43.502843+00:00",
-  "status": "LBT_reference_complete_Mex_central_and_minus_admitted_plus_running",
+  "status": "LBT_reference_complete_Mex_consistent_grid_candidate_closed_failed_derivative_gate",
   "response_recovery": {
     "job": 13048,
     "submission": {
@@ -88,7 +88,7 @@
     12978
   ],
   "paired_response_pool_available": false,
-  "goal": "active_unmet",
+  "goal": "unmet",
   "Mex_response_adapter": {
     "status": "stopped_failed_original_derivative_prerequisite",
     "job_id": null,
@@ -362,7 +362,7 @@
       "required_before_binding": "Actual13051 admission and original collector; root force/cost continuation review"
     }
   },
-  "updated_utc": "2026-10-18T08:21:43.502843+00:00",
+  "updated_utc": "2026-10-18T10:22:13.820633+00:00",
   "Mex_saved_gridx3_diagnosis": {
     "status": "saved_diagnosis_complete_original_qualification_failed",
     "job_id": "13277",
@@ -400,7 +400,7 @@
     }
   },
   "Mex_consistent_grid_candidate": {
-    "status": "central_and_minus_admitted_plus_running",
+    "status": "complete_closed_failed_derivative_gate",
     "specification": {
       "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/EXECUTION_SPEC_V1.md",
       "sha256": "c18dc071b6622624cedc1dec5fa8e0a0a71a0d11ac0abb2988f8c86a7ff19259"
@@ -420,12 +420,24 @@
     "maximum_CPUs_per_call": 12,
     "first_stage": "central analytic gradient only after source review and actual zero-call Slurm preflight",
     "second_stage": "two displaced singlepoints only after actual central/native-grid admission and measured-cost decision",
-    "runnable_config_created": false,
-    "submissions": [],
-    "original_failed_gate_unchanged": true
+    "runnable_config_created": true,
+    "submissions": [
+      "13279",
+      "13280",
+      "13281",
+      "13596",
+      "13597",
+      "14107"
+    ],
+    "original_failed_gate_unchanged": true,
+    "directional_gate_passed": false,
+    "report": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/final_collection_v1/REPORT.md",
+      "sha256": "1ffa99a534278127a403aca6a9e80d4fb77c147fd69d827785b5e4c313391f1a"
+    }
   },
   "consistent_grid_execution": {
-    "status": "central_and_minus_complete_plus_running",
+    "status": "complete_closed_failed_derivative_gate",
     "preflight_job": "13280",
     "submission": {
       "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_preflight_v2/SUBMISSION.json",
@@ -516,7 +528,7 @@
       "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/STATIC_REVIEW.json",
       "sha256": "c149ca78e804078240ca59457f38cca1435c4d17fc261134eb44f02b0e05b415"
     },
-    "directional_comparison_available": false,
+    "directional_comparison_available": true,
     "waiting_collector_submitted": false,
     "displacement_tasks": {
       "plus": {
@@ -525,13 +537,30 @@
           "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/plus/SUBMISSION.json",
           "sha256": "0c8ba5de282fbc1ff9102e0c37f3cc9a221d3d17c2a2a1292cbaeb306e575a81"
         },
-        "status_at_review": "RUNNING",
+        "status_at_review": "COMPLETED",
         "completion_watcher_pid": 3166957,
         "health_armer_pid": 3166960,
         "result_expected": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/plus/execution/RESULT.json",
         "silence_review": {
           "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/displacement_submission_v1/plus/health_review_silence_v1/ROOT_ACK.json",
           "sha256": "8e52fd64b6a93fc4add2ef4ccd8816db9cd41281a2310f68cbd82744eb3f9d04"
+        },
+        "status": "complete_admitted",
+        "result": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/displacement_submission_v1/plus/result_v1/RESULT.json",
+          "sha256": "4d48d151fbb4ace39a1b2b8d01fa6906a54a3707329d223fd0b818efeeb2ac7f"
+        },
+        "root_review": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/displacement_submission_v1/plus/result_v1/ROOT_REVIEW.json",
+          "sha256": "b4ca1a155d66f920fa7af93c7caa2132a5f32a1d703724688f5548fbc8142847"
+        },
+        "independent_review": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/displacement_submission_v1/plus/result_v1/INDEPENDENT_REVIEW.json",
+          "sha256": "5fd029e256dfeb205c2359c9313f36e394e0ab6056b9b921afa0ec1d69bdd23f"
+        },
+        "completion_delivery_ack": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/displacement_submission_v1/plus/result_v1/ROOT_ACK.json",
+          "sha256": "b2db6204d4b96bd687d46492d4c4801c95f1326c651c50768ab9a4a5ee4d9185"
         }
       },
       "minus": {
@@ -572,7 +601,7 @@
         }
       }
     },
-    "next": "Await plus13596 terminal result, then use unchanged three-cell collector on Slurm. Preserve minus scalar-closure flag and all residual caveats; no retries or partial derivative inference.",
+    "next": "Candidate closed. Original remaining6/response8 stopped. No retries or automatic new native calls. Preserve full result; next mechanics task should target hybrid scaffold force balance against the existing whole-peptide reference with a separately declared finite design.",
     "displacement_startup_review": {
       "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/displacement_submission_v1/STARTUP_REVIEW.json",
       "sha256": "8fff2495fec05e7eac008bf4191aefe9ce1b4f6032d7c007d031ce36abad86cc"
@@ -581,7 +610,38 @@
     "displacement_native_header_review": {
       "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/displacement_submission_v1/NATIVE_HEADER_REVIEW.json",
       "sha256": "29f65ce0e794106183b03a898411cbc30ed7add60313020c2cdc411d11713b6f"
-    }
+    },
+    "directional_gate_passed": false,
+    "collection_job": "14107",
+    "collection_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/final_collection_v1/RESULT.json",
+      "sha256": "4aa50af0ea9ab26219306aff4b2380ab64f38b01282017f19a7cc98d0d782741"
+    },
+    "collection_config": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/final_collection_v1/CONFIG.json",
+      "sha256": "ecee028c850f1939d3f02c66de784e697cb40c665793f36e36c1f9ccc0c3ece6"
+    },
+    "collection_review": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/final_collection_v1/ROOT_REVIEW.json",
+      "sha256": "043ca13ab30d6b6d81bb294429541cde5dc751824bc91312702e5e8755403869"
+    },
+    "collection_independent_review": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/final_collection_v1/INDEPENDENT_REVIEW.json",
+      "sha256": "dd94e58c92db173f9f2d6eafe86a6f9ff3d35624001ca2641ed1ed477c0388eb"
+    },
+    "report": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/final_collection_v1/REPORT.md",
+      "sha256": "1ffa99a534278127a403aca6a9e80d4fb77c147fd69d827785b5e4c313391f1a"
+    },
+    "costs": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/final_collection_v1/COSTS.json",
+      "sha256": "dd200a17c6cd975b8b9feb78b388a77af9733a8ac6a49c8f0d1436b87f3c5da0"
+    },
+    "remaining_owned_jobs": [],
+    "collection_scheduler_state": "FAILED",
+    "collection_exit_code": "1:0",
+    "collection_failure_kind": "completed_scientific_derivative_gate_failure",
+    "completion_event_delivery": "queued_by_watcher_not_yet_delivered_to_root"
   },
   "whole_peptide_continuation": {
     "status": "all_four_admitted_saved_collection_complete",
@@ -857,6 +917,7 @@
       13463
     ],
     "support_allocated_CPU_seconds": 3,
-    "next": "Keep challenged LBT response closed. Scaffold force balance requires independent validation; Mex central admission/cost gate remains pending, last reviewed RUNNING."
-  }
+    "next": "Completed comparison leaves terminal MM-dominated force discrepancy. Separate Mex consistency candidate now closed after failed gate. Next mechanics design should target hybrid scaffold force balance against saved whole-peptide DFT; no completed chemistry repeated."
+  },
+  "goal_tool_status_at_review": "paused"
 }

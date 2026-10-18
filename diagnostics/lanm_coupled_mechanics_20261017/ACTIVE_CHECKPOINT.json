@@ -1,6 +1,6 @@
 {
-  "utc": "2026-10-17T23:39:05.115203+00:00",
-  "status": "LBT_reference_and_partition_complete_Mex_central_admitted_two_displacements_running",
+  "utc": "2026-10-18T08:21:43.502843+00:00",
+  "status": "LBT_reference_complete_Mex_central_and_minus_admitted_plus_running",
   "response_recovery": {
     "job": 13048,
     "submission": {
@@ -362,7 +362,7 @@
       "required_before_binding": "Actual13051 admission and original collector; root force/cost continuation review"
     }
   },
-  "updated_utc": "2026-10-17T23:39:05.115203+00:00",
+  "updated_utc": "2026-10-18T08:21:43.502843+00:00",
   "Mex_saved_gridx3_diagnosis": {
     "status": "saved_diagnosis_complete_original_qualification_failed",
     "job_id": "13277",
@@ -400,7 +400,7 @@
     }
   },
   "Mex_consistent_grid_candidate": {
-    "status": "central_admitted_original_pair_running",
+    "status": "central_and_minus_admitted_plus_running",
     "specification": {
       "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/EXECUTION_SPEC_V1.md",
       "sha256": "c18dc071b6622624cedc1dec5fa8e0a0a71a0d11ac0abb2988f8c86a7ff19259"
@@ -425,7 +425,7 @@
     "original_failed_gate_unchanged": true
   },
   "consistent_grid_execution": {
-    "status": "central_complete_admitted_two_original_displacements_running",
+    "status": "central_and_minus_complete_plus_running",
     "preflight_job": "13280",
     "submission": {
       "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_preflight_v2/SUBMISSION.json",
@@ -540,17 +540,39 @@
           "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/SUBMISSION.json",
           "sha256": "b3ef8e360e6e92d5ff26d90722204e22960f4598df99ee9cfd780fbfcd3dfea3"
         },
-        "status_at_review": "RUNNING",
+        "status_at_review": "COMPLETED_admitted",
         "completion_watcher_pid": 3166962,
         "health_armer_pid": 3166963,
         "result_expected": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/execution/RESULT.json",
         "silence_review": {
           "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/displacement_submission_v1/minus/health_review_silence_v1/ROOT_ACK.json",
           "sha256": "032bf4d566bfc7e4099f4ad21ec32128b80302c1fa7c04126732e1544260dc36"
+        },
+        "result": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/execution/RESULT.json",
+          "sha256": "bcca4f86aca07fa6ced24c7480f3593485683c73f18d6f947eb8d489c04fc80e"
+        },
+        "root_review": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/displacement_submission_v1/minus/result_v1/ROOT_REVIEW.json",
+          "sha256": "3fb42d429e6ee8d9b76e872399edfd5fa65543093dd2c2917cb1a9a6088fcdd2"
+        },
+        "independent_review": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/displacement_submission_v1/minus/result_v1/INDEPENDENT_REVIEW.json",
+          "sha256": "cd4d525319ea5f19d48bdc8987970cb3eafe22dacd892d5614fdd6878a0f4ba2"
+        },
+        "health_delivery": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/displacement_submission_v1/minus/result_v1/HEALTH_TERMINAL_ROOT_ACK.json",
+          "sha256": "3abaa191c635bd96575ec5c45e381c56d4b6686393d4e545af1d6c8767391cda"
+        },
+        "actual_cost": {
+          "scheduler_elapsed_seconds": 32661,
+          "allocated_cpus": 12,
+          "allocated_CPU_seconds": 391932,
+          "not_measured_utilization": true
         }
       }
     },
-    "next": "Read both actual terminal results before invoking the unchanged three-cell saved collector on Slurm. No retries, extra cells, changed thresholds or original failed continuation.",
+    "next": "Await plus13596 terminal result, then use unchanged three-cell collector on Slurm. Preserve minus scalar-closure flag and all residual caveats; no retries or partial derivative inference.",
     "displacement_startup_review": {
       "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/displacement_submission_v1/STARTUP_REVIEW.json",
       "sha256": "8fff2495fec05e7eac008bf4191aefe9ce1b4f6032d7c007d031ce36abad86cc"

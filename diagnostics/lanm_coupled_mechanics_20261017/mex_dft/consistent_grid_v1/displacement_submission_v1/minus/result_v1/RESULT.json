@@ -1,0 +1,577 @@
+{
+  "protocol": "mex_consistent_COSX_La_O97_three_v1",
+  "stage": "run",
+  "status": "complete",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_preflight_v2/CONSISTENT_GRID_V2.py",
+    "sha256": "1600a0a55635d9c592295cc13cd24d45c2911591889875f4fe06dee363348101"
+  },
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/CONFIG.json",
+    "sha256": "84a47050ee72128a8b26a64f6d40093e7bcb668891fa72d49d81a94d4cb1128c"
+  },
+  "slurm_job_id": "13597",
+  "settings": {
+    "maximum_new_native_calls": 3,
+    "mpi_ranks": 12,
+    "workers": 1,
+    "h_A": 0.001,
+    "absolute_kcal_mol_A": 0.005,
+    "relative": 0.0001,
+    "no_retries": true,
+    "new_MM_calls": 0,
+    "new_ALPB_calls": 0
+  },
+  "declared_tasks": [
+    "MM_O97_La_central",
+    "MM_O97_La_plus",
+    "MM_O97_La_minus"
+  ],
+  "rows": {
+    "MM_O97_La_central": {
+      "status": "not_requested"
+    },
+    "MM_O97_La_plus": {
+      "status": "not_requested"
+    },
+    "MM_O97_La_minus": {
+      "status": "available",
+      "task": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/execution/TASK.json",
+        "sha256": "c1a8d9f7d28688daa85ddce1b6149b566b38280c470a804021a02ed53f8ed82c"
+      },
+      "manifest": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/execution/MANIFEST.json",
+        "sha256": "a838293f4466d6f351f3b1598ec874c36dfa822dfb47117daa3eccc93d372376"
+      }
+    }
+  },
+  "new_DFT_calls_requested": 1,
+  "new_DFT_calls_attempted": 1,
+  "native_runner_invocations": 1,
+  "new_MM_calls": 0,
+  "new_ALPB_calls": 0,
+  "new_MACE_calls": 0,
+  "new_GFN_calls": 0,
+  "optimization_steps": 0,
+  "physical_state_qualified": false,
+  "global_force_qualified": false,
+  "SCF_error_bound_available": false,
+  "original_failed_qualification_preserved": true,
+  "original_six_and_response_eight_remain_stopped": true,
+  "single_step_truncation_qualified": false,
+  "scientific_binding": {
+    "protocol": "mex_consistent_COSX_La_O97_three_v1",
+    "implementation": "1600a0a55635d9c592295cc13cd24d45c2911591889875f4fe06dee363348101",
+    "specification": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/EXECUTION_SPEC_V1.md",
+      "sha256": "c18dc071b6622624cedc1dec5fa8e0a0a71a0d11ac0abb2988f8c86a7ff19259"
+    },
+    "root_decision": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/ROOT_DESIGN_DECISION.json",
+      "sha256": "2a2d6917a4e00967b27b8e2a64e860dfdca0bc16a4fb7bff518fed3dff457b5e"
+    },
+    "diagnosis_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_gridx3_saved_diagnosis_v1/execution/RESULT.json",
+      "sha256": "08e4d217dbe5a6391afadc09ddc8aa6a84c51e2eb7d316b17e6b9362b2a508a4"
+    },
+    "failed_collector": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_scout_pair_collection_v1/execution/RESULT.json",
+      "sha256": "334bb6b4374538a5f293f1e6175340309566de92e42af0588485bca5dfe20953"
+    },
+    "qualifier": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_preparation_v1/QUALIFY.py",
+      "sha256": "74b56bf12de0543251c59dcf7a6bb1bb3b84afdedc078ac1ff3045471dec7f48"
+    },
+    "recipe_config": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_scout_pair_collection_v1/CONFIG.json",
+      "sha256": "d861ad46247254fb3b050eb527fbbc564130cc24c81ac7cea36e7d14abe1d72a"
+    }
+  },
+  "task_id": "MM_O97_La_minus",
+  "selected_tasks": [
+    "MM_O97_La_minus"
+  ],
+  "task": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/execution/TASK.json",
+    "sha256": "c1a8d9f7d28688daa85ddce1b6149b566b38280c470a804021a02ed53f8ed82c"
+  },
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/execution/MANIFEST.json",
+    "sha256": "a838293f4466d6f351f3b1598ec874c36dfa822dfb47117daa3eccc93d372376"
+  },
+  "preflight_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_preflight_v2/preflight/RESULT.json",
+    "sha256": "4c818c8d172937927ac86dcea6a47223579c9632b79af4843ef19a382ab02fd7"
+  },
+  "central_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_central_v1/execution/RESULT.json",
+    "sha256": "dbf29cb3d3b8948630f71b77d924f39630e6a399ba8a21f59bfdd5f118acb27f"
+  },
+  "continuation_decision": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/ROOT_CONTINUATION_DECISION.json",
+    "sha256": "0aad2cd96888ed945273e5caf0565e8e0265f19813d52e4faa0253820b08a3cc"
+  },
+  "allocation": {
+    "workers": 1,
+    "ranks_per_worker": 12,
+    "allocated_cpus": 12,
+    "local_mpi_slots": 12,
+    "memory_source": "SLURM_MEM_PER_NODE",
+    "allocated_memory_MiB": 48000,
+    "reserve_fraction": 0.25,
+    "per_rank_decimal_MB_before_rounding": 3145.7280000000005,
+    "maxcore_MB": 3100,
+    "scheduler_receipt": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/execution/SCONTROL_JOB.txt",
+      "sha256": "dfcea2b5ca6ce425f1318364d9d7414aa7b1a91cbbcaf3f05dad72bcf2ddbc4a"
+    },
+    "allocated_TRES": {
+      "cpu": "12",
+      "mem": "48000M",
+      "node": "1",
+      "billing": "12"
+    }
+  },
+  "DFT": {
+    "status": "available",
+    "energy_hartree": -5636.761988104498,
+    "receipt": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/execution/native/endpoint.out.execution.json",
+      "sha256": "59c6e521fc98d0b8d9ea724a0c683f3575fba3d98839d1c25c3d7033595604bb"
+    },
+    "output": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/execution/native/endpoint.out",
+      "sha256": "d9df1f0e18a13d6e1dd8e4fa591c26523fecf566d3fe63c0117fc6f4745f4beb"
+    },
+    "task": {
+      "task_id": "MM_O97_La_minus",
+      "metal": "La",
+      "charge": 0,
+      "multiplicity": 1,
+      "physical_multiplicity": 1,
+      "electronic_state": {
+        "all_electron_count": 878,
+        "alpha_electrons": 416,
+        "beta_electrons": 416,
+        "charge": 0,
+        "ecp_core_electrons": 46,
+        "effective_multiplicity": 1,
+        "explicit_electrons": 832,
+        "metal": "La",
+        "oxidation_state_hypothesis": 3,
+        "physical_f_occupation": 0,
+        "physical_multiplicity": 1,
+        "physical_state_qualified": false,
+        "representation": "spin_free_frozen_f_valence_model",
+        "spin_orbit_included": false
+      },
+      "task_type": "single_point",
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/execution/native/endpoint.inp",
+        "sha256": "59d2436df4a8a76ddfba1143242fce5b7208268d8336aecdf55add99efce5fa2"
+      },
+      "output_path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/execution/native/endpoint.out",
+      "origin_task": {
+        "boundary_mapping": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Mex8FNS/boundary_mapping.json",
+          "sha256": "a8cf4fff80bd0ad1472775ed30a3ef97bf9b307e2c844a1e836b9805be3d34e1"
+        },
+        "cache_key": "b863bb3b7fa64f5d7943fe476c3568e4b6ed8b2d5f30c2c59cd8a61fe9fa1bda",
+        "charge": 0,
+        "configuration": "A",
+        "core_mapping": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Mex8FNS/core_mapping_A.json",
+          "sha256": "684e77b98d11faf7050b33fa07ed86f449b565ef0d81fc8f8a6c6f0bf435301d"
+        },
+        "electronic_state": {
+          "all_electron_count": 878,
+          "alpha_electrons": 416,
+          "beta_electrons": 416,
+          "charge": 0,
+          "ecp_core_electrons": 46,
+          "effective_multiplicity": 1,
+          "explicit_electrons": 832,
+          "metal": "La",
+          "oxidation_state_hypothesis": 3,
+          "physical_f_occupation": 0,
+          "physical_multiplicity": 1,
+          "physical_state_qualified": false,
+          "representation": "spin_free_frozen_f_valence_model",
+          "spin_orbit_included": false
+        },
+        "engrad_path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_repaired_origins_Mex8FNS_v1/La_A/endpoint.engrad",
+        "input": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_repaired_origins_Mex8FNS_v1/La_A/endpoint.inp",
+          "sha256": "c8d5db2987858632c74baa1cadf48427c5cb37642bcfc18d594cbdfaa2ca8d9f"
+        },
+        "metal": "La",
+        "multiplicity": 1,
+        "output_path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_repaired_origins_Mex8FNS_v1/La_A/endpoint.out",
+        "physical_multiplicity": 1,
+        "pointcharges": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_repaired_origins_Mex8FNS_v1/La_A/environment.pc",
+          "sha256": "ff8bc9bfbc1d534454d6119a6cdc19989a12638ac2f9e78b4c768a8bb0df24fe"
+        },
+        "task_id": "La_A",
+        "task_type": "analytic_gradient",
+        "xyz": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_repaired_origins_Mex8FNS_v1/La_A/core.xyz",
+          "sha256": "7d3790074fb01647c0a892bfe9ae0eca0376575799edc456cf75bb7aac66d9b6"
+        }
+      },
+      "fixture": "MM_O97",
+      "signed_h_A": -0.001,
+      "physical": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_preparation_v1/execution/MM_O97_La_minus/physical.json",
+        "sha256": "0557133f72723815ac40663651220c1cfc2d3739666f389a90c55c3d390dbacd"
+      },
+      "source_inputs": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_preparation_v1/execution/MM_O97_La_minus/INPUTS.json",
+        "sha256": "94328b4b64632387ddcd81a905aeaaed7d7336e717d6728894a4c92140bc6b85"
+      },
+      "mapping": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_preparation_v1/execution/MM_O97_La_minus/MAPPING.json",
+        "sha256": "65380a3cb84ed93f02a422b9be5f342f18251b97de44cca741450ccfd4f10dea"
+      },
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/execution/native/core.xyz",
+        "sha256": "7d3790074fb01647c0a892bfe9ae0eca0376575799edc456cf75bb7aac66d9b6"
+      },
+      "pointcharges": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/execution/native/environment.pc",
+        "sha256": "d784597ea57c427cf8d011374b986b8f2f0c594de96c175da6ea78935846aa5d"
+      },
+      "core_mapping": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_preparation_v1/execution/MM_O97_La_minus/core_mapping.json",
+        "sha256": "684e77b98d11faf7050b33fa07ed86f449b565ef0d81fc8f8a6c6f0bf435301d"
+      },
+      "boundary_mapping": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_preparation_v1/execution/MM_O97_La_minus/boundary_mapping.json",
+        "sha256": "35f3f1fc9f84a477ee8bbfbef05d8beb24d276fa350ba389000be6adfefa612f"
+      },
+      "cache_key": "e80c9cd7f965120b3e714bd97df792392c440b844a6cbade6c324b82f9423d8d",
+      "source_task": {
+        "task_id": "MM_O97_La_minus",
+        "metal": "La",
+        "charge": 0,
+        "multiplicity": 1,
+        "physical_multiplicity": 1,
+        "electronic_state": {
+          "all_electron_count": 878,
+          "alpha_electrons": 416,
+          "beta_electrons": 416,
+          "charge": 0,
+          "ecp_core_electrons": 46,
+          "effective_multiplicity": 1,
+          "explicit_electrons": 832,
+          "metal": "La",
+          "oxidation_state_hypothesis": 3,
+          "physical_f_occupation": 0,
+          "physical_multiplicity": 1,
+          "physical_state_qualified": false,
+          "representation": "spin_free_frozen_f_valence_model",
+          "spin_orbit_included": false
+        },
+        "task_type": "single_point",
+        "input": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_preparation_v1/execution/MM_O97_La_minus/endpoint.inp",
+          "sha256": "e8e542380900fd0e7e6a694fc85504a5b679821649feb8e6697da54db64059d8"
+        },
+        "output_path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_preparation_v1/execution/MM_O97_La_minus/endpoint.out",
+        "origin_task": {
+          "boundary_mapping": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Mex8FNS/boundary_mapping.json",
+            "sha256": "a8cf4fff80bd0ad1472775ed30a3ef97bf9b307e2c844a1e836b9805be3d34e1"
+          },
+          "cache_key": "b863bb3b7fa64f5d7943fe476c3568e4b6ed8b2d5f30c2c59cd8a61fe9fa1bda",
+          "charge": 0,
+          "configuration": "A",
+          "core_mapping": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Mex8FNS/core_mapping_A.json",
+            "sha256": "684e77b98d11faf7050b33fa07ed86f449b565ef0d81fc8f8a6c6f0bf435301d"
+          },
+          "electronic_state": {
+            "all_electron_count": 878,
+            "alpha_electrons": 416,
+            "beta_electrons": 416,
+            "charge": 0,
+            "ecp_core_electrons": 46,
+            "effective_multiplicity": 1,
+            "explicit_electrons": 832,
+            "metal": "La",
+            "oxidation_state_hypothesis": 3,
+            "physical_f_occupation": 0,
+            "physical_multiplicity": 1,
+            "physical_state_qualified": false,
+            "representation": "spin_free_frozen_f_valence_model",
+            "spin_orbit_included": false
+          },
+          "engrad_path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_repaired_origins_Mex8FNS_v1/La_A/endpoint.engrad",
+          "input": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_repaired_origins_Mex8FNS_v1/La_A/endpoint.inp",
+            "sha256": "c8d5db2987858632c74baa1cadf48427c5cb37642bcfc18d594cbdfaa2ca8d9f"
+          },
+          "metal": "La",
+          "multiplicity": 1,
+          "output_path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_repaired_origins_Mex8FNS_v1/La_A/endpoint.out",
+          "physical_multiplicity": 1,
+          "pointcharges": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_repaired_origins_Mex8FNS_v1/La_A/environment.pc",
+            "sha256": "ff8bc9bfbc1d534454d6119a6cdc19989a12638ac2f9e78b4c768a8bb0df24fe"
+          },
+          "task_id": "La_A",
+          "task_type": "analytic_gradient",
+          "xyz": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_repaired_origins_Mex8FNS_v1/La_A/core.xyz",
+            "sha256": "7d3790074fb01647c0a892bfe9ae0eca0376575799edc456cf75bb7aac66d9b6"
+          }
+        },
+        "fixture": "MM_O97",
+        "signed_h_A": -0.001,
+        "physical": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_preparation_v1/execution/MM_O97_La_minus/physical.json",
+          "sha256": "0557133f72723815ac40663651220c1cfc2d3739666f389a90c55c3d390dbacd"
+        },
+        "source_inputs": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_preparation_v1/execution/MM_O97_La_minus/INPUTS.json",
+          "sha256": "94328b4b64632387ddcd81a905aeaaed7d7336e717d6728894a4c92140bc6b85"
+        },
+        "mapping": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_preparation_v1/execution/MM_O97_La_minus/MAPPING.json",
+          "sha256": "65380a3cb84ed93f02a422b9be5f342f18251b97de44cca741450ccfd4f10dea"
+        },
+        "xyz": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_preparation_v1/execution/MM_O97_La_minus/core.xyz",
+          "sha256": "7d3790074fb01647c0a892bfe9ae0eca0376575799edc456cf75bb7aac66d9b6"
+        },
+        "pointcharges": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_preparation_v1/execution/MM_O97_La_minus/environment.pc",
+          "sha256": "d784597ea57c427cf8d011374b986b8f2f0c594de96c175da6ea78935846aa5d"
+        },
+        "core_mapping": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_preparation_v1/execution/MM_O97_La_minus/core_mapping.json",
+          "sha256": "684e77b98d11faf7050b33fa07ed86f449b565ef0d81fc8f8a6c6f0bf435301d"
+        },
+        "boundary_mapping": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_dft_preparation_v1/execution/MM_O97_La_minus/boundary_mapping.json",
+          "sha256": "35f3f1fc9f84a477ee8bbfbef05d8beb24d276fa350ba389000be6adfefa612f"
+        },
+        "cache_key": "e8b6eedc3bae09a924b75bea13a4e9457487beaa26b8ebc9b4435dd50845fe01"
+      },
+      "numerical_protocol": "mex_consistent_COSX_La_O97_three_v1",
+      "prepared_task": {
+        "full_manifest": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_preflight_v2/preflight/FULL_MANIFEST.json",
+          "sha256": "e0b4ce623d881ee341ff031cea1817005f6cf173dac27941c82ac190911222e1"
+        },
+        "task_id": "MM_O97_La_minus"
+      }
+    },
+    "executed_ecp": [
+      [
+        "La",
+        "",
+        "46"
+      ]
+    ],
+    "SCF": {
+      "terminal_residuals": {
+        "Energy change": {
+          "value": -2.1828e-11,
+          "printed_tolerance": 1e-09,
+          "within_printed_tolerance": true
+        },
+        "MAX-Density change": {
+          "value": 5.7885e-05,
+          "printed_tolerance": 1e-08,
+          "within_printed_tolerance": false
+        },
+        "RMS-Density change": {
+          "value": 4.8212e-07,
+          "printed_tolerance": 1e-09,
+          "within_printed_tolerance": false
+        },
+        "Orbital Gradient": {
+          "value": 2.0186e-06,
+          "printed_tolerance": 2e-06,
+          "within_printed_tolerance": false
+        },
+        "Orbital Rotation": {
+          "value": 6.7912e-05,
+          "printed_tolerance": 2e-06,
+          "within_printed_tolerance": false
+        },
+        "DIIS Error": {
+          "value": 0.0005841,
+          "printed_tolerance": 1e-08,
+          "within_printed_tolerance": false
+        }
+      },
+      "ConvCheckMode": "Total+1el-Energy",
+      "ConvForced": 0,
+      "all_printed_residuals_pass": false,
+      "SOSCF_initialized": true,
+      "native_cycles": [
+        "34"
+      ],
+      "warnings_and_gap_lines": [
+        "                                        WARNINGS",
+        "                       Please study these warnings very carefully!",
+        "WARNING: The chosen methods will break translational/rotational symmetry",
+        "WARNING: The chosen methods will break translational symmetry",
+        "WARNING: The chosen methods will break translational symmetry",
+        "Warning: op=0 Small HOMO/LUMO gap (  -0.227) - skipping pre-diagonalization"
+      ],
+      "admission_policy": "unchanged native convergence and compact state/gradient parser; residual flags are observations, not new all-criteria admission"
+    },
+    "printed_energy": "-5636.761988104498",
+    "printed_quantum_hartree": 1e-12,
+    "runtime_memory_policy": {
+      "allocated_cpus": 12,
+      "allocated_memory_MiB": 48000,
+      "base_renderer_sha256": "4d75904eca4296abd892958df700063e272f5f029a0ce256bcf1b579768aeadb",
+      "local_mpi_slots": 12,
+      "maxcore_MB": 3100,
+      "memory_source": "SLURM_MEM_PER_NODE",
+      "per_rank_decimal_MB_before_rounding": 3145.7280000000005,
+      "ranks_per_worker": 12,
+      "reserve_fraction": 0.25,
+      "workers": 1,
+      "wrapper_sha256": "46356652756311981a51732525457c697b31e860348dee4b590d72e7bddee76d"
+    },
+    "molecular_wall_seconds": 32649.560733,
+    "physical_state_qualified": false,
+    "grid_fingerprints": {
+      "XC": {
+        "IntAcc": "4.959",
+        "radial": "OptM3 with GC (2021)",
+        "angular": "6 (Lebedev-590)",
+        "pruning": "4 (adaptive)",
+        "weights": "mBecke (2022)",
+        "BFCut": "1.0000e-12",
+        "WCut": "1.0000e-14",
+        "partial_contraction": "off",
+        "rotational_invariance": "off",
+        "points": "2341093",
+        "H_He_reduction": true
+      },
+      "grid1": {
+        "IntAcc": "4.020",
+        "radial": "OptM3 with GC (2021)",
+        "angular": "2 (Lebedev-110)",
+        "pruning": "4 (adaptive)",
+        "weights": "mBecke (2022)",
+        "BFCut": "1.0000e-12",
+        "WCut": "1.0000e-14",
+        "partial_contraction": "on",
+        "rotational_invariance": "off",
+        "points": "256114",
+        "H_He_reduction": true,
+        "UseSFitting": "on"
+      },
+      "grid2": {
+        "IntAcc": "4.871",
+        "radial": "OptM3 with GC (2021)",
+        "angular": "4 (Lebedev-302)",
+        "pruning": "4 (adaptive)",
+        "weights": "mBecke (2022)",
+        "BFCut": "1.0000e-12",
+        "WCut": "1.0000e-14",
+        "partial_contraction": "on",
+        "rotational_invariance": "off",
+        "points": "1026059",
+        "H_He_reduction": true,
+        "UseSFitting": "on"
+      },
+      "grid3": {
+        "IntAcc": "4.871",
+        "radial": "OptM3 with GC (2021)",
+        "angular": "4 (Lebedev-302)",
+        "pruning": "4 (adaptive)",
+        "weights": "mBecke (2022)",
+        "BFCut": "1.0000e-12",
+        "WCut": "1.0000e-14",
+        "partial_contraction": "on",
+        "rotational_invariance": "off",
+        "points": "1026059",
+        "H_He_reduction": true,
+        "UseSFitting": "on"
+      }
+    },
+    "final_grid_energy_diagnostics": {
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/execution/native/endpoint.out",
+        "sha256": "d9df1f0e18a13d6e1dd8e4fa591c26523fecf566d3fe63c0117fc6f4745f4beb"
+      },
+      "converged_cycle": 34,
+      "fields": {
+        "last_cycle": {
+          "line": 2136,
+          "text": "   34    -5636.4640223286041874     2.18e-11  4.82e-07  5.79e-05  2.02e-06   481.3",
+          "value": "-5636.4640223286041874",
+          "half_quantum_hartree": "5E-17"
+        },
+        "cosx_printed": {
+          "line": 2147,
+          "text": "Exchange energy change after final integration :      0.000000339 Eh",
+          "value": "0.000000339",
+          "half_quantum_hartree": "5E-10"
+        },
+        "post_grid": {
+          "line": 2155,
+          "text": "Total Energy       :      -5636.46402199512613 Eh         -153375.98352 eV",
+          "value": "-5636.46402199512613",
+          "half_quantum_hartree": "5E-15"
+        },
+        "post_grid_short": {
+          "line": 2148,
+          "text": "Total energy after final integration           :  -5636.464021995 Eh",
+          "value": "-5636.464021995",
+          "half_quantum_hartree": "5E-10"
+        },
+        "exchange_old": {
+          "line": 2145,
+          "text": "Old exchange energy                            :   -178.933294028 Eh",
+          "value": "-178.933294028",
+          "half_quantum_hartree": "5E-10"
+        },
+        "exchange_new": {
+          "line": 2146,
+          "text": "New exchange energy                            :   -178.933293689 Eh",
+          "value": "-178.933293689",
+          "half_quantum_hartree": "5E-10"
+        },
+        "D4_printed": {
+          "line": 8062,
+          "text": "Dispersion correction           -0.297966109",
+          "value": "-0.297966109",
+          "half_quantum_hartree": "5E-10"
+        },
+        "final": {
+          "line": 8067,
+          "text": "FINAL SINGLE POINT ENERGY     -5636.761988104498",
+          "value": "-5636.761988104498",
+          "half_quantum_hartree": "5E-13"
+        }
+      },
+      "printed_closures": {
+        "post_minus_last_cycle_minus_printed_COSX": {
+          "residual_hartree": "-5.5219426E-9",
+          "printed_rounding_bound_hartree": "5.0000505E-10",
+          "within_printed_rounding": false
+        },
+        "final_minus_post_minus_printed_D4": {
+          "residual_hartree": "-3.7187E-10",
+          "printed_rounding_bound_hartree": "5.00505E-10",
+          "within_printed_rounding": true
+        }
+      }
+    }
+  },
+  "application_wall_seconds": 32660.822338468046,
+  "measured_parent_CPU_seconds": 9.649344,
+  "parent_peak_RSS_KiB": 545200,
+  "parent_usage_excludes_MPI_children": true,
+  "interpretation": "One La external-charge direction under a separate numerical recipe; no physical accuracy, stable-state or broader force qualification. Original failed protocol stays failed."
+}

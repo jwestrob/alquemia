@@ -2,7 +2,18 @@
 
 17 October2026UTC. The activated PLAN remains active and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
-## Mex central complete; original two displacement checks running
+## Mex central and minus complete; plus still running
+
+18 October UTC: minus13597 completed32,661s on12CPUs (391,932allocatedCPU-s)
+and passes original native admission, resultbcca4f86. SCF34 stopped through Energy
+Check; only energy-change passes its printed tolerance. The COSX scalar-closure
+remainder exceeds its recorded printed-rounding envelope; retain this diagnostic
+without inventing a new gate or force-error bound. D4 closure passes. Full result,
+cost, reviews and actual terminal-health delivery are archived under
+`mex_dft/consistent_grid_v1/displacement_submission_v1/minus/result_v1/`.
+Plus13596 remains RUNNING, last seen atSCF37. Await its actual terminal result
+before the unchanged three-cell Slurm collection. No repeated minus calculation,
+partial derivative inference, changed settings or tolerance.
 
 Central13281 completed41,475s on12CPUs (497,700allocatedCPU-s) and passes unchanged
 native/source/state/grid/gradient admission. Full resultdbf29cb3, assembly, actual
@@ -14,7 +25,7 @@ remain. Grid2=grid3 matches fully, with original grid1/XC unchanged.
 Read [the central report](mex_dft/consistent_grid_v1/CENTRAL_REPORT.md).
 
 Root accepted the measured cost and approved only the original two displaced
-singlepoints. Plus13596 and minus13597 are RUNNING on12MPI each; config84a47050,
+singlepoints. Both launched on12MPI each; minus is now complete and plus continues; config84a47050,
 decision0aad2cd9, source1600a0a5 unchanged. Completion watchers3166957/3166962
 and health armers3166960/3166963 are recorded in task-local SUBMISSION.json under
 `workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/`.
@@ -23,8 +34,8 @@ Exact source/cost/static-review/submission records are preserved under
 Each native run must replay the admitted central and match its allocation before
 launch. Both effective native grid/state/runtime headers now match the central;
 see `displacement_submission_v1/NATIVE_HEADER_REVIEW.json`. Both delivered
-silence alerts13596/13597 were reviewed: all12 owned MPI workers per job actively
-consume CPU during the first Fock build; no SCF residual has printed yet. The completed
+initial silence alerts13596/13597 were reviewed: all12 owned MPI workers per job
+were actively consuming CPU during the first Fock build, before SCF residuals printed. The completed
 central's first iteration took1989.4s. Continue unchanged, without interpreting
 CPU activity as convergence proof. Actual process and alert evidence are archived
 under `displacement_submission_v1/{plus,minus}/health_review_silence_v1/`.

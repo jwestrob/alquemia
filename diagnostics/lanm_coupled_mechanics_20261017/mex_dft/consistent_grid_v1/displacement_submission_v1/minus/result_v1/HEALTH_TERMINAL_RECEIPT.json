@@ -1,0 +1,180 @@
+{
+  "identity": {
+    "job": "13597",
+    "thread": "01a0a63a-ee36-7483-b726-1f7f5b7f75cc",
+    "manifest": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/execution/MANIFEST.json",
+    "manifest_sha256": "a838293f4466d6f351f3b1598ec874c36dfa822dfb47117daa3eccc93d372376",
+    "policy": {
+      "id": "native_scf_health_v5",
+      "trah_macro_window": 8,
+      "trah_error_floor": 1.0,
+      "minimum_relative_error_improvement": 0.5,
+      "extreme_micro_step_hartree": 1000000.0,
+      "extreme_distinct_macro_count": 3,
+      "silent_output_seconds": 900,
+      "automatic_cancellation": false,
+      "diis_window": 12,
+      "diis_error_floor": 0.01,
+      "diis_rms_density_floor": 0.1,
+      "diis_max_density_floor": 1.0,
+      "diis_energy_span_hartree": 1.0,
+      "near_root_macro_window": 12,
+      "near_root_tolerance_multiple": 5.0,
+      "near_root_energy_span_hartree": 1e-06,
+      "successful_partial_debounce_seconds": 120
+    }
+  },
+  "started_utc": "2026-10-17T23:14:52.532433+00:00",
+  "notifications": {
+    "MM_O97_La_minus:output_silent_review_needed_not_proven_stall": {
+      "status": "queued",
+      "utc": "2026-10-17T23:36:29.569707+00:00",
+      "stdout": "Queued message 01a14c39-5924-7321-9154-4ad7fcf7f62b for thread 01a0a63a-ee36-7483-b726-1f7f5b7f75cc.\n",
+      "stderr": ""
+    },
+    "job_terminal": {
+      "status": "queued",
+      "utc": "2026-10-18T08:19:03.899458+00:00",
+      "stdout": "Queued message 01a14e17-c73a-7bc2-93d0-7684f30fd673 for thread 01a0a63a-ee36-7483-b726-1f7f5b7f75cc.\n",
+      "stderr": ""
+    }
+  },
+  "status": "terminal",
+  "snapshot": {
+    "endpoints": {
+      "MM_O97_La_minus": {
+        "normal_termination": true,
+        "scf_converged": true,
+        "explicit_failure": false,
+        "last_trah_macros": [],
+        "trah_macro_count": 0,
+        "printed_trah_gradient_tolerance": 2e-06,
+        "near_root_macro_window": [],
+        "near_root_energy_span_hartree": null,
+        "last_diis_iteration": 10,
+        "last_diis_rows": [
+          {
+            "iteration": 1,
+            "energy_hartree": -5632.121017225851,
+            "delta_energy_hartree": 0.0,
+            "rms_density": 0.00507,
+            "max_density": 0.801,
+            "diis_error": 0.336,
+            "damping": 0.7,
+            "iteration_seconds": 2025.9
+          },
+          {
+            "iteration": 2,
+            "energy_hartree": -5634.169761552133,
+            "delta_energy_hartree": -2.05,
+            "rms_density": 0.00471,
+            "max_density": 1.04,
+            "diis_error": 0.238,
+            "damping": 0.7,
+            "iteration_seconds": 546.8
+          },
+          {
+            "iteration": 3,
+            "energy_hartree": -5634.793539858751,
+            "delta_energy_hartree": -0.624,
+            "rms_density": 0.00234,
+            "max_density": 0.458,
+            "diis_error": 0.166,
+            "damping": 0.7,
+            "iteration_seconds": 508.1
+          },
+          {
+            "iteration": 4,
+            "energy_hartree": -5635.337689349981,
+            "delta_energy_hartree": -0.544,
+            "rms_density": 0.00158,
+            "max_density": 0.323,
+            "diis_error": 0.116,
+            "damping": 0.7,
+            "iteration_seconds": 475.2
+          },
+          {
+            "iteration": 5,
+            "energy_hartree": -5635.68064097302,
+            "delta_energy_hartree": -0.343,
+            "rms_density": 0.00113,
+            "max_density": 0.228,
+            "diis_error": 0.0807,
+            "damping": 0.7,
+            "iteration_seconds": 441.2
+          },
+          {
+            "iteration": 6,
+            "energy_hartree": -5635.913647938549,
+            "delta_energy_hartree": -0.233,
+            "rms_density": 0.00273,
+            "max_density": 0.536,
+            "diis_error": 0.0677,
+            "damping": 0.0,
+            "iteration_seconds": 431.8
+          },
+          {
+            "iteration": 7,
+            "energy_hartree": -5636.451640149753,
+            "delta_energy_hartree": -0.538,
+            "rms_density": 0.000611,
+            "max_density": 0.0728,
+            "diis_error": 0.0338,
+            "damping": 0.0,
+            "iteration_seconds": 479.4
+          },
+          {
+            "iteration": 8,
+            "energy_hartree": -5636.461734048316,
+            "delta_energy_hartree": -0.0101,
+            "rms_density": 0.000176,
+            "max_density": 0.0214,
+            "diis_error": 0.0147,
+            "damping": 0.0,
+            "iteration_seconds": 451.1
+          },
+          {
+            "iteration": 9,
+            "energy_hartree": -5636.463243593695,
+            "delta_energy_hartree": -0.00151,
+            "rms_density": 7.41e-05,
+            "max_density": 0.0115,
+            "diis_error": 0.00696,
+            "damping": 0.0,
+            "iteration_seconds": 395.5
+          },
+          {
+            "iteration": 10,
+            "energy_hartree": -5636.463522297803,
+            "delta_energy_hartree": -0.000279,
+            "rms_density": 4.48e-05,
+            "max_density": 0.00878,
+            "diis_error": 0.00344,
+            "damping": 0.0,
+            "iteration_seconds": 364.2
+          }
+        ],
+        "diis_current_phase": false,
+        "extreme_micro_distinct_macros": [],
+        "negative_gap_warning_count": 0,
+        "alerts": [],
+        "output": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/execution/native/endpoint.out",
+        "output_bytes": 320960,
+        "output_age_seconds": 3.3767149448394775,
+        "receipt_exists": true,
+        "execution_returncode": 0,
+        "receipt_job_id": "13597",
+        "finished_at_utc": "2026-10-18T08:18:58.602001+00:00",
+        "terminal": true
+      }
+    },
+    "terminal_endpoints": 1,
+    "total_endpoints": 1,
+    "maximum_remaining_endpoint_rank_demand": 0,
+    "allocated_cpus": 12,
+    "allocated_cpus_without_remaining_endpoint_work": 12,
+    "resource_note": "scheduler/manifest accounting; not measured CPU utilization"
+  },
+  "job_state": "COMPLETED",
+  "last_checked_utc": "2026-10-18T08:19:02.171254+00:00"
+}

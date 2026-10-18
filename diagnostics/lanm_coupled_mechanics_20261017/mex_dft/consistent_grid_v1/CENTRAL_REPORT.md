@@ -5,8 +5,13 @@ original native rules**. Root reviewed its measured cost and approved the two
 previously declared displaced singlepoints. Directional force consistency is
 still untested until both finish and the three-cell comparison passes.
 
-Both singlepoints are now running: **plus13596 and minus13597**,12MPI each,
-with completion and health notifications armed. Config84a47050 and the actual
+Latest18October: **minus13597 is complete/admitted; plus13596 is still running**.
+Minus used32,661s on12CPUs. Its energy-check stopping route, five failing printed
+residuals and COSX scalar-closure flagfalse remain recorded in
+`displacement_submission_v1/minus/result_v1/`. No paired derivative result yet.
+
+Both singlepoints launched with12MPI each and completion/health notifications.
+Config84a47050 and the actual
 launches are archived in `displacement_submission_v1/`; no waiting collector
 allocation was submitted.
 

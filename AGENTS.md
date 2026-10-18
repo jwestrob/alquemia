@@ -25,13 +25,18 @@ All four saved support jobs total3CPU-s; no tolerance change or molecular rerun.
 Mex13281 now complete/admitted:41,475s12CPUs=497,700CPU-s. SCF46 gradient-check
 stop; only orbital-gradient printed residual passes. Fullgrid2=grid3/source/state
 checks pass; no directional qualification yet. Root approved original2SPs after
-cost review: plus13596/minus13597 RUNNING12MPI each, config84a47050,
+cost review: plus13596/minus13597 launched12MPI each, config84a47050,
 decision0aad2cd9, source1600a0a5 unchanged. Read mex_dft/consistent_grid_v1/
 CENTRAL_REPORT.md and displacement_submission_v1/ under the active diagnostic.
 Completion/health wakes armed; all launch details in task-local SUBMISSION.json.
 No repeats, retry, newMMALPB, altered step/tolerance or original-six/eight
 continuation. Wait for both terminal results before the existing Slurm three-cell
-collector; no waiting collector allocation. Original failed protocols remain failed.
+collector; no waiting collector allocation. Minus13597 now complete/admitted:
+32,661s12CPU=391,932CPU-s, resultbcca4f86. SCF34 EnergyCheck, only energy-change
+printed residual passes. Retain COSX scalar-closure flagfalse and D4closuretrue;
+neither new force qualification nor new posthoc rejection. Plus13596 remains
+RUNNING; no partial derivative claim or minus repeat. Read minus/result_v1/
+under displacement_submission_v1. Original failed protocols remain failed.
 The full goal remains unmet. Earlier running/completion checkpoints are historical.
 
 Latest: whole-LBT before-Dy13291 completed at18:43UTC and passes unchanged

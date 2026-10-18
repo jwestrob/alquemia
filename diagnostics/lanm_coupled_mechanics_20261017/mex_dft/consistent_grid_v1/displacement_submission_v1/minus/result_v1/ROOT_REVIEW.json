@@ -1,0 +1,157 @@
+{
+  "utc": "2026-10-18T08:21:43.502843+00:00",
+  "job": "13597",
+  "status": "admitted_under_original_native_rules",
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/execution/RESULT.json",
+    "sha256": "bcca4f86aca07fa6ced24c7480f3593485683c73f18d6f947eb8d489c04fc80e"
+  },
+  "native_receipt": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/execution/native/endpoint.out.execution.json",
+    "sha256": "59c6e521fc98d0b8d9ea724a0c683f3575fba3d98839d1c25c3d7033595604bb"
+  },
+  "SCF": {
+    "terminal_residuals": {
+      "Energy change": {
+        "value": -2.1828e-11,
+        "printed_tolerance": 1e-09,
+        "within_printed_tolerance": true
+      },
+      "MAX-Density change": {
+        "value": 5.7885e-05,
+        "printed_tolerance": 1e-08,
+        "within_printed_tolerance": false
+      },
+      "RMS-Density change": {
+        "value": 4.8212e-07,
+        "printed_tolerance": 1e-09,
+        "within_printed_tolerance": false
+      },
+      "Orbital Gradient": {
+        "value": 2.0186e-06,
+        "printed_tolerance": 2e-06,
+        "within_printed_tolerance": false
+      },
+      "Orbital Rotation": {
+        "value": 6.7912e-05,
+        "printed_tolerance": 2e-06,
+        "within_printed_tolerance": false
+      },
+      "DIIS Error": {
+        "value": 0.0005841,
+        "printed_tolerance": 1e-08,
+        "within_printed_tolerance": false
+      }
+    },
+    "ConvCheckMode": "Total+1el-Energy",
+    "ConvForced": 0,
+    "all_printed_residuals_pass": false,
+    "SOSCF_initialized": true,
+    "native_cycles": [
+      "34"
+    ],
+    "warnings_and_gap_lines": [
+      "                                        WARNINGS",
+      "                       Please study these warnings very carefully!",
+      "WARNING: The chosen methods will break translational/rotational symmetry",
+      "WARNING: The chosen methods will break translational symmetry",
+      "WARNING: The chosen methods will break translational symmetry",
+      "Warning: op=0 Small HOMO/LUMO gap (  -0.227) - skipping pre-diagonalization"
+    ],
+    "admission_policy": "unchanged native convergence and compact state/gradient parser; residual flags are observations, not new all-criteria admission"
+  },
+  "stopping_route": "Energy Check",
+  "runtime": {
+    "allocated_cpus": 12,
+    "allocated_memory_MiB": 48000,
+    "base_renderer_sha256": "4d75904eca4296abd892958df700063e272f5f029a0ce256bcf1b579768aeadb",
+    "local_mpi_slots": 12,
+    "maxcore_MB": 3100,
+    "memory_source": "SLURM_MEM_PER_NODE",
+    "per_rank_decimal_MB_before_rounding": 3145.7280000000005,
+    "ranks_per_worker": 12,
+    "reserve_fraction": 0.25,
+    "workers": 1,
+    "wrapper_sha256": "46356652756311981a51732525457c697b31e860348dee4b590d72e7bddee76d"
+  },
+  "final_grid_energy_diagnostics": {
+    "output": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_consistent_grid_displacements_v1/tasks/minus/execution/native/endpoint.out",
+      "sha256": "d9df1f0e18a13d6e1dd8e4fa591c26523fecf566d3fe63c0117fc6f4745f4beb"
+    },
+    "converged_cycle": 34,
+    "fields": {
+      "last_cycle": {
+        "line": 2136,
+        "text": "   34    -5636.4640223286041874     2.18e-11  4.82e-07  5.79e-05  2.02e-06   481.3",
+        "value": "-5636.4640223286041874",
+        "half_quantum_hartree": "5E-17"
+      },
+      "cosx_printed": {
+        "line": 2147,
+        "text": "Exchange energy change after final integration :      0.000000339 Eh",
+        "value": "0.000000339",
+        "half_quantum_hartree": "5E-10"
+      },
+      "post_grid": {
+        "line": 2155,
+        "text": "Total Energy       :      -5636.46402199512613 Eh         -153375.98352 eV",
+        "value": "-5636.46402199512613",
+        "half_quantum_hartree": "5E-15"
+      },
+      "post_grid_short": {
+        "line": 2148,
+        "text": "Total energy after final integration           :  -5636.464021995 Eh",
+        "value": "-5636.464021995",
+        "half_quantum_hartree": "5E-10"
+      },
+      "exchange_old": {
+        "line": 2145,
+        "text": "Old exchange energy                            :   -178.933294028 Eh",
+        "value": "-178.933294028",
+        "half_quantum_hartree": "5E-10"
+      },
+      "exchange_new": {
+        "line": 2146,
+        "text": "New exchange energy                            :   -178.933293689 Eh",
+        "value": "-178.933293689",
+        "half_quantum_hartree": "5E-10"
+      },
+      "D4_printed": {
+        "line": 8062,
+        "text": "Dispersion correction           -0.297966109",
+        "value": "-0.297966109",
+        "half_quantum_hartree": "5E-10"
+      },
+      "final": {
+        "line": 8067,
+        "text": "FINAL SINGLE POINT ENERGY     -5636.761988104498",
+        "value": "-5636.761988104498",
+        "half_quantum_hartree": "5E-13"
+      }
+    },
+    "printed_closures": {
+      "post_minus_last_cycle_minus_printed_COSX": {
+        "residual_hartree": "-5.5219426E-9",
+        "printed_rounding_bound_hartree": "5.0000505E-10",
+        "within_printed_rounding": false
+      },
+      "final_minus_post_minus_printed_D4": {
+        "residual_hartree": "-3.7187E-10",
+        "printed_rounding_bound_hartree": "5.00505E-10",
+        "within_printed_rounding": true
+      }
+    }
+  },
+  "cost": {
+    "scheduler_elapsed_seconds": 32661,
+    "allocated_cpus": 12,
+    "allocated_CPU_seconds": 391932,
+    "not_measured_utilization": true
+  },
+  "decision": "No recovery or rerun. Preserve recorded SCF and scalar-closure limitations; await plus13596 before the original three-cell Slurm collector. No partial derivative claim, new rejection criterion, altered tolerance or settings.",
+  "physical_state_qualified": false,
+  "global_force_qualified": false,
+  "single_step_truncation_qualified": false,
+  "new_molecular_calls_from_review": 0
+}

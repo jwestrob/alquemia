@@ -2,6 +2,26 @@
 
 17 October2026UTC. The PLAN remains authorized and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
+## Saved direction supports a bounded continuation scout
+
+19 October22:44UTC: saved audit15176 completes on1CPU/2s, zero molecular
+calls. [Report](lbt_7ccn_direction_audit_v1/REPORT.md), resultcc102d11.
+The direction the unchanged optimizer would form from its80-step7CCN-La
+checkpoint, if continuation were permitted, has nominal dE/dalpha
+MACE−0.647635/PBE0−0.744240kcal/mol. No fallback or trust scaling occurs.
+This differs from the older deformation chord and supports local descent
+under both saved gradients; finite-step lowering/force accuracy remain unproven.
+The original optimizer stopped before forming that direction.
+
+Root is preparing one separate7CCN-La scout:12 additional accepted steps or
+40 new distinct evaluations, preserving exact history/trust/initial point,
+all physical guards, energy terms and original force criteria. Cumulative
+limits92/120 bind actual80/80, without changing the original80/200 artifacts.
+Versioned exact-checkpoint budget admission and actual zero-call Slurm preflight
+must pass before that single run. No other source/metal campaign, new DFT,
+production change or natural-transfer conclusion is released. Distributed force
+errors and full reference caveats remain. The broader goal remains unmet.
+
 ## Four 7CCN references and comparison complete
 
 19 October22:37UTC: after-La14880 completed and collector15173 re-admits all

@@ -3,6 +3,16 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the scientific goal remains authorized and unmet.
 
+19 October22:44UTC: saved conditional-direction audit15176 complete, result
+cc102d11,2CPU-s/zero molecular calls. Both model/reference local derivatives
+are negative (−0.647635/−0.744240kcal/mol per dimensionless step). Read active
+diagnostic lbt_7ccn_direction_audit_v1/REPORT.md. Original optimizer stops80;
+direction is conditional, no optimization executed. Root is preparing exactly
+one7CCN-La12-step/40-evaluation continuation scout, cumulative92/120 from80/80,
+with versioned exact-checkpoint admission and actual saved-data preflight first.
+Original history/trust/initial source/guards/force criteria stay unchanged.
+No further campaign/DFT/transfer released; full physics limitations remain.
+
 19 October22:37UTC: all four7CCN wholePBE0 references and saved collector15173
 are complete. Read active diagnostic lbt_whole_7ccn_reference_v1/FINAL_REPORT.md.
 Reference composite work La−131.838380/Dy−102.738676 supports broad lowering;

@@ -1,0 +1,25 @@
+{
+  "job_id": "15176",
+  "state": "COMPLETED",
+  "exit_code": "0:0",
+  "elapsed_seconds": 2,
+  "allocated_CPUs": 1,
+  "allocated_CPU_seconds": 2,
+  "allocated_GPU_seconds": 0,
+  "TotalCPU_reported": "00:01.049",
+  "MaxRSS_batch_reported": "68156K",
+  "AllocTRES": "billing=1,cpu=1,mem=4000M,node=1",
+  "node": "node-64-768g-1",
+  "scheduler_command": [
+    "sacct",
+    "-j",
+    "15176",
+    "--format=JobIDRaw,State,ExitCode,ElapsedRaw,AllocCPUS,CPUTimeRAW,TotalCPU,MaxRSS,AllocTRES,NodeList",
+    "--parsable2"
+  ],
+  "scheduler_evidence": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_direction_audit_v1/actual_result_v1/SACCT.txt",
+    "sha256": "549354a4dd25ba61f96f462e768453ddf2fc56ee9f895161229a6f11842e09b0"
+  },
+  "note": "Allocation cost, not utilization; no molecular calls."
+}

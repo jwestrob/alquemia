@@ -1,0 +1,166 @@
+{
+  "utc": "2026-10-19T22:47:30.392448+00:00",
+  "job_id": "15176",
+  "status": "complete_saved_direction_audit_preserved",
+  "review_scope": "Proactive root-delegated saved-result metadata/report review; no numerical recomputation.",
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_direction_audit_v1/execution/RESULT.json",
+    "sha256": "cc102d11faeb3d7ee7afccd9f772b72a99d2866448fa42e46223f3bbe53bc987"
+  },
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_direction_audit_v1/CONFIG.json",
+    "sha256": "b49891153ab69d4a55874276647d8ebc759395126f7cc82e671726629139f8c1"
+  },
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_direction_audit_v1/ANALYZE.py",
+    "sha256": "be75686251e2ae467a176b44c9b114c5f36ea23bc74585ab7c356c9ba3658f16"
+  },
+  "static_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_direction_audit_v1/STATIC_REVIEW.md",
+    "sha256": "865c8e706048ebac97c84747dc37df61158492a99c5d06a7895a3cd62074f646"
+  },
+  "runtime": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_direction_audit_v1/actual_result_v1/RUNTIME.json",
+    "sha256": "bff45b93d4f7350f3d464063b4cb58d96432a491cd247a0cc87292e6e0c06ae2"
+  },
+  "cost": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_direction_audit_v1/actual_result_v1/COST.json",
+    "sha256": "ec9272fe8f6570d8924171605d1e91b9babd5e530366b6c7e00b16c6721f4152"
+  },
+  "direction_summary": {
+    "meaning": "Conditional direction if a separately declared continuation were permitted; original80-step stop remains.",
+    "actually_proposed_or_executed": false,
+    "fallback_test_sum_pg_d": -0.6476354450974666,
+    "fallback_taken": false,
+    "fallback_history_length": 8,
+    "maximum_atom_before_trust": 0.039884101432218697,
+    "trust_A": 0.1,
+    "trust_scale": 1.0,
+    "full_L2_length_A": 0.11685614779734549,
+    "derivatives": {
+      "MACE_plus_fixed_ALPB": {
+        "dE_dalpha_kcal_mol": -0.6476354450974666,
+        "dE_ds_kcal_mol_per_A": -5.542159803355919
+      },
+      "PBE0_plus_fixed_ALPB": {
+        "dE_dalpha_kcal_mol": -0.744240238120693,
+        "dE_ds_kcal_mol_per_A": -6.368858225682493
+      }
+    },
+    "parameterization": "X(alpha)=X+alpha*d, alpha dimensionless; s=alpha*||d||_2 in Angstrom. No coordinates evaluated.",
+    "nominal_local_descent": {
+      "MACE_plus_fixed_ALPB": true,
+      "PBE0_plus_fixed_ALPB": true
+    }
+  },
+  "force_metrics": {
+    "model": {
+      "max_atom_kcal_mol_A": 9.739697567134982,
+      "RMS_atom_vector_kcal_mol_A": 1.9877980733710339,
+      "L2_kcal_mol_A": 31.804769173936542
+    },
+    "reference": {
+      "max_atom_kcal_mol_A": 12.826316044995012,
+      "RMS_atom_vector_kcal_mol_A": 4.204685622339154,
+      "L2_kcal_mol_A": 67.27496995742646
+    },
+    "model_minus_reference_error": {
+      "max_atom_kcal_mol_A": 7.660827628124737,
+      "RMS_atom_vector_kcal_mol_A": 3.57497467870936,
+      "L2_kcal_mol_A": 57.19959485934976
+    }
+  },
+  "saved_residue_error_ranking": [
+    "A/9/",
+    "A/14/",
+    "A/13/",
+    "A/11/",
+    "A/7/",
+    "A/4/",
+    "A/3/",
+    "A/17/",
+    "A/5/",
+    "A/16/",
+    "A/10/",
+    "A/2/",
+    "A/1/",
+    "A/6/",
+    "A/15/",
+    "A/8/",
+    "A/12/",
+    "target"
+  ],
+  "declared_cells": 1,
+  "admitted_cells": 1,
+  "declared_primary_directions": 1,
+  "molecular_calls": 0,
+  "model_loads": 0,
+  "geometry_trials": 0,
+  "optimizer_steps": 0,
+  "continuation_authorized_by_this_result": false,
+  "physical_state_qualified": false,
+  "force_accuracy_qualified": false,
+  "SCF_evidence": {
+    "terminal_residuals": {
+      "Energy change": {
+        "value": -1.7513e-08,
+        "printed_tolerance": 1e-09,
+        "within_printed_tolerance": false
+      },
+      "MAX-Density change": {
+        "value": 5.7529e-05,
+        "printed_tolerance": 1e-08,
+        "within_printed_tolerance": false
+      },
+      "RMS-Density change": {
+        "value": 3.1789e-07,
+        "printed_tolerance": 1e-09,
+        "within_printed_tolerance": false
+      },
+      "Orbital Gradient": {
+        "value": 4.5372e-07,
+        "printed_tolerance": 2e-06,
+        "within_printed_tolerance": true
+      },
+      "Orbital Rotation": {
+        "value": 2.2243e-06,
+        "printed_tolerance": 2e-06,
+        "within_printed_tolerance": false
+      },
+      "DIIS Error": {
+        "value": 0.0011928,
+        "printed_tolerance": 1e-08,
+        "within_printed_tolerance": false
+      }
+    },
+    "ConvCheckMode": "Total+1el-Energy",
+    "ConvForced": 0,
+    "all_printed_residuals_pass": false,
+    "SOSCF_initialized": true,
+    "native_cycles": [
+      "18"
+    ],
+    "warnings_and_gap_lines": [
+      "                                        WARNINGS",
+      "                       Please study these warnings very carefully!",
+      "Warning: op=0 Small HOMO/LUMO gap (  -0.022) - skipping pre-diagonalization"
+    ],
+    "admission_policy": "unchanged native convergence and compact state/gradient parser; residual flags are observations, not new all-criteria admission"
+  },
+  "caveats": {
+    "source": "Lu-conditioned 7CCN; same peptide as consumed7CCO, a distinct prospective deformation, not a blind protein benchmark.",
+    "geometry": "Exact prior whole-MACE La start and 80-step terminal; terminal bound/admitted but nonconverged. No new geometry or optimization.",
+    "terminal_chemistry": "Conditional free NH3+/COO- and five deprotonated acidic side chains; experimental terminal specification unresolved.",
+    "vacuum_dianion": "Post-added fixed-FF ALPB does not polarize the vacuum density; finite-basis SCF convergence does not prove electron binding or ground-state stability.",
+    "frozen_f": "Physical La1/Dy6; effective singlets, La ECP46/Dy ECP55, no SOC or physical-state qualification.",
+    "force": "Native analytic admission only, no finite-difference or force-accuracy qualification. Both Dy MACE force comparisons unavailable; no new MACE requests.",
+    "interpretation": "Per-metal deformation works and Dy-minus-La work difference; no absolute cross-method energies, affinity, classifier or preference claims."
+  },
+  "root_next_decision": "Root separately prepares one 7CCN-La continuation scout with at most12 additional accepted steps/40 additional distinct evaluations. This audit itself does not change the original80-step stop, release a full campaign or establish preference.",
+  "completion_delivery_acknowledged": false,
+  "completion_receipt_snapshot": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_direction_audit_v1/actual_result_v1/completion_event.json",
+    "sha256": "31b50ced0c65aa6675939a3a719f07712d2a74733741f0099b96333bf8899038"
+  },
+  "delivery_note": "Proactive result review only. Completion event has not been delivered per root task; no ROOT_ACK is written."
+}

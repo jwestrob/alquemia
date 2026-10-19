@@ -48,7 +48,7 @@ Both Dy reference force arrays are available. The corresponding archived MACE re
 
 Retain the evidence that broad motion addresses a real energetic strain in this represented system. Keep the original force convergence criteria and preserve all incomplete searches. The previous hybrid-model and electronic-base candidate failures remain closed; this panel does not repair those models.
 
-The next bounded analysis will reconstruct the **direction the unchanged optimizer would produce from the existing 7CCN La terminal checkpoint if continuation were permitted**, and compare its local energy derivatives under the saved MACE and PBE0 composite gradients. The completed optimizer stopped at its 80-step budget before proposing this direction. The audit will also localize the full force error by atom and residue. It uses saved data only and chooses no alternative direction. A favorable result would support a separately declared finite continuation, not establish full force accuracy or guarantee descent over a finite step.
+The subsequent [saved direction audit](../lbt_7ccn_direction_audit_v1/REPORT.md) reconstructs the **direction the unchanged optimizer would produce from the existing 7CCN La terminal checkpoint if continuation were permitted**. Both local energy derivatives are negative: MACE -0.647635 and PBE0 -0.744240 kcal/mol per dimensionless step. The completed optimizer stopped at its 80-step budget before proposing this direction. The audit uses saved data only and chooses no alternative direction. It supports preparing one separately declared 12-step continuation scout; it does not establish full force accuracy or guarantee descent over a finite step.
 
 ## Native admission and limitations
 

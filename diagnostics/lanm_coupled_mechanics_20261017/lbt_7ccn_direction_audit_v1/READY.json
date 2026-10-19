@@ -1,0 +1,45 @@
+{
+  "status": "source_prepared_pending_independent_review_and_actual_Slurm",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_direction_audit_v1/ANALYZE.py",
+    "sha256": "be75686251e2ae467a176b44c9b114c5f36ea23bc74585ab7c356c9ba3658f16"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_direction_audit_v1/SPEC.md",
+    "sha256": "cf34e0a7a54db1bb9f070aa4d6f09c998087cf0f840f8d4154e2542726e3e901"
+  },
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_direction_audit_v1/CONFIG.json",
+    "sha256": "b49891153ab69d4a55874276647d8ebc759395126f7cc82e671726629139f8c1"
+  },
+  "validation": "AST parse only; no scientific imports or numerical execution",
+  "command": [
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_hybrid_20260916/software_v1/venv/bin/python",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_direction_audit_v1/ANALYZE.py",
+    "--config",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_direction_audit_v1/CONFIG.json",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_direction_audit_v1/execution"
+  ],
+  "resources": {
+    "CPUs": 1,
+    "GPUs": 0,
+    "nodes": 1,
+    "Slurm_required": true,
+    "scheduler_defaults": true,
+    "requeue": false
+  },
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "molecular_calls": 0,
+  "geometry_trials": 0,
+  "optimizer_steps": 0,
+  "continuation_authorized": false,
+  "scope": "One deterministic conditional direction from saved checkpoint only; original80-step stop unchanged."
+}

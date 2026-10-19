@@ -30,8 +30,11 @@ Zero-call Slurm preflight and one CPU scout come first. Complete the four consum
 candidate work errors are within the frozen 1 kcal/mol development triage rule.
 No new DFT, optimization or transfer scoring follows from preparation.
 
-Linnaeus owns the new adapter, Harvey the exact reuse inventory, Arendt independent
-review, root submissions. Read actual newer receipts before launching. The
+The exact specification and reuse inventory passed independent static review;
+the declaration is preserved in pushed commit `48bb2f6`. Actual saved-data
+preflight and scout results are still required. Linnaeus owns the native adapter,
+Harvey the separate saved comparator, Arendt independent review, root submissions.
+Read actual newer receipts before launching. The
 [original-plan audit](plan_evidence_20261019_v1/REQUIREMENT_MATRIX.md) retains
 0/6 converged broad searches, failed Mex derivative qualification, the challenged
 hybrid scaffold and unfulfilled natural transfer. No smaller goal substitutes.

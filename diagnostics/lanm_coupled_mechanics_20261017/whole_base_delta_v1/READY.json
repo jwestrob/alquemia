@@ -1,0 +1,60 @@
+{
+  "status": "source_ready_for_independent_review_and_actual_Slurm_preflight",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_v1/BASE_DELTA.py",
+    "sha256": "f760cd799f326fe193d2a2809e4434000803e04438a3358de0210d829d32a5d1"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_v1/SPEC.md",
+    "sha256": "269793a3ca56f6caca69f4cf491af25b0f7d819f82c1ff0b104fbbbf833295e3"
+  },
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/whole_base_delta_preflight_v1/CONFIG.json",
+    "sha256": "8dc6cdf05bd84874fc3a6a2db016f544cc4d9e59583ed2b5be47fe33a59da572"
+  },
+  "scout_template": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_v1/CONFIG_SCOUT.template.json",
+    "sha256": "8dc6cdf05bd84874fc3a6a2db016f544cc4d9e59583ed2b5be47fe33a59da572"
+  },
+  "launcher": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/whole_base_delta_preflight_v1/RUN.sbatch",
+    "sha256": "899397ca89842184aa41d88e3e923f6a4bb641ee293b3a616276c58a8bd30714"
+  },
+  "static_syntax": "stdlib ast.parse only; passed",
+  "scientific_execution_performed": false,
+  "stage_commands": {
+    "preflight": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/whole_base_delta_preflight_v1/RUN.sbatch preflight /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/whole_base_delta_preflight_v1/CONFIG.json /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/whole_base_delta_preflight_v1/execution",
+    "scout": "same launcher run-scout ACTUAL_BOUND_SCOUT_CONFIG.json FRESH_OUTPUT; actual passed preflight pin required"
+  },
+  "allocation": {
+    "CPU": 1,
+    "GPU": 0,
+    "native_threads": 1,
+    "time_memory": "scheduler defaults",
+    "requeue": false
+  },
+  "implemented_stages": [
+    "preflight",
+    "run-scout"
+  ],
+  "unimplemented_stages": [
+    "development CPU",
+    "development single GPU MACE",
+    "saved assembly",
+    "challenge CPU"
+  ],
+  "limits": {
+    "whole_GFN_calls": 8,
+    "regional_GFN_calls": 1,
+    "regional_MACE_calls": 1,
+    "ALPB_calls": 0,
+    "MM_calls": 0,
+    "embedded_GFN_calls": 0,
+    "DFT_calls": 0,
+    "optimizer_steps": 0,
+    "total_molecular_calls": 10,
+    "scout_wall_seconds": 600.0,
+    "development_per_metal_work_error_kcal_mol": 1.0
+  },
+  "no_submissions": true
+}

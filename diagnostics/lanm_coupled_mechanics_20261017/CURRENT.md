@@ -2,7 +2,13 @@
 
 17 October2026UTC. The activated PLAN remains active and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
-## Electronic-base correction test being prepared
+## Electronic-base correction test: saved preflight submitted
+
+One-CPU saved-data preflight **14799** is submitted, completion watcher armed.
+Source `f760cd79` / config `8dc6cdf0` passed independent static review. This stage
+replays all eight declarations and saved admissions with zero molecular calls.
+Read actual workspace `whole_base_delta_preflight_v1` before the one-call scout.
+No candidate molecular calculation has been launched at this checkpoint.
 
 19 October 2026 UTC: live scheduler/native output confirms reference scout14795
 running with 12 MPI ranks and SCF initialization reached. Its completion gate

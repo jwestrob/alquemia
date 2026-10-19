@@ -1,6 +1,23 @@
 # Coupled La/Dy mechanics: current checkpoint
 
-17 October2026UTC. The activated PLAN remains active and unmet. Root owns all launches and integration. PQQ production stays unchanged.
+17 October2026UTC. The PLAN remains authorized and unmet. Root owns all launches and integration. PQQ production stays unchanged.
+
+## 7CCN native scout admitted; remaining three references running
+
+19 October: [scout report](lbt_whole_7ccn_reference_v1/SCOUT_REPORT.md).
+Job14795 completed one native before-La cell, result5fe74c9b. Original native
+admission passes; non-energy printed residual flags and small-gap warning remain.
+Physical-state and independent force qualification remain false. Actual23,440s
+on12CPUs (281,280CPU-s) is within the prior reference range. Root decision74c11c68
+binds the actual scout, native receipt, original preflight and measured cost.
+
+Unchanged after-La14880, before-Dy14881 and after-Dy14882 are RUNNING, each12MPI
+and48,000MiB with allocation-derived MaxCore3100. Startup replay passed; native
+launch reached and completion/alert-only health wakes armed. Exact submissions
+are in lbt_whole_7ccn_reference_v1/continuation_v1/. Do not repeat14795 or submit
+a waiting collector. Collect all four admitted results before deformation-work
+comparison; no current La/Dy preference conclusion. Candidate14806 stays closed.
+Production and failed branches remain preserved; the broader goal remains unmet.
 
 ## Whole-Mex directional check complete
 

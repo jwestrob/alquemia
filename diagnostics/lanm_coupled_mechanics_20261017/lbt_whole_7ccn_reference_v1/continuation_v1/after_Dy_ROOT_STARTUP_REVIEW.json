@@ -1,0 +1,47 @@
+{
+  "utc": "2026-10-19T15:12:08.477831+00:00",
+  "task": "after_Dy",
+  "job_id": "14882",
+  "selected_tasks": [
+    "after_Dy"
+  ],
+  "allocation": {
+    "workers": 1,
+    "ranks_per_worker": 12,
+    "allocated_cpus": 12,
+    "local_mpi_slots": 12,
+    "memory_source": "SLURM_MEM_PER_NODE",
+    "allocated_memory_MiB": 48000,
+    "reserve_fraction": 0.25,
+    "per_rank_decimal_MB_before_rounding": 3145.7280000000005,
+    "maxcore_MB": 3100,
+    "scheduler_receipt": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_after_Dy_v1/execution/SCONTROL_JOB.txt",
+      "sha256": "b7ee6e501fa2ba21e73a9a2fd3ce3b137a8c91579712635bbffd1a40d719b7b2"
+    },
+    "allocated_TRES": {
+      "cpu": "12",
+      "mem": "48000M",
+      "node": "1",
+      "billing": "12"
+    }
+  },
+  "native_output_path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_after_Dy_v1/execution/after_Dy/endpoint.out",
+  "observed_output_bytes": 107968,
+  "native_evidence": [
+    "                                 * O   R   C   A *",
+    "                         Program Version 6.1.1  -  RELEASE   -"
+  ],
+  "terminal_result_present": false,
+  "startup_status_note": "START.json contains a pessimistic initial execution_failure sentinel; it is not a terminal result. Native output and scheduler show running execution.",
+  "watchers": [
+    {
+      "record": "WATCHER.json",
+      "process": "640453 Ss   /usr/bin/python3 /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/slurm_wakeup_20260927/watch_and_queue.py --jobs 14882 --thread 01a0a63a-ee36-7483-b726-1f7f5b7f75cc --codex /home/jwestrob/.nvm/versions/node/v22.23.1/bin/codex --receipt /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_after_Dy_v1/completion_event.json --event lbt-whole256-7ccn-after-Dy-reference-v1 --interval 15"
+    },
+    {
+      "record": "HEALTH_ARMED.json",
+      "process": "640455 Ss   /usr/bin/python3 /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/slurm_native_health_watch.py --manifest /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_after_Dy_v1/execution/MANIFEST.json --job 14882 --thread 01a0a63a-ee36-7483-b726-1f7f5b7f75cc --codex /home/jwestrob/.nvm/versions/node/v22.23.1/bin/codex --receipt /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_after_Dy_v1/health_receipt.json --interval 30"
+    }
+  ]
+}

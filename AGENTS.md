@@ -1,7 +1,18 @@
 # Active coupled La/Dy mechanics — 17 October 2026 UTC
 
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
-Root owns all submissions; the goal remains active and unmet.
+Root owns all submissions; the scientific goal remains authorized and unmet.
+
+19 October, latest: whole7CCN scout14795 is COMPLETE/admitted under unchanged
+native gates; result5fe74c9b, actual23440s/12CPU (281280CPU-s). Printed non-energy
+SCF flags remain false; no physical-state/force-accuracy qualification. Root
+decision74c11c68 approves only remaining3 cells. After-La14880/before-Dy14881/
+after-Dy14882 are RUNNING12MPI each, startup replay passed, completion and
+alert-only health wakes armed. Read active diagnostic's
+lbt_whole_7ccn_reference_v1/SCOUT_REPORT.md and continuation_v1/SUBMISSIONS.json.
+No duplicate scout, waiting collector or preference claim. Collect all four
+actual results before work comparison. Failed candidate14806 remains closed.
+This supersedes older pending14795 notes below. Goal remains unmet.
 
 19 October, newest result: whole-Mex directional14810/14811 complete;32/32
 state/direction/step checks pass for MACE/ALPB/total under unchanged gates.

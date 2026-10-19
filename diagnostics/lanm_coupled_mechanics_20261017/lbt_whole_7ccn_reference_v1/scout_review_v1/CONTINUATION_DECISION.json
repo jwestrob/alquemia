@@ -1,0 +1,102 @@
+{
+  "protocol": "lbt_whole_7ccn_reference_v1",
+  "status": "approved_remaining_three",
+  "scientific_binding": {
+    "protocol": "lbt_whole_7ccn_reference_v1",
+    "implementation": "c0cca6dd4f44619fc2e3201f024b7913f6b7e9d8e8c4fca694fe17bd942d0ecf",
+    "specification": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_reference_v1/SPEC.md",
+      "sha256": "a8cb688c8d5f8f1f109a6c1436da24e68410cb92528f503d123cc83650307447"
+    },
+    "inventory": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_reference_v1/INVENTORY.json",
+      "sha256": "4203d1aabfc4f312b8627469e0b94450927e06b73d38294b3db6a5a6739cb0e2"
+    },
+    "plan": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/PLAN.md",
+      "sha256": "9e49c81ac4990c76f5bff6bd8c4e445029d3c93761761e9db4f14ec26b85fe03"
+    },
+    "python": {
+      "path": "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python3.11",
+      "sha256": "53244dfc692ccbfd6a065f053dfa2026e2f3e4755beef84d600c8f7dbc9b5b27"
+    },
+    "reference_helper": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_reference/REFERENCE.py",
+      "sha256": "c22c989674e280806abace63c67148b0181caee0b7b20bcd85b8e3d75d6c2a86"
+    }
+  },
+  "scout_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_before_La_v1/execution/RESULT.json",
+    "sha256": "5fe74c9bcd8ca90a616117387f8960a2fdcacfd62cee92f4cfe30ddd424b9f39"
+  },
+  "preflight_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_preflight_v1/execution/RESULT.json",
+    "sha256": "64db262eadb942246cff51a8bccca5b5b52520bf802cf93ff6f241610691be39"
+  },
+  "scout_native_receipt": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_before_La_v1/execution/before_La/endpoint.out.execution.json",
+    "sha256": "01571ff9eff767a89523c2c3608696eaa2c16a61a28a58300b7182e0e1695b0f"
+  },
+  "approved_tasks": [
+    "after_La",
+    "before_Dy",
+    "after_Dy"
+  ],
+  "measured_cost_reviewed": true,
+  "cost_review_reason": "Actual14795 took23440scheduler seconds on12CPUs (281280allocatedCPU-s), within observed23058\u201324919s for the prior four whole256 references. The unchanged finite3-cell continuation is tractable; no higher-cost method or repeat of the scout is authorized by this decision.",
+  "scout_scheduler_cost_receipt": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_reference_v1/scout_review_v1/SCHEDULER_COST.json",
+    "sha256": "19c37a1968c9104d492baec1c8143db3b0af93e312b32cbf703a2abc10f5cc2e"
+  },
+  "utc": "2026-10-19T15:09:45.461396+00:00",
+  "SCF_evidence": {
+    "terminal_residuals": {
+      "Energy change": {
+        "value": 4.2928e-10,
+        "printed_tolerance": 1e-09,
+        "within_printed_tolerance": true
+      },
+      "MAX-Density change": {
+        "value": 7.3981e-05,
+        "printed_tolerance": 1e-08,
+        "within_printed_tolerance": false
+      },
+      "RMS-Density change": {
+        "value": 4.1485e-07,
+        "printed_tolerance": 1e-09,
+        "within_printed_tolerance": false
+      },
+      "Orbital Gradient": {
+        "value": 3.5969e-06,
+        "printed_tolerance": 2e-06,
+        "within_printed_tolerance": false
+      },
+      "Orbital Rotation": {
+        "value": 7.1713e-06,
+        "printed_tolerance": 2e-06,
+        "within_printed_tolerance": false
+      },
+      "DIIS Error": {
+        "value": 0.0012364,
+        "printed_tolerance": 1e-08,
+        "within_printed_tolerance": false
+      }
+    },
+    "ConvCheckMode": "Total+1el-Energy",
+    "ConvForced": 0,
+    "all_printed_residuals_pass": false,
+    "SOSCF_initialized": true,
+    "native_cycles": [
+      "15"
+    ],
+    "warnings_and_gap_lines": [
+      "                                        WARNINGS",
+      "                       Please study these warnings very carefully!",
+      "Warning: op=0 Small HOMO/LUMO gap (  -0.028) - skipping pre-diagonalization"
+    ],
+    "admission_policy": "unchanged native convergence and compact state/gradient parser; residual flags are observations, not new all-criteria admission"
+  },
+  "physical_state_qualified": false,
+  "force_consistency_qualified": false,
+  "interpretation": "One admitted native energy/gradient cell, not a deformation-work or metal-preference result. Original SCF/state limitations retained."
+}

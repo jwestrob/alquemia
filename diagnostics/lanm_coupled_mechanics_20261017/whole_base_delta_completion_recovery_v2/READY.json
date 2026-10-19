@@ -1,0 +1,58 @@
+{
+  "status": "source_ready_independently_reviewed_runtime_unexecuted",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_completion_recovery_v2/COMPLETE_V2.py",
+    "sha256": "50076ac237c0a70b9faf78fd0f92aad3f6a09ddf7560291387700abf49d9fc3e"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_completion_recovery_v2/SPEC.md",
+    "sha256": "169af5ef141582058defa63b86e2b9ddcb9609e0b2c4eb2ece39f45bdfa57843"
+  },
+  "authority": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_completion_recovery_v2/AUTHORITY.json",
+    "sha256": "00add2344edda82078053da5572349b2ae74f6e2052e7b657499fdcb63093d1b"
+  },
+  "GPU_config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_completion_recovery_v2/CONFIG_GPU.json",
+    "sha256": "708804bf0e1b8eb201e27dcaa8e0599fc453f6fa2eec53660af78cc5ba6ec6b9"
+  },
+  "independent_static_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_completion_recovery_v2/STATIC_REVIEW.md",
+    "sha256": "fb619eba55d785e1b9b863899c4206be8fab5ef39b7afb5a30b17a3b37d73600"
+  },
+  "validation": {
+    "AST_passed": true,
+    "direct_config_pins_verified": true,
+    "changed_original_functions": [
+      "binding",
+      "prepare"
+    ],
+    "added_function": "saved_authority",
+    "scientific_imports": false,
+    "numerical_tests": false,
+    "runtime_execution": false
+  },
+  "commands": {
+    "GPU": [
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_hybrid_20260916/software_v1/venv/bin/python",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_completion_recovery_v2/COMPLETE_V2.py",
+      "--stage",
+      "run-development-gpu",
+      "--config",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_completion_recovery_v2/CONFIG_GPU.json",
+      "--output",
+      "<fresh GPU execution directory>"
+    ],
+    "collection": [
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_hybrid_20260916/software_v1/venv/bin/python",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_completion_recovery_v2/COMPLETE_V2.py",
+      "--stage",
+      "collect_7CCO",
+      "--config",
+      "<fresh config with actual V2 gpu_result pin>",
+      "--output",
+      "<fresh saved collection directory>"
+    ]
+  },
+  "scope": "Same one regional forward and saved four-cell assembly. All eight slots, original failure and exact raw/native/state/ALPB admissions retained. No new tolerance; no challenge or submissions."
+}

@@ -17,6 +17,11 @@ numerical tolerance, chemistry rerun or Hamiltonian change. Harvey owns source,
 Arendt review, root submission. Only one missing regional MACE forward follows
 actual review. Independent DFT14795 continues; 7CCN candidate gate remains shut.
 
+Reviewed saved-authority recovery **14804** is now submitted on one H200 /12CPUs.
+Source `50076ac2`, config `708804bf`, independent review `fb619eba`; exact launch
+and completion watcher under `whole_base_delta_gpu_v2`. Actual admission remains
+required before the saved collector. Original14803 remains failed, zero calls.
+
 ### Passed scout
 
 Actual preflight **14799** passes all eight states, seven regional reuse pairs

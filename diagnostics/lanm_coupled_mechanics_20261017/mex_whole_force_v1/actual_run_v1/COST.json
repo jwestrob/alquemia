@@ -1,0 +1,38 @@
+{
+  "utc": "2026-10-19T10:39:07.713398+00:00",
+  "scheduler_stdout": "14810|COMPLETED|0:0|8|1|billing=1,cpu=1,mem=4000M,node=1|node-64-768g-1\n14810.batch|COMPLETED|0:0|8|1|cpu=1,mem=4000M,node=1|node-64-768g-1\n14811|COMPLETED|0:0|81|12|billing=12,cpu=12,gres/gpu=1,mem=250000M,node=1|node-224-2t-8gpu-1\n14811.batch|COMPLETED|0:0|81|12|cpu=12,gres/gpu=1,mem=250000M,node=1|node-224-2t-8gpu-1\n",
+  "jobs": [
+    {
+      "job_id": "14810",
+      "state": "COMPLETED",
+      "exit": "0:0",
+      "elapsed_s": "8",
+      "allocated_cpus": "1",
+      "resources": "billing=1,cpu=1,mem=4000M,node=1",
+      "nodes": "node-64-768g-1"
+    },
+    {
+      "job_id": "14811",
+      "state": "COMPLETED",
+      "exit": "0:0",
+      "elapsed_s": "81",
+      "allocated_cpus": "12",
+      "resources": "billing=12,cpu=12,gres/gpu=1,mem=250000M,node=1",
+      "nodes": "node-224-2t-8gpu-1"
+    }
+  ],
+  "total_allocated_CPU_seconds": 980,
+  "total_allocated_GPU_seconds": 81,
+  "actual_native_calls": {
+    "MACE": 64,
+    "ALPB": 16,
+    "DFT": 0,
+    "GFN": 0,
+    "MM": 0,
+    "central": 0
+  },
+  "counts_source": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_whole_force_v1/actual_run_v1/RESULT.json",
+    "sha256": "c8c6166452996b862da4dc9fb35a758bc163ff44a60d60ceeba79051f27c4c07"
+  }
+}

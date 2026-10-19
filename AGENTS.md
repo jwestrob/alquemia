@@ -3,14 +3,13 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the goal remains active and unmet.
 
-19 October, newest submission: whole-Mex directional preflight14810,1CPU,
-completion wake armed. Sourcebf32bc23/spec5a025950/review67adefad under
-diagnostics/lanm_coupled_mechanics_20261017/mex_whole_force_v1. Exact archived
-replay precedes maximum64MACE/16DyALPB displaced evaluations onH200; no central
-reruns. Both metals/spin inputs and both steps retained; first failure stops.
-This only tests sampled BEFORE derivative consistency. No optimizer, accuracy,
-physical-spin or transfer claim. DFT14795 and its separate gates remain unchanged.
-Read CURRENT and actual receipts before any continuation; root owns submissions.
+19 October, newest result: whole-Mex directional14810/14811 complete;32/32
+state/direction/step checks pass for MACE/ALPB/total under unchanged gates.
+Read diagnostics/lanm_coupled_mechanics_20261017/mex_whole_force_v1/REPORT.md.
+Resultc8c61664;64MACE/16DyALPB, no centers,980CPU-s/81GPU-s. Both metals,
+aggregate inputs and steps retained. Only sampled BEFORE derivative consistency
+is qualified; no optimizer, accuracy, physical-spin or transfer claim. DFT14795
+continues with its separate gates. No repeats on delayed callbacks. Goal unmet.
 
 19 October, newest preparation: natural_transfer_contract_v1/REPORT.md under the
 active diagnostic binds all three natural sources and their separate EF3 cycles.

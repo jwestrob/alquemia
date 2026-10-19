@@ -2,18 +2,20 @@
 
 17 October2026UTC. The activated PLAN remains active and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
-## Whole-Mex directional check submitted
+## Whole-Mex directional check complete
 
-19 October: zero-call preflight14810 is submitted on1CPU, completion wake armed.
-Read [the frozen specification](mex_whole_force_v1/SPEC.md), sourcebf32bc23 and
-independent review67adefad. The unchanged whole2049 MACE+fixed-charge ALPB model
-will be checked against its own energy differences at the saved BEFORE geometry:
-four directions, both original steps, both metals and both aggregate inputs.
-Maximum64new MACE/16new DyALPB; four MACE centers, two ALPB centers and16La
-displacements are reused. Exact preflight replay gates the separate H200 run.
-First failed native/component/total gate stops new scheduling. No center reruns,
-optimizer, spin selection, accuracy or transfer qualification follows. Independent
-DFT14795 continues; candidate14806 remains closed. Broader goal remains unmet.
+19 October: [actual report](mex_whole_force_v1/REPORT.md). Preflight14810 and
+H200 run14811 complete; all32 state/direction/step comparisons pass for MACE,
+fixed-charge ALPB and total under unchanged gates. Both aggregate inputs remain.
+Actual64MACE/16DyALPB calls; four MACE centers, two ALPB centers and16La
+displacements reused, no central reruns. Resultc8c61664/manifest27c91c6c,
+sourcebf32bc23/config94718e39. Cost980CPU-s/81GPU-s including preflight.
+
+This qualifies only the sampled BEFORE derivatives. No optimizer, physical-spin,
+accuracy or transfer qualification follows. Preserve all native outputs and exact
+requests in mex_whole_force_run_v1; delayed callbacks require acknowledgement,
+not repeats. Independent7CCN DFT14795 remains RUNNING at10:39UTC,12CPUs;
+its actual-result/cost gate remains. Candidate14806 stays closed. Goal unmet.
 
 ## Natural-source state contract prepared
 

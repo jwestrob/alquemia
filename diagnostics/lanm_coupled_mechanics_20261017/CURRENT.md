@@ -2,7 +2,15 @@
 
 17 October2026UTC. The activated PLAN remains active and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
-## Electronic-base correction test: native scout passed
+## Electronic-base correction test: development CPU submitted
+
+Job **14802** is submitted on one CPU after root and independent review.
+It runs exactly three remaining whole-GFN calls and one regional-GFN call,
+sequentially, stopping at the first failure. Scout14800 is replayed and reused.
+Completion watcher is armed; read `whole_base_delta_cpu_v1/execution/RESULT.json`
+before the single regional-MACE stage. No challenge cells or optimization.
+
+### Passed scout
 
 Actual preflight **14799** passes all eight states, seven regional reuse pairs
 and all eight ALPB receipts, zero molecular calls, 6 CPU-seconds. Native scout

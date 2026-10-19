@@ -9,8 +9,9 @@ whole GFN2 + baseline regional MACE − same regional GFN2 + existing ALPB.
 Read whole_base_delta_design_v1/SPEC.md and CURRENT under the active diagnostic.
 All8 saved states pass; one whole256 native call converges in14.72s/65iterations.
 Actual26CPU-s including preflight. Read whole_base_delta_v1/actual_scout_v1.
-Separate continuation adapter requires review before3wholeGFN+1regionalGFN and
-1regionalMACE; exactscoutreuse. Ten-call ceiling, consumed7CCO four-cell triage
+Reviewed continuation14802 is submitted1CPU for3wholeGFN+1regionalGFN, with
+exactscoutreuse and firstfailurestop. Single regionalMACE stage awaits actualCPU
+admission and separate review. Ten-call ceiling, consumed7CCO four-cell triage
 before prebound7CCN. No optimizer/newDFT/natural-transfer launch.
 Reuse certified7CCN after-La isolated SCC recovery; do not rerun its failed default.
 Native whole-MACE source review identifies finite-range/global-label limitations,

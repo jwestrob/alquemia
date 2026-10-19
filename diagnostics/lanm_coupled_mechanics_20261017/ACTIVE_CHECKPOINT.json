@@ -1,6 +1,6 @@
 {
   "utc": "2026-10-19T08:18:02.718353+00:00",
-  "status": "independent_reference_running_base_delta_scout_passed",
+  "status": "independent_reference_running_base_delta_CPU_submitted",
   "response_recovery": {
     "job": 13048,
     "submission": {
@@ -362,7 +362,7 @@
       "required_before_binding": "Actual13051 admission and original collector; root force/cost continuation review"
     }
   },
-  "updated_utc": "2026-10-19T09:21:55.451906+00:00",
+  "updated_utc": "2026-10-19T09:31:42.679478+00:00",
   "Mex_saved_gridx3_diagnosis": {
     "status": "saved_diagnosis_complete_original_qualification_failed",
     "job_id": "13277",
@@ -1083,7 +1083,7 @@
     "sha256": "d992c50c09490677f9f9daf811ebedcb88823cbcbebbfba3ea482577ebbb999f"
   },
   "whole_base_delta_candidate": {
-    "status": "actual_scout_passed_development_source_pending",
+    "status": "development_CPU_submitted",
     "specification": {
       "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_design_v1/SPEC.md",
       "sha256": "b18386f62d9dd04e92f6baeaba10eb1c3a9d58a1e303886f45cd8a246546db91"
@@ -1134,7 +1134,8 @@
     },
     "jobs_submitted": [
       14799,
-      14800
+      14800,
+      14802
     ],
     "exact_specification_review": {
       "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_design_v1/SPEC_REVIEW.md",
@@ -1189,6 +1190,26 @@
       }
     },
     "actual_new_molecular_calls": 1,
-    "actual_allocated_CPU_seconds": 26
+    "actual_allocated_CPU_seconds": 26,
+    "development_CPU": {
+      "job": 14802,
+      "submission": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/whole_base_delta_cpu_v1/SUBMISSION.json",
+        "sha256": "077a14ecaa87aa205a6c9bab700d611a6f39e6fe78e71bb765232cbbb32e1c19"
+      },
+      "root_review": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/whole_base_delta_cpu_v1/ROOT_REVIEW.json",
+        "sha256": "81193ff5b518a1de4e7a6ed29fce830312f873abedd155e00b0f93b7a723363f"
+      },
+      "independent_review": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_v1/CPU_REVIEW.md",
+        "sha256": "289eac4fe772378603887cf9d8d5e36e3efbd4794d1990c9477feda5da9e1bc3"
+      },
+      "watcher": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/whole_base_delta_cpu_v1/WATCHER.json",
+        "sha256": "72b7b15a4ed7da8254d1e8e6e79faf4b9a9b8f6eca63cdc61fbcc64eccee6b33"
+      }
+    },
+    "next": "Read actual four-call CPU result, then at most one reviewed regional MACE call and saved comparison"
   }
 }

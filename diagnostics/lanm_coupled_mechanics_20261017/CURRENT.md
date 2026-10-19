@@ -2,6 +2,22 @@
 
 17 October2026UTC. The activated PLAN remains active and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
+## Natural-source state contract prepared
+
+19 October: [source-only preparation](natural_transfer_contract_v1/REPORT.md)
+binds Mex8FNS and both Hans sources, their physical/topology/charge/hydration
+artifacts and deposited assembly records. Inventory `e7d7ce48`; root metadata
+check `5946410f` passes 298 assertions and 107 unique pins. Zero molecular calls
+or scientific allocations. Configuration A/B stays distinct from biological
+chains; local electronic states stay distinct from unassigned whole-system
+states. Both Hans extracted-subunit comparisons remain separate.
+
+Metadata fidelity passes; **transfer scoring readiness remains false**. No
+Hamiltonian, aggregate-spin or partner-state default is supplied by this contract.
+The mechanics/response gates remain unmet. Failed electronic-base candidate
+stays closed; independent7CCN reference14795 retains its actual scout-admission
+and measured-cost gate before the remaining three cells. Read current receipts.
+
 ## Electronic-base candidate closed; independent reference continues
 
 19 October: GPU14804, saved assembly14805 and comparison14806 complete.

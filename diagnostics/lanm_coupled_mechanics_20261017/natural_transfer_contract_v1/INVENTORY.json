@@ -1,0 +1,1625 @@
+{
+  "schema_version": 1,
+  "protocol": "natural_transfer_source_contract_v1",
+  "scope": {
+    "source_only": true,
+    "molecular_calls": 0,
+    "scientific_allocations": 0,
+    "scientific_numerical_analysis": false,
+    "reserved_outcomes_accessed": false,
+    "scoring_ready": false,
+    "reason": "Mechanics accuracy/response gates remain unmet; no transfer Hamiltonian or whole-system electronic state is selected."
+  },
+  "evidence": {
+    "specification": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/natural_transfer_contract_v1/SPEC.md",
+      "sha256": "c348744d96d158b6d8f8d73274cfa4e0144767ae7b0c59550d2bb2a19962e661"
+    },
+    "review_requirements": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/natural_transfer_contract_v1/REVIEW_REQUIREMENTS.md",
+      "sha256": "632e06de4a19e372e7a8d146ebabed895606959ca7006f951d50380e8094aabe"
+    },
+    "requirement_matrix": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/plan_evidence_20261019_v1/REQUIREMENT_MATRIX.md",
+      "sha256": "d992c50c09490677f9f9daf811ebedcb88823cbcbebbfba3ea482577ebbb999f"
+    },
+    "experimental_target": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_response_20261016/EXPERIMENTAL_TARGET.md",
+      "sha256": "da25faf1d6bb5ad29064618b3c5d9bbb681ce3c6fc260cd787b657a53ea23ea0"
+    },
+    "second_Mex_feasibility": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_response_20261016/MEX_SECOND_SOURCE_FEASIBILITY.md",
+      "sha256": "0aa24e9791b675e57c788222ad08e6605ed0379c62f71e73c0c9f8c73ea4a330"
+    }
+  },
+  "sources": [
+    {
+      "source_id": "Hans8DQ2",
+      "preparation_folder_alias": "Hans8DQ2",
+      "global_manifest_source_id": "Hans_8DQ2",
+      "protein": "Hans",
+      "inputs": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8DQ2/INPUTS.json",
+        "sha256": "85770b1d42be2ebe92051d6596206ad25a09011ca5e9c5a40b5a3e0ed5f2cec0"
+      },
+      "configuration": {
+        "selected": "A",
+        "A": "original",
+        "B": "recorded_2deg_carboxylate_perturbation",
+        "labels_are_biological_chains": false,
+        "perturbation": {
+          "axis": [
+            "A/85//CA",
+            "A/85//CB"
+          ],
+          "axis_unit": [
+            -0.4675125738129901,
+            -0.7550621485013167,
+            0.45968809559018287
+          ],
+          "changed_source_ids": [
+            "A/85//CG",
+            "A/85//HB2",
+            "A/85//HB3",
+            "A/85//OD1",
+            "A/85//OD2"
+          ],
+          "pivot_xyz_A": [
+            38.078,
+            85.728,
+            37.374
+          ],
+          "right_hand_angle_degrees": 2.0,
+          "rotate_source_atoms": [
+            "A/85//HB2",
+            "A/85//HB3",
+            "A/85//CG",
+            "A/85//OD1",
+            "A/85//OD2"
+          ],
+          "status": "proposal only; validate actual full covalent graph and contacts before any scoring",
+          "type": "intact carboxylate torsion"
+        }
+      },
+      "prepared_chain": "A",
+      "prepared_assembly": "chain A conditional monomer; no dimer/folding equilibrium",
+      "artifacts": {
+        "physical_sources": {
+          "A": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8DQ2/physical_source_A.json",
+            "sha256": "1e7c15203cf19fc6e46bcddcc8bcba6014b510104eeff221e4350310b83b0246"
+          },
+          "B": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8DQ2/physical_source_B.json",
+            "sha256": "3bda2eeba62867e4158c12d3cf72c6abd0e46b02430b8178d7198fa9cf1ae8fd"
+          }
+        },
+        "export": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_preparation_v1/Hans8DQ2/export_v1/EXPORT.json",
+          "sha256": "95c03f7a998646664a267b356d1d49c5120e87f89bb88fbf7c315336c2badfe6"
+        },
+        "export_artifacts": {
+          "atoms": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_preparation_v1/Hans8DQ2/export_v1/atoms_charges.json",
+            "sha256": "7a17136994fc19dbefbc3fffdda15f79ffc71805a51df557d2b971d7adbe2cde"
+          },
+          "bonds": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_preparation_v1/Hans8DQ2/export_v1/bonds.json",
+            "sha256": "bf120f3482962dd2a252d3bb6d7d4059f0e1c721ed496c337f0c98513d78d6a4"
+          },
+          "system": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_preparation_v1/Hans8DQ2/export_v1/protein_water_system.xml",
+            "sha256": "c76b576670c02dcf3f5202549b8e8ba2086cd30a82fc0994ef7c6183d6c0d5cd"
+          },
+          "normalized_coordinates": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_global_occupancy_20260923/prepared_v1/sources/Hans_8DQ2/atoms.json",
+            "sha256": "b205118e355ed0fbec61ba7a89874c3225bd8d8e8abe14796b603db8d2cf00c3"
+          },
+          "source": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/prepared/hans_lanm_v1/hans_protonated.pdb",
+            "sha256": "cf2656b18620a6a608d583dfb37031c13fc71eabb944d38252b70a5410ccbf80"
+          },
+          "forcefields": [
+            {
+              "path": "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/lib/python3.11/site-packages/openmm/app/data/amber19/protein.ff19SB.xml",
+              "sha256": "086bfdb1c05e7d5cb1d330e6c39fab5056a95e89492cdbd3044c746db13e9d09"
+            },
+            {
+              "path": "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/lib/python3.11/site-packages/openmm/app/data/tip3p.xml",
+              "sha256": "607f0fc9566c3770db2d9eb579fed68c4157578445eed1ec0aa7dccc23d57a6c"
+            }
+          ]
+        },
+        "core_mapping": {
+          "A": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8DQ2/core_mapping_A.json",
+            "sha256": "bc3d5f5c317a08bb35febf088a3c4276f3cd87eaf2733072a60371761651462b"
+          },
+          "B": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8DQ2/core_mapping_B.json",
+            "sha256": "a4e14d4255dd376f583be58af1dccf1cbc5555e76cfad2b1c4349d0f4a85e76a"
+          }
+        },
+        "boundary_mapping": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8DQ2/boundary_mapping.json",
+          "sha256": "a110aa8764f7d49071db624448a2e7df7ef2b9a2fa42fe139b9341a4a327e716"
+        },
+        "environment_atoms": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8DQ2/environment_atoms.json",
+          "sha256": "18f73d87e7f2d0427fe7efef1fd1e1f36ca8ca21a086a9c72a6f943cd12da981"
+        },
+        "source_manifest": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_global_occupancy_20260923/prepared_v1/manifest.json",
+          "sha256": "2b0b906300fe24b1147813885c32c02253d26d1f50b974e316a52fc1fcf342f5"
+        },
+        "source_pins": {
+          "atoms": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_global_occupancy_20260923/prepared_v1/sources/Hans_8DQ2/atoms.json",
+            "sha256": "b205118e355ed0fbec61ba7a89874c3225bd8d8e8abe14796b603db8d2cf00c3"
+          },
+          "crystal": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/sources/pdb/8DQ2.cif",
+            "sha256": "d9de93986fbb902ff60c0162dd2baa175c53bcb349b0bca91aed0472596297e7"
+          },
+          "protein_audit": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_global_occupancy_20260923/prepared_v1/sources/Hans_8DQ2/audit.json",
+            "sha256": "d660d60d707dcbc23a522141d53d6c627c6d0c401e4c5f3ec07341d73c5f70b9"
+          },
+          "protonated_source": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/prepared/hans_lanm_v1/hans_protonated.pdb",
+            "sha256": "cf2656b18620a6a608d583dfb37031c13fc71eabb944d38252b70a5410ccbf80"
+          },
+          "protonation_receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/prepared/hans_lanm_v1/hans_protonation_manifest.json",
+            "sha256": "afb8e0a5194e4be2ff0d9ed490a05cd20cbc1b7aa3257239000876df368419bb"
+          },
+          "water_inventory": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_global_occupancy_20260923/prepared_v1/sources/Hans_8DQ2/waters.json",
+            "sha256": "96dff78d174734e6ec031e4d9f3dc463c3d563d96c281363bb3b9ff7e6d3dafb"
+          }
+        },
+        "reviewed_admission": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/scaffold_H_repair_v1/Hans8DQ2/REVIEWED_ADMISSION.json",
+          "sha256": "7db569e53ca5264e7c25664a847ab6a7dd7c315eaf05fa305d6cf7dce1cdaf27"
+        },
+        "reviewed_coordinates": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/scaffold_H_repair_v1/Hans8DQ2/coordinates_A.json",
+          "sha256": "4a634956dfa750d23b930428e0beb6607ddf748dcc39241a8e0ad7c323b837df"
+        },
+        "preparation_implementation": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/metal_environment_response_20260926/repaired_embedded_preparation_20260928/PREPARE_v2.py",
+          "sha256": "05130647904e6308ad53fd6a0d834604876739a9284d4e5f12ac69a09124a11b"
+        },
+        "preparation_plan": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/metal_environment_response_20260926/repaired_embedded_preparation_20260928/PLAN.md",
+          "sha256": "f730bc8d8888e9646fc6953defaf35497a18c6f3c9831796b486e152f8da544b"
+        },
+        "original_inputs": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_preparation_v1/Hans8DQ2/INPUTS.json",
+          "sha256": "c5886704ee541752ec2adfe7ada0b5f8b2c0df6014d5ed8676b74447d1141c3f"
+        },
+        "classical_origins": {
+          "La": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/scaffold_origin_DQ2_v1/Hans8DQ2/La_A.json",
+            "sha256": "f0a5884a45e4a93a02cfa608ef60cd7752b6afff685129b740a8a490408b02d5"
+          },
+          "Dy": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/scaffold_origin_DQ2_v1/Hans8DQ2/Dy_A.json",
+            "sha256": "05e1448e66300e55bbe62caad5ab68206a4a9c6422b79fbeacccbace369d4cfe"
+          }
+        },
+        "classical_ledger": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/scaffold_origin_DQ2_v1/Hans8DQ2/LEDGER.json",
+          "sha256": "319ef4c6d9cd6df06ae3a2fa85a0bb4377c2571b5ad0879fc70c36a992c61184"
+        },
+        "classical_ledger_artifacts": {
+          "bonded_terms.json": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/scaffold_origin_DQ2_v1/Hans8DQ2/bonded_terms.json",
+            "sha256": "c96f23888f2d56e9e883b1894fd9279027a166e9a1822e3e5a489927d526be53"
+          },
+          "exceptions.json": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/scaffold_origin_DQ2_v1/Hans8DQ2/exceptions.json",
+            "sha256": "8f9a07e85151c8452a9410ceb1110340c95ee31c1d2fb955358c6395662fab40"
+          },
+          "particles.json": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/scaffold_origin_DQ2_v1/Hans8DQ2/particles.json",
+            "sha256": "f6aa5410e94478337efe7cdafaea91ad21c06a1dd8d97926b81452a66b0375ee"
+          }
+        }
+      },
+      "physical_representation": {
+        "physical_sources_scope": "protein_and_water_only; target and three spectators are separate INPUTS/core-map declarations",
+        "export_scope": "protein_and_water_only",
+        "classical_origin_scope": "full physical protein/water plus three spectators plus target; no synthetic caps",
+        "classical_origin_atom_order": "protein/water, spectators in receipt order, target last",
+        "classical_origin_atom_count": 1891,
+        "classical_origin_last_four_ids": [
+          "A/201//LA",
+          "A/202//LA",
+          "A/204//NA",
+          "A/203//LA"
+        ],
+        "universal_target_index": null,
+        "index_reason": "Core and full-system orders differ; use each pinned mapping, never a common positional assumption."
+      },
+      "recorded_inventory": {
+        "protein_water_atoms": 1887,
+        "protein_atoms": 1665,
+        "protein_residues": 110,
+        "protein_water_charge_e": -4.000000000000067,
+        "charge_accounting": {
+          "MM_e": 7,
+          "QM_e": -1,
+          "all_site_ions_e": 10,
+          "protein_water_e": -4,
+          "total_e": 6
+        },
+        "water_count": 74,
+        "QM_water_residues": [
+          "A/337/",
+          "A/350/"
+        ],
+        "target": {
+          "site": "EF3",
+          "mapping_row": {
+            "id": "target_EF3",
+            "kind": "metal",
+            "qm_index": 0,
+            "source_site": {
+              "chain": "A",
+              "element": "La",
+              "insertion_code": "",
+              "name": "LA",
+              "resid": 203,
+              "resname": "LA",
+              "xyz_A": [
+                37.11,
+                82.212,
+                34.704
+              ]
+            },
+            "xyz_A": [
+              37.11,
+              82.212,
+              34.704
+            ]
+          },
+          "source_atom_id": "A/203//LA",
+          "substitution_oxidation_state": 3,
+          "modeled_presence": "one explicit target atom",
+          "deposited_fractional_occupancy": null,
+          "occupancy_reason": "Not a declared field in these prepared inputs; deposited atom-site evidence remains pinned and has not been promoted to a population model."
+        },
+        "spectators": [
+          {
+            "charge_e": 3.0,
+            "element": "La",
+            "id": "A/201//LA",
+            "kind": "spectator_formal_monopole",
+            "representation": "frozen formal charge, no FF ion parameters/LJ or polarization",
+            "site": "EF1",
+            "xyz_A": [
+              8.269,
+              77.123,
+              26.7
+            ]
+          },
+          {
+            "charge_e": 3.0,
+            "element": "La",
+            "id": "A/202//LA",
+            "kind": "spectator_formal_monopole",
+            "representation": "frozen formal charge, no FF ion parameters/LJ or polarization",
+            "site": "EF2",
+            "xyz_A": [
+              37.806,
+              71.269,
+              29.906
+            ]
+          },
+          {
+            "charge_e": 1.0,
+            "element": "Na",
+            "id": "A/204//NA",
+            "kind": "spectator_formal_monopole",
+            "representation": "frozen formal charge, no FF ion parameters/LJ or polarization",
+            "site": "EF4",
+            "xyz_A": [
+              10.339,
+              87.487,
+              22.074
+            ]
+          }
+        ],
+        "occupancy_interpretation": "fixed source geometry hypotheses; no natural population assertion"
+      },
+      "local_electronic_states": {
+        "Dy": {
+          "all_electron_count": 861,
+          "charge": -1,
+          "electronic_state": "DyIII high-spin sextet hypothesis; no spin-orbit treatment qualified",
+          "multiplicity": 6,
+          "oxidation_state": 3,
+          "physical_spin_2S": 5,
+          "xyz": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8DQ2/Dy_A.xyz",
+            "sha256": "68fc297b7b154b3395c756ed0757579fd6b9a23a1018f73dc08e8de411b3d44d"
+          }
+        },
+        "La": {
+          "all_electron_count": 852,
+          "charge": -1,
+          "electronic_state": "LaIII closed shell",
+          "multiplicity": 1,
+          "oxidation_state": 3,
+          "physical_spin_2S": 0,
+          "xyz": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8DQ2/La_A.xyz",
+            "sha256": "627f68cccf2624b08da86e6f101de4d16a26c3d66e42e70165afe37e6506333b"
+          }
+        }
+      },
+      "local_model": {
+        "scope": "capped electronic region; not whole-system state",
+        "atom_count_from_saved_xyz_header": 195,
+        "target_qm_index": 0,
+        "configuration_A": {
+          "core_mapping": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8DQ2/core_mapping_A.json",
+            "sha256": "bc3d5f5c317a08bb35febf088a3c4276f3cd87eaf2733072a60371761651462b"
+          },
+          "endpoints": {
+            "Dy": {
+              "all_electron_count": 861,
+              "charge": -1,
+              "electronic_state": "DyIII high-spin sextet hypothesis; no spin-orbit treatment qualified",
+              "multiplicity": 6,
+              "oxidation_state": 3,
+              "physical_spin_2S": 5,
+              "xyz": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8DQ2/Dy_A.xyz",
+                "sha256": "68fc297b7b154b3395c756ed0757579fd6b9a23a1018f73dc08e8de411b3d44d"
+              }
+            },
+            "La": {
+              "all_electron_count": 852,
+              "charge": -1,
+              "electronic_state": "LaIII closed shell",
+              "multiplicity": 1,
+              "oxidation_state": 3,
+              "physical_spin_2S": 0,
+              "xyz": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8DQ2/La_A.xyz",
+                "sha256": "627f68cccf2624b08da86e6f101de4d16a26c3d66e42e70165afe37e6506333b"
+              }
+            }
+          },
+          "pointcharges": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8DQ2/environment.pc",
+            "sha256": "f220fb093fc78781915312745533f4884288f3c95829e8f26983a2aab6652de3"
+          }
+        },
+        "configuration_B_historical": {
+          "core_mapping": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8DQ2/core_mapping_B.json",
+            "sha256": "a4e14d4255dd376f583be58af1dccf1cbc5555e76cfad2b1c4349d0f4a85e76a"
+          },
+          "endpoints": {
+            "Dy": {
+              "all_electron_count": 861,
+              "charge": -1,
+              "electronic_state": "DyIII high-spin sextet hypothesis; no spin-orbit treatment qualified",
+              "multiplicity": 6,
+              "oxidation_state": 3,
+              "physical_spin_2S": 5,
+              "xyz": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8DQ2/Dy_B.xyz",
+                "sha256": "cf845cbb4aa9871c1d3188bfeb29bd35871ce787e0e21f24392fd4736e230d2d"
+              }
+            },
+            "La": {
+              "all_electron_count": 852,
+              "charge": -1,
+              "electronic_state": "LaIII closed shell",
+              "multiplicity": 1,
+              "oxidation_state": 3,
+              "physical_spin_2S": 0,
+              "xyz": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8DQ2/La_B.xyz",
+                "sha256": "62b6a886a1a32342f91ec0a897da85e3cf8cebef69cc5cbd663955b44ee00004"
+              }
+            }
+          },
+          "pointcharges": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8DQ2/environment.pc",
+            "sha256": "f220fb093fc78781915312745533f4884288f3c95829e8f26983a2aab6652de3"
+          }
+        }
+      },
+      "whole_electronic_state": {
+        "charge_e": 6,
+        "multiplicity": null,
+        "spin_2S": null,
+        "physical_state_qualified": null,
+        "reason": "INPUTS declares local capped La/Dy states only. Aggregate coupling/state for the retained whole-system spectators is unassigned by this contract."
+      },
+      "protonation_and_preparation": {
+        "recorded_protonation": {
+          "ph": 5.0,
+          "protocol_id": "pdbfixer_standard_residue_protonation_v2",
+          "add_missing_residues": false,
+          "keep_chain_and_residue_ids": true,
+          "repaired_missing_atom_count": 0,
+          "repaired_missing_terminal_atom_count": 0
+        },
+        "audit_terminal_additions": [],
+        "source_heavy_coordinates_preserved": true,
+        "coordinate_preparation": "reviewed_C_bound_H_v1",
+        "reviewed_status": "chemically_reviewed_geometry_admitted",
+        "reviewed_admitted": true,
+        "reviewed_policy": "Separate root-authorized chemistry review; original optimizer-status null/generic-volume failures retained. Saved gradient substitutes for unavailable convergence receipt as geometric stationarity evidence only. No molecular score used.",
+        "optimizer_status": null,
+        "terminal_state_interpretation": "Exact prepared protonation/topology is bound; no new terminal-state or solution-population assignment."
+      },
+      "historical_interaction_versions": {
+        "INPUTS_spectators": "formal monopoles; no ion-specific LJ or polarization in this stage",
+        "classical_ledger_boundary_policy": "fixed_cap_radial_bonds_retained_substitutable_angular_terms_omitted_v1",
+        "classical_ledger_ion_parameters": {
+          "Dy": {
+            "Rmin_over2_A": 1.609,
+            "epsilon_kcal_mol": 0.0838924,
+            "file": {
+              "path": "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/dat/leap/parm/frcmod.ions234lm_126_tip3p",
+              "sha256": "4252f496d5462dc84ddfae7ef8e941bf8c927584201284be3ccae178ebab08d3"
+            },
+            "line": "Dy3+ 1.609 0.08389240 IOD set for TIP3P water from Li et al., JPCB, 2015, 119, 883"
+          },
+          "La": {
+            "Rmin_over2_A": 1.718,
+            "epsilon_kcal_mol": 0.15060822,
+            "file": {
+              "path": "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/dat/leap/parm/frcmod.ions234lm_126_tip3p",
+              "sha256": "4252f496d5462dc84ddfae7ef8e941bf8c927584201284be3ccae178ebab08d3"
+            },
+            "line": "La3+ 1.718 0.15060822 IOD set for TIP3P water from Li et al., JPCB, 2015, 119, 883"
+          },
+          "Na": {
+            "Rmin_over2_A": 1.475,
+            "epsilon_kcal_mol": 0.03171494,
+            "file": {
+              "path": "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/dat/leap/parm/frcmod.ions1lm_126_tip3p",
+              "sha256": "09690dfab18fe46fe9bd9651d254db1ff4d6edfdfa4f74e0ff8c41a069715eeb"
+            },
+            "line": "Na+ 1.475 0.03171494 HFE set for TIP3P water from Li et al., JCTC, 2015, 11, 1645"
+          }
+        },
+        "classical_ledger_scope": "Later separate classical ledger; do not silently combine with whole electronic energy or treat INPUTS no-LJ statement as current universal physics.",
+        "selected_transfer_Hamiltonian": null
+      },
+      "deposited_assembly": {
+        "source": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/sources/pdb/8DQ2.cif",
+          "sha256": "d9de93986fbb902ff60c0162dd2baa175c53bcb349b0bca91aed0472596297e7"
+        },
+        "pdb_id": "8DQ2",
+        "category": "_pdbx_struct_assembly / _pdbx_struct_assembly_gen / _pdbx_struct_oper_list",
+        "literal_evidence": {
+          "first_line": 1721,
+          "last_line": 1773,
+          "text": "_pdbx_struct_assembly.id \n_pdbx_struct_assembly.details \n_pdbx_struct_assembly.method_details \n_pdbx_struct_assembly.oligomeric_details \n_pdbx_struct_assembly.oligomeric_count \n1 author_and_software_defined_assembly PISA dimeric 2 \n2 author_and_software_defined_assembly PISA dimeric 2 \n# \nloop_\n_pdbx_struct_assembly_prop.biol_id \n_pdbx_struct_assembly_prop.type \n_pdbx_struct_assembly_prop.value \n_pdbx_struct_assembly_prop.details \n1 'ABSA (A^2)' 2920  ? \n1 MORE         -94   ? \n1 'SSA (A^2)'  11420 ? \n2 'ABSA (A^2)' 2890  ? \n2 MORE         -95   ? \n2 'SSA (A^2)'  11400 ? \n# \nloop_\n_pdbx_struct_assembly_gen.assembly_id \n_pdbx_struct_assembly_gen.oper_expression \n_pdbx_struct_assembly_gen.asym_id_list \n1 1 A,C,E,F,G,H,N,O,P,Q,W,Y     \n2 1 B,D,I,J,K,L,M,R,S,T,U,V,X,Z \n# \n_pdbx_struct_assembly_auth_evidence.id                     1 \n_pdbx_struct_assembly_auth_evidence.assembly_id            1 \n_pdbx_struct_assembly_auth_evidence.experimental_support   'gel filtration' \n_pdbx_struct_assembly_auth_evidence.details                ? \n# \n_pdbx_struct_oper_list.id                   1 \n_pdbx_struct_oper_list.type                 'identity operation' \n_pdbx_struct_oper_list.name                 1_555 \n_pdbx_struct_oper_list.symmetry_operation   x,y,z \n_pdbx_struct_oper_list.matrix[1][1]         1.0000000000 \n_pdbx_struct_oper_list.matrix[1][2]         0.0000000000 \n_pdbx_struct_oper_list.matrix[1][3]         0.0000000000 \n_pdbx_struct_oper_list.vector[1]            0.0000000000 \n_pdbx_struct_oper_list.matrix[2][1]         0.0000000000 \n_pdbx_struct_oper_list.matrix[2][2]         1.0000000000 \n_pdbx_struct_oper_list.matrix[2][3]         0.0000000000 \n_pdbx_struct_oper_list.vector[2]            0.0000000000 \n_pdbx_struct_oper_list.matrix[3][1]         0.0000000000 \n_pdbx_struct_oper_list.matrix[3][2]         0.0000000000 \n_pdbx_struct_oper_list.matrix[3][3]         1.0000000000 \n_pdbx_struct_oper_list.vector[3]            0.0000000000 \n# \nloop_\n_struct_conf.conf_type_id \n_struct_conf.id \n_struct_conf.pdbx_PDB_helix_id "
+        },
+        "assemblies": [
+          {
+            "id": "1",
+            "protein_author_chains": [
+              "A",
+              "C"
+            ],
+            "oligomeric_details": "dimeric",
+            "oligomeric_count": 2,
+            "operation_expression": "1",
+            "asym_id_list": "A,C,E,F,G,H,N,O,P,Q,W,Y"
+          },
+          {
+            "id": "2",
+            "protein_author_chains": [
+              "B",
+              "D"
+            ],
+            "oligomeric_details": "dimeric",
+            "oligomeric_count": 2,
+            "operation_expression": "1",
+            "asym_id_list": "B,D,I,J,K,L,M,R,S,T,U,V,X,Z"
+          }
+        ],
+        "asym_id_namespace_note": "mmCIF asym_id_list also includes nonprotein entities; protein_author_chains are stated separately.",
+        "prepared_partner": null,
+        "prepared_partner_reason": "No partner/complex is prepared by this contract. Deposited coordinates permit later explicit preparation without a new fold.",
+        "equilibrated_extracted_monomer_established": false
+      },
+      "unresolved": {
+        "aggregate_state": null,
+        "physical_state_qualification": null,
+        "selected_transfer_Hamiltonian": null,
+        "partner_preparation": null,
+        "partner_charge": null,
+        "partner_spin": null,
+        "partner_water_ion_ownership": null,
+        "dimer_population": null,
+        "solution_protonation_population": null,
+        "reason": "These are not supplied by the fixed conditional chain-A inputs; source fidelity does not qualify scoring or assembly thermodynamics."
+      }
+    },
+    {
+      "source_id": "Hans_8FNR",
+      "preparation_folder_alias": "Hans8FNR",
+      "global_manifest_source_id": "Hans_8FNR",
+      "protein": "Hans",
+      "inputs": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8FNR/INPUTS.json",
+        "sha256": "8aa2b5a94c56a3f4052ce172d3f990272f2b8c6ba8c98996a1418c69da90fbe2"
+      },
+      "configuration": {
+        "selected": "A",
+        "A": "original",
+        "B": "recorded_2deg_carboxylate_perturbation",
+        "labels_are_biological_chains": false,
+        "perturbation": {
+          "axis": [
+            "A/85//CA",
+            "A/85//CB"
+          ],
+          "axis_unit": [
+            0.0429399939881801,
+            -0.47494235774803467,
+            0.878968664818623
+          ],
+          "changed_source_ids": [
+            "A/85//CG",
+            "A/85//HB2",
+            "A/85//HB3",
+            "A/85//OD1",
+            "A/85//OD2"
+          ],
+          "pivot_xyz_A": [
+            23.273000000000003,
+            0.34700000000000003,
+            -6.133000000000001
+          ],
+          "right_hand_angle_degrees": 2.0,
+          "rotate_source_atoms": [
+            "A/85//HB2",
+            "A/85//HB3",
+            "A/85//CG",
+            "A/85//OD1",
+            "A/85//OD2"
+          ],
+          "status": "proposal only; validate actual full covalent graph and contacts before any scoring",
+          "type": "intact carboxylate torsion"
+        }
+      },
+      "prepared_chain": "A",
+      "prepared_assembly": "chain A conditional monomer; no dimer/folding equilibrium",
+      "artifacts": {
+        "physical_sources": {
+          "A": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8FNR/physical_source_A.json",
+            "sha256": "34dada8ca2de0b7e4348ed9257f992c67b6a36881848d24ab156b9e9bb1c8c9f"
+          },
+          "B": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8FNR/physical_source_B.json",
+            "sha256": "ed1cebb7fd3c110e0c805b7d2358a99e1ce74bca9541f742d6a1617abf6b9fa8"
+          }
+        },
+        "export": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_preparation_v1/Hans8FNR/export_v1/EXPORT.json",
+          "sha256": "387855a5a6a023f8e789fcc3c59668cd1d271b57cd4760daa102dcdc8dace19f"
+        },
+        "export_artifacts": {
+          "atoms": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_preparation_v1/Hans8FNR/export_v1/atoms_charges.json",
+            "sha256": "96bc4979d8303a3086bb00e7438b33242f16135f77894c904b173db927bb5ee9"
+          },
+          "bonds": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_preparation_v1/Hans8FNR/export_v1/bonds.json",
+            "sha256": "6b28256b6131fd9a7a7546832d2d7cf95d509678e522e7e09e72cc778d343b1f"
+          },
+          "system": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_preparation_v1/Hans8FNR/export_v1/protein_water_system.xml",
+            "sha256": "475a442426eda9088965f2b34ea677a331f5195840ff857128a87d8c0b7ac840"
+          },
+          "normalized_coordinates": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_global_occupancy_20260923/prepared_v1/sources/Hans_8FNR/atoms.json",
+            "sha256": "7f9a0f0b56e1b19ab2061460f3a3fc572829d0773050cb5d17cab4b940b2c0f4"
+          },
+          "source": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_series_followup_20260923/dy_transfer_v1/hans_Dy_protonated.pdb",
+            "sha256": "eef93136891638fac4c585b094624e48a388dd9a7543aa78783915dde3df112a"
+          },
+          "forcefields": [
+            {
+              "path": "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/lib/python3.11/site-packages/openmm/app/data/amber19/protein.ff19SB.xml",
+              "sha256": "086bfdb1c05e7d5cb1d330e6c39fab5056a95e89492cdbd3044c746db13e9d09"
+            },
+            {
+              "path": "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/lib/python3.11/site-packages/openmm/app/data/tip3p.xml",
+              "sha256": "607f0fc9566c3770db2d9eb579fed68c4157578445eed1ec0aa7dccc23d57a6c"
+            }
+          ]
+        },
+        "core_mapping": {
+          "A": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8FNR/core_mapping_A.json",
+            "sha256": "2db6c82361946af15eeb487265ed670bd9d9781f8f187a2d188077c8ddf96f57"
+          },
+          "B": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8FNR/core_mapping_B.json",
+            "sha256": "3aa098318db711335b8c3804caa20572c5a086fc5441eec56f9b3133fbe78bd6"
+          }
+        },
+        "boundary_mapping": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8FNR/boundary_mapping.json",
+          "sha256": "8a29d421d7da9cdc434a92a0d57b6801131ff7eebf59b238be430cb00a0db638"
+        },
+        "environment_atoms": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8FNR/environment_atoms.json",
+          "sha256": "4de304163810d565bf81e152a71f526dccedca97205ba999abfb9c336b3c38e9"
+        },
+        "source_manifest": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_global_occupancy_20260923/prepared_v1/manifest.json",
+          "sha256": "2b0b906300fe24b1147813885c32c02253d26d1f50b974e316a52fc1fcf342f5"
+        },
+        "source_pins": {
+          "atoms": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_global_occupancy_20260923/prepared_v1/sources/Hans_8FNR/atoms.json",
+            "sha256": "7f9a0f0b56e1b19ab2061460f3a3fc572829d0773050cb5d17cab4b940b2c0f4"
+          },
+          "crystal": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/hans_lanm_protenix_benchmark/references/8FNR.pdb",
+            "sha256": "b7da288458075fe269820a8dfdd6bc371bfadd9c9f07a59e03a096cc46677c88"
+          },
+          "protein_audit": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_global_occupancy_20260923/prepared_v1/sources/Hans_8FNR/audit.json",
+            "sha256": "aa5de7ad8c185e41351c416f13e32c47227e72236099ff1da19bb98507a4687a"
+          },
+          "protonated_source": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_series_followup_20260923/dy_transfer_v1/hans_Dy_protonated.pdb",
+            "sha256": "eef93136891638fac4c585b094624e48a388dd9a7543aa78783915dde3df112a"
+          },
+          "protonation_receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_series_followup_20260923/dy_transfer_v1/hans_Dy_protonation_manifest.json",
+            "sha256": "a118162d0d14b597bc4408c50f78a71f11428c5a67fd05d23e9d932058d1c5cd"
+          },
+          "water_inventory": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_global_occupancy_20260923/prepared_v1/sources/Hans_8FNR/waters.json",
+            "sha256": "b76615d7685fccdda690570da0a89196209da285dbf5068ed61049e5434feedd"
+          }
+        },
+        "reviewed_admission": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/scaffold_H_repair_v1/Hans8FNR/REVIEWED_ADMISSION.json",
+          "sha256": "e2650498d5574c4b71f634ef15e3481eef9b082af1cb0e362ec09eddae280419"
+        },
+        "reviewed_coordinates": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/scaffold_H_repair_v1/Hans8FNR/coordinates_A.json",
+          "sha256": "1b96eb5ef8e99915d6d74a2a7f6efd8a7c8633d9dfedeea63cd8953a85fec872"
+        },
+        "preparation_implementation": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/metal_environment_response_20260926/repaired_embedded_preparation_20260928/PREPARE_v2.py",
+          "sha256": "05130647904e6308ad53fd6a0d834604876739a9284d4e5f12ac69a09124a11b"
+        },
+        "preparation_plan": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/metal_environment_response_20260926/repaired_embedded_preparation_20260928/PLAN.md",
+          "sha256": "f730bc8d8888e9646fc6953defaf35497a18c6f3c9831796b486e152f8da544b"
+        },
+        "original_inputs": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_preparation_v1/Hans8FNR/INPUTS.json",
+          "sha256": "28ac59e2dc444502cef21b2c11852ee25a59f89edb5d010e4cc7e64af9ad6be1"
+        },
+        "classical_origins": {
+          "La": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/scaffold_origin_transfer_v1/Hans8FNR/La_A.json",
+            "sha256": "5070707c01ac92ddd4c21d0e0dc8c8a3aa1ec11226b0a63efa51315e32c4f58d"
+          },
+          "Dy": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/scaffold_origin_transfer_v1/Hans8FNR/Dy_A.json",
+            "sha256": "0abe136140632504b4f9d35888b0b80720fef07050eb38c7cb498ee1cad48790"
+          }
+        },
+        "classical_ledger": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/scaffold_origin_transfer_v1/Hans8FNR/LEDGER.json",
+          "sha256": "ea2d699627222d02c64e83cb96b97f7f3cc10438f024573f41673847dee6636f"
+        },
+        "classical_ledger_artifacts": {
+          "bonded_terms.json": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/scaffold_origin_transfer_v1/Hans8FNR/bonded_terms.json",
+            "sha256": "574e56c83cbddd0bb27dd484f5a7c55b3e485fd86f8fdaea79829873f06e589d"
+          },
+          "exceptions.json": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/scaffold_origin_transfer_v1/Hans8FNR/exceptions.json",
+            "sha256": "e2b04e42baacce683a5d8df4a60d358553fb2d6e20c7bb721a0a689cb7c99114"
+          },
+          "particles.json": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/scaffold_origin_transfer_v1/Hans8FNR/particles.json",
+            "sha256": "1b009bc93646cbf89eb49f069b42d7d2a6b1a63ff57d6efc79680c9fdc6db44a"
+          }
+        }
+      },
+      "physical_representation": {
+        "physical_sources_scope": "protein_and_water_only; target and three spectators are separate INPUTS/core-map declarations",
+        "export_scope": "protein_and_water_only",
+        "classical_origin_scope": "full physical protein/water plus three spectators plus target; no synthetic caps",
+        "classical_origin_atom_order": "protein/water, spectators in receipt order, target last",
+        "classical_origin_atom_count": 2206,
+        "classical_origin_last_four_ids": [
+          "A/201//DY",
+          "A/202//DY",
+          "A/204//DY",
+          "A/203//DY"
+        ],
+        "universal_target_index": null,
+        "index_reason": "Core and full-system orders differ; use each pinned mapping, never a common positional assumption."
+      },
+      "recorded_inventory": {
+        "protein_water_atoms": 2202,
+        "protein_atoms": 1665,
+        "protein_residues": 110,
+        "protein_water_charge_e": -4.000000000000067,
+        "charge_accounting": {
+          "MM_e": 9.0,
+          "QM_e": -1,
+          "all_site_ions_e": 12.0,
+          "protein_water_e": -4,
+          "total_e": 8.0
+        },
+        "water_count": 179,
+        "QM_water_residues": [
+          "A/314/",
+          "A/345/",
+          "A/369/"
+        ],
+        "target": {
+          "site": "EF3",
+          "mapping_row": {
+            "id": "target_EF3",
+            "kind": "metal",
+            "qm_index": 0,
+            "source_site": {
+              "chain": "A",
+              "element": "Dy",
+              "insertion_code": "",
+              "name": "DY",
+              "resid": 203,
+              "resname": "DY",
+              "xyz_A": [
+                20.028,
+                -2.476,
+                -5.502
+              ]
+            },
+            "xyz_A": [
+              20.028,
+              -2.476,
+              -5.502
+            ]
+          },
+          "source_atom_id": "A/203//DY",
+          "substitution_oxidation_state": 3,
+          "modeled_presence": "one explicit target atom",
+          "deposited_fractional_occupancy": null,
+          "occupancy_reason": "Not a declared field in these prepared inputs; deposited atom-site evidence remains pinned and has not been promoted to a population model."
+        },
+        "spectators": [
+          {
+            "charge_e": 3.0,
+            "element": "Dy",
+            "id": "A/201//DY",
+            "kind": "spectator_formal_monopole",
+            "representation": "frozen formal charge, no FF ion parameters/LJ or polarization",
+            "site": "EF1",
+            "xyz_A": [
+              -0.384,
+              3.18,
+              16.084
+            ]
+          },
+          {
+            "charge_e": 3.0,
+            "element": "Dy",
+            "id": "A/202//DY",
+            "kind": "spectator_formal_monopole",
+            "representation": "frozen formal charge, no FF ion parameters/LJ or polarization",
+            "site": "EF2",
+            "xyz_A": [
+              14.951,
+              -13.05,
+              -3.958
+            ]
+          },
+          {
+            "charge_e": 3.0,
+            "element": "Dy",
+            "id": "A/204//DY",
+            "kind": "spectator_formal_monopole",
+            "representation": "frozen formal charge, no FF ion parameters/LJ or polarization",
+            "site": "EF4",
+            "xyz_A": [
+              -3.311,
+              10.991,
+              8.378
+            ]
+          }
+        ],
+        "occupancy_interpretation": "fixed source geometry hypotheses; no natural population assertion"
+      },
+      "local_electronic_states": {
+        "Dy": {
+          "all_electron_count": 871,
+          "charge": -1,
+          "electronic_state": "DyIII high-spin sextet hypothesis; no spin-orbit treatment qualified",
+          "multiplicity": 6,
+          "oxidation_state": 3,
+          "physical_spin_2S": 5,
+          "xyz": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8FNR/Dy_A.xyz",
+            "sha256": "a8281dee0537eee70f31d7115a3d05e794b3badd4f03ab7140d03de6df32ab4c"
+          }
+        },
+        "La": {
+          "all_electron_count": 862,
+          "charge": -1,
+          "electronic_state": "LaIII closed shell",
+          "multiplicity": 1,
+          "oxidation_state": 3,
+          "physical_spin_2S": 0,
+          "xyz": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8FNR/La_A.xyz",
+            "sha256": "c9c226b245b0b4d823d6f6f209319181dad30194435755d052525d9cd9784ac2"
+          }
+        }
+      },
+      "local_model": {
+        "scope": "capped electronic region; not whole-system state",
+        "atom_count_from_saved_xyz_header": 198,
+        "target_qm_index": 0,
+        "configuration_A": {
+          "core_mapping": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8FNR/core_mapping_A.json",
+            "sha256": "2db6c82361946af15eeb487265ed670bd9d9781f8f187a2d188077c8ddf96f57"
+          },
+          "endpoints": {
+            "Dy": {
+              "all_electron_count": 871,
+              "charge": -1,
+              "electronic_state": "DyIII high-spin sextet hypothesis; no spin-orbit treatment qualified",
+              "multiplicity": 6,
+              "oxidation_state": 3,
+              "physical_spin_2S": 5,
+              "xyz": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8FNR/Dy_A.xyz",
+                "sha256": "a8281dee0537eee70f31d7115a3d05e794b3badd4f03ab7140d03de6df32ab4c"
+              }
+            },
+            "La": {
+              "all_electron_count": 862,
+              "charge": -1,
+              "electronic_state": "LaIII closed shell",
+              "multiplicity": 1,
+              "oxidation_state": 3,
+              "physical_spin_2S": 0,
+              "xyz": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8FNR/La_A.xyz",
+                "sha256": "c9c226b245b0b4d823d6f6f209319181dad30194435755d052525d9cd9784ac2"
+              }
+            }
+          },
+          "pointcharges": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8FNR/environment.pc",
+            "sha256": "992df8d88416526795ab2380e81000162cc64e1ecea39d2f89b335c7cff1b1d6"
+          }
+        },
+        "configuration_B_historical": {
+          "core_mapping": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8FNR/core_mapping_B.json",
+            "sha256": "3aa098318db711335b8c3804caa20572c5a086fc5441eec56f9b3133fbe78bd6"
+          },
+          "endpoints": {
+            "Dy": {
+              "all_electron_count": 871,
+              "charge": -1,
+              "electronic_state": "DyIII high-spin sextet hypothesis; no spin-orbit treatment qualified",
+              "multiplicity": 6,
+              "oxidation_state": 3,
+              "physical_spin_2S": 5,
+              "xyz": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8FNR/Dy_B.xyz",
+                "sha256": "277fb0c85b21f141ceb956be6cb3dcfb3704d3945d9c73ee339f7b7bb1eb5af4"
+              }
+            },
+            "La": {
+              "all_electron_count": 862,
+              "charge": -1,
+              "electronic_state": "LaIII closed shell",
+              "multiplicity": 1,
+              "oxidation_state": 3,
+              "physical_spin_2S": 0,
+              "xyz": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8FNR/La_B.xyz",
+                "sha256": "241f2809594758d22970dca46b168552929cc605a0efe986233a3a2b694af570"
+              }
+            }
+          },
+          "pointcharges": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Hans8FNR/environment.pc",
+            "sha256": "992df8d88416526795ab2380e81000162cc64e1ecea39d2f89b335c7cff1b1d6"
+          }
+        }
+      },
+      "whole_electronic_state": {
+        "charge_e": 8.0,
+        "multiplicity": null,
+        "spin_2S": null,
+        "physical_state_qualified": null,
+        "reason": "INPUTS declares local capped La/Dy states only. Aggregate coupling/state for the retained whole-system spectators is unassigned by this contract."
+      },
+      "protonation_and_preparation": {
+        "recorded_protonation": {
+          "ph": 5.0,
+          "protocol_id": "pdbfixer_standard_residue_protonation_v2",
+          "add_missing_residues": false,
+          "keep_chain_and_residue_ids": true,
+          "repaired_missing_atom_count": 0,
+          "repaired_missing_terminal_atom_count": 0
+        },
+        "audit_terminal_additions": [],
+        "source_heavy_coordinates_preserved": true,
+        "coordinate_preparation": "reviewed_C_bound_H_v1",
+        "reviewed_status": "chemically_reviewed_geometry_admitted",
+        "reviewed_admitted": true,
+        "reviewed_policy": "Separate root-authorized chemistry review; original optimizer-status null/generic-volume failures retained. Saved gradient substitutes for unavailable convergence receipt as geometric stationarity evidence only. No molecular score used.",
+        "optimizer_status": null,
+        "terminal_state_interpretation": "Exact prepared protonation/topology is bound; no new terminal-state or solution-population assignment."
+      },
+      "historical_interaction_versions": {
+        "INPUTS_spectators": "formal monopoles; no ion-specific LJ or polarization in this stage",
+        "classical_ledger_boundary_policy": "fixed_cap_radial_bonds_retained_substitutable_angular_terms_omitted_v1",
+        "classical_ledger_ion_parameters": {
+          "Dy": {
+            "Rmin_over2_A": 1.609,
+            "epsilon_kcal_mol": 0.0838924,
+            "file": {
+              "path": "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/dat/leap/parm/frcmod.ions234lm_126_tip3p",
+              "sha256": "4252f496d5462dc84ddfae7ef8e941bf8c927584201284be3ccae178ebab08d3"
+            },
+            "line": "Dy3+ 1.609 0.08389240 IOD set for TIP3P water from Li et al., JPCB, 2015, 119, 883"
+          },
+          "La": {
+            "Rmin_over2_A": 1.718,
+            "epsilon_kcal_mol": 0.15060822,
+            "file": {
+              "path": "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/dat/leap/parm/frcmod.ions234lm_126_tip3p",
+              "sha256": "4252f496d5462dc84ddfae7ef8e941bf8c927584201284be3ccae178ebab08d3"
+            },
+            "line": "La3+ 1.718 0.15060822 IOD set for TIP3P water from Li et al., JPCB, 2015, 119, 883"
+          }
+        },
+        "classical_ledger_scope": "Later separate classical ledger; do not silently combine with whole electronic energy or treat INPUTS no-LJ statement as current universal physics.",
+        "selected_transfer_Hamiltonian": null
+      },
+      "deposited_assembly": {
+        "source": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/hans_lanm_protenix_benchmark/references/8FNR.pdb",
+          "sha256": "b7da288458075fe269820a8dfdd6bc371bfadd9c9f07a59e03a096cc46677c88"
+        },
+        "pdb_id": "8FNR",
+        "category": "REMARK 350",
+        "literal_evidence": {
+          "first_line": 499,
+          "last_line": 521,
+          "text": "REMARK 350 BIOMOLECULE: 1                                                       \nREMARK 350 AUTHOR DETERMINED BIOLOGICAL UNIT: DIMERIC                           \nREMARK 350 SOFTWARE DETERMINED QUATERNARY STRUCTURE: DIMERIC                    \nREMARK 350 SOFTWARE USED: PISA                                                  \nREMARK 350 TOTAL BURIED SURFACE AREA: 1200 ANGSTROM**2                          \nREMARK 350 SURFACE AREA OF THE COMPLEX: 11270 ANGSTROM**2                       \nREMARK 350 CHANGE IN SOLVENT FREE ENERGY: -7.0 KCAL/MOL                         \nREMARK 350 APPLY THE FOLLOWING TO CHAINS: A, B                                  \nREMARK 350   BIOMT1   1  1.000000  0.000000  0.000000        0.00000            \nREMARK 350   BIOMT2   1  0.000000  1.000000  0.000000        0.00000            \nREMARK 350   BIOMT3   1  0.000000  0.000000  1.000000        0.00000            \nREMARK 350                                                                      \nREMARK 350 BIOMOLECULE: 2                                                       \nREMARK 350 AUTHOR DETERMINED BIOLOGICAL UNIT: DIMERIC                           \nREMARK 350 SOFTWARE DETERMINED QUATERNARY STRUCTURE: DIMERIC                    \nREMARK 350 SOFTWARE USED: PISA                                                  \nREMARK 350 TOTAL BURIED SURFACE AREA: 1210 ANGSTROM**2                          \nREMARK 350 SURFACE AREA OF THE COMPLEX: 11150 ANGSTROM**2                       \nREMARK 350 CHANGE IN SOLVENT FREE ENERGY: -7.0 KCAL/MOL                         \nREMARK 350 APPLY THE FOLLOWING TO CHAINS: C, D                                  \nREMARK 350   BIOMT1   1  1.000000  0.000000  0.000000        0.00000            \nREMARK 350   BIOMT2   1  0.000000  1.000000  0.000000        0.00000            \nREMARK 350   BIOMT3   1  0.000000  0.000000  1.000000        0.00000            "
+        },
+        "assemblies": [
+          {
+            "id": "1",
+            "protein_author_chains": [
+              "A",
+              "B"
+            ],
+            "oligomeric_details": "dimeric",
+            "oligomeric_count": 2,
+            "operation_expression": "BIOMT 1 identity"
+          },
+          {
+            "id": "2",
+            "protein_author_chains": [
+              "C",
+              "D"
+            ],
+            "oligomeric_details": "dimeric",
+            "oligomeric_count": 2,
+            "operation_expression": "BIOMT 1 identity"
+          }
+        ],
+        "asym_id_namespace_note": "mmCIF asym_id_list also includes nonprotein entities; protein_author_chains are stated separately.",
+        "prepared_partner": null,
+        "prepared_partner_reason": "No partner/complex is prepared by this contract. Deposited coordinates permit later explicit preparation without a new fold.",
+        "equilibrated_extracted_monomer_established": false
+      },
+      "unresolved": {
+        "aggregate_state": null,
+        "physical_state_qualification": null,
+        "selected_transfer_Hamiltonian": null,
+        "partner_preparation": null,
+        "partner_charge": null,
+        "partner_spin": null,
+        "partner_water_ion_ownership": null,
+        "dimer_population": null,
+        "solution_protonation_population": null,
+        "reason": "These are not supplied by the fixed conditional chain-A inputs; source fidelity does not qualify scoring or assembly thermodynamics."
+      }
+    },
+    {
+      "source_id": "Mex_8FNS",
+      "preparation_folder_alias": "Mex8FNS",
+      "global_manifest_source_id": "Mex_8FNS",
+      "protein": "Mex",
+      "inputs": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Mex8FNS/INPUTS.json",
+        "sha256": "4b3b98983af0cb5fcdbf7b8f52e35063308201ce9df777a30484acf5146b7930"
+      },
+      "configuration": {
+        "selected": "A",
+        "A": "original",
+        "B": "recorded_2deg_carboxylate_perturbation",
+        "labels_are_biological_chains": false,
+        "perturbation": {
+          "axis": [
+            "A/86//CA",
+            "A/86//CB"
+          ],
+          "axis_unit": [
+            0.8737993296980441,
+            -0.4606124347627691,
+            -0.15591958299444836
+          ],
+          "changed_source_ids": [
+            "A/86//CG",
+            "A/86//HB2",
+            "A/86//HB3",
+            "A/86//OD1",
+            "A/86//OD2"
+          ],
+          "pivot_xyz_A": [
+            30.465,
+            35.531,
+            50.437000000000005
+          ],
+          "right_hand_angle_degrees": 2.0,
+          "rotate_source_atoms": [
+            "A/86//HB2",
+            "A/86//HB3",
+            "A/86//CG",
+            "A/86//OD1",
+            "A/86//OD2"
+          ],
+          "status": "proposal only; validate actual full covalent graph and contacts before any scoring",
+          "type": "intact carboxylate torsion"
+        }
+      },
+      "prepared_chain": "A",
+      "prepared_assembly": "chain A conditional monomer; no dimer/folding equilibrium",
+      "artifacts": {
+        "physical_sources": {
+          "A": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Mex8FNS/physical_source_A.json",
+            "sha256": "709fcf65ba72a5b4d40637683c01a17e2fe9a53e5b8e19b53457a926be88424a"
+          },
+          "B": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Mex8FNS/physical_source_B.json",
+            "sha256": "73d6b2c9318fecbbcc98522c14425a7e6aa7114d5ff16e91d86e38786c541b48"
+          }
+        },
+        "export": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_preparation_v1/Mex8FNS/export_v1/EXPORT.json",
+          "sha256": "b9005c860b2795807427c275c6dc9c4aff96352e2572db375bc65b819aa6275f"
+        },
+        "export_artifacts": {
+          "atoms": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_preparation_v1/Mex8FNS/export_v1/atoms_charges.json",
+            "sha256": "457851f321d2da4cb63399e507401b6faf328f12ff3512fda3df736266e647b5"
+          },
+          "bonds": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_preparation_v1/Mex8FNS/export_v1/bonds.json",
+            "sha256": "7b1293cc72b7279aad323cb43d74d4014b769f1d986ccde46eb4797573395677"
+          },
+          "system": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_preparation_v1/Mex8FNS/export_v1/protein_water_system.xml",
+            "sha256": "9e0a8d85039b35153fc2a873fad415a3e49e5c2f26c91c8d88dbe06d5c589f02"
+          },
+          "normalized_coordinates": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_global_occupancy_20260923/prepared_v1/sources/Mex_8FNS/atoms.json",
+            "sha256": "adfa05999245c5c9175df3d7c2ff33cb2166f59adcdc2810af5e370b36fbc4c4"
+          },
+          "source": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_series_followup_20260923/sources_v2/mex_protonated.pdb",
+            "sha256": "7eb3c695e286c32dbed03cd09c9a7f5557bc3c63b3cbac56aa389ff2450e6e4f"
+          },
+          "forcefields": [
+            {
+              "path": "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/lib/python3.11/site-packages/openmm/app/data/amber19/protein.ff19SB.xml",
+              "sha256": "086bfdb1c05e7d5cb1d330e6c39fab5056a95e89492cdbd3044c746db13e9d09"
+            },
+            {
+              "path": "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/lib/python3.11/site-packages/openmm/app/data/tip3p.xml",
+              "sha256": "607f0fc9566c3770db2d9eb579fed68c4157578445eed1ec0aa7dccc23d57a6c"
+            }
+          ]
+        },
+        "core_mapping": {
+          "A": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Mex8FNS/core_mapping_A.json",
+            "sha256": "684e77b98d11faf7050b33fa07ed86f449b565ef0d81fc8f8a6c6f0bf435301d"
+          },
+          "B": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Mex8FNS/core_mapping_B.json",
+            "sha256": "e0d1c375641f8e895d4940ae05dc04b7208388af71d8c81a0962b885193fd945"
+          }
+        },
+        "boundary_mapping": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Mex8FNS/boundary_mapping.json",
+          "sha256": "a8cf4fff80bd0ad1472775ed30a3ef97bf9b307e2c844a1e836b9805be3d34e1"
+        },
+        "environment_atoms": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Mex8FNS/environment_atoms.json",
+          "sha256": "928f20dc81df3547be346a139fe571f3657484c0187d4cc467d715cbdf78d6f2"
+        },
+        "source_manifest": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_global_occupancy_20260923/prepared_v1/manifest.json",
+          "sha256": "2b0b906300fe24b1147813885c32c02253d26d1f50b974e316a52fc1fcf342f5"
+        },
+        "source_pins": {
+          "atoms": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_global_occupancy_20260923/prepared_v1/sources/Mex_8FNS/atoms.json",
+            "sha256": "adfa05999245c5c9175df3d7c2ff33cb2166f59adcdc2810af5e370b36fbc4c4"
+          },
+          "crystal": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/evidence/lanthanide/8FNS.cif",
+            "sha256": "bb593dc407de9f1d00138ea19c417a503b88bae3a2926967d53595da312b2d9f"
+          },
+          "protein_audit": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_global_occupancy_20260923/prepared_v1/sources/Mex_8FNS/audit.json",
+            "sha256": "cec2444a73736d99609a2736f48ccc4d2881f4d796bfcdcaab879fd9a97dbd75"
+          },
+          "protonated_source": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_series_followup_20260923/sources_v2/mex_protonated.pdb",
+            "sha256": "7eb3c695e286c32dbed03cd09c9a7f5557bc3c63b3cbac56aa389ff2450e6e4f"
+          },
+          "protonation_receipt": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_series_followup_20260923/sources_v2/mex_protonation_manifest.json",
+            "sha256": "53c36e1529e728b000e3074d99216ef8607f0b7c524ed7da5133124e466778a4"
+          },
+          "water_inventory": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_global_occupancy_20260923/prepared_v1/sources/Mex_8FNS/waters.json",
+            "sha256": "900681466bcab248c40986d5e3936bb3d2424415ac7827cd9ef3661f4eafb51e"
+          }
+        },
+        "reviewed_admission": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/scaffold_H_repair_v1/Mex8FNS/REVIEWED_ADMISSION.json",
+          "sha256": "4f4333a802568e301dffc3f910d3d8993506e9674f8886ac780b88c599844457"
+        },
+        "reviewed_coordinates": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/scaffold_H_repair_v1/Mex8FNS/coordinates_A.json",
+          "sha256": "b7894d3706aa20cef32d99d929b22a4d88c15d1f55a9ae9b40a412ed19426440"
+        },
+        "preparation_implementation": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/metal_environment_response_20260926/repaired_embedded_preparation_20260928/PREPARE_v2.py",
+          "sha256": "05130647904e6308ad53fd6a0d834604876739a9284d4e5f12ac69a09124a11b"
+        },
+        "preparation_plan": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/metal_environment_response_20260926/repaired_embedded_preparation_20260928/PLAN.md",
+          "sha256": "f730bc8d8888e9646fc6953defaf35497a18c6f3c9831796b486e152f8da544b"
+        },
+        "original_inputs": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_preparation_v1/Mex8FNS/INPUTS.json",
+          "sha256": "235708eb3a6460cb592fda434484baa5f44bd8698f1ff9f928df20d7277f11a2"
+        },
+        "classical_origins": {
+          "La": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/scaffold_origin_transfer_v1/Mex8FNS/La_A.json",
+            "sha256": "1c894f1ce926fc173820e79116796300fa6a0df2cc6d719085f90c200facb9bf"
+          },
+          "Dy": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/scaffold_origin_transfer_v1/Mex8FNS/Dy_A.json",
+            "sha256": "d8cdcb0c8f93726367f01f47209da29fcfbc04578f19ce1ed26e4102d595dc50"
+          }
+        },
+        "classical_ledger": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/scaffold_origin_transfer_v1/Mex8FNS/LEDGER.json",
+          "sha256": "f37fb9d6185b987acdb4b17d824cef114fa1acbad6bc7e34240fd4588c53eb9e"
+        },
+        "classical_ledger_artifacts": {
+          "bonded_terms.json": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/scaffold_origin_transfer_v1/Mex8FNS/bonded_terms.json",
+            "sha256": "a9fe020e3780e965501710d93efdc276451154594ec771af2bfc9ec239412935"
+          },
+          "exceptions.json": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/scaffold_origin_transfer_v1/Mex8FNS/exceptions.json",
+            "sha256": "dba074d0d90e70e49052a31db24cfe7282aedc37d5ccaf626100a258d94e6345"
+          },
+          "particles.json": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/scaffold_origin_transfer_v1/Mex8FNS/particles.json",
+            "sha256": "a9051a07d79959ac778986871a40c048aec3939529ad838108b83409615fc9c6"
+          }
+        }
+      },
+      "physical_representation": {
+        "physical_sources_scope": "protein_and_water_only; target and three spectators are separate INPUTS/core-map declarations",
+        "export_scope": "protein_and_water_only",
+        "classical_origin_scope": "full physical protein/water plus three spectators plus target; no synthetic caps",
+        "classical_origin_atom_order": "protein/water, spectators in receipt order, target last",
+        "classical_origin_atom_count": 2049,
+        "classical_origin_last_four_ids": [
+          "A/201//ND",
+          "A/202//ND",
+          "A/204//ND",
+          "A/203//ND"
+        ],
+        "universal_target_index": null,
+        "index_reason": "Core and full-system orders differ; use each pinned mapping, never a common positional assumption."
+      },
+      "recorded_inventory": {
+        "protein_water_atoms": 2045,
+        "protein_atoms": 1544,
+        "protein_residues": 105,
+        "protein_water_charge_e": -10.000000000000021,
+        "charge_accounting": {
+          "MM_e": 2.0,
+          "QM_e": 0,
+          "all_site_ions_e": 12.0,
+          "protein_water_e": -10,
+          "total_e": 2.0
+        },
+        "water_count": 167,
+        "QM_water_residues": [
+          "A/320/",
+          "A/331/",
+          "A/358/",
+          "A/373/",
+          "A/376/",
+          "A/394/",
+          "A/434/"
+        ],
+        "target": {
+          "site": "EF3",
+          "mapping_row": {
+            "id": "target_EF3",
+            "kind": "metal",
+            "qm_index": 0,
+            "source_site": {
+              "chain": "A",
+              "element": "Nd",
+              "insertion_code": "",
+              "name": "ND",
+              "resid": 203,
+              "resname": "ND",
+              "xyz_A": [
+                28.578,
+                31.754,
+                48.079
+              ]
+            },
+            "xyz_A": [
+              28.578,
+              31.754,
+              48.079
+            ]
+          },
+          "source_atom_id": "A/203//ND",
+          "substitution_oxidation_state": 3,
+          "modeled_presence": "one explicit target atom",
+          "deposited_fractional_occupancy": null,
+          "occupancy_reason": "Not a declared field in these prepared inputs; deposited atom-site evidence remains pinned and has not been promoted to a population model."
+        },
+        "spectators": [
+          {
+            "charge_e": 3.0,
+            "element": "Nd",
+            "id": "A/201//ND",
+            "kind": "spectator_formal_monopole",
+            "representation": "frozen formal charge, no FF ion parameters/LJ or polarization",
+            "site": "EF1",
+            "xyz_A": [
+              19.427,
+              7.049,
+              62.123
+            ]
+          },
+          {
+            "charge_e": 3.0,
+            "element": "Nd",
+            "id": "A/202//ND",
+            "kind": "spectator_formal_monopole",
+            "representation": "frozen formal charge, no FF ion parameters/LJ or polarization",
+            "site": "EF2",
+            "xyz_A": [
+              27.147,
+              24.748,
+              39.188
+            ]
+          },
+          {
+            "charge_e": 3.0,
+            "element": "Nd",
+            "id": "A/204//ND",
+            "kind": "spectator_formal_monopole",
+            "representation": "frozen formal charge, no FF ion parameters/LJ or polarization",
+            "site": "EF4",
+            "xyz_A": [
+              12.797,
+              15.041,
+              67.239
+            ]
+          }
+        ],
+        "occupancy_interpretation": "fixed source geometry hypotheses; no natural population assertion"
+      },
+      "local_electronic_states": {
+        "Dy": {
+          "all_electron_count": 887,
+          "charge": 0,
+          "electronic_state": "DyIII high-spin sextet hypothesis; no spin-orbit treatment qualified",
+          "multiplicity": 6,
+          "oxidation_state": 3,
+          "physical_spin_2S": 5,
+          "xyz": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Mex8FNS/Dy_A.xyz",
+            "sha256": "c7e2823a1460756ff11c3e9b00647502ea9499d584dc087beea669d9a953109a"
+          }
+        },
+        "La": {
+          "all_electron_count": 878,
+          "charge": 0,
+          "electronic_state": "LaIII closed shell",
+          "multiplicity": 1,
+          "oxidation_state": 3,
+          "physical_spin_2S": 0,
+          "xyz": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Mex8FNS/La_A.xyz",
+            "sha256": "7d3790074fb01647c0a892bfe9ae0eca0376575799edc456cf75bb7aac66d9b6"
+          }
+        }
+      },
+      "local_model": {
+        "scope": "capped electronic region; not whole-system state",
+        "atom_count_from_saved_xyz_header": 209,
+        "target_qm_index": 0,
+        "configuration_A": {
+          "core_mapping": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Mex8FNS/core_mapping_A.json",
+            "sha256": "684e77b98d11faf7050b33fa07ed86f449b565ef0d81fc8f8a6c6f0bf435301d"
+          },
+          "endpoints": {
+            "Dy": {
+              "all_electron_count": 887,
+              "charge": 0,
+              "electronic_state": "DyIII high-spin sextet hypothesis; no spin-orbit treatment qualified",
+              "multiplicity": 6,
+              "oxidation_state": 3,
+              "physical_spin_2S": 5,
+              "xyz": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Mex8FNS/Dy_A.xyz",
+                "sha256": "c7e2823a1460756ff11c3e9b00647502ea9499d584dc087beea669d9a953109a"
+              }
+            },
+            "La": {
+              "all_electron_count": 878,
+              "charge": 0,
+              "electronic_state": "LaIII closed shell",
+              "multiplicity": 1,
+              "oxidation_state": 3,
+              "physical_spin_2S": 0,
+              "xyz": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Mex8FNS/La_A.xyz",
+                "sha256": "7d3790074fb01647c0a892bfe9ae0eca0376575799edc456cf75bb7aac66d9b6"
+              }
+            }
+          },
+          "pointcharges": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Mex8FNS/environment.pc",
+            "sha256": "ff8bc9bfbc1d534454d6119a6cdc19989a12638ac2f9e78b4c768a8bb0df24fe"
+          }
+        },
+        "configuration_B_historical": {
+          "core_mapping": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Mex8FNS/core_mapping_B.json",
+            "sha256": "e0d1c375641f8e895d4940ae05dc04b7208388af71d8c81a0962b885193fd945"
+          },
+          "endpoints": {
+            "Dy": {
+              "all_electron_count": 887,
+              "charge": 0,
+              "electronic_state": "DyIII high-spin sextet hypothesis; no spin-orbit treatment qualified",
+              "multiplicity": 6,
+              "oxidation_state": 3,
+              "physical_spin_2S": 5,
+              "xyz": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Mex8FNS/Dy_B.xyz",
+                "sha256": "7b4fd976e7e1852fc39879cdb04417d1eb11594050ae8e2253075be6703f0723"
+              }
+            },
+            "La": {
+              "all_electron_count": 878,
+              "charge": 0,
+              "electronic_state": "LaIII closed shell",
+              "multiplicity": 1,
+              "oxidation_state": 3,
+              "physical_spin_2S": 0,
+              "xyz": {
+                "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Mex8FNS/La_B.xyz",
+                "sha256": "524fc195bc1cd7324d7313b0d232a208ae1ca9cd3a5e527d4ba42908e2500a20"
+              }
+            }
+          },
+          "pointcharges": {
+            "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lanm_ef3_CboundH_repaired_v2/Mex8FNS/environment.pc",
+            "sha256": "ff8bc9bfbc1d534454d6119a6cdc19989a12638ac2f9e78b4c768a8bb0df24fe"
+          }
+        }
+      },
+      "whole_electronic_state": {
+        "charge_e": 2.0,
+        "multiplicity": null,
+        "spin_2S": null,
+        "physical_state_qualified": null,
+        "reason": "INPUTS declares local capped La/Dy states only. Aggregate coupling/state for the retained whole-system spectators is unassigned by this contract."
+      },
+      "protonation_and_preparation": {
+        "recorded_protonation": {
+          "ph": 5.0,
+          "protocol_id": "pdbfixer_standard_residue_protonation_v2",
+          "add_missing_residues": false,
+          "keep_chain_and_residue_ids": true,
+          "repaired_missing_atom_count": 0,
+          "repaired_missing_terminal_atom_count": 0
+        },
+        "audit_terminal_additions": [],
+        "source_heavy_coordinates_preserved": true,
+        "coordinate_preparation": "reviewed_C_bound_H_v1",
+        "reviewed_status": "chemically_reviewed_geometry_admitted",
+        "reviewed_admitted": true,
+        "reviewed_policy": "Separate root-authorized chemistry review; original optimizer-status null/generic-volume failures retained. Saved gradient substitutes for unavailable convergence receipt as geometric stationarity evidence only. No molecular score used.",
+        "optimizer_status": null,
+        "terminal_state_interpretation": "Exact prepared protonation/topology is bound; no new terminal-state or solution-population assignment."
+      },
+      "historical_interaction_versions": {
+        "INPUTS_spectators": "formal monopoles; no ion-specific LJ or polarization in this stage",
+        "classical_ledger_boundary_policy": "fixed_cap_radial_bonds_retained_substitutable_angular_terms_omitted_v1",
+        "classical_ledger_ion_parameters": {
+          "Dy": {
+            "Rmin_over2_A": 1.609,
+            "epsilon_kcal_mol": 0.0838924,
+            "file": {
+              "path": "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/dat/leap/parm/frcmod.ions234lm_126_tip3p",
+              "sha256": "4252f496d5462dc84ddfae7ef8e941bf8c927584201284be3ccae178ebab08d3"
+            },
+            "line": "Dy3+ 1.609 0.08389240 IOD set for TIP3P water from Li et al., JPCB, 2015, 119, 883"
+          },
+          "La": {
+            "Rmin_over2_A": 1.718,
+            "epsilon_kcal_mol": 0.15060822,
+            "file": {
+              "path": "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/dat/leap/parm/frcmod.ions234lm_126_tip3p",
+              "sha256": "4252f496d5462dc84ddfae7ef8e941bf8c927584201284be3ccae178ebab08d3"
+            },
+            "line": "La3+ 1.718 0.15060822 IOD set for TIP3P water from Li et al., JPCB, 2015, 119, 883"
+          },
+          "Nd": {
+            "Rmin_over2_A": 1.681,
+            "epsilon_kcal_mol": 0.12564307,
+            "file": {
+              "path": "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/dat/leap/parm/frcmod.ions234lm_126_tip3p",
+              "sha256": "4252f496d5462dc84ddfae7ef8e941bf8c927584201284be3ccae178ebab08d3"
+            },
+            "line": "Nd3+ 1.681 0.12564307 IOD set for TIP3P water from Li et al., JPCB, 2015, 119, 883"
+          }
+        },
+        "classical_ledger_scope": "Later separate classical ledger; do not silently combine with whole electronic energy or treat INPUTS no-LJ statement as current universal physics.",
+        "selected_transfer_Hamiltonian": null
+      },
+      "deposited_assembly": {
+        "source": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/benchmark_set_20260915/evidence/lanthanide/8FNS.cif",
+          "sha256": "bb593dc407de9f1d00138ea19c417a503b88bae3a2926967d53595da312b2d9f"
+        },
+        "pdb_id": "8FNS",
+        "category": "_pdbx_struct_assembly / _pdbx_struct_assembly_gen / _pdbx_struct_oper_list",
+        "literal_evidence": {
+          "first_line": 1236,
+          "last_line": 1266,
+          "text": "_pdbx_struct_assembly.id                   1 \n_pdbx_struct_assembly.details              author_defined_assembly \n_pdbx_struct_assembly.method_details       ? \n_pdbx_struct_assembly.oligomeric_details   monomeric \n_pdbx_struct_assembly.oligomeric_count     1 \n# \n_pdbx_struct_assembly_gen.assembly_id       1 \n_pdbx_struct_assembly_gen.oper_expression   1 \n_pdbx_struct_assembly_gen.asym_id_list      A,B,C,D,E,F \n# \n_pdbx_struct_assembly_auth_evidence.id                     1 \n_pdbx_struct_assembly_auth_evidence.assembly_id            1 \n_pdbx_struct_assembly_auth_evidence.experimental_support   none \n_pdbx_struct_assembly_auth_evidence.details                ? \n# \n_pdbx_struct_oper_list.id                   1 \n_pdbx_struct_oper_list.type                 'identity operation' \n_pdbx_struct_oper_list.name                 1_555 \n_pdbx_struct_oper_list.symmetry_operation   x,y,z \n_pdbx_struct_oper_list.matrix[1][1]         1.0000000000 \n_pdbx_struct_oper_list.matrix[1][2]         0.0000000000 \n_pdbx_struct_oper_list.matrix[1][3]         0.0000000000 \n_pdbx_struct_oper_list.vector[1]            0.0000000000 \n_pdbx_struct_oper_list.matrix[2][1]         0.0000000000 \n_pdbx_struct_oper_list.matrix[2][2]         1.0000000000 \n_pdbx_struct_oper_list.matrix[2][3]         0.0000000000 \n_pdbx_struct_oper_list.vector[2]            0.0000000000 \n_pdbx_struct_oper_list.matrix[3][1]         0.0000000000 \n_pdbx_struct_oper_list.matrix[3][2]         0.0000000000 \n_pdbx_struct_oper_list.matrix[3][3]         1.0000000000 \n_pdbx_struct_oper_list.vector[3]            0.0000000000 "
+        },
+        "assemblies": [
+          {
+            "id": "1",
+            "protein_author_chains": [
+              "A"
+            ],
+            "oligomeric_details": "monomeric",
+            "oligomeric_count": 1,
+            "operation_expression": "1",
+            "asym_id_list": "A,B,C,D,E,F"
+          }
+        ],
+        "asym_id_namespace_note": "mmCIF asym_id_list also includes nonprotein entities; protein_author_chains are stated separately.",
+        "prepared_partner": null,
+        "prepared_partner_reason": "8FNS already declares a monomeric deposited assembly. No partner is defined or prepared for Mex by this contract.",
+        "equilibrated_extracted_monomer_established": false,
+        "solution_state_note": "The deposited monomeric assembly is recorded; equilibrated_extracted_monomer_established=false declines a solution-population assertion, not the deposition monomer annotation."
+      },
+      "unresolved": {
+        "aggregate_state": null,
+        "physical_state_qualification": null,
+        "selected_transfer_Hamiltonian": null,
+        "partner_preparation": null,
+        "partner_charge": null,
+        "partner_spin": null,
+        "partner_water_ion_ownership": null,
+        "dimer_population": null,
+        "solution_protonation_population": null,
+        "reason": "These are not supplied by the fixed conditional chain-A inputs; source fidelity does not qualify scoring or assembly thermodynamics."
+      }
+    }
+  ],
+  "historical_Mex_aggregate_hypotheses": {
+    "specification": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_system_intervention_v1/SPEC.md",
+      "sha256": "07393274ee50b2a4e67fdb60ac999f8a295aacb398e6e6faf466f4171bb52ba9"
+    },
+    "scope": "Historical exact job12970 start/terminal panel, not a default for these three origin contracts or a physical-state qualification.",
+    "hypotheses": [
+      {
+        "name": "aligned_counting",
+        "La_multiplicity": 10,
+        "Dy_multiplicity": 15
+      },
+      {
+        "name": "one_Nd_reversed_counting",
+        "La_multiplicity": 4,
+        "Dy_multiplicity": 9
+      }
+    ],
+    "selected_hypothesis": null
+  },
+  "exchange_definitions": {
+    "within_source": "Delta_s = E_s(Dy_EF3) - E_s(La_EF3)",
+    "target_oxidation_state_both_metals": 3,
+    "balanced_contrasts": [
+      {
+        "Hans_source": "Hans8DQ2",
+        "Mex_source": "Mex_8FNS",
+        "expression": "Delta_Hans8DQ2 - Delta_Mex_8FNS"
+      },
+      {
+        "Hans_source": "Hans_8FNR",
+        "Mex_source": "Mex_8FNS",
+        "expression": "Delta_Hans_8FNR - Delta_Mex_8FNS"
+      }
+    ],
+    "pair_invariants": [
+      "all non-target atom identities and coordinates",
+      "spectator species and modeled occupancy",
+      "water inventory and coordinates",
+      "protonation and terminal topology",
+      "charge convention",
+      "one declared Hamiltonian and electronic-state convention"
+    ],
+    "cross_source_policy": "Keep both Hans backgrounds separate; no mixed-source endpoint pair, raw-total minimum, favorable-source selection or independent-protein counting.",
+    "interpretation": "Conditional balanced EF3 exchange only; not aqueous affinity, populations, pure conformational attribution or a validated natural-monomer comparator."
+  },
+  "metadata_validation": {
+    "explicit_unique_file_pins_verified": 106,
+    "method": "stdlib byte hashes and named metadata joins only; no scientific imports or calculations",
+    "source_INPUTS_exact": true,
+    "classical_La_Dy_source_IDs_and_coordinates_exact": true,
+    "qualification_claim": "source metadata fidelity only; independent checker/review pending"
+  }
+}

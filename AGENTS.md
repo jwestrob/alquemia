@@ -3,6 +3,15 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the goal remains active and unmet.
 
+19 October, newest preparation: natural_transfer_contract_v1/REPORT.md under the
+active diagnostic binds all three natural sources and their separate EF3 cycles.
+Inventorye7d7ce48; metadata check5946410f passes298assertions/107pins, zero new
+molecular calls or scientific allocations. Local versus full-system states and
+Hans extracted subunits versus deposited dimers remain explicit. Aggregate spin,
+transfer Hamiltonian and partner preparation remain unassigned; scoring readiness
+is false. This preparation cannot release transfer or reopen the failed candidate.
+Independent7CCN reference14795 continues under its existing actual-result gates.
+
 19 October, newest: electronic-base candidate14804–14806 is complete and CLOSED.
 Read whole_base_delta_comparison_v1/FINAL_REPORT.md under the active diagnostic.
 Candidate error versus wholePBE0 is−2.408776La/−2.522531Dy kcal/mol, both failing

@@ -1,0 +1,76 @@
+{
+  "schema": "natural_lanm_source_exchange_contract_v1",
+  "status": "source_definition_only",
+  "inventory": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/natural_transfer_contract_v1/INVENTORY.json",
+    "sha256": "e7d7ce48a27e02e1f5fb5392682943a55821ecd8d5cfd529510bfb3afef3a72e"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/natural_transfer_contract_v1/SPEC.md",
+    "sha256": "c348744d96d158b6d8f8d73274cfa4e0144767ae7b0c59550d2bb2a19962e661"
+  },
+  "review_requirements": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/natural_transfer_contract_v1/REVIEW_REQUIREMENTS.md",
+    "sha256": "632e06de4a19e372e7a8d146ebabed895606959ca7006f951d50380e8094aabe"
+  },
+  "ordered_sources": [
+    "Hans8DQ2",
+    "Hans_8FNR",
+    "Mex_8FNS"
+  ],
+  "target_site": "EF3",
+  "target_oxidation_states": {
+    "La": 3,
+    "Dy": 3
+  },
+  "configuration_namespace": {
+    "A": "original prepared geometry",
+    "B": "historical recorded geometry perturbation, not a second biological chain",
+    "new_comparison_geometry": "original A only; any later response requires its own declared compatible pool"
+  },
+  "within_source_exchange": "Delta_s = E_s(Dy at EF3) - E_s(La at EF3)",
+  "cross_source_contrasts": [
+    {
+      "id": "Hans8DQ2_vs_Mex8FNS",
+      "left_source": "Hans8DQ2",
+      "right_source": "Mex_8FNS",
+      "expression": "Delta_Hans8DQ2 - Delta_Mex_8FNS"
+    },
+    {
+      "id": "Hans8FNR_vs_Mex8FNS",
+      "left_source": "Hans_8FNR",
+      "right_source": "Mex_8FNS",
+      "expression": "Delta_Hans_8FNR - Delta_Mex_8FNS"
+    }
+  ],
+  "contrast_reaction": "Hans-La + Mex-Dy -> Hans-Dy + Mex-La, retaining each source's own background on both sides",
+  "positive_contrast_meaning": "conditionally favors the Hans-La plus Mex-Dy assignment",
+  "within_pair_invariants": [
+    "source, model, biological chain and construct",
+    "atom identities, order, topology, protonation and terminal chemistry",
+    "coordinates at a fixed point",
+    "spectator identities, species, modeled occupancy and states",
+    "water identities, protonation and coordinates",
+    "full formal charge, target +3 charge and environmental charge convention",
+    "one declared energy recipe, solvent rule and component ledger"
+  ],
+  "whole_system_energy_recipe": null,
+  "whole_system_electronic_states": null,
+  "partner_cycle_preparation": null,
+  "scoring_ready": false,
+  "unresolved_reasons": [
+    "Mechanics accuracy and response gates in the active plan remain unmet.",
+    "A qualified common whole-system Hamiltonian and aggregate electronic-state convention are not assigned.",
+    "Hans sources represent extracted subunits; no prepared partner or assembly-population model is supplied.",
+    "Different source hydration and spectator inventories are retained, not interpreted as a pure conformational effect."
+  ],
+  "forbidden_interpretations": [
+    "combining La and Dy from different Hans sources into one within-source pair",
+    "minimizing or averaging raw totals across different source inventories",
+    "treating the two Hans deposits as independent natural proteins",
+    "using local capped-region charge or multiplicity as the whole-system value",
+    "aqueous binding free energy, dimer population or validated metal-preference prediction"
+  ],
+  "molecular_calls": 0,
+  "scientific_allocations": 0
+}

@@ -3,6 +3,14 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the goal remains active and unmet.
 
+19 October: coherent whole-system candidate is in source preparation. Read
+whole_system_intervention_v1/SPEC.md under the active diagnostic. Mex: eight fixed
+MACE+sameALPB cells, two explicit aggregate-spin hypotheses, preserved2049 atoms;
+one H200 scout before conditional remaining seven. Independent7CCN before/after
+whole-DFT four-cell challenge is being bound, one scout first. No new optimization,
+MM/GFN addition, production change or completed LBT search repetition. Root owns
+submissions; actual newer CURRENT/receipts control execution. Goal remains active.
+
 19 October: matched LBT scaffold audit14787 is COMPLETE,4/4 states,36contexts/
 816queries, original gates pass. Read lbt_scaffold_transition_v3/REPORT.md and
 result/ under this diagnostic. Classical work is La−23.281560/Dy−23.280382;

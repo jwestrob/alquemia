@@ -2,6 +2,28 @@
 
 17 October2026UTC. The activated PLAN remains active and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
+## Coherent whole-system intervention in preparation
+
+19 October 2026 UTC: root declared [the finite replacement test](whole_system_intervention_v1/SPEC.md),
+independently reviewed. Candidate: whole-system native MACE plus the same fixed-FF
+ALPB, with no added MM or GFN embedding term. LBT already uses this model; reuse
+its completed qualification/searches. The inspected 7CCO DFT fixture is consumed
+development evidence, not prospective validation.
+
+Mex will use the exact job12970 La start/terminal, all2,049 atoms and four reused
+ALPB receipts. Eight fixed gradient cells cover both metals and two declared
+aggregate-spin hypotheses (La10/Dy15 and La4/Dy9). First before-La10 H200 scout;
+remaining seven depend on finite/state and measured600s/90%memory gates. Neither
+hypothesis identifies a localized spin state. No optimizer or preference claim.
+
+A separate whole256 PBE0 challenge freezes job12968's 7CCN-La start/terminal,
+both metals, reusing four existing MACE energies/ALPB receipts. First before-La
+scout; remaining three depend on actual admission/cost review. Old native method,
+effective/physical states and reference limitations remain. Missing Dy MACE
+forces stay missing. Source preparation only at this checkpoint; no new jobs yet.
+Root owns execution; Harvey owns Mex adapter, Linnaeus reference adapter, Arendt
+independent review. Closed Mex derivative and challenged hybrid remain closed.
+
 ## Matched LBT scaffold transition complete
 
 19 October 2026 UTC: audit14787 completed all four matched states and passed

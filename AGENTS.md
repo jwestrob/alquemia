@@ -3,6 +3,15 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the scientific goal remains authorized and unmet.
 
+19 October21:48UTC: before-Dy14881 COMPLETE/admitted, result391e1d99/native
+receiptd1ca4271,23858s/12CPU=286296CPU-s. Full256gradient and nonuniform native
+SCF flags retained; physical-state/force qualification false. Two of four7CCN
+reference cells now admitted. After-La14880/after-Dy14882 still running native
+gradients; collect all4 actual results before paired-work comparison. Read
+CURRENT and lbt_whole_7ccn_reference_v1/endpoint_reviews_v1/before_Dy/ROOT_REVIEW.json
+under the active diagnostic. No retry, duplicate scout or waiting collector.
+This supersedes older three-running notes below.
+
 19 October, latest: whole7CCN scout14795 is COMPLETE/admitted under unchanged
 native gates; result5fe74c9b, actual23440s/12CPU (281280CPU-s). Printed non-energy
 SCF flags remain false; no physical-state/force-accuracy qualification. Root

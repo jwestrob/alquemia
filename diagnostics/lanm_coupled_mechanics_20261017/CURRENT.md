@@ -2,7 +2,25 @@
 
 17 October2026UTC. The PLAN remains authorized and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
-## 7CCN native scout admitted; remaining three references running
+## 7CCN before states complete; two after states still running
+
+19 October21:48UTC: before-Dy14881 completed and passes original native admission,
+result391e1d99/native receiptd1ca4271. Full256 gradient retained. Native convergence
+after17 cycles has nonuniform printed residual flags; physical-state and force
+qualification remain false, and archived Dy MACE forces remain unavailable.
+Actual23,858s/12CPUs =286,296allocatedCPU-s. Exact raw output, gradient, result,
+cost and review are preserved in
+[endpoint_reviews_v1/before_Dy](lbt_whole_7ccn_reference_v1/endpoint_reviews_v1/before_Dy/ROOT_REVIEW.json).
+
+Together with14795, two of four reference cells are admitted. After-La14880 and
+after-Dy14882 remain RUNNING in analytic-gradient calculation at this checkpoint;
+no recovery or duplicate calculation is needed. The first immediate result-file
+check preceded filesystem visibility; reread found the complete successful
+result. Preserve that observation without inventing a wrapper failure. Wait for
+both actual after-state results before the saved-only four-cell collection.
+No deformation-work/preference conclusion or goal completion yet.
+
+## Earlier continuation launch
 
 19 October: [scout report](lbt_whole_7ccn_reference_v1/SCOUT_REPORT.md).
 Job14795 completed one native before-La cell, result5fe74c9b. Original native

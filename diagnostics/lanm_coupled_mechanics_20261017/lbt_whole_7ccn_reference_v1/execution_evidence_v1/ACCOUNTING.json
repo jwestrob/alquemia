@@ -1,0 +1,54 @@
+{
+  "query_command": [
+    "sacct",
+    "-j",
+    "14788,14789,14790,14792,14794,14793",
+    "--parsable2",
+    "--noheader",
+    "--units=K",
+    "--format=JobID,JobName%45,State,ExitCode,ElapsedRaw,AllocCPUS,TotalCPU,CPUTimeRAW,MaxRSS,AllocTRES%150,NodeList,Start,End"
+  ],
+  "query_started_UTC": "2026-10-19T08:39:10.478786+00:00",
+  "query_completed_UTC": "2026-10-19T08:39:10.503080+00:00",
+  "columns": [
+    "JobID",
+    "JobName",
+    "State",
+    "ExitCode",
+    "ElapsedRaw",
+    "AllocCPUS",
+    "TotalCPU",
+    "CPUTimeRAW",
+    "MaxRSS",
+    "AllocTRES",
+    "NodeList",
+    "Start",
+    "End"
+  ],
+  "raw_sacct": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_reference_v1/execution_evidence_v1/SACCT.txt",
+    "sha256": "204a5e43fdb4838cc3b6cff74a127d89cdd6361fe2a97d14085a68e8a38d58fb"
+  },
+  "jobs": [
+    {
+      "job_id": "14793",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed_seconds": 3,
+      "allocated_CPUs": 1,
+      "allocated_CPU_seconds": 3,
+      "allocated_GPUs": 0,
+      "allocated_GPU_seconds": 0,
+      "AllocTRES": "billing=1,cpu=1,mem=4096000K,node=1",
+      "TotalCPU_reported": "00:02.657",
+      "batch_MaxRSS_reported": "124956K",
+      "node": "node-64-768g-1",
+      "start": "2026-10-19T01:31:11",
+      "end": "2026-10-19T01:31:14",
+      "GPU_cost_definition": "ElapsedRaw times generic AllocTRES gres/gpu count; allocation, not utilization"
+    }
+  ],
+  "allocated_CPU_seconds": 3,
+  "allocated_GPU_seconds": 0,
+  "measured_utilization_claimed": false
+}

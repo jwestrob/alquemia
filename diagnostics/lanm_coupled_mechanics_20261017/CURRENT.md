@@ -2,7 +2,38 @@
 
 17 October2026UTC. The activated PLAN remains active and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
-## Coherent whole-system intervention in preparation
+## Whole-system Mex panel complete; independent LBT reference running
+
+19 October 2026 UTC: Mex collector 14794 completes all eight fixed whole-system
+MACE + unchanged ALPB cells. One H200 scout and seven remaining forwards, no
+optimization or repeated completed chemistry. Read the
+[result](mex_whole_system_v2/REPORT.md) and independent collection review.
+Result `4c0c8b73…`, source `dd611ca0…`, manifest `acdaa462…`.
+
+For the same job12970 La-proposed motion, total work is La −1937.990241 /
+Dy −1942.176256 kcal/mol under aggregate multiplicities 10/15, and
+La −1944.455151 / Dy −1948.078345 under 4/9. Both favor Dy more along this
+motion, reversing the old hybrid ordering. This is model sensitivity, not a
+validated preference. Spin changes individual work by −6.464910 / −5.902089,
+above the frozen 1 kcal/mol resolution; differential change +0.562821 is below
+it. Do not pick one aggregate input as a unique physical prediction. No Mex
+optimizer, new spin sweep or reopening of the failed derivative branch follows.
+
+Independent 7CCN reference preflight 14793 passes all four fixed states, saved
+ALPB and available force replay with zero molecular calls. Before-La scout
+**14795 is RUNNING**, 12 MPI ranks / 48,000 MiB allocation / MaxCore 3,100 MB
+per rank, existing native PBE0 method. Completion and alert-only health wakes
+are armed. Read `lbt_whole_7ccn_reference_v1/` and workspace
+`lbt_whole_7ccn_before_La_v1/`. Its START.json uses an initial failure sentinel;
+native output and scheduler confirm active execution, with no terminal RESULT
+at this checkpoint. Do not mistake that initial field for a completed failure.
+
+Root reviews the actual native scout result and allocation cost before the
+remaining three declared DFT cells. No duplicates or waiting collector allocation.
+Whole-peptide accuracy and natural mixed-ion Mex state remain separate questions.
+The goal remains active and unmet; production and historical failures are intact.
+
+## Earlier declaration: coherent whole-system intervention
 
 19 October 2026 UTC: root declared [the finite replacement test](whole_system_intervention_v1/SPEC.md),
 independently reviewed. Candidate: whole-system native MACE plus the same fixed-FF

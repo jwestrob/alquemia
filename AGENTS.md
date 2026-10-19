@@ -3,13 +3,19 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the goal remains active and unmet.
 
-19 October: coherent whole-system candidate is in source preparation. Read
-whole_system_intervention_v1/SPEC.md under the active diagnostic. Mex: eight fixed
-MACE+sameALPB cells, two explicit aggregate-spin hypotheses, preserved2049 atoms;
-one H200 scout before conditional remaining seven. Independent7CCN before/after
-whole-DFT four-cell challenge is being bound, one scout first. No new optimization,
-MM/GFN addition, production change or completed LBT search repetition. Root owns
-submissions; actual newer CURRENT/receipts control execution. Goal remains active.
+19 October: the whole-system Mex fixed panel is COMPLETE, all eight cells,
+one scout plus seven H200 forwards; result 4c0c8b73. Read mex_whole_system_v2/
+REPORT.md under the active diagnostic. Both aggregate-spin inputs reverse the
+old hybrid work ordering, but per-metal spin sensitivity exceeds the frozen
+1 kcal/mol resolution. This is not a physical state or preference validation.
+No unique-spin optimizer, additional spin sweep or closed derivative retry.
+Independent 7CCN reference preflight 14793 passes; before-La whole256 PBE0
+scout 14795 RUNNING on 12 MPI ranks, completion/health wakes armed. Read
+lbt_whole_7ccn_reference_v1 and actual workspace lbt_whole_7ccn_before_La_v1.
+Review actual admission/cost before the remaining three declared cells; do not
+repeat existing MACE/ALPB or use START.json's initial failure sentinel as a
+terminal result. Root owns submissions; newer CURRENT/receipts control execution.
+The mechanics goal remains active and unmet. Production stays unchanged.
 
 19 October: matched LBT scaffold audit14787 is COMPLETE,4/4 states,36contexts/
 816queries, original gates pass. Read lbt_scaffold_transition_v3/REPORT.md and

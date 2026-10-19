@@ -1,0 +1,31 @@
+{
+  "status": "source_prepared_actual_Slurm_preflight_pending",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_reference_v1/REFERENCE.py",
+    "sha256": "c0cca6dd4f44619fc2e3201f024b7913f6b7e9d8e8c4fca694fe17bd942d0ecf"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_reference_v1/SPEC.md",
+    "sha256": "a8cb688c8d5f8f1f109a6c1436da24e68410cb92528f503d123cc83650307447"
+  },
+  "inventory": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_reference_v1/INVENTORY.json",
+    "sha256": "4203d1aabfc4f312b8627469e0b94450927e06b73d38294b3db6a5a6739cb0e2"
+  },
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_reference_v1/CONFIG_PREFLIGHT.json",
+    "sha256": "876b5a5665a52c8a5ff4345a7318a743245ea61f797e172f2e15fd3ab2fa675e"
+  },
+  "AST_only_passed": true,
+  "scientific_execution_performed": false,
+  "declared_DFT_cells": 4,
+  "first_scout": "before_La",
+  "new_MACE_ALPB_GFN_MM_calls": 0,
+  "Slurm_required_all_stages": true,
+  "commands": {
+    "preflight": "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python3.11 /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_reference_v1/REFERENCE.py --stage preflight --config /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_reference_v1/CONFIG_PREFLIGHT.json --output FRESH_OUTPUT",
+    "scout": "Same frozen source; --stage run --task before_La; bind actual preflight in a new config; 12 actual MPI tasks, one CPU/rank.",
+    "collect": "--stage collect; endpoint_results keyed by exact4 IDs; all4 required for work comparison."
+  },
+  "ownership": "Root submits and binds actual scout/cost/remaining inputs. No automatic continuation."
+}

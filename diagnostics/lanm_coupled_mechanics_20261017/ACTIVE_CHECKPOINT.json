@@ -1,6 +1,6 @@
 {
   "utc": "2026-10-19T08:18:02.718353+00:00",
-  "status": "coherent_whole_system_intervention_preparing",
+  "status": "whole_Mex_panel_complete_independent_7CCN_reference_scout_running",
   "response_recovery": {
     "job": 13048,
     "submission": {
@@ -362,7 +362,7 @@
       "required_before_binding": "Actual13051 admission and original collector; root force/cost continuation review"
     }
   },
-  "updated_utc": "2026-10-19T07:24:40.513300+00:00",
+  "updated_utc": "2026-10-19T08:40:30.533582+00:00",
   "Mex_saved_gridx3_diagnosis": {
     "status": "saved_diagnosis_complete_original_qualification_failed",
     "job_id": "13277",
@@ -999,7 +999,7 @@
     "all_jobs_terminal": true
   },
   "whole_system_intervention": {
-    "status": "source_preparation_no_new_jobs_yet",
+    "status": "Mex_finite_panel_complete_reference_scout_running",
     "specification": {
       "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_system_intervention_v1/SPEC.md",
       "sha256": "07393274ee50b2a4e67fdb60ac999f8a295aacb398e6e6faf466f4171bb52ba9"
@@ -1015,6 +1015,62 @@
     "reference_review_owner": "mex_health_review",
     "optimization_authorized_by_this_phase": false,
     "original_failures_preserved": true,
-    "production_change": false
+    "production_change": false,
+    "Mex_final_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_whole_collection_v1/execution/RESULT.json",
+      "sha256": "4c0c8b7379a2210f64267f0df94b1df72b54902d7233ec4b9614d4e941349d27"
+    },
+    "Mex_report": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_whole_system_v2/REPORT.md",
+      "sha256": "3ec6f56a75a664a52cfecd501058426cd64357f4931d7d26ff617fc5c8563ba7"
+    },
+    "Mex_collection_review": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_whole_system_v2/COLLECTION_REVIEW.md",
+      "sha256": "0b8838b7ba409fbfdbd240a99397af2f82a6c238860d1790724167de19f0078b"
+    },
+    "Mex_archive": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_whole_system_v2/execution_evidence_v1/ARCHIVE.json",
+      "sha256": "a9befb5bf0b67155aac8989562d2e7da47715c44ea89605a55cfe0b7134d32d8"
+    },
+    "Mex_completed_jobs": [
+      14788,
+      14789,
+      14790,
+      14792,
+      14794
+    ],
+    "Mex_native_forwards": 8,
+    "Mex_new_ALPB_calls": 0,
+    "Mex_costs": {
+      "allocated_CPU_seconds": 345,
+      "allocated_GPU_seconds": 28
+    },
+    "Mex_decision": "Finite panel complete. Per-metal aggregate-spin sensitivity exceeds frozen reporting resolution; no unique-state optimizer or physical-accuracy claim.",
+    "LBT_preflight_job": 14793,
+    "LBT_preflight_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_preflight_v1/execution/RESULT.json",
+      "sha256": "64db262eadb942246cff51a8bccca5b5b52520bf802cf93ff6f241610691be39"
+    },
+    "LBT_preflight_review": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_reference_v1/RESULT_REVIEW.md",
+      "sha256": "9e7590bde27e29e9d60182006953b90073c5c954385fcf614ecca561506250ef"
+    },
+    "LBT_reference_scout": {
+      "job_id": 14795,
+      "status": "RUNNING_at_review",
+      "task": "before_La",
+      "startup_review": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_before_La_v1/ROOT_STARTUP_REVIEW.json",
+        "sha256": "e2bab27786a4b9d7a45ed8fb9098a9bb3cd9f771f0367f79199d27d16c5f4e70"
+      },
+      "remaining_three_submitted": false,
+      "terminal_result_available": false,
+      "completion_and_alert_only_health_armed": true,
+      "submission_archive": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_reference_v1/scout_submission_v1/ARCHIVE.json",
+        "sha256": "f2cf506bf8515516f88a165d405c3c2b87db49e3a946544de30c727a07a3cf72"
+      }
+    },
+    "next_action": "On actual 14795 completion, inspect native admission and accounting. Submit only the three frozen remaining reference cells if the declared root gate passes. Preserve failure if it does not."
   }
 }

@@ -3,14 +3,14 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the goal remains active and unmet.
 
-19 October, newest: independent whole7CCN DFT14795 remains the live reference gate.
-Electronic-base candidate CPU14802 completes4/4 requests, cumulative5calls with
-scout reuse. GPU14803 failed before model load/forward on a cross-host derived
-cap-gradient signature; all raw/input/state/map pins match. Preserve failure.
-Versioned saved-manifest loader reuses admitted pinned preflight/CPU arrays with
-all native/identity gates retained; no new tolerance or repeated chemistry.
-Read CURRENT and whole_base_delta_completion_v1/failed_gpu_v1. Harvey owns V2,
-Arendt review, root launches. No challenge cells/optimizer/production change.
+19 October, newest: electronic-base candidate14804–14806 is complete and CLOSED.
+Read whole_base_delta_comparison_v1/FINAL_REPORT.md under the active diagnostic.
+Candidate error versus wholePBE0 is−2.408776La/−2.522531Dy kcal/mol, both failing
+original1kcal gate. WholeMACE is closer on this consumed fixture. Six molecular
+calls; four7CCN candidate slots closed/unrun. No optimizer/newthreshold/promotion.
+Preserve zero-call failed14803 and admitted saved-authority recovery14804.
+Resultae68645d; total260CPU-s/14GPU-s. Independent7CCN DFT14795 continues under
+its original actual-admission/cost gate. Broader mechanics goal remains unmet.
 
 19 October: the whole-system Mex fixed panel is COMPLETE, all eight cells,
 one scout plus seven H200 forwards; result 4c0c8b73. Read mex_whole_system_v2/

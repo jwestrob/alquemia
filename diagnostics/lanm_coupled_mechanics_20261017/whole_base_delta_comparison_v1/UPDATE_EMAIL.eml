@@ -1,0 +1,37 @@
+From: jwestrob@biotite.berkeley.edu
+To: jacobwestroberts@gmail.com
+Subject:
+ La/Dy mechanics: electronic-base candidate closed; DFT reference continues
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+The new electronic-base model did not improve on whole-peptide MACE in the co=
+mpleted LBT test.
+
+For the same fixed deformation (La / Dy, kcal/mol):
+  Whole PBE0 + existing solvent: 12.280 / 11.723
+  Whole MACE + existing solvent: 11.290 / 11.082
+  Whole GFN2 with regional correction: 9.871 / 9.200
+
+The candidate misses DFT by 2.41 / 2.52 kcal/mol, failing the predeclared 1-k=
+cal limit for both metals. Its force-change agreement is also worse than whol=
+e MACE on the available paired comparison. I closed its remaining four candid=
+ate calls; no threshold adjustment or optimization follows.
+
+This supports keeping whole MACE as the comparator while the separate 7CCN wh=
+ole-PBE0 reference runs. It does not yet establish metal preferences or gener=
+al force accuracy. Existing electronic-state and reference limitations remain.
+
+Six molecular calls completed. A pre-forward cross-host saved-array check fai=
+led once; the original failure is preserved and a reviewed reader reused the =
+admitted arrays without changing tolerances or repeating chemistry. Total can=
+didate/support allocation:260 CPU-seconds and14 GPU-seconds, including that f=
+ailure. Independent DFT14795 was still running on12CPUs at the final check.
+
+Report:
+https://github.com/jwestrob/alquemia/blob/main/diagnostics/lanm_coupled_mecha=
+nics_20261017/whole_base_delta_comparison_v1/FINAL_REPORT.md
+
+The mechanics goal remains active. The next reference continuation is gated o=
+n the actual DFT scout's result and cost.

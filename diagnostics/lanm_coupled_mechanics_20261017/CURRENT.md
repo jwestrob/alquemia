@@ -2,25 +2,24 @@
 
 17 October2026UTC. The activated PLAN remains active and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
-## Electronic-base correction test: saved-data reader recovery
+## Electronic-base candidate closed; independent reference continues
 
-CPU **14802** completes all four declared native requests, 56 allocated CPU-seconds.
-Result `ba406175`, five cumulative calls including the reused scout. GPU **14803**
-stopped before model loading or any forward: the cross-host exact signature
-comparison differed only in regenerated cap-gradient arrays. Native inputs,
-states, maps and raw evidence remain identical. Preserve this failure (36 CPU-s,
-3 GPU-s); it is not a molecular failure or a changed scientific result.
+19 October: GPU14804, saved assembly14805 and comparison14806 complete.
+Read [the decision report](whole_base_delta_comparison_v1/FINAL_REPORT.md).
+Candidate deformation costs La9.870817/Dy9.200125 versus wholePBE0
+12.279593/11.722656 kcal/mol. Both frozen1kcal gates fail. WholeMACE remains
+closer on this consumed fixture. Result `ae68645d`, independent review `35cce123`.
 
-A versioned saved-manifest reader will use the already-admitted pinned CPU/
-preflight derivative arrays, retaining all native and identity gates. No new
-numerical tolerance, chemistry rerun or Hamiltonian change. Harvey owns source,
-Arendt review, root submission. Only one missing regional MACE forward follows
-actual review. Independent DFT14795 continues; 7CCN candidate gate remains shut.
+All six declared development calls complete; four conditional7CCN candidate
+calls are **closed and unrun**. No optimizer, retuned gate or production change.
+Raw pending-slot labels remain as produced; ROOT_DECISION explicitly closes them.
+Preserved14803 failed before any molecular call; reviewed saved-authority recovery
+14804 passed. Total260CPU-s/14GPU-s including failure. Exact raw results, forces,
+parameters, source and costs are archived. Independent7CCN wholePBE0 scout14795
+continues unchanged; review actual admission/cost before its remaining3 cells.
+The overall mechanics goal remains active and unmet.
 
-Reviewed saved-authority recovery **14804** is now submitted on one H200 /12CPUs.
-Source `50076ac2`, config `708804bf`, independent review `fb619eba`; exact launch
-and completion watcher under `whole_base_delta_gpu_v2`. Actual admission remains
-required before the saved collector. Original14803 remains failed, zero calls.
+### Historical launch and recovery record
 
 ### Passed scout
 

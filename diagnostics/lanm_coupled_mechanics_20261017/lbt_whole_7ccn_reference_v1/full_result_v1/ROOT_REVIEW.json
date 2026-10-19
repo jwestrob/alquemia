@@ -1,0 +1,43 @@
+{
+  "utc": "2026-10-19T22:37:02.174013+00:00",
+  "question": "Compare whole-PBE0 and saved whole-MACE deformation work/available forces for the exact frozen 7CCN before/after pair, both metals.",
+  "stage": "collect",
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_full_collection_v1/CONFIG.json",
+    "sha256": "a9ebe125029d581ecd18ed7f270ee5a625e73df547242770e90fd2c51427282a"
+  },
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_full_collection_v1/REFERENCE.py",
+    "sha256": "c0cca6dd4f44619fc2e3201f024b7913f6b7e9d8e8c4fca694fe17bd942d0ecf"
+  },
+  "all_four_actual_results": {
+    "before_La": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_before_La_v1/execution/RESULT.json",
+      "sha256": "5fe74c9bcd8ca90a616117387f8960a2fdcacfd62cee92f4cfe30ddd424b9f39"
+    },
+    "after_La": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_after_La_v1/execution/RESULT.json",
+      "sha256": "816e26710fd68570420f74144da5ff1216c50dd12f4b66ee6fdbdeb46f272e25"
+    },
+    "before_Dy": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_before_Dy_v1/execution/RESULT.json",
+      "sha256": "391e1d993929e55ec0f6002f95a9227ba030f5c6fa001b3224feb32af1b11c26"
+    },
+    "after_Dy": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_after_Dy_v1/execution/RESULT.json",
+      "sha256": "1aca406f290b8e8b68da9c5666af295b80ab0fbcb4905a78427dc521b038c2d5"
+    }
+  },
+  "resources": "1 CPU, standard scheduler defaults; no memory/time overrides",
+  "planned_calls": {
+    "DFT": 0,
+    "MACE": 0,
+    "GFN": 0,
+    "ALPB": 0,
+    "MM": 0,
+    "optimization": 0
+  },
+  "interpretation": "Original frozen reporting resolution and caveats; no affinity, physical-state, force-accuracy or preference claim.",
+  "independent_after_La_review": "Arendt verifies 13 direct pins and native gradient-check convergence after18cycles; nonuniform residual flags and small-gap warning retained.",
+  "decision": "Submit unchanged saved-only collector now that all four actual singleton results are complete/available."
+}

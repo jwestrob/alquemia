@@ -3,6 +3,16 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the scientific goal remains authorized and unmet.
 
+19 October22:37UTC: all four7CCN wholePBE0 references and saved collector15173
+are complete. Read active diagnostic lbt_whole_7ccn_reference_v1/FINAL_REPORT.md.
+Reference composite work La−131.838380/Dy−102.738676 supports broad lowering;
+MACE errors−5.809212/−0.767945, differential error+5.041267kcal/mol remain.
+Terminal La chord force signs differ; chord is not actual next optimizer direction.
+Separate saved-only exact checkpoint-direction/error-localization analysis is
+being prepared; no automatic further optimization, molecular call or preference
+claim. Full resultfff95c2f, all native caveats, missing Dy model forces and actual
+1,179,035CPU-s preserved. This supersedes all pending7CCN statuses below.
+
 19 October21:54UTC: after-Dy14882 COMPLETE/admitted, result1aca406f/native
 receipt061ffabf,24232s/12CPU=290784CPU-s. Three of four7CCN cells now admitted;
 after-La14880 remains in native gradient calculation. Full256gradients and

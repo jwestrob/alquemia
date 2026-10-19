@@ -1,0 +1,25 @@
+{
+  "job_id": "14880",
+  "state": "COMPLETED",
+  "exit_code": "0:0",
+  "elapsed_seconds": 26722,
+  "allocated_CPUs": 12,
+  "allocated_CPU_seconds": 320664,
+  "allocated_GPU_seconds": 0,
+  "TotalCPU_reported": "3-16:55:04",
+  "MaxRSS_batch_reported": "42755704K",
+  "AllocTRES": "billing=12,cpu=12,mem=48000M,node=1",
+  "node": "node-64-768g-2",
+  "scheduler_command": [
+    "sacct",
+    "-j",
+    "14880",
+    "--format=JobIDRaw,State,ExitCode,ElapsedRaw,AllocCPUS,CPUTimeRAW,TotalCPU,MaxRSS,AllocTRES,NodeList",
+    "--parsable2"
+  ],
+  "scheduler_evidence": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_reference_v1/endpoint_reviews_v1/after_La/SACCT.txt",
+    "sha256": "dc7a1483ef5ceaac22f2163956fa96eb7d24172bc945becfe3aa7146f31ec927"
+  },
+  "note": "Allocation cost is not utilization. TotalCPU/MaxRSS retained exactly as scheduler reports; native/application timing separately preserved."
+}

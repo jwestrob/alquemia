@@ -1,0 +1,31 @@
+{
+  "utc": "2026-10-19T22:38:52.739907+00:00",
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_full_collection_v1/execution/RESULT.json",
+    "sha256": "fff95c2f235947acb24e91991915b320731992f48c2b3d6c9ca3912a6e927f38"
+  },
+  "status": "complete_all_four_native_cells",
+  "collector_job": "15173",
+  "checks": {
+    "all_four_actual_rows_available": true,
+    "original_native_admission_replayed_by_Slurm_collector": true,
+    "no_new_molecular_calls": true,
+    "distinct_parent_jobs": [
+      "14795",
+      "14880",
+      "14881",
+      "14882"
+    ]
+  },
+  "decision": "Prior broad deformation is supported in direction and magnitude. La work error and differential error exceed the original reporting resolution. Do not treat MACE terminal as a reference minimum; evaluate exact saved next optimizer direction against native gradients before deciding continuation.",
+  "interpretation_limits": {
+    "source": "Lu-conditioned 7CCN; same peptide as consumed7CCO, a distinct prospective deformation, not a blind protein benchmark.",
+    "geometry": "Exact prior whole-MACE La start and 80-step terminal; terminal bound/admitted but nonconverged. No new geometry or optimization.",
+    "terminal_chemistry": "Conditional free NH3+/COO- and five deprotonated acidic side chains; experimental terminal specification unresolved.",
+    "vacuum_dianion": "Post-added fixed-FF ALPB does not polarize the vacuum density; finite-basis SCF convergence does not prove electron binding or ground-state stability.",
+    "frozen_f": "Physical La1/Dy6; effective singlets, La ECP46/Dy ECP55, no SOC or physical-state qualification.",
+    "force": "Native analytic admission only, no finite-difference or force-accuracy qualification. Both Dy MACE force comparisons unavailable; no new MACE requests.",
+    "interpretation": "Per-metal deformation works and Dy-minus-La work difference; no absolute cross-method energies, affinity, classifier or preference claims."
+  },
+  "next_phase": "Separate saved-only exact next-direction and full-force error localization, no new molecular calls or optimization."
+}

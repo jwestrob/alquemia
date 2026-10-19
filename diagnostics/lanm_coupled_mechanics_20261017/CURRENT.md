@@ -2,7 +2,28 @@
 
 17 October2026UTC. The PLAN remains authorized and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
-## Three 7CCN reference cells complete; after-La pending
+## Four 7CCN references and comparison complete
+
+19 October22:37UTC: after-La14880 completed and collector15173 re-admits all
+four actual results, zero new molecular calls. Read
+[the final report](lbt_whole_7ccn_reference_v1/FINAL_REPORT.md).
+WholePBE0+ALPB deformation work is La−131.838380/Dy−102.738676kcal/mol,
+versus MACE−137.647592/−103.506621. Prior broad accommodation is supported,
+but La error−5.809212 and differential error+5.041267 exceed the original
+1kcal reporting resolution. No preference or converged minimum is established.
+
+Terminal La chord force is PBE0−1.716526 versus MACE+1.580140; full force-error
+RMS3.574975 remains. The chord is not necessarily the next optimizer direction.
+Root is preparing a separate saved-only exact checkpoint-direction/force-error
+analysis before any continuation. No new molecular calculation or optimization
+follows automatically. Native residual/state/force-qualification limits and both
+missing Dy model-force comparisons remain. Full resultfff95c2f and evidence are
+in lbt_whole_7ccn_reference_v1/full_result_v1; total1,179,035allocatedCPU-s
+including preflight/collection. All four native allocations are terminal.
+The broader mechanics goal remains unmet. Closed branches and production stay
+preserved. This supersedes the pending endpoint statuses below.
+
+### Earlier three-cell checkpoint
 
 19 October21:54UTC: after-Dy14882 is COMPLETE/admitted under original native
 gates, result1aca406f/native receipt061ffabf. Full256 gradient retained;

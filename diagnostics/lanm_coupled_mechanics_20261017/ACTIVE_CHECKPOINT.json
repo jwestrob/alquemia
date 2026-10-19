@@ -1,6 +1,6 @@
 {
   "utc": "2026-10-18T08:21:43.502843+00:00",
-  "status": "LBT_reference_complete_Mex_consistent_grid_candidate_closed_failed_derivative_gate",
+  "status": "LBT_matched_scaffold_transition_complete_next_mechanics_design",
   "response_recovery": {
     "job": 13048,
     "submission": {
@@ -88,7 +88,7 @@
     12978
   ],
   "paired_response_pool_available": false,
-  "goal": "unmet",
+  "goal": "active_unmet",
   "Mex_response_adapter": {
     "status": "stopped_failed_original_derivative_prerequisite",
     "job_id": null,
@@ -362,7 +362,7 @@
       "required_before_binding": "Actual13051 admission and original collector; root force/cost continuation review"
     }
   },
-  "updated_utc": "2026-10-18T10:22:13.820633+00:00",
+  "updated_utc": "2026-10-19T07:24:40.513300+00:00",
   "Mex_saved_gridx3_diagnosis": {
     "status": "saved_diagnosis_complete_original_qualification_failed",
     "job_id": "13277",
@@ -943,5 +943,59 @@
     "support_allocated_CPU_seconds": 3,
     "next": "Completed comparison leaves terminal MM-dominated force discrepancy. Separate Mex consistency candidate now closed after failed gate. Next mechanics design should target hybrid scaffold force balance against saved whole-peptide DFT; no completed chemistry repeated."
   },
-  "goal_tool_status_at_review": "paused"
+  "goal_tool_status_at_review": "active",
+  "LBT_scaffold_transition": {
+    "status": "complete_4of4_original_gates_pass",
+    "root_scope": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_scaffold_transition_v1/ROOT_SCOPE_v2.json",
+      "sha256": "e7493639861f02a5309dda574f7780147d81f2fb8ff209b780eeb06e79ba6a40"
+    },
+    "jobs": [
+      14785,
+      14786,
+      14787
+    ],
+    "new_numerical_work_executed": true,
+    "current_owners": {
+      "submission": "root",
+      "source": "mechanics_mex_adapter",
+      "inventory": "lanm_resume_inventory",
+      "review": "mex_health_review"
+    },
+    "pre_execution_inventory_correction": "Inventory aggregate transcription:34+61+90+2=187, not197. Both pinned La/Dy XML inventories and native ledger joins verified independently. No interaction, atom, coordinate, state or protocol selection changes; no scientific job has been submitted.",
+    "submission": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_scaffold_transition_v3/SUBMISSION.json",
+      "sha256": "9a0af272823c2f817ba66fefb79c67535c300c4ee9cf32943372f0d12288dcef"
+    },
+    "watcher": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_scaffold_transition_v3/WATCHER.json",
+      "sha256": "fb0c50ea9ac9b05cff00ca88175e9c8b24acd8f7f79035f18483e3cb2798cca8"
+    },
+    "first_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_scaffold_transition_v1/execution/RESULT.json",
+      "sha256": "626252ba67fa3b7efa2b20d8b1f40afee13528134c2dd4cd0ae9c0b767c392e5"
+    },
+    "allocated_CPU_seconds": 25,
+    "result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_scaffold_transition_v3/result/RESULT.json",
+      "sha256": "1b32076679677f814319618e3793477deb4c7e1d4df3d8cd7522f203fbdc4da2"
+    },
+    "report": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_scaffold_transition_v3/result/REPORT.md",
+      "sha256": "e3664c93a563beda704fbc54c4b414ee813478b6379c9530f81988a562fd34ed"
+    },
+    "contexts": 36,
+    "MM_queries": 816,
+    "next": "Use the measured multi-term force/work discrepancy to define a coherent scaffold-model intervention; no fitted single-term correction or restart of challenged hybrid optimizer.",
+    "scientific_report": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_scaffold_transition_v3/REPORT.md",
+      "sha256": "fd3a1a5709841bdd031262fa993efec92ce0b0804f5771dbfab43e211b294c0c"
+    },
+    "independent_result_review": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_scaffold_transition_v3/RESULT_REVIEW.md",
+      "sha256": "5d0e62aa67a4f0241a6d12f810d1eecc8887a698891df5a58de10dd562e8be71"
+    },
+    "new_electronic_calls": 0,
+    "all_jobs_terminal": true
+  }
 }

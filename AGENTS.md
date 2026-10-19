@@ -3,6 +3,18 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the goal remains active and unmet.
 
+19 October: matched LBT scaffold audit14787 is COMPLETE,4/4 states,36contexts/
+816queries, original gates pass. Read lbt_scaffold_transition_v3/REPORT.md and
+result/ under this diagnostic. Classical work is La−23.281560/Dy−23.280382;
+terminal-touching bonded union−9.532816 is part of the bonded−10.682960 total,
+not an extra contribution. Several bonded/nonbonded terms drive the lowering.
+La hybrid force-error change RMS4.463637 versus whole-MACE0.530091; large
+endpoint errors persist. No unique stiffness/parameter defect or metal preference.
+Both earlier zero-query input failures14785/14786 are preserved. Total25CPU-s,
+no new electronic calls or optimization. All audit jobs terminal. Goal active,
+next finite mechanics intervention needs a consistent scaffold/coupling design;
+challenged hybrid optimizer and Mex derivative candidate remain closed.
+
 Newest full four-cell result: all whole-LBT endpoints and collector13424 complete.
 Read lbt_whole_reference_continuation/FINAL_REPORT.md under the active diagnostic.
 Exact fixed deformation costs PBE0+ALPB La+12.279593/Dy+11.722656 versus

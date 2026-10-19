@@ -1,0 +1,48 @@
+{
+  "status": "source_prepared_static_review_passed_runtime_pending",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_scaffold_transition_v1/ANALYZE.py",
+    "sha256": "79d311d8ea1fe24dd7582efd568b9ab107877e04677189a6f3578d1c3b5f2a13"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_scaffold_transition_v1/SPEC.md",
+    "sha256": "5bbfeef09afc0763c5e7884e16b81580ef7bee61d0f007161b9ff1e44c75e7f0"
+  },
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_scaffold_transition_v1/CONFIG.json",
+    "sha256": "8406085218c8f2b9136341ca05fa9fe28c8f7d840302ca7c1b1610b046e686bd"
+  },
+  "launcher": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_scaffold_transition_v1/RUN.sbatch",
+    "sha256": "81c78eb865ab370024e9db23b8348e935096cec82fec9c6213e2916db44dfdcd"
+  },
+  "root_scope": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_scaffold_transition_v1/ROOT_SCOPE_v2.json",
+    "sha256": "e7493639861f02a5309dda574f7780147d81f2fb8ff209b780eeb06e79ba6a40"
+  },
+  "syntax_check": "ast.parse only; no scientific imports or execution",
+  "execution_owner": "root",
+  "scientific_execution_performed": false,
+  "planned_contexts": 36,
+  "planned_energy_fullforce_queries": 816,
+  "planned_terminal_interactions_per_state": 187,
+  "command_argv": [
+    "sbatch",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_scaffold_transition_v1/RUN.sbatch",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_scaffold_transition_v1/ANALYZE.py",
+    "--config",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_scaffold_transition_v1/CONFIG.json",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_scaffold_transition_v1/execution"
+  ],
+  "requirements": [
+    "Actual Slurm one CPU; all native threads1; OpenMM8.5.1 Reference",
+    "Fresh output directory",
+    "Independent source review before root submission"
+  ],
+  "independent_static_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_scaffold_transition_v1/STATIC_REVIEW.md",
+    "sha256": "3acba4fbac2934e5f0e9de2481f67642ab4559b61bb9cfc854218a2366b705aa"
+  },
+  "actual_runtime_checked": false
+}

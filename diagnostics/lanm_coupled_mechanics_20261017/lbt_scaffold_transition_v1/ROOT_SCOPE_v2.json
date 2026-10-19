@@ -1,0 +1,39 @@
+{
+  "declared_utc": "2026-10-19T07:36:59.819056+00:00",
+  "authority": "Resumed active user goal: Implement saved La/Dy mechanics plan; existing autonomous scoped scientific execution authorization.",
+  "question": "How do the classical force contributions and their mismatch with whole-peptide references change across the exact already-tested LBT deformation? Distinguish initial force offset from change during motion, without fitting stiffness or changing structures.",
+  "denominator": "7CCO256 exact shared La-before and La-proposed after coordinates, each La/Dy; retain all four reference cells and all unavailable full-hybrid/whole-MACE force comparators explicitly.",
+  "planned_calls": "At most4 fixed-coordinate MM states;36 OpenMM Reference contexts/816 energy+full-force queries (9contexts/204queries each). All queries counted. No new DFT, MACE, GFN2, ALPB, geometries, optimization, sampling or fitted parameters.",
+  "attribution": "All retained bonded terms touching ANY Phe1 or Ala17 atom,187 unique interactions per state (34 bonds,61 angles,90 torsions,2CMAP). Shared interaction once. Complete four original MM groups and full256 force vectors. No pairwise nonbonded expansion.",
+  "gates": "Exact source, physical-ID/coordinate/state, native/retained parameters and term inventory; original MM closure thresholds1e-8 kcal/mol energy and1e-5 kcal/mol/A Cartesian force. Source review before execution; actual Slurm gates before interpretation.",
+  "limits": "Two endpoints do not measure a Hessian or determine unique equilibrium/stiffness parameters. No unique quantum bond-energy attribution. Keep SCF/state/frozen-f/terminal chemistry/vacuum-dianion limitations. No automatic production promotion or challenged response continuation.",
+  "root_owner": "/root",
+  "source_owner": "/root/mechanics_mex_adapter",
+  "inventory_owner": "/root/lanm_resume_inventory",
+  "review_owner": "/root/mex_health_review",
+  "execution": "One CPU Slurm standard/banfield, numerical threads1, scheduler memory/time defaults, no requeue; completion wake mandatory. No login numerical work.",
+  "reference_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation/full_result_v1/RESULT.json",
+    "sha256": "9229f7bebb533dd44a024bb80eca10eded2b3a64cc3972b245d65d82b5ecda97"
+  },
+  "old_term_report": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_mm_term_audit/result/REPORT.md",
+    "sha256": "478466a375e98ca7906e6cfb0c8cccef8f93d714ebabcd806beed342b51c3a02"
+  },
+  "partition_report": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_partition_force_reference_v1/REPORT.md",
+    "sha256": "6de2997f0219b320a2d2063fd3f73cc10f4bf931904f4ecd5b3828d4dc2b7e86"
+  },
+  "previous_goal_turn_classification": "No scientific progress in pause-diagnosis turn; resumed now with exact-source inventory and declared next bounded mechanics audit. No verified wait required because live user queue is empty.",
+  "supersedes_scope": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_scaffold_transition_v1/ROOT_SCOPE.json",
+    "sha256": "d98491e00262683445758529a21dbb17483bba3da896efa7e4d38e0dd5e74e76"
+  },
+  "pre_execution_correction": "Inventory aggregate transcription:34+61+90+2=187, not197. Both pinned La/Dy XML inventories and native ledger joins verified independently. No interaction, atom, coordinate, state or protocol selection changes; no scientific job has been submitted.",
+  "retained_terminal_indices": {
+    "HarmonicBondForce": "0-22,76-86",
+    "HarmonicAngleForce": "0-40,112,118-120,143-158",
+    "PeriodicTorsionForce": "0-59,173-174,190-197,225-241,244-246",
+    "CMAPTorsionForce": "0,2"
+  }
+}

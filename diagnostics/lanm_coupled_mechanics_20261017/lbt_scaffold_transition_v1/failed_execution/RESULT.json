@@ -1,0 +1,175 @@
+{
+  "protocol": "lbt_fixed_scaffold_transition_MM_attribution_v1",
+  "status": "execution_failure",
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_scaffold_transition_v1/CONFIG.json",
+    "sha256": "8406085218c8f2b9136341ca05fa9fe28c8f7d840302ca7c1b1610b046e686bd"
+  },
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_scaffold_transition_v1/ANALYZE.py",
+    "sha256": "79d311d8ea1fe24dd7582efd568b9ab107877e04677189a6f3578d1c3b5f2a13"
+  },
+  "slurm_job_id": "14785",
+  "host": "node-64-768g-1",
+  "declared_states": [
+    "before_La",
+    "after_La",
+    "before_Dy",
+    "after_Dy"
+  ],
+  "settings": {
+    "physical_atoms": 256,
+    "source": "7CCO",
+    "region": "baseline",
+    "states": [
+      "before_La",
+      "after_La",
+      "before_Dy",
+      "after_Dy"
+    ],
+    "terminal_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      244,
+      245,
+      246,
+      247,
+      248,
+      249,
+      250,
+      251,
+      252,
+      253,
+      254
+    ],
+    "named_indices": {
+      "Phe1_CA": 3,
+      "Ala17_C": 246
+    },
+    "platform": "Reference",
+    "retained_term_counts": {
+      "HarmonicBondForce": 87,
+      "HarmonicAngleForce": 159,
+      "PeriodicTorsionForce": 247,
+      "CMAPTorsionForce": 3
+    },
+    "terminal_term_counts": {
+      "HarmonicBondForce": 34,
+      "HarmonicAngleForce": 61,
+      "PeriodicTorsionForce": 90,
+      "CMAPTorsionForce": 2
+    },
+    "CMAP_maps": 16,
+    "batch_terms": 31,
+    "contexts_per_state": 9,
+    "queries_per_state": 204,
+    "maximum_contexts": 36,
+    "maximum_queries": 816,
+    "energy_absolute_kcal_mol": 1e-08,
+    "force_component_absolute_kcal_mol_A": 1e-05
+  },
+  "new_DFT_calls": 0,
+  "new_MACE_calls": 0,
+  "new_GFN_calls": 0,
+  "new_ALPB_calls": 0,
+  "optimizer_steps": 0,
+  "new_geometries": 0,
+  "rows": [
+    {
+      "cell_id": "before_La",
+      "status": "unavailable",
+      "input_status": "unavailable",
+      "replay_status": "unavailable",
+      "class_status": "unavailable",
+      "terms_status": "unavailable",
+      "contexts_attempted": 0,
+      "queries_attempted": 0,
+      "checks": [],
+      "queries": [],
+      "diagnostic_systems": {},
+      "terms": []
+    },
+    {
+      "cell_id": "after_La",
+      "status": "unavailable",
+      "input_status": "unavailable",
+      "replay_status": "unavailable",
+      "class_status": "unavailable",
+      "terms_status": "unavailable",
+      "contexts_attempted": 0,
+      "queries_attempted": 0,
+      "checks": [],
+      "queries": [],
+      "diagnostic_systems": {},
+      "terms": []
+    },
+    {
+      "cell_id": "before_Dy",
+      "status": "unavailable",
+      "input_status": "unavailable",
+      "replay_status": "unavailable",
+      "class_status": "unavailable",
+      "terms_status": "unavailable",
+      "contexts_attempted": 0,
+      "queries_attempted": 0,
+      "checks": [],
+      "queries": [],
+      "diagnostic_systems": {},
+      "terms": []
+    },
+    {
+      "cell_id": "after_Dy",
+      "status": "unavailable",
+      "input_status": "unavailable",
+      "replay_status": "unavailable",
+      "class_status": "unavailable",
+      "terms_status": "unavailable",
+      "contexts_attempted": 0,
+      "queries_attempted": 0,
+      "checks": [],
+      "queries": [],
+      "diagnostic_systems": {},
+      "terms": []
+    }
+  ],
+  "runtime": {
+    "python": {
+      "path": "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python3.11",
+      "sha256": "53244dfc692ccbfd6a065f053dfa2026e2f3e4755beef84d600c8f7dbc9b5b27"
+    },
+    "numpy": "1.26.4",
+    "openmm": "8.5.1",
+    "platform": "Reference"
+  },
+  "failure": "ValueError('Whole comparator/ALPB force replay differs')",
+  "traceback": "Traceback (most recent call last):\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_scaffold_transition_v1/ANALYZE.py\", line 444, in main\n    ref,model,cells,directions=saved_inputs(cfg,np);result['reference_caveats']=ref['caveats']\n                               ^^^^^^^^^^^^^^^^^^^^\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_scaffold_transition_v1/ANALYZE.py\", line 152, in saved_inputs\n    require(np.array_equal(arrays['components']['composite'],models['whole_MACE_composite'])\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_scaffold_transition_v1/ANALYZE.py\", line 38, in require\n    if not ok: raise ValueError(message)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Whole comparator/ALPB force replay differs\n",
+  "contexts_attempted": 0,
+  "MM_diagnostic_queries_attempted": 0,
+  "elapsed_seconds": 1.8337532740551978,
+  "process_CPU_seconds": 0.646736976,
+  "peak_RSS_KiB": 149432,
+  "report": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_scaffold_transition_v1/execution/REPORT.md",
+    "sha256": "e02e9eac0df13cebbc2db6aeea34658eea799541dace77a2eea6b75431acd2f1"
+  }
+}

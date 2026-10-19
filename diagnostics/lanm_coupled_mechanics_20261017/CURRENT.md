@@ -2,6 +2,29 @@
 
 17 October2026UTC. The activated PLAN remains active and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
+## Matched LBT scaffold transition complete
+
+19 October 2026 UTC: audit14787 completed all four matched states and passed
+all original closure gates:36contexts/816queries,20seconds on1CPU. Including
+preserved zero-query failures14785/14786, cost25allocatedCPU-seconds. No new
+electronic evaluations, geometries or optimization. Source d736a589/configbf88807d,
+result1b320766 and independent review5d0e62aa are preserved under
+[lbt_scaffold_transition_v3](lbt_scaffold_transition_v3/REPORT.md).
+
+Classical work is−23.281560La/−23.280382Dy at the same shared coordinates.
+Retained bonded work is−10.682960; its terminal-touching subset is−9.532816.
+All three nonbonded groups also lower energy. The terminal force discrepancy
+has a persistent offset and changes along the motion: La hybrid error-change
+RMS4.463637 versus whole-MACE0.530091kcal/mol/Å. No single-term repair follows.
+Full Dy hybrid work/transition and before-Dy whole-MACE forces remain missing.
+
+Root reviewed and archived the complete result, raw query provenance and actual
+costs; Arendt's independent result review passes. All jobs are terminal. The
+next mechanics design should test consistent scaffold/coupling treatment on
+this independent saved deformation, preserving the denominator and reference
+limits. No fitted one-term correction or restart of the challenged optimizer.
+The broader goal remains active and unmet; Mex remains closed.
+
 ## Mex consistent-grid test complete: derivative gate still fails
 
 18 October 2026 UTC: all three native endpoints are admitted. Saved collector

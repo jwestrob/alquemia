@@ -2,7 +2,21 @@
 
 17 October2026UTC. The PLAN remains authorized and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
-## 7CCN before states complete; two after states still running
+## Three 7CCN reference cells complete; after-La pending
+
+19 October21:54UTC: after-Dy14882 is COMPLETE/admitted under original native
+gates, result1aca406f/native receipt061ffabf. Full256 gradient retained;
+native17-cycle convergence still has nonuniform printed residuals. Physical-state
+and force qualification remain false; Dy MACE force comparisons remain unavailable.
+Actual24,232s/12CPUs =290,784allocatedCPU-s. Exact evidence/cost/review:
+[after-Dy record](lbt_whole_7ccn_reference_v1/endpoint_reviews_v1/after_Dy/ROOT_REVIEW.json).
+
+Three of four cells are admitted. After-La14880 remains RUNNING in analytic
+gradient calculation. No recovery is needed. Preserve its completion/health
+wakes; collect the four actual results only after it finishes. No partial
+paired-work result, optimization continuation or preference conclusion follows.
+
+### Earlier before-Dy completion
 
 19 October21:48UTC: before-Dy14881 completed and passes original native admission,
 result391e1d99/native receiptd1ca4271. Full256 gradient retained. Native convergence

@@ -3,6 +3,15 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the scientific goal remains authorized and unmet.
 
+19 October21:54UTC: after-Dy14882 COMPLETE/admitted, result1aca406f/native
+receipt061ffabf,24232s/12CPU=290784CPU-s. Three of four7CCN cells now admitted;
+after-La14880 remains in native gradient calculation. Full256gradients and
+nonuniform SCF flags retained; no physical-state/force qualification or partial
+paired-work conclusion. Exact evidence in active diagnostic's
+lbt_whole_7ccn_reference_v1/endpoint_reviews_v1/after_Dy/. Wait for actual14880
+result before saved-only four-cell collection. No new molecular calls/retry.
+This supersedes earlier two-running notes below.
+
 19 October21:48UTC: before-Dy14881 COMPLETE/admitted, result391e1d99/native
 receiptd1ca4271,23858s/12CPU=286296CPU-s. Full256gradient and nonuniform native
 SCF flags retained; physical-state/force qualification false. Two of four7CCN

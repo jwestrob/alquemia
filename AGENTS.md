@@ -3,6 +3,14 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the scientific goal remains authorized and unmet.
 
+19 October23:39UTC: actual preflight15192 passes, result2dd9db66,10CPU-s,
+zero molecular/model calls. Independent review16b664a9 passes. Root bound
+exact7CCN-La12-step/40-evaluation scout via decisiona21d2c53/config7127a7fc
+and submitted15254 onstandard_expand,12CPU/oneH200; watcher3497887.
+Original80/80checkpoint/history/trust/guards/criteria preserved,caps92/120.
+Read active diagnostic lbt_7ccn_continuation_scout_v1/ and actual run receipts;
+no duplicate continuation, unreviewed later campaign or preference claim.
+
 19 October23:22UTC: Jacob authorized trying Rohan's alternativeQoS
 standard_expand. Live enabled limits24CPU/job,500CPU/user,20jobs,5days.
 Owned pending preflight15192 was updated in place to thatQoS; same1CPU/jobID,

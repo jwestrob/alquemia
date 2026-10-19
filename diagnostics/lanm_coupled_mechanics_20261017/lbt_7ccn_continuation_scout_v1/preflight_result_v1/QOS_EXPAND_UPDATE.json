@@ -1,0 +1,74 @@
+{
+  "utc": "2026-10-19T23:22:11.351778+00:00",
+  "user_authorization": "rohan says we can try an alternative QOS: --qos standard_expand",
+  "scope": "Existing owned pending preflight15192; change QOS only. Preserve job id, requests, source, output paths and completion watcher.",
+  "policy": {
+    "command": [
+      "sacctmgr",
+      "-n",
+      "-P",
+      "show",
+      "qos",
+      "standard,standard_expand,gpu_h200",
+      "format=Name,Flags,Priority,MaxWall,MaxTRESPerJob,MaxTRESPerUser,MaxJobsPU,MaxSubmitPU,GrpTRES"
+    ],
+    "returncode": 0,
+    "stdout": "gpu_h200|DenyOnLimit|0|3-00:00:00|cpu=28,gres/gpu=1,mem=250G|gres/gpu=1|1|10|\nstandard|DenyOnLimit|0|3-00:00:00|cpu=12,mem=1500G,node=4|cpu=120,mem=3T|10|200|\nstandard_expand|DenyOnLimit,OverPartQOS|0|5-00:00:00|cpu=24,mem=100T|cpu=500,mem=100T|20|200|\n",
+    "stderr": ""
+  },
+  "association": {
+    "command": [
+      "sacctmgr",
+      "-n",
+      "-P",
+      "show",
+      "assoc",
+      "where",
+      "user=jwestrob",
+      "format=Cluster,Account,User,Partition,QOS,DefaultQOS"
+    ],
+    "returncode": 0,
+    "stdout": "biotite|banfield|jwestrob||standard,standard_expand|standard\n",
+    "stderr": ""
+  },
+  "before": {
+    "command": [
+      "scontrol",
+      "show",
+      "job",
+      "15192",
+      "-o"
+    ],
+    "returncode": 0,
+    "stdout": "JobId=15192 JobName=lanm-mechanics-preflight UserId=jwestrob(601) GroupId=jwestrob(601) MCS_label=N/A Priority=1 Nice=0 Account=banfield QOS=standard JobState=PENDING Reason=Priority Dependency=(null) Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:00 TimeLimit=3-00:00:00 TimeMin=N/A SubmitTime=2026-10-19T15:57:27 EligibleTime=2026-10-19T15:57:27 AccrueTime=2026-10-19T15:57:27 StartTime=Unknown EndTime=Unknown Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-19T16:22:03 Scheduler=Backfill:* Partition=gpu_h200 AllocNode:Sid=biotite:3437763 ReqNodeList=node-224-2t-8gpu-1 ExcNodeList=(null) NodeList= NumNodes=1-1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:* ReqTRES=cpu=1,mem=4000M,node=1,billing=1 AllocTRES=(null) Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=1 MinMemoryCPU=4000M MinTmpDiskNode=0 Features=(null) DelayBoot=00:00:00 OverSubscribe=NO Exclusive=NO Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null) Command=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/preflight/RUN.sbatch SubmitLine=sbatch --parsable --output=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/preflight/slurm-%j.out --error=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/preflight/slurm-%j.err /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/preflight/RUN.sbatch /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/CONTINUE.py --stage preflight --config /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/CONFIG_PREFLIGHT.json --output /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/preflight/execution WorkDir=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs StdErr=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/preflight/slurm-15192.err StdIn=/dev/null StdOut=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/preflight/slurm-15192.out TresPerTask=cpu=1\n",
+    "stderr": ""
+  },
+  "update": {
+    "command": [
+      "scontrol",
+      "update",
+      "JobId=15192",
+      "QOS=standard_expand"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "after": {
+    "command": [
+      "scontrol",
+      "show",
+      "job",
+      "15192",
+      "-o"
+    ],
+    "returncode": 0,
+    "stdout": "JobId=15192 JobName=lanm-mechanics-preflight UserId=jwestrob(601) GroupId=jwestrob(601) MCS_label=N/A Priority=1 Nice=0 Account=banfield QOS=standard_expand JobState=PENDING Reason=None Dependency=(null) Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:00 TimeLimit=5-00:00:00 TimeMin=N/A SubmitTime=2026-10-19T15:57:27 EligibleTime=2026-10-19T15:57:27 AccrueTime=Unknown StartTime=Unknown EndTime=Unknown Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-19T16:22:03 Scheduler=Backfill:* Partition=gpu_h200 AllocNode:Sid=biotite:3437763 ReqNodeList=node-224-2t-8gpu-1 ExcNodeList=(null) NodeList= NumNodes=1-1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:* ReqTRES=cpu=1,mem=4000M,node=1,billing=1 AllocTRES=(null) Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=1 MinMemoryCPU=4000M MinTmpDiskNode=0 Features=(null) DelayBoot=00:00:00 OverSubscribe=NO Exclusive=NO Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null) Command=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/preflight/RUN.sbatch SubmitLine=sbatch --parsable --output=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/preflight/slurm-%j.out --error=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/preflight/slurm-%j.err /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/preflight/RUN.sbatch /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/CONTINUE.py --stage preflight --config /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/CONFIG_PREFLIGHT.json --output /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/preflight/execution WorkDir=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs StdErr=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/preflight/slurm-15192.err StdIn=/dev/null StdOut=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/preflight/slurm-15192.out TresPerTask=cpu=1\n",
+    "stderr": ""
+  },
+  "update_verified": true,
+  "future_same_protocol_scout_override": [
+    "--qos=standard_expand"
+  ],
+  "numerical_work_performed": false
+}

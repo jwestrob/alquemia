@@ -2,6 +2,23 @@
 
 17 October2026UTC. The PLAN remains authorized and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
+## Exact checkpoint continuation submitted after actual preflight
+
+19 October23:39UTC: preflight15192 passed exact original checkpoint/cache,
+physical-source guards and version replay; zero native calls/model loads.
+Result2dd9db66 is archived in lbt_7ccn_continuation_scout_v1/preflight_result_v1;
+actual cost10CPU-s. Independent actual review16b664a9 confirms all bindings.
+
+Root decisiona21d2c53/config7127a7fc release only the declared7CCN-La scout:
+12 additional accepted steps/40 new distinct evaluations, cumulative92/120,
+unchanged original80/80 history/trust/source/energy/force criteria. Job15254
+is submitted with explicit standard_expand,12CPUs/oneH200, scheduler defaults.
+Completion watcher3497887 and exact command are in the run workspace and
+[archived submission](lbt_7ccn_continuation_scout_v1/run_submission_v1/run/SUBMISSION.json).
+Read actual run results before subsequent work. No converged minimum, corrected
+force accuracy or metal preference is established. Original artifacts and all
+closed branches remain preserved. Goal remains unmet.
+
 ## Alternative QoS accepted for the pending preflight
 
 19 October23:22UTC: Jacob relayed Rohan's instruction to try standard_expand.

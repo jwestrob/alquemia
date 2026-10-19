@@ -2,6 +2,18 @@
 
 17 October2026UTC. The PLAN remains authorized and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
+## Checkpoint continuation preflight submitted
+
+19 October22:57UTC: independent static review1813ff0a passes the exact
+7CCN-La restart adapter0c14a03e/configad0d0996. Root submitted saved-only
+preflight15192 on1CPU/noGPU to the qualified H200 host. Actual submission,
+review and completion watcher3437814 are in
+workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/preflight.
+Read [the specification](lbt_7ccn_continuation_scout_v1/SPEC.md).
+No new molecular execution has been submitted at this checkpoint. The actual
+passed preflight and pinned root decision must precede the single12-step/40-call
+scout. Existing inputs, original80-step result and production remain preserved.
+
 ## Saved direction supports a bounded continuation scout
 
 19 October22:44UTC: saved audit15176 completes on1CPU/2s, zero molecular

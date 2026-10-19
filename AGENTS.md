@@ -3,6 +3,13 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the scientific goal remains authorized and unmet.
 
+19 October22:57UTC: exact checkpoint continuation preflight15192 is submitted
+on1CPU/noGPU to the qualified H200 host; watcher3437814. Source/config/static
+review and launch evidence are under active diagnostic
+lbt_7ccn_continuation_scout_v1/. No molecular scout submitted yet. Actual passed
+preflight and pinned root decision gate the single12-step/40-evaluation run.
+Do not duplicate or reset the original80-step search. Read newer receipts.
+
 19 October22:44UTC: saved conditional-direction audit15176 complete, result
 cc102d11,2CPU-s/zero molecular calls. Both model/reference local derivatives
 are negative (−0.647635/−0.744240kcal/mol per dimensionless step). Read active

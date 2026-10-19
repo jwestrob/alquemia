@@ -1,0 +1,73 @@
+{
+  "status": "source_ready_static_review_pending",
+  "protocol": "lbt_7ccn_La_checkpoint_continuation_scout_v1",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/CONTINUE.py",
+    "sha256": "0c14a03e0c3d13884739d8be33a6c2f2c39f734c5374a36de0f4d511d7573b8e"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/SPEC.md",
+    "sha256": "b8effde9bb57e0e9e4bf3809024a3f30e127ec289b97961b8b2d268e68e6f541"
+  },
+  "optimizer": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/CARTESIAN_OPTIMIZER_SCOUT.py",
+    "sha256": "3badac29106412f8b29e79e874678c330af620fe5e6d4cc548dd0c3b3f0abfbc"
+  },
+  "optimizer_diff": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/OPTIMIZER_DIFF.txt",
+    "sha256": "af672c02a2c4d9ce591c9dc06f5c9c1906592036bccb5e011fbdd44bb71c21bd"
+  },
+  "config_preflight": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/CONFIG_PREFLIGHT.json",
+    "sha256": "ad0d09964c043e89840a84a7fd7d8fd8b72b20e0805b8c35eca691eebbb184f6"
+  },
+  "syntax_check": "AST only; no imports or scientific execution",
+  "preflight_command": [
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_hybrid_20260916/software_v1/venv/bin/python",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/CONTINUE.py",
+    "--stage",
+    "preflight",
+    "--config",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/CONFIG_PREFLIGHT.json",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/preflight/execution"
+  ],
+  "run_command": [
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_hybrid_20260916/software_v1/venv/bin/python",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/CONTINUE.py",
+    "--stage",
+    "run",
+    "--config",
+    "ROOT_BOUND_CONFIG_WITH_ACTUAL_PREFLIGHT_AND_DECISION",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/run/execution"
+  ],
+  "resources": {
+    "partition": "gpu_h200",
+    "node": "node-224-2t-8gpu-1",
+    "preflight": {
+      "cpus": 1,
+      "gpus": 0
+    },
+    "run": {
+      "cpus": 12,
+      "gpus": 1
+    },
+    "scheduler_defaults": true,
+    "requeue": false
+  },
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "allocated CPUs"
+  },
+  "run_requires": {
+    "preflight_result": null,
+    "run_decision": null
+  },
+  "molecular_calls_during_preparation": 0,
+  "submissions": 0,
+  "root_owns_scripts_and_execution": true
+}

@@ -1,0 +1,37 @@
+--- workspaces/lanm_coupled_mechanics_20261017/lbt_preflight_v1/CARTESIAN_OPTIMIZER.py
++++ CARTESIAN_OPTIMIZER_SCOUT.py
+@@ -1,5 +1,6 @@
+ """Full physical Cartesian L-BFGS and topology guards; no molecular engine."""
+ import json
++import hashlib
+ from pathlib import Path
+ import numpy as np
+ from scipy.spatial import cKDTree
+@@ -150,11 +151,15 @@
+     out = Path(out); out.mkdir(exist_ok=False)
+     require(set(limits) == {'accepted_steps', 'evaluations'} and
+             all(type(v) is int and v > 0 for v in limits.values()), 'Invalid search limits')
++    require(resume is not None, 'Only the exact completed7CCN-La checkpoint may enter this scout')
+     if resume is not None:
+         require(resume['settings'] == SETTINGS, 'Checkpoint optimizer settings differ')
+-        require(resume['limits'] == limits or
+-                (resume['limits'] == {'accepted_steps': 12, 'evaluations': 40} and
+-                 limits == {'accepted_steps': 80, 'evaluations': 200}), 'Undeclared checkpoint budget change')
++        require(resume['limits'] == {'accepted_steps': 80, 'evaluations': 200}
++                and limits == {'accepted_steps': 92, 'evaluations': 120}
++                and hashlib.sha256(json.dumps(resume, sort_keys=True, separators=(',', ':'),
++                    allow_nan=False).encode()).hexdigest() ==
++                    '2be9f7cd5ca1da78aebec332268a30a26a350b659af4f7d567ad00cb22847436',
++                'Only declared92/120 scout from exact checkpoint4e3a6123 is permitted')
+         initial = evaluator.read_point(resume['initial_point'])
+         require(np.array_equal(initial['positions_A'], start['positions_A']) and
+                 np.array_equal(initial['gradient_kcal_mol_A'], start['gradient_kcal_mol_A']) and
+@@ -163,7 +168,7 @@
+                 'Checkpoint original start/model/state differs')
+         for key, bound in (('accepted_steps', 'accepted_steps'), ('distinct_evaluations', 'evaluations')):
+             require(type(resume[key]) is int and 0 <= resume[key] <= resume['limits'][bound]
+-                    <= limits[bound], 'Checkpoint counters exceed declared budget')
++                    and resume[key] <= limits[bound], 'Checkpoint counters exceed declared budget')
+         require(np.isfinite(resume['trust_A']) and SETTINGS['minimum_trust_A'] <= resume['trust_A']
+                 <= SETTINGS['maximum_trust_A'], 'Invalid checkpoint trust radius')
+         require(len(resume['history']) <= SETTINGS['history'], 'Checkpoint history too long')

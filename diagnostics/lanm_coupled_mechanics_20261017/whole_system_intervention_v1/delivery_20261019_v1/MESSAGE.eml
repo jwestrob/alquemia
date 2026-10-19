@@ -1,0 +1,37 @@
+From: jwestrob@biotite.berkeley.edu
+To: jacobwestroberts@gmail.com
+Subject:
+ Nikasha: whole-protein Mex response changes ordering; independent DFT running
+Date: Mon, 19 Oct 2026 08:42:14 +0000
+Message-ID: <179239933405.423240.9849116248986297930@biotite.berkeley.edu>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Jacob,
+
+The mechanics replacement test is complete: eight whole-protein MACE calculat=
+ions on the same two Mex structures, with the existing solvent correction reu=
+sed.
+
+The old hybrid gives La the larger benefit from that motion. Whole-protein MA=
+CE gives Dy the larger benefit, by 3.62=E2=80=934.19 kcal/mol across the two =
+declared spin inputs. That reversal shows how strongly the inferred response =
+depends on the mechanics model. Independent Mex accuracy remains untested.
+
+There is another limitation: changing the aggregate spin input shifts each me=
+tal=E2=80=99s deformation work by about 6 kcal/mol. We therefore cannot treat=
+ one chosen spin input as a unique physical prediction.
+
+The independent 7CCN peptide DFT scout is running as job 14795, using 12 MPI =
+ranks. Once it finishes, I will review its actual admission and cost, then co=
+ntinue the other three declared reference cells if the gate passes. No input =
+structures were changed for this test.
+
+Everything is preserved and pushed in commit 0d2259d, including original fail=
+ures and full force arrays. The Mex panel used 345 allocated CPU-seconds and =
+28 GPU-seconds; the DFT scout is still pending. Production remains unchanged.
+
+Report:
+https://github.com/jwestrob/alquemia/blob/0d2259d/diagnostics/lanm_coupled_me=
+chanics_20261017/mex_whole_system_v2/REPORT.md

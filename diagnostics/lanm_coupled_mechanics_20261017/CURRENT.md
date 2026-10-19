@@ -2,6 +2,18 @@
 
 17 October2026UTC. The PLAN remains authorized and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
+## Alternative QoS accepted for the pending preflight
+
+19 October23:22UTC: Jacob relayed Rohan's instruction to try standard_expand.
+Live policy permits24CPUs/job,500CPUs/user,20jobs/user,5days; user association
+allows it. Root successfully updated owned pending preflight15192 in place:
+QOS=standard_expand, unchanged1CPU/qualified host/job ID/watcher. Slurm
+changed the default time limit3→5days. Both QoS priorities are0; scheduling
+availability is not guaranteed. [Exact record](lbt_7ccn_continuation_scout_v1/qos_expand_v1/SCHEDULING.md).
+Use explicit `sbatch --qos=standard_expand` for the already-declared12CPU/oneH200
+scout after actual preflight admission. Pinned science, old launchers and original
+failures remain unchanged. No new molecular run has been submitted yet.
+
 ## Checkpoint continuation preflight submitted
 
 19 October22:57UTC: independent static review1813ff0a passes the exact

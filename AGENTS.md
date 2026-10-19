@@ -3,6 +3,14 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the scientific goal remains authorized and unmet.
 
+19 October23:22UTC: Jacob authorized trying Rohan's alternativeQoS
+standard_expand. Live enabled limits24CPU/job,500CPU/user,20jobs,5days.
+Owned pending preflight15192 was updated in place to thatQoS; same1CPU/jobID,
+watcher and scientific inputs. Exact policy/update under active diagnostic
+lbt_7ccn_continuation_scout_v1/qos_expand_v1/. For the declared12CPU/oneH200
+scout use explicit sbatch --qos=standard_expand after actual preflight passes.
+No scientific resource-count/protocol/default change; limits are caps, not grants.
+
 19 October22:57UTC: exact checkpoint continuation preflight15192 is submitted
 on1CPU/noGPU to the qualified H200 host; watcher3437814. Source/config/static
 review and launch evidence are under active diagnostic

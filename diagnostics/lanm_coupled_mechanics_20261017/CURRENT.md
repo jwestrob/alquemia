@@ -2,13 +2,20 @@
 
 17 October2026UTC. The activated PLAN remains active and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
-## Electronic-base correction test: development CPU submitted
+## Electronic-base correction test: saved-data reader recovery
 
-Job **14802** is submitted on one CPU after root and independent review.
-It runs exactly three remaining whole-GFN calls and one regional-GFN call,
-sequentially, stopping at the first failure. Scout14800 is replayed and reused.
-Completion watcher is armed; read `whole_base_delta_cpu_v1/execution/RESULT.json`
-before the single regional-MACE stage. No challenge cells or optimization.
+CPU **14802** completes all four declared native requests, 56 allocated CPU-seconds.
+Result `ba406175`, five cumulative calls including the reused scout. GPU **14803**
+stopped before model loading or any forward: the cross-host exact signature
+comparison differed only in regenerated cap-gradient arrays. Native inputs,
+states, maps and raw evidence remain identical. Preserve this failure (36 CPU-s,
+3 GPU-s); it is not a molecular failure or a changed scientific result.
+
+A versioned saved-manifest reader will use the already-admitted pinned CPU/
+preflight derivative arrays, retaining all native and identity gates. No new
+numerical tolerance, chemistry rerun or Hamiltonian change. Harvey owns source,
+Arendt review, root submission. Only one missing regional MACE forward follows
+actual review. Independent DFT14795 continues; 7CCN candidate gate remains shut.
 
 ### Passed scout
 

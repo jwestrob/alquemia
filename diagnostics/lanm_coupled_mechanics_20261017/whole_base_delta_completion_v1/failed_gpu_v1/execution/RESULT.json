@@ -1,0 +1,143 @@
+{
+  "protocol": "lbt_whole_GFN_regional_vacuum_delta_v1",
+  "stage": "run-development-gpu",
+  "status": "execution_failure",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_completion_v1/COMPLETE.py",
+    "sha256": "05414274fc4139d7e274f56f1bf513f76c20bed696397890a6eeee99b652dc2c"
+  },
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/whole_base_delta_gpu_v1/CONFIG.json",
+    "sha256": "114233afceeaa21b17d96498ae78b0f768cc8e619b9716935ff3b1b405d1b3b4"
+  },
+  "slurm_job_id": "14803",
+  "host": "node-224-2t-8gpu-1",
+  "declared_cells": [
+    "7CCO_before_La",
+    "7CCO_after_La",
+    "7CCO_before_Dy",
+    "7CCO_after_Dy",
+    "7CCN_before_La",
+    "7CCN_after_La",
+    "7CCN_before_Dy",
+    "7CCN_after_Dy"
+  ],
+  "rows": [
+    {
+      "cell_id": "7CCO_before_La",
+      "status": "not_requested"
+    },
+    {
+      "cell_id": "7CCO_after_La",
+      "status": "not_requested"
+    },
+    {
+      "cell_id": "7CCO_before_Dy",
+      "status": "not_requested"
+    },
+    {
+      "cell_id": "7CCO_after_Dy",
+      "status": "not_requested"
+    },
+    {
+      "cell_id": "7CCN_before_La",
+      "status": "not_requested"
+    },
+    {
+      "cell_id": "7CCN_after_La",
+      "status": "not_requested"
+    },
+    {
+      "cell_id": "7CCN_before_Dy",
+      "status": "not_requested"
+    },
+    {
+      "cell_id": "7CCN_after_Dy",
+      "status": "not_requested"
+    }
+  ],
+  "new_molecular_calls": 0,
+  "whole_GFN_calls_attempted": 0,
+  "regional_GFN_calls_attempted": 0,
+  "regional_MACE_calls_attempted": 0,
+  "model_loaded": false,
+  "ALPB_calls": 0,
+  "MM_calls": 0,
+  "embedded_GFN_calls": 0,
+  "DFT_calls": 0,
+  "optimizer_steps": 0,
+  "physical_state_qualified": false,
+  "derivative_qualified": false,
+  "limitations": [
+    "Conditional terminal chemistry and physical spin states remain unqualified.",
+    "GFN2 UHF0 at 300K can have fractional occupations; no ground-state or derivative qualification.",
+    "Regional vacuum delta is not mutual polarization; no absolute cross-element affinity claim.",
+    "The 7CCN challenge, before-Dy whole-MACE force and after-Dy old hybrid remain unavailable here."
+  ],
+  "scientific_binding": {
+    "protocol": "lbt_whole_GFN_regional_vacuum_delta_v1",
+    "implementation": "05414274fc4139d7e274f56f1bf513f76c20bed696397890a6eeee99b652dc2c",
+    "specification": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_completion_v1/SPEC.md",
+      "sha256": "6709cd34188189570bd3df5329df976cec4b3112d5809ebce80e6e1acfa068d4"
+    },
+    "design": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_design_v1/SPEC.md",
+      "sha256": "b18386f62d9dd04e92f6baeaba10eb1c3a9d58a1e303886f45cd8a246546db91"
+    },
+    "inventory": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_design_v1/FEASIBILITY_INPUTS.json",
+      "sha256": "d94e1cadcfa12e15013cac8e5fbc1679a10c4c566ab64e47ccae4dec09a4cc6a"
+    },
+    "cpu_implementation": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_v1/CPU.py",
+      "sha256": "46c8d49c8a0fd25adc52853ce8a4bd218c42a331070a05cf7a72a2c864df7bdf"
+    },
+    "cpu_config": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/whole_base_delta_cpu_v1/CONFIG.json",
+      "sha256": "92fb3225b943e66b81b5e85f8ac7735cee95533d1a0f9999f165ffa547fe0504"
+    },
+    "cpu_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/whole_base_delta_cpu_v1/execution/RESULT.json",
+      "sha256": "ba406175bcc4999757fd08210a1e52bbe583461b1cee5b92537a4042e6f0aceb"
+    },
+    "hybrid_implementation": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_hybrid/EVALUATOR_V2.py",
+      "sha256": "686eba84fd3dfcf28724d2d4e7957528c987445d7137b18c88a07dfec055f661"
+    },
+    "preflight_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/whole_base_delta_preflight_v1/execution/RESULT.json",
+      "sha256": "40fa221065522a5e756bd07aff273997b0445d26b669cb8fb08563a5ed385802"
+    },
+    "scout_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/whole_base_delta_scout_v1/execution/RESULT.json",
+      "sha256": "71cd1a1f8eecf67cede2712872e0dd1e7c97ea4c93026776e6da7dbcc54ad9d2"
+    }
+  },
+  "inventory": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_design_v1/FEASIBILITY_INPUTS.json",
+    "sha256": "d94e1cadcfa12e15013cac8e5fbc1679a10c4c566ab64e47ccae4dec09a4cc6a"
+  },
+  "preflight_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/whole_base_delta_preflight_v1/execution/RESULT.json",
+    "sha256": "40fa221065522a5e756bd07aff273997b0445d26b669cb8fb08563a5ed385802"
+  },
+  "scout_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/whole_base_delta_scout_v1/execution/RESULT.json",
+    "sha256": "71cd1a1f8eecf67cede2712872e0dd1e7c97ea4c93026776e6da7dbcc54ad9d2"
+  },
+  "failure": "ValueError('Eight prepared parent signatures differ')",
+  "traceback": "Traceback (most recent call last):\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_completion_v1/COMPLETE.py\", line 322, in main\n    _, cells, h, rows, native = prepare(cfg, out, result)\n                                ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_completion_v1/COMPLETE.py\", line 100, in prepare\n    base, cells, h, rows = cpu.prepare(cc, d, scratch)  # Saved only; CPU.evaluate is never called.\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_v1/CPU.py\", line 82, in prepare\n    require(signatures(manifest) == signatures(old_manifest), 'Eight prepared parent signatures differ')\n  File \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_v1/CPU.py\", line 23, in require\n    if not ok: raise ValueError(message)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Eight prepared parent signatures differ\n",
+  "elapsed_seconds": 2.4260740390745923,
+  "peak_parent_RSS_KiB": 55552,
+  "allocation": {
+    "SLURM_CPUS_PER_TASK": "12",
+    "SLURM_CPUS_ON_NODE": "12",
+    "SLURM_JOB_CPUS_PER_NODE": "12",
+    "SLURM_JOB_GPUS": "7",
+    "SLURM_STEP_GPUS": null,
+    "CUDA_VISIBLE_DEVICES": "0",
+    "SLURM_MEM_PER_CPU": null,
+    "SLURM_MEM_PER_NODE": null
+  }
+}

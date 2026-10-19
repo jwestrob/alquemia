@@ -1,0 +1,24 @@
+{
+  "utc": "2026-10-19T09:40:59.741127+00:00",
+  "status": "technical_failure_before_model_load",
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/whole_base_delta_gpu_v1/execution/RESULT.json",
+    "sha256": "c446c47de939e48b318c1b6b914b243bd2f33db3fd4a7f26b6be2d58c3659287"
+  },
+  "calls": 0,
+  "model_loaded": false,
+  "actual_failure": "Eight prepared parent signatures differ",
+  "diagnosis": "Only local component_gradients MACE_region / negative_GFN_region and their gradient_difference differ at representation level between regenerated GPU-host manifest and admitted CPU/preflight manifest; exact native/input/state/map/XYZ/ALPB identity fields agree. Examples and exact raw manifests retained.",
+  "decision": "Versioned loader will reuse pinned admitted preflight/CPU derived arrays, retaining all raw/native identity gates; no new tolerance or repeated chemistry.",
+  "scheduler": {
+    "job_id": 14803,
+    "state": "FAILED",
+    "exit_code": "1:0",
+    "elapsed_seconds": 3,
+    "allocated_CPUs": 12,
+    "allocated_GPUs": 1,
+    "allocated_CPU_seconds": 36,
+    "allocated_GPU_seconds": 3,
+    "node": "node-224-2t-8gpu-1"
+  }
+}

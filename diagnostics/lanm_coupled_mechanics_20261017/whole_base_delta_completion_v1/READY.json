@@ -1,0 +1,67 @@
+{
+  "status": "source_ready_bound_CPU_independently_reviewed",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_completion_v1/COMPLETE.py",
+    "sha256": "05414274fc4139d7e274f56f1bf513f76c20bed696397890a6eeee99b652dc2c"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_completion_v1/SPEC.md",
+    "sha256": "6709cd34188189570bd3df5329df976cec4b3112d5809ebce80e6e1acfa068d4"
+  },
+  "GPU_config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_completion_v1/CONFIG_GPU.json",
+    "sha256": "114233afceeaa21b17d96498ae78b0f768cc8e619b9716935ff3b1b405d1b3b4"
+  },
+  "unbound_template": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_completion_v1/CONFIG.template.json",
+    "sha256": "07924cc0a6c4f3f2c400ef6e6950bbddd3bee16b6effd9690adf4adaf4aaeb5e"
+  },
+  "independent_static_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_completion_v1/STATIC_REVIEW.md",
+    "sha256": "266b27bd2ef0c40c6e5323eefd505116a9cc79231c60471fae72ac5e4255a890"
+  },
+  "CPU_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/whole_base_delta_cpu_v1/execution/RESULT.json",
+    "sha256": "ba406175bcc4999757fd08210a1e52bbe583461b1cee5b92537a4042e6f0aceb"
+  },
+  "static_validation": {
+    "AST_passed": true,
+    "direct_config_pins_verified": true,
+    "actual_CPU_metadata_checked": true,
+    "scientific_imports": false,
+    "numerical_tests": false,
+    "GPU_execution": false,
+    "saved_assembly_execution": false
+  },
+  "commands": {
+    "GPU": [
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_hybrid_20260916/software_v1/venv/bin/python",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_completion_v1/COMPLETE.py",
+      "--stage",
+      "run-development-gpu",
+      "--config",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_completion_v1/CONFIG_GPU.json",
+      "--output",
+      "<fresh GPU execution directory>"
+    ],
+    "collection": [
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_hybrid_20260916/software_v1/venv/bin/python",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/whole_base_delta_completion_v1/COMPLETE.py",
+      "--stage",
+      "collect_7CCO",
+      "--config",
+      "<fresh config with actual gpu_result added>",
+      "--output",
+      "<fresh saved collection directory>"
+    ]
+  },
+  "binding_for_collection": "Add exact admitted GPU result pin only; keep all scientific_binding fields unchanged. Original GPU config and raw output remain immutable.",
+  "new_call_limits": {
+    "GPU_stage": 1,
+    "saved_collection": 0,
+    "cumulative_development": 6,
+    "overall_frozen_ceiling": 10
+  },
+  "scope": "No 7CCN challenge, retries, fallback, optimization or new ALPB/MM/embedded-GFN/DFT; root owns all submissions.",
+  "runtime_limitation": "Existing exact preparation/signature gates are unchanged; static review does not establish cross-host runtime equality."
+}

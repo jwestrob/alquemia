@@ -2,7 +2,21 @@
 
 17 October2026UTC. The activated PLAN remains active and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
-## Electronic-base correction test: saved preflight submitted
+## Electronic-base correction test: native scout passed
+
+Actual preflight **14799** passes all eight states, seven regional reuse pairs
+and all eight ALPB receipts, zero molecular calls, 6 CPU-seconds. Native scout
+**14800** also passes unchanged admission: one whole256 GFN call, 65 SCC
+iterations, 14.72 s native wall time versus the declared 600 s limit; 20 allocated
+CPU-seconds. Exact raw result and root review are preserved under
+`whole_base_delta_v1/actual_scout_v1/`. No candidate work/accuracy result yet.
+
+The separate continuation adapter is being reviewed before the remaining three
+7CCO whole-GFN calls, one missing regional-GFN and one regional-MACE call.
+Reuse the scout exactly; first failure stops new scheduling. Both-metal work
+triage still controls the four prebound 7CCN calls. Independent DFT14795 continues.
+
+### Prior submission record
 
 One-CPU saved-data preflight **14799** is submitted, completion watcher armed.
 Source `f760cd79` / config `8dc6cdf0` passed independent static review. This stage

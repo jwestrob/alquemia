@@ -1,0 +1,101 @@
+{
+  "status": "passed",
+  "new_molecular_calls": 0,
+  "old_failure_preserved": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_pool_v2/execution/RESULT.json",
+    "sha256": "dd5a1fdd48774855457f48bbc91d07eca714858b7096fbefc258089f678baa10"
+  },
+  "installed_package": {
+    "path": "/home/jwestrob/miniconda3/envs/lanm_bench/conda-meta/xtb-6.7.1-h8876d29_4.json",
+    "sha256": "a08bf315b368e2a5496def3d2bf8885e9f517400af84d6e755432d2c1d6daebf"
+  },
+  "manual_binary_package_link_verified": true,
+  "actual_printed_damping_required_after_call": true,
+  "fixed_args": [
+    "core.xyz",
+    "--gfn",
+    "2",
+    "--chrg",
+    "-2",
+    "--uhf",
+    "0",
+    "--etemp",
+    "300",
+    "--acc",
+    "0.0001",
+    "--iterations",
+    "500",
+    "--norestart",
+    "--json",
+    "--pop",
+    "--grad"
+  ],
+  "cases": [
+    {
+      "case_id": "failed_005",
+      "fixture": "failed",
+      "broydamp": 0.05
+    },
+    {
+      "case_id": "failed_010",
+      "fixture": "failed",
+      "broydamp": 0.1
+    },
+    {
+      "case_id": "preceding_005",
+      "fixture": "preceding",
+      "broydamp": 0.05
+    },
+    {
+      "case_id": "origin_005",
+      "fixture": "origin",
+      "broydamp": 0.05
+    }
+  ],
+  "fixtures": {
+    "failed": {
+      "point": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_pool_v2/execution/hybrid_parent_replay/evaluator/point_059_7CCN_baseline_La/POINT.json",
+        "sha256": "81edb534dcd3dd2447f31d410d20fa07d02dc59ec442c4639328799c9bdc6768"
+      },
+      "native_result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_pool_v2/execution/hybrid_parent_replay/evaluator/point_059_7CCN_baseline_La/isolated/RESULT.json",
+        "sha256": "44263b62680af5695e455a059820b38f97c900f7e931c88bc344ef8eca1deb89"
+      }
+    },
+    "preceding": {
+      "point": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_pool_v2/execution/hybrid_parent_replay/evaluator/point_058_7CCN_baseline_La/POINT.json",
+        "sha256": "b41bc78de249ba10eda3e97e151f9e60ccce09c43a621ab9e3ae6701c2e2cd54"
+      },
+      "native_result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_pool_v2/execution/hybrid_parent_replay/evaluator/point_058_7CCN_baseline_La/isolated/RESULT.json",
+        "sha256": "bf96b781e7b43f1d32bf8bd84cf80dc4c192ebbd200e11f36d0952669a3a73e8"
+      }
+    },
+    "origin": {
+      "point": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_origins_v2/execution/evaluator/point_004_7CCN_baseline_La/POINT.json",
+        "sha256": "3be2f74df65e4b3ddbbbc2ce5a8db4d9754a3af0930229c4298ed18bb3e4e383"
+      },
+      "native_result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_origins_v2/execution/evaluator/point_004_7CCN_baseline_La/isolated/RESULT.json",
+        "sha256": "98a30f3e9aa72979b67d4cfd0d562e9e1b1a79f8d5e3f636c40ddcfdbe1c2105"
+      }
+    }
+  },
+  "agreement_gates": {
+    "energy_hartree": 1e-07,
+    "gradient_component_kcal_mol_A": 0.005
+  },
+  "controls": {
+    "failed_005": "$scc\n  broydamp=0.05\n$end\n",
+    "failed_010": "$scc\n  broydamp=0.10\n$end\n",
+    "preceding_005": "$scc\n  broydamp=0.05\n$end\n",
+    "origin_005": "$scc\n  broydamp=0.05\n$end\n"
+  },
+  "native_admission": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_hybrid_preflight_v1/GFN_ADMISSION.py",
+    "sha256": "3563fb16f5bb986420176e78020afd1dd593e5cb69ef36f15fa1fe3021b99dab"
+  }
+}

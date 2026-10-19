@@ -1,0 +1,44 @@
+{
+  "utc": "2026-10-19T09:21:55.052364+00:00",
+  "status": "actual_native_and_cost_gate_passed",
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/whole_base_delta_scout_v1/execution/RESULT.json",
+    "sha256": "71cd1a1f8eecf67cede2712872e0dd1e7c97ea4c93026776e6da7dbcc54ad9d2"
+  },
+  "native_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/whole_base_delta_scout_v1/execution/whole_GFN_scout/RESULT.json",
+    "sha256": "f3712a77ef6c9a777b38fc09816b255571d12cb045b0753013699d5e34178927"
+  },
+  "preflight_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/whole_base_delta_preflight_v1/ROOT_PREFLIGHT_REVIEW.json",
+    "sha256": "2bbe80dfa329b9cbccd6f09451a99934d7a13ef07006a710e69a476b379574d5"
+  },
+  "scheduler": {
+    "job_id": "14800",
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed_seconds": 20,
+    "allocated_cpus": 1,
+    "allocated_CPU_seconds": 20,
+    "node": "node-64-768g-1"
+  },
+  "native_wall_seconds": 14.724745035171509,
+  "scout_cost_limit_seconds": 600,
+  "scc_iterations": 65,
+  "charge_closure_e": 8.999999989711682e-08,
+  "full_gradient_atoms": 256,
+  "decision": "Continue declared 7CCO development only after separate continuation adapter review: three whole GFN and one regional GFN on CPU, then one regional MACE. Reuse this exact scout.",
+  "missing_region": "7CCO_after_Dy",
+  "budget_after_scout": {
+    "actual_attempts": 1,
+    "remaining_development_GFN": 4,
+    "remaining_development_MACE": 1,
+    "conditional_7CCN_GFN": 4,
+    "ceiling": 10
+  },
+  "unchanged_native_protocol": true,
+  "no_solver_fallback_or_retry": true,
+  "candidate_work_available": false,
+  "derivative_qualified": false,
+  "physical_accuracy_qualified": false
+}

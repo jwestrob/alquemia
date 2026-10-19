@@ -3,6 +3,17 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the goal remains active and unmet.
 
+19 October, newest: independent whole7CCN DFT scout14795 remains the live reference
+gate. A separately declared fixed LBT candidate is in source preparation:
+whole GFN2 + baseline regional MACE − same regional GFN2 + existing ALPB.
+Read whole_base_delta_design_v1/SPEC.md and CURRENT under the active diagnostic.
+Ten-call ceiling before reuse, first saved preflight/CPU scout, then consumed7CCO
+four-cell triage before prebound7CCN. No optimizer/newDFT/natural-transfer launch.
+Reuse certified7CCN after-La isolated SCC recovery; do not rerun its failed default.
+Native whole-MACE source review identifies finite-range/global-label limitations,
+not an established error cause. Root owns launches; Linnaeus new adapter, Harvey
+cache inventory, Arendt review. Preserve all old methods/results and PQQ production.
+
 19 October: the whole-system Mex fixed panel is COMPLETE, all eight cells,
 one scout plus seven H200 forwards; result 4c0c8b73. Read mex_whole_system_v2/
 REPORT.md under the active diagnostic. Both aggregate-spin inputs reverse the

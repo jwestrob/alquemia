@@ -2,6 +2,40 @@
 
 17 October2026UTC. The activated PLAN remains active and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
+## Electronic-base correction test being prepared
+
+19 October 2026 UTC: live scheduler/native output confirms reference scout14795
+running with 12 MPI ranks and SCF initialization reached. Its completion gate
+remains unchanged. The preceding goal turn made scientific progress; this turn
+also verifies the live wait and addresses a separate mechanics limitation.
+
+[Exact native-source review](whole_model_physics_review_v1/SOURCE_PHYSICS_REVIEW.md)
+shows finite-range MACE atom-energy interactions and broadcast total charge/spin
+labels, without an explicit long-range vacuum electrostatic or charge-equilibration
+solve. Fixed-charge ALPB does not feed back into MACE. These facts identify a
+model limitation, not the cause or magnitude of the observed error.
+
+Root declared a [bounded subtractive test](whole_base_delta_design_v1/SPEC.md):
+whole GFN2 + regional MACE − the same regional GFN2 + existing ALPB. Include
+whole-GFN2 + ALPB alone as a no-extra-call comparator. Preserve both fixed LBT
+reference pairs, the baseline172/two-cap/charge−2 region, full cap derivatives
+and exact qualified La/Dy parameters. GFN-level self-consistency does not make
+the regional correction mutually polarizable.
+
+Ceiling: eight whole-GFN2 calls and one missing regional MACE/GFN2 pair,
+before exact reuse. Seven regional pairs and all eight ALPB cells already exist;
+reuse the certified 7CCN after-La SCC component, never repeat its failed default.
+Zero-call Slurm preflight and one CPU scout come first. Complete the four consumed
+7CCO cells, then allow the four prebound 7CCN challenge cells only if both metals'
+candidate work errors are within the frozen 1 kcal/mol development triage rule.
+No new DFT, optimization or transfer scoring follows from preparation.
+
+Linnaeus owns the new adapter, Harvey the exact reuse inventory, Arendt independent
+review, root submissions. Read actual newer receipts before launching. The
+[original-plan audit](plan_evidence_20261019_v1/REQUIREMENT_MATRIX.md) retains
+0/6 converged broad searches, failed Mex derivative qualification, the challenged
+hybrid scaffold and unfulfilled natural transfer. No smaller goal substitutes.
+
 ## Whole-system Mex panel complete; independent LBT reference running
 
 19 October 2026 UTC: Mex collector 14794 completes all eight fixed whole-system

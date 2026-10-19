@@ -2,6 +2,19 @@
 
 17 October2026UTC. The activated PLAN remains active and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
+## Whole-Mex directional check submitted
+
+19 October: zero-call preflight14810 is submitted on1CPU, completion wake armed.
+Read [the frozen specification](mex_whole_force_v1/SPEC.md), sourcebf32bc23 and
+independent review67adefad. The unchanged whole2049 MACE+fixed-charge ALPB model
+will be checked against its own energy differences at the saved BEFORE geometry:
+four directions, both original steps, both metals and both aggregate inputs.
+Maximum64new MACE/16new DyALPB; four MACE centers, two ALPB centers and16La
+displacements are reused. Exact preflight replay gates the separate H200 run.
+First failed native/component/total gate stops new scheduling. No center reruns,
+optimizer, spin selection, accuracy or transfer qualification follows. Independent
+DFT14795 continues; candidate14806 remains closed. Broader goal remains unmet.
+
 ## Natural-source state contract prepared
 
 19 October: [source-only preparation](natural_transfer_contract_v1/REPORT.md)

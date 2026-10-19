@@ -1,0 +1,71 @@
+{
+  "protocol": "mex_whole2049_before_four_state_directional_check_v1",
+  "status": "source_frozen_actual_Slurm_preflight_pending",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_whole_force_v1/QUALIFY.py",
+    "sha256": "bf32bc2322bbfe20deebeba1a6c7de5783483d934864db9decd365e7184438b0"
+  },
+  "configuration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_whole_force_v1/CONFIG_PREFLIGHT.json",
+    "sha256": "10efd3a0dd419095b89162a8dbc8a43090dc56b301f21c13e5dbbe41ebcb4e78"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_whole_force_v1/SPEC.md",
+    "sha256": "5a025950c6527c062984d6fc7c56c63618736566fc010fdfbf407ae630148b61"
+  },
+  "reuse_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_whole_force_v1/REUSE_REVIEW.md",
+    "sha256": "3a456d904bdf1511e7939e258543eecbcabfe86447033cf664ee716d54692d24"
+  },
+  "static_syntax": "AST parse passed; no adapter imports or numerical execution",
+  "python": {
+    "python_executable": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_hybrid_20260916/software_v1/venv/bin/python",
+    "sys_prefix": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_hybrid_20260916/software_v1/venv"
+  },
+  "preflight_command": [
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_hybrid_20260916/software_v1/venv/bin/python",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_whole_force_v1/QUALIFY.py",
+    "preflight",
+    "--config",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_whole_force_v1/CONFIG_PREFLIGHT.json",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/mex_whole_force_preflight_v1/execution"
+  ],
+  "run_command_template": [
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_hybrid_20260916/software_v1/venv/bin/python",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_whole_force_v1/QUALIFY.py",
+    "run",
+    "--config",
+    "ROOT_BOUND_RUN_CONFIG.json",
+    "--output",
+    "FRESH_EXECUTION_DIRECTORY"
+  ],
+  "run_config_rule": "Copy CONFIG_PREFLIGHT unchanged except binding preflight_result to the actual passed preflight RESULT; implementation may be a byte-exact source copy. Scientific binding and manifest must replay exactly.",
+  "resources": {
+    "preflight": "Slurm one CPU, no GPU/model load",
+    "run": "Slurm one H200 and twelve CPUs, native float64, default scheduler limits; no memory/time override or requeue",
+    "threading": "Model uses actual twelve CPUs; native solvent child threads fixed to one under pinned library_directory."
+  },
+  "denominator": {
+    "central_MACE_reused": 4,
+    "central_ALPB_reused": 2,
+    "displaced_La_ALPB_reused": 16,
+    "new_MACE_maximum": 64,
+    "new_Dy_ALPB_maximum": 16,
+    "state_direction_step_checks": 32,
+    "directions": 4,
+    "steps_A": [
+      0.0002,
+      0.0001
+    ]
+  },
+  "failure_policy": "Stop new scheduling at first native/resource/derivative failure; preserve raw and partial output directories and every failed/unattempted slot; no retry.",
+  "not_authorized_by_this_record": [
+    "job submission",
+    "central reevaluation",
+    "DFT/GFN/MM calls",
+    "optimizer",
+    "aggregate-state selection"
+  ],
+  "interpretation": "Sampled BEFORE derivative consistency only; no physical-state, accuracy, after-geometry or transfer qualification."
+}

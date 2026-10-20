@@ -16,7 +16,7 @@ Step172-to725 model work is−13.494231kcal/mol: MACE+11.053362 and
 fixedALPB−24.547593. All567 new MACE/ALPB evaluations are preserved; no DFT,
 other-metal or other search calls. Actual406s on12CPUs/oneH200 costs4872CPU-s
 and406GPU-s. Receipt delivery is acknowledged; independent terminal review
-3b6573c4 passes. The lossless archive is being verified. No further optimization.
+3b6573c4 passes. The lossless archive is complete and byte-verified: [archive](lbt_7ccn_generous_completion_v1/run_result_v1/ARTIFACTS.tar.xz) SHA256 `26504aa6617c6c7d14f6998ea74d1e0a67f7be1b29f212285008ec676fbe5f35`; [evidence manifest](lbt_7ccn_generous_completion_v1/run_result_v1/EVIDENCE_PINS.json) SHA256 `29ff0739f6b092a2ecee6549404ca4aa00bcf33e6df8c5ee9af38113bd72ff0f`; [final report](lbt_7ccn_generous_completion_v1/FINAL_REPORT.md). No further optimization.
 
 Root separately declares [one fixed terminal reference](lbt_7ccn_converged_reference_v1/SCIENCE_DECISION.json),
 27377db9. Compare step725 with saved step92 reference15321 using the unchanged

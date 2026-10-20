@@ -1,0 +1,59 @@
+{
+  "created_utc": "2026-10-20T13:10:33.638251+00:00",
+  "job_id": 15525,
+  "scheduler_query": [
+    "sacct",
+    "-j",
+    "15525",
+    "--format=JobIDRaw,State,ExitCode,ElapsedRaw,AllocCPUS,CPUTimeRAW,TotalCPU,MaxRSS,AllocTRES,NodeList,QOS,Partition",
+    "--parsable2"
+  ],
+  "scheduler_raw": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_generous_completion_v1/run_result_v1/SACCT.txt",
+    "sha256": "e2136089e76c518ecabcc7ed045de18876e775d31f046ab3d07334705c27fceb"
+  },
+  "scheduler_rows": [
+    {
+      "JobIDRaw": "15525",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "ElapsedRaw": "406",
+      "AllocCPUS": "12",
+      "CPUTimeRAW": "4872",
+      "TotalCPU": "07:33.222",
+      "MaxRSS": "",
+      "AllocTRES": "billing=12,cpu=12,gres/gpu=1,mem=250000M,node=1",
+      "NodeList": "node-224-2t-8gpu-1",
+      "QOS": "standard_expand",
+      "Partition": "gpu_h200"
+    },
+    {
+      "JobIDRaw": "15525.batch",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "ElapsedRaw": "406",
+      "AllocCPUS": "12",
+      "CPUTimeRAW": "4872",
+      "TotalCPU": "07:33.222",
+      "MaxRSS": "9670348K",
+      "AllocTRES": "cpu=12,gres/gpu=1,mem=250000M,node=1",
+      "NodeList": "node-224-2t-8gpu-1",
+      "QOS": "",
+      "Partition": ""
+    }
+  ],
+  "allocated_CPU_seconds": 4872,
+  "allocated_GPU_seconds": 406,
+  "allocation_not_measured_utilization": true,
+  "producer_costs_recorded": {
+    "new_composite_evaluations": 567,
+    "MACE_calls_attempted": 567,
+    "ALPB_calls_attempted": 567,
+    "MACE_call_seconds": 69.99255885602906,
+    "ALPB_call_seconds": 28.555504620075226,
+    "model_load_seconds": 6.410947035066783,
+    "cache_hits": 0
+  },
+  "application_elapsed_seconds_recorded": 403.8417198029347,
+  "scope": "This generous continuation allocation only; prior searches, preflights, audits and references retain their separate costs."
+}

@@ -1,0 +1,49 @@
+{
+  "job_id": 15321,
+  "reviewed_utc": "2026-10-20T02:38:46.633808+00:00",
+  "delivered_health_alert": "new_La:output_silent_review_needed_not_proven_stall",
+  "delivery_acknowledged": true,
+  "notification_queued_utc": "2026-10-20T02:36:34.323298+00:00",
+  "decision": "continue_existing_job_unchanged",
+  "evidence": {
+    "health_snapshot": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/run/health_review_20261020_0237_v1/health_receipt_snapshot.json",
+      "sha256": "2db8542f5cd489a0046a922ae9860aaeed4b0b0087895298679d6c4c084e3d3c"
+    },
+    "accounting_samples": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/run/health_review_20261020_0237_v1/ACCOUNTING_SAMPLES.json",
+      "sha256": "f01cd8227598c9bb9bb58146f4ce7384b47708cc5e23758d8ad5155ca3db8229"
+    },
+    "native_tail": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/run/health_review_20261020_0237_v1/NATIVE_TAIL.txt",
+      "sha256": "00640f65ca7b0232a5207f5680f13b84222a55c362c51451df3f3b2bb4d6edec"
+    },
+    "scheduler_snapshot": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/run/health_review_20261020_0237_v1/SCONTROL.txt",
+      "sha256": "648c55ebf1a1f02424514e197baf8825e3204300c8e18a945fe60ffea3859b5e"
+    }
+  },
+  "accounting_observation": {
+    "aggregate_CPU_seconds_increase": 180,
+    "wall_sample_interval_seconds": 15.026111264014617,
+    "allocated_cpus": 12,
+    "interpretation": "CPU accrual is consistent with active use of approximately all12 allocated CPUs. It does not establish useful convergence or equal rank utilization."
+  },
+  "native_phase": "Initial incremental Fock matrix formation; first SCF iteration and residuals not yet printed. No explicit native failure or terminal receipt.",
+  "prior_log_review": {
+    "14880_first_DIIS_row_seconds": 2078.3,
+    "14795_first_DIIS_row_seconds": 1983.3,
+    "current_setup_and_guess_seconds": [
+      304.1,
+      169.8
+    ],
+    "interpretation": "Comparable startup; current roughly15min silent interval is shorter than prior first-iteration durations. Prior durations are not deadlines."
+  },
+  "actions": {
+    "cancelled": false,
+    "resubmitted": false,
+    "settings_changed": false,
+    "new_scientific_calls": 0
+  },
+  "next": "Existing completion and alert-only health watchers remain active. Review actual native result before saved collection."
+}

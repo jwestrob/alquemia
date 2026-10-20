@@ -2,6 +2,18 @@
 
 17 October2026UTC. The PLAN remains authorized and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
+## Incremental reference health review: active CPU work
+
+20 October02:38UTC: delivered silence alert for15321 reviewed against actual
+output and scheduler accounting. Batch CPU time grew180s over15.026s wall,
+consistent with active use of its12CPUs. Native output remains in the initial
+incremental Fock build, with no first-iteration residual yet and no failure.
+Prior matching La runs printed first DIIS iteration times1983/2078s; the current
+roughly15min silent interval alone does not support a stall. Leave15321 unchanged.
+CPU activity is not convergence or rank-balance proof. Evidence is in
+[lbt_7ccn_incremental_reference_v1/health_review_20261020_0237_v1](lbt_7ccn_incremental_reference_v1/health_review_20261020_0237_v1/ROOT_HEALTH_REVIEW.json).
+No new molecular call, cancellation, retry or settings change.
+
 ## Incremental reference running after actual preflight
 
 20 October02:13UTC: saved-only preflight15319 passed, result e74495a8,

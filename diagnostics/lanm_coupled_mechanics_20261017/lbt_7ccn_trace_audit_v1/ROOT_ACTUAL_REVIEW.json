@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "reviewed_utc": "2026-10-20T12:03:33.977028+00:00",
+  "job": "15489",
+  "review_kind": "proactive_actual_result_review_not_delivery_ack",
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_trace_audit_v1/execution/RESULT.json",
+    "sha256": "228ef78599c1ecf1bdd67120c32d5b83cc9f861cf22b47e4bef07f7436c1f1fb"
+  },
+  "report": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_trace_audit_v1/execution/REPORT.md",
+    "sha256": "2b250d483d1b72cf831cde308443913d55c3b9138753b963e1ec5917869be7be"
+  },
+  "independent_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_trace_audit_v1/ACTUAL_REVIEW.md",
+    "sha256": "d3df236a963d9b7841d0a76366d1249e02ebea158aa3fb2bce54db4b984c04c5"
+  },
+  "preserved_evidence": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_trace_audit_v1/actual_result_v1/EVIDENCE_PINS.json",
+    "sha256": "c364f9a6f9ed8971df193d6107151f0a6fe5a953bf173bca5c0b6db87f84a73e"
+  },
+  "verdict": "saved_replay_passed; physical_accuracy_unqualified",
+  "observations": [
+    "81 states and 80 transitions admitted; all 2828 replay checks pass",
+    "80 curvature updates; no history resets or backtracks; two mildly trust-scaled steps",
+    "All fixed windows lower model energy; last20 steps lower 2.635231 kcal/mol",
+    "Strong opposing MACE and ALPB gradients persist; no specific solver defect established"
+  ],
+  "cost": {
+    "allocated_cpu_seconds": 21,
+    "allocated_gpu_seconds": 0,
+    "new_molecular_calls": 0
+  },
+  "next_decision": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_generous_completion_v1/SCIENCE_DECISION.json",
+    "sha256": "e8c4bda02f6714f452251b2c4edd83dbbdebfdbafa81b84cfdef75cf5574cc80"
+  },
+  "next_action": "Review implementation then submit the single declared exact-step172 generous continuation; preserve original model, criteria, source, guards and history",
+  "limits": [
+    "No physical force accuracy or stable state conclusion",
+    "No preference or affinity conclusion",
+    "No automatic intermediate DFT or further budget extension"
+  ]
+}

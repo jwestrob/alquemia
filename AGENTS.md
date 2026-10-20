@@ -3,12 +3,24 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the scientific goal remains authorized and unmet.
 
+20 October, latest: saved audit15489 PASSED all81states/80transitions/2828checks,
+result228ef785;21CPU-s, zero molecular calls. No resets/backtracks, only two mild
+trust scalings; final20steps still lower2.635231kcal/mol. Independent actual
+reviewd3df236a supports one generous unchanged continuation. Root declared
+lbt_7ccn_generous_completion_v1/SCIENCE_DECISION.json e8c4bda0: exactstep172,
++1000accepted/+2000evaluations, cumulative1172/2172, original history/model/
+source/guards/forcecriteria. Source and review in preparation; no submission yet.
+One12CPU/H200standard_expand run with saved-chain admission before lazy model
+load; no separate preflight allocation. No automatic extension/intermediateDFT/
+othermetal/preference claim. Read CURRENT and actual newer receipts.
+
 20 October11:36UTC: model completion15458 finished80newsteps/evals, cumulative
 172/172, accepted-step-limit and still unconverged. Result9159ea43; max/RMS
 fullforce4.824511/1.045572. IncrementalMACE+5.308810/ALPB−20.894474 gives
 net−15.585663kcal/mol, without referencevalidation. Allguards pass;58s12CPU/1H200
 =696CPU-s/58GPU-s plus13CPU-s preflight. Root declares saved-only trace/component
-audit lbt_7ccn_trace_audit_v1/SCIENCE_DECISION.json91516927; source/review preparing.
+audit lbt_7ccn_trace_audit_v1/SCIENCE_DECISION.json91516927. Reviewed source
+eeb09ad8/config6c9b4f90 submitted as15489, now complete as recorded above.
 No automatic extension/DFT/othermetal. Read actual CURRENT and newer receipts.
 
 20 October09:27UTC: exact step92 completion preflight15457 passes,2fde1d8d,

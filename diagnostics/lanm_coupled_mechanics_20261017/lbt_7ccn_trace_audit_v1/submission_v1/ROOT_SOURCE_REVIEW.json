@@ -1,0 +1,33 @@
+{
+  "created_utc": "2026-10-20T11:51:41.633403+00:00",
+  "protocol": "lbt_7ccn_trace_audit_v1",
+  "status": "root_source_and_bound_metadata_review_passed",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_trace_audit_v1/AUDIT.py",
+    "sha256": "eeb09ad815e2a9ca76df4329c08b16b91ed71c5e61e07bf6778c4b5dc44127ab"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_trace_audit_v1/SPEC.md",
+    "sha256": "d8c519e4a5719e25a292fe765a4efc89749a26136ce2a605140aa88439ec1dcb"
+  },
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_trace_audit_v1/CONFIG.json",
+    "sha256": "6c9b4f90768001c69d0c48a9a2da7a0b49f6636e2ddef6f6307408111c7f360c"
+  },
+  "question": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_trace_audit_v1/SCIENCE_DECISION.json",
+    "sha256": "9151692784e2e340e6967ef3d2baccb38a07208b84b168492baf82a40b88d01c"
+  },
+  "review_scope": "Full source read against unchanged optimizer and original native-gradient loaders; literal schema/point/checkpoint/config pins verified; no scientific imports or numerical replay on login.",
+  "resources": {
+    "cpus": 1,
+    "gpus": 0,
+    "partition": "gpu_h200",
+    "qualified_host": "node-224-2t-8gpu-1",
+    "qos": "standard_expand",
+    "memory_time_overrides": false,
+    "requeue": false
+  },
+  "actual_scientific_test": "One saved-only Slurm audit; no extra preflight or molecular evaluation.",
+  "limitations": "Successful replay tests implementation consistency, not force accuracy or model adequacy."
+}

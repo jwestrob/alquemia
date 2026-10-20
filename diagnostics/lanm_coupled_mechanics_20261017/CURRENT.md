@@ -2,6 +2,29 @@
 
 17 October2026UTC. The PLAN remains authorized and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
+## Saved audit passed; one generous completion attempt declared
+
+20 October UTC: saved audit15489 is complete, result228ef785. All81 states,
+80 transitions and2,828 replay checks pass. All80 curvature updates entered
+history; no resets or backtracks occurred. Only two steps were mildly
+trust-scaled. The final20 steps still lower2.635231kcal/mol. Actual cost21CPU-s,
+zeroGPU-s or molecular calls. Independent actual reviewd3df236a supports
+continued model minimization; it identifies no specific solver repair first.
+See [the audit and review](lbt_7ccn_trace_audit_v1/ACTUAL_REVIEW.md).
+
+Strong MACE/ALPB force opposition and unconverged scaffold residuals remain.
+Passing replay is neither force-accuracy qualification nor a diagnosis of
+erroneous solvent physics. Earlier DFT supports an earlier increment only.
+
+Root declares [one larger finite continuation](lbt_7ccn_generous_completion_v1/SCIENCE_DECISION.json),
+e8c4bda0: exact step172 checkpoint, at most1,000 further accepted steps or
+2,000 new evaluations, cumulative1,172/2,172. Original model, history, source,
+guards and force criteria stay fixed. Source and independent review are being
+completed before one12CPU/H200 standard_expand submission. The run must
+re-admit its saved chain before model initialization; no separate duplicate
+preflight allocation. No submission yet, automatic further extension,
+intermediate DFT, other-metal call or preference claim. The goal remains unmet.
+
 ## Bounded completion finished without force convergence
 
 20 October11:36UTC: run15458 completed its80 additional accepted steps and80
@@ -16,10 +39,12 @@ Completion delivery acknowledged; all historical checkpoints remain preserved.
 
 Root declared [a saved-only mechanics audit](lbt_7ccn_trace_audit_v1/SCIENCE_DECISION.json),
 91516927, to inspect all81 points/80 transitions, optimizer replay, component
-forces and residual attribution. Source and review are preparing for one1CPU
-Slurm analysis. No continuation, new DFT or other-metal call is released from
-this termination. Solvent-driven lowering alone does not establish solvent
-error; budget exhaustion alone does not establish optimizer stagnation.
+forces and residual attribution. Reviewed sourceeeb09ad8/config6c9b4f90 is now
+submitted as15489 on1CPU/noGPU, standard_expand on the qualified host, with
+completion watcher1918149. It is now complete as recorded above; the separate
+root decision follows its actual audit. Solvent-driven lowering alone does not
+establish solvent error; budget exhaustion alone does not establish optimizer
+stagnation.
 
 ## Incremental DFT comparison complete; bounded model completion declared
 

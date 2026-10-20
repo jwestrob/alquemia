@@ -1,0 +1,50 @@
+{
+  "created_utc": "2026-10-20T11:54:43.503744+00:00",
+  "job_id": 15489,
+  "scheduler_query": [
+    "sacct",
+    "-j",
+    "15489",
+    "--format=JobIDRaw,State,ExitCode,ElapsedRaw,AllocCPUS,CPUTimeRAW,TotalCPU,MaxRSS,AllocTRES,NodeList,QOS,Partition",
+    "--parsable2"
+  ],
+  "scheduler_raw": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_trace_audit_v1/actual_result_v1/SACCT.txt",
+    "sha256": "adb1476e4f515f3ed2a7f999ff94eba17fa5cc610abe18cbead232041c436148"
+  },
+  "scheduler_rows": [
+    {
+      "JobIDRaw": "15489",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "ElapsedRaw": "21",
+      "AllocCPUS": "1",
+      "CPUTimeRAW": "21",
+      "TotalCPU": "00:13.220",
+      "MaxRSS": "",
+      "AllocTRES": "billing=1,cpu=1,mem=4000M,node=1",
+      "NodeList": "node-224-2t-8gpu-1",
+      "QOS": "standard_expand",
+      "Partition": "gpu_h200"
+    },
+    {
+      "JobIDRaw": "15489.batch",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "ElapsedRaw": "21",
+      "AllocCPUS": "1",
+      "CPUTimeRAW": "21",
+      "TotalCPU": "00:13.220",
+      "MaxRSS": "870260K",
+      "AllocTRES": "cpu=1,mem=4000M,node=1",
+      "NodeList": "node-224-2t-8gpu-1",
+      "QOS": "",
+      "Partition": ""
+    }
+  ],
+  "allocated_CPU_seconds": 21,
+  "allocated_GPU_seconds": 0,
+  "allocation_not_measured_utilization": true,
+  "new_molecular_calls": 0,
+  "application_elapsed_seconds_recorded": 19.81856872793287
+}

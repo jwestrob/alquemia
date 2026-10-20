@@ -32,6 +32,30 @@ Preserve old energy-only records, frozen-f/physical-spin and native-gradient
 limitations. This does not reopen closed hybrid/Mex branches or qualify natural
 transfer. The full mechanics goal remains unmet.
 
+### Current gate review while the two results are outstanding
+
+20 October: live scheduler check confirms15545 RUNNING at3:53:28 and15720
+PENDING for Resources. The preceding goal turn made concrete progress by
+submitting15720 and preserving its reviewed source and launch as commit f202d78.
+This continuation verifies the wait and reviews the original plan's remaining
+gates; it does not launch another calculation.
+
+Assess15545's finite work and terminal reference forces separately from15720's
+matched Dy-minus-La force errors. Close energy agreement alone does not establish
+force agreement. The one model-converged7CCN-La continuation does not establish
+matched La/Dy accommodation or source robustness. The original six-search
+nonconvergence record remains historical evidence and must not be relabeled.
+
+Both root and independent review find no additional independent molecular action
+justified before these outcomes. If reference residuals or metal-dependent force
+errors remain substantial, diagnose their origin and reference reliability from
+the saved force fields before further minimization or transfer. If supportive,
+the next gate concerns natural-system response under explicit whole-system state
+hypotheses, retaining existing source inventories. The completed natural-source
+contract still has scoring readiness false; peptide results cannot resolve the
+Mex aggregate-state or Hans assembly assumptions. The existing1kcal reporting
+resolution is not a new force-accuracy threshold. Closed branches remain closed.
+
 ## 7CCN-La reaches the original model force criteria
 
 20 October13:06UTC: job15525 completed at full-force convergence, before its

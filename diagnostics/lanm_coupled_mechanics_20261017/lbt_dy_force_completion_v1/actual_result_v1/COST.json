@@ -1,0 +1,37 @@
+{
+  "job_id": 15720,
+  "scheduler_receipt": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_dy_force_completion_v1/actual_result_v1/SACCT.txt",
+    "sha256": "bf8210dfb70bc4bbb9596c363dbdf63ac6bc598c99b794300f93180978ad529b"
+  },
+  "scheduler_query": [
+    "sacct",
+    "-j",
+    "15720",
+    "--units=K",
+    "--parsable2",
+    "--format=JobIDRaw,JobName,State,ExitCode,ElapsedRaw,AllocCPUS,AllocTRES,TotalCPU,CPUTimeRAW,MaxRSS,Start,End"
+  ],
+  "query_returncode": 0,
+  "captured_utc": "2026-10-20T18:48:39.281944+00:00",
+  "state": "COMPLETED",
+  "exit_code": "0:0",
+  "elapsed_allocation_seconds": 12,
+  "allocated_cpus": 12,
+  "allocated_gpus": 1,
+  "allocation_CPU_seconds": 144,
+  "allocation_GPU_seconds": 12,
+  "CPUTimeRAW": "144",
+  "reported_TotalCPU": "00:08.755",
+  "batch_MaxRSS": "1174768K",
+  "allocation_is_not_utilization": true,
+  "utilization_note": "144 CPU-seconds and 12 GPU-seconds are allocated capacity. Scheduler TotalCPU is reported separately; no measured GPU utilization is available here.",
+  "application_elapsed_seconds": 10.067908991128206,
+  "model_load_seconds": 6.749188936082646,
+  "new_MACE_calls_attempted": 3,
+  "model_loads_attempted": 1,
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_dy_force_completion_v1/actual_result_v1/run/execution/RESULT.json",
+    "sha256": "f42cffcf5717a988ed569db925b840f02dfb8bd3b4c04750b77e33bc231c4790"
+  }
+}

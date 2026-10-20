@@ -3,20 +3,20 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the scientific goal remains authorized and unmet.
 
-20 October UTC:15545 confirmedRUNNING3h36m, nowSOSCF10; originalwakescontinue.
-Root declares lbt_dy_force_completion_v1/SPEC.md, decision7c58e45b:
-atmost3missingfixedMACEforces(7CCO/before_Dy;7CCN/before_Dy/after_Dy),
-reuse5forces/all8DFT/ALPB; full8-cell and4matchedDy-minus-La forceerrors.
-Original1e-7eVenergyparity, onewarmH200job aftersaved-input/staticgates.
-No new DFT/solvent/geometry. Inventory e2c196d1, source d77cc40e and config
-b1655fb8 pass independent static review 8b32a6d3. Root decision aadcf7e9
-submits job15720: PENDING Resources, 12CPUs/oneH200, standard_expand,
-scheduler defaults (250000MiB/GPU, five days).
-Completion watcher2135093 is armed. Saved gates precede model load in this
-single job; no result yet or duplicate/automatic retry. Exact receipts are in
-workspaces/lanm_coupled_mechanics_20261017/lbt_dy_force_completion_v1/run.
-Preserve all old results, native SCF/frozen-f/state caveats, closed branches
-and pending15545. Root owns result review and integration.
+20 October18:46UTC:15720 COMPLETE, result f42cffcf: all8 force comparisons/
+4 matched contrasts,3 new Dy MACE calls, exact saved energies,1 warm model.
+Individual error RMS3.512–3.610 vs matched Dy-minus-La0.476–0.727kcal/mol/A;
+substantial incomplete cancellation, not preference/force/state validation.
+Actual review3d3d36dd, raw archivee1eecdbe, ACK243b39df;144CPU-s/12GPU-s.
+Read lbt_dy_force_completion_v1/FINAL_REPORT.md. No repeat of completed calls.
+Saved-only localization15797 COMPLETE, resultc789abb0: all8endpoints/4pairs/
+256atoms,3106checks,47pins pass. Shared discrepancy broadly peptideheavy;
+7CCN differential error concentrated in side-chain oxygens(remainingheavy
+86.01%before/70.83%after squarednorm). These are not energy/causal attributions.
+Read lbt_force_error_localization_v1/FINAL_REPORT.md; archiveaae39987,
+rootreview63ea0f3a.1CPU-s,zero molecular calls. No repeat or fitted correction.
+15545 last checked RUNNING5:26:44 with original wakes. Preserve old results,
+native SCF/frozen-f/state limits and closed branches. Root owns submissions.
 
 20 October13:06UTC:15525 is COMPLETE at full_force_converged, result95d870eb,
 terminal6605f43c/checkpoint0461e30d. +553accepted/567evaluations→725/739;

@@ -1,0 +1,67 @@
+{
+  "protocol": "lbt_dy_force_completion_v1",
+  "status": "source_ready_pending_independent_review_and_root_execution",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_dy_force_completion_v1/FORCE_COMPLETION.py",
+    "sha256": "d77cc40e6cb76f30beb5408c0fafa3d8107c0979f526beb069ee7060ed3a177f"
+  },
+  "configuration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_dy_force_completion_v1/CONFIG.json",
+    "sha256": "b1655fb8d13b23e036365fc068dfcde2906d83469af693bd94bf526456fb65a6"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_dy_force_completion_v1/SPEC.md",
+    "sha256": "5438ca99d6166e7164fe980e5461614254d6c4e2185712ddcf6fa08db31071ed"
+  },
+  "science_decision": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_dy_force_completion_v1/SCIENCE_DECISION.json",
+    "sha256": "7c58e45bab117f93d5182ab48ea2d7501671476dc2f6f05ea3a236f65ed4ef21"
+  },
+  "inventory": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_dy_force_completion_v1/INVENTORY.json",
+    "sha256": "e2c196d1b5961cc74d50647e0565780928c3c1c103b282d563833f4b7e003957"
+  },
+  "launcher": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_dy_force_completion_v1/run/RUN.sbatch",
+    "sha256": "e8a0f2b21922061d8c07f3333c3e57c741b469245ca2be9bb065c7fa2abb2bfd"
+  },
+  "python": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_hybrid_20260916/software_v1/venv/bin/python",
+    "sha256": "53244dfc692ccbfd6a065f053dfa2026e2f3e4755beef84d600c8f7dbc9b5b27"
+  },
+  "launcher_arguments": [
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_dy_force_completion_v1/FORCE_COMPLETION.py",
+    "--config",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_dy_force_completion_v1/CONFIG.json",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_dy_force_completion_v1/run/execution"
+  ],
+  "direct_argv": [
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_hybrid_20260916/software_v1/venv/bin/python",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_dy_force_completion_v1/FORCE_COMPLETION.py",
+    "--config",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_dy_force_completion_v1/CONFIG.json",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_dy_force_completion_v1/run/execution"
+  ],
+  "required_resources": {
+    "partition": "gpu_h200",
+    "node": "node-224-2t-8gpu-1",
+    "cpus": 12,
+    "GPUs": 1,
+    "qos": "standard_expand",
+    "time_and_memory": "scheduler_defaults"
+  },
+  "execution_plan": "One GPU job; all-eight saved input gates precede one warm model and at most three serial missing-force supplements. No separate preflight job.",
+  "missing_cells": [
+    "7CCO_before_Dy",
+    "7CCN_before_Dy",
+    "7CCN_after_Dy"
+  ],
+  "comparison_denominators": {
+    "cells": 8,
+    "matched_source_geometries": 4
+  },
+  "source_validation": "stdlib AST parse and metadata/schema/hash inspection only; no scientific imports or replay",
+  "new_molecular_calls_performed_during_preparation": 0
+}

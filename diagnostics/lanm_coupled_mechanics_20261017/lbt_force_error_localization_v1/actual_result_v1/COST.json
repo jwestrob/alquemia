@@ -1,0 +1,44 @@
+{
+  "job_id": 15797,
+  "scheduler_receipt": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_force_error_localization_v1/actual_result_v1/SACCT.txt",
+    "sha256": "bded68271e278ccb7a3000455553278a81c488baa9799396c8467d25bc25dc54"
+  },
+  "scheduler_query": [
+    "sacct",
+    "-j",
+    "15797",
+    "--units=K",
+    "--parsable2",
+    "--format=JobIDRaw,JobName,State,ExitCode,ElapsedRaw,AllocCPUS,AllocTRES,TotalCPU,CPUTimeRAW,MaxRSS,Start,End"
+  ],
+  "query_returncode": 0,
+  "captured_utc": "2026-10-20T18:56:57.190009+00:00",
+  "state": "COMPLETED",
+  "exit_code": "0:0",
+  "elapsed_allocation_seconds": 1,
+  "allocated_cpus": 1,
+  "allocated_gpus": 0,
+  "allocation_CPU_seconds": 1,
+  "allocation_GPU_seconds": 0,
+  "CPUTimeRAW": "1",
+  "reported_TotalCPU": "00:00.355",
+  "batch_MaxRSS": "30180K",
+  "allocation_is_not_utilization": true,
+  "utilization_note": "One CPU-second is allocated capacity. Scheduler TotalCPU is reported separately. No GPU was allocated.",
+  "application_elapsed_seconds": 0.2867923150770366,
+  "execution_call_counters": {
+    "new_MACE_calls": 0,
+    "new_DFT_calls": 0,
+    "new_ALPB_calls": 0,
+    "new_GFN_calls": 0,
+    "new_MM_calls": 0,
+    "model_loads": 0,
+    "geometry_evaluations": 0,
+    "optimizer_steps": 0
+  },
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_force_error_localization_v1/actual_result_v1/run/execution/RESULT.json",
+    "sha256": "c789abb0071a10b1b2dc06db2e24b1c087c44a15cd3fc2682add532cf24ca7d1"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "created_utc": "2026-10-20T17:02:03.023880+00:00",
+  "protocol": "lbt_dy_force_completion_v1",
+  "status": "declared_three_fixed_force_supplements",
+  "authorization": "Active saved La/Dy mechanics goal and durable autonomous method-development authorization. Separate bounded completion of missing force evidence; existing protocols stay unchanged.",
+  "plan": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/PLAN.md",
+    "sha256": "9e49c81ac4990c76f5bff6bd8c4e445029d3c93761761e9db4f14ec26b85fe03"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_dy_force_completion_v1/SPEC.md",
+    "sha256": "5438ca99d6166e7164fe980e5461614254d6c4e2185712ddcf6fa08db31071ed"
+  },
+  "question": "Does reported Dy deformation-energy agreement extend to forces, and do MACE-PBE0 force errors cancel in the matched Dy-minus-La force response?",
+  "selected_missing_cells": [
+    [
+      "7CCO",
+      "before_Dy"
+    ],
+    [
+      "7CCN",
+      "before_Dy"
+    ],
+    [
+      "7CCN",
+      "after_Dy"
+    ]
+  ],
+  "full_comparison_cells": [
+    [
+      "7CCO",
+      "before_La"
+    ],
+    [
+      "7CCO",
+      "before_Dy"
+    ],
+    [
+      "7CCO",
+      "after_La"
+    ],
+    [
+      "7CCO",
+      "after_Dy"
+    ],
+    [
+      "7CCN",
+      "before_La"
+    ],
+    [
+      "7CCN",
+      "before_Dy"
+    ],
+    [
+      "7CCN",
+      "after_La"
+    ],
+    [
+      "7CCN",
+      "after_Dy"
+    ]
+  ],
+  "prior_reference_reports": [
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_reference_continuation/FINAL_REPORT.md",
+      "sha256": "fdac8da03dff913f128eb4debcd5e58523338286a0a6c9d83256be4ed761d130"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_reference_v1/FINAL_REPORT.md",
+      "sha256": "7b751f57808ff5f32b192b381a4f93a2017fbd7fe14fb5ae145ae973b93fa224"
+    }
+  ],
+  "reference_collectors": [
+    13424,
+    15173
+  ],
+  "maximum_new_MACE_force_calls": 3,
+  "new_DFT_calls": 0,
+  "new_ALPB_calls": 0,
+  "new_GFN_calls": 0,
+  "new_MM_calls": 0,
+  "geometry_or_optimizer_calls": 0,
+  "energy_replay_tolerance_eV": 1e-07,
+  "native_MACE_helper_sha256": "0e48b8c6c2f271512f2c445f826036d8a68f7dca0aabc5923697ab3ecb7d9896",
+  "original_MACE_config_sha256": "d3c28300c8c7ef88ef747b733603a344790b932db56aa53b0ccd4e999a7a4023",
+  "numerical_settings": "Original native float64 omol model/environment, q-2, physicalDy6,256atoms,target255,12CPUs/oneH200 on qualifiedhost, standard_expand defaults. Saved input gates precede model load.",
+  "execution_condition": "Exact input inventory/source/config and independent static review must be bound before one finite Slurm GPU job. No call for compatible already-available forces; no retry on failure.",
+  "interpretation": "Full per-cell forces and matched metal-difference errors, with inherited reference states/SCF/derivative limitations. No accuracy promotion, affinity, preference, independent-solvent validation or natural transfer.",
+  "independent_of_pending_reference": 15545,
+  "production_changed": false
+}

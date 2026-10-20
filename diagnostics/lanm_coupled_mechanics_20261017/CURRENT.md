@@ -19,22 +19,43 @@ Report all8 force comparisons and the4 matched Dy-minus-La force discrepancies.
 This asks whether Dy energy agreement also describes mechanical response,
 without treating missing force data as a model failure.
 
-Inventory e2c196d1 confirms exactly three missing arrays and five available
-forces, with all eight reference/solvent gradients. Source d77cc40e and config
-b1655fb8 pass independent static review 8b32a6d3. Root decision aadcf7e9
-releases job **15720**, currently PENDING for Resources, one H200 and 12 CPUs on
-standard_expand with scheduler defaults (250000MiB/GPU, five days).
-Completion watcher 2135093 is armed. The exact launch and receipts
-are in workspaces/lanm_coupled_mechanics_20261017/lbt_dy_force_completion_v1/run.
-Saved numerical admission occurs in that job before model loading; no result
-is implied by source review or submission. No duplicate or automatic retry.
-Preserve old energy-only records, frozen-f/physical-spin and native-gradient
-limitations. This does not reopen closed hybrid/Mex branches or qualify natural
-transfer. The full mechanics goal remains unmet.
+20 October18:46UTC: **15720 completed**, result f42cffcf. All eight saved-input
+gates passed before one model load; three new Dy force calls reproduce their
+original energies exactly. All eight endpoint/four matched comparisons are
+available. Individual MACE–PBE0 force-error RMS is3.512–3.610kcal/mol/Å; matched
+Dy-minus-La error RMS is0.476–0.727, with maximum atom errors2.260–6.243.
+This supports substantial but incomplete cancellation, not force/state or
+preference validation. Read [the final report](lbt_dy_force_completion_v1/FINAL_REPORT.md)
+and independent actual review3d3d36dd. Source/config d77cc40e/b1655fb8,
+inventory e2c196d1 and root decision aadcf7e9 remain fixed.
+
+Actual cost144 allocatedCPU-s/12GPU-s; no new DFT/ALPB/GFN/MM/geometry or
+optimization. Full raw execution/receipts are preserved under
+lbt_dy_force_completion_v1/actual_result_v1, archive e1eecdbe; delivery ACK243b39df.
+Original energy-only POINTs remain unchanged. No repeat of these three calls.
+
+20 October18:54UTC: saved-only localization **15797 completed**, result c789abb0.
+All eight endpoints/four256-atom pairs and3,106 bookkeeping checks pass;47pins
+verified. Shared error is broadly distributed across backbone heavy atoms
+(52.0–52.8% squared norm) and remaining protein heavy atoms(43.8–44.7%).
+Metal-dependent error is more localized in7CCN side-chain oxygens: remaining
+protein heavy atoms account for86.01% before and70.83% after; Asp7 OD1 leads
+before(6.242802kcal/mol/Å), Asp3 OD1 after(4.148825).
+These are squared-force distributions, not energy or unique causal attributions.
+Read [the localization report](lbt_force_error_localization_v1/FINAL_REPORT.md).
+Source/config41502735/7297b790, staticreview6c6fded6, rootreview63ea0f3a;
+actualreview17271e3f, losslessarchiveaae39987 and reviewsupplement47d3e0ea.
+Cost1CPU-s/zeroGPU-s, zero molecular calls.
+No repeat, fitted correction or automatic further minimization.
+The separate15545 native reference was last checked RUNNING at5:26:44,
+with its original completion/health wakes; collect after its terminal evidence.
+Preserve state/reference limits and closed branches; natural transfer remains
+unqualified and the overall mechanics goal remains unmet.
 
 ### Current gate review while the two results are outstanding
 
-20 October: live scheduler check confirms15545 RUNNING at3:53:28 and15720
+Historical checkpoint before15720 completion above. 20 October: live scheduler
+check confirms15545 RUNNING at3:53:28 and15720
 PENDING for Resources. The preceding goal turn made concrete progress by
 submitting15720 and preserving its reviewed source and launch as commit f202d78.
 This continuation verifies the wait and reviews the original plan's remaining

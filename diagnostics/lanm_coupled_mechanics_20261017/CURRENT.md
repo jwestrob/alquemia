@@ -2,6 +2,29 @@
 
 17 October2026UTC. The PLAN remains authorized and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
+## Complete the three missing Dy model-force comparisons
+
+20 October UTC: goal continuation confirms15545 RUNNING at3h36m; actual
+native output has reached SOSCF iteration10, with no terminal result.
+The preceding health-review turn made progress by resolving the silence alert;
+this continuation verifies the live wait and prepares an independent force test.
+
+Root declares [three fixed-force supplements](lbt_dy_force_completion_v1/SPEC.md),
+decision7c58e45b: 7CCO/before_Dy and7CCN/before_Dy/after_Dy. Their original
+whole256 MACE requests were energy-only, while the native PBE0 gradients exist.
+Reuse the five available MACE force arrays and all eight native/solvent records.
+One warm GPU job makes at most3 new MACE force calls after saved-input gates,
+with the original1e-7eV energy-replay tolerance. No new DFT, solvent or geometry.
+Report all8 force comparisons and the4 matched Dy-minus-La force discrepancies.
+This asks whether Dy energy agreement also describes mechanical response,
+without treating missing force data as a model failure.
+
+Source and inventory preparation is in progress; no new job submitted.
+Harvey owns inventory, Linnaeus the compact adapter, Arendt independent review,
+root execution. Preserve old energy-only records, frozen-f/physical-spin and
+native-gradient limitations. This does not reopen closed hybrid/Mex branches
+or qualify natural transfer. The full mechanics goal remains unmet.
+
 ## 7CCN-La reaches the original model force criteria
 
 20 October13:06UTC: job15525 completed at full-force convergence, before its

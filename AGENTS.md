@@ -3,6 +3,15 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the scientific goal remains authorized and unmet.
 
+20 October UTC:15545 confirmedRUNNING3h36m, nowSOSCF10; originalwakescontinue.
+Root declares lbt_dy_force_completion_v1/SPEC.md, decision7c58e45b:
+atmost3missingfixedMACEforces(7CCO/before_Dy;7CCN/before_Dy/after_Dy),
+reuse5forces/all8DFT/ALPB; full8-cell and4matchedDy-minus-La forceerrors.
+Original1e-7eVenergyparity, onewarmH200job aftersaved-input/staticgates.
+No newDFT/solvent/geometry. Inventory/sourcepreparing, notsubmitted.
+Harveyinventory/Linnaeusadapter/Arendtreview/rootlaunch. Preservealloldresults,
+nativeSCF/frozenf/state caveats, failedbranches and pending15545.
+
 20 October13:06UTC:15525 is COMPLETE at full_force_converged, result95d870eb,
 terminal6605f43c/checkpoint0461e30d. +553accepted/567evaluations→725/739;
 full max/RMS0.075055/0.029611kcal/mol/A satisfy original0.10/0.03 criteria.

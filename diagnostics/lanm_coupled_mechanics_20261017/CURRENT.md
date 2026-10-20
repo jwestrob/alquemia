@@ -1,6 +1,48 @@
+## 20 October: reference consistency pair submitted
+
+Whole256 step725 La directional check preparation15845 PASSED (6CPU-s,zero calls),
+RESULT779412e9/MANIFEST585fef98/DIRECTIONf20be914. Independent source64951613 and
+actualad55da10 reviews pass; archivef8d31a51. Rootdecision62cd2ead/configdd4875fa
+releases exactly two native SPs: minus15847 and plus15848, bothRUNNING12MPI each,
+standard_expand/defaultmemory/time, noGPU. Startup67ee68bb confirms48000MiB,
+MaxCore3100 and allfour completion/alert-onlyhealth processeslive.
+Read [the active finite test](lbt_7ccn_reference_direction_v1/CURRENT.md).
+Each full256 geometry is x±.01u around exact725; samePBE0 recipe/state/guess,
+centralgradient15545 reused, noEnGrad/newmodel/solvent/optimizer/othermetalcall.
+No directional result yet. After bothterminalresults bind oneCPU savedcollector;
+no duplicate endpoint, waitingcollector, automaticretry or changedgate.
+
 # Coupled La/Dy mechanics: current checkpoint
 
 17 October2026UTC. The PLAN remains authorized and unmet. Root owns all launches and integration. PQQ production stays unchanged.
+
+## Converged La endpoint: energy lowering supported, residual forces remain
+
+20 October20:35UTC: native15545 and collector15838 COMPLETE; results a53125b9/
+407bdf88. Exact725-minus92 composite work is−30.308506PBE0 versus−29.079895MACE;
+error+1.228612kcal/mol exceeds the original1kcal reporting resolution. Both
+vacuum terms increase while shared fixedALPB lowers45.442067; solvent is not
+independently validated. Final reference max/RMS forces7.868978/3.587757 contrast
+with model0.075055/0.029611. Model convergence did not yield reference stationarity.
+Native18-cycle gradient-check convergence/full gradient is admitted unchanged;
+printed energy/density/DIIS residual flags remain false. State and derivative
+accuracy remain unqualified. MACE's training Hamiltonian differs from PBE0-D4.
+Read [the completed reference report](lbt_7ccn_converged_reference_v1/FINAL_REPORT.md).
+
+One new DFT call,311820CPU-s; saved collector7CPU-s, earlier preflight5CPU-s.
+No repeated native call or new optimization. Native/collection archives5a9fffa1/
+62909dbb retain full evidence; delivered nativeACKa1f68687, proactive collection
+review472bf8ba. Root owns integration; delayed completion notices require ACK only.
+
+Next declared [directional reference check](lbt_7ccn_reference_direction_v1/SPEC.md):
+exact725, two whole256vacuum singlepoints at±.01Å full-vector displacement along
+the normalized saved model-minus-reference force vector. Reuse central15545
+gradient, unchanged native Hamiltonian/settings, no seed or optimizer. OneCPU
+zero-call preparation precedes two12MPI endpoints, standard_expand. Numerical
+rule .005+.0001*max magnitude is frozen; no automatic retry, new grid or sweep.
+Source preparation/review is in progress, not submitted. One directional check
+is not full force/physical-state qualification or a preference result. Closed
+Mex/hybrid branches and natural-transfer limitations remain.
 
 ## Complete the three missing Dy model-force comparisons
 

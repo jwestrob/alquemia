@@ -1,0 +1,43 @@
+{
+  "job_id": 15838,
+  "scheduler_receipt": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/collection_result_v1/SACCT.txt",
+    "sha256": "b5321374c5d990067b21a54b1e14f215a78b4aa819bdba23594bf258c7e1954e"
+  },
+  "scheduler_query": [
+    "sacct",
+    "-j",
+    "15838",
+    "--units=K",
+    "--parsable2",
+    "--format=JobIDRaw,JobName,State,ExitCode,ElapsedRaw,AllocCPUS,AllocTRES,TotalCPU,CPUTimeRAW,MaxRSS,Start,End"
+  ],
+  "query_returncode": 0,
+  "captured_utc": "2026-10-20T20:36:33.499523+00:00",
+  "state": "COMPLETED",
+  "exit_code": "0:0",
+  "elapsed_allocation_seconds": 7,
+  "allocated_cpus": 1,
+  "allocated_gpus": 0,
+  "allocation_CPU_seconds": 7,
+  "allocation_GPU_seconds": 0,
+  "reported_TotalCPU": "00:05.174",
+  "batch_MaxRSS": "683776K",
+  "allocation_is_not_utilization": true,
+  "application_elapsed_seconds": 6.284723629010841,
+  "execution_call_counters": {
+    "new_DFT_calls_attempted": 0,
+    "native_runner_invocations": 0,
+    "new_ALPB_calls": 0,
+    "new_MACE_calls": 0,
+    "new_GFN_calls": 0,
+    "new_MM_calls": 0,
+    "optimizer_steps": 0,
+    "new_geometry_count": 0,
+    "other_metal_calls": 0
+  },
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/collection_result_v1/collection/execution/RESULT.json",
+    "sha256": "407bdf88e42c43cb2ae48ed1493cbbc008f5c0eb957628787a6aa1c1b795bb0d"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "created_utc": "2026-10-20T20:36:24.020350+00:00",
+  "job_id": 15838,
+  "review_type": "proactive_actual_review_not_delivery_ack",
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/collection/execution/RESULT.json",
+    "sha256": "407bdf88e42c43cb2ae48ed1493cbbc008f5c0eb957628787a6aa1c1b795bb0d"
+  },
+  "receipt": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/collection/completion_event.json",
+    "sha256": "82b7eff9cc88ab932b1bfbadeef126f4663c42f2c9da345d819604d8291a43fb"
+  },
+  "source": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/REFERENCE.py",
+    "sha256": "f251ca1e9514fb0c76659faf603b03ce2daf3684204fe4e98ef44e5d448bb240"
+  },
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/CONFIG_COLLECT.json",
+    "sha256": "cd2189abe830ecfef2527718775bc72dc5db3033f0fe2104e7b117eccb125ef0"
+  },
+  "parent": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/run/execution/RESULT.json",
+    "sha256": "a53125b98e597ea0473e06d58316ac2b32c914e9647da595f163cf0aa76a8c19"
+  },
+  "decision": "Accept saved comparison under declared unchanged admission. Both endpoints available, zero new chemistry; finite energy lowering supported,1.228612kcal work disagreement exceeds1kcal reporting resolution, substantial residual reference forces remain. Await independent review before next physics decision.",
+  "comparison": {
+    "status": "complete",
+    "definition": "step725 minus step92; native differences before unit conversion",
+    "units": "kcal/mol",
+    "PBE0_vacuum": 15.133560426586936,
+    "MACE_vacuum": 16.362172307765732,
+    "fixed_FF_ALPB": -45.4420668096906,
+    "PBE0_plus_fixed_ALPB": -30.308506383103666,
+    "MACE_plus_fixed_ALPB": -29.07989450192487,
+    "MACE_minus_PBE0_work_error": 1.2286118811787965,
+    "reporting_resolution_kcal_mol": 1.0,
+    "within_1_kcal_reporting_resolution": false,
+    "reference_composite_lowering": true,
+    "resolution_is_not_native_admission_or_uncertainty": true,
+    "force_accuracy_qualified": false,
+    "caveats": {
+      "selection": "Exact step725 model-force-converged terminal of the declared 7CCN-La continuation; old step92 native reference reused. Both endpoints are physically admitted; model convergence does not establish reference stationarity.",
+      "source": "Lu-conditioned 7CCN peptide; consumed developmental fixture, not a blind protein benchmark.",
+      "terminal_chemistry": "Conditional free NH3+/COO- and five deprotonated acidic side chains; experimental terminal specification unresolved.",
+      "vacuum_dianion": "Post-added fixed-FF ALPB does not polarize the vacuum density; native convergence does not establish electron binding or a stable ground state.",
+      "frozen_f": "Whole charge -2, physical La singlet and effective singlet, archived ECP46; no SOC or physical-state qualification.",
+      "force": "Native analytic admission only; no independent finite-difference or force-accuracy qualification. Force differences and projections are descriptive.",
+      "interpretation": "Incremental deformation work only; 1 kcal/mol is reporting resolution, not uncertainty or native admission. No minimum, affinity, preference or general accuracy claim."
+    }
+  },
+  "force_reports": {
+    "old_La": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/collection/execution/old_La_FORCES.json",
+      "sha256": "4f96db5dd86b2c11bfe2a4c647df04e59957d069d3eac1dfee10f4a1c5efcd68"
+    },
+    "new_La": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/collection/execution/new_La_FORCES.json",
+      "sha256": "e6c0d039500c9deb87a53f31f974dfdc741c1cd801e481b51dc3316d100b7a7c"
+    }
+  },
+  "physical_state_qualified": false,
+  "force_consistency_qualified": false
+}

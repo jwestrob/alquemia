@@ -1,0 +1,37 @@
+{
+  "job_id": 15545,
+  "scheduler_receipt": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/native_result_v1/SACCT.txt",
+    "sha256": "4626629fad6663d70b1accc7203f64783ad287fbef5932a2653bc7d0d3a05c20"
+  },
+  "scheduler_query": [
+    "sacct",
+    "-j",
+    "15545",
+    "--units=K",
+    "--parsable2",
+    "--format=JobIDRaw,JobName,State,ExitCode,ElapsedRaw,AllocCPUS,AllocTRES,TotalCPU,CPUTimeRAW,MaxRSS,Start,End"
+  ],
+  "query_returncode": 0,
+  "captured_utc": "2026-10-20T20:35:42.435756+00:00",
+  "state": "COMPLETED",
+  "exit_code": "0:0",
+  "elapsed_allocation_seconds": 25985,
+  "allocated_cpus": 12,
+  "allocated_gpus": 0,
+  "allocation_CPU_seconds": 311820,
+  "allocation_GPU_seconds": 0,
+  "CPUTimeRAW": "311820",
+  "reported_TotalCPU": "3-14:24:16",
+  "batch_MaxRSS": "43098884K",
+  "allocation_is_not_utilization": true,
+  "utilization_note": "311820 CPU-seconds is allocated capacity. Scheduler TotalCPU and batch MaxRSS are distinct measured accounting fields. No GPU was allocated; parent Python RSS is not the MPI memory peak.",
+  "application_elapsed_seconds": 25984.774197090883,
+  "application_parent_peak_RSS_KiB": 179704,
+  "completed_native_DFT_calls": 1,
+  "new_molecular_calls_during_archive": 0,
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/native_result_v1/run/execution/RESULT.json",
+    "sha256": "a53125b98e597ea0473e06d58316ac2b32c914e9647da595f163cf0aa76a8c19"
+  }
+}

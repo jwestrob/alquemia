@@ -3,6 +3,27 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the scientific goal remains authorized and unmet.
 
+20 October, newest: directional prep15845 PASSED6CPU-s/zerocalls, result779412e9,
+archivef8d31a51. Sourcecd4396c0/static64951613/actualad55da10 reviewed; rootrelease
+62cd2ead/configdd4875fa minus15847/plus15848 nowRUNNING12MPI each standard_expand,
+defaultmemory/time,48000MiB/MaxCore3100; startup67ee68bb confirms bothwakes. Read active
+lbt_7ccn_reference_direction_v1/CURRENT.md. Exactly two fixedSPs around725,
+central15545gradientreuse; no result yet. After bothterminal bind1CPU savedcollect.
+No duplicate/automaticretry/gridchange/optimizer/othermetal; preserve originalresults.
+
+20 October20:35UTC:15545/15838 COMPLETE, nativea53125b9/collect407bdf88.
+Exact725−92 work PBE0+ALPB−30.308506 vsMACE−29.079895kcal/mol;1.228612
+discrepancy exceeds1kcalreportresolution. Reference max/RMSforces7.868978/3.587757
+remain large at modelconvergence(.075055/.029611). Native gradient-check admission
+passes unchanged; printedenergy/density/DIISflags false, state/FDunqualified.
+Read lbt_7ccn_converged_reference_v1/FINAL_REPORT.md.311820nativeCPU-s+7collector
+and5preflight; archives5a9fffa1/62909dbb; ACKa1f68687. No repeat or furtheroptimizer.
+Rootdeclares lbt_7ccn_reference_direction_v1/SPEC.md: two fixed±.01Å whole256
+PBE0SPs along normalized force-discrepancy direction; central15545gradientreuse.
+Source/review preparing, not submitted. No seed/grid/methodchange; originalstate,
+1CPUzerocallprep then12MPIeach standard_expand. One directional test only.
+MACEtrainingmethod differs; do not treat PBE0 as exact physical truth.
+
 20 October18:46UTC:15720 COMPLETE, result f42cffcf: all8 force comparisons/
 4 matched contrasts,3 new Dy MACE calls, exact saved energies,1 warm model.
 Individual error RMS3.512–3.610 vs matched Dy-minus-La0.476–0.727kcal/mol/A;

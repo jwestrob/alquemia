@@ -1,0 +1,73 @@
+{
+  "protocol": "lbt_7ccn_reference_direction_v1",
+  "status": "source_prepared_pending_independent_review_and_actual_Slurm_preparation",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_reference_direction_v1/DIRECTION.py",
+    "sha256": "cd4396c02cf50905307acbf90772d062ae4a6a12aaf9914e01562167dca1ab32"
+  },
+  "configuration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_reference_direction_v1/CONFIG_PREPARE.json",
+    "sha256": "cec2f6e393f191c656f7dd6fd57441895c14f2bb5fd6a75014608f2b5428f43f"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_reference_direction_v1/SPEC.md",
+    "sha256": "c79d67370983f6100bc9e3ce3fea45a5641af26a4f924fdc3af41efd84f8c609"
+  },
+  "preparation_launcher": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_reference_direction_v1/preparation/RUN.sbatch",
+    "sha256": "f76554920719a2d1118dab4454e0d06a3242ce2ecf8f4f2288d641f0172b4890"
+  },
+  "preparation_launcher_arguments": [
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_reference_direction_v1/DIRECTION.py",
+    "--stage",
+    "prepare",
+    "--config",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_reference_direction_v1/CONFIG_PREPARE.json",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_reference_direction_v1/preparation/execution"
+  ],
+  "direct_preparation_argv": [
+    "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python3.11",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_reference_direction_v1/DIRECTION.py",
+    "--stage",
+    "prepare",
+    "--config",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_reference_direction_v1/CONFIG_PREPARE.json",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_reference_direction_v1/preparation/execution"
+  ],
+  "future_run_command_pattern": "DIRECTION.py --stage run-one --task {minus|plus} --config ACTUAL_BOUND_RUN_CONFIG --output FRESH_SINGLETON_DIRECTORY",
+  "future_collection_command_pattern": "DIRECTION.py --stage collect --config ACTUAL_BOUND_COLLECTION_CONFIG --output FRESH_COLLECTION_DIRECTORY",
+  "future_execution_decision_schema": {
+    "protocol": "lbt_7ccn_reference_direction_v1",
+    "status": "approved_two_fixed_singlepoints",
+    "scientific_binding": "Exact binding(CONFIG) excluding preparation_result/execution_decision/endpoint_results/_config_pin; implementation reduced to sha256",
+    "preparation_result": "actual successful zero-call RESULT pin",
+    "permitted_execution_tasks": [
+      "minus",
+      "plus"
+    ],
+    "mpi_ranks": 12,
+    "central_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/run/execution/RESULT.json",
+      "sha256": "a53125b98e597ea0473e06d58316ac2b32c914e9647da595f163cf0aa76a8c19"
+    },
+    "maximum_new_DFT_calls": 2
+  },
+  "run_config_changes_only": [
+    "preparation_result",
+    "execution_decision"
+  ],
+  "collection_additional_binding": "endpoint_results.{minus,plus} actual singleton RESULT pins; null remains unavailable",
+  "resources": {
+    "preparation_and_collection_CPUs": 1,
+    "native_MPI_ranks": 12,
+    "native_workers": 1,
+    "qos": "standard_expand",
+    "memory_and_time": "scheduler_defaults_with_original_allocation_derived_MaxCore"
+  },
+  "maximum_new_DFT_singlepoints": 2,
+  "new_center_or_other_engine_calls": 0,
+  "validation": "stdlib AST plus source and JSON metadata inspection only; no scientific imports or numerical execution",
+  "source_preserves": "Exact central source/recipe/force replay, fresh displaced physical metadata, unchanged native runner and memory contracts, declared one-direction finite consistency gate; no automatic retry"
+}

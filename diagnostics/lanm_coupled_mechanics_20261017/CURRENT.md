@@ -2,7 +2,7 @@
 
 17 October2026UTC. The PLAN remains authorized and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
-## Saved audit passed; one generous completion attempt declared
+## Saved audit passed; generous completion queued
 
 20 October UTC: saved audit15489 is complete, result228ef785. All81 states,
 80 transitions and2,828 replay checks pass. All80 curvature updates entered
@@ -19,10 +19,14 @@ erroneous solvent physics. Earlier DFT supports an earlier increment only.
 Root declares [one larger finite continuation](lbt_7ccn_generous_completion_v1/SCIENCE_DECISION.json),
 e8c4bda0: exact step172 checkpoint, at most1,000 further accepted steps or
 2,000 new evaluations, cumulative1,172/2,172. Original model, history, source,
-guards and force criteria stay fixed. Source and independent review are being
-completed before one12CPU/H200 standard_expand submission. The run must
-re-admit its saved chain before model initialization; no separate duplicate
-preflight allocation. No submission yet, automatic further extension,
+guards and force criteria stay fixed. Source1fc6b168/config1bfaebc0 passed
+independent static review3ddb0327 and root review5b4a446e. Job15525 is now
+PENDING for Resources:12CPUs/oneH200, standard_expand, qualified host,
+scheduler-default memory and5-day limit. Completion watcher1940811 is armed.
+The run must re-admit its saved chain before model initialization; no separate
+duplicate preflight allocation. Exact launch and receipts are in
+workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_generous_completion_v1/run/.
+No result yet or duplicate submission. No automatic further extension,
 intermediate DFT, other-metal call or preference claim. The goal remains unmet.
 
 ## Bounded completion finished without force convergence

@@ -1,0 +1,30 @@
+JobId=15525 JobName=lbt-7ccn-generous-completion
+   UserId=jwestrob(601) GroupId=jwestrob(601) MCS_label=N/A
+   Priority=1 Nice=0 Account=banfield QOS=standard_expand
+   JobState=PENDING Reason=Resources Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:00 TimeLimit=5-00:00:00 TimeMin=N/A
+   SubmitTime=2026-10-20T05:09:11 EligibleTime=2026-10-20T05:09:11
+   AccrueTime=2026-10-20T05:09:11
+   StartTime=2026-10-20T11:28:56 EndTime=2026-10-25T11:28:56 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-20T05:10:06 Scheduler=Main
+   Partition=gpu_h200 AllocNode:Sid=biotite:1940752
+   ReqNodeList=node-224-2t-8gpu-1 ExcNodeList=(null)
+   NodeList= SchedNodeList=node-224-2t-8gpu-1
+   NumNodes=1-1 NumCPUs=12 NumTasks=1 CPUs/Task=12 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=12,mem=250000M,node=1,billing=12,gres/gpu=1
+   AllocTRES=(null)
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=12 MinMemoryTRES=250000M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=NO Exclusive=NO Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_generous_completion_v1/run/RUN.sbatch
+   SubmitLine=sbatch --parsable --qos=standard_expand --job-name=lbt-7ccn-generous-completion --output /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_generous_completion_v1/run/slurm-%j.out --error /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_generous_completion_v1/run/slurm-%j.err /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_generous_completion_v1/run/RUN.sbatch /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_generous_completion_v1/CONTINUE.py --config /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_generous_completion_v1/CONFIG.json --output /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_generous_completion_v1/run/execution
+   WorkDir=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs
+   StdErr=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_generous_completion_v1/run/slurm-15525.err
+   StdIn=/dev/null
+   StdOut=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_generous_completion_v1/run/slurm-15525.out
+   MemPerTres=gpu:250000
+   TresPerNode=gres/gpu:1
+   TresPerTask=cpu=12
+

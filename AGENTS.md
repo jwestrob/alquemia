@@ -9,9 +9,12 @@ trust scalings; final20steps still lower2.635231kcal/mol. Independent actual
 reviewd3df236a supports one generous unchanged continuation. Root declared
 lbt_7ccn_generous_completion_v1/SCIENCE_DECISION.json e8c4bda0: exactstep172,
 +1000accepted/+2000evaluations, cumulative1172/2172, original history/model/
-source/guards/forcecriteria. Source and review in preparation; no submission yet.
-One12CPU/H200standard_expand run with saved-chain admission before lazy model
-load; no separate preflight allocation. No automatic extension/intermediateDFT/
+source/guards/forcecriteria. Source1fc6b168/config1bfaebc0 and staticreview3ddb0327
+pass; rootreview5b4a446e releases job15525, now PENDING Resources,12CPU/oneH200
+standard_expand on qualifiedhost; completionwatcher1940811. Exact launch in
+workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_generous_completion_v1/run/.
+Saved-chain admission precedes lazy model load; no separate preflight allocation.
+No result yet, duplicate submission, automatic extension/intermediateDFT/
 othermetal/preference claim. Read CURRENT and actual newer receipts.
 
 20 October11:36UTC: model completion15458 finished80newsteps/evals, cumulative

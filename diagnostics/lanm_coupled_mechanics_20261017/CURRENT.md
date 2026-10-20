@@ -2,6 +2,30 @@
 
 17 October2026UTC. The PLAN remains authorized and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
+## Incremental DFT comparison complete; bounded model completion declared
+
+20 October UTC: native15321 and saved collector15456 are complete. Read
+[the final incremental report](lbt_7ccn_incremental_reference_v1/FINAL_REPORT.md).
+Step80-to92 work is PBE0+fixedALPB−4.726291 versus MACE+fixedALPB−4.226978
+kcal/mol; discrepancy+0.499313 is within the existing1kcal reporting resolution.
+This supports the incremental energy lowering, not force accuracy. Full force
+error RMS remains3.579797kcal/mol/A; new reference/model RMS forces are
+3.639505/1.086248. Both geometries remain unconverged. New native energy check
+passes but other printed SCF criteria fail; retain all native/state limitations.
+One new DFT call; full reference phase cost298402CPU-s,0GPU-s. Raw results,
+full gradients and receipts are preserved; terminal health delivery acknowledged.
+No duplicate native job or collector is required.
+
+Root declares one substantial model-convergence attempt from exactstep92:
+up to80 additional accepted steps or200 new evaluations, cumulative172/292.
+[Scientific decision](lbt_7ccn_completion_attempt_v1/SCIENCE_DECISION.json)
+d0138c99 preserves original kernels/history/trust/source/guards/force criteria.
+OneCPU zero-call preflight precedes one12CPU/H200 run onstandard_expand.
+Source/review are preparing; no completion-attempt job submitted yet. No
+intermediate DFT, automatic restart/budget extension, other-metal/source calls,
+force fitting or preference claim. Actual terminal evidence determines the next
+mechanics decision. The broader goal remains unmet.
+
 ## Incremental reference health review: active CPU work
 
 20 October02:38UTC: delivered silence alert for15321 reviewed against actual

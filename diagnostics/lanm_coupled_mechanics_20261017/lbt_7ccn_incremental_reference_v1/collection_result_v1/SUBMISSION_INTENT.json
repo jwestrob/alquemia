@@ -1,0 +1,38 @@
+{
+  "created_utc": "2026-10-20T09:08:35.175719+00:00",
+  "stage": "collect",
+  "argv": [
+    "sbatch",
+    "--parsable",
+    "--qos=standard_expand",
+    "--job-name=lbt-7ccn-incremental-collect",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/collection/slurm-%j.out",
+    "--error",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/collection/slurm-%j.err",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/collection/RUN.sbatch",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/REFERENCE.py",
+    "--stage",
+    "collect",
+    "--config",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/CONFIG_COLLECT.json",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/collection/execution"
+  ],
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/CONFIG_COLLECT.json",
+    "sha256": "2fef75872b58eb11bb6afe5ae6cc38126b3cb46050868e3060d76074dab95aa1"
+  },
+  "actual_endpoint": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/run/execution/RESULT.json",
+    "sha256": "3a173d81072ab269922d17db1596c130e8132bd2f803614b00d2fe59455c10de"
+  },
+  "launcher": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/collection/RUN.sbatch",
+    "sha256": "52154ad8f62d92a9089220dfe06b1dcfc00be107cc6b069e5f1c8086d5e7b1ce"
+  },
+  "cpus": 1,
+  "qos": "standard_expand",
+  "new_molecular_calls": 0,
+  "question": "Re-admit oldstep80/newstep92 native endpoints and cached solvents; report incremental MACE versusPBE0 work and descriptive fullforce differences under existing gates."
+}

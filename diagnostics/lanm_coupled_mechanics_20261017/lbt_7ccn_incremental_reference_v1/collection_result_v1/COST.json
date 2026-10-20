@@ -1,0 +1,57 @@
+{
+  "created_utc": "2026-10-20T09:11:17.373209+00:00",
+  "scheduler_query": [
+    "sacct",
+    "-j",
+    "15456",
+    "--format=JobIDRaw,State,ExitCode,ElapsedRaw,AllocCPUS,CPUTimeRAW,TotalCPU,MaxRSS,AllocTRES,NodeList,QOS,Partition",
+    "--parsable2"
+  ],
+  "scheduler_raw": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/collection_result_v1/SACCT.txt",
+    "sha256": "fe641cca3229887a27828e996c941c3fe780e7b9f2748d168f0fa55156b9eca8"
+  },
+  "scheduler_rows": [
+    {
+      "JobIDRaw": "15456",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "ElapsedRaw": "6",
+      "AllocCPUS": "1",
+      "CPUTimeRAW": "6",
+      "TotalCPU": "00:03.794",
+      "MaxRSS": "",
+      "AllocTRES": "billing=1,cpu=1,mem=4000M,node=1",
+      "NodeList": "node-64-768g-1",
+      "QOS": "standard_expand",
+      "Partition": "standard"
+    },
+    {
+      "JobIDRaw": "15456.batch",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "ElapsedRaw": "6",
+      "AllocCPUS": "1",
+      "CPUTimeRAW": "6",
+      "TotalCPU": "00:03.794",
+      "MaxRSS": "586116K",
+      "AllocTRES": "cpu=1,mem=4000M,node=1",
+      "NodeList": "node-64-768g-1",
+      "QOS": "",
+      "Partition": ""
+    }
+  ],
+  "collector_allocated_CPU_seconds": 6,
+  "collector_allocated_GPU_seconds": 0,
+  "preflight_allocated_CPU_seconds": 4,
+  "native_endpoint_allocated_CPU_seconds": 298392,
+  "endpoint_cost_evidence": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/endpoint_result_v1/COST.json",
+    "sha256": "f1db77b7bef6b217e10badff0151924b1f7f102e621833216ee230a1995f1672"
+  },
+  "phase_allocated_CPU_seconds_preflight_endpoint_collection": 298402,
+  "phase_allocated_GPU_seconds_preflight_endpoint_collection": 0,
+  "allocation_not_measured_utilization": true,
+  "excluded_prior_costs": "Previously archived optimizer scout and old La reference allocation; neither is rerun in this reference phase.",
+  "application_elapsed_seconds_recorded": 4.881976361852139
+}

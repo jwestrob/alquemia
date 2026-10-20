@@ -1,0 +1,60 @@
+{
+  "created_utc": "2026-10-20T09:09:39.400448+00:00",
+  "job_id": 15321,
+  "scheduler_query": [
+    "sacct",
+    "-j",
+    "15321",
+    "--format=JobIDRaw,State,ExitCode,ElapsedRaw,AllocCPUS,CPUTimeRAW,TotalCPU,MaxRSS,AllocTRES,NodeList,QOS,Partition",
+    "--parsable2"
+  ],
+  "scheduler_raw": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/endpoint_result_v1/SACCT.txt",
+    "sha256": "16080f0c8459c79ec0d602e21d66c26647586e0d41b4ba037d18dedce42331d0"
+  },
+  "scheduler_rows": [
+    {
+      "JobIDRaw": "15321",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "ElapsedRaw": "24866",
+      "AllocCPUS": "12",
+      "CPUTimeRAW": "298392",
+      "TotalCPU": "3-10:43:41",
+      "MaxRSS": "",
+      "AllocTRES": "billing=12,cpu=12,mem=48000M,node=1",
+      "NodeList": "node-64-768g-14",
+      "QOS": "standard_expand",
+      "Partition": "standard"
+    },
+    {
+      "JobIDRaw": "15321.batch",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "ElapsedRaw": "24866",
+      "AllocCPUS": "12",
+      "CPUTimeRAW": "298392",
+      "TotalCPU": "3-10:43:41",
+      "MaxRSS": "43135168K",
+      "AllocTRES": "cpu=12,mem=48000M,node=1",
+      "NodeList": "node-64-768g-14",
+      "QOS": "",
+      "Partition": ""
+    }
+  ],
+  "endpoint_allocated_CPU_seconds": 298392,
+  "endpoint_allocated_GPU_seconds": 0,
+  "preflight_cost_evidence": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/actual_preflight_v1/COST.json",
+    "sha256": "b6a6504ba8a152f097135c2ccf1ebc450a13e4cd89c448fb3ccff6a3c8abb533"
+  },
+  "preflight_allocated_CPU_seconds": 4,
+  "preflight_allocated_GPU_seconds": 0,
+  "phase_allocated_CPU_seconds_including_preflight": 298396,
+  "phase_allocated_GPU_seconds_including_preflight": 0,
+  "allocation_cost_is_not_measured_utilization": true,
+  "application_elapsed_seconds_recorded": 24864.38737060316,
+  "application_allocated_CPU_seconds_recorded": 298372.6484472379,
+  "native_molecular_wall_seconds_recorded": 24858.128134,
+  "parent_RSS_is_not_MPI_peak": true
+}

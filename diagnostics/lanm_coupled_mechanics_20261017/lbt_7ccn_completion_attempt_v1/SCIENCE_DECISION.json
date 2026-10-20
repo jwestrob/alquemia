@@ -1,0 +1,68 @@
+{
+  "protocol": "lbt_7ccn_completion_attempt_v1",
+  "status": "declared_single_finite_model_continuation",
+  "created_utc": "2026-10-20T09:11:29.830669+00:00",
+  "scientific_question": "Can unchanged full-coordinate MACE plus fixed-charge ALPB mechanics reach its original force criteria when the physically admitted step92 checkpoint receives one substantial finite allowance?",
+  "rationale": "Whole-PBE0 plus identical cached solvent supports the step80-to92 lowering within existing1kcal reporting resolution. Full force disagreement persists; this continuation tests model convergence only and does not establish reference accuracy or metal preference.",
+  "source_state": [
+    "7CCN",
+    "La"
+  ],
+  "previous_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/run/execution/RESULT.json",
+    "sha256": "c445cf4b622fa2dbc7d7c47456e4b20b7c8db1a0b7718365fab2310c3c90a8c6"
+  },
+  "checkpoint": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/run/execution/search/CHECKPOINT_FINAL.json",
+    "sha256": "317c2b24eff75a2af4a6fb7066f1754d1df1b9a284405a8aad2ea3b20d5c74cd"
+  },
+  "point": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/run/execution/evaluations/evaluation_012/POINT.json",
+    "sha256": "eb96df292085e05f3eed1788e506c54babab646c372698a41443705945fa2a1b"
+  },
+  "incremental_reference_comparison": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/collection/execution/RESULT.json",
+    "sha256": "5908cb2d3b3fcb07b8ac764e3ddfb78fbc56beb29196790388cf79213af4ad72"
+  },
+  "additional_limits": {
+    "accepted_steps": 80,
+    "evaluations": 200
+  },
+  "cumulative_limits": {
+    "accepted_steps": 172,
+    "evaluations": 292
+  },
+  "preserve": [
+    "exact L-BFGS history",
+    "trust radius",
+    "original initial point and source guards",
+    "all256 movable atoms",
+    "same MACE weights/runtime/state",
+    "same fixed-FF ALPB",
+    "same optimizer math and force targets",
+    "all historical failures and checkpoints"
+  ],
+  "termination": [
+    "original maximum force<=0.10 and atom-vector RMS<=0.03 kcal/mol/Angstrom both satisfied",
+    "either declared finite budget",
+    "native failure or physical/state admission failure",
+    "original persistent-rejection or trust-floor termination"
+  ],
+  "resources": {
+    "preflight_cpus": 1,
+    "run_cpus": 12,
+    "run_gpus": 1,
+    "partition": "gpu_h200",
+    "qualified_host": "node-224-2t-8gpu-1",
+    "qos": "standard_expand",
+    "memory_time_overrides": false
+  },
+  "execution_gate": "Independent static review and actual zero-call Slurm preflight, then root bound run decision.",
+  "interpretation": "Budget exhaustion is incomplete relaxation. No reference force-accuracy, stable-state, affinity or preference claim; no fitted energy/force correction. Preserve full trace and component costs.",
+  "no_automatic_followup": [
+    "no restart or budget expansion",
+    "no intermediate DFT checkpoints",
+    "no other source or metal calls",
+    "no additional terminal reference without a distinct question based on actual terminal evidence"
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "reviewed_utc": "2026-10-20T09:12:28.676369+00:00",
+  "status": "incremental_work_supportive_branch_complete",
+  "native_job": 15321,
+  "collector_job": 15456,
+  "native_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/run/execution/RESULT.json",
+    "sha256": "3a173d81072ab269922d17db1596c130e8132bd2f803614b00d2fe59455c10de"
+  },
+  "collection_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/collection/execution/RESULT.json",
+    "sha256": "5908cb2d3b3fcb07b8ac764e3ddfb78fbc56beb29196790388cf79213af4ad72"
+  },
+  "native_receipt": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/run/execution/new_La/endpoint.out.execution.json",
+    "sha256": "6583718c6fbe8aa5aa1843b2ab1fefc9e877977c9990f484560f00a04be1b9d9"
+  },
+  "comparison": {
+    "status": "complete",
+    "definition": "step92 minus step80; native differences before unit conversion",
+    "units": "kcal/mol",
+    "PBE0_vacuum": -2.2053009841816937,
+    "MACE_vacuum": -1.705988079440581,
+    "fixed_FF_ALPB": -2.520989586924546,
+    "PBE0_plus_fixed_ALPB": -4.72629057110624,
+    "MACE_plus_fixed_ALPB": -4.226977666365127,
+    "MACE_minus_PBE0_work_error": 0.4993129047411127,
+    "reporting_resolution_kcal_mol": 1.0,
+    "within_1_kcal_reporting_resolution": true,
+    "reference_composite_lowering": true,
+    "resolution_is_not_native_admission_or_uncertainty": true,
+    "force_accuracy_qualified": false,
+    "caveats": {
+      "selection": "Exact step92 terminal of the declared single 7CCN-La continuation; old step80 reference reused. Both are physically admitted, nonconverged endpoints.",
+      "source": "Lu-conditioned 7CCN peptide; consumed developmental fixture, not a blind protein benchmark.",
+      "terminal_chemistry": "Conditional free NH3+/COO- and five deprotonated acidic side chains; experimental terminal specification unresolved.",
+      "vacuum_dianion": "Post-added fixed-FF ALPB does not polarize the vacuum density; native convergence does not establish electron binding or a stable ground state.",
+      "frozen_f": "Whole charge -2, physical La singlet and effective singlet, archived ECP46; no SOC or physical-state qualification.",
+      "force": "Native analytic admission only; no independent finite-difference or force-accuracy qualification. Force differences and projections are descriptive.",
+      "interpretation": "Incremental deformation work only; 1 kcal/mol is reporting resolution, not uncertainty or native admission. No minimum, affinity, preference or general accuracy claim."
+    }
+  },
+  "full_force_reports": {
+    "old_La": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/collection/execution/old_La_FORCES.json",
+      "sha256": "0ea97ab135710ca1f8034364fc4f76377f95d26e5fb7ad2f7602a1d6b84dd92c"
+    },
+    "new_La": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/collection/execution/new_La_FORCES.json",
+      "sha256": "afd2fab96d561038cf51c55c21f3a2c6ac3fa78d7f214cdf111e3b1c710e8c9d"
+    }
+  },
+  "new_SCF_evidence": {
+    "terminal_residuals": {
+      "Energy change": {
+        "value": -5.5297e-10,
+        "printed_tolerance": 1e-09,
+        "within_printed_tolerance": true
+      },
+      "MAX-Density change": {
+        "value": 5.8322e-05,
+        "printed_tolerance": 1e-08,
+        "within_printed_tolerance": false
+      },
+      "RMS-Density change": {
+        "value": 3.7163e-07,
+        "printed_tolerance": 1e-09,
+        "within_printed_tolerance": false
+      },
+      "Orbital Gradient": {
+        "value": 5.0204e-06,
+        "printed_tolerance": 2e-06,
+        "within_printed_tolerance": false
+      },
+      "Orbital Rotation": {
+        "value": 8.2374e-06,
+        "printed_tolerance": 2e-06,
+        "within_printed_tolerance": false
+      },
+      "DIIS Error": {
+        "value": 0.0011692,
+        "printed_tolerance": 1e-08,
+        "within_printed_tolerance": false
+      }
+    },
+    "ConvCheckMode": "Total+1el-Energy",
+    "ConvForced": 0,
+    "all_printed_residuals_pass": false,
+    "SOSCF_initialized": true,
+    "native_cycles": [
+      "15"
+    ],
+    "warnings_and_gap_lines": [
+      "                                        WARNINGS",
+      "                       Please study these warnings very carefully!",
+      "Warning: op=0 Small HOMO/LUMO gap (  -0.019) - skipping pre-diagonalization"
+    ],
+    "admission_policy": "unchanged native convergence and compact state/gradient parser; residual flags are observations, not new all-criteria admission"
+  },
+  "old_SCF_evidence": {
+    "terminal_residuals": {
+      "Energy change": {
+        "value": -1.7513e-08,
+        "printed_tolerance": 1e-09,
+        "within_printed_tolerance": false
+      },
+      "MAX-Density change": {
+        "value": 5.7529e-05,
+        "printed_tolerance": 1e-08,
+        "within_printed_tolerance": false
+      },
+      "RMS-Density change": {
+        "value": 3.1789e-07,
+        "printed_tolerance": 1e-09,
+        "within_printed_tolerance": false
+      },
+      "Orbital Gradient": {
+        "value": 4.5372e-07,
+        "printed_tolerance": 2e-06,
+        "within_printed_tolerance": true
+      },
+      "Orbital Rotation": {
+        "value": 2.2243e-06,
+        "printed_tolerance": 2e-06,
+        "within_printed_tolerance": false
+      },
+      "DIIS Error": {
+        "value": 0.0011928,
+        "printed_tolerance": 1e-08,
+        "within_printed_tolerance": false
+      }
+    },
+    "ConvCheckMode": "Total+1el-Energy",
+    "ConvForced": 0,
+    "all_printed_residuals_pass": false,
+    "SOSCF_initialized": true,
+    "native_cycles": [
+      "18"
+    ],
+    "warnings_and_gap_lines": [
+      "                                        WARNINGS",
+      "                       Please study these warnings very carefully!",
+      "Warning: op=0 Small HOMO/LUMO gap (  -0.022) - skipping pre-diagonalization"
+    ],
+    "admission_policy": "unchanged native convergence and compact state/gradient parser; residual flags are observations, not new all-criteria admission"
+  },
+  "interpretation": "DFT supports this incremental model lowering within existing1kcal reporting resolution. Full force error remains substantial; neither endpoint is a qualified minimum and no metal preference follows. No automatic further DFT.",
+  "costs": {
+    "native_allocated_CPU_seconds": 298392,
+    "preflight_allocated_CPU_seconds": 4,
+    "collector_allocated_CPU_seconds": 6,
+    "total_allocated_CPU_seconds": 298402,
+    "total_allocated_GPU_seconds": 0
+  },
+  "next_declared_model_attempt": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_completion_attempt_v1/SCIENCE_DECISION.json",
+    "sha256": "d0138c99f7ded2bd6f943d9542295e0a55e4f32eb35b3d4c022da5c97ac4ebea"
+  }
+}

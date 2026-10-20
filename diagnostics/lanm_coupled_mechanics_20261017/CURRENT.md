@@ -2,6 +2,25 @@
 
 17 October2026UTC. The PLAN remains authorized and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
+## Bounded completion finished without force convergence
+
+20 October11:36UTC: run15458 completed its80 additional accepted steps and80
+new evaluations, reaching172/172. It stopped at the accepted-step limit.
+Result9159ea43, terminal67690a33, checkpoint14cd220d. Original physical/state
+guards pass, but maximum/RMS full force remains4.824511/1.045572kcal/mol/A.
+The preceding step92 values were5.674648/1.086248; forces are not monotonic.
+Incremental model work is−15.585663kcal/mol: MACE+5.308810 and fixedALPB
+−20.894474. This segment has no independent reference validation.
+Actual58s on12CPUs/oneH200 costs696CPU-s/58GPU-s, plus13CPU-s preflight.
+Completion delivery acknowledged; all historical checkpoints remain preserved.
+
+Root declared [a saved-only mechanics audit](lbt_7ccn_trace_audit_v1/SCIENCE_DECISION.json),
+91516927, to inspect all81 points/80 transitions, optimizer replay, component
+forces and residual attribution. Source and review are preparing for one1CPU
+Slurm analysis. No continuation, new DFT or other-metal call is released from
+this termination. Solvent-driven lowering alone does not establish solvent
+error; budget exhaustion alone does not establish optimizer stagnation.
+
 ## Incremental DFT comparison complete; bounded model completion declared
 
 20 October09:27UTC: actual zero-call preflight15457 PASSED, result2fde1d8d,

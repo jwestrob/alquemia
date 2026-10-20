@@ -1,0 +1,23 @@
+--- diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/CARTESIAN_OPTIMIZER_SCOUT.py
++++ diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_completion_attempt_v1/CARTESIAN_OPTIMIZER_COMPLETION.py
+@@ -151,15 +151,15 @@
+     out = Path(out); out.mkdir(exist_ok=False)
+     require(set(limits) == {'accepted_steps', 'evaluations'} and
+             all(type(v) is int and v > 0 for v in limits.values()), 'Invalid search limits')
+-    require(resume is not None, 'Only the exact completed7CCN-La checkpoint may enter this scout')
++    require(resume is not None, 'Only the exact step92 7CCN-La checkpoint may enter this completion attempt')
+     if resume is not None:
+         require(resume['settings'] == SETTINGS, 'Checkpoint optimizer settings differ')
+-        require(resume['limits'] == {'accepted_steps': 80, 'evaluations': 200}
+-                and limits == {'accepted_steps': 92, 'evaluations': 120}
++        require(resume['limits'] == {'accepted_steps': 92, 'evaluations': 120}
++                and limits == {'accepted_steps': 172, 'evaluations': 292}
+                 and hashlib.sha256(json.dumps(resume, sort_keys=True, separators=(',', ':'),
+                     allow_nan=False).encode()).hexdigest() ==
+-                    '2be9f7cd5ca1da78aebec332268a30a26a350b659af4f7d567ad00cb22847436',
+-                'Only declared92/120 scout from exact checkpoint4e3a6123 is permitted')
++                    '981ec084b57fa86599125619b9ecce7613c883597b23e38d3521be1eaa5c0da2',
++                'Only declared172/292 completion from exact checkpoint317c2b24 is permitted')
+         initial = evaluator.read_point(resume['initial_point'])
+         require(np.array_equal(initial['positions_A'], start['positions_A']) and
+                 np.array_equal(initial['gradient_kcal_mol_A'], start['gradient_kcal_mol_A']) and

@@ -3,6 +3,13 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the scientific goal remains authorized and unmet.
 
+20 October09:27UTC: exact step92 completion preflight15457 passes,2fde1d8d,
+13CPU-s/zero molecular calls; independent actual reviewf3048cda. Root bound
+decisionb6d3f115/config8a78864e and submitted15458, standard_expand12CPUs/oneH200,
+currently PENDING Resources, completion watcher1733550. Read active diagnostic
+lbt_7ccn_completion_attempt_v1/ and actual run receipts. One finite172/292
+cumulative attempt only; no new result yet, duplicate run or automatic extension.
+
 20 OctoberUTC: reference15321/collector15456 complete. Incremental PBE0+ALPB
 work−4.726291 vsMACE−4.226978kcal/mol, discrepancy+.499313 within1kcal reporting
 resolution; forceerrorRMS remains3.58. NewSCF onlyprintedenergycriterionpasses;
@@ -11,8 +18,8 @@ lbt_7ccn_incremental_reference_v1/FINAL_REPORT.md. OneDFTcall,298402CPU-s phase.
 Rootdeclared lbt_7ccn_completion_attempt_v1/SCIENCE_DECISION.json d0138c99:
 exactstep92 checkpoint +80accepted/+200evaluations, cumulative172/292;
 originalhistory/trust/model/source/forcecriteria unchanged. Source/staticreview
-preparing, actualzero-callpreflight before12CPU/H200standard_expand run. No
-newattempt submittedyet; nointermediateDFT/autoextension/othermetal/preference.
+and actualzero-callpreflight passed;12CPU/H200standard_expand run15458 submitted.
+No intermediateDFT/autoextension/othermetal/preference.
 
 20 October02:13UTC: incremental reference preflight15319 passed (e74495a8),
 4CPU-s, zero molecular calls; both saved solvents and old14880 re-admitted.

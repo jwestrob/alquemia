@@ -4,6 +4,15 @@
 
 ## Incremental DFT comparison complete; bounded model completion declared
 
+20 October09:27UTC: actual zero-call preflight15457 PASSED, result2fde1d8d,
+13 allocated CPU-seconds. It restores the exact92/92 checkpoint, eight history
+pairs, trust0.1A, original source/guards and113 records/109 unique cache keys.
+Independent actual reviewf3048cda passed. Root decisionb6d3f115/config8a78864e
+release one declared continuation as job15458, now PENDING for Resources:
+standard_expand,12CPUs/oneH200 on the qualified host. Completion watcher1733550
+is recorded in the run workspace. No model result yet; do not duplicate.
+See [the attempt specification](lbt_7ccn_completion_attempt_v1/SPEC.md).
+
 20 October UTC: native15321 and saved collector15456 are complete. Read
 [the final incremental report](lbt_7ccn_incremental_reference_v1/FINAL_REPORT.md).
 Step80-to92 work is PBE0+fixedALPB−4.726291 versus MACE+fixedALPB−4.226978
@@ -21,7 +30,7 @@ up to80 additional accepted steps or200 new evaluations, cumulative172/292.
 [Scientific decision](lbt_7ccn_completion_attempt_v1/SCIENCE_DECISION.json)
 d0138c99 preserves original kernels/history/trust/source/guards/force criteria.
 OneCPU zero-call preflight precedes one12CPU/H200 run onstandard_expand.
-Source/review are preparing; no completion-attempt job submitted yet. No
+Preflight and run submission are now recorded above. No
 intermediate DFT, automatic restart/budget extension, other-metal/source calls,
 force fitting or preference claim. Actual terminal evidence determines the next
 mechanics decision. The broader goal remains unmet.

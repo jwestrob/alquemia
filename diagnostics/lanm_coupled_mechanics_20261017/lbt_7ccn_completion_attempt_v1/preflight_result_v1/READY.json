@@ -1,0 +1,81 @@
+{
+  "status": "source_ready_independent_review_pending",
+  "protocol": "lbt_7ccn_completion_attempt_v1",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_completion_attempt_v1/CONTINUE.py",
+    "sha256": "551d964badc41141cfc53a85d704135ec74c21f185e12b6cc50d578dc47910d2"
+  },
+  "optimizer": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_completion_attempt_v1/CARTESIAN_OPTIMIZER_COMPLETION.py",
+    "sha256": "c5092f2480fbf393d6ca0d67733ebf2131580c922a62a67925dea8945eb5acb9"
+  },
+  "optimizer_diff": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_completion_attempt_v1/OPTIMIZER_DIFF.txt",
+    "sha256": "f1eb77a3ec1e3fdbbb914a0bf0b683d55702f296ffb9823b9c849d74370394a4"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_completion_attempt_v1/SPEC.md",
+    "sha256": "443c02213579a9e76a8536a011ac5170fd10e2c3d08d51e9067b167820f7b96d"
+  },
+  "config_preflight": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_completion_attempt_v1/CONFIG_PREFLIGHT.json",
+    "sha256": "664ffb95e45d297904364e888d12dac63f0895b848f79e9d64de39afef52c710"
+  },
+  "science_decision": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_completion_attempt_v1/SCIENCE_DECISION.json",
+    "sha256": "d0138c99f7ded2bd6f943d9542295e0a55e4f32eb35b3d4c022da5c97ac4ebea"
+  },
+  "source_checks": "AST only, direct hashes and literal metadata; no numerical imports or replay",
+  "preflight_command": [
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_hybrid_20260916/software_v1/venv/bin/python",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_completion_attempt_v1/CONTINUE.py",
+    "--stage",
+    "preflight",
+    "--config",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_completion_attempt_v1/CONFIG_PREFLIGHT.json",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_completion_attempt_v1/preflight/execution"
+  ],
+  "run_command": [
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/mace_hybrid_20260916/software_v1/venv/bin/python",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_completion_attempt_v1/CONTINUE.py",
+    "--stage",
+    "run",
+    "--config",
+    "ROOT_BOUND_CONFIG_WITH_ACTUAL_PREFLIGHT_AND_RUN_DECISION",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_completion_attempt_v1/run/execution"
+  ],
+  "resources": {
+    "partition": "gpu_h200",
+    "qualified_host": "node-224-2t-8gpu-1",
+    "qos": "standard_expand",
+    "preflight_cpus": 1,
+    "preflight_gpus": 0,
+    "run_cpus": 12,
+    "run_gpus": 1,
+    "memory_time_overrides": false,
+    "requeue": false
+  },
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "allocated CPUs"
+  },
+  "declared_additional_limits": {
+    "accepted_steps": 80,
+    "evaluations": 200
+  },
+  "declared_cumulative_limits": {
+    "accepted_steps": 172,
+    "evaluations": 292
+  },
+  "future_preflight_result": null,
+  "future_run_decision": null,
+  "molecular_calls_during_preparation": 0,
+  "submissions": 0,
+  "root_owns_launchers_and_execution": true,
+  "no_automatic_followup": true
+}

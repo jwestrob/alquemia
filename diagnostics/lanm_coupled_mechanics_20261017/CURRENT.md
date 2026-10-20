@@ -2,6 +2,26 @@
 
 17 October2026UTC. The PLAN remains authorized and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
+## Twelve-step continuation complete; one fixed reference in preparation
+
+20 October01:58UTC: scout15254 completes12 accepted steps/12 new evaluations,
+cumulative92/92, all original structural/state checks pass. Step-limit stop is
+not convergence. Resultc445cf4b, terminaleb96df29, checkpoint317c2b24.
+Incremental model work is−4.226978kcal/mol: MACE−1.705988 and fixedALPB−2.520990.
+Max/RMS full force changes9.739698/1.987798→5.674648/1.086248kcal/mol/A;
+forces oscillate during the trace. All12 trials accepted at full step. No extra
+metal/model calls; actual26s on12CPU/oneH200 =312CPU-s/26GPU-s, plus10CPU-s
+preflight. This supports further model lowering, not an accurate minimum.
+
+Root freezes the exact92-step endpoint for one whole256La PBE0 energy/gradient
+at unchanged recipe, reusing14880 step80 reference and both cachedALPB endpoints.
+[Declared scientific decision](lbt_7ccn_incremental_reference_v1/SCIENCE_DECISION.json).
+This tests incremental work at the existing1kcal reporting resolution and reports
+full forces descriptively with prior numerical/electronic caveats. OneCPU
+zero-call preflight first; then12MPI onstandard_expand after actual admission.
+Source implementation is preparing; no new reference submitted yet. No further
+optimizer/other-metal/transfer campaign follows automatically. Goal remains unmet.
+
 ## Exact checkpoint continuation submitted after actual preflight
 
 19 October23:39UTC: preflight15192 passed exact original checkpoint/cache,

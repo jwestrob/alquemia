@@ -1,0 +1,34 @@
+{
+  "job_id": "15254",
+  "state": "COMPLETED",
+  "exit_code": "0:0",
+  "elapsed_seconds": 26,
+  "allocated_CPUs": 12,
+  "allocated_GPUs": 1,
+  "allocated_CPU_seconds": 312,
+  "allocated_GPU_seconds": 26,
+  "TotalCPU_reported": "00:20.677",
+  "MaxRSS_batch_reported": "1303816K",
+  "AllocTRES": "billing=12,cpu=12,gres/gpu=1,mem=250000M,node=1",
+  "node": "node-224-2t-8gpu-1",
+  "QOS": "standard_expand",
+  "partition": "gpu_h200",
+  "scheduler_command": [
+    "sacct",
+    "-j",
+    "15254",
+    "--format=JobIDRaw,State,ExitCode,ElapsedRaw,AllocCPUS,CPUTimeRAW,TotalCPU,MaxRSS,AllocTRES,NodeList,QOS,Partition",
+    "--parsable2"
+  ],
+  "scheduler_evidence": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/actual_result_v1/SACCT.txt",
+    "sha256": "af13a93229f60708ae6ceac32aa9cecb5925000f3c88603b88a1d5c2cc429ad9"
+  },
+  "preflight_cost": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/preflight_result_v1/COST.json",
+    "sha256": "fca6d331c59bcc0344718f8379358c3046a313ac4e16b2fd4d3da7e6d5acbfc0"
+  },
+  "preflight_plus_run_allocated_CPU_seconds": 322,
+  "preflight_plus_run_allocated_GPU_seconds": 26,
+  "note": "Allocation accounting, not measured utilization. This subtotal excludes historical parent work and subsequent reference calculations."
+}

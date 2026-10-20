@@ -1,0 +1,70 @@
+{
+  "utc": "2026-10-20T02:02:02.744238+00:00",
+  "status": "complete_bounded_scout_not_converged",
+  "job_id": 15254,
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/run/execution/RESULT.json",
+    "sha256": "c445cf4b622fa2dbc7d7c47456e4b20b7c8db1a0b7718365fab2310c3c90a8c6"
+  },
+  "search": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/run/execution/SEARCH.json",
+    "sha256": "4ac43f90cb4827115915bc0b11c25b9b845c0d9d7cce3e1471e23da1c778931d"
+  },
+  "checkpoint": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/run/execution/search/CHECKPOINT_FINAL.json",
+    "sha256": "317c2b24eff75a2af4a6fb7066f1754d1df1b9a284405a8aad2ea3b20d5c74cd"
+  },
+  "terminal_point": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/run/execution/evaluations/evaluation_012/POINT.json",
+    "sha256": "eb96df292085e05f3eed1788e506c54babab646c372698a41443705945fa2a1b"
+  },
+  "original_checkpoint": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_run_7CCN_La_v2/execution/7CCN_La/search/CHECKPOINT_FINAL.json",
+    "sha256": "4e3a612380f93e9ba7f374636ed883a659c8b0ade6b35e2f7099f5d7643e9ecf"
+  },
+  "exact_counts": {
+    "additional_accepted_steps": 12,
+    "additional_distinct_evaluations": 12,
+    "cumulative_accepted_steps": 92,
+    "cumulative_distinct_evaluations": 92
+  },
+  "incremental_work": {
+    "MACE_kcal_mol": -1.705988079440581,
+    "fixed_ALPB_kcal_mol": -2.520989586924546,
+    "composite_kcal_mol": -4.226977666365127
+  },
+  "old_full_force": {
+    "maximum_atom_kcal_mol_A": 9.739697567134982,
+    "RMS_atom_vector_kcal_mol_A": 1.9877980733710339,
+    "L2_kcal_mol_A": 31.804769173936542,
+    "converged": false
+  },
+  "new_full_force": {
+    "maximum_atom_kcal_mol_A": 5.674648336112338,
+    "RMS_atom_vector_kcal_mol_A": 1.086248128193825,
+    "L2_kcal_mol_A": 17.3799700511012,
+    "converged": false
+  },
+  "all_accepted_trials_full_step": true,
+  "all_geometry_state_checks_passed": true,
+  "force_trace_is_not_monotone": true,
+  "actual_costs": {
+    "new_composite_evaluations": 12,
+    "MACE_calls_attempted": 12,
+    "ALPB_calls_attempted": 12,
+    "MACE_call_seconds": 4.073442438617349,
+    "ALPB_call_seconds": 0.725242046173662,
+    "model_load_seconds": 6.373612666036934,
+    "cache_hits": 0
+  },
+  "scheduler_cost": {
+    "elapsed_seconds": 26,
+    "allocated_CPUs": 12,
+    "allocated_GPUs": 1,
+    "allocated_CPU_seconds": 312,
+    "allocated_GPU_seconds": 26
+  },
+  "interpretation": "Further model lowering and smaller endpoint residual forces; no converged minimum or independent accuracy validation. Stops exactly at declared finite budget.",
+  "decision": "Freeze the exact step92 terminal for one whole256La PBE0 energy/gradient comparison against reused14880 step80 reference. No further optimization or additionalmetal calls in this test.",
+  "numerical_recomputation_on_login": false
+}

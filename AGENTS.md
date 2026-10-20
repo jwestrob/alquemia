@@ -3,6 +3,15 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the scientific goal remains authorized and unmet.
 
+20 October01:58UTC: scout15254 complete12/12newsteps/evals,cumulative92/92,
+all originalguards pass, stillnonconverged. Modelwork−4.226978kcal/mol;
+max/RMSforce5.674648/1.086248. Resultc445cf4b,terminaleb96df29,checkpoint317c2b24;
+312CPU-s/26GPU-s plus10CPU-s preflight. Root prepares one unchanged whole256La
+PBE0 energy/gradient at this exactendpoint,reusing14880oldreference/cachedALPB.
+Decision9503a623 in active diagnostic lbt_7ccn_incremental_reference_v1/. Actual
+zero-callpreflight before one12MPI/standard_expand run; no reference submittedyet.
+No furtheroptimization/metalpanel/preferenceclaim. Read newer receipts/CURRENT.
+
 19 October23:39UTC: actual preflight15192 passes, result2dd9db66,10CPU-s,
 zero molecular/model calls. Independent review16b664a9 passes. Root bound
 exact7CCN-La12-step/40-evaluation scout via decisiona21d2c53/config7127a7fc

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "sacct",
+    "-j",
+    "15543",
+    "--units=K",
+    "--parsable2",
+    "--format=JobIDRaw,JobName,State,ExitCode,AllocCPUS,ElapsedRaw,CPUTimeRAW,TotalCPU,MaxRSS,NodeList,Start,End"
+  ],
+  "returncode": 0,
+  "stdout": "JobIDRaw|JobName|State|ExitCode|AllocCPUS|ElapsedRaw|CPUTimeRAW|TotalCPU|MaxRSS|NodeList|Start|End\n15543|lbt-converged-reference-preflight|COMPLETED|0:0|1|5|5|00:04.672||node-64-768g-1|2026-10-20T06:14:22|2026-10-20T06:14:27\n15543.batch|batch|COMPLETED|0:0|1|5|5|00:04.672|680680K|node-64-768g-1|2026-10-20T06:14:22|2026-10-20T06:14:27\n",
+  "stderr": "",
+  "captured_utc": "2026-10-20T13:15:26.283149+00:00"
+}

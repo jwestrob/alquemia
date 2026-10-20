@@ -1,0 +1,66 @@
+{
+  "protocol": "lbt_7ccn_converged_reference_v1",
+  "status": "source_ready_pending_final_independent_review",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/REFERENCE.py",
+    "sha256": "f251ca1e9514fb0c76659faf603b03ce2daf3684204fe4e98ef44e5d448bb240"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/SPEC.md",
+    "sha256": "bf34b4697fe561181689c8a653e022dce56c948a6c028a94f30431661012d641"
+  },
+  "config_preflight": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/CONFIG_PREFLIGHT.json",
+    "sha256": "346f96224fd9238993ed36164d57bc806226184fc8ac81b6b84def00484a3a25"
+  },
+  "science_decision": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/SCIENCE_DECISION.json",
+    "sha256": "27377db9c2064650094e9f6106a106b57509a3701fa233cc7dfda5065e1be83b"
+  },
+  "preflight_launcher": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/preflight/RUN.sbatch",
+    "sha256": "52154ad8f62d92a9089220dfe06b1dcfc00be107cc6b069e5f1c8086d5e7b1ce"
+  },
+  "native_launcher": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/run/RUN.sbatch",
+    "sha256": "d08bbef4737adda7454eae104412e7a697a3802ef39d2078c374b4a13f11b4ad"
+  },
+  "python": {
+    "path": "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python3.11",
+    "sha256": "53244dfc692ccbfd6a065f053dfa2026e2f3e4755beef84d600c8f7dbc9b5b27"
+  },
+  "preflight_launcher_arguments": [
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/REFERENCE.py",
+    "--stage",
+    "preflight",
+    "--config",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/CONFIG_PREFLIGHT.json",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/preflight/execution"
+  ],
+  "preflight_python_argv": [
+    "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python3.11",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/REFERENCE.py",
+    "--stage",
+    "preflight",
+    "--config",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/CONFIG_PREFLIGHT.json",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/preflight/execution"
+  ],
+  "native_command_contract": "REFERENCE.py --stage run --config ACTUAL_RUN_CONFIG --output fresh run/execution; root binds actual matching preflight and execution decision first",
+  "collector_command_contract": "REFERENCE.py --stage collect --config ACTUAL_COLLECTION_CONFIG --output fresh collection/execution; root binds actual endpoint result after completion",
+  "resource_contract": {
+    "preflight_CPUs": 1,
+    "native_MPI_ranks": 12,
+    "native_workers": 1,
+    "collector_CPUs": 1,
+    "partition": "standard",
+    "qos": "standard_expand",
+    "memory_time_overrides": false
+  },
+  "new_DFT_call_ceiling": 1,
+  "new_MACE_ALPB_GFN_MM_calls": 0,
+  "optimizer_steps": 0,
+  "validation_performed": "Source/JSON/hash inspection and AST parse only; no scientific imports, numerical replay or jobs"
+}

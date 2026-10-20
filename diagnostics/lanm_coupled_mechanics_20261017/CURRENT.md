@@ -15,8 +15,8 @@ not a physically verified minimum or accurate reference forces.
 Step172-to725 model work is−13.494231kcal/mol: MACE+11.053362 and
 fixedALPB−24.547593. All567 new MACE/ALPB evaluations are preserved; no DFT,
 other-metal or other search calls. Actual406s on12CPUs/oneH200 costs4872CPU-s
-and406GPU-s. Receipt delivery is acknowledged; immutable archive and
-independent terminal review are being completed. No further optimization.
+and406GPU-s. Receipt delivery is acknowledged; independent terminal review
+3b6573c4 passes. The lossless archive is being verified. No further optimization.
 
 Root separately declares [one fixed terminal reference](lbt_7ccn_converged_reference_v1/SCIENCE_DECISION.json),
 27377db9. Compare step725 with saved step92 reference15321 using the unchanged
@@ -24,8 +24,18 @@ whole256 La PBE0 energy/gradient recipe and both cached fixedALPB endpoints.
 This tests whether the later lowering is supported and reports reference residual
 forces at the model-converged point. The comparison must use native endpoint
 differences;15525's step172-to725 work is not the full step92-to725 contrast.
-OneCPU saved-only preflight precedes one12MPI standard_expand call, after
-source review. Source preparation is in progress; no reference submitted yet.
+Actual saved-only preflight15543 PASSED (5CPU-s), result5edd76c0, with
+zero molecular calls. Sourcef251ca1e/config346f9622 pass independent static
+review9232b7cc and actual reviewff2a42f1. Root decision1fc5614c/confige995bda3
+release the one native endpoint as job15545, now RUNNING:
+standard_expand,12MPI/48000MiB, scheduler-default5days, noGPU.
+Actual startup12e02d89 confirms task/new_La, byte-identical native deck and
+allocation-derived MaxCore3100MB/rank. Completion watcher1985644 and alert-only
+health watcher1985645 are armed. Exact submission27d7b813 is in the corresponding
+run workspace. No result yet; no duplicate endpoint or idle waiting collector.
+After terminal native evidence, bind the actual result for oneCPU saved collection.
+The current model step92-to725 work is−29.079895kcal/mol:
+MACE+16.362172, fixedALPB−45.442067. The native reference tests that increment.
 Shared solvent is not independently validated by this test; prior SCF, state,
 vacuum-dianion and force-qualification limitations remain. No other-metal
 campaign or preference claim. The broader mechanics goal remains unmet.

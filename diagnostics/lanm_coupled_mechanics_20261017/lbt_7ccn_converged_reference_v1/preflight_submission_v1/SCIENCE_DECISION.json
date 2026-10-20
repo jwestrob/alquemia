@@ -1,0 +1,69 @@
+{
+  "created_utc": "2026-10-20T13:09:22.572479+00:00",
+  "protocol": "lbt_7ccn_converged_reference_v1",
+  "status": "prepare_single_fixed_converged_endpoint_reference",
+  "scientific_question": "Does unchanged whole256 PBE0 plus the same cached fixed-FF ALPB support the step92-to725 model energy lowering, and what reference residual forces remain at the MACE-plus-ALPB force-converged terminal?",
+  "selection_rule": "Exact terminal of the complete declared generous continuation, selected by original full-force convergence; no intermediate selection",
+  "continuation_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_generous_completion_v1/run/execution/RESULT.json",
+    "sha256": "95d870ebbfdedede5166c7499e4b8181dd8c24289503bdb2e35eaba02c4a5068"
+  },
+  "continuation_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_generous_completion_v1/run/ROOT_RESULT_REVIEW.json",
+    "sha256": "0e19292100e7088f491ea9b069fd7d9cb9ff75bcfec07521ed8d6c9ba5c8e0ff"
+  },
+  "new_terminal": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_generous_completion_v1/run/execution/evaluations/evaluation_567/POINT.json",
+    "sha256": "6605f43cc3289509cee65c9be97a195abaad43d2d247ab488f5de889aa6f5419"
+  },
+  "checkpoint": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_generous_completion_v1/run/execution/search/CHECKPOINT_FINAL.json",
+    "sha256": "0461e30d7b285cee7b659de4865d27688bfb2f936edd55f3b57a4628b8df88c1"
+  },
+  "reused_reference_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/run/execution/RESULT.json",
+    "sha256": "3a173d81072ab269922d17db1596c130e8132bd2f803614b00d2fe59455c10de"
+  },
+  "reused_reference_collection": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/collection/execution/RESULT.json",
+    "sha256": "5908cb2d3b3fcb07b8ac764e3ddfb78fbc56beb29196790388cf79213af4ad72"
+  },
+  "previous_reference_adapter": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/REFERENCE.py",
+    "sha256": "bf75f502a2e3c53e51329cfd59b9ff34f661d85acc0ed24483f51868bbf194cd"
+  },
+  "previous_reference_collection_config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/CONFIG_COLLECT.json",
+    "sha256": "2fef75872b58eb11bb6afe5ae6cc38126b3cb46050868e3060d76074dab95aa1"
+  },
+  "declared_new_cells": 1,
+  "state": "whole256 atoms, 7CCN, La, charge -2, physical/effective multiplicity1, original atom IDs and chemistry",
+  "method": "Exact previous PBE0-D4/def2-TZVP/def2-J/RIJCOSX/DefGrid3/VeryTightSCF/EnGrad/NoAutostart/PModel and archived La basis/ECP46; no changed SCF, grid or native gates",
+  "resources": {
+    "mpi_ranks": 12,
+    "qos": "standard_expand",
+    "partition": "standard",
+    "memory_time": "scheduler defaults; allocation-derived MaxCore; no overrides"
+  },
+  "comparison": {
+    "quantity": "step725 minus step92 native PBE0 and MACE vacuum work; same cached ALPB on each; composite work and model-minus-reference work error",
+    "model_work_must_use_native_endpoint_differences": "15525 work_from_checkpoint covers only172-to725 and must not substitute for92-to725",
+    "reporting_resolution_kcal_mol": 1.0,
+    "resolution_is_not_native_admission_or_uncertainty": true,
+    "forces": "full256 vectors, endpoint maximum/RMS reference residuals and model-reference errors, original descriptive chord projections; no new force-accuracy qualification"
+  },
+  "gate": "OneCPU zero-call saved preflight and independent review before one12MPI native call; preserve original failure/state/SCF admission and unavailable outcomes",
+  "reuse": [
+    "actual15321 step92 native result admitted by15456",
+    "both exact cached fixed-FF ALPB endpoints",
+    "saved MACE energies/gradients"
+  ],
+  "limits": [
+    "No new optimizer steps, geometry search, other-metal/source or additional reference cells",
+    "No new MACE/ALPB/GFN/MM calls",
+    "No automatic retries, changed native settings, physical minimum or preference claim",
+    "Shared fixed solvent means this does not independently validate solvent physics",
+    "Native gradients remain independently unqualified; retain vacuum-dianion, frozen-f, conditional termini and printed SCF warnings"
+  ],
+  "saved_collection": "After actual native completion, run a saved-only1CPU comparison; no idle waiting collector"
+}

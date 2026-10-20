@@ -12,7 +12,12 @@ notphysicalminimum/accuracy/preference. No further optimizer run.
 Rootdeclared lbt_7ccn_converged_reference_v1/SCIENCE_DECISION.json27377db9:
 one exactterminal whole256La PBE0 E/gradient, reuse15321step92 and bothsolvents;
 native differences for725−92, unchangedmethod/gates/12MPIstandard_expand.
-OneCPU savedpreflight thenoneDFT afterreview; sourcepreparing, notsubmitted.
+Savedpreflight15543 PASSED5CPU-s/zerocalls, result5edd76c0; static9232b7cc/
+actualff2a42f1 independentreviews pass. Rootdecision1fc5614c/confige995bda3
+submit15545, nowRUNNING12MPI/48000MiB/5daydefault/standard_expand/noGPU.
+Startup12e02d89 passes, MaxCore3100MB/rank; completion1985644/health1985645
+armed. Sourcef251ca1e. No newreference result yet or duplicate/waitingcollector.
+After terminal evidence bind actualresult foroneCPU savedcollection.
 Preserve all nativeSCF/state/force caveats. Read newestCURRENT/receipts.
 
 20 October, latest: saved audit15489 PASSED all81states/80transitions/2828checks,

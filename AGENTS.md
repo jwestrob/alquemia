@@ -3,6 +3,18 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the scientific goal remains authorized and unmet.
 
+20 October13:06UTC:15525 is COMPLETE at full_force_converged, result95d870eb,
+terminal6605f43c/checkpoint0461e30d. +553accepted/567evaluations→725/739;
+full max/RMS0.075055/0.029611kcal/mol/A satisfy original0.10/0.03 criteria.
+All256movable/originalguards pass. Step172→725 work−13.494231
+(MACE+11.053362/ALPB−24.547593);4872CPU-s/406GPU-s. Modelconvergence only,
+notphysicalminimum/accuracy/preference. No further optimizer run.
+Rootdeclared lbt_7ccn_converged_reference_v1/SCIENCE_DECISION.json27377db9:
+one exactterminal whole256La PBE0 E/gradient, reuse15321step92 and bothsolvents;
+native differences for725−92, unchangedmethod/gates/12MPIstandard_expand.
+OneCPU savedpreflight thenoneDFT afterreview; sourcepreparing, notsubmitted.
+Preserve all nativeSCF/state/force caveats. Read newestCURRENT/receipts.
+
 20 October, latest: saved audit15489 PASSED all81states/80transitions/2828checks,
 result228ef785;21CPU-s, zero molecular calls. No resets/backtracks, only two mild
 trust scalings; final20steps still lower2.635231kcal/mol. Independent actual

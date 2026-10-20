@@ -2,7 +2,35 @@
 
 17 October2026UTC. The PLAN remains authorized and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
-## Saved audit passed; generous completion queued
+## 7CCN-La reaches the original model force criteria
+
+20 October13:06UTC: job15525 completed at full-force convergence, before its
+finite budget. Result95d870eb, SEARCHa9495fd5, terminal6605f43c,
+checkpoint0461e30d. It added553 accepted steps/567 evaluations, reaching725/739
+cumulative. Maximum/RMS full force is0.075055/0.029611kcal/mol/A against the
+unchanged0.10/0.03 thresholds. All256 atoms remained movable; recorded original
+physical/state guards pass. This establishes the model's stopping criteria,
+not a physically verified minimum or accurate reference forces.
+
+Step172-to725 model work is−13.494231kcal/mol: MACE+11.053362 and
+fixedALPB−24.547593. All567 new MACE/ALPB evaluations are preserved; no DFT,
+other-metal or other search calls. Actual406s on12CPUs/oneH200 costs4872CPU-s
+and406GPU-s. Receipt delivery is acknowledged; immutable archive and
+independent terminal review are being completed. No further optimization.
+
+Root separately declares [one fixed terminal reference](lbt_7ccn_converged_reference_v1/SCIENCE_DECISION.json),
+27377db9. Compare step725 with saved step92 reference15321 using the unchanged
+whole256 La PBE0 energy/gradient recipe and both cached fixedALPB endpoints.
+This tests whether the later lowering is supported and reports reference residual
+forces at the model-converged point. The comparison must use native endpoint
+differences;15525's step172-to725 work is not the full step92-to725 contrast.
+OneCPU saved-only preflight precedes one12MPI standard_expand call, after
+source review. Source preparation is in progress; no reference submitted yet.
+Shared solvent is not independently validated by this test; prior SCF, state,
+vacuum-dianion and force-qualification limitations remain. No other-metal
+campaign or preference claim. The broader mechanics goal remains unmet.
+
+## Earlier saved audit and generous-completion submission
 
 20 October UTC: saved audit15489 is complete, result228ef785. All81 states,
 80 transitions and2,828 replay checks pass. All80 curvature updates entered

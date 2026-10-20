@@ -8,9 +8,15 @@ Root declares lbt_dy_force_completion_v1/SPEC.md, decision7c58e45b:
 atmost3missingfixedMACEforces(7CCO/before_Dy;7CCN/before_Dy/after_Dy),
 reuse5forces/all8DFT/ALPB; full8-cell and4matchedDy-minus-La forceerrors.
 Original1e-7eVenergyparity, onewarmH200job aftersaved-input/staticgates.
-No newDFT/solvent/geometry. Inventory/sourcepreparing, notsubmitted.
-Harveyinventory/Linnaeusadapter/Arendtreview/rootlaunch. Preservealloldresults,
-nativeSCF/frozenf/state caveats, failedbranches and pending15545.
+No new DFT/solvent/geometry. Inventory e2c196d1, source d77cc40e and config
+b1655fb8 pass independent static review 8b32a6d3. Root decision aadcf7e9
+submits job15720: PENDING Resources, 12CPUs/oneH200, standard_expand,
+scheduler defaults (250000MiB/GPU, five days).
+Completion watcher2135093 is armed. Saved gates precede model load in this
+single job; no result yet or duplicate/automatic retry. Exact receipts are in
+workspaces/lanm_coupled_mechanics_20261017/lbt_dy_force_completion_v1/run.
+Preserve all old results, native SCF/frozen-f/state caveats, closed branches
+and pending15545. Root owns result review and integration.
 
 20 October13:06UTC:15525 is COMPLETE at full_force_converged, result95d870eb,
 terminal6605f43c/checkpoint0461e30d. +553accepted/567evaluations→725/739;

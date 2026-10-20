@@ -19,11 +19,18 @@ Report all8 force comparisons and the4 matched Dy-minus-La force discrepancies.
 This asks whether Dy energy agreement also describes mechanical response,
 without treating missing force data as a model failure.
 
-Source and inventory preparation is in progress; no new job submitted.
-Harvey owns inventory, Linnaeus the compact adapter, Arendt independent review,
-root execution. Preserve old energy-only records, frozen-f/physical-spin and
-native-gradient limitations. This does not reopen closed hybrid/Mex branches
-or qualify natural transfer. The full mechanics goal remains unmet.
+Inventory e2c196d1 confirms exactly three missing arrays and five available
+forces, with all eight reference/solvent gradients. Source d77cc40e and config
+b1655fb8 pass independent static review 8b32a6d3. Root decision aadcf7e9
+releases job **15720**, currently PENDING for Resources, one H200 and 12 CPUs on
+standard_expand with scheduler defaults (250000MiB/GPU, five days).
+Completion watcher 2135093 is armed. The exact launch and receipts
+are in workspaces/lanm_coupled_mechanics_20261017/lbt_dy_force_completion_v1/run.
+Saved numerical admission occurs in that job before model loading; no result
+is implied by source review or submission. No duplicate or automatic retry.
+Preserve old energy-only records, frozen-f/physical-spin and native-gradient
+limitations. This does not reopen closed hybrid/Mex branches or qualify natural
+transfer. The full mechanics goal remains unmet.
 
 ## 7CCN-La reaches the original model force criteria
 

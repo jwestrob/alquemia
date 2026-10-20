@@ -1,0 +1,52 @@
+{
+  "reviewed_utc": "2026-10-20T13:46:40.006060+00:00",
+  "job_id": 15545,
+  "delivered_health_alert": "new_La:output_silent_review_needed_not_proven_stall",
+  "delivery_acknowledged": true,
+  "notification_queued_utc": "2026-10-20T13:44:37.342930+00:00",
+  "decision": "continue_existing_job_unchanged",
+  "evidence": {
+    "health_receipt_snapshot.json": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/health_review_20261020_1344_v1/health_receipt_snapshot.json",
+      "sha256": "b06f64c820d86ebf261e2f2eff6ecbbc9a51c55be2586d0a4f6e0155d75f4a3f"
+    },
+    "ACCOUNTING_SAMPLES.json": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/health_review_20261020_1344_v1/ACCOUNTING_SAMPLES.json",
+      "sha256": "914e8cf3bfaaa03716ca672bce236dc8c5e006a6ce05c2c67827a75c22d9d26a"
+    },
+    "SCONTROL.txt": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/health_review_20261020_1344_v1/SCONTROL.txt",
+      "sha256": "59bcf47146ccbddda5472bf28b3c8e6f837f0856ff401d97fa88f04da94a9d0d"
+    },
+    "OUTPUT_METADATA.json": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/health_review_20261020_1344_v1/OUTPUT_METADATA.json",
+      "sha256": "d84375dc581fe6b3d5d937b0dcef22f9c4ec67ff412c563d10eb46d5a6cbdadd"
+    },
+    "NATIVE_TAIL.txt": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_converged_reference_v1/health_review_20261020_1344_v1/NATIVE_TAIL.txt",
+      "sha256": "ef4cbaa7d422c22bced3df1da322f899cdb4947b9a56110b50e44de043954e67"
+    }
+  },
+  "accounting_observation": {
+    "aggregate_CPU_seconds_increase": 540,
+    "wall_sample_interval_seconds": 45.030326,
+    "allocated_cpus": 12,
+    "approximate_active_CPU_equivalents": 11.991918512870637,
+    "interpretation": "Aggregate CPU accrual is consistent with active use of approximately all12 CPUs. This does not prove equal rank utilization or useful SCF convergence."
+  },
+  "native_phase": "First incremental Fock matrix formation after completed initial PModel guess. No first iteration or residual trend printed; no explicit failure or terminal result at review.",
+  "historical_comparison": {
+    "prior_review": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/health_review_20261020_0237_v1/ROOT_HEALTH_REVIEW.json",
+      "sha256": "b6bfdec548238b40d6118f351069fcf277a4831adcdf8c6b1f0d2b78198f4c49"
+    },
+    "interpretation": "Prior whole256 runs also had long first iterations. Silence alone is not a failure or restart criterion."
+  },
+  "actions": {
+    "cancelled": false,
+    "resubmitted": false,
+    "settings_changed": false,
+    "new_scientific_calls": 0
+  },
+  "next": "Existing native computation and completion/alert-only health watchers continue. Review actual terminal native result before binding oneCPU saved collector."
+}

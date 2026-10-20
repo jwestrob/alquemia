@@ -33,6 +33,11 @@ Actual startup12e02d89 confirms task/new_La, byte-identical native deck and
 allocation-derived MaxCore3100MB/rank. Completion watcher1985644 and alert-only
 health watcher1985645 are armed. Exact submission27d7b813 is in the corresponding
 run workspace. No result yet; no duplicate endpoint or idle waiting collector.
+20 October13:46UTC: delivered silent-output alert reviewed,576ebad6. Initial
+Fock formation has not yet printed an SCF iteration or residual trend; no native
+failure is present. Accounting increased540CPU-s over45.03s, consistent with
+active use of the12CPU allocation. Continue15545 unchanged with existing wakes.
+This establishes activity, not SCF convergence or equal per-rank utilization.
 After terminal native evidence, bind the actual result for oneCPU saved collection.
 The current model step92-to725 work is−29.079895kcal/mol:
 MACE+16.362172, fixedALPB−45.442067. The native reference tests that increment.

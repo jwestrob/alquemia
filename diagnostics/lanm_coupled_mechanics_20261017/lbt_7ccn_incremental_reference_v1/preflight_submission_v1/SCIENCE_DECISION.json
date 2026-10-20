@@ -1,0 +1,43 @@
+{
+  "utc": "2026-10-20T02:02:02.744238+00:00",
+  "protocol": "lbt_7ccn_incremental_reference_v1",
+  "status": "prepare_single_fixed_terminal_reference",
+  "question": "Does unchanged wholePBE0 plus the same cached fixed-FF ALPB support the incremental model relaxation from step80 to step92?",
+  "continuation_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/run/execution/RESULT.json",
+    "sha256": "c445cf4b622fa2dbc7d7c47456e4b20b7c8db1a0b7718365fab2310c3c90a8c6"
+  },
+  "continuation_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/run/ROOT_RESULT_REVIEW.json",
+    "sha256": "93f93f9af1dacde7ff6511c0a8ffadbf047198c491265654e2e79a716821ebe1"
+  },
+  "new_terminal": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/run/execution/evaluations/evaluation_012/POINT.json",
+    "sha256": "eb96df292085e05f3eed1788e506c54babab646c372698a41443705945fa2a1b"
+  },
+  "reused_reference_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_after_La_v1/execution/RESULT.json",
+    "sha256": "816e26710fd68570420f74144da5ff1216c50dd12f4b66ee6fdbdeb46f272e25"
+  },
+  "declared_new_cells": 1,
+  "selection_rule": "Exact terminal of the predeclared12-step scout, not an intermediate chosen for score or forces",
+  "state": "whole256atoms,7CCN,La,physicalcharge-2,multiplicity1; unchanged chemistry",
+  "method": "Exact prior PBE0 D4 def2-TZVP def2/J RIJCOSX NoAutostart DefGrid3 VeryTightSCF EnGrad/PModel and archived La basis/ECP assets",
+  "resources": {
+    "mpi_ranks": 12,
+    "qos": "standard_expand",
+    "partition": "standard",
+    "memory_time": "scheduler defaults, allocation-derived MaxCore, no overrides"
+  },
+  "comparison": {
+    "quantity": "new-minus-reused-old deformation work, and MACE-minus-PBE0 error; same cachedALPB on each endpoint",
+    "reporting_resolution_kcal_mol": 1.0,
+    "resolution_is_not_new_native_admission_or_force_accuracy_gate": true,
+    "forces": "full saved vectors and descriptive force errors; independently unqualified"
+  },
+  "gate": "Actual zero-call preflight and root binding before one native call; preserve failures and nativeSCF/state caveats; no automatic retry",
+  "new_optimizer_steps": 0,
+  "new_other_metal_cells": 0,
+  "new_MACE_ALPB_GFN_MM_calls": 0,
+  "no_preference_or_convergence_claim": true
+}

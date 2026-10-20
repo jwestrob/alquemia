@@ -1,0 +1,85 @@
+{
+  "status": "source_ready_independent_review_pending",
+  "protocol": "lbt_7ccn_incremental_reference_v1",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/REFERENCE.py",
+    "sha256": "bf75f502a2e3c53e51329cfd59b9ff34f661d85acc0ed24483f51868bbf194cd"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/SPEC.md",
+    "sha256": "0328aa4d2df76a0e75bd868a2075c8abfb3db90736b1dacb61594e2ec78238ab"
+  },
+  "config_preflight": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/CONFIG_PREFLIGHT.json",
+    "sha256": "d6a94e65299cecf46b74b58e1faaa381d7c1bfb5607524156b780eddb3f087ff"
+  },
+  "science_decision": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/SCIENCE_DECISION.json",
+    "sha256": "9503a623789f94a189bd0a12a95da098e9899d2c8f1713a32e76839ff85637df"
+  },
+  "old_reference": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_whole_7ccn_after_La_v1/execution/RESULT.json",
+    "sha256": "816e26710fd68570420f74144da5ff1216c50dd12f4b66ee6fdbdeb46f272e25"
+  },
+  "new_point": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_continuation_scout_v1/run/execution/evaluations/evaluation_012/POINT.json",
+    "sha256": "eb96df292085e05f3eed1788e506c54babab646c372698a41443705945fa2a1b"
+  },
+  "source_checks": "AST only; copied native admit function text exactly equals original c0cca6dd; literal recipe/source metadata and old saved native row verified with stdlib; no scientific imports/evaluations",
+  "preflight_command": [
+    "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python3.11",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/REFERENCE.py",
+    "--stage",
+    "preflight",
+    "--config",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/CONFIG_PREFLIGHT.json",
+    "--output",
+    "FRESH_PREFLIGHT_EXECUTION_DIRECTORY"
+  ],
+  "run_command": [
+    "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python3.11",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/REFERENCE.py",
+    "--stage",
+    "run",
+    "--config",
+    "ROOT_BOUND_CONFIG_WITH_ACTUAL_PREFLIGHT_AND_EXECUTION_DECISION",
+    "--output",
+    "FRESH_RUN_EXECUTION_DIRECTORY"
+  ],
+  "collect_command": [
+    "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python3.11",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_incremental_reference_v1/REFERENCE.py",
+    "--stage",
+    "collect",
+    "--config",
+    "ROOT_BOUND_CONFIG_WITH_ACTUAL_ENDPOINT_RESULT",
+    "--output",
+    "FRESH_COLLECTION_DIRECTORY"
+  ],
+  "resources": {
+    "preflight_and_collect": {
+      "cpus": 1,
+      "gpus": 0
+    },
+    "run": {
+      "mpi_ranks": 12,
+      "workers": 1,
+      "gpus": 0,
+      "partition": "standard",
+      "qos": "standard_expand",
+      "memory_and_time_overrides": false,
+      "allocation_derived_memory": true,
+      "requeue": false
+    }
+  },
+  "new_molecular_calls_ceiling": {
+    "DFT": 1,
+    "MACE": 0,
+    "ALPB": 0,
+    "GFN": 0,
+    "MM": 0
+  },
+  "numerical_tests_run": false,
+  "submissions": 0,
+  "root_owns_launchers_and_execution": true
+}

@@ -2,6 +2,29 @@
 
 17 October2026UTC. The PLAN remains authorized and unmet. Root owns all launches and integration. PQQ production stays unchanged.
 
+## Incremental reference running after actual preflight
+
+20 October02:13UTC: saved-only preflight15319 passed, result e74495a8,
+4 allocated CPU-seconds. It re-admits old14880, both cached ALPB endpoints,
+the exact continued terminal and all original physical/state checks. No new
+molecular calls. Independent static and actual reviews pass in
+[lbt_7ccn_incremental_reference_v1](lbt_7ccn_incremental_reference_v1/SPEC.md).
+
+Root decision05b4ad31/config155d0d6e release exactly one whole256 La PBE0
+energy/gradient at step92. Job15321 is RUNNING on standard_expand:12MPI,
+48000MiB, allocation-derived MaxCore3100MB, default5day limit. Actual startup
+replayed the passed preflight and bound only new_La. Completion watcher3806118
+and alert-only health armer3806119 are recorded in the run workspace. No DFT
+result is available yet. Reuse oldstep80 and both solvents in the saved comparison;
+do not submit another endpoint or a waiting collector. On actual completion,
+bind its result and run the existing saved-only collect stage on1CPU.
+
+The test asks whether PBE0 supports the additional model lowering of4.226978
+kcal/mol (vacuum1.705988, solvent2.520990). Both endpoints remain unconverged.
+Retain prior SCF, vacuum-dianion, conditional terminal chemistry and native-force
+limitations; the existing1kcal reporting resolution is not an uncertainty bound.
+No further optimizer/other-metal/transfer campaign is released. Goal remains unmet.
+
 ## Twelve-step continuation complete; one fixed reference in preparation
 
 20 October01:58UTC: scout15254 completes12 accepted steps/12 new evaluations,

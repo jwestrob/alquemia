@@ -3,6 +3,16 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the scientific goal remains authorized and unmet.
 
+20 October02:13UTC: incremental reference preflight15319 passed (e74495a8),
+4CPU-s, zero molecular calls; both saved solvents and old14880 re-admitted.
+Decision05b4ad31/config155d0d6e release one exactstep92 whole256La PBE0
+energy/gradient. Job15321 RUNNING standard_expand12MPI/48000MiB/5daydefault;
+startup passed, completion3806118 and health armer3806119 recorded. Read active
+diagnostic lbt_7ccn_incremental_reference_v1/ and actual run workspace. No new
+reference result yet. After completion bind actual result for1CPU saved collect;
+no duplicate endpoint/waiting collector. Both geometries remain nonconverged;
+prior native/electronic/terminal/force caveats and closed branches stay preserved.
+
 20 October01:58UTC: scout15254 complete12/12newsteps/evals,cumulative92/92,
 all originalguards pass, stillnonconverged. Modelwork−4.226978kcal/mol;
 max/RMSforce5.674648/1.086248. Resultc445cf4b,terminaleb96df29,checkpoint317c2b24;

@@ -14,11 +14,19 @@ execution decision c996c2e2 bind this one endpoint.
 
 Root startup review 5fdad85d confirms the grant/runtime and native SCNL,
 libXC and La ECP46 headers. Completion watcher 91376 and alert-only health
-watcher 91377 are active. Initial-guess completion and the final molecular
+watcher 91377 are active. PModel initialization and beta rotation have now completed. The final molecular
 energy/gradient are pending; no force or state qualification is established.
 Independent startup review eae72570 agrees. Run submission archive 6ec11a5c
 preserves immutable inputs, configuration, release, runtime and watcher records.
 It is a startup snapshot, not a completed molecular result.
+
+## Interim health review,04:31UTC
+
+The silence alert was reviewed: all12 LEANSCF workers accrue aboutone core of
+CPU time each; cgroup memory is67.7GiB against93.75GiB, zero swap/OOM events.
+Output remains at the first Fock build with no SCF iteration or residual yet.
+Continue16680 unchanged; no duplicate or cancellation. See
+health_review_16680_silent_v1/REPORT.md and its exact snapshots.
 
 ## Why this recovery
 

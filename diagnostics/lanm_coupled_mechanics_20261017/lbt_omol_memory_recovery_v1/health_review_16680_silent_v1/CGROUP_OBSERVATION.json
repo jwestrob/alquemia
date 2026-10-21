@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "ssh",
+    "-o",
+    "BatchMode=yes",
+    "-o",
+    "ConnectTimeout=10",
+    "node-64-768g-20",
+    "python3 -"
+  ],
+  "remote_source": "import json,os,datetime\nfrom pathlib import Path\np=Path('/proc/73940');cwd=os.readlink(p/'cwd');assert p.stat().st_uid==601 and '/lbt_omol_memory_recovery_v1/run/' in cwd\nline=(p/'cgroup').read_text().strip();assert line.startswith('0::');base=Path('/sys/fs/cgroup')/line[3:].lstrip('/');rows={}\nfor parent in [base]+list(base.parents):\n if str(parent) in ('/sys/fs/cgroup/system.slice/slurmstepd.scope','/sys/fs/cgroup/system.slice','/sys/fs/cgroup','/sys/fs','/sys','/'):break\n for name in ('memory.current','memory.max','memory.peak','memory.events','memory.swap.current','memory.swap.max','cpu.stat'):\n  f=parent/name\n  if f.is_file():rows[str(f)]=f.read_text()\nprint(json.dumps({'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'pid':73940,'cwd':cwd,'cgroup':line,'readings':rows},indent=2))\n",
+  "returncode": 0,
+  "stderr": "Warning: Permanently added 'node-64-768g-20' (ED25519) to the list of known hosts.\n",
+  "scope": "Read-only bounded worker cgroup ancestry, stops before shared slurmstepd scope"
+}

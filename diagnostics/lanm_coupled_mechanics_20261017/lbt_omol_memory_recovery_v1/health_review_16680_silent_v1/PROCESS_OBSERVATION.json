@@ -1,0 +1,16 @@
+{
+  "created_utc": "2026-10-21T04:30:34.934617+00:00",
+  "argv": [
+    "ssh",
+    "-o",
+    "BatchMode=yes",
+    "-o",
+    "ConnectTimeout=10",
+    "node-64-768g-20",
+    "python3 -"
+  ],
+  "remote_source": "import os,json,time,datetime\nfrom pathlib import Path\nprefix='/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_memory_recovery_v1/run/'\ndef snap():\n rows=[];groups={}\n for p in Path('/proc').iterdir():\n  if not p.name.isdigit():continue\n  try:\n   if p.stat().st_uid!=601:continue\n   cwd=os.readlink(p/'cwd')\n   if not cwd.startswith(prefix):continue\n   cmd=(p/'cmdline').read_bytes().replace(b'\\0',b' ').decode(errors='replace')\n   if 'orca' not in cmd:continue\n   st=(p/'stat').read_text().rsplit(')',1)[1].split();status={}\n   for line in (p/'status').read_text().splitlines():\n    if line.startswith(('VmRSS:','VmSwap:','Threads:')):\n     a,b=line.split(':',1);status[a]=b.strip()\n   group=(p/'cgroup').read_text().strip()\n   rows.append({'pid':int(p.name),'command':cmd,'cwd':cwd,'state':st[0],'user_ticks':int(st[11]),'system_ticks':int(st[12]),'start_ticks':int(st[19]),'memory':status,'cgroup':group})\n   for line in group.splitlines():\n    a,b,c=line.split(':',2)\n    if not b:\n     base=Path('/sys/fs/cgroup')/c.lstrip('/')\n     for ancestor in [base]+list(base.parents):\n      if 'job_16680' not in str(ancestor):continue\n      for name in ('memory.current','memory.max','memory.events','cpu.stat'):\n       f=ancestor/name\n       if f.exists():groups[str(f)]=f.read_text()\n  except (FileNotFoundError,PermissionError,ProcessLookupError):continue\n return {'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'monotonic_seconds':time.monotonic(),'clock_ticks_per_second':os.sysconf('SC_CLK_TCK'),'rows':rows,'cgroup_metadata':groups}\na=snap();time.sleep(10);b=snap();print(json.dumps({'first':a,'second':b},indent=2))\n",
+  "returncode": 0,
+  "stderr": "Warning: Permanently added 'node-64-768g-20' (ED25519) to the list of known hosts.\n",
+  "scope": "read-only metadata for UID601 processes whose cwd belongs to16680; no signals, scheduler mutations or scientific calculations"
+}

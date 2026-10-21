@@ -1,3 +1,19 @@
+## 21 October: published-recipe central scout running on24 MPI ranks
+
+One whole256 La step725 central gradient is running as16602 with24MPI,
+96000MiB/MaxCore3100, standard_expand, completion42618/health42619. Preparation
+16601 passed7CPU-s/zero calls (6c4200a5, archive5fb4489b); sourceaa62db4f,
+config1c9f22df, root release7c7e0dcc and independent actual review1ceefb4d.
+Read [the active checkpoint](lbt_omol_target_reference_v1/CURRENT.md).
+
+Actual native EnGrad automatically switches VV10 to **SCNL**, activates libXC
+and disables AutoTRAH; ECP label is external def2-tzvpd.bas,46core,lmax3. This
+corrects our source-only post-SCF/built-in-ECP expectations. The exact published
+input remains unchanged; root observation16e1c029 and independent startupdd8dba98
+support continuing this version-limited recipe port. No result/force qualification
+yet. Preserve original SPEC and failed PBE0 gate; any later SPs need an explicit
+matching-SCNL declaration, not automatic EnGrad removal. No duplicate or optimizer.
+
 ## 21 October: directional force check narrowly fails; no numerical retry
 
 Both whole256La singlepoints15847/15848 are complete/admitted. Collector16582

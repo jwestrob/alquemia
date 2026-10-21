@@ -1,0 +1,67 @@
+{
+  "protocol": "lbt_omol_target_reference_v1",
+  "status": "source_prepared_pending_final_independent_review_and_actual_Slurm_preparation",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/TARGET.py",
+    "sha256": "aa62db4f37de3c50765ad81115dd75cb4aef2a99d92b4465d9bbe59df9a4a74f"
+  },
+  "configuration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/CONFIG_PREPARE.json",
+    "sha256": "f8a105695715b69cd0e8fe06ff10b5a032c55d0a97ace77745bc3b6c75352e74"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/SPEC.md",
+    "sha256": "0f11bb6a187391a5284fd8962fd9738672401b1c7cc5c370c1418effb1bc0ae4"
+  },
+  "preparation_launcher": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/preparation/RUN.sbatch",
+    "sha256": "b41e24c9d46adcbeac6bf01c0e372a6b9a6e5131c89c5fcf9d51b3153fa92c80"
+  },
+  "preparation_launcher_arguments": [
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/TARGET.py",
+    "--stage",
+    "prepare",
+    "--config",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/CONFIG_PREPARE.json",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/preparation/execution"
+  ],
+  "direct_preparation_argv": [
+    "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python3.11",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/TARGET.py",
+    "--stage",
+    "prepare",
+    "--config",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/CONFIG_PREPARE.json",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/preparation/execution"
+  ],
+  "future_run_command_pattern": "TARGET.py --stage run --config ACTUAL_BOUND_RUN_CONFIG --output FRESH_RUN_DIRECTORY",
+  "future_execution_decision_schema": {
+    "protocol": "lbt_omol_target_reference_v1",
+    "status": "approved_single_published_recipe_central",
+    "scientific_binding": "Exact binding(CONFIG) excluding preparation_result/execution_decision/_config_pin; implementation reduced to sha256",
+    "preparation_result": "Actual successful zero-call RESULT pin",
+    "permitted_execution_tasks": [
+      "central_La"
+    ],
+    "mpi_ranks": 24,
+    "maximum_new_DFT_calls": 1
+  },
+  "run_config_changes_only": [
+    "preparation_result",
+    "execution_decision"
+  ],
+  "resources": {
+    "preparation_CPUs": 1,
+    "native_MPI_ranks": 24,
+    "native_workers": 1,
+    "qos": "standard_expand",
+    "memory_and_time": "scheduler_defaults_with_allocation_derived_MaxCore"
+  },
+  "maximum_new_DFT_calls": 1,
+  "new_other_engine_calls": 0,
+  "validation": "stdlib AST and source/JSON/hash inspection only; no scientific imports or numerical execution",
+  "native_success_status": "native_core_admitted_pending_method_review",
+  "pending_method_review": "First actual method/basis/ECP/auxiliary/rotation/SCF/grid/NL/spin evidence requires saved-output review before any further calls; no automatic retries or displaced stages implemented"
+}

@@ -1,0 +1,45 @@
+{
+  "created_utc": "2026-10-21T03:06:01.517283+00:00",
+  "status": "source_launcher_review_passed",
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/SPEC.md",
+    "sha256": "0f11bb6a187391a5284fd8962fd9738672401b1c7cc5c370c1418effb1bc0ae4"
+  },
+  "asset_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/ASSET_MANIFEST.json",
+    "sha256": "de5c7f61ee66baf13940494db1b6d4365fbf841342a4809028ab9a3712cdd71d"
+  },
+  "launchers": {
+    "preparation": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/preparation/RUN.sbatch",
+      "sha256": "b41e24c9d46adcbeac6bf01c0e372a6b9a6e5131c89c5fcf9d51b3153fa92c80"
+    },
+    "run": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/run/RUN.sbatch",
+      "sha256": "d319adca1a9163f49f0bbc653772641d1fc286e96834eef32900c20f309f8058"
+    }
+  },
+  "health_armer": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/ARM_HEALTH.py",
+    "sha256": "2eb4bee12bcba66b638ed107cb16dacd042685b08c828189ab3f546851e7fa17"
+  },
+  "reviewer": "root with independent source-only review by Harvey",
+  "resources": {
+    "preparation_cpus": 1,
+    "native_mpi_ranks": 24,
+    "threads_per_rank": 1,
+    "qos": "standard_expand",
+    "account": "banfield",
+    "partition": "standard",
+    "memory_time": "scheduler defaults; allocation-derived native MaxCore",
+    "gpus": 0,
+    "automatic_requeue": false
+  },
+  "scheduler_policy_observed": {
+    "MaxTRESPerJob": "cpu=24,mem=100T",
+    "MaxTRESPerUser": "cpu=500,mem=100T",
+    "MaxWall": "5-00:00:00"
+  },
+  "health_arming": "Existing ARM_HEALTH.py sixth argument dot resolves run/execution/MANIFEST.json; separate completion watcher required.",
+  "release": "No molecular execution released by launcher review; actual preparation and source review remain required."
+}

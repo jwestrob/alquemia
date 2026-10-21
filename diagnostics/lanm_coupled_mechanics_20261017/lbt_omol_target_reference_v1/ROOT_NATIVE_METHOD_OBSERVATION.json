@@ -1,0 +1,90 @@
+{
+  "created_utc": "2026-10-21T03:14:18.175867+00:00",
+  "protocol": "lbt_omol_target_reference_v1",
+  "job_id": 16602,
+  "status": "published_input_retained_actual_SCF_NL_observed",
+  "frozen_declared_specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/SPEC.md",
+    "sha256": "0f11bb6a187391a5284fd8962fd9738672401b1c7cc5c370c1418effb1bc0ae4"
+  },
+  "frozen_implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/TARGET.py",
+    "sha256": "aa62db4f37de3c50765ad81115dd75cb4aef2a99d92b4465d9bbe59df9a4a74f"
+  },
+  "frozen_run_config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/CONFIG_RUN.json",
+    "sha256": "1c9f22df1c9ac096568dccac7689a5e6c9f8af4d8f8ae2bd0a3d589aa9ca0c83"
+  },
+  "original_root_release": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/ROOT_EXECUTION_DECISION.json",
+    "sha256": "7c7e0dcc94d2ff1d862113f362d4ea21b265eafeb3846ec5a03e5f1447bcde5f"
+  },
+  "native_snapshot": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/startup_snapshot_v1/execution__central_La__endpoint.out.snapshot",
+    "sha256": "c42b58ecdbc48a52f649ef935b1e613d3ae77bfde5d51aaee819c9d28a40e0ee"
+  },
+  "native_header_evidence": [
+    {
+      "line": 216,
+      "text": ""
+    },
+    {
+      "line": 217,
+      "text": ""
+    },
+    {
+      "line": 218,
+      "text": "WARNING: B97M-V or wB97M-V functional requested."
+    },
+    {
+      "line": 219,
+      "text": "  ===> : libXC variant has now been activated."
+    },
+    {
+      "line": 220,
+      "text": "         Any manually given DFX/HFX/RangeSep scaling parameters are IGNORED!"
+    },
+    {
+      "line": 221,
+      "text": ""
+    },
+    {
+      "line": 222,
+      "text": ""
+    },
+    {
+      "line": 223,
+      "text": "WARNING: Analytic gradients for DFT-NL dispersion can only be done using the self-consistent method,"
+    },
+    {
+      "line": 224,
+      "text": "  ===>   Switching to SCNL"
+    },
+    {
+      "line": 225,
+      "text": ""
+    },
+    {
+      "line": 226,
+      "text": "WARNING: Self-consistent DFT-NL dispersion not compatible with AutoTRAH."
+    },
+    {
+      "line": 227,
+      "text": "  ===>   Switching AutoTRAH off"
+    }
+  ],
+  "declared_post_SCF_expectation_supported": false,
+  "actual_native_behavior": {
+    "functional_implementation": "libXC automatically activated for wB97M-V",
+    "nonlocal_treatment": "SCNL automatically activated for analytic gradient",
+    "AutoTRAH": "automatically disabled",
+    "ECP_label": "def2-tzvpd.bas,46core,lmax3,atom255"
+  },
+  "root_decision": "Continue the unchanged exact published EnGrad input as a measured ORCA6.1.1 recipe port. The scout remains useful for its actual executed Hamiltonian; it cannot be admitted or reported as post-SCF VV10. Preserve all original mistaken expectation records.",
+  "input_or_job_changes": false,
+  "additional_calls_released": 0,
+  "parser_changes": false,
+  "next_step": "Review the eventual native result as actual self-consistent VV10, with primary documentation and state/version limitations. Any future energy-only endpoint needs a separately declared matching Hamiltonian; merely dropping EnGrad is not released.",
+  "old_PBE0_gate": "unchanged scientific failure",
+  "physical_accuracy_or_preference_claim": false
+}

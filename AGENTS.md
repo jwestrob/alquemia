@@ -3,6 +3,18 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the scientific goal remains authorized and unmet.
 
+21 October UTC: newest whole256 step725 published-recipe scout16602 RUNNING,
+24MPI/96000MiB/MaxCore3100, standard_expand, completion42618 and health42619.
+Prep16601 passed7CPU-s/zero calls, result6c4200a5/archive5fb4489b. Sourceaa62db4f,
+run config1c9f22df/release7c7e0dcc; read lbt_omol_target_reference_v1/CURRENT.md.
+Actual EnGrad automatically switches to SCNL, activates libXC and disables
+AutoTRAH; external-file La ECP46. Earlier post-SCF/built-in-ECP descriptions are
+superseded by ROOT_NATIVE_METHOD_OBSERVATION16e1c029 and STARTUP_REVIEWdd8dba98.
+Keep exact published input running unchanged; it is an ORCA6.1.1 recipe port,
+not exact6.0.0 label replay. No native result yet. Preserve original SPEC/source
+and old PBE0 gate failure. Any future SPs need a separately declared matching
+SCNL Hamiltonian, not automatic EnGrad removal. No duplicate or new optimizer.
+
 21OctoberUTC:newestdirectionalpair15847/15848 COMPLETE/admitted;16582scientific
 failed_directional_consistency, result1f2e53ff. FD−66.439132/analytic−66.453200,
 residual.01406777 >frozentol.01164532;MACE−9.027043. Preserve strictfailure;

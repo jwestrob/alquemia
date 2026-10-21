@@ -1,3 +1,26 @@
+## 21 October: supported-guess central recovery running
+
+**16611 RUNNING**,24MPI/96000MiB/MaxCore3100,standard_expand/defaultmemory/time.
+Completion66459 and health66460 are active (startup7c423afe/b597fd8e).
+Preparation16609 PASSED
+7CPU-s/zero calls; result95e1852b/archive1e51bb64. Independent actual813440eb,
+source27ac4e80/configb654d846/release6df38e02 are frozen.
+Read [the recovery checkpoint](lbt_omol_pmodel_reference_v1/CURRENT.md).
+Only PAtom→PModel changes in the native template; same XYZ/basis/rotation/state
+and SCNL treatment. This permits native atomic-density initialization and may
+change the SCF solution. One endpoint only; no result/qualification yet.
+Original16602 failure/outputs preserved, archive4fee749e (12,936CPU-s).
+
+## 21 October: published-recipe scout failed during the initial guess
+
+16602 failed before molecular SCF: PAtom reports missing La atomic orbitals.
+No final energy or forces exist; unchanged retry or extra memory is unsupported.
+Cost539s on24CPUs =12,936 allocatedCPU-s. Failure and native SCNL observation
+are preserved in lbt_omol_target_reference_v1/ROOT_TERMINAL_REVIEW.json and
+TERMINAL_REVIEW.md. Root is preparing one separately declared PModel-guess
+variant with all other electronic/physical settings fixed. It is not exact
+published-default replay; no recovery has been submitted yet.
+
 ## 21 October: published-recipe central scout running on24 MPI ranks
 
 One whole256 La step725 central gradient is running as16602 with24MPI,

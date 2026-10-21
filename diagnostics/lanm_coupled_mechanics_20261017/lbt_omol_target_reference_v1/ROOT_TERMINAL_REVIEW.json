@@ -1,0 +1,46 @@
+{
+  "created_utc": "2026-10-21T03:27:28.515132+00:00",
+  "job_id": 16602,
+  "status": "native_initial_guess_failure_no_scientific_result",
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/run/execution/RESULT.json",
+    "sha256": "881852372e543e2f2c721e1b162997cb348c2bc3ddbbbb7d6e910560f7b5c55f"
+  },
+  "output": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/run/execution/central_La/endpoint.out",
+    "sha256": "770979dbf59e185ea50ead6687278985f3bc0c4333e0c81604a0ed4756f990c0"
+  },
+  "native_receipt": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/run/execution/central_La/endpoint.out.execution.json",
+    "sha256": "d24e2e1c2134ead4a2b628eca2415bf8cff06cddcd858bf1a0f79077f4f4df8a"
+  },
+  "native_method_observation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/ROOT_NATIVE_METHOD_OBSERVATION.json",
+    "sha256": "16e1c029e1ec17c6d28a761da162a22e5f1634dc7a5c59ffb4760f1aae2ca686"
+  },
+  "observations": {
+    "failure_text": "Error: SCF orbitals not available for element 57(La)",
+    "first_failure_line": 2154,
+    "module": "orca_guess/guess_eht.cpp line712",
+    "terminal": "ORCA finished by error termination in GUESS",
+    "SCF_converged": false,
+    "gradient_available": false,
+    "energy_available": false,
+    "published_initial_guess": "PAtom",
+    "memory_failure_observed": false,
+    "external_returncode": 0,
+    "returncode_caveat": "Native driver reported return0 despite explicit GUESS abort; semantic execution checks correctly reject result."
+  },
+  "scheduler": {
+    "state": "FAILED",
+    "exit_code": "1:0",
+    "elapsed_seconds": 539,
+    "allocated_CPUs": 24,
+    "allocated_CPU_seconds": 12936,
+    "allocated_memory_MiB": 96000,
+    "batch_MaxRSS_KiB": 76298076,
+    "TotalCPU": "03:29:47",
+    "note": "Allocated capacity and batch MaxRSS are scheduler observations, not full per-rank utilization."
+  },
+  "decision": "Preserve failed published-input attempt. No unchanged retry, parser recovery or resource increase is justified. Source review will select at most one separately declared initial-guess alternative while holding physical input and electronic Hamiltonian fixed; its electronic solution can differ and it will not be exact published-recipe replay. No molecular recovery released by this record."
+}

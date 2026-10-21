@@ -1,0 +1,66 @@
+{
+  "created_utc": "2026-10-21T03:11:23.091650+00:00",
+  "protocol": "lbt_omol_target_reference_v1",
+  "status": "approved_single_published_recipe_central",
+  "scientific_binding": {
+    "protocol": "lbt_omol_target_reference_v1",
+    "specification": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/SPEC.md",
+      "sha256": "0f11bb6a187391a5284fd8962fd9738672401b1c7cc5c370c1418effb1bc0ae4"
+    },
+    "implementation": "aa62db4f37de3c50765ad81115dd75cb4aef2a99d92b4465d9bbe59df9a4a74f",
+    "direction_helper": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_reference_direction_v1/DIRECTION.py",
+      "sha256": "cd4396c02cf50905307acbf90772d062ae4a6a12aaf9914e01562167dca1ab32"
+    },
+    "direction_config": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_reference_direction_v1/CONFIG_RUN.json",
+      "sha256": "dd4875fabd6d17a12d8c73ad7254068ba83a7070b33d079c62b3b7c2dcd74ff7"
+    },
+    "external_basis": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/assets/def2-tzvpd.bas",
+      "sha256": "7389c56f0cff9e76098b0757a34d1abdd79c48e9249597cea074a0106a3462a6"
+    },
+    "primary_calc": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/assets/calc.py",
+      "sha256": "6cbf04e71579e9021ba31628f04463a59b28bc063834dc395581f579133c9843"
+    },
+    "primary_recipe": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/assets/recipes.py",
+      "sha256": "15d2e4d2c3e204998f29a07433aa56ad942d273d88e95998b4e1258d18a9d842"
+    },
+    "python": {
+      "path": "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm/bin/python3.11",
+      "sha256": "53244dfc692ccbfd6a065f053dfa2026e2f3e4755beef84d600c8f7dbc9b5b27"
+    },
+    "python_prefix": "/groups/banfield/users/jwestrob/conda_envs/lanm_qmmm",
+    "mpi_ranks": 24
+  },
+  "preparation_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/preparation/execution/RESULT.json",
+    "sha256": "6c4200a5213a820c8acda4f20f62b1f8c4377c2205738a57f41ef182b07117da"
+  },
+  "permitted_execution_tasks": [
+    "central_La"
+  ],
+  "mpi_ranks": 24,
+  "maximum_new_DFT_calls": 1,
+  "independent_actual_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/ACTUAL_PREPARATION_REVIEW.md",
+    "sha256": "1ceefb4dca1cbaeb37a93265b323a9bb3e0b0b8edbfa0baf864bd2271355a21c"
+  },
+  "root_actual_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/ROOT_ACTUAL_PREPARATION_REVIEW.json",
+    "sha256": "99aa9c7a6f5aa121f042b227162a5ef4e3cbe4ebfe9b370c8da555e22b14d711"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/SPEC.md",
+    "sha256": "0f11bb6a187391a5284fd8962fd9738672401b1c7cc5c370c1418effb1bc0ae4"
+  },
+  "scientific_question": "At exact consumed step725, how much model/reference force discrepancy remains using the published OMol25 recipe port to ORCA6.1.1?",
+  "unchanged": "Whole256 atom identities, coordinates, charge\u22122/multiplicity1, saved comparison forces and direction; no optimization or geometry change.",
+  "method_limitation": "Published recipe port, not exact ORCA6.0.0 training-label reproduction. Native core success remains pending actual method/state review.",
+  "next_call_release": false,
+  "automatic_retry": false,
+  "resource_policy": "One24MPI native run, standard_expand, scheduler default memory/time, allocation-derived MaxCore; noGPU."
+}

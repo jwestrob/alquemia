@@ -3,6 +3,21 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the scientific goal remains authorized and unmet.
 
+21October newest:PModel central recovery16611 RUNNING24MPI/96000MiB/MaxCore3100,
+standard_expand/defaultmemory/time; completion66459/health66460 active.
+Startup7c423afe/b597fd8e confirmsactualruntime/SCNL/ECP; guess/SCFpending. Prep16609
+PASSED7CPU-s/zero calls (95e1852b/archive1e51bb64),actualreview813440eb. Read
+lbt_omol_pmodel_reference_v1/CURRENT.md. Source27ac4e80/configb654d846/release6df38e02
+frozen. OnlyPAtom→PModel changes; sameXYZ/basis/rotation/state/nativeSCNL. Native
+atomicguess within scope/cost; convergedrootmaydiffer. Oneendpoint/noautoretry
+oroptimizer; noresultyet. Failed16602 preserved, archive4fee749e/12,936CPU-s.
+
+21 October newest:16602 FAILED before molecularSCF because PAtom lacks La
+atomic orbitals. No energy/forces; cost12,936CPU-s. Preserve failedattempt and
+automaticSCNL observation. Read lbt_omol_target_reference_v1/TERMINAL_REVIEW.md.
+Root prepares one separately declared PModel-guess recovery, same remaining
+settings, no submission yet. Newer CURRENT supersedes startup notes below.
+
 21 October UTC: newest whole256 step725 published-recipe scout16602 RUNNING,
 24MPI/96000MiB/MaxCore3100, standard_expand, completion42618 and health42619.
 Prep16601 passed7CPU-s/zero calls, result6c4200a5/archive5fb4489b. Sourceaa62db4f,

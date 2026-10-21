@@ -1,3 +1,16 @@
+# Published-recipe central scout — failed before SCF
+
+21 October UTC: **16602 FAILED** after539s on24CPUs (12,936 allocatedCPU-s).
+PAtom initialization aborted: `SCF orbitals not available for element57(La)`.
+No final energy, SCF solution or gradient exists; no force comparison is available.
+Read ROOT_TERMINAL_REVIEW.json. Preserve the complete failed attempt.
+A separately declared PModel-only recovery16611 is now running; see
+[its active checkpoint](../lbt_omol_pmodel_reference_v1/CURRENT.md).
+The original failed attempt is closed; no unchanged retry.
+The automatic SCNL observation remains valid.
+
+## Historical startup checkpoint
+
 # Published-recipe central scout — running
 
 21 October UTC: **16602 is RUNNING**, 24 MPI ranks, 96,000 MiB, MaxCore3100MB/rank,

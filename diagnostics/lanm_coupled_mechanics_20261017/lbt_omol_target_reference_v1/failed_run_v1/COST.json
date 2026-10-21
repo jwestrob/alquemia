@@ -1,0 +1,53 @@
+{
+  "read_utc": "2026-10-21T03:29:04.501381+00:00",
+  "command": [
+    "sacct",
+    "-j",
+    "16602",
+    "--units=K",
+    "--parsable2",
+    "--format=JobIDRaw,JobName,State,ExitCode,ElapsedRaw,AllocCPUS,AllocTRES,TotalCPU,MaxRSS,NodeList,Start,End"
+  ],
+  "sacct": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_target_reference_v1/failed_run_v1/SACCT.txt",
+    "sha256": "e6c860d63b04dec1ab8d3b12224d008506314359140b2c041991942d02ec6ff9",
+    "bytes": 390
+  },
+  "actual_job": {
+    "JobIDRaw": "16602",
+    "JobName": "lbt-omol-recipe-central",
+    "State": "FAILED",
+    "ExitCode": "1:0",
+    "ElapsedRaw": "539",
+    "AllocCPUS": "24",
+    "AllocTRES": "billing=24,cpu=24,mem=98304000K,node=1",
+    "TotalCPU": "03:29:47",
+    "MaxRSS": "",
+    "NodeList": "node-64-768g-13",
+    "Start": "2026-10-20T20:11:23",
+    "End": "2026-10-20T20:20:22"
+  },
+  "batch_rows": [
+    {
+      "JobIDRaw": "16602.batch",
+      "JobName": "batch",
+      "State": "FAILED",
+      "ExitCode": "1:0",
+      "ElapsedRaw": "539",
+      "AllocCPUS": "24",
+      "AllocTRES": "cpu=24,mem=98304000K,node=1",
+      "TotalCPU": "03:29:47",
+      "MaxRSS": "76298076K",
+      "NodeList": "node-64-768g-13",
+      "Start": "2026-10-20T20:11:23",
+      "End": "2026-10-20T20:20:22"
+    }
+  ],
+  "elapsed_seconds": 539,
+  "allocated_CPUs": 24,
+  "allocated_CPU_seconds": 12936,
+  "allocated_GPUs": 0,
+  "allocated_GPU_seconds": 0,
+  "native_calls_attempted": 1,
+  "scope": "Failed native allocation 16602 only; prior preparation cost7CPU-s excluded here. Allocation and batch rows not double counted."
+}

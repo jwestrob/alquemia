@@ -17,7 +17,9 @@ reviewsd87d880f/3c8bc24f. This phase totals518881allocatedCPU-s,zeroGPU,two new
 nativeenergycalls. Sourcecd4396c0 and originalgate remain unchanged.
 
 This finite test is CLOSED with its failure retained. No automaticretry,
-step/gridchange, centralrerun, furtheroptimizer or othermetal call. Root has
-separately declared [source-only training-recipe verification](../lbt_omol_target_reference_v1/SOURCE_REVIEW_SCOPE.md).
-No target-reference calculation is released yet. Delayed callbacks need receipt
-acknowledgement only, not resubmission. Root owns integration and launches.
+step/gridchange, centralrerun, furtheroptimizer or othermetal call. The separate published-input reference scout is governed by
+[its newer active checkpoint](../lbt_omol_target_reference_v1/CURRENT.md), including
+the observed SCNL treatment; older source-only planning is historical.
+Delayed callbacks need receipt acknowledgement only, not resubmission.
+Minus15847 completion delivery is recorded in DELIVERY_COMPLETION_ACK_15847.json.
+Root owns integration and launches.

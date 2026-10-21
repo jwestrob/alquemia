@@ -3,6 +3,16 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the scientific goal remains authorized and unmet.
 
+21October newest: resource-only central recovery16680 RUNNING,12MPI within
+24allocatedCPUs/default96000MiB,MaxCore6200; runtime5fdad85d confirms exact
+resource-only input change. Completion91376/health91377 active. Preparation
+16667 passed7CPU-s/zero calls; resultcd2d06b2/archive db5e34b1; config908678ef/
+releasec996c2e2. Read lbt_omol_memory_recovery_v1/CURRENT.md under the diagnostic.
+16611 remains OUT_OF_MEMORY after962s24CPU (23088CPU-s), after successful
+PModel/La guess and beta rotation; firstFock exceeded per-rank memory. No result;
+archive94344987 preserved. No duplicate, memory/time override or extra endpoint.
+Older startup entries below are historical.
+
 21October newest:PModel central recovery16611 RUNNING24MPI/96000MiB/MaxCore3100,
 standard_expand/defaultmemory/time; completion66459/health66460 active.
 Startup7c423afe/b597fd8e confirmsactualruntime/SCNL/ECP; guess/SCFpending. Prep16609

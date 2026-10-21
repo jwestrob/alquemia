@@ -1,0 +1,33 @@
+{
+  "created_utc": "2026-10-21T03:34:32.128830+00:00",
+  "status": "actual_zero_call_preparation_passed",
+  "job_id": 16609,
+  "actual_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_pmodel_reference_v1/preparation/execution/RESULT.json",
+    "sha256": "95e1852b789ed69976ee85ab5a616a59b487c058107cfb279adcabe4ede586e3"
+  },
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_pmodel_reference_v1/preparation/execution/MANIFEST.json",
+    "sha256": "d0ed827a3bf924b5f3b1d66d1df96a251eb5cc6abe7e2fc6b71c465af91fe1e8"
+  },
+  "input_evidence": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_pmodel_reference_v1/preparation/execution/INPUT_EVIDENCE.json",
+    "sha256": "48ee50224d32618cfece6b6ad8534461a4d370c86f89da8324ae7da4c3d81078"
+  },
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_pmodel_reference_v1/TARGET.py",
+    "sha256": "27ac4e80b5fb53c049adc6f67822f1629cd3bd7cf372edf1d4708cedcc829856"
+  },
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_pmodel_reference_v1/CONFIG_PREPARE.json",
+    "sha256": "a1007083e3d3139848b18bd3157d2cf0746f52e429c42f44dc34872fcfc159ad"
+  },
+  "static_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_pmodel_reference_v1/STATIC_REVIEW.md",
+    "sha256": "76932bdad6e8b570055bea96c90c77ffcb098ae00c19252dc7cf1aa2b0fe53d1"
+  },
+  "root_review": "Actual Slurm preparation passes inherited physical/state/source gates. Exact byte comparison shows only PAtom-to-PModel deck change; XYZ and external basis identical to16602. All six engine counters zero. No numerical analysis executed on login.",
+  "engine_calls": 0,
+  "scheduler_snapshot": "16609|COMPLETED|0:0|7|1|billing=1,cpu=1,mem=4000M,node=1\n16609.batch|COMPLETED|0:0|7|1|cpu=1,mem=4000M,node=1\n",
+  "decision": "One central24MPI endpoint may be separately bound after independent actual review; native atomic initialization allowed as declared. No additional endpoint or automatic retry."
+}

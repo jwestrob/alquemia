@@ -1,0 +1,47 @@
+{
+  "created_utc": "2026-10-21T03:36:38.522198+00:00",
+  "job_id": 16611,
+  "status": "startup_runtime_allocation_and_watchers_passed",
+  "runtime": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_pmodel_reference_v1/run/execution/central_La/endpoint.runtime.json",
+    "sha256": "78c29fed0cefd5dfdaaf0927bb3b74e0dbafacd9324f6d0c20fdabb9a3e42652"
+  },
+  "runtime_input": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_pmodel_reference_v1/run/execution/central_La/endpoint.runtime.inp",
+    "sha256": "b2893d69ad00d4d4b8998628209c6c3bd99fbd2474a3d2d70a0ddc0b59c7a4b9"
+  },
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_pmodel_reference_v1/run/execution/MANIFEST.json",
+    "sha256": "d1416ce14b472bd5c92668ab47892cd297b2471f9a5de328083de4d7074edafd"
+  },
+  "scheduler": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_pmodel_reference_v1/run/ROOT_STARTUP_SCONTROL.txt",
+    "sha256": "729e4e418c6eca6b96979f36c02cc56aa994f0a24a4f5f65484bf6dd72c0e977"
+  },
+  "watcher": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_pmodel_reference_v1/run/WATCHER.json",
+    "sha256": "69b75deab69c0df923b39646cd74eeb70ef0d4d2edfdef69ec5f42d6c9f6302d"
+  },
+  "health": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_pmodel_reference_v1/run/HEALTH_ARMED.json",
+    "sha256": "7857c0a76250249b63dfaac43c41049125951c0a57a565980102c5cf6067c7e6"
+  },
+  "live_processes": {
+    "WATCHER.json": "66459 Ss   /usr/bin/python3 /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/slurm_wakeup_20260927/watch_and_queue.py --jobs 16611 --thread 01a0a63a-ee36-7483-b726-1f7f5b7f75cc --codex /home/jwestrob/.nvm/versions/node/v22.23.1/bin/codex --receipt /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_pmodel_reference_v1/run/completion_event.json --event lbt-omol-pmodel-central-scout-v1 --interval 15",
+    "HEALTH_ARMED.json": "66460 Ss   /usr/bin/python3 /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/scripts/slurm_native_health_watch.py --manifest /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_pmodel_reference_v1/run/execution/MANIFEST.json --job 16611 --thread 01a0a63a-ee36-7483-b726-1f7f5b7f75cc --codex /home/jwestrob/.nvm/versions/node/v22.23.1/bin/codex --receipt /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_pmodel_reference_v1/run/health_receipt.json --interval 30"
+  },
+  "allocation": {
+    "allocated_cpus": 24,
+    "allocated_memory_MiB": 96000,
+    "base_renderer_sha256": "4d75904eca4296abd892958df700063e272f5f029a0ce256bcf1b579768aeadb",
+    "local_mpi_slots": 24,
+    "maxcore_MB": 3100,
+    "memory_source": "SLURM_MEM_PER_NODE",
+    "per_rank_decimal_MB_before_rounding": 3145.7280000000005,
+    "ranks_per_worker": 24,
+    "reserve_fraction": 0.25,
+    "workers": 1,
+    "wrapper_sha256": "46356652756311981a51732525457c697b31e860348dee4b590d72e7bddee76d"
+  },
+  "root_review": "Actual runtime input differs from16602 only PAtom\u2192PModel; one24MPI worker, default96000MiB, MaxCore3100 and both watcher processes verified. This is startup only; no scientific endpoint available."
+}

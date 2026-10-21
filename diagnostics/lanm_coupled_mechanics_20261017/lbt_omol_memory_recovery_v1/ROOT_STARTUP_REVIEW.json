@@ -1,0 +1,61 @@
+{
+  "created_utc": "2026-10-21T04:02:59.993705+00:00",
+  "job_id": 16680,
+  "status": "running_resource_and_method_startup_passed",
+  "scheduler_snapshot": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_memory_recovery_v1/STARTUP_SCONTROL.txt",
+    "sha256": "2f407ab29806d3b2f88f881d532a4e152b48a56270018f2d15d04b02efff5546"
+  },
+  "start_receipt": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_memory_recovery_v1/run/execution/START.json",
+    "sha256": "bc875ab7ab9ddd1ad788376948c8034d8d295c944819f1d3509c04207c417451"
+  },
+  "runtime": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_memory_recovery_v1/run/execution/central_La/endpoint.runtime.json",
+    "sha256": "57f57556c2cfc3fbf7b560166dc71baa2008a03ea7177faa65c1f03fbe56fe43"
+  },
+  "runtime_input": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_memory_recovery_v1/run/execution/central_La/endpoint.runtime.inp",
+    "sha256": "073e4a8d5c11d2de2119bc8e03a6879635030d24e9c9f5cf669d608214880d1a"
+  },
+  "resource_policy": {
+    "allocated_cpus": 24,
+    "allocated_memory_MiB": 96000,
+    "base_renderer_sha256": "4d75904eca4296abd892958df700063e272f5f029a0ce256bcf1b579768aeadb",
+    "local_mpi_slots": 12,
+    "maxcore_MB": 6200,
+    "memory_source": "SLURM_MEM_PER_NODE",
+    "per_rank_decimal_MB_before_rounding": 6291.456000000001,
+    "ranks_per_worker": 12,
+    "reserve_fraction": 0.25,
+    "workers": 1,
+    "wrapper_sha256": "46356652756311981a51732525457c697b31e860348dee4b590d72e7bddee76d"
+  },
+  "only_runtime_input_changes": [
+    "MaxCore3100 to6200",
+    "PAL24 to12"
+  ],
+  "scientific_template_unchanged": true,
+  "single_thread_guard": "All five thread variables verified by allocation guard before native call; no measured CPU-utilization claim.",
+  "native_header_observations": [
+    "NOTE: MaxCore=6200 MB was set to SCF,MP2,MDCI,CIPSI,MRCI,RASCI and CIS",
+    "  ===> : libXC variant has now been activated.",
+    "  ===>   Switching to SCNL",
+    "  ===>   Switching AutoTRAH off",
+    " Group 1, Type La ECP def2-tzvpd.bas (replacing 46 core electrons, lmax=3)"
+  ],
+  "completion_watcher": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_memory_recovery_v1/run/WATCHER.json",
+    "sha256": "f79363157972303c3a4175888a24bf9e69d6977875d163ac5b62992c365f692e"
+  },
+  "health_watcher": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_memory_recovery_v1/run/HEALTH_ARMED.json",
+    "sha256": "3f26bfdf0b7454a7f70f53f9986a75bd59c00baea80ce4bd4488b3566c0048e1"
+  },
+  "watcher_processes_live": true,
+  "initial_guess_completion": "pending",
+  "molecular_result": "pending",
+  "physical_state_qualified": false,
+  "force_accuracy_qualified": false,
+  "note": "Proactive startup review; no callback acknowledgement and no further native release."
+}

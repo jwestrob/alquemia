@@ -1,0 +1,53 @@
+{
+  "read_utc": "2026-10-21T04:01:07.552276+00:00",
+  "command": [
+    "sacct",
+    "-j",
+    "16667",
+    "--units=K",
+    "--parsable2",
+    "--format=JobIDRaw,JobName,State,ExitCode,ElapsedRaw,AllocCPUS,AllocTRES,TotalCPU,MaxRSS,NodeList,Start,End"
+  ],
+  "sacct": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_omol_memory_recovery_v1/preparation_v1/SACCT.txt",
+    "sha256": "6b8f80ba51f61111f389af3abd21349eb8ce39a053939f00abb32ed4a578dc41",
+    "bytes": 383
+  },
+  "actual_job": {
+    "JobIDRaw": "16667",
+    "JobName": "lbt-omol-memory-prepare",
+    "State": "COMPLETED",
+    "ExitCode": "0:0",
+    "ElapsedRaw": "7",
+    "AllocCPUS": "1",
+    "AllocTRES": "billing=1,cpu=1,mem=4096000K,node=1",
+    "TotalCPU": "00:05.364",
+    "MaxRSS": "",
+    "NodeList": "node-64-768g-1",
+    "Start": "2026-10-20T21:00:04",
+    "End": "2026-10-20T21:00:11"
+  },
+  "actual_batch_rows": [
+    {
+      "JobIDRaw": "16667.batch",
+      "JobName": "batch",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "ElapsedRaw": "7",
+      "AllocCPUS": "1",
+      "AllocTRES": "cpu=1,mem=4096000K,node=1",
+      "TotalCPU": "00:05.364",
+      "MaxRSS": "203300K",
+      "NodeList": "node-64-768g-1",
+      "Start": "2026-10-20T21:00:04",
+      "End": "2026-10-20T21:00:11"
+    }
+  ],
+  "elapsed_seconds": 7,
+  "allocated_CPUs": 1,
+  "allocated_CPU_seconds": 7,
+  "allocated_GPUs": 0,
+  "allocated_GPU_seconds": 0,
+  "new_molecular_calls": 0,
+  "scope": "Preparation16667 only, no batch double count or earlier failed/native allocation cost."
+}

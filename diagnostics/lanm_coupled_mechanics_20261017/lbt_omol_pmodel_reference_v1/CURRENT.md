@@ -1,3 +1,19 @@
+# PModel scout — out of memory after successful initialization
+
+21 October UTC: **16611 OUT_OF_MEMORY**,962s on24CPUs/96000MiB (23,088CPU-s).
+PModel and its native La atomic density completed; requested beta514/515 rotation
+printed. Main LEANSCF warned3100MB/rank available vs4650.8MB estimated, then
+Slurm killed a rank at first Fock formation. No molecular energy or forces.
+Read ROOT_TERMINAL_REVIEW.json. Preserve original outputs and failed admission.
+
+A separate resource-only recovery is now running as16680:12MPI ranks in a
+24CPU allocation, same96000MiB, one numerical thread/rank, MaxCore6200 and an
+unchanged scientific template. Preparation16667 passed; actual runtime passed.
+Read ../lbt_omol_memory_recovery_v1/CURRENT.md. This failed branch is closed;
+no unchanged retry or duplicate submission.
+
+## Historical startup checkpoint
+
 # PModel recovery — central scout running
 
 21 October UTC: **16611 RUNNING**,24MPI,96,000MiB,MaxCore3100MB/rank,

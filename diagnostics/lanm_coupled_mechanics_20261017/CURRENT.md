@@ -1,3 +1,19 @@
+## 21 October: resource-only recovery is running
+
+**16680 RUNNING**: 12 MPI processes in 24 allocated CPUs, default 96000MiB,
+MaxCore6200MB/process. Actual startup 5fdad85d confirms the grant and exact
+resource-only input change. Completion91376/health91377 active. Preparation
+16667 passed (7CPU-s, zero calls), resultcd2d06b2/archive db5e34b1; run config
+908678ef/root releasec996c2e2. No final energy or gradient yet.
+Read [the active checkpoint](lbt_omol_memory_recovery_v1/CURRENT.md).
+
+16611 remains OUT_OF_MEMORY (962s×24CPU =23088CPU-s), after successful PModel
+initialization and beta rotation. Its first Fock exceeded per-rank memory;
+no molecular result. Archive94344987 preserves all evidence. Scientific inputs
+remain identical; no memory/time overrides or extra endpoints are released.
+
+### Historical checkpoints below
+
 ## 21 October: supported-guess central recovery running
 
 **16611 RUNNING**,24MPI/96000MiB/MaxCore3100,standard_expand/defaultmemory/time.

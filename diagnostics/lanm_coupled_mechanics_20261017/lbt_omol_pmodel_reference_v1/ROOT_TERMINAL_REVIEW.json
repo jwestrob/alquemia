@@ -1,0 +1,50 @@
+{
+  "created_utc": "2026-10-21T03:54:12.675040+00:00",
+  "job_id": 16611,
+  "status": "native_out_of_memory_after_successful_guess",
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_pmodel_reference_v1/run/execution/RESULT.json",
+    "sha256": "0fc5e6a1ddd98de6bfeb233d0f385f315e6f199a9e608e31009b9d3371119d3c"
+  },
+  "native_output": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_pmodel_reference_v1/run/execution/central_La/endpoint.out",
+    "sha256": "9d877978f816272fe22a2d03bc876a843378e5dc997df501cb34cbedb51ed9c3"
+  },
+  "native_receipt": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_pmodel_reference_v1/run/execution/central_La/endpoint.out.execution.json",
+    "sha256": "1a073ff0296d8277a00c950d8c7bd3f656481a824c58002767647c3149bcad2e"
+  },
+  "slurm_stderr": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_pmodel_reference_v1/run/slurm-16611.err",
+    "sha256": "e305a4e3ee4e5275352ada997516b0cd3c800b23df0cfc68514b12500a5527a1"
+  },
+  "atomic_guess_artifacts": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_omol_pmodel_reference_v1/run/execution/ATOMIC_GUESS_ARTIFACTS.json",
+    "sha256": "f5eafdb317feb5d32ba37f3426294adc6f0fefc452e2e564ceea5ddb3bdc0f4d"
+  },
+  "observations": {
+    "PModel_guess_completed": true,
+    "La_atomic_density_returncode": 0,
+    "beta_rotation_printed": "514(1) 515(1) cos(t)=0.939693 sin(t)=0.342020",
+    "main_SCF_phase": "LEANSCF, first incremental Fock formation",
+    "printed_memory_available_MB_per_rank": 3100.0,
+    "printed_memory_needed_estimate_MB_per_rank": 4650.8,
+    "native_failure": "rank0 signal9; error termination in LEANSCF",
+    "scheduler_oom_kill": true,
+    "main_final_energy_available": false,
+    "main_gradient_available": false,
+    "returncode_caveat": "Driver return0 despite native failure; semantic admission remains invalid."
+  },
+  "scheduler": {
+    "state": "OUT_OF_MEMORY",
+    "exit_code": "0:125",
+    "elapsed_seconds": 962,
+    "allocated_CPUs": 24,
+    "allocated_memory_MiB": 96000,
+    "allocated_CPU_seconds": 23088,
+    "allocated_GPU_seconds": 0,
+    "batch_MaxRSS_KiB": 98305428,
+    "TotalCPU": "06:13:37"
+  },
+  "decision": "Preserve OOM result and successful guess evidence. An unchanged resource retry is unsupported. Current standard_expand cap is24CPUs/job;48CPU layout is not permitted. Prepare one separately declared12MPI\u00d72CPUs/task layout with24allocatedCPUs/same96000MiB, one thread/rank and unchanged allocation-derived memory renderer. This doubles per-rank headroom while retaining molecular inputs; no memory/time override, GBW seed or method change. No native recovery is released by this record."
+}

@@ -1,0 +1,26 @@
+{
+  "recorded_utc": "2026-10-21T03:55:49.863316+00:00",
+  "command": [
+    "sacctmgr",
+    "-n",
+    "-P",
+    "show",
+    "qos",
+    "standard_expand",
+    "format=Name,Flags,MaxTRESPJ,MaxTRESPU,MaxJobsPU,MaxSubmitPU"
+  ],
+  "stdout": "standard_expand|DenyOnLimit,OverPartQOS|cpu=24,mem=100T|cpu=500,mem=100T|20|200\n",
+  "stderr": "",
+  "declared_layout": {
+    "nodes": 1,
+    "mpi_ranks": 12,
+    "cpus_per_task": 2,
+    "allocated_CPUs": 24,
+    "numerical_threads_per_rank": 1,
+    "workers": 1
+  },
+  "memory_policy": "Scheduler default memory per CPU; actual AllocTRES must grant96000MiB, unchanged renderer uses75percent divided by12MPIranks; expectedMaxCore6200MB. No memory/timeflags.",
+  "resource_interpretation": "24CPUs charged/reserved,12MPIprocesses with1thread each. The extra CPU entitlement supplies default-memory headroom; no fullCPUutilization claim.",
+  "maximum_requested_whole_molecule_endpoints": 1,
+  "scientific_change": "None: preserve completePModeltemplate/XYZ/basis/rotation/state; only PALrankcount and allocationderivedMaxCore change at runtime."
+}

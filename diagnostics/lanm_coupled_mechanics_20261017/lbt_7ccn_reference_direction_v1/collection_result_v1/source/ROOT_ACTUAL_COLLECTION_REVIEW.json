@@ -1,0 +1,55 @@
+{
+  "created_utc": "2026-10-21T02:52:28.274132+00:00",
+  "job_id": 16582,
+  "status": "scientific_failure_preserved_no_technical_recovery",
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_reference_direction_v1/collection/execution/RESULT.json",
+    "sha256": "1f2e53ffb590ae766f3230c037519220218ccb6bb17241d8168523619145eb81"
+  },
+  "independent_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_reference_direction_v1/ACTUAL_COLLECTION_REVIEW.md",
+    "sha256": "3c8bc24fa108d5f6a6ae18ec2f3ecec33f6cf47d2e473d74b1feb0978c68ed15"
+  },
+  "comparison": {
+    "status": "failed_directional_consistency",
+    "passed": false,
+    "definition": "force_FD=-(E_plus-E_minus)/(2h); signed residual=FD-minus-central-analytic",
+    "units": "kcal/mol/Angstrom",
+    "printed_energy_hartree": {
+      "minus": "-6765.683736715161",
+      "plus": "-6765.681619165231"
+    },
+    "energy_difference_hartree_decimal": "0.002117549930",
+    "FD_force_decimal": "-66.4391321371518410",
+    "analytic_force_decimal": "-66.45319991036233",
+    "signed_residual_decimal": "0.0140677732104890",
+    "tolerance_decimal": "0.011645319991036233",
+    "FD_force_kcal_mol_A": -66.43913213715184,
+    "analytic_force_kcal_mol_A": -66.45319991036233,
+    "signed_residual_kcal_mol_A": 0.014067773210489,
+    "tolerance_kcal_mol_A": 0.011645319991036233,
+    "MACE_force_projection_kcal_mol_A": -9.027042525850963,
+    "printed_energy_quantum_hartree": {
+      "minus": "1E-12",
+      "plus": "1E-12"
+    },
+    "printed_rounding_force_bound_kcal_mol_A": "3.13754737E-8",
+    "force_accuracy_qualified": false,
+    "physical_state_qualified": false,
+    "caveats": {
+      "scope": "One direction and one full-Cartesian step; no all-component derivative or physical-accuracy qualification.",
+      "reference": "Unchanged PBE0-D4/frozen-f ECP46 La singlet, vacuum dianion, conditional termini; native SCF residual/state limitations retained.",
+      "model": "MACE training Hamiltonian differs; no attribution of a failed check uniquely to model, SCF, grid, finite-step or electronic state.",
+      "interpretation": "No equilibrium, solvent, preference, transfer or production claim; no retries or follow-on sweeps."
+    }
+  },
+  "decision": "Frozen directional consistency gate fails; both native endpoints available and original zero-call comparison complete. Preserve strict failure without retry or tolerance change. The sampled PBE0 energy slope remains close to its analytic projection and far from MACE; causal Hamiltonian attribution and full physical/force qualification remain unresolved. Close this finite test. Next source-only work verifies exact OMol target recipe under separate scope.",
+  "scheduler": {
+    "state": "FAILED",
+    "exit_code": "1:0",
+    "elapsed_seconds": 7,
+    "allocated_CPUs": 1,
+    "allocated_CPU_seconds": 7
+  },
+  "callback_delivered": false
+}

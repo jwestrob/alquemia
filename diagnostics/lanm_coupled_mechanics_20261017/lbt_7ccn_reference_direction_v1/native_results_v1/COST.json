@@ -1,0 +1,97 @@
+{
+  "read_utc": "2026-10-21T02:50:23.068184+00:00",
+  "command": [
+    "sacct",
+    "-j",
+    "15847,15848",
+    "--units=K",
+    "--parsable2",
+    "--format=JobIDRaw,JobName,State,ExitCode,ElapsedRaw,AllocCPUS,AllocTRES,TotalCPU,MaxRSS,NodeList,Start,End"
+  ],
+  "sacct": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_reference_direction_v1/native_results_v1/SACCT.txt",
+    "sha256": "040324bfc4185f5e981b6460de46144ad43432a8c6fced64b3b9488b25607a54",
+    "bytes": 721
+  },
+  "jobs": [
+    {
+      "job_id": 15847,
+      "elapsed_seconds": 21623,
+      "allocated_CPUs": 12,
+      "allocated_CPU_seconds": 259476,
+      "allocated_GPUs": 0,
+      "allocated_GPU_seconds": 0,
+      "actual_sacct_row": {
+        "JobIDRaw": "15847",
+        "JobName": "lbt-reference-direction-minus",
+        "State": "COMPLETED",
+        "ExitCode": "0:0",
+        "ElapsedRaw": "21623",
+        "AllocCPUS": "12",
+        "AllocTRES": "billing=12,cpu=12,mem=49152000K,node=1",
+        "TotalCPU": "2-23:53:34",
+        "MaxRSS": "",
+        "NodeList": "node-64-768g-16",
+        "Start": "2026-10-20T13:47:17",
+        "End": "2026-10-20T19:47:40"
+      },
+      "batch_metadata": [
+        {
+          "JobIDRaw": "15847.batch",
+          "JobName": "batch",
+          "State": "COMPLETED",
+          "ExitCode": "0:0",
+          "ElapsedRaw": "21623",
+          "AllocCPUS": "12",
+          "AllocTRES": "cpu=12,mem=49152000K,node=1",
+          "TotalCPU": "2-23:53:34",
+          "MaxRSS": "37822460K",
+          "NodeList": "node-64-768g-16",
+          "Start": "2026-10-20T13:47:17",
+          "End": "2026-10-20T19:47:40"
+        }
+      ]
+    },
+    {
+      "job_id": 15848,
+      "elapsed_seconds": 21616,
+      "allocated_CPUs": 12,
+      "allocated_CPU_seconds": 259392,
+      "allocated_GPUs": 0,
+      "allocated_GPU_seconds": 0,
+      "actual_sacct_row": {
+        "JobIDRaw": "15848",
+        "JobName": "lbt-reference-direction-plus",
+        "State": "COMPLETED",
+        "ExitCode": "0:0",
+        "ElapsedRaw": "21616",
+        "AllocCPUS": "12",
+        "AllocTRES": "billing=12,cpu=12,mem=49152000K,node=1",
+        "TotalCPU": "2-23:52:57",
+        "MaxRSS": "",
+        "NodeList": "node-64-768g-16",
+        "Start": "2026-10-20T13:47:17",
+        "End": "2026-10-20T19:47:33"
+      },
+      "batch_metadata": [
+        {
+          "JobIDRaw": "15848.batch",
+          "JobName": "batch",
+          "State": "COMPLETED",
+          "ExitCode": "0:0",
+          "ElapsedRaw": "21616",
+          "AllocCPUS": "12",
+          "AllocTRES": "cpu=12,mem=49152000K,node=1",
+          "TotalCPU": "2-23:52:57",
+          "MaxRSS": "37860572K",
+          "NodeList": "node-64-768g-16",
+          "Start": "2026-10-20T13:47:17",
+          "End": "2026-10-20T19:47:33"
+        }
+      ]
+    }
+  ],
+  "total_allocated_CPU_seconds": 518868,
+  "total_allocated_GPU_seconds": 0,
+  "accounting_scope": "Only directional native jobs 15847 and 15848. Earlier preparation/central reference and later collector costs excluded; job/batch rows not double counted."
+}

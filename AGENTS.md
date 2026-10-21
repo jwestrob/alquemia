@@ -3,6 +3,16 @@
 Read diagnostics/lanm_coupled_mechanics_20261017/CURRENT.md and PLAN.md.
 Root owns all submissions; the scientific goal remains authorized and unmet.
 
+21OctoberUTC:newestdirectionalpair15847/15848 COMPLETE/admitted;16582scientific
+failed_directional_consistency, result1f2e53ff. FD−66.439132/analytic−66.453200,
+residual.01406777 >frozentol.01164532;MACE−9.027043. Preserve strictfailure;
+small sampled inconsistency does not explain large directionalmodelgap.
+Read lbt_7ccn_reference_direction_v1/FINAL_REPORT.md;archivese86624f0/7c67a8c2,
+reviewsd87d880f/3c8bc24f,phase518881CPU-s/twoSPs/zeroGPU. Branchclosed; no
+retry/step-gridchange/centralrerun/optimizer. Nextlbt_omol_target_reference_v1
+SOURCE_REVIEW_SCOPE releases source-onlytargetrecipeverification; no nativecall
+released. DelayedwakesACKonly, no duplicatecomputations. Root owns integration.
+
 20 October, newest: directional prep15845 PASSED6CPU-s/zerocalls, result779412e9,
 archivef8d31a51. Sourcecd4396c0/static64951613/actualad55da10 reviewed; rootrelease
 62cd2ead/configdd4875fa minus15847/plus15848 nowRUNNING12MPI each standard_expand,

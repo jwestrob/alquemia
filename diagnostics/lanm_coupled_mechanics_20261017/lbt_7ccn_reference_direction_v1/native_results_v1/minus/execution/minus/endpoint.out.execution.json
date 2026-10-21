@@ -1,0 +1,65 @@
+{
+  "allocation": {
+    "host": "node-64-768g-16",
+    "slurm_job_id": "15847",
+    "slurm_job_partition": "standard"
+  },
+  "artifacts": {
+    "output": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_reference_direction_v1/tasks/minus/execution/minus/endpoint.out",
+      "sha256": "fffa1676b73aa11a2d215cab422ecc895f214a63aa29a8ba5b4280ecbe1aebdf"
+    },
+    "runtime_input": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_reference_direction_v1/tasks/minus/execution/minus/endpoint.runtime.inp",
+      "sha256": "17749f48c64fdd266a142c925aca71ec4f7cc3337594c3aeb6ac12047f559f23"
+    },
+    "runtime_sidecar": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_reference_direction_v1/tasks/minus/execution/minus/endpoint.runtime.json",
+      "sha256": "58aab5d10eb8bcf55434464ac62f9d3e6e55e03da35517947217ffc7e1c3b4cd"
+    },
+    "template_input": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_reference_direction_v1/tasks/minus/execution/minus/endpoint.inp",
+      "sha256": "e99306dc36ed29ae86742b380a03442c352642d96b6cef6fd864a8eef5b6e8ed"
+    },
+    "xyz": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_reference_direction_v1/tasks/minus/execution/minus/physical.xyz",
+      "sha256": "8e66d66cf3c57e9e8a87e74ee9b7a3fc025fa26e6f2fef9103677b57bfb28a7a"
+    }
+  },
+  "command": [
+    "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+    "endpoint.runtime.inp",
+    "--bind-to none"
+  ],
+  "expected_engrad_complete": true,
+  "finished_at_utc": "2026-10-21T02:47:40.482655+00:00",
+  "launch_error": null,
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_reference_direction_v1/tasks/minus/execution/MANIFEST.json",
+    "sha256": "a10fe4f3b7d29443407fb46f6a9567c2a2ba6f63c466c5759a87e9c6c3c868ce"
+  },
+  "normal_termination": true,
+  "orca_executable": {
+    "path": "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+    "sha256": "38b5f057452fef275c0a1b98d270ad03d0411dab70453820d1c678bd732f6c83"
+  },
+  "orca_version": "6.1.1",
+  "parallelism": {
+    "binding": "none",
+    "nprocs": 12,
+    "omp_threads_per_rank": 1
+  },
+  "returncode": 0,
+  "runtime_renderer": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_compact_exchange_v1/implementation/render_orca_runtime_input.py",
+    "sha256": "46356652756311981a51732525457c697b31e860348dee4b590d72e7bddee76d"
+  },
+  "scf_converged": true,
+  "schema_version": "alchemical_bvs.orca_task_execution.v1",
+  "started_at_utc": "2026-10-20T20:47:24.538647+00:00",
+  "task_id": "minus",
+  "task_runner": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/metal_environment_response_20260926/lady_compact_exchange_v1/implementation/run_orca_task_manifest.py",
+    "sha256": "b9278e74e5317e859e8cb05541e1ec57cb335b26dcdf65a83b89675407343b9a"
+  }
+}

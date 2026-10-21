@@ -1,0 +1,53 @@
+{
+  "read_utc": "2026-10-21T02:53:28.830574+00:00",
+  "command": [
+    "sacct",
+    "-j",
+    "16582",
+    "--units=K",
+    "--parsable2",
+    "--format=JobIDRaw,JobName,State,ExitCode,ElapsedRaw,AllocCPUS,AllocTRES,TotalCPU,MaxRSS,NodeList,Start,End"
+  ],
+  "sacct": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/lbt_7ccn_reference_direction_v1/collection_result_v1/SACCT.txt",
+    "sha256": "29a0ccfff6c0e137cdef43b5a6c6f754236b32bcd37241c0e5fee35f66099d4b",
+    "bytes": 385
+  },
+  "actual_job": {
+    "JobIDRaw": "16582",
+    "JobName": "lbt-reference-direction-collect",
+    "State": "FAILED",
+    "ExitCode": "1:0",
+    "ElapsedRaw": "7",
+    "AllocCPUS": "1",
+    "AllocTRES": "billing=1,cpu=1,mem=4096000K,node=1",
+    "TotalCPU": "00:05.555",
+    "MaxRSS": "",
+    "NodeList": "node-64-768g-1",
+    "Start": "2026-10-20T19:49:48",
+    "End": "2026-10-20T19:49:55"
+  },
+  "actual_batch_rows": [
+    {
+      "JobIDRaw": "16582.batch",
+      "JobName": "batch",
+      "State": "FAILED",
+      "ExitCode": "1:0",
+      "ElapsedRaw": "7",
+      "AllocCPUS": "1",
+      "AllocTRES": "cpu=1,mem=4096000K,node=1",
+      "TotalCPU": "00:05.555",
+      "MaxRSS": "637716K",
+      "NodeList": "node-64-768g-1",
+      "Start": "2026-10-20T19:49:48",
+      "End": "2026-10-20T19:49:55"
+    }
+  ],
+  "elapsed_seconds": 7,
+  "allocated_CPUs": 1,
+  "allocated_CPU_seconds": 7,
+  "allocated_GPUs": 0,
+  "allocated_GPU_seconds": 0,
+  "interpretation": "FAILED 1:0 is the expected scientific directional-consistency gate failure, with both native rows available and no technical exception. No technical-recovery or retry is authorized by this receipt.",
+  "scope": "Collector 16582 only; prior native/preparation costs excluded, batch row not double counted."
+}

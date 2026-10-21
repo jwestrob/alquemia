@@ -1,3 +1,18 @@
+## 21 October: directional force check narrowly fails; no numerical retry
+
+Both whole256La singlepoints15847/15848 are complete/admitted. Collector16582
+RESULT1f2e53ff is scientificfailed_directional_consistency (bothrowsavailable,
+zero newcalls, noexception): FD−66.439132 versusanalytic−66.453200 gives
+residual.01406777 >frozentol.01164532kcal/mol/A. MACEprojection−9.027043.
+Gatefailedretained; sampledreferenceinconsistency does not explain thelarge
+model/referencegap. Source/state/physical/force limits remain explicit.
+Read [the completed report](lbt_7ccn_reference_direction_v1/FINAL_REPORT.md).
+Nativearchivee86624f0/collector7c67a8c2; independentreviewsd87d880f/3c8bc24f.
+Phase518881CPU-s,zeroGPU,twoSPcalls. Finitebranchclosed; noautoretry/halfstep/
+gridchange/optimizer. New lbt_omol_target_reference_v1/SOURCE_REVIEW_SCOPE.md
+releases source-onlyverification of exacttrainingHamiltonian assets/settings;
+no newnativecall yet. Root owns launches. Delayedwakes do not repeatchemistry.
+
 ## 20 October: reference consistency pair submitted
 
 Whole256 step725 La directional check preparation15845 PASSED (6CPU-s,zero calls),

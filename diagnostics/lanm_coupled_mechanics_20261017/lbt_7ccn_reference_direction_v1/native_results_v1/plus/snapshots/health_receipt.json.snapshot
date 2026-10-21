@@ -1,0 +1,140 @@
+{
+  "identity": {
+    "job": "15848",
+    "thread": "01a0a63a-ee36-7483-b726-1f7f5b7f75cc",
+    "manifest": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_reference_direction_v1/tasks/plus/execution/MANIFEST.json",
+    "manifest_sha256": "0dcd90f6bacb0689d67bb4eef3759f52a985aa53dc22215559e28ee5704c7029",
+    "policy": {
+      "id": "native_scf_health_v5",
+      "trah_macro_window": 8,
+      "trah_error_floor": 1.0,
+      "minimum_relative_error_improvement": 0.5,
+      "extreme_micro_step_hartree": 1000000.0,
+      "extreme_distinct_macro_count": 3,
+      "silent_output_seconds": 900,
+      "automatic_cancellation": false,
+      "diis_window": 12,
+      "diis_error_floor": 0.01,
+      "diis_rms_density_floor": 0.1,
+      "diis_max_density_floor": 1.0,
+      "diis_energy_span_hartree": 1.0,
+      "near_root_macro_window": 12,
+      "near_root_tolerance_multiple": 5.0,
+      "near_root_energy_span_hartree": 1e-06,
+      "successful_partial_debounce_seconds": 120
+    }
+  },
+  "started_utc": "2026-10-20T20:47:46.872328+00:00",
+  "notifications": {
+    "plus:output_silent_review_needed_not_proven_stall": {
+      "status": "queued",
+      "utc": "2026-10-20T21:10:53.417562+00:00",
+      "stdout": "Queued message 01a15b27-1fe2-7623-a76d-e116f08c892f for thread 01a0a63a-ee36-7483-b726-1f7f5b7f75cc.\n",
+      "stderr": ""
+    },
+    "job_terminal": {
+      "status": "queued",
+      "utc": "2026-10-21T02:47:46.671400+00:00",
+      "stdout": "Queued message 01a15c5b-8dcd-7be3-af49-8fcd39533a1d for thread 01a0a63a-ee36-7483-b726-1f7f5b7f75cc.\n",
+      "stderr": ""
+    }
+  },
+  "status": "terminal",
+  "snapshot": {
+    "endpoints": {
+      "plus": {
+        "normal_termination": true,
+        "scf_converged": true,
+        "explicit_failure": false,
+        "last_trah_macros": [],
+        "trah_macro_count": 0,
+        "printed_trah_gradient_tolerance": 2e-06,
+        "near_root_macro_window": [],
+        "near_root_energy_span_hartree": null,
+        "last_diis_iteration": 6,
+        "last_diis_rows": [
+          {
+            "iteration": 1,
+            "energy_hartree": -6760.607535413474,
+            "delta_energy_hartree": 0.0,
+            "rms_density": 0.00271,
+            "max_density": 0.462,
+            "diis_error": 0.336,
+            "damping": 0.7,
+            "iteration_seconds": 2070.4
+          },
+          {
+            "iteration": 2,
+            "energy_hartree": -6762.80013514225,
+            "delta_energy_hartree": -2.19,
+            "rms_density": 0.00225,
+            "max_density": 0.325,
+            "diis_error": 0.239,
+            "damping": 0.7,
+            "iteration_seconds": 919.9
+          },
+          {
+            "iteration": 3,
+            "energy_hartree": -6763.634039832294,
+            "delta_energy_hartree": -0.834,
+            "rms_density": 0.000834,
+            "max_density": 0.138,
+            "diis_error": 0.167,
+            "damping": 0.7,
+            "iteration_seconds": 862.7
+          },
+          {
+            "iteration": 4,
+            "energy_hartree": -6764.136765174095,
+            "delta_energy_hartree": -0.503,
+            "rms_density": 0.000446,
+            "max_density": 0.0931,
+            "diis_error": 0.116,
+            "damping": 0.7,
+            "iteration_seconds": 811.8
+          },
+          {
+            "iteration": 5,
+            "energy_hartree": -6764.476858050162,
+            "delta_energy_hartree": -0.34,
+            "rms_density": 0.00033,
+            "max_density": 0.062,
+            "diis_error": 0.081,
+            "damping": 0.7,
+            "iteration_seconds": 809.1
+          },
+          {
+            "iteration": 6,
+            "energy_hartree": -6764.712365458225,
+            "delta_energy_hartree": -0.236,
+            "rms_density": 0.000836,
+            "max_density": 0.14,
+            "diis_error": 0.0566,
+            "damping": 0.0,
+            "iteration_seconds": 740.6
+          }
+        ],
+        "diis_current_phase": false,
+        "extreme_micro_distinct_macros": [],
+        "negative_gap_warning_count": 0,
+        "alerts": [],
+        "output": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_mechanics_20261017/lbt_7ccn_reference_direction_v1/tasks/plus/execution/plus/endpoint.out",
+        "output_bytes": 382470,
+        "output_age_seconds": 11.903640270233154,
+        "receipt_exists": true,
+        "execution_returncode": 0,
+        "receipt_job_id": "15848",
+        "finished_at_utc": "2026-10-21T02:47:32.549032+00:00",
+        "terminal": true
+      }
+    },
+    "terminal_endpoints": 1,
+    "total_endpoints": 1,
+    "maximum_remaining_endpoint_rank_demand": 0,
+    "allocated_cpus": 12,
+    "allocated_cpus_without_remaining_endpoint_work": 12,
+    "resource_note": "scheduler/manifest accounting; not measured CPU utilization"
+  },
+  "job_state": "COMPLETED",
+  "last_checked_utc": "2026-10-21T02:47:44.670291+00:00"
+}

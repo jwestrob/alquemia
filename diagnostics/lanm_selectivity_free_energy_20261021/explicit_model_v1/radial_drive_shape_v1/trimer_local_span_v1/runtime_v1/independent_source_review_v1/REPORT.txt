@@ -1,0 +1,68 @@
+Independent saved W9far runtime source review — passed
+
+Reviewed complete frozen RUN.py ad9e7816, SPEC, configuration/commands, TEST.py
+and saved28-control result against admitted design58e062fb/root9d783d2d and runtime
+declarationbd503e2e. No blocker or source correction requested. No actual stencil,
+Jacobian, conic arrays, preparation, zero check, solver or native call was run by
+this review. Only source and saved metadata pins were checked.
+
+build_groups uses the exact inherited cycles() fsum equations on six necessary
+dynamic cells and eight admitted static terms, at the pinned terminal and ordered
+28stencil artifacts. It checks exact parameter/key/order identity, uses all14
+literal saved normalized spans and preserves e columns. Individual residuals
+are model-minus-reference; paired Jacobians are Dy minus La. Center residuals
+must match the admitted inventory literally, and the same reconstructed residual
+defines its positive finite norm scale. This adds no epsilon floor or reweighting.
+
+adapt implements b_fixed=b-A_s*sqrt(q0) and retains original d coefficients.
+It removes only the two named epigraph rows. New cone slack is
+(1-t,r/scale+Jd/scale), so top A_t=+1 and bottom A_d=-J/scale are correct.
+All inherited t entries are zero. Original SOC rows precede six new SOCs,
+then all retained nonnegative rows (including both signedW9 sides) and t bounds.
+Result1455x15/26SOC+890nonnegative matches the admitted exact row remap.
+P/B normalization and every original physical/electrical coefficient stay saved.
+
+The scalar checker extracts only certify_fraction and changes12->14/13->15
+dimensions through the pinned clone helper. It calls fraction1 with literal q0,
+uses residual_constraints and all25_predicted, and ignores old eligibility,
+auxiliary-q and strict-improvement decisions. Only obsolete old_EF is filtered
+out; fixed pair/C/chi and P/B rows remain. Separate exact signedW9, literal
+parameter-box, trust.025, t bounds, six unnormalized norm margins and q0-q
+complete the witness. No tolerance is used for its nonnegative-sign decision.
+Source status, witness feasibility and native admission remain separate.
+
+Preparation saves actual groups/matrix/layout and scalar plus constructed-cone
+zero margins before requiring all to be nonnegative. A negative margin fails
+before any solver constructor. Solve requires a pinned successful preparation
+with exact implementation/fingerprint, reconstructs every prepared sparse-array
+component, b,c and row layout exactly, and repeats the same zero checks. No
+original531 Jacobian or raw46 admission is recomputed. The preparatory pin is in
+the solve config, while release binds the common scientific fingerprint and
+mode/output/source/review; the exact matrix/layout joins prevent swapping a
+different scientific preparation. An additional release field is unnecessary.
+
+Both modes require the admitted design/runtime sources, pinned environment and
+all one-thread settings, truthful biotite login, independent source receipt and
+distinct exact root release. Fingerprint/release joins are acyclic; no circular
+config hash remains. Shared immutable attempt_path belongs to the fingerprint.
+Exclusive creation/fsync of ATTEMPT precedes constructor; counters and result are
+persisted before constructor/solve. Failed constructor consumes the attempt but
+not a solve. No retry, alternative case, fraction sweep or native path exists.
+Runtime finally records failed status/error and actual costs. Successful return
+retains full raw solution, duals, status, info, residuals/cone margins and witness.
+
+Reporting detail: inherited diagnostics fields primal_objective_t and
+dual_objective_t contain minimized c*x=-t and its dual bound in this problem.
+Use solution.x[14] or witness.fraction for the actual common improvement t; do
+not reinterpret the negative primal objective as a negative improvement. Raw
+AlmostSolved remains unchanged. A positive exactly feasible fraction is only
+local affine evidence; completed computation is not native/model admission or
+proof of global family capacity/inadequacy.
+
+The saved28 manufactured controls passed on this exact source without any actual
+stencil, Jacobian or solver. Their scope includes fixed-s substitution, all six
+cone signs, old-row preservation, tiny radial coefficient retention, all25 scalar
+gates, one-bit cap violation, nonlimiting component headroom, durable failed
+constructor/duplicate rejection, and release mode/output checks. They were read,
+not rerun. Real saved preparation and the single solve remain root-owned and
+unreleased by this independent source receipt.

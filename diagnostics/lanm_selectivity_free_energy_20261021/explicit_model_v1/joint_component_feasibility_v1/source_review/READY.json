@@ -1,0 +1,70 @@
+{
+  "status": "prepared_saved_component_feasibility_source_only",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/source_review/CALCULATE.py",
+    "sha256": "78cae2b384434cd2e93f65312fa33876b2628732415093bd0c0fb46c23fac68e"
+  },
+  "inputs": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/source_review/INPUTS.json",
+    "sha256": "e794e9a2358818d608de9d7eacde5cbbd72cfdd8f2d4b7dd75d132e3e1fabedd"
+  },
+  "LP": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/source_review/LP.py",
+    "sha256": "16c715376ead5a2f953beb7cfb8fa16beded0841c64db9edb25f297151d4b7ae"
+  },
+  "protocol": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/PROTOCOL.md",
+    "sha256": "d0b24ea102ad0d13ee20aa6420b41d96bb4d0e9881d44fe32139cd0b5ee3cdee"
+  },
+  "controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/source_review/CONTROLS.json",
+    "sha256": "e8693f4fb47e82e3d8e5ff3805a291e4ed12cad36aaac255371fc9f80ac195af"
+  },
+  "controls_passed": 12,
+  "actual_diagnostic_executed": false,
+  "native_calls": 0,
+  "new_parameter_evaluations": 0,
+  "argv": [
+    "/home/jwestrob/.pyenv/versions/3.12.0/bin/python3",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/source_review/CALCULATE.py",
+    "--inputs",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/source_review/INPUTS.json",
+    "--root-release",
+    "ROOT_RELEASE.json",
+    "--out",
+    "FRESH_OUTPUT_DIRECTORY"
+  ],
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OMP_THREAD_LIMIT": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "required_root_release": {
+    "status": "released_saved_joint_component_feasibility",
+    "implementation": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/source_review/CALCULATE.py",
+      "sha256": "78cae2b384434cd2e93f65312fa33876b2628732415093bd0c0fb46c23fac68e"
+    },
+    "inputs": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/source_review/INPUTS.json",
+      "sha256": "e794e9a2358818d608de9d7eacde5cbbd72cfdd8f2d4b7dd75d132e3e1fabedd"
+    },
+    "protocol": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/PROTOCOL.md",
+      "sha256": "d0b24ea102ad0d13ee20aa6420b41d96bb4d0e9881d44fe32139cd0b5ee3cdee"
+    },
+    "lp": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/source_review/LP.py",
+      "sha256": "16c715376ead5a2f953beb7cfb8fa16beded0841c64db9edb25f297151d4b7ae"
+    },
+    "native_program_cap": 0,
+    "new_parameter_vector_cap": 0
+  },
+  "notes": [
+    "Original four LP block norms are the half-weighted residual slices, not square roots of unweighted scores. Fractional derivatives are invariant to that fixed scaling.",
+    "All673/24/96 saved denominators; no new selection or evaluated LP direction.",
+    "All72 LPs are attempted only if all24 origins have nondegenerate block norms. Actual LP count and degenerate origins retained."
+  ]
+}

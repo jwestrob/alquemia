@@ -1,0 +1,80 @@
+{
+  "status": "passed_saved_conic_reviewer_source_review",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/conic_saved_comparison_v1/independent_actual_review_v1/REVIEW.py",
+    "sha256": "4391e07c94ead55412667c5aeeff1d0b73a6853ea7a85e972c431750b9c7f83a"
+  },
+  "original_reviewer": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/conic_saved_comparison_v1/independent_actual_review_v1/REVIEW_before_source_review.py",
+    "sha256": "996e1f7a6b79e50c24a9e342c7009efb5ef38e09f70e9a9a6adeceebdb689e51"
+  },
+  "producer_implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/conic_saved_comparison_v1/COMPARE.py",
+    "sha256": "836916e9839259d4779907c744716b33cb98425ca030360c3af5017ffd4a4935"
+  },
+  "producer_source_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/conic_saved_comparison_v1/independent_source_review_v1/REVIEW.json",
+    "sha256": "51da463f3451ac0037aed5ae950756f71e686a13df1079c94811bd0443c6adf4"
+  },
+  "controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/conic_saved_comparison_v1/independent_actual_review_v1/source_controls_v1/RESULT.json",
+    "sha256": "1b863adb4ee53c6160ca6baf2ebc225042d0abbe5e8179d620878b49dfb3466f"
+  },
+  "controls_implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/conic_saved_comparison_v1/independent_actual_review_v1/TEST_REVIEW.py",
+    "sha256": "bc4070077d23f1061c82ad88b7ed349280e3b7dfa248bdea0a0a08bd534ebb49"
+  },
+  "control_process_log": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/conic_saved_comparison_v1/independent_actual_review_v1/CONTROL_PROCESS.log",
+    "sha256": "262f6569164fe58bc9c8987854f45a2992c2c19577e42ce0689a2639932b6f21"
+  },
+  "control_process_exit_code": 0,
+  "source_reviewed_by": "/root/exchange_reference_chemistry",
+  "reviewer_original_author": "/root",
+  "independence": "Independently authored arithmetic reviewer does not import producer, CORE, optimizer or molecular evaluator. This source review adds provenance/completeness checks; it is not independent quantum evidence.",
+  "concrete_fixes": [
+    "Verify exact terminal campaign driver/config/fingerprint/path, beyond terminal status.",
+    "Validate fixed block/force/energy array dimensions, finiteness and positive weights/denominators before zip arithmetic.",
+    "Bind saved q/spans and normalizations to result summary.",
+    "Check every fraction key, success/failure flag, exact scalar summary and declared epsilon.",
+    "Verify reduced-accuracy and finite-return status flags."
+  ],
+  "unchanged_ast": {
+    "near": true,
+    "scalar_report": true,
+    "margins": true,
+    "pin": true,
+    "read": true,
+    "digest": true
+  },
+  "mathematics_review": [
+    "A*x+s=b sign reconstruction, including variable-t component epigraph.",
+    "21 SOC/856 nonnegative rows; fixed1817x13 dimensions and complete disjoint layout.",
+    "Dual residual A^T*z+c, dual cost -b^T*z and unrounded gap/cone margins.",
+    "Raw finite nonnegative t before q=t^2; fraction q interpolated in q, not t.",
+    "Exact source scalar fsum gate arithmetic: nonnegative only for Solved; strict positive witness otherwise.",
+    "Solved only is solver_success; arithmetic replay can pass for a failed status without promoting that status."
+  ],
+  "limits": [
+    "No scientific vector/actual solve result read for these controls; only artificial arrays.",
+    "No new optimization, molecular call, candidate evaluation or quantum admission.",
+    "certificate_checks_passed means certificate arithmetic/flags reproduced, not all cones nonnegative or successful optimization.",
+    "Actual solver success must be separately true/Solved for the conditional ceiling-removal comparison.",
+    "The saved LINEARIZED_PROBLEM is the audited producer authority; no independent relinearization of all original vectors.",
+    "Floating allclose is used only to compare reported arithmetic, never to convert negative physical/certificate margins into passes.",
+    "Nonfinite or negative-t actual return fails this reviewer rather than being clipped or converted to a usable point."
+  ],
+  "execution": {
+    "manufactured_controls": 32,
+    "new_native_calls": 0,
+    "new_solver_calls": 0,
+    "scientific_vectors_read": 0,
+    "numerical_threads": 1,
+    "cost": {
+      "wall_seconds": 1.519980489043519,
+      "CPU_seconds": 1.516270106,
+      "numerical_threads": 1
+    }
+  },
+  "blockers": []
+}

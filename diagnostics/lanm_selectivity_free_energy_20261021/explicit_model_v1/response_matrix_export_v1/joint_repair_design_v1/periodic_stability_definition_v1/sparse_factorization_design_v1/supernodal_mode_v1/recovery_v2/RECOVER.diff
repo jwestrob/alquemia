@@ -1,0 +1,27 @@
+--- preserved_recovery_v1/RECOVER.py
++++ recovery_v2/RECOVER.py
+@@ -30,8 +30,15 @@
+     m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
+ 
+ 
++def json_scalar(value):
++    if isinstance(value,np.generic):
++        return value.item()
++    raise TypeError(type(value).__name__)
++
++
+ def run(config,out):
+     start,cpu=time.monotonic(),time.process_time()
++    assert json.loads(json.dumps({'bool':np.bool_(True),'float':np.float64(1.)},default=json_scalar))=={'bool':True,'float':1.}
+     cfg=json.loads(Path(config).read_text());assert pin(__file__)==cfg['implementation']
+     dec=read(cfg['declaration']);old=read(cfg['preserved_result']);diag=read(cfg['diagnosis'])
+     env=read(cfg['environment']);backend=load(cfg['backend'])
+@@ -60,7 +67,7 @@
+     def persist():
+         result['cost']=dict(wall_seconds=time.monotonic()-start,CPU_seconds=time.process_time()-cpu,
+                             peak_RSS_KiB=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,threads=1)
+-        tmp=out/'RESULT.tmp';tmp.write_text(json.dumps(result,indent=2,allow_nan=False)+'\n');tmp.replace(out/'RESULT.json')
++        tmp=out/'RESULT.tmp';tmp.write_text(json.dumps(result,indent=2,allow_nan=False,default=json_scalar)+'\n');tmp.replace(out/'RESULT.json')
+     persist()
+     try:
+         assert old['status']=='failed_manufactured_supernodal_mode_qualification' and old['error'] is None

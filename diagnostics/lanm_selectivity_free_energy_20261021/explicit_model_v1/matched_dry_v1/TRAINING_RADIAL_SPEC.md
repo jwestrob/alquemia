@@ -1,0 +1,9 @@
+# Twelve existing hydrated radial reference cells: development only
+
+Root authorized these twelve additional ECP-PBE0 energy/gradient endpoints for parameter-development training. They are exactly the `minus` and `plus` geometries from the existing eighteen-cell mixed panel, SHA256 `1191e3a00e3c02aa861faf83aae22eb250c94064e7ac780bf2fbebb00eb6c21a`: three donors × two radial positions × two metals. No new coordinates, central endpoints, MACE, AMOEBA, aquo8 or explicit-f reference calls are included.
+
+Retain the unchanged native `REFERENCE.py` SHA256 `eec0e60d982bda4e1a8685c6120f25c6ab74cc57e114cd3d8f370b4baccba129` and existing orbital/auxiliary assets. Recipe is PBE0-D4/def2-TZVP/def2-J, RIJCOSX, DefGrid3, VeryTightSCF, PModel, MaxIter300, EnGrad, NoAutostart. State remains charge+2 for acetate/+3 for acetamide, physical La1/Dy6, ECP46/ECP55 and effective singlet. The noncentral radial cells have110 explicit electrons for mono-acetate/acetamide and100 for bi-acetate. Native admission, printed SCF residual caveats and physical-state limitations are unchanged.
+
+Prepare only: copy exact XYZ bytes, bind original assets/recipe and invoke the saved-only validator. Root may submit one four-MPI/one-thread-per-rank singleton per cell under standard_expand, scheduler-default memory/walltime and allocation-derived MaxCore. Root owns scheduling, failure review and collection; no automatic retries or cell substitution. Do not use the original specialized56-cell collector. Preserve all twelve cells, full gradients, raw outputs, source hashes and actual costs.
+
+These reference results will be consumed training, not held-out validation. New orientation/protein validation is separately reserved and must not be read before candidate freeze. Native completion is not reference-accuracy qualification. Rigid-ligand derivatives must sum all ligand forces; the native metal-force projection is a different observable.

@@ -1,0 +1,31 @@
+{
+  "status": "passed_bounded_joint_response_driver_review",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/REFINE.py",
+    "sha256": "73f364585e6747671a551fbf3f938834087a59c704eedda10fb90121edb666dd"
+  },
+  "directions": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/DIRECTIONS.py",
+    "sha256": "9ff5f551f6776dad0de51fc54b46ed8adf972ea2b6a9caef01ddba39c34478b4"
+  },
+  "protocol": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/FIT_PROTOCOL.md",
+    "sha256": "12c4ad5b3a3729d77635aab36f16c129ac534ee6bc517363d1dfac3a00cb6b5a"
+  },
+  "saved_controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/independent_driver_review_v1/saved_controls_v1/RESULT.json",
+    "sha256": "29ad2a39e148ace26678f9f79886399712524b37b4e2088d743dfe1634ebad27"
+  },
+  "findings": [],
+  "source_review": [
+    "531 residuals, 12 parameters, normalized \u00b1.005 derivatives and \u00b1.025 box/trust proposals match protocol.",
+    "BVLS with tol1e-12/maxiter1000 replaces exponential active-set enumeration; prior small exhaustive and analytic12 controls pass unchanged.",
+    "Both half/full GN and bounded proposals complete before strict nonlinear objective selection; current vector wins ties and passing E/F does not stop alone.",
+    "Derivative-vector reuse is permitted only through explicit current trial_keys; first-role label plus per-iteration trial membership is sufficient provenance. Optional request_roles would improve display, not selection correctness.",
+    "673 total unique-vector ceiling, 24 outer steps and 12 driver workers are explicit. The evaluator must enforce shared native worker/program ceilings; final evaluator integration and actual zero-call preparation are still required.",
+    "Release binds scientific fingerprint and saved preparation; no source/runtime fit was executed during review."
+  ],
+  "new_native_calls": 0,
+  "new_scientific_evaluations": 0,
+  "actual_fit_admitted": false
+}

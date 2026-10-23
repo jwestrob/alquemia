@@ -1,0 +1,107 @@
+--- RUN.py
++++ RUN_v2.py
+@@ -27,6 +27,7 @@
+ METAL = DIMERS+NEAR+CENTERS
+ CELLS = IONS+(PURE,)+METAL
+ MAX_CALLS, MAX_FD, WORKERS = 57, 636, 12
++NEW_CALLS, INHERITED_CALLS, INHERITED_FD = 30, 27, 468
+ FILES = (('xyz','system.xyz'),('key','system.key'),('parameters','amoeba09.prm'))
+ 
+ def require(ok,msg):
+@@ -225,21 +226,26 @@
+         for p in j['input'].values():verify(p)
+         require(verify(j['input']['key']).read_text()==render(m['rows'][j['cell']],j,m['units']),'Prepared key edit differs')
+     if runtime:require(os.environ.get('SLURM_JOB_ID','').isdigit() and int(os.environ.get('SLURM_NTASKS','1'))==1 and int(os.environ.get('SLURM_CPUS_PER_TASK','0'))==WORKERS and all(os.environ.get(k)=='1' for k in THREADS),'One 12-CPU Slurm task; every numerical library one thread')
++    require(cfg['maximum_new_native_programs']==NEW_CALLS and cfg['recovery_declaration']==pin(HERE/'RECOVERY_DECLARATION.md') and m['recovery_declaration']==cfg['recovery_declaration'],'Exact recovery scope')
++    require(cfg['previous_result']==m['previous_result'] and len(m['reused_rows'])==INHERITED_CALLS and set(m['reused_rows'])=={j['id'] for j in m['programs'] if j['stage'] in ('absent','zero','combined')},'Exact original reused prefix')
++    old=read(m['previous_result']);require(all(m['reused_rows'][k]==old['rows'][k] for k in m['reused_rows']),'Inherited records changed')
++    review=read(cfg['prefix_review']);require(cfg['prefix_review']==m['prefix_review'] and review['status']=='passed_completed_native_prefix_review' and review['result']==m['previous_result'] and review['completed_programs']==INHERITED_CALLS and review['completed_internal_FD_energies']==INHERITED_FD and review['native_derivative_failure_found'] is False,'Independent prefix admission')
++    require(all(review[k]==cfg[k] for k in ('source_manifest','build_receipt','analyze','testgrad')),'Prefix build/executable continuity')
+     return m,helpers(m['sources'])
+ 
+ def run(cfg,out):
+     tick,cpu=time.monotonic(),time.process_time();ch0=resource.getrusage(resource.RUSAGE_CHILDREN);m,h=context(cfg,True);lock=threading.RLock();stop=threading.Event()
+-    result=dict(status='running',implementation=pin(__file__),config=cfg,manifest=cfg['manifest'],job_id=os.environ['SLURM_JOB_ID'],rows={j['id']:{'status':'not_attempted'} for j in m['programs']},native_program_invocations=0,internal_FD_energies_requested=0,internal_FD_energies_completed=0,directional_checks={},field_checks={},global_stop=False,error=None,numerical_checks_passed=False,physical_accuracy_qualified=False)
++    result=dict(status='running',implementation=pin(__file__),config=cfg,manifest=cfg['manifest'],job_id=os.environ['SLURM_JOB_ID'],rows={j['id']:copy.deepcopy(m['reused_rows'].get(j['id'],{'status':'not_attempted'})) for j in m['programs']},native_program_invocations=0,inherited_native_program_invocations=INHERITED_CALLS,total_native_program_invocations=INHERITED_CALLS,previous_result=m['previous_result'],internal_FD_energies_requested=INHERITED_FD,internal_FD_energies_completed=INHERITED_FD,new_internal_FD_energies_completed=0,inherited_internal_FD_energies_completed=INHERITED_FD,directional_checks={},field_checks={},global_stop=False,error=None,numerical_checks_passed=False,physical_accuracy_qualified=False)
+     def persist():
+-        with lock:result['global_stop']=stop.is_set();save(out/'RESULT.json',result)
++        with lock:result['global_stop']=stop.is_set();result['total_native_program_invocations']=INHERITED_CALLS+result['native_program_invocations'];save(out/'RESULT.json',result)
+     def worker(job):
+         row=m['rows'][job['cell']];cell=out/'cells'/job['id'];rec=dict(status='started',job=job,receipts=[])
+         try:
+             with lock:
+                 if stop.is_set():return
+                 fd=6*row['atoms'] if job['fd'] else 0
+-                require(result['native_program_invocations']<MAX_CALLS and result['internal_FD_energies_requested']+fd<=MAX_FD,'Hard native ceilings')
+-                result['native_program_invocations']+=1;result['internal_FD_energies_requested']+=fd;result['rows'][job['id']]=rec;persist()
++                require(result['native_program_invocations']<NEW_CALLS and INHERITED_CALLS+result['native_program_invocations']<MAX_CALLS and result['internal_FD_energies_requested']+fd<=MAX_FD,'Hard native ceilings')
++                result['native_program_invocations']+=1;result['internal_FD_energies_requested']+=fd;result['rows'][job['id']]=copy.deepcopy(rec);persist()
+             cell.mkdir(parents=True)
+             for k,name in FILES:shutil.copyfile(verify(job['input'][k]),cell/name)
+             rec['runtime_input']={k:pin(cell/name) for k,name in FILES}
+@@ -249,7 +255,7 @@
+             rec['response_readback']=response_readback(output,job,row);rec['induction']=h['induction'].induction(output)
+             if job['program']=='testgrad':
+                 value=h['gradient'].gradient(output,row['atoms'],job['fd'],h['native']);rec['value']=value
+-                with lock:result['internal_FD_energies_completed']+=fd
++                with lock:result['internal_FD_energies_completed']+=fd;result['new_internal_FD_energies_completed']+=fd
+                 require(math.isfinite(value['energy']) and (not job['fd'] or value['fd_passed']),'Cartesian derivative gate')
+                 if job['profile'] in ('absent','zero') or job['cell'] in IONS+(PURE,):
+                     rec['identity']=h['old_harness'].identity(value,row['baseline_gradient']);require(rec['identity']['passed'],'Baseline E/F identity')
+@@ -277,7 +283,7 @@
+         persist()
+         for stage in ('absent','zero','combined','axes','directions','matrices','fields'):
+             jobs=[j for j in m['programs'] if j['stage']==stage]
+-            with concurrent.futures.ThreadPoolExecutor(max_workers=WORKERS) as pool:list(pool.map(worker,jobs))
++            with concurrent.futures.ThreadPoolExecutor(max_workers=WORKERS) as pool:list(pool.map(worker,[j for j in jobs if j['id'] not in m['reused_rows']]))
+             require(not stop.is_set() and all(result['rows'][j['id']]['status']=='complete' for j in jobs),'Failed stage: '+stage)
+             if stage=='directions':
+                 for g in NEAR:
+@@ -289,15 +295,44 @@
+             if stage=='fields':
+                 for g in DIMERS:result['field_checks'][g]=field_checks(g,result['rows'],m['rows'][g],m['units'],h)
+             persist()
+-        require(result['native_program_invocations']==MAX_CALLS and result['internal_FD_energies_completed']==MAX_FD and all(r['status']=='complete' for r in result['rows'].values()),'Complete finite denominator')
++        require(result['native_program_invocations']==NEW_CALLS and result['total_native_program_invocations']==MAX_CALLS and result['new_internal_FD_energies_completed']==MAX_FD-INHERITED_FD and result['internal_FD_energies_completed']==MAX_FD and all(r['status']=='complete' for r in result['rows'].values()),'Complete finite denominator')
+         result.update(status='local_response_numerical_qualification_complete',numerical_checks_passed=True)
+     except Exception as exc:stop.set();result.update(status='local_response_numerical_qualification_failed',error=result['error'] or repr(exc))
+     finally:
+         ch=resource.getrusage(resource.RUSAGE_CHILDREN);result['cost']=dict(wall_seconds=time.monotonic()-tick,parent_CPU_seconds=time.process_time()-cpu,aggregate_child_user_CPU_seconds=ch.ru_utime-ch0.ru_utime,aggregate_child_system_CPU_seconds=ch.ru_stime-ch0.ru_stime,allocated_CPUs=WORKERS,per_receipt_CPU_deltas_not_summed=True);persist()
+     return result
+ 
++
++def prepare_recovery(cfg,out):
++    tick,cpu=time.monotonic(),time.process_time()
++    old_impl=pin(HERE/'RUN.py');old=module(old_impl,'original_local_qualification');r=read(cfg['previous_result']);m,h=old.context(r['config'],False)
++    require(r['implementation']==old_impl and r['status']=='local_response_numerical_qualification_failed' and r['error']=="RuntimeError('dictionary changed size during iteration')",'Exact original technical failure required')
++    require(r['native_program_invocations']==INHERITED_CALLS and r['internal_FD_energies_completed']==INHERITED_FD and r['internal_FD_energies_requested']==INHERITED_FD,'Original completed counters')
++    expected=[j for j in m['programs'] if j['stage'] in ('absent','zero','combined')];require(len(expected)==INHERITED_CALLS and set(r['rows'])=={j['id'] for j in m['programs']},'Original full denominator')
++    reused={};checks=[]
++    for job in m['programs']:
++        rec=r['rows'][job['id']]
++        if job not in expected:
++            require(rec=={'status':'not_attempted'},'Unexpected later original invocation');continue
++        require(rec['status']=='complete' and rec['job']==job,'Original completed prefix')
++        folder=Path(rec['runtime_input']['xyz']['path']).parent
++        require(read(pin(folder/'RESULT.json'))==rec,'Individual versus aggregate receipt mismatch')
++        require(all(verify(rec['runtime_input'][k]).read_bytes()==verify(job['input'][k]).read_bytes() for k,_ in FILES),'Original actual prepared bytes')
++        receipts=rec['receipts'];argv=[r['config']['testgrad']['path'],'system.xyz','Y','Y','0.00001'] if job['fd'] else [r['config']['testgrad']['path'],'system.xyz','Y','N']
++        require(len(receipts)==1 and receipts[0]['argv']==argv and receipts[0]['cwd']==str(folder) and receipts[0]['returncode']==0 and all(receipts[0]['threads'][k]=='1' for k in THREADS),'Original invocation receipt')
++        output=verify(rec['value']['output']);require(receipts[0]['output']==rec['value']['output'] and rec['actual_output']==rec['value']['output'],'Original output authority')
++        row=m['rows'][job['cell']];value=h['gradient'].gradient(output,row['atoms'],job['fd'],h['native']);require(value==rec['value'] and (not job['fd'] or value['fd_passed']),'Original raw E/F/FD admission')
++        require(response_readback(output,job,row)==rec['response_readback'] and h['induction'].induction(output)==rec['induction'],'Original readback/induction replay')
++        if 'identity' in rec:require(h['old_harness'].identity(value,row['baseline_gradient'])==rec['identity'] and rec['identity']['passed'],'Original baseline identity replay')
++        reused[job['id']]=rec;checks.append({'id':job['id'],'raw_admission_passed':True,'FD_passed':value['fd_passed'] if job['fd'] else None})
++    review=read(cfg['prefix_review']);require(review['status']=='passed_completed_native_prefix_review' and review['result']==cfg['previous_result'] and review['completed_programs']==INHERITED_CALLS and review['completed_internal_FD_energies']==INHERITED_FD and review['native_derivative_failure_found'] is False,'Independent prefix review binding')
++    recovery=copy.deepcopy(m);recovery.update(implementation=pin(__file__),original_implementation=old_impl,original_manifest=r['manifest'],previous_result=cfg['previous_result'],prefix_review=cfg['prefix_review'],recovery_declaration=pin(HERE/'RECOVERY_DECLARATION.md'),reused_rows=reused,reuse_checks=checks,maximum_new_native_programs=NEW_CALLS,inherited_native_programs=INHERITED_CALLS,inherited_internal_FD_energies=INHERITED_FD,cost={'wall_seconds':time.monotonic()-tick,'CPU_seconds':time.process_time()-cpu,'numerical_threads':1})
++    save(out/'MANIFEST.json',recovery)
++    template=dict(r['config']);template.update(implementation=pin(__file__),manifest=pin(out/'MANIFEST.json'),root_authorized=False,previous_result=cfg['previous_result'],prefix_review=cfg['prefix_review'],recovery_declaration=pin(HERE/'RECOVERY_DECLARATION.md'),maximum_new_native_programs=NEW_CALLS)
++    save(out/'CONFIG_RUN_TEMPLATE.json',template);return recovery
++
+ if __name__=='__main__':
+-    p=argparse.ArgumentParser();p.add_argument('action',choices=('prepare','run'));p.add_argument('--config');p.add_argument('--out',required=True);a=p.parse_args();out=Path(a.out).resolve();out.mkdir(parents=True,exist_ok=False)
+-    try:r=prepare(out) if a.action=='prepare' else run(json.loads(Path(a.config).read_text()),out)
++    p=argparse.ArgumentParser();p.add_argument('action',choices=('prepare-recovery','run'));p.add_argument('--config');p.add_argument('--out',required=True);a=p.parse_args();out=Path(a.out).resolve();out.mkdir(parents=True,exist_ok=False)
++    try:r=prepare_recovery(json.loads(Path(a.config).read_text()),out) if a.action=='prepare-recovery' else run(json.loads(Path(a.config).read_text()),out)
+     except Exception as exc:save(out/'FAILURE.json',{'error':repr(exc),'new_native_calls':0,'phase':a.action});raise
+     print(json.dumps({'status':r['status'],'out':str(out)}));raise SystemExit(0 if r['status'] in ('prepared_no_native_calls','local_response_numerical_qualification_complete') else 1)

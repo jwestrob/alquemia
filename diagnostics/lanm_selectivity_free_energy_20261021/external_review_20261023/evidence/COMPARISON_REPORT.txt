@@ -1,0 +1,247 @@
+FIXED SHORT-RANGE MODEL COMPARISON — CONSUMED DEVELOPMENT
+Saved predictions only. Errors are prediction minus target; signed moment vectors are retained.
+
+Five-family RMS (unit scales are fitting weights, not accuracy gates)
+model | score | chi a0^3 | mu D | E2 kcal/mol | E3 kcal/mol | slope kcal/mol/A
+baseline | 297.78138 | 3.7211201 | 2.6965206 | 15.218437 | 6.8588271 | 34.483977
+shared12 | 3.4165427 | 2.9275175 | 2.8653933 | 0.48252633 | 0.2317316 | 0.12387382
+shared12_V_only | 90.512628 | 3.7211201 | 2.6965206 | 10.61108 | 15.575604 | 8.7321663
+metal15 | 3.1990894 | 2.7375606 | 2.912625 | 0.049807518 | 5.7005237e-08 | 0.12387094
+metal15_V_only | 31.689383 | 3.7211201 | 2.6965206 | 7.7689018 | 0.84995087 | 8.7321649
+
+Individual E3 energies: all eight cycles; W9 rows were fitted
+cycle | target | baseline prediction/error | shared12 prediction/error | metal15 prediction/error
+aquo8_central_La__near | 12.888721 | (8.0787019, -4.8100196) | (13.358265, 0.46954387) | (14.067318, 1.1785962)
+aquo8_central_La__far | 11.742576 | (5.068791, -6.6737853) | (12.161107, 0.41853082) | (12.395053, 0.65247665)
+aquo8_central_Dy__near | 14.895353 | (8.678283, -6.2170704) | (15.738287, 0.84293366) | (16.739985, 1.8446319)
+aquo8_central_Dy__far | 12.310417 | (4.5973808, -7.713036) | (13.079181, 0.7687643) | (12.768775, 0.45835782)
+aquo9_central_La__near | 16.806287 | (12.189506, -4.6167809) | (17.003472, 0.1971856) | (16.806287, 2.4465059e-08)
+aquo9_central_La__far | 12.383528 | (5.0787722, -7.3047562) | (12.121771, -0.26175768) | (12.383528, 3.1586485e-08)
+aquo9_central_Dy__near | 19.961261 | (13.140197, -6.8210634) | (19.764071, -0.19718968) | (19.961261, 5.1796714e-08)
+aquo9_central_Dy__far | 12.813569 | (4.6298652, -8.1837034) | (13.075323, 0.26175392) | (12.813569, 9.3376888e-08)
+
+Individual signed mu3 vectors (Debye)
+cycle | target xyz | baseline xyz/error xyz | shared12 xyz/error xyz | metal15 xyz/error xyz
+aquo8_central_La__near | (-0.63043573, -0.2612377, 9.3869818e-05) | ((-0.19775216, -0.081912187, 1.6241727e-14), (0.43268356, 0.17932552, -9.3869818e-05)) | ((-0.9251468, -0.38320891, -1.1047732e-13), (-0.29471108, -0.12197121, -9.3869818e-05)) | ((-0.30870917, -0.12787209, 3.106885e-14), (0.32172655, 0.13336562, -9.3869818e-05))
+aquo8_central_La__far | (-0.1170417, -0.28255756, 2.2570082e-06) | ((-0.032971054, -0.079598133, -2.0855121e-14), (0.08407065, 0.20295943, -2.2570083e-06)) | ((-0.15879655, -0.38336775, -1.3257614e-13), (-0.041754847, -0.10081019, -2.2570084e-06)) | ((-0.072171886, -0.17423731, -2.0618534e-15), (0.044869819, 0.10832025, -2.2570082e-06))
+aquo8_central_Dy__near | (-0.74202906, -0.30744227, 9.7416164e-05) | ((-0.17724954, -0.073419721, 1.8946844e-14), (0.56477953, 0.23402255, -9.7416163e-05)) | ((-0.90911651, -0.37656895, -1.3487855e-13), (-0.16708745, -0.069126675, -9.7416164e-05)) | ((-0.29571616, -0.1224902, 3.2799598e-14), (0.4463129, 0.18495207, -9.7416163e-05))
+aquo8_central_Dy__far | (-0.14155426, -0.34175995, 6.1251883e-06) | ((-0.022321211, -0.053887136, -2.1205454e-14), (0.11923305, 0.28787282, -6.1251883e-06)) | ((-0.15163202, -0.36607104, -1.5525509e-13), (-0.010077759, -0.024311089, -6.1251884e-06)) | ((-0.066216586, -0.15985995, -2.4308291e-15), (0.075337674, 0.18190001, -6.1251883e-06))
+aquo9_central_La__near | (-0.77487987, -0.32065006, -0.00044926952) | ((-0.31924877, -0.13223649, 1.2092022e-13), (0.4556311, 0.18841357, 0.00044926952)) | ((-1.0969046, -0.45435209, 1.0216029e-13), (-0.32202476, -0.13370203, 0.00044926952)) | ((-0.35864027, -0.14855298, 1.005224e-13), (0.41623959, 0.17209708, 0.00044926952))
+aquo9_central_La__far | (9.5123255e-08, 3.6434761e-08, -0.34970619) | ((5.9992096e-16, -1.3331577e-16, -0.086651846), (-9.5123254e-08, -3.6434761e-08, 0.26305434)) | ((-2.6663154e-16, -6.6657885e-17, -0.42503204), (-9.5123255e-08, -3.6434761e-08, -0.075325856)) | ((1.9997365e-16, -6.6657885e-17, -0.18633172), (-9.5123254e-08, -3.6434761e-08, 0.16337447))
+aquo9_central_Dy__near | (-0.90361056, -0.37413173, -0.00033994905) | ((-0.30006695, -0.12429112, 1.290329e-13), (0.60354361, 0.24984062, 0.00033994905)) | ((-1.0781256, -0.44657357, 9.7924668e-14), (-0.17451505, -0.072441833, 0.00033994905)) | ((-0.34305734, -0.14209832, 1.045823e-13), (0.56055322, 0.23203341, 0.00033994905))
+aquo9_central_Dy__far | (-1.581635e-07, 5.8401615e-08, -0.40998549) | ((0, 6.6657885e-17, -0.05899804), (1.581635e-07, -5.8401615e-08, 0.35098745)) | ((0, -1.3331577e-16, -0.40736227), (1.581635e-07, -5.8401615e-08, 0.0026232232)) | ((3.9994731e-16, -1.3331577e-16, -0.17182641), (1.581635e-07, -5.8401615e-08, 0.23815909))
+
+Paired Dy−La trimer contrasts
+cycle | quantity | target | baseline prediction/error | shared12 prediction/error | metal15 prediction/error
+aquo8_central_Dy_minus_La__near | energy_kcal_mol | 2.006632 | (0.59958111, -1.4070508) | (2.3800217, 0.37338979) | (2.6726677, 0.66603571)
+aquo8_central_Dy_minus_La__near | mu_Debye | (-0.11159334, -0.04620457, 3.5463454e-06) | ((0.020502625, 0.0084924653, 2.7051169e-15), (0.13209596, 0.054697035, -3.5463454e-06)) | ((0.016030289, 0.0066399633, -2.4401236e-14), (0.12762362, 0.052844533, -3.5463454e-06)) | ((0.012993011, 0.0053818814, 1.7307477e-15), (0.12458635, 0.051586452, -3.5463454e-06))
+aquo8_central_Dy_minus_La__far | energy_kcal_mol | 0.56784045 | (-0.47141022, -1.0392507) | (0.91807392, 0.35023348) | (0.37372162, -0.19411883)
+aquo8_central_Dy_minus_La__far | mu_Debye | (-0.024512556, -0.059202389, 3.86818e-06) | ((0.010649843, 0.025710996, -3.5033285e-16), (0.035162399, 0.084913385, -3.86818e-06)) | ((0.0071645321, 0.017296711, -2.2678944e-14), (0.031677088, 0.0764991, -3.8681801e-06)) | ((0.0059552996, 0.014377365, -3.6897569e-16), (0.030467855, 0.073579754, -3.86818e-06))
+aquo9_central_Dy_minus_La__near | energy_kcal_mol | 3.1549738 | (0.9506913, -2.2042825) | (2.7605985, -0.39437528) | (3.1549738, 2.7331655e-08)
+aquo9_central_Dy_minus_La__near | mu_Debye | (-0.12873069, -0.053481674, 0.00010932047) | ((0.019181817, 0.007945369, 8.1126805e-15), (0.14791251, 0.061427043, -0.00010932047)) | ((0.018779018, 0.0077785239, -4.2356266e-15), (0.14750971, 0.061260198, -0.00010932047)) | ((0.015582935, 0.006454663, 4.0599005e-15), (0.14431363, 0.059936337, -0.00010932047))
+aquo9_central_Dy_minus_La__far | energy_kcal_mol | 0.4300402 | (-0.44890695, -0.87894715) | (0.95355181, 0.52351161) | (0.43004026, 6.1790404e-08)
+aquo9_central_Dy_minus_La__far | mu_Debye | (-2.5328675e-07, 2.1966853e-08, -0.060279309) | ((-5.9992096e-16, 1.9997365e-16, 0.027653806), (2.5328675e-07, -2.1966853e-08, 0.087933115)) | ((2.6663154e-16, -6.6657885e-17, 0.01766977), (2.5328675e-07, -2.1966854e-08, 0.07794908)) | ((1.9997365e-16, -6.6657885e-17, 0.014505312), (2.5328675e-07, -2.1966854e-08, 0.074784621))
+
+Five conditional susceptibility modes (source a0^3)
+mode | target | baseline prediction/error | shared12 prediction/error | metal15 prediction/error
+water/La_dimer | 15.47168 | (18.819707, 3.3480269) | (18.88121, 3.4095302) | (18.562299, 3.0906186)
+water/La_trimer | 22.016533 | (26.277555, 4.2610224) | (26.1288, 4.1122673) | (25.736868, 3.7203345)
+water/Dy_dimer | 13.158031 | (12.926079, -0.23195196) | (12.981509, -0.17652163) | (12.693967, -0.46406358)
+water/Dy_trimer | 19.881127 | (20.785367, 0.90423982) | (20.649516, 0.76838866) | (20.291544, 0.41041665)
+donor/La_acetate | 47.88102 | (54.125748, 6.2447278) | (51.581638, 3.700618) | (51.581639, 3.7006189)
+
+La donor slopes at both saved steps (kcal/mol/A)
+direction/step A | target | baseline prediction/error | shared12 prediction/error | metal15 prediction/error
+radial/005 | 99.557065 | (98.183174, -1.373891) | (99.681949, 0.12488342) | (99.681948, 0.12488279)
+radial/010 | 99.55708 | (98.178206, -1.3788736) | (99.676992, 0.11991236) | (99.676992, 0.11991173)
+rotation/005 | 28.35794 | (-20.39041, -48.748351) | (28.235084, -0.12285592) | (28.23509, -0.12285076)
+rotation/010 | 28.324977 | (-20.387989, -48.712965) | (28.230512, -0.094465041) | (28.230517, -0.094459882)
+
+Full signed donor conjugate moment vectors (Debye; Dy report-only)
+metal | target xyz | baseline xyz/error xyz | shared12 xyz/error xyz | metal15 xyz/error xyz
+La | (1.0639214, 1.7274055, -1.4795358) | ((-5.0027656, 0.16901958, -6.4536256), (-6.066687, -1.5583859, -4.9740897)) | ((-5.0834153, -0.0019505772, -7.1828935), (-6.1473367, -1.729356, -5.7033576)) | ((-5.0834152, -0.0019504716, -7.1828932), (-6.1473366, -1.7293559, -5.7033573))
+Dy | (2.2186154, 1.9940523, -0.39150626) | ((-5.0999081, 0.19412876, -6.5206453), (-7.3185235, -1.7999236, -6.1291391)) | ((-5.2084881, -0.017596507, -7.348446), (-7.4271036, -2.0116488, -6.9569397)) | ((-5.208488, -0.017596389, -7.3484456), (-7.4271034, -2.0116487, -6.9569394))
+
+baseline parent C/P/B: electronic common-basis targets, D4 excluded
+parent/component | E prediction/target/error kcal/mol | mu prediction/target/error xyz D
+aquo8_central_La/C | (-455.51966, -492.42544, 36.905778) | ((-9.441346e-17, -2.4813499e-16, -1.8312713e-12), (8.5474769e-07, 7.3207644e-07, 0.00096554795), (-8.5474769e-07, -7.3207645e-07, -0.00096554795))
+aquo8_central_La/P | (-610.24827, -725.22063, 114.97236) | ((0, 0, -2.3341329e-12), (-1.3195565e-08, 1.0801292e-06, 0.00012415381), (1.3195565e-08, -1.0801292e-06, -0.00012415381))
+aquo8_central_La/B | (154.72861, 232.79519, -78.066583) | ((-9.441346e-17, -2.4813499e-16, 5.0286163e-13), (8.6794326e-07, -3.4805276e-07, 0.00084139414), (-8.6794326e-07, 3.4805276e-07, -0.00084139414))
+aquo8_central_Dy/C | (-511.85469, -552.19547, 40.340781) | ((-9.441346e-17, 8.8088293e-16, -1.8954461e-12), (2.0621527e-07, 2.1434271e-07, 0.00083266415), (-2.0621527e-07, -2.1434271e-07, -0.00083266415))
+aquo8_central_Dy/P | (-671.60874, -800.40745, 128.79872) | ((0, 0, -2.3687718e-12), (2.7537722e-07, 3.9846166e-07, 4.5978551e-05), (-2.7537722e-07, -3.9846166e-07, -4.5978554e-05))
+aquo8_central_Dy/B | (159.75405, 248.21198, -88.457936) | ((-9.441346e-17, 8.8088293e-16, 4.7332571e-13), (-6.9161958e-08, -1.8411895e-07, 0.00078668559), (6.9161958e-08, 1.8411895e-07, -0.00078668559))
+aquo9_central_La/C | (-476.90752, -515.38971, 38.48219) | ((-3.6934942e-16, 1.4301569e-15, 2.1072002), (2.5507396e-07, 5.880014e-07, 2.2444441), (-2.5507396e-07, -5.880014e-07, -0.13724393))
+aquo9_central_La/P | (-686.5293, -815.14478, 128.61548) | ((-9.9986827e-17, 0, 2.9167257), (3.3474429e-07, 2.4413796e-07, 3.9291951), (-3.3474429e-07, -2.4413796e-07, -1.0124695))
+aquo9_central_La/B | (209.62178, 299.75507, -90.13329) | ((-2.6936259e-16, 1.4301569e-15, -0.80952552), (-7.9670339e-08, 3.4386344e-07, -1.6847511), (7.9670339e-08, -3.4386343e-07, 0.87522554))
+aquo9_central_Dy/C | (-538.11504, -575.47586, 37.360824) | ((-1.0525927e-15, 1.0838697e-17, 2.0175528), (-5.4493512e-08, 2.4305527e-07, 2.1398261), (5.4493511e-08, -2.4305527e-07, -0.12227333))
+aquo9_central_Dy/P | (-755.55983, -899.76074, 144.20091) | ((3.3328942e-17, 0, 2.7292496), (-8.3084556e-08, 1.8103684e-07, 3.959698), (8.3084556e-08, -1.8103684e-07, -1.2304484))
+aquo9_central_Dy/B | (217.44479, 324.28488, -106.84009) | ((-1.0859217e-15, 1.0838697e-17, -0.71169679), (2.8591044e-08, 6.2018435e-08, -1.8198718), (-2.8591045e-08, -6.2018435e-08, 1.1081751))
+
+baseline four-parent contrast Dy9−La9−Dy8+La8
+component | E prediction/target/error | mu prediction/target/error xyz
+C | (-4.8724905, -0.31612208, -4.5563684) | ((-6.8324332e-16, -2.5483361e-15, -0.089647358), (3.3896496e-07, 1.727876e-07, -0.10448507), (-3.3896496e-07, -1.7278761e-07, 0.014837711))
+P | (-7.6700584, -9.4291355, 1.7590771) | ((1.3331577e-16, 0, -0.18747609), (-7.0640164e-07, 6.1856642e-07, 0.030580995), (7.0640164e-07, -6.1856642e-07, -0.21805709))
+B | (2.7975679, 9.1130134, -6.3154455) | ((-8.1655909e-16, -2.5483361e-15, 0.097828736), (1.0453666e-06, -4.4577881e-07, -0.13506606), (-1.0453666e-06, 4.4577881e-07, 0.2328948))
+
+baseline coefficients (literal bounds)
+name | value | absolute bound | at exact bound
+water.v0 | 0 | 100 | 0
+water.hf | 0 | 0.1 | 0
+water.krr | 0 | 1 | 0
+water.kff | 0 | 1 | 0
+water_water.v0 | 0 | 100 | 0
+water_water.va | 0 | 100 | 0
+water_water.h_neighbor | 0 | 0.1 | 0
+water_water.k_cross | 0 | 1 | 0
+acetate.vr | 0 | 100 | 0
+acetate.va | 0 | 100 | 0
+acetate.hf | 0 | 0.1 | 0
+acetate.kff | 0 | 1 | 0
+
+shared12 parent C/P/B: electronic common-basis targets, D4 excluded
+parent/component | E prediction/target/error kcal/mol | mu prediction/target/error xyz D
+aquo8_central_La/C | (-695.63411, -492.42544, -203.20868) | ((-1.527558e-15, 2.2263632e-16, -9.4948742e-13), (8.5474769e-07, 7.3207644e-07, 0.00096554795), (-8.5474769e-07, -7.3207644e-07, -0.00096554795))
+aquo8_central_La/P | (-728.71742, -725.22063, -3.4967926) | ((0, 0, -2.4815705e-12), (-1.3195565e-08, 1.0801292e-06, 0.00012415381), (1.3195565e-08, -1.0801292e-06, -0.00012415381))
+aquo8_central_La/B | (33.083308, 232.79519, -199.71188) | ((-1.527558e-15, 2.2263632e-16, 1.5320831e-12), (8.6794326e-07, -3.4805276e-07, 0.00084139414), (-8.6794326e-07, 3.4805276e-07, -0.00084139414))
+aquo8_central_Dy/C | (-744.8053, -552.19547, -192.60983) | ((7.7213904e-16, -1.6771134e-15, -1.0564067e-12), (2.0621527e-07, 2.1434271e-07, 0.00083266415), (-2.0621526e-07, -2.1434271e-07, -0.00083266415))
+aquo8_central_Dy/P | (-796.23955, -800.40745, 4.1679026) | ((0, 0, -2.5073277e-12), (2.7537722e-07, 3.9846166e-07, 4.5978551e-05), (-2.7537722e-07, -3.9846166e-07, -4.5978554e-05))
+aquo8_central_Dy/B | (51.43425, 248.21198, -196.77773) | ((7.7213904e-16, -1.6771134e-15, 1.450921e-12), (-6.9161958e-08, -1.8411895e-07, 0.00078668559), (6.9161959e-08, 1.8411894e-07, -0.00078668559))
+aquo9_central_La/C | (-798.6619, -515.38971, -283.27219) | ((5.1386755e-16, -4.5325194e-16, 0.84628164), (2.5507396e-07, 5.880014e-07, 2.2444441), (-2.5507395e-07, -5.880014e-07, -1.3981624))
+aquo9_central_La/P | (-819.8071, -815.14478, -4.6623172) | ((0, 0, 3.3066367), (3.3474429e-07, 2.4413796e-07, 3.9291951), (-3.3474429e-07, -2.4413796e-07, -0.62255849))
+aquo9_central_La/B | (21.145199, 299.75507, -278.60987) | ((5.1386755e-16, -4.5325194e-16, -2.460355), (-7.9670339e-08, 3.4386344e-07, -1.6847511), (7.967034e-08, -3.4386344e-07, -0.77560394))
+aquo9_central_Dy/C | (-852.44262, -575.47586, -276.96676) | ((-9.6927038e-16, -2.5504634e-15, 0.70940397), (-5.4493512e-08, 2.4305527e-07, 2.1398261), (5.4493511e-08, -2.4305527e-07, -1.4304222))
+aquo9_central_Dy/P | (-895.7695, -899.76074, 3.9912474) | ((0, 0, 3.1089798), (-8.3084556e-08, 1.8103684e-07, 3.959698), (8.3084556e-08, -1.8103684e-07, -0.85071817))
+aquo9_central_Dy/B | (43.326874, 324.28488, -280.958) | ((-9.6927038e-16, -2.5504634e-15, -2.3995758), (2.8591044e-08, 6.2018435e-08, -1.8198718), (-2.8591045e-08, -6.2018438e-08, -0.57970399))
+
+shared12 four-parent contrast Dy9−La9−Dy8+La8
+component | E prediction/target/error | mu prediction/target/error xyz
+C | (-4.6095328, -0.31612208, -4.2934107) | ((-3.782835e-15, -1.9746172e-16, -0.13687768), (3.3896496e-07, 1.727876e-07, -0.10448507), (-3.3896496e-07, -1.727876e-07, -0.032392607))
+P | (-8.4402661, -9.4291355, 0.98886944) | ((0, 0, -0.19765686), (-7.0640164e-07, 6.1856642e-07, 0.030580995), (7.0640164e-07, -6.1856642e-07, -0.22823785))
+B | (3.8307333, 9.1130134, -5.2822801) | ((-3.782835e-15, -1.9746172e-16, 0.060779182), (1.0453666e-06, -4.4577881e-07, -0.13506606), (-1.0453666e-06, 4.4577881e-07, 0.19584525))
+
+shared12 coefficients (literal bounds)
+name | value | absolute bound | at exact bound
+water.v0 | -8.182961 | 100 | 0
+water.hf | 0.1 | 0.1 | 1
+water.krr | -0.10984067 | 1 | 0
+water.kff | -0.097107104 | 1 | 0
+water_water.v0 | -29.211227 | 100 | 0
+water_water.va | -26.73983 | 100 | 0
+water_water.h_neighbor | -0.1 | 0.1 | 1
+water_water.k_cross | 1 | 1 | 0
+acetate.vr | -19.589644 | 100 | 0
+acetate.va | -100 | 100 | 1
+acetate.hf | 0.1 | 0.1 | 0
+acetate.kff | 0.52890838 | 1 | 0
+
+metal15 parent C/P/B: electronic common-basis targets, D4 excluded
+parent/component | E prediction/target/error kcal/mol | mu prediction/target/error xyz D
+aquo8_central_La/C | (-414.33931, -492.42544, 78.086129) | ((6.3882327e-16, -2.6063335e-16, -5.2371018e-13), (8.5474769e-07, 7.3207644e-07, 0.00096554795), (-8.5474769e-07, -7.3207645e-07, -0.00096554795))
+aquo8_central_La/P | (-724.87784, -725.22063, 0.34278858) | ((0, 0, -1.5614177e-12), (-1.3195565e-08, 1.0801292e-06, 0.00012415381), (1.3195565e-08, -1.0801292e-06, -0.00012415381))
+aquo8_central_La/B | (310.53853, 232.79519, 77.743341) | ((6.3882327e-16, -2.6063335e-16, 1.0377075e-12), (8.6794326e-07, -3.4805276e-07, 0.00084139414), (-8.6794325e-07, 3.4805276e-07, -0.00084139414))
+aquo8_central_Dy/C | (-445.62923, -552.19547, 106.56624) | ((-1.6107135e-16, -1.2105082e-15, -4.4882005e-13), (2.0621527e-07, 2.1434271e-07, 0.00083266415), (-2.0621527e-07, -2.1434271e-07, -0.00083266415))
+aquo8_central_Dy/P | (-800.07915, -800.40745, 0.32830265) | ((0, 0, -1.5090151e-12), (2.7537722e-07, 3.9846166e-07, 4.5978551e-05), (-2.7537722e-07, -3.9846166e-07, -4.5978553e-05))
+aquo8_central_Dy/B | (354.44992, 248.21198, 106.23794) | ((-1.6107135e-16, -1.2105082e-15, 1.0601951e-12), (-6.9161958e-08, -1.8411895e-07, 0.00078668559), (6.9161958e-08, 1.8411894e-07, -0.00078668559))
+aquo9_central_La/C | (-415.24683, -515.38971, 100.14288) | ((1.3304266e-15, -5.5388128e-17, 1.0757459), (2.5507396e-07, 5.880014e-07, 2.2444441), (-2.5507395e-07, -5.880014e-07, -1.1686981))
+aquo9_central_La/P | (-815.48757, -815.14478, -0.34278841) | ((-3.3328942e-17, 0, 2.3421473), (3.3474429e-07, 2.4413796e-07, 3.9291951), (-3.3474429e-07, -2.4413796e-07, -1.5870479))
+aquo9_central_La/B | (400.24074, 299.75507, 100.48567) | ((1.3637556e-15, -5.5388128e-17, -1.2664013), (-7.9670339e-08, 3.4386344e-07, -1.6847511), (7.9670341e-08, -3.4386344e-07, 0.41834975))
+aquo9_central_Dy/C | (-441.64921, -575.47586, 133.82665) | ((-1.1359151e-15, -3.8715515e-17, 0.93567739), (-5.4493512e-08, 2.4305527e-07, 2.1398261), (5.449351e-08, -2.4305527e-07, -1.2041487))
+aquo9_central_Dy/P | (-900.08905, -899.76074, -0.32830254) | ((0, 0, 2.1433707), (-8.3084556e-08, 1.8103684e-07, 3.959698), (8.3084556e-08, -1.8103684e-07, -1.8163272))
+aquo9_central_Dy/B | (458.43984, 324.28488, 134.15496) | ((-1.1359151e-15, -3.8715515e-17, -1.2076933), (2.8591044e-08, 6.2018435e-08, -1.8198718), (-2.8591045e-08, -6.2018435e-08, 0.6121785))
+
+metal15 four-parent contrast Dy9−La9−Dy8+La8
+component | E prediction/target/error | mu prediction/target/error xyz
+C | (4.8875359, -0.31612208, 5.203658) | ((-1.6664471e-15, 9.6654747e-16, -0.14006855), (3.3896496e-07, 1.727876e-07, -0.10448507), (-3.3896496e-07, -1.727876e-07, -0.035583479))
+P | (-9.4001637, -9.4291355, 0.028971801) | ((3.3328942e-17, 0, -0.19877653), (-7.0640164e-07, 6.1856642e-07, 0.030580995), (7.0640164e-07, -6.1856642e-07, -0.22935753))
+B | (14.2877, 9.1130134, 5.1746862) | ((-1.6997761e-15, 9.6654747e-16, 0.058707983), (1.0453666e-06, -4.4577881e-07, -0.13506606), (-1.0453666e-06, 4.4577881e-07, 0.19377405))
+
+metal15 coefficients (literal bounds)
+name | value | absolute bound | at exact bound
+water_La.v0 | -38.081647 | 100 | 0
+water.hf | 0.1 | 0.1 | 1
+water.krr | 1 | 1 | 1
+water.kff | 1 | 1 | 1
+water_water_La.v0 | 18.278522 | 100 | 0
+water_water_La.va | -11.079645 | 100 | 0
+water_water.h_neighbor | -0.1 | 0.1 | 1
+water_water.k_cross | 1 | 1 | 1
+acetate.vr | -19.589649 | 100 | 0
+acetate.va | -100 | 100 | 1
+acetate.hf | 0.1 | 0.1 | 1
+acetate.kff | 0.52890815 | 1 | 0
+water_Dy.v0 | -43.216354 | 100 | 0
+water_water_Dy.v0 | 23.227694 | 100 | 0
+water_water_Dy.va | -7.1939308 | 100 | 0
+
+shared12_control all16 raw solver outcomes (unsuccessful feasible endpoints remain labelled)
+start | state | H status/success | h status/rank | V status/rank | joint status/success | selected stage | score
+0 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 5) | (0, 1) | joint | 3.4165427
+1 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 5) | (0, 1) | joint | 3.4165427
+2 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 5) | (0, 1) | joint | 3.4165427
+3 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 5) | (0, 1) | joint | 3.4165427
+4 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 5) | (0, 1) | joint | 3.4165427
+5 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 5) | (0, 1) | joint | 3.4165427
+6 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 5) | (0, 1) | joint | 3.4165427
+7 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 5) | (0, 1) | joint | 3.4165427
+8 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 5) | (0, 1) | joint | 3.4165427
+9 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 5) | (0, 1) | joint | 3.4165427
+10 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 5) | (0, 1) | joint | 3.4165427
+11 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 5) | (0, 1) | joint | 3.4165427
+12 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 5) | (0, 1) | joint | 3.4165427
+13 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 5) | (0, 1) | joint | 3.4165427
+14 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 5) | (0, 1) | joint | 3.4165427
+15 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 5) | (0, 1) | joint | 3.4165427
+
+shared12_control allocated parent CPU-s: 672
+shared12_control distinct literal returned H endpoints / complete conditional points: (10, 10)
+metal15 all16 raw solver outcomes (unsuccessful feasible endpoints remain labelled)
+start | state | H status/success | h status/rank | V status/rank | joint status/success | selected stage | score
+0 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 8) | (0, 1) | joint | 3.1990894
+1 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 8) | (0, 1) | joint | 3.1990894
+2 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 8) | (0, 1) | joint | 3.1990894
+3 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 8) | (0, 1) | joint | 3.1990894
+4 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 8) | (0, 1) | joint | 3.1990894
+5 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 8) | (0, 1) | joint | 3.1990894
+6 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 8) | (0, 1) | joint | 3.1990894
+7 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 8) | (0, 1) | joint | 3.1990894
+8 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 8) | (0, 1) | joint | 3.1990894
+9 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 8) | (0, 1) | joint | 3.1990894
+10 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 8) | (0, 1) | joint | 3.1990894
+11 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 8) | (0, 1) | joint | 3.1990894
+12 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 8) | (0, 1) | joint | 3.1990894
+13 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 8) | (0, 1) | joint | 3.1990894
+14 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 8) | (0, 1) | joint | 3.1990894
+15 | complete_stable_candidate | (0, 1) | (1, 3) | (1, 8) | (0, 1) | joint | 3.1990894
+
+metal15 allocated parent CPU-s: 552
+metal15 distinct literal returned H endpoints / complete conditional points: (10, 10)
+Unbounded stiffness support: optimistic chi floors (ordinary double, source a0^3)
+mode | donor O count | baseline | target | current H-support floor | all donor-O Cartesian floor
+water/La_dimer | 1 | 18.819707 | 15.47168 | 16.738058 | 16.738058
+water/La_trimer | 2 | 26.277555 | 22.016533 | 22.218076 | 22.218076
+water/Dy_dimer | 1 | 12.926079 | 13.158031 | 10.651428 | 10.651428
+water/Dy_trimer | 2 | 20.785367 | 19.881127 | 16.337074 | 16.337074
+donor/La_acetate | 2 | 54.125748 | 47.88102 | 41.363336 | 35.927504
+
+Signed moment residual perpendicular to accessible response directions (Debye)
+mode/reference | current-support xyz | current-support norm | all donor-O norm
+water/La_dimer/pbe0__aquo9__La__water_01__metal_water | (0, -7.2002356e-08, -5.5511151e-17) | 7.2002356e-08 | 2.2204519e-16
+water/La_trimer/pbe0__aquo9__La__far__metal_two_water | (-1.323489e-23, -1.1099242e-07, 2.220446e-16) | 1.1099242e-07 | 6.0212488e-17
+water/Dy_dimer/pbe0__aquo9__Dy__water_01__metal_water | (-4.4408921e-16, 1.6689384e-07, -1.110223e-16) | 1.6689384e-07 | 1.3878065e-15
+water/Dy_trimer/pbe0__aquo9__Dy__far__metal_two_water | (2.4815418e-24, 1.5922148e-07, 0) | 1.5922148e-07 | 7.8902489e-16
+donor/La_acetate/donor/La_acetate | (0.96443612, -1.8815809, 0.3344624) | 2.1406422 | 5.6217204e-15
+
+Support floors allow unbounded stiffness beyond fitted boxes. SVD cutoffs/singular values and exact donor/frame maps are retained in RESULT.json. They are not rigorous interval certificates or unique quantum-mechanism assignments.
+
+
+LIMITS / UNRESOLVED GAPS
+- Both models use the same consumed64-geometry data. More flexible energy interpolation is not independent validation or a global capacity proof.
+- All32 finite starts and raw solver statuses are retained. Shared endpoints are counted exactly; sixteen starts do not imply sixteen independent basins. Feasible unsuccessful endpoints do not establish convergence or global optimality.
+- Parent component errors, Dy−La differences, and net C=P+B cancellation are distinct; these cluster cycles are not exchange free energies.
+- Water energies use electronic common-parent-basis targets without D4; donor relative energies/slopes use their original PBE0-D4 protocol.
+- Conjugate moment uses (u+v)/2; native physical-u moment is recorded separately. Charged-system origin and reference-state qualifications remain inherited.
+- Only five susceptibility modes are targeted, not a qualified full response tensor. Failed Dy susceptibility and unavailable Dy canonical torque are excluded.
+- Both donor slope steps are reported; only half-step La slopes are fitted. Dy donor moment is report-only, with no Dy mechanical fitting.
+- Water full coordinate forces are unavailable from these frozen-operator predictions; no force preservation, periodic dynamics or production qualification follows.
+- All coefficient bounds and response-stability constraints are unchanged. Fitting scales are not physical accuracy gates; no tolerance was relaxed.
+- Tightened W9far references and canonical donor results remain separate sensitivities; original targets were not replaced.

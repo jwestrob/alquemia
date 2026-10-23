@@ -1,0 +1,39 @@
+{
+  "status": "declared_serialization_only_replacement_of_single_existing_fixture",
+  "fixture": "hadamard4_spd",
+  "dimension": 4,
+  "maximum_new_numeric_factorizations": 1,
+  "maximum_new_symbolic_analyses": 1,
+  "maximum_new_solves": 12,
+  "numerical_threads": 1,
+  "preserved_failure": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/supernodal_mode_v1/actual_v1/RESULT.json",
+    "sha256": "e2b1041f93d74c8fce8bce03dfaf686f8d92eec265610973d3214b66d0fb89e6"
+  },
+  "diagnosis": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/supernodal_mode_v1/source_diagnosis_v1/DIAGNOSIS.json",
+    "sha256": "2a2f3c42f4fcbea2adbc7eede43b09261b4bec9c7fa704217a2f130c80e741a0"
+  },
+  "changes": "Correct numerical-path versus returned-storage guard only. Require supernodal symbolic state before numeric call; exact wrapper source preserves that requested mode and deliberately converts final storage to simplicial LL. No numeric source/settings/criteria change.",
+  "reuse": "All eleven completed matrices, five malformed inputs, sparse/dense arithmetic and original corruption control are reused from immutable failed-v1 result.",
+  "new_check": "One original nontrivial SPD Hadamard4 matrix: source-backed pre-state, expected final LL storage, copied-L independent solve and sparse/dense arithmetic.",
+  "criterion": "Original 1e-6 shift, 100*n*eps residuals and unchanged unresolved-boundary handling.",
+  "no_saved_molecular_data": true,
+  "no_native_calls": true,
+  "no_installs": true,
+  "no_automatic_retry": true,
+  "serialization_delta": "NumPy scalar .item() JSON conversion, strict unsupported-type error, and a pre-factor scalar serialization check; numerical backend/source/settings unchanged.",
+  "preserved_first_recovery_process": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/supernodal_mode_v1/recovery_v1/PROCESS.json",
+    "sha256": "b61b9aad65a81ff518a3500c98502c4e745d553d4889aa5098a5064896ae49a5"
+  },
+  "preserved_first_recovery_started_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/supernodal_mode_v1/recovery_v1/actual_v1/RESULT.json",
+    "sha256": "9603b69c7c30524afc622e21c8e8d230af1a3f71cdbf5b8cb5ad99390e967954"
+  },
+  "preserved_first_recovery_stderr": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/supernodal_mode_v1/recovery_v1/stderr.txt",
+    "sha256": "eb768050354ce73f436a921c0a0f550cddcfef55dbf8cef00134dd7b0a9ba23a"
+  },
+  "previous_recovery_counts": "One factor attempt consumed; at least ten and at most twelve solves inferred from the guarded code path reaching sparse audit serialization. Final numerical values and final counters were not persisted; started counters are not completion counters."
+}

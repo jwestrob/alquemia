@@ -1,0 +1,61 @@
+{
+  "status": "declared_candidate_independent_build_preparation",
+  "created_utc": "2026-10-23T05:00:01.194221+00:00",
+  "question": "Can the isolated radial V2 runtime archive and initializer/parity/gradient wrappers compile and link with their matching modules?",
+  "parents": {
+    "IMPLEMENTATION_READY.json": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_runtime_v1/IMPLEMENTATION_READY.json",
+      "sha256": "2f24ade0b91add734a5b84f7c260de65ff97981830cd74f53b872e470220de6c"
+    },
+    "BUILD_HANDOFF.json": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_runtime_v1/BUILD_HANDOFF.json",
+      "sha256": "339ba5ec175b43daecdd1ec89d3365f9fcaf693b4c0e783c12300c0fe0bcafd1"
+    },
+    "SOURCE_CONTRACT.json": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_runtime_v1/SOURCE_CONTRACT.json",
+      "sha256": "07890b44c018962f1934eb9e5ccb13e087e3ce15f02ed83c9467e73a434b8443"
+    }
+  },
+  "scope_now": [
+    "prepare contained build adapter/configuration and Slurm wrapper",
+    "one-thread source/manufactured command and pin controls",
+    "freeze build READY for root source review"
+  ],
+  "not_released": [
+    "compiler execution",
+    "scheduler submission",
+    "molecular native invocation",
+    "candidate or composition binding",
+    "FFT replay or matrix assembly/factorization",
+    "production change"
+  ],
+  "prospective_build": {
+    "account": "banfield",
+    "partition": "standard",
+    "qos": "standard_expand",
+    "nodes": 1,
+    "tasks": 1,
+    "CPUs": 12,
+    "archive_workers": 12,
+    "wrapper_compilation": "sequential",
+    "numerical_threads_per_process": 1,
+    "memory_and_time": "scheduler defaults",
+    "no_requeue": true,
+    "watcher_required": true
+  },
+  "recipe": {
+    "archive": "fresh build from exact615-file radial source inventory and pinned CMake/dependencies",
+    "target": "tinker only",
+    "parallel_delta": "Use --parallel12 instead of prospective handoff1; archive compilation parallelism only, no scientific numerical worker",
+    "wrappers": "exact eight sources and ordered links from handoff; new archive+polar module; no old module search path",
+    "baseline": "reuse exact admitted cutoff12 gradient_old/V1 chain; no old library rebuild",
+    "failure": "one attempt per command; retain explicit failure with logs and costs; no silent flags or source retries",
+    "outputs": "periodic_v2_build_complete bundle with exact four executable roles, radial archive/module, objects, source and dependency/loader pins"
+  },
+  "ownership": {
+    "adapter": "Singer",
+    "source_review_release_submission_admission": "root",
+    "runtime_source_review": "Arendt"
+  },
+  "interpretation": "Compilation/link success is not numerical or scientific qualification. Candidate remains unbound. Runtime source review and root admission precede build release."
+}

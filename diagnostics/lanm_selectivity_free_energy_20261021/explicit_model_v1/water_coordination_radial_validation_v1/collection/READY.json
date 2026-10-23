@@ -1,0 +1,54 @@
+{
+  "status": "source_only_ready_unbound_hold",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/water_coordination_radial_validation_v1/collection/RUN.py",
+    "sha256": "228f304b33e0197cb82579f5d0665463365870419e75541ba676efb0ecdf78e3"
+  },
+  "configuration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/water_coordination_radial_validation_v1/collection/CONFIG_SOURCE.json",
+    "sha256": "7be52346514e4d1e93e450e4a44b17cd3adf1fd486399a34d25e22dcbce0e350"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/water_coordination_radial_validation_v1/collection/SPEC.md",
+    "sha256": "5e4b999d86414f58ca55efeee9a07abc0481dc44877123e99056c7bd52a4d6f9"
+  },
+  "saved_controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/water_coordination_radial_validation_v1/collection/saved_controls_v1/RESULT.json",
+    "sha256": "ff494e199f4f1abb1567f9407ae1b3591113426ad50f042c09edd3dafa975a55"
+  },
+  "review_join_controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/water_coordination_radial_validation_v1/collection/review_join_controls_v2/RESULT.json",
+    "sha256": "1b549ff38b8c51488802d2386e6c62d94014b1cf593856e9ae2c3379fd1fbe0b"
+  },
+  "preserved_previous_source": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/water_coordination_radial_validation_v1/collection/draft_v2/RUN.py",
+    "sha256": "99ef066ed5efd9d99749409c1bb7f59e55eb8518220069cb16823f72ae6d5322"
+  },
+  "control_count": 23,
+  "control_cost": {
+    "wall_seconds": 0.23706908198073506,
+    "CPU_seconds": 0.18496694100000005,
+    "local_threads": 1
+  },
+  "new_native_calls": 0,
+  "fit_or_fresh_validation_outcomes_read": false,
+  "candidate_bound": false,
+  "future_fields": {
+    "model_bound": null,
+    "model_result_path": null,
+    "reference_release": null,
+    "reference_result_inventory": null
+  },
+  "source_only_scope": "Existing reference.collect/model.admit_result/scorer.evaluate APIs; exact4cells/12checks; no molecular code or new scoring arithmetic. Original controls retained; only reference review binding line changed afterward and4new controls exercised that join.",
+  "launch_template": [
+    "python",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/water_coordination_radial_validation_v1/collection/RUN.py",
+    "collect",
+    "--config",
+    "ABS_NEW_ROOT_BOUND_CONFIG.json",
+    "--out",
+    "ABS_NEW_COLLECTION_DIRECTORY"
+  ],
+  "root_reported_hold": "Root reports terminal17676 failed development controls and selected review17683 preserves scientific false; no candidate bound or result read here. Original native-release gates remain unchanged.",
+  "independent_review": "pending"
+}

@@ -1,0 +1,134 @@
+{
+  "RUN.py": {
+    "original": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/boundary_fraction_witness_v1/RUN_v2.py",
+      "sha256": "30bb597ae3a25de9d3e0964a00ba20ffe7141e902ba7f3c1fcd3b633c14fab07"
+    },
+    "replacements": [
+      {
+        "old": "workers=12,numerical_threads_per_process=1,allocated_CPUs=13",
+        "new": "workers=11,numerical_threads_per_process=1,allocated_CPUs=12"
+      },
+      {
+        "old": "def metadata(cfg,probe_pins=False):",
+        "new": "def scheduling_bridge(cfg):\n    \"\"\"Read metadata only; retain the original scalar certificate and fingerprint.\"\"\"\n    require(cfg['scheduling_declaration']==pin(HERE/'ROOT_DECLARATION.json'), 'Exact scheduling declaration')\n    declaration=read(cfg['scheduling_declaration'])\n    require(declaration['status']=='declared_source_only_scheduling_recovery', 'Declared recovery')\n    submission=read(declaration['original_submission'])\n    require(submission['job_id']=='20734' and submission['configuration']==cfg['original_configuration'], 'Original unmodified submission')\n    old=read(cfg['original_configuration']);bridge=read(cfg['scheduling_bridge'])\n    require(bridge['status']=='metadata_only_boundary_scheduling_bridge' and bridge['original_configuration']==cfg['original_configuration']\n            and bridge['scheduling_declaration']==cfg['scheduling_declaration'], 'Exact bridge authority')\n    changed={'implementation','adapter','resource_helper','scheduler_wrapper','limits','run_id','output_directory','source_review','root_release','fingerprint'}\n    added={'scheduling_declaration','scheduling_bridge','original_configuration'}\n    require(set(cfg)==set(old)|added and all(cfg[k]==v for k,v in old.items() if k not in changed), 'Only declared scheduling configuration differences')\n    oldlimits=dict(LIMITS,workers=12,allocated_CPUs=13)\n    require(old['limits']==oldlimits and cfg['limits']==LIMITS and bridge['old_limits']==oldlimits and bridge['new_limits']==LIMITS, 'Only concurrency limits changed')\n    require(cfg['resource_helper']==pin(HERE/'RESOURCE.py'), 'Versioned actual allocation helper')\n    for k in ('implementation','adapter','resource_helper','scheduler_wrapper'):\n        require(bridge[k]==cfg[k], 'Bridge source '+k);verify(cfg[k])\n    prep=read(cfg['preparation']);review=read(old['source_review']);witness=read(prep['witness'])\n    require(fingerprint(old)==bridge['original_configuration_fingerprint']==prep['configuration_fingerprint']==review['configuration_fingerprint'], 'Preserved original preparation fingerprint')\n    require(prep['status']=='prepared_boundary_fraction_witness_zero_calls' and prep['implementation']==old['implementation']\n            and prep['native_programs']==prep['solver_calls']==0 and prep['eligible'], 'Original zero-call eligible preparation')\n    require(review['status']=='passed_boundary_fraction_witness_source_review' and review['implementation']==old['implementation']\n            and review['adapter']==old['adapter'] and review['preparation']==cfg['preparation'] and review['witness']==prep['witness'], 'Original reviewed scalar evidence')\n    require(bridge['preparation']==cfg['preparation'] and bridge['witness']==prep['witness']==read(old['root_release'])['witness']\n            and witness['eligible'] and witness['fraction']==FRACTION and witness['key']==prep['witness_key']==bridge['witness_key'], 'Unchanged exact prepared point')\n    return bridge\n\n\ndef metadata(cfg,probe_pins=False):"
+      },
+      {
+        "old": "    require(cfg['root_declaration']==pin(HERE/'ROOT_DECLARATION.json') and cfg['witness_specification']==pin(HERE/'SPEC.txt') and cfg['scheduler_wrapper']==pin(HERE/'RUN_v2.sbatch'),'Frozen declaration/spec/wrapper')",
+        "new": "    scheduling_bridge(cfg)\n    original=HERE.parent/'boundary_fraction_witness_v1'\n    require(cfg['root_declaration']==pin(original/'ROOT_DECLARATION.json') and cfg['witness_specification']==pin(original/'SPEC.txt') and cfg['scheduler_wrapper']==pin(HERE/'RUN.sbatch'),'Frozen original science and new wrapper')"
+      },
+      {
+        "old": "'root_declaration','scheduler_wrapper'}",
+        "new": "'root_declaration','scheduler_wrapper','resource_helper'}"
+      },
+      {
+        "old": "X=module(fitcfg['resource_helper'],'boundary_slurm_resource')",
+        "new": "X=module(cfg['resource_helper'],'boundary_slurm_resource')"
+      },
+      {
+        "old": "    require(prep['status']=='prepared_boundary_fraction_witness_zero_calls' and prep['configuration_fingerprint']==fp and prep['native_programs']==prep['solver_calls']==0,'Eligible exact scalar preparation')",
+        "new": "    scheduling_bridge(cfg)\n    require(review['scheduling_bridge']==cfg['scheduling_bridge'] and review['scheduling_declaration']==cfg['scheduling_declaration'], 'Reviewed scheduling bridge')\n    require(prep['status']=='prepared_boundary_fraction_witness_zero_calls' and prep['native_programs']==prep['solver_calls']==0,'Original eligible exact scalar preparation')\n    require(release['original_job_20734_cancelled_unstarted'] is True, 'Root admits old job cancellation before replacement');verify(release['original_job_resolution'])"
+      },
+      {
+        "old": "'limits','output_directory','source_review','preparation'):",
+        "new": "'limits','output_directory','source_review','preparation','scheduling_declaration','scheduling_bridge','original_configuration'):"
+      },
+      {
+        "old": "def run(mode,config_path,out):\n    tick",
+        "new": "def run(mode,config_path,out):\n    require(mode=='run','Scheduling recovery forbids scalar preparation replay')\n    tick"
+      },
+      {
+        "old": "native_workers=12 if allocation else 0",
+        "new": "native_workers=11 if allocation else 0"
+      },
+      {
+        "old": "choices=('prepare','run')",
+        "new": "choices=('run',)"
+      }
+    ]
+  },
+  "ADAPTER.py": {
+    "original": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/boundary_fraction_witness_v1/ADAPTER.py",
+      "sha256": "6e4ec78b2b293a72a9a79a280a55307677eb6f5751a539b7727254abeaa83290"
+    },
+    "replacements": [
+      {
+        "old": "import types\n",
+        "new": "import types\nimport threading\n"
+      },
+      {
+        "old": "    cell = next(n for n in ast.walk(fn)",
+        "new": "    evaluate = next(n for n in ast.walk(fn) if isinstance(n, ast.FunctionDef) and n.name == 'evaluate')\n    pools = [n for n in ast.walk(evaluate) if isinstance(n, ast.Call) and isinstance(n.func, ast.Attribute) and n.func.attr == 'ThreadPoolExecutor']\n    require(len(pools) == 1 and not pools[0].args and len(pools[0].keywords) == 1, 'Exactly one parent thread pool')\n    kw = pools[0].keywords[0]\n    require(kw.arg == 'max_workers' and isinstance(kw.value, ast.Constant) and kw.value.value == 12, 'Exact original12 worker pool')\n    kw.value = ast.Constant(value=11)\n    cell = next(n for n in ast.walk(fn)"
+      },
+      {
+        "old": "            base.Evaluator.__init__(self, runtime, path, root_release=cfg.get('root_release'))",
+        "new": "            base.Evaluator.__init__(self, runtime, path, root_release=cfg.get('root_release'))\n            self.slots = threading.BoundedSemaphore(11)"
+      },
+      {
+        "old": "os.environ.get('SLURM_CPUS_PER_TASK') == '13'",
+        "new": "os.environ.get('SLURM_CPUS_PER_TASK') == '12'"
+      },
+      {
+        "old": "'Actual13CPU Slurm and one-thread native'",
+        "new": "'Actual12CPU Slurm and one-thread native'"
+      },
+      {
+        "old": "s.update(max_parameter_vectors=1, max_native_programs=56, active_limits=",
+        "new": "s.update(max_parameter_vectors=1, max_native_programs=56, workers=11, active_limits="
+      }
+    ]
+  },
+  "RESOURCE.py": {
+    "original": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/iterative_fit_v1/RESOURCE.py",
+      "sha256": "54be356b669387180c2051c8a81b239f773ab0f1e6726dac4d5ccc96eb3ca396"
+    },
+    "replacements": [
+      {
+        "old": "\"\"\"Scheduling-only13-CPU allocation binding; no scientific operations.\"\"\"",
+        "new": "\"\"\"Scheduling-only12-CPU/11-worker allocation binding; no scientific operations.\"\"\""
+      },
+      {
+        "old": "fields.get('QOS')=='standard_expand'",
+        "new": "fields.get('QOS')=='standard'"
+      },
+      {
+        "old": "fields.get('NumCPUs')=='13' and fields.get('CPUs/Task')=='13'",
+        "new": "fields.get('NumCPUs')=='12' and fields.get('CPUs/Task')=='12'"
+      },
+      {
+        "old": "'One nonrequeued13-CPU task'",
+        "new": "'One nonrequeued12-CPU task'"
+      },
+      {
+        "old": "env.get('SLURM_CPUS_PER_TASK')=='13'",
+        "new": "env.get('SLURM_CPUS_PER_TASK')=='12'"
+      },
+      {
+        "old": "allocated_CPUs=13,nodes=1,tasks=1,native_workers=12",
+        "new": "allocated_CPUs=12,nodes=1,tasks=1,native_workers=11"
+      }
+    ]
+  },
+  "RUN.sbatch": {
+    "original": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/boundary_fraction_witness_v1/RUN_v2.sbatch",
+      "sha256": "3313c4efaa556b03178296432821155f574344b6318fab150e291fb2a8493050"
+    },
+    "replacements": [
+      {
+        "old": "#SBATCH --qos=standard_expand",
+        "new": "#SBATCH --qos=standard"
+      },
+      {
+        "old": "#SBATCH --cpus-per-task=13",
+        "new": "#SBATCH --cpus-per-task=12"
+      },
+      {
+        "old": "boundary_fraction_witness_v1/RUN_v2.py",
+        "new": "boundary_fraction_standard_v1/RUN.py"
+      }
+    ]
+  }
+}

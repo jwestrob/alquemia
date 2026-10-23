@@ -1,0 +1,21 @@
+# Source-only single static factor worker
+
+This worker has **no bound candidate, matrix or PME input and no execution release**. It performs no assembly, pair query, model call, optimizer or parameter conversion. Future input preparation and review must supply an immutable unshifted normalized real-space lower CSC and the initialized PME bound. The worker must not be used to infer that BIO composition alone qualifies the custom periodic Hamiltonian.
+
+## Required input contract
+
+`INPUT_MANIFEST_UNBOUND.json` documents the exact array contract: separate pinned `.npy` float64 data and int32 indices/indptr, normalized B0+H lower triangle, explicit diagonal,35874 coordinates/16371009 entries, exact saved graph payload hashes, same49.324 A cube/9 A cutoff/0.4 per-A split. No zero elimination or new graph analysis occurs. Candidate-specific numerical data must be newly prepared and admitted; old H=0 BIO data is not a substitute. The geometry, active map and all-unity mutual-scale scope remain explicit. Matrix symmetry and the real upper bound are upstream reviewed facts; one stored triangle cannot independently test a full native operator's symmetry.
+
+`ROOT_INPUT_REVIEW_UNBOUND.json` binds all provenance and the actual U_B/U_R values. Root must admit the real operator/upper-bound producer, exact candidate/composition mapping, initialized native PME PSD/adjoint/upper-bound evidence, geometry and active map. The passed PME-review status is supplied explicitly when its actual schema exists. This worker does not parse or replace those raw scientific admissions. Input preparation must reject unsupported composition rather than setting a review flag speculatively.
+
+The campaign must have terminal `bounded_component_fit_complete` status, error null, mode run and candidate_frozen true; its actual selected artifact/configuration must match the bound pins. A started/preparation/failed result cannot release this worker. Terminal fit and PME review statuses must match explicitly declared passed-status strings; root input review binds both exact reviews. No partial fit outcomes were read to prepare this source.
+
+## One bounded numerical attempt
+
+Fixed AMD/supernodal computation with wrapper-converted simplicial LL storage, no alternate method or retry. The qualified backend checks supernodal symbolic state before one numeric call. Apply exactly tau=1e-6*(U_B+U_R) to the copied real diagonal. Require existing symmetry criteria, finite bounds and positive total upper bound. Preserve nonpositive real-split outcomes as inconclusive for the full PME operator, backend errors as failures, and warnings/arithmetic failures without positive admission.
+
+Use the declared ten fixed sparse factor-action/solve probes and inherited100*n*eps bounds. No dense K, dense permutation or L*L.T is formed. A copied sparse L is accounted for in the32 GiB cap. These checks are sampled, not a whole factor-error norm. All tiny AMD permutations happened to be identity; the actual nonidentity permutation, if present, is checked through the sparse action formula but was not separately exercised by the finite tiny panel.
+
+The stdlib supervisor creates one fresh output, records the actual process and limits, and enforces900 s wall by killing only its own process group. Worker hard/soft limits:32 GiB address space and10800 aggregate CPU-s. One pinned OpenBLAS pool with12 threads, OpenMP1 and other pools1; runtime readback required. Hostbiotite, null scheduler job, at least64 GiB current MemAvailable at launch (headroom check only, not reservation). All numerical imports and matrix-array reads occur after worker limits. Geometry/candidate metadata checks are bounded reads. The worker does not assemble or enumerate pairs; those would require a separately bounded input-preparation stage. The original pair-query limitation is not resolved by this worker.
+
+A passed ordinary-double sufficient numerical test is not physical accuracy, native engine parity, interval proof, MD release or evidence of affordable factorization per MD step. The32 GiB/900 s envelope remains an unmeasured engineering allowance. Final wrapper conversion to simplicial LL and its memory/time overhead are included in that allowance. All null bindings and source/runtime reviews must be completed before any actual attempt; root owns release.

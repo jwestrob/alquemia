@@ -1,0 +1,16 @@
+{
+  "question": "Does unchanged response-disabled baseline reproduce the broad Cartesian/strain numerical failure, and what residual remains in the response-induced increment?",
+  "scope": "Exact old baseline center and eight submitted old-library gradients; reuse all corresponding active outcomes. No model/reference/native/FFT/factor call.",
+  "baseline_gates": "Original COLLECT.py parser/projection/slope_checks imported unchanged: two directions times two step checks plus one two-step check = six, tolerance .001 plus original printing allowance.",
+  "components": "Raw total, polarization, and total-minus-polarization finite-difference slopes, both steps; component analytic forces not inferred.",
+  "response_increment": "Signed active-minus-baseline energy slopes and central analytic projections; retain printing-only bound and signed/absolute residual. Descriptive, no new pass criterion or corrected target.",
+  "cost": "Exact eight parent allocations from pinned root sacct table; batch/extern rows retained but never added. Per-program native/controller timing retained. Old center and active panel costs reported as reused historical evidence, not charged again.",
+  "failure_policy": "Original active failure retained. Missing/malformed/failed baseline rows remain incomplete or failed; never partial pass. Numerical failed complete collection is terminal exit0 with explicit failed scientific status.",
+  "counts": {
+    "baseline_new_programs": 8,
+    "baseline_reused_center": 1,
+    "original_baseline_checks": 6,
+    "collector_native_calls": 0
+  },
+  "no_outcomes_read_during_source_preparation": true
+}

@@ -1,0 +1,1222 @@
+{
+  "status": "preliminary_interpretation_snapshot_not_terminal_admission",
+  "created_utc": "2026-10-23T00:32:02.450645+00:00",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/terminal_synthesis_v1/EXTRACT.py",
+    "sha256": "f7ad6412ff57791d9a83499259d5cce7e96ed5752b12a4871dd527e24aa59d2f"
+  },
+  "live_source_observation": {
+    "pin_at_read": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/run_v1/execution/RESULT.json",
+      "sha256": "a62bf48a9e0ce4aaaf568c55ec974b0e2ad97212458a1fbcb14a20d8967d5ebb"
+    },
+    "observed_status": "started",
+    "mutable_path_warning": "This hash records bytes read once; the live path may advance. Only the already observed accepted steps 1 through 5 are summarized."
+  },
+  "origin24": {
+    "key": "e63e7189dbecdb8e4112aceb5e4515f69644dbfa574b5fe07644d01ae736a037",
+    "q": 1.0,
+    "component_RMS_kcal_mol": {
+      "P": 26.682412934312772,
+      "B": 22.30315215740741
+    },
+    "component_errors_kcal_mol": {
+      "P8": 25.054235002819993,
+      "B8": -20.498013852576744,
+      "P9": 28.216796919881475,
+      "B9": -23.972747452315634
+    },
+    "derived_C_errors_kcal_mol": {
+      "8": 4.55622115024325,
+      "9": 4.244049467565841
+    },
+    "original_block_scores": {
+      "old_EF": 0.15340308137508737,
+      "pair_mu": 0.37816202481323913,
+      "C_mu": 0.0052286591834414045,
+      "chi": 0.0011670073007337461
+    },
+    "electrical_RMS": {
+      "pair_Debye": 0.6149487985297956,
+      "C_Debye": 0.07230946814519801,
+      "chi_a0_cubed": 0.03416148856144512
+    },
+    "energy_errors_kcal_mol": {
+      "energy/balanced_exchange/water_minus": 0.005705568995196586,
+      "energy/balanced_exchange/water_central": -0.0839029869814567,
+      "energy/balanced_exchange/water_plus": 0.017385170715570553,
+      "energy/balanced_exchange/aquo9_central": 0.01255123727469254,
+      "energy/individual_radial_work/La_minus": -0.14608630512903176,
+      "energy/individual_radial_work/La_plus": -0.10896756044371614,
+      "energy/individual_radial_work/Dy_minus": -0.056477749152378465,
+      "energy/individual_radial_work/Dy_plus": -0.007679402746688879,
+      "energy/paired_radial_work/minus": 0.08960855597665329,
+      "energy/paired_radial_work/plus": 0.10128815769702726
+    },
+    "force_gates": {
+      "force/La/water_minus": {
+        "rigid_RMS_kcal_mol_A": 0.2870225429067041,
+        "maximum_body_component_error_kcal_mol_A": 0.5137139889728246,
+        "passed": true
+      },
+      "force/La/water_central": {
+        "rigid_RMS_kcal_mol_A": 0.06838491630620411,
+        "maximum_body_component_error_kcal_mol_A": 0.15094344677910682,
+        "passed": true
+      },
+      "force/La/water_plus": {
+        "rigid_RMS_kcal_mol_A": 0.6544557125400304,
+        "maximum_body_component_error_kcal_mol_A": 1.298077503541947,
+        "passed": true
+      },
+      "force/La/aquo8_central": {
+        "rigid_RMS_kcal_mol_A": 1.1896136419252332,
+        "maximum_body_component_error_kcal_mol_A": 3.670051273151522,
+        "passed": true
+      },
+      "force/La/aquo9_central": {
+        "rigid_RMS_kcal_mol_A": 1.9897526570033783,
+        "maximum_body_component_error_kcal_mol_A": 3.9476280098746095,
+        "passed": true
+      },
+      "force/Dy/water_minus": {
+        "rigid_RMS_kcal_mol_A": 0.07912353947740014,
+        "maximum_body_component_error_kcal_mol_A": 0.18852112247717362,
+        "passed": true
+      },
+      "force/Dy/water_central": {
+        "rigid_RMS_kcal_mol_A": 0.1365187775542861,
+        "maximum_body_component_error_kcal_mol_A": 0.2621457933031195,
+        "passed": true
+      },
+      "force/Dy/water_plus": {
+        "rigid_RMS_kcal_mol_A": 0.17407397532978766,
+        "maximum_body_component_error_kcal_mol_A": 0.34403884766237525,
+        "passed": true
+      },
+      "force/Dy/aquo8_central": {
+        "rigid_RMS_kcal_mol_A": 1.6124849178044387,
+        "maximum_body_component_error_kcal_mol_A": 4.910251934408612,
+        "passed": true
+      },
+      "force/Dy/aquo9_central": {
+        "rigid_RMS_kcal_mol_A": 1.690388176305022,
+        "maximum_body_component_error_kcal_mol_A": 3.747807657750146,
+        "passed": true
+      },
+      "force/paired/water_minus": {
+        "rigid_RMS_kcal_mol_A": 0.23017856314199792,
+        "maximum_body_component_error_kcal_mol_A": 0.4442724715257782,
+        "passed": true
+      },
+      "force/paired/water_central": {
+        "rigid_RMS_kcal_mol_A": 0.09535494781339185,
+        "maximum_body_component_error_kcal_mol_A": 0.18489300194904246,
+        "passed": true
+      },
+      "force/paired/water_plus": {
+        "rigid_RMS_kcal_mol_A": 0.48079298516122443,
+        "maximum_body_component_error_kcal_mol_A": 0.9540386718086822,
+        "passed": true
+      },
+      "force/paired/aquo8_central": {
+        "rigid_RMS_kcal_mol_A": 0.4375090307658865,
+        "maximum_body_component_error_kcal_mol_A": 1.240284390895365,
+        "passed": true
+      },
+      "force/paired/aquo9_central": {
+        "rigid_RMS_kcal_mol_A": 0.5246137397618726,
+        "maximum_body_component_error_kcal_mol_A": 2.9592081051073613,
+        "passed": true
+      }
+    },
+    "maximum_absolute_energy_error_kcal_mol": 0.14608630512903176,
+    "maximum_rigid_RMS_kcal_mol_A": 1.9897526570033783,
+    "maximum_body_component_error_kcal_mol_A": 4.910251934408612,
+    "producer_reported_physical_gates_passed": 25,
+    "producer_reported_full_development_target": false,
+    "producer_reported_substantive_recovery_milestone": false
+  },
+  "accepted_steps_1_through_5": [
+    {
+      "outer_step": 1,
+      "artifact": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/run_v1/execution/vectors/106ee9ef4dd0b0b1de09d0d05fc170a9efd583345637d8f157c21b309240a920.json",
+        "sha256": "3075044307d06e6c73fd92ce2a5e72695d45146a7587eb11addcf6828945027e"
+      },
+      "metrics": {
+        "key": "106ee9ef4dd0b0b1de09d0d05fc170a9efd583345637d8f157c21b309240a920",
+        "q": 0.6917856070167223,
+        "component_RMS_kcal_mol": {
+          "P": 21.982483561485278,
+          "B": 18.550345735613433
+        },
+        "component_errors_kcal_mol": {
+          "P8": 20.63840452282004,
+          "B8": -16.756763582576834,
+          "P9": 23.248987629881483,
+          "B9": -20.185180902315683
+        },
+        "derived_C_errors_kcal_mol": {
+          "8": 3.881640940243205,
+          "9": 3.063806727565801
+        },
+        "original_block_scores": {
+          "old_EF": 0.23002803627943058,
+          "pair_mu": 0.38093946407020685,
+          "C_mu": 0.005305262908120364,
+          "chi": 0.01126503775957508
+        },
+        "electrical_RMS": {
+          "pair_Debye": 0.6172029358891667,
+          "C_Debye": 0.07283723572541975,
+          "chi_a0_cubed": 0.10613688218322168
+        },
+        "energy_errors_kcal_mol": {
+          "energy/balanced_exchange/water_minus": -0.4973353310047628,
+          "energy/balanced_exchange/water_central": -0.30158214698141705,
+          "energy/balanced_exchange/water_plus": 0.04898100071561373,
+          "energy/balanced_exchange/aquo9_central": -0.4931112927252457,
+          "energy/individual_radial_work/La_minus": 0.1277873048709779,
+          "energy/individual_radial_work/La_plus": -0.29115513044371255,
+          "energy/individual_radial_work/Dy_minus": -0.06796587915236785,
+          "energy/individual_radial_work/Dy_plus": 0.059408017253318235,
+          "energy/paired_radial_work/minus": -0.19575318402334574,
+          "energy/paired_radial_work/plus": 0.3505631476970308
+        },
+        "force_gates": {
+          "force/La/water_minus": {
+            "rigid_RMS_kcal_mol_A": 0.859227994426184,
+            "maximum_body_component_error_kcal_mol_A": 1.7072611710271772,
+            "passed": true
+          },
+          "force/La/water_central": {
+            "rigid_RMS_kcal_mol_A": 0.695054366227439,
+            "maximum_body_component_error_kcal_mol_A": 1.380962076274276,
+            "passed": true
+          },
+          "force/La/water_plus": {
+            "rigid_RMS_kcal_mol_A": 1.1508776408919752,
+            "maximum_body_component_error_kcal_mol_A": 2.2817234835419455,
+            "passed": true
+          },
+          "force/La/aquo8_central": {
+            "rigid_RMS_kcal_mol_A": 1.192405795395427,
+            "maximum_body_component_error_kcal_mol_A": 3.6802632331515213,
+            "passed": true
+          },
+          "force/La/aquo9_central": {
+            "rigid_RMS_kcal_mol_A": 1.9927730851701773,
+            "maximum_body_component_error_kcal_mol_A": 3.9744764398746106,
+            "passed": true
+          },
+          "force/Dy/water_minus": {
+            "rigid_RMS_kcal_mol_A": 0.1056865451593755,
+            "maximum_body_component_error_kcal_mol_A": 0.18989611703163362,
+            "passed": true
+          },
+          "force/Dy/water_central": {
+            "rigid_RMS_kcal_mol_A": 0.2961954180697388,
+            "maximum_body_component_error_kcal_mol_A": 0.5809591533031195,
+            "passed": true
+          },
+          "force/Dy/water_plus": {
+            "rigid_RMS_kcal_mol_A": 0.08915259014035358,
+            "maximum_body_component_error_kcal_mol_A": 0.1768891223376272,
+            "passed": true
+          },
+          "force/Dy/aquo8_central": {
+            "rigid_RMS_kcal_mol_A": 1.4321233238862028,
+            "maximum_body_component_error_kcal_mol_A": 4.348053364408616,
+            "passed": true
+          },
+          "force/Dy/aquo9_central": {
+            "rigid_RMS_kcal_mol_A": 1.8080218365871816,
+            "maximum_body_component_error_kcal_mol_A": 3.860118807750146,
+            "passed": true
+          },
+          "force/paired/water_minus": {
+            "rigid_RMS_kcal_mol_A": 0.7729548293037922,
+            "maximum_body_component_error_kcal_mol_A": 1.5361870884742288,
+            "passed": true
+          },
+          "force/paired/water_central": {
+            "rigid_RMS_kcal_mol_A": 0.9885387424481048,
+            "maximum_body_component_error_kcal_mol_A": 1.961921229577392,
+            "passed": true
+          },
+          "force/paired/water_plus": {
+            "rigid_RMS_kcal_mol_A": 1.2399338970040943,
+            "maximum_body_component_error_kcal_mol_A": 2.4586126029944992,
+            "passed": true
+          },
+          "force/paired/aquo8_central": {
+            "rigid_RMS_kcal_mol_A": 0.2518701394615744,
+            "maximum_body_component_error_kcal_mol_A": 0.6678738608953694,
+            "passed": true
+          },
+          "force/paired/aquo9_central": {
+            "rigid_RMS_kcal_mol_A": 0.35820035031403535,
+            "maximum_body_component_error_kcal_mol_A": 2.4785067251073656,
+            "passed": true
+          }
+        },
+        "maximum_absolute_energy_error_kcal_mol": 0.4973353310047628,
+        "maximum_rigid_RMS_kcal_mol_A": 1.9927730851701773,
+        "maximum_body_component_error_kcal_mol_A": 4.348053364408616,
+        "producer_reported_physical_gates_passed": 25,
+        "producer_reported_full_development_target": false,
+        "producer_reported_substantive_recovery_milestone": false
+      }
+    },
+    {
+      "outer_step": 2,
+      "artifact": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/run_v1/execution/vectors/05cf7fde3ded87b50bba4590761846d2a6b9487c5e2611ed3b506a4d1c2b384e.json",
+        "sha256": "06381338ce07b49bbc78dae7c8f48a89d57848b080e6f5f84f6c36b9453fad82"
+      },
+      "metrics": {
+        "key": "05cf7fde3ded87b50bba4590761846d2a6b9487c5e2611ed3b506a4d1c2b384e",
+        "q": 0.5268909236084058,
+        "component_RMS_kcal_mol": {
+          "P": 19.181732348361237,
+          "B": 16.18924538821871
+        },
+        "component_errors_kcal_mol": {
+          "P8": 18.00695148281993,
+          "B8": -14.4260995725767,
+          "P9": 20.288602959881317,
+          "B9": -17.77838529231561
+        },
+        "derived_C_errors_kcal_mol": {
+          "8": 3.5808519102432292,
+          "9": 2.5102176675657084
+        },
+        "original_block_scores": {
+          "old_EF": 0.314477021658636,
+          "pair_mu": 0.3850800353269194,
+          "C_mu": 0.005599171410615526,
+          "chi": 0.04260462771769233
+        },
+        "electrical_RMS": {
+          "pair_Debye": 0.6205481732524232,
+          "C_Debye": 0.07482761128497639,
+          "chi_a0_cubed": 0.20640888478380073
+        },
+        "energy_errors_kcal_mol": {
+          "energy/balanced_exchange/water_minus": -0.7503586410047802,
+          "energy/balanced_exchange/water_central": -0.4873303469814374,
+          "energy/balanced_exchange/water_plus": -0.027702099284411474,
+          "energy/balanced_exchange/aquo9_central": -0.7459113227253056,
+          "energy/individual_radial_work/La_minus": 0.2628139448709703,
+          "energy/individual_radial_work/La_plus": -0.3759956604437207,
+          "energy/individual_radial_work/Dy_minus": -0.00021434915237250607,
+          "energy/individual_radial_work/Dy_plus": 0.08363258725330525,
+          "energy/paired_radial_work/minus": -0.2630282940233428,
+          "energy/paired_radial_work/plus": 0.4596282476970259
+        },
+        "force_gates": {
+          "force/La/water_minus": {
+            "rigid_RMS_kcal_mol_A": 1.414659079967746,
+            "maximum_body_component_error_kcal_mol_A": 2.812428651027176,
+            "passed": true
+          },
+          "force/La/water_central": {
+            "rigid_RMS_kcal_mol_A": 1.0491953807037937,
+            "maximum_body_component_error_kcal_mol_A": 2.083914383389202,
+            "passed": true
+          },
+          "force/La/water_plus": {
+            "rigid_RMS_kcal_mol_A": 1.3718204153866889,
+            "maximum_body_component_error_kcal_mol_A": 2.719479810656871,
+            "passed": true
+          },
+          "force/La/aquo8_central": {
+            "rigid_RMS_kcal_mol_A": 1.2217545464940645,
+            "maximum_body_component_error_kcal_mol_A": 3.771120333151522,
+            "passed": true
+          },
+          "force/La/aquo9_central": {
+            "rigid_RMS_kcal_mol_A": 1.9476244542296988,
+            "maximum_body_component_error_kcal_mol_A": 3.9069227298746085,
+            "passed": true
+          },
+          "force/Dy/water_minus": {
+            "rigid_RMS_kcal_mol_A": 0.5588367856194322,
+            "maximum_body_component_error_kcal_mol_A": 1.1096795425529562,
+            "passed": true
+          },
+          "force/Dy/water_central": {
+            "rigid_RMS_kcal_mol_A": 0.2657616502289819,
+            "maximum_body_component_error_kcal_mol_A": 0.5204013833031169,
+            "passed": true
+          },
+          "force/Dy/water_plus": {
+            "rigid_RMS_kcal_mol_A": 0.24872258666937264,
+            "maximum_body_component_error_kcal_mol_A": 0.4932303282667263,
+            "passed": true
+          },
+          "force/Dy/aquo8_central": {
+            "rigid_RMS_kcal_mol_A": 1.309158018007683,
+            "maximum_body_component_error_kcal_mol_A": 3.9612427244086126,
+            "passed": true
+          },
+          "force/Dy/aquo9_central": {
+            "rigid_RMS_kcal_mol_A": 1.8942766517490248,
+            "maximum_body_component_error_kcal_mol_A": 3.912411487750143,
+            "passed": true
+          },
+          "force/paired/water_minus": {
+            "rigid_RMS_kcal_mol_A": 0.8569465300987326,
+            "maximum_body_component_error_kcal_mol_A": 1.7027491084742223,
+            "passed": true
+          },
+          "force/paired/water_central": {
+            "rigid_RMS_kcal_mol_A": 1.312701181352057,
+            "maximum_body_component_error_kcal_mol_A": 2.6043157595773962,
+            "passed": true
+          },
+          "force/paired/water_plus": {
+            "rigid_RMS_kcal_mol_A": 1.620532897920901,
+            "maximum_body_component_error_kcal_mol_A": 3.212710132994495,
+            "passed": true
+          },
+          "force/paired/aquo8_central": {
+            "rigid_RMS_kcal_mol_A": 0.10106701594950306,
+            "maximum_body_component_error_kcal_mol_A": 0.2804007116139502,
+            "passed": true
+          },
+          "force/paired/aquo9_central": {
+            "rigid_RMS_kcal_mol_A": 0.3310971510456853,
+            "maximum_body_component_error_kcal_mol_A": 2.0324332751073655,
+            "passed": true
+          }
+        },
+        "maximum_absolute_energy_error_kcal_mol": 0.7503586410047802,
+        "maximum_rigid_RMS_kcal_mol_A": 1.9476244542296988,
+        "maximum_body_component_error_kcal_mol_A": 3.9612427244086126,
+        "producer_reported_physical_gates_passed": 25,
+        "producer_reported_full_development_target": false,
+        "producer_reported_substantive_recovery_milestone": false
+      }
+    },
+    {
+      "outer_step": 3,
+      "artifact": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/run_v1/execution/vectors/7d3131bf8b4f330e1733d70e54872c0b3dc1e5e3bddee095277cc7d0de67b67f.json",
+        "sha256": "6e78e80577f289da46f33e01f096dd5b7a91592460f49f695134947e014e3a65"
+      },
+      "metrics": {
+        "key": "7d3131bf8b4f330e1733d70e54872c0b3dc1e5e3bddee095277cc7d0de67b67f",
+        "q": 0.4253811700920785,
+        "component_RMS_kcal_mol": {
+          "P": 17.349817206008254,
+          "B": 14.546395052817658
+        },
+        "component_errors_kcal_mol": {
+          "P8": 16.285770762819922,
+          "B8": -12.822431122576713,
+          "P9": 18.35227464988141,
+          "B9": -16.086655282315593
+        },
+        "derived_C_errors_kcal_mol": {
+          "8": 3.463339640243209,
+          "9": 2.265619367565815
+        },
+        "original_block_scores": {
+          "old_EF": 0.3718084206183673,
+          "pair_mu": 0.39036423641961593,
+          "C_mu": 0.005996267500690573,
+          "chi": 0.09080372178513405
+        },
+        "electrical_RMS": {
+          "pair_Debye": 0.6247913543092734,
+          "C_Debye": 0.07743556999654987,
+          "chi_a0_cubed": 0.30133655899199163
+        },
+        "energy_errors_kcal_mol": {
+          "energy/balanced_exchange/water_minus": -0.8749377810047605,
+          "energy/balanced_exchange/water_central": -0.6517855869814184,
+          "energy/balanced_exchange/water_plus": -0.15257456928438273,
+          "energy/balanced_exchange/aquo9_central": -0.8729973527252923,
+          "energy/individual_radial_work/La_minus": 0.3299540148709781,
+          "energy/individual_radial_work/La_plus": -0.41397787044371626,
+          "energy/individual_radial_work/Dy_minus": 0.10680182084763601,
+          "energy/individual_radial_work/Dy_plus": 0.08523314725331943,
+          "energy/paired_radial_work/minus": -0.22315219402334208,
+          "energy/paired_radial_work/plus": 0.4992110176970357
+        },
+        "force_gates": {
+          "force/La/water_minus": {
+            "rigid_RMS_kcal_mol_A": 1.693303396691617,
+            "maximum_body_component_error_kcal_mol_A": 3.3656818545846363,
+            "passed": true
+          },
+          "force/La/water_central": {
+            "rigid_RMS_kcal_mol_A": 1.2194226790783973,
+            "maximum_body_component_error_kcal_mol_A": 2.4215355233892026,
+            "passed": true
+          },
+          "force/La/water_plus": {
+            "rigid_RMS_kcal_mol_A": 1.4605615601364728,
+            "maximum_body_component_error_kcal_mol_A": 2.895310620656872,
+            "passed": true
+          },
+          "force/La/aquo8_central": {
+            "rigid_RMS_kcal_mol_A": 1.2764394224254672,
+            "maximum_body_component_error_kcal_mol_A": 3.9396348031515203,
+            "passed": true
+          },
+          "force/La/aquo9_central": {
+            "rigid_RMS_kcal_mol_A": 1.8729557878946763,
+            "maximum_body_component_error_kcal_mol_A": 3.7806024398746096,
+            "passed": true
+          },
+          "force/Dy/water_minus": {
+            "rigid_RMS_kcal_mol_A": 1.2003080367616163,
+            "maximum_body_component_error_kcal_mol_A": 2.3849017472962397,
+            "passed": true
+          },
+          "force/Dy/water_central": {
+            "rigid_RMS_kcal_mol_A": 0.13817782050748198,
+            "maximum_body_component_error_kcal_mol_A": 0.2653844685598443,
+            "passed": true
+          },
+          "force/Dy/water_plus": {
+            "rigid_RMS_kcal_mol_A": 0.3518572321263455,
+            "maximum_body_component_error_kcal_mol_A": 0.6975771282667296,
+            "passed": true
+          },
+          "force/Dy/aquo8_central": {
+            "rigid_RMS_kcal_mol_A": 1.2318696614554905,
+            "maximum_body_component_error_kcal_mol_A": 3.7154944944086123,
+            "passed": true
+          },
+          "force/Dy/aquo9_central": {
+            "rigid_RMS_kcal_mol_A": 1.9415398605414156,
+            "maximum_body_component_error_kcal_mol_A": 3.9165912277501445,
+            "passed": true
+          },
+          "force/paired/water_minus": {
+            "rigid_RMS_kcal_mol_A": 0.4930455899098115,
+            "maximum_body_component_error_kcal_mol_A": 0.9807801084742209,
+            "passed": true
+          },
+          "force/paired/water_central": {
+            "rigid_RMS_kcal_mol_A": 1.354381491467203,
+            "maximum_body_component_error_kcal_mol_A": 2.686919991949047,
+            "passed": true
+          },
+          "force/paired/water_plus": {
+            "rigid_RMS_kcal_mol_A": 1.8124168215586984,
+            "maximum_body_component_error_kcal_mol_A": 3.592887742994499,
+            "passed": true
+          },
+          "force/paired/aquo8_central": {
+            "rigid_RMS_kcal_mol_A": 0.06513582465703144,
+            "maximum_body_component_error_kcal_mol_A": 0.22417626876613994,
+            "passed": true
+          },
+          "force/paired/aquo9_central": {
+            "rigid_RMS_kcal_mol_A": 0.4427093339177129,
+            "maximum_body_component_error_kcal_mol_A": 1.6215856451073627,
+            "passed": true
+          }
+        },
+        "maximum_absolute_energy_error_kcal_mol": 0.8749377810047605,
+        "maximum_rigid_RMS_kcal_mol_A": 1.9415398605414156,
+        "maximum_body_component_error_kcal_mol_A": 3.9396348031515203,
+        "producer_reported_physical_gates_passed": 25,
+        "producer_reported_full_development_target": false,
+        "producer_reported_substantive_recovery_milestone": false
+      }
+    },
+    {
+      "outer_step": 4,
+      "artifact": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/run_v1/execution/vectors/d2ed5d7203042042121d9238a48b316e6526612a2889775659be21a8a94417eb.json",
+        "sha256": "f311f58ae4a5c8277606bc612914b18f88e0d61912c3a0087b45b9c6bb9e8336"
+      },
+      "metrics": {
+        "key": "d2ed5d7203042042121d9238a48b316e6526612a2889775659be21a8a94417eb",
+        "q": 0.3620985631485805,
+        "component_RMS_kcal_mol": {
+          "P": 16.05604222923397,
+          "B": 13.33080378574592
+        },
+        "component_errors_kcal_mol": {
+          "P8": 15.070200962819897,
+          "B8": -11.647727422576647,
+          "P9": 16.9847586698814,
+          "B9": -14.824004352315587
+        },
+        "derived_C_errors_kcal_mol": {
+          "8": 3.4224735402432493,
+          "9": 2.1607543175658144
+        },
+        "original_block_scores": {
+          "old_EF": 0.3939810803628239,
+          "pair_mu": 0.3977166715513742,
+          "C_mu": 0.006487439994695176,
+          "chi": 0.1286652531703219
+        },
+        "electrical_RMS": {
+          "pair_Debye": 0.6306478189539501,
+          "C_Debye": 0.08054464597162977,
+          "chi_a0_cubed": 0.3586993910927671
+        },
+        "energy_errors_kcal_mol": {
+          "energy/balanced_exchange/water_minus": -0.9365560310048124,
+          "energy/balanced_exchange/water_central": -0.7867140169814633,
+          "energy/balanced_exchange/water_plus": -0.27897644928442844,
+          "energy/balanced_exchange/aquo9_central": -0.9369963027253334,
+          "energy/individual_radial_work/La_minus": 0.30986200487097904,
+          "energy/individual_radial_work/La_plus": -0.3982693004437152,
+          "energy/individual_radial_work/Dy_minus": 0.16001999084762986,
+          "energy/individual_radial_work/Dy_plus": 0.1094682672533196,
+          "energy/paired_radial_work/minus": -0.14984201402334918,
+          "energy/paired_radial_work/plus": 0.5077375676970348
+        },
+        "force_gates": {
+          "force/La/water_minus": {
+            "rigid_RMS_kcal_mol_A": 1.6035669748357333,
+            "maximum_body_component_error_kcal_mol_A": 3.187563991027176,
+            "passed": true
+          },
+          "force/La/water_central": {
+            "rigid_RMS_kcal_mol_A": 1.1646958498617968,
+            "maximum_body_component_error_kcal_mol_A": 2.313019193389202,
+            "passed": true
+          },
+          "force/La/water_plus": {
+            "rigid_RMS_kcal_mol_A": 1.4093939078656146,
+            "maximum_body_component_error_kcal_mol_A": 2.7939509906568745,
+            "passed": true
+          },
+          "force/La/aquo8_central": {
+            "rigid_RMS_kcal_mol_A": 1.3428481695807741,
+            "maximum_body_component_error_kcal_mol_A": 4.143391963151522,
+            "passed": true
+          },
+          "force/La/aquo9_central": {
+            "rigid_RMS_kcal_mol_A": 1.7941618824625305,
+            "maximum_body_component_error_kcal_mol_A": 3.6449492452297347,
+            "passed": true
+          },
+          "force/Dy/water_minus": {
+            "rigid_RMS_kcal_mol_A": 1.5831322036640487,
+            "maximum_body_component_error_kcal_mol_A": 3.1442417972962393,
+            "passed": true
+          },
+          "force/Dy/water_central": {
+            "rigid_RMS_kcal_mol_A": 0.12462287128236722,
+            "maximum_body_component_error_kcal_mol_A": 0.23795770330311683,
+            "passed": true
+          },
+          "force/Dy/water_plus": {
+            "rigid_RMS_kcal_mol_A": 0.5000718938094875,
+            "maximum_body_component_error_kcal_mol_A": 0.9912177182667321,
+            "passed": true
+          },
+          "force/Dy/aquo8_central": {
+            "rigid_RMS_kcal_mol_A": 1.176138296590415,
+            "maximum_body_component_error_kcal_mol_A": 3.536568164408613,
+            "passed": true
+          },
+          "force/Dy/aquo9_central": {
+            "rigid_RMS_kcal_mol_A": 1.966316113625621,
+            "maximum_body_component_error_kcal_mol_A": 3.8935088277501446,
+            "passed": true
+          },
+          "force/paired/water_minus": {
+            "rigid_RMS_kcal_mol_A": 0.04019510631211549,
+            "maximum_body_component_error_kcal_mol_A": 0.08985485296316648,
+            "passed": true
+          },
+          "force/paired/water_central": {
+            "rigid_RMS_kcal_mol_A": 1.285770758754729,
+            "maximum_body_component_error_kcal_mol_A": 2.5509768895773917,
+            "passed": true
+          },
+          "force/paired/water_plus": {
+            "rigid_RMS_kcal_mol_A": 1.9094653018602585,
+            "maximum_body_component_error_kcal_mol_A": 3.785168702994504,
+            "passed": true
+          },
+          "force/paired/aquo8_central": {
+            "rigid_RMS_kcal_mol_A": 0.17955192158849761,
+            "maximum_body_component_error_kcal_mol_A": 0.6068597587661415,
+            "passed": true
+          },
+          "force/paired/aquo9_central": {
+            "rigid_RMS_kcal_mol_A": 0.6057991618289666,
+            "maximum_body_component_error_kcal_mol_A": 1.8692526599609742,
+            "passed": true
+          }
+        },
+        "maximum_absolute_energy_error_kcal_mol": 0.9369963027253334,
+        "maximum_rigid_RMS_kcal_mol_A": 1.966316113625621,
+        "maximum_body_component_error_kcal_mol_A": 4.143391963151522,
+        "producer_reported_physical_gates_passed": 25,
+        "producer_reported_full_development_target": false,
+        "producer_reported_substantive_recovery_milestone": false
+      }
+    },
+    {
+      "outer_step": 5,
+      "artifact": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/run_v1/execution/vectors/2fb6edff18981d9d1210cfac16c6fde788fee8b4fdf4088c982ab939b41b9175.json",
+        "sha256": "5a9b5375f9f47109a1e85974da09097bd1f8bb1ee07973baaee6f02c6f6a1bbc"
+      },
+      "metrics": {
+        "key": "2fb6edff18981d9d1210cfac16c6fde788fee8b4fdf4088c982ab939b41b9175",
+        "q": 0.31810529541050137,
+        "component_RMS_kcal_mol": {
+          "P": 15.049100772762225,
+          "B": 12.36043148421447
+        },
+        "component_errors_kcal_mol": {
+          "P8": 14.124126362820036,
+          "B8": -10.718325772576772,
+          "P9": 15.920424699881508,
+          "B9": -13.808621422315742
+        },
+        "derived_C_errors_kcal_mol": {
+          "8": 3.4058005902432633,
+          "9": 2.111803277565766
+        },
+        "original_block_scores": {
+          "old_EF": 0.3911286374086543,
+          "pair_mu": 0.4026966416659572,
+          "C_mu": 0.0069973050373207495,
+          "chi": 0.20099662389175676
+        },
+        "electrical_RMS": {
+          "pair_Debye": 0.6345838334420104,
+          "C_Debye": 0.08364989562050122,
+          "chi_a0_cubed": 0.44832647021089084
+        },
+        "energy_errors_kcal_mol": {
+          "energy/balanced_exchange/water_minus": -0.93566203100481,
+          "energy/balanced_exchange/water_central": -0.8894102569814777,
+          "energy/balanced_exchange/water_plus": -0.39107651928445364,
+          "energy/balanced_exchange/aquo9_central": -0.9692743927253673,
+          "energy/individual_radial_work/La_minus": 0.21359410487096397,
+          "energy/individual_radial_work/La_plus": -0.3356690404437188,
+          "energy/individual_radial_work/Dy_minus": 0.16734233084763162,
+          "energy/individual_radial_work/Dy_plus": 0.16266469725330523,
+          "energy/paired_radial_work/minus": -0.04625177402333236,
+          "energy/paired_radial_work/plus": 0.49833373769702405
+        },
+        "force_gates": {
+          "force/La/water_minus": {
+            "rigid_RMS_kcal_mol_A": 1.192630811704313,
+            "maximum_body_component_error_kcal_mol_A": 2.3711582045846384,
+            "passed": true
+          },
+          "force/La/water_central": {
+            "rigid_RMS_kcal_mol_A": 0.9135264330341314,
+            "maximum_body_component_error_kcal_mol_A": 1.8147613233892024,
+            "passed": true
+          },
+          "force/La/water_plus": {
+            "rigid_RMS_kcal_mol_A": 1.236116068875877,
+            "maximum_body_component_error_kcal_mol_A": 2.4506585706568735,
+            "passed": true
+          },
+          "force/La/aquo8_central": {
+            "rigid_RMS_kcal_mol_A": 1.4091322678686158,
+            "maximum_body_component_error_kcal_mol_A": 4.34529728315152,
+            "passed": true
+          },
+          "force/La/aquo9_central": {
+            "rigid_RMS_kcal_mol_A": 1.7250265885385319,
+            "maximum_body_component_error_kcal_mol_A": 3.6412296581262114,
+            "passed": true
+          },
+          "force/Dy/water_minus": {
+            "rigid_RMS_kcal_mol_A": 1.776599737848403,
+            "maximum_body_component_error_kcal_mol_A": 3.5278400872962394,
+            "passed": true
+          },
+          "force/Dy/water_central": {
+            "rigid_RMS_kcal_mol_A": 0.23071889664608342,
+            "maximum_body_component_error_kcal_mol_A": 0.45051852330311704,
+            "passed": true
+          },
+          "force/Dy/water_plus": {
+            "rigid_RMS_kcal_mol_A": 0.7230579532641271,
+            "maximum_body_component_error_kcal_mol_A": 1.432980058266729,
+            "passed": true
+          },
+          "force/Dy/aquo8_central": {
+            "rigid_RMS_kcal_mol_A": 1.1337789093902302,
+            "maximum_body_component_error_kcal_mol_A": 3.3992435244086137,
+            "passed": true
+          },
+          "force/Dy/aquo9_central": {
+            "rigid_RMS_kcal_mol_A": 1.9792868987637073,
+            "maximum_body_component_error_kcal_mol_A": 3.860273707750144,
+            "passed": true
+          },
+          "force/paired/water_minus": {
+            "rigid_RMS_kcal_mol_A": 0.5883061047098144,
+            "maximum_body_component_error_kcal_mol_A": 1.1566818827116023,
+            "passed": true
+          },
+          "force/paired/water_central": {
+            "rigid_RMS_kcal_mol_A": 1.1415906873210226,
+            "maximum_body_component_error_kcal_mol_A": 2.265279841949045,
+            "passed": true
+          },
+          "force/paired/water_plus": {
+            "rigid_RMS_kcal_mol_A": 1.9591631231211537,
+            "maximum_body_component_error_kcal_mol_A": 3.8836386218086822,
+            "passed": true
+          },
+          "force/paired/aquo8_central": {
+            "rigid_RMS_kcal_mol_A": 0.2900646181577478,
+            "maximum_body_component_error_kcal_mol_A": 0.9460897187661388,
+            "passed": true
+          },
+          "force/paired/aquo9_central": {
+            "rigid_RMS_kcal_mol_A": 0.7794857606792689,
+            "maximum_body_component_error_kcal_mol_A": 2.1970079399609723,
+            "passed": true
+          }
+        },
+        "maximum_absolute_energy_error_kcal_mol": 0.9692743927253673,
+        "maximum_rigid_RMS_kcal_mol_A": 1.9792868987637073,
+        "maximum_body_component_error_kcal_mol_A": 4.34529728315152,
+        "producer_reported_physical_gates_passed": 25,
+        "producer_reported_full_development_target": false,
+        "producer_reported_substantive_recovery_milestone": false
+      }
+    }
+  ],
+  "prior_terminal_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/run_v1/execution/RESULT.json",
+    "sha256": "744f1faa3f28833eaa8adaba2b69c8ce173563aa3c46907e2d1e366fd1ac80c0"
+  },
+  "prior_terminal": {
+    "key": "e41fcd3ddff3b8882350b05298864465223ab8362290b3e13363e34cb71d1800",
+    "q": 0.7310988638399657,
+    "component_RMS_kcal_mol": {
+      "P": 22.814615582636605,
+      "B": 19.010476684209888
+    },
+    "component_errors_kcal_mol": {
+      "P8": 21.42023628281997,
+      "B8": -17.44395473257671,
+      "P9": 24.12854835988135,
+      "B9": -20.457392082315625
+    },
+    "derived_C_errors_kcal_mol": {
+      "8": 3.976281550243261,
+      "9": 3.671156277565725
+    },
+    "original_block_scores": {
+      "old_EF": 0.15334648719246627,
+      "pair_mu": 0.3781610262963533,
+      "C_mu": 0.005227297752671844,
+      "chi": 0.0010236022987785986
+    },
+    "electrical_RMS": {
+      "pair_Debye": 0.6149479866593217,
+      "C_Debye": 0.07230005361458484,
+      "chi_a0_cubed": 0.03199378531494201
+    },
+    "energy_errors_kcal_mol": {
+      "energy/balanced_exchange/water_minus": 0.006895638995189302,
+      "energy/balanced_exchange/water_central": -0.06656723698147005,
+      "energy/balanced_exchange/water_plus": 0.1008625607155409,
+      "energy/balanced_exchange/aquo9_central": 0.019597647274679275,
+      "energy/individual_radial_work/La_minus": -0.12441003512903137,
+      "energy/individual_radial_work/La_plus": -0.11963966044370977,
+      "energy/individual_radial_work/Dy_minus": -0.050947159152372024,
+      "energy/individual_radial_work/Dy_plus": 0.04779013725330117,
+      "energy/paired_radial_work/minus": 0.07346287597665935,
+      "energy/paired_radial_work/plus": 0.16742979769701094
+    },
+    "force_gates": {
+      "force/La/water_minus": {
+        "rigid_RMS_kcal_mol_A": 0.20444916912272354,
+        "maximum_body_component_error_kcal_mol_A": 0.33271287897282065,
+        "passed": true
+      },
+      "force/La/water_central": {
+        "rigid_RMS_kcal_mol_A": 0.05407832898222525,
+        "maximum_body_component_error_kcal_mol_A": 0.15182809028788008,
+        "passed": true
+      },
+      "force/La/water_plus": {
+        "rigid_RMS_kcal_mol_A": 0.6755807880759888,
+        "maximum_body_component_error_kcal_mol_A": 1.3399478206568745,
+        "passed": true
+      },
+      "force/La/aquo8_central": {
+        "rigid_RMS_kcal_mol_A": 1.382792646370068,
+        "maximum_body_component_error_kcal_mol_A": 4.27303979315152,
+        "passed": true
+      },
+      "force/La/aquo9_central": {
+        "rigid_RMS_kcal_mol_A": 1.8161535764387409,
+        "maximum_body_component_error_kcal_mol_A": 3.713258139874611,
+        "passed": true
+      },
+      "force/Dy/water_minus": {
+        "rigid_RMS_kcal_mol_A": 0.1223340505753278,
+        "maximum_body_component_error_kcal_mol_A": 0.21251636729623957,
+        "passed": true
+      },
+      "force/Dy/water_central": {
+        "rigid_RMS_kcal_mol_A": 0.23105465279247622,
+        "maximum_body_component_error_kcal_mol_A": 0.451375763303119,
+        "passed": true
+      },
+      "force/Dy/water_plus": {
+        "rigid_RMS_kcal_mol_A": 0.0854859742608929,
+        "maximum_body_component_error_kcal_mol_A": 0.16961085826672928,
+        "passed": true
+      },
+      "force/Dy/aquo8_central": {
+        "rigid_RMS_kcal_mol_A": 1.5033572168723415,
+        "maximum_body_component_error_kcal_mol_A": 4.575279574408614,
+        "passed": true
+      },
+      "force/Dy/aquo9_central": {
+        "rigid_RMS_kcal_mol_A": 1.7939815705008673,
+        "maximum_body_component_error_kcal_mol_A": 3.9121769677501472,
+        "passed": true
+      },
+      "force/paired/water_minus": {
+        "rigid_RMS_kcal_mol_A": 0.28073084530240244,
+        "maximum_body_component_error_kcal_mol_A": 0.5452292427115992,
+        "passed": true
+      },
+      "force/paired/water_central": {
+        "rigid_RMS_kcal_mol_A": 0.2407923032928014,
+        "maximum_body_component_error_kcal_mol_A": 0.47809943194904037,
+        "passed": true
+      },
+      "force/paired/water_plus": {
+        "rigid_RMS_kcal_mol_A": 0.7610002719387575,
+        "maximum_body_component_error_kcal_mol_A": 1.5095586718086764,
+        "passed": true
+      },
+      "force/paired/aquo8_central": {
+        "rigid_RMS_kcal_mol_A": 0.12836241283627622,
+        "maximum_body_component_error_kcal_mol_A": 0.30828432161394836,
+        "passed": true
+      },
+      "force/paired/aquo9_central": {
+        "rigid_RMS_kcal_mol_A": 0.3811653567789291,
+        "maximum_body_component_error_kcal_mol_A": 1.8718924651073614,
+        "passed": true
+      }
+    },
+    "maximum_absolute_energy_error_kcal_mol": 0.16742979769701094,
+    "maximum_rigid_RMS_kcal_mol_A": 1.8161535764387409,
+    "maximum_body_component_error_kcal_mol_A": 4.575279574408614,
+    "producer_reported_physical_gates_passed": 25,
+    "producer_reported_full_development_target": false,
+    "producer_reported_substantive_recovery_milestone": false
+  },
+  "original_prefit_component_RMS_kcal_mol": {
+    "P": 13.169962280606823,
+    "B": 13.094678155133124
+  },
+  "prior_trimer_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/postselection_regression_v1/independent_actual_review_v1/REVIEW.json",
+    "sha256": "0e519767806c47bb2534c673208e21d2a657361a0a657effb80038a99ad8ea8f"
+  },
+  "prior_trimer_status": "passed_consumed_trimer_arithmetic_review",
+  "prior_trimer_cycles": {
+    "aquo8_central_La__near": {
+      "candidate_energy_error": -5.004211544991512,
+      "previous_selected_energy_error": -4.845456074991502,
+      "baseline_energy_error": -4.810019544991504,
+      "candidate_mu_error_norm_Debye": 0.39580399623893114,
+      "previous_selected_mu_error_norm_Debye": 0.39380146370680186,
+      "baseline_mu_error_norm_Debye": 0.46837040248466283
+    },
+    "aquo8_central_La__far": {
+      "candidate_energy_error": -8.174940172279872,
+      "previous_selected_energy_error": -8.02677745227986,
+      "baseline_energy_error": -6.673785312279863,
+      "candidate_mu_error_norm_Debye": 0.21055887818102867,
+      "previous_selected_mu_error_norm_Debye": 0.20973949594992145,
+      "baseline_mu_error_norm_Debye": 0.21968157060116303
+    },
+    "aquo8_central_Dy__near": {
+      "candidate_energy_error": -9.91469901826664,
+      "previous_selected_energy_error": -10.157342588266639,
+      "baseline_energy_error": -6.217070408266617,
+      "candidate_mu_error_norm_Debye": 0.5682305094710809,
+      "previous_selected_mu_error_norm_Debye": 0.5679406675000058,
+      "baseline_mu_error_norm_Debye": 0.6113474290152229
+    },
+    "aquo8_central_Dy__far": {
+      "candidate_energy_error": -12.487462148499292,
+      "previous_selected_energy_error": -12.724507678499267,
+      "baseline_energy_error": -7.713035998499267,
+      "candidate_mu_error_norm_Debye": 0.3039426145482805,
+      "previous_selected_mu_error_norm_Debye": 0.3037746204078863,
+      "baseline_mu_error_norm_Debye": 0.3115877574662898
+    },
+    "aquo9_central_La__near": {
+      "candidate_energy_error": -4.38322895737919,
+      "previous_selected_energy_error": -4.210250727379199,
+      "baseline_energy_error": -4.616780907379203,
+      "candidate_mu_error_norm_Debye": 0.4090953892959499,
+      "previous_selected_mu_error_norm_Debye": 0.4066165824060046,
+      "baseline_mu_error_norm_Debye": 0.4930518041308313
+    },
+    "aquo9_central_La__far": {
+      "candidate_energy_error": -8.778272774172102,
+      "previous_selected_energy_error": -8.630079484172096,
+      "baseline_energy_error": -7.304756224172092,
+      "candidate_mu_error_norm_Debye": 0.25167135785776323,
+      "previous_selected_mu_error_norm_Debye": 0.2508227915512118,
+      "baseline_mu_error_norm_Debye": 0.26305518542232875
+    },
+    "aquo9_central_Dy__near": {
+      "candidate_energy_error": -9.73461931853846,
+      "previous_selected_energy_error": -9.98155143853845,
+      "baseline_energy_error": -6.821063448538444,
+      "candidate_mu_error_norm_Debye": 0.591751830085736,
+      "previous_selected_mu_error_norm_Debye": 0.5915171299505365,
+      "baseline_mu_error_norm_Debye": 0.6532106314428825
+    },
+    "aquo9_central_Dy__far": {
+      "candidate_energy_error": -12.943014533717232,
+      "previous_selected_energy_error": -13.180134833717227,
+      "baseline_energy_error": -8.18370338371721,
+      "candidate_mu_error_norm_Debye": 0.34271179797245305,
+      "previous_selected_mu_error_norm_Debye": 0.34253484191540057,
+      "baseline_mu_error_norm_Debye": 0.3509904947735901
+    }
+  },
+  "prior_trimer_paired_Dy_minus_La": {
+    "W8_near": {
+      "candidate_E3_Dy_minus_La": -2.90385552,
+      "candidate_mu3_Dy_minus_La_Debye": [
+        0.04771468218054581,
+        0.01976406848347433,
+        3.5465368625376835e-14
+      ],
+      "baseline_E3_Dy_minus_La": 0.599581090000015,
+      "baseline_mu3_Dy_minus_La_Debye": [
+        0.02050700000000006,
+        0.00849400000000023,
+        0.0
+      ],
+      "reference_E3_Dy_minus_La": 2.006631953275128,
+      "reference_mu3_Dy_minus_La_Debye": [
+        -0.1115933356118977,
+        -0.04620457012892214,
+        3.54634537444971e-06
+      ],
+      "previous_selected_E3_Dy_minus_La": -3.3052545600000096,
+      "previous_selected_mu3_Dy_minus_La_Debye": [
+        0.04929700203415876,
+        0.0204194868268539,
+        3.549938121238938e-14
+      ],
+      "candidate_energy_error": -4.910487473275128,
+      "candidate_mu_error_norm_Debye": 0.17242652297691047,
+      "baseline_energy_error": -1.407050863275113,
+      "baseline_mu_error_norm_Debye": 0.14297703401421233,
+      "previous_selected_energy_error": -5.311886513275137,
+      "previous_selected_mu_error_norm_Debye": 0.17413921363577217,
+      "absolute_energy_error_change": 3.503436610000015,
+      "mu_error_norm_change_Debye": 0.02944948896269814,
+      "absolute_energy_error_change_from_previous": -0.40139904000000914,
+      "mu_error_norm_change_from_previous_Debye": -0.0017126906588617041,
+      "candidate_mu_error_vector_Debye": [
+        0.15930801779244352,
+        0.06596863861239646,
+        -3.5463453389843414e-06
+      ]
+    },
+    "W8_far": {
+      "candidate_E3_Dy_minus_La": -3.74468153,
+      "candidate_mu3_Dy_minus_La_Debye": [
+        0.01121542265209668,
+        0.027076425474279815,
+        3.369747819085917e-14
+      ],
+      "baseline_E3_Dy_minus_La": -0.471410239999983,
+      "baseline_mu3_Dy_minus_La_Debye": [
+        0.010645999999999826,
+        0.02571300000000009,
+        0.0
+      ],
+      "reference_E3_Dy_minus_La": 0.567840446219421,
+      "reference_mu3_Dy_minus_La_Debye": [
+        -0.02451255592101544,
+        -0.05920238898670425,
+        3.868180028954178e-06
+      ],
+      "previous_selected_E3_Dy_minus_La": -4.129889779999985,
+      "previous_selected_mu3_Dy_minus_La_Debye": [
+        0.011464698082452873,
+        0.02767822959901212,
+        3.35009797680641e-14
+      ],
+      "candidate_energy_error": -4.312521976219421,
+      "candidate_mu_error_norm_Debye": 0.09338373676757901,
+      "baseline_energy_error": -1.039250686219404,
+      "baseline_mu_error_norm_Debye": 0.09190618780135146,
+      "previous_selected_energy_error": -4.697730226219406,
+      "previous_selected_mu_error_norm_Debye": 0.09403512485465003,
+      "absolute_energy_error_change": 3.273271290000017,
+      "mu_error_norm_change_Debye": 0.0014775489662275515,
+      "absolute_energy_error_change_from_previous": -0.3852082499999847,
+      "mu_error_norm_change_from_previous_Debye": -0.0006513880870710198,
+      "candidate_mu_error_vector_Debye": [
+        0.03572797857311212,
+        0.08627881446098407,
+        -3.8681799952567e-06
+      ]
+    },
+    "W9_near": {
+      "candidate_E3_Dy_minus_La": -2.19641654,
+      "candidate_mu3_Dy_minus_La_Debye": [
+        0.03996561846703593,
+        0.01655430119764669,
+        2.433017145465174e-14
+      ],
+      "baseline_E3_Dy_minus_La": 0.950691280000029,
+      "baseline_mu3_Dy_minus_La_Debye": [
+        0.01917999999999997,
+        0.007946,
+        0.0
+      ],
+      "reference_E3_Dy_minus_La": 3.15497382115927,
+      "reference_mu3_Dy_minus_La_Debye": [
+        -0.1287306920267573,
+        -0.0534816742658946,
+        0.000109320472381039
+      ],
+      "previous_selected_E3_Dy_minus_La": -2.616326889999981,
+      "previous_selected_mu3_Dy_minus_La_Debye": [
+        0.0420389046967915,
+        0.01741308447269274,
+        2.470246229790973e-14
+      ],
+      "candidate_energy_error": -5.35139036115927,
+      "candidate_mu_error_norm_Debye": 0.18265676824118435,
+      "baseline_energy_error": -2.204282541159241,
+      "baseline_mu_error_norm_Debye": 0.16015912066603255,
+      "previous_selected_energy_error": -5.771300711159251,
+      "previous_selected_mu_error_norm_Debye": 0.18490087596518212,
+      "absolute_energy_error_change": 3.147107820000029,
+      "mu_error_norm_change_Debye": 0.022497647575151797,
+      "absolute_energy_error_change_from_previous": -0.4199103499999808,
+      "mu_error_norm_change_from_previous_Debye": -0.0022441077239977736,
+      "candidate_mu_error_vector_Debye": [
+        0.16869631049379324,
+        0.07003597546354129,
+        -0.00010932047235670883
+      ]
+    },
+    "W9_far": {
+      "candidate_E3_Dy_minus_La": -3.73470156,
+      "candidate_mu3_Dy_minus_La_Debye": [
+        1.0899203729706077e-16,
+        9.659370305677003e-19,
+        0.03076113076342859
+      ],
+      "baseline_E3_Dy_minus_La": -0.448906959999988,
+      "baseline_mu3_Dy_minus_La_Debye": [
+        0.0,
+        0.0,
+        0.02765600000000013
+      ],
+      "reference_E3_Dy_minus_La": 0.430040199545131,
+      "reference_mu3_Dy_minus_La_Debye": [
+        -2.5328675085018955e-07,
+        2.196685343664995e-08,
+        -0.06027930935124043
+      ],
+      "previous_selected_E3_Dy_minus_La": -4.12001515,
+      "previous_selected_mu3_Dy_minus_La_Debye": [
+        -3.3306690738754696e-16,
+        0.0,
+        0.03143274101292759
+      ],
+      "candidate_energy_error": -4.164741759545131,
+      "candidate_mu_error_norm_Debye": 0.09104044011502402,
+      "baseline_energy_error": -0.878947159545119,
+      "baseline_mu_error_norm_Debye": 0.08793530935160808,
+      "previous_selected_energy_error": -4.550055349545131,
+      "previous_selected_mu_error_norm_Debye": 0.09171205036452042,
+      "absolute_energy_error_change": 3.285794600000012,
+      "mu_error_norm_change_Debye": 0.003105130763415939,
+      "absolute_energy_error_change_from_previous": -0.38531359,
+      "mu_error_norm_change_from_previous_Debye": -0.0006716102494963988,
+      "candidate_mu_error_vector_Debye": [
+        2.5328675095918157e-07,
+        -2.1966853435684013e-08,
+        0.09104044011466902
+      ]
+    }
+  },
+  "prior_trimer_comparison_counts": {
+    "cycle_energy_abs_improved_from_previous": 4,
+    "cycle_mu_norm_improved_from_previous": 0,
+    "paired_energy_abs_improved_from_previous": 4,
+    "paired_mu_norm_improved_from_previous": 4,
+    "cycle_energy_abs_worse_than_original_baseline": 7,
+    "cycle_mu_norm_worse_than_original_baseline": 0,
+    "paired_energy_abs_worse_than_original_baseline": 4,
+    "paired_mu_norm_worse_than_original_baseline": 4
+  },
+  "source_authorities": {
+    "new_declaration": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/ROOT_DECLARATION.json",
+      "sha256": "a589b99d7493ff400453a38622e09952eac1f60b6dff9bea10c31c3caf502d82"
+    },
+    "component_definitions": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/PROTOCOL.md",
+      "sha256": "d0b24ea102ad0d13ee20aa6420b41d96bb4d0e9881d44fe32139cd0b5ee3cdee"
+    },
+    "matched_conic_interpretation": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/ceiling_tradeoff_v1/interpretation_v1/REPORT.md",
+      "sha256": "30dd3cba8af10ef58577e81325c2dcee7d9a464e00c8c6d9be7de3850430c235"
+    },
+    "matched_native_pilot_interpretation": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/ceiling_tradeoff_v1/nonlinear_check_v1/REPORT.md",
+      "sha256": "45f5d9200ab91eb6f888d9ef61a00df4cafc826d4e8b6aae335895b38a591026"
+    },
+    "prior_trimer_report": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/postselection_regression_v1/independent_actual_review_v1/REPORT.txt",
+      "sha256": "3542933b2daf56de3d8e44ef39ddbd555751505fef737d785aeba0c99708a76a"
+    },
+    "terminal_reviewer_readiness": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/independent_actual_review_v1/READY_v2.json",
+      "sha256": "a6036304069cb292d276fdc49491268a7a43a6212ef81563fdae8229130ea9f1"
+    },
+    "planned_trimer_readiness": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/postselection_regression_v1/READY.json",
+      "sha256": "e12549a5943c3f2d082aa0205a324499fb82da3f4af69a404cc2e651659a0982"
+    }
+  },
+  "pending_bindings": {
+    "terminal_result": null,
+    "terminal_review": null,
+    "postselection_result": null,
+    "postselection_review": null
+  },
+  "new_native_calls": 0,
+  "new_reference_calls": 0,
+  "new_optimizer_calls": 0,
+  "reserved_outcomes_read": false,
+  "raw_native_readmission_performed": false,
+  "cost": {
+    "wall_seconds": 0.20454959000926465,
+    "CPU_seconds": 0.166704991,
+    "threads": 1
+  }
+}

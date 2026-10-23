@@ -1,0 +1,43 @@
+{
+  "status": "native_reporting_path_review_complete_adapter_pending",
+  "source_pins": {
+    "analyze.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_source/source/analyze.f",
+      "sha256": "d205cffe9176525ad7812c9ffe095998892304deb7b3f10b3f9f4144d7d3ca47"
+    },
+    "moments.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_source/source/moments.f",
+      "sha256": "ba50c29e9fac3f12503e134301862b38e512363aa59f5082489ce334b120cbc7"
+    },
+    "units.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_source/source/units.f",
+      "sha256": "6bcb909d8f6a1e359de650e77c39f1f17151273ce664942eca39e7eb787a6add"
+    }
+  },
+  "verified_path": [
+    "analyze EM invokes energy/partyze first, moments second, saveyze after moments.",
+    "moments rotates permanent local multipoles into the global frame and calls induce, then adds induced dipoles to the permanent moment.",
+    "saveyze writes debye*uind directly, not the mutated global permanent-moment array.",
+    "SAVE-UINDUCE single-frame filename is system.001u; header gives total atoms but lines include only nonzero-alpha sites, so a full-n-site admission needs positive-alpha proof."
+  ],
+  "units_and_rounding": {
+    "native_internal_induced_units": "e Angstrom",
+    "native_induced_file_units": "Debye",
+    "debye_per_e_Angstrom": 4.803206802,
+    "native_induced_file_component_decimals": 6,
+    "induced_print_bound_Debye_per_site_component": 5e-07,
+    "total_moment_print_component_decimals": 3,
+    "total_moment_print_bound_Debye_per_component": 0.0005,
+    "total_moment_origin": "COM of active atoms; all active must be verified",
+    "origin_zero_conversion": "mu0_Debye = muCOM_Debye + debye*Q*COM_A"
+  },
+  "scientific_constraints": [
+    "Permanent contribution cancellation requires identical site positions, local multipole rotations, records and atomwise coefficients, not merely total charge neutrality.",
+    "Summed induced interaction differences may be used only after that permanent/frame proof.",
+    "Zero-field vector redistribution is not a polarizability measurement.",
+    "Full adapter preparation, raw receipt/induction checks, immutable38-energy replay and finite78-program gates are pending independent source review."
+  ],
+  "new_native_calls": 0,
+  "analysis_executed": false,
+  "local_threads": 1
+}

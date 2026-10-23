@@ -1,0 +1,78 @@
+{
+  "scope": "Active Python3.12 import availability and system dynamic-linker/package inventory only; no global environment search.",
+  "active_packages": {
+    "numpy": "2.4.1",
+    "scipy": "1.17.0"
+  },
+  "available": "scipy.sparse.linalg.splu (general SuperLU LU, not a symmetric-inertia/SPD API)",
+  "not_found_active_python": [
+    "sksparse",
+    "sparse_dot_mkl",
+    "pypardiso",
+    "pymumps",
+    "petsc4py",
+    "slepc4py"
+  ],
+  "system_linker_match": "/lib/x86_64-linux-gnu/libsuperlu.so.6",
+  "system_package": "libsuperlu6 6.0.1+dfsg1-1build1",
+  "system_version_is_not_claimed_as_SciPy_embedded_version": true,
+  "files": [
+    {
+      "path": "/home/jwestrob/.pyenv/versions/3.12.0/lib/python3.12/site-packages/scipy/sparse/linalg/_dsolve/_superlu.cpython-312-x86_64-linux-gnu.so",
+      "sha256": "8bc863fc723ee3bc4d603bf2cdf540fa728ce5df35302686588f0ee926dae261"
+    },
+    {
+      "path": "/home/jwestrob/.pyenv/versions/3.12.0/lib/python3.12/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py",
+      "sha256": "8577958862672910b2de7881b98426313a6b3a488700cb2cb256767dc420cdf3"
+    },
+    {
+      "path": "/home/jwestrob/.pyenv/versions/3.12.0/lib/python3.12/site-packages/scipy/sparse/linalg/_dsolve/_add_newdocs.py",
+      "sha256": "e0d9ba44029094a238950b78cf6d2fd03ea6d1593c7aaa74988cc493981fced0"
+    }
+  ],
+  "isolated_environment_launchers": [
+    {
+      "path": "/shared/software/miniconda3/latest/bin/mamba",
+      "sha256": "4b0ccef68acb7a819a9634eb3f4dac4ca3eb641804beeb29abe195e646d60b13"
+    },
+    {
+      "path": "/shared/software/miniconda3/latest/condabin/conda",
+      "sha256": "8f5cd1b2f264ce271752509a88b3857f059db438e9df8efae218016f425adb07"
+    }
+  ],
+  "counts_and_storage": {
+    "active_sites": 11958,
+    "coordinates": 35874,
+    "real_pairs": 1815015,
+    "full_scalar_CSC_nnz_upper": 32706144,
+    "lower_triangle_CSC_nnz_upper": 16371009,
+    "full_CSC_bytes_float64_int32": 392617228,
+    "lower_CSC_bytes_float64_int32": 196595608,
+    "full_CSC_bytes_float64_int64": 523585304,
+    "lower_CSC_bytes_float64_int64": 262223144,
+    "dense_bytes": 10295551008,
+    "dense_Cholesky_flop_leading_term": 15389274869208.0,
+    "note": "Raw scalar storage counts only; explicit structural zeros may lower them. Factor fill, workspace, temporary copies and allocator overhead excluded."
+  },
+  "upstream_capability_sources": [
+    {
+      "url": "https://github.com/DrTimothyAldenDavis/SuiteSparse",
+      "claim": "CHOLMOD sparse Cholesky, ordering dependencies and optional METIS."
+    },
+    {
+      "url": "https://github.com/DrTimothyAldenDavis/SuiteSparse/blob/dev/CHOLMOD/Supernodal/cholmod_super_numeric.c",
+      "claim": "Supernodal LLT; NOT_POSDEF and minor must be inspected even when function returns true."
+    },
+    {
+      "url": "https://github.com/DrTimothyAldenDavis/SuiteSparse/blob/dev/CHOLMOD/Include/cholmod.h",
+      "claim": "Simplicial/supernodal controls and final factor form."
+    },
+    {
+      "url": "https://scikit-sparse.readthedocs.io/_/downloads/en/latest/pdf/",
+      "claim": "Python interface changed in0.5; pin installed release before choosing API."
+    }
+  ],
+  "upstream_references_are_not_an_installed_build_pin": true,
+  "new_installs": 0,
+  "box_factors": 0
+}

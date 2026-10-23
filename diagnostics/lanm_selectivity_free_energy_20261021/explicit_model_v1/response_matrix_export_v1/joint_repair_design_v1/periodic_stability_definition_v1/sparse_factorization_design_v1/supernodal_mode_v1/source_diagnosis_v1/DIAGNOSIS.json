@@ -1,0 +1,63 @@
+{
+  "status": "identified_postfactor_storage_guard_error_original_failure_preserved",
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/supernodal_mode_v1/actual_v1/RESULT.json",
+    "sha256": "e2b1041f93d74c8fce8bce03dfaf686f8d92eec265610973d3214b66d0fb89e6"
+  },
+  "process": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/supernodal_mode_v1/PROCESS.json",
+    "sha256": "83cb0bc81d9446ed2880eb912bd9d806e48174722bdd4703f6feb84d7e2d5651"
+  },
+  "source_archive": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/supernodal_mode_v1/source_diagnosis_v1/source.tar.gz",
+    "sha256": "2f98b2c7d089a65d3eaa7533393966b9e695a429509cf0c4f5d9bca05a3f8687"
+  },
+  "source": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/supernodal_mode_v1/source_diagnosis_v1/cholmod.pyx",
+    "sha256": "d746b6db19d29b861590d26973d0efc4f06f2d6bd468bd6a663b3a5801d31647"
+  },
+  "fetch": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/supernodal_mode_v1/source_diagnosis_v1/FETCH.json",
+    "sha256": "7af6f5c0f55bf015fad56979e83658744d3d1b5de6551f47a0b65a36aaeca323"
+  },
+  "package_recipe": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/environment_v1/pkgs/scikit-sparse-0.5.0-py312h247bdc1_2/info/recipe/meta.yaml",
+    "sha256": "de130e72a028cd6d42595917f10c7e941b6024e017604f164c4d8c7bc398f60d"
+  },
+  "package_patch": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/environment_v1/pkgs/scikit-sparse-0.5.0-py312h247bdc1_2/info/recipe/0001-Fix-import-in-setup.py.patch",
+    "sha256": "2acad947e6e82d3688200ad894d9e6fdc806d1c601ef6521cb81a7f6d2dd97dd"
+  },
+  "facts": {
+    "constructor_lines": [
+      1002,
+      1005,
+      1488,
+      1491,
+      1510
+    ],
+    "factorize_lines": [
+      1905,
+      1914,
+      1953,
+      1959
+    ],
+    "mode": "constructor binds Common.supernodal=CHOLMOD_SUPERNODAL; numeric method does not change it",
+    "storage": "factorize explicitly sets final_asis false, final_super false, final_ll true for ldl false, final_resymbol true; completed storage is simplicial LL",
+    "patch": "package patch reorders setup.py imports only; numerical source unaffected"
+  },
+  "failed_checks": [
+    "diagonal6_spd/copy_flags_permutation_and_solves",
+    "diagonal6_spd/positive_mode_result",
+    "coupled3_negative_gershgorin/copy_flags_permutation_and_solves",
+    "coupled3_negative_gershgorin/positive_mode_result",
+    "hadamard4_spd/copy_flags_permutation_and_solves",
+    "hadamard4_spd/positive_mode_result",
+    "threshold_above/copy_flags_permutation_and_solves",
+    "threshold_above/positive_mode_result",
+    "threshold_plus_machine_epsilon/copy_flags_permutation_and_solves",
+    "B_plus_PSD_R_positive2/copy_flags_permutation_and_solves",
+    "B_plus_PSD_R_positive2/positive_mode_result"
+  ],
+  "new_numeric_calls": 0
+}

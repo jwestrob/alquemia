@@ -1,0 +1,73 @@
+{
+  "scientific_question": "Does the changed interaction law simultaneously repair water pair/three-body energies and signed electrical response, and the acetate rotational force while retaining its radial response? Test model capacity using existing consumed development data, not a new geometry campaign.",
+  "model": "Frozen KERNELb9b9e9bf; frozen disjoint common_water17676+donor17621 baseline with old h/H off. One12coefficient geometry-shared law, same coefficients across La/Dy, no per-state amplitudes.",
+  "coefficients": {
+    "water_pair": [
+      "v0",
+      "hf",
+      "krr",
+      "kff"
+    ],
+    "water_water_triple": [
+      "v0",
+      "va",
+      "h_neighbor",
+      "k_cross"
+    ],
+    "acetate_pair": [
+      "vr",
+      "va",
+      "hf",
+      "kff"
+    ],
+    "others": "zero; all geometric scales unchanged"
+  },
+  "boxes": {
+    "H_Aminus3": [
+      -1,
+      1
+    ],
+    "h_e_per_A2": [
+      -0.1,
+      0.1
+    ],
+    "V_kcal_mol": [
+      -100,
+      100
+    ]
+  },
+  "development_targets": {
+    "H": "Five independent measured susceptibility projections: W9La/Dy dimer01/fartrimer plus qualified La dry-acetate. Energy half-step estimator; alternate estimators retained as consistency information.",
+    "h": "Existing common-basis pair moment cycles, four W9 near/far signed full-vector three-body moment cycles, La donor full moment using explicitly conjugate baseline channel.",
+    "V": "Existing pair interaction energies, four W9 near/far full three-body energies, La donor radial/rotation half-step slopes. Complete model fragment cycles evaluated before residuals; no raw totalQM-minusMM donor-energy offset.",
+    "report": "All eight W8/W9 trimer cycles, constituent individual errors, Dy-minus-La derived contrasts, all available donor endpoint relative energies and both steps. Dy donorcenter available observations report-only; failed Dy susceptibility/correlatedtorque remain unavailable.",
+    "independence": "All targets and consistency cases are consumed development data, not blind validation. Do not count derived contrasts or duplicate estimators as independent fit observations.",
+    "methods": "Water common-basis electronic/noD4 and donor PBE0-D4 labels remain explicit; canonicalCC and tighterW9far are separate reference sensitivities, not silently substituted."
+  },
+  "one_bounded_campaign": {
+    "H_starts": 16,
+    "start_design": "zero +15 Sobol points(seed20261023) mapped to[-.1,.1]^4. For each, halve towardzero until normalized fullG SPDfloor1e-6 at every included operator, maximum20 halvings; record unavailable starts.",
+    "H_solver": "SLSQP,maximum100iterations/start, unchanged boxes and one fixed likelihood/loss formulation. No adaptive parameter additions, new starts, outer refit or tolerance relaxation.",
+    "conditional_solves": "For each admissible terminalH, one bounded linear least squares h solve, then one bounded linear least squares V solve. Stable fullG required at every included geometry; report rank/singular values and parameter-bound hits.",
+    "weights": "Normalize residuals by1a0^3 forchi,1D forvector-mu,1kcal/mol forenergy,1kcal/mol/A forslope. Equal mean squared contribution per observable family; these are development loss scales, not physical accuracy tolerances.",
+    "selection": "Deterministic minimum equally weighted final family loss among complete stable candidates; earlierstart wins ties. Keep all candidates/residuals. Report sign failures and individual errors regardless aggregate improvement.",
+    "ablations": "Same selected V withh=H=0, plus untouched baseline, evaluated without additional fitting. Expose whether mechanics/electrical errors actually separate.",
+    "stop": "One fixed campaign. Failure to jointly resolve contradictions triggers structural assessment; no automatic second coefficient-tuning campaign."
+  },
+  "resources": {
+    "qos": "standard_expand",
+    "partition": "standard",
+    "account": "banfield",
+    "cpus": 24,
+    "workers": 16,
+    "threads_per_worker": 1,
+    "nodes": 1,
+    "memory": "scheduler default",
+    "time": "scheduler default",
+    "gpu": 0,
+    "new_quantum_calls": 0,
+    "new_geometry_searches": 0
+  },
+  "support": "Reuse all completed nativeforce states. Remaining33FD states, one archived-dual diagnostic and8existing donor endpoint baseline exports are finite implementation/data support. Original faileddense-versusiterative gradient-print gate stays recorded. No claim of physical improvement from force tests alone.",
+  "outcome": "A per-observable physical verdict on this concrete new law; no protein/aqueous free energy, production promotion or transferable-potential claim."
+}

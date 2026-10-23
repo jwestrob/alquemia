@@ -1,0 +1,7 @@
+# Terminal report binding
+
+BIND.py copies the exact existing CONFIG_UNBOUND.json and supplies terminal artifact pins only. It rejects started/preparation/nonterminal records before inspecting vector metadata, binds the completed initial artifact when present, and binds the frozen selected artifact only for complete fits. Failed terminal fits get selected_artifact=null. Initial/selected bytes are verified; their scientific contents and other vector artifacts are not opened by this helper. REPORT.py remains the unchanged owner of saved score replay.
+
+READY.json contains the exact future fit path from job18652 submission, bind argv, report argv and one-thread environment. RUN_WHEN_TERMINAL.sh contains the same two explicit steps for root; it has not been run. Binding output and report output must be new, separate paths. The binding writes CONFIG_BOUND.json, BINDING.json and a RUN_REPORT.sh command; it never runs the report. Optional --regression-result and --scheduler-accounting bind exact already-computed JSON files. Omitted regression remains pending under the existing report contract; this helper does not change or execute regression.
+
+Seven small synthetic metadata checks cover complete, failed-with-initial, failed-before-initial, started, preparation, unfrozen and missing-cost cases. No actual fit RESULT, partial vectors, native calculations or report execution were read/run while preparing this helper. Report source/settings/template remain unchanged.

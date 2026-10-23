@@ -1,0 +1,82 @@
+Independent native force bridge implementation review — 23 October 2026
+
+Conclusion
+Source review passes for the declared finite vacuum MUTUAL/Thole, zero-field,
+dielectric-one, all-active real-atom scope. No concrete compile, initialization,
+runtime-interface or physics blocker was found in the frozen implementation.
+This receipt does not admit a compiled binary or numerical force result. The
+root-owned build and prospective 102-state derivative panel remain separate.
+No source was changed by this review; no compiler, native call, solve, FFT,
+quantum calculation or scientific numerical replay was performed.
+
+Initialization and state
+initial/getxyz/mechanic supply topology, parameters, polarization groups,
+ipole/douind, damping tables and allocated polarization arrays. chkpole and
+rotpole precede the direct field. Both raw field channels remain distinct:
+udir=alpha*Ed0 and udirp=alpha*Ep0. Explicit tcgnab=0 prevents the otherwise
+unconditional TCG scratch loop in epolar1a from reading unprepared arrays.
+Predictor, dynamic polarization, exchange polarization, charge flux, solvation,
+periodic/list paths, alternate damping, additional electrostatic representations
+and virtual-site redistribution are rejected. initial sets gpucard=0; no other
+assignment exists in the pinned parent source, so the inherited GPU early-return
+path cannot silently skip the gradient in this executable's call sequence.
+
+The one-shot resident process has no geometry or parameter mutation interface.
+Before accepting supplied dual dipoles it rechecks geometry, types, alpha and
+site order and requires exact round-trip SITE/ED/EP values. Both supplied vectors
+must be finite and must remain byte-value equal after contraction. Native indices
+are one-based; Python must preserve the declared zero-based fixture mapping.
+
+Operator and permanent moment
+The unit-column construction is the parent exportresponsematrix construction:
+A0=-T plus 1/alpha on the diagonal, in ipole-major xyz order. It makes one direct
+field call and 3*npole mutual-field applications, with no induced solve. Scratch
+uind/uinp are cleared after columns and replaced by the supplied u/v before the
+gradient. Raw asymmetry and channel discrepancy are exported; their arithmetic
+admission and any symmetric representative belong to the declared harness.
+The permanent dipole is sum(q*r+rotated dipole) at explicit origin zero. It does
+not call moments or induce. Charged-origin comparisons must preserve that origin.
+
+Energy, gradient and frame torque
+The private polarization body is exactly the parent body except its name and
+the removed call induce. The private total-gradient body is exactly the parent
+body except its name and polarization dispatch, plus one harmless terminal blank
+line from generation. All damping/exclusion force loops, both-field contractions,
+permanent-frame torques, virial accumulation and nonpolar components remain.
+
+For L0=K/2*(u^T A0 v-u^T Ep0-v^T Ed0), the native gradient supplies
+dU_other/dR+dL0/dR at fixed independent u/v. The dEd0 contraction uses v, the dEp0
+contraction uses u, and the mutual contribution contains the cross-channel tensor
+derivative with K/2. No baseline stationarity substitution is needed in these
+preserved force loops. Original intrinsic alpha is coordinate independent here.
+
+epolar1e still reports only -K/2*u^T Ep0. At corrected u/v that scalar is not L0
+or the new stationary polarization energy. Subtracting it from the native energy
+correctly extracts U_other. COMBINE adds U_other+DeltaV+the corrected stationary
+polarization energy; its force uses the complete native gradient plus
+grad[DeltaV+K/2*(u^T DeltaH v-(u+v)^T h)] with u/v detached. The new local term is
+added once; neither the old polar gradient nor a frozen-matrix total derivative
+is subtracted/added. The returned force is minus the gradient. Native virial is
+explicitly incomplete for the new correction and is not a qualified total virial.
+
+Source and build bindings
+The recipe uses three private object compiles and one link against the unchanged
+parent archive, with all private objects before that archive. All 33 imported
+native modules are explicitly pinned from the same build directory. Original
+compiler/link authority and external libraries are pinned. The reviewed recipe
+does not rebuild or replace the parent library. Its compilation is not executed
+or independently admitted here.
+
+Evidence and remaining qualification
+Independent stdlib-only checks pass 74 joins covering 56 distinct pinned files,
+Python syntax, exact source inverses, direct call counts, module coverage and
+object/archive order. The initial reviewer failed only because its END-line
+extractor excluded the generator's one EOF blank line; CHECK_SOURCE.py and the
+failure receipt are preserved. CHECK_SOURCE_v2 permits exactly that blank line.
+No scientific condition or bridge source changed.
+
+The runtime harness must still bind input/key/prm/source/operator/u-v identity,
+apply the frozen symmetry and SPD/residual checks, retain all partial failures,
+bound the stdin handshake, and enforce the phase's exact state counts and finite
+difference/regression criteria. The present review establishes source coherence,
+not derivative accuracy, chemical accuracy, stability or periodic applicability.

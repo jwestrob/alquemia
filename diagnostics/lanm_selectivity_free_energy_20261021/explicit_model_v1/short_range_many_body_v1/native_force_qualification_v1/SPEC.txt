@@ -1,0 +1,46 @@
+Finite vacuum native force qualification
+
+Authority: PHASE_2_NATIVE_FORCES.txt 51447e71. The staged panel has exactly
+102 immutable states: three cases, two coefficient profiles, each one center
+and four directions at two signed steps. The scout runs exactly six La-water
+states; the remaining stage reuses those six and runs only the other 96.
+No fitting, reference calls, periodic work or parameter selection occurs.
+
+RUN.py launches one native process at a time, with one native and one Python
+numerical thread. Native blocks during the Python solve. Each process performs
+one direct initialization, 3N mutual actions and one fixed-dual gradient, with
+zero native SCF entries. A 300-second per-process deadline includes the handshake.
+The exact binary4489eadd, source-ready bridge, recipe, kernel and COMBINE.py join
+through the release. Runtime release hashes the configuration fingerprint,
+excluding only root_release; no circular hash. Outputs must be fresh directories.
+
+The parser requires exact site/atom/type/alpha/coordinate joins, all finite
+full-precision fields and preserved unequal RHS channels. It roundtrips supplied
+u/v at17significant digits and requires exact unchanged native readback. The
+fresh operator bound is128*(3N)*epsilon*max(1,|A0|,|Ed|,|Ep|); explicit symmetric
+projection and native dual-operator difference are recorded. The frozen kernel
+owns SPD and residual checks. COMBINE.py owns fixed-u/v local differentiation;
+its full corrected reduced polarization energy is counted once. Full atomic
+baseline gradients include native torque/frame redistribution. Native virial
+is reported raw and is not labeled a complete corrected virial.
+
+Zero-center regression reuses pinned admitted native u/v and total energy.
+Inherited solve/printing bounds apply. Neither water fragment has an archived
+full gradient, so this regression channel is explicitly unavailable. Acetate
+has eight-decimal testgrad output: compare its literal gradient with printing
+plus arithmetic allowance, without inventing an unqualified PCG-to-force error
+bound. Any failed available regression channel stops execution and remains
+failed. This is distinct from the directional derivative gate.
+
+COLLECT.py reads saved results only. It requires six scout states/two derivative
+checks, or102states/48checks with exact scout reuse. Analytic slope is the
+center total gradient dotted with the declared center direction. Central energy
+differences use the declared1e-4 and5e-5A steps. Every check uses the unchanged
+5e-5+1e-6*abs(analytic) gate. Missing/failed rows never yield a partial pass.
+Costs distinguish controller/child CPU, process peak RSS, host and actual native
+starts; attempted Popen and started processes are separate. No retry is present.
+
+Eight tiny manufactured text/gate controls run once, with no native, tensor,
+actual fixture or solver evaluation. The next meaningful numerical check is
+root's declared six-state scout. Passing only qualifies finite vacuum derivative
+implementation; it cannot establish chemical accuracy or production readiness.

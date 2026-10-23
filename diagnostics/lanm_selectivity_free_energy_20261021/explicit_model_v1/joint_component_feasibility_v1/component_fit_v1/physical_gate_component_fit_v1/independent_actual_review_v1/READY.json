@@ -1,0 +1,75 @@
+{
+  "status": "prepared_terminal_only_physical_gate_component_fit_review",
+  "reviewer_implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/independent_actual_review_v1/REVIEW.py",
+    "sha256": "62469b2c3fed18bc77169f2b1f68b759c893040abe9dd12b25f72ecaf5233449"
+  },
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/independent_actual_review_v1/MANIFEST.json",
+    "sha256": "18cd5f5e20825cf97bfe43fc0c42015732906d1c0de34ac37f58099bd68278ed"
+  },
+  "contract": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/independent_actual_review_v1/CONTRACT.md",
+    "sha256": "dc40f68a996d3f31b999ff498229472ff8ca166c1be7e1354c5b88c4b47b007b"
+  },
+  "controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/independent_actual_review_v1/controls_v3/RESULT.json",
+    "sha256": "55d945b1f0e45b85407ff4803548667dd04d5b330c6f523211ada27b7167d3e9"
+  },
+  "derived_replay_helper": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/fit_v1/independent_actual_review_v1/continuation_v2/CONTINUE.py",
+    "sha256": "4506a25816fd56ca033d158ebb0b547437e67dc865be1aa6a5d1a124be152291"
+  },
+  "campaign_ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/READY.json",
+    "sha256": "6ba70cf732722230039b520d4369f375cd570c90a3ce0bbac37c722e7487c073"
+  },
+  "argv": [
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/conic_saved_comparison_v1/environment_v1/venv/bin/python",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/independent_actual_review_v1/REVIEW.py",
+    "--result",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/run_v1/execution/RESULT.json",
+    "--out",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/independent_actual_review_v1/actual_v1",
+    "--derived-replay-helper",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/fit_v1/independent_actual_review_v1/continuation_v2/CONTINUE.py"
+  ],
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OMP_THREAD_LIMIT": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "expected_status": "passed_physical_gate_component_fit_actual_review",
+  "failure_audit_status": "reviewed_failed_physical_gate_component_fit",
+  "required_contract": [
+    "result",
+    "configuration",
+    "implementation (terminal DRIVER pin)",
+    "selected",
+    "selected_native_admission_passed=true",
+    "reviewer_implementation"
+  ],
+  "terminal_binding": null,
+  "source_preparation_only": true,
+  "actual_review_executed": false,
+  "terminal_predicate": "Absent/started returns pending; only terminal complete can pass. Actual output directory must not exist. No live protocol changes.",
+  "source_control_summary": {
+    "passed": 15,
+    "cost": {
+      "wall_seconds": 0.41164631908759475,
+      "CPU_seconds": 0.407118859,
+      "threads": 1
+    },
+    "preserved_failed_harness": "controls_v1/RESULT.json; exact source snapshot REVIEW_before_final_joins.py"
+  },
+  "new_native_calls": 0,
+  "new_optimizer_calls": 0,
+  "consumed_trimer_guidance_only": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/independent_actual_review_v1/CONTRACT.md",
+    "sha256": "dc40f68a996d3f31b999ff498229472ff8ca166c1be7e1354c5b88c4b47b007b"
+  }
+}

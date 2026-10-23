@@ -1,0 +1,48 @@
+{
+  "status": "changes_required_before_execution",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/saved_electronic_redistribution_v1/REVIEW.py",
+    "sha256": "1e1142df2819f0d05393e593d23098755158ee431e0ae4ab3741be37dccf57e6"
+  },
+  "declaration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/saved_electronic_redistribution_v1/DECLARATION.md",
+    "sha256": "9527116458b6177195a28a1b345d5a21731e601d1756751ca6af74f3e02ada42"
+  },
+  "scope": "Independent source, formula and actual raw-format metadata review only; no population/dipole analysis execution.",
+  "material_findings": [
+    {
+      "issue": "Actual native electric origins differ between fragments.",
+      "evidence": "For W9Dy: original complex (0,0,0.269042), water1 metal-water (0.453238,0,0.169344), water-only (4.541563,0,1.696875), isolated metal (0,0,0), under Center of mass origin labels.",
+      "impact": "Direct combination of charged total/electronic/nuclear dipoles from different origins is invalid. Nuclear-cancellation gate should fail; neutral combined charge alone does not repair noncommon origins.",
+      "required_change": "Transform each dipole to one common origin with checked native units, electron/nuclear charge and propagated printed-origin rounding, or explicitly hold dipole results unavailable while completing population-only analysis."
+    },
+    {
+      "issue": "Independent admission and inventory are not fully joined.",
+      "required_change": "Check passed independent-review status and its exact collector_result identity; require full exact80 expected source IDs and per-row complete status."
+    },
+    {
+      "issue": "Parsing failure exits after output-directory creation without a structured failure/cost record.",
+      "required_change": "Preserve a terminal failure receipt with source/config, error and elapsed/CPU cost; never substitute a population or dipole value."
+    }
+  ],
+  "correct_as_written": [
+    "C=complex-ion-shell; P=sum(dimers)-Nion-sum(waters); B=C-P with expanded ion coefficientN-1.",
+    "All ghost center charges are retained, with exact indexed labels and full parent atom count.",
+    "Positive B on the metal means less full-shell electron-population gain than additive pairs, under that population convention.",
+    "No claim that partition-dependent charges uniquely identify charge transfer or an energy component.",
+    "No cross-parent dipole-vector orientation interpretation."
+  ],
+  "roundoff_review": {
+    "observed_atomic_charge_decimal_places": 6,
+    "maximum_single28_center_charge_sum_rounding_e": 1.4e-05,
+    "maximum_N9_B_coefficient_L1": 28,
+    "maximum_N9_B_total_charge_rounding_e": 0.000392,
+    "declared_table_tolerance_e": 5e-05,
+    "declared_difference_tolerance_e": 0.0005,
+    "conclusion": "Population reconstruction tolerances cover worst-case six-decimal printing. Nine-decimal dipole component closure5e-9 covers three-vector rounding; origin correction needs its own propagated bound."
+  },
+  "new_native_calls": 0,
+  "analysis_executed": false,
+  "local_threads": 1,
+  "reported_to_root": true
+}

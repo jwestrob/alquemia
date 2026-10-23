@@ -1,0 +1,112 @@
+{
+  "status": "unbound_source_only",
+  "commands": {
+    "bind": [
+      "python3",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/fresh_radial_binding_v1/BIND.py",
+      "bind",
+      "--config",
+      "@REVIEWED_BOUND_CONFIG@",
+      "--out",
+      "@FRESH_BINDING_DIRECTORY@"
+    ],
+    "model": [
+      "python3",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/fresh_radial_binding_v1/MODEL.py",
+      "--bound",
+      "@BOUND.json@",
+      "--release",
+      "@MODEL_RELEASE.json@",
+      "--out",
+      "@FRESH_MODEL_OUTPUT@"
+    ],
+    "reference": {
+      "aquo9_minus_La": [
+        "sbatch",
+        "--qos=standard_expand",
+        "--ntasks=4",
+        "--cpus-per-task=1",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/RUN.sbatch",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/fresh_radial_binding_v1/REFERENCE.py",
+        "run",
+        "--bound",
+        "@BOUND.json@",
+        "--manifest",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/water_coordination_radial_validation_v1/reference/preparation_v2/MANIFEST.json",
+        "--release",
+        "@REFERENCE_RELEASE.json@",
+        "--cell",
+        "ecp_pbe0__aquo9_minus_La",
+        "--out",
+        "@FRESH_TASK_DIRECTORY@/execution"
+      ],
+      "aquo9_minus_Dy": [
+        "sbatch",
+        "--qos=standard_expand",
+        "--ntasks=4",
+        "--cpus-per-task=1",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/RUN.sbatch",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/fresh_radial_binding_v1/REFERENCE.py",
+        "run",
+        "--bound",
+        "@BOUND.json@",
+        "--manifest",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/water_coordination_radial_validation_v1/reference/preparation_v2/MANIFEST.json",
+        "--release",
+        "@REFERENCE_RELEASE.json@",
+        "--cell",
+        "ecp_pbe0__aquo9_minus_Dy",
+        "--out",
+        "@FRESH_TASK_DIRECTORY@/execution"
+      ],
+      "aquo9_plus_La": [
+        "sbatch",
+        "--qos=standard_expand",
+        "--ntasks=4",
+        "--cpus-per-task=1",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/RUN.sbatch",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/fresh_radial_binding_v1/REFERENCE.py",
+        "run",
+        "--bound",
+        "@BOUND.json@",
+        "--manifest",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/water_coordination_radial_validation_v1/reference/preparation_v2/MANIFEST.json",
+        "--release",
+        "@REFERENCE_RELEASE.json@",
+        "--cell",
+        "ecp_pbe0__aquo9_plus_La",
+        "--out",
+        "@FRESH_TASK_DIRECTORY@/execution"
+      ],
+      "aquo9_plus_Dy": [
+        "sbatch",
+        "--qos=standard_expand",
+        "--ntasks=4",
+        "--cpus-per-task=1",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/RUN.sbatch",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/fresh_radial_binding_v1/REFERENCE.py",
+        "run",
+        "--bound",
+        "@BOUND.json@",
+        "--manifest",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/water_coordination_radial_validation_v1/reference/preparation_v2/MANIFEST.json",
+        "--release",
+        "@REFERENCE_RELEASE.json@",
+        "--cell",
+        "ecp_pbe0__aquo9_plus_Dy",
+        "--out",
+        "@FRESH_TASK_DIRECTORY@/execution"
+      ]
+    },
+    "collector": [
+      "python3",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/fresh_radial_binding_v1/COLLECT.py",
+      "--config",
+      "@CONFIG_COLLECT.json@",
+      "--out",
+      "@FRESH_COLLECTION_DIRECTORY@"
+    ]
+  },
+  "model_scheduler_requirements": "one task, four CPUs, all five numerical thread variables 1; no memory/time override",
+  "new_native_calls": 0
+}

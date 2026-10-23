@@ -1,0 +1,84 @@
+{
+  "status": "passed_algebra_and_declared_protocol_review_pending_concrete_native_model_bundles",
+  "created_utc": "2026-10-21T15:54:28.526157+00:00",
+  "reviewer": "exchange_experimental_target",
+  "declaration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/matched_pair_decomposition_v1/ROOT_DECLARATION.md",
+    "sha256": "eb88c5cd7c9e968ced4e3dc0a65187f6b12bd779a618665fda96912e52bcdbaa"
+  },
+  "root_inputs": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/matched_pair_decomposition_v1/ROOT_INPUTS.json",
+    "sha256": "8d73b0e593e6b110c025088e2d797b20b018195bd0458b35e11e1343ae6324bd"
+  },
+  "prior_matched_coordinate_cancellation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/independent_review_v1/CANCELLATION_VERIFICATION.json",
+    "sha256": "6372f1f1d4457bb49d0dc41588c2d9cfddbb1f8332ce74ee36c8f506cee05c02"
+  },
+  "prior_actual_CP_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/independent_actual_review_v1/REVIEW.json",
+    "sha256": "e6bb2dae760fa2cb720c8626ca85b0ce2e046dcd6ad1d5127c328771ac0e53fd"
+  },
+  "algebra": {
+    "delta": "X(Dy,9)-X(La,9)-X(Dy,8)+X(La,8)",
+    "individual_own_basis_pair_interaction": "I(M,i)=E(MWi)-Eion(M)-Eownwater(i)",
+    "summed_pair_interaction": "sum_i I(M,i)=S(M,n)-n*Eion(M)-sum_i Eownwater(i)",
+    "water_cancellation": "For each n and i, La/Dy extracted own-water coordinates, state and basis are identical; their energies cancel. They need not be zero.",
+    "ion_multiplicity_correction": "delta(n*Eion)=Eion(Dy)-Eion(La), because 9-8=1.",
+    "P": "delta(S)-(Eion(Dy)-Eion(La))",
+    "B": "C-P",
+    "error_convention": "model-reference",
+    "error_closure": "error(C)=error(P)+error(B)"
+  },
+  "inventory": {
+    "quantum_dimers": 34,
+    "quantum_own_ions": 2,
+    "quantum_total_new_SP": 36,
+    "model_analyze": 34,
+    "new_full_complexes": 0,
+    "new_free_water_or_shell": 0,
+    "new_forces": 0,
+    "quantum_dimer_expected": {
+      "atoms": 4,
+      "orbital_AOs": 90,
+      "electrons": 18,
+      "charge": 3,
+      "effective_multiplicity": 1
+    },
+    "quantum_own_ion_expected": {
+      "atoms": 1,
+      "orbital_AOs": 47,
+      "electrons": 8,
+      "charge": 3,
+      "effective_multiplicity": 1
+    },
+    "physical_multiplicity": {
+      "La": 1,
+      "Dy": 6
+    },
+    "ECP_core": {
+      "La": 46,
+      "Dy": 55
+    }
+  },
+  "concrete_bundle_review_requirements": [
+    "All34 literal extracted pairs retained with original orientation/coordinates/order and water graph, no symmetry replication or optimization.",
+    "Own-basis quantum inputs contain only real M,O,H,H or real M; no ghost centers or borrowed basis from deleted waters.",
+    "Same parent metal GTO/aux/ECP and light basis, PBE0-D4, RIJCOSX, DefGrid3, PModel, VeryTightSCF/MaxIter300 and original effective state; actual final-integration/stopping evidence retained.",
+    "Own-ion D4 is the isolated-atom empty pair/triple sum zero, stated explicitly; do not mix ghost-ion CP energies into P.",
+    "Fixed model is terminal17676, not earlier17605 or any alpha perturbation. Exact key/prm lineage and atomic typing must remain unchanged after extraction.",
+    "Model isolated-ion zero requires native implementation/convention evidence; absence of a calculated ion is not sufficient evidence of zero.",
+    "Quantum exact36 new plus4 reused reference terms and model34 new plus4 reused terms retain full denominators; electronic and D4 contributions remain separate.",
+    "Missing or inadmissible term prevents the affected complete sum and remainder; no normalized partial sums.",
+    "Completed metal-whole-shell CP result remains context only, never inserted into C or B."
+  ],
+  "interpretation": [
+    "Large signed P error supports investigating individual interactions; large B error supports investigating cooperative response, while cancellation/comparable errors must be reported.",
+    "B includes finite-basis nonadditivity, metal-mediated shell response and environmental dependence of D4; it does not uniquely identify polarization, charge transfer or a missing quantum term.",
+    "W8 to W9 also rearranges the original eight waters, so this is not an isolated ninth-water insertion energy.",
+    "Neither result changes provisional reference targets, releases fitting or establishes physical reference accuracy."
+  ],
+  "blocking_findings": [],
+  "new_native_calls": 0,
+  "test_suite_reruns": 0,
+  "local_threads": 1
+}

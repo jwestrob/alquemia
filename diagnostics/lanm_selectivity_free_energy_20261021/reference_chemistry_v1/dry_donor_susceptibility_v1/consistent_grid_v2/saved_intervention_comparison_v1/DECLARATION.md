@@ -1,0 +1,7 @@
+# Saved Dy grid-intervention comparison
+
+Question: what does the completed grid2-to-grid3 intervention explain about the original dry-Dy odd-energy/dipole mismatch? Compare the original five and matching-grid five saved outputs only, in the original laboratory frame and field direction. Reuse the pinned saved-diagnosis Decimal/token utilities and the executed physical-grid fingerprint parser. Preserve all original raw artifacts and failed numerical checks.
+
+For each endpoint, verify the sole input change, physical grid fingerprints, last SCF-iteration energy, final electronic/property energy, D4 closure, projected total dipole, native stop mode and every printed criterion. Recompute the original odd/curvature estimators and the contribution from the final-integration energy change using raw Decimal tokens. Pre-final slopes describe the calculation stages only; they are not replacement or corrected targets. Compare both field steps without extrapolation or a new numerical or physical acceptance threshold.
+
+Report the actual recipe effect and the scale of the remaining inconsistency against the already admitted selected-17621 AMOEBA projected-moment discrepancy. This scale comparison is not an SCF error bound or admission of Dy/paired quantum targets. The failed matching-grid branch remains closed; matching La5 is unrun. No new geometry, field, parameter choice, sweep, fit, recovery or molecular call is included. One login thread; preserve the new saved analysis result and its measured cost.

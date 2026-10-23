@@ -1,0 +1,97 @@
+{
+  "status": "symbolic_exact_SOCP_mapping_no_solver_execution",
+  "variables": [
+    "d_0",
+    "d_1",
+    "d_2",
+    "d_3",
+    "d_4",
+    "d_5",
+    "d_6",
+    "d_7",
+    "d_8",
+    "d_9",
+    "d_10",
+    "d_11",
+    "t"
+  ],
+  "objective": "minimize t; q=t^2; t>=0",
+  "affine_residual_authority": "CORE.linearize output, identical actual normalized probe spans and original physical quantities",
+  "component_cones": {
+    "P_energy": "(t,(r_P+J_P*d)/sqrt(D_P)) in Q3",
+    "B_energy": "(t,(r_B+J_B*d)/sqrt(D_B)) in Q3"
+  },
+  "old_block_cones": {
+    "old_EF": {
+      "residual_slice": [
+        0,
+        413
+      ],
+      "cone_dimension": 414,
+      "formula": "(1,(r+J*d)/sqrt(fixed_block_score_ceiling/4)) in Lorentz cone"
+    },
+    "pair_mu": {
+      "residual_slice": [
+        413,
+        515
+      ],
+      "cone_dimension": 103,
+      "formula": "(1,(r+J*d)/sqrt(fixed_block_score_ceiling/4)) in Lorentz cone"
+    },
+    "C_mu": {
+      "residual_slice": [
+        515,
+        527
+      ],
+      "cone_dimension": 13,
+      "formula": "(1,(r+J*d)/sqrt(fixed_block_score_ceiling/4)) in Lorentz cone"
+    },
+    "chi": {
+      "residual_slice": [
+        527,
+        531
+      ],
+      "cone_dimension": 5,
+      "formula": "(1,(r+J*d)/sqrt(fixed_block_score_ceiling/4)) in Lorentz cone"
+    }
+  },
+  "force_RMS_cones": {
+    "formula": "(1,diag(sqrt(weights))*(r+J*d)/2) in Lorentz cone",
+    "body_vector_sizes": [
+      9,
+      9,
+      9,
+      51,
+      57,
+      9,
+      9,
+      9,
+      51,
+      57,
+      9,
+      9,
+      9,
+      51,
+      57
+    ],
+    "weights": "first3=1/6; remaining6n=1/(12n)"
+  },
+  "linear_physical_sides": {
+    "energy": "1 +/- (r_energy+J_energy*d) >= 0",
+    "body_component": "1 +/- (r_force+J_force*d)/5 >= 0"
+  },
+  "increment_bounds": "max(-0.025,-z_j)<=d_j<=min(0.025,1-z_j)",
+  "auxiliary_bounds": "0<=t<=sqrt(q_current)",
+  "fraction_policy": "d_f=f*d_returned; q_f=(1-f)*q_current+f*t_returned^2; use existing independent q-space certificate",
+  "actual_selection_policy": "unchanged CORE.select, q-space tolerance and current/earlier-fraction tie precedence",
+  "counts": {
+    "variables": 13,
+    "Lorentz_cones": 21,
+    "sum_Lorentz_dimensions": 961,
+    "linear_sides_including_variable_bounds": 856,
+    "original_residual_inequalities": 851,
+    "physical_gates": 25
+  },
+  "no_solver_calls": true,
+  "current_campaign_unchanged": true
+}

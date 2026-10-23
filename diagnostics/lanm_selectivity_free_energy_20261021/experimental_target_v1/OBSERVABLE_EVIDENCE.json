@@ -1,0 +1,78 @@
+{
+  "date_UTC": "2026-10-21",
+  "task": "buffer/speciation and assay mapping",
+  "sources": [
+    {
+      "id": "Mandal2022",
+      "doi": "10.1007/s00775-022-01930-x",
+      "primary": true,
+      "local": "sources/mes_eu2022.xml",
+      "access": "Europe PMC full-text XML PMC8907096",
+      "admission": "Full primary methods/Table1 read; Eu-only illustration; no La/Dy constants",
+      "sha256": "ebdacfd95bf5a81f47df376bb1a51cf82c06e777e1677e14e1ee8e7a2488ece4",
+      "bytes": 103887
+    },
+    {
+      "id": "KlungnessByrne2000",
+      "doi": "10.1016/S0277-5387(99)00332-0",
+      "primary": true,
+      "local": "sources/hydrolysis_klungness2000_primary_abstract.html",
+      "access": "Author institutional primary abstract https://digitalcommons.usf.edu/msc_facpub/1723/",
+      "admission": "Abstract constants admitted only for first-hydrolysis screening at stated25C/I0; full paper not retrieved",
+      "sha256": "a241206939b132f2abc32c1adddae1b2d80595cf223f83a92b506f3270ce2a09",
+      "bytes": 37061
+    },
+    {
+      "id": "Azab2011",
+      "doi": "10.1021/je200099n",
+      "primary": true,
+      "local": null,
+      "access": "Indexed primary PDF at https://www.electronicsandbooks.com/edt/manual/Magazine/J/Journal%20of%20Chemical%20%26%20Engineering%20Data/56/je200099n.pdf ; Table13 inspected via web search; full PDF fetch failed",
+      "admission": "Dy4.19\u00b10.02/Eu4.27\u00b10.03,25C,0.1M KNO3,table3s; formation/protonation mapping not fully admitted; not in executable model"
+    },
+    {
+      "id": "AnwarAzab2001",
+      "doi": "10.1021/je000187+",
+      "primary": true,
+      "local": null,
+      "access": "ACS primary abstract",
+      "admission": "La-containing study identified; numeric La MES constant NOT verified, not used"
+    },
+    {
+      "id": "Peppard1962",
+      "doi": "10.1016/0022-1902(62)80109-2",
+      "primary": true,
+      "local": null,
+      "access": "ScienceDirect primary abstract",
+      "admission": "Qualitative chloride/nitrate sidecomplex evidence; mismatched I1,no verified Dy coefficient used"
+    },
+    {
+      "id": "Bonal1998",
+      "doi": "10.1039/A800428E",
+      "primary": true,
+      "local": null,
+      "access": "RSC primary abstract",
+      "admission": "La/Dy nitrate study identified,I2mol/kg; no numeric constants used"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "diagnostics/lanm_selectivity_free_energy_20261021/experimental_target_v1/OBSERVABLE_CONTRACT.md",
+      "sha256": "6a73cba94a31545361e07716a7254ec69a7201755f9d811e92510de16a503371",
+      "bytes": 11438
+    },
+    {
+      "path": "workspaces/lanm_selectivity_free_energy_20261021/experimental_target_v1/observable_mapping.py",
+      "sha256": "d51cb91409a6a17a0c90412bcccc04448ad2780b09781972a2796e707c2e5f08",
+      "bytes": 5774
+    },
+    {
+      "path": "workspaces/lanm_selectivity_free_energy_20261021/experimental_target_v1/observable_mapping_inputs.json",
+      "sha256": "5e1fa02be3e291856ebc43e3de648448e20a241a49effbc6cb2eb6c266649fc7",
+      "bytes": 2244
+    }
+  ],
+  "verification": "AST parse and JSON parse passed; numerical script intentionally not executed; no jobs or molecular calculations",
+  "new_validation_affinities_inspected": false,
+  "excluded_secondary_numeric_leads": "La MES3.40 and any combined review-derived La/Dy correction remain unadmitted; no best estimate or empirical bound assigned"
+}

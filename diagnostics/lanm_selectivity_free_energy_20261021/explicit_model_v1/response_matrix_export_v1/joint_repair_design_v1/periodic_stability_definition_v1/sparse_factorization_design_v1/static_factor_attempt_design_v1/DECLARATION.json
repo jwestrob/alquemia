@@ -1,0 +1,40 @@
+{
+  "status": "source_design_only_no_calculation_released",
+  "question": "Can one fixed supernodal LL attempt provide a practical sufficient numerical stability check for the exact saved graph after candidate and initialized PME binding?",
+  "scope": "Installed local API/header/library inspection and design only; no new symbolic or numeric operator calculation.",
+  "proposed_mode": {
+    "lower": true,
+    "order": "amd",
+    "sym_kind": "sym",
+    "supernodal_mode": "supernodal",
+    "ldl": false,
+    "beta": 0.0,
+    "numeric_attempt_cap": 1
+  },
+  "prospective_limits": {
+    "address_space_bytes": 34359738368,
+    "wall_seconds": 900,
+    "cpu_seconds": 10800,
+    "openblas_threads": 12,
+    "openmp_threads": 1,
+    "automatic_retry": false
+  },
+  "criterion": "K=B0+H-tau I; tau=1e-6*(U_B+U_R), with actual candidate U_B and initialized PME U_R; sufficient test only.",
+  "residuals": "Ten fixed sparse factor-action and solve backward-error probes; 100*n*eps; no dense K or L L^T, no full operator-error-norm claim.",
+  "minimal_mode_controls": "Exact existing eleven manufactured matrices, n<=6; existing input rejection; copied-L/permutation/direct tiny residual correspondence and one deliberate copied diagonal defect. No controls executed here.",
+  "required_before_actual": {
+    "terminal_candidate": null,
+    "bio_composition": null,
+    "initialized_pme_export_and_upper_bound": null,
+    "supernodal_mode_qualification": null,
+    "exact_runtime_configuration": null,
+    "root_release": null
+  },
+  "counts_this_task": {
+    "new_graph_analyses": 0,
+    "numeric_factorizations": 0,
+    "solves": 0,
+    "native_calls": 0,
+    "installs": 0
+  }
+}

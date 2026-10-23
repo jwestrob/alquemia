@@ -1,0 +1,20 @@
+--- /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/slurm_stage1_v1/RUN.py
++++ /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_runtime_v1/central_initializer_standard_v1/SLURM1_STANDARD.py
+@@ -52,7 +52,7 @@
+ def parse_allocation(raw,environ,hostname,uid):
+     job=environ.get('SLURM_JOB_ID','');require(job.isdecimal() and job!='0','Actual Slurm job ID')
+     fields=dict(word.split('=',1) for word in raw.split() if '=' in word)
+-    expected={'JobId':job,'JobState':'RUNNING','Account':'banfield','QOS':'standard_expand','Partition':'standard',
++    expected={'JobId':job,'JobState':'RUNNING','Account':'banfield','QOS':'standard','Partition':'standard',
+               'NumNodes':'1','NumCPUs':'1','NumTasks':'1','CPUs/Task':'1','Requeue':'0','OverSubscribe':'NO'}
+     for key,value in expected.items():require(fields.get(key)==value,'Allocation '+key)
+     require(fields['BatchHost'].split('.')[0]==hostname.split('.')[0],'Allocated host')
+@@ -68,7 +68,7 @@
+     grant=memory(tres['mem'])
+     require(grant==4000*1024**2 and memory(fields['MinMemoryCPU'])==4000*1024**2,'Default memory grant')
+     require(RESOURCES['address_space_bytes']<grant,'Address-space cap below grant')
+-    return dict(job_id=job,hostname=hostname,mode='slurm',account='banfield',partition='standard',qos='standard_expand',
++    return dict(job_id=job,hostname=hostname,mode='slurm',account='banfield',partition='standard',qos='standard',
+                 allocated_CPUs=1,nodes=1,tasks=1,memory_grant_bytes=grant,default_memory_MiB_per_CPU=4000,
+                 raw_scontrol=raw,requeue=False,scheduler_allocated_CPU_seconds=None)
+ 

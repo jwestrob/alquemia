@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+"""Read actual saved Mex and dry-field grid evidence. No native calls."""
+import ast,hashlib,json,re,time
+from pathlib import Path
+ROOT=Path.cwd();REL=Path('reference_chemistry_v1/dry_donor_susceptibility_v1/saved_grid_recovery_review_v1');DB=ROOT/'diagnostics/lanm_selectivity_free_energy_20261021'/REL;OUT=ROOT/'workspaces/lanm_selectivity_free_energy_20261021'/REL;OUT.mkdir(exist_ok=False);t=time.monotonic();cpu=time.process_time()
+def pin(p):
+ p=Path(p).resolve();return dict(path=str(p),sha256=hashlib.sha256(p.read_bytes()).hexdigest())
+def read(p):return json.loads(Path(p).read_text())
+source=ROOT/'diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/CONSISTENT_GRID.py';text=source.read_text();tree=ast.parse(text);nodes=[x for x in tree.body if isinstance(x,ast.FunctionDef) and x.name in ['require','grid_fingerprints']];ns={'re':re};exec(compile(ast.Module(body=nodes,type_ignores=[]),str(source),'exec'),ns);fingerprints=ns['grid_fingerprints']
+oldbase=ROOT/'workspaces/lanm_coupled_mechanics_20261017';old_paths={'central':oldbase/'mex_consistent_grid_central_v1/execution/native','plus':oldbase/'mex_consistent_grid_displacements_v1/tasks/plus/execution/native','minus':oldbase/'mex_consistent_grid_displacements_v1/tasks/minus/execution/native'};oldrows={}
+for cid,folder in old_paths.items():
+ inp=folder/'endpoint.inp';out=folder/'endpoint.out';it=inp.read_text();ot=out.read_text();g=fingerprints(ot);assert g['grid2']==g['grid3'];assert 'Recomputing exchange energy using gridx3' in ot;block=re.findall(r'%method\s*\n.*?\nend',it,re.S);assert block==['%method\n DoEQ false\n AngularGridX 2,4,4\n IntAccX -1,-1,-1\nend'];oldrows[cid]=dict(input=pin(inp),output=pin(out),method_block=block[0],grids=g,grid2_grid3_equal=True,final_reintegration_retained=True)
+resultpath=ROOT/'diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/final_collection_v1/RESULT.json';oldresult=read(resultpath);assert oldresult['status']=='failed_derivative_gate' and not oldresult['directional_gate_passed'];checks=oldresult['checks']
+fullpath=ROOT/'workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_donor_susceptibility_v1/full_collection_v1/result/RESULT.json';full=read(fullpath);assert full['complete']==10 and not full['numerical_checks_passed'];newrows={}
+for cid,row in full['rows'].items():
+ out=Path(row['output']['path']);inp=Path(row['input']['path']);it=inp.read_text();ot=out.read_text();g=fingerprints(ot);assert not re.search(r'^%method\b',it,re.M) and 'DoEQ' not in it;assert g['grid2']!=g['grid3'];assert 'Recomputing exchange energy using gridx3' in ot
+ newrows[cid]=dict(input=pin(inp),output=pin(out),grids=g,expected_matching_recovery_grids=dict(g,grid2=g['grid3']),new_method_block_only='%method\n AngularGridX 2,4,4\n IntAccX -1,-1,-1\nend\n',final_reintegration_retained=True,current_native_energy_stages=row['parsed']['native_energy_stages'],old_native_scf_mode=row['parsed']['native_scf_mode'],old_native_scf_stop_signals=row['parsed']['native_scf_stop_signals'])
+for metal in ['La','Dy']:
+ gs=[v['grids'] for k,v in newrows.items() if '__'+metal+'__' in k];assert len(gs)==5 and all(g==gs[0] for g in gs)
+report=ROOT/'diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/final_collection_v1/REPORT.md'
+r=dict(status='saved_grid_keyword_evidence_complete',implementation=pin(__file__),extracted_parser_source=pin(source),extracted_functions=['require','grid_fingerprints'],historical_matching_native_rows=oldrows,historical_collector=pin(resultpath),historical_report=pin(report),historical_outcome='failed_derivative_gate',historical_checks=checks,current_failed_collection=pin(fullpath),current_failed_native_rows=newrows,current_response_checks=full['response']['checks'],candidate_numerical_delta='%method\n AngularGridX 2,4,4\n IntAccX -1,-1,-1\nend\n',transfer_does_not_add_Mex_DoEQ_false=True,uniform_calls=10,proposed_staging=['Dy5','La5 after actual Dy native/numerical/cost admission'],unchanged_response_gate_count=16,new_native_calls=0,source_or_native_mutations=0,cost={'wall_seconds':time.monotonic()-t,'CPU_seconds':time.process_time()-cpu,'threads':1})
+p=OUT/'EVIDENCE.json';p.write_text(json.dumps(r,indent=2)+'\n');print(json.dumps({'evidence':pin(p),'old_points':{k:v['grids']['grid2']['points'] for k,v in oldrows.items()},'current_points':{m:{k:v['points'] for k,v in next(v['grids'] for cid,v in newrows.items() if '__'+m+'__' in cid).items()} for m in ['La','Dy']}},indent=2))

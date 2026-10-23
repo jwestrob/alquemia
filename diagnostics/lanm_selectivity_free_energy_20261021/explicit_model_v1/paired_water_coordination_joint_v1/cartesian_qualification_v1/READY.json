@@ -1,0 +1,72 @@
+{
+  "status": "source_ready_candidate_unbound",
+  "source": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_coordination_joint_v1/cartesian_qualification_v1/RUN.py",
+    "sha256": "5b964d3063aaf1e0f79457826caae9f446e8030cf4b33cafa9bbc43e00f864d9"
+  },
+  "declaration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_coordination_joint_v1/cartesian_qualification_v1/DECLARATION.md",
+    "sha256": "63ad5a44191c9094cb3f27b92f2b875cff14ac8703010c977ff421b13a26cc01"
+  },
+  "configuration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_coordination_joint_v1/cartesian_qualification_v1/staged_v2/CONFIG_SOURCE.json",
+    "sha256": "2f4fa85c61f01f51e3ee3157cc1b2f528d3ba7599410bec9d44fe67311de5573"
+  },
+  "staged_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_coordination_joint_v1/cartesian_qualification_v1/staged_v2/MANIFEST.json",
+    "sha256": "0b2e5dca7891e329477032d9c7a7d50ab34cf8d27b7fccad6d1d8f2f5449258c"
+  },
+  "controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_coordination_joint_v1/cartesian_qualification_v1/controls_v1/RESULT.json",
+    "sha256": "e97eb15ee2cddc5a50b0387d2006b4822e3b673507622e50ead9e39f1fec8a66"
+  },
+  "control_source": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_coordination_joint_v1/cartesian_qualification_v1/TEST_SOURCE.py",
+    "sha256": "6f763ae8db9b40e1408ff23dcc31880a7c1e6184c6a3f53aef750833f4381b67"
+  },
+  "native_calls": 0,
+  "actual17676_outcomes_opened": false,
+  "candidate_bound": false,
+  "maximum_native_programs": 4,
+  "maximum_internal_FD_energies": 636,
+  "internal_energy_derivation": "6*(25+25+28+28)=636 displaced energy() evaluations, plus4 analytic gradient/energy baselines; exact input W8 reuse may reduce actual calls",
+  "maximum_workers": 4,
+  "testgrad_arguments": [
+    "system.xyz",
+    "Y",
+    "Y",
+    "0.00001"
+  ],
+  "finite_difference_total_separation_A": 1e-05,
+  "finite_difference_each_side_A": 5e-06,
+  "gradient_tolerance_kcal_mol_A": 0.001,
+  "saved_energy_tolerance_kcal_mol": 0.0001,
+  "saved_analytic_force_tolerance_kcal_mol_A": 0.001,
+  "future_binding": "Copy staged_v2/CONFIG_SOURCE.json into a fresh configuration and fill candidate_result/candidate_review only after actual terminal17676 and its17683 independent selected-ten review pass; do not edit this staged configuration.",
+  "future_bind_argv": [
+    "python",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_coordination_joint_v1/cartesian_qualification_v1/RUN.py",
+    "bind",
+    "--config",
+    "ABS_NEW_BOUND_CONFIG.json",
+    "--out",
+    "ABS_NEW_BIND_DIRECTORY"
+  ],
+  "future_run_argv": [
+    "python",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_coordination_joint_v1/cartesian_qualification_v1/RUN.py",
+    "run",
+    "--bound",
+    "ABS_NEW_BIND_DIRECTORY/BOUND.json",
+    "--release",
+    "ABS_ROOT_RELEASE.json",
+    "--out",
+    "ABS_NEW_EXECUTION_DIRECTORY"
+  ],
+  "release_status": "approved_joint_water_Cartesian_checks",
+  "root_owns_submissions": true,
+  "four_slots_required": true,
+  "old17612_exact_W8_input_reuse_allowed": true,
+  "raw_selected_ten_review_duplicated": false,
+  "physical_accuracy_qualified": false
+}

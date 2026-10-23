@@ -1,0 +1,13 @@
+# Dry-acetate component derivative source review
+
+**Pass; no source correction requested.** This review binds `RUN.py` bfafefed, preparation manifest 45311d30 and READY eb9d77be. It qualifies preparation and finite execution logic; it does not establish an actual derivative result.
+
+The independent saved check verifies 217 input/provenance joins: all 16 coordinate-token sequences equal the admitted reference panel, typed indices/bonds remain original, and every key/parameter file is byte-identical to the selected donor17621 input. The original analyze binary is retained. Both compact selected authorities identify completed17621 centers; the large fit trajectory and current water fit were not read.
+
+The two saved central raw outputs independently reproduce the eight components, printed total and force sign. Radial/rotation derivatives are La `98.184829964 / −20.391218258` and Dy `119.515043483 / −7.316026701` kcal/mol/Å. Central component closure admits at most `4.5e−8` kcal/mol of printed rounding. Analytic projections and gradient-print bounds agree with the manifest. No new center or gradient is needed for this declared comparison.
+
+Source inspection confirms `(E(+h)−E(−h))/(2h)`, generalized force equal to its negative, and paired Dy-minus-La signs. Decimal component closure and derivative bounds use absolute coefficient sums. Both steps and all components are retained. The unchanged 18 total-derivative checks use 0.1 kcal/mol/Å without adding rounding to that threshold. Complete16 numerical failures remain readable; missing/native-failed cells cannot become a complete comparison.
+
+The serial driver has one invocation per immutable cell, a hard16 cap, one CPU, exact copied inputs and first-native/admission-failure stop with all16 ledger slots retained. Saved admission checks the concrete release, one successful receipt per cell and raw component replay. The inherited parser rejects duplicate components, nonfinite values, warnings and denominator errors. The unchanged energy command does not print induction residuals, so none are claimed. Twenty-four author controls were inspected and bound, not rerun; their earlier synthetic expectation error is preserved separately.
+
+Interpretation remains descriptive. Rotation about the ligand centroid changes individual metal–donor distances as well as orientations. Native component derivatives are a model partition, not unique quantum contributions or proof of the cause of physical disagreement. Failed original donor accuracy gates do not block this finite numerical diagnostic. No molecular calls, submissions, fit inspection or held-out outcomes were used in this review.

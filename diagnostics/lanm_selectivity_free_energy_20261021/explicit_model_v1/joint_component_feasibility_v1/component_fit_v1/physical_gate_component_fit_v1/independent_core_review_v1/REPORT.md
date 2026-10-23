@@ -1,0 +1,9 @@
+# Independent physical-gate CORE review
+
+The frozen CORE preserves the original physical25, 413/531 residual reconstruction, literal paired component cycles, actual probe spans, normalized trust/domain bounds, and strict actual-q selection epsilon. The named functions are AST-identical to the parent; only the declared solver/policy and descriptive reporting paths change.
+
+The reviewed cone helpers remove exactly the four fitted-score ceilings (535 rows), leaving 17 SOCs and 856 linear sides. Their old values remain visible in assessments and certificates. The auxiliary q construction changes no physical parameter: every eligible fraction separately requires all 847 retained scalar margins strictly positive, all25 predicted gates and the domain/trust box. Raw AlmostSolved status is retained; eligibility is not solver convergence or nonlinear admission.
+
+The first proposal imports the independently reviewed saved return only after exact origin,24 probe keys, normalized spans, physical/problem arrays, conic arrays and effective-settings joins. Root's focused saved replay monkeypatched Clarabel.DefaultSolver to reject construction and passed all17 checks: zero solver/native calls, exact four physical vectors, strict retained margins, descriptive ceiling failures, and actual failed-pilot exclusion. The completed pilot retains24/25 physical gates and cannot replace the incumbent despite its lower component objective. This is a saved policy test, not a new numerical proposal.
+
+No blocker or source correction was found. Final driver/evaluator release enforcement, immutable native reuse and campaign accounting remain the driver's responsibility. No electrical physical-accuracy threshold, global-capacity conclusion, periodic or production admission follows from these checks. The inherited unused SLSQP OPTIONS object has no effect on the Clarabel path.

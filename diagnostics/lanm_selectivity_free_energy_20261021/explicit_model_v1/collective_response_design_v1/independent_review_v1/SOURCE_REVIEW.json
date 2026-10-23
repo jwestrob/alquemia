@@ -1,0 +1,92 @@
+{
+  "status": "passed_bounded_native_source_mechanism_review_not_numerical_or_physical_qualification",
+  "source_pins": {
+    "kexpol.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_source/source/kexpol.f",
+      "sha256": "bbc63b00ccba2195865b363f8c088e25955edb60a9523cd490c007f738989e91"
+    },
+    "kpolar.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_source/source/kpolar.f",
+      "sha256": "01c5cba4c5f7b9a14544b8084f57227aa5d8317f283ac550da653b619f024d8b"
+    },
+    "initprm.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_source/source/initprm.f",
+      "sha256": "4c48bfb322169acad353bc1b390db16a3923eef684c652ce4a547f94f254496a"
+    },
+    "prmkey.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_source/source/prmkey.f",
+      "sha256": "56207706e8294e4b592a29c47b7b0794ca7655d59ac05778aba4f05b144afef4"
+    },
+    "alterpol.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_source/source/alterpol.f",
+      "sha256": "2200c8b6fa4ce41b9bd178ed67af4fa829b8ea9c6ddcdee0be116e36f49412a0"
+    },
+    "damping.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_source/source/damping.f",
+      "sha256": "8e7b99d28a30548b4c7ffaff78794848c6c0bdbc6066d09857379445c232e4ee"
+    },
+    "induce.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_source/source/induce.f",
+      "sha256": "759e544790074aa8e7a32a0176c1ef979bceca3787252e58efcffe4a942c0e5f"
+    },
+    "epolar.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_source/source/epolar.f",
+      "sha256": "f9d88327a9d3f0247d06c9012eaca499d363e4261212a2b01b0001c143bce5ba"
+    },
+    "epolar1.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_source/source/epolar1.f",
+      "sha256": "b558f1b1b459da25c2639b41a4f2c1a095936f94356ac083a7cfb095b9301b76"
+    },
+    "epolar3.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_source/source/epolar3.f",
+      "sha256": "b6434df7c844d5bc0f8f03fb3e11f1906fbff690a23a67ca5c8ea5a189a32c48"
+    },
+    "dexpol.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_source/source/dexpol.f",
+      "sha256": "8c7619407cddbf876e0e2d563a31c1c499c4d685cc6d3c587b36e4b2b2677b53"
+    }
+  },
+  "reviewed_proposal": {
+    "damping": "EXCHANGE-POLAR S2U; equal exponent4 inverseAngstrom, diagnostic choice not fitted evidence",
+    "metal": "active flag true, spring0,size1",
+    "water_oxygen": "active flag false, positive spring,size1",
+    "other_classes": "active flag false, spring0,size0; declared finite exponent",
+    "intrinsic_polarize_and_existing_model_parameters": "unchanged"
+  },
+  "source_findings": [
+    {
+      "location": "kexpol.f:48-115; kpolar.f:531-575",
+      "finding": "EXCHPOL positive index selects atom class, not atom type. kexpol assigns kpep/prepep/dmppep/lpep; kpolar counts nonzero springs independently of lpep and enables use_expol. Water O positive spring enables the solver even when all sites are passive."
+    },
+    {
+      "location": "alterpol.f:96-197 and rotexpl",
+      "finding": "polscale starts identity; pair eligibility is lpep(i) OR lpep(k); both sites receive their own spring times shared overlap and rhat outer product. Metal-active/O-passive therefore modifies O, while metal spring0 leaves the metal tensor unchanged. O-O has no eligible active site; metal-H shared size0 yields zero."
+    },
+    {
+      "location": "damping.f:927-998",
+      "finding": "For S2U, S=(1+b*r/2+(b*r/2)^2/3)*exp(-b*r/2), and s2=size_i*size_k*S^2. Choosing k=q/S^2(2.5) gives dimensionless radial inverse-polarizability incrementq at the normalization radius, provided switching scale is1 there."
+    },
+    {
+      "location": "induce.f:230-262,390-405,484-498",
+      "finding": "alterpol runs before mutual induction. polinv sets the initial estimate and polscale enters the mutual solver diagonal/operator. This is a geometry-dependent tensor response, not a post hoc additive energy correction; the intrinsic scalar polarity is unchanged."
+    },
+    {
+      "location": "epolar.f:123; epolar1.f:201,54-55; dexpol.f:126-264",
+      "finding": "Energy uses induced dipoles solved under modified tensors; epolar1 adds dexpol chain-rule terms after the standard gradient. dexpol includes radial overlap derivatives, tensor orientation/torque terms, cutoff derivative and balanced site forces/virial."
+    }
+  ],
+  "pure_water_invariance": "With no active metal or other active flags, every pair is ineligible and polscale remainsI; dexpol pair contributions vanish. Global use_expol may still be true because O spring is positive, so the numerical path differs; source supports mathematical invariance, not guaranteed bitwise identity. Actual pure-water energy/force replay remains required.",
+  "interpretation": "Each metal-water dimer is changed as well as the full shell. Mutual induced dipoles couple the responses across waters, so B can change without an explicit many-body count term; this does not make the intervention B-only or prove that it repairs the observed reference discrepancy.",
+  "material_guards": [
+    "All actual multipole-list sites must have positive intrinsic polarity: dexpol computes kpep/polarity before pair eligibility, so an inactive zero-polarity site can still produce0/0. Current water/metal source is the bounded intended scope; protein transfer is not established.",
+    "Verify actual class IDs, all inactive flags and zero sizes/springs for other represented classes, unchanged baseline parameters, positive finite damping and nonoverlapping coordinates.",
+    "Keep mutual polarization, original numerical tolerances and actual finite-difference force gate. CPU source inspection does not qualify GPU EXCHPOL or periodic implementation.",
+    "Positive spring/rank-one increments preserve a positive local scaling tensor for this configuration, but do not prove global mutual-polarization stability."
+  ],
+  "unresolved_source_blockers_for_declared_water_only_proposal": [],
+  "numerical_execution_release": false,
+  "new_native_calls": 0,
+  "threads": 1,
+  "wall_seconds": 0.011078646057285368,
+  "CPU_seconds": 0.008846359000000012
+}

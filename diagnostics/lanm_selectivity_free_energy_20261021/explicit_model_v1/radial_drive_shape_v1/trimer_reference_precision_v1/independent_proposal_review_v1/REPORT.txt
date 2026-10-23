@@ -1,0 +1,73 @@
+REFERENCE PRECISION PROPOSAL — INDEPENDENT SOURCE REVIEW
+
+Conclusion: no scientific-design blocker. Freeze the two parser clarifications
+below with the prospective protocol. This review permits no reference execution
+and does not admit a stricter reference or replace any consumed target.
+
+1. Termination-only scope
+Keeping VeryTightSCF/DefGrid3 and overriding individual convergence controls is
+appropriate. ORCA documents mode2 as energy based; mode0 can still accept an
+overachieved combination, so independent current-residual checks remain needed.
+ExtremeSCF changes integral screening as well as stopping tolerances and would
+exceed this question. These semantics were checked against the official ORCA6.1
+SCF documentation, section2.6.1 and Table2.9:
+https://www.faccts.de/docs/orca/6.1/manual/contents/essentialelements/scf.html
+
+The proposed explicit mode0/ConvForced1, TolE1e-11, MAXP1e-8, RMSP1e-9,
+Err1e-8, G1e-8 and X1e-8 are internally coherent. Preserve literal old method,
+basis/ECP/ghost coordinates, common origin, PModel, MaxIter300 and algorithm
+policy. Input differences must be restricted to the declared SCF controls;
+actual output must also confirm unchanged screening/grids. Do not assume an
+input label proves effective settings. Unrecognized terminal solver modes remain
+unadmitted; no automatic TRAH, grid, guess or threshold fallback is proposed.
+
+2. Two concrete parser clarifications
+A. Require abs(last energy change)<=1e-11. The old Dy M12 summary prints
+-2.3641e-10 while its final iteration prints +2.36e-10; Dy ghost12 reverses
+sign in the other direction. Signed comparison is not a convergence test.
+B. The SOSCF iteration table contains deltaE/RMSDP/MaxDP/MaxGrad, but no rotation
+column. Join the available final-row fields to the terminal summary at their
+printed precision, comparing energy magnitudes. Read rotation from the associated
+terminal convergence summary. Do not demand a nonexistent row rotation or infer
+it from a different field. The terminal DIIS value in these SOSCF outputs matches
+the first SOSCF gradient, so retain it descriptively, not as the current residual.
+
+All14 old mode2 calculations retain their original native admission. Failed old
+density flags establish the need to measure this sensitivity; they do not show
+that stopping error causes the trimer discrepancy. Same effective singlet,
+occupation metadata and PModel do not prove the same electronic root. The final
+gridx3 correction remains explicit; this protocol does not test grid sensitivity
+or establish final-grid self-consistency, basis convergence or physical accuracy.
+
+3. Finite scout and reuse
+The real-Dy M12 then ghost-metal Dy12 scout covers two distinct native input
+paths. It is coherent to reuse those two admitted new states in the same14-state
+pair and release the remaining12 only after actual scout review. Preserve seven
+signed terms per metal, all vector components/common-origin translation, exact
+ghost identities and the complete denominator. No old mode2 state qualifies as
+stricter-protocol reuse merely because one printed number happens to pass.
+Full-shell correlated calculations are not these ghost-fragment cycles. One
+attempt per state,14 maximum, no retries or partial two-metal cycle conclusion.
+Small shifts would limit this stopping sensitivity only; large shifts would
+challenge the old numerical targets. Neither provides a rigorous error bar or
+changes a model parameter, fit objective or physical acceptance threshold.
+
+4. Resource-only prospective amendment
+The frozen proposal names Slurm. Root separately proposes one serial endpoint
+on biotite login with unchanged4 MPI ranks/one thread each and MaxCore3000 per
+rank, within the explicit user16-thread allowance and a declared aggregate cap.
+This changes execution provenance, not the proposed scientific settings. Bind
+that change in the root protocol before implementation, record true host/thread/
+MPI environment and actual wall/CPU/RSS including PModel helpers, and do not
+invent scheduler allocation. MaxCore is not a total-process memory bound; retain
+an explicit resource check and measured peak memory. No runtime amendment is
+executed or admitted by this receipt.
+
+Review scope and independence
+Read frozen proposal/protocol, inventory lineage and literal two-scout traces;
+verified listed file hashes and official documentation. No scientific arithmetic,
+SCF/reference/model/native/solver call, test rerun, generated deck or source edit.
+Inventory's255 checks/121 pins are reused evidence, not rerun here. Both metadata
+preparation failures remain preserved. Reviewer authored the earlier trimer
+scientific inventory/interpretation and local-span adapter; not this RP proposal
+or its metadata inventory. This is a proposal review, not an implementation audit.

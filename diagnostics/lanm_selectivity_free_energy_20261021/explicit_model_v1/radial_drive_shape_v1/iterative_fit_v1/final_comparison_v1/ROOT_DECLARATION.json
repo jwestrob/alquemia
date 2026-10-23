@@ -1,0 +1,52 @@
+{
+  "status": "declared_saved_only_terminal_fit_comparison_source",
+  "created_utc": "2026-10-23T04:19:49.032058+00:00",
+  "question": "How much did the bounded radial14 fit improve its consumed component errors, which physical/electrical constraints remained limiting, and why did it stop?",
+  "inputs": {
+    "CONFIG_RUN.json": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/iterative_fit_v1/run_v1/CONFIG_RUN.json",
+      "sha256": "ce45748725bd3c6aa1662cbffae273beb293ce53d686754e4e73092e9781a5b4"
+    },
+    "ROOT_RELEASE.json": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/iterative_fit_v1/run_v1/ROOT_RELEASE.json",
+      "sha256": "edabe8e5feb61722827eefc319606f0f57d28f57e222218ae51943d44a2c1351"
+    },
+    "SUBMISSION.json": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/iterative_fit_v1/run_v1/SUBMISSION.json",
+      "sha256": "d65b613c09c6c4d15bad908d99817c1aaf825bea12f25a5e1fff77411a9ccec9"
+    }
+  },
+  "terminal_result_path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/iterative_fit_v1/run_v1/execution/RESULT.json",
+  "terminal_result_binding": "Only after the existing job20605 is terminal; preserve scheduler state separately and pin exact terminal result/journal/vector/source receipts. No current candidate is selected by this reporting source.",
+  "allowed": [
+    "source-only saved-result collector and documented command",
+    "compare declared feca origin with every complete accepted step and final or last-complete incumbent",
+    "independently check q arithmetic and acceptance against saved fixed thresholds, physical25 separate from electrical safeguards",
+    "report four P/B energy residuals, three electrical norms and signed W9 contrast plus parameter/boundary movement",
+    "summarize solver statuses and predicted-versus-actual trial changes without solver replay",
+    "reconcile unique new vectors/program intents/returns/reuse and parent Slurm accounting, preserving failures",
+    "explicitly exclude inherited historical snapshot673/24000 from current budget accounting"
+  ],
+  "forbidden": [
+    "native calls",
+    "solver constructions or solves",
+    "new Jacobian/probe/FFT/factor",
+    "rewriting prior results",
+    "changing fit/gates/parameters",
+    "choosing a different candidate",
+    "production or heldout data",
+    "executing collector before root source review and terminal binding"
+  ],
+  "resources": {
+    "source_and_manufactured_controls_max_login_threads": 1,
+    "later_saved_collection_threads": 1,
+    "native_calls": 0,
+    "solver_calls": 0
+  },
+  "owners": {
+    "source": "mex_health_review",
+    "root_execution": "root",
+    "independent_review": "root or exchange_experimental_target"
+  },
+  "interpretation": "Consumed development only; fit completion and improvement do not establish independent physical accuracy, periodic qualification or exchange free energy."
+}

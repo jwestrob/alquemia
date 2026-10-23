@@ -1,0 +1,16 @@
+# Conditional Stage A model execution
+
+Implement the parent ROOT_DECLARATION and preserved validation outline. Source preparation reads only the frozen geometry inventory and consumed data. No reserved E/F outcomes, candidate binding or native calls during source preparation.
+
+The binder accepts only actual job17621's complete terminal selected donor candidate with every original donor control and all eight frozen-water invariants passing. Replay its unchanged objective, all28 selected E/F/native authorities and effective inputs. Preserve the six17605 water parameters, eight selected donor radius/damping values, original bounds, fixed epsilons/amide-carbon correction, SI typing, permanent multipoles, intrinsic polarization and bonded terms. Never select a different iterate.
+
+Prepare exactly16 reserved orientation inputs from the original geometry manifest: aquo8 and hydrated mono-acetate, bi-acetate and acetamide, ±15°, both metals. Copy the corresponding consumed central topology and parameter file; substitute only the frozen reserved coordinates. Reuse the exact selected parent's parameter key. Verify all coordinates, symbols, types, bonds, charges, physical multiplicities and paired geometry. The eight protein slots stay outside this stage.
+
+Execute two separately released stages:
+
+1. `checks`:12 consumed Cartesian checks, the three hydrated central donors and three matched-dry donors for both metals. Reuse selected analyze/analytic records and exact inputs. Each missing check invokes only `testgrad system.xyz Y Y 0.00001`; total Cartesian separation is1e−5 Å, each side5e−6 Å. Existing identical full Cartesian evidence may be reused explicitly. Maximum12 native invocations and1,344 internal finite-difference energies (224 atoms ×6). Every check must pass native admission, Cartesian component error≤1e−3 kcal/mol/Å, saved-force replay≤1e−3 and saved-energy replay≤1e−4 kcal/mol. Preserve the selected analytical model as authority.
+2. `reserved`: only after all12 consumed checks pass, evaluate all16 reserved inputs using `analyze system.xyz E` and `testgrad system.xyz Y N`. Maximum32 new native programs, zero internal Cartesian finite-difference energies. Reuse the existing native parser/solver settings. No reference outcome is read by this model adapter; scoring is a separate fixed saved-data stage.
+
+Both stages use one root-owned8-CPU standard_expand allocation, default memory/time, at most8 workers and one numerical thread per native process. First native/admission failure sets a global stop before persistence; retain active sibling results and all fixed slots. No retries, geometry replacements, fit loops or partial-denominator pass. Record per-program receipts and aggregate parent/child CPU separately. Root binds each stage's exact source, input and actual prior receipt before submission.
+
+The numerical receipt exposes `status=consumed_numerical_checks_complete`, `numerical_checks_passed=true`, exact candidate/bound pins, all12 complete passed entries, and actual counts. A failed receipt cannot release model or reference reserved calls. The reserved result exposes all16 model records and exact selected central-aquo anchors for the separately frozen20energy/24rigid checks. Numerical validity alone is not physical accuracy, protein transfer or production release.

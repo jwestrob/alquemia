@@ -1,0 +1,38 @@
+{
+  "status": "isolated_cpu_source_ready_uncompiled",
+  "created_utc": "2026-10-22T03:26:10.188756+00:00",
+  "source_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/source_v5/MANIFEST.json",
+    "sha256": "02829b7a8038e22a8112055250ac5b5d6992a3465c1da99b1cf16fd6ecde2125"
+  },
+  "patch": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/source_v5/PROTOTYPE.patch",
+    "sha256": "abce50950af7f382a8c4cb96ddb5fde7328845da1abafe6b4e0d95637d81f233"
+  },
+  "preparation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/PREPARE_SOURCE_v5.py",
+    "sha256": "5d114cde7d3b4e06cea1507cf79e4d8ff1954b40cde6e165a3ff99eca008ebc1"
+  },
+  "helpers": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/PAIR_RESPONSE_HELPERS_v5.f",
+    "sha256": "3883293f6237fbe77efd6f9baac0d4a7f44cea00128bc882604ad3818b73daab"
+  },
+  "previous_source_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/source_v4/MANIFEST.json",
+    "sha256": "4afd4225b31028032e38f38226f104b267ee31eb5a3f6f74b20aa4ea7f7ba899"
+  },
+  "previous_ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/SOURCE_READY_v4.json",
+    "sha256": "9742b29139a1de438cbdb14df21fa44764ac50fd700c68256a7f789badee0e3c"
+  },
+  "reason": "Compiler18367 identified missing module import for use_chgpen in checkpairresponse",
+  "only_native_delta_from_v4": "Add use mplpot to checkpairresponse",
+  "source_files_changed_from_v4": [
+    "damping.f"
+  ],
+  "science_protocol_change": false,
+  "build_instructions": "Use IMPLEMENTATION.md recipe with source_v5 and a fresh root-owned build directory",
+  "compiler_calls_by_author": 0,
+  "new_native_calls": 0,
+  "error": null
+}

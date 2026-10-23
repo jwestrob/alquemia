@@ -1,0 +1,43 @@
+SAVED CONSUMED-DATA INVENTORY AND FEASIBILITY READINESS
+22 October 2026; inventory/design review only
+
+Conclusion
+The complete saved fit already contains the data needed to ask whether the existing water-response family can improve pair and collective energies together while retaining forces and electrical response. No new molecular panel is needed for this local diagnostic. The frozen candidate is unchanged; this inventory performs no feasibility solve, fitting, selection or validation.
+
+Exact authorities
+INVENTORY.json alongside this report contains absolute paths and SHA256 pins for 48 checked primary authorities, the exact ten reference force rows, all 24 derivative origins with their 24 probes and four trials, and reusable source entrypoints. Probe/trial pins are inherited from the admitted terminal fit; their raw native admissions were not repeated.
+
+Use these relative paths under the project root:
+- W = workspaces/lanm_selectivity_free_energy_20261021
+- D = diagnostics/lanm_selectivity_free_energy_20261021
+- J = explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1
+
+Core data mapping
+1. Original energies/forces: W/explicit_model_v1/paired_water_coordination_joint_v1/metal_alpha_response_v1/preparation_v2/DATA.json (e2e58963). Ten exact La/Dy cells: isolated water radial minus/central/plus and W8/W9 centers. Each row retains reference energy, all atomic forces, literal geometry/body grouping and original result authority. Original ten energy gates span six endpoint-energy combinations. Fifteen force gates contain ten per-metal and five derived paired fixtures.
+2. Candidate and probes: W/J/fit_v1/run_v2/execution/RESULT.json binds all 673 vectors. Each vector contains 46 complete cells: ten E/F cells, 34 literal dimers and two W9 far trimers. The selected artifact is vectors/9237648e8a648501e966d80f8d70792f5004c1a3678f37f591bb07e030a30a88.json (aa06677d). Initial artifact is vectors/6d491460205c65a0e4aafbceb483f89a501dbc777ed8d8ccfba2175d80caeb9c.json (aca3bf89). Raw producer/output/input pins remain in each cell.
+3. Fixed metal-free terms/ions: W/J/evaluator_v1/preparation_v4/MANIFEST.json (8f29dde6), static dictionary. Preserve every literal coefficient, including N-fold ion subtraction. This also binds baseline54 exports and their existing independent admission.
+4. Pair/collective energies: W/J/interaction_decomposition_v1/actual_v1/RESULT.json (a9ea13bf), with model coefficient dictionaries and paired common-basis electronic-plus-original-D4 targets. Underlying reference is W/reference_chemistry_v1/common_basis_decomposition_v1/collection_v1/result/RESULT.json (d60a2f8d); original D4 authorities are the matched_pair_decomposition result (9ec1b009). Do not infer unavailable absolute per-parent D4-complete targets.
+5. Moments: D/explicit_model_v1/local_response_repair_v1/targets/TARGET_INVENTORY.json (61d73a16), groups.pair_and_collective_dipoles, binds all 34 pair-vector cycles and four full-parent C vectors. Its redistribution comparison (5ee56e36) retains C=P+B. Static moment terms come from the evaluator manifest; candidate cell.mu_Debye is the admitted energy-conjugate moment with dual induced half-sum. Do not replace it with a lone induced channel or COM-origin output.
+6. Susceptibility: the same target inventory plus W/explicit_model_v1/conditional_susceptibility_v1/comparison/run_v1/execution/RESULT.json (41dd4eb3) and W/reference_chemistry_v1/conditional_susceptibility_v1/full_collection_v1/RESULT.json (13d4b0e7). Exactly four independent z-response states: each metal's W9 dimer01 and W9 far trimer. Two steps/two estimators and derived increments/paired contrast are consistency reports, not 28 independent targets. Frozen objective target is h=.001 au energy curvature; no estimator reselection.
+7. Trimer transfer: W/J/regression_v1/run_v1/execution/RESULT.json (0c017d17), all eight literal seven-term E3/mu3 cycles at the frozen selected candidate. Reference/baseline cycles are bound by the target inventory and collective_mechanics_options collection (2584ef61). Only the two W9 far cycles can be reconstructed throughout all saved fit probes; the other six trimers exist at baseline/selected only. Do not sum these eight sampled E3 values into whole-shell B.
+
+Why the fit appears successful
+The original four loss blocks were E/F, pair dipoles, full-parent dipoles and four susceptibilities. Pair and collective energies were excluded. All25 E/F gates pass at the selected point, but the common-basis coordination error -0.3131 kcal/mol equals +3.1483 pair error minus3.4614 collective error. At fixed W8, the selected pair/collective errors are +24.9402/-20.3929; at W9 they are +28.0885/-23.8542. Both fixed-shell total errors worsen, then largely cancel in W9-minus-W8. Seven of eight E3 errors and all four paired E3 and mu3 errors worsen, even while every individual mu3 error improves. Thus this is demonstrated compensation, not repaired component mechanics.
+
+Reference distinctions that constrain the next calculation
+The four added paired targets are P8=-73.71904396281995, B8=14.623856992576716, P9=-82.96470699988136, B9=23.660036282315605 kcal/mol. Their derived common-basis coordination C is -0.20948374732256525. This differs from the original raw-cluster PBE0+D4 target -0.5342066672747023 and the new tighter local-CC raw-cluster contrast -0.468809818. The new CC comparison qualifies cutoff sensitivity of that cluster contrast, not these CP/fragment partitions or forces; no new CC-plus-old-fragment cycle is available. Keep all original SCF, frozen-f, basis and method limitations.
+
+Smallest useful scope and agreed root protocol
+One final saved derivative batch would be the smallest local question: origin e63e7189dbecdb8e4112aceb5e4515f69644dbfa574b5fe07644d01ae736a037 (47a758d4), 24 probes and its four trials. It passes all25 gates but differs from selected. Root's declared extension to every original origin/trial avoids outcome-based selection at negligible new compute: all24 origins, all96 trials and all673 existing vectors. Only origins3,4,23,24 pass all25; record the remaining20 as failed origins.
+
+Root PROTOCOL.md now governs the actual prospective diagnostic. Its six descriptive blocks (original four plus paired P/B energy blocks with 1kcal/mol engineering scaling) and three tangent LPs are mathematically coherent. They do not define a new selection score or new physical acceptance thresholds. Preserve original531 residuals. Nonincrease of aggregate E/F loss is not preservation of all25 gates; actual96 trials must separately replay the original energy and rigid-force criteria. Predicted half/full linearized residual norms and actual-minus-linearized trial changes distinguish tangent direction from finite nonlinear behavior. A zero local optimum cannot establish global nonrepresentability; a positive one does not qualify a model or authorize fresh data.
+
+Reuse code, avoid new execution paths
+- D/J/objective_v1/OBJECTIVE.py evaluate(...) is pure scoring, preserving all531 residuals and old25 gates.
+- D/explicit_model_v1/paired_water_coordination_joint_v1/OBJECTIVE.py evaluate(data,model,body) retains old413 residuals, |energy error|<=1 and each fixture rigid RMS<=2/max body component<=5.
+- D/explicit_model_v1/matched_dry_v1/OBJECTIVE.py response and rigid_residual preserve centroid torques/1A and category/body weights.
+- D/J/interaction_decomposition_v1/CALCULATE.py termsum/subtract/assess plus its saved coefficient dictionaries supply component arithmetic.
+- D/J/regression_v1/RUN_v2.py cycles(terms,values) supplies literal E3/mu3 arithmetic.
+- Read vector JSON directly. Do not instantiate evaluator.evaluate or a native runner for this saved calculation.
+
+Inventory work: 48 primary pins verified; 0 native/reference calls, 0 parameter evaluations, 0 fits, 0 held-out outcomes. Successful metadata serialization took .610 wall/.591 CPU seconds on one thread, excluding interactive inspection. No shared checkpoint or existing scientific source was edited.

@@ -1,0 +1,54 @@
+{
+  "status": "passed_response_matrix_scout_source_review",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/scout/RUN.py",
+    "sha256": "6541462b90f402a3e98992ee9c470143ac028f87259dfc3a4143641233a9d1a6"
+  },
+  "declaration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/scout/DECLARATION.md",
+    "sha256": "d584212a817a99617f2a90d7cb94eb87da20dc159c7f24f8f2333791dc0b6c70"
+  },
+  "preparation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/scout/preparation_v1/MANIFEST.json",
+    "sha256": "c15747ac975630324c19df237d5787fecd615f11405d069932065dcb15e85ac3"
+  },
+  "native_source_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/source_v2/MANIFEST.json",
+    "sha256": "84d10308077293069c64d55964ec4fe8648d2bb2b8713484afef1196b92fb117"
+  },
+  "checks": {
+    "source_pin": true,
+    "declaration_pin": true,
+    "scope_two_serial": true,
+    "all_configuration_pins": true,
+    "exact_la_gate": true,
+    "off_key_exact": true,
+    "on_key_only_flag": true,
+    "both_xyz_prm_exact": true,
+    "four_existing_fields": true,
+    "prepared_without_executable_binding": true
+  },
+  "source_findings": [
+    "Complete V1 rows/maps and exactly two announced snapshots; exact off/on native output parity.",
+    "Existing 18-field/zero source joins and fixed units are retained; no new field calls.",
+    "Native unpreconditioned A and peek residual propagation use the declared direct/mutual equations.",
+    "Positive normalized spectrum, native/dense solution and polarization-energy bounds are conditioned; no forced symmetrization or relative zero-RHS division.",
+    "Existing-field site/slope predictions propagate printing and CG bounds rather than accepting a new empirical tolerance.",
+    "Final source includes successful BUILD status, source manifest and analyze executable joins; native failures stop the finite scout."
+  ],
+  "limitations": [
+    "Source/preparation audit only; no native scout output or numerical parity result exists in this audit.",
+    "A/Ed/Ep data do not provide coordinate derivatives or physical accuracy."
+  ],
+  "new_native_calls": 0,
+  "tests_rerun": 0,
+  "cost": {
+    "wall_seconds": 0.07395337405614555,
+    "cpu_seconds": 0.053624854,
+    "local_threads": 1
+  },
+  "preparation_cost": {
+    "wall_seconds": 0.19134962605312467,
+    "CPU_seconds": 0.12134319199999999
+  }
+}

@@ -1,0 +1,11 @@
+--- /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/static_factor_worker_nominal_v1/slurm_execution_v1/RUN.py
++++ /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_runtime_v1/build_standard_v1/ALLOCATION_STANDARD.py
+@@ -105,7 +105,7 @@
+     job=environ.get('SLURM_JOB_ID','')
+     assert job.isdecimal() and job!='0','actual Slurm job ID required'
+     fields=dict(word.split('=',1) for word in raw.split() if '=' in word)
+-    expected={'JobId':job,'JobState':'RUNNING','Account':'banfield','QOS':'standard_expand','Partition':'standard',
++    expected={'JobId':job,'JobState':'RUNNING','Account':'banfield','QOS':'standard','Partition':'standard',
+               'NumNodes':'1','NumCPUs':'12','NumTasks':'1','CPUs/Task':'12','Requeue':'0','OverSubscribe':'NO'}
+     for key,value in expected.items():assert fields.get(key)==value,'allocation '+key
+     assert fields['BatchHost'].split('.')[0]==hostname.split('.')[0],'allocated compute host'

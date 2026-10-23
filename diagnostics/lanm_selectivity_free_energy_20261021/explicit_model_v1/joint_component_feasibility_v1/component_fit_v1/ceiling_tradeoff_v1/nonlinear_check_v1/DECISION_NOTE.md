@@ -1,0 +1,27 @@
+# How to interpret the one-vector nonlinear pilot
+
+**The immediate decision is whether the existing Hamiltonian offers a useful mechanics/electrical tradeoff. It is not yet a decision to add terms or start free-energy sampling.** The saved comparison already shows that four no-worsening score ceilings restrict the local proposal. This pilot tests whether the unlocked improvement survives the actual nonlinear evaluator.
+
+Judge the result in its original units: paired P8/B8/P9/B9 errors and component RMS in kcal/mol; energy-gate errors in kcal/mol; rigid-force RMS and maximum components in kcal/mol/Å; pair and collective Cartesian dipole RMS in Debye; four-state susceptibility RMS in a₀³. Preserve all individual electrical residuals, not just an aggregate. The frozen physical agreement gates remain energy ≤1, force RMS ≤2 and maximum force component ≤5 in those units. No physical dipole or susceptibility tolerance has been established.
+
+| Actual outcome | What it supports | Shortest useful next decision |
+|---|---|---|
+| Component gain survives **and all25 physical gates pass** | The old preservation policy excluded a useful tradeoff available to the existing functional. It supports changing the development objective/constraints before changing the Hamiltonian. | Assess absolute component and electrical errors, then choose one explicitly declared component-aware calibration using the same model and physical thresholds. Treat old four scores as reported tradeoffs, not automatic rejection by their origin values. Do not resume a sequence of micro-fits or add a term merely because a ratio worsens. |
+| Component gain survives **but a physical gate fails** | The proposed mechanism can improve components, but this particular nonlinear point is infeasible. The local certificate did not provide enough physical headroom. It does not establish representational inadequacy. | Preserve the failed vector and identify the actual energy/force discrepancy against its prediction. If continuation is justified, revise the local proposal/trust treatment prospectively within the same Hamiltonian and original thresholds. No automatic second fraction or relaxed gate follows from this pilot. |
+| Component gain disappears in actual evaluation | The saved first-order prediction overstated improvement at this step. This is a limitation of the local approximation or step, not a global no-go result. | Use the already returned actual-minus-predicted P/B and E/F values to decide whether a more conservative local model is credible. If the discrepancy is large, repair that numerical proposal method before interpreting model capacity. A failed point does not justify adding response physics. |
+
+“Gain survives” must be reported as its actual signed q change and each absolute P/B error, including unequal changes of P and B. The predeclared ≥0.05 rule was a finite-run trigger; it is not an accuracy threshold, a promise of nonlinear gain, or permission for another call.
+
+## Keep the magnitudes and reference limits visible
+
+The full linear prediction still has P/B RMS errors about **17.25/14.77 kcal/mol**. Even if reproduced, a large fractional improvement would leave substantial component mismatch. The predicted susceptibility score rises 37.7-fold, but its RMS rises from only **0.0342 to 0.2098 a₀³**. Predicted pair/collective dipole RMS values are about **0.6195/0.07344 D**. These absolute errors, their states/components and the reference evidence matter more than the ratio alone. The objective's 1 D and 1 a₀³ scales are engineering normalizations, not experimental uncertainty.
+
+The targets are consumed, provisional quantum references with method/basis/ECP/frozen-f and state limitations. The exact paired La/Dy P/B cycles are available, with electronic and D4 contributions accounted for; absolute-parent D4-complete component targets are not available and must not be invented. A correlated full-cluster contrast can inform that contrast's method uncertainty, but does not by itself validate pair/collective decomposition, moments or forces. A conflict with uncertain targets should be distinguished from absent model flexibility before designing a new term.
+
+## Route toward sampling
+
+First obtain an acceptable absolute interaction/E/F/electrical compromise with the existing family, or establish a specific, repeatable representational conflict under physically justified criteria. Only the latter motivates a new term with a defined missing mechanism. Neither the previous bounded fit nor this single pilot establishes that conflict.
+
+In parallel, finish the already defined periodic response/force/stability route. Use an explicitly frozen candidate with the existing BIO/salt composition and numerical capability requirements; input preparation and a successful vacuum pilot do not establish periodic forces, stability or runnable dynamics. Once those existing requirements are met, proceed with bounded explicit-solvent sampling and assess free-energy convergence separately. No new qualification framework is proposed here, and no heldout outcome is opened to choose the objective.
+
+This note is conditional and reads no pilot outcome. Authorities: saved tradeoff RESULT `1d4c5db9`, independent arithmetic review `baf1dd6a`, frozen follow-up policy `9e994951`, objective definition `af7d26f6`, and the exact pilot READY `bdf3863e`. No solver, native calculation, fit, threshold or source change accompanies it.

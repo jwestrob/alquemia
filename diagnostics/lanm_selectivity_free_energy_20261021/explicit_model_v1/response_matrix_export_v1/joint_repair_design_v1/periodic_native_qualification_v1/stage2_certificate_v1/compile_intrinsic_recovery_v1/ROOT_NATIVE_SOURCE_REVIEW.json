@@ -1,0 +1,41 @@
+{
+  "status": "root_reviewed_stage2_native_source_design",
+  "source_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/compile_intrinsic_recovery_v1/source_v1/MANIFEST.json",
+    "sha256": "aa968cfd40e0a80dd19f7ff53cccfe34a9e7c61f30209abe9f21ae15aeebf78d"
+  },
+  "source_preparation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/compile_intrinsic_recovery_v1/PREPARE.py",
+    "sha256": "a4165e0d203443b456c7c87c117b3d3490ef177c302987fe8f883c86470a7b1a"
+  },
+  "patch": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/compile_intrinsic_recovery_v1/source_v1/PATCH.diff",
+    "sha256": "fc05df2b3ec635bf531c428c64bc275697a4268f1147c772311c170a199da305"
+  },
+  "diagnosis": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/compile_intrinsic_recovery_v1/DIAGNOSIS.json",
+    "sha256": "1a05b2ed1894921c39025d4b6a41a6cc16aa66c3f1ae828e6f7f73e06d71cf08"
+  },
+  "parent_source": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/source_v2/MANIFEST.json",
+    "sha256": "40af1582e769dc1c405b7589f4f4120b0f7b82ca5d039f2295335adca1055232"
+  },
+  "failed_build": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/execution_v1/build_run_v1/execution/RESULT.json",
+    "sha256": "abfadc4cafc1b0c2347dae9ddd940f5c90ff20b1c6978817465de931a4514e5a"
+  },
+  "failed_stderr": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/execution_v1/build_run_v1/execution/compile_GATE_f90.err",
+    "sha256": "cfdc93a696b9a3307ad8f2f2321a3fd185e84d6db9072be9a149cbdc8005fc9e"
+  },
+  "review_findings": [
+    "Full PREPARE source and exact one-line patch inspected",
+    "Host-associated sizes.maxval=8 masks intrinsic MAXVAL; local intrinsic declaration restores intended procedure",
+    "Inverse patch returns exact parent GATE bytes; all other four native files byte-identical",
+    "No executable statement, equation, force, PCG, tolerance, finite-matrix or runtime input changed",
+    "Old failed build20215 and source authority preserved; one new build attempt only after rebound manifest review"
+  ],
+  "native_calls": 0,
+  "compile_calls": 0,
+  "physical_qualification": false
+}

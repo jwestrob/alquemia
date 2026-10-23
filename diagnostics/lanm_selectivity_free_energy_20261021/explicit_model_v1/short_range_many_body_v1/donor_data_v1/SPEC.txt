@@ -1,0 +1,75 @@
+Saved donor dataset — phase 1, 23 October 2026
+
+Authority: ../PHASE_1.txt and the controlling model-form decision. This package
+copies admitted saved values and verifies identities; it does not fit parameters,
+run a quantum/native program, calculate new reference labels, or claim accuracy.
+
+The explicit shared baseline is common-water17676 plus the selected donor17621
+acetate/amide pair overrides. Its complete key and common amoeba09 parameter file
+are pinned in materialized_v2/BASELINE.json. Intrinsic metal polarizabilities,
+multipoles, bonded/atomic parameters and all non-pair key content are unchanged.
+Only applicability of differing pair overrides can establish equivalence: water
+uses types36/37 (class34 water O), while donor overrides use types403/105 and
+classes403/55. The union receipt verifies all54 water operator fixtures and six
+dry donor states. Key hashes alone neither establish nor disprove equivalence.
+
+Eighteen saved hydrated donor states use older water radii/epsilon/damping. They
+are materialized, with the exact differences, as INCOMPATIBLE with the shared
+baseline. Their quantum targets remain independently labelled reusable evidence;
+their classical E/F are not used as shared-baseline residuals. No wet residual or
+operator is invented. Historical transfer-model wet-minus-dry cycles are stored
+separately and explicitly incompatible, with their signed complete term lists.
+
+Contents
+- 24 exact donor geometries: acetate mono/bi and amide, La/Dy, dry central and
+  hydrated minus/central/plus. Full saved classical and PBE0-D4 energies/forces,
+  atom types/covalent connectivity and complete intact fragment memberships.
+- Two 24-dimensional dry monodentate-acetate operators, with alpha, site map,
+  unequal Ed/Ep, both native solutions, permanent moment and native nonpolar
+  energy. These are zero added h/H; no radial14 correction is carried forward.
+- Ten precise common-origin reference moment geometries and saved moment
+  derivatives. Charged origin and full signed vectors are preserved.
+- Sixteen radial/rotation energy endpoints with exact geometries, native term
+  energies, electronic and D4 reference contributions and original two-step
+  checks. Endpoint forces are null: those original calls were single points.
+- The two central monodentate fixtures include exact center force projections,
+  original qualified two-step derivatives, one qualified La susceptibility
+  projection and the admitted La canonical CCSD(T) rotation comparison.
+  Qualified Dy susceptibility, paired susceptibility and canonical Dy torque
+  remain missing. Failed native/reference states are not promoted.
+
+Array contract
+All coordinate/fragment indices are zero-based; atom_ids retains native one-based
+identity. One acetate contains both O atoms even in its monodentate placement.
+Each O frame uses its bonded carbon; water uses its two H atoms symmetrically.
+Operator coordinates follow site_atom_indices in site-major xyz order. A0 is
+A^-3, alpha A^3, both RHS e/A^2, induced variables e*A, K kcal*A/(mol*e^2).
+Permanent and conjugate moments use laboratory origin zero. Original raw arrays
+are copied without symmetrization. Nonpolar energy is total minus printed native
+polarization, retaining the original printing precision. The immutable kernel
+views change metadata names only and attach original saved qualification bounds.
+
+Limitations
+Absolute quantum and classical energies have different zeros. No direct absolute
+energy subtraction is an interaction label. Complete matching fragment cycles
+are required for residual two-/three-body targets; the available donor endpoint
+collection does not supply a complete such dataset. Consumed targets retain
+PBE0/D4, ECP, state/SCF and reference-method uncertainty. The canonical La torque
+supports a specific sampled disagreement, not universal reference truth.
+No dA0/dR, dEd/dR, dEp/dR or complete differentiable baseline provider is available.
+Holding these arrays fixed can yield only a partial correction derivative, never
+a total physical force. No new stability, physical model or periodic admission.
+
+Reproducibility
+BUILD_DATA.py --out NEW_DIRECTORY materializes the main dataset from INPUTS.json.
+UNION.py --donor DATASET --water WATER_DATASET --out NEW_DIRECTORY proves chemical
+applicability and writes metadata-only common-schema kernel views.
+DISPLACED.py --baseline BASELINE --out NEW_DIRECTORY materializes saved endpoints.
+All runs use one numerical thread, no subprocess/native interface. Outputs are
+fresh and never overwritten. READY.json records exact commands, pins and costs.
+
+The original materialized_v1 attempt is preserved with its source and failure
+receipt. Its overly strict key-body comparison treated polar-print/save-uinduce
+observer flags as physics. The versioned v2 excludes exactly those flags; no
+Hamiltonian values or scientific thresholds changed. That failed attempt did
+not record reliable process timing; successful run costs are reported separately.

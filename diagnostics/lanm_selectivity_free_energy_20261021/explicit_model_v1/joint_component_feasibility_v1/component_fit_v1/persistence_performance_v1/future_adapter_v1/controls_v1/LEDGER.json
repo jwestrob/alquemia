@@ -1,0 +1,60 @@
+{
+  "config_sha256": "synthetic",
+  "vector_keys": [
+    "v1"
+  ],
+  "native_program_invocations": 2,
+  "native_returncodes_observed": 2,
+  "requests": [
+    {
+      "values": [
+        0.0
+      ],
+      "vector_key": "v1",
+      "role": {
+        "role": "trial",
+        "outer_step": 1
+      },
+      "status": "complete",
+      "required_new_programs": 2,
+      "cells": {
+        "c1": {
+          "status": "complete",
+          "cache_key": "token1",
+          "immutable_import": false
+        },
+        "c2": {
+          "status": "complete",
+          "cache_key": "token2",
+          "immutable_import": false
+        }
+      },
+      "objective": 0.1
+    }
+  ],
+  "stopped": false,
+  "limits": {
+    "new_parameter_vectors": 2,
+    "new_native_programs": 4
+  },
+  "native_attempts": [
+    {
+      "number": 1,
+      "cache_key": "token1",
+      "cell_id": "c1",
+      "program": "analyze",
+      "folder": "synthetic1",
+      "status": "returned_success",
+      "returncode_observed": true
+    },
+    {
+      "number": 2,
+      "cache_key": "token2",
+      "cell_id": "c2",
+      "program": "analyze",
+      "folder": "synthetic2",
+      "status": "returned_success",
+      "returncode_observed": true
+    }
+  ]
+}

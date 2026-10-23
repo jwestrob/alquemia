@@ -1,0 +1,144 @@
+Donor interaction and reference evidence — 23 October 2026
+Saved-evidence synthesis only; no new fitting, quantum/model calls, numerical
+replay or launches. Bracketed IDs refer to EVIDENCE_INDEX.json and exact pins.
+
+DECISION
+
+Change the field-coupled donor response law, retaining independent equilibrium
+drive and response stiffness. The next structural degree of freedom should
+separate radial response from donor-frame directional response. Repeating the
+shared radius/damping fit, globally softening polarization, adding only a
+field-independent energy term, or repeating the already tested scalar donor
+h/H amplitudes is not supported as a sufficient repair.
+
+A concrete architecture is the existing conservative dual functional with a
+donor-local driving field h_i and an orientation-resolved oxygen response block:
+  G = alpha^-1 - T + H(R)
+  G u = E_d + h;  G v = E_p + h.
+Retain the existing isotropic H component and add a distinct directional block,
+for example beta_aniso*(n_i n_i^T-I/3), with n_i defined continuously from the
+donor's molecular frame. Give h_i an independently controlled donor-frame
+direction in addition to the existing radial metal–O drive. This introduces a
+way to change electrical moment/torque without forcing the same radial change.
+Radial and local coordination dependence must be explicit and smooth if the
+same law is to describe dry and hydrated fixtures. Equivalent carboxylate oxygens
+must remain symmetry-related. The total energy must generate forces, frame
+torques and field derivatives consistently, with the actual stability gate.
+
+This is a model-design inference, not identification of anisotropic quantum
+polarizability or charge transfer. Existing data do not determine the tensor's
+axes, eigenvalues or unique site placement. Nor do they prove that two scalar
+donor amplitudes have no feasible remote combination. The evidence warrants
+changing the response architecture; it does not yet supply fitted coefficients
+or validate the proposed law. Short-range mechanical terms may still need a
+separate correction after electrical response is represented. No new fit or
+experiment is proposed or executed by this report.
+
+1. DONOR FAILURES ARE EXTERNAL, ENVIRONMENT-DEPENDENT AND NOT JUST FIT STOPPING
+
+The consumed eight-parameter shared donor fit reduced its objective 28.6273 to
+9.14353, but retained 21/33 failed energy checks and 27/36 failed force fixtures.
+The final local response rank was8/8; its unrestricted local objective reduction
+was only about1.8e-8, and actual half/full final trials did not improve it [FIT].
+This supports closing that local fit, not global impossibility of the family.
+
+Matched wet-minus-dry fixtures preserve every retained coordinate. Transferred
+AMOEBA water-addition errors for mono-acetate/bi-acetate/amide were only
+-0.488/+6.435/-1.183 kcal/mol, yet hydrated exchange errors were
+-6.811/-7.838/+7.388. Water-induced paired ligand-radial derivatives were
+-10.115/-10.963/+11.705 versus reference +10.749/+9.800/+4.907 kcal/mol/A [WET].
+Thus apparent scalar cancellation did not represent the mechanical response.
+The same report records MACE water-addition errors +82.745/+11.202/+18.579;
+switching to that existing model is not an evidence-based donor repair.
+
+At the older fixed-La baseline, mono-acetate ligand radial residual changed
+from inward -12.67 dry to outward +8.06 at the hydrated center; torque residuals
+were40.998 dry and23.704 hydrated kcal/mol [RIGID]. Those are net rigid-body
+errors, so internal ligand distortion alone cannot explain them. They are
+baseline-specific evidence, not measurements of the later radial14 candidate.
+
+2. A LARGE ROTATIONAL ERROR SURVIVES A REFERENCE-METHOD CHANGE
+
+At the prescribed .005A generalized step (q=1A*angle), selected17621 donor model
+rotation slopes are La -20.390410 and Dy -7.316093; PBE0-D4 gives
++28.357940/+26.601243 kcal/mol/A [ROT]. Both native surfaces pass their sampled
+energy/force checks. Paired radial slope is21.330191 versus6.361886; paired
+rotation is13.074317 versus-1.756697. Model vdW and polarization both contribute;
+that bookkeeping is not a matching quantum decomposition.
+
+Canonical CCSD(T) independently gives La +29.545527 (larger step +29.527886),
+compared with PBE0 electronic +28.429851 and PBE0-D4 +28.357940 [CC_ROT]. The
+roughly50 kcal/mol/A La model sign discrepancy therefore survives the tested
+correlation method. This is not a pure angular experiment: centroid rotation
+also changes metal–O distances. No canonical Dy or paired derivative exists:
+the full panel admitted only4/8, and a MaxDIIS12 recovery retained a3.50e-7
+terminal CC residual versus1e-8 required [CC_FAIL]. Unconverged CCSD iterates are
+not CCSD(T) energies and cannot fill that gap.
+
+The hydrated-amide coarse .15A anomaly is not evidence of a bad analytic force.
+At .010/.005A, both metals and their difference pass: maximum FD/analytic error
+.00369 and step difference .00483 kcal/mol/A [AMIDE_FORCE]. This qualifies one
+sampled translation, not all donor forces or physical accuracy.
+
+3. ELECTRICAL DATA REQUIRE MORE THAN REPULSION OR UNIFORM SOFTENING
+
+Fixed-lab-origin projected moments (ea0) are model/PBE0 La .114375/.580438 and
+Dy .100684/.635663. Rotation moment slopes are -1.150972/-.717914 for La and
+-1.173915/-.788829 ea0/A for Dy [ELECTRIC]. A field-independent short-range energy
+cannot change these fixed-geometry field derivatives.
+
+La's numerically qualified susceptibility is47.8810–47.8824 from energy and
+47.8626–47.8658 a0^3 from moments, versus model54.1257 [CHI]. The model has too
+small an equilibrium moment while already too soft in this measured mode.
+Global softening cannot jointly repair that pair. Drive and inverse response
+need independent control; one projection does not determine a full tensor.
+
+Do not use the reported Dy/paired susceptibility as an admitted fitting target.
+Original full10 passes14/16; matching COSX grids still leaves Dy4/6. Odd-slope
+residuals .000161048/.000240252 ea0 exceed1e-4. Matching grids changes final
+energies by at most1.05e-9Eh but does not repair the failure [GRID]. The residual
+is only .030–.045% of the .534990ea0 model–moment gap; it cannot numerically
+explain that gap, but this observation does not qualify the failed target.
+
+The donor oxygen radial-drive/isotropic-H extension is ALREADY implemented and
+numerically qualified on121 programs/576 internal differences [H_QUAL]. Its
+fixed .1 probes are also already interpreted [H_PROBE]: drive raises La moment
+.114375→.130449 and improves rotation -20.391→-7.866, but moves radial slope
+98.185→116.649 against99.580. Positive stiffness lowers La chi54.126→53.384,
+but worsens its moment/rotation. The combined profile moves paired rotation
+13.075→14.857 against-1.736, and paired radial21.330→24.629 against6.321.
+These are finite probes, not infinitesimal derivatives or proof of an impossible
+fit. They establish a concrete tradeoff and rule out presenting the same scalar
+oxygen correction as a new, already demonstrated solution.
+
+4. WHAT THE REFERENCE COMPARISONS DO AND DO NOT SUPPORT
+
+Dry CP water-to-donor Dy–La exchanges keep their signs across canonical CC and
+PBE0-D4: amide +6.070361/+4.669355, bi-acetate -5.298568/-5.553463 kcal/mol [CP].
+The amide method gap1.401006 is material on a1kcal scale; acetate's .254895 is
+close but fails the unchanged .25 comparison resolution. A universal water
+method offset is not justified. D4 remains separate and is never added to CC.
+
+Water forces provide another persistent discrepancy within the shared frozen-f
+reference family: La model +12.139 versus PBE0-D4 CP -4.833 and canonical CP
+-12.463 kcal/mol/A; paired model residuals are-16.064/-17.626 respectively
+[WATER_FORCE]. However, an all-electron ZORA/basis/state change moves La PBE0
+slope -4.167 to+1.548 and Dy32.665 to36.306 [AE]. That simultaneously changes
+Hamiltonian, bases and Dy effective-singlet versus sextet treatment; it neither
+isolates an f-shell effect nor supplies a matched donor binding cycle.
+
+The tighter local-CC recipe passes18/18 consumed canonical controls. Paired CP
+errors for water/acetate/amide are .015734/.067907/.090041 kcal/mol [LOCAL_CC].
+For full W8/W9 clusters, Tight/tighter C is-.532739/-.468810, with .063929
+cutoff sensitivity; PBE0 electronic C is-.640845 and PBE0+D4 -.534206 [CLUSTER].
+This supports persistence of the large old model C error across these methods.
+It does not validate a CC collective remainder, individual three-body targets,
+forces or dipoles. Individual cluster shifts .449–.536 partly cancel.
+
+All are finite-basis, frozen-f/state-limited electronic comparisons, not aqueous
+free energies. Native admission often retains failed printed density/DIIS flags;
+current-versus-stale solver residuals must not be conflated. The exact W9far
+termination-precision protocol was still in its remaining-state phase at the
+latest root handoff; no admitted full-cycle sensitivity result is used here.
+These limits temper coefficient/accuracy claims without erasing the measured
+cross-method La-force sign conflict and independent donor electrical tradeoff.

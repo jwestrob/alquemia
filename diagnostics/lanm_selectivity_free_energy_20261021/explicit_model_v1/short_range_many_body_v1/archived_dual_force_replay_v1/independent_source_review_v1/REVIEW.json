@@ -1,0 +1,31 @@
+{
+  "status": "passed_archived_dual_force_replay_source_review",
+  "ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/archived_dual_force_replay_v1/READY.json",
+    "sha256": "9cfe018e4ace1e98defae209add4171d92074454afa5c444e5c11e8aca0f9988"
+  },
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/archived_dual_force_replay_v1/RUN.py",
+    "sha256": "2e1704b71e4332a23fe1c29ace41c6c767de1bcbc9e8d52f91839b8c7df108ae"
+  },
+  "configuration_template": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/archived_dual_force_replay_v1/CONFIG_TEMPLATE.json",
+    "sha256": "c594205ced32a73fc641b519a7393859341e79c4207faa327c8160bd0226f411"
+  },
+  "declaration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/archived_dual_force_replay_v1/DECLARATION.txt",
+    "sha256": "5fda786000df922c4ce2d1b4e889e5b203a0fc062b08ee36efd0919352cf1acd"
+  },
+  "blockers": [],
+  "findings": [
+    "Exact saved analyzer u/v join snapshot rows, with both unequal channels preserved.",
+    "Fresh native baseline must equal saved dense baseline before archived-vector injection.",
+    "No Torch/kernel/response solve; exactly one native process, unchanged binary/contraction.",
+    "Original literal gradient limit5.060311087690934e-9 retained; dense/replay/print decomposition does not relabel original failure.",
+    "Unobserved historical testgrad dipoles remain explicitly distinguished from exported analyzer dipoles.",
+    "Slurm standard_expand oneCPU/defaultmemtime/no-requeue; root binds separate release without circular hashes."
+  ],
+  "native_calls": 0,
+  "numerical_replays": 0,
+  "test_reruns": 0
+}

@@ -1,0 +1,47 @@
+{
+  "status": "prepared_terminal_only_component_fit_review",
+  "reviewer_implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/independent_actual_review_v1/REVIEW.py",
+    "sha256": "4ec0cc95be36c39dfb87dc8ec2ab53bddfe3cbcc6481b35f2201f95814988cb5"
+  },
+  "derived_replay_helper": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/fit_v1/independent_actual_review_v1/continuation_v2/CONTINUE.py",
+    "sha256": "4506a25816fd56ca033d158ebb0b547437e67dc865be1aa6a5d1a124be152291"
+  },
+  "driver_ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/READY.json",
+    "sha256": "20d7b5d0c8373ac9644d81394912a3d5908e4de5d56b067888d6242669da1d04"
+  },
+  "argv": [
+    "/home/jwestrob/.pyenv/versions/3.12.0/bin/python3",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/independent_actual_review_v1/REVIEW.py",
+    "--result",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/run_v1/execution/RESULT.json",
+    "--out",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/independent_actual_review_v1",
+    "--derived-replay-helper",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/fit_v1/independent_actual_review_v1/continuation_v2/CONTINUE.py"
+  ],
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OMP_THREAD_LIMIT": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "terminal_predicate": "Absent/started result returns pending without creating review output; completed candidate required for passing review. No partial-vector interpretation.",
+  "source_preparation_only": true,
+  "new_native_calls": 0,
+  "new_optimizer_calls": 0,
+  "expected_status": "passed_component_fit_actual_review",
+  "required_contract": [
+    "result",
+    "configuration",
+    "implementation (DRIVER)",
+    "selected",
+    "selected_native_admission_passed=true"
+  ],
+  "authorship": "Reviewer authored driver/adapter and original evaluator; independent source review is preserved and explicit saved arithmetic/raw checks are disclosed."
+}

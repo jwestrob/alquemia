@@ -1,0 +1,18 @@
+{
+  "argv_template": [
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/_envs/lanm_cholmod_v1/bin/python",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/execution_v1/batch_binding_v1/BATCH.py",
+    "--config",
+    "<versioned bound batch CONFIG.json>",
+    "--out",
+    "<new batch output directory>"
+  ],
+  "binding_instructions": [
+    "Fill successful build and admitted central scout pins in a fresh copy of the relevant template; set status=bound_stage2_metadata_batch.",
+    "Retain every original32 key. upstream_results supplies prior-stage actual RESULT pins or null. existing_attempts supplies this-stage already attempted RESULT pins or null; any supplied attempt is retained and never rebound.",
+    "Run metadata binder once in a new output. Review every row, including failed/missing; each created configuration has a null release template.",
+    "For gradients first run with root_batch_admission null. Root reviews PROPOSED_ADMISSION and creates accepted_stage2_certificate_batch_admission with exact proposal pin and identical manifest/build/scout/accepted_certificates.",
+    "Run a fresh gradient-binding output with that root batch pin. State admissions explicitly reference it; configs still require separate root execution releases."
+  ],
+  "no_submission_or_numerical_execution": true
+}

@@ -1,0 +1,24 @@
+# Static La factor: independent saved review
+
+**Passed the declared nominal numerical test.** Job 20053 completed one symbolic construction, one numeric LL factorization and ten probe solves on the unchanged 35,874-coordinate La operator. Independent review passed all 130 saved metadata, hash, provenance and scalar-gate checks. No factor, solve, assembly or native call was repeated.
+
+- Exact shifted matrix: `S − tau I`, with `U_B=3.3505167684450274`, `U_R=4900.1575968087745`, `delta_odd=2.3547987346895603e-12`, and `tau=0.004903508115932018`. Input manifest `4b166082` and shifted data `5ef5797d` match the preserved pre-numeric technical failure.
+- All ten saved factor-action and solve backward errors pass the unchanged `100*N*eps = 7.965628157080573e-10` gate. Maxima are `9.397542965559374e-15` and `4.4406222605520255e-15`. The permutation is complete; all saved L diagonal entries were reported finite and positive. L has 399,831,681 entries. No backend or audit warnings occurred.
+- The supernodal symbolic state and subsequent numeric LL/simplicial state match the qualified wrapper behavior; the copied factor preserves its flags. Raw CHOLMOD C minor/status remain unavailable through this wrapper.
+
+## Scope
+
+This is an ordinary-double sufficient numerical test of one exact saved candidate/geometry and its symmetric lower-CSC completion. The inherited PME odd-channel allowance is included once in the shift. `e_app` remains unknown, not zero. The ten sampled residual checks do not provide a whole-factor error norm or rigorous floating-application bound. Full native operator parity, consistent periodic energies/forces, trajectories, physical accuracy and MD remain unadmitted. A rigorous `e_app` envelope is optional stronger evidence; it is not a new prerequisite to ordinary-double parity and finite energy/force qualification.
+
+The first login attempt is preserved separately: its read-only index buffer failed during symbolic construction, before any numeric factorization or solve. The recovered Slurm attempt changed writable array handling and execution resources only.
+
+## Costs
+
+Slurm records COMPLETED `0:0`, 79 seconds on 12 CPUs: **948 allocated CPU-seconds**, **488.024 measured CPU-seconds**. The batch row is retained and is not added again. Scheduler peak RSS is 10,496,804 KiB; worker process peak is 10,319,764 KiB. Worker time is 75.576946 s / 486.179750 CPU-s; supervisor time is 76.726705 s / 487.175485 child CPU-s. Actual allocation is one node/task, 12 CPUs and the 48,000 MiB default grant; 32 GiB address-space and 900 s limits were preserved. Saved review cost: 0.870 wall / 0.839 CPU-s on one thread.
+
+## Evidence
+
+- [Independent receipt](/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/static_factor_worker_nominal_v1/slurm_execution_v1/independent_actual_review_v1/actual_v1/REVIEW.json) — SHA256 `e8b6177ac52df867fdd64df3fe6c9f764a94edc3ef286b193beb829ce0150563`.
+- [Terminal worker](/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/static_factor_worker_nominal_v1/slurm_execution_v1/actual_v1/worker/RESULT.json) — `49687625c3defbd2b1b0bb0a168024c3d184ec1b0f8a9000d43734d5c3607026`.
+- [Scheduler receipt](/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/static_factor_worker_nominal_v1/slurm_execution_v1/independent_actual_review_v1/actual_v1/SACCT.txt); [root release](/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/static_factor_worker_nominal_v1/slurm_execution_v1/ROOT_RELEASE.json) — `15f1eb10`.
+- [Nominal contract](/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/pme_interface_review_v1/NOMINAL_CONTRACT.json) — `2aa3ac43`.

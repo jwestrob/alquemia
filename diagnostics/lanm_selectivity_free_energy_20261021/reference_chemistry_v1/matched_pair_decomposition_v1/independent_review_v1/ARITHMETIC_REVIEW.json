@@ -1,0 +1,30 @@
+{
+  "status": "passed_source_arithmetic_review",
+  "utc": "2026-10-21T15:56:54.074633+00:00",
+  "arithmetic": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/matched_pair_decomposition_v1/collection/ARITHMETIC.py",
+    "sha256": "b085fc2ea93d96b5b70e6e9dc80e6deae454cd83ae59993f03d2b898d3531421"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/matched_pair_decomposition_v1/collection/SPEC.md",
+    "sha256": "7bf9f2164d30efb293725496aa902f0ad0588d749ddb1fffe4979aa95241efa2"
+  },
+  "saved_controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/matched_pair_decomposition_v1/collection/arithmetic_controls_v1/RESULT.json",
+    "sha256": "d0c98947a568754a3c9925b26563372269857c3046f740efc49c1fc85dc56df8"
+  },
+  "algebra_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/matched_pair_decomposition_v1/independent_review_v1/ALGEBRA_PROTOCOL_REVIEW.json",
+    "sha256": "be543e6cb86596f7b254924979ce8d260a82d06fa7132a889b4effac86b16993"
+  },
+  "findings": [
+    "Exact4cluster/34pair/2ion inventory and finite numeric values required.",
+    "P=delta(pair sums)-ionDy+ionLa; B=C-P.",
+    "model-reference error signs and total=pair+remainder closure correct.",
+    "Nine saved controls cover known decomposition, separate element ion energy origins, common water origins, incomplete/extra/nonfinite/bool inputs and opposing signed errors.",
+    "Helper pair indices0..n-1 differ from native1..n; collector must convert i-1 explicitly."
+  ],
+  "blocking_findings": [],
+  "native_calls": 0,
+  "controls_rerun": false
+}

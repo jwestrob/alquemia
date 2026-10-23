@@ -1,0 +1,38 @@
+NATIVE FULL-FORCE BRIDGE — SOURCE IMPLEMENTATION
+
+The existing native MUTUAL/Thole force machinery can accept corrected dual
+dipoles without constructing coordinate derivatives of the full matrix.
+epolar1a already contracts dEd with v, dEp with u and dT with cross u/v, then
+distributes permanent-frame torques. The unconditional induce call was the
+obstacle. Two private generated clones change only that call, their routine
+names and the gradient dispatch. Exact inverse-source joins confirm that all
+force loops, torque paths and nonpolar/permanent gradient assembly are retained.
+The original source, library and frozen Python kernel are untouched.
+
+BRIDGE.f90 is a complete one-state interactive native main. It initializes
+ordinary native inputs, chkpole/rotpole, distinct dfield0a fields, both direct
+dipole arrays and zero MUTUAL-unused TCG count. It reuses original ufield0a
+unit-column operator export; no native SCF is requested. The bridge exports
+fullprecision state/A0/Ed0/Ep0/alpha/permanent moment, waits for supplied u/v,
+checks exact state/readback identity, runs the private complete gradient and
+returns all atoms' baseline contraction gradients. Restricted mode guards and
+new-file output semantics are explicit. Current scope is zero-field finite
+vacuum, all active real sites, fixed intrinsic alpha and original baseline.
+
+The baseline-only reduced native ep=-K/2*u·Ep0 is NOT a stationary baseline
+energy at corrected dipoles. It is used only to recover U_other from native
+energy. Complete energy is U_other+DeltaV-K/2*u·(Ep0+h); complete gradient is
+native dU_other+dL0 plus d{DeltaV+K/2[u^T H v-(u+v)^T h]} with u/v detached.
+COMBINE.py implements this interface. No reduced frozen-A derivative is passed
+off as a total force. Raw virial remains a diagnostic until local terms and
+a declared cell/strain test are added; current phase qualifies Cartesian forces.
+
+Exact native function/array/line mappings are in SOURCE_MAP.json. PROTOCOL.txt
+fixes input/output grammar and counts; BUILD_RECIPE.json pins matching original
+archive/modules/compiler/libraries and three compile plus one link commands.
+Generator ran once:0.030965wall/0.017382CPU seconds, zero compiler/native/numerical
+calls. Root subsequently compiled the exact recipe successfully in its separate
+build_v1; that result is linked by READY, not repeated here. Native execution
+and force qualification are still pending. Root's fixed102-state panel uses six
+scouts once, then96remaining; it is numerical implementation qualification, not
+a fit or physical validation. No quantum/native calls/submissions by this task.

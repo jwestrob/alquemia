@@ -1,0 +1,55 @@
+{
+  "utc": "2026-10-21T08:37:23.489511+00:00",
+  "panel": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/prepared_v2/PANEL.json",
+    "sha256": "d5929526cf70ac957c847a5936ed229e9edf1322764b0cc287a59292e01204f9"
+  },
+  "completed_pilot": [
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/pilot_v1/tasks/ecp_pbe0__acetate_bi_central_La/execution/RESULT.json",
+      "sha256": "4427e2548720b214134186197ed7e06a1a9468eb6b836947751d4a1b10255d04"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/pilot_v1/tasks/ecp_pbe0__acetate_bi_central_Dy/execution/RESULT.json",
+      "sha256": "374e406452505a44e9612da02a1344fb36e4c5ef2a48b314e930c561e444996f"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/pilot_v1/tasks/ecp_pbe0__water_central_La/execution/RESULT.json",
+      "sha256": "5df11aa24e72e150e425848ff2d13342fea1b68e6b25d100660a14ad6165da42"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/pilot_v1/tasks/ecp_pbe0__water_central_Dy/execution/RESULT.json",
+      "sha256": "c293f05158d08e5a800308ccd84852fb7d0e6e499bdde8a75b31c7bd2493e925"
+    }
+  ],
+  "released_cells": [
+    "ecp_pbe0__acetamide_minus_La",
+    "ecp_pbe0__acetamide_central_La",
+    "ecp_pbe0__acetamide_plus_La",
+    "ecp_pbe0__acetamide_minus_Dy",
+    "ecp_pbe0__acetamide_central_Dy",
+    "ecp_pbe0__acetamide_plus_Dy",
+    "ecp_pbe0__acetate_bi_minus_La",
+    "ecp_pbe0__acetate_bi_plus_La",
+    "ecp_pbe0__acetate_bi_minus_Dy",
+    "ecp_pbe0__acetate_bi_plus_Dy",
+    "ecp_pbe0__acetate_mono_minus_La",
+    "ecp_pbe0__acetate_mono_central_La",
+    "ecp_pbe0__acetate_mono_plus_La",
+    "ecp_pbe0__acetate_mono_minus_Dy",
+    "ecp_pbe0__acetate_mono_central_Dy",
+    "ecp_pbe0__acetate_mono_plus_Dy",
+    "ecp_pbe0__water_minus_La",
+    "ecp_pbe0__water_plus_La",
+    "ecp_pbe0__water_minus_Dy",
+    "ecp_pbe0__water_plus_Dy",
+    "ecp_pbe0__aquo8_central_La",
+    "ecp_pbe0__aquo8_central_Dy",
+    "ecp_pbe0__aquo9_central_La",
+    "ecp_pbe0__aquo9_central_Dy"
+  ],
+  "scheduling_revision": "Original eight-cell pilot progression is separated by electronic recipe. Four frozen-f pilot native admissions permit diagnostic expansion of that same recipe; all-electron remainder remains held until its own pilot admission. No physical settings, fixed geometries or result-admission checks changed.",
+  "reason": "Independent declared frozen-f donor/coordination coverage need not await slow explicit-f Dy SCF. Current MACE versus transferred AMOEBA amide response has opposite sign; full declared diagnostic coverage resolves model disagreement.",
+  "limitations": "SCF native termination does not imply every printed residual meets tolerance. Acetate orbital gradients/rotations exceed printed2e-6; preserve warnings and do not fit or validate a force model from this admission alone. Separate strict numerical/basis/state qualification remains required.",
+  "resource": "24 singleton4MPI jobs,standard_expand,defaultmemory/time; scheduler enforces20concurrentjob limit"
+}

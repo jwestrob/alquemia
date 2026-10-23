@@ -1,0 +1,13 @@
+# Fixed 32-slot metadata binder
+
+Question: can the original 32 displaced Stage2 slots be bound reproducibly in batches, with no duplicated completed work or changed scientific protocol?
+
+This helper only reads saved JSON/text pins and writes new metadata. It never submits, invokes native programs, imports a numerical backend, calculates PME, assembles a matrix, factors, solves, or changes frozen source. It reuses execution_v1/BIND.py and certificate_v1/BIND.py directly. Every output directory must be new. The immutable execution manifest and 32 original active noncentral IDs are the sole inventory.
+
+All stages require the exact completed build and root-admitted central/bypass scout. Initializer stage prepares 32 original initializer configurations. Certificate stage consumes an exact32 map of actual initializer RESULT pins or nulls, validates terminal native admission, raw-input/build/config/release joins and declared counts, then binds only admitted rows. Missing, started, failed or inconsistent records remain explicitly missing/rejected and are never rebound as successful calls.
+
+Gradient stage first consumes an exact32 map of actual certificate RESULT pins or nulls. It validates the declared initializer/assembly/factor lineage and counters, unchanged nominal fields and all existing sampled-audit flags, without numerical replay. It writes a proposed batch admission listing exactly the accepted certificate pins. Without actual root batch admission it writes no runnable gradient configuration. In a fresh second binding output, root may supply an exact accepted batch-admission pin; the helper expands that root acceptance into one explicit state admission and calls the unchanged native binder. This replaces repetitive manual state receipts with one root-reviewed map; it adds no scientific threshold or automatic release. Root still separately binds configuration/output/source review and releases every finite execution stage.
+
+The output always preserves all32 rows, admitted/failed/missing counts and producer error/cost/command records. Partial batches are labeled partial, never full-panel qualification. Existing output/result artifacts are never overwritten. Original 33active+3bypass gradients,32initializers/assemblies/factors and24finite-difference gates remain unchanged.
+
+Prospective controls use only tiny temporary JSON artifacts and mocked binder entrypoints: exact inventory, pending/failed retention, build/scout mismatches, wrong-state/counter joins, root batch admission subset/identity, no calls for rejected rows and no overwrites. No scientific test suite or actual producer output is executed.

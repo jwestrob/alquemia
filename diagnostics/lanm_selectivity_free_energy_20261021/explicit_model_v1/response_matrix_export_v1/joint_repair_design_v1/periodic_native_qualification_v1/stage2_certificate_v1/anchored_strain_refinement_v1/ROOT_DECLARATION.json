@@ -1,0 +1,62 @@
+{
+  "status": "declared_correct_chain_rule_three_strain_numerical_convergence_test",
+  "utc": "2026-10-23T03:24:32.115022+00:00",
+  "question": "Does the exact derivative for metal-anchored cell strains agree with baseline cutoff12 energies when the finite displacement is small enough?",
+  "evidence": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/cutoff12_term_attribution_v1/collector_v1/run_v1/ROOT_ACTUAL_REVIEW.json",
+    "sha256": "dfa9594c31109f753191d797aca82679717875d183c78079c73bb16545deddb2"
+  },
+  "source_note": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/cutoff12_term_attribution_v1/MESH_PHASE_NOTE.md",
+    "sha256": "16243bef0942d6c5e9d8f5d4433f26c20b21c9753b2192ca0e63aeff0ebfa42c"
+  },
+  "central_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/cutoff12_term_attribution_v1/preparation_v1/MANIFEST.json",
+    "sha256": "2044fae0f2de6ceb2f908d6832514495a7b7d304ae8e13283f7c52e6550627fb"
+  },
+  "directions": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/displaced_preparation_v1/preparation_v1/directions/DIRECTIONS.json",
+    "sha256": "48ed837a886df9ad445be4d8d9c4f705573dfd8381d746d8e0b2a2086d2dc6b6"
+  },
+  "central_gradient": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/cutoff12_baseline_v1/run_v1/tasks/central/execution/native/stage2_gradient.dat",
+    "sha256": "10db761ad52f9f6ae743f5999d2945115df633ae5ac13374eef0beb6c7053ce8"
+  },
+  "parent_build": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/cutoff12_baseline_v1/build_run_v1/execution/RESULT.json",
+    "sha256": "ac5fca44474fbbf70b3e910e175bd22ed69896293e9782bd96952d4a0fd4388f"
+  },
+  "formula": "dE/dq = [V:S - (S a) dot sum_i grad_i E]/L0, for r(q)=r+q*S*(r-a)/L0 and A(q)=(I+q*S/L0)A",
+  "directions_to_test": [
+    "strain_0",
+    "strain_1",
+    "strain_2"
+  ],
+  "half_steps_A": [
+    1.25e-05,
+    6.25e-06
+  ],
+  "maximum_new_gradient_programs": 12,
+  "new_central_programs": 0,
+  "controls_unchanged": [
+    "Exact same baseline model and atomic topology",
+    "Cutoff12,alpha0.4,64cubed/order5 mesh,TINFOIL,VDW9/taper8.1,PCG",
+    "Original directions, metal anchor, deformation formula and XYZ serialization precision",
+    "Original absolute derivative gate0.001kcal/mol/Angstrom plus literal printing allowance",
+    "Original two-step convergence check0.001 plus print allowance"
+  ],
+  "interpretation": [
+    "This is a declared numerical convergence follow-up after diagnosed chain-rule omission and finite-step error",
+    "Original uncorrected failed comparisons remain immutable",
+    "Report corrected and original virial-only slopes side by side",
+    "No tolerance or physical-model refit, no active-response/production promotion",
+    "Any remaining failure is retained; no automatic step sweep"
+  ],
+  "execution_gate": "Actual saved attribution review, frozen source/preparation review and root release before12calls",
+  "counts": {
+    "new_native_gradients": 12,
+    "new_initializers": 0,
+    "new_factorizations": 0,
+    "new_quantum_references": 0
+  }
+}

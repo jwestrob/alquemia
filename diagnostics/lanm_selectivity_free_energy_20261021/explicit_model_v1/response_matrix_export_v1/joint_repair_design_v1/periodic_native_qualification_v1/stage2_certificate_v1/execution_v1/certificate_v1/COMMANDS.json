@@ -1,0 +1,37 @@
+{
+  "bind_argv_template": [
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/_envs/lanm_cholmod_v1/bin/python",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/execution_v1/certificate_v1/BIND.py",
+    "--sources",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/execution_v1/certificate_v1/SOURCE_INPUTS.json",
+    "--state-id",
+    "<exact original slot>",
+    "--build",
+    "<actual build RESULT>",
+    "--scout-review",
+    "<actual root central scout review>",
+    "--initializer",
+    "<matching complete initializer RESULT>",
+    "--out",
+    "<new binding directory>"
+  ],
+  "execute_sbatch_template": [
+    "sbatch",
+    "--parsable",
+    "--output",
+    "<existing metadata parent>/slurm-%j.out",
+    "--error",
+    "<existing metadata parent>/slurm-%j.err",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/execution_v1/certificate_v1/RUN.sbatch",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/execution_v1/certificate_v1/CERTIFY.py",
+    "--config",
+    "<bound CONFIG.json>",
+    "--release",
+    "<exact ROOT_RELEASE.json>",
+    "--out",
+    "<nonexistent execution child>"
+  ],
+  "root_submits_only": true,
+  "shared_queue_review_required": true,
+  "maximum_own_parallel_jobs": 16
+}

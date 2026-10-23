@@ -1,0 +1,18 @@
+{
+  "status": "passed_initialized_PME_export_source_review",
+  "reviewed_utc": "2026-10-22T22:48:55.998282+00:00",
+  "ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/pme_export_v1/READY.json",
+    "sha256": "2d4c181c395a5aa731d74299b15df06a7b5074310e50b0281f5c1917911871c4"
+  },
+  "checks": 31,
+  "review_notes": [
+    "Read complete helper, isolated patch, snapshot reader, control source and contract. Compared hook against actual udirect1 qfac initialization and grid_uind stencil/chunk source.",
+    "Active sqrt(alpha), fractional transform and igrid offsets match the reviewed native convention; all actual qfac values retained.",
+    "Ordinary-double norm and conjugate-asymmetry reports do not establish full operator stability or native scatter/gather application parity.",
+    "Opt-in absent path returns before native-array access; exclusive file creation, first-initialization sequence and terminal counters prevent silent reuse.",
+    "No frozen native source mutation, actual PME calls or candidate admission. Both backend/stability rejection hooks remain."
+  ],
+  "new_numerical_calls": 0,
+  "new_native_calls": 0
+}

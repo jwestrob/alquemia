@@ -1,0 +1,388 @@
+La/Dy selectivity: independent scientific review requested
+========================================================
+Snapshot: 23 October 2026. Repository: https://github.com/jwestrob/alquemia
+
+This file is self-contained. It was prepared by the agent whose scientific
+decisions are being questioned. Please scrutinize its interpretation rather than
+accepting its proposed direction. Numerical observations, assumptions, and
+untested proposals are distinguished below. Detailed code and saved results are
+included in the repository; the key paths are at the end.
+
+USER'S REQUEST AND CURRENT HOLD
+------------------------------
+The user wants a realistic account of La versus Dy binding, and has repeatedly
+asked for the root physical/modeling problem to be addressed. After roughly a
+week of many small calculations and incremental parameter fits, there is still
+no validated exchange free energy. The user considers the work misdirected and
+has requested independent review before further scientific direction is chosen.
+New scientific campaigns are paused. Preparing and publishing this handoff is
+authorized; none of the suggestions below is a newly approved research plan.
+
+WHAT THE ACTUAL SCIENTIFIC GOAL IS
+--------------------------------
+For a specified peptide/protein and solution condition, calculate
+
+  DeltaG_exchange = DeltaG_bound(La -> Dy) - DeltaG_water(La -> Dy).
+
+Negative values favor Dy. Both ions are trivalent. Static cluster energies,
+geometry relaxations, and a successful numerical polarization solve are not
+this free energy. The intended eventual calculation includes explicit solvent,
+protein response, relevant chemical states, sampling, and uncertainty.
+
+The initial experimental target is LBT3, with an amidated construct
+NH3+–FIDTNNDGWIEGDELLA–CONH2, declared peptide charge -4 and complex charge -1.
+Historical free-carboxylate LBT3 is a separate sensitivity. A 2020 ITC comparison
+provides La/Dy free energies at 283.15 K and pH 6 but unresolved terminal
+chemistry; a 2025 assay specifies amidation but has incomplete temperature and
+numerical uncertainty information. These assays must not be silently merged.
+LBT/Hans/Mex observations already inspected are development evidence, not blind
+validation. The planned 0.5 kcal/mol sampling-confidence half-width is not a
+demonstrated model error or an accuracy tolerance for each cluster interaction.
+
+HOW WE ARRIVED HERE
+-------------------
+1. Earlier MACE/DFT comparisons and limited accommodation calculations produced
+   conditional energies rather than equilibrium selectivity. A late peptide
+   relaxation was unfavorable in both MACE and PBE0 vacuum energies while a
+   shared GFN2/ALPB solvent term made the composite favorable. Agreement after
+   adding the same solvent term did not independently validate that term.
+2. Work moved to an explicit polarizable model based on AMOEBA/Tinker, with
+   matched La/Dy water and donor reference chemistry. It accumulated gas-phase
+   pair, hydrated-donor, water-removal, coordination, force, field-response and
+   fragment-decomposition data, plus numerical engine work. There is no
+   qualified production sampling model from this effort.
+3. Repeated water/donor parameter fits and then custom electrical-response
+   corrections improved selected objectives but failed other physical tests.
+   The agent continued optimizing longer than the failures justified.
+4. A recent radial14 candidate improved its fitting objective while all eight
+   inspected individual trimer energy and dipole errors worsened; all four
+   La/Dy trimer energy contrasts had the wrong sign. This prompted the new
+   short-range model tested below. The new test also failed.
+
+The baseline in the newest comparison is the exact archived, already developed
+polarizable model, not a claim about unmodified stock AMOEBA. Its native
+operator and parameters are pinned in the source/input manifests. The radial14
+candidate is not silently stacked underneath the new correction.
+
+REFERENCE DATA AND WHAT THEY DO NOT ESTABLISH
+-------------------------------------------
+The recent water targets are electronic PBE0 fragment energies in a common
+parent orbital/auxiliary basis, with ghost functions and matched fragment
+cycles. D4 is excluded from those electronic decomposition targets. La and Dy
+use the recorded frozen-core/f-in-core effective-core-potential treatment, not
+an established all-electron correlated ground truth. Common-basis subtraction
+controls a comparison convention; it does not establish basis or functional
+accuracy for the physical system.
+
+The La dry-acetate mechanical targets retain their original PBE0-D4 protocol.
+Canonical correlated calculations independently support the large La rotational
+slope discrepancy, but do not validate every PBE0 electrical-response target.
+Canonical Dy rotation attempts failed. Failed Dy donor susceptibility checks
+are excluded, not replaced by guessed values. Tightened SCF stopping checks and
+local correlated-reference controls exist, but are not a universal reference
+uncertainty estimate.
+
+Available fields principally qualify selected directional susceptibilities,
+not complete polarizability tensors. Full static dipole vectors are available;
+not every component has independent field-derivative qualification. The donor
+is charged: its dipole depends on origin. An explicit audit found that the
+compared donor coordinates, origin, units, and charge agree. The quantum dipole
+was translated from center of mass to the metal-at-origin frame with the net
+charge term. The large donor mismatch is not explained by that convention.
+
+THE NEW MODEL THAT WAS ACTUALLY TESTED
+------------------------------------
+This was a deliberately finite effective correction, not a full electronic
+structure model or a trained general-purpose machine-learned potential.
+
+Let A0 be the cached native polarization operator, Ed and Ep the two native
+driving-field conventions, U_other the baseline energy excluding polarization,
+and mu_perm the baseline permanent moment. These are fixed at each saved
+geometry. Added terms are a scalar mechanical energy V, a driving vector h,
+and a symmetric operator correction H:
+
+  G = A0 + H
+  d = Ed + h + B F;  p = Ep + h + B F
+  u = G^-1 d;        v = G^-1 p
+  E = U_other + V - K mu_perm dot F - (K/2) d^T G^-1 p
+  mu_conjugate = mu_perm + B^T(u+v)/2
+  chi_native = B^T G^-1 B.
+
+B applies a uniform field to all induced-dipole sites. Ed and Ep need not be
+equal. This is a two-channel stationary cross functional, not a single induced
+dipole minimizing a positive quadratic energy. The native physical-u dipole
+and the energy-conjugate average-u/v dipole must not be conflated. K and the
+native-to-atomic-unit conversion are explicit in KERNEL.py and the collector.
+
+Crucial restriction: all new h/H entries act ONLY on donor oxygen response
+components. The metal and other atoms retain their baseline self response.
+No new charge-transfer variables or permanent-multipole redistribution were
+implemented. The whole baseline already has many-body polarization; describing
+it as pairwise or angle-free would be false.
+
+The corrections are assigned to intact metal–ligand pairs and metal–two-ligand
+triples before solving the coupled response. Acetate's two oxygens are ONE
+ligand; no artificial intra-acetate three-body fragment is introduced. The
+coupled solution can generate higher-order effects even from pair/triple
+operator corrections. Actual fragment cycles, not isolated V coefficients,
+are compared to quantum pair/trimer targets.
+
+Implemented geometry basis:
+  w(r) = max(1-r^2/6^2,0)^3, with distances in Angstrom;
+  n = metal-to-O vector / sqrt(r^2+0.1^2);
+  b = a softened local covalent ligand-frame direction;
+  rho = (r^2-2.5^2)/2.5^2.
+Pair energy uses w(v0 + vr*rho + va*n dot b). Pair h uses radial/frame vectors;
+pair H uses their outer products. Triples use products of contact weights,
+inter-ligand angles, cross-directed fields and symmetric cross-O response.
+Smoothness/symmetry/separation properties do not establish that this basis is
+physically sufficient. The particular limited basis was an agent choice.
+
+TWO FITTING CAMPAIGNS, NOT TWO NEW QUANTUM EXPERIMENTS
+--------------------------------------------------
+Both reused 64 saved operator geometries: 54 water states, two dry-donor
+centers, and eight La donor displacement endpoints. No new quantum calculations
+were performed for these fits. Each ran on a 24-CPU standard_expand allocation
+with 16 workers. They ran consecutively, not simultaneously.
+
+shared12:
+  water pair: v0, hf, krr, kff;
+  water–water triple: v0, va, h_neighbor, k_cross;
+  acetate pair: vr, va, hf, kff.
+All coefficients are shared across metals; all other kernel amplitudes are zero.
+
+metal15:
+  Split only the water pair v0 and triple v0/va into separate La/Dy values.
+  Electrical h/H and acetate coefficients remain shared.
+Although the generic kernel supports water-frame angular energy terms, the
+actual campaigns set water pair va and triple vf to zero. Their direct water
+mechanics therefore lacks hydrogen-frame orientation dependence at fixed O.
+
+The second version tests the specific restriction that identical La/Dy
+geometries with shared mechanical coefficients have identical added V energies.
+It does not introduce metal-specific electrical response.
+
+Targets in the objective:
+  - Five susceptibility projections: La/Dy water dimer and far trimer, plus
+    the qualified La dry-acetate direction.
+  - 34 pair-energy cycles and signed pair moments.
+  - Four W9 near/far trimer energy and signed moment cycles.
+  - La donor full static dipole and two half-step mechanical slopes.
+
+Omissions from fitting:
+  - Complete W8/W9 shell energies and their pair/collective decomposition.
+  - W8 trimer targets, full-step donor slopes and the Dy donor moment.
+  - Wet donors, mixed water/donor environments and amide coefficients.
+  - Full water coordinate forces and full electrical-response tensors.
+Some omitted quantities were inspected previously and/or reported afterward;
+they are consumed checks, not a genuinely blind holdout set.
+
+Loss = equal mean of five squared-error families: chi, mu, pair E, W9 trimer E,
+and donor slope. The mu family itself averages pair, trimer and donor vector
+MSEs. Scales of 1 a0^3, 1 Debye, 1 kcal/mol and 1 kcal/mol/Angstrom are objective
+weights, NOT scientific accuracy gates. Thus a small aggregate score cannot
+override a wrong individual observable.
+
+Bounds: V coefficients +/-100 kcal/mol, h +/-0.1 e/Angstrom^2, H +/-1 Angstrom^-3.
+All 64 states require the baseline-normalized total operator's minimum
+eigenvalue to be at least 1e-6. Each campaign used one zero and 15 fixed Sobol
+H starts, conditional H then linear h/V solves, followed by one full joint
+SLSQP optimization per start (100 iterations, ftol 1e-10). The starts collapsed
+to essentially the same solutions. They are NOT evidence of 16 independent
+basins or global optimality. Raw outcomes and coefficients are retained.
+
+OBSERVED RESULTS
+----------------
+Five-family RMS, under the objective's definitions:
+
+                               baseline      shared12       metal15
+chi, a0^3                       3.7211         2.9275         2.7376
+nested dipole RMS, Debye         2.6965         2.8654         2.9126
+pair E, kcal/mol               15.2184         0.4825         0.0498
+fitted W9 trimer E, kcal/mol     6.8588         0.2317         5.7e-8
+donor slope, kcal/mol/A         34.4840         0.1239         0.1239
+
+The near-exact four W9 energies are interpolation with substantial flexibility,
+not independent validation. Several coefficients reached their declared bounds.
+
+La acetate rotation slope (prescribed generalized coordinate, kcal/mol/A):
+  baseline -20.3904; new +28.2351; PBE0-D4 +28.3579;
+  separate canonical correlated reference approximately +29.5455.
+The radial slope remains near reference: new 99.6819 versus 99.5571.
+These quantities were fitted. The larger saved displacement gives a similar
+slope but is a nearby consumed check, not broad force validation.
+
+La donor full dipole, Debye, same origin and frame:
+  reference      ( 1.06392,  1.72741, -1.47954)
+  baseline       (-5.00277,  0.16902, -6.45363)
+  new            (-5.08342, -0.00195, -7.18289).
+Earlier scalar projections obscured the full-vector failure through cancellation.
+
+Complete-shell failure (metal15; prediction minus quantum, kcal/mol):
+
+                pair sum P      collective B       total C
+  La, 8 waters    +0.343           +77.743           +78.086
+  Dy, 8 waters    +0.328          +106.238          +106.566
+  La, 9 waters    -0.343          +100.486          +100.143
+  Dy, 9 waters    -0.328          +134.155          +133.827
+
+Here C = E(metal+shell)-E(metal)-E(shell), P is the sum of the matched metal–water
+pair interaction energies, and B=C-P. B includes three-body AND higher-order
+effects; it is not a measured pure four-body contribution. shared12 also fails,
+with total-shell errors about -193 to -283 kcal/mol.
+
+The four-parent contrast Dy9-La9-Dy8+La8 is also wrong, not merely shifted:
+  P: model -9.4002, reference -9.4291, error +0.0290;
+  B: model +14.2877, reference +9.1130, error +5.1747;
+  C: model +4.8875, reference -0.3161, error +5.2037.
+This electronic cluster contrast is relevant to coordination competition, but
+is not the protein-minus-water exchange free energy.
+
+The agent's design weakness: complete-shell targets were known but omitted
+from fitting. Fragment success cannot justify adopting the model. Conversely,
+bad parent transfer alone does not prove that explicit four-body terms or a
+particular saturation mechanism are required; the sampled three-body angular
+surface is sparse, and the electrical-response model is independently deficient.
+
+POST-FIT REPRESENTABILITY CHECK: A CONDITIONAL MATHEMATICAL RESULT
+----------------------------------------------------------------
+A saved-operator calculation asked whether larger coefficients could fix the
+electrical failures without changing where the corrections act. It did not run
+another fit or quantum calculation.
+
+For A0=L L^T, b=B times the measured field direction, and U spanning all allowed
+stiffness-update directions, an optimistic susceptibility floor is
+
+  ||(I-P_span(L^-1 U)) L^-1 b||^2,
+
+with the native-to-source unit conversion applied. It allows unlimited positive
+stiffness on U and is also a lower bound for any stable symmetric update confined
+to that support. A separate calculation expands U to ALL Cartesian components
+of all donor oxygens, avoiding dependence on near-collinear local-frame vectors.
+
+                          full-O floor     reference, a0^3
+  La water dimer            16.73806          15.47168
+  La far trimer             22.21808          22.01653
+  Dy water dimer            10.65143          13.15803
+  Dy far trimer             16.33707          19.88113
+  La dry acetate            35.92750          47.88102
+
+Only the two La water targets fall below those floors. For the dimer, all four
+saved energy/moment and full/half-step reference estimates lie between
+15.471680 and 15.481986. Their numerical discrepancies are much smaller than
+the approximately 1.26 a0^3 gap. This is NOT a bound on PBE0/ECP/basis error.
+
+For fixed A0, permanent moments and field coupling B, oxygen-only h/H cannot
+reproduce those retained La-water targets, even with unrestricted coefficients.
+h and V cannot change fixed-geometry susceptibility. This does not establish
+which atom or microscopic mechanism is physically wrong. Changing only O/non-O
+off-diagonal coupling while keeping the non-O self block fixed also leaves an
+O-clamped lower bound. Some non-O self response, field coupling, or the broader
+response law must change to match these targets under the stated assumptions.
+
+For the static dipole, m=(u+v)/2 obeys A0(m-m0)=h-Hm. Therefore the possible
+moment change is confined to range(B^T A0^-1 U_mu), where U_mu spans H and h.
+The present donor frame basis leaves a 2.14064-Debye target component outside
+that range. Full Cartesian oxygen response removes this particular obstruction.
+It therefore does NOT prove that donor response must extend beyond oxygen.
+These are ordinary-double calculations with reported singular values/ranks,
+not interval certificates or proofs about every possible polarizable model.
+
+WHAT IS ESTABLISHED, AND WHAT IS STILL SPECULATION
+------------------------------------------------
+Established within this dataset/model comparison:
+  - The finite new candidate is not an acceptable interaction model.
+  - Independent short-range energy terms can fit selected mechanical targets,
+    but did not solve electrical response or complete-shell transfer.
+  - The oxygen-only response restriction cannot match the retained La-water
+    susceptibility targets with the rest of the baseline fixed.
+  - No validated solvated protein/water exchange prediction exists.
+
+Not established:
+  - That charge transfer, Pauli repulsion, nonlinearity, or explicit four-body
+    interactions are the unique missing mechanism.
+  - That DFT is sufficiently accurate for every target, or that another MACE
+    checkpoint would solve the problem.
+  - That simply fitting the parent energies too would yield a transferable
+    Hamiltonian, or that more optimizer starts would resolve these failures.
+  - That the proposed successor below would work.
+
+Untested ideas raised by the agents include metal-centered/environment-dependent
+self response, broader ligand-frame response, consistent permanent-multipole
+redistribution, and a collective shell energy with correct lower-fragment
+limits. These are competing possibilities, not conclusions or implementations.
+The current data do not uniquely identify all these freedoms. Adding them all
+could merely create a more flexible interpolator.
+
+QUESTIONS FOR THE INDEPENDENT REVIEWER
+------------------------------------
+1. Is the scientific strategy itself wrong? Should a different route to the
+   target free energy replace continued custom polarizable-model development?
+2. Are the reference quantities, fragment conventions, charged dipole origin,
+   two-channel energy derivatives and response units being compared correctly?
+   Which reference uncertainties could change the interpretation?
+3. What do the current data genuinely diagnose about the model, beyond showing
+   that selected parameterizations fail? Is the support-bound argument sound
+   and relevant to the physical response we need?
+4. What is the smallest physically justified model change, if any, supported by
+   this evidence? Which tempting explanations remain non-identifiable?
+5. What decisive, integrated experiment would discriminate the plausible causes
+   and prevent another sequence of local fits? Use existing evidence wherever
+   possible; specify what a new calculation would actually decide.
+6. How should complete-shell energies, ligand/water competition, forces and
+   response data be used without relying on error cancellation or presenting
+   consumed data as validation? What criteria would justify moving to sampling?
+
+Please give a scientific critique and a prioritized direction, including whether
+to abandon the present approach. Do not assume the agent's preferred successor
+is correct. Jacob will decide what work to authorize after reviewing your view.
+
+CODE, RESULTS AND EXECUTION RECORD
+---------------------------------
+All paths below are repository-relative. The one-file narrative above does not
+require access to the cluster filesystem.
+
+Recent model source:
+  diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/
+    short_range_many_body_v1/kernel_v1/KERNEL.py
+  Same short_range_many_body_v1 directory, joint_demonstration_v1/:
+    DATA.py, CORE.py, METAL_CORE.py, RUN.py, METAL_RUN.py,
+    DECLARATION_v2.json, MODEL_COMPARISON.json,
+    COMPARE.py, REPORT_EXTRA.py, SUPPORT_DIAGNOSTIC.py.
+
+Portable copies of actual saved comparison evidence:
+  diagnostics/lanm_selectivity_free_energy_20261021/external_review_20261023/
+    evidence/COMPARISON_REPORT.txt
+    evidence/COMPARISON_RESULT.json
+    evidence/SHARED12_RESULT.json
+    evidence/METAL15_RESULT.json
+    EVIDENCE_MANIFEST.json
+The manifest records original paths, byte-identical hashes and exclusions.
+The JSON retains individual predictions, parent decompositions, coefficients,
+all 32 raw solver outcomes, support calculations, limitations and source pins.
+Some source pins refer to immutable cluster workspaces not redistributed here.
+This is a review packet, not a standalone executable archive of all native
+software, model assets, quantum outputs, or the entire computation history.
+
+Broader context:
+  diagnostics/lanm_selectivity_free_energy_20261021/PLAN.md
+  diagnostics/lanm_selectivity_free_energy_20261021/experimental_target_v1/REPORT.md
+  diagnostics/lanm_selectivity_free_energy_20261021/model_form_decision_20261023/
+  diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/
+  diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/
+
+Recent actual Slurm jobs (standard_expand):
+  21251: eight saved donor baseline exports, 13s x 8 CPUs = 104 allocated CPU-s.
+  21257: shared12, 28s x 24 CPUs = 672 allocated CPU-s.
+  21259: metal15, 23s x 24 CPUs = 552 allocated CPU-s.
+  21272: saved comparison/support analysis, 14s x 1 CPU = 14 allocated CPU-s.
+These are allocated costs, not measured utilization or total project costs.
+Earlier force-code checks passed 48 finite-difference checks across 102 states;
+that qualifies numerical derivatives, not their physical accuracy. An earlier
+dense-versus-iterative printed-force regression failed and remains recorded;
+replaying the archived induced variables explained that narrow discrepancy.
+
+The newest two model campaigns and collector are terminal. No new model,
+quantum campaign, or dynamics run follows from this handoff. Older CURRENT/
+STATUS entries are chronological history; the new review-hold entry supersedes
+older active-work instructions for this task.

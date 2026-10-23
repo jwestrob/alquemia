@@ -1,0 +1,47 @@
+{
+  "status": "passed_stage1_slurm_adapter_source_review",
+  "utc": "2026-10-23T01:00:58.340123+00:00",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/slurm_stage1_v1/RUN.py",
+    "sha256": "35614514425a66e6ba72fc70bb51f271de5572ba00199cd7b7abfa1a71b11529"
+  },
+  "configuration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/slurm_stage1_v1/CONFIG.json",
+    "sha256": "3ec7dfd91d5d686b19c67f04a7a4616f103df43ef3c2f6d39d0006d513f88583"
+  },
+  "ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/slurm_stage1_v1/READY.json",
+    "sha256": "733e28baefa3ca94e81f7925b21b86d637a9de817f20cf0313482451caf15409"
+  },
+  "stage1_source_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/independent_source_review_v1/REVIEW.json",
+    "sha256": "9da59cf5194d6c6d63237f85aae7467f7b4e026ab57651f95bc346967c126e2a"
+  },
+  "wrapper": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/slurm_stage1_v1/RUN.sbatch",
+    "sha256": "96ff24b11399dc2e3400a55f2e8fb04e5d7d4b2dd458bff463d65613dbfc942b"
+  },
+  "preflight": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/slurm_stage1_v1/PREFLIGHT.py",
+    "sha256": "721cc77741c4b011a184ff3fb892edb8bb2739c8e8592363e8fb0d21760627f7"
+  },
+  "controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/slurm_policy_controls_v1/RESULT.json",
+    "sha256": "40ee10d1d2de70694560e83a37ad75d95eb1a89aa626e966a9ff06889ecaa3c7"
+  },
+  "review_scope": [
+    "Read full runner, scheduler wrapper, final runtime preflight and bound config/release schema.",
+    "One actual standard_expand allocation, default4000MiB,3GiB child/controller AS cap,threads1,exact node loader/runtime and source checks.",
+    "One-link/one-native/one-saved-replay attempts are bounded; no induced solves, energies, gradients or factorization.",
+    "Native binary and copied inputs pinned before use; durable launch/error/terminal records, raw outputs retained.",
+    "Original source/library remain immutable; olde41f geometry/candidate/static20053 bindings exact."
+  ],
+  "controls_repeated": false,
+  "new_native_calls": 0,
+  "new_scheduler_calls": 0,
+  "limitations": [
+    "Estimated parity memory peak not measured yet.",
+    "Finite sampled action parity only; raw direct-field h addition deferred to Stage2.",
+    "Actual node/source/resource checks and final scientific result still required."
+  ]
+}

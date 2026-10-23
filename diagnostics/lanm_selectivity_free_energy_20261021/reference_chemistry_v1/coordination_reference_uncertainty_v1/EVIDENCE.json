@@ -1,0 +1,2156 @@
+{
+  "status": "source_only_feasibility_evidence",
+  "created_utc": "2026-10-22T02:34:25.556256+00:00",
+  "native_calls": 0,
+  "local_threads": 1,
+  "original_plan": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/CORRELATED_QUALIFICATION_PLAN.md",
+    "sha256": "b6c4c4298772961593ecabe3cd077c841bcc49368ba19ba9cb261279d2b42009"
+  },
+  "installed_modules": {
+    "orca": {
+      "path": "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+      "sha256": "38b5f057452fef275c0a1b98d270ad03d0411dab70453820d1c678bd732f6c83"
+    },
+    "orca_mdci": {
+      "path": "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca_mdci",
+      "sha256": "ecea2396371073506feca6a1d99cbd356ec55eaab5a259719578896881050d81"
+    },
+    "orca_mdci_mpi": {
+      "path": "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca_mdci_mpi",
+      "sha256": "ede0bacfca243403d7853ae9440cd3c618248989271741993dc70f5df288f495"
+    },
+    "orca_loc": {
+      "path": "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca_loc",
+      "sha256": "d19753c51a3e641bd8d10e0aa584534a2afc4a37771437ce60958481f11b9644"
+    }
+  },
+  "water_collection": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/canonical_water_cp_v2/collection_v1/RESULT.json",
+    "sha256": "2c7ca37df5679f0dd54cfb2807b84d6ca8ec9510462424e557b00866c0b32c84"
+  },
+  "donor_collection": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/full_collection_v1/RESULT.json",
+    "sha256": "c9ca7b157973c513fc808f3caf6976463da7863ebcdaeb2fc19f296fd9b74348"
+  },
+  "controls": [
+    {
+      "cell_id": "La__water_ghost_ion",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/canonical_water_cp_v2/scout_La_water_ghost_v1/execution/RESULT.json",
+        "sha256": "1f310a1226a75e71d9aef01d33b545fa01c0b9a9ab60322a87ce2e948e616244"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/canonical_water_cp_v2/scout_La_water_ghost_v1/execution/endpoint.out",
+        "sha256": "348519b67621854681190adcadeacdaafef2d40ce49ff0c7bae1d1c9863c3a34"
+      },
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/canonical_water_cp_v2/scout_La_water_ghost_v1/execution/endpoint.inp",
+        "sha256": "09c56ced7f702128df6a709877143271ee67c83004bbd7ba163acf198d2ea04a"
+      },
+      "cell": {
+        "cell_id": "La__water_ghost_ion",
+        "metal": "La",
+        "role": "water_ghost_ion",
+        "symbols": [
+          "La",
+          "O",
+          "H",
+          "H"
+        ],
+        "positions_A": [
+          [
+            -0.031658,
+            -0.226996,
+            0.0
+          ],
+          [
+            0.282376,
+            2.03951,
+            -0.0
+          ],
+          [
+            0.375571,
+            2.657104,
+            0.778197
+          ],
+          [
+            0.375571,
+            2.657104,
+            -0.778197
+          ]
+        ],
+        "source_geometry": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/prepared_v2/xyz/water_central_La.xyz",
+          "sha256": "878144a87bce441b7ddc6007d30a1dce51f7d23c65c9368b6f9eee0e714c7ebf"
+        },
+        "ghost_mask": [
+          true,
+          false,
+          false,
+          false
+        ],
+        "charge": 0,
+        "multiplicity": 1,
+        "physical_multiplicity_of_parent": 1,
+        "expected_effective_nuclear_charges": [
+          0,
+          8,
+          1,
+          1
+        ],
+        "expected_electrons": 10,
+        "expected_correlated_electrons": 10,
+        "expected_basis_functions": 90,
+        "expected_basis_functions_by_center": [
+          47,
+          31,
+          6,
+          6
+        ],
+        "expected_ecp_core": 0,
+        "template_input": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/canonical_water_cp_v2/prepared_v1/inputs/La__water_ghost_ion.inp",
+          "sha256": "09c56ced7f702128df6a709877143271ee67c83004bbd7ba163acf198d2ea04a"
+        }
+      },
+      "energy_hartree": -76.346582782,
+      "RHF_energy_hartree": -76.054630006,
+      "elapsed_seconds": 35.15650094510056
+    },
+    {
+      "cell_id": "Dy__complex",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/canonical_water_cp_v2/remaining_v1/tasks/Dy__complex/execution/RESULT.json",
+        "sha256": "9e0747452b261b9fdb33d0d32395404127b1947a4b25646055f29ad65884dfcf"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/canonical_water_cp_v2/remaining_v1/tasks/Dy__complex/execution/endpoint.out",
+        "sha256": "ed350ca7b89516b0f264d67df76f31e054aae01596285efba8dc99325f3008c2"
+      },
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/canonical_water_cp_v2/remaining_v1/tasks/Dy__complex/execution/endpoint.inp",
+        "sha256": "112cc86e8ce2971b300740e50686af4ac7c6263780e823b34f69b66e859923b6"
+      },
+      "cell": {
+        "cell_id": "Dy__complex",
+        "metal": "Dy",
+        "role": "complex",
+        "symbols": [
+          "Dy",
+          "O",
+          "H",
+          "H"
+        ],
+        "positions_A": [
+          [
+            -0.031658,
+            -0.226996,
+            0.0
+          ],
+          [
+            0.282376,
+            2.03951,
+            -0.0
+          ],
+          [
+            0.375571,
+            2.657104,
+            0.778197
+          ],
+          [
+            0.375571,
+            2.657104,
+            -0.778197
+          ]
+        ],
+        "source_geometry": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/prepared_v2/xyz/water_central_Dy.xyz",
+          "sha256": "86d331271e4eaea04e29d47aa03c103fd6e3d295f916cded8c8aeb8b6486f550"
+        },
+        "ghost_mask": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "charge": 3,
+        "multiplicity": 1,
+        "physical_multiplicity_of_parent": 6,
+        "expected_effective_nuclear_charges": [
+          11,
+          8,
+          1,
+          1
+        ],
+        "expected_electrons": 18,
+        "expected_correlated_electrons": 18,
+        "expected_basis_functions": 90,
+        "expected_basis_functions_by_center": [
+          47,
+          31,
+          6,
+          6
+        ],
+        "expected_ecp_core": 55,
+        "template_input": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/canonical_water_cp_v2/prepared_v1/inputs/Dy__complex.inp",
+          "sha256": "112cc86e8ce2971b300740e50686af4ac7c6263780e823b34f69b66e859923b6"
+        }
+      },
+      "energy_hartree": -111.9481528,
+      "RHF_energy_hartree": -111.469157334,
+      "elapsed_seconds": 57.67803535494022
+    },
+    {
+      "cell_id": "Dy__ion_ghost_water",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/canonical_water_cp_v2/remaining_v1/tasks/Dy__ion_ghost_water/execution/RESULT.json",
+        "sha256": "f34dad817503367300f5eff85e71ae811b619b43215156f33e6e04e3da1b21a3"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/canonical_water_cp_v2/remaining_v1/tasks/Dy__ion_ghost_water/execution/endpoint.out",
+        "sha256": "425d19bbf76c0f4819a4f7f54077ab75ee0e438709e513879bdecf52d09d3dfb"
+      },
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/canonical_water_cp_v2/remaining_v1/tasks/Dy__ion_ghost_water/execution/endpoint.inp",
+        "sha256": "06abc4f5ccfd96513801d872ac5ad0ece0e03fbdd064ad7286e5714fd9c55efc"
+      },
+      "cell": {
+        "cell_id": "Dy__ion_ghost_water",
+        "metal": "Dy",
+        "role": "ion_ghost_water",
+        "symbols": [
+          "Dy",
+          "O",
+          "H",
+          "H"
+        ],
+        "positions_A": [
+          [
+            -0.031658,
+            -0.226996,
+            0.0
+          ],
+          [
+            0.282376,
+            2.03951,
+            -0.0
+          ],
+          [
+            0.375571,
+            2.657104,
+            0.778197
+          ],
+          [
+            0.375571,
+            2.657104,
+            -0.778197
+          ]
+        ],
+        "source_geometry": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/prepared_v2/xyz/water_central_Dy.xyz",
+          "sha256": "86d331271e4eaea04e29d47aa03c103fd6e3d295f916cded8c8aeb8b6486f550"
+        },
+        "ghost_mask": [
+          false,
+          true,
+          true,
+          true
+        ],
+        "charge": 3,
+        "multiplicity": 1,
+        "physical_multiplicity_of_parent": 6,
+        "expected_effective_nuclear_charges": [
+          11,
+          0,
+          0,
+          0
+        ],
+        "expected_electrons": 8,
+        "expected_correlated_electrons": 8,
+        "expected_basis_functions": 90,
+        "expected_basis_functions_by_center": [
+          47,
+          31,
+          6,
+          6
+        ],
+        "expected_ecp_core": 55,
+        "template_input": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/canonical_water_cp_v2/prepared_v1/inputs/Dy__ion_ghost_water.inp",
+          "sha256": "06abc4f5ccfd96513801d872ac5ad0ece0e03fbdd064ad7286e5714fd9c55efc"
+        }
+      },
+      "energy_hartree": -35.435037543,
+      "RHF_energy_hartree": -35.253083564,
+      "elapsed_seconds": 42.65380000602454
+    },
+    {
+      "cell_id": "Dy__water_ghost_ion",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/canonical_water_cp_v2/remaining_v1/tasks/Dy__water_ghost_ion/execution/RESULT.json",
+        "sha256": "7b113787d1e3505ffade802f95122d2d9834e1f22eb4321a0fb16d9c78c8aa8f"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/canonical_water_cp_v2/remaining_v1/tasks/Dy__water_ghost_ion/execution/endpoint.out",
+        "sha256": "83a5e389228ebf8db8d13e29c8960c3f80dbdcc8e318453f08d70e40fb610c6e"
+      },
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/canonical_water_cp_v2/remaining_v1/tasks/Dy__water_ghost_ion/execution/endpoint.inp",
+        "sha256": "d5942c55cdc9e9adde2edacc6e382f25f785aaa651e76602855cd8b4ed94cbc3"
+      },
+      "cell": {
+        "cell_id": "Dy__water_ghost_ion",
+        "metal": "Dy",
+        "role": "water_ghost_ion",
+        "symbols": [
+          "Dy",
+          "O",
+          "H",
+          "H"
+        ],
+        "positions_A": [
+          [
+            -0.031658,
+            -0.226996,
+            0.0
+          ],
+          [
+            0.282376,
+            2.03951,
+            -0.0
+          ],
+          [
+            0.375571,
+            2.657104,
+            0.778197
+          ],
+          [
+            0.375571,
+            2.657104,
+            -0.778197
+          ]
+        ],
+        "source_geometry": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/prepared_v2/xyz/water_central_Dy.xyz",
+          "sha256": "86d331271e4eaea04e29d47aa03c103fd6e3d295f916cded8c8aeb8b6486f550"
+        },
+        "ghost_mask": [
+          true,
+          false,
+          false,
+          false
+        ],
+        "charge": 0,
+        "multiplicity": 1,
+        "physical_multiplicity_of_parent": 6,
+        "expected_effective_nuclear_charges": [
+          0,
+          8,
+          1,
+          1
+        ],
+        "expected_electrons": 10,
+        "expected_correlated_electrons": 10,
+        "expected_basis_functions": 90,
+        "expected_basis_functions_by_center": [
+          47,
+          31,
+          6,
+          6
+        ],
+        "expected_ecp_core": 0,
+        "template_input": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/canonical_water_cp_v2/prepared_v1/inputs/Dy__water_ghost_ion.inp",
+          "sha256": "d5942c55cdc9e9adde2edacc6e382f25f785aaa651e76602855cd8b4ed94cbc3"
+        }
+      },
+      "energy_hartree": -76.346229649,
+      "RHF_energy_hartree": -76.054469071,
+      "elapsed_seconds": 39.902303989976645
+    },
+    {
+      "cell_id": "La__complex",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/canonical_water_cp_v2/remaining_v1/tasks/La__complex/execution/RESULT.json",
+        "sha256": "e50482660a035439842dd24924855abbe4f305241ceb706c18bc5e223e5a6f44"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/canonical_water_cp_v2/remaining_v1/tasks/La__complex/execution/endpoint.out",
+        "sha256": "5317f82a016796dbe6d95c5a8e69bfef6dc586d9d0ad08db8a3ef3c329e6ca32"
+      },
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/canonical_water_cp_v2/remaining_v1/tasks/La__complex/execution/endpoint.inp",
+        "sha256": "0612b5af93cb38185cdd3c2fe544778408739586754b5accfd0a15110f052126"
+      },
+      "cell": {
+        "cell_id": "La__complex",
+        "metal": "La",
+        "role": "complex",
+        "symbols": [
+          "La",
+          "O",
+          "H",
+          "H"
+        ],
+        "positions_A": [
+          [
+            -0.031658,
+            -0.226996,
+            0.0
+          ],
+          [
+            0.282376,
+            2.03951,
+            -0.0
+          ],
+          [
+            0.375571,
+            2.657104,
+            0.778197
+          ],
+          [
+            0.375571,
+            2.657104,
+            -0.778197
+          ]
+        ],
+        "source_geometry": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/prepared_v2/xyz/water_central_La.xyz",
+          "sha256": "878144a87bce441b7ddc6007d30a1dce51f7d23c65c9368b6f9eee0e714c7ebf"
+        },
+        "ghost_mask": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "charge": 3,
+        "multiplicity": 1,
+        "physical_multiplicity_of_parent": 1,
+        "expected_effective_nuclear_charges": [
+          11,
+          8,
+          1,
+          1
+        ],
+        "expected_electrons": 18,
+        "expected_correlated_electrons": 18,
+        "expected_basis_functions": 90,
+        "expected_basis_functions_by_center": [
+          47,
+          31,
+          6,
+          6
+        ],
+        "expected_ecp_core": 46,
+        "template_input": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/canonical_water_cp_v2/prepared_v1/inputs/La__complex.inp",
+          "sha256": "0612b5af93cb38185cdd3c2fe544778408739586754b5accfd0a15110f052126"
+        }
+      },
+      "energy_hartree": -106.522905661,
+      "RHF_energy_hartree": -106.057476039,
+      "elapsed_seconds": 57.76030507683754
+    },
+    {
+      "cell_id": "La__ion_ghost_water",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/canonical_water_cp_v2/remaining_v1/tasks/La__ion_ghost_water/execution/RESULT.json",
+        "sha256": "4a9b5d8fef1821052fe5b28765fabe81bc683ba058e21c9c8a897a197e52847a"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/canonical_water_cp_v2/remaining_v1/tasks/La__ion_ghost_water/execution/endpoint.out",
+        "sha256": "7430988d3f32d2019a4a4504b716f376be61c0423c32eaf7d37dfd646dbf66ab"
+      },
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/canonical_water_cp_v2/remaining_v1/tasks/La__ion_ghost_water/execution/endpoint.inp",
+        "sha256": "7415689ee0cf97f3683c92a23d7de1180d9f009e743b45be0e24781f4bf65e8d"
+      },
+      "cell": {
+        "cell_id": "La__ion_ghost_water",
+        "metal": "La",
+        "role": "ion_ghost_water",
+        "symbols": [
+          "La",
+          "O",
+          "H",
+          "H"
+        ],
+        "positions_A": [
+          [
+            -0.031658,
+            -0.226996,
+            0.0
+          ],
+          [
+            0.282376,
+            2.03951,
+            -0.0
+          ],
+          [
+            0.375571,
+            2.657104,
+            0.778197
+          ],
+          [
+            0.375571,
+            2.657104,
+            -0.778197
+          ]
+        ],
+        "source_geometry": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/prepared_v2/xyz/water_central_La.xyz",
+          "sha256": "878144a87bce441b7ddc6007d30a1dce51f7d23c65c9368b6f9eee0e714c7ebf"
+        },
+        "ghost_mask": [
+          false,
+          true,
+          true,
+          true
+        ],
+        "charge": 3,
+        "multiplicity": 1,
+        "physical_multiplicity_of_parent": 1,
+        "expected_effective_nuclear_charges": [
+          11,
+          0,
+          0,
+          0
+        ],
+        "expected_electrons": 8,
+        "expected_correlated_electrons": 8,
+        "expected_basis_functions": 90,
+        "expected_basis_functions_by_center": [
+          47,
+          31,
+          6,
+          6
+        ],
+        "expected_ecp_core": 46,
+        "template_input": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/canonical_water_cp_v2/prepared_v1/inputs/La__ion_ghost_water.inp",
+          "sha256": "7415689ee0cf97f3683c92a23d7de1180d9f009e743b45be0e24781f4bf65e8d"
+        }
+      },
+      "energy_hartree": -30.033747464,
+      "RHF_energy_hartree": -29.865604882,
+      "elapsed_seconds": 40.15814402815886
+    },
+    {
+      "cell_id": "cc__acetamide__La__complex",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/scout_v1/execution/RESULT.json",
+        "sha256": "72fefb0dba7c27126b1e579993d823602e3b54f1a0465dd1ec0366c3423f26e7"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/scout_v1/execution/endpoint.out",
+        "sha256": "a2339a66843303d20797d5e5355e06c7e533670fded4c485ec76df6c25a456ec"
+      },
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/scout_v1/execution/endpoint.inp",
+        "sha256": "8428ed8279ef9f6d200356efecc28691c430d8f5c393b5b6b2ae79f5ff156088"
+      },
+      "cell": {
+        "cell_id": "cc__acetamide__La__complex",
+        "method": "cc",
+        "donor": "acetamide",
+        "metal": "La",
+        "role": "complex",
+        "d4": false,
+        "symbols": [
+          "La",
+          "O",
+          "N",
+          "H",
+          "H",
+          "H",
+          "C",
+          "H",
+          "H",
+          "C"
+        ],
+        "positions_A": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            2.165063509461,
+            0.0,
+            1.25
+          ],
+          [
+            4.414356721971,
+            -5.6148e-07,
+            1.469588702529
+          ],
+          [
+            3.671323639733,
+            0.88273694697,
+            3.930640667142
+          ],
+          [
+            3.671325138622,
+            -0.882734666717,
+            3.930641466108
+          ],
+          [
+            5.270077815591,
+            -8.89201e-07,
+            2.036514851905
+          ],
+          [
+            3.1694231784,
+            6.3924e-07,
+            3.528281129572
+          ],
+          [
+            2.139211633499,
+            0.0,
+            3.850861543835
+          ],
+          [
+            4.526426632399,
+            -1.151716e-06,
+            0.458858047159
+          ],
+          [
+            3.287694712923,
+            1.81754e-07,
+            2.040880675657
+          ]
+        ],
+        "source_geometry": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/matched_water_removal_v1/prepared_v1/xyz/matched_dry_acetamide_central_La.xyz",
+          "sha256": "174e21af44270e6dde2f8bb330dd06ea5e1490dcabeb7d0cc394397dd5124c9a"
+        },
+        "ghost_mask": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "charge": 3,
+        "multiplicity": 1,
+        "physical_multiplicity_of_parent": 1,
+        "expected_effective_nuclear_charges": [
+          11,
+          8,
+          7,
+          1,
+          1,
+          1,
+          6,
+          1,
+          1,
+          6
+        ],
+        "expected_electrons": 40,
+        "expected_correlated_electrons": 40,
+        "expected_basis_functions": 201,
+        "expected_basis_functions_by_center": [
+          47,
+          31,
+          31,
+          6,
+          6,
+          6,
+          31,
+          6,
+          6,
+          31
+        ],
+        "expected_ecp_core": 46,
+        "template_input": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/prepared_v1/inputs/cc__acetamide__La__complex.inp",
+          "sha256": "8428ed8279ef9f6d200356efecc28691c430d8f5c393b5b6b2ae79f5ff156088"
+        }
+      },
+      "energy_hartree": -239.241749944,
+      "RHF_energy_hartree": -238.163789485,
+      "elapsed_seconds": 2300.656110803131
+    },
+    {
+      "cell_id": "cc__acetamide__La__ion_ghost_ligand",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetamide__La__ion_ghost_ligand/execution/RESULT.json",
+        "sha256": "4300da713839bc4a229476ec0fc2c9c6c9e01c2e098dab016139901ea8b9a1b9"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetamide__La__ion_ghost_ligand/execution/endpoint.out",
+        "sha256": "63009bda107dd985eca220cde2949adb5c651405f1d2c6be6d4211da55b16be3"
+      },
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetamide__La__ion_ghost_ligand/execution/endpoint.inp",
+        "sha256": "605a2b210e5e21782247a501ece2ea812f80ce83767edb3a06fc8d9035c1f24c"
+      },
+      "cell": {
+        "cell_id": "cc__acetamide__La__ion_ghost_ligand",
+        "method": "cc",
+        "donor": "acetamide",
+        "metal": "La",
+        "role": "ion_ghost_ligand",
+        "d4": false,
+        "symbols": [
+          "La",
+          "O",
+          "N",
+          "H",
+          "H",
+          "H",
+          "C",
+          "H",
+          "H",
+          "C"
+        ],
+        "positions_A": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            2.165063509461,
+            0.0,
+            1.25
+          ],
+          [
+            4.414356721971,
+            -5.6148e-07,
+            1.469588702529
+          ],
+          [
+            3.671323639733,
+            0.88273694697,
+            3.930640667142
+          ],
+          [
+            3.671325138622,
+            -0.882734666717,
+            3.930641466108
+          ],
+          [
+            5.270077815591,
+            -8.89201e-07,
+            2.036514851905
+          ],
+          [
+            3.1694231784,
+            6.3924e-07,
+            3.528281129572
+          ],
+          [
+            2.139211633499,
+            0.0,
+            3.850861543835
+          ],
+          [
+            4.526426632399,
+            -1.151716e-06,
+            0.458858047159
+          ],
+          [
+            3.287694712923,
+            1.81754e-07,
+            2.040880675657
+          ]
+        ],
+        "source_geometry": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/matched_water_removal_v1/prepared_v1/xyz/matched_dry_acetamide_central_La.xyz",
+          "sha256": "174e21af44270e6dde2f8bb330dd06ea5e1490dcabeb7d0cc394397dd5124c9a"
+        },
+        "ghost_mask": [
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "charge": 3,
+        "multiplicity": 1,
+        "physical_multiplicity_of_parent": 1,
+        "expected_effective_nuclear_charges": [
+          11,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected_electrons": 8,
+        "expected_correlated_electrons": 8,
+        "expected_basis_functions": 201,
+        "expected_basis_functions_by_center": [
+          47,
+          31,
+          31,
+          6,
+          6,
+          6,
+          31,
+          6,
+          6,
+          31
+        ],
+        "expected_ecp_core": 46,
+        "template_input": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/prepared_v1/inputs/cc__acetamide__La__ion_ghost_ligand.inp",
+          "sha256": "605a2b210e5e21782247a501ece2ea812f80ce83767edb3a06fc8d9035c1f24c"
+        }
+      },
+      "energy_hartree": -30.033855125,
+      "RHF_energy_hartree": -29.86560662,
+      "elapsed_seconds": 327.5715720921289
+    },
+    {
+      "cell_id": "cc__acetamide__La__ligand_ghost_ion",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetamide__La__ligand_ghost_ion/execution/RESULT.json",
+        "sha256": "064bca0df9dabc87505ef01cf53fe7dfb78fa4dceaab90a083e75cefbea59abd"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetamide__La__ligand_ghost_ion/execution/endpoint.out",
+        "sha256": "57a0406aeabd403e2feaa1757986989814b3c6b0f713bbbf40f85582d4ba2cde"
+      },
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetamide__La__ligand_ghost_ion/execution/endpoint.inp",
+        "sha256": "3379b52173d8d9e39962de25c89a83f4b6d669c1447bd21b09ba83a290e6401c"
+      },
+      "cell": {
+        "cell_id": "cc__acetamide__La__ligand_ghost_ion",
+        "method": "cc",
+        "donor": "acetamide",
+        "metal": "La",
+        "role": "ligand_ghost_ion",
+        "d4": false,
+        "symbols": [
+          "La",
+          "O",
+          "N",
+          "H",
+          "H",
+          "H",
+          "C",
+          "H",
+          "H",
+          "C"
+        ],
+        "positions_A": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            2.165063509461,
+            0.0,
+            1.25
+          ],
+          [
+            4.414356721971,
+            -5.6148e-07,
+            1.469588702529
+          ],
+          [
+            3.671323639733,
+            0.88273694697,
+            3.930640667142
+          ],
+          [
+            3.671325138622,
+            -0.882734666717,
+            3.930641466108
+          ],
+          [
+            5.270077815591,
+            -8.89201e-07,
+            2.036514851905
+          ],
+          [
+            3.1694231784,
+            6.3924e-07,
+            3.528281129572
+          ],
+          [
+            2.139211633499,
+            0.0,
+            3.850861543835
+          ],
+          [
+            4.526426632399,
+            -1.151716e-06,
+            0.458858047159
+          ],
+          [
+            3.287694712923,
+            1.81754e-07,
+            2.040880675657
+          ]
+        ],
+        "source_geometry": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/matched_water_removal_v1/prepared_v1/xyz/matched_dry_acetamide_central_La.xyz",
+          "sha256": "174e21af44270e6dde2f8bb330dd06ea5e1490dcabeb7d0cc394397dd5124c9a"
+        },
+        "ghost_mask": [
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "charge": 0,
+        "multiplicity": 1,
+        "physical_multiplicity_of_parent": 1,
+        "expected_effective_nuclear_charges": [
+          0,
+          8,
+          7,
+          1,
+          1,
+          1,
+          6,
+          1,
+          1,
+          6
+        ],
+        "expected_electrons": 32,
+        "expected_correlated_electrons": 32,
+        "expected_basis_functions": 201,
+        "expected_basis_functions_by_center": [
+          47,
+          31,
+          31,
+          6,
+          6,
+          6,
+          31,
+          6,
+          6,
+          31
+        ],
+        "expected_ecp_core": 0,
+        "template_input": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/prepared_v1/inputs/cc__acetamide__La__ligand_ghost_ion.inp",
+          "sha256": "3379b52173d8d9e39962de25c89a83f4b6d669c1447bd21b09ba83a290e6401c"
+        }
+      },
+      "energy_hartree": -208.928192013,
+      "RHF_energy_hartree": -208.025571249,
+      "elapsed_seconds": 1394.6732826191
+    },
+    {
+      "cell_id": "cc__acetamide__Dy__complex",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetamide__Dy__complex/execution/RESULT.json",
+        "sha256": "f99a1a91d31745bcc04fdf278cd159692d24433026562261cfd7266ad6756cb1"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetamide__Dy__complex/execution/endpoint.out",
+        "sha256": "11dd22e501eca004a3edf28df6188d868c4e25e58aceaf0c1a3fd842099b4d29"
+      },
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetamide__Dy__complex/execution/endpoint.inp",
+        "sha256": "f68209ad9671cf95b82374616c2bc5b2ab7274ed2d89fa1cdd730599cc4e85d6"
+      },
+      "cell": {
+        "cell_id": "cc__acetamide__Dy__complex",
+        "method": "cc",
+        "donor": "acetamide",
+        "metal": "Dy",
+        "role": "complex",
+        "d4": false,
+        "symbols": [
+          "Dy",
+          "O",
+          "N",
+          "H",
+          "H",
+          "H",
+          "C",
+          "H",
+          "H",
+          "C"
+        ],
+        "positions_A": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            2.165063509461,
+            0.0,
+            1.25
+          ],
+          [
+            4.414356721971,
+            -5.6148e-07,
+            1.469588702529
+          ],
+          [
+            3.671323639733,
+            0.88273694697,
+            3.930640667142
+          ],
+          [
+            3.671325138622,
+            -0.882734666717,
+            3.930641466108
+          ],
+          [
+            5.270077815591,
+            -8.89201e-07,
+            2.036514851905
+          ],
+          [
+            3.1694231784,
+            6.3924e-07,
+            3.528281129572
+          ],
+          [
+            2.139211633499,
+            0.0,
+            3.850861543835
+          ],
+          [
+            4.526426632399,
+            -1.151716e-06,
+            0.458858047159
+          ],
+          [
+            3.287694712923,
+            1.81754e-07,
+            2.040880675657
+          ]
+        ],
+        "source_geometry": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/matched_water_removal_v1/prepared_v1/xyz/matched_dry_acetamide_central_Dy.xyz",
+          "sha256": "53221037e0d6cee915caa1c5f3007bd62097b3dd96020a7249a78db0c9e9d27d"
+        },
+        "ghost_mask": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "charge": 3,
+        "multiplicity": 1,
+        "physical_multiplicity_of_parent": 6,
+        "expected_effective_nuclear_charges": [
+          11,
+          8,
+          7,
+          1,
+          1,
+          1,
+          6,
+          1,
+          1,
+          6
+        ],
+        "expected_electrons": 40,
+        "expected_correlated_electrons": 40,
+        "expected_basis_functions": 201,
+        "expected_basis_functions_by_center": [
+          47,
+          31,
+          31,
+          6,
+          6,
+          6,
+          31,
+          6,
+          6,
+          31
+        ],
+        "expected_ecp_core": 55,
+        "template_input": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/prepared_v1/inputs/cc__acetamide__Dy__complex.inp",
+          "sha256": "f68209ad9671cf95b82374616c2bc5b2ab7274ed2d89fa1cdd730599cc4e85d6"
+        }
+      },
+      "energy_hartree": -244.657604799,
+      "RHF_energy_hartree": -243.56311221,
+      "elapsed_seconds": 2308.76274562208
+    },
+    {
+      "cell_id": "cc__acetamide__Dy__ion_ghost_ligand",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetamide__Dy__ion_ghost_ligand/execution/RESULT.json",
+        "sha256": "c28cdb70210dada6f0d4d19e3003b7c49218ee2ed664f805a3c3499f4eab6889"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetamide__Dy__ion_ghost_ligand/execution/endpoint.out",
+        "sha256": "fe5494f5abf50add6c1ea3d26d5e7096e4d51df940ffa5769b39590e56563cef"
+      },
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetamide__Dy__ion_ghost_ligand/execution/endpoint.inp",
+        "sha256": "3a122dba920b42a9778c6434af1af9b665bde8df2065305df6216b3945da1f53"
+      },
+      "cell": {
+        "cell_id": "cc__acetamide__Dy__ion_ghost_ligand",
+        "method": "cc",
+        "donor": "acetamide",
+        "metal": "Dy",
+        "role": "ion_ghost_ligand",
+        "d4": false,
+        "symbols": [
+          "Dy",
+          "O",
+          "N",
+          "H",
+          "H",
+          "H",
+          "C",
+          "H",
+          "H",
+          "C"
+        ],
+        "positions_A": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            2.165063509461,
+            0.0,
+            1.25
+          ],
+          [
+            4.414356721971,
+            -5.6148e-07,
+            1.469588702529
+          ],
+          [
+            3.671323639733,
+            0.88273694697,
+            3.930640667142
+          ],
+          [
+            3.671325138622,
+            -0.882734666717,
+            3.930641466108
+          ],
+          [
+            5.270077815591,
+            -8.89201e-07,
+            2.036514851905
+          ],
+          [
+            3.1694231784,
+            6.3924e-07,
+            3.528281129572
+          ],
+          [
+            2.139211633499,
+            0.0,
+            3.850861543835
+          ],
+          [
+            4.526426632399,
+            -1.151716e-06,
+            0.458858047159
+          ],
+          [
+            3.287694712923,
+            1.81754e-07,
+            2.040880675657
+          ]
+        ],
+        "source_geometry": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/matched_water_removal_v1/prepared_v1/xyz/matched_dry_acetamide_central_Dy.xyz",
+          "sha256": "53221037e0d6cee915caa1c5f3007bd62097b3dd96020a7249a78db0c9e9d27d"
+        },
+        "ghost_mask": [
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "charge": 3,
+        "multiplicity": 1,
+        "physical_multiplicity_of_parent": 6,
+        "expected_effective_nuclear_charges": [
+          11,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected_electrons": 8,
+        "expected_correlated_electrons": 8,
+        "expected_basis_functions": 201,
+        "expected_basis_functions_by_center": [
+          47,
+          31,
+          31,
+          6,
+          6,
+          6,
+          31,
+          6,
+          6,
+          31
+        ],
+        "expected_ecp_core": 55,
+        "template_input": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/prepared_v1/inputs/cc__acetamide__Dy__ion_ghost_ligand.inp",
+          "sha256": "3a122dba920b42a9778c6434af1af9b665bde8df2065305df6216b3945da1f53"
+        }
+      },
+      "energy_hartree": -35.435219982,
+      "RHF_energy_hartree": -35.25308759,
+      "elapsed_seconds": 307.66847328981385
+    },
+    {
+      "cell_id": "cc__acetamide__Dy__ligand_ghost_ion",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetamide__Dy__ligand_ghost_ion/execution/RESULT.json",
+        "sha256": "a149f2d87962bd3d261b011077e894bcfa4b64e01d6e50816d7cdc22d34edc43"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetamide__Dy__ligand_ghost_ion/execution/endpoint.out",
+        "sha256": "0553661c4618bda1fd21c4aef23cd22066a3105875cc48cfd73e0d70f85d9e39"
+      },
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetamide__Dy__ligand_ghost_ion/execution/endpoint.inp",
+        "sha256": "2855da2feeb1cf72fc66ad39ba1e1626ed688895dafd3a6fdced24ea94f6d205"
+      },
+      "cell": {
+        "cell_id": "cc__acetamide__Dy__ligand_ghost_ion",
+        "method": "cc",
+        "donor": "acetamide",
+        "metal": "Dy",
+        "role": "ligand_ghost_ion",
+        "d4": false,
+        "symbols": [
+          "Dy",
+          "O",
+          "N",
+          "H",
+          "H",
+          "H",
+          "C",
+          "H",
+          "H",
+          "C"
+        ],
+        "positions_A": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            2.165063509461,
+            0.0,
+            1.25
+          ],
+          [
+            4.414356721971,
+            -5.6148e-07,
+            1.469588702529
+          ],
+          [
+            3.671323639733,
+            0.88273694697,
+            3.930640667142
+          ],
+          [
+            3.671325138622,
+            -0.882734666717,
+            3.930641466108
+          ],
+          [
+            5.270077815591,
+            -8.89201e-07,
+            2.036514851905
+          ],
+          [
+            3.1694231784,
+            6.3924e-07,
+            3.528281129572
+          ],
+          [
+            2.139211633499,
+            0.0,
+            3.850861543835
+          ],
+          [
+            4.526426632399,
+            -1.151716e-06,
+            0.458858047159
+          ],
+          [
+            3.287694712923,
+            1.81754e-07,
+            2.040880675657
+          ]
+        ],
+        "source_geometry": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/matched_water_removal_v1/prepared_v1/xyz/matched_dry_acetamide_central_Dy.xyz",
+          "sha256": "53221037e0d6cee915caa1c5f3007bd62097b3dd96020a7249a78db0c9e9d27d"
+        },
+        "ghost_mask": [
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "charge": 0,
+        "multiplicity": 1,
+        "physical_multiplicity_of_parent": 6,
+        "expected_effective_nuclear_charges": [
+          0,
+          8,
+          7,
+          1,
+          1,
+          1,
+          6,
+          1,
+          1,
+          6
+        ],
+        "expected_electrons": 32,
+        "expected_correlated_electrons": 32,
+        "expected_basis_functions": 201,
+        "expected_basis_functions_by_center": [
+          47,
+          31,
+          31,
+          6,
+          6,
+          6,
+          31,
+          6,
+          6,
+          31
+        ],
+        "expected_ecp_core": 0,
+        "template_input": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/prepared_v1/inputs/cc__acetamide__Dy__ligand_ghost_ion.inp",
+          "sha256": "2855da2feeb1cf72fc66ad39ba1e1626ed688895dafd3a6fdced24ea94f6d205"
+        }
+      },
+      "energy_hartree": -208.928045554,
+      "RHF_energy_hartree": -208.025539858,
+      "elapsed_seconds": 1270.8947085319087
+    },
+    {
+      "cell_id": "cc__acetate_bi__La__complex",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetate_bi__La__complex/execution/RESULT.json",
+        "sha256": "703336d1e298e4b550a2b40767e79c6d17c581e0c949ed5dabb0a13791e23ea2"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetate_bi__La__complex/execution/endpoint.out",
+        "sha256": "d500e5ab6f6c8d908f3ea155d1e603f53eff9aa0b2434274b76f1058edb7e560"
+      },
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetate_bi__La__complex/execution/endpoint.inp",
+        "sha256": "760b297732d367b40ceec611fd1f463dc1089405d77c0fd2ad1cc062a9048718"
+      },
+      "cell": {
+        "cell_id": "cc__acetate_bi__La__complex",
+        "method": "cc",
+        "donor": "acetate_bi",
+        "metal": "La",
+        "role": "complex",
+        "d4": false,
+        "symbols": [
+          "La",
+          "H",
+          "H",
+          "C",
+          "C",
+          "O",
+          "O",
+          "H"
+        ],
+        "positions_A": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.894460751081,
+            2.463703056778,
+            3.747470176779
+          ],
+          [
+            2.467983720255,
+            3.453082844226,
+            2.425301903591
+          ],
+          [
+            2.42298536634,
+            2.436728431492,
+            2.798070356298
+          ],
+          [
+            1.62289413913,
+            1.619724998804,
+            1.865526523562
+          ],
+          [
+            1.992966776556,
+            0.483505836197,
+            1.429792129614
+          ],
+          [
+            0.483505836197,
+            1.992966776556,
+            1.429792129614
+          ],
+          [
+            3.406474252233,
+            2.014863101059,
+            2.928687224812
+          ]
+        ],
+        "source_geometry": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/matched_water_removal_v1/prepared_v1/xyz/matched_dry_acetate_bi_central_La.xyz",
+          "sha256": "807e8354fee5384aa2969596e8bf58c6d692d2263ddb3bc27187007b87519728"
+        },
+        "ghost_mask": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "charge": 2,
+        "multiplicity": 1,
+        "physical_multiplicity_of_parent": 1,
+        "expected_effective_nuclear_charges": [
+          11,
+          1,
+          1,
+          6,
+          6,
+          8,
+          8,
+          1
+        ],
+        "expected_electrons": 40,
+        "expected_correlated_electrons": 40,
+        "expected_basis_functions": 189,
+        "expected_basis_functions_by_center": [
+          47,
+          6,
+          6,
+          31,
+          31,
+          31,
+          31,
+          6
+        ],
+        "expected_ecp_core": 46,
+        "template_input": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/prepared_v1/inputs/cc__acetate_bi__La__complex.inp",
+          "sha256": "760b297732d367b40ceec611fd1f463dc1089405d77c0fd2ad1cc062a9048718"
+        }
+      },
+      "energy_hartree": -259.06665147,
+      "RHF_energy_hartree": -257.953046756,
+      "elapsed_seconds": 1750.3368409129325
+    },
+    {
+      "cell_id": "cc__acetate_bi__La__ion_ghost_ligand",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetate_bi__La__ion_ghost_ligand/execution/RESULT.json",
+        "sha256": "70c3b5fa1ee6420b2b8416f8b8388bf653a775889643d9118860343e51a15390"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetate_bi__La__ion_ghost_ligand/execution/endpoint.out",
+        "sha256": "c1842c03ec87cd39f01a9987485eec27f33a3e00a177ae25b8dbf32bea6dead8"
+      },
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetate_bi__La__ion_ghost_ligand/execution/endpoint.inp",
+        "sha256": "714ec43348427279909054acfa10ceb1664c6bebd814fda107f68ceb6f86c14a"
+      },
+      "cell": {
+        "cell_id": "cc__acetate_bi__La__ion_ghost_ligand",
+        "method": "cc",
+        "donor": "acetate_bi",
+        "metal": "La",
+        "role": "ion_ghost_ligand",
+        "d4": false,
+        "symbols": [
+          "La",
+          "H",
+          "H",
+          "C",
+          "C",
+          "O",
+          "O",
+          "H"
+        ],
+        "positions_A": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.894460751081,
+            2.463703056778,
+            3.747470176779
+          ],
+          [
+            2.467983720255,
+            3.453082844226,
+            2.425301903591
+          ],
+          [
+            2.42298536634,
+            2.436728431492,
+            2.798070356298
+          ],
+          [
+            1.62289413913,
+            1.619724998804,
+            1.865526523562
+          ],
+          [
+            1.992966776556,
+            0.483505836197,
+            1.429792129614
+          ],
+          [
+            0.483505836197,
+            1.992966776556,
+            1.429792129614
+          ],
+          [
+            3.406474252233,
+            2.014863101059,
+            2.928687224812
+          ]
+        ],
+        "source_geometry": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/matched_water_removal_v1/prepared_v1/xyz/matched_dry_acetate_bi_central_La.xyz",
+          "sha256": "807e8354fee5384aa2969596e8bf58c6d692d2263ddb3bc27187007b87519728"
+        },
+        "ghost_mask": [
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "charge": 3,
+        "multiplicity": 1,
+        "physical_multiplicity_of_parent": 1,
+        "expected_effective_nuclear_charges": [
+          11,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected_electrons": 8,
+        "expected_correlated_electrons": 8,
+        "expected_basis_functions": 189,
+        "expected_basis_functions_by_center": [
+          47,
+          6,
+          6,
+          31,
+          31,
+          31,
+          31,
+          6
+        ],
+        "expected_ecp_core": 46,
+        "template_input": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/prepared_v1/inputs/cc__acetate_bi__La__ion_ghost_ligand.inp",
+          "sha256": "714ec43348427279909054acfa10ceb1664c6bebd814fda107f68ceb6f86c14a"
+        }
+      },
+      "energy_hartree": -30.034381115,
+      "RHF_energy_hartree": -29.865608165,
+      "elapsed_seconds": 274.6846895851195
+    },
+    {
+      "cell_id": "cc__acetate_bi__La__ligand_ghost_ion",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetate_bi__La__ligand_ghost_ion/execution/RESULT.json",
+        "sha256": "a7b9c3fb6ecd67174631aefd02e20645fd71fa8d2059a27c403cbd0e645d01e7"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetate_bi__La__ligand_ghost_ion/execution/endpoint.out",
+        "sha256": "3087287875ac20f7f06203c53dbc55cae5176274609a23792c59d79dc0ded76e"
+      },
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetate_bi__La__ligand_ghost_ion/execution/endpoint.inp",
+        "sha256": "bce6fc63a2d693d8a76445098aea9d9611dc20165c18aedfd378d0d3efff528c"
+      },
+      "cell": {
+        "cell_id": "cc__acetate_bi__La__ligand_ghost_ion",
+        "method": "cc",
+        "donor": "acetate_bi",
+        "metal": "La",
+        "role": "ligand_ghost_ion",
+        "d4": false,
+        "symbols": [
+          "La",
+          "H",
+          "H",
+          "C",
+          "C",
+          "O",
+          "O",
+          "H"
+        ],
+        "positions_A": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.894460751081,
+            2.463703056778,
+            3.747470176779
+          ],
+          [
+            2.467983720255,
+            3.453082844226,
+            2.425301903591
+          ],
+          [
+            2.42298536634,
+            2.436728431492,
+            2.798070356298
+          ],
+          [
+            1.62289413913,
+            1.619724998804,
+            1.865526523562
+          ],
+          [
+            1.992966776556,
+            0.483505836197,
+            1.429792129614
+          ],
+          [
+            0.483505836197,
+            1.992966776556,
+            1.429792129614
+          ],
+          [
+            3.406474252233,
+            2.014863101059,
+            2.928687224812
+          ]
+        ],
+        "source_geometry": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/matched_water_removal_v1/prepared_v1/xyz/matched_dry_acetate_bi_central_La.xyz",
+          "sha256": "807e8354fee5384aa2969596e8bf58c6d692d2263ddb3bc27187007b87519728"
+        },
+        "ghost_mask": [
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "charge": -1,
+        "multiplicity": 1,
+        "physical_multiplicity_of_parent": 1,
+        "expected_effective_nuclear_charges": [
+          0,
+          1,
+          1,
+          6,
+          6,
+          8,
+          8,
+          1
+        ],
+        "expected_electrons": 32,
+        "expected_correlated_electrons": 32,
+        "expected_basis_functions": 189,
+        "expected_basis_functions_by_center": [
+          47,
+          6,
+          6,
+          31,
+          31,
+          31,
+          31,
+          6
+        ],
+        "expected_ecp_core": 0,
+        "template_input": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/prepared_v1/inputs/cc__acetate_bi__La__ligand_ghost_ion.inp",
+          "sha256": "bce6fc63a2d693d8a76445098aea9d9611dc20165c18aedfd378d0d3efff528c"
+        }
+      },
+      "energy_hartree": -228.240561291,
+      "RHF_energy_hartree": -227.312924168,
+      "elapsed_seconds": 1084.3454508490395
+    },
+    {
+      "cell_id": "cc__acetate_bi__Dy__complex",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetate_bi__Dy__complex/execution/RESULT.json",
+        "sha256": "12bc95f47256a268609d5afe256f58e4b5ef521b81789ff3ba417da07fd2ad13"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetate_bi__Dy__complex/execution/endpoint.out",
+        "sha256": "7d8144fb76b0b5633ba0c15db7cf26736abcda01f07dc4e46df5fdd938ff4ba2"
+      },
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetate_bi__Dy__complex/execution/endpoint.inp",
+        "sha256": "69371b6c3291c74b6eed3cc2eba41ab13caff8fe8122a2134b159067a63184e3"
+      },
+      "cell": {
+        "cell_id": "cc__acetate_bi__Dy__complex",
+        "method": "cc",
+        "donor": "acetate_bi",
+        "metal": "Dy",
+        "role": "complex",
+        "d4": false,
+        "symbols": [
+          "Dy",
+          "H",
+          "H",
+          "C",
+          "C",
+          "O",
+          "O",
+          "H"
+        ],
+        "positions_A": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.894460751081,
+            2.463703056778,
+            3.747470176779
+          ],
+          [
+            2.467983720255,
+            3.453082844226,
+            2.425301903591
+          ],
+          [
+            2.42298536634,
+            2.436728431492,
+            2.798070356298
+          ],
+          [
+            1.62289413913,
+            1.619724998804,
+            1.865526523562
+          ],
+          [
+            1.992966776556,
+            0.483505836197,
+            1.429792129614
+          ],
+          [
+            0.483505836197,
+            1.992966776556,
+            1.429792129614
+          ],
+          [
+            3.406474252233,
+            2.014863101059,
+            2.928687224812
+          ]
+        ],
+        "source_geometry": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/matched_water_removal_v1/prepared_v1/xyz/matched_dry_acetate_bi_central_Dy.xyz",
+          "sha256": "d024ef4a9c43ae21f1db75a7d0167487b48f926161662919ee9e03cadba894f4"
+        },
+        "ghost_mask": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "charge": 2,
+        "multiplicity": 1,
+        "physical_multiplicity_of_parent": 6,
+        "expected_effective_nuclear_charges": [
+          11,
+          1,
+          1,
+          6,
+          6,
+          8,
+          8,
+          1
+        ],
+        "expected_electrons": 40,
+        "expected_correlated_electrons": 40,
+        "expected_basis_functions": 189,
+        "expected_basis_functions_by_center": [
+          47,
+          6,
+          6,
+          31,
+          31,
+          31,
+          31,
+          6
+        ],
+        "expected_ecp_core": 55,
+        "template_input": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/prepared_v1/inputs/cc__acetate_bi__Dy__complex.inp",
+          "sha256": "69371b6c3291c74b6eed3cc2eba41ab13caff8fe8122a2134b159067a63184e3"
+        }
+      },
+      "energy_hartree": -264.500053636,
+      "RHF_energy_hartree": -263.368566581,
+      "elapsed_seconds": 1856.2444823081605
+    },
+    {
+      "cell_id": "cc__acetate_bi__Dy__ion_ghost_ligand",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetate_bi__Dy__ion_ghost_ligand/execution/RESULT.json",
+        "sha256": "471d03ad67e28235cb4a391b09860239208420c21be44bb05f8ef755364612fe"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetate_bi__Dy__ion_ghost_ligand/execution/endpoint.out",
+        "sha256": "ca4227dc225a47182ca46f8cd46861a80973aa7c4e61ff103806234ad0732dde"
+      },
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetate_bi__Dy__ion_ghost_ligand/execution/endpoint.inp",
+        "sha256": "89d19edf061d6b86efed640b4d03252e57bd7fe533e1cb344435015287b0ec6d"
+      },
+      "cell": {
+        "cell_id": "cc__acetate_bi__Dy__ion_ghost_ligand",
+        "method": "cc",
+        "donor": "acetate_bi",
+        "metal": "Dy",
+        "role": "ion_ghost_ligand",
+        "d4": false,
+        "symbols": [
+          "Dy",
+          "H",
+          "H",
+          "C",
+          "C",
+          "O",
+          "O",
+          "H"
+        ],
+        "positions_A": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.894460751081,
+            2.463703056778,
+            3.747470176779
+          ],
+          [
+            2.467983720255,
+            3.453082844226,
+            2.425301903591
+          ],
+          [
+            2.42298536634,
+            2.436728431492,
+            2.798070356298
+          ],
+          [
+            1.62289413913,
+            1.619724998804,
+            1.865526523562
+          ],
+          [
+            1.992966776556,
+            0.483505836197,
+            1.429792129614
+          ],
+          [
+            0.483505836197,
+            1.992966776556,
+            1.429792129614
+          ],
+          [
+            3.406474252233,
+            2.014863101059,
+            2.928687224812
+          ]
+        ],
+        "source_geometry": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/matched_water_removal_v1/prepared_v1/xyz/matched_dry_acetate_bi_central_Dy.xyz",
+          "sha256": "d024ef4a9c43ae21f1db75a7d0167487b48f926161662919ee9e03cadba894f4"
+        },
+        "ghost_mask": [
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "charge": 3,
+        "multiplicity": 1,
+        "physical_multiplicity_of_parent": 6,
+        "expected_effective_nuclear_charges": [
+          11,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected_electrons": 8,
+        "expected_correlated_electrons": 8,
+        "expected_basis_functions": 189,
+        "expected_basis_functions_by_center": [
+          47,
+          6,
+          6,
+          31,
+          31,
+          31,
+          31,
+          6
+        ],
+        "expected_ecp_core": 55,
+        "template_input": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/prepared_v1/inputs/cc__acetate_bi__Dy__ion_ghost_ligand.inp",
+          "sha256": "89d19edf061d6b86efed640b4d03252e57bd7fe533e1cb344435015287b0ec6d"
+        }
+      },
+      "energy_hartree": -35.435662883,
+      "RHF_energy_hartree": -35.253091356,
+      "elapsed_seconds": 297.7108837629203
+    },
+    {
+      "cell_id": "cc__acetate_bi__Dy__ligand_ghost_ion",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetate_bi__Dy__ligand_ghost_ion/execution/RESULT.json",
+        "sha256": "af44ad524c804b6b6fb8e12fa2a0bc61e8822d707faf716d8a55b13a52d9554f"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetate_bi__Dy__ligand_ghost_ion/execution/endpoint.out",
+        "sha256": "bf875406edc43af7cd93d41ad14669abe62e01893f193aa2451ecde05c30b530"
+      },
+      "input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/cc_remaining_v1/tasks/cc__acetate_bi__Dy__ligand_ghost_ion/execution/endpoint.inp",
+        "sha256": "bb4c847051b6e8d2a2154f8027bc8710586e7b8be670dc918d9ed9540b00c4b6"
+      },
+      "cell": {
+        "cell_id": "cc__acetate_bi__Dy__ligand_ghost_ion",
+        "method": "cc",
+        "donor": "acetate_bi",
+        "metal": "Dy",
+        "role": "ligand_ghost_ion",
+        "d4": false,
+        "symbols": [
+          "Dy",
+          "H",
+          "H",
+          "C",
+          "C",
+          "O",
+          "O",
+          "H"
+        ],
+        "positions_A": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.894460751081,
+            2.463703056778,
+            3.747470176779
+          ],
+          [
+            2.467983720255,
+            3.453082844226,
+            2.425301903591
+          ],
+          [
+            2.42298536634,
+            2.436728431492,
+            2.798070356298
+          ],
+          [
+            1.62289413913,
+            1.619724998804,
+            1.865526523562
+          ],
+          [
+            1.992966776556,
+            0.483505836197,
+            1.429792129614
+          ],
+          [
+            0.483505836197,
+            1.992966776556,
+            1.429792129614
+          ],
+          [
+            3.406474252233,
+            2.014863101059,
+            2.928687224812
+          ]
+        ],
+        "source_geometry": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/matched_water_removal_v1/prepared_v1/xyz/matched_dry_acetate_bi_central_Dy.xyz",
+          "sha256": "d024ef4a9c43ae21f1db75a7d0167487b48f926161662919ee9e03cadba894f4"
+        },
+        "ghost_mask": [
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "charge": -1,
+        "multiplicity": 1,
+        "physical_multiplicity_of_parent": 6,
+        "expected_effective_nuclear_charges": [
+          0,
+          1,
+          1,
+          6,
+          6,
+          8,
+          8,
+          1
+        ],
+        "expected_electrons": 32,
+        "expected_correlated_electrons": 32,
+        "expected_basis_functions": 189,
+        "expected_basis_functions_by_center": [
+          47,
+          6,
+          6,
+          31,
+          31,
+          31,
+          31,
+          6
+        ],
+        "expected_ecp_core": 0,
+        "template_input": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/prepared_v1/inputs/cc__acetate_bi__Dy__ligand_ghost_ion.inp",
+          "sha256": "bb4c847051b6e8d2a2154f8027bc8710586e7b8be670dc918d9ed9540b00c4b6"
+        }
+      },
+      "energy_hartree": -228.239927691,
+      "RHF_energy_hartree": -227.312681078,
+      "elapsed_seconds": 1307.7297621159814
+    }
+  ],
+  "canonical_control_count": 18,
+  "compatible_cluster_CC_results_found": 0,
+  "donor_report": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/FINAL_REPORT.md",
+    "sha256": "607d6a08521e65a5ffe614661dd61d498021a4566473475995d35ac9eb84ae85"
+  },
+  "donor_evidence": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/FINAL_EVIDENCE.json",
+    "sha256": "3d442f16c25af5c488047899e0edfc9502ce1200d8ef7853720eef9562b04821"
+  },
+  "full_canonical_cost_projection": {
+    "method": "measured amide stages scaled o^2 v^4 nontriples MDCI and o^3 v^4 triples; no parallel speedup assumed",
+    "W8_wall_hours_four_ranks": {
+      "La": 55.77,
+      "Dy": 52.89
+    },
+    "W9_wall_hours_four_ranks": {
+      "La": 110.84,
+      "Dy": 104.29
+    },
+    "four_full_CPU_hours": 1295.1578,
+    "twelve_CP_CPU_hours": 2306.6406,
+    "measured": false,
+    "recommended_for_execution": false
+  },
+  "official_docs": [
+    "https://orca-manual.mpi-muelheim.mpg.de/contents/modelchemistries/mdci.html",
+    "https://orca-manual.mpi-muelheim.mpg.de/contents/essentialelements/basisset.html",
+    "https://orca-manual.mpi-muelheim.mpg.de/contents/essentialelements/frozencore.html"
+  ]
+}

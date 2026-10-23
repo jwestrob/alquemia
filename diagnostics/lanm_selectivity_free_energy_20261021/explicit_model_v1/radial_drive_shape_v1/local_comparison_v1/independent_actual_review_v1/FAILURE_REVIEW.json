@@ -1,0 +1,59 @@
+{
+  "status": "reviewed_radial_pre_native_journal_initialization_failure",
+  "configuration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/local_comparison_v1/run_v1/CONFIG_RUN.json",
+    "sha256": "0356ddb56fb8b41649d80f914a7f5002584efce55481b1e135f6fc8d7a62e3af"
+  },
+  "release": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/local_comparison_v1/run_v1/ROOT_RELEASE.json",
+    "sha256": "9e97c530c712224a4b01a154a97354f686947b2e56179a28a4a17a97c4bdf891"
+  },
+  "stale_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/local_comparison_v1/run_v1/execution/RESULT.json",
+    "sha256": "f8b94e60000537d0f138f9fc7be3f303cae591a0e29ea7eaf5627bcfc146eed9"
+  },
+  "stderr": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/local_comparison_v1/run_v1/stderr.log",
+    "sha256": "e579555d53f11cbf7be2b862fad57fa06efee1cb1dad72b403f40654e770a63c"
+  },
+  "journal": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/local_comparison_v1/run_v1/execution/cache/EVENTS.jsonl",
+    "sha256": "742718f7f9a50acf2277ea45193aa06bf57d2ffdc2de052b4752ec3126ceb15a"
+  },
+  "source_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/local_comparison_v1/independent_source_review_v1/REVIEW.json",
+    "sha256": "57b00fdd024eeaffd00198f3da8323e1b52e53ce15d59ac61241949639e92253"
+  },
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/local_comparison_v1/RUN.py",
+    "sha256": "30aaf615e98b33c88d8269e9ec7efa69cb09c027cfd4b7e21b75b70c6b417876"
+  },
+  "adapter": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/local_comparison_v1/ADAPTER.py",
+    "sha256": "ccdb0027df7042556cbc7d3c636cb28a4feed7beeae277d47b3ba79ca4af622b"
+  },
+  "committed_events": [
+    "initialize",
+    "stop"
+  ],
+  "committed_hash_chain_valid": true,
+  "primary_error": "KeyError('limits')",
+  "secondary_error": "Journal/live ledger mismatch during final snapshot",
+  "new_native_calls": 0,
+  "solver_calls": 0,
+  "scientific_outcome_available": false,
+  "result_status_is_terminal_authority": false,
+  "explanation": "Radial initialization omitted ledger limits before durable journal initialization. Inherited evaluate mutates the live request then request_start dry-check fails on missing limits, before threadpool/native dispatch. Stop is committed, but live request was never committed; final expected-ledger snapshot correctly rejects mismatch and leaves RESULT started.",
+  "minimal_recovery": [
+    "Initialize ledger limits from exact four-vector/112-program cfg before Journal constructor.",
+    "Preserve the mismatch guard; if failure snapshot also fails, write a separate terminal receipt with both errors and committed-journal evidence, without repairing or fabricating journal state.",
+    "One tiny manufactured inherited evaluate/request_start/invocation-intent/fake-receipt test, plus explicit reporting-failure control; no real native or solver call."
+  ],
+  "preserve_v1": true,
+  "review_cost": {
+    "wall_seconds": 0.01383566192816943,
+    "CPU_seconds": 0.007641092000000002,
+    "threads": 1
+  },
+  "original_attempt_terminal_cost": "Unavailable in stale RESULT; root process evidence is separate."
+}

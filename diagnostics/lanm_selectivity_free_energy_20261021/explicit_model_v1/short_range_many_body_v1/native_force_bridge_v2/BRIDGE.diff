@@ -1,0 +1,36 @@
+--- native_force_bridge_v1/BRIDGE.f90
++++ native_force_bridge_v2/BRIDGE.f90
+@@ -42,6 +42,11 @@
+   subroutine guard()
+     integer :: ii, atom
+     logical, allocatable :: seen(:)
++    ! Preserve all native switches; report them even if a later guard rejects.
++    write(*,'(a,5(1x,l1))') 'SRMB_GUARD_CHGTRN_RXNFLD_ORBIT_EXTRA_METAL', &
++                          use_chgtrn,use_rxnfld,use_orbit,use_extra,use_metal
++    write(*,'(a)') 'SRMB_EXTRA_POLICY SOURCE_BOUND_ZERO_ONLY_EXTRA1_28ee5bf8'
++    flush(6)
+     call insist(n>=1.and.n<=28.and.npole==n,'finite 1..28 all-atom response scope')
+     call insist(poltyp=='MUTUAL'.and.use_thole.and.use_polar.and.use_mpole,'MUTUAL Thole multipoles required')
+     call insist(.not.(use_bounds.or.use_replica.or.use_polymer.or.use_ewald.or.use_list.or.use_mlist.or.use_ulist), &
+@@ -49,7 +54,10 @@
+     call insist(.not.(use_solv.or.use_chgpen.or.use_expol.or.use_tholed.or.use_chgflx), &
+                 'unsupported modified electrostatics')
+     call insist(.not.(use_pred.or.use_ielscf.or.use_exfreq.or.use_exfld),'no history/dynamics/external field')
+-    call insist(.not.(use_chgtrn.or.use_rxnfld.or.use_orbit.or.use_extra.or.use_metal), &
++    ! field.f defaults use_extra=T. Exact linked extra1.f only zeros ex/dex;
++    ! kextra.f is empty. The source/build contract pins this archive and noop.
++    ! Keep use_extra and its original gradient dispatch, never turn physics off.
++    call insist(.not.(use_chgtrn.or.use_rxnfld.or.use_orbit.or.use_metal), &
+                 'unsupported additional coupled terms')
+     call insist(.not.(use_charge.or.use_chgdpl.or.use_dipole),'multipole permanent electrostatics only')
+     call insist(mpolecut>=1d12.and.dielec==1d0,'baseline cutoff and unit dielectric')
+@@ -197,6 +205,9 @@
+     uind(:,1:n)=us;uinp(:,1:n)=vs
+     call srmb_native_gradient(energy,derivs)
+     gradient_calls=gradient_calls+1
++    call insist(ex==0d0.and.all(dex(:,1:n)==0d0),'source-bound no-op extra1 changed energy or gradient')
++    write(*,'(a)') 'SRMB_EXTRA_ZERO_ENERGY_GRADIENT T'
++    flush(6)
+     call insist(all(uind(:,1:n)==us).and.all(uinp(:,1:n)==vs),'gradient changed supplied dipoles')
+     call insist(ieee_is_finite(energy).and.ieee_is_finite(ep).and.all(ieee_is_finite(derivs)).and. &
+                 all(ieee_is_finite(dep(:,1:n))).and.all(ieee_is_finite(vir)),'finite force readback')

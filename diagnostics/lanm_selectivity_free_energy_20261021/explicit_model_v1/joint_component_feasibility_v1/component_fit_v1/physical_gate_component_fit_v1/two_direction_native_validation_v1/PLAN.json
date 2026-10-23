@@ -1,0 +1,100 @@
+{
+  "status": "declared_two_fixed_native_direction_validation_awaiting_admission_and_source",
+  "utc": "2026-10-23T01:30:31.386757+00:00",
+  "question": "Does the nonlinear model reproduce the qualitative local contrast between preserving physical/electrical constraints and removing physical gates?",
+  "center_key": "feca1810ed27e323ae37e500b1d9c46f3ec2d0c34b652eeab2e2156ac62d45c8",
+  "affine_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/final_local_attribution_v1/run_v1/execution/affine_cases/RESULT.json",
+    "sha256": "346a018d4beabd7e6f8255e55dfbee98dd495935d447d934978808eb0c13b48d"
+  },
+  "panel_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/final_local_attribution_v1/run_v1/execution/RESULT.json",
+    "sha256": "1bef066c9fc9882e4a8f191db4b0bfb0f2ab99f14ec8c23e019f9e196c4b3d55"
+  },
+  "rows": [
+    {
+      "id": "B_half",
+      "case": "B",
+      "fraction": 0.5,
+      "parameters": [
+        0.037580031284628695,
+        0.022167706382252815,
+        0.9121209966616048,
+        0.5722450084506157,
+        0.0919745185412366,
+        0.06461952859089914,
+        0.6470073805467088,
+        -0.9998294062518306,
+        3.741559667406514,
+        0.2465894110298039,
+        3.496339327920968,
+        0.45913959260320614
+      ],
+      "key": "4511902b18c370c867d91d31ffe83ead885a4ff9ca9dcd85b4cd12e5103f56bb",
+      "source_prediction": {
+        "affine_result": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/final_local_attribution_v1/run_v1/execution/affine_cases/RESULT.json",
+          "sha256": "346a018d4beabd7e6f8255e55dfbee98dd495935d447d934978808eb0c13b48d"
+        },
+        "case": "B",
+        "fraction": 0.5
+      },
+      "role": "electrical_norm_preserving_predicted_direction",
+      "expected_new_programs": 56,
+      "production_eligible": false
+    },
+    {
+      "id": "D_half",
+      "case": "D",
+      "fraction": 0.5,
+      "parameters": [
+        0.025105241528799747,
+        0.0215249254543797,
+        0.9229389925996364,
+        0.5433526471794173,
+        0.10331619529568924,
+        0.06106136937162135,
+        0.6611029239436862,
+        -0.9826482428708887,
+        3.730707715577814,
+        0.24879429637882988,
+        3.508062069706092,
+        0.45483926859227675
+      ],
+      "key": "2103e1bcf6331f51b57580e71fc9a4b6ec78e54543208eb141da623326faa562",
+      "source_prediction": {
+        "affine_result": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/final_local_attribution_v1/run_v1/execution/affine_cases/RESULT.json",
+          "sha256": "346a018d4beabd7e6f8255e55dfbee98dd495935d447d934978808eb0c13b48d"
+        },
+        "case": "D",
+        "fraction": 0.5
+      },
+      "role": "physical_gate_relaxed_diagnostic_only",
+      "expected_new_programs": 56,
+      "production_eligible": false
+    }
+  ],
+  "settings": "Unchanged exact admitted native evaluator, reference tables,12parameter domain, original25physical gates and all electrical/component metrics; no refit or solver. Both endpoints are already inside original box.",
+  "limits": {
+    "new_vectors": 2,
+    "native_programs": 112,
+    "workers": 12,
+    "numerical_threads": 1,
+    "aggregate_reserved_login_threads": 13,
+    "solver_calls": 0,
+    "new_reference_calls": 0,
+    "heldout_reads": 0,
+    "optimizer_steps": 0,
+    "automatic_retries": 0
+  },
+  "reuse": "Reuse exact center/previous cells if scientific cache identities match; inventory before numerical execution. No duplicate center or derivative calculations.",
+  "interpretation": [
+    "Report actual and predicted component errors, all25 physical checks, pair/C/chi RMS and signed W9contrast for bothpoints",
+    "A failure of a physical check is a diagnostic result, never an acceptance or reason to relax tolerance",
+    "If nonlinear direction disagrees with affine, retain that limitation instead of asserting model-form failure",
+    "If contrast survives, use it to motivate separately specified flexibility in distance-dependent energy/force; do not claim unique microscopic cause",
+    "No model promotion, broader fit, new term or heldout qualification follows automatically"
+  ],
+  "execution_gate": "Actual final-local saved admission and reviewed two-vector implementation/configuration before root release; no launch from plan alone."
+}

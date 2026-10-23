@@ -1,0 +1,21 @@
+Independent bounded arithmetic review: passed
+
+Actual diagnostic: ce2fd33896b823c53b43eca4c49813b56fe1ba547bf774adb02602b873cd1dc0.
+Review receipt: W/explicit_model_v1/joint_component_feasibility_v1/math_review_v1/actual_v1/REVIEW.json
+SHA 972b73b2b254929a378d1672f10be439cd261f6c4482146d15403f6fb2d03635.
+W denotes workspaces/lanm_selectivity_free_energy_20261021 below the project root.
+
+Scope and outcome
+Reconstructed the final origin, its 24 exact probes, and four saved trials from 29 pinned vector artifacts. Independently summed literal W8/W9 pair and collective energies, reconstructed both Jacobians, checked the three stored primal/dual certificates without solving, and recomputed all 96 trial classifications and stored metric gate decisions. Original531 Jacobian is exact; independent cycle and component-Jacobian differences are 1.14e-13 and 1.14e-11, inside the original arithmetic allowance. No raw native admission suite was repeated.
+
+All 96 trials are retained. Twenty-one reduce both P/B blocks, nonincrease all original four blocks, and pass all25 old gates. Twelve of the 16 trials from already-qualified origins qualify: two at origin3, two at origin4, four at origin23, and all four at origin24. These are distinct trial records, not a new selected candidate or an independent validation set.
+
+Tangent certificate versus finite norm
+At origin24 the protect-all LP has t=1.64521638065. Its protected original E/F weighted residual norm is 0.195833527 at the origin but 2.179234196 at half and 4.345249638 at full direction. This increase is already present in the linear residual model: the first-order squared-norm term is effectively zero, while ||J_EF d||^2=18.842843644 is positive. Protecting only r^T Jd cannot control the positive quadratic term. All four protected blocks increase in full linearized norm along this direction. Shrinking this particular tangent-optimal direction does not create a meaningful nonincrease step when its protected slopes are zero; the direction itself must be constrained by finite residual norms and individual gates.
+
+The four actual final-origin trial points have small, directly checked linearization errors: at most 0.020644 kcal/mol in a P/B component and 0.003202 in weighted E/F residual L2. Their P/B errors remain large, approximately +25/+28 and -20/-24 kcal/mol. Small simultaneous improvement is observed; repair or physical validation is not established. Origin24 is not the terminal selected vector, so its Jacobian cannot be relabeled as selected-point sensitivity.
+
+Smallest next informative experiment
+Keep the present 12-parameter family for one prospectively bounded local step at the declared saved origin. Use full predicted residual norms for the four original blocks, simultaneous P/B norm reduction, exact original ten energy inequalities and 15 rigid-force RMS/max-component gates, and the existing parameter/trust box. No new physical threshold or weighted combined score is needed. A numerically feasible positive step would justify a separately declared finite native comparison of that single candidate, including all original gates and the existing consumed trimer regression. SLSQP failure alone would not prove infeasibility; solver/certificate limitations must remain explicit. The historical qualifying trials favor this test before adding a new functional term. They do not rule out a later functional deficiency if component repair stalls under actual retained mechanics gates.
+
+Cost: 2.347700 wall seconds / 2.321855 CPU seconds, one thread. Zero native calls, reference calls, new parameter evaluations, optimizations, fitting or selection. This report proposes a next experiment; it executes none.

@@ -1,0 +1,70 @@
+{
+  "status": "passed_remaining_baseline_export_source_review",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/local_response_repair_v1/operator_fixture_inventory_v1/export_runner/RUN.py",
+    "sha256": "34f2f027c69fc8fc4ea472087fa7b7068dfc6ba5861c282a9d4dcae90f507deb"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/local_response_repair_v1/operator_fixture_inventory_v1/export_runner/SPEC.md",
+    "sha256": "4fccdb06e5498657a9421c672b53a1f16cd8ae6e030c4c3e5e3c823d4961080b"
+  },
+  "configuration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/local_response_repair_v1/operator_fixture_inventory_v1/export_runner/CONFIG_RUN_UNBOUND.json",
+    "sha256": "a4bf951b6b991ef85d0cf94095e95c41ce087cb493ca2d3624e080c4c567a2ba"
+  },
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/local_response_repair_v1/operator_fixture_inventory_v1/export_runner/preparation_v2/MANIFEST.json",
+    "sha256": "38fb8247a54310942f15851b40d2f33aab930b82bfb8a2499553b28e3d150280"
+  },
+  "inventory": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/local_response_repair_v1/operator_fixture_inventory_v1/FIXTURE_INVENTORY.json",
+    "sha256": "0348cc547ca3cc37ae17341aa38fc345946744d9e83f07cb77bc2f731e8fe5ff"
+  },
+  "export_source_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/source_v2/MANIFEST.json",
+    "sha256": "84d10308077293069c64d55964ec4fe8648d2bb2b8713484afef1196b92fb117"
+  },
+  "scout_helper": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/scout/RUN.py",
+    "sha256": "6541462b90f402a3e98992ee9c470143ac028f87259dfc3a4143641233a9d1a6"
+  },
+  "saved_controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/local_response_repair_v1/operator_fixture_inventory_v1/export_runner/source_controls_v1/RESULT.json",
+    "sha256": "496156d16554aeb5606f28d04be6a9e19c08de478263c780a97bf8b707e93351"
+  },
+  "scope": {
+    "required_fixtures": 54,
+    "required_snapshots": 108,
+    "new_native_program_limit": 53,
+    "reused_scout_fixtures": 1,
+    "reused_scout_programs_including_OFF": 2,
+    "workers": 1,
+    "historical_moment_baselines": 48,
+    "historical_energy_only_baselines": 6,
+    "bare_ions": 2
+  },
+  "findings": [
+    "All54 original IDs and the53-call complement are fixed by the frozen inventory. Scout ON exports retain actual producer identity; scout OFF remains separately accounted.",
+    "XYZ and parameter bytes are unchanged. Only missing output flags and RESPONSE-MATRIX-EXPORT are appended; fields/response modifications reject.",
+    "Mandatory old E/components parity is retained for all54. Missing old moment channels remain explicit for six radial fixtures. Every new fixture still requires its own new uind/export and polarization-energy agreement.",
+    "Two bare ions use the same generic absolute residual/energy logic with zero RHS; no zero-norm division or synthetic forcing.",
+    "The exact frozen scout helper owns matrix grammar, map/alpha checks, stability, residual conditioning and numerical thresholds. No duplicate or changed formulas.",
+    "Actual successful two-call scout is fully replayed before execution. Source/build/executable and independent scout review/root release join exactly.",
+    "Four preparation helper pins are now stored in the manifest and checked at runtime, resolving the sole review finding.",
+    "Serial execution increments the53-call counter before invoking native code; first failure stops and retains all54 slots. The20 existing mock controls prove full54/108 success and first-call native/parity stop without molecular calls."
+  ],
+  "blockers": [],
+  "source_only": true,
+  "actual_scout_or_remaining_outcomes_read": false,
+  "new_native_calls": 0,
+  "tests_rerun": false,
+  "limitations": [
+    "This review does not release execution or admit new native outputs.",
+    "Fixed-geometry baseline matrices do not qualify response-repair physics, coordinate derivatives, or the original25 development gates."
+  ],
+  "cost": {
+    "wall_seconds": 0.029186034109443426,
+    "CPU_seconds": 0.025931819999999994,
+    "threads": 1
+  }
+}

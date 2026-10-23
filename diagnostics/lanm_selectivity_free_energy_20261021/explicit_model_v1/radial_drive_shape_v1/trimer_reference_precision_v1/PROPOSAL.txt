@@ -1,0 +1,127 @@
+EXACT W9-FAR REFERENCE PRECISION — SOURCE PROPOSAL ONLY
+
+Question and scope
+------------------
+Measure how stricter SCF termination changes the exact consumed La/Dy W9-far
+seven-term electronic E3 and vector mu3 targets. Preserve the old targets. This
+would measure one numerical sensitivity, not establish PBE0 or frozen-f accuracy.
+Root decision c4e33db2 authorizes this proposal/inventory only; actual controls,
+decks and execution release remain null in PROPOSED_PROTOCOL.json.
+
+The full pair is fourteen distinct states, seven per metal:
+  +M12 -M1 -M2 -12 +M +1 +2.
+The selected waters are original indices1 and3, O-O4.683748498798A, with the
+original139.02536977054825-degree angle. Both original targets and signed vectors
+are copied literally into INVENTORY.json, without new cycle arithmetic:
+  La E3=12.383528394172101kcal/mol; mu3_z=-0.3497061854223093D.
+  Dy E3=12.813568593717232kcal/mol; mu3_z=-0.40998549477354973D.
+The complete x/y components are retained, not rounded away.
+
+Exact evidence
+--------------
+The inventory binds all14 actual input/output/result/property files, cell
+definitions, ghost masks, common-origin moment records, native flags and costs.
+Four historical trimer/two-water results join ten earlier fragment results.
+Every input has28 centers/434 orbital functions and the full parent geometry.
+Literal Aux-J headers are990 for La and1008 for Dy, including the older ion
+records whose original result schema omitted that supplemental field.
+
+All14 native results passed their original admission. They explicitly used
+Total+1el-Energy stopping and ended in SOSCF. Their energy, orbital-gradient and
+rotation flags pass the original printed thresholds; both current density
+change flags fail. The final printed DIIS value matches the first SOSCF gradient
+at displayed precision, rather than the final gradient. This is visible in the
+fourteen copied trace snippets and agrees with the existing SCF-mode audit.
+Thus the old DIIS flag is not evidence that the terminal SOSCF residual is that
+large, and the old results must not be relabeled native convergence failures.
+
+No admitted result under the proposed stricter protocol is bound. The exact
+fourteen-state lineage examined here has the old mode2 inputs. A fragment's
+old residual passing a proposed threshold by chance would not establish exact
+protocol reuse. Symmetry-related waters and La/Dy ghost-metal calculations stay
+distinct. This is a bounded lineage inventory, not a global absence search.
+The previously completed tighter local-correlation full W8/W9 calculations
+were full real complexes under a different correlated recipe; their declared
+scope excluded these seven-term ghost-fragment cycles. They cannot supply the
+missing exact E3 termination sensitivity.
+
+Proposed controls for root to freeze
+-----------------------------------
+Keep the original PBE0/RIJCOSX/DefGrid3/VeryTightSCF/NoAutostart line, Guess PModel,
+MaxIter300, restricted effective singlets, exact La ECP46/Dy ECP55, basis/auxiliary
+files, all ghosts/coordinates, no D4, and the native-origin/common-zero-origin
+dipole procedure. Retain original numerical integration and integral screening.
+Propose explicit %scf termination settings:
+  ConvCheckMode0; ConvForced1; TolE1e-11;
+  TolMAXP1e-8; TolRMSP1e-9; TolErr1e-8; TolG1e-8; TolX1e-8.
+Energy and orbital-gradient/rotation targets tighten. Density/DIIS numerical
+thresholds retain the old preset values but become explicit readback gates.
+No new TRAH keyword, state search, reseeding, grid change or MaxIter extension.
+
+ORCA documents mode2 as an energy-based check. Mode0 checks multiple criteria
+but may still accept an overachieved combination; therefore native success
+alone cannot stand in for the proposed current-residual checks. ExtremeSCF also
+changes screening thresholds, so it would exceed this termination-only scope.
+Official source: https://www.faccts.de/docs/orca/6.1/manual/contents/essentialelements/scf.html
+
+Require original native identity/termination gates plus the declared current
+energy/density residuals. For final SOSCF, require current gradient/rotation and
+join the gradient to the final SOSCF row; retain stale DIIS descriptively. If
+the calculation ends in DIIS, its actual terminal DIIS residual must be current
+and pass; absent/untraceable solver fields fail admission. No guessed pass.
+Keep the final gridx3 correction and final electronic energy stage explicit.
+Tighter pre-final-grid residuals do not test grid sensitivity or guarantee a
+self-consistent density on the final grid. Same nominal effective state remains
+required; charge/multiplicity alone do not prove electronic-root continuity.
+
+Finite staging and resources
+---------------------------
+First, a two-state serial scout: Dy M12, then Dy12 with ghost metal if the first
+passes. These cover real-ECP and ghost-metal paths and count toward the14.
+Root reviews actual residuals/identity/cost before the remaining12. One attempt
+per state, fourteen maximum, no automatic retry/fallback. On failure preserve
+all raw evidence and the incomplete denominator. No complete two-metal cycle
+claim until all14 are admitted. Any later exact reuse reduces calls, never
+expands the envelope.
+
+Propose the existing4MPI ranks, one thread each, one node, standard partition,
+standard_expand, no memory/time override, no requeue. Retain MaxCore3000MiB/rank
+and require a grant of at least16000MiB before invocation. Keep the pinned ORCA
+6.1.1 executable and existing runtime invocation. Root owns submission.
+The14 old endpoint elapsed times total3471.077s, with a summed recorded4-rank
+allocated-CPU proxy13884.308s; individual elapsed times were204.021-325.973s.
+These are historical costs, not a bound or forecast for tighter convergence.
+Record actual scheduler cost and PModel helper work; do not add CPU proxies to
+the same allocation cost twice.
+
+Small implementation handoff after declaration
+---------------------------------------------
+Use each actual old input as the deck authority. Change only the explicit SCF
+block; compare the masked-body hash, header, basis/ECP text and complete literal
+coordinate block. Do not call the old16-state RUN.context or its old deck-equality
+contract unchanged. Reuse its invocation/receipt conventions, the admitted native
+PBE0 parser and inherited auxiliary-count check, with an added current-residual
+reader and the new14-state/release contract. For the two old ion definitions,
+keep the original cell object and supply the explicitly inventoried expected
+Aux-J count to the supplemental check rather than silently rewriting lineage.
+Reuse TRIMER_COMPARE_v2.quantum_moment and signed combine equations. The proposed
+package contains no executor, scheduler wrapper or new reference input.
+
+Required final comparison
+-------------------------
+Report all14 old/new term energies and signed common-origin dipoles, both E3/mu3
+shifts and their Dy-minus-La contrasts, actual residuals, final-grid corrections,
+printing allowances, attempts and costs. Report the fixed baseline/feca12/radial14
+model errors against both targets descriptively. A large shift challenges the
+old target numerically; a small shift limits this specific termination effect.
+One tightening is not a rigorous error bar. No new physical acceptance threshold,
+reference replacement, loss, fit or model mechanism is implied.
+
+Preparation receipt
+-------------------
+inventory_v3 passes255 metadata checks/121 unique pins,0.724s wall/0.555s CPU;
+zero molecular/model/solver calls and zero scientific cycle recomputations.
+Earlier metadata-only failures remain immutable: v1 assumed the compact cycle
+record kept all extra historical diagnostics; v2 assumed the old ion schema had
+an explicit real-index list. v3 checks the exact retained reference fields and
+the original ion ghost mask. No original result or admission was modified.

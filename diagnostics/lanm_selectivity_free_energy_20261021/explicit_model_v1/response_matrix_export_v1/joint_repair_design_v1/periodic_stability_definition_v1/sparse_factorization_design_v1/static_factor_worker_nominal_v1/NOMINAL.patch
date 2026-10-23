@@ -1,0 +1,121 @@
+--- /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/static_factor_worker_v1/RUN.py
++++ /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/static_factor_worker_nominal_v1/RUN.py
+@@ -1,4 +1,4 @@
+-"""One null-bound static factor worker; no assembly, native engine or optimizer."""
++"""One nominal saved-operator factor attempt; no assembly or native engine."""
+ import argparse
+ import ctypes
+ import hashlib
+@@ -41,6 +41,60 @@
+ def load(p):
+     spec=importlib.util.spec_from_file_location('qualified_static_backend',verify(p))
+     m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
++
++
++NOMINAL_SHA = '2aa3ac434f3667302fb5cf70d3adda1444e942c6f839e052efef82305ec2e10d'
++
++
++def nominal_parameters(inputs, review):
++    # e_app is unknown, not zero. This worker implements only the nominal contract.
++    for item in (inputs, review):
++        assert item['e_app'] is None and item['application_error_bound_established'] is False
++    for key in ('U_B','U_R','delta_odd'):
++        assert inputs[key] == review[key]
++        assert type(inputs[key]) in (int,float) and math.isfinite(inputs[key])
++    ub,ur,odd=(float(inputs[key]) for key in ('U_B','U_R','delta_odd'))
++    upper=ub+ur
++    assert ur>=0 and odd>=0 and math.isfinite(upper) and upper>0
++    tau=1e-6*upper+odd
++    assert math.isfinite(tau) and tau>0
++    return dict(U_B=ub,U_R=ur,delta_odd=odd,U_nominal=upper,tau=tau,
++                e_app=None,application_error_bound_established=False,
++                scope='nominal_saved_operator_only')
++
++
++def nominal_provenance(cfg, inputs, review):
++    assert cfg['nominal_contract']['sha256']==NOMINAL_SHA
++    contract=read(cfg['nominal_contract'])['recommended_contract']
++    assert contract['tau_nominal']=='1e-6*(U_B+U_R)+delta_odd'
++    assert contract['e_app'] is None and contract['application_error_bound_established'] is False
++    for key in ('nominal_contract','pme_result','pme_root_review','pme_bound_review'):
++        assert inputs[key]==review[key]==cfg[key]
++    assert inputs['metal']==review['metal']==cfg['metal']=='La'
++    root=read(cfg['pme_root_review']);actual=read(cfg['pme_result']);independent=read(cfg['pme_bound_review'])
++    assert root['status']=='admitted_full_box_operator_initialization_nominal_data'
++    assert root['execution']==independent['result']==cfg['pme_result']
++    assert root['independent_actual_review']==cfg['pme_bound_review']
++    assert actual['status']=='full_box_operator_initialization_complete' and actual['error'] is None
++    assert root['composition']==actual['composition']==cfg['composition_manifest']
++    assert root['e_app'] is None and root['application_error_bound_established'] is False
++    for key,source in (('result','campaign_result'),('configuration','campaign_configuration'),
++                       ('selected','candidate'),('actual_review','terminal_fit_review')):
++        assert actual['candidate'][key]==cfg[source]
++    row=actual['cells']['La'];rr=root['cells']['La'];ir=independent['cells']['La']
++    assert row['status']=='complete' and row['site_checks']['passed'] is True
++    assert row['export']==rr['export']==ir['export']==cfg['pme_export']
++    assert row['inputs']==rr['inputs'] and row['inputs']['system.xyz']['sha256']==inputs['geometry']['sha256']
++    norms=row['operator_norms']
++    assert norms==rr['operator_norms']==ir['operator_norms']
++    assert norms['arithmetic']=='ordinary_double_not_outward'
++    assert norms['q_negative_count']==0 and norms['q_min']>=0
++    for key in ('q_min','q_max','q_abs_max','q_conjugate_difference_max','U_R_nominal','evenness_perturbation_nominal'):
++        assert math.isfinite(norms[key]) and norms[key]>=0
++    assert inputs['U_R']==norms['U_R_nominal'] and inputs['delta_odd']==norms['evenness_perturbation_nominal']
++    for key in ('operator_producer','operator_preparation_result'):
++        verify(inputs[key]);assert review[key]==inputs[key]
++    nominal_parameters(inputs,review)
+ 
+ 
+ def context(config,release_path,out):
+@@ -70,7 +124,8 @@
+         assert review[key]==cfg[key]
+     for key in ('candidate','composition_manifest','pme_export'):
+         assert inputs[key]==cfg[key]
+-    assert all(review[k] is True for k in ('terminal_candidate_reviewed','initialized_PME_PSD_and_bound_reviewed',
++    nominal_provenance(cfg,inputs,review)
++    assert all(review[k] is True for k in ('terminal_candidate_reviewed','initialized_PME_nominal_data_and_bound_reviewed',
+                'real_space_operator_and_upper_bound_reviewed','symmetry_checks_passed','exact_active_map_and_graph_reviewed'))
+     assert inputs['matrix']=='normalized_B0_plus_H_unshifted_lower' and inputs['shape']==[N,N] and inputs['nnz']==NNZ
+     verify(inputs['geometry'])
+@@ -103,7 +158,7 @@
+     assert release['input_review']==cfg['input_review'] and release['resources']==caps
+     assert Path(release['output']).resolve()==out.resolve()
+     source_review=read(release['source_review'])
+-    assert source_review['status']=='passed_single_static_factor_worker_source_review'
++    assert source_review['status']=='passed_nominal_static_factor_worker_source_review'
+     assert source_review['implementation']==pin(__file__) and source_review['configuration']==pin(config)
+     return cfg,inputs
+ 
+@@ -120,6 +175,7 @@
+     tick,cpu=time.monotonic(),time.process_time()
+     result=dict(status='started',phase='imports',implementation=pin(__file__),configuration=pin(config),release=pin(release_path),
+                 input_manifest=cfg['input_manifest'],input_review=cfg['input_review'],limits=limits,
++                nominal_contract=cfg['nominal_contract'],nominal_only=True,e_app=None,application_error_bound_established=False,
+                 symbolic_attempts=0,numeric_attempts=0,solve_attempts=0,new_native_calls=0,
+                 sufficient_numerical_test_passed=False,physical_accuracy_admitted=False,MD_admitted=False,error=None)
+     def scalar(x):
+@@ -151,12 +207,12 @@
+         assert hashlib.sha256(memoryview(idx).cast('B')).hexdigest()==INDEX_SHA
+         assert hashlib.sha256(memoryview(ptr).cast('B')).hexdigest()==INDPTR_SHA
+         k=csc_array((np.array(data,copy=True),idx,ptr),shape=(N,N),copy=False);backend.validate_lower(k)
+-        ub,ur=float(inputs['U_B']),float(inputs['U_R']);tau=1e-6*(ub+ur)
++        nominal=nominal_parameters(inputs,read(cfg['input_review']));tau=nominal['tau']
+         # Canonical lower columns start at their explicit diagonal; pattern is unchanged.
+         k.data[k.indptr[:-1]]-=tau;backend.validate_lower(k)
+-        result['operator']=dict(shape=[N,N],nnz=NNZ,U_B=ub,U_R=ur,tau=tau,
++        result['operator']=dict(shape=[N,N],nnz=NNZ,**nominal,
+                                 shifted_data_sha256=hashlib.sha256(memoryview(k.data).cast('B')).hexdigest(),
+-                                interpretation='Positive shifted real part is sufficient only; failure does not establish full-PME instability.')
++                                interpretation='Nominal saved-operator sufficient numerical test only; no floating application bound, trajectory or energy/force admission. Failure does not establish full-PME instability.')
+         f,error,ww,pre=backend.factor_once(k,on_phase=phase)
+         result['pre_numeric']=pre;result['post_numeric']=backend.metadata(f);result['backend_exception']=error;result['backend_warnings']=ww;persist()
+         if error is not None or ww:
+@@ -175,7 +231,7 @@
+             result['audit']=ar;result['audit_warnings']=[dict(type=type(x.message).__name__,message=str(x.message)) for x in observed]
+             passed=ar['passed'] and not observed
+             result['sufficient_numerical_test_passed']=bool(passed)
+-            result['status']='passed_static_sufficient_numerical_test' if passed else 'inconclusive_static_arithmetic_or_boundary'
++            result['status']='passed_nominal_static_sufficient_numerical_test' if passed else 'inconclusive_static_arithmetic_or_boundary'
+             result['phase']='finished'
+         del f
+     except Exception as exc:

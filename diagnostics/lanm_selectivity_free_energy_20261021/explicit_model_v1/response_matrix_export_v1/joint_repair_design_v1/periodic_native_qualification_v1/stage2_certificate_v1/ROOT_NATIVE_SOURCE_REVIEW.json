@@ -1,0 +1,43 @@
+{
+  "status": "root_reviewed_stage2_native_source_design",
+  "ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/READY.json",
+    "sha256": "722446472c543efbd0cc246fbb2a196fb5077549529889d358c5f3752e0e15fc"
+  },
+  "design": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/DESIGN.md",
+    "sha256": "2b7362e3cbc179f9bb610b6799e48963c643ef82d4152c268ddcb4fbd58a28bb"
+  },
+  "source_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/source_v2/MANIFEST.json",
+    "sha256": "40af1582e769dc1c405b7589f4f4120b0f7b82ca5d039f2295335adca1055232"
+  },
+  "read_in_full": [
+    "GATE.f90",
+    "GRADIENT.f90",
+    "INITIALIZE.f90",
+    "STATE_WRITER.f90",
+    "induce_qualification.diff",
+    "DESIGN.md"
+  ],
+  "parent_context_review": [
+    "induce0a direct setup and stability hook before PCG",
+    "pre-peek residual arithmetic and post-peek update",
+    "field dispatcher and epolar1 induce call sites"
+  ],
+  "findings": [
+    "Two active guard call sites replaced only in isolated qualification clone; original archive and fatal bodies retained.",
+    "Direct h observation captures both RHS without new field calls; state comparison precedes first PCG operator application.",
+    "Native existing residual counters are labeled pre-peek and final dipoles post-peek; no residual recomputation.",
+    "Exactly one gradient call per reporter and no solver in initialization harness.",
+    "Wrapper must bind state-specific source/runtime/input/certificate and prevent unadmitted changed states; this review does not itself release native execution."
+  ],
+  "pending": [
+    "complete build/runtime adapter source review",
+    "exact state certificate and row bindings",
+    "collector and numerical runtime review"
+  ],
+  "builds": 0,
+  "native_calls": 0,
+  "created_utc": "2026-10-23T01:12:31.024789+00:00"
+}

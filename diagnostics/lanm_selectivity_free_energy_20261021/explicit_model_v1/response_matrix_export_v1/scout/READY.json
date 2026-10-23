@@ -1,0 +1,80 @@
+{
+  "status": "response_matrix_scout_source_ready",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/scout/RUN.py",
+    "sha256": "6541462b90f402a3e98992ee9c470143ac028f87259dfc3a4143641233a9d1a6"
+  },
+  "declaration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/scout/DECLARATION.md",
+    "sha256": "d584212a817a99617f2a90d7cb94eb87da20dc159c7f24f8f2333791dc0b6c70"
+  },
+  "configuration_prepare": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/scout/CONFIG_PREPARE.json",
+    "sha256": "ceb5bc4a9023c3baf4590a05453b9c6d3fe7090f651d75bb76168b41a4db24ea"
+  },
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/scout/preparation_v1/MANIFEST.json",
+    "sha256": "c15747ac975630324c19df237d5787fecd615f11405d069932065dcb15e85ac3"
+  },
+  "run_configuration_template": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/scout/preparation_v1/CONFIG_RUN_TEMPLATE.json",
+    "sha256": "bf661d0294347d4bbba862540b6e63cd41576922f65a9bb44c01c35e8b9bc9be"
+  },
+  "root_release_template": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/scout/ROOT_RELEASE_TEMPLATE.json",
+    "sha256": "c4e4238b8dda8fd5fb256c6503b8c4de2d9137e62252df9b549757427e4ccdd0"
+  },
+  "exporter_source_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/scout/EXPORTER_SOURCE_REVIEW.json",
+    "sha256": "b2c7bc48bf6677debc99915e3ec08576a219a58de6f10e836f8353d264b45da6"
+  },
+  "source_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/source_v2/MANIFEST.json",
+    "sha256": "84d10308077293069c64d55964ec4fe8648d2bb2b8713484afef1196b92fb117"
+  },
+  "new_native_calls": 0,
+  "preparation_cost": {
+    "wall_seconds": 0.19134962605312467,
+    "CPU_seconds": 0.12134319199999999
+  },
+  "scope": {
+    "native_programs": 2,
+    "workers": 1,
+    "old_saved_replays": 5,
+    "new_field_calls": 0,
+    "new_reference_calls": 0,
+    "force_qualification": false
+  },
+  "public_API": {
+    "parse_export": "Full native matrix/vector/site maps and exact raw pin.",
+    "parity": "Returns passed/checks/untested_channels. Missing old moment arrays only are explicit.",
+    "qualify_exports": "Returns numerical checks and full parsed exports; optional field_targets is only for scout.",
+    "admit_result": "Saved full scout replay; status admitted_response_matrix_scout, on_row, qualification, new_native_calls=0."
+  },
+  "root_binding": {
+    "required_status": "approved_response_matrix_scout",
+    "join_fields": [
+      "implementation",
+      "manifest",
+      "source_manifest",
+      "analyze",
+      "build_receipt"
+    ],
+    "configuration_reverse_pin": false,
+    "execution_root": "Exact fresh absolute output directory",
+    "command": [
+      "python",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/scout/RUN.py",
+      "run",
+      "--config",
+      "ROOT_BOUND_CONFIG.json",
+      "--out",
+      "ROOT_BOUND_EXECUTION_DIRECTORY"
+    ]
+  },
+  "limitations": [
+    "Fixed-geometry baseline operator admission only; no candidate physics or coordinate forces qualified.",
+    "No native scout has run during preparation.",
+    "All numerical thresholds and printing/CG propagation were declared before the scout."
+  ]
+}

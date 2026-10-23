@@ -1,0 +1,58 @@
+{
+  "status": "ready_constrained_step_source_only",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/constrained_step_v1/PROPOSE.py",
+    "sha256": "b84ade902accdc4897d85e2964f38b28cc27334b82230ead8d988b313b26864d"
+  },
+  "inputs": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/constrained_step_v1/INPUTS.json",
+    "sha256": "fed9b78d627af5a5e0b6c276bb63a13ab938df909242e8534691a0d8fc798a2d"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/constrained_step_v1/SPEC.md",
+    "sha256": "f51cd6342feefdca88e283858db99fa952e25a70bc2ef8c2654eb27662097f4d"
+  },
+  "preparation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/constrained_step_v1/PREPARATION.json",
+    "sha256": "48a5cc09af24a9a384f26ff8beb6484cf0d6150407cb6fe2a5f3c239db9f4059"
+  },
+  "checks_passed": 12,
+  "solver_calls": 0,
+  "native_calls": 0,
+  "argv": [
+    "/home/jwestrob/.pyenv/versions/3.12.0/bin/python3",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/constrained_step_v1/PROPOSE.py",
+    "--inputs",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/constrained_step_v1/INPUTS.json",
+    "--root-release",
+    "ROOT_RELEASE.json",
+    "--out",
+    "FRESH_OUTPUT_DIRECTORY"
+  ],
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OMP_THREAD_LIMIT": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "required_root_release": {
+    "status": "released_saved_constrained_component_proposal",
+    "implementation": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/constrained_step_v1/PROPOSE.py",
+      "sha256": "b84ade902accdc4897d85e2964f38b28cc27334b82230ead8d988b313b26864d"
+    },
+    "inputs": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/constrained_step_v1/INPUTS.json",
+      "sha256": "fed9b78d627af5a5e0b6c276bb63a13ab938df909242e8534691a0d8fc798a2d"
+    },
+    "specification": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/constrained_step_v1/SPEC.md",
+      "sha256": "f51cd6342feefdca88e283858db99fa952e25a70bc2ef8c2654eb27662097f4d"
+    },
+    "solver_call_cap": 1,
+    "native_program_cap": 0
+  },
+  "source_review_required": true,
+  "interpretation": "Numerical local proposal only; exact25 gate flags are separate from1e-8 normalized arithmetic feasibility."
+}

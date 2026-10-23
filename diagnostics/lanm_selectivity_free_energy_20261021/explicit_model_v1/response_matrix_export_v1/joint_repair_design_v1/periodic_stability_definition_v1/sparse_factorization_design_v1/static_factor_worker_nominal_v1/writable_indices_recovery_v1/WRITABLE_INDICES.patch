@@ -1,0 +1,12 @@
+--- /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/static_factor_worker_nominal_v1/RUN.py
++++ /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/static_factor_worker_nominal_v1/writable_indices_recovery_v1/RUN.py
+@@ -206,7 +206,8 @@
+         assert ptr.dtype==np.int32 and ptr.shape==(N+1,)
+         assert hashlib.sha256(memoryview(idx).cast('B')).hexdigest()==INDEX_SHA
+         assert hashlib.sha256(memoryview(ptr).cast('B')).hexdigest()==INDPTR_SHA
+-        k=csc_array((np.array(data,copy=True),idx,ptr),shape=(N,N),copy=False);backend.validate_lower(k)
++        k=csc_array((np.array(data,copy=True),np.array(idx,copy=True,order='C'),
++                     np.array(ptr,copy=True,order='C')),shape=(N,N),copy=False);backend.validate_lower(k)
+         nominal=nominal_parameters(inputs,read(cfg['input_review']));tau=nominal['tau']
+         # Canonical lower columns start at their explicit diagonal; pattern is unchanged.
+         k.data[k.indptr[:-1]]-=tau;backend.validate_lower(k)

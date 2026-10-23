@@ -1,0 +1,105 @@
+Consumed-reference adequacy for a joint component feasibility diagnostic
+
+Decision
+The saved water references support a simultaneous, conditional test of energies,
+forces, pair/collective moments and four directional susceptibilities. They do
+not supply one uniformly validated physical target set. Keep the following
+blocks distinct; REFERENCES.json gives exact artifact paths and SHA-256 pins.
+This note declares no objective, new tolerance, fit, execution or promotion.
+
+1. Original energy/force block: usable without replacement
+Use the10 consumed ECP-PBE0-D4 energy/gradient cells in development_data:
+La/Dy water-minus/central/plus and W8/W9 central. Retain all25 original gates:
+10 energy checks at1kcal/mol and15 rigid-force checks at RMS2/max5kcal/mol/A.
+These are model-to-provisional-reference criteria, not physical uncertainty
+bounds. Force is minus the energy gradient; water-body torque is divided by1A.
+The10 energy gates have rank6; paired forces and paired works are derived.
+The413-entry old residual is correlated engineering weighting, not413 independent
+observations. No CP energy, correlated energy or fragment remainder may silently
+replace an original energy or force target. The new CC study has no gradients.
+
+2. Pair/collective energies: use the matched common-parent cycles
+Within each parent basis define C=E(M+shell)-E(M)-E(shell),
+P=sum_i[E(M+Wi)-E(M)-E(Wi)], and B=C-P. Keep N ion subtractions in P and every
+parent-specific electronic ghost term. The available electronic-plus-D4 targets
+are Dy-minus-La C/P/B at W8 and W9; W9-minus-W8 is derived. C and P determine B,
+so do not count all three plus their coordination difference independently.
+
+Absolute per-parent electronic-plus-D4 C/P/B targets are unavailable: the exact
+real-shell D4 authority is absent. The existing paired construction cancels the
+unknown shell/water D4 terms using identical geometries, then adds retained
+cluster/dimer/ion D4 once. Do not compare an electronic-only parent remainder
+directly with model total energy, equate it with AMOEBA polarization, or fill the
+missing D4 from a different fragment cycle. The36-cell own-basis decomposition
+is a separate basis-sensitivity diagnostic, not a second independent target to
+merge with the80-term common-parent decomposition. CP8 alone does not correct
+the own-basis pair cycle. No matched common-parent fragment-force decomposition
+exists in these energy-only results; full-shell forces are not forces of B.
+
+3. Electrical moments: usable with the existing origin and cycle conventions
+Use all34 literal common-parent pair-interaction vectors and4 full interaction
+C vectors. Report P=sum pairs and B=C-P as derived. The80-output quantum analysis
+retains ghost populations and reconstructs total electronic+nuclear moments at
+one laboratory origin using effective ECP charges; neutral interaction cycles
+are origin invariant. Preserve native conversion2.541747577148327D/(e a0).
+Compare total energy-conjugate moments, never quantum total versus model
+induced-only moments without the admitted permanent-term cancellation.
+Printing bounds do not bound SCF/method error. W8's near-zero symmetry residuals
+should not become evidence of physical symmetry breaking or a precision target.
+
+4. Susceptibility: four qualified water states, one measured direction
+The existing16-field comparison supplies La/Dy W9-far(1,3) trimer and M+W1
+dimer chi_zz, with compatible SP zeros in each full parent basis. The previous
+objective's fixed estimator is energy curvature at h=.001au; retain both
+steps(.001/.0005) and energy/moment estimators descriptively. Four states are
+independent quantities; the two increments and paired increment are derived.
+The0.5a0^3 state/1a0^3 difference and1e-4 e a0 odd-slope limits are numerical
+consistency checks, not physical error bars or fitting tolerances. This increment
+includes the added water's intrinsic/pair response; it is not alpha3, full-shell
+susceptibility, or a unique water/metal stiffness measurement. Parent basis and
+metal response do not cancel across La/Dy. No full tensor or near-pair field
+panel is available. Uniform-field response does not exhaust inhomogeneous modes.
+
+5. Trimers and correlated-method check: retain their narrower roles
+All8 near/far W8/W9 E3 and mu3 cycles are consumed diagnostic regression, with
+electronic PBE0 E3 (D4 off) and balanced common-origin dipoles. Show every cycle;
+do not sum sampled E3 values into B or count mu3 as new information independent
+of the first field derivative of that same E3. Their role in a future objective
+would need explicit declaration; they are no longer fresh validation.
+
+The completed8-cell DLPNO-CCSD(T1) panel tests only the raw full-cluster contrast:
+Tight -0.532739, tighter -0.468810kcal/mol; change+.063929 passes the original
+0.25 cutoff-sensitivity gate. Tighter differs from PBE0 electronic -0.640845 by
++0.172035. Original D4 contributes+.106638 separately; CC contains noD4.
+Endpoint shifts of0.449-0.536 partly cancel. This reduces concern about a large
+method dependence of this one raw contrast, but validates neither CP/B, moments,
+chi nor forces. Two local tiers are not a rigorous truncation error bar or the
+canonical cluster limit. Original Tight small-control failures remain failures.
+
+Exclusions and uncertainty
+All blocks retain native SCF stopping/subcriteria, finite basis, frozen-f ECP,
+single-reference and physical-multiplet/SOC limitations. No quantitative physical
+reference error bound exists. Keep original per-artifact unit/rounding conventions.
+Fresh4 W9 radial, reserved donor orientations and protein outcomes remain out;
+none was opened for this audit. If donor evidence is displayed, keep it separate:
+La canonical rotation is admitted and supports its force-sign disagreement;
+all4 Dy canonical rotations and the DIIS12 retry failed. Dy/paired donor chi is
+numerically unqualified after both original and matching-grid tests. Neither
+missing paired quantity can be supplied by La, a partial cycle or unconverged E.
+
+Strongest defensible mechanistic conclusion
+Within these provisional references, matching a full coordination total can hide
+opposing pair and collective errors. The selected model's common-basis total
+error -0.3131 combines +3.1483 pair and -3.4614 collective errors; both fixed-shell
+paired totals worsen, while consumed trimer regressions also worsen. Static
+moment and directional-curvature discrepancies provide independent kinds of
+response evidence. A field-independent energy correction cannot repair them
+at fixed geometry, so simultaneous conservative energy/force/response constraints
+are justified. This does not identify charge transfer, Pauli, polarization,
+stiffness location, or a successful functional form. Population schemes disagree
+on the small paired charge sign; B contains every nonpair order. The new raw-C
+CC agreement cannot remove the remaining uncertainty in those assignments.
+
+Scope: read existing completed reports/inventories; pin authorities only.
+No raw admission/control suite repeated, new molecular call, numerical model
+evaluation, fitting, scheduler query/submission or shared checkpoint edit.

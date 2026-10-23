@@ -1,0 +1,15 @@
+# Amidated LBT3 geometry and typing preparation
+
+This is preparation only: no protein energy, force, minimization, dynamics or sampling is authorized by this file. The paired chemistry gate remains outstanding.
+
+Use deposited 9CEQ model 1, chain A, NH3+–FIDTNNDGWIEGDELLA–CONH2, with Asp3/Asp7/Asp13 and Glu11/Glu14 deprotonated. Preserve its single La position; make matched La/Dy copies by element/type substitution alone. All 17 amino acids plus the terminal NH2 are retained. The expected peptide charge is −4 and each metal complex −1. The alternative free-carboxylate construct is not substituted.
+
+Use native Tinker `pdbxyz` and the pinned `amoebabio09.prm` for biopolymer atom typing. The published La SI small-molecule parameter file has no complete protein biotypes and cannot replace it. Explicitly rename only the deposited cap HN1/HN2 to the converter's H1/H2 convention; record all source-to-output atom joins. Require every deposited heavy atom to survive with unchanged coordinates. Report retained versus constructed hydrogens; do not describe generated hydrogens as experimentally observed. A subsequent native `analyze ... GP` is permitted solely to verify parameter coverage and charges; its energy/force flags remain off.
+
+The protein force-field water parameters match the La SI water functional form after type/class renumbering. Protein donor multipoles/polarizabilities differ from isolated acetate/acetamide. Any mapping of the La donor correction to protein types is a separate, unqualified transfer hypothesis. Never append the small-molecule key verbatim: its type numbers collide with protein/water definitions. Prepare a mapping report before selecting an executable protein Hamiltonian.
+
+For a concrete explicit-water starting geometry, tile the native example 500-water box (24.662 Å cube) twice along each axis, giving a 49.324 Å cube. Translate the solute to the box center without rotation. Remove complete waters whose atoms overlap the solute using explicit preparation cutoffs (O–heavy 2.4 Å, H–heavy 1.5 Å, H–H 1.0 Å). Water coordinates originate from the example's TIP3P packing but receive AMOEBA water types; this is an unequilibrated geometry, not an equilibrated AMOEBA solvent state. Preserve complete water molecules across periodic boundaries.
+
+Replace a deterministic set of solvent molecules farthest from the solute, with at least 5 Å between replacement sites, by seven Na+/Cl− pairs and one additional Na+ counterion. Seven pairs approximate 0.1 M NaCl at this box volume. This preparation does not reproduce the MES buffer or establish equilibrium ionic strength. Both metals use identical solvent and ion placements. Atom-count, bonding, formal-charge, source-coordinate and periodic-box checks must pass before a prepared artifact is reported complete.
+
+All preparation and tiny parameter-only checks use one CPU thread; no GPU. Preserve actual commands, source/binary/input hashes, elapsed time and failures. No automatic force-field or coordinate fallback is allowed. The resulting boxes remain explicitly unavailable for production sampling until metal/donor transfer and the full Hamiltonian are qualified.

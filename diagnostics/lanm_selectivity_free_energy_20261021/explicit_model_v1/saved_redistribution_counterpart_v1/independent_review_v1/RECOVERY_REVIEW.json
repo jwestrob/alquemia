@@ -1,0 +1,91 @@
+{
+  "status": "passed_recovery_source_and_preparation_review",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/RUN_v2.py",
+    "sha256": "93e1d5165c1ae5dfcb63f6fac6b232f4a435b6baf44c1011ac8ada4495ea3c3d"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/SPEC_v2.md",
+    "sha256": "ac1adab5bf6191ebba8c73f65d950953d19987c3471603083f77c9adc20633ce"
+  },
+  "original_specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/SPEC.md",
+    "sha256": "8c19e258667e508f69c6090669326cdba61d13861a0877a75a1387139be9d3aa"
+  },
+  "config_prepare": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/CONFIG_RECOVERY_PREPARE.json",
+    "sha256": "9d98c9d49c69fb2b57e8452061a18a7ce11e242b2dd1adddc7432efe70195a5e"
+  },
+  "preparation_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/recovery_preparation_v1/RESULT.json",
+    "sha256": "ea1a28426f4437b0b449ae2c8d0a2962aee4010ac73e0fd47b95f3df780eefc6"
+  },
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/recovery_preparation_v1/MANIFEST.json",
+    "sha256": "141048e19aed8337ead156d2aa9025fc546f8c2252cb64c23cb44f30a2239e92"
+  },
+  "controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/recovery_controls_v1/RESULT.json",
+    "sha256": "aca291605b98f41c7c684935fcf8c2313b4ccabeaf8aef52fa5848befc3de6a8"
+  },
+  "ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/RECOVERY_READY.json",
+    "sha256": "289c483263ac23770b07bdf8bc01222ccdbd3b37d079449a1686ab97b2f7fd43"
+  },
+  "launcher": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/RUN.sbatch",
+    "sha256": "dbce49cb56989aa6920c0f6d001fbe2d52ac33a4422b63a08823865b4df45de4"
+  },
+  "previous_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/run_v1/execution/RESULT.json",
+    "sha256": "1bce03f9c2855c6ab9afb8dc70cf6655bc99127969cad36d6dbfb4589d3903ea"
+  },
+  "original_source_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/independent_review_v1/FINAL_REVIEW.json",
+    "sha256": "bdc173f669d27ca42a15d5b8def9c63391e2d4d35dad55ab8023e27fd189d22d"
+  },
+  "actual_failure_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/independent_actual_review_v1/FAILURE_REVIEW.json",
+    "sha256": "d1f60dd0db9b545b61f702494100d4167a5a5ccecb5354150edada8c999d83e1"
+  },
+  "verified_ready_pin_fields": [
+    "implementation",
+    "specification",
+    "original_specification",
+    "config_prepare",
+    "preparation_result",
+    "manifest",
+    "controls",
+    "previous_result",
+    "previous_adapter",
+    "run_config_template",
+    "root_release_template",
+    "launcher"
+  ],
+  "findings": [
+    "Native-announced file is exactly one supported archive or numbered filename; one complete n-site block is still required.",
+    "Native site labels derive from frozen atom-type symbols truncated to native character*3; XYZ labels remain preserved separately.",
+    "All78 prepared scientific input pins and every original row field are unchanged; only native_names metadata is added. All permanent atom/frame cancellation records are identical.",
+    "Four successful original programs are fully admitted with exact native input, raw output and original receipts; inherited source/result and original failed adapter status remain explicit.",
+    "Only exact74 previously unattempted cells can execute; maximum74new/78total. Both ions finish and admit before the remaining72 start. No numerical gate or Hamiltonian changed.",
+    "Read targeted34 saved controls and final preparation; did not rerun the old109 suite or any native program."
+  ],
+  "blocking_findings": [],
+  "new_native_calls": 0,
+  "submissions": 0,
+  "author_files_edited": false,
+  "original_failures_preserved": true,
+  "review_cost": {
+    "wall_seconds": 0.3263741619884968,
+    "CPU_seconds": 0.22775641400000002,
+    "max_local_threads": 1
+  },
+  "author_preparation_cost": {
+    "wall_seconds": 16.046959326951765,
+    "CPU_seconds": 15.656200251
+  },
+  "author_controls_cost": {
+    "wall_seconds": 30.770144043955952,
+    "CPU_seconds": 30.00438454
+  }
+}

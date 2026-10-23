@@ -1,0 +1,36 @@
+{
+  "status": "metadata_assumptions_corrected_without_scientific_changes",
+  "failures_preserved": [
+    {
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/trimer_reference_precision_v1/inventory_v1/RESULT.json",
+        "sha256": "7f5a09079ec09132ef8cde6b6dddf870765f15effb46cc280bf165eb871839d0"
+      },
+      "source": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/trimer_reference_precision_v1/INVENTORY.py",
+        "sha256": "246159c16ecb389128a823b200a3e971d5b944f38ba727daa12eabedcff8f322"
+      },
+      "error": "ValueError('aquo9_central_La__far: unchanged literal cycle')",
+      "resolution": "Overstrict whole-cycle equality assumed the compact consumed inventory retained every extra historical diagnostic key.",
+      "scientific_calls": 0
+    },
+    {
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/trimer_reference_precision_v1/inventory_v2/RESULT.json",
+        "sha256": "30f80ae95c27b294c04fe0d4e7c6dd3cb96629593593a9b829843e5b4d12f35e"
+      },
+      "source": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/trimer_reference_precision_v1/INVENTORY_v2.py",
+        "sha256": "a6e26335691c8a070e328cd2ea3e3b28279eb33796d006301cdc82d6850b2c79"
+      },
+      "error": "KeyError('real_parent_atom_indices')",
+      "resolution": "Historical ion schema does not carry real_parent_atom_indices; explicit ion ghost mask already identifies only center0 as real.",
+      "scientific_calls": 0
+    }
+  ],
+  "passed_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/trimer_reference_precision_v1/inventory_v3/RESULT.json",
+    "sha256": "d2d88738844a39faa23b67088147b3edf47753071508cbea014ea914fa0c7259"
+  },
+  "delta": "Reference fields copied by their exact original key join; original ion definition preserved literally, with its established only-center0 ghost mask checked. No native parser/admission or source evidence was changed."
+}

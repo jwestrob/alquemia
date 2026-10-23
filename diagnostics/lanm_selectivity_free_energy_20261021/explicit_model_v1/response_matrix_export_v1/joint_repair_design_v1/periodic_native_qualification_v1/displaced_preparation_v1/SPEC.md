@@ -1,0 +1,9 @@
+# Geometry-only finite direction preparation
+
+Prepare exactly32 coordinate/cell decks and eight immutable tangent arrays from the literal old e41f La center under NUMERICAL_CONTRACT c5b85118 and ROOT_CONTRACT_REVIEW c73d54ec. No model/reference/PME/assembly/factor/energy/force calls or outcomes are used. One numerical login thread, fresh immutable output; all future endpoint native/certificate/output/release fields remain null.
+
+The source preserves the center XYZ and BIO file literally and each atom id/name/type/connectivity. It retains the exact composed key prefix; only the12 declared periodic control records are appended from the pinned prior DERIVE.SETTINGS, excluding its operator-only comment and PME-NORM-EXPORT instrumentation. The parameter file is copied into each deck directory so its unchanged relative key path resolves.
+
+Directions and both signed steps are exactly the adopted contract. Native orthogonal ANINT is implemented as copysign(floor(abs(x/L)+.5),x/L), including half ties. No coordinates are wrapped. The rotation acts on local unwrapped water coordinates through a displacement [Rot-I]*(x-centroid), so q=0 is exactly the literal center. Pure pinned ten_probes function AST supplies the Rademacher coefficients without importing the CHOLMOD backend. Strain preserves the metal anchor and scales the matching cell side by1+q/(1A).
+
+Checks cover root/input joins,11958 sites/3980 waters/7Na/10Cl/1La and exact topology, fixed center, exact32 endpoint inventory, eight coefficient arrays, signed linear displacement and rotation angle, rigid-water internal distances/centroid, exact parsed coordinate/cell roundtrip, original grid/cutoff settings and orthorhombic compact/cutoff margins. Geometric roundoff controls use128*binary64_eps times the reported coordinate scale; they are not physical force/error thresholds. Stop on any failure and preserve its output.

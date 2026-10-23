@@ -1,0 +1,79 @@
+{
+  "status": "declared_nine_state_baseline_cutoff_sensitivity",
+  "created_utc": "2026-10-23T02:35:26.645974+00:00",
+  "question": "Does suppressing the hard real-Ewald truncation tail remove the dominant whole-box and strain1 force/energy inconsistency?",
+  "evidence": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/baseline_broad_control_v1/collector_v1/run_v1/ROOT_ACTUAL_REVIEW.json",
+    "sha256": "690e2141016fcd5430617e7dcc539a0b90e28c8750b9178bc7317f38c55b4013"
+  },
+  "baseline_inputs_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/baseline_broad_control_v1/preparation_v1/MANIFEST.json",
+    "sha256": "f8fae962a563e1f8cb99a7cc6e720699892a7fa3da817d093acc9fdee5d507fd"
+  },
+  "central_baseline_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/compile_intrinsic_recovery_v1/central_scout_v1/BYPASS_OLD_ABSENT/execution/RESULT.json",
+    "sha256": "5a465cfc530d066941e317990d525c33020456c54ea993ed5d0afbbac2c7ac82"
+  },
+  "maximum_new_native_gradient_programs": 9,
+  "states": [
+    "central",
+    "whole_box__1e-04__minus",
+    "whole_box__1e-04__plus",
+    "whole_box__5e-05__minus",
+    "whole_box__5e-05__plus",
+    "strain_1__1e-04__minus",
+    "strain_1__1e-04__plus",
+    "strain_1__5e-05__minus",
+    "strain_1__5e-05__plus"
+  ],
+  "exact_coordinate_reuse": true,
+  "input_delta": "Only EWALD-CUTOFF9 to12 Angstrom; custom response remains absent.",
+  "unchanged_settings": {
+    "EWALD_ALPHA": 0.4,
+    "PEWALD_ALPHA": 0.4,
+    "PME_GRID": [
+      64,
+      64,
+      64
+    ],
+    "PME_ORDER": 5,
+    "PPME_ORDER": 5,
+    "boundary": "TINFOIL",
+    "VDW_CUTOFF": 9.0,
+    "VDW_TAPER": 8.1,
+    "poleps": 1e-08,
+    "politer": 100,
+    "model_coefficients": "all unchanged",
+    "cell_and_composition": "same11958sites and exactoriginaldisplacements"
+  },
+  "source_delta": "Qualification harness only: hardcoded allowed Ewald cutoff9 changes to12; all other guards and unchanged old native library remain. Minimal recompile/relink; no model kernel patch.",
+  "build": "one single-CPU isolated harness build before9nativecalls; bind actual binary and unchanged library",
+  "resources": {
+    "native_CPUs_per_job": 1,
+    "maximum_parallel_jobs": 9,
+    "qos": "standard_expand",
+    "partition": "standard",
+    "account": "banfield",
+    "memory_time": "scheduler defaults",
+    "native_limits": "inherit one attempt3600s3GiB"
+  },
+  "numerical_criteria": {
+    "baseline_original_FD_and_two_step_checks": 6,
+    "gate_kcal_mol_A": 0.001,
+    "half_steps": [
+      0.0001,
+      5e-05
+    ],
+    "printing_bounds": "unchanged original"
+  },
+  "interpretation": "Consumed two-direction numerical diagnostic. Improvement supports truncation contribution; residual failure remains explicit. No general PME convergence, active custom-model qualification, physical accuracy or trajectory claim.",
+  "no_new_initializer_or_factor": true,
+  "root_release_after_source_review": true,
+  "prohibited": [
+    "tolerance relaxation",
+    "coefficient fit",
+    "new coordinate generation",
+    "automatic further cutoff sweep",
+    "production promotion"
+  ]
+}

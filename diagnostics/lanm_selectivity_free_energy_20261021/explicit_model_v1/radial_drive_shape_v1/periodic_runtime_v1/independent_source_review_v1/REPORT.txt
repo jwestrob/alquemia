@@ -1,0 +1,17 @@
+Source-only periodic runtime integration plan: PASS
+
+No design blocker found in SOURCE_PLAN4a5f14cd. This is an implementation-plan review; the proposed runtime adapters, linked binaries and candidate remain unbound.
+
+1. The dependency order removes the central bootstrap cycle: matched build -> fresh central no-solve initialization -> cutoff12 assembly/factor -> exact-state certificate -> same-state Stage1 parity -> central active gradient/bypasses. A complete root certificate is checked only after its constituent artifacts exist. Build/init/certificate construction no longer depends on the Stage1 result it must help produce.
+
+2. Stage1 retains raw unequal direct1/direct2 from dfield0c (old PARITY.f90:102-126); both feed the shared V2 serializer. Stage2 captures raw Ed/Ep before shared h and serializes those raw arrays (GATE_V2.f90:99-137), while corrected RHS remains separately observed. Neither h/H equality nor e=0 is substituted for full state identity.
+
+3. The old central CSC/PME/job20053 shortcut is removed. CERTIFY's old cutoff=9 argument (CERTIFY.py:98) becomes the validated12 setting; canonical unshifted arrays, U_B, nominal shift and initialized PME provenance all belong to the fresh chain. No cutoff9 factor or inactive-cutoff12 baseline is admitted as the new active operator. The ordinary-double nominal criterion remains unchanged; e_app is null and is not made a new prerequisite.
+
+4. Stage1 setup and qualification induce are re-derived from the radial parent, retaining normal fatal guards and inverse source restoration. One matching radial archive/module/build bundle supplies the V2 initializer/parity/active-gradient executables. The old absent bypass retains its own old archive/module/gate/ticket/parser route; no V2 lrpshape reference is linked to a pre-radial polar module.
+
+5. Proposed counts are coherent:33 fresh initializers +1 central parity +36 gradient programs =70, with33 fresh certificates. Central parity performs30 complete and30 separate reciprocal applications (60 reciprocal primitives); it performs no induced solve or E/G. Counts are prospective, not a released full panel or fixed future FD schedule.
+
+6. For a displaced gradient, central parity/scout authority is shared at campaign/model/build/settings scope; that gradient's full state identity belongs to its own initializer/certificate. Requiring a displaced state to equal the central Stage1 state would be a programming error and is not needed by this plan. No extra per-displacement Stage1 programs are implied.
+
+No candidate binding, compiler, native call, FFT, assembly, factor, solver, numerical replay or test was run by this review. Existing39 authority pins were verified by streaming hash only. Source/math inspection does not establish runtime executability, active radial force correctness, trajectory stability or free-energy qualification.

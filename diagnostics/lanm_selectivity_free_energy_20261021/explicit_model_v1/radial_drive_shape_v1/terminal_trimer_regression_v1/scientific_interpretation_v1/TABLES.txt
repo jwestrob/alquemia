@@ -1,0 +1,55 @@
+EXACT SAVED COMPARISON DISPLAY
+
+Stage labels: baseline = original_pre_response_baseline; feca12 = feca12_physical_gate_terminal; radial14 = frozen_radial14_terminal5d992.
+Values below only format already reported results. Full precision remains in SAVED_VALUES.json and source RESULT.
+
+PAIRED E3: Dy-minus-La, kcal/mol
+case            reference   baseline     feca12    radial14   residual(base/feca/radial)
+aquo8__near       2.006632   0.599581  -1.551837  -1.566934   -1.407051/-3.558469/-3.573566
+aquo8__far        0.567840  -0.471410  -1.984159  -2.284236   -1.039251/-2.551999/-2.852076
+aquo9__near       3.154974   0.950691  -0.960496  -0.831396   -2.204283/-4.115470/-3.986370
+aquo9__far        0.430040  -0.448907  -1.983210  -2.278130   -0.878947/-2.413251/-2.708170
+
+PAIRED SIGNED mu3: Dy-minus-La vector (x,y,z), Debye. Norms below are error norms, not substitutes for signed vectors.
+aquo8__near
+ reference [-0.11159333561189777, -0.04620457012892215, 3.5463453744497117e-06]
+ baseline [0.020507000000000053, 0.008494000000000224, 0.0]  error norm 0.142977034
+ feca12   [0.01691970270549703, 0.007008370331886837, 6.641909244819999e-14]  error norm 0.139094278
+ radial14 [-0.007335105634077799, -0.003038300235121749, 6.38378239159465e-14]  error norm 0.112841063
+aquo8__far
+ reference [-0.024512555921015436, -0.05920238898670427, 3.868180028954178e-06]
+ baseline [0.010645999999999822, 0.02571300000000009, 0.0]  error norm 0.091906188
+ feca12   [0.0035003706980636373, 0.00845064241231741, 6.500355809180292e-14]  error norm 0.073223335
+ radial14 [0.000667383359242324, 0.0016112059569257653, 6.292188992063075e-14]  error norm 0.065820382
+aquo9__near
+ reference [-0.12873069202675735, -0.05348167426589462, 0.000109320472381039]
+ baseline [0.019179999999999975, 0.007945999999999995, 0.0]  error norm 0.160159121
+ feca12   [0.007647752928041207, 0.0031678029844357525, 3.3181790648484366e-14]  error norm 0.147676185
+ radial14 [-0.020720477346045207, -0.008582702735610237, 3.1807889655510735e-14]  error norm 0.116970663
+aquo9__far
+ reference [-2.5328675085018955e-07, 2.1966853436649948e-08, -0.06027930935124043]
+ baseline [0.0, 0.0, 0.027656000000000125]  error norm 0.087935309
+ feca12   [-1.1102230246251565e-16, 0.0, 0.010065208775078105]  error norm 0.070344518
+ radial14 [-2.220446049250313e-16, 0.0, 0.0020208165600004158]  error norm 0.062300126
+
+INDIVIDUAL CYCLE ERROR: signed E3 residual kcal/mol and signed-vector mu3 error norm Debye
+case                              E3 baseline/feca12/radial14             mu3 norm baseline/feca12/radial14
+aquo8_central_La__near            -4.810020/-5.083471/-6.147539       0.468370/0.400734/0.442727
+aquo8_central_La__far             -6.673785/-8.396468/-9.431185       0.219682/0.216138/0.232756
+aquo8_central_Dy__near            -6.217070/-8.641940/-9.721105       0.611347/0.539828/0.555568
+aquo8_central_Dy__far             -7.713036/-10.948467/-12.283261       0.311588/0.289361/0.298577
+aquo9_central_La__near            -4.616781/-4.508858/-5.560296       0.493052/0.416203/0.461180
+aquo9_central_La__far             -7.304756/-8.995083/-10.030830       0.263055/0.257095/0.274752
+aquo9_central_Dy__near            -6.821063/-8.624328/-9.546666       0.653211/0.563879/0.578150
+aquo9_central_Dy__far             -8.183703/-11.408334/-12.739001       0.350990/0.327439/0.337052
+
+COUNTS (descriptive comparisons; no new acceptance threshold)
+individual_E3_absolute_error_worse_than_baseline: 8
+individual_E3_absolute_error_worse_than_feca12: 8
+individual_mu3_error_norm_worse_than_feca12: 8
+individual_mu3_error_norm_better_than_baseline: 6
+paired_E3_absolute_error_worse_than_baseline: 4
+paired_E3_absolute_error_worse_than_feca12: 3
+paired_mu3_error_norm_better_than_baseline: 4
+paired_mu3_error_norm_better_than_feca12: 4
+paired_E3_model_negative_reference_positive: 4

@@ -1,0 +1,26 @@
+{
+  "status": "declared_scheduling_only_radial14_fit_amendment",
+  "time_utc": "2026-10-23T03:59:58.272078+00:00",
+  "original_declaration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/iterative_fit_v1/ROOT_DECLARATION.json",
+    "sha256": "56beae3c3fd9cb1efddd0338b91a89ff43f75fb5ef53a0e0f407db015e716533"
+  },
+  "changes": {
+    "execution": "one Slurm allocation",
+    "account": "banfield",
+    "partition": "standard",
+    "qos": "standard_expand",
+    "nodes": 1,
+    "ntasks": 1,
+    "cpus_per_task": 13,
+    "native_workers": 12,
+    "controller_threads": 1,
+    "threads_per_native": 1,
+    "memory_flags": null,
+    "time_flags": null,
+    "preparation": "login, one numerical thread, zero native/solver calls"
+  },
+  "unchanged": "All scientific settings, inputs,8steps/228vectors/7280programs/7newsolves, exactfirstreuse, gates, fractions, candidate selection and interpretation remain exactly56beae3c. No production change.",
+  "purpose": "Durable scheduler accounting and existing authorized Slurm completion watcher, avoiding a new local callback protocol.",
+  "required_source_binding": "Truthful Slurm13CPU gate and allocation costs; prepare remains one-thread login. Root binds final immutable source/config/review before execution."
+}

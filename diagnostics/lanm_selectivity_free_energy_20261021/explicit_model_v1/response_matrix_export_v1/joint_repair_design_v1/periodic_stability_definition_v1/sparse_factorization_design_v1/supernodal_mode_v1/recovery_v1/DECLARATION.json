@@ -1,0 +1,25 @@
+{
+  "status": "declared_single_existing_fixture_representation_recovery_before_execution",
+  "fixture": "hadamard4_spd",
+  "dimension": 4,
+  "maximum_new_numeric_factorizations": 1,
+  "maximum_new_symbolic_analyses": 1,
+  "maximum_new_solves": 12,
+  "numerical_threads": 1,
+  "preserved_failure": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/supernodal_mode_v1/actual_v1/RESULT.json",
+    "sha256": "e2b1041f93d74c8fce8bce03dfaf686f8d92eec265610973d3214b66d0fb89e6"
+  },
+  "diagnosis": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/supernodal_mode_v1/source_diagnosis_v1/DIAGNOSIS.json",
+    "sha256": "2a2f3c42f4fcbea2adbc7eede43b09261b4bec9c7fa704217a2f130c80e741a0"
+  },
+  "changes": "Correct numerical-path versus returned-storage guard only. Require supernodal symbolic state before numeric call; exact wrapper source preserves that requested mode and deliberately converts final storage to simplicial LL. No numeric source/settings/criteria change.",
+  "reuse": "All eleven completed matrices, five malformed inputs, sparse/dense arithmetic and original corruption control are reused from immutable failed-v1 result.",
+  "new_check": "One original nontrivial SPD Hadamard4 matrix: source-backed pre-state, expected final LL storage, copied-L independent solve and sparse/dense arithmetic.",
+  "criterion": "Original 1e-6 shift, 100*n*eps residuals and unchanged unresolved-boundary handling.",
+  "no_saved_molecular_data": true,
+  "no_native_calls": true,
+  "no_installs": true,
+  "no_automatic_retry": true
+}

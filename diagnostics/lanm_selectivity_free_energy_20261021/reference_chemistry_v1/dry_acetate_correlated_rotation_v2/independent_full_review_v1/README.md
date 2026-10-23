@@ -1,0 +1,9 @@
+# Full-eight canonical rotation saved review
+
+Prepared only. Run once after collector 18868 is terminal and root saves the scheduler table at the declared path. This reviewer checks all eight native endpoints, independent raw-token derivatives and the original three step checks. It reports selected 17621 AMOEBA, PBE0 electronic, PBE0-D4 and canonical CCSD(T) separately.
+
+```bash
+OMP_NUM_THREADS=1 OMP_THREAD_LIMIT=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 BLIS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_correlated_rotation_v2/independent_full_review_v1/REVIEW.py --collection /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_correlated_rotation_v2/collection_v1/result/RESULT.json --scheduler /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_correlated_rotation_v2/independent_full_review_v1/SACCT.psv --out /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_correlated_rotation_v2/independent_full_review_v1/actual_v1
+```
+
+The scheduler table must contain the eight native jobs plus the relevant support jobs. Native allocation costs, native elapsed-time proxies, and saved preparation/recovery/reporting costs remain separate. A failed scientific step check is retained in a successfully replayed review. No new native computation occurs.

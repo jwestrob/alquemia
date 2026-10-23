@@ -1,0 +1,38 @@
+{
+  "status": "admitted_standard_central_initializer_binding_source",
+  "utc": "2026-10-23T06:36:43.465658+00:00",
+  "ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_runtime_v1/central_initializer_standard_v1/READY.json",
+    "sha256": "406335566f1ee86abe712ac1fcd1e3aafb7febd61f8088e9919406d7f67dd590"
+  },
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_runtime_v1/central_initializer_standard_v1/BIND.py",
+    "sha256": "91fe38411784c7550b89e3634010028c00d752e54ae60f72d7581a61a1276c1b"
+  },
+  "inputs": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_runtime_v1/central_initializer_standard_v1/preparation_v1/INPUTS.json",
+    "sha256": "387fa7ee13716d8b58b7d82b6ca076a3733a8e431277eed1af0bc5b8a5bdf1de"
+  },
+  "independent_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_runtime_v1/central_initializer_standard_v1/independent_source_review_v1/REVIEW.json",
+    "sha256": "3c11e28032005977d1495e255609f4a494178fe8aba87f889a305394f3e9de77"
+  },
+  "standard_helpers": {
+    "slurm1": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_runtime_v1/central_initializer_standard_v1/SLURM1_STANDARD.py",
+      "sha256": "d3e29bc12ed459b9c9cc5ed5ea3ed97dea59480eaafd969be7e2aff73708d8e1"
+    },
+    "slurm12": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_runtime_v1/build_standard_v1/ALLOCATION_STANDARD.py",
+      "sha256": "e6c0b39869c6d14152e38aae66ee3aad9b06fd672162aa7e16fbcc997a965516"
+    }
+  },
+  "scope": "Exact scheduling/build-lineage recovery only; scientific inputs, sources and stage gates unchanged. Both helper pins fixed before manifest.",
+  "root_read": [
+    "original binder and PR COMMON/NATIVE",
+    "full exact BIND/helper deltas",
+    "PREPARE and focused20-control implementation/results",
+    "independent report"
+  ],
+  "actual_native_calls": 0
+}

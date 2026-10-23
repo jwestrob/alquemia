@@ -1,0 +1,70 @@
+{
+  "status": "passed_local_response_native_source_review",
+  "source_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/native_v1/source_v1/MANIFEST.json",
+    "sha256": "82886b766d192b1fb0b89012dcd2bebe6315a2dcc83979b982441da0d464a3b4"
+  },
+  "ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/native_v1/READY.json",
+    "sha256": "d7841b3d2d044142cb71bc2155d8749de35c1215aa85924dca5cda6a05e13104"
+  },
+  "helper": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/native_v1/LOCAL_RESPONSE.f",
+    "sha256": "16a85d3a55f0e15a3d76469223a6dee15845861de274955a3396e517f206c13a"
+  },
+  "patch": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/native_v1/source_v1/LOCAL_RESPONSE.patch",
+    "sha256": "4acc32181ad7891a8ff809b77ca54c67472ce8b554f5a89eb92360c79f73dcaa"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/finite_screen_v1/interpretation_v1/SPEC.md",
+    "sha256": "34cc2c4e03ce667ce033cb91662f86a5603392d7b740079eb9b46473b84e2a65"
+  },
+  "controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/native_v1/source_controls_v1/RESULT.json",
+    "sha256": "f67cebdbd68a25f4a80f65f43f2ff392a1e43026135c4a8f90f3cb741aa0bca0"
+  },
+  "controls_implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/native_v1/SOURCE_CONTROLS.py",
+    "sha256": "be650f43f08565c64a42325fc7a28e5353fa55bb0fa1f46eaeba680321da262e"
+  },
+  "changed_files": [
+    "epolar1.f",
+    "epolar3.f",
+    "induce.f",
+    "moments.f",
+    "polar.f"
+  ],
+  "checks": {
+    "exact_five_source_delta": true,
+    "unchanged_admitted_exporter_body": true,
+    "helper_exactly_embedded": true,
+    "regularized_phi_and_contact_series": true,
+    "otherwater_h_and_H_derivatives": true,
+    "dual_stationary_energy_routes": true,
+    "PCG_initial_and_iteration_operator_hooks": true,
+    "cross_u_v_force_and_metal_reaction": true,
+    "virial_and_local_frame_semantics": true,
+    "static_field_dual_moment_conjugacy": true,
+    "zero_bypass_and_unmatched_T_unchanged": true,
+    "unsupported_routes_and_domain_guards": true,
+    "normalized_spectrum_and_eigensolver_diagnostics": true,
+    "source_controls_read_without_repeat": true
+  },
+  "findings": [],
+  "interpretation": [
+    "Common dfield0a +h and ufield0a -H*x preserve native alpha/T and unmatched pair kernels.",
+    "Reduced epolar0e/epolar1e contracts u with modified udirp; epolar3 adds only -K/2 u dot h.",
+    "Explicit gradient is K/2[(uM dot vM) beta_prime - sum(u+v) dh], including cross-water and metal reaction derivatives.",
+    "Native M uses dual average when enabled; static-field route is included.",
+    "Actual declared 57/636 numerical qualification remains required."
+  ],
+  "assembly_note": "First audit assembly stopped before receipt because a basename-only map conflated source/0README with cmake/0README and included CMake files. Corrected source-relative inventory proves the exact five declared Fortran deltas; no native or numerical control was rerun.",
+  "new_native_calls": 0,
+  "new_builds": 0,
+  "cost": {
+    "wall_seconds": 0.12102320999838412,
+    "CPU_seconds": 0.112949205,
+    "local_threads": 1
+  }
+}

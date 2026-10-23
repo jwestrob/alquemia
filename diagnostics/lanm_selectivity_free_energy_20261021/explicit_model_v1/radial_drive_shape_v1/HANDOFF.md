@@ -1,0 +1,11 @@
+# Source handoff
+
+The source copy changes exactly `induce.f` and `polar.f`. Parent source manifest82886b76, actual build95e1cea1 and actual qualification7be6786d agree with the original final-feca evaluator configuration. The periodic prototype, production source and every existing binary are untouched.
+
+36 source/artificial controls pass. They include literal restoration of every parent line after removal of marked additions, unchanged common field/gradient consumers, finite contact/ideal-radius derivatives, equal/opposite metal reaction, manufactured unequal-dual energy differentiation and symmetric-strain contraction. The largest manufactured full-energy gradient discrepancy is2.889e−9 and strain discrepancy4.106e−9 in the fixture's declared energy units. These controls used45 tiny artificial dense solves; they executed zero molecular/native programs, builds or optimization calls. Source copy:4.4723wall/1.9718CPU-s. Controls:1.3066wall/.8683CPU-s, one thread.
+
+Native compile/readback, numerical qualification, zero-equivalence cache bridge and new derivatives remain absent. The original unsupported vacuum/topology/28-site/SPD guards stay in force. No scientific efficacy is inferred from source controls.
+
+Future evaluator delta should remain narrow: render original twelve through the frozen renderer unchanged, append the two explicit radial records, require their actual nonzero readback and reconstructed delta h in both channels, and keep original raw parser/scorer/physical25 gates. Full14 vector and binary/source identities must appear in new cache keys. An explicitly reviewed bridge may import old e=0 artifacts as historical evidence retaining their old producer, never relabel them as outputs of the new binary. Four new changed-metal probes remain separately unreleased and require exact unchanged-metal joins.
+
+The native qualification plan is49 programs/132 internal Cartesian FD energies/21 analyze EM calls/42 matrix snapshots. The local comparison uses24 historical plus4 new probe endpoints and exactly two saved-affine conic solves. Both comparisons retain physical25, current three electrical norms, and absolute signed W9 Dy−La lab-z dipole-residual nonincrease. These are source designs awaiting their own concrete preparation and root release; there is no automatic fit continuation or native candidate trial.

@@ -1,0 +1,56 @@
+--- REVIEW.py
++++ REVIEW_v2.py
+@@ -194,6 +194,16 @@
+     for i,trial in enumerate(trials):
+         if trial is not None and trial['all25'] and trial['q']<best-epsilon:best=trial['q'];chosen=i
+     return chosen,best
++
++
++def check_proposal_counts(logical,real,imported,failed_before_solve,reported):
++    """Logical records and solver calls are separate; failures stay explicit."""
++    require(all(type(n) is int and n>=0 for n in (logical,real,imported,failed_before_solve)),'Nonnegative proposal counts')
++    require(logical==reported['logical_proposal_calls']<=8,'Reviewed logical proposal records')
++    require(real==reported['real_proposal_calls']<=7,'Actual new solver calls')
++    require(imported==reported['imported_proposal_calls']<=1,'Explicit first proposal import')
++    require(real+imported+failed_before_solve==logical,'Every proposal has call, import, or explicit pre-solve failure')
++    return {'logical_proposals':logical,'new_solver_calls':real,'imported_proposals':imported,'zero_call_failed_proposals':failed_before_solve}
+ 
+ 
+ def run(c,out):
+@@ -313,7 +323,7 @@
+     require(set(seeds)<=set(vectors) and len(seeds)==27 and r['origin_key']==inv['origin_key'],'Complete27 imports and exact start')
+     require(r['import_counts']['origin']==1 and r['import_counts']['initial_derivatives']==24 and r['import_counts']['additional_pilot']==2 and r['import_counts']['available_saved_vectors']==len(registry),'Separate import counts')
+     current=vectors[inv['origin_key']];require(r['initial_metrics']==core.assess(current,fixed),'Exact initial metrics')
+-    iterations=[];real_calls=imported_calls=0;requested=[];trial_gate_reports=[]
++    iterations=[];real_calls=imported_calls=logical_calls=failed_before_solve=0;requested=[];trial_gate_reports=[]
+     for step,it in enumerate(r['iterations'],1):
+         require(step<=8 and it['outer_step']==step and it['origin_key']==token(current['parameters']),'Contiguous incumbent origins')
+         points=core.probe_points(current['parameters'],domain);expectedkeys=[token(x) for x in points]
+@@ -324,7 +334,8 @@
+             require(it['status']=='hard_budget_exhausted' and step==len(r['iterations']),'Only terminal hard-budget prefix may omit proposal');break
+         require(it['derivative_keys']==expectedkeys,'All24 derivatives before proposal')
+         p=read(it['proposal']);problem=core.linearize(current,[vectors[k] for k in expectedkeys],fixed)
+-        slots=copy.deepcopy(check_proposal(p,problem,fixed,core,cfg,step,expectedkeys));real_calls+=p['solver_calls'];imported_calls+=int('imported_saved_proposal' in p)
++        slots=copy.deepcopy(check_proposal(p,problem,fixed,core,cfg,step,expectedkeys));logical_calls+=1;real_calls+=p['solver_calls'];imported_calls+=int('imported_saved_proposal' in p)
++        failed_before_solve+=int(p['solver_calls']==0 and 'imported_saved_proposal' not in p)
+         require(len(it['trial_slots'])==len(slots),'Runtime complete fraction denominator')
+         for stored,slot in zip(it['trial_slots'],slots):require({k:stored[k] for k in slot if k!='certificate'}=={k:v for k,v in slot.items() if k!='certificate'},'Runtime exact fraction/key/eligibility')
+         if it['status']=='no_eligible_fraction':
+@@ -353,7 +364,7 @@
+         if chosen is None:require(it['status']=='no_actual_improvement' and step==len(r['iterations']),'No improvement stops campaign');iterations.append({'step':step,'status':it['status'],'solver_status':p.get('solver_status'),'solver_success':p.get('solver_success')});break
+         require(it['status']=='complete' and it['selected_key']==slots[chosen]['key'],'Selected eligible trial identity')
+         current=slots[chosen]['vector'];iterations.append({'step':step,'origin':it['origin_key'],'selected':it['selected_key'],'q_before':q0,'q_after':best,'solver_status':p.get('solver_status'),'solver_success':p.get('solver_success'),'solver_calls':p['solver_calls']})
+-    require(real_calls==r['real_proposal_calls']<=7 and imported_calls==r['imported_proposal_calls']<=1 and real_calls+imported_calls==r['logical_proposal_calls']<=8,'Imported versus new solver accounting')
++    proposal_counts=check_proposal_counts(logical_calls,real_calls,imported_calls,failed_before_solve,r)
+     selectedkey=token(current['parameters']);require(selectedkey==r['selected_key']==r['current_key'] and r['selected']==r['vectors'][selectedkey]['artifact'],'Selected lineage')
+     require(read(r['selected'])==current and core.assess(current,fixed)==r['selected_metrics'] and r['selected_metrics']['physical_constraints_pass'],'Final exact selected metrics and25')
+     require(r['completed_outer_steps']==sum(it['status']=='complete' for it in r['iterations']),'Completed-step count')
+@@ -441,7 +452,7 @@
+             'counts':{'all_complete_vectors':len(vectors),'new_vectors':r['new_parameter_vectors'],'initial_imported_vectors':27,'used_complete_imported_vectors':len(set(vectors)&set(registry)),
+                       'historical_vector_bodies_read_once':len(loaded),'inherited_cell_variants':len(inherited),'original_baseline_cells':len(baseline),'new_native_cells':len(newcells),
+                       'native_programs':len(receipts),'maximum_native_overlap':maximum,'outer_steps':len(r['iterations']),'completed_outer_steps':r['completed_outer_steps'],
+-                      'logical_proposals':r['logical_proposal_calls'],'new_solver_calls':real_calls,'imported_proposals':imported_calls,'selected_cells':46,'selected_EF_cells':10},
++                      **proposal_counts,'selected_cells':46,'selected_EF_cells':10},
+             'selected_raw_review':pin(out/'SELECTED_RAW_REPLAY.json'),'native_cache':native_rows,'trajectory':iterations,'executed_trial_gates':trial_gate_reports,
+             'stopping_reason':stop,'actual_cost':r['cost'],'new_native_calls':0,'new_optimizer_calls':0,'new_reference_calls':0,'physical_accuracy_qualified':False,'reserved_outcomes_opened':False,
+             'limits':['Consumed development only; no global capacity, electrical accuracy or physical model qualification.',

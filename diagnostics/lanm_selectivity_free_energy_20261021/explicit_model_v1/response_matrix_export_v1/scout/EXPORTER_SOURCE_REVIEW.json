@@ -1,0 +1,32 @@
+{
+  "status": "passed_exporter_source_review",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/EXPORT_HELPERS_v2.f",
+    "sha256": "f4cd6663acf49ff87b995db7ab22c7448e9ceffb5723a1c6dfafd88ad0732dab"
+  },
+  "source_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/source_v2/MANIFEST.json",
+    "sha256": "84d10308077293069c64d55964ec4fe8648d2bb2b8713484afef1196b92fb117"
+  },
+  "patch": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/source_v2/EXPORT.patch",
+    "sha256": "942b6d64752d31e00f47fbf73ff29c378a167078a503dfafeeaf670b755c8f20"
+  },
+  "exporter_ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/READY_v2.json",
+    "sha256": "96831973e8c14ddd1df300c7c59084313ed5c4daadf66a793920a75906455be9"
+  },
+  "scope": "Source-only reporting-path review; native scout still required.",
+  "findings": [
+    "Only induce.f changes; native dfield0a/ufield0a kernels are unchanged.",
+    "Disabled flag returns before probing; enabled hook follows native solve and precedes predictor/history.",
+    "Saved uind/uinp/udir/udirp, eighteen shunt values and ncell are exactly restored and checked. Vacuum replica returns after ncell assignment.",
+    "Complete guarded 1..28-site original MUTUAL vacuum operator with active positive-alpha sites; unsupported alternate/native modes reject.",
+    "Both native channels, RHS, operator action and residual diagnostics are exported at 17 decimal digits.",
+    "Source_v2 replaces only the shadowed MAXVAL symmetry reduction with equivalent explicit MAX loops. Failed v1 build is retained."
+  ],
+  "numerical_qualification": false,
+  "force_qualification": false,
+  "new_native_calls": 0,
+  "new_compiler_calls": 0
+}

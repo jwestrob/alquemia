@@ -1,0 +1,120 @@
+--- /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/ADAPTER.py
++++ /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/persistence_performance_v1/future_adapter_v1/ADAPTER.py
+@@ -12,6 +12,9 @@
+ import socket
+ import threading
+ 
++_js=importlib.util.spec_from_file_location("component_ledger_journal",Path(__file__).with_name("JOURNAL.py"))
++J=importlib.util.module_from_spec(_js);_js.loader.exec_module(J)
++
+ THREADS=('OMP_NUM_THREADS','OMP_THREAD_LIMIT','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','NUMEXPR_NUM_THREADS')
+ LIMITS={'outer_steps':8,'new_parameter_vectors':200,'new_native_programs':6496,'reused_origin_vectors':1,'reused_initial_derivative_vectors':24,'workers':12,'numerical_threads_per_process':1,'aggregate_login_threads':16,'native_timeout_seconds':300}
+ 
+@@ -24,7 +27,7 @@
+ def read(p):return json.loads(verify(p).read_text())
+ def digest(x):return hashlib.sha256(json.dumps(x,sort_keys=True,separators=(',',':'),allow_nan=False).encode()).hexdigest()
+ def save(p,x):
+-    p=Path(p);tmp=p.with_name(p.name+'.tmp');tmp.write_text(json.dumps(x,indent=2,allow_nan=False)+'\n');os.replace(tmp,p)
++    J.atomic_json(p,x)
+ def module(p,name):
+     s=importlib.util.spec_from_file_location(name,verify(p));m=importlib.util.module_from_spec(s);s.loader.exec_module(m);return m
+ def fingerprint(c):return digest({k:v for k,v in c.items() if k not in ('root_release','source_review','preparation')})
+@@ -33,6 +36,7 @@
+ 
+ def context(cfg):
+     require(cfg['adapter']==pin(__file__) and cfg['limits']==LIMITS,'New policy source/limits')
++    require(cfg['journal_implementation']==pin(Path(__file__).with_name('JOURNAL.py')) and cfg['persistence_policy']==J.POLICY,'Versioned journal source/policy')
+     for k in ('implementation','core','declaration','execution_context','parent_evaluator','parent_configuration','reuse_inventory','decomposition','interpreter'):verify(cfg[k])
+     require(pin(sys.executable)==cfg['interpreter'],'Pinned interpreter')
+     require(all(os.environ.get(k)=='1' for k in THREADS) and os.environ.get('BLIS_NUM_THREADS','1')=='1','One numerical thread')
+@@ -89,7 +93,8 @@
+             require(authority==inv['cells'],'Exact prepared immutable cell import inventory')
+             self.imported_cell_keys=set(self.cache)
+             self.ledger.update(new_policy=cfg['adapter'],limits=LIMITS,configuration_fingerprint=self.batch_fingerprint,imported_origin_vectors=1,imported_derivative_vectors=24,additional_pilot_vectors=1,imported_unique_cells=len(self.cache),native_returncodes_observed=0)
+-            save(self.ledger_path,self.ledger)
++            self.persistence=J.Journal(self.cache_dir/'EVENTS.jsonl',self.ledger,self.lock,{'configuration_fingerprint':self.batch_fingerprint,'implementation':cfg['adapter'],'journal_implementation':cfg['journal_implementation'],'root_release':cfg.get('root_release')})
++            self.persistence.materialize(self.ledger_path,expected=self.ledger)
+ 
+         def authorize(self,values,role,step):
+             values=self.checked_values(values);key=digest(values)
+@@ -99,7 +104,12 @@
+ 
+         def _stop(self,exc):
+             self.stop_event.set()
+-            with self.lock:self.ledger['stopped']=True;self.ledger.setdefault('failure',repr(exc));save(self.ledger_path,self.ledger)
++            with self.lock:
++                self.ledger['stopped']=True;self.ledger.setdefault('failure',repr(exc))
++                if hasattr(self,'persistence'):
++                    self.persistence.append('stop',{'error':repr(exc)})
++                    self.persistence.materialize(self.ledger_path)
++                else:save(self.ledger_path,self.ledger)
+ 
+         def _gate(self):
+             require(self.mode=='run','Preparation forbids native calls');require(not self.stop_event.is_set(),'Global stop')
+@@ -131,7 +141,8 @@
+                     attempt={'number':len(self.program_attempts)+1,'cache_key':record['cache_key'],'cell_id':record['cell_id'],'program':program,'folder':str(folder),'status':'invoke_boundary_entered'}
+                     self.program_attempts.append(attempt);self.ledger['native_program_invocations']+=1
+                     self.cell_attempts[record['cache_key']]=self.cell_attempts.get(record['cache_key'],0)+1
+-                    self.ledger['native_attempts']=copy.deepcopy(self.program_attempts);save(self.ledger_path,self.ledger)
++                    self.ledger['native_attempts']=self.program_attempts
++                    self.persistence.append('attempt_intent',{'attempt':attempt,'request_index':len(self.ledger['requests'])-1,'program_inputs':record['program_inputs'][program]})
+                 args=['system.xyz','EM'] if program=='analyze' else ['system.xyz','Y','N'];before=len(record['receipts'])
+                 try:
+                     self.h['native_helper'].invoke([self.config['executables'][program]['path']]+args,folder,folder/(program+'.out'),record['receipts'])
+@@ -144,9 +155,11 @@
+                 finally:
+                     with self.lock:
+                         for receipt in record['receipts'][before:]:receipt['executor']=copy.deepcopy(self.executor_identity)
++                        old_observed=attempt.get('returncode_observed',False)
+                         attempt['returncode_observed']=any('returncode' in r for r in record['receipts'][before:])
+-                        self.ledger['native_returncodes_observed']=sum(x.get('returncode_observed',False) for x in self.program_attempts)
+-                        self.ledger['native_attempts']=copy.deepcopy(self.program_attempts);save(self.ledger_path,self.ledger)
++                        self.ledger['native_returncodes_observed']+=int(attempt['returncode_observed'])-int(old_observed)
++                        self.ledger['native_attempts']=self.program_attempts
++                        self.persistence.append('attempt_return',{'attempt':attempt,'receipt_delta':record['receipts'][before:],'program_inputs':record['program_inputs'][program]})
+ 
+         def _cell(self,values,cid):
+             if self.stop_event.is_set():raise NotAttempted('Queued cell untouched after stop')
+@@ -202,7 +215,9 @@
+                     require(key not in self.ledger['vector_keys'],'No failed-vector retry')
+                     self.ledger['vector_keys'].append(key)
+                     request={'values':values[:],'vector_key':key,'role':copy.deepcopy(self.allowed[key]),'status':'started','required_new_programs':needed,'cells':{cid:{'status':'not_attempted'} for cid in self.m['rows']}}
+-                    self.ledger['requests'].append(request);save(self.ledger_path,self.ledger)
++                    self.ledger['requests'].append(request)
++                    request_index=len(self.ledger['requests'])-1
++                    self.persistence.append('request_start',{'index':request_index,'request':request})
+                 cells={};first_error=None
+                 try:
+                     with concurrent.futures.ThreadPoolExecutor(max_workers=12) as pool:
+@@ -216,17 +231,28 @@
+                                 state={'status':'failed_partial' if attempts else ('not_attempted' if self.stop_event.is_set() else 'failed_before_native'),'error':repr(exc),'native_attempts':attempts}
+                                 if first_error is None or isinstance(first_error,NotAttempted):first_error=exc
+                                 self._stop(exc)
+-                            with self.lock:request['cells'][cid]=state;save(self.ledger_path,self.ledger)
++                            with self.lock:
++                                request['cells'][cid]=state
++                                cell_path=self.cache_dir/'cells'/token/'RESULT.json'
++                                evidence={'result':pin(cell_path)} if cell_path.exists() else {'cache_key':token,'parent_configuration':self.batch['parent_configuration'],'reuse_inventory':self.batch['reuse_inventory'],'immutable_import':token in self.imported_cell_keys}
++                                self.persistence.append('request_cell',{'index':request_index,'cell_id':cid,'state':state,'evidence':evidence})
+                     if first_error is not None:raise first_error
+                     answer=self._assemble(cells);answer.update(status='complete',parameters=values[:])
+-                    with self.lock:request.update(status='complete',objective=answer['score']['objective']);save(self.ledger_path,self.ledger)
++                    with self.lock:
++                        request.update(status='complete',objective=answer['score']['objective'])
++                        self.persistence.append('request_update',{'index':request_index,'updates':{'status':'complete','objective':answer['score']['objective']}})
++                        self.persistence.materialize(self.ledger_path,expected=self.ledger)
+                     self.complete_vectors[key]=copy.deepcopy(answer);return answer
+                 except Exception as exc:
+                     self._stop(exc)
+-                    with self.lock:request.update(status='failed',error=repr(exc));save(self.ledger_path,self.ledger)
++                    with self.lock:
++                        request.update(status='failed',error=repr(exc))
++                        self.persistence.append('request_update',{'index':request_index,'updates':{'status':'failed','error':repr(exc)}})
++                        self.persistence.materialize(self.ledger_path,expected=self.ledger)
+                     raise
+ 
+         def snapshot(self):
++            with self.lock:self.persistence.materialize(self.ledger_path,expected=self.ledger)
+             s=super().snapshot()
+             with self.lock:s.update(max_parameter_vectors=200,max_native_programs=6496,active_limits=LIMITS,new_parameter_vectors=len(self.ledger['vector_keys']),native_returncodes_observed=self.ledger['native_returncodes_observed'],imported_unique_cells=len(self.imported_cell_keys),imported_origin_vectors=1,imported_derivative_vectors=24,additional_pilot_vectors=1,executor=copy.deepcopy(self.executor_identity),configuration_fingerprint=self.batch_fingerprint)
+             return s

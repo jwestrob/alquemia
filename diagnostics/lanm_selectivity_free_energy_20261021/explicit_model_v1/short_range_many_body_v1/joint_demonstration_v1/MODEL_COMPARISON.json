@@ -1,0 +1,40 @@
+{
+  "schema": "prospective_direct_metal_dependence_comparison_v1",
+  "created_utc": "2026-10-23T17:03:55.407958+00:00",
+  "fit_candidates_executed_at_declaration": 0,
+  "parent": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/joint_demonstration_v1/DECLARATION_v2.json",
+    "sha256": "08fc74bd30d5cd55ae71d849203005b64d68a0e733e0d83008c2c99d849389d1"
+  },
+  "scientific_reason": "All matched La/Dy water cycles have identical geometry and ligand frames. With shared coefficients, direct short-range V cancels exactly from the Dy-minus-La E3 contrast. That assumption forces every selectivity repair through the polarization sector, which is precisely the earlier coupling we aim to assess.",
+  "hypotheses": {
+    "shared12_control": "Original12-coefficient joint law, as declared in parent.",
+    "metal15": "Separate La and Dy coefficients for water pairv0, water-water triplev0 andva; eight V coefficients total (six water plus two original acetate), original three h and four H coefficients remain shared. Actual atomicnumber57/66 dispatch; frozen kernel unchanged."
+  },
+  "same_in_both": [
+    "same64operators and reference targets",
+    "same16prospective Hstarts",
+    "same individual coefficientboxes",
+    "samefivefamilyloss and scales",
+    "sameconditionalinitializer plus onejointrefinement",
+    "sameSPDfloor1e-6 all64geometries",
+    "same100iterationlimit and1e-10ftol",
+    "same failed-reference exclusions",
+    "same per-observable error/contrast reporting",
+    "sameconsumeddevelopment interpretation"
+  ],
+  "resources": {
+    "per_model": {
+      "qos": "standard_expand",
+      "CPUs": 24,
+      "workers": 16,
+      "threads_per_worker": 1
+    },
+    "concurrent_models": 2,
+    "maximum_allocated_CPUs": 48,
+    "new_quantum_calls": 0,
+    "new_geometry_searches": 0
+  },
+  "interpretation": "Compare simultaneous errors, sign failures, response stability and parameter-bound/rank limitations. More flexible energy interpolation is not independent validation. No unique charge-transfer/Pauli mechanism or full potential/exchange validation inferred. The metal15 model retains shared h/H and lacks independent Dy donor mechanical fitting, which remain explicit limits.",
+  "stop": "One prospectively fixed two-model comparison, not an outcome-dependent sequence of parameter extensions. Preserve all candidates and optimizer failures; no automatic extra starts or third fit variant."
+}

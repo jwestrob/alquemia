@@ -1,0 +1,94 @@
+{
+  "status": "declared_bounded_component_fit_source_preparation_only",
+  "created_utc": "2026-10-22T20:54:36.884480+00:00",
+  "question": "Can explicitly fitting the two paired component energies materially improve the existing interaction family while retaining the original physical gates and electrical-response quality?",
+  "prior_native_pilot_admission": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/nonlinear_check_v1/run_v1/ROOT_REVIEW.json",
+    "sha256": "e5a6bf81e16348ab5aac76ee8dfb76dfa04bcf923cb3e518496e7e002c2bf1ea"
+  },
+  "saved_diagnostic": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/actual_v1/RESULT.json",
+    "sha256": "ce2fd33896b823c53b43eca4c49813b56fe1ba547bf774adb02602b873cd1dc0"
+  },
+  "start": {
+    "key": "e63e7189dbecdb8e4112aceb5e4515f69644dbfa574b5fe07644d01ae736a037",
+    "artifact": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/fit_v1/run_v2/execution/vectors/e63e7189dbecdb8e4112aceb5e4515f69644dbfa574b5fe07644d01ae736a037.json",
+      "sha256": "47a758d441b93e625312215813cdd48c130557cc752a8447a047260965ebcd5c"
+    },
+    "reason": "Last measured admitted Jacobian origin with all25 physical gates; exact first24 derivative vectors can be reused. The tested half point is not substituted for this start."
+  },
+  "targets": "Unchanged common-basis paired P8/B8/P9/B9; electronic plus separately recorded D4. No absolute-parent target or raw-cluster CC substitution.",
+  "objective": {
+    "formula": "q=max(J_P/J_P_origin24, J_B/J_B_origin24), with J_P=(e_P8^2+e_P9^2)/2 and likewise B.",
+    "fixed_denominators": {
+      "J_P": 711.9511599971815,
+      "J_B": 497.4305961564669
+    },
+    "physical_acceptance_claim": false,
+    "component_scale_meaning": "Fixed initial-error normalization balances fractional repair of two consumed diagnostic blocks, not likelihood weights or physical uncertainty."
+  },
+  "fixed_old_block_ceilings": {
+    "old_EF": 0.15340308137508737,
+    "pair_mu": 0.37816202481323913,
+    "C_mu": 0.0052286591834414045,
+    "chi": 0.0011670073007337461
+  },
+  "actual_acceptance": {
+    "all25_original_physical_gates": true,
+    "all_four_old_block_scores_at_or_below_fixed_origin24_ceiling": true,
+    "numerical_native_admission": true,
+    "objective_rule": "Select lowest q among complete admitted trials and current. Require reduction greater than1e-10*max(1,abs(q_current)); current wins ties, otherwise earlier declared fraction wins ties. Derivative probes are never candidates.",
+    "tradeoff": "A component or response block may worsen relative to the previous iterate, but each remains at or below its fixed origin24 ceiling. No per-step monotonic response ratchet."
+  },
+  "proposal": {
+    "solver": "SLSQP",
+    "one_call_per_outer_step": true,
+    "maxiter": 200,
+    "ftol": 1e-12,
+    "analytic_constraint_Jacobian": true,
+    "start": "zero parameter displacement, auxiliaryq=current measured q",
+    "model": "Linearized residual vectors; full squared norms for P/B and four old blocks; original ten energy and fifteen category-balanced body-force gates reconstructed with unchanged thresholds.",
+    "normalized_trust_radius": 0.025,
+    "parameter_box": "Unchanged PARAMETER_DOMAIN.json",
+    "q_bounds": "0<=q<=q_current",
+    "fractions": [
+      1.0,
+      0.5,
+      0.25,
+      0.125
+    ],
+    "fraction_auxiliary_q": "q_f=(1-f)*q_current+f*q_returned",
+    "derivative_scheme": "Original12parameter central probes at +/-0.005 normalized, clamped only in probe design to original box with exact nonzero actual spans recorded;24 vectors/origin. Reuse exact saved first24 probes.",
+    "witness_rule": "Independently recompute each declared fraction using scalar residual arithmetic. Native trials require finite valid in-box vectors, all predicted physical gates and fixed block ceilings without physical-threshold relaxation, and strictly improved auxiliaryq. Failed solver statuses stay failed; their fractions require strictly positive residual-constraint margins and provide feasibility witnesses only. No retry, new fraction, second solver or optimizer-convergence assertion."
+  },
+  "limits": {
+    "outer_steps": 8,
+    "new_parameter_vectors": 200,
+    "new_native_programs": 6496,
+    "reused_origin_vectors": 1,
+    "reused_initial_derivative_vectors": 24,
+    "workers": 12,
+    "numerical_threads_per_process": 1,
+    "aggregate_login_threads": 16,
+    "native_timeout_seconds": 300
+  },
+  "stop_rules": [
+    "Eight outer steps or any hard budget exhausted; report budget termination separately from convergence.",
+    "Stop the campaign if no declared fraction qualifies, or no complete admitted trial improves q.",
+    "Stop new launches on native numerical/admission failure; retain unfinished batch and do not select from it.",
+    "Stop early if both actual paired component RMS errors<=1kcal/mol while all unchanged physical/response constraints pass. This is a development target, not physical qualification."
+  ],
+  "milestones": {
+    "substantive_recovery": "Report whether both component RMS errors improve over the original initial model and q<=0.25 (at least50percent RMS reduction for each versus origin24). This diagnostic milestone neither changes selection nor releases validation.",
+    "full_development_target": "Both paired component RMS<=1kcal/mol with original25gates and fixed response ceilings; reference-method limitations retained."
+  },
+  "reuse": "Fresh ledger and immutable exact scientific cache identities; import saved origin24 and24probes through completed fit admission, retain their authoritative saved scores/chi and original costs. Do not touch the old ledger or use exact derived-LAPACK replay. Static48 terms reused; unchanged-metal cells reused for derivative vectors.",
+  "execution": "Source preparation first. Root binds independently reviewed source/preparation and actual execution envelope before any fit run. Preferred12workers within current authorized16aggregate login allowance if Slurm remains saturated; otherwise standard_expand12CPU single task with current standard policy. No fake scheduler fields.",
+  "postselection": "One consumed eight-cycle trimer regression after independent final selection review; six previously omitted trimer native evaluations plus exact reuse of two existing states. Separate reviewed release, no fitting to this postselection result in this campaign. No automatic fresh validation/production.",
+  "non_goals": [
+    "No new quantum references, geometry generation, new MACE model, donor refit or production change in this campaign.",
+    "No claim that finite failure proves global inadequacy of the interaction family.",
+    "No automatically repeated8-step campaign or altered acceptance thresholds."
+  ]
+}

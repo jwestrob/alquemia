@@ -1,0 +1,48 @@
+{
+  "status": "declared_two_operator_initializations_pending_source_review",
+  "created_utc": "2026-10-22T23:40:38.625226+00:00",
+  "question": "Can the admitted native initialized-PME exporter provide reproducible reciprocal-operator weights and nominal norms for both exact terminal-candidate BIO solvent-box compositions?",
+  "scope": "Computational engine diagnostic only; no response solve, Hamiltonian energy, force, optimization, trajectory or model accuracy admission.",
+  "inputs": {
+    "composition_manifest_sha256": "d8622d4045ef9282bb3e8ec0cf1bf70693d85c01bc584063ccb252b50d0dd56c",
+    "qualified_library_sha256": "61e2fab0854e9eeb6a0b3eaa7f5b4cd197de407ba03133a9b7d492e9b5da9586",
+    "source_only_ready_sha256": "fe9ac1ca36ce341ac6b2d4aa524572fd66871fd7712959a6d54565bb8bb13b2f"
+  },
+  "settings": {
+    "fixtures": [
+      "La_aqueous_BIO",
+      "Dy_aqueous_BIO"
+    ],
+    "sites_per_fixture": 11958,
+    "box_A": [
+      49.324,
+      49.324,
+      49.324
+    ],
+    "cutoff_A": 9.0,
+    "ewald_alpha_per_A": 0.4,
+    "grid": [
+      64,
+      64,
+      64
+    ],
+    "spline_order": 5,
+    "fft": "FFTW",
+    "boundary": "native conducting TINFOIL default; no EWALD-BOUNDARY record",
+    "response_records": "Exactly two explicitly removed in derivative input, retained with literal reconstruction; original composition remains unexecutable",
+    "intrinsic_polarizabilities": "unchanged source values, checked separately for each metal"
+  },
+  "limits": {
+    "native_program_cap": 2,
+    "isolated_link_cap": 1,
+    "induced_solves": 0,
+    "energies": 0,
+    "gradients": 0,
+    "threads": 1,
+    "child_address_space_bytes": 8589934592,
+    "child_wall_seconds": 120,
+    "execution": "authorized login",
+    "aggregate_limit": 16
+  },
+  "interpretation": "Parse/replay actual initialized weights, compare summaries and bound input identity; preserve nonfinite/negative or mismatched results as failures. Ordinary-double consistency and nominal bounds are not certified application error, full stability or dynamics qualification. No automatic retries or scientific parameter changes."
+}

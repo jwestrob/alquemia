@@ -1,0 +1,330 @@
+{
+  "schema": "lanm_exchange_experimental_target_v1",
+  "created_utc": "2026-10-21T08:20:17.733358+00:00",
+  "purpose": "Primary source inventory and explicit chemical/observable contract; no molecular calculations.",
+  "status": "ready_for_declared_preparation_not_complete_experimental_mapping",
+  "primary_construct": {
+    "name": "LBT3 amidated I10",
+    "sequence": "FIDTNNDGWIEGDELLA",
+    "residue_count": 17,
+    "N_terminus": "NH3+",
+    "C_terminus": "CONH2",
+    "deprotonated_sidechains": [
+      "ASP3",
+      "ASP7",
+      "GLU11",
+      "ASP13",
+      "GLU14"
+    ],
+    "peptide_formal_charge": -4,
+    "metals": [
+      "La(III)",
+      "Dy(III)"
+    ],
+    "holo_formal_charge": -1,
+    "coordinate_sources": [
+      "9CEQ",
+      "7CCO",
+      "7CCN"
+    ],
+    "source_caveat": "7CCN is Lu-conditioned; all are NMR models; deposited restraints do not establish physical population weights."
+  },
+  "alternative_construct": {
+    "name": "LBT3 free-carboxylate sensitivity",
+    "sequence": "FIDTNNDGWIEGDELLA",
+    "N_terminus": "NH3+",
+    "C_terminus": "COO-",
+    "peptide_formal_charge": -5,
+    "holo_formal_charge": -2,
+    "historical_status": "previous declared full256 assumption; not a proven error"
+  },
+  "measurements": [
+    {
+      "id": "Hatanaka2020_ITC",
+      "doi": "10.1038/s41598-020-76527-y",
+      "source_location": "SI Table S1, page16; main Methods ITC; SI FigS5",
+      "conditions": {
+        "temperature_K": 283.15,
+        "pH": 6.0,
+        "MES_mM": 50,
+        "NaCl_mM": 100,
+        "peptide_uM": 15,
+        "titrant_uM": 300,
+        "titrant_salt": "Ln(NO3)3"
+      },
+      "La": {
+        "deltaG_kcal_mol": -6.82,
+        "deltaG_reported_error": 0.03,
+        "deltaH_kcal_mol": 3.83,
+        "deltaH_reported_error": 0.28,
+        "stoichiometry": 1.01,
+        "stoichiometry_reported_error": 0.05
+      },
+      "Dy": {
+        "deltaG_kcal_mol": -9.18,
+        "deltaG_reported_error": 0.11,
+        "deltaH_kcal_mol": 2.24,
+        "deltaH_reported_error": 0.12,
+        "stoichiometry": 0.97,
+        "stoichiometry_reported_error": 0.08
+      },
+      "minimum_replicates": 3,
+      "uncertainty": "main Figure1 standard error; TableS1 only states means of at least triplicate",
+      "terminal_identity_verified": false,
+      "limitations": [
+        "SI apo charge -4 versus main MD holo -2",
+        "No direct Dy gel-filtration trace verified",
+        "No raw ITC fitting reanalysis",
+        "Free-metal activity and buffer competition not independently resolved"
+      ],
+      "consumption": "historically consumed development"
+    },
+    {
+      "id": "KT2025_LBT3_competition",
+      "doi": "10.1002/chem.202501318",
+      "source_location": "SI S3/S6/S7/S8/S23, main text, 9CEQ",
+      "conditions": {
+        "temperature_K": null,
+        "temperature_note": "25C is specified for NMR, not affinity assay",
+        "pH": 6.0,
+        "MES_mM": 50,
+        "NaCl_mM": 100,
+        "peptide_nM": 50,
+        "Tb_nM": 100,
+        "Tb_Kd_methods_nM": 91,
+        "Tb_Kd_table_nM": 92.1,
+        "salt_note": "La/Lu chlorides are specified for NMR material; competitor salt identity not separately explicit for all affinity measurements"
+      },
+      "La": {
+        "Kd_or_Ki_table_nM": 14202.6,
+        "main_text_Kd_nM": 14211,
+        "confidence_interval": null
+      },
+      "Dy": {
+        "Kd_or_Ki_table_nM": 111.3,
+        "confidence_interval": null
+      },
+      "replication": "triplicate measurements",
+      "fit": "Tb competition IC50 converted by reported Cheng-Prusoff relation",
+      "sequence_conflict": {
+        "materials_S3": "FIDTNNDGWYEGDELLA",
+        "main_text_and_MD_S8_and_9CEQ": "FIDTNNDGWIEGDELLA",
+        "interpretation": "I10 strongly supported; Y10 likely typo, assay identity not proven by assumption"
+      },
+      "terminal_identity_verified": true,
+      "terminal_evidence": "SI Materials free N-amine/C-amide; 9CEQ sequence includes NH2",
+      "limitations": [
+        "Affinity assay temperature absent",
+        "Methods claim 95% CI but values not tabulated",
+        "Main/SI small numeric discrepancy",
+        "SI printed direct-binding quadratic c expression dimensionally inconsistent; implementation not verified",
+        "Competition free-ligand depletion/activity assumptions unverified"
+      ],
+      "consumption": "WT numeric outcomes read during this review",
+      "uncertainty_note": "SI methods mention 95% confidence intervals; main Figure6 describes standard deviation of triplicates; no numerical intervals in TableS3."
+    }
+  ],
+  "observable": {
+    "reaction": "P-La + Dy(aq) -> P-Dy + La(aq)",
+    "definition": "DG_exchange = DG_bound(La->Dy) - DG_aqueous(La->Dy)",
+    "negative_means": "Dy preferred",
+    "Kd_relation": "RT*ln(Kd_Dy/Kd_La)",
+    "experimental_mapping": "conditional affinity unless protonation/speciation and state-ensemble mapping established"
+  },
+  "exposure": {
+    "2020_all_series": "Already consumed; full SI table reviewed again.",
+    "2025_WT": "all-series numerical table displayed; La/Dy transcribed",
+    "2025_N5D": "Qualitative selectivity loss and main-text Lu353 nM exposed; attempted header extraction accidentally displayed all non-La table rows including Dy193.8 nM; mutant La not displayed or transcribed.",
+    "N5D_blind_validation": false,
+    "unopened_numeric_validation_case": null
+  },
+  "open_requirements": [
+    "Assay-state/terminal mapping sensitivity",
+    "Buffer/speciation/activity treatment",
+    "2025 affinity temperature/uncertainty if used quantitatively",
+    "Genuinely independent validation case"
+  ],
+  "sources": [
+    {
+      "path": "workspaces/lanm_selectivity_free_energy_20261021/experimental_target_v1/sources/hatanaka2020.xml",
+      "sha256": "3ed402373989c5c5ad3ebaf3e5000eb926fd4a459a6d86bcfe544f00ac71d81d",
+      "bytes": 96964,
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7656248/fullTextXML",
+      "role": "primary_article_xml"
+    },
+    {
+      "path": "workspaces/lanm_selectivity_free_energy_20261021/experimental_target_v1/sources/hatanaka2020_si_archived.pdf",
+      "sha256": "a21276ce24a352c9c1d1761fe594ef356a3c6f714ec3e0e5ce069c807fa9c21b",
+      "bytes": 4477221,
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41598-020-76527-y/MediaObjects/41598_2020_76527_MOESM1_ESM.pdf",
+      "role": "archived_primary_supplement"
+    },
+    {
+      "path": "workspaces/lanm_selectivity_free_energy_20261021/experimental_target_v1/sources/si2020_zip.zip",
+      "sha256": "52019526417add6c1f1d715879d41ee6c8d0ecff6a41e3bdad57e6b11e96fa16",
+      "bytes": 4400966,
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7656248/supplementaryFiles?includeInlineImage=false",
+      "role": "downloaded_primary_supplement_package"
+    },
+    {
+      "path": "workspaces/lanm_selectivity_free_energy_20261021/experimental_target_v1/sources/kt2025.xml",
+      "sha256": "c6eaa7b67a8e80c3c7436599607803cba6c368a1ae2fbc9c19631e1f355cf522",
+      "bytes": 114713,
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12160965/fullTextXML",
+      "role": "primary_article_xml"
+    },
+    {
+      "path": "workspaces/lanm_selectivity_free_energy_20261021/experimental_target_v1/sources/kt2025_supplementary.zip",
+      "sha256": "73caed5670abc1a166e63650853f595fd386c6cbf4a84d5c6a84748591057237",
+      "bytes": 5664046,
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12160965/supplementaryFiles?includeInlineImage=false",
+      "role": "downloaded_primary_supplement_package"
+    },
+    {
+      "path": "workspaces/lanm_selectivity_free_energy_20261021/experimental_target_v1/sources/CHEM-31-e202501318-s003.pdf",
+      "sha256": "0d827b1a260f09e786c786ef3214ac75b0cc61f584d077563d59169521f6f92b",
+      "bytes": 1490148,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12160965/#chem202501318-supitem-0001",
+      "role": "primary_supplement_extracted_from_epmc_zip"
+    },
+    {
+      "path": "workspaces/lanm_selectivity_free_energy_20261021/experimental_target_v1/sources/7cco.cif",
+      "sha256": "473cc166df369b085b1fe030fa03f4fc31ef8677b28f2385e4d74f6462549807",
+      "bytes": 484194,
+      "url": "https://files.rcsb.org/download/7CCO.cif",
+      "role": "primary_deposit"
+    },
+    {
+      "path": "workspaces/lanm_selectivity_free_energy_20261021/experimental_target_v1/sources/9ceq.cif",
+      "sha256": "956ed5bf63bc4e4c05c223d9e34912a0f57c0d1b757a1648c7c385cc4fab967b",
+      "bytes": 498657,
+      "url": "https://files.rcsb.org/download/9CEQ.cif",
+      "role": "primary_deposit"
+    },
+    {
+      "path": "workspaces/lanm_selectivity_free_energy_20261021/experimental_target_v1/sources/9ceq_entity1.json",
+      "sha256": "d9341d076b1ef34d6f62cd6f47174b83b3cae7ca6369db9913596cc927e78078",
+      "bytes": 6828,
+      "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/9CEQ/1",
+      "role": "primary_deposit_metadata"
+    },
+    {
+      "path": "workspaces/lanm_selectivity_free_energy_20261021/experimental_target_v1/sources/9ceq_entry.json",
+      "sha256": "5135a0816960aa98dfccb6b1d9e482cf67a21034a883569f2371759ef94bf583",
+      "bytes": 10786,
+      "url": "https://data.rcsb.org/rest/v1/core/entry/9CEQ",
+      "role": "primary_deposit_metadata"
+    },
+    {
+      "path": "workspaces/lanm_selectivity_free_energy_20261021/experimental_target_v1/sources/9ceq_assembly1.json",
+      "sha256": "308b42c31461e7be6a5131bd3937a11438d554c87a8c663625f0f96be0248632",
+      "bytes": 2528,
+      "url": "https://data.rcsb.org/rest/v1/core/assembly/9CEQ/1",
+      "role": "primary_deposit_metadata"
+    },
+    {
+      "path": "workspaces/lanm_selectivity_free_energy_20261021/experimental_target_v1/sources/future_1tjb_entry.json",
+      "sha256": "1a647209615ea6d90fcb524264a0461a69ad0e2841e1997da104d984226f47ca",
+      "bytes": 13195,
+      "url": "https://data.rcsb.org/rest/v1/core/entry/1TJB",
+      "role": "future_validation_metadata_review_only"
+    },
+    {
+      "path": "workspaces/lanm_selectivity_free_energy_20261021/experimental_target_v1/sources/future_1tjb_entity1.json",
+      "sha256": "73f32cf192ee5fb59b4b5d1913f2fcee714df2e2d69ae1d6ad125649df54a203",
+      "bytes": 3483,
+      "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/1TJB/1",
+      "role": "future_validation_metadata_review_only"
+    },
+    {
+      "path": "workspaces/lanm_selectivity_free_energy_20261021/experimental_target_v1/sources/future_1tjb_assembly1.json",
+      "sha256": "2b700d707194116cd8b490f0b08d69ea8716ecd26c95389d1644b676990bb64c",
+      "bytes": 2413,
+      "url": "https://data.rcsb.org/rest/v1/core/assembly/1TJB/1",
+      "role": "future_validation_metadata_review_only"
+    },
+    {
+      "path": "workspaces/lanm_selectivity_free_energy_20261021/experimental_target_v1/sources/future_timbarrel_crossref_metadata.json",
+      "sha256": "7f8ceedb1e034de913aef09222a2ce9289dcf363e6d4792090e0293b276e5e64",
+      "bytes": 13259,
+      "url": "https://api.crossref.org/works/10.1073/pnas.2008535117",
+      "role": "future_validation_metadata_review_only"
+    },
+    {
+      "path": "workspaces/lanm_selectivity_free_energy_20261021/experimental_target_v1/sources/future_timbarrel_epmc_metadata.json",
+      "sha256": "0075181b159a629801f1d9900858dd2f24618599bfe9e62f1a4fea5560faada1",
+      "bytes": 1260,
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1073/pnas.2008535117&format=json",
+      "role": "future_validation_metadata_review_only"
+    },
+    {
+      "path": "workspaces/lanm_selectivity_free_energy_20261021/experimental_target_v1/sources/future_timbarrel_unopened_fulltext.xml",
+      "sha256": "4e66bbad10f0ef956fb2a5773d2b0a73dae1d15b60913a16a3f9674d2a44d1f0",
+      "bytes": 106372,
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7720202/fullTextXML",
+      "role": "future_validation_metadata_review_only"
+    }
+  ],
+  "retained_failed_downloads": [
+    {
+      "path": "workspaces/lanm_selectivity_free_energy_20261021/experimental_target_v1/sources/hatanaka2020.html",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "status": "html_challenge_or_error_not_scientific_source",
+      "note": "Historical filename may say pdf/verified; contents are HTML and not admitted."
+    },
+    {
+      "path": "workspaces/lanm_selectivity_free_energy_20261021/experimental_target_v1/sources/hatanaka2020_si_verified.pdf",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "status": "html_challenge_or_error_not_scientific_source",
+      "note": "Historical filename may say pdf/verified; contents are HTML and not admitted."
+    },
+    {
+      "path": "workspaces/lanm_selectivity_free_energy_20261021/experimental_target_v1/sources/si2020.pdf",
+      "sha256": "8f02cb70d771f94a6695e9af4095d9da98369b351171e6969d34e29585af02c3",
+      "status": "html_challenge_or_error_not_scientific_source",
+      "note": "Historical filename may say pdf/verified; contents are HTML and not admitted."
+    },
+    {
+      "path": "workspaces/lanm_selectivity_free_energy_20261021/experimental_target_v1/sources/si2020_media.pdf",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "status": "html_challenge_or_error_not_scientific_source",
+      "note": "Historical filename may say pdf/verified; contents are HTML and not admitted."
+    },
+    {
+      "path": "workspaces/lanm_selectivity_free_energy_20261021/experimental_target_v1/sources/si2025.pdf",
+      "sha256": "f53876d8032f82c2b8f831fe3eca39dcc9054552e9e36e16b0621c7ef9a8b2b6",
+      "status": "html_challenge_or_error_not_scientific_source",
+      "note": "Historical filename may say pdf/verified; contents are HTML and not admitted."
+    }
+  ],
+  "compute": {
+    "submitted_jobs": [],
+    "molecular_calls": 0,
+    "numerical_scientific_calculations": 0,
+    "operations": [
+      "literature browsing",
+      "download",
+      "PDF text extraction",
+      "metadata parsing",
+      "hashing",
+      "documentation"
+    ]
+  },
+  "future_validation_candidates": [
+    {
+      "id": "LBTv_1TJB",
+      "sequence": "YIDTNNDGWYEGDELLA(NH2)",
+      "doi": "10.1002/anie.200460028",
+      "assembly": "author-assigned monomer",
+      "Dy_value": null,
+      "status": "metadata_eligible_lead_pending_exact_assay_and_affinity_pair",
+      "prior_exposure": "General heavy-ion preference and La/Tb outcomes exposed before this review. Not fully blind."
+    },
+    {
+      "id": "TFD_TIM_barrel",
+      "doi": "10.1073/pnas.2008535117",
+      "status": "not_admitted_missing_verified_Dy_pair",
+      "outcomes_inspected": false
+    }
+  ]
+}

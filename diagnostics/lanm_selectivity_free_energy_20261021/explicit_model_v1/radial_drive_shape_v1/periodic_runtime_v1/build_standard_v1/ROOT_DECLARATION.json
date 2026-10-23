@@ -1,0 +1,58 @@
+{
+  "status": "declared_source_only_standard_QOS_build_recovery",
+  "UTC": "2026-10-23T06:14:59.814023+00:00",
+  "question": "Enable the same pending candidate-independent12CPU periodic build on the eligible standard QOS with no numerical recipe change.",
+  "old_ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_runtime_v1/build_v1/READY.json",
+    "sha256": "dc2066f4616959fec66ec3f4d6212565472f47070d7f9e2aa6743c94411a8c26"
+  },
+  "unchanged_build_implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_runtime_v1/build_v1/BUILD.py",
+    "sha256": "fcda8115219168c72f3ac96ec701f8d4c4d74e4d87fc19808bf9a2a7723c02ef"
+  },
+  "old_inputs": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_runtime_v1/build_v1/preparation_v1/INPUTS.json",
+    "sha256": "1d55499a613ff8a7d6d08e7f25c2987f3c149de55d1e80f4529f9b80bba481a1"
+  },
+  "old_allocation_parser": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/static_factor_worker_nominal_v1/slurm_execution_v1/RUN.py",
+    "sha256": "e73e9a788ca8ba310f3c55bc20d0c82faa6c3dc3f3f58e2da5ef15bea35d1139"
+  },
+  "old_wrapper": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_runtime_v1/build_v1/RUN.sbatch",
+    "sha256": "b3ee9a320ede7d4676c558e941ffff93afd7131dd178a070ef7278613e4c99f7"
+  },
+  "old_declaration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_runtime_v1/build_v1/ROOT_DECLARATION.json",
+    "sha256": "159019ffa40dbb18f4201f7e88089e6029f0dbcc69f2d57fb381687f1a9d26b6"
+  },
+  "allowed_deltas": [
+    "Isolated allocation parser changes only expectedQOS literal standard_expand tostandard. Every other scheduler ownership/state/CPU/memory/node/affinity gate stays unchanged.",
+    "New immutable prepared inputs/config bind that parser and this prospective resource declaration, preserving all native/archive/compiler/library/input pins.",
+    "New wrapper requests standardQOS, otherwise same1node1task12CPU/no-requeue/schedulerdefaults; no memory/time flags.",
+    "Binding/review/control receipts for the new actual source and exact output."
+  ],
+  "unchanged_build_recipe": {
+    "archive_workers": 12,
+    "configure_calls": 1,
+    "archive_calls": 1,
+    "wrapper_compiles": 8,
+    "wrapper_links": 3,
+    "loader_checks": 4,
+    "molecular_calls": 0,
+    "archive_sources": 615,
+    "compiler_flags_and_libraries": "exact old handoff",
+    "old_baseline": "exact original executable reused",
+    "per_command_time_and_memory_limits": "unchanged"
+  },
+  "live_policy_readback": "Agent verified standard12CPU/job120CPU/user10jobs/user3day default maxwall; default4000MiB/CPU; user/account eligible standard andstandard_expand; standard partition allowsboth. Preserve exact live source evidence in preparation.",
+  "root_submission_ownership": true,
+  "old_job": 20739,
+  "duplicate_prevention": "Preserve20739 while preparing. Before actual replacement root must recheck it. If started or completed, abandon replacement and use old receipt. Only if stillPENDING with zero application work may root record and cancel that owned pending job, verify terminal plus no compiler execution, then submit one reviewed standard replacement. No action on other users/sessions/jobs or20734.",
+  "existing_watcher_preserved_until_terminal": true,
+  "source_controls": "Focused new expected-QOS acceptance/rejection and exact diff/source/input identity only; reuse previous30 controls, do not rerun unrelated chemistry/build.",
+  "compiler_calls_released": 0,
+  "scheduler_mutations_released": 0,
+  "new_native_calls": 0,
+  "full_execution_requires": "Independent source review, root exact config/release and explicit pending-job replacement record. Scientific goal unchanged."
+}

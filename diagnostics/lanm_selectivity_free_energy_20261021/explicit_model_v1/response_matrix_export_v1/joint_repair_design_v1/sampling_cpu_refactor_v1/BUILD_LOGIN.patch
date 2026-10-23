@@ -1,0 +1,54 @@
+--- original/BUILD.py
++++ login2/BUILD_LOGIN.py
+@@ -7,6 +7,7 @@
+ from pathlib import Path
+ import resource
+ import subprocess
++import socket
+ import sys
+ import time
+ 
+@@ -21,8 +22,10 @@
+ out = Path(out_arg).resolve()
+ out.mkdir(exist_ok=False, parents=True)
+ start = time.monotonic()
++start_cpu = time.process_time()
+ result = {"status": "failed", "manifest": pin(manifest_path), "commands": [],
+-          "new_molecular_calls": 0, "job_id": os.environ.get("SLURM_JOB_ID"),
++          "new_molecular_calls": 0, "job_id": None, "execution_mode": "login",
++          "hostname": socket.gethostname(), "controller_pid": os.getpid(),
+           "started_utc": datetime.datetime.now(datetime.timezone.utc).isoformat()}
+ try:
+     if result["manifest"]["sha256"] != expected_hash:
+@@ -31,9 +34,15 @@
+     for item in manifest["source_outputs"] + [manifest["cmake"]]:
+         if pin(item["path"]) != item:
+             raise ValueError("Source pin changed: " + item["path"])
+-    threads = int(os.environ.get("SLURM_CPUS_PER_TASK", "1"))
+-    if not result["job_id"] or not 1 <= threads <= 24:
+-        raise ValueError("Expected a bounded Slurm build allocation")
++    threads = 2
++    if os.environ.get("SLURM_JOB_ID") or os.environ.get("SLURM_STEP_ID"):
++        raise ValueError("Truthful login build requires no Slurm identity")
++    if socket.gethostname() != "biotite":
++        raise ValueError("Declared login host is biotite")
++    if any(os.environ.get(k) != "1" for k in
++           ("OMP_NUM_THREADS", "OMP_THREAD_LIMIT", "OPENBLAS_NUM_THREADS",
++            "MKL_NUM_THREADS", "NUMEXPR_NUM_THREADS", "BLIS_NUM_THREADS")):
++        raise ValueError("One numerical thread per compiler process")
+     source = Path(manifest["source_root"])
+     commands = [
+         ["cmake", "-S", str(source / "cmake"), "-B", str(out / "build"),
+@@ -63,8 +72,11 @@
+ finally:
+     usage = resource.getrusage(resource.RUSAGE_CHILDREN)
+     result.update(wall_seconds=time.monotonic() - start,
++                  controller_CPU_seconds=time.process_time() - start_cpu,
+                   child_cpu_seconds=usage.ru_utime + usage.ru_stime,
+-                  peak_child_rss_KiB=usage.ru_maxrss)
++                  peak_child_rss_KiB=usage.ru_maxrss,
++                  scheduler_allocated_CPU_seconds=0, scheduler_allocation=None,
++                  maximum_parallel_build_workers=2)
+     (out / "RESULT.json").write_text(json.dumps(result, indent=2) + "\n")
+ print(json.dumps({key: result[key] for key in ("status", "wall_seconds", "new_molecular_calls")}))
+ sys.exit(0 if result["status"] == "complete" else 1)

@@ -1,0 +1,64 @@
+{
+  "status": "source_ready_login_completion_watcher_not_launched",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/trimer_reference_precision_v1/runtime_v1/completion_watch_v1/WATCH.py",
+    "sha256": "42e9140ab2b45ea34c232f20ec842d264efd604bcac9466183bc8797dd10c170"
+  },
+  "control_source": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/trimer_reference_precision_v1/runtime_v1/completion_watch_v1/TEST_SOURCE.py",
+    "sha256": "fc438123e147457c2471bdf33c7a29a60d2136332d2ccfd20dfc64b796a3f8df"
+  },
+  "controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/trimer_reference_precision_v1/runtime_v1/completion_watch_v1/controls_v1/RESULT.json",
+    "sha256": "bae2e991add1966fbae4bb3ae63c32ac225363cf612e2148fde763447750f3ca"
+  },
+  "proposed_configuration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/trimer_reference_precision_v1/runtime_v1/completion_watch_v1/CONFIG_PROPOSED.json",
+    "sha256": "8eb6411736bc5f7d66a41f58c02516a5561cd3ad5e9d6bf6c6d2d4bd5830256c"
+  },
+  "actual_launch_authority": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/trimer_reference_precision_v1/runtime_v1/run_v1/REMAINING_LAUNCH.json",
+    "sha256": "3888cd144cc8fd9e0d2bd2164d47c4fdce6adacc7e2f5013552fb51f41df4968"
+  },
+  "parents_read": {
+    "scheduler_collection_email_watcher": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_global_occupancy_20260923/watch_native_delivery.py",
+      "sha256": "a00eb634eaed5b707d7de0c0b9e4dc89ef559e7ca243b2fdb8ac7d930a674582"
+    },
+    "scheduler_codex_watcher": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/pqq_boundary_pair_20260914/watch.py",
+      "sha256": "aa0e985361816e188081c46224477b8d5ff01116e25733e5efc437efb5e7174b"
+    }
+  },
+  "reuse": "Only file-lock/atomic-receipt and exact codex queue delivery pattern. No sacct, email, collection, scientific imports, submission or process signaling.",
+  "launch_argv": [
+    "env",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "/home/jwestrob/.pyenv/versions/3.12.0/bin/python3",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/trimer_reference_precision_v1/runtime_v1/completion_watch_v1/WATCH.py",
+    "watch",
+    "--config",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/trimer_reference_precision_v1/runtime_v1/completion_watch_v1/CONFIG_PROPOSED.json"
+  ],
+  "launch_owner": "Root after source review; supervise/background this argv using existing parent process-launch practice and record actual watcher PID. This source task has not launched it.",
+  "behavior": {
+    "poll_seconds": 60,
+    "maximum_queue_attempts": 1,
+    "queue_thread": "01a0a63a-ee36-7483-b726-1f7f5b7f75cc",
+    "scheduler_job_id": null,
+    "on_terminal": "Queue only after matching phase result or actual controller disappearance/reuse/zombie; abnormal observation queues an explicit alert, never success.",
+    "delivery_integrity": "Exclusive watcher lock; fsynced create-only intent and directory before queue. Existing intent suppresses repeat even after failure/crash. No automatic retries; a crash between intent and queue may leave a missed wake requiring root inspection.",
+    "scientific_admission": false
+  },
+  "preparation": {
+    "current_chemistry_results_read": false,
+    "native_reference_calls": 0,
+    "real_queue_attempts": 0,
+    "controls": 15,
+    "control_cost": {
+      "wall_seconds": 0.06393006001599133,
+      "CPU_seconds": 0.016589291000000006,
+      "threads": 1
+    }
+  }
+}

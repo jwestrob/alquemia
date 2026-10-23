@@ -1,0 +1,56 @@
+What the terminal trimer result localizes, and the smallest next discriminator
+
+Scope: bounded source/saved-result advice. All inputs and source pins are in EVIDENCE.json. SAVED_COMPONENTS.json contains only Decimal sums of existing printed component fields (0.226 s wall/0.219 CPU, one thread); no native, reference, optimizer, probe, geometry, model or raw numerical admission was repeated. This is separate from the admitted actual regression and Planck's full result table.
+
+1. Observed failure and useful success must remain separate
+
+The terminal preserves all25 original physical gates and the small balanced-W9 exchange error (-0.07566 kcal/mol), yet its eight consumed E3 values underestimate provisional electronic references by5.56–12.74 kcal/mol. All eight individual E3 and signed-mu3 error norms worsen versus feca12. The four paired energy contrasts are wrong-sign; three worsen and W9near improves slightly. All four paired dipole errors improve while every individual dipole error worsens: that paired gain is improved cancellation, not absolute response accuracy. These finite local results do not establish an equilibrium selectivity error, full-shell B decomposition, or global family infeasibility.
+
+Saved native components give an additional precise localization. Below are terminal-minus-feca12 changes of the native Polarization contribution to each E3, in kcal/mol:
+
+                  La near     La far      Dy near      Dy far
+  W8             -1.064069   -1.034717    -1.079165    -1.334794
+  W9             -1.051438   -1.035747    -0.922338    -1.330667
+
+The corresponding summed nonpolar changes are exactly0 or1e-8 in the stored eight-decimal component numbers. Total/component difference closure is at most3.000002e-8 kcal/mol. Against the original baseline, polarization changes range from-0.943516 to-4.570225 kcal/mol; nonpolar changes again cancel to printed precision. Thus the deterioration is in the model's coupled polarization response, not direct buffered-14-7 energy or changed bonded/permanent terms. This is native bookkeeping: the quantum E3 remainder is not thereby identified as polarization, charge transfer, exchange, penetration, or anisotropy.
+
+2. What the current response family can distinguish at these geometries
+
+The actual source has A=A0+H, Au=Ed0+h, Av=Ep0+h, with unequal raw RHS retained. For each metal,
+  h_i=3 f_i phi_i [a+b eta_i+e psi_i] R_i,
+  H_MM=(exp[g(s)(c+d eta)]-1)I/alpha_M,
+  psi_i=(r_i^2-r0^2)/r0^2, r0=2.50A.
+
+At ideal equal r0 for TWO waters, s=2, eta_i=1/2, eta=2/5 and g=4/3. The added drive amplitude is a+b/2 and metal stiffness uses (4/3)(c+2d/5), independent of the near/far angle. The full native tensor A0 and vectors still carry angular dependence; the model is not angle-free. A single-water dimer has no b or d contribution. The e term is zero in value at ideal r0 but has a nonzero radial derivative; literal printed coordinates are retained. Native RADIAL_DRIVE_PAIR readback already retains those small literal deviations. The new E3/mu3 result therefore principally challenges the accompanying old-coefficient redistribution, not a new central e energy offset. It does not establish that another choice within the same family cannot work.
+
+Pair scalar energies cancel from these matched seven-term E3 cycles and cannot change dipoles. An energy-only three-body correction could change E3, but cannot repair the observed individual mu3 deficits or the separate signed full-shell W9 error. Collective-only additions also cannot repair the existing pair response by themselves. Metal-only isotropic H, no new water-site/off-diagonal stiffness and no independent angular descriptor are concrete restrictions; the result does not select which restriction must change.
+
+3. Analytic response-energy decomposition is already possible without molecular calls
+
+The pinned epolar3.f lines570–578 add -K/2 sum_i u_i·h_i once to the ordinary native polarization energy evaluated at the NEW induced solution; K=electric/dielec. epolar.f uses the same reduced stationary contraction via udirp. Full-precision u/v, a/b/c/d, geometry, fixed damping, environment/beta and radial pair readbacks are already saved for all20 changed cycle terms. Therefore one can reconstruct h_a,h_b,h_e,H and report:
+  E_direct,h = -K/2 u·h = E_direct,a+E_direct,b+E_direct,e;
+  Delta E_pol = E_direct,h + [E_pol,new - E_direct,h - E_pol,baseline].
+The bracket is an exact residual bookkeeping term containing induced-solution redistribution from BOTH h and H. It is not a pure stiffness effect. No baseline replay or molecular off/on run is needed to calculate this partition.
+
+An alternative explicit functional partition also needs no solve:
+  Phi(u,v)=K/2 [u·(A0+H)v-u·(Ep0+h)-(Ed0+h)·v],
+  Delta Phi_explicit=K/2 [u·H v-(u+v)·h].
+At the stationary solution Phi is the reduced native energy. The original Phi0 evaluated at the NEW u/v is not the original relaxed baseline energy. Consequently this explicit term alone is not the total response-induced E3 change. Separating relaxed h-only versus H-only effects would require declared counterfactual solves and has an interaction/order convention; no such solves are performed or needed for the present diagnosis. Existing native component differences already establish the useful first localization. The exact envelope derivative K/2[u·H_theta v-(u+v)·h_theta] can likewise yield scalar parameter sensitivities from saved solutions; it is not a dipole Jacobian without the response solve.
+
+4. Smallest nonduplicate next discrimination: the saved W9far joint span
+
+The terminal fit's step8 origin is EXACT5d992 and has28 ordered saved derivative vectors plus proposal_08/LINEARIZATION.json. All those vectors contain the W9far La/Dy trimers and matching dimers. The other six new trimer geometries are not present throughout that stencil. Existing fitting minimizes paired P/B error and constrains original25, the three fixed-feca electrical norms and the absolute signed full-shell W9 residual. Neither its objective nor its constraints tests a joint E3/mu3 response span. The earlier inventory noted W9far reconstructability but did not execute this constrained test. Source/report search in the inspected radial/local-fit branches found no completed exact-terminal W9far six-group test.
+
+One prospectively frozen saved-only affine comparison is therefore warranted before inventing another term: reconstruct the two W9far seven-term energies and signed vectors at the center and its exact28 probes; use the actual normalized spans; ask for a common fractional reduction of six groups (La,Dy,Dy-minus-La E3 absolute errors and signed-mu3 vector error norms). Retain domain/trust radius, all25 physical gates, original fixed-feca electrical/W9 safeguards and nonincrease of current max(P/B) q. Report raw signed components, all constraints, solver status and exact scalar witness checks. This is a different question from repeating the previous P/B-only constraint removal, radial12-vs14 comparison, or continuing the old fit. Root has assigned separate source preparation to Planck; this advice does not release its arithmetic/solve.
+
+A feasible finite witness would show the old family has local joint freedom on this sampled environment and support one separately declared nonlinear check. Lack of a certified witness would establish only a local obstruction under these exact safeguards, trust region and provisional targets; AlmostSolved or failed convergence is not an infeasibility certificate. It cannot establish that an angular/off-diagonal term is necessary globally. If a new direction is later justified, an explicitly response-coupled angular or water/off-diagonal mechanism is more relevant to the JOINT E3/mu3 failure than another independent scalar pair offset; no architecture, sign, coefficient or fit is selected here.
+
+5. The reference uncertainty has not been resolved for these exact E3 targets
+
+The original trimer report explicitly retains failed printed density/DIIS criteria in all16 new reference cells under its accepted stopping protocol. That does not itself demonstrate unstable energy or invalidate the admitted result; it leaves a numerical-convergence question. References are electronic PBE0 in the original full parent basis with exact ghost masks, no D4. Printed-property/energy bounds omit SCF, basis, frozen-f, physical-state/SOC and electronic-method error.
+
+The separately completed tighter CC W8/W9 comparison concerns full REAL clusters and a quartet contrast, plus distinct small control systems; its frozen26-cell specification explicitly excludes CP cluster fragments. It therefore supplies no complete seven-term correlated/tighter E3 and no uncertainty bound for these trimer targets. The exact trimer inventory and its admissions expose no separately admitted tighter/correlated rerun of these16 trimer/ghost rows; the focused source/report search found none. This is a statement about the inspected authorities, not a universal absence claim.
+
+Before treating a local span failure as evidence for extra physics, the smallest matched reference discriminator would be ONE predeclared La/Dy W9far seven-term pair, all constituent states in each original full-parent basis, identical Hamiltonian/state/ghost geometry and stricter independently checked SCF stopping. That is at most14 distinct reference states before exact admitted same-protocol reuse; a later manifest must establish the actual unique count. Compare both individual E3 and signed mu3 and their Dy-minus-La contrasts, not only two new trimer total energies against loosely converged old fragments. Do not mix CC complexes with PBE0 fragments. Preserve the original reference/result and compare numerical shifts to the existing model-reference gaps without inventing a physical error bar. Stability of this one pair would address numerical target sensitivity only, not method or state accuracy or all eight cycles. No reference calculation is requested or released here.
+
+Avoid duplicate mechanisms: completed EXCHPOL amplitudes, direct/mutual damping +/-5%, the81-point earlier drive/stiffness screen, old score-ceiling/box relaxations, radial12-vs14 local comparison and two native witnesses all remain consumed evidence. The present native transfer regression and proposed saved W9far joint span add specific missing information; rerunning those old alternatives would not.

@@ -1,0 +1,101 @@
+{
+  "status": "saved_collector_ready_and_root_queued",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/collection/COLLECT.py",
+    "sha256": "52b047c7926273bdab1c01a358c1ea6deca2200fb6c8cc2447747ca4f20fad1b"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/collection/SPEC.md",
+    "sha256": "9d43533df77543463bcf9cd262b2b9d80f2084cf398ea38d48128d5339c8fa25"
+  },
+  "configuration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/collection/CONFIG.json",
+    "sha256": "47e857a0d6df58f21b799d7e6d80308fadc8a170982b8fd0ea48f00eee5a926c"
+  },
+  "source_controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/collection/source_controls_v2/RESULT.json",
+    "sha256": "01f9247755bc288ca1e10f503014f7652d4d1c4623351a41a5d4d82691e6c4eb"
+  },
+  "preparation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/collection/PREPARATION.json",
+    "sha256": "cbb42d220fa06e19c9039bbe639d0a703154488615c9a71625ff332cdb7c6931"
+  },
+  "actual_saved_preparation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/collection/preparation_v1/RESULT.json",
+    "sha256": "88ee6d0eaceb9b60be6e8e4d5b5b566ee9a3261a8be5828ccb2cc6f68b3f0d52"
+  },
+  "independent_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/independent_review_v1/COLLECTOR_REVIEW.json",
+    "sha256": "4092748ee2fd974661068410cd6ea339a4ccc386cfb17995bf318745703a87cb"
+  },
+  "panel": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/prepared_v4/PANEL.json",
+    "sha256": "c109ab96100e49633171a56c5f0b738522a565e088c6623eb257d99965c63a84"
+  },
+  "root_release": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/collection/run_v1/ROOT_RELEASE.json",
+    "sha256": "0137b426228c19ec991fb1fc6031d3ca54a8bc9ab72658d3b5570a97d46ae309"
+  },
+  "wrapper": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/RUN.sbatch",
+    "sha256": "28f7b09a74bb635ba856ecae582781bbb684409cd0bec81fbc21da87dd036d4c"
+  },
+  "source_controls_passed": 26,
+  "original_complexes_admitted_in_preparation": 4,
+  "intentionally_missing_fragments_in_preparation": 8,
+  "preparation_cycle_available": false,
+  "declared_fragment_denominator": 8,
+  "declared_original_denominator": 4,
+  "new_native_calls": 0,
+  "new_fragment_outcomes_read_during_preparation": false,
+  "CPUs": 1,
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1"
+  },
+  "wrapper_note": "Existing RUN.sbatch executes /usr/bin/python3. Its positional argv begins COLLECT.py. Override native wrapper default with --ntasks=1 --cpus-per-task=1 for this saved collector. Default memory/time.",
+  "run_argv": [
+    "/usr/bin/python3",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/collection/COLLECT.py",
+    "collect",
+    "--config",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/collection/CONFIG.json",
+    "--out",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/collection/run_v1/result"
+  ],
+  "run_command": "/usr/bin/python3 /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/collection/COLLECT.py collect --config /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/collection/CONFIG.json --out /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/collection/run_v1/result",
+  "output_directory": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/collection/run_v1/result",
+  "result_path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/collection/run_v1/result/RESULT.json",
+  "report_path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/collection/run_v1/result/REPORT.md",
+  "submitted_by_root_job": "17712",
+  "submission_intent": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/collection/run_v1/SUBMISSION_INTENT.json",
+    "sha256": "9b4784e51428e957c3f5984b9609e4650f1186be0f6b291f15358fa6ac644d8c"
+  },
+  "submitted_argv": [
+    "sbatch",
+    "--parsable",
+    "--ntasks=1",
+    "--cpus-per-task=1",
+    "--dependency=afterany:17701:17702:17703:17704:17705:17706:17707:17708",
+    "--job-name=lady-coordination-CP-collect",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/collection/run_v1/slurm-%j.out",
+    "--error",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/collection/run_v1/slurm-%j.err",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/RUN.sbatch",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/collection/COLLECT.py",
+    "collect",
+    "--config",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/collection/CONFIG.json",
+    "--out",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/collection/run_v1/result"
+  ],
+  "exit_behavior": "0 only for all eight admitted fragments plus all four original complexes; otherwise 1 with explicit retained unavailable slots and no corrected cycle.",
+  "fit_targets_changed": false,
+  "model_selected": false,
+  "physical_accuracy_qualified": false
+}

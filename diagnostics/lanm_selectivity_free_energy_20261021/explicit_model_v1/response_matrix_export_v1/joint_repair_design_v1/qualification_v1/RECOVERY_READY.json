@@ -1,0 +1,66 @@
+{
+  "status": "ready_for_root_bound_same_panel_recovery",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/qualification_v1/RUN_v2.py",
+    "sha256": "f7e4bca6d11779b17bbee54ebe3ac888cf111a4ffbea83668e3b95822fdb2021"
+  },
+  "declaration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/qualification_v1/RECOVERY_DECLARATION.md",
+    "sha256": "18abba64fab28dea3605e401f2aafbd3e3b7d4a55af8552d62c2708dc4d3ab94"
+  },
+  "patch": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/qualification_v1/RECOVERY.patch",
+    "sha256": "50b3c2986db04021caf4b86f12657ec790981352e884f2985f1a4a34a274933c"
+  },
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/qualification_v1/recovery_preparation_v2/MANIFEST.json",
+    "sha256": "9912fb1b9daeef43c20c4f7e539fd7d74accc8e3a1587dbfb44c465d9cf6db1b"
+  },
+  "config_template": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/qualification_v1/recovery_preparation_v2/CONFIG_RUN_TEMPLATE.json",
+    "sha256": "1ffd0ed407f52e67120ac580bde2e208fd32a76ab6a45057bc14ccd46d362d8b"
+  },
+  "controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/qualification_v1/recovery_controls_v1/RESULT.json",
+    "sha256": "594f1fcf511efd18ad742875581b2f30ab1f7fd7af7c359c1d3cea21f1780151"
+  },
+  "previous_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/qualification_v1/run_v1/execution/RESULT.json",
+    "sha256": "b47e48fd9321235028fdbf12c10aec8104478f9cee0a5fcc1855a1d393525256"
+  },
+  "prefix_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/qualification_v1/independent_partial_review_v1/REVIEW.json",
+    "sha256": "ddfef47ba38dd0bf9abfca7a2eb812e690c32e7b75fd878dbec403d8d09df919"
+  },
+  "new_programs": 30,
+  "reused_programs": 27,
+  "total_programs": 57,
+  "new_internal_FD_energies": 168,
+  "inherited_internal_FD_energies": 468,
+  "total_internal_FD_energies": 636,
+  "workers": 12,
+  "new_native_calls": 0,
+  "preparation_cost": {
+    "wall_seconds": 3.5444956430001184,
+    "CPU_seconds": 3.279751492,
+    "numerical_threads": 1
+  },
+  "controls_cost": {
+    "wall_seconds": 48.88211092597339,
+    "CPU_seconds": 48.735242138,
+    "numerical_threads": 1
+  },
+  "controls_count": 21,
+  "command": [
+    "python",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/qualification_v1/RUN_v2.py",
+    "run",
+    "--config",
+    "<BOUND_RECOVERY_CONFIG>",
+    "--out",
+    "<FRESH_EXECUTION>"
+  ],
+  "configuration_binding": "Only set root_authorized=true in the prepared recovery template; it already pins the unchanged actual source, executable/build, source audit, original result and independent27 review. Root owns release and submission.",
+  "result_schema": "native_program_invocations is new30; total_native_program_invocations is57; internal_FD_energies_completed is total636, new_internal_FD_energies_completed168; original57 rows retained.",
+  "limits": "Same native source/inputs/thresholds. No retries of prior27. No fit or physical qualification."
+}

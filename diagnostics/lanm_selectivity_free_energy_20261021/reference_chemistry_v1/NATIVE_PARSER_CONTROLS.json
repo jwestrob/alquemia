@@ -1,0 +1,99 @@
+{
+  "status": "complete",
+  "controls": {
+    "positive": {
+      "status": "complete",
+      "checks": {
+        "process_success": true,
+        "normal_termination": true,
+        "scf_converged": true,
+        "electron_count": true,
+        "multiplicity": true,
+        "core_representation": true,
+        "atom_identity": true,
+        "coordinates": true,
+        "energy_matches_gradient": true
+      }
+    },
+    "wrong_electron_count": {
+      "status": "failed_admission",
+      "checks": {
+        "process_success": true,
+        "normal_termination": true,
+        "scf_converged": true,
+        "electron_count": false,
+        "multiplicity": true,
+        "core_representation": true,
+        "atom_identity": true,
+        "coordinates": true,
+        "energy_matches_gradient": true
+      }
+    },
+    "wrong_multiplicity": {
+      "status": "failed_admission",
+      "checks": {
+        "process_success": true,
+        "normal_termination": true,
+        "scf_converged": true,
+        "electron_count": true,
+        "multiplicity": false,
+        "core_representation": true,
+        "atom_identity": true,
+        "coordinates": true,
+        "energy_matches_gradient": true
+      }
+    },
+    "wrong_core": {
+      "status": "failed_admission",
+      "checks": {
+        "process_success": true,
+        "normal_termination": true,
+        "scf_converged": true,
+        "electron_count": true,
+        "multiplicity": true,
+        "core_representation": false,
+        "atom_identity": true,
+        "coordinates": true,
+        "energy_matches_gradient": true
+      }
+    },
+    "wrong_coordinate": {
+      "status": "failed_admission",
+      "checks": {
+        "process_success": true,
+        "normal_termination": true,
+        "scf_converged": true,
+        "electron_count": true,
+        "multiplicity": true,
+        "core_representation": true,
+        "atom_identity": true,
+        "coordinates": false,
+        "energy_matches_gradient": true
+      }
+    },
+    "failed_returncode": {
+      "status": "failed_admission",
+      "checks": {
+        "process_success": false,
+        "normal_termination": true,
+        "scf_converged": true,
+        "electron_count": true,
+        "multiplicity": true,
+        "core_representation": true,
+        "atom_identity": true,
+        "coordinates": true,
+        "energy_matches_gradient": true
+      }
+    }
+  },
+  "source": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/REFERENCE.py",
+    "sha256": "eec0e60d982bda4e1a8685c6120f25c6ab74cc57e114cd3d8f370b4baccba129"
+  },
+  "archive": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_coupled_response_20261016/lbt_local_reference_remaining_v2/7CCO_Dy/execution/7CCO_Dy/endpoint.out",
+    "sha256": "7fe966e9ad9892bcdf6f28c1e3e4a93b9a1c285df673494977d6280f55642c77"
+  },
+  "molecular_calls": 0,
+  "local_threads": 1
+}

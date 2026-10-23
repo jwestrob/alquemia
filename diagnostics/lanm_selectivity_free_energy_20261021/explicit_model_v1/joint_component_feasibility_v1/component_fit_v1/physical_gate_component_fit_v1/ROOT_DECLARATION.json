@@ -1,0 +1,121 @@
+{
+  "status": "declared_bounded_physical_gate_component_fit_source_preparation_only",
+  "created_utc": "2026-10-23T00:00:16.259245+00:00",
+  "question": "Can the same Hamiltonian reduce the paired component errors under the original25 physical gates when four preservation-score constraints are removed?",
+  "prior_native_pilot_admission": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/nonlinear_check_v1/run_v1/ROOT_REVIEW.json",
+    "sha256": "e5a6bf81e16348ab5aac76ee8dfb76dfa04bcf923cb3e518496e7e002c2bf1ea"
+  },
+  "saved_diagnostic": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/actual_v1/RESULT.json",
+    "sha256": "ce2fd33896b823c53b43eca4c49813b56fe1ba547bf774adb02602b873cd1dc0"
+  },
+  "start": {
+    "key": "e63e7189dbecdb8e4112aceb5e4515f69644dbfa574b5fe07644d01ae736a037",
+    "artifact": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/fit_v1/run_v2/execution/vectors/e63e7189dbecdb8e4112aceb5e4515f69644dbfa574b5fe07644d01ae736a037.json",
+      "sha256": "47a758d441b93e625312215813cdd48c130557cc752a8447a047260965ebcd5c"
+    },
+    "reason": "Last measured admitted Jacobian origin with all25 physical gates; exact first24 derivative vectors can be reused. The tested half point is not substituted for this start."
+  },
+  "targets": "Unchanged common-basis paired P8/B8/P9/B9; electronic plus separately recorded D4. No absolute-parent target or raw-cluster CC substitution.",
+  "objective": {
+    "formula": "q=max(J_P/J_P_origin24, J_B/J_B_origin24), with J_P=(e_P8^2+e_P9^2)/2 and likewise B.",
+    "fixed_denominators": {
+      "J_P": 711.9511599971815,
+      "J_B": 497.4305961564669
+    },
+    "physical_acceptance_claim": false,
+    "component_scale_meaning": "Fixed initial-error normalization balances fractional repair of two consumed diagnostic blocks, not likelihood weights or physical uncertainty."
+  },
+  "fixed_old_block_ceilings": {
+    "old_EF": 0.15340308137508737,
+    "pair_mu": 0.37816202481323913,
+    "C_mu": 0.0052286591834414045,
+    "chi": 0.0011670073007337461
+  },
+  "actual_acceptance": {
+    "all25_original_physical_gates": true,
+    "all_four_old_block_scores_at_or_below_fixed_origin24_ceiling": false,
+    "numerical_native_admission": true,
+    "objective_rule": "Select lowest q among complete admitted trials and current. Require reduction greater than1e-10*max(1,abs(q_current)); current wins ties, otherwise earlier declared fraction wins ties. Derivative probes are never candidates.",
+    "tradeoff": "Old score increases are reported with absolute electrical errors. All25 native energy/force gates and strict component q improvement remain required. No electrical physical tolerance is invented."
+  },
+  "proposal": {
+    "method": "Clarabel",
+    "solver": "Clarabel",
+    "settings": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/conic_saved_comparison_v1/SETTINGS.json",
+      "sha256": "7794882ea0f19bf7cb64b2aeb75abe944f5498080ff961b26331ae475329aac2"
+    },
+    "environment": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/conic_saved_comparison_v1/ENVIRONMENT.json",
+      "sha256": "3cb0fd60614320e2aaf2e7f7a7cb46b7ba3ef133c0913c25f17dcb181e8b9296"
+    },
+    "at_most_one_new_call_per_outer_step": true,
+    "first_call_reused": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/ceiling_tradeoff_v1/actual_v1/RESULT.json",
+      "sha256": "1d4c5db9a34a5baf2ad93dd9168b30432c151091a8b46f0cc1b8798247fb38d6"
+    },
+    "model": "Existing six-block affine model with exactly four old-score cones/535rows removed; retains17SOC+856linear sides,847scalar inequalities and original25physical gates.",
+    "normalized_trust_radius": 0.025,
+    "parameter_box": "Unchanged PARAMETER_DOMAIN.json",
+    "q_bounds": "0<=q<=q_current; conic variable t=sqrt(q)>=0",
+    "fractions": [
+      1.0,
+      0.5,
+      0.25,
+      0.125
+    ],
+    "derivative_scheme": "Original12parameter central probes at +/-0.005 normalized, clamped only in probe design to original box with exact nonzero actual spans recorded;24 vectors/origin. Reuse exact saved first24 probes.",
+    "fraction_auxiliary_q": "Physical fraction fixed. Independently recompute actual predicted component rho; auxiliaryq=rho+1e-8*max(1,abs(rho)), solely to express the same physical vector strictly inside the epigraph. It must remain<=q_current. No physical changes.",
+    "witness_rule": "Exact prior scalar auxiliary-witness function; require all847 retained margins strictly positive, original25 gates and parameter box/trust, plus predicted rho decrease exceeding1e-10*max(1,abs(q_current)). Retain raw solver status, failures and all removed-score losses; never infer convergence from feasibility.",
+    "first_reuse": "Only if exact origin/probe identities, matrices, Jacobians, q and all effective settings match the independently reviewed saved reduced-conic result. No new solve for this case."
+  },
+  "limits": {
+    "outer_steps": 8,
+    "new_parameter_vectors": 200,
+    "new_native_programs": 6496,
+    "reused_origin_vectors": 1,
+    "reused_initial_derivative_vectors": 24,
+    "workers": 12,
+    "numerical_threads_per_process": 1,
+    "aggregate_login_threads": 16,
+    "native_timeout_seconds": 300
+  },
+  "stop_rules": [
+    "Eight outer steps or any hard budget exhausted; report budget termination separately from convergence.",
+    "Stop the campaign if no declared fraction qualifies, or no complete admitted trial improves q.",
+    "Stop new launches on native numerical/admission failure; retain unfinished batch and do not select from it.",
+    "Stop early if both actual paired component RMS errors<=1kcal/mol while all25 original physical gates pass. This development target is not physical/electrical qualification."
+  ],
+  "milestones": {
+    "substantive_recovery": "Report whether both component RMS errors improve over the original initial model and q<=0.25 (at least50percent RMS reduction for each versus origin24). This diagnostic milestone neither changes selection nor releases validation.",
+    "full_development_target": "Both paired component RMS<=1kcal/mol with original25 gates; no electrical accuracy admission and reference-method limits retained."
+  },
+  "reuse": "Exact origin24 plus24 probes and two finite native pilots initially imported; both completed fit inventories may supply later exact vector/per-metal identities lazily. First reduced-conic proposal reused after exact model joins. Failed full pilot remains failed physically and cannot become incumbent. Preserve all authoritative native provenance/saved arithmetic/costs; no old ledger mutation or off-center Jacobians.",
+  "execution": "Authorized login,12single-thread workers+one numerical controller within16aggregate; no fake Slurm identity. Freeze versioned journal adapter and own source/config/reuse/actual tests before run. Never overlap12-thread static factor with this13-thread reservation.",
+  "postselection": "One consumed eight-cycle trimer replay after final numerical review, with exact existing states reused and at mostsix additional native evaluations, separately bound. No fresh holdout opened, no fitting to postselection within this calibration.",
+  "non_goals": [
+    "No new quantum references, geometry generation, new MACE model, donor refit or production change in this campaign.",
+    "No claim that finite failure proves global inadequacy of the interaction family.",
+    "No automatically repeated8-step campaign or altered acceptance thresholds."
+  ],
+  "root_intent": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/ROOT_INTENT.json",
+    "sha256": "a13970af8e18fc49156e7e2169f1c987a4e9958e006fb6a2c9ca9705bb29aa25"
+  },
+  "design": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/DESIGN.md",
+    "sha256": "6e5975cfeb51da7b5f708413a893d269b0ff3736e566e76b7806a6d041ebc436"
+  },
+  "motivation_native_tradeoff": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/ceiling_tradeoff_v1/nonlinear_check_v1/run_v1/ROOT_ACTUAL_REVIEW.json",
+    "sha256": "746cc5ec6fac5c198f52799becebb3830210f506c5fe285c1ca100961cbcc0a7"
+  },
+  "previous_campaign_closed": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/run_v1/execution/RESULT.json",
+    "sha256": "744f1faa3f28833eaa8adaba2b69c8ce173563aa3c46907e2d1e366fd1ac80c0"
+  },
+  "fixed_old_block_ceilings_interpretation": "Original fixed scores retained only as diagnostic ratios and normalization of saved531 blocks; never a proposal or actual-selection constraint."
+}

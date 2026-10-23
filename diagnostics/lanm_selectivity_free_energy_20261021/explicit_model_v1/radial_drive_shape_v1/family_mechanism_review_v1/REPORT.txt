@@ -1,0 +1,130 @@
+Present radial14 family: capabilities, cancellations and already tested alternatives
+
+Scope: source and admitted saved-report synthesis only. No live/terminal20605
+artifact, reserved data, new numerical analysis, model/reference/solver call,
+parameter selection or implementation. Root will integrate the separately
+admitted terminal campaign. Bracketed evidence IDs resolve to exact paths and
+SHA256 pins in EVIDENCE.json. This review reuses their admission, not a new raw
+scientific audit.
+
+1. What the fourteen parameters actually control
+
+Per metal, the family has a,b (drive), c,d (metal stiffness), native buffered-14-7
+R/epsilon, and e (radial drive shape). The fitted u/v box coordinates map to
+c=ln(4)(u+v)/4, d=ln(4)(u-v)/4; they are not the induced dipoles below. [E01,E02]
+
+With r_i=R_Oi-R_M, fixed overlap f_i and damping phi_i,
+  h_Oi = 3 f_i phi_i [a+b eta_i+e psi_i] r_i,
+  psi_i=(|r_i|^2-r0^2)/r0^2, r0=2.50 Angstrom;
+  H_MM = {exp[g(s)(c+d eta)]-1} I3/alpha_M.
+Here s=sum f_i, g=2s/(1+s), eta_i=(s-f_i)/(1+s-f_i), and
+eta=(s^2-sum f_i^2)/(1+s^2). All other added H blocks are zero. T, intrinsic
+alpha, permanent multipoles, native damping and water interactions stay fixed.
+The response equations are (A0+H)u=Ed0+h and (A0+H)v=Ep0+h, with stationary
+energy -K/2 u·(Ep0+h). Preserve unequal dual RHSs; no Ed=Ep assumption is needed.
+The new gradient includes K/2[u·dH·v-(u+v)·dh] alongside the native derivative.
+These are coupled response modifications, not independent energy offsets. [E01,E02]
+
+In a single-water dimer, eta_i=eta=0: b,d are inactive, while a,c,e,R/epsilon
+can change the dimer. Thus a purely collective addition vanishing in dimers
+cannot directly repair P or those single-water force controls. Metal-only H is
+isotropic and rank at most three for one metal, but changes all coupled dipoles
+through the inverse operator. It is not equivalent to changing only a metal
+observable. There is no new water-site stiffness, off-diagonal H, anisotropic
+correction or independent angular descriptor. Baseline tensors and vector
+orientations already carry angular dependence; this is not an angle-free model.
+At equal metal-O radii, the added scalar environment functions cannot separately
+encode near/far water angle, although the full coupled response can differ. [E01,E10]
+
+2. Why P/B, force, dipole and susceptibility gains need separate interpretation
+
+P=sum_i[E(MWi)-E(M)-E(Wi)], C=E(M+shell)-E(M)-E(shell), B=C-P. The targets here
+are two Dy-minus-La W8/W9 contrasts, with the admitted common-parent electronic
+basis plus original D4 cancellation. B contains all nonpair orders, not uniquely
+three-body energy, polarization or charge transfer. Earlier fitted coordination
+error -0.3131 kcal/mol was +3.1483 pair minus3.4614 collective: good C can hide
+bad P/B, and W9-W8 subtraction can additionally hide shared shell-size errors.
+Per-parent D4-complete targets were unavailable; do not invent them. [E03]
+
+A field-independent pair energy (including R/epsilon) cancels directly from B
+and the seven-term E3 at fixed matched geometry; it cannot change dipoles/chi.
+An unchanged internal-water contribution likewise cancels from these balanced
+interaction cycles and fixed-internal-geometry rigid work. In contrast, the
+pair-additive radial term is additive in h, not in the solved scalar energy:
+through (A0+H)^-1 it can affect collective B at general geometries. [E01,E02,E07]
+
+At ideal r0, e contributes zero h but a nonzero radial Jacobian
+6 e phi(r0) n n^T. With all old coefficients fixed, it leaves central energy and
+moments unchanged while changing radial forces. Literal printed coordinates
+are never clamped to r0. The admitted local panel had exactly zero added P/B
+Jacobian columns, yet nonzero original-residual columns: joint14 gains came by
+allowing old parameters to move while compensating derivative costs. e alone
+is not a new central W9 signed-dipole direction. [E02,E11]
+
+Conditional susceptibility is proportional to W^T(A0+H)^-1 W. Changing a,b,e
+cannot change it at any fixed geometry and fixed c,d; R/epsilon also cannot.
+Changing c,d can. This statement is exact for the stated linear functional,
+not a claim that a joint14 fit must leave chi unchanged. Four consumed lab-z
+dimer/far-trimer state responses and their derived trimer-minus-dimer increments
+are neither a complete response tensor nor independent seven-term alpha3/B
+measurements, relaxed-geometry response or thermodynamic susceptibility. [E01,E08]
+
+Signed W9 C-dipole contrast must be reported separately from aggregate norms.
+At the admitted radial half, P/B RMS was11.0614/9.5523 kcal/mol versus12.0423/
+10.2011 at the matched old12 half; both passed25 physical gates and safeguards.
+Electrical RMS was0.639427 D (pair),0.082767 D (full-shell C),0.658202 a0^3.
+The W9 Dy-La z contrast remained +0.127865 D versus reference -0.104618 D.
+Its nonincrease safeguard did not qualify that sign or absolute accuracy. Both
+inherited solver returns remain AlmostSolved; these two points establish sampled
+nonlinear benefit, not optimum or global feasibility. [E11,E12,E13]
+
+3. Already tested/closed finite alternatives: do not repeat them as new evidence
+
+- The old six-parameter joint water fit stopped22/25, with -4.3383 kcal/mol
+  coordination error and two force failures. Its local stationarity did not
+  exclude other basins or the later response family. [E04]
+- Positive EXCHPOL q=.01/.05 worsened coordination and force controls; neither
+  amplitude was selected. This rejects those fixed perturbations, not every
+  sign, amplitude or collective-response mechanism. [E05]
+- Separate direct/mutual damping +/-5% produced small, distinct near/far
+  tradeoffs; none repaired the panel or collective metal ordering. The largest
+  coordination gain was only0.0167 kcal/mol. This was not full P/B evaluation
+  of every modified kernel. [E06]
+- The earlier finite drive/metal-stiffness screen tested81 combinations. All
+  failed coordination energy; all sampled E3/mu3 deficits remained. Drive left
+  chi fixed, and its one-stiffness Dy direction could not move dimer/trimer
+  toward oppositely placed targets simultaneously. That narrower algebraic
+  restriction motivated separate pair/collective c,d; it does not apply
+  unchanged to today's family. Its unregularized drive was a different model,
+  not a native qualification or global search of current14. [E09]
+- Joint-response fitting already showed P/B cancellation; saved96-trial analysis
+  found21 joint P/B+old-block+25-gate improvements (12 from passing origins).
+  Therefore the old component omission/score ceilings were not evidence that
+  new physics was mandatory. The later physical-gate12 fit improved P/B to
+  12.7203/10.4418 but retained electrical/trimer tradeoffs. [E03,E14,E15]
+- The final-point four-case comparison and two native witnesses tested box,
+  electrical and physical-gate effects. Removing box faces gave little gain;
+  dropping physical gates gave large gains but13 native failures, including
+  all nine single-water force groups. The admissible direction retained much
+  larger P/B errors. Radial14 then tested independent radial slope freedom
+  and showed the two-point benefit above. These tests are completed; neither
+  solver status nor a fresh repeat of the same points explains them away. [E10-E12]
+
+The consumed eight-trimer panel already found collective error at three-body
+order, and later regressions retained distinct energy/dipole tradeoffs. Eight
+cycles cannot reconstruct full B. Uniformly increasing susceptibility is not
+supported by the earlier added-water curvature excess; populations/nonadditivity
+do not uniquely identify CT, penetration or Pauli physics. [E07,E08,E15]
+
+4. What remains unproven
+
+Independent angular/anisotropic or water/off-diagonal stiffness freedom is absent
+from this14-parameter form, but no global inadequacy theorem follows. An energy-
+only patch cannot directly fix electrical observables; a collective-only patch
+cannot directly fix dimers. Those are fixed-scope algebraic statements, not a
+choice of the next model. A failed finite trial only locates a tradeoff along
+its tested direction. Preserve exact terminal force margins, parameter bounds,
+finite stopping budget, solver statuses and signed electrical results when root
+integrates20605. None of the evidence here establishes reference truth, transfer,
+periodic dynamics or binding free-energy accuracy. No new experiment is proposed
+or released by this synthesis.

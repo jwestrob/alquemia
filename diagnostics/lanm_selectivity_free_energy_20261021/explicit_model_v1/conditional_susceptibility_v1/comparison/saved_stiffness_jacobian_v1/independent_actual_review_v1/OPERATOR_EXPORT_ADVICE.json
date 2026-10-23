@@ -1,0 +1,35 @@
+{
+  "status": "baseline_export_source_advice",
+  "source_evidence": {
+    "induce.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_source/source/induce.f",
+      "sha256": "759e544790074aa8e7a32a0176c1ef979bceca3787252e58efcffe4a942c0e5f"
+    },
+    "epolar.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_source/source/epolar.f",
+      "sha256": "f9d88327a9d3f0247d06c9012eaca499d363e4261212a2b01b0001c143bce5ba"
+    },
+    "epolar3.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_source/source/epolar3.f",
+      "sha256": "b6434df7c844d5bc0f8f03fb3e11f1906fbff690a23a67ca5c8ea5a189a32c48"
+    }
+  },
+  "proposed_native_export": "Opt-in reporting after original native solve; basis-probe native ufield0a in both channels and restore uind/uinp exactly. Export A=diag(1/alpha)-T, Ed=udir/alpha, Ep=udirp/alpha, original u/v, ordered site/type/coordinate/alpha data and units at17digits.",
+  "required_scope": [
+    "Original vacuum MUTUAL double-loop route; reject unsupported bounds/Ewald/solvent/EXCHPOL/CHGPEN/alternative solvers and inactive or zero-alpha sites.",
+    "Respect native poli=max(polmin,polarity), preferably reject alphas below the native floor for this declared scope.",
+    "Ed/Ep include any native external field; reject such fields for a zero-field export or record and separate their contribution.",
+    "Preserve native u/v and output separate numbered snapshots for the two analyze-EM solves."
+  ],
+  "qualification": [
+    "Symmetry and equality of both mutual channel operators.",
+    "Full-precision native u/v and residuals Au-Ed, Av-Ep.",
+    "Native polarization energy -K/2*u^T*Ep and unchanged overall analysis outputs.",
+    "Independent linear solve and the already admitted centered uniform-field response, retaining solver/output precision limitations."
+  ],
+  "finite_screen_use": "With fixed snapshots, solve (A+H)u=Ed+h and (A+H)v=Ep+h, check total matrix positivity, and compare energy corrections Ucandidate-Ubaseline, full conjugate dipole from permanent+half(u+v), and uniform susceptibility. Use total baseline plus polarization correction rather than replacing unrelated energy terms.",
+  "limitation": "Snapshots do not provide dA/dR,dEd/dR,dEp/dR. They support finite fixed-geometry response/energy screening, not force qualification or a claim of passing the original25 gates. Full matrix positivity and one-mode leverage do not establish physical accuracy.",
+  "author_patch_reviewed": false,
+  "new_native_calls": 0,
+  "new_calculations": 0
+}

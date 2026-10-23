@@ -1,0 +1,121 @@
+--- writable_indices_recovery_v1/RUN.py
++++ slurm_execution_v1/RUN.py
+@@ -1,4 +1,4 @@
+-"""One nominal saved-operator factor attempt; no assembly or native engine."""
++"""One Slurm nominal saved-operator factor attempt; unchanged numerical path."""
+ import argparse
+ import ctypes
+ import hashlib
+@@ -95,6 +95,48 @@
+     for key in ('operator_producer','operator_preparation_result'):
+         verify(inputs[key]);assert review[key]==inputs[key]
+     nominal_parameters(inputs,review)
++
++
++ACTUAL_ALLOCATION = None
++
++
++def parse_allocation(raw, environ, hostname, uid):
++    from decimal import Decimal
++    job=environ.get('SLURM_JOB_ID','')
++    assert job.isdecimal() and job!='0','actual Slurm job ID required'
++    fields=dict(word.split('=',1) for word in raw.split() if '=' in word)
++    expected={'JobId':job,'JobState':'RUNNING','Account':'banfield','QOS':'standard_expand','Partition':'standard',
++              'NumNodes':'1','NumCPUs':'12','NumTasks':'1','CPUs/Task':'12','Requeue':'0','OverSubscribe':'NO'}
++    for key,value in expected.items():assert fields.get(key)==value,'allocation '+key
++    assert fields['BatchHost'].split('.')[0]==hostname.split('.')[0],'allocated compute host'
++    assert fields['UserId'].endswith('('+str(uid)+')'),'allocated user'
++    assert environ.get('SLURM_CPUS_PER_TASK')=='12' and environ.get('SLURM_NTASKS')=='1'
++    assert environ.get('SLURM_JOB_NUM_NODES',environ.get('SLURM_NNODES'))=='1'
++    tres=dict(x.split('=',1) for x in fields['AllocTRES'].split(','))
++    assert tres['cpu']=='12' and tres['node']=='1'
++    units={'K':1024,'M':1024**2,'G':1024**3,'T':1024**4}
++    def memory(text):
++        assert text[-1] in units
++        value=Decimal(text[:-1])*units[text[-1]]
++        assert value==int(value);return int(value)
++    grant=memory(tres['mem'])
++    assert grant==48000*1024**2 and grant>=32*1024**3,'default48000MiB grant and32GiB cap'
++    assert memory(fields['MinMemoryCPU'])==4000*1024**2,'default memory per CPU'
++    return dict(mode='slurm',job_id=job,hostname=hostname,account=fields['Account'],partition=fields['Partition'],qos=fields['QOS'],
++                nodes=1,tasks=1,allocated_CPUs=12,memory_grant_bytes=grant,default_memory_MiB_per_CPU=4000,
++                requeue=False,exclusive=False,raw_scontrol=raw,scheduler_allocated_CPU_seconds=None)
++
++
++def allocation(cfg):
++    job=os.environ.get('SLURM_JOB_ID','');assert job.isdecimal() and job!='0'
++    cmd=[cfg['scheduler_command'],'show','job',job,'-o']
++    completed=subprocess.run(cmd,capture_output=True,text=True,timeout=15,check=True)
++    assert not completed.stderr.strip(),'scheduler readback stderr'
++    result=parse_allocation(completed.stdout,os.environ,socket.gethostname(),os.getuid())
++    result['argv']=cmd
++    result['affinity_CPUs']=len(os.sched_getaffinity(0))
++    assert result['affinity_CPUs']>=12,'allocated CPU affinity'
++    return result
+ 
+ 
+ def context(config,release_path,out):
+@@ -147,18 +189,24 @@
+     env=read(cfg['environment']);assert Path(sys.prefix).resolve()==Path(env['prefix'])
+     for p in env['runtime_files']:verify(p)
+     caps=cfg['resources']
+-    assert caps==dict(hostname='biotite',address_space_bytes=32*1024**3,wall_seconds=900,CPU_seconds=10800,
+-                     openblas_threads=12,openmp_threads=1,host_min_available_bytes=64*1024**3)
+-    assert socket.gethostname()==caps['hostname'] and not os.environ.get('SLURM_JOB_ID')
++    assert caps==dict(execution_mode='slurm',account='banfield',partition='standard',qos='standard_expand',nodes=1,tasks=1,cpus_per_task=12,
++                     memory_grant_MiB=48000,address_space_bytes=32*1024**3,wall_seconds=900,CPU_seconds=10800,
++                     openblas_threads=12,openmp_threads=1)
++    global ACTUAL_ALLOCATION
++    assert cfg['scheduler_command']=='/usr/local/bin/scontrol'
++    ACTUAL_ALLOCATION=allocation(cfg)
++    parent=read(cfg['parent_ready']);assert parent['implementation']==cfg['parent_implementation']
++    verify(cfg['parent_implementation']);verify(cfg['scheduling_declaration'])
++    assert parent['controls']==cfg['writable_index_controls'];verify(cfg['writable_index_controls'])
+     for k in env['threads']['environment']:
+         assert os.environ.get(k)==('12' if k=='OPENBLAS_NUM_THREADS' else '1')
+     release=json.loads(release_path.read_text())
+-    assert release['status']=='released_one_bound_static_factor_attempt'
++    assert release['status']=='released_one_slurm_bound_static_factor_attempt'
+     assert release['implementation']==pin(__file__) and release['configuration']==pin(config)
+     assert release['input_review']==cfg['input_review'] and release['resources']==caps
+     assert Path(release['output']).resolve()==out.resolve()
+     source_review=read(release['source_review'])
+-    assert source_review['status']=='passed_nominal_static_factor_worker_source_review'
++    assert source_review['status']=='passed_slurm_nominal_static_factor_source_review'
+     assert source_review['implementation']==pin(__file__) and source_review['configuration']==pin(config)
+     return cfg,inputs
+ 
+@@ -174,7 +222,7 @@
+     directory=out/'worker';directory.mkdir(exist_ok=False)
+     tick,cpu=time.monotonic(),time.process_time()
+     result=dict(status='started',phase='imports',implementation=pin(__file__),configuration=pin(config),release=pin(release_path),
+-                input_manifest=cfg['input_manifest'],input_review=cfg['input_review'],limits=limits,
++                input_manifest=cfg['input_manifest'],input_review=cfg['input_review'],limits=limits,allocation=ACTUAL_ALLOCATION,
+                 nominal_contract=cfg['nominal_contract'],nominal_only=True,e_app=None,application_error_bound_established=False,
+                 symbolic_attempts=0,numeric_attempts=0,solve_attempts=0,new_native_calls=0,
+                 sufficient_numerical_test_passed=False,physical_accuracy_admitted=False,MD_admitted=False,error=None)
+@@ -245,13 +293,13 @@
+ def supervise(config,release_path,out):
+     cfg,_=context(config,release_path,out)
+     available=int(next(x.split()[1] for x in Path('/proc/meminfo').read_text().splitlines() if x.startswith('MemAvailable:')))*1024
+-    assert available>=cfg['resources']['host_min_available_bytes']
++    scheduler=ACTUAL_ALLOCATION  # Real allocation replaces login-only64GiB free-memory heuristic.
+     out.mkdir(parents=True,exist_ok=False)
+     argv=[sys.executable,str(Path(__file__).resolve()),'worker','--config',str(config.resolve()),'--release',str(release_path.resolve()),'--out',str(out.resolve())]
+     tick=time.monotonic();before=resource.getrusage(resource.RUSAGE_CHILDREN);timeout=False
+     with (out/'stdout.txt').open('x') as so,(out/'stderr.txt').open('x') as se:
+         p=subprocess.Popen(argv,stdout=so,stderr=se,start_new_session=True)
+-        (out/'START.json').write_text(json.dumps(dict(argv=argv,worker_pid=p.pid,hostname=socket.gethostname(),job_id=None,
++        (out/'START.json').write_text(json.dumps(dict(argv=argv,worker_pid=p.pid,hostname=socket.gethostname(),job_id=scheduler['job_id'],allocation=scheduler,
+               configuration=pin(config),release=pin(release_path),host_available_bytes=available),indent=2)+'\n')
+         try:code=p.wait(timeout=cfg['resources']['wall_seconds'])
+         except subprocess.TimeoutExpired:
+@@ -263,7 +311,7 @@
+     actual=json.loads(rp.read_text()) if rp.exists() else None
+     result=dict(status=actual['status'] if actual is not None and code in (0,2) else 'failed_or_timed_out_static_attempt',
+                 implementation=pin(__file__),configuration=pin(config),release=pin(release_path),worker_result=pin(rp) if rp.exists() else None,
+-                exit_code=code,wall_timeout=timeout,stdout=pin(out/'stdout.txt'),stderr=pin(out/'stderr.txt'),automatic_retry=False,new_native_calls=0,
++                exit_code=code,wall_timeout=timeout,stdout=pin(out/'stdout.txt'),stderr=pin(out/'stderr.txt'),automatic_retry=False,new_native_calls=0,allocation=scheduler,
+                 cost=dict(wall_seconds=time.monotonic()-tick,child_user_CPU_seconds=after.ru_utime-before.ru_utime,
+                           child_system_CPU_seconds=after.ru_stime-before.ru_stime,child_peak_RSS_KiB=after.ru_maxrss))
+     (out/'RESULT.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result));return code if code>=0 else 1

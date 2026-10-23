@@ -1,0 +1,34 @@
+{
+  "status": "declared_component_aware_calibration_pending_exact_source_and_reuse_bindings",
+  "created_utc": "2026-10-22T23:54:15.513674+00:00",
+  "question": "How far can the existing twelve-parameter Hamiltonian reduce paired La/Dy pair and collective component errors while retaining the original physical energy/force limits, when preservation of previous fitted scores is no longer a constraint?",
+  "motivation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/ceiling_tradeoff_v1/nonlinear_check_v1/run_v1/ROOT_ACTUAL_REVIEW.json",
+    "sha256": "746cc5ec6fac5c198f52799becebb3830210f506c5fe285c1ca100961cbcc0a7"
+  },
+  "scientific_scope": "A distinct consumed-data development calibration, not an extension of the closed preservation-constrained fit or its one-vector diagnostic; no new physical terms, reference calculations, geometry changes, heldout data or production promotion.",
+  "fixed_policy": {
+    "start": "original origin24, exact keye63e7189dbecdb8e4112aceb5e4515f69644dbfa574b5fe07644d01ae736a037; use its exact saved24-probe stencil",
+    "objective": "minimize max(J_P/711.9511599971815,J_B/497.4305961564669), with those denominators fixed throughout",
+    "physical_acceptance": "All25 existing physical gates must pass on actual native values: energy absolute error<=1kcal/mol, rigid-force RMS<=2kcal/mol/A, maximum body component error<=5kcal/mol/A. Preserve exact gate aggregation and source units.",
+    "removed_constraints": "Only four limits fixed at origin fitted old_EF/pair_mu/C_mu/chi scores. Record those scores and absolute electrical errors for every candidate; no new electrical physical tolerance.",
+    "proposal": "one frozen Clarabel local solve per step, +/-0.025 normalized trust radius, inherited +/-0.00524-probe stencil, ordered fractions1,.5,.25,.125",
+    "solver_failure": "Retain actual solver statuses. A non-success return may yield a trial only after the separately specified strict saved scalar feasibility check; auxiliary q arithmetic never changes physical parameters or gates.",
+    "selection": "Complete declared trial batch, exact actual25 gates and strict q decrease using inherited1e-10*max(1,abs(current_q)) comparison. Incumbent wins ties; probes never become candidates.",
+    "failed_pilot": "Reuse exact d1fc9575 native cells if its exact vector recurs, preserve its1.0022energy failure, never import as feasible incumbent.",
+    "reuse": "All exact completed immutable vectors/cells may be reused after binding; no off-center Jacobian reuse or duplicate molecular calls.",
+    "limits": {
+      "outer_steps": 8,
+      "new_parameter_vectors": 200,
+      "new_native_programs": 6496,
+      "native_workers": 12,
+      "threads_per_process": 1,
+      "aggregate_login_threads": 16
+    },
+    "stop": "Inherited finite stopping on no eligible proposal, no actual feasible improvement, hard budget, native/numerical failure or development target. No automatic extension."
+  },
+  "implementation": "Reuse original numerical evaluator and reviewed journal persistence; version changed policy/solver/selection/source only. Bind exact source, installed solver settings, immutable inventory and planned run before execution.",
+  "interpretation": "A successful feasible fit would demonstrate a development compromise only. Report all absolute component/electrical errors, consumed-test transfer and provisional reference limitations. Neither a successful fit nor exhausting this finite search proves general physical adequacy or incapacity. Periodic forces/dynamics and free-energy convergence remain separate existing requirements.",
+  "new_native_calls": 0,
+  "new_solver_calls": 0
+}

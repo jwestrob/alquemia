@@ -1,0 +1,34 @@
+Independent actual review — two fixed native half-points
+
+All 112 programs (92 analyze + 20 testgrad), 92 new cells and 321 journal events
+reconcile. Each exact declared point has 46 complete cells/56 programs; no center
+cells were reused, no unresolved attempts or retries, and no new solver/reference
+calls. All 112 raw response readback groups match the stored qualified parser.
+
+                         q          P RMS       B RMS
+Center                   .22727182   12.720316   10.441828
+Original12 native half   .20920128   12.042325   10.201133
+Radial14 native half     .18343700   11.061377    9.552339
+P/B RMS errors are kcal/mol. The radial half-point lowers P/B RMS by 0.980948/
+0.648794 relative to the matched original12 half-point, with q lower by 0.02576428.
+Both points pass all 25 actual physical gates, all three center electrical-norm
+nonincrease tests, and the signed W9 safeguard without threshold changes.
+
+The local radial advantage survives the nonlinear evaluator at these two fixed
+points. Original12 actual q differs from its affine prediction by −0.00002950;
+radial14 differs by +0.00060310. Maximum component-energy prediction discrepancy
+is 0.000968 and 0.039040 kcal/mol, respectively. This is finite consumed-development
+evidence, not global model-capacity, transfer, optimizer convergence or trajectory
+validation. Both inherited AlmostSolved statuses remain unchanged.
+
+Radial14 actual electrical RMS: pair 0.63942730 D, collective 0.08276691 D,
+chi 0.65820174 a0^3. Signed W9 residual 0.23248270 D remains below the fixed
+0.23251751 D ceiling by 0.00003480 D. Relative nonincrease does not establish
+absolute electrical accuracy. Radial P/B RMS 11.0614/9.5523 kcal/mol remains far
+above the 1 kcal/mol development target. No point was selected or promoted.
+
+Actual cost 63.079522 wall/114.780563 controller-plus-child CPU-seconds,
+12 native workers plus controller, one-thread libraries, login/null job.
+Review reused admitted source/parsers, checked saved token/provenance/journal
+and actual scalar safeguard arithmetic; no native, solver, old 24, dense-spectrum
+or full-objective replay. Original failed attempts remain preserved.

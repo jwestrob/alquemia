@@ -1,0 +1,62 @@
+{
+  "status": "passed_consumed_trimer_regression_source_review",
+  "ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/regression_v1/READY.json",
+    "sha256": "bb794fad09a0b47ad4bc50f7de4766134d04c84c3a57655847bb840deac38402"
+  },
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/regression_v1/RUN_v2.py",
+    "sha256": "75447daee805221d47f580edb149db2cbdfd19f6a1999ddc84002354995fe80a"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/regression_v1/SPEC.md",
+    "sha256": "b94831bfa8a8f54508fdecef52357657d7b20508f3680f8ac23f45a44c6f01b9"
+  },
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/regression_v1/preparation_v2/MANIFEST.json",
+    "sha256": "2b063d819c80bfe84438e7f612c3a7fc141b5e86ba145bdec9b5310edad14364"
+  },
+  "configuration_template": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/regression_v1/preparation_v2/CONFIG_RUN_TEMPLATE.json",
+    "sha256": "415f05051bca71eac99ff3f91b1c21c5106ff8cac347d7d25d9d393d49d79a24"
+  },
+  "controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/regression_v1/saved_controls_v3/RESULT.json",
+    "sha256": "159be8bd28973e4dcdf525e7a5fd4f58240524283eb32b5c7005c3e38c476c14"
+  },
+  "test_implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/regression_v1/TEST_SAVED_v2.py",
+    "sha256": "c946aaff92705499c752e73a4082245f8a0a7daeeb7e6c5c4727bc5e4bd427f0"
+  },
+  "evaluator": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/evaluator_v1/EVALUATE.py",
+    "sha256": "51e0ba135ae67f41a84666205e46a27a90a9ade062c858134168b9c3de67272d"
+  },
+  "checks": {
+    "exact_ready_preparation_control_joins": true,
+    "terminal_frozen_selected_artifact_and46_cells": true,
+    "exact_fit_evaluator_config_and_qualified_source_build_binaries": true,
+    "selected_dependency_input_receipts_and_raw_E_mu_replay": true,
+    "six_effective_parameters_per_metal_gate_baseline_reuse": true,
+    "exact_six_new_trimers_and_all_eight_literal_cycles": true,
+    "seven_term_signs_common_origin_and_dual_mean": true,
+    "missing_failed_nonfinite_terms_not_zero": true,
+    "serial_six_call_cap_first_failure_stop": true,
+    "no_EF_pass_prerequisite_or_reselection": true,
+    "candidate_and_release_still_unbound": true
+  },
+  "findings": [],
+  "notes": [
+    "The two W9 far dependencies remain exact selected evaluator records. Their complete original inputs/receipts are checked before energy/moment-only raw replay; unused eigensystem metadata is not recomputed.",
+    "Original E/F gates remain descriptive, including failure. All six slots and eight cycles persist after a native failure; incomplete cycles remain unavailable.",
+    "All used geometries, static fragments and reference outcomes are already consumed. No active fit output was read; no candidate was bound and no native or saved control suite was executed.",
+    "Existing 25 controls were inspected and pinned without rerun. This is source/preparation approval; actual terminal-candidate binding and root finite release remain execution requirements."
+  ],
+  "new_native_calls": 0,
+  "new_scientific_evaluations": 0,
+  "cost": {
+    "wall_seconds": 0.04390933201648295,
+    "CPU_seconds": 0.028144908999999996,
+    "local_threads": 1
+  }
+}

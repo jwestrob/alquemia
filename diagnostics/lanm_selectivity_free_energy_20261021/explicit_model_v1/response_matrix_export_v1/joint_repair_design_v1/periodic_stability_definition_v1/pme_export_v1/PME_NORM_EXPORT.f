@@ -1,0 +1,221 @@
+c     Source-only optional first-state PME snapshot. No admission is cached.
+      subroutine pmenormexport
+      use, intrinsic :: ieee_arithmetic
+      use atoms, only: n,x,y,z
+      use atmtyp, only: type
+      use bound, only: use_bounds
+      use boxes, only: orthogonal,nonprism,recip,volbox
+      use chunks
+      use ewald, only: aewald,boundary
+      use fft, only: ffttyp
+      use iounit, only: iout
+      use keys, only: nkey,keyline
+      use mpole, only: npole,ipole
+      use pme
+      use polar, only: polarity,douind
+      implicit none
+      integer ik,next,nrequest,request,ios,unit,seq
+      integer ii,ia,j,k,l,ix,iy,iz,jx,jy,jz,m1,m2,m3
+      integer ic,active,grid1,grid2,grid3,neg1,neg2,neg3
+      integer nstencil,nq,ntheta,needchunk
+      integer, save :: sequence=0
+      integer*8 totalgrid
+      real*8 trans(3,3),dv(3),bb(3),columns(3),sqalpha
+      real*8 qmin,qmax,qabs,evenerr,qzero,c1,cinf,cf2
+      real*8 ub,evenub,scale,rowsum
+      real*8, allocatable :: gridrows(:,:,:)
+      character*240 record,keyword,extra
+      character*64 filename
+c     Absence returns before any allocation, output, or native-array access.
+      nrequest=0
+      do ik=1,nkey
+         record=keyline(ik)
+         next=1
+         call gettext(record,keyword,next)
+         call upcase(keyword)
+         if (trim(keyword).ne.'PME-NORM-EXPORT') cycle
+         nrequest=nrequest+1
+         read(record(next:),*,iostat=ios) request
+         if (ios.ne.0) goto 900
+         if (request.ne.1) goto 900
+         extra=' '
+         read(record(next:),*,iostat=ios) request,extra
+         if (ios.eq.0) goto 900
+      end do
+      if (nrequest.eq.0) return
+      if (nrequest.ne.1) goto 900
+      sequence=sequence+1
+      if (sequence.ne.1) return
+      seq=sequence
+c     Export capacity and supported normalization, not a physical gate.
+      if (.not.use_bounds .or. .not.orthogonal .or. nonprism)
+     &   goto 900
+      if (boundary.ne.'TINFOIL') goto 900
+      if (.not.ieee_is_finite(aewald) .or. aewald.lt.1d-6)
+     &   goto 900
+      if (min(nfft1,nfft2,nfft3).lt.1) goto 900
+      if (max(nfft1,nfft2,nfft3).gt.1048576) goto 900
+      totalgrid=int(nfft1,8)*int(nfft2,8)*int(nfft3,8)
+      if (totalgrid.gt.1048576_8) goto 900
+      if (bsorder.lt.2 .or. bsorder.gt.8) goto 900
+      if (bsorder.gt.min(nfft1,nfft2,nfft3)) goto 900
+      if (grdoff-nlpts.ne.2) goto 900
+      if (nlpts+nrpts+1.ne.bsorder) goto 900
+      if (min(ngrd1,ngrd2,ngrd3).lt.max(nlpts,nrpts))
+     &   goto 900
+      if (ngrd1*nchk1.ne.nfft1 .or. ngrd2*nchk2.ne.nfft2
+     &    .or. ngrd3*nchk3.ne.nfft3) goto 900
+      if (nchunk.ne.nchk1*nchk2*nchk3) goto 900
+      if (.not.allocated(qfac) .or. .not.allocated(igrid))
+     &   goto 900
+      if (.not.allocated(thetai1) .or. .not.allocated(thetai2)
+     &    .or. .not.allocated(thetai3)) goto 900
+      if (.not.allocated(pmetable)) goto 900
+      if (.not.allocated(polarity) .or. .not.allocated(douind))
+     &   goto 900
+      if (size(polarity).lt.n .or. size(douind).lt.n) goto 900
+      if (size(igrid,1).ne.3 .or. size(igrid,2).lt.n) goto 900
+      if (size(pmetable,1).lt.n .or.
+     &    size(pmetable,2).lt.nchunk) goto 900
+      if (size(thetai1,1).lt.2 .or. size(thetai1,2).lt.bsorder
+     &    .or. size(thetai1,3).lt.n) goto 900
+      if (size(thetai2,1).lt.2 .or. size(thetai2,2).lt.bsorder
+     &    .or. size(thetai2,3).lt.n) goto 900
+      if (size(thetai3,1).lt.2 .or. size(thetai3,2).lt.bsorder
+     &    .or. size(thetai3,3).lt.n) goto 900
+      if (any(shape(qfac).ne.(/nfft1,nfft2,nfft3/))) goto 900
+      if (.not.all(ieee_is_finite(qfac))) goto 900
+      if (.not.all(ieee_is_finite(recip))) goto 900
+      if (.not.ieee_is_finite(volbox) .or. volbox.le.0d0)
+     &   goto 900
+      active=0
+      do ii=1,npole
+         ia=ipole(ii)
+         if (.not.douind(ia)) cycle
+         active=active+1
+c        Reject hidden PCG floor changes in the initial export contract.
+         if (.not.ieee_is_finite(polarity(ia))) goto 900
+         if (polarity(ia).lt.1d-8) goto 900
+      end do
+      if (active.lt.1 .or. active.gt.20000) goto 900
+      do j=1,3
+         trans(1,j)=dble(nfft1)*recip(j,1)
+         trans(2,j)=dble(nfft2)*recip(j,2)
+         trans(3,j)=dble(nfft3)*recip(j,3)
+      end do
+      allocate(gridrows(nfft1,nfft2,nfft3))
+      gridrows=0d0
+      c1=0d0
+      cf2=0d0
+      nstencil=0
+      do ii=1,npole
+         ia=ipole(ii)
+         if (.not.douind(ia)) cycle
+         columns=0d0
+         sqalpha=sqrt(polarity(ia))
+         do m3=1,bsorder
+            iz=modulo(igrid(3,ia)+m3,nfft3)+1
+            do m2=1,bsorder
+               iy=modulo(igrid(2,ia)+m2,nfft2)+1
+               do m1=1,bsorder
+                  ix=modulo(igrid(1,ia)+m1,nfft1)+1
+                  needchunk=1+(ix-1)/ngrd1
+     &              +nchk1*((iy-1)/ngrd2
+     &              +nchk2*((iz-1)/ngrd3))
+                  if (pmetable(ia,needchunk).ne.1) goto 900
+                  dv(1)=thetai1(2,m1,ia)*thetai2(1,m2,ia)
+     &                    *thetai3(1,m3,ia)
+                  dv(2)=thetai1(1,m1,ia)*thetai2(2,m2,ia)
+     &                    *thetai3(1,m3,ia)
+                  dv(3)=thetai1(1,m1,ia)*thetai2(1,m2,ia)
+     &                    *thetai3(2,m3,ia)
+                  do j=1,3
+                     bb(j)=sqalpha*dot_product(dv,trans(:,j))
+                  end do
+                  if (.not.all(ieee_is_finite(bb))) goto 900
+                  columns=columns+abs(bb)
+                  gridrows(ix,iy,iz)=gridrows(ix,iy,iz)
+     &                                 +sum(abs(bb))
+                  cf2=cf2+dot_product(bb,bb)
+                  nstencil=nstencil+1
+               end do
+            end do
+         end do
+         c1=max(c1,maxval(columns))
+      end do
+      cinf=maxval(gridrows)
+      qmin=minval(qfac)
+      qmax=maxval(qfac)
+      qabs=maxval(abs(qfac))
+      qzero=qfac(1,1,1)
+      evenerr=0d0
+      do iz=1,nfft3
+         neg3=modulo(1-iz,nfft3)+1
+         do iy=1,nfft2
+            neg2=modulo(1-iy,nfft2)+1
+            do ix=1,nfft1
+               neg1=modulo(1-ix,nfft1)+1
+               evenerr=max(evenerr,abs(qfac(ix,iy,iz)
+     &                           -qfac(neg1,neg2,neg3)))
+            end do
+         end do
+      end do
+      scale=dble(totalgrid)*min(c1*cinf,cf2)
+      ub=scale*qabs
+      evenub=scale*evenerr/2d0
+      if (.not.all(ieee_is_finite((/c1,cinf,cf2,ub,evenub/))))
+     &   goto 900
+c     Full initialized qfac and compact spline records permit saved replay.
+      write(filename,'(a,i3.3,a)') 'pme_norm_export_',seq,'.dat'
+      open(newunit=unit,file=trim(filename),status='new',
+     &     action='write',iostat=ios)
+      if (ios.ne.0) goto 900
+      write(unit,'(a)') 'PME_NORM_EXPORT_V1'
+      write(unit,'(a,8i10)') 'GRID ',seq,nfft1,nfft2,nfft3,
+     &                      bsorder,active,npole,int(totalgrid)
+      write(unit,'(a,a)') 'FFT ',trim(ffttyp)
+      write(unit,'(a,9i10)') 'CHUNKS ',nchk1,nchk2,nchk3,
+     &                       ngrd1,ngrd2,ngrd3,nlpts,nrpts,grdoff
+      write(unit,'(a,2es26.17e3)') 'EWALD_VOLUME ',aewald,volbox
+      do j=1,3
+         write(unit,'(a,i3,3es26.17e3)') 'TRANS ',j,trans(j,:)
+      end do
+      write(unit,'(a,5es26.17e3)') 'Q_STATS ',qmin,qmax,qabs,
+     &                                            qzero,evenerr
+      write(unit,'(a,5es26.17e3)') 'NORMS ',c1,cinf,cf2,ub,evenub
+      ntheta=0
+      do ii=1,npole
+         ia=ipole(ii)
+         if (.not.douind(ia)) cycle
+         write(unit,'(a,5i10,4es26.17e3)') 'SITE ',ia,type(ia),
+     &      igrid(:,ia),polarity(ia),x(ia),y(ia),z(ia)
+         do j=1,bsorder
+            write(unit,'(a,3i10,2es26.17e3)') 'THETA ',ia,1,j,
+     &                  thetai1(1,j,ia),thetai1(2,j,ia)
+            write(unit,'(a,3i10,2es26.17e3)') 'THETA ',ia,2,j,
+     &                  thetai2(1,j,ia),thetai2(2,j,ia)
+            write(unit,'(a,3i10,2es26.17e3)') 'THETA ',ia,3,j,
+     &                  thetai3(1,j,ia),thetai3(2,j,ia)
+            ntheta=ntheta+3
+         end do
+      end do
+      nq=0
+      do iz=1,nfft3
+         do iy=1,nfft2
+            do ix=1,nfft1
+               write(unit,'(a,3i10,es26.17e3)') 'QFAC ',ix,iy,iz,
+     &                                             qfac(ix,iy,iz)
+               nq=nq+1
+            end do
+         end do
+      end do
+      write(unit,'(a,4i12)') 'END ',active,ntheta,nq,nstencil
+      close(unit,iostat=ios)
+      if (ios.ne.0) goto 900
+      deallocate(gridrows)
+      write(iout,'(a,a)') 'PME_NORM_EXPORT_FILE ',trim(filename)
+      return
+  900 continue
+      write(iout,*) 'PME NORM EXPORT: invalid/incomplete snapshot'
+      call fatal
+      end

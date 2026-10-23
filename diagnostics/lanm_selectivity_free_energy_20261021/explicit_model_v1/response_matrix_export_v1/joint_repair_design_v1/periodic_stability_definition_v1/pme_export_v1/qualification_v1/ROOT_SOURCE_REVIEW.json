@@ -1,0 +1,46 @@
+{
+  "status": "passed_initialized_PME_qualification_source_review",
+  "reviewer": "/root",
+  "created_utc": "2026-10-22T23:07:58.460565+00:00",
+  "ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/pme_export_v1/qualification_v1/READY.json",
+    "sha256": "eaf2df2907d520320c8d106da3cbd552b1dcac494ec7546c2a5f6e7790bc5faa"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/pme_export_v1/qualification_v1/SPEC.md",
+    "sha256": "b7ecf8ca2144921a64226f521217104e9460c9470f7e04cc0791cf4c1881fcf8"
+  },
+  "harness": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/pme_export_v1/qualification_v1/PME_HARNESS.f90",
+    "sha256": "5e0dbf31669e83ee2f72502bccddda70701ba0b24566d8adfde106cc00aec79d"
+  },
+  "replay": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/pme_export_v1/qualification_v1/REPLAY.py",
+    "sha256": "b6b1b9f62ab191855b9da437d508faa69f1945f0fe48e76bf8acb900ad62839b"
+  },
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/pme_export_v1/qualification_v1/preparation_v1/MANIFEST.json",
+    "sha256": "455c5cf303908060d10c89217b67961ec3c3c43cb676e87073e4e5461cf343c0"
+  },
+  "controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/pme_export_v1/qualification_v1/controls_v1/RESULT.json",
+    "sha256": "8284342c9304151e47f0bfcc6a6e713cc7be73e631a35922b2c89d72439efb0a"
+  },
+  "native_authority": "periodic_native_prototype_v1/source_v1/source/induce.f:umutual1, fft3d.f, pme.f, ewald.f, atoms.f",
+  "findings": [
+    "Exact consumed neutral six-site fixture, unchanged coordinates/parameters; conducting boundary default preserved",
+    "OFF/ON differ by optional export only; original gradient called once per program",
+    "Native reciprocal chain and sqrt(alpha) coordinate normalization match positive R contribution; actual field uses negative sign",
+    "All 54 packed applications counted separately from two native programs; no model uind/uinp assignments",
+    "Current initialized arrays are compared exactly to snapshot before numerical operator parity; no assumed equality",
+    "Numerical comparison retains qfac asymmetry and channel leakage, no symmetrization",
+    "Prepared inputs/source pins and source controls verified; no root numerical rerun"
+  ],
+  "limits": [
+    "Source review does not assert successful compile/runtime or full-box stability",
+    "Only finite initialized export/operator correspondence can be admitted; no dynamics or physical validation",
+    "Both response fatal guards remain intact"
+  ],
+  "new_native_calls": 0,
+  "new_solver_calls": 0
+}

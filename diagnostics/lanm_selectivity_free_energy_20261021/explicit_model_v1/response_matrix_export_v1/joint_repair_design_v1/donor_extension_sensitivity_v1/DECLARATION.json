@@ -1,0 +1,71 @@
+{
+  "question": "Do the already executed donor drive and oxygen-stiffness perturbations move consumed central mechanical and electrical discrepancies together, or trade them off?",
+  "qualified121_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/donor_extension_qualification_v1/run_v1/execution/RESULT.json",
+    "sha256": "b533f7dbbad70c66e0c6fdf4c8ebb5837f2cf0fc120744228d16c02c44a6c605"
+  },
+  "qualified121_independent_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/donor_extension_qualification_v1/independent_actual_review_v1/actual_v2/REVIEW.json",
+    "sha256": "5e892202808e6b4270f196b9623eb9d692e5905c9a60ea05948b7d86830538e0"
+  },
+  "qualified121_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/donor_extension_qualification_v1/preparation_v1/MANIFEST.json",
+    "sha256": "12bc8b408c01eafd34284ae91137ae09eaea60759b2fd5dbd3f5f285b7781b54"
+  },
+  "qualified121_plan": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/donor_extension_qualification_v1/QUALIFICATION_PLAN.md",
+    "sha256": "be2f30f5e2db2377f485559ab89072371d7a00df8f9251ba6e7209f5c5539d4c"
+  },
+  "design_sources": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/donor_extension_design_v1/SOURCES.json",
+    "sha256": "cf76658930a7aa8ab2d440efa7f7dc6d2bb4de34e4f37c3536896c53e7a35e5c"
+  },
+  "design_note": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/donor_extension_design_v1/DECISION.md",
+    "sha256": "fbd1ff8abba3eeb8b851ac27c988900a6d8afe48d74a3e03a13246146e52e7e9"
+  },
+  "profiles": {
+    "baseline": [
+      0,
+      0
+    ],
+    "drive": [
+      0.1,
+      0
+    ],
+    "stiffness": [
+      0,
+      0.1
+    ],
+    "combined": [
+      0.1,
+      0.1
+    ]
+  },
+  "metals": [
+    "La",
+    "Dy"
+  ],
+  "observables": [
+    "central radial and original centroid-rotation dE/dq, kcal/mol/Angstrom",
+    "zero-field conjugate projected moment at fixed lab0, ea0",
+    "projected susceptibility, a0^3",
+    "combined rotation energy slopes and dmu/dq at q=.010/.005 Angstrom"
+  ],
+  "arithmetic": [
+    "separate finite secants (probe minus baseline)/.1; not an infinitesimal derivative",
+    "mixed finite contrast combined-drive-stiffness+baseline, with optional /.01 coefficient explicitly labeled",
+    "changes and signed errors against exactly consumed targets; all probes retained",
+    "eight combined rotation endpoints and inherited baseline/reference values, both steps retained"
+  ],
+  "limits": [
+    "No fitting, ranking, coefficient selection, extrapolation, or new thresholds.",
+    "Dy and paired quantum susceptibility remain unqualified; no Dy susceptibility target error or coefficient inference.",
+    "PBE0 targets are provisional method comparisons; canonical rotation uncertainty is not resolved by this calculation.",
+    "Centroid rotation changes metal-donor distances; no pure angular/electrostatic attribution.",
+    "Numerical qualification does not demonstrate physical accuracy.",
+    "This analysis uses fixed positive probes, so finite secants do not establish local rank or a negative-parameter response."
+  ],
+  "new_native_calls": 0,
+  "threads": 1
+}

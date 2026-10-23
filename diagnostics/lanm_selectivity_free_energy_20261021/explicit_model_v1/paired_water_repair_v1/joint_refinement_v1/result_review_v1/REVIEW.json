@@ -1,0 +1,758 @@
+{
+  "status": "saved_result_review_passed",
+  "reporter": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/REPORT_RESULT.py",
+    "sha256": "ae8c4765420dbb73058b3f33631080edde0e477abff7ea6fcdad49956a3f278a"
+  },
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution/RESULT.json",
+    "sha256": "fab7016c4335a82dea983368abc6f23201dd83df0324f7794e5e0c978fd8e190"
+  },
+  "config": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/CONFIG_RUN.json",
+    "sha256": "c15e79a5e6e47a099e587d0835a7ca0d7b6814e3b787f68eba778f5a1322dd16"
+  },
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/REFINE.py",
+    "sha256": "90f3fc262962741deb06a09f2a0532161854f905de7cf4d9e687294854f6c50a"
+  },
+  "producer_status": "bounded_joint_refinement_complete",
+  "stopping_reason": "all_existing_controls_passed",
+  "initial": {
+    "objective": 0.2967353814138801,
+    "balanced_exchange_error_kcal_mol": -0.05772580698142349,
+    "controls": {
+      "La": {
+        "category_balanced_rigid_RMS_kcal_mol_A": 1.453677058388401,
+        "max_body_component_error_kcal_mol_A": 6.1857321231515225,
+        "passed": false
+      },
+      "Dy": {
+        "category_balanced_rigid_RMS_kcal_mol_A": 1.32739074013799,
+        "max_body_component_error_kcal_mol_A": 4.941691654408614,
+        "passed": true
+      },
+      "paired": {
+        "category_balanced_rigid_RMS_kcal_mol_A": 0.9269810463901728,
+        "max_body_component_error_kcal_mol_A": 2.488802870422603,
+        "passed": true
+      }
+    },
+    "development_checks_passed": false
+  },
+  "selected": {
+    "objective": 0.14198550121446277,
+    "balanced_exchange_error_kcal_mol": -0.0492942869814641,
+    "controls": {
+      "La": {
+        "category_balanced_rigid_RMS_kcal_mol_A": 1.151386615020696,
+        "max_body_component_error_kcal_mol_A": 4.838811153151521,
+        "passed": true
+      },
+      "Dy": {
+        "category_balanced_rigid_RMS_kcal_mol_A": 0.9273268909051043,
+        "max_body_component_error_kcal_mol_A": 3.559319954408614,
+        "passed": true
+      },
+      "paired": {
+        "category_balanced_rigid_RMS_kcal_mol_A": 0.2764453158778732,
+        "max_body_component_error_kcal_mol_A": 1.279527158766136,
+        "passed": true
+      }
+    },
+    "development_checks_passed": true
+  },
+  "selected_parameters": [
+    3.710148544089586,
+    0.2001607792689767,
+    3.389554168967775,
+    0.16712500000000005
+  ],
+  "parameters": [
+    {
+      "name": "La_R",
+      "initial_scout": 3.68689020286329,
+      "selected": 3.710148544089586,
+      "move_from_scout": 0.023258341226295887,
+      "original_family_initial": 3.6985300908646654,
+      "lower": 3.1437505772349654,
+      "upper": 4.253309604494365,
+      "normalized_selected": 0.5104712349135841,
+      "normalized_distance_to_nearest_bound": 0.48952876508641585,
+      "exact_bound_hit": false
+    },
+    {
+      "name": "La_damping",
+      "initial_scout": 0.1909375,
+      "selected": 0.2001607792689767,
+      "move_from_scout": 0.009223279268976703,
+      "original_family_initial": 0.25,
+      "lower": 0.05,
+      "upper": 0.5,
+      "normalized_selected": 0.333690620597726,
+      "normalized_distance_to_nearest_bound": 0.333690620597726,
+      "exact_bound_hit": false
+    },
+    {
+      "name": "Dy_R",
+      "initial_scout": 3.345904105516956,
+      "selected": 3.389554168967775,
+      "move_from_scout": 0.04365006345081879,
+      "original_family_initial": 3.3221124657663292,
+      "lower": 2.82379559590138,
+      "upper": 3.820429335631278,
+      "normalized_selected": 0.5676694963384677,
+      "normalized_distance_to_nearest_bound": 0.43233050366153225,
+      "exact_bound_hit": false
+    },
+    {
+      "name": "Dy_damping",
+      "initial_scout": 0.14462500000000003,
+      "selected": 0.16712500000000005,
+      "move_from_scout": 0.02250000000000002,
+      "original_family_initial": 0.139,
+      "lower": 0.05,
+      "upper": 0.5,
+      "normalized_selected": 0.2602777777777779,
+      "normalized_distance_to_nearest_bound": 0.2602777777777779,
+      "exact_bound_hit": false
+    }
+  ],
+  "fixed_pair_epsilon": {
+    "La": 0.24429636467571708,
+    "Dy": 0.37332330078584813
+  },
+  "iterations": [
+    {
+      "outer_step": 1,
+      "origin_key": "86d654accb040324eefb9ae848cbd8a17e20ead4cd50befb63528bb9e49ee9da",
+      "origin": {
+        "objective": 0.2967353814138801,
+        "balanced_exchange_error_kcal_mol": -0.05772580698142349,
+        "controls": {
+          "La": {
+            "category_balanced_rigid_RMS_kcal_mol_A": 1.453677058388401,
+            "max_body_component_error_kcal_mol_A": 6.1857321231515225,
+            "passed": false
+          },
+          "Dy": {
+            "category_balanced_rigid_RMS_kcal_mol_A": 1.32739074013799,
+            "max_body_component_error_kcal_mol_A": 4.941691654408614,
+            "passed": true
+          },
+          "paired": {
+            "category_balanced_rigid_RMS_kcal_mol_A": 0.9269810463901728,
+            "max_body_component_error_kcal_mol_A": 2.488802870422603,
+            "passed": true
+          }
+        },
+        "development_checks_passed": false
+      },
+      "selected_key": "bb940c6eaf480814951c22265fea1bebb3c3e6ab8651f6344061d4d805f0991a",
+      "selected": {
+        "objective": 0.215458777038475,
+        "balanced_exchange_error_kcal_mol": -0.28954773698140457,
+        "controls": {
+          "La": {
+            "category_balanced_rigid_RMS_kcal_mol_A": 1.3172169565198482,
+            "max_body_component_error_kcal_mol_A": 5.624842193151521,
+            "passed": false
+          },
+          "Dy": {
+            "category_balanced_rigid_RMS_kcal_mol_A": 1.1230404349645087,
+            "max_body_component_error_kcal_mol_A": 4.3336835944086145,
+            "passed": true
+          },
+          "paired": {
+            "category_balanced_rigid_RMS_kcal_mol_A": 0.340159573645524,
+            "max_body_component_error_kcal_mol_A": 1.2911945587661364,
+            "passed": true
+          }
+        },
+        "development_checks_passed": false
+      },
+      "derivative_widths": [
+        0.010000000000000397,
+        0.010000000000000009,
+        0.009999999999999898,
+        0.010000000000000009
+      ],
+      "trials": [
+        {
+          "id": "scaled_GN_half",
+          "key": "5f396bceaea03f125e501bf9c58bd7c87fe493f962b077c696481e87a19fcba2",
+          "selected": false,
+          "objective": 0.2688878735942196,
+          "balanced_exchange_error_kcal_mol": -0.11516383698140942,
+          "controls": {
+            "La": {
+              "category_balanced_rigid_RMS_kcal_mol_A": 1.3863268728333817,
+              "max_body_component_error_kcal_mol_A": 5.910574423151523,
+              "passed": false
+            },
+            "Dy": {
+              "category_balanced_rigid_RMS_kcal_mol_A": 1.238031282234494,
+              "max_body_component_error_kcal_mol_A": 4.562151934408614,
+              "passed": true
+            },
+            "paired": {
+              "category_balanced_rigid_RMS_kcal_mol_A": 0.8913649566721941,
+              "max_body_component_error_kcal_mol_A": 2.363209678050957,
+              "passed": true
+            }
+          },
+          "development_checks_passed": false
+        },
+        {
+          "id": "scaled_GN_full",
+          "key": "c7ce69fb86c311245596452deeb3d194bb4733af004f7deae1a4aebd8c0189f2",
+          "selected": false,
+          "objective": 0.2621284807944134,
+          "balanced_exchange_error_kcal_mol": -0.2905126469814263,
+          "controls": {
+            "La": {
+              "category_balanced_rigid_RMS_kcal_mol_A": 1.3159371133493705,
+              "max_body_component_error_kcal_mol_A": 5.624080383151524,
+              "passed": false
+            },
+            "Dy": {
+              "category_balanced_rigid_RMS_kcal_mol_A": 1.1552188460027126,
+              "max_body_component_error_kcal_mol_A": 4.126264634408613,
+              "passed": true
+            },
+            "paired": {
+              "category_balanced_rigid_RMS_kcal_mol_A": 0.8889568223687144,
+              "max_body_component_error_kcal_mol_A": 2.321448430422606,
+              "passed": true
+            }
+          },
+          "development_checks_passed": false
+        },
+        {
+          "id": "bounded_LS_half",
+          "key": "7b6b3c52fc25eff05dd4d40d7fd057543605c4efd9eb5ab70a9d034065874590",
+          "selected": false,
+          "objective": 0.23362401055230753,
+          "balanced_exchange_error_kcal_mol": -0.09513773698145656,
+          "controls": {
+            "La": {
+              "category_balanced_rigid_RMS_kcal_mol_A": 1.362205040499926,
+              "max_body_component_error_kcal_mol_A": 5.905734963151522,
+              "passed": false
+            },
+            "Dy": {
+              "category_balanced_rigid_RMS_kcal_mol_A": 1.2230020420287528,
+              "max_body_component_error_kcal_mol_A": 4.663654874408613,
+              "passed": true
+            },
+            "paired": {
+              "category_balanced_rigid_RMS_kcal_mol_A": 0.5919821329020034,
+              "max_body_component_error_kcal_mol_A": 1.4855170104226119,
+              "passed": true
+            }
+          },
+          "development_checks_passed": false
+        },
+        {
+          "id": "bounded_LS_full",
+          "key": "bb940c6eaf480814951c22265fea1bebb3c3e6ab8651f6344061d4d805f0991a",
+          "selected": true,
+          "objective": 0.215458777038475,
+          "balanced_exchange_error_kcal_mol": -0.28954773698140457,
+          "controls": {
+            "La": {
+              "category_balanced_rigid_RMS_kcal_mol_A": 1.3172169565198482,
+              "max_body_component_error_kcal_mol_A": 5.624842193151521,
+              "passed": false
+            },
+            "Dy": {
+              "category_balanced_rigid_RMS_kcal_mol_A": 1.1230404349645087,
+              "max_body_component_error_kcal_mol_A": 4.3336835944086145,
+              "passed": true
+            },
+            "paired": {
+              "category_balanced_rigid_RMS_kcal_mol_A": 0.340159573645524,
+              "max_body_component_error_kcal_mol_A": 1.2911945587661364,
+              "passed": true
+            }
+          },
+          "development_checks_passed": false
+        }
+      ],
+      "origin_Jacobian_rank": 4,
+      "origin_singular_values": [
+        146.0038439729242,
+        24.419162925555725,
+        9.80819013613076,
+        1.3315151019932887
+      ],
+      "origin_condition": 109.65241307015991
+    },
+    {
+      "outer_step": 2,
+      "origin_key": "bb940c6eaf480814951c22265fea1bebb3c3e6ab8651f6344061d4d805f0991a",
+      "origin": {
+        "objective": 0.215458777038475,
+        "balanced_exchange_error_kcal_mol": -0.28954773698140457,
+        "controls": {
+          "La": {
+            "category_balanced_rigid_RMS_kcal_mol_A": 1.3172169565198482,
+            "max_body_component_error_kcal_mol_A": 5.624842193151521,
+            "passed": false
+          },
+          "Dy": {
+            "category_balanced_rigid_RMS_kcal_mol_A": 1.1230404349645087,
+            "max_body_component_error_kcal_mol_A": 4.3336835944086145,
+            "passed": true
+          },
+          "paired": {
+            "category_balanced_rigid_RMS_kcal_mol_A": 0.340159573645524,
+            "max_body_component_error_kcal_mol_A": 1.2911945587661364,
+            "passed": true
+          }
+        },
+        "development_checks_passed": false
+      },
+      "selected_key": "f481855696ed16a818df413093047c05e2ce3910848282b9b4280cb63ebee607",
+      "selected": {
+        "objective": 0.14198550121446277,
+        "balanced_exchange_error_kcal_mol": -0.0492942869814641,
+        "controls": {
+          "La": {
+            "category_balanced_rigid_RMS_kcal_mol_A": 1.151386615020696,
+            "max_body_component_error_kcal_mol_A": 4.838811153151521,
+            "passed": true
+          },
+          "Dy": {
+            "category_balanced_rigid_RMS_kcal_mol_A": 0.9273268909051043,
+            "max_body_component_error_kcal_mol_A": 3.559319954408614,
+            "passed": true
+          },
+          "paired": {
+            "category_balanced_rigid_RMS_kcal_mol_A": 0.2764453158778732,
+            "max_body_component_error_kcal_mol_A": 1.279527158766136,
+            "passed": true
+          }
+        },
+        "development_checks_passed": true
+      },
+      "derivative_widths": [
+        0.010000000000000397,
+        0.010000000000000009,
+        0.009999999999999898,
+        0.010000000000000009
+      ],
+      "trials": [
+        {
+          "id": "scaled_GN_half",
+          "key": "0fbce96aef8b4ceecc3c4f07e719b2a4d6c4c0e2e0f1de9a360849617e704a6f",
+          "selected": false,
+          "objective": 0.18982267918963508,
+          "balanced_exchange_error_kcal_mol": -0.277109976981464,
+          "controls": {
+            "La": {
+              "category_balanced_rigid_RMS_kcal_mol_A": 1.2395303060823384,
+              "max_body_component_error_kcal_mol_A": 5.297766943151524,
+              "passed": false
+            },
+            "Dy": {
+              "category_balanced_rigid_RMS_kcal_mol_A": 1.0362585159420632,
+              "max_body_component_error_kcal_mol_A": 3.959291374408614,
+              "passed": true
+            },
+            "paired": {
+              "category_balanced_rigid_RMS_kcal_mol_A": 0.3460289266874502,
+              "max_body_component_error_kcal_mol_A": 1.3385115287661407,
+              "passed": true
+            }
+          },
+          "development_checks_passed": false
+        },
+        {
+          "id": "scaled_GN_full",
+          "key": "d074f2c6657e809eef5546319f9406358f9df34b30d953cf47437e446087f6ab",
+          "selected": false,
+          "objective": 0.16908927879510663,
+          "balanced_exchange_error_kcal_mol": -0.28122277698145126,
+          "controls": {
+            "La": {
+              "category_balanced_rigid_RMS_kcal_mol_A": 1.1584842939235669,
+              "max_body_component_error_kcal_mol_A": 4.949812613151522,
+              "passed": true
+            },
+            "Dy": {
+              "category_balanced_rigid_RMS_kcal_mol_A": 0.9539427564660309,
+              "max_body_component_error_kcal_mol_A": 3.5400164444086135,
+              "passed": true
+            },
+            "paired": {
+              "category_balanced_rigid_RMS_kcal_mol_A": 0.3701227062306167,
+              "max_body_component_error_kcal_mol_A": 1.4098321287661406,
+              "passed": true
+            }
+          },
+          "development_checks_passed": true
+        },
+        {
+          "id": "bounded_LS_half",
+          "key": "aaba164ba8c12bd4564a791632dbfdedb6290a317f7f08ff1c01151631300a74",
+          "selected": false,
+          "objective": 0.17219860462157452,
+          "balanced_exchange_error_kcal_mol": -0.15488197698145711,
+          "controls": {
+            "La": {
+              "category_balanced_rigid_RMS_kcal_mol_A": 1.2348818551353717,
+              "max_body_component_error_kcal_mol_A": 5.242941273151523,
+              "passed": false
+            },
+            "Dy": {
+              "category_balanced_rigid_RMS_kcal_mol_A": 1.0239357146156716,
+              "max_body_component_error_kcal_mol_A": 3.9721957044086116,
+              "passed": true
+            },
+            "paired": {
+              "category_balanced_rigid_RMS_kcal_mol_A": 0.29299560229186206,
+              "max_body_component_error_kcal_mol_A": 1.2707815287661433,
+              "passed": true
+            }
+          },
+          "development_checks_passed": false
+        },
+        {
+          "id": "bounded_LS_full",
+          "key": "f481855696ed16a818df413093047c05e2ce3910848282b9b4280cb63ebee607",
+          "selected": true,
+          "objective": 0.14198550121446277,
+          "balanced_exchange_error_kcal_mol": -0.0492942869814641,
+          "controls": {
+            "La": {
+              "category_balanced_rigid_RMS_kcal_mol_A": 1.151386615020696,
+              "max_body_component_error_kcal_mol_A": 4.838811153151521,
+              "passed": true
+            },
+            "Dy": {
+              "category_balanced_rigid_RMS_kcal_mol_A": 0.9273268909051043,
+              "max_body_component_error_kcal_mol_A": 3.559319954408614,
+              "passed": true
+            },
+            "paired": {
+              "category_balanced_rigid_RMS_kcal_mol_A": 0.2764453158778732,
+              "max_body_component_error_kcal_mol_A": 1.279527158766136,
+              "passed": true
+            }
+          },
+          "development_checks_passed": true
+        }
+      ],
+      "origin_Jacobian_rank": 4,
+      "origin_singular_values": [
+        146.86359121788345,
+        24.512541017871857,
+        10.611476154144277,
+        1.3791268110675705
+      ],
+      "origin_condition": 106.49027343917531
+    }
+  ],
+  "passing_unselected_trials": [
+    {
+      "outer_step": 2,
+      "id": "scaled_GN_full",
+      "key": "d074f2c6657e809eef5546319f9406358f9df34b30d953cf47437e446087f6ab",
+      "selected": false,
+      "objective": 0.16908927879510663,
+      "balanced_exchange_error_kcal_mol": -0.28122277698145126,
+      "controls": {
+        "La": {
+          "category_balanced_rigid_RMS_kcal_mol_A": 1.1584842939235669,
+          "max_body_component_error_kcal_mol_A": 4.949812613151522,
+          "passed": true
+        },
+        "Dy": {
+          "category_balanced_rigid_RMS_kcal_mol_A": 0.9539427564660309,
+          "max_body_component_error_kcal_mol_A": 3.5400164444086135,
+          "passed": true
+        },
+        "paired": {
+          "category_balanced_rigid_RMS_kcal_mol_A": 0.3701227062306167,
+          "max_body_component_error_kcal_mol_A": 1.4098321287661406,
+          "passed": true
+        }
+      },
+      "development_checks_passed": true
+    }
+  ],
+  "all_selected_native_raw_replays_exact": true,
+  "selected_native": {
+    "water_central_La": {
+      "authority": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution/cache/cells/2c682f435f698b0785f1a7aa4de09cddf888e22da9c5c4d341b4d573175ab839/RESULT.json",
+        "sha256": "53ac9ae7c4df13ed6328588798a674bf8a24f8f9aaac2c7f105a7e64a0847c9e"
+      },
+      "input": {
+        "xyz": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution/cache/cells/2c682f435f698b0785f1a7aa4de09cddf888e22da9c5c4d341b4d573175ab839/system.xyz",
+          "sha256": "88ad37d4a7734344c5fb295bd21819e02be6f4954ccfb00a23b19da05d385e24"
+        },
+        "key": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution/cache/cells/2c682f435f698b0785f1a7aa4de09cddf888e22da9c5c4d341b4d573175ab839/system.key",
+          "sha256": "02d1497ec5435935f3c3083a496327aa585fed3f56313c1691f7ab34f86a5259"
+        },
+        "parameters": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution/cache/cells/2c682f435f698b0785f1a7aa4de09cddf888e22da9c5c4d341b4d573175ab839/amoeba09.prm",
+          "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+        }
+      },
+      "analyze_output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution/cache/cells/2c682f435f698b0785f1a7aa4de09cddf888e22da9c5c4d341b4d573175ab839/analyze.out",
+        "sha256": "bbd7f530368d2ee0cf795e7a6b7866f7809130de55aaf8b4ee34607049730554"
+      },
+      "gradient_output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution/cache/cells/2c682f435f698b0785f1a7aa4de09cddf888e22da9c5c4d341b4d573175ab839/testgrad.out",
+        "sha256": "63ee2a60eab34f78c624d0103e56b44e0bbeffeab92c19851d7c74ad69c8d13a"
+      },
+      "energy_kcal_mol": -83.26699111,
+      "atoms": 4,
+      "raw_replay_exact": true
+    },
+    "water_central_Dy": {
+      "authority": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution/cache/cells/6f7950b57cfe0f5efbe0aa8218cfa68f179817ca119af7b283dcc4ef6fd1d78c/RESULT.json",
+        "sha256": "90400129713882aecc6548021184fccdd6b80758e62c5675b1273de72ca8663e"
+      },
+      "input": {
+        "xyz": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution/cache/cells/6f7950b57cfe0f5efbe0aa8218cfa68f179817ca119af7b283dcc4ef6fd1d78c/system.xyz",
+          "sha256": "67a5777924b9e2b5a976bfbbf040e54a56e5e829beb675b81bd8699be6ebe9e7"
+        },
+        "key": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution/cache/cells/6f7950b57cfe0f5efbe0aa8218cfa68f179817ca119af7b283dcc4ef6fd1d78c/system.key",
+          "sha256": "8d3a892009acd46ddec1d17bf983d751133abcb82e21c87521b3480c75086274"
+        },
+        "parameters": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution/cache/cells/6f7950b57cfe0f5efbe0aa8218cfa68f179817ca119af7b283dcc4ef6fd1d78c/amoeba09.prm",
+          "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+        }
+      },
+      "analyze_output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution/cache/cells/6f7950b57cfe0f5efbe0aa8218cfa68f179817ca119af7b283dcc4ef6fd1d78c/analyze.out",
+        "sha256": "047f0c1b77fa5258ac2ba93d6b2e86ebb99dce8e201016026c3a63efdc24bca6"
+      },
+      "gradient_output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution/cache/cells/6f7950b57cfe0f5efbe0aa8218cfa68f179817ca119af7b283dcc4ef6fd1d78c/testgrad.out",
+        "sha256": "329a264e6e8d371dd17fd4ebe6fbd96df3669913fee4aa95ad4182d945cf436e"
+      },
+      "energy_kcal_mol": -96.56445391,
+      "atoms": 4,
+      "raw_replay_exact": true
+    },
+    "aquo8_central_La": {
+      "authority": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution/cache/cells/eb4bacdf67fc5dd9de63dfc83cef6c22a8d5a82297ffb0bb57fd2778b708a1ce/RESULT.json",
+        "sha256": "2fd205c7ac4794a8198618036db0c8a1b601981d7fffa3a9e7881a1ca83dfbb1"
+      },
+      "input": {
+        "xyz": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution/cache/cells/eb4bacdf67fc5dd9de63dfc83cef6c22a8d5a82297ffb0bb57fd2778b708a1ce/system.xyz",
+          "sha256": "9cb693b60bc591cbb929580e0a9925192aff9eceab2ba7236d1330c5ecaa304b"
+        },
+        "key": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution/cache/cells/eb4bacdf67fc5dd9de63dfc83cef6c22a8d5a82297ffb0bb57fd2778b708a1ce/system.key",
+          "sha256": "02d1497ec5435935f3c3083a496327aa585fed3f56313c1691f7ab34f86a5259"
+        },
+        "parameters": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution/cache/cells/eb4bacdf67fc5dd9de63dfc83cef6c22a8d5a82297ffb0bb57fd2778b708a1ce/amoeba09.prm",
+          "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+        }
+      },
+      "analyze_output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution/cache/cells/eb4bacdf67fc5dd9de63dfc83cef6c22a8d5a82297ffb0bb57fd2778b708a1ce/analyze.out",
+        "sha256": "7c250c7a936d9421dd5ead72a0bae291af4a138f138dfd1bbdaf395ae0ebb9df"
+      },
+      "gradient_output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution/cache/cells/eb4bacdf67fc5dd9de63dfc83cef6c22a8d5a82297ffb0bb57fd2778b708a1ce/testgrad.out",
+        "sha256": "ff3d264e34b2647f127e138a4d32f747e9cc63e01901a272083f5568aae5731e"
+      },
+      "energy_kcal_mol": -433.93299,
+      "atoms": 25,
+      "raw_replay_exact": true
+    },
+    "aquo8_central_Dy": {
+      "authority": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution/cache/cells/75d034c7eee0141a223882fb1b20d4ee5a2dbf33d47d1b996fd905d775471e58/RESULT.json",
+        "sha256": "049cbad057d3f751bcf75b521ac9eecb3a07726d5d006ac7ed72d904a4a7a1dc"
+      },
+      "input": {
+        "xyz": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution/cache/cells/75d034c7eee0141a223882fb1b20d4ee5a2dbf33d47d1b996fd905d775471e58/system.xyz",
+          "sha256": "f4703457ff7b6047f997dc42647136664c7018543ace484ce6d401e5eea4d4cb"
+        },
+        "key": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution/cache/cells/75d034c7eee0141a223882fb1b20d4ee5a2dbf33d47d1b996fd905d775471e58/system.key",
+          "sha256": "8d3a892009acd46ddec1d17bf983d751133abcb82e21c87521b3480c75086274"
+        },
+        "parameters": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution/cache/cells/75d034c7eee0141a223882fb1b20d4ee5a2dbf33d47d1b996fd905d775471e58/amoeba09.prm",
+          "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+        }
+      },
+      "analyze_output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution/cache/cells/75d034c7eee0141a223882fb1b20d4ee5a2dbf33d47d1b996fd905d775471e58/analyze.out",
+        "sha256": "73217f771bf530393d0b33886a0f793e5916d7a92d23a1070606b5e412ec3c32"
+      },
+      "gradient_output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution/cache/cells/75d034c7eee0141a223882fb1b20d4ee5a2dbf33d47d1b996fd905d775471e58/testgrad.out",
+        "sha256": "1f9ab3202bb679cb8987481e96076027445efa0e607abe56d59d7f78b9f6fcf1"
+      },
+      "energy_kcal_mol": -489.76710856,
+      "atoms": 25,
+      "raw_replay_exact": true
+    }
+  },
+  "verified_unique_files": 591,
+  "inherited_native_cells_seeded": 158,
+  "new_native_cells": 64,
+  "new_native_program_invocations": 128,
+  "new_parameter_vectors": 24,
+  "complete_outer_steps": 2,
+  "method_sensitivity": {
+    "outward_water_translation_positive": true,
+    "results": {
+      "La": {
+        "model_dE_dq_kcal_mol_A": -4.991017970429598,
+        "baseline_dE_dq_kcal_mol_A": 12.138589780091111,
+        "reference_dE_dq_kcal_mol_A": {
+          "PBE0_D4_uncorrected": -4.1720475426725,
+          "PBE0_D4_CP": -4.833235771583407,
+          "CC_uncorrected": -9.765114180925556,
+          "CC_CP": -12.463028414177304
+        },
+        "comparisons": {
+          "PBE0_D4_uncorrected": {
+            "residual_kcal_mol_A": -0.8189704277570984,
+            "baseline_residual_kcal_mol_A": 16.31063732276361,
+            "wrong_sign": false,
+            "absolute_residual_worsened": false
+          },
+          "PBE0_D4_CP": {
+            "residual_kcal_mol_A": -0.15778219884619116,
+            "baseline_residual_kcal_mol_A": 16.97182555167452,
+            "wrong_sign": false,
+            "absolute_residual_worsened": false
+          },
+          "CC_uncorrected": {
+            "residual_kcal_mol_A": 4.774096210495958,
+            "baseline_residual_kcal_mol_A": 21.903703961016667,
+            "wrong_sign": false,
+            "absolute_residual_worsened": false
+          },
+          "CC_CP": {
+            "residual_kcal_mol_A": 7.472010443747705,
+            "baseline_residual_kcal_mol_A": 24.601618194268415,
+            "wrong_sign": false,
+            "absolute_residual_worsened": false
+          }
+        }
+      },
+      "Dy": {
+        "model_dE_dq_kcal_mol_A": 31.664883865156543,
+        "baseline_dE_dq_kcal_mol_A": 32.80839096950227,
+        "reference_dE_dq_kcal_mol_A": {
+          "PBE0_D4_uncorrected": 32.66145033179968,
+          "PBE0_D4_CP": 31.900587804952636,
+          "CC_uncorrected": 28.417143036380597,
+          "CC_CP": 25.833184523226798
+        },
+        "comparisons": {
+          "PBE0_D4_uncorrected": {
+            "residual_kcal_mol_A": -0.9965664666431344,
+            "baseline_residual_kcal_mol_A": 0.14694063770259191,
+            "wrong_sign": false,
+            "absolute_residual_worsened": true
+          },
+          "PBE0_D4_CP": {
+            "residual_kcal_mol_A": -0.2357039397960925,
+            "baseline_residual_kcal_mol_A": 0.9078031645496338,
+            "wrong_sign": false,
+            "absolute_residual_worsened": false
+          },
+          "CC_uncorrected": {
+            "residual_kcal_mol_A": 3.247740828775946,
+            "baseline_residual_kcal_mol_A": 4.391247933121672,
+            "wrong_sign": false,
+            "absolute_residual_worsened": false
+          },
+          "CC_CP": {
+            "residual_kcal_mol_A": 5.831699341929745,
+            "baseline_residual_kcal_mol_A": 6.975206446275472,
+            "wrong_sign": false,
+            "absolute_residual_worsened": false
+          }
+        }
+      },
+      "paired": {
+        "model_dE_dq_kcal_mol_A": 36.65590183558614,
+        "baseline_dE_dq_kcal_mol_A": 20.66980118941116,
+        "reference_dE_dq_kcal_mol_A": {
+          "PBE0_D4_uncorrected": 36.83349787447218,
+          "PBE0_D4_CP": 36.73382357653604,
+          "CC_uncorrected": 38.18225721730615,
+          "CC_CP": 38.2962129374041
+        },
+        "comparisons": {
+          "PBE0_D4_uncorrected": {
+            "residual_kcal_mol_A": -0.17759603888603692,
+            "baseline_residual_kcal_mol_A": -16.16369668506102,
+            "wrong_sign": false,
+            "absolute_residual_worsened": false
+          },
+          "PBE0_D4_CP": {
+            "residual_kcal_mol_A": -0.0779217409498969,
+            "baseline_residual_kcal_mol_A": -16.06402238712488,
+            "wrong_sign": false,
+            "absolute_residual_worsened": false
+          },
+          "CC_uncorrected": {
+            "residual_kcal_mol_A": -1.526355381720009,
+            "baseline_residual_kcal_mol_A": -17.51245602789499,
+            "wrong_sign": false,
+            "absolute_residual_worsened": false
+          },
+          "CC_CP": {
+            "residual_kcal_mol_A": -1.6403111018179573,
+            "baseline_residual_kcal_mol_A": -17.62641174799294,
+            "wrong_sign": false,
+            "absolute_residual_worsened": false
+          }
+        }
+      }
+    },
+    "CC_residual_deterioration_flag": false,
+    "used_in_objective_or_candidate_selection": false,
+    "method_accuracy_qualified": false
+  },
+  "cost": {
+    "elapsed_seconds": 33.55498373694718,
+    "parent_process_CPU_seconds": 23.593751752000003,
+    "aggregate_native_child_user_CPU_seconds": 25.564384,
+    "aggregate_native_child_system_CPU_seconds": 34.005046
+  },
+  "scheduler_records": {
+    "17576": {
+      "job_id": "17576",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "start": "2026-10-21T03:55:01",
+      "end": "2026-10-21T03:55:39",
+      "elapsed_seconds": "38",
+      "allocated_cpus": "8",
+      "nodes": "node-64-768g-10"
+    }
+  },
+  "final_point_Jacobian_not_evaluated": true,
+  "global_optimum_claimed": false,
+  "new_model_evaluations": 0,
+  "physical_accuracy_qualified": false,
+  "validation_outcomes_opened": false,
+  "saved_review_elapsed_seconds": 2.4996065190061927
+}

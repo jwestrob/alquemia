@@ -1,0 +1,7 @@
+# Existing periodic fixture handoff
+
+Read only the two already prepared La/Dy aqueous BIO boxes, their original paired-leg geometries, frozen mapping records and prior nonperiodic numerical admissions. Record literal geometry/topology/parameter hashes, neutral composition, cell, declared versus actually bound periodic settings, and the mapping from current custom metal/water types. No key, geometry, force field or native source is changed. No native call, dynamics, fit, held-out read or periodic tail evaluation occurs.
+
+One standard-library metadata pass may count atoms/bonds and calculate coordinate bounds. Preserve the raw representatives. For a fixed cube H=L I with L=49.324 Angstrom, the lattice singular-value lower and upper bounds are both exactly L. Provide the fixed-fixture metal-to-water-oxygen displacement bound D from the literal representatives, and separately the conservative canonical-cell diameter sqrt(3)L and minimum-image radius sqrt(3)L/2. These conventions are distinct; no coordinate wrapping or choice of a new tail definition is performed. Decimal calculations retain exact input tokens and round reported square-root upper bounds upward.
+
+BIO mapping does not qualify the custom local response, the older fitted pair coefficients do not bind a later candidate, and the two admitted nonperiodic controls do not admit either full periodic box. This handoff supplies static metadata and identifies missing implementation/settings decisions only.

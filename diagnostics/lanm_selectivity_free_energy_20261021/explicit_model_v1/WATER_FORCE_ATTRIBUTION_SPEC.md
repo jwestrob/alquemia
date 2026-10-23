@@ -1,0 +1,11 @@
+# Saved hydrated force attribution
+
+Root requested this finite saved-data analysis before considering any parameter fit. Use the six central hydrated donor cells and two already available aquo8 controls, both metals, from the pinned complete comparison. Retain MACE, transferred AMOEBA and the same frozen-f PBE0 reference. No engine calls, new structures, optimization, altered force field or model fitting. Execute serial stdlib arithmetic with all numerical thread controls set to one.
+
+Partition the exact physical atoms into metal, ligand and whole water molecules using the saved covalent graph, symbols and ligand indices. Verify complete disjoint coverage. Report Cartesian-component error RMSE and squared-error fractions for each category, for each endpoint and matched Dy-minus-La difference. Reproduce the existing six model/reference RMSE records before interpreting new summaries.
+
+For each water, orthogonally project Cartesian forces/errors into equal-atom rigid translation, rigid rotation about its coordinate centroid, and the remaining internal-distortion subspace. These are unweighted Euclidean projections consistent with component RMSE, not mass-weighted normal modes. Verify reconstruction, orthogonality and squared-norm closure. Also report the ligand's rigid/internal decomposition so shared ligand internal errors are not assigned automatically to the metal.
+
+Read exact water bond/angle/Urey-Bradley parameters and saved water geometry. Reconstruct only those analytic bonded forces from the pinned native formulas; compare the corresponding scalar component sums to the existing aquo8 native energy tables. This is source-formula bookkeeping on saved coordinates, with zero native energy evaluations. It does not split the quantum force into physical terms. Keep intramolecular versus environment-induced internal water distortion distinct: the internal subspace includes both. Shared metal-independent bonded terms cancel exactly in a matched La/Dy force difference at identical coordinates.
+
+No accuracy threshold is introduced. Numerical bookkeeping checks use 1e−8 relative plus 1e−8 absolute for force projections/reported RMSE, and 1e−7 kcal/mol for eight-decimal native component replay. These tolerances do not qualify reference forces or a candidate potential. Preserve all eight cells and any failed analysis outcome.

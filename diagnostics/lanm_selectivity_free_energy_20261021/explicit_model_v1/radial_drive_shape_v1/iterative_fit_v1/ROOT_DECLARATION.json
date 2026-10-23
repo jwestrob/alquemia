@@ -1,0 +1,84 @@
+{
+  "status": "declared_bounded_radial14_physical_and_electrical_fit",
+  "time_utc": "2026-10-23T03:48:24.568628+00:00",
+  "scientific_question": "Can repeated local updates with the qualified extra radial drive per metal reduce pair and collective component energy errors while retaining all existing physical gates and fixed electrical safeguards?",
+  "inputs": {
+    "plan": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/PLAN.md",
+      "sha256": "73698c7b4aedc0d6fe0cdfa929b5cc63abca6b33b63962cf0a04872037a52470"
+    },
+    "prior_eight_step_design": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/DESIGN.md",
+      "sha256": "6e5975cfeb51da7b5f708413a893d269b0ff3736e566e76b7806a6d041ebc436"
+    },
+    "initial_local_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/local_comparison_v2/run_v1/execution/RESULT.json",
+      "sha256": "6163eb691590106c8c139fa2f0b57c73f51cd96c689d4cdcd781e80366cdc769"
+    },
+    "initial_local_root_admission": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/local_comparison_v2/run_v1/ROOT_ACTUAL_REVIEW.json",
+      "sha256": "37d64446fb9694250bdf36d1e1b47b2fa3a8163403a586a9fb3d98ab8a2dc095"
+    },
+    "fixed_point_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/native_comparison_v1/run_v1/execution/RESULT.json",
+      "sha256": "aada89fddacfdb15d3face55af623ca476a4795d4ac68eacf3952ad60b2c1c86"
+    },
+    "fixed_point_root_admission": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/native_comparison_v1/run_v1/ROOT_ACTUAL_REVIEW.json",
+      "sha256": "594e721dfbfc684aaaec1dedbcdcf73b7d8668c91bafdf6018ce2fbea53c4173"
+    },
+    "zero_bridge": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/qualification_v1/recovery_v1/run_v1/ROOT_CACHE_BRIDGE.json",
+      "sha256": "d965f1226e6906124aef996adbfe29623903f5da6a0cb8bb1655dc16daae3f90"
+    },
+    "numerical_admission": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/qualification_v1/recovery_v1/run_v1/ROOT_ACTUAL_REVIEW.json",
+      "sha256": "bab6cb974214fe70d483d311b9aa2d481dcc43893bb18be32bdda34dc5627edc"
+    }
+  },
+  "start": "Exact feca1810ed27e323ae37e500b1d9c46f3ec2d0c34b652eeab2e2156ac62d45c8 twelve parameters extended with zero eLa/eDy; exact original center cells reused",
+  "model": "Same qualified radial14 native binaries, old12 parameter box unchanged, eLa/eDy bounds[-1,1]; no new term, quantum reference or geometry",
+  "objective": "q=max(JP/711.9511599971815,JB/497.4305961564669), JP=(P8error\u00b2+P9error\u00b2)/2, likewiseB; original fixed engineering denominators distinct from fixed feca safety ceilings",
+  "physical_gates": "All original25 actual energy/force gates unchanged, exact native admissibility required",
+  "electrical_safeguards": "Three dipole/susceptibility norm ceilings fixed at exact feca and absolute signed W9 Dy-minus-La z dipole residual ceiling fixed there. Never reset or loosen ceilings at later centers; preserve literal initial saved normalization for first-solve reuse.",
+  "iterations": {
+    "maximum_outer_steps": 8,
+    "maximum_new_parameter_vectors": 228,
+    "maximum_new_native_programs": 7280,
+    "maximum_logical_proposals": 8,
+    "maximum_new_solver_calls": 7,
+    "first_proposal": "Reuse exact saved radial14 finite solution and status from initial_local_result; recompute only declared fraction certificates using identical literal problem. No duplicate first solve.",
+    "probe_steps_normalized": 0.005,
+    "trust_box_normalized": 0.025,
+    "fractions": [
+      1.0,
+      0.5,
+      0.25,
+      0.125
+    ],
+    "actual_clipped_spans": true,
+    "later_stencils": "All14 coordinates including nonzero radial centers; fresh28points only at selected new incumbent"
+  },
+  "reuse": "Exact first28 derivative vectors (old24 via authorized e0 bridge and new4 radial probes); two already evaluated native half-points may be reused only on exact full key and explicit trial role. No broad old867-vector cross-binary registry. Savings never increase caps.",
+  "solver": "Original pinned Clarabel0.11.1 settings: 200 iterations/60s/one thread/qdldl and unchanged tolerances; at most one call per later step; no retries. Preserve AlmostSolved and all raw diagnostics.",
+  "witness": "Use independent retained scalar certificate and literal parameter box; only declared auxiliary q epigraph cushion allowed, with raw and cushioned diagnostics separated. This does not move physical parameters or loosen physical/electrical gates. Finite feasible witness is not solver convergence or global optimality.",
+  "selection": "Complete all eligible fraction slots before selection. Require actual25 gates plus all fixed electrical safeguards and qnew<qincumbent-1e-10*max(1,abs(qincumbent)); incumbent wins ties, earlier fraction next. Probes never selectable. Native/admission/I/O failure stops with last complete incumbent and no partial-batch selection.",
+  "stop": "No eligible fraction, no actual safeguarded improvement, hard budget, native/source failure, declared development target or eighth step; no automatic ninth step/trust expansion/tolerance change.",
+  "resources": {
+    "execution": "authorized biotite login",
+    "native_workers": 12,
+    "threads_per_native": 1,
+    "controller_threads": 1,
+    "aggregate_numerical_threads_maximum": 13,
+    "user_aggregate_limit": 16,
+    "cost": "Record controller and child CPU/wall separately from inherited and scheduler costs"
+  },
+  "required_outputs": "Full physical errors, signed P8/B8/P9/B9 and P/B RMS, electrical components and fixed-ceiling margins, signed W9 contrast, literal parameters, solver status/certificates, actual-versus-predicted discrepancies, failed cells, immutable provenance, costs/stop reason",
+  "interpretation_limits": [
+    "Consumed development fit only, no heldout or experimental-score fitting.",
+    "Target failure is local evidence, not global impossibility.",
+    "Improvement is not full physical qualification, periodic qualification, exchange free energy or production promotion.",
+    "All original failures retained."
+  ],
+  "execution_release": "Source implementation and focused controls plus independent review and root runtime binding precede execution; this declaration alone does not start native work."
+}

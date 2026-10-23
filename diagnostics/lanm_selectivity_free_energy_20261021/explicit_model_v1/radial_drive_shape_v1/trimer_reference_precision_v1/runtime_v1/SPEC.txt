@@ -1,0 +1,71 @@
+REFERENCE PRECISION RUNTIME — SOURCE HANDOFF
+
+ROOT_PROTOCOL_DECLARATION ae4dbefa and ROOT_PROTOCOL_REVIEW f8464da4 govern.
+Only the14 declared W9far states exist. Each prepared input is its exact old
+actual deck with the one SCF block replaced; inverse restoration is exact.
+All model, state, ghost, basis/ECP, geometry, grid and origin settings persist.
+
+RUN.py executes one endpoint at a time on biotite login,4MPI ranks/thread1,
+MaxCore3000MiB/rank. It requires actual MemAvailable>=16000MiB, no Slurm job
+identity, all six thread variables1, matching loader environment and pinned
+ORCA/MPI/lean-SCF/tools binaries. The root release confirms an8-thread aggregate
+reservation within the16-thread owned-login limit and records other owned use.
+Live /proc process observations, actual host/PIDs, helper descendants, child
+CPU and RSS observations are saved. OS thread counts include nonnumerical MPI
+and launcher threads and are not presented as a proven numerical-thread count.
+Short helper processes can evade the one-second samples. There is no fictional
+scheduler allocation or Slurm CPU cost. Queued jobs are not queried or changed.
+
+The initial phase requires exactly the two ordered Dy scout states. Remaining
+requires their actual complete result plus root admission and an explicit new
+release. The campaign lock, exact existing-state inventory, unique state
+directories and a durable START before Popen prevent duplicate attempts.
+A failed spawn consumes that state's one attempt. Any phase failure after
+campaign ownership sets STOP. A lock collision cannot set another runner's
+STOP. There is no retry or automatic continuation. On an interrupted owned
+subprocess, only that process group is stopped and its raw evidence retained.
+MaxIter300 is unchanged; this adapter adds no undeclared SCF recovery.
+
+Original native PBE0/RHF/electron/ECP/basis/ghost/geometry/no-D4 admission and
+full-precision common-origin property parsing remain inherited. Auxiliary-J
+counts are checked for all14, including the two older ion definitions without
+that field. Exactly one completed final gridx3 exchange recomputation, finite
+correction and final-integration energy are required; the latter joins the
+electronic Total Energy using literal print precision, with no new magnitude
+threshold. Actual printed grid and integral settings equal each old state.
+Printed occupations match their original restricted list. The list is truncated
+in the native output: it is not the complete434-orbital spectrum and cannot
+prove electronic-root continuity. Native basis counts remain separately gated.
+
+RESIDUALS.py requires actual All-Criteria, ConvForced1 and frozen thresholds.
+It joins the final iteration/count to the associated terminal summary:
+|deltaE|, RMSDP, MaxDP and SOSCF MaxGrad, or current DIIS error on a terminal
+DIIS path. Rotation is read from the terminal summary only. SOSCF's stale DIIS
+value stays descriptive. Current residual gates remain strict even if ORCA
+declares convergence. Unknown/untraceable paths, missing/duplicate fields,
+changed tolerances or nonfinite values reject; no fallback.
+
+The native receipt and readback are persisted before strict residual rejection.
+All raw outputs/property files and failures remain inspectable. Endpoint result
+completion is not reference-method accuracy. A later saved-only comparison must
+use all14 admitted states for the two seven-term cycles and paired contrasts;
+the runtime explicitly marks full-cycle comparison pending. Scout outputs never
+claim a complete cycle. No physical acceptance threshold or fit is introduced.
+
+Preparation_v1 failed before any native call because it incorrectly expected
+434 printed occupation rows. The actual output explicitly prints a limited
+virtual list. Immutable PREPARE_v2 instead checks the copied printed list and
+its occupied-electron sum. Preparation_v2 passes14 exact deck inverses and
+copies14 setting signatures;4.530s wall/4.404s CPU. The failed result/source
+remain bound in READY.
+
+TEST_SOURCE.py passes50 focused checks in3.423s wall/3.177s CPU. Real Popen is
+forbidden throughout. Tests include the old saved mode2 rejection and native
+identity preservation, manufactured SOSCF/DIIS/printing failures, exact release
+scope/resource rejection, and mocked two-attempt/fail-after-first workflows.
+Manufactured receipts are labeled and cannot constitute native qualification.
+No scientific executable, new reference, solver or model was run.
+
+Root must bind the independent runtime source review and a separate execution
+release. Suggested command, after binding, is bash RUN_LOGIN.sh --config <actual
+scout config> --release <actual root release>. Templates are not a release.

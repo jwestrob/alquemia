@@ -1,0 +1,44 @@
+--- /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_runtime_v1/central_initializer_v1/BIND.py
++++ /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_runtime_v1/central_initializer_standard_v1/BIND.py
+@@ -23,8 +23,8 @@
+ def validate_build(build,admission,request,submission,manifest):
+     require(build['status']=='periodic_v2_build_complete' and build.get('error') is None,'Actual successful build required')
+     require(admission['status']=='admitted_periodic_v2_build' and admission['result']==request['build'],'Exact root build admission')
+-    require(build['configuration']==submission['configuration'] and build['release']==submission['root_release'],'Declared build configuration/release')
+-    require(str(build['allocation']['job_id'])==submission['job_id']=='20739','Declared actual build20739')
++    require(build['configuration']==submission['configuration'] and build['release']==submission['release'],'Declared build configuration/release')
++    require(str(build['allocation']['job_id'])==submission['job_id']=='20813','Declared actual build20813')
+     require(build['native_sources']==manifest['native_sources'],'Same runtime native source')
+     require(build['native_programs']==0 and build['attempts']=={'configure':1,'archive':1,'compile':8,'link':3},'Actual build-only finite denominator')
+     require(set(build['executables'])=={'initialize','parity','gradient_clone','gradient_old'},'Complete four-role build bundle')
+@@ -37,6 +37,11 @@
+     require(all(prepared.get(k) is None for k in ('build','build_admission','runtime_release','initializer','certificate','central_parity_admission','central_scout_admission','probe_source','probe_data')),'No prior state/result chain')
+     m=copy.deepcopy(prepared);m['status']='bound_periodic_v2_runtime_inputs'
+     m.update(build=request['build'],build_admission=request['build_admission'],probe_source=probe['probe_source'],probe_data=probe['probe_data'])
++    require(set(inputs['standard_helpers'])=={'slurm1','slurm12'},'Both scheduling helpers fixed before initialization')
++    for name,p in inputs['standard_helpers'].items():verify(p);m['helpers'][name]=p
++    m['scheduling_recovery']={'declaration':inputs['scheduling_recovery_declaration'],'source_review':request['binder_source_review'],
++        'original_helpers':{k:prepared['helpers'][k] for k in ('slurm1','slurm12')},'standard_helpers':inputs['standard_helpers'],
++        'build_submission':inputs['build_submission']}
+     m['binding']={'implementation':pin(__file__),'declaration':inputs['declaration'],'prepared_manifest':inputs['central_manifest'],
+        'input_admission':inputs['central_input_admission'],'probe_addendum':inputs['probe_addendum']}
+     return m
+@@ -46,11 +51,18 @@
+     require(request['implementation']==pin(__file__),'Exact binder')
+     x=read(request['inputs']);require(x['status']=='prepared_central_initializer_binding_inputs','Prepared source inputs')
+     require(x['implementation']==pin(__file__),'Prepared binder pin')
++    scheduling=read(x['scheduling_recovery_declaration'])
++    require(scheduling['status']=='declared_scheduling_and_build_lineage_recovery' and scheduling['parent']==x['declaration']
++        and scheduling['probe_addendum']==x['probe_addendum'],'Exact scheduling amendment of original scientific declaration')
++    require(request['build']==x['admitted_build'] and request['build_admission']==x['admitted_build_review'],'Exact admitted replacement20813')
++    require(set(x['standard_helpers'])=={'slurm1','slurm12'},'Both standard helper pins')
++    for name,p in x['standard_helpers'].items():require(p==x['sources'][name+'_standard'],'Reviewed helper source binding');verify(p)
+     for p in x['sources'].values():verify(p)
+     declaration=read(x['declaration']);probe=read(x['probe_addendum'])
+     require(probe['parent_declaration']==x['declaration'] and probe['status']=='declared_fixed_probe_metadata_binding','Root probe addendum')
+     review=read(request['binder_source_review'])
+     require(review['status']=='passed_central_initializer_binding_source_review' and review['implementation']==pin(__file__) and review['inputs']==request['inputs'],'Independent binder review')
++    require(review['scheduling_recovery_declaration']==x['scheduling_recovery_declaration'] and review['standard_helpers']==x['standard_helpers'],'Reviewed scheduling delta')
+     prepared=read(x['central_manifest']);central=read(x['central_input_admission']);ready=read(x['central_ready'])
+     require(central['status']=='admitted_periodic_v2_central_inputs' and central['manifest']==x['central_manifest'] and central['ready']==x['central_ready'],'Root central input admission')
+     independent=read(central['independent_review'])

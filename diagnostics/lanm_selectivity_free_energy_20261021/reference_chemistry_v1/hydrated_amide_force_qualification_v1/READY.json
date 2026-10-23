@@ -1,0 +1,85 @@
+{
+  "status": "source_and_zero_call_preparation_ready",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/hydrated_amide_force_qualification_v1/REFERENCE.py",
+    "sha256": "7de9c17aa9198ba07c66c3f934390fc2a67d94a77860eca8ba4c0378b25ad677"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/hydrated_amide_force_qualification_v1/SPEC.md",
+    "sha256": "f5de75cfa8b006a07e93267f6ebcdeef1d02e37a31d544872656698bc92112d4"
+  },
+  "panel": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/hydrated_amide_force_qualification_v1/prepared_v2/PANEL.json",
+    "sha256": "38b42c1020c47b12512076d59d66e299d4c8eb7f14754f8cfe5f71bec502e4cc"
+  },
+  "preflight": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/hydrated_amide_force_qualification_v1/prepared_v2/PREFLIGHT.json",
+    "sha256": "ff73d52040e69ddb66ad6f6ca2a5f61fdcd9c258289a0a1e624c57ca6cf6765f"
+  },
+  "launcher": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/water_force_qualification_v1/RUN.sbatch",
+    "sha256": "28f7b09a74bb635ba856ecae582781bbb684409cd0bec81fbc21da87dd036d4c"
+  },
+  "cells": [
+    "pbe0__La__minus_010__complex",
+    "pbe0__La__minus_005__complex",
+    "pbe0__La__plus_005__complex",
+    "pbe0__La__plus_010__complex",
+    "pbe0__Dy__minus_010__complex",
+    "pbe0__Dy__minus_005__complex",
+    "pbe0__Dy__plus_005__complex",
+    "pbe0__Dy__plus_010__complex"
+  ],
+  "maximum_new_native_calls": 8,
+  "ranks_per_job": 4,
+  "threads_per_rank": 1,
+  "memory_and_time": "scheduler defaults; MaxCore=floor(0.75*actualMiB/4)",
+  "run_argv_template": [
+    "/usr/bin/python3",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/hydrated_amide_force_qualification_v1/REFERENCE.py",
+    "run",
+    "--panel",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/hydrated_amide_force_qualification_v1/prepared_v2/PANEL.json",
+    "--cell",
+    "CELL_ID",
+    "--out",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/hydrated_amide_force_qualification_v1/run_v1/tasks/CELL_ID/execution"
+  ],
+  "submission_argv_template": [
+    "sbatch",
+    "--qos=standard_expand",
+    "--job-name=amide-force-CELL_ID",
+    "--output=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/hydrated_amide_force_qualification_v1/run_v1/tasks/CELL_ID/slurm-%j.out",
+    "--error=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/hydrated_amide_force_qualification_v1/run_v1/tasks/CELL_ID/slurm-%j.err",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/water_force_qualification_v1/RUN.sbatch",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/hydrated_amide_force_qualification_v1/REFERENCE.py",
+    "run",
+    "--panel",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/hydrated_amide_force_qualification_v1/prepared_v2/PANEL.json",
+    "--cell",
+    "CELL_ID",
+    "--out",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/hydrated_amide_force_qualification_v1/run_v1/tasks/CELL_ID/execution"
+  ],
+  "collection_argv_template": [
+    "/usr/bin/python3",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/hydrated_amide_force_qualification_v1/REFERENCE.py",
+    "collect",
+    "--panel",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/hydrated_amide_force_qualification_v1/prepared_v2/PANEL.json",
+    "--out",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/hydrated_amide_force_qualification_v1/collection_v1/RESULT.json",
+    "EIGHT_RESULT_PATHS"
+  ],
+  "preparation_elapsed_seconds": 2.909659615950659,
+  "local_threads": 1,
+  "new_native_calls": 0,
+  "failed_preparation_preserved": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/hydrated_amide_force_qualification_v1/prepared_v1/FAILURE.json",
+    "sha256": "06527da5047b20b23b49b794cc2d314f5c384b9cdc15223db4a0d860f1373232"
+  },
+  "failure_explanation": "V1 stopped at complete geometry-dictionary equality because bound XYZ and prepared XYZ had different paths plus a source_xyz link. V2 requires exact source_xyz association, identical non-path metadata and byte-identical XYZ. No scientific setting or coordinate changed.",
+  "root_owns_submission": true,
+  "native_launch_released": false,
+  "reserved_validation_opened": false
+}

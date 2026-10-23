@@ -1,0 +1,165 @@
+{
+  "status": "declared_source_only_periodic_radial_identity_implementation",
+  "created_utc": "2026-10-23T04:14:11.286876+00:00",
+  "question": "Can the periodic transaction represent and compare both radial parameters and the actual cutoff12 settings explicitly, including e-only and r0 cases where h/H do not identify the model?",
+  "source_plan": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_identity_v1/SOURCE_PLAN.json",
+    "sha256": "bdd0c1f18d1cd955e51802c3d3f455b3899e50b585081f9e8bfcc1797f7255e2"
+  },
+  "parents": {
+    "radial_port_ready": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_port_v1/READY.json",
+      "sha256": "e40818d9ce378d8d3811ed3f733d5fc23e6320ed20b12928d82b07c33f8e1205"
+    },
+    "radial_port_source_review": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_port_v1/ROOT_SOURCE_REVIEW.json",
+      "sha256": "25149667207dc494556233e7896566701f29467fe061201bb23505911c3cc281"
+    },
+    "radial_native_manifest": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_port_v1/source_v2/MANIFEST.json",
+      "sha256": "a72063c714d89362f09e547bc173afb064aa38bd563fead7f2e389377955d805"
+    },
+    "radial_helper": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_port_v1/PERIODIC_RADIAL.f",
+      "sha256": "2ddf535e96f1b28d8f3e2836346430bd22957d9089a4bc88641f40998665b58e"
+    },
+    "stage1_harness": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage1_source_v1/PARITY.f90",
+      "sha256": "445ff02c5825c3f1339716855363d8de43fd10e84878c7f57948445543f208a6"
+    },
+    "stage1_parser_replay": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage1_source_v1/REPLAY.py",
+      "sha256": "283663102de04d9064c1f351046321b81525201eb3d703f1cedca3ef8f732090"
+    },
+    "stage1_actual_admission": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/slurm_stage1_v1/ROOT_ACTUAL_REVIEW.json",
+      "sha256": "3bb90d1b6b83e28bdb692ed624858d474dff2135c758ff923ecdeb5756b5bba9"
+    },
+    "stage2_source_generator": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/PREPARE_SOURCE_v2.py",
+      "sha256": "113f1644b790e33d6305c60cb2d7a0754f1bb9c8b4a218dff144256e3a213267"
+    },
+    "state_writer_actual_parent": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/compile_intrinsic_recovery_v1/source_v1/STATE_WRITER.f90",
+      "sha256": "6426f60e1f918c9b5a6c3fe6049cd9942194cddcfc033e6a38bff51dbba197d5"
+    },
+    "cutoff12_gate_actual_parent": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/cutoff12_baseline_v1/source_v1/GATE.f90",
+      "sha256": "13c1eaa4dd9a77895495df32300606bb36318d2cb4ae87fe8c3e084a95d94d15"
+    },
+    "cutoff12_source_manifest": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/cutoff12_baseline_v1/source_v1/MANIFEST.json",
+      "sha256": "96d77cba4649cd6e910d5fe6ef9139f7c73a2dc5d4321afbba85b57e45b27bed"
+    },
+    "state_parser_cell_aware": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/execution_v1/certificate_v1/STATE.py",
+      "sha256": "d5b8efe3dc524aac52afd2220419d0ef4ded6c966c8fc16fb85231e96c03427b"
+    },
+    "certificate_producer": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/execution_v1/certificate_v1/CERTIFY.py",
+      "sha256": "a282cd1b38b74f952ccc21909405754d37832bff37a479ae5751c48af8e2efac"
+    },
+    "native_wrapper": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/execution_v1/NATIVE.py",
+      "sha256": "86936dbaf5e8a75375addc0c8df2431dbc41c8919e5a89c93281f36f08e8b0fc"
+    },
+    "transaction_wrapper": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/execution_v1/COMMON.py",
+      "sha256": "b13a4d20fbd9cc0f17db35b72244c2f9cd4d0d263b65466a7bce07e47decdb6e"
+    },
+    "execution_preparer": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/execution_v1/PREPARE.py",
+      "sha256": "47693227945c4e1537d92fef2cd3eefd9a97ba8ff69bd27110352908ee2f388b"
+    },
+    "execution_manifest": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/execution_v1/preparation_v1/MANIFEST.json",
+      "sha256": "df799cfbf048a5b867257fbad8f9309db940918c5c3727b044483392e3a7762e"
+    },
+    "composition_source": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_model_composition_v1/COMPOSE.py",
+      "sha256": "8b3fafe2cf199b8bd8488095452a6394d98e79709c6a6dc8ff69fdbddefb1339"
+    },
+    "anchored12_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/anchored_strain_refinement_v1/collector_v1/run_v1/execution/RESULT.json",
+      "sha256": "bd872da1105527c4873252254d5e705151cae5d7bb0a8ff59e1a04ae97615d6b"
+    },
+    "anchored12_root_admission": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/anchored_strain_refinement_v1/collector_v1/run_v1/ROOT_ACTUAL_REVIEW.json",
+      "sha256": "0923fb753159fcf74173616168298b5b23118b0ff226db253c8a322ed5847e0c"
+    },
+    "anchored_projection_helper": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/stage2_certificate_v1/anchored_strain_refinement_v1/NUMERICS.py",
+      "sha256": "0c97a672b2540393be9ddca61b919d5ce6fe8c3eadd13bad23279f6b653e0c9c"
+    },
+    "nominal_contract": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/pme_interface_review_v1/NOMINAL_CONTRACT.json",
+      "sha256": "2aa3ac434f3667302fb5cf70d3adda1444e942c6f839e052efef82305ec2e10d"
+    },
+    "native_limits_module": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/pme_export_v1/source_v3/source/limits.f",
+      "sha256": "b317764b59444a09e24014fea7aa115b2675e03cbf54569b73db0c864f099324"
+    },
+    "native_ewald_module": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/pme_export_v1/source_v3/source/ewald.f",
+      "sha256": "633c3bef38e7ac486c3cb20c20f65788c673c1669de7034769aca40a25e01ee9"
+    },
+    "native_polpot_module": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/pme_export_v1/source_v3/source/polpot.f",
+      "sha256": "e8ddf27288933ca5957adf712a48d5473827c5fb04ca53cf0963d44f11503e67"
+    }
+  },
+  "scope": {
+    "allowed": [
+      "isolated V2 shared serializer generator and body",
+      "strict V2 cell-aware parser and radial h reconstruction",
+      "scalar settings/identity validator",
+      "minimal qualification GATE observation/schema delta",
+      "focused source/manufactured controls and source handoff"
+    ],
+    "deferred": [
+      "candidate selection or composition",
+      "new decks or 69-program runtime",
+      "native launcher or compiler/link recipes",
+      "assembly or factor execution",
+      "source changes to production or prior frozen trees"
+    ]
+  },
+  "settings": {
+    "ewaldcut_A": 12.0,
+    "vdwcut_A": 9.0,
+    "vdwtaper_A": 8.1,
+    "aeewald_inverse_A": 0.4,
+    "apewald_inverse_A": 0.4,
+    "grid": [
+      64,
+      64,
+      64
+    ],
+    "order": 5,
+    "boundary": "TINFOIL",
+    "poleps": 1e-08,
+    "politer": 100
+  },
+  "requirements": {
+    "old_files_immutable": true,
+    "both_radial_slots_explicit": true,
+    "no_h_or_H_only_identity": true,
+    "no_automatic_V1_zero_or_central_reuse": true,
+    "preserve_unequal_raw_RHS": true,
+    "preserve_nominal_contract": true,
+    "preserve_normal_fatal_guards": true,
+    "zero_legacy_projection_requires_same_settings_authorities": true,
+    "source_review_before_build_or_runtime": true
+  },
+  "resources": {
+    "login_numerical_threads_max": 1,
+    "native_calls": 0,
+    "solver_calls": 0,
+    "FFT_replays": 0,
+    "factorizations": 0,
+    "compilations": 0
+  },
+  "interpretation": "Source/manufactured evidence only; no active periodic, model-accuracy or free-energy qualification.",
+  "root_owner": "root",
+  "implementation_owner": "exchange_reference_chemistry"
+}

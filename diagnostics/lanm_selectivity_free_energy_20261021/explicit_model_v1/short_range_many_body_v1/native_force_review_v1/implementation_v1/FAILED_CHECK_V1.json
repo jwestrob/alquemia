@@ -1,0 +1,12 @@
+{
+  "status": "failed_review_checker_eof_assumption",
+  "implementation": "CHECK_SOURCE.py",
+  "failure": "exact inverse total gradient body",
+  "cause": "The independent line-based extractor ends at the native END newline, whereas the source generator preserves that complete body and appends one additional EOF blank line. No executable source statement differs.",
+  "resolution": "CHECK_SOURCE_v2.py permits exactly that single terminal blank line, preserving exact subroutine-byte equality otherwise.",
+  "compiler_calls": 0,
+  "native_calls": 0,
+  "numerical_replay": false,
+  "observed_command_wall_seconds": 0.133076151,
+  "cpu_seconds": null
+}

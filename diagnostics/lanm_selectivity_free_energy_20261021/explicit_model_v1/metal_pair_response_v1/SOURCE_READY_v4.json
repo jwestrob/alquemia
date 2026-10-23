@@ -1,0 +1,34 @@
+{
+  "status": "isolated_cpu_source_ready_uncompiled",
+  "created_utc": "2026-10-22T03:24:00.453369+00:00",
+  "source_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/source_v4/MANIFEST.json",
+    "sha256": "4afd4225b31028032e38f38226f104b267ee31eb5a3f6f74b20aa4ea7f7ba899"
+  },
+  "patch": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/source_v4/PROTOTYPE.patch",
+    "sha256": "0e07d31f2e92520edcf0567826d0ea94404922125d12bc87bf7bc1b2babb1e1a"
+  },
+  "preparation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/PREPARE_SOURCE_v4.py",
+    "sha256": "82c114b5b4a68d60c4c26224702428739b64306b68613f5282cf5a32a93140a8"
+  },
+  "previous_source_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/source_v3/MANIFEST.json",
+    "sha256": "ccd3175ddf2aef3e06c521a56a11d8275af76daf1b310f9ee9520aed56b73460"
+  },
+  "previous_ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/SOURCE_READY.json",
+    "sha256": "99532976c21ac8a62005d3d69134faaf1ee5d9fe468204e7d2f4d53998a107e1"
+  },
+  "reason": "Compiler18365 identified missing double colon in initialized module integer declaration",
+  "only_native_delta_from_v3": "integer npairdm = 0 -> integer :: npairdm = 0",
+  "source_files_changed_from_v3": [
+    "polar.f"
+  ],
+  "science_protocol_change": false,
+  "build_instructions": "Use IMPLEMENTATION.md recipe with source_v4 and a fresh root-owned build directory",
+  "compiler_calls_by_author": 0,
+  "new_native_calls": 0,
+  "error": null
+}

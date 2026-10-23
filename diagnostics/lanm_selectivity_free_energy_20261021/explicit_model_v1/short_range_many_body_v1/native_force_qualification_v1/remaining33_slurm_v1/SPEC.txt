@@ -1,0 +1,36 @@
+Remaining33 declared native force states — scheduling/continuation only
+
+The original102-state panel is unchanged. Reuse exact6scout states,62successful
+remaining_v2 states, and the fully computed donor zero center whose archived
+full-gradient regression failed. Run only the exact33 previously uncalled donor
+states. Preserve the failed center and all its energy/gradient/raw outputs.
+No duplicated successful state, changed coefficient/direction/step/gate or fit.
+
+RUN imports the frozen parent RUN.py6737906c and calls its run_state verbatim.
+Four spawned workers use one-thread Python and one-thread native children in
+waves of at most4states; no later wave after a failed wave, and no retry. Request
+one actual standard/standard_expand/banfield Slurm node/task with8CPUs, default
+memory/time, noGPU and no-requeue. Validate actual scheduler job/UID/host/allocation
+before starting workers. Root owns submission. No separate preflight job.
+
+The parent configuration/science/input/source/kernel/binary pins remain exact.
+The new release authorizes only the33-ID difference; root release joins its
+configuration fingerprint excluding root_release plus source/inputs/output.
+Original parent releases are historical provenance, not fresh call authority.
+
+COLLECT uses the frozen original slope function and unchanged48FD gates. It
+allows only the precisely identified previously computed failed zero-center row
+for FD projection; that does not turn its regression failure into a pass. Record
+FD and regression independently. Full panel admission remains false in this
+collector, pending the separate original-u/v native contraction diagnostic and
+root review. Numerical residual/printing tolerances are never widened.
+
+Actual costs distinguish worker process totals from per-state native times;
+they are not summed because descendants may already be included. Root captures
+parent-only sacct allocation cost separately. A crashed worker leaves unknown
+final counts explicitly unavailable; no automatic rerun fills those states.
+
+Preparation here is source plus saved metadata only: no native, fit, operator
+solve, FD collection or repeated scalar certification. The old force scout and
+regression failures remain preserved. This is implementation qualification,
+not chemical accuracy or production admission.

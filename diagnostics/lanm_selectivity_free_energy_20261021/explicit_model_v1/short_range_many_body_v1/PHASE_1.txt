@@ -1,0 +1,40 @@
+Successor implementation, phase 1 — 23 October 2026
+
+Question: can the selected pair/triple energy-and-response architecture be
+implemented consistently and connected to the existing water/donor evidence,
+without repeating chemistry or inheriting the radial14 compensation?
+
+Authority: active La/Dy free-energy goal and Jacob's explicit request to alter
+the model after reviewing existing evidence. Controlling scientific decision:
+diagnostics/lanm_selectivity_free_energy_20261021/model_form_decision_20261023/DECISION.txt.
+
+Inputs: archived common-basis baseline and immutable water/donor energies,
+forces, moments, qualified susceptibilities, geometries and response exports.
+Preserve all methods, chemical states, failed references and model versions.
+
+Work split: Planck assembles water evidence and exact baseline/operator joins;
+Singer assembles donor evidence and identifies exact baseline joins; Arendt
+implements a differentiable finite pair/triple DeltaV/Delta h/Delta H kernel;
+root collects the already-completed stricter reference comparison and integrates
+the successor. Each owns a separate child directory. No production edits.
+
+Resources: at most one numerical login thread for each child and four for root,
+seven total within the authorized sixteen. No quantum/native calls, fit, Slurm
+submission or periodic continuation in this phase. Saved-data transformation,
+small linear-algebra evaluation and meaningful derivative/symmetry checks are
+authorized. Record actual invocation cost and provenance. Do not impose a new
+per-analysis approval gate; root integrates the finite scope before expanding it.
+
+Model requirements: intact ligands; symmetric identical-atom treatment; smooth
+separation; explicit donor-frame and ligand-pair descriptors; independent local
+mechanical energy plus variational electrical response. Preserve both native
+response channels. Local two-/three-body labels precede the coupled solve;
+observables use complete fragment cycles. A frozen operator's partial coordinate
+derivative is not a full force: the interface must explicitly require baseline
+operator/field derivatives or decline that claim. No coefficients are fitted.
+
+Deliverables: executable kernel, real cached data adapters with compatibility
+reports, and actual numerical qualification on admitted available inputs.
+Report missing data instead of fabricating mappings. No molecular computation
+follows automatically from preparation. A successful implementation is not
+physical validation or completion of the exchange-free-energy goal.

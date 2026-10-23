@@ -1,0 +1,82 @@
+{
+  "status": "ready_shared12_control_source",
+  "sources": {
+    "runner": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/joint_demonstration_v1/RUN.py",
+      "sha256": "485d71cc935607c2cfdbcf5304de9d7a84f4dc8edaeaaad158124214025c7e7e"
+    },
+    "core": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/joint_demonstration_v1/CORE.py",
+      "sha256": "2aab54fe47c6c1f283fbdcda6d75e6303a441e0b2a3e2d2483ce4a18cd3c5fd0"
+    },
+    "data": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/joint_demonstration_v1/DATA.py",
+      "sha256": "f5bc22b7c8f926fc67e8e7f5063d8407400970fc6ce35025f6e816760e705e15"
+    },
+    "data_inputs": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/joint_demonstration_v1/DATA_INPUTS.json",
+      "sha256": "ec1d167aa4f7e97606ca00874f9ed1b6601541d8a74ee1cfe47b7f2e973a5316"
+    },
+    "settings": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/joint_demonstration_v1/SETTINGS_v2.json",
+      "sha256": "fe3dff0d499e9fa9d6b51471e9bd21f41509b1b1dda672c3066433855d686fbd"
+    },
+    "declaration": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/joint_demonstration_v1/DECLARATION_v2.json",
+      "sha256": "08fc74bd30d5cd55ae71d849203005b64d68a0e733e0d83008c2c99d849389d1"
+    },
+    "wrapper": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/joint_demonstration_v1/RUN.sbatch",
+      "sha256": "88e5a5103d7b560bccb2db79524bab3da74ac0d461b3bd75d60709d8c7a3a1d0"
+    },
+    "kernel": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/kernel_v1/KERNEL.py",
+      "sha256": "b9b9e9bf0f422215576be708ef165642f8fa859908f204413d6118f4eb20e356"
+    },
+    "endpoint_map": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/donor_endpoint_exports_v1/slurm_run_v1/ENDPOINT_FIXTURE_MAP.json",
+      "sha256": "36cb94280b0890a40006cf6abe3d4cff5ab879cd56383a30dd46982583f1310d"
+    }
+  },
+  "configuration_template": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/joint_demonstration_v1/CONFIG_TEMPLATE.json",
+    "sha256": "ac0d9141cb2f29a85657a7d692a2593d8c63ef2f7163c72245289c1cd80f48ca"
+  },
+  "release_template": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/joint_demonstration_v1/ROOT_RELEASE_TEMPLATE.json",
+    "sha256": "4625f1fca1da8fe203397c36cafef0a87879d2605f57838c51a45801ef334c11"
+  },
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--output=<root run>/slurm-%j.out",
+    "--error=<root run>/slurm-%j.err",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/joint_demonstration_v1/RUN.sbatch",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/joint_demonstration_v1/RUN.py",
+    "<bound CONFIG.json>",
+    "<root RELEASE.json>",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/joint_demonstration_v1/control_run_v1/execution"
+  ],
+  "resources": {
+    "nodes": 1,
+    "tasks": 1,
+    "CPUs": 24,
+    "workers": 16,
+    "threads_each": 1,
+    "partition": "standard",
+    "qos": "standard_expand",
+    "account": "banfield",
+    "memory_time": "scheduler defaults"
+  },
+  "source_validation": "AST syntax read only; no source imports, controls, model solves, or numerical run by author. Analytic derivative source independently read by Singer. Actual two-step coefficient-gradient check bundled before multistart.",
+  "limitations": [
+    "All consumed development data; loss is not an accuracy gate.",
+    "Finite nonconvex optimization cannot prove global inadequacy.",
+    "Shared direct V cancels in matched-geometry Dy-minus-La E3; designated control for predeclared metal-resolved comparison.",
+    "Water total coordinate forces unavailable from cached operators.",
+    "Raw solver failures and all per-start conditional/joint candidates retained."
+  ],
+  "native_calls": 0,
+  "quantum_calls": 0,
+  "agent_numerical_execution": 0
+}

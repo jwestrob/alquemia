@@ -1,0 +1,38 @@
+{
+  "status": "prospective_root_owned_no_launch",
+  "runtime_configuration": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/iterative_fit_v1/run_v1/CONFIG_RUN.json",
+  "output": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/iterative_fit_v1/run_v1/execution",
+  "sbatch_argv": [
+    "sbatch",
+    "--parsable",
+    "--output=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/iterative_fit_v1/run_v1/slurm-%j.out",
+    "--error=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/iterative_fit_v1/run_v1/slurm-%j.err",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/iterative_fit_v1/RUN.sbatch",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/iterative_fit_v1/run_v1/CONFIG_RUN.json",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/iterative_fit_v1/run_v1/execution"
+  ],
+  "completion_watcher_plan": [
+    "After the single sbatch returns a job ID, root arms the existing authorized Slurm completion watcher for that exact job; no new callback infrastructure.",
+    "Record SUBMISSION.json with exact sbatch argv, source/config/release pins, job ID and watcher receipt.",
+    "On terminal notification, read execution/RESULT.json and collect one sacct receipt for that job. Preserve Slurm status separately from scientific status; do not resume or retry."
+  ],
+  "sacct_argv": [
+    "sacct",
+    "-j",
+    "BOUND_JOB_ID",
+    "--parsable2",
+    "--noheader",
+    "--format=JobID,JobName,State,ExitCode,ElapsedRaw,AllocCPUS,TotalCPU,MaxRSS"
+  ],
+  "preparation_already_completed": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/iterative_fit_v1/preparation_v2/RESULT.json",
+    "sha256": "d77d3e26b8da8284a836f0d88215729e564903b89c8adcc0eea476868adfde66"
+  },
+  "no_repeated_preparation_required": true,
+  "threads": {
+    "preparation": 1,
+    "allocation": 13,
+    "native_workers": 12,
+    "controller": 1
+  }
+}

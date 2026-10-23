@@ -1,0 +1,183 @@
+{
+  "status": "passed_dry_donor_susceptibility_scout_reviewer_source_review",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_donor_susceptibility_v1/consistent_grid_v2/independent_scout_review_v1/REVIEW_ACTUAL_v2.py",
+    "sha256": "a262a20081c458b4aab9e833e08cd8eb4fb06d65fb7e8736b1e05ae9247e94d3"
+  },
+  "configuration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_donor_susceptibility_v1/consistent_grid_v2/independent_scout_review_v1/CONFIG_SOURCE_v2.json",
+    "sha256": "e44d5e4e7f81d9b15569cc5b98c934db11d281adfce0abc050d9e6c69b698a2d"
+  },
+  "ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_donor_susceptibility_v1/consistent_grid_v2/independent_scout_review_v1/READY_v2.json",
+    "sha256": "54f9c30cda1d25a89118b7974727401173e1f7efa1d645325dae8e25896a2400"
+  },
+  "prior_reviewer": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_donor_susceptibility_v1/independent_scout_review_v1/REVIEW_ACTUAL.py",
+    "sha256": "c188bee7587c761fe8ec695f5ca5caa21b9a2ba05248cd031e5dfe60d62ebda0"
+  },
+  "adapter_source_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_donor_susceptibility_v1/consistent_grid_v2/independent_review_v1/REVIEW.json",
+    "sha256": "b1453891f22b268c6f88afa6fe07a8aa7069245128d2e412b8f4816ee8fb7729"
+  },
+  "expected_root_job_ids": {
+    "native": [
+      "18871",
+      "18872",
+      "18873",
+      "18874",
+      "18875"
+    ],
+    "collector": "18876"
+  },
+  "checks": [
+    {
+      "name": "implementation pin",
+      "passed": true
+    },
+    {
+      "name": "configuration pin",
+      "passed": true
+    },
+    {
+      "name": "prior_reviewer pin",
+      "passed": true
+    },
+    {
+      "name": "source_delta pin",
+      "passed": true
+    },
+    {
+      "name": "source_ready pin",
+      "passed": true
+    },
+    {
+      "name": "source_review pin",
+      "passed": true
+    },
+    {
+      "name": "previous_source pin",
+      "passed": true
+    },
+    {
+      "name": "frozen READY",
+      "passed": true
+    },
+    {
+      "name": "frozen config implementation",
+      "passed": true
+    },
+    {
+      "name": "future bindings remain null",
+      "passed": true
+    },
+    {
+      "name": "root exact known IDs",
+      "passed": true
+    },
+    {
+      "name": "pin helper AST unchanged",
+      "passed": true
+    },
+    {
+      "name": "read helper AST unchanged",
+      "passed": true
+    },
+    {
+      "name": "save helper AST unchanged",
+      "passed": true
+    },
+    {
+      "name": "serial helper AST unchanged",
+      "passed": true
+    },
+    {
+      "name": "ck helper AST unchanged",
+      "passed": true
+    },
+    {
+      "name": "verify helper AST unchanged",
+      "passed": true
+    },
+    {
+      "name": "dd helper AST unchanged",
+      "passed": true
+    },
+    {
+      "name": "hb helper AST unchanged",
+      "passed": true
+    },
+    {
+      "name": "one helper AST unchanged",
+      "passed": true
+    },
+    {
+      "name": "section helper AST unchanged",
+      "passed": true
+    },
+    {
+      "name": "array helper AST unchanged",
+      "passed": true
+    },
+    {
+      "name": "close helper AST unchanged",
+      "passed": true
+    },
+    {
+      "name": "both-step Decimal formulas bounds and thresholds unchanged",
+      "passed": true
+    },
+    {
+      "name": "two curvature step gates unchanged",
+      "passed": true
+    },
+    {
+      "name": "independent six gate replay remains strict",
+      "passed": true
+    },
+    {
+      "name": "full physical grids retained",
+      "passed": true
+    },
+    {
+      "name": "numerical failure collector1 explicitly allowed only on failure",
+      "passed": true
+    },
+    {
+      "name": "native failures never substituted as numerical pass",
+      "passed": true
+    },
+    {
+      "name": "exact root IDs and distinct jobs required",
+      "passed": true
+    },
+    {
+      "name": "failed native/incomplete review keeps cost unreviewed",
+      "passed": true
+    },
+    {
+      "name": "author role explicit",
+      "passed": true
+    },
+    {
+      "name": "no actual review declared executed",
+      "passed": true
+    }
+  ],
+  "check_count": 33,
+  "blockers": [],
+  "new_native_calls": 0,
+  "terminal_files_inspected": false,
+  "reviewer_executed": false,
+  "author_tests_rerun": false,
+  "conditions": [
+    "Root binds the exact future collection/events and native18871-18875/collector18876 IDs before execution.",
+    "Any native or incomplete failure remains unavailable, with cost_reviewed false; root separately retains all scheduler costs.",
+    "Numerical failure may produce collector exit1 and a successfully reproduced failed scientific block; it never earns remaining-La release."
+  ],
+  "cost": {
+    "wall_seconds": 0.07710419199429452,
+    "CPU_seconds": 0.065330233,
+    "threads": 1
+  }
+}

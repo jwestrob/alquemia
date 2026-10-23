@@ -1,0 +1,56 @@
+{
+  "status": "source_only_ready_unbound",
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/water_coordination_radial_validation_v1/model/staged_v1/MANIFEST.json",
+    "sha256": "2bb5dea3168714403c4c225e4c2826e41fdb088f5bd48be70acbdda1159e41b2"
+  },
+  "source": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/water_coordination_radial_validation_v1/model/RUN.py",
+    "sha256": "4bd3e056f32c3d923e7be3236a33a2cd304e432862c8e3cf0b90323d156879ee"
+  },
+  "configuration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/water_coordination_radial_validation_v1/model/CONFIG_SOURCE.json",
+    "sha256": "db6d75081d33814e2caadeef549c47f12f874c983ff85bfaa62c1d8aa70300c8"
+  },
+  "controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/water_coordination_radial_validation_v1/model_controls_v1/RESULT.json",
+    "sha256": "b40a7ff0e8ffda1bef372b5cfce531d70f55e22ba1bfd42a780b267449e52e59"
+  },
+  "native_calls": 0,
+  "candidate_bound": false,
+  "fit_outcomes_opened": false,
+  "validation_outcomes_opened": false,
+  "future_binding_instructions": "Copy CONFIG_SOURCE.json into a fresh versioned binding configuration and fill only candidate_result and candidate_review after terminal17676 passes and independent selected-ten review passes. Do not mutate this source configuration.",
+  "future_bind_argv": [
+    "python",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/water_coordination_radial_validation_v1/model/RUN.py",
+    "bind",
+    "--config",
+    "ABS_NEW_BOUND_CONFIG.json",
+    "--out",
+    "ABS_NEW_BIND_DIRECTORY"
+  ],
+  "future_run_argv": [
+    "python",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/water_coordination_radial_validation_v1/model/RUN.py",
+    "run",
+    "--bound",
+    "ABS_NEW_BIND_DIRECTORY/BOUND.json",
+    "--release",
+    "ABS_ROOT_RELEASE.json",
+    "--out",
+    "ABS_NEW_EXECUTION_DIRECTORY"
+  ],
+  "release_status": "approved_fresh_W9_radial_model",
+  "release_fields": [
+    "implementation",
+    "bound",
+    "candidate_result",
+    "maximum_native_programs=8",
+    "maximum_workers=4",
+    "new_FD_energies=0"
+  ],
+  "scheduler": "root-only; standard_expand one task/four CPUs/default memory/time; all five numerical thread controls1",
+  "collector_api": "admit_result(config_dict,bound_dict,result_dict) -> exact four rows plus anchor_model[La/Dy]; bound also exposes anchor_reference[La/Dy]. Model data rows geometry/input/bodies and accepted model E/F join reference rows by exact GID/input geometry.",
+  "scorer_api": "evaluate(data,model,body,anchors), anchors model/reference keyed La/Dy, each with energy and forces; kcal/mol and kcal/mol/A; exactly12checks"
+}

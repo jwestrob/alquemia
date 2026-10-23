@@ -1,0 +1,72 @@
+{
+  "created_utc": "2026-10-23T04:48:58.711612+00:00",
+  "status": "declared_source_and_scalar_preparation_only",
+  "scientific_question": "Did the original minimum fraction 1/8 miss an actual feasible improving point along the saved step8 direction?",
+  "inputs": {
+    "ADVICE.txt": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/boundary_followup_design_v1/ADVICE.txt",
+      "sha256": "9f86699611b5c68abef34b3ba4950ddf2f0309459d62ef2996cf7c5fed6a7320"
+    },
+    "INPUTS.json": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/boundary_followup_design_v1/INPUTS.json",
+      "sha256": "2c833406af10b811f67e9f058db63990e384b803e3b8aec2973285960962235d"
+    },
+    "READY.json": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/boundary_followup_design_v1/READY.json",
+      "sha256": "c16704ad72e71eda45670721d4c435a6349a8d776638071b2fcc98155e8dde91"
+    }
+  },
+  "policy": {
+    "fraction": 0.0625,
+    "origin": "exact admitted terminal incumbent 5d992dbffb9fbe646102782cb90b53182deff7e384838ffd809683e1a187fa78",
+    "direction": "saved step8 solution.x; restore exact saved LINEARIZATION through original CORE.restore_problem; no new solve or probes",
+    "construction": "existing pinned Policy.fraction certificate semantics, normalized physical direction, interpolate q using t squared; retain literal derivative spans",
+    "scalar_admission": "finite values, literal parameter/trust box, all exact nonnegative retained scalar margins, 25 predicted physical gates, fixed original feca electrical/signed-W9 safeguards, strict predicted raw q improvement; no physical tolerance relaxation",
+    "actual_admission": "same original25 physical and fixed feca three electrical plus signed-W9 guards and strict raw q decrease; complete native admission required",
+    "limits": {
+      "new_solver_calls": 0,
+      "new_derivative_probes": 0,
+      "new_vectors": 1,
+      "new_cells": 46,
+      "new_native_programs": 56,
+      "new_reference_calls": 0,
+      "native_program_timeout_seconds": 300
+    },
+    "stop": "scalar failure means unrun terminal witness; actual/native failure means retain failure and stop; no retry, fallback, further halving, fit loop or automatic promotion"
+  },
+  "scope_now": [
+    "isolated new adapter source using pinned unchanged evaluator/parser/journal helpers",
+    "one-thread manufactured/source controls",
+    "one-thread exact saved scalar certificate and explicit parameter-key preparation",
+    "freeze READY and independent source review"
+  ],
+  "scope_not_released": [
+    "native execution",
+    "scheduler submission",
+    "candidate promotion",
+    "new fit or solver",
+    "periodic candidate binding"
+  ],
+  "prospective_execution": {
+    "scheduler": "Slurm",
+    "account": "banfield",
+    "partition": "standard",
+    "qos": "standard_expand",
+    "cpus": 13,
+    "native_workers": 12,
+    "threads_per_worker": 1,
+    "memory_time_flags": false,
+    "completion_watcher_required": true
+  },
+  "interpretation": {
+    "pass": "original discrete fraction floor missed one actual improving feasible point; does not establish useful multistep progress, physical accuracy or free energy",
+    "failure": "reject this point only; not global infeasibility or inadequacy",
+    "classification": "consumed adaptive development; preserves original completed fit stop and AlmostSolved provenance"
+  },
+  "ownership": {
+    "implementation": "Planck",
+    "independent_review": "Arendt",
+    "release_submission_admission": "root"
+  },
+  "production_changes": false
+}

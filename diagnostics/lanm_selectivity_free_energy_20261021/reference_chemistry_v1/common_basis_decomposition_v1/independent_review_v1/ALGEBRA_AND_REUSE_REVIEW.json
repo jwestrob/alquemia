@@ -1,0 +1,318 @@
+{
+  "status": "passed_declared_algebra_and_reused_basis_evidence_pending_new_bundle",
+  "root_declaration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/common_basis_decomposition_v1/ROOT_DECLARATION.md",
+    "sha256": "1af84c96ee42b18dee2cb320db59199f5f4903fe35d2a593fbed442a4b3d0f77"
+  },
+  "design": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_coordination_joint_v1/mechanics_next_v1/AFTER_PAIR_RESULT.md",
+    "sha256": "ec9c4ba6b04092ec0711fcb6b3c37433373a30a6094761ebce464237f36dd23d"
+  },
+  "qualified_CP_adapter": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/REFERENCE.py",
+    "sha256": "93ffa5f9206143b5254801c273a7696fe65071129672a42c7023f4729bda340c"
+  },
+  "literal_pair_adapter": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/matched_pair_decomposition_v1/REFERENCE.py",
+    "sha256": "68ba0818208b037fb887f97f844552ec8a38995fba218f10a3b5fcc792c86b76"
+  },
+  "qualified_ghost_renderer": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/REFERENCE.py",
+    "sha256": "f4baaeddce09cb26551e845f05e7f3c1bfff604a84fc02c666908ada2420dea2"
+  },
+  "prior_CP_SCF_limits": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/SCF_LIMITATIONS.md",
+    "sha256": "0811fc8b45f8bffbe8c6e16f73966e8b1999aa16411ee74579517241216eea28"
+  },
+  "per_parent_algebra": {
+    "C": "E-a-s",
+    "P": "sum(d_i)-N*a-sum(w_i)",
+    "B": "E-sum(d_i)+(N-1)*a-s+sum(w_i)",
+    "paired_contrast": "Dy9-La9-Dy8+La8"
+  },
+  "inventory": {
+    "new_metal_plus_water": 34,
+    "new_water_only": 34,
+    "reuse_original_complexes": 4,
+    "reuse_CP_ion_and_shell": 8,
+    "total_new_native_maximum": 68,
+    "new_model_calls": 0,
+    "scouts": [
+      "W9 Dy water01 metal-plus-water",
+      "W9 Dy water01 water-only"
+    ],
+    "remaining_after_scouts": 66
+  },
+  "physical_contract": {
+    "new_roles": {
+      "metal_water": {
+        "charge": 3,
+        "electrons": 18,
+        "effective_multiplicity": 1,
+        "real_metal_core": {
+          "La": 46,
+          "Dy": 55
+        }
+      },
+      "water_only": {
+        "charge": 0,
+        "electrons": 10,
+        "effective_multiplicity": 1,
+        "ghost_metal_ECP": 0
+      }
+    },
+    "orbital_centers_and_AOs": {
+      "W8": [
+        25,
+        391
+      ],
+      "W9": [
+        28,
+        434
+      ]
+    },
+    "ghost_convention": "Exact parent centers/coordinates/order; colon ghosts retain orbital and auxiliary basis but zero nuclear charge/electrons. Ghost metal DelECP plus original NewGTO/NewAuxJGTO; real metal original NewECP.",
+    "physical_parent_multiplicity": {
+      "La": 1,
+      "Dy": 6
+    },
+    "all_new_D4": false
+  },
+  "actual_reused_auxiliary_evidence": [
+    {
+      "parent": "aquo8_central_La",
+      "role": "complex",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_La/execution/RESULT.json",
+        "sha256": "f1be7b98603569899240fed0d80802785f641a346e2a54926cf01e33d3246daf"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_La/execution/endpoint.out",
+        "sha256": "e947643ce301ea7096bd443c7a096c4b51e096e84bd1bcc50fa2de15ece62d3e"
+      },
+      "Aux_J_reported_counts": [
+        919
+      ],
+      "AuxJ_runtime_counts": [
+        919
+      ]
+    },
+    {
+      "parent": "aquo8_central_Dy",
+      "role": "complex",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_Dy/execution/RESULT.json",
+        "sha256": "c1ff6777a8a64dcc7816c0ab1e3314e43d6221d56c50c35d1d0bf3c30b524482"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_Dy/execution/endpoint.out",
+        "sha256": "d8828b0b09833f89e67324fdd91c6a18cf67edde1d9e63bcb28f679c53f26cba"
+      },
+      "Aux_J_reported_counts": [
+        937
+      ],
+      "AuxJ_runtime_counts": [
+        937
+      ]
+    },
+    {
+      "parent": "aquo9_central_La",
+      "role": "complex",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo9_central_La/execution/RESULT.json",
+        "sha256": "dae81a20caf7851de3bf000a832108a55fb5fce0ca657b307d40063632c5847c"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo9_central_La/execution/endpoint.out",
+        "sha256": "7bd13610eae0ac422a6376d5c1f0a393fa87ef18583dcf80c04a18bd3615d2d6"
+      },
+      "Aux_J_reported_counts": [
+        990
+      ],
+      "AuxJ_runtime_counts": [
+        990
+      ]
+    },
+    {
+      "parent": "aquo9_central_Dy",
+      "role": "complex",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo9_central_Dy/execution/RESULT.json",
+        "sha256": "1fca94594167c125794b8938c578d969d87675c0350b96fdddb2c655195ffd81"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo9_central_Dy/execution/endpoint.out",
+        "sha256": "cf2a4ab3a0c35b9858f03d8efd30f90c17933191b8b74d0976a4b1d70255a03b"
+      },
+      "Aux_J_reported_counts": [
+        1008
+      ],
+      "AuxJ_runtime_counts": [
+        1008
+      ]
+    },
+    {
+      "parent": "aquo8_central_La",
+      "role": "ion_ghost_shell",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/run_v1/tasks/pbe0__aquo8__La__ion_ghost_shell/execution/RESULT.json",
+        "sha256": "3f395f7021bd445e58889ac9e2b0f3f216ee6b6bed154728bb6fbe59dc652d37"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/run_v1/tasks/pbe0__aquo8__La__ion_ghost_shell/execution/endpoint.out",
+        "sha256": "ee253f83e99bfdd1f3f27aea2ce30003f66b429cbcef85c9705444f9e856f74f"
+      },
+      "Aux_J_reported_counts": [
+        919
+      ],
+      "AuxJ_runtime_counts": [
+        919
+      ]
+    },
+    {
+      "parent": "aquo8_central_La",
+      "role": "shell_ghost_ion",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/run_v1/tasks/pbe0__aquo8__La__shell_ghost_ion/execution/RESULT.json",
+        "sha256": "af18889d971e21f5ceece334a8cf86d4b7598c657fb1f65cdc85ea14bf44aea9"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/run_v1/tasks/pbe0__aquo8__La__shell_ghost_ion/execution/endpoint.out",
+        "sha256": "ea2203a2fed48636ec0df492ae14f79db90dd541c9f9359f46924243dae7f113"
+      },
+      "Aux_J_reported_counts": [
+        919
+      ],
+      "AuxJ_runtime_counts": [
+        919
+      ]
+    },
+    {
+      "parent": "aquo8_central_Dy",
+      "role": "ion_ghost_shell",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/run_v1/tasks/pbe0__aquo8__Dy__ion_ghost_shell/execution/RESULT.json",
+        "sha256": "fef172df76d25542ef490e3631aec24e7dc57f6e24cfe6edf78fe336b88517fa"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/run_v1/tasks/pbe0__aquo8__Dy__ion_ghost_shell/execution/endpoint.out",
+        "sha256": "94c409f4e8e932200055d32ac4a241d54cc3de495abb095b49326f7197ad61de"
+      },
+      "Aux_J_reported_counts": [
+        937
+      ],
+      "AuxJ_runtime_counts": [
+        937
+      ]
+    },
+    {
+      "parent": "aquo8_central_Dy",
+      "role": "shell_ghost_ion",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/run_v1/tasks/pbe0__aquo8__Dy__shell_ghost_ion/execution/RESULT.json",
+        "sha256": "536db0b9412d62dafb4461ecfd19d261d137988afa184aa8e2ff66acd066d03b"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/run_v1/tasks/pbe0__aquo8__Dy__shell_ghost_ion/execution/endpoint.out",
+        "sha256": "916ff2e68689eb88bbb8b3a9a1ece90fb1420a10f6d2abac6c73d1464ecdbb8d"
+      },
+      "Aux_J_reported_counts": [
+        937
+      ],
+      "AuxJ_runtime_counts": [
+        937
+      ]
+    },
+    {
+      "parent": "aquo9_central_La",
+      "role": "ion_ghost_shell",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/run_v1/tasks/pbe0__aquo9__La__ion_ghost_shell/execution/RESULT.json",
+        "sha256": "4929209ca203e2ee62b050620474b0d329379a8dc4e0b901dcba22cad08750cc"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/run_v1/tasks/pbe0__aquo9__La__ion_ghost_shell/execution/endpoint.out",
+        "sha256": "c8c09e67fcf41f8af8056f5d590867aa5b13b78600883fdca184b2b77b4096b1"
+      },
+      "Aux_J_reported_counts": [
+        990
+      ],
+      "AuxJ_runtime_counts": [
+        990
+      ]
+    },
+    {
+      "parent": "aquo9_central_La",
+      "role": "shell_ghost_ion",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/run_v1/tasks/pbe0__aquo9__La__shell_ghost_ion/execution/RESULT.json",
+        "sha256": "b0952bc411befb400fce23fdf80dda01c60775c3e205e322d7c9bfda2680a80a"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/run_v1/tasks/pbe0__aquo9__La__shell_ghost_ion/execution/endpoint.out",
+        "sha256": "fa5979c9ae9b2e002662b5e4ea82cff3ce02cf19179162e8d3b8dc6eea7dc395"
+      },
+      "Aux_J_reported_counts": [
+        990
+      ],
+      "AuxJ_runtime_counts": [
+        990
+      ]
+    },
+    {
+      "parent": "aquo9_central_Dy",
+      "role": "ion_ghost_shell",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/run_v1/tasks/pbe0__aquo9__Dy__ion_ghost_shell/execution/RESULT.json",
+        "sha256": "fad718c015965f6b25badb71bcbec35d0e1315372e270dc34f1ce00e398f977a"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/run_v1/tasks/pbe0__aquo9__Dy__ion_ghost_shell/execution/endpoint.out",
+        "sha256": "129f41e22658fb56a5c736f6fb5c6effcc15b4cdcbd2993d56d9264634123694"
+      },
+      "Aux_J_reported_counts": [
+        1008
+      ],
+      "AuxJ_runtime_counts": [
+        1008
+      ]
+    },
+    {
+      "parent": "aquo9_central_Dy",
+      "role": "shell_ghost_ion",
+      "result": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/run_v1/tasks/pbe0__aquo9__Dy__shell_ghost_ion/execution/RESULT.json",
+        "sha256": "f70254878793126015887fd0750c78905d7b596b0d37fd620ed336128c00ea27"
+      },
+      "output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_cp_v1/run_v1/tasks/pbe0__aquo9__Dy__shell_ghost_ion/execution/endpoint.out",
+        "sha256": "0921b91f31439b6d2abaf930b55274066a6631942dfd855ce35418129c8b7321"
+      },
+      "Aux_J_reported_counts": [
+        1008
+      ],
+      "AuxJ_runtime_counts": [
+        1008
+      ]
+    }
+  ],
+  "expected_auxiliary_counts": {
+    "aquo8_central_La": 919,
+    "aquo8_central_Dy": 937,
+    "aquo9_central_La": 990,
+    "aquo9_central_Dy": 1008
+  },
+  "actionable_admission_addition": "Require both actual native Aux-J count labels to match the exact parent values; inherited orbital-count checks alone do not establish auxiliary completeness. Sent to implementation author before freeze.",
+  "interpretation_limits": [
+    "No cross-parent cancellation of ghost-basis ion, water or shell terms is assumed. P subtracts N parent ion energies.",
+    "C is the already-completed CP8 electronic contrast, not the original own-basis C. Preserve corresponding original C/P/B D4 terms separately and add each once only for the declared sensitivity.",
+    "Original CP8 native admission retains failed density/DIIS printed flags and three Gradient-check stops with failed printed energy criterion. Preserve thresholds and actual stopping metadata; never call all criteria passed.",
+    "Frozen-f PBE0 and finite orbital/aux bases remain provisional; common-basis repartitioning alone cannot explain away the full-C error or uniquely identify a missing physical term.",
+    "The first-eight water coordinates change fromW8 toW9; no pure ninth-water insertion inference."
+  ],
+  "remaining_review": "Actual68 prepared decks, source/config/release and exact12 raw reuse need final inspection when implementation is frozen.",
+  "new_native_calls": 0,
+  "threads": 1,
+  "wall_seconds": 0.04378161404747516,
+  "CPU_seconds": 0.030880862999999995
+}

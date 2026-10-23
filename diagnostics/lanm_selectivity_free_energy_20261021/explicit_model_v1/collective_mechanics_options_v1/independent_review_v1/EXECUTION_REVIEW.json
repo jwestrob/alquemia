@@ -1,0 +1,104 @@
+{
+  "status": "passed_execution_source_review",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/collective_mechanics_options_v1/RUN.py",
+    "sha256": "f64d8bd6f900159fdb185406645c58c4bcc5d7ada482cd72de57ce2ecbd1ade6"
+  },
+  "configuration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/collective_mechanics_options_v1/CONFIG_EXECUTE_v2.json",
+    "sha256": "6c7e40137779f1a09c501bc3aced04032728336e5f811b55f26d721dd3215987"
+  },
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/collective_mechanics_options_v1/preparation_v1/MANIFEST.json",
+    "sha256": "a8fdf0c1ed724657bd642862d6af52632854e48ad8006f68cb0d87c2aef6f34c"
+  },
+  "preparation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/collective_mechanics_options_v1/preparation_v1/RESULT.json",
+    "sha256": "555b2a138a80cbf95b5eef7a6d3d42fd008aaca25d8efde37952b638f2d3c269"
+  },
+  "preparation_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/collective_mechanics_options_v1/independent_review_v1/REVIEW.json",
+    "sha256": "e5600a1f7edb994a75f4d5856f2a0d88804f23cc16dde4fd1cbfcbb5b9e0da93"
+  },
+  "execution_specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/collective_mechanics_options_v1/EXECUTION_SPEC.md",
+    "sha256": "79443367870e2b44c018f39d6a984e3486803fc5bf26799118b9bd9826fd1ed0"
+  },
+  "readiness": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/collective_mechanics_options_v1/EXECUTION_READY.json",
+    "sha256": "cf26cf994c65922625c7bfe0e7fe0137e31e6f8d1ff61efb9106285ed00ab5aa"
+  },
+  "saved_controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/collective_mechanics_options_v1/execution_controls_v2/RESULT.json",
+    "sha256": "eecdbfe1fb19f2a4c6a54074db9fa444b4fdaab32bbc90a35ae6ebaf05f625e8"
+  },
+  "checks_passed": 49,
+  "checks": [
+    "exact pin implementation",
+    "exact pin configuration",
+    "exact pin execution_specification",
+    "exact pin preparation",
+    "exact pin manifest",
+    "exact pin preparation_review",
+    "exact pin execution_controls",
+    "exact pin execution_control_source",
+    "exact pin preserved_failed_harness",
+    "exact pin root_release_template",
+    "exact pin reference_wrapper",
+    "exact pin model_wrapper",
+    "exact pin implementation",
+    "exact pin execution_specification",
+    "exact pin preparation_source",
+    "exact pin preparation",
+    "exact pin manifest",
+    "exact pin declaration",
+    "exact pin common_adapter",
+    "exact pin common_panel",
+    "exact pin model_adapter",
+    "exact pin native_helper",
+    "exact pin induction_helper",
+    "exact pin orca",
+    "exact pin analyze",
+    "exact pin reference_wrapper",
+    "exact pin model_wrapper",
+    "final executor bindings",
+    "final 30 saved controls",
+    "release template joins",
+    "exact release16+16",
+    "finite job inventory",
+    "reference command pbe0__aquo8__La__near__metal_two_water",
+    "reference command pbe0__aquo8__La__near__two_water",
+    "reference command pbe0__aquo8__La__far__metal_two_water",
+    "reference command pbe0__aquo8__La__far__two_water",
+    "reference command pbe0__aquo8__Dy__near__metal_two_water",
+    "reference command pbe0__aquo8__Dy__near__two_water",
+    "reference command pbe0__aquo8__Dy__far__metal_two_water",
+    "reference command pbe0__aquo8__Dy__far__two_water",
+    "reference command pbe0__aquo9__La__near__metal_two_water",
+    "reference command pbe0__aquo9__La__near__two_water",
+    "reference command pbe0__aquo9__La__far__metal_two_water",
+    "reference command pbe0__aquo9__La__far__two_water",
+    "reference command pbe0__aquo9__Dy__near__metal_two_water",
+    "reference command pbe0__aquo9__Dy__near__two_water",
+    "reference command pbe0__aquo9__Dy__far__metal_two_water",
+    "reference command pbe0__aquo9__Dy__far__two_water",
+    "model command"
+  ],
+  "resolved_findings": [
+    "Native endpoint.property.txt must belong to recorded property_files; run and saved admission now reject missing, duplicate or changed pins."
+  ],
+  "assessment": [
+    "Frozen prepared input and helper joins; four single-thread MPI ranks per reference, allocation-derived MaxCore, unique16 reference slots guarded by a process lock and STOP.",
+    "Four single-thread model workers, hard16 program counter, first-failure stop, local in-flight receipts and locked final writes.",
+    "Saved admission replays native reference/model parsers, exact runtime inputs, releases, START and program receipts. No chemistry/threshold changes.",
+    "Old68/78 execution gates are not reused; the new16-cell gate binds current source/config/manifest and explicit root release."
+  ],
+  "unresolved_source_blockers": [],
+  "new_native_calls": 0,
+  "native_release": false,
+  "cost": {
+    "binding_wall_seconds": 0.22741399402730167,
+    "binding_CPU_seconds": 0.21546787599999997,
+    "max_local_threads": 1
+  }
+}

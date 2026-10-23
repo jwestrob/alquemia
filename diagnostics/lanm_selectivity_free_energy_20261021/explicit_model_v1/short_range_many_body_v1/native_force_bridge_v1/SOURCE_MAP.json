@@ -1,0 +1,106 @@
+{
+  "baseline_sources": {
+    "deriv.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/source_v2/source/deriv.f",
+      "sha256": "42d109e3dca3a8090ae9bcd06292a165bc8897740c3367a30bb75bd9a0820056"
+    },
+    "empole1.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/source_v2/source/empole1.f",
+      "sha256": "b0422556b2f90efc933b06368c05c0edb13da6e398268519769a9823b84e02cb"
+    },
+    "epolar1.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/source_v2/source/epolar1.f",
+      "sha256": "b558f1b1b459da25c2639b41a4f2c1a095936f94356ac083a7cfb095b9301b76"
+    },
+    "exfield.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/source_v2/source/exfield.f",
+      "sha256": "c2b3b9903a275abfd05165b252bbf11a08e32e3b06261299506e2f094effa02a"
+    },
+    "gradient.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/source_v2/source/gradient.f",
+      "sha256": "1fed31b16d1fafb29a0bdc1f7a469d153a9850c69f1723f543bb06d5a50d592f"
+    },
+    "induce.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/source_v2/source/induce.f",
+      "sha256": "35bdd1c9182ceb5994770e52221f5cb664b13cd1ddd42df1632d8953bc03d7ba"
+    },
+    "kpolar.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/source_v2/source/kpolar.f",
+      "sha256": "01c5cba4c5f7b9a14544b8084f57227aa5d8317f283ac550da653b619f024d8b"
+    },
+    "mpole.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/source_v2/source/mpole.f",
+      "sha256": "73fbfb01a1d2f7a02ebfe8765f9018523eaad8812480cadf33a0dd099407b1a6"
+    },
+    "polar.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/source_v2/source/polar.f",
+      "sha256": "630745603328583470fb3d6205ca6d56488b69bd56dc78246259406d6b4a76df"
+    },
+    "settle.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/source_v2/source/settle.f",
+      "sha256": "f17672dd5e79c739ad9d4a1f64d13bfa89f354b2e91590179aff35803d03abcf"
+    },
+    "torque.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/source_v2/source/torque.f",
+      "sha256": "651a88faaecf122a9d7695c510ac5e8df356c5b7049b9e85f3d190e20aba6c33"
+    }
+  },
+  "paths": [
+    {
+      "arrays": "polarity(atom), ipole(ii), field/fieldp; uind/uinp basis sources",
+      "contract": "exact original native unit-column operator; no dense dA/dR",
+      "function": "induce.f exportresponsematrix, dfield0a, ufield0a",
+      "quantity": "A0 alpha^-1-T",
+      "source_lines": "7756-7789"
+    },
+    {
+      "arrays": "field/fieldp, udir=alpha*field, udirp=alpha*fieldp",
+      "contract": "dfield0a initialized after chkpole/rotpole, no external field in bridge",
+      "function": "induce.f induce0a direct initialization",
+      "quantity": "Ed0/Ep0 and direct scratch",
+      "source_lines": "209-264"
+    },
+    {
+      "arrays": "uind,uinp; dscale,pscale; dep(3,n)",
+      "contract": "dEd contracted with uinp; dEp with uind; native factor .5*electric/dielec",
+      "function": "epolar1.f epolar1a",
+      "quantity": "dEd0/dR and dEp0/dR contraction",
+      "source_lines": "843-869"
+    },
+    {
+      "arrays": "uind/uinp cross-products; uscale, thole/POLPAIR",
+      "contract": "arbitrary supplied fixed u/v; no baseline stationarity substitution",
+      "function": "epolar1.f epolar1a MUTUAL/Thole branch",
+      "quantity": "dT/dR contraction",
+      "source_lines": "914-951"
+    },
+    {
+      "arrays": "ufld/dufld from both channels; rpole; xaxis/yaxis/zaxis; dep",
+      "contract": "retain native torque redistribution and associated virial",
+      "function": "epolar1.f epolar1a plus torque.f",
+      "quantity": "permanent-multipole frame derivatives",
+      "source_lines": "553-611,2392-2448"
+    },
+    {
+      "arrays": "energi component scalars; deriv component arrays; desum and vir",
+      "contract": "only epolar1 call replaced; all other terms preserved; zero external field guard",
+      "function": "gradient.f plus empole1.f/exfield.f and bonded/vdw routines",
+      "quantity": "nonpolar/permanent total energy and derivatives",
+      "source_lines": "gradient.f 203-279"
+    },
+    {
+      "arrays": "uind, udirp, polarity",
+      "contract": "-K/2*u dot Ep0, not stationary baseline energy at corrected u/v; use only to subtract native printed polarization from other energy",
+      "function": "epolar1.f epolar1e",
+      "quantity": "raw baseline reduced ep",
+      "source_lines": "8445-8484"
+    },
+    {
+      "arrays": "DeltaV,h,H; supplied u/v detached",
+      "contract": "dV+K/2[u dH v-(u+v)dh], add once to native complete baseline contraction gradient",
+      "function": "COMBINE.py combine and frozen kernel correction",
+      "quantity": "explicit new local derivative"
+    }
+  ],
+  "status": "source_mapping_not_numerical_force_admission"
+}

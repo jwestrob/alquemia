@@ -1,0 +1,55 @@
+{
+  "zero_call_preflight_argv": [
+    "env",
+    "OMP_NUM_THREADS=1",
+    "OMP_THREAD_LIMIT=1",
+    "OPENBLAS_NUM_THREADS=1",
+    "MKL_NUM_THREADS=1",
+    "NUMEXPR_NUM_THREADS=1",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "/usr/bin/python3",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_cc_diis_recovery_v1/REFERENCE.py",
+    "prepare",
+    "--out",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_cc_diis_recovery_v1/preparation_v2"
+  ],
+  "native_scout_submit_argv": [
+    "sbatch",
+    "--job-name=dy_cc_diis12",
+    "--output=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_cc_diis_recovery_v1/run_v1/scheduler.out",
+    "--error=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_cc_diis_recovery_v1/run_v1/scheduler.err",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/donor_cp_v1/RUN.sbatch",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_cc_diis_recovery_v1/REFERENCE.py",
+    "run",
+    "--manifest",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_cc_diis_recovery_v1/preparation_v1/MANIFEST.json",
+    "--cell",
+    "cc__Dy__rotation__plus_005__complex",
+    "--release",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_cc_diis_recovery_v1/run_v1/ROOT_RELEASE.json",
+    "--out",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_cc_diis_recovery_v1/run_v1/execution"
+  ],
+  "future_saved_admit_argv": [
+    "env",
+    "OMP_NUM_THREADS=1",
+    "OMP_THREAD_LIMIT=1",
+    "OPENBLAS_NUM_THREADS=1",
+    "MKL_NUM_THREADS=1",
+    "NUMEXPR_NUM_THREADS=1",
+    "/usr/bin/python3",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_cc_diis_recovery_v1/REFERENCE.py",
+    "admit",
+    "--manifest",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_cc_diis_recovery_v1/preparation_v1/MANIFEST.json",
+    "--result",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_cc_diis_recovery_v1/run_v1/execution/RESULT.json"
+  ],
+  "executed_native_argv": null,
+  "release_present": false,
+  "notes": [
+    "preparation_v1 is already complete; optional fresh preflight uses exclusive preparation_v2",
+    "root creates run_v1 and exact root release before any submission",
+    "reuse pinned four-MPI one-node/default-memory/default-time wrapper; no watchers or submissions from this adapter"
+  ]
+}

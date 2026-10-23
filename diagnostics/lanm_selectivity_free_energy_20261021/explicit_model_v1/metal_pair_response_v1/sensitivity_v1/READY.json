@@ -1,0 +1,64 @@
+{
+  "status": "source_and_zero_call_preparation_ready_unreleased",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/sensitivity_v1/RUN.py",
+    "sha256": "549002eff54c73a9d1e2b59585249205454ca96b9e6f12ed642d7ce73fa19c5b"
+  },
+  "plan": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/sensitivity_v1/PLAN.md",
+    "sha256": "552bc54a1e9220dd868021e70ce9d783d1624e5d999b1b885b9f2934c7c4a231"
+  },
+  "source_inputs": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/sensitivity_v1/SOURCE_INPUTS.json",
+    "sha256": "0e267a7f98fa0cb1005aa7b883724300318904ea5cd271c173be4ab7f31e6fd8"
+  },
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/sensitivity_v1/preparation_v2/MANIFEST.json",
+    "sha256": "14c3eee7d0b60a53ae8386dff7822bc3bbf87b18788af639d09dcab2082fde83"
+  },
+  "config_template": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/sensitivity_v1/preparation_v2/CONFIG_RUN_TEMPLATE.json",
+    "sha256": "7aff4a23dfcaf95e46693d08ad39983a8eabf50c82e4e9535100e7044abd8934"
+  },
+  "release_template": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/sensitivity_v1/ROOT_RELEASE_TEMPLATE.json",
+    "sha256": "346035e8a6c82a42e99a435fb02c8283fec83bdb0388087e95fb2083d90cbd5d"
+  },
+  "controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/sensitivity_v1/saved_controls_v1/RESULT.json",
+    "sha256": "54dd4a61de67bca80eca5e990d338e297696adac6645094fdfc8c68b2462c302"
+  },
+  "actual_qualification_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/independent_actual_review_v1/REVIEW.json",
+    "sha256": "7abafc994cf30d4cfc407d915dfe0b2fc961ab98b27ac26902b29f7f065cc3fa"
+  },
+  "scope": {
+    "profiles": 4,
+    "cells_per_profile": 30,
+    "total_cells": 120,
+    "new_analyze_EM_programs": 120,
+    "new_analytic_testgrad_programs": 116,
+    "reused_qualified_gradient_programs": 4,
+    "maximum_new_native_programs": 236,
+    "new_internal_FD_energies": 0,
+    "workers": 4,
+    "full_shell_B_computed": false,
+    "candidate_selection": false
+  },
+  "baseline_force_available": 16,
+  "baseline_force_unavailable": 14,
+  "new_native_calls": 0,
+  "compiler_calls": 0,
+  "native_execution_cli": [
+    "python",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/sensitivity_v1/RUN.py",
+    "run",
+    "--config",
+    "ROOT_BOUND_CONFIG.json",
+    "--out",
+    "FRESH_EXECUTION_DIRECTORY"
+  ],
+  "binding_note": "Root release binds immutable source/manifest/plan/scope/review; config pins release. No reverse config pin or circular dependency.",
+  "created_utc": "2026-10-22T03:40:57.651264+00:00",
+  "error": null
+}

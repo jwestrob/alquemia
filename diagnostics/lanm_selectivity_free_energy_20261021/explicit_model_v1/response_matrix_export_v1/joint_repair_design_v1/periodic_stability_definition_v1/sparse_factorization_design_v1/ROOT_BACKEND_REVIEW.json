@@ -1,0 +1,41 @@
+{
+  "status": "passed_manufactured_backend_source_and_result_review",
+  "reviewer": "root",
+  "time_utc": "2026-10-22T22:34:42.813616+00:00",
+  "backend_ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/BACKEND_READY.json",
+    "sha256": "0e798ae3d5e033d7632885969fad134086af4da09fcee3b91d7aa0d6d50fe150"
+  },
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/QUALIFY_v2.py",
+    "sha256": "5200a9a30435bc56260cb88413575816e4b63c08ad1a65e9f58e35c2e3f0f358"
+  },
+  "result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/numerical_v2/RESULT.json",
+    "sha256": "92d8dc1d3787309c6c5db9d1ddcebb6f735448e08b0054af41753157d2a3b566"
+  },
+  "environment_audit": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/environment_v1/ENVIRONMENT_AUDIT.json",
+    "sha256": "f319196c473fafb382130b6b6138ff33a55085621ff8906cd5cf1cf509da2db7"
+  },
+  "saved_checks_passed": 60,
+  "source_review": [
+    "fixed matrix panel and strict original relative-spectrum comparison",
+    "ordinary-double factor and solve residual convention",
+    "LL exceptions and complete finite-positive factors",
+    "rank3 Schur equivalence and explicit LDL diagonal rejection",
+    "unresolved boundary cases never admitted",
+    "failed mutated factors discarded",
+    "exact pinned isolated environment and one numerical thread"
+  ],
+  "critical_finding": "Indefinite LDL downdate can return normally; explicit nonpositive diagonal rejects it. Python API does not expose native minor/status; no claim those were observed.",
+  "qualified_scope": "tiny manufactured backend behavior only; maximum dimension6",
+  "not_qualified": [
+    "actual saved vacuum matrices",
+    "whole-box factorization, memory and performance",
+    "native full-operator parity",
+    "periodic physical stability or dynamics"
+  ],
+  "new_computation": false,
+  "native_calls": 0
+}

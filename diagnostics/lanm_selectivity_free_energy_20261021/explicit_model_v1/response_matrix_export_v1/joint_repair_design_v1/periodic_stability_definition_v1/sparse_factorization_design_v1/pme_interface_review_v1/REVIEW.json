@@ -1,0 +1,87 @@
+{
+  "status": "completed_source_only_PME_sparse_interface_review",
+  "authorship_disclosure": "Reviewer authored the existing unbound static worker and its backend adapters; this is a source-interface assessment, not independent numerical admission.",
+  "authorities": {
+    "full_box_specification": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/pme_export_v1/full_box_initialization_v1/SPEC.md",
+      "sha256": "d1877188cd39cbf5a2c4d9af51504b93988c635498529e3390a3d7965e19dfc8"
+    },
+    "full_box_readiness": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/pme_export_v1/full_box_initialization_v1/READY.json",
+      "sha256": "fe9ac1ca36ce341ac6b2d4aa524572fd66871fd7712959a6d54565bb8bb13b2f"
+    },
+    "snapshot_reader": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/pme_export_v1/SNAPSHOT.py",
+      "sha256": "ed2854e2e16ac287cd51920e3c530dbeb667740bc1822a6fa2a29f208e331a98"
+    },
+    "conditional_PME_proof": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/pme_source_review/REPORT.md",
+      "sha256": "a570dc9438a698e5f914b3c9ad30c8835985a29b3bc25e7dcc6eb306e3a1ce25"
+    },
+    "intended_operator_clarification": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/pme_source_review/CLARIFICATION.md",
+      "sha256": "192542b16ec3deda41b96da4340b64494d7d7b50b7881a579f6809e808101499"
+    },
+    "tiny_native_qualification_specification": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/pme_export_v1/qualification_v1/SPEC.md",
+      "sha256": "b7ecf8ca2144921a64226f521217104e9460c9470f7e04cc0791cf4c1881fcf8"
+    },
+    "tiny_native_qualification_report": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/pme_export_v1/ACTUAL_REPORT.md",
+      "sha256": "c4d28cbdcd6b490a1e4f5c89d878821c1d2131b72d34447baeda5e6961fa5229"
+    },
+    "unchanged_static_worker": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/static_factor_worker_v1/RUN.py",
+      "sha256": "0462442495751f77c6b0d98f1844d297669422c2cd9ac4f3a2a9355bc813b3fe"
+    },
+    "unchanged_static_specification": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/static_factor_worker_v1/SPEC.md",
+      "sha256": "af934b4e4a9939439c3cc8377fd03458c8760fe7cee46666df3c276e8c9ae78f"
+    },
+    "unchanged_unbound_configuration": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/static_factor_worker_v1/CONFIG_UNBOUND.json",
+      "sha256": "54e3e5d59b7a56884a3adddda3c1def0eef27cbf2416267b78f027e919e3ad20"
+    }
+  },
+  "conclusion": "Proposed sufficient shift is algebraically consistent, conditional on matched operator definitions and qualified numerical envelopes. Existing worker omits the new terms and must remain unbound; a future version must declare its scope and formula before execution.",
+  "algebra": {
+    "epsilon": 1e-06,
+    "S": "sqrt(alpha)-normalized real-space plus self plus candidate-specific H, symmetric on the actual active positive-alpha coordinates",
+    "R_even": "Exact-arithmetic reciprocal operator formed from stored real scatter/gather coefficients and conceptual q_even; independent channels and PSD when the stated sign/adjoint hypotheses hold",
+    "raw_reciprocal_upper": "U_R=M*max(abs(q))*min(c1*cinf,cF), using actual stored q, not q_even",
+    "odd_allowance": "delta_odd=M*max(abs(q(k)-q(-k)))/2*min(c1*cinf,cF), on normalized combined (u,v) Euclidean space",
+    "application_allowance": "e_app>=0, with an explicit qualification authority and stated operator/application-norm scope; currently unavailable, not zero",
+    "upper": "U_star=U_B+U_R+e_app; require finite and positive",
+    "shift": "tau=1e-6*U_star+delta_odd+e_app",
+    "sufficient_test": "Positive S-tau*I implies the intended lower-margin requirement after the declared perturbation allowances, under the matched upper/lower assumptions. The scalar threshold remains 1e-6.",
+    "no_double_count": "delta_odd is not added again to U_star because U_R already bounds the raw stored multiplier.",
+    "symmetry_scope": "Oddness allowance addresses departure from the intended independent-channel operator. It does not replace native adjoint, symmetry, or channel-correspondence checks. An unqualified nonsymmetric floating application must not be relabeled as an SPD matrix."
+  },
+  "minimal_future_contract": [
+    "Bind exact candidate/composition, geometry/cell/grid/Ewald/boundary, active site and coordinate ordering, native intrinsic alpha and PCG-floor convention, stored snapshot, real-operator producer and all review/source pins. U_B must include this candidate H, not the old H=0 symbolic fixture.",
+    "Name U_R as the raw stored-multiplier bound. Retain q_min, q_negative_count, q_zero, nonfinite checks, actual conjugate discrepancy, c1/cinf/cF/M and delta_odd. Negative q or unsupported stencil/adjoint scope cannot silently pass the PSD route.",
+    "Add explicit e_app value-or-null, qualification pin, units=dimensionless normalized operator norm, channel space, algorithm/runtime/settings scope, and whether it covers reciprocal application only. Do not infer it from PCG convergence, the tiny fixture maximum error, 1e-11 entrywise comparison tolerance, or factor backward error.",
+    "Retain existing symmetry and sparse factor-action/solve checks, warning handling, exact strict spectral threshold and boundary/inconclusive distinctions. These are separate numerical checks, not additive application-error estimates.",
+    "Record the chosen formula and all scalar inputs before factorization. No automatic zero substitution, post-result allowance tuning, multiplier symmetrization, eigenvalue repair or repeated factor attempt.",
+    "Keep missing application qualification explicit. Operator-only initialization remains useful with e_app=null. A separately declared represented-operator-only numerical study may use tau=1e-6*(U_B+U_R)+delta_odd and label application-aware stability unqualified; it must not claim the full application-aware result. This is a scope choice for root, not an execution authorization or fallback in the current worker."
+  ],
+  "ordinary_double_limits": [
+    "The sufficient inequalities are exact algebra conditional on the stated envelopes. Actual SNAPSHOT bounds and factor diagnostics are ordinary-double estimates; retain that label instead of claiming an outward-rounded certificate.",
+    "No formal interval factorization/inverse proof is introduced as a mandatory gate. Numerical bound accumulation, factor residuals and application qualification remain distinct; an unsupported application allowance is not manufactured to obtain a pass.",
+    "A failed shifted-real factor is inconclusive for full PME stability because the positive reciprocal part may rescue an indefinite real split. Resource/backend failure is not physical instability.",
+    "Successful static numerical qualification does not establish periodic energies/forces, response integration, physical accuracy, MD stability or factor-per-MD-step feasibility."
+  ],
+  "changes": {
+    "existing_sources_modified": false,
+    "candidate_bound": false,
+    "PME_bound": false,
+    "worker_released": false
+  },
+  "execution": {
+    "source_reads_only": true,
+    "numerical_matrix_evaluations": 0,
+    "factorizations": 0,
+    "native_calls": 0,
+    "installs": 0
+  }
+}

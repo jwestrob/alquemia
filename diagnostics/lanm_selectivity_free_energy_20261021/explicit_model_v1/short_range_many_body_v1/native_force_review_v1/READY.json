@@ -1,0 +1,23 @@
+{
+  "status": "completed_independent_native_parent_force_source_audit",
+  "report": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/native_force_review_v1/REPORT.txt",
+    "sha256": "1d20a56aabab1ffa29e2ddb537d0108db2e133fcea071a82a0548a7238adde19"
+  },
+  "evidence": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/native_force_review_v1/EVIDENCE.json",
+    "sha256": "832890d6a5d37e3a32609350404ff985be4b0087dfe6ba24bdaa309a8c9e460d"
+  },
+  "conclusion": "Supplied-dual force contraction is source-feasible in restricted vacuum MUTUAL/Thole mode; runtime setup and later native numerical qualification required.",
+  "implementation_review_complete": false,
+  "concrete_interface_hazards": [
+    "External field can be double-counted across native and Python conventions.",
+    "Reduced epolar1e energy is not the new stationary energy.",
+    "tcgnab scratch loop must be explicitly inactive.",
+    "Native K=electric/dielec must equal Python effective K."
+  ],
+  "new_native_calls": 0,
+  "new_builds": 0,
+  "new_quantum_calls": 0,
+  "new_solver_calls": 0
+}

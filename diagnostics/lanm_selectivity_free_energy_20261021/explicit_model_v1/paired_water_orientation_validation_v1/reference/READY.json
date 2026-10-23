@@ -1,0 +1,96 @@
+{
+  "status": "prepared_unreleased",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_orientation_validation_v1/reference/RUN.py",
+    "sha256": "a0aaa13354983a237a3c39856721d7959f1b7b98df3443292a452c161c1c2f0c"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_orientation_validation_v1/reference/SPEC.md",
+    "sha256": "6ffaf01d44eda1271e93267bfaffc21c2c9498ebad8e722377a16c39446739ec"
+  },
+  "configuration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_orientation_validation_v1/reference/CONFIG_PREPARE.json",
+    "sha256": "b5818c432a4350ec6153a2d50e7d30f03c64f51ace04a21233fca2301fe73530"
+  },
+  "preparation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_orientation_validation_v1/reference/prepared_v1/RESULT.json",
+    "sha256": "adbae2ccc11f8f79ade4506185bac62e30bc409f8b037d8067208b9cbf4facd6"
+  },
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_orientation_validation_v1/reference/prepared_v1/MANIFEST.json",
+    "sha256": "e465b853c100ed9c04c60077d4af761abd6ff9bac62e056a21bf7112cc1c8d8f"
+  },
+  "launch_templates": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_orientation_validation_v1/reference/prepared_v1/LAUNCH_TEMPLATES.json",
+    "sha256": "7016d970d466caafca02d21765135f75bc88286556c04541746e564aefda7bc7"
+  },
+  "release_template": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_orientation_validation_v1/reference/ROOT_RELEASE.template.json",
+    "sha256": "e377629261d15cb0540102bf9b00b745d67c61cdfd18ec9712ed6077555b377e"
+  },
+  "root_release_status_required": "approved_independent_water_orientation_reference",
+  "frozen_water_authorities": {
+    "water_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_parameter_v1/run_v1/execution/RESULT.json",
+      "sha256": "6027e319a261eb85171fb06e30aa3e519411f6371a7905eeca0e8a79812c48fc"
+    },
+    "water_review": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_parameter_v1/result_review_v1/REVIEW.json",
+      "sha256": "a3147adcd7448012437e3ac275872fa58fe65e98a114619a95ec01e17a0df187"
+    },
+    "water_numerical_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/run_v1/execution/RESULT.json",
+      "sha256": "e3eeb870aac22f408c8b38a5f050404cfee5a8f4c0468633c07122fbc5e07254"
+    },
+    "water_numerical_review": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/actual_transfer_review_v1/REVIEW.json",
+      "sha256": "3f7b3a9b375cf3cdad0580a75852ce9488a664232aa1da8b1254b547ac2b4ce4"
+    }
+  },
+  "source_stageA_preserved": true,
+  "donor17621_dependency": false,
+  "reserved_outcomes_opened": false,
+  "native_calls": 0,
+  "finite_scope": {
+    "original_reserved_slots": 24,
+    "water_reference_E_gradient_calls": 4,
+    "other_slots_unexecuted": 20,
+    "MPI_ranks_each": 4,
+    "CPUs_per_rank": 1,
+    "qos": "standard_expand",
+    "memory_and_time": "scheduler defaults",
+    "MaxCore": "floor(0.75*actual granted MiB/4)",
+    "extra_fragments_or_centers": 0,
+    "automatic_retry": false
+  },
+  "actual_recipe": {
+    "keywords": "PBE0 D4 def2-TZVP def2/J RIJCOSX NoAutostart DefGrid3 VeryTightSCF EnGrad",
+    "Guess": "PModel",
+    "MaxIter": 300,
+    "ECP_core": {
+      "La": 46,
+      "Dy": 55
+    },
+    "explicit_electrons": 88,
+    "effective_multiplicity": 1,
+    "physical_multiplicity": {
+      "La": 1,
+      "Dy": 6
+    },
+    "adapter": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/REFERENCE.py",
+      "sha256": "eec0e60d982bda4e1a8685c6120f25c6ab74cc57e114cd3d8f370b4baccba129"
+    },
+    "panel": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/matched_dry_v1/reserved_validation_v1/NATIVE_PANEL.json",
+      "sha256": "75d3fc69703c8a5acca61f547e3fcf5d614cfe6ac653d2f3ecd3f34a93bcaf5a"
+    }
+  },
+  "collection_interface": "collect(config,manifest,release,result_inventory,out); exact4 cell_id->RESULT.json paths; original native outputs replayed; missing/failed slots retained; reference-only rows for root merge into unchanged16 scorer; no water-accuracy gate on raw collection",
+  "preparation_cost": {
+    "wall_seconds": 1.1181935669737868,
+    "parent_CPU_seconds": 1.0597725359999999,
+    "local_threads": 1
+  },
+  "physical_accuracy_or_full16_validation_claimed": false
+}

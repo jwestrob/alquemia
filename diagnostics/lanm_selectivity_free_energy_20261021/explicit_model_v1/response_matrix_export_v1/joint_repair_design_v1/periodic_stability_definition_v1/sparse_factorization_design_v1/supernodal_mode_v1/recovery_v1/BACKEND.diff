@@ -1,0 +1,36 @@
+--- preserved_v1/BACKEND.py
++++ recovery_v1/BACKEND.py
+@@ -1,4 +1,4 @@
+-"""Fixed supernodal LL and sparse sampled residuals; no engine or data loader."""
++"""Fixed supernodal numeric LL, wrapper-converted simplicial storage; no engine or data loader."""
+ import warnings
+ import numpy as np
+ from scipy.sparse import csc_array
+@@ -52,6 +52,9 @@
+     if on_phase is not None:
+         on_phase('symbolic_analyses')
+     f = cholmod.CholeskyFactor(a, **SETTINGS)
++    symbolic_state = metadata(f)
++    if not symbolic_state['is_super'] or symbolic_state['is_numeric']:
++        raise RuntimeError('expected supernodal symbolic state before numeric call')
+     error = None
+     with warnings.catch_warnings(record=True) as seen:
+         warnings.simplefilter('always')
+@@ -63,7 +66,7 @@
+             error = dict(type=type(exc).__name__, message=str(exc),
+                          attributes={k: repr(v) for k, v in vars(exc).items()})
+     warning_rows = [dict(category=type(w.message).__name__, message=str(w.message)) for w in seen]
+-    return f, error, warning_rows
++    return f, error, warning_rows, symbolic_state
+ 
+ 
+ def ten_probes(n, metal_coordinates=(0, 1, 2)):
+@@ -123,7 +126,7 @@
+                       and np.all(np.isfinite(residual)) and np.isfinite(ferr) and np.isfinite(serr))
+         rows.append(dict(name=name, factor_action_error=ferr, solve_backward_error=serr,
+                          finite=finite, passed=finite and ferr <= bound and serr <= bound))
+-    flags = bool(before['is_numeric'] and before['is_ll'] and before['is_super']
++    flags = bool(before['is_numeric'] and before['is_ll'] and not before['is_super']
+                  and before['is_lower'] and before == after)
+     rec = dict(before_copy=before, after_copy=after, permutation=p.tolist(),
+                sparse_factor_shape=list(l.shape), sparse_factor_nnz=int(l.nnz),

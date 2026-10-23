@@ -1,0 +1,87 @@
+{
+  "status": "source_prepared_unreleased",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_donor_validation_stageA_v1/reference/RUN.py",
+    "sha256": "cc876badaab6f4c83cb7ea2d7ad62fd74019c44e8834cc98d30a76c3c92359ef"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_donor_validation_stageA_v1/reference/SPEC.md",
+    "sha256": "18a42d18a66a156301431558e4742c1ef744e06bc98711ce5834a67c48412739"
+  },
+  "configuration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_donor_validation_stageA_v1/reference/CONFIG_PREPARE.json",
+    "sha256": "f53aaa075495dcf6eeb90f5cea0652d9bde8bebd06136d6f8d52f0f9f97f082e"
+  },
+  "preparation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_donor_validation_stageA_v1/reference/prepared_v1/RESULT.json",
+    "sha256": "00058d5ce69511084af48ff8cb136454faca18b010806335b0545c6e2d24163b"
+  },
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_donor_validation_stageA_v1/reference/prepared_v1/MANIFEST.json",
+    "sha256": "5ef12446d559d2edacde4a239651a12816bbfc434b1af049301048bbbad48cba"
+  },
+  "launch_templates": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_donor_validation_stageA_v1/reference/prepared_v1/LAUNCH_TEMPLATES.json",
+    "sha256": "9f07ea1121578988dc6ed5d3063982c03edf40c68534e0dc63162fb58a420028"
+  },
+  "release_template": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_donor_validation_stageA_v1/reference/ROOT_RELEASE.template.json",
+    "sha256": "4e3fdb19f92d1c8c8acc0839f5b21fe683d6ff8659a76ea0085bf5418328bd3b"
+  },
+  "root_release_status_required": "approved_paired_donor_validation_stageA_reference",
+  "required_actual_gates": [
+    "terminal17621 selected all original controls and eight water invariants passed",
+    "independent selected raw/input/objective review passed",
+    "all12 consumed numerical checks passed under original limits"
+  ],
+  "actual_native_adapter": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/REFERENCE.py",
+    "sha256": "eec0e60d982bda4e1a8685c6120f25c6ab74cc57e114cd3d8f370b4baccba129"
+  },
+  "actual_native_panel": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/matched_dry_v1/reserved_validation_v1/NATIVE_PANEL.json",
+    "sha256": "75d3fc69703c8a5acca61f547e3fcf5d614cfe6ac653d2f3ecd3f34a93bcaf5a"
+  },
+  "actual_reserved_panel": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/matched_dry_v1/reserved_validation_v1/RESERVED_PANEL.json",
+    "sha256": "eed99b0fb6dbe7b49857d68853fe809481f6b657c928a7e75197d77c61f3432b"
+  },
+  "actual_keywords": "PBE0 D4 def2-TZVP def2/J RIJCOSX NoAutostart DefGrid3 VeryTightSCF EnGrad",
+  "actual_SCF": {
+    "Guess": "PModel",
+    "MaxIter": 300
+  },
+  "actual_state": {
+    "La": {
+      "ECP_core": 46,
+      "effective_multiplicity": 1,
+      "physical_multiplicity": 1
+    },
+    "Dy": {
+      "ECP_core": 55,
+      "effective_multiplicity": 1,
+      "physical_multiplicity": 6
+    }
+  },
+  "resources": {
+    "MPI_ranks": 4,
+    "CPU_per_rank": 1,
+    "qos": "standard_expand",
+    "scheduler_memory": "default actual grant",
+    "scheduler_time": "default",
+    "MaxCore_rule": "floor(0.75*actual_granted_MiB/4)"
+  },
+  "denominators": {
+    "original_reserved_cells": 24,
+    "Stage_A_reference_E_gradient_calls": 16,
+    "Stage_B_unexecuted": 8,
+    "extra_fragments": 0
+  },
+  "candidate_bound": false,
+  "reserved_outcomes_opened": false,
+  "native_calls": 0,
+  "preparation_wall_seconds": 0.3465049179503694,
+  "preparation_CPU_seconds": 0.239780747,
+  "collection_interface": "reference-only rows[geometry_id]: geometry/reference energy kcal/mol, energy_hartree, forces kcal/mol/A, native/raw/state. Merge reference into model-prepared input/bodies metadata before scoring; unavailable slots retained.",
+  "production_or_free_energy_claim": false
+}

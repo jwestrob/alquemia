@@ -1,0 +1,866 @@
+{
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_donor_fit_v1/EVALUATE.py",
+    "sha256": "c0d3085cce6e4b7d8e74687ee0729922fe57836426e53731e2b526dc4790592a"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_donor_fit_v1/SPEC.md",
+    "sha256": "04ec08cf953fd2020201a7063bc13572f598286a624bba0748ae7ac5f598c45d"
+  },
+  "training_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/matched_dry_v1/training_v1/RESULT.json",
+    "sha256": "99ea27f86871b505dc622c1391a6321381f7430d3ad4a86a72e34ab9a629f6bb"
+  },
+  "water_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_parameter_v1/run_v1/execution/RESULT.json",
+    "sha256": "6027e319a261eb85171fb06e30aa3e519411f6371a7905eeca0e8a79812c48fc"
+  },
+  "transfer_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/run_v1/execution/RESULT.json",
+    "sha256": "e3eeb870aac22f408c8b38a5f050404cfee5a8f4c0468633c07122fbc5e07254"
+  },
+  "resolver": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/alchemical_path_v1/PATH.py",
+    "sha256": "69e1e4dc46cce86f145596180a4507d1e09b3e6473a83210efd99d19e16abba3"
+  },
+  "native_helper": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/RUN_PANEL.py",
+    "sha256": "4189602145853bc39d8dfaf30915b2a6b1d4632984e0c50fc0bf321644fa306c"
+  },
+  "executables": {
+    "analyze": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_build/analyze",
+      "sha256": "f67420e79f8c1793bf491569f77ab4354219926fe5b4c49a2311e64f217f7a28"
+    },
+    "testgrad": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_build/testgrad",
+      "sha256": "d82b2872136785cadf0c0763aafef60ba1bdd89283f685850485a07a875f6dc2"
+    }
+  },
+  "source_inputs": {
+    "water_central_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/prepared/water_central_La/system.xyz",
+        "sha256": "88ad37d4a7734344c5fb295bd21819e02be6f4954ccfb00a23b19da05d385e24"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/prepared/water_central_La/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/prepared/water_central_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "water_central_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/prepared/water_central_Dy/system.xyz",
+        "sha256": "67a5777924b9e2b5a976bfbbf040e54a56e5e829beb675b81bd8699be6ebe9e7"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/prepared/water_central_Dy/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/prepared/water_central_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "aquo8_central_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/prepared/aquo8_central_La/system.xyz",
+        "sha256": "9cb693b60bc591cbb929580e0a9925192aff9eceab2ba7236d1330c5ecaa304b"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/prepared/aquo8_central_La/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/prepared/aquo8_central_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "aquo8_central_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/prepared/aquo8_central_Dy/system.xyz",
+        "sha256": "f4703457ff7b6047f997dc42647136664c7018543ace484ce6d401e5eea4d4cb"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/prepared/aquo8_central_Dy/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/prepared/aquo8_central_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetate_mono_minus_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_mono_minus_La/system.xyz",
+        "sha256": "9dcd4f187a8a5521344df5ef34404313be92a324005c4fc40fe627555a4697ce"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_mono_minus_La/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_mono_minus_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetate_mono_minus_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_mono_minus_Dy/system.xyz",
+        "sha256": "936f5080b998c901bf081c45132e687d6d6d30edce8018b4ba33d0e0010df7fb"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_mono_minus_Dy/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_mono_minus_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetate_mono_central_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_mono_central_La/system.xyz",
+        "sha256": "cc0d5d8b8f25dae6f9a778b6f8eac7150c0b66a38a5c52c6595cc9e21db285e5"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_mono_central_La/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_mono_central_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetate_mono_central_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_mono_central_Dy/system.xyz",
+        "sha256": "3a96c06a64d9acc13a68ad1812a0dc9a0c062fc78f3733814175cb53fb5f8419"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_mono_central_Dy/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_mono_central_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetate_mono_plus_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_mono_plus_La/system.xyz",
+        "sha256": "eba22976e1b9463f1d33280ebbb3f809418d9d537a69d56843c2f095e65e15c2"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_mono_plus_La/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_mono_plus_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetate_mono_plus_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_mono_plus_Dy/system.xyz",
+        "sha256": "39e558112d3bf4a056f0ad852e9a60a967667df1538a1161e6ba8ccd24a9850e"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_mono_plus_Dy/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_mono_plus_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetate_bi_minus_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_bi_minus_La/system.xyz",
+        "sha256": "160fb0817ae7c3680be436e12f217ddb3fd6df3d61f92f160bdd0be9350e950e"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_bi_minus_La/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_bi_minus_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetate_bi_minus_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_bi_minus_Dy/system.xyz",
+        "sha256": "4dbcfda7bd18a31760d23ebfb858c5ffac14cdebe5d444572badab150028ef36"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_bi_minus_Dy/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_bi_minus_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetate_bi_central_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_bi_central_La/system.xyz",
+        "sha256": "5df137feb15860bb88eaf6f50e7f84fc0c6a08a0b249e70ff49b65ca6a6c1c70"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_bi_central_La/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_bi_central_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetate_bi_central_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_bi_central_Dy/system.xyz",
+        "sha256": "3fc14b966a2c38bdf265b938d7fe24801ef524b3aebaa80e6ff1bb53b8d6e052"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_bi_central_Dy/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_bi_central_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetate_bi_plus_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_bi_plus_La/system.xyz",
+        "sha256": "adfa3c142810bd06f02194bf582c1864f1c15a8020a141c0d908d364e083aeeb"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_bi_plus_La/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_bi_plus_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetate_bi_plus_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_bi_plus_Dy/system.xyz",
+        "sha256": "8584a1f6169d4db36223dc6e40e92b0c29c89c8fb583fe4cbdf7f8bfda85be56"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_bi_plus_Dy/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetate_bi_plus_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetamide_minus_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetamide_minus_La/system.xyz",
+        "sha256": "d4046f4715acf0cdf87daf1bf5d88479c4db0311f95581ce2454e26e46c957f5"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetamide_minus_La/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetamide_minus_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetamide_minus_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetamide_minus_Dy/system.xyz",
+        "sha256": "f8148a9e7a76d1cedd7e0c8df693af0bcc6c848d3436cbc4521b5e0cfc14a4b4"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetamide_minus_Dy/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetamide_minus_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetamide_central_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetamide_central_La/system.xyz",
+        "sha256": "6ca43dbfb88041a7a9b7b7b29e14f2f5c2c9733fe624e645c992ce3f6788e127"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetamide_central_La/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetamide_central_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetamide_central_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetamide_central_Dy/system.xyz",
+        "sha256": "94ff54255757ac4d098fd1a66f9f6c9e6518169b248c964f76ee81ea707fddb2"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetamide_central_Dy/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetamide_central_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetamide_plus_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetamide_plus_La/system.xyz",
+        "sha256": "426678ad1bb7b9cff5644dd60b85e9075fd40a81681961fcc3ab935fb6963b99"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetamide_plus_La/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetamide_plus_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetamide_plus_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetamide_plus_Dy/system.xyz",
+        "sha256": "7ec550396c2ed26418166e19c4aa3f040939f7fa919bd2e4084d68cad95cb72f"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetamide_plus_Dy/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_preparation_v2/hydrated_acetamide_plus_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "matched_dry_acetate_mono_central_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/matched_dry_v1/prepared_v1/matched_dry_acetate_mono_central_La/system.xyz",
+        "sha256": "c7b394aec7d46d1ec85c07dd4665b1531462be39d30d22311f5b10b9499b5a1a"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/matched_dry_v1/prepared_v1/matched_dry_acetate_mono_central_La/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/matched_dry_v1/prepared_v1/matched_dry_acetate_mono_central_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "matched_dry_acetate_mono_central_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/matched_dry_v1/prepared_v1/matched_dry_acetate_mono_central_Dy/system.xyz",
+        "sha256": "a03df5ba269aa82e4f638a9f7209c29e201ff08bc856f5c5c0b3624234e6eb55"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/matched_dry_v1/prepared_v1/matched_dry_acetate_mono_central_Dy/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/matched_dry_v1/prepared_v1/matched_dry_acetate_mono_central_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "matched_dry_acetate_bi_central_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/matched_dry_v1/prepared_v1/matched_dry_acetate_bi_central_La/system.xyz",
+        "sha256": "acce1742146a7cbcb0c6db3dab5590dd5ec6114f0386df4eb5ecec7ee31fe1d4"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/matched_dry_v1/prepared_v1/matched_dry_acetate_bi_central_La/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/matched_dry_v1/prepared_v1/matched_dry_acetate_bi_central_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "matched_dry_acetate_bi_central_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/matched_dry_v1/prepared_v1/matched_dry_acetate_bi_central_Dy/system.xyz",
+        "sha256": "cbf8222b230e134ff054a917d0335ee9c97a19656389cd3c3f45dd2297dc6175"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/matched_dry_v1/prepared_v1/matched_dry_acetate_bi_central_Dy/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/matched_dry_v1/prepared_v1/matched_dry_acetate_bi_central_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "matched_dry_acetamide_central_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/matched_dry_v1/prepared_v1/matched_dry_acetamide_central_La/system.xyz",
+        "sha256": "fb85cbe127871aa2eca83d864d9eba4735c94b66265413b36361ddab9e9eb812"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/matched_dry_v1/prepared_v1/matched_dry_acetamide_central_La/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/matched_dry_v1/prepared_v1/matched_dry_acetamide_central_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "matched_dry_acetamide_central_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/matched_dry_v1/prepared_v1/matched_dry_acetamide_central_Dy/system.xyz",
+        "sha256": "0c8cbfb99cde8cb84ee6e0b47e76514c1f184c22ab395296b8c834bbaa26bce0"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/matched_dry_v1/prepared_v1/matched_dry_acetamide_central_Dy/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/matched_dry_v1/prepared_v1/matched_dry_acetamide_central_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    }
+  },
+  "baseline_inputs": {
+    "water_central_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/water_central_La/system.xyz",
+        "sha256": "88ad37d4a7734344c5fb295bd21819e02be6f4954ccfb00a23b19da05d385e24"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/water_central_La/system.key",
+        "sha256": "fe31f21383b02940ef431b656076bb6a3ac1325e2dbd20b75507a8772ad6e42f"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/water_central_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "water_central_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/water_central_Dy/system.xyz",
+        "sha256": "67a5777924b9e2b5a976bfbbf040e54a56e5e829beb675b81bd8699be6ebe9e7"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/water_central_Dy/system.key",
+        "sha256": "f727b490c21e012def745eda51405e1ac5a32347e0d90c1c4fddd11bdeb6b251"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/water_central_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "aquo8_central_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/aquo8_central_La/system.xyz",
+        "sha256": "9cb693b60bc591cbb929580e0a9925192aff9eceab2ba7236d1330c5ecaa304b"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/aquo8_central_La/system.key",
+        "sha256": "fe31f21383b02940ef431b656076bb6a3ac1325e2dbd20b75507a8772ad6e42f"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/aquo8_central_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "aquo8_central_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/aquo8_central_Dy/system.xyz",
+        "sha256": "f4703457ff7b6047f997dc42647136664c7018543ace484ce6d401e5eea4d4cb"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/aquo8_central_Dy/system.key",
+        "sha256": "f727b490c21e012def745eda51405e1ac5a32347e0d90c1c4fddd11bdeb6b251"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/aquo8_central_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetate_mono_minus_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_mono_minus_La/system.xyz",
+        "sha256": "9dcd4f187a8a5521344df5ef34404313be92a324005c4fc40fe627555a4697ce"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_mono_minus_La/system.key",
+        "sha256": "fe31f21383b02940ef431b656076bb6a3ac1325e2dbd20b75507a8772ad6e42f"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_mono_minus_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetate_mono_minus_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_mono_minus_Dy/system.xyz",
+        "sha256": "936f5080b998c901bf081c45132e687d6d6d30edce8018b4ba33d0e0010df7fb"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_mono_minus_Dy/system.key",
+        "sha256": "f727b490c21e012def745eda51405e1ac5a32347e0d90c1c4fddd11bdeb6b251"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_mono_minus_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetate_mono_central_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_mono_central_La/system.xyz",
+        "sha256": "cc0d5d8b8f25dae6f9a778b6f8eac7150c0b66a38a5c52c6595cc9e21db285e5"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_mono_central_La/system.key",
+        "sha256": "fe31f21383b02940ef431b656076bb6a3ac1325e2dbd20b75507a8772ad6e42f"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_mono_central_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetate_mono_central_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_mono_central_Dy/system.xyz",
+        "sha256": "3a96c06a64d9acc13a68ad1812a0dc9a0c062fc78f3733814175cb53fb5f8419"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_mono_central_Dy/system.key",
+        "sha256": "f727b490c21e012def745eda51405e1ac5a32347e0d90c1c4fddd11bdeb6b251"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_mono_central_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetate_mono_plus_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_mono_plus_La/system.xyz",
+        "sha256": "eba22976e1b9463f1d33280ebbb3f809418d9d537a69d56843c2f095e65e15c2"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_mono_plus_La/system.key",
+        "sha256": "fe31f21383b02940ef431b656076bb6a3ac1325e2dbd20b75507a8772ad6e42f"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_mono_plus_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetate_mono_plus_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_mono_plus_Dy/system.xyz",
+        "sha256": "39e558112d3bf4a056f0ad852e9a60a967667df1538a1161e6ba8ccd24a9850e"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_mono_plus_Dy/system.key",
+        "sha256": "f727b490c21e012def745eda51405e1ac5a32347e0d90c1c4fddd11bdeb6b251"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_mono_plus_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetate_bi_minus_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_bi_minus_La/system.xyz",
+        "sha256": "160fb0817ae7c3680be436e12f217ddb3fd6df3d61f92f160bdd0be9350e950e"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_bi_minus_La/system.key",
+        "sha256": "fe31f21383b02940ef431b656076bb6a3ac1325e2dbd20b75507a8772ad6e42f"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_bi_minus_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetate_bi_minus_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_bi_minus_Dy/system.xyz",
+        "sha256": "4dbcfda7bd18a31760d23ebfb858c5ffac14cdebe5d444572badab150028ef36"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_bi_minus_Dy/system.key",
+        "sha256": "f727b490c21e012def745eda51405e1ac5a32347e0d90c1c4fddd11bdeb6b251"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_bi_minus_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetate_bi_central_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_bi_central_La/system.xyz",
+        "sha256": "5df137feb15860bb88eaf6f50e7f84fc0c6a08a0b249e70ff49b65ca6a6c1c70"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_bi_central_La/system.key",
+        "sha256": "fe31f21383b02940ef431b656076bb6a3ac1325e2dbd20b75507a8772ad6e42f"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_bi_central_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetate_bi_central_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_bi_central_Dy/system.xyz",
+        "sha256": "3fc14b966a2c38bdf265b938d7fe24801ef524b3aebaa80e6ff1bb53b8d6e052"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_bi_central_Dy/system.key",
+        "sha256": "f727b490c21e012def745eda51405e1ac5a32347e0d90c1c4fddd11bdeb6b251"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_bi_central_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetate_bi_plus_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_bi_plus_La/system.xyz",
+        "sha256": "adfa3c142810bd06f02194bf582c1864f1c15a8020a141c0d908d364e083aeeb"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_bi_plus_La/system.key",
+        "sha256": "fe31f21383b02940ef431b656076bb6a3ac1325e2dbd20b75507a8772ad6e42f"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_bi_plus_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetate_bi_plus_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_bi_plus_Dy/system.xyz",
+        "sha256": "8584a1f6169d4db36223dc6e40e92b0c29c89c8fb583fe4cbdf7f8bfda85be56"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_bi_plus_Dy/system.key",
+        "sha256": "f727b490c21e012def745eda51405e1ac5a32347e0d90c1c4fddd11bdeb6b251"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetate_bi_plus_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetamide_minus_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetamide_minus_La/system.xyz",
+        "sha256": "d4046f4715acf0cdf87daf1bf5d88479c4db0311f95581ce2454e26e46c957f5"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetamide_minus_La/system.key",
+        "sha256": "fe31f21383b02940ef431b656076bb6a3ac1325e2dbd20b75507a8772ad6e42f"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetamide_minus_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetamide_minus_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetamide_minus_Dy/system.xyz",
+        "sha256": "f8148a9e7a76d1cedd7e0c8df693af0bcc6c848d3436cbc4521b5e0cfc14a4b4"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetamide_minus_Dy/system.key",
+        "sha256": "f727b490c21e012def745eda51405e1ac5a32347e0d90c1c4fddd11bdeb6b251"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetamide_minus_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetamide_central_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetamide_central_La/system.xyz",
+        "sha256": "6ca43dbfb88041a7a9b7b7b29e14f2f5c2c9733fe624e645c992ce3f6788e127"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetamide_central_La/system.key",
+        "sha256": "fe31f21383b02940ef431b656076bb6a3ac1325e2dbd20b75507a8772ad6e42f"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetamide_central_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetamide_central_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetamide_central_Dy/system.xyz",
+        "sha256": "94ff54255757ac4d098fd1a66f9f6c9e6518169b248c964f76ee81ea707fddb2"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetamide_central_Dy/system.key",
+        "sha256": "f727b490c21e012def745eda51405e1ac5a32347e0d90c1c4fddd11bdeb6b251"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetamide_central_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetamide_plus_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetamide_plus_La/system.xyz",
+        "sha256": "426678ad1bb7b9cff5644dd60b85e9075fd40a81681961fcc3ab935fb6963b99"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetamide_plus_La/system.key",
+        "sha256": "fe31f21383b02940ef431b656076bb6a3ac1325e2dbd20b75507a8772ad6e42f"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetamide_plus_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "hydrated_acetamide_plus_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetamide_plus_Dy/system.xyz",
+        "sha256": "7ec550396c2ed26418166e19c4aa3f040939f7fa919bd2e4084d68cad95cb72f"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetamide_plus_Dy/system.key",
+        "sha256": "f727b490c21e012def745eda51405e1ac5a32347e0d90c1c4fddd11bdeb6b251"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/hydrated_acetamide_plus_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "matched_dry_acetate_mono_central_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/matched_dry_acetate_mono_central_La/system.xyz",
+        "sha256": "c7b394aec7d46d1ec85c07dd4665b1531462be39d30d22311f5b10b9499b5a1a"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/matched_dry_acetate_mono_central_La/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/matched_dry_acetate_mono_central_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "matched_dry_acetate_mono_central_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/matched_dry_acetate_mono_central_Dy/system.xyz",
+        "sha256": "a03df5ba269aa82e4f638a9f7209c29e201ff08bc856f5c5c0b3624234e6eb55"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/matched_dry_acetate_mono_central_Dy/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/matched_dry_acetate_mono_central_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "matched_dry_acetate_bi_central_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/matched_dry_acetate_bi_central_La/system.xyz",
+        "sha256": "acce1742146a7cbcb0c6db3dab5590dd5ec6114f0386df4eb5ecec7ee31fe1d4"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/matched_dry_acetate_bi_central_La/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/matched_dry_acetate_bi_central_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "matched_dry_acetate_bi_central_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/matched_dry_acetate_bi_central_Dy/system.xyz",
+        "sha256": "cbf8222b230e134ff054a917d0335ee9c97a19656389cd3c3f45dd2297dc6175"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/matched_dry_acetate_bi_central_Dy/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/matched_dry_acetate_bi_central_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "matched_dry_acetamide_central_La": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/matched_dry_acetamide_central_La/system.xyz",
+        "sha256": "fb85cbe127871aa2eca83d864d9eba4735c94b66265413b36361ddab9e9eb812"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/matched_dry_acetamide_central_La/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/matched_dry_acetamide_central_La/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    },
+    "matched_dry_acetamide_central_Dy": {
+      "xyz": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/matched_dry_acetamide_central_Dy/system.xyz",
+        "sha256": "0c8cbfb99cde8cb84ee6e0b47e76514c1f184c22ab395296b8c834bbaa26bce0"
+      },
+      "key": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/matched_dry_acetamide_central_Dy/system.key",
+        "sha256": "6cdcc95d348953b8aafdb11b89cc03946eafee20eaa9a301622f8a8c3715cd89"
+      },
+      "parameters": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_six_transfer_v1/bound_v1/inputs/matched_dry_acetamide_central_Dy/amoeba09.prm",
+        "sha256": "e1cc2bcc6d7fb319aba7abaaf6b4483f2ef5ba730727212b5c157a18a290f38b"
+      }
+    }
+  },
+  "parameter_names": [
+    "La_carboxylate_R",
+    "La_carboxylate_damping",
+    "La_amide_R",
+    "La_amide_damping",
+    "Dy_carboxylate_R",
+    "Dy_carboxylate_damping",
+    "Dy_amide_R",
+    "Dy_amide_damping"
+  ],
+  "initial_vector": [
+    3.6318,
+    0.1518,
+    3.3,
+    0.2987,
+    3.347237658604727,
+    0.139,
+    3.2657502966294456,
+    0.139
+  ],
+  "fixed_pair_epsilon": {
+    "La_carboxylate": 0.228,
+    "La_amide": 0.3019,
+    "Dy_carboxylate": 0.3795688850865599,
+    "Dy_amide": 0.3795688850865599
+  },
+  "frozen_water_parameters": [
+    3.906136716492464,
+    0.28782327521600637,
+    3.5865909437359376,
+    0.2837564269122712,
+    0.20765190997435956,
+    0.3173248056679709
+  ],
+  "maximum_parameter_vectors": 481,
+  "maximum_native_program_invocations": 9216,
+  "maximum_native_concurrency": 8,
+  "root_release": null
+}

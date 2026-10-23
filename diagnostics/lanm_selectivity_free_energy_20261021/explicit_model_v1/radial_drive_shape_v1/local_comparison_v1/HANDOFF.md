@@ -1,0 +1,11 @@
+# Fixed radial comparison handoff
+
+Root may bind the final source review and preparation into CONFIG_TEMPLATE, preserving its exact output_directory and all scientific/native/bridge pins. Fingerprint excludes only root_release/source_review/preparation and the derived fingerprint field. The source review contract is in READY. Release status is `released_four_radial_probes_two_affine_comparisons`; required exact fields are listed there.
+
+Run with the already installed conic environment, all six numerical thread variables set to1. Native phase uses12 workers plus one controller on the declared login host, followed by two sequential one-thread solver attempts after the native workers exit. Preserve the16-thread aggregate reservation. There is no scheduler allocation or fabricated job ID for this run. Native helper's inherited300-second program timeout remains unchanged. Root owns actual execution and terminal collection.
+
+The preparation has verified the explicit root zero bridge, all old24 metadata/artifact pins, exact46 original-center identities/raw input joins, and exactly28 new native programs for each of the four probes. It measures only the already admitted origin/center scores needed to bind denominators. It does not construct the actual derivative matrix or any solver. Controls use manufactured arrays and prohibit solver construction/subprocesses. No broader old native qualification or saved24 numerical replay is repeated.
+
+Only four e probes are authorized. Results retain old raw producer/cache provenance on unchanged-metal cells and add separately labeled requested radial metadata. No old artifact is relabeled as new-binary execution. The two comparisons retain raw solver status and scalar certificates separately, including the auxiliary-only q bookkeeping. Every proposed full/half vector is an unevaluated affine prediction. There is no fitting loop, native trial, selection, fresh reference or heldout read.
+
+First preparation/controls are retained; finalv2 adds direct frozen-span/specification checks and explicit radial-family metadata. Those changes do not change equations, parameters, inputs or gates. Successful preparation/controls do not release the112 native calls or two scientific solves; root's exact release does.

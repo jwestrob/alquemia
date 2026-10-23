@@ -1,0 +1,13 @@
+# Eight fixed metal-alpha responses
+
+This implements ROOT_DECLARATION.md at the exact failed-science terminal 17676 selection. Raw selected-ten review 17683 must pass; its scientific flag must remain false. No passing-candidate validation gate is used.
+
+Order: La −5%, −1%, +1%, +5%, then Dy in the same order. Alpha origins are 1.6597 and 0.7280 Å³. Change exactly one numeric alpha token on the existing matching `polarize 500/501` key line. Preserve every other byte, source XYZ/parameter bytes, six selected pair values, all other polarizabilities and damping coefficients. Native damping lengths change with alpha; this is explicitly a coupled response. Pin kpolar.f, damping.f and induce.f as well as resolver, parser and native executables.
+
+Each probe has five newly evaluated cells of its metal and five exact selected opposite-metal cells. Native commands are `analyze system.xyz E` and `testgrad system.xyz Y N`, no Cartesian FD. Exactly eight full ten-cell slots, at most 40 new cells/80 programs, one eight-CPU Slurm task and eight single-thread vector workers. First program/admission/parse failure sets global stop before persistence; running siblings drain and missing cells remain explicit. No retry, fallback, fitting or candidate selection.
+
+Preparation reads the large terminal result once, joins its selected-ten review, replays selected score, and reconstructs its exact last selected-origin six-column Jacobian from twelve saved ±0.005 normalized-coordinate points, including actual clipped widths. Changed physical inputs, producer receipts and saved raw E/F are admitted once per unique authority. The compact DATA contains ten original rows, baseline selected model/score, original six bounds, J6 and derivative authority evidence. Only these compact records and exact prepared input files are used in native workers.
+
+Every completed probe uses the unchanged 413-entry objective and all ten energy/fifteen force checks. Scientific failure of a probe is a diagnostic result, not a native failure or reason to select another model. Root owns separate saved-only two-scale augmented-column analysis: relative-alpha coordinates, original-six and augmented-eight matrices each with rcond=1e−6 and both absolute cutoffs reported. Unevaluated implied parameter changes are not candidate selection. No exact-linear-alpha assumption or tolerance relaxation is introduced.
+
+Preparation and source controls make zero molecular calls. Run requires an exact root release, actual preparation pin, source/config fingerprint, eight workers and eighty-program ceiling. Preserve all historical results/ledgers, including the explicit 17670 review-loss notice. No reserved geometry/outcome, donor fit, new reference or bulk sampling is admitted.

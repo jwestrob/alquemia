@@ -1,0 +1,30 @@
+{
+  "status": "passed_cached_integration_water_schema_source_review",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/integration_v1/CHECK_CACHED.py",
+    "sha256": "cfb274b9e7e4d88825be29ec3bb2691cadf5897276a4cb8c6e8d1e056706c745"
+  },
+  "kernel": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/kernel_v1/KERNEL.py",
+    "sha256": "b9b9e9bf0f422215576be708ef165642f8fa859908f204413d6118f4eb20e356"
+  },
+  "water_dataset": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/water_data_v1/materialized_v1/DATASET.json",
+    "sha256": "215275c6b4f7a3285b6925fa082544a8199aa1a74c367b69d943f58931f0d53d"
+  },
+  "shared_water_bundle": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/water_data_v1/shared_bridge_v1/BUNDLE.json",
+    "sha256": "9e14113cfb02a03c8e9f370f4652860722c5cec18f9813f83552be19bfe48f22"
+  },
+  "scope": "source-only schema/units/site ordering/baseline/symmetry/probe arithmetic review; no numerical integration rerun",
+  "findings": [
+    "Exact native site order, dual RHS and nonpolar_energy_kcal as U_other0 are used correctly.",
+    "Symmetric-part projection is explicit, source-bound and limited to inherited arithmetic; rawA preserved.",
+    "Zero and fixed pair/triple probes preserve distinction between implementation checks and physical fit.",
+    "Coordinate derivative scope correctly remains partial with frozen baseline.",
+    "Runner energy allowance omits the positive inherited arithmetic term, making its gate stricter. Root reports all actual56fixtures already passed unchanged; do not relax or rerun for this omission.",
+    "Runner compares native u/v to dense output under inherited ordinary-double bounds; no global trajectory stability or physical-reference accuracy claim follows."
+  ],
+  "reference_operator_or_native_calls": 0,
+  "source_review_not_actual_admission": true
+}

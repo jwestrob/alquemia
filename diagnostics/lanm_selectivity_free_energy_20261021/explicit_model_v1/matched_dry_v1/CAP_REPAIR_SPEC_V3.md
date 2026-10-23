@@ -1,0 +1,9 @@
+# Constructed NME methyl hydrogens: V3 geometry-only repair
+
+V2 panel `42db5a66e95edf2af5a5fd1eb77c779dc18cac4bcfeaadde39d6beba9fe71b67` is withdrawn from reference/scoring use. It resolved the input-name duplicate, but native construction placed a remaining NME methyl hydrogen approximately0.14 Å from retained H1 in Asp3. Coordinate uniqueness and covalent valence were insufficient geometry checks. Preserve every V2 file and write a separate withdrawal receipt.
+
+Root authorizes changing only the two **constructed** NME methyl hydrogens in each of the four fragments. Keep all deposited central-residue atoms, metal, cap N/C anchors, amide H and retained methyl H1 exact. Do not rebuild topology or repeat `pdbxyz`. Use the original C–N axis and retained C–H1 direction; place the two missing methyl H at ±120° around that axis, preserving its polar angle and using the original native1.10 Å constructed C–H length. This deterministic cap geometry is not a minimization or a force-field fit.
+
+After serialization, check exact immutability of every other atom and all types/bonds. Require constructed C–H lengths within1e−6 Å of1.10 Å, all methyl H–H distances >1.5 Å, and all N–C–H/H–C–H angles between90° and130°. For each constructed cap H, require all nonbonded H distances≥0.8 Å and heavy-atom distances≥1.1 Å; retain actual minima and any failure. Do not select another cap orientation after a failed gate.
+
+Run at most four serial native `analyze GP` parameter-only checks, no energies/forces/optimization. Verify local permanent-multipole tables are identical to V2, native complete typing/charge, exact source joins and paired La/Dy geometry. Retain all eight validation slots and both cap-preparation failures. Only a complete, reviewed V3 can be bound into reserved validation; no scoring is authorized by this repair.

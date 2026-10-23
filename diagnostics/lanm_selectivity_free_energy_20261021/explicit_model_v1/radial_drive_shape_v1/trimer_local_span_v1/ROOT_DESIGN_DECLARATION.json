@@ -1,0 +1,38 @@
+{
+  "status": "declared_source_design_only_pending_exact_inputs_and_review",
+  "UTC": "2026-10-23T05:50:03.031149+00:00",
+  "scientific_question": "Does the exact saved local fourteen-parameter response span admit simultaneous improvement of W9far individual-metal and paired three-body energy and signed dipole residuals while preserving the original controls and component objective?",
+  "fixed_candidate_key": "5d992dbffb9fbe646102782cb90b53182deff7e384838ffd809683e1a187fa78",
+  "terminal_trimer_admission": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/terminal_trimer_regression_v1/run_v1/ROOT_ACTUAL_REVIEW.json",
+    "sha256": "1fd33d3f0ace090a06f7e552e6e9868c41bfd7140a59df722116b92dd957d724"
+  },
+  "planned_inputs": "Exact admitted step8 incumbent, 28 central-difference vectors, LINEARIZATION, original constraints and environment; final full pin manifest must precede execution.",
+  "variables": {
+    "parameter_displacement": "14 original normalized coordinates",
+    "common_fraction": "t between zero and one"
+  },
+  "objective": "maximize t",
+  "new_target_constraints": "For each of six residual groups, norm(r+J*delta) <= (1-t)*norm(r). Three scalar E3 residuals are La, Dy and Dy-minus-La; three vector mu3 residuals are their signed common-origin vectors. All targets are stored reference residuals; no scientific tolerance added.",
+  "preserved_constraints": [
+    "Original fourteen-coordinate box and trust radius0.025",
+    "All25 original physical and3 electrical guards",
+    "Signed full-shell W9 nonincrease guard",
+    "Original max normalized P/B objective q no greater than exact stored incumbent q; preserve original denominators"
+  ],
+  "accounting": "One prospective conic solve, no native/reference/probe calls, no optimizer iterations or recovery sweep. Source design and metadata inventory only are currently released.",
+  "rules": [
+    "Use exact saved scalars and finite differences; never rounded chat values or theoretical-zero substitutions.",
+    "Verify zero displacement and t=0 against inherited constraints before solving.",
+    "Keep solver status, finite bound/margins and predicted candidate separate from native admission.",
+    "No relaxed-constraint comparison, automatic fit, native execution, candidate promotion or heldout access.",
+    "A positive feasible local result indicates an affine direction only; nonpositive/inaccurate solver result does not prove global family inadequacy.",
+    "Original reference uncertainty is retained; this is a conditional consumed diagnostic."
+  ],
+  "owners": {
+    "design_inventory": "Planck",
+    "independent_review": "Arendt",
+    "release_integration": "root"
+  },
+  "execution_release": null
+}

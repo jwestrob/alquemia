@@ -1,0 +1,72 @@
+{
+  "status": "passed_future_persistence_prototype_source_review",
+  "ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/persistence_performance_v1/future_adapter_v1/READY.json",
+    "sha256": "d5ffcf83929e0d9395bef7334963340d4658ad7ba99bd953249fd4068cde1e74"
+  },
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/persistence_performance_v1/future_adapter_v1/ADAPTER.py",
+    "sha256": "11e782ab22dec06e1db70a823fbfb4c3c6a3b44c5bb314f49c3e743d825907ad"
+  },
+  "journal": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/persistence_performance_v1/future_adapter_v1/JOURNAL.py",
+    "sha256": "18bb149823c172a0ebe593150818e209e3bfd08b40ba92ca350b3568eae7294f"
+  },
+  "driver": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/persistence_performance_v1/future_adapter_v1/DRIVER.py",
+    "sha256": "b8c3e3ded31f7a9a4849849aa57f8d00371631f292e457c6e75ac750c8dbf1ee"
+  },
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/persistence_performance_v1/future_adapter_v1/MANIFEST.json",
+    "sha256": "bc08e9bb82ddfd6e5aa5393be7a32b3239e8768fa01a80d362c14385e25af688"
+  },
+  "source_diff": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/persistence_performance_v1/future_adapter_v1/SOURCE.diff",
+    "sha256": "4fa9c288b7e3062a0d013de2c03c0071f9768fbb081b07460ba82eb1c41e343b"
+  },
+  "controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/persistence_performance_v1/future_adapter_v1/controls_v1/RESULT.json",
+    "sha256": "a47ec605e60ee073786c332df740ce2e14389bd668741b2068c6407a75aa27e2"
+  },
+  "failure_controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/persistence_performance_v1/future_adapter_v1/failure_controls_v1/RESULT.json",
+    "sha256": "51fafb9c0550cf7e52a20122ea5c1b0c51715367987962e86d8636d9d89df554"
+  },
+  "checked_top_level_pins": [
+    "controls",
+    "driver",
+    "failure_controls",
+    "implementation",
+    "implementation_note",
+    "journal",
+    "manifest",
+    "operational_diagnosis",
+    "operational_samples",
+    "preserved_preparation_failure",
+    "source_diff"
+  ],
+  "checks": [
+    "Read complete source diff and JOURNAL.py",
+    "Confirmed inherited evaluator uses reentrant shared lock",
+    "Driver byte-identical to current frozen driver",
+    "Native/render/parse/assembly/selection unchanged; persistence-only edits",
+    "Durable attempt intent precedes native helper; I/O failure prevents launch",
+    "Incremental return counter and replay preserve terminal legacy fields",
+    "Committed-prefix corruption rejected; incomplete final journal line retained; no automatic resume/retry",
+    "All40 saved artificial checks pass and retain zero native/scientific calls"
+  ],
+  "limitations": [
+    "No measured speedup or stack attribution; py-spy was denied",
+    "Logical interleavings only; actual OS-thread stress and shared-filesystem power-loss tests remain unperformed",
+    "An I/O failure can prevent legacy final snapshot publication; committed journal/cell evidence and outer process failure must remain authoritative",
+    "No future campaign configuration, source integration release, or live mutation authorized by this source review"
+  ],
+  "execution_released": false,
+  "native_calls": 0,
+  "scientific_evaluations": 0,
+  "cost": {
+    "wall_seconds": 0.014344163006171584,
+    "CPU_seconds": 0.008384394000000003,
+    "numerical_threads": 1
+  }
+}

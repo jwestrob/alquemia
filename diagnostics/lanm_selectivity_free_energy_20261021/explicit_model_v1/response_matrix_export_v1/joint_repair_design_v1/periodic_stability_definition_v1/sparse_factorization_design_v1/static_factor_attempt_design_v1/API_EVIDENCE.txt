@@ -1,0 +1,729 @@
+Installed class documentation
+The main object used for creating and manipulating a Cholesky factor.
+
+    The constructor computes the symbolic analysis of the matrix and
+    determines a fill-reducing ordering (if ``order`` is not ``None`` or
+    ``"natural"``) such that:
+
+    .. math ::
+
+        L L^{\top} = P A P^{\top}.
+
+    The numeric factorization is not computed until :meth:`.factorize` is
+    called.
+
+    Parameters
+    ----------
+    A : (N, N) array_like or sparse array
+        An array convertible to a sparse matrix in Compressed Sparse Column
+        (CSC) format.
+    sym_kind : str in {"sym", "row", "col"}, optional
+        The type of factorization for which to analyze the matrix:
+
+        * ``sym``: Symmetric factorization.  Only the upper or lower triangular part of
+          the matrix is used (depending on ``lower``), and no check is made for
+          symmetry.
+        * ``row``: Unsymmetric factorization of :math:`A A^{\top}`.
+        * ``col``: Unsymmetric factorization of :math:`A^{\top} A`.
+
+        The resulting matrix must be square and symmetric positive definite.
+
+    supernodal_mode : str in {"auto", "simplicial", "supernodal"}, optional
+        The type of factorization to use:
+
+        * ``auto``: Automatically select the factorization type.
+        * ``simplicial``: Use a simplicial factorization.
+        * ``supernodal``: Use a supernodal factorization.
+
+        Default is ``auto``. This mode also applies to any subsequent calls to
+        :meth:`.factorize`. Note that the ``simplicial`` mode may be slow for
+        large matrices.
+
+    lower : bool, optional
+        If True, use the lower triangular part of ``A``.
+    order : str in {"default", "best", "natural", "metis",             "nesdis", "amd", "colamd", "postordered"}, optional
+        The permutation algorithm to use for the factorization. Options are:
+
+        * ``default``: Use the default method, which first tries AMD, then METIS.
+        * ``best``: Automatically select the best ordering based on the input.
+        * ``metis``: Use the METIS library for graph partitioning.
+        * ``nesdis``: Use the NESDIS library for nested dissection.
+        * ``amd``: Use the Approximate Minimum Degree (AMD) algorithm.
+        * ``colamd``: Use the Approximate Minimum Degree (AMD) algorithm
+          for the symmetric case, or the COLAMD algorithm for the
+          unsymmetric case (:math:`A A^{{\top}}` or :math:`A^{{\top}} A`).
+        * ``postordered``: Use natural ordering followed by postordering.
+        * ``natural`` or ``None``: No permutation is applied (identity permutation).
+
+        By default, methods other than ``natural`` will also be
+        postordered.
+
+        .. warning::
+
+            The ordering method ``best`` may be quite slow for large
+            matrices, but if the factorization is reused many times, it can
+            be worth it.
+
+    Attributes
+    ----------
+    N : int
+        The number of rows and columns in the factor.
+    is_ll : bool
+        Whether the factor is in ``LL.T`` form (True) or ``LDL.T`` form (False).
+    is_super : bool
+        Whether the factor is in supernodal (True) or simplicial (False) format.
+    itype : :obj:`numpy.int32` or :obj:`numpy.int64`
+        The integer type used for indices and indptr in the factor.
+    dtype : numpy.dtype
+        The data type used for numerical values in the factor.
+    sym_kind : str
+        The symmetry kind used for the factorization.
+    rcond : float
+        A rough estimate of the reciprocal of the condition number of the matrix,
+        defined as ``(L.diagonal().min() / L.diagonal().max())**2`` for an ``LL.T``
+        factorization. Estimated during the numeric factorization. If
+        :meth:`.factorize` has not yet been called, this value is ``-1.0``.
+    colcount : *(N,)* :obj:`numpy.ndarray` of int
+        The number of nonzeros in each column of the factor.
+    nnz : int
+        The number of nonzeros in the factor.
+    order : str or int
+        The ordering method used for the factorization. If an unknown ordering
+        was used, returns the integer value.
+    perm : *(N,)* :obj:`numpy.ndarray` of int
+        A read-only view of the permutation vector used for the factorization.
+    factor : :obj:`~scipy.sparse.csc_array`
+        A view of the the Cholesky factor in Compressed Sparse Column (CSC)
+        format. If ``self.is_ll``, the returned matrix is lower triangular.
+        Otherwise, the matrix view contains the lower triangular and the
+        diagonal factors combined.
+
+        .. note::
+
+            The view is always in lower triangular form, even if the factor was
+            created using ``lower=False``. To get the upper triangular factor,
+            use :obj:`get_factor` with ``lower=False``. To get the split `L`
+            and `D` factors, use :obj:`get_factor` with ``kind="LDL"``.
+
+        .. warning::
+
+            The returned matrix is a view on the internal data of the CHOLMOD
+            factor. It will be modified if the factor is modified (*e.g.*, by
+            calling :meth:`.factorize`). To get a copy, use
+            :meth:`.get_factor`.
+    L : :class:`~scipy.sparse.csc_array`
+        The lower triangular factor in Compressed Sparse Column (CSC) format.
+    R : :class:`~scipy.sparse.csc_array`
+        The upper triangular factor in Compressed Sparse Column (CSC) format.
+    D : :class:`~scipy.sparse.dia_array`
+        A view of the diagonal factor in DIAgonal format. If ``self.is_ll``,
+        this is the identity matrix.
+
+    Raises
+    ------
+    CholmodNotPositiveDefiniteError
+        If the input matrix is structurally singular (*e.g.*, if it is the zero
+        matrix). The input *may* be numerically indefinite, but this property
+        is not checked until :meth:`.factorize` is called.
+
+    See Also
+    --------
+    cholesky, ldl, cho_factor, ldl_factor
+
+    Notes
+    -----
+    The symbolic analysis follows that of the SuiteSparse CHOLMOD ``analyze``
+    MATLAB function [#analyze_c]_.
+
+    .. warning::
+
+        Calling ``CholeskyFactor.__new__(CholeskyFactor)`` will leave the object in an
+        "unsafe" state, since the internal CHOLMOD structures will not be initialized.
+        Always use the constructor ``CholeskyFactor(...)`` to create a new object.
+
+
+    .. versionadded:: 0.1.0
+
+    .. versionchanged:: 0.5.0
+        Refactored to ``CholeskyFactor`` from just ``Factor``. Now incorporates
+        ``Common`` factor into the object. Major API changes.
+
+    References
+    ----------
+    .. [#analyze_c] ``analyze.c`` - CHOLMOD MATLAB analyze function
+        https://github.com/DrTimothyAldenDavis/SuiteSparse/blob/dev/CHOLMOD/MATLAB/analyze.c
+    
+
+METHOD factorize
+Compute the numerical Cholesky factorization of a sparse matrix.
+
+        This method computes the numerical values of :math:`P A P^{\top}
+        = R^{\top} R` or :math:`P A P^{\top} = L L^{\top}` decomposition of
+        a Hermitian positive-definite matrix `A`, with fill-reducing
+        permutation `P`.
+
+        Parameters
+        ----------
+        A : (N, N) {array_like, sparse array}
+            An array convertible to a sparse matrix in Compressed Sparse Column
+            (CSC) format. The matrix must be square and symmetric positive
+            definite. Only the upper or lower triangular part of the matrix is
+            used, and no check is made for symmetry. This matrix can be
+            numericaly different from the matrix used to initialize the
+            :obj:`CholeskyFactor` object, but it must have the same sparsity
+            pattern.
+        ldl : bool, optional
+            If True, compute the LDL factorization instead of the Cholesky
+            factorization. Default is None, which uses the same type of
+            factorization as the previous call to :meth:`.factorize`, or False
+            if this is the first call.
+        beta : float, optional
+            The scalar value to add to the diagonal of the matrix before
+            factorization. Default is 0.
+
+        Notes
+        -----
+        If ``ldl=False``, this function computes the Cholesky factorization of
+        a symmetric positive definite matrix `A`:
+
+        .. math::
+
+            R^{\top} R = P A P^{\top},
+
+        where `R` is an upper triangular matrix. Only the upper triangular part
+        of `A` is used. If ``self.is_lower`` is True, the lower triangular
+        factor `L` is computed instead, such that:
+
+        .. math::
+
+            L L^{\top} = P A P^{\top}.
+
+        In this case, only the lower triangular part of `A` is used.
+
+        If ``ldl=True``, compute the factorization:
+
+        .. math::
+
+            R^{\top} D R = P A P^{\top},
+
+        or
+
+        .. math::
+
+            L D L^{\top} = P A P^{\top},
+
+        respectively.
+
+        If ``beta`` is not None, the factorization is computed for the matrix:
+
+        .. math::
+
+            P A P^{\top} + \beta I.
+
+        Note that if the :obj:`CholeskyFactor` was initialized with ``sym_kind``
+        equal to ``"row"`` or ``"col"``, the factorization is computed for
+        :math:`P A A^{\top} P^{\top}` or :math:`P A^{\top} A P^{\top}`,
+        respectively. Similarly, ``beta`` is added to the diagonal of these
+        matrices.
+        
+
+METHOD get_factor
+Return a copy of the Cholesky factor in the specified format.
+
+        Parameters
+        ----------
+        kind : None or str in {'LL', 'LDL'}, optional
+            The type of factor to return. If ``LL``, return the Cholesky
+            factor `L` such that :math:`L L^{\top} = P A P^{\top}`. If
+            ``LDL``, return the combined `LD` factor such that
+            :math:`L D L^{\top} = P A P^{\top}`. Default is None, which
+            uses the kind with which ``factorize`` was called.
+        lower : None or bool, optional
+            If True, return the lower triangular factor `L`. If False, return
+            the upper triangular factor `R`. If None (default), return the
+            factor in the same triangular form as it was created with
+            ``factorize``.
+
+        Returns
+        -------
+        L : csc_array
+            The Cholesky factor in Compressed Sparse Column (CSC) format.
+        D : diags_array, optional
+            If ``kind="LDL"``, also returns the `D` factor.
+        
+
+METHOD get_perm
+Return a copy of the permutation vector used in the factorization.
+
+        Returns
+        -------
+        p : ndarray
+            The permutation vector `p` such that :math:`P A P^{\top}` is the
+            matrix that was factorized, where `P` is the permutation matrix
+            corresponding to `p`, *i.e.*, ``P = I[p]``.
+        
+
+METHOD solve
+Solve the linear system :math:`A x = b` for `x`, using the
+        factorization.
+
+        Parameters
+        ----------
+        b : (N,) or (N, K) ndarray or sparse matrix
+            The right-hand side vector or matrix. Must be a type that can be safely
+            cast to the data type of the factor. The number of rows in ``b`` must be
+            equal to the size of the factor.
+        system : str in {'A', 'LDLt', 'LD', 'DLt', 'L', 'Lt', 'D'}, optional
+            The system to solve. Options are:
+
+            * ``A``: Solve :math:`A x = b`.
+            * ``LDLt``: Solve :math:`L D L^{\top} x = b`.
+            * ``LD``: Solve :math:`L D x = b`.
+            * ``DLt``: Solve :math:`D L^{\top} x = b`.
+            * ``L``: Solve :math:`L x = b`.
+            * ``Lt``: Solve :math:`L^{\top} x = b`.
+            * ``D``: Solve :math:`D x = b`.
+
+            Here, ``L`` and ``D`` are the factors from the LDL factorization of
+            the matrix.
+
+            .. note::
+
+                Only the ``A`` system accounts for the permutation used in the
+                factorization. The other systems solve the equations using the
+                factors directly, without applying the permutation.
+
+        Returns
+        -------
+        x : (N,) or (N, K) ndarray or sparse matrix
+            The solution vector or matrix, returned in the same format as ``b``.
+
+        Raises
+        ------
+        CholmodNotPositiveDefiniteError
+            If the matrix `A` is exactly singular, or singular to working
+            precision.
+
+        Notes
+        -----
+        This function solves the linear system:
+
+        .. math::
+
+            R^{\top} R x = b,
+
+        where `R` is the upper triangular factor from the Cholesky factorization
+        of `A`. The input `b` is either dense or sparse, vector or matrix.
+
+        If ``order`` was not ``natural`` when the factorization was computed,
+        solve the system:
+
+        .. math::
+
+            P^{\top} R^{\top} R P x = b
+
+        where `P` is the permutation matrix corresponding to the permutation
+        vector. Similarly, if ``lower`` was True when the factorization was
+        computed, the system solved is:
+
+        .. math::
+
+            P^{\top} L L^{\top} P x = b.
+
+        If the factorization is in LDL form, the system solved is:
+
+        .. math::
+
+            P^{\top} L D L^{\top} P x = b.
+
+        This function uses the CHOLMOD library to solve the linear system. It
+        is intended to combine the MATLAB interfaces ``cholmod2.m``
+        [#cholmod_c]_, and ``ldlsolve.m`` [#ldlsolve_c]_.
+
+        .. versionadded:: 0.5.0
+
+        References
+        ----------
+        .. [#cholmod_c] ``cholmod2.c`` - CHOLMOD MATLAB interface
+            https://github.com/DrTimothyAldenDavis/SuiteSparse/blob/dev/CHOLMOD/MATLAB/cholmod2.c
+        .. [#ldlsolve_c] ``ldlsolve.c`` - CHOLMOD MATLAB interface
+            https://github.com/DrTimothyAldenDavis/SuiteSparse/blob/dev/CHOLMOD/MATLAB/ldlsolve.c
+        
+
+HEADER /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/_envs/lanm_cholmod_v1/include/suitesparse/cholmod.h:500-565
+500: 
+501: typedef struct cholmod_common_struct
+502: {
+503: 
+504:     //--------------------------------------------------------------------------
+505:     // primary parameters for factorization and update/downdate
+506:     //--------------------------------------------------------------------------
+507: 
+508:     double dbound ; // Bounds the diagonal entries of D for LDL'
+509:         // factorization and update/downdate/rowadd.  Entries outside this
+510:         // bound are replaced with dbound.  Default: 0.  dbound is used for
+511:         // double precision factorization only.  See sbound for single
+512:         // precision factorization.
+513: 
+514:     double grow0 ;      // default: 1.2
+515:     double grow1 ;      // default: 1.2
+516:     size_t grow2 ;      // default: 5
+517:         // Initial space for simplicial factorization is max(grow0,1) times the
+518:         // required space.  If space is exhausted, L is grown by max(grow0,1.2)
+519:         // times the required space.  grow1 and grow2 control how each column
+520:         // of L can grow in an update/downdate; if space runs out, then
+521:         // grow1*(required space) + grow2 is allocated.
+522: 
+523:     size_t maxrank ;    // maximum rank for update/downdate.  Valid values are
+524:         // 2, 4, and 8.  Default is 8.  If a larger update/downdate is done, it
+525:         // is done in steps of maxrank.
+526: 
+527:     double supernodal_switch ;  // default: 40
+528:     int supernodal ;            // default: CHOLMOD_AUTO.
+529:         // Controls supernodal vs simplicial factorization.  If
+530:         // Common->supernodal is CHOLMOD_SIMPLICIAL, a simplicial factorization
+531:         // is always done; if CHOLMOD_SUPERNODAL, a supernodal factorization is
+532:         // always done.  If CHOLMOD_AUTO, then a simplicial factorization is
+533:         // down if flops/nnz(L) < Common->supernodal_switch.
+534: 
+535:         #define CHOLMOD_SIMPLICIAL 0 /* always use simplicial method         */
+536:         #define CHOLMOD_AUTO       1 /* auto select simplicial vs supernodal */
+537:         #define CHOLMOD_SUPERNODAL 2 /* always use supernoda method          */
+538: 
+539:     int final_asis ;    // if true, other final_* parameters are ignored,
+540:         // except for final_pack and the factors are left as-is when done.
+541:         // Default: true.
+542: 
+543:     int final_super ;   // if true, leave factor in supernodal form.
+544:         // if false, convert to simplicial.  Default: true.
+545: 
+546:     int final_ll ;      // if true, simplicial factors are converted to LL',
+547:         // otherwise left as LDL.  Default: false.
+548: 
+549:     int final_pack ;    // if true, the factorize are allocated with exactly
+550:         // the space required.  Set this to false if you expect future
+551:         // updates/downdates (giving a little extra space for future growth),
+552:         // Default: true.
+553: 
+554:     int final_monotonic ;   // if true, columns are sorted when done, by
+555:         // ascending row index.  Default: true.
+556: 
+557:     int final_resymbol ;    // if true, a supernodal factorization converted
+558:         // to simplicial is reanalyzed, to remove zeros added for relaxed
+559:         // amalgamation.  Default: false.
+560: 
+561:     double zrelax [3] ; size_t nrelax [3] ;
+562:         // The zrelax and nrelax parameters control relaxed supernodal
+563:         // amalgamation,  If ns is the # of columns in two adjacent supernodes,
+564:         // and z is the fraction of zeros in the two supernodes if merged, then
+565:         // the two supernodes are merged if any of the 5 following condition
+
+HEADER /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/_envs/lanm_cholmod_v1/include/suitesparse/cholmod.h:835-860
+835:         #define CHOLMOD_OUT_OF_MEMORY (-2) /* malloc/calloc/realloc failed  */
+836:         #define CHOLMOD_TOO_LARGE     (-3) /* integer overflow              */
+837:         #define CHOLMOD_INVALID       (-4) /* input invalid                 */
+838:         #define CHOLMOD_GPU_PROBLEM   (-5) /* CUDA error                    */
+839:         #define CHOLMOD_NOT_POSDEF    (1)  /* matrix not positive definite  */
+840:         #define CHOLMOD_DSMALL        (2)  /* diagonal entry very small     */
+841: 
+842:     double fl ;     // flop count from last analysis
+843:     double lnz ;    // nnz(L) from last analysis
+844:     double anz ;    // in last analysis: nnz(tril(A)) or nnz(triu(A)) if A
+845:                     // symmetric, or tril(A*A') if A is unsymmetric.
+846:     double modfl ;  // flop count from last update/downdate/rowadd/rowdel,
+847:                     // not included the flops to revise the solution to Lx=b,
+848:                     // if that was performed.
+849: 
+850:     size_t malloc_count ;   // # of malloc'd objects not yet freed
+851:     size_t memory_usage ;   // peak memory usage in bytes
+852:     size_t memory_inuse ;   // current memory usage in bytes
+853: 
+854:     double nrealloc_col ;   // # of column reallocations
+855:     double nrealloc_factor ;// # of factor reallocations due to col. reallocs
+856:     double ndbounds_hit ;   // # of times diagonal modified by dbound
+857: 
+858:     double rowfacfl ;       // flop count of cholmod_rowfac
+859:     double aatfl ;          // flop count to compute A(:,f)*A(:,f)'
+860: 
+
+HEADER /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/_envs/lanm_cholmod_v1/include/suitesparse/cholmod.h:970-997
+970:     double cholmod_cpu_potrf_time ;
+971:     double cholmod_gpu_gemm_time ;
+972:     double cholmod_gpu_syrk_time ;
+973:     double cholmod_gpu_trsm_time ;
+974:     double cholmod_gpu_potrf_time ;
+975:     double cholmod_assemble_time ;
+976:     double cholmod_assemble_time2 ;
+977: 
+978:     // number of times the BLAS are called on the CPU and the GPU:
+979:     size_t cholmod_cpu_gemm_calls ;
+980:     size_t cholmod_cpu_syrk_calls ;
+981:     size_t cholmod_cpu_trsm_calls ;
+982:     size_t cholmod_cpu_potrf_calls ;
+983:     size_t cholmod_gpu_gemm_calls ;
+984:     size_t cholmod_gpu_syrk_calls ;
+985:     size_t cholmod_gpu_trsm_calls ;
+986:     size_t cholmod_gpu_potrf_calls ;
+987: 
+988:     double chunk ;      // chunksize for computing # of OpenMP threads to use.
+989:         // Given nwork work to do, # of threads is
+990:         // max (1, min (floor (work / chunk), nthreads_max))
+991: 
+992:     int nthreads_max ; // max # of OpenMP threads to use in CHOLMOD.
+993:         // Defaults to SUITESPARSE_OPENMP_MAX_THREADS.
+994: 
+995:     #ifdef BLAS_DUMP
+996:     FILE *blas_dump ;  // only used if CHOLMOD is compiled with -DBLAS_DUMP
+997:     #endif
+
+HEADER /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/_envs/lanm_cholmod_v1/include/suitesparse/cholmod.h:1538-1650
+1538: 
+1539: typedef struct cholmod_factor_struct
+1540: {
+1541:     size_t n ;      // L is n-by-n
+1542: 
+1543:     size_t minor ;  // If the factorization failed because of numerical issues
+1544:         // (the matrix being factorized is found to be singular or not positive
+1545:         // definte), then L->minor is the column at which it failed.  L->minor
+1546:         // = n means the factorization was successful.
+1547: 
+1548:     //--------------------------------------------------------------------------
+1549:     // symbolic ordering and analysis
+1550:     //--------------------------------------------------------------------------
+1551: 
+1552:     void *Perm ;    // int32/int64, size n, fill-reducing ordering
+1553:     void *ColCount ;// int32/int64, size n, # entries in each column of L
+1554:     void *IPerm ;   // int32/int64, size n, created by cholmod_solve2;
+1555:                     // containing the inverse of L->Perm
+1556: 
+1557:     //--------------------------------------------------------------------------
+1558:     // simplicial factorization (not supernodal)
+1559:     //--------------------------------------------------------------------------
+1560: 
+1561:     // The row indices of L(:,j) are held in L->i [L->p [j] ... L->p [j] +
+1562:     // L->nz [j] - 1].  The numeical values of L(:,j) are held in the same
+1563:     // positions in L->x (and L->z if L is zomplex).  L->next and L->prev hold
+1564:     // a link list of columns of L, that tracks the order they appear in the
+1565:     // arrays L->i, L->x, and L->z.  The head and tail of the list is n+1 and
+1566:     // n, respectively.
+1567: 
+1568:     size_t nzmax ;  // # of entries that L->i, L->x, and L->z can hold
+1569:     void *p ;       // int32/int64, size n+1, column pointers
+1570:     void *i ;       // int32/int64, size nzmax, row indices
+1571:     void *x ;       // float/double, size nzmax or 2*nzmax, numerical values
+1572:     void *z ;       // float/double, size nzmax or empty, imaginary values
+1573:     void *nz ;      // int32/int64, size ncol, # of entries in each column
+1574:     void *next ;    // int32/int64, size n+2
+1575:     void *prev ;    // int32/int64, size n+2
+1576: 
+1577:     //--------------------------------------------------------------------------
+1578:     // supernodal factorization (not simplicial)
+1579:     //--------------------------------------------------------------------------
+1580: 
+1581:     // L->x is shared with the simplicial structure above.  L->z is not used
+1582:     // for the supernodal case since a supernodal factor cannot be zomplex.
+1583: 
+1584:     size_t nsuper ;     // # of supernodes
+1585:     size_t ssize ;      // # of integers in L->s
+1586:     size_t xsize ;      // # of entries in L->x
+1587:     size_t maxcsize ;   // size of largest update matrix
+1588:     size_t maxesize ;   // max # of rows in supernodes, excl. triangular part
+1589:     // the following are int32/int64 and are size nsuper+1:
+1590:     void *super ;       // first column in each supernode
+1591:     void *pi ;          // index into L->s for integer part of a supernode
+1592:     void *px ;          // index into L->x for numeric part of a supernode
+1593:     // int32/int64, of size ssize:
+1594:     void *s ;           // integer part of supernodes
+1595: 
+1596:     //--------------------------------------------------------------------------
+1597:     // type of the factorization
+1598:     //--------------------------------------------------------------------------
+1599: 
+1600:     int ordering ;      // the fill-reducing method used (CHOLMOD_NATURAL,
+1601:         // CHOLMOD_GIVEN, CHOLMOD_AMD, CHOLMOD_METIS, CHOLMOD_NESDIS,
+1602:         // CHOLMOD_COLAMD, or CHOLMOD_POSTORDERED).
+1603: 
+1604:     int is_ll ;         // true: an LL' factorization; false: LDL' instead
+1605:     int is_super ;      // true: supernodal; false: simplicial
+1606:     int is_monotonic ;  // true: columns appear in order 0 to n-1 in L, for a
+1607:                         // simplicial factorization only
+1608: 
+1609:     // Two boolean values above (is_ll, is_super) and L->xtype (pattern or
+1610:     // otherwise, define eight types of factorizations, but only 6 are used:
+1611: 
+1612:     // If L->xtype is CHOLMOD_PATTERN, then L is a symbolic factor:
+1613:     //
+1614:     // simplicial LDL': (is_ll false, is_super false).  Nothing is present
+1615:     //      except Perm and ColCount.
+1616:     //
+1617:     // simplicial LL': (is_ll true, is_super false).  Identical to the
+1618:     //      simplicial LDL', except for the is_ll flag.
+1619:     //
+1620:     // supernodal LL': (is_ll true, is_super true).  A supernodal symbolic
+1621:     //      factorization.  The simplicial symbolic information is present
+1622:     //      (Perm and ColCount), as is all of the supernodal factorization
+1623:     //      except for the numerical values (x and z).
+1624:     //
+1625:     // If L->xtype is CHOLMOD_REAL, CHOLMOD_COMPLEX, or CHOLMOD_ZOMPLEX,
+1626:     // then L is a numeric factor:
+1627:     //
+1628:     // simplicial LDL':  (is_ll false, is_super false).  Stored in compressed
+1629:     //      column form, using the simplicial components above (nzmax, p, i,
+1630:     //      x, z, nz, next, and prev).  The unit diagonal of L is not stored,
+1631:     //      and D is stored in its place.  There are no supernodes.
+1632:     //
+1633:     // simplicial LL': (is_ll true, is_super false).  Uses the same storage
+1634:     //      scheme as the simplicial LDL', except that D does not appear.
+1635:     //      The first entry of each column of L is the diagonal entry of
+1636:     //      that column of L.
+1637:     //
+1638:     // supernodal LL': (is_ll true, is_super true).  A supernodal factor,
+1639:     //      using the supernodal components described above (nsuper, ssize,
+1640:     //      xsize, maxcsize, maxesize, super, pi, px, s, x, and z).
+1641:     //      A supernodal factorization is never zomplex.
+1642: 
+1643:     int itype ; // integer type for L->Perm, L->ColCount, L->p, L->i, L->nz,
+1644:                 // L->next, L->prev, L->super, L->pi, L->px, and L->s.
+1645:                 // These are all int32 if L->itype is CHOLMOD_INT, or all int64
+1646:                 // if L->itype is CHOLMOD_LONG.
+1647: 
+1648:     int xtype ; // pattern, real, complex, or zomplex
+1649:     int dtype ; // x and z are double or single
+1650: 
+
+HEADER /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/_envs/lanm_cholmod_v1/include/suitesparse/cholmod.h:2972-3015
+2972: // cholmod_rowfac:  incremental simplicial factorization
+2973: //------------------------------------------------------------------------------
+2974: 
+2975: // Partial or complete simplicial factorization.  Rows and columns kstart:kend-1
+2976: // of L and D must be initially equal to rows/columns kstart:kend-1 of the
+2977: // identity matrix.   Row k can only be factorized if all descendants of node
+2978: // k in the elimination tree have been factorized.
+2979: 
+2980: int cholmod_rowfac 
+2981: (
+2982:     // input:
+2983:     cholmod_sparse *A,  // matrix to factorize
+2984:     cholmod_sparse *F,  // used for A*A' case only. F=A' or A(:,f)'
+2985:     double beta [2],    // factorize beta*I+A or beta*I+AA'
+2986:     size_t kstart,      // first row to factorize
+2987:     size_t kend,        // last row to factorize is kend-1
+2988:     // input/output:
+2989:     cholmod_factor *L,
+2990:     cholmod_common *Common
+2991: ) ;
+2992: int cholmod_l_rowfac (cholmod_sparse *, cholmod_sparse *, double *, size_t,
+2993:     size_t, cholmod_factor *, cholmod_common *) ;
+2994: 
+2995: //------------------------------------------------------------------------------
+2996: // cholmod_rowfac_mask:  incremental simplicial factorization
+2997: //------------------------------------------------------------------------------
+2998: 
+2999: // cholmod_rowfac_mask and cholmod_rowfac_mask2 are version of cholmod_rowfac
+3000: // that are specific to LPDASA.  It is unlikely to be needed by any other
+3001: // application, and is not documented in the CHOLMOD User Guide.
+3002: 
+3003: int cholmod_rowfac_mask
+3004: (
+3005:     // input:
+3006:     cholmod_sparse *A,  // matrix to factorize
+3007:     cholmod_sparse *F,  // used for A*A' case only. F=A' or A(:,f)'
+3008:     double beta [2],    // factorize beta*I+A or beta*I+AA'
+3009:     size_t kstart,      // first row to factorize
+3010:     size_t kend,        // last row to factorize is kend-1
+3011:     int32_t *mask,      // size A->nrow. if mask[i] >= 0 row i is set to zero
+3012:     int32_t *RLinkUp,   // size A->nrow. link list of rows to compute
+3013:     // input/output:
+3014:     cholmod_factor *L,
+3015:     cholmod_common *Common
+
+HEADER /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/_envs/lanm_cholmod_v1/include/suitesparse/cholmod.h:3922-3956
+3922: // CHOLMOD:Supernodal Module
+3923: //==============================================================================
+3924: 
+3925: #ifndef NSUPERNODAL
+3926: 
+3927: // Supernodal analysis, factorization, and solve.  The simplest way to use
+3928: // these routines is via the Cholesky module.  It does not provide any
+3929: // fill-reducing orderings, but does accept the orderings computed by the
+3930: // Cholesky module.  It does not require the Cholesky module itself, however.
+3931: //
+3932: // Primary routines:
+3933: // -----------------
+3934: // cholmod_super_symbolic       supernodal symbolic analysis
+3935: // cholmod_super_numeric        supernodal numeric factorization
+3936: // cholmod_super_lsolve         supernodal Lx=b solve
+3937: // cholmod_super_ltsolve        supernodal L'x=b solve
+3938: //
+3939: // Prototypes for the BLAS and LAPACK routines that CHOLMOD uses are listed
+3940: // below, including how they are used in CHOLMOD.  Only the double methods are
+3941: // listed, but CHOLMOD also uses the corresponding single, single complex, and
+3942: // double complex routines.
+3943: //
+3944: // BLAS routines:
+3945: // --------------
+3946: // dtrsv    solve Lx=b or L'x=b, L non-unit diagonal, x and b stride-1
+3947: // dtrsm    solve LX=B or L'X=b, L non-unit diagonal
+3948: // dgemv    y=y-A*x or y=y-A'*x (x and y stride-1)
+3949: // dgemm    C=A*B', C=C-A*B, or C=C-A'*B
+3950: // dsyrk    C=tril(A*A'), zherk for the double complex case
+3951: //
+3952: // LAPACK routines:
+3953: // ----------------
+3954: // dpotrf   LAPACK: A=chol(tril(A))
+3955: //
+3956: // Requires the Utility module, and two external packages: LAPACK and the BLAS.
+
+HEADER /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/_envs/lanm_cholmod_v1/include/suitesparse/cholmod.h:4009-4029
+4009: // cholmod_super_numeric
+4010: //------------------------------------------------------------------------------
+4011: 
+4012: // Computes the numeric LL' factorization of A, AA', or A(:,f)*A(:,f)' using
+4013: // a BLAS-based supernodal method.  The user need not call this directly;
+4014: // cholmod_factorize is a "simple" wrapper for this routine.
+4015: 
+4016: int cholmod_super_numeric
+4017: (
+4018:     // input:
+4019:     cholmod_sparse *A,  // matrix to factorize
+4020:     cholmod_sparse *F,  // F = A' or A(:,f)'
+4021:     double beta [2],    // beta*I is added to diagonal of matrix to factorize
+4022:     // input/output:
+4023:     cholmod_factor *L,  // factorization
+4024:     cholmod_common *Common
+4025: ) ;
+4026: int cholmod_l_super_numeric (cholmod_sparse *, cholmod_sparse *, double *,
+4027:     cholmod_factor *, cholmod_common *) ;
+4028: 
+4029: //------------------------------------------------------------------------------
+
+READ-ONLY COMMAND ["ldd", "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/_envs/lanm_cholmod_v1/lib/libcholmod.so.5.3.1"]
+	linux-vdso.so.1 (0x00007fffb2fe3000)
+	/home/jwestrob/dns_shim.so (0x00007e83aacef000)
+	libamd.so.3 => /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/_envs/lanm_cholmod_v1/lib/libamd.so.3 (0x00007e83aacdf000)
+	libcolamd.so.3 => /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/_envs/lanm_cholmod_v1/lib/libcolamd.so.3 (0x00007e83aacd6000)
+	libcamd.so.3 => /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/_envs/lanm_cholmod_v1/lib/libcamd.so.3 (0x00007e83aacc8000)
+	libccolamd.so.3 => /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/_envs/lanm_cholmod_v1/lib/libccolamd.so.3 (0x00007e83aacba000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007e83aabbc000)
+	liblapack.so.3 => /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/_envs/lanm_cholmod_v1/lib/liblapack.so.3 (0x00007e83a8550000)
+	libsuitesparseconfig.so.7 => /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/_envs/lanm_cholmod_v1/lib/libsuitesparseconfig.so.7 (0x00007e83a854a000)
+	libgomp.so.1 => /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/_envs/lanm_cholmod_v1/lib/libgomp.so.1 (0x00007e83a84ef000)
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007e83a84ea000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007e83a8200000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007e83aaf29000)
+	libgfortran.so.5 => /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/_envs/lanm_cholmod_v1/lib/libgfortran.so.5 (0x00007e83a7e9e000)
+	libquadmath.so.0 => /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/_envs/lanm_cholmod_v1/lib/libquadmath.so.0 (0x00007e83a84a1000)
+	libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007e83a849c000)
+	libgcc_s.so.1 => /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/_envs/lanm_cholmod_v1/lib/./libgcc_s.so.1 (0x00007e83a846e000)
+
+READ-ONLY COMMAND ["nm", "-D", "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/_envs/lanm_cholmod_v1/lib/libcholmod.so.5.3.1"]
+                 U GOMP_parallel@GOMP_4.0
+                 U dgemm_
+                 U dpotrf_
+                 U dsyrk_
+                 U dtrsm_
+                 U omp_get_max_threads@OMP_1.0
+                 U omp_get_num_threads@OMP_1.0
+                 U omp_get_thread_num@OMP_1.0
+
+Resolved LAPACK: /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/_envs/lanm_cholmod_v1/lib/libopenblasp-r0.3.34.so

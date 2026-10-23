@@ -1,0 +1,73 @@
+{
+  "status": "passed_dry_acetate_force_source_review",
+  "utc": "2026-10-22T06:48:27.768755+00:00",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_force_qualification_v1/REFERENCE.py",
+    "sha256": "ac3da77e473881c4bd97c142b159351c323e8d334ee220897b352c273d78456e"
+  },
+  "panel": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_force_qualification_v1/preparation_v1/PANEL.json",
+    "sha256": "aee6e6fc5c78ccf11e3aa86bb5271aa284bc6007a1460edecfadba3c38703ecf"
+  },
+  "ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_force_qualification_v1/READY.json",
+    "sha256": "d1ce8aac1c313f4998d17ce75f137b6f26beee422848027d983eefc6cc43cbbc"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_force_qualification_v1/SPEC.md",
+    "sha256": "308ec3f3f43855b864b2c2efc4d05a46a58f0df406020bd060d11ee67d89ecdb"
+  },
+  "inputs": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_force_qualification_v1/INPUTS.json",
+    "sha256": "8149a8a3260c3d2475c20165c1a2b1da7e39978697bc6de98c71bd4a648aaeb0"
+  },
+  "preflight": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_force_qualification_v1/preparation_v1/PREFLIGHT.json",
+    "sha256": "7c0de032a97bd083bfeea8dfa66d2948f402368e248cb4ede865d5076d0ac7cd"
+  },
+  "author_controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_force_qualification_v1/saved_controls_v1/RESULT.json",
+    "sha256": "ff4882087d18049de3291b0b925439696e8d8135bc86d7c8755eeca087bb3f52"
+  },
+  "author_controls_read_not_rerun": 24,
+  "independent_preparation_checks": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_force_qualification_v1/independent_review_v1/PREPARATION_CHECKS.json",
+    "sha256": "dbc3532622e09b36ad890106188889b8808cbf794307773a774bac2ad0a082cd"
+  },
+  "independent_checks_passed": 153,
+  "reviewer_source": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_force_qualification_v1/independent_review_v1/REVIEW_PREPARED.py",
+    "sha256": "e9f8190cac5c42735f017ecd8d417a9200abe0ef27a60f48b7f56d81414aec40"
+  },
+  "report": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_force_qualification_v1/independent_review_v1/REPORT.md",
+    "sha256": "45de8e15a42f3d8a8398ef3290a0bc2781278ee9e8fc1e9bd15e49c300a4c695"
+  },
+  "launcher": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_force_qualification_v1/RUN.sbatch",
+    "sha256": "a39184461bd8e7ff27b8f072703c50e3f731b5d21ac1eaec3b3fde766e31ba17"
+  },
+  "source_and_ready_pins_verified": 12,
+  "checks": {
+    "exact_16_prepared_inputs": true,
+    "exact_two_old_raw_force_replays": true,
+    "radial_rotation_sign_units": true,
+    "EnGrad_only_removed_from_copied_deck": true,
+    "electronic_D4_final_engrad_closure": true,
+    "XC_COSX_PostSCFGGA_metadata_retained": true,
+    "two_step_18_checks_original_resolution": true,
+    "scout4_before_remaining12": true,
+    "complete_missing_denominator": true
+  },
+  "remaining_limits": [
+    "This is source/preparation review; no displaced native result is admitted.",
+    "EnGrad/SP numerical-surface equivalence is unproven before the actual two-step diagnostic.",
+    "Printed SCF residual flags and active energy stopping remain visible; no gate relaxation.",
+    "Root owns release/submission and actual scout review."
+  ],
+  "blockers": [],
+  "new_molecular_calls": 0,
+  "held_outcomes_read": false,
+  "candidate_fit_outcomes_read": false,
+  "local_threads": 1
+}

@@ -1,0 +1,63 @@
+{
+  "status": "declared_finite_tiny_numerical_qualification_before_tests",
+  "maximum_dimension": 6,
+  "maximum_numerical_factorization_attempts": 64,
+  "threads": 1,
+  "solver": "Installed pinned CHOLMOD/scikit-sparse0.5.0, fixed simplicial LLT and AMD ordering if exposed; exact actual API/settings recorded before tests.",
+  "threshold": {
+    "epsilon": 1e-06,
+    "operator": "K=A-epsilon*U*I with prospectively supplied manufactured upper bound U",
+    "meaning": "Numerical sufficient relative-spectral check; no physical margin or interval-proof prerequisite"
+  },
+  "arithmetic_criteria": {
+    "symmetry_max_absolute": 1e-10,
+    "dense_eigen_residual": "maxabs(A V-V diag(lambda))<=1e-10*max(1,lambda_max)",
+    "dense_orthogonality_max_absolute": 1e-10,
+    "factor_backward_error": "norm_inf(P K P^T-L L^T)/max(1,norm_inf(K)) <= 100*n*machine_epsilon",
+    "solve_backward_error": "norm_inf(K x-b)/max(tiny,norm_inf(K)*norm_inf(x)+norm_inf(b)) <=100*n*machine_epsilon",
+    "rank3_check": "Compare both small Schur matrix decision and final updated matrix/factor to explicit dense reference; never reuse a failed mutable update.",
+    "roundoff_boundary": "If dense shifted eigenmargin lies within100*n*eps*max(1,norm_inf(A)), label test decision numerically unresolved regardless raw backend success; this resolution statement is not a changed physical threshold.",
+    "no_forward_error_claim_from_backward_error": true
+  },
+  "manufactured_cases": [
+    "diagonal6 SPD",
+    "coupled3 SPD with negative Gershgorin bound",
+    "Hadamard-rotated4 SPD",
+    "diagonal4 threshold-above1.01e-6 with U1",
+    "diagonal4 threshold-below.99e-6 with U1",
+    "diagonal2 exact threshold equality",
+    "diagonal2 threshold plus machine epsilon",
+    "singular2",
+    "indefinite2",
+    "B_indefinite2",
+    "sameB_plus_fixed_PSD_R2 positive"
+  ],
+  "rank3_cases": {
+    "base_diagonal": [
+      0.5,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "selector": "first3 coordinates",
+    "beta_values": [
+      -0.25,
+      -0.75,
+      0.5,
+      0.0
+    ],
+    "U": 6
+  },
+  "input_error_cases": [
+    "nonsquare",
+    "asymmetric above inherited bound",
+    "NaN",
+    "infinity",
+    "complex unsupported"
+  ],
+  "genuine_backend_failure": "Direct nonpositive factorization and failed rank3 downdate must report actual backend failure/status; preserve returned/partial details, do not reuse object.",
+  "permitted_data": "Manufactured matrices only. No saved vacuum matrix, BIO box, PME or native call.",
+  "on_failure": "Retain actual result, no criteria change or broader source/dependency campaign."
+}

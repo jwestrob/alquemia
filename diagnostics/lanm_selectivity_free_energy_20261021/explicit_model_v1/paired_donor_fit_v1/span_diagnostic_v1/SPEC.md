@@ -1,0 +1,13 @@
+# Saved donor residual-span diagnostic
+
+After the bounded donor run is terminal, read its immutable result and the exact pinned objective, training data and rigid-body helper. No native calls, fitting, candidate selection, new thresholds or reserved outcomes. One local numerical thread; write only this diagnostic's new output directory.
+
+Use the last actually evaluated Jacobian and its recorded origin. Rebuild its eight columns from the 16 admitted parameter probes and their actual normalized widths; replay the linked origin, derivative, trial and selected scores with the unchanged objective. Explicitly report whether that origin equals the final selected vector. A projection at a different origin must never be presented as a selected-point projection.
+
+Use the original least-squares relative cutoff `rcond=1e-6`. Report singular values, retained rank, the resulting absolute cutoff, the unrestricted least-squares direction and residual projection. Report the saved trust/box-feasible scaled-GN and bounded-LS directions and all four actual half/full trial results. Compare their saved linear predictions against actual objective changes and residual errors. Preserve the original selection and stopping reason. The unrestricted direction is an unevaluated local linear diagnostic, with its bound/trust violations explicit.
+
+The residual ordering is the exact objective's 27 energy entries (12 balanced exchanges, three wet-minus-dry differences, 12 individual radial works), then the La, Dy and paired rigid-response blocks. Each force block concatenates the nine hydrated and three dry fixtures in `OBJECTIVE.DONOR` order. Global force segments are `sqrt(0.25/12)` times the unchanged rigid-body helper residual; a segment norm corresponds to rigid RMS `4*sqrt(12)*norm(segment)` in kcal/mol/Å. Layout reconstruction must match the stored residual vector. The six paired radial-work controls are absent from the loss and remain actual controls only.
+
+Decompose the origin and projected weighted squared residual into the four objective blocks, energy subblocks, individual force fixtures and wet/dry partitions. Keep wet-minus-dry energy cycles in a separate mixed partition. These are contributions to a correlated development loss, not independent observations or an attribution of physical energy. Projected fixture RMS values are linear predictions, not passed accuracy controls; no projected maximum-component pass is inferred.
+
+Describe remaining residual outside the local retained Jacobian span only. Rank, local saturation or a budget stop cannot establish global parameter-family impossibility, protein transfer, reference accuracy or production readiness. Actual per-fixture controls remain authoritative.

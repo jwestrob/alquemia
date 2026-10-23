@@ -1,0 +1,21 @@
+{
+  "status": "declared_source_only_scheduling_recovery",
+  "utc": "2026-10-23T06:48:53.669454+00:00",
+  "question": "Can the exact frozen 1/16 witness run under the available standard12CPU allocation with11 independent native workers plus controller?",
+  "original_submission": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/boundary_fraction_witness_v1/run_v1/SUBMISSION.json",
+    "sha256": "0856e163954b8ade7c2b1c895cfe3cb5682face3fe7c871be8d1fd0b729cb5f5"
+  },
+  "allowed_changes": [
+    "Versioned standard12CPU wrapper/allocation validation and truthful resource/cost metadata",
+    "Scoped actual pool, local semaphore and snapshot workers12 to11",
+    "Explicit new resource helper binding rather than inherited fitcfg helper",
+    "Metadata-only bridge to exact existing scalar preparation/witness; no scalar replay"
+  ],
+  "invariants": [
+    "Identical frozen1/16 point,46cells,56program ceiling",
+    "Identical native inputs/binaries,300s per-program cap,scientific sums/gates",
+    "OriginalAlmostSolved provenance retained; nofit/retry/probe/tolerancechange"
+  ],
+  "execution": "Source-only now. Root separately reviews before release. Preserve20734; replace only if stillunstartedpending, terminal cancellation confirmed before any replacement submission. If it starts, reuse and abandon replacement."
+}

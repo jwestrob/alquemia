@@ -1,0 +1,95 @@
+{
+  "status": "prepared_saved_finite_screen_not_executed",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/finite_screen_v1/SCREEN_v2.py",
+    "sha256": "8549203a1a41146365e44eda3905b30738b66da1b64b71719af12ebdd75cf62d"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/finite_screen_v1/SPEC.md",
+    "sha256": "3e613b408c17dfdee31a49de828e230d47c87692a45d486a3882828094a58539"
+  },
+  "configuration_prepare": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/finite_screen_v1/CONFIG_PREPARE_v2.json",
+    "sha256": "a36779fe1de944ebf30502369d7bdd3a185008fc5724a17a432b5d44e79a9010"
+  },
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/finite_screen_v1/preparation_v2/MANIFEST.json",
+    "sha256": "c1728cf38b49968b4338713946a322c0fbe1d1d6ae0e4b19e82ab9c62703556a"
+  },
+  "configuration_run": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/finite_screen_v1/CONFIG_RUN.json",
+    "sha256": "c96498fabdbe8aeae0a80166f53540fc9bc71d2ef44911c39099f97475c39d27"
+  },
+  "controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/finite_screen_v1/source_controls_v1/RESULT.json",
+    "sha256": "f65f8c75dfb6f8e837b348b1be88ff951d2ff69ec0d58aaa0b959c17c47da81a"
+  },
+  "control_implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/finite_screen_v1/CONTROLS.py",
+    "sha256": "0509dae98a17648aac48027fb731acd8e3c708d33535cb9daadb6e9844e53c62"
+  },
+  "full_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/local_response_repair_v1/operator_fixture_inventory_v1/export_runner/run_v1/execution/RESULT.json",
+    "sha256": "6179da5aa3914c227ee4b9e80958031907dd09e8eea4190396cc37dfff93da2d"
+  },
+  "full_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/local_response_repair_v1/operator_fixture_inventory_v1/export_runner/independent_actual_review_v1/REVIEW.json",
+    "sha256": "9b14871f0badcbd9388338103d1236c6e6bd5ef860d44a79d58387503b1c89b8"
+  },
+  "grid": {
+    "a": [
+      -0.1,
+      0,
+      0.1
+    ],
+    "l": [
+      -0.38508176697769975,
+      0,
+      0.38508176697769975
+    ],
+    "gmax": 1.8000000000002228,
+    "L": 0.38508176697769975,
+    "points_per_metal": 9,
+    "paired_compositions": 81
+  },
+  "counts": {
+    "fixtures": 54,
+    "static": 46,
+    "grid_per_metal": 9,
+    "matrix_states": 486,
+    "paired_compositions": 81,
+    "force_checks_unevaluated": 15
+  },
+  "command": [
+    "python",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/finite_screen_v1/SCREEN_v2.py",
+    "run",
+    "--config",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/finite_screen_v1/CONFIG_RUN.json",
+    "--out",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/finite_screen_v1/run_v1/execution"
+  ],
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OMP_THREAD_LIMIT": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "preparation_cost": {
+    "wall_seconds": 2.1902257720939815,
+    "CPU_seconds": 1.694148024,
+    "threads": 1
+  },
+  "new_native_calls": 0,
+  "actual_screen_executed": false,
+  "fit_performed": false,
+  "selected_point": null,
+  "root_owns_execution": true,
+  "limitations": [
+    "Four-amplitude exact Dy sign obstruction already known; no fit to rediscover it.",
+    "Discrete9-point results do not reject the continuous family/domain.",
+    "Fixed short-range energy may contain prior-fit compensation; retain energy/moment tradeoffs.",
+    "All15 candidate force checks unevaluated; no new physical agreement threshold."
+  ]
+}

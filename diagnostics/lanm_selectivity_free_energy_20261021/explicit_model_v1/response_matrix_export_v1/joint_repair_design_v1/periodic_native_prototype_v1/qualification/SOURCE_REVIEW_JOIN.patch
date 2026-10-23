@@ -1,0 +1,11 @@
+--- /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/sampling_cpu_refactor_v1/qualification/RUN_LOGIN.py
++++ /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_prototype_v1/qualification/RUN_LOGIN.py
+@@ -217,7 +217,7 @@
+     m=read(cfg['manifest']);require(m['implementation']==cfg['implementation'] and m['plan']==cfg['plan'] and m['new_native_calls']==0,'Preparation binding')
+     require(cfg['root_authorized'] is True and cfg['fit'] is False and cfg['physical_qualification'] is False,'Numerical-only root binding required')
+     for k in ('analyze','testgrad','source_manifest','build_receipt','source_audit'):verify(cfg[k])
+-    audit=read(cfg['source_audit']);require(audit['status']=='passed_local_response_native_source_review' and audit['source_manifest']==cfg['source_manifest'],'Exact native source review join')
++    audit=read(cfg['source_audit']);require(audit['status']=='passed_periodic_native_prototype_source_review' and audit['source_manifest']==cfg['source_manifest'],'Exact native source review join')
+     build=read(cfg['build_receipt']);require(build['status']=='complete' and build['manifest']==cfg['source_manifest'] and all(build['executables'][k]==cfg[k] for k in ('analyze','testgrad')),'Completed isolated build/source/executables')
+     require(cfg['maximum_native_programs']==MAX_CALLS and cfg['maximum_internal_FD_energies']==MAX_FD and cfg['workers']==WORKERS,'Fixed native limits')
+     require(set(m['rows'])==set(CELLS) and [{k:v for k,v in j.items() if k!='input'} for j in m['programs']]==inventory(),'Full exact prospective inventory')

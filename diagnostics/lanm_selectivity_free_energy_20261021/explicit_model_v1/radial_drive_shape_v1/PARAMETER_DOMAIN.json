@@ -1,0 +1,38 @@
+{
+  "status": "prospective_radial_drive_domain",
+  "parent_domain": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/PARAMETER_DOMAIN.json",
+    "sha256": "a9e53eb59749b45907343e72fe85290e13402c9a20326240861a1028b927799c"
+  },
+  "original12_unchanged": true,
+  "append_order": [
+    "La_radial_drive",
+    "Dy_radial_drive"
+  ],
+  "bounds": [
+    [
+      -1,
+      1
+    ],
+    [
+      -1,
+      1
+    ]
+  ],
+  "native_keyword": "POLAR-RADIAL-DRIVE <500|501> 36 e",
+  "units": "dimensionless",
+  "center": [
+    0,
+    0
+  ],
+  "normalized_definition": "z=(e+1)/2",
+  "normalized_probe_step": 0.005,
+  "actual_e_probe_values": [
+    -0.01,
+    0.01
+  ],
+  "normalized_trust_half_width": 0.025,
+  "physical_e_trust_half_width": 0.05,
+  "interpretation": "Prospective development box, no global force/stability/physical accuracy claim.",
+  "scale_rationale": "e uses the same dimensionless prefactor scale as original a,b; its multiplier psi is dimensionless and fixed by r0=2.50A. Bounds [-1,1] are a prospective shared comparison scale, not a fitted/validated prior. At r0 its Jacobian is 6e phi(r0) nn^T; local trust \u00b1.05 restricts that change. A failed local test cannot reject larger-domain or different-shape hypotheses globally."
+}

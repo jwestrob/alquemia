@@ -1,0 +1,47 @@
+{
+  "status": "design_review_passed_native_source_and_preparation_pending",
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_reference_uncertainty_v1/SPEC.md",
+    "sha256": "448fcb5f08ad9eec3ca56609a023bfe48e9f4f73033b309c8541c4895252b204"
+  },
+  "feasibility": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/coordination_reference_uncertainty_v1/FEASIBILITY.md",
+    "sha256": "2a71faadba69bba2a1234c22d34795a406eb4944d4070f2bb5ff6204065a3196"
+  },
+  "inventory": {
+    "TightPNO_small_controls": 18,
+    "TightPNO_full_clusters": 4,
+    "tighter_full_clusters": 4,
+    "maximum_unique_cells": 26
+  },
+  "algebra": "C=E(DyW9)-E(LaW9)-E(DyW8)+E(LaW8); own-ion and matched free-water contributions cancel for the raw contrast. No new CC/PBE0 mixed CP or B decomposition is permitted.",
+  "electron_inventory": {
+    "water_complex": 18,
+    "donor_complex": 40,
+    "ion_in_ghost_basis": 8,
+    "water_fragment": 10,
+    "donor_fragment": 32,
+    "W8": 88,
+    "W9": 98
+  },
+  "limits": [
+    "Eight cluster calculations provide two complete method-consistent raw contrasts and four endpoint shifts.",
+    "Small canonical controls assess combined RI/local errors on those fixtures, not cluster CP/B, basis completeness, omitted explicit f/SOC states or a rigorous physical uncertainty.",
+    "Tighter pair/PNO/local-fit cutoffs with unchanged domain threshold test sensitivity rather than convergence.",
+    "Actual ghost/ECP/AuxC/native correlated-electron and core/semicore inventories must be admitted; source keywords alone are insufficient."
+  ],
+  "primary_manual_confirmation": [
+    {
+      "url": "https://orca-manual.mpi-muelheim.mpg.de/contents/modelchemistries/mdci.html",
+      "findings": "DLPNO-CCSD(T1) selects iterative triples; TriTolE is configurable. DLPNO supports conventional integral handling. Chemical core and valence spaces can localize separately even when electrons are correlated; ECP-replaced electrons cannot be correlated."
+    },
+    {
+      "url": "https://orca-manual.mpi-muelheim.mpg.de/contents/essentialelements/basisset.html",
+      "findings": "AuxC serves post-SCF RI correlation. AutoAux can populate correlation slots, and explicit NewAuxCGTO is supported. Real/ghost auxiliary equality and numeric expansions still require actual output verification."
+    }
+  ],
+  "blocking_findings": [],
+  "new_native_calls": 0,
+  "submissions": 0,
+  "author_files_edited": false
+}

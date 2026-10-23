@@ -1,0 +1,13 @@
+# Reserved validation:24 fixed cells, no scoring release
+
+Freeze twelve configurations, each with matched La/Dy coordinates, before any parameter optimization. This preparation may inspect geometry and native parameter tables only. **Do not open future native/model energy or force outputs for these cells until the candidate parameter file and fit decision are frozen.** Root owns any subsequent submissions and release. These cells are not training, including any unfavorable outcomes.
+
+- Aquo8: rotate both hydrogens of every water by−15° or+15° about an axis through its unchanged oxygen. Axis is the normalized cross product of the metal-to-oxygen unit vector and global z; use global x only if its norm is below0.1. Preserve all oxygen/metal coordinates and water covalent geometry. Two configurations/four cells.
+- Hydrated mono-acetate, bi-acetate and acetamide: rotate the complete ligand rigidly by−15° or+15°, retaining metal and all waters. Center is the sole coordinating oxygen, or the two coordinating oxygens' midpoint for bidentate acetate. Axis uses the same cross-product convention from metal to this center. Six configurations/twelve cells.
+- ACE–Asp3/Glu11/Asn5/Trp9: copy the eight reviewed cap-repaired V3 fixtures exactly. V2 is withdrawn and must never substitute for V3. Four configurations/eight cells.
+
+Use the existing paired physical charges/multiplicities, covalent graphs, atom orders and symbols. Metal type IDs remain provenance, not an executable protein Hamiltonian selection. All protein local multipoles and constructed-cap limitations remain explicit.
+
+Gate rigid transforms by internal-distance preservation within1e−9 Å after12-decimal serialization and exact immobility of all unrotated coordinates. For new hydrated orientations, require ligand–water heavy contacts≥1.8 Å and any H-containing contact≥1.2 Å. Apply those same thresholds between distinct waters for aquo orientations. A geometry failing contact screening remains a declared unavailable validation slot; do not choose another axis/sign/angle or discard it silently. Preserve all24 IDs and matched coordinates. V3's source/contact/typing evidence supplies the unchanged protein fixture gate.
+
+Prepare a24-cell frozen-f reference manifest using unchanged `REFERENCE.py` and LaECP46/DyECP55 assets/effective singlets. This creates no native result and does not itself authorize scoring or validate the reference method. Retain physical La1/Dy6 labels separately. Reference/state/derivative credibility and the final parameter candidate must be reviewed before opening validation outcomes. No model calls, minimization, MD, reorientation search or parameter fitting occur here.

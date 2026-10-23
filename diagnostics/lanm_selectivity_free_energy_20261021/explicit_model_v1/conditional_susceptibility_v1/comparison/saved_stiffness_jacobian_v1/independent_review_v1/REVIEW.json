@@ -1,0 +1,153 @@
+{
+  "status": "passed_saved_stiffness_jacobian_source_review",
+  "reviewer": "/root/exchange_experimental_target",
+  "created_utc": "2026-10-22T04:40:24.817046+00:00",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/conditional_susceptibility_v1/comparison/saved_stiffness_jacobian_v1/CALCULATE.py",
+    "sha256": "b97cab98cdaeed65ae76552d61a58e6103e2db6e9fd5ad8429b5c7e9d25356f2"
+  },
+  "configuration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/conditional_susceptibility_v1/comparison/saved_stiffness_jacobian_v1/CONFIG.json",
+    "sha256": "c106e6fe709f04a97ebe7c86ea4c1aba81e7cc5e40c67198a2093a5c0ec30b70"
+  },
+  "declaration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/conditional_susceptibility_v1/comparison/saved_stiffness_jacobian_v1/DECLARATION.md",
+    "sha256": "aba43927932d9fb9939dd076ff41500cf74606a5c856a93bbb30f476ac7f52b6"
+  },
+  "ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/conditional_susceptibility_v1/comparison/saved_stiffness_jacobian_v1/READY.json",
+    "sha256": "a7ee70087d728544fca21127963f369fda19d17e3d564d88de026f7fa1ff8839"
+  },
+  "design": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/conditional_susceptibility_v1/comparison/INTERPRETATION.md",
+    "sha256": "d2bf6667cf8645cf8fffbd6727c93f2692188569c9ea34431b5e8485ec5b8773"
+  },
+  "model_actual_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/conditional_susceptibility_v1/model/independent_actual_review_v1/REVIEW.json",
+    "sha256": "7434a6f0de234a1951bdc605c419fb1a3d46842c5aad443ada6e394ea1a4fcc7"
+  },
+  "comparison_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/conditional_susceptibility_v1/comparison/run_v1/execution/RESULT.json",
+    "sha256": "41dd4eb34c99d38295ac2efadb0ef63b2607e917c6efbe9a4c64d0bae36c5d4d"
+  },
+  "verified_pins": [
+    "ready.implementation",
+    "ready.configuration",
+    "ready.declaration",
+    "configuration.model_result",
+    "configuration.model_review",
+    "configuration.model_manifest",
+    "configuration.implementation",
+    "configuration.declaration",
+    "configuration.design",
+    "configuration.comparison_result",
+    "configuration.native_sources.induce",
+    "configuration.native_sources.epolar",
+    "configuration.native_sources.kpolar",
+    "configuration.native_sources.initprm",
+    "configuration.native_sources.prmkey",
+    "configuration.native_sources.damping"
+  ],
+  "metadata_joins": [
+    {
+      "state": "La_dimer",
+      "atoms": 4,
+      "types": [
+        500,
+        36,
+        37,
+        37
+      ],
+      "parent_atom_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "water_O_alpha_A3": 0.837,
+      "resolved_source": "parameters"
+    },
+    {
+      "state": "La_trimer",
+      "atoms": 7,
+      "types": [
+        500,
+        36,
+        37,
+        37,
+        36,
+        37,
+        37
+      ],
+      "parent_atom_indices": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        8,
+        9
+      ],
+      "water_O_alpha_A3": 0.837,
+      "resolved_source": "parameters"
+    },
+    {
+      "state": "Dy_dimer",
+      "atoms": 4,
+      "types": [
+        501,
+        36,
+        37,
+        37
+      ],
+      "parent_atom_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "water_O_alpha_A3": 0.837,
+      "resolved_source": "parameters"
+    },
+    {
+      "state": "Dy_trimer",
+      "atoms": 7,
+      "types": [
+        501,
+        36,
+        37,
+        37,
+        36,
+        37,
+        37
+      ],
+      "parent_atom_indices": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        8,
+        9
+      ],
+      "water_O_alpha_A3": 0.837,
+      "resolved_source": "parameters"
+    }
+  ],
+  "review_findings": {
+    "derivation": "For the exact equal-dual, fixed-geometry linear baseline, xau=Delta(uDebye)/(2h*DEBYE*BOHR). The native field conversion gives dchi/dtheta=-g*xau^T*Htheta,au*xau with g=K/(HARTREE*BOHR), equivalent to -K*BOHR^2/HARTREE times sum[f/alpha_A3*(n dot xau)^2]. b and c signs/scaling are correct; c multiplies eta and a is identically zero.",
+    "dual_applicability": "Intact OHH graphs and frozen water polarization groups eliminate intrawater d/p fields equally; separated groups have equal factors. Both native right-hand sides receive the same uniform field. This permits uind-only response here, without generalizing to unequal dual fields.",
+    "raw_and_alpha": "Exact admitted19 result/manifest/review and complete comparison are pinned. Raw induced filenames/pins, site count/order/native names and saved vectors are checked. XYZ type order/parent indices and all positive key-over-prm alphas are retained; actual type36 alpha=.837 A^3 in all four rows.",
+    "rounding": "Per-site half-last-digit bounds propagate through centered response, radial dot products, squares, both derivatives and absolute sums for derived rows. They are printing bounds only, not bounds on solver or reference error.",
+    "rank": "Two exact zero drive columns remain. Per-metal triangular b/c blocks and nested c=0 stiffness columns give the correct singular values/rank convention; repeated steps are reported independently without adding physical rank.",
+    "envelopes": "min(coefficient-box triangle bound, per-site sigma triangle bound) is a valid conservative first-order absolute bound. The same construction with absolute coefficient propagation is valid for derived contrasts, and restriction to b columns preserves the nested-four bound. It neither selects coefficients nor certifies finite-parameter feasibility.",
+    "denominator_and_failures": "Four fixed states, two exact existing steps and six parameter columns; all derived comparison rows retained. Missing pins/shape/order/induction/closure reject the saved calculation. CLI preserves any pre-existing output directory and records failures on fresh attempts."
+  },
+  "blocking_issues": [],
+  "calculation_executed_by_reviewer": false,
+  "new_native_calls": 0,
+  "new_tests": 0,
+  "local_threads": 1,
+  "pin_and_metadata_wall_seconds": 0.08359104604460299,
+  "pin_and_metadata_CPU_seconds": 0.06865634899999999
+}

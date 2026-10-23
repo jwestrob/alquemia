@@ -1,0 +1,166 @@
+--- /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_donor_susceptibility_v1/REFERENCE.py
++++ /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_donor_susceptibility_v1/consistent_grid_v2/REFERENCE.py
+@@ -1,21 +1,23 @@
+ #!/usr/bin/env python3
+-"""Ten fixed dry donor SP fields; qualified native/parser/estimator reuse, staged 5+5."""
++"""Uniform matching-grid donor SP fields; original numerical gates, Dy5 then La5."""
+ import argparse, copy, importlib.util, json, math, os, re, shutil, socket, subprocess, sys, time
+ from pathlib import Path
+ HERE=Path(__file__).resolve().parent
+ 
+ def module(path,name):
+     s=importlib.util.spec_from_file_location(name,path); m=importlib.util.module_from_spec(s);s.loader.exec_module(m);return m
+-old=module(HERE.parent/'conditional_susceptibility_v1/REFERENCE.py','dry_field_old')
+-dry=module(HERE.parent/'dry_acetate_force_qualification_v1/REFERENCE.py','dry_field_native')
++old=module(HERE.parent.parent/'conditional_susceptibility_v1/REFERENCE.py','dry_grid_old')
++dry=module(HERE.parent.parent/'dry_acetate_force_qualification_v1/REFERENCE.py','dry_grid_native')
+ b=dry.b;read=old.read;save=old.save;canonical=old.canonical
+ prop=old.prop;moment=old.moment;token_roundoff=old.token_roundoff
+-PROTOCOL='dry_donor_susceptibility_v1';METALS=('La','Dy');THREADS=old.THREADS
++PROTOCOL='dry_donor_susceptibility_consistent_grid_v2';METALS=('La','Dy');THREADS=old.THREADS
+ WS=b.ROOT/'workspaces/lanm_selectivity_free_energy_20261021'
+ INVENTORY=WS/'reference_chemistry_v1/dry_donor_susceptibility_v1/SOURCE_INVENTORY.json'
+ INVENTORY_SHA='cfa23743f3431468faa4e92d13d53c64f518a19d8e233edad4dc927f13a12221'
+ MODEL_REVIEW=WS/'explicit_model_v1/paired_donor_fit_v1/dry_acetate_electrical_response_v1/independent_actual_review_v1/REVIEW.json'
+ MODEL_REVIEW_SHA='f21ff157ae99273ef7df326dca64a5647852e79492ed4c6839cd7c0e6875c122'
++FROZEN_INPUTS={'prior_adapter': {'path': '/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_donor_susceptibility_v1/REFERENCE.py', 'sha256': '648a5dd68db9ab0222a2b44d07d7c522019cd3d0867782e6c64c803bbfc73b45'}, 'prior_panel': {'path': '/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_donor_susceptibility_v1/preparation_v2/PANEL.json', 'sha256': '0d9e67bff0d937b6b543e8912bdb9e240e20514ea83c7a546efb16730dd149aa'}, 'prior_specification': {'path': '/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_donor_susceptibility_v1/SPEC.md', 'sha256': 'd9f238c57e7a1009d409d510832028a23912ca617142b3815fdfc76e6f2e5a44'}, 'grid_evidence': {'path': '/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_donor_susceptibility_v1/saved_grid_recovery_review_v1/EVIDENCE.json', 'sha256': 'c5a2067df5e8f3767f97cea8dfcbcb7ac528ef780d4bcb00e419fb181e1f92aa'}, 'grid_evidence_report': {'path': '/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_donor_susceptibility_v1/saved_grid_recovery_review_v1/REPORT.md', 'sha256': '7baced77113108e97b639c6779ced631cf624dd74ae6924d3bbb0490d6e8dd06'}, 'saved_diagnosis': {'path': '/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_donor_susceptibility_v1/saved_dy_diagnosis_v1/actual_v1/RESULT.json', 'sha256': '99997dcec0de2645c4d6ef30b664574186a97dbdecc69ced1a422ad6b26aaa3c'}, 'failed_collection': {'path': '/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_donor_susceptibility_v1/full_collection_v1/result/RESULT.json', 'sha256': 'ef93644f36fc66ba2fb279db84a4b6b647348ef67badaae5dfa272b40256bbbe'}, 'grid_parser': {'path': '/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_coupled_mechanics_20261017/mex_dft/consistent_grid_v1/CONSISTENT_GRID.py', 'sha256': '8258e2126cb30b4aa0f77afa40043d50895a31633fdee1c4cfde74a74320b1cf'}}
++grid=module(b.verify(FROZEN_INPUTS['grid_parser']),'dry_grid_fingerprint')
+ FIELDS=dict(zero=0.,**old.FIELDS)
+ HELPERS=dict(old_field=Path(old.__file__),dry_native=Path(dry.__file__),**old.HELPERS,
+              dry_amide=Path(dry.h.__file__),dry_water=Path(dry.w.__file__))
+@@ -23,11 +25,12 @@
+ 
+ def default_config():
+     b.check(b.pin(INVENTORY)['sha256']==INVENTORY_SHA,'Frozen design inventory changed')
+-    inv=read(b.pin(INVENTORY));b.check(inv['specification']==b.pin(HERE/'SPEC.md'),'Design specification changed')
++    inv=read(b.pin(INVENTORY));b.check(inv['specification']==FROZEN_INPUTS['prior_specification'],'Original design specification changed')
++    for value in FROZEN_INPUTS.values():b.verify(value)
+     b.check(b.pin(MODEL_REVIEW)['sha256']==MODEL_REVIEW_SHA,'Model actual review changed')
+-    return dict(protocol=PROTOCOL,implementation=b.pin(__file__),specification=inv['specification'],source_inventory=b.pin(INVENTORY),
++    return dict(protocol=PROTOCOL,implementation=b.pin(__file__),specification=b.pin(HERE/'SPEC.md'),source_inventory=b.pin(INVENTORY),
+         model_actual_review=b.pin(MODEL_REVIEW),orca=inv['centers']['La']['original_orca'],run_wrapper=b.pin(HERE/'RUN.sbatch'),
+-        **{k:b.pin(v) for k,v in HELPERS.items()})
++        **{k:b.pin(v) for k,v in HELPERS.items()},**FROZEN_INPUTS)
+ 
+ 
+ def config_check(cfg):
+@@ -41,6 +44,7 @@
+ def field_line(c):return ' EField '+','.join(f'{x:.17g}' for x in c['field_vector_au'])
+ def field_block(c):return field_line(c)+'\n EFieldOrigin 0.0,0.0,0.0\n'
+ PROPERTY_BLOCK='%elprop\n Dipole true\n Origin 0.0,0.0,0.0\nend\n'
++METHOD_BLOCK='%method\n AngularGridX 2,4,4\n IntAccX -1,-1,-1\nend\n'
+ 
+ def base_deck(p,c,ranks,maxcore):
+     original=p['centers'][c['metal']]['zero_EnGrad_input']
+@@ -51,16 +55,20 @@
+ 
+ def deck(p,c,ranks,maxcore):
+     text=base_deck(p,c,ranks,maxcore)
+-    b.check(text.count('%scf\n')==1 and 'EField' not in text and '%elprop' not in text,'Original field/property recipe differs')
+-    return text.replace('%scf\n','%scf\n'+field_block(c),1).replace('* xyzfile ',PROPERTY_BLOCK+'* xyzfile ',1)
++    b.check(text.count('%scf\n')==1 and 'EField' not in text and '%elprop' not in text and '%method' not in text and 'DoEQ' not in text,'Original field/property/grid recipe differs')
++    return text.replace('%scf\n','%scf\n'+field_block(c),1).replace('* xyzfile ',METHOD_BLOCK+PROPERTY_BLOCK+'* xyzfile ',1)
+ 
+ 
+ def cells(inv):
+-    out=[]
++    evidence=read(FROZEN_INPUTS['grid_evidence']);out=[]
+     for row in inv['cells']:
+         c=dry.h.metadata(inv['centers'][row['metal']]['geometry']);c.update(copy.deepcopy(row))
+         c['expected_effective_nuclear_charges']=inv['centers'][row['metal']]['expected_effective_nuclear_charges']
+         c['expected_aux_J_basis_functions']=inv['centers'][row['metal']]['expected_aux_J_functions']
++        e=evidence['current_failed_native_rows'][c['cell_id']]
++        c['original_grid_fingerprints']=e['grids']
++        c['expected_grid_fingerprints']=e['expected_matching_recovery_grids']
++        b.check(c['expected_grid_fingerprints']==dict(c['original_grid_fingerprints'],grid2=c['original_grid_fingerprints']['grid3']),'More than grid2 changes')
+         out.append(c)
+     return out
+ 
+@@ -86,8 +94,8 @@
+     out.mkdir(parents=True,exist_ok=False);(out/'inputs').mkdir()
+     p=dict(protocol=PROTOCOL,adapter=cfg['implementation'],configuration=b.pin(config),specification=cfg['specification'],
+         source_inventory=cfg['source_inventory'],orca=cfg['orca'],centers=inv['centers'],old_EnGrad_context=zeros,
+-        field_direction_lab=inv['field_direction_lab'],cells=cells(inv),scout_cell_ids=inv['first_stage_ids'],remaining_cell_ids=inv['remaining_stage_ids'],
+-        maximum_native_calls=10,ranks=4,nodes=1,run_wrapper=cfg['run_wrapper'],model_actual_review=cfg['model_actual_review'],**{k:cfg[k] for k in HELPERS})
++        field_direction_lab=inv['field_direction_lab'],cells=cells(inv),scout_cell_ids=inv['remaining_stage_ids'],remaining_cell_ids=inv['first_stage_ids'],
++        maximum_native_calls=10,ranks=4,nodes=1,run_wrapper=cfg['run_wrapper'],model_actual_review=cfg['model_actual_review'],**{k:cfg[k] for k in HELPERS},**{k:cfg[k] for k in FROZEN_INPUTS})
+     for c in p['cells']:
+         f=out/'inputs'/(c['cell_id']+'.inp');f.write_text(deck(p,c,4,3000));c['template_input']=b.pin(f)
+     pp=save(out/'PANEL.json',p);v=validate(pp['path']);v.update(old_central_raw_replays=2,old_SP_zeros_reused=0,
+@@ -97,10 +105,10 @@
+ 
+ def load(path):
+     p=json.loads(Path(path).read_text());cfg=read(p['configuration']);config_check(cfg);inv=read(cfg['source_inventory'])
+-    for k in ('specification','source_inventory','orca','run_wrapper','model_actual_review',*HELPERS):b.check(p[k]==cfg[k],'Panel binding differs: '+k)
++    for k in ('specification','source_inventory','orca','run_wrapper','model_actual_review',*HELPERS,*FROZEN_INPUTS):b.check(p[k]==cfg[k],'Panel binding differs: '+k)
+     b.check(p['protocol']==PROTOCOL and p['adapter']==cfg['implementation'] and p['centers']==inv['centers'],'Panel identity/centers differ')
+     b.check(p['maximum_native_calls']==len(p['cells'])==10 and p['ranks']==4 and p['nodes']==1 and
+-        p['scout_cell_ids']==inv['first_stage_ids'] and p['remaining_cell_ids']==inv['remaining_stage_ids'] and
++        p['scout_cell_ids']==inv['remaining_stage_ids'] and p['remaining_cell_ids']==inv['first_stage_ids'] and
+         p['field_direction_lab']==inv['field_direction_lab'],'Finite inventory differs')
+     for a,e in zip(p['cells'],cells(inv)):
+         b.check({k:v for k,v in a.items() if k!='template_input'}==e,'Exact cell changed')
+@@ -109,16 +117,19 @@
+ 
+ 
+ def validate(path):
+-    p=load(path);records={};b.check(abs(math.fsum(x*x for x in p['field_direction_lab'])-1)<1e-14,'Field direction not unit')
++    p=load(path);prior=read(p['prior_panel']);records={};b.check(abs(math.fsum(x*x for x in p['field_direction_lab'])-1)<1e-14,'Field direction not unit')
+     for c in p['cells']:
+-        text=b.verify(c['template_input']).read_text();stripped=text.replace(field_block(c),'',1).replace(PROPERTY_BLOCK,'',1)
++        text=b.verify(c['template_input']).read_text();stripped=text.replace(field_block(c),'',1).replace(PROPERTY_BLOCK,'',1).replace(METHOD_BLOCK,'',1)
++        oc=next(x for x in prior['cells'] if x['cell_id']==c['cell_id'])
++        b.check(text.count(METHOD_BLOCK)==1 and text.replace(METHOD_BLOCK,'',1)==b.verify(oc['template_input']).read_text(),'More than two grid controls change the original SP deck')
++        b.check({k:v for k,v in c.items() if k not in ('template_input','original_grid_fingerprints','expected_grid_fingerprints')}=={k:v for k,v in oc.items() if k!='template_input'},'Original scientific cell metadata differs')
+         b.check(stripped==base_deck(p,c,4,3000),'More than declared field/property/EnGrad delta')
+         symbols,x=b.xyz_read(b.verify(c['source_geometry']))
+         b.check(x==c['positions_A'] and symbols==c['symbols'] and x[0]==[0.,0.,0.],'Literal geometry differs')
+         b.check(c['charge']==2 and c['multiplicity']==1 and c['expected_electrons']==40 and c['expected_basis_functions']==189 and
+             c['expected_aux_J_basis_functions']==(580 if c['metal']=='La' else 598) and not any(c['ghost_mask']) and c['d4'],'Native state/basis/D4 differs')
+         b.check(c['field_au']==FIELDS[c['field_tag']] and c['field_vector_au']==[c['field_au']*z for z in p['field_direction_lab']],'Exact field differs')
+-        records[c['cell_id']]=dict(only_declared_delta=True,charge=2,electrons=40,AO=189,aux_J=c['expected_aux_J_basis_functions'],new_SP_zero=c['field_tag']=='zero')
++        records[c['cell_id']]=dict(only_declared_delta=True,only_two_grid_directives=True,charge=2,electrons=40,AO=189,aux_J=c['expected_aux_J_basis_functions'],new_SP_zero=c['field_tag']=='zero')
+     return dict(status='passed_static_preflight',panel=b.pin(path),declared=10,scout_cell_ids=p['scout_cell_ids'],records=records,new_native_calls=0)
+ 
+ 
+@@ -127,6 +138,13 @@
+     echo=[re.sub(r'^\s*\|\s*\d+> ?','',x) for x in text.split('****END OF INPUT****')[0].splitlines() if re.match(r'^\s*\|\s*\d+>',x)]
+     q['checks']['declared_field_echo']=echo.count(field_line(c))==1 and sum(bool(re.search(r'\bEField\b',x)) for x in echo)==1
+     q['checks']['declared_origins_echo']=echo.count(' EFieldOrigin 0.0,0.0,0.0')==1 and echo.count(' Origin 0.0,0.0,0.0')==1
++    q['checks']['declared_grid_echo']=echo.count('%method')==1 and echo.count(' AngularGridX 2,4,4')==1 and echo.count(' IntAccX -1,-1,-1')==1 and not any('DoEQ' in x for x in echo)
++    q['checks']['unchanged_SCF_MaxIter']=re.findall(r'Maximum # iterations\s+MaxIter\s+\.{2,}\s*(\d+)',text)==['300']
++    q['checks']['final_grid_reintegration_retained']='Recomputing exchange energy using gridx3' in text
++    q['physical_grid_fingerprints']=None;q['grid_parse_error']=None
++    try:q['physical_grid_fingerprints']=grid.grid_fingerprints(text)
++    except Exception as exc:q['grid_parse_error']=repr(exc)
++    q['checks']['matching_physical_grids']=q['physical_grid_fingerprints']==c['expected_grid_fingerprints']
+     q['status']='complete' if all(q['checks'].values()) else 'failed_admission';return q
+ 
+ 
+@@ -186,7 +204,7 @@
+ 
+ 
+ def score(rows,p,stage):
+-    metals=['La'] if stage=='scout' else list(METALS);per={};checks={};d4checks={};context={}
++    metals=['Dy'] if stage=='scout' else list(METALS);per={};checks={};d4checks={};context={}
+     for m in metals:
+         cc=[c for c in p['cells'] if c['metal']==m];needed=[c['cell_id'] for c in cc]
+         if not all(rows.get(cid,{}).get('status')=='complete' for cid in needed):
+@@ -225,7 +243,7 @@
+     if r['stage']=='remaining':
+         s=read(r['scout_collection']);sr=read(r['scout_review'])
+         b.check(s['status']=='dry_donor_susceptibility_scout_complete' and s['panel']==b.pin(path) and s['complete']==5 and
+-            s['cell_ids']==p['scout_cell_ids'] and s['numerical_checks_passed'] is True,'Actual La five-cell block has not qualified')
++            s['cell_ids']==p['scout_cell_ids'] and s['numerical_checks_passed'] is True,'Actual matching-grid Dy five-cell block has not qualified')
+         b.check(sr['status']=='passed_dry_donor_susceptibility_scout_review' and sr['collection']==r['scout_collection'] and sr['panel']==b.pin(path) and sr['implementation']==p['adapter'],'Actual scout/cost review differs')
+         b.check(score(s['rows'],p,'scout')==s['response'],'Scout numerical replay differs')
+         for cid in p['scout_cell_ids']:
+@@ -329,7 +347,7 @@
+     rp=save(out/'RESULT.json',r)
+     (out/'REPORT.md').write_text(f'# Dry donor susceptibility\n\nAdmitted {complete}/{len(ids)} native SPs. Numerical consistency: {passed}.\n\n'
+         'RESULT retains both steps/estimators, matching SP zeros, electronic/final/D4 stages, all native SCF criteria and COSX/XC metadata, and failed slots. '
+-        'The older EnGrad zeros are contextual only. Printing bounds and numerical resolutions are not physical error bars. '
++        'This is the new uniform matching-grid block; original failed results remain preserved. The older EnGrad zeros are contextual only. Printing bounds and numerical resolutions are not physical error bars. '
+         'Failed consistency leaves nonlinearity and numerical error unresolved. No unique permanent/induced/charge-transfer attribution follows.\n')
+     print(json.dumps(dict(result=rp,status=r['status'])));return 0 if passed else 1
+ 

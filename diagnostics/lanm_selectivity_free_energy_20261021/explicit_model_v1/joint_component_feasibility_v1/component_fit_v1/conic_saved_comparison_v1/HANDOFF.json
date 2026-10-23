@@ -1,0 +1,49 @@
+{
+  "status": "source_ready_unbound_no_solver_execution",
+  "question": "One numerical SOCP representation of the already consumed origin24 proposal after the current campaign terminates.",
+  "binding_steps": [
+    "After the exact current campaign is terminal, pin its RESULT.json into terminal_campaign; complete or failed terminal is accepted without promoting its status.",
+    "Bind an actual independent source review with the contract below.",
+    "Write the root release from ROOT_RELEASE_TEMPLATE.json with the same terminal/review pins; put its pin in root_release.",
+    "Save the otherwise unchanged CONFIG_UNBOUND contents as workspace CONFIG_RUN.json, then use COMMANDS.json."
+  ],
+  "source_review_contract": {
+    "status": "passed_conic_saved_comparison_source_review",
+    "implementation": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/conic_saved_comparison_v1/COMPARE.py",
+      "sha256": "836916e9839259d4779907c744716b33cb98425ca030360c3af5017ffd4a4935"
+    },
+    "configuration_fingerprint": "9aa8502650ec59472f833af6f691d6dc4b8757bd3666107b2323d0b28b2dad73"
+  },
+  "numerical_form": {
+    "variables": 13,
+    "SOC_count": 21,
+    "SOC_rows": 961,
+    "nonnegative_rows": 856,
+    "original_source_inequalities": 851,
+    "physical_gates": 25,
+    "objective": "minimize t; returned q=t*t only for finite nonnegative t",
+    "fractions": [
+      1.0,
+      0.5,
+      0.25,
+      0.125
+    ],
+    "fraction_q": "(1-f)*q_current+f*t_returned**2",
+    "q_selection_epsilon": "1e-10*max(1,abs(q_current))"
+  },
+  "status_policy": [
+    "Only Clarabel Solved uses CORE successful-status certificate; AlmostSolved remains explicitly reduced accuracy and uses strict failed-status margins.",
+    "All effective settings are pinned, including unchanged reduced tolerances and regularization/equilibration. A reduced status is never relabeled Solved.",
+    "The inherited zero-step -1e-10 arithmetic guard does not relax any of the 851 final source inequalities or25 physical gates.",
+    "Fraction eligibility is only a predicted secant certificate. No fraction is selected, natively evaluated or used to extend the campaign.",
+    "Raw x/s/z, solver info/gap/residual/status, affine matrices, linearized source problem, source fractions and original first SLSQP proposal pin are retained.",
+    "Floating dual signs/residuals are independently replayed; they are not a rigorously rounded global-optimality or physical-feasibility certificate."
+  ],
+  "inputs_read_for_preparation": "Frozen sources/configuration/import inventory and installation metadata only. No campaign outcome, scientific vector or saved Jacobian loaded; artificial tests only.",
+  "one_attempt": "Exclusive persistent marker is created before solver construction; survives failures and refuses automatic retries across output versions.",
+  "preserved_controls": "source_controls_v1 predates final metadata/status/startup joins; final source_controls_v2 passes the same31 controls.",
+  "solver_calls": 0,
+  "native_calls": 0,
+  "scientific_candidate_selection": false
+}

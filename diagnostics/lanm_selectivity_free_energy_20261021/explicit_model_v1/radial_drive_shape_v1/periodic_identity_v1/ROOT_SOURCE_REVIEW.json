@@ -1,0 +1,54 @@
+{
+  "status": "admitted_periodic_identity_v2_source_only",
+  "created_utc": "2026-10-23T04:29:55.261343+00:00",
+  "ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_identity_v1/READY.json",
+    "sha256": "610a04a73ca1f7fe8224d419775fff097ca9ef9b6ae28b5c31ae196741db2426"
+  },
+  "independent_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_identity_v1/independent_source_review_v1/REVIEW.json",
+    "sha256": "4bf777e12d48d2532e8d7eb59532a85d05896b7ebc5233f9eb9fb092355f5fd7"
+  },
+  "source_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_identity_v1/source_v1/MANIFEST.json",
+    "sha256": "073afd3dfbdba5bbdbbdd5afb4df7c8ae8deab6daa675133c54b27c27fc9de45"
+  },
+  "parser": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_identity_v1/STATE.py",
+    "sha256": "50b1a3c037fac55da5ab916db7ced1269b9b213e80fc691b970cd7055f0911f8"
+  },
+  "identity_validator": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_identity_v1/IDENTITY.py",
+    "sha256": "f424abb116bbf8db68f45f1c9a4b45eafeeb6ef8c0f07b2e83663d959cb4ef9e"
+  },
+  "contract": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_identity_v1/SOURCE_CONTRACT.json",
+    "sha256": "310a5289f50655abda2cb3d379c0255a16e8a82933f7b12d72b9075ab4ba6912"
+  },
+  "root_checks": [
+    "Read full generator, parser, identity validators, contract and actual generated patch",
+    "Verified 42 unique source, control and review pins",
+    "Read all 65 saved control outcomes without rerunning",
+    "Both radial slots explicit; raw unequal RHS preserved; e-only activation independent of h/H",
+    "Nearest-image reconstruction uses actual cell; original arithmetic at exact e=0",
+    "Cutoff12 settings must agree across six joins; full fresh same-state chain including central",
+    "Legacy zero projection diagnostic only, never synthetic executable state",
+    "No old library linked against new radial module without separate matched build lineage"
+  ],
+  "counts": {
+    "native_calls": 0,
+    "solver_calls": 0,
+    "compilations": 0,
+    "factorizations": 0,
+    "FFT_replays": 0,
+    "controls_rerun": 0
+  },
+  "runtime_ready": false,
+  "candidate": null,
+  "execution_release": false,
+  "limitations": [
+    "No actual full64cube snapshot read or compiled Fortran validation",
+    "COMMON/NATIVE/CERTIFY and Stage1 callsite require separately reviewed versioned runtime integration",
+    "No physical qualification, free energy or production admission"
+  ]
+}

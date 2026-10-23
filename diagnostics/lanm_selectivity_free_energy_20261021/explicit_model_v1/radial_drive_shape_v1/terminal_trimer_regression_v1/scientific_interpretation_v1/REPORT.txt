@@ -1,0 +1,43 @@
+FROZEN RADIAL14 TERMINAL: CONSUMED TRIMER TRANSFER
+
+Scope and authority
+Exact candidate 5d992 from admitted fit20605; it was fixed before this test and is independent of the pending 1/16 witness. Source RESULT 8df7f70e contains all eight cycles and four Dy-minus-La contrasts after six new analyze calls. This report interprets stored values only; root/Arendt retain numerical-admission ownership. DECLARATION.json pins the question and exact inputs. TABLES.txt displays all four signed vectors and all eight individual residuals; SAVED_VALUES.json preserves their full reported precision.
+
+Main result
+The reduced full-shell component objective does not transfer uniformly to these consumed metal-two-water cycles. Relative to feca12, all eight individual E3 residual magnitudes and all eight individual mu3 error norms increase. Nevertheless, every paired Dy-minus-La mu3 error norm decreases. The latter improvement is real at the reported contrast level, but results from improved cancellation of larger individual-metal dipole errors. It is not uniform improvement in each metal's response.
+
+Paired E3, kcal/mol (model minus reference residual in parentheses)
+                     reference     original baseline       feca12             radial14
+W8 near              +2.006632      +0.599581 (-1.407051)    -1.551837 (-3.558469) -1.566934 (-3.573566)
+W8 far               +0.567840      -0.471410 (-1.039251)    -1.984159 (-2.551999) -2.284236 (-2.852076)
+W9 near              +3.154974      +0.950691 (-2.204283)    -0.960496 (-4.115470) -0.831396 (-3.986370)
+W9 far               +0.430040      -0.448907 (-0.878947)    -1.983210 (-2.413251) -2.278130 (-2.708170)
+
+All four radial14 E3 contrasts have the opposite sign to the reference. Every paired E3 residual magnitude exceeds the original baseline; three exceed feca12, with a small improvement for W9 near. These residuals already concern Dy-minus-La differences: they cannot be dismissed as entirely shared absolute-energy error. The individual E3 residuals are all negative, ranging from -5.560296 to -12.739001 kcal/mol, and all are larger in magnitude than both predecessor stages. Subtraction removes a substantial common part, while leaving the differential errors above.
+
+Signed mu3 contrast, Debye
+For the two near fixtures, the dominant x/y components change from positive at feca12 to negative at radial14, agreeing with the reference sign but remaining much smaller in magnitude:
+ W8 near: reference (-0.111593,-0.046205), radial14 (-0.007335,-0.003038).
+ W9 near: reference (-0.128731,-0.053482), radial14 (-0.020720,-0.008583).
+For the far fixtures the dominant response still has the wrong sign:
+ W8 far: reference (-0.024513,-0.059202), radial14 (+0.000667,+0.001611).
+ W9 far z: reference -0.060279, radial14 +0.002021.
+The complete signed three-vectors, including small transverse components, are retained in TABLES.txt; these summaries do not replace them with magnitudes.
+
+Paired signed-vector error norms, Debye
+                 original baseline   feca12      radial14
+W8 near          0.142977            0.139094    0.112841
+W8 far           0.091906            0.073223    0.065820
+W9 near          0.160159            0.147676    0.116971
+W9 far           0.087935            0.070345    0.062300
+All four improve relative to both predecessors. Against the baseline, six of eight individual mu3 norms improve; the two La far cases worsen. Against feca12, all eight individual norms worsen. Thus a smaller metal-difference error is compatible with worse errors for both metals. E3 and mu3 need not improve together: mu3 is the field derivative of the same cycle, while the zero-field energy also retains information not fixed by that derivative.
+
+What follows for exchange mechanics
+The admitted terminal still passes its declared full-shell physical and electrical safeguards. Its stored balanced W9 exchange residual is -0.0756569 kcal/mol, despite opposing P/B Dy-minus-La component residuals. The trimer result shows that this favorable cancellation is not a demonstrated general accuracy property: the four geometry-selected E3 differences retain substantial differential errors and poor energy-sign transfer. Conversely, these four cycles do not overturn the admitted balanced result or prove inaccurate equilibrium exchange. E3 is one three-body contribution, not the full-shell B, total exchange work, solvent free energy, or protein-minus-water selectivity. The eight sampled E3 values cannot be summed to recover B; other triplets and higher orders are absent.
+
+The result therefore separates three statements: full-shell declared gates pass; selected trimer energy differences remain discrepant; selected trimer dipole differences improve mainly through cancellation. None establishes a global infeasibility of the 14-parameter family, identifies the new radial coefficient as the unique cause, or selects a new model. The terminal changes the joint coefficients, so this comparison cannot isolate an e-only causal effect. The main scientific value is a concrete warning that additional reduction of the same fitted objective is not by itself evidence of transfer improvement.
+
+Limits and cost
+These are previously consumed fixed-geometry vacuum fixtures, with nominal/literal radii and original common-origin signed properties preserved. This is descriptive development evidence, not a held-out test, a new acceptance threshold, or a force test. The electronic reference is the original PBE0 full-parent-basis ghost cycle without D4. Native SCF/property flags and electronic-state limitations remain those of the pinned reference; no tighter or correlated reference was generated here. A disagreement with this reference does not establish exact physical truth.
+
+Producer cost: six analyze calls, zero new gradients/references/solves; 7.134678 s wall, 4.027554 s parent CPU, 1.135981 s child user CPU, 1.437044 s child system CPU, one native worker and at most two owned numerical threads on biotite, null Slurm job. This interpretation made zero molecular/solver calls and zero raw-output reparses; the single declared saved-scalar extraction used 0.050868 s wall / 0.039958 s CPU on one thread. No automatic fit, candidate selection, or further calculation follows from this report.

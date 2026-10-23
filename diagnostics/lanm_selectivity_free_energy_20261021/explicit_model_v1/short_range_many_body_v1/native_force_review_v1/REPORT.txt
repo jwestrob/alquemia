@@ -1,0 +1,101 @@
+Independent native force-bridge source audit — 23 October 2026
+
+Conclusion
+For the bounded vacuum MUTUAL/Thole baseline, the existing epolar1a Cartesian
+loops can supply the missing baseline derivatives at externally supplied u/v.
+They do not require a second induction solve. This is a source conclusion,
+conditional on the setup/guards below; no compiled or numerical bridge has been
+qualified by this review. Exact parent pins are in EVIDENCE.json.
+
+Functional and signs
+L0 = K/2 [u^T A0 v - u^T Ep0 - v^T Ed0], K=electric/dielec.
+At fixed supplied u/v its coordinate derivative is
+K/2 [u^T (dA0) v - u^T dEp0 - v^T dEd0].
+The source epolar1a uses f=.5*electric/dielec (line237). Its direct-channel
+section (848–869) multiplies dscale/dEd by uinp=v and pscale/dEp by uind=u.
+The MUTUAL/Thole section916–953 adds the two-channel interaction derivative.
+No stationarity substitution is needed in those explicit force loops. Native
+polarity is geometry-independent in this restricted baseline; the self diagonal
+therefore has no missing coordinate derivative. A geometry-dependent new H is
+handled by the new kernel, not by changing native alpha.
+
+Use native gradient + dV + K/2[u^T(dH)v - (u+v)^T dh], with u/v detached when
+differentiating the explicit correction. Native derivs and dep are gradients;
+reported forces are their negatives. Do not subtract the baseline polarization
+gradient: the native clone has already evaluated it at the supplied new u/v.
+Do not include the full kernel gradient and this explicit correction twice.
+
+Energy is different from force bookkeeping
+epolar1a calls epolar1e before its force loops (line204). epolar1e (8445–8485)
+returns the reduced expression -K/2 u·Ep0 via udirp/alpha. That is not the full
+new stationary energy at a corrected u/v. It may remain as a scratch diagnostic,
+but native_total-minus-ep is U_other and must be combined with the complete new
+dual functional. The cloned gradient returns dU_other+dL0, despite reporting
+that reduced scratch energy. Labels must make this distinction explicit.
+
+Initialization required
+1. Original initial/getxyz/mechanic must complete for each fresh geometry/key.
+   mechanic initializes covalent topology/exclusions, multipole axes, local
+   multipoles, polarizabilities, pdamp, jpolar/thlval and polarization groups.
+   kpolar allocates udir/udirp/uind/uinp (215–233) and constructs douind/ipole.
+   Merely loading coordinates and four dipole arrays is insufficient.
+2. Rotate permanent multipoles with chkpole/rotpole before direct-field export.
+   dfield0a computes unequal raw Ed0/Ep0 and initializes local field/scaling
+   scratch itself (induce.f667–790); preserve dpequal and all topology scales.
+3. Zero all n-atom dipole/direct arrays, then map site-major supplied u/v through
+   exact ipole. Require the fixture's complete site map, finite positive alpha,
+   active douind and the declared dense-operator scope. Set udir=alpha*Ed0 and
+   udirp=alpha*Ep0, not alpha times the new h-corrected RHS. The latter would
+   change the scratch energy and conceal which functional was evaluated.
+4. Require MUTUAL, use_thole, dielec=1 for current Python K=electric, or explicitly
+   propagate electric/dielec. Reject unsupported bounds/replica/Ewald/list,
+   solvation/Born/reaction-field, charge penetration/flux, alternate direct
+   damping, exchange polarization, frequency-dependent/extended-Lagrangian and
+   predictor paths. Retain only declared native terms/atom types.
+5. Explicitly require or initialize tcgnab=0 in this MUTUAL-only isolated entry.
+   epolar1a reads TCG scratch in an unconditional j=1,tcgnab loop (264–277),
+   even though its actual TCG force branch is guarded. Do not rely on accidental
+   fresh-process storage values. OPT/TCG arrays need not otherwise be populated.
+6. Induce's predictor-history update, debug printing and matrix-export observer
+   are unnecessary for this one-shot no-solve bridge. Their absence must not be
+   misreported as an induction solve or admitted export. Any ufield operator
+   construction must restore or overwrite all trial uind/uinp before the force
+   call. Geometry, topology, alpha, damping and field must remain unchanged
+   between field/operator export, Python solve and supplied-state contraction.
+
+Torques and nonpolar retention
+epolar1a builds ufld/dufld from BOTH channels, converts permanent-multipole
+torques with torque(i,...,dep) (2417), and accumulates frame virial (2418–2449).
+These are essential on acetate/amide; direct pair forces alone omit frame
+derivatives. chkpole is idempotent at an unchanged geometry because it flips the
+yaxis sign and corresponding local pole components together. The later native
+empole1 rotation therefore does not create a second physical rotation.
+
+The gradient clone must preserve original allocation/zeroing, all bonded,
+permanent electrostatic, VDW and other admitted terms, final sum and watfour2
+handling. Replacing only its epolar1 dispatch is the narrow route. Alternatively
+splitting U_other must retain all original components; subtracting a cached old
+polarization force from a changed geometry is invalid. Four-site water and
+unreviewed coupled extra terms should remain outside the finite fixture scope.
+gradient.f180–284 contains these initialization,
+dispatch and final accumulation stages.
+
+External-field interface hazard — resolve before implementation freeze
+Native induce adds texfld to both direct fields, and empole1's wrapper invokes
+exfield1 to add permanent-field energy/frame forces. The Python kernel separately
+adds its passed field to Ed0/Ep0 and -K*mu_perm·F to its energy. Feeding native
+field-inclusive RHS/U_other and then passing F again would double-count it.
+The minimal first bridge can require use_exfld=false. If field support is
+included, export explicitly zero-field RHS/U_other, or define and check another
+single-count convention, while ensuring native force and Python solve see the
+same field. No extra permanent-field term should be appended to the native
+force that already includes exfield1.
+
+Required later evidence, not performed here
+Compare zero-correction total E/full Cartesian gradient to the exact admitted
+baseline. Then evaluate total stationary energy/analytic-gradient consistency
+with fixed nonzero V/h/H probes and unequal donor channels, using a freshly
+initialized baseline at each geometry. This distinguishes a complete force
+provider from the existing frozen-A partial derivative. Preserve source pins,
+all component/readback identities and actual failure receipts. Successful
+implementation parity would not establish physical model accuracy.

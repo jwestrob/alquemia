@@ -1,0 +1,12 @@
+--- PME_NORM_EXPORT.f
++++ PME_NORM_EXPORT_v2.f
+@@ -1,8 +1,7 @@
+ c     Source-only optional first-state PME snapshot. No admission is cached.
+       subroutine pmenormexport
+       use, intrinsic :: ieee_arithmetic
+-      use atoms, only: n,x,y,z
+-      use atmtyp, only: type
++      use atoms, only: n,x,y,z,type
+       use bound, only: use_bounds
+       use boxes, only: orthogonal,nonprism,recip,volbox
+       use chunks

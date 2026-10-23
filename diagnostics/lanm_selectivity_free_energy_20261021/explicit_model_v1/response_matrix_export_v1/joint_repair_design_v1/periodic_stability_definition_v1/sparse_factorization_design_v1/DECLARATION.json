@@ -1,0 +1,58 @@
+{
+  "question": "Source design for unchanged normalized stability criterion using sparse factors and local rank3 metal H after insufficient block bounds.",
+  "same_threshold": "lambda_min(Dbar)>1e-6*lambda_max(Dbar)>0",
+  "sources": [
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/ROOT_DESIGN.json",
+      "sha256": "06d13b8b572988695cc2652041eda71af6e202f6cd30b6190c75d524e255dfe5"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/real_bound_feasibility_v1/REPORT.md",
+      "sha256": "d497baa5542dc333b57816c6f122b1513caef3722e85fcaa5fb3e097963d5542"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/real_bound_feasibility_v1/BOUND.py",
+      "sha256": "2f6c5474dcc82308a65b8a4ae96d2d401630fcd783eb64cd376d4893f1386929"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/pme_source_review/REPORT.md",
+      "sha256": "a570dc9438a698e5f914b3c9ad30c8835985a29b3bc25e7dcc6eb306e3a1ce25"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/pme_source_review/CLARIFICATION.md",
+      "sha256": "192542b16ec3deda41b96da4340b64494d7d7b50b7881a579f6809e808101499"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/pme_source_review/REVIEW.json",
+      "sha256": "767d929e6f5a8691671fff80e51eb6c57d74b93c435bb4a38831c20f98927f3f"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/real_bound_feasibility_v1/actual_v1/RESULT.json",
+      "sha256": "7033c722b8fcfa6e8b51024f8d1b649460ecab2e724b2afe8af2e3cac7f72b4c"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/real_bound_feasibility_v1/independent_actual_review_v1/REVIEW.json",
+      "sha256": "82c54077badb972bac20b235c7059359c08dfbe5b6d9eba6b89f5a62181e30f6"
+    },
+    {
+      "path": "/home/jwestrob/.pyenv/versions/3.12.0/lib/python3.12/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py",
+      "sha256": "8577958862672910b2de7881b98426313a6b3a488700cb2cb256767dc420cdf3"
+    },
+    {
+      "path": "/home/jwestrob/.pyenv/versions/3.12.0/lib/python3.12/site-packages/scipy/sparse/linalg/_dsolve/_add_newdocs.py",
+      "sha256": "e0d9ba44029094a238950b78cf6d2fd03ea6d1593c7aaa74988cc493981fced0"
+    }
+  ],
+  "planned_controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/ARTIFICIAL.py",
+    "sha256": "b2f77205d472aae10921f6ff77c9a3fdb8a0dff4bcb91f48e378862105cd9c81"
+  },
+  "control_scope": "One artificial3x3 sparse factorization and manufactured matrices dimension<=4; exact rational residual/inverse comparison for stored tiny factors only.",
+  "numerical_threads": 1,
+  "box_factorizations": 0,
+  "box_spectral_computations": 0,
+  "new_native_calls": 0,
+  "installs": 0,
+  "engine_changes": 0,
+  "physics_or_Ewald_changes": 0
+}

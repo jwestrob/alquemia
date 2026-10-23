@@ -1,0 +1,175 @@
+{
+  "status": "source_and_preparation_ready_pending_independent_review_and_root_release",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/REFERENCE.py",
+    "sha256": "4741a45c6cbb7d30e5c543f87b6716db8f57d51ff829329e6d92ac4e0c632a19"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/SPEC.md",
+    "sha256": "18c7487d4ef49fb2a355a0c5533b053e0f616d3e5139f2b6f15f100a82e2ff6e"
+  },
+  "source_inventory": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/SOURCE_INVENTORY.json",
+    "sha256": "e7dd3caa97d82c980ed4a1083aa2fee497611ec0785f7bf6d24e671d8ef13e8c"
+  },
+  "configuration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/CONFIG_PREPARE_v2.json",
+    "sha256": "61513894192c3c87a54da6319fa8477d8f1dc47512c7229f54fe1a9130f8174f"
+  },
+  "panel": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/preparation_v2/PANEL.json",
+    "sha256": "f8a9c1eb74f7f20062d006dc14a84c563f0cd72dda7a4dc327ba22b96c853ffb"
+  },
+  "preflight": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/preparation_v2/PREFLIGHT.json",
+    "sha256": "156ef8c65359756b30f4e7868ba210e304a1951d98b9a884e465882c0c1b4767"
+  },
+  "saved_controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/saved_controls_v2/RESULT.json",
+    "sha256": "eed31e0b248881fa0887cc419134057789d1d7db855e19eb3a04412c037ab7e5"
+  },
+  "saved_controls_count": 23,
+  "saved_controls_cost": {
+    "wall_seconds": 1.3092437570448965,
+    "CPU_seconds": 1.182511327
+  },
+  "test_implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/TEST_SAVED.py",
+    "sha256": "bd97c8f5d126515fc14b0355dc646bd5cf339addf52cadf21de430a042924cfc"
+  },
+  "source_review_expected_status": "passed_conditional_susceptibility_reference_review",
+  "source_review_required_fields": [
+    "implementation",
+    "panel"
+  ],
+  "release_template": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/ROOT_RELEASE_SCOUT_TEMPLATE.json",
+    "sha256": "2e0d72282983cce03aaef317dc1d796f0a39f97dcd16af038215f2db62f363f9"
+  },
+  "actual_release_path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/ROOT_RELEASE_SCOUT.json",
+  "root_execution_directory_must_exist_before_sbatch": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1",
+  "run_wrapper": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/conditional_susceptibility_v1/REFERENCE.sbatch",
+    "sha256": "be08ceb158cc52a6c94cb87be71e3dfa1a0838d4ca5933b9d2e863d1d53463c6"
+  },
+  "scout_sbatch_argv": {
+    "pbe0__aquo9__La__water_01__metal_water__Fz_minus_h": [
+      "sbatch",
+      "--parsable",
+      "--job-name=field-1",
+      "--output=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/pbe0__aquo9__La__water_01__metal_water__Fz_minus_h.slurm.out",
+      "--error=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/pbe0__aquo9__La__water_01__metal_water__Fz_minus_h.slurm.err",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/conditional_susceptibility_v1/REFERENCE.sbatch",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/REFERENCE.py",
+      "run",
+      "--panel",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/preparation_v2/PANEL.json",
+      "--release",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/ROOT_RELEASE_SCOUT.json",
+      "--cell",
+      "pbe0__aquo9__La__water_01__metal_water__Fz_minus_h",
+      "--out",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/tasks/pbe0__aquo9__La__water_01__metal_water__Fz_minus_h/execution"
+    ],
+    "pbe0__aquo9__La__water_01__metal_water__Fz_minus_half": [
+      "sbatch",
+      "--parsable",
+      "--job-name=field-2",
+      "--output=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/pbe0__aquo9__La__water_01__metal_water__Fz_minus_half.slurm.out",
+      "--error=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/pbe0__aquo9__La__water_01__metal_water__Fz_minus_half.slurm.err",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/conditional_susceptibility_v1/REFERENCE.sbatch",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/REFERENCE.py",
+      "run",
+      "--panel",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/preparation_v2/PANEL.json",
+      "--release",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/ROOT_RELEASE_SCOUT.json",
+      "--cell",
+      "pbe0__aquo9__La__water_01__metal_water__Fz_minus_half",
+      "--out",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/tasks/pbe0__aquo9__La__water_01__metal_water__Fz_minus_half/execution"
+    ],
+    "pbe0__aquo9__La__water_01__metal_water__Fz_plus_half": [
+      "sbatch",
+      "--parsable",
+      "--job-name=field-3",
+      "--output=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/pbe0__aquo9__La__water_01__metal_water__Fz_plus_half.slurm.out",
+      "--error=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/pbe0__aquo9__La__water_01__metal_water__Fz_plus_half.slurm.err",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/conditional_susceptibility_v1/REFERENCE.sbatch",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/REFERENCE.py",
+      "run",
+      "--panel",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/preparation_v2/PANEL.json",
+      "--release",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/ROOT_RELEASE_SCOUT.json",
+      "--cell",
+      "pbe0__aquo9__La__water_01__metal_water__Fz_plus_half",
+      "--out",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/tasks/pbe0__aquo9__La__water_01__metal_water__Fz_plus_half/execution"
+    ],
+    "pbe0__aquo9__La__water_01__metal_water__Fz_plus_h": [
+      "sbatch",
+      "--parsable",
+      "--job-name=field-4",
+      "--output=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/pbe0__aquo9__La__water_01__metal_water__Fz_plus_h.slurm.out",
+      "--error=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/pbe0__aquo9__La__water_01__metal_water__Fz_plus_h.slurm.err",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/conditional_susceptibility_v1/REFERENCE.sbatch",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/REFERENCE.py",
+      "run",
+      "--panel",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/preparation_v2/PANEL.json",
+      "--release",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/ROOT_RELEASE_SCOUT.json",
+      "--cell",
+      "pbe0__aquo9__La__water_01__metal_water__Fz_plus_h",
+      "--out",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/tasks/pbe0__aquo9__La__water_01__metal_water__Fz_plus_h/execution"
+    ]
+  },
+  "scout_inventory": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/handoff_v1/SCOUT_RESULT_INVENTORY.json",
+    "sha256": "0537a25f5c800256b91a8acacb3277002be56a07d1d097431a7ed1f5aba13c3a"
+  },
+  "scout_collection_argv": [
+    "/usr/bin/python3",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/REFERENCE.py",
+    "collect",
+    "--panel",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/preparation_v2/PANEL.json",
+    "--inventory",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/handoff_v1/SCOUT_RESULT_INVENTORY.json",
+    "--stage",
+    "scout",
+    "--out",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/scout_collection_v1"
+  ],
+  "scout_review_expected_status": "passed_conditional_susceptibility_scout_review",
+  "scout_review_required_fields": [
+    "collection",
+    "panel",
+    "implementation"
+  ],
+  "all16_future_native_results": {
+    "pbe0__aquo9__La__water_01__metal_water__Fz_minus_h": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/tasks/pbe0__aquo9__La__water_01__metal_water__Fz_minus_h/execution/RESULT.json",
+    "pbe0__aquo9__La__water_01__metal_water__Fz_minus_half": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/tasks/pbe0__aquo9__La__water_01__metal_water__Fz_minus_half/execution/RESULT.json",
+    "pbe0__aquo9__La__water_01__metal_water__Fz_plus_half": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/tasks/pbe0__aquo9__La__water_01__metal_water__Fz_plus_half/execution/RESULT.json",
+    "pbe0__aquo9__La__water_01__metal_water__Fz_plus_h": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/tasks/pbe0__aquo9__La__water_01__metal_water__Fz_plus_h/execution/RESULT.json",
+    "pbe0__aquo9__La__far__metal_two_water__Fz_minus_h": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/tasks/pbe0__aquo9__La__far__metal_two_water__Fz_minus_h/execution/RESULT.json",
+    "pbe0__aquo9__La__far__metal_two_water__Fz_minus_half": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/tasks/pbe0__aquo9__La__far__metal_two_water__Fz_minus_half/execution/RESULT.json",
+    "pbe0__aquo9__La__far__metal_two_water__Fz_plus_half": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/tasks/pbe0__aquo9__La__far__metal_two_water__Fz_plus_half/execution/RESULT.json",
+    "pbe0__aquo9__La__far__metal_two_water__Fz_plus_h": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/tasks/pbe0__aquo9__La__far__metal_two_water__Fz_plus_h/execution/RESULT.json",
+    "pbe0__aquo9__Dy__water_01__metal_water__Fz_minus_h": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/tasks/pbe0__aquo9__Dy__water_01__metal_water__Fz_minus_h/execution/RESULT.json",
+    "pbe0__aquo9__Dy__water_01__metal_water__Fz_minus_half": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/tasks/pbe0__aquo9__Dy__water_01__metal_water__Fz_minus_half/execution/RESULT.json",
+    "pbe0__aquo9__Dy__water_01__metal_water__Fz_plus_half": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/tasks/pbe0__aquo9__Dy__water_01__metal_water__Fz_plus_half/execution/RESULT.json",
+    "pbe0__aquo9__Dy__water_01__metal_water__Fz_plus_h": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/tasks/pbe0__aquo9__Dy__water_01__metal_water__Fz_plus_h/execution/RESULT.json",
+    "pbe0__aquo9__Dy__far__metal_two_water__Fz_minus_h": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/tasks/pbe0__aquo9__Dy__far__metal_two_water__Fz_minus_h/execution/RESULT.json",
+    "pbe0__aquo9__Dy__far__metal_two_water__Fz_minus_half": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/tasks/pbe0__aquo9__Dy__far__metal_two_water__Fz_minus_half/execution/RESULT.json",
+    "pbe0__aquo9__Dy__far__metal_two_water__Fz_plus_half": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/tasks/pbe0__aquo9__Dy__far__metal_two_water__Fz_plus_half/execution/RESULT.json",
+    "pbe0__aquo9__Dy__far__metal_two_water__Fz_plus_h": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/run_v1/tasks/pbe0__aquo9__Dy__far__metal_two_water__Fz_plus_h/execution/RESULT.json"
+  },
+  "native_output_name": "endpoint.out",
+  "native_property_name": "endpoint.property.txt",
+  "new_native_calls": 0,
+  "original_v1_preparation_and_failed_synthetic_fixture_preserved": true,
+  "remaining12_release_requires_actual_scout_numerical_and_native_pass": true
+}

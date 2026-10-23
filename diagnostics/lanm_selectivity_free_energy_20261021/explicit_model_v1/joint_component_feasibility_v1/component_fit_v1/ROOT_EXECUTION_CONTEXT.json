@@ -1,0 +1,39 @@
+{
+  "status": "declared_execution_and_additional_exact_reuse_only",
+  "created_utc": "2026-10-22T20:58:22.175337+00:00",
+  "campaign_declaration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/ROOT_DECLARATION.json",
+    "sha256": "a28ed5d3efdf15a6a921d66fb95c9a43eb48c4b665e85348daf0559f432e7057"
+  },
+  "execution": {
+    "mode": "slurm",
+    "account": "banfield",
+    "partition": "standard",
+    "qos": "standard_expand",
+    "ntasks": 1,
+    "cpus_per_task": 12,
+    "workers": 12,
+    "numerical_threads_per_worker": 1,
+    "memory_and_time": "Scheduler defaults; no overrides",
+    "wrapper": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/RUN_PY312.sbatch",
+      "sha256": "05f6a45f31f9a8e89609020b709ac9baf895353a92150124977ed0eaba117634"
+    }
+  },
+  "preparation": "Saved/mock preparation on login uses at most one numerical thread per active agent, within16 aggregate. Real fitting requires Slurm execution release.",
+  "additional_exact_reuse": {
+    "admission": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/nonlinear_check_v1/run_v1/ROOT_REVIEW.json",
+      "sha256": "e5a6bf81e16348ab5aac76ee8dfb76dfa04bcf923cb3e518496e7e002c2bf1ea"
+    },
+    "native_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/nonlinear_check_v1/run_v1/execution/RESULT.json",
+      "sha256": "91a70ded805e2c4c71eaa5aac0a7b47c52f6feb438deeb5381ff560b15cf90b8"
+    },
+    "candidate_key": "8643671b769aa171aff86d4dbe3027c90adeb13ba0913f3127270b36c00a1eaf",
+    "scope": "Import admitted pilot vector/cells only if full scientific cache identities match. Preserve native producer/raw input/output pins, saved scoring/chi and inherited costs. Reuse may avoid duplicate vector or individual-metal calls, but cannot alter start, derivative origin, current vector, trial fractions or eligibility.",
+    "counts": "Record pilot vector/cell imports separately from required origin1/probe24 imports. Inherited programs do not count as new. Existing maxima200newvectors/6496nativecalls unchanged.",
+    "no_extra_trial": "Pilot is not an extra selectable candidate. It can be used only where the declared driver requests the exact matching vector/cell."
+  },
+  "execution_released": false
+}

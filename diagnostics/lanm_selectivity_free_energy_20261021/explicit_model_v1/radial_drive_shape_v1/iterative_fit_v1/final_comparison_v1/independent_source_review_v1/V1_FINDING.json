@@ -1,0 +1,23 @@
+{
+  "status": "source_review_requires_literal_q_authority_recovery",
+  "ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/iterative_fit_v1/final_comparison_v1/READY.json",
+    "sha256": "db7214eff3b9718caceaf091148d8a9aa68260c4a7ee694a153b46cd06c5108c"
+  },
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/iterative_fit_v1/final_comparison_v1/COMPARE.py",
+    "sha256": "e1d65414390dc54eec4e1243de23bea3cc400d20a5ef0f60b35ae7a06288a02f"
+  },
+  "finding": "decisions independently checks reconstructed q against stored q with arithmetic tolerance, but returns reconstruction into exact producer-selection and delta comparisons. Retain literal stored q/JP/JB as decision/report authority after consistency checks; expose reconstruction separately.",
+  "source_evidence": {
+    "collector": "COMPARE.decisions returns recomputed q; point/recorded_choice and actual-minus-predicted use it in exact comparisons.",
+    "producer": "CORE.assess uses math.fsum(float(npfloat*npfloat)); comparator uses Python float exponent2. Different arithmetic is allowed only for the stated consistency check."
+  },
+  "impact": "Potential false rejection or altered threshold replay from harmless roundoff; not a discovered scientific result failure.",
+  "requested_change": "Disjoint immutable COMPARE_v2.py plus focused manufactured tolerated-roundoff authority control. Preserve original source/controls and all scientific gates.",
+  "native_calls": 0,
+  "solver_calls": 0,
+  "tests_rerun": 0,
+  "live_result_reads": 0,
+  "created_utc": "2026-10-23T04:31:38.133523+00:00"
+}

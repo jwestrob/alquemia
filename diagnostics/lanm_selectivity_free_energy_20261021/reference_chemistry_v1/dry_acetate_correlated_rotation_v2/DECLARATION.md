@@ -1,0 +1,7 @@
+# Exact JSON representation recovery, canonical rotation one plus seven
+
+Question: admit the already completed canonical La rotation scout and continue only the seven originally declared endpoints without changing science. The original saved review failed solely because JSON stringifies integer basis_groups keys. Full raw replay has status complete and becomes exactly equal in every field after JSON normalization. Source/result/output/release/input/start and failed review/proof are immutable and pinned in INPUTS.json.
+
+The only parse-equality change is JSON-normalizing both the saved field and raw replay before exact equality. No fields are dropped, rounded or numerically relaxed. Native deck, parser, thresholds, geometry, resources (four MPI ranks/one node/default memory), two rotation steps, eight-slot denominator, three derivative checks and score are reused unchanged. The one legacy scout must match its exact original source/result/output/release pins. Future seven rows must identify this V2 source and its exact new release; original-panel input provenance remains explicit. The scout cannot run through V2. Root owns continuation and actual cost decision.
+
+Versioned reviewer reuses all original independent raw native checks and cost accounting through this corrected admission. Preserve the failed original review. Preparation and controls make zero molecular calls; no report/scoring threshold, coefficient or target changes.

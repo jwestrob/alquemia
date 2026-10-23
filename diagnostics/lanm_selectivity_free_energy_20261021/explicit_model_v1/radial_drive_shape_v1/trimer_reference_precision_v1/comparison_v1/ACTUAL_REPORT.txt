@@ -1,0 +1,40 @@
+Stricter electronic convergence does not remove the W9far discrepancy
+23 October 2026
+
+The completed fourteen-state saved comparison preserves the two full seven-term
+cycles, Hamiltonian, ghost basis, final COSX treatment and effective state. Only
+the declared stricter stopping protocol changes. All14 endpoint identity and
+current-solver residual checks pass; stale pre-SOSCF DIIS values remain recorded.
+
+                         old reference    tightened reference    shift
+La E3, kcal/mol           12.383528394     12.383503470          -0.000024925
+Dy E3, kcal/mol           12.813568594     12.813523035          -0.000045559
+Dy-minus-La E3             0.430040200      0.430019565          -0.000020634
+La mu3_z, Debye           -0.349706185     -0.349684840          +0.000021346
+Dy mu3_z, Debye           -0.409985495     -0.409983739          +0.000001756
+Dy-minus-La mu3_z         -0.060279309     -0.060298899          -0.000019590
+
+The frozen radial14 model remains -2.278130180 kcal/mol for the paired E3:
+error against tightened reference -2.708149745 kcal/mol, still wrong sign.
+Individual model E3 errors remain -10.030805460 and -12.738955205 kcal/mol.
+Its paired mu3_z remains +0.002020817 Debye versus -0.060298899, also wrong sign.
+Original baseline and feca12 comparisons are preserved in the result as well.
+
+Inference: this tested convergence tightening does not explain the large energy
+or dipole failures in these two cycles. It strengthens the existing model-form
+decision. It does not establish a rigorous numerical error bound, independent
+correlated accuracy, final-grid self-consistency, a physical Dy spin state,
+electronic-root continuity, a complete coordination surface, or binding affinity.
+Old references are not silently replaced. All three model candidates are fixed.
+
+Execution: one saved-only comparison, 0.511 wall/0.406 CPU seconds, one thread;
+zero new native/reference/solver calls. Fourteen preceding unique reference
+calls used3542.461 summed native wall seconds and13660.286 measured child CPU
+seconds. These were login computations; no Slurm allocated-CPU charge is claimed.
+Phase wall includes native work and must not be added again.
+
+Result: workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/
+radial_drive_shape_v1/trimer_reference_precision_v1/comparison_v1/actual_v1/
+execution/RESULT.json. Exact configuration/release and endpoint admission are
+adjacent or pinned by that result. This branch is complete; no repeat chemistry
+or old-fit continuation follows.

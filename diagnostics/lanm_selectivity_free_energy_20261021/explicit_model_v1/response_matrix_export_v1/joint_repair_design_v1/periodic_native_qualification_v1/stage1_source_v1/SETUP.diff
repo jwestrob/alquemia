@@ -1,0 +1,19 @@
+--- immutable/periodicresponsesetup
++++ isolated/parityresponsesetup
+@@ -1,4 +1,4 @@
+-      subroutine periodicresponsesetup (handled)
++      subroutine parityresponsesetup (handled)
+       use, intrinsic :: ieee_arithmetic
+       use atomid
+       use atoms
+@@ -260,8 +260,8 @@
+          end if
+       end do
+       call periodicresponsegeometry
+-c     This source has no admission of a real periodic execution.
+-      call periodicresponsebackendguard
++c     Standalone explicit-operator initialization only.
++c     Normal setup and both fatal guards remain unchanged.
+       return
+       end
+ c

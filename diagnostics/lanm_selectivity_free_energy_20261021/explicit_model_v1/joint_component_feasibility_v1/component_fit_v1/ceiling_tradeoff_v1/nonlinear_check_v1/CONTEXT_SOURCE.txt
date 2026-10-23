@@ -1,0 +1,56 @@
+def policy_candidate(result,policy):
+    rule=policy['selection_rule']
+    require(rule['order']==[1.,.5,.25,.125] and rule['maximum_selected_vectors']==1
+            and rule['required_strict_retained_feasibility'] is True
+            and rule['minimum_absolute_gain_in_component_q']==.05,'Exact prospective first-eligible policy')
+    require([w['fraction'] for w in result['witnesses']]==rule['order'],'All four witness slots')
+    eligible=[w for w in result['witnesses'] if w['strict_retained_feasible']
+              and result['baseline_actual_component_rho']-w['actual_component_rho']>=.05]
+    require(bool(eligible),'No policy-eligible candidate')
+    chosen=eligible[0];cert=chosen['constructed_source_certificate']
+    require(chosen['fraction']==1. and cert['key']=='d1fc95754c0cd8dceb9a7616caf2e8409974f6952d0a904e0f2ead9645acbec3',
+            'Only frozen prospective first fraction')
+    return chosen
+
+
+def context(cfg):
+    require(cfg['implementation']==pin(__file__) and cfg['specification']==pin(HERE/'SPEC.md'),'Batch source/specification')
+    require(cfg['limits']==LIMITS and cfg['reserved_outcomes_authorized'] is False,'Finite declared scope')
+    for k in ('declaration','parent_evaluator','parent_configuration','tradeoff_result','followup_policy','origin','fit_review','root_fit_review','decomposition','component_diagnostic','original_pilot_implementation'):
+        verify(cfg[k])
+    parent=read(cfg['parent_configuration']);require(parent['implementation']==cfg['parent_evaluator'],'Unchanged parent evaluator')
+    base=module(cfg['parent_evaluator'],'frozen_joint_evaluator')
+    result=read(cfg['tradeoff_result']);policy=read(cfg['followup_policy']);declaration=read(cfg['declaration'])
+    require(result['status']=='completed_saved_ceiling_tradeoff' and result['error'] is None
+            and result['solver_calls']==1 and result['new_native_calls']==0,'One completed saved diagnostic')
+    cert=policy_candidate(result,policy)
+    require(cfg['candidate']=={'parameters':cert['constructed_source_certificate']['parameters'],
+                              'key':cert['constructed_source_certificate']['key'],'fraction':cert['fraction']},'Exact frozen witness')
+    values=base.checked(cfg['candidate']['parameters'],read(parent['domain']))
+    require(digest(values)==cfg['candidate']['key'],'Physical parameter token')
+    problem=read(result['linearized_problem']);origin=read(cfg['origin'])
+    require(origin['parameters']==problem['center'] and digest(origin['parameters'])==result['origin_key']
+            and origin['status']=='complete','Exact immutable Jacobian origin')
+    require(values==[x+w*(cert['fraction']*d) for x,w,d in zip(problem['center'],problem['width'],result['solution']['x'][:12])],
+            'Exact affine physical candidate')
+    require(cert['constructed_source_certificate']['certificate']['all25_predicted']
+            and cert['minimum_retained_margin']>0 and not cert['physical_fraction_changed'],'Strict retained witness')
+    fitreview=read(cfg['fit_review']);root=read(cfg['root_fit_review'])
+    require(fitreview['status']=='passed_terminal_joint_fit_review_continuation'
+            and root['status']=='admitted_completed_frozen_fit_provenance_and_numerical_review'
+            and root['independent_review']==cfg['fit_review'] and root['fit_result']==fitreview['fit_result'],'Original fit admission')
+    fit=read(root['fit_result']);fitcfg=read(fit['configuration'])
+    require(fit['vectors'][result['origin_key']]['artifact']==cfg['origin']
+            and fitcfg['evaluator_config']==cfg['parent_configuration'] and fitcfg['evaluator']==cfg['parent_evaluator'],
+            'Original origin/evaluator lineage')
+    require(len(origin['cells'])==46 and all(v['status']=='complete' for v in origin['cells'].values()),'Complete immutable origin46')
+    dec=read(cfg['decomposition'])
+    require(dec['status']=='complete_saved_pair_collective_diagnostic' and dec['sources']['evaluator_manifest']==parent['manifest']
+            and dec['sources']['targets']==parent['target_inventory'],'Exact component/static authority')
+    require(declaration['candidate']==cfg['candidate'] and declaration['tradeoff_result']==cfg['tradeoff_result']
+            and declaration['followup_policy']==cfg['followup_policy'] and declaration['limits']==LIMITS,'Exact pilot declaration')
+    require(cfg['executor']=={'mode':'login','hostname':socket.gethostname(),'workers':12,'numerical_threads':1,'aggregate_thread_budget':16},'Truthful login envelope')
+    require(pin(sys.executable)==cfg['interpreter'],'Exact existing interpreter')
+    require(all(os.environ.get(k)=='1' for k in THREADS) and os.environ.get('BLIS_NUM_THREADS','1')=='1','One native/numerical thread')
+    require(not os.environ.get('SLURM_JOB_ID') and not os.environ.get('SLURM_STEP_ID'),'No fabricated Slurm identity')
+    return base,parent,cert,origin

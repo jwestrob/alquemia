@@ -1,0 +1,66 @@
+{
+  "status": "passed_conditional_susceptibility_model_review",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/conditional_susceptibility_v1/model/RUN_v2.py",
+    "sha256": "cf2f888bf8dd628fcba6879592c98d33e9bddff7148782801822648e1e325866"
+  },
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/conditional_susceptibility_v1/model/preparation_v2/MANIFEST.json",
+    "sha256": "637b311edc21d07de1b5341ea462b5715317606b3e635cb664d96137e57bb098"
+  },
+  "model_specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/conditional_susceptibility_v1/model/MODEL_SPEC.md",
+    "sha256": "dbaef9dc41fb917c35784d1be492d492427b0364fc7a9ccaa856a8bddc243124"
+  },
+  "shared_specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/conditional_susceptibility_v1/SPEC.md",
+    "sha256": "18c7487d4ef49fb2a355a0c5533b053e0f616d3e5139f2b6f15f100a82e2ff6e"
+  },
+  "ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/conditional_susceptibility_v1/model/READY.json",
+    "sha256": "731c5d670e44fea84a2847a6061cdee77f873bbec570f2ea07489b9f85443b23"
+  },
+  "config_template": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/conditional_susceptibility_v1/model/preparation_v2/CONFIG_RUN_TEMPLATE.json",
+    "sha256": "81b2b91f391c658a91b80a5043e5025381634334e8cc21aee1ee51da4d2e1742"
+  },
+  "saved_controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/conditional_susceptibility_v1/model/saved_controls_v1/RESULT.json",
+    "sha256": "869f3b8010a55f457042c1c5b910acb019a9b0a0daecc624f0238e040c4eb883"
+  },
+  "reporting_delta_controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/conditional_susceptibility_v1/model/saved_controls_v2/RESULT.json",
+    "sha256": "b897d687bcb9dc05492f147f2d454177355e50766b3204e24283a4ad731d27ed"
+  },
+  "checked_pins": 11,
+  "checks": {
+    "final_source_and_preparation_bound": true,
+    "five_saved_zero_rows_unchanged": true,
+    "all19_physical_inputs_unchanged_from_reviewed_v1": true,
+    "only_reporting_functions_changed": [
+      "state_estimates",
+      "summarize"
+    ],
+    "fixed19_cap_three_controls_first_oneCPU": true,
+    "original_binary_no_prototype_or_field_force": true,
+    "native_frame_rotation_and_bohr_conversion_reviewed": true,
+    "bare_ion_exception_replaced_by_signed_analytic_controls": true,
+    "step_sign_units_origin_and_full_denominator_reviewed": true,
+    "odd_slope_absolute_coefficient_print_bounds_present": true,
+    "saved_control_counts": [
+      98,
+      15
+    ],
+    "new_native_calls": 0
+  },
+  "blockers": [],
+  "execution_condition": "Root one-way release must bind this source/manifest/sharedSPEC and fresh execution path; numerical qualification remains prospective.",
+  "limits": "Fixed-direction conditional susceptibility only; no physical pass, alpha3, fit, prototype-field qualification or SCF accuracy bound.",
+  "cost": {
+    "wall_seconds": 0.25704888498876244,
+    "CPU_seconds": 0.198802351,
+    "local_threads": 1,
+    "new_native_calls": 0,
+    "control_suites_rerun": 0
+  }
+}

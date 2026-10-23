@@ -1,0 +1,14 @@
+{
+  "question": "In the already consumed selected donor fit, how much rigid-body force error is radial translation, transverse translation, or rotation, and is it already present in dry metal-donor pairs?",
+  "scope": "All twelve declared donor configurations for La, Dy, and Dy-minus-La:36 force fixtures. No candidate selection, fitting, new reference, native call, or held-out outcome.",
+  "inputs": {
+    "selected_donor_result_sha256": "cbd75cd2331afd58c1bb025ab05c5a982c84f7f7d31ca56b4cd01a2238177f40",
+    "training_result_sha256": "99ea27f86871b505dc622c1391a6321381f7430d3ad4a86a72e34ab9a629f6bb"
+  },
+  "method": "Recompute each body net force and torque about its arithmetic coordinate center from saved atomic forces. Project translational errors onto the already declared ligand radial direction and its orthogonal complement. Preserve the old category/body/component weights and torque/1Angstrom convention. Sum these three nonnegative terms to reproduce every saved rigid RMS squared. Report ligand signed radial error, transverse norm, torque norm and individual fixture checks without changing their limits.",
+  "reconstruction_tolerance": {"RMS_squared_absolute": 1e-8, "body_component_absolute": 1e-8},
+  "interpretation": "Localization of an existing model-reference discrepancy. These components are neither independent observations nor a unique physical energy attribution. Radial errors do not uniquely identify repulsion; transverse or torque errors do not uniquely identify electrostatics. A water-only correction with exact no-water bypass cannot alter these dry donor forces. Reference-method limitations remain.",
+  "planned_runs": 1,
+  "local_threads": 1,
+  "new_native_calls": 0
+}

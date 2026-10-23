@@ -1,0 +1,76 @@
+{
+  "protocol": "alchemical_path_v1",
+  "stage": "run",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/alchemical_path_v1/RUN.py",
+    "sha256": "fdd519687530742277f2ac2dfe67e35af10172f138b80c555bcfd8726f08a4c5"
+  },
+  "renderer": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/alchemical_path_v1/PATH.py",
+    "sha256": "69e1e4dc46cce86f145596180a4507d1e09b3e6473a83210efd99d19e16abba3"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/alchemical_path_v1/SPEC.md",
+    "sha256": "2e5f7a2f8af0bdd4993542d16532ae62af330a3ee3af3c930156bb9f1930f4d4"
+  },
+  "gpu_adapter": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/gpu_engine_qualification_v1/RUN.py",
+    "sha256": "991fe5e3dd8020280f60c275bd2ca05c39b81e3820673652fdb56a760590e04d"
+  },
+  "gpu_authority": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/gpu_engine_qualification_v1/CONFIG_BOUND_V2.json",
+    "sha256": "cd11df22e9c71bc19bdfd3fb94df63e2f557a8d1d2bbe623165b45ee36ee19d5"
+  },
+  "gpu_parity_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/gpu_engine_qualification_v1/execution_v2/RESULT.json",
+    "sha256": "0e0b3acde13b537543aa87ef5a342c71fe3b0207dc955908e88250b779bf497a"
+  },
+  "gpu_binary": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/gpu_engine_feasibility_v1/build_v6_cuda12/tinker9",
+    "sha256": "18cbeaf895f8bfc25a833e7e91354111ba5321f10e80b1aeb0a1d087a3f8523f"
+  },
+  "cpu_binary": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_build/testgrad",
+    "sha256": "d82b2872136785cadf0c0763aafef60ba1bdd89283f685850485a07a875f6dc2"
+  },
+  "native_semantics": {
+    "kvdw": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/gpu_engine_feasibility_v1/tinker9_source/tinker/source/kvdw.f",
+      "sha256": "c9646b0e1bdf79b29164a152a304f16ecbcfce4670eb4d1a6fed4e3af59024a1"
+    },
+    "kpolar": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/gpu_engine_feasibility_v1/tinker9_source/tinker/source/kpolar.f",
+      "sha256": "01c5cba4c5f7b9a14544b8084f57227aa5d8317f283ac550da653b619f024d8b"
+    },
+    "initprm": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/gpu_engine_feasibility_v1/tinker9_source/tinker/source/initprm.f",
+      "sha256": "4c48bfb322169acad353bc1b390db16a3923eef684c652ce4a547f94f254496a"
+    }
+  },
+  "fixtures": [
+    "water_central",
+    "acetate_bi_central"
+  ],
+  "lambda_values": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    0.4999,
+    0.5001,
+    0.49995,
+    0.50005
+  ],
+  "maximum_native_invocations": 20,
+  "gates": {
+    "energy_absolute_kcal_mol": 0.0001,
+    "force_max_component_kcal_mol_A": 0.001,
+    "spatial_FD_max_component_kcal_mol_A": 0.001,
+    "lambda_derivative_difference_kcal_mol": 0.001
+  },
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/alchemical_path_v1/prepared_v1/MANIFEST.json",
+    "sha256": "0c9587ee9907b63a2f334cd93f5f3d60ba39aa6f30eb35ce888aca139e2a9700"
+  }
+}

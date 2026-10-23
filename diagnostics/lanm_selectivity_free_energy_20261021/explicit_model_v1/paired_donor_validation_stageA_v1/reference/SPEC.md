@@ -1,0 +1,11 @@
+# Stage A: unchanged frozen-f reference execution
+
+Prepare the exact16 small-system orientation cells from the original24-cell reserved native panel. The original panel, geometry inventory, native adapter and basis/ECP assets remain unchanged. No reserved energy/force output may be opened during preparation. The eight protein cells are outside this stage.
+
+The actual frozen adapter renders `PBE0 D4 def2-TZVP def2/J RIJCOSX NoAutostart DefGrid3 VeryTightSCF EnGrad`, with `Guess PModel`, `MaxIter 300`, external metal basis/auxiliary/ECP definitions and fixed `xyzfile` geometry. La removes46 core electrons and Dy55; both effective calculations are singlets. Physical La1/Dy6 labels remain distinct. No COSX/grid/solver/state/restart change, counterpoise substitution, free fragment or optimization is included.
+
+Four MPI ranks, one CPU/thread each, standard_expand, default memory/time; `%maxcore` is exactly the unchanged adapter's floor(0.75 × actual granted MiB /4). Preparation templates use a resource placeholder, not a presumed memory grant. Every launch is one independent reference E/gradient calculation, maximum16 total, with no automatic retry. Native admission and raw residual retention remain the original adapter's rules; successful process/admission does not establish state, method or general force accuracy.
+
+Execution is conditional on root's pinned release, one actual terminal passing17621 candidate and its passed independent review, and the exact12 consumed numerical checks with all original tolerances passed. The reference release binds the prepared manifest, configuration, candidate/review and numerical receipt. Preparation leaves those authorities null and launches nothing.
+
+The optional saved-only catalog retains all16 slots, exactly replays native collection for available results, and exposes admitted rows as `rows[geometry_id].reference` with energy in kcal/mol, energy_hartree, forces in kcal/mol/Å, state/native/raw evidence. Missing or failed slots remain unavailable; the catalog performs no model scoring and cannot substitute another cell. Reference and model stages must both complete before the frozen Stage A scoring adapter is used. No outcome-driven threshold or method changes.

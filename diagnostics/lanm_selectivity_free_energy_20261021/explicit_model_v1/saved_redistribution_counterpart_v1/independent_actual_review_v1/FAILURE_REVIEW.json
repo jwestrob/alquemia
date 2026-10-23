@@ -1,0 +1,345 @@
+{
+  "status": "two_native_readback_assumptions_corrected_four_outputs_consistent_pending_full_recovery_admission",
+  "failed_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/run_v1/execution/RESULT.json",
+    "sha256": "1bce03f9c2855c6ab9afb8dc70cf6655bc99127969cad36d6dbfb4589d3903ea"
+  },
+  "prior_source_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/independent_review_v1/FINAL_REVIEW.json",
+    "sha256": "bdc173f669d27ca42a15d5b8def9c63391e2d4d35dad55ab8023e27fd189d22d"
+  },
+  "unexecuted_actual_reviewer": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/independent_actual_review_v1/REVIEW.py",
+    "sha256": "f4aaa5e092f1dc7e5b4678fc02017e553c66489033fff6ab503bc58cdb67f701"
+  },
+  "findings": [
+    "Native saveyze archive branch writes/reports system.uind, not the numbered alternative system.001u.",
+    "katom assigns each native name from its atom-type symbol and truncates to3characters: La3+ becomes La3; initial XYZ label La is not the output name."
+  ],
+  "source_evidence": {
+    "analyze_f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_source/source/analyze.f",
+      "sha256": "d205cffe9176525ad7812c9ffe095998892304deb7b3f10b3f9f4144d7d3ca47"
+    },
+    "katom_f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_source/source/katom.f",
+      "sha256": "fb445516ee6df80aa1f1a88e58efa158145badc42889632f3b56280d94cdf493"
+    },
+    "archive_branch_lines": [
+      995,
+      1005
+    ],
+    "native_type_to_name_line": 116
+  },
+  "reviewer_correction": "Prior source review missed active save branch and native symbol reassignment. Both frozen reviews remain preserved. A first ad-hoc saved check stopped at old XYZ-name assumption before this corrected source-backed inventory check. No aggregate reviewer or cycles executed.",
+  "four_rows": {
+    "aquo8_central_La": {
+      "native_output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/run_v1/execution/cells/aquo8_central_La/analyze.out",
+        "sha256": "b656a10c33c447fc24d689ecd40e746326735d16eefca1ac11dbd7ad3034fb1f"
+      },
+      "induced_output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/run_v1/execution/cells/aquo8_central_La/system.uind",
+        "sha256": "0979e43a93401fc41e8df341c450e9565656d936351fb3123dfa5beb477858fd"
+      },
+      "sites": 25,
+      "input_names": [
+        "La",
+        "O",
+        "H",
+        "H",
+        "O",
+        "H",
+        "H",
+        "O",
+        "H",
+        "H",
+        "O",
+        "H",
+        "H",
+        "O",
+        "H",
+        "H",
+        "O",
+        "H",
+        "H",
+        "O",
+        "H",
+        "H",
+        "O",
+        "H",
+        "H"
+      ],
+      "native_atom_record_names": [
+        "La3",
+        "O",
+        "H",
+        "H",
+        "O",
+        "H",
+        "H",
+        "O",
+        "H",
+        "H",
+        "O",
+        "H",
+        "H",
+        "O",
+        "H",
+        "H",
+        "O",
+        "H",
+        "H",
+        "O",
+        "H",
+        "H",
+        "O",
+        "H",
+        "H"
+      ],
+      "induction_summaries": [
+        [
+          "5",
+          "0.0000000000"
+        ],
+        [
+          "5",
+          "0.0000000000"
+        ]
+      ],
+      "energy_kcal_mol": -418.02542623,
+      "old_energy_error_kcal_mol": 0.0,
+      "runtime_receipt": {
+        "argv": [
+          "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_build/analyze",
+          "system.xyz",
+          "EM"
+        ],
+        "cwd": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/run_v1/execution/cells/aquo8_central_La",
+        "started_utc": "2026-10-22T02:15:42.227986+00:00",
+        "threads": {
+          "OMP_NUM_THREADS": "1",
+          "OMP_THREAD_LIMIT": "1",
+          "OPENBLAS_NUM_THREADS": "1",
+          "MKL_NUM_THREADS": "1",
+          "NUMEXPR_NUM_THREADS": "1"
+        },
+        "timeout_seconds": 300,
+        "returncode": 0,
+        "ended_utc": "2026-10-22T02:15:42.847844+00:00",
+        "elapsed_seconds": 0.6198741509579122,
+        "child_user_cpu_seconds": 0.7126399999999999,
+        "child_system_cpu_seconds": 0.994552,
+        "output": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/run_v1/execution/cells/aquo8_central_La/analyze.out",
+          "sha256": "b656a10c33c447fc24d689ecd40e746326735d16eefca1ac11dbd7ad3034fb1f"
+        }
+      },
+      "limited_saved_checks_passed": true
+    },
+    "aquo8_central_La__dimer_01": {
+      "native_output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/run_v1/execution/cells/aquo8_central_La__dimer_01/analyze.out",
+        "sha256": "f8fa0d4868df1938b8e63ad86ef3dfcd91e58f3412bddcc7af0c865413a2f81e"
+      },
+      "induced_output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/run_v1/execution/cells/aquo8_central_La__dimer_01/system.uind",
+        "sha256": "c9016bcb0837c3292836902d71e396ce536cf0b769d60fa6fbefab517f88f747"
+      },
+      "sites": 4,
+      "input_names": [
+        "La",
+        "O",
+        "H",
+        "H"
+      ],
+      "native_atom_record_names": [
+        "La3",
+        "O",
+        "H",
+        "H"
+      ],
+      "induction_summaries": [
+        [
+          "4",
+          "0.0000000000"
+        ],
+        [
+          "4",
+          "0.0000000000"
+        ]
+      ],
+      "energy_kcal_mol": -76.03570895,
+      "old_energy_error_kcal_mol": 0.0,
+      "runtime_receipt": {
+        "argv": [
+          "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_build/analyze",
+          "system.xyz",
+          "EM"
+        ],
+        "cwd": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/run_v1/execution/cells/aquo8_central_La__dimer_01",
+        "started_utc": "2026-10-22T02:15:42.219147+00:00",
+        "threads": {
+          "OMP_NUM_THREADS": "1",
+          "OMP_THREAD_LIMIT": "1",
+          "OPENBLAS_NUM_THREADS": "1",
+          "MKL_NUM_THREADS": "1",
+          "NUMEXPR_NUM_THREADS": "1"
+        },
+        "timeout_seconds": 300,
+        "returncode": 0,
+        "ended_utc": "2026-10-22T02:15:42.838866+00:00",
+        "elapsed_seconds": 0.6197328381240368,
+        "child_user_cpu_seconds": 0.46148,
+        "child_system_cpu_seconds": 0.6770849999999999,
+        "output": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/run_v1/execution/cells/aquo8_central_La__dimer_01/analyze.out",
+          "sha256": "f8fa0d4868df1938b8e63ad86ef3dfcd91e58f3412bddcc7af0c865413a2f81e"
+        }
+      },
+      "limited_saved_checks_passed": true
+    },
+    "aquo8_central_La__water_01": {
+      "native_output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/run_v1/execution/cells/aquo8_central_La__water_01/analyze.out",
+        "sha256": "c70464d351a5c0d5f9136518b4816dfd399a8c349023130189c2b4d4d0bc7dfc"
+      },
+      "induced_output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/run_v1/execution/cells/aquo8_central_La__water_01/system.uind",
+        "sha256": "c20e2a5432633206289fc3c19fb63bfe7f4ecb53bb2557d6fb9def917f2015ac"
+      },
+      "sites": 3,
+      "input_names": [
+        "O",
+        "H",
+        "H"
+      ],
+      "native_atom_record_names": [
+        "O",
+        "H",
+        "H"
+      ],
+      "induction_summaries": [
+        [
+          "3",
+          "0.0000000000"
+        ],
+        [
+          "3",
+          "0.0000000000"
+        ]
+      ],
+      "energy_kcal_mol": 0.24532472,
+      "old_energy_error_kcal_mol": null,
+      "runtime_receipt": {
+        "argv": [
+          "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_build/analyze",
+          "system.xyz",
+          "EM"
+        ],
+        "cwd": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/run_v1/execution/cells/aquo8_central_La__water_01",
+        "started_utc": "2026-10-22T02:15:42.210466+00:00",
+        "threads": {
+          "OMP_NUM_THREADS": "1",
+          "OMP_THREAD_LIMIT": "1",
+          "OPENBLAS_NUM_THREADS": "1",
+          "MKL_NUM_THREADS": "1",
+          "NUMEXPR_NUM_THREADS": "1"
+        },
+        "timeout_seconds": 300,
+        "returncode": 0,
+        "ended_utc": "2026-10-22T02:15:42.831145+00:00",
+        "elapsed_seconds": 0.6207143568899482,
+        "child_user_cpu_seconds": 0.236669,
+        "child_system_cpu_seconds": 0.336372,
+        "output": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/run_v1/execution/cells/aquo8_central_La__water_01/analyze.out",
+          "sha256": "c70464d351a5c0d5f9136518b4816dfd399a8c349023130189c2b4d4d0bc7dfc"
+        }
+      },
+      "limited_saved_checks_passed": true
+    },
+    "aquo8_central_La__dimer_02": {
+      "native_output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/run_v1/execution/cells/aquo8_central_La__dimer_02/analyze.out",
+        "sha256": "097fc074b411e3e3703fc9850870256d1bf417968e92fed787152a981467b1e4"
+      },
+      "induced_output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/run_v1/execution/cells/aquo8_central_La__dimer_02/system.uind",
+        "sha256": "35ebf0aa68d49df6e5e5edf483e8a21af797f8daba4f668e781eae0d2684aa8d"
+      },
+      "sites": 4,
+      "input_names": [
+        "La",
+        "O",
+        "H",
+        "H"
+      ],
+      "native_atom_record_names": [
+        "La3",
+        "O",
+        "H",
+        "H"
+      ],
+      "induction_summaries": [
+        [
+          "4",
+          "0.0000000000"
+        ],
+        [
+          "4",
+          "0.0000000000"
+        ]
+      ],
+      "energy_kcal_mol": -76.03570895,
+      "old_energy_error_kcal_mol": 0.0,
+      "runtime_receipt": {
+        "argv": [
+          "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_build/analyze",
+          "system.xyz",
+          "EM"
+        ],
+        "cwd": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/run_v1/execution/cells/aquo8_central_La__dimer_02",
+        "started_utc": "2026-10-22T02:15:42.237535+00:00",
+        "threads": {
+          "OMP_NUM_THREADS": "1",
+          "OMP_THREAD_LIMIT": "1",
+          "OPENBLAS_NUM_THREADS": "1",
+          "MKL_NUM_THREADS": "1",
+          "NUMEXPR_NUM_THREADS": "1"
+        },
+        "timeout_seconds": 300,
+        "returncode": 0,
+        "ended_utc": "2026-10-22T02:15:42.856562+00:00",
+        "elapsed_seconds": 0.6190488960128278,
+        "child_user_cpu_seconds": 0.9518949999999999,
+        "child_system_cpu_seconds": 1.313888,
+        "output": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/run_v1/execution/cells/aquo8_central_La__dimer_02/analyze.out",
+          "sha256": "097fc074b411e3e3703fc9850870256d1bf417968e92fed787152a981467b1e4"
+        }
+      },
+      "limited_saved_checks_passed": true
+    }
+  },
+  "saved_checks_passed": 31,
+  "not_attempted": 74,
+  "full78_aggregate_admitted": false,
+  "scientific_cycles_computed": false,
+  "native_cost": {
+    "wall_seconds": 7.037516377866268,
+    "parent_CPU_seconds": 4.971493692999999,
+    "aggregate_child_user_CPU_seconds": 0.9518949999999999,
+    "aggregate_child_system_CPU_seconds": 1.313888,
+    "allocated_CPUs": 4,
+    "per_receipt_child_CPU_deltas_not_summed": true
+  },
+  "next_step": "Versioned readback recovery must fully re-admit/reuse four raw outputs and execute only remaining74 with unchanged inputs, induction/energy/site/precision gates.",
+  "new_native_calls": 0,
+  "review_cost": {
+    "wall_seconds": 0.3300863290205598,
+    "CPU_seconds": 0.266271624,
+    "max_local_threads": 1,
+    "first_ad_hoc_assertion_attempt_wall_seconds": 0.13536803
+  }
+}

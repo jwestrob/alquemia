@@ -1,0 +1,70 @@
+{
+  "status": "passed_sparse_assembly_source_review",
+  "reviewer": "Arendt",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_assembly_v1/ASSEMBLE.py",
+    "sha256": "927e38fe22b2d2b1940405394e0b08ea8f59fef6958fa1164fb1375f01cbf59a"
+  },
+  "declaration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_assembly_v1/DECLARATION.md",
+    "sha256": "57201d8b6cafc28d91c6668d008839a5caa82f71bb05ef63030896df247faec3"
+  },
+  "parent_tensor": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/real_bound_feasibility_v1/BOUND.py",
+    "sha256": "2f6c5474dcc82308a65b8a4ae96d2d401630fcd783eb64cd376d4893f1386929"
+  },
+  "controls_implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_assembly_v1/TEST_ASSEMBLE.py",
+    "sha256": "424787ed257b7d73e23c867b36f91b887a0cbd97e4b5cc1bb32c5f388cae742c"
+  },
+  "controls_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_assembly_v1/controls_v1/RESULT.json",
+    "sha256": "4c0552a582a14f39ccdba8a4ed8c13d591190c6cab0147221ab8f19961fd1ef1"
+  },
+  "report": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_assembly_v1/independent_source_review_v1/REPORT.md",
+    "sha256": "b67fadbdc248ce13afe9b3e20a638c9e56f28315417e7aa76d660b9b28c460f2"
+  },
+  "native_source_evidence": {
+    "induce.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/sampling_cpu_refactor_v1/source_v1/source/induce.f",
+      "sha256": "78ad01a7eaf0accd6d20b49a149de8aa4f337d85be5a2b1dd8265aee9993f8ac"
+    },
+    "kpolar.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/sampling_cpu_refactor_v1/source_v1/source/kpolar.f",
+      "sha256": "01c5cba4c5f7b9a14544b8084f57227aa5d8317f283ac550da653b619f024d8b"
+    },
+    "damping.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/sampling_cpu_refactor_v1/source_v1/source/damping.f",
+      "sha256": "8e7b99d28a30548b4c7ffaff78794848c6c0bdbc6066d09857379445c232e4ee"
+    }
+  },
+  "checks_passed": 14,
+  "control_executions": 1,
+  "cost": {
+    "wall_seconds": 0.04092705901712179,
+    "CPU_seconds": 0.024018909000000033,
+    "numerical_threads": 1
+  },
+  "python_executable": "/home/jwestrob/.pyenv/versions/3.12.0/bin/python3",
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OMP_THREAD_LIMIT": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1"
+  },
+  "blockers": [],
+  "source_edits": 0,
+  "native_calls": 0,
+  "physical_box_calls": 0,
+  "backend_factorizations": 0,
+  "scope": "source signs/normalization/storage and declared tiny artificial controls only",
+  "limitations": [
+    "pair enumeration allocates before exact-count budget check",
+    "storage estimate excludes total process memory and backend fill",
+    "all-unity mutual scales require future caller/native binding",
+    "no native fixture parity, PME term, floating outward eigenvalue certificate or full stability admission"
+  ]
+}

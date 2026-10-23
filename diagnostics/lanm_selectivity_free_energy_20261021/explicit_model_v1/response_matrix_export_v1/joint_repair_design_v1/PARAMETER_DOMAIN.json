@@ -1,0 +1,112 @@
+{
+  "status": "prospectively_declared_parameter_domain_no_fit",
+  "created_utc": "2026-10-22T05:29:04.711359+00:00",
+  "root_declaration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/ROOT_DECLARATION.md",
+    "sha256": "196b302d344f56df1d3fbc10245e4addbd28e8b1d09681439fb88d6a5f984e7a"
+  },
+  "parameters": [
+    {
+      "name": "La_a",
+      "initial": 0.0,
+      "lower": -1.0,
+      "upper": 1.0,
+      "units": "dimensionless"
+    },
+    {
+      "name": "La_b",
+      "initial": 0.0,
+      "lower": -1.0,
+      "upper": 1.0,
+      "units": "dimensionless"
+    },
+    {
+      "name": "La_u",
+      "initial": 0.0,
+      "lower": -1.0,
+      "upper": 1.0,
+      "units": "dimensionless"
+    },
+    {
+      "name": "La_v",
+      "initial": 0.0,
+      "lower": -1.0,
+      "upper": 1.0,
+      "units": "dimensionless"
+    },
+    {
+      "name": "Dy_a",
+      "initial": 0.0,
+      "lower": -1.0,
+      "upper": 1.0,
+      "units": "dimensionless"
+    },
+    {
+      "name": "Dy_b",
+      "initial": 0.0,
+      "lower": -1.0,
+      "upper": 1.0,
+      "units": "dimensionless"
+    },
+    {
+      "name": "Dy_u",
+      "initial": 0.0,
+      "lower": -1.0,
+      "upper": 1.0,
+      "units": "dimensionless"
+    },
+    {
+      "name": "Dy_v",
+      "initial": 0.0,
+      "lower": -1.0,
+      "upper": 1.0,
+      "units": "dimensionless"
+    },
+    {
+      "name": "La_R",
+      "initial": 3.919394849221829,
+      "lower": 3.1437505772349654,
+      "upper": 4.253309604494365,
+      "units": "angstrom"
+    },
+    {
+      "name": "La_epsilon",
+      "initial": 0.15863887317162664,
+      "lower": 0.12214818233785854,
+      "upper": 0.36644454701357565,
+      "units": "kcal/mol"
+    },
+    {
+      "name": "Dy_R",
+      "initial": 3.640166322240097,
+      "lower": 2.82379559590138,
+      "upper": 3.820429335631278,
+      "units": "angstrom"
+    },
+    {
+      "name": "Dy_epsilon",
+      "initial": 0.202479823314524,
+      "lower": 0.18666165039292407,
+      "upper": 0.5599849511787722,
+      "units": "kcal/mol"
+    }
+  ],
+  "S": 1.3862943611198906,
+  "mapping": "c=S*(u+v)/4; d=S*(u-v)/4; |c|+|d|<=S/2; eight response box variables plus four VDWPR variables",
+  "local_inverse_response_factor_bounds": [
+    0.25,
+    4.0
+  ],
+  "bounds_meaning": "Declared development domain, not physical accuracy or global induced-dipole stability guarantee.",
+  "fixed_native_POLPAIR": {
+    "La": 0.17662704152555941,
+    "Dy": 0.15457541153280463
+  },
+  "unchanged": "Original mutual interaction tensor, native intrinsic alpha and damping lengths, multipoles, metal-H and water-water terms. Added H changes effective metal response.",
+  "starting_candidate": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_coordination_joint_v1/run_v1/execution/RESULT.json",
+    "sha256": "5001cb5798571245d5dcff7c6afbcc8c482e1525f0e8e09e2c4c1b124eb03832"
+  },
+  "new_native_calls": 0,
+  "fit_executed": false
+}

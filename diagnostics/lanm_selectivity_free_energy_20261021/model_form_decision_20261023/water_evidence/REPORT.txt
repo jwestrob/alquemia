@@ -1,0 +1,155 @@
+WATER MODEL FORM: GEOMETRY-RESOLVED ENERGY AND ELECTRICAL RESPONSE
+23 October2026. Existing admitted reports and algebra only; no new calculations.
+Evidence IDs below resolve to exact paths in EVIDENCE.json.
+
+DECISION
+The saved evidence supports an explicit OTHER-LIGAND ANGLE dependence in the
+response operator, beyond current scalar occupancy/metal stiffness and the
+already-tested radial oxygen EXCHPOL term. The concrete architecture below
+adds a collective angular water-O inverse-response term while retaining an
+independent internal drive in the SAME stationary energy. This is a reasoned model-form choice, not a claim
+that quantum anisotropy/charge transfer has been uniquely identified or that a
+new term is already accurate. Another scalar pair offset, uniform alpha change,
+or radial-drive adjustment cannot supply these missing independent freedoms.
+No further fit or generic diagnostic campaign is proposed here.
+
+Relation to root's chosen2B/3B residual architecture: the angular-H equation
+below is a NARROWER alternative. It still routes the mechanical correction
+through induction. The evidence does not identify that restriction as correct:
+quantum E3 is not uniquely polarization, and its zero-field value is not fixed
+by dipole/curvature agreement. A field-coupled short-range2B/3B residual energy
+with explicit geometry/orientation dependence can instead supply independent
+zero-field energy and conjugate dipole/curvature corrections in one conservative
+functional. That broader decision is consistent with this evidence and avoids
+claiming the measured lab-z mode uniquely selects H. The strong recommendation
+is the missing joint geometry-resolved energy/electrical freedom; the specific
+location inside H is a hypothesis, not an established requirement.
+
+WHAT THE MODEL MUST RECONCILE
+1. Pair and collective errors have opposite signs, so the net energy can hide
+   both. In the original matched Dy9-La9-Dy8+La8 contrast, P/B/C errors were
+   +1.263316/-5.601600/-4.338284 kcal/mol. Equalizing all fragment bases changes
+   these to+1.575605/-6.238611/-4.663007: the collective discrepancy grows.
+   Within this model B is polarization; pair vdW cancels to printed precision.
+   Quantum B also contains other electronic effects; this is no unique physical
+   polarization decomposition. These are arrangement/coordination contrasts,
+   not an isolated ninth-water affinity or equilibrium exchange free energy.[E01-03]
+
+2. Small full-shell dipole error conceals weak pair response AND weak collective
+   suppression. W9 pair-sum z dipoles, reference/model, are La3.929194/2.916725D
+   and Dy3.959697/2.729250D. Collective Bz is La-1.684749/-0.809525D and
+   Dy-1.819874/-0.711698D; its Dy-La sign is reversed (-0.135125 vs+0.097827D).
+   Stronger isolated response alone cannot produce both requirements.[E03]
+
+3. Weak zero-field dipoles do NOT imply too little susceptibility. The ORIGINAL
+   baseline conditional lab-z curvature overresponds when adding a water:
+   La increment7.457848 vs6.543702a0^3; Dy7.859292 vs6.722583. Dy dimer is
+   slightly low (12.926084 vs13.158107), but its far trimer is high
+   (20.785375 vs19.880690). Thus a uniform susceptibility increase points the
+   wrong way for the added-water mode. These are conditional trimer-minus-dimer
+   curvatures, not seven-term alpha3, a tensor-wide result or calibrated physical
+   error bars. These baseline numbers motivated separate drive/stiffness; they
+   are not the later14-parameter curvature errors: the1/16 witness chi RMS is
+   0.572251a0^3. The baseline lesson remains: uniform alpha enhancement is not
+   a causal explanation or a suitable universal response repair.[E05,E16]
+
+4. The problem already exists at three-body order and survives later fitting.
+   Original eight E3 errors were-4.617 to-8.184kcal/mol; mu3 magnitudes were
+   58.8-85.6% low. Current frozen radial14 terminal has individual E3 errors
+   -5.560296 to-12.739001. Its paired Dy-La E3 values versus reference are:
+                       model       reference       error (kcal/mol)
+     W8near           -1.566934     +2.006632       -3.573566
+     W8far            -2.284236     +0.567840       -2.852076
+     W9near           -0.831396     +3.154974       -3.986370
+     W9far            -2.278130     +0.430040       -2.708170
+   All four are wrong-sign; these are already metal differences, so shared
+   absolute-energy error cannot dismiss them. All eight individual E3 and mu3
+   errors worsen versus feca12. All four paired mu3 errors improve through
+   cancellation; far W9 signed mu3z remains+0.002021 vs-0.060279D. Saved changes
+   in E3 from feca12 occur in native polarization; nonpolar changes are0 or1e-8.
+   Eight E3 values cannot reconstruct full-shell B or prove a free-energy error.[E04,13,14]
+
+WHAT IS PARAMETER/OBJECTIVE FAILURE, AND WHAT IS REPRESENTATION
+Current14 does pass all25 declared physical gates. Its P/B RMS9.8669/8.2866
+kcal/mol concerns the two W8/W9 DY-MINUS-LA component residuals; it is not absolute
+per-metal binding RMS. Balanced W9 error is only-0.0756569, with cancellation.
+W9 signed C contrast still+0.12788266 vs-0.10461795D. The electrical guards are
+nonincrease ceilings, not accuracy thresholds. Trimer E3/mu3 were regression
+observables, not the fitted objective, so their failure alone cannot exclude
+another parameter choice. The new1/16 witness actually passes and improves q
+by0.40748%, proving the prior fraction floor missed a feasible point. The local
+six-group trimer solve retained AlmostSolved and missed its literal q cap by
+5.557e-11; that is not an infeasibility certificate. Do not sell the optimizer
+stop as a global theorem.[E12-16]
+
+The actual restrictions are algebraic. Present h_i is radial, with amplitude
+3 f_i phi_i[a+b eta_i+e psi_i]; H changes only an isotropic metal3x3 block.
+At ideal2.50A two-water radii its added amplitudes are a+b/2 and
+(4/3)(c+2d/5), independent of the near/far angle. Baseline T and vector directions
+already contain angles: the whole model is not angle-free. What is absent is
+an INDEPENDENT angular/site-resolved correction. A field-independent pair energy
+cancels from B and E3 and cannot alter dipoles/chi. At fixed geometry and c,d,
+a/b/e cannot change chi. At r0, e changes radial slope but has zero added field;
+it relieved force/value coupling, not a new central collective response mode.[E10,11,14]
+
+SPECIFIC EQUATION-LEVEL ALTERATION
+Retain the qualified dual functional, unequal native RHS and independent h:
+ L=K/2[u^T(A0+H)v-u^T(Ep+h)-v^T(Ed+h)].
+Add an explicitly collective, angle-dependent oxygen block to H:
+ delta H_(Oi,Oi) = [exp(sigma_i)-1] n_i n_i^T / alpha_O,
+ sigma_i=f_i[k_env eta_i + k_ang zeta_i],
+ zeta_i= sum_(j!=i) f_j P2(n_i dot n_j)/(1+sum_(j!=i) f_j),
+ P2(x)=(3x^2-1)/2.
+Here eta_i is the existing bounded other-water overlap sum. Both eta_i and
+zeta_i vanish for one water: the new term leaves isolated pair response intact
+at fixed existing coefficients, yet distinguishes near/far two-water angles at
+the same M-O radius. Retained pair drive/radial shape provides separate pair
+freedom. The new coefficient dependence changes energy, moments and curvature
+together, unlike a scalar E3 offset. This is one concrete rotation-covariant
+architecture; P2 is a minimal design choice, not a quantum-identified angular law.
+
+IMPORTANT NONDUPLICATION: merely adding radial O stiffness is NOT new. Native
+EXCHPOL already implemented delta H_i=q*f_i*n_i*n_i^T/alpha_O at q=.01/.05,
+and those positive pairwise perturbations worsened C/B and force controls.
+The historical oxygen-H proposal therefore cannot be cited as an untried fix.
+What differs above is dependence on OTHER ligands and their angles, absent from
+those EXCHPOL probes and from current radial14's added scalar amplitudes. The
+failed finite probes do not mathematically exclude all signed amplitudes, but
+there is no reason to relaunch that same pairwise stiffness hypothesis.[E06,E17]
+
+No coefficient/sign is selected here. Smooth contact handling and the unchanged
+full response-matrix stability condition remain necessary; an exponential local
+factor does not prove global stability. Forces must differentiate h, projectors
+and all other-water/angular terms in this same functional. Preserve the
+metal-absent water Hamiltonian; metal-induced water response is deliberately
+changed. The evidence supports making the missing geometry dependence explicit,
+not asserting a uniquely microscopic CT, Pauli, penetration or quantum-anisotropy
+explanation. A donor-site isotropic-H+drive analogue has also already failed
+its sampled mechanical repair: combined paired rotation13.075192->14.857009
+versus reference-1.736185 and radial21.330214->24.629125 versus6.321044.
+That separate donor result reinforces that moving a scalar stiffness onto
+ligands alone is insufficient; it does not validate this angular proposal.[E18]
+
+ALREADY COMPLETED: DO NOT REPEAT AS NEW MECHANISMS
+- Alpha +/-1/5%: all8probes fail; largest coordination gain0.0332kcal/mol versus
+  4.3383error. Unrestricted projection demanded negative alpha/damping.[E08]
+- Positive EXCHPOL0.01/0.05: coordination error worsens to-4.345825/-4.373727;
+  original force failures grow. This rejects those amplitudes, not all H.[E06]
+- Direct/mutual damping +/-5%: largest coordination gain0.016702; mutual changes
+  trade near against far E3; wrong collective metal ordering persists.[E07]
+- Earlier81 drive/metal-stiffness combinations: all fail coordination; errors
+  -5.814256 to-2.743836. Its one-Dy-stiffness sign obstruction was removed by
+  later pair/environment coefficients, so do not apply that old theorem to14.[E09]
+- Pair/collective drive+metal H, old-score-ceiling removal, radial value/slope
+  extension, joint14 fit and1/16 follow-up are completed. They yield genuine
+  local improvements but no demonstrated trimer-energy transfer repair.[E10-16]
+
+LIMIT
+Reference numbers are provisional PBE0/common-parent-basis electronic cycles
+(with D4 included only where explicitly defined). Common-basis consistency
+addresses one bias, not electronic-state or correlated accuracy. The exact
+14-term tighter-stopping W9far comparison has no admitted complete replacement
+result in the evidence available to this synthesis. Retain this limitation;
+failed historical printed density/DIIS flags do not by themselves explain the
+model discrepancy. No calculation, numerical replay, parameter choice, model
+implementation or launch was performed for this note.

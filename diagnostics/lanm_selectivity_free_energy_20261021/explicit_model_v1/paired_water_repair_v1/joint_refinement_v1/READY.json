@@ -1,0 +1,94 @@
+{
+  "status": "bounded_joint_refinement_prepared_not_executed",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/REFINE.py",
+    "sha256": "90f3fc262962741deb06a09f2a0532161854f905de7cf4d9e687294854f6c50a"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/SPEC.md",
+    "sha256": "5ea6516ff0d77a1f398f63af60a8ed822fb4be863beebbfc8cd7fe9520ad665d"
+  },
+  "config_prepare": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/CONFIG_PREPARE.json",
+    "sha256": "2cfaa9276a85d975f8c51e1c76f7170579c30b1afd9445d2c3445ffadcdcb6be"
+  },
+  "actual_preparation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/preparation_v1/RESULT.json",
+    "sha256": "4c70078826e6bf229a582641ddb8d9c697d377f6fa93bc0f1d03d46a4f1b0d9e"
+  },
+  "launcher": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/RUN.sbatch",
+    "sha256": "8630734f2360e4354369bbdba729ecd941756fa2814071a5d3c1978b5771c97b"
+  },
+  "release_fields_required": {
+    "status": "approved_paired_water_representability",
+    "evaluator": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/EVALUATE.py",
+      "sha256": "72af9700048cc48e27ee1ad06bdd98cf9cefa974be083a286259e678d47d4003"
+    },
+    "evaluator_config_sha256": "092b5429bfff77c3241a630a07e74cfc6afe03a12d135d30a08ecdbb86099a62",
+    "max_parameter_vectors": 241,
+    "max_native_program_invocations": 1920,
+    "validation_scoring_authorized": false,
+    "physical_accuracy_claimed": false,
+    "joint_status": "approved_bounded_joint_water_refinement",
+    "joint_max_new_vectors": 144,
+    "joint_max_native_program_invocations": 1152,
+    "joint_max_outer_steps": 12,
+    "joint_workers": 8,
+    "joint_config_sha256": "4c993bf9f390676ee089a4139bb0931ed0b5036faeecd71224d5c65694e6e617",
+    "joint_preparation_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/preparation_v1/RESULT.json",
+      "sha256": "4c70078826e6bf229a582641ddb8d9c697d377f6fa93bc0f1d03d46a4f1b0d9e"
+    },
+    "joint_implementation": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/REFINE.py",
+      "sha256": "90f3fc262962741deb06a09f2a0532161854f905de7cf4d9e687294854f6c50a"
+    },
+    "joint_specification": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/SPEC.md",
+      "sha256": "5ea6516ff0d77a1f398f63af60a8ed822fb4be863beebbfc8cd7fe9520ad665d"
+    },
+    "joint_scout_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/coupled_scout_v1/run_v1/execution/RESULT.json",
+      "sha256": "dfb777e38e152f7333960ac0989243c2c911af677903a16073e87ffb2546b13c"
+    }
+  },
+  "run_config_instruction": "Copy CONFIG_PREPARE, changing only root_release and preparation_result to actual pins. All scientific/helper inputs remain fixed.",
+  "run_argv": [
+    "/usr/bin/python3",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/REFINE.py",
+    "run",
+    "--config",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/CONFIG_RUN.json",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution"
+  ],
+  "submission_argv": [
+    "sbatch",
+    "--parsable",
+    "--qos=standard_expand",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/RUN.sbatch",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/REFINE.py",
+    "run",
+    "--config",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/CONFIG_RUN.json",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_repair_v1/joint_refinement_v1/run_v1/execution"
+  ],
+  "launcher_note": "Existing parent RUN.sbatch is eight CPUs and already execs /usr/bin/python3; first positional argument is REFINE.py. No launcher mutation.",
+  "native_limits_note": "Unchanged evaluator241/1920 ceiling plus runner144 new derivative/trial vectors and per-program1152 ceiling. At most12 outer steps. Initial cached admissions are excluded from new-vector count.",
+  "new_native_program_invocations": 0,
+  "initial_parameters": [
+    3.68689020286329,
+    0.1909375,
+    3.345904105516956,
+    0.14462500000000003
+  ],
+  "initial_score_objective": 0.2967353814138801,
+  "read_only_native_cache_links": 158,
+  "original_results_and_ledgers_unchanged": true,
+  "preparation_wall_seconds": 6.197254744998645,
+  "preparation_parent_CPU_seconds": 5.453257434,
+  "validation_outcomes_opened": false
+}

@@ -1,0 +1,7 @@
+# Prepared dry mono-acetate component diagnostic
+
+The exact frozen16 shared geometries and both selected17621 raw E/F centers passed preparation. Twenty-four saved controls passed; no native program was invoked. The first synthetic test used an incorrect expected coefficient (63 instead of21); its source and failure are preserved in `TEST_SAVED_v1.py` and `saved_controls_v1/FAILURE.json`. Producer arithmetic and scientific inputs did not change.
+
+Root binds `ROOT_RELEASE_TEMPLATE.json` to the independent source review and an unused output directory, changes status to `released_dry_acetate_component_derivatives`, then uses the exact launcher argv in READY.json. The run executes16 serial original-binary analyze calls, retains every native component and saves its complete derivative comparison. No new scout stage is needed. Native failure stops further calls with all16 slots retained; a total derivative resolution failure preserves all estimates and is not a partial physical result.
+
+**Interpretation:** centroid rotation changes individual metal–donor distances as well as orientations. Its derivative is not a pure anisotropic or electrostatic angular response. Native component derivatives describe this model partition on the declared motion; they do not uniquely identify a physical error or map to quantum charge-transfer/dispersion components. Both step sizes, all metals and paired differences must be reported. No reference-displacement or live-fit result was used in preparation.

@@ -1,0 +1,9 @@
+# Save-thread recovery of the same 57-program qualification
+
+The first run18636 stopped with `RuntimeError('dictionary changed size during iteration')` while saving a result shared with active worker threads. Its original source, configuration, result and all native outputs remain immutable. It completed the exact absent/zero/combined prefix: 27 programs, including all 468 combined-profile Cartesian internal displacements. No scientific row is marked failed; this is not yet admission of the prefix.
+
+Before further execution, replay every one of those 27 native outputs, exact input and invocation receipt, coefficient readback, induction report, analytic/FD gradient and applicable saved-baseline identity. Require the original full result and individual cell receipts to agree. Preserve all 30 original unattempted slots. A failed prefix admission stops this recovery.
+
+`RUN_v2.py` gives the published started record a deep copy, so worker-local fields are never mutated while another thread serializes the published result. Completed records are published only after worker mutation ends. It reuses the exact admitted 27 outputs and executes only the remaining 30 original programs, with 168 new internal FD energies. Total limits remain 57 programs and 636 internal FD energies, at most12 one-thread workers. No input, scientific formula, numerical tolerance, profile, direction, field, native executable or prepared future input changes. No native retry or automatic extension.
+
+All prior outcomes, costs and failed persistence are retained. Root reviews/binds/releases the recovery. A final result requires all original57 rows and the original derivative, export and field tests. The actual review must distinguish 30 new plus27 reused programs and 168 new plus468 inherited internal displacements. This recovery qualifies no physical response or fitted parameters.

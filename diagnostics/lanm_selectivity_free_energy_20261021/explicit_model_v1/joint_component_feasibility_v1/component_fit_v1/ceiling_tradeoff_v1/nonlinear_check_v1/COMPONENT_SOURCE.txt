@@ -1,0 +1,45 @@
+def component_report(cfg,parent,answer,origin):
+    dec=read(cfg['decomposition']);manifest=read(parent['manifest']);static={k:v['energy_kcal_mol'] for k,v in manifest['static'].items()}
+    def one(cells):
+        energies=dict(static,**{k:v['energy'] for k,v in cells.items()});parents={}
+        for name,row in dec['parents'].items():
+            parents[name]={k:math.fsum(c*energies[cid] for cid,c in terms.items()) for k,terms in row['model_terms'].items()}
+        paired={}
+        for n in (8,9):
+            reference=dec['paired_Dy_minus_La']['W'+str(n)]['reference_total_kcal_mol']
+            model={k:parents[f'aquo{n}_central_Dy'][k]-parents[f'aquo{n}_central_La'][k] for k in ('C','P','B')}
+            paired['W'+str(n)]={'model':model,'reference':reference,'error':{k:model[k]-reference[k] for k in model}}
+        return {'parents':parents,'paired':paired,'J_P':sum(p['error']['P']**2 for p in paired.values())/2,'J_B':sum(p['error']['B']**2 for p in paired.values())/2}
+    old,new=one(origin['cells']),one(answer['cells'])
+    result=read(cfg['tradeoff_result']);cert=policy_candidate(result,read(cfg['followup_policy']));problem=read(result['linearized_problem'])
+    direction=[cert['fraction']*x for x in result['solution']['x'][:12]]
+    e0=problem['current_metrics']['component_errors_kcal_mol']
+    order=('P8','B8','P9','B9')
+    predicted={name:e0[name]+math.fsum(a*b for a,b in zip(j,direction)) for name,j in zip(order,problem['Jacobian_components'])}
+    actual={f'{k}{n}':new['paired']['W'+str(n)]['error'][k] for n in (8,9) for k in ('P','B')}
+    oldblocks=origin['score']['block_objectives'];newblocks=answer['score']['block_objectives']
+    q=max(new[k]/old[k] for k in ('J_P','J_B'))
+    def electrical(scores):
+        return {'equal_parent_pair_cartesian_RMS_Debye':math.sqrt(scores['pair']),
+                'four_parent_C_cartesian_RMS_Debye':math.sqrt(scores['C']),
+                'four_state_susceptibility_RMS_a0_cubed':math.sqrt(scores['chi'])}
+    predicted_scores={k:4*cert['constructed_source_certificate']['certificate']['blocks'][alias]['predicted_squared_norm']
+                      for k,alias in (('pair','pair_mu'),('C','C_mu'),('chi','chi'))}
+    return {'definition':'Literal paired Dy-La C/P/B; no absolute-parent total-energy target.', 'origin':old,'candidate':new,
+            'predicted_component_errors_kcal_mol':predicted,'actual_component_errors_kcal_mol':actual,
+            'actual_minus_predicted_component_errors_kcal_mol':{k:actual[k]-predicted[k] for k in actual},
+            'predicted_blocks':cert['constructed_source_certificate']['certificate']['blocks'],
+            'predicted_actual_q':cert['actual_component_rho'],'actual_q':q,
+            'actual_minus_predicted_q':q-cert['actual_component_rho'],
+            'full_constraint_linear_baseline_q':result['baseline_actual_component_rho'],
+            'actual_gain_against_full_constraint_linear_baseline_q':result['baseline_actual_component_rho']-q,
+            'origin_original_block_scores':oldblocks,'candidate_original_block_scores':newblocks,
+            'original_block_changes':{k:newblocks[k]-oldblocks[k] for k in oldblocks},
+            'original_block_ratios':{k:newblocks[k]/oldblocks[k] for k in oldblocks},
+            'electrical_residual_RMS':{'origin':electrical(oldblocks),'candidate':electrical(newblocks),
+                                       'predicted':electrical(predicted_scores)},
+            'electrical_residual_units_note':'Frozen scale1: pair uses equal-parent mean over literal pair Cartesian components; C uses4x3 Cartesian components; chi uses four states. No response accuracy gate.',
+            'strict_component_score_improvement':{k:new[k]<old[k] for k in ('J_P','J_B')},
+            'original_block_exact_nonincrease':{k:newblocks[k]<=oldblocks[k] for k in oldblocks},
+            'original25_pass':answer['score']['original_EF_checks_passed'],
+            'old_ceilings_required_for_reporting':False,'physical_threshold_added':False,'model_admitted':False}

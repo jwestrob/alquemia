@@ -1,0 +1,80 @@
+Saved periodic response derivative audit
+
+Finding
+The failed finite panel contains a baseline/input contribution. It cannot be
+explained entirely by an omitted custom h/H derivative. No omitted custom chain
+term was found in this source review. That does not qualify the failed panel or
+exclude a second response-dependent problem.
+
+All36 gradients and32 certificates were admitted; the failed numerical gates
+remain failed. The three metal translations and water rotation have FD errors
+below7.5e-7 kcal/mol/angstrom. Whole-box and all three strains fail both slopes
+and step consistency. A constant missing central virial contribution alone would
+not explain their differences between the two finite-difference slopes.
+
+Exact saved-token decomposition
+The table is FD(h/2)-FD(h), h=1e-4 angstrom, in kcal/mol/angstrom:
+direction       total              polarization       total-polarization
+whole_box       +0.045638517        -0.017241946        +0.062880463
+strain_0        -0.5463935305       -0.4240135425       -0.1223799880
+strain_1        +1.1697996525       +0.679807454        +0.4899921985
+strain_2        -0.902461070        -0.011109114        -0.891351956
+
+These are step changes, not individual component analytic-force errors: the
+reporter saves total G/virial and polarization energy, but no analytic component
+G/virial split. Custom h/H changes polarization only for this frozen AMOEBA
+fixture. The central active-minus-baseline total energy difference also equals
+its polarization difference exactly at the saved token precision. Nonpolar
+step sensitivity therefore survives independently of the custom correction.
+This does not distinguish cutoff, PME, coordinate serialization or finite-step
+effects. Planck owns the coordinate/cutoff audit.
+
+Custom energy/force audit
+The executed induce_qualification.f retains the exact geometry and gradient
+bodies from the pinned parent. After the metal namespace change, all arithmetic
+from fac onward in periodicresponsegradient is identical to the qualified vacuum
+two-pass contraction; only dynamic storage/image geometry differs.
+
+For M=A+H, d=Ed+h, p=Ep+h, u=M^-1 d, v=M^-1 p:
+  U=-K/2 d^T M^-1 p,
+  dU=K/2[u^T(dA+dH)v-v^T(dEd+dh)-u^T(dEp+dh)].
+epolar1e uses u dotted into corrected Ep via udirp/alpha. Its stationary energy
+already includes the effect of H through the solution; adding another explicit
+u.H.v energy term would double-count it. The saved central contraction error is
+2.8532e-11 kcal/mol, below its inherited bound. This validates the saved energy
+convention, not the derivatives.
+
+The explicit custom gradient contains beta' times the metal u.v contraction,
+the own-water radial derivative, every other-water eta chain through prefix/
+suffix sums, and the derivative of the radial vector itself. It uses u+v, with
+equal opposite oxygen/metal reactions. The compact kernel uses F'S+FS' in all
+f chains. Fixed alpha/damping have no extra coordinate or strain derivatives.
+Native permanent-frame derivatives consume the changed solved dipoles through
+the original force routines.
+
+The custom virial contracts each oxygen reaction with its nearest-image
+metal-to-O displacement. Under the declared diagonal cell+coordinate strain,
+that displacement transforms with the same strain while the image index is
+locally fixed. Image ties are outside compact support. No independent missing
+cell derivative is apparent for this pair/environment functional. Ordinary
+native reciprocal/self/frame virial derivatives remain separate responsibilities.
+
+Smallest released-next question (prospective; no execution here)
+Root selected eight response-disabled endpoints: whole_box and strain_1, both
+original steps/signs. Reuse the exact OLD_ABSENT central analytic output; retain
+the same geometry, cell, PME/cutoff, induction and print settings. No new
+initializer/factorization is needed. Planck owns preparation and root release.
+
+Compare the original baseline FD/analytic/two-step gates, then the active-minus-
+baseline energy and analytic-slope increments at each same step. If baseline
+fails while that increment is consistent, prioritize ordinary baseline handling.
+If the increment also fails, it localizes a response-dependent discrepancy but
+does not uniquely implicate custom algebra: changed induced dipoles can expose
+native polarization/PME truncation or convergence errors too. Preserve every
+original failure and threshold. Do not turn this diagnostic into qualification.
+
+Evidence and cost
+AUDIT.json binds the failed collector, exact old e41f candidate/build, all36 raw
+gradient/result pins and energy tokens, executed custom source and complete
+eight-direction decomposition. Cost:1.180wall/1.096CPU seconds, one thread.
+Zero native, FFT, factorization, solve, or author-control reruns.

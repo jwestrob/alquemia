@@ -1,0 +1,51 @@
+Radial local comparison v2 — independent saved review
+
+Admission: four declared new derivative vectors, 24 immutable old derivatives,
+112 successful native programs (92 analyze + 20 testgrad), and exactly two
+single-attempt affine comparisons. All 417 journal events reconcile with the
+terminal ledger; no missing, repeated, unresolved or failed native attempts.
+The old clipped Dy_v span 0.005170593745372654 is retained. Saved conic matrices
+have exactly the same 1,437 rows: 20 SOC families and 890 scalar sides. Original12
+is the literal deletion of the two radial columns from the radial14 system.
+All 112 raw response readback groups agree with their stored parser records.
+
+                          q          P RMS       B RMS
+Center                    .22727182   12.720316   10.441828
+Original12 full           .19950334   11.362502    9.961881
+Radial14 full             .14977545    9.328569    8.631506
+Original12 half           .20923078   12.041409   10.201852
+Radial14 half             .18283390   11.024442    9.536623
+P/B RMS errors are kcal/mol; q is the maximum of the two fixed-baseline
+normalized squared-error scores. These are affine predictions, not new native
+candidate measurements. Neither predicted full point reaches 1 kcal/mol.
+
+The two added radial columns improve this fixed-center local tradeoff: radial14
+lowers q by .07749637 from center versus .02776848 for original12. Their saved
+P/B component-column norms are zero at this center, while their original531
+residual-column norms are 31.15754 and 48.42836. Thus their observed local benefit
+comes through allowing different movement of the original parameters while
+protecting the force/electrical constraints; this is not direct first-order P/B
+energy sensitivity to the added columns or a global capacity conclusion.
+
+All four reported full/half points pass the saved 25 predicted physical gates,
+original parameter/trust bounds, three center electrical-norm ceilings and
+signed-W9 safeguard. Radial half predicts electrical RMS .63942816 D (pair),
+.08278010 D (collective), and .65823705 a0^3 (chi), versus center .63943155 D,
+.08584593 D and .68044364 a0^3. Absolute electrical accuracy is not established.
+
+Both solves remain AlmostSolved, not Solved: reported gaps are 1.03e-8 and
+8.93e-9, and saved independent primal residual infinity norms are 6.45e-9 and
+9.33e-8. Full radial raw q misses its epigraph by 1.78e-12; the prospectively
+declared auxiliary-q cushion of 1e-8 leaves its physical point unchanged.
+Several exact-sign margins are only about 1e-11, including signed W9 even at
+half step. The saved scalar witness does not establish nonlinear feasibility
+or optimality. No native candidate was evaluated or selected. The separately
+declared matched half-point native check can test whether the local advantage
+survives the nonlinear evaluator; this review does not release that check.
+
+Actual cost: 67.191827 wall seconds; 117.831640 controller-plus-child CPU seconds;
+12 native workers plus controller, numerical libraries one thread, login/job null.
+Per-receipt child CPU counters can overlap and were not summed. This review
+used saved metadata, hashes, raw readback token correspondence, journal replay
+and existing scalar reports only; no native/solver, Jacobian, dense spectrum,
+objective or certificate rerun. Original v1 runtime failure remains preserved.

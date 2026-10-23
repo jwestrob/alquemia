@@ -1,0 +1,48 @@
+--- preserved_slurm12/RUN.py
++++ serial_login/RUN_LOGIN.py
+@@ -12,6 +12,7 @@
+ import re
+ import resource
+ import shutil
++import socket
+ import threading
+ import time
+ import numpy as np
+@@ -26,7 +27,7 @@
+ CENTERS = tuple('aquo9_central_'+m for m in ('La','Dy'))
+ METAL = DIMERS+NEAR+CENTERS
+ CELLS = IONS+(PURE,)+METAL
+-MAX_CALLS, MAX_FD, WORKERS = 57, 636, 12
++MAX_CALLS, MAX_FD, WORKERS = 57, 636, 1
+ FILES = (('xyz','system.xyz'),('key','system.key'),('parameters','amoeba09.prm'))
+ 
+ def require(ok,msg):
+@@ -224,12 +225,17 @@
+     for j in m['programs']:
+         for p in j['input'].values():verify(p)
+         require(verify(j['input']['key']).read_text()==render(m['rows'][j['cell']],j,m['units']),'Prepared key edit differs')
+-    if runtime:require(os.environ.get('SLURM_JOB_ID','').isdigit() and int(os.environ.get('SLURM_NTASKS','1'))==1 and int(os.environ.get('SLURM_CPUS_PER_TASK','0'))==WORKERS and all(os.environ.get(k)=='1' for k in THREADS),'One 12-CPU Slurm task; every numerical library one thread')
++    require(cfg['resource_context']==pin(HERE/'QUALIFICATION_LOGIN_CONTEXT.json'),'Exact serial login resource declaration')
++    envelope=read(cfg['resource_context'])
++    require(envelope['implementation']==cfg['implementation'] and envelope['source_manifest']==cfg['source_manifest'],'Serial runner/source envelope bindings')
++    if runtime:
++        require(not os.environ.get('SLURM_JOB_ID') and not os.environ.get('SLURM_STEP_ID'),'Login qualification must have no Slurm identity')
++        require(socket.gethostname()=='biotite' and WORKERS==1 and all(os.environ.get(k)=='1' for k in THREADS) and os.environ.get('BLIS_NUM_THREADS')=='1','Serial biotite qualification; one numerical thread per process')
+     return m,helpers(m['sources'])
+ 
+ def run(cfg,out):
+     tick,cpu=time.monotonic(),time.process_time();ch0=resource.getrusage(resource.RUSAGE_CHILDREN);m,h=context(cfg,True);lock=threading.RLock();stop=threading.Event()
+-    result=dict(status='running',implementation=pin(__file__),config=cfg,manifest=cfg['manifest'],job_id=os.environ['SLURM_JOB_ID'],rows={j['id']:{'status':'not_attempted'} for j in m['programs']},native_program_invocations=0,internal_FD_energies_requested=0,internal_FD_energies_completed=0,directional_checks={},field_checks={},global_stop=False,error=None,numerical_checks_passed=False,physical_accuracy_qualified=False)
++    result=dict(status='running',implementation=pin(__file__),config=cfg,manifest=cfg['manifest'],job_id=None,execution_mode='login',hostname=socket.gethostname(),controller_pid=os.getpid(),resource_context=cfg['resource_context'],rows={j['id']:{'status':'not_attempted'} for j in m['programs']},native_program_invocations=0,internal_FD_energies_requested=0,internal_FD_energies_completed=0,directional_checks={},field_checks={},global_stop=False,error=None,numerical_checks_passed=False,physical_accuracy_qualified=False)
+     def persist():
+         with lock:result['global_stop']=stop.is_set();save(out/'RESULT.json',result)
+     def worker(job):
+@@ -293,7 +299,7 @@
+         result.update(status='local_response_numerical_qualification_complete',numerical_checks_passed=True)
+     except Exception as exc:stop.set();result.update(status='local_response_numerical_qualification_failed',error=result['error'] or repr(exc))
+     finally:
+-        ch=resource.getrusage(resource.RUSAGE_CHILDREN);result['cost']=dict(wall_seconds=time.monotonic()-tick,parent_CPU_seconds=time.process_time()-cpu,aggregate_child_user_CPU_seconds=ch.ru_utime-ch0.ru_utime,aggregate_child_system_CPU_seconds=ch.ru_stime-ch0.ru_stime,allocated_CPUs=WORKERS,per_receipt_CPU_deltas_not_summed=True);persist()
++        ch=resource.getrusage(resource.RUSAGE_CHILDREN);result['cost']=dict(wall_seconds=time.monotonic()-tick,parent_CPU_seconds=time.process_time()-cpu,aggregate_child_user_CPU_seconds=ch.ru_utime-ch0.ru_utime,aggregate_child_system_CPU_seconds=ch.ru_stime-ch0.ru_stime,allocated_CPUs=0,scheduler_allocated_CPU_seconds=0,scheduler_allocation=None,execution_mode='login',native_workers=1,controller_numerical_threads=1,maximum_owned_numerical_threads=2,per_receipt_CPU_deltas_not_summed=True);persist()
+     return result
+ 
+ if __name__=='__main__':

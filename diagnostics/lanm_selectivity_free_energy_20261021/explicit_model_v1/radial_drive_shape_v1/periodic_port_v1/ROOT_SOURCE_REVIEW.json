@@ -1,0 +1,78 @@
+{
+  "status": "reviewed_periodic_radial_source_only_unbuilt",
+  "reviewer": "root",
+  "created_utc": "2026-10-23T04:07:03.467931+00:00",
+  "ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_port_v1/READY.json",
+    "sha256": "e40818d9ce378d8d3811ed3f733d5fc23e6320ed20b12928d82b07c33f8e1205"
+  },
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_port_v1/source_v2/MANIFEST.json",
+    "sha256": "a72063c714d89362f09e547bc173afb064aa38bd563fead7f2e389377955d805"
+  },
+  "source_contract": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_port_v1/SOURCE_CONTRACT.md",
+    "sha256": "18c83ba1f961612ae540356281c319be3b4108ad5fdb1efea56152b72e3342bf"
+  },
+  "controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_port_v1/controls_v1/RESULT.json",
+    "sha256": "71f532b65a57b65002f63008948db7b1ff49111dd5a7762d3f1bc00cac369fbf"
+  },
+  "root_declaration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_port_v1/ROOT_DECLARATION.json",
+    "sha256": "47750f755dd1b2cce2cbd16e2abd52efa430c706eccf9d72f90891cd0ba88e49"
+  },
+  "reviewed_files": [
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_port_v1/PERIODIC_RADIAL.f",
+      "sha256": "2ddf535e96f1b28d8f3e2836346430bd22957d9089a4bc88641f40998665b58e"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_port_v1/PREPARE_SOURCE_v2.py",
+      "sha256": "9c4b1f6e1434818cee73d31f80eaefd201d6b44f22aaef310e3ec394cbb35464"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_port_v1/TEST_SOURCE_v2.py",
+      "sha256": "c1ef01d10d761e7c70c41cc9a1897318d6fabdb0e55f9140364edabfd2a6dfa4"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_port_v1/source_v2/induce.f.diff",
+      "sha256": "0a0d2a759e1610af089bfdb3749abfce4027dfe91ed71dbde0e9806f78f27628"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_port_v1/source_v2/polar.f.diff",
+      "sha256": "3276412ee7afff2200daf423a7973fc6984aed8aa5f24b4f4d9632b97b7dd37e"
+    }
+  ],
+  "findings": {
+    "all615_source_inventory_hashes_verified": true,
+    "only_polar_and_induce_changed": [
+      "source/induce.f",
+      "source/polar.f"
+    ],
+    "field_and_unequal_dual_gradient_chain_reviewed": true,
+    "finite_contact_and_compact_support_reviewed": true,
+    "nearest_image_reaction_and_virial_apply_once": true,
+    "e_only_parser_precedes_inactive_return": true,
+    "zero_e_skips_added_arithmetic": true,
+    "original_vacuum_and_common_energy_operator_paths_preserved": true,
+    "normal_periodic_guards_still_fatal": true,
+    "manufactured_controls_passed": 62
+  },
+  "scope": "Source review only; manufactured explicit-field checks are not native self-consistent qualification.",
+  "execution": {
+    "native_calls": 0,
+    "solvers": 0,
+    "factorizations": 0,
+    "compilations": 0,
+    "tests_repeated": 0
+  },
+  "candidate_bound": false,
+  "execution_release": null,
+  "remaining_before_native_qualification": [
+    "versioned e-aware state serializer and exact identity",
+    "admitted final14 candidate composition",
+    "consistent cutoff12 key/gate/assembler/operator certificate",
+    "isolated build and finite native force/operator/strain checks"
+  ]
+}

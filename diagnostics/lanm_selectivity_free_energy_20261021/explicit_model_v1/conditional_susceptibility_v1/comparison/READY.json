@@ -1,0 +1,30 @@
+{
+  "status": "saved_only_source_ready_reference_collection_unbound",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/conditional_susceptibility_v1/comparison/COMPARE.py",
+    "sha256": "a313578f0732f196c8adf0ddd440ebd32472b48350b253bb852aaa24eb05088f"
+  },
+  "declaration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/conditional_susceptibility_v1/comparison/DECLARATION.md",
+    "sha256": "ed99ea8ffbf55aae8bc4a4895fc9b0bb032e8364c65b2d4086689f01a1828019"
+  },
+  "configuration_template": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/conditional_susceptibility_v1/comparison/CONFIG_TEMPLATE.json",
+    "sha256": "f4fff182cbecb95490d8b6c2225ad1a5566b0bf39c3bc6cf839ff7d4e1d5a982"
+  },
+  "required_root_binding": "reference_collection={path,sha256} of exact qualified full16 reference collector RESULT.json",
+  "comparison_argv": [
+    "/usr/bin/python3",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/conditional_susceptibility_v1/comparison/COMPARE.py",
+    "--config",
+    "<bound CONFIG.json>",
+    "--out",
+    "<fresh output directory>"
+  ],
+  "threads": 1,
+  "new_native_calls": 0,
+  "comparison_executed": false,
+  "syntax_check": "ast.parse passed",
+  "extra_control_suite_run": false,
+  "output_schema": "RESULT.json table:28 rows = (4 states + 2 increments + paired) x2 steps x2 estimators; full model/reference responses and native evidence retained. REPORT.md provides all28 rows and limitations."
+}

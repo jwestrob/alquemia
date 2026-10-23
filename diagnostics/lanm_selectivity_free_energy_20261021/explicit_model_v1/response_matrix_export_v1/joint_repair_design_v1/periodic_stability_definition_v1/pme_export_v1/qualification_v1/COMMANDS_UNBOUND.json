@@ -1,0 +1,72 @@
+{
+  "status": "templates_only_no_link_or_native_execution",
+  "required_root_binding": [
+    "successful build result",
+    "pinned libtinker.a and module tree",
+    "harness source and executable after separately released link",
+    "exact manifest",
+    "explicit two-program root release"
+  ],
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OMP_THREAD_LIMIT": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1"
+  },
+  "link_argv": [
+    "/usr/bin/f95",
+    "-static-libgcc",
+    "-O2",
+    "-g",
+    "-fbacktrace",
+    "-fopenmp",
+    "-I<QUALIFIED_BUILD>/mod",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/pme_export_v1/qualification_v1/PME_HARNESS.f90",
+    "<QUALIFIED_BUILD>/libtinker.a",
+    "/usr/lib/x86_64-linux-gnu/libfftw3.a",
+    "/usr/lib/x86_64-linux-gnu/libfftw3_threads.a",
+    "/usr/lib/gcc/x86_64-linux-gnu/13/libgomp.so",
+    "/usr/lib/x86_64-linux-gnu/libpthread.a",
+    "-o",
+    "<FRESH_LINK_OUTPUT>/pme_harness"
+  ],
+  "serial_programs": [
+    {
+      "id": "OFF",
+      "argv": [
+        "<PINNED_HARNESS>",
+        "system.xyz",
+        "OFF"
+      ],
+      "cwd": "<FRESH_EXECUTION>/OFF",
+      "prepared_inputs": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/pme_export_v1/qualification_v1/preparation_v1/OFF"
+    },
+    {
+      "id": "ON",
+      "argv": [
+        "<PINNED_HARNESS>",
+        "system.xyz",
+        "ON"
+      ],
+      "cwd": "<FRESH_EXECUTION>/ON",
+      "prepared_inputs": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/pme_export_v1/qualification_v1/preparation_v1/ON"
+    }
+  ],
+  "replay_argv": [
+    "/home/jwestrob/.pyenv/versions/3.12.0/bin/python3",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/pme_export_v1/qualification_v1/REPLAY.py",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/pme_export_v1/qualification_v1/preparation_v1/MANIFEST.json",
+    "<FRESH_EXECUTION>/OFF",
+    "<FRESH_EXECUTION>/ON",
+    "<FRESH_REPLAY_OUTPUT>"
+  ],
+  "stop_policy": "No second program after first native failure; do not retry; require exit0 and complete artifacts, retain stdout/stderr, invocation-boundary counts and unattempted slot",
+  "execution_mode": "login",
+  "job_id": null,
+  "maximum_native_workers": 1,
+  "root_release": null,
+  "harness_executable": null,
+  "build_result": null
+}

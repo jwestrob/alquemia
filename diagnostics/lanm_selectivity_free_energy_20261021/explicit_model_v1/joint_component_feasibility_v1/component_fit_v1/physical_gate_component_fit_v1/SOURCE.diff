@@ -1,0 +1,237 @@
+--- /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/persistence_performance_v1/future_adapter_v1/DRIVER.py
++++ /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/DRIVER.py
+@@ -22,7 +22,7 @@
+     out=Path(out).resolve();out.mkdir(parents=True,exist_ok=False);(out/'vectors').mkdir()
+     cfg=json.loads(Path(config_path).read_text());ev=None
+     result={'status':'started','mode':mode,'implementation':A.pin(__file__),'configuration':A.pin(config_path),'configuration_fingerprint':A.fingerprint(cfg),'error':None,'vectors':{},'iterations':[],
+-            'limits':A.LIMITS,'job_id':os.environ.get('SLURM_JOB_ID'),'native_programs':0,'real_proposal_calls':0,'physical_accuracy_qualified':False,'reserved_outcomes_opened':False,'automatic_extension':False}
++            'limits':A.LIMITS,'job_id':os.environ.get('SLURM_JOB_ID'),'native_programs':0,'real_proposal_calls':0,'logical_proposal_calls':0,'imported_proposal_calls':0,'physical_accuracy_qualified':False,'reserved_outcomes_opened':False,'automatic_extension':False}
+     current=None;fixed=None;core=None;values={}
+     def persist():
+         if ev is not None:result['evaluator']=ev.snapshot();result['native_programs']=result['evaluator']['native_program_invocations'];result['new_parameter_vectors']=result['evaluator']['new_parameter_vectors']
+@@ -47,14 +47,14 @@
+         expected=core.probe_points(current['parameters'],ev.domain)
+         A.require([seeds[k]['parameters'] for k in inv['derivative_keys']]==expected,'Exact first24 saved probe coordinates/order')
+         for key,v in seeds.items():
+-            values[key]=v;result['vectors'][key]={'parameters':v['parameters'],'status':'complete','artifact':persist_vector(out,key,v),'inherited':True,'import_role':'optional_pilot' if key==inv['pilot_key'] else ('origin' if key==inv['origin_key'] else 'initial_probe'),'requested_roles':[]}
++            values[key]=v;result['vectors'][key]={'parameters':v['parameters'],'status':'complete','artifact':persist_vector(out,key,v),'inherited':True,'import_role':'failed_full_pilot' if key==inv['full_pilot_key'] else ('optional_half_pilot' if key==inv['pilot_key'] else ('origin' if key==inv['origin_key'] else 'initial_probe')),'requested_roles':[]}
+         result.update(origin_key=inv['origin_key'],current_key=inv['origin_key'],reuse_inventory=cfg['reuse_inventory'],initial_metrics=core.assess(current,fixed),immutable_saved_scores_preserved=True)
+-        A.require(result['initial_metrics']['physical_constraints_pass'],'Origin25/fixedceilings')
++        A.require(result['initial_metrics']['physical_constraints_pass'],'Origin25 physical gates')
+         # These metadata/count checks invoke no numerical proposal or new point.
+-        A.require(all(ev.required_programs(v['parameters'])==0 for v in seeds.values()),'All26 immutable vectors completely reusable')
+-        result['import_counts']={'origin':1,'initial_derivatives':24,'additional_pilot':1,'unique_cells':len(ev.imported_cell_keys)}
++        A.require(all(ev.required_programs(v['parameters'])==0 for v in seeds.values()),'All27 immutable seeds completely reusable')
++        result['import_counts']={'origin':1,'initial_derivatives':24,'additional_pilot':2,'available_saved_vectors':len(ev.registry),'unique_cells':len(ev.imported_cell_keys)}
+         if mode=='prepare':
+-            result.update(status='prepared_component_fit_zero_native',preparation_checks={'exact_first_stencil':True,'origin_constraints':True,'all26_reuse_zero_programs':True,'no_real_proposal':True})
++            result.update(status='prepared_physical_gate_component_fit_zero_native',preparation_checks={'exact_first_stencil':True,'origin_constraints':True,'all27_reuse_zero_programs':True,'no_real_proposal':True})
+         else:
+             ev._gate();persist();stop=None
+             for step in range(1,9):
+@@ -63,8 +63,13 @@
+                 try:
+                     for point in points:
+                         value=obtain(point,'probe',step);probes.append(value);iteration['derivative_keys'].append(A.digest(point));persist()
+-                    proposal=core.propose(current,probes,fixed);result['real_proposal_calls']+=1
+-                    A.require(proposal['solver_calls']==1,'Exactly one solver attempt per step')
++                    proposal=core.propose(current,probes,fixed);calls=proposal['solver_calls']
++                    A.require(calls in (0,1),'At most one solver per step')
++                    A.require(proposal['origin_key']==A.digest(current['parameters']) and proposal['derivative_keys']==iteration['derivative_keys'],'Exact proposal origin/stencil')
++                    if calls==0:
++                        A.require(step==1 and proposal['imported_saved_proposal']==cfg['saved_initial_proposal'],'Only exact first proposal reused')
++                        A.verify(cfg['saved_initial_proposal']);result['imported_proposal_calls']+=1
++                    result['real_proposal_calls']+=calls;result['logical_proposal_calls']+=1
+                     path=out/f'PROPOSAL_{step:02d}.json';A.save(path,proposal);iteration['proposal']=A.pin(path)
+                     slots=copy.deepcopy(proposal['trial_slots']);iteration['trial_slots']=[{k:v for k,v in x.items() if k!='certificate'} for x in slots];persist()
+                     if not slots or not any(x['eligible'] for x in slots):
+@@ -73,6 +78,7 @@
+                     for i,slot in enumerate(slots):
+                         if not slot['eligible']:slot['execution_status']='not_eligible';continue
+                         A.require(A.digest(slot['parameters'])==slot['key'],'Certified trial identity')
++                        iteration['trial_slots'][i].update(required_new_programs=ev.required_programs(slot['parameters']),exact_saved_vector=slot['key'] in ev.registry);persist()
+                         value=obtain(slot['parameters'],'trial',step)
+                         slot.update(execution_status='complete',native_admitted=True,vector=value)
+                         iteration['trial_slots'][i].update(execution_status='complete',native_admitted=True,artifact=result['vectors'][slot['key']]['artifact']);persist()
+@@ -86,12 +92,12 @@
+                     iteration['status']='hard_budget_exhausted';stop='hard_budget_exhausted';break
+                 except Exception:
+                     iteration['status']='failed_incomplete_batch_no_selection';raise
+-            result.update(status='bounded_component_fit_complete',stopping_reason=stop or 'outer_step_limit',completed_outer_steps=sum(x['status']=='complete' for x in result['iterations']))
++            result.update(status='bounded_physical_gate_component_fit_complete',stopping_reason=stop or 'outer_step_limit',completed_outer_steps=sum(x['status']=='complete' for x in result['iterations']))
+         metrics=core.assess(current,fixed);key=A.digest(current['parameters'])
+         result.update(selected_key=key,selected=result['vectors'][key]['artifact'],selected_metrics=metrics,candidate_frozen=(mode=='run'),native_programs=ev.snapshot()['native_program_invocations'])
+     except Exception as exc:
+         if ev is not None:ev._stop(exc)
+-        result.update(status='failed_component_fit' if mode=='run' else 'failed_preparation',error=repr(exc),stopping_reason='failure_no_retry')
++        result.update(status='failed_physical_gate_component_fit' if mode=='run' else 'failed_preparation',error=repr(exc),stopping_reason='failure_no_retry')
+         if current is not None and core is not None and fixed is not None:
+             key=A.digest(current['parameters']);result.update(last_complete_incumbent_key=key,last_complete_incumbent=result['vectors'].get(key,{}).get('artifact'),last_complete_incumbent_metrics=core.assess(current,fixed),candidate_frozen=False)
+     finally:
+--- /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/persistence_performance_v1/future_adapter_v1/ADAPTER.py
++++ /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/physical_gate_component_fit_v1/ADAPTER.py
+@@ -4,6 +4,7 @@
+ import copy
+ import hashlib
+ import importlib.util
++import importlib.metadata
+ import json
+ import os
+ from pathlib import Path
+@@ -11,6 +12,9 @@
+ import shutil
+ import socket
+ import threading
++
++_rs=importlib.util.spec_from_file_location("physical_fit_reuse",Path(__file__).with_name("REUSE.py"))
++R=importlib.util.module_from_spec(_rs);_rs.loader.exec_module(R)
+ 
+ _js=importlib.util.spec_from_file_location("component_ledger_journal",Path(__file__).with_name("JOURNAL.py"))
+ J=importlib.util.module_from_spec(_js);_js.loader.exec_module(J)
+@@ -39,30 +43,25 @@
+     require(cfg['journal_implementation']==pin(Path(__file__).with_name('JOURNAL.py')) and cfg['persistence_policy']==J.POLICY,'Versioned journal source/policy')
+     for k in ('implementation','core','declaration','execution_context','parent_evaluator','parent_configuration','reuse_inventory','decomposition','interpreter'):verify(cfg[k])
+     require(pin(sys.executable)==cfg['interpreter'],'Pinned interpreter')
++    env=read(cfg['solver_environment'])
++    require(str(Path(sys.prefix).resolve())==env['prefix'],'Pinned Clarabel environment')
++    for name,version in env['versions'].items():require(importlib.metadata.version(name)==version,'Pinned numerical package '+name)
++    for value in env['files']:verify(value)
+     require(all(os.environ.get(k)=='1' for k in THREADS) and os.environ.get('BLIS_NUM_THREADS','1')=='1','One numerical thread')
+     declaration=read(cfg['declaration']);require(declaration['limits']==LIMITS,'Frozen declaration limits')
+     execution=read(cfg['execution_context']);require(execution['campaign_declaration']==cfg['declaration'] and execution['execution']['mode']=='login' and execution['execution']['workers']==12 and execution['execution']['hostname']==cfg['hostname'] and execution['execution']['aggregate_login_limit']==16 and execution['execution']['job_id'] is None,'Declared truthful login envelope')
+     parent=read(cfg['parent_configuration']);require(parent['implementation']==cfg['parent_evaluator'],'Unchanged scientific evaluator')
+     inv=read(cfg['reuse_inventory']);require(inv['declaration']==cfg['declaration'] and inv['execution_context']==cfg['execution_context'] and inv['parent_configuration']==cfg['parent_configuration'],'Immutable import inventory lineage')
+-    root=read(inv['root_fit_review']);audit=read(root['independent_review']);fit=read(root['fit_result'])
+-    require(root['status']=='admitted_completed_frozen_fit_provenance_and_numerical_review' and audit['status']=='passed_terminal_joint_fit_review_continuation' and audit['fit_result']==root['fit_result']==inv['fit_result'],'Completed immutable fit admission')
+-    require(fit['status']=='bounded_joint_response_fit_complete' and fit['error'] is None,'Terminal admitted original fit only')
+-    fcfg=read(fit['configuration']);require(fcfg['evaluator_config']==cfg['parent_configuration'] and fcfg['evaluator']==cfg['parent_evaluator'],'Admitted fit scientific lineage')
+-    origin=declaration['start'];iteration=fit['iterations'][23]
+-    require(iteration['outer_step']==24 and iteration['origin_key']==origin['key']==inv['origin_key'] and fit['vectors'][origin['key']]['artifact']==origin['artifact'],'Exact origin24')
+-    require(inv['derivative_keys']==iteration['derivative_keys'] and len(inv['derivative_keys'])==24,'Exact saved first stencil')
+-    require(set(inv['vectors'])=={origin['key'],*inv['derivative_keys']},'Only25 seed vectors')
+-    vectors={}
+-    for key,p in inv['vectors'].items():
+-        require(fit['vectors'][key]['artifact']==p,'Seed pin from admitted fit index')
+-        v=read(p);require(v['status']=='complete' and digest(v['parameters'])==key,'Admitted seed token/status');vectors[key]=v
+-    pilot_root=read(inv['pilot_root_review']);require(inv['pilot_root_review']==declaration['prior_native_pilot_admission'],'Declared optional pilot authority')
+-    require(pilot_root['status']=='admitted_one_fixed_half_native_consumed_development_pilot','Actual pilot admission')
+-    pilot=read(pilot_root['result']);verify(pilot_root['native_independent_review']);verify(pilot_root['comparison_independent_review'])
+-    pcfg=read(pilot['configuration']);require(pcfg['parent_configuration']==cfg['parent_configuration'] and pcfg['parent_evaluator']==cfg['parent_evaluator'],'Pilot exact scientific configuration')
+-    require(inv['pilot_result']==pilot_root['result'] and digest(pilot['answer'])==inv['pilot_answer_sha256'],'Exact pilot inline answer')
+-    pv=copy.deepcopy(pilot['answer']);pv.update(status='complete',parameters=pilot['candidate']['parameters']);require(digest(pv['parameters'])==inv['pilot_key']==pilot['candidate']['key'],'Exact additional pilot vector')
+-    vectors[inv['pilot_key']]=pv
++    require(cfg['reuse_implementation']==pin(Path(__file__).with_name('REUSE.py')),'Frozen reuse reader')
++    registry=R.build(inv['authorities'],cfg['parent_configuration'],cfg['parent_evaluator'])
++    require(registry==inv['registry'],'Exact immutable metadata registry')
++    origin=declaration['start'];old=read(inv['authorities']['original_inventory'])
++    require(origin['key']==inv['origin_key']==old['origin_key'] and origin['artifact']==old['vectors'][old['origin_key']],'Exact origin24')
++    require(inv['derivative_keys']==old['derivative_keys'] and len(inv['derivative_keys'])==24,'Exact saved24 stencil')
++    keys=[inv['origin_key'],*inv['derivative_keys'],inv['pilot_key'],inv['full_pilot_key']]
++    require(len(set(keys))==27,'One origin,24 probes,two pilots')
++    vectors={key:R.load(registry[key]) for key in keys}
++    require(inv['pilot_key']==old['pilot_key'] and inv['full_pilot_key']==R.read(inv['authorities']['full_pilot_root'])['candidate']['key'],'Exact pilot identities')
+     require(cfg['reserved_outcomes_authorized'] is False,'Consumed scope only')
+     return module(cfg['parent_evaluator'],'component_parent'),parent,inv,vectors
+ 
+@@ -80,21 +79,38 @@
+             self.executor_identity={'mode':'login','job_id':None,'hostname':socket.gethostname(),'controller_pid':os.getpid(),'implementation':cfg['adapter'],'driver':cfg['implementation'],'parent_implementation':cfg['parent_evaluator']}
+             super().__init__(read(cfg['parent_configuration']),cache_dir,root_release=cfg.get('root_release'))
+             self.program_attempts=[];self.cell_attempts={};self.started_cells=set()
+-            authority={}
+-            for key,v in vectors.items():
+-                require(set(v['cells'])==set(self.m['rows']),'All46 imported cells')
+-                for cid,r in v['cells'].items():
+-                    token,identity,_,meta=self.cache_identity(v['parameters'],cid)
+-                    require(r['status']=='complete' and r['cache_key']==token and r['cache_identity']==identity,'Exact inherited scientific cache identity')
+-                    rp=r['request_provenance'];require(rp['cache_key']==token and rp['cache_identity']==identity and rp['render']==meta and rp['vector']==v['parameters'],'Imported request identity')
+-                    entry={'vector_key':key,'cell_id':cid,'record_sha256':cell_digest(r)}
+-                    if token not in self.cache:self.cache[token]=copy.deepcopy(r);authority[token]=entry
+-                    else:require(cell_digest(self.cache[token])==entry['record_sha256'],'Identical cell authority for duplicate key')
+-            require(authority==inv['cells'],'Exact prepared immutable cell import inventory')
+-            self.imported_cell_keys=set(self.cache)
+-            self.ledger.update(new_policy=cfg['adapter'],limits=LIMITS,configuration_fingerprint=self.batch_fingerprint,imported_origin_vectors=1,imported_derivative_vectors=24,additional_pilot_vectors=1,imported_unique_cells=len(self.cache),native_returncodes_observed=0)
++            self.registry=inv['registry'];self.imported_vector_keys=set(self.registry)
++            self.saved_metal_index={m:{} for m in ('La','Dy')};self.loaded_saved_vectors={}
++            for key,entry in sorted(self.registry.items()):
++                for metal in self.saved_metal_index:
++                    effective=digest(base.effective(entry['parameters'],metal,self.domain))
++                    self.saved_metal_index[metal].setdefault(effective,key)
++            self.imported_cell_keys=set()
++            for key,v in vectors.items():self._import_saved(key,v)
++            self.ledger.update(new_policy=cfg['adapter'],limits=LIMITS,configuration_fingerprint=self.batch_fingerprint,imported_origin_vectors=1,imported_derivative_vectors=24,additional_pilot_vectors=2,available_saved_vectors=len(self.registry),initial_imported_unique_cells=len(self.imported_cell_keys),native_returncodes_observed=0)
+             self.persistence=J.Journal(self.cache_dir/'EVENTS.jsonl',self.ledger,self.lock,{'configuration_fingerprint':self.batch_fingerprint,'implementation':cfg['adapter'],'journal_implementation':cfg['journal_implementation'],'root_release':cfg.get('root_release')})
+             self.persistence.materialize(self.ledger_path,expected=self.ledger)
++
++        def _import_saved(self,key,value=None):
++            # The existing RLock protects lazy loading. No historical ledger/replay.
++            with self.lock:
++                if key in self.loaded_saved_vectors:return self.loaded_saved_vectors[key]
++                value=R.load(self.registry[key]) if value is None else copy.deepcopy(value)
++                require(value['parameters']==self.registry[key]['parameters'] and digest(value['parameters'])==key,'Exact saved vector')
++                require(set(value['cells'])==set(self.m['rows']),'All46 saved cells')
++                for cid,record in value['cells'].items():
++                    token,identity,_,meta=self.cache_identity(value['parameters'],cid)
++                    require(record['status']=='complete' and record['cache_key']==token and record['cache_identity']==identity,'Saved scientific cell identity')
++                    rp=record['request_provenance'];require(rp['cache_key']==token and rp['cache_identity']==identity and rp['render']==meta and rp['vector']==value['parameters'],'Saved exact request render')
++                    # Multiple admitted executions may have different receipt paths.
++                    # Deterministic first authority wins; never compare derived LAPACK bytes.
++                    if token not in self.cache:self.cache[token]=copy.deepcopy(record)
++                    self.imported_cell_keys.add(token)
++                self.loaded_saved_vectors[key]=value
++                return value
++
++        def _saved_metal(self,values,metal):
++            return self.saved_metal_index[metal].get(digest(base.effective(values,metal,self.domain)))
+ 
+         def authorize(self,values,role,step):
+             values=self.checked_values(values);key=digest(values)
+@@ -124,10 +140,10 @@
+             require(q['status']=='passed_local_response_native_qualification' and all(q[k]==c[k] for k in ('source_manifest','build_receipt','executables')),'Actual native qualification')
+             require(all(q[k] is True for k in ('zero_baseline_parity_passed','force_checks_passed','moment_response_checks_passed','export_checks_passed')),'All native admission gates')
+             review=read(self.batch['source_review']);prep=read(self.batch['preparation']);release=read(self.root_release)
+-            require(review['status']=='passed_component_fit_source_review' and review['configuration_fingerprint']==self.batch_fingerprint,'Independent campaign source review')
+-            require(prep['status']=='prepared_component_fit_zero_native' and prep['configuration_fingerprint']==self.batch_fingerprint and prep['native_programs']==0 and prep['real_proposal_calls']==0,'Actual saved preparation')
+-            require(release['status']=='released_bounded_component_fit' and release['configuration_fingerprint']==self.batch_fingerprint,'Exact campaign release')
+-            for k in ('implementation','adapter','core','declaration','execution_context','parent_configuration','reuse_inventory','source_review','preparation','limits','output_directory'):
++            require(review['status']=='passed_physical_gate_component_fit_source_review' and review['configuration_fingerprint']==self.batch_fingerprint,'Independent campaign source review')
++            require(prep['status']=='prepared_physical_gate_component_fit_zero_native' and prep['configuration_fingerprint']==self.batch_fingerprint and prep['native_programs']==0 and prep['real_proposal_calls']==0,'Actual saved preparation')
++            require(release['status']=='released_bounded_physical_gate_component_fit' and release['configuration_fingerprint']==self.batch_fingerprint,'Exact campaign release')
++            for k in ('implementation','adapter','core','declaration','execution_context','parent_configuration','reuse_inventory','reuse_implementation','journal_implementation','persistence_policy','solver_environment','saved_initial_proposal','source_review','preparation','limits','output_directory'):
+                 require(release[k]==self.batch[k],'Release binding '+k)
+             require(review['implementation']==self.batch['implementation'] and review['adapter']==self.batch['adapter'] and review['core']==self.batch['core'],'Independent exact three-source review')
+             require(release['cache_directory']==str(self.cache_dir) and self.cache_dir.parent==Path(self.batch['output_directory']) and release['reserved_outcomes_authorized'] is False,'Fresh exact execution scope')
+@@ -167,6 +183,8 @@
+             with self.lock:lock=self.cell_locks.setdefault(token,threading.Lock())
+             with lock:
+                 if self.stop_event.is_set():raise NotAttempted('Queued cell untouched after stop')
++                saved_key=self._saved_metal(values,row['metal'])
++                if token not in self.cache and saved_key is not None:self._import_saved(saved_key)
+                 if token in self.cache:record=self.cache[token]
+                 elif base.effective(values,row['metal'],self.domain)==base.effective(self.initial_vector,row['metal'],self.domain):
+                     record=copy.deepcopy(self.m['baseline_cells'][cid]);record.update(cache_identity=identity,request_render=meta,cache_key=token);self.cache[token]=record
+@@ -200,7 +218,7 @@
+             total=0
+             for cid,r in self.m['rows'].items():
+                 token,_,_,_=self.cache_identity(values,cid)
+-                if token not in self.cache and base.effective(values,r['metal'],self.domain)!=base.effective(self.initial_vector,r['metal'],self.domain):total+=1+int(r['needs_gradient'])
++                if token not in self.cache and self._saved_metal(values,r['metal']) is None and base.effective(values,r['metal'],self.domain)!=base.effective(self.initial_vector,r['metal'],self.domain):total+=1+int(r['needs_gradient'])
+             return total
+ 
+         def evaluate(self,values):
+@@ -209,6 +227,8 @@
+             with self.evaluation_lock:
+                 self._gate()
+                 if key in self.complete_vectors:return copy.deepcopy(self.complete_vectors[key])
++                if key in self.registry:
++                    value=self._import_saved(key);self.complete_vectors[key]=copy.deepcopy(value);return copy.deepcopy(value)
+                 needed=self.required_programs(values)
+                 with self.lock:
+                     if len(self.ledger['vector_keys'])>=200 or self.ledger['native_program_invocations']+needed>6496:raise BudgetStop('Whole-vector hard budget unavailable')
+@@ -254,6 +274,6 @@
+         def snapshot(self):
+             with self.lock:self.persistence.materialize(self.ledger_path,expected=self.ledger)
+             s=super().snapshot()
+-            with self.lock:s.update(max_parameter_vectors=200,max_native_programs=6496,active_limits=LIMITS,new_parameter_vectors=len(self.ledger['vector_keys']),native_returncodes_observed=self.ledger['native_returncodes_observed'],imported_unique_cells=len(self.imported_cell_keys),imported_origin_vectors=1,imported_derivative_vectors=24,additional_pilot_vectors=1,executor=copy.deepcopy(self.executor_identity),configuration_fingerprint=self.batch_fingerprint)
++            with self.lock:s.update(max_parameter_vectors=200,max_native_programs=6496,active_limits=LIMITS,new_parameter_vectors=len(self.ledger['vector_keys']),native_returncodes_observed=self.ledger['native_returncodes_observed'],imported_unique_cells=len(self.imported_cell_keys),imported_origin_vectors=1,imported_derivative_vectors=24,additional_pilot_vectors=2,available_saved_vectors=len(self.registry),loaded_saved_vectors=len(self.loaded_saved_vectors),executor=copy.deepcopy(self.executor_identity),configuration_fingerprint=self.batch_fingerprint)
+             return s
+     return CampaignEvaluator

@@ -1,0 +1,74 @@
+{
+  "status": "prepared_saved_full8_review_not_executed",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_correlated_rotation_v2/independent_full_review_v1/REVIEW.py",
+    "sha256": "b31d9daa1b23eb713621def21426f7a4365b404dbc9eca1bbbe912f2d660b5a6"
+  },
+  "native_adapter": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_correlated_rotation_v2/REFERENCE.py",
+    "sha256": "007ad5b22ffb09fd3ed700c64d5ff1adf76b579b71fadaa5cf9bdda4b1620d4a"
+  },
+  "recovery_inputs": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_correlated_rotation_v2/INPUTS.json",
+    "sha256": "f875b64e5b43a5c20ec28d6b9106d71c5a110557457687e57b64813f74f9f183"
+  },
+  "remaining_release": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_correlated_rotation_v2/ROOT_RELEASE_REMAINING.json",
+    "sha256": "0c991bab10a46b6d7c6f9e9001bfde315d3bc272663d0a69674821dc64ca7862"
+  },
+  "remaining_submission": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_correlated_rotation_v2/remaining_submission_v1/SUBMISSION.json",
+    "sha256": "c8dc13a33733ac80f6ea98f6f7aead33649fdbd4707e59bd734e000265251ec1"
+  },
+  "collector_submission": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_correlated_rotation_v2/collection_submission_v1/SUBMISSION.json",
+    "sha256": "de76416816a07f9c888512f71ee36ab692edfbd27ee62f6106d866e235ccd6c2"
+  },
+  "native_job_ids": [
+    18774,
+    18861,
+    18862,
+    18863,
+    18864,
+    18865,
+    18866,
+    18867
+  ],
+  "collector_job_id": 18868,
+  "collection_path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_correlated_rotation_v2/collection_v1/result/RESULT.json",
+  "scheduler_path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_correlated_rotation_v2/independent_full_review_v1/SACCT.psv",
+  "scheduler_format": "sacct -P table including header JobIDRaw|State|ElapsedRaw|AllocCPUS|ExitCode; extra fields allowed; root supplies all8 native plus relevant support parent jobs. Step rows retained without duplicate cost.",
+  "output_directory": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_correlated_rotation_v2/independent_full_review_v1/actual_v1",
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OMP_THREAD_LIMIT": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "argv": [
+    "/usr/bin/python3",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_correlated_rotation_v2/independent_full_review_v1/REVIEW.py",
+    "--collection",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_correlated_rotation_v2/collection_v1/result/RESULT.json",
+    "--scheduler",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_correlated_rotation_v2/independent_full_review_v1/SACCT.psv",
+    "--out",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/dry_acetate_correlated_rotation_v2/independent_full_review_v1/actual_v1"
+  ],
+  "checks": [
+    "AST parsed; independent helper grammar compared to previously admitted scout and frozen producer source.",
+    "All8 raw admissions and exact legacy scout representation recovery retained.",
+    "Decimal raw CCSD(T)/CCSD/triples derivatives and token-rounding bounds; original3 gates at0.1, no changed thresholds.",
+    "Exact selected17621 AMOEBA, PBE0 electronic, PBE0-D4 and canonical columns, both steps and Dy-minus-La.",
+    "Native SCF criteria/CC residual/T1/amplitude limitations and separate native/scheduler/local support costs.",
+    "New-attempt failures retained; preexisting output directory protected."
+  ],
+  "new_native_calls": 0,
+  "full_review_executed": false,
+  "limitation": "Parent supplies terminal collection and pinned scheduler evidence before the single saved review; no partial aggregate, new physical accuracy gate, or CP force claim.",
+  "new_continuation_outcomes_read_during_preparation": false,
+  "previously_admitted_scout_metadata_read_for_schema": true
+}

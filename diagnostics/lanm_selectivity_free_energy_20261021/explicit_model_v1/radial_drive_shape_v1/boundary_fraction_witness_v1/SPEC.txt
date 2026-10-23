@@ -1,0 +1,19 @@
+One boundary fraction witness, consumed development only.
+Root declarationa86eb0f8 fixes f=1/16 of the saved step8 solution at the admitted
+terminal point. No new solver/probes or loop. The saved exact scalar preparation
+uses original CORE.restore_problem/Policy.fraction, t squared into q, original
+fixed feca safeguards and original q denominators; exact margins must be>=0.
+Preparation is one login numerical thread, no evaluator construction/native call.
+Run imports the exact prepared point/certificate and same fixed policy; it does
+not repeat the scalar solve or earlier trials. One fresh cache, no cell imports,
+max1vector/46cells/56programs. Parent public evaluate/invoke/cell/journal remains
+unchanged except literal1/56 budget constants and actual scheduler cell job ID.
+Radial renderer/parser/assembly/stop paths are inherited. Any failure stops;
+original fit stop and AlmostSolved remain. Output reports incumbent and actual
+q/P/B,25 physical plus fixed electrical/signed margins, prediction differences,
+complete cell admission, journal/counters and cost; no automatic selection.
+Slurm1node/1task13CPU,12native single-thread workers+controller, standard/
+standard_expand/banfield, default memory/time and no-requeue. Native timeout300s.
+Source review, exact saved preparation and root release bind the run configuration
+and explicit witness. Scheduler cost is pending actual parent accounting, never
+inferred from overlapping per-program child CPU counters.

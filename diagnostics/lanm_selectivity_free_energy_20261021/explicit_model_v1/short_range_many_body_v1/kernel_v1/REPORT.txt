@@ -1,0 +1,44 @@
+FINITE ENERGY/RESPONSE KERNEL — IMPLEMENTED, UNFITTED
+23 October 2026
+
+KERNEL.py implements independent compact 2B/3B mechanical energy, distributed
+directed donor fields and symmetric donor/cross-donor response corrections for
+intact water, acetate and amide metadata. Seven pair and five triple primitives
+are declared in SPEC; no values were fitted. The directed pair frame and separate
+triple frame-energy primitive allow mechanical ligand-rotation effects without
+forcing them through induction. Equivalent H/O atoms and intact ligand exchanges
+are symmetric. Acetate is never split into two ligands. Ligand-only and ion-only
+fragments have exact zero local correction. Smooth contact and C2 separation
+behavior are explicit prospective model choices, not measured physical cutoffs.
+
+The dense float64 kernel preserves unequal native Ed/Ep and the stationary dual
+energy. It supplies field-conjugate moment/susceptibility, full operator eigenvalues,
+Cholesky and solve-residual checks. Native constants are input authority; the
+historical energy-consistent atomic-field conversion is retained. Explicit bounded
+upstream symmetrization records the raw asymmetry and representative change and
+requires the inherited bound/admission authority; raw arrays remain unchanged.
+
+24 manufactured checks passed once, followed by four new fixed-metadata chemical
+exchange checks. The supplement strengthens the initial relabel-covariance tests;
+it did not repeat the broad suite or change KERNEL.py. Checks include exact zero,
+rotation/translation, H/O exchange, independent frame mechanical terms, contact/
+separation, unequal-channel stationarity, field autodiff/finite differences,
+complete-provider coordinate/cell derivatives, full SPD rejection and explicit
+partial-force labeling. All test inputs/coefficients are manufactured, not native
+candidates. Both result files retain exact source hashes and per-check errors.
+
+Costs: broad test body 0.594125 s wall / 0.530666 CPU-s; full command wall
+5.249170 s including Torch startup, total first-process CPU unavailable. Peak
+RSS 1,372,476 KiB includes Torch runtime. Four-check supplement body 0.031643 s
+wall / 0.031636 CPU-s; full process CPU 4.103655 s, command wall 4.596453 s.
+Each invocation used one numerical CPU thread. No native/quantum/fit/cached
+scientific replay, build or scheduler calls were made by this kernel task.
+
+Important limits: frozen A/Ed/Ep coordinate derivatives are explicitly PARTIAL,
+never total forces. A complete differentiable baseline provider must supply all
+operator, field, other-energy, permanent-moment and cell paths; the completeness
+assertion is a provider contract, not inferred from autograd. Missing energy or
+permanent moment yields explicitly restricted output scopes. Root integration
+owns admitted real-cache joins/evaluation; this receipt admits manufactured
+implementation only. This finite basis, quadratic response and compact cutoff
+are not a physically validated successor, fitted potential or dynamics engine.

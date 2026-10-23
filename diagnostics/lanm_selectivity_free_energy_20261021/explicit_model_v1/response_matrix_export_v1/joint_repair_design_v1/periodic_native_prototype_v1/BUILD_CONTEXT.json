@@ -1,0 +1,62 @@
+{
+  "status": "declared_one_thread_isolated_compile_only",
+  "declared_utc": "2026-10-22T22:34:56.310821+00:00",
+  "source_manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_prototype_v1/source_v1/MANIFEST.json",
+    "sha256": "c4feea154651f812dd0cfc1235237328be9d7103ccbc4eb8d456214d5ec9dfa2"
+  },
+  "root_source_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_prototype_v1/ROOT_SOURCE_REVIEW.json",
+    "sha256": "41c11f68bcfd3d3aa42e0c2595ae9ea922a7ca4f365cc8e506c157b6806800ce"
+  },
+  "build_driver": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_prototype_v1/BUILD_LOGIN.py",
+    "sha256": "af35af8c6262f9a4014b2b792d5cc8ba3228d466662dea956b2491bb9bcc330a"
+  },
+  "parent_build_driver": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/sampling_cpu_refactor_v1/BUILD_LOGIN.py",
+    "sha256": "e54975147f241dda5a064b5400ce036fa14ad091c3bbd97fa13b9a651e2deea5"
+  },
+  "parent_successful_build": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/sampling_cpu_refactor_v1/build_job_v1/execution/RESULT.json",
+    "sha256": "f1bee775c8d571b3f29e4116567ab16dc2fd553cc1de9731b8d92b187da86aac"
+  },
+  "changes": [
+    "one build worker instead of two",
+    "verify frozen CMakeLists through source_outputs because new manifest lacks redundant cmake key"
+  ],
+  "argv": [
+    "/home/jwestrob/.pyenv/versions/3.12.0/bin/python3",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_prototype_v1/BUILD_LOGIN.py",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_prototype_v1/source_v1/MANIFEST.json",
+    "c4feea154651f812dd0cfc1235237328be9d7103ccbc4eb8d456214d5ec9dfa2",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_prototype_v1/build_v1"
+  ],
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OMP_THREAD_LIMIT": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "compiler": "/usr/bin/f95",
+  "cmake_build_type": "RELWITHDEBINFO",
+  "fortran_flags": "-O2 -g -fbacktrace",
+  "FFTW_LIB": "/usr/lib/x86_64-linux-gnu/libfftw3.a",
+  "FFTW_THREADED_LIB": "/usr/lib/x86_64-linux-gnu/libfftw3_threads.a",
+  "targets": [
+    "analyze",
+    "testgrad"
+  ],
+  "execution_mode": "login",
+  "job_id": null,
+  "maximum_parallel_build_workers": 1,
+  "numerical_threads_per_process": 1,
+  "periodic_guards_unchanged": true,
+  "new_native_molecular_calls_authorized": 0,
+  "builds_authorized": 1,
+  "automatic_retry": false,
+  "vacuum_qualification_released": false
+}

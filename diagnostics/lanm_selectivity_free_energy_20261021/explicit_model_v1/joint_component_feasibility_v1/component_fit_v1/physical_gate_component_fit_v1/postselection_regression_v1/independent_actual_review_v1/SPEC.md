@@ -1,0 +1,9 @@
+# Versioned consumed-trimer actual reviewer
+
+Source only; do not execute until root binds the completed regression result, exact producer configuration and fresh review output. This adapts the admitted old component regression ARITHMETIC.py. Parent files remain unchanged.
+
+Require the exact new bounded_physical_gate_component_fit_complete terminal and passed_physical_gate_component_fit_actual_review, selected46/25 physical gates, new release/source review and current producer READY pins. Verify0–6 actual new calls separately from six trimer-row availability. Reproduce producer precedence: exact initial effective-metal identity uses admitted baseline; otherwise first exact admitted historical effective-metal match; otherwise a new native row. Historical raw receipt/executor dates and costs remain historical. The qualified rendering/parser replay is limited to those six trimer rows; the full fit audit is reused.
+
+Reconstruct42 terms from saved raw energy and induced-moment tokens, retaining dual half-sums for active response and admitted six-decimal baseline/static moments. Same50-digit Decimal sums, inherited arithmetic bound, eight seven-term E3/mu3 cycles and four Dy-minus-La contrasts; no reference or threshold change. Report original baseline, earlier joint fit, old component terminal and new physical-gate terminal with signed kcal/mol errors, dipole vectors/norms in Debye and original print bounds. Check producer's new comparison table against these sums. No physical pass criterion is introduced.
+
+Only static AST/syntax checks were run: pure arithmetic helpers/raw token parser and E/M cycle reduction are unchanged. The actual reviewer, numerical backend, candidate, native and solver are unexecuted. A failed actual review is preserved as FAILED_REVIEW.json; no retry is automatic. One numerical thread only; future argv/config in READY.json.

@@ -1,0 +1,44 @@
+{
+  "status": "source_ready_unbuilt_unexecuted",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/QUALIFY.py",
+    "sha256": "bf6c9c1b772e1cd7d6defe678f93af04f0b1536f4dbb634996617a7dc2b7831d"
+  },
+  "plan": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/QUALIFICATION_PLAN.md",
+    "sha256": "81f99b07514e85096d827f4af3715c949e1f946bb1915f3825a618c7162f0560"
+  },
+  "controls_source": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/CHECK_QUALIFY.py",
+    "sha256": "976915fd0b7fccd68c1e2d1b142d9b9f858f8cceec811cc446802dca5f7cfda8"
+  },
+  "preparation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/preparation_v2/MANIFEST.json",
+    "sha256": "ce262d6439710132209f4702baecd92874038c5e6caa8b3ed64eda55a316c865"
+  },
+  "controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/saved_controls_v1/RESULT.json",
+    "sha256": "38b70a765c848d56701441cbd113af7d0d9d4b394f74c3c1cf8455ae837b0ae3"
+  },
+  "run_config_template": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/metal_pair_response_v1/preparation_v2/RUN_CONFIG_TEMPLATE.json",
+    "sha256": "f449aff8963d2675150bba9d61b9ee97fde03745fe24c5f1f8a1184493e64cff"
+  },
+  "maximum_native_programs": 56,
+  "maximum_internal_FD_energies": 384,
+  "workers": 1,
+  "preparation_cost": {
+    "wall_seconds": 0.281988090951927,
+    "CPU_seconds": 0.16838279699999997,
+    "numerical_threads": 1
+  },
+  "controls_cost": {
+    "wall_seconds": 0.04898530896753073,
+    "CPU_seconds": 0.04090893200000001,
+    "numerical_threads": 1
+  },
+  "native_calls": 0,
+  "checks_passed": 75,
+  "next_step": "Root binds isolated executable/source/audit pins in one config, then executes QUALIFY.py run --config <bound config> --out <fresh output directory> on one Slurm CPU with all numerical thread variables equal to1.",
+  "prior_draft": "preparation_v1 and its exact archive_initial_draft_v1/QUALIFY.py are preserved; prospective changes add direct coefficient admission and immediate directional failure detection, without outcomes or changed tolerances."
+}

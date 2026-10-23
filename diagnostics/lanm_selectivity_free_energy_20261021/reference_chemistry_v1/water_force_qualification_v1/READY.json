@@ -1,0 +1,61 @@
+{
+  "status": "prepared_no_native_calls",
+  "adapter": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/water_force_qualification_v1/REFERENCE.py",
+    "sha256": "2871d929c576281fba152de0a7f58069e8c8e88068cd173f970c11fe0952db7c"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/water_force_qualification_v1/SPEC.md",
+    "sha256": "f313f90a541b28d77a356c140944ab7a1b0d80e5971c0efc26c23b7f79461d96"
+  },
+  "launcher": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/water_force_qualification_v1/RUN.sbatch",
+    "sha256": "28f7b09a74bb635ba856ecae582781bbb684409cd0bec81fbc21da87dd036d4c"
+  },
+  "panel": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/water_force_qualification_v1/prepared_v2/PANEL.json",
+    "sha256": "c11f1b12e5f70b92a32c8912b31d3c3e10a275d2d2cc7a226f432c5590cf0cd2"
+  },
+  "validation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/water_force_qualification_v1/validation_v2/VALIDATION.json",
+    "sha256": "310a7022e3fd0d25aca09af64bdd12044cee9bb876cc75ab2fe8d4d0bcae27a9"
+  },
+  "scout_cell": "cc__La__plus_010__complex",
+  "native_argv": [
+    "/usr/bin/python3",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/water_force_qualification_v1/REFERENCE.py",
+    "run",
+    "--panel",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/water_force_qualification_v1/prepared_v2/PANEL.json",
+    "--cell",
+    "cc__La__plus_010__complex",
+    "--out",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/water_force_qualification_v1/scout_v1/execution"
+  ],
+  "slurm_argv": [
+    "sbatch",
+    "--qos=standard_expand",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/water_force_qualification_v1/RUN.sbatch",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/water_force_qualification_v1/REFERENCE.py",
+    "run",
+    "--panel",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/water_force_qualification_v1/prepared_v2/PANEL.json",
+    "--cell",
+    "cc__La__plus_010__complex",
+    "--out",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/water_force_qualification_v1/scout_v1/execution"
+  ],
+  "resources": {
+    "MPI_ranks": 4,
+    "threads_per_rank": 1,
+    "memory": "scheduler default; prior matching water grant16000MiB",
+    "walltime": "scheduler default",
+    "MaxCore": "floor(0.75*actual_MiB/4)",
+    "GPU": 0
+  },
+  "release": "Root only; scout admission and actual memory/cost gate remaining47; scout reused exactly",
+  "maximum_native_calls": 48,
+  "new_central_calls": 0,
+  "local_preparation_threads": 1,
+  "molecular_calls_so_far": 0
+}

@@ -1,0 +1,43 @@
+{
+  "status": "declared_source_only_sufficient_stability_design",
+  "created_utc": "2026-10-22T21:31:06.541985+00:00",
+  "question": "Can a sparse real-space bound plus the positive-semidefinite reciprocal PME contribution certify the frozen normalized relative spectral condition without a dense whole-system matrix?",
+  "authority": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/sampling_cpu_refactor_v1/source_v1/source/induce.f",
+    "sha256": "78ad01a7eaf0accd6d20b49a149de8aa4f337d85be5a2b1dd8265aee9993f8ac"
+  },
+  "current_spectral_criterion": "lambda_min(Dbar)>1e-6*lambda_max(Dbar)>0 with Dbar=sqrt(alpha) D sqrt(alpha); no threshold change",
+  "domain": [
+    "one metal, conducting boundary, positive active alpha; zero-alpha sites excluded from unknowns",
+    "native MUTUAL/Thole and exact native POLPAIR/group scaling",
+    "orthorhombic or general nondegenerate periodic cell only if actual qfac nonnegative and scatter/gather adjoint",
+    "no replica self-image real-space terms until explicitly included; native real cutoff smaller than half shortest periodic image"
+  ],
+  "real_space_derivation": {
+    "T_real_pair": "rr3 I + rr5 r r^T from umutual2a/2b after exact dampewald, dampthole and uscale",
+    "pair_norm": "sqrt(alpha_i alpha_j)*max(abs(rr3),abs(rr3+rr5*r^2))",
+    "self": "tself=(4/3)*apewald^3/sqrt(pi), T_self=tself I",
+    "diagonal_atom_block": "B_ii=I+alpha_i H_ii-alpha_i*tself*I, adjusted for any admitted within-site terms",
+    "real_matrix": "B=I+sqrt(alpha)Hsqrt(alpha)-sqrt(alpha)(T_real+T_self)sqrt(alpha)",
+    "lower": "L_real=min_i(lambda_min(B_ii)-sum_{j!=i} norm2(B_ij))",
+    "upper": "U_real=max_i(lambda_max(B_ii)+sum_{j!=i} norm2(B_ij))",
+    "block_extension": "The same inequalities hold for fixed disjoint molecular blocks; internal interactions belong in diagonal block, each cross-block counted once per incident block. No eigenvalue clipping or functional changes."
+  },
+  "reciprocal_hypothesis": {
+    "operator": "Dbar=B+R, R=-sqrt(alpha)T_recip sqrt(alpha)",
+    "needed_source_proof": "Actual grid_uind and fphi_uind are adjoints after Cartesian/fractional maps, exact FFT normalization, qfac>=0. Then R is PSD; no physical assumption that arbitrary PME implementation is PSD.",
+    "bounds": "If R PSD and norm2(R)<=U_rec, lambda_min(Dbar)>=L_real and lambda_max(Dbar)<=U_real+U_rec. Include declared numerical uncertainty margins before using these inequalities.",
+    "pass": "L_safe>1e-6*U_safe and U_safe>0",
+    "failure_meaning": "Insufficient bound is inconclusive, not proof of unstable Hamiltonian; no fallback that silently admits a solve."
+  },
+  "ownership": {
+    "root": "real-space bounds and integration",
+    "Arendt": "actual PME adjoint/sign/normalization and computable upper-norm bound",
+    "Planck": "declared saved six-vacuum-matrix atom/molecule block-bound feasibility",
+    "Singer": "separate exact periodic-image/tail definition"
+  },
+  "no_engine_change": true,
+  "no_periodic_execution_release": true,
+  "new_native_calls": 0,
+  "new_fits": 0
+}

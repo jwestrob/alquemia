@@ -1,0 +1,97 @@
+{
+  "status": "source_only_periodic_identity_v2_contract",
+  "declaration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_identity_v1/ROOT_DECLARATION.json",
+    "sha256": "74f765b591ab376a656a9428a7e055c5752898b6e9df6f6b4289b551b77cfef9"
+  },
+  "source_plan": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_identity_v1/SOURCE_PLAN.json",
+    "sha256": "bdd0c1f18d1cd955e51802c3d3f455b3899e50b585081f9e8bfcc1797f7255e2"
+  },
+  "schema": {
+    "state": "PERIODIC_PARITY_STATE_V2",
+    "ticket": "STAGE2_BOUND_INPUT_V2",
+    "ticket_lines": [
+      "STAGE2_BOUND_INPUT_V2",
+      "PERIODIC_PARITY_STATE_V2",
+      "role",
+      "state_id",
+      "64 lowercase hex binding",
+      "END"
+    ],
+    "records": "Old records retain exact native array/body rendering. After MODE: CELL, CUTOFFS, EWALD_SPLIT, INDUCTION. After both COEFFICIENT records: RADIAL_COEFFICIENT900,901. END adds integer2.",
+    "both_radial_slots": "Required even for absent/zero or unused other metal; exact finite[-1,1]. No h/H-only identity.",
+    "fixed_settings": {
+      "ewaldcut_A": 12.0,
+      "vdwcut_A": 9.0,
+      "vdwtaper_A": 8.1,
+      "aeewald_inverse_A": 0.4,
+      "apewald_inverse_A": 0.4,
+      "grid": [
+        64,
+        64,
+        64
+      ],
+      "order": 5,
+      "boundary": "TINFOIL",
+      "poleps": 1e-08,
+      "politer": 100
+    }
+  },
+  "source_interface": {
+    "shared_body": "STATE_WRITER_V2.f90 external periodic_write_state_v2(filename,direct1,direct2). Both wrappers call this single body. direct1/raw_Ed and direct2/raw_Ep remain distinct; no solve, field application or numeric kernel is added.",
+    "stage1_adapter": "Future isolated PARITY write_state must delegate to stage1_write_state_v2 using its actual direct1/direct2 arrays. This package supplies that wrapper but deliberately does not mutate PARITY or create a new harness/runtime.",
+    "stage2_adapter": "Existing stage2_write_state(raw1,raw2) symbol remains, delegates to the same V2 body; same actual-state filename.",
+    "gate": "GATE_V2 derives solely from actual compiled cutoff12 parent13c1eaa4. V2 ticket/schema, coefficient-domain/activation observations and both-e readback are added; original exact-state comparison, pre-PCG sequencing, shared-h arithmetic, topology, native settings and intrinsic::maxval recovery are retained.",
+    "activation": "Checks depend on lrpshape/lractive/lrperiodic, never h/H magnitude. e-only at r0 cannot use bypass; INITIALIZE cannot enter a solve.",
+    "normal_guard_scope": "No normal induce/polar file is edited; the radial source and both normal fatal guards remain the pinned unbuilt source. Qualification GATE does not itself release or implement a production backend.",
+    "old_archive_link": "The new gate/writer reference lrpshape and require a separately built radial polar module/archive. Do not link against the old pre-radial polar module. Future BYPASS_OLD_ABSENT must retain its own matching old gate/reporter/archive path; no old-library recipe is supplied."
+  },
+  "python_interface": {
+    "STATE.read_current": "(path,snapshot,expected_sites,model) requires an admitted same-initialization PME snapshot and model={cell,settings,coefficients,radial}; strict V2 only, fixed64cube/order5. Returns h,beta,direct,pdamp,thole,gamma and identity_metadata. External wrapper retains11958-site/topology/source/key/binary admission. Private _read_body can be exercised with tiny artificial dimensions only; public read_current fixes64.",
+    "STATE.compact_response": "(sites,original_four_coefficients,gamma,pdamp,cell,e). Exact old ordered h/H arithmetic retained at e=0. For nonzero e add3e Ftilde phi ((r\u00b2\u22126.25)/6.25)R on O402 nearest images using declared cell; beta remains old. No derivative/force admission follows.",
+    "STATE.compare": "Inherited1e\u221211*max(1,max|predicted|) correspondence gate unchanged.",
+    "cell_algebra": "Literal cell/settings, GRID/snapshot volume and TRANS/snapshot joins are exact. Only independently inferred volume and diagonal64/L arithmetic use128binary64eps*max(1,max|predicted|), explicitly a header consistency check, not physical tolerance.",
+    "IDENTITY.validate_settings_joins": "Requires exactly key,gate,serialized,parser,assembler,certificate dictionaries, each equal to frozen12/9/8.1,.4,.4,64\u00b3/order5/TINFOIL,1e\u22128/100.",
+    "IDENTITY.validate_identity": "Requires complete explicit both-metal coefs/e,cell,settings,schema,state_id,inputs,source_manifest,build,state_output,pme_export. Pin shape and literal metadata equality only; use bound chain entry for raw hash verification.",
+    "IDENTITY.validate_bound_chain": "Reads/pins five JSON records initializer,assembly,factor,certificate,root_admission; validates their complete identical identity dictionaries, exact chain pins and actual assembler12/.4; verifies all bound input/source/build/state/PME files by streaming hash. It does not execute any numerical admission, optimizer, FFT, assembly or factor.",
+    "chain_statuses": {
+      "initializer": "stage2_initialization_complete",
+      "assembly": "stage2_assembly_complete",
+      "factor": "passed_nominal_static_sufficient_numerical_test",
+      "certificate": "stage2_state_nominal_certificate_passed",
+      "root_admission": "admitted_periodic_identity_v2_certificate"
+    },
+    "chain_fields": "Every record carries identity. Initializer state_output/pme_export; assembly initializer,cutoff_A,ewald_inverse_A; factor assembly,nominal; certificate initializer,assembly,factor,expected_state,pme_export,nominal,sufficient_numerical_test_passed=true; root certificate,initializer,fresh_same_state_chain=true. Same branch for central and displaced states.",
+    "nominal": "Preserve U_nominal=U_B+U_R, tau=1e\u22126(U_B+U_R)+delta_odd; e_app:null/application_error_bound_established:false. Exact same stored factor/certificate values required; this scalar helper is not new factor proof.",
+    "legacy_comparison": "Explicit diagnostic helper only. Caller must separately admit both complete grammars and zero-radial original input/source/admission authority. Helper verifies all five proof pins and same full settings/cell, exacte0, then native-width V2-only header/END removal must reproduce V1 bytes exactly. It returns a receipt and never writes synthetic expected state. Missing e cannot be inferred automatically; old9 cannot become12. Actual original V1 reader remains unchanged at pinned path."
+  },
+  "deferred_runtime_blockers": [
+    "COMMON.source_context currently binds olde41f and old Stage1; version and replace that authority for any future candidate.",
+    "COMMON/NATIVE/CERTIFY central restrictions and implicit old-center certificate shortcut remain untouched. Future runtime must allow explicitly released fresh central initialization and require full same-state chain.",
+    "NATIVE V1 tickets and expected-state path need an explicitly reviewed V2 adapter.",
+    "CERTIFY physical_metadata must parse both radial slots and assemble must replace hardcoded9 with validated12; existing algorithms cannot simply be relabeled.",
+    "Future composition/key/binary source manifests and e-aware expected metadata remain unbound. No candidate/decks or build/link recipe exist in this package.",
+    "Existing inactive cutoff12 anchored baseline admission is engineering evidence only, not an active radial state or factor. Existing old9 Stage1/factor stays separate.",
+    "No native Fortran compilation, actual snapshot parse/replay, large FFT/sparse math, factorization, energy/gradient qualification or physical model admission occurred."
+  ],
+  "controls": {
+    "result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_identity_v1/controls_v1/RESULT.json",
+      "sha256": "f4cde042270b056e849b534d691ff70a79de946f314ef16905755b5770ac73c1"
+    },
+    "checks": 65,
+    "coverage": "65 source/pin/inverse/AST and tiny manufactured header/body,response,identity/chain,legacy byte controls. Public full64\u00b3 parser loop is source-reviewed; the body grammar was exercised on2sites/1qfac, not a physical box.",
+    "failure_attempts": 0,
+    "cost": {
+      "wall_seconds": 0.1494357269257307,
+      "CPU_seconds": 0.12415653399999999,
+      "threads": 1
+    }
+  },
+  "prepared_source": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/periodic_identity_v1/source_v1/MANIFEST.json",
+    "sha256": "073afd3dfbdba5bbdbbdd5afb4df7c8ae8deab6daa675133c54b27c27fc9de45"
+  },
+  "execution_released": false
+}

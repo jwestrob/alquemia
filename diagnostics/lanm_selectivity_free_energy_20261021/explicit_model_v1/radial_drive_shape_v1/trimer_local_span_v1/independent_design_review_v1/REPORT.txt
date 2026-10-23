@@ -1,0 +1,70 @@
+Independent W9far local-span design review — passed
+
+Frozen READY2c4f7043/DESIGN8876f785/INVENTORYf9eeb626 is a coherent one-solve
+local convex diagnostic. No implementation or execution is admitted by this
+receipt. Read the saved inventory/zero check; did not rerun it, construct a
+Jacobian or conic matrix, load numerical arrays, or call a solver/native program.
+
+The exact step8 origin is admitted terminal5d992. Both W9far seven-term cycles
+are supplied by six already admitted parameter-dependent cells and eight static
+fragments, present in all28 ordered derivative vectors. Actual normalized spans,
+clipping and all14 columns are retained, including literal noisy e columns.
+The future derivative is (plus-minus)/saved_span. Paired derivatives are Dy minus
+La; future center/scaling reconstruction must use the same signed residuals and
+compare to the admitted result under its original arithmetic convention.
+
+For each group with positive fixed scale s_g=||r_g||, the constraint
+  ||r_g/s_g+(J_g/s_g)d|| <= 1-t, 0<=t<=1,
+is an SOC. The six groups are individualLa/Dy and paired E3 absolute residuals,
+and corresponding full signed3-vector mu3 residual norms. Three scalar cones
+have dimension2, three vector cones dimension4. Maximizing common t requires
+simultaneous relative reduction. The paired group intentionally controls
+cancellation; it is not an additional independent observation. Scales are fixed
+development normalization, not physical tolerances. No z-only or unsigned dipole
+magnitude substitution is allowed.
+
+The minimal fixed-q substitution is equivalent in exact arithmetic. Original
+slack satisfies A_d*d+A_s*s+slack=b. Set s0=sqrt(q0), use A_d and
+  b_fixed=b-A_s*s0,
+and drop only the named epigraph/lower and epigraph/upper rows. Since q0>=0,
+the two P/B SOCs then impose their original normalized squared ratios<=q0.
+Their denominators are unchanged. This preserves max(P/B) nonincrease, allowing
+the nonlimiting block its existing headroom; it is not two separate score ceilings.
+All25physical gates, three fixed feca electrical norms, signed full-shell W9,
+original14-coordinate box and trust.025 remain unchanged. The old auxiliary
+q_current=q0+1e-8 is not used as the new ceiling.
+
+Exact saved row mapping (half-open ranges):
+  old SOC0:547 ->0:547;
+  new six SOCs ->547:565 (18 rows);
+  old nonnegative547:1433 ->565:1451;
+  drop old epigraph1433:1435 only;
+  old signed-W9 rows1435:1437 ->1451:1453;
+  new t lower/upper ->1453:1455.
+All inherited rows get zero in the new t column. New group slack is
+(1-t,r_g/s_g+(J_g/s_g)d): top A_t=+1,b=1; bottom A_d=-J_g/s_g,b=r_g/s_g.
+For t>=0 use A_t=-1,b=0; for t<=1 use A_t=+1,b=1. Objective c_t=-1,
+all other objective entries zero. Thus15variables,1455rows,26SOC cones and one
+890-dimensional nonnegative cone are correct; no original force/electrical row
+or signed-W9 side is discarded. The implementation must still verify this map.
+
+Saved zero scalar evidence has no negative inherited or normalized new-group
+margins. It records q_reconstructed .13804357390849722 <= literal cap
+.13804357390849725; sqrt(q0)^2-minus-q0 is zero for these stored doubles, and
+all six normalized group zero margins are zero. This receipt reuses those saved
+values rather than recalculating them. Exact constructed-row zero feasibility
+remains a required future pre-solve check. Scalar q(d)<=literal q0 must also be
+checked independently after any returned point; never replace the literal cap
+with a neighboring squared sqrt, apply the old auxiliary cushion, or hide a
+negative margin with a tolerance. Such a numerical obstruction is not physical
+infeasibility. The inherited certificate's dropped old_EF/epigraph families must
+not accidentally be read as new admission gates, nor may its old eligibility
+helper impose a different improvement/cushion policy.
+
+One prospective Clarabel solve retains all frozen effective settings and raw
+status/primal/dual/gap/residual evidence, with no retry, relaxed case or fraction
+sweep. AlmostSolved is not relabeled Solved. A positive independently feasible
+t is only an affine witness; nonpositive or inaccurate output cannot establish
+global family inadequacy. No candidate/native selection, new reference, fit,
+heldout access, physical threshold or model promotion follows. Original consumed
+reference, printed precision and electronic-state limitations remain.

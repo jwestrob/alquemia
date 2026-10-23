@@ -1,0 +1,84 @@
+One bounded successor demonstration — source/saved-data advice, 23 October 2026
+
+Question after force qualification
+Can independent short-range mechanical energy and geometry-dependent electrical
+response jointly repair the existing individual water nonadditivity/electrical
+errors and dry-La acetate rotation without spoiling radial mechanics? Test this
+question once with a reduced basis, not another state-by-state amplitude search.
+This note does not release a fit or native work.
+
+Suggested twelve coefficients in the existing kernel
+Water Pair: v0, hf, krr, kff (four).
+Water-water Triple: v0, va, h_neighbor, k_cross (four).
+Acetate Pair: vr, va, hf, kff (four).
+All other coefficients zero; retain existing geometric scales. Use the SAME
+water coefficients for La/Dy prospectively. Acetate covers La only here; no
+claim of calibrated Dy/amide/donor-water transfer. Do not add columns after
+seeing failure. This is a compact demonstration basis, not an asserted unique
+or minimal identifiable parameterization.
+
+Rationale: water pair krr/kff allow a radial/frame combination. A single shared
+positive-semidefinite H amplitude can only lower both dimer susceptibilities,
+whereas the recorded La discrepancy calls for a decrease and the small Dy
+one for an increase. Keeping both columns avoids that known one-sign restriction;
+it does not prove rank, useful conditioning, or a feasible SPD solution. Triple
+v0/va distinguish near/far arrangement energy without forcing it through
+induction. Triple h_neighbor/k_cross address the measured trimer moment/response
+conditional on the pair contribution. Acetate vr/va separate radial and angular
+mechanics; an absolute donor energy offset remains unidentifiable without a
+complete donor fragment cycle. Unsupported/null parameter directions must be
+reported, not interpreted as fitted tensor information.
+
+Exact usable saved panel and channel joins
+W/SRMB/water_data_v1/materialized_v1/DATASET.json 215275c6:
+  /fixtures and /static supply common-union compatible model states.
+CYCLES.json 35ce1288:
+  /trimer/aquo9_central_{La,Dy}__{near,far}: preserve all seven model_terms and
+  reference_terms, individual reference_electronic_E3_kcal_mol and signed xyz
+  reference_mu3_Debye. Use their matching pair cycles, including dimer01/02/03,
+  before reporting Dy-minus-La contrasts. Do not optimize only cancellation.
+  /conditional_susceptibility: exactly four independent lab-z response anchors,
+  La/Dy dimer01 and far metal-two-water; two steps/estimators are consistency
+  information, not extra independent targets or seven-term chi3.
+FIELDS.json d4e50782 maps each signed field to its zero_operator_fixture_id and
+zero_reference_id. REFERENCES.json 7935e4ad preserves individual common-basis
+energy/moment targets. Original targets remain frozen; the completed tighter
+W9far comparison is a separate precision sensitivity, not silent replacement.
+
+W/SRMB/donor_data_v1/union_v1/kernel_views/
+  matched_dry_acetate_mono_central_La.json c6ec944d:
+  /reference_targets/{moment,susceptibility,mechanical_modes,canonical_rotation}
+  and /baseline_observables/{conjugate_mu_lab_au,saved_directional_values}.
+  Its two O atoms remain ONE acetate. Keep PBE0-D4 and canonical-CC labels
+  separate from common-basis water electronic/no-D4 targets. Use qualified
+  radial and rotation finite slopes/relative endpoint energies, not absolute
+  quantum-minus-classical complex energies as a donor interaction cycle.
+
+The donor's literal Ed0 and Ep0 differ. Its variational field derivative uses
+permanent+B^T(u+v)/2, matching explicitly labelled conjugate moment; native
+physical permanent+B^T u is a separate reported observable. Water has equal
+saved channels, but retain both everywhere. Do not substitute an unlabeled
+native moment print for the energy-conjugate target. Chi constrains H, signed
+moment constrains H/h, and energy/forces constrain all three sectors including V;
+a final joint assessment must retain their back-reaction.
+
+Missing native baseline data, precisely
+Donor displaced_v1/RESULT.json 64997f1a contains the exact eight La endpoints
+pbe0__La__{radial,rotation}__{minus_010,minus_005,plus_005,plus_010}__complex.
+Their existing energies/components, geometry and quantum data are saved and
+compatible, but baseline_operator is null. To evaluate corrected finite slopes,
+these eight states need fresh native A0/Ed0/Ep0/alpha/site order/Uother/permanent
+exports after force qualification. Reuse all old geometry, targets and the
+existing center operator; do not repeat quantum calls. These are NOT the tiny
+metal/donor/frame directions in the force-implementation scout. Alternatively,
+a center-only analytic projection can use the qualified force bridge, but it
+must not be relabeled the saved two-step endpoint comparison.
+
+Limits
+Five scalar response anchors do not identify full tensors. E3/paired cancellation
+and individual P/B errors are distinct from equilibrium exchange free energy.
+The eighteen wet-donor old-baseline model rows remain incompatible; dry amide,
+bidentate and donor-water response data remain missing. All this is consumed
+development, not held-out validation. No new physical accuracy threshold, rank
+calculation, parameter choice, fit, native/reference call or numerical replay
+was performed in preparing this advice.

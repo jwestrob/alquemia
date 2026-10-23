@@ -1,0 +1,24 @@
+New short-range energy/response kernel — actual cache integration
+
+56 distinct cases pass: 54 water and 2 dry-acetate La/Dy operators.
+The exact frozen baseline is recovered within its inherited native/export/print
+bounds. 204 fixed nonzero pair/triple probes and 1,060 checks pass. Mechanical
+energy terms preserve dipoles/susceptibility; drive preserves susceptibility;
+energy derivatives recover conjugate moments and response for all probes.
+Maximum total-energy discrepancy is 1.361e-8 kcal/mol. These are implementation
+checks, not evidence of improved chemical accuracy. No coefficients were fitted.
+
+The shared baseline combines existing water records with disjoint donor records.
+All 54 water and 6 dry donor states are compatible; 18 wet donor model rows use older
+water parameters and cannot be silently pooled. Only 2 dry donors currently have
+full saved response operators. Raw native arrays are preserved; bounded last-bit
+asymmetry is explicitly projected and recorded before symmetric solves.
+
+The full-force gap is real: archived A/Ed/Ep values do not contain their coordinate
+derivatives. Current cached-coordinate derivatives are partial. Native force
+bridge implementation is the next necessary connection. Manufactured provider
+tests do not establish native physical-force correctness.
+
+Actual replay cost: 2.844 wall / 2.780 CPU seconds on 1 login thread, excluding imports.
+No native/QM/fit/Slurm calls. Per-invocation and detailed immutable evidence:
+/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/integration_v1/ROOT_ACTUAL_REVIEW.json

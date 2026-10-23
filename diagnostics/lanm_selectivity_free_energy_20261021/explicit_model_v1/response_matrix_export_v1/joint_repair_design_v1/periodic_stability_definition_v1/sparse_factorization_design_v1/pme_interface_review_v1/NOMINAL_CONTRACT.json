@@ -1,0 +1,42 @@
+{
+  "status": "recommended_nominal_static_numerical_contract_source_only",
+  "prior_interface_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/pme_interface_review_v1/REVIEW.json",
+    "sha256": "9c99a698f73178387efffc087fc46a816979bb6b4949f82ac7c733b51d280115"
+  },
+  "root_clarification": "Lack of a rigorous e_app is not a new mandatory blocker to a declared ordinary-double static test. Existing worker remains preserved and unbound.",
+  "recommended_contract": {
+    "target": "Same normalized relative stability threshold, epsilon=1e-6, for the exact saved coefficient/operator scope under ordinary-double numerical qualification.",
+    "U_nominal": "U_B+U_R",
+    "tau_nominal": "1e-6*(U_B+U_R)+delta_odd",
+    "factor": "S-tau_nominal*I, S=normalized real-space+self+candidate H",
+    "e_app": null,
+    "application_error_bound_established": false,
+    "required_numerical_checks": [
+      "Matched saved geometry/cell/grid/boundary, active positive-alpha map, candidate H, upper-bound and initialization/source/runtime pins; finite bounds and positive U_nominal.",
+      "Actual stored q nonnegative/finite, declared stencil/adjoint domain, delta_odd derived from that same snapshot, and unchanged symmetry checks. No q clamping or symmetrization.",
+      "One fixed qualified factor attempt, positive accepted LL factor, no unsupported warning or backend failure, existing sparse factor-action and solve residual checks. Preserve boundary/inconclusive classifications.",
+      "Retain the declared native parity/application/residual probes and their exact finite scope as numerical implementation evidence. They are not a uniform full-box e_app estimate; no new probe execution is authorized by this source review."
+    ],
+    "positive_result": "passed_nominal_static_sufficient_numerical_test, limited to this saved operator and declared ordinary-double checks",
+    "negative_or_missing_result": "An unsuccessful sufficient real-split test is inconclusive for full PME stability; malformed/missing inputs and numerical/backend errors retain their distinct failures.",
+    "does_not_admit": [
+      "rigorous floating-application perturbation envelope",
+      "interval or exact-arithmetic certificate from nominal bounds",
+      "unsampled geometry or trajectory stability",
+      "full periodic response energy/force consistency",
+      "physical accuracy",
+      "production or MD execution"
+    ],
+    "stronger_optional_contract": "If a separately qualified allowance later exists, use U_star=U_B+U_R+e_app and tau=1e-6*U_star+delta_odd+e_app. This stronger contract is not a prerequisite to the nominal test."
+  },
+  "execution": {
+    "existing_worker_modified": false,
+    "candidate_bound": false,
+    "native_calls": 0,
+    "factorizations": 0,
+    "large_matrix_evaluations": 0,
+    "solver_calls": 0
+  },
+  "next_source_delta_only": "A new worker/config version may explicitly encode this nominal formula, e_app:null, scope/status and matched delta_odd provenance; old worker/source stays preserved. Root retains release."
+}

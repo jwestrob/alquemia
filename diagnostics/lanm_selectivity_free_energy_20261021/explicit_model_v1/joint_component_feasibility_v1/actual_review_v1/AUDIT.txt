@@ -1,0 +1,93 @@
+Independent saved-result audit: PASS within the declared diagnostic scope
+
+Authority: actual_v1/RESULT.json, exact implementation 78cae2b3, frozen
+protocol d0b24ea1 and input inventory e794e9a2. REVIEW.json records full hashes.
+No native readmission, LP re-solve, new parameter evaluation, fitting, candidate
+selection or fresh outcome read occurred. Existing raw fit/reference admissions
+are reused. All 673 diagnostic rows were joined to the admitted fit index and
+scores; their individual native outputs were not reopened. Initial and selected
+vector bodies, reference collections, static energies and geometry metadata were
+read for the bounded arithmetic below.
+
+Reference and selected-component joins
+-------------------------------------
+The targets are Dy-minus-La at each fixed shell size, in kcal/mol, in the exact
+common-parent orbital/auxiliary basis. Separate electronic and D4 terms replay
+from the admitted common-basis and original pair collections. Matched geometries
+cancel the unknown shell/water D4 contributions; D4 is added once. Absolute
+per-parent electronic-plus-D4 reference targets remain unavailable.
+
+                  Reference C          Reference P          Reference B
+W8                 -59.095186970        -73.719043963          14.623856993
+W9                 -59.304670718        -82.964706999          23.660036282
+
+Literal model cycles retain N-fold ion subtraction, all 34 extracted dimers and
+their exact parent frames; B=C-P. Selected saved energies reproduce the admitted
+decomposition without changing the selected artifact:
+
+                  Selected C error      Selected P error      Selected B error
+W8                   4.547346730          24.940203243         -20.392856513
+W9                   4.234268718          28.088511190         -23.854242472
+W9 minus W8         -0.313078013           3.148307947          -3.461385960
+
+C and the shell-size difference are derived, correlated reports. The near-small
+coordination error retains substantial component cancellation. Raw cluster CC
+energies are not substituted for these CP/P/B targets. A quantum collective
+remainder is not identified with an AMOEBA polarization component. The original
+531 residuals and four E/F, pair-moment, C-moment and susceptibility blocks retain
+their frozen target/scaling definitions; no moment target or error bar is added.
+
+Complete denominators and finite-trial classifications
+-----------------------------------------------------
+All 673 vectors, 24 origins, 72 stored LP solutions and 96 historical trial slots
+are retained. Independent score/classification arithmetic gives:
+  70/96 trials decrease both J_P and J_B relative to their own origin;
+  55/96 also do not increase any of the original four block scores;
+  21/96 additionally pass all original 25 E/F gates at the trial;
+  12/96 meet these conditions and also start at an origin passing those 25 gates.
+The other nine of the 21 start from failed origins. Only origins 3, 4, 23 and 24
+pass all 25 original gates. REVIEW.json preserves each failed-origin gate list
+and every trial's classification. These are consumed correlated trial slots,
+not independent replications or a newly selected set of candidates.
+
+Local LP interpretation
+-----------------------
+All 72 saved primal/dual certificates pass the unchanged 1e-7 numerical bound;
+largest independently reconstructed certificate defect is 6.32e-13. Each mode
+has positive common tangent descent at all 24 origins. Under protection of all
+four original block slopes, t spans 1.63870 to 2.64570. However, predicted E/F
+residual norms at the full LP step increase by factors 8.92699 to 22.18849.
+At origin 24, t=1.64521638 but the full-step E/F norm is 22.18849 times its origin
+norm and the susceptibility norm is 2.99106 times its origin norm. These are
+full linearized residual norms, not actual evaluations of LP directions.
+
+The four old LP norms use half-weighted residual slices; reported old block
+scores are four times their squared norms. This fixed scaling does not change
+fractional norm slopes. Tangent nonincrease alone therefore supplies neither a
+finite-step norm constraint nor the 25 individual E/F gates. The selected final
+vector differs from the last Jacobian origin; no selected-point Jacobian follows.
+
+Narrow conclusion
+-----------------
+Saved finite trials demonstrate local simultaneous improvement is possible for
+these component and original-block diagnostics. They neither show adequate
+absolute component errors nor cure the consumed trimer regression. This evidence
+does not establish global failure or global adequacy of the existing functional
+family, and does not justify a unique missing-physics assignment.
+
+A separately declared bounded local diagnostic constraining full predicted block
+norms and the individual original E/F gates is a more direct next test than
+inferring a need for a new functional term from tangent slopes alone. It still
+requires actual finite evaluation before candidate or physical claims. No next
+calculation, candidate, tolerance, objective or validation release is selected
+by this audit. Reference SCF, frozen-f/ECP, basis and physical-method limitations
+remain as stated in reference_review/AUDIT.txt.
+
+Cost and scope
+--------------
+Original saved diagnostic: 42.23075 wall seconds, 37.64460 CPU seconds, one
+numerical thread, zero native calls or scheduler allocation.
+This independent saved audit: 1.82734 wall seconds, 1.80171 CPU seconds, one
+numerical thread, 10,765 joins/arithmetic assertions, zero LP solves/native calls.
+The count describes assertions, not independent physical observations. File
+reading/source inspection and report-writing time are not included in CPU timing.

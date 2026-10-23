@@ -1,0 +1,15 @@
+--- diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/boundary_fraction_witness_v1/independent_actual_review_v1/REVIEW.py
++++ diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/boundary_fraction_witness_v1/independent_actual_review_v1/REVIEW_v2.py
+@@ -91,10 +91,10 @@
+     close(score/inv['fixed_authorities']['q_denominators']['J_'+kind],actual['component_squared_error_ratios'][kind],'original denominator '+kind)
+ check(actual['q']==max(actual['component_squared_error_ratios'].values()) and r['actual_q_improvement']==inc['q']-actual['q'] and r['strict_q_improvement_tolerance']==1e-10*max(1,abs(inc['q'])),'literal q and improvement')
+ for k,entry in actual['fixed_electrical_safeguards'].items():
+-    check(entry['score']==v['score']['block_objectives'][core.SCORE_KEYS[k]] and entry['ceiling']==inv['fixed_safeguards']['actual_scores'][k] and entry['passed']==(entry['score']<=entry['ceiling']),'fixed electrical gate '+k)
++    check(entry['score']==v['score']['block_objectives'][core.SCORE_KEYS[k]] and entry['ceiling']==inv['fixed_authorities']['electrical_actual_scores'][k] and entry['passed']==(entry['score']<=entry['ceiling']),'fixed electrical gate '+k)
+     close(r['actual_margins']['electrical'][k],entry['ceiling']-entry['score'],'electrical margin '+k)
+ C=v['response']['C_dipoles_Debye'];signed=actual['signed_W9_z_safeguard'];check(signed['model_Dy_minus_La_z_Debye']==math.fsum([C['aquo9_central_Dy'][2],-C['aquo9_central_La'][2]]) and signed['model_minus_reference_Debye']==math.fsum([C['aquo9_central_Dy'][2],-C['aquo9_central_La'][2],-signed['reference_Dy_minus_La_z_Debye']]),'signed W9 raw response')
+-check(signed['absolute_ceiling_Debye']==inv['fixed_safeguards']['W9_absolute_ceiling_Debye'] and signed['reference_Dy_minus_La_z_Debye']==inv['fixed_safeguards']['W9_reference_Debye'] and signed['passed']==(abs(signed['model_minus_reference_Debye'])<=signed['absolute_ceiling_Debye']),'unchanged signed W9 gate')
++check(signed['absolute_ceiling_Debye']==inv['fixed_authorities']['signed_W9_absolute_ceiling_Debye'] and signed['reference_Dy_minus_La_z_Debye']==inv['fixed_authorities']['signed_W9_reference_Debye'] and signed['passed']==(abs(signed['model_minus_reference_Debye'])<=signed['absolute_ceiling_Debye']),'unchanged signed W9 gate')
+ for kind,key in [('pair_mu','pair_Debye'),('C_mu','C_Debye'),('chi','chi_a0_cubed')]:close(math.sqrt(actual['original_block_scores'][kind]),actual['electrical_residual_RMS'][key],'absolute electrical RMS '+key)
+ for k,g in actual['original25'].items():
+     expected={'absolute_energy_margin_kcal_mol':1-abs(g['error_kcal_mol'])} if k.startswith('energy/') else {'RMS_margin_kcal_mol_A':2-g['rigid_RMS_kcal_mol_A'],'maximum_margin_kcal_mol_A':5-g['maximum_body_component_error_kcal_mol_A']}

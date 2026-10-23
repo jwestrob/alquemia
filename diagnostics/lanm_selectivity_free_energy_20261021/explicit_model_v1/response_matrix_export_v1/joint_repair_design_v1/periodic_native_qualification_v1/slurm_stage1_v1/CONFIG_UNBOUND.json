@@ -1,0 +1,75 @@
+{
+  "status": "unbound_stage1_slurm_parity_configuration",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/slurm_stage1_v1/RUN.py",
+    "sha256": "35614514425a66e6ba72fc70bb51f271de5572ba00199cd7b7abfa1a71b11529"
+  },
+  "stage1_ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/STAGE1_READY.json",
+    "sha256": "8566dec062015e130c58fc4b17a6949e52a6edad1b53c324f391bbe842974dff"
+  },
+  "stage1_source_review": null,
+  "static_root_admission": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/static_factor_worker_nominal_v1/slurm_execution_v1/ROOT_ACTUAL_REVIEW.json",
+    "sha256": "aeeb94679b4d0d49ef4c22f3f57b890665192ea37c341c6846409135009f796c"
+  },
+  "environment": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/environment_v1/ENVIRONMENT_AUDIT.json",
+    "sha256": "f319196c473fafb382130b6b6138ff33a55085621ff8906cd5cf1cf509da2db7"
+  },
+  "resources": {
+    "nodes": 1,
+    "tasks": 1,
+    "cpus_per_task": 1,
+    "memory_grant_MiB": 4000,
+    "address_space_bytes": 3221225472,
+    "link_wall_seconds": 180,
+    "preflight_wall_seconds": 60,
+    "native_wall_seconds": 3600,
+    "replay_wall_seconds": 1800,
+    "numerical_threads": 1
+  },
+  "preflight": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/slurm_stage1_v1/PREFLIGHT.py",
+    "sha256": "af8cfa5455a83cb49e8891468952444de11316545ec0bbc30bd58b813db35950"
+  },
+  "wrapper": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_native_qualification_v1/slurm_stage1_v1/RUN.sbatch",
+    "sha256": "96ff24b11399dc2e3400a55f2e8fb04e5d7d4b2dd458bff463d65613dbfc942b"
+  },
+  "native_runtime": {
+    "libgomp.so.1": {
+      "path": "/usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0",
+      "sha256": "135f3c8f006d2fe5e68e51281c7974cb991a03de3bfb3593d68d174dfcf854d1"
+    },
+    "libgfortran.so.5": {
+      "path": "/usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0",
+      "sha256": "342618ccfebe840446e4ef2b7893f4161b2084845e570f42d68a70bfde58a58d"
+    },
+    "libm.so.6": {
+      "path": "/usr/lib/x86_64-linux-gnu/libm.so.6",
+      "sha256": "fce00b6f25f459cf4ae0b7fae4257909a1a8a86f9149e7c029a5d617baf1ccd0"
+    },
+    "libmvec.so.1": {
+      "path": "/usr/lib/x86_64-linux-gnu/libmvec.so.1",
+      "sha256": "57329ee0018b8fd8f8e51af5f87c723b6ecdf04679f4493134beab0f45d58ec5"
+    },
+    "libc.so.6": {
+      "path": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+      "sha256": "3a15d66867d83762c7f2f1e37359cb8f6c5743edb369c65285cb0b1c4f7498bf"
+    },
+    "libgcc_s.so.1": {
+      "path": "/usr/lib/x86_64-linux-gnu/libgcc_s.so.1",
+      "sha256": "d93224d2b0dab4247598be683adca02f5cf00586f99c187579cd7e92058fb7cb"
+    },
+    "loader": {
+      "path": "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2",
+      "sha256": "c20a2dc8917c755f02b94049356320fe1f62ac7d9f8994731f807d9df39302da"
+    }
+  },
+  "loader_command": {
+    "path": "/usr/bin/ldd",
+    "sha256": "752803b8baa217b821bd4566c4fbdaec50c01cb32d2796ec056d22d190d4290f"
+  },
+  "scheduler_command": "/usr/local/bin/scontrol"
+}

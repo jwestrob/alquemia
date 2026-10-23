@@ -1,0 +1,46 @@
+{
+  "status": "passed_saved_joint_component_feasibility_source_review",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/source_review/CALCULATE.py",
+    "sha256": "78cae2b384434cd2e93f65312fa33876b2628732415093bd0c0fb46c23fac68e"
+  },
+  "inputs": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/source_review/INPUTS.json",
+    "sha256": "e794e9a2358818d608de9d7eacde5cbbd72cfdd8f2d4b7dd75d132e3e1fabedd"
+  },
+  "protocol": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/PROTOCOL.md",
+    "sha256": "d0b24ea102ad0d13ee20aa6420b41d96bb4d0e9881d44fe32139cd0b5ee3cdee"
+  },
+  "lp": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/source_review/LP.py",
+    "sha256": "16c715376ead5a2f953beb7cfb8fa16beded0841c64db9edb25f297151d4b7ae"
+  },
+  "ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/source_review/READY.json",
+    "sha256": "9f122561b8917e5510dd2f743dcd4121b878131b2966fe36e9a04fcd6523763b"
+  },
+  "controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/source_review/CONTROLS.json",
+    "sha256": "e8693f4fb47e82e3d8e5ff3805a291e4ed12cad36aaac255371fc9f80ac195af"
+  },
+  "review_scope": [
+    "Exact admitted fit/config/selected/target/static lineage; 673 vectors and 46 variable plus 48 static cells",
+    "Literal common-basis paired C/P/B signs, N ion subtractions and original D4 convention",
+    "Original 531 residual slices and stored 10 energy plus 15 force gate schemas",
+    "Twelve ordered normalized secants from actual +/- probes and clipped spans; all 24 origins and 96 declared trials",
+    "Six descriptive blocks with no new score or selection; original four weighted norms distinguished from unweighted scores",
+    "LP dual signs, bound contributions, primal-dual gap, stationarity and complementarity; half/full linearized norms",
+    "Degenerate-origin handling and actual LP-count correction"
+  ],
+  "findings": [
+    "No blocking source/math issue found.",
+    "A tangent aggregate descent certificate is not a finite-step residual-norm or individual-gate certificate.",
+    "Last saved Jacobian origin need not equal terminal selected vector."
+  ],
+  "author_controls_inspected_not_rerun": 12,
+  "actual_calculation_repeated": false,
+  "native_calls": 0,
+  "reference_calls": 0,
+  "new_parameter_evaluations": 0
+}

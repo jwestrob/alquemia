@@ -1,0 +1,27 @@
+Water cached-data adapter — materialized phase 1
+
+READY entry: workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/short_range_many_body_v1/water_data_v1/shared_bridge_v1/BUNDLE.json.
+
+Concrete data
+- 54 dense baseline operators (108 preserved native snapshots), real atomic geometries, intact water connectivity/frames, both RHS channels, both induced solutions, intrinsic alpha, permanent laboratory moment, native total/component energies. Arrays are copied from raw exports after exact token and geometry joins. No solve or symmetrization.
+- 46 metal-free cycle terms retain exact saved energies/moments/geometries. No raw operator was exported for these terms; the proposed metal-centered correction vanishes on them.
+- 96 individual common-parent-basis electronic energy/moment reference states, including full parent/ghost/charge/state and raw native/SCF metadata; 34 pair and eight full seven-term trimer dictionaries.
+- Ten original total PBE0+D4 energy/full force references and matching zero-response model forces. All ten exact effective input joins pass.
+- 16 signed finite-field individual reference/model records, both field sizes and four state aliases. All model keys differ from the matching zero-field baseline only in declared external field. Conditional susceptibility increments remain distinct from a seven-term three-body susceptibility.
+- 36 older matched own-basis individual energy states retained separately in MATCHED_OWN_BASIS.json, not substituted into the common-basis cycles.
+
+Baseline
+The water operator uses exact original fixed-six selected17676 candidate5001cb57, zero added local h/H, original intrinsic alpha/permanent moments/Thole/exclusions. It is not a radial14 terminal array.
+Canonical shared union is donor_data_v1/materialized_v2/BASELINE.json deb5bc6e: those water records plus exact donor17621 overrides. For all100 water states, the actual type-to-class mapping, full non-pair key body, parameter bytes and applicable pair records agree exactly. Donor types403/105 and classes403/55 are absent. No saved input or array is changed. Wet donor17621 used older water parameters and is incompatible; it is not imported here.
+
+Schema and numerical contract
+BUNDLE points to DATASET, compatibility and shared-baseline bridge. DATASET points to FIXTURES, STATIC, REFERENCES, REFERENCE_JOINS, FORCES, FIELDS and CYCLES. Each fixture contains geometry and native_operator. Site indices are zero-based exact native flatten order. A0 is Angstrom^-3, Ed/Ep e/Angstrom^2, u/v e Angstrom. K=332.0637133. native_operator.nonpolar_energy_kcal is U_other0 (all total energy minus polarization), not just permanent electrostatics. native_operator.permanent_energy_kcal is deliberately null; use nonpolar_energy_kcal. Dipole permanent_mu_eA has laboratory origin0; raw reference ghost/origin data remain explicit. REFERENCE_JOINS is authoritative; empty per-fixture reference_ids means targets are external, not absent.
+
+Inherited zero numerical evidence is in native_qualification.polarization_energy (native/dense contraction, printed polarization and print_half_unit), and snapshots[].numerical_bounds (native_vs_dense_u/v, arithmetic, post-peek residual bound). Source scout/RUN.py6541462b uses arithmetic=128*dimension*eps*max(1,all operands); dense energy vs printed allowance = print_half_unit + arithmetic(dim,native_contraction,printed) + K/2*||Ep||2*native_vs_dense_u. These are ordinary-double/printing checks, not physical uncertainty. Native total energy printing must also be charged when comparing a newly reconstructed total. Both RHS channels happen to be equal for these54 vacuum states; the interface does not collapse them.
+48 raw matrices have last-bit asymmetry, maximum2.7755575615628914e-17 Angstrom^-3. No adapter repair was made. Any explicit symmetric representative must retain its separate source-bound perturbation receipt. No stability or native qualification was rerun.
+
+Missing and interpretation limits
+Baseline dA0/dR, dEd/dR, dEp/dR and permanent-frame derivatives are unavailable. Full forces cannot be obtained by differentiating the correction with these baseline arrays frozen. Existing reference force arrays remain usable targets, with their original protocol/state/SCF limits, and no new force-validation claim. Static metal-free operators and candidate-mismatched wet-donor operators are explicitly missing/incompatible. All rows are consumed development evidence. Original labels remain unchanged; root's separate tighter W9far reference comparison is a sensitivity result, not a silent target replacement. No model fitted or physical accuracy qualified.
+
+Execution
+MATERIALIZE.py: 3.119631s wall/2.047828CPU; COMPATIBILITY.py:.562732s/.435937CPU; SHARED_BRIDGE.py:3.669680s/3.338160CPU. Separate early one-fixture handoff:.217357s/.199557CPU. Each one thread on biotite; no native/quantum calls, operator solve, fit or submission. First source bytes preserved under MATERIALIZE_first_fixture.py with explicit SOURCE_VERSION_NOTE; final sources and data are pinned by READY.json. No failed materialization run.

@@ -1,0 +1,94 @@
+{
+  "status": "prepared_source_only_selected_candidate_unbound",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/regression_v1/RUN_v2.py",
+    "sha256": "75447daee805221d47f580edb149db2cbdfd19f6a1999ddc84002354995fe80a"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/regression_v1/SPEC.md",
+    "sha256": "b94831bfa8a8f54508fdecef52357657d7b20508f3680f8ac23f45a44c6f01b9"
+  },
+  "source_inputs": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/regression_v1/SOURCE_INPUTS.json",
+    "sha256": "e8dbdb3cc9d1e11500590f22002d0a8280b8efb195294e4b38babdde5ef58353"
+  },
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/regression_v1/preparation_v2/MANIFEST.json",
+    "sha256": "2b063d819c80bfe84438e7f612c3a7fc141b5e86ba145bdec9b5310edad14364"
+  },
+  "configuration_template": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/regression_v1/preparation_v2/CONFIG_RUN_TEMPLATE.json",
+    "sha256": "415f05051bca71eac99ff3f91b1c21c5106ff8cac347d7d25d9d393d49d79a24"
+  },
+  "controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/regression_v1/saved_controls_v3/RESULT.json",
+    "sha256": "159be8bd28973e4dcdf525e7a5fd4f58240524283eb32b5c7005c3e38c476c14"
+  },
+  "test_implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/regression_v1/TEST_SAVED_v2.py",
+    "sha256": "c946aaff92705499c752e73a4082245f8a0a7daeeb7e6c5c4727bc5e4bd427f0"
+  },
+  "counts": {
+    "declared_additional_trimers": 6,
+    "maximum_native_calls": 6,
+    "all_consumed_cycles": 8,
+    "workers": 1,
+    "new_forces": 0,
+    "new_QM": 0,
+    "new_fields": 0,
+    "new_native_calls_preparation": 0
+  },
+  "baseline_reuse": "Per represented metal, reuse its three admitted old trimers iff all six effective a,b,c,d,R,epsilon equal initial values; otherwise execute its three fixed fixtures.",
+  "argv": [
+    "python",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/regression_v1/RUN_v2.py",
+    "run",
+    "--config",
+    "<root-bound CONFIG_RUN.json>",
+    "--out",
+    "<fresh execution directory>"
+  ],
+  "configuration_binding": {
+    "evaluator_config": "Exact fit configuration evaluator_config pin",
+    "fit_result": "Terminal bounded_joint_response_fit_complete RESULT pin with frozen selected artifact",
+    "root_release": "Separate finite consumed regression release pin"
+  },
+  "release_contract": {
+    "status": "released_consumed_trimer_regression",
+    "implementation": "Exact RUN_v2.py pin",
+    "manifest": "Exact preparation_v2 MANIFEST pin",
+    "evaluator_config": "Exact configured evaluator config pin",
+    "fit_result": "Exact configured terminal fit result pin",
+    "selected": "Exact fit result selected artifact pin",
+    "maximum_native_calls": 6,
+    "workers": 1,
+    "reserved_outcomes_authorized": false
+  },
+  "scientific_admission": "Original EF acceptance is retained descriptively; false is allowed. Native numerical qualification must pass. No selection/fitting/held-out outcomes.",
+  "result_contract": {
+    "status": "consumed_trimer_regression_complete or consumed_trimer_regression_failed",
+    "fit_result": "Exact terminal RESULT pin",
+    "selected": "Exact selected artifact pin",
+    "parameters": "12 declared box values",
+    "rows": "All six slots with explicit complete/reused/failed/not_attempted provenance",
+    "cycles": "All eight fixed seven-term E3/mu3 rows; missing stays unavailable",
+    "original_EF": "Full original25 checks unchanged",
+    "original_EF_checks_passed": "Descriptive, not prerequisite"
+  },
+  "preserved_versions": {
+    "first_source": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/regression_v1/RUN.py",
+      "sha256": "8b3ca04d316a7a957d936cde3d0988af4b1ddc53cf6f695143ccc84e3a96152e"
+    },
+    "first_preparation": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/regression_v1/preparation_v1/MANIFEST.json",
+      "sha256": "5d839898b2952a6acbcea24105a641b6240b7312b711e015de635adb1b70a217"
+    },
+    "control_metadata_failure": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/regression_v1/saved_controls_v1/FAILURE.json",
+      "sha256": "d3841419725a65619eba20a5019dd71a73d8ccd120fd89a0dcdb8475dc3648c9"
+    }
+  },
+  "version_note": "V2 replays only selected energy/moment dependencies, keeping full original runtime input/receipt checks; unused matrix eigensystem metadata is already qualified by the selected evaluator and is not recomputed for this energy/moment cycle.",
+  "source_frozen": true
+}

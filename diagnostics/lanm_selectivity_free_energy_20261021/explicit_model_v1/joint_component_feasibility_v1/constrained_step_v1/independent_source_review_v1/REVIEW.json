@@ -1,0 +1,47 @@
+{
+  "status": "passed_constrained_step_source_math_review",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/constrained_step_v1/PROPOSE.py",
+    "sha256": "b84ade902accdc4897d85e2964f38b28cc27334b82230ead8d988b313b26864d"
+  },
+  "inputs": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/constrained_step_v1/INPUTS.json",
+    "sha256": "fed9b78d627af5a5e0b6c276bb63a13ab938df909242e8534691a0d8fc798a2d"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/constrained_step_v1/SPEC.md",
+    "sha256": "f51cd6342feefdca88e283858db99fa952e25a70bc2ef8c2654eb27662097f4d"
+  },
+  "preparation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/constrained_step_v1/PREPARATION.json",
+    "sha256": "48a5cc09af24a9a384f26ff8beb6484cf0d6150407cb6fe2a5f3c239db9f4059"
+  },
+  "ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/constrained_step_v1/READY.json",
+    "sha256": "51d5f1c2986b47355bea0524a7728f5a2fcb9b92d2ce3c3e8d98c4fec727a5cf"
+  },
+  "original_objective": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/paired_water_coordination_joint_v1/OBJECTIVE.py",
+    "sha256": "60274b54f5e1b71fed236818ca03e226ea46538720a5968100d81a973c286e80"
+  },
+  "original_body_helper": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/matched_dry_v1/OBJECTIVE.py",
+    "sha256": "bf65a20a379811f8d35e2cb5ae78365a5d34022691b332bae5df223196078819"
+  },
+  "reviewed_findings": [
+    "Maximizing common fractional squared-norm reduction t with two component inequalities and four complete residual-norm protections is convex in the normalized direction and t.",
+    "All13-variable analytic derivatives match the affine/quadratic constraints, including component -t and force RMS squared/4 normalization.",
+    "Original body helper gives weights1/6 ion and1/(12Nwater), force raw scaling sqrt(weight)/(4sqrt5) for old413, then another1/2 in joint531. Ten energy gates include the two derived paired radial works.",
+    "Fixed coordinates make saved net-force and centroid-torque projections linear in Cartesian forces; actual origin and24 probes reconstruct original413/531 rows before use.",
+    "Exact origin24,24 probe parameters/order/spans and pinned component secants are retained; origin24 is not the terminal selected candidate.",
+    "Existing physical thresholds energy1,rigidRMS2,maxbody5 and normalized trust.025/domain bounds remain; half/full predictions retain every gate and exact excess.",
+    "Exactly one SLSQP call, zero start,maxiter200,ftol1e-12; no producer/native invocation, restart, multistart or fallback.",
+    "SLSQP success plus1e-8 normalized feasibility is numerical admission only. Exact25 pass flags/excesses remain separate; no nonlinear/global/physical guarantee."
+  ],
+  "author_controls_inspected_not_rerun": 12,
+  "author_constraint_derivative_count": 851,
+  "maximum_author_synthetic_derivative_difference": 1.8118445632708813e-10,
+  "review_solver_calls": 0,
+  "review_native_calls": 0,
+  "blockers": []
+}

@@ -1,0 +1,85 @@
+{
+  "status": "ready_for_root_bound_numerical_qualification",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/qualification_v1/RUN.py",
+    "sha256": "3761acc0c14ad060da4fb234387300ed919ebf234ec6a1d6dd2ce26ae5a2c815"
+  },
+  "plan": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/qualification_v1/QUALIFICATION_PLAN.md",
+    "sha256": "29d1ef8ffabb7d74743f1c9ad30cc238673e6288d4af3cff1e49b3ed084568d1"
+  },
+  "sources": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/qualification_v1/SOURCE_INPUTS.json",
+    "sha256": "3e1d0ca024743cc28f3ac12b9996ee348cf25801044afa3eb27076c880150b7c"
+  },
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/qualification_v1/preparation_v3/MANIFEST.json",
+    "sha256": "e8629f4deef4599ab2a7dfeba9b5d26050c6f4205a87dd008f92c3469f31387b"
+  },
+  "configuration_template": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/qualification_v1/preparation_v3/CONFIG_RUN_TEMPLATE.json",
+    "sha256": "4b339eb6494bffd28e98f102bd0661d84f434da5b88f30fc340e6783a2f2a256"
+  },
+  "controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/qualification_v1/saved_controls_v1/RESULT.json",
+    "sha256": "f950031a0031bd1d24aadf5e4e07a41bcc4f5d0e90426ee51fae127ffe7e9e6b"
+  },
+  "control_source": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/qualification_v1/SAVED_CONTROLS.py",
+    "sha256": "75ba2ea3536a082c388fa262e099100b4988916c469b313d6667fa8f8533d8ea"
+  },
+  "native_source_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/qualification_v1/native_source_review_v1/REVIEW.json",
+    "sha256": "a2e91ef508f60b4ec23f525f5c1e735c304bcfedccea7cdcf4c09096eef47406"
+  },
+  "maximum_native_programs": 57,
+  "maximum_internal_FD_energies": 636,
+  "workers": 12,
+  "command": [
+    "python",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/qualification_v1/RUN.py",
+    "run",
+    "--config",
+    "<ROOT_BOUND_CONFIG>",
+    "--out",
+    "<FRESH_EXECUTION>"
+  ],
+  "required_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OMP_THREAD_LIMIT": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "preparation_cost": {
+    "wall_seconds": 1.8545413189567626,
+    "CPU_seconds": 1.1515471,
+    "numerical_threads": 1
+  },
+  "controls_cost": {
+    "wall_seconds": 0.09250802895985544,
+    "CPU_seconds": 0.058152227,
+    "threads": 1
+  },
+  "new_native_calls": 0,
+  "preserved_attempts": [
+    "preparation_v1/FAILURE.json: W9 title/whitespace byte alias rejected, all atom tokens then proved exactly equal; original gradient XYZ bytes now used.",
+    "RUN_before_xyz_header_join_v1.py and exact RUN_preparation_v2.py preserve previous source bytes.",
+    "preparation_v2 retained; v3 changes only scaled native eigensystem bound, exact atom mapping for field readback and final source audit join."
+  ],
+  "actual_qualification_status_contract": {
+    "status": "passed_local_response_native_qualification",
+    "implementation": "actual independent reviewer source pin",
+    "result": "actual numerical RESULT pin",
+    "source_manifest": "exact built source pin",
+    "build_receipt": "exact completed build pin",
+    "executables": {
+      "analyze": "exact binary pin",
+      "testgrad": "exact binary pin"
+    },
+    "zero_baseline_parity_passed": true,
+    "force_checks_passed": true,
+    "moment_response_checks_passed": true,
+    "export_checks_passed": true
+  }
+}

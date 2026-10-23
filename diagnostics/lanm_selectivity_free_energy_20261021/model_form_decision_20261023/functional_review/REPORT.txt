@@ -1,0 +1,200 @@
+MODEL-FORM DECISION: INDEPENDENT FUNCTIONAL REVIEW
+23 October 2026. Saved sources/results only; no new calculations or execution.
+
+Recommendation
+
+Choose B: an explicit geometry-resolved short-range two-/three-body residual
+energy, with conjugate electrical response, atop a fixed long-range AMOEBA
+baseline. Give zero-field energy and its geometry dependence their own freedom
+instead of forcing every missing contribution through quadratic induction.
+Donor-local angular h/H (A) is a possible response component of that architecture,
+not an established explanation of all quantum three-body residuals. A simple
+positive radial oxygen spring was already tested as EXCHPOL. This choice is
+a development decision based on persistent coupled errors, not a proof that
+every parameter choice in the old form is impossible or that charge transfer,
+exchange or penetration uniquely causes those errors. No fit or run follows.
+
+1. Exact implemented functional
+
+Write u=uind, v=uinp, K=electric/dielec and A0=alpha^-1-T. Permanent multipoles,
+native direct/exclusion fields Ed0/Ep0, bonded terms and buffered-14-7 vdW
+remain separate native terms. The implemented response satisfies
+
+ L = K/2 [u^T(A0+H)v - u^T(Ep0+h) - v^T(Ed0+h)],
+ (A0+H)u=Ed0+h,  (A0+H)v=Ep0+h,
+ U_pol* = -K/2 u^T(Ep0+h).
+
+This dual functional is stationary, not a joint minimum in independent u,v.
+The physical response operator requires stability. Explicit derivatives are
+K/2[u^T(dH)v-(u+v)^Tdh], plus all native tensor, field and local-frame terms.
+Both native channels are retained; they are not independent electronic species.
+For equal direct fields this reduces to the usual single induced-dipole minimum.
+
+The radial14 correction is, for metal M and water oxygen i,
+
+ h_i = 3 f_i phi_i [a_M+b_M eta_i+e_M psi_i] R_i,
+ H_MM = (exp(sigma)-1) I/alpha_M; all other added H blocks are zero,
+ s=sum_i f_i; eta_i=sum_(j!=i)f_j/[1+sum_(j!=i)f_j],
+ eta=2 sum_(i<j)f_i f_j/(1+s^2); sigma=2s/(1+s)*(c_M+d_M eta),
+ psi_i=(r_i^2-r0^2)/r0^2; r0=2.50 Angstrom,
+ f(r)=[(1+2r+(2r)^2/3)exp(-2r)]^2 / same_value_at_r0,
+ phi=(1-exp(-kappa r^3))/r^3, with its finite contact continuation.
+
+Thus the four response coefficients per metal separate pair/collective drive
+from pair/collective isotropic METAL stiffness. Two radial-drive coefficients
+and four metal-O R/epsilon values complete the fourteen parameters. The e term
+adds independent radial slope at r0 but vanishes there in value; it leaves the
+fixed-geometry susceptibility operator unchanged. Literal radii are not clamped.
+The periodic compact switch/PME implementation is a controlled numerical route
+for this law, not a new electronic-response mechanism.
+
+2. Present versus absent degrees of freedom
+
+Present: permanent site charges/dipoles/quadrupoles and their frame orientation;
+mutually coupled induced dipoles on the represented polarizable sites; angular
+dipole tensors; arbitrarily high induction orders through the coupled solve;
+smooth radial coordination dependence of h/H; independent La/Dy parameters.
+It is already a many-body, polarizable model. 'Add polarization' or 'add many
+body' does not specify a missing mechanism.
+
+Absent from the active radial14 law: additional donor-site anisotropic stiffness;
+added off-diagonal response blocks; independent donor-frame/ligand-angle
+descriptors in the correction amplitudes; geometry-dependent permanent charge
+redistribution or variational charge flow; short-range charge penetration;
+induced quadrupoles; electronic saturation/nonlinear response at fixed geometry.
+Water intrinsic alpha, permanent multipoles and native T stay fixed. Existing
+library features are not active merely because their routines exist: the
+qualified vacuum route rejects EXCHPOL, charge flux, penetration and mixed
+direct/mutual-pair-response declarations.
+
+For equal-r two-water trimers, added scalar amplitudes depend only on the two
+radii: h uses a+b/2 and sigma=(4/3)(c+2d/5) at ideal r0. Near/far angles still
+enter R_i and native T; the WHOLE energy is not angle-independent. What is
+missing is an independently adjustable angular dependence of the correction.
+The effective metal inverse polarizability is exp(sigma)/alpha_M, isotropically.
+
+3. What earlier alterations actually changed
+
+- R/epsilon, intrinsic alpha and one POLPAIR gamma: reparameterization within
+  their existing pair/linear-dipole laws. A larger box is not a new mechanism.
+- Separate direct/mutual gamma: a real generalization of radial damping, still
+  within the point-dipole response class. The four +/-5% probes were active but
+  weak and traded near/far response; none repaired the consumed panel.
+- Geometry-dependent h and metal H: a different effective interaction law from
+  unmodified AMOEBA, yet still quadratic electronic response with a very small
+  spatial basis. Pair/collective freedom is already present.
+- The radial e basis: not merely a relabelled old coefficient, but an additional
+  radial function in the same drive space; no new electronic variable, angular
+  descriptor or susceptibility direction. Further radial bases would remain
+  refinements of this strategy.
+- EXCHPOL: genuinely distributed tensor stiffness. The tested law increased
+  oxygen radial inverse susceptibility by q*f(r)*n*n^T/alpha_O, leaving the
+  tangential response and metal tensor unchanged. Shared positive q=.01/.05
+  worsened C/B and original gates. Those results do not exclude independently
+  driven, signed, angular/environment-dependent donor tensors, but must not be
+  advertised as an untested simple oxygen-stiffness rescue.
+
+4. What the evidence supports
+
+The original susceptibility panel found excess added-water chi_zz despite low
+zero-field pair moments and insufficient collective suppression. That rejects
+a uniform 'all polarizabilities are too small' explanation for the measured
+mode. It does not fix every tensor direction or every later candidate: feca12
+has negative La state errors (-.8791/-.9391 bohr^3) and positive Dy errors
+(+.3322/+.2949), with much smaller conditional-increment errors. At fixed
+geometry h changes equilibrium moments without changing chi; H changes both.
+That distinction was already implemented, not merely proposed.
+
+The radial14 terminal improves P/B RMS to9.8669/8.2866 kcal/mol and passes all
+25 original gates, but W9 Dy-minus-La z dipole remains +.127883 D versus
+-.104618 D. Against feca12, all eight consumed individual E3 and mu3 errors
+worsen. All four paired E3 signs are wrong; W9 far is -2.27813 versus +.43004
+kcal/mol. Paired dipole errors improve through cancellation of larger
+individual errors. These patterns expose poor transfer of the chosen objective,
+not a reliable thermodynamic model or a global infeasibility proof.
+
+The trimer local-span test found only a near-boundary ~.74% reduction and no
+admitted positive feasible witness (AlmostSolved; exact q cap violated). It
+is not an optimizer-independent impossibility theorem. Prior no-worsening
+score ceilings were development restrictions, not physical accuracy bounds.
+
+Saved E3 changes appear in the native 'Polarization' component because the
+changed terms act through the induced solution and pair-additive nonpolar
+terms cancel from these matched cycles. That locates the CLASSICAL change.
+It does not assign the QUANTUM residual to induction, exchange or charge
+transfer. B=C-P contains all nonpair orders; it is not uniquely polarization
+and cannot be reconstructed from eight sampled E3 values. Original common-
+basis PBE0/ECP electronic targets, D4-inclusive development targets and their
+SCF/state limitations remain distinct. This review consumes no new reference
+outcomes and makes no numerical-precision explanation for their discrepancies.
+
+5. Concrete alternative laws and their limits
+
+A. Narrower alternative: replace the metal-only isotropic
+correction by donor-local symmetric tensors whose principal directions follow
+the water/donor frame and a smooth angular neighbour descriptor, with an
+independent covariant local drive. For example, a tensor may distinguish the
+M-O direction from the water bisector and respond to the surrounding ligand
+orientation tensor. This can alter response modes that a rank-three scalar
+metal block cannot address and can distinguish ligand arrangements at equal
+radial coordination. It remains in the variational dipole class: no claim of
+new charge-transfer physics follows. Simply setting H_O=q*f*n*n^T is the old
+EXCHPOL hypothesis; changing only its amplitude is not this architecture.
+Stability of each local block alone would not ensure full coupled stability.
+This is real new spatial freedom, but it still sends all missing zero-field
+energy through quadratic polarization. The data have not isolated an anisotropic
+response mode that explains the E3 errors; choosing A alone risks continuing
+the same energy/force/electrical tradeoff with more coefficients.
+
+B. Recommended parent architecture: use explicit, symmetric,
+finite-range metal-ligand two-body and metal-ligand-ligand three-body energy
+surfaces, with angular dependence and field-conjugate response. Its new degrees
+of freedom are independent pair energy values/radial slopes, nonadditive
+ligand-angle/coordination energy, covariant dipole vectors and symmetric response
+tensors, all derivatives of one scalar energy. Locally its uniform-field
+expansion is DeltaU=V(R)-F dot m(R)-1/2 F^T alpha(R) F. This makes clear
+why a scalar V alone can repair E3/forces but cannot repair dipoles or chi.
+For a transferable polarizable Hamiltonian, these response derivatives must
+enter a single distributed electrostatic/variational energy in the actual
+environment, not be appended as separately predicted observables. The written
+uniform-field expansion specifies observables around an isolated state; it is
+NOT by itself a transferable bulk potential. A complete law must specify local
+field/potential coupling, mutual response, charge conservation, smooth fragment
+separation and all coordinate/field derivatives. Rotations and equivalent-ligand
+permutations must preserve the scalar energy. Define residual targets against
+one fixed baseline to avoid counting its induction again. An angular donor h/H
+law can supply part of this response while V supplies independent missing energy.
+Three-body
+terms vanish in dimers and cannot fix P; a two-body sector is also necessary
+when pair errors remain. This is a different interaction law, not another
+amplitude multiplying eta. Sparse consumed trimers neither identify it uniquely
+nor suffice to train or validate its geometric and environmental dependence.
+
+C. Variational, charge-conserving short-range charge flow is a genuinely new
+electronic degree of freedom, coupled to dipoles in the same stationary energy.
+It can redistribute fragment charge and its associated multipoles. Present
+energy/dipole/chi evidence does not establish its necessity; partition-dependent
+atomic populations would not prove it either. Unconstrained global charge
+equilibration risks spurious long-range transfer, so fragment separation and
+charge conservation are essential. It adds a stronger microscopic assumption
+than the recommended effective residual for the current
+evidence. Nonlinear electronic saturation is likewise untested, not diagnosed
+by one small-field linear susceptibility discrepancy.
+
+6. Thermodynamic decision
+
+The goal is protein-versus-water La/Dy exchange free energy, not the fit of one
+cluster C contrast or a native component label. At a common standard state this
+requires the protein alchemical Dy-minus-La free energy minus its solution
+counterpart, including the ensembles and any restraint/chemical-state terms.
+A viable replacement must describe donor/water competition, coordination
+changes, solvent screening and forces with the same conservative Hamiltonian.
+Water-only radial fits and finite periodic parity cannot establish these.
+
+Choose B explicitly, preserve the current
+model as a baseline, and judge evidence across individual and paired energies,
+signed dipoles, susceptibility modes and forces. Do not use improved cancellation
+or force-code correctness as a physical-accuracy claim. No new fit, quantum
+calculation, probe, numerical replay, build or launch is requested or performed
+by this review. Exact inspected sources and saved outcome authorities are in
+EVIDENCE.json; this report recommends model design, not production promotion.

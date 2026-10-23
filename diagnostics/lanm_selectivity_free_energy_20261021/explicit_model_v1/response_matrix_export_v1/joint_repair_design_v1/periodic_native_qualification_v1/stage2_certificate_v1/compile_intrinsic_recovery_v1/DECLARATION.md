@@ -1,0 +1,9 @@
+# Preserve build20215; resolve one host-associated Fortran intrinsic
+
+Actual build20215 failed at the first GATE.f90 compilation, before any link or native program. The missing stage2_gate_state.mod diagnostic is secondary to that failed module compilation. All failed output and original source versions remain immutable.
+
+Cause: GATE's module imports atoms, which imports sizes. sizes declares integer parameter maxval=8. The contained after_direct routine consequently sees that host-associated constant where its new MAXVAL reductions require the intrinsic. Add only `intrinsic :: maxval` in the contained after_direct specification. This local declaration resolves the intrinsic; it changes no executable statement, numerical expression, tolerance, guard, serialization, counter, scientific method or physics. Other new harness routines do not call MAXVAL or SUM; their used intrinsic names have no matching imported variable declaration in the inspected modules.
+
+Stage one copies the five reviewed source units into a new isolated source directory, applies that one-line declaration, records the exact diff and failed-build evidence, and verifies inverse-patch byte identity plus all other file identities. No compiler or native call occurs. Existing source suites are not repeated.
+
+After root reviews this exact source, stage two copies the immutable execution manifest, changing only native-source and native-review bindings while retaining all36 literal runtime inputs and all execution/helper sources. It versions the central certificate metadata (same existing expected state/PME/factor), build configuration and certificate-source input binding. Original BUILD/NATIVE/COMMON/CERTIFY and collector remain unchanged. Root supplies the new exact native-source review, then owns a fresh build release/submission. No native numerical release is inferred from this technical recovery.

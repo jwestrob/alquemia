@@ -1,0 +1,9 @@
+# Fixed-La discrepancy localization
+
+Saved-only, one CPU thread, zero molecular calls. The seven-parameter pilot remains unsubmitted because its fixed La control failed. Use all fourteen La fixtures from the admitted 28-cell training dataset without exclusions. Retain original reference, state, coarse derivative and model-transfer caveats. No parameter changes, fit, new geometry or validation outcomes.
+
+For each covalent body report model and reference net-force vectors, their residual (AMOEBA minus uncorrected ECP-PBE0), centroid torques and residuals. Match the exact objective's equal category/body/component weighting and replay its fixture and stage aggregate metrics. Sort fixtures by category-balanced rigid RMS; retain every body, not just the top rows. Group into water dimer/aquo8, hydrated central/radial and matched dry.
+
+For ligand/water bodies define the outward radial unit vector from the metal to the represented donor-oxygen centroid (ligand) or water oxygen. Positive residual projection means the model is more outward/less inward than this reference. Record the tangential residual vector and norm. Ion force residuals in donor fixtures use the same outward ligand axis; a water dimer uses its water axis, while symmetric aquo8 has no selected global axis. Coordinates and Cartesian vectors are retained, so signs are not inferred from norms. Torques use the original geometric centroid and fixed1 Å conversion.
+
+This separates external rigid-body response from internal force distortion. It does not uniquely attribute the force error to polarization, dispersion, multipoles or reference method, and is not a thermodynamic energy decomposition. Published La calibration used a different reference convention; model-reference disagreement alone does not establish a defective published parameter implementation. Independent source/parameter audit proceeds separately.

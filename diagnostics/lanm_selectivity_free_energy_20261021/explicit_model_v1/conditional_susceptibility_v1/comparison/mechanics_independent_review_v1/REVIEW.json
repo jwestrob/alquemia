@@ -1,0 +1,56 @@
+{
+  "status": "passed_source_math_design_review",
+  "reviewer": "/root/exchange_experimental_target",
+  "created_utc": "2026-10-22T04:33:40.622467+00:00",
+  "interpretation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/conditional_susceptibility_v1/comparison/INTERPRETATION.md",
+    "sha256": "d2bf6667cf8645cf8fffbd6727c93f2692188569c9ea34431b5e8485ec5b8773"
+  },
+  "evidence_inventory": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/conditional_susceptibility_v1/comparison/INTERPRETATION_INPUTS.json",
+    "sha256": "3fcd8cc881bf32357cf37f4fce9d942bd998b16c713dab032e60575ee63a3938"
+  },
+  "native_sources": {
+    "induce.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_source/source/induce.f",
+      "sha256": "759e544790074aa8e7a32a0176c1ef979bceca3787252e58efcffe4a942c0e5f"
+    },
+    "epolar.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_source/source/epolar.f",
+      "sha256": "f9d88327a9d3f0247d06c9012eaca499d363e4261212a2b01b0001c143bce5ba"
+    },
+    "epolar1.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_source/source/epolar1.f",
+      "sha256": "b558f1b1b459da25c2639b41a4f2c1a095936f94356ac083a7cfb095b9301b76"
+    },
+    "epolar3.f": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/tinker_source/source/epolar3.f",
+      "sha256": "b6434df7c844d5bc0f8f03fb3e11f1906fbff690a23a67ca5c8ea5a189a32c48"
+    }
+  },
+  "scope": "One source/math review only; no prototype implementation, numerical efficacy test, fit, native run or new physical acceptance threshold.",
+  "findings": {
+    "dual_stationary_functional": "With D=A+H symmetric, variations give D*u=Ed+h and D*v=Ep+h; stationary U=-K/2*u^T*(Ep+h). This is a saddle functional in independent u and v, not a joint minimization.",
+    "coordinate_derivative": "The declared stationary derivative K/2[u^T(dA+dH)v-u^T(dEp+dh)-v^T(dEd+dh)] has the correct signs and both dual-field contractions. Forces are minus this derivative. Differentiate radial f, eta, exp(sigma), unit vectors and projectors, including forces on other waters; retain native permanent-frame torques and virial.",
+    "field_conjugacy": "With a uniform external field entering both right-hand sides and h/H independent of that field at fixed geometry, the induced conjugate moment is B^T*(u+v)/2. For these intact water fragments Ed=Ep, it reduces to B^T*u. Intrinsic native energy/field unit conversion remains necessary.",
+    "independent_leverage": "The uniform fixed-geometry susceptibility is B^T*D^-1*B in compatible native units. Its derivative with respect to a_M is exactly zero, while dchi/dtheta=-B^T*D^-1*(dH/dtheta)*D^-1*B for stiffness amplitudes. Thus drive can change the equilibrium moment at fixed susceptibility, and stiffness changes response and generally the moment; neither establishes that this bounded family repairs the data.",
+    "signed_stiffness": "A positive semidefinite H cannot increase any same-state uniform directional susceptibility if A and A+H are positive definite. Signed H removes that restriction; positivity of each local alpha-inverse+H block alone is insufficient. The declared full normalized-matrix eigenvalue ratio and finite induction residual are appropriate numerical conditions. They do not imply a physical target lies inside the domain, nor monotonicity of trimer-minus-dimer increments.",
+    "nesting_and_identifiability": "c_La=c_Dy=0 is exactly the nested four-amplitude family; all amplitudes zero recovers the original model. In dimers eta=0 so c has zero sensitivity. At fixed geometry dH/db=f*exp(sigma)*nn^T/alpha_O and dH/dc=eta*dH/db; they are collinear at a single fixed eta. Dimers plus multiple environments can break this dependence, but actual weighted Jacobian/rank/conditioning must demonstrate it. A response mode orthogonal to the radial projector may provide little stiffness information. Derived paired/conditional quantities and duplicate steps/estimators add checks, not independent observations.",
+    "native_route": "Native induce0a adds the external field to both field and fieldp. epolar0e contracts uind with udirp/polarity, while analysis contracts uind with the polarization-scaled permanent field and adds the half external-field term. Retaining bare-alpha udirp plus h and adding the corresponding analysis h energy is consistent with the proposed stationary energy. Both residual/operator/preconditioner and energy/gradient paths must be changed together in a future implementation.",
+    "scope_and_invariance": "The type-scoped construction is absent for pure water and bare metal, c vanishes for an isolated metal-water pair, and relative-coordinate vectors/tensors are translation invariant and rotation covariant. No claim extends to unsupported periodic/GPU/solvent/protein routes; existing prototype field guards remain active."
+  },
+  "blocking_issues": [],
+  "implementation_requirements_retained": [
+    "Exact disabled/zero and metal-absent identity.",
+    "Full assembled response-matrix stability for every used geometry and derivative displacement.",
+    "Coordinate and electric-field derivatives from the same stationary functional; no separate fitted energy and moment surfaces.",
+    "Nested four-amplitude comparison and actual identifiability assessment before assigning necessity to six amplitudes.",
+    "Prospective loss weights, bounds and finite stopping declared separately before fitting."
+  ],
+  "no_unique_physics_claim": true,
+  "new_native_calls": 0,
+  "numerical_tests_executed": 0,
+  "threads": 1,
+  "receipt_wall_seconds": 0.01054452103562653,
+  "receipt_parent_cpu_seconds": 0.006355028999999998
+}

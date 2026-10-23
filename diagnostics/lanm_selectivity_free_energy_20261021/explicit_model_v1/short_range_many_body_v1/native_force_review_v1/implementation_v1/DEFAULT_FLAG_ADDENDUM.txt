@@ -1,0 +1,23 @@
+Source-only default-flag diagnosis after the root-reported startup failure
+
+The v1 source review missed a concrete default-versus-effective-term distinction.
+The pinned parent field.f line65 sets use_extra=.true.; kextra.f immediately
+returns, and extra1.f lines29–34 only set ex and every dex element to zero.
+There are no implemented extra-energy, torque, virial or coupled-state effects.
+The v1 guard therefore rejects an ordinary baseline before baseline export.
+This is an overrestrictive startup guard, not evidence of a force-law defect.
+The original implementation review and failed attempt remain preserved.
+
+A narrow correction may allow that exact pinned default/no-op route, retain
+the original gradient's extra1 call and assert ex==0 and all dex==0 afterward.
+It must keep the other coupled-term rejections. In particular use_metal defaults
+false but emetal1 contains actual Cu ligand-field mathematics; its placeholder
+description does not make it an empty routine. use_rxnfld defaults false;
+orbital resolves use_orbit=false without PISYSTEM; kchgtrn resolves use_chgtrn=false
+when nct=0. Those findings do not justify broad flag relaxation.
+
+Source evidence: response_matrix_export_v1/source_v2/source/{field.f,kextra.f,
+extra1.f,kmetal.f,emetal1.f,orbital.f,kchgtrn.f,mechanic.f}, the same original
+source authority as the v1 implementation review. This addendum inspected source
+only. Arendt owns the v2 patch; Planck owns its final source review. No generation,
+build, native call, solver or scientific numerical replay was performed here.

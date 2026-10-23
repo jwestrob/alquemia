@@ -1,0 +1,34 @@
+{
+  "status": "declared_saved_scientific_interpretation",
+  "question": "Does the frozen radial14 terminal preserve consumed trimer Dy-minus-La E3 and signed mu3 contrasts relative to original baseline and feca12, and how much apparent improvement is cancellation between individual-metal errors?",
+  "inputs": {
+    "result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/terminal_trimer_regression_v1/run_v1/execution/RESULT.json",
+      "sha256": "8df7f70e0ae2c6f2a32880d355873416c9d6ab2964f7e9bc20e1f2a8d4973a37"
+    },
+    "scientific_specification": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/terminal_trimer_regression_v1/SCIENTIFIC_SPEC.txt",
+      "sha256": "35fdae147a34ca30ef11b0cef921ed03e6ccd77d9c2433112f180c07fc2ab536"
+    },
+    "scientific_ready": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/terminal_trimer_regression_v1/SCIENTIFIC_READY.json",
+      "sha256": "73420631208c36b05624703720260dacc7c0b25657c6c46422e67126e30ab36f"
+    },
+    "root_declaration": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/terminal_trimer_regression_v1/ROOT_DECLARATION.json",
+      "sha256": "6663d60b0408eb30b5c8e3999056642ed03fa97a4f7753078f30f6fec1949181"
+    }
+  },
+  "scope": [
+    "Read only reported scalar/vector comparison fields, selected terminal metrics and recorded costs.",
+    "Copy all eight cycles and four paired contrasts with exact stage labels.",
+    "Compare stored absolute energy residuals and stored dipole error norms; subtract reported paired residuals only for descriptive change.",
+    "No native raw parsing, re-admission, cycle reconstruction, fit/solver/probe/reference, new thresholds or candidate selection."
+  ],
+  "method": {
+    "numerical_threads_max": 1,
+    "arithmetic": "ordinary Python scalar comparisons/subtractions of saved values; no new molecular/operator calculation",
+    "prospective_acceptance_gate": null
+  },
+  "admission": "Root and Arendt own numerical admission; this interpretation is conditional on that separate receipt."
+}

@@ -1,0 +1,55 @@
+--- RUN.py
++++ RUN_v2.py
+@@ -11,6 +11,7 @@
+ import resource
+ import sys
+ import time
++import types
+ import numpy as np
+ import ADAPTER as A
+ HERE = Path(__file__).resolve().parent
+@@ -40,7 +41,7 @@
+ 
+ def metadata(cfg,probe_pins=False):
+     require(cfg['implementation']==pin(__file__) and cfg['adapter']==pin(A.__file__),'Exact new sources')
+-    require(cfg['root_declaration']==pin(HERE/'ROOT_DECLARATION.json') and cfg['witness_specification']==pin(HERE/'SPEC.txt') and cfg['scheduler_wrapper']==pin(HERE/'RUN.sbatch'),'Frozen declaration/spec/wrapper')
++    require(cfg['root_declaration']==pin(HERE/'ROOT_DECLARATION.json') and cfg['witness_specification']==pin(HERE/'SPEC.txt') and cfg['scheduler_wrapper']==pin(HERE/'RUN_v2.sbatch'),'Frozen declaration/spec/wrapper')
+     require(cfg['limits']==LIMITS and cfg['threads']==list(THREADS) and all(os.environ.get(k)=='1' for k in THREADS),'Exact finite limits/one numerical thread')
+     dec=read(cfg['root_declaration']);require(dec['status']=='declared_source_and_scalar_preparation_only' and dec['policy']['fraction']==FRACTION,'One exact prospective fraction')
+     require(dec['policy']['limits']==dict(new_solver_calls=0,new_derivative_probes=0,new_vectors=1,new_cells=46,new_native_programs=56,new_reference_calls=0,native_program_timeout_seconds=300),'Root finite scope')
+@@ -89,13 +90,34 @@
+     m=read(parent['manifest']);domain=read(parent['domain']);decl=read(sources['campaign_declaration'])
+     fixed=original.make_fixed(read(decl['start']['artifact']),m,read(sources['decomposition']),domain,decl);fixed['domain']=M.extend_domain(fixed['domain'])
+     core=M.core14(original);attr=M.attribution14(attr0);inv=D.inventory_view(read(cfg['reuse_inventory']))
+-    policy=C.Policy(core,attr,M,solver,fixed,inv,read(cfg['targets']),{'settings':cfg['settings']},None,cfg['settings'])
++    scalar=types.SimpleNamespace(certificate=lambda c,a,p,x,f,ok:fixed_fraction_certificate(c,a,p,x,f,ok,solver.certificate))
++    policy=C.Policy(core,attr,M,scalar,fixed,inv,read(cfg['targets']),{'settings':cfg['settings']},None,cfg['settings'])
+     p=C.restore_problem(linear)
+     require(fixed['denominators']==inv['fixed_authorities']['q_denominators'],'Original q denominators')
+     require(all(p['blocks'][k]['denominator']==inv['fixed_safeguards']['literal_squared_norm_denominators'][k] for k in C.ELECTRICAL),'Fixed feca conic ceilings')
+     require(p['signed_W9_z']['absolute_ceiling_Debye']==inv['fixed_safeguards']['W9_absolute_ceiling_Debye'] and p['signed_W9_z']['reference_Dy_minus_La_z_Debye']==inv['fixed_safeguards']['W9_reference_Debye'],'Fixed signed W9 authority')
+     require(len(m['rows'])==46 and len(m['static'])==48 and set(origin['cells'])==set(m['rows']) and all(v['status']=='complete' for v in origin['cells'].values()),'Complete admitted incumbent46+48')
+     return C,X,P,base,old,radial,checks,parent,policy,p
++
++
++def fixed_fraction_certificate(core,attr,p,point,fraction,success,qualified):
++    require(fraction==FRACTION, 'Only declared1/16 external fraction')
++    original=core.certify_fraction
++    require(original.__globals__['FRACTIONS']==(1.,.5,.25,.125), 'Exact inherited fraction policy')
++    ns=dict(original.__globals__,FRACTIONS=(FRACTION,))
++    raw=types.FunctionType(original.__code__,ns,original.__name__,original.__defaults__,original.__closure__)
++    facade=types.SimpleNamespace(**vars(core));calls=[]
++    def routed(problem,returned,f,solver_success):
++        require(problem is p and solver_success is success, 'Same exact certificate problem/status')
++        if not calls:
++            require(f==FRACTION, 'Raw fraction is exactly1/16');calls.append(f)
++            return raw(problem,returned,f,solver_success)
++        require(calls==[FRACTION] and f==1., 'Only internal full check of fractioned auxiliary witness')
++        calls.append(f);return original(problem,returned,f,solver_success)
++    facade.certify_fraction=routed
++    answer=qualified(facade,attr,p,point,fraction,success)
++    require(calls==[FRACTION,1.], 'Exactly raw and auxiliary scalar checks')
++    return answer
+ 
+ 
+ def certify(C,policy,p,proposal):

@@ -1,0 +1,52 @@
+STANDARD QOS BUILD RECOVERY — SOURCE/PREPARATION ONLY
+
+Authority: ROOT_DECLARATION2deb466d. Preserve pending20739, its original build,
+watcher and all other jobs. No scheduler mutation, compiler or native invocation
+is released by this preparation.
+
+Use the original BUILD.py fcda8115 without copying or editing it. Derive a new
+immutable full helper source copy with exactly one replacement: the expected
+QOS in parse_allocation becomes standard. This copy is qualified only as the
+parse_allocation API imported by BUILD; its unrelated factor entry points are
+not invoked or newly qualified. Preserve its ownership, host, running-state,
+12CPU,48,000MiB default allocation and no-requeue gates. The new sbatch wrapper
+changes only its QOS directive. No memory or time flags: the standard default
+wall limit is3days instead of expand5days. Internal command caps remain unchanged.
+
+PREPARE changes only the two scheduler source pins, adds the local preparation/
+control pins and binds a compatible versioned declaration. The original handoff,
+615 archive sources, eight isolated objects, compiler flags/libraries, three new
+links/four executable roles including reused old baseline, runtime authorities,
+12 archive workers and null candidate/composition remain exact. The compatible
+declaration retains parents.BUILD_HANDOFF.json and prospective_build.archive_workers
+required by original BUILD.source_context. The new root declaration is explicitly
+bound; the original declaration is retained as history, not used as current QoS.
+
+Finite preparation: metadata hashes/source generation only; one-thread stdlib.
+Focused controls: exact/inverse parser diff, unchanged AST outside parse_allocation,
+one manufactured standard acceptance and one expand rejection, unchanged BUILD,
+exact wrapper difference, restored input/declaration identity and unbound config/
+release contracts. Reuse all30 prior build controls without replay. No scheduler,
+compiler, molecular, matrix or solver execution inside these controls. The live
+policy snapshot is a separately recorded read-only command set, not a compute
+allocation or guarantee of immediate scheduling.
+
+Existing BUILD runtime contract is retained: bound config/implementation/inputs,
+exact release configuration hash/output, source review status
+passed_periodic_v2_build_source_review with exact implementation and inputs,
+finite1configure/1archive/8compile/3link plus4loader reads, zero molecular calls.
+Templates remain unbound. Root must independently review, bind actual output and
+resolve original job20739 before submission. pending_old_job_resolution is a
+root-owned pre-submission record; unchanged BUILD does not implement a new
+scheduler cancellation/duplicate detector. If old20739 started or completed,
+abandon this replacement and use the old run. Only a still-pending zero-work old
+job may be canceled by root after review, verified terminal/no compilation, then
+replaced once. Do not silently change frozen files used by the queued job.
+
+Current live evidence: standard12CPU/job,120CPU/user,10jobs/user,3day maxwall;
+standard_expand24CPU/job,500CPU/user,20jobs/user,5day maxwall. Both allowed for
+jwestrob/banfield; standard partition permits both. Global default4000MiB/CPU.
+Snapshot shows20 shared expand jobs/480CPU and old20739 pending at the job cap.
+This snapshot is evidence of eligibility, not a reservation; root rechecks at
+launch. Actual Slurm accounting remains separate from measured build process
+CPU and peak-child RSS; neither process RSS nor address-space cap is total job RSS.

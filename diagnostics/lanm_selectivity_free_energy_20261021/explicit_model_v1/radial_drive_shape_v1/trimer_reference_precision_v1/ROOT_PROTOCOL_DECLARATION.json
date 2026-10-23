@@ -1,0 +1,162 @@
+{
+  "status": "frozen_termination_only_protocol_source_implementation_authorized",
+  "UTC": "2026-10-23T06:10:51.509472+00:00",
+  "proposal_ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/trimer_reference_precision_v1/READY.json",
+    "sha256": "da724006836ff8d13c90050d34b3f4d593792ce88adc1999325fcc9a29f464ac"
+  },
+  "proposed_protocol": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/trimer_reference_precision_v1/PROPOSED_PROTOCOL.json",
+    "sha256": "abfaf4980c465ec2075a27508a500acfe6863e8cd95dbf16856bcd0b6ee9c568"
+  },
+  "inventory": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/radial_drive_shape_v1/trimer_reference_precision_v1/inventory_v3/INVENTORY.json",
+    "sha256": "b95c5d84d1382d3c339e6df15869052c56d4b99097e1c80524d605aa8487192b"
+  },
+  "question": "Sensitivity of the exact consumed La/Dy W9far electronic E3 and common-origin vector mu3 to stricter SCF termination only.",
+  "unchanged": {
+    "method_line": "! PBE0 def2-TZVP def2/J RIJCOSX DefGrid3 VeryTightSCF NoAutostart",
+    "guess": "PModel",
+    "MaxIter": 300,
+    "all_14_literal_input_bodies": "Only the %scf block may change; bind masked-body hash for each actual old input. No geometry, basis, ECP, ghost, origin, grid, integral threshold or method substitution.",
+    "scf_algorithm": "Existing DIIS/SOSCF/default AutoTRAH policy unchanged; no new TRAH keyword, guess/seed or state search.",
+    "integral_and_grid_controls": "Retain the VeryTightSCF thresholds and DefGrid3/gridx3 procedure exactly; do not use ExtremeSCF, SCFCONV<n>, a grid change, or a post-SCF correction.",
+    "electronic_state": "Same restricted effective multiplicity1/charge/electron count. Physical parent La1/Dy6 remains distinct and unqualified.",
+    "D4": false,
+    "ORCA": {
+      "path": "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+      "sha256": "38b5f057452fef275c0a1b98d270ad03d0411dab70453820d1c678bd732f6c83"
+    },
+    "basis_assets": {
+      "La": {
+        "basis": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/common_basis_decomposition_v1/prepared_v1/assets/La_basis.inc",
+          "sha256": "c5298b309b2d897e5de59ddb6b4c7992913dd8cba18b7cd21f9757ce09b167d3"
+        },
+        "aux": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/common_basis_decomposition_v1/prepared_v1/assets/La_aux.inc",
+          "sha256": "31d3271de21c3c961f8f6c48b9184ab43c57db8aa0c9c6c58a259e5741301d81"
+        }
+      },
+      "Dy": {
+        "basis": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/common_basis_decomposition_v1/prepared_v1/assets/Dy_basis.inc",
+          "sha256": "87bb209a42eca365c93d8f69088a57371285623a1d4afa1c1336390279fafb20"
+        },
+        "aux": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/common_basis_decomposition_v1/prepared_v1/assets/Dy_aux.inc",
+          "sha256": "ccefb184b4504f1dc9fb1a2c8d49656ff5e0de4bc5637c18db9b5d495900b8d3"
+        }
+      }
+    },
+    "dipole_origin": "Original native property origin and admitted full-precision translation to the common zero origin; no rounded-origin replacement."
+  },
+  "frozen_scf_termination": {
+    "ConvCheckMode": 0,
+    "ConvForced": 1,
+    "TolE": "1e-11",
+    "TolMAXP": "1e-8",
+    "TolRMSP": "1e-9",
+    "TolErr": "1e-8",
+    "TolG": "1e-8",
+    "TolX": "1e-8"
+  },
+  "native_and_numerical_admission": [
+    "Retain original native identity checks, normal termination, SCF success, returncode0, same method/ECP/basis/ghost/nuclear/electron/state and no-D4 checks; require exact property file.",
+    "Require actual printed mode/thresholds and unchanged grid/integral controls match the frozen new declaration, not just the input keyword.",
+    "Require finite terminal energy-change, MAX-density and RMS-density residuals at or below1e-11/1e-8/1e-9 respectively.",
+    "For terminal SOSCF require current final orbital gradient and rotation at or below1e-8; match their printed residuals to the last SOSCF iteration at available precision. A stale DIIS field is retained descriptively, not used as the current SOSCF residual.",
+    "If termination instead remains in DIIS, require a demonstrably current terminal DIIS residual at or below1e-8 in addition to energy/density checks; do not fabricate SOSCF gradient fields. An unrecognized or untraceable terminal solver state fails this prospective admission.",
+    "Mode0 may accept an overachieved mixed test; independently enforce the frozen current-residual gates even when ORCA says converged.",
+    "Record final gridx3 energy correction separately and use the same final electronic energy stage as the original cycle. Current SCF residuals do not certify final-grid self-consistency or method truth.",
+    "Retain occupations/restricted-reference metadata and compare to old values. Same nominal restricted state is mandatory; root continuity is not proved by charge/multiplicity alone. No automatic branch search or reseeding.",
+    "Any native, identity or current-residual failure stops the finite protocol pending root review; retain raw output and missing-state denominator, no automatic retries or solver/grid/tolerance fallback."
+  ],
+  "parser_clarifications": {
+    "energy_change": "abs(printed deltaE) <=1e-11; never sign-sensitive acceptance",
+    "SOSCF_gradient": "Join current terminal summary orbital-gradient residual to final SOSCF MaxGrad row at actual printed precision.",
+    "SOSCF_rotation": "Use current associated terminal summary orbital-rotation residual; no rotation column exists in old last SOSCF row. Do not demand or fabricate it.",
+    "density": "Require both current final summary values<=declared thresholds; native converged alone is insufficient.",
+    "DIIS": "Stale DIIS after final SOSCF retained descriptively. If final algorithm DIIS, independently establish its terminal field is current and passes.",
+    "unknown_algorithm": "Unrecognized/untraceable current solver residual fails prospective admission without fallback."
+  },
+  "staging": {
+    "maximum_distinct_states": 14,
+    "maximum_molecular_attempts": 14,
+    "attempts_per_state": 1,
+    "scout_order": [
+      "pbe0__aquo9__Dy__far__metal_two_water",
+      "pbe0__aquo9__Dy__far__two_water"
+    ],
+    "scout_mode": "Two serial states: real Dy ECP trimer, then its ghost-metal two-water term if the first is admitted. Their output is retained in the full14.",
+    "continuation_order": [
+      "pbe0__aquo9__La__far__metal_two_water",
+      "pbe0__aquo9__La__far__two_water",
+      "pbe0__aquo9__La__water_01__metal_water",
+      "pbe0__aquo9__La__water_03__metal_water",
+      "pbe0__aquo9__La__ion_ghost_shell",
+      "pbe0__aquo9__La__water_01__water_only",
+      "pbe0__aquo9__La__water_03__water_only",
+      "pbe0__aquo9__Dy__water_01__metal_water",
+      "pbe0__aquo9__Dy__water_03__metal_water",
+      "pbe0__aquo9__Dy__ion_ghost_shell",
+      "pbe0__aquo9__Dy__water_01__water_only",
+      "pbe0__aquo9__Dy__water_03__water_only"
+    ],
+    "continuation_requires": "Root actual scout identity/residual/cost review and explicit continuation release; twelve remaining only.",
+    "maximum_concurrent_reference_jobs_proposed": 1,
+    "partial_cycles": "No two-metal E3/mu3 sensitivity conclusion until all fourteen states are admitted; per-state shifts may be reported as incomplete.",
+    "exact_stricter_protocol_reuse_bound": 0,
+    "reuse_policy": "Any later reuse must bind full input/scientific identity and the identical frozen stricter termination/runtime protocol plus actual current-residual admission. Equal symmetry/energy or an old residual passing by chance is insufficient. Reuse never expands14-state/14-attempt caps."
+  },
+  "comparison": {
+    "term_count": 14,
+    "cycle_count": 2,
+    "same_signed_formula": "M12-M1-M2-12+M+1+2",
+    "equations": "E3_new=sum(coefficient*electronic_E_new)*627.509474; mu3_new=sum(coefficient*common_zero_origin_total_dipole_new), with original Debye conversion. Report new-old per term/cycle and Dy-minus-La contrast.",
+    "required_outputs": [
+      "Fourteen per-term old/new final electronic energies, current residuals, final gridx3 corrections, dipole vectors and origin evidence",
+      "Both E3 shifts and all three signed mu3 component shifts, vector shift norms, plus paired Dy-minus-La energy/vector shifts",
+      "Original printing allowances separate from measured protocol shifts; no error bar inferred from one tightening",
+      "Fixed baseline/feca12/terminalradial14 model errors against old and tightened references; models remain unchanged and every comparison descriptive",
+      "Actual attempt ledger, missing states, terminal solver modes, wall/CPU/RSS and inherited electronic-state limits"
+    ],
+    "physical_acceptance_threshold": null,
+    "new_fit_or_reference_replacement": false,
+    "interpretation": "Small shifts would limit this one termination sensitivity; large shifts would challenge the consumed target numerically. Neither validates PBE0/frozen-f physics, supplies a rigorous error bound, proves global family inadequacy, or measures grid/basis/correlation sensitivity."
+  },
+  "official_source": {
+    "url": "https://www.faccts.de/docs/orca/6.1/manual/contents/essentialelements/scf.html",
+    "consulted_UTC": "2026-10-23T06:03:05.788075+00:00",
+    "use": "Mode2/mode0 semantics and explicit tolerance syntax; exact old native output remains runtime authority."
+  },
+  "execution_change_before_first_run": {
+    "reason": "Use existing explicit user authorization for16aggregate numerical login threads while owned Slurm jobs queue at job-count limit. No scientific-state/control changes and no cancellation/relocation/duplication of20734/20739.",
+    "host": "biotite",
+    "scheduler_job_id": null,
+    "maximum_concurrent_endpoints": 1,
+    "MPI_ranks": 4,
+    "threads_per_rank": 1,
+    "MaxCore_MiB_per_rank": 3000,
+    "root_reserved_aggregate_thread_envelope": 8,
+    "total_owned_login_numerical_limit": 16,
+    "memory_preflight": "Truthful /proc/meminfo MemAvailable >=16000MiB, no fictional Slurm grant. Observed1302476MiB available on root predeclaration check.",
+    "thread_environment": "SetOMP/OMP_THREAD_LIMIT/OPENBLAS/MKL/NUMEXPR/BLIS to1 before scientific process imports/invocation; preserve4rank native PAL. Count PModel/native helpers in actual process accounting.",
+    "native_argv_template": [
+      "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+      "endpoint.inp",
+      "--bind-to none"
+    ],
+    "runtime_env": "Reuse exact pinned ORCA/OpenMPI environment; do not manufacture SLURM_JOB_ID or other scheduler resources.",
+    "max_attempts_per_state": 1,
+    "max_distinct_states": 14,
+    "release": "Firsttwo serial scout only after frozen executor/decks/control review and separate root release. Remaining12 require actual scout review; no automatic retries."
+  },
+  "source_scope": "Minimal executor, SCF-block-only deck preparation, current-residual parser and focused saved/manufactured controls. Reuse existing receipt/admission helpers wherever scientifically compatible. No new submission framework.",
+  "independent_protocol_review": "Planck review in progress; preliminary no design blocker with the two parser clarifications adopted here. Final receipt must be read before real execution.",
+  "new_native_calls_released": 0,
+  "new_reference_inputs_allowed_for_preparation": 14,
+  "maximum_real_reference_attempts_in_this_declaration": 0,
+  "separate_execution_release_required": true,
+  "production_unchanged": true
+}

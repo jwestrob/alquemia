@@ -1,0 +1,11 @@
+--- original_qualification/RUN.py
++++ fresh57/RUN.py
+@@ -239,7 +239,7 @@
+                 if stop.is_set():return
+                 fd=6*row['atoms'] if job['fd'] else 0
+                 require(result['native_program_invocations']<MAX_CALLS and result['internal_FD_energies_requested']+fd<=MAX_FD,'Hard native ceilings')
+-                result['native_program_invocations']+=1;result['internal_FD_energies_requested']+=fd;result['rows'][job['id']]=rec;persist()
++                result['native_program_invocations']+=1;result['internal_FD_energies_requested']+=fd;result['rows'][job['id']]=copy.deepcopy(rec);persist()
+             cell.mkdir(parents=True)
+             for k,name in FILES:shutil.copyfile(verify(job['input'][k]),cell/name)
+             rec['runtime_input']={k:pin(cell/name) for k,name in FILES}

@@ -1,0 +1,39 @@
+Archived-dual native force replay — source declaration
+
+Question: is the failed donor zero-correction regression explained by the
+change from archived iterative native u/v to the newly solved dense u/v?
+The observed u/v differences pass their existing response bounds, while the
+dense gradient differs from the old printed native gradient by 1.573992489e-8
+kcal/mol/A against the unchanged 5.060311088e-9 print/arithmetic bound.
+This is a hypothesis to test, not a recovered pass.
+
+Exactly one future native bridge-v2 invocation at the same La acetate-mono
+center and zero correction. Use the admitted archived raw u/v from the pinned
+harmonized donor fixture, without a Python or native response solve. Require
+the freshly initialized baseline to equal the saved dense-state baseline.
+Then pass those archived dipoles to the unchanged native fixed-dual gradient.
+Compare the returned gradient with the literal original testgrad rows using
+the original limit stored in the failed result; do not enlarge that limit.
+Report saved-dense minus replay gradient and the full decomposition
+  dense - old_print = (dense - replay) + (replay - old_print).
+
+A replay pass supports attribution to differing iterative/dense dipoles for
+this state. A replay failure leaves another implementation or provenance
+difference unresolved. Neither outcome changes the original failed result,
+admits it as passed, or completes the remaining finite-difference panel.
+The replay uses archived analyzer dipoles with an archived testgrad target;
+same-state source identity is required, but exact hidden testgrad dipoles were
+not exported in that historical run and are not claimed to be observed.
+
+Preserve the 6 scout and 62 completed remaining states, the full-computed but
+failed donor zero center, and the untouched remaining states. No panel state
+is recomputed by this adapter. The single archived-dual contraction is an
+explicitly different diagnostic endpoint, with its own attempt and cost.
+
+Numerical execution is Slurm only: standard partition, --qos=standard_expand,
+one node/task/CPU, default allocation memory/time, no requeue. Root submits.
+One native thread and one serial Python controller; the native process blocks
+while Python handles the handshake. No build, fitting, quantum call, new
+response solve, finite difference, fallback or tolerance adjustment.
+
+This source preparation executes no native, solver, arithmetic replay or test.

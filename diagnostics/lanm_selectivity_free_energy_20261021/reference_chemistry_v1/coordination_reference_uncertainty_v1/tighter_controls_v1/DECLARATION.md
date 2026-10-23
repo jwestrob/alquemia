@@ -1,0 +1,17 @@
+# Consistent tighter local-correlation qualification on the original18 controls
+
+## Question and fixed inventory
+
+Does one consistent tighter DLPNO-CCSD(T1) recipe satisfy the original canonical-overlap qualification across all18 consumed water, bidentate-acetate and acetamide La/Dy complex/ghost-fragment roles? The three completed tighter Dy-acetate roles pass their local0.25 kcal/mol CP diagnostic, but do not qualify all18. Reuse exactly those three admitted results, including the separately reviewed one-node ligand-ghost recovery, and prepare only the other15 roles. Preserve the failed original Tight18 result and its canonical evidence; no replacement of failed history or mixing Tight and tighter energies in the new qualification.
+
+## Unchanged chemistry and numerical criteria
+
+Use the frozen deck helper and stage-aware local-MP2/CCSD/iterative-triples parser from the tighter three-role experiment. Exactly TCutPairs1e−6, TCutPNO1e−8, TCutMKN1e−4 and TCutDO.005; iterativeT1 energy tolerance1e−8, CC residual1e−8, original native localization and full-local MP2 admission. Preserve the explicit triples-specific settings readback. Same original literal coordinates/ghost masks, charges/electrons, restricted effective states, ECP46/55 and orbital/AuxC assets, NoFrozenCore and all solver settings. No D4, EnGrad, AutoAux or alternative core convention. For ghost metal retain its orbital/AuxC basis with ECP removed and zero effective nuclear charge. Every exact electron count and basis inventory remains inherited from its original canonical role.
+
+All35 original qualification checks remain:18 RHF closures to canonical (1e−6 Eh),6 same-parent AuxC identities,6 individual CP errors≤0.25 kcal/mol,3 Dy−La paired CP errors≤0.25 and2 donor-minus-water paired-exchange errors≤0.25. Reuse the original control_score function without changed arithmetic or tolerances. No favorable subset, altered denominator, fitted correction or new acceptance criterion. Require all18 raw admissions before calculating the qualification. Retain every failed/missing slot and every actual native stopping/threshold/readback record.
+
+## Execution and interpretation
+
+Only15 new single points, one immutable task directory per declared role, root-owned release/submission. Each new job uses8 single-thread MPI ranks on one node, standard_expand and scheduler-default memory/time; MaxCore=floor(.75*actual granted MiB/8). Placement restriction addresses the diagnosed split-node startup problem; no chemistry changes. Record source/input/parser/result lineage, actual node/rank/grant/MaxCore and native versus scheduler costs. Reused three-role native costs and abandoned historical attempt costs remain separate from15 new jobs.
+
+Preparation makes zero native calls and verifies all15 declared deck deltas (only the three cutoffs relative to originalTight, plus4→8 resource ranks) and byte identity of the three reused tighter decks at matching resource values. The actual three-role review must bind before the single root release. A saved collector reads all18 fixed slots and applies the original35 checks. No retry, new cutoff search, additional controls, larger-cluster calculation, physical accuracy claim or automatic W8/W9 stage is released. A passing full18 result can support a later separately declared reference-method uncertainty decision; a failure remains a failure of this consistent recipe on these controls.

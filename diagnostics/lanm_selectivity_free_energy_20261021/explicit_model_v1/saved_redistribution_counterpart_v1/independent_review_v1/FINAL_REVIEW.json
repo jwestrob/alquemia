@@ -1,0 +1,106 @@
+{
+  "status": "passed_source_and_preparation_review",
+  "scope": "78 fixed zero-field baseline AMOEBA analyze EM programs; source and saved preparation only",
+  "ready": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/READY.json",
+    "sha256": "6b5d7c354c2552f6093b373c032c0386fecf5b4a3b3ced019b7143fd4dbccbb3"
+  },
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/RUN.py",
+    "sha256": "fcf72c59e587e6fa8776367232112e8da9d46f3de6e686b73fddfd6558f56237"
+  },
+  "specification": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/SPEC.md",
+    "sha256": "8c19e258667e508f69c6090669326cdba61d13861a0877a75a1387139be9d3aa"
+  },
+  "config_prepare": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/CONFIG_PREPARE_v2.json",
+    "sha256": "54297e529483e45eaca91803b84f81626a87874b1a1f9b7140cfc12ac81e8c0d"
+  },
+  "preparation_result": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/preparation_v2/RESULT.json",
+    "sha256": "545d0d7773e32b6054827ff452dc326d19431103ed63f0f3435401ed0bd9ab70"
+  },
+  "manifest": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/preparation_v2/MANIFEST.json",
+    "sha256": "1f69bc6b9a22fd4b5526fb15b436f3ac37d028f26994445b14e8ab149b6bce9c"
+  },
+  "controls": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/controls_v1/RESULT.json",
+    "sha256": "544b4d970a34d66d497ea7ff0fdecf7e477f9f8c9445e8ee2167ee4128ed890c"
+  },
+  "test_implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/TEST.py",
+    "sha256": "849cebded6660e74b2636549dd7c89e0e3f275d1b465c16c9801c6e5346e4a86"
+  },
+  "launcher": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/RUN.sbatch",
+    "sha256": "dbce49cb56989aa6920c0f6d001fbe2d52ac33a4422b63a08823865b4df45de4"
+  },
+  "native_path_review": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/saved_redistribution_counterpart_v1/independent_review_v1/NATIVE_PATH_NOTE.json",
+    "sha256": "4893ee27569ffd086537ad7e86bf37962813c12dcc1d6c22bbdf76ebf5366ffb"
+  },
+  "verified_ready_pin_fields": [
+    "implementation",
+    "specification",
+    "config_prepare",
+    "preparation_result",
+    "manifest",
+    "controls",
+    "test_implementation",
+    "launcher",
+    "run_config_template",
+    "root_release_template",
+    "candidate_result",
+    "selected_review",
+    "pair_result",
+    "preserved_preparation_failure",
+    "preserved_source"
+  ],
+  "findings": {
+    "question": "Zero-field charge-neutral C/P/B dipole redistribution at unchanged failed-science 17676 parameters; no model rescue or polarizability claim",
+    "inventory": {
+      "clusters": 4,
+      "dimers": 34,
+      "waters": 34,
+      "shells": 4,
+      "ions": 2,
+      "total": 78,
+      "old_energy_replays": 38
+    },
+    "geometry_review": "Independent saved script passed 2844 assertions: all 234 input hashes; literal coordinate/type/name tokens; remapped complete bonds; native O Bisector and H Z-then-X axes; positive masses; COM; and atomwise C/P/B permanent coefficient cancellation. No molecular programs imported or run.",
+    "native_frame_reason": "kmpole selects O axes through its two bonded H atoms and H axes through its bonded O and the other H via the same 1-3 path. Complete-water extraction and monotone atom renumbering preserve these assignments; metal permanent moment is charge +3 with zero higher multipoles.",
+    "cancellation": "C=full-ion-shell; P=sum(dimer)-N*ion-sum(water); B=full-sum(dimer)+(N-1)*ion-shell+sum(water). All parent atom/permanent-frame coefficient sums are exactly zero.",
+    "units": "SAVE-UINDUCE writes Debye to 6 decimals from uind; native moments writes COM-origin total dipole to 3 decimals. Corrected lab dipole adds 4.803206802*Q*COM_A. Induced sums are origin independent.",
+    "roundoff": "Weighted per-site 0.5e-6 Debye plus weighted 0.0005 Debye M printing and 2e-9 per weighted row COM allowance; these are print/conversion bounds, not induction-error bounds.",
+    "native_readback": "Require exactly 2 finite nonnegative induction summaries <=1e-8 Debye, all positive-alpha sites present once with exact ordered names, all finite components, saved energy replay <=1e-4 kcal/mol, component closure <=1e-6, and isolated ion zero checks.",
+    "scope_and_failure": "Only report keywords appended; immutable input checks and source/executable pins. Four single-thread workers on one four-CPU task; 78 reservation ceiling; global failure prevents further starts and preserves all slots, draining already running siblings. Full success and M consistency required before cycles are admitted.",
+    "costs": "Run records wall, parent CPU and one aggregate RUSAGE_CHILDREN delta; overlapping per-receipt child deltas are not summed. Scheduler accounting remains root-owned.",
+    "author_controls": "Read and verified 109 saved controls; did not rerun them. Actual preparation has zero native calls. First prose/apostrophe preparation failure and prior source are preserved."
+  },
+  "limitations": [
+    "This source review does not admit future native moments or show physical model accuracy.",
+    "A symmetry-suppressed net vector does not imply absent local response.",
+    "QM versus AMOEBA comparison remains a separate saved-data integration; no reference target, parameter, or held-out outcome changed."
+  ],
+  "blocking_findings": [],
+  "new_native_calls": 0,
+  "submissions": 0,
+  "author_files_edited": false,
+  "max_local_numerical_threads": 1,
+  "review_cost": {
+    "geometry_check_wall_seconds": "not separately instrumented; shell completed in the single 0.6-second tool call",
+    "whole_source_review_CPU_seconds": null,
+    "final_pin_join_wall_seconds": 0.4299632260808721,
+    "final_pin_join_CPU_seconds": 0.416741249
+  },
+  "author_preparation_cost": {
+    "wall_seconds": 3.971140836016275,
+    "CPU_seconds": 2.87792524
+  },
+  "author_control_cost": {
+    "wall_seconds": 16.35556803806685,
+    "CPU_seconds": 15.422330815
+  }
+}

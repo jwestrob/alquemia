@@ -1,0 +1,51 @@
+{
+  "status": "declared_finite_manufactured_mode_controls_before_execution",
+  "question": "Does the fixed installed supernodal LL path preserve the eleven inherited tiny decisions and support sparse action/solve readback without mutating the original factor?",
+  "maximum_dimension": 6,
+  "numeric_factorization_cap": 11,
+  "symbolic_analysis_cap": 11,
+  "solve_attempt_cap": 112,
+  "numerical_threads": 1,
+  "original_cases": "Exactly the eleven original manufactured() arrays and U values, byte-value joined to the admitted original result.",
+  "malformed_inputs": [
+    "nonsquare",
+    "asymmetric",
+    "NaN",
+    "infinity",
+    "complex"
+  ],
+  "settings": {
+    "lower": true,
+    "order": "amd",
+    "sym_kind": "sym",
+    "supernodal_mode": "supernodal",
+    "ldl": false,
+    "beta": 0.0
+  },
+  "threshold": 1e-06,
+  "arithmetic": "Unchanged 100*n*machine_epsilon factor and solve backward bounds; original dense symmetry/eigen/boundary gates.",
+  "probes": "Ten fixed probes per returned factor: three Cartesian and three basis slots (cyclic duplicates for n<3), four PCG64(20261022) Rademacher vectors.",
+  "correspondence": "On n<=6 only, compare sparse K/factor actions and matrix infinity norm to dense references; preserve flags, permutation and copied-L independence.",
+  "corruption": "On diagonal6_spd only, multiply one copied L diagonal by 1.1; require sampled residual rejection and exact unchanged original solve/factor.",
+  "no_updates": true,
+  "no_saved_molecular_matrices": true,
+  "no_real_box_analysis": true,
+  "no_native_calls": true,
+  "no_install": true,
+  "positive_admission": "Finite positive LL diagonal, mode flags/copy invariance, all arithmetic gates, no backend exception/warning; unresolved margin never promoted.",
+  "nonpositive_interpretation": "Failure of sufficient split test only; full-system physical stability is unresolved.",
+  "boundary_interpretation": "Exact/on-roundoff threshold remains numerically unresolved, including normal backend return.",
+  "no_retry_or_changed_threshold": true,
+  "design": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/static_factor_attempt_design_v1/DESIGN.md",
+    "sha256": "b2083e42a6fd6ae8f6fe9f2b309cb5042f0bcc461d6b8e9d94b5dd80ea7a7f9b"
+  },
+  "inherited_declaration": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/NUMERICAL_DECLARATION.json",
+    "sha256": "6d5a1fd4bbd150a70a6d1c09eb9876c057a56608bc5deb4a6b9e2b8b22243c93"
+  },
+  "preserved_old_failure": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/response_matrix_export_v1/joint_repair_design_v1/periodic_stability_definition_v1/sparse_factorization_design_v1/numerical_v1/FAILURE_RECEIPT.json",
+    "sha256": "f3babfaf369820691139c300dfde619b527dba3b7e197afdd52d52e61eea13f5"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "allowed_reads": [
+    "nonblocking Python frame locations",
+    "own-UID /proc stat and controller io",
+    "frozen source"
+  ],
+  "argv": [
+    "/home/jwestrob/.local/bin/py-spy",
+    "dump",
+    "--pid",
+    "3944417",
+    "--nonblocking",
+    "--json"
+  ],
+  "between_samples_seconds": 2,
+  "controller_pid": 3944417,
+  "created_utc": "2026-10-22T22:10:06.792959+00:00",
+  "forbidden_reads": [
+    "fit scientific values",
+    "partial result selection",
+    "Python locals"
+  ],
+  "maximum_samples": 3,
+  "no_locals": true,
+  "no_pause_or_runtime_mutation": true,
+  "profiler": {
+    "path": "/home/jwestrob/.local/bin/py-spy",
+    "sha256": "e7c2de2dc54449ec88c086f1859555b4e34e63ccdcf3f8804496f9306cd44de6"
+  },
+  "question": "Is whole-ledger JSON serialization a material current controller bottleneck?",
+  "source": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/joint_component_feasibility_v1/component_fit_v1/persistence_performance_v1/SAMPLE.py",
+    "sha256": "226f00339283b96cbcc4293e5507ab16c99f1da34e8dcd9e67582697903297f7"
+  },
+  "status": "declared_operational_sampling_only",
+  "stop_on_first_pyspy_failure": true,
+  "threads": 1,
+  "timeout_seconds_per_sample": 8
+}

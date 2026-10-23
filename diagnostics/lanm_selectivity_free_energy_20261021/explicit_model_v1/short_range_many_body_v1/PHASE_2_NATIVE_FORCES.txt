@@ -1,0 +1,97 @@
+Native full-force connection — 23 October 2026
+
+Question
+Does the implemented pair/triple energy-and-response functional produce the
+correct total atomic gradient when coupled to the actual native baseline?
+The saved-matrix tests cannot answer this: A0, Ed and Ep change with geometry.
+
+Authority and scope
+Continue Jacob's active La/Dy goal and selected model-form decision. Phase 1
+kernel b9b9e9bf and root real-cache integration 60733ee5 are complete. This phase
+connects the derivative implementation; it does not fit parameters or test
+chemical accuracy. No quantum calls, new reference geometries, production
+changes or old radial14/periodic continuation. Native calculations below are
+classical baseline/force evaluations on copied existing inputs and small
+numerical displacements. No molecular dynamics.
+
+Inputs
+Frozen kernel b9b9e9bf; shared baseline common_water17676_plus_disjoint_donor17621
+with old h/H disabled; exact prepared parameter file and applicable records.
+Three existing cases, in this order:
+1. aquo9_central_La__dimer_01
+2. aquo9_central_Dy__far__metal_two_water
+3. matched_dry_acetate_mono_central_La
+Use immutable SRMB water/donor kernel fixtures, real atoms, and exact site order.
+The acetate's two O atoms remain one ligand. Work at zero external field.
+
+Native bridge
+Private clones of the exact baseline gradient and epolar1a force routines keep
+nonpolar/permanent derivatives and permanent-frame torque redistribution.
+They accept supplied corrected u/v and never overwrite them through induce.
+Initialize every required field/array; reject unsupported modes. Initial scope
+is vacuum MUTUAL/Thole, dielectric 1, no periodic boundaries, lists, solvation,
+charge flux, exchange-polarization or alternate polarization approximations.
+Record actual resolved native flags. Export full-precision A0, Ed, Ep, alpha,
+site order and permanent dipole before the corrected solve. Check any raw A
+roundoff asymmetry against a declared arithmetic bound and record projection.
+Use full-precision energy and force output, not an eight-decimal screen value.
+
+Same-process protocol: export baseline, signal SRMB_READY, read a supplied-u/v
+file path from stdin, inject exact site-ordered dual dipoles, compute baseline
+gradient contractions, and return nonpolar energy and all atomic gradients.
+The baseline-only reduced polarization energy at these corrected dipoles is
+not a total-energy result. Python supplies the complete stationary energy and
+adds the local fixed-u/v derivative:
+  grad DeltaV + K/2 * [u.T (grad DeltaH) v - (u+v).T grad h].
+Native contractions supply all derivatives of A0, Ed and Ep, plus the complete
+nonpolar/permanent gradient. Never add a frozen-cache total derivative instead.
+
+Fixed implementation probes (chosen before any native result)
+Run the zero correction and one combined nonzero correction. For every ligand
+kind present use Pair(v0=0.15, vr=-0.08, va=0.12, hr=0.003, hf=-0.002,
+krr=0.004, kff=0.003). For every distinct-ligand kind pair present use
+Triple(v0=0.20, va=-0.13, vf=0.09, h_neighbor=0.0015, k_cross=0.001).
+Keep kernel geometric scales unchanged (6 A cutoff, 2.5 A radial origin,
+0.1 A contact regularization, 0.1 dimensionless frame regularization).
+These coefficients are implementation probes, not chemical candidates.
+
+Directional derivative panel
+Four unit directions in flattened Cartesian coordinates, constructed from each
+unchanged center: metal x; first donor O y; that donor's first covalent frame
+atom z; sin(j+1) for j=0..3N-1 normalized to unit Euclidean norm. Frame ordering
+comes from the pinned fixture. Evaluate central differences at h=1e-4 A and
+h=5e-5 A along each direction for both coefficient settings. Compare dE/dq to
+the central native-plus-local gradient dotted with the same direction.
+Per comparison require |difference| <= 5e-5 kcal/mol/A + 1e-6*|analytic|.
+Do not relax these criteria after seeing results. Preserve failures for diagnosis.
+Also require zero-correction central energy, native u/v and total gradient to
+match existing admitted output at its own export/printing bounds; full matrix
+positive definiteness, residual qualification and finite output must pass.
+If a needed central archive is absent, identify the missing regression channel
+and do not fabricate it. Numerical FD qualification is distinct from regression.
+
+Execution and resources
+Arendt owns isolated bridge source/generator; Singer independently checks native
+initialization/derivatives; Planck prepares real fixtures and finite test harness;
+root integrates and releases execution after source review. Preparation itself
+is not a native run. Maximum declared panel: 3 cases * 2 coefficient settings *
+(1 center + 16 displaced states) = 102 native bridge invocations. The first zero
+and nonzero La-water centers plus one two-step directional test are scouts and
+must be reused in the remaining panel. Preserve failures; no duplicate center
+or blind retry. A startup/compilation failure gets a separately recorded technical
+repair before further calls. No more than 102 successful declared state calls.
+At most 4 root build workers or 4 native evaluations at once, each native process
+one numerical thread. Children each retain one thread: at most 7 of the authorized
+16 login threads across this phase. Slurm standard_expand remains available;
+these small scoped login jobs do not require a scheduler allocation.
+Record actual wall/CPU costs, command, compiler, binary/source and input hashes.
+
+Interpretation
+Passing establishes a working finite-vacuum force connection for these cases.
+It does not validate the physical potential, aqueous stability, periodic forces,
+protein mechanics, fitted accuracy or exchange free energy. Those remain work.
+
+Prospective arithmetic correction before state binding or native execution:
+four directions * two steps * plus/minus = 16 displaced states, not 8.
+The scientific panel is unchanged; total is 102, with 6 scout states reused
+and 96 remaining. The initial unrun wording is preserved beside this file.

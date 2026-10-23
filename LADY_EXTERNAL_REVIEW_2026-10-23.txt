@@ -44,7 +44,7 @@ HOW WE ARRIVED HERE
 1. Earlier MACE/DFT comparisons and limited accommodation calculations produced
    conditional energies rather than equilibrium selectivity. A late peptide
    relaxation was unfavorable in both MACE and PBE0 vacuum energies while a
-   shared GFN2/ALPB solvent term made the composite favorable. Agreement after
+   saved fixed-force-field-charge ALPB term made the composite favorable. Agreement after
    adding the same solvent term did not independently validate that term.
 2. Work moved to an explicit polarizable model based on AMOEBA/Tinker, with
    matched La/Dy water and donor reference chemistry. It accumulated gas-phase
@@ -58,6 +58,11 @@ HOW WE ARRIVED HERE
    inspected individual trimer energy and dipole errors worsened; all four
    La/Dy trimer energy contrasts had the wrong sign. This prompted the new
    short-range model tested below. The new test also failed.
+
+PBE0-D4/def2-TZVP differs from the pinned MACE-OMOL omegaB97M-V/def2-TZVPD
+training Hamiltonian and lanthanide-spin treatment. Their differences cannot
+uniquely be attributed to machine-learning approximation error. Choosing the
+AMOEBA-based research route was not an experimentally validated replacement.
 
 The baseline in the newest comparison is the exact archived, already developed
 polarizable model, not a claim about unmodified stock AMOEBA. Its native
@@ -73,6 +78,13 @@ use the recorded frozen-core/f-in-core effective-core-potential treatment, not
 an established all-electron correlated ground truth. Common-basis subtraction
 controls a comparison convention; it does not establish basis or functional
 accuracy for the physical system.
+
+The retained core treatment uses La ECP46 and Dy ECP55 with effective singlets;
+the physical parent multiplicities are La singlet and Dy sextet. Spin-orbit
+coupling is absent. An all-electron scalar-ZORA comparison changed core
+treatment, basis and Dy state together, and changed a La-water radial slope
+from about -4.17 to +1.55 kcal/mol/A. It establishes reference sensitivity,
+not an isolated f-electron effect or a uniquely correct reference treatment.
 
 The La dry-acetate mechanical targets retain their original PBE0-D4 protocol.
 Canonical correlated calculations independently support the large La rotational

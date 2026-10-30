@@ -1,0 +1,26 @@
+Goal: determine whether metal–shell charge transfer materially changes the La/Dy water-to-acetate differential
+
+  Execute the bounded ALMO-EDA diagnostic specified in web-Pro’s final marching orders. Use exactly these archived geometries, without optimization or
+  regeneration:
+
+  - aquo8_central_La
+  - aquo8_central_Dy
+  - hydrated_acetate_mono_central_La
+  - hydrated_acetate_mono_central_Dy
+
+  Verify input hashes, matched nonmetal coordinates, and the archived PBE0/basis/ECP protocol, including effective singlet states. Use two fragments: M³⁺
+  and the complete ligand shell.
+
+  First establish access to a documented, licensed implementation supporting the required calculation. If unavailable or incompatible, report the exact
+  blocker and stop. Do not invent a substitute method or silently change the Hamiltonian.
+
+  Run one La-aquo compatibility pilot. If it passes, run the remaining three systems concurrently under --qos=standard_expand, using appropriate parallel
+  resources. Require full-energy agreement and decomposition closure for every system. Preserve existing jobs; do not cancel them without my instruction.
+
+  Report the full and CT-suppressed metal double differences, polarization, CT, frozen contributions, dispersion/reference bookkeeping, and numerical
+  residuals. Assess CT’s magnitude against both numerical uncertainty and the existing model discrepancy—not merely whether it reverses a small contrast.
+
+  Save reproducible inputs, raw outputs, provenance, a results table, and REPORT.md under diagnostics/lady_electronic_decomposition_20261023/.
+
+  Finish with one evidence-supported recommendation and stop. Substantial CT does not automatically identify the force-field error as missing CT. No
+  fitting, peptide campaign, additional geometries, alternative protocols, or open-ended retries follow automatically

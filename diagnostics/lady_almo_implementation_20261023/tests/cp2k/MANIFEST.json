@@ -1,0 +1,69 @@
+{
+  "status": "source_prepared_unexecuted",
+  "input_template": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/decks/aquo8_central_La.inp",
+    "sha256": "15b07a8ba0a5cb8037847908dd87c6977fa50ed53c8a07ca7489fc7a5d92883b"
+  },
+  "geometry_source": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_build_v1/cp2k-2026.2/tests/QS/regtest-almo-strong/atomic-water.inp",
+    "sha256": "34c70c2ba5ab9bd3354a2910fc1241f7fe04983a11b239991c1268356ca28baf"
+  },
+  "declaration": "Root directed two independent matched molecular PBE resolutions, 16Angstrom cell, 400/600Ry, GAPW/MT, no ECP/ADMM/HF/dispersion. Quartet unchanged.",
+  "inputs": {
+    "water_pbe_400.inp": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_almo_implementation_20261023/tests/cp2k/water_pbe_400.inp",
+      "sha256": "6f2c8ca8aaf03e76b9302ec4693ce10b8cc390b55ec9f9080bc5250d7aace136"
+    },
+    "water_pbe_600.inp": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_almo_implementation_20261023/tests/cp2k/water_pbe_600.inp",
+      "sha256": "bb12da1159e74eb08b6c4cb0315ce4b3e2b71598b490a7c9e712c18a7305ca6f"
+    },
+    "BASIS_BENCHMARK": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_almo_implementation_20261023/tests/cp2k/BASIS_BENCHMARK",
+      "sha256": "ab96c967723e1f2587d996cd92a8a24cdba2dfa1d61e0de0cedd91cdcf2aff3c"
+    },
+    "POTENTIAL_BENCHMARK": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_almo_implementation_20261023/tests/cp2k/POTENTIAL_BENCHMARK",
+      "sha256": "0138c73658458cf32a64d0cf1d72394433077bb919b366cdaa86bac7270ab445"
+    }
+  },
+  "expected_fragments": {
+    "count": 2,
+    "charges": [
+      0,
+      0
+    ],
+    "multiplicities": [
+      1,
+      1
+    ],
+    "atoms_one_based": [
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        4,
+        5,
+        6
+      ]
+    ],
+    "electrons": [
+      10,
+      10
+    ],
+    "aos": [
+      18,
+      18
+    ]
+  },
+  "thresholds": {
+    "fragment_SCF": 1e-10,
+    "block_and_full_gradient": 1e-08,
+    "component_agreement_hartree": 1e-05,
+    "component_resolution_change_hartree": 1e-05,
+    "native_closure_order_hartree": 1e-08
+  },
+  "all_electron_semantics": "POTENTIAL ALL under GAPW is full nuclear Coulomb; literal ALL entries are a representation split, not a GTH valence ECP."
+}

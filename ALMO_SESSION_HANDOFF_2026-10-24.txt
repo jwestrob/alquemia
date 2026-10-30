@@ -1,0 +1,309 @@
+ALMO / La–Dy SESSION HANDOFF — 24 OCTOBER 2026
+
+START HERE
+
+The user is starting a new session and requested this handoff only. Do not
+interpret its proposed next goal as a new execution instruction. The previous
+goal was “implement the ALMO constraint as you described.” The implementation
+exists and passes core numerical tests, but independent native validation and
+the actual La/Dy charge-transfer result remain unresolved. No constrained
+La/Dy quartet has been run. The user queue was empty when this handoff was
+written; all jobs in this implementation round are terminal.
+
+The previous agent let failed validation become a stopping point and then
+repeatedly acknowledged delayed job events without resolving the next action.
+The user is deeply frustrated with stalled goals, tiny serial experiments,
+parameter tuning disconnected from the scientific question, and verbose logs.
+Communicate briefly. Do not use blockquotes/“greentext” for goal wording.
+The user asked for replacement-goal wording but did NOT set that new goal.
+
+WORKSPACE AND SOURCE STATE
+
+Repository:
+/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs
+
+Paths below are relative to that repository:
+D = diagnostics/lady_almo_implementation_20261023
+W = workspaces/lady_almo_implementation_20261023
+OLD = diagnostics/lady_electronic_decomposition_20261023
+
+Read D/CURRENT.md, D/IMPLEMENTATION_STATUS.md, D/PLAN.md and
+D/CROSS_CODE_AUDIT.md first. Actual task RESULT.json and native outputs take
+precedence over historical “running” statements in older reports/snapshots.
+
+Git branch main, HEAD e639c3f345de6eaf36b898160583be2422c533ff.
+There is extensive unrelated dirty/untracked work. The new ALMO source has not
+been committed or pushed. Do not reset, clean, stage broadly, or assume this
+handoff or ALMO implementation is already available on GitHub.
+
+Original thread: 01a0a63a-ee36-7483-b726-1f7f5b7f75cc.
+Its goal controller still reports BLOCKED, originating in an earlier capacity
+incident. Later job events resumed work, but the old blocked flag persisted.
+The actual current scientific obstacles are below; no job is being awaited.
+The exposed update_goal tool can mark complete/blocked, not reactivate. Do not
+falsely mark the old goal complete or replace a user goal as a workaround.
+
+SCIENTIFIC QUESTION AND AUTHORITY
+
+At fixed archived geometry, does suppressing metal↔whole-ligand-shell charge
+transfer materially change the La/Dy differential for water→acetate substitution?
+
+The original request was a bounded quartet diagnostic with a documented ALMO
+implementation. Q-Chem availability/licensing was problematic; CP2K attempts
+failed. The user subsequently authorized implementing the ALMO constraint.
+That superseded the earlier prohibition on a custom implementation, but did
+not authorize another force-field fitting campaign.
+
+Durable constraints:
+- Preserve exact saved geometry, raw references, failed attempts and provenance.
+- No new force-field fitting, chemical systems, protein trajectories, production
+  changes or automatic expansion to more methods/geometries.
+- All numerical work uses Slurm, account banfield, partition standard,
+  --qos=standard_expand. Root owns submissions; independent useful work should
+  run concurrently. Read-only/source/metadata work can run on login.
+- User explicitly says not to cancel jobs unless instructed. Do not interfere
+  with other sessions/users. Quiet output alone is not a stall diagnosis.
+- Declare question, inputs, consequential settings, finite scope and limits
+  before computation. This is a reproducibility record, not a standing request
+  for permission. Recover current authorization instead of resurrecting old
+  per-analysis approval rules from AGENTS.md.
+- No commit/push is requested by this handoff.
+- Delayed completion notices require receipt acknowledgement, not reruns.
+  ROOT_REVIEW.json records proactive inspection; ROOT_ACK.json records actual
+  delivery. All delivered events through collector22439 have been acknowledged.
+
+EXACT QUARTET / CHEMISTRY
+
+1. aquo8_central_La
+2. aquo8_central_Dy
+3. hydrated_acetate_mono_central_La
+4. hydrated_acetate_mono_central_Dy
+
+Coordinates and their hashes are pinned in D/INPUT_PROVENANCE.json and
+OLD/inputs/xyz/. Nonmetal coordinates are identical within each La/Dy pair.
+Do not optimize, regenerate or substitute missing inputs.
+
+Aquo: metal3+ + 8 waters; 25 atoms, charge+3, 88 explicit electrons, 391 AOs.
+Mixed: metal3+ + acetate− + 7 waters; 29 atoms, charge+2, 110 electrons, 490 AOs.
+Two fragments ONLY: metal3+ (8 explicit electrons) and the entire ligand shell
+(80 electrons/charge0 for aquo; 102 electrons/charge−1 for mixed).
+La ECP46 and Dy ECP55, both effective singlets. Physical Dy sextet metadata is
+distinct; this is not an all-electron Dy sextet calculation.
+
+Original manifests:
+workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/hydrated_mixed_v1/prepared_v2/PANEL.json
+workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/hydrated_mixed_v1/bound_v1/NATIVE_PANEL.json
+
+Raw La/Dy basis/ECP: OLD/inputs/assets/.
+H/C/O def2-TZVP BSE asset: OLD/cp2k_inputs_v1/assets/def2-TZVP_HCO_BSE_v1.json.
+Archived energies: OLD/cp2k_inputs_v1/ENERGY_LEDGER.json.
+D/INPUT_PROVENANCE.json contains exact paths/hashes to original ORCA inputs and
+outputs. The source audit found no concrete basis/ECP translation defect. ORCA
+did not print its internal light-element primitive table; named-library
+equivalence remains a provenance limit.
+
+For component X, report the balanced double difference:
+C_X = [X(Dy,mixed) − X(La,mixed)] − [X(Dy,aquo) − X(La,aquo)].
+Negative means relative Dy stabilization on replacing coordinated water with
+acetate. Free acetate and displaced-water terms cancel in this metal double
+difference. Absolute metal energies cannot be interpreted as selectivity.
+At each fixed geometry, archived D4 is added once, separately and identically
+to full/constrained states. CT is full minus polarized electronic energy.
+These are conditional cluster energies, not solution/protein binding free
+energies. A CT differential does not uniquely prove “missing CT” in a force
+field, whose effective terms may already absorb part of that contribution.
+
+IMPLEMENTATION AND RUNTIME
+
+D/almo.py: real closed-shell RHF/RKS AO-block variational constraint.
+Each fragment's occupied C columns have support only on that fragment's AOs.
+Interfragment occupied overlap is retained. For M=C.T S C:
+  D = 2 C M^-1 C.T
+  A = C M^-1
+  dE/dC = 4 (F A − S A C.T F A).
+Use the full-system backend energy and Fock; do not mask density/Fock blocks.
+Local S-whitening, projected L-BFGS, polar retraction and finite Armijo search.
+Both energy-change and projected-gradient convergence are required.
+Finite iteration/evaluation caps; saved failed states and histories.
+First-order stationarity is not a global-minimum or physical-state proof.
+
+Core source SHA256:
+ccaa8a5041373691796958ecb81b41965021cd46cf8c640083e6c39028d4680e
+
+D/THEORY.md explains the method. D/archive.py loads exact inputs.
+D/run_system.py runs baseline / fragment / constrained modes.
+D/collect_quartet.py collects accepted decomposition results.
+Public API: ALMOProblem.evaluate, solve_almo, release_constraints.
+
+Isolated executable: W/venv/bin/python.
+PySCF2.14.0, LibXC7.0.0, NumPy2.5.4, SciPy1.18.1, h5py3.16.0.
+Runtime/install provenance is retained under W; no production environment edit.
+
+PySCF baseline: PBE0 direct J/K, no density fitting/SGX; unpruned150×974 atom
+grid, small_rho_cutoff0; SCF energy1e-10 Eh, gradient1e-7, max300cycles,
+direct_scf_tol1e-13. Archived ORCA used RIJCOSX/DefGrid3. These numerical
+backends are different; full agreement was tested rather than assumed.
+
+The original per-endpoint archive agreement gate is1e-4 Eh and remains failed.
+run_system.py restore_state checks accepted saved status, numerical settings,
+source configuration AST, input/runtime pins and state hashes. It cannot simply
+consume a failed baseline as though it passed. Any future policy revision must
+be explicit/versioned and preserve failed results; do not bypass this guard.
+
+COMPLETED EVIDENCE — REUSE, DO NOT REPEAT
+
+Core tests22332, W/core_tests_v1/RESULT.json: all21 checks pass.
+Analytic orbital derivative vs finite differences: largest error1.94e-8 Eh.
+Support, density/idempotency/electron count, gauge invariance, invalid input
+rejection, one-fragment ordinary SCF and constraint release pass.
+Constrained water solve:25iterations/27evaluations, gradient4.996e-9.
+One-fragment energy agrees with ordinary SCF to1.71e-13 Eh.
+
+PBE fixture22333, W/pyscf_benchmark_v1/RESULT.json: all12 internal checks pass;
+19iterations/20evaluations, gradient4.844e-9. This is only the PySCF side;
+do not describe it as a successful independent native comparison.
+
+All four unique isolated fragments pass native SCF checks:
+  La22334: W/fragment_La_v1/result/
+  Dy22411: W/fragment_Dy_1e_v2/result/
+  aquo shell22336: W/fragment_aquo_shell_v1/result/
+  mixed shell22337: W/fragment_mixed_shell_v1/result/
+The earlier Dy MINAO initialization failures22328/22330/22335 happened before
+SCF in a nonsquare ECP/ANO overlap determinant. Explicit native1e starting-guess
+recoveries changed initialization only; original failures remain preserved.
+
+Ordinary full complexes:
+  La aquo22327, W/baseline_aquo_La_v1/result/:
+    E=−641.904653320912 Eh, native SCF checks pass.
+    PySCF−archive=+0.000825580291 Eh (+0.518059454 kcal/mol).
+  Dy aquo22409, W/baseline_aquo_Dy_1e_v2/result/:
+    E=−647.3828009136756 Eh, native SCF checks pass.
+    PySCF−archive=+0.000956700399 Eh (+0.600338564 kcal/mol).
+  La mixed22329, W/baseline_mixed_La_v1/result/:
+    E=−794.2795429719814 Eh, native SCF checks pass.
+    PySCF−archive=+0.000893668327 Eh (+0.560785342 kcal/mol).
+  Dy mixed22410, W/baseline_mixed_Dy_1e_v2/result/:
+    E=−799.756978316779 Eh, but final gradient1.0670606603907637e-7
+    exceeds required1e-7. Archive comparison was not reached.
+
+Mixed-Dy cycle28 had passed the original gradient criterion; PySCF's extra
+diagonalization raised the returned-state gradient. Installed hf.py extra-cycle
+logic relaxes internal tolerances and accepts energy OR gradient. Our wrapper
+correctly rejected the final state. Saved baseline.chk, baseline_state.npz,
+baseline_RESULT.json, history and raw log are available. No retry has occurred.
+
+REFERENCE-MISMATCH DIAGNOSIS ALREADY COMPLETED
+
+1. Fixed-density XC22429:
+W/xc_fixed_density_diagnosis_v3/result/RESULT.json.
+Explicit LibXC PBE0 expansion reproduces native energy/Fock. Substituting only
+documented ORCA PBE constants changes La-aquo energy by−8.503404706e-5 Eh;
+archive residual remains+0.000740546245 Eh. Zero SCF optimizations.
+Original metadata/dispatch failures22416/22419 and saved successful evaluations
+were retained; the recovery reused completed work.
+
+2. Native ORCA same-orbital one-Fock backend comparison:
+W/orca_backend_saved_recovery_v1/result/{REPORT.md,RESULTS.json}.
+RIJCOSX E=−641.90552428943295 Eh.
+Direct J/K E=−641.90478896926595 Eh.
+Direct−RIJCOSX=+0.000735320167 Eh (+0.461420371 kcal/mol).
+RIJCOSX replay−archive=−0.000045388230 Eh, inside the unchanged replay gate.
+Identical D4. This identifies a substantial backend contribution to the La
+gap, not an exact additive explanation of all quartet differences: imported
+ORCA orbitals, separately optimized PySCF density, final COSX correction and
+quadrature differ. Do not assume cancellation in the balanced differential.
+
+Jobs22432/22433 initially failed MPI startup because Slurm exposed one slot for
+eight MPI ranks. Recovery22436/22437 used8tasks×1thread; both native calls
+ended normally. A parser mistook auxiliary metric preparation for active RI
+in the direct calculation; saved-only recovery22441 admitted actual native
+J versus SPLITRIJ/COSX timing evidence. Original parser failures and collector
+22438 remain. No native evaluation was repeated for that parser correction.
+
+INDEPENDENT CP2K BENCHMARK FAILED BEFORE ALMO
+
+Existing two-water fixture, same literal6-31G* basis, PBE, no ECP/HF/D4;
+molecular GAPW, nonperiodic MT16Å,400/600 Ry, fixed atomic quadrature.
+Each native run:1MPI×8OMP,64GiB,3500-second native cap,1-hour Slurm limit.
+Exact assets/runtime pins: D/tests/cp2k/; source snapshot in each task.
+
+22343, W/cp2k_benchmark_400_v1/native/:
+FAILED after2514 scheduler seconds. First isolated water hit300SCF cycles,
+residual1e-8 vs1e-10 despite energy change4.97e-13 Eh. No ALMO stage reached.
+Reported integrated net charge−0.0306942524 is a separate numerical discrepancy
+with no uniquely established cause. Stable energy did not qualify the state.
+
+22344, W/cp2k_benchmark_600_v1/native/:
+FAILED after3507 scheduler seconds; declared native cap reached at3501.126s,
+returncode15. Last completed first-water step246: residual7e-8 vs1e-10,
+E=−76.5599956682 Eh, change+8.38e-13 Eh. No second fragment, ALMO states or
+terminal integrated-charge summary. Do not transfer400Ry's charge error here.
+
+22439, W/cp2k_saved_comparison_v1/RESULT.json and
+RESULT.json.collection.json: rejected actual native returncodes1/15 before
+energy comparison; zero new native calls. Correct rejection, no comparison
+components admitted. Pair+collector cost48,175 allocated CPU-seconds.
+
+These failures establish neither agreement nor disagreement with our ALMO
+solver because CP2K never computed the relevant states. Do not automatically
+rerun unchanged inputs, extend limits, relax convergence, or interpret CP2K
+success as the only possible route to validating a mathematical constraint.
+Conversely, internal tests alone are not completed independent validation.
+
+EXECUTION SUPPORT / RESOURCE LESSONS
+
+D/submit.py snapshots source and records configuration, runtime, submission
+and actual completion watcher. Syntax:
+  python D/submit.py --name UNIQUE --cpus TOTAL --ntasks N \
+    --memory-gb G --hours H --afterany ACTUAL_JOB_IDS -- COMMAND
+Use literal expanded D path when invoking. ntasks defaults1 and divides total
+CPUs. For ORCA MPI use N MPI tasks, not1task×Nthreads. The placeholders
+@PYTHON@, @SOURCE@, @TASK@, @ROOT@, @CPUS@ are handled by the launcher.
+Use returned actual Slurm IDs for dependencies; never guess the next ID.
+
+Recorded standard_expand limits were24CPU/job,500CPU/user,20running and
+200submitted jobs/user; verify live policy if needed, do not modify policy.
+For an eventually qualified constrained quartet, PLAN.md declared24CPUs,
+96GiB, max_memory84000MB,4h per independent endpoint. At490AOs, cached s8
+integrals are~57.6GB; earlier32GiB mixed runs could not cache them. This is a
+source-based performance explanation, not a measured speedup. No constrained
+quartet was submitted. Respect numerical provenance when changing resources.
+
+PROPOSED NEXT GOAL — DISCUSSED, NOT SET OR EXECUTED
+
+Determine whether suppressing metal–ligand charge transfer materially changes
+the La/Dy water→acetate substitution differential, using the existing ALMO
+implementation and exact saved quartet. Validate the constraint with an
+independently formulated minimization on the existing small water fixture.
+Establish consistent full/constrained energies within the same backend while
+preserving geometry, basis/ECP, effective states and dispersion bookkeeping.
+Explicitly reconcile the balanced differential with archived ORCA and retain
+failed absolute-energy comparisons. Declare numerical acceptance criteria
+before viewing CT results. Reuse completed work/checkpoints; run independent
+tasks concurrently under standard_expand. Limit to one validation round and
+one quartet, at most one documented technical recovery per failed task.
+No further CP2K retries, fitting or new chemical systems. Deliver reproducible
+full/frozen/polarization/CT differentials and a concise conclusion, or a specific
+demonstrated blocker if validation fails; stop after that bounded report.
+
+Reasoning behind the proposal: the useful endpoint is the CT double difference;
+CP2K ordinary-water failures are an unproductive dependency for testing the
+constraint; cross-code numerical compatibility must be separated from solver
+correctness. An independent minimization is a proposed validation design, not
+an implemented/passing test, and may share electronic-backend errors. Do not
+quietly waive the old gates or claim this proposal has already been approved.
+
+NEXT SESSION
+
+1. Read this handoff and current artifacts. Confirm the user's new goal/scope
+   if they set one; this handoff request itself launches no further science.
+2. Preserve completed fragments, all ordinary SCF checkpoints and failed gates.
+3. Distinguish solver correctness, backend/reference compatibility and the
+   scientific CT inference. Report what evidence actually supports each.
+4. Do not let delayed events restart completed experiments or restore stale
+   “running” status. There are no remaining jobs from this round.
+
+Historical broad background, only if needed:
+LADY_EXTERNAL_REVIEW_2026-10-23.txt and the hydrated-transfer review under
+diagnostics/lanm_selectivity_free_energy_20261021/explicit_model_v1/.
+Prior custom AMOEBA/MACE fitting is not the current task.

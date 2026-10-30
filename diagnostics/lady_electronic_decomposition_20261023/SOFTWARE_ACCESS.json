@@ -1,0 +1,920 @@
+{
+  "CP2K": {
+    "PBE0_architecture": "ALMO supplies density to common Quickstep KS energy update; common update includes Hartree-Fock exchange. Molecular fragment guesses reuse parent FORCE_EVAL/DFT settings. No categorical ALMO-HFX prohibition found in inspected call path, but combined quartet was not run.",
+    "build_requirements": {
+      "base": "Compatible C/C++/Fortran compilers, BLAS/LAPACK, DBCSR, OpenMP and FFT implementation; MPI/ScaLAPACK for an MPI executable. Exact install recipe/version remains root-owned.",
+      "hybrid": "Enable CP2K_USE_LIBINT2 and provide its Fortran interface; use adequate integral angular-momentum coverage for the actual basis.",
+      "no_silent_approximations": "Do not substitute GTH/core counts, ADMM, truncated XALMO delocalization or periodic charged reference for the archived vacuum Hamiltonian.",
+      "semilocal_integrals": "LIBGRPP is bundled unconditionally in src/CMakeLists.txt in v2026.2 and inspected master; preserve ECP_SEMI_LOCAL true."
+    },
+    "charged_reference_caveat": "Official SUBLATTICE documentation says its frozen term lacks interpretation for charged fragments, without a boundary-condition qualification. Source does not force periodicity and provides raw energies without the formal summary; nonperiodic interpretation is a supported candidate route, not a measured validation.",
+    "forced_GTH_replacement": false,
+    "genuine_native_ALMO": true,
+    "hard_stock_input_blocker": {
+      "La46": "Accepted by this parser switch; does not qualify full La calculation.",
+      "accepted_core_counts": [
+        0,
+        2,
+        10,
+        18,
+        28,
+        36,
+        46,
+        54,
+        60,
+        68,
+        78
+      ],
+      "failure": "Unknown Core State",
+      "master_lines": "3047-3082",
+      "metal": "Dy",
+      "original_core_electrons": 55,
+      "routine": "atom_types.F read_ecp_potential / read_ecp_potential_file",
+      "scope": "Both file and inline ECP routes reach this unconditional default-occupation switch. KIND/ELEC_CONF is applied only after the ECP reader returns, so it cannot bypass the abort. No documented exact-input alternate route was found. This is not an integral-capacity claim.",
+      "stable_lines": "3033-3068",
+      "versions_checked": [
+        "v2025.2",
+        "v2026.1",
+        "v2026.2",
+        "62906da87cd0e92000c341d4500e1ed4a5a6af9c"
+      ]
+    },
+    "license": "Public GPL source; no commercial license purchase/credential requirement identified. No installation was performed.",
+    "local_executable": null,
+    "master_commit": "62906da87cd0e92000c341d4500e1ed4a5a6af9c",
+    "original_semilocal_ECP_supported_in_principle": true,
+    "raw_frozen_energy_route": "mscfg_methods.F uses parent cell and explicit fragment charge/multiplicity, stores each fragment energy. almo_scf.F assembles fragment MOs, builds nonorthogonal antisymmetrized projector and prints summed fragment energy and initial-guess frozen energy independently of ANALYSIS/SUBLATTICE. FULL_SCF offers full delocalization; default XALMO_X is an approximate correction and cannot be silently substituted.",
+    "remaining": "No executable, build or combined PBE0/custom-ECP55/ALMO result. Stock inspected CP2K cannot currently supply the full exact quartet through its normal ECP reader. No source patch, core replacement or install was made.",
+    "source_review_timestamp_UTC": "2026-10-23T19:36:04.940840+00:00",
+    "sources": [
+      {
+        "access": "read public source into memory; no source written/compiled/executed",
+        "commit": "62906da87cd0e92000c341d4500e1ed4a5a6af9c",
+        "path": "src/almo_scf.F",
+        "sha256": "34aedcdc16214ce5379dd4f34f12a22395260250431b60c41ae78c4e1c71e16b",
+        "size_bytes": 139135,
+        "url": "https://raw.githubusercontent.com/cp2k/cp2k/62906da87cd0e92000c341d4500e1ed4a5a6af9c/src/almo_scf.F"
+      },
+      {
+        "access": "read public source into memory; no source written/compiled/executed",
+        "commit": "62906da87cd0e92000c341d4500e1ed4a5a6af9c",
+        "path": "src/almo_scf_qs.F",
+        "sha256": "84295201580f258f34d5ba939657930f58b2dea46d7fbf76852d5753e04a7ec5",
+        "size_bytes": 71727,
+        "url": "https://raw.githubusercontent.com/cp2k/cp2k/62906da87cd0e92000c341d4500e1ed4a5a6af9c/src/almo_scf_qs.F"
+      },
+      {
+        "access": "read public source into memory; no source written/compiled/executed",
+        "commit": "62906da87cd0e92000c341d4500e1ed4a5a6af9c",
+        "path": "src/mscfg_methods.F",
+        "sha256": "7c1b9883508aefb8ffd99da221e67f14fca32b21ebffe0175ace570fded33fc7",
+        "size_bytes": 24987,
+        "url": "https://raw.githubusercontent.com/cp2k/cp2k/62906da87cd0e92000c341d4500e1ed4a5a6af9c/src/mscfg_methods.F"
+      },
+      {
+        "access": "read public source into memory; no source written/compiled/executed",
+        "commit": "62906da87cd0e92000c341d4500e1ed4a5a6af9c",
+        "path": "src/qs_ks_methods.F",
+        "sha256": "f594a10b0ea2a4375baea3c7121e8c4f1c0e39f211a232d0b0b6fa4b70764cbc",
+        "size_bytes": 99073,
+        "url": "https://raw.githubusercontent.com/cp2k/cp2k/62906da87cd0e92000c341d4500e1ed4a5a6af9c/src/qs_ks_methods.F"
+      },
+      {
+        "access": "read public source into memory; no source written/compiled/executed",
+        "commit": "62906da87cd0e92000c341d4500e1ed4a5a6af9c",
+        "path": "src/qs_kind_types.F",
+        "sha256": "0f451da816aa6f07cb8b30ab0f0cc8bee18083365f8881d32de2cff2a2206123",
+        "size_bytes": 201882,
+        "url": "https://raw.githubusercontent.com/cp2k/cp2k/62906da87cd0e92000c341d4500e1ed4a5a6af9c/src/qs_kind_types.F"
+      },
+      {
+        "access": "read public source into memory; no source written/compiled/executed",
+        "commit": "62906da87cd0e92000c341d4500e1ed4a5a6af9c",
+        "path": "src/atom_types.F",
+        "sha256": "01e437ef4cd54e7d77a48ac5053cd2532da62558482278785dab09094f155182",
+        "size_bytes": 127253,
+        "url": "https://raw.githubusercontent.com/cp2k/cp2k/62906da87cd0e92000c341d4500e1ed4a5a6af9c/src/atom_types.F"
+      },
+      {
+        "access": "read public source into memory; no source written/compiled/executed",
+        "commit": "62906da87cd0e92000c341d4500e1ed4a5a6af9c",
+        "path": "src/input_cp2k_almo.F",
+        "sha256": "d661bc2549e6bb45cddedf51f0de197aa727f54fb1f73008e74c94a039643fab",
+        "size_bytes": 61213,
+        "url": "https://raw.githubusercontent.com/cp2k/cp2k/62906da87cd0e92000c341d4500e1ed4a5a6af9c/src/input_cp2k_almo.F"
+      },
+      {
+        "access": "read public source into memory; no source written/compiled/executed",
+        "commit": "67b5da876dd6a76b8b021d5a04d1c81ba79a4c50",
+        "path": "src/atom_types.F",
+        "sha256": "1a91f3c5da4403c62db24d37cad13aa47873459d61d9f64899697e82121c3ee9",
+        "size_bytes": 124748,
+        "url": "https://raw.githubusercontent.com/cp2k/cp2k/67b5da876dd6a76b8b021d5a04d1c81ba79a4c50/src/atom_types.F"
+      },
+      {
+        "access": "read public source into memory; no source written/compiled/executed",
+        "commit": "67b5da876dd6a76b8b021d5a04d1c81ba79a4c50",
+        "path": "CMakeLists.txt",
+        "sha256": "147aaf86596e26e39ce857b62b357f241b59b894b02c5f2dc47476ba58c860b5",
+        "size_bytes": 47269,
+        "url": "https://raw.githubusercontent.com/cp2k/cp2k/67b5da876dd6a76b8b021d5a04d1c81ba79a4c50/CMakeLists.txt"
+      },
+      {
+        "access": "read public source into memory; no source written/compiled/executed",
+        "commit": "67b5da876dd6a76b8b021d5a04d1c81ba79a4c50",
+        "path": "src/CMakeLists.txt",
+        "sha256": "6f95a743974942ef15f898480ea46d60954a5e640d6b7206cfc056c664573573",
+        "size_bytes": 57499,
+        "url": "https://raw.githubusercontent.com/cp2k/cp2k/67b5da876dd6a76b8b021d5a04d1c81ba79a4c50/src/CMakeLists.txt"
+      },
+      {
+        "access": "read public source into memory; no source written/compiled/executed",
+        "commit": "67b5da876dd6a76b8b021d5a04d1c81ba79a4c50",
+        "path": "src/libgrpp_integrals.F",
+        "sha256": "913d57380608ad29dad18831e987dc8c60993aaccaa59045ddcc7e6976896eb7",
+        "size_bytes": 37400,
+        "url": "https://raw.githubusercontent.com/cp2k/cp2k/67b5da876dd6a76b8b021d5a04d1c81ba79a4c50/src/libgrpp_integrals.F"
+      },
+      {
+        "access": "read public source into memory; no source written/compiled/executed",
+        "commit": "62906da87cd0e92000c341d4500e1ed4a5a6af9c",
+        "path": "LICENSE",
+        "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+        "size_bytes": 18092,
+        "url": "https://raw.githubusercontent.com/cp2k/cp2k/62906da87cd0e92000c341d4500e1ed4a5a6af9c/LICENSE"
+      }
+    ],
+    "stable_commit": "67b5da876dd6a76b8b021d5a04d1c81ba79a4c50",
+    "stable_tag": "v2026.2"
+  },
+  "QChem": {
+    "documented_compatibility": "Conceptually compatible native ALMO-EDA plus PBE0 and user-defined scalar semilocal ECP/orbital bases; exact archived input translation and runtime capability remain untested.",
+    "license_entitlement": "unverified; no credentials read or license server contacted",
+    "local_executable": null,
+    "local_version": null
+  },
+  "actions": {
+    "electronic_structure_executable_invocations": 0,
+    "external_contacts": 0,
+    "files_written": [
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/SOFTWARE_ACCESS.json",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/SOFTWARE_ACCESS.txt"
+    ],
+    "installs": 0,
+    "jobs_cancelled": 0,
+    "jobs_submitted": 0,
+    "license_credential_files_opened": 0,
+    "license_requests": 0,
+    "quantum_calculations": 0,
+    "recursive_filesystem_scans": 0
+  },
+  "alternatives": {
+    "documented_compatible_native_ALMO_found": false,
+    "identified_local_electronic_structure_runtime": "ORCA 6.1.1 by path metadata",
+    "scope": "Identified local ORCA documentation does not establish ALMO. Root subsequently requested a public-source CP2K investigation: CP2K is a genuine free ALMO implementation with semilocal ECP support, but no local binary was found and stock versions inspected reject original Dy core55. Psi4 is being reviewed separately by root; this record makes no Psi4 capability determination."
+  },
+  "archived_assets_and_install_metadata": {
+    "archived_assets": [
+      {
+        "M3plus_explicit_electrons": 8,
+        "core_electrons": 46,
+        "ecp_component_counts": [
+          [
+            "s",
+            "2"
+          ],
+          [
+            "p",
+            "2"
+          ],
+          [
+            "d",
+            "2"
+          ],
+          [
+            "f",
+            "1"
+          ],
+          [
+            "g",
+            "1"
+          ]
+        ],
+        "ecp_radial_power_tokens": [
+          "2"
+        ],
+        "effective_nuclear_charge": 11,
+        "lmax": "g",
+        "metal": "La",
+        "orbital_shell_types": [
+          "D",
+          "F",
+          "P",
+          "S"
+        ],
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/common_basis_decomposition_v1/prepared_v1/assets/La_basis.inc",
+        "sha256": "c5298b309b2d897e5de59ddb6b4c7992913dd8cba18b7cd21f9757ce09b167d3"
+      },
+      {
+        "M3plus_explicit_electrons": 8,
+        "core_electrons": 55,
+        "ecp_component_counts": [
+          [
+            "s",
+            "2"
+          ],
+          [
+            "p",
+            "2"
+          ],
+          [
+            "d",
+            "2"
+          ],
+          [
+            "f",
+            "1"
+          ],
+          [
+            "g",
+            "1"
+          ]
+        ],
+        "ecp_radial_power_tokens": [
+          "2"
+        ],
+        "effective_nuclear_charge": 11,
+        "lmax": "g",
+        "metal": "Dy",
+        "orbital_shell_types": [
+          "D",
+          "F",
+          "P",
+          "S"
+        ],
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/common_basis_decomposition_v1/prepared_v1/assets/Dy_basis.inc",
+        "sha256": "87bb209a42eca365c93d8f69088a57371285623a1d4afa1c1336390279fafb20"
+      }
+    ],
+    "orca": {
+      "PATH_path": "/home/jwestrob/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+      "executable": true,
+      "license_entitlement_checked": false,
+      "mtime_ns": 1764848499000000000,
+      "resolved_path": "/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+      "size_bytes": 36334176,
+      "version_evidence": "installation directory name orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg; binary not invoked"
+    }
+  },
+  "archived_state_compatibility": {
+    "Dy_core_electrons": 55,
+    "La_core_electrons": 46,
+    "effective_metal_fragment_charge": 3,
+    "effective_metal_fragment_multiplicity": 1,
+    "explicit_electrons_per_metal_fragment": 8,
+    "inference": "Ordinary contracted GTO bases and scalar Gaussian semilocal ECPs have a documented Q-Chem input representation. Preserve exact frozen-f state and fragment charges. No physical-Dy sextet replacement or spin-orbit extension.",
+    "numerical_limit": "Matching PBE0/basis/ECP does not reproduce ORCA RIJCOSX/grid numerical settings byte-for-byte. No cross-engine total energy or decomposition has been evaluated.",
+    "required_translation_checks": [
+      "local/nonlocal ECP channel ordering",
+      "radial-power/Jacobian convention",
+      "basis contraction normalization and spherical/cartesian convention",
+      "all orbital exponents/contractions and ECP coefficients",
+      "same total and fragment charges/multiplicities"
+    ]
+  },
+  "bounded_roots": {
+    "explicit_path_presence": {
+      "/etc/modulefiles": false,
+      "/etc/profile.d/modules.sh": false,
+      "/opt/qchem": false,
+      "/usr/local/lib/qchem": false,
+      "/usr/local/qchem": false,
+      "/usr/share/Modules/init/bash": false,
+      "/usr/share/lmod/lmod/init/bash": false,
+      "/usr/share/modules/modulefiles": false
+    },
+    "roots": [
+      {
+        "candidate_names": [],
+        "exists": true,
+        "immediate_entry_count": 4,
+        "inspection": "immediate names only; no recursive scan",
+        "is_directory": true,
+        "path": "/opt"
+      },
+      {
+        "candidate_names": [],
+        "exists": true,
+        "immediate_entry_count": 20,
+        "inspection": "immediate names only; no recursive scan",
+        "is_directory": true,
+        "path": "/usr/local"
+      },
+      {
+        "candidate_names": [],
+        "exists": true,
+        "immediate_entry_count": 111,
+        "inspection": "immediate names only; no recursive scan",
+        "is_directory": true,
+        "path": "/usr/local/bin"
+      },
+      {
+        "candidate_names": [],
+        "exists": true,
+        "immediate_entry_count": 10,
+        "inspection": "immediate names only; no recursive scan",
+        "is_directory": true,
+        "path": "/usr/local/lib"
+      },
+      {
+        "candidate_names": [],
+        "exists": true,
+        "immediate_entry_count": 13,
+        "inspection": "immediate names only; no recursive scan",
+        "is_directory": true,
+        "path": "/usr/local/share"
+      },
+      {
+        "candidate_names": [],
+        "exists": true,
+        "immediate_entry_count": 232,
+        "inspection": "immediate names only; no recursive scan",
+        "is_directory": true,
+        "path": "/usr/share"
+      },
+      {
+        "candidate_names": [],
+        "exists": true,
+        "immediate_entry_count": 10,
+        "inspection": "immediate names only; no recursive scan",
+        "is_directory": true,
+        "path": "/etc/profile.d"
+      },
+      {
+        "exists": false,
+        "inspection": "immediate names only; no recursive scan",
+        "is_directory": false,
+        "path": "/apps"
+      },
+      {
+        "exists": false,
+        "inspection": "immediate names only; no recursive scan",
+        "is_directory": false,
+        "path": "/software"
+      },
+      {
+        "exists": false,
+        "inspection": "immediate names only; no recursive scan",
+        "is_directory": false,
+        "path": "/share"
+      },
+      {
+        "candidate_names": [],
+        "exists": true,
+        "immediate_entry_count": 3,
+        "inspection": "immediate names only; no recursive scan",
+        "is_directory": true,
+        "path": "/groups/banfield/software"
+      },
+      {
+        "exists": false,
+        "inspection": "immediate names only; no recursive scan",
+        "is_directory": false,
+        "path": "/groups/banfield/modules"
+      },
+      {
+        "candidate_names": [],
+        "exists": true,
+        "immediate_entry_count": 160,
+        "inspection": "immediate names only; no recursive scan",
+        "is_directory": true,
+        "path": "/groups/banfield/users/jwestrob"
+      },
+      {
+        "candidate_names": [
+          {
+            "is_directory": true,
+            "is_symlink": false,
+            "path": "/groups/banfield/users/jwestrob/bin/ORCA",
+            "resolved": "/groups/banfield/users/jwestrob/bin/ORCA"
+          }
+        ],
+        "exists": true,
+        "immediate_entry_count": 122,
+        "inspection": "immediate names only; no recursive scan",
+        "is_directory": true,
+        "path": "/groups/banfield/users/jwestrob/bin"
+      },
+      {
+        "candidate_names": [],
+        "exists": true,
+        "immediate_entry_count": 2,
+        "inspection": "immediate names only; no recursive scan",
+        "is_directory": true,
+        "path": "/groups/banfield/users/jwestrob/envs"
+      },
+      {
+        "candidate_names": [],
+        "exists": true,
+        "immediate_entry_count": 99,
+        "inspection": "immediate names only; no recursive scan",
+        "is_directory": true,
+        "path": "/home/jwestrob"
+      },
+      {
+        "candidate_names": [],
+        "exists": true,
+        "immediate_entry_count": 17,
+        "inspection": "immediate names only; no recursive scan",
+        "is_directory": true,
+        "path": "/home/jwestrob/.local/bin"
+      },
+      {
+        "candidate_names": [],
+        "exists": true,
+        "immediate_entry_count": 172,
+        "inspection": "immediate names only; no recursive scan",
+        "is_directory": true,
+        "path": "/home/jwestrob/miniconda3/bin"
+      },
+      {
+        "candidate_names": [],
+        "exists": true,
+        "immediate_entry_count": 13,
+        "inspection": "immediate names only; no recursive scan",
+        "is_directory": true,
+        "path": "/home/jwestrob/miniconda3/envs"
+      },
+      {
+        "candidate_names": [],
+        "exists": true,
+        "immediate_entry_count": 163,
+        "inspection": "immediate names only; no recursive scan",
+        "is_directory": true,
+        "path": "/home/jwestrob/.pyenv/versions/3.12.0/bin"
+      }
+    ]
+  },
+  "commands_and_results": [
+    {
+      "command_argv": [
+        "/home/jwestrob/.pyenv/versions/3.12.0/bin/python",
+        "-c",
+        "import json,os,shutil,socket\nnames=['qchem','qchem.exe','qcprog.exe','cp2k','cp2k.psmp','cp2k.ssmp','cp2k.popt','cp2k.sopt','psi4','adf','ams','orca','modulecmd','lmod']\nprint(json.dumps({'host':socket.gethostname(),'cwd':os.getcwd(),'PATH_directories':os.environ.get('PATH','').split(os.pathsep),'executables':{n:shutil.which(n) for n in names},'specific_environment_name_presence':{n:n in os.environ for n in ['QC','QCAUX','QCSCRATCH','QCLOCALSCR','MODULEPATH','LMOD_CMD']},'license_related_environment_names_only':sorted(n for n in os.environ if 'LICENSE' in n.upper() or n.upper().startswith('QCHEM'))},sort_keys=True))"
+      ],
+      "label": "host_PATH_executable_and_environment_metadata",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"PATH_directories\": [\"/home/jwestrob/.local/codex/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path\", \"/home/jwestrob/.codex/tmp/arg0/codex-arg0Tirore\", \"/home/jwestrob/.local/codex/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path\", \"/home/jwestrob/.nvm/versions/node/v22.23.1/bin\", \"/home/jwestrob/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg\", \"/usr/local/cuda-12.5/bin\", \"/usr/local/cuda-12.5/nvvm/bin\", \"/home/jwestrob/bin/bowtie-1.3.1-linux-x86_64\", \"/home/jwestrob/jwestrob/bin/mmseqs/mmseqs/bin\", \"/home/jwestrob/bin/iqtree-2.0-rc1-Linux/bin\", \"/home/jwestrob/.pyenv/plugins/pyenv-virtualenv/shims\", \"/home/jwestrob/.pyenv/shims\", \"/home/jwestrob/.pyenv/bin\", \"/home/jwestrob/ftdmp\", \"/home/jwestrob/perl_modules/bin\", \"/usr/bin\", \"/home/jwestrob/bin/bvbrc_cli/usr/share\", \"/home/jwestrob/bin/valgrind/bin\", \"/home/jwestrob/bin/bvbrc_cli/usr/bin\", \"/home/jwestrob/EastRiver/hillslope/Foldseek/foldseek/bin\", \"/home/jwestrob/bin/R-4.2.2/bin\", \"/home/jwestrob/jwestrob/bin/iupred3\", \"/home/jwestrob/jwestrob/bin/eggnog-mapper-2.1.9\", \"/home/jwestrob/meme/bin\", \"/home/jwestrob/meme/libexec/meme-5.4.1\", \"/home/jwestrob/bin/colabfold_batch/bin\", \"/home/jwestrob/jwestrob/bin/infernal-1.1.2/src\", \"/home/jwestrob/jwestrob/bin/rust-mdbg/target/release\", \"/home/jwestrob/jwestrob/bin/gfatools\", \"/home/jwestrob/.local/bin\", \"/home/jwestrob/.cargo/bin\", \"/home/jwestrob/.cargo/bin\", \"/home/jwestrob/.gem/ruby/2.5.0/bin\", \"/home/jwestrob/bin/OPERA-MS\", \"/home/jwestrob/bin/canu/build/bin\", \"/home/jwestrob/bin/bedtools2/bin\", \"/home/jwestrob/bin/FeGenie\", \"/home/jwestrob/bin/fetchMG\", \"/home/jwestrob/bin/CONCOCT/scripts\", \"/home/jwestrob/bin/MetaBMF\", \"/home/jwestrob/bin/MyCC\", \"/home/jwestrob/bin/sratoolkit.2.10.8-ubuntu64/bin\", \"/home/jwestrob/bin/salmon-latest_linux_x86_64/bin\", \"/home/jwestrob/bin/trinityrnaseq-v2.11.0\", \"/home/jwestrob/bin/plass/bin\", \"/home/jwestrob/bin/Krona/KronaTools/scripts\", \"/home/jwestrob/sortmerna-4.2.0-Linux/bin\", \"/home/jwestrob/perl5/bin\", \"/home/jwestrob/bin\", \"/shared/software/miniconda3/latest/condabin\", \"/shared/software/bin\", \"/usr/local/sbin\", \"/usr/local/bin\", \"/usr/sbin\", \"/usr/bin\", \"/sbin\", \"/bin\", \"/usr/games\", \"/usr/local/games\", \"/snap/bin\", \"/home/jwestrob/bin/mfold/bin\"], \"cwd\": \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs\", \"executables\": {\"adf\": null, \"ams\": null, \"cp2k\": null, \"cp2k.popt\": null, \"cp2k.psmp\": null, \"cp2k.sopt\": null, \"cp2k.ssmp\": null, \"lmod\": null, \"modulecmd\": null, \"orca\": \"/home/jwestrob/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca\", \"psi4\": null, \"qchem\": null, \"qchem.exe\": null, \"qcprog.exe\": null}, \"host\": \"biotite\", \"license_related_environment_names_only\": [], \"specific_environment_name_presence\": {\"LMOD_CMD\": false, \"MODULEPATH\": false, \"QC\": false, \"QCAUX\": false, \"QCLOCALSCR\": false, \"QCSCRATCH\": false}}\n",
+      "timestamp_UTC": "2026-10-23T19:29:05.270310+00:00"
+    },
+    {
+      "command_argv": [
+        "/home/jwestrob/.pyenv/versions/3.12.0/bin/python",
+        "-c",
+        "import json,re\nfrom pathlib import Path\nroots=['/opt','/usr/local','/usr/local/bin','/usr/local/lib','/usr/local/share','/usr/share','/etc/profile.d','/apps','/software','/share','/groups/banfield/software','/groups/banfield/modules','/groups/banfield/users/jwestrob','/groups/banfield/users/jwestrob/bin','/groups/banfield/users/jwestrob/envs','/home/jwestrob','/home/jwestrob/.local/bin','/home/jwestrob/miniconda3/bin','/home/jwestrob/miniconda3/envs','/home/jwestrob/.pyenv/versions/3.12.0/bin']\nrx=re.compile(r'(q[-_]?chem|qcprog|cp2k|psi4|^adf$|^ams$|orca|lmod|^modules?$)',re.I)\nout=[]\nfor s in roots:\n p=Path(s); r={'path':s,'exists':p.exists(),'is_directory':p.is_dir(),'inspection':'immediate names only; no recursive scan'}\n if p.is_dir():\n  try:\n   entries=list(p.iterdir()); r['immediate_entry_count']=len(entries)\n   r['candidate_names']=[{'path':str(x),'is_directory':x.is_dir(),'is_symlink':x.is_symlink(),'resolved':str(x.resolve())} for x in sorted(entries) if rx.search(x.name)]\n  except OSError as e:r['error']=type(e).__name__\n out.append(r)\nexplicit=['/opt/qchem','/usr/local/qchem','/usr/local/lib/qchem','/etc/profile.d/modules.sh','/usr/share/lmod/lmod/init/bash','/usr/share/Modules/init/bash','/usr/share/modules/modulefiles','/etc/modulefiles']\nprint(json.dumps({'roots':out,'explicit_path_presence':{s:Path(s).exists() for s in explicit}},sort_keys=True))"
+      ],
+      "label": "bounded_immediate_install_and_module_roots",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"explicit_path_presence\": {\"/etc/modulefiles\": false, \"/etc/profile.d/modules.sh\": false, \"/opt/qchem\": false, \"/usr/local/lib/qchem\": false, \"/usr/local/qchem\": false, \"/usr/share/Modules/init/bash\": false, \"/usr/share/lmod/lmod/init/bash\": false, \"/usr/share/modules/modulefiles\": false}, \"roots\": [{\"candidate_names\": [], \"exists\": true, \"immediate_entry_count\": 4, \"inspection\": \"immediate names only; no recursive scan\", \"is_directory\": true, \"path\": \"/opt\"}, {\"candidate_names\": [], \"exists\": true, \"immediate_entry_count\": 20, \"inspection\": \"immediate names only; no recursive scan\", \"is_directory\": true, \"path\": \"/usr/local\"}, {\"candidate_names\": [], \"exists\": true, \"immediate_entry_count\": 111, \"inspection\": \"immediate names only; no recursive scan\", \"is_directory\": true, \"path\": \"/usr/local/bin\"}, {\"candidate_names\": [], \"exists\": true, \"immediate_entry_count\": 10, \"inspection\": \"immediate names only; no recursive scan\", \"is_directory\": true, \"path\": \"/usr/local/lib\"}, {\"candidate_names\": [], \"exists\": true, \"immediate_entry_count\": 13, \"inspection\": \"immediate names only; no recursive scan\", \"is_directory\": true, \"path\": \"/usr/local/share\"}, {\"candidate_names\": [], \"exists\": true, \"immediate_entry_count\": 232, \"inspection\": \"immediate names only; no recursive scan\", \"is_directory\": true, \"path\": \"/usr/share\"}, {\"candidate_names\": [], \"exists\": true, \"immediate_entry_count\": 10, \"inspection\": \"immediate names only; no recursive scan\", \"is_directory\": true, \"path\": \"/etc/profile.d\"}, {\"exists\": false, \"inspection\": \"immediate names only; no recursive scan\", \"is_directory\": false, \"path\": \"/apps\"}, {\"exists\": false, \"inspection\": \"immediate names only; no recursive scan\", \"is_directory\": false, \"path\": \"/software\"}, {\"exists\": false, \"inspection\": \"immediate names only; no recursive scan\", \"is_directory\": false, \"path\": \"/share\"}, {\"candidate_names\": [], \"exists\": true, \"immediate_entry_count\": 3, \"inspection\": \"immediate names only; no recursive scan\", \"is_directory\": true, \"path\": \"/groups/banfield/software\"}, {\"exists\": false, \"inspection\": \"immediate names only; no recursive scan\", \"is_directory\": false, \"path\": \"/groups/banfield/modules\"}, {\"candidate_names\": [], \"exists\": true, \"immediate_entry_count\": 160, \"inspection\": \"immediate names only; no recursive scan\", \"is_directory\": true, \"path\": \"/groups/banfield/users/jwestrob\"}, {\"candidate_names\": [{\"is_directory\": true, \"is_symlink\": false, \"path\": \"/groups/banfield/users/jwestrob/bin/ORCA\", \"resolved\": \"/groups/banfield/users/jwestrob/bin/ORCA\"}], \"exists\": true, \"immediate_entry_count\": 122, \"inspection\": \"immediate names only; no recursive scan\", \"is_directory\": true, \"path\": \"/groups/banfield/users/jwestrob/bin\"}, {\"candidate_names\": [], \"exists\": true, \"immediate_entry_count\": 2, \"inspection\": \"immediate names only; no recursive scan\", \"is_directory\": true, \"path\": \"/groups/banfield/users/jwestrob/envs\"}, {\"candidate_names\": [], \"exists\": true, \"immediate_entry_count\": 99, \"inspection\": \"immediate names only; no recursive scan\", \"is_directory\": true, \"path\": \"/home/jwestrob\"}, {\"candidate_names\": [], \"exists\": true, \"immediate_entry_count\": 17, \"inspection\": \"immediate names only; no recursive scan\", \"is_directory\": true, \"path\": \"/home/jwestrob/.local/bin\"}, {\"candidate_names\": [], \"exists\": true, \"immediate_entry_count\": 172, \"inspection\": \"immediate names only; no recursive scan\", \"is_directory\": true, \"path\": \"/home/jwestrob/miniconda3/bin\"}, {\"candidate_names\": [], \"exists\": true, \"immediate_entry_count\": 13, \"inspection\": \"immediate names only; no recursive scan\", \"is_directory\": true, \"path\": \"/home/jwestrob/miniconda3/envs\"}, {\"candidate_names\": [], \"exists\": true, \"immediate_entry_count\": 163, \"inspection\": \"immediate names only; no recursive scan\", \"is_directory\": true, \"path\": \"/home/jwestrob/.pyenv/versions/3.12.0/bin\"}]}\n",
+      "timestamp_UTC": "2026-10-23T19:29:05.392636+00:00"
+    },
+    {
+      "command_argv": [
+        "/home/jwestrob/.pyenv/versions/3.12.0/bin/python",
+        "-c",
+        "import json,os\nfrom pathlib import Path\nnames=['qchem','qchem.exe','qcprog.exe','cp2k','cp2k.psmp','cp2k.ssmp','cp2k.popt','cp2k.sopt','psi4','adf','ams','orca']\nout=[]\nfor root in ['/groups/banfield/users/jwestrob/envs','/home/jwestrob/miniconda3/envs']:\n p=Path(root)\n if p.is_dir():\n  for d in sorted(p.iterdir()):\n   if d.is_dir():\n    b=d/'bin'; out.append({'environment':str(d),'bin_exists':b.is_dir(),'candidates':[{'path':str(b/n),'resolved':str((b/n).resolve()),'executable':os.access(b/n,os.X_OK)} for n in names if (b/n).exists()]})\nprint(json.dumps(out,sort_keys=True))"
+      ],
+      "label": "known_environment_bin_executables",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "[{\"bin_exists\": true, \"candidates\": [], \"environment\": \"/groups/banfield/users/jwestrob/envs/aksha\"}, {\"bin_exists\": true, \"candidates\": [], \"environment\": \"/groups/banfield/users/jwestrob/envs/srvp_callers\"}, {\"bin_exists\": true, \"candidates\": [], \"environment\": \"/home/jwestrob/miniconda3/envs/aster\"}, {\"bin_exists\": true, \"candidates\": [], \"environment\": \"/home/jwestrob/miniconda3/envs/casanovo\"}, {\"bin_exists\": true, \"candidates\": [], \"environment\": \"/home/jwestrob/miniconda3/envs/deepripp\"}, {\"bin_exists\": true, \"candidates\": [], \"environment\": \"/home/jwestrob/miniconda3/envs/elsa\"}, {\"bin_exists\": true, \"candidates\": [], \"environment\": \"/home/jwestrob/miniconda3/envs/esmfold\"}, {\"bin_exists\": true, \"candidates\": [], \"environment\": \"/home/jwestrob/miniconda3/envs/fastme\"}, {\"bin_exists\": true, \"candidates\": [], \"environment\": \"/home/jwestrob/miniconda3/envs/fep\"}, {\"bin_exists\": true, \"candidates\": [], \"environment\": \"/home/jwestrob/miniconda3/envs/folding-pipeline\"}, {\"bin_exists\": true, \"candidates\": [], \"environment\": \"/home/jwestrob/miniconda3/envs/kalign\"}, {\"bin_exists\": true, \"candidates\": [], \"environment\": \"/home/jwestrob/miniconda3/envs/lanm_bench\"}, {\"bin_exists\": true, \"candidates\": [], \"environment\": \"/home/jwestrob/miniconda3/envs/metacerberus\"}, {\"bin_exists\": true, \"candidates\": [], \"environment\": \"/home/jwestrob/miniconda3/envs/proteowizard\"}]\n",
+      "timestamp_UTC": "2026-10-23T19:29:05.509705+00:00"
+    },
+    {
+      "command_argv": [
+        "/home/jwestrob/.pyenv/versions/3.12.0/bin/python",
+        "-c",
+        "import json,re\nfrom pathlib import Path\nout=[]\nfor s in ['/home/jwestrob/.bashrc','/home/jwestrob/.bash_profile','/home/jwestrob/.profile','/home/jwestrob/.zshenv','/etc/profile']:\n p=Path(s); r={'path':s,'exists':p.is_file()}\n if p.is_file():\n  lines=p.read_text(errors='replace').splitlines()\n  r['QChem_related_line_count']=sum(bool(re.search(r'qchem|q-chem|qcenv|QCAUX|QCSCRATCH',x,re.I)) for x in lines)\n  r['contents_disclosed']=False\n out.append(r)\nprint(json.dumps(out,sort_keys=True))"
+      ],
+      "label": "startup_QChem_mentions_counts_only",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "[{\"QChem_related_line_count\": 0, \"contents_disclosed\": false, \"exists\": true, \"path\": \"/home/jwestrob/.bashrc\"}, {\"exists\": false, \"path\": \"/home/jwestrob/.bash_profile\"}, {\"QChem_related_line_count\": 0, \"contents_disclosed\": false, \"exists\": true, \"path\": \"/home/jwestrob/.profile\"}, {\"QChem_related_line_count\": 0, \"contents_disclosed\": false, \"exists\": true, \"path\": \"/home/jwestrob/.zshenv\"}, {\"QChem_related_line_count\": 0, \"contents_disclosed\": false, \"exists\": true, \"path\": \"/etc/profile\"}]\n",
+      "timestamp_UTC": "2026-10-23T19:29:05.606115+00:00"
+    },
+    {
+      "command_argv": [
+        "/home/jwestrob/.pyenv/versions/3.12.0/bin/python",
+        "-c",
+        "import hashlib,json,os,re,shutil\nfrom pathlib import Path\nout={'archived_assets':[]}\np=Path('workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/common_basis_decomposition_v1/prepared_v1/assets')\nfor metal,Z in [('La',57),('Dy',66)]:\n f=p/(metal+'_basis.inc'); raw=f.read_bytes(); s=raw.decode(); ne=int(re.search(r'N_core\\s+(\\d+)',s).group(1)); ec=s.split('end',1)[0]\n out['archived_assets'].append({'path':str(f.resolve()),'sha256':hashlib.sha256(raw).hexdigest(),'metal':metal,'core_electrons':ne,'effective_nuclear_charge':Z-ne,'M3plus_explicit_electrons':Z-ne-3,'lmax':re.search(r'lmax\\s+(\\w+)',ec).group(1),'ecp_component_counts':re.findall(r'^\\s+([spdfg])\\s+(\\d+)\\s*$',ec,re.M),'ecp_radial_power_tokens':sorted(set(x.split()[-1] for x in ec.splitlines() if re.match(r'^\\s+\\d+\\s+',x))),'orbital_shell_types':sorted(set(re.findall(r'^\\s+([SPDFG])\\s+\\d+\\s*$',s.split('NewGTO',1)[1],re.M)))})\nf=Path(shutil.which('orca')); st=f.stat()\nout['orca']={'PATH_path':str(f),'resolved_path':str(f.resolve()),'executable':os.access(f,os.X_OK),'size_bytes':st.st_size,'mtime_ns':st.st_mtime_ns,'version_evidence':'installation directory name orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg; binary not invoked','license_entitlement_checked':False}\nprint(json.dumps(out,sort_keys=True))"
+      ],
+      "label": "archived_ECP_basis_identity_and_ORCA_install_metadata",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"archived_assets\": [{\"M3plus_explicit_electrons\": 8, \"core_electrons\": 46, \"ecp_component_counts\": [[\"s\", \"2\"], [\"p\", \"2\"], [\"d\", \"2\"], [\"f\", \"1\"], [\"g\", \"1\"]], \"ecp_radial_power_tokens\": [\"2\"], \"effective_nuclear_charge\": 11, \"lmax\": \"g\", \"metal\": \"La\", \"orbital_shell_types\": [\"D\", \"F\", \"P\", \"S\"], \"path\": \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/common_basis_decomposition_v1/prepared_v1/assets/La_basis.inc\", \"sha256\": \"c5298b309b2d897e5de59ddb6b4c7992913dd8cba18b7cd21f9757ce09b167d3\"}, {\"M3plus_explicit_electrons\": 8, \"core_electrons\": 55, \"ecp_component_counts\": [[\"s\", \"2\"], [\"p\", \"2\"], [\"d\", \"2\"], [\"f\", \"1\"], [\"g\", \"1\"]], \"ecp_radial_power_tokens\": [\"2\"], \"effective_nuclear_charge\": 11, \"lmax\": \"g\", \"metal\": \"Dy\", \"orbital_shell_types\": [\"D\", \"F\", \"P\", \"S\"], \"path\": \"/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/common_basis_decomposition_v1/prepared_v1/assets/Dy_basis.inc\", \"sha256\": \"87bb209a42eca365c93d8f69088a57371285623a1d4afa1c1336390279fafb20\"}], \"orca\": {\"PATH_path\": \"/home/jwestrob/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca\", \"executable\": true, \"license_entitlement_checked\": false, \"mtime_ns\": 1764848499000000000, \"resolved_path\": \"/groups/banfield/users/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca\", \"size_bytes\": 36334176, \"version_evidence\": \"installation directory name orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg; binary not invoked\"}}\n",
+      "timestamp_UTC": "2026-10-23T19:29:05.684680+00:00"
+    }
+  ],
+  "conclusion_limit": "Not located/verified in this bounded biotite/account inspection. Does not establish absence on other shared roots, machines, campus systems or within institutional licensing.",
+  "finished_UTC": "2026-10-23T19:36:04.940840+00:00",
+  "host": "biotite",
+  "host_and_environment": {
+    "PATH_directories": [
+      "/home/jwestrob/.local/codex/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path",
+      "/home/jwestrob/.codex/tmp/arg0/codex-arg0Tirore",
+      "/home/jwestrob/.local/codex/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path",
+      "/home/jwestrob/.nvm/versions/node/v22.23.1/bin",
+      "/home/jwestrob/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg",
+      "/usr/local/cuda-12.5/bin",
+      "/usr/local/cuda-12.5/nvvm/bin",
+      "/home/jwestrob/bin/bowtie-1.3.1-linux-x86_64",
+      "/home/jwestrob/jwestrob/bin/mmseqs/mmseqs/bin",
+      "/home/jwestrob/bin/iqtree-2.0-rc1-Linux/bin",
+      "/home/jwestrob/.pyenv/plugins/pyenv-virtualenv/shims",
+      "/home/jwestrob/.pyenv/shims",
+      "/home/jwestrob/.pyenv/bin",
+      "/home/jwestrob/ftdmp",
+      "/home/jwestrob/perl_modules/bin",
+      "/usr/bin",
+      "/home/jwestrob/bin/bvbrc_cli/usr/share",
+      "/home/jwestrob/bin/valgrind/bin",
+      "/home/jwestrob/bin/bvbrc_cli/usr/bin",
+      "/home/jwestrob/EastRiver/hillslope/Foldseek/foldseek/bin",
+      "/home/jwestrob/bin/R-4.2.2/bin",
+      "/home/jwestrob/jwestrob/bin/iupred3",
+      "/home/jwestrob/jwestrob/bin/eggnog-mapper-2.1.9",
+      "/home/jwestrob/meme/bin",
+      "/home/jwestrob/meme/libexec/meme-5.4.1",
+      "/home/jwestrob/bin/colabfold_batch/bin",
+      "/home/jwestrob/jwestrob/bin/infernal-1.1.2/src",
+      "/home/jwestrob/jwestrob/bin/rust-mdbg/target/release",
+      "/home/jwestrob/jwestrob/bin/gfatools",
+      "/home/jwestrob/.local/bin",
+      "/home/jwestrob/.cargo/bin",
+      "/home/jwestrob/.cargo/bin",
+      "/home/jwestrob/.gem/ruby/2.5.0/bin",
+      "/home/jwestrob/bin/OPERA-MS",
+      "/home/jwestrob/bin/canu/build/bin",
+      "/home/jwestrob/bin/bedtools2/bin",
+      "/home/jwestrob/bin/FeGenie",
+      "/home/jwestrob/bin/fetchMG",
+      "/home/jwestrob/bin/CONCOCT/scripts",
+      "/home/jwestrob/bin/MetaBMF",
+      "/home/jwestrob/bin/MyCC",
+      "/home/jwestrob/bin/sratoolkit.2.10.8-ubuntu64/bin",
+      "/home/jwestrob/bin/salmon-latest_linux_x86_64/bin",
+      "/home/jwestrob/bin/trinityrnaseq-v2.11.0",
+      "/home/jwestrob/bin/plass/bin",
+      "/home/jwestrob/bin/Krona/KronaTools/scripts",
+      "/home/jwestrob/sortmerna-4.2.0-Linux/bin",
+      "/home/jwestrob/perl5/bin",
+      "/home/jwestrob/bin",
+      "/shared/software/miniconda3/latest/condabin",
+      "/shared/software/bin",
+      "/usr/local/sbin",
+      "/usr/local/bin",
+      "/usr/sbin",
+      "/usr/bin",
+      "/sbin",
+      "/bin",
+      "/usr/games",
+      "/usr/local/games",
+      "/snap/bin",
+      "/home/jwestrob/bin/mfold/bin"
+    ],
+    "cwd": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs",
+    "executables": {
+      "adf": null,
+      "ams": null,
+      "cp2k": null,
+      "cp2k.popt": null,
+      "cp2k.psmp": null,
+      "cp2k.sopt": null,
+      "cp2k.ssmp": null,
+      "lmod": null,
+      "modulecmd": null,
+      "orca": "/home/jwestrob/jwestrob/bin/ORCA/orca_6_1_1_linux_x86-64_shared_openmpi418_nodmrg/orca",
+      "psi4": null,
+      "qchem": null,
+      "qchem.exe": null,
+      "qcprog.exe": null
+    },
+    "host": "biotite",
+    "license_related_environment_names_only": [],
+    "specific_environment_name_presence": {
+      "LMOD_CMD": false,
+      "MODULEPATH": false,
+      "QC": false,
+      "QCAUX": false,
+      "QCLOCALSCR": false,
+      "QCSCRATCH": false
+    }
+  },
+  "known_environment_bins": [
+    {
+      "bin_exists": true,
+      "candidates": [],
+      "environment": "/groups/banfield/users/jwestrob/envs/aksha"
+    },
+    {
+      "bin_exists": true,
+      "candidates": [],
+      "environment": "/groups/banfield/users/jwestrob/envs/srvp_callers"
+    },
+    {
+      "bin_exists": true,
+      "candidates": [],
+      "environment": "/home/jwestrob/miniconda3/envs/aster"
+    },
+    {
+      "bin_exists": true,
+      "candidates": [],
+      "environment": "/home/jwestrob/miniconda3/envs/casanovo"
+    },
+    {
+      "bin_exists": true,
+      "candidates": [],
+      "environment": "/home/jwestrob/miniconda3/envs/deepripp"
+    },
+    {
+      "bin_exists": true,
+      "candidates": [],
+      "environment": "/home/jwestrob/miniconda3/envs/elsa"
+    },
+    {
+      "bin_exists": true,
+      "candidates": [],
+      "environment": "/home/jwestrob/miniconda3/envs/esmfold"
+    },
+    {
+      "bin_exists": true,
+      "candidates": [],
+      "environment": "/home/jwestrob/miniconda3/envs/fastme"
+    },
+    {
+      "bin_exists": true,
+      "candidates": [],
+      "environment": "/home/jwestrob/miniconda3/envs/fep"
+    },
+    {
+      "bin_exists": true,
+      "candidates": [],
+      "environment": "/home/jwestrob/miniconda3/envs/folding-pipeline"
+    },
+    {
+      "bin_exists": true,
+      "candidates": [],
+      "environment": "/home/jwestrob/miniconda3/envs/kalign"
+    },
+    {
+      "bin_exists": true,
+      "candidates": [],
+      "environment": "/home/jwestrob/miniconda3/envs/lanm_bench"
+    },
+    {
+      "bin_exists": true,
+      "candidates": [],
+      "environment": "/home/jwestrob/miniconda3/envs/metacerberus"
+    },
+    {
+      "bin_exists": true,
+      "candidates": [],
+      "environment": "/home/jwestrob/miniconda3/envs/proteowizard"
+    }
+  ],
+  "minimum_missing_assets": [
+    "Q-Chem route: exact accessible compatible executable/version and existing license entitlement for intended host/nodes, without sharing credentials.",
+    "CP2K route: an accessible pinned build with native ALMO/HFX/semilocal integrals, AND a documented exact-ECP55 input route or separately authorized resolution of the stock parser restriction. Installing stock CP2K alone does not remove this restriction."
+  ],
+  "next_scientific_prerequisite_after_access": "Root-owned exact quartet translation and fixed ALMO variant/fragment/BSSE/D4 convention, with source review and explicitly declared numerical checks. This record authorizes no calculation.",
+  "revision_history": [
+    {
+      "SOFTWARE_ACCESS_json_sha256": "ddcae033b6d3c424ac7201dcb9d76f72a2b90993fe6135d55018ed0bc6d6c2ce",
+      "SOFTWARE_ACCESS_txt_sha256": "379fa69dbc3cee17b3fd5986951c42d9b55e5780161b301c2c5cbb52da9261d6",
+      "scope": "Initial bounded installation inspection; preserved commands/results below. Superseded method-alternative assessment by explicit CP2K source follow-up.",
+      "timestamp_UTC": "2026-10-23T19:29:05.778661+00:00"
+    }
+  ],
+  "schema": "bounded_almo_software_access_v1",
+  "scope": "Read-only revalidation of PATH, explicit module/install paths, immediate install names and exact executable names within known own environments. No recursive filesystem or campus-wide survey.",
+  "source_inspection_method": {
+    "command_pattern": [
+      "/home/jwestrob/.pyenv/versions/3.12.0/bin/python",
+      "-c",
+      "urllib.request.urlopen(exact public URL).read(); hashlib.sha256(bytes); inspect stated source lines"
+    ],
+    "notes": "Scoped source directories/tests were inspected; no code from the fetched source was imported or executed. First alternate guesses of filename returned HTTP404 and caused no writes. Stable ECP parser hashes: v2026.2=v2026.1 1a91f3c5da4403c62db24d37cad13aa47873459d61d9f64899697e82121c3ee9; v2025.2 b44c37c6623ef7cdd51dcced0af5c9b49039b749455f7f7250a60a387cf31f5f.",
+    "only_public_source_reads": true,
+    "source_files": [
+      {
+        "access": "read public source into memory; no source written/compiled/executed",
+        "commit": "62906da87cd0e92000c341d4500e1ed4a5a6af9c",
+        "path": "src/almo_scf.F",
+        "sha256": "34aedcdc16214ce5379dd4f34f12a22395260250431b60c41ae78c4e1c71e16b",
+        "size_bytes": 139135,
+        "url": "https://raw.githubusercontent.com/cp2k/cp2k/62906da87cd0e92000c341d4500e1ed4a5a6af9c/src/almo_scf.F"
+      },
+      {
+        "access": "read public source into memory; no source written/compiled/executed",
+        "commit": "62906da87cd0e92000c341d4500e1ed4a5a6af9c",
+        "path": "src/almo_scf_qs.F",
+        "sha256": "84295201580f258f34d5ba939657930f58b2dea46d7fbf76852d5753e04a7ec5",
+        "size_bytes": 71727,
+        "url": "https://raw.githubusercontent.com/cp2k/cp2k/62906da87cd0e92000c341d4500e1ed4a5a6af9c/src/almo_scf_qs.F"
+      },
+      {
+        "access": "read public source into memory; no source written/compiled/executed",
+        "commit": "62906da87cd0e92000c341d4500e1ed4a5a6af9c",
+        "path": "src/mscfg_methods.F",
+        "sha256": "7c1b9883508aefb8ffd99da221e67f14fca32b21ebffe0175ace570fded33fc7",
+        "size_bytes": 24987,
+        "url": "https://raw.githubusercontent.com/cp2k/cp2k/62906da87cd0e92000c341d4500e1ed4a5a6af9c/src/mscfg_methods.F"
+      },
+      {
+        "access": "read public source into memory; no source written/compiled/executed",
+        "commit": "62906da87cd0e92000c341d4500e1ed4a5a6af9c",
+        "path": "src/qs_ks_methods.F",
+        "sha256": "f594a10b0ea2a4375baea3c7121e8c4f1c0e39f211a232d0b0b6fa4b70764cbc",
+        "size_bytes": 99073,
+        "url": "https://raw.githubusercontent.com/cp2k/cp2k/62906da87cd0e92000c341d4500e1ed4a5a6af9c/src/qs_ks_methods.F"
+      },
+      {
+        "access": "read public source into memory; no source written/compiled/executed",
+        "commit": "62906da87cd0e92000c341d4500e1ed4a5a6af9c",
+        "path": "src/qs_kind_types.F",
+        "sha256": "0f451da816aa6f07cb8b30ab0f0cc8bee18083365f8881d32de2cff2a2206123",
+        "size_bytes": 201882,
+        "url": "https://raw.githubusercontent.com/cp2k/cp2k/62906da87cd0e92000c341d4500e1ed4a5a6af9c/src/qs_kind_types.F"
+      },
+      {
+        "access": "read public source into memory; no source written/compiled/executed",
+        "commit": "62906da87cd0e92000c341d4500e1ed4a5a6af9c",
+        "path": "src/atom_types.F",
+        "sha256": "01e437ef4cd54e7d77a48ac5053cd2532da62558482278785dab09094f155182",
+        "size_bytes": 127253,
+        "url": "https://raw.githubusercontent.com/cp2k/cp2k/62906da87cd0e92000c341d4500e1ed4a5a6af9c/src/atom_types.F"
+      },
+      {
+        "access": "read public source into memory; no source written/compiled/executed",
+        "commit": "62906da87cd0e92000c341d4500e1ed4a5a6af9c",
+        "path": "src/input_cp2k_almo.F",
+        "sha256": "d661bc2549e6bb45cddedf51f0de197aa727f54fb1f73008e74c94a039643fab",
+        "size_bytes": 61213,
+        "url": "https://raw.githubusercontent.com/cp2k/cp2k/62906da87cd0e92000c341d4500e1ed4a5a6af9c/src/input_cp2k_almo.F"
+      },
+      {
+        "access": "read public source into memory; no source written/compiled/executed",
+        "commit": "67b5da876dd6a76b8b021d5a04d1c81ba79a4c50",
+        "path": "src/atom_types.F",
+        "sha256": "1a91f3c5da4403c62db24d37cad13aa47873459d61d9f64899697e82121c3ee9",
+        "size_bytes": 124748,
+        "url": "https://raw.githubusercontent.com/cp2k/cp2k/67b5da876dd6a76b8b021d5a04d1c81ba79a4c50/src/atom_types.F"
+      },
+      {
+        "access": "read public source into memory; no source written/compiled/executed",
+        "commit": "67b5da876dd6a76b8b021d5a04d1c81ba79a4c50",
+        "path": "CMakeLists.txt",
+        "sha256": "147aaf86596e26e39ce857b62b357f241b59b894b02c5f2dc47476ba58c860b5",
+        "size_bytes": 47269,
+        "url": "https://raw.githubusercontent.com/cp2k/cp2k/67b5da876dd6a76b8b021d5a04d1c81ba79a4c50/CMakeLists.txt"
+      },
+      {
+        "access": "read public source into memory; no source written/compiled/executed",
+        "commit": "67b5da876dd6a76b8b021d5a04d1c81ba79a4c50",
+        "path": "src/CMakeLists.txt",
+        "sha256": "6f95a743974942ef15f898480ea46d60954a5e640d6b7206cfc056c664573573",
+        "size_bytes": 57499,
+        "url": "https://raw.githubusercontent.com/cp2k/cp2k/67b5da876dd6a76b8b021d5a04d1c81ba79a4c50/src/CMakeLists.txt"
+      },
+      {
+        "access": "read public source into memory; no source written/compiled/executed",
+        "commit": "67b5da876dd6a76b8b021d5a04d1c81ba79a4c50",
+        "path": "src/libgrpp_integrals.F",
+        "sha256": "913d57380608ad29dad18831e987dc8c60993aaccaa59045ddcc7e6976896eb7",
+        "size_bytes": 37400,
+        "url": "https://raw.githubusercontent.com/cp2k/cp2k/67b5da876dd6a76b8b021d5a04d1c81ba79a4c50/src/libgrpp_integrals.F"
+      },
+      {
+        "access": "read public source into memory; no source written/compiled/executed",
+        "commit": "62906da87cd0e92000c341d4500e1ed4a5a6af9c",
+        "path": "LICENSE",
+        "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+        "size_bytes": 18092,
+        "url": "https://raw.githubusercontent.com/cp2k/cp2k/62906da87cd0e92000c341d4500e1ed4a5a6af9c/LICENSE"
+      }
+    ]
+  },
+  "started_UTC": "2026-10-23T19:29:05.270265+00:00",
+  "startup_mentions": [
+    {
+      "QChem_related_line_count": 0,
+      "contents_disclosed": false,
+      "exists": true,
+      "path": "/home/jwestrob/.bashrc"
+    },
+    {
+      "exists": false,
+      "path": "/home/jwestrob/.bash_profile"
+    },
+    {
+      "QChem_related_line_count": 0,
+      "contents_disclosed": false,
+      "exists": true,
+      "path": "/home/jwestrob/.profile"
+    },
+    {
+      "QChem_related_line_count": 0,
+      "contents_disclosed": false,
+      "exists": true,
+      "path": "/home/jwestrob/.zshenv"
+    },
+    {
+      "QChem_related_line_count": 0,
+      "contents_disclosed": false,
+      "exists": true,
+      "path": "/etc/profile"
+    }
+  ],
+  "status": "no_local_ALMO_runtime_verified_CP2K_stock_Dy55_parser_blocker_identified",
+  "web_checks": {
+    "manual_find": {
+      "pattern": "ALMO",
+      "result": "No matching text found in accessed manual contents page",
+      "url": "https://www.faccts.de/docs/orca/6.1/manual/"
+    },
+    "queries": [
+      "site.faccts.de/docs/orca/6.1/manual \"ALMO\"",
+      "site.faccts.de/docs/orca/6.1/manual \"Energy Decomposition\""
+    ],
+    "sources": [
+      {
+        "reviewed": "2026-10-23",
+        "supports": "Native ALMO-EDA2 driver and variant/fragment/BSSE controls. EDA2=1 is generally recommended while default EDA2=2 differs; future protocol must explicitly choose.",
+        "title": "Q-Chem 6.4: Job Control for EDA2",
+        "url": "https://manual.q-chem.com/6.4/sect_eda2_job.html"
+      },
+      {
+        "reviewed": "2026-10-23",
+        "supports": "ECP GEN/BASIS GEN accept user orbital and semilocal ECP data; components local then projected channels, with explicit radial-power convention. Supports input representability, not this unexecuted quartet.",
+        "title": "Q-Chem 6.4: User-Defined ECPs",
+        "url": "https://manual.q-chem.com/6.4/subsec_ECP-userdef.html"
+      },
+      {
+        "reviewed": "2026-10-23",
+        "supports": "Documented Ba(CO)+ ALMO-EDA example uses an ECP, establishing EDA/ECP coexistence. No non-Aufbau change is proposed for the archived effective singlets.",
+        "title": "Q-Chem 6.4: ALMO-EDA with Non-Aufbau Electronic Configurations",
+        "url": "https://manual.q-chem.com/6.4/sect_eda2_non_aufbau.html"
+      },
+      {
+        "reviewed": "2026-10-23",
+        "supports": "Execution requires encrypted license with node-locked or FlexNet coverage. No local license credential was opened and no entitlement was established.",
+        "title": "Q-Chem: Downloading and Licensing",
+        "url": "https://manual.q-chem.com/latest/Ch2.S1.SS1.html"
+      },
+      {
+        "reviewed": "2026-10-23",
+        "supports": "Contents and page search did not identify ALMO. This negative documentation search alone does not prove absence from every ORCA implementation.",
+        "title": "ORCA 6.1 manual contents",
+        "url": "https://www.faccts.de/docs/orca/6.1/manual/"
+      },
+      {
+        "reviewed": "2026-10-23",
+        "supports": "Documents ETS-NOCV, whose orbital relaxation contribution is not a documented ALMO no-charge-transfer constrained polarization calculation; not accepted as a substitute.",
+        "title": "ORCA 6.1: ETS-NOCV/EDA-NOCV",
+        "url": "https://www.faccts.de/docs/orca/6.1/manual/contents/spectroscopyproperties/nocv.html"
+      },
+      {
+        "reviewed": "2026-10-23",
+        "supports": "Documents DLPNO-CCSD(T) LED, not the requested PBE0 ALMO decomposition; not accepted as a substitute.",
+        "title": "ORCA 6.1: Local Energy Decomposition",
+        "url": "https://www.faccts.de/docs/orca/6.1/manual/contents/spectroscopyproperties/led.html"
+      },
+      {
+        "reviewed": "2026-10-23",
+        "supports": "Native block-local ALMO and FULL_SCF versus approximate XALMO options.",
+        "title": "CP2K ALMO_SCF",
+        "url": "https://manual.cp2k.org/trunk/CP2K_INPUT/FORCE_EVAL/DFT/ALMO_SCF.html"
+      },
+      {
+        "reviewed": "2026-10-23",
+        "supports": "Explicit charged-fragment caveat for SUBLATTICE frozen-reference term.",
+        "title": "CP2K ALMO ANALYSIS",
+        "url": "https://manual.cp2k.org/trunk/CP2K_INPUT/FORCE_EVAL/DFT/ALMO_SCF/ANALYSIS.html"
+      },
+      {
+        "reviewed": "2026-10-23",
+        "supports": "Custom Gaussian basis selection and original semilocal ECP option.",
+        "title": "CP2K KIND",
+        "url": "https://manual.cp2k.org/trunk/CP2K_INPUT/FORCE_EVAL/SUBSYS/KIND.html"
+      },
+      {
+        "reviewed": "2026-10-23",
+        "supports": "PBE0 exact-exchange hybrids and ALMO-SCF are documented; feature coexistence alone is not combined qualification.",
+        "title": "CP2K features",
+        "url": "https://www.cp2k.org/features"
+      }
+    ]
+  }
+}

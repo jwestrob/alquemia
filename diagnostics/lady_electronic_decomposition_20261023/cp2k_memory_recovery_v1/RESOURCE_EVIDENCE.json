@@ -1,0 +1,36 @@
+{
+  "observed_utc": "2026-10-23T21:19:43.552448+00:00",
+  "commands": [
+    {
+      "argv": [
+        "sacctmgr",
+        "-n",
+        "-P",
+        "show",
+        "qos",
+        "standard_expand",
+        "format=Name,MaxTRESPerJob,MaxTRESPerUser,MaxWall,Flags"
+      ],
+      "stdout": "standard_expand|cpu=24,mem=100T|cpu=500,mem=100T|5-00:00:00|DenyOnLimit,OverPartQOS\n"
+    },
+    {
+      "argv": [
+        "scontrol",
+        "show",
+        "job",
+        "21618"
+      ],
+      "stdout": "JobId=21618 JobName=lady-almo-aquo8_central_La\n   UserId=jwestrob(601) GroupId=jwestrob(601) MCS_label=N/A\n   Priority=1 Nice=0 Account=banfield QOS=standard_expand\n   JobState=OUT_OF_MEMORY Reason=OutOfMemory Dependency=(null)\n   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:125\n   RunTime=00:02:06 TimeLimit=5-00:00:00 TimeMin=N/A\n   SubmitTime=2026-10-23T14:14:35 EligibleTime=2026-10-23T14:14:35\n   AccrueTime=2026-10-23T14:14:35\n   StartTime=2026-10-23T14:14:36 EndTime=2026-10-23T14:16:42 Deadline=N/A\n   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-23T14:14:36 Scheduler=Main\n   Partition=standard AllocNode:Sid=biotite:266338\n   ReqNodeList=(null) ExcNodeList=(null)\n   NodeList=node-64-768g-14\n   BatchHost=node-64-768g-14\n   NumNodes=1 NumCPUs=24 NumTasks=1 CPUs/Task=24 ReqB:S:C:T=0:0:*:*\n   ReqTRES=cpu=24,mem=96000M,node=1,billing=24\n   AllocTRES=cpu=24,mem=96000M,node=1,billing=24\n   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*\n   MinCPUsNode=24 MinMemoryCPU=4000M MinTmpDiskNode=0\n   Features=(null) DelayBoot=00:00:00\n   OverSubscribe=NO Exclusive=NO Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)\n   Command=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_quartet_v1/tasks/aquo8_central_La/job.sbatch\n   SubmitLine=sbatch --parsable --output /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_quartet_v1/tasks/aquo8_central_La/slurm-%j.out --chdir /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_quartet_v1/tasks/aquo8_central_La /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_quartet_v1/tasks/aquo8_central_La/job.sbatch\n   WorkDir=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_quartet_v1/tasks/aquo8_central_La\n   StdErr=\n   StdIn=/dev/null\n   StdOut=/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_quartet_v1/tasks/aquo8_central_La/slurm-21618.out\n   TresPerTask=cpu=24\n\n"
+    },
+    {
+      "argv": [
+        "sacct",
+        "-j",
+        "21618",
+        "--format=JobID,State,ExitCode,Elapsed,AllocCPUS,MaxRSS",
+        "-P"
+      ],
+      "stdout": "JobID|State|ExitCode|Elapsed|AllocCPUS|MaxRSS\n21618|OUT_OF_MEMORY|0:125|00:02:06|24|\n21618.batch|OUT_OF_MEMORY|0:125|00:02:06|24|98304464K\n"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+1. Ligands by source (25 C, 1:1 complexes, NIST SRD 46 v8)
+   La and Dy at the same ionic strength:            171
+     in the current model (SMILES, I <= 0.5):       101
+     SMILES matched but I > 0.5:                    12
+     PubChem lookup failed (no structure yet):      58
+   a light (La-Nd) and a heavy (Tb-Lu) Ln, same I:  208 (+37 beyond the La/Dy pairs)
+   any Ln log K:                                    338
+
+2. dlogK(Dy-La) for ligands listed at more than one ionic strength
+   33 ligands; median shift 0.09 log, max 0.99 log
+   per-value sd: all 0.21 log = 0.29 kcal; log K_La > 10 (7) 0.42 log = 0.57 kcal
+   This mixes real ionic-strength dependence with between-study scatter: read it as the floor for pooled data.
+
+3. Donor-count model (fit_donors.py features), leave-one-out
+   n 101, sd 1.12 kcal, RMSE 0.85 kcal; the 7 largest residuals carry 63% of the squared error; RMSE on the other 94: 0.54 kcal
+   -4.20 kcal  Triethylenetetranitrilohexaacetic acid (TTHA)
+   +3.21 kcal  trans-1,2-Cyclohexylenedinitrilotetraacetic acid (CDTA)
+   +2.35 kcal  Trimethylenedinitrilotetraacetic acid (TMDTA)
+   +2.23 kcal  Diethylenetrinitrilopentaacetic acid N,N-bis(methylamide) (DTPA-BMA)
+   +2.00 kcal  Oxolane-2,3,4,5-tetracarboxylic acid
+   +1.51 kcal  Diethylenetrinitrilopentaacetic acid (DTPA)
+   +1.43 kcal  Ethylenedinitrilotetraacetic acid (EDTA)
+   (positive = more Dy-selective than predicted)
+
+4. Diamine-N,N,N',N'-tetraacetates among the La/Dy pairs (15): the proposed held-out block
+   lig_id    I  logK_La  logK_Dy  dlogK  donor-model LOO  name
+      599  1.0     3.71     4.70  +0.99     not in model  cis-1,2-Cyclohexylenedinitrilotetraacetic acid
+      602  1.0     7.02     8.41  +1.39     not in model  trans-1,3-Cyclohexylenedinitrilotetraacetic acid
+      614  1.0     7.93     9.57  +1.64     not in model  Hexamethylenedinitrilotetraacetic acid
+      604  1.0     7.30     9.03  +1.73     not in model  trans-1,4-Cyclohexylenedinitrilotetraacetic acid
+      613  0.1     9.20    10.99  +1.79            +1.97  Pentamethylenedinitrilotetraacetic acid
+      603  1.0     7.13     8.96  +1.83     not in model  cis-1,4-Cyclohexylenedinitrilotetraacetic acid
+      597  0.1    16.30    18.20  +1.90     not in model  trans-1,2-Cyclopentylenedinitrilotetraacetic acid
+      601  1.0     6.24     8.18  +1.94     not in model  cis-1,3-Cyclohexylenedinitrilotetraacetic acid
+      621  0.1    14.30    16.27  +1.97     not in model  DL-(Carboxyethylene)dinitrilotetraacetic acid
+      598  1.0    10.83    13.56  +2.73     not in model  trans-1,3-Cyclopentylenedinitrilotetraacetic acid
+      576  0.1    15.36    18.30  +2.94            +1.89  Ethylenedinitrilotetraacetic acid (EDTA)
+      632  0.1    11.61    14.83  +3.22     not in model  (2-Hydroxytrimethylene)dinitrilotetraacetic acid
+     1178  1.0    11.39    14.89  +3.50     not in model  1,2-Phenylenedinitrilotetraacetic acid
+      610  0.1    11.22    14.79  +3.57            +1.85  Trimethylenedinitrilotetraacetic acid (TMDTA)
+      600  0.5    15.24    19.40  +4.16            +1.81  trans-1,2-Cyclohexylenedinitrilotetraacetic acid (CDTA)
+   spread 3.17 log = 4.32 kcal; 4 of 15 are in the current model
+   CDTA (600) at every ionic strength: I=0.5 +4.16, I=1 +3.68

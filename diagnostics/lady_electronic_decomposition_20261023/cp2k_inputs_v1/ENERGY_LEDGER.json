@@ -1,0 +1,1413 @@
+{
+  "status": "complete_saved_archived_energy_ledger",
+  "created_utc": "2026-10-23T21:06:31.213469+00:00",
+  "scope": "Exactly the four archived ALMO-quartet parent outputs; metadata and decimal-token bookkeeping only. No molecular, fragment, grid, fitting or solver calls.",
+  "sources": {
+    "input_provenance": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/PROVENANCE.json",
+      "sha256": "677c759c1045e2d7d5ab2dd05977e4a516ca04ff8d520c40111669eabb452d66"
+    },
+    "input_audit": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/INPUT_AUDIT.json",
+      "sha256": "4c975c1962379dafd9db3ee72374ea82c58d02efbe986630b5c8817cf9023b28"
+    },
+    "matched_comparison_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/matched_water_comparison_v1/collection_v2/RESULT.json",
+      "sha256": "e2ed50acbb5db8de59c4abf3c94acfb02daabb8b50279312f8f6fda31be2ef2c"
+    },
+    "matched_collector": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/matched_water_comparison_v1/COLLECT_V2.py",
+      "sha256": "ee26b2dcbc90148149c49dd7ef6d273ce8291b21e840f112ba66beb00aa596d0"
+    },
+    "original_reference_adapter": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/REFERENCE.py",
+      "sha256": "eec0e60d982bda4e1a8685c6120f25c6ab74cc57e114cd3d8f370b4baccba129"
+    },
+    "scf_mode_interpretation": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/scf_mode_interpretation_v1/REPORT.md",
+      "sha256": "f7f663c26876f4972478f8173e135889e2e6a4ffbfecc32ba52c264baf125071"
+    },
+    "cp2k_pilot_source_review": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/CP2K_PILOT_REVIEW.md",
+      "sha256": "749dc1c269eda4f223fc7e8ff84c3cc879f941e651e063b44828aea16b129af6"
+    },
+    "user_declaration": {
+      "path": "/home/jwestrob/.codex/attachments/2ef9917f-aee5-4f5d-ba3a-af8ff24784c7/pasted-text-1.txt",
+      "sha256": "45b8ff8d178fdabc245d6f55574c55f2902813d07de63cc0272f43423ba93e04"
+    }
+  },
+  "units": {
+    "energy": "hartree unless explicitly kcal/mol",
+    "hartree_to_kcal_mol_literal_from_original_collector": "627.509474"
+  },
+  "systems": {
+    "aquo8_central_La": {
+      "provenance": {
+        "original_full_result": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_La/execution/RESULT.json",
+          "sha256": "f1be7b98603569899240fed0d80802785f641a346e2a54926cf01e33d3246daf"
+        },
+        "original_output": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_La/execution/endpoint.out",
+          "sha256": "e947643ce301ea7096bd443c7a096c4b51e096e84bd1bcc50fa2de15ece62d3e"
+        },
+        "original_engrad": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_La/execution/endpoint.engrad",
+          "sha256": "d1ffe378e5027e38d1779793d3ca00bc875bce4194079bbfc4f1c7eb7080541b"
+        },
+        "original_native_input": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_La/execution/endpoint.inp",
+          "sha256": "da6264c6c74763d3ac0bd22d8cb1ec0f0744c56c4d1051a0534ef3d2e3e66b26"
+        },
+        "xyz": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/xyz/aquo8_central_La.xyz",
+          "sha256": "371533e94b5e7b2bbe61f1ecec77d1ddbfdbc4edd0beea98af77dad23bf39c4a"
+        }
+      },
+      "geometry_state": {
+        "atoms": 25,
+        "metal": "La",
+        "charge": 3,
+        "ecp_core_electrons": 46,
+        "explicit_electrons": 88,
+        "effective_multiplicity": 1,
+        "physical_multiplicity_metadata": 1,
+        "fragments": [
+          {
+            "label": "metal",
+            "atom_indices_one_based": [
+              1
+            ],
+            "charge": 3,
+            "effective_multiplicity": 1,
+            "explicit_electrons": 8
+          },
+          {
+            "label": "complete_ligand_shell",
+            "atom_indices_one_based": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25
+            ],
+            "charge": 0,
+            "effective_multiplicity": 1,
+            "explicit_electrons": 80,
+            "composition": {
+              "O": 8,
+              "H": 16
+            },
+            "description": "eight complete water molecules"
+          }
+        ]
+      },
+      "energy_hartree": {
+        "full_pbe0_d4": {
+          "token": "-641.920061602464",
+          "line": 1732,
+          "raw": "FINAL SINGLE POINT ENERGY      -641.920061602464"
+        },
+        "electronic_after_final_cosx_integration": {
+          "token": "-641.90547890120308",
+          "line": 998,
+          "raw": "Total Energy       :       -641.90547890120308 Eh          -17467.13609 eV"
+        },
+        "d4_printed": {
+          "token": "-0.014582701",
+          "line": 1727,
+          "raw": "Dispersion correction           -0.014582701"
+        },
+        "d4_effective_from_full_minus_electronic_token_difference": "-0.01458270126092",
+        "d4_effective_note": "Derived bookkeeping difference of rounded energy tokens; not a newly measured or directly printed high-precision D4 value. Use the direct printed D4 value once for composite CP2K comparison; retain this difference for exact archived token closure.",
+        "printed_split_closure_residual": "-2.6092E-10",
+        "printed_split_rounding_bound": "5.00505E-10",
+        "closure_within_printing_bound": true,
+        "final_cosx_reintegration_change": {
+          "token": "0.000045391",
+          "line": 990,
+          "raw": "Exchange energy change after final integration :      0.000045391 Eh"
+        }
+      },
+      "scf": {
+        "native_status": "complete",
+        "returncode": 0,
+        "original_checks": {
+          "process_success": true,
+          "normal_termination": true,
+          "scf_converged": true,
+          "electron_count": true,
+          "multiplicity": true,
+          "core_representation": true,
+          "atom_identity": true,
+          "coordinates": true,
+          "energy_matches_gradient": true
+        },
+        "cycles": 12,
+        "cycles_line": 984,
+        "check_mode": {
+          "token": "Total+1el-Energy",
+          "line": 906,
+          "raw": " Convergence Check Mode ConvCheckMode   .... Total+1el-Energy"
+        },
+        "native_stopping_signal": {
+          "line": 980,
+          "raw": "                 **** Energy Check signals convergence ****"
+        },
+        "first_soscf_iteration": {
+          "line": 973,
+          "raw": "    7    -641.9054965682988723    -7.58e-02  4.55e-05  9.09e-04  1.70e-03    11.4",
+          "tokens": [
+            "7",
+            "-641.9054965682988723",
+            "-7.58e-02",
+            "4.55e-05",
+            "9.09e-04",
+            "1.70e-03",
+            "11.4"
+          ]
+        },
+        "last_soscf_iteration": {
+          "line": 979,
+          "raw": "   12    -641.9055242902292093    -2.03e-10  4.79e-08  2.77e-06  2.74e-07    10.3",
+          "tokens": [
+            "12",
+            "-641.9055242902292093",
+            "-2.03e-10",
+            "4.79e-08",
+            "2.77e-06",
+            "2.74e-07",
+            "10.3"
+          ]
+        },
+        "reported_thresholds": [
+          {
+            "name": "Energy change",
+            "value_token": "2.0282e-10",
+            "tolerance_token": "1.0000e-09",
+            "absolute_value_meets_printed_threshold": true,
+            "line": 1023,
+            "raw": "  Last Energy change         ...    2.0282e-10  Tolerance :   1.0000e-09",
+            "interpretation": "Reported quantity; not independently mandatory under the actual native stopping path."
+          },
+          {
+            "name": "MAX-Density change",
+            "value_token": "2.7736e-06",
+            "tolerance_token": "1.0000e-08",
+            "absolute_value_meets_printed_threshold": false,
+            "line": 1024,
+            "raw": "  Last MAX-Density change    ...    2.7736e-06  Tolerance :   1.0000e-08",
+            "interpretation": "Reported quantity; not independently mandatory under the actual native stopping path."
+          },
+          {
+            "name": "RMS-Density change",
+            "value_token": "4.7868e-08",
+            "tolerance_token": "1.0000e-09",
+            "absolute_value_meets_printed_threshold": false,
+            "line": 1025,
+            "raw": "  Last RMS-Density change    ...    4.7868e-08  Tolerance :   1.0000e-09",
+            "interpretation": "Reported quantity; not independently mandatory under the actual native stopping path."
+          },
+          {
+            "name": "DIIS Error",
+            "value_token": "1.7020e-03",
+            "tolerance_token": "1.0000e-08",
+            "absolute_value_meets_printed_threshold": false,
+            "line": 1026,
+            "raw": "  Last DIIS Error            ...    1.7020e-03  Tolerance :   1.0000e-08",
+            "interpretation": "Stale initial SOSCF gradient proxy; not a terminal DIIS residual."
+          },
+          {
+            "name": "Orbital Gradient",
+            "value_token": "2.7386e-07",
+            "tolerance_token": "2.0000e-06",
+            "absolute_value_meets_printed_threshold": true,
+            "line": 1027,
+            "raw": "  Last Orbital Gradient      ...    2.7386e-07  Tolerance :   2.0000e-06",
+            "interpretation": "Reported quantity; not independently mandatory under the actual native stopping path."
+          },
+          {
+            "name": "Orbital Rotation",
+            "value_token": "5.0792e-07",
+            "tolerance_token": "2.0000e-06",
+            "absolute_value_meets_printed_threshold": true,
+            "line": 1028,
+            "raw": "  Last Orbital Rotation      ...    5.0792e-07  Tolerance :   2.0000e-06",
+            "interpretation": "Reported quantity; not independently mandatory under the actual native stopping path."
+          }
+        ],
+        "original_result_printed_scf_criteria": [],
+        "empty_original_criteria_list_is_not_all_pass": true,
+        "physical_state_qualified": false,
+        "method_accuracy_qualified": false
+      },
+      "dispersion_method": {
+        "implementation": "DFTD4 V3.4.0",
+        "functional": "PBE0",
+        "DFTDOPT": 5,
+        "parameters_s6_s8_a1_a2_explicit_in_archived_output": false,
+        "policy": "Reuse archived full-system scalar correction; no D3 substitution, dispersion recalculation or density-dependent reassignment among F/P/U."
+      },
+      "timing": {
+        "job_id": "17306",
+        "native_total_run_seconds": "374.112",
+        "native_total_run_record": {
+          "token": "0 days 0 hours 6 minutes 14 seconds 112 msec",
+          "line": 2058,
+          "raw": "TOTAL RUN TIME: 0 days 0 hours 6 minutes 14 seconds 112 msec"
+        },
+        "native_scf_time_record": {
+          "token": "0 days 0 hours 3 min 30 sec ",
+          "line": 1689,
+          "raw": "Total SCF time: 0 days 0 hours 3 min 30 sec "
+        },
+        "native_scf_gradient_seconds": {
+          "token": "132.953",
+          "line": 1837,
+          "raw": "Total SCF gradient time     ....      132.953 sec"
+        },
+        "adapter_elapsed_seconds": 374.26911083608866,
+        "adapter_allocated_cpu_seconds": 1497.0764433443546,
+        "allocated_cpu_definition": "Original REFERENCE.py elapsed_seconds * 4 MPI ranks; allocated capacity accounting, not measured user/system CPU time or fresh sacct.",
+        "mpi_ranks": 4,
+        "maxcore_MB_per_rank": 3000,
+        "peak_total_job_RSS_available_in_examined_records": false
+      }
+    },
+    "aquo8_central_Dy": {
+      "provenance": {
+        "original_full_result": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_Dy/execution/RESULT.json",
+          "sha256": "c1ff6777a8a64dcc7816c0ab1e3314e43d6221d56c50c35d1d0bf3c30b524482"
+        },
+        "original_output": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_Dy/execution/endpoint.out",
+          "sha256": "d8828b0b09833f89e67324fdd91c6a18cf67edde1d9e63bcb28f679c53f26cba"
+        },
+        "original_engrad": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_Dy/execution/endpoint.engrad",
+          "sha256": "d673ffa2b17ac27d509b4eeee27a89718b8a9d571ceb23bd46ea4985ac1397f5"
+        },
+        "original_native_input": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_Dy/execution/endpoint.inp",
+          "sha256": "92a6f3264039af1eb4fc18269dbaa919a8f05625d1d9457b5ada8d328658963c"
+        },
+        "xyz": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/xyz/aquo8_central_Dy.xyz",
+          "sha256": "8448c74ce91cb7bfdd814566a17f1bc0e219a8f8b568747cc488fb5756781c62"
+        }
+      },
+      "geometry_state": {
+        "atoms": 25,
+        "metal": "Dy",
+        "charge": 3,
+        "ecp_core_electrons": 55,
+        "explicit_electrons": 88,
+        "effective_multiplicity": 1,
+        "physical_multiplicity_metadata": 6,
+        "fragments": [
+          {
+            "label": "metal",
+            "atom_indices_one_based": [
+              1
+            ],
+            "charge": 3,
+            "effective_multiplicity": 1,
+            "explicit_electrons": 8
+          },
+          {
+            "label": "complete_ligand_shell",
+            "atom_indices_one_based": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25
+            ],
+            "charge": 0,
+            "effective_multiplicity": 1,
+            "explicit_electrons": 80,
+            "composition": {
+              "O": 8,
+              "H": 16
+            },
+            "description": "eight complete water molecules"
+          }
+        ]
+      },
+      "energy_hartree": {
+        "full_pbe0_d4": {
+          "token": "-647.397264879816",
+          "line": 1737,
+          "raw": "FINAL SINGLE POINT ENERGY      -647.397264879816"
+        },
+        "electronic_after_final_cosx_integration": {
+          "token": "-647.38375761407451",
+          "line": 1003,
+          "raw": "Total Energy       :       -647.38375761407451 Eh          -17616.20764 eV"
+        },
+        "d4_printed": {
+          "token": "-0.013507266",
+          "line": 1732,
+          "raw": "Dispersion correction           -0.013507266"
+        },
+        "d4_effective_from_full_minus_electronic_token_difference": "-0.01350726574149",
+        "d4_effective_note": "Derived bookkeeping difference of rounded energy tokens; not a newly measured or directly printed high-precision D4 value. Use the direct printed D4 value once for composite CP2K comparison; retain this difference for exact archived token closure.",
+        "printed_split_closure_residual": "2.5851E-10",
+        "printed_split_rounding_bound": "5.00505E-10",
+        "closure_within_printing_bound": true,
+        "final_cosx_reintegration_change": {
+          "token": "0.000033378",
+          "line": 995,
+          "raw": "Exchange energy change after final integration :      0.000033378 Eh"
+        }
+      },
+      "scf": {
+        "native_status": "complete",
+        "returncode": 0,
+        "original_checks": {
+          "process_success": true,
+          "normal_termination": true,
+          "scf_converged": true,
+          "electron_count": true,
+          "multiplicity": true,
+          "core_representation": true,
+          "atom_identity": true,
+          "coordinates": true,
+          "energy_matches_gradient": true
+        },
+        "cycles": 13,
+        "cycles_line": 989,
+        "check_mode": {
+          "token": "Total+1el-Energy",
+          "line": 910,
+          "raw": " Convergence Check Mode ConvCheckMode   .... Total+1el-Energy"
+        },
+        "native_stopping_signal": {
+          "line": 985,
+          "raw": "                  *** Gradient check signals convergence ***"
+        },
+        "first_soscf_iteration": {
+          "line": 978,
+          "raw": "    8    -647.3837697492364214    -6.35e-02  5.12e-05  1.77e-03  1.44e-03    11.2",
+          "tokens": [
+            "8",
+            "-647.3837697492364214",
+            "-6.35e-02",
+            "5.12e-05",
+            "1.77e-03",
+            "1.44e-03",
+            "11.2"
+          ]
+        },
+        "last_soscf_iteration": {
+          "line": 984,
+          "raw": "   13    -647.3837909940651798    -2.32e-09  3.75e-08  2.34e-06  2.15e-07    11.6",
+          "tokens": [
+            "13",
+            "-647.3837909940651798",
+            "-2.32e-09",
+            "3.75e-08",
+            "2.34e-06",
+            "2.15e-07",
+            "11.6"
+          ]
+        },
+        "reported_thresholds": [
+          {
+            "name": "Energy change",
+            "value_token": "2.3219e-09",
+            "tolerance_token": "1.0000e-09",
+            "absolute_value_meets_printed_threshold": false,
+            "line": 1028,
+            "raw": "  Last Energy change         ...    2.3219e-09  Tolerance :   1.0000e-09",
+            "interpretation": "Reported quantity; not independently mandatory under the actual native stopping path."
+          },
+          {
+            "name": "MAX-Density change",
+            "value_token": "2.3381e-06",
+            "tolerance_token": "1.0000e-08",
+            "absolute_value_meets_printed_threshold": false,
+            "line": 1029,
+            "raw": "  Last MAX-Density change    ...    2.3381e-06  Tolerance :   1.0000e-08",
+            "interpretation": "Reported quantity; not independently mandatory under the actual native stopping path."
+          },
+          {
+            "name": "RMS-Density change",
+            "value_token": "3.7475e-08",
+            "tolerance_token": "1.0000e-09",
+            "absolute_value_meets_printed_threshold": false,
+            "line": 1030,
+            "raw": "  Last RMS-Density change    ...    3.7475e-08  Tolerance :   1.0000e-09",
+            "interpretation": "Reported quantity; not independently mandatory under the actual native stopping path."
+          },
+          {
+            "name": "DIIS Error",
+            "value_token": "1.4382e-03",
+            "tolerance_token": "1.0000e-08",
+            "absolute_value_meets_printed_threshold": false,
+            "line": 1031,
+            "raw": "  Last DIIS Error            ...    1.4382e-03  Tolerance :   1.0000e-08",
+            "interpretation": "Stale initial SOSCF gradient proxy; not a terminal DIIS residual."
+          },
+          {
+            "name": "Orbital Gradient",
+            "value_token": "2.1531e-07",
+            "tolerance_token": "2.0000e-06",
+            "absolute_value_meets_printed_threshold": true,
+            "line": 1032,
+            "raw": "  Last Orbital Gradient      ...    2.1531e-07  Tolerance :   2.0000e-06",
+            "interpretation": "Reported quantity; not independently mandatory under the actual native stopping path."
+          },
+          {
+            "name": "Orbital Rotation",
+            "value_token": "4.1562e-07",
+            "tolerance_token": "2.0000e-06",
+            "absolute_value_meets_printed_threshold": true,
+            "line": 1033,
+            "raw": "  Last Orbital Rotation      ...    4.1562e-07  Tolerance :   2.0000e-06",
+            "interpretation": "Reported quantity; not independently mandatory under the actual native stopping path."
+          }
+        ],
+        "original_result_printed_scf_criteria": [],
+        "empty_original_criteria_list_is_not_all_pass": true,
+        "physical_state_qualified": false,
+        "method_accuracy_qualified": false
+      },
+      "dispersion_method": {
+        "implementation": "DFTD4 V3.4.0",
+        "functional": "PBE0",
+        "DFTDOPT": 5,
+        "parameters_s6_s8_a1_a2_explicit_in_archived_output": false,
+        "policy": "Reuse archived full-system scalar correction; no D3 substitution, dispersion recalculation or density-dependent reassignment among F/P/U."
+      },
+      "timing": {
+        "job_id": "17307",
+        "native_total_run_seconds": "377.719",
+        "native_total_run_record": {
+          "token": "0 days 0 hours 6 minutes 17 seconds 719 msec",
+          "line": 2063,
+          "raw": "TOTAL RUN TIME: 0 days 0 hours 6 minutes 17 seconds 719 msec"
+        },
+        "native_scf_time_record": {
+          "token": "0 days 0 hours 3 min 41 sec ",
+          "line": 1694,
+          "raw": "Total SCF time: 0 days 0 hours 3 min 41 sec "
+        },
+        "native_scf_gradient_seconds": {
+          "token": "125.440",
+          "line": 1842,
+          "raw": "Total SCF gradient time     ....      125.440 sec"
+        },
+        "adapter_elapsed_seconds": 377.8770342741627,
+        "adapter_allocated_cpu_seconds": 1511.508137096651,
+        "allocated_cpu_definition": "Original REFERENCE.py elapsed_seconds * 4 MPI ranks; allocated capacity accounting, not measured user/system CPU time or fresh sacct.",
+        "mpi_ranks": 4,
+        "maxcore_MB_per_rank": 3000,
+        "peak_total_job_RSS_available_in_examined_records": false
+      }
+    },
+    "hydrated_acetate_mono_central_La": {
+      "provenance": {
+        "original_full_result": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/hydrated_chemistry_run_v1/reference/tasks/ecp_pbe0__hydrated_acetate_mono_central_La/execution/RESULT.json",
+          "sha256": "bc02936a372fafdedcd56ff7de45367f1a074e27fd26258792829b564ac49d7f"
+        },
+        "original_output": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/hydrated_chemistry_run_v1/reference/tasks/ecp_pbe0__hydrated_acetate_mono_central_La/execution/endpoint.out",
+          "sha256": "603ed6e6e4551108178ba3935426d559a84d7b0f8b04fd598414136ec1a3de10"
+        },
+        "original_engrad": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/hydrated_chemistry_run_v1/reference/tasks/ecp_pbe0__hydrated_acetate_mono_central_La/execution/endpoint.engrad",
+          "sha256": "0aa1bf6b8a1f5c6228613ecb525ba766441043a4dc8fb89b8c0b1393f20e0da4"
+        },
+        "original_native_input": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/hydrated_chemistry_run_v1/reference/tasks/ecp_pbe0__hydrated_acetate_mono_central_La/execution/endpoint.inp",
+          "sha256": "5675a433485b41b78f258e8fb85dcf6d5fe133e7ac0cd6c0b7cdd45646b20af9"
+        },
+        "xyz": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/xyz/hydrated_acetate_mono_central_La.xyz",
+          "sha256": "2501a764ae1b252eaeba4df5c26235335f804de113d0d526ec594995957a7228"
+        }
+      },
+      "geometry_state": {
+        "atoms": 29,
+        "metal": "La",
+        "charge": 2,
+        "ecp_core_electrons": 46,
+        "explicit_electrons": 110,
+        "effective_multiplicity": 1,
+        "physical_multiplicity_metadata": 1,
+        "fragments": [
+          {
+            "label": "metal",
+            "atom_indices_one_based": [
+              1
+            ],
+            "charge": 3,
+            "effective_multiplicity": 1,
+            "explicit_electrons": 8
+          },
+          {
+            "label": "complete_ligand_shell",
+            "atom_indices_one_based": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29
+            ],
+            "charge": -1,
+            "effective_multiplicity": 1,
+            "explicit_electrons": 102,
+            "composition": {
+              "C": 2,
+              "O": 9,
+              "H": 17
+            },
+            "description": "one complete acetate anion plus seven complete water molecules"
+          }
+        ]
+      },
+      "energy_hartree": {
+        "full_pbe0_d4": {
+          "token": "-794.300572979356",
+          "line": 1900,
+          "raw": "FINAL SINGLE POINT ENERGY      -794.300572979356"
+        },
+        "electronic_after_final_cosx_integration": {
+          "token": "-794.28043664030849",
+          "line": 1030,
+          "raw": "Total Energy       :       -794.28043664030849 Eh          -21613.46949 eV"
+        },
+        "d4_printed": {
+          "token": "-0.020136339",
+          "line": 1895,
+          "raw": "Dispersion correction           -0.020136339"
+        },
+        "d4_effective_from_full_minus_electronic_token_difference": "-0.02013633904751",
+        "d4_effective_note": "Derived bookkeeping difference of rounded energy tokens; not a newly measured or directly printed high-precision D4 value. Use the direct printed D4 value once for composite CP2K comparison; retain this difference for exact archived token closure.",
+        "printed_split_closure_residual": "-4.751E-11",
+        "printed_split_rounding_bound": "5.00505E-10",
+        "closure_within_printing_bound": true,
+        "final_cosx_reintegration_change": {
+          "token": "0.000049237",
+          "line": 1022,
+          "raw": "Exchange energy change after final integration :      0.000049237 Eh"
+        }
+      },
+      "scf": {
+        "native_status": "complete",
+        "returncode": 0,
+        "original_checks": {
+          "process_success": true,
+          "normal_termination": true,
+          "scf_converged": true,
+          "electron_count": true,
+          "multiplicity": true,
+          "core_representation": true,
+          "atom_identity": true,
+          "coordinates": true,
+          "energy_matches_gradient": true
+        },
+        "cycles": 16,
+        "cycles_line": 1016,
+        "check_mode": {
+          "token": "Total+1el-Energy",
+          "line": 932,
+          "raw": " Convergence Check Mode ConvCheckMode   .... Total+1el-Energy"
+        },
+        "native_stopping_signal": {
+          "line": 1012,
+          "raw": "                 **** Energy Check signals convergence ****"
+        },
+        "first_soscf_iteration": {
+          "line": 1001,
+          "raw": "    7    -794.2804245402012384    -9.62e-02  6.35e-05  1.45e-03  2.55e-03    17.7",
+          "tokens": [
+            "7",
+            "-794.2804245402012384",
+            "-9.62e-02",
+            "6.35e-05",
+            "1.45e-03",
+            "2.55e-03",
+            "17.7"
+          ]
+        },
+        "last_soscf_iteration": {
+          "line": 1011,
+          "raw": "   16    -794.2804858780327777     8.67e-10  1.19e-08  3.88e-07  3.98e-08    14.3",
+          "tokens": [
+            "16",
+            "-794.2804858780327777",
+            "8.67e-10",
+            "1.19e-08",
+            "3.88e-07",
+            "3.98e-08",
+            "14.3"
+          ]
+        },
+        "reported_thresholds": [
+          {
+            "name": "Energy change",
+            "value_token": "-8.6652e-10",
+            "tolerance_token": "1.0000e-09",
+            "absolute_value_meets_printed_threshold": true,
+            "line": 1055,
+            "raw": "  Last Energy change         ...   -8.6652e-10  Tolerance :   1.0000e-09",
+            "interpretation": "Reported quantity; not independently mandatory under the actual native stopping path."
+          },
+          {
+            "name": "MAX-Density change",
+            "value_token": "3.8797e-07",
+            "tolerance_token": "1.0000e-08",
+            "absolute_value_meets_printed_threshold": false,
+            "line": 1056,
+            "raw": "  Last MAX-Density change    ...    3.8797e-07  Tolerance :   1.0000e-08",
+            "interpretation": "Reported quantity; not independently mandatory under the actual native stopping path."
+          },
+          {
+            "name": "RMS-Density change",
+            "value_token": "1.1890e-08",
+            "tolerance_token": "1.0000e-09",
+            "absolute_value_meets_printed_threshold": false,
+            "line": 1057,
+            "raw": "  Last RMS-Density change    ...    1.1890e-08  Tolerance :   1.0000e-09",
+            "interpretation": "Reported quantity; not independently mandatory under the actual native stopping path."
+          },
+          {
+            "name": "DIIS Error",
+            "value_token": "2.5451e-03",
+            "tolerance_token": "1.0000e-08",
+            "absolute_value_meets_printed_threshold": false,
+            "line": 1058,
+            "raw": "  Last DIIS Error            ...    2.5451e-03  Tolerance :   1.0000e-08",
+            "interpretation": "Stale initial SOSCF gradient proxy; not a terminal DIIS residual."
+          },
+          {
+            "name": "Orbital Gradient",
+            "value_token": "3.9849e-08",
+            "tolerance_token": "2.0000e-06",
+            "absolute_value_meets_printed_threshold": true,
+            "line": 1059,
+            "raw": "  Last Orbital Gradient      ...    3.9849e-08  Tolerance :   2.0000e-06",
+            "interpretation": "Reported quantity; not independently mandatory under the actual native stopping path."
+          },
+          {
+            "name": "Orbital Rotation",
+            "value_token": "1.1345e-07",
+            "tolerance_token": "2.0000e-06",
+            "absolute_value_meets_printed_threshold": true,
+            "line": 1060,
+            "raw": "  Last Orbital Rotation      ...    1.1345e-07  Tolerance :   2.0000e-06",
+            "interpretation": "Reported quantity; not independently mandatory under the actual native stopping path."
+          }
+        ],
+        "original_result_printed_scf_criteria": [],
+        "empty_original_criteria_list_is_not_all_pass": true,
+        "physical_state_qualified": false,
+        "method_accuracy_qualified": false
+      },
+      "dispersion_method": {
+        "implementation": "DFTD4 V3.4.0",
+        "functional": "PBE0",
+        "DFTDOPT": 5,
+        "parameters_s6_s8_a1_a2_explicit_in_archived_output": false,
+        "policy": "Reuse archived full-system scalar correction; no D3 substitution, dispersion recalculation or density-dependent reassignment among F/P/U."
+      },
+      "timing": {
+        "job_id": "17319",
+        "native_total_run_seconds": "652.447",
+        "native_total_run_record": {
+          "token": "0 days 0 hours 10 minutes 52 seconds 447 msec",
+          "line": 2234,
+          "raw": "TOTAL RUN TIME: 0 days 0 hours 10 minutes 52 seconds 447 msec"
+        },
+        "native_scf_time_record": {
+          "token": "0 days 0 hours 7 min 2 sec ",
+          "line": 1857,
+          "raw": "Total SCF time: 0 days 0 hours 7 min 2 sec "
+        },
+        "native_scf_gradient_seconds": {
+          "token": "194.636",
+          "line": 2013,
+          "raw": "Total SCF gradient time     ....      194.636 sec"
+        },
+        "adapter_elapsed_seconds": 652.6156146561261,
+        "adapter_allocated_cpu_seconds": 2610.4624586245045,
+        "allocated_cpu_definition": "Original REFERENCE.py elapsed_seconds * 4 MPI ranks; allocated capacity accounting, not measured user/system CPU time or fresh sacct.",
+        "mpi_ranks": 4,
+        "maxcore_MB_per_rank": 3000,
+        "peak_total_job_RSS_available_in_examined_records": false
+      }
+    },
+    "hydrated_acetate_mono_central_Dy": {
+      "provenance": {
+        "original_full_result": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/hydrated_chemistry_run_v1/reference/tasks/ecp_pbe0__hydrated_acetate_mono_central_Dy/execution/RESULT.json",
+          "sha256": "7ab24c8db7144ec134f73833420b788600607f8d6d515635c73815b1fae3d077"
+        },
+        "original_output": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/hydrated_chemistry_run_v1/reference/tasks/ecp_pbe0__hydrated_acetate_mono_central_Dy/execution/endpoint.out",
+          "sha256": "567eda1bd91e2052d4c7790c990449c4669530ea4bb8bff1cb833b7f706a44e1"
+        },
+        "original_engrad": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/hydrated_chemistry_run_v1/reference/tasks/ecp_pbe0__hydrated_acetate_mono_central_Dy/execution/endpoint.engrad",
+          "sha256": "72733d49f8839bfbe13e88c5276c0f883d1d8dba41e40e0436a0f0be10530236"
+        },
+        "original_native_input": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/hydrated_chemistry_run_v1/reference/tasks/ecp_pbe0__hydrated_acetate_mono_central_Dy/execution/endpoint.inp",
+          "sha256": "570cba44e93ea26bfcd6610fb2568f621dd9125d80633020e78e2f77e5c77163"
+        },
+        "xyz": {
+          "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/xyz/hydrated_acetate_mono_central_Dy.xyz",
+          "sha256": "89f08e66242fcd1798ee89d3ed9bfba01f874066afc25f16083b513a47c58fdf"
+        }
+      },
+      "geometry_state": {
+        "atoms": 29,
+        "metal": "Dy",
+        "charge": 2,
+        "ecp_core_electrons": 55,
+        "explicit_electrons": 110,
+        "effective_multiplicity": 1,
+        "physical_multiplicity_metadata": 6,
+        "fragments": [
+          {
+            "label": "metal",
+            "atom_indices_one_based": [
+              1
+            ],
+            "charge": 3,
+            "effective_multiplicity": 1,
+            "explicit_electrons": 8
+          },
+          {
+            "label": "complete_ligand_shell",
+            "atom_indices_one_based": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29
+            ],
+            "charge": -1,
+            "effective_multiplicity": 1,
+            "explicit_electrons": 102,
+            "composition": {
+              "C": 2,
+              "O": 9,
+              "H": 17
+            },
+            "description": "one complete acetate anion plus seven complete water molecules"
+          }
+        ]
+      },
+      "energy_hartree": {
+        "full_pbe0_d4": {
+          "token": "-799.776859852196",
+          "line": 1904,
+          "raw": "FINAL SINGLE POINT ENERGY      -799.776859852196"
+        },
+        "electronic_after_final_cosx_integration": {
+          "token": "-799.75798679261277",
+          "line": 1034,
+          "raw": "Total Energy       :       -799.75798679261277 Eh          -21762.52121 eV"
+        },
+        "d4_printed": {
+          "token": "-0.018873060",
+          "line": 1899,
+          "raw": "Dispersion correction           -0.018873060"
+        },
+        "d4_effective_from_full_minus_electronic_token_difference": "-0.01887305958323",
+        "d4_effective_note": "Derived bookkeeping difference of rounded energy tokens; not a newly measured or directly printed high-precision D4 value. Use the direct printed D4 value once for composite CP2K comparison; retain this difference for exact archived token closure.",
+        "printed_split_closure_residual": "4.1677E-10",
+        "printed_split_rounding_bound": "5.00505E-10",
+        "closure_within_printing_bound": true,
+        "final_cosx_reintegration_change": {
+          "token": "0.000037119",
+          "line": 1026,
+          "raw": "Exchange energy change after final integration :      0.000037119 Eh"
+        }
+      },
+      "scf": {
+        "native_status": "complete",
+        "returncode": 0,
+        "original_checks": {
+          "process_success": true,
+          "normal_termination": true,
+          "scf_converged": true,
+          "electron_count": true,
+          "multiplicity": true,
+          "core_representation": true,
+          "atom_identity": true,
+          "coordinates": true,
+          "energy_matches_gradient": true
+        },
+        "cycles": 16,
+        "cycles_line": 1020,
+        "check_mode": {
+          "token": "Total+1el-Energy",
+          "line": 936,
+          "raw": " Convergence Check Mode ConvCheckMode   .... Total+1el-Energy"
+        },
+        "native_stopping_signal": {
+          "line": 1016,
+          "raw": "                 **** Energy Check signals convergence ****"
+        },
+        "first_soscf_iteration": {
+          "line": 1006,
+          "raw": "    8    -799.7579656594780317    -7.88e-02  6.53e-05  1.81e-03  3.14e-03    17.5",
+          "tokens": [
+            "8",
+            "-799.7579656594780317",
+            "-7.88e-02",
+            "6.53e-05",
+            "1.81e-03",
+            "3.14e-03",
+            "17.5"
+          ]
+        },
+        "last_soscf_iteration": {
+          "line": 1015,
+          "raw": "   16    -799.7580239113303833     8.13e-10  1.24e-07  3.95e-06  2.60e-06    15.8",
+          "tokens": [
+            "16",
+            "-799.7580239113303833",
+            "8.13e-10",
+            "1.24e-07",
+            "3.95e-06",
+            "2.60e-06",
+            "15.8"
+          ]
+        },
+        "reported_thresholds": [
+          {
+            "name": "Energy change",
+            "value_token": "-8.1286e-10",
+            "tolerance_token": "1.0000e-09",
+            "absolute_value_meets_printed_threshold": true,
+            "line": 1059,
+            "raw": "  Last Energy change         ...   -8.1286e-10  Tolerance :   1.0000e-09",
+            "interpretation": "Reported quantity; not independently mandatory under the actual native stopping path."
+          },
+          {
+            "name": "MAX-Density change",
+            "value_token": "3.9530e-06",
+            "tolerance_token": "1.0000e-08",
+            "absolute_value_meets_printed_threshold": false,
+            "line": 1060,
+            "raw": "  Last MAX-Density change    ...    3.9530e-06  Tolerance :   1.0000e-08",
+            "interpretation": "Reported quantity; not independently mandatory under the actual native stopping path."
+          },
+          {
+            "name": "RMS-Density change",
+            "value_token": "1.2387e-07",
+            "tolerance_token": "1.0000e-09",
+            "absolute_value_meets_printed_threshold": false,
+            "line": 1061,
+            "raw": "  Last RMS-Density change    ...    1.2387e-07  Tolerance :   1.0000e-09",
+            "interpretation": "Reported quantity; not independently mandatory under the actual native stopping path."
+          },
+          {
+            "name": "DIIS Error",
+            "value_token": "3.1372e-03",
+            "tolerance_token": "1.0000e-08",
+            "absolute_value_meets_printed_threshold": false,
+            "line": 1062,
+            "raw": "  Last DIIS Error            ...    3.1372e-03  Tolerance :   1.0000e-08",
+            "interpretation": "Stale initial SOSCF gradient proxy; not a terminal DIIS residual."
+          },
+          {
+            "name": "Orbital Gradient",
+            "value_token": "2.6002e-06",
+            "tolerance_token": "2.0000e-06",
+            "absolute_value_meets_printed_threshold": false,
+            "line": 1063,
+            "raw": "  Last Orbital Gradient      ...    2.6002e-06  Tolerance :   2.0000e-06",
+            "interpretation": "Reported quantity; not independently mandatory under the actual native stopping path."
+          },
+          {
+            "name": "Orbital Rotation",
+            "value_token": "2.3310e-06",
+            "tolerance_token": "2.0000e-06",
+            "absolute_value_meets_printed_threshold": false,
+            "line": 1064,
+            "raw": "  Last Orbital Rotation      ...    2.3310e-06  Tolerance :   2.0000e-06",
+            "interpretation": "Reported quantity; not independently mandatory under the actual native stopping path."
+          }
+        ],
+        "original_result_printed_scf_criteria": [],
+        "empty_original_criteria_list_is_not_all_pass": true,
+        "physical_state_qualified": false,
+        "method_accuracy_qualified": false
+      },
+      "dispersion_method": {
+        "implementation": "DFTD4 V3.4.0",
+        "functional": "PBE0",
+        "DFTDOPT": 5,
+        "parameters_s6_s8_a1_a2_explicit_in_archived_output": false,
+        "policy": "Reuse archived full-system scalar correction; no D3 substitution, dispersion recalculation or density-dependent reassignment among F/P/U."
+      },
+      "timing": {
+        "job_id": "17320",
+        "native_total_run_seconds": "642.651",
+        "native_total_run_record": {
+          "token": "0 days 0 hours 10 minutes 42 seconds 651 msec",
+          "line": 2238,
+          "raw": "TOTAL RUN TIME: 0 days 0 hours 10 minutes 42 seconds 651 msec"
+        },
+        "native_scf_time_record": {
+          "token": "0 days 0 hours 7 min 3 sec ",
+          "line": 1861,
+          "raw": "Total SCF time: 0 days 0 hours 7 min 3 sec "
+        },
+        "native_scf_gradient_seconds": {
+          "token": "184.448",
+          "line": 2017,
+          "raw": "Total SCF gradient time     ....      184.448 sec"
+        },
+        "adapter_elapsed_seconds": 642.8177616498433,
+        "adapter_allocated_cpu_seconds": 2571.271046599373,
+        "allocated_cpu_definition": "Original REFERENCE.py elapsed_seconds * 4 MPI ranks; allocated capacity accounting, not measured user/system CPU time or fresh sacct.",
+        "mpi_ranks": 4,
+        "maxcore_MB_per_rank": 3000,
+        "peak_total_job_RSS_available_in_examined_records": false
+      }
+    }
+  },
+  "printed_precision": {
+    "full_energy_decimal_places": 12,
+    "electronic_energy_decimal_places": 14,
+    "direct_dispersion_decimal_places": 9,
+    "full_energy_rounding_half_unit_hartree": "5e-13",
+    "electronic_rounding_half_unit_hartree": "5e-15",
+    "direct_dispersion_rounding_half_unit_hartree": "5e-10",
+    "four_full_energy_tokens_rounding_bound_hartree": "2e-12",
+    "four_direct_dispersion_tokens_rounding_bound_hartree": "2e-9",
+    "meaning": "Bounds on decimal printing alone; not SCF, integration, basis, Hamiltonian or physical uncertainty."
+  },
+  "double_difference": {
+    "definition": "(Dy mixed - La mixed) - (Dy aquo8 - La aquo8)",
+    "coefficients": {
+      "aquo8_central_La": 1,
+      "aquo8_central_Dy": -1,
+      "hydrated_acetate_mono_central_La": -1,
+      "hydrated_acetate_mono_central_Dy": 1
+    },
+    "chemical_cycle_per_metal": "M(W)8 + acetate(-1) -> M(acetate)(W)7 + W",
+    "electronic_hartree_from_tokens": "0.00072856056715",
+    "electronic_kcal_mol_from_tokens": "0.45717865826943817910",
+    "direct_printed_d4_hartree": "0.000187844",
+    "direct_printed_d4_kcal_mol": "0.117873889634056",
+    "effective_d4_hartree_from_full_minus_electronic": "0.00018784394485",
+    "effective_d4_kcal_mol_from_full_minus_electronic": "0.11787385502690850890",
+    "full_hartree_from_tokens": "0.000916404512",
+    "full_kcal_mol_from_tokens": "0.575052513296346688",
+    "full_minus_electronic_minus_printed_d4_hartree": "-5.515E-11",
+    "published_reference_value_kcal_mol": 0.5750525132752955,
+    "published_reference_minus_decimal_token_value_kcal_mol": "-2.1051188E-11",
+    "original_amoeba_transfer_value_kcal_mol": -6.235815070000001,
+    "original_amoeba_minus_published_reference_kcal_mol": "-6.8108675832752965",
+    "original_rows": {
+      "AMOEBA_transfer": {
+        "status": "complete",
+        "missing_terms": [],
+        "value_kcal_mol": -6.235815070000001,
+        "terms": [
+          {
+            "geometry": "hydrated_acetate_mono_central_Dy",
+            "coefficient": 1,
+            "energy_kcal_mol": -737.89172663,
+            "result": {
+              "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_run_v1/RESULT.json",
+              "sha256": "2d55465328abcd60dcf0ca5b14761d3f4c96314310c7ec0381a2696d8c3f8674"
+            }
+          },
+          {
+            "geometry": "aquo8_central_La",
+            "coefficient": 1,
+            "energy_kcal_mol": -446.78245864,
+            "result": {
+              "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/panel_v1/RESULT.json",
+              "sha256": "b256fdca923c0f476651e73250b93672eb49f7634fbceca66d2e6ea1d398a052"
+            }
+          },
+          {
+            "geometry": "hydrated_acetate_mono_central_La",
+            "coefficient": -1,
+            "energy_kcal_mol": -683.19866143,
+            "result": {
+              "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_run_v1/RESULT.json",
+              "sha256": "2d55465328abcd60dcf0ca5b14761d3f4c96314310c7ec0381a2696d8c3f8674"
+            }
+          },
+          {
+            "geometry": "aquo8_central_Dy",
+            "coefficient": -1,
+            "energy_kcal_mol": -495.23970877,
+            "result": {
+              "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/panel_v1/RESULT.json",
+              "sha256": "b256fdca923c0f476651e73250b93672eb49f7634fbceca66d2e6ea1d398a052"
+            }
+          }
+        ],
+        "method": "AMOEBA_transfer",
+        "donor": "acetate_mono",
+        "context": "wet"
+      },
+      "ecp_pbe0": {
+        "status": "complete",
+        "missing_terms": [],
+        "value_kcal_mol": 0.5750525132752955,
+        "terms": [
+          {
+            "geometry": "hydrated_acetate_mono_central_Dy",
+            "coefficient": 1,
+            "energy_kcal_mol": -501867.5566432232,
+            "result": {
+              "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/hydrated_chemistry_run_v1/reference/tasks/ecp_pbe0__hydrated_acetate_mono_central_Dy/execution/RESULT.json",
+              "sha256": "7ab24c8db7144ec134f73833420b788600607f8d6d515635c73815b1fae3d077"
+            }
+          },
+          {
+            "geometry": "aquo8_central_La",
+            "coefficient": 1,
+            "energy_kcal_mol": -402810.92020620976,
+            "result": {
+              "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_La/execution/RESULT.json",
+              "sha256": "f1be7b98603569899240fed0d80802785f641a346e2a54926cf01e33d3246daf"
+            }
+          },
+          {
+            "geometry": "hydrated_acetate_mono_central_La",
+            "coefficient": -1,
+            "energy_kcal_mol": -498431.1347481743,
+            "result": {
+              "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/hydrated_chemistry_run_v1/reference/tasks/ecp_pbe0__hydrated_acetate_mono_central_La/execution/RESULT.json",
+              "sha256": "bc02936a372fafdedcd56ff7de45367f1a074e27fd26258792829b564ac49d7f"
+            }
+          },
+          {
+            "geometry": "aquo8_central_Dy",
+            "coefficient": -1,
+            "energy_kcal_mol": -406247.91715377197,
+            "result": {
+              "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_Dy/execution/RESULT.json",
+              "sha256": "c1ff6777a8a64dcc7816c0ab1e3314e43d6221d56c50c35d1d0bf3c30b524482"
+            }
+          }
+        ],
+        "method": "ecp_pbe0",
+        "donor": "acetate_mono",
+        "context": "wet"
+      }
+    },
+    "decision_authority": "Published producer scalar retained; Decimal reconstruction records printed-energy bookkeeping and binary-rounding differences, not replacement of the admitted comparison.",
+    "limits": "Fixed-geometry own-basis finite-cluster contrast; not binding free energy, CP-corrected interaction, or physical-state qualification."
+  },
+  "fragment_reference_accounting": {
+    "symbols": {
+      "R_el": "Sum of native isolated M3+ and entire ligand-shell electronic energies at unchanged geometry, same own-fragment basis/method/charge/effective singlets. Obtained inside the authorized molecular-guess ALMO call.",
+      "F": "Native antisymmetrized frozen molecular-guess electronic energy.",
+      "P": "Converged block-localized electronic energy.",
+      "U": "Converged fully delocalized electronic energy.",
+      "D": "Archived full-parent D4 scalar for this exact system.",
+      "D_ref": "D4(M3+) + D4(isolated complete ligand shell) for a true isolated-fragment D4 reference; not supplied by the quartet."
+    },
+    "electronic_components": {
+      "FRZ": "F-R_el",
+      "POL": "P-F",
+      "CT": "U-P",
+      "closure": "FRZ+POL+CT = U-R_el"
+    },
+    "full_and_ct_suppressed_absolute_energies": {
+      "full": "U+D",
+      "ct_suppressed": "P+D",
+      "frozen": "F+D",
+      "consequence": "The same archived D is added once to all three constrained electronic states. POL and CT are unchanged."
+    },
+    "explicit_reference_conventions": {
+      "electronic_fragment_reference_composite": "(U+D)-R_el = FRZ+POL+CT+D. This closes numerically but is explicitly a composite relative to electronic-only fragments; do not label it a fully D4-corrected isolated-fragment interaction.",
+      "true_d4_fragment_reference": "(U+D)-(R_el+D_ref) = FRZ+POL+CT+(D-D_ref). Absolute per-system value is unavailable until D_ref is known; no additional fragment calculations authorized here."
+    },
+    "double_difference_cancellation": {
+      "conditions": [
+        "Paired La/Dy nonmetal coordinate lines identical for each motif, with identical shell basis, charge and effective singlet.",
+        "Each metal ion reference uses the same isolated charged state and own-ion basis in both motifs.",
+        "Native molecular-guess fragment energies must be retained per system; numerical differences for allegedly repeated references remain reported closure residuals rather than silently forced to zero."
+      ],
+      "proof": "DD[R_el] = (R_Dy-R_La) - (R_Dy-R_La) + (R_shell_mixed-R_shell_mixed) - (R_shell_aquo-R_shell_aquo) = 0; identical algebra gives DD[D_ref]=0. Therefore DD[interaction_el]=DD[U], DD[interaction_total]=DD[U]+DD[D], and DD[CT]=DD[U-P] without any extra external fragment calculations.",
+      "paired_geometry_authority": [
+        {
+          "family": "aquo8_central",
+          "nonmetal_atom_lines_byte_identical": true,
+          "metal_coordinate_tokens_identical": true,
+          "only_atom_identity_difference": "La versus Dy at atom 1",
+          "comment_lines": "Preserved verbatim; source IDs can differ."
+        },
+        {
+          "family": "hydrated_acetate_mono_central",
+          "nonmetal_atom_lines_byte_identical": true,
+          "metal_coordinate_tokens_identical": true,
+          "only_atom_identity_difference": "La versus Dy at atom 1",
+          "comment_lines": "Preserved verbatim; source IDs can differ."
+        }
+      ],
+      "no_CP_substitution": "Cancellation assumes native own-fragment references. A ghost-parent-basis reference could depend on the other metal basis and must not be inserted into this algebra without a separate demonstrated join."
+    },
+    "available_now": [
+      "Four full-parent electronic, full PBE0-D4 and D4 constants.",
+      "Exact same-geometry shell/metal identities and charges.",
+      "Published total quartet contrast and original AMOEBA comparison."
+    ],
+    "unavailable_now": [
+      "Native ALMO R_el/F/P/U and their actual convergence/closure; no CP2K molecular calculation has yet supplied them.",
+      "Isolated complete-shell D4 constants and hence true absolute D4-corrected per-system interactions in this quartet archive.",
+      "A quantified numerical uncertainty for the exact archived quartet observable; printed thresholds/precision are not that uncertainty.",
+      "S6/S8/a1/a2 coefficients are not explicit in the examined ORCA D4 summary; implementation/version/functional/DFTDOPT and actual corrections are available."
+    ]
+  },
+  "prospective_pilot_recommendation": {
+    "status": "Advice only; root must bind before execution. No runtime release or numerical result created.",
+    "pilot": "aquo8_central_La only; remaining three only after pilot admission, per user quartet contract.",
+    "full_energy_agreement_gate_hartree": "0.0001",
+    "full_energy_agreement_gate_kcal_mol": "0.0627509474",
+    "comparison": "Compare U_CP2K with archived final post-COSX electronic energy; equivalently compare U_CP2K + the same archived D4 constant against archived full energy with the explicit D4 printing residual retained. Never compare U_CP2K directly with PBE0-D4.",
+    "gate_justification": "Chosen cross-code implementation qualification scale, not an estimated error bar. It is about twice the largest archived final COSX reintegration shift (0.000049237 Eh), far above decimal rounding, and far below the 6.8109 kcal/mol model discrepancy. Failure would block interpretation; no automatic retuning or protocol substitution.",
+    "quartet_limit": "Four independent per-cell bounds of 1e-4 Eh imply only a worst-case 4e-4 Eh (0.2510037896 kcal/mol) DD bound; pilot agreement alone does not establish quartet agreement. Report actual DD discrepancy and native convergence/decomposition residuals, particularly before interpreting a small CT-induced sign change.",
+    "decomposition_closure": "Retain all four native energies and compute the literal telescoping residual; its parsing/roundoff bound must be computed from actual printed digits. SCF errors and variational-order residuals are separate.",
+    "finite_resource_cap": {
+      "qos": "standard_expand",
+      "maximum_allocated_cpus_per_native_job": 24,
+      "mpi_ranks_times_omp_threads_at_most": 24,
+      "native_parent_process_wall_timeout_seconds": 7200,
+      "scheduler_memory_and_time": "Use existing scheduler defaults; enforce finite process timeout separately and terminate the actual process group/step on timeout. No automatic retry or cap extension.",
+      "maximum_initial_concurrent_systems": 1,
+      "maximum_remaining_concurrent_systems_after_pilot": 3,
+      "maximum_quartet_allocated_cpu_seconds_at_caps": 691200,
+      "rationale": "Archived four-rank ORCA energy+gradient runtimes are 374\u2013653 s. A 7200 s cap is an explicit development budget allowing internal fragment/block/full SCFs and unfamiliar CP2K overhead; it is not a performance prediction. Root must bind actual MPI/OpenMP split and inspect current shared-user capacity at launch."
+    }
+  },
+  "timing_summary": {
+    "archived_four_parent_native_wall_seconds_sum": "2046.929",
+    "archived_adapter_elapsed_seconds_sum": "2047.57952141622076",
+    "archived_allocated_cpu_seconds_sum": "8190.3180856648831",
+    "cost_scope": "Four original energy+gradient parent invocations, four MPI ranks each. Excludes historical preparation/collection allocations. No inference of peak memory or measured CPU consumption from allocated CPU seconds."
+  },
+  "reviewed_pin_count": 30,
+  "reviewed_pins": [
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/PROVENANCE.json",
+      "sha256": "677c759c1045e2d7d5ab2dd05977e4a516ca04ff8d520c40111669eabb452d66"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/matched_water_comparison_v1/collection_v2/RESULT.json",
+      "sha256": "e2ed50acbb5db8de59c4abf3c94acfb02daabb8b50279312f8f6fda31be2ef2c"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/matched_water_comparison_v1/COLLECT_V2.py",
+      "sha256": "ee26b2dcbc90148149c49dd7ef6d273ce8291b21e840f112ba66beb00aa596d0"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/INPUT_AUDIT.json",
+      "sha256": "4c975c1962379dafd9db3ee72374ea82c58d02efbe986630b5c8817cf9023b28"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/REFERENCE.py",
+      "sha256": "eec0e60d982bda4e1a8685c6120f25c6ab74cc57e114cd3d8f370b4baccba129"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/scf_mode_interpretation_v1/REPORT.md",
+      "sha256": "f7f663c26876f4972478f8173e135889e2e6a4ffbfecc32ba52c264baf125071"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/CP2K_PILOT_REVIEW.md",
+      "sha256": "749dc1c269eda4f223fc7e8ff84c3cc879f941e651e063b44828aea16b129af6"
+    },
+    {
+      "path": "/home/jwestrob/.codex/attachments/2ef9917f-aee5-4f5d-ba3a-af8ff24784c7/pasted-text-1.txt",
+      "sha256": "45b8ff8d178fdabc245d6f55574c55f2902813d07de63cc0272f43423ba93e04"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_La/execution/RESULT.json",
+      "sha256": "f1be7b98603569899240fed0d80802785f641a346e2a54926cf01e33d3246daf"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_La/execution/endpoint.out",
+      "sha256": "e947643ce301ea7096bd443c7a096c4b51e096e84bd1bcc50fa2de15ece62d3e"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_La/execution/endpoint.engrad",
+      "sha256": "d1ffe378e5027e38d1779793d3ca00bc875bce4194079bbfc4f1c7eb7080541b"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_La/execution/endpoint.inp",
+      "sha256": "da6264c6c74763d3ac0bd22d8cb1ec0f0744c56c4d1051a0534ef3d2e3e66b26"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/xyz/aquo8_central_La.xyz",
+      "sha256": "371533e94b5e7b2bbe61f1ecec77d1ddbfdbc4edd0beea98af77dad23bf39c4a"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_Dy/execution/RESULT.json",
+      "sha256": "c1ff6777a8a64dcc7816c0ab1e3314e43d6221d56c50c35d1d0bf3c30b524482"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_Dy/execution/endpoint.out",
+      "sha256": "d8828b0b09833f89e67324fdd91c6a18cf67edde1d9e63bcb28f679c53f26cba"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_Dy/execution/endpoint.engrad",
+      "sha256": "d673ffa2b17ac27d509b4eeee27a89718b8a9d571ceb23bd46ea4985ac1397f5"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_Dy/execution/endpoint.inp",
+      "sha256": "92a6f3264039af1eb4fc18269dbaa919a8f05625d1d9457b5ada8d328658963c"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/xyz/aquo8_central_Dy.xyz",
+      "sha256": "8448c74ce91cb7bfdd814566a17f1bc0e219a8f8b568747cc488fb5756781c62"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/hydrated_chemistry_run_v1/reference/tasks/ecp_pbe0__hydrated_acetate_mono_central_La/execution/RESULT.json",
+      "sha256": "bc02936a372fafdedcd56ff7de45367f1a074e27fd26258792829b564ac49d7f"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/hydrated_chemistry_run_v1/reference/tasks/ecp_pbe0__hydrated_acetate_mono_central_La/execution/endpoint.out",
+      "sha256": "603ed6e6e4551108178ba3935426d559a84d7b0f8b04fd598414136ec1a3de10"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/hydrated_chemistry_run_v1/reference/tasks/ecp_pbe0__hydrated_acetate_mono_central_La/execution/endpoint.engrad",
+      "sha256": "0aa1bf6b8a1f5c6228613ecb525ba766441043a4dc8fb89b8c0b1393f20e0da4"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/hydrated_chemistry_run_v1/reference/tasks/ecp_pbe0__hydrated_acetate_mono_central_La/execution/endpoint.inp",
+      "sha256": "5675a433485b41b78f258e8fb85dcf6d5fe133e7ac0cd6c0b7cdd45646b20af9"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/xyz/hydrated_acetate_mono_central_La.xyz",
+      "sha256": "2501a764ae1b252eaeba4df5c26235335f804de113d0d526ec594995957a7228"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/hydrated_chemistry_run_v1/reference/tasks/ecp_pbe0__hydrated_acetate_mono_central_Dy/execution/RESULT.json",
+      "sha256": "7ab24c8db7144ec134f73833420b788600607f8d6d515635c73815b1fae3d077"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/hydrated_chemistry_run_v1/reference/tasks/ecp_pbe0__hydrated_acetate_mono_central_Dy/execution/endpoint.out",
+      "sha256": "567eda1bd91e2052d4c7790c990449c4669530ea4bb8bff1cb833b7f706a44e1"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/hydrated_chemistry_run_v1/reference/tasks/ecp_pbe0__hydrated_acetate_mono_central_Dy/execution/endpoint.engrad",
+      "sha256": "72733d49f8839bfbe13e88c5276c0f883d1d8dba41e40e0436a0f0be10530236"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/hydrated_chemistry_run_v1/reference/tasks/ecp_pbe0__hydrated_acetate_mono_central_Dy/execution/endpoint.inp",
+      "sha256": "570cba44e93ea26bfcd6610fb2568f621dd9125d80633020e78e2f77e5c77163"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/xyz/hydrated_acetate_mono_central_Dy.xyz",
+      "sha256": "89f08e66242fcd1798ee89d3ed9bfba01f874066afc25f16083b513a47c58fdf"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/hydrated_mixed_run_v1/RESULT.json",
+      "sha256": "2d55465328abcd60dcf0ca5b14761d3f4c96314310c7ec0381a2696d8c3f8674"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/explicit_model_v1/panel_v1/RESULT.json",
+      "sha256": "b256fdca923c0f476651e73250b93672eb49f7634fbceca66d2e6ea1d398a052"
+    }
+  ],
+  "this_extraction": {
+    "new_molecular_calls": 0,
+    "new_fragment_calls": 0,
+    "new_solver_calls": 0,
+    "scheduler_submissions": 0,
+    "process_cpu_seconds": 0.273885668,
+    "elapsed_seconds": 0.32593391893897206
+  }
+}

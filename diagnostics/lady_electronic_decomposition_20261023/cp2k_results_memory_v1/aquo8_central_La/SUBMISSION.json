@@ -1,0 +1,40 @@
+{
+  "job_id": "21623",
+  "submitted_utc": "2026-10-23T21:21:13.759584+00:00",
+  "argv": [
+    "sbatch",
+    "--parsable",
+    "--output",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_quartet_memory_v1/tasks/aquo8_central_La/slurm-%j.out",
+    "--chdir",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_quartet_memory_v1/tasks/aquo8_central_La",
+    "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_quartet_memory_v1/tasks/aquo8_central_La/job.sbatch"
+  ],
+  "stdout": "21623\n",
+  "stderr": "",
+  "config_sha256": "7447297cead20630b1d2cb1aaa0e097a22948b5eb1a215afa91dc66b25ad2d29",
+  "qos": "standard_expand",
+  "cpus": 24,
+  "memory_MiB": 262144,
+  "native_cap_seconds": 7073,
+  "scope": "Same La-aquo pilot, one memory-only recovery after21618OOM",
+  "completion_watcher": {
+    "pid": 639887,
+    "argv": [
+      "/home/jwestrob/.pyenv/versions/3.12.0/bin/python",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/slurm_wakeup_20260927/watch_and_queue.py",
+      "--jobs",
+      "21623",
+      "--thread",
+      "01a0a63a-ee36-7483-b726-1f7f5b7f75cc",
+      "--codex",
+      "/home/jwestrob/.nvm/versions/node/v22.23.1/bin/codex",
+      "--receipt",
+      "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_quartet_memory_v1/tasks/aquo8_central_La/completion_event.json",
+      "--event",
+      "lady-cp2k-La-aquo-memory-recovery-v1",
+      "--interval",
+      "15"
+    ]
+  }
+}

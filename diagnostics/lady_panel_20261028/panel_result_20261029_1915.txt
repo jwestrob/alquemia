@@ -1,0 +1,42 @@
+
+== conformer_best (acetate/EDTA states: conformer_best; panel: primary only) ==  offset from acetate = -1.88
+ligand   q_c    calc     exp  calc-exp  resid(after offset)  states
+ac        +2   -1.95   -0.07     -1.88                -0.00  La_acmono_w8,Dy_acbi_w7,La_aq9,Dy_aq8
+edtax     -1   -6.35   -4.01     -2.34                -0.46  La_edtax_w3,Dy_edtax_w2,La_aq9,Dy_aq8
+nta       +0   -4.60   -1.58     -3.02                -1.14  La_nta_w5,Dy_nta_w4,La_aq9,Dy_aq8
+dtpa      -2   -8.33   -4.56     -3.78                -1.90  La_dtpa_w1,Dy_dtpa_w1,La_aq9,Dy_aq8
+cdta      -1  -11.66   -5.67     -5.99                -4.11  La_cdta_w3,Dy_cdta_w2,La_aq9,Dy_aq8
+tmdta     -1  -10.45   -4.87     -5.58                -3.70  La_tmdta_w2,Dy_tmdta_w2,La_aq9,Dy_aq8
+H0: RMS residual after acetate offset = 2.67 kcal/mol over ['edtax', 'nta', 'dtpa', 'cdta', 'tmdta']  (pass < 0.8)
+    order calc ['cdta', 'tmdta', 'edtax'] vs exp ['cdta','tmdta','edtax']  -> PASS
+    waters displaced per metal: ac:1.0 edtax:6.0 nta:4.0 dtpa:7.5 cdta:6.0 tmdta:6.5
+    LOO bias model constant            : RMS 1.86  (n=6, all ligands incl. acetate)
+    LOO bias model constant + a*q_c^2  : RMS 2.11  (n=6, all ligands incl. acetate)
+    LOO bias model constant + b*n_disp : RMS 1.61  (n=6, all ligands incl. acetate)
+    LOO bias model constant + c*exp    : RMS 1.26  (n=6, all ligands incl. acetate)
+    FROZEN forms (fit 2026-10-29 on ac, edtax, nta, dtpa) on held-out ['cdta', 'tmdta']: calibrated error, kcal/mol
+      H0 constant   cdta -4.11  tmdta -3.70   RMS 3.91 -> FAIL (< 0.8)
+      H2 per-water  cdta -2.98  tmdta -2.46   RMS 2.73 -> FAIL (< 0.8)
+      H3 stretch    cdta -1.91  tmdta -1.77   RMS 1.84 -> FAIL (< 0.8)
+
+== primary_only (acetate/EDTA states: primary_only; panel: primary only) ==  offset from acetate = -1.74
+ligand   q_c    calc     exp  calc-exp  resid(after offset)  states
+ac        +2   -1.81   -0.07     -1.74                -0.00  La_acmono_w8,Dy_acbi_w7,La_aq9,Dy_aq8
+edtax     -1   -6.21   -4.01     -2.20                -0.46  La_edtax_w3,Dy_edtax_w2,La_aq9,Dy_aq8
+nta       +0   -4.46   -1.58     -2.88                -1.14  La_nta_w5,Dy_nta_w4,La_aq9,Dy_aq8
+dtpa      -2   -8.19   -4.56     -3.63                -1.90  La_dtpa_w1,Dy_dtpa_w1,La_aq9,Dy_aq8
+cdta      -1  -11.52   -5.67     -5.85                -4.11  La_cdta_w3,Dy_cdta_w2,La_aq9,Dy_aq8
+tmdta     -1  -10.31   -4.87     -5.44                -3.70  La_tmdta_w2,Dy_tmdta_w2,La_aq9,Dy_aq8
+H0: RMS residual after acetate offset = 2.67 kcal/mol over ['edtax', 'nta', 'dtpa', 'cdta', 'tmdta']  (pass < 0.8)
+    order calc ['cdta', 'tmdta', 'edtax'] vs exp ['cdta','tmdta','edtax']  -> PASS
+    waters displaced per metal: ac:1.0 edtax:6.0 nta:4.0 dtpa:7.5 cdta:6.0 tmdta:6.5
+    LOO bias model constant            : RMS 1.86  (n=6, all ligands incl. acetate)
+    LOO bias model constant + a*q_c^2  : RMS 2.11  (n=6, all ligands incl. acetate)
+    LOO bias model constant + b*n_disp : RMS 1.61  (n=6, all ligands incl. acetate)
+    LOO bias model constant + c*exp    : RMS 1.26  (n=6, all ligands incl. acetate)
+    FROZEN forms (fit 2026-10-29 on ac, edtax, nta, dtpa) on held-out ['cdta', 'tmdta']: calibrated error, kcal/mol
+      H0 constant   cdta -4.11  tmdta -3.70   RMS 3.91 -> FAIL (< 0.8)
+      H2 per-water  cdta -2.98  tmdta -2.46   RMS 2.73 -> FAIL (< 0.8)
+      H3 stretch    cdta -1.91  tmdta -1.77   RMS 1.84 -> FAIL (< 0.8)
+
+wrote /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_panel_20261028/PANEL_RESULT.json

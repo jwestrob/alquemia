@@ -1,0 +1,32 @@
+n = 101 ligands (I <= 0.5, PubChem SMILES formula-checked); sd(dlogK) = 0.82 log = 1.12 kcal
+mean             LOO RMSE 0.83 log = 1.14 kcal  r -1.00
+logK_La          LOO RMSE 0.60 log = 0.81 kcal  r 0.69
+donors           LOO RMSE 0.63 log = 0.85 kcal  r 0.65
+   alpha 45.2; intercept +0.385 log; per-group dlogK (kcal, negative ddG = Dy-favoured):
+     aminoacid_N  +0.221 log  (-0.30 kcal)  n_ligands_with=22
+     amine_N      +0.163 log  (-0.22 kcal)  n_ligands_with=22
+     carboxyl     +0.090 log  (-0.12 kcal)  n_ligands_with=84
+     amide_O      +0.063 log  (-0.09 kcal)  n_ligands_with=1
+     phenol       +0.040 log  (-0.05 kcal)  n_ligands_with=15
+     carbonyl_O   +0.026 log  (-0.04 kcal)  n_ligands_with=2
+     macrocycle   +0.010 log  (-0.01 kcal)  n_ligands_with=2
+     pyridine_N   +0.006 log  (-0.01 kcal)  n_ligands_with=7
+     phosphonate  +0.002 log  (-0.00 kcal)  n_ligands_with=1
+     sulfonate    +0.001 log  (-0.00 kcal)  n_ligands_with=6
+     alcohol      -0.003 log  (+0.00 kcal)  n_ligands_with=28
+     ether_O      -0.024 log  (+0.03 kcal)  n_ligands_with=8
+donors+logK_La   LOO RMSE 0.60 log = 0.81 kcal  r 0.69
+
+largest LOO residuals (donor model):
+   Triethylenetetranitrilohexaacetic acid (TTHA)                dlogK +0.50 pred +3.58
+   trans-1,2-Cyclohexylenedinitrilotetraacetic acid (CDTA)      dlogK +4.16 pred +1.81
+   Trimethylenedinitrilotetraacetic acid (TMDTA)                dlogK +3.57 pred +1.85
+   Diethylenetrinitrilopentaacetic acid N,N-bis(methylamide)  dlogK +3.35 pred +1.72
+   Oxolane-2,3,4,5-tetracarboxylic acid                         dlogK +2.01 pred +0.54
+   Diethylenetrinitrilopentaacetic acid (DTPA)                  dlogK +3.34 pred +2.24
+   Ethylenedinitrilotetraacetic acid (EDTA)                     dlogK +2.94 pred +1.89
+   Oxybis(trimethylenenitrilo)tetraacetic acid                  dlogK +1.04 pred +2.01
+   Pentane-2,4-dione (Acetylacetone)                            dlogK +1.12 pred +0.36
+   Ethylenediiminodi-2-pentanedioic acid (EDDG)                 dlogK +2.24 pred +1.48
+   2-Nitroso-1-naphthol-4-sulfonic acid (Nitroso-NW acid)       dlogK -0.28 pred +0.46
+   Pyridine-3-carboxylic acid (Nicotinic acid)                  dlogK -0.22 pred +0.50

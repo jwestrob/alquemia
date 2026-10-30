@@ -1,0 +1,96 @@
+{
+  "observed_utc": "2026-10-23T21:23:02.798436+00:00",
+  "source_command": [
+    "sacct",
+    "-j",
+    "21396,21440,21618,21623",
+    "--format=JobID,State,ExitCode,ElapsedRaw,AllocCPUS,MaxRSS",
+    "-P"
+  ],
+  "scheduler_rows": [
+    {
+      "job_id": "21396",
+      "state": "FAILED",
+      "exit_code": "1:0",
+      "elapsed_seconds": "1197",
+      "allocated_cpus": "24",
+      "max_RSS": ""
+    },
+    {
+      "job_id": "21396.batch",
+      "state": "FAILED",
+      "exit_code": "1:0",
+      "elapsed_seconds": "1197",
+      "allocated_cpus": "24",
+      "max_RSS": "9607432K"
+    },
+    {
+      "job_id": "21440",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed_seconds": "700",
+      "allocated_cpus": "24",
+      "max_RSS": ""
+    },
+    {
+      "job_id": "21440.batch",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed_seconds": "700",
+      "allocated_cpus": "24",
+      "max_RSS": "5713196K"
+    },
+    {
+      "job_id": "21618",
+      "state": "OUT_OF_MEMORY",
+      "exit_code": "0:125",
+      "elapsed_seconds": "126",
+      "allocated_cpus": "24",
+      "max_RSS": ""
+    },
+    {
+      "job_id": "21618.batch",
+      "state": "OUT_OF_MEMORY",
+      "exit_code": "0:125",
+      "elapsed_seconds": "126",
+      "allocated_cpus": "24",
+      "max_RSS": "98304464K"
+    },
+    {
+      "job_id": "21623",
+      "state": "RUNNING",
+      "exit_code": "0:0",
+      "elapsed_seconds": "109",
+      "allocated_cpus": "24",
+      "max_RSS": ""
+    },
+    {
+      "job_id": "21623.batch",
+      "state": "RUNNING",
+      "exit_code": "0:0",
+      "elapsed_seconds": "109",
+      "allocated_cpus": "24",
+      "max_RSS": ""
+    }
+  ],
+  "terminal_allocated_cpu_seconds": 48552,
+  "running_job_cost_excluded_from_terminal_sum": [
+    "21623"
+  ],
+  "kind": "allocated_cpu_seconds_not_measured_utilization",
+  "molecular_parent_attempts_started": 2,
+  "admitted_scientific_cells": 0,
+  "setup_jobs": [
+    "21396",
+    "21440"
+  ],
+  "failed_initialization_jobs": [
+    "21618"
+  ],
+  "current_pilot_memory_recovery": "21623",
+  "scientific_scope": "exact quartet, no addedgeometries; sameunfinishedpilot recovery",
+  "original_pilot_native_budget_seconds": 7200,
+  "prior_worker_budget_charge_seconds": 127,
+  "recovery_native_cap_seconds": 7073,
+  "remaining_release": false
+}

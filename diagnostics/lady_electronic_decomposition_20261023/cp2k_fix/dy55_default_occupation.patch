@@ -1,0 +1,16 @@
+--- a/src/atom_types.F
++++ b/src/atom_types.F
+@@ -3052,6 +3052,13 @@
+          potential%econf(2) = potential%econf(2) - 10
+       CASE (54)
+          potential%econf(0:3) = potential%econf(0:3) - ptable(54)%e_conv(0:3)
++      CASE (55)
++         ! Dy 4f-in-core ECP: subtract [Kr]4d10 4f9 from the neutral atom.
++         ! This sets the 11-electron default guess; molecular charge is separate.
++         IF (ncore /= 66) CPABORT("55-core default occupation is only supported for Dy")
++         potential%econf(0:3) = potential%econf(0:3) - ptable(36)%e_conv(0:3)
++         potential%econf(2) = potential%econf(2) - 10
++         potential%econf(3) = potential%econf(3) - 9
+       CASE (60)
+          potential%econf(0:3) = potential%econf(0:3) - ptable(36)%e_conv(0:3)
+          potential%econf(2) = potential%econf(2) - 10

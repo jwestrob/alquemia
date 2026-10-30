@@ -1,0 +1,100 @@
+{
+  "observed_utc": "2026-10-23T23:22:16.212623+00:00",
+  "source_command": [
+    "sacct",
+    "-j",
+    "21396,21440,21618,21623",
+    "--format=JobID,State,ExitCode,ElapsedRaw,AllocCPUS,ReqMem,MaxRSS",
+    "-P"
+  ],
+  "scheduler_rows": [
+    {
+      "JobID": "21396",
+      "State": "FAILED",
+      "ExitCode": "1:0",
+      "ElapsedRaw": "1197",
+      "AllocCPUS": "24",
+      "ReqMem": "96000M",
+      "MaxRSS": ""
+    },
+    {
+      "JobID": "21396.batch",
+      "State": "FAILED",
+      "ExitCode": "1:0",
+      "ElapsedRaw": "1197",
+      "AllocCPUS": "24",
+      "ReqMem": "",
+      "MaxRSS": "9607432K"
+    },
+    {
+      "JobID": "21440",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "ElapsedRaw": "700",
+      "AllocCPUS": "24",
+      "ReqMem": "96000M",
+      "MaxRSS": ""
+    },
+    {
+      "JobID": "21440.batch",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "ElapsedRaw": "700",
+      "AllocCPUS": "24",
+      "ReqMem": "",
+      "MaxRSS": "5713196K"
+    },
+    {
+      "JobID": "21618",
+      "State": "OUT_OF_MEMORY",
+      "ExitCode": "0:125",
+      "ElapsedRaw": "126",
+      "AllocCPUS": "24",
+      "ReqMem": "96000M",
+      "MaxRSS": ""
+    },
+    {
+      "JobID": "21618.batch",
+      "State": "OUT_OF_MEMORY",
+      "ExitCode": "0:125",
+      "ElapsedRaw": "126",
+      "AllocCPUS": "24",
+      "ReqMem": "",
+      "MaxRSS": "98304464K"
+    },
+    {
+      "JobID": "21623",
+      "State": "FAILED",
+      "ExitCode": "1:0",
+      "ElapsedRaw": "7087",
+      "AllocCPUS": "24",
+      "ReqMem": "256G",
+      "MaxRSS": ""
+    },
+    {
+      "JobID": "21623.batch",
+      "State": "FAILED",
+      "ExitCode": "1:0",
+      "ElapsedRaw": "7087",
+      "AllocCPUS": "24",
+      "ReqMem": "",
+      "MaxRSS": "251326840K"
+    }
+  ],
+  "terminal_allocated_cpu_seconds": 218640,
+  "running_job_cost_excluded_from_terminal_sum": [],
+  "kind": "allocated_capacity_not_measured_utilization",
+  "new_admitted_scientific_cells": 0,
+  "setup_job_ids": [
+    "21396",
+    "21440"
+  ],
+  "pilot_attempt_job_ids": [
+    "21618",
+    "21623"
+  ],
+  "native_cap_seconds_recovery": 7073,
+  "native_elapsed_seconds_including_termination": 7078.734081486007,
+  "total_native_elapsed_seconds_two_attempts": 7197.388671858935,
+  "no_new_submissions_by_finalization": true
+}

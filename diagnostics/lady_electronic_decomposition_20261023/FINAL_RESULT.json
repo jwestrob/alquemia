@@ -1,0 +1,229 @@
+{
+  "status": "bounded_diagnostic_inconclusive_pilot_runtime_limit",
+  "created_utc": "2026-10-23T23:22:16.212623+00:00",
+  "scientific_question_answered": false,
+  "pilot_admitted": false,
+  "remaining_three_released": false,
+  "new_admitted_scientific_cells": 0,
+  "geometry_inventory": [
+    {
+      "geometry_id": "aquo8_central_La",
+      "status": "pilot_timeout",
+      "xyz_sha256": "371533e94b5e7b2bbe61f1ecec77d1ddbfdbc4edd0beea98af77dad23bf39c4a",
+      "input_sha256": "15b07a8ba0a5cb8037847908dd87c6977fa50ed53c8a07ca7489fc7a5d92883b"
+    },
+    {
+      "geometry_id": "aquo8_central_Dy",
+      "status": "not_run_pilot_not_admitted",
+      "xyz_sha256": "8448c74ce91cb7bfdd814566a17f1bc0e219a8f8b568747cc488fb5756781c62",
+      "input_sha256": "2fde48a9902465724f54dcc8c0b2a3b56fe27cce3ddcd72fd5196e01c3bca46f"
+    },
+    {
+      "geometry_id": "hydrated_acetate_mono_central_La",
+      "status": "not_run_pilot_not_admitted",
+      "xyz_sha256": "2501a764ae1b252eaeba4df5c26235335f804de113d0d526ec594995957a7228",
+      "input_sha256": "9201271ccceca6d6e8979b9f6e7ea858dfbf3b6ecc75100ec152c2b3c17dd105"
+    },
+    {
+      "geometry_id": "hydrated_acetate_mono_central_Dy",
+      "status": "not_run_pilot_not_admitted",
+      "xyz_sha256": "89f08e66242fcd1798ee89d3ed9bfba01f874066afc25f16083b513a47c58fdf",
+      "input_sha256": "33183f873ab07adad9808a4fbe478d265e27a535d1cd23f86bc3f826d0064cb4"
+    }
+  ],
+  "cause": "First charged-La fragment did not converge before the declared native process cap; no ALMO chain completed.",
+  "not_established": [
+    "CT magnitude or sign",
+    "negligible CT",
+    "force-field missing mechanism",
+    "fundamental CP2K or Hamiltonian incompatibility",
+    "solution or protein selectivity"
+  ],
+  "native_terminal_markers": {
+    "fragment_converged": 0,
+    "R_fragment_sum": 0,
+    "F_frozen": 0,
+    "P_block_trace": 0,
+    "U_full_energy": 0,
+    "normal_end": 0
+  },
+  "native_first_fragment_primary_steps": 43,
+  "last_primary_step": {
+    "line": 1673,
+    "raw": "    43 OT CG       0.34E+00  103.9     0.00000040       -30.1574842906  1.46E-12"
+  },
+  "printed_last_residual": "0.00000040",
+  "fragment_EPS_SCF": "1e-10",
+  "native_exit_code": 15,
+  "native_timed_out": true,
+  "native_cap_seconds": 7073,
+  "native_elapsed_seconds_including_termination": 7078.734081486007,
+  "parser_result_absent_reason": "The timeout exception precedes parser invocation; no missing success result is inferred.",
+  "run_result": {
+    "path": "cp2k_results_memory_v1/aquo8_central_La/RUN_RESULT.json",
+    "sha256": "536e8fcd4bb727394b3f4df203990b70c349394ea889d22b55a0fe769c67548a"
+  },
+  "mirrored_raw_artifacts": [
+    {
+      "path": "cp2k_results_memory_v1/aquo8_central_La/endpoint.out",
+      "sha256": "329c094e3a97a00c298cafb72eae4935a04267b0183c6c1f3cb9bc52978e84ea"
+    },
+    {
+      "path": "cp2k_results_memory_v1/aquo8_central_La/input.inp",
+      "sha256": "15b07a8ba0a5cb8037847908dd87c6977fa50ed53c8a07ca7489fc7a5d92883b"
+    },
+    {
+      "path": "cp2k_results_memory_v1/aquo8_central_La/native_launcher.log",
+      "sha256": "51320e4584c86023312d3bf6b96e16929f89e2c43987ede298d3dcceb4a420ab"
+    },
+    {
+      "path": "cp2k_results_memory_v1/aquo8_central_La/syntax.log",
+      "sha256": "0e90b4df1376c02d48a145b2817f1f64f787f0c379fcb3f016d47de7e76546bd"
+    },
+    {
+      "path": "cp2k_results_memory_v1/aquo8_central_La/SUBMISSION.json",
+      "sha256": "9b076fc54646f42730a47823acb08ad10fd1ae6e243938e0bf9cacfab2136546"
+    },
+    {
+      "path": "cp2k_results_memory_v1/aquo8_central_La/completion_event.json",
+      "sha256": "536602e587f8f6df2dd8fba119b55658bedd9abfddc4e85b23e0e9ffbf54f1c8"
+    },
+    {
+      "path": "cp2k_results_memory_v1/aquo8_central_La/job.sbatch",
+      "sha256": "9907ce03690d4a27935765e942349d0bc0abd6759f7584e8051d4385a7f0f74c"
+    }
+  ],
+  "config_sha256": "7447297cead20630b1d2cb1aaa0e097a22948b5eb1a215afa91dc66b25ad2d29",
+  "verified_execution_pins": [
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/RUN.py",
+      "sha256": "03d9338b26e8bd507a9fd9bb4523ca6b8102e2597cebd7f582a67fc5f90bd0d7"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/PARSE.py",
+      "sha256": "743ddda796bb469ad21eb5329e0b7df5f02ebd29e34f319b11419f4f3cdf6202"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/PREPARE.py",
+      "sha256": "77efcd979292b4594092969e4e4137afcf1dc7ce87485d4f7a631cda84a9923b"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/BIND_RUN.py",
+      "sha256": "4be1601b6062048ffbaf2d4b6e205fb7dca40dadf2a52758fe8f254a17306080"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/RUN_SPEC.md",
+      "sha256": "9fc124392291d43df84d89cefbd35deca8d535dfa39e95a969034fa8f4253656"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/ENERGY_LEDGER.json",
+      "sha256": "24c699cc97c3c55857c56a5ee07dda6213eeaf12e59af69395f23bbd05b732c5"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/DECK_PROVENANCE.json",
+      "sha256": "916c45531a5384a60dd450d14831e27a6d2efc693eb8d43202a2942e6ada6687"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/PILOT_SETTINGS_REVIEW.md",
+      "sha256": "63420681e32870bd7f41a678e4da206c537123bcdb6e430fc5ac45620d9a3caf"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/DECK_REVIEW.md",
+      "sha256": "cfd73cf12e6c9806fe25b4f45dc7c9de26fce06b4992093925c783b4ce423d10"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/RUNNER_REVIEW.md",
+      "sha256": "ca732271dc8819ad826e9368db3de0cd047e4232b3cce1fa4c1712f9e8d9d9fd"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/assets/BASIS_LADY",
+      "sha256": "2ab7190ac0bf52f389fed017672c49f747d75d6d0e92f61dbf4e2f5981b0eb66"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/assets/POTENTIAL_LADY",
+      "sha256": "ba87181563f5ca2b8e6e4ff30f43d274752b9c663325905ee6c1dc41c7beccd5"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/assets/PROVENANCE.json",
+      "sha256": "ff923ac1a23676e0cd799a989e17271bf30e10aefb74f7a503a50899b82553b4"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_build_v1/cp2k-2026.2-mpich-generic.sif",
+      "sha256": "90c3a7a7368e8025689a3ea13ba773ecf832a94ea5378c984de1b861c9d8deab"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_build_v2/build/bin/cp2k.psmp",
+      "sha256": "19e4c45c2920299863d0d74543b55ded033ab1e145cbba1cd5cfc3d660e23b32"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/decks/aquo8_central_La.inp",
+      "sha256": "15b07a8ba0a5cb8037847908dd87c6977fa50ed53c8a07ca7489fc7a5d92883b"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/decks/aquo8_central_Dy.inp",
+      "sha256": "2fde48a9902465724f54dcc8c0b2a3b56fe27cce3ddcd72fd5196e01c3bca46f"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/decks/hydrated_acetate_mono_central_La.inp",
+      "sha256": "9201271ccceca6d6e8979b9f6e7ea858dfbf3b6ecc75100ec152c2b3c17dd105"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/decks/hydrated_acetate_mono_central_Dy.inp",
+      "sha256": "33183f873ab07adad9808a4fbe478d265e27a535d1cd23f86bc3f826d0064cb4"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/xyz/aquo8_central_La.xyz",
+      "sha256": "371533e94b5e7b2bbe61f1ecec77d1ddbfdbc4edd0beea98af77dad23bf39c4a"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/xyz/aquo8_central_Dy.xyz",
+      "sha256": "8448c74ce91cb7bfdd814566a17f1bc0e219a8f8b568747cc488fb5756781c62"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/xyz/hydrated_acetate_mono_central_La.xyz",
+      "sha256": "2501a764ae1b252eaeba4df5c26235335f804de113d0d526ec594995957a7228"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/xyz/hydrated_acetate_mono_central_Dy.xyz",
+      "sha256": "89f08e66242fcd1798ee89d3ed9bfba01f874066afc25f16083b513a47c58fdf"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/CONFIG.json",
+      "sha256": "075aaf39b904651e0cd406fc127aa23523986c344b294fda1b61ebeb554db423"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_memory_recovery_v1/RUN.py",
+      "sha256": "9244ba6036bf220760e27bca95f1e4eb0e63e18e55e039600c84f3317961d7f8"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_memory_recovery_v1/BIND.py",
+      "sha256": "e18d4ad0e9515587a52e7a25cebef39647cecbf4d28048d48a8bf857ccd00cf9"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_memory_recovery_v1/RECOVERY_SPEC.md",
+      "sha256": "85f648fdc24c70620212f16f861b37d3e4642e821a28d1cae98d22bf469f97d1"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_memory_recovery_v1/RECOVERY_REVIEW.md",
+      "sha256": "996d0cc06321eb410445910a126ef3f8710b7363668054334e710f5fbe171f6f"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_memory_recovery_v1/RUNNER_REVIEW.md",
+      "sha256": "7e7f48b09f5010a4e2446a634e43243c1de594b4e1efd9e3cb72498fc1c468ff"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_memory_recovery_v1/RESOURCE_EVIDENCE.json",
+      "sha256": "848577fb6102f6726e8c782ec7bb424ba2aae0758b51b6c1fba4239c37708cfe"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_memory_recovery_v1/FAILED_ATTEMPT.json",
+      "sha256": "83a2186691d477c79798ce5483ad97d6dea051090b41d46abfcff19df10ab288"
+    }
+  ],
+  "goal_sha256": "45b8ff8d178fdabc245d6f55574c55f2902813d07de63cc0272f43423ba93e04",
+  "energy_ledger_sha256": "24c699cc97c3c55857c56a5ee07dda6213eeaf12e59af69395f23bbd05b732c5",
+  "table_sha256": "151f2da10ce163b7a164151a0f2f9b7b1dc0496236e0d21edcb5352b341683e0",
+  "costs_sha256": "e8c6a625c49d166e7549a184a2d03df42c36c9c063ad47ea20e42aae25ac7cf2",
+  "recommendation": "Stop this attempt as inconclusive; do not use it to justify force-field changes or automatically extend the CP2K campaign.",
+  "further_experiments_authorized_by_this_result": false
+}

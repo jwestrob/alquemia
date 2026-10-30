@@ -1,0 +1,70 @@
+{
+  "status": "failed_cp2k_almo_output_checks",
+  "geometry_id": "aquo8_central_La",
+  "exit_code": 9,
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/PARSE.py",
+    "sha256": "743ddda796bb469ad21eb5329e0b7df5f02ebd29e34f319b11419f4f3cdf6202"
+  },
+  "created_utc": "2026-10-23T21:16:42.866014+00:00",
+  "gates": {
+    "native_exit_code_zero": {
+      "passed": false
+    },
+    "complete_recognized_evidence": {
+      "passed": false
+    }
+  },
+  "evidence": {
+    "program_start": [
+      {
+        "line": 21,
+        "raw": "  **** **** ******  **  PROGRAM STARTED AT               2026-10-23 14:14:44.302",
+        "tokens": [
+          "2026-10-23 14:14:44.302"
+        ]
+      }
+    ],
+    "program_end": []
+  },
+  "error": "ParseFailure: program_end: expected one record, observed 0",
+  "limits": [
+    "Output checks do not replace exact input, basis/ECP, build and geometry admission.",
+    "FRZ is combined frozen interaction; electrostatic/Pauli split is unavailable.",
+    "Printed precision and arithmetic closure are not SCF or physical uncertainty.",
+    "A single system does not establish a quartet double difference."
+  ],
+  "ledger": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/ENERGY_LEDGER.json",
+    "sha256": "24c699cc97c3c55857c56a5ee07dda6213eeaf12e59af69395f23bbd05b732c5"
+  },
+  "archive": {
+    "original_full_result": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_La/execution/RESULT.json",
+      "sha256": "f1be7b98603569899240fed0d80802785f641a346e2a54926cf01e33d3246daf"
+    },
+    "original_output": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_La/execution/endpoint.out",
+      "sha256": "e947643ce301ea7096bd443c7a096c4b51e096e84bd1bcc50fa2de15ece62d3e"
+    },
+    "original_engrad": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_La/execution/endpoint.engrad",
+      "sha256": "d1ffe378e5027e38d1779793d3ca00bc875bce4194079bbfc4f1c7eb7080541b"
+    },
+    "original_native_input": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_La/execution/endpoint.inp",
+      "sha256": "da6264c6c74763d3ac0bd22d8cb1ec0f0744c56c4d1051a0534ef3d2e3e66b26"
+    },
+    "xyz": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/xyz/aquo8_central_La.xyz",
+      "sha256": "371533e94b5e7b2bbe61f1ecec77d1ddbfdbc4edd0beea98af77dad23bf39c4a"
+    }
+  },
+  "output": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_quartet_v1/tasks/aquo8_central_La/execution/endpoint.out",
+    "sha256": "d997a2053481a39285fa59e10fc93c558a839b002bbd01468bec2dec63fcf23c",
+    "bytes": 101160
+  },
+  "passed": false,
+  "new_molecular_calls": 0
+}

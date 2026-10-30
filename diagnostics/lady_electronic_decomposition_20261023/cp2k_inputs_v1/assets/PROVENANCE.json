@@ -1,0 +1,1351 @@
+{
+  "status": "prepared_literal_cp2k_basis_and_ecp_no_native_validation",
+  "implementation": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/assets/CONVERT.py",
+    "sha256": "f5de3e31ac5abab432b8b83ff43296b42397c598ab1bfb4f16c287bbffec5e3c"
+  },
+  "python": {
+    "path": "/home/jwestrob/.pyenv/versions/3.12.0/bin/python3.12",
+    "sha256": "c8b66d2b00de941a9bf282633ba96a24912a8a219979a302f2db5d192e32fe16"
+  },
+  "parent_inputs": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/PROVENANCE.json",
+    "sha256": "677c759c1045e2d7d5ab2dd05977e4a516ca04ff8d520c40111669eabb452d66"
+  },
+  "files": {
+    "basis": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/assets/BASIS_LADY",
+      "sha256": "2ab7190ac0bf52f389fed017672c49f747d75d6d0e92f61dbf4e2f5981b0eb66"
+    },
+    "potentials": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/assets/POTENTIAL_LADY",
+      "sha256": "ba87181563f5ca2b8e6e4ff30f43d274752b9c663325905ee6c1dc41c7beccd5"
+    }
+  },
+  "download_authority": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/assets/BSE_DOWNLOADS.json",
+    "sha256": "347b23313b5390a9af0877a6083893fc15e9226f3f4cd5fe80a9d9f67b5942fe"
+  },
+  "cp2k_reader_authorities": {
+    "src/atom_types.F": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_build_v1/cp2k-2026.2/src/atom_types.F",
+      "sha256": "9adc98b30524851370c17aad8f4a9b6a95e1ca8b0ae50c21c479029d2e55c60a"
+    },
+    "src/qs_kind_types.F": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_build_v1/cp2k-2026.2/src/qs_kind_types.F",
+      "sha256": "40ec254a7820bb3976ff7661db1053d11af8a5d33a231f9123a81c5e210736b1"
+    },
+    "src/aobasis/basis_set_types.F": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_build_v1/cp2k-2026.2/src/aobasis/basis_set_types.F",
+      "sha256": "a4f386c0f616c76025ed2e456cbb14a24c61f59cc2376921009f51e60ea088b3"
+    },
+    "src/libgrpp_integrals.F": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_build_v1/cp2k-2026.2/src/libgrpp_integrals.F",
+      "sha256": "913d57380608ad29dad18831e987dc8c60993aaccaa59045ddcc7e6976896eb7"
+    },
+    "src/grpp/grpp_potential.c": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_build_v1/cp2k-2026.2/src/grpp/grpp_potential.c",
+      "sha256": "c2df09d7da7124981cd6843486a3bc4afa6ee5cc6210a7507c2f4334c2bb7656"
+    },
+    "data/ECP_POTENTIALS": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_build_v1/cp2k-2026.2/data/ECP_POTENTIALS",
+      "sha256": "a9dbd382c96344c0cc4bcb96f27ae05ea1ca332ad37042e1b6a5656dd7d4aec4"
+    },
+    "data/ALL_POTENTIALS": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_build_v1/cp2k-2026.2/data/ALL_POTENTIALS",
+      "sha256": "d2b0c996d1ba0531710574199b7f0c6bdfa85e2082ed5086224e08ef2cac7f79"
+    }
+  },
+  "metal_source_assets": {
+    "La": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/assets/La_basis.inc",
+      "sha256": "c5298b309b2d897e5de59ddb6b4c7992913dd8cba18b7cd21f9757ce09b167d3"
+    },
+    "Dy": {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/assets/Dy_basis.inc",
+      "sha256": "87bb209a42eca365c93d8f69088a57371285623a1d4afa1c1336390279fafb20"
+    }
+  },
+  "metal_records": {
+    "La": {
+      "core": 46,
+      "local_original_channel": "g",
+      "channels": {
+        "s": [
+          [
+            "2",
+            "3.3099000",
+            "91.9321770"
+          ],
+          [
+            "2",
+            "1.6550000",
+            "-3.7887640"
+          ]
+        ],
+        "p": [
+          [
+            "2",
+            "2.8368000",
+            "63.7594860"
+          ],
+          [
+            "2",
+            "1.4184000",
+            "-0.6479580"
+          ]
+        ],
+        "d": [
+          [
+            "2",
+            "2.0213000",
+            "36.1161730"
+          ],
+          [
+            "2",
+            "1.0107000",
+            "0.2191140"
+          ]
+        ],
+        "f": [
+          [
+            "2",
+            "4.0286000",
+            "-36.0100160"
+          ]
+        ],
+        "g": [
+          [
+            "2",
+            "1.0000000",
+            "0.0000000"
+          ]
+        ]
+      },
+      "shells": [
+        {
+          "l": 0,
+          "rows": [
+            [
+              "63.86477902",
+              "0.0006054016877"
+            ],
+            [
+              "17.90284984",
+              "0.001104575322"
+            ],
+            [
+              "7.155767556",
+              "-0.0394632061"
+            ],
+            [
+              "3.565764101",
+              "0.4270292225"
+            ]
+          ]
+        },
+        {
+          "l": 0,
+          "rows": [
+            [
+              "2.260795742",
+              "1"
+            ]
+          ]
+        },
+        {
+          "l": 0,
+          "rows": [
+            [
+              "0.4837075742",
+              "1"
+            ]
+          ]
+        },
+        {
+          "l": 0,
+          "rows": [
+            [
+              "0.2299449442",
+              "1"
+            ]
+          ]
+        },
+        {
+          "l": 0,
+          "rows": [
+            [
+              "0.05586277822",
+              "1"
+            ]
+          ]
+        },
+        {
+          "l": 0,
+          "rows": [
+            [
+              "0.02288045789",
+              "1"
+            ]
+          ]
+        },
+        {
+          "l": 1,
+          "rows": [
+            [
+              "20.58858927",
+              "0.0008228371712"
+            ],
+            [
+              "7.690003597",
+              "-0.01050731408"
+            ],
+            [
+              "4.082688542",
+              "0.09939916663"
+            ],
+            [
+              "2.267671974",
+              "-0.2941639158"
+            ]
+          ]
+        },
+        {
+          "l": 1,
+          "rows": [
+            [
+              "0.6153565587",
+              "1.011165282"
+            ],
+            [
+              "0.3009119314",
+              "0.988698146"
+            ]
+          ]
+        },
+        {
+          "l": 1,
+          "rows": [
+            [
+              "0.137897953",
+              "1"
+            ]
+          ]
+        },
+        {
+          "l": 1,
+          "rows": [
+            [
+              "0.03846430935",
+              "1"
+            ]
+          ]
+        },
+        {
+          "l": 2,
+          "rows": [
+            [
+              "1.371197338",
+              "-0.1068885071"
+            ],
+            [
+              "0.7706038779",
+              "0.2116326398"
+            ],
+            [
+              "0.30928785",
+              "0.4511564801"
+            ]
+          ]
+        },
+        {
+          "l": 2,
+          "rows": [
+            [
+              "0.1266880385",
+              "1"
+            ]
+          ]
+        },
+        {
+          "l": 2,
+          "rows": [
+            [
+              "0.04901924095",
+              "1"
+            ]
+          ]
+        },
+        {
+          "l": 3,
+          "rows": [
+            [
+              "0.821384",
+              "1"
+            ]
+          ]
+        },
+        {
+          "l": 3,
+          "rows": [
+            [
+              "0.295253",
+              "1"
+            ]
+          ]
+        }
+      ]
+    },
+    "Dy": {
+      "core": 55,
+      "local_original_channel": "g",
+      "channels": {
+        "s": [
+          [
+            "2",
+            "5.6450000",
+            "139.8696170"
+          ],
+          [
+            "2",
+            "2.8225000",
+            "-4.6091630"
+          ]
+        ],
+        "p": [
+          [
+            "2",
+            "4.8337000",
+            "79.1926690"
+          ],
+          [
+            "2",
+            "2.4169000",
+            "2.7160290"
+          ]
+        ],
+        "d": [
+          [
+            "2",
+            "3.3506000",
+            "35.1569640"
+          ],
+          [
+            "2",
+            "1.6753000",
+            "0.9617010"
+          ]
+        ],
+        "f": [
+          [
+            "2",
+            "6.8470000",
+            "-85.9300990"
+          ]
+        ],
+        "g": [
+          [
+            "2",
+            "1.0000000",
+            "0.0000000"
+          ]
+        ]
+      },
+      "shells": [
+        {
+          "l": 0,
+          "rows": [
+            [
+              "42.03952296",
+              "0.001926709716"
+            ],
+            [
+              "18.10065923",
+              "-0.0008734274086"
+            ],
+            [
+              "13.03959135",
+              "-0.04127995355"
+            ],
+            [
+              "6.257298887",
+              "0.4064730686"
+            ]
+          ]
+        },
+        {
+          "l": 0,
+          "rows": [
+            [
+              "3.376570752",
+              "1"
+            ]
+          ]
+        },
+        {
+          "l": 0,
+          "rows": [
+            [
+              "0.6917875374",
+              "1"
+            ]
+          ]
+        },
+        {
+          "l": 0,
+          "rows": [
+            [
+              "0.3201341456",
+              "1"
+            ]
+          ]
+        },
+        {
+          "l": 0,
+          "rows": [
+            [
+              "0.07184839513",
+              "1"
+            ]
+          ]
+        },
+        {
+          "l": 0,
+          "rows": [
+            [
+              "0.02838446429",
+              "1"
+            ]
+          ]
+        },
+        {
+          "l": 1,
+          "rows": [
+            [
+              "41.9727346",
+              "0.0007867084148"
+            ],
+            [
+              "13.91766044",
+              "-0.00594570096"
+            ],
+            [
+              "6.731122462",
+              "0.1027027346"
+            ],
+            [
+              "3.55554142",
+              "-0.4153389414"
+            ]
+          ]
+        },
+        {
+          "l": 1,
+          "rows": [
+            [
+              "0.9032160748",
+              "0.9330518976"
+            ],
+            [
+              "0.4287208194",
+              "1.072124076"
+            ]
+          ]
+        },
+        {
+          "l": 1,
+          "rows": [
+            [
+              "0.1913800342",
+              "1"
+            ]
+          ]
+        },
+        {
+          "l": 1,
+          "rows": [
+            [
+              "0.05228933799",
+              "1"
+            ]
+          ]
+        },
+        {
+          "l": 2,
+          "rows": [
+            [
+              "2.836409055",
+              "-0.02454950578"
+            ],
+            [
+              "0.9578413532",
+              "0.1990432214"
+            ],
+            [
+              "0.3883691108",
+              "0.4122931862"
+            ]
+          ]
+        },
+        {
+          "l": 2,
+          "rows": [
+            [
+              "0.1503522357",
+              "1"
+            ]
+          ]
+        },
+        {
+          "l": 2,
+          "rows": [
+            [
+              "0.05418556451",
+              "1"
+            ]
+          ]
+        },
+        {
+          "l": 3,
+          "rows": [
+            [
+              "1.037746",
+              "1"
+            ]
+          ]
+        },
+        {
+          "l": 3,
+          "rows": [
+            [
+              "0.367165",
+              "1"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "basis_records": {
+    "H": [
+      {
+        "l": 0,
+        "rows": [
+          [
+            "34.0613410",
+            "0.60251978E-02"
+          ],
+          [
+            "5.1235746",
+            "0.45021094E-01"
+          ],
+          [
+            "1.1646626",
+            "0.20189726"
+          ]
+        ]
+      },
+      {
+        "l": 0,
+        "rows": [
+          [
+            "0.32723041",
+            "1.0000000"
+          ]
+        ]
+      },
+      {
+        "l": 0,
+        "rows": [
+          [
+            "0.10307241",
+            "1.0000000"
+          ]
+        ]
+      },
+      {
+        "l": 1,
+        "rows": [
+          [
+            "0.8000000",
+            "1.0000000"
+          ]
+        ]
+      }
+    ],
+    "C": [
+      {
+        "l": 0,
+        "rows": [
+          [
+            "13575.3496820",
+            "0.22245814352E-03"
+          ],
+          [
+            "2035.2333680",
+            "0.17232738252E-02"
+          ],
+          [
+            "463.22562359",
+            "0.89255715314E-02"
+          ],
+          [
+            "131.20019598",
+            "0.35727984502E-01"
+          ],
+          [
+            "42.853015891",
+            "0.11076259931"
+          ],
+          [
+            "15.584185766",
+            "0.24295627626"
+          ]
+        ]
+      },
+      {
+        "l": 0,
+        "rows": [
+          [
+            "6.2067138508",
+            "0.41440263448"
+          ],
+          [
+            "2.5764896527",
+            "0.23744968655"
+          ]
+        ]
+      },
+      {
+        "l": 0,
+        "rows": [
+          [
+            "0.57696339419",
+            "1.0000000"
+          ]
+        ]
+      },
+      {
+        "l": 0,
+        "rows": [
+          [
+            "0.22972831358",
+            "1.0000000"
+          ]
+        ]
+      },
+      {
+        "l": 0,
+        "rows": [
+          [
+            "0.95164440028E-01",
+            "1.0000000"
+          ]
+        ]
+      },
+      {
+        "l": 1,
+        "rows": [
+          [
+            "34.697232244",
+            "0.53333657805E-02"
+          ],
+          [
+            "7.9582622826",
+            "0.35864109092E-01"
+          ],
+          [
+            "2.3780826883",
+            "0.14215873329"
+          ],
+          [
+            "0.81433208183",
+            "0.34270471845"
+          ]
+        ]
+      },
+      {
+        "l": 1,
+        "rows": [
+          [
+            "0.28887547253",
+            ".46445822433"
+          ]
+        ]
+      },
+      {
+        "l": 1,
+        "rows": [
+          [
+            "0.10056823671",
+            ".24955789874"
+          ]
+        ]
+      },
+      {
+        "l": 2,
+        "rows": [
+          [
+            "1.09700000",
+            "1.0000000"
+          ]
+        ]
+      },
+      {
+        "l": 2,
+        "rows": [
+          [
+            "0.31800000",
+            "1.0000000"
+          ]
+        ]
+      },
+      {
+        "l": 3,
+        "rows": [
+          [
+            "0.76100000",
+            "1.0000000"
+          ]
+        ]
+      }
+    ],
+    "O": [
+      {
+        "l": 0,
+        "rows": [
+          [
+            "27032.3826310",
+            "0.21726302465E-03"
+          ],
+          [
+            "4052.3871392",
+            "0.16838662199E-02"
+          ],
+          [
+            "922.32722710",
+            "0.87395616265E-02"
+          ],
+          [
+            "261.24070989",
+            "0.35239968808E-01"
+          ],
+          [
+            "85.354641351",
+            "0.11153519115"
+          ],
+          [
+            "31.035035245",
+            "0.25588953961"
+          ]
+        ]
+      },
+      {
+        "l": 0,
+        "rows": [
+          [
+            "12.260860728",
+            "0.39768730901"
+          ],
+          [
+            "4.9987076005",
+            "0.24627849430"
+          ]
+        ]
+      },
+      {
+        "l": 0,
+        "rows": [
+          [
+            "1.1703108158",
+            "1.0000000"
+          ]
+        ]
+      },
+      {
+        "l": 0,
+        "rows": [
+          [
+            "0.46474740994",
+            "1.0000000"
+          ]
+        ]
+      },
+      {
+        "l": 0,
+        "rows": [
+          [
+            "0.18504536357",
+            "1.0000000"
+          ]
+        ]
+      },
+      {
+        "l": 1,
+        "rows": [
+          [
+            "63.274954801",
+            "0.60685103418E-02"
+          ],
+          [
+            "14.627049379",
+            "0.41912575824E-01"
+          ],
+          [
+            "4.4501223456",
+            "0.16153841088"
+          ],
+          [
+            "1.5275799647",
+            "0.35706951311"
+          ]
+        ]
+      },
+      {
+        "l": 1,
+        "rows": [
+          [
+            "0.52935117943",
+            ".44794207502"
+          ]
+        ]
+      },
+      {
+        "l": 1,
+        "rows": [
+          [
+            "0.17478421270",
+            ".24446069663"
+          ]
+        ]
+      },
+      {
+        "l": 2,
+        "rows": [
+          [
+            "2.31400000",
+            "1.0000000"
+          ]
+        ]
+      },
+      {
+        "l": 2,
+        "rows": [
+          [
+            "0.64500000",
+            "1.0000000"
+          ]
+        ]
+      },
+      {
+        "l": 3,
+        "rows": [
+          [
+            "1.42800000",
+            "1.0000000"
+          ]
+        ]
+      }
+    ],
+    "La": [
+      {
+        "l": 0,
+        "rows": [
+          [
+            "63.86477902",
+            "0.0006054016877"
+          ],
+          [
+            "17.90284984",
+            "0.001104575322"
+          ],
+          [
+            "7.155767556",
+            "-0.0394632061"
+          ],
+          [
+            "3.565764101",
+            "0.4270292225"
+          ]
+        ]
+      },
+      {
+        "l": 0,
+        "rows": [
+          [
+            "2.260795742",
+            "1"
+          ]
+        ]
+      },
+      {
+        "l": 0,
+        "rows": [
+          [
+            "0.4837075742",
+            "1"
+          ]
+        ]
+      },
+      {
+        "l": 0,
+        "rows": [
+          [
+            "0.2299449442",
+            "1"
+          ]
+        ]
+      },
+      {
+        "l": 0,
+        "rows": [
+          [
+            "0.05586277822",
+            "1"
+          ]
+        ]
+      },
+      {
+        "l": 0,
+        "rows": [
+          [
+            "0.02288045789",
+            "1"
+          ]
+        ]
+      },
+      {
+        "l": 1,
+        "rows": [
+          [
+            "20.58858927",
+            "0.0008228371712"
+          ],
+          [
+            "7.690003597",
+            "-0.01050731408"
+          ],
+          [
+            "4.082688542",
+            "0.09939916663"
+          ],
+          [
+            "2.267671974",
+            "-0.2941639158"
+          ]
+        ]
+      },
+      {
+        "l": 1,
+        "rows": [
+          [
+            "0.6153565587",
+            "1.011165282"
+          ],
+          [
+            "0.3009119314",
+            "0.988698146"
+          ]
+        ]
+      },
+      {
+        "l": 1,
+        "rows": [
+          [
+            "0.137897953",
+            "1"
+          ]
+        ]
+      },
+      {
+        "l": 1,
+        "rows": [
+          [
+            "0.03846430935",
+            "1"
+          ]
+        ]
+      },
+      {
+        "l": 2,
+        "rows": [
+          [
+            "1.371197338",
+            "-0.1068885071"
+          ],
+          [
+            "0.7706038779",
+            "0.2116326398"
+          ],
+          [
+            "0.30928785",
+            "0.4511564801"
+          ]
+        ]
+      },
+      {
+        "l": 2,
+        "rows": [
+          [
+            "0.1266880385",
+            "1"
+          ]
+        ]
+      },
+      {
+        "l": 2,
+        "rows": [
+          [
+            "0.04901924095",
+            "1"
+          ]
+        ]
+      },
+      {
+        "l": 3,
+        "rows": [
+          [
+            "0.821384",
+            "1"
+          ]
+        ]
+      },
+      {
+        "l": 3,
+        "rows": [
+          [
+            "0.295253",
+            "1"
+          ]
+        ]
+      }
+    ],
+    "Dy": [
+      {
+        "l": 0,
+        "rows": [
+          [
+            "42.03952296",
+            "0.001926709716"
+          ],
+          [
+            "18.10065923",
+            "-0.0008734274086"
+          ],
+          [
+            "13.03959135",
+            "-0.04127995355"
+          ],
+          [
+            "6.257298887",
+            "0.4064730686"
+          ]
+        ]
+      },
+      {
+        "l": 0,
+        "rows": [
+          [
+            "3.376570752",
+            "1"
+          ]
+        ]
+      },
+      {
+        "l": 0,
+        "rows": [
+          [
+            "0.6917875374",
+            "1"
+          ]
+        ]
+      },
+      {
+        "l": 0,
+        "rows": [
+          [
+            "0.3201341456",
+            "1"
+          ]
+        ]
+      },
+      {
+        "l": 0,
+        "rows": [
+          [
+            "0.07184839513",
+            "1"
+          ]
+        ]
+      },
+      {
+        "l": 0,
+        "rows": [
+          [
+            "0.02838446429",
+            "1"
+          ]
+        ]
+      },
+      {
+        "l": 1,
+        "rows": [
+          [
+            "41.9727346",
+            "0.0007867084148"
+          ],
+          [
+            "13.91766044",
+            "-0.00594570096"
+          ],
+          [
+            "6.731122462",
+            "0.1027027346"
+          ],
+          [
+            "3.55554142",
+            "-0.4153389414"
+          ]
+        ]
+      },
+      {
+        "l": 1,
+        "rows": [
+          [
+            "0.9032160748",
+            "0.9330518976"
+          ],
+          [
+            "0.4287208194",
+            "1.072124076"
+          ]
+        ]
+      },
+      {
+        "l": 1,
+        "rows": [
+          [
+            "0.1913800342",
+            "1"
+          ]
+        ]
+      },
+      {
+        "l": 1,
+        "rows": [
+          [
+            "0.05228933799",
+            "1"
+          ]
+        ]
+      },
+      {
+        "l": 2,
+        "rows": [
+          [
+            "2.836409055",
+            "-0.02454950578"
+          ],
+          [
+            "0.9578413532",
+            "0.1990432214"
+          ],
+          [
+            "0.3883691108",
+            "0.4122931862"
+          ]
+        ]
+      },
+      {
+        "l": 2,
+        "rows": [
+          [
+            "0.1503522357",
+            "1"
+          ]
+        ]
+      },
+      {
+        "l": 2,
+        "rows": [
+          [
+            "0.05418556451",
+            "1"
+          ]
+        ]
+      },
+      {
+        "l": 3,
+        "rows": [
+          [
+            "1.037746",
+            "1"
+          ]
+        ]
+      },
+      {
+        "l": 3,
+        "rows": [
+          [
+            "0.367165",
+            "1"
+          ]
+        ]
+      }
+    ]
+  },
+  "all_electron_records": {
+    "H": "H ALLELECTRON ALL\n    1    0    0\n     0.20000000    0\n",
+    "C": "C ALLELECTRON ALL\n    4    2    0\n     0.34883045    0\n",
+    "O": "O ALLELECTRON ALL\n    4    4    0\n     0.24762086    0\n"
+  },
+  "geometry_checks": {
+    "aquo8_central_La": {
+      "geometry": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/xyz/aquo8_central_La.xyz",
+        "sha256": "371533e94b5e7b2bbe61f1ecec77d1ddbfdbc4edd0beea98af77dad23bf39c4a"
+      },
+      "native_input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/original_native_inputs/aquo8_central_La.inp",
+        "sha256": "da6264c6c74763d3ac0bd22d8cb1ec0f0744c56c4d1051a0534ef3d2e3e66b26"
+      },
+      "native_output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_La/execution/endpoint.out",
+        "sha256": "e947643ce301ea7096bd443c7a096c4b51e096e84bd1bcc50fa2de15ece62d3e"
+      },
+      "atom_counts": {
+        "La": 1,
+        "O": 8,
+        "H": 16
+      },
+      "spherical_AOs": 391,
+      "archived_patterns_and_AO_count_match": true,
+      "charge": 3,
+      "effective_multiplicity": 1,
+      "explicit_electrons": 88
+    },
+    "aquo8_central_Dy": {
+      "geometry": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/xyz/aquo8_central_Dy.xyz",
+        "sha256": "8448c74ce91cb7bfdd814566a17f1bc0e219a8f8b568747cc488fb5756781c62"
+      },
+      "native_input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/original_native_inputs/aquo8_central_Dy.inp",
+        "sha256": "92a6f3264039af1eb4fc18269dbaa919a8f05625d1d9457b5ada8d328658963c"
+      },
+      "native_output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/reference_chemistry_v1/ecp_remaining_v1/tasks/ecp_pbe0__aquo8_central_Dy/execution/endpoint.out",
+        "sha256": "d8828b0b09833f89e67324fdd91c6a18cf67edde1d9e63bcb28f679c53f26cba"
+      },
+      "atom_counts": {
+        "Dy": 1,
+        "O": 8,
+        "H": 16
+      },
+      "spherical_AOs": 391,
+      "archived_patterns_and_AO_count_match": true,
+      "charge": 3,
+      "effective_multiplicity": 1,
+      "explicit_electrons": 88
+    },
+    "hydrated_acetate_mono_central_La": {
+      "geometry": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/xyz/hydrated_acetate_mono_central_La.xyz",
+        "sha256": "2501a764ae1b252eaeba4df5c26235335f804de113d0d526ec594995957a7228"
+      },
+      "native_input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/original_native_inputs/hydrated_acetate_mono_central_La.inp",
+        "sha256": "5675a433485b41b78f258e8fb85dcf6d5fe133e7ac0cd6c0b7cdd45646b20af9"
+      },
+      "native_output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/hydrated_chemistry_run_v1/reference/tasks/ecp_pbe0__hydrated_acetate_mono_central_La/execution/endpoint.out",
+        "sha256": "603ed6e6e4551108178ba3935426d559a84d7b0f8b04fd598414136ec1a3de10"
+      },
+      "atom_counts": {
+        "La": 1,
+        "C": 2,
+        "O": 9,
+        "H": 17
+      },
+      "spherical_AOs": 490,
+      "archived_patterns_and_AO_count_match": true,
+      "charge": 2,
+      "effective_multiplicity": 1,
+      "explicit_electrons": 110
+    },
+    "hydrated_acetate_mono_central_Dy": {
+      "geometry": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/xyz/hydrated_acetate_mono_central_Dy.xyz",
+        "sha256": "89f08e66242fcd1798ee89d3ed9bfba01f874066afc25f16083b513a47c58fdf"
+      },
+      "native_input": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/inputs/original_native_inputs/hydrated_acetate_mono_central_Dy.inp",
+        "sha256": "570cba44e93ea26bfcd6610fb2568f621dd9125d80633020e78e2f77e5c77163"
+      },
+      "native_output": {
+        "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lanm_selectivity_free_energy_20261021/hydrated_chemistry_run_v1/reference/tasks/ecp_pbe0__hydrated_acetate_mono_central_Dy/execution/endpoint.out",
+        "sha256": "567eda1bd91e2052d4c7790c990449c4669530ea4bb8bff1cb833b7f706a44e1"
+      },
+      "atom_counts": {
+        "Dy": 1,
+        "C": 2,
+        "O": 9,
+        "H": 17
+      },
+      "spherical_AOs": 490,
+      "archived_patterns_and_AO_count_match": true,
+      "charge": 2,
+      "effective_multiplicity": 1,
+      "explicit_electrons": 110
+    }
+  },
+  "spherical_AOs_by_element": {
+    "H": 6,
+    "C": 31,
+    "O": 31,
+    "La": 47,
+    "Dy": 47
+  },
+  "HCO_equivalence": {
+    "status": "documented_named_library_equivalence",
+    "literal_ORCA_runtime_coefficients_available": false,
+    "BSE_versions_0_and_1_electron_shells_identical": true,
+    "BSE_ORCA_CP2K_exports_tokens_identical": true,
+    "archived_ORCA_name_patterns_and_counts_match": true,
+    "basis_reference": "Weigend and Ahlrichs 2005, DOI 10.1039/B508541A",
+    "ORCA_official_library_documentation": "https://www.faccts.de/docs/orca/6.1/manual/contents/essentialelements/basisset.html",
+    "limit": "Saved outputs do not print H/C/O primitive coefficients; no byte-level ORCA library extraction claimed."
+  },
+  "ECP_convention": {
+    "row_order": [
+      "radial_n",
+      "exponent",
+      "coefficient"
+    ],
+    "radial_factor": "r^(n-2) exp(-exponent*r^2)",
+    "n_is_preserved": 2,
+    "local_channel": "original zero g moved literally to UL; S/P/D/F remain ordered nonlocal projectors",
+    "ECP_SEMI_LOCAL_required": true,
+    "cross_format_example": "ORCA manual SD(10,MDF) V example matches CP2K data/ECP_POTENTIALS V rows including n=2"
+  },
+  "runtime_requirements": {
+    "basis_name_all_elements": "LADY-ARCHIVED",
+    "potentials": {
+      "H": "ALL",
+      "C": "ALL",
+      "O": "ALL",
+      "La": "ECP-LADY-La46",
+      "Dy": "ECP-LADY-Dy55"
+    },
+    "metal_ECP_SEMI_LOCAL": true,
+    "orbital_normalization": 2,
+    "representation": "spherical Gaussian orbitals; unchanged contractions"
+  },
+  "not_converted": "ORCA def2/J and metal AuxJ are RIJCOSX numerical auxiliaries, not orbital basis; CP2K numerical settings are separately declared.",
+  "molecular_calls": 0,
+  "jobs": 0,
+  "limitations": [
+    "Source and formatting checks only; no CP2K input execution, molecular energy or EDA validation.",
+    "Effective Dy singlet is the archived frozen-f model, not physical spin/SOC qualification."
+  ]
+}

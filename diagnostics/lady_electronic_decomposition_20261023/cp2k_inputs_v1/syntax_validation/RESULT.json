@@ -1,0 +1,102 @@
+{
+  "created_utc": "2026-10-23T21:12:04.475535+00:00",
+  "checks": [
+    {
+      "geometry_id": "aquo8_central_Dy",
+      "argv": [
+        "/usr/bin/apptainer",
+        "exec",
+        "--cleanenv",
+        "--bind",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_build_v2:/work:ro",
+        "--bind",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/assets:/assets:ro",
+        "--bind",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/decks:/decks:ro",
+        "--pwd",
+        "/tmp",
+        "--env",
+        "OMP_NUM_THREADS=1",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_build_v1/cp2k-2026.2-mpich-generic.sif",
+        "/work/build/bin/cp2k.psmp",
+        "--check",
+        "-i",
+        "/decks/aquo8_central_Dy.inp"
+      ],
+      "exit_code": 0
+    },
+    {
+      "geometry_id": "aquo8_central_La",
+      "argv": [
+        "/usr/bin/apptainer",
+        "exec",
+        "--cleanenv",
+        "--bind",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_build_v2:/work:ro",
+        "--bind",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/assets:/assets:ro",
+        "--bind",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/decks:/decks:ro",
+        "--pwd",
+        "/tmp",
+        "--env",
+        "OMP_NUM_THREADS=1",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_build_v1/cp2k-2026.2-mpich-generic.sif",
+        "/work/build/bin/cp2k.psmp",
+        "--check",
+        "-i",
+        "/decks/aquo8_central_La.inp"
+      ],
+      "exit_code": 0
+    },
+    {
+      "geometry_id": "hydrated_acetate_mono_central_Dy",
+      "argv": [
+        "/usr/bin/apptainer",
+        "exec",
+        "--cleanenv",
+        "--bind",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_build_v2:/work:ro",
+        "--bind",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/assets:/assets:ro",
+        "--bind",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/decks:/decks:ro",
+        "--pwd",
+        "/tmp",
+        "--env",
+        "OMP_NUM_THREADS=1",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_build_v1/cp2k-2026.2-mpich-generic.sif",
+        "/work/build/bin/cp2k.psmp",
+        "--check",
+        "-i",
+        "/decks/hydrated_acetate_mono_central_Dy.inp"
+      ],
+      "exit_code": 0
+    },
+    {
+      "geometry_id": "hydrated_acetate_mono_central_La",
+      "argv": [
+        "/usr/bin/apptainer",
+        "exec",
+        "--cleanenv",
+        "--bind",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_build_v2:/work:ro",
+        "--bind",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/assets:/assets:ro",
+        "--bind",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/diagnostics/lady_electronic_decomposition_20261023/cp2k_inputs_v1/decks:/decks:ro",
+        "--pwd",
+        "/tmp",
+        "--env",
+        "OMP_NUM_THREADS=1",
+        "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/lady_electronic_decomposition_20261023/cp2k_build_v1/cp2k-2026.2-mpich-generic.sif",
+        "/work/build/bin/cp2k.psmp",
+        "--check",
+        "-i",
+        "/decks/hydrated_acetate_mono_central_La.inp"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "scope": "Native --check metadata/input parser only; zero molecular calls"
+}

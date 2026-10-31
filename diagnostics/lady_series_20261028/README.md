@@ -37,9 +37,13 @@ The data are from the curated table `workspaces/ln_selectivity_calibration_20261
 
 \* Range across RTX, HEW5 and A0A7.
 
-**Misfits, both most likely measurement artefacts:**
+**Historical shape misfits (interpretation corrected 2026-10-30 below):**
 - **GGR (Snyder 1990)** has a residual of 0.38. La–Gd fit to within 0.06 kcal/mol each. The heavy half zig-zags, with Tb +0.76 and Yb +0.79. Tb is the assay's luminescent reference ion.
 - **Mex-LanM (Deblonde 2020, per-site value from β31)** has a residual of 0.43, with a heavy end that rises up to Tm. That contradicts both Cotruvo 2018 and the 2024 full series, which fall toward the heavy end and fit.
+
+**Correction, 2026-10-30.** The shape residual does not justify calling the Deblonde intrinsic-affinity series a probable measurement artefact. Mattocks, Tirsch & Cotruvo, *Methods in Enzymology* (2021), section 4.1 and Table 3, explicitly distinguish intrinsic binding measured through metal f–f absorbance from apparent affinity measured through the protein's CD conformational response. The absorbance experiment reports an average over three similar sites. Beyond Gd the two observables increasingly diverge, consistent with decoupling of binding and conformational response; heavier ions can bind more tightly while inducing that response less effectively. Their comparison is at pH 5.0 (acetate/KCl), 20 °C. Primary source: [accepted manuscript, pp. 18–19](https://www.osti.gov/servlets/purl/1781338), [DOI](https://doi.org/10.1016/bs.mie.2021.01.044).
+
+Retain both datasets with their definitions and conditions. A per-site transformation of β31 is an average intrinsic quantity, not separately measured EF-hand affinities. Intrinsic binding, CD response, competitive adsorption and separation factors are separate targets. This correction neither validates our calculations nor resolves Hans-LanM selectivity. The residuals above remain descriptive fits to different observables, not a test that one dataset is erroneous.
 
 **Hans-LanM** has only La, Nd and Dy published (Mattocks 2023 SI Table S2), so the shapes cannot be tested on it.
 

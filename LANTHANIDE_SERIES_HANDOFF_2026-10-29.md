@@ -217,3 +217,17 @@ Frozen predictions of the calculated ΔΔG (conformer_best):
 | Original La/Dy acetate/EDTA runs and shared helpers | `diagnostics/lady_relaxed_exchange_20261024/` (`analyze.py`, `EXPERIMENT_THERMO.md`) |
 | NIST ligand table and MACE starts | `workspaces/ln_surrogate_20261027/{surrogate_nist.tsv,nist/<id>/}` |
 | Session transcript | `/home/jwestrob/jwestrob/.claude/projects/-groups-banfield-projects-environmental-sr-srvp2020-Jacob-lanthanide-binding-on-density-scanner-alchemical-bvs/39867d9b-3f9a-4f8f-86e2-21cbaede90a8.jsonl` |
+
+## Update 2026-10-30: authorized bounded structural increment completed
+
+Jacob supplied the Web-GPT specification and authorized implementation/evaluation.
+See `diagnostics/ln_structure_increment_20261030/REPORT.md`. On115 direct matched
+ligands in11 families, donor+charge ridge gives RMSE0.854; topology0.882. Size fit
+has87/115 coverage and no robust increment over topology; both numerical targets
+fail. **Decision: Target missed; retain M1 and end automatic expansion.**
+Released graph M4-S rawRMSE0.563 is not independent: all evaluation families have
+training/validation exposure. Exact legacy application replay also remains failed.
+No physical campaign resumes from this result. The series README now corrects the
+intrinsic-versus-CD interpretation with Mattocks et al.2021 primary-source support.
+All owned jobs terminal; details, exclusions, failed attempts and reproduction
+are in the new diagnostic. Historical outputs and reserved outcomes are preserved.

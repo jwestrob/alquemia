@@ -3550,3 +3550,29 @@ evaluations yet. CPU scout1218751 afteranyPQQ1217591:6analytic-gradient endpoint
 results/accounting without this chat. Both dependency-pending, no oldjob retry.
 All three bounded agents complete; root owns integration/recovery. No production
 change, remote push, email or library campaign. Vault checkpoint updated.
+
+## 2026-10-30 — bounded Nikasha structural increment complete (Codex root)
+
+User activated the Web-GPT specification. New isolated diagnostic:
+`diagnostics/ln_structure_increment_20261030/REPORT.md` and matching workspace.
+Reproduced historical donor LOO (0.85); strict primary 115 ligands/135 matched
+conditions, 11 families, 14 tetraacetates. Donor+charge family-held-out RMSE0.854;
+topology0.882. On same87 size-fit successes, M2/M3 0.998/0.955 with no supported
+primary increment and a sign reversal under softer restraints. Targets fail;
+**decision Target missed, retain M1, end automatic expansion**. No new campaign.
+
+Graph-release overlap audited121078 rows: M1 normalized matches102/115, M4 103/115,
+including protonation96; every evaluation family exposed. M4-S rawRMSE0.563 is an
+overlapping-data reference, not independent superiority. Clean from-scratch family
+refits not completed. Legacy LOGKPREDICT example fails numeric replay; retained.
+Separate exact amidated17-residue 2025 LBT3/N5D graph illustration misses mutation
+preference change. No peptide simulations or independently measured EF-hand labels.
+
+All19 owned Slurm jobs terminal; final saved summary32027. Cost6297 allocatedCPU-s,
+1964.978 measuredCPU-s, zeroGPU, includes failed/cancelled attempts. Source/metadata
+repairs, including post-initial-results nitrobenzoate grouping, are explicit in
+DEVIATIONS.md. NIST-derived rows stay in ignored workspace. No reserved outcomes,
+DFT/MD/alchemical/forcefield-fit/ML-potential training, production changes or pushes.
+Added primary-source observable correction to lady_series_20261028/README.md.
+Other dirty work and other users' jobs are preserved. Reproduce via diagnostic
+reproduce.sh into a fresh directory; do not restart old physical campaigns.

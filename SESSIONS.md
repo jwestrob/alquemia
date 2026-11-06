@@ -3607,3 +3607,26 @@ outputs, M1, unrelated dirty files and other-session executors preserved.
 `reproduce.sh --saved` queues fresh saved-only analyses; `--inference` also repeats
 the fixed ML panel, never ORCA. Completion receipts consumed; delayed wakes ACK
 only, not permission to reopen this closed diagnostic.
+
+## 2026-11-06 — Tauri spectator-cancellation Test 1 complete
+
+Jacob approved the proposed one-CPU-hour Test 1 with “sure.” Read
+`diagnostics/so3lr_swap_spectator_20261106/REPORT.md` and CURRENT.md.
+Same54-atom LaAcW7+DyW8 versus DyAcW7+LaW8, charge+5/multiplicity6;
+identical real water added to both at100/200/400 A, two orientations. L primary,
+M fixed sensitivity,1000-A/no-cutoff controls, no fitted corrections.
+
+L PASSES the predeclared0.5-kcal/mol energy test: maxfar effect0.0670/0.0677.
+M misses:0.5821/0.5827. This supports cancellation of the earlier single-complex
+water effect for L in this charged prototype. No chemical-accuracy, neutral-box
+or free-energy claim. Largest L change in an endpoint force-difference component
+is about4.18 kcal/mol/A, so this is not force/ensemble validation. Next limited
+recommendation: prepare the actual neutral system and check energies/forces
+before trajectories. No Test2/MD/new quantum campaign started.
+
+Both jobs52169/52184 completed,62 ML calls, saved tables/decision reproduced.
+Cost640 allocatedCPU-s (10.7CPUmin),175.149 measuredCPU-s; within3600 cap,
+zeroGPU/DFT/MD. Old environment/weights reused. All raw arrays/source hashes
+preserved. No live jobs, no duplicate/retry. M1/reserved outcomes/unrelated edits
+and other-session executors unchanged. Original reference screen remains
+unresolved; a dated correction clarifies that it did not establish Tauri failure.

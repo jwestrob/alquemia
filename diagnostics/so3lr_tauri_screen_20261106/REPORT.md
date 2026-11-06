@@ -1,5 +1,13 @@
 # Bounded Tauri screen — 6 November 2026
 
+> **Later interpretation correction,6 November:** the unresolved reference screen
+> did not establish Tauri failure. Its blanket project-stop interpretation was
+> too broad. Jacob subsequently approved a bounded cancellation test. In that
+> [follow-up](../so3lr_swap_spectator_20261106/REPORT.md), L passes the declared
+> energy criterion, while force sensitivity remains a concern. The original
+> frozen protocol, numerical results and missing-reference status below stand.
+> No solvent pilot followed automatically.
+
 **Decision: unresolved reference; no solvent pilot. End automatic expansion.**
 
 1. **Improved selectivity prediction was not demonstrated.** L/M inference and

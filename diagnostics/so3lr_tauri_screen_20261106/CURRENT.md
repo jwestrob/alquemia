@@ -36,3 +36,15 @@ reference rows and decisions, preserving original artifacts. See
 REPRODUCTION_CHECKS.json and ARTIFACTS.json. Delayed completion events for GPU
 scout49306 or six-reference watcher are ACK only: WAKE_ACK.json already records
 root consumption and closure. Do not start another allocation from those events.
+
+
+6 November subsequent user direction: Jacob challenged the blanket project stop
+and approved a bounded Test 1 follow-up. See ../so3lr_swap_spectator_20261106/
+CURRENT.md and PLAN.md. The earlier benchmark remains unresolved; its outcome
+was not evidence of Tauri failure. Only the new one-CPU-hour cancellation test is
+released. No old reference restart or automatic MD follows.
+
+Follow-up completed: L passes the declared energy-cancellation test (0.068 vs0.5
+kcal/mol); M misses it (0.583). Local force sensitivity remains. See the new
+REPORT.md for scope and next recommendation; no automatic MD. Both new jobs
+terminal,10.7 allocatedCPUminutes total. Earlier frozen data remain unchanged.

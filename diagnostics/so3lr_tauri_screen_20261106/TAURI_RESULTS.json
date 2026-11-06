@@ -1,0 +1,365 @@
+{
+  "source": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/so3lr_tauri_screen_20261106/panel_cpu_v1/RESULT.json",
+    "sha256": "e089ca482e093fb7ca39706a82d34e16f175688d05ed044ffeb06ca469b2b06b"
+  },
+  "panel": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/so3lr_tauri_screen_20261106/PANEL.json",
+    "sha256": "e4c7e99c1c7bc5ea884b044a1ac417c77d4b915f4db22e3c2882cfd7d77f6a44"
+  },
+  "job": "49464",
+  "primary_counts": {
+    "configurations": 24,
+    "models": 2,
+    "predictions": 48,
+    "identical_coordinate_Dy_La_pairs_per_model": 12
+  },
+  "implementation_checks": [
+    {
+      "test": "native_ASE",
+      "model": "l",
+      "energy_diff_eV": 1.4210854715202004e-14,
+      "max_force_diff_eV_A": 1.0249613657808965e-14,
+      "passed": true
+    },
+    {
+      "test": "fragment_fields",
+      "model": "l",
+      "passed": true,
+      "residue_charge": [
+        3,
+        -1
+      ],
+      "residue_segments": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "test": "force_energy_FD",
+      "model": "l",
+      "finite_difference": -5.079265982672609,
+      "analytic": -5.079265518126071,
+      "residual_eV_A": -4.645465381258873e-07,
+      "passed": true
+    },
+    {
+      "test": "native_ASE",
+      "model": "m",
+      "energy_diff_eV": 7.105427357601002e-14,
+      "max_force_diff_eV_A": 4.107825191113079e-15,
+      "passed": true
+    },
+    {
+      "test": "fragment_fields",
+      "model": "m",
+      "passed": true,
+      "residue_charge": [
+        3,
+        -1
+      ],
+      "residue_segments": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "test": "force_energy_FD",
+      "model": "m",
+      "finite_difference": -5.193041346629457,
+      "analytic": -5.193041031830333,
+      "residual_eV_A": -3.147991236573944e-07,
+      "passed": true
+    }
+  ],
+  "balanced_contrasts": [
+    {
+      "model": "l",
+      "LR_cutoff_A": 1000.0,
+      "contrasts_kcal_mol": {
+        "C_W": -1.113073925235085,
+        "C_Ac": 3.962649953505661
+      },
+      "six_significant_digit_export_kcal_mol": {
+        "C_W": -1.1115184054356178,
+        "C_Ac": 3.96410817208357
+      }
+    },
+    {
+      "model": "l",
+      "LR_cutoff_A": 100.0,
+      "contrasts_kcal_mol": {
+        "C_W": -1.0952884335217732,
+        "C_Ac": 4.260273099987444
+      },
+      "six_significant_digit_export_kcal_mol": {
+        "C_W": -1.0953760219547348,
+        "C_Ac": 4.259283184315564
+      }
+    },
+    {
+      "model": "l",
+      "LR_cutoff_A": null,
+      "contrasts_kcal_mol": {
+        "C_W": -1.1150500909793664,
+        "C_Ac": 3.9295807150085693
+      },
+      "six_significant_digit_export_kcal_mol": {
+        "C_W": -1.1161305150012595,
+        "C_Ac": 3.9295173503373917
+      }
+    },
+    {
+      "model": "m",
+      "LR_cutoff_A": 1000.0,
+      "contrasts_kcal_mol": {
+        "C_W": 2.5596692128906398,
+        "C_Ac": 10.769111920833211
+      },
+      "six_significant_digit_export_kcal_mol": {
+        "C_W": 2.5620268639816004,
+        "C_Ac": 10.780806110814638
+      }
+    },
+    {
+      "model": "m",
+      "LR_cutoff_A": 100.0,
+      "contrasts_kcal_mol": {
+        "C_W": 2.718294118185213,
+        "C_Ac": 10.809856654459054
+      },
+      "six_significant_digit_export_kcal_mol": {
+        "C_W": 2.71883858922979,
+        "C_Ac": 10.806172713427713
+      }
+    },
+    {
+      "model": "m",
+      "LR_cutoff_A": null,
+      "contrasts_kcal_mol": {
+        "C_W": 2.542044223413768,
+        "C_Ac": 10.76458472820832
+      },
+      "six_significant_digit_export_kcal_mol": {
+        "C_W": 2.5412723709341662,
+        "C_Ac": 10.771581891682217
+      }
+    }
+  ],
+  "conditioning_sensitivity": [
+    {
+      "model": "l",
+      "test": "real_water_spectator",
+      "distance_A": 50.0,
+      "nonadditive_energy_kcal_mol": -4.290973105157804,
+      "max_base_atom_force_change_kcal_mol_A": 1.710549260635959,
+      "metal_force_change_kcal_mol_A": [
+        0.003258289412894386,
+        -2.4962292382972345e-14,
+        -0.0011324594077426892
+      ]
+    },
+    {
+      "model": "l",
+      "test": "real_water_spectator",
+      "distance_A": 100.0,
+      "nonadditive_energy_kcal_mol": -4.248412736695182,
+      "max_base_atom_force_change_kcal_mol_A": 1.7507416243120242,
+      "metal_force_change_kcal_mol_A": [
+        0.00013571499379501982,
+        -4.784439373403033e-14,
+        -0.00016368738400105083
+      ]
+    },
+    {
+      "model": "l",
+      "test": "separated_real_metal_acetate_charge_conditioning",
+      "separation_translation_A": 50,
+      "explicit_fragment_minus_plain_energy_kcal_mol": 18.123452667066427,
+      "max_force_difference_kcal_mol_A": 1.0909449684311854
+    },
+    {
+      "model": "m",
+      "test": "real_water_spectator",
+      "distance_A": 50.0,
+      "nonadditive_energy_kcal_mol": -3.6844231456894985,
+      "max_base_atom_force_change_kcal_mol_A": 0.8949497744682646,
+      "metal_force_change_kcal_mol_A": [
+        0.004934909009427633,
+        -7.014644181657373e-14,
+        -0.0011570863438594905
+      ]
+    },
+    {
+      "model": "m",
+      "test": "real_water_spectator",
+      "distance_A": 100.0,
+      "nonadditive_energy_kcal_mol": -3.6091111103664213,
+      "max_base_atom_force_change_kcal_mol_A": 0.9287953893715395,
+      "metal_force_change_kcal_mol_A": [
+        0.0005415716518128872,
+        -1.270016630494254e-13,
+        -0.0001676079714534614
+      ]
+    },
+    {
+      "model": "m",
+      "test": "separated_real_metal_acetate_charge_conditioning",
+      "separation_translation_A": 50,
+      "explicit_fragment_minus_plain_energy_kcal_mol": 17.705444975090675,
+      "max_force_difference_kcal_mol_A": 0.9556661184385031
+    }
+  ],
+  "throughput": [
+    {
+      "stage": "warm_throughput",
+      "model": "l",
+      "natoms": 29,
+      "repeats": 10,
+      "seconds": [
+        0.12402003817260265,
+        0.12374211708083749,
+        0.12895499635487795,
+        0.12516653491184115,
+        0.1260054879821837,
+        0.13132125698029995,
+        0.12612319085747004,
+        0.1270651943050325,
+        0.1255751270800829,
+        0.12419988214969635
+      ],
+      "mean_seconds": 0.12621738258749246
+    },
+    {
+      "stage": "warm_throughput",
+      "model": "m",
+      "natoms": 29,
+      "repeats": 10,
+      "seconds": [
+        0.0642116260714829,
+        0.06096761906519532,
+        0.061715914867818356,
+        0.06521513406187296,
+        0.06799614802002907,
+        0.06381946988403797,
+        0.06209103902801871,
+        0.06692928215488791,
+        0.06534494599327445,
+        0.06578650418668985
+      ],
+      "mean_seconds": 0.06440776833333076
+    }
+  ],
+  "model_load_and_compile_calls": [
+    {
+      "stage": "load",
+      "model": "l",
+      "cutoff": 1000.0,
+      "wall_seconds": 1.0995817184448242
+    },
+    {
+      "stage": "evaluate",
+      "model": "l",
+      "id": "aquo9_central_La",
+      "cutoff": 1000.0,
+      "wall_seconds": 6.522321462631226
+    },
+    {
+      "stage": "evaluate",
+      "model": "l",
+      "id": "translated_dry_fragment",
+      "cutoff": 1000.0,
+      "wall_seconds": 4.582294464111328
+    },
+    {
+      "stage": "load",
+      "model": "l",
+      "cutoff": 100.0,
+      "wall_seconds": 0.06039237976074219
+    },
+    {
+      "stage": "evaluate",
+      "model": "l",
+      "id": "aquo8_central_La_cutoff_100.0",
+      "cutoff": 100.0,
+      "wall_seconds": 4.646366834640503
+    },
+    {
+      "stage": "load",
+      "model": "l",
+      "cutoff": null,
+      "wall_seconds": 0.057228803634643555
+    },
+    {
+      "stage": "evaluate",
+      "model": "l",
+      "id": "aquo8_central_La_cutoff_None",
+      "cutoff": null,
+      "wall_seconds": 4.508939504623413
+    },
+    {
+      "stage": "load",
+      "model": "m",
+      "cutoff": 1000.0,
+      "wall_seconds": 0.6008648872375488
+    },
+    {
+      "stage": "evaluate",
+      "model": "m",
+      "id": "aquo8_central_La",
+      "cutoff": 1000.0,
+      "wall_seconds": 4.843242883682251
+    },
+    {
+      "stage": "evaluate",
+      "model": "m",
+      "id": "translated_dry_fragment",
+      "cutoff": 1000.0,
+      "wall_seconds": 4.175061941146851
+    },
+    {
+      "stage": "load",
+      "model": "m",
+      "cutoff": 100.0,
+      "wall_seconds": 0.05521535873413086
+    },
+    {
+      "stage": "evaluate",
+      "model": "m",
+      "id": "aquo8_central_La_cutoff_100.0",
+      "cutoff": 100.0,
+      "wall_seconds": 4.283019304275513
+    },
+    {
+      "stage": "load",
+      "model": "m",
+      "cutoff": null,
+      "wall_seconds": 0.05181121826171875
+    },
+    {
+      "stage": "evaluate",
+      "model": "m",
+      "id": "aquo8_central_La_cutoff_None",
+      "cutoff": null,
+      "wall_seconds": 4.021188974380493
+    }
+  ],
+  "archived_delta_forces": {
+    "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/so3lr_tauri_screen_20261106/DELTA_FORCES.json",
+    "sha256": "65f4b342204c3e7d84e9ff30215bc242b671a7c799b54ed3b2f1bf050504a618"
+  },
+  "all_implementation_checks_pass": true,
+  "scientific_status": "Closed reference attempt; see REFERENCE_COMPARISON.json. No MD released."
+}

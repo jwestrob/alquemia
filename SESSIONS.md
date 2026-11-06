@@ -3576,3 +3576,34 @@ DFT/MD/alchemical/forcefield-fit/ML-potential training, production changes or pu
 Added primary-source observable correction to lady_series_20261028/README.md.
 Other dirty work and other users' jobs are preserved. Reproduce via diagnostic
 reproduce.sh into a fresh directory; do not restart old physical campaigns.
+
+## 2026-11-06 — bounded Tauri screen complete (Codex root)
+
+User activated the SO3LR Tauri handoff. Read
+`diagnostics/so3lr_tauri_screen_20261106/REPORT.md` and `CURRENT.md`.
+Pinned L/M-2606, separate Python3.12/JAX0.10.2 environment; all24 exact archived
+configurations completed on Slurm CPUs (49387), with physical La1/Dy6, float64
+raw arrays and all interface/finite-difference/fragment checks passing. L CW/CAc
+−1.113/+3.963 vs M+2.560/+10.769 kcal/mol are electronic contrasts, not affinities.
+Capacity and distant-spectator sensitivity remain material concerns.
+
+Exactly six fixed OMol-style invocations49309–49314. Three La outputs completed,
+with correct ECP/counts/S2, stable wavefunctions and gradients but failed frozen
+printed Tight residuals. Both contrasts require LaW8; root recorded SCIENCE_STOP
+before cancelling only the three unfinished Dy jobs after2686s each. No final
+Dy energy/gradient is inferred; no solver/root/method retry or changed criteria.
+**Decision: unresolved reference; no MD pilot, preserve M1, end automatic expansion.**
+
+Native audit verifies the eight599/600 and576/597 records, but neither common
+medium is admitted: anion/original provenance unresolved, fallback adjustments
+mismatched. Old27.55-kcal core discrepancy reproduced with old state/density
+limitations. No third pair, reserved outcomes or protein/peptide calculations.
+
+All23 jobs terminal. Cost150814 allocatedCPU-s (41.89h),146636.412 measuredCPU-s
+(40.73h), zeroGPU; includes failed writers, stopped references and successful
+saved-data replay49465/49466/49467. Warm29-atom CPU L.1262s/M.0644s; no H200/bulk
+throughput claim. GPU49306 was cancelled pending QOSMaxGRESPerUser. Original
+outputs, M1, unrelated dirty files and other-session executors preserved.
+`reproduce.sh --saved` queues fresh saved-only analyses; `--inference` also repeats
+the fixed ML panel, never ORCA. Completion receipts consumed; delayed wakes ACK
+only, not permission to reopen this closed diagnostic.

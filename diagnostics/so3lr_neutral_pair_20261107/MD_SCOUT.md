@@ -47,3 +47,14 @@ the six independent endpoint preparations fit the remaining budget. Do not
 extend this scout to chase equilibration. A failed initialization or loss of
 binding is evidence to diagnose; neither should be silently turned into an
 affinity result. No midpoint or alchemical ladder is automatically released.
+
+7 November preparation amendment, before dynamics: the initial observations
+found zero first-shell waters in every original box. HYDRATION_PREPARATION.md
+declares one geometry-only repair; job53157 completed it and verified two/three/
+two initial waters per metal across the three starts. The scout now uses
+`hydrated_preparation_v1/start0/A.extxyz`. Ligand coordinates, cell, composition,
+state, model, minimization bound and all dynamics settings remain as declared.
+The original periodic benchmark retains its original inputs and results.
+Analyze the eventual native trajectory with `trajectory.py --md-dir ...
+--preparation workspaces/so3lr_neutral_pair_20261107/hydrated_preparation_v1/RESULT.json
+--output-dir <fresh-workspace-directory>` in a one-CPU Slurm allocation.

@@ -72,6 +72,32 @@ charge conservation are checked. Raw arrays retain full precision.
 
 ## Execution and cost
 
+7 November preparation update: the new initial-observation analysis found no
+water oxygens within3.5 A of either metal in any original box. That limits their
+use as distinct hydrated starts. A single declared preparation repair adds
+two/three/two first-shell waters per metal, respectively, using rigidly rotated
+archived aquo-water coordinates and geometric clearance. It preserves all ligand
+coordinates and repacks the remaining bulk water, keeping the total at2400.
+These waters are fixed during packing only; dynamics will remain unrestrained.
+The completed periodic results above refer to the original boxes. Their inputs
+are preserved, including the pending benchmark's inputs.
+
+Job53157 completed the repair and initial observations. All ligand bond and
+stereochemistry checks pass; the closest chosen insertion clearance is1.881 A,
+above the declared1.6 A minimum. Main-cutoff ligand O/N contacts at3.3 A are
+trans/cis=5/2,5/5,3/4 across the starts, alongside2/3/2 waters per metal. These
+are distance counts, not a forced coordination number or proof of binding.
+The native model must still relax these preparations. Before that dynamics
+scout, six additional fixed-geometry checks on the repaired start0 are declared
+in HYDRATION_PREPARATION.md, using the same0.5-kcal/mol criterion. They are
+unsubmitted and count within the existing one-GPU-day envelope.
+
+The trajectory analyzer covers ligand integrity, stereochemistry, hydration,
+coordination, metal–ligand separation, counterions and proton-transfer candidates.
+It has been verified on real initial structures. Native HDF5 parsing and log
+timing analysis await the first actual trajectory; no synthetic fixture is
+represented as native-path validation.
+
 All numerical work used Slurm `standard_expand`, with default scheduler memory
 and time. The first 12-CPU periodic attempt exhausted its 48,000-MiB (46.875-GiB)
 allocation. A resource-only 24-CPU recovery completed unchanged calculations,
@@ -88,10 +114,14 @@ automatic CPU retry follows.
 | 52948 | Periodic controls, four saved new predictions | Partial: internal timeout | 7,968 |
 | 52991 | Saved-data analysis and bibliography checks | Completed | 1 |
 | 53022 | Independent saved-data replay | Completed | 1 |
+| 53123 | Analyze all six original endpoints | Completed | 7 |
+| 53157 | Hydration repair and initial observations | Completed | 51 |
+| 53167 | Repaired observation replay | Completed | 2 |
+| 53205 | Combined saved-data and24-record observation replay | Completed | 5 |
 | 52844 | H200 periodic controls and throughput | Pending | 0 so far |
 
-This phase has used **12,923 allocated CPU seconds (3.59 CPU hours)** and
-4,806.566 measured CPU seconds (1.34 CPU hours), with zero GPU time, zero DFT
+This phase has used **12,988 allocated CPU seconds (3.61 CPU hours)** and
+4,839.253 measured CPU seconds (1.34 CPU hours), with zero GPU time, zero DFT
 and zero MD. These costs exclude the earlier, separately reported Tauri screen
 and charged spectator test. Partial calculations without a saved complete
 prediction are not counted as completed model calls.
@@ -104,6 +134,10 @@ new molecular calls and uses no synthetic fixtures. Reproduce with:
 ```bash
 bash diagnostics/so3lr_neutral_pair_20261107/reproduce.sh
 ```
+
+The same command now also reproduces all24 original/repaired initial-observation
+records; job53205 passed both this comparison and the earlier potential-table
+checks exactly. HYDRATED_INPUTS.json pins the repaired input set separately.
 
 Inputs, raw arrays, actual executed sources and complete logs are retained under
 `workspaces/so3lr_neutral_pair_20261107/`; compact numerical results are in

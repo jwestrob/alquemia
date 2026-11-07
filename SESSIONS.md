@@ -3659,3 +3659,22 @@ the cis 1987 Charlier/Merciny/Fuger source; original methods/tables are still
 needed for common-medium experimental admission. H200 52844 now waits on
 QOSMaxGRESPerUser; watcher 2163858 remains active. The conditional MD scout is
 implemented but unsubmitted. The next action remains its queued H200 benchmark.
+
+## 2026-11-07 — Tauri hydration preparation repaired before dynamics
+
+Initial-observation job53123 exposed zero first-shell waters in every original
+endpoint. One declared geometry-only repair53157 now supplies two/three/two
+waters per metal across the three preparations, preserving ligand coordinates,
+stereochemistry, state, composition and all old inputs/results. Read
+`diagnostics/so3lr_neutral_pair_20261107/HYDRATION_PREPARATION.md` and CURRENT.md.
+The queued benchmark52844 still uses its original inputs; never replace them
+underneath that job. A separate six-call hydrated-start check precedes MD.
+
+The observation analyzer covers coordination, hydration, covalent geometry,
+stereochemistry, metal–ligand separation and reactive events. Replays53167/53205
+pass;53205 exactly reproduces all24 original/repaired records and the earlier
+potential summaries, without model calls. The native HDF5 path awaits a real
+trajectory and is not claimed tested. Total phase cost12,988 allocatedCPU-s,
+4,839.253 measuredCPU-s, zeroGPU/DFT/MD. H20052844 remains pending on the shared
+per-user GPU limit; its completion watcher is live. Do not duplicate it, alter
+other-session jobs, or restart references. The goal remains active.

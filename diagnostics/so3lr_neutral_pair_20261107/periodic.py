@@ -2,8 +2,9 @@
 import os,time,argparse
 from util import *
 assert os.environ.get('SLURM_JOB_ID')
-ap=argparse.ArgumentParser();ap.add_argument('--cpu-scout',action='store_true');ap.add_argument('--cpu-controls',action='store_true');ap.add_argument('--attempt',default='v1');args=ap.parse_args()
+ap=argparse.ArgumentParser();ap.add_argument('--cpu-scout',action='store_true');ap.add_argument('--cpu-controls',action='store_true');ap.add_argument('--hydrated-scout',action='store_true');ap.add_argument('--attempt',default='v1');args=ap.parse_args()
 assert not (args.cpu_scout and args.cpu_controls)
+assert not (args.hydrated_scout and (args.cpu_scout or args.cpu_controls))
 import jax
 jax.config.update('jax_enable_x64',True);jax.config.update('jax_default_matmul_precision','highest')
 import numpy as np
@@ -13,11 +14,13 @@ from glp import atoms_to_system
 cpu_mode=args.cpu_scout or args.cpu_controls
 assert jax.devices()[0].platform==('cpu' if cpu_mode else 'gpu')
 tag=('periodic_cpu_controls_' if args.cpu_controls else 'periodic_cpu_' if args.cpu_scout else 'periodic_gpu_')+args.attempt
+if args.hydrated_scout:tag='periodic_hydrated_gpu_'+args.attempt
+preparation=W/('hydrated_preparation_v1' if args.hydrated_scout else 'preparation_v1')/'RESULT.json'
 out=W/tag;out.mkdir(exist_ok=False);started=time.time();cput=time.process_time()
 for p in [Path(__file__),D/'PLAN.md',D/'util.py']:(out/p.name).write_bytes(p.read_bytes())
 save(out/'START.json',dict(job=os.environ['SLURM_JOB_ID'],script=pin(__file__),plan=pin(D/'PLAN.md'),
- devices=[str(d) for d in jax.devices()],preparation=pin(W/'preparation_v1/RESULT.json')))
-prep=read(W/'preparation_v1/RESULT.json');calcs={};rows=[];selections=[]
+ devices=[str(d) for d in jax.devices()],preparation=pin(preparation)))
+prep=read(preparation);calcs={};rows=[];selections=[]
 def evaluate(atoms,cid):
  n=len(atoms);assert atoms.info['charge']==0 and atoms.info['multiplicity']==6
  system=atoms_to_system(atoms,dtype=np.float64)
@@ -37,7 +40,7 @@ def evaluate(atoms,cid):
  rows.append(row);save(out/'PARTIAL.json',dict(rows=rows));print('saved',cid,elapsed,'s',flush=True)
  return row
 
-for r in (prep['rows'][:1] if cpu_mode else prep['rows']):
+for r in (prep['rows'][:1] if cpu_mode or args.hydrated_scout else prep['rows']):
  A=ase_read(r['A']['path']);B=ase_read(r['B']['path']);s=r['id']
  assert len(A)==7288 and np.array_equal(A.positions,B.positions) and sorted(A.numbers)==sorted(B.numbers)
  if args.cpu_controls:
@@ -61,8 +64,8 @@ for r in (prep['rows'][:1] if cpu_mode else prep['rows']):
  selected=[]
  for j in np.argsort(-clearance,kind='stable'):
   if all(np.linalg.norm((O[j]-O[k])-42*np.round((O[j]-O[k])/42))>=6 for k in selected):selected.append(int(j))
-  if len(selected)==3:break
- assert len(selected)==3
+  if len(selected)==(1 if args.hydrated_scout else 3):break
+ assert len(selected)==(1 if args.hydrated_scout else 3)
  selections.append(dict(start=s,water_ids=selected,solute_clearances_A=[float(clearance[j]) for j in selected]))
  save(out/'REMOTE_SELECTIONS.json',selections)
  for j in selected:
@@ -72,7 +75,7 @@ for r in (prep['rows'][:1] if cpu_mode else prep['rows']):
    evaluate(reduced,f's{s}_remove{j}_{state}')
 
 timings=[]
-if not cpu_mode:
+if not cpu_mode and not args.hydrated_scout:
  A=ase_read(prep['rows'][0]['A']['path'])
  for k in range(5):
   # calculate() explicitly bypasses ASE's unchanged-coordinate cache.

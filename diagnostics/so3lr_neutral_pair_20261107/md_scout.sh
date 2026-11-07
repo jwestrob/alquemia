@@ -14,7 +14,7 @@ release=w/'MD_SCOUT_RELEASE.json'
 assert release.exists(), 'Root review of periodic controls and throughput is required.'
 r=json.loads(release.read_text());assert r['release'] is True
 out=w/'md_scout_v1';out.mkdir(exist_ok=False)
-files=[d/'PLAN.md',d/'MD_SCOUT.md',d/'md_scout.yaml',d/'md_scout.sh',release,w/'preparation_v1/start0/A.extxyz']
+files=[d/'PLAN.md',d/'MD_SCOUT.md',d/'HYDRATION_PREPARATION.md',d/'md_scout.yaml',d/'md_scout.sh',release,w/'hydrated_preparation_v1/RESULT.json',w/'hydrated_preparation_v1/start0/A.extxyz']
 pins=[]
 for p in files:
  b=p.read_bytes();(out/p.name).write_bytes(b)

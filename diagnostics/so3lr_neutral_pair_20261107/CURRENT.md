@@ -1,4 +1,19 @@
-# Current state — 7 November 2026, 00:37 UTC
+# Current state — 7 November 2026, 00:55 UTC
+
+New preparation finding: initial-observation job53123 found zero first-shell
+waters in all six original endpoints. One geometry-only repair, declared in
+HYDRATION_PREPARATION.md and completed by job53157, supplies two/three/two
+waters per metal across the three starts. Ligand coordinates, stereochemistry,
+cell, composition and charge/spin remain unchanged. The original boxes and
+every prior potential result are preserved. The queued benchmark52844 retains
+its original inputs. The MD scout uses the repaired start0 after an additional
+six-call hydrated-input check; neither that check nor MD is submitted yet.
+
+The observation analysis now measures coordination, hydration, covalent geometry,
+stereochemistry and proton-transfer candidates. Jobs53167/53205 reproduce the
+repaired records, with53205 reproducing all24 original/repaired ligand records
+and the earlier potential summaries exactly. This validates the analysis on
+real initial structures; the native HDF5 path awaits an actual trajectory.
 
 The active goal is to continue until there is a good reason to stop. Read
 [PLAN.md](PLAN.md) for the protocol declared before these evaluations.
@@ -28,8 +43,12 @@ Completed Slurm jobs, all `standard_expand`:
 | 52948 | Start-0 translation and remote-water controls | Partial; internal time limit reached | 7,968 |
 | 52991 | Saved-data and bibliography checks | Passed | 1 |
 | 53022 | Independent saved-data replay | Passed | 1 |
+| 53123 | Original preparation observations | Passed; exposed dry first shells | 7 |
+| 53157 | Single hydration repair and observations | Passed | 51 |
+| 53167 | Repaired-input observation replay | Passed | 2 |
+| 53205 | Combined real-data replay | Passed | 5 |
 
-Total so far: 12,923 allocated CPU seconds (3.59 CPU hours), 4,806.566 measured
+Total so far: 12,988 allocated CPU seconds (3.61 CPU hours), 4,839.253 measured
 CPU seconds (1.34 CPU hours), zero GPU time. The CPU recovery changed resources only. Its
 peak resident memory was about 52.4 GiB; the failed allocation provided
 48,000 MiB (46.875 GiB). Raw inputs, outputs, forces and partial charges are preserved under

@@ -28,10 +28,10 @@ def arrays(row):
  assert a['positions_A'].shape==a['forces_eV_A'].shape==(row['natoms'],3)
  assert abs(a['partial_charges'].sum())<1e-6 and row['state_head_verified']
  return a
-for tag in ('periodic_cpu_v2','periodic_cpu_controls_v1','periodic_gpu_v1'):
+for tag in ('periodic_cpu_v2','periodic_cpu_controls_v1','periodic_gpu_v1','periodic_hydrated_gpu_v1'):
  p=W/tag/'RESULT.json'
  complete=p.exists()
- if tag=='periodic_gpu_v1' and not complete:continue
+ if 'gpu' in tag and not complete:continue
  if complete:
   result=read(p)
  else:
@@ -76,7 +76,7 @@ for tag in ('periodic_cpu_v2','periodic_cpu_controls_v1','periodic_gpu_v1'):
       maximum_force_difference_component_change_kcal_mol_A=float(abs(delta).max()),
       metal_force_difference_vector_changes_kcal_mol_A=[float(np.linalg.norm(delta[k])) for k in (0,43)]))
   row['primary_robustness_criterion_kcal_mol']=.5
-  row['complete_controls']=row['translation'] is not None and len(row['remote_waters'])==3
+  row['complete_controls']=row['translation'] is not None and len(row['remote_waters'])==(1 if 'hydrated' in tag else 3)
   if row['complete_controls']:
    row['maximum_swap_change_kcal_mol']=max(abs(row['translation']['swap_energy_change_kcal_mol']),*(abs(r['swap_energy_change_kcal_mol']) for r in row['remote_waters']))
    row['passes_energy_criterion']=row['maximum_swap_change_kcal_mol']<=.5
@@ -103,7 +103,7 @@ save(report/'REPRODUCTION_CHECKS.json',dict(passed=True,
  original=pin(W/'saved_checks_52991/CONTROL_SUMMARY.json'),
  exact_local_summary=True,exact_CPU_periodic_summaries=len(original['periodic']),
  molecular_calls=0,synthetic_fixtures=0))
-jobs=['52753','52797','52830','52877','52948','52844',os.environ['SLURM_JOB_ID']]
+jobs=['52753','52797','52830','52877','52948','52991','53022','53123','53157','53167','53205','52844',os.environ['SLURM_JOB_ID']]
 s=subprocess.check_output(['sacct','-n','-P','-j',','.join(jobs),
  '--format=JobIDRaw,State,ElapsedRaw,AllocCPUS,TotalCPU,MaxRSS'],text=True)
 (report/'ACCOUNTING.txt').write_text(s)

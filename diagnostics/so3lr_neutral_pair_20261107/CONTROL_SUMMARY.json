@@ -1,0 +1,60 @@
+{
+  "local": {
+    "preparations": 3,
+    "model_calls": 128,
+    "maximum_spectator_energy_change_kcal_mol": 0.006936501837706999,
+    "maximum_force_difference_component_change_kcal_mol_A": 0.19292296577528703,
+    "maximum_trans_metal_force_difference_vector_change_kcal_mol_A": 0.173045779950264,
+    "directional_derivative_check": {
+      "finite": -0.03479807336503882,
+      "analytic": -0.03479803812495111,
+      "residual": -3.524008770905418e-08
+    },
+    "passes_energy_criterion": true
+  },
+  "periodic": [
+    {
+      "backend": "periodic_cpu_v2",
+      "start": 0,
+      "job": "52877",
+      "job_result_complete": true,
+      "fixed_configuration_B_minus_A_kcal_mol": -59.41131685278916,
+      "free_energy_estimate": false,
+      "translation": null,
+      "remote_waters": [],
+      "primary_robustness_criterion_kcal_mol": 0.5,
+      "complete_controls": false
+    },
+    {
+      "backend": "periodic_cpu_controls_v1",
+      "start": 0,
+      "job": "52948",
+      "job_result_complete": false,
+      "fixed_configuration_B_minus_A_kcal_mol": -59.41131685278916,
+      "free_energy_estimate": false,
+      "translation": {
+        "swap_energy_change_kcal_mol": -1.6032941161370218e-06,
+        "maximum_endpoint_energy_change_kcal_mol": 0.0002202768892280234,
+        "maximum_force_difference_component_change_kcal_mol_A": 0.00023411659571337395
+      },
+      "remote_waters": [
+        {
+          "water_id": 1631,
+          "solute_heavy_atom_clearance_A": 27.03680007454635,
+          "swap_energy_change_kcal_mol": -0.0010321304627893824,
+          "maximum_force_difference_component_change_kcal_mol_A": 0.1454431642760099,
+          "metal_force_difference_vector_changes_kcal_mol_A": [
+            0.07014266161611664,
+            0.15887560470118345
+          ]
+        }
+      ],
+      "primary_robustness_criterion_kcal_mol": 0.5,
+      "complete_controls": false
+    }
+  ],
+  "cpu_GPU_agreement": [],
+  "analysis_job": "52991",
+  "molecular_calls": 0,
+  "interpretation": "Robustness and implementation checks only. Unrelaxed endpoint gaps are not selectivity predictions. Remote-water removal can have a physical electrostatic response."
+}

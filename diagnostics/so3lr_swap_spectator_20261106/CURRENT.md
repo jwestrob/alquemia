@@ -17,3 +17,9 @@ Jobs52169 and52184 completed. Total640 allocatedCPU-s (10.7CPUmin) within3600;
 Raw arrays and executed source copies remain in the new ignored workspace.
 reproduce.sh queues saved-only analysis to a fresh directory. Preserve M1,
 reserved outcomes, historical files and other-session executors.
+
+7 November continuation: the active goal is to proceed until there is a good
+reason to stop. The neutral cis/trans system is prepared and its first controls
+are complete; H200 job 52844 is pending with a completion watcher. Read
+../so3lr_neutral_pair_20261107/CURRENT.md. This subsequent authorization does
+not restart the old quantum references or change the completed Test 1 results.

@@ -3630,3 +3630,32 @@ zeroGPU/DFT/MD. Old environment/weights reused. All raw arrays/source hashes
 preserved. No live jobs, no duplicate/retry. M1/reserved outcomes/unrelated edits
 and other-session executors unchanged. Original reference screen remains
 unresolved; a dated correction clarifies that it did not establish Tauri failure.
+
+## 2026-11-07 — Neutral cis/trans Tauri feasibility active
+
+The active goal is to proceed until there is a good reason to stop. Read
+`diagnostics/so3lr_neutral_pair_20261107/CURRENT.md` and the frozen PLAN.md.
+The neutral finite-system spectator check passes across all three preparations:
+largest change 0.00694 kcal/mol versus the declared 0.5 threshold. The full
+7,288-atom periodic box now evaluates successfully with the original L model,
+float64, charge zero and multiplicity six. CPU job 52830 ran out of memory;
+resource-only recovery 52877 completed. Preserve both attempts.
+
+Jobs 52753, 52797, 52830 and 52877 are terminal; total 4,953 allocated CPU seconds.
+H200 job 52844 is pending for full periodic controls and throughput, with a
+completion watcher recorded in the new workspace. Do not duplicate it or touch
+the other session's GPU allocation. Endpoint dynamics remains conditional on
+those checks and bounded by one H200-day total. No free-energy claim is made.
+The exact experimental electrolyte remains unverified; these neutralizing-K+
+systems have no added background salt and are development preparations.
+
+Updated 00:37 UTC: 52948 reached its declared internal timeout after saving the
+translation pair and first remote-water pair. Swap-energy changes are -0.00000160
+and -0.001032 kcal/mol; two other water controls remain for GPU. Preserve partial
+results and do not retry this CPU job. Saved analyses 52991/53022 pass, including
+exact reproduction from real arrays. This phase used 12,923 allocated CPU-s,
+4,806.566 measured CPU-s, zero GPU/DFT/MD. Native bibliography mapping recovers
+the cis 1987 Charlier/Merciny/Fuger source; original methods/tables are still
+needed for common-medium experimental admission. H200 52844 now waits on
+QOSMaxGRESPerUser; watcher 2163858 remains active. The conditional MD scout is
+implemented but unsubmitted. The next action remains its queued H200 benchmark.

@@ -1,0 +1,42 @@
+# Conditional scout defined in MD_SCOUT.md. No submission is implied.
+input_file: workspaces/so3lr_neutral_pair_20261107/preparation_v1/start0/A.extxyz
+output_file: workspaces/so3lr_neutral_pair_20261107/md_scout_v1/trajectory.hdf5
+output_format: hdf5
+output_cartesian_positions: true
+log_file: workspaces/so3lr_neutral_pair_20261107/md_scout_v1/native.log
+restart_save_path: workspaces/so3lr_neutral_pair_20261107/md_scout_v1/restart.npz
+save_buffer: 5
+overwrite: false
+model_path: so3lr-tauri-l-2606
+engine: standard
+precision: float64
+md_precision: float64
+matmul_precision: highest
+total_charge: 0
+num_unpaired_electrons: 5
+lr_cutoff: 12.0
+dispersion_damping: 2.0
+buffer_size_multiplier_sr: 1.25
+buffer_size_multiplier_lr: 1.25
+kspace_electrostatics: pme
+kspace_smearing: 4.0
+kspace_spacing: 1.0
+kspace_interp_nodes: 4
+relax_before_run: true
+min_cycles: 20
+min_steps: 10
+min_start_dt: 0.05
+min_max_dt: 0.1
+min_n_min: 2
+force_convergence: 0.2
+ensemble: nvt
+md_T: 298.15
+md_dt: 0.25
+md_cycles: 100
+md_steps: 10
+nhc_chain_length: 3
+nhc_steps: 2
+nhc_thermo: 100.0
+seed: 54100
+observables:
+  - partial_charges

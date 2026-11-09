@@ -2,7 +2,7 @@
 # Submit only after the declared periodic/throughput checks have been reviewed.
 set -euo pipefail
 cd /groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs
-export OMP_NUM_THREADS=12 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 JAX_PLATFORMS=cuda JAX_ENABLE_X64=true
+export OMP_NUM_THREADS=12 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 JAX_PLATFORMS=cuda,cpu JAX_ENABLE_X64=true
 export XLA_PYTHON_CLIENT_PREALLOCATE=false
 python - <<'PY'
 from pathlib import Path

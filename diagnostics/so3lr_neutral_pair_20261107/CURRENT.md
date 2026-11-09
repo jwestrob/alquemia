@@ -1,89 +1,17 @@
-# Current state — 7 November 2026, 00:55 UTC
+# Closed bounded evaluation — 9 November 2026
 
-New preparation finding: initial-observation job53123 found zero first-shell
-waters in all six original endpoints. One geometry-only repair, declared in
-HYDRATION_PREPARATION.md and completed by job53157, supplies two/three/two
-waters per metal across the three starts. Ligand coordinates, stereochemistry,
-cell, composition and charge/spin remain unchanged. The original boxes and
-every prior potential result are preserved. The queued benchmark52844 retains
-its original inputs. The MD scout uses the repaired start0 after an additional
-six-call hydrated-input check; neither that check nor MD is submitted yet.
+Read REPORT.md, FINAL_RESULTS.json and DECISION.json. The current Tauri setup is not qualified for intact-ligand La/Dy selectivity. End automatic expansion. All scientific jobs in this diagnostic are terminal; no longer MD or reference retry is released. Preserve M1 and every failed input/output.
 
-The observation analysis now measures coordination, hydration, covalent geometry,
-stereochemistry and proton-transfer candidates. Jobs53167/53205 reproduce the
-repaired records, with53205 reproducing all24 original/repaired ligand records
-and the earlier potential summaries exactly. This validates the analysis on
-real initial structures; the native HDF5 path awaits an actual trajectory.
+The decisive finding is chemical integrity. Trans600 C6–C7/C7–O8/C7–O9 separate during native FIRE, first observed at saved step 20 (step 10 was intact). The longest bond is 13.076 Å before MD and 12.617 Å after 0.25 ps. Atom order, periodic-image mapping and checkpoint/HDF correspondence pass. A separate capped ASE LBFGS diagnostic crosses the original 2 Å range for C6–C7 at step 37 (2.052 Å), with all atom steps within 0.05 Å. It stopped at the declared threshold; do not describe this capped result as completed scission or assign a unique physical cause.
 
-The active goal is to continue until there is a good reason to stop. Read
-[PLAN.md](PLAN.md) for the protocol declared before these evaluations.
+Bridge 66047 failed its fixed 1e-5 eV/Å tolerance (actual 1.964e-5); no optimizer ran there. ASE-only comparison 66081 preserved that failed record without qualifying the native interface. No further optimizer search or MD followed.
 
-The neutral cis/trans preparation passes the distant-water cancellation check.
-Across three starting conformations, two water orientations, two separations,
-and the declared ligand motions, the largest energy change is **0.00694
-kcal/mol**, below the declared 0.5 threshold. The directional force check also
-agrees with the finite difference. These checks establish numerical consistency
-and cancellation in these preparations; they do not establish selectivity
-accuracy or a binding free energy.
+Other controls pass: all three original periodic tests (max 0.01560 kcal/mol), the hydrated test (0.02439 versus 0.5), and CPU/GPU agreement. Native MD completed 1,000 steps but began with damaged chemistry. Thermal stability is not affinity evidence. The other five starts and all alchemical calculations were not run.
 
-Three full periodic systems are prepared: cis/trans ligands, La/Dy, two K+
-counterions, and 2,400 waters, totaling 7,288 atoms. Stereochemistry, charge,
-atom correspondence and periodic contacts passed the preparation checks.
-These have no added background salt. The proposed experimental electrolyte is
-still unverified, so these are development systems.
+GPU 52844's 62-second failure was a disabled CPU callback backend. Runtime-only recovery 65869 enabled cuda,cpu, reused two predictions and completed. Hydrated 65896, scout 65917, analysis 65972, integrity audit 66010 and capped comparison 66081 are terminal. Preserve failed audit 66003 and its source-reconstruction note. Exact costs are in ACCOUNTING.json; the GPU phase used 894 seconds including failures.
 
-Completed Slurm jobs, all `standard_expand`:
+The experimental common medium and small-core Dy reference remain unqualified. Do not compare endpoint gaps or this damaged trajectory with the conditional experimental contrast. Reserved outcomes, other sessions' jobs, historical calculations and the production baseline remain untouched.
 
-| Job | Purpose | Result | Allocated CPU seconds |
-|---|---|---|---:|
-| 52753 | Packmol build and three preparations | Passed | 81 |
-| 52797 | Neutral finite-system controls, 128 evaluations | Passed | 1,320 |
-| 52830 | First full periodic CPU evaluation | Out of memory; no prediction | 816 |
-| 52877 | Same periodic calculation, 24 CPUs/default memory | Both endpoints completed | 2,736 |
-| 52948 | Start-0 translation and remote-water controls | Partial; internal time limit reached | 7,968 |
-| 52991 | Saved-data and bibliography checks | Passed | 1 |
-| 53022 | Independent saved-data replay | Passed | 1 |
-| 53123 | Original preparation observations | Passed; exposed dry first shells | 7 |
-| 53157 | Single hydration repair and observations | Passed | 51 |
-| 53167 | Repaired-input observation replay | Passed | 2 |
-| 53205 | Combined real-data replay | Passed | 5 |
+Receipts for 52844/65869/65896/65917 have been consumed and ACKed. Delayed copies are ACK-only: never resubmit from those events. The reproduction command repeats saved analyses only.
 
-Total so far: 12,988 allocated CPU seconds (3.61 CPU hours), 4,839.253 measured
-CPU seconds (1.34 CPU hours), zero GPU time. The CPU recovery changed resources only. Its
-peak resident memory was about 52.4 GiB; the failed allocation provided
-48,000 MiB (46.875 GiB). Raw inputs, outputs, forces and partial charges are preserved under
-`workspaces/so3lr_neutral_pair_20261107/`.
-
-The completed periodic controls are small: rigid translation changes the swap
-energy by -0.00000160 kcal/mol; removing the first remote water changes it by
--0.001032 kcal/mol. That water is 27.04 A from the closest solute heavy atom.
-The metal force-difference vectors change by 0.070/0.159 kcal/mol/A. These are
-useful robustness results, with a residual force sensitivity; two water tests
-and the other preparations remain to be evaluated on GPU. Job 52948 reached
-its declared internal timeout. Its saved results are retained; do not retry it.
-The independent replay reproduced both CPU summaries and the finite-system
-results exactly, using no new model calls.
-
-The native bibliography now links cis599 to logical identifier440 and its sole
-La/Dy source, Charlier, Merciny and Fuger (1987), DOI
-10.1016/S0003-2670(00)85691-3. Trans600 uses logical identifier441 and has multiple
-source papers. Original methods/tables and the exact source for trans's 1.0 M
-row are still needed before experimental admission. See PROVENANCE_STATUS.json.
-
-**Job 52844 is pending for an H200** (`QOSMaxGRESPerUser`), with the full periodic energy/force
-controls and measured throughput. It uses the primary L model, float64 and
-the same physical charge/spin. The internal bound is 900 seconds. Its completion
-watcher is recorded in the workspace's `WATCHERS.json`; do not submit a duplicate.
-Other sessions' allocations remain untouched. Scheduler waiting is not evidence
-against the model.
-
-Next: assess translation/wrapping consistency, remote-water sensitivity and
-actual H200 speed. Only then allocate unrestrained endpoint dynamics within the
-total one-H200-day budget. Do not infer a free energy from the current endpoint
-energy difference. No new DFT, training, protein simulations or production
-baseline changes are part of this continuation.
-
-MD_SCOUT.md and md_scout.yaml define the conditional first 0.25 ps trajectory,
-including bounded packing relaxation, state, thermostat and output precision.
-It has not been submitted. Its launcher requires a root review record of the
-periodic controls and measured throughput, not another user approval.
+Final saved-data replay 66238 completed and exactly reproduced the 254 trajectory ligand records, coordinate/bond audit and final decision. All 38 capped-optimizer frames were independently verified. See FINAL_REPLAY_CHECKS.json and ARTIFACTS.json. Final accounting covers 27 terminal jobs: 23,810 allocated CPU-s, 6,803.388 measured CPU-s and 894 H200 GPU-s. CPU-only allocations were 13,082 CPU-s, within the 14,400-s envelope. TOTAL_TAURI_COST.json includes the earlier phases separately.

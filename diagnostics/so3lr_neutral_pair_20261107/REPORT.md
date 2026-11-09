@@ -1,161 +1,100 @@
-# Neutral cis/trans Tauri continuation
+# Bounded neutral cis/trans Tauri evaluation — 9 November 2026
 
-**Continue the bounded feasibility test.** The checks completed so far support
-energy cancellation in the intended neutral system. Chemical accuracy and
-solvent dynamics remain untested. The next executable step is the already
-queued H200 periodic benchmark; it measures speed and finishes the controls
-before any trajectory is released.
+1. **What predicts selectivity best?** Donor counts plus charge remain the established independent baseline: historical family-held-out RMSE **0.854 kcal/mol** on 115 ligands. Tauri produced no admissible selectivity prediction.
+2. **Did topology add value?** The earlier evaluation found no supported gain (RMSE 0.854 → 0.882). Those fits were not rerun in this physical pilot.
+3. **Did 3D add value beyond topology?** Not demonstrated. The earlier MMFF increment was unstable; this Tauri setup failed intact-ligand preparation before an affinity calculation could be evaluated.
+4. **Was the published-model comparison independent?** No. The earlier graph model's 0.563 RMSE has extensive ligand, family and protonation-record exposure. This pilot changes neither that audit nor its unresolved clean comparison.
+5. **What single next action is justified?** **Stop this Tauri setup and retain M1.** The classification is **data/validation insufficient for the intended intact-ligand selectivity observable**. Longer sampling is not released.
 
-The donor-count/charge model remains the established predictive baseline.
-This continuation has not produced a new selectivity prediction. The missing
-qualified quantum reference from the earlier screen remains unresolved; it
-does not establish that Tauri failed.
+The historical predictive results above come from the completed [structural-increment report](../ln_structure_increment_20261030/REPORT.md). The results below were generated or reproduced in this continuation.
 
-## What these tests establish
+## Decisive finding: the target ligand changes chemistry
 
-All tests use the primary, unchanged L-2606 model. The proposed reaction swaps
-La and Dy between trans600 and cis599 while preserving composition, total
-charge, total spin and all coordinates. This is useful because donor counts
-cannot distinguish these stereoisomers. It also avoids subtracting two systems
-with different global charge/spin conditioning.
+The native preparation damaged the trans-CDTA carboxylate group before MD. Atom order, initial coordinates under periodic wrapping, and checkpoint/HDF5 correspondence were verified against the real input. The first damaged saved frame is optimization step 20; step 10 was intact. This is an observation interval, not an exact intervening scission time.
 
-| Test | Why it is useful | Result so far |
+All indices below are zero-based global atom indices in the original input:
+
+| Original trans600 bond | Initial distance, Å | After native FIRE, Å | After 0.25 ps MD, Å |
+|---|---:|---:|---:|
+| C6–C7 | 1.548 | 5.502 | 5.356 |
+| C7–O8 | 1.270 | 13.076 | 12.617 |
+| C7–O9 | 1.277 | 4.727 | 5.514 |
+
+A single independent ASE-only comparison used the unchanged L potential, a 0.05 Å maximum atom displacement, standard LBFGS and the same 200-step limit. It crossed the existing 2 Å integrity threshold for **C6–C7 at step 37 (2.052 Å)** and stopped. Every accepted atom step stayed within 0.05 Å. This comparison did not execute another MD trajectory or qualify the native interface. It cannot be described as completed bond scission, because it stopped at the declared threshold.
+
+![Real covalent-integrity observations](CHEMICAL_INTEGRITY.png)
+
+The 0.25 ps trajectory therefore samples a changed chemical species. Its temperature approached 298 K and it completed numerically, but it cannot answer the requested selectivity of intact CDTA. Distance counts after this damage are contacts among original labeled atoms, not validated ligand denticity. Proton-transfer candidates are retained; no equilibrium species or affinity is inferred from them.
+
+These results do not identify a unique cause among the potential, starting coordination/charge context and preparation behavior. They suffice to withhold this setup from further selectivity sampling. No claim is made that all Tauri uses fail or that structure contains no predictive information.
+
+## What passed, and what remained unqualified
+
+| Check | Actual result | Interpretation |
 |---|---|---|
-| Add the same distant water to both endpoints | Detects a spurious change in the swap energy from remote surroundings | Maximum 0.00694 kcal/mol across three neutral preparations, two distances/orientations and the declared ligand motions; passes the frozen 0.5 criterion |
-| Compare forces with an energy finite difference | Checks that the computed response matches the energy derivative on a real preparation | Residual 0.000000035 kcal/mol/A versus the declared 0.003 tolerance |
-| Translate and wrap the entire periodic box | Represents the same physical configuration; exposes numerical dependence on its position in the cell | Swap-energy change -0.00000160 kcal/mol; maximum endpoint-energy change 0.000220 kcal/mol |
-| Remove a remote water identically from both endpoints | Tests sensitivity to bulk surroundings in the actual full box | First water: swap-energy change -0.001032 kcal/mol at a closest solute distance of 27.04 A; two waters and the other starts remain pending |
-| Measure the real box on H200 | Determines whether useful sampling fits the budget | Job 52844 pending, `QOSMaxGRESPerUser`; no GPU speed claim yet |
+| Neutral finite-system distant-water control | Maximum swap change 0.00694 kcal/mol; limit 0.5 | Passed on three preparations |
+| Real directional finite difference | Residual 3.52e-8 kcal/mol/Å; tolerance 0.003 | Passed numerical consistency check |
+| CPU versus GPU, two identical full-box endpoints | Energy differences 0; force differences ≤1.26e-10 eV/Å | Passed 1e-5 numerical tolerances |
+| Full periodic original boxes | Maximum swap changes 0.01127, 0.01560, 0.00375 kcal/mol | All three pass 0.5 robustness criterion |
+| Hydrated start0 periodic controls | Maximum swap change 0.02439 kcal/mol | Passed the same criterion |
+| Native checkpoint versus ASE force bridge | Maximum difference 1.964e-5 eV/Å versus 1e-5 tolerance | Failed strict numerical qualification; retained |
+| Native intact-ligand preparation | Three original trans covalent bonds separate | Failed chemical integrity |
+| Capped ASE preparation | C6–C7 reaches 2.052 Å at step 37 | Failed the existing integrity range |
 
-Energy cancellation does not eliminate force sensitivity. In the neutral finite
-systems, the largest change in a force-difference component is 0.193 kcal/mol/A,
-and the trans-metal vector changes by up to 0.173. Removing the first remote
-water in the full periodic box changes the two metal force-difference vectors
-by 0.070 and 0.159 kcal/mol/A. These responses are reported separately from the
-energy criterion. Removing water also changes physical electrostatics, so a
-response is not automatically a potential defect.
+Energy cancellation leaves force sensitivity: removing the hydrated remote water changes the two metal force-difference vectors by 0.119/0.159 kcal/mol/Å. Water removal also changes real electrostatics, so these values do not uniquely identify a model defect or prove locality. The force-bridge miss is about 0.000453 kcal/mol/Å; its tolerance was not raised. No force-qualified comparison is claimed from that failed gate.
 
-The current, unrelaxed start-0 endpoint gap is -59.411 kcal/mol. It is retained
-for numerical reproduction and **is not an estimate of the experimental
-selectivity contrast**. No comparison or fitted correction to experiment is made.
+The bridge stopped the combined comparison before optimization. The subsequent capped run was explicitly declared as an independent ASE-only diagnostic under one energy/gradient implementation. See [the protocol and deviation record](PREPARATION_COMPARISON.md).
 
-## System, settings and experimental status
+## Inputs, states and settings
 
-Three preparations contain the exact curated cis/trans stereochemical graphs,
-three archived initial ligand conformations, La/Dy, two K+ counterions and
-2,400 waters: 7,288 atoms in a periodic 42 A cube. The ligand states are L4-,
-with neutral tertiary amines. Preparation verifies relative stereochemistry,
-covalent distances, exact A/B correspondence, charge and periodic contacts.
-The cached restrained-MMFF poses supply starting coordinates only; they are not
-measured structures or demonstrated minima under Tauri.
+The frozen [plan](PLAN.md) and dated [hydration repair](HYDRATION_PREPARATION.md) define the inputs. Three preparations use the exact curated cis599/trans600 graphs and archived ligand conformers 0/1/2. Both ligands start as L4− with neutral tertiary amines. Relative stereochemistry, covalent distances, formal charge and A/B correspondence pass preparation checks. Cached MMFF coordinates supply starting conformations; they are not measured structures or demonstrated Tauri minima.
 
-These boxes have **no added background salt**. They test feasibility and do not
-represent the unverified 1.0 M experimental medium. Following CODE1's first-record
-pointer recovers the correct bibliography identifiers: native599 maps to440,
-and native600 to441. The cis La/Dy bibliography identifies
-[Charlier, Merciny and Fuger, 1987](https://doi.org/10.1016/S0003-2670(00)85691-3).
-Trans has multiple cited studies, including
-[Merciny and Fuger, 1984](https://doi.org/10.1016/S0003-2670(00)84511-0).
-Publisher metadata was retrieved; the original methods and tables were not.
-The exact electrolyte and the source of trans's 1.0 M row remain to be verified.
-Neither the primary pair nor the previously declared fallback is promoted to
-an admitted common-medium target by this source recovery. No third pair is searched.
+Each 42 Å periodic cube contains La/Dy, two ligands, two K+ counterions and 2,400 waters: **7,288 atoms**. A = La-trans + Dy-cis; B = Dy-trans + La-cis. Only the two integer element identities change, preserving composition, global charge 0 and multiplicity 6/five unpaired electrons. No fragment-charge overrides, donor bond restraints or association walls were applied. Global conditioning does not establish local oxidation/spin assignment or size consistency.
 
-The potential and environment remain pinned to SO3LR70707f5 and GLP2294f4f,
-Python3.12, JAX0.10.2, L-2606 weights SHA256
-`0b5998bfd45929f344dd55174f542a4cfde6582458749477fcb6ad9e1d1d3d64`.
-Use float64, x64 enabled before loading, highest matmul precision, charge0,
-multiplicity6/five unpaired electrons, head5. Periodic settings: short cutoff5 A,
-long cutoff12 A, dispersion damping2 A, PME smearing4 A, mesh spacing1 A and
-interpolation order4. Native state propagation, finite float64 forces and
-charge conservation are checked. Raw arrays retain full precision.
+Original packing left zero waters within 3.5 Å of either metal. One geometric repair introduced two/three/two initial waters per metal across the starts and repacked the solvent. Ligand coordinates, stereochemistry, composition and state were preserved. These waters were fixed during packing only. The original GPU benchmark retained its original inputs.
 
-## Execution and cost
+Use SO3LR `70707f5bb0c333ecec707e5a12b1efdf1c83603a`, GLP `2294f4f59e940be64c45bf5e4d1bea5cb90809f8`, the separate Python 3.12/JAX 0.10.2 environment, and L-2606 weights SHA256 `0b5998bfd45929f344dd55174f542a4cfde6582458749477fcb6ad9e1d1d3d64`. All 107 downloaded source/asset files were rechecked against receipts. Numerics: float64, x64 before loading, highest matmul precision, head 5, short cutoff 5 Å, long cutoff 12 Å, dispersion damping 2 Å, PME smearing 4 Å, spacing parameter 1 Å and interpolation order 4. The actual native PME grid is 128³. Raw arrays retain full precision.
 
-7 November preparation update: the new initial-observation analysis found no
-water oxygens within3.5 A of either metal in any original box. That limits their
-use as distinct hydrated starts. A single declared preparation repair adds
-two/three/two first-shell waters per metal, respectively, using rigidly rotated
-archived aquo-water coordinates and geometric clearance. It preserves all ligand
-coordinates and repacks the remaining bulk water, keeping the total at2400.
-These waters are fixed during packing only; dynamics will remain unrestrained.
-The completed periodic results above refer to the original boxes. Their inputs
-are preserved, including the pending benchmark's inputs.
+The scout used at most 200 native FIRE steps, then 1,000 NVT steps at 298.15 K and 0.25 fs: **0.25 ps**. The Nose–Hoover chain length was 3, with two substeps and nominal 25 fs damping. FIRE ended at maximum force component 0.275 eV/Å, above the unchanged 0.2 criterion; it was never labeled a converged physical minimum. All 21 optimization frames and 100 MD frames are retained.
 
-Job53157 completed the repair and initial observations. All ligand bond and
-stereochemistry checks pass; the closest chosen insertion clearance is1.881 A,
-above the declared1.6 A minimum. Main-cutoff ligand O/N contacts at3.3 A are
-trans/cis=5/2,5/5,3/4 across the starts, alongside2/3/2 waters per metal. These
-are distance counts, not a forced coordination number or proof of binding.
-The native model must still relax these preparations. Before that dynamics
-scout, six additional fixed-geometry checks on the repaired start0 are declared
-in HYDRATION_PREPARATION.md, using the same0.5-kcal/mol criterion. They are
-unsubmitted and count within the existing one-GPU-day envelope.
+## Reference and experimental status
 
-The trajectory analyzer covers ligand integrity, stereochemistry, hydration,
-coordination, metal–ligand separation, counterions and proton-transfer candidates.
-It has been verified on real initial structures. Native HDF5 parsing and log
-timing analysis await the first actual trajectory; no synthetic fixture is
-represented as native-path validation.
+The earlier fixed 24-configuration L/M panel and six-call reference audit remain in the [initial screen](../so3lr_tauri_screen_20261106/REPORT.md). The small-core Dy bridge remains unqualified. Old large-core effective singlets and physical Dy multiplicity 6 are not interchanged. This continuation performed no new DFT, model training or force-field fitting.
 
-All numerical work used Slurm `standard_expand`, with default scheduler memory
-and time. The first 12-CPU periodic attempt exhausted its 48,000-MiB (46.875-GiB)
-allocation. A resource-only 24-CPU recovery completed unchanged calculations,
-peaking near52.4 GiB. The subsequent CPU controls reached their declared
-330-second internal limit; their saved partial results remain usable. No
-automatic CPU retry follows.
+The proposed common-medium experimental contrast is still unadmitted. Bibliography mapping links native599 → logical440 and native600 → logical441. Cis La/Dy points to [Charlier, Merciny and Fuger, 1987](https://doi.org/10.1016/S0003-2670(00)85691-3). Trans has several candidate sources, including [Merciny and Fuger, 1984](https://doi.org/10.1016/S0003-2670(00)84511-0). Original methods/tables and the exact source of trans's 1.0 M row remain missing. A K+ background annotation does not establish the anion.
 
-| Job | Work | Status | Allocated CPU seconds |
-|---|---|---|---:|
-| 52753 | Prepare three systems; build pinned Packmol20.15.0 | Completed | 81 |
-| 52797 | 128 neutral finite-system evaluations | Completed | 1,320 |
-| 52830 | First periodic attempt | Failed: memory | 816 |
-| 52877 | Resource-only periodic recovery, two endpoints | Completed | 2,736 |
-| 52948 | Periodic controls, four saved new predictions | Partial: internal timeout | 7,968 |
-| 52991 | Saved-data analysis and bibliography checks | Completed | 1 |
-| 53022 | Independent saved-data replay | Completed | 1 |
-| 53123 | Analyze all six original endpoints | Completed | 7 |
-| 53157 | Hydration repair and initial observations | Completed | 51 |
-| 53167 | Repaired observation replay | Completed | 2 |
-| 53205 | Combined saved-data and24-record observation replay | Completed | 5 |
-| 52844 | H200 periodic controls and throughput | Pending | 0 so far |
+The boxes have no added background salt and do not represent a verified 1.0 M experimental medium. The conditional contrast of approximately −3.67 kcal/mol was not fitted or compared with endpoint gaps. Neither the primary pair nor the predeclared fallback is promoted to a clean target; no third pair was screened. TMDTA/TTHA exclusions and reserved SpyCI-LAMBS/PLM outcomes remain untouched.
 
-This phase has used **12,988 allocated CPU seconds (3.61 CPU hours)** and
-4,839.253 measured CPU seconds (1.34 CPU hours), with zero GPU time, zero DFT
-and zero MD. These costs exclude the earlier, separately reported Tauri screen
-and charged spectator test. Partial calculations without a saved complete
-prediction are not counted as completed model calls.
+## Actual compute and recovery history
 
-The independent replay exactly reproduced the finite-system summary and both
-CPU periodic summaries from the real saved arrays. It verifies hashes, element
-changes, coordinate correspondence, precision and state records; it makes no
-new molecular calls and uses no synthetic fixtures. Reproduce with:
+All numerical work used Slurm `standard_expand`, with default scheduler memory and time. Exact job states and costs are in [ACCOUNTING.json](ACCOUNTING.json). The phase used **894 H200 GPU-seconds (14.9 GPU-minutes)**, including failures, within the one-GPU-day cap. Host CPU allocations are included in total CPU cost; CPU-only preparation/static allocations are reported separately against their four-hour envelope.
+
+| Resource accounting | Actual use |
+|---|---:|
+| Neutral-phase allocated CPU, including GPU hosts | 23,810 CPU-seconds (6.61 CPU-hours) |
+| Neutral-phase measured CPU utilization | 6,803.388 CPU-seconds (1.89 CPU-hours) |
+| CPU-only allocations within this phase | 13,082 CPU-seconds (3.63 of 4 CPU-hours) |
+| H200 allocation within this phase | 894 GPU-seconds (14.9 minutes) |
+| All Tauri phases since 6 November, including the earlier reference screen | 48.68 allocated CPU-hours; 42.67 measured CPU-hours; 14.9 GPU-minutes |
+
+All 27 jobs in this phase are terminal. The [combined accounting](TOTAL_TAURI_COST.json) keeps the earlier fixed-coordinate/reference and charged-spectator phases separate. Downloads, environment setup and source/metadata preparation are unmetered; no monetary rate was supplied.
+
+Warm full-box ASE energy/force calls had median **0.291 s** (range 0.225–0.328). Native MD reports **0.296 s per integration step**; its allocation was **557 s** including preparation, compilation and output. This measures execution cost on an unusable chemical trajectory, not useful affinity sampling.
+
+Preserved failures include CPU memory exhaustion 52830; bounded partial controls 52948; GPU callback failure 52844; literal-coordinate audit 66003; and strict force bridge 66047. The callback repair enabled `JAX_PLATFORMS=cuda,cpu`, preserving model and scientific settings. Recovery 65869 reused the two completed predictions and finished the controls. The coordinate-check repair accounted for whole-cell periodic images and did not remove the bond-damage finding.
+
+## Reproduction and stopping decision
+
+Run saved-data analyses in a fresh directory:
 
 ```bash
 bash diagnostics/so3lr_neutral_pair_20261107/reproduce.sh
 ```
 
-The same command now also reproduces all24 original/repaired initial-observation
-records; job53205 passed both this comparison and the earlier potential-table
-checks exactly. HYDRATED_INPUTS.json pins the repaired input set separately.
+This launches no model, MD or quantum calculations. It reproduces potential summaries, 24 initial-structure records, 254 native trajectory ligand records, the integrity audit and final numerical decision. All 38 capped-optimizer frames were independently checked against the binary trajectory for bond lengths and atom displacements. Raw inputs, arrays, executed sources, checkpoint, output and trajectories remain under `workspaces/so3lr_neutral_pair_20261107/`. The failed first coordinate audit's source is explicitly marked as reconstructed from the recorded correction, rather than contemporaneously captured.
 
-Inputs, raw arrays, actual executed sources and complete logs are retained under
-`workspaces/so3lr_neutral_pair_20261107/`; compact numerical results are in
-CONTROL_SUMMARY.json and LOCAL_RESULTS.json. The active GPU completion watcher
-is recorded in the workspace's WATCHERS.json. Preserve that job, other sessions'
-executors, historical calculations, M1 and the unopened reserved outcomes.
+Saved-data replay **66238 completed** and reproduced those results without molecular calls. Its [verification receipt](FINAL_REPLAY_CHECKS.json) and [artifact hashes](ARTIFACTS.json) identify the retained evidence. The dated input/settings manifests are frozen records; CURRENT.md and DECISION.json contain the terminal status.
 
-## Next action and stopping point
+The exact failing input is also committed in compressed form, with hashes and a [manual recomputation recipe](MINIMAL_REPRODUCER.md). That recipe is separate from the saved-data replay and is not submitted automatically.
 
-**Run the queued H200 benchmark and review its full periodic controls.** If
-the implementation is consistent and its cost is practical, the next contained
-test is the unrestrained 0.25 ps endpoint scout specified in MD_SCOUT.md. Its
-purpose is to expose unstable preparations, gross coordination problems and
-actual integration cost. It cannot measure affinity or demonstrate sampling
-convergence. The six endpoint starts remain bounded by one H200-day total,
-including benchmarks and failures. No alchemical ladder or protein campaign is
-released automatically.
-
-Current decision: **continued feasibility testing is justified; selectivity
-accuracy remains unresolved**. The live wait is a shared GPU allocation limit,
-not a scientific rejection of Tauri.
+**Decision: data/validation insufficient; stop the present Tauri setup.** There is no usable intact-ligand ensemble, qualified Dy reference or admitted common-medium affinity test. Chemical integrity is the immediate stop for longer sampling. The other five MD starts, midpoint, alchemical ladder and protein transfer were not launched. Preserve M1 and this failed qualification case. No new quantum method, feature set, potential change or bond restraint is automatically released.

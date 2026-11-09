@@ -21,3 +21,21 @@ for new,old in [('original_initial','initial_observations_53123'),('hydrated_ini
 (out/'INITIAL_REPLAY_CHECKS.json').write_text(json.dumps(dict(passed=True,exact_real_records=24,molecular_calls=0),indent=2)+'\n')
 PY
 fi
+if test -f workspaces/so3lr_neutral_pair_20261107/preparation_comparison_ASE_v1/RESULT.json; then
+ cp diagnostics/so3lr_neutral_pair_20261107/{audit_integrity.py,finalize.py,CHEMICAL_INTEGRITY_AUDIT.md,PREPARATION_COMPARISON.md} "$TAURI_REPORT_DIR/"
+ workspaces/so3lr_tauri_screen_20261106/software/env/bin/python diagnostics/so3lr_neutral_pair_20261107/trajectory.py --md-dir workspaces/so3lr_neutral_pair_20261107/md_scout_v1 --preparation workspaces/so3lr_neutral_pair_20261107/hydrated_preparation_v1/RESULT.json --output-dir "$TAURI_REPORT_DIR/scout_trajectory"
+ workspaces/so3lr_tauri_screen_20261106/software/env/bin/python diagnostics/so3lr_neutral_pair_20261107/audit_integrity.py --output-dir "$TAURI_REPORT_DIR/chemical_integrity"
+ /groups/banfield/users/jwestrob/envs/lnsel/bin/python diagnostics/so3lr_neutral_pair_20261107/finalize.py --output-dir "$TAURI_REPORT_DIR/final"
+ python - <<'PY'
+import json,os
+from pathlib import Path
+w=Path('workspaces/so3lr_neutral_pair_20261107');out=Path(os.environ['TAURI_REPORT_DIR'])
+new=json.loads((out/'scout_trajectory/RESULT.json').read_text());old=json.loads((w/'md_scout_analysis_65972/RESULT.json').read_text())
+assert new['rows']==old['rows'] and new['proton_transfer_events']==old['proton_transfer_events'] and new['native_log_rows']==old['native_log_rows']
+new=json.loads((out/'chemical_integrity/RESULT.json').read_text());old=json.loads((w/'integrity_audit_66010/RESULT.json').read_text())
+for key in ['rows','altered_bonds','atom_order_verified','initial_coordinates_verified','checkpoint_HDF_coordinates_verified','optimizer_to_first_MD_max_atom_displacement_A']:assert new[key]==old[key]
+new=json.loads((out/'final/FINAL_RESULTS.json').read_text());old=json.loads(Path('diagnostics/so3lr_neutral_pair_20261107/FINAL_RESULTS.json').read_text())
+new.pop('analysis_job');old.pop('analysis_job');assert new==old
+(out/'FINAL_REPLAY_CHECKS.json').write_text(json.dumps(dict(passed=True,exact_native_trajectory_ligand_records=254,exact_integrity_audit=True,exact_final_numerical_results=True,scientific_decision='do_not_advance_current_Tauri_setup',molecular_calls=0,synthetic_fixtures=0),indent=2)+'\n')
+PY
+fi

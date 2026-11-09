@@ -1,0 +1,127 @@
+{
+  "decision": "do_not_advance_current_Tauri_setup",
+  "classification": "validation_insufficient_for_intact_ligand_selectivity",
+  "reason": "The target trans ligand fails the declared covalent-integrity test under both attempted preparation paths; the MD trajectory begins with altered chemistry.",
+  "global_potential_rejection_claim": false,
+  "selectivity_free_energy_kcal_mol": null,
+  "original_periodic_max_swap_changes_kcal_mol": [
+    0.011272547388429643,
+    0.015602034283020316,
+    0.00374842067523673
+  ],
+  "hydrated_max_swap_change_kcal_mol": 0.024386605204981038,
+  "CPU_GPU_agreement": [
+    {
+      "id": "s0_A",
+      "GPU_source": "periodic_gpu_v2",
+      "energy_difference_eV": 0.0,
+      "max_force_difference_eV_A": 1.2440504182364975e-10,
+      "passed": true
+    },
+    {
+      "id": "s0_B",
+      "GPU_source": "periodic_gpu_v2",
+      "energy_difference_eV": 0.0,
+      "max_force_difference_eV_A": 1.2560719131471387e-10,
+      "passed": true
+    }
+  ],
+  "native_ASE_force_bridge": {
+    "max_difference_eV_A": 1.964364320727885e-05,
+    "tolerance_eV_A": 1e-05,
+    "passed": false
+  },
+  "native_integrity": [
+    {
+      "ligand_id": 600,
+      "atom_a": 6,
+      "atom_b": 7,
+      "elements": "C-C",
+      "first_bad_phase": "relaxation",
+      "first_bad_step": 20,
+      "first_bad_distance_A": 4.909031676809084,
+      "original_distance_A": 1.5480550623103657,
+      "optimizer_terminal_distance_A": 5.501704911435606,
+      "MD_terminal_distance_A": 5.355682602301664
+    },
+    {
+      "ligand_id": 600,
+      "atom_a": 7,
+      "atom_b": 8,
+      "elements": "C-O",
+      "first_bad_phase": "relaxation",
+      "first_bad_step": 20,
+      "first_bad_distance_A": 5.793874603034264,
+      "original_distance_A": 1.2701570330369283,
+      "optimizer_terminal_distance_A": 13.075549446092015,
+      "MD_terminal_distance_A": 12.616647110235492
+    },
+    {
+      "ligand_id": 600,
+      "atom_a": 7,
+      "atom_b": 9,
+      "elements": "C-O",
+      "first_bad_phase": "relaxation",
+      "first_bad_step": 20,
+      "first_bad_distance_A": 3.268200853539256,
+      "original_distance_A": 1.2765317240723562,
+      "optimizer_terminal_distance_A": 4.727058250936323,
+      "MD_terminal_distance_A": 5.514324334086464
+    }
+  ],
+  "capped_integrity": {
+    "step": 37,
+    "bad_bonds": [
+      {
+        "atom_a": 6,
+        "atom_b": 7,
+        "distance_A": 2.052015379246256
+      }
+    ],
+    "maximum_atom_step_A": 0.05000000000000234
+  },
+  "capped_raw_trajectory_verified": true,
+  "capped_raw_trajectory_frames": 38,
+  "completed_MD_ps": 0.25,
+  "independent_MD_starts": 1,
+  "planned_starts_not_run": 5,
+  "ASE_full_box_warm_median_seconds": 0.2905251979827881,
+  "ASE_full_box_warm_range_seconds": [
+    0.2250533103942871,
+    0.3280465602874756
+  ],
+  "native_MD_reported_average_seconds_per_step": 0.296,
+  "native_MD_steps": 1000,
+  "preparation_steps": 200,
+  "MD_used_for_affinity": false,
+  "qualified_Dy_reference_available": false,
+  "experimental_common_medium_admitted": false,
+  "intact_ensemble_sampling_demonstrated": false,
+  "production_baseline_changed": false,
+  "further_MD_released": false,
+  "new_DFT_calls": 0,
+  "model_calls": 0,
+  "analysis_job": "66225",
+  "sources": [
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/so3lr_neutral_pair_20261107/saved_checks_65911/CONTROL_SUMMARY.json",
+      "sha256": "6e9cdafa62e9d2415bff74fa85e78d72d83c515ddae7b7582fb3cab063e97ff7"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/so3lr_neutral_pair_20261107/integrity_audit_66010/RESULT.json",
+      "sha256": "db6ecc8de46bf78cee219fd01920cab88780aba5f36aa9c1eaf61a1b493980b6"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/so3lr_neutral_pair_20261107/md_scout_analysis_65972/RESULT.json",
+      "sha256": "a052ccb5f6521328939a52ff05eb8a0cb9cdfd34c46dc8f2de8f69f4ff493ed9"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/so3lr_neutral_pair_20261107/preparation_comparison_ASE_v1/RESULT.json",
+      "sha256": "cc71cb55b50515c4e8f2dfaa3d744bf78ed549956b2382d8679f7733a9dd8c50"
+    },
+    {
+      "path": "/groups/banfield/projects/environmental/sr/srvp2020/Jacob/lanthanide_binding/on_density_scanner/alchemical_bvs/workspaces/so3lr_neutral_pair_20261107/preparation_comparison_v1/BRIDGE.json",
+      "sha256": "7ed6f9f3a35f245f41175c40846dcc581efab1ac97d3b77849c733aa4cc639b0"
+    }
+  ]
+}

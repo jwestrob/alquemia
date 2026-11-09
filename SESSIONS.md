@@ -3678,3 +3678,34 @@ trajectory and is not claimed tested. Total phase cost12,988 allocatedCPU-s,
 4,839.253 measuredCPU-s, zeroGPU/DFT/MD. H20052844 remains pending on the shared
 per-user GPU limit; its completion watcher is live. Do not duplicate it, alter
 other-session jobs, or restart references. The goal remains active.
+
+## 2026-11-09 — Bounded Tauri neutral pilot closed after chemical-integrity failure
+
+Read `diagnostics/so3lr_neutral_pair_20261107/REPORT.md`, FINAL_RESULTS.json and
+DECISION.json. The runtime-only GPU recovery completed the controls: all three
+original periodic tests and the hydrated control pass the declared 0.5-kcal/mol
+criterion; CPU/GPU values agree. The primary L model runs at about 0.29 s per
+full-system evaluation/integration step on the real 7,288-atom system.
+
+Native FIRE damaged three original trans600 covalent bonds before MD; the
+longest C–O distance reached 13.076 Å. The completed 0.25-ps trajectory therefore
+cannot test intact-CDTA affinity. Atom order, periodic-image mapping and native
+checkpoint/HDF correspondence pass. Strict native/ASE bridge 66047 failed
+(1.964e-5 versus 1e-5 eV/Å); no optimizer ran in that job. The separately declared
+ASE-only LBFGS comparison, with a 0.05-Å atom-step cap, stopped at step 37 when
+C6–C7 reached 2.052 Å. That threshold crossing is not completed scission.
+
+Stop the current Tauri setup; classification: data/validation insufficient for
+the intended intact-ligand selectivity. No unique failure mechanism or general
+Tauri rejection is established. No other five MD starts, midpoint, alchemy,
+reference restart or protein transfer was launched. M1 remains the baseline;
+reserved outcomes, unrelated edits and other sessions' jobs are preserved.
+
+Final saved replay 66238 exactly reproduces 254 native ligand/frame records,
+the integrity audit and the numerical decision; all 38 capped-optimizer frames
+were checked independently. All 27 phase jobs are terminal. Actual phase use:
+23,810 allocated CPU-s, 6,803.388 measured CPU-s and 894 H200 GPU-s (14.9 min),
+including failures. CPU-only allocations are 13,082 s within 14,400. Historical
+Tauri phases are itemized separately in TOTAL_TAURI_COST.json. All receipts are
+ACKed; delayed wake events are ACK-only. Preserve raw source, arrays and
+trajectories under `workspaces/so3lr_neutral_pair_20261107/`; do not resubmit.

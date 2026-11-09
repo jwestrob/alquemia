@@ -48,3 +48,11 @@ Follow-up completed: L passes the declared energy-cancellation test (0.068 vs0.5
 kcal/mol); M misses it (0.583). Local force sensitivity remains. See the new
 REPORT.md for scope and next recommendation; no automatic MD. Both new jobs
 terminal,10.7 allocatedCPUminutes total. Earlier frozen data remain unchanged.
+
+9 November closure: Jacob's later authorization led to the bounded neutral
+cis/trans feasibility test, now complete. See
+../so3lr_neutral_pair_20261107/REPORT.md and DECISION.json. Numerical controls
+passed, but trans-ligand covalent integrity failed during two preparation
+paths. Stop that setup; no affinity result or general rejection of Tauri is
+claimed. All new scientific jobs are terminal. Earlier reference failures and
+all original outputs remain preserved; delayed old wakes remain ACK-only.

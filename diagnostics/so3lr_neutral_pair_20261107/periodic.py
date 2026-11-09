@@ -2,7 +2,7 @@
 import os,time,argparse
 from util import *
 assert os.environ.get('SLURM_JOB_ID')
-ap=argparse.ArgumentParser();ap.add_argument('--cpu-scout',action='store_true');ap.add_argument('--cpu-controls',action='store_true');ap.add_argument('--hydrated-scout',action='store_true');ap.add_argument('--attempt',default='v1');args=ap.parse_args()
+ap=argparse.ArgumentParser();ap.add_argument('--cpu-scout',action='store_true');ap.add_argument('--cpu-controls',action='store_true');ap.add_argument('--hydrated-scout',action='store_true');ap.add_argument('--attempt',default='v1');ap.add_argument('--resume-dir',type=Path);args=ap.parse_args()
 assert not (args.cpu_scout and args.cpu_controls)
 assert not (args.hydrated_scout and (args.cpu_scout or args.cpu_controls))
 import jax
@@ -13,18 +13,32 @@ from so3lr.ase_utils import make_ase_calculator
 from glp import atoms_to_system
 cpu_mode=args.cpu_scout or args.cpu_controls
 assert jax.devices()[0].platform==('cpu' if cpu_mode else 'gpu')
+cpu_devices=[str(device) for device in jax.devices('cpu')]
+assert cpu_devices
 tag=('periodic_cpu_controls_' if args.cpu_controls else 'periodic_cpu_' if args.cpu_scout else 'periodic_gpu_')+args.attempt
 if args.hydrated_scout:tag='periodic_hydrated_gpu_'+args.attempt
 preparation=W/('hydrated_preparation_v1' if args.hydrated_scout else 'preparation_v1')/'RESULT.json'
 out=W/tag;out.mkdir(exist_ok=False);started=time.time();cput=time.process_time()
 for p in [Path(__file__),D/'PLAN.md',D/'util.py']:(out/p.name).write_bytes(p.read_bytes())
 save(out/'START.json',dict(job=os.environ['SLURM_JOB_ID'],script=pin(__file__),plan=pin(D/'PLAN.md'),
- devices=[str(d) for d in jax.devices()],preparation=pin(preparation)))
-prep=read(preparation);calcs={};rows=[];selections=[]
+ devices=[str(d) for d in jax.devices()],cpu_devices=cpu_devices,JAX_PLATFORMS=os.environ.get('JAX_PLATFORMS'),preparation=pin(preparation)))
+prep=read(preparation);calcs={};rows=[];selections=[];reusable={};resume_job=None
+if args.resume_dir:
+ prior_start=read(args.resume_dir/'START.json')
+ assert prior_start['preparation']==pin(preparation)
+ resume_job=prior_start['job'];reusable={row['id']:row for row in read(args.resume_dir/'PARTIAL.json')['rows']}
 def evaluate(atoms,cid):
  n=len(atoms);assert atoms.info['charge']==0 and atoms.info['multiplicity']==6
  system=atoms_to_system(atoms,dtype=np.float64)
  assert float(system.total_charge[0])==0 and float(system.num_unpaired_electrons[0])==5
+ if cid in reusable:
+  prior=reusable[cid];assert pin(prior['raw_arrays']['path'])==prior['raw_arrays']
+  raw=np.load(prior['raw_arrays']['path'])
+  assert np.array_equal(raw['positions_A'],atoms.positions) and np.array_equal(raw['Z'],atoms.numbers)
+  assert raw['forces_eV_A'].dtype==np.float64 and prior['natoms']==n and prior['state_head_verified']
+  assert float(raw['energy_eV'])==prior['energy_eV'] and np.isfinite(raw['forces_eV_A']).all()
+  row=dict(prior,reused_from_job=resume_job);rows.append(row);save(out/'PARTIAL.json',dict(rows=rows))
+  print('reused',cid,'from job',resume_job,flush=True);return row
  if n not in calcs:
   calcs[n]=make_ase_calculator(model='so3lr-tauri-l-2606',dtype=np.float64,lr_cutoff=12.,
     dispersion_energy_cutoff_lr_damping=2.,kspace_electrostatics='pme',kspace_smearing=4.,kspace_spacing=1.,

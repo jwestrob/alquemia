@@ -23,3 +23,10 @@ reason to stop. The neutral cis/trans system is prepared and its first controls
 are complete; H200 job 52844 is pending with a completion watcher. Read
 ../so3lr_neutral_pair_20261107/CURRENT.md. This subsequent authorization does
 not restart the old quantum references or change the completed Test 1 results.
+
+9 November closure: the subsequent neutral-system evaluation is complete. Its
+numerical controls passed, but the intended trans ligand failed covalent
+integrity during native preparation and a separate capped ASE comparison.
+Read ../so3lr_neutral_pair_20261107/REPORT.md and DECISION.json. Stop that setup;
+no longer MD, alchemy or reference retry is released. All jobs in that phase
+are terminal. This does not change the completed Test 1 results.

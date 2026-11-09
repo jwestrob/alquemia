@@ -28,10 +28,16 @@ def arrays(row):
  assert a['positions_A'].shape==a['forces_eV_A'].shape==(row['natoms'],3)
  assert abs(a['partial_charges'].sum())<1e-6 and row['state_head_verified']
  return a
-for tag in ('periodic_cpu_v2','periodic_cpu_controls_v1','periodic_gpu_v1','periodic_hydrated_gpu_v1'):
+for tag in ('periodic_cpu_v2','periodic_cpu_controls_v1','periodic_gpu_v1','periodic_gpu_v2','periodic_hydrated_gpu_v1'):
  p=W/tag/'RESULT.json'
  complete=p.exists()
- if 'gpu' in tag and not complete:continue
+ if 'gpu' in tag and not complete:
+  start_file=W/tag/'START.json'
+  if not start_file.exists():continue
+  job=read(start_file)['job']
+  status=subprocess.check_output(['sacct','-n','-P','-j',job,'--format=JobIDRaw,State'],text=True)
+  state=next((line.split('|')[1].split()[0].rstrip('+') for line in status.splitlines() if line.split('|')[0]==job),'UNKNOWN')
+  if state not in {'COMPLETED','FAILED','CANCELLED','TIMEOUT','OUT_OF_MEMORY','NODE_FAIL'}:continue
  if complete:
   result=read(p)
  else:
@@ -83,13 +89,14 @@ for tag in ('periodic_cpu_v2','periodic_cpu_controls_v1','periodic_gpu_v1','peri
   periodic.append(row)
 
 agreement=[]
-if 'periodic_gpu_v1' in raw_cache:
- cpu=raw_cache['periodic_cpu_v2'];gpu=raw_cache['periodic_gpu_v1']
+gpu_tag=next((tag for tag in ['periodic_gpu_v2','periodic_gpu_v1'] if tag in raw_cache),None)
+if gpu_tag:
+ cpu=raw_cache['periodic_cpu_v2'];gpu=raw_cache[gpu_tag]
  for cid in ('s0_A','s0_B'):
   if cid in gpu:
    ce=float(abs(cpu[cid]['energy_eV']-gpu[cid]['energy_eV']))
    cf=float(abs(cpu[cid]['forces_eV_A']-gpu[cid]['forces_eV_A']).max())
-   agreement.append(dict(id=cid,energy_difference_eV=ce,max_force_difference_eV_A=cf,
+   agreement.append(dict(id=cid,GPU_source=gpu_tag,energy_difference_eV=ce,max_force_difference_eV_A=cf,
      passed=ce<=1e-5 and cf<=1e-5))
 summary=dict(local=local_summary,periodic=periodic,
  cpu_GPU_agreement=agreement,analysis_job=os.environ['SLURM_JOB_ID'],molecular_calls=0,
@@ -103,7 +110,7 @@ save(report/'REPRODUCTION_CHECKS.json',dict(passed=True,
  original=pin(W/'saved_checks_52991/CONTROL_SUMMARY.json'),
  exact_local_summary=True,exact_CPU_periodic_summaries=len(original['periodic']),
  molecular_calls=0,synthetic_fixtures=0))
-jobs=['52753','52797','52830','52877','52948','52991','53022','53123','53157','53167','53205','52844',os.environ['SLURM_JOB_ID']]
+jobs=['52753','52797','52830','52877','52948','52991','53022','53123','53157','53167','53205','52844','65869','65873','65893','65896','65911','65917','65972','66003','66010','66047','66081','66155','66178','66225',os.environ['SLURM_JOB_ID']]
 s=subprocess.check_output(['sacct','-n','-P','-j',','.join(jobs),
  '--format=JobIDRaw,State,ElapsedRaw,AllocCPUS,TotalCPU,MaxRSS'],text=True)
 (report/'ACCOUNTING.txt').write_text(s)

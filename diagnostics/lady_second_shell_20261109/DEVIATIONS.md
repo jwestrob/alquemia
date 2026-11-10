@@ -16,3 +16,9 @@ design in PLAN.md is unchanged.
    lead agent does on Jacob's word alone.
 3. **Report authorship.** Reports for this diagnostic are written by the lead agent, because the
    harness returns subagent findings as text.
+4. **Cost limits removed on Jacob's instruction** (2026-11-10 UTC: "Please remove the CPU usage cap!
+   Just use what's needed!"). PLAN.md's "Cost cap and runtime action" no longer applies: the 1,000
+   CPU-h cap and the 30 h per-job stop are both dropped, for stage A and for stage B if it is
+   released. The watcher was restarted without them. The jobs now end when ORCA finishes; what still
+   bounds them is ORCA's 500-cycle limit per run, the single chained restart, and the 5-day QOS limit.
+   The gate, the admissibility rules and the frozen analysis script are unchanged.

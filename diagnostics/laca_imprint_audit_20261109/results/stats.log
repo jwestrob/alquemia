@@ -1,0 +1,30 @@
+PRIMARY native-Ca, >=4 protein donors (Ca deposit): n_prot=12 pairs=153 p=0.175 q=0.083 p-q=0.092 [-0.083,0.300] dCN=-0.28 [-1.05,0.43] dMO=0.009 [-0.059,0.091] dChel=0.12 [0.00,0.33] pooled p=0.296 q=0.179 IMPRINT REFUTED
+native-Ca, any donor count: n_prot=12 pairs=167 p=0.196 q=0.083 p-q=0.113 [-0.075,0.342] dCN=-0.16 [-0.96,0.63] dMO=0.001 [-0.070,0.085] dChel=0.14 [0.01,0.33] pooled p=0.375 q=0.169 
+native-Ca primary, light Ln (La-Eu): n_prot=4 pairs=44 p=0.375 q=0.000 p-q=0.375 [0.000,0.750] dCN=0.47 [-0.48,1.70] dMO=0.031 [-0.010,0.080] dChel=0.25 [0.00,0.75] pooled p=0.429 q=0.000 
+native-Ca primary, heavy Ln (Gd-Lu): n_prot=8 pairs=109 p=0.075 q=0.125 p-q=-0.050 [-0.188,0.037] dCN=-0.66 [-1.53,0.08] dMO=-0.002 [-0.092,0.117] dChel=0.06 [0.00,0.19] pooled p=0.250 q=0.246 
+UNVERIFIED, >=4 protein donors: n_prot=6 pairs=70 p=0.368 q=0.000 p-q=0.368 [0.125,0.667] dCN=0.83 [-0.00,1.75] dMO=-0.002 [-0.051,0.045] dChel=0.22 [-0.22,0.67] pooled p=0.381 q=0.000 
+UNVERIFIED, any donor count: n_prot=16 pairs=160 p=0.315 q=0.000 p-q=0.315 [0.125,0.533] dCN=0.84 [-0.04,1.79] dMO=-0.051 [-0.110,0.009] dChel=0.42 [0.10,0.87] pooled p=0.267 q=0.000 
+excluded by frozen keyword rule (sensitivity): n_prot=3 pairs=6 p=0.667 q=0.667 p-q=0.000 [0.000,0.000] dCN=0.89 [-0.33,3.00] dMO=-0.095 [-0.135,-0.051] dChel=0.67 [0.00,2.00] pooled p=0.800 q=0.500 
+reverse pairs 0
+{
+ "assumptions": "alpha 0.05 two-sided; 80% power; exact tests; paired = both discriminators scored on the same units (exact McNemar, best case: every discordant unit favours one method); unpaired = Fisher exact with baseline accuracy fixed at the observed rule value. Balanced-accuracy change = half the arm change.",
+ "La_family_unit_n3": {
+  "min_two_sided_p_sign_test": 0.25,
+  "min_two_sided_p_fisher_3v3": 0.1,
+  "paired_mdd": null,
+  "note": "no outcome on 3 units reaches p<=0.05: power 0 for any effect"
+ },
+ "La_site_unit_n22_ignoring_clustering": {
+  "paired_mdd": 0.33554790425331765,
+  "unpaired_mdd_from_21of22": 0.36
+ },
+ "Ca_site_unit_n125": {
+  "paired_mdd": 0.06251271099609036,
+  "unpaired_mdd_from_122of125": 0.1
+ },
+ "Ca_deposit_unit_n34": {
+  "paired_mdd": 0.22257922207622505,
+  "unpaired_mdd_from_0.976": 0.255
+ },
+ "mcnemar_min_discordant_units": 6
+}

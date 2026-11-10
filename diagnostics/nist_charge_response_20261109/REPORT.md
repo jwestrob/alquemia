@@ -110,13 +110,30 @@ Eu 1.05 + 1.29 q.
 - Coordination number against the observed difference: ρ +0.77 (nominal p 0.025, n = 8 rows, two of
   them one protein). Coordination number against log K(Ln): ρ +0.86.
 
+## Extended protein comparison (added 10 November UTC, post hoc)
+
+A literature gap-fill (`~/Documents/Berkeley/Nikasha/protein_ln_ca_gapfill_2026-11-09/`, Mac; every
+new value a single-agent extraction, most from abstracts) adds 16 matched pairs, four of them with a
+structure: troponin C high- and low-affinity sites (Eu, +2.37 and +2.42), carp parvalbumin (La, +1.08)
+and bovine trypsin (Gd, +1.20).
+
+- Twelve structured rows in seven families: RMSE of the line 3.90 against 3.30 for the protein mean;
+  mean residual −2.38; Spearman +0.27 (p 0.39). All nine rows outside lanmodulin fall below the line,
+  by 1.9 to 7.3 log units.
+- The eight rows with a Ca-bound structure (coordination number 6–7) span −3.54 to +2.42, median
+  +0.94. The first table's four such rows (−3.5 to +0.8) were the low end of that range.
+- All 28 pairs: lanmodulin +5.95 to +8.13 (three rows); the 25 pairs in 11 other families have a
+  median of +1.10 (range −3.54 to +3.20).
+
 ## Interpretation (inference)
 
 In flexible chelators, charge rises together with denticity and chelate-ring count, and every added
-arm can wrap either ion. The four proteins whose sites hold Ca at coordination number 7 show
-differences of −3.5 to +0.8 at two to three and a half acidic residues, where the line expects +2.7 to
-+5.6. The lanmodulins supply 9–10 donors and exceed the line. LanP is the exception that limits a
-pure capacity reading: coordination number 8.8 with 6.2 anionic oxygens and a difference of +1.1.
+arm can wrap either ion. In the extended set, the eight rows whose sites hold Ca at coordination
+number 6–7 show differences of −3.5 to +2.4 (median +0.9) at two to four acidic residues, where the
+line expects +2.7 to +4.9. The lanmodulins supply 9–10 donors and exceed the line. LanP limits a pure
+capacity reading: coordination number 8.8 with 6.2 anionic oxygens and a difference of +1.1. What
+separates lanmodulin from the other 11 families is therefore unexplained by charge, donor count or
+coordination number in these data.
 
 For mining, the supported statement is about affinity: deliverable donor count (anionic oxygens,
 total coordination) ranks log K(Ln) at ρ +0.86 in this set. La-over-Ca selectivity remains a separate

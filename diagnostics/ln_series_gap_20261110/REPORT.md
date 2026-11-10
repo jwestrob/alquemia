@@ -149,6 +149,22 @@ f-electron-free yttrium shares with oxygen donors, and that protein sites lack. 
 (inference: the protein result points at the small complexes themselves, for example their inner-sphere water,
 and away from the aqua ion they share with proteins).
 
+## What this changes in practice
+
+1. **Small-molecule numbers overstate light-versus-heavy selectivity for proteins.** The project's small-molecule
+   target, ΔΔG(Dy−La), straddles the gap. Share of a chelator's fitted selectivity that comes from the gap
+   (ligands with |ΔΔG| ≥ 0.5 kcal/mol; `scripts/gap_share.py`): La→Dy median 25% (IQR 21–31%, 44 ligands);
+   Nd→Dy 30% (28–32%, 20); La→Lu 24% (19–32%, 49). Protein series show no gap, so a surrogate or series shape
+   fitted on NIST carries a term proteins lack. Fill in a protein's series with a smooth polynomial in Shannon
+   radius.
+2. **Scoring size-only physics methods.** A method in which the lanthanides differ only by size gives a smooth
+   series and misses the step by construction: about 0.1 kcal/mol for acetate-class ligands and about 1 kcal/mol
+   for EDTA-class. Score small-molecule benchmarks within a branch, or add the gap term.
+3. **Protein REE profiles** should compress to three or four polynomial coefficients plus one yttrium offset.
+   A clearly negative fitted gap means the assay's readout is relative to a competing chelator.
+4. **Inference, untested:** in protein-based separations the light/heavy cut at Gd|Tb comes from the chelator
+   eluent; proteins have to supply selectivity within a branch.
+
 ## Deviations from PLAN.md
 
 1. **N-donor feature.** `aminoacid_N + amine_N` counts carboxymethyl arms and double-counts nitrogen. Readings 6
@@ -182,7 +198,7 @@ and away from the aqua ion they share with proteins).
 - `PLAN.md`, `ADDENDUM_confirmation.md`, `PLAN.sha256`. `FROZEN_PREDICTION.md` (hashed in `PLAN.sha256`) stays with the private tables.
 - `scripts/`: `lib.py`, `run_main.py` (frozen readings), `run_proteins.py`, `run_followup.py`,
   `fit_cubic_coordinate.py`, `fit_step.py`, `explore_groups.py`, `yttrium_branch.py`, `run_confirm.py`,
-  `robustness.py`, `make_figure.py`.
+  `robustness.py`, `gap_share.py`, `make_figure.py`, `sealed_gap_test.py`.
 - `results/` (NIST-derived; kept outside this repository, with `data/` and `figures/`): `run.log`, `summary.json`, `followup.log`, `confirm.log`,
   `robustness.log`, `coordinate.tsv`, `coordinate_cubic.tsv`, `per_ligand.tsv`, `per_ligand_followup.tsv`,
   `protein_gap.tsv`, `step_fit.json`, and the matching summaries.
